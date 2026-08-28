@@ -32,8 +32,15 @@ location:
     description: unified school districts
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
+  - ../corpus/division/ohio-congressional-district-4-2020.yml
+  - ../corpus/division/ohio-house-district-4-2020.yml
+  - ../corpus/division/ohio-senate-district-12-2020.yml
+  - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/lima-city-school-district.yml
+  - ../corpus/jurisdiction/shawnee-local-school-district.yml
   - ../corpus/measure/allen-county-land-area-2020.yml
   - ../corpus/measure/lima-land-area-2020.yml
+  - ../corpus/measure/ohio-house-district-4-land-area-2020.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/place/allen-county.yml
   - ../corpus/place/american-township.yml

@@ -11,7 +11,15 @@ location:
   - kind: url
     value: https://www2.census.gov/geo/docs/maps-data/data/baf2020/BlockAssign_ST39_OH.zip
     description: Ohio — CD, SLDL, SLDU, SDUNI, VTD and INCPLACE_CDP assignment files
-used-by: []
+used-by:
+  - ../corpus/division/ohio-congressional-district-4-2020.yml
+  - ../corpus/division/ohio-house-district-4-2020.yml
+  - ../corpus/division/ohio-senate-district-12-2020.yml
+  - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/lima-city-school-district.yml
+  - ../corpus/jurisdiction/shawnee-local-school-district.yml
+  - ../corpus/measure/allen-county-voting-districts-2020.yml
+  - ../corpus/question/allen-county-current-congressional-district.yml
 ---
 
 Pipe-delimited files, one row per census block, mapping a 15-digit block GEOID to a district
