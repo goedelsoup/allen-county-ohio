@@ -1,0 +1,38 @@
+class: question
+label: Which congressional district is Allen County in now?
+description: |
+  At the 2020 census, all 3,552 of Allen County's census blocks fell in
+  [Ohio's 4th congressional district](../division/ohio-congressional-district-4-2020.yml).
+  [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+
+  Ohio redistricted after the 2020 census, so that describes the map in force through the 2022
+  election and says nothing about the map in force now. [inference] The corpus does not know
+  the county's current district and does not guess it. [open]
+
+  **Why the obvious routes do not close it.** The Census Bureau publishes a 2023 gazetteer for
+  the 118th Congress districts, and it was retrieved — but a gazetteer gives a district's area
+  and internal point and never the counties inside it. The county-to-district relationship
+  comes from the Block Assignment Files, and there is no Block Assignment File for any year
+  after 2020: `baf2022`, `baf2024`, `baf2025` and `baf2026` all return 404. The Ohio Secretary
+  of State, which is the authority for the map, blocks automated clients.
+
+  So this is a question about a fact that is neither obscure nor contested — any resident knows
+  who represents them — and the corpus still declines to write it down, because the sources it
+  can actually reach do not contain it and a remembered answer is not a sourced one. That is
+  the same standard [the county's namesake](namesake-of-allen-county.yml) is held to, applied
+  to something far more ordinary.
+properties:
+  claim_tag: open
+  opened: "2026-08-28"
+  would_close_this: |
+    A current county-to-congressional-district relationship file from the Census Bureau, if one
+    is published for the 118th or 119th Congress under a path this corpus has not found; the
+    Ohio Secretary of State's district map, retrieved by hand rather than by an automated
+    client; or the enacted redistricting plan itself, which names its constituent counties.
+links:
+  - target: ../division/ohio-congressional-district-4-2020.yml
+    relationship: concerns
+  - target: ../place/allen-county.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

@@ -1,0 +1,38 @@
+class: division
+label: Ohio House District 4 (2020 geography)
+description: |
+  The Ohio House of Representatives district covering Allen County under the map in force at
+  the 2020 census. All 3,552 of the county's census blocks fall in it. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+
+  **It is coterminous with the county.** Its gazetteer record reads `ALAND 1042587389`,
+  `AWATER 11152061`, `ALAND_SQMI 402.545`, `INTPTLAT 40.771627`, `INTPTLONG -84.106103` —
+  every field byte-identical to [Allen County](../place/allen-county.yml)'s own record in the
+  county file. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md). Not approximately the same
+  ground: the same ground.
+
+  That makes this node the corpus's sharpest argument for why `division` is a class apart from
+  `place`. Two nodes here describe an identical polygon and are not interchangeable. The county
+  is a standing unit of government with a 1820 origin and no expiry; the district is an
+  apportionment artifact that exists until the next decennial map and whose identity is a
+  number the legislature may reassign. A corpus that folded them together would have to choose
+  which of those two things the polygon is, and it is both.
+
+  The coincidence is also not permanent, and this node's `effective_to` being absent does not
+  assert that it is — see
+  [which congressional district Allen County is in now](../question/allen-county-current-congressional-district.yml)
+  for the same vintage problem on the federal map. Ohio redistricted after 2020.
+properties:
+  division_type: state legislative district
+  identifier: "39004"
+  effective_from: "2020"
+  drawn_by: State of Ohio
+  area_sq_mi: "402.545 land, 4.306 water (2020 geography)"
+links:
+  - target: ../place/allen-county.yml
+    relationship: covers
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: nested-in
+  - target: ../division.ont.yml
+    relationship: instance-of
