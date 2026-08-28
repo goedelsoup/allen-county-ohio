@@ -1,0 +1,66 @@
+id: state-after-three-phases
+summary: >-
+  The corpus has reached a stable initial state — all 13 classes populated, every approved
+  implied edge landed or recorded as undefendable, every connector invoked or stubbed with a
+  reason. What remains is named here.
+supersedes: gaps-after-two-phases
+context: |
+  [gaps-after-two-phases](gaps-after-two-phases.yml) named `division` as the next priority on
+  the reasoning that it was a gap in kind rather than depth. That phase has run. This record
+  supersedes it; both stand as written.
+
+  Three phases have settled onto main since genesis:
+
+    phase/the-long-decline      44 ->  52 nodes   the population series
+    phase/the-officeholders     52 -> 130 nodes   the sheriff roster
+    phase/the-electoral-grain  130 -> 139 nodes   districts and school districts
+
+  Corpus state: 139 nodes across 13 classes, 6 catalog sources, 6 open questions.
+  `yidam status`: **139 nodes** · 37 open · 6 sources · claims 159v / 127i / 50o · index not initialized · 0 active phase(s) · genesis 2026-08-28
+decision: |
+  **The corpus is at a stable initial state.** The specific tests:
+
+  - Every one of the 13 classes holds at least one instance. None did at genesis; `tenure`
+    held none until the second phase and `division` held one until the third.
+  - Every implied edge approved at genesis is either written or recorded as undefendable with
+    the reason. The last two — `measure describes division` and `division covers place` —
+    landed in the third phase, and `site on natural-feature` remains deliberately unwritten
+    because a refinery inside Lima and a river through Lima do not establish that one sits on
+    the other.
+  - Every approved connector is either invoked and cataloged (census) or stubbed with a stated
+    blocker. `sos-elections` now carries a real one: the authority blocks automated clients,
+    and the Census substitution covers the geography but not the names or the returns.
+  - The lint baseline is empty and has been since genesis. No error has ever been blessed.
+
+  **What remains, in the order it would pay.**
+
+  1. No annexation `event` exists, so `boundary-comparability` cannot distinguish "no
+     intervening events found" from "no annexations occurred". Every Lima population and area
+     comparison in the corpus rests on that difference.
+  2. No `site` carries coordinates, so `proximity` — the calculator that justified vendoring
+     `geodesics` — still cannot run on the case it was chosen for.
+  3. The 88 voting districts are a count and not nodes. This is a naming gap, not a boundary
+     gap: the boundaries are published and the names are the Secretary of State's.
+  4. Pre-1970 county population and Lima's peak.
+  5. `office/mayor-of-lima` has no tenures; one of two seeded offices has a line.
+
+  **Not one of the five calculators has been implemented.** `succession-audit` is writable —
+  it has 39 tenures and a known-correct expected result — and remains the right first crate.
+rationale: |
+  Why this is called stable rather than finished. A stable initial state is one where the
+  structure has been exercised rather than merely declared, and where what is missing is
+  recorded as a question rather than as an absence somebody has to notice. Both now hold.
+
+  The three phases each tested a design decision rather than only filling a gap, and each
+  returned something the ontology could not have predicted. `tenure` was vindicated by John
+  Keller's two non-consecutive terms, which no other encoding expresses, and complicated by
+  year precision making 38 adjacent term pairs look like overlaps. `division` was vindicated
+  by Ohio's State House District 4 being byte-identical to Allen County — one polygon, two
+  nodes, not interchangeable. The population series both supported the deindustrialization
+  claim and bounded it, since a series beginning at its own first observation cannot show that
+  observation was a peak.
+
+  What has not been tested is the domain computer. Five calculators are stubs and no crate
+  exists, so every claim about what the corpus can compute is still a claim about what it
+  could compute. That is the honest limit of this state and the reason the next work is code
+  rather than nodes.
