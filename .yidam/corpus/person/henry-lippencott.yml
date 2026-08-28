@@ -1,0 +1,19 @@
+class: person
+label: Henry Lippencott
+description: |
+  Sheriff of Allen County, 1831–1835. [verified] —
+  [Allen County Sheriff's Office past-sheriffs roster](../../catalog/acso-past-sheriffs.md).
+
+  The county's first sheriff. His term beginning in 1831 is independent support for the county government having been organized that year rather than at the county's 1820 erection — see [when Allen County's government was organized](../question/when-allen-county-was-organized.yml). [inference] The roster spells the name Lippencott; secondary sources render it Lippincott, and this corpus follows the office's own spelling. [verified]
+
+  The roster gives a name and a year range and nothing else, so this node carries no dates
+  of birth or death and no biography. Ohio requires an elected county officer to be an
+  elector of the county, so a `resided-in` edge to Allen County is a legal inference rather
+  than a fact the roster states. [inference]
+properties:
+  occupation: sheriff
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+  - target: ../person.ont.yml
+    relationship: instance-of

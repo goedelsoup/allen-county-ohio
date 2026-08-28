@@ -1,0 +1,17 @@
+class: person
+label: Hiram Stotts
+description: |
+  Sheriff of Allen County, 1849–1853. [verified] —
+  [Allen County Sheriff's Office past-sheriffs roster](../../catalog/acso-past-sheriffs.md).
+
+  The roster gives a name and a year range and nothing else, so this node carries no dates
+  of birth or death and no biography. Ohio requires an elected county officer to be an
+  elector of the county, so a `resided-in` edge to Allen County is a legal inference rather
+  than a fact the roster states. [inference]
+properties:
+  occupation: sheriff
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+  - target: ../person.ont.yml
+    relationship: instance-of
