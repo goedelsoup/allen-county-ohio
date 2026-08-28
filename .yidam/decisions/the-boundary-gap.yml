@@ -1,0 +1,62 @@
+id: the-boundary-gap
+summary: >-
+  Four separate open claims in this corpus are the same missing file. The corpus holds internal
+  points and land areas for everything and not one boundary, so every containment question it
+  asks is answered with a distance comparison that bounds the answer and never gives it.
+  TIGER/Line is reachable and keyless. This names the gap as one thing.
+context: |
+  The GNIS retrieval was supposed to fill identifiers. It did, and it also made a pattern
+  visible that four phases of separate open claims had not:
+
+  - [which townships census tract 39003010300 covers](../corpus/division/census-tract-39003010300.yml)
+    — settled by comparing two internal points three quarters of a mile apart, which is to say
+    not settled.
+  - [which municipal boundary the refinery and the tank plant fall inside](../corpus/place/american-township.yml)
+    — open since genesis.
+  - [where the Auglaize rises](../corpus/question/where-the-auglaize-rises.yml) — the source
+    coordinate falls inside a 471-square-mile box drawn around a 402.545-square-mile county.
+  - whether the tank plant is in Lima at all. GNIS puts it 2.84 miles from Lima's internal
+    point, and Lima is 13.617 square miles.
+
+  Every one of them is a point-in-polygon question. The corpus has the points and no polygons,
+  so each was answered with arithmetic between internal points — a method that has been
+  described in four different nodes as bounding the answer loosely, which is the same sentence
+  written four times.
+decision: |
+  **These are one gap and are recorded as one.** The next retrieval that would move this corpus
+  most is a boundary file, not another table of attributes.
+
+  TIGER/Line county, county-subdivision and place shapefiles are published by the Census Bureau
+  as keyless static files under the same `www2.census.gov` tree this corpus has already drawn
+  five sources from, so the access question that blocked the Secretary of State and hangs over
+  the county auditor does not arise here. [inference] — the tree is known reachable; these
+  specific paths have not been retrieved.
+
+  **What it would close, in one pass:** all four claims above, plus the two-thirds of
+  `jurisdiction-at`'s answers that currently read `inherited` because the corpus can only
+  derive containment from `within` edges rather than check it.
+
+  **What it would not close.** A 2020 boundary answers 2020 questions. It says nothing about
+  where the Lima city line ran in 1900, which is the annexation-event gap
+  [recorded after three phases](state-after-three-phases.yml) and still the worst one.
+
+  **`proximity` is no longer blocked, and the record should stop saying it is.**
+  `state-after-three-phases` says no `site` carries coordinates. One does now, and all eight
+  `place` nodes have carried centroids since genesis, so site-to-place distance is computable
+  today. What remains blocked is site-to-site, which needs a second site coordinate, and GNIS
+  will not supply one — it has no `Building` class, so the courthouse, the refinery and the
+  locomotive works are not in it and never will be.
+rationale: |
+  Why this is worth a record rather than four open claims. Each of the four is correctly
+  tagged and each names what would settle it, so nothing is being hidden. But they name it
+  four different ways — "a boundary file", "the TIGER/Line geometry", "a municipal boundary",
+  "a county boundary polygon" — and a reader meeting any one of them would reasonably conclude
+  it is a local problem for that node. It is not. It is the largest single lever available to
+  this corpus, and it looked like four small ones because it was written down four times.
+
+  The general lesson is about what a gazetteer is for. Three retrievals now — the Census
+  gazetteer, the Block Assignment Files and GNIS — have supplied identifiers, areas and points,
+  and every one of them has been careful to say it carries no boundaries. That is not an
+  oversight in any of the three. A gazetteer answers "what is this called and where is it,
+  roughly"; only geometry answers "what is inside what", and this corpus asks the second
+  question constantly.

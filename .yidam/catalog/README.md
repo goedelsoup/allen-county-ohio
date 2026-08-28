@@ -22,6 +22,7 @@ Sorted by: type, then slug.
 | [census-gazetteer-2020.md](census-gazetteer-2020.md) | dataset | The Census Bureau's published gazetteer for the 2020 geographies — land and water area, internal-point coordinates, GEOID and ANSI codes for counties, county subdivisions, incorporated places and census tracts. | yes | 20 | 0 |
 | [census-intercensal-2000-2010.md](census-intercensal-2000-2010.md) | dataset | The Census Bureau's intercensal series bridging the 2000 and 2010 censuses, at county and sub-county grain — carrying the 2000 estimates base and the 2010 census count as anchors. | yes | 8 | 0 |
 | [census-popest-2024.md](census-popest-2024.md) | dataset | The Census Bureau's annual population estimates for counties and sub-county units, Vintage 2024 — an April 2020 estimates base plus July 1 estimates for 2020 through 2024. | yes | 10 | 0 |
+| [gnis-domestic-names-ohio.md](gnis-domestic-names-ohio.md) | dataset | The federal authority for geographic feature names, identifiers and coordinates. The Ohio file carries 17,921 features, 109 of them in Allen County — and 4 more in the other one. | yes | 9 | 0 |
 
 **Nodes** counts corpus instances that link here — the number every gate reads, and what `catalog-uncited` means by *no corpus node draws on this source*. **Elsewhere** counts other files under `.yidam/corpus/` that link here: class definitions and README prose. They are kept apart rather than summed, because a claim resting on a source and a page linking to one are different things.
 <!-- /REGEN -->
