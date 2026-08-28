@@ -16,11 +16,20 @@ description: |
   around a railway junction instead, which is part of why the canal towns and the county seat
   have such different nineteenth-century trajectories. [inference]
 
+  **GNIS names it and this node declines its coordinate.** The canal is feature 1057843, filed
+  under Henry County with a primary coordinate at 41.3269935, -84.1943905 and a source of
+  `0.0, 0.0`. [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md). That
+  primary point is about 34 miles north of Delphos [inference], because a names file gives one
+  coordinate per feature and this feature is a 250-mile canal. Writing it into `coordinates`
+  would put the Delphos reach in Henry County, and writing the source into anything would put
+  a canal in the Gulf of Guinea. The identifier is worth keeping; the coordinate is not.
+
   [open] The dates of construction through this county, and the date of abandonment, are not
   verified here.
 properties:
   site_type: canal
   status: abandoned
+  gnis_id: "1057843"
 links:
   - target: ../place/delphos.yml
     relationship: located-in

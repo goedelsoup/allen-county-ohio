@@ -1,20 +1,35 @@
 class: natural-feature
 label: Ottawa River
 description: |
-  The stream that runs through Lima, and the county's principal watercourse. It rises east of
-  the city, passes through it, and flows west and north to join the Auglaize River. [inference]
+  The stream that runs through Lima, and the county's principal watercourse. It begins at
+  40.7708852, -83.9557761 and discharges at 40.9950509, -84.2413355 in Putnam County.
+  [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1070882. That
+  the discharge point is on the Auglaize remains [inference]: a names file gives a coordinate
+  and never says what is at it.
 
-  It was known historically as Hog Creek, and the older name survives in local usage and in
-  the name of the Hog Creek marsh country the early county records describe. [inference] The
-  present name is shared with a larger Ottawa River on the Ohio–Michigan line near Toledo,
-  which is a genuine source of confusion in the record. [inference]
+  **It does not begin east of the city; it begins at a confluence.** Its source coordinate is
+  identical to the mouths GNIS records for [Hog Creek](hog-creek.yml) and
+  [Little Hog Creek](little-hog-creek.yml), so the river's head is where those two creeks meet.
+  [verified] — same source. The older name of the whole watercourse was Hog Creek, and the name
+  now attaches to the upper tributary; GNIS is consistent with that and does not establish it.
+  [inference]
+
+  **Allen County's own rows do not contain it.** GNIS files a stream under the county of its
+  mouth, so the county's principal river is filed under Putnam and is absent from the 113
+  features listed for Allen. [verified] — same source.
+
+  The present name is shared with a larger, unrelated Ottawa River near Toledo — feature
+  1066879 in Lucas County against this one's 1070882. [verified] — same source. The collision
+  is now resolvable by identifier rather than by care.
 
   Being the watercourse Lima grew on, it was also the receiving water for the refinery and
   the works — the environmental history of this stream and the industrial history of the city
   are the same subject. [inference]
 properties:
   feature_type: river
-  mouth: Joins the Auglaize River northwest of Lima. [inference]
+  gnis_id: "1070882"
+  mouth: 40.9950509, -84.2413355, in Putnam County. Joins the Auglaize River. [inference]
+  source: 40.7708852, -83.9557761 — the Hog Creek / Little Hog Creek confluence.
 links:
   - target: ../natural-feature/auglaize-river.yml
     relationship: flows-into

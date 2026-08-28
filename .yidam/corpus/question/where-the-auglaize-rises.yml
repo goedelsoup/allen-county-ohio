@@ -1,0 +1,39 @@
+class: question
+label: Does the Auglaize River rise in Allen County?
+description: |
+  GNIS gives the Auglaize River's source as 40.6669957, -83.8938286. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1065901. That point is in the
+  southeast quadrant of the ground this corpus covers, and if it lies inside the county line
+  then Allen County is not merely drained by the Auglaize — it is where the river starts.
+
+  The best the corpus can do is a box. The 109 features GNIS files in Allen County, Ohio span
+  40.647272–40.904493 and -84.388008 to -83.879939, and the source coordinate falls inside that
+  range on both axes — 0.73 miles west of Maysville, the easternmost of them. [verified] — same
+  source, computed from its rows. Every feature filed in the county is in the county, so the
+  box contains the county and the point is inside the box.
+
+  That is evidence and not an answer. A box is not a boundary: this one is 471 square miles
+  around a county of 402.545, so roughly 68 square miles of it are somewhere else, and the
+  county's southeast corner is exactly where a point 13.2 miles from the internal point would
+  have to be. [inference]
+
+  **The same gap, again.** This is the third question in this corpus that a boundary file would
+  close and an internal point cannot — after
+  [which townships census tract 39003010300 covers](../division/census-tract-39003010300.yml)
+  and the municipal boundary the refinery and the tank plant fall inside. Comparing internal
+  points bounds an answer loosely and never gives it. [inference]
+properties:
+  claim_tag: open
+  opened: "2026-08-28"
+  would_close_this: |
+    A county boundary polygon — TIGER/Line's county shapefile is the obvious one and is
+    published as a keyless static file — checked against the source coordinate. The National
+    Hydrography Dataset would also answer it, since a flowline's headwater reach carries the
+    county it is in.
+links:
+  - target: ../natural-feature/auglaize-river.yml
+    relationship: concerns
+  - target: ../place/allen-county.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

@@ -1,0 +1,28 @@
+class: natural-feature
+label: Maumee River
+description: |
+  The river Allen County's water reaches last before Lake Erie. It rises at 41.0828261,
+  -85.1321928 — the confluence of the St. Joseph and St. Marys at Fort Wayne, Indiana — and
+  discharges at 41.6994922, -83.4599325 at Toledo. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1084017.
+
+  This node exists because the corpus was routing a river into a watershed. The
+  [Auglaize](auglaize-river.yml) used to carry `flows-into`
+  [the Maumee River Basin](maumee-river-basin.yml), which is a category error: a river
+  discharges into another river, and it *lies within* a basin. The basin node was standing in
+  for a river node that did not exist, and GNIS supplied the missing one.
+
+  The discharge coordinate is what makes the corpus's Lake Erie claim more than an assertion.
+  Allen County's water leaves the county by the Auglaize, and the river the Auglaize joins
+  ends at Toledo on Lake Erie rather than anywhere on the Ohio. [inference] — the coordinate is
+  verified; that the Auglaize joins *this* river at Defiance is not established by a names file.
+properties:
+  feature_type: river
+  gnis_id: "1084017"
+  mouth: 41.6994922, -83.4599325 — Lake Erie at Toledo.
+  source: 41.0828261, -85.1321928 — the St. Joseph and St. Marys confluence, Fort Wayne.
+links:
+  - target: ../natural-feature/maumee-river-basin.yml
+    relationship: within
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of
