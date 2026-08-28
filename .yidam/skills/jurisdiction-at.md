@@ -1,3 +1,8 @@
+---
+name: jurisdiction-at
+description: Return every jurisdiction and division covering a place on a given date
+---
+
 # jurisdiction-at (stub)
 
 **Computes.** Every jurisdiction and division covering a given place on a given date.

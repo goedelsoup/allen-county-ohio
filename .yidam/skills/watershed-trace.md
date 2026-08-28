@@ -1,3 +1,8 @@
+---
+name: watershed-trace
+description: Follow flows-into from a natural feature to its outlet, listing the places traversed
+---
+
 # watershed-trace (stub)
 
 **Computes.** The downstream chain from any natural feature to its outlet.

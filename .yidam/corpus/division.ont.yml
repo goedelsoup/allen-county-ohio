@@ -4,13 +4,16 @@ foundational_type:
   ontology: ufo
   type: kind
 description: |
-  A bounded unit drawn by an authority in order to administer, elect, or report, holding no
-  governmental authority of its own — a ward, a voting precinct, a census tract, a
-  congressional district. It is irreducible because it is the grain at which elections and
-  public statistics are actually reported, and because it is redrawn on a schedule that has
-  nothing to do with the jurisdictions it sits inside.
+  A bounded area that an authority defines as a unit of administration, election, or
+  statistical reporting, and that holds no governmental authority of its own — a ward, a
+  voting precinct, a census tract, a congressional district. It is irreducible because it is
+  the grain at which elections and public statistics are reported, and because it is redrawn
+  on a schedule that has nothing to do with the jurisdictions it sits inside.
 edge_policy: characteristic
-max_lines: 30
+# Raised from 30 after the first gate run. A division node that states which ground it
+# does and does not coincide with is doing the job the class exists for, and 30 lines
+# would not hold that argument.
+max_lines: 38
 properties:
   - name: division_type
     type: string

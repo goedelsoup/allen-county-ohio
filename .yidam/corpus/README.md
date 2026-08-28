@@ -21,7 +21,52 @@ Fields per node: filename, title, kind (concept/relation/artifact/question/hypot
                  outgoing link count, incoming link count, line count, last commit date.
 Sorted by: kind, then alphabetically.
 -->
-_Run `yidam corpus-index` to populate._
+| Instance | Class | Label | Links out | Claims | Lines |
+|---|---|---|---|---|---|
+| [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 2 | 2v / 1i / 1o | 34 |
+| [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 0v / 2i / 1o | 22 |
+| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 0v / 4i / 1o | 38 |
+| [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 24 |
+| [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 29 |
+| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 27 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 22 |
+| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 0v / 1i / 0o | 19 |
+| [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 21 |
+| [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 22 |
+| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 2v / 0i / 0o | 23 |
+| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 24 |
+| [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 33 |
+| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 3v / 2i / 0o | 34 |
+| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 2i / 0o | 32 |
+| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 1v / 3i / 0o | 24 |
+| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 0v / 2i / 1o | 23 |
+| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 0v / 1i / 1o | 24 |
+| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 0v / 5i / 0o | 24 |
+| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 0v / 1i / 0o | 24 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 24 |
+| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 0v / 1i / 1o | 20 |
+| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 23 |
+| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 24 |
+| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 0v / 3i / 2o | 30 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 2 | 0v / 4i / 2o | 31 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 0v / 4i / 2o | 31 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 0v / 2i / 1o | 22 |
+| [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 21 |
+| [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 1v / 1i / 0o | 27 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 2v / 1i / 1o | 28 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 27 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 27 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 30 |
+| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 1v / 2i / 0o | 24 |
+| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 25 |
+| [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
+| [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 0v / 2i / 1o | 30 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 0v / 1i / 1o | 25 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 0v / 3i / 1o | 27 |
+| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 24 |
+| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 0v / 1i / 1o | 25 |
+| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 2 | 0v / 4i / 1o | 28 |
 <!-- /REGEN -->
 
 ## Semantic index status
@@ -31,5 +76,5 @@ Regenerated by: `yidam index-status`
 Fields: total nodes indexed, embedding model, index freshness (last indexed commit vs HEAD),
         stale node count.
 -->
-_Run `yidam index-status` to populate._
+_Index not initialized. Run `yidam index-build` to build._
 <!-- /REGEN -->

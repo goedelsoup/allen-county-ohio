@@ -1,3 +1,8 @@
+---
+name: proximity
+description: Return corpus nodes within a radius of a point, ordered by distance
+---
+
 # proximity (stub)
 
 **Computes.** Corpus nodes within a radius of a point, ordered by distance.

@@ -1,3 +1,8 @@
+---
+name: boundary-comparability
+description: Decide whether two measures describe the same ground, given the annexations between them
+---
+
 # boundary-comparability (stub)
 
 **Computes.** Whether two figures for the same subject describe the same ground.

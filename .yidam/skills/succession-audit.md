@@ -1,3 +1,8 @@
+---
+name: succession-audit
+description: Report gaps and overlaps in an office's line of holders, from its tenure nodes
+---
+
 # succession-audit (stub)
 
 **Computes.** Gaps and overlaps in an office's line of holders.
