@@ -3,7 +3,7 @@ name: succession-audit
 description: Report gaps and overlaps in an office's line of holders, from its tenure nodes
 ---
 
-# succession-audit (stub)
+# succession-audit
 
 **Computes.** Gaps and overlaps in an office's line of holders.
 
@@ -14,19 +14,26 @@ node whose `of-office` edge points at it, plus the office's `seats` property.
 office had no recorded holder, and every interval during which it had more holders than
 `seats` allows.
 
-**It can now be run, and is the first crate that should be written.** The corpus holds 39
-tenure nodes against `office/allen-county-sheriff`, running continuously from 1831 to the
-present. When this stub was written it had nothing to read and said so; that was true at
-genesis and stopped being true when the roster was extracted.
+**Implemented.** [`crates/succession`](../../crates/succession/) — run it with:
 
-The expected result is known, because the succession was checked by hand at extraction time:
-**no gaps and no true overlaps across all 39 tenures.** A first implementation that reports
-anything else is wrong about the data or wrong about year precision — see below. That makes
-this an unusually good first crate: it has real input and a known-correct answer to test
-against.
+```
+mise exec -- cargo run --manifest-path crates/Cargo.toml --bin succession-audit -- .yidam/corpus
+```
 
-`office/mayor-of-lima` still has no tenures, so the calculator should be exercised against
-both and must handle an office with an empty line without treating it as a defect.
+Current result:
+
+```
+office/mayor-of-lima.yml: no tenure recorded — 1 seat(s)
+office/allen-county-sheriff.yml: 39 tenure(s), 1831–present, 1 seat(s)
+  clean — no gaps, no overlaps
+```
+
+The expected result was known before it ran, because the succession was checked by hand when
+the roster was extracted: no gaps and no true overlaps across all 39 tenures. `tests/corpus.rs`
+pins it, so an edit that breaks the line fails there rather than going unnoticed.
+
+The audit is a pure function over terms and a seat count; `load` does the file reading. An
+office with no tenures — `mayor-of-lima` — is reported as a state and not as a defect.
 
 **Design notes for whoever writes it.**
 - Read `seats`. A three-member board of county commissioners with staggered terms produces
