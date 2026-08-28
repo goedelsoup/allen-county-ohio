@@ -6,17 +6,28 @@ description: |
   and serves process in addition to policing the unincorporated area.
 
   The office is single-seat, which matters to
-  [succession-audit](../../skills/succession-audit.md): overlapping tenures on a single-seat
-  office are a defect, where on a multi-seat board they are normal.
+  [succession-audit](../../skills/succession-audit.md): an overlap on a single-seat office is
+  a defect, where on a multi-seat board it is normal.
 
-  **No holder of this office is recorded in the corpus.** See
-  [`../../decisions/seed-scope.yml`](../../decisions/seed-scope.yml) — the line of sheriffs
-  was not sourced, so the [tenure](../tenure/) class is empty and this office has nothing
-  pointing at it.
+  **Its line of holders is complete.** Thirty-nine tenures run from Henry Lippencott in 1831
+  to the present holder, with every term's end year equal to the next term's start year and no
+  holder recorded twice in succession. [verified] —
+  [Allen County Sheriff's Office past-sheriffs roster](../../catalog/acso-past-sheriffs.md);
+  the continuity was checked across all thirty-nine entries rather than assumed.
+
+  Two features of the line are worth knowing before computing on it. John Keller held the
+  office in 1835–1839 and again in 1843–1845, so the corpus carries one person and two
+  tenures with `term_number` set. [verified] And the roster's ranges are year-only, so
+  consecutive tenures share a boundary year; read as day-precision intervals every adjacent
+  pair overlaps, and none of those overlaps is real.
+
+  Lippencott's 1831 start is the earliest dated act of county government in this corpus, and
+  bears on [when the county's government was organized](../question/when-allen-county-was-organized.yml).
 properties:
   office_type: elected
   selection_method: countywide election
   seats: "1"
+  established: "1831"
 links:
   - target: ../jurisdiction/allen-county-government.yml
     relationship: established-within
