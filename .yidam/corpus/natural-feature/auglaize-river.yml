@@ -2,7 +2,9 @@ class: natural-feature
 label: Auglaize River
 description: |
   The river that collects Allen County's drainage and carries it north to the Maumee at
-  Defiance. [inference] It gives its name to
+  Defiance. [inference] It rises at 40.6669957, -83.8938286 and discharges at 41.2875489,
+  -84.3557802 in Defiance County. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1065901. It gives its name to
   Auglaize Township in the county's south — one of the twelve
   townships recorded in the [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md).
   [verified]
@@ -12,11 +14,19 @@ description: |
   single fact organizes a great deal: the county's swamp history, its canal, and the basin
   its water quality is accounted for in are all consequences of being on the Lake Erie side
   of the divide. [inference]
+
+  Its source coordinate lies inside the box the county's own GNIS features bound, in the
+  southeast, which would make Allen County not merely drained by this river but the ground it
+  rises on — a stronger claim than the one above and not the same one. [open] A box is not a
+  boundary. See
+  [where the Auglaize rises](../question/where-the-auglaize-rises.yml).
 properties:
   feature_type: river
-  mouth: Joins the Maumee River at Defiance, Ohio. [inference]
+  gnis_id: "1065901"
+  mouth: 41.2875489, -84.3557802, in Defiance County. Joins the Maumee River. [inference]
+  source: 40.6669957, -83.8938286
 links:
-  - target: ../natural-feature/maumee-river-basin.yml
+  - target: ../natural-feature/maumee-river.yml
     relationship: flows-into
   - target: ../place/allen-county.yml
     relationship: traverses
