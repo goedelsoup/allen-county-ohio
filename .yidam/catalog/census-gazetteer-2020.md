@@ -27,9 +27,11 @@ used-by:
   - ../corpus/place/american-township.yml
   - ../corpus/place/bluffton.yml
   - ../corpus/place/delphos.yml
+  - ../corpus/place/fort-shawnee.yml
   - ../corpus/place/lima.yml
   - ../corpus/place/shawnee-township.yml
   - ../corpus/place/sugar-creek-township.yml
+  - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
 ---
 
 Tab-delimited files published by the Census Bureau's Geography Division, one row per

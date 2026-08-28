@@ -1,0 +1,26 @@
+class: measure
+label: Lima population, 2010 census
+description: |
+  The April 1, 2010 decennial census count for Lima city. [verified] —
+  [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md),
+  sub-county file, field `CENSUS2010POP`.
+
+  This figure sits in the middle of the decade the corpus can test the concentration claim
+  over. Between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — the county
+  outside every incorporated place — fell 1.5%, from 50,809 to 50,048. [verified] — same
+  source. Lima therefore declined about 2.5 times as fast as the rest of the county.
+  [inference] — ratio computed here.
+properties:
+  parameter: total resident population
+  value: "38771"
+  unit: persons
+  as_of: "2010-04-01"
+  method: |
+    Decennial enumeration. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

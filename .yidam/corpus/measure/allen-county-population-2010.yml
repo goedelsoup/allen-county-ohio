@@ -1,0 +1,23 @@
+class: measure
+label: Allen County population, 2010 census
+description: |
+  The April 1, 2010 decennial census count for Allen County. [verified] —
+  [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md),
+  field `CENSUS2010POP`.
+
+  The same value appears in the Vintage 2020 county file, a separate release built for a
+  different purpose. [verified] Two files agreeing on a census count is weak confirmation —
+  they rest on the same enumeration — but a disagreement would have been strong evidence of a
+  transcription error, and there was none.
+properties:
+  parameter: total resident population
+  value: "106331"
+  unit: persons
+  as_of: "2010-04-01"
+  method: |
+    Decennial enumeration. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

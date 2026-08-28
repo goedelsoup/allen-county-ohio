@@ -24,6 +24,7 @@ used-by:
   - ../corpus/place/bluffton.yml
   - ../corpus/place/delphos.yml
   - ../corpus/place/sugar-creek-township.yml
+  - ../corpus/question/pre-1970-population-series.yml
 ---
 
 Comma-delimited files from the Census Bureau's Population Estimates Program. The county file

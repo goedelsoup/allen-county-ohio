@@ -1,0 +1,34 @@
+class: place
+label: Fort Shawnee
+description: |
+  A community of 9.51 square miles south of Lima, internal point 40.681287, -84.149835.
+  [verified] — [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), where it is
+  listed as `Fort Shawnee CDP`.
+
+  It was an incorporated village through at least 2010: the intercensal file lists
+  `Fort Shawnee village` with 3,866 at the 2000 base and 3,726 at the 2010 census. [verified]
+  — [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md).
+  In the 2020 geography it is a census designated place, and the Vintage 2024 sub-county file
+  does not list it at all. [verified]
+
+  That change of status is [an open question](../question/what-happened-to-the-village-of-fort-shawnee.yml),
+  and it is the reason this node exists. The place is the ground and the name; whether the
+  *corporation* still exists is a separate matter, and the corpus can hold the first while
+  leaving the second unanswered precisely because the two are different classes.
+
+  It lies within [Shawnee Township](shawnee-township.yml), whose 28.97 square miles contain
+  it. [inference] — from the two internal points and areas; not checked against a boundary file.
+properties:
+  place_type: unincorporated community
+  gnis_id: "02745893"
+  geoid: "3927944"
+  centroid: "40.681287, -84.149835"
+  area_sq_mi: "9.51 land (2020)"
+  former_names: |
+    Listed as "Fort Shawnee village" in Census files through the 2010 census, and as
+    "Fort Shawnee CDP" in the 2020 geography. [verified]
+links:
+  - target: ../place/shawnee-township.yml
+    relationship: within
+  - target: ../place.ont.yml
+    relationship: instance-of
