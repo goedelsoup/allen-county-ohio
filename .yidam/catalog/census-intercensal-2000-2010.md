@@ -14,7 +14,15 @@ location:
   - kind: url
     value: https://www2.census.gov/programs-surveys/popest/datasets/2000-2010/intercensal/cities/sub-est00int.csv
     description: sub-county totals — places and minor civil divisions
-used-by: []
+used-by:
+  - ../corpus/measure/allen-county-population-2000.yml
+  - ../corpus/measure/allen-county-population-2010.yml
+  - ../corpus/measure/lima-population-2000.yml
+  - ../corpus/measure/lima-population-2010.yml
+  - ../corpus/period/deindustrialization.yml
+  - ../corpus/place/fort-shawnee.yml
+  - ../corpus/question/pre-1970-population-series.yml
+  - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
 ---
 
 Intercensal estimates are revised *after* the closing census is taken, so the series is fitted
