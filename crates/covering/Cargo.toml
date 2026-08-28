@@ -1,0 +1,23 @@
+[package]
+name = "covering"
+version = "0.1.0"
+description = "Every jurisdiction and division covering a place, and what the corpus dates"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# One space before every `=`, as in `succession/Cargo.toml`, and for the same reason:
+# `yidam crates-index` reads this file line-wise and renders an aligned `description  =`
+# as an em dash. See `.yidam/decisions/upstream-findings.yml`.
+
+[lib]
+name = "covering"
+path = "src/lib.rs"
+
+[[bin]]
+name = "jurisdiction-at"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_yaml = { workspace = true }

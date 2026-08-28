@@ -9,7 +9,9 @@ description: |
   rows record it as `Delphos city (pt.)` for exactly that reason: the 3,941 counted there in
   the 2020 estimates base is the Allen County portion, not the city. [verified] —
   [Census Population Estimates](../../catalog/census-popest-2024.md). Any figure for Delphos
-  taken from an Allen County table and reported as the city's population understates it.
+  taken from an Allen County table and reported as the city's population understates it. Its
+  edge to the county is `partially-within` for the same reason, matching the qualification
+  [the Village of Bluffton](../jurisdiction/village-of-bluffton.yml) already carries.
 
   The city grew as a port on the Miami and Erie Canal, which is why it sits on the county
   edge rather than on any natural centre. [inference] See
@@ -22,6 +24,6 @@ properties:
   area_sq_mi: "3.322 land, 0.045 water (2020) — whole city, both counties"
 links:
   - target: ../place/allen-county.yml
-    relationship: within
+    relationship: partially-within
   - target: ../place.ont.yml
     relationship: instance-of
