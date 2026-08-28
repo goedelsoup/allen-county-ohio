@@ -1,0 +1,29 @@
+class: measure
+label: Ohio House District 4 land area, 2020 geography
+description: |
+  Land area of [Ohio House District 4](../division/ohio-house-district-4-2020.yml) in the 2020
+  geography. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), state legislative lower
+  chamber file.
+
+  It is identical to
+  [Allen County's land area](allen-county-land-area-2020.yml) — the same 402.545, from the same
+  program, because the district and the county are the same polygon. Two measure nodes carrying
+  one number is correct here rather than duplicative: they describe different subjects that
+  happen to coincide, and if the next Ohio map splits the county they will diverge without
+  either node being rewritten.
+
+  This is the corpus's first measure describing a division rather than a place, jurisdiction or
+  organization — the edge type approved at genesis that had nothing to land on until now.
+properties:
+  parameter: land area
+  value: "402.545"
+  unit: square miles
+  as_of: "2020"
+  method: |
+    Computed by the Census Bureau from the 2020 TIGER geography. [verified]
+links:
+  - target: ../division/ohio-house-district-4-2020.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -1,0 +1,28 @@
+class: jurisdiction
+label: Bluffton Exempted Village School District
+description: |
+  A unified school district serving the county's north, covering 52.909 square miles with an internal point
+  at 40.865493, -83.95681. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district
+  file. It serves grades PK–12. [verified] — same record.
+
+  School districts are jurisdictions rather than divisions in this ontology because they hold
+  governmental authority: an Ohio school district has an elected board, levies taxes, and its
+  boundary is not drawn to report or elect anything but to govern. That is the whole test the
+  two classes are separated on.
+
+  Its boundary does not follow the municipal or township lines around it. [inference] — from
+  the area and internal point alone; the boundary itself has not been compared against a
+  place. Twelve unified districts touch Allen County in total, three of them centred in
+  neighbouring counties and reaching in by a handful of blocks. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904521"
+links:
+  - target: ../place/bluffton.yml
+    relationship: serves
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: territory-within
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

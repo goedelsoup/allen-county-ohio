@@ -1,0 +1,30 @@
+class: division
+label: Ohio's 4th congressional district (2020 geography)
+description: |
+  The United States congressional district covering Allen County at the 2020 census. All 3,552
+  of the county's census blocks fall in it. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md). It runs
+  to 4,665.374 square miles of land with an internal point at 40.387175, -83.935703.
+  [verified] — [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md).
+
+  **This is the map in force through the 2022 election, not the map in force now.** Ohio
+  redistricted after the 2020 census, and no Block Assignment File exists for any later year —
+  `baf2022`, `baf2024`, `baf2025` and `baf2026` all return 404, so the county-to-district
+  relationship that this node rests on cannot be recomputed for the current map from the same
+  source. The corpus therefore holds the 2020 assignment as a dated fact and does not claim it
+  is current. See
+  [which congressional district Allen County is in now](../question/allen-county-current-congressional-district.yml).
+
+  `effective_to` is absent because the corpus does not know the date the map was superseded,
+  not because the district still stands as drawn. [open]
+properties:
+  division_type: congressional district
+  identifier: "3904"
+  effective_from: "2020"
+  drawn_by: State of Ohio
+  area_sq_mi: "4665.374 land, 47.235 water (2020 geography)"
+links:
+  - target: ../place/allen-county.yml
+    relationship: covers
+  - target: ../division.ont.yml
+    relationship: instance-of

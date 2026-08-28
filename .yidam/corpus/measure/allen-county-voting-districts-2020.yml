@@ -1,0 +1,30 @@
+class: measure
+label: Allen County voting districts, 2020
+description: |
+  The number of distinct voting districts into which Allen County's 3,552 census blocks are
+  divided in the 2020 geography. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md), counted
+  over every block whose GEOID begins 39003.
+
+  This is the precinct grain the [division](../division/) class exists for, and the corpus
+  holds the count without holding the districts. The assignment files give codes and no names —
+  a voting district here is `002AFJ` — and 88 nodes labelled with unreadable codes would
+  satisfy a node count while telling nobody anything. The names and the returns are the Ohio
+  Secretary of State's, which blocks automated clients.
+
+  So the figure is recorded and the nodes are not, and the gap is a naming gap rather than a
+  boundary gap. [open]
+properties:
+  parameter: voting districts
+  value: "88"
+  unit: districts
+  as_of: "2020"
+  method: |
+    Counted by this corpus as the distinct values in the VTD assignment file over the 3,552
+    blocks whose GEOID begins 39003. The count is derived; the assignments are published.
+    [verified]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of
