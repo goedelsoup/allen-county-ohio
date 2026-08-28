@@ -25,6 +25,14 @@ properties:
   - name: mouth
     type: text
     description: Where a stream discharges, and into what.
+  - name: source
+    type: text
+    description: |
+      Where a stream rises. Recorded separately from mouth because a stream has two ends and
+      the authority gives both: GNIS carries a primary coordinate and a source coordinate for
+      every stream in Ohio. Coordinate identity between one feature's source and another's
+      mouth is what establishes a confluence, so a class that held only the mouth could not
+      express the relationship its own `flows-into` edge asserts.
 edges:
   - relationship: flows-into
     target: natural-feature
