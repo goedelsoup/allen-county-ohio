@@ -16,8 +16,10 @@ Sorted by: type, then slug.
 -->
 | Entry | Type | Description | Obtained | Nodes | Elsewhere |
 |---|---|---|---|---|---|
-| [census-gazetteer-2020.md](census-gazetteer-2020.md) | dataset | The Census Bureau's published gazetteer for the 2020 geographies — land and water area, internal-point coordinates, GEOID and ANSI codes for counties, county subdivisions, incorporated places and census tracts. | yes | 11 | 0 |
-| [census-popest-2024.md](census-popest-2024.md) | dataset | The Census Bureau's annual population estimates for counties and sub-county units, Vintage 2024 — an April 2020 estimates base plus July 1 estimates for 2020 through 2024. | yes | 9 | 0 |
+| [census-county-estimates-1970s.md](census-county-estimates-1970s.md) | dataset | A 1982 Census Bureau publication of county population for the 1970s, whose first column is the 1970 decennial census count. | yes | 2 | 0 |
+| [census-gazetteer-2020.md](census-gazetteer-2020.md) | dataset | The Census Bureau's published gazetteer for the 2020 geographies — land and water area, internal-point coordinates, GEOID and ANSI codes for counties, county subdivisions, incorporated places and census tracts. | yes | 13 | 0 |
+| [census-intercensal-2000-2010.md](census-intercensal-2000-2010.md) | dataset | The Census Bureau's intercensal series bridging the 2000 and 2010 censuses, at county and sub-county grain — carrying the 2000 estimates base and the 2010 census count as anchors. | yes | 8 | 0 |
+| [census-popest-2024.md](census-popest-2024.md) | dataset | The Census Bureau's annual population estimates for counties and sub-county units, Vintage 2024 — an April 2020 estimates base plus July 1 estimates for 2020 through 2024. | yes | 10 | 0 |
 
 **Nodes** counts corpus instances that link here — the number every gate reads, and what `catalog-uncited` means by *no corpus node draws on this source*. **Elsewhere** counts other files under `.yidam/corpus/` that link here: class definitions and README prose. They are kept apart rather than summed, because a claim resting on a source and a page linking to one are different things.
 <!-- /REGEN -->

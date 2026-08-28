@@ -33,11 +33,16 @@ Sorted by: kind, then alphabetically.
 | [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 0v / 1i / 0o | 19 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 21 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 22 |
+| [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 27 |
+| [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 21 |
+| [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 23 |
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 2v / 0i / 0o | 23 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 24 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 33 |
+| [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 2v / 1i / 0o | 29 |
+| [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 26 |
 | [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 3v / 2i / 0o | 34 |
-| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 2i / 0o | 32 |
+| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 36 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 1v / 3i / 0o | 24 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 0v / 2i / 1o | 23 |
 | [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 0v / 1i / 1o | 24 |
@@ -48,7 +53,7 @@ Sorted by: kind, then alphabetically.
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 23 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 24 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 0v / 3i / 2o | 30 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 2 | 0v / 4i / 2o | 31 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 9 | 2v / 3i / 3o | 66 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 0v / 4i / 2o | 31 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 0v / 2i / 1o | 22 |
 | [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 21 |
@@ -57,10 +62,13 @@ Sorted by: kind, then alphabetically.
 | [american-township.yml](place/american-township.yml) | place | American Township | 2 | 2v / 1i / 1o | 28 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 27 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 27 |
+| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 4v / 1i / 0o | 34 |
 | [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 30 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 1v / 2i / 0o | 24 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 25 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
+| [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 4 | 1v / 0i / 2o | 48 |
+| [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 0v / 2i / 1o | 30 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 0v / 1i / 1o | 25 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 0v / 3i / 1o | 27 |
