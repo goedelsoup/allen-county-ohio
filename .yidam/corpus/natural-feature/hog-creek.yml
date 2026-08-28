@@ -1,0 +1,34 @@
+class: natural-feature
+label: Hog Creek
+description: |
+  The stream that, joining Little Hog Creek, forms the Ottawa River. Its mouth is at
+  40.7708852, -83.9557761 and it rises at 40.7139417, -83.7221552 in the county's east.
+  [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1066038.
+
+  That mouth coordinate is the whole point of this node. It is identical, to seven decimal
+  places, to the source coordinate GNIS gives for
+  [the Ottawa River](ottawa-river.yml) and to the mouth GNIS gives for
+  [Little Hog Creek](little-hog-creek.yml). Three records written by one authority place the
+  same point at the end of two creeks and the head of a river, which is what a confluence
+  looks like in a names file. [verified] — same source. Every `flows-into` edge in this corpus
+  before this one was asserted from general knowledge.
+
+  Hog Creek is also the older name of the whole watercourse, and the corpus's
+  [Ottawa River](ottawa-river.yml) node records the name surviving in local usage. GNIS is
+  consistent with that and does not establish it: what the file shows is that the name attaches
+  today to the upper tributary only. [inference]
+
+  Ohio has a second Hog Creek, in Champaign County — feature 1041646, and unrelated. [verified]
+  — same source.
+properties:
+  feature_type: creek
+  gnis_id: "1066038"
+  mouth: 40.7708852, -83.9557761 — the head of the Ottawa River.
+  source: 40.7139417, -83.7221552
+links:
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: flows-into
+  - target: ../place/allen-county.yml
+    relationship: traverses
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of

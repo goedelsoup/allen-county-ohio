@@ -31,6 +31,12 @@ properties:
   - name: nrhp_id
     type: string
     description: National Register of Historic Places reference number, where listed.
+  - name: gnis_id
+    type: string
+    description: |
+      USGS GNIS feature ID, where the work is named in the gazetteer. GNIS has no `Building`
+      class, so this reaches only built works it names under another one — Canal, Military,
+      Reservoir, Dam. Most sites will not have it.
 edges:
   - relationship: located-in
     target: place

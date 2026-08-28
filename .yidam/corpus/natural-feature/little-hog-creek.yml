@@ -1,0 +1,29 @@
+class: natural-feature
+label: Little Hog Creek
+description: |
+  The second of the two creeks that meet to form the Ottawa River. Its mouth is at
+  40.7708852, -83.9557761 and it rises at 40.722274, -83.8979957. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1042627.
+
+  Its mouth coordinate is byte-identical to [Hog Creek](hog-creek.yml)'s mouth and to
+  [the Ottawa River](ottawa-river.yml)'s source. [verified] — same source.
+
+  [open] Whether this creek joins Hog Creek just above the confluence or meets it at the same
+  point cannot be told from GNIS, which records one coordinate for both mouths and so cannot
+  distinguish the two arrangements. The `flows-into` edge here therefore names the Ottawa
+  River rather than Hog Creek: that the water ends up in the Ottawa is what the coordinates
+  establish, and which channel it takes to get there is not. Settling it needs the flow
+  network — the [nhd](../../../crates/nhd/) connector's `downstream_comid`, which is exactly
+  the field for this question.
+properties:
+  feature_type: creek
+  gnis_id: "1042627"
+  mouth: 40.7708852, -83.9557761 — the head of the Ottawa River, shared with Hog Creek.
+  source: 40.722274, -83.8979957
+links:
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: flows-into
+  - target: ../place/allen-county.yml
+    relationship: traverses
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of
