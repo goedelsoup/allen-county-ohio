@@ -11,7 +11,11 @@ tenure node holds the pair plus its own dates, how it began, and how it ended â€
 ended is often the most historically interesting field, because resignations, deaths in
 office and removals are where the record gets interesting.
 
-**This class holds no instances at genesis.** See
-[`../../decisions/seed-scope.yml`](../../decisions/seed-scope.yml).
+**This class was empty at genesis** â€” see
+[`../../decisions/seed-scope.yml`](../../decisions/seed-scope.yml), which records why nothing
+was invented to fill it. It now holds the complete line of Allen County sheriffs, 39 tenures
+from 1831 to the present, extracted from the office's own roster. Every one of them leaves
+`how_began` and `how_ended` absent, because the roster gives year ranges and names and nothing
+else.
 
 Class definition: [`../tenure.ont.yml`](../tenure.ont.yml)
