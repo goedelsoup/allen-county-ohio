@@ -1,0 +1,75 @@
+id: gaps-after-two-phases
+summary: >-
+  Where the corpus stands after the long-decline and officeholders phases — which genesis gaps
+  closed, which remain, and what the next phase should take.
+supersedes: seed-scope
+context: |
+  This record does not amend [seed-scope](seed-scope.yml). That file is an accurate account of
+  what was true at the genesis commit and stays as written; decision records are permanent and
+  a superseded one is referenced rather than edited. What follows is what changed.
+
+  Two phases have settled onto main since genesis:
+
+    phase/the-long-decline    52 nodes, 4 sources — the population series
+    phase/the-officeholders  130 nodes, 5 sources — the sheriff roster
+
+  Corpus state: 130 nodes, 5 catalog sources, 139 [verified] / 122 [inference] / 46 [open]
+  claims, against 44 nodes, 2 sources and 30 [verified] at genesis.
+decision: |
+  **Closed since genesis.**
+
+  - `tenure` is no longer empty. It holds 39 nodes, the complete line of Allen County sheriffs
+    from 1831 to the present, continuous with no gaps and no true overlaps. The class the
+    ontology was built around has been tested against a real roster and held: John Keller's two
+    non-consecutive terms are the case that no other encoding expresses.
+  - `succession-audit` has input and a known-correct expected result. It is now writable and is
+    still the right first crate.
+  - The deindustrialization claim is evidenced rather than asserted: the county fell from
+    111,144 in 1970 to 100,866 in 2024, and over 2000–2010 Lima fell about two and a half times
+    as fast as the county outside its incorporated places.
+  - One place the genesis pass missed, Fort Shawnee, is seeded.
+
+  **Still open, in the order they would pay.**
+
+  1. `division` holds one instance, a census tract. No ward, precinct or school district is
+     seeded, so two implied edges approved at genesis — `measure describes division` and
+     `division covers place` — remain unwritten, `sos-elections` has nothing to attach to, and
+     the corpus cannot answer any question at electoral grain. This is now the largest
+     structural gap.
+  2. No annexation `event` exists, so `boundary-comparability` still returns "no intervening
+     events found" for every comparison — which is not the same claim as "no annexations
+     occurred", and every Lima population comparison in the corpus rests on the difference.
+  3. The pre-1970 county series and Lima's peak are unknown; both are recorded as
+     [pre-1970-population-series](../corpus/question/pre-1970-population-series.yml).
+  4. No `site` carries coordinates, so `proximity` — the calculator that justified vendoring
+     `geodesics` — still cannot run on the interesting case.
+  5. `office/mayor-of-lima` has no tenures. Only one of the two seeded offices has a line.
+
+  **Nothing was fabricated in either phase.** Specifically: no `how_began` or `how_ended` on any
+  of 39 tenures, though two transitions have obvious readings; no jurisdiction node for Fort
+  Shawnee in either direction; no birth or death date for any sheriff; and
+  [when-allen-county-was-organized](../corpus/question/when-allen-county-was-organized.yml) was
+  narrowed by the 1831 roster entry and deliberately not closed by it.
+rationale: |
+  Why `division` is named as the next priority rather than the pre-1970 series, which is the
+  more interesting question.
+
+  The pre-1970 gap is a gap in *depth* on an axis the corpus already has. It would improve
+  claims that are already supported and would sharpen one period node's bounds. The `division`
+  gap is a gap in *kind*: an entire class, chosen deliberately at genesis when the finest
+  geospatial grain was selected, has one instance and no edges landing on it. Two approved
+  edges have nowhere to go and one approved connector has nothing to feed. Until it is filled,
+  a quarter of the reason the ontology has four spatial classes instead of two is unexercised —
+  and an unexercised class is exactly the thing that turns out to have been designed wrong.
+
+  The officeholders phase is the argument for this ordering. `tenure` was also an unexercised
+  class defended on reasoning alone, and the first real roster both vindicated the design and
+  surfaced two things the design had not anticipated — Keller's re-election needing
+  `term_number`, and year precision making 38 adjacent pairs look like overlaps. Neither was
+  visible from the ontology. `division` is in the same position now.
+
+  Why `missing-property` is not on the list. It stands at 377 findings, up from 108, almost
+  entirely because 77 new person and tenure nodes carry two or three properties each against
+  classes that declare five or six. Every one of them names a field a source could fill and
+  none was invented, which is the corpus behaving correctly. Trimming the class declarations to
+  reduce the count would delete the roadmap in order to improve the metric.
