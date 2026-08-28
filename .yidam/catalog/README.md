@@ -16,6 +16,7 @@ Sorted by: type, then slug.
 -->
 | Entry | Type | Description | Obtained | Nodes | Elsewhere |
 |---|---|---|---|---|---|
+| [acso-past-sheriffs.md](acso-past-sheriffs.md) | other | The Allen County Sheriff's Office's own published roster of the county's sheriffs, from Henry Lippencott in 1831 to the present holder. | yes | 80 | 0 |
 | [census-county-estimates-1970s.md](census-county-estimates-1970s.md) | dataset | A 1982 Census Bureau publication of county population for the 1970s, whose first column is the 1970 decennial census count. | yes | 2 | 0 |
 | [census-gazetteer-2020.md](census-gazetteer-2020.md) | dataset | The Census Bureau's published gazetteer for the 2020 geographies — land and water area, internal-point coordinates, GEOID and ANSI codes for counties, county subdivisions, incorporated places and census tracts. | yes | 13 | 0 |
 | [census-intercensal-2000-2010.md](census-intercensal-2000-2010.md) | dataset | The Census Bureau's intercensal series bridging the 2000 and 2010 censuses, at county and sub-county grain — carrying the 2000 estimates base and the 2010 census count as anchors. | yes | 8 | 0 |
