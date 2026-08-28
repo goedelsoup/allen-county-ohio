@@ -7,18 +7,18 @@ description: |
   `United States Army Joint Systems Manufacturing Center Lima`, feature class Military.
   [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 2512481.
 
-  **This node said "northern edge" and the coordinate says south.** The plant is 2.84 miles
-  south and 1.35 miles west of Lima's internal point at 40.740679, -84.112091, and 1.40 miles
-  from [Fort Shawnee](../place/fort-shawnee.yml)'s at 40.681287, -84.149835. [inference] — the
-  coordinates are verified; the arithmetic between them is this corpus's. Lima covers 13.617
-  square miles and Fort Shawnee 9.51, so neither is three miles across, and the plant is
-  further from Lima's centre than Lima is wide.
+  **It is not in Lima.** The plant stands in [Shawnee Township](../place/shawnee-township.yml),
+  GEOID `3900371955`, and no incorporated place and no census designated place contains it — not
+  Lima, and not the [Fort Shawnee](../place/fort-shawnee.yml) CDP a mile and a half away.
+  [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon against the
+  2020 county-subdivision, incorporated-place and CDP layers. The `located-in` edge points at
+  the township accordingly; it named Lima from genesis until this was checked.
 
-  [open] Which place actually contains it is therefore not settled, and the `located-in` edge
-  to Lima stands unchanged rather than being swung to Fort Shawnee on the strength of a
-  distance comparison. That is the same question
-  [American Township](../place/american-township.yml) already holds open about this plant and
-  the refinery, and it needs a municipal boundary, not another internal point.
+  Two claims here were wrong in the same direction. This node said the plant is on Lima's
+  **northern** edge and it is 2.84 miles south of Lima's internal point, in another township
+  entirely; and [American Township](../place/american-township.yml) said the plant stands on or
+  near *its* boundary with Lima, which wraps Lima's west and north. The plant is south of the
+  city and on neither. [verified] — same source.
 
   It is government-owned and contractor-operated, which is why its `operated-by` edges point
   at both a jurisdiction and a company in principle; only the ownership side is asserted here,
@@ -38,7 +38,7 @@ properties:
   gnis_id: "2512481"
   coordinates: "40.6994478, -84.137903"
 links:
-  - target: ../place/lima.yml
+  - target: ../place/shawnee-township.yml
     relationship: located-in
   - target: ../site.ont.yml
     relationship: instance-of

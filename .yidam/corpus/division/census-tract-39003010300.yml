@@ -6,21 +6,20 @@ description: |
   [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), national tract file.
   Allen County holds 35 tracts in the 2020 geography. [verified] — same source.
 
-  This node is here to make the division/place distinction concrete rather than theoretical.
-  Its internal point lies roughly three quarters of a mile from that of
-  [Sugar Creek Township](../place/sugar-creek-township.yml) — 40.824171, -84.173843 — and its
-  land area is about 4.8 square miles larger than the township's 24.094. [inference] — both
-  figures are verified; the comparison between them is this corpus's, computed from the two
-  internal points and areas.
+  **It is 98.5% of Sugar Creek Township plus a fifth of American Township.** Of its 107 blocks,
+  90 fall in [Sugar Creek](../place/sugar-creek-township.yml) — 82.1% of the tract's land, 1,192
+  people — and 17 in [American](../place/american-township.yml) — 17.9%, 408 people. [verified]
+  — [TIGERweb](../../catalog/tigerweb-census2020.md), block composition; the block areas sum to
+  the tract's own `AREALAND` exactly, which is the check that they are all of it.
 
-  So the tract and the township very nearly coincide and are certainly not the same ground.
-  Any figure published for this tract that is read as a figure for Sugar Creek Township is
-  wrong by whatever lies in that 4.8 square miles, and nothing in the shape of the data
-  announces the difference.
+  It holds all but 0.372 square miles of Sugar Creek and adds 5.175 of American, so a figure
+  published for this tract and read as Sugar Creek Township's **overstates it by about a
+  quarter** — 408 of 1,600 residents live in the other township. [inference]
 
-  [open] Which townships this tract actually covers has not been established. Comparing two
-  internal points bounds the answer loosely and does not give it — that needs a boundary file,
-  which is what the `nhd`-adjacent TIGER/Line geometry would supply.
+  Before a boundary source existed the corpus could only compare internal points three quarters
+  of a mile apart and infer the tract was "about 4.8 square miles larger". The arithmetic was
+  right and the reading was wrong: that phrasing suggests Sugar Creek Township with a margin,
+  and a fifth of a second township is in it.
 properties:
   division_type: census tract
   identifier: "39003010300"
@@ -28,6 +27,10 @@ properties:
   drawn_by: US Census Bureau
   area_sq_mi: "28.896 land, 0.118 water (2020)"
 links:
+  - target: ../place/sugar-creek-township.yml
+    relationship: partially-covers
+  - target: ../place/american-township.yml
+    relationship: partially-covers
   - target: ../jurisdiction/allen-county-government.yml
     relationship: nested-in
   - target: ../division.ont.yml
