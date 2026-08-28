@@ -1,0 +1,27 @@
+class: measure
+label: Allen County population, 1970 census
+description: |
+  The 1970 decennial census count for Allen County. [verified] —
+  [Preliminary Estimates of the Intercensal Population of Counties, 1970–1979](../../catalog/census-county-estimates-1970s.md),
+  first block, column headed `Census 1970`, FIPS 39003.
+
+  This is the earliest population figure in the corpus and the anchor the
+  [deindustrialization](../period/deindustrialization.yml) claim rests on. Against the
+  [2024 estimate](allen-county-population-2024.yml) of 100,866 the county has lost 10,278
+  people, or 9.2%, over 54 years. [inference] — arithmetic this corpus's; both figures verified.
+
+  The same file lists Allen Counties in Indiana, Kansas and Kentucky. The match here is on the
+  FIPS code, not the name.
+properties:
+  parameter: total resident population
+  value: "111144"
+  unit: persons
+  as_of: "1970"
+  method: |
+    Decennial enumeration, unrounded. The estimate columns in the same file are rounded to
+    hundreds; this column is not. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

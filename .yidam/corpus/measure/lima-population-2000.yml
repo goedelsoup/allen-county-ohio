@@ -1,0 +1,29 @@
+class: measure
+label: Lima population, 2000 estimates base
+description: |
+  The April 1, 2000 estimates base for Lima city. [verified] —
+  [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md),
+  sub-county file.
+
+  This is the earliest figure the corpus holds for Lima, and against the
+  [2024 estimate](lima-population-2024.yml) of 34,690 the city has lost 5,617 people, or
+  13.9%, over 24 years — twice the county's 7.0% over the same span. [inference] — arithmetic
+  this corpus's; all four figures verified.
+
+  Like every Census figure for Lima this counts the corporation's territory on the date, so
+  the comparison assumes the boundary did not move materially. The corpus holds no annexation
+  events, so that assumption is untested rather than confirmed.
+properties:
+  parameter: total resident population
+  value: "40307"
+  unit: persons
+  as_of: "2000-04-01"
+  method: |
+    Decennial enumeration as revised for the intercensal series. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of
