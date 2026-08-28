@@ -1,0 +1,24 @@
+class: natural-feature
+label: Auglaize River
+description: |
+  The river that collects Allen County's drainage and carries it north to the Maumee at
+  Defiance. [inference] It gives its name to
+  Auglaize Township in the county's south — one of the twelve
+  townships recorded in the [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md).
+  [verified]
+
+  Its significance to this corpus is directional. Allen County drains north to Lake Erie
+  rather than south to the Ohio, and the Auglaize is the channel by which it does so. That
+  single fact organizes a great deal: the county's swamp history, its canal, and the basin
+  its water quality is accounted for in are all consequences of being on the Lake Erie side
+  of the divide. [inference]
+properties:
+  feature_type: river
+  mouth: Joins the Maumee River at Defiance, Ohio. [inference]
+links:
+  - target: ../natural-feature/maumee-river-basin.yml
+    relationship: flows-into
+  - target: ../place/allen-county.yml
+    relationship: traverses
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of

@@ -1,0 +1,24 @@
+class: natural-feature
+label: Maumee River Basin
+description: |
+  The drainage basin that Allen County lies within — the largest watershed draining to the
+  Great Lakes, discharging to Lake Erie at Toledo. [inference]
+
+  This node is the outlet the county's whole surface-water system resolves to, and it is the
+  terminating node of any [watershed-trace](../../skills/watershed-trace.md) run from a
+  feature in this corpus. It is included at genesis for that reason: without it the trace
+  from the Ottawa River runs to the Auglaize and stops in mid-air, and the corpus cannot say
+  where its water goes.
+
+  [open] The Hydrologic Unit Code for the basin has not been recorded, and neither has the
+  question of whether any part of Allen County drains instead to the Ohio River. Western Ohio
+  carries the divide between the two, and the corpus asserts the Lake Erie side for this
+  county without having checked the southern townships. The National Hydrography Dataset
+  connector is the proposed way to settle both.
+properties:
+  feature_type: watershed
+links:
+  - target: ../place/allen-county.yml
+    relationship: traverses
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of

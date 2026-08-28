@@ -1,0 +1,31 @@
+class: period
+label: Period
+foundational_type:
+  ontology: ufo
+  type: event
+description: |
+  A named span the corpus interprets as a unit — the canal era, the oil boom,
+  deindustrialization. It shares UFO's event type with the class above and is nonetheless a
+  different thing: an event has a date and participants, while a period has bounds and a
+  character and is what other things are situated in. The distinction is not duration but
+  whether the node is a happening or an interpretation of a span, and it is the corpus that
+  authors the interpretation.
+edge_policy: characteristic
+properties:
+  - name: began
+    type: date
+    description: When the span opens, at the precision the corpus can defend.
+  - name: ended
+    type: date
+    description: When it closes; absent means the corpus treats it as ongoing.
+  - name: character
+    type: text
+    description: What makes this span a unit rather than an arbitrary interval.
+  - name: boundary_basis
+    type: text
+    description: What fixes the start and end dates, and how contested they are.
+edges:
+  - relationship: precedes
+    target: period
+    direction: out
+    description: The span that follows this one.

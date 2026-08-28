@@ -1,0 +1,477 @@
+# CI for a yidam-derived repository.
+#
+# Installed to `.github/workflows/ci.yml` at genesis, replacing the yidam
+# template's own workflow. Yidam's CI builds yidam (its harness and CLI, at
+# `yidam/tests/harness` and `yidam/cli`); those paths do not survive the
+# `vendor:` step, so inheriting that workflow gives you a green build
+# that compiles nothing.
+#
+# What runs here instead:
+#
+#   corpus    — always. The graph gate works from the genesis commit onward,
+#               before a single crate exists. This is the job that matters on
+#               day one and it is the one a derived repo most often lacks.
+#   crates    — only once crates/Cargo.toml exists.
+#   packages  — only once packages/pyproject.toml exists.
+#   web       — only once web/package.json exists.
+#
+# The conditional jobs are not scaffolding for later: they are how this file
+# stays correct on the day the domain computer appears, without anyone
+# remembering to come back and wire it.
+#
+# Keep this hermetic. Connectors reach the network; CI must not. Commit the
+# fixtures a test reads, so a publisher's outage cannot turn the build red.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+    # Almost nothing is ignored, and the reasoning is the comment that used to sit
+    # here: `.yidam/catalog/` is markdown and the corpus gate reads it, so a commit
+    # touching only catalog entries changes the gate's input, and a gate whose input
+    # can change without the gate running is one commit away from being wrong.
+    #
+    # That argument was right and was applied one directory too narrowly. `*.md` and
+    # `docs/**` were ignored, and both are gated inputs: the root README carries a
+    # REGEN block the `corpus` job below polices, and anything in `docs/` that
+    # publishes a figure about the corpus should be gated by a test (see the
+    # directory conventions). A commit touching only those ran no jobs at all —
+    # exactly the commits most likely to break those two gates. Found by audit in a
+    # derived repository. LICENSE is the only file no gate reads.
+    paths-ignore:
+      - 'LICENSE'
+  pull_request:
+    paths-ignore:
+      - 'LICENSE'
+  workflow_dispatch:
+
+# Cancel superseded runs on the same ref. Never cancel main — keep its history
+# green and its failures attributable.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  # ── Paths that may not sit in a public repository ──────────────────────────
+  #
+  # Opt-in. Absent `.yidam/private-paths`, this job passes immediately and costs
+  # a runner-second; it is wired in from genesis so that the day a repository
+  # grows material it does not want published, the rule is one file away rather
+  # than a workflow edit nobody remembers to make.
+  #
+  # Why it exists at all: a repository took on an advocacy layer holding worked
+  # lines of attack and material its own publication gate computes as `[open]`,
+  # which its governing resolution says goes NOWHERE. That the repository was
+  # private was an assumption — true, load-bearing, and unenforced. An assumption
+  # about access control that looks enforced and is not is worse than one
+  # everybody knows is manual.
+  #
+  # `.yidam/private-paths` is one path per line; `#` comments and blanks ignored.
+  # A directory holding only its own README (or .gitkeep placeholders) counts as
+  # empty, so the scaffold itself never trips this. A README deeper in the tree
+  # counts as material: it is a file somebody wrote.
+  #
+  # Reads the event payload, which the runner already has. No `gh api`, no
+  # network: CI is hermetic and stays so.
+  #
+  # WHAT THIS DOES NOT COVER. This is access control over material AT REST — can a
+  # stranger reach a file committed here. It says nothing about data LEAVING at
+  # runtime: a connector sends what it queries to its source, a deployed web shell
+  # sends every reader request to whoever hosts it, and a hosted encoder receives the
+  # text it is asked to embed. For a research corpus the queries are the research
+  # agenda, and no gate here looks at them. None can — an egress check would have to
+  # know every network call the domain computer makes, and this job is hermetic
+  # precisely so that it makes none.
+  #
+  # Named here so the job is not mistaken for complete, which is the same reasoning
+  # that made the manifest worth building: an assumption about access control that
+  # looks enforced and is not is worse than one everybody knows is manual. See the
+  # directory conventions, `.yidam/private-paths`, "What this does not cover".
+  privacy:
+    name: privacy (private paths stay private)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Listed paths may not sit in a public repository
+        env:
+          IS_PRIVATE: ${{ github.event.repository.private }}
+        run: |
+          set -euo pipefail
+          manifest=.yidam/private-paths
+          if [ ! -f "$manifest" ]; then
+            echo "no $manifest; nothing declared private."
+            exit 0
+          fi
+          # `find` per entry so a new subdirectory is covered without anyone
+          # remembering to add it.
+          content=""
+          while IFS= read -r line || [ -n "$line" ]; do
+            entry="${line%%#*}"
+            # Trim the ends only. Deleting every space would silently rewrite
+            # `my documents/` into a path that does not exist, and a path that
+            # does not exist is a path this job never looks at.
+            entry="$(printf '%s' "$entry" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+            [ -z "$entry" ] && continue
+            entry="${entry%/}"
+            [ -e "$entry" ] || continue
+            # The README exemption is the declared path's own README and no
+            # other: `-name` alone would excuse a README at any depth, and a
+            # README one directory down is as capable of holding material as
+            # any other file.
+            found=$(find "$entry" -type f ! -name .gitkeep ! -path "$entry/README.md" | sort)
+            [ -n "$found" ] && content="$content$found"$'\n'
+          done < "$manifest"
+          if [ -z "$content" ]; then
+            echo "declared paths hold no material; nothing to protect."
+            exit 0
+          fi
+          if [ "$IS_PRIVATE" = "true" ]; then
+            echo "repository is private; declared material is protected."
+            exit 0
+          fi
+          echo "::error::This repository is PUBLIC and holds material declared private in $manifest."
+          echo "Files:"
+          printf '%s' "$content" | sed 's/^/  /'
+          echo
+          echo "Either make the repository private again, or remove these files and"
+          echo "the entry in $manifest that covers them. Do not silence this job."
+          exit 1
+
+  detect:
+    name: detect layers
+    runs-on: ubuntu-latest
+    outputs:
+      crates: ${{ steps.check.outputs.crates }}
+      packages: ${{ steps.check.outputs.packages }}
+      web: ${{ steps.check.outputs.web }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: check
+        run: |
+          test -f crates/Cargo.toml     && echo "crates=true"   >> "$GITHUB_OUTPUT" || echo "crates=false"   >> "$GITHUB_OUTPUT"
+          test -f packages/pyproject.toml && echo "packages=true" >> "$GITHUB_OUTPUT" || echo "packages=false" >> "$GITHUB_OUTPUT"
+          test -f web/package.json      && echo "web=true"      >> "$GITHUB_OUTPUT" || echo "web=false"      >> "$GITHUB_OUTPUT"
+
+  corpus:
+    name: corpus (graph gate)
+    runs-on: ubuntu-latest
+    steps:
+      # Full history: the commit-vocabulary check needs origin/main to resolve a range
+      # against, and a depth-1 checkout does not have it.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Build the same yidam this repo was vendored from. `.yidam.toml` records the
+      # commit (see VERSIONING.md, Layer 1); pinning to it means the gate cannot
+      # drift from the prelude the corpus was written against. Re-pin with
+      # `mise run yidam-vendor-update`.
+      - name: Read the pinned yidam commit
+        id: pin
+        run: |
+          if [ ! -f .yidam.toml ]; then
+            echo "::error::.yidam.toml is missing — this repo has no recorded yidam provenance."
+            echo "::error::It was bootstrapped before the vendor step wrote one, or the file was deleted."
+            echo "::error::Recreate it with: mise run yidam-vendor-update"
+            exit 1
+          fi
+          commit=$(sed -n 's/^ *commit *= *"\(.*\)"/\1/p' .yidam.toml)
+          origin=$(sed -n 's/^ *origin *= *"\(.*\)"/\1/p' .yidam.toml)
+          if [ -z "$commit" ] || [ "$commit" = "unknown" ]; then
+            echo "::error::.yidam.toml records no resolvable commit (got '${commit:-empty}')."
+            echo "::error::Repair it with: mise run yidam-vendor-update"
+            exit 1
+          fi
+          # https:// so CI needs no deploy key; the repo is public.
+          origin=$(echo "$origin" | sed 's|^git@github.com:|https://github.com/|')
+          {
+            echo "source=$origin"
+            echo "commit=$commit"
+          } >> "$GITHUB_OUTPUT"
+
+      # ── Get the binary, without needing a compiler to do it ────────────────
+      #
+      # This job is a graph gate: pure Rust reading Markdown. Until this block
+      # existed it provisioned a Rust toolchain, cloned the yidam origin, and
+      # compiled the CLI — so every derived repository's CI depended on a
+      # toolchain for a job that never builds any of this repository's code.
+      #
+      # The order below is download, then cache, then compile. Each step is a
+      # fallback for the one above it, and the compile is permanent: a
+      # repository is entitled to pin a commit that was never released, and most
+      # commits are.
+
+      # A release is a tag; a pin is a commit. `.yidam.toml` records the commit
+      # and VERSIONING.md argues against a second version field — "a third thing
+      # to get out of step" — so the tag is resolved by asking the origin which
+      # `cli/v*` tag points AT this commit. `git ls-remote` needs no API token,
+      # no rate limit, and works against any git origin rather than GitHub's API.
+      #
+      # The awk below is character-for-character the resolver in
+      # `mise.yidam.toml`'s `yidam-build`, and a test asserts the two are
+      # identical. Two transcriptions each pinned only by itself is how one of
+      # them silently stops matching.
+      #
+      # Two traps, both silent, both already paid for once upstream:
+      #
+      #   1. `git tag -s` makes an ANNOTATED tag, whose `refs/tags/<x>` line
+      #      carries the sha of the tag OBJECT. The peeled `refs/tags/<x>^{}`
+      #      line carries the commit. Matching the bare line compares a commit
+      #      against a tag object and never matches.
+      #   2. The trailing `*` in the refspec is load-bearing. `git ls-remote`
+      #      filters BEFORE peeled refs are emitted, so a pattern naming one tag
+      #      exactly returns only its bare line — the tag object — and the
+      #      resolver can never find a release again.
+      #
+      # Neither failure is an error. Both look exactly like a pin with no
+      # release, forever.
+      - name: Resolve the pin to a release tag
+        id: release
+        run: |
+          set -eu
+          resolve_tag='
+            { ref = $2; sub(/^refs\/tags\//, "", ref)
+              if (ref ~ /\^\{\}$/) { sub(/\^\{\}$/, "", ref); sha[ref] = $1 }
+              else if (!(ref in sha)) sha[ref] = $1 }
+            END { for (t in sha) if (sha[t] == c) { print t; exit } }'
+          tag=$(git ls-remote --tags "${{ steps.pin.outputs.source }}" 'cli/v*' 2>/dev/null \
+                | awk -v c='${{ steps.pin.outputs.commit }}' "$resolve_tag" || true)
+          if [ -n "$tag" ]; then
+            echo "the pinned commit was released as $tag"
+          else
+            echo "no release is tagged at this pin; the source build will run"
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      # Runners here are x86_64 Linux. Named rather than derived from `uname`:
+      # if this job ever moves to a runner the release does not build for, the
+      # download fails loudly at a step that names the target rather than
+      # falling through to a compile nobody asked for.
+      #
+      # Verified before installing, or not installed. A checksum tool is present
+      # on every GitHub-hosted runner, so its absence means something is wrong
+      # with the image and the right response is the source build, not a
+      # skipped check.
+      #
+      # `continue-on-error` — a missing asset, a network blip, a platform the
+      # release skipped: none of them is a reason this repository cannot have
+      # its binary. Every one of them falls through to the compile below.
+      - name: Download the released binary
+        id: download
+        if: steps.release.outputs.tag != ''
+        continue-on-error: true
+        run: |
+          set -eu
+          tag='${{ steps.release.outputs.tag }}'
+          repo=$(echo '${{ steps.pin.outputs.source }}' | sed -e 's|\.git$||')
+          name="yidam-${tag#cli/v}-x86_64-unknown-linux-gnu"
+          url="$repo/releases/download/$tag/$name.tar.gz"
+          dl=$(mktemp -d)
+          curl -fsSL "$url"        -o "$dl/$name.tar.gz"
+          curl -fsSL "$url.sha256" -o "$dl/$name.tar.gz.sha256"
+          ( cd "$dl" && sha256sum -c "$name.tar.gz.sha256" )
+          tar -xzf "$dl/$name.tar.gz" -C "$dl"
+          mkdir -p "$HOME/.local/bin"
+          install -m 0755 "$dl/$name/yidam" "$HOME/.local/bin/yidam"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+
+      # ── Everything below is the fallback ───────────────────────────────────
+
+      # The binary is a pure function of the pinned commit, so cache it by that
+      # commit and skip the compile on every run but the first after a
+      # `yidam-vendor-update`. This mattered more before the download path
+      # existed and still matters: a repository pinned to an unreleased commit
+      # gets exactly one compile per pin rather than one per run.
+      #
+      # Keyed on the commit and not on Cargo.lock: the lock file being cached
+      # from lives in the cloned yidam tree, which does not exist yet at restore
+      # time. The pin is the stronger key anyway — one commit, one binary.
+      - name: Cache the compiled binary
+        id: yidam-cache
+        if: steps.download.outputs.ok != 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/bin/yidam
+          key: yidam-cli-${{ runner.os }}-${{ steps.pin.outputs.commit }}
+
+      # Conditional, and that is the point of this whole block. A derived
+      # repository with no `crates/` workspace of its own — which the `detect`
+      # job gates on separately — now provisions no Rust toolchain at all on the
+      # ordinary path.
+      - uses: dtolnay/rust-toolchain@stable
+        if: steps.download.outputs.ok != 'true' && steps.yidam-cache.outputs.cache-hit != 'true'
+
+      # The light `reports` build — no protoc, no fastembed, no lancedb. The
+      # graph gate needs none of them, and the heavy feature set turns a
+      # 40-second job into a five-minute one.
+      - name: Compile the yidam CLI (light build)
+        if: steps.download.outputs.ok != 'true' && steps.yidam-cache.outputs.cache-hit != 'true'
+        run: |
+          git clone --filter=blob:none --no-checkout "${{ steps.pin.outputs.source }}" /tmp/yidam
+          git -C /tmp/yidam checkout --quiet "${{ steps.pin.outputs.commit }}"
+          cargo install --path /tmp/yidam/yidam/cli --locked
+
+      # Whichever path ran, ask the binary what it is. A cache hit restores a
+      # binary but does not prove it runs; a download proves even less about
+      # provenance until something reads it. `--version` names the build commit,
+      # so an artifact that arrived from the wrong release is visible here in the
+      # log rather than as a mystery two steps later. This is the only check that
+      # the thing which arrived is the thing that was asked for.
+      - name: Say which yidam is answering
+        run: yidam --version
+
+      # ── How far behind is the vendored prelude? ─────────────────────────────
+      #
+      # A report, never a gate. A repository is entitled to stay pinned, and a build
+      # that goes red because upstream moved is a build somebody switches off.
+      #
+      # It exists because staleness is invisible from inside a derived repo, and the
+      # cost is not theoretical. On one day, upstream ADDED a verb to the closed
+      # vocabulary — citing a derived repo's use of it as the evidence the vocabulary
+      # had a gap — while that same repo REMOVED the verb, reverting four commits, on
+      # the ground that no gap existed. Both reasoned correctly from what they could
+      # see. Neither could see the other, and the derived repo ended further from
+      # upstream than it started.
+      #
+      # The commit count and age are printed always and escalate to nothing. The
+      # WARNING is tied to one concrete hazard: `GRAPH.md` moving. That is where the
+      # closed commit vocabulary lives, it is the part of the prelude a repository has
+      # already written history against, and history cannot be rewritten to match it.
+      # An age threshold would be arbitrary — the collision above happened at nine
+      # days.
+      - name: Report how stale the vendored prelude is
+        continue-on-error: true
+        run: |
+          set -eu
+          pin='${{ steps.pin.outputs.commit }}'
+          # Clone if nothing else did. This step used to assume the compile step
+          # had left a tree at /tmp/yidam, which stopped being true the moment
+          # the binary could be cached — and stopped being true on every run once
+          # it could be downloaded. `continue-on-error` meant the failure was a
+          # missing report rather than a red build, so the check that exists to
+          # make staleness visible was itself invisibly absent.
+          #
+          # Blobless and unchecked-out: this only ever reads commit metadata.
+          if [ ! -d /tmp/yidam ]; then
+            git clone --quiet --filter=blob:none --no-checkout \
+              '${{ steps.pin.outputs.source }}' /tmp/yidam
+          fi
+          cd /tmp/yidam
+          if ! git rev-parse --verify --quiet "origin/HEAD" >/dev/null; then
+            echo "::notice::cannot resolve origin/HEAD; skipping the staleness report."
+            exit 0
+          fi
+          behind=$(git rev-list --count "$pin..origin/HEAD" 2>/dev/null || echo 0)
+          if [ "$behind" -eq 0 ]; then
+            echo "::notice::vendored prelude is current with upstream."
+            exit 0
+          fi
+          pinned_at=$(git log -1 --format=%at "$pin")
+          days=$(( ( $(date +%s) - pinned_at ) / 86400 ))
+          moved=$(git diff --name-only "$pin" origin/HEAD -- yidam/prelude/ | wc -l | tr -d ' ')
+          echo "This repository is pinned $behind commit(s) behind upstream, $days day(s) old."
+          echo "$moved file(s) under yidam/prelude/ have changed since. Re-pin with:"
+          echo "  mise run yidam-vendor-update"
+          if git diff --name-only "$pin" origin/HEAD -- yidam/prelude/GRAPH.md | grep -q .; then
+            echo "::warning::GRAPH.md has moved upstream since this pin — the closed commit \
+          vocabulary may have gained or lost a verb. Your log is already written against \
+          the old one and cannot be rewritten to match. Review before writing more history: \
+          mise run yidam-vendor-update"
+          fi
+
+      - name: graph-check
+        run: yidam graph-check
+
+      # Gates against .yidam/lint-baseline.yml, not against zero. The question is
+      # whether this change made the corpus less clean — inherited debt is enumerable
+      # and listed; new debt is not. `yidam lint --bless` updates the baseline.
+      #
+      # --commits adds the vocabulary check over the commits under review. It is Warn
+      # severity, so it reports and never gates: history cannot be rewritten to fix a
+      # verb, and a check that fails on the past wedges every existing repo shut. The
+      # range keeps it to this change rather than re-reporting the whole log each run.
+      - name: lint
+        run: yidam lint --commits --range origin/main..HEAD
+
+      # REGEN blocks are generated content. If a README's committed table no
+      # longer matches what the CLI produces, the index is stale and every
+      # reader of that README is reading a lie.
+      #
+      # `yidam regen` and not a list of generators. This step used to run two of them and
+      # then tell you to run `mise run regen`, which ran eight — so six generators' blocks
+      # could go stale without this job noticing, and doing what the error said could
+      # produce a diff the gate had never asked for. The set now lives in one place in the
+      # CLI and both callers ask for it by name.
+      #
+      # `yidam status` counts phase branches, which is why the checkout above fetches
+      # everything: with only the checked-out branch present, the count is whatever CI can
+      # see rather than what the repository holds. That was a live bug — the count read
+      # local branches only, so this job failed on every push in any repo with a sangha.
+      # `--check` rather than run-and-diff. The old form regenerated into the working
+      # tree and asked git whether anything moved, which works in CI and cannot be run
+      # locally with work in flight — the diff it reads is every diff, not just its own.
+      # `regen --check` writes nothing and reports which blocks are stale, so the same
+      # command answers the same question on a dirty tree.
+      - name: REGEN blocks are current
+        run: yidam regen --check
+
+  crates:
+    name: crates (domain computer)
+    needs: detect
+    if: needs.detect.outputs.crates == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: crates
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: crates
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo test --workspace
+      # Doc links from a calculator to the corpus node that says what it is for
+      # are load-bearing, and they break silently.
+      - run: cargo doc --no-deps --workspace
+        env:
+          RUSTDOCFLAGS: -D warnings
+
+  packages:
+    name: packages
+    needs: detect
+    if: needs.detect.outputs.packages == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --all-extras
+      - run: uv run pytest
+
+  web:
+    name: web
+    needs: detect
+    if: needs.detect.outputs.web == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test --if-present

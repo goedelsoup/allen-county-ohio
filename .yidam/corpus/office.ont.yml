@@ -1,0 +1,39 @@
+class: office
+label: Office
+foundational_type:
+  ontology: ufo
+  type: role
+description: |
+  A named position of authority that persists across the people who hold it — Sheriff of
+  Allen County, Mayor of Lima, Judge of the Court of Common Pleas. It is a Role in the
+  strict sense: contingent and relational, played by a person for a time rather than
+  constituting what that person is, which is why it is a class and not a property.
+edge_policy: characteristic
+properties:
+  - name: office_type
+    type: string
+    description: elected | appointed | judicial | ex officio
+  - name: selection_method
+    type: string
+    description: How a holder comes to the office — countywide election, ward election, appointment by whom.
+  - name: term_length
+    type: string
+    description: Nominal length of a single term.
+  - name: established
+    type: date
+    description: When the office was created.
+  - name: abolished
+    type: date
+    description: When it was abolished, if it has been.
+  - name: seats
+    type: string
+    description: How many people hold this office at once — three, for a board of commissioners.
+edges:
+  - relationship: established-within
+    target: jurisdiction
+    direction: out
+    description: The unit of government this office belongs to.
+  - relationship: established-within
+    target: organization
+    direction: out
+    description: The non-governmental body this office belongs to.

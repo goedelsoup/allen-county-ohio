@@ -1,0 +1,46 @@
+class: event
+label: Event
+foundational_type:
+  ontology: ufo
+  type: event
+description: |
+  A bounded happening at a stated time — a treaty signing, an act of erection, a strike, a
+  fire, a plant closing, an election. It is irreducible because a happening has
+  participants and a date, and because the corpus's temporal spine is built from things
+  that occurred rather than from dates attached to things that persist.
+edge_policy: characteristic
+properties:
+  - name: occurred
+    type: date
+    required: true
+    description: When it happened, at whatever precision is known. An event without a date is not one.
+  - name: occurred_through
+    type: date
+    description: For a happening with duration, when it ended.
+  - name: event_type
+    type: string
+    description: What kind of happening — cession, erection, incorporation, annexation, discovery, closure, election, disaster.
+  - name: location_description
+    type: text
+    description: Where it happened, as the record states it, when no place or site node captures it.
+edges:
+  - relationship: occurred-in
+    target: place
+    direction: out
+    description: The named place where it happened.
+  - relationship: occurred-at
+    target: site
+    direction: out
+    description: The built work where it happened.
+  - relationship: involved
+    target: person
+    direction: out
+    description: An individual who took part.
+  - relationship: involved
+    target: organization
+    direction: out
+    description: A collective actor that took part.
+  - relationship: situated-in
+    target: period
+    direction: out
+    description: The named span this happening belongs to.

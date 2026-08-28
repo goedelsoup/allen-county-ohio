@@ -1,0 +1,24 @@
+class: office
+label: Sheriff of Allen County
+description: |
+  The county's elected chief law enforcement officer, one of the separately elected county
+  offices Ohio law establishes for every county. [inference] The sheriff runs the county jail
+  and serves process in addition to policing the unincorporated area.
+
+  The office is single-seat, which matters to
+  [succession-audit](../../skills/succession-audit.md): overlapping tenures on a single-seat
+  office are a defect, where on a multi-seat board they are normal.
+
+  **No holder of this office is recorded in the corpus.** See
+  [`../../decisions/seed-scope.yml`](../../decisions/seed-scope.yml) — the line of sheriffs
+  was not sourced, so the [tenure](../tenure/) class is empty and this office has nothing
+  pointing at it.
+properties:
+  office_type: elected
+  selection_method: countywide election
+  seats: "1"
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: established-within
+  - target: ../office.ont.yml
+    relationship: instance-of

@@ -1,0 +1,27 @@
+class: person
+label: John Allen
+description: |
+  A Kentucky colonel killed at the River Raisin in the War of 1812, and the person Allen
+  County is most often said to be named for. [inference]
+
+  This node is written with the naming claim deliberately *not* asserted from it. The
+  identification is contested — Ethan Allen is the other candidate commonly offered, and Ohio
+  county-naming practice in 1820 supports both readings — and the corpus records the dispute
+  as [a question](../question/namesake-of-allen-county.yml) rather than resolving it by
+  writing a `named-for` edge it cannot defend.
+
+  That absence is the point. A `named-for` edge from
+  [Allen County](../place/allen-county.yml) to this node would be well-formed, would resolve,
+  would pass every check this repository runs, and would settle by structure a matter the
+  prose says is open.
+
+  [open] Whether this is the right John Allen, and whether the county is named for any John
+  Allen at all, is exactly what is unresolved.
+properties:
+  occupation: soldier
+  died: 1813
+links:
+  - target: ../question/namesake-of-allen-county.yml
+    relationship: subject-of
+  - target: ../person.ont.yml
+    relationship: instance-of

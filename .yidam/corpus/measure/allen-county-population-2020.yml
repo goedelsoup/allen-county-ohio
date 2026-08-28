@@ -1,0 +1,23 @@
+class: measure
+label: Allen County population, 2020 estimates base
+description: |
+  The Census Bureau's April 1, 2020 estimates base for Allen County. [verified] —
+  [Census Population Estimates, Vintage 2024](../../catalog/census-popest-2024.md), county
+  file, field `ESTIMATESBASE2020`.
+
+  This is the 2020 enumeration as subsequently revised, not a modeled estimate — which is why
+  it is the right figure to anchor a series on and the wrong one to describe as "the 2020
+  census count" without qualification.
+properties:
+  parameter: total resident population
+  value: "102217"
+  unit: persons
+  as_of: 2020-04-01
+  method: |
+    Decennial enumeration as revised for the Vintage 2024 estimates base. A later vintage may
+    revise it again. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

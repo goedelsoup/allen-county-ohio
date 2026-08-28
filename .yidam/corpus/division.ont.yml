@@ -1,0 +1,41 @@
+class: division
+label: Division
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A bounded unit drawn by an authority in order to administer, elect, or report, holding no
+  governmental authority of its own — a ward, a voting precinct, a census tract, a
+  congressional district. It is irreducible because it is the grain at which elections and
+  public statistics are actually reported, and because it is redrawn on a schedule that has
+  nothing to do with the jurisdictions it sits inside.
+edge_policy: characteristic
+max_lines: 30
+properties:
+  - name: division_type
+    type: string
+    description: ward | voting precinct | census tract | congressional district | school attendance zone
+  - name: identifier
+    type: string
+    description: The number or code the drawing authority knows it by.
+  - name: effective_from
+    type: date
+    description: When this boundary took effect. A division is only meaningful with its dates.
+  - name: effective_to
+    type: date
+    description: When it was superseded, if it has been.
+  - name: drawn_by
+    type: string
+    description: The authority that drew it.
+  - name: area_sq_mi
+    type: string
+    description: Land area in square miles, with the geography the figure is drawn from.
+edges:
+  - relationship: nested-in
+    target: jurisdiction
+    direction: out
+    description: The unit of government whose territory contains this division.
+  - relationship: nested-in
+    target: division
+    direction: out
+    description: A larger division containing this one — a precinct within a ward.

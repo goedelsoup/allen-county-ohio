@@ -1,0 +1,99 @@
+id: proposals
+summary: >-
+  All eight implied edges, all six connectors and all five calculators approved; `geodesics`
+  is the single prelude domain vendored, named because `proximity` calls haversine_km.
+context: |
+  Step 5 read the thirteen `.ont.yml` class definitions written in step 4 and asked what the
+  schema implies at the domain level. Three tables were presented.
+
+  Eight implied edges were proposed. One of them — `measure describes division` — is a defect
+  in step 4's own output rather than an enrichment: `measure` declared `place`, `jurisdiction`
+  and `organization` as targets and omitted `division`, in a corpus whose geospatial grain was
+  chosen specifically to include precincts, which is the grain election returns are published
+  at. Three more close questions that are currently unanswerable: `event affected place`
+  (distinct from `occurred-in`, because the events that created this county largely happened
+  outside it), `site on natural-feature` (without which `natural-feature` has no inbound edge
+  but its own `flows-into`), and `division covers place`. Two connect `tenure` to the specific
+  happenings its `how_began` and `how_ended` strings only name a mechanism for. Two record
+  succession between jurisdictions and between offices.
+
+  Six connectors were proposed against four classes: census, gnis, nhd, sos-elections, nrhp,
+  auditor-parcels.
+
+  Five calculators were proposed. Before proposing them, `yidam/prelude/domains/` was listed
+  and four candidate libraries were read against a specific calculator rather than by name.
+decision: |
+  Approved, item by item — nothing was modified or discarded.
+
+  Implied edges — all eight:
+    measure       -[describes]->      division
+    event         -[affected]->       place
+    site          -[on]->             natural-feature
+    division      -[covers]->         place
+    tenure        -[began-with]->     event
+    tenure        -[ended-with]->     event
+    jurisdiction  -[succeeded-by]->   jurisdiction
+    office        -[succeeded-by]->   office
+
+  Connectors — all six approved as proposals. `census` and `gnis` are expected to meet the
+  step 6 demand threshold and be invoked inline during seeding; any not invoked are stubbed
+  in `crates/` in step 7.
+
+    census            US Census decennial + ACS API      -> measure
+    gnis              USGS Geographic Names Info System  -> place, natural-feature
+    nhd               USGS National Hydrography Dataset  -> natural-feature
+    sos-elections     Ohio Secretary of State returns    -> measure (at division grain)
+    nrhp              National Register of Historic Places -> site
+    auditor-parcels   Allen County Auditor GIS export    -> site
+
+  Calculators — all five approved:
+
+    succession-audit        gaps and overlaps in an office's line of holders
+    boundary-comparability  whether two figures describe the same ground
+    jurisdiction-at         every jurisdiction and division covering a place on a date
+    watershed-trace         the downstream chain from a feature to its outlet
+    proximity               corpus nodes within a radius of a point
+
+  Any calculator whose inputs are too thin at genesis to produce a meaningful result is
+  stubbed in `.yidam/skills/` rather than run.
+prelude_domains:
+  - geodesics
+rationale: |
+  Why `geodesics` and nothing else. The selection rule is whether a calculator in the approved
+  table would call a function in the library, not whether the library sounds adjacent to the
+  domain. Four were examined against a specific calculator:
+
+  - `geodesics` exposes `haversine_km`, `bearing_deg`, `central_angle_deg` over decimal
+    degrees. The `proximity` calculator calls `haversine_km` directly, on the `centroid`
+    property `place` declares and the `coordinates` property `site` declares. This is a call,
+    not an affinity. Vendored.
+  - `hydrology` exposes `rational_product`, `manning_velocity` and `return_period` — peak
+    discharge, channel velocity, flood frequency. It is the most adjacent-sounding library in
+    the layer for a corpus with rivers in it, and `watershed-trace` would call none of it:
+    tracing a stream to its outlet is a walk over `flows-into` edges, not a discharge
+    calculation. Rejected, and named here because it is precisely the trap the selection rule
+    exists to catch.
+  - `graph-topology` exposes `clustering_coefficient` and `connected_components` over
+    undirected graphs. `watershed-trace` needs a directed downstream walk and `jurisdiction-at`
+    needs a filtered lookup; neither function performs either. Rejected.
+  - `set-theory` exposes union, intersection, difference and subset over `&[i64]`.
+    `boundary-comparability` compares territory across annexation events and
+    `succession-audit` compares date intervals — neither is a set operation over integers.
+    Rejected.
+  - `statistics` exposes mean, variance, z-score and Pearson correlation. No approved
+    calculator computes a descriptive statistic. A `measure`-series calculator would, and
+    naming the domain for a calculator that was not proposed would be the same error as
+    naming hydrology. Rejected; revisit if such a calculator is written.
+
+  Why all eight edges rather than the six or four alternatives. The two `succeeded-by` edges
+  are the weakest and were offered for removal. They were kept because declaring an edge a
+  class may enter into costs nothing until an instance needs one, while adding it later to a
+  gated ontology is a migration. That asymmetry runs the opposite way from the asymmetry that
+  governs writing an *instance* edge, where a wrong claim is expensive and a missing one is
+  cheap — a declaration is a permission, an instance link is an assertion.
+
+  Why all six connectors. Two are retrievable during seeding and four are not, and a stub for
+  an un-invoked connector is the record of a decision rather than dead weight: it names the
+  source, what it feeds, and the retrieval interface, so the next person does not re-derive it.
+  `auditor-parcels` carries an unresolved question about access terms, which its stub must say
+  rather than imply.

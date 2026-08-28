@@ -1,0 +1,25 @@
+class: place
+label: Sugar Creek Township
+description: |
+  The county's smallest township by population and among its smallest by area — 24.094
+  square miles, internal point 40.824171, -84.173843. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md). Its 2020 estimates base
+  was 1,226 and its 2024 estimate 1,197. [verified] —
+  [Census Population Estimates](../../catalog/census-popest-2024.md).
+
+  It is in the corpus as the worked example of why [division](../division/) is a separate
+  class from place: the census tract that covers this ground is
+  [tract 39003010300](../division/census-tract-39003010300.yml), whose internal point lies
+  about three quarters of a mile from the township's and whose land area is roughly five
+  square miles larger. The two units nearly coincide and are not the same ground.
+properties:
+  place_type: township
+  gnis_id: "01085701"
+  geoid: "3900375199"
+  centroid: "40.824171, -84.173843"
+  area_sq_mi: "24.094 land (2020)"
+links:
+  - target: ../place/allen-county.yml
+    relationship: within
+  - target: ../place.ont.yml
+    relationship: instance-of

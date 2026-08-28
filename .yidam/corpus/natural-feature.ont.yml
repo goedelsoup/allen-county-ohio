@@ -1,0 +1,36 @@
+class: natural-feature
+label: Natural Feature
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A physical feature of the land or water that nobody built — a river, a creek, a watershed,
+  a moraine, a bedrock formation, an aquifer. It is irreducible and separate from site on
+  the built/unbuilt line, which is the distinction that decides whether a thing has an
+  operator: a river has a drainage and a mouth, and no one runs it.
+edge_policy: characteristic
+properties:
+  - name: feature_type
+    type: string
+    description: river | creek | watershed | moraine | bedrock formation | aquifer | wetland
+  - name: gnis_id
+    type: string
+    description: USGS Geographic Names Information System feature ID.
+  - name: huc_code
+    type: string
+    description: USGS Hydrologic Unit Code, for a watershed or the basin a stream drains to.
+  - name: length_mi
+    type: string
+    description: Length in miles, for a linear feature.
+  - name: mouth
+    type: text
+    description: Where a stream discharges, and into what.
+edges:
+  - relationship: flows-into
+    target: natural-feature
+    direction: out
+    description: The water body this one discharges to.
+  - relationship: traverses
+    target: place
+    direction: out
+    description: A named place this feature passes through or underlies.

@@ -1,0 +1,30 @@
+class: question
+label: Who is Allen County named for?
+description: |
+  The county's name is not securely attributed. The two candidates usually offered are
+  [John Allen](../person/john-allen.yml), a Kentucky colonel killed at the River Raisin in
+  1813, and Ethan Allen of Vermont. [inference]
+
+  This is the corpus's worked example of a claim that structure could settle by accident. A
+  `named-for` edge from [Allen County](../place/allen-county.yml) to a person node would be
+  well-formed, would resolve, would satisfy the class contract, and would pass every check
+  this repository runs — while asserting exactly the thing this node says is unresolved.
+  `place` declares the `named-for` relationship precisely so it is available; no instance
+  uses it, and that is the finding rather than an omission.
+
+  [open] Which man, if either, the 1820 legislature had in mind is unknown to this corpus.
+properties:
+  claim_tag: open
+  opened: 2026-08-28
+  would_close_this: |
+    The text of the 1820 act erecting the county, or contemporaneous legislative journals from
+    the Ohio General Assembly session that passed it. A county history asserting the
+    attribution is not sufficient on its own: local histories are the origin of both
+    candidates and repeat each other.
+links:
+  - target: ../place/allen-county.yml
+    relationship: concerns
+  - target: ../person/john-allen.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

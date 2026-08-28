@@ -1,0 +1,29 @@
+class: event
+label: Treaty of St. Marys
+description: |
+  The 1818 treaty negotiations at St. Marys, Ohio, by which Native nations ceded the remaining
+  lands in northwest Ohio — the cession that made the ground Allen County was later laid out
+  on available for survey and sale. [inference]
+
+  This event is the reason the [affected](../event.ont.yml) relationship exists in this
+  ontology. It did not occur in Allen County; St. Marys is in what is now Auglaize County. A
+  corpus able only to record where an event happened could not connect this county to the act
+  that created it, or would have to misplace the signing.
+
+  The cession also established reservations, including Ottawa reserves on the Auglaize and
+  Ottawa rivers, which were themselves ceded and their occupants removed within about fifteen
+  years — see [the Ottawa removal](ottawa-removal.yml). [inference]
+
+  [open] The treaty record is a set of documents signed on several dates in September and
+  October 1818, and which of them covers the specific ground of Allen County has not been
+  established here. Naming a single date for "the" Treaty of St. Marys is a simplification
+  the corpus is making knowingly.
+properties:
+  occurred: 1818
+  event_type: cession
+  location_description: St. Marys, in present-day Auglaize County, Ohio. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: affected
+  - target: ../event.ont.yml
+    relationship: instance-of

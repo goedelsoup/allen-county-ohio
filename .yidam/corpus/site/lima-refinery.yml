@@ -1,0 +1,25 @@
+class: site
+label: Lima Refinery
+description: |
+  The petroleum refinery at Lima, built to process the crude of the Lima field after the 1885
+  strike and still operating. [inference] It is the longest-running industrial installation in
+  the county and has outlived every corporate arrangement that has owned it.
+
+  The refinery is the clearest case in this corpus for why [site](../site.ont.yml) is a class
+  apart from [organization](../organization.ont.yml): the works are one continuous thing while
+  the operator has changed repeatedly, and a corpus that modeled the refinery as a property of
+  its owner would have to create a new refinery every time the company changed.
+
+  [open] The ownership chain from [Standard Oil](../organization/standard-oil.yml) to the
+  present operator is not established here, nor is the construction date, nor the present
+  crude throughput. Each is a matter of public record and none has been retrieved.
+properties:
+  site_type: refinery
+  status: in operation
+links:
+  - target: ../place/lima.yml
+    relationship: located-in
+  - target: ../organization/standard-oil.yml
+    relationship: operated-by
+  - target: ../site.ont.yml
+    relationship: instance-of

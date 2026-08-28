@@ -1,0 +1,24 @@
+class: office
+label: Mayor of Lima
+description: |
+  The elected chief executive of the [City of Lima](../jurisdiction/city-of-lima.yml).
+  [inference]
+
+  Like the sheriff, it is a single-seat office and has no recorded holders. It is seeded
+  because an office node is meaningful without its tenures — it records that the position
+  exists, on what terms, and within which jurisdiction — while a tenure node without an office
+  would have nothing to attach to. Seeding offices and leaving tenures empty is the right way
+  round for a corpus that has the institutional structure and not yet the officeholders.
+
+  [open] Whether Lima operates under a home-rule charter, and what that makes of the mayor's
+  powers and term, is unverified. Ohio municipalities may adopt charters that alter the
+  statutory form of government substantially.
+properties:
+  office_type: elected
+  selection_method: citywide election
+  seats: "1"
+links:
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: established-within
+  - target: ../office.ont.yml
+    relationship: instance-of

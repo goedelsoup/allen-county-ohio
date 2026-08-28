@@ -1,0 +1,114 @@
+# mise.toml — toolchains and tasks for this yidam-derived repository.
+# https://mise.jdx.dev
+#
+# `mise install`          provisions the toolchains below.
+# `mise tasks`            lists every available task.
+# `mise run yidam-build`  installs the yidam CLI (do this once).
+#
+# The yidam CLI tasks live in mise.yidam.toml, pulled in by `includes` below.
+# Domain tasks belong in THIS file — keep mise.yidam.toml as the inherited layer
+# so a future `mise run yidam-vendor-update` can replace it without clobbering
+# anything you wrote.
+#
+# `[task_config] includes` and not a top-level `extends`: mise accepts `extends`
+# on an individual task, never on a config file. It warns about the unknown field
+# and carries on, so the failure looks like nothing at all — every inherited task
+# just isn't there, and `mise run graph-check` reports an unknown task.
+
+[task_config]
+includes = ["mise.yidam.toml"]
+
+# `.yidam/bin` first, so everything mise runs resolves the binary this repository
+# pinned rather than whichever `yidam` some earlier `cargo install` left in
+# ~/.cargo/bin. It has to be here and not in mise.yidam.toml: that is a task
+# file, where `[env]` declares a task named env and mise rejects `_.path` as an
+# unknown field — which orphans every inherited task, so the file that promised
+# the guarantee was the one file that could not make it.
+#
+# This guards anything mise runs. It does not guard a script, a CI step, or an
+# agent that assembles PATH itself; those have to put `.yidam/bin` first
+# themselves. `yidam` warns on stderr when a binary other than the pin answers.
+[env]
+_.path = [".yidam/bin"]
+
+[tools]
+# Rust — the domain computer in crates/.
+rust = { version = "1.88.0", components = "rustfmt,clippy" }
+# Rust is the only toolchain carried at genesis. crates/ and packages/ hold no
+# code yet, so every other toolchain here would be time on every CI run buying
+# nothing.
+#
+# Add python + uv when the first connector lands. The sources this domain draws
+# on — decennial census and ACS tables, Secretary of State election returns,
+# county parcel and GIS exports — are all better served by the Python tabular
+# and geospatial ecosystem than by Rust.
+# python = "3.12"
+# uv = "latest"
+#
+# Add node when web/ becomes an application rather than a README.
+# node = "lts"
+
+# ── domain computer (crates/) ─────────────────────────────────────────────
+# These no-op until crates/Cargo.toml exists — the same condition
+# .github/workflows/ci.yml's `detect` job gates its crates jobs on. They said so
+# in this comment for a while before they did it: `cargo --manifest-path` on a
+# file that does not exist is a usage error, so on a freshly bootstrapped
+# repository every one of them failed, and `mise run ci` — the local gate the
+# README tells a new repo to run first — failed with it.
+
+[tasks.build]
+description = "Build the domain computer (crates/ workspace). No-op until crates/ exists."
+run = """
+if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
+cargo build --workspace --manifest-path crates/Cargo.toml
+"""
+
+[tasks.test]
+description = "Run domain computer tests. No-op until crates/ exists."
+run = """
+if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
+cargo test --workspace --manifest-path crates/Cargo.toml
+"""
+
+[tasks.lint]
+description = "Clippy across the domain computer. No-op until crates/ exists."
+run = """
+if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
+cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
+"""
+
+[tasks.fmt]
+description = "Format domain computer Rust code. No-op until crates/ exists."
+run = """
+if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
+cargo fmt --all --manifest-path crates/Cargo.toml
+"""
+
+# ── ci ────────────────────────────────────────────────────────────────────
+# The local equivalent of what .github/workflows/ci.yml runs, and "equivalent"
+# is checked rather than intended: `the_local_gate_runs_what_ci_gates_on` reads
+# both files and holds them together. It ran `graph-check` alone for a while
+# and CI's corpus job ran three gates, so a repository could pass the gate its
+# own README tells it to run first and fail the build on the next push — with
+# `regen --check`, on generated content nobody had written.
+#
+# These come from mise.yidam.toml and work from the genesis commit onward,
+# before any crate exists.
+
+[tasks.ci]
+description = "Full local gate: corpus graph check, then the domain computer."
+run = """
+set -eu
+mise run graph-check
+mise run graph-lint
+mise run regen-check
+if [ ! -f crates/Cargo.toml ]; then
+  echo
+  echo "no crates/Cargo.toml yet — the domain computer does not exist."
+  echo "corpus gate only, which is the whole gate on day one."
+  exit 0
+fi
+cargo fmt --all --manifest-path crates/Cargo.toml -- --check
+cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
+cargo test --workspace --manifest-path crates/Cargo.toml
+"""

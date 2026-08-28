@@ -1,0 +1,19 @@
+class: jurisdiction
+label: Shawnee Township (government)
+description: |
+  The township government whose territory is
+  [Shawnee Township](../place/shawnee-township.yml). Ohio townships are governed by a
+  three-member board of trustees and a fiscal officer, all elected. [inference]
+
+  Its `territory-within` edge to the county records nesting of ground and not subordination
+  of authority: an Ohio township is a creature of the state, not of the county whose ground
+  contains it, and the county commissioners do not direct it. That distinction is the reason
+  the edge is named `territory-within` rather than `part-of`.
+properties:
+  jurisdiction_type: township
+  fips_code: "3900371955"
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: territory-within
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

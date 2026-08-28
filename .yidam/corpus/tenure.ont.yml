@@ -1,0 +1,38 @@
+class: tenure
+label: Tenure
+foundational_type:
+  ontology: ufo
+  type: relator
+description: |
+  One person's holding of one office over one interval. It is a Relator in the strict sense
+  — a first-class node mediating a relationship and carrying its own identity, dates and
+  terms — and it exists as a class because "who held this office in 1893" is otherwise
+  encodable only as prose on a person or as a date-qualified edge, and is unqueryable in
+  both forms.
+edge_policy: characteristic
+max_lines: 25
+properties:
+  - name: began
+    type: date
+    description: When this holder took the office, at whatever precision is known.
+  - name: ended
+    type: date
+    description: When they left it; absent means still serving or not yet established.
+  - name: how_began
+    type: string
+    description: elected | appointed | succeeded | acting
+  - name: how_ended
+    type: string
+    description: term expired | resigned | died in office | removed | defeated | office abolished
+  - name: term_number
+    type: string
+    description: Which of this holder's terms this is, where they served more than one.
+edges:
+  - relationship: held-by
+    target: person
+    direction: out
+    description: The individual who held the office over this interval.
+  - relationship: of-office
+    target: office
+    direction: out
+    description: The office held.

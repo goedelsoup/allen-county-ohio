@@ -1,0 +1,108 @@
+id: seed-scope
+summary: >-
+  44 instances seeded against a target of 40, but `tenure` holds none and `division` holds
+  one; nothing was fabricated to fill either.
+context: |
+  Two sources were retrieved and cataloged during seeding, both primary and both keyless:
+
+  - The 2020 Census Gazetteer (county, county-subdivision, place and tract files). This was
+    sufficient to seed `place` completely enough for a genesis corpus — the county, four
+    townships and three municipalities, each with a verified internal point and land area —
+    and to seed one `division` and two `measure` nodes.
+  - Census Population Estimates, Vintage 2024 (county and sub-county files). Sufficient for
+    four `measure` nodes and for the verified fact that Bluffton and Delphos straddle county
+    lines.
+
+  Two sources were sought and not obtained:
+
+  - The Census data API at `api.census.gov` now rejects keyless requests. Every figure here
+    therefore comes from static files under `www2.census.gov` instead. This cost nothing in
+    the end but determined the route.
+  - Census QuickFacts returned HTTP 403 to an automated client. Aggregators carrying the same
+    figures were not substituted, because a republished figure supports `[inference]` and
+    never `[verified]`, and the static files made the question moot.
+
+  Nothing was retrieved for the historical, political or institutional half of the corpus. A
+  search for the Ohio Secretary of State's county formation record failed to resolve its
+  host; a search across Ohio History Connection and National Archives domains confirmed that
+  treaties were concluded at St. Marys in September and October 1818 but returned nothing
+  specific to Allen County's erection or organization.
+
+  As a result the corpus divides cleanly by provenance rather than by subject: every
+  geospatial and quantitative claim is `[verified]` against a committed catalog entry, and
+  every historical, corporate and biographical claim is `[inference]` or `[open]`.
+decision: |
+  44 instances seeded across 12 of 13 classes. Per class:
+
+    place            7     jurisdiction     4     division     1
+    site             5     natural-feature  4     person       3
+    organization     3     office           2     tenure       0
+    event            4     period           3     measure      6
+    question         2
+
+  `tenure` holds no instances. `division` holds one.
+
+  **Nothing was fabricated to reach the target, and the specific things not invented are
+  these**, so that this record is falsifiable:
+
+  - No sheriff, mayor, commissioner or judge of Allen County is named anywhere in this
+    corpus, and no dates of service are given for anyone. Not one officeholder was found in
+    a source, and not one was invented. `tenure` is empty for that reason alone.
+  - No ward or voting precinct appears. The single `division` instance is a census tract,
+    seeded because the Gazetteer gave it verified geometry. No election result appears at
+    any grain.
+  - No `named-for` edge was written from Allen County to any person, although `place`
+    declares the relationship and [[question/namesake-of-allen-county]] names two candidates.
+  - No founding date is asserted for Bluffton University, no construction date for the Lima
+    refinery or the courthouse, no incorporation date for any municipality, and no corporate
+    chronology for Lima Locomotive Works or Standard Oil. In each case the field was left
+    out rather than estimated.
+  - No population figure earlier than 2020 appears, so the corpus cannot presently
+    demonstrate the long decline that [[period/deindustrialization]] is named for. That node
+    says so itself.
+
+  The target of 40 was exceeded in total while two classes went unfilled, which is the
+  expected shape: instances went where the sources were, and the sources were geospatial.
+rationale: |
+  Why an empty class was preferred to a plausible one here. A fabricated `tenure` node would
+  not look like a placeholder. It would carry a person, an office, a begin date and an end
+  date; it would satisfy `tenure.ont.yml` exactly; `graph-check` would resolve both its edges
+  and `edge-target-class` would confirm they land on a `person` and an `office`. No check in
+  this repository asks whether a person held an office, and none can. It would sit among 44
+  sourced nodes and be lent credibility by every one of them, and the only way to find it
+  again would be for somebody to independently research the office and notice the
+  disagreement. An empty directory, by contrast, is visible to anyone who opens it and is
+  closed correctly the first time somebody supplies a real roster.
+
+  What the gap costs downstream, named calculator by calculator:
+
+  - **`succession-audit` has nothing to read.** It was approved in
+    [[decisions/proposals]] as the first crate to write, on the reasoning that it needs no
+    network and no fixtures and is testable the day it is written — and it computes gaps and
+    overlaps in a line of holders from `tenure` nodes, of which there are none. Both `office`
+    nodes exist and both are pointed at by nothing. This is the single largest gap in the
+    corpus, and it is worth being explicit that it is a *sourcing* gap and not a design one:
+    the ontology was shaped around `tenure` deliberately, and `tenure` is the class that came
+    up empty.
+  - **`boundary-comparability` has nothing to read.** It reads a `measure`, the `place` it
+    describes, and the annexation and erection `event` nodes between two dates. The corpus
+    holds six measures and no annexation events at all, so every comparison it is asked to
+    check will return "no intervening events found" — which is indistinguishable from
+    "no annexations occurred" and is not the same claim.
+    [[measure/lima-land-area-2020]] states this in its own body.
+  - **Two approved implied edges have almost nowhere to land.** `measure describes division`
+    and `division covers place` were approved in [[decisions/proposals]] against a single
+    division instance. Neither is written in step 7, and the reason is this record rather
+    than any doubt about the edges.
+  - `watershed-trace`, `jurisdiction-at` and `proximity` all have enough to read.
+
+  What would close each gap, in the order it would pay:
+
+  1. A roster of Allen County officeholders with dates — county commissioners' journals, or
+     the county's own published lists. This alone converts `tenure` from empty to the
+     corpus's most connected class and makes the first crate writable.
+  2. Decennial census counts for the county and Lima back to 1900. These are published as
+     static files and would let the corpus demonstrate rather than assert the trend that
+     [[period/deindustrialization]] names.
+  3. Precinct boundaries and returns from the Ohio Secretary of State, which is the only
+     source at the grain `division` exists for.

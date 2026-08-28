@@ -1,0 +1,22 @@
+class: measure
+label: Allen County land area, 2020
+description: |
+  Land area of Allen County in the 2020 geography. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), national county file,
+  field `ALAND_SQMI`. Water area is a further 4.306 square miles. [verified] — same record.
+
+  At the [2020 population base](allen-county-population-2020.yml) this is about 254 persons
+  per square mile of land. [inference] — arithmetic this corpus's.
+properties:
+  parameter: land area
+  value: "402.545"
+  unit: square miles
+  as_of: 2020
+  method: |
+    Computed by the Census Bureau from the 2020 TIGER geography. A county's land area is not
+    fixed across geographies — a later vintage may differ. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

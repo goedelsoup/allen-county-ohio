@@ -1,0 +1,48 @@
+class: question
+label: Question
+foundational_type:
+  ontology: ufo
+  type: situation
+description: |
+  A live question the corpus has opened and not closed. It is a class because the commit
+  vocabulary makes opening and closing a question a first-class knowledge act, and a
+  research instrument that cannot name its own open questions as nodes has nowhere for
+  those verbs to land.
+edge_policy: characteristic
+properties:
+  - name: claim_tag
+    type: claim
+    description: The standing of this question as a structured value — open until something closes it.
+  - name: opened
+    type: date
+    description: When the corpus first recorded the question.
+  - name: closed
+    type: date
+    description: When it was resolved, if it has been.
+  - name: resolution
+    type: text
+    description: What answered it, or what was found not to be answerable.
+  - name: would_close_this
+    type: text
+    description: The specific source or observation that would settle it — named, so somebody can go and get it.
+edges:
+  - relationship: concerns
+    target: place
+    direction: out
+    description: A place the question is about.
+  - relationship: concerns
+    target: person
+    direction: out
+    description: A person the question is about.
+  - relationship: concerns
+    target: event
+    direction: out
+    description: An event the question is about.
+  - relationship: concerns
+    target: jurisdiction
+    direction: out
+    description: A jurisdiction the question is about.
+  - relationship: concerns
+    target: site
+    direction: out
+    description: A site the question is about.

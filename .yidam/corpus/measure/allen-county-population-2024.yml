@@ -1,0 +1,24 @@
+class: measure
+label: Allen County population, July 2024 estimate
+description: |
+  The Vintage 2024 estimate for Allen County. [verified] —
+  [Census Population Estimates, Vintage 2024](../../catalog/census-popest-2024.md), county
+  file, field `POPESTIMATE2024`.
+
+  Against the [2020 base](allen-county-population-2020.yml) of 102,217 this is a fall of 1,351,
+  or about 1.3% over four years. [inference] — the arithmetic is this corpus's; both figures are
+  verified. The intervening years in the same file run 102,137 / 101,800 / 101,086 / 100,851,
+  so the 2024 figure is a slight rise on 2023 rather than a continuation of the fall.
+properties:
+  parameter: total resident population
+  value: "100866"
+  unit: persons
+  as_of: 2024-07-01
+  method: |
+    Modeled postcensal estimate, not an enumeration. Comparing it to the 2020 base compares a
+    model output to a revised count. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

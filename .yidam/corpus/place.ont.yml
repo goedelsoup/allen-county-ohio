@@ -1,0 +1,47 @@
+class: place
+label: Place
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A named area of ground that people refer to by its name — the county itself, a township
+  as territory, a city, a village, an unincorporated crossroads, a neighborhood. It is
+  irreducible because a name on the land outlives every authority that has governed it and
+  every boundary drawn around it: Lima the place and the City of Lima the corporation have
+  different birthdays, different extents, and different histories.
+edge_policy: characteristic
+properties:
+  - name: place_type
+    type: string
+    description: county | township | city | village | unincorporated community | neighborhood
+  - name: established
+    type: date
+    description: When the place was laid out, platted, or first recorded under this name.
+  - name: former_names
+    type: text
+    description: Names this ground has been known by, and roughly when.
+  - name: gnis_id
+    type: string
+    description: USGS GNIS / ANSI feature ID — the gazetteer's ANSICODE, not its GEOID.
+  - name: geoid
+    type: string
+    description: Census GEOID — the FIPS-based key that joins this place to Census tables.
+  - name: centroid
+    type: string
+    description: Approximate center as "latitude, longitude" in decimal degrees.
+  - name: area_sq_mi
+    type: string
+    description: Land area in square miles, with the date the figure describes.
+edges:
+  - relationship: within
+    target: place
+    direction: out
+    description: This place lies inside a larger named place.
+  - relationship: governed-by
+    target: jurisdiction
+    direction: out
+    description: A unit of government exercising authority over this ground.
+  - relationship: named-for
+    target: person
+    direction: out
+    description: The individual this place was named after.

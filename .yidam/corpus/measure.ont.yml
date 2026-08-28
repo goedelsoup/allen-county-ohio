@@ -1,0 +1,44 @@
+class: measure
+label: Measure
+foundational_type:
+  ontology: ufo
+  type: quality
+description: |
+  A quantity recorded for a named subject at a stated time, carrying the source it came
+  from. It is a class rather than a property because a figure without its date, its unit and
+  its provenance is not checkable, and because putting numbers on the node they describe is
+  the ordinary way a citation gets lost.
+edge_policy: characteristic
+max_lines: 25
+properties:
+  - name: parameter
+    type: string
+    required: true
+    description: The measured quantity, by the name its publisher uses — total population, employed persons.
+  - name: value
+    type: string
+    required: true
+    description: The figure itself, as published, without rounding or derivation.
+  - name: unit
+    type: string
+    description: What the figure counts.
+  - name: as_of
+    type: date
+    required: true
+    description: The date the figure describes — not the date it was published.
+  - name: method
+    type: text
+    description: How it was arrived at, and any break in series that makes it non-comparable.
+edges:
+  - relationship: describes
+    target: place
+    direction: out
+    description: The place this figure is about.
+  - relationship: describes
+    target: jurisdiction
+    direction: out
+    description: The unit of government this figure is about.
+  - relationship: describes
+    target: organization
+    direction: out
+    description: The organization this figure is about.

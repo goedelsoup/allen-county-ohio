@@ -1,0 +1,35 @@
+class: person
+label: Person
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A named individual human being. It is a Kind in the strict sense — a person does not stop
+  being one by leaving office or leaving the county — which is exactly why the offices they
+  hold and the intervals they hold them for cannot be properties of this class.
+edge_policy: characteristic
+properties:
+  - name: born
+    type: date
+    description: Date of birth, at whatever precision is known.
+  - name: died
+    type: date
+    description: Date of death, at whatever precision is known.
+  - name: birthplace
+    type: text
+    description: Where they were born, as the record states it.
+  - name: occupation
+    type: string
+    description: What they were principally known for doing.
+  - name: also_known_as
+    type: text
+    description: Other names the record uses for this person.
+edges:
+  - relationship: resided-in
+    target: place
+    direction: out
+    description: A place this person lived.
+  - relationship: affiliated-with
+    target: organization
+    direction: out
+    description: A body this person belonged to, worked for, or led.

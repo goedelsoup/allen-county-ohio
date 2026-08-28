@@ -1,0 +1,39 @@
+class: jurisdiction
+label: Jurisdiction
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A unit of government holding authority over a defined territory — the county, a township,
+  a municipal corporation, a school district. It is irreducible and distinct from the place
+  it governs because it has a creation instrument, officers, a budget and a boundary that
+  annexation moves, none of which are true of the ground or its name.
+edge_policy: characteristic
+properties:
+  - name: jurisdiction_type
+    type: string
+    description: county | township | municipal corporation | school district | court district
+  - name: erected
+    type: date
+    description: When this unit of government came into legal existence.
+  - name: abolished
+    type: date
+    description: When it ceased to exist, if it has.
+  - name: authority_source
+    type: text
+    description: The statute, charter, or order that created it and defines its powers.
+  - name: seat
+    type: string
+    description: The place where its government sits.
+  - name: fips_code
+    type: string
+    description: Census FIPS identifier, where one exists — a stable external key.
+edges:
+  - relationship: territory-within
+    target: jurisdiction
+    direction: out
+    description: This unit's territory lies inside another's; nesting of ground, not of authority.
+  - relationship: erected-by
+    target: event
+    direction: out
+    description: The act, order or election that brought this unit into existence.

@@ -1,0 +1,171 @@
+id: ontology
+summary: >-
+  Allen County, Ohio as a wide-surface civic reference corpus — 13 classes spanning the
+  geospatial, temporal and historical/political axes, aligned to UFO, seeded to a target
+  of 40 instances under single-elector governance.
+corpus_depth: 40
+governance: single-elector
+context: |
+  The domain was given as Allen County, Ohio, with an explicit requirement that the
+  questions the corpus may answer be wide — "geospatial, temporal, and historical/political."
+  That breadth was itself treated as an ontology constraint: it rules out a thesis-shaped
+  class list, because a corpus optimized for one argument answers the other two axes only
+  incidentally.
+
+  Three orienting questions were put, each chosen because it changes the class list rather
+  than only the seeding:
+
+  1. Central question. Four framings were offered — a general civic reference across time;
+     a thesis on industrial rise and fall; a study of power, boundaries and office; and a
+     study of land, water and settlement. The first was chosen: breadth and traversal are
+     privileged over any single argument.
+  2. Geospatial grain. Three cumulative levels were offered — the Ohio civil-division
+     hierarchy (county / township / municipality); plus reporting units (wards, precincts,
+     school districts); plus individual sites and parcels. The finest was chosen.
+  3. Temporal span. Three starting points were offered — pre-statehood, county erection in
+     1820, or the 1885 oil strike. Pre-statehood was chosen, which makes the transfer of
+     the land a modeled event rather than an assumed starting condition.
+
+  Those three answers together force a separation that a coarser corpus could safely
+  conflate: a named area, the authority over it, the reporting unit it is counted in, and
+  the built work standing on it. Four spatial classes follow from that, not from a wish for
+  granularity.
+
+  A 13-class sketch was drawn and presented with three trims and one further split offered
+  alongside it. It was confirmed as drawn.
+
+  The foundational alignment options were then described using nodes from the confirmed
+  sketch: under BFO, `site` and `natural-feature` are continuants while `event` and `period`
+  are occurrents; under UFO, `person` is a Kind, `office` is a Role, and `tenure` is a
+  Relator. UFO was chosen. Corpus depth and governance were asked last.
+decision: |
+  Thirteen classes, confirmed as drawn:
+
+    place            a named area people refer to by name — the county, a township as
+                     territory, a village, an unincorporated crossroads, a neighborhood
+    jurisdiction     a unit of government with authority over a defined territory
+    division         a bounded unit used to administer, elect or report, holding no
+                     governmental authority of its own — ward, precinct, census tract,
+                     congressional district
+    site             a fixed built work and the ground it occupies — plant, canal, rail
+                     line, courthouse, quarry, lock
+    natural-feature  a physical feature of land or water not built by anyone — river,
+                     creek, watershed, moraine, bedrock formation, aquifer
+    person           a named individual
+    organization     a named collective actor that is not a unit of government
+    office           a named position of authority, persisting across its holders
+    tenure           one person's holding of one office over one interval
+    event            a bounded happening at a stated time
+    period           a named span the corpus interprets as a unit
+    measure          a quantity recorded for a named subject at a stated time, with source
+    question         a live question the corpus has opened and not closed
+
+  Edges confirmed:
+
+    place            -[within]->               place
+    place            -[governed-by]->          jurisdiction
+    place            -[named-for]->            person
+    jurisdiction     -[territory-within]->     jurisdiction
+    jurisdiction     -[erected-by]->           event
+    division         -[nested-in]->            jurisdiction
+    division         -[nested-in]->            division
+    site             -[located-in]->           place
+    site             -[part-of]->              site
+    site             -[operated-by]->          organization
+    site             -[operated-by]->          jurisdiction
+    natural-feature  -[flows-into]->           natural-feature
+    natural-feature  -[traverses]->            place
+    office           -[established-within]->   jurisdiction
+    office           -[established-within]->   organization
+    tenure           -[held-by]->              person
+    tenure           -[of-office]->            office
+    person           -[resided-in]->           place
+    person           -[affiliated-with]->      organization
+    organization     -[seated-in]->            place
+    organization     -[succeeded-by]->         organization
+    event            -[occurred-in]->          place
+    event            -[occurred-at]->          site
+    event            -[involved]->             person
+    event            -[involved]->             organization
+    event            -[situated-in]->          period
+    period           -[precedes]->             period
+    measure          -[describes]->            place
+    measure          -[describes]->            jurisdiction
+    measure          -[describes]->            organization
+    question         -[concerns]->             any class
+
+  Foundational alignment: UFO. Every class carries a `foundational_type:` block naming
+  `ontology: ufo` and a `type:` drawn from kind | subkind | role | phase | relator | mode |
+  quality | event | situation.
+
+  Governance: single-elector. No `.yidam/sangha/` is created; phases run on `phase/<name>`
+  branches off `main`. The constitution is vendored with the rest of the prelude and lies
+  dormant.
+
+  Corpus depth: 40, against the default of 13.
+rationale: |
+  Why these classes.
+
+  The four spatial classes are the load-bearing choice and the one most open to challenge.
+  A single `place` class would be cheaper, and it would make three common questions
+  unanswerable without prose: which authority governs a given ground (a village, a township
+  and a school district can all cover it, with boundaries that move independently), which
+  unit a figure was reported in, and what physically stands there. `jurisdiction` is
+  separated from `place` because a municipal corporation has a creation date, officers and
+  a territory that annexation changes, while the place-name it shares outlives all three.
+  `division` is separated from `jurisdiction` because a precinct has no officers, no budget
+  and no charter — merging them would produce jurisdiction instances whose declared
+  properties are mostly meaningless. `natural-feature` is separated from `site` on the
+  built/unbuilt line, which is the distinction that decides whether a thing has an operator.
+
+  `tenure` is the class that earns its place hardest, and it is why UFO was recommended.
+  Without it, "who was sheriff in 1893" has to be encoded as prose on `person` or as a
+  date-qualified edge, and in both forms it is unqueryable. As a node it carries its own
+  interval, its manner of ending, and its own provenance.
+
+  Considered and discarded:
+
+  - A trim to 10 classes, merging `division` into `jurisdiction` and `period` into `event`
+    and dropping `measure`. Rejected: it would move population and employment figures from
+    sourced nodes onto properties of the thing they describe, which is exactly where a
+    number loses its citation and stops being checkable.
+  - A trim to 11, dropping `question` and `measure`. Rejected: the commit vocabulary has
+    `open:` and `close:` verbs for questions, and a research instrument that cannot name its
+    own open questions as nodes has nowhere for those verbs to land.
+  - A split of `place` into settlement and civil-division, giving 14 classes. Rejected as
+    not yet earned: it is worth paying for only where a settlement's name and its township's
+    name diverge in ways that matter, and no such case has been shown yet. It remains
+    available through `yidam migrate` if one appears.
+  - `period` merged into `event`. Kept separate because an event has a date and participants
+    while a period has bounds and a character and is what other things are situated in — the
+    distinction is not one of duration but of whether the node is a happening or an
+    interpretation of a span.
+  - A separate class for legal instruments (treaties, statutes, ordinances). Rejected as
+    redundant: a treaty is an `event` when it is signed and a catalog entry as a document,
+    and the pair covers it without a third representation.
+
+  Why UFO over BFO. Both were described against nodes from the confirmed sketch. BFO's axis
+  — persists through time versus unfolds through time — cleanly types the geospatial half,
+  but it has no natural home for `tenure`, which is the sketch's most consequential node and
+  is a relator by construction. UFO's Kind / Role / Relator axis types the political half
+  natively: `person` is a Kind, `office` is a Role that different people occupy at different
+  times, and `tenure` is the Relator that mediates them with its own identity and interval.
+  A civic-reference corpus for a county is an institutional domain before it is a physical
+  one, and the same entity playing different roles is its central shape. BFO remains the
+  better choice for a corpus centered on hydrology or geology, which this one is not.
+
+  Why 40 rather than the default 13. The default is one instance per class for a 13-class
+  ontology, which produces a schema with a specimen attached rather than a graph: nearly
+  every edge would be the single instance of its type, and no hub class would have enough
+  internal structure to traverse. 40 gives roughly three per class weighted toward the hubs
+  — `place`, `event`, `person`, `site` — so the township hierarchy, a river system, and an
+  office's succession each have more than one node to link between. 60 was offered and not
+  taken: the binding constraint on seeding is sourcing rather than authoring, and a target
+  that outruns the sources produces either empty classes or fabrication. 40 is a target and
+  not a quota, and any shortfall is recorded in seed-scope.yml rather than met by invention.
+
+  Why single-elector. It is the default and the honest description of the present state:
+  one maintainer with agents acting on their behalf. Collective governance is a real
+  protocol with real overhead, and a repository that adopts it and never runs a resolution
+  has paid for machinery it does not use. The sangha can be scaffolded later if a second
+  elector actually appears.

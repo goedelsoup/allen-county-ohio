@@ -1,0 +1,50 @@
+class: site
+label: Site
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A fixed work of human construction and the ground it occupies — a refinery, a plant, a
+  canal, a rail line, a courthouse, a quarry, a lock. It is irreducible because a built work
+  outlasts the organizations that operate it and is transferred between them, so its
+  identity cannot be folded into either the place it stands in or the company that runs it.
+edge_policy: characteristic
+properties:
+  - name: site_type
+    type: string
+    description: plant | refinery | canal | rail line | courthouse | quarry | lock | hospital | school
+  - name: built
+    type: date
+    description: When construction was completed, or the work opened.
+  - name: ceased
+    type: date
+    description: When it stopped operating in the role that makes it notable.
+  - name: status
+    type: string
+    description: extant | demolished | ruin | repurposed | in operation
+  - name: coordinates
+    type: string
+    description: Location as "latitude, longitude" in decimal degrees; for a linear work, a representative point.
+  - name: address
+    type: string
+    description: Street address, where the work has one.
+  - name: nrhp_id
+    type: string
+    description: National Register of Historic Places reference number, where listed.
+edges:
+  - relationship: located-in
+    target: place
+    direction: out
+    description: The named place this work stands in.
+  - relationship: part-of
+    target: site
+    direction: out
+    description: A larger built work this is a component of — a lock on a canal.
+  - relationship: operated-by
+    target: organization
+    direction: out
+    description: The non-governmental body that runs or ran it.
+  - relationship: operated-by
+    target: jurisdiction
+    direction: out
+    description: The unit of government that runs or ran it.

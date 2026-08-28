@@ -1,0 +1,26 @@
+class: measure
+label: Lima population, 2020 estimates base
+description: |
+  The April 1, 2020 estimates base for Lima city. [verified] —
+  [Census Population Estimates, Vintage 2024](../../catalog/census-popest-2024.md),
+  sub-county file.
+
+  Lima held about 34.8% of the county's population at this date. [inference] — computed
+  against [the county's base](allen-county-population-2020.yml).
+
+  Lima appears in the sub-county file at three summary levels — `061` as a minor civil
+  division, `071` as a place part, and `157` as a place total — with the same figure at each,
+  because unlike [Bluffton](../place/bluffton.yml) and [Delphos](../place/delphos.yml) it does
+  not cross a county line. [verified]
+properties:
+  parameter: total resident population
+  value: "35531"
+  unit: persons
+  as_of: 2020-04-01
+  method: |
+    Decennial enumeration as revised for the Vintage 2024 base. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+  - target: ../measure.ont.yml
+    relationship: instance-of

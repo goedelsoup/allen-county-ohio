@@ -1,0 +1,21 @@
+class: jurisdiction
+label: Village of Bluffton
+description: |
+  The municipal corporation governing [Bluffton](../place/bluffton.yml). Its territory
+  crosses the Allen–Hancock county line, which makes it the corpus's worked case of a
+  jurisdiction whose ground is not contained by one county. [verified] — the county-line
+  crossing is recorded by the Census Bureau's `(pt.)` designation in
+  [Census Population Estimates](../../catalog/census-popest-2024.md).
+
+  A `territory-within` edge to Allen County's government would therefore be false as an
+  unqualified claim, and none is written: part of this village's territory is not within it.
+  That absence is deliberate and is the kind of edge the corpus declines to assert rather
+  than approximate.
+properties:
+  jurisdiction_type: municipal corporation
+  fips_code: "3907426"
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: partially-within
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

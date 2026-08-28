@@ -1,0 +1,36 @@
+class: organization
+label: Organization
+foundational_type:
+  ontology: ufo
+  type: kind
+description: |
+  A named collective actor that is not a unit of government — a company, an agency, a
+  congregation, a college, a newspaper, an association, a union. It is irreducible because a
+  collective acts, is named, and persists across its members, and because it is separated
+  from jurisdiction on one line only: whether it holds governmental authority over territory.
+edge_policy: characteristic
+properties:
+  - name: org_type
+    type: string
+    description: company | agency | congregation | college | newspaper | association | union
+  - name: founded
+    type: date
+    description: When it came into existence under this identity.
+  - name: dissolved
+    type: date
+    description: When it ceased to exist under this identity.
+  - name: industry
+    type: string
+    description: What line of work it is in.
+  - name: also_known_as
+    type: text
+    description: Earlier or alternate corporate names for the same body.
+edges:
+  - relationship: seated-in
+    target: place
+    direction: out
+    description: Where the organization is or was headquartered.
+  - relationship: succeeded-by
+    target: organization
+    direction: out
+    description: The body that took over its identity, assets, or function.

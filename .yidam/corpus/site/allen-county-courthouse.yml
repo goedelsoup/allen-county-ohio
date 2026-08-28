@@ -1,0 +1,25 @@
+class: site
+label: Allen County Courthouse
+description: |
+  The seat of county government at Lima — the building the
+  [county government](../jurisdiction/allen-county-government.yml) occupies and the physical
+  expression of Lima's status as county seat. [inference]
+
+  It is in the corpus as the worked example of a site whose operator is a jurisdiction rather
+  than an organization, which is why [site](../site.ont.yml) declares `operated-by` against
+  both classes.
+
+  [open] The present courthouse's construction date, its architect, and whether it is the
+  county's first or a successor to an earlier building are all unverified. Ohio county
+  courthouses are commonly the third or fourth on their site, and assuming this one is
+  original would be exactly the sort of plausible error this corpus is built to avoid.
+properties:
+  site_type: courthouse
+  status: in operation
+links:
+  - target: ../place/lima.yml
+    relationship: located-in
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: operated-by
+  - target: ../site.ont.yml
+    relationship: instance-of

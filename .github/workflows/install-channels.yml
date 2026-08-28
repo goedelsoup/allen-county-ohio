@@ -1,0 +1,327 @@
+# Install channels — does a documented install line actually produce a binary?
+#
+# Every other workflow here asks whether an artifact BUILDS. None asks whether
+# anyone can OBTAIN one. That gap is why `cargo binstall yidam` stood in the
+# README for a release cycle while `yidam` did not exist on crates.io: the
+# release was green, the tap was live, the tarballs had download counts, and the
+# crates.io line was a sentence that could not succeed on any machine.
+#
+# So this runs the README's own install lines — verbatim, in a container that
+# holds nothing but the tools that line claims to need — and asserts that
+# `yidam --version` answers with the version of the latest release.
+#
+# ── failing here is not an emergency ─────────────────────────────────────────
+#
+# It means the README is wrong. That is worth a red mark and not a page: nothing
+# is broken for anyone who already installed, and the fix is either to ship the
+# channel or to stop documenting it. Both are ordinary work.
+#
+# ── it triggers on itself, deliberately ──────────────────────────────────────
+#
+# `publish-crates.yml` was committed after the only tag this repository had, and
+# a workflow fires only if it exists at the ref being pushed — so it never ran
+# once, and nobody noticed, because there was nothing to notice. A weekly job
+# added today has the same shape of silence in front of it. The `push` trigger
+# below makes this one run the moment it lands, and again whenever `install.sh`
+# or this file changes.
+
+name: Install channels
+
+on:
+  schedule:
+    # Mondays 07:00 UTC — after CI's weekly full-feature build, so a week's
+    # scheduled failures read in the order they happen.
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+  push:
+    # `branches` as well as `paths`, and both must match — so a TAG push does not
+    # start this. Pushing `cli/v0.2.1` ran it four seconds later, where it
+    # resolved `releases/latest` (still `cli/v0.2.0`, since release.yml was
+    # mid-build) and graded every channel against the previous release. Four red
+    # jobs that meant nothing.
+    #
+    # A release is exactly when someone wants this answered, but not four seconds
+    # in. Deliberately not a `workflow_run` on Release either: crates.io index
+    # propagation is a lag nobody controls, so that trigger buys a check whose
+    # reds are sometimes real and sometimes timing. A check people learn to shrug
+    # at is worse than no check. After a release, dispatch it.
+    branches: [main]
+    paths:
+      - '.github/workflows/install-channels.yml'
+      - 'install.sh'
+
+# Every job resolves the same expected version and every job asserts against it,
+# so a channel serving a stale artifact fails as loudly as one serving none.
+jobs:
+  released:
+    name: what is released
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+      tag: ${{ steps.v.outputs.tag }}
+    steps:
+      - name: Resolve the latest CLI release
+        id: v
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # The same list-and-filter `editor-released` does below, and for the
+          # reason its comment already gives: releases are returned newest-first
+          # and the layers interleave. This job asked for the repository's latest
+          # release and then rejected anything that was not `cli/v*` — so an
+          # `editor/v*` tag pushed after a `cli/v*` one failed it outright, and
+          # took the five CLI channel jobs that need it down as a skip. That is
+          # what `editor/v0.1.0` landing nine seconds after `cli/v0.4.0` did.
+          tag=$(gh api "repos/${{ github.repository }}/releases?per_page=100" \
+                  --jq '[.[] | select(.draft == false and .prerelease == false) | select(.tag_name | startswith("cli/v"))][0].tag_name // ""')
+          if [ -z "$tag" ]; then
+            echo "::error::no published cli/v* release exists, so there is no version for"
+            echo "::error::these channels to be checked against."
+            exit 1
+          fi
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "version=${tag#cli/v}" >> "$GITHUB_OUTPUT"
+          echo "latest CLI release: $tag"
+
+  # ── curl | sh, on a machine that has never seen this project ───────────────
+  #
+  # debian:bookworm-slim rather than the runner image: the runner has cargo, git,
+  # a compiler and a checksum tool already, so it cannot tell the difference
+  # between "install.sh works" and "install.sh works here". The container is
+  # given curl, ca-certificates and tar and nothing else — the exact set the
+  # script's own `need` calls name.
+  installer-linux:
+    name: install.sh (linux, clean container)
+    needs: released
+    runs-on: ubuntu-latest
+    container: debian:bookworm-slim
+    steps:
+      - name: Nothing but what install.sh claims to need
+        run: |
+          set -eux
+          apt-get update
+          apt-get install -y --no-install-recommends curl ca-certificates tar
+      - name: The line the README documents
+        run: curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/main/install.sh | sh
+      # `set -eu`, not `set -euo pipefail`. This job's shell is the container's
+      # /bin/sh — dash on debian — which has no `pipefail` and exits 2 on the
+      # option itself. There is no pipe in this step to protect anyway.
+      #
+      # It stayed hidden until the thing it checks started working: on the first
+      # run install.sh died on glibc before this step was reached, so the release
+      # that fixed that is the one that exposed this. A check's own failure modes
+      # are only reachable once the code under it stops failing first.
+      - name: yidam --version
+        run: |
+          set -eu
+          out=$("$HOME/.local/bin/yidam" --version)
+          echo "$out"
+          case "$out" in
+            "yidam ${{ needs.released.outputs.version }} "*) ;;
+            *) echo "::error::install.sh installed '$out'; expected version ${{ needs.released.outputs.version }}"; exit 1 ;;
+          esac
+
+  # The darwin tarballs are cross-compiled and are the ones most likely to be
+  # unrunnable rather than merely absent — a macOS runner is the only thing here
+  # that executes them.
+  installer-macos:
+    name: install.sh (macos)
+    needs: released
+    runs-on: macos-latest
+    steps:
+      - name: The line the README documents
+        run: curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/main/install.sh | sh
+      - name: yidam --version
+        run: |
+          set -euo pipefail
+          out=$("$HOME/.local/bin/yidam" --version)
+          echo "$out"
+          case "$out" in
+            "yidam ${{ needs.released.outputs.version }} "*) ;;
+            *) echo "::error::install.sh installed '$out'; expected version ${{ needs.released.outputs.version }}"; exit 1 ;;
+          esac
+
+  # The formula is rendered by the release workflow from the release's own
+  # checksums, so this is not testing Homebrew — it is testing that the tap push
+  # happened at all, which is a cross-repository write and the step of the
+  # release most able to fail on its own.
+  homebrew:
+    name: brew install goedelsoup/tap/yidam
+    needs: released
+    runs-on: ubuntu-latest
+    steps:
+      - name: The line the README documents
+        run: |
+          set -euo pipefail
+          command -v brew >/dev/null 2>&1 || eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install goedelsoup/tap/yidam
+          out=$(yidam --version)
+          echo "$out"
+          case "$out" in
+            "yidam ${{ needs.released.outputs.version }} "*) ;;
+            *) echo "::error::the tap serves '$out'; expected version ${{ needs.released.outputs.version }}"; exit 1 ;;
+          esac
+
+  # ── binstall, with the source fallback forbidden ───────────────────────────
+  #
+  # `cargo binstall` falls back to compiling when it cannot resolve an artifact,
+  # and that fallback is the failure this job exists to catch: it exits 0, takes
+  # minutes, and looks exactly like success — which is how a mismatch between
+  # `[package.metadata.binstall]` in yidam/cli/Cargo.toml and the asset names in
+  # release.yml would survive. `--disable-strategies compile` turns the silent
+  # fallback into a red mark.
+  binstall:
+    name: cargo binstall yidam
+    needs: released
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install cargo-binstall
+        run: curl -fsSL https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+      - name: The line the README documents, minus the fallback that hides failure
+        run: |
+          set -euo pipefail
+          cargo binstall --no-confirm --disable-strategies compile yidam
+          out=$(yidam --version)
+          echo "$out"
+          case "$out" in
+            "yidam ${{ needs.released.outputs.version }} "*) ;;
+            *) echo "::error::binstall fetched '$out'; expected version ${{ needs.released.outputs.version }}"; exit 1 ;;
+          esac
+
+  # The registry itself. Distinct from binstall: this passes only if the crate is
+  # published AND its dependency graph resolves from crates.io alone, which is
+  # the ordering constraint publish-crates.yml describes — `yidam` cannot build
+  # from the registry until `yidam-core` is on it.
+  cargo-install:
+    name: cargo install yidam (crates.io)
+    needs: released
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dtolnay/rust-toolchain@stable
+      - name: From the registry, source build
+        run: |
+          set -euo pipefail
+          cargo install --locked yidam
+          out=$(yidam --version)
+          echo "$out"
+          case "$out" in
+            "yidam ${{ needs.released.outputs.version }} "*) ;;
+            *) echo "::error::crates.io serves '$out'; expected version ${{ needs.released.outputs.version }}"; exit 1 ;;
+          esac
+
+  # The git form is the one install path that has always worked, which is exactly
+  # why it is checked: it is the fallback every other line degrades to, and the
+  # only one whose breakage would leave no way in at all.
+  cargo-install-git:
+    name: cargo install --git yidam
+    needs: released
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dtolnay/rust-toolchain@stable
+      - name: The line the README documents
+        run: |
+          set -euo pipefail
+          cargo install --git https://github.com/${{ github.repository }} \
+            --tag "${{ needs.released.outputs.tag }}" --locked yidam
+          out=$(yidam --version)
+          echo "$out"
+          case "$out" in
+            "yidam ${{ needs.released.outputs.version }} "*) ;;
+            *) echo "::error::${{ needs.released.outputs.tag }} builds '$out'; expected version ${{ needs.released.outputs.version }}"; exit 1 ;;
+          esac
+
+  # ── the editor layer ────────────────────────────────────────────────────────
+  #
+  # Its own resolver rather than the `released` job's. That one reads
+  # `releases/latest`, which is a single pointer across every layer in this
+  # repository: a CLI release makes it `cli/v*` and an extension release makes it
+  # `editor/v*`, so each layer would grade the other's version on alternating
+  # weeks. `git tag`-style listing per layer is the only reading that stays
+  # correct once two layers release independently — the same reason
+  # `VERSIONING.md` gives every layer its own tag prefix.
+  #
+  # It exits GREEN when no `editor/v*` tag exists. "Nothing is released" and
+  # "what is released is unobtainable" are different states, and only the second
+  # is a defect — a job that is red from the day it lands is one people learn to
+  # ignore, which is the failure mode this whole workflow was written against.
+  # It arms itself on the first tag with no edit here.
+  editor-released:
+    name: what is released (editor)
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+    steps:
+      - name: Resolve the latest editor release
+        id: v
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # --sort/-L1 rather than jq over the whole list: releases are returned
+          # newest-first and the layers interleave, so "the first editor/v* row"
+          # is the answer and the rest of the page is someone else's layer.
+          tag=$(gh api "repos/${{ github.repository }}/releases?per_page=100" \
+                  --jq '[.[] | select(.tag_name | startswith("editor/v"))][0].tag_name // ""')
+          if [ -z "$tag" ]; then
+            echo "no editor/v* release yet — nothing to obtain, so nothing to check."
+            echo "This job arms itself on the first one; see #313."
+            exit 0
+          fi
+          echo "version=${tag#editor/v}" >> "$GITHUB_OUTPUT"
+          echo "latest editor release: $tag"
+
+  # Both registries serve an unauthenticated API that names the published
+  # version, and both are asked the same question the CLI jobs ask: is what you
+  # are serving the version that was released?
+  #
+  # NOT `code --install-extension`: that would need a VS Code on the runner and
+  # would be testing the editor. What can be wrong here is the publish — a step
+  # that failed on a missing secret, a namespace nobody claimed, an ingestion
+  # that never finished — and every one of those is visible in the version the
+  # registry reports.
+  # ── the VS Code Marketplace is NOT checked here, deliberately ──────────────
+  #
+  # There was a job here. It asked the Marketplace which version it served and
+  # compared it to the latest `editor/v*` tag, exactly as the Open VSX job below
+  # does. It is gone rather than disabled because the Marketplace is not a channel
+  # this project delivers: the publisher needs an Azure DevOps organisation that
+  # has not been created (#314), so `VSCE_PAT` is absent by decision, editor.yml's
+  # Marketplace step notices and skips, and VERSIONING.md's Layer 4 table does not
+  # name it.
+  #
+  # A check for a channel nobody claims is red forever, and this workflow's own
+  # header says a check people learn to shrug at is worse than no check. The claim
+  # and the check belong to each other: `the_registries_layer_4_names_are_delivered_and_checked`
+  # fails if VERSIONING.md names the Marketplace again while this job is missing,
+  # so restoring one forces restoring the other.
+  #
+  # ── what a VS Code user does meanwhile ─────────────────────────────────────
+  #
+  # Open VSX does not serve VS Code proper — it serves VSCodium, Cursor, Windsurf,
+  # Gitpod and code-server. VS Code reads the Microsoft Marketplace and nothing
+  # else. So the .vsix on the GitHub release is not a fallback for VS Code users,
+  # it is the only route, which is why the release asset is attached before either
+  # registry is attempted rather than after.
+
+  editor-openvsx:
+    name: Open VSX
+    needs: editor-released
+    if: needs.editor-released.outputs.version != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: The version Open VSX serves
+        run: |
+          set -euo pipefail
+          got=$(curl -sS https://open-vsx.org/api/goedelsoup/yidam-vscode | jq -r '.version // ""')
+          echo "open-vsx: '$got'  expected: '${{ needs.editor-released.outputs.version }}'"
+          if [ -z "$got" ]; then
+            echo "::error::Open VSX does not know goedelsoup/yidam-vscode. Either the publish"
+            echo "::error::step never ran, or the namespace is unclaimed / OVSX_PAT unset (#314)."
+            exit 1
+          fi
+          [ "$got" = "${{ needs.editor-released.outputs.version }}" ] || {
+            echo "::error::Open VSX serves $got; the latest editor release is ${{ needs.editor-released.outputs.version }}"
+            exit 1
+          }

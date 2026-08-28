@@ -1,0 +1,21 @@
+class: person
+label: Ephraim Shay
+description: |
+  The inventor of the geared locomotive that Lima built and that carries his name. [inference]
+  He was a Michigan logger and millwright rather than an Allen County resident, and the
+  connection to this county is through the patent and the manufacturer, not through
+  residence. [inference]
+
+  He is in the corpus deliberately as a person with no `resided-in` edge to any place here.
+  A county corpus that only admitted residents would have to leave out the reason its
+  largest manufacturer existed, and the honest encoding is a person node linked through the
+  organization that built his design rather than through geography he had no part in.
+
+  [open] His dates and the date of the Shay patent are unverified.
+properties:
+  occupation: inventor, logger, millwright
+links:
+  - target: ../organization/lima-locomotive-works.yml
+    relationship: affiliated-with
+  - target: ../person.ont.yml
+    relationship: instance-of
