@@ -1,0 +1,63 @@
+id: what-the-covering-query-cannot-answer
+summary: >-
+  `jurisdiction-at` runs, and the corpus can date one covering body in seven. The limit is not
+  in the calculator; it is that 6 of 7 jurisdictions carry no `erected` date and no division
+  carries an `effective_to`. What that costs, and what would close it, is recorded here.
+context: |
+  The second calculator is written. Running it against the corpus makes a shape visible that
+  reading the nodes did not:
+
+    jurisdictions            7      with an `erected` date       1
+    divisions                4      with an `effective_to`       0
+
+  So a query with a year in it resolves against exactly one dated jurisdiction — the county
+  government, erected 1820 — and every municipal corporation, township and school district in
+  the corpus lands in the undated half of the answer. Asking what governed Lima in 1900 returns
+  one dated member and two undated ones. That is the true answer and it is a thin one.
+decision: |
+  **The undated half of the answer is reported, not suppressed, and not merged.** A member the
+  corpus asserts without dating is real coverage and no evidence at all about a particular
+  year. The two lists stay separate for the same reason `[verified]` and `[inference]` are
+  different tags: the distinction is about provenance, and collapsing it to make the output
+  tidier would make it wrong.
+
+  **The gaps this makes visible, worst first.**
+
+  1. **No incorporation dates.** The City of Lima, the Village of Bluffton, Shawnee Township
+     and three school districts have no `erected`. Ohio municipal incorporation is a matter of
+     record — a village or city has a date of incorporation in the Secretary of State's or the
+     county's records — so this is a retrievable fact the corpus has not gone after, not an
+     open question. It is the single largest limit on the temporal half of this calculator.
+
+  2. **No jurisdiction is ever abolished.** No `abolished` date appears anywhere, which is
+     correct for the seven jurisdictions held, and means the `Bounded` warrant and the
+     closed-interval boundary rule are unit-tested and never exercised against the corpus.
+     Ohio has abolished townships to municipal annexation; one such node would exercise it.
+
+  3. **`territory-within` on school districts may over-claim.**
+     `bluffton-exempted-village-school-district` asserts a flat `territory-within` Allen
+     County, while the same node's prose records that of the twelve unified districts touching
+     the county, "three of them centred in neighbouring counties and reaching in by a handful
+     of blocks". A district that straddles is ordinary here. The village next door writes
+     `partially-within` for exactly this and the school district does not, and the calculator
+     currently reports the county as wholly covering that district's ground. [open] — whether
+     Bluffton EVSD crosses the county line has not been established from a source.
+
+  4. **A site's answer is its place's answer.** The courthouse resolves to Lima and the result
+     says so, which is honest and coarse. Ward- or precinct-level coverage of an address needs
+     boundary geometry, which is what `proximity` waits on as well.
+rationale: |
+  Why this is recorded rather than fixed in the same phase. Every item here is corpus work —
+  retrieval and sourcing — and the phase it belongs to is the next one. Writing them down at
+  the moment the calculator exposed them is the point: the calculator is what turned "the
+  corpus does not have incorporation dates" from something nobody had noticed into something
+  with a measured cost, which is one dated member out of three in the most ordinary query
+  anyone would run.
+
+  Item 3 is the one to be careful with. The temptation is to soften the school district's edge
+  to `partially-within` on the strength of the pattern, since straddling districts are common
+  here and the corpus's own text says so. That would be an assertion about Bluffton EVSD's
+  boundary made from a fact about other districts. The edge stays as written until a source
+  says otherwise; the doubt is recorded as `[open]` and the calculator reports what the edge
+  claims. Two place edges *were* changed in this phase, and the difference is that those two
+  files each contained a verified, cited sentence contradicting their own edge.
