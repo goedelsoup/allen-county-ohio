@@ -1,0 +1,19 @@
+[package]
+name         = "succession"
+version      = "0.1.0"
+description  = "Gaps and overlaps in an office's line of holders, from its tenure nodes"
+edition.workspace      = true
+rust-version.workspace = true
+license.workspace      = true
+
+[lib]
+name = "succession"
+path = "src/lib.rs"
+
+[[bin]]
+name = "succession-audit"
+path = "src/main.rs"
+
+[dependencies]
+serde      = { workspace = true }
+serde_yaml = { workspace = true }

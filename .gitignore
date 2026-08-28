@@ -69,3 +69,11 @@ dist/
 
 # macOS
 .DS_Store
+
+# The domain computer's lockfile, un-ignored.
+#
+# A global gitignore commonly carries a blanket `Cargo.lock` rule, meant for libraries. This
+# workspace ships a binary and its gate runs `cargo test` in CI, so the resolved dependency
+# graph has to be pinned or the build is only reproducible by luck. A repository .gitignore
+# takes precedence over core.excludesFile, so this negation is what makes it tracked here.
+!crates/Cargo.lock
