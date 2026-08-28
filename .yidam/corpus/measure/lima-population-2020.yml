@@ -12,6 +12,12 @@ description: |
   division, `071` as a place part, and `157` as a place total — with the same figure at each,
   because unlike [Bluffton](../place/bluffton.yml) and [Delphos](../place/delphos.yml) it does
   not cross a county line. [verified]
+  This figure describes the **corporation's territory**, not the settlement in the ordinary
+  sense: the Census Bureau tabulates Lima at the corporate boundary of the date, so what the
+  number counts is whatever ground the [City of Lima](../jurisdiction/city-of-lima.yml) had
+  annexed by then. [inference] The node therefore carries a `describes` edge to the
+  jurisdiction as well as to the place. Both are true and they are not the same claim — the
+  place is what the name denotes, and the jurisdiction is what the boundary encloses.
 properties:
   parameter: total resident population
   value: "35531"
@@ -21,6 +27,8 @@ properties:
     Decennial enumeration as revised for the Vintage 2024 base. [verified]
 links:
   - target: ../place/lima.yml
+    relationship: describes
+  - target: ../jurisdiction/city-of-lima.yml
     relationship: describes
   - target: ../measure.ont.yml
     relationship: instance-of

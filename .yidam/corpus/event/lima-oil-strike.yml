@@ -15,6 +15,12 @@ description: |
   on a desulphurization process and hence on the capital and patents of
   [Standard Oil](../organization/standard-oil.yml) rather than on local operators. [inference]
 
+  The strike `affected` the county and not only the city: the Lima–Indiana field extended well
+  beyond the corporate boundary, and the county's economy was reoriented from agriculture to
+  petroleum and the manufacturing that followed it. [inference] That is why this node carries
+  an `affected` edge to the county alongside its `occurred-in` edge to Lima — the two say
+  different things, and only the first is true of the ground outside the city.
+
   [open] The date, the well, and its exact location are unverified.
 properties:
   occurred: 1885
@@ -24,6 +30,8 @@ links:
     relationship: occurred-in
   - target: ../person/benjamin-faurot.yml
     relationship: involved
+  - target: ../place/allen-county.yml
+    relationship: affected
   - target: ../period/lima-oil-boom.yml
     relationship: situated-in
   - target: ../event.ont.yml
