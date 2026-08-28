@@ -23,7 +23,7 @@ Sorted by: kind, then alphabetically.
 -->
 | Instance | Class | Label | Links out | Claims | Lines |
 |---|---|---|---|---|---|
-| [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 2 | 2v / 1i / 1o | 34 |
+| [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 4 | 3v / 1i / 0o | 37 |
 | [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 30 |
 | [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 38 |
 | [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 26 |
@@ -51,7 +51,7 @@ Sorted by: kind, then alphabetically.
 | [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 3v / 2i / 0o | 34 |
 | [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 36 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 29 |
-| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 2v / 3i / 1o | 34 |
+| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 3v / 3i / 0o | 34 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 32 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 34 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 29 |
@@ -108,10 +108,10 @@ Sorted by: kind, then alphabetically.
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 17 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 19 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 1v / 1i / 0o | 27 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 2v / 1i / 1o | 28 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 4v / 1i / 1o | 36 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 28 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 29 |
-| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 4v / 1i / 0o | 34 |
+| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 5v / 1i / 0o | 38 |
 | [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 30 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 1v / 2i / 0o | 24 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 25 |
@@ -121,9 +121,9 @@ Sorted by: kind, then alphabetically.
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 2o | 39 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 1v / 3i / 1o | 41 |
-| [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 2i / 0o | 39 |
+| [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 0v / 1i / 1o | 25 |
-| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 1v / 4i / 2o | 44 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 3v / 3i / 1o | 44 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 24 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 0v / 1i / 1o | 25 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 2 | 1v / 5i / 1o | 37 |
