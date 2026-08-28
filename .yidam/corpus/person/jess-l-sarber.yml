@@ -1,0 +1,19 @@
+class: person
+label: Jess L. Sarber
+description: |
+  Sheriff of Allen County, 1931–1933. [verified] —
+  [Allen County Sheriff's Office past-sheriffs roster](../../catalog/acso-past-sheriffs.md).
+
+  His term ends in 1933 and is followed immediately by Donald F. Sarber's. The roster gives no reason for either the ending or the surname, and this corpus asserts neither — see [the two irregular sheriff transitions](../question/two-irregular-sheriff-transitions.yml). [open]
+
+  The roster gives a name and a year range and nothing else, so this node carries no dates
+  of birth or death and no biography. Ohio requires an elected county officer to be an
+  elector of the county, so a `resided-in` edge to Allen County is a legal inference rather
+  than a fact the roster states. [inference]
+properties:
+  occupation: sheriff
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+  - target: ../person.ont.yml
+    relationship: instance-of
