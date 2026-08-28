@@ -1,10 +1,16 @@
 [package]
-name         = "succession"
-version      = "0.1.0"
-description  = "Gaps and overlaps in an office's line of holders, from its tenure nodes"
-edition.workspace      = true
+name = "succession"
+version = "0.1.0"
+description = "Gaps and overlaps in an office's line of holders, from its tenure nodes"
+edition.workspace = true
 rust-version.workspace = true
-license.workspace      = true
+license.workspace = true
+
+# Keys are written with exactly one space before `=`, and that is load-bearing rather than a
+# style choice. `yidam crates-index` reads this file line-wise rather than as TOML, and an
+# aligned `description  = "..."` — valid TOML, and how this file was first written — renders
+# as an em dash in crates/README.md with no error anywhere. Verified against yidam 0.5.0
+# (1162287): one space reads, two spaces do not. Remove this comment when the CLI parses TOML.
 
 [lib]
 name = "succession"
@@ -15,5 +21,5 @@ name = "succession-audit"
 path = "src/main.rs"
 
 [dependencies]
-serde      = { workspace = true }
+serde = { workspace = true }
 serde_yaml = { workspace = true }
