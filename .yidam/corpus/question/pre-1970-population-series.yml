@@ -1,0 +1,48 @@
+class: question
+label: What was Allen County's population before 1970, and when did Lima peak?
+description: |
+  Allen County's population is on record at 111,144 in 1970 and 100,866 in 2024, and Lima's
+  at 40,307 in 2000. [verified] —
+  [1970–1979 county estimates](../../catalog/census-county-estimates-1970s.md),
+  [Vintage 2024 estimates](../../catalog/census-popest-2024.md) and
+  [2000–2010 intercensal estimates](../../catalog/census-intercensal-2000-2010.md). No source
+  reaching earlier than those has been retrieved, so the corpus's county series begins at 1970
+  and its Lima series at 2000 — see
+  [the 1970 census count](../measure/allen-county-population-1970.yml).
+
+  Two specific things are unknown and they matter differently.
+
+  **The county's 1900–1960 series** would show whether 1970 was the peak or merely a late
+  point on a plateau. The corpus asserts a decline *from* 1970 because 1970 is the earliest
+  figure it has, which is a fact about the sources retrieved and not about the county. [open]
+  If the county was already falling before 1970, or still rising, the
+  [deindustrialization](../period/deindustrialization.yml) node's start date is wrong.
+
+  **Lima's own peak** is the sharper gap. Every claim in this corpus that Lima's decline is
+  steeper than the county's rests on figures from 2000 onward, and the city's industrial
+  employment fell well before that. [open] The corpus holds no Lima figure earlier than 2000
+  and therefore cannot say when the city was largest, though it names a period beginning in
+  1970 partly on that basis.
+
+  This is the gap most likely to be filled by mistake rather than by research: a plausible
+  peak figure for Lima is easy to find in secondary sources and easy to write down, and it
+  would be the first unsourced number in a corpus whose population figures are otherwise all
+  primary.
+properties:
+  claim_tag: open
+  opened: "2026-08-28"
+  would_close_this: |
+    For the county, the Census publication "Population of States and Counties of the United
+    States: 1790–1990" (a 14.9MB PDF located but not read), or the 1900 Ohio bulletin
+    "Population of Ohio by Counties and Minor Civil Divisions" for the nineteenth-century
+    series. For Lima, a place-level decennial series — the 1970 and 1980 Census of Population
+    volumes for Ohio, which the county-level file used here does not cover.
+links:
+  - target: ../measure/allen-county-population-1970.yml
+    relationship: concerns
+  - target: ../period/deindustrialization.yml
+    relationship: concerns
+  - target: ../place/lima.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

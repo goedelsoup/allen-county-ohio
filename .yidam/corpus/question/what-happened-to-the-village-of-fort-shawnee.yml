@@ -1,0 +1,43 @@
+class: question
+label: What happened to the Village of Fort Shawnee?
+description: |
+  [Fort Shawnee](../place/fort-shawnee.yml) is listed by the Census Bureau as
+  `Fort Shawnee village` with a population of 3,866 in 2000 and 3,726 in 2010, as
+  `Fort Shawnee CDP` in the 2020 Gazetteer, and not at all in the Vintage 2024 sub-county
+  file. [verified] — [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md) and
+  [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md).
+
+  A village is an incorporated municipality; a CDP is a statistical construct with no
+  government at all. So something changed between the 2010 and 2020 geographies, and the
+  corpus does not know what. [open]
+
+  Two readings fit the same evidence and they are not close to equivalent. Either the
+  municipal corporation **dissolved** — which is a governance event with a date, a petition
+  and probably an election, and which would mean Shawnee Township absorbed its functions — or
+  the Census Bureau **reclassified** it for reasons of its own, leaving the corporation intact
+  and only the tabulation changed. The first is a fact about Allen County. The second is a
+  fact about a federal statistical program.
+
+  The corpus deliberately writes neither. No `jurisdiction` node for a Village of Fort Shawnee
+  exists, and none should until this is settled: creating one with `abolished: 2010s` would
+  assert the first reading by structure, and creating one without would assert the second.
+  This is the same restraint as
+  [the county's namesake](namesake-of-allen-county.yml) — a well-formed node that answers an
+  open question is worse than no node.
+
+  [open] Which of the two occurred, and when.
+properties:
+  claim_tag: open
+  opened: "2026-08-28"
+  would_close_this: |
+    Ohio Secretary of State or Allen County records of municipal dissolution, or the county's
+    own list of political subdivisions; alternatively the Census Bureau's Boundary and
+    Annexation Survey for the relevant year, which records why a place's status changed and
+    would distinguish a dissolution from a reclassification directly.
+links:
+  - target: ../place/fort-shawnee.yml
+    relationship: concerns
+  - target: ../place/shawnee-township.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of
