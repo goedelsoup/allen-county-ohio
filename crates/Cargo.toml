@@ -1,0 +1,22 @@
+# The domain computer for this corpus.
+#
+# Members are added as they are written. `mise run build|test|lint|fmt` all no-op
+# until this file exists, and CI's crates jobs gate on the same condition.
+[workspace]
+resolver = "2"
+members = ["succession"]
+
+[workspace.package]
+edition      = "2021"
+# Matches the yidam CLI's own MSRV. A domain crate requiring newer than the tool
+# that reads the same corpus would be a fiction about what this repo can build.
+rust-version = "1.85"
+license      = "MIT"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+# The corpus's own serialization. serde_yaml 0.9 is what the vendored prelude SDK
+# and the yidam CLI both read these files with; matching them matters more here
+# than the crate's maintenance status, because a different YAML dialect would mean
+# the gate and the calculator could disagree about what a node says.
+serde_yaml = "0.9"
