@@ -66,7 +66,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 | Crate | Description |
 |---|---|
 | [—](crates/) | — |
-| [succession](succession/) | — |
+| [succession](succession/) | Gaps and overlaps in an office's line of holders, from its tenure nodes |
 <!-- /REGEN -->
 
 ## Index status
