@@ -106,8 +106,8 @@ Sorted by: kind, then alphabetically.
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 19 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 1v / 1i / 0o | 27 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 2 | 2v / 1i / 1o | 28 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 27 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 27 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 28 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 29 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 4v / 1i / 0o | 34 |
 | [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 30 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 1v / 2i / 0o | 24 |

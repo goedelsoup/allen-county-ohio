@@ -88,6 +88,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 | Crate | Description |
 |---|---|
 | [—](crates/) | — |
+| [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
 | [succession](succession/) | Gaps and overlaps in an office's line of holders, from its tenure nodes |
 <!-- /REGEN -->
 
