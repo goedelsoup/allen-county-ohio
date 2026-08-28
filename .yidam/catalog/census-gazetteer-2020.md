@@ -18,6 +18,18 @@ location:
   - kind: url
     value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_tracts_national.zip
     description: national census tract file, zipped
+  - kind: url
+    value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_116CDs_national.zip
+    description: congressional districts, 116th Congress
+  - kind: url
+    value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_sldu_national.zip
+    description: state legislative districts, upper chamber
+  - kind: url
+    value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_sldl_national.zip
+    description: state legislative districts, lower chamber
+  - kind: url
+    value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_unsd_national.zip
+    description: unified school districts
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
   - ../corpus/measure/allen-county-land-area-2020.yml
@@ -53,6 +65,17 @@ subdivisions, Ohio places, all US counties and all US census tracts. Only Allen 
 were read. The tract file alone carries 35 rows for this county, of which one has been
 turned into a node. The water-area columns have not been examined at all, and they are the
 natural anchor for any future claim about the county's surface water.
+
+**Districts were added to this entry after the electoral-grain phase.** The same gazetteer
+program publishes congressional, state legislative and school district files in the same
+format, and four were retrieved. They give a district's area and internal point and **not** the
+counties inside it; the county relationship comes from
+[the Block Assignment Files](census-block-assignment-2020.md) instead.
+
+One comparison out of those files is worth recording where somebody will find it. Ohio's State
+House District 4 reads `ALAND 1042587389`, `AWATER 11152061`, `ALAND_SQMI 402.545`,
+`INTPTLAT 40.771627`, `INTPTLONG -84.106103` — every field byte-identical to Allen County's own
+record in the county file. The district is coterminous with the county.
 
 **What it cannot support.** The gazetteer publishes geography, not population. Every
 population figure in this corpus comes from
