@@ -1,0 +1,59 @@
+id: after-the-boundary
+summary: >-
+  All four claims [the-boundary-gap](the-boundary-gap.yml) named as one missing file closed
+  against one source in one phase. What it cost, what it did not buy, and the one thing a 2020
+  boundary can never answer.
+supersedes: the-boundary-gap
+context: |
+  The previous record argued that four open claims across five phases were a single missing
+  boundary file, and named TIGER/Line shapefiles as the route. The route was wrong and the
+  argument was right.
+
+  Shapefiles are binary and this repository has no geospatial library in any toolchain. The
+  **TIGERweb REST service** publishes the same geometry as a keyless query interface — a point
+  and a layer in, the containing feature out — so no parsing was needed at all. The prediction
+  was one step more pessimistic than the ground.
+
+    where the Auglaize rises          Allen County, Auglaize township — the township named for it
+    which municipality holds the      Shawnee Township, and no incorporated or designated
+      tank plant                        place at all
+    is the tank plant in Lima         no; 2.84 miles south of Lima's internal point
+    which townships the tract covers  98.5% of Sugar Creek plus 21.5% of American
+decision: |
+  **The remaining open claims of this kind are two, and they are different from each other.**
+
+  1. **The refinery has no coordinate**, so the claim that it stands on or near American
+     Township's boundary with Lima cannot be tested the way the tank plant's was. GNIS has no
+     `Building` class and never will carry it. The county auditor's parcel data is the only
+     route, and its access terms are still unchecked — which
+     [the auditor-parcels stub](../../crates/auditor-parcels/README.md) says should be recorded
+     in this directory before any code is written, and still should.
+
+  2. **A 2020 boundary answers 2020 questions.** It says nothing about where the Lima city line
+     ran in 1900, and every population and area comparison this corpus makes across time still
+     rests on annexation events it does not hold. That was the worst gap before this phase and
+     it is the worst gap after it, entirely untouched.
+
+  **What the method establishes for reuse.** Areal composition is done at block level, not by
+  polygon overlay: blocks nest inside both tracts and county subdivisions, so classifying each
+  block's internal point and summing land area gives the exact breakdown, and the parts summing
+  to the whole is the check that it worked. `esriSpatialRelIntersects` is not that check — it
+  counts a shared boundary line as an intersection and returned seven townships for a tract
+  that has two, one of them in a county the tract cannot reach.
+rationale: |
+  Why record this rather than close the four claims and move on. Two things happened here that
+  are worth more than the four answers.
+
+  The first is that three of the four were **wrong, not merely unknown**, and each had been
+  written down carefully with its uncertainty tagged. The tank plant was on Lima's northern
+  edge, then south of Lima with containment open, then in a fourth township that none of the
+  guesses had named. The tract was "about 4.8 square miles larger" than Sugar Creek Township,
+  which is arithmetically exact and reads as the township plus a margin, when a fifth of a
+  second township is in it. Careful hedging on the wrong model produces a claim that is honest
+  about its confidence and wrong about its shape, and no amount of further hedging finds that.
+
+  The second is that the corpus had been substituting for geometry with internal-point
+  arithmetic for five phases, and each time the substitution was declared in the node. Those
+  declarations were correct and they did not prevent the errors; they only made them findable
+  afterwards. That is the argument for treating a repeated "this bounds the answer loosely" as
+  a retrieval target rather than as adequate practice.

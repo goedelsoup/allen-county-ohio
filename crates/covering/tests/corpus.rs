@@ -140,3 +140,39 @@ fn every_place_and_site_in_the_corpus_answers_and_lands_under_the_county() {
         );
     }
 }
+
+#[test]
+fn the_census_tract_covers_two_townships_and_neither_of_them_wholly() {
+    // 90 of the tract's 107 blocks are in Sugar Creek and 17 in American. It is 98.5% of the
+    // first and 21.5% of the second, so the corpus writes `partially-covers` for both and the
+    // query must carry that through rather than rounding either to whole.
+    let g = graph();
+    for place in [
+        "place/sugar-creek-township.yml",
+        "place/american-township.yml",
+    ] {
+        let c = covering(&g, place, None).unwrap();
+        let tract = c
+            .member("division/census-tract-39003010300.yml")
+            .unwrap_or_else(|| panic!("{place} is partly in the tract"));
+        assert!(
+            matches!(tract.extent, Extent::Partial { .. }),
+            "{place}: the tract covers it partly and the answer must not round that up"
+        );
+        assert_eq!(tract.reach, Reach::Asserted, "{place}");
+    }
+}
+
+#[test]
+fn the_tank_plant_answers_with_shawnee_township_not_lima() {
+    // TIGERweb puts the plant in Shawnee Township and in no incorporated or designated place.
+    // The corpus followed, so the site's covering set is the township's — and must no longer
+    // contain the City of Lima.
+    let c = covering(&graph(), "site/lima-army-tank-plant.yml", None).unwrap();
+    assert_eq!(c.place, "place/shawnee-township.yml");
+    assert!(c.member("jurisdiction/shawnee-township.yml").is_some());
+    assert!(
+        c.member("jurisdiction/city-of-lima.yml").is_none(),
+        "the plant is not in Lima and its covering set must not say it is"
+    );
+}

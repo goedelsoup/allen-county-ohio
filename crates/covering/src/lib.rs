@@ -345,6 +345,20 @@ const NESTING: [(&str, bool); 3] = [
     ("partially-within", true),
 ];
 
+/// Edges that attach an authority directly to a place: the relationship, whether the corpus
+/// writes it from the covering side, and whether it says the coverage is partial.
+///
+/// `covers` and `partially-covers` are both here because this corpus has used `covers` to mean
+/// whole coverage in every instance of it — three districts over a county, each verified as
+/// containing all 3,552 of its blocks. A division that holds four fifths of a township is a
+/// different claim and gets a different edge.
+const SEEDS: [(&str, bool, bool); 4] = [
+    ("governed-by", false, false),
+    ("serves", true, false),
+    ("covers", true, false),
+    ("partially-covers", true, true),
+];
+
 /// Edges that put one named place inside another.
 ///
 /// `partially-within` appears here too, and it has to: Delphos and Bluffton both cross a
@@ -444,16 +458,34 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
         } else {
             Reach::Inherited
         };
-        let mut seeds: Vec<&Node> = Vec::new();
-        seeds.extend(g.out(place, "governed-by"));
-        seeds.extend(g.inbound(place, "serves"));
-        seeds.extend(g.inbound(place, "covers"));
-        for n in seeds {
-            if n.class != "jurisdiction" && n.class != "division" {
-                continue;
-            }
-            if let Some(m) = record(g, &mut found, n, reach, via.clone(), extent.clone(), year) {
-                frontier.push_back(m);
+        for (rel, from_covering_side, splits) in SEEDS {
+            let seeds = if from_covering_side {
+                g.inbound(place, rel)
+            } else {
+                g.out(place, rel)
+            };
+            for n in seeds {
+                if n.class != "jurisdiction" && n.class != "division" {
+                    continue;
+                }
+                let ext = if splits {
+                    Extent::Partial {
+                        via: format!("{} {rel}", n.id),
+                    }
+                } else {
+                    extent.clone()
+                };
+                if let Some(mut m) = record(g, &mut found, n, reach, via.clone(), ext, year) {
+                    // Seed partiality stops at the member it describes. "This tract covers part
+                    // of this township" limits the tract's coverage of the township and says
+                    // nothing about what contains the tract: part of the township being inside
+                    // the tract still puts that part inside the county the tract sits in, and
+                    // the county's coverage has to be judged on its own paths. A
+                    // `partially-within` edge is the opposite case — it limits the member's own
+                    // extent, so pass C propagates that one.
+                    m.2 = extent.clone();
+                    frontier.push_back(m);
+                }
             }
         }
     }
@@ -880,6 +912,59 @@ mod tests {
         assert_eq!(year_of("1820-05"), Some(1820));
         assert_eq!(year_of("1820-05-01"), Some(1820));
         assert_eq!(year_of("sometime"), None);
+    }
+
+    #[test]
+    fn a_division_that_only_partly_covers_a_place_says_so() {
+        // Census tract 39003010300 holds 98.5% of Sugar Creek Township and a fifth of
+        // American. Neither is `covers`, which this corpus has used to mean whole coverage
+        // everywhere else, and a query that reported it as whole would be the tidier lie.
+        let mut g = fixture();
+        g.insert(node(
+            "division/tract.yml",
+            "division",
+            &[("division_type", "census tract")],
+            &[("partially-covers", "place/city.yml")],
+        ));
+        let c = covering(&g, "place/city.yml", None).unwrap();
+        let m = c
+            .member("division/tract.yml")
+            .expect("tract covers the city");
+        assert_eq!(m.reach, Reach::Asserted);
+        match &m.extent {
+            Extent::Partial { via } => assert!(via.contains("partially-covers"), "{via}"),
+            other => panic!("expected partial coverage, got {other:?}"),
+        }
+        // The whole-coverage seeds are unaffected.
+        assert_eq!(
+            c.member("jurisdiction/city-corp.yml").unwrap().extent,
+            Extent::Whole
+        );
+    }
+
+    #[test]
+    fn partial_coverage_of_a_place_does_not_make_its_county_partial() {
+        // Sugar Creek Township, exactly. A tract holding four fifths of the township is
+        // `nested-in` the county government, and the county also reaches the township by the
+        // ordinary containment path. Part of the township being inside the tract puts that part
+        // inside the county too; it says nothing that limits the county's own coverage.
+        let mut g = fixture();
+        g.insert(node(
+            "division/tract.yml",
+            "division",
+            &[("division_type", "census tract")],
+            &[
+                ("partially-covers", "place/city.yml"),
+                ("nested-in", "jurisdiction/county-gov.yml"),
+            ],
+        ));
+        let c = covering(&g, "place/city.yml", None).unwrap();
+        assert!(c.member("division/tract.yml").unwrap().extent.is_partial());
+        assert_eq!(
+            c.member("jurisdiction/county-gov.yml").unwrap().extent,
+            Extent::Whole,
+            "the county covers this ground whole; the tract's partial reach is not its own"
+        );
     }
 
     /// Delphos in miniature. The only route from the place to the county government runs
