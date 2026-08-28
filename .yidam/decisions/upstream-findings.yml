@@ -1,0 +1,71 @@
+id: upstream-findings
+summary: >-
+  Two defects in `yidam crates-index` found while writing the first crate; one worked around
+  locally and one not workable-around. Neither reported upstream yet.
+context: |
+  Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
+  repository builds from `.yidam.toml`, and the newest the origin has.
+
+  The directory conventions say a defect in the prelude, CI, CLI or conventions should go
+  upstream rather than being worked around locally, because a local workaround is invisible to
+  every other derived repository and is discarded at the next re-vendor. This record exists so
+  that both findings and the one workaround are recoverable when that report is made.
+decision: |
+  **Finding 1 — `crates-index` misses `description` when the key is aligned.**
+
+  A `[package]` table written as
+
+      description  = "..."     # two spaces before =
+
+  renders as an em dash in the crates-index REGEN block. Written as
+
+      description = "..."      # one space
+
+  it renders correctly. Both are valid TOML and the first is ordinary formatting for an aligned
+  manifest.
+
+  Isolated by bisection. It is **not** the dotted workspace-inheritance keys
+  (`edition.workspace = true`), which were the first suspect and read fine. It is the
+  whitespace alone. The CLI appears to read the manifest line-wise, although `yidam-core`
+  already depends on the `toml` crate.
+
+  Severity is in how quiet it is. `yidam regen` succeeds, `yidam regen --check` passes, `mise
+  run ci` is green, and the generated table is wrong. Nothing anywhere reports it.
+
+  **Worked around**, in `crates/succession/Cargo.toml`: the keys use single spacing and a
+  comment says the spacing is load-bearing and why. Remove that comment and reformat freely
+  once the CLI parses TOML.
+
+  **Finding 2 — `crates-index` lists a virtual workspace manifest as a crate.**
+
+  `crates/Cargo.toml` is a virtual manifest: `[workspace]` with members, no `[package]`. The
+  index renders a row for it with an em dash for both name and description — a table cell whose
+  link text and target are both empty of meaning, of the literal form
+  `| [<em dash>](crates/) | <em dash> |`. It is written here with the em dash spelled out
+  rather than pasted, because pasting the row makes `broken-prose-link` read it as a real link
+  into a directory that does not exist relative to this file — which it did, and which is a
+  small demonstration that quoting generated output inside a decision record is itself a thing
+  the gate has opinions about.
+
+  A virtual manifest is not a crate. This is not worked around and cannot be locally: the
+  workspace needs that file, and the conventions' own layout — `crates/` holding several
+  crates — makes a workspace the normal arrangement. Any derived repository with more than one
+  crate will hit it.
+rationale: |
+  Why these are recorded rather than quietly fixed and forgotten.
+
+  Both are invisible to every gate this repository runs, which is what makes them worth
+  writing down rather than remembering. The first produces a REGEN block that regenerates
+  successfully and says something false — the same shape as the stale-figure problem the
+  directory conventions describe for `docs/`, arriving in generated content where a reader
+  would least expect to have to check.
+
+  The second is the one that generalizes. It will appear in every derived repository that uses
+  a Cargo workspace, which the conventions treat as the standard layout for `crates/`, and it
+  will appear the moment the first crate is written — the point at which nobody is yet looking
+  closely at the index.
+
+  What an upstream report should carry, per the conventions: the pin (1162287), what it cost
+  here (one bisection of a manifest, one workaround comment now living in this repository), and
+  where the workaround is so it can be removed. Filing the issue is an outward-facing action
+  and has not been taken without the elector's say-so.
