@@ -1,0 +1,21 @@
+[package]
+name = "provenance"
+version = "0.1.0"
+description = "Whether every edge in the corpus says what kind of claim it is"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# One space before every `=`, as in the other crates. See `.yidam/decisions/upstream-findings.yml`.
+
+[lib]
+name = "provenance"
+path = "src/lib.rs"
+
+[[bin]]
+name = "edge-audit"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_yaml = { workspace = true }
