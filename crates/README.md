@@ -9,9 +9,9 @@ capability types (connectors, calculators, feature engineering) and the index la
 
 ## Shape of the domain computer
 
-Two crates exist: [`succession`](succession/) and [`covering`](covering/), described below. The
-rest of this section names the shape the corpus's structure calls for, so the next one written
-is not invented from scratch.
+Three crates exist: [`succession`](succession/), [`covering`](covering/) and
+[`proximity`](proximity/), described below. The rest of this section names the shape the
+corpus's structure calls for, so the next one written is not invented from scratch.
 
 **Connectors.** Four external sources feed distinct classes. Decennial census and ACS
 tables populate `measure` nodes against `place` and `jurisdiction`. Ohio Secretary of State
@@ -20,12 +20,14 @@ reported at. County auditor parcel and GIS exports anchor `site` nodes to ground
 National Hydrography Dataset supplies the `flows-into` topology among `natural-feature`
 nodes rather than leaving it hand-asserted.
 
-**Calculators.** Three computations are specific to this domain and are not graph traversal
+**Calculators.** Four computations are specific to this domain and are not graph traversal
 in disguise. A **succession audit** reads `office` and its `tenure` nodes and reports gaps
 and overlaps in a line of holders — a defect no graph check can see, because each node is
 well-formed and each edge resolves. A **covering query** reads the jurisdiction and division
 edges around a place and reports what lay over it and what the corpus can date, which is the
-same distinction one layer out. A **boundary-comparability check** reads a `measure`,
+same distinction one layer out. A **proximity ranking** orders nodes by great-circle distance and exists as much to refuse the
+containment question as to answer the distance one. A **boundary-comparability check** reads a
+`measure`,
 the `place` it describes, and the annexation `event` nodes between two dates, and reports
 whether the two figures describe the same ground. Comparing a city's population across
 census years without it is the most ordinary way this corpus could publish a false number.
@@ -58,6 +60,25 @@ Writing it found one defect that reading could not have: `Option`'s ordering put
 so the current holder's open-ended term sorted ahead of a single-year 2017 predecessor. The
 corpus test caught it.
 
+**Third crate — written.** [`proximity`](proximity/) ranks corpus nodes by distance, using the
+vendored `geodesics` haversine rather than a local copy, and is the first crate here to depend on
+`.yidam/.vendor/` by path.
+
+Its subject is the refusal. Ranked from the tank plant's address point, the candidate places come
+out Fort Shawnee 2.20, Lima 2.37, Shawnee Township 2.52 miles — and the plant is in Shawnee
+Township, last of three, by a spread of 0.32 miles. Nothing about that ranking looks unsafe, and
+this corpus was wrong about that plant from genesis through three corrections before a boundary
+source settled it. So the crate reports scale, reports distance, and says in its output that
+neither is containment.
+
+The corpus test proves the point in both directions in one query: the refinery reads as inside
+Lima's scale and is not in Lima, and as outside Shawnee Township's scale, which is the township
+it is in.
+
+Writing the tests corrected the crate's own story twice — the right answer ranks third rather
+than second, and the plant's two coordinates, 0.81 miles apart and describing one installation,
+give opposite scale readings while the containment answer never moves.
+
 **Second crate — written.** [`covering`](covering/) implements the covering query, run as
 `jurisdiction-at`. Its subject is not the traversal, which is short, but the fact that almost
 every edge it walks is undated: `place governed-by jurisdiction` says the City of Lima governs
@@ -89,6 +110,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 |---|---|
 | [—](crates/) | — |
 | [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
+| [proximity](proximity/) | Corpus nodes within a radius of a point, ordered by distance |
 | [succession](succession/) | Gaps and overlaps in an office's line of holders, from its tenure nodes |
 <!-- /REGEN -->
 

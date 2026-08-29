@@ -1,0 +1,32 @@
+[package]
+name = "proximity"
+version = "0.1.0"
+description = "Corpus nodes within a radius of a point, ordered by distance"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# One space before every `=`, as in the other two crates, and for the same reason:
+# `yidam crates-index` reads this file line-wise. See `.yidam/decisions/upstream-findings.yml`.
+
+[lib]
+name = "proximity"
+path = "src/lib.rs"
+
+[[bin]]
+name = "proximity"
+path = "src/main.rs"
+
+[dev-dependencies]
+# The corpus test reproduces a hand computation from genesis and must use the same haversine
+# the calculator does, not a second one written for the test.
+yidam-domain-geodesics = { path = "../../.yidam/.vendor/prelude/domains/geodesics/rust" }
+
+[dependencies]
+serde = { workspace = true }
+serde_yaml = { workspace = true }
+# The vendored prelude domain, path-depended rather than copied. `.yidam/.vendor/` is
+# read-only and this is the reason it was vendored at all: the haversine here is pinned
+# across Rust, TypeScript and Python by shared parity fixtures, so reimplementing it would
+# silently unpin this repository from the other two.
+yidam-domain-geodesics = { path = "../../.yidam/.vendor/prelude/domains/geodesics/rust" }
