@@ -1,0 +1,57 @@
+id: the-well-that-failed
+summary: >-
+  This corpus's central economic event is named for a well that broke. The Faurot well made the
+  discovery on May 9, 1885 and then "met with a series of misfortunes that left it useless"; the
+  second well, drilled that autumn by a different company, gave the first persistent production and
+  the oil that proved Lima crude could be refined. Naming follows fame, and the corpus inherited the
+  naming without the record.
+context: |
+  [`lima-oil-strike`](../corpus/event/lima-oil-strike.yml) was written at genesis as a single event
+  with a single actor: "the 1885 strike", "a well he financed produced the strike". Everything
+  downstream — [the boom](../corpus/period/lima-oil-boom.yml),
+  [the refinery](../corpus/site/lima-refinery.yml),
+  [deindustrialization](../corpus/period/deindustrialization.yml) — hangs off it.
+
+  The 1906 history, written by two Lima men twenty-one years after, gives the technical account and
+  contradicts the shape of the story in one sentence. The pioneer well is "to be credited" with
+  nothing; the second well, put down by the Citizens' Gas Company, is "to be credited with yielding
+  the first regular and persistent supply of petroleum from the Trenton limestone in Ohio, the
+  pioneer well meeting with a series of misfortunes that left it useless."
+
+  The numbers support the reading. The Faurot well made 200 barrels in six days and its own
+  contractor rated it at eighteen barrels. The second made 1,450 barrels in December 1885 alone, and
+  it was its oil that went to the refineries for the tests that established Lima crude could be
+  deodorized — which is the whole reason the field was worth anything.
+decision: |
+  **Keep the event and its name; write the correction into it rather than around it.**
+
+  The node stays `lima-oil-strike` and keeps May 9, 1885, because that is the discovery and the date
+  is now two-scan verified. What changes is that the node states, in its own text, that the famous
+  well failed and names the well that did not. The claim "a well he financed produced the strike",
+  which the genesis node was careful to make instead of calling Faurot the discoverer, turns out to
+  have been exactly the right amount of caution — and it is still not the whole event.
+
+  Renaming was considered and rejected. "The strike" is what every source and every reader calls it,
+  a node id is a handle rather than an argument, and a corpus that renames its handles each time it
+  learns something loses the thread its git history is supposed to be.
+rationale: |
+  The general shape is worth having: **an event's name records who was famous, and the record
+  records what happened, and these come apart in a specific direction.** The named party is the one
+  with the capital, the newspaper coverage and the building on Main Street. The productive fact
+  belongs to a company formed by "a number of public-spirited gentlemen" whose name — the Citizens'
+  Gas Company — nobody remembers, partly because it was formed to look for gas and is remembered,
+  when at all, for oil.
+
+  There is a second instance in the same phase, running the other way, and it is the reason to trust
+  the method rather than the source. Two phases ago the corpus established by point-in-polygon that
+  the refinery stands on unincorporated ground in Shawnee Township and called that "a fact about tax
+  base and authority" — a structural observation with no explanation. The explanation arrived from a
+  farmer's son's story: 151 acres chosen in 1886 for their position between two railroads, on ground
+  nothing has annexed since. A finding made from census geography waited three phases for a history
+  to say why it was true.
+
+  The caution: a single source correcting a received account is still a single source, and the 1921
+  volume builds a page of rhetoric on the Faurot well without mentioning that it broke. Two scans of
+  the 1906 book agree, which is what the correction rests on, and the corpus says so.
+status: accepted
+date: "2026-08-29"

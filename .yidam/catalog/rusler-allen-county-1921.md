@@ -16,7 +16,11 @@ location:
       Marked NOT_IN_COPYRIGHT. Volume II, the biographical volume, is indexed here but is not
       on archive.org and is not held.
 used-by:
+  - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/organization/solar-refining-company.yml
+  - ../corpus/organization/standard-oil.yml
+  - ../corpus/person/james-a-hover.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
   - ../corpus/place/cairo.yml
@@ -24,6 +28,7 @@ used-by:
   - ../corpus/place/lima.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
+  - ../corpus/site/lima-refinery.yml
 ---
 
 **What it is.** The same commercial genre as
