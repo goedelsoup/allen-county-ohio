@@ -82,6 +82,46 @@
       ]
     },
     {
+      "id": "place-allen-county::natural-population-change,-four-years-to-2024",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "natural population change, four years to 2024",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-natural-change-2021-2024.yml",
+          "label": "Allen County natural change, 2021–2024",
+          "as_of": "2024",
+          "value": -506.0,
+          "published": "-506",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "Births minus deaths, summed over the four full estimate years 2021–2024. The partial year 2020 — April to June, 293 births and 283 deaths — is excluded as not comparable. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::net-migration,-four-years-to-2024",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "net migration, four years to 2024",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-net-migration-2021-2024.yml",
+          "label": "Allen County net migration, 2021–2024",
+          "as_of": "2024",
+          "value": -793.0,
+          "published": "-793",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "Domestic plus international net migration, summed over the four full estimate years 2021–2024. The partial year 2020 is excluded as not comparable. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::presidential-votes-cast",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -318,7 +358,9 @@
         }
       ],
       "caveats": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start.",
+        "It does not establish that either mechanism reaches back before 2020.",
+        "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
       "figures": [
         {
@@ -365,7 +407,9 @@
         }
       ],
       "caveats": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start.",
+        "It does not establish that either mechanism reaches back before 2020.",
+        "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
       "figures": [
         {
@@ -397,9 +441,50 @@
         }
       ],
       "caveats": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start.",
+        "It does not establish that either mechanism reaches back before 2020.",
+        "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
       "figures": []
+    },
+    {
+      "id": "decline-is-migration-and-deaths",
+      "statement": "Over the four full years to 2024 the county lost 1,271 people: 506 to natural decrease and 793 to net migration.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-natural-change-2021-2024.yml",
+          "node_label": "Allen County natural change, 2021–2024",
+          "span": "Across the four full years 2021 to 2024 the county recorded **4,763 births and 5,269 deaths** — a natural change of **−506**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-net-migration-2021-2024.yml",
+          "node_label": "Allen County net migration, 2021–2024",
+          "span": "Across the four full years 2021 to 2024 the county's net migration was **−793**: a domestic net loss of **1,217** against an international net gain of **424**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Natural decrease",
+          "value": -506.0,
+          "literal": "−506"
+        },
+        {
+          "label": "Net migration",
+          "value": -793.0,
+          "literal": "−793"
+        }
+      ]
     },
     {
       "id": "three-places",

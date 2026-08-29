@@ -1168,6 +1168,64 @@
       "withheld": 0
     },
     {
+      "id": "measure/allen-county-natural-change-2021-2024.yml",
+      "class": "measure",
+      "label": "Allen County natural change, 2021–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Births minus deaths, summed over the four full estimate years 2021–2024. The partial year 2020 — April to June, 293 births and 283 deaths — is excluded as not comparable. [verified]",
+        "parameter": "natural population change, four years to 2024",
+        "unit": "persons",
+        "value": "-506"
+      },
+      "blocks": [
+        {
+          "text": "Across the four full years 2021 to 2024 the county recorded **4,763 births and 5,269 deaths** — a natural change of **−506**. [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md), county file, fields `BIRTHS` and `DEATHS`.",
+          "tier": "verified"
+        },
+        {
+          "text": "Year by year the natural change was −213, −259, −41 and **+7**: deaths exceeded births in 2021, 2022 and 2023, and births exceeded deaths again in 2024. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Deaths moved and births did not.** Births ran 1,171, 1,190, 1,202 and 1,200 — flat within three per cent. Deaths ran 1,384, 1,449, 1,243 and 1,193, peaking in 2022 and falling by 256 over the following two years. So the natural decrease of these four years is a deaths story, and the shape of it — a spike in 2021–2022 subsiding by 2024 — is the shape the pandemic left in county death counts across the United States. [inference] The corpus holds no cause-of-death data and cannot attribute it.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-net-migration-2021-2024.yml",
+      "class": "measure",
+      "label": "Allen County net migration, 2021–2024",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2024",
+        "method": "Domestic plus international net migration, summed over the four full estimate years 2021–2024. The partial year 2020 is excluded as not comparable. [verified]",
+        "parameter": "net migration, four years to 2024",
+        "unit": "persons",
+        "value": "-793"
+      },
+      "blocks": [
+        {
+          "text": "Across the four full years 2021 to 2024 the county's net migration was **−793**: a domestic net loss of **1,217** against an international net gain of **424**. [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md), county file, fields `DOMESTICMIG` and `INTERNATIONALMIG`.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two components move in opposite directions and one of them is accelerating.** International migration ran 26, 100, 133 and 165 — rising every year without exception. Domestic migration ran −213, −530, −317 and −157, worst in 2022 and shrinking since. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "In 2024 they crossed: 165 arriving from abroad against 157 leaving for elsewhere in the United States, for a net migration of **+8** — the first non-negative year in the series. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "measure/allen-county-population-1970.yml",
       "class": "measure",
       "label": "Allen County population, 1970 census",
@@ -1975,14 +2033,20 @@
           "tier": "inference"
         },
         {
+          "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
+          "tier": "verified"
+        },
+        {
           "text": "**The decline is broad and uneven.** Between the 2020 estimates base and 2024, eleven of the county's thirteen civil subdivisions lost population. Lima lost most in absolute terms — 841 of a county loss of 1,351 — and the only two that grew were Auglaize township, by 55, and Marion township, by 102, at the county's south-eastern and Delphos ends. [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file. So this is not a city emptying into its own suburbs: the suburban ring is shrinking too, slower. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start.",
+        "It does not establish that either mechanism reaches back before 2020.",
+        "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
-      "withheld": 2
+      "withheld": 4
     },
     {
       "id": "period/lima-oil-boom.yml",
@@ -5345,6 +5409,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/allen-county-natural-change-2021-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "measure/allen-county-net-migration-2021-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-popest-2024.md"
     },
     {
       "from": "measure/allen-county-population-1970.yml",
