@@ -58,6 +58,11 @@ node_modules/
 .pnpm-store/
 *.tsbuildinfo
 
+# Astro's generated types and content cache in web/. Derived from the source tree
+# on every build; the feeds the site actually reads live in web/src/feeds/ and are
+# committed, because those are derived from the corpus and gated as such.
+.astro/
+
 # Build output, both ecosystems.
 dist/
 

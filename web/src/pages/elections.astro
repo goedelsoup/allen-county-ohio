@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import DataTable from '../components/DataTable.astro'
+import StatTile from '../components/StatTile.astro'
+import { assertion, seriesById } from '../lib/feeds'
+import type { LineSpec } from '../scripts/charts'
+
+const rising = assertion('republican-share-rising')
+const swing = assertion('democratic-ground-moved-fastest')
+const eleven = assertion('eleven-precincts')
+
+const shareSpec: LineSpec = {
+  kind: 'line',
+  x: rising.figures.map((f) => f.label),
+  series: [
+    { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
+  ],
+  yTitle: 'Per cent',
+  tickSuffix: '%',
+  labelLast: true,
+}
+
+const turnout = seriesById('jurisdiction-allen-county-government::ballots-cast,-general-election')
+const presidential = seriesById('place-allen-county::presidential-votes-cast')
+const governor = seriesById('place-allen-county::votes-cast-for-governor')
+
+const votes = [...presidential.points, ...governor.points].toSorted((a, b) =>
+  a.as_of.localeCompare(b.as_of),
+)
+
+const correlation = swing.figures[0]
+---
+
+<Base
+  title="Elections"
+  lede="Three consecutive elections moving one way, in a county whose most Democratic ground moved fastest of all."
+>
+  <section class="tiles">
+    <StatTile
+      value={`${rising.figures[rising.figures.length - 1].value}%`}
+      label="Republican share, 2020"
+      note="Up 2.5 points across two presidential elections."
+      tier={rising.tier}
+    />
+    <StatTile value="11 of 88" label="Precincts Biden won" note="Ten of them in Lima." tier={eleven.tier} />
+    <StatTile
+      value={correlation.literal}
+      label="2016 share against 2016–2020 swing"
+      note="The more Democratic a precinct was, the harder it moved right."
+      tier={swing.tier}
+    />
+    <StatTile
+      value={Number(turnout.points[0].value).toLocaleString('en-US')}
+      label="Ballots cast, 2020"
+      note="360 more than the presidential votes counted — an undervote of 0.7 per cent."
+      tier={turnout.points[0].tier}
+    />
+  </section>
+
+  <AssertionCard assertion={rising} open />
+
+  <ChartFigure
+    id="republican-share"
+    title="Republican share of the top-of-ticket vote"
+    caption="Two presidential elections with a governor's race between them. The 2018 figure is a different office and a different electorate; it is on the same line because the corpus put it there, in the passage above."
+    columns={['Election', 'Republican share']}
+    rows={rising.figures.map((f) => [f.label, `${f.value}%`])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="republican-share" set:html={JSON.stringify(shareSpec)} is:inline />
+
+  <section>
+    <h2>A county ninety points wide</h2>
+    <AssertionCard assertion={eleven} />
+    <AssertionCard assertion={swing} />
+    <p class="note">
+      The precinct-level returns those two assertions rest on are not in this corpus as data —
+      by a recorded decision, the county's 88 precincts are held as one measure rather than 88
+      nodes, because every one of them has the same relationship to everything else. So this
+      page can tell you the shape of the result and cannot draw you a precinct map of it. The
+      <a href="/map">map</a> shows the precincts as ground, with the population each holds.
+    </p>
+  </section>
+
+  <DataTable
+    title="Votes cast at the top of the ticket"
+    caption="A count of ballots, not a share — and not a chart, because a presidential and a gubernatorial electorate are not the same size and plotting them on one line would say they were."
+    columns={['Date', 'Contest', 'Votes']}
+    rows={votes.map((p) => [
+      p.as_of,
+      p.node.includes('governor') ? 'Governor' : 'President',
+      p.value.toLocaleString('en-US'),
+    ])}
+  />
+
+  <script>
+    import { renderCharts } from '../scripts/charts'
+    renderCharts()
+  </script>
+
+  <style>
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    section {
+      margin-top: 3rem;
+    }
+    .note {
+      max-width: var(--measure);
+      color: var(--ink-secondary);
+      background: var(--surface-sunken);
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius);
+      font-size: 0.9375rem;
+    }
+  </style>
+</Base>

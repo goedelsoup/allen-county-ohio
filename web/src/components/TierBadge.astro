@@ -1,0 +1,53 @@
+---
+// A claim tag, as a dot and a word.
+//
+// Never the dot alone. The two tiers are a status distinction, and a reader who cannot
+// separate green from amber has to be able to read the tier anyway.
+import type { Tier } from '../lib/feeds'
+
+interface Props {
+  tier: Tier
+  title?: string
+}
+
+const { tier, title } = Astro.props
+
+const explain: Record<Tier, string> = {
+  verified: 'A catalog source supports this claim.',
+  inference: 'Drawn by this corpus from what it holds. Attributed, not sourced.',
+  open: 'Unresolved — and never published.',
+}
+---
+
+<span class:list={['badge', tier]} title={title ?? explain[tier]}>
+  <span class="dot" aria-hidden="true"></span>{tier}
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    color: var(--ink-secondary);
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    flex: none;
+  }
+  .verified .dot {
+    background: var(--tier-verified);
+  }
+  .inference .dot {
+    background: var(--tier-inference);
+  }
+  .open .dot {
+    background: var(--ink-muted);
+  }
+</style>

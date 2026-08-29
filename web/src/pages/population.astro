@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import { assertion, seriesById } from '../lib/feeds'
+import type { BarSpec, LineSpec } from '../scripts/charts'
+
+const decline = assertion('county-population-decline')
+const concentration = assertion('decline-concentrated-in-lima')
+const breadth = assertion('decline-is-not-suburbanization')
+
+// The county chart is the assertion's own figures: the five numbers the corpus enumerated
+// inside the sentence the assertion cites, checked against that sentence at build time.
+const countySpec: LineSpec = {
+  kind: 'line',
+  x: decline.figures.map((f) => f.label),
+  series: [{ name: 'Allen County', y: decline.figures.map((f) => f.value) }],
+  yTitle: 'Residents',
+  labelLast: true,
+}
+
+// The comparison chart indexes two measured series to a common base. Two measures of very
+// different size on one axis would be a dual-axis chart, which invents a correlation; an
+// index puts both on one honest scale.
+const county = seriesById('place-allen-county::total-resident-population')
+const lima = seriesById('place-lima::total-resident-population')
+
+// One enumeration and one estimates base share the 2020 date in both series. The estimates
+// line is the one that is comparable across all four dates, so the census figures are left
+// to the table rather than mixed into a series with them.
+const estimates = (points: typeof county.points) => points.filter((p) => !p.node.includes('-census'))
+
+const countyEst = estimates(county.points).filter((p) => p.as_of >= '2000')
+const limaEst = estimates(lima.points)
+const dates = countyEst.map((p) => p.as_of.slice(0, 4))
+
+const indexed = (points: typeof county.points) => {
+  const base = points[0].value
+  return points.map((p) => Math.round((p.value / base) * 1000) / 10)
+}
+
+const indexSpec: LineSpec = {
+  kind: 'line',
+  x: dates,
+  series: [
+    { name: 'Allen County', y: indexed(countyEst) },
+    { name: 'Lima', y: indexed(limaEst) },
+  ],
+  yTitle: '2000 = 100',
+  labelLast: true,
+}
+
+const rateSpec: BarSpec = {
+  kind: 'bar',
+  categories: concentration.figures.map((f) => f.label),
+  values: concentration.figures.map((f) => f.value),
+  yTitle: 'Per cent lost, 2000–2010',
+  tickSuffix: '%',
+  labelValues: true,
+}
+
+const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
+  a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
+)
+---
+
+<Base
+  title="Population"
+  lede="Allen County has lost people at every point it has been measured since 1970. What that does and does not show is the whole of this page."
+>
+  <AssertionCard assertion={decline} open />
+
+  <ChartFigure
+    id="county-population"
+    title="Allen County, 1970–2024"
+    caption="The five figures the corpus enumerates in the passage above. A count and an estimate are different instruments; the table below names which each figure is."
+    columns={['Figure', 'Residents']}
+    rows={decline.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+
+  <script type="application/json" data-chart-spec="county-population" set:html={JSON.stringify(countySpec)} is:inline />
+
+  <section>
+    <h2>The loss is not spread evenly</h2>
+    <AssertionCard assertion={concentration} />
+
+    <ChartFigure
+      id="decline-rate"
+      title="Rate of loss, 2000–2010"
+      caption="Lima against everything in the county outside every incorporated place."
+      columns={['Where', 'Per cent lost']}
+      rows={concentration.figures.map((f) => [f.label, `${f.value}%`])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="decline-rate" set:html={JSON.stringify(rateSpec)} is:inline />
+
+    <ChartFigure
+      id="indexed"
+      title="City and county, indexed to 2000"
+      caption="Both series set to 100 at 2000, so two populations three times apart in size can share one axis. Estimates only — the decennial counts are in the table and are a different instrument. The indexing is arithmetic done on this page; every input is a Census figure from the corpus."
+      columns={['Date', 'Subject', 'Figure', 'Basis']}
+      rows={allPoints.map((p) => [
+        p.as_of,
+        p.node.startsWith('measure/lima') ? 'Lima' : 'Allen County',
+        p.value.toLocaleString('en-US'),
+        p.node.includes('-census') ? 'Decennial count' : 'Estimate',
+      ])}
+    />
+    <script type="application/json" data-chart-spec="indexed" set:html={JSON.stringify(indexSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>And it is not suburbanization</h2>
+    <AssertionCard assertion={breadth} />
+  </section>
+
+  <script>
+    import { renderCharts } from '../scripts/charts'
+    renderCharts()
+  </script>
+
+  <style>
+    section {
+      margin-top: 3rem;
+    }
+  </style>
+</Base>

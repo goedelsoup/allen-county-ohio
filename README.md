@@ -28,8 +28,8 @@ The model this repository runs on is vendored in
 | [`.yidam/decisions/`](.yidam/decisions/) | Structured records of choices that shaped this repo |
 | [`.yidam/skills/`](.yidam/skills/) | Domain skills — calculators and procedures agents invoke |
 | [`.yidam/.vendor/`](.yidam/.vendor/) | Inherited yidam prelude; read-only |
-| [`crates/`](crates/) | Domain computer: connectors, calculators, index |
-| [`web/`](web/) | Web interface over the corpus |
+| [`crates/`](crates/) | Domain computer: calculators, checks, and the publication gate |
+| [`web/`](web/) | The public site, built only from the corpus's exported feeds |
 
 `agents/`, `packages/`, and `docs/` are conventions this repository has not needed yet and
 so does not have. Create each the day something goes in it, and add its row above then.

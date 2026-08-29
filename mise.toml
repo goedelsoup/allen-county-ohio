@@ -45,8 +45,10 @@ rust = { version = "1.88.0", components = "rustfmt,clippy" }
 # python = "3.12"
 # uv = "latest"
 #
-# Add node when web/ becomes an application rather than a README.
-# node = "lts"
+# Node — the web layer in web/, added the day it became an application rather
+# than a README: an Astro site over the exported feeds, deck.gl over the county's
+# vendored census geography, Plotly over its measures.
+node = "lts"
 
 # ── domain computer (crates/) ─────────────────────────────────────────────
 # These no-op until crates/Cargo.toml exists — the same condition
@@ -84,6 +86,80 @@ if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"
 cargo fmt --all --manifest-path crates/Cargo.toml
 """
 
+# ── publication (crates/publish → web/src/feeds/) ─────────────────────────
+# The feeds under web/src/feeds/ are derived from .yidam/corpus/ and committed.
+# `publish` rewrites them. The gate that they are current is `cargo test` — a
+# corpus test in crates/publish compares the committed bytes to a fresh
+# derivation — so it is already inside `ci` below rather than beside it. The
+# derivation is the gate, which is what the directory conventions ask of
+# anything outside the corpus that derives from it.
+#
+# These are named `publish`/`site` rather than `web-*`: mise.yidam.toml already
+# defines `web-install`, `web-dev` and `web-build` for yidam's own corpus-search
+# shell under packages/web/, and shadowing an inherited task is a collision that
+# comes back at the next `yidam-vendor-update`.
+
+[tasks.publish]
+description = "Rewrite the public feeds in web/src/feeds/ from the corpus."
+run = """
+if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
+cargo run --quiet --manifest-path crates/Cargo.toml -p publish --bin publish-feeds
+"""
+
+[tasks.publish-check]
+description = "Report whether the committed feeds are what the corpus says."
+run = """
+if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
+cargo run --quiet --manifest-path crates/Cargo.toml -p publish --bin publish-feeds -- --check
+"""
+
+[tasks.boundaries]
+description = "Re-vendor the county's census geography from TIGERweb. Reaches the network."
+# The only task in this repository that is not hermetic, and it is run by hand.
+# Its output is committed, so no build and no CI run ever needs the Census
+# Bureau to be reachable.
+run = """
+if [ ! -d web/node_modules ]; then echo "run 'npm ci' in web/ first"; exit 1; fi
+node web/scripts/fetch-boundaries.mjs
+"""
+
+# ── the site (web/) ───────────────────────────────────────────────────────
+# Each no-ops with a loud line when web/node_modules is absent rather than
+# failing a fresh clone. CI always installs, so CI is where these are binding.
+
+[tasks.site-install]
+description = "Install the web layer's npm dependencies."
+run = "cd web && npm ci"
+
+[tasks.site-dev]
+description = "Serve the site at localhost:4321 with live reload."
+run = "cd web && npm run dev"
+
+[tasks.site-lint]
+description = "Oxlint over the web layer."
+run = """
+if [ ! -d web/node_modules ]; then echo "web/node_modules absent — skipping lint (mise run site-install)"; exit 0; fi
+cd web && npm run --silent lint
+"""
+
+[tasks.site-test]
+description = "Vitest over the web layer, including the corpus-to-geometry join."
+run = """
+if [ ! -d web/node_modules ]; then echo "web/node_modules absent — skipping tests (mise run site-install)"; exit 0; fi
+cd web && npm run --silent test
+"""
+
+[tasks.site-build]
+description = "Build the static site into web/dist/."
+run = """
+if [ ! -d web/node_modules ]; then echo "web/node_modules absent — skipping build (mise run site-install)"; exit 0; fi
+cd web && npm run --silent build
+"""
+
+[tasks.site]
+description = "Lint, test and build the web layer."
+depends = ["site-lint", "site-test", "site-build"]
+
 # ── ci ────────────────────────────────────────────────────────────────────
 # The local equivalent of what .github/workflows/ci.yml runs, and "equivalent"
 # is checked rather than intended: `the_local_gate_runs_what_ci_gates_on` reads
@@ -96,7 +172,7 @@ cargo fmt --all --manifest-path crates/Cargo.toml
 # before any crate exists.
 
 [tasks.ci]
-description = "Full local gate: corpus graph check, then the domain computer."
+description = "Full local gate: corpus graph check, the domain computer, then the site."
 run = """
 set -eu
 mise run graph-check
@@ -111,4 +187,20 @@ fi
 cargo fmt --all --manifest-path crates/Cargo.toml -- --check
 cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
 cargo test --workspace --manifest-path crates/Cargo.toml
+RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --workspace --manifest-path crates/Cargo.toml
+
+# The publication gate is inside `cargo test` above, not here: crates/publish's
+# corpus test compares the committed feeds byte for byte against a fresh
+# derivation from .yidam/corpus/. A separate step would be a second place to
+# remember, and this repository has already been bitten by a gate list that
+# drifted from the one CI runs.
+
+if [ ! -f web/package.json ]; then
+  echo
+  echo "no web/package.json — the web layer does not exist."
+  exit 0
+fi
+mise run site-lint
+mise run site-test
+mise run site-build
 """

@@ -1,0 +1,34 @@
+---
+// One paragraph of a corpus node, with the tag it travels on.
+import TierBadge from './TierBadge.astro'
+import { inline } from '../lib/prose'
+import type { Block } from '../lib/feeds'
+
+interface Props {
+  block: Block
+}
+
+const { block } = Astro.props
+const html = inline(block.text)
+---
+
+<div class="claim">
+  <p set:html={html} />
+  <TierBadge tier={block.tier} />
+</div>
+
+<style>
+  .claim {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 0 0 1.25rem;
+  }
+  .claim p {
+    margin: 0;
+    max-width: var(--measure);
+  }
+  .claim :global(code) {
+    font-size: 0.85em;
+  }
+</style>

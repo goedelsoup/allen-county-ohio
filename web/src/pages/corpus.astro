@@ -1,0 +1,237 @@
+---
+import Base from '../layouts/Base.astro'
+import DataTable from '../components/DataTable.astro'
+import StatTile from '../components/StatTile.astro'
+import TierBadge from '../components/TierBadge.astro'
+import { manifest, nodes } from '../lib/feeds'
+import { inline } from '../lib/prose'
+
+const c = manifest.corpus
+
+const tagTotals = Object.values(c.edge_tags).reduce<Record<string, number>>((acc, tags) => {
+  for (const [tag, n] of Object.entries(tags)) acc[tag] = (acc[tag] ?? 0) + n
+  return acc
+}, {})
+
+const edgeRows = Object.entries(c.edge_tags)
+  .toSorted(([a], [b]) => a.localeCompare(b))
+  .map(([shape, tags]) => [
+    shape,
+    tags.verified ? String(tags.verified) : '—',
+    tags.inference ? String(tags.inference) : '—',
+  ])
+
+const classRows = Object.entries(c.by_class)
+  .toSorted(([, a], [, b]) => b - a)
+  .map(([cls, n]) => [cls, String(n)])
+
+// Every refusal the corpus makes, gathered. These are the sentences a corpus writes to stop
+// a reader drawing something it cannot support, and they are worth more than most of what
+// surrounds them.
+const refusals = nodes.flatMap((n) => n.refusals.map((r) => ({ node: n.label, text: r })))
+
+const verifiedShare = Math.round(
+  (100 * (tagTotals.verified ?? 0)) / Object.values(tagTotals).reduce((a, b) => a + b, 0),
+)
+---
+
+<Base
+  title="What this rests on"
+  lede="This site is a reading of a documentary corpus, and the corpus is auditable. This page is the audit: how much is sourced, how much is inferred, and what never left the repository."
+>
+  <section class="tiles">
+    <StatTile value={String(c.nodes)} label="Nodes in the corpus" />
+    <StatTile value={String(c.edges)} label="Edges that assert something" note="Structural edges — which class a node instantiates — are not claims and are not counted." />
+    <StatTile value={`${verifiedShare}%`} label="Of those edges are sourced" note={`${tagTotals.verified ?? 0} verified against a catalog source, ${tagTotals.inference ?? 0} drawn by the corpus itself.`} />
+    <StatTile value={String(c.blocks_withheld + c.properties_withheld)} label="Passages withheld" note="Tagged open, and excluded from this site by rule rather than by an editor." />
+  </section>
+
+  <section>
+    <h2>The rule this site publishes under</h2>
+    <p class="prose">{manifest.policy.rationale}</p>
+    <div class="tiers">
+      <div>
+        <TierBadge tier="verified" />
+        <p>A catalog source supports the claim. It may travel anywhere.</p>
+      </div>
+      <div>
+        <TierBadge tier="inference" />
+        <p>
+          The corpus drew it from what it holds. It travels only where it is attributed — so on
+          this site it never appears without its tag, the passage it came from, and the source
+          under that passage.
+        </p>
+      </div>
+      <div>
+        <TierBadge tier="open" />
+        <p>
+          Unresolved. It does not leave the repository, and there is no setting on this site
+          that would show it to you.
+        </p>
+      </div>
+    </div>
+    <p class="prose fine">
+      A tier is computed on every build, never declared. An assertion drawn from several
+      passages inherits the weakest of them, so a claim downgraded in the corpus is downgraded
+      here on the next build rather than whenever somebody remembers.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the corpus refuses</h2>
+    <p class="prose">
+      Where a node states a fact and declines the inference from it, the refusal is carried
+      onto every page that cites that node. A build fails if an assertion cites across one of
+      these without answering it — which is the only reason they are here rather than lost
+      behind the number they qualify.
+    </p>
+    <ul class="refusals">
+      {
+        refusals.map((r) => (
+          <li>
+            <p set:html={inline(r.text)} />
+            <span class="src">{r.node}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <DataTable
+    title="Where the corpus is sourced and where it is guessing"
+    caption="Every relationship in the graph, by the kind of claim it carries. Reading down the inference column is reading the honest edge of this corpus: every edge its event and period classes own is an inference, and 39 people are placed in a county by one."
+    columns={['Relationship', 'Verified', 'Inference']}
+    rows={edgeRows}
+  />
+
+  <DataTable
+    title="Nodes by class"
+    caption="A corpus can look large while saying little. Eighty of these are one office's roster — 41 people and 39 tenures, each node one row of one table — and the corpus says so about itself."
+    columns={['Class', 'Nodes']}
+    rows={classRows}
+  />
+
+  <section>
+    <h2>What was withheld</h2>
+    <div class="scroll-x">
+      <table class="withheld">
+        <tbody>
+          <tr>
+            <th scope="row">Paragraphs in the corpus</th>
+            <td>{c.blocks}</td>
+            <td class="note">Prose blocks across all {c.nodes} nodes.</td>
+          </tr>
+          <tr>
+            <th scope="row">Published here</th>
+            <td>{c.blocks_published}</td>
+            <td class="note">Carrying a tag of verified or inference.</td>
+          </tr>
+          <tr>
+            <th scope="row">Withheld as open</th>
+            <td>{c.blocks_withheld}</td>
+            <td class="note">Unresolved claims. They do not leave the repository.</td>
+          </tr>
+          <tr>
+            <th scope="row">Withheld as untagged</th>
+            <td>{c.blocks_untagged}</td>
+            <td class="note">
+              Commentary the corpus writes about itself — why a node exists, what it argues
+              about a class. No tag to travel on, and no reader here is served by it.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Fields withheld</th>
+            <td>{c.properties_withheld}</td>
+            <td class="note">Structured properties carrying an open tag.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <style>
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .prose {
+      max-width: var(--measure);
+      color: var(--ink-secondary);
+    }
+    .fine {
+      font-size: 0.9375rem;
+      color: var(--ink-muted);
+    }
+    .tiers {
+      display: grid;
+      gap: 1rem;
+      max-width: var(--measure);
+      margin: 1.5rem 0;
+    }
+    .tiers > div {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 0.875rem 1rem;
+    }
+    .tiers p {
+      margin: 0.375rem 0 0;
+      color: var(--ink-secondary);
+      font-size: 0.9375rem;
+    }
+    .refusals {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      display: grid;
+      gap: 1rem;
+      max-width: var(--measure);
+    }
+    .refusals li {
+      border-left: 3px solid var(--tier-inference);
+      background: var(--surface);
+      padding: 0.875rem 1rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .refusals p {
+      margin: 0 0 0.375rem;
+      color: var(--ink-secondary);
+      font-size: 0.9375rem;
+    }
+    .src {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+    .withheld {
+      border-collapse: collapse;
+      font-size: 0.9375rem;
+      min-width: 100%;
+    }
+    .withheld th,
+    .withheld td {
+      padding: 0.5rem 1rem 0.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-align: left;
+      vertical-align: top;
+    }
+    .withheld th {
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .withheld td:nth-child(2) {
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+    .withheld .note {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+      max-width: 34rem;
+    }
+  </style>
+</Base>

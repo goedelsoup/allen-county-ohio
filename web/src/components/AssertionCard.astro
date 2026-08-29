@@ -1,0 +1,159 @@
+---
+// An assertion this site makes, with everything underneath it visible.
+//
+// The statement is the site's own words; the citation is the corpus's. Both are shown,
+// because the gap between them is the thing a reader is entitled to judge — that is the
+// whole argument for citing a span rather than a node.
+//
+// Where a cited node refuses an inference, the refusal is rendered *above* the citations
+// rather than below. A caveat under a fold is a caveat nobody reads.
+import TierBadge from './TierBadge.astro'
+import { inline, sourceName } from '../lib/prose'
+import type { Assertion } from '../lib/feeds'
+
+interface Props {
+  assertion: Assertion
+  /** Render the citations open rather than behind a disclosure. */
+  open?: boolean
+}
+
+const { assertion, open = false } = Astro.props
+---
+
+<figure class="assertion">
+  <p class="statement">{assertion.statement}</p>
+
+  <div class="meta">
+    <TierBadge tier={assertion.tier} />
+    <span class="rests">
+      rests on {assertion.citations.length}
+      {assertion.citations.length === 1 ? 'passage' : 'passages'}
+    </span>
+  </div>
+
+  {
+    assertion.caveats.length > 0 && (
+      <div class="caveats">
+        <h4>What this does not establish</h4>
+        {assertion.caveats.map((c) => (
+          <p set:html={inline(c)} />
+        ))}
+      </div>
+    )
+  }
+
+  <details open={open}>
+    <summary>The corpus's own words</summary>
+    <ol class="citations">
+      {
+        assertion.citations.map((c) => (
+          <li>
+            <blockquote set:html={inline(c.span)} />
+            <p class="attrib">
+              <span class="node">{c.node_label}</span>
+              <TierBadge tier={c.tier} />
+              {c.sources.map((s) => (
+                <span class="source">{sourceName(s)}</span>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+  </details>
+</figure>
+
+<style>
+  .assertion {
+    margin: 0 0 2rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    max-width: var(--measure);
+  }
+  .statement {
+    font-size: 1.125rem;
+    line-height: 1.45;
+    margin: 0 0 0.75rem;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .rests {
+    font-size: 0.8125rem;
+    color: var(--ink-muted);
+  }
+
+  .caveats {
+    margin: 1.25rem 0 0;
+    padding: 0.875rem 1rem;
+    background: var(--surface-sunken);
+    border-left: 3px solid var(--tier-inference);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .caveats h4 {
+    margin: 0 0 0.375rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+  }
+  .caveats p {
+    margin: 0 0 0.5rem;
+    font-size: 0.9375rem;
+    color: var(--ink-secondary);
+  }
+  .caveats p:last-child {
+    margin-bottom: 0;
+  }
+
+  details {
+    margin-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.875rem;
+  }
+  summary {
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--ink-secondary);
+  }
+  summary:hover {
+    color: var(--ink);
+  }
+  .citations {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  blockquote {
+    margin: 0 0 0.5rem;
+    padding-left: 0.875rem;
+    border-left: 2px solid var(--rule-strong);
+    color: var(--ink-secondary);
+    font-size: 0.9375rem;
+  }
+  .attrib {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    margin: 0;
+    font-size: 0.75rem;
+  }
+  .node {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .source {
+    color: var(--ink-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+</style>

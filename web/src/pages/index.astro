@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import Claim from '../components/Claim.astro'
+import StatTile from '../components/StatTile.astro'
+import { assertion, manifest, node, seriesById } from '../lib/feeds'
+
+const population = seriesById('place-allen-county::total-resident-population')
+const latest = population.points[population.points.length - 1]
+const first = population.points[0]
+
+const landArea = seriesById('place-allen-county::land-area').points[0]
+const precincts = seriesById('jurisdiction-allen-county-government::voting-districts').points[0]
+
+const county = node('place/allen-county.yml')
+const opening = county?.blocks[0]
+
+const three = assertion('three-places')
+const address = assertion('an-address-is-not-a-municipality')
+const decline = assertion('county-population-decline')
+---
+
+<Base
+  title="Allen County, Ohio"
+  lede="A county of about a hundred thousand people in the northwest quarter of the state, seated at Lima. This site publishes what a documentary corpus can establish about it — and marks the places where it cannot."
+>
+  <section class="tiles">
+    <StatTile
+      value={Number(latest.value).toLocaleString('en-US')}
+      label="People, 2024 estimate"
+      note={`Down from ${Number(first.value).toLocaleString('en-US')} in ${first.as_of}.`}
+      tier={latest.tier}
+    />
+    <StatTile
+      value={`${landArea.published}`}
+      label="Square miles of land"
+      note="2020 Census geography."
+      tier={landArea.tier}
+    />
+    <StatTile
+      value={precincts.published}
+      label="Voting precincts"
+      note="Not one crosses a civil-subdivision line."
+      tier={precincts.tier}
+    />
+    <StatTile
+      value={String(manifest.corpus.nodes)}
+      label="Nodes in the corpus"
+      note={`${manifest.corpus.edges} edges, each carrying the kind of claim it makes.`}
+    />
+  </section>
+
+  {
+    opening && (
+      <section class="opening">
+        <h2>The ground</h2>
+        <Claim block={opening} />
+      </section>
+    )
+  }
+
+  <section>
+    <h2>Three things worth knowing</h2>
+    <p class="section-lede">
+      Each of these is an assertion this site makes. None of them is a sentence any single
+      corpus node contains, so each one shows the passage it was drawn from and the tag that
+      passage carries.
+    </p>
+    <AssertionCard assertion={three} />
+    <AssertionCard assertion={decline} />
+    <AssertionCard assertion={address} />
+  </section>
+
+  <section class="onward">
+    <h2>Where to go</h2>
+    <ul>
+      <li>
+        <a href="/map">The map</a> — the corpus's places on the county's actual 2020 boundaries,
+        which is the only way to see a location claim that is wrong.
+      </li>
+      <li>
+        <a href="/population">Population</a> — five decades of decline, and the reading the
+        corpus refuses to let that support.
+      </li>
+      <li>
+        <a href="/elections">Elections</a> — three elections, one direction, and a county
+        containing precincts ninety points apart.
+      </li>
+      <li>
+        <a href="/corpus">What this rests on</a> — how much of this is sourced, how much is
+        inferred, and what was withheld.
+      </li>
+    </ul>
+  </section>
+
+  <style>
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    section {
+      margin-bottom: 3.5rem;
+    }
+    .opening {
+      font-size: 1.0625rem;
+    }
+    .section-lede {
+      max-width: var(--measure);
+      color: var(--ink-secondary);
+      margin-bottom: 1.75rem;
+    }
+    .onward ul {
+      max-width: var(--measure);
+      padding-left: 1.1rem;
+      color: var(--ink-secondary);
+    }
+    .onward li {
+      margin-bottom: 0.6rem;
+    }
+  </style>
+</Base>

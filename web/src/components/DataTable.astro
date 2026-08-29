@@ -1,0 +1,78 @@
+---
+// A table that is the whole point, not a fallback behind a disclosure.
+interface Props {
+  title: string
+  caption?: string
+  columns: string[]
+  rows: (string | number)[][]
+}
+
+const { title, caption, columns, rows } = Astro.props
+---
+
+<figure class="table-figure">
+  <figcaption>
+    <h3>{title}</h3>
+    {caption && <p>{caption}</p>}
+  </figcaption>
+  <div class="scroll-x">
+    <table>
+      <thead>
+        <tr>{columns.map((c) => <th scope="col">{c}</th>)}</tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((row) => (
+            <tr>
+              {row.map((cell, i) => (i === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</figure>
+
+<style>
+  .table-figure {
+    margin: 0 0 2.5rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+  }
+  figcaption h3 {
+    margin: 0 0 0.25rem;
+  }
+  figcaption p {
+    margin: 0 0 1rem;
+    color: var(--ink-secondary);
+    font-size: 0.9375rem;
+    max-width: var(--measure);
+  }
+  table {
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    min-width: 100%;
+  }
+  th,
+  td {
+    text-align: right;
+    padding: 0.45rem 0.875rem 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  thead th {
+    color: var(--ink-muted);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  th[scope='row'] {
+    text-align: left;
+    font-weight: 500;
+    padding-right: 1.5rem;
+  }
+</style>

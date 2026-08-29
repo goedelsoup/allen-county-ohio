@@ -1,0 +1,167 @@
+/*
+ * Design tokens.
+ *
+ * Chart colours, chart chrome and surfaces are the validated data-visualization palette;
+ * the page is built from the same values so a chart sits on the page rather than on top of
+ * it. Dark mode is a selected set of steps against the dark surface, not an inversion.
+ *
+ * Tier colour is a status role, never a series slot: `verified` and `inference` mean a state
+ * of the evidence, and a reader must never have to distinguish them by hue alone — every
+ * badge carries its word.
+ */
+
+:root {
+  color-scheme: light;
+
+  --plane: #f9f9f7;
+  --surface: #fcfcfb;
+  --surface-sunken: #f2f1ed;
+
+  --ink: #0b0b0b;
+  --ink-secondary: #52514e;
+  --ink-muted: #898781;
+
+  --rule: #e1e0d9;
+  --rule-strong: #c3c2b7;
+  --ring: rgb(11 11 11 / 10%);
+
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-1-soft: #cde2fb;
+
+  /* Sequential blue, 100 → 700, for magnitude on the map. */
+  --seq-100: #cde2fb;
+  --seq-250: #86b6ef;
+  --seq-400: #3987e5;
+  --seq-550: #1c5cab;
+  --seq-700: #0d366b;
+
+  --tier-verified: #0ca30c;
+  --tier-inference: #fab219;
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+
+  --measure: 68ch;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) {
+    color-scheme: dark;
+
+    --plane: #0d0d0d;
+    --surface: #1a1a19;
+    --surface-sunken: #131312;
+
+    --ink: #ffffff;
+    --ink-secondary: #c3c2b7;
+    --ink-muted: #898781;
+
+    --rule: #2c2c2a;
+    --rule-strong: #383835;
+    --ring: rgb(255 255 255 / 10%);
+
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-1-soft: #184f95;
+
+    --seq-100: #0d366b;
+    --seq-250: #184f95;
+    --seq-400: #256abf;
+    --seq-550: #3987e5;
+    --seq-700: #86b6ef;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --plane: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-sunken: #131312;
+
+  --ink: #ffffff;
+  --ink-secondary: #c3c2b7;
+  --ink-muted: #898781;
+
+  --rule: #2c2c2a;
+  --rule-strong: #383835;
+  --ring: rgb(255 255 255 / 10%);
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-1-soft: #184f95;
+
+  --seq-100: #0d366b;
+  --seq-250: #184f95;
+  --seq-400: #256abf;
+  --seq-550: #3987e5;
+  --seq-700: #86b6ef;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--plane);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  letter-spacing: -0.011em;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.375rem;
+}
+
+h3 {
+  font-size: 1.0625rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--series-1);
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--surface-sunken);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+/* Anything that can overflow scrolls inside itself; the page never scrolls sideways. */
+.scroll-x {
+  overflow-x: auto;
+  max-width: 100%;
+}
