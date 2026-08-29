@@ -1,0 +1,75 @@
+id: auditor-parcels-access-terms
+summary: >-
+  The Allen County GIS download page states no licence, no terms of use and no disclaimer, and
+  the county publishes two files of parcel owner data. This records what was checked, what this
+  corpus relies on, and the one file class that was deliberately not retrieved at all.
+context: |
+  [The auditor-parcels connector stub](../../crates/auditor-parcels/README.md) has said since
+  genesis that the access terms must be settled *before* any code is written, "because a
+  connector whose terms nobody verified is the kind of thing that gets written first and
+  questioned later". This is that record. It is written before the data was used and after it
+  was looked at, which is the only order in which the question can actually be answered.
+
+  Source: `https://gis.allencountyohio.com/GIS/downloads.html`, retrieved 2026-08-28. Fifteen
+  bulk downloads, most of them ESRI shapefiles updated weekly, in NAD 1983 State Plane Ohio
+  North (US survey feet).
+
+  **What the publisher states about terms: nothing.** Checked exhaustively —
+
+    the download page HTML          no licence, terms, disclaimer, or copyright notice
+    Political_Subdivisions.shp.xml  ArcGIS processing history only; no constraint elements
+    Addresses_ft.shp.xml            the same, across 574 KB
+    robots.txt                      404
+
+  The FGDC metadata elements that would carry this — `useconst`, `accconst`, `distliab` — are
+  absent from both metadata files rather than empty.
+decision: |
+  **What this corpus relies on, stated plainly.** Ohio Revised Code 149.43 makes county records
+  public records available to any person, and a county publishing bulk files on an open page
+  with no registration or click-through is consistent with that. [inference] — the statute has
+  not been retrieved and this is not a legal opinion.
+
+  Absence of a stated licence is **not** a grant of one, and this record does not pretend
+  otherwise. What the use here actually rests on is narrower and does not need a licence: the
+  corpus quotes individual facts about named non-residential landmarks and cites where they came
+  from. It does not redistribute the dataset.
+
+  **Two files were not retrieved at all.** `Current_Taxinfo.zip` and `GovernmaxExtract.zip` are
+  described by the county as "parcel owner data": the names of private individuals attached to
+  the addresses of their homes, county-wide, updated weekly. Those are public records in Ohio
+  and the county may publish them. Bulk-republishing them inside a git repository is a different
+  act from the county serving them from its own site, and this corpus has no question that needs
+  a private individual's name attached to their address.
+
+  They were not filtered out after retrieval. They were not fetched. The decision is enforced by
+  the data not being on the disk, which is the only enforcement that survives someone later
+  writing a convenient script.
+
+  **What was retrieved, and what is committed.** `Political_Subdivisions.zip` (182 KB, 27
+  polygons naming 21 political subdivisions) and `Addresses_ft.zip` (3.7 MB, 50,710 address
+  points). The address file carries addresses and municipality assignment and **no personal
+  names** — its 46 columns were read before it was used, and none of them is an owner.
+
+  Neither file is committed. What enters the corpus is four coordinates for four named
+  non-residential landmarks — a courthouse, a refinery, a tank plant, and the municipality
+  assignment that goes with each.
+
+  **The standing rule for this source: retrieve narrowly, commit more narrowly, and never
+  retrieve the person-level files.**
+rationale: |
+  Why the personal-data line falls where it does rather than at "it is a public record". Public
+  record status answers whether the county may publish; it does not answer whether this corpus
+  should mirror. A bulk owner table in a git repository is permanent, globally distributed,
+  trivially scraped, and outside the county's control in a way the county's own weekly file is
+  not — the county can stop publishing and this repository would not stop.
+
+  The test applied is need. Every question this corpus has asked about a site is a question
+  about ground: which township a refinery is in, which municipality a plant falls outside. None
+  of them is a question about who owns anything. A dataset that answers questions nobody here is
+  asking is not a resource being left on the table; it is a liability with no matching asset.
+
+  Why this was worth writing before touching the data rather than after. The stub asked for it
+  and would have been ignored just as easily either way — what makes the difference is that the
+  answer changed the retrieval. The owner files are the first two on the page and the obvious
+  starting point for anything about parcels, and the reason they are absent from this working
+  directory is that the question was asked first.
