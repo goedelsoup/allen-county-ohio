@@ -39,6 +39,16 @@ used-by:
   - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/place/beaverdam.yml
+  - ../corpus/place/bluffton.yml
+  - ../corpus/place/cairo.yml
+  - ../corpus/place/delphos.yml
+  - ../corpus/place/elida.yml
+  - ../corpus/place/harrod.yml
+  - ../corpus/place/lafayette.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/place/spencerville.yml
+  - ../corpus/site/miami-and-erie-canal.yml
 ---
 
 **What it settles.** Three phases of this corpus deferred the same thing: the `jurisdiction`
