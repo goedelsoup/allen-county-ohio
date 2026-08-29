@@ -1,0 +1,52 @@
+id: silence-from-a-source-that-would-have-spoken
+summary: >-
+  The 1885 county history says nothing about oil at Lima. That absence is usable evidence — not
+  because absence generally is, but because this source demonstrably reports things of that kind at
+  that scale in that place, so its silence has a cause. The corpus should say when a silence is
+  informative and when it is only a gap, and the test is whether the source would have spoken.
+context: |
+  [`lima-oil-strike`](../corpus/event/lima-oil-strike.yml) has carried `occurred: "1885"` since
+  genesis with `[open] The date, the well, and its exact location are unverified` — a date the
+  corpus took from general knowledge and could not support from anything it held.
+
+  The 1885 history is the first source in the catalog contemporary with it. It does not mention the
+  strike. Its geology chapter gives the county's petroleum two sentences under **GAS FOUNTAINS**:
+  "Throughout the county evidences of gas wells are manifest. Their development is a subject for the
+  enterprise of the future."
+
+  The tempting move is to treat that as nothing — the book missed it, books miss things. The
+  question is whether *this* book, on *this* subject, would have.
+decision: |
+  **Record a source's silence as evidence only when the corpus can show the source reports that kind
+  of thing, at that scale, in that place — and record the showing alongside the silence.**
+
+  Here the showing is easy and it is in the same volume. The book names the Lima Paper-Mills Company
+  and the year it organized, the Globe Machine Works and its $50,000 capital, the Lima Iron Fence
+  Company and who retired from it in January 1885, an egg-carrier patent and the only factory in the
+  United States making it, every bank in the county with its officers, and a flouring mill worth
+  $12,000. It reports industry in Lima at a granularity three orders of magnitude below an oil field.
+
+  So the claim written into the node is not "the book does not mention oil" but "a source that
+  reports a $12,000 mill in this town does not report an oil field in it", and the inference drawn
+  is the weak one that fits: the strike had not happened or had not registered when the volume went
+  to press. That is a lower bound on the date, tagged `[inference]`, and it is the first independent
+  support this corpus has had for 1885 at all.
+rationale: |
+  The failure mode this guards against runs both ways, and the corpus has now been near both.
+
+  Treating silence as nothing throws away real information. The corpus's date for its most important
+  economic event was unsupported, and a contemporary source that would have reported the event
+  supports it — from the other side, by not reporting it.
+
+  Treating silence as proof invents facts. The same volume gives no name origin for six of the
+  twelve townships, and that silence means only that the compiler did not write one down; nobody
+  should conclude the townships were unnamed. The difference between the two cases is entirely
+  whether the corpus can point at comparable things the source *did* report.
+
+  A useful side effect: applying the test forces the positive evidence to be gathered. Establishing
+  that the book would have reported an oil field meant reading what it reported instead — which is
+  how [B. C. Faurot's](../corpus/person/benjamin-faurot.yml) paper mill, machine works, bank and
+  opera house entered the corpus, and with them every precondition the received account of the
+  strike requires, established independently of the account.
+status: accepted
+date: "2026-08-29"

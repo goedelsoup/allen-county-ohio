@@ -22,6 +22,7 @@ location:
       historyofallenco00unse_0_djvu.txt (2.7 MB). Cleaner OCR than A.
 used-by:
   - ../corpus/event/erection-of-allen-county.yml
+  - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/reorganization-of-1848.yml
   - ../corpus/jurisdiction/amanda-township.yml
   - ../corpus/jurisdiction/american-township.yml
@@ -41,8 +42,12 @@ used-by:
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/period/canal-era.yml
+  - ../corpus/period/lima-oil-boom.yml
+  - ../corpus/person/benjamin-faurot.yml
   - ../corpus/person/christopher-wood.yml
   - ../corpus/person/john-franks.yml
+  - ../corpus/person/samuel-forrer.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
@@ -71,6 +76,7 @@ used-by:
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/miami-and-erie-canal.yml
 ---
 
 **What it is.** A subscription county history of the kind produced across the Midwest in the
