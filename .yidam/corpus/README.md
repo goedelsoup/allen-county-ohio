@@ -64,7 +64,7 @@ Sorted by: kind, then alphabetically.
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 25 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 0v / 3i / 2o | 31 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 9 | 2v / 3i / 3o | 74 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 9 | 3v / 4i / 3o | 83 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 0v / 4i / 2o | 32 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
@@ -107,14 +107,29 @@ Sorted by: kind, then alphabetically.
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 1v / 1i / 0o | 28 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 4v / 1i / 0o | 36 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 31 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 31 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 3v / 1i / 0o | 37 |
+| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 2 | 3v / 0i / 1o | 29 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 5v / 0i / 0o | 38 |
+| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 2 | 3v / 0i / 1o | 29 |
+| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 2 | 3v / 0i / 1o | 29 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 3 | 3v / 0i / 1o | 33 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 2v / 1i / 0o | 35 |
+| [cairo.yml](place/cairo.yml) | place | Cairo | 3 | 3v / 0i / 1o | 33 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 3 | 2v / 1i / 0o | 35 |
+| [elida.yml](place/elida.yml) | place | Elida | 3 | 3v / 0i / 1o | 33 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 5v / 1i / 0o | 39 |
+| [harrod.yml](place/harrod.yml) | place | Harrod | 3 | 3v / 0i / 1o | 33 |
+| [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 2 | 3v / 0i / 1o | 29 |
+| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 3 | 3v / 0i / 1o | 33 |
 | [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 33 |
-| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 2v / 3i / 0o | 39 |
-| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 27 |
+| [marion-township.yml](place/marion-township.yml) | place | Marion Township | 2 | 3v / 0i / 1o | 29 |
+| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 2 | 3v / 0i / 1o | 29 |
+| [perry-township.yml](place/perry-township.yml) | place | Perry Township | 2 | 3v / 0i / 1o | 29 |
+| [richland-township.yml](place/richland-township.yml) | place | Richland Township | 2 | 3v / 0i / 1o | 29 |
+| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 3v / 2i / 0o | 42 |
+| [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 2 | 3v / 0i / 1o | 29 |
+| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 3 | 3v / 0i / 1o | 33 |
+| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 28 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 4 | 1v / 0i / 2o | 48 |
