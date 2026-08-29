@@ -1,0 +1,73 @@
+id: edges-carry-claim-tags
+summary: >-
+  Every edge that asserts something about the world now carries `claim_tag`, and `source` where
+  verified. 205 edges: 121 verified, 83 inference, 1 open. Enforced by `crates/provenance`
+  because the vendored linter has no such rule.
+context: |
+  The corpus was wrong about something in each of six consecutive phases, and
+  [a-postal-address-is-not-a-municipality](a-postal-address-is-not-a-municipality.yml) recorded
+  that the errors clustered in containment. That was true and it was the second-order pattern.
+  The first-order one is where the wrong claims **lived**:
+
+    lima-refinery       located-in       lima                    -> Shawnee Township
+    lima-army-tank-plant located-in      lima                    -> Shawnee Township
+    bluffton            within           allen-county            -> partially-within
+    delphos             within           allen-county            -> partially-within
+    auglaize-river      flows-into       maumee-river-basin      -> a river, not a basin
+
+  Every one is an edge. Every one sat in a file whose prose was correctly tagged and cited.
+
+  `CLAUDE.md` says "an edge is a claim". The format made it the only claim that could not be
+  tagged, sourced, or linted: prose claims must carry a tag and `verified-unsourced` is a lint
+  **error**, while a link carried `target` and `relationship` and nothing else.
+decision: |
+  **Every empirical edge carries `claim_tag`; `verified` also carries `source`.**
+
+  Structural relationships — `instance-of`, `concerns`, `subject-of` — are statements about the
+  corpus rather than the world and take no tag. Tagging one is itself reported as a defect,
+  because `instance-of` is not evidence about Allen County.
+
+  **`verified` means a catalog source supports that specific relationship.** Not that the node
+  cites something. The worked case is `ottawa-river traverses lima`, which is an `inference`
+  although its node cites GNIS four times: GNIS files that river under Putnam County and gives
+  two endpoints, neither in Lima. Against that, `hog-creek flows-into ottawa-river` is verified,
+  because GNIS records one coordinate as both the creek's mouth and the river's source.
+
+  **Enforced by [`crates/provenance`](../../crates/provenance/), not by the linter.**
+  `graph-lint` is vendored and `.yidam/.vendor/` is read-only, so the rule lives in the domain
+  computer: `tests/corpus.rs` fails on any defect and `mise run ci` runs `cargo test`. Recorded
+  upstream as [finding 3](upstream-findings.yml).
+
+  **The distribution is the useful output, not the pass.**
+
+    verified   121    tenure --held-by-> 39, tenure --of-office-> 39, measure --describes-> 18
+    inference   83    person --resided-in-> 39, period --evidenced-by-> 7, event (all 7)
+    open         1    bluffton-evsd territory-within allen-county-government
+
+  Every edge the `event` and `period` classes own is an inference. That is not a defect; it is
+  the clearest statement available of which half of this corpus rests on a source, and it is
+  what to read before choosing the next retrieval.
+rationale: |
+  Why tagging retrospectively was worth a phase when it adds no facts.
+
+  Because it would have caught the errors before the retrievals did. An edge reading
+  `located-in: ../place/lima.yml` with `claim_tag: inference` under it is visibly a guess. The
+  same edge untagged looks like the sourced one above it. That is not a subtle difference to a
+  reader, and it is the entire difference to a tool.
+
+  The sharpest evidence is `person/lawrence-oneill.yml`, which was correct all along and could
+  not say so. Its description states that a `resided-in` edge to Allen County "is a legal
+  inference rather than a fact the roster states. [inference]". The edge two lines below is
+  silent. The node knew; the graph did not; and the graph is what a calculator walks and what
+  the next agent reads first.
+
+  Why the enforcement matters more than the tagging. The corpus is meant to grow — the elector
+  has said it should become a genuine Allen County reference, and it holds two of the county's
+  nine municipalities and four event nodes. A one-off tagging pass over 205 edges would be
+  undone by the first phase that adds fifty more. A test that fails on an untagged edge makes
+  the discipline survive its own success, which is the only form in which it is worth having.
+
+  The 121-verified floor is pinned as a floor and not a target. It should move when the corpus
+  retrieves. A fall means an edge lost its source; a rise nobody can name a retrieval for means
+  somebody upgraded a tag rather than a fact, which is the failure this whole apparatus exists
+  to make visible.

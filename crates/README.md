@@ -9,9 +9,10 @@ capability types (connectors, calculators, feature engineering) and the index la
 
 ## Shape of the domain computer
 
-Three crates exist: [`succession`](succession/), [`covering`](covering/) and
-[`proximity`](proximity/), described below. The rest of this section names the shape the
-corpus's structure calls for, so the next one written is not invented from scratch.
+Four crates exist: [`succession`](succession/), [`covering`](covering/),
+[`proximity`](proximity/) and [`provenance`](provenance/), described below. The rest of this
+section names the shape the corpus's structure calls for, so the next one written is not
+invented from scratch.
 
 **Connectors.** Four external sources feed distinct classes. Decennial census and ACS
 tables populate `measure` nodes against `place` and `jurisdiction`. Ohio Secretary of State
@@ -31,6 +32,12 @@ containment question as to answer the distance one. A **boundary-comparability c
 the `place` it describes, and the annexation `event` nodes between two dates, and reports
 whether the two figures describe the same ground. Comparing a city's population across
 census years without it is the most ordinary way this corpus could publish a false number.
+
+**Checks.** Not anticipated at genesis, and now a third capability type alongside connectors
+and calculators. [`provenance`](provenance/) fails the build on a corpus defect rather than
+answering a question about the county. It exists because the rule it enforces — that an edge
+must say what kind of claim it is — does not exist in the vendored `graph-lint`, and
+`.yidam/.vendor/` is read-only. The domain computer carries the gate until upstream does.
 
 **Index.** Not yet. A corpus this size is cheaper to read than to embed, and an index over it
 buys nothing but a staleness surface. Add one when the corpus outgrows
@@ -59,6 +66,21 @@ Two things it exists to get right, both about the roster's year precision:
 Writing it found one defect that reading could not have: `Option`'s ordering puts `None` first,
 so the current holder's open-ended term sorted ahead of a single-year 2017 predecessor. The
 corpus test caught it.
+
+**Fourth crate — written.** [`provenance`](provenance/) is the first thing here that checks the
+corpus instead of querying it. Its subject is an asymmetry the conventions created: `CLAUDE.md`
+says an edge is a claim, prose claims must be tagged and cited with `verified-unsourced` as a
+lint error, and links carried `target` and `relationship` and nothing else. The graph a
+calculator walks was the only part of the corpus exempt from its own discipline, and every
+location error of six phases lived there.
+
+It exits 1 on findings, deliberately unlike `succession-audit`, which exits 0 because a gap in a
+roster is a fact about the record. An untagged edge is not a fact about anything.
+
+Its shape table is the readable output: every `class --relationship->` with its tag counts, which
+is a map of where the corpus is guessing. Every edge the `event` and `period` classes own is an
+inference, which is not a defect and is the clearest statement available of which half of this
+corpus rests on a source.
 
 **Third crate — written.** [`proximity`](proximity/) ranks corpus nodes by distance, using the
 vendored `geodesics` haversine rather than a local copy, and is the first crate here to depend on
@@ -110,6 +132,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 |---|---|
 | [—](crates/) | — |
 | [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
+| [provenance](provenance/) | Whether every edge in the corpus says what kind of claim it is |
 | [proximity](proximity/) | Corpus nodes within a radius of a point, ordered by distance |
 | [succession](succession/) | Gaps and overlaps in an office's line of holders, from its tenure nodes |
 <!-- /REGEN -->

@@ -18,6 +18,11 @@ that govern conduct here and the gate that CI runs.
 - **Sources** are files in [`.yidam/catalog/`](../.yidam/catalog/). Corpus nodes cite them by
   link rather than embedding citations inline.
 - **Claims** carry `[verified]`, `[inference]`, or `[open]`. Untagged inference is a defect.
+- **Edges are claims too**, and carry `claim_tag:` — plus `source:` when `verified` — on the
+  link itself. `instance-of`, `concerns` and `subject-of` are structural and take no tag.
+  `verified` means a catalog source supports *that relationship*, not that the node cites
+  something. `mise run ci` fails on an untagged edge; run `edge-audit` to see the graph's
+  provenance by class.
 - **Commits** are knowledge events. Epistemic commits (understanding changed) and operational
   commits (a pipeline ran) are written in visibly different styles and never mixed.
 - **`.yidam/.vendor/` is read-only.** Fix prelude defects by re-vendoring

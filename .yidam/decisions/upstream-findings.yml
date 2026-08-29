@@ -1,7 +1,8 @@
 id: upstream-findings
 summary: >-
-  Two defects in `yidam crates-index` found while writing the first crate; one worked around
-  locally and one not workable-around. Neither reported upstream yet.
+  Four findings against the pinned yidam. Two defects in `yidam crates-index` found while
+  writing the first crate, and two gaps in the corpus format found while tagging every edge in
+  the graph. None reported upstream yet.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
   repository builds from `.yidam.toml`, and the newest the origin has.
@@ -51,11 +52,52 @@ decision: |
   workspace needs that file, and the conventions' own layout — `crates/` holding several
   crates — makes a workspace the normal arrangement. Any derived repository with more than one
   crate will hit it.
+
+  **Finding 3 — an edge cannot carry a claim tag, and the conventions say it is a claim.**
+
+  `CLAUDE.md`, generated from the prelude, states that "an edge is a claim". Prose claims are
+  governed hard: they must carry `[verified]`, `[inference]` or `[open]`, untagged inference is
+  a defect, and `verified-unsourced` is a lint **error**. A link carries `target` and
+  `relationship`, and there is nothing in the class contract, the graph check or the linter
+  that lets it say which of the three it is or where it came from.
+
+  So the corpus's most load-bearing assertions — the graph a calculator actually walks — are
+  the only claims exempt from its epistemic discipline.
+
+  This is not theoretical here. Every location error this repository made across six phases was
+  an edge: two sites `located-in` the wrong place, two places `within` a county they only partly
+  lie in, and a river `flows-into` a watershed. Each sat next to prose that was correctly
+  tagged. `person/lawrence-oneill.yml` is the sharpest case — its description says a
+  `resided-in` edge "is a legal inference rather than a fact the roster states. [inference]",
+  and the edge two lines below says nothing at all.
+
+  **Worked around, and the workaround is the proposal.** This repository now writes `claim_tag`
+  and, where verified, `source` on every empirical link, and enforces it from
+  [`crates/provenance`](../../crates/provenance/) because the vendored linter has no such rule
+  and `.yidam/.vendor/` is read-only. Extra keys on a link pass `graph-check` and `graph-lint`
+  untouched, so nothing upstream had to be broken to do it — but nothing upstream validates it
+  either, and a typo in `claim_tag` would be silent without the crate.
+
+  What upstream would need: the two keys in the link schema, `structural` relationships exempt
+  (`instance-of`, `concerns`, `subject-of`), and two lint rules mirroring the prose ones —
+  untagged empirical edge, and verified edge without a source.
+
+  **Finding 4 — `node-too-long` charges a node for being auditable.**
+
+  `max_lines` counts whole files. Adding a `claim_tag` and a `source` to each link costs about a
+  line and a half per edge, so three nodes went over a limit that had been set to stop
+  *descriptions* sprawling. The budget and the thing it now measures have come apart: a corpus
+  that documents where its edges come from pays for it out of its prose allowance.
+
+  Raised locally in `division.ont.yml` and `measure.ont.yml` with the argument in a comment.
+  Upstream the fix is to count the `description` block rather than the file, which is what the
+  check is named for.
+
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
 
-  Both are invisible to every gate this repository runs, which is what makes them worth
-  writing down rather than remembering. The first produces a REGEN block that regenerates
+  Findings 1 and 2 are invisible to every gate this repository runs, which is what makes them
+  worth writing down rather than remembering. The first produces a REGEN block that regenerates
   successfully and says something false — the same shape as the stale-figure problem the
   directory conventions describe for `docs/`, arriving in generated content where a reader
   would least expect to have to check.
@@ -65,7 +107,14 @@ rationale: |
   will appear the moment the first crate is written — the point at which nobody is yet looking
   closely at the index.
 
+  Findings 3 and 4 are a different kind and the more valuable one. They are not defects in the
+  tool; they are places where the conventions promise something the format cannot express. The
+  prelude tells a derived repository that an edge is a claim and then gives it no way to say
+  what kind. This repository has 205 empirical edges and six phases of evidence about what that
+  costs, which is the sort of report a derived repository is uniquely placed to make and a
+  template author is not.
+
   What an upstream report should carry, per the conventions: the pin (1162287), what it cost
-  here (one bisection of a manifest, one workaround comment now living in this repository), and
-  where the workaround is so it can be removed. Filing the issue is an outward-facing action
-  and has not been taken without the elector's say-so.
+  here (one bisection of a manifest, one workaround comment, 205 hand-tagged edges and a crate
+  to keep them tagged), and where each workaround is so it can be removed. Filing the issue is
+  an outward-facing action and has not been taken without the elector's say-so.

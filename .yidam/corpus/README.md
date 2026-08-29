@@ -23,98 +23,98 @@ Sorted by: kind, then alphabetically.
 -->
 | Instance | Class | Label | Links out | Claims | Lines |
 |---|---|---|---|---|---|
-| [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 4 | 3v / 1i / 0o | 37 |
-| [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 30 |
-| [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 38 |
-| [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 26 |
-| [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 0v / 2i / 1o | 22 |
-| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 0v / 4i / 1o | 38 |
-| [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 24 |
-| [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 29 |
-| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 27 |
-| [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 3 | 3v / 1i / 0o | 28 |
-| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 22 |
-| [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 3 | 3v / 1i / 0o | 28 |
-| [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 3 | 3v / 1i / 0o | 28 |
-| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 0v / 1i / 0o | 19 |
-| [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 21 |
-| [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 22 |
-| [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 27 |
-| [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 21 |
-| [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 23 |
-| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 2v / 0i / 0o | 23 |
-| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 24 |
-| [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 2v / 0i / 1o | 30 |
-| [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 33 |
-| [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 2v / 1i / 0o | 29 |
-| [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 26 |
-| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 3v / 2i / 0o | 34 |
-| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 36 |
-| [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 29 |
-| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 3v / 3i / 0o | 34 |
-| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 32 |
-| [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 34 |
-| [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 29 |
-| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 0v / 1i / 1o | 24 |
-| [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 28 |
-| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 4v / 4i / 0o | 39 |
-| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 2v / 1i / 0o | 37 |
-| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 24 |
-| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 0v / 1i / 1o | 20 |
-| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 23 |
-| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 24 |
-| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 0v / 3i / 2o | 30 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 9 | 2v / 3i / 3o | 66 |
-| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 0v / 4i / 2o | 31 |
-| [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 17 |
-| [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 17 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 0v / 2i / 1o | 22 |
-| [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 17 |
-| [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 17 |
-| [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 17 |
-| [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 17 |
-| [clay-t-cotterman.yml](person/clay-t-cotterman.yml) | person | Clay T. Cotterman | 2 | 1v / 1i / 0o | 17 |
-| [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 17 |
-| [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 1v / 1i / 1o | 19 |
-| [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 17 |
-| [elias-a-bogart.yml](person/elias-a-bogart.yml) | person | Elias A. Bogart | 2 | 1v / 1i / 0o | 17 |
-| [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 21 |
-| [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 17 |
-| [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 17 |
-| [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 17 |
-| [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 19 |
-| [henry-van-gunter.yml](person/henry-van-gunter.yml) | person | Henry Van Gunter | 2 | 1v / 1i / 0o | 17 |
-| [hiram-stotts.yml](person/hiram-stotts.yml) | person | Hiram Stotts | 2 | 1v / 1i / 0o | 17 |
-| [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 17 |
-| [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 17 |
-| [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 19 |
-| [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 19 |
+| [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 4 | 3v / 1i / 0o | 43 |
+| [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 32 |
+| [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 42 |
+| [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 28 |
+| [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 0v / 2i / 1o | 23 |
+| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 0v / 4i / 1o | 42 |
+| [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
+| [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
+| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
+| [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 3 | 3v / 1i / 0o | 31 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 23 |
+| [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 3 | 3v / 1i / 0o | 31 |
+| [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 3 | 3v / 1i / 0o | 31 |
+| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 0v / 1i / 0o | 20 |
+| [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
+| [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
+| [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
+| [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
+| [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
+| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 2v / 0i / 0o | 25 |
+| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
+| [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 2v / 0i / 1o | 32 |
+| [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
+| [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 2v / 1i / 0o | 33 |
+| [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
+| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 3v / 2i / 0o | 38 |
+| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 40 |
+| [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
+| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 3v / 3i / 0o | 37 |
+| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
+| [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 38 |
+| [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 33 |
+| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 0v / 1i / 1o | 25 |
+| [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
+| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 4v / 4i / 0o | 41 |
+| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 2v / 1i / 0o | 38 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
+| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 0v / 1i / 1o | 21 |
+| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
+| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 25 |
+| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 0v / 3i / 2o | 31 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 9 | 2v / 3i / 3o | 74 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 0v / 4i / 2o | 32 |
+| [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
+| [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 0v / 2i / 1o | 23 |
+| [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
+| [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 18 |
+| [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
+| [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 18 |
+| [clay-t-cotterman.yml](person/clay-t-cotterman.yml) | person | Clay T. Cotterman | 2 | 1v / 1i / 0o | 18 |
+| [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
+| [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 1v / 1i / 1o | 20 |
+| [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 18 |
+| [elias-a-bogart.yml](person/elias-a-bogart.yml) | person | Elias A. Bogart | 2 | 1v / 1i / 0o | 18 |
+| [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 22 |
+| [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 18 |
+| [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 18 |
+| [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
+| [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 20 |
+| [henry-van-gunter.yml](person/henry-van-gunter.yml) | person | Henry Van Gunter | 2 | 1v / 1i / 0o | 18 |
+| [hiram-stotts.yml](person/hiram-stotts.yml) | person | Hiram Stotts | 2 | 1v / 1i / 0o | 18 |
+| [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 18 |
+| [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
+| [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
+| [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 20 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
-| [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 1v / 1i / 0o | 17 |
-| [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 19 |
-| [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 17 |
-| [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 17 |
-| [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 17 |
-| [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 17 |
-| [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 17 |
-| [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 17 |
-| [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 17 |
-| [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 17 |
-| [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 17 |
-| [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 1v / 1i / 0o | 17 |
-| [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 17 |
-| [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 17 |
-| [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 19 |
-| [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 17 |
-| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 19 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 1v / 1i / 0o | 27 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 4v / 1i / 0o | 34 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 28 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 29 |
-| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 5v / 1i / 0o | 38 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 30 |
-| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 2v / 3i / 0o | 36 |
-| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 25 |
+| [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 1v / 1i / 0o | 18 |
+| [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
+| [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
+| [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
+| [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
+| [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
+| [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
+| [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
+| [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
+| [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
+| [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
+| [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 1v / 1i / 0o | 18 |
+| [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
+| [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
+| [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
+| [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
+| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 1v / 1i / 0o | 28 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 4v / 1i / 0o | 36 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 3 | 2v / 1i / 0o | 31 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 2 | 2v / 1i / 0o | 31 |
+| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 5v / 1i / 0o | 39 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 33 |
+| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 2v / 3i / 0o | 39 |
+| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 27 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 4 | 1v / 0i / 2o | 48 |
@@ -122,50 +122,50 @@ Sorted by: kind, then alphabetically.
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 1v / 3i / 1o | 41 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
-| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 2v / 1i / 1o | 34 |
-| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 50 |
-| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 24 |
-| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 2v / 1i / 1o | 36 |
-| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 2 | 1v / 5i / 1o | 37 |
-| [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1835-john-keller.yml](tenure/sheriff-1835-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1835–1839 | 3 | 1v / 0i / 0o | 19 |
-| [sheriff-1839-alexander-beatty.yml](tenure/sheriff-1839-alexander-beatty.yml) | tenure | Alexander Beatty, Sheriff of Allen County, 1839–1843 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1843-john-keller.yml](tenure/sheriff-1843-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1843–1845 | 3 | 1v / 0i / 0o | 19 |
-| [sheriff-1845-charles-h-williams.yml](tenure/sheriff-1845-charles-h-williams.yml) | tenure | Charles H. Williams, Sheriff of Allen County, 1845–1849 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1849-hiram-stotts.yml](tenure/sheriff-1849-hiram-stotts.yml) | tenure | Hiram Stotts, Sheriff of Allen County, 1849–1853 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1853-mathias-ridenour.yml](tenure/sheriff-1853-mathias-ridenour.yml) | tenure | Mathias Ridenour, Sheriff of Allen County, 1853–1855 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1855-william-tingle.yml](tenure/sheriff-1855-william-tingle.yml) | tenure | William Tingle, Sheriff of Allen County, 1855–1857 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1857-samuel-buckmaster.yml](tenure/sheriff-1857-samuel-buckmaster.yml) | tenure | Samuel Buckmaster, Sheriff of Allen County, 1857–1861 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1861-samuel-collins.yml](tenure/sheriff-1861-samuel-collins.yml) | tenure | Samuel Collins, Sheriff of Allen County, 1861–1865 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1865-isaac-bailey.yml](tenure/sheriff-1865-isaac-bailey.yml) | tenure | Isaac Bailey, Sheriff of Allen County, 1865–1869 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1869-james-a-colbath.yml](tenure/sheriff-1869-james-a-colbath.yml) | tenure | James A. Colbath, Sheriff of Allen County, 1869–1873 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1873-william-miller.yml](tenure/sheriff-1873-william-miller.yml) | tenure | William Miller, Sheriff of Allen County, 1873–1877 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1877-john-franks.yml](tenure/sheriff-1877-john-franks.yml) | tenure | John Franks, Sheriff of Allen County, 1877–1881 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1881-william-h-harter.yml](tenure/sheriff-1881-william-h-harter.yml) | tenure | William H. Harter, Sheriff of Allen County, 1881–1885 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1885-mp-hoagland.yml](tenure/sheriff-1885-mp-hoagland.yml) | tenure | M.P. Hoagland, Sheriff of Allen County, 1885–1889 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1889-lawrence-oneill.yml](tenure/sheriff-1889-lawrence-oneill.yml) | tenure | Lawrence O’Neill, Sheriff of Allen County, 1889–1893 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1893-aaron-fisher.yml](tenure/sheriff-1893-aaron-fisher.yml) | tenure | Aaron Fisher, Sheriff of Allen County, 1893–1898 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1898-elias-a-bogart.yml](tenure/sheriff-1898-elias-a-bogart.yml) | tenure | Elias A. Bogart, Sheriff of Allen County, 1898–1902 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1902-eugene-barr.yml](tenure/sheriff-1902-eugene-barr.yml) | tenure | Eugene Barr, Sheriff of Allen County, 1902–1906 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1906-henry-van-gunter.yml](tenure/sheriff-1906-henry-van-gunter.yml) | tenure | Henry Van Gunter, Sheriff of Allen County, 1906–1910 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1910-f-m-watt.yml](tenure/sheriff-1910-f-m-watt.yml) | tenure | F. M. Watt, Sheriff of Allen County, 1910–1914 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1914-sherman-e-eley.yml](tenure/sheriff-1914-sherman-e-eley.yml) | tenure | Sherman E. Eley, Sheriff of Allen County, 1914–1918 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1918-charles-w-baxter.yml](tenure/sheriff-1918-charles-w-baxter.yml) | tenure | Charles W. Baxter, Sheriff of Allen County, 1918–1923 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1923-harvey-b-crosson.yml](tenure/sheriff-1923-harvey-b-crosson.yml) | tenure | Harvey B. Crosson, Sheriff of Allen County, 1923–1927 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1927-john-w-cook.yml](tenure/sheriff-1927-john-w-cook.yml) | tenure | John W. Cook, Sheriff of Allen County, 1927–1929 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1929-benjamin-s-miller.yml](tenure/sheriff-1929-benjamin-s-miller.yml) | tenure | Benjamin S. Miller, Sheriff of Allen County, 1929–1931 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1931-jess-l-sarber.yml](tenure/sheriff-1931-jess-l-sarber.yml) | tenure | Jess L. Sarber, Sheriff of Allen County, 1931–1933 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1933-donald-f-sarber.yml](tenure/sheriff-1933-donald-f-sarber.yml) | tenure | Donald F. Sarber, Sheriff of Allen County, 1933–1935 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1935-ralph-s-marshall.yml](tenure/sheriff-1935-ralph-s-marshall.yml) | tenure | Ralph S. Marshall, Sheriff of Allen County, 1935–1937 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1937-william-v-daley.yml](tenure/sheriff-1937-william-v-daley.yml) | tenure | William V. Daley, Sheriff of Allen County, 1937–1945 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1945-william-r-dailey.yml](tenure/sheriff-1945-william-r-dailey.yml) | tenure | William R. Dailey, Sheriff of Allen County, 1945–1953 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1953-clay-t-cotterman.yml](tenure/sheriff-1953-clay-t-cotterman.yml) | tenure | Clay T. Cotterman, Sheriff of Allen County, 1953–1965 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1965-edward-l-fair.yml](tenure/sheriff-1965-edward-l-fair.yml) | tenure | Edward L. Fair, Sheriff of Allen County, 1965–1977 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1977-charles-w-harrod.yml](tenure/sheriff-1977-charles-w-harrod.yml) | tenure | Charles W. Harrod, Sheriff of Allen County, 1977–1992 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-1992-daniel-w-beck.yml](tenure/sheriff-1992-daniel-w-beck.yml) | tenure | Daniel W. Beck, Sheriff of Allen County, 1992–2009 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-2009-samuel-a-crish.yml](tenure/sheriff-2009-samuel-a-crish.yml) | tenure | Samuel A. Crish, Sheriff of Allen County, 2009–2017 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-2017-james-k-everett.yml](tenure/sheriff-2017-james-k-everett.yml) | tenure | James K. Everett, Sheriff of Allen County, 2017–2017 | 3 | 1v / 0i / 0o | 18 |
-| [sheriff-2017-matthew-b-treglia.yml](tenure/sheriff-2017-matthew-b-treglia.yml) | tenure | Matthew B. Treglia, Sheriff of Allen County, 2017–present | 3 | 2v / 0i / 0o | 20 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 2v / 1i / 1o | 37 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 52 |
+| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
+| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 2v / 1i / 1o | 39 |
+| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 2 | 1v / 5i / 1o | 38 |
+| [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1835-john-keller.yml](tenure/sheriff-1835-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1835–1839 | 3 | 1v / 0i / 0o | 23 |
+| [sheriff-1839-alexander-beatty.yml](tenure/sheriff-1839-alexander-beatty.yml) | tenure | Alexander Beatty, Sheriff of Allen County, 1839–1843 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1843-john-keller.yml](tenure/sheriff-1843-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1843–1845 | 3 | 1v / 0i / 0o | 23 |
+| [sheriff-1845-charles-h-williams.yml](tenure/sheriff-1845-charles-h-williams.yml) | tenure | Charles H. Williams, Sheriff of Allen County, 1845–1849 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1849-hiram-stotts.yml](tenure/sheriff-1849-hiram-stotts.yml) | tenure | Hiram Stotts, Sheriff of Allen County, 1849–1853 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1853-mathias-ridenour.yml](tenure/sheriff-1853-mathias-ridenour.yml) | tenure | Mathias Ridenour, Sheriff of Allen County, 1853–1855 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1855-william-tingle.yml](tenure/sheriff-1855-william-tingle.yml) | tenure | William Tingle, Sheriff of Allen County, 1855–1857 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1857-samuel-buckmaster.yml](tenure/sheriff-1857-samuel-buckmaster.yml) | tenure | Samuel Buckmaster, Sheriff of Allen County, 1857–1861 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1861-samuel-collins.yml](tenure/sheriff-1861-samuel-collins.yml) | tenure | Samuel Collins, Sheriff of Allen County, 1861–1865 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1865-isaac-bailey.yml](tenure/sheriff-1865-isaac-bailey.yml) | tenure | Isaac Bailey, Sheriff of Allen County, 1865–1869 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1869-james-a-colbath.yml](tenure/sheriff-1869-james-a-colbath.yml) | tenure | James A. Colbath, Sheriff of Allen County, 1869–1873 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1873-william-miller.yml](tenure/sheriff-1873-william-miller.yml) | tenure | William Miller, Sheriff of Allen County, 1873–1877 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1877-john-franks.yml](tenure/sheriff-1877-john-franks.yml) | tenure | John Franks, Sheriff of Allen County, 1877–1881 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1881-william-h-harter.yml](tenure/sheriff-1881-william-h-harter.yml) | tenure | William H. Harter, Sheriff of Allen County, 1881–1885 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1885-mp-hoagland.yml](tenure/sheriff-1885-mp-hoagland.yml) | tenure | M.P. Hoagland, Sheriff of Allen County, 1885–1889 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1889-lawrence-oneill.yml](tenure/sheriff-1889-lawrence-oneill.yml) | tenure | Lawrence O’Neill, Sheriff of Allen County, 1889–1893 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1893-aaron-fisher.yml](tenure/sheriff-1893-aaron-fisher.yml) | tenure | Aaron Fisher, Sheriff of Allen County, 1893–1898 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1898-elias-a-bogart.yml](tenure/sheriff-1898-elias-a-bogart.yml) | tenure | Elias A. Bogart, Sheriff of Allen County, 1898–1902 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1902-eugene-barr.yml](tenure/sheriff-1902-eugene-barr.yml) | tenure | Eugene Barr, Sheriff of Allen County, 1902–1906 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1906-henry-van-gunter.yml](tenure/sheriff-1906-henry-van-gunter.yml) | tenure | Henry Van Gunter, Sheriff of Allen County, 1906–1910 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1910-f-m-watt.yml](tenure/sheriff-1910-f-m-watt.yml) | tenure | F. M. Watt, Sheriff of Allen County, 1910–1914 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1914-sherman-e-eley.yml](tenure/sheriff-1914-sherman-e-eley.yml) | tenure | Sherman E. Eley, Sheriff of Allen County, 1914–1918 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1918-charles-w-baxter.yml](tenure/sheriff-1918-charles-w-baxter.yml) | tenure | Charles W. Baxter, Sheriff of Allen County, 1918–1923 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1923-harvey-b-crosson.yml](tenure/sheriff-1923-harvey-b-crosson.yml) | tenure | Harvey B. Crosson, Sheriff of Allen County, 1923–1927 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1927-john-w-cook.yml](tenure/sheriff-1927-john-w-cook.yml) | tenure | John W. Cook, Sheriff of Allen County, 1927–1929 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1929-benjamin-s-miller.yml](tenure/sheriff-1929-benjamin-s-miller.yml) | tenure | Benjamin S. Miller, Sheriff of Allen County, 1929–1931 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1931-jess-l-sarber.yml](tenure/sheriff-1931-jess-l-sarber.yml) | tenure | Jess L. Sarber, Sheriff of Allen County, 1931–1933 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1933-donald-f-sarber.yml](tenure/sheriff-1933-donald-f-sarber.yml) | tenure | Donald F. Sarber, Sheriff of Allen County, 1933–1935 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1935-ralph-s-marshall.yml](tenure/sheriff-1935-ralph-s-marshall.yml) | tenure | Ralph S. Marshall, Sheriff of Allen County, 1935–1937 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1937-william-v-daley.yml](tenure/sheriff-1937-william-v-daley.yml) | tenure | William V. Daley, Sheriff of Allen County, 1937–1945 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1945-william-r-dailey.yml](tenure/sheriff-1945-william-r-dailey.yml) | tenure | William R. Dailey, Sheriff of Allen County, 1945–1953 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1953-clay-t-cotterman.yml](tenure/sheriff-1953-clay-t-cotterman.yml) | tenure | Clay T. Cotterman, Sheriff of Allen County, 1953–1965 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1965-edward-l-fair.yml](tenure/sheriff-1965-edward-l-fair.yml) | tenure | Edward L. Fair, Sheriff of Allen County, 1965–1977 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1977-charles-w-harrod.yml](tenure/sheriff-1977-charles-w-harrod.yml) | tenure | Charles W. Harrod, Sheriff of Allen County, 1977–1992 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1992-daniel-w-beck.yml](tenure/sheriff-1992-daniel-w-beck.yml) | tenure | Daniel W. Beck, Sheriff of Allen County, 1992–2009 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-2009-samuel-a-crish.yml](tenure/sheriff-2009-samuel-a-crish.yml) | tenure | Samuel A. Crish, Sheriff of Allen County, 2009–2017 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-2017-james-k-everett.yml](tenure/sheriff-2017-james-k-everett.yml) | tenure | James K. Everett, Sheriff of Allen County, 2017–2017 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-2017-matthew-b-treglia.yml](tenure/sheriff-2017-matthew-b-treglia.yml) | tenure | Matthew B. Treglia, Sheriff of Allen County, 2017–present | 3 | 2v / 0i / 0o | 24 |
 <!-- /REGEN -->
 
 ## Semantic index status
