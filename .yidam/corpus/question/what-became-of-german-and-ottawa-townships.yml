@@ -1,44 +1,57 @@
 class: question
 label: What became of German and Ottawa townships?
 description: |
-  **In 1885 Allen County had thirteen townships. It has twelve, and one of the twelve is under a
-  different name.** The 1885 history devotes a chapter to each of German Township and Ottawa
-  Township. [verified] —
-  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). Neither name appears
-  in any source this corpus holds for the present day: not the
-  [2020 Gazetteer's](../../catalog/census-gazetteer-2020.md) county subdivisions, not
-  [GNIS](../../catalog/gnis-domestic-names-ohio.md), whose twenty-three Allen County civil features
-  include twelve townships and no German or Ottawa, and not
-  [the county's own townships page](../../catalog/allen-county-official-site.md). [verified]
+  **Both answered.** In 1885 Allen County had thirteen townships. One was renamed and one was
+  eaten by a city, and the county's twelve are what is left.
 
-  **German is [American Township](../place/american-township.yml) renamed.** The two occupy the
-  same ground on the book's own description — the centre of the county, the Ottawa River entering
-  from Shawnee at Section 33, [Elida](../place/elida.yml) inside it. [inference] What is missing is
-  the act: no source here says when the name changed or by what authority. The corpus is not
-  asserting the obvious motive either. [open]
+  **German became American on August 16, 1918.** The citizens petitioned and the Allen County
+  commissioners acted — the same instrument that erected every township here and incorporated every
+  village. Article II of the petition says only "that good cause is shown why the name of said
+  township should be changed", and stipulates that the change "shall in no wise affect the right of
+  property, or the internal concerns of said township". [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), which reads
+  the language for what it is: "'good cause' means patriotism." School books were being reset and
+  businesses were dropping the word; the township "were caught in the wave of popular sentiment".
+  The corpus had declined to assert the obvious motive. It was the obvious motive, and the same page
+  records that it was contested — residents "who a little later on would not have voted for the
+  change, because of sacred associations in early history". See
+  [American Township](../place/american-township.yml).
 
-  **Ottawa Township is harder, because it was young.** It was formed in May 1857 out of
-  [Bath](../place/bath-township.yml), German, [Shawnee](../place/shawnee-township.yml) and
-  [Perry](../place/perry-township.yml) — 3,360 acres, about five and a quarter square miles, the
-  ring of ground around [Lima](../place/lima.yml) — and organized on May 27 with Thomas K. Jacobs,
-  Thomas Clayton and Slemans Lisle as trustees. [verified] — same source, whose chapter pairs it
-  with Lima city. A township created to hold the county seat, and then no township. [open] Whether
-  Lima annexed it out of existence, whether it was dissolved back into its four parents, and on
-  what date.
+  **Ottawa was not abolished. Lima grew until it was the same ground.** It was erected in May 1857
+  because "Lima was spreading out into so many townships that Ottawa was created in order to shelter
+  it" — 1,600 acres from [Bath](../place/bath-township.yml), 1,040 from German, 560 from
+  [Perry](../place/perry-township.yml) and a quarter section from
+  [Shawnee](../place/shawnee-township.yml), which is the same composition the 1885 book gives, acre
+  for acre, thirty-six years earlier. [verified] — same source and
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md).
 
-  This matters past curiosity. The corpus reads today's twelve subdivisions as the county's civil
-  geography and has done since genesis. They are the current state of something that has changed
-  at least four times — in 1848, in 1857, and twice more since 1885 — and any claim that runs a
-  township's figures back before 1885 runs them through a different map. See
-  [the reorganization of 1848](../event/reorganization-of-1848.yml).
+  By 1921 it was a shell: "today it is not recognized only in the election of a justice of the peace,
+  constables and by the county infirmary board of directors... the township a nonentity and Lima the
+  unit of the tax duplicates. **The City of Lima is coextensive with it.**" [verified] — same source.
+  So the answer is not an act of abolition but sixty years of annexation, ending in a township whose
+  boundary and whose city's boundary were the same line. [inference]
+
+  **A township made to hold a city was consumed by it, which is what it was for.** Ottawa existed
+  only because Lima was outgrowing Bath, and the 1857 commissioners called 3,360 acres a "liberal
+  allowance for the future growth of the seat of justice". Lima passed it. [inference]
+
+  [open] The date Ottawa Township formally ceased, which is later than 1921 and after everything the
+  corpus holds. `jurisdiction.abolished` is declared and still unused — see
+  [an unused property is an unasked question](../../decisions/an-unused-property-is-an-unasked-question.yml).
 properties:
-  claim_tag: open
+  claim_tag: verified
   opened: "2026-08-29"
+  closed: "2026-08-29"
+  resolution: |
+    German Township was renamed American on August 16, 1918, by the county commissioners on the
+    citizens' petition, in the anti-German sentiment of the war. Ottawa Township was never
+    abolished within the reach of any source held here; Lima annexed until the two were coextensive
+    and the township survived in 1921 only to elect a justice of the peace and constables. The
+    residual — the date it formally ended — is recorded in the description rather than left
+    standing, because it is a detail of an answer and not the absence of one.
   would_close_this: |
     The Allen County commissioners' journal after 1885 for both, or the Ohio Secretary of State's
-    record of township name changes. For Ottawa specifically, Lima's annexation record: a township
-    of 3,360 acres wrapped around a growing city is the shape of something a city absorbs, and the
-    annexation ordinances would date it.
+    record of township name changes. For Ottawa specifically, Lima's annexation record.
 links:
   - target: ../place/american-township.yml
     relationship: concerns

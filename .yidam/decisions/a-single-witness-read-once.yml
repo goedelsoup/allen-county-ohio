@@ -1,0 +1,56 @@
+id: a-single-witness-read-once
+summary: >-
+  The 1921 county history exists in one digitization, so the corpus's two-scan rule cannot run on
+  it. What replaces the rule is not nothing: cross-source agreement with the 1885 book where the two
+  overlap, and an explicit mark on every claim where they do not. A claim resting on one witness
+  read once should say so in the node.
+context: |
+  [two-scans-of-one-book](two-scans-of-one-book.yml) requires that a date enter the corpus only
+  where two independent digitizations of the same edition agree, or where one reading is impossible
+  on the book's own facts. It was written because the 1885 history's typeface reads 3 as 8 and one
+  scan dated two townships to 1885.
+
+  Archive.org holds **one** scan of Rusler's 1921 *Standard History of Allen County*, volume I. The
+  rule has nothing to run on, and the source answers questions nothing else the corpus holds can
+  reach — the 1918 renaming of German Township, Ottawa Township's absorption, Cairo's incorporation,
+  Elida's namesake.
+
+  Refusing the source would leave four standing questions open on a technicality. Taking it silently
+  would let single-witness claims sit in the corpus looking exactly like double-witness ones.
+decision: |
+  **Take the source, and mark the claims by what stands behind them.**
+
+  Where Rusler and the 1885 history overlap, cross-source agreement replaces cross-scan agreement
+  and is stronger than it — different author, different publisher, thirty-six years apart, no shared
+  text. Four such agreements were found and they are exact:
+
+      Ottawa Township's composition   1,600 / 1,040 / 560 / 160 acres, from four named townships
+      the county's organization       June 6, 1831
+      German Township's first board   Bowman, Brand, Richards, John, Ireland
+      Elida                           platted 1852 by Griffith John
+
+  Where Rusler stands alone, the node says so in the sentence that carries the claim — "a single
+  witness read once" — and the claim stays `[verified]`, because the tag is about provenance and
+  a catalogued source does support it. What the phrase adds is the *weight*, which the tag does not
+  carry and a reader needs.
+
+  Applied here to the August 16, 1918 renaming, Elida's brother-namesake, Cairo's April 12, 1875
+  incorporation, and the 138 square miles lost in 1848.
+rationale: |
+  The alternative designs are both worse.
+
+  Downgrading single-witness claims to `[inference]` would be a lie about their provenance: a source
+  says this, and `[inference]` means no source does. This corpus has been careful that `[verified]`
+  is about where a claim comes from and not how confident anyone is, and bending it for scan counts
+  would break that distinction for a reason that has nothing to do with it.
+
+  Inventing a fourth claim tag would be worse still — the vocabulary is small on purpose, every
+  check in the repository knows three, and the graph would have to be migrated to express something
+  a clause of prose expresses adequately.
+
+  What this does not solve: prose marks are not machine-checkable, so nothing will fail a build if a
+  future phase quietly promotes a single-witness date. The honest statement is that this is a
+  convention held by writing, not a gate — and the reason it is acceptable is that the catalog entry
+  for a one-scan source says so at the top, where the next reader meets it.
+status: accepted
+date: "2026-08-29"

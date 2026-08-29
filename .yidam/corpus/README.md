@@ -32,7 +32,7 @@ Sorted by: kind, then alphabetically.
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 3v / 0i / 2o | 43 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 2v / 5i / 1o | 63 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
-| [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 4v / 1i / 1o | 50 |
+| [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
@@ -151,20 +151,20 @@ Sorted by: kind, then alphabetically.
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 3v / 1i / 0o | 37 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 7v / 0i / 1o | 51 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 7v / 1i / 0o | 56 |
-| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 8v / 0i / 1o | 61 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 9v / 1i / 0o | 72 |
+| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 9v / 0i / 1o | 69 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 4v / 0i / 1o | 39 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 7v / 0i / 1o | 59 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 4v / 1i / 1o | 49 |
-| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 8v / 0i / 1o | 57 |
+| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 9v / 0i / 1o | 61 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 5v / 1i / 1o | 58 |
-| [elida.yml](place/elida.yml) | place | Elida | 4 | 6v / 0i / 1o | 47 |
+| [elida.yml](place/elida.yml) | place | Elida | 4 | 7v / 0i / 1o | 52 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 6v / 1i / 0o | 44 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 5v / 0i / 1o | 42 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 8v / 2i / 0o | 70 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 9v / 2i / 1o | 78 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 5v / 0i / 1o | 41 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 5v / 0i / 1o | 44 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 5v / 0i / 1o | 35 |
@@ -178,9 +178,9 @@ Sorted by: kind, then alphabetically.
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 1v / 2i / 1o | 43 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 4 | 3v / 0i / 2o | 60 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 2o | 39 |
-| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 4 | 3v / 1i / 2o | 50 |
+| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 4 | 3v / 2i / 1o | 63 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
-| [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 4v / 1i / 1o | 58 |
+| [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 6v / 1i / 1o | 66 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
