@@ -15,18 +15,26 @@ used-by:
   - ../corpus/division/census-tract-39003010300.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
+  - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
   - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
   - ../corpus/jurisdiction/delphos-city-school-district.yml
   - ../corpus/jurisdiction/elida-local-school-district.yml
+  - ../corpus/jurisdiction/lima-city-school-district.yml
   - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
   - ../corpus/jurisdiction/perry-local-school-district.yml
+  - ../corpus/jurisdiction/shawnee-local-school-district.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/natural-feature/auglaize-river.yml
+  - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
   - ../corpus/place/fort-shawnee.yml
   - ../corpus/place/gomer.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/place/monroe-township.yml
   - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/sugar-creek-township.yml
   - ../corpus/place/westminster.yml
   - ../corpus/question/where-the-auglaize-rises.yml
   - ../corpus/site/allen-county-courthouse.yml

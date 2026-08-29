@@ -28,7 +28,13 @@ used-by:
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml
+  - ../corpus/place/amanda-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/fort-shawnee.yml
   - ../corpus/place/gomer.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/sugar-creek-township.yml
   - ../corpus/place/westminster.yml
   - ../corpus/question/allen-county-current-congressional-district.yml
 ---
