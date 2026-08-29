@@ -1,0 +1,32 @@
+class: measure
+label: Allen County population, 2020 census
+description: |
+  The 2020 decennial enumeration for Allen County as published for redistricting, obtained by
+  summing `POP100` over all 3,552 census blocks in the county. [verified] —
+  [TIGERweb](../../catalog/tigerweb-census2020.md), 2020 vintage block layer.
+
+  **It is not the same number as [the 2020 estimates base](allen-county-population-2020.yml)**,
+  which is 102,217. That node was written warning that a base is "the wrong one to describe as
+  'the 2020 census count' without qualification", and the difference is now measured rather than
+  asserted: eleven people, on a county of a hundred thousand. The base is the enumeration as
+  revised for the Vintage 2024 estimates series; this is the enumeration.
+
+  The figure is a sum and not a published total, so it carries the sum's own check: the Allen
+  County portions of the twelve school districts covering the county also sum to 102,206, from a
+  different partition of the same blocks. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+properties:
+  parameter: total resident population
+  value: "102206"
+  unit: persons
+  as_of: 2020-04-01
+  method: |
+    Sum of block-level `POP100` from the 2020 Census redistricting file, as served by TIGERweb.
+    Not a modelled figure and not subject to later revision. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -1,0 +1,34 @@
+class: measure
+label: Lima population, 2020 census
+description: |
+  The 2020 decennial enumeration for Lima city, summed from the 1,112 census blocks the Census
+  Bureau assigns to the place. [verified] —
+  [TIGERweb](../../catalog/tigerweb-census2020.md) block population and
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+
+  **It exceeds [the 2020 estimates base](lima-population-2020.yml) by 48**, where the county's
+  enumeration falls 11 *below* its base. The two disagreements run in opposite directions, which
+  is the useful part: a base is not a rounding of a count in any single direction, and any series
+  that mixes the two is comparing figures that were arrived at differently.
+
+  Like the base, this counts the corporation's territory rather than the settlement — whatever
+  ground the [City of Lima](../jurisdiction/city-of-lima.yml) had annexed by April 2020, since
+  blocks are assigned to the place by its boundary of that date. [inference]
+properties:
+  parameter: total resident population
+  value: "35579"
+  unit: persons
+  as_of: 2020-04-01
+  method: |
+    Sum of block-level `POP100` over the blocks assigned to place `3943554`. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

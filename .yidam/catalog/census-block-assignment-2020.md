@@ -27,7 +27,9 @@ used-by:
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
+  - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml
+  - ../corpus/measure/lima-population-2020-census.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/auglaize-township.yml
   - ../corpus/place/fort-shawnee.yml
