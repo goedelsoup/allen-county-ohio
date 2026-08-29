@@ -1,0 +1,71 @@
+id: node-worthiness-is-a-property-of-the-member
+summary: >-
+  The series arrived — three general elections, 88 precinct names identical across all of them —
+  and the answer about writing 88 precinct nodes is unchanged for the third time. This retires the
+  practice of predicting what quantity of evidence would license a kind of judgment, and states the
+  rule that does not depend on how much data turns up.
+context: |
+  Three records in a row have circled the same question.
+
+  [eighty-eight-rows-are-not-eighty-eight-nodes](eighty-eight-rows-are-not-eighty-eight-nodes.yml)
+  set the test — *write a node where members differ in kind, write a measure where they differ only
+  in value* — and predicted that election returns would make precincts differ in kind.
+
+  [the-returns-arrived-and-the-answer-was-still-no](the-returns-arrived-and-the-answer-was-still-no.yml)
+  scored that prediction as right in direction and wrong in threshold, and made a sharper one:
+  three general elections whose precinct names join would be a series, and a series is a kind. It
+  named the files.
+
+  The files were retrieved. 2016, 2018 and 2020 all give Allen County exactly 88 precincts and the
+  three name sets are **identical** — no consolidation, no renaming, nothing appearing in one file
+  and not another across five years containing a census and a statewide redistricting. The
+  prediction's own condition was met exactly.
+decision: |
+  **No new precinct nodes.** The corpus still holds two of 88:
+  [Sugar Creek](../corpus/division/voting-district-sugar-creek-2020.yml), which is coterminous with
+  a whole township, and [Lima 1A](../corpus/division/voting-district-lima-1a-2020.yml), where a
+  census count, a housing count and a registration roll disagree.
+
+  What the series produced instead is two measures — the
+  [2016 presidential vote](../corpus/measure/allen-county-presidential-vote-2016.yml) and the
+  [2018 vote for governor](../corpus/measure/allen-county-governor-vote-2018.yml) — and one finding
+  that belongs to the county rather than to any precinct in it: every one of the thirteen precincts
+  Clinton won in 2016 moved toward the Republicans by 2020, by a mean of 4.5 points, and across all
+  88 the correlation between 2016 Republican share and the 2016–2020 swing is **−0.39**.
+
+  **The rule, replacing the predictions.** A member earns a node when something about *it* does not
+  fit the table: a relationship to another node, or a disagreement between sources about it. Both
+  are properties of the member. Neither is produced by adding data about every member.
+
+  More elections widen the table. A precinct with a population, a housing count, an area, a
+  turnout, a margin, a swing and a registration ratio is a row with seven columns rather than
+  three, and a row is a row. Sugar Creek and Lima 1A were node-worthy from the first file, and the
+  other 86 will not become node-worthy from the tenth.
+rationale: |
+  **Why two predictions failed the same way.** Both asked *how much evidence would be enough*,
+  which treats node-worthiness as a threshold on volume. It is not a threshold at all. "Differs in
+  kind" was never a statement about how many facts a member carries — it is a statement about
+  whether the member has anything that the table it sits in cannot express. A relationship to
+  another node cannot be a column. A disagreement between two sources about one member cannot be a
+  column. A swing can, and is.
+
+  The right question when new data arrives is therefore not *is this enough now* but *did any
+  member acquire something the table cannot hold*. Asked that way, this retrieval answers in one
+  step, and would answer the same with ten elections.
+
+  **What is not retired: getting the data.** The series was worth every byte. It is the only reason
+  this corpus can say the county's Republican share moved 66.5 → 67.3 → 69.0, that its most
+  Democratic precincts moved right hardest, or that turnout collapses by a fifth in a midterm while
+  the partisan balance barely moves. None of that is visible in one election, and none of it is a
+  fact about a precinct.
+
+  That is the distinction worth keeping from all three records: **data that makes a system legible
+  is not the same as data that makes its members individual.** This corpus kept confusing the two,
+  and each time the confusion showed up as an argument for writing more files.
+
+  **A note on what was nearly lost.** The stability of the 88 names across three elections is
+  itself the most surprising thing retrieved this phase, and it is the sort of finding that
+  disappears if the retrieval is judged only by whether it licensed new nodes. Four independently
+  produced lists of this county's precincts — a board of elections in three separate years and the
+  Census Bureau once — agree string for string. It is recorded in
+  [the catalog entry](../catalog/openelections-ohio.md), where a fact about a source belongs.
