@@ -1,0 +1,30 @@
+class: jurisdiction
+label: Pandora-Gilboa Local School District
+description: |
+  A Putnam County district whose southern edge crosses into Allen — 3,502 people over 67.625
+  square miles, internal point 41.000054, -83.948062, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
+
+  3,463 of its people are in Putnam County and **39 in Allen**, across seven blocks in the north
+  of [Richland Township](../place/richland-township.yml). [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block.
+
+  Thirty-nine people is close to the smallest reach a corpus can be asked to record and still
+  matter, and it is the reason the count is stated rather than the fraction. One per cent of a
+  district is a rounding error; thirty-nine named residents of a township are not.
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904939"
+links:
+  - target: ../place/richland-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: partially-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

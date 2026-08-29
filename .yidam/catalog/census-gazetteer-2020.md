@@ -35,9 +35,18 @@ used-by:
   - ../corpus/division/ohio-congressional-district-4-2020.yml
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-senate-district-12-2020.yml
+  - ../corpus/jurisdiction/allen-east-local-school-district.yml
+  - ../corpus/jurisdiction/bath-local-school-district.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
+  - ../corpus/jurisdiction/delphos-city-school-district.yml
+  - ../corpus/jurisdiction/elida-local-school-district.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
+  - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
+  - ../corpus/jurisdiction/perry-local-school-district.yml
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
+  - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-land-area-2020.yml
   - ../corpus/measure/lima-land-area-2020.yml
   - ../corpus/measure/ohio-house-district-4-land-area-2020.yml
@@ -53,6 +62,7 @@ used-by:
   - ../corpus/place/delphos.yml
   - ../corpus/place/elida.yml
   - ../corpus/place/fort-shawnee.yml
+  - ../corpus/place/gomer.yml
   - ../corpus/place/harrod.yml
   - ../corpus/place/jackson-township.yml
   - ../corpus/place/lafayette.yml
@@ -65,6 +75,7 @@ used-by:
   - ../corpus/place/spencer-township.yml
   - ../corpus/place/spencerville.yml
   - ../corpus/place/sugar-creek-township.yml
+  - ../corpus/place/westminster.yml
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
 ---
 
@@ -83,10 +94,14 @@ county, county-subdivision, place or tract grain should come from here rather th
 API, unless and until somebody registers a key.
 
 **What else this holds that nobody has looked at.** The county-subdivision and place files are
-now read out: all 13 subdivisions and all 9 municipalities in the county are corpus nodes. What
-remains is the tract file, which carries 35 rows for this county of which one has been turned
-into a node. The water-area columns have not been examined at all, and they are the
-natural anchor for any future claim about the county's surface water.
+now read out: all 13 subdivisions, all 9 municipalities and all 3 census designated places in the
+county are corpus nodes. Two of those CDPs were missed on the first pass — Gomer and Westminster
+— because the corpus built its list of places from the sub-county *population* file, which
+tabulates governmental units only. A place with no government is in this file and not in that
+one, and the gap took a school-district retrieval to find. What remains here is the tract file,
+which carries 35 rows for this county of which one has been turned into a node. The water-area
+columns have not been examined at all, and they are the natural anchor for any future claim about
+the county's surface water.
 
 **Districts were added to this entry after the electoral-grain phase.** The same gazetteer
 program publishes congressional, state legislative and school district files in the same
@@ -99,6 +114,6 @@ House District 4 reads `ALAND 1042587389`, `AWATER 11152061`, `ALAND_SQMI 402.54
 `INTPTLAT 40.771627`, `INTPTLONG -84.106103` — every field byte-identical to Allen County's own
 record in the county file. The district is coterminous with the county.
 
-**What it cannot support.** The gazetteer publishes geography, not population. Every
-population figure in this corpus comes from
-[Census Population Estimates](census-popest-2024.md) instead.
+**What it cannot support.** The gazetteer publishes geography, not population. Population in
+this corpus comes from [Census Population Estimates](census-popest-2024.md) for any date after
+2020, and from [TIGERweb](tigerweb-census2020.md) block counts for the 2020 enumeration itself.

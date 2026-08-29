@@ -1,0 +1,30 @@
+class: jurisdiction
+label: Columbus Grove Local School District
+description: |
+  A Putnam County district that reaches into Allen — 5,120 people over 73.137 square miles,
+  internal point 40.907866, -84.118198, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
+
+  4,631 of its people are in Putnam County and 489 in Allen — 9.6 per cent. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block. The Allen County portion is 44 blocks in the north of
+  [Monroe Township](../place/monroe-township.yml) and contains no incorporated place.
+
+  It is here because a corpus of Allen County that listed only the districts centred in Allen
+  County would tell 489 residents the wrong thing about where their children go to school. The
+  reach is small and the boundary is real.
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904931"
+links:
+  - target: ../place/monroe-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: partially-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

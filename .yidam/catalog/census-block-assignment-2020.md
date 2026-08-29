@@ -15,10 +15,21 @@ used-by:
   - ../corpus/division/ohio-congressional-district-4-2020.yml
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-senate-district-12-2020.yml
+  - ../corpus/jurisdiction/allen-east-local-school-district.yml
+  - ../corpus/jurisdiction/bath-local-school-district.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
+  - ../corpus/jurisdiction/delphos-city-school-district.yml
+  - ../corpus/jurisdiction/elida-local-school-district.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
+  - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
+  - ../corpus/jurisdiction/perry-local-school-district.yml
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
+  - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml
+  - ../corpus/place/gomer.yml
+  - ../corpus/place/westminster.yml
   - ../corpus/question/allen-county-current-congressional-district.yml
 ---
 
@@ -41,8 +52,16 @@ all. A voting district here is `002AFJ`, which is not something anyone can read.
 **What Allen County looks like in it.** 3,552 blocks. All 3,552 fall in congressional district
 04, all 3,552 in state senate district 012, and all 3,552 in state house district 004 — so no
 federal or state legislative boundary splits this county in the 2020 geography. They divide
-among **88 voting districts** and 12 unified school districts, three of which are centered in
-neighbouring counties and reach in by 2, 7 and 44 blocks respectively.
+among **88 voting districts** and 12 unified school districts.
+
+**Seven of those twelve cross a county line, and the crossings run both ways.** The first reading
+of this file recorded only that three districts are centred in neighbouring counties and reach in
+by 2, 7 and 44 blocks. That was the district-level tally and it understated the case. Read block
+by block: Delphos City is 57 per cent Allen and 43 per cent Van Wert; Spencerville Local spans
+Allen, Auglaize and Van Wert; Bluffton Exempted Village reaches out into Hancock and Shawnee
+Local into Auglaize; and Columbus Grove, Pandora-Gilboa and Waynesfield-Goshen reach in from
+Putnam, Putnam and Auglaize. Only five of the twelve lie wholly inside Allen County. The school
+map of this county is not organised by the county boundary in either direction.
 
 **Vintage is the trap.** These are the districts as of the 2020 census. Ohio redistricted after
 it, so the congressional and legislative assignments here describe the map that was in force
@@ -50,6 +69,7 @@ through the 2022 election and not the one in force now — see
 [which congressional district Allen County is in now](../corpus/question/allen-county-current-congressional-district.yml).
 There is no BAF for a later year; `baf2022`, `baf2024`, `baf2025` and `baf2026` all return 404.
 
-**What else it holds that nobody has looked at.** All 88 voting districts and all 12 school
-districts, block by block, plus the INCPLACE_CDP file that assigns blocks to places. Only the
-district-level tallies were read.
+**What else it holds that nobody has looked at.** The SDUNI and INCPLACE_CDP files are now read
+out block by block, and every school district touching the county is a corpus node. What remains
+is the VTD file — all 88 voting districts, whose codes (`002AFJ` and the like) carry no names and
+so cannot be turned into nodes anyone could read without the Secretary of State's precinct list.

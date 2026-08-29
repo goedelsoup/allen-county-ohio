@@ -1,0 +1,38 @@
+class: place
+label: Westminster
+description: |
+  An unincorporated community of 1.821 square miles in the south-east of the county, internal
+  point 40.701038, -83.975081, with 406 people at the 2020 census. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), where it is listed as
+  `Westminster CDP`, and [TIGERweb](../../catalog/tigerweb-census2020.md) for the count.
+
+  It lies wholly within [Auglaize Township](auglaize-township.yml) — all fourteen of its census
+  blocks do — and holds 15 per cent of that township's 2,757 people. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography. The generous test that county subdivisions merely *intersecting* it
+  returns two townships, Auglaize and Perry; the block composition returns one. The difference is
+  a shared boundary line, and it is why containment here is settled by counting blocks rather than
+  by asking a spatial query.
+
+  It has exactly the population of [Lafayette](lafayette.yml), an incorporated village four miles
+  north. The two are the same size and are not the same kind of thing: one has a
+  council and a corporate boundary that annexation can move, and this has a statistical outline
+  the Census Bureau draws. See [Gomer](gomer.yml) for how both of these places came to be missing
+  from a corpus that had called its list of places complete.
+properties:
+  place_type: unincorporated community
+  gnis_id: "02628986"
+  geoid: "3983930"
+  centroid: "40.701038, -83.975081"
+  area_sq_mi: "1.821 land, 0.005 water (2020)"
+links:
+  - target: ../place/auglaize-township.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/allen-county.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place.ont.yml
+    relationship: instance-of

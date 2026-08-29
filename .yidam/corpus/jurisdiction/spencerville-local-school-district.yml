@@ -1,0 +1,41 @@
+class: jurisdiction
+label: Spencerville Local School District
+description: |
+  **The largest of the twelve by area** — 5,164 people over 89.368 square miles in the county's
+  south-west, internal point 40.710853, -84.365128, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population. Fifty-eight people to the
+  square mile: thinner than every district centred in this county, and thicker only than the two
+  that reach it from Putnam and Auglaize by 39 people and 17.
+
+  It reaches into three counties: 3,990 people in Allen, 662 in Auglaize and 512 in Van Wert.
+  [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md)
+  crossed with TIGERweb block geography, block by block. Its Allen County ground is 2,918 people
+  of [Spencer Township](../place/spencer-township.yml) and 1,072 of
+  [Amanda Township](../place/amanda-township.yml).
+
+  It holds [Spencerville](../place/spencerville.yml) and its 2,198 people — two fifths of the
+  district in one village, and the rest spread over eighty square miles of farmland. [verified] —
+  same source.
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904580"
+links:
+  - target: ../place/spencerville.yml
+    relationship: serves
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/spencer-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/amanda-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: partially-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

@@ -1,0 +1,45 @@
+class: jurisdiction
+label: Bath Local School District
+description: |
+  A district of 12,101 people over 44.495 square miles north-east of Lima, internal point
+  40.79708, -84.060212, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
+
+  It lies wholly inside Allen County and is **not** the same ground as the township it is named
+  for. All 9,399 people of [Bath Township](../place/bath-township.yml) are in it — 255 of the
+  township's 256 blocks, the exception an unpopulated one that belongs to the Lima City district —
+  but so are 1,573 residents of [Lima](../place/lima.yml) and 1,129 of
+  [Monroe Township](../place/monroe-township.yml). A fifth of the district lives outside its
+  namesake. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block.
+
+  It contains one incorporated place, [Cairo](../place/cairo.yml) and its 517 people. [verified]
+  — same source.
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904576"
+links:
+  - target: ../place/bath-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/lima.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/monroe-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/cairo.yml
+    relationship: serves
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: territory-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

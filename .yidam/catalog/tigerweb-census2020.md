@@ -13,14 +13,25 @@ location:
     description: 2020 vintage — layers 6 Census Tracts, 10 Census Blocks, 20 County Subdivisions, 26 Incorporated Places, 28 Census Designated Places, 82 Counties
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
-  - ../corpus/place/shawnee-township.yml
-  - ../corpus/site/allen-county-courthouse.yml
-  - ../corpus/site/lima-refinery.yml
+  - ../corpus/jurisdiction/allen-east-local-school-district.yml
+  - ../corpus/jurisdiction/bath-local-school-district.yml
+  - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
+  - ../corpus/jurisdiction/delphos-city-school-district.yml
+  - ../corpus/jurisdiction/elida-local-school-district.yml
+  - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
+  - ../corpus/jurisdiction/perry-local-school-district.yml
+  - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/fort-shawnee.yml
+  - ../corpus/place/gomer.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/westminster.yml
   - ../corpus/question/where-the-auglaize-rises.yml
+  - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/lima-army-tank-plant.yml
+  - ../corpus/site/lima-refinery.yml
 ---
 
 Three retrievals in this corpus — the 2020 Gazetteer, the Block Assignment Files and GNIS —
@@ -50,6 +61,17 @@ and `AREALAND`, classify each internal point into a subdivision polygon, and sum
 39003010300 that is 107 blocks, every one landing in exactly one subdivision, and their land
 areas summing to `74,841,137` — the tract's own `AREALAND`, exactly. That the parts sum to the
 whole is the check that the method worked.
+
+**The block layer carries the enumeration itself.** Layer 10 returns `POP100` and `HU100` on
+every block — the 2020 census population and housing-unit counts as published for redistricting.
+Combined with block composition that changes what this corpus can do: any geography expressible
+as a set of blocks can be **counted rather than estimated**, including geographies the Census
+Bureau publishes no population for at all. Allen County's 3,552 blocks sum to 102,206 people, and
+the Allen County portions of the twelve school districts covering it sum to 102,206 as well.
+The parts summing to the whole is again the check that the method worked.
+
+This is the enumeration, not the estimates base, and the two are different numbers — see
+[Census Population Estimates](census-popest-2024.md).
 
 **It disagrees with the Gazetteer about the county's size.** TIGERweb gives Allen County
 `AREALAND` `1042587394` and `AREAWATER` `11152063`; the 2020 Gazetteer file gives `1042587389`
