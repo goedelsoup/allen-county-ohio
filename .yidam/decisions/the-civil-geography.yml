@@ -1,0 +1,71 @@
+id: the-civil-geography
+summary: >-
+  All 21 of the county's civil divisions are now in the corpus — 12 townships and 9
+  municipalities, up from 3 and 3 — from two files that have been in the catalog since the
+  second phase. No new source. The jurisdiction side is deliberately not written, and this says
+  why.
+context: |
+  [state-after-nine-phases](state-after-nine-phases.yml) recorded that this corpus held two of
+  the county's nine municipalities and that its nine sources each named material nobody had
+  read. The elector's answer to what the corpus is for was "a real Allen County reference",
+  which makes a civil geography missing three quarters of its own subdivisions the first defect
+  to fix.
+
+  It took no retrieval. The 2020 Gazetteer's county-subdivision and place files and the
+  Population Estimates sub-county file were already catalogued, and the sub-county file answered
+  four questions at once:
+
+    which municipalities exist        9, at summary level 157
+    what each one's population is     2020 estimates base and 2024 estimate
+    which township each sits in       summary level 071 — place within county subdivision
+    which ones cross a county line    the `(pt.)` mark on the name
+
+  The corpus had been citing that file since its second phase, for two figures.
+decision: |
+  **15 new `place` nodes: 9 townships and 6 villages.** The class goes from 8 to 23 and now
+  holds every civil division of Allen County, its one CDP, and the county itself.
+
+  Every village node records which township it sits in as a **verified** edge, from the
+  sub-county file's place-within-subdivision rows rather than from a coordinate. That closes
+  `american-township`'s standing `[inference]` that "the village of Elida lies within it", and
+  it gives Bluffton and Delphos `partially-within` edges to Richland and Marion townships to
+  match the ones they already carry to the county.
+
+  **The jurisdiction side is not written, and that is a decision rather than an omission.**
+  Twelve township governments and nine municipal corporations would be 21 more nodes. The two
+  sources used here describe *places* — ground, area, population. Neither says that a township
+  has a board of trustees, when a village incorporated, or what charter it operates under. The
+  county's own `Political_Subdivisions` layer names all 21, which supports that they exist and
+  nothing further.
+
+  Twenty-one nodes whose only content is "this presumably has a government" would be inventing
+  the class, and `jurisdiction` is the class this corpus separated from `place` precisely
+  because a government has a creation instrument, officers and a budget that the ground does
+  not. Writing them without any of those would collapse the distinction the ontology was built
+  on. The retrieval that would support them is incorporation dates and governing bodies, which
+  is already the next gap named in `state-after-nine-phases`.
+rationale: |
+  What filling the class actually showed, which is the part worth keeping.
+
+  **The county is three things, and the middle one is invisible in its own record.** Lima holds
+  35,531 people. The three townships wrapped around it — American 14,571, Shawnee 12,509, Bath
+  9,399 — hold **36,479 between them, more than the city**. The other nine townships hold about
+  30,000 across five hundred square miles.
+
+  That suburban middle is largely ungoverned by any municipality. Shawnee Township is the
+  county's second most populous civil subdivision and contains **no incorporated place at all**:
+  twelve and a half thousand people under township government and no municipal one. American
+  Township holds 12,541 outside Elida. This is the same ground the last two phases kept
+  arriving at from the other direction — the refinery and the tank plant both stand
+  unincorporated in Shawnee Township, which stopped looking like an accident once the
+  subdivision totals were in.
+
+  **Two of thirteen subdivisions grew between 2020 and 2024.** Auglaize gained 55 and Marion
+  gained 102; every other one fell, Lima hardest at −841 against a county loss of 1,351. So the
+  county's decline is not evenly spread and is not only Lima's: eleven of thirteen subdivisions
+  are shrinking, and the two that are not are its far south-east and its Delphos end.
+
+  Why this was one phase and not nine. The previous six phases each retrieved a source, found
+  one error, and settled. That was the right shape while the corpus was small and wrong. It is
+  the wrong shape for a corpus that is thin, and the honest reading of nine sources each with
+  unread material was that the loop had become a habit rather than a method.
