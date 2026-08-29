@@ -30,7 +30,7 @@ Sorted by: kind, then alphabetically.
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 3v / 0i / 2o | 43 |
-| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 2v / 5i / 1o | 63 |
+| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 6v / 6i / 1o | 101 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
@@ -102,13 +102,14 @@ Sorted by: kind, then alphabetically.
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
-| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 25 |
+| [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 5v / 0i / 1o | 41 |
+| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 4v / 2i / 1o | 37 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 3v / 4i / 2o | 44 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 9 | 4v / 4i / 4o | 101 |
-| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 1v / 5i / 2o | 37 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 2v / 6i / 2o | 41 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 3v / 2i / 2o | 48 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 6v / 3i / 2o | 61 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
@@ -128,6 +129,7 @@ Sorted by: kind, then alphabetically.
 | [hiram-stotts.yml](person/hiram-stotts.yml) | person | Hiram Stotts | 2 | 1v / 1i / 0o | 18 |
 | [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 18 |
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
+| [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
 | [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 20 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
@@ -186,7 +188,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 52 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
-| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 2v / 1i / 1o | 39 |
+| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 4 | 4v / 2i / 1o | 63 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 6v / 5i / 1o | 70 |
 | [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1835-john-keller.yml](tenure/sheriff-1835-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1835–1839 | 3 | 1v / 0i / 0o | 23 |
