@@ -22,18 +22,29 @@ description: |
   1066879 in Lucas County against this one's 1070882. [verified] — same source. The collision
   is now resolvable by identifier rather than by care.
 
+  **Where its water goes is now sourced rather than assumed.** The river has two watersheds of
+  its own — `0410000703` Upper Ottawa River and `0410000705` Lower Ottawa River — and both sit
+  inside subbasin `04100007`, which is named for and drains to the
+  [Auglaize](auglaize-river.yml). [verified] —
+  [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md). That settles the
+  basin and not the confluence: the WBD says this water reaches the Auglaize and never says which
+  stream it joins first. Those two Ottawa watersheds hold 47,578 of the county's people between
+  them, 47 per cent, which is what it means to call this the county's principal watercourse.
+
   Being the watercourse Lima grew on, it was also the receiving water for the refinery and
   the works — the environmental history of this stream and the industrial history of the city
   are the same subject. [inference]
 properties:
   feature_type: river
   gnis_id: "1070882"
+  huc_code: "0410000703 Upper Ottawa River, 0410000705 Lower Ottawa River"
   mouth: 40.9950509, -84.2413355, in Putnam County. Joins the Auglaize River. [inference]
   source: 40.7708852, -83.9557761 — the Hog Creek / Little Hog Creek confluence.
 links:
   - target: ../natural-feature/auglaize-river.yml
     relationship: flows-into
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/usgs-watershed-boundary.md
   - target: ../place/lima.yml
     relationship: traverses
     claim_tag: inference

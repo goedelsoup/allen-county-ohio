@@ -135,7 +135,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 199, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 200, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,

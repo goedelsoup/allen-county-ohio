@@ -1,0 +1,36 @@
+class: natural-feature
+label: Scioto River Basin
+description: |
+  The drainage basin of the Scioto River, which discharges to the Ohio River at Portsmouth and
+  through it to the Gulf of Mexico. **Ninety-nine people in Allen County live in it.** [verified]
+  — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md).
+
+  Four census blocks in [Auglaize Township](../place/auglaize-township.yml), at the county's
+  south-east corner between 40.6487 and 40.7104 north, fall in hydrologic unit `05060001` — the
+  Upper Scioto subbasin of the Ohio Region. Every other block in the county, 3,548 of 3,552, is in
+  the Great Lakes Region and drains to
+  [the Maumee basin](maumee-river-basin.yml). [verified] — same source, by block composition;
+  all 3,552 blocks land in exactly one subbasin and their populations sum to the county's own
+  enumeration of 102,206.
+
+  **This node exists because the corpus asserted otherwise from genesis.** The Maumee basin node
+  said the county lies within it and marked the southern townships unchecked. They were worth
+  checking: the answer is 0.1 per cent of the county's population, 43 housing units, and a
+  different ocean.
+
+  The subwatershed those four blocks sit in is `050600010101`, **Cottonwood Ditch** — a headwater
+  of the Scioto rising in Auglaize Township. [verified] — same source. It is the only named
+  feature on the Ohio River side of the divide in this county.
+
+  [open] Where the divide runs on the ground. Block internal points establish which side each
+  block is on and say nothing about the line between them; the WBD's own `WBDLine` layer would.
+properties:
+  feature_type: watershed
+  huc_code: "05060001"
+links:
+  - target: ../place/auglaize-township.yml
+    relationship: traverses
+    claim_tag: verified
+    source: ../../catalog/usgs-watershed-boundary.md
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of
