@@ -5,14 +5,16 @@ engineering capabilities that agents use to work with the corpus without loading
 wholesale into context.
 
 See [crates conventions](../.yidam/.vendor/prelude/guidelines/directories.md#crates) for the three
-capability types (connectors, calculators, feature engineering) and the index layer.
+capability types it names (connectors, calculators, feature engineering) and the index layer.
+This domain has added two the conventions do not name — a **check** and an **exporter** — for the
+reasons given below.
 
 ## Shape of the domain computer
 
-Four crates exist: [`succession`](succession/), [`covering`](covering/),
-[`proximity`](proximity/) and [`provenance`](provenance/), described below. The rest of this
-section names the shape the corpus's structure calls for, so the next one written is not
-invented from scratch.
+Five crates exist: [`succession`](succession/), [`covering`](covering/),
+[`proximity`](proximity/), [`provenance`](provenance/) and [`publish`](publish/), described
+below. The rest of this section names the shape the corpus's structure calls for, so the next
+one written is not invented from scratch.
 
 **Connectors.** Four external sources feed distinct classes. Decennial census and ACS
 tables populate `measure` nodes against `place` and `jurisdiction`. Ohio Secretary of State
@@ -38,6 +40,12 @@ and calculators. [`provenance`](provenance/) fails the build on a corpus defect 
 answering a question about the county. It exists because the rule it enforces — that an edge
 must say what kind of claim it is — does not exist in the vendored `graph-lint`, and
 `.yidam/.vendor/` is read-only. The domain computer carries the gate until upstream does.
+
+**Exporters.** A fourth capability type, and the newest. [`publish`](publish/) derives a public
+artifact from the corpus — the feeds [`web/`](../web/) is built from — and refuses to write one
+that breaks a publication rule. It is not a connector: nothing enters. It is not a calculator:
+it answers no question about the county. It is not quite a check either, though it fails builds,
+because its output is the point and the checking is what makes the output safe to have.
 
 **Index.** Not yet. A corpus this size is cheaper to read than to embed, and an index over it
 buys nothing but a staleness surface. Add one when the corpus outgrows
@@ -120,6 +128,44 @@ county line, and each linked to the county with an unqualified `within`. The edg
 description in the same file disagreed. Both are `partially-within` now, and the query reports
 county-scale coverage of either place as partial — including the state and congressional
 districts, which inherit the split.
+
+**Fifth crate — written.** [`publish`](publish/) is the domain computer's first output rather
+than its first opinion. It reads `.yidam/corpus/` and writes the four JSON feeds the site under
+[`web/`](../web/) is built from, and it is the only thing in this repository allowed to decide
+what leaves it.
+
+Its subject is a rule the corpus had written down and nothing enforced. `agent-conduct` says a
+derived assertion travels only as far as the weakest claim beneath it, cites a **verbatim span**
+rather than a node, and is refused where the cited node refuses the inference. Those three
+sentences governed every claim this repository might publish and were, until this crate, checked
+by nobody — because until this crate, this repository published nothing.
+
+Four things it exists to get right:
+
+- **A tier is computed, never declared.** An assertion's tier is the weakest tag across every
+  passage beneath it, recomputed on every build, so a downgrade in the corpus propagates rather
+  than waiting for somebody to remember.
+- **Refusals are checked per node, not per block.** The rule says *the cited block*, and this
+  corpus defeats that reading in its clearest case:
+  [`deindustrialization`](../.yidam/corpus/period/deindustrialization.yml) demonstrates a
+  five-decade decline in one paragraph and refuses the reading that 1970 was a peak in the next.
+  A block-level check passes the chart and drops the caveat.
+- **A number on a chart is an assertion.** The tag apparatus reaches prose and edges and stops
+  at the array a chart is drawn from. Each plotted figure names the text it was read from; the
+  gate asserts that text is in a span the assertion cites and that the number equals what the
+  text says.
+- **Structured fields are claims too.** Prose was filtered by tag from the first draft and
+  properties were not, so three `[open]` `boundary_basis` fields were on their way to a public
+  site. Writing the test that looks for `[open]` in the serialized feeds is what found them.
+
+Its one deliberate asymmetry with the prose rule: an untagged **paragraph** does not publish,
+and an untagged **property** does. A paragraph asserting something without saying what kind of
+claim it is has no tag to travel on; `geoid: "39003"` is a structured field nobody tagged. The
+99 untagged blocks this drops turn out to be the corpus talking about itself rather than about
+the county, which was checked rather than assumed.
+
+The decision behind all of it is
+[what-may-leave-the-repository](../.yidam/decisions/what-may-leave-the-repository.yml).
 
 ## Crates
 

@@ -1,0 +1,538 @@
+{
+  "feed_version": 1,
+  "series": [
+    {
+      "id": "division-ohio-house-district-4-2020::land-area",
+      "subject": "division/ohio-house-district-4-2020.yml",
+      "subject_label": "Ohio House District 4 (2020 geography)",
+      "parameter": "land area",
+      "unit": "square miles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/ohio-house-district-4-land-area-2020.yml",
+          "label": "Ohio House District 4 land area, 2020 geography",
+          "as_of": "2020",
+          "value": 402.545,
+          "published": "402.545",
+          "tier": "verified",
+          "source": "catalog/census-gazetteer-2020.md",
+          "method": "Computed by the Census Bureau from the 2020 TIGER geography. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-allen-county-government::ballots-cast,-general-election",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "ballots cast, general election",
+      "unit": "ballots",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-turnout-2020.yml",
+          "label": "Allen County turnout, 2020 general election",
+          "as_of": "2020-11-03",
+          "value": 48353.0,
+          "published": "48353",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "Sum of the `ballots_cast` field over the 88 Allen County precincts, from a volunteer transcription of the certified returns. Registered voters summed the same way: 67,374. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-allen-county-government::voting-districts",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "voting districts",
+      "unit": "districts",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-voting-districts-2020.yml",
+          "label": "Allen County voting districts, 2020",
+          "as_of": "2020",
+          "value": 88.0,
+          "published": "88",
+          "tier": "verified",
+          "source": "catalog/census-block-assignment-2020.md",
+          "method": "Distinct values in the VTD assignment file over the 3,552 blocks whose GEOID begins 39003, cross-checked against the 88 features TIGERweb returns for the county. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::land-area",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "land area",
+      "unit": "square miles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-land-area-2020.yml",
+          "label": "Allen County land area, 2020",
+          "as_of": "2020",
+          "value": 402.545,
+          "published": "402.545",
+          "tier": "verified",
+          "source": "catalog/census-gazetteer-2020.md",
+          "method": "Computed by the Census Bureau from the 2020 TIGER geography. A county's land area is not fixed across geographies — a later vintage may differ. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::presidential-votes-cast",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "presidential votes cast",
+      "unit": "votes",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-presidential-vote-2016.yml",
+          "label": "Allen County presidential vote, 2016",
+          "as_of": "2016-11-08",
+          "value": 45815.0,
+          "published": "45815",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "Summed by candidate over the county's 88 precincts. The 2016 file carries no registered-voter or ballots-cast column, so no turnout rate is derivable from it. [verified]"
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-2020.yml",
+          "label": "Allen County presidential vote, 2020",
+          "as_of": "2020-11-03",
+          "value": 47993.0,
+          "published": "47993",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "Summed by candidate over the county's 88 precincts. The total is 360 fewer than the 48,353 ballots cast — an undervote of 0.7 per cent. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::total-housing-units",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "total housing units",
+      "unit": "housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-housing-units-2020.yml",
+          "label": "Allen County housing units, 2020 census",
+          "as_of": "2020-04-01",
+          "value": 44563.0,
+          "published": "44563",
+          "tier": "verified",
+          "source": "catalog/tigerweb-census2020.md",
+          "method": "Sum of block-level `HU100` from the 2020 Census redistricting file, as served by TIGERweb. Total units, occupied and vacant together. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::total-resident-population",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "total resident population",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-population-1970.yml",
+          "label": "Allen County population, 1970 census",
+          "as_of": "1970",
+          "value": 111144.0,
+          "published": "111144",
+          "tier": "verified",
+          "source": "catalog/census-county-estimates-1970s.md",
+          "method": "Decennial enumeration, unrounded. The estimate columns in the same file are rounded to hundreds; this column is not. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-2000.yml",
+          "label": "Allen County population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "value": 108464.0,
+          "published": "108464",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md",
+          "method": "Decennial enumeration as revised for the intercensal series. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-2010.yml",
+          "label": "Allen County population, 2010 census",
+          "as_of": "2010-04-01",
+          "value": 106331.0,
+          "published": "106331",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md",
+          "method": "Decennial enumeration. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-2020-census.yml",
+          "label": "Allen County population, 2020 census",
+          "as_of": "2020-04-01",
+          "value": 102206.0,
+          "published": "102206",
+          "tier": "verified",
+          "source": "catalog/tigerweb-census2020.md",
+          "method": "Sum of block-level `POP100` from the 2020 Census redistricting file, as served by TIGERweb. Not a modelled figure and not subject to later revision. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-2020.yml",
+          "label": "Allen County population, 2020 estimates base",
+          "as_of": "2020-04-01",
+          "value": 102217.0,
+          "published": "102217",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "Decennial enumeration as revised for the Vintage 2024 estimates base. A later vintage may revise it again. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-2024.yml",
+          "label": "Allen County population, July 2024 estimate",
+          "as_of": "2024-07-01",
+          "value": 100866.0,
+          "published": "100866",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "Modeled postcensal estimate, not an enumeration. Comparing it to the 2020 base compares a model output to a revised count. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::votes-cast-for-governor",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "votes cast for governor",
+      "unit": "votes",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-governor-vote-2018.yml",
+          "label": "Allen County vote for governor, 2018",
+          "as_of": "2018-11-06",
+          "value": 35961.0,
+          "published": "35961",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "Summed by candidate over the county's 88 precincts, from a volunteer transcription of the certified returns. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::land-area",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "land area",
+      "unit": "square miles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-land-area-2020.yml",
+          "label": "Lima land area, 2020",
+          "as_of": "2020",
+          "value": 13.617,
+          "published": "13.617",
+          "tier": "verified",
+          "source": "catalog/census-gazetteer-2020.md",
+          "method": "Computed by the Census Bureau from the 2020 TIGER geography, reflecting the corporate boundary as of that geography. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::total-resident-population",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "total resident population",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-population-2000.yml",
+          "label": "Lima population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "value": 40307.0,
+          "published": "40307",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md",
+          "method": "Decennial enumeration as revised for the intercensal series. [verified]"
+        },
+        {
+          "node": "measure/lima-population-2010.yml",
+          "label": "Lima population, 2010 census",
+          "as_of": "2010-04-01",
+          "value": 38771.0,
+          "published": "38771",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md",
+          "method": "Decennial enumeration. [verified]"
+        },
+        {
+          "node": "measure/lima-population-2020-census.yml",
+          "label": "Lima population, 2020 census",
+          "as_of": "2020-04-01",
+          "value": 35579.0,
+          "published": "35579",
+          "tier": "verified",
+          "source": "catalog/tigerweb-census2020.md",
+          "method": "Sum of block-level `POP100` over the blocks assigned to place `3943554`. [verified]"
+        },
+        {
+          "node": "measure/lima-population-2020.yml",
+          "label": "Lima population, 2020 estimates base",
+          "as_of": "2020-04-01",
+          "value": 35531.0,
+          "published": "35531",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "Decennial enumeration as revised for the Vintage 2024 base. [verified]"
+        },
+        {
+          "node": "measure/lima-population-2024.yml",
+          "label": "Lima population, July 2024 estimate",
+          "as_of": "2024-07-01",
+          "value": 34690.0,
+          "published": "34690",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "Modeled postcensal estimate. [verified]"
+        }
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "county-population-decline",
+      "statement": "Allen County's population has fallen at every measured point since 1970, from 111,144 to 100,866 — a loss of 10,278 people, or 9.2 per cent.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "period/deindustrialization.yml",
+          "node_label": "Deindustrialization",
+          "span": "Allen County counted 111,144 at the 1970 census and 100,866 at the 2024 estimate — a loss of 10,278 people, or 9.2%, across five decades with no reversal at any measured point: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+      ],
+      "figures": [
+        {
+          "label": "1970",
+          "value": 111144.0,
+          "literal": "111,144"
+        },
+        {
+          "label": "2000",
+          "value": 108464.0,
+          "literal": "108,464"
+        },
+        {
+          "label": "2010",
+          "value": 106331.0,
+          "literal": "106,331"
+        },
+        {
+          "label": "2020",
+          "value": 102217.0,
+          "literal": "102,217"
+        },
+        {
+          "label": "2024",
+          "value": 100866.0,
+          "literal": "100,866"
+        }
+      ]
+    },
+    {
+      "id": "decline-concentrated-in-lima",
+      "statement": "The loss is concentrated in Lima: between 2000 and 2010 the city fell 3.8 per cent while the rest of the county fell 1.5 per cent.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "period/deindustrialization.yml",
+          "node_label": "Deindustrialization",
+          "span": "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-intercensal-2000-2010.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+      ],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 3.8,
+          "literal": "3.8%"
+        },
+        {
+          "label": "The rest of the county",
+          "value": 1.5,
+          "literal": "1.5%"
+        }
+      ]
+    },
+    {
+      "id": "decline-is-not-suburbanization",
+      "statement": "The suburban ring is shrinking too. Eleven of the county's thirteen civil subdivisions lost population between 2020 and 2024.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "period/deindustrialization.yml",
+          "node_label": "Deindustrialization",
+          "span": "eleven of the county's thirteen civil subdivisions lost population",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start."
+      ],
+      "figures": []
+    },
+    {
+      "id": "three-places",
+      "statement": "The county is three places: Lima, a suburban ring larger than the city, and nine rural townships.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "place/allen-county.yml",
+          "node_label": "Allen County",
+          "span": "Lima holds 35,531 people; the three townships wrapped around it — [American](american-township.yml) 14,571, [Shawnee](shawnee-township.yml) 12,509 and [Bath](bath-township.yml) 9,399 — hold 36,479 between them, more than the city",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 35531.0,
+          "literal": "35,531"
+        },
+        {
+          "label": "American Township",
+          "value": 14571.0,
+          "literal": "14,571"
+        },
+        {
+          "label": "Shawnee Township",
+          "value": 12509.0,
+          "literal": "12,509"
+        },
+        {
+          "label": "Bath Township",
+          "value": 9399.0,
+          "literal": "9,399"
+        }
+      ]
+    },
+    {
+      "id": "republican-share-rising",
+      "statement": "Republican share of the top-of-ticket vote rose across three consecutive elections: 66.5 per cent in 2016, 67.3 in 2018, 69.0 in 2020.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-presidential-vote-2020.yml",
+          "node_label": "Allen County presidential vote, 2020",
+          "span": "Republican share of the top-of-ticket vote ran 66.5 per cent in [2016](allen-county-presidential-vote-2016.yml), 67.3 in [2018](allen-county-governor-vote-2018.yml) and 69.0 here — a move of 2.5 points across two presidential elections, against a median precinct move of 1.5",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2016",
+          "value": 66.5,
+          "literal": "66.5"
+        },
+        {
+          "label": "2018",
+          "value": 67.3,
+          "literal": "67.3"
+        },
+        {
+          "label": "2020",
+          "value": 69.0,
+          "literal": "69.0"
+        }
+      ]
+    },
+    {
+      "id": "democratic-ground-moved-fastest",
+      "statement": "The county's most Democratic precincts moved right the fastest — a correlation of −0.39 between 2016 Republican share and the 2016–2020 swing.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-presidential-vote-2020.yml",
+          "node_label": "Allen County presidential vote, 2020",
+          "span": "Across the 88 the correlation between 2016 Republican share and the 2016–2020 swing is **−0.39**: the more Democratic a precinct was, the harder it moved",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Correlation",
+          "value": -0.39,
+          "literal": "−0.39"
+        }
+      ]
+    },
+    {
+      "id": "eleven-precincts",
+      "statement": "Eleven of 88 precincts went to Biden in 2020, and ten of them are in Lima.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-presidential-vote-2020.yml",
+          "node_label": "Allen County presidential vote, 2020",
+          "span": "**Eleven of the county's 88 precincts went to Biden, and ten of them are in Lima.**",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "an-address-is-not-a-municipality",
+      "statement": "A Lima postal address is not the city of Lima. The refinery has one and stands in Shawnee Township.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "site/lima-refinery.yml",
+          "node_label": "Lima Refinery",
+          "span": "**It has a Lima address and is not in Lima.** The county's address file records it at 1150 S Metcalf Street with `USPS_CITY` \"LIMA\" and `MUNI` **blank**, at 40.7221100, -84.1134691.",
+          "tier": "verified",
+          "sources": [
+            "catalog/allen-county-gis-downloads.md",
+            "catalog/tigerweb-census2020.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    }
+  ]
+}

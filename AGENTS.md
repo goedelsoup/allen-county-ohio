@@ -91,9 +91,30 @@ and Helix over LSP). Editors using none of these still get the check from `yidam
 
 ## Domain gates
 
-This domain adds none of its own yet. `mise run ci` is the whole gate.
+`mise run ci` still runs all of them — it is the composite, and the two domain gates below sit
+inside it rather than beside it, so there is one command to remember and one place they can
+drift from CI.
 
-The first one this corpus is likely to need is a **succession check** over `tenure` nodes:
-an office whose holders leave a gap, or whose intervals overlap, is a defect no graph check
-can see, because each node is individually well-formed and each edge resolves. Name it here
-with the command that runs it the day it exists.
+**The edge-provenance check.** `crates/provenance`, run as `edge-audit`. Every edge that asserts
+something about the world must carry a `claim_tag`; `instance-of`, `concerns` and `subject-of`
+are structural and must not. It is a `cargo test` in that crate, so `mise run ci` runs it.
+
+**The publication gate.** `crates/publish`, run as `publish-feeds`. This repository publishes —
+[`web/`](web/) is a public site — so the rules in
+[agent-conduct](.yidam/.vendor/prelude/guidelines/agent-conduct.md) under *When claims leave the
+repository* apply, and this is what enforces them: a tier computed from the corpus rather than
+declared, a verbatim span behind every assertion, a refusal answered rather than routed around,
+and `[open]` excluded absolutely. It also holds `web/src/feeds/` — derived from the corpus and
+committed — to what the corpus currently says, which is the derivation-is-the-gate rule the
+directory conventions ask for. Run `mise run publish` after changing a node the site cites, and
+commit the regenerated feeds.
+
+The site's own gate is `mise run site-test`, also inside `ci`. Its subject is the one derivation
+performed under `web/`: joining a corpus GEOID to the census geometry vendored in
+`web/public/geo/`, which neither of the crates above can see.
+
+A **succession check** over `tenure` nodes is still the gate this corpus is most likely to want
+next: an office whose holders leave a gap, or whose intervals overlap, is a defect no graph check
+can see, because each node is individually well-formed and each edge resolves. `crates/succession`
+computes it and `tests/corpus.rs` pins the sheriff line; what does not exist yet is a rule that
+every office be checked. Name it here with the command that runs it the day it does.
