@@ -77,6 +77,7 @@ used-by:
   - ../corpus/place/spencerville.yml
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/place/westminster.yml
+  - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
 ---
 
