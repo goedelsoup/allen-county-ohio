@@ -1,0 +1,14 @@
+publish-feeds — write the public feeds, or check the committed ones are current
+
+Usage:
+  publish-feeds [--root <dir>]
+  publish-feeds --check [--root <dir>]
+
+Reads .yidam/corpus/ and writes web/src/feeds/. The site reads those files and never
+reads the corpus, so a rendering change and an ontology change stay separable.
+
+  --check   regenerate and compare against what is committed; exit 1 if they differ
+  --root    repository root (default: the working directory)
+
+Exits 1 when a claim cannot leave the repository — an unresolvable citation span, an
+unanswered refusal, or an assertion resting on open ground.

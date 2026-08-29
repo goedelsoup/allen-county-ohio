@@ -1,0 +1,22 @@
+[package]
+name = "publish"
+version = "0.1.0"
+description = "The public feed, and the rules a claim must pass to leave this repository"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+# One space before every `=`, as in the other crates. See `.yidam/decisions/upstream-findings.yml`.
+
+[lib]
+name = "publish"
+path = "src/lib.rs"
+
+[[bin]]
+name = "publish-feeds"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_yaml = { workspace = true }
+serde_json = "1"

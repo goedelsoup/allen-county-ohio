@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "warn"
+  },
+  "env": { "browser": true, "es2024": true, "node": true },
+  "rules": {
+    "eqeqeq": "error",
+    "no-console": "off"
+  },
+  "ignorePatterns": ["dist/**", "node_modules/**", ".astro/**", "src/feeds/**", "public/**"],
+  "overrides": [
+    {
+      "files": ["scripts/**"],
+      "rules": {
+        "no-await-in-loop": "off"
+      }
+    }
+  ]
+}

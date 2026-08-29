@@ -1,0 +1,186 @@
+---
+import '../styles/tokens.css'
+import { manifest } from '../lib/feeds'
+
+interface Props {
+  title: string
+  lede?: string
+}
+
+const { title, lede } = Astro.props
+const here = Astro.url.pathname.replace(/\/$/, '') || '/'
+
+const SITE = 'Allen County, Ohio'
+// The home page is already called what the site is called; appending it reads as a stutter.
+const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
+
+const nav = [
+  { href: '/', label: 'The county' },
+  { href: '/map', label: 'Map' },
+  { href: '/population', label: 'Population' },
+  { href: '/elections', label: 'Elections' },
+  { href: '/corpus', label: 'What this rests on' },
+]
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{documentTitle}</title>
+    <meta name="description" content={lede ?? 'A civic reference for Allen County, Ohio.'} />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="wordmark" href="/">
+          <strong>Allen County</strong><span>Ohio</span>
+        </a>
+        <nav aria-label="Sections">
+          <ul>
+            {
+              nav.map((item) => (
+                <li>
+                  <a href={item.href} aria-current={here === item.href ? 'page' : undefined}>
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page-head">
+        <h1>{title}</h1>
+        {lede && <p class="lede">{lede}</p>}
+      </div>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>
+          Every claim on this site comes from a corpus of {manifest.corpus.nodes} nodes and
+          carries the tag it was written with. Nothing tagged <code>[open]</code> appears here:
+          {manifest.corpus.blocks_withheld} paragraphs and {manifest.corpus.properties_withheld}
+          {' '}fields were withheld from these pages by the rule, not by an editor.
+        </p>
+        <p class="fine">
+          Feed contract v{manifest.feed_version} · published at the
+          <strong>{manifest.policy.ceiling}</strong> ceiling · boundaries from TIGERweb, 2020
+          vintage.
+        </p>
+      </div>
+    </footer>
+
+    <style>
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        background: var(--surface);
+        padding: 0.75rem 1rem;
+        z-index: 10;
+      }
+      .skip:focus {
+        left: 0;
+      }
+
+      .masthead {
+        border-bottom: 1px solid var(--rule);
+        background: var(--surface);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+      .masthead-inner {
+        max-width: 78rem;
+        margin: 0 auto;
+        padding: 0 var(--gutter);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        align-items: center;
+        min-height: 3.5rem;
+      }
+      .wordmark {
+        color: var(--ink);
+        text-decoration: none;
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        font-size: 1rem;
+      }
+      .wordmark span {
+        color: var(--ink-muted);
+        font-size: 0.8125rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1.25rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav a {
+        color: var(--ink-secondary);
+        text-decoration: none;
+        font-size: 0.9375rem;
+        padding: 0.25rem 0;
+        border-bottom: 2px solid transparent;
+        display: block;
+      }
+      nav a:hover {
+        color: var(--ink);
+      }
+      nav a[aria-current='page'] {
+        color: var(--ink);
+        border-bottom-color: var(--series-1);
+      }
+
+      main {
+        max-width: 78rem;
+        margin: 0 auto;
+        padding: 2.5rem var(--gutter) 4rem;
+      }
+      .page-head {
+        max-width: var(--measure);
+        margin-bottom: 2.5rem;
+      }
+      .lede {
+        font-size: 1.125rem;
+        color: var(--ink-secondary);
+        margin: 0;
+      }
+
+      footer {
+        border-top: 1px solid var(--rule);
+        background: var(--surface);
+      }
+      .footer-inner {
+        max-width: 78rem;
+        margin: 0 auto;
+        padding: 2rem var(--gutter) 3rem;
+        color: var(--ink-secondary);
+        font-size: 0.9375rem;
+      }
+      .footer-inner p {
+        max-width: var(--measure);
+      }
+      .fine {
+        color: var(--ink-muted);
+        font-size: 0.8125rem;
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>

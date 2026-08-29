@@ -1,0 +1,108 @@
+---
+// A chart, its caption, and the table that says the same thing without colour.
+//
+// The table is not a fallback. Every value on this site is reachable without reading a
+// tooltip and without distinguishing two hues, which is what makes the chart an enhancement
+// rather than the only way in.
+interface Props {
+  id: string
+  title: string
+  caption?: string
+  /** Column headings for the table view. */
+  columns: string[]
+  rows: (string | number)[][]
+  /** Height of the plot area including its axis band. */
+  height?: number
+}
+
+const { id, title, caption, columns, rows, height = 340 } = Astro.props
+---
+
+<figure class="chart">
+  <figcaption>
+    <h3>{title}</h3>
+    {caption && <p>{caption}</p>}
+  </figcaption>
+
+  <div class="plot" id={id} style={`min-height:${height}px`} data-chart={id}></div>
+
+  <details>
+    <summary>Table view</summary>
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr>{columns.map((c) => <th scope="col">{c}</th>)}</tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((row) => (
+              <tr>
+                {row.map((cell, i) =>
+                  i === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>,
+                )}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
+</figure>
+
+<style>
+  .chart {
+    margin: 0 0 2.5rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+  }
+  figcaption h3 {
+    margin: 0 0 0.25rem;
+  }
+  figcaption p {
+    margin: 0;
+    color: var(--ink-secondary);
+    font-size: 0.9375rem;
+    max-width: var(--measure);
+  }
+  .plot {
+    margin-top: 1.25rem;
+  }
+  details {
+    margin-top: 1rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.75rem;
+  }
+  summary {
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--ink-secondary);
+  }
+  table {
+    border-collapse: collapse;
+    margin-top: 0.875rem;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    min-width: 100%;
+  }
+  th,
+  td {
+    text-align: right;
+    padding: 0.4rem 0.875rem 0.4rem 0;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  thead th {
+    color: var(--ink-muted);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  th[scope='row'] {
+    text-align: left;
+    font-weight: 500;
+    padding-right: 1.5rem;
+  }
+</style>

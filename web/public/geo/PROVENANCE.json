@@ -1,0 +1,46 @@
+{
+  "source": "TIGERweb, U.S. Census Bureau",
+  "catalog": ".yidam/catalog/tigerweb-census2020.md",
+  "service": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer",
+  "vintage": "2020",
+  "fetched": "2026-08-29",
+  "coordinate_precision": 5,
+  "crs": "EPSG:4326",
+  "layers": [
+    {
+      "file": "county.geojson",
+      "layer": 82,
+      "name": "County",
+      "features": 1,
+      "filter": "STATE='39' AND COUNTY='003'"
+    },
+    {
+      "file": "county-subdivisions.geojson",
+      "layer": 20,
+      "name": "County Subdivisions",
+      "features": 13,
+      "filter": "STATE='39' AND COUNTY='003'"
+    },
+    {
+      "file": "voting-districts.geojson",
+      "layer": 58,
+      "name": "Voting Districts",
+      "features": 88,
+      "filter": "STATE='39' AND COUNTY='003'"
+    },
+    {
+      "file": "places.geojson",
+      "layer": 26,
+      "name": "Incorporated Places",
+      "features": 10,
+      "filter": "intersects the county polygon"
+    },
+    {
+      "file": "census-designated-places.geojson",
+      "layer": 28,
+      "name": "Census Designated Places",
+      "features": 3,
+      "filter": "intersects the county polygon"
+    }
+  ]
+}
