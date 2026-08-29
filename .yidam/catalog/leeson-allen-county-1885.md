@@ -23,18 +23,33 @@ location:
 used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/jurisdiction/city-of-delphos.yml
+  - ../corpus/jurisdiction/city-of-lima.yml
+  - ../corpus/person/christopher-wood.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
   - ../corpus/place/bath-township.yml
+  - ../corpus/place/beaverdam.yml
+  - ../corpus/place/bluffton.yml
+  - ../corpus/place/cairo.yml
+  - ../corpus/place/delphos.yml
+  - ../corpus/place/elida.yml
+  - ../corpus/place/gomer.yml
+  - ../corpus/place/harrod.yml
   - ../corpus/place/jackson-township.yml
+  - ../corpus/place/lafayette.yml
+  - ../corpus/place/lima.yml
   - ../corpus/place/marion-township.yml
   - ../corpus/place/monroe-township.yml
   - ../corpus/place/perry-township.yml
   - ../corpus/place/richland-township.yml
   - ../corpus/place/shawnee-township.yml
   - ../corpus/place/spencer-township.yml
+  - ../corpus/place/spencerville.yml
   - ../corpus/place/sugar-creek-township.yml
+  - ../corpus/place/westminster.yml
+  - ../corpus/question/namesake-of-allen-county.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
@@ -84,6 +99,14 @@ take its characterizations. Where the two touch — the Hog Creek Reservation se
 in 1834 — the reader is owed the knowledge that the source celebrating the transfer is the same
 one recording it. See [the Ottawa removal](../corpus/event/ottawa-removal.yml).
 
-**What it does not carry.** Nothing after 1885, so no answer to when German Township became
-American, when Ottawa Township ceased to exist, or any twentieth-century municipal incorporation.
-Its population figures stop at the 1880 census.
+**What it does not carry — checked, not assumed.** Nothing after 1885: no answer to when German
+Township became American, when Ottawa Township ceased to exist, or any twentieth-century municipal
+incorporation, and its population figures stop at the 1880 census. It gives no namesake for Allen
+County, in a chapter that gives one for Adams. It gives no name origin for Jackson, Marion, Monroe,
+Perry, Bath or Auglaize townships, and none for Bluffton, Cairo, Elida or Gomer. It has no erection
+date for Bath Township, and no plat year for Lafayette.
+
+Every line above was searched for before it was written. The first version of this section was not,
+and it named the twentieth century while the nineteenth-century village foundings it was silent
+about were three pages from the township chapters — see
+[a-source-is-not-exhausted-by-one-question](../decisions/a-source-is-not-exhausted-by-one-question.yml).
