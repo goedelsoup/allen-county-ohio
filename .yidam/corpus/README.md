@@ -34,19 +34,37 @@ Sorted by: kind, then alphabetically.
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
+| [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 3v / 0i / 1o | 34 |
+| [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 3v / 0i / 1o | 32 |
+| [auglaize-township.yml](jurisdiction/auglaize-township.yml) | jurisdiction | Auglaize Township (government) | 2 | 3v / 0i / 1o | 34 |
 | [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 4v / 0i / 0o | 52 |
+| [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 4v / 0i / 1o | 33 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 3v / 0i / 0o | 45 |
+| [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 2v / 0i / 1o | 29 |
 | [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 23 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 2v / 0i / 0o | 30 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 3v / 0i / 0o | 41 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 2v / 0i / 0o | 53 |
+| [jackson-township.yml](jurisdiction/jackson-township.yml) | jurisdiction | Jackson Township (government) | 2 | 2v / 0i / 2o | 31 |
 | [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 2v / 1i / 0o | 42 |
+| [marion-township.yml](jurisdiction/marion-township.yml) | jurisdiction | Marion Township (government) | 2 | 3v / 0i / 1o | 33 |
+| [monroe-township.yml](jurisdiction/monroe-township.yml) | jurisdiction | Monroe Township (government) | 2 | 3v / 0i / 1o | 35 |
 | [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 2v / 0i / 0o | 30 |
 | [perry-local-school-district.yml](jurisdiction/perry-local-school-district.yml) | jurisdiction | Perry Local School District | 4 | 2v / 0i / 0o | 34 |
+| [perry-township.yml](jurisdiction/perry-township.yml) | jurisdiction | Perry Township (government) | 2 | 3v / 0i / 1o | 32 |
+| [richland-township.yml](jurisdiction/richland-township.yml) | jurisdiction | Richland Township (government) | 2 | 3v / 0i / 1o | 34 |
 | [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 7 | 3v / 0i / 0o | 52 |
-| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 0v / 1i / 0o | 20 |
+| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 3v / 1i / 1o | 38 |
+| [spencer-township.yml](jurisdiction/spencer-township.yml) | jurisdiction | Spencer Township (government) | 2 | 4v / 0i / 1o | 34 |
 | [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
+| [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 3v / 0i / 1o | 35 |
+| [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 2v / 0i / 1o | 30 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
+| [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 3v / 0i / 2o | 32 |
+| [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 2v / 0i / 2o | 29 |
+| [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 2v / 0i / 1o | 25 |
+| [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 3v / 0i / 1o | 30 |
+| [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 2v / 0i / 1o | 27 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
@@ -121,29 +139,29 @@ Sorted by: kind, then alphabetically.
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 3v / 1i / 0o | 37 |
-| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 2 | 4v / 0i / 1o | 38 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 2 | 5v / 0i / 0o | 38 |
-| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 2 | 5v / 0i / 1o | 38 |
-| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 2 | 3v / 0i / 1o | 29 |
-| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 3 | 5v / 0i / 1o | 41 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 2v / 1i / 0o | 35 |
-| [cairo.yml](place/cairo.yml) | place | Cairo | 3 | 5v / 0i / 1o | 41 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 3 | 2v / 1i / 0o | 35 |
-| [elida.yml](place/elida.yml) | place | Elida | 3 | 3v / 0i / 1o | 33 |
+| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 4v / 0i / 1o | 42 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 5v / 0i / 0o | 42 |
+| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 5v / 0i / 1o | 42 |
+| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 3v / 0i / 1o | 33 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 6v / 0i / 1o | 50 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 3v / 1i / 1o | 42 |
+| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 7v / 0i / 1o | 49 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 3v / 1i / 1o | 46 |
+| [elida.yml](place/elida.yml) | place | Elida | 4 | 4v / 0i / 1o | 41 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 6v / 1i / 0o | 44 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 2v / 0i / 1o | 39 |
-| [harrod.yml](place/harrod.yml) | place | Harrod | 3 | 5v / 0i / 1o | 41 |
-| [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 2 | 3v / 0i / 1o | 29 |
-| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 3 | 5v / 0i / 1o | 41 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 3v / 2i / 0o | 44 |
-| [marion-township.yml](place/marion-township.yml) | place | Marion Township | 2 | 3v / 0i / 1o | 29 |
-| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 2 | 4v / 0i / 1o | 36 |
-| [perry-township.yml](place/perry-township.yml) | place | Perry Township | 2 | 3v / 0i / 1o | 29 |
-| [richland-township.yml](place/richland-township.yml) | place | Richland Township | 2 | 3v / 0i / 1o | 29 |
-| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 3v / 2i / 0o | 42 |
-| [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 2 | 3v / 0i / 1o | 29 |
-| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 3 | 3v / 0i / 1o | 33 |
-| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 4v / 0i / 0o | 37 |
+| [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 6v / 0i / 1o | 49 |
+| [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 3v / 0i / 1o | 33 |
+| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 6v / 0i / 1o | 50 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 4v / 2i / 0o | 48 |
+| [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 3v / 0i / 1o | 33 |
+| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 4v / 0i / 1o | 40 |
+| [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 3v / 0i / 1o | 33 |
+| [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 3v / 0i / 1o | 33 |
+| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 3v / 2i / 0o | 43 |
+| [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 3v / 0i / 1o | 33 |
+| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 4v / 0i / 1o | 42 |
+| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 4v / 0i / 0o | 41 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 2v / 0i / 0o | 38 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
@@ -157,7 +175,7 @@ Sorted by: kind, then alphabetically.
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 52 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 2v / 1i / 1o | 39 |
-| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 2 | 1v / 5i / 1o | 38 |
+| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 2v / 5i / 1o | 46 |
 | [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1835-john-keller.yml](tenure/sheriff-1835-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1835–1839 | 3 | 1v / 0i / 0o | 23 |
 | [sheriff-1839-alexander-beatty.yml](tenure/sheriff-1839-alexander-beatty.yml) | tenure | Alexander Beatty, Sheriff of Allen County, 1839–1843 | 3 | 1v / 0i / 0o | 22 |
