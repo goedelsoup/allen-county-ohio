@@ -5,6 +5,14 @@
 **Feeds.** `natural-feature.huc_code`, and the `flows-into` topology among natural-feature
 nodes.
 
+**Half of this is done without the crate.** The
+[Watershed Boundary Dataset](../../.yidam/catalog/usgs-watershed-boundary.md) is a keyless ArcGIS
+REST service and was queried directly, the way TIGERweb is. It settled the basin question below —
+four blocks of Auglaize Township, 99 people, drain to the Ohio — and gave `huc_code` for five
+natural-feature nodes. What remains for this crate is the **flow network**: `comid`, downstream
+`comid`, and the confluences that would turn "this water reaches the Auglaize" into "it joins the
+Auglaize here". The WBD cannot say that and never claims to.
+
 **Why it matters more than it looks.** Every `flows-into` edge in the corpus is currently
 `[inference]` — asserted from general knowledge, not from a source. So is the corpus's claim
 that Allen County drains to Lake Erie via the Maumee rather than to the Ohio. Western Ohio
