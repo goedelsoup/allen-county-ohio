@@ -132,6 +132,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 |---|---|
 | [—](crates/) | — |
 | [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
+| [provenance](provenance/) | Whether every edge in the corpus says what kind of claim it is |
 | [proximity](proximity/) | Corpus nodes within a radius of a point, ordered by distance |
 | [succession](succession/) | Gaps and overlaps in an office's line of holders, from its tenure nodes |
 <!-- /REGEN -->
