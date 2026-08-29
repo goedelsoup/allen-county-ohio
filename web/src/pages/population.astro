@@ -9,6 +9,7 @@ const decline = assertion('county-population-decline')
 const concentration = assertion('decline-concentrated-in-lima')
 const breadth = assertion('decline-is-not-suburbanization')
 const mechanism = assertion('decline-is-migration-and-deaths')
+const century = assertion('lima-was-this-size-in-1920')
 
 // The county chart is the assertion's own figures: the five numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -68,6 +69,17 @@ const mechanismSpec: BarSpec = {
   categories: mechanism.figures.map((f) => f.label),
   values: mechanism.figures.map((f) => f.value),
   yTitle: 'People, four years to 2024',
+  labelValues: true,
+}
+
+// Three counts, forty years apart, from three different county histories. A bar chart rather
+// than a line: the gaps between them are twenty years wide and a line would draw a slope the
+// corpus has no observations for.
+const centurySpec: BarSpec = {
+  kind: 'bar',
+  categories: century.figures.map((f) => f.label),
+  values: century.figures.map((f) => f.value),
+  yTitle: 'Residents of Lima',
   labelValues: true,
 }
 
@@ -145,6 +157,28 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       height={280}
     />
     <script type="application/json" data-chart-spec="mechanism" set:html={JSON.stringify(mechanismSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>And the decline runs from a peak nobody here can locate</h2>
+    <p>
+      Everything above begins in 1970, because 1970 was the earliest figure this corpus held.
+      Three county histories — 1885, 1906 and 1921 — carry Lima's counts from before it, and they
+      do not extend the story so much as unsettle it. The city tripled in the twenty years after
+      the 1885 oil strike and doubled again by 1920, and then it was already about the size it
+      would be in 2000.
+    </p>
+    <AssertionCard assertion={century} />
+
+    <ChartFigure
+      id="century"
+      title="Lima before the series begins"
+      caption="Three counts from three county histories, not from the Census Bureau. The gaps are twenty years wide and the corpus has no observations inside them; the 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city."
+      columns={['Census', 'Residents']}
+      rows={century.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="century" set:html={JSON.stringify(centurySpec)} is:inline />
   </section>
 
   <script>

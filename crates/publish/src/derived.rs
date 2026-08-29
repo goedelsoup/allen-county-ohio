@@ -147,6 +147,31 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "lima-was-this-size-in-1920",
+        statement: "Lima was already about its present size a century ago: 41,306 people in \
+                    1920, against 40,307 in 2000.",
+        topic: "population",
+        // Cited to the measure rather than to the period node, because the point of this
+        // assertion is the figures and where they came from — three county histories, not the
+        // Census Bureau — and the measure is the node that says so.
+        supports: &[
+            support!(
+                "measure/lima-population-1880-1920.yml",
+                "the city held **7,567 people in 1880, 21,723 in 1900 and 41,306 in 1920**"
+            ),
+            support!(
+                "measure/lima-population-1880-1920.yml",
+                "the city was **already at about its 2000 size in 1920**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1880", value: 7_567.0, literal: "7,567" },
+            Figure { label: "1900", value: 21_723.0, literal: "21,723" },
+            Figure { label: "1920", value: 41_306.0, literal: "41,306" },
+        ],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",

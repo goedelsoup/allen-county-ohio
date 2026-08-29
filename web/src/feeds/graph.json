@@ -176,6 +176,10 @@
         {
           "text": "**The date within 1820 is April 1.** \"Allen County was formed from the Indian Territory April 1, 1820.\" [verified] — same source, its chapter on Ohio's counties, both scans identical. That chapter is compiled state-history filler rather than the commissioners' record the rest of this node rests on, so the day is carried at the standard of a gazetteer entry and not of a minute book.",
           "tier": "verified"
+        },
+        {
+          "text": "**The act passed on February 12, 1820, and April 1 is when it took effect.** \"Allen County was erected by act of February 12, 1820, and was organized by act of February 9, 1831.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), both scans identical. That answers the question this node asked in the sentence it replaces: the 1885 volume's \"formed... April 1, 1820\" is the effective date, the 1906 volume gives the passage date, and the two are consistent rather than in conflict.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -1436,6 +1440,35 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-population-1830-1900.yml",
+      "class": "measure",
+      "label": "Allen County population, 1830–1900",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1900",
+        "method": "Decennial census counts as compiled in 1906 from published returns, with the 1906 figure an estimate by the compilers. Not read from a Census Bureau publication. [verified]",
+        "parameter": "total resident population, decennial",
+        "unit": "persons",
+        "value": "47976"
+      },
+      "blocks": [
+        {
+          "text": "The county's decennial census counts for its first seventy years. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), both scans agreeing figure for figure.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The oil decade is visible in it.** The largest gain of the seven is 1880 to 1890, **9,330 people or 29.7 per cent**, and the 1906 compilers attribute it without hesitation: \"the marked increase in the decade preceding 1890 is accounted for by the discovery of oil in 1885. During this decade the city of Lima doubled her population.\" [verified] — same source. That is the demographic signature of [the strike](../event/lima-oil-strike.yml), from men who watched it happen.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The series is not continuous across 1848 and the corpus will not smooth it.** The first two figures describe a county that included eight townships now in Auglaize County and excluded four that are in Allen today, and the [reorganization of February 28, 1848](../event/reorganization-of-1848.yml) cost it a net 138 square miles. So 578 and 9,079 count different ground from everything after them. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-population-1970.yml",
       "class": "measure",
       "label": "Allen County population, 1970 census",
@@ -1733,6 +1766,39 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "measure/lima-population-1880-1920.yml",
+      "class": "measure",
+      "label": "Lima population, 1880–1920",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1920",
+        "method": "Three county histories' compilations of published census returns, one figure from each. The 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. [verified]",
+        "parameter": "total resident population, decennial",
+        "unit": "persons",
+        "value": "41306"
+      },
+      "blocks": [
+        {
+          "text": "The city's counts across the oil boom and the forty years after it. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) for 1880, [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) for 1900, and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md) for 1920.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out, because a table is not prose and this corpus publishes prose: the city held **7,567 people in 1880, 21,723 in 1900 and 41,306 in 1920**. [verified] — the three sources above, one figure each.",
+          "tier": "verified"
+        },
+        {
+          "text": "**These are the corpus's first Lima figures earlier than 2000, and they change the shape of the question.** Lima nearly tripled between 1880 and 1900 and nearly doubled again by 1920. Set beside what the corpus already holds — 40,307 in 2000 and [35,579 at the 2020 census](lima-population-2020-census.yml) — the city was **already at about its 2000 size in 1920**. [inference] Whatever happened to Lima after 1920, eighty years of it nets to roughly nothing, and the decline the corpus dates from 1970 runs from a peak it still cannot locate. See [the pre-1970 series](../question/pre-1970-population-series.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 1900 and 1920 figures are township figures and that is not an error here.** [Ottawa Township](../question/what-became-of-german-and-ottawa-townships.yml) was coextensive with the city — the 1906 table says so in the row label, twenty-one years before the 1921 volume says it in prose. [verified] — same sources. So the township count is the city count, and the corpus can now date that coextension to 1900 or earlier rather than to 1921.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/lima-population-2000.yml",
@@ -2332,6 +2398,10 @@
           "tier": "inference"
         },
         {
+          "text": "**The county's 1970 peak is no longer an artefact of where the data began.** The series now runs 578 in 1830 through 47,976 in 1900 and 68,203 in 1920 to 111,144 in 1970, and every decade of it rises. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). Four counts are still missing, 1930 to 1960, and nothing in ninety years of ascent suggests a reversal inside them. [inference] For the county, this node's start date is now argued rather than assumed.",
+          "tier": "inference"
+        },
+        {
           "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
           "tier": "verified"
         },
@@ -2341,11 +2411,11 @@
         }
       ],
       "refusals": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start.",
+        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start for Lima.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
-      "withheld": 4
+      "withheld": 5
     },
     {
       "id": "period/lima-oil-boom.yml",
@@ -2372,6 +2442,14 @@
         },
         {
           "text": "**The start bound is now a date: May 9, 1885.** [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). It is also, on the same source, a slightly later date in substance — the first *persistent* production came from the second well that autumn, the pioneer having broken. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The boom is now measurable and the measure is large.** Allen County gained 9,330 people between 1880 and 1890 — **29.7 per cent, the largest decennial gain in its history** — and Lima \"doubled her population\" in the same decade, going from 7,567 to 21,723 by 1900. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md); see [the county series](../measure/allen-county-population-1830-1900.yml) and [Lima's](../measure/lima-population-1880-1920.yml). The 1906 compilers attribute the increase to the discovery without qualification, and they were living in the town when it happened.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the end bound has a shape at last, though not a date.** By 1920 Lima had reached 41,306 and by 1921 the whole residue of the field was, in the later historian's words, \"the Solar refinery and the different companies dealing in oil commodities\", with \"little oil now being pumped in Allen County\". [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). So the *field* was substantially finished before 1921 while the *city* kept growing — which is why this period's legacy is a site rather than an industry, and why 1910 as a placeholder is defensible for production and wrong for consequence. [inference]",
           "tier": "inference"
         }
       ],
@@ -3940,6 +4018,10 @@
           "tier": "verified"
         },
         {
+          "text": "**It tripled in the twenty years after the oil, and it has never been much larger than it was in 1920.** 7,567 in 1880, 21,723 in 1900, 41,306 in 1920 — against 40,307 in 2000 and 35,579 in 2020. [verified] — [Lima 1880–1920](../measure/lima-population-1880-1920.yml). The city the corpus describes as declining since the 1970s was already at its 2000 size before the First World War ended. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "Lima is the county's industrial centre and the reason its history is not an agricultural one: the 1885 oil strike, the locomotive works, and the tank plant are all here or on its edge. [inference] Its population has been falling since the 1970s and continues to fall — see [Lima population, 2020](../measure/lima-population-2020.yml) and [Lima population, 2024](../measure/lima-population-2024.yml).",
           "tier": "inference"
         },
@@ -4348,7 +4430,7 @@
       "id": "question/pre-1970-population-series.yml",
       "class": "question",
       "label": "What was Allen County's population before 1970, and when did Lima peak?",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "claim_tag": "open",
         "opened": "2026-08-28",
@@ -4360,6 +4442,14 @@
           "tier": "verified"
         },
         {
+          "text": "For the county, the series now runs 578 (1830) through 47,976 (1900) and 68,203 (1920) to the 111,144 of 1970 the corpus already held. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). **Every decade rises.** So the county's 1970 peak is no longer an artefact of where the corpus's data began — it is a peak with ninety years of ascent behind it and no earlier candidate. What remains missing for the county is 1930 to 1960, four counts, and nothing in the shape so far suggests a reversal inside them. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "For Lima the answer runs the other way and is sharper than the question expected. [The city](../measure/lima-population-1880-1920.yml) was 7,567 in 1880, 21,723 in 1900 and **41,306 in 1920** — against 40,307 in 2000. **Lima was already at about its 2000 size in 1920.** [inference] The gap this node called \"the sharper gap\" is not a gap in a rising line; it is eighty years that net to roughly nothing, inside which the peak sits somewhere the corpus still cannot see. The city's decline is real and its starting point is now known to be earlier than 1970 or later than 1970 but certainly not derivable from 1970.",
+          "tier": "inference"
+        },
+        {
           "text": "**A nineteenth-century series has arrived, and it makes the problem worse before it makes it better.** The county totalled 578 in 1830 and 9,079, 12,116, 19,185, 23,623 and 31,314 at the five censuses from 1840 to 1880. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), statistics chapter, both scans agreeing. But the same table footnotes eight of its townships as having gone to Auglaize County, and the county gained Sugar Creek, Monroe, Richland and Spencer in the same act. [verified] — same source. **The 1830 and 1840 figures count a different county**, and no amount of later data repairs that — see [the reorganization of 1848](../event/reorganization-of-1848.yml). The 1900–1960 stretch this node actually asks about is still unretrieved, and now sits between two series that are not each other's continuation.",
           "tier": "verified"
         }
@@ -4367,7 +4457,7 @@
       "refusals": [
         "The corpus holds no Lima figure earlier than 2000 and therefore cannot say when the city was largest, though it names a period beginning in 1970 partly on that basis."
       ],
-      "withheld": 4
+      "withheld": 6
     },
     {
       "id": "question/two-irregular-sheriff-transitions.yml",
@@ -4473,6 +4563,10 @@
         },
         {
           "text": "**A second historian, working thirty-six years later, gives the same date.** \"This was effected in advance of the formal local organization of Allen County June 6, 1831, from which time official business was all transacted within the bounds of the county.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). It adds that Lima became the seat of government on **March 3, 1831** — three months before the board first sat, so the county had a county seat before it had a government — and that the first court proceedings on June 6 were held in James Daniels Sr.'s cabin on the bank of the Ottawa River, Daniels being one of the three commissioners who sat that day. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That residual is now closed too, and the answer is yes.** \"Allen County was erected by act of February 12, 1820, and was **organized by act of February 9, 1831**.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), both scans identical. So there are three dates and they are three different things: the county was created in 1820, organized by statute on February 9, 1831, and its commissioners first sat on June 6, 1831 — four months after the act and three months after Lima became the seat of government on March 3. The corpus asked whether an act named an earlier date in 1831. It did.",
           "tier": "verified"
         }
       ],
@@ -6124,6 +6218,13 @@
       "source": "catalog/census-popest-2024.md"
     },
     {
+      "from": "measure/allen-county-population-1830-1900.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
       "from": "measure/allen-county-population-1970.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -6206,6 +6307,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/lima-population-1880-1920.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "measure/lima-population-1880-1920.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
     },
     {
       "from": "measure/lima-population-2000.yml",
