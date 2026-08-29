@@ -1,0 +1,36 @@
+class: measure
+label: Allen County turnout, 2020 general election
+description: |
+  48,353 ballots cast against 67,374 registered voters at the general election of 3 November
+  2020 — **71.8 per cent**, summed over the county's 88 precincts. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md).
+
+  **The county figure hides a fifty-two point spread.** Turnout ran from 35.4 per cent in
+  `LIMA 3B` to 87.8 per cent in `DELPHOS 1B`. No other quantity this corpus holds varies that
+  far across the county: population per housing unit runs 2.19 to 2.57, and land area per
+  subdivision by a factor of four. [verified] — same source, precinct by precinct.
+
+  Registration itself varies as much and is the more interesting number. Across the 88 precincts
+  registered voters run from 0.28 to 0.84 per resident, and the low end of that range is where
+  the county's [group quarters](../question/who-lives-in-the-county-without-housing.yml) are.
+  [verified] — same source against [TIGERweb](../../catalog/tigerweb-census2020.md) block
+  population.
+
+  [open] Whether 71.8 per cent is high or low for this county is not answerable here. This is one
+  election, and the corpus holds no other.
+properties:
+  parameter: ballots cast, general election
+  value: "48353"
+  unit: ballots
+  as_of: 2020-11-03
+  method: |
+    Sum of the `ballots_cast` field over the 88 Allen County precincts, from a volunteer
+    transcription of the certified returns. Registered voters summed the same way: 67,374.
+    [verified]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

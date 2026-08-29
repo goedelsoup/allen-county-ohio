@@ -1,0 +1,41 @@
+class: division
+label: Lima 1A voting district (2020 geography)
+description: |
+  A precinct of 1.548 square miles in northern Lima holding 3,240 people and 756 housing units,
+  internal point 40.778293, -84.105936. [verified] —
+  [TIGERweb](../../catalog/tigerweb-census2020.md), layer 58.
+
+  **It is where three sources disagree with each other in a way that means something.** Its 908
+  registered voters are 0.28 per resident, the lowest of the county's 88 precincts against a
+  median of 0.68 and a next-lowest of 0.54. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md) against TIGERweb block population. One of
+  its 43 blocks holds 1,360 people in **zero** housing units, and set those aside and the ratio is
+  0.48 — low, and inside the range the rest of the county occupies.
+
+  So three independent products — a census count, a housing count and a board of elections'
+  registration roll — agree that about 1,400 of this precinct's residents are present without
+  households and without registering, and none of them says who they are. The county's three state
+  correctional institutions stand in this precinct. [verified] —
+  [Allen County GIS](../../catalog/allen-county-gis-downloads.md), address points projected and
+  tested against the precinct polygon. [open] Nothing retrieved names what occupies the block
+  itself; see
+  [the open question](../question/who-lives-in-the-county-without-housing.yml).
+
+  It voted 287 to 234 for Trump over Biden on a 58.4 per cent turnout — nearly the county's most
+  balanced precinct in a county that went 69 to 29. [verified] — OpenElections.
+properties:
+  division_type: voting precinct
+  identifier: "002AAH"
+  effective_from: "2020"
+  area_sq_mi: "1.548 land (2020 geography)"
+links:
+  - target: ../place/lima.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: nested-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../division.ont.yml
+    relationship: instance-of
