@@ -1,0 +1,35 @@
+class: measure
+label: Allen County net migration, 2021–2024
+description: |
+  Across the four full years 2021 to 2024 the county's net migration was **−793**: a domestic
+  net loss of **1,217** against an international net gain of **424**. [verified] —
+  [Census Population Estimates](../../catalog/census-popest-2024.md), county file, fields `DOMESTICMIG` and
+  `INTERNATIONALMIG`.
+
+  **The two components move in opposite directions and one of them is accelerating.**
+  International migration ran 26, 100, 133 and 165 — rising every year without exception.
+  Domestic migration ran −213, −530, −317 and −157, worst in 2022 and shrinking since.
+  [verified] — same source.
+
+  In 2024 they crossed: 165 arriving from abroad against 157 leaving for elsewhere in the United
+  States, for a net migration of **+8** — the first non-negative year in the series. [verified] —
+  same source.
+
+  Migration is the larger of the two forces making this county smaller. Over the four years it
+  accounts for 793 of the 1,271-person loss and
+  [natural change](allen-county-natural-change-2021-2024.yml) for 506, with a residual of 28.
+properties:
+  parameter: net migration, four years to 2024
+  value: "-793"
+  unit: persons
+  as_of: "2024"
+  method: |
+    Domestic plus international net migration, summed over the four full estimate years
+    2021–2024. The partial year 2020 is excluded as not comparable. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
