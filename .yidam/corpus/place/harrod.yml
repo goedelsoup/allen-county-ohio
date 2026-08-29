@@ -1,0 +1,33 @@
+class: place
+label: Harrod
+description: |
+  A village of 0.234 square miles in [Auglaize Township](auglaize-township.yml), about 11 miles south-east of the
+  county's centre, internal point 40.707214, -83.921405. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), Ohio places.
+
+  Its population was 427 at the 2020 estimates base and 427 in 2024. [verified] —
+  [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file. Its population was unchanged between the two figures.
+
+  **All of it is in Allen County.** The same file marks a place that crosses a county line with
+  `(pt.)` and marks this one plainly, which is what separates it from
+  [Bluffton](bluffton.yml) and [Delphos](delphos.yml). [verified] — same source.
+
+  [open] Nothing but geography and population is recorded. Its date of incorporation, what it
+  is named for, and its municipal government are unretrieved.
+properties:
+  place_type: village
+  gnis_id: "02398256"
+  geoid: "3934118"
+  centroid: "40.707214, -83.921405"
+  area_sq_mi: "0.234 land, 0.001 water (2020)"
+links:
+  - target: ../place/auglaize-township.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: ../place/allen-county.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-gazetteer-2020.md
+  - target: ../place.ont.yml
+    relationship: instance-of

@@ -20,9 +20,25 @@ used-by:
   - ../corpus/measure/allen-county-population-2024.yml
   - ../corpus/measure/lima-population-2020.yml
   - ../corpus/measure/lima-population-2024.yml
+  - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bath-township.yml
+  - ../corpus/place/beaverdam.yml
   - ../corpus/place/bluffton.yml
+  - ../corpus/place/cairo.yml
   - ../corpus/place/delphos.yml
+  - ../corpus/place/elida.yml
+  - ../corpus/place/harrod.yml
+  - ../corpus/place/jackson-township.yml
+  - ../corpus/place/lafayette.yml
+  - ../corpus/place/marion-township.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/perry-township.yml
+  - ../corpus/place/richland-township.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/spencer-township.yml
+  - ../corpus/place/spencerville.yml
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/question/pre-1970-population-series.yml
 ---
@@ -50,7 +66,13 @@ supersedes this one every year, and each vintage revises the whole series back t
 rather than only appending. A figure cited from Vintage 2024 will not necessarily appear in
 Vintage 2025.
 
+**The sub-county file is the county's civil geography in one place.** Its 40 Allen County rows
+carry four things at once, and it took nine phases to read them: every municipality (summary
+level 157), every township (061), **which township each municipality sits in** (071, a place
+within a county subdivision), and which municipalities cross a county line — the `(pt.)` mark
+on the name. All 21 of the county's civil divisions came from here.
+
 **What else it holds that nobody has looked at.** Births, deaths, net migration and the
-components of change are all in the county file and none were read. The sub-county file
-covers every place and township in the United States; only the 40 Allen County rows were
-examined.
+components of change are all in the county file and none were read. They are the mechanism
+behind the population decline this corpus describes, and the decline is all it can currently
+describe.

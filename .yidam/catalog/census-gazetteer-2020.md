@@ -43,12 +43,27 @@ used-by:
   - ../corpus/measure/ohio-house-district-4-land-area-2020.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/place/allen-county.yml
+  - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bath-township.yml
+  - ../corpus/place/beaverdam.yml
   - ../corpus/place/bluffton.yml
+  - ../corpus/place/cairo.yml
   - ../corpus/place/delphos.yml
+  - ../corpus/place/elida.yml
   - ../corpus/place/fort-shawnee.yml
+  - ../corpus/place/harrod.yml
+  - ../corpus/place/jackson-township.yml
+  - ../corpus/place/lafayette.yml
   - ../corpus/place/lima.yml
+  - ../corpus/place/marion-township.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/perry-township.yml
+  - ../corpus/place/richland-township.yml
   - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/spencer-township.yml
+  - ../corpus/place/spencerville.yml
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
 ---
@@ -67,10 +82,10 @@ downloads under `www2.census.gov` and require nothing. Anything this corpus need
 county, county-subdivision, place or tract grain should come from here rather than from the
 API, unless and until somebody registers a key.
 
-**What else this holds that nobody has looked at.** The files retrieved cover Ohio county
-subdivisions, Ohio places, all US counties and all US census tracts. Only Allen County rows
-were read. The tract file alone carries 35 rows for this county, of which one has been
-turned into a node. The water-area columns have not been examined at all, and they are the
+**What else this holds that nobody has looked at.** The county-subdivision and place files are
+now read out: all 13 subdivisions and all 9 municipalities in the county are corpus nodes. What
+remains is the tract file, which carries 35 rows for this county of which one has been turned
+into a node. The water-area columns have not been examined at all, and they are the
 natural anchor for any future claim about the county's surface water.
 
 **Districts were added to this entry after the electoral-grain phase.** The same gazetteer

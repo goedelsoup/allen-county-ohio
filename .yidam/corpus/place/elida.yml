@@ -1,0 +1,33 @@
+class: place
+label: Elida
+description: |
+  A village of 1.102 square miles in [American Township](american-township.yml), about 5 miles west of the
+  county's centre, internal point 40.78699, -84.199651. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), Ohio places.
+
+  Its population was 1,924 at the 2020 estimates base and 1,904 in 2024. [verified] —
+  [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file. It lost 20 people over those four years.
+
+  **All of it is in Allen County.** The same file marks a place that crosses a county line with
+  `(pt.)` and marks this one plainly, which is what separates it from
+  [Bluffton](bluffton.yml) and [Delphos](delphos.yml). [verified] — same source.
+
+  [open] Nothing but geography and population is recorded. Its date of incorporation, what it
+  is named for, and its municipal government are unretrieved.
+properties:
+  place_type: village
+  gnis_id: "02398799"
+  geoid: "3924808"
+  centroid: "40.78699, -84.199651"
+  area_sq_mi: "1.102 land, 0.001 water (2020)"
+links:
+  - target: ../place/american-township.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: ../place/allen-county.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-gazetteer-2020.md
+  - target: ../place.ont.yml
+    relationship: instance-of
