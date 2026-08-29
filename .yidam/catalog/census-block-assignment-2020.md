@@ -30,10 +30,15 @@ used-by:
   - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml
   - ../corpus/measure/lima-population-2020-census.yml
+  - ../corpus/organization/bluffton-university.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/beaverdam.yml
+  - ../corpus/place/cairo.yml
   - ../corpus/place/fort-shawnee.yml
   - ../corpus/place/gomer.yml
+  - ../corpus/place/harrod.yml
+  - ../corpus/place/lafayette.yml
   - ../corpus/place/lima.yml
   - ../corpus/place/monroe-township.yml
   - ../corpus/place/sugar-creek-township.yml
@@ -77,7 +82,14 @@ through the 2022 election and not the one in force now — see
 [which congressional district Allen County is in now](../corpus/question/allen-county-current-congressional-district.yml).
 There is no BAF for a later year; `baf2022`, `baf2024`, `baf2025` and `baf2026` all return 404.
 
-**What else it holds that nobody has looked at.** The SDUNI and INCPLACE_CDP files are now read
-out block by block, and every school district touching the county is a corpus node. What remains
-is the VTD file — all 88 voting districts, whose codes (`002AFJ` and the like) carry no names and
-so cannot be turned into nodes anyone could read without the Secretary of State's precinct list.
+**It is now read out.** SDUNI, INCPLACE_CDP and VTD have all been joined block by block. Every
+school district touching the county is a corpus node, all three of its census designated places
+are, and the 88 voting districts are described at
+[the measure](../corpus/measure/allen-county-voting-districts-2020.yml).
+
+**One correction belongs here rather than in a commit message.** This entry said the voting
+district codes "carry no names" and concluded that nothing readable could be made of them without
+the Ohio Secretary of State. The first half is true of this file and the second half does not
+follow: [TIGERweb](tigerweb-census2020.md) layer 58 returns all 88 with names, populations and
+housing units. What the Secretary of State uniquely holds is election **returns**, which is a
+different thing and still unretrieved.

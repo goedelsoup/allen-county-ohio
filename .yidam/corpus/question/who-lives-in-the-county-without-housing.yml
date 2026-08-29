@@ -1,0 +1,47 @@
+class: question
+label: Who are the 1,360 people in a Lima block with no housing units?
+description: |
+  Two census blocks in Allen County hold a substantial population and essentially no housing
+  units, which by the Census Bureau's own definitions means their residents are in **group
+  quarters** rather than households. Together they hold 1,758 people, 1.7 per cent of the county.
+  [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), block layer, `POP100` against
+  `HU100`.
+
+  **One is settled.** Block `390030101001002` holds 398 people in 2 housing units, and the
+  county's address file puts [Bluffton University](../organization/bluffton-university.yml)'s Ropp
+  Hall 0.02 miles from its internal point with five more university buildings inside 0.15.
+  [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md).
+
+  **The other is not.** Block `390030112001004` holds **1,360 people in zero housing units** over
+  0.141 square miles, inside [Lima](../place/lima.yml) and in precinct `LIMA 1A`. Exactly one
+  county address point falls within it and its landmark reads `BIBLE ROAD AUTO WRECKING AT 505
+  BIBLE RD`. [verified] — same two sources, the address points projected out of State Plane and
+  tested against the block polygon.
+
+  The county's three state correctional institutions — `ALLEN CORRECTIONAL INSTITUTE` and
+  `LIMA CORRECTIONAL INSTITUTE` at 2338 and 2350 N West St, `OAKWOOD CORRECTIONAL FACILITY` at
+  3200 N West St — are in the same precinct and in adjacent blocks, about half a mile west.
+  [verified] — same source. That an institution's single address point sits at its gate while its
+  residents are counted in the block holding the buildings would explain the whole discrepancy.
+  [inference] It is an inference and not a finding: nothing retrieved here names what stands on
+  those ninety acres.
+
+  [open] What holds 1,360 people in that block, and whether the three institutions are three or
+  one — Ohio has consolidated prisons under names the county's file may predate.
+properties:
+  claim_tag: open
+  opened: "2026-08-29"
+  would_close_this: |
+    The Ohio Department of Rehabilitation and Correction's facility list, which gives each
+    institution's current name, address and population; or the Census Bureau's group-quarters
+    tabulation from the 2020 redistricting file, which reports institutional population by type
+    and is not served by TIGERweb.
+links:
+  - target: ../place/lima.yml
+    relationship: concerns
+  - target: ../organization/bluffton-university.yml
+    relationship: concerns
+  - target: ../measure/allen-county-housing-units-2020.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

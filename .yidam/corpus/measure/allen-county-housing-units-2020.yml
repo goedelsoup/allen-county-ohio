@@ -1,0 +1,34 @@
+class: measure
+label: Allen County housing units, 2020 census
+description: |
+  The county's total housing units at the 2020 census, summed over all 3,552 blocks. [verified] —
+  [TIGERweb](../../catalog/tigerweb-census2020.md), 2020 vintage block layer, field `HU100`.
+
+  Against [the enumeration](allen-county-population-2020-census.yml) of 102,206 that is 2.29
+  people per housing unit. The figure varies across the county's thirteen civil subdivisions from
+  2.19 in [Lima](../place/lima.yml) and [American Township](../place/american-township.yml) to
+  2.57 in [Amanda](../place/amanda-township.yml) and
+  [Richland](../place/richland-township.yml). [verified] — same source, by block composition.
+
+  **It is not household size and must not be read as one.** Vacant units are in the denominator
+  and people living in group quarters are in the numerator, so a low ratio can mean small
+  households, empty houses, or neither. [open] Separating them needs the occupancy table from the
+  2020 redistricting file, which TIGERweb does not serve and the Census API will not release
+  without a key. Until then this corpus can say how many units there are and how many people, and
+  cannot say how many are lived in — which matters for a county whose
+  [population has been falling for fifty years](../period/deindustrialization.yml).
+properties:
+  parameter: total housing units
+  value: "44563"
+  unit: housing units
+  as_of: 2020-04-01
+  method: |
+    Sum of block-level `HU100` from the 2020 Census redistricting file, as served by TIGERweb.
+    Total units, occupied and vacant together. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

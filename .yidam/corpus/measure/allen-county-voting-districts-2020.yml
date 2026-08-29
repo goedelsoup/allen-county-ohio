@@ -1,27 +1,36 @@
 class: measure
 label: Allen County voting districts, 2020
 description: |
-  The number of distinct voting districts into which Allen County's 3,552 census blocks are
-  divided in the 2020 geography. [verified] —
-  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md), counted
-  over every block whose GEOID begins 39003.
+  The 88 voting districts into which Allen County's 3,552 census blocks are divided in the 2020
+  geography, named. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) for the
+  assignment and [TIGERweb](../../catalog/tigerweb-census2020.md), layer 58, for the names,
+  populations, housing units and areas.
 
-  This is the precinct grain the [division](../division/) class exists for, and the corpus
-  holds the count without holding the districts. The assignment files give codes and no names —
-  a voting district here is `002AFJ` — and 88 nodes labelled with unreadable codes would
-  satisfy a node count while telling nobody anything. The names and the returns are the Ohio
-  Secretary of State's, which blocks automated clients.
+  **This node previously said the names were the Secretary of State's and unreachable.** They are
+  in a layer of a service this corpus had been querying all along. The assignment files carry
+  codes — `002AFJ` — and nothing else, and that was generalised into a claim about what could be
+  got anywhere. What the Secretary of State does uniquely hold is **returns**: who voted and for
+  whom. No Census product carries any of that.
 
-  So the figure is recorded and the nodes are not, and the gap is a naming gap rather than a
-  boundary gap. [open]
+  **The precinct grid nests inside the civil geography exactly.** Not one of the 88 crosses a
+  county-subdivision line. [verified] — the assignment files crossed with TIGERweb block
+  geography, block by block. That is the sharp contrast with
+  [the school districts](../jurisdiction/), which cross both county and township lines freely:
+  precincts are built *from* the township and city grid, and school districts are laid over it.
+
+  [Lima](../place/lima.yml) holds 23 of them and
+  [Sugar Creek Township](../place/sugar-creek-township.yml) holds
+  [one](../division/voting-district-sugar-creek-2020.yml). Their populations sum to 102,206,
+  which is [the county's own enumeration](allen-county-population-2020-census.yml).
 properties:
   parameter: voting districts
   value: "88"
   unit: districts
   as_of: "2020"
   method: |
-    Counted by this corpus as the distinct values in the VTD assignment file over the 3,552
-    blocks whose GEOID begins 39003. The count is derived; the assignments are published.
+    Counted as the distinct values in the VTD assignment file over the 3,552 blocks whose GEOID
+    begins 39003, and cross-checked against the 88 features TIGERweb returns for the same county.
     [verified]
 links:
   - target: ../jurisdiction/allen-county-government.yml

@@ -13,8 +13,10 @@ location:
     value: https://gis.allencountyohio.com/GIS/downloads.html
     description: Index page — 15 downloads. Only Political_Subdivisions.zip and Addresses_ft.zip were retrieved; see the access-terms decision.
 used-by:
+  - ../corpus/organization/bluffton-university.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/shawnee-township.yml
+  - ../corpus/question/who-lives-in-the-county-without-housing.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/lima-army-tank-plant.yml
   - ../corpus/site/lima-refinery.yml

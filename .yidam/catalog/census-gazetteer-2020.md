@@ -35,6 +35,7 @@ used-by:
   - ../corpus/division/ohio-congressional-district-4-2020.yml
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-senate-district-12-2020.yml
+  - ../corpus/division/voting-district-sugar-creek-2020.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml

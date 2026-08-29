@@ -1,0 +1,40 @@
+class: division
+label: Sugar Creek voting district (2020 geography)
+description: |
+  The single precinct covering [Sugar Creek Township](../place/sugar-creek-township.yml), holding
+  1,231 people and 515 housing units over 24.094 square miles, internal point 40.824171,
+  -84.173844. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), layer 58.
+
+  **It is coterminous with the township.** The township's own gazetteer record gives 24.094 square
+  miles of land and an internal point of 40.824171, -84.173843 — the same figures, differing in
+  the last decimal place of the longitude by about four inches. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md). It is the only one of the
+  county's 88 precincts that is a whole civil subdivision; four others are whole villages, and the
+  remaining 83 are pieces.
+
+  This node exists for the same reason
+  [Ohio House District 4](ohio-house-district-4-2020.yml) does, one scale down. Two nodes describe
+  one polygon and are not interchangeable: the township is a standing unit of government, and this
+  is an election-administration unit that a board of elections may split the moment the population
+  justifies a second polling place. The corpus holds both, and holds
+  [the other 87 as a measure](../measure/allen-county-voting-districts-2020.yml) rather than as
+  nodes.
+
+  [open] Which body drew it and under what authority is unretrieved, and so is any date before
+  the 2020 tabulation.
+properties:
+  division_type: voting precinct
+  identifier: "002AGN"
+  effective_from: "2020"
+  area_sq_mi: "24.094 land (2020 geography)"
+links:
+  - target: ../place/sugar-creek-township.yml
+    relationship: covers
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: nested-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../division.ont.yml
+    relationship: instance-of

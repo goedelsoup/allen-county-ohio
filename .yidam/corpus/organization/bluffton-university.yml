@@ -9,13 +9,29 @@ description: |
   as an organization whose identity is tied to a place other than Lima — a useful corrective
   to a corpus that would otherwise centre entirely on the county seat and its industry.
 
-  [open] Its founding date and its earlier name are not verified here.
+  **Its residential population is now a measured number.** Census block `390030101001002` holds
+  398 people in 2 housing units — a population living almost entirely outside housing, which is
+  what a campus looks like in the block file. The county's address file puts Ropp Hall 0.02 miles
+  from that block's internal point, with Bren Dell Hall, College Hall and Musselman Library inside
+  0.15. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md) block layer and
+  [Allen County GIS](../../catalog/allen-county-gis-downloads.md). The 398 are students in
+  residence on census day; they are not the university's enrolment, and the campus is not
+  necessarily one block. [inference]
+
+  That block is in [Bluffton](../place/bluffton.yml) village, which settles by assignment rather
+  than by inference where the university sits. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+
+  [open] Its founding date and its earlier name are not verified here. So is
+  [what accounts for the county's other group-quarters block](../question/who-lives-in-the-county-without-housing.yml),
+  which this one is the solved half of.
 properties:
   org_type: college
   industry: higher education
 links:
   - target: ../place/bluffton.yml
     relationship: seated-in
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
   - target: ../organization.ont.yml
     relationship: instance-of

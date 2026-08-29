@@ -1,0 +1,73 @@
+id: eighty-eight-rows-are-not-eighty-eight-nodes
+summary: >-
+  The county's 88 voting precincts became one measure, one division node and six revisions rather
+  than 88 nodes. This records the test used — write nodes where members differ in kind, write a
+  measure where they differ only in value — and what would change the answer.
+context: |
+  [a-source-is-also-a-filter](a-source-is-also-a-filter.yml) closed the previous phase having
+  written nine school districts as nodes. The precinct data arrived in the same shape from the
+  same two sources, one grain finer: 88 rows, each with a name, a population, a housing count, an
+  area and an internal point.
+
+  The obvious move was 88 more nodes, and the elector's stated purpose — genuine comprehensiveness
+  for this county, coverage gaps as defects — reads as an argument for it.
+
+  Against that stands the corpus's own diagnosis in
+  [state-after-nine-phases](state-after-nine-phases.yml). Eighty of this corpus's 174 nodes, 46 per
+  cent, are the sheriff roster: 41 people and 39 tenures, each node one row of one table. That was
+  identified as the reason the base was thin — not because the roster is wrong, but because a
+  corpus can look large while saying little. Adding 88 precincts would make 262 nodes of which 168,
+  nearly two thirds, are rows.
+decision: |
+  **One division node, one measure, six revisions.**
+
+  [`voting-district-sugar-creek-2020`](../corpus/division/voting-district-sugar-creek-2020.yml) is
+  written because it is the only precinct in the county coterminous with a whole civil
+  subdivision. Its content is an identity claim between two nodes, which no row contains.
+
+  [`allen-county-voting-districts-2020`](../corpus/measure/allen-county-voting-districts-2020.yml)
+  carries the other 87: the count, the names, the nesting, the fact that not one crosses a
+  county-subdivision line, and the method by which all of that was derived.
+
+  Four village nodes and two others gained a sentence each, because the precinct fact about
+  Beaverdam is a fact about Beaverdam.
+
+  **The test.** Write a node where members differ in *kind*; write a measure where they differ only
+  in *value*.
+
+  The school districts passed that test and the precincts fail it, on the same evidence. Each
+  district differs in kind from the others: Delphos City follows a city across a county line,
+  Allen East is assembled from three townships and named for none of them, Waynesfield-Goshen
+  reaches 17 people over the county boundary. Those differences are relationships, they change what
+  [`jurisdiction-at`](../../crates/covering/) returns, and no two districts have the same set.
+
+  Every precinct has exactly the same relationship: it nests inside exactly one civil subdivision,
+  wholly, all 88 of them. That uniformity is the single most interesting thing about the precinct
+  system and it is a property of the **system**, not of any member. Eighty-eight nodes would state
+  it 88 times and add nothing else.
+rationale: |
+  **What a node is for, in a corpus whose history is the graph.** A node earns its file by having
+  more to say than its row — a relationship that changes an answer, a conflict with another
+  source, a claim someone could be wrong about. `LIMA 4B, 1,204 people, 512 housing units` is a
+  cell in a table this corpus can regenerate from a URL in the catalog at any time. Copying it into
+  a file does not make it more retrievable, more checkable or more true; it makes the corpus
+  larger, which was already diagnosed here as the wrong thing to optimise.
+
+  The distinction is not between important and unimportant data. The precinct grid is more
+  load-bearing for a civic reference than half of what this corpus holds — it is the grain
+  elections are actually run at. It is held, in full, with its provenance and its method. What is
+  refused is the transcription.
+
+  **What would change the answer.** Election returns. The Ohio Secretary of State publishes
+  turnout and results by precinct, and it is the one thing in this subject no Census product
+  carries — the retrieval that failed in the electoral-grain phase and is still outstanding. With
+  returns, precincts stop being interchangeable: one has a turnout history, a swing, a
+  consolidation in 2014. They differ in kind, and then they are nodes. Until then a node per
+  precinct would be a promise the corpus cannot keep.
+
+  **The recurring shape of this corpus's mistakes, for the record.** Three phases running, the
+  defect has been a rule about what could be seen rather than a fact about the county: a place
+  roster taken from a file that lists governments; a claim that precinct names were unreachable,
+  taken from one file's columns; a calculator rule that read silence as refutation because edges
+  once carried no tags. Each was a generalisation from one source's shape, and each survived a
+  gate that had nothing to check it against.
