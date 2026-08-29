@@ -1,0 +1,33 @@
+class: place
+label: Cairo
+description: |
+  A village of 0.277 square miles in [Monroe Township](monroe-township.yml), about 4 miles north of the
+  county's centre, internal point 40.830753, -84.084489. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), Ohio places.
+
+  Its population was 519 at the 2020 estimates base and 508 in 2024. [verified] —
+  [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file. It lost 11 people over those four years.
+
+  **All of it is in Allen County.** The same file marks a place that crosses a county line with
+  `(pt.)` and marks this one plainly, which is what separates it from
+  [Bluffton](bluffton.yml) and [Delphos](delphos.yml). [verified] — same source.
+
+  [open] Nothing but geography and population is recorded. Its date of incorporation, what it
+  is named for, and its municipal government are unretrieved.
+properties:
+  place_type: village
+  gnis_id: "02397522"
+  geoid: "3910884"
+  centroid: "40.830753, -84.084489"
+  area_sq_mi: "0.277 land (2020)"
+links:
+  - target: ../place/monroe-township.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: ../place/allen-county.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-gazetteer-2020.md
+  - target: ../place.ont.yml
+    relationship: instance-of

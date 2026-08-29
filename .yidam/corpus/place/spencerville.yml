@@ -1,0 +1,33 @@
+class: place
+label: Spencerville
+description: |
+  A village of 0.965 square miles in [Spencer Township](spencer-township.yml), about 14 miles west of the
+  county's centre, internal point 40.707965, -84.353159. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), Ohio places.
+
+  Its population was 2,205 at the 2020 estimates base and 2,164 in 2024. [verified] —
+  [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file. It lost 41 people over those four years.
+
+  **All of it is in Allen County.** The same file marks a place that crosses a county line with
+  `(pt.)` and marks this one plainly, which is what separates it from
+  [Bluffton](bluffton.yml) and [Delphos](delphos.yml). [verified] — same source.
+
+  [open] Nothing but geography and population is recorded. Its date of incorporation, what it
+  is named for, and its municipal government are unretrieved.
+properties:
+  place_type: village
+  gnis_id: "02399872"
+  geoid: "3974034"
+  centroid: "40.707965, -84.353159"
+  area_sq_mi: "0.965 land (2020)"
+links:
+  - target: ../place/spencer-township.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: ../place/allen-county.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-gazetteer-2020.md
+  - target: ../place.ont.yml
+    relationship: instance-of
