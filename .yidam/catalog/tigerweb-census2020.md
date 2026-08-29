@@ -13,6 +13,7 @@ location:
     description: 2020 vintage — layers 6 Census Tracts, 10 Census Blocks, 20 County Subdivisions, 26 Incorporated Places, 28 Census Designated Places, 82 Counties
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
+  - ../corpus/division/voting-district-sugar-creek-2020.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
@@ -25,22 +26,30 @@ used-by:
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
+  - ../corpus/measure/allen-county-housing-units-2020.yml
   - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-population-2020.yml
+  - ../corpus/measure/allen-county-voting-districts-2020.yml
   - ../corpus/measure/lima-population-2020-census.yml
   - ../corpus/measure/lima-population-2020.yml
   - ../corpus/natural-feature/auglaize-river.yml
+  - ../corpus/organization/bluffton-university.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/beaverdam.yml
+  - ../corpus/place/cairo.yml
   - ../corpus/place/fort-shawnee.yml
   - ../corpus/place/gomer.yml
+  - ../corpus/place/harrod.yml
+  - ../corpus/place/lafayette.yml
   - ../corpus/place/lima.yml
   - ../corpus/place/monroe-township.yml
   - ../corpus/place/shawnee-township.yml
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/place/westminster.yml
   - ../corpus/question/where-the-auglaize-rises.yml
+  - ../corpus/question/who-lives-in-the-county-without-housing.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/lima-army-tank-plant.yml
   - ../corpus/site/lima-refinery.yml
@@ -73,6 +82,13 @@ and `AREALAND`, classify each internal point into a subdivision polygon, and sum
 39003010300 that is 107 blocks, every one landing in exactly one subdivision, and their land
 areas summing to `74,841,137` — the tract's own `AREALAND`, exactly. That the parts sum to the
 whole is the check that the method worked.
+
+**Its layer list was read once and treated as complete, and it was not.** The service was
+introspected for the layers then needed — tracts, blocks, county subdivisions, places, counties —
+and the entry above recorded those five as though they were the service. Layer 58 is Voting
+Districts, and it carries `NAME`, `POP100`, `HU100` and `AREALAND` for all 88 of this county's
+precincts. Two phases were written around the belief that precinct names were unreachable. Read
+`MapServer?f=json` for the whole layer list, not for the layers the current question needs.
 
 **The block layer carries the enumeration itself.** Layer 10 returns `POP100` and `HU100` on
 every block — the 2020 census population and housing-unit counts as published for redistricting.
