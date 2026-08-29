@@ -18,14 +18,18 @@ location:
 used-by:
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
+  - ../corpus/period/deindustrialization.yml
+  - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/james-a-hover.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
   - ../corpus/place/cairo.yml
   - ../corpus/place/elida.yml
   - ../corpus/place/lima.yml
+  - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/lima-refinery.yml

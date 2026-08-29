@@ -20,11 +20,17 @@ location:
       Scan B — a second Internet Archive digitization, from a Greene County Library copy, 2024.
       Full text at historyofallenco0000char_djvu.txt (2.9 MB), and it carries pages scan A does not.
 used-by:
+  - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
+  - ../corpus/measure/allen-county-population-1830-1900.yml
+  - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
+  - ../corpus/period/deindustrialization.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
+  - ../corpus/question/pre-1970-population-series.yml
+  - ../corpus/question/when-allen-county-was-organized.yml
 ---
 
 **What it is.** The middle volume of the county's three histories, and the only one written by local

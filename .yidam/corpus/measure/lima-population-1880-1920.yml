@@ -1,0 +1,56 @@
+class: measure
+label: Lima population, 1880–1920
+description: |
+  The city's counts across the oil boom and the forty years after it. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) for 1880,
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) for 1900, and
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md) for 1920.
+
+      1880      7,567     Lima village, in Ottawa Township's 7,669
+      1900     21,723     "Ottawa (coextensive with city of Lima)"
+      1920     41,306     "the 1920 Ottawa Township census report including Lima"
+
+  Written out, because a table is not prose and this corpus publishes prose: the city held
+  **7,567 people in 1880, 21,723 in 1900 and 41,306 in 1920**. [verified] — the three sources above,
+  one figure each.
+
+  **These are the corpus's first Lima figures earlier than 2000, and they change the shape of the
+  question.** Lima nearly tripled between 1880 and 1900 and nearly doubled again by 1920. Set beside
+  what the corpus already holds — 40,307 in 2000 and
+  [35,579 at the 2020 census](lima-population-2020-census.yml) — the city was **already at about its
+  2000 size in 1920**. [inference] Whatever happened to Lima after 1920, eighty years of it nets to
+  roughly nothing, and the decline the corpus dates from 1970 runs from a peak it still cannot
+  locate. See [the pre-1970 series](../question/pre-1970-population-series.yml).
+
+  **The 1900 and 1920 figures are township figures and that is not an error here.**
+  [Ottawa Township](../question/what-became-of-german-and-ottawa-townships.yml) was coextensive with
+  the city — the 1906 table says so in the row label, twenty-one years before the 1921 volume says it
+  in prose. [verified] — same sources. So the township count is the city count, and the corpus can
+  now date that coextension to 1900 or earlier rather than to 1921.
+
+  **All three are compilations, not census publications**, and the 1920 figure is
+  [a single witness read once](../../decisions/a-single-witness-read-once.yml). The 1880 figure comes
+  from a table whose county total the corpus has already found to disagree with the 1906 volume by
+  sixteen people at 1850 — see
+  [the county series](allen-county-population-1830-1900.yml). [open] A place-level decennial series
+  from the Census Bureau would replace all three.
+properties:
+  parameter: total resident population, decennial
+  value: "41306"
+  unit: persons
+  as_of: "1920"
+  method: |
+    Three county histories' compilations of published census returns, one figure from each. The
+    1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with
+    the city. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

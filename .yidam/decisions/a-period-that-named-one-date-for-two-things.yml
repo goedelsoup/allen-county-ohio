@@ -1,0 +1,55 @@
+id: a-period-that-named-one-date-for-two-things
+summary: >-
+  `deindustrialization` has said since genesis that the county and its city began declining around
+  1970. The county's 1970 peak now has ninety years of rising data behind it and is safe. Lima's
+  does not: the city was 41,306 in 1920 and 40,307 in 2000. A period node that names one date for a
+  whole and its part assumed the two moved together, and one of them did not.
+context: |
+  [`pre-1970-population-series`](../corpus/question/pre-1970-population-series.yml) was opened at
+  genesis and was unusually explicit about its own risk:
+
+    This is the gap most likely to be filled by mistake rather than by research: a plausible peak
+    figure for Lima is easy to find in secondary sources and easy to write down, and it would be
+    the first unsourced number in a corpus whose population figures are otherwise all primary.
+
+  The retrieval did not produce a plausible peak. It produced three counts from three county
+  histories — 7,567 in 1880, 21,723 in 1900, 41,306 in 1920 — and the last of them is within a
+  thousand of the city's figure for 2000.
+
+  For the county the same retrieval did the opposite. 578, 9,079, 12,100, 19,185, 23,623, 31,314,
+  40,644, 47,976, 68,203, 111,144: every decade from 1830 to 1970 rises. The 1970 peak was an
+  assumption resting on where the data began; it is now a peak with a slope behind it.
+decision: |
+  **Keep 1970, and say in the node which half of the claim it is now supported for.**
+
+  `deindustrialization` names one start date and applies it to two subjects — a county and the city
+  inside it. The date is now argued for the county and unsupported for the city, and the node says
+  exactly that rather than splitting into two periods or moving a date the corpus cannot yet place.
+
+  Splitting was considered. It would require a start date for Lima's decline, and the corpus does
+  not have one: the peak is somewhere in 1930–1990 and nothing held here narrows it further. A
+  second period node with an unknown start would be an assertion dressed as a structure.
+
+  What the node gains instead is a floor and a ceiling on its own weakest claim. Lima was about
+  40,000 in 1920 and about 40,000 in 2000, so whatever the city's peak is, it is between those and
+  the eighty years net to nothing.
+rationale: |
+  **A period is a claim about a whole, and its bounds inherit whatever the corpus knows about the
+  loudest part.** Here the loud part is Lima — the industry, the refinery, the visible decline — and
+  its date was applied outward to the county. It happens that the county's date survives and the
+  city's does not, which is the reverse of what the framing assumed.
+
+  The generalisable form: when a period node names a subject and a `concentrated-in` edge to a
+  smaller one, its `began` is a claim about both, and the evidence for each should be checked
+  separately. This corpus has one other period with the same shape —
+  [the canal era](../corpus/period/canal-era.yml), whose asymmetry between the county's west and
+  Lima is the whole reason it exists — and it survives the test only because it never claimed
+  Lima was in it.
+
+  A note on how the retrieval went. The question warned that the gap was likely to be filled by a
+  plausible number rather than by research. It was filled by research and the numbers were not
+  plausible: a city that grew fivefold in forty years and then did not grow for eighty is not the
+  shape anyone would have written down. The warning was right about the risk and wrong about the
+  answer, which is the best outcome an `[open]` can have.
+status: accepted
+date: "2026-08-29"

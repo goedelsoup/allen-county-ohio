@@ -42,6 +42,8 @@ used-by:
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/measure/allen-county-population-1830-1900.yml
+  - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/period/canal-era.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml

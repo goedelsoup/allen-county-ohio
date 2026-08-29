@@ -1,0 +1,51 @@
+class: measure
+label: Allen County population, 1830–1900
+description: |
+  The county's decennial census counts for its first seventy years. [verified] —
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), both scans agreeing
+  figure for figure.
+
+      1830        578
+      1840      9,079
+      1850     12,100
+      1860     19,185
+      1870     23,623
+      1880     31,314
+      1890     40,644
+      1900     47,976
+      1906     50,000 (the compilers' own estimate, not a count)
+
+  **The oil decade is visible in it.** The largest gain of the seven is 1880 to 1890, **9,330 people
+  or 29.7 per cent**, and the 1906 compilers attribute it without hesitation: "the marked increase in
+  the decade preceding 1890 is accounted for by the discovery of oil in 1885. During this decade the
+  city of Lima doubled her population." [verified] — same source. That is the demographic signature
+  of [the strike](../event/lima-oil-strike.yml), from men who watched it happen.
+
+  **The series is not continuous across 1848 and the corpus will not smooth it.** The first two
+  figures describe a county that included eight townships now in Auglaize County and excluded four
+  that are in Allen today, and the
+  [reorganization of February 28, 1848](../event/reorganization-of-1848.yml) cost it a net 138
+  square miles. So 578 and 9,079 count different ground from everything after them. [inference]
+
+  **Two sources disagree about 1850 by sixteen people.** The 1885 history's statistics table totals
+  **12,116** where the 1906 history gives **12,100**. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) and the 1906 volume,
+  each read in two scans that agree with each other and not across editions. [open] Neither is a
+  census publication and the corpus cannot adjudicate; the 1906 figure is recorded above because it
+  is the later compilation, and the disagreement is recorded because it is the honest size of what a
+  county history can be trusted for.
+properties:
+  parameter: total resident population, decennial
+  value: "47976"
+  unit: persons
+  as_of: "1900"
+  method: |
+    Decennial census counts as compiled in 1906 from published returns, with the 1906 figure an
+    estimate by the compilers. Not read from a Census Bureau publication. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
