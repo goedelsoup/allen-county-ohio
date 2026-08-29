@@ -1,0 +1,71 @@
+id: a-postal-address-is-not-a-municipality
+summary: >-
+  The corpus put the refinery, the tank plant and by extension the county's whole industrial
+  base in the wrong municipality from genesis, and every signal available to it said Lima. The
+  county's own address file keeps `MUNI` and `USPS_CITY` in separate columns because they
+  differ. This names the error class rather than the three instances.
+supersedes: after-the-boundary
+context: |
+  Three sites, one mistake, made three times and corrected in three separate phases before the
+  shape of it was visible:
+
+    genesis      refinery `located-in` Lima; tank plant `located-in` Lima; American Township
+                 "the ground most of the county's heavy industry actually sits on"
+    named waters GNIS puts the plant 2.84 miles south of Lima's internal point — "not the
+                 northern edge", containment left open
+    point in     TIGERweb puts the plant in Shawnee Township and in no incorporated place;
+    polygon      American Township's claim corrected for the plant, left open for the refinery
+    ground truth the refinery is in Shawnee Township too, and both authorities agree
+
+  Everything the corpus could see said Lima. The plant is called the **Lima** Army Tank Plant.
+  The refinery is called the **Lima** Refinery. Both have Lima postal addresses; both are in
+  ZIP 45804, which is a Lima ZIP. Neither is in Lima.
+
+  The county's address file is built by people who deal with this daily, and it carries
+  `MUNI` and `USPS_CITY` as **two columns**. For the courthouse they read LIMA and LIMA. For the
+  refinery and the plant they read blank and LIMA. [verified] —
+  [Allen County GIS](../catalog/allen-county-gis-downloads.md).
+decision: |
+  **A postal address, a facility name and a ZIP code are not evidence of municipality, and this
+  corpus will stop treating them as such.** Municipality is a boundary question and is settled
+  by a boundary source. Everything else is a name that travels with the mail.
+
+  This is not the same rule as "check your claims". Every one of these claims *was* checked, at
+  three different levels of care, and each check confirmed the wrong thing more precisely than
+  the last, because each was a better measurement of the same wrong quantity — distance from
+  Lima's internal point, when the question was which polygon contains the point.
+
+  **What is now closed.** The last of the four point-in-polygon claims from
+  [the-boundary-gap](the-boundary-gap.yml). All four are done.
+
+  **What this opens.** The refinery and the tank plant — the two largest industrial
+  installations in the county — sit on unincorporated ground. That is a fact about tax base and
+  authority, not only about geography: no municipality can levy on either, and Shawnee Township
+  is the government whose ground they are on. [inference] The corpus has never asked a question
+  about municipal revenue and this is the first thing suggesting it should.
+
+  **`proximity` is unblocked and should be written.** Three sites carry coordinates now against
+  zero two phases ago, and eight places have carried centroids since genesis, so both
+  site-to-site and site-to-place distance are computable. It is the calculator that justified
+  vendoring `geodesics` and the only one of the five whose blocker was ever data rather than
+  design.
+rationale: |
+  Why this supersedes `after-the-boundary` rather than sitting beside it. That record said the
+  refinery could not be tested the way the tank plant was, because no coordinate for it existed
+  and the auditor's parcel data was the only route with its access terms unchecked. Both halves
+  were right and the conclusion was too pessimistic by one afternoon: the terms were checked,
+  the file was public, and the coordinate was in a column called `LANDMARK` that nothing in the
+  corpus had thought to look for.
+
+  The more useful lesson is about which authority to ask. This corpus had been asking federal
+  sources about a county's own ground for seven phases — gazetteer, block assignment files,
+  GNIS, TIGERweb — and every one of them was correct and none of them named a building. The
+  county names buildings, because the county is the government that has to find them. Asking
+  the smallest authority that would know is not a fallback after the national sources are
+  exhausted; here it would have been the shortest route from the start.
+
+  And the two authorities agreeing matters more than either would alone. A single source
+  reversing a claim the corpus had held since genesis is a claim against a claim. The county's
+  `MUNI` column and the Census Bureau's polygons are different agencies with different geometry
+  and different reasons to care, and they agree three times out of three, including on the one
+  site the corpus already had right.
