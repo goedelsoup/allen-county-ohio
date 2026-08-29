@@ -1,31 +1,52 @@
 class: jurisdiction
 label: Shawnee Local School District
 description: |
-  A unified school district serving the townships south of Lima, covering 40.932 square miles with an internal point
-  at 40.700628, -84.180974. [verified] —
-  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district
-  file. It serves grades PK–12. [verified] — same record.
+  The county's third largest district — 17,056 people over 40.932 square miles south and west of
+  Lima, internal point 40.700628, -84.180974, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
 
-  School districts are jurisdictions rather than divisions in this ontology because they hold
-  governmental authority: an Ohio school district has an elected board, levies taxes, and its
-  boundary is not drawn to report or elect anything but to govern. That is the whole test the
-  two classes are separated on.
+  It holds every one of [Shawnee Township](../place/shawnee-township.yml)'s 12,482 people, and
+  more than a quarter of its own population lives elsewhere: 2,847 in
+  [American Township](../place/american-township.yml), 1,033 inside [Lima](../place/lima.yml),
+  665 in [Amanda Township](../place/amanda-township.yml), and **29 across the line in Auglaize
+  County**. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block. Those 29 people on four blocks are why this node no
+  longer says its territory is within Allen County.
 
-  Its boundary does not follow the municipal or township lines around it. [inference] — from
-  the area and internal point alone; the boundary itself has not been compared against a
-  place. Twelve unified districts touch Allen County in total, three of them centred in
-  neighbouring counties and reaching in by a handful of blocks. [verified] —
-  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+  It contains [Fort Shawnee](../place/fort-shawnee.yml) and its 6,263 people — a third of the
+  district, in a place with no municipal government of its own. [verified] — same source. The
+  earlier form of this node called the boundary's disagreement with the township lines an
+  inference from area and internal point; the comparison has now been made against the places
+  themselves.
 properties:
   jurisdiction_type: school district
   fips_code: "3904579"
 links:
   - target: ../place/shawnee-township.yml
+    relationship: covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/american-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/lima.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/amanda-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/fort-shawnee.yml
     relationship: serves
     claim_tag: verified
     source: ../../catalog/census-block-assignment-2020.md
   - target: ../jurisdiction/allen-county-government.yml
-    relationship: territory-within
-    claim_tag: inference
+    relationship: partially-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
   - target: ../jurisdiction.ont.yml
     relationship: instance-of

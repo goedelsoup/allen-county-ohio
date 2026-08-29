@@ -20,6 +20,8 @@ used-by:
   - ../corpus/measure/allen-county-population-2024.yml
   - ../corpus/measure/lima-population-2020.yml
   - ../corpus/measure/lima-population-2024.yml
+  - ../corpus/period/deindustrialization.yml
+  - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml

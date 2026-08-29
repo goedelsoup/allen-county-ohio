@@ -1,0 +1,39 @@
+class: place
+label: Gomer
+description: |
+  An unincorporated community of 2.286 square miles in the north-west of the county, internal
+  point 40.845448, -84.182796, with 345 people at the 2020 census. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), where it is listed as
+  `Gomer CDP`, and [TIGERweb](../../catalog/tigerweb-census2020.md) for the count.
+
+  It lies wholly within [Sugar Creek Township](sugar-creek-township.yml) — all twelve of its
+  census blocks do, and it is the only settlement in the county's least populous township.
+  [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md)
+  crossed with TIGERweb block geography. Its 345 people are 28 per cent of that township's 1,231.
+
+  **This node exists because of how it was missed.** The corpus built its list of places from the
+  Census Bureau's sub-county population file, which tabulates governmental units — a village has
+  a corporation and appears; a census designated place has none and does not. Two places in Allen
+  County were therefore invisible to a method that had already been called complete: this one and
+  [Westminster](westminster.yml). The place/jurisdiction distinction this ontology insists on had
+  quietly become a filter on what the corpus could see.
+
+  [open] Nothing here records what Gomer is, only where. Its name, its founding, and the Welsh
+  settlement it is locally said to descend from are all unretrieved.
+properties:
+  place_type: unincorporated community
+  gnis_id: "02812805"
+  geoid: "3930814"
+  centroid: "40.845448, -84.182796"
+  area_sq_mi: "2.286 land, 0.008 water (2020)"
+links:
+  - target: ../place/sugar-creek-township.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/allen-county.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place.ont.yml
+    relationship: instance-of

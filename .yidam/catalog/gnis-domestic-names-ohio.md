@@ -18,9 +18,9 @@ used-by:
   - ../corpus/natural-feature/little-hog-creek.yml
   - ../corpus/natural-feature/maumee-river.yml
   - ../corpus/natural-feature/ottawa-river.yml
+  - ../corpus/question/where-the-auglaize-rises.yml
   - ../corpus/site/lima-army-tank-plant.yml
   - ../corpus/site/miami-and-erie-canal.yml
-  - ../corpus/question/where-the-auglaize-rises.yml
 ---
 
 Twenty-one pipe-delimited columns, one row per named feature: `feature_id`, `feature_name`,

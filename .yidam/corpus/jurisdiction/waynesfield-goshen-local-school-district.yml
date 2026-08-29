@@ -1,0 +1,32 @@
+class: jurisdiction
+label: Waynesfield-Goshen Local School District
+description: |
+  An Auglaize County district with the thinnest reach into Allen of any of the twelve — 2,698
+  people over 62.864 square miles, internal point 40.591434, -83.964064, serving PK–12.
+  [verified] — [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school
+  district file, and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
+
+  It is three counties wide and almost entirely in one: 2,629 people in Auglaize, 52 in Logan and
+  **17 in Allen**, on two blocks at the south-east corner of
+  [Auglaize Township](../place/auglaize-township.yml). [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block.
+
+  Seventeen people over two blocks is the floor of what this corpus can find and still call a
+  finding. It is recorded because the alternative is a corpus that says
+  [Auglaize Township](../place/auglaize-township.yml) is served by one district when it is served
+  by two, which is the kind of error that only ever hurts the people in the smaller share.
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904597"
+links:
+  - target: ../place/auglaize-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: partially-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

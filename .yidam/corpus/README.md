@@ -32,23 +32,34 @@ Sorted by: kind, then alphabetically.
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
-| [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 3 | 3v / 1i / 0o | 31 |
+| [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
+| [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 3v / 0i / 0o | 45 |
+| [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 3v / 0i / 0o | 45 |
 | [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 23 |
-| [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 3 | 3v / 1i / 0o | 31 |
-| [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 3 | 3v / 1i / 0o | 31 |
+| [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 2v / 0i / 0o | 30 |
+| [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 3v / 0i / 0o | 41 |
+| [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 2v / 0i / 0o | 53 |
+| [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 2v / 1i / 0o | 42 |
+| [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 2v / 0i / 0o | 30 |
+| [perry-local-school-district.yml](jurisdiction/perry-local-school-district.yml) | jurisdiction | Perry Local School District | 4 | 2v / 0i / 0o | 34 |
+| [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 7 | 3v / 0i / 0o | 52 |
 | [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 0v / 1i / 0o | 20 |
+| [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
+| [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
 | [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
 | [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
-| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 2v / 0i / 0o | 25 |
+| [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 3v / 0i / 0o | 32 |
+| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 2v / 0i / 1o | 32 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 2v / 1i / 0o | 33 |
 | [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
-| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 3v / 2i / 0o | 38 |
+| [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 3 | 2v / 1i / 0o | 34 |
+| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 4v / 2i / 0o | 41 |
 | [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 40 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 3v / 3i / 0o | 37 |
@@ -108,28 +119,30 @@ Sorted by: kind, then alphabetically.
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 3v / 1i / 0o | 37 |
-| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 2 | 3v / 0i / 1o | 29 |
+| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 2 | 4v / 0i / 1o | 38 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 2 | 5v / 0i / 0o | 38 |
-| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 2 | 3v / 0i / 1o | 29 |
+| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 2 | 5v / 0i / 1o | 38 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 2 | 3v / 0i / 1o | 29 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 3 | 3v / 0i / 1o | 33 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 2v / 1i / 0o | 35 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 3 | 3v / 0i / 1o | 33 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 3 | 2v / 1i / 0o | 35 |
 | [elida.yml](place/elida.yml) | place | Elida | 3 | 3v / 0i / 1o | 33 |
-| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 5v / 1i / 0o | 39 |
+| [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 6v / 1i / 0o | 44 |
+| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 2v / 0i / 1o | 39 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 3 | 3v / 0i / 1o | 33 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 2 | 3v / 0i / 1o | 29 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 3 | 3v / 0i / 1o | 33 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 2v / 2i / 0o | 33 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 3v / 2i / 0o | 44 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 2 | 3v / 0i / 1o | 29 |
-| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 2 | 3v / 0i / 1o | 29 |
+| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 2 | 4v / 0i / 1o | 36 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 2 | 3v / 0i / 1o | 29 |
 | [richland-township.yml](place/richland-township.yml) | place | Richland Township | 2 | 3v / 0i / 1o | 29 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 3v / 2i / 0o | 42 |
 | [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 2 | 3v / 0i / 1o | 29 |
 | [spencerville.yml](place/spencerville.yml) | place | Spencerville | 3 | 3v / 0i / 1o | 33 |
-| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 2v / 0i / 0o | 28 |
+| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 2 | 4v / 0i / 0o | 37 |
+| [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 2v / 0i / 0o | 38 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 4 | 1v / 0i / 2o | 48 |

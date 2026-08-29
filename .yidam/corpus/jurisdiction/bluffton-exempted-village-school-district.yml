@@ -1,31 +1,45 @@
 class: jurisdiction
 label: Bluffton Exempted Village School District
 description: |
-  A unified school district serving the county's north, covering 52.909 square miles with an internal point
-  at 40.865493, -83.95681. [verified] —
-  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district
-  file. It serves grades PK–12. [verified] — same record.
+  A district of 6,438 people over 52.909 square miles in the county's north, internal point
+  40.865493, -83.95681, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
 
-  School districts are jurisdictions rather than divisions in this ontology because they hold
-  governmental authority: an Ohio school district has an elected board, levies taxes, and its
-  boundary is not drawn to report or elect anything but to govern. That is the whole test the
-  two classes are separated on.
+  6,281 of its people are in Allen County and 157 in Hancock — it reaches **out** across the
+  county line, which the district-level tally this node was first written from could not see.
+  [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md)
+  crossed with TIGERweb block geography, block by block. Its Allen County ground is 5,832 people
+  of [Richland Township](../place/richland-township.yml) and 449 of
+  [Monroe Township](../place/monroe-township.yml).
 
-  Its boundary does not follow the municipal or township lines around it. [inference] — from
-  the area and internal point alone; the boundary itself has not been compared against a
-  place. Twelve unified districts touch Allen County in total, three of them centred in
-  neighbouring counties and reaching in by a handful of blocks. [verified] —
-  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+  **It does not hold all of Bluffton.** 3,875 of the village's 3,967 people are in it and 92 are
+  in the Cory-Rawson Local district, on the Hancock County side. [verified] — same source. It also
+  holds [Beaverdam](../place/beaverdam.yml) and its 319 people, six miles south-west, which is the
+  older fact this node was missing: the district is named for one village and serves two.
 properties:
   jurisdiction_type: school district
   fips_code: "3904521"
 links:
   - target: ../place/bluffton.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/beaverdam.yml
     relationship: serves
     claim_tag: verified
     source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/richland-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/monroe-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
   - target: ../jurisdiction/allen-county-government.yml
-    relationship: territory-within
-    claim_tag: open
+    relationship: partially-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
   - target: ../jurisdiction.ont.yml
     relationship: instance-of

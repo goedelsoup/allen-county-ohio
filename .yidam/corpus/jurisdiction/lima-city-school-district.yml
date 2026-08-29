@@ -1,31 +1,42 @@
 class: jurisdiction
 label: Lima City School District
 description: |
-  A unified school district serving the county seat, covering 8.745 square miles with an internal point
-  at 40.739641, -84.112076. [verified] —
-  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district
-  file. It serves grades PK–12. [verified] — same record.
+  The county's largest school district by population and its smallest by area — 28,122 people
+  over 8.745 square miles, internal point 40.739641, -84.112076, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population. At 3,200 people to the
+  square mile it is more than seven times as dense as any other district touching the county; the
+  next is Shawnee Local at 417.
 
   School districts are jurisdictions rather than divisions in this ontology because they hold
   governmental authority: an Ohio school district has an elected board, levies taxes, and its
   boundary is not drawn to report or elect anything but to govern. That is the whole test the
   two classes are separated on.
 
-  Its boundary does not follow the municipal or township lines around it. [inference] — from
-  the area and internal point alone; the boundary itself has not been compared against a
-  place. Twelve unified districts touch Allen County in total, three of them centred in
-  neighbouring counties and reaching in by a handful of blocks. [verified] —
-  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
+  **It is not the city, and the gap runs both ways.** It holds 27,821 of Lima's 35,579 people —
+  78 per cent — while the other 7,758 residents of the city are in four suburban districts. It
+  also reaches outside the corporate boundary: 301 people in
+  [American Township](../place/american-township.yml), and unpopulated blocks in Shawnee and Bath
+  townships that are the trace of annexed ground the school boundary followed. [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block. The earlier form of this node said the boundary "does
+  not follow the municipal or township lines around it. [inference] — from the area and internal
+  point alone". It has now been compared against the places, and the inference holds in detail.
 properties:
   jurisdiction_type: school district
   fips_code: "3904422"
 links:
   - target: ../place/lima.yml
-    relationship: serves
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/american-township.yml
+    relationship: partially-covers
     claim_tag: verified
     source: ../../catalog/census-block-assignment-2020.md
   - target: ../jurisdiction/allen-county-government.yml
     relationship: territory-within
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
   - target: ../jurisdiction.ont.yml
     relationship: instance-of

@@ -1,0 +1,34 @@
+class: jurisdiction
+label: Perry Local School District
+description: |
+  The smallest by population of the five districts lying wholly inside Allen County — 3,660
+  people over 33.598 square miles
+  south-east of Lima, internal point 40.675113, -84.041425, serving PK–12. [verified] —
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md), unified school district file,
+  and [TIGERweb](../../catalog/tigerweb-census2020.md) block population.
+
+  **It contains no incorporated place and it is not rural.** 3,357 of its people are the whole of
+  [Perry Township](../place/perry-township.yml) less 25, and the remaining 303 live inside the
+  city of [Lima](../place/lima.yml). [verified] —
+  [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with
+  TIGERweb block geography, block by block. Those 303 are the smallest of the five slices Lima is
+  cut into, and they are the reason this district is in the corpus as more than a name: a
+  district with no village of its own still reaches into the county seat.
+properties:
+  jurisdiction_type: school district
+  fips_code: "3904578"
+links:
+  - target: ../place/perry-township.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../place/lima.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: territory-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of
