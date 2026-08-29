@@ -1,0 +1,79 @@
+id: a-source-is-also-a-filter
+summary: >-
+  Twelve school districts are now `jurisdiction` nodes and two census designated places are now
+  `place` nodes, all from files already in the catalog. The places had been invisible because the
+  corpus built its list of places from a file that tabulates governments, so the ontology's own
+  place/jurisdiction distinction had become a filter on what could be seen. This records the rule
+  that follows, and why school districts could be written when township governments could not.
+context: |
+  [the-civil-geography](the-civil-geography.yml) closed the previous phase by saying the corpus
+  now held **all 21** of Allen County's civil divisions and its **one** CDP, and that the
+  jurisdiction side was deliberately unwritten.
+
+  The first of those was wrong and the second needed a sharper reason.
+
+  The place roster came from the Population Estimates sub-county file, which lists governmental
+  units: a village has a corporation and appears in it, a census designated place has none and
+  does not. Gomer and Westminster — 345 and 406 people — are in the Gazetteer's place file, in
+  the Block Assignment Files, and in the county. They were never in the corpus, and nothing in
+  the gate could report their absence, because a corpus cannot lint for a node nobody wrote.
+
+  What found them was not a review of the place class. It was reading the school-district
+  assignment file, which lists every place a district contains and does not care whether a place
+  has a government.
+decision: |
+  **Two `place` nodes: [Gomer](../corpus/place/gomer.yml) and
+  [Westminster](../corpus/place/westminster.yml).** With [Fort Shawnee](../corpus/place/fort-shawnee.yml)
+  that is all three of the county's census designated places. Both are located by block
+  composition rather than by internal point, because the generous test — which county subdivisions
+  *intersect* the CDP — returns two townships for Westminster and three for Fort Shawnee, and
+  those extra hits are shared boundary lines. Counting blocks returns one each.
+
+  **Nine `jurisdiction` nodes, and the class is open for school districts.** All twelve unified
+  districts touching the county are now nodes, with their territory expressed as `covers` and
+  `partially-covers` edges to the places they hold — which is what
+  [`jurisdiction-at`](../../crates/covering/) walks. Asking which jurisdictions cover Sugar Creek
+  Township now returns an answer that includes its school district.
+
+  **Why these and not the township governments.** The deferral in
+  [the-civil-geography](the-civil-geography.yml) was right and its reason was too broad. The test
+  is not whether a source names a unit of government — the county's political-subdivision layer
+  names all 21 townships and municipalities. The test is whether the sources give the unit
+  *territory, identity and extent*, which is what makes a jurisdiction node an object rather than
+  a label:
+
+    a school district    FIPS code, area, internal point, grade span, and — through the
+                         block assignment — every place it covers and every county it reaches
+    a township           a name on a list
+
+  Nothing held says when a township was erected, who sits on its board, or what its boundary is
+  independent of the census subdivision that shares its name. That is still the next retrieval.
+rationale: |
+  **The rule.** When a class's roster is drawn from one source, that source's inclusion rule
+  becomes the class's definition, silently and without a decision anywhere. This corpus separates
+  `place` from `jurisdiction` on the ground that a place need not have a government — and then
+  populated `place` from a file that only lists governments. The distinction the ontology exists
+  to draw was inverted by the retrieval that filled it, and the phase that did it declared the
+  class complete.
+
+  The cheap defence is not a better source. It is to notice when a roster came from a single file
+  and ask what that file is *for*: a population file is for governments, a gazetteer is for
+  geography, an assignment file is for coverage. Three files, three rosters, and only the
+  intersection is safe to call complete.
+
+  **What the block layer changed.** TIGERweb's block layer carries `POP100`, so any geography
+  expressible as a set of blocks can now be **counted rather than estimated** — including
+  geographies nobody publishes a population for. Every school-district figure in this phase is a
+  count. So is [the county's 2020 enumeration](../corpus/measure/allen-county-population-2020-census.yml),
+  102,206, which is eleven fewer than the estimates base the corpus had been anchoring on and
+  arrived at by a different route.
+
+  **What it showed about the county.** The school map ignores the county line in both directions:
+  seven of twelve districts cross it, and two of the crossings run outward, which the earlier
+  district-level tally structurally could not see because it counted only what reached in. Inside
+  the county the line that matters is not Lima's either — the city's 35,579 people are in five
+  school districts, and 7,758 of them are not in Lima City Schools. Only two of thirteen civil
+  subdivisions, Jackson and Sugar Creek, lie entirely inside a single district.
+
+  A resident's question — which school district am I in — is therefore not answerable from a
+  municipality, a township, or a county. That is the fact that justifies the nine nodes.
