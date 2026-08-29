@@ -18,6 +18,7 @@ used-by:
   - ../corpus/natural-feature/little-hog-creek.yml
   - ../corpus/natural-feature/maumee-river.yml
   - ../corpus/natural-feature/ottawa-river.yml
+  - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/where-the-auglaize-rises.yml
   - ../corpus/site/lima-army-tank-plant.yml
   - ../corpus/site/miami-and-erie-canal.yml

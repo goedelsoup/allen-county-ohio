@@ -1,0 +1,58 @@
+id: two-scans-of-one-book
+summary: >-
+  The corpus's first historical source is an 1885 county history read as OCR, and OCR of
+  nineteenth-century print gets digits wrong in exactly the places that matter. Two independent
+  digitizations of the same edition are held, and no date enters the corpus unless both carry it
+  or one is impossible on the book's own facts.
+context: |
+  Every date in this phase — twelve township erections, the county's organization, the
+  reorganization of 1848 — comes from machine-read text of a book printed in 1885. The failure
+  mode is not that OCR is noisy in general. It is that this typeface's **3 reads as 8**, and a
+  county history is full of years beginning 18.
+
+  Scan A, Google's digitization of an original copy, produced:
+
+      Monroe    "commissioners of Putnam County in 1885"
+      Richland  "was organized in 1885"
+      German    "Act of December 6, 1881"
+      Marion    "settlers in Township 8 south, Range 5 east"
+      entries   "section 84, 1885" for "section 34, 1835"
+
+  Every one of those is wrong by fifty years or by five sections, and every one of them would have
+  passed `graph-check` and `graph-lint` without complaint, because a date property holds a date and
+  1885 is one.
+decision: |
+  **Hold two independent scans and require agreement.**
+
+  Scan A is Google's of an original 1885 copy. Scan B is the Internet Archive's 2016 digitization
+  of the 1972 Unigraphic reproduction sponsored by the Allen County Historical Society — a
+  different physical volume through a different pipeline. Both are recorded in
+  [the catalog entry](../catalog/leeson-allen-county-1885.md) as locations of one source, not as
+  two sources: they are the same edition, and pretending otherwise would let a single book
+  corroborate itself.
+
+  A date is recorded when both scans carry it. Where they differ, scan B is preferred — it is the
+  cleaner read, with correct apostrophes and no `LjOOQIC` artifacts — but only after the reading is
+  checked against the book's own facts.
+
+  **The second check is the one that actually did the work.** Both of scan A's 1885s are impossible
+  on the surrounding sentences: a township organized "by the commissioners of Putnam County" cannot
+  have been organized in 1885, because the same paragraph says that territory left Putnam in 1848,
+  and because the book was published in 1885. A reading that contradicts its own paragraph is
+  wrong regardless of how many scans carry it.
+rationale: |
+  This is the same shape as the block-composition rule the corpus already uses for geography: do
+  not trust a single generous answer, get a second one by a different route, and make the two agree
+  on something checkable. There it was that the parts sum to 102,206. Here it is that a Putnam
+  County township predates 1848.
+
+  It is worth being clear about what this does *not* buy. Two scans agreeing means the print says
+  what the corpus recorded. It says nothing about whether the 1885 compiler read the commissioners'
+  book correctly, or whether the commissioners' book was right. Those are three separate questions
+  and only the first is settled by a second scan.
+
+  The rule has a cost the corpus should notice: it makes every retrieval from this source twice as
+  slow, and it will be tempting to skip when a date looks obvious. The dates that looked obvious
+  in this phase are exactly the two that were wrong.
+status: accepted
+date: "2026-08-29"

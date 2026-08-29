@@ -48,6 +48,7 @@ used-by:
   - ../corpus/place/lafayette.yml
   - ../corpus/place/lima.yml
   - ../corpus/place/spencerville.yml
+  - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/site/miami-and-erie-canal.yml
 ---
 
