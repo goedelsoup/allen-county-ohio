@@ -13,7 +13,13 @@ edge_policy: characteristic
 # Raised from 30 after the first gate run. A division node that states which ground it
 # does and does not coincide with is doing the job the class exists for, and 30 lines
 # would not hold that argument.
-max_lines: 38
+# Raised again, from 38, when every edge in the corpus gained a `claim_tag` and — where
+# verified — a `source`. That is roughly a line and a half per link, and it is structured
+# metadata rather than prose. `node-too-long` counts whole files, so a corpus that makes its
+# edges auditable is charged for it against a budget written to stop descriptions sprawling.
+# The budget is doing the wrong job here; raising it is the local fix and the finding is
+# recorded in `.yidam/decisions/upstream-findings.yml`.
+max_lines: 45
 properties:
   - name: division_type
     type: string

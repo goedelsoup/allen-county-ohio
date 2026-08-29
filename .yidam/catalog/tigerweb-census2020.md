@@ -13,6 +13,9 @@ location:
     description: 2020 vintage — layers 6 Census Tracts, 10 Census Blocks, 20 County Subdivisions, 26 Incorporated Places, 28 Census Designated Places, 82 Counties
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/lima-refinery.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/fort-shawnee.yml
