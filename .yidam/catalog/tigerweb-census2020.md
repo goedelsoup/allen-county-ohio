@@ -15,16 +15,34 @@ used-by:
   - ../corpus/division/census-tract-39003010300.yml
   - ../corpus/division/voting-district-sugar-creek-2020.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
+  - ../corpus/jurisdiction/amanda-township.yml
+  - ../corpus/jurisdiction/american-township.yml
+  - ../corpus/jurisdiction/auglaize-township.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
+  - ../corpus/jurisdiction/bath-township.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/city-of-delphos.yml
   - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
   - ../corpus/jurisdiction/delphos-city-school-district.yml
   - ../corpus/jurisdiction/elida-local-school-district.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
+  - ../corpus/jurisdiction/marion-township.yml
+  - ../corpus/jurisdiction/monroe-township.yml
   - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
   - ../corpus/jurisdiction/perry-local-school-district.yml
+  - ../corpus/jurisdiction/perry-township.yml
+  - ../corpus/jurisdiction/richland-township.yml
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
+  - ../corpus/jurisdiction/shawnee-township.yml
+  - ../corpus/jurisdiction/spencer-township.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/sugar-creek-township.yml
+  - ../corpus/jurisdiction/village-of-beaverdam.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
+  - ../corpus/jurisdiction/village-of-elida.yml
+  - ../corpus/jurisdiction/village-of-harrod.yml
+  - ../corpus/jurisdiction/village-of-lafayette.yml
+  - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-housing-units-2020.yml
   - ../corpus/measure/allen-county-population-2020-census.yml

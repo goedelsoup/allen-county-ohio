@@ -13,6 +13,20 @@ location:
     value: https://gis.allencountyohio.com/GIS/downloads.html
     description: Index page — 15 downloads. Only Political_Subdivisions.zip and Addresses_ft.zip were retrieved; see the access-terms decision.
 used-by:
+  - ../corpus/jurisdiction/amanda-township.yml
+  - ../corpus/jurisdiction/american-township.yml
+  - ../corpus/jurisdiction/auglaize-township.yml
+  - ../corpus/jurisdiction/bath-township.yml
+  - ../corpus/jurisdiction/jackson-township.yml
+  - ../corpus/jurisdiction/marion-township.yml
+  - ../corpus/jurisdiction/monroe-township.yml
+  - ../corpus/jurisdiction/perry-township.yml
+  - ../corpus/jurisdiction/richland-township.yml
+  - ../corpus/jurisdiction/shawnee-township.yml
+  - ../corpus/jurisdiction/spencer-township.yml
+  - ../corpus/jurisdiction/sugar-creek-township.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
+  - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/organization/bluffton-university.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/shawnee-township.yml

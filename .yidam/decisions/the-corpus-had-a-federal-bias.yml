@@ -1,0 +1,76 @@
+id: the-corpus-had-a-federal-bias
+summary: >-
+  The `jurisdiction` class was empty for every civil division in the county across three phases,
+  recorded each time as a source gap. It was a retrieval habit: seven of the nine sources were
+  federal statistical products, which describe ground exhaustively and government not at all. The
+  county's own website carries township houses, trustee meeting schedules and incorporation years,
+  and had never been opened.
+context: |
+  [the-civil-geography](the-civil-geography.yml) wrote all 21 of the county's civil divisions as
+  `place` nodes and deliberately wrote no governments, on this reasoning:
+
+    Twenty-one nodes whose only content is "this presumably has a government" would be inventing
+    the class, and `jurisdiction` is the class this corpus separated from `place` precisely
+    because a government has a creation instrument, officers and a budget that the ground does
+    not.
+
+  That reasoning was right and is not withdrawn. What was wrong sat in the next sentence: "The
+  retrieval that would support them is incorporation dates and governing bodies, which is already
+  the next gap named in `state-after-nine-phases`." A gap *named* twice and *attempted* never.
+
+  At that point the corpus held nine sources. Seven were federal statistical products — six from
+  the Census Bureau and one from the USGS. The other two were a sheriff's roster and the county
+  auditor's parcel and address files. Not one was a government describing its own arrangements.
+decision: |
+  **Eighteen new `jurisdiction` nodes and 21 `governed-by` edges**, from
+  [the county's own website](../catalog/allen-county-official-site.md), retrieved 2026-08-29 as the
+  tenth source. Every civil division in Allen County now has a government node, and every `place`
+  that has a government points at it with a verified edge.
+
+  What the source supports, and what each node therefore claims:
+
+    township house address, telephone   all 12 townships
+    trustee meeting day and hour        all 12 townships
+    founding or establishment year      both cities, 6 of 7 villages
+    incorporation year                  3 villages — Beaverdam 1878, Elida 1878, Lafayette 1868
+    name origin                         2 villages — Beaverdam, Harrod
+
+  What it does not: trustee names, township erection dates, municipal charters, forms of
+  government, budgets, election returns. Every node carries those as `[open]` rather than
+  implying the class is now complete.
+
+  **Where the year goes is decided by the wording, not by convenience.** The source uses
+  "established", "founded" and "incorporated" interchangeably. This corpus does not: a settlement
+  is a `place` and a corporation is a `jurisdiction`. So Beaverdam's 1853 is on the place and its
+  1878 on the corporation, and where the page says only "established in 1884" — Harrod — the
+  corporation gets no date at all and says why.
+rationale: |
+  **The bias, stated plainly.** Federal statistical products are built to describe ground:
+  boundaries, areas, coordinates, counts. They are superb at it and this corpus is rich in it. They
+  are not built to describe government, and they mention it only where it happens to be a
+  tabulation unit. A corpus assembled from them will have a full `place` class and an empty
+  `jurisdiction` class — and will experience that as *the sources do not cover it*, which is a
+  statement about the shelf and not about the world.
+
+  Local authorities publish their own arrangements as a matter of course, because residents need
+  to know when the trustees meet. Nothing about that is hard to retrieve. It simply was not on the
+  shelf the corpus had been reaching to.
+
+  **The test that should have been applied.** When a class is empty, ask which authority would
+  *hold* that information in the world — not which of the held sources might happen to mention it.
+  A township's meeting schedule is held by the township. A village's incorporation year is held by
+  the county and the state. Neither is held by the Census Bureau, and no amount of re-reading
+  Census files was ever going to produce one.
+
+  **What `[verified]` is worth here.** This corpus's `[verified]` is about provenance and not
+  confidence, and that gap is unusually wide for this source. For administrative facts — which
+  townships exist, where their houses are, when their boards meet — the county is the best
+  authority there is. For 1848 and 1853 and a beaver-dam etymology it is a page with no citations,
+  and the catalog entry says so. The years are recorded as what the county says, which is what
+  `[verified]` means, and the `[open]` lines name what would confirm them.
+
+  **Fourth phase in a row, same shape.** A place roster taken from a file that lists only
+  governments; precinct names declared unreachable from one file's columns; a calculator reading
+  silence as refutation; and now a class declared unsupported by sources nobody had gone looking
+  for. Each was a rule about what could be seen, generalised from the shape of what was already in
+  hand. The gate cannot catch any of them, because a gate checks what is written against itself.

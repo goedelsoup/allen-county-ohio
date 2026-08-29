@@ -1,0 +1,30 @@
+class: jurisdiction
+label: Village of Beaverdam
+description: |
+  The municipal corporation governing [Beaverdam](../place/beaverdam.yml), **incorporated in
+  1878**, twenty-five years after the settlement it governs was established in 1853. [verified] —
+  [Allen County](../../catalog/allen-county-official-site.md), cities and villages page.
+
+  That twenty-five-year gap is why this corpus separates `place` from `jurisdiction`, stated as a
+  measured interval rather than an argument. For a quarter of a century there was a Beaverdam and
+  no Village of Beaverdam: a name, a settlement and ground, with no corporation, no council and no
+  boundary that annexation could move. The place node carries 1853 and this one carries 1878, and
+  neither year belongs to the other.
+
+  It governs 319 people over 0.63 square miles, wholly inside Allen County and inside
+  [Richland Township](../place/richland-township.yml). [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md) and
+  [Census Population Estimates](../../catalog/census-popest-2024.md).
+
+  [open] Its officers, its form of government, and whether it operates under a charter.
+properties:
+  jurisdiction_type: municipal corporation
+  erected: "1878"
+  seat: Beaverdam
+  fips_code: "3904752"
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: territory-within
+    claim_tag: verified
+    source: ../../catalog/census-block-assignment-2020.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of
