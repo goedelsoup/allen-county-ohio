@@ -1,0 +1,68 @@
+id: state-after-nine-phases
+summary: >-
+  Three of five calculators are written, nine sources are cataloged, and the corpus has been
+  wrong about something in six of the last six phases. What remains, and what the pattern in
+  those errors says about where to look next.
+supersedes: state-after-three-phases
+context: |
+  [state-after-three-phases](state-after-three-phases.yml) declared a stable initial state and
+  said, correctly, that "not one of the five calculators has been implemented, so every claim
+  about what the corpus can compute is still a claim about what it *could* compute". Six phases
+  have settled since.
+
+    phase/the-first-crate         succession    39 tenures audited, two CLI defects found
+    phase/the-covering-set        covering      dated and undated coverage kept apart
+    phase/the-named-waters        GNIS          first sourced flows-into edges
+    phase/point-in-polygon        TIGERweb      four claims closed, three of them wrong
+    phase/ground-truth            county GIS    the refinery was never in Lima
+    phase/what-is-near-what       proximity     ranking, and the refusal to call it containment
+
+  `yidam status`: **143 nodes** · 36 open · 9 sources · claims 189v / 132i / 49o · genesis 2026-08-28
+  Workspace: 3 crates, 60 tests, clippy clean, lint baseline empty since genesis.
+decision: |
+  **Two calculators remain and their blockers are not alike.**
+
+  - `watershed-trace` needs the NHD connector. Two of the corpus's four `flows-into` edges are
+    sourced now and two are still `[inference]`, and the trace terminates in a basin node whose
+    HUC has never been recorded. This is a retrieval, and the source is known reachable in kind.
+  - `boundary-comparability` needs annexation events, which no source in this catalog carries.
+    It has been the worst gap since three phases in and it is untouched. A 2020 boundary answers
+    2020 questions; where the Lima city line ran in 1900 is a different archive.
+
+  **The corpus's own remaining gaps, worst first.**
+
+  1. **No annexation `event` exists**, so every population and area comparison across time here
+     rests on a difference the corpus cannot see.
+  2. **Six of seven jurisdictions carry no `erected` date.** Municipal incorporation is a matter
+     of record and the temporal half of `jurisdiction-at` resolves against one member without it.
+  3. **The county names nine municipalities and this corpus holds two.** Beaverdam, Cairo,
+     Elida, Harrod, Lafayette and Spencerville have no nodes, and the 2020 Gazetteer already in
+     this catalog carries their areas and internal points.
+  4. Pre-1970 county population and Lima's peak.
+  5. `office/mayor-of-lima` still has no tenures.
+rationale: |
+  What the last six phases actually taught, which is not in the node count.
+
+  **The corpus was wrong about something in every one of them, and never about a fact it had
+  guessed at.** It was wrong about things it had verified and cited: the Ottawa River's source,
+  the Auglaize's outlet, the tract's composition, the tank plant's municipality, the refinery's,
+  the extent of American Township's industry. Each was tagged, sourced where a source existed,
+  and hedged where one did not. The hedging was honest and did not help, because in every case
+  the model was wrong rather than the confidence.
+
+  **The errors cluster in one place: containment.** Which township, which municipality, which
+  polygon. That is not a coincidence about this county; it is what happens when a corpus has
+  points for everything and boundaries for nothing, and every source it can reach is a gazetteer.
+  Four phases went by with the substitution declared in each node — "this bounds the answer
+  loosely" — before it was recorded as one gap and closed in an afternoon.
+
+  **The three crates each found a defect no amount of reading would have.** `succession` found
+  that `Option` ordering put the wrong sheriff last. `covering` found two place edges
+  contradicting the prose in their own files, and then found its own partiality rule propagating
+  where it should not. `proximity` corrected its own story twice while its tests were being
+  written. A calculator is a claim about the corpus that the corpus can refuse, which is a
+  different instrument from a document.
+
+  So the next retrieval worth making is the one that answers a question the corpus asks
+  repeatedly and cannot: after boundaries, that is dates. Six jurisdictions with no beginning is
+  the same shape of gap that four open containment claims were.
