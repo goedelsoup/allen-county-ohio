@@ -1686,6 +1686,7 @@
       "properties": {
         "feature_type": "river",
         "gnis_id": "1065901",
+        "huc_code": "04100007 Auglaize (subbasin)",
         "mouth": "41.2875489, -84.3557802, in Defiance County. Joins the Maumee River. [inference]",
         "source": "40.6669957, -83.8938286"
       },
@@ -1699,7 +1700,7 @@
           "tier": "inference"
         },
         {
-          "text": "**It rises in this county**, at 40.6669957, -83.8938286 in Auglaize township — the township named after it. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon. So Allen County is not merely drained by the Auglaize; it is the ground the river starts on. See [where the Auglaize rises](../question/where-the-auglaize-rises.yml).",
+          "text": "**It rises in this county**, at 40.6669957, -83.8938286 in Auglaize township — the township named after it. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon. So Allen County is not merely drained by the Auglaize; it is the ground the river starts on. See [where the Auglaize rises](../question/where-the-auglaize-rises.yml). Its whole subbasin, `04100007`, is one of the seven that make up the Maumee's drainage; the four blocks of that township on [the Scioto side](scioto-river-basin.yml) drain the opposite way, so the divide and this river's source are in the same township. [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md).",
           "tier": "verified"
         }
       ],
@@ -1739,6 +1740,7 @@
       "properties": {
         "feature_type": "creek",
         "gnis_id": "1066038",
+        "huc_code": "041000070301 Upper Hog Creek",
         "mouth": "40.7708852, -83.9557761 — the head of the Ottawa River.",
         "source": "40.7139417, -83.7221552"
       },
@@ -1773,6 +1775,7 @@
       "properties": {
         "feature_type": "creek",
         "gnis_id": "1042627",
+        "huc_code": "041000070303 Little Hog Creek",
         "mouth": "40.7708852, -83.9557761 — the head of the Ottawa River, shared with Hog Creek.",
         "source": "40.722274, -83.8979957"
       },
@@ -1793,14 +1796,22 @@
       "id": "natural-feature/maumee-river-basin.yml",
       "class": "natural-feature",
       "label": "Maumee River Basin",
-      "tier": "inference",
+      "tier": "verified",
       "properties": {
         "feature_type": "watershed"
       },
       "blocks": [
         {
-          "text": "The drainage basin that Allen County lies within — the largest watershed draining to the Great Lakes, discharging to Lake Erie at Toledo. [inference]",
-          "tier": "inference"
+          "text": "The drainage basin that **almost all** of Allen County lies within — the largest watershed draining to the Great Lakes, discharging to Lake Erie at Toledo. 3,548 of the county's 3,552 census blocks and 102,107 of its 102,206 people are in the Great Lakes Region, across three subbasins: Auglaize `04100007` holds 3,200 blocks and Blanchard `04100008` holds 348. [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md), by block composition.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This basin is not a hydrologic unit, which is why no code is recorded here.** The Maumee's drainage is seven subbasins — `04100003` St. Joseph through `04100009` Lower Maumee — and the next unit up that contains them, `041000` Western Lake Erie, also contains six that are nothing to do with the Maumee: Raisin, Sandusky, Huron and three more. [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md). So the honest answer to this node's genesis question about its own HUC is that it does not have one, and writing `0410` here would have named a basin four times too large.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its other genesis question is answered against it.** Part of Allen County does drain to the Ohio River: four blocks in [Auglaize Township](../place/auglaize-township.yml), 99 people, sit in [the Scioto basin](scioto-river-basin.yml). [verified] — same source. The corpus asserted the Lake Erie side for the whole county from genesis and flagged the southern townships as unchecked; checking them cost one query and moved 99 people to the Gulf of Mexico.",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -1840,6 +1851,7 @@
       "properties": {
         "feature_type": "river",
         "gnis_id": "1070882",
+        "huc_code": "0410000703 Upper Ottawa River, 0410000705 Lower Ottawa River",
         "mouth": "40.9950509, -84.2413355, in Putnam County. Joins the Auglaize River. [inference]",
         "source": "40.7708852, -83.9557761 — the Hog Creek / Little Hog Creek confluence."
       },
@@ -1861,6 +1873,10 @@
           "tier": "verified"
         },
         {
+          "text": "**Where its water goes is now sourced rather than assumed.** The river has two watersheds of its own — `0410000703` Upper Ottawa River and `0410000705` Lower Ottawa River — and both sit inside subbasin `04100007`, which is named for and drains to the [Auglaize](auglaize-river.yml). [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md). That settles the basin and not the confluence: the WBD says this water reaches the Auglaize and never says which stream it joins first. Those two Ottawa watersheds hold 47,578 of the county's people between them, 47 per cent, which is what it means to call this the county's principal watercourse.",
+          "tier": "verified"
+        },
+        {
           "text": "Being the watercourse Lima grew on, it was also the receiving water for the refinery and the works — the environmental history of this stream and the industrial history of the city are the same subject. [inference]",
           "tier": "inference"
         }
@@ -1869,6 +1885,32 @@
         "The older name of the whole watercourse was Hog Creek, and the name now attaches to the upper tributary; GNIS is consistent with that and does not establish it."
       ],
       "withheld": 0
+    },
+    {
+      "id": "natural-feature/scioto-river-basin.yml",
+      "class": "natural-feature",
+      "label": "Scioto River Basin",
+      "tier": "verified",
+      "properties": {
+        "feature_type": "watershed",
+        "huc_code": "05060001"
+      },
+      "blocks": [
+        {
+          "text": "The drainage basin of the Scioto River, which discharges to the Ohio River at Portsmouth and through it to the Gulf of Mexico. **Ninety-nine people in Allen County live in it.** [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Four census blocks in [Auglaize Township](../place/auglaize-township.yml), at the county's south-east corner between 40.6487 and 40.7104 north, fall in hydrologic unit `05060001` — the Upper Scioto subbasin of the Ohio Region. Every other block in the county, 3,548 of 3,552, is in the Great Lakes Region and drains to [the Maumee basin](maumee-river-basin.yml). [verified] — same source, by block composition; all 3,552 blocks land in exactly one subbasin and their populations sum to the county's own enumeration of 102,206.",
+          "tier": "verified"
+        },
+        {
+          "text": "The subwatershed those four blocks sit in is `050600010101`, **Cottonwood Ditch** — a headwater of the Scioto rising in Auglaize Township. [verified] — same source. It is the only named feature on the Ohio River side of the divide in this county.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "office/allen-county-sheriff.yml",
@@ -3053,10 +3095,14 @@
         {
           "text": "Its schools are split: 2,740 of its people are in [Allen East Local](../jurisdiction/allen-east-local-school-district.yml) and 17, on two blocks at the south-east corner, in Auglaize County's [Waynesfield-Goshen](../jurisdiction/waynesfield-goshen-local-school-district.yml). [verified] — same source, crossed with [TIGERweb](../../catalog/tigerweb-census2020.md) block geography.",
           "tier": "verified"
+        },
+        {
+          "text": "**The continental divide runs through it.** Four of its census blocks — 99 people and 43 housing units, along the county's eastern edge between 40.6487 and 40.7104 north — are in [the Scioto basin](../natural-feature/scioto-river-basin.yml) and drain to the Ohio River and the Gulf of Mexico. They are the only ground in Allen County that does. [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md), by block composition.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "place/bath-township.yml",
@@ -5637,9 +5683,9 @@
     {
       "from": "natural-feature/maumee-river-basin.yml",
       "to": "place/allen-county.yml",
-      "relationship": "traverses",
-      "tier": "inference",
-      "source": null
+      "relationship": "partially-covers",
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
     },
     {
       "from": "natural-feature/maumee-river.yml",
@@ -5652,8 +5698,8 @@
       "from": "natural-feature/ottawa-river.yml",
       "to": "natural-feature/auglaize-river.yml",
       "relationship": "flows-into",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
     },
     {
       "from": "natural-feature/ottawa-river.yml",
@@ -5661,6 +5707,13 @@
       "relationship": "traverses",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "natural-feature/scioto-river-basin.yml",
+      "to": "place/auglaize-township.yml",
+      "relationship": "traverses",
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
     },
     {
       "from": "office/allen-county-sheriff.yml",

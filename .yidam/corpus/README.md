@@ -89,13 +89,14 @@ Sorted by: kind, then alphabetically.
 | [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 4v / 2i / 0o | 41 |
 | [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 40 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
-| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 3v / 3i / 0o | 37 |
+| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 4v / 3i / 0o | 42 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
-| [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 38 |
-| [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 33 |
-| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 0v / 1i / 1o | 25 |
+| [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 39 |
+| [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 34 |
+| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 3v / 0i / 0o | 42 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
-| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 4v / 4i / 0o | 41 |
+| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 5v / 4i / 0o | 52 |
+| [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 3v / 0i / 1o | 36 |
 | [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 2v / 1i / 0o | 38 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
@@ -148,7 +149,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 3v / 1i / 0o | 37 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 4v / 0i / 1o | 42 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 5v / 0i / 0o | 42 |
-| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 5v / 0i / 1o | 42 |
+| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 6v / 0i / 1o | 52 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 3v / 0i / 1o | 33 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 6v / 0i / 1o | 50 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 3v / 1i / 1o | 42 |
