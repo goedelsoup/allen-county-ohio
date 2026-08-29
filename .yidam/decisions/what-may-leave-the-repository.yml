@@ -1,0 +1,85 @@
+id: what-may-leave-the-repository
+summary: >-
+  The web layer publishes, and publishes at the inference ceiling rather than the verified one.
+  This records what that costs, the two places the gate is stricter than the rule that licenses
+  it, and what would change the answer.
+context: |
+  [`web/README.md`](../../web/README.md) named two things to settle before a page existed, and
+  refused to build one until they were: the **data source**, which it said should be a bundled
+  export feed with a contract version rather than the corpus read live; and the **audience**,
+  which it said decides the rest. Both were still open when the map became worth building —
+  28 located nodes, 25 places and three sites, and among the three a site whose location claim
+  had been wrong from genesis through three corrections.
+
+  The audience question is not a preference. Under
+  [agent-conduct](../.vendor/prelude/guidelines/agent-conduct.md), *When claims leave the
+  repository*, an internal tool may render `[open]` freely and a public one may not, and the
+  three rules that govern a public one are checkable rather than advisory.
+
+  This corpus is 620 prose blocks. 85 of them carry `[open]`, three structured fields do, and
+  99 more carry no tag at all.
+decision: |
+  **The site is public, and publishes at the `inference` ceiling.**
+
+  The rule reads: `[verified]` may reach public material; `[inference]` reaches *attributed*
+  memos and backgrounders; `[open]` does not leave the repository.
+
+  A verified-only site was the safe reading and was rejected. It would have dropped every
+  `event` and `period` node, all 39 `person --resided-in->` edges, and the corpus's own
+  reading of its population series — which is to say, the half of this corpus that is honest
+  about being inferred. What it would have published instead is the half that looks like fact,
+  with nothing on the page to say the other half exists.
+
+  So the site is built to be the second thing rather than the first. **Every claim it renders
+  carries its tag; every assertion it makes carries the verbatim passage beneath it and the
+  catalog source under that passage.** That is what "attributed" means, and it is enforced in
+  [`crates/publish`](../../crates/publish/) rather than remembered.
+
+  `[open]` is excluded absolutely. There is no flag, no build mode and no query parameter that
+  includes it, and a corpus test asserts the string does not occur in any feed.
+
+  **The exporter is a fifth capability type.** `crates/` held connectors, calculators and
+  checks. `publish` is none of them: it derives a public artifact from the corpus and refuses
+  to write one that breaks a rule. It exits 1 on a defect, like `provenance` and unlike
+  `succession-audit`, because an unsupported public claim is not a fact about anything.
+rationale: |
+  **Two places the gate is deliberately stricter than the rule.**
+
+  *Refusals are checked per node, not per block.* The rule says a refusal in the **cited
+  block** fails the build. This corpus's clearest case defeats that reading:
+  [`deindustrialization`](../corpus/period/deindustrialization.yml) demonstrates a five-decade
+  population decline in one paragraph and refuses the reading that 1970 was a peak in the next.
+  A block-level check passes a population chart citing the first and silently drops the second
+  — which is the exact failure the rule exists to prevent. So an assertion must answer every
+  refusal in every node it cites, and the refusal is rendered beside the chart.
+
+  That refusal lives in an `[open]` block, and carrying it out of the repository is the one
+  place this decision reads against the letter of the rule. It is carried because a refusal is
+  not a claim: it says what the evidence does **not** establish, so publishing it can only
+  narrow what the site asserts, never widen it. The alternative was to withdraw the population
+  chart, which would have removed the caveat and the thing it qualifies together.
+
+  *An `answers` entry matching no refusal fails too.* The same argument as
+  [the lint baseline](../lint-baseline.yml): a list of answers permitted to be wrong drifts,
+  and one that over-lists silently re-permits whatever it over-lists.
+
+  **A number on a chart is an assertion, and nothing else was checking it.** The tag apparatus
+  reaches prose and edges. It does not reach the array a chart is drawn from, so the corpus can
+  say 66.5 per cent while the page plots 66.9 and every gate passes. Each plotted figure now
+  carries the text it was read from; the gate asserts that text appears in a span the assertion
+  already cites, and that the number equals what the text says.
+
+  **What the untagged blocks turned out to be.** 99 blocks carry no tag, and the rule that they
+  do not publish was adopted expecting to lose something. Reading them, almost none is a claim
+  about the county: they are the corpus talking about itself — *this node exists for the same
+  reason that one does*, *this is the sharpest argument for the class*. There is no tag for
+  them to travel on and no reader outside this repository is served by them. The conservative
+  direction is also the right one here, which is not always true and is worth recording that it
+  was checked rather than assumed.
+
+  **What would change the answer.** A second audience. Everything above describes one site at
+  one ceiling, and the ceiling is a constant in one file. An internal view over the same feeds —
+  showing `[open]` claims, unresolved questions and the untagged commentary, which are exactly
+  what a corpus editor wants and a public reader does not — is a second export at a second
+  ceiling, not a flag on this one. The moment it exists, the gate that `[open]` never leaves has
+  to name which artifact it is talking about, and that is the change to make deliberately.
