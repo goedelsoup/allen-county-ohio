@@ -13,6 +13,7 @@ location:
     description: 2020 vintage — layers 6 Census Tracts, 10 Census Blocks, 20 County Subdivisions, 26 Incorporated Places, 28 Census Designated Places, 82 Counties
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
+  - ../corpus/division/voting-district-lima-1a-2020.yml
   - ../corpus/division/voting-district-sugar-creek-2020.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
   - ../corpus/jurisdiction/amanda-township.yml
@@ -47,6 +48,7 @@ used-by:
   - ../corpus/measure/allen-county-housing-units-2020.yml
   - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-population-2020.yml
+  - ../corpus/measure/allen-county-turnout-2020.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml
   - ../corpus/measure/lima-population-2020-census.yml
   - ../corpus/measure/lima-population-2020.yml

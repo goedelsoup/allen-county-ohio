@@ -1,0 +1,38 @@
+class: measure
+label: Allen County presidential vote, 2020
+description: |
+  Of 47,993 presidential votes cast in the county, **33,116 for Trump and Pence and 14,149 for
+  Biden and Harris** — 69.0 per cent against 29.5, with 590 for Jorgensen and Cohen and 138 for
+  Hawkins and Walker. [verified] — [OpenElections](../../catalog/openelections-ohio.md).
+
+  **Eleven of the county's 88 precincts went to Biden, and ten of them are in Lima.** The
+  eleventh is `AMERICAN D`, in the township wrapped around the city's west and north. Every
+  other precinct in the county — all twelve townships' rural ground, both cities' outer wards,
+  every village — went the other way. [verified] — same source. The most Republican precinct is
+  `MONROE E` at 90.6 per cent; the most Democratic is `LIMA 6C` at 87.9. A county that votes
+  69–29 contains precincts ninety points apart.
+
+  That is the same shape three earlier phases found in other data and did not have a name for.
+  [Lima](../place/lima.yml) is a city of 35,579 inside a county of 102,206; it is
+  [cut into five school districts](../jurisdiction/lima-city-school-district.yml) and holds most
+  of the county's density. The political division follows the same line, and this is the first
+  source in the corpus that measures it directly.
+
+  The county's three partisan down-ballot races were not close either: Jim Jordan took 33,201 to
+  13,080 for Congress, Matt Huffman 34,303 to 12,645 for the state senate, and **Bob Cupp ran
+  unopposed** for the state house with 38,882. [verified] — same source.
+properties:
+  parameter: presidential votes cast
+  value: "47993"
+  unit: votes
+  as_of: 2020-11-03
+  method: |
+    Summed by candidate over the county's 88 precincts. The total is 360 fewer than the 48,353
+    ballots cast — an undervote of 0.7 per cent. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

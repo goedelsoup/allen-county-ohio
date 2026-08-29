@@ -27,6 +27,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 32 |
 | [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 42 |
 | [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 28 |
+| [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 0v / 2i / 1o | 23 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 0v / 4i / 1o | 42 |
@@ -74,7 +75,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 3v / 0i / 0o | 32 |
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
-| [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 3v / 0i / 0o | 41 |
+| [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 4v / 0i / 0o | 38 |
+| [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
+| [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 2v / 1i / 0o | 33 |
 | [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
@@ -153,7 +156,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 6v / 0i / 1o | 49 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 3v / 0i / 1o | 33 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 6v / 0i / 1o | 50 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 4v / 2i / 0o | 48 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 5v / 2i / 0o | 54 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 3v / 0i / 1o | 33 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 4v / 0i / 1o | 40 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 3v / 0i / 1o | 33 |
@@ -170,7 +173,7 @@ Sorted by: kind, then alphabetically.
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 1v / 3i / 1o | 41 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
-| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 4v / 1i / 1o | 47 |
+| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 2v / 1i / 1o | 37 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 52 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |

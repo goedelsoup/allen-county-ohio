@@ -42,8 +42,9 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
          are known only in the 2020 geography"
     );
 
-    // Every 2020 district is set aside rather than dropped: the query considered it.
-    assert_eq!(c.excluded.len(), 3);
+    // Every 2020 division is set aside rather than dropped: the query considered it. Four of
+    // them now — the three legislative districts and the precinct that covers part of the city.
+    assert_eq!(c.excluded.len(), 4);
     assert!(c.excluded.iter().all(|m| m.class == "division"));
 }
 
@@ -111,10 +112,23 @@ fn partiality_comes_from_an_edge_that_says_so_and_never_from_proximity() {
     }
     // The three 2020 districts reach Lima through the county, which contains it wholly, so the
     // inheritance must not manufacture a split either.
-    for m in c.all().filter(|m| m.class == "division") {
-        assert_eq!(m.extent, Extent::Whole, "{}", m.node);
-    }
     for id in [
+        "division/ohio-congressional-district-4-2020.yml",
+        "division/ohio-house-district-4-2020.yml",
+        "division/ohio-senate-district-12-2020.yml",
+    ] {
+        assert_eq!(
+            c.member(id)
+                .unwrap_or_else(|| panic!("{id} covers Lima"))
+                .extent,
+            Extent::Whole,
+            "{id}"
+        );
+    }
+    // A precinct inside the city is the one division that says `partially-covers`, and it must
+    // still not drag the county or the districts down with it.
+    for id in [
+        "division/voting-district-lima-1a-2020.yml",
         "jurisdiction/lima-city-school-district.yml",
         "jurisdiction/elida-local-school-district.yml",
         "jurisdiction/bath-local-school-district.yml",

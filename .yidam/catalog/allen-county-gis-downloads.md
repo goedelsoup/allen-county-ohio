@@ -13,6 +13,7 @@ location:
     value: https://gis.allencountyohio.com/GIS/downloads.html
     description: Index page — 15 downloads. Only Political_Subdivisions.zip and Addresses_ft.zip were retrieved; see the access-terms decision.
 used-by:
+  - ../corpus/division/voting-district-lima-1a-2020.yml
   - ../corpus/jurisdiction/amanda-township.yml
   - ../corpus/jurisdiction/american-township.yml
   - ../corpus/jurisdiction/auglaize-township.yml

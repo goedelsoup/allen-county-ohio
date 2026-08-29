@@ -7,31 +7,32 @@ description: |
   assignment and [TIGERweb](../../catalog/tigerweb-census2020.md), layer 58, for the names,
   populations, housing units and areas.
 
-  **This node previously said the names were the Secretary of State's and unreachable.** They are
-  in a layer of a service this corpus had been querying all along. The assignment files carry
-  codes — `002AFJ` — and nothing else, and that was generalised into a claim about what could be
-  got anywhere. What the Secretary of State does uniquely hold is **returns**: who voted and for
-  whom. No Census product carries any of that.
+  **This node twice said the names were unreachable without the Secretary of State.** They were in
+  a layer of a service the corpus was already querying, and the returns are transcribed on GitHub.
 
   **The precinct grid nests inside the civil geography exactly.** Not one of the 88 crosses a
   county-subdivision line. [verified] — the assignment files crossed with TIGERweb block
-  geography, block by block. That is the sharp contrast with
-  [the school districts](../jurisdiction/), which cross both county and township lines freely:
-  precincts are built *from* the township and city grid, and school districts are laid over it.
-
-  [Lima](../place/lima.yml) holds 23 of them and
+  geography, block by block — the sharp contrast with
+  [the school districts](../jurisdiction/), which cross county and township lines freely.
+  [Lima](../place/lima.yml) holds 23 and
   [Sugar Creek Township](../place/sugar-creek-township.yml) holds
-  [one](../division/voting-district-sugar-creek-2020.yml). Their populations sum to 102,206,
-  which is [the county's own enumeration](allen-county-population-2020-census.yml).
+  [one](../division/voting-district-sugar-creek-2020.yml); their populations sum to 102,206, which
+  is [the county's own enumeration](allen-county-population-2020-census.yml).
+
+  **A second, unrelated pipeline confirms the names.** The 88 the county board of elections used
+  on its certified returns are identical, string for string, to the 88 the Census Bureau
+  publishes. [verified] — [OpenElections](../../catalog/openelections-ohio.md) against TIGERweb.
+  That joins [turnout](allen-county-turnout-2020.yml) and
+  [the vote](allen-county-presidential-vote-2020.yml) to census geography with no crosswalk, and
+  those show the 88 are far from interchangeable.
 properties:
   parameter: voting districts
   value: "88"
   unit: districts
   as_of: "2020"
   method: |
-    Counted as the distinct values in the VTD assignment file over the 3,552 blocks whose GEOID
-    begins 39003, and cross-checked against the 88 features TIGERweb returns for the same county.
-    [verified]
+    Distinct values in the VTD assignment file over the 3,552 blocks whose GEOID begins 39003,
+    cross-checked against the 88 features TIGERweb returns for the county. [verified]
 links:
   - target: ../jurisdiction/allen-county-government.yml
     relationship: describes
