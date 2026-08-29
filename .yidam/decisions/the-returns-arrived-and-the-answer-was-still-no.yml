@@ -1,0 +1,63 @@
+id: the-returns-arrived-and-the-answer-was-still-no
+summary: >-
+  The previous phase named election returns as the retrieval that would make the county's 88
+  precincts differ in kind and therefore become nodes. The returns arrived one phase later. Applying
+  the test honestly gives two precinct nodes, not 88 — one election supplies values, not kinds — and
+  names what actually would: the 2016 and 2018 files sitting beside the 2020 one.
+context: |
+  [eighty-eight-rows-are-not-eighty-eight-nodes](eighty-eight-rows-are-not-eighty-eight-nodes.yml)
+  held the county's precincts as a measure rather than as 88 nodes, on the test *write a node where
+  members differ in kind, write a measure where they differ only in value*. It then named what would
+  change the answer:
+
+    With returns, precincts stop being interchangeable: one has a turnout history, a swing, a
+    consolidation in 2014. They differ in kind, and then they are nodes.
+
+  It also said the returns were the Secretary of State's and outstanding. They are transcribed on
+  GitHub by [OpenElections](../catalog/openelections-ohio.md), and were retrieved the next day.
+decision: |
+  **Two precinct nodes, not 88.** The corpus now holds
+  [Sugar Creek](../corpus/division/voting-district-sugar-creek-2020.yml), which is coterminous with
+  a whole township, and [Lima 1A](../corpus/division/voting-district-lima-1a-2020.yml), where a
+  census count, a housing count and a registration roll disagree in a way that means something. The
+  other 86 remain [a measure](../corpus/measure/allen-county-voting-districts-2020.yml), joined to
+  two more — [turnout](../corpus/measure/allen-county-turnout-2020.yml) and
+  [the presidential vote](../corpus/measure/allen-county-presidential-vote-2020.yml).
+
+  **The prediction was right about direction and wrong about strength.** One election gives every
+  precinct a value on three new axes — turnout, margin, registered voters per resident. Three more
+  columns of the same table is still a table. What the earlier record actually described was a
+  *history*: a swing, a consolidation, a precinct that behaved differently from its neighbours once
+  and then stopped. None of that exists in a single file.
+
+  Lima 1A earns its node on none of those axes. It earns it because three independently produced
+  measurements of the same ground do not fit together, which is a relationship between sources and
+  not a value in a column.
+
+  **What would actually do it, named exactly.** OpenElections carries
+  `20161108__oh__general__precinct.csv` and `20181106__oh__general__precinct.csv` beside the 2020
+  file. Three elections is a series: a precinct that moved and a precinct that did not are then
+  different things, and so is a precinct that appears in one file and not another. There is **no**
+  2022 or 2024 precinct file in that repository, checked on 2026-08-29, so the series available is
+  2016–2020 and stops before Ohio's post-2020 maps.
+rationale: |
+  **Why write this down at all, given that nothing changed.** A decision record that only fires when
+  the answer flips is a record of conclusions, not of reasoning. This corpus made a specific,
+  checkable prediction about what evidence would license — and the evidence turned up almost
+  immediately, which is the rare case where a prediction can actually be scored. It scored
+  partially: the direction was right, the threshold was wrong, and the error was in the
+  prediction's own vagueness. "A turnout history, a swing, a consolidation" is three things, and
+  only the first is even close to being one election's worth of data.
+
+  The habit worth keeping is stating the threshold in files rather than in kinds of evidence. Not
+  "with returns" but "with three general elections whose precinct names join". That is falsifiable
+  before the retrieval rather than after it.
+
+  **The temptation this resists.** 88 nodes were available and would have been defensible — every
+  one now has population, housing, area, an internal point, a turnout, a margin and a registration
+  ratio, which is more than half this corpus's `place` nodes carry. The corpus would have grown by
+  45 per cent in one phase. It would also have been 88 files nobody would ever read, restating a
+  table that regenerates from two URLs, in a corpus that has already diagnosed exactly that as why
+  its base was thin.
+
+  Growth is the easiest thing to produce here and the least informative thing to report.
