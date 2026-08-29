@@ -27,13 +27,14 @@ Sorted by: kind, then alphabetically.
 | [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 32 |
 | [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 42 |
 | [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 28 |
+| [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 0v / 2i / 1o | 23 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 0v / 4i / 1o | 42 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
-| [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 3v / 0i / 0o | 45 |
+| [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 4v / 0i / 0o | 52 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 3v / 0i / 0o | 45 |
 | [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 23 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 2v / 0i / 0o | 30 |
@@ -47,6 +48,7 @@ Sorted by: kind, then alphabetically.
 | [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
+| [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
 | [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
@@ -54,7 +56,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 3v / 0i / 0o | 32 |
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
-| [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 2v / 0i / 1o | 32 |
+| [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 3v / 0i / 0o | 41 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 2v / 1i / 0o | 33 |
 | [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
@@ -71,7 +73,7 @@ Sorted by: kind, then alphabetically.
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 4v / 4i / 0o | 41 |
 | [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 2v / 1i / 0o | 38 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
-| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 0v / 1i / 1o | 21 |
+| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 0v / 2i / 1o | 25 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 0v / 3i / 2o | 31 |
@@ -123,16 +125,16 @@ Sorted by: kind, then alphabetically.
 | [american-township.yml](place/american-township.yml) | place | American Township | 2 | 5v / 0i / 0o | 38 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 2 | 5v / 0i / 1o | 38 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 2 | 3v / 0i / 1o | 29 |
-| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 3 | 3v / 0i / 1o | 33 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 3 | 5v / 0i / 1o | 41 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 2v / 1i / 0o | 35 |
-| [cairo.yml](place/cairo.yml) | place | Cairo | 3 | 3v / 0i / 1o | 33 |
+| [cairo.yml](place/cairo.yml) | place | Cairo | 3 | 5v / 0i / 1o | 41 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 3 | 2v / 1i / 0o | 35 |
 | [elida.yml](place/elida.yml) | place | Elida | 3 | 3v / 0i / 1o | 33 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 6v / 1i / 0o | 44 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 2v / 0i / 1o | 39 |
-| [harrod.yml](place/harrod.yml) | place | Harrod | 3 | 3v / 0i / 1o | 33 |
+| [harrod.yml](place/harrod.yml) | place | Harrod | 3 | 5v / 0i / 1o | 41 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 2 | 3v / 0i / 1o | 29 |
-| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 3 | 3v / 0i / 1o | 33 |
+| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 3 | 5v / 0i / 1o | 41 |
 | [lima.yml](place/lima.yml) | place | Lima | 3 | 3v / 2i / 0o | 44 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 2 | 3v / 0i / 1o | 29 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 2 | 4v / 0i / 1o | 36 |
@@ -150,6 +152,7 @@ Sorted by: kind, then alphabetically.
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 1v / 3i / 1o | 41 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
+| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 4v / 1i / 1o | 47 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 2v / 1i / 1o | 37 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 52 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
