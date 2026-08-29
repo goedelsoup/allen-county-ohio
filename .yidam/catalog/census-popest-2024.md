@@ -22,6 +22,8 @@ used-by:
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/measure/allen-county-natural-change-2021-2024.yml
+  - ../corpus/measure/allen-county-net-migration-2021-2024.yml
   - ../corpus/measure/allen-county-population-2020.yml
   - ../corpus/measure/allen-county-population-2024.yml
   - ../corpus/measure/lima-population-2020.yml
@@ -79,6 +81,13 @@ carry four things at once, and it took nine phases to read them: every municipal
 level 157), every township (061), **which township each municipality sits in** (071, a place
 within a county subdivision), and which municipalities cross a county line — the `(pt.)` mark
 on the name. All 21 of the county's civil divisions came from here.
+
+**The components of change are now read out.** The county file's `BIRTHS`, `DEATHS`,
+`INTERNATIONALMIG` and `DOMESTICMIG` columns had been catalogued and unread since this corpus's
+second phase, while five phases described a population decline they could not explain. They are the
+explanation: over 2021–2024 the county lost 506 people to natural decrease and 793 to net
+migration. They are published for the **estimate years only**, so they explain four of the
+fifty-four years this corpus's decline covers and nothing before 2020.
 
 **What else it holds that nobody has looked at.** Births, deaths, net migration and the
 components of change are all in the county file and none were read. They are the mechanism

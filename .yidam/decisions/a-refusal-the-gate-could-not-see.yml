@@ -1,0 +1,63 @@
+id: a-refusal-the-gate-could-not-see
+summary: >-
+  The county's decline was described for five phases and explained in one, from columns of a file
+  already in the catalog. Publishing the explanation exercised the publication gate as designed —
+  and showed that the gate enforces a **vocabulary** rather than a concept: the phase's strongest
+  caveat was invisible to it until the sentence was rewritten into one of twelve accepted forms.
+context: |
+  [what-may-leave-the-repository](what-may-leave-the-repository.yml) built a publication gate on
+  three rules, one of which is that an assertion must answer every refusal in every node it cites.
+  It is enforced in `crates/publish`, and the enforcement is real: adding one refusal to
+  `period/deindustrialization.yml` blocked all three assertions on the population page until each
+  named it.
+
+  That is the rule working. What follows is about the half of it nobody had exercised yet.
+decision: |
+  **The mechanism is recorded and published**, as
+  [natural change](../corpus/measure/allen-county-natural-change-2021-2024.yml) and
+  [net migration](../corpus/measure/allen-county-net-migration-2021-2024.yml), with a new site
+  assertion citing both. 506 to natural decrease and 793 to net migration over the four full years
+  to 2024.
+
+  **The 2024 figure is stated and refused in the same block.** The estimate is 15 higher than 2023,
+  the first non-negative year in the series. It is fifteen people on 100,851. The node says both,
+  and the refusal is now carried onto the public page beside the chart it qualifies.
+
+  **The gate's blind spot is recorded rather than patched.** `REFUSALS` in `crates/publish` is a
+  whitelist of twelve sentence openings — *does not establish*, *cannot show*, and ten more —
+  chosen narrow on the argument that a loose pattern matches seventy-five of this corpus's blocks
+  and almost all of them are ordinary prose containing the word *not*. That argument is right about
+  false positives and silent about false negatives.
+
+  The 2024 caveat was first written as:
+
+    The last year of the series is not a continuation ... Fifteen people on 100,851 is far inside
+    what a modelled estimate can resolve, and one year is not a direction.
+
+  The gate saw nothing. Rewritten as *It does not establish that the decline has ended*, the gate
+  blocked three assertions immediately. Same claim, same node, same block, same evidence; the only
+  difference was the form of words.
+rationale: |
+  **Why this is not fixed here.** Widening the pattern is the obvious move and is the wrong one on
+  the evidence already gathered: a loose pattern matched seventy-five blocks, and a gate that fires
+  on seventy-five things of which seventy are ordinary prose gets switched off or worked around.
+  The narrow list is a defensible engineering choice.
+
+  What is not defensible is leaving the trade-off unrecorded, because its cost falls exactly where
+  the rule is most needed. A refusal is written at the moment an author feels the pull of an
+  over-reading — which is the moment they are least likely to be choosing their words against a
+  whitelist. This corpus wrote its most important caveat of the phase in a form the gate could not
+  see, and found out only because somebody read the gate's source afterwards.
+
+  **The shape of the fix, for whoever takes it.** Not a wider pattern but a second signal: a block
+  that carries `[open]` and contains a negation is a *candidate* refusal, and the gate could
+  require it to be either matched or explicitly waived. That converts a false negative into a
+  question, which is the direction this repository's other checks already run —
+  `catalog-used-by-drift` and the lint baseline both fail on over-listing as well as under-listing.
+
+  **And the smaller finding underneath it.** Five phases described this county's decline and none
+  explained it, though the explanatory columns sat in a file cited on every one of them. The corpus
+  had been reading `POPESTIMATE` and had never read the four columns beside it. That is the same
+  defect as
+  [the-corpus-had-a-federal-bias](the-corpus-had-a-federal-bias.yml) at a smaller scale: not a
+  missing source, but a habit of reading the part of a source that answered the last question.

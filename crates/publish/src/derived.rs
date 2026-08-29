@@ -94,7 +94,11 @@ pub const ASSERTIONS: &[Assertion] = &[
             "period/deindustrialization.yml",
             "Allen County counted 111,144 at the 1970 census and 100,866 at the 2024 estimate — a loss of 10,278 people, or 9.2%, across five decades with no reversal at any measured point: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)"
         )],
-        answers: &["It does not establish that 1970 is the start"],
+        answers: &[
+            "It does not establish that 1970 is the start",
+            "It does not establish that either mechanism reaches back before 2020",
+            "It does not establish that the decline has ended",
+        ],
         // The chart on the population page is this enumeration and nothing else. The corpus
         // wrote the series out longhand, so the site plots the corpus's own five numbers
         // rather than re-selecting among the six measures — which would be an editorial
@@ -116,7 +120,11 @@ pub const ASSERTIONS: &[Assertion] = &[
             "period/deindustrialization.yml",
             "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048"
         )],
-        answers: &["It does not establish that 1970 is the start"],
+        answers: &[
+            "It does not establish that 1970 is the start",
+            "It does not establish that either mechanism reaches back before 2020",
+            "It does not establish that the decline has ended",
+        ],
         figures: &[
             Figure { label: "Lima", value: 3.8, literal: "3.8%" },
             Figure { label: "The rest of the county", value: 1.5, literal: "1.5%" },
@@ -131,8 +139,35 @@ pub const ASSERTIONS: &[Assertion] = &[
             "period/deindustrialization.yml",
             "eleven of the county's thirteen civil subdivisions lost population"
         )],
-        answers: &["It does not establish that 1970 is the start"],
+        answers: &[
+            "It does not establish that 1970 is the start",
+            "It does not establish that either mechanism reaches back before 2020",
+            "It does not establish that the decline has ended",
+        ],
         figures: &[],
+    },
+    Assertion {
+        id: "decline-is-migration-and-deaths",
+        statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
+                    natural decrease and 793 to net migration.",
+        topic: "population",
+        // Cited to the two measures rather than to the period node, so the figures come from
+        // the nodes that carry the arithmetic and its method.
+        supports: &[
+            support!(
+                "measure/allen-county-natural-change-2021-2024.yml",
+                "Across the four full years 2021 to 2024 the county recorded **4,763 births and 5,269 deaths** — a natural change of **−506**"
+            ),
+            support!(
+                "measure/allen-county-net-migration-2021-2024.yml",
+                "Across the four full years 2021 to 2024 the county's net migration was **−793**: a domestic net loss of **1,217** against an international net gain of **424**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Natural decrease", value: -506.0, literal: "−506" },
+            Figure { label: "Net migration", value: -793.0, literal: "−793" },
+        ],
     },
     Assertion {
         id: "three-places",

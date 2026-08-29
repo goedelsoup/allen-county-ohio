@@ -8,6 +8,7 @@ import type { BarSpec, LineSpec } from '../scripts/charts'
 const decline = assertion('county-population-decline')
 const concentration = assertion('decline-concentrated-in-lima')
 const breadth = assertion('decline-is-not-suburbanization')
+const mechanism = assertion('decline-is-migration-and-deaths')
 
 // The county chart is the assertion's own figures: the five numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -56,6 +57,17 @@ const rateSpec: BarSpec = {
   values: concentration.figures.map((f) => f.value),
   yTitle: 'Per cent lost, 2000–2010',
   tickSuffix: '%',
+  labelValues: true,
+}
+
+// Two negative components on one axis. A bar chart is right here and a pie chart would not
+// be: these are two independent forces that happen to point the same way, not shares of a
+// whole, and the residual of 28 the corpus names belongs to neither.
+const mechanismSpec: BarSpec = {
+  kind: 'bar',
+  categories: mechanism.figures.map((f) => f.label),
+  values: mechanism.figures.map((f) => f.value),
+  yTitle: 'People, four years to 2024',
   labelValues: true,
 }
 
@@ -112,6 +124,27 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   <section>
     <h2>And it is not suburbanization</h2>
     <AssertionCard assertion={breadth} />
+  </section>
+
+  <section>
+    <h2>Why it shrinks</h2>
+    <p>
+      Five decades of this page described a decline without explaining it. The Population
+      Estimates programme publishes the components of change — births, deaths, and migration
+      split into domestic and international — and the corpus had held that file, uncited on
+      these columns, since its second phase.
+    </p>
+    <AssertionCard assertion={mechanism} />
+
+    <ChartFigure
+      id="mechanism"
+      title="What the loss is made of, 2021–2024"
+      caption="The two forces are independent and both negative; a residual of 28 belongs to neither. Migration is the larger, and within it a domestic loss of 1,217 is partly offset by an international gain of 424."
+      columns={['Component', 'People']}
+      rows={mechanism.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="mechanism" set:html={JSON.stringify(mechanismSpec)} is:inline />
   </section>
 
   <script>
