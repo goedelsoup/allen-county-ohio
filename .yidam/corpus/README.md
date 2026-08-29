@@ -29,7 +29,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 28 |
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
-| [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 2v / 0i / 2o | 37 |
+| [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 3v / 0i / 2o | 43 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 0v / 4i / 1o | 42 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 4v / 1i / 1o | 50 |
@@ -42,8 +42,8 @@ Sorted by: kind, then alphabetically.
 | [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 4v / 0i / 0o | 52 |
 | [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 4v / 0i / 1o | 33 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 3v / 0i / 0o | 45 |
-| [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 2v / 0i / 1o | 29 |
-| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 0v / 1i / 0o | 23 |
+| [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 3v / 0i / 1o | 35 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 1v / 1i / 1o | 35 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 2v / 0i / 0o | 30 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 3v / 0i / 0o | 41 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 2v / 0i / 0o | 53 |
@@ -113,6 +113,7 @@ Sorted by: kind, then alphabetically.
 | [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 18 |
+| [christopher-wood.yml](person/christopher-wood.yml) | person | Christopher Wood | 2 | 5v / 0i / 1o | 45 |
 | [clay-t-cotterman.yml](person/clay-t-cotterman.yml) | person | Clay T. Cotterman | 2 | 1v / 1i / 0o | 18 |
 | [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
 | [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 1v / 1i / 1o | 20 |
@@ -152,28 +153,28 @@ Sorted by: kind, then alphabetically.
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 7v / 1i / 0o | 56 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 8v / 0i / 1o | 61 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 4v / 0i / 1o | 39 |
-| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 6v / 0i / 1o | 50 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 3v / 1i / 1o | 42 |
-| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 7v / 0i / 1o | 49 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 3v / 1i / 1o | 46 |
-| [elida.yml](place/elida.yml) | place | Elida | 4 | 4v / 0i / 1o | 41 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 7v / 0i / 1o | 59 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 4v / 1i / 1o | 49 |
+| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 8v / 0i / 1o | 57 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 5v / 1i / 1o | 58 |
+| [elida.yml](place/elida.yml) | place | Elida | 4 | 6v / 0i / 1o | 47 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 6v / 1i / 0o | 44 |
-| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 2v / 0i / 1o | 39 |
-| [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 6v / 0i / 1o | 49 |
+| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
+| [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 5v / 0i / 1o | 42 |
-| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 6v / 0i / 1o | 50 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 6v / 2i / 0o | 61 |
+| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 8v / 2i / 0o | 70 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 5v / 0i / 1o | 41 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 5v / 0i / 1o | 44 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 5v / 0i / 1o | 35 |
 | [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 5v / 0i / 1o | 42 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 5v / 1i / 0o | 51 |
 | [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 6v / 0i / 1o | 46 |
-| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 4v / 0i / 1o | 42 |
+| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 7v / 0i / 1o | 56 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 6v / 0i / 0o | 52 |
-| [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 2v / 0i / 0o | 38 |
+| [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
-| [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 0v / 1i / 1o | 30 |
+| [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 1v / 2i / 1o | 43 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 4 | 3v / 0i / 2o | 60 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 2o | 39 |
 | [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 4 | 3v / 1i / 2o | 50 |
