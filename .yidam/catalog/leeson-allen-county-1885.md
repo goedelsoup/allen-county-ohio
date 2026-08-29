@@ -23,9 +23,26 @@ location:
 used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/jurisdiction/amanda-township.yml
+  - ../corpus/jurisdiction/american-township.yml
+  - ../corpus/jurisdiction/auglaize-township.yml
+  - ../corpus/jurisdiction/bath-township.yml
   - ../corpus/jurisdiction/city-of-delphos.yml
   - ../corpus/jurisdiction/city-of-lima.yml
+  - ../corpus/jurisdiction/jackson-township.yml
+  - ../corpus/jurisdiction/marion-township.yml
+  - ../corpus/jurisdiction/monroe-township.yml
+  - ../corpus/jurisdiction/perry-township.yml
+  - ../corpus/jurisdiction/richland-township.yml
+  - ../corpus/jurisdiction/shawnee-township.yml
+  - ../corpus/jurisdiction/spencer-township.yml
+  - ../corpus/jurisdiction/sugar-creek-township.yml
+  - ../corpus/jurisdiction/village-of-beaverdam.yml
+  - ../corpus/jurisdiction/village-of-elida.yml
+  - ../corpus/jurisdiction/village-of-lafayette.yml
+  - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/person/christopher-wood.yml
+  - ../corpus/person/john-franks.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
@@ -53,6 +70,7 @@ used-by:
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
+  - ../corpus/site/allen-county-courthouse.yml
 ---
 
 **What it is.** A subscription county history of the kind produced across the Midwest in the

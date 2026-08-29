@@ -53,6 +53,7 @@ used-by:
   - ../corpus/person/william-v-daley.yml
   - ../corpus/question/two-irregular-sheriff-transitions.yml
   - ../corpus/question/when-allen-county-was-organized.yml
+  - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/tenure/sheriff-1831-henry-lippencott.yml
   - ../corpus/tenure/sheriff-1835-john-keller.yml
   - ../corpus/tenure/sheriff-1839-alexander-beatty.yml

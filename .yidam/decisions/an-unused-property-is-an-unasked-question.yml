@@ -1,0 +1,65 @@
+id: an-unused-property-is-an-unasked-question
+summary: >-
+  Two phases ago the corpus established when each of the twelve townships was erected and wrote it
+  on the twelve `place` nodes. The twelve `jurisdiction` nodes — which declare `erected` and
+  `authority_source` as properties and had both empty — kept the identical `[open]` claim for two
+  further phases. An ontology property that no instance uses is a question the corpus declared and
+  then never asked.
+context: |
+  `the-townships-were-erected` answered, from the 1885 history, when each township was erected and
+  under whose order. It wrote the answers into `.yidam/corpus/place/`.
+
+  One directory over, `.yidam/corpus/jurisdiction/` held twelve township governments each carrying:
+
+      [open] When the township was erected, under what order, and who its trustees are.
+      The county's site names no officers and gives no dates.
+
+  Two of those three were answered, in the same repository, on the same day, by the same source.
+  The `jurisdiction` ontology declares exactly the fields they belong in — `erected: date` and
+  `authority_source: text` — and across thirty-four jurisdiction nodes neither had ever been used.
+
+  That is a stronger signal than a stale `[open]`, because it is computable. Listing every property
+  an ontology declares and finding which have no instance takes ten lines:
+
+      division         effective_to
+      event            occurred_through
+      jurisdiction     erected, authority_source, abolished
+      natural-feature  length_mi
+      office           term_length, abolished
+      organization     founded, dissolved, also_known_as
+      site             built, ceased, nrhp_id
+      tenure           how_began, how_ended
+decision: |
+  **Treat the unused-property list as a standing retrieval plan, and run it when a source is
+  catalogued.**
+
+  Each entry is a question somebody thought worth declaring and nobody has answered. `site.built`
+  is "when was the courthouse built"; `organization.founded` is "when did the locomotive works
+  start"; `tenure.how_ended` is the two irregular sheriff transitions the corpus already has an
+  open question about; `jurisdiction.abolished` is Ottawa Township, if the corpus ever writes it.
+
+  Acted on here: `jurisdiction.erected` and `authority_source` are filled for eleven of the twelve
+  townships and four village corporations, and `site.built` for the courthouse — which turns out to
+  be the county's **third**, exactly as that node's `[open]` had refused to assume.
+
+  This is a companion to [a-source-is-not-exhausted-by-one-question](a-source-is-not-exhausted-by-one-question.yml),
+  and the sharper half of it. That rule says to search a new source for the corpus's standing open
+  claims. This one says the corpus's own schema states questions its prose never got round to, and
+  they are enumerable without reading anything.
+rationale: |
+  The failure here is worse than the one before it, because nothing had to be searched. The answer
+  was already written down in this repository — in a sibling directory, by me, two phases earlier —
+  and the `[open]` beside it went on asserting it was unretrieved. A corpus whose git history is its
+  knowledge graph cannot afford a claim that contradicts a claim it made itself.
+
+  Why it happened is worth naming exactly: a phase's unit of work was **the source and one class**,
+  and `place` was the class the retrieval was framed around. Nothing in the workflow asks "which
+  other class holds this same fact", and `place`/`jurisdiction` is precisely the pair this
+  ontology splits on purpose, so it is the pair most likely to hold the same question twice.
+
+  The counter-argument: an unused property may be unused because it does not apply — `office.abolished`
+  is empty because neither office has been abolished, and that is correct rather than missing. So
+  the list is a prompt, not a defect list, and the answer to some entries will be "nothing to
+  record". Writing that down is itself worth more than leaving the field ambiguous.
+status: accepted
+date: "2026-08-29"
