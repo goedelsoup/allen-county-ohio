@@ -18,6 +18,7 @@ used-by:
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/city-of-delphos.yml
   - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
   - ../corpus/jurisdiction/delphos-city-school-district.yml
   - ../corpus/jurisdiction/elida-local-school-district.yml
@@ -26,6 +27,7 @@ used-by:
   - ../corpus/jurisdiction/perry-local-school-district.yml
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml

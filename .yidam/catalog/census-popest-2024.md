@@ -15,7 +15,13 @@ location:
     value: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/cities/totals/sub-est2024.csv
     description: sub-county totals — places and minor civil divisions
 used-by:
+  - ../corpus/jurisdiction/auglaize-township.yml
+  - ../corpus/jurisdiction/village-of-beaverdam.yml
   - ../corpus/jurisdiction/village-of-bluffton.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
+  - ../corpus/jurisdiction/village-of-elida.yml
+  - ../corpus/jurisdiction/village-of-harrod.yml
+  - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/measure/allen-county-population-2020.yml
   - ../corpus/measure/allen-county-population-2024.yml
   - ../corpus/measure/lima-population-2020.yml

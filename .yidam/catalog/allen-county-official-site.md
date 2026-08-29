@@ -20,6 +20,25 @@ location:
     value: https://allencountyohio.com/
     description: Index, and the linked sites of the nine elected county offices
 used-by:
+  - ../corpus/jurisdiction/amanda-township.yml
+  - ../corpus/jurisdiction/american-township.yml
+  - ../corpus/jurisdiction/auglaize-township.yml
+  - ../corpus/jurisdiction/bath-township.yml
+  - ../corpus/jurisdiction/city-of-delphos.yml
+  - ../corpus/jurisdiction/jackson-township.yml
+  - ../corpus/jurisdiction/marion-township.yml
+  - ../corpus/jurisdiction/monroe-township.yml
+  - ../corpus/jurisdiction/perry-township.yml
+  - ../corpus/jurisdiction/richland-township.yml
+  - ../corpus/jurisdiction/shawnee-township.yml
+  - ../corpus/jurisdiction/spencer-township.yml
+  - ../corpus/jurisdiction/sugar-creek-township.yml
+  - ../corpus/jurisdiction/village-of-beaverdam.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
+  - ../corpus/jurisdiction/village-of-elida.yml
+  - ../corpus/jurisdiction/village-of-harrod.yml
+  - ../corpus/jurisdiction/village-of-lafayette.yml
+  - ../corpus/jurisdiction/village-of-spencerville.yml
 ---
 
 **What it settles.** Three phases of this corpus deferred the same thing: the `jurisdiction`
