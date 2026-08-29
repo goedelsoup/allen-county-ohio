@@ -1,0 +1,31 @@
+class: measure
+label: Allen County presidential vote, 2016
+description: |
+  Of 45,815 presidential votes cast in the county, **30,487 for Trump and 13,294 for Clinton** —
+  66.5 per cent against 29.0, with 1,486 for Johnson and 323 for Stein. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md), summed over the county's 88 precincts.
+
+  **Thirteen precincts went to Clinton**, twelve of them in [Lima](../place/lima.yml) and the
+  thirteenth `AMERICAN D`, in the township wrapped around the city. Four years later
+  [eleven went to Biden](allen-county-presidential-vote-2020.yml): `LIMA 1A` and `LIMA 1C`
+  crossed over and nothing crossed the other way. [verified] — same source.
+
+  The 1,486 votes for Johnson are the largest third-party showing in the three elections this
+  corpus holds — three times Jorgensen's 590 in 2020 on a similar total vote. [verified] — same
+  source. What that means is not recorded here; it is the kind of thing two data points cannot
+  carry.
+properties:
+  parameter: presidential votes cast
+  value: "45815"
+  unit: votes
+  as_of: 2016-11-08
+  method: |
+    Summed by candidate over the county's 88 precincts. The 2016 file carries no registered-voter
+    or ballots-cast column, so no turnout rate is derivable from it. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -1,0 +1,34 @@
+class: measure
+label: Allen County vote for governor, 2018
+description: |
+  Of 35,961 votes for governor, **24,200 for DeWine and 10,825 for Cordray** — 67.3 per cent
+  against 30.1, with 605 for Irvine and 331 for Gadell-Newton. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md), summed over the county's 88 precincts.
+
+  It sits between the two presidential elections in this corpus at 66.5 and 69.0 per cent
+  Republican, which is the useful thing about it: the county's partisan balance barely moved
+  between a presidential year and a midterm, while **the number of people voting fell by a fifth**
+  — 45,815 in 2016 to 35,961 here, and back to 47,993 in 2020. [verified] — same source, and
+  [2016](allen-county-presidential-vote-2016.yml) and
+  [2020](allen-county-presidential-vote-2020.yml).
+
+  Who turns out changes far more here than how they vote. [inference] — from three elections, which
+  is enough to see the pattern and not enough to date it.
+
+  [open] Whether the midterm drop is even across the county or concentrated. The 2018 file has no
+  ballots-cast column, so the drop can only be measured in votes for the top office.
+properties:
+  parameter: votes cast for governor
+  value: "35961"
+  unit: votes
+  as_of: 2018-11-06
+  method: |
+    Summed by candidate over the county's 88 precincts, from a volunteer transcription of the
+    certified returns. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
