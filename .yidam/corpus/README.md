@@ -36,37 +36,37 @@ Sorted by: kind, then alphabetically.
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
-| [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 3v / 0i / 1o | 34 |
-| [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 3v / 0i / 1o | 32 |
-| [auglaize-township.yml](jurisdiction/auglaize-township.yml) | jurisdiction | Auglaize Township (government) | 2 | 3v / 0i / 1o | 34 |
+| [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 6v / 0i / 1o | 46 |
+| [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 6v / 0i / 1o | 46 |
+| [auglaize-township.yml](jurisdiction/auglaize-township.yml) | jurisdiction | Auglaize Township (government) | 2 | 6v / 0i / 1o | 46 |
 | [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 4v / 0i / 0o | 52 |
-| [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 4v / 0i / 1o | 33 |
+| [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 6v / 0i / 1o | 42 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 3v / 0i / 0o | 45 |
 | [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 3v / 0i / 1o | 35 |
 | [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 1v / 1i / 1o | 35 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 2v / 0i / 0o | 30 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 3v / 0i / 0o | 41 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 2v / 0i / 0o | 53 |
-| [jackson-township.yml](jurisdiction/jackson-township.yml) | jurisdiction | Jackson Township (government) | 2 | 2v / 0i / 2o | 31 |
+| [jackson-township.yml](jurisdiction/jackson-township.yml) | jurisdiction | Jackson Township (government) | 2 | 5v / 0i / 2o | 43 |
 | [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 2v / 1i / 0o | 42 |
-| [marion-township.yml](jurisdiction/marion-township.yml) | jurisdiction | Marion Township (government) | 2 | 3v / 0i / 1o | 33 |
-| [monroe-township.yml](jurisdiction/monroe-township.yml) | jurisdiction | Monroe Township (government) | 2 | 3v / 0i / 1o | 35 |
+| [marion-township.yml](jurisdiction/marion-township.yml) | jurisdiction | Marion Township (government) | 2 | 6v / 0i / 1o | 46 |
+| [monroe-township.yml](jurisdiction/monroe-township.yml) | jurisdiction | Monroe Township (government) | 2 | 6v / 0i / 1o | 47 |
 | [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 2v / 0i / 0o | 30 |
 | [perry-local-school-district.yml](jurisdiction/perry-local-school-district.yml) | jurisdiction | Perry Local School District | 4 | 2v / 0i / 0o | 34 |
-| [perry-township.yml](jurisdiction/perry-township.yml) | jurisdiction | Perry Township (government) | 2 | 3v / 0i / 1o | 32 |
-| [richland-township.yml](jurisdiction/richland-township.yml) | jurisdiction | Richland Township (government) | 2 | 3v / 0i / 1o | 34 |
+| [perry-township.yml](jurisdiction/perry-township.yml) | jurisdiction | Perry Township (government) | 2 | 6v / 0i / 1o | 44 |
+| [richland-township.yml](jurisdiction/richland-township.yml) | jurisdiction | Richland Township (government) | 2 | 6v / 0i / 1o | 46 |
 | [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 7 | 3v / 0i / 0o | 52 |
-| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 3v / 1i / 1o | 38 |
-| [spencer-township.yml](jurisdiction/spencer-township.yml) | jurisdiction | Spencer Township (government) | 2 | 4v / 0i / 1o | 34 |
+| [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 6v / 1i / 1o | 52 |
+| [spencer-township.yml](jurisdiction/spencer-township.yml) | jurisdiction | Spencer Township (government) | 3 | 7v / 0i / 1o | 49 |
 | [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
-| [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 3v / 0i / 1o | 35 |
-| [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 2v / 0i / 1o | 30 |
+| [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 6v / 0i / 1o | 47 |
+| [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 4v / 0i / 1o | 37 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
 | [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 3v / 0i / 2o | 32 |
-| [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 2v / 0i / 2o | 29 |
+| [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 4v / 1i / 2o | 37 |
 | [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 2v / 0i / 1o | 25 |
-| [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 3v / 0i / 1o | 30 |
-| [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 2v / 0i / 1o | 27 |
+| [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 4v / 0i / 1o | 35 |
+| [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 4v / 0i / 1o | 37 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
@@ -131,7 +131,7 @@ Sorted by: kind, then alphabetically.
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
 | [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 20 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
-| [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 1v / 1i / 0o | 18 |
+| [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
 | [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
@@ -170,7 +170,7 @@ Sorted by: kind, then alphabetically.
 | [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 5v / 0i / 1o | 42 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 5v / 1i / 0o | 51 |
 | [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 6v / 0i / 1o | 46 |
-| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 7v / 0i / 1o | 56 |
+| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 8v / 0i / 1o | 58 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 6v / 0i / 0o | 52 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
@@ -182,7 +182,7 @@ Sorted by: kind, then alphabetically.
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 4v / 1i / 1o | 58 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
-| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 2v / 1i / 1o | 37 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 4v / 3i / 1o | 52 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 3 | 2v / 1i / 1o | 39 |
