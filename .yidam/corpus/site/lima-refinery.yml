@@ -10,14 +10,25 @@ description: |
   the operator has changed repeatedly, and a corpus that modeled the refinery as a property of
   its owner would have to create a new refinery every time the company changed.
 
+  **It has a Lima address and is not in Lima.** The county's address file records it at
+  1150 S Metcalf Street with `USPS_CITY` "LIMA" and `MUNI` **blank**, at 40.7221100,
+  -84.1134691. [verified] —
+  [Allen County GIS](../../catalog/allen-county-gis-downloads.md). The Census Bureau, asked the
+  same point independently, puts it in [Shawnee Township](../place/shawnee-township.yml) and in
+  no incorporated place. [verified] —
+  [TIGERweb](../../catalog/tigerweb-census2020.md). The `located-in` edge named Lima from
+  genesis until both authorities were asked.
+
   [open] The ownership chain from [Standard Oil](../organization/standard-oil.yml) to the
   present operator is not established here, nor is the construction date, nor the present
   crude throughput. Each is a matter of public record and none has been retrieved.
 properties:
   site_type: refinery
   status: in operation
+  address: 1150 S Metcalf Street, Lima OH 45804 — a postal address, not a municipality.
+  coordinates: "40.7221100, -84.1134691"
 links:
-  - target: ../place/lima.yml
+  - target: ../place/shawnee-township.yml
     relationship: located-in
   - target: ../organization/standard-oil.yml
     relationship: operated-by
