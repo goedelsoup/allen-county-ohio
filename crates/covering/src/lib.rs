@@ -451,7 +451,8 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
 
     // Pass B — the authorities attached directly to each of those places.
     let mut found: BTreeMap<String, Member> = BTreeMap::new();
-    let mut frontier: VecDeque<(String, Vec<String>, Extent, Reach)> = VecDeque::new();
+    let mut weak_partial: BTreeSet<String> = BTreeSet::new();
+    let mut frontier: VecDeque<(String, Vec<String>, Extent, Reach, bool)> = VecDeque::new();
     for (place, via, extent) in &ground {
         let reach = if via.is_empty() {
             Reach::Asserted
@@ -475,15 +476,26 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
                 } else {
                     extent.clone()
                 };
-                if let Some(mut m) = record(g, &mut found, n, reach, via.clone(), ext, year) {
-                    // Seed partiality stops at the member it describes. "This tract covers part
-                    // of this township" limits the tract's coverage of the township and says
-                    // nothing about what contains the tract: part of the township being inside
-                    // the tract still puts that part inside the county the tract sits in, and
-                    // the county's coverage has to be judged on its own paths. A
-                    // `partially-within` edge is the opposite case — it limits the member's own
-                    // extent, so pass C propagates that one.
-                    m.2 = extent.clone();
+                // A seed that covers only part of the place opens a **weak** path: whatever
+                // lies further out contains a member that holds part of this ground, and
+                // nothing follows from that about how much of the ground the outer body holds.
+                // "This tract covers part of this township" says nothing about the county the
+                // tract sits in — the county's coverage has to be judged on its own paths.
+                let weak = splits && !extent.is_partial();
+                if let Some(mut m) = record(
+                    g,
+                    &mut found,
+                    &mut weak_partial,
+                    n,
+                    reach,
+                    via.clone(),
+                    ext,
+                    weak,
+                    year,
+                ) {
+                    if !weak {
+                        m.2 = extent.clone();
+                    }
                     frontier.push_back(m);
                 }
             }
@@ -491,7 +503,7 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
     }
 
     // Pass C — closure over authority nesting, breadth first.
-    while let Some((id, via, extent, from)) = frontier.pop_front() {
+    while let Some((id, via, extent, from, weak)) = frontier.pop_front() {
         // A path is only as strong as its weakest step. Following `territory-within` out of a
         // member that was itself inherited from a containing place does not upgrade the
         // answer to an assertion — Delphos reaches the county government through a
@@ -503,7 +515,10 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
                 if n.class != "jurisdiction" && n.class != "division" {
                     continue;
                 }
-                let ext = if splits {
+                // A split declared on a weak path is a fact about the member's own
+                // territory, not about the queried ground: this district reaching outside the
+                // county limits nothing when the district only ever held part of the place.
+                let ext = if splits && !weak {
                     Extent::Partial {
                         via: format!("{id} {rel}"),
                     }
@@ -512,7 +527,17 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
                 };
                 let mut v = via.clone();
                 v.push(id.clone());
-                if let Some(m) = record(g, &mut found, n, reach, v, ext, year) {
+                if let Some(m) = record(
+                    g,
+                    &mut found,
+                    &mut weak_partial,
+                    n,
+                    reach,
+                    v,
+                    ext,
+                    weak,
+                    year,
+                ) {
                     frontier.push_back(m);
                 }
             }
@@ -542,26 +567,37 @@ pub fn covering(g: &Graph, start: &str, year: Option<i32>) -> Result<Covering, C
 /// - **The strongest reach wins.** A node found both by nesting and by inheriting from a
 ///   containing place is reported as nested, because that path is a chain of edges the corpus
 ///   states rather than an inference about containment.
-/// - **Partial wins over whole.** If any path says the ground is split, the member is partial.
-///   A `partially-within` edge is an explicit claim that part of the territory lies outside; a
+/// - **Partial wins over whole, on a path that could have shown wholeness.** A
+///   `partially-within` edge is an explicit claim that part of the territory lies outside; a
 ///   whole path is a chain of edges each of which is *silent* about splitting rather than
 ///   asserting completeness. Reading silence as a refutation of a stated claim has it
 ///   backwards. Bluffton is the worked case: the village jurisdiction says `partially-within`
 ///   the county because it crosses into Hancock, while the school district serving the same
 ///   village says a flat `territory-within`. The county covers Bluffton partially.
+/// - **A weak path can never refute a whole one.** A path that reaches a member through a body
+///   holding only *part* of the queried ground carries no information about how much of that
+///   ground anything further out holds. Lima is the worked case: four school districts each
+///   `partially-covers` the city, and one of them is `partially-within` the county because it
+///   reaches into Auglaize. That split is a fact about the district's territory. Lima is
+///   wholly inside Allen County and the answer must keep saying so.
 ///
-///   That rule is a decision about what these edges mean, not a fact about the ground. If it
-///   is ever wrong, the fix is a qualified edge in the corpus, not a special case here.
+///   The distinction was invisible while edges were untagged, when reading any non-partial
+///   relationship as an assertion of completeness would have been generous. It is not generous
+///   now: `within` and `partially-within` are a contrasting pair this corpus uses deliberately,
+///   and [`provenance`](../../provenance/) requires every one of them to carry a claim tag and,
+///   where verified, a source.
 #[allow(clippy::too_many_arguments)]
 fn record(
     g: &Graph,
     found: &mut BTreeMap<String, Member>,
+    weak_partial: &mut BTreeSet<String>,
     n: &Node,
     reach: Reach,
     via: Vec<String>,
     extent: Extent,
+    weak: bool,
     year: Option<i32>,
-) -> Option<(String, Vec<String>, Extent, Reach)> {
+) -> Option<(String, Vec<String>, Extent, Reach, bool)> {
     // A member whose own dates exclude the year is recorded as excluded and not continued
     // through: authority cannot be inherited through a body that did not exist.
     let w = node_warrant(g, &n.id, year);
@@ -585,29 +621,38 @@ fn record(
 
     match found.get_mut(&n.id) {
         None => {
+            if weak && extent.is_partial() {
+                weak_partial.insert(n.id.clone());
+            }
             found.insert(n.id.clone(), candidate);
         }
         Some(existing) => {
             let stronger = reach < existing.reach
                 || (reach == existing.reach && via.len() < existing.via.len());
-            let newly_partial = extent.is_partial() && !existing.extent.is_partial();
-            if newly_partial {
+            let newly_partial = extent.is_partial() && !existing.extent.is_partial() && !weak;
+            // A strong whole path replaces a split that only a weak path had claimed. Nothing
+            // else can restore wholeness: a split established on a path that could have shown
+            // wholeness stands.
+            let newly_whole = !extent.is_partial() && !weak && weak_partial.contains(&n.id);
+            if newly_partial || newly_whole {
                 existing.extent = extent.clone();
+                weak_partial.remove(&n.id);
             }
             if stronger {
                 existing.reach = reach;
                 existing.via = via.clone();
             }
-            // Re-walk only when this member has just become partial. Partiality is sticky and
-            // has to reach everything downstream of the edge that declared it, and a node can
-            // cross from whole to partial at most once, so the closure still terminates. Any
-            // other repeat visit would find exactly what the first one found.
+            // Re-walk only when this member's extent has just changed, so the change reaches
+            // everything downstream of it. A member can be split at most once and restored at
+            // most once, so the closure still terminates. Any other repeat visit would find
+            // exactly what the first one found.
             let admitted = existing.warrant.admits();
-            return (newly_partial && admitted).then(|| (n.id.clone(), via, extent, reach));
+            return ((newly_partial || newly_whole) && admitted)
+                .then(|| (n.id.clone(), via, extent, reach, weak));
         }
     }
 
-    admits.then(|| (n.id.clone(), via, extent, reach))
+    admits.then(|| (n.id.clone(), via, extent, reach, weak))
 }
 
 /// The date pair a node carries, read per class, and the warrant it yields for `year`.
@@ -964,6 +1009,37 @@ mod tests {
             c.member("jurisdiction/county-gov.yml").unwrap().extent,
             Extent::Whole,
             "the county covers this ground whole; the tract's partial reach is not its own"
+        );
+    }
+
+    #[test]
+    fn a_partial_coverer_reaching_outside_the_county_does_not_split_the_county() {
+        // Lima in miniature, and the case that changed this rule. Shawnee Local School District
+        // covers part of the city and is `partially-within` the county because four of its
+        // blocks are in Auglaize. Both edges are right. Neither says anything about Lima, which
+        // is wholly inside Allen County — and an answer that reported the county as covering
+        // the city partially would be reading a fact about the district's territory as a fact
+        // about the city's.
+        let mut g = fixture();
+        g.insert(node(
+            "jurisdiction/school-district.yml",
+            "jurisdiction",
+            &[("jurisdiction_type", "school district")],
+            &[
+                ("partially-covers", "place/city.yml"),
+                ("partially-within", "jurisdiction/county-gov.yml"),
+            ],
+        ));
+        let c = covering(&g, "place/city.yml", None).unwrap();
+        assert!(c
+            .member("jurisdiction/school-district.yml")
+            .unwrap()
+            .extent
+            .is_partial());
+        assert_eq!(
+            c.member("jurisdiction/county-gov.yml").unwrap().extent,
+            Extent::Whole,
+            "the district's reach outside the county limits the district, not the city"
         );
     }
 

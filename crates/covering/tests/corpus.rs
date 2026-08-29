@@ -30,11 +30,16 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
     assert_eq!(
         undated,
         vec![
+            "jurisdiction/bath-local-school-district.yml",
             "jurisdiction/city-of-lima.yml",
-            "jurisdiction/lima-city-school-district.yml"
+            "jurisdiction/elida-local-school-district.yml",
+            "jurisdiction/lima-city-school-district.yml",
+            "jurisdiction/perry-local-school-district.yml",
+            "jurisdiction/shawnee-local-school-district.yml"
         ],
-        "the corpus does not record when either was created, and the answer must say so \
-         rather than implying they were there in 1900"
+        "the corpus dates none of these, and the answer must say so rather than implying six \
+         bodies were governing Lima in 1900 — five of them school districts whose boundaries \
+         are known only in the 2020 geography"
     );
 
     // Every 2020 district is set aside rather than dropped: the query considered it.
@@ -86,11 +91,44 @@ fn a_place_that_crosses_the_county_line_is_covered_only_partially() {
 }
 
 #[test]
-fn a_place_wholly_inside_the_county_is_covered_wholly() {
-    // The contrast the previous test needs: partiality comes from an edge that says so, not
-    // from being anywhere near a boundary.
+fn partiality_comes_from_an_edge_that_says_so_and_never_from_proximity() {
+    // The contrast the previous test needs. Lima does not cross the county line, so the county
+    // government covers it whole — being cut into five school districts does not make that
+    // partial, and neither does being wrapped in townships. The only partial members are the
+    // ones whose own edge says `partially-covers`.
     let c = covering(&graph(), "place/lima.yml", None).unwrap();
-    assert!(c.all().all(|m| m.extent == Extent::Whole));
+    for id in [
+        "jurisdiction/allen-county-government.yml",
+        "jurisdiction/city-of-lima.yml",
+    ] {
+        assert_eq!(
+            c.member(id)
+                .unwrap_or_else(|| panic!("{id} covers Lima"))
+                .extent,
+            Extent::Whole,
+            "{id}"
+        );
+    }
+    // The three 2020 districts reach Lima through the county, which contains it wholly, so the
+    // inheritance must not manufacture a split either.
+    for m in c.all().filter(|m| m.class == "division") {
+        assert_eq!(m.extent, Extent::Whole, "{}", m.node);
+    }
+    for id in [
+        "jurisdiction/lima-city-school-district.yml",
+        "jurisdiction/elida-local-school-district.yml",
+        "jurisdiction/bath-local-school-district.yml",
+        "jurisdiction/shawnee-local-school-district.yml",
+        "jurisdiction/perry-local-school-district.yml",
+    ] {
+        let m = c
+            .member(id)
+            .unwrap_or_else(|| panic!("{id} covers part of Lima"));
+        assert!(
+            matches!(m.extent, Extent::Partial { .. }),
+            "{id}: the edge says partially-covers and the answer must not round it up"
+        );
+    }
 }
 
 #[test]
