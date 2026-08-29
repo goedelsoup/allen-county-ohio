@@ -1,0 +1,60 @@
+id: an-open-question-that-named-its-own-method
+summary: >-
+  The corpus's oldest open question — whether any of Allen County drains to the Ohio River rather
+  than Lake Erie — was settled in one query, against the corpus, thirty-odd phases after it was
+  asked. It stayed open that long partly because it named the tool it thought it needed, and that
+  tool was the wrong one and hard to build.
+context: |
+  [`maumee-river-basin`](../corpus/natural-feature/maumee-river-basin.yml) was written at genesis
+  and has carried this ever since:
+
+    [open] The Hydrologic Unit Code for the basin has not been recorded, and neither has the
+    question of whether any part of Allen County drains instead to the Ohio River. Western Ohio
+    carries the divide between the two, and the corpus asserts the Lake Erie side for this county
+    without having checked the southern townships. **The National Hydrography Dataset connector is
+    the proposed way to settle both.**
+
+  `crates/nhd` was scaffolded as a stub against exactly that sentence, with a retrieval interface
+  for flowlines and `comid` topology, and a caution that NHD is large. It was never written,
+  because writing it is a real piece of work.
+decision: |
+  **Both parts are answered, and neither needed the NHD.**
+
+  Four census blocks of [Auglaize Township](../corpus/place/auglaize-township.yml) — 99 people, 43
+  housing units — are in the Upper Scioto subbasin of the **Ohio Region**. The rest of the county
+  drains to Lake Erie. The corpus's genesis assertion was wrong for 0.1 per cent of its ground,
+  which is the smallest possible way to be wrong about an ocean.
+
+  The HUC question is answered by recording that this node has no HUC. The Maumee's drainage is
+  seven subbasins with no shared parent below `041000` Western Lake Erie, which also contains six
+  subbasins that are not Maumee at all.
+
+  **What settled it was the Watershed Boundary Dataset**, a keyless REST service queried in the
+  same shape as TIGERweb, plus the block-composition method this corpus has used since its sixth
+  phase. Total cost: a catalog entry and about forty queries.
+rationale: |
+  **An open question that names its own method can be held shut by the name.** The genesis node
+  did the right thing in stating how it thought the question would be settled — that is what an
+  `[open]` is for. But the named method became the question's blocker rather than its route. NHD
+  is the flow network: `comid`, downstream `comid`, confluences. The question asked which *basin*
+  a piece of ground is in, and basins are the WBD, a different dataset in the same programme.
+  Every phase that read this node read "the NHD connector is the proposed way", saw a stub crate
+  and a warning that NHD is large, and moved on.
+
+  The correction is not to stop naming methods. It is to read the naming as a hypothesis with a
+  claim tag it does not carry — *this is how we think it would be settled* — rather than as a
+  precondition. A question that has been open across thirty phases is worth re-deriving from what
+  it actually asks.
+
+  **The trap the method carried, for the third time.** Intersecting the county with the subbasin
+  layer returns four subbasins; classifying the county's blocks returns three. St. Marys touches
+  and does not overlap. That is the same `esriSpatialRelIntersects` over-count this corpus first
+  met against county subdivisions and then against CDPs, and it is now recorded in a third catalog
+  entry. Three encounters is enough to call it a property of the tool rather than an accident.
+
+  **The near-miss worth recording.** `huc_code: "0410"` was written onto the Maumee basin node and
+  removed before it was committed. `0410` is Western Lake Erie: four times the Maumee's drainage,
+  containing the Sandusky and the Huron. It would have passed every gate in this repository — the
+  property is a free-text string, the value is a real HUC, and no check knows which basin the node
+  means. The thing that caught it was listing the thirteen subbasins under `041000` to see what
+  the code actually covered, which was one extra query and no rule at all.
