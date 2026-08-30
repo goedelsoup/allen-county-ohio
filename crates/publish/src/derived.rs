@@ -410,22 +410,67 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
-        id: "you-can-buy-in-lima-not-borrow-against-it",
-        statement: "A mortgage to buy a house in Lima is denied at the rate it is denied anywhere \
-                    in Allen County. A loan against a house already owned there is not.",
+        id: "borrowing-against-a-house-in-lima",
+        statement: "Across 2018–2024, mortgages to buy a house in Lima's census tracts were denied \
+                    at 13.3 per cent against 10.8 elsewhere in the county. Loans against a house \
+                    already owned there were denied at 37.7 per cent against 21.5.",
+        topic: "housing",
+        // This replaces an assertion withdrawn on 30 August 2026. It read "a mortgage to buy a
+        // house in Lima is denied at the rate it is denied anywhere in Allen County", which was
+        // read off 2023 — the one year of seven in which Lima's purchase rate is the lower one.
+        // See `.yidam/decisions/a-rule-is-not-a-habit.yml`.
+        supports: &[
+            support!(
+                "measure/allen-county-home-lending-2018-2024.yml",
+                "Over 2018–2024 the purchase denial rate in Lima's tracts is 13.3 per cent against 10.8 elsewhere — 363 denials of 2,737 against 645 of 5,996 — and Lima's rate is the higher one in six of the seven years."
+            ),
+            support!(
+                "measure/allen-county-home-lending-2018-2024.yml",
+                "On everything but purchase, Lima's rate is 37.7 per cent against 21.5 — 1,104 denials of 2,926 against 2,000 of 9,289."
+            ),
+        ],
+        answers: &["does not establish why either gap is there"],
+        figures: &[
+            Figure { label: "To buy, in Lima", value: 13.3, literal: "13.3" },
+            Figure { label: "To buy, elsewhere", value: 10.8, literal: "10.8" },
+            Figure { label: "Every other purpose, in Lima", value: 37.7, literal: "37.7" },
+            Figure { label: "Every other purpose, elsewhere", value: 21.5, literal: "21.5" },
+        ],
+    },
+    Assertion {
+        id: "the-denial-gap-is-seven-years-old",
+        statement: "Across 2018–2024, mortgage applications from Black applicants in Allen County \
+                    were denied at 32.4 per cent and from white applicants at 17.8, and the gap \
+                    appears in all seven years.",
         topic: "housing",
         supports: &[
             support!(
-                "measure/allen-county-home-lending-2023.yml",
-                "The purchase denial rate inside the city's tracts is 13.9 per cent against 14.4 outside — the same figure. Every other purpose diverges, and taken together they are 42.9 against 27.6."
+                "measure/allen-county-lending-denial-gap-2018-2024.yml",
+                "**It is a pattern and not a year.** Pooled over the seven, 32.4 per cent of applications from Black applicants were denied against 17.8 per cent from white applicants, and the yearly gap runs between 5.9 and 17.0 percentage points without once reversing."
             ),
         ],
-        answers: &["does not establish that those applicants were treated differently"],
+        answers: &["does not establish that any applicant was treated differently"],
         figures: &[
-            Figure { label: "To buy, in Lima", value: 13.9, literal: "13.9" },
-            Figure { label: "To buy, elsewhere", value: 14.4, literal: "14.4" },
-            Figure { label: "Every other purpose, in Lima", value: 42.9, literal: "42.9" },
-            Figure { label: "Every other purpose, elsewhere", value: 27.6, literal: "27.6" },
+            Figure { label: "Black applicants", value: 32.4, literal: "32.4" },
+            Figure { label: "White applicants", value: 17.8, literal: "17.8" },
+        ],
+    },
+    Assertion {
+        id: "the-lending-gap-is-not-composition",
+        statement: "Sorted into cells of loan purpose, income, debt-to-income and loan-to-value, \
+                    955 applications from Black applicants in Allen County drew 223 denials where \
+                    132.5 were expected at the white rate in the same cells.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-lending-denial-gap-2018-2024.yml",
+                "Those 955 drew **223 denials against 132.5 expected at the white rate in the same cells**, a ratio of 1.68 and 9.3 standard deviations from the null."
+            ),
+        ],
+        answers: &["does not establish that any applicant was treated differently"],
+        figures: &[
+            Figure { label: "Denials observed", value: 223.0, literal: "223" },
+            Figure { label: "Expected at white rates", value: 132.5, literal: "132.5" },
         ],
     },
     Assertion {
