@@ -205,16 +205,17 @@ pub const ASSERTIONS: &[Assertion] = &[
         // than a figure it was given, which is why it cites the node that carries the method.
         supports: &[
             support!(
-                "measure/allen-county-outside-lima-1940-2020.yml",
+                "measure/allen-county-outside-lima-1930-2020.yml",
                 "**So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the county as a whole in 1980, and the county outside Lima in 2000."
             ),
             support!(
-                "measure/allen-county-outside-lima-1940-2020.yml",
-                "**the county outside Lima held 28,592 people in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
+                "measure/allen-county-outside-lima-1930-2020.yml",
+                "**the county outside Lima held 27,132 people in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
             ),
         ],
         answers: &[],
         figures: &[
+            Figure { label: "1930", value: 27_132.0, literal: "27,132" },
             Figure { label: "1940", value: 28_592.0, literal: "28,592" },
             Figure { label: "1950", value: 37_937.0, literal: "37,937" },
             Figure { label: "1960", value: 52_654.0, literal: "52,654" },

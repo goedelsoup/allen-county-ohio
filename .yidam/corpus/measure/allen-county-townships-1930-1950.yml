@@ -1,0 +1,76 @@
+class: measure
+label: Allen County townships, 1930–1950
+description: |
+  Every one of the county's twelve townships at three censuses, and the villages inside them.
+  [verified] —
+  [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md),
+  Table 6, *Population of counties by minor civil divisions: 1930 to 1950*.
+
+                          1950     1940     1930        village                1950    1940    1930
+      Amanda               980      975    1,008
+      American          25,151    2,957    2,560        Elida                   607     551     542
+      Auglaize           1,912    1,719    1,675        Harrod                  482     422     421
+      Bath              22,919    3,438    2,875
+      Jackson            1,731    1,603    1,537        Lafayette               444     411     382
+      Marion             5,382    4,924    4,959        Delphos (part)        3,418   3,086   3,055
+      Monroe             1,699    1,622    1,591        Cairo                   505     440     374
+      Perry             14,207    1,944    1,515
+      Richland           4,179    3,765    3,914        Beaverdam               450     377     360
+      Shawnee            6,408    2,336    2,070        Bluffton              2,423   2,077   2,035
+      Spencer            2,625    2,340    2,405        Spencerville          1,826   1,623   1,612
+      Sugar Creek          990      969    1,023
+                        ------   ------   ------
+                        88,183   28,592   27,132
+
+  Written out, because a table is not prose: in 1930 **Marion Township was the county's largest
+  outside Lima, with 4,959 people, and Perry its smallest at 1,515**; by 1950 Perry held 14,207 and
+  American 25,151, because the city had crossed into both. [verified] — same source.
+
+  **This is the first sub-county measurement this corpus holds from before 2020**, and the first
+  time it can say what any township's population was at any date.
+
+  **Every figure sits inside an arithmetic closure.** The twelve 1950 counts sum to 88,183, which is
+  the county total, and Lima's four parts inside them — 19,270 in American, 17,469 in Bath, 10,895
+  in Perry, 2,612 in Shawnee — sum to 50,246, which is Lima's own. The 1940 and 1930 columns exclude
+  Lima, as the table's head warns they may, and they miss the county by exactly Lima: 28,592 + 44,711
+  = 73,303, and 27,132 + 42,287 = 69,419. [verified] — computed here from the printed figures. Three
+  closures, no residual, and every number in the block participates in one.
+
+  **The 1940 column is a figure this corpus had already computed and published as an inference.**
+  A phase ago it derived "the county outside Lima in 1940" as 73,303 − 44,711 = 28,592. The twelve
+  townships sum to 28,592. [verified] — same source. A derived figure and a measured one meeting to
+  the person is the best evidence this corpus has yet had that its subtraction is doing what it
+  says.
+
+  **So the county outside Lima now begins in 1930, at 27,132**, and rose to 28,592 by 1940 and
+  37,937 by 1950. [inference] — see
+  [the balance series](allen-county-outside-lima-1930-2020.yml).
+
+  **The city is what moved, and the townships mostly did not.** Between 1930 and 1940 seven of the
+  twelve gained and five lost, and the whole balance moved by 1,460 people on a base of 27,132 —
+  five per cent across a decade. [inference] — computed above. Lima gained 2,424 in the same decade.
+  Whatever was happening to this county in the 1930s was happening in one municipality.
+
+  [open] 1960 township counts, which are printed in the 1960 volume's Table 7 and cannot be read
+  from the scan the corpus holds — see
+  [legibility is a property of the table](../../decisions/legibility-is-a-property-of-the-table.yml).
+  Nothing before 1930 at this grain.
+properties:
+  parameter: total resident population by minor civil division, decennial
+  value: "27132"
+  unit: persons
+  as_of: "1930"
+  method: |
+    Read from rendered images of a 300-dpi scan; the volume's own OCR text layer was used as a
+    second reader and its column association across a three-up table was not trusted. Checked
+    against three arithmetic closures the table itself supplies. The 1940 and 1930 columns are
+    on 1950 boundaries where the source could put them there and exclude Lima entirely; the
+    `value` above is the twelve-township sum for 1930, which is the county less the city.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1950-number-of-inhabitants-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
