@@ -16,7 +16,7 @@ location:
       series; the Geographic Change Notes are in the front matter under "User Note 1".
 used-by:
   - ../corpus/jurisdiction/city-of-lima.yml
-  - ../corpus/measure/allen-county-outside-lima-1930-2020.yml
+  - ../corpus/measure/allen-county-outside-lima-1890-2020.yml
   - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1970-1990.yml

@@ -73,7 +73,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
-| [allen-county-outside-lima-1930-2020.yml](measure/allen-county-outside-lima-1930-2020.yml) | measure | Allen County outside Lima, 1930–2020 | 2 | 3v / 7i / 1o | 86 |
+| [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1930–2020 | 2 | 3v / 7i / 1o | 86 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 5v / 2i / 1o | 60 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
