@@ -1,0 +1,42 @@
+class: measure
+label: Allen County hospital beds, 2011–2023
+description: |
+  Beds reported by each of the county's five hospitals, every fiscal year from 2011 to 2023.
+  [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md).
+
+      FY    St Rita's  Lima Mem'l  Institute  Bluffton  Kindred   total
+      2011        322         195         12        25       26     580
+      2015        289         155         12        25       26     507
+      2019        311          95         12        25       26     469
+      2023        329         110         12        25       26     502
+
+  **The county's bed count fell 13 per cent and one hospital's fell 44.**
+  [Lima Memorial](../organization/lima-memorial-health-system.yml) went from 195 beds to 110, with a
+  low of 95 in 2019, while [St. Rita's](../organization/mercy-health-st-ritas-medical-center.yml)
+  ended seven beds higher than it began. The three small hospitals never moved: twelve, twenty-five
+  and twenty-six in all thirteen years. [verified]
+
+  **Beds and staff moved in opposite directions at the same hospital.** Lima Memorial lost 44 per
+  cent of its beds and gained 28 per cent of its
+  [full-time equivalents](allen-county-hospital-employment-2011-2023.yml) across the same thirteen
+  years. [verified] — same source.
+
+  That is the shape of hospital work moving out of the inpatient ward, and this corpus has measured
+  the shape and not the cause. Nothing here distinguishes a hospital treating more people in fewer
+  days from one treating fewer people. [open]
+properties:
+  parameter: Number of Beds
+  value: "502"
+  unit: beds, all five hospitals
+  as_of: "2023"
+  method: |
+    `Number of Beds` for CCNs 360009, 360066, 360263, 361322 and 362020. The total takes one row per
+    hospital per year, which in FY2014 means Kindred's first row only — it filed twice that year
+    across a change of fiscal year. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

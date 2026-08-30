@@ -1,0 +1,52 @@
+class: organization
+label: Kindred Hospital Lima
+description: |
+  A twenty-six-bed long-term acute care hospital enrolled at 730 West Market Street in
+  [Lima](../place/lima.yml) — the address of
+  [Mercy Health–St. Rita's](mercy-health-st-ritas-medical-center.yml). [verified] —
+  [CMS provider enrollment](../../catalog/cms-provider-enrollment.md), CCN 362020. A long-term acute
+  care hospital operating inside a host hospital is an ordinary arrangement; this node records the
+  shared address and makes no claim about the arrangement. [inference]
+
+  **It is the hospital that the roster of hospitals does not have.** Care Compare's Hospital General
+  Information file lists 193 Ohio hospitals in six types and has no long-term care category, so this
+  one is absent from it — no CCN 362020 anywhere in the file, and the only row at this address is
+  St. Rita's. [verified] —
+  [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md). Allen
+  County has four hospitals or five depending on which federal file is asked, and neither file is
+  wrong about the thing it counts.
+
+  **Its owners run thirteen deep and all of them are in Louisville, Kentucky.** One direct owner,
+  SCCI Health Services LLC, holding 100 per cent from 13 July 1998; twelve indirect ones, the three
+  most recent attached on 23 December 2021 and named for Knight rather than Kindred. [verified] —
+  [CMS provider enrollment](../../catalog/cms-provider-enrollment.md).
+
+  This corpus does not name a single body as the owner, because the file does not: twelve of the
+  thirteen are indirect holders at 100 per cent, which is a corporate structure and not an answer to
+  who owns it. [open]
+
+  **The body is not the name.** It enrolls as **SCCI Hospitals of America LLC**, with no
+  incorporation date stated — the only one of the county's five whose enrollment record leaves that
+  field empty. [verified] — same source.
+
+  **It is the only Allen County hospital that does not file on the calendar year.** It filed
+  1 January to 31 December through FY2013 and 1 September to 31 August ever since, which puts two of
+  its rows in the FY2014 file — a stub from 1 January to 31 August 2014 and a full year from
+  1 September. [verified] —
+  [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md). Its 64 to 94 full-time
+  equivalents are therefore held outside every county total this corpus computes, and stated
+  separately. See [the series](../measure/allen-county-hospital-employment-2011-2023.yml).
+
+  79.2 full-time equivalents in 2011 and 64.1 in the year beginning September 2023, on twenty-six
+  beds throughout. [verified] — same source.
+properties:
+  org_type: company
+  industry: hospitals
+  also_known_as: SCCI Hospitals of America LLC
+links:
+  - target: ../place/lima.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../organization.ont.yml
+    relationship: instance-of

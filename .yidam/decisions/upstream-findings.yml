@@ -89,7 +89,7 @@ decision: |
   *descriptions* sprawling. The budget and the thing it now measures have come apart: a corpus
   that documents where its edges come from pays for it out of its prose allowance.
 
-  Raised locally in `division.ont.yml`, `measure.ont.yml` and now `tenure.ont.yml` with the
+  Raised locally in `division.ont.yml`, `measure.ont.yml` (twice) and `tenure.ont.yml` with the
   argument in a comment. Upstream the fix is to count the `description` block rather than the file,
   which is what the check is named for.
 
@@ -99,6 +99,21 @@ decision: |
   whole job is to say who held what, when, how it began and how it ended. Raising the number to 35
   brought eleven pre-existing findings under the limit as a side effect, which is a sign the limit
   was measuring the wrong thing rather than that the nodes were long.
+
+  The second `measure` raise, 42 to 60, is the same ratio problem in a second dimension. `describes`
+  takes four target classes, so a measure about the county's five hospitals carries six such edges —
+  twenty-six lines — where a measure about one place carries eight. The fixed cost scales with how
+  many subjects a node names, and a budget written against prose sprawl charges the node for naming
+  them. Counting the `description` block would fix all four cases at once.
+
+  **And that raise exposed the sharper version of this finding.** At 42, eleven of the forty
+  measures were already over — two of them at 103 and 113 lines — and every one of those had been
+  sitting in the lint baseline unremarked for the life of the corpus. So the declared limit was not
+  a budget being enforced against; it was a number the class had drifted away from, and three nodes
+  were compressed this phase against a constraint that a quarter of their class ignores. 60 still
+  leaves eight over. A check whose baseline permanently carries a quarter of a class is measuring
+  something nobody is willing to act on, and the value of raising the number is only that the
+  declared figure stops being fiction.
 
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.

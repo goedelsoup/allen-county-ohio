@@ -174,7 +174,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 290, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 298, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,
@@ -216,6 +216,28 @@ fn every_elected_county_office_ohio_creates_has_a_node() {
             "no node for {office} — Ohio creates this office in every county"
         );
     }
+}
+
+#[test]
+fn the_county_still_has_five_hospitals() {
+    // A count, for the reason `a-deep-instance-can-hide-an-empty-class` gives: reading harder
+    // does not catch a set that has changed size, and this set is small enough to be checked.
+    //
+    // Five is a choice and the corpus argues for it. CMS's Care Compare roster says four — it has
+    // no long-term care category, so Kindred Hospital Lima is absent from all 193 of its Ohio
+    // rows — and the cost reports say five. Neither file is wrong about what it counts. The corpus
+    // takes the wider set because a hospital that files a cost report and employs sixty-four
+    // people is a hospital in this county whether or not it is in a quality programme.
+    //
+    // If this ever fails, the question is not "update the pin". It is which file changed and
+    // whether a hospital opened, closed, or merely moved between federal categories.
+    let hospitals: Vec<String> = nodes()
+        .into_iter()
+        .filter(|n| n.class == "organization")
+        .filter(|n| n.property("industry").is_some_and(|i| i == "hospitals"))
+        .map(|n| n.id)
+        .collect();
+    assert_eq!(hospitals.len(), 5, "hospital count moved: {hospitals:?}");
 }
 
 #[test]

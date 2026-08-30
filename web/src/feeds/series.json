@@ -62,6 +62,46 @@
       ]
     },
     {
+      "id": "place-allen-county::FTE---Employees-on-Payroll",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "FTE - Employees on Payroll",
+      "unit": "full-time equivalents, four calendar-year-filing hospitals",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-hospital-employment-2011-2023.yml",
+          "label": "Allen County hospital employment, 2011–2023",
+          "as_of": "2023",
+          "value": 2913.0,
+          "published": "2913.00",
+          "tier": "verified",
+          "source": "catalog/cms-hospital-cost-reports.md",
+          "method": "CCNs 360009, 360066, 360263, 361322 and 362020 across the thirteen annual files — 66 rows. County totals sum the four calendar-year filers; [Kindred](../organization/kindred-hospital-lima.yml) left the calendar year after FY2013, so FY2014 holds two of its rows. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::Number-of-Beds",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Number of Beds",
+      "unit": "beds, all five hospitals",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-hospital-beds-2011-2023.yml",
+          "label": "Allen County hospital beds, 2011–2023",
+          "as_of": "2023",
+          "value": 502.0,
+          "published": "502",
+          "tier": "verified",
+          "source": "catalog/cms-hospital-cost-reports.md",
+          "method": "`Number of Beds` for CCNs 360009, 360066, 360263, 361322 and 362020. The total takes one row per hospital per year, which in FY2014 means Kindred's first row only — it filed twice that year across a change of fiscal year. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::county-population-less-the-city-of-Lima,-decennial",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -218,6 +258,26 @@
           "tier": "verified",
           "source": "catalog/census-popest-2024.md",
           "method": "Domestic plus international net migration, summed over the four full estimate years 2021–2024. The partial year 2020 is excluded as not comparable. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::paid-employees-for-pay-period-including-March-12,-NAICS-62-and-its-four-subsectors",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "paid employees for pay period including March 12, NAICS 62 and its four subsectors",
+      "unit": "employees",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-health-care-employment-2010-2022.yml",
+          "label": "Allen County health care employment by subsector, 2010–2022",
+          "as_of": "2022",
+          "value": 9151.0,
+          "published": "9151",
+          "tier": "verified",
+          "source": "catalog/census-county-business-patterns.md",
+          "method": "County files, fipstate 39 fipscty 003. The four subsectors sum to the sector total exactly in all thirteen years, so no line is suppressed. [verified]"
         }
       ]
     },
@@ -1235,6 +1295,119 @@
           "literal": "8,715"
         }
       ]
+    },
+    {
+      "id": "health-care-fell-too",
+      "statement": "Health care passed manufacturing to become Allen County's largest private employer sector, and then it fell too — from 12,431 in 2013 to 9,151 in 2022. Hospitals are 1,866 of the 2,593 jobs the sector has lost since 2010.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-employment-by-sector-1986-2022.yml",
+          "node_label": "Allen County employment by sector, 1986 and 2022",
+          "span": "Sector 62 peaked at **12,431 in 2013**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-employment-by-sector-1986-2022.yml",
+          "node_label": "Allen County employment by sector, 1986 and 2022",
+          "span": "Of the 2,593 lost since 2010, hospitals are 1,866, nursing and residential care 549, social assistance 170, and ambulatory care 8.",
+          "tier": "verified",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-health-care-employment-2010-2022.yml",
+          "node_label": "Allen County health care employment by subsector, 2010–2022",
+          "span": "**The sector peaked at 12,431 in 2013, in a year nobody had looked at**, and hospitals are where the fall since went",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "This does not establish why any of it fell."
+      ],
+      "figures": [
+        {
+          "label": "Hospitals",
+          "value": 1866.0,
+          "literal": "1,866"
+        },
+        {
+          "label": "Nursing and residential care",
+          "value": 549.0,
+          "literal": "549"
+        },
+        {
+          "label": "Social assistance",
+          "value": 170.0,
+          "literal": "170"
+        },
+        {
+          "label": "Ambulatory care",
+          "value": 8.0,
+          "literal": "8"
+        }
+      ]
+    },
+    {
+      "id": "five-hospitals-one-locally-owned",
+      "statement": "Allen County has five Medicare-certified hospitals. One of them has no corporate owner at all. The other four answer to Cincinnati, Findlay and Louisville.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "organization/lima-memorial-health-system.yml",
+          "node_label": "Lima Memorial Health System",
+          "span": "The federal owners file lists no organizational owner for it at all",
+          "tier": "verified",
+          "sources": [
+            "catalog/cms-provider-enrollment.md"
+          ]
+        },
+        {
+          "node": "organization/mercy-health-st-ritas-medical-center.yml",
+          "node_label": "Mercy Health–St. Rita's Medical Center",
+          "span": "Bon Secours Mercy Health Inc holds 100 per cent of it, recorded from 1 January 2020",
+          "tier": "verified",
+          "sources": [
+            "catalog/cms-provider-enrollment.md"
+          ]
+        },
+        {
+          "node": "organization/bluffton-hospital.yml",
+          "node_label": "Bluffton Hospital",
+          "span": "Blanchard Valley Health System of Findlay, in Hancock County, holds 100 per cent of it",
+          "tier": "verified",
+          "sources": [
+            "catalog/cms-provider-enrollment.md"
+          ]
+        },
+        {
+          "node": "organization/kindred-hospital-lima.yml",
+          "node_label": "Kindred Hospital Lima",
+          "span": "**Its owners run thirteen deep and all of them are in Louisville, Kentucky.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/cms-provider-enrollment.md"
+          ]
+        },
+        {
+          "node": "organization/institute-for-orthopaedic-surgery.yml",
+          "node_label": "Institute for Orthopaedic Surgery",
+          "span": "Mercy Health–St. Rita's holds 51 per cent of it directly, from 1 April 2004",
+          "tier": "verified",
+          "sources": [
+            "catalog/cms-provider-enrollment.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know.",
+        "Whether a quarter of this hospital's workforce left the county or moved to another employer inside the same system, the corpus cannot say.",
+        "This corpus does not establish that the pandemic caused that year."
+      ],
+      "figures": []
     },
     {
       "id": "decline-is-migration-and-deaths",
