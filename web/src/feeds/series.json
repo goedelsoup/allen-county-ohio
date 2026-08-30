@@ -82,6 +82,46 @@
       ]
     },
     {
+      "id": "place-allen-county::domestic-animals-on-and-off-farms,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "domestic animals on and off farms, Allen County",
+      "unit": "horses",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-domestic-animals-1910.yml",
+          "label": "Allen County domestic animals, on farms and off, 1910",
+          "as_of": "1910-04-15",
+          "value": 14676.0,
+          "published": "14676",
+          "tier": "verified",
+          "source": "catalog/census-1910-abstract-supplement-ohio.md",
+          "method": "Thirteenth Census of Agriculture, enumerated April 15, 1910. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: on the farms the seven animal values sum to the printed $2,501,226 exactly, and cattle, horses, mules, swine and sheep each sum from their own age and sex classes; off the farms the five values sum to $350,736 exactly. The colonies-of- bees value is damaged on this scan and was recovered as $2,561 from the property total, an identity that closes exactly in the neighbouring county column. County totals are added here. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::farms,-farm-acreage-and-value-of-farm-property,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "farms, farm acreage and value of farm property, Allen County",
+      "unit": "farms",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-farms-1900-1910.yml",
+          "label": "Allen County farms and farm property, 1900–1910",
+          "as_of": "1910-04-15",
+          "value": 2939.0,
+          "published": "2939",
+          "tier": "verified",
+          "source": "catalog/census-1910-abstract-supplement-ohio.md",
+          "method": "Thirteenth Census of Agriculture, enumerated April 15, 1910, with 1900 comparatives printed in italics. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: the three tenure classes of Table 2 sum to Table 1's farm count, acreage, improved acreage and land-and-buildings value independently; the ten size classes sum to 2,939; improved plus woodland plus other unimproved sums to land in farms; the four property components sum to the total in both years; and all six printed averages and percentages recompute. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::land-area",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -318,6 +358,26 @@
           "tier": "verified",
           "source": "catalog/census-1950-number-of-inhabitants-ohio.md",
           "method": "Read from rendered images of a 300-dpi scan; the volume's own OCR text layer was used as a second reader and its column association across a three-up table was not trusted. Checked against three arithmetic closures the table itself supplies. The 1940 and 1930 columns are on 1950 boundaries where the source could put them there and exclude Lima entirely; the `value` above is the twelve-township sum for 1930, which is the county less the city. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::value-of-crops,-live-stock-products-and-farm-expenses,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "value of crops, live stock products and farm expenses, Allen County",
+      "unit": "dollars, value of all crops",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-farm-output-1909.yml",
+          "label": "Allen County farm output and farm expenses, 1909",
+          "as_of": "1909",
+          "value": 2425973.0,
+          "published": "2425973",
+          "tier": "verified",
+          "source": "catalog/census-1910-abstract-supplement-ohio.md",
+          "method": "Thirteenth Census of Agriculture, for the calendar year 1909. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: the six crop-value classes sum to $2,425,973 exactly; the six cereals sum to the printed cereal acreage and to the printed bushel total; the six tame grasses sum to the tame-grass acreage and tonnage, and those plus three minor forages sum to the hay total — eight closures with no residual. The orchard and small-fruit itemisations leave residuals, as they do in the state column, because both omit minor kinds. [verified]"
         }
       ]
     },
@@ -982,6 +1042,41 @@
           "label": "1909",
           "value": 3607.0,
           "literal": "3,607"
+        }
+      ]
+    },
+    {
+      "id": "the-farms-did-not-go-anywhere",
+      "statement": "Twenty-five years after the oil strike, Allen County had more farms than before it — 2,939 against 2,858 — on 92.5 per cent of its land area.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-farms-1900-1910.yml",
+          "node_label": "Allen County farms and farm property, 1900–1910",
+          "span": "**The county had 2,939 farms in 1910 and 2,858 in 1900, on 240,472 acres against 245,283.**",
+          "tier": "verified",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-farms-1900-1910.yml",
+          "node_label": "Allen County farms and farm property, 1900–1910",
+          "span": "**Nine-tenths of Allen County was farmland in 1910 — 240,472 acres of 259,840, or 92.5 per cent.**",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1900",
+          "value": 245283.0,
+          "literal": "245,283"
+        },
+        {
+          "label": "1910",
+          "value": 240472.0,
+          "literal": "240,472"
         }
       ]
     },
