@@ -113,6 +113,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
+            // Added when `depopulation` gained the age measure. The gate demanded it of all three
+            // assertions resting on that node, which is the check working: a node grew a refusal
+            // and nothing built on it could go out without carrying it.
+            "does not establish that Lima is emptying because it is aging",
         ],
         // The chart is the corpus's own enumerations, now spanning the peak the earlier version
         // of this assertion could not see.
@@ -139,6 +143,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
+            // Added when `depopulation` gained the age measure. The gate demanded it of all three
+            // assertions resting on that node, which is the check working: a node grew a refusal
+            // and nothing built on it could go out without carrying it.
+            "does not establish that Lima is emptying because it is aging",
         ],
         figures: &[
             Figure { label: "Lima", value: 3.8, literal: "3.8%" },
@@ -158,6 +166,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
+            // Added when `depopulation` gained the age measure. The gate demanded it of all three
+            // assertions resting on that node, which is the check working: a node grew a refusal
+            // and nothing built on it could go out without carrying it.
+            "does not establish that Lima is emptying because it is aging",
         ],
         figures: &[],
     },
@@ -780,6 +792,42 @@ fn read_figure(literal: &str) -> Option<f64> {
 }
 
 /// Catalog entries a block's markdown links point at, as `catalog/<name>.md`.
+/// The sources a block rests on, resolving this corpus's "same source" back-reference.
+///
+/// A node's prose says "[verified] — [County Business Patterns](../../catalog/cbp.md)" once and
+/// "[verified] — same source" in every paragraph after it. Inside the node that is exact and
+/// readable. Publication takes a block out of its node, and a block-scoped reader of the second
+/// paragraph finds nothing — so twenty-six of this site's citations went out with a provenance
+/// badge and no provenance in it, from the first build.
+///
+/// The fix belongs here and not in the prose. Naming the catalog entry in every paragraph would
+/// make the nodes worse to read to make one extractor simpler, and the back-reference is a real
+/// feature of how the corpus writes: it means *the source named above*, and above is in the node.
+/// So the search widens to the node, in order, and a block with no citation of its own inherits
+/// the sources of the nearest block before it that has one.
+fn block_sources(node: &Node, block: &crate::claim::Block) -> Vec<String> {
+    let own = sources(&block.text);
+    if !own.is_empty() {
+        return own;
+    }
+    // Only inherit for an explicit back-reference. A block that cites nothing and says nothing
+    // about a source is resting on nothing, and this function must keep saying so.
+    if !block.text.contains("same source") {
+        return Vec::new();
+    }
+    let mut inherited = Vec::new();
+    for b in &node.blocks {
+        if std::ptr::eq(b, block) {
+            break;
+        }
+        let s = sources(&b.text);
+        if !s.is_empty() {
+            inherited = s;
+        }
+    }
+    inherited
+}
+
 fn sources(text: &str) -> Vec<String> {
     let mut found = Vec::new();
     let mut rest = text;
@@ -852,7 +900,7 @@ pub fn resolve(
                 node_label: node.label.clone(),
                 span: wanted,
                 tier,
-                sources: sources(&block.text),
+                sources: block_sources(node, block),
             });
 
             // Refusals are gathered from the whole node, not only the cited block. See the
