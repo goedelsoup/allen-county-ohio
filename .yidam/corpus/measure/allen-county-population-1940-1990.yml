@@ -1,0 +1,50 @@
+class: measure
+label: Allen County population, 1940–1990
+description: |
+  The county's decennial counts for the six censuses this corpus was missing. [verified] —
+  [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md),
+  Table 3.
+
+      1940      73,303        housing units  20,650
+      1950      88,183                       26,662
+      1960     103,691                       32,265
+      1970     111,144                       35,477
+      1980     112,241                       41,887
+      1990     109,755                       42,758
+
+  **The county's peak is 1980, not 1970, and the corpus has been saying 1970 since genesis.**
+  112,241 against 111,144 — a rise of 1,097 across the decade the corpus described as the start of
+  a decline. [verified] — same source. Every figure this corpus held began at 1970 or later, so
+  the sentence "no reversal at any measured point" in
+  [deindustrialization](../period/deindustrialization.yml) was true of the data and false of the
+  county. See [that node](../period/deindustrialization.yml), which now says so.
+
+  **The 1970 figure matches an unrelated source exactly**, which is how the reading of these columns
+  was checked: 111,144 here and 111,144 in the
+  [1970–1979 county estimates](../../catalog/census-county-estimates-1970s.md), from a different
+  Census product. [verified]
+
+  **Housing grew when population did not.** Between 1970 and 1990 the county gained 7,281 housing
+  units and lost 1,389 people. [inference] — computed from the figures above. Household size fell
+  across the United States over those decades, so this is not peculiar to Allen County; what it does
+  mean is that the county's building stock and its population stopped moving together around 1970,
+  and the corpus's account of decline has until now been a population account only.
+
+  [open] 1930, the single gap between the [1921 history's 68,203](allen-county-population-1830-1900.yml)
+  for 1920 and the 73,303 above.
+properties:
+  parameter: total resident population, decennial
+  value: "112241"
+  unit: persons
+  as_of: "1980"
+  method: |
+    Read from Table 3 by counting column positions against the header printed earlier in the
+    document, and checked against the 1970 count this corpus already held from a different Census
+    product. The `value` above is the series maximum, not its last term. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-cph-2-37-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
