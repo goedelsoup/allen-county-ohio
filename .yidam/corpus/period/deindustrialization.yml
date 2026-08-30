@@ -45,17 +45,25 @@ description: |
 
   **For Lima the 1970 date is supported after all, and by a wide margin.** The city was **53,734 in
   1970**, 47,827 in 1980, 45,549 in 1990 and 40,307 in 2000. [verified] —
-  [Lima 1970–1990](../measure/lima-population-1970-1990.yml). One phase ago this node reasoned from
-  41,306 in 1920 against 40,307 in 2000 that "eighty years net to roughly nothing" and the peak was
-  unlocatable. There was a peak and the corpus had drawn a chord across it. The city rose thirty per
+  [Lima 1970–1990](../measure/lima-population-1970-1990.yml). Two phases ago this node reasoned from
+  41,306 in 1920 — since corrected to 41,326 — against 40,307 in 2000 that "eighty years net to
+  roughly nothing" and the peak was unlocatable. There was a peak and the corpus had drawn a chord across it. The city rose thirty per
   cent above its 1920 count by 1970 and has fallen at every count since.
 
   **And the long run is a different story from the short one.** Between 1970 and 2020 Lima lost
   18,155 people while the county lost 8,927 — so the rest of Allen County **gained 9,228** over the
   same fifty years. [inference] This node's finding from four recent years, that the suburban ring is
   shrinking too, stands for 2020–2024 and does not describe the half-century: over the long run the
-  ring grew while the city emptied, and only lately have both been falling. [open] When the ring
-  turned is not established here.
+  ring grew while the city emptied, and only lately have both been falling.
+
+  **The ring turned between 2000 and 2010, and this node asked when.** The county outside Lima held
+  28,592 people in 1940, 68,157 in 2000, and 66,627 at the 2020 census — growth at every count for
+  sixty years, and a fall at both counts since. [inference] —
+  [the balance series](../measure/allen-county-outside-lima-1940-2020.yml), computed from Census
+  counts on both sides. **So the county has three peaks and they are thirty years apart**: Lima in
+  1970, the county in 1980, the county outside Lima in 2000. [inference] This period is named for a
+  process that reached the three of them in that order, and a single line labelled "Allen County"
+  shows none of it.
 
   **The corporation's boundary moved underneath the city's counts.** Between 1980 and 1990 Lima
   annexed ground from American, Bath and Shawnee townships. [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md), Geographic Change
@@ -63,11 +71,14 @@ description: |
   understates the decline inside the old line. [inference] This is the first annexation event the
   corpus has held against a caveat it has carried since genesis.
 
-  **What the evidence does not establish, stated plainly.** It does not establish that Lima peaked in
-  1970 rather than earlier: 1970 is the first of the three federal counts the corpus holds for the
-  city, and a series that begins at its own first observation cannot show that the first observation
-  was a peak. The city may have been larger in 1960 — see
-  [the pre-1970 series](../question/pre-1970-population-series.yml). [open]
+  **Lima peaked in 1970, and this node's own caveat is what got answered.** It said 1970 was the
+  first of three federal counts, and that a series beginning at its own first observation is no
+  evidence that the observation was a peak — the city might have been larger in 1960. It was not: 51,037 in 1960,
+  50,246 in 1950, 44,711 in 1940, 42,287 in 1930, and every count below that lower again. [verified]
+  — [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md);
+  see [the federal series](../measure/lima-population-1850-1960.yml). Twice now a refusal in this
+  node has been retired by retrieval rather than by argument, and both times the refusal was about
+  where the corpus's window began.
 
   It does not establish anything about *manufacturing employment*, which is the mechanism this period
   is named for and which the corpus does not measure at all: every figure here is population, and
@@ -105,9 +116,10 @@ properties:
     Contraction of manufacturing employment and sustained population loss concentrated in the
     county seat. The population half is verified; the manufacturing half is not. [inference]
   boundary_basis: |
-    The start is a conventional placement rather than an argued one, and the corpus cannot yet
-    test it: 1970 is the earliest population figure it holds. No end is claimed, because the
-    2024 figure is still below every earlier one. [open]
+    The start is argued for population and assumed for everything else. The county's series runs
+    from 1830 and Lima's from 1850, and both rise without interruption to their peaks — 1980 and
+    1970 — so the population turn is located rather than placed. The manufacturing turn, which is
+    what the period is named for, is still unmeasured. [open] No end is claimed.
 links:
   - target: ../place/lima.yml
     relationship: concentrated-in
@@ -131,6 +143,12 @@ links:
     relationship: evidenced-by
     claim_tag: inference
   - target: ../measure/lima-population-2010.yml
+    relationship: evidenced-by
+    claim_tag: inference
+  - target: ../measure/lima-population-1850-1960.yml
+    relationship: evidenced-by
+    claim_tag: inference
+  - target: ../measure/allen-county-outside-lima-1940-2020.yml
     relationship: evidenced-by
     claim_tag: inference
   - target: ../period.ont.yml

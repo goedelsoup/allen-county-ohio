@@ -81,14 +81,20 @@ describe('the assertions the pages render', () => {
     }
   })
 
-  // The pinned phrase moved once. It used to be "1970 is the start", the corpus's refusal to
-  // read its own chart as showing a 1970 peak when 1970 was merely where its data began. The
-  // 1990 Census volume settled that — the county peaked in 1980 — so the refusal was answered
-  // by evidence and the assertion now states the peak. The same worry survives one subject
-  // down, for Lima, whose series still begins at its own first federal observation.
+  // The pinned phrase has moved twice, and both retired ones are recorded here so the next
+  // reader knows what this test was for:
+  //
+  //   "1970 is the start"                        retired by the 1990 Census volume
+  //   "Lima peaked in 1970 rather than earlier"  retired by the 1960 Census volume
+  //
+  // Both were refusals about where the corpus's data began, and retrieval answered both — the
+  // county peaked in 1980, Lima in 1970 with twelve rising counts behind it. The pin is now
+  // the refusal no retrieval answers: the evidence here is population and the period is named
+  // for manufacturing employment, which the corpus does not measure. So this can only fail if
+  // the caveat is removed, which is the only reason to have it.
   it('carries the corpus refusal that qualifies the population series', () => {
     const decline = assertion('county-population-decline')
-    expect(decline.caveats.join(' ')).toContain('Lima peaked in 1970 rather than earlier')
+    expect(decline.caveats.join(' ')).toContain('anything about *manufacturing employment*')
   })
 })
 

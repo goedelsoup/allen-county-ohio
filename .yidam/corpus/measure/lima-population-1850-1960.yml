@@ -1,0 +1,78 @@
+class: measure
+label: Lima population, 1850–1960
+description: |
+  Every decennial count for [Lima](../place/lima.yml) from the city's first appearance in the
+  census to 1960. [verified] —
+  [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md),
+  Table 5, *Population of incorporated places of 10,000 or more from earliest census to 1960*.
+
+      1850        757                    1910     30,508     +8,785    +40.4%
+      1860      1,989   +1,232  +162.7%  1920     41,326    +10,818    +35.5%
+      1870      4,500   +2,511  +126.2%  1930     42,287       +961     +2.3%
+      1880      7,567   +3,067   +68.2%  1940     44,711     +2,424     +5.7%
+      1890     15,981   +8,414  +111.2%  1950     50,246     +5,535    +12.4%
+      1900     21,723   +5,742   +35.9%  1960     51,037       +791     +1.6%
+
+  Written out, because a table is not prose and this corpus publishes prose: **Lima held 7,567
+  people in 1880, 21,723 in 1900, 41,326 in 1920, 42,287 in 1930, 44,711 in 1940, 50,246 in 1950
+  and 51,037 in 1960.** [verified] — same source. The four counts before those, 757 in 1850 through
+  15,981 in 1890, are in the same block of the same table.
+
+  **Lima peaked at the 1970 census.** The city rose at every one of the twelve counts above and
+  reached [53,734 in 1970](lima-population-1970-1990.yml), then fell at every count since. The
+  corpus has carried the caveat that 1970 was the earliest federal figure it held and therefore a
+  lower bound rather than a peak, and has said so on the public site and in two tests. It was the
+  peak. [verified] — this source for 1850–1960 and
+  [the 1990 Census volume](../../catalog/census-cph-2-37-ohio.md) for 1970. The claim is about
+  census years: a city can rise and fall inside a decade unobserved, and decennial data cannot
+  speak to that for Lima or anywhere else.
+
+  **The last decade before the peak is the flattest.** Lima gained 791 people in the 1950s, 1.6% —
+  its smallest decennial gain in a hundred and ten years, and a tenth of the 1940s' rate. The city
+  did not turn at 1970 so much as arrive there slowing. [inference] — computed from the series
+  above. What happened between 1960 and 1970 to produce a further 2,697 is not established here.
+
+  **A source that checks itself.** Table 5 prints the increase over the preceding census, in number
+  and in percent, beside every count. Lima's block is twelve counts, eleven differences and eleven
+  percentages, and all twenty-two constraints hold: each count plus the increase printed against the
+  next census equals that census's count — 30,508 + 10,818 = 41,326, and 41,326 + 961 = 42,287 —
+  and each increase over the count it was added to gives the printed percent. A digit misread
+  anywhere breaks the chain above it and below it. This scan has no text layer and the figures were
+  read off a rendered image, which is exactly the reading that
+  [two scans of one book](../../decisions/two-scans-of-one-book.yml) exists to guard; here the
+  guard came from inside the table.
+
+  **It corrects the 1920 figure this corpus has published since the oil phase.** The corpus held
+  41,306, from [Rusler's 1921 history](../../catalog/rusler-allen-county-1921.md), which prints it
+  twice. The Census gives **41,326**, and both neighbouring rows of Table 5 require that value.
+  Twenty people, and the difference matters less than which of the two sources was believed: the
+  1921 figure was marked here as [a single witness read once](../../decisions/a-single-witness-read-once.yml),
+  and it is the one that broke. The two figures the same three histories supplied that this table
+  can also test — 7,567 in 1880 and 21,723 in 1900 — match the Census to the person. [verified] —
+  both sources.
+
+  [open] The rate of the city's growth between the census years, and what the 1950s slowdown was.
+  Neither is a gap in the series; both are questions the series raises.
+properties:
+  parameter: total resident population, decennial
+  value: "51037"
+  unit: persons
+  as_of: "1960"
+  method: |
+    Read from Table 5 of a 300-dpi bitonal scan with no text layer, by rendering the page and
+    reading the block directly rather than by trusting optical character recognition, which
+    misread it. Checked against the eleven differences and eleven percentages the table prints
+    beside the counts, and against two figures the corpus already held from county histories.
+    The `value` above is this series' last and largest term, not the city's peak, which is 1970.
+    [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1960-number-of-inhabitants-ohio.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1960-number-of-inhabitants-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

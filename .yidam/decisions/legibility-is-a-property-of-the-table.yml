@@ -1,0 +1,50 @@
+id: legibility-is-a-property-of-the-table
+summary: >-
+  Lima's twelve counts came off a 300-dpi bitonal scan cleanly and survived twenty-two arithmetic
+  checks. Six pages later in the same file, at the same resolution, Allen County's township table is
+  unreadable — denser type, and the thresholding has closed the counters. "This scan is good" was a
+  generalisation from the shape of the last table looked at.
+context: |
+  The [1960 Census volume](../catalog/census-1960-number-of-inhabitants-ohio.md) has no text layer.
+  Every page is a stored 300-dpi bitonal image, so nothing is recoverable by re-rendering: the
+  pixels are the pixels.
+
+  Table 5, *Population of incorporated places of 10,000 or more from earliest census to 1960*, was
+  read without difficulty. Its type is generously leaded and each row carries its own arithmetic
+  check.
+
+  Table 7, *Population of Counties, by Minor Civil Divisions: 1940 to 1960*, holds the thing this
+  corpus most wants next — Allen County's twelve townships at three mid-century censuses, with Allen
+  first in the volume because the counties run alphabetically. It cannot be read. The rows are half
+  the leading, the digits have merged, and the county-total line, set in bold, is the least legible
+  line on the page. Optical character recognition returns plausible-looking numbers for it, which is
+  the worst available outcome.
+decision: |
+  **Record legibility against the table, not against the source, and in terms that can be checked.**
+
+  The catalog entry says which table was read, at what resolution, by what method, and which table
+  was attempted and failed and why. It does not say "this scan is legible" or "this scan is poor",
+  because neither is true of the volume.
+
+  And: a successful extraction does not license the next one from the same file. Table 7 is left
+  unread, named, and marked as wanting a second digitization — not extracted at lower confidence
+  because the first table went well.
+rationale: |
+  **This is the eighth instance of one failure and the first inside a single source.** The pattern
+  the corpus keeps finding is a rule about what can be seen, generalised from the shape of the last
+  thing looked at: a book read for one chapter and described as not carrying what its next paragraph
+  holds; an answer written on one class and never propagated to its sibling. Until now every
+  instance was a generalisation across sources or across nodes. This one is across six pages.
+
+  What makes it worth a record rather than a note is that the evidence pointed the wrong way. Table
+  5 did not merely read well; it *proved itself*, twenty-two constraints deep. Confidence earned
+  honestly on one table is exactly what makes the next table feel safe, and the two facts have
+  nothing to do with each other — the guarantee came from the printing convention of that table, not
+  from the scan.
+
+  The practical consequence is small and worth stating: [two scans of one book](two-scans-of-one-book.yml)
+  is still the rule, and the reason this phase did not need it is a property of Table 5 that Table 7
+  does not share. Where a table checks itself, one scan is enough. Where it does not, one scan is
+  not, and no amount of neighbouring success changes that.
+status: accepted
+date: "2026-08-29"

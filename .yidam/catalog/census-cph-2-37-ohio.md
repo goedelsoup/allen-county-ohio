@@ -16,7 +16,9 @@ location:
       series; the Geographic Change Notes are in the front matter under "User Note 1".
 used-by:
   - ../corpus/jurisdiction/city-of-lima.yml
+  - ../corpus/measure/allen-county-outside-lima-1940-2020.yml
   - ../corpus/measure/allen-county-population-1940-1990.yml
+  - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1970-1990.yml
   - ../corpus/period/deindustrialization.yml
   - ../corpus/question/pre-1970-population-series.yml
@@ -43,7 +45,9 @@ village or a city, and treats such places as independent of any MCD." That is wh
 every present-day federal source the corpus holds — not abolition, a reporting rule.
 
 **What it does not carry.** Places get 1970 to 1990 only, so **Lima 1930 to 1960 is not here** and
-the city's peak is still bracketed rather than located. County figures stop at 1940 going back, so
+the city's peak was still bracketed when this entry was written. It is not now:
+[the 1960 volume](census-1960-number-of-inhabitants-ohio.md) supplies 1850 to 1960 for places, and
+Lima peaked at the 1970 census this table gave. County figures stop at 1940 going back, so
 1930 remains the one gap between the 1921 history's 1920 and this table's 1940. No township-level
 history, no vital statistics, no employment.
 

@@ -1,0 +1,57 @@
+id: pin-the-tripwire-to-what-retrieval-cannot-answer
+summary: >-
+  Two tests exist to fail if `deindustrialization` ever loses its refusal. Both have now been
+  repointed twice in four phases, because both times the refusal they guarded was about where the
+  corpus's data began — and retrieval answered it. A tripwire aimed at a retrievable gap is a chore
+  with a half-life. It is now aimed at the refusal no retrieval can answer.
+context: |
+  `crates/publish/tests/corpus.rs` and `web/test/feeds.test.ts` each assert that a particular
+  refusal in [`deindustrialization`](../corpus/period/deindustrialization.yml) is still detected and
+  still reaches the reader. They are the corpus's only tests whose subject is a sentence rather than
+  a structure, and they were written because the chart on the public population page is exactly the
+  kind of thing that travels without its caveat.
+
+  Their pin has now moved twice:
+
+    "It does not establish that 1970 is the start"          answered by the 1990 Census volume
+    "Lima peaked in 1970 rather than earlier"               answered by the 1960 Census volume
+
+  Both were true when written and both were about the same thing: the corpus's window began at its
+  own first observation. Both were retired by going and getting the earlier observations, four
+  phases apart, and each retirement required rewriting two tests.
+decision: |
+  **Pin the tripwire to the refusal that retrieval cannot answer.**
+
+  Both tests now guard this one:
+
+    It does not establish anything about *manufacturing employment*, which is the mechanism this
+    period is named for and which the corpus does not measure at all.
+
+  No county history and no decennial volume will retire that. It is not a gap in a series; it is a
+  statement that the corpus's evidence is population and the period's name is employment. Retiring
+  it would take a different kind of source, and if one ever arrives the test should be rewritten
+  then — once, for a reason, rather than every other phase.
+rationale: |
+  **The churn was not a fault in the tests. It was the retrieval loop working, and it still made the
+  tests worse.** A test rewritten every other phase stops being read; it becomes a thing to update
+  so the build goes green, and the third time nobody re-derives whether the new pin is the right
+  one. Both previous pins were retired by *good* news, and each retirement moved these two tests one
+  step closer to being noise.
+
+  The distinction that matters is between a refusal about what the corpus *has* and a refusal about
+  what the corpus *measures*. The first has a half-life: it says "no source has been fetched", and
+  fetching one ends it. The second is structural: it says "the evidence here is of a different kind
+  from the claim this node's name makes", and no amount of fetching the same kind of evidence
+  touches it.
+
+  Guarding the structural one has a property the others lacked: **it can now only fail if somebody
+  removes the caveat.** That is what a tripwire is for. The previous pins could fail either because
+  somebody removed the caveat or because the caveat became true-and-unnecessary, and a test with two
+  failure modes teaches its reader to check which one fired before believing it.
+
+  Each test carries a comment naming both retired pins and why they went, for the same reason as
+  last time: a test whose reason is lost gets deleted by whoever trips over it next. This is the
+  second such comment in each file and they are now a short history of what this corpus stopped
+  being able to say.
+status: accepted
+date: "2026-08-29"

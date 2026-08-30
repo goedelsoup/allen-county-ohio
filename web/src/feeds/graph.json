@@ -1444,6 +1444,51 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-outside-lima-1940-2020.yml",
+      "class": "measure",
+      "label": "Allen County outside Lima, 1940–2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2000",
+        "method": "Subtraction of the city count from the county count at each census, both from Census publications this corpus already holds and cites. Not a published figure: no source states it, and it is tagged as this corpus's inference throughout. The `value` above is the series maximum. Boundaries are as reported at each census and are known to have moved once. [inference]",
+        "parameter": "county population less the city of Lima, decennial",
+        "unit": "persons",
+        "value": "68157"
+      },
+      "blocks": [
+        {
+          "text": "The county's population with [Lima](../place/lima.yml) taken out of it, at nine censuses. [inference] — subtraction performed here; every input is a Census count already held by this corpus.",
+          "tier": "inference"
+        },
+        {
+          "text": "Written out: **the county outside Lima held 28,592 people in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.** [inference] — same subtraction. County figures from [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml), [2010](allen-county-population-2010.yml) and [the 2020 census count](allen-county-population-2020-census.yml); Lima from [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml), [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This answers a question [deindustrialization](../period/deindustrialization.yml) left open.** That node said the ring around Lima grew while the city emptied, and that \"when the ring turned is not established here\". **It turned between 2000 and 2010.** The county outside Lima grew at every census from 1940 to 2000 except one, more than doubling, and has fallen at the two since. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the county as a whole in 1980, and the county outside Lima in 2000. [inference] — from the three series above. A single line labelled \"Allen County\" hides all of this: from 1970 to 2000 the county was falling and two thirds of it was growing.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The exception is the decade the boundary moved, and it moves the right way.** Between 1980 and 1990 the balance fell by 208 — the only fall before 2000 — and it is the one decade in which Lima is known to have annexed, from American, Bath and Shawnee townships. [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md), Geographic Change Notes. Annexation moves people from the balance into the city without anybody moving house, so it pushes this series down and the city's up. The 1980s fall is therefore an upper bound on a decline and may be no decline at all. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima's share of the county has fallen at every census since 1940, including the three at which the city grew.** 61.0% in 1940 to 34.8% in 2020, through a decade in which the city gained 5,535 people and still lost four points of share. [inference] — computed above. The county was redistributing before it was declining, and the two processes are seventy years out of phase.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What the corroboration reaches and does not.** Between 2000 and 2010 the Census Bureau's own \"balance of county\" — everything outside *every* incorporated place, a narrower base than this one — fell from 50,809 to 50,048. [verified] — [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md). Same direction, different denominator: the difference between the two is Delphos, Bluffton, Spencerville, Elida and the smaller villages, which this series keeps and that one removes.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-population-1830-1900.yml",
       "class": "measure",
       "label": "Allen County population, 1830–1900",
@@ -1805,14 +1850,51 @@
       "withheld": 0
     },
     {
+      "id": "measure/lima-population-1850-1960.yml",
+      "class": "measure",
+      "label": "Lima population, 1850–1960",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1960",
+        "method": "Read from Table 5 of a 300-dpi bitonal scan with no text layer, by rendering the page and reading the block directly rather than by trusting optical character recognition, which misread it. Checked against the eleven differences and eleven percentages the table prints beside the counts, and against two figures the corpus already held from county histories. The `value` above is this series' last and largest term, not the city's peak, which is 1970. [verified]",
+        "parameter": "total resident population, decennial",
+        "unit": "persons",
+        "value": "51037"
+      },
+      "blocks": [
+        {
+          "text": "Every decennial count for [Lima](../place/lima.yml) from the city's first appearance in the census to 1960. [verified] — [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md), Table 5, *Population of incorporated places of 10,000 or more from earliest census to 1960*.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out, because a table is not prose and this corpus publishes prose: **Lima held 7,567 people in 1880, 21,723 in 1900, 41,326 in 1920, 42,287 in 1930, 44,711 in 1940, 50,246 in 1950 and 51,037 in 1960.** [verified] — same source. The four counts before those, 757 in 1850 through 15,981 in 1890, are in the same block of the same table.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima peaked at the 1970 census.** The city rose at every one of the twelve counts above and reached [53,734 in 1970](lima-population-1970-1990.yml), then fell at every count since. The corpus has carried the caveat that 1970 was the earliest federal figure it held and therefore a lower bound rather than a peak, and has said so on the public site and in two tests. It was the peak. [verified] — this source for 1850–1960 and [the 1990 Census volume](../../catalog/census-cph-2-37-ohio.md) for 1970. The claim is about census years: a city can rise and fall inside a decade unobserved, and decennial data cannot speak to that for Lima or anywhere else.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The last decade before the peak is the flattest.** Lima gained 791 people in the 1950s, 1.6% — its smallest decennial gain in a hundred and ten years, and a tenth of the 1940s' rate. The city did not turn at 1970 so much as arrive there slowing. [inference] — computed from the series above. What happened between 1960 and 1970 to produce a further 2,697 is not established here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It corrects the 1920 figure this corpus has published since the oil phase.** The corpus held 41,306, from [Rusler's 1921 history](../../catalog/rusler-allen-county-1921.md), which prints it twice. The Census gives **41,326**, and both neighbouring rows of Table 5 require that value. Twenty people, and the difference matters less than which of the two sources was believed: the 1921 figure was marked here as [a single witness read once](../../decisions/a-single-witness-read-once.yml), and it is the one that broke. The two figures the same three histories supplied that this table can also test — 7,567 in 1880 and 21,723 in 1900 — match the Census to the person. [verified] — both sources.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/lima-population-1880-1920.yml",
       "class": "measure",
       "label": "Lima population, 1880–1920",
       "tier": "inference",
       "properties": {
         "as_of": "1920",
-        "method": "Three county histories' compilations of published census returns, one figure from each. The 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. [verified]",
-        "parameter": "total resident population, decennial",
+        "method": "Three county histories' compilations of published census returns, one figure from each. The 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. [verified] The value above is **superseded**: the Census gives 41,326 for the same date and this node keeps 41,306 because its subject is what the histories printed. For Lima's 1920 population, cite [the federal series](lima-population-1850-1960.yml). [verified]",
+        "parameter": "total resident population, decennial, as three county histories printed it",
         "unit": "persons",
         "value": "41306"
       },
@@ -1822,8 +1904,12 @@
           "tier": "verified"
         },
         {
-          "text": "Written out, because a table is not prose and this corpus publishes prose: the city held **7,567 people in 1880, 21,723 in 1900 and 41,306 in 1920**. [verified] — the three sources above, one figure each.",
+          "text": "Written out, because a table is not prose and this corpus publishes prose: these three histories put **7,567 people in 1880, 21,723 in 1900 and 41,306 in 1920** in Lima. [verified] — the three sources above, one figure each. **The Census Bureau confirms the first two to the person and contradicts the third**, giving 41,326 for 1920. [verified] — [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md), Table 5; see [the federal series](lima-population-1850-1960.yml), which supersedes this node as a measure and leaves it standing as the record of what the histories printed.",
           "tier": "verified"
+        },
+        {
+          "text": "**The corpus believed the wrong one of the two, and had already said which it would be.** The 1920 figure was marked here as [a single witness read once](../../decisions/a-single-witness-read-once.yml) — Rusler's is the only scan of that book the corpus holds, and no second source could be brought against it. The Census table settles it not by being federal but by showing its work: each count is printed beside its increase over the preceding census, and 30,508 + 10,818 = 41,326 while 41,326 + 961 = 42,287. Rusler's 41,306 fails both, and the same passage of Rusler subtracts its own list of incorporated places from the county total and lands a thousand out. [verified] — same sources. No third witness was consulted, and none is needed for arithmetic. [inference]",
+          "tier": "inference"
         },
         {
           "text": "**These are the corpus's first Lima figures earlier than 2000.** Lima nearly tripled between 1880 and 1900 and nearly doubled again by 1920 — **a fivefold rise in forty years**, which is the demographic shape of [the oil strike](../event/lima-oil-strike.yml). [inference]",
@@ -1832,10 +1918,14 @@
         {
           "text": "**The 1900 and 1920 figures are township figures and that is not an error here.** [Ottawa Township](../question/what-became-of-german-and-ottawa-townships.yml) was coextensive with the city — the 1906 table says so in the row label, twenty-one years before the 1921 volume says it in prose. [verified] — same sources. So the township count is the city count, and the corpus can now date that coextension to 1900 or earlier rather than to 1921.",
           "tier": "verified"
+        },
+        {
+          "text": "**All three are compilations, not census publications**, and this node asked for the thing that would test them: \"a place-level decennial series from the Census Bureau would replace all three.\" It arrived, and it replaced one. Two of the three compilations were right to the person across eighty years, which is a better result for county histories than this corpus expected and is worth recording as such. [inference] The 1880 figure comes from a table whose county total the corpus has already found to disagree with the 1906 volume by sixteen people at 1850 — see [the county series](allen-county-population-1830-1900.yml), where the same question is open and no federal series has yet reached it.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 3
+      "withheld": 2
     },
     {
       "id": "measure/lima-population-1970-1990.yml",
@@ -1844,7 +1934,7 @@
       "tier": "inference",
       "properties": {
         "as_of": "1970",
-        "method": "Read from the places table of the 1990 Ohio CPH-2 volume. The `value` above is the series maximum, which is also its first term — so it is a lower bound on the city's peak and not necessarily the peak. [verified]",
+        "method": "Read from the places table of the 1990 Ohio CPH-2 volume. The `value` above is the series maximum and also its first term, which made it a lower bound on the city's peak until the 1960 volume supplied the twelve counts before it. It is the peak. [verified]",
         "parameter": "total resident population, decennial",
         "unit": "persons",
         "value": "53734"
@@ -1855,11 +1945,15 @@
           "tier": "verified"
         },
         {
-          "text": "**This locates a peak the corpus said one phase ago it could not see.** Reading only [7,567 in 1880, 21,723 in 1900 and 41,306 in 1920](lima-population-1880-1920.yml) against 40,307 in 2000, the corpus concluded that \"eighty years net to roughly nothing\" and the peak was somewhere inside them. It is: **the city was 53,734 in 1970** — thirty per cent above its 1920 count and half again what it is today. The rise and the fall were both real and the corpus had a chord across them. [inference]",
+          "text": "**This locates a peak the corpus said one phase ago it could not see.** Reading only [7,567 in 1880, 21,723 in 1900 and 41,306 in 1920](lima-population-1880-1920.yml) against 40,307 in 2000 — the 1920 figure has since been corrected to 41,326 — the corpus concluded that \"eighty years net to roughly nothing\" and the peak was somewhere inside them. It is: **the city was 53,734 in 1970**, thirty per cent above its 1920 count and half again what it is today. The rise and the fall were both real and the corpus had a chord across them. [inference]",
           "tier": "inference"
         },
         {
-          "text": "So Lima's series, as the corpus now holds it: 7,567 (1880) · 21,723 (1900) · 41,306 (1920) · **53,734 (1970)** · 47,827 (1980) · 45,549 (1990) · 40,307 (2000) · 35,579 (2020). Between 1970 and 2020 the city lost 18,155 people, **33.8 per cent of itself**, while [the county](allen-county-population-1940-1990.yml) lost 8,927, or 8.0 per cent. Lima's loss is twice the county's, which means the rest of Allen County **gained 9,228** over the same fifty years. [inference] — computed from the two series. That is a different story from the one the corpus has been telling from four years of recent data, where the ring shrinks too: over the long run the ring grew while the city emptied, and only lately have both been falling.",
+          "text": "**And 1970 is the peak, not a lower bound on it.** The four counts this node could not see are 42,287 (1930), 44,711 (1940), 50,246 (1950) and 51,037 (1960), every one of them below 53,734 and each above the one before. [verified] — [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md); see [the federal series](lima-population-1850-1960.yml). The caveat this node wrote against its own figure is answered by evidence rather than dropped.",
+          "tier": "verified"
+        },
+        {
+          "text": "So Lima's series, at the census years the corpus holds: 7,567 (1880) · 21,723 (1900) · 41,326 (1920) · 51,037 (1960) · **53,734 (1970)** · 47,827 (1980) · 45,549 (1990) · 40,307 (2000) · 35,579 (2020). Between 1970 and 2020 the city lost 18,155 people, **33.8 per cent of itself**, while [the county](allen-county-population-1940-1990.yml) lost 8,927, or 8.0 per cent. Lima's loss is twice the county's, which means the rest of Allen County **gained 9,228** over the same fifty years. [inference] — computed from the two series. That is a different story from the one the corpus has been telling from four years of recent data, where the ring shrinks too: over the long run the ring grew while the city emptied, and only lately have both been falling.",
           "tier": "inference"
         },
         {
@@ -2480,12 +2574,24 @@
           "tier": "inference"
         },
         {
-          "text": "**For Lima the 1970 date is supported after all, and by a wide margin.** The city was **53,734 in 1970**, 47,827 in 1980, 45,549 in 1990 and 40,307 in 2000. [verified] — [Lima 1970–1990](../measure/lima-population-1970-1990.yml). One phase ago this node reasoned from 41,306 in 1920 against 40,307 in 2000 that \"eighty years net to roughly nothing\" and the peak was unlocatable. There was a peak and the corpus had drawn a chord across it. The city rose thirty per cent above its 1920 count by 1970 and has fallen at every count since.",
+          "text": "**For Lima the 1970 date is supported after all, and by a wide margin.** The city was **53,734 in 1970**, 47,827 in 1980, 45,549 in 1990 and 40,307 in 2000. [verified] — [Lima 1970–1990](../measure/lima-population-1970-1990.yml). Two phases ago this node reasoned from 41,306 in 1920 — since corrected to 41,326 — against 40,307 in 2000 that \"eighty years net to roughly nothing\" and the peak was unlocatable. There was a peak and the corpus had drawn a chord across it. The city rose thirty per cent above its 1920 count by 1970 and has fallen at every count since.",
           "tier": "verified"
+        },
+        {
+          "text": "**And the long run is a different story from the short one.** Between 1970 and 2020 Lima lost 18,155 people while the county lost 8,927 — so the rest of Allen County **gained 9,228** over the same fifty years. [inference] This node's finding from four recent years, that the suburban ring is shrinking too, stands for 2020–2024 and does not describe the half-century: over the long run the ring grew while the city emptied, and only lately have both been falling.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The ring turned between 2000 and 2010, and this node asked when.** The county outside Lima held 28,592 people in 1940, 68,157 in 2000, and 66,627 at the 2020 census — growth at every count for sixty years, and a fall at both counts since. [inference] — [the balance series](../measure/allen-county-outside-lima-1940-2020.yml), computed from Census counts on both sides. **So the county has three peaks and they are thirty years apart**: Lima in 1970, the county in 1980, the county outside Lima in 2000. [inference] This period is named for a process that reached the three of them in that order, and a single line labelled \"Allen County\" shows none of it.",
+          "tier": "inference"
         },
         {
           "text": "**The corporation's boundary moved underneath the city's counts.** Between 1980 and 1990 Lima annexed ground from American, Bath and Shawnee townships. [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md), Geographic Change Notes. So the fall from 47,827 to 45,549 happened while the corporation was growing, and understates the decline inside the old line. [inference] This is the first annexation event the corpus has held against a caveat it has carried since genesis.",
           "tier": "inference"
+        },
+        {
+          "text": "**Lima peaked in 1970, and this node's own caveat is what got answered.** It said 1970 was the first of three federal counts, and that a series beginning at its own first observation is no evidence that the observation was a peak — the city might have been larger in 1960. It was not: 51,037 in 1960, 50,246 in 1950, 44,711 in 1940, 42,287 in 1930, and every count below that lower again. [verified] — [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md); see [the federal series](../measure/lima-population-1850-1960.yml). Twice now a refusal in this node has been retired by retrieval rather than by argument, and both times the refusal was about where the corpus's window began.",
+          "tier": "verified"
         },
         {
           "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
@@ -2497,12 +2603,11 @@
         }
       ],
       "refusals": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that Lima peaked in 1970 rather than earlier: 1970 is the first of the three federal counts the corpus holds for the city, and a series that begins at its own first observation cannot show that the first observation was a peak.",
         "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
-      "withheld": 5
+      "withheld": 3
     },
     {
       "id": "period/lima-oil-boom.yml",
@@ -2536,7 +2641,7 @@
           "tier": "verified"
         },
         {
-          "text": "**And the end bound has a shape at last, though not a date.** By 1920 Lima had reached 41,306 and by 1921 the whole residue of the field was, in the later historian's words, \"the Solar refinery and the different companies dealing in oil commodities\", with \"little oil now being pumped in Allen County\". [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). So the *field* was substantially finished before 1921 while the *city* kept growing — which is why this period's legacy is a site rather than an industry, and why 1910 as a placeholder is defensible for production and wrong for consequence. [inference]",
+          "text": "**And the end bound has a shape at last, though not a date.** By 1920 Lima had reached 41,326 — the Census figure; the 1921 history says 41,306 and see [the federal series](../measure/lima-population-1850-1960.yml) — and by 1921 the whole residue of the field was, in the later historian's words, \"the Solar refinery and the different companies dealing in oil commodities\", with \"little oil now being pumped in Allen County\". [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). So the *field* was substantially finished before 1921 while the *city* kept growing — which is why this period's legacy is a site rather than an industry, and why 1910 as a placeholder is defensible for production and wrong for consequence. [inference]",
           "tier": "inference"
         }
       ],
@@ -4105,7 +4210,7 @@
           "tier": "verified"
         },
         {
-          "text": "**It tripled after the oil, peaked around 1970 and has lost a third of itself since.** 7,567 in 1880, 21,723 in 1900, 41,306 in 1920, **53,734 in 1970**, 47,827 in 1980, 45,549 in 1990, 40,307 in 2000, 35,579 in 2020. [verified] — [1880–1920](../measure/lima-population-1880-1920.yml) and [1970–1990](../measure/lima-population-1970-1990.yml). The corpus wrote here one phase ago that the city \"was already at its 2000 size before the First World War ended\", reasoning from the 1920 and 2000 figures alone. Two points that happen to be level are not a plateau: between them the city grew by a third and then lost it.",
+          "text": "**It tripled after the oil, peaked at the 1970 census and has lost a third of itself since.** 757 in 1850, 7,567 in 1880, 21,723 in 1900, 41,326 in 1920, 42,287 in 1930, 44,711 in 1940, 50,246 in 1950, 51,037 in 1960, **53,734 in 1970**, 47,827 in 1980, 45,549 in 1990, 40,307 in 2000, 38,771 in 2010, 35,579 in 2020. [verified] — [1850–1960](../measure/lima-population-1850-1960.yml) and [1970–1990](../measure/lima-population-1970-1990.yml). **Every count rises to 1970 and every count falls after it**, so the peak is a census year and not an artefact of where the corpus's data began. The 1920 figure was 41,306 here until the Census contradicted the county history that supplied it.",
           "tier": "verified"
         },
         {
@@ -4134,7 +4239,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "place/marion-township.yml",
@@ -4519,9 +4624,11 @@
       "label": "What was Allen County's population before 1970, and when did Lima peak?",
       "tier": "inference",
       "properties": {
-        "claim_tag": "open",
+        "claim_tag": "verified",
+        "closed": "2026-08-29",
         "opened": "2026-08-28",
-        "would_close_this": "For the county, the Census publication \"Population of States and Counties of the United States: 1790–1990\" (a 14.9MB PDF located but not read), or the 1900 Ohio bulletin \"Population of Ohio by Counties and Minor Civil Divisions\" for the nineteenth-century series. For Lima, a place-level decennial series — the 1970 and 1980 Census of Population volumes for Ohio, which the county-level file used here does not cover."
+        "resolution": "Allen County's decennial population is on record from 1830, complete but for 1930, and its peak is 1980. Lima's is on record from 1850, complete, and its peak is the 1970 census — every count before it rises and every count after falls. The question asked when Lima peaked and whether 1970 was a peak or a late point on a plateau; it was neither for the county, which went on growing to 1980, and it was the peak for the city.",
+        "would_close_this": "For the county, the Census publication \"Population of States and Counties of the United States: 1790–1990\" (a 14.9MB PDF located but not read), or the 1900 Ohio bulletin \"Population of Ohio by Counties and Minor Civil Divisions\" for the nineteenth-century series. For Lima, a place-level decennial series — the 1970 and 1980 Census of Population volumes for Ohio, which the county-level file used here does not cover. What actually closed it was the right family and the wrong decade: the **1960** volume, not the 1970 or 1980 ones. Each decennial \"Number of Inhabitants\" volume carries a table reaching back to each place's earliest census, so the volume to ask is the last one before the gap closes, not the first one after it. Worth remembering the next time this field is filled in."
       },
       "blocks": [
         {
@@ -4529,26 +4636,48 @@
           "tier": "verified"
         },
         {
+          "text": "Two specific things were unknown when this was opened, and they mattered differently. Both are answered now; the two paragraphs that follow are the question as it was posed, kept because the answers are only legible against them. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's 1900–1960 series** would show whether 1970 was the peak or merely a late point on a plateau. The corpus asserted a decline *from* 1970 because 1970 was the earliest figure it had, which was a fact about the sources retrieved and not about the county. If the county was already falling before 1970, or still rising, the [deindustrialization](../period/deindustrialization.yml) node's start date was wrong. It was wrong, in the third of the three ways: the county was still rising. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima's own peak** is the sharper gap. Every claim in this corpus that Lima's decline was steeper than the county's rested on figures from 2000 onward, and the city's industrial employment fell well before that. The corpus held no Lima figure earlier than 2000 and could not locate the city's largest year, though it named a period beginning in 1970 partly on that basis. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**Answered for the county, and the answer corrects this corpus.** The series is complete from 1830 except for 1930: 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), **112,241 (1980)**, 109,755 (1990). [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md), Table 3; see [the 1940–1990 series](../measure/allen-county-population-1940-1990.yml). **The peak is 1980.** This node was opened to ask whether 1970 was a peak or a late point on a plateau, and it was neither: the county went on growing for a decade after the date the corpus had named for the start of its decline.",
           "tier": "verified"
         },
         {
-          "text": "For the county, the series now runs 578 (1830) through 47,976 (1900) and 68,203 (1920) to the 111,144 of 1970 the corpus already held. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). **Every decade rises.** So the county's 1970 peak is no longer an artefact of where the corpus's data began — it is a peak with ninety years of ascent behind it and no earlier candidate. What remains missing for the county is 1930 to 1960, four counts, and nothing in the shape so far suggests a reversal inside them. [inference]",
+          "text": "**Answered for Lima to 1970, and the earlier conclusion here was wrong.** The city was 53,734 in 1970 against 40,307 in 2000. [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md); see [Lima 1970–1990](../measure/lima-population-1970-1990.yml). One phase ago this node reasoned from 41,306 in 1920 and 40,307 in 2000 that eighty years netted to nothing and the peak was unlocatable. Two points that happen to be level are not a plateau, and the corpus had drawn a chord across a rise and a fall. Lima 1930–1960 was still missing when that was written, and it no longer is.",
+          "tier": "verified"
+        },
+        {
+          "text": "For the county, the series now runs 578 (1830) through 47,976 (1900) and 68,203 (1920) to the 111,144 of 1970 the corpus already held. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). **Every decade rises.** So the county's 1970 peak is no longer an artefact of where the corpus's data began — it is a peak with ninety years of ascent behind it and no earlier candidate. What remains missing for the county is 1930 to 1960, four counts, and nothing in the shape so far suggests a reversal inside them. [inference] (Three of the four arrived the phase after that was written, and there *was* a reversal — just later, in the 1970s. One count is missing now: 1930.)",
           "tier": "inference"
         },
         {
-          "text": "For Lima the answer runs the other way and is sharper than the question expected. [The city](../measure/lima-population-1880-1920.yml) was 7,567 in 1880, 21,723 in 1900 and **41,306 in 1920** — against 40,307 in 2000. **Lima was already at about its 2000 size in 1920.** [inference] The gap this node called \"the sharper gap\" is not a gap in a rising line; it is eighty years that net to roughly nothing, inside which the peak sits somewhere the corpus still cannot see. The city's decline is real and its starting point is now known to be earlier than 1970 or later than 1970 but certainly not derivable from 1970.",
+          "text": "For Lima the answer runs the other way and is sharper than the question expected. [The city](../measure/lima-population-1880-1920.yml) was 7,567 in 1880, 21,723 in 1900 and **41,306 in 1920** — against 40,307 in 2000. **Lima was already at about its 2000 size in 1920.** (Both halves of that sentence are wrong: the figure is 41,326 and the city was thirty per cent below its peak.) [inference] The gap this node called \"the sharper gap\" is not a gap in a rising line; it is eighty years that net to roughly nothing, inside which the peak sits somewhere the corpus still cannot see. The city's decline is real and its starting point is now known to be earlier than 1970 or later than 1970 but certainly not derivable from 1970.",
           "tier": "inference"
         },
         {
           "text": "**A nineteenth-century series has arrived, and it makes the problem worse before it makes it better.** The county totalled 578 in 1830 and 9,079, 12,116, 19,185, 23,623 and 31,314 at the five censuses from 1840 to 1880. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), statistics chapter, both scans agreeing. But the same table footnotes eight of its townships as having gone to Auglaize County, and the county gained Sugar Creek, Monroe, Richland and Spencer in the same act. [verified] — same source. **The 1830 and 1840 figures count a different county**, and no amount of later data repairs that — see [the reorganization of 1848](../event/reorganization-of-1848.yml). The 1900–1960 stretch this node actually asks about is still unretrieved, and now sits between two series that are not each other's continuation.",
           "tier": "verified"
+        },
+        {
+          "text": "**Closed. Both halves answered, and the second one on the last try.** The 1960 Census volume's Table 5 gives Lima twelve decennial counts from 757 in 1850 to 51,037 in 1960 — 42,287 in 1930, 44,711 in 1940, 50,246 in 1950 — every one of them rising and every one below the 53,734 of 1970. [verified] — [1960 Census, Number of Inhabitants, Ohio](../../catalog/census-1960-number-of-inhabitants-ohio.md); see [the federal series](../measure/lima-population-1850-1960.yml). **Lima peaked at the 1970 census.** The county's peak is 1980. Both dates are now argued from complete decennial series rather than placed at the edge of a retrieval.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What this node feared did not happen, and is worth saying so.** It was opened warning that this was \"the gap most likely to be filled by mistake rather than by research: a plausible peak figure for Lima is easy to find in secondary sources and easy to write down, and it would be the first unsourced number in a corpus whose population figures are otherwise all primary.\" Four phases and three federal publications later, every figure in both series is a Census count with a table and a page behind it. [verified] The warning did its job by being written down where the temptation would be felt.",
+          "tier": "verified"
         }
       ],
-      "refusals": [
-        "The corpus holds no Lima figure earlier than 2000 and therefore cannot say when the city was largest, though it names a period beginning in 1970 partly on that basis."
-      ],
-      "withheld": 7
+      "refusals": [],
+      "withheld": 4
     },
     {
       "id": "question/two-irregular-sheriff-transitions.yml",
@@ -6313,6 +6442,13 @@
       "source": "catalog/census-popest-2024.md"
     },
     {
+      "from": "measure/allen-county-outside-lima-1940-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-population-1830-1900.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -6409,6 +6545,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/lima-population-1850-1960.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1960-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/lima-population-1850-1960.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1960-number-of-inhabitants-ohio.md"
     },
     {
       "from": "measure/lima-population-1880-1920.yml",
@@ -6700,6 +6850,20 @@
     {
       "from": "period/deindustrialization.yml",
       "to": "measure/lima-population-2010.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/deindustrialization.yml",
+      "to": "measure/lima-population-1850-1960.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/deindustrialization.yml",
+      "to": "measure/allen-county-outside-lima-1940-2020.yml",
       "relationship": "evidenced-by",
       "tier": "inference",
       "source": null
