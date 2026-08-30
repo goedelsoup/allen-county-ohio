@@ -1,0 +1,60 @@
+class: measure
+label: Allen County household income and poverty, 2023
+description: |
+  Median household income and the share of people below the poverty line, for the county, its
+  thirteen civil subdivisions, the state and the nation. [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates.
+
+      geography              med. household income        below poverty
+      United States               78,538  ±    176          12.4% ± 0.1
+      Ohio                        69,680  ±    287          13.2% ± 0.2
+      Allen County                62,001  ±  2,572          13.1% ± 1.2
+      ----------------------------------------------------------------
+      Amanda Township             99,148  ± 20,903           2.9% ± 2.2
+      Shawnee Township            91,134  ±  5,929           4.8% ± 1.8
+      Jackson Township            90,529                     3.3%
+      Sugar Creek Township        89,821                     4.3%
+      Richland Township           84,093                     2.7%
+      Auglaize Township           77,875                     2.1%
+      Bath Township               75,000                    10.5%
+      Monroe Township             74,500                     4.2%
+      Marion Township             65,132                    10.7%
+      American Township           63,791                     7.1%
+      Spencer Township            59,250                    13.1%
+      Perry Township              53,272  ± 10,902          14.1% ± 7.4
+      **Lima**                    43,370  ±  2,298          24.8% ± 2.7
+
+  **Lima holds a third of the county's people and two thirds of its poor.** 35,304 of 101,685
+  residents — 34.7 per cent — and 8,214 of the 12,815 people below the poverty line, or 64.1 per
+  cent. [verified] The county's twelve townships hold the other 4,601, and the two sums are exactly
+  the county's own figures.
+
+  **Its median household income is 48 per cent of the township next door.** $43,370 against
+  Shawnee Township's $91,134, a gap of $47,764 against a combined margin of $6,359. [verified]
+  Against the nation it is 55 per cent, and against the county 70. [verified]
+
+  This does not establish that Lima has the lowest household income in the county. Perry Township's
+  $53,272 is higher by $9,902 against a combined margin of $11,142, so the two cannot be ordered
+  here. [verified] Nor is the county distinguishable from the state on poverty: 13.1 per cent
+  against 13.2, against a combined margin of 1.2 points. [verified]
+properties:
+  parameter: median household income (B19013) and poverty status (B17001)
+  value: "62001"
+  unit: 2023 dollars, county median household income
+  as_of: "2023"
+  method: |
+    2023 five-year estimates from the table-based summary file. The twelve townships and Lima are
+    county-subdivision and place summary levels and partition the county: they sum to 101,685 people
+    and 12,815 below poverty, both equal to the county row. Margins are as published, at 90 per
+    cent; combined margins are the root of the sum of squares. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

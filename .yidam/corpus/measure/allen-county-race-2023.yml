@@ -1,0 +1,57 @@
+class: measure
+label: Allen County population by race, 2023
+description: |
+  Race and Hispanic origin for the county, its thirteen civil subdivisions, the state and the
+  nation. [verified] — [American Community Survey](../../catalog/census-acs-summary-file.md),
+  2023 five-year estimates.
+
+      geography              population    white    Black   two+   Hispanic
+      United States         332,387,540    63.4%    12.4%  10.7%      19.0%
+      Ohio                   11,780,046    77.8%    12.3%   5.7%       4.6%
+      Allen County              101,685    80.9%    10.6%   6.2%       3.4%
+      ---------------------------------------------------------------------
+      **Lima**                   35,304    64.0%    23.5%   9.7%       4.8%
+      American Township          14,435    84.3%    10.1%   3.6%       2.8%
+      Shawnee Township           12,502    87.2%     4.1%   5.6%       4.0%
+      Perry Township              3,364    90.3%     5.2%   4.2%       3.1%
+      Marion Township             6,663    94.5%     1.7%   3.3%       1.4%
+      Richland Township           5,859    91.2%     1.6%   2.9%       1.7%
+      Spencer Township            3,024    96.6%     1.2%   1.2%       0.6%
+      Jackson Township            3,103    92.7%     1.0%   5.7%       0.4%
+      Bath Township               9,337    91.0%     0.9%   5.3%       3.4%
+      Auglaize Township           2,779    96.4%     0.6%   2.7%       0.6%
+      Amanda Township             1,823    93.6%     0.3%   2.6%       1.7%
+      Monroe Township             2,094    90.5%     0.0%   9.1%       9.3%
+      Sugar Creek Township        1,398    95.8%     0.0%   3.8%       1.1%
+
+  **Lima holds a third of the county's people and three quarters of its Black residents.** 8,290 of
+  10,805, or 76.7 per cent ± 4.6, against a 34.7 per cent share of the population. [verified] The
+  twelve townships hold the other 2,515, and the two sum exactly to the county's figure.
+
+  **Eight of the twelve townships have fewer than a hundred Black residents**, and two report none.
+  [verified] Outside Lima and the two townships that adjoin it — American at 10.1 per cent and
+  Shawnee at 4.1 — the county is between 90 and 97 per cent white. [verified]
+
+  This measures where people live and establishes nothing about why. The corpus holds no housing,
+  lending, zoning or annexation record for this county, and a distribution is not an explanation.
+properties:
+  parameter: population by race (B02001) and Hispanic origin (B03003)
+  value: "10805"
+  unit: residents identifying as Black or African American alone, Allen County
+  as_of: "2023"
+  method: |
+    2023 five-year estimates. Race categories are "alone" except the two-or-more column; Hispanic
+    origin is asked separately and overlaps every race column, so the rows do not sum to 100.
+    The twelve townships and Lima partition the county: 2,515 plus 8,290 is 10,805, the county
+    row. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

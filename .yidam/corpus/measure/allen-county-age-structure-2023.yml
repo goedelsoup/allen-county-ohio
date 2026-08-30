@@ -1,0 +1,62 @@
+class: measure
+label: Allen County age structure, 2023
+description: |
+  Median age and the shares under 18 and 65 or older, for the county, its thirteen civil
+  subdivisions, the state and the nation. [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates.
+
+      geography              population   under 18    65+   median age
+      United States         332,387,540      22.2%  16.8%         38.7
+      Ohio                   11,780,046      22.2%  17.9%         39.6
+      Allen County              101,685      23.6%  18.7%         39.7
+      ------------------------------------------------------------------
+      Perry Township              3,364      23.5%  27.9%         43.5
+      Marion Township             6,663      25.0%  22.4%         39.5
+      Richland Township           5,859      22.2%  21.7%         42.4
+      American Township          14,435      21.5%  21.5%         42.5
+      Shawnee Township           12,502      23.6%  20.2%         43.8
+      Auglaize Township           2,779      18.5%  19.4%         40.1
+      Amanda Township             1,823      24.7%  19.3%         43.6
+      Bath Township               9,337      23.6%  18.2%         37.7
+      Monroe Township             2,094      22.3%  17.6%         42.9
+      Jackson Township            3,103      28.8%  16.9%         39.1
+      **Lima**                   35,304      24.0%  15.6%         35.4
+      Spencer Township            3,024      29.4%  15.4%         36.5
+      Sugar Creek Township        1,398      21.6%  14.4%         29.9
+
+  **Lima is the young end of this county, not the old one.** Its median age is 35.4 against the
+  county's 39.7, its 65-and-over share is 15.6 per cent against 18.7, and its under-18 share is
+  higher than the county's. [verified] Eleven of the twelve townships are older than the city by
+  the 65-and-over measure.
+
+  **That matters because of what this corpus has already published:** the county's population fell
+  partly through natural decrease, and the loss is concentrated in Lima. Read together those invite
+  the conclusion that Lima is emptying because it is aging.
+
+  The corpus does not establish that. The city is younger than every part of the county except
+  Sugar Creek and Spencer townships, so whatever natural decrease the county has is not principally
+  Lima's, and the two findings do not compose into that story. [verified] — see
+  [natural change](allen-county-natural-change-2021-2024.yml) and
+  [the depopulation period](../period/depopulation.yml).
+
+  Sugar Creek Township's median age of 29.9 in 1,398 people is the shape a college makes in a small
+  denominator, and this node does not read it as a finding about that township. [inference]
+properties:
+  parameter: median age (B01002) and population by age (B01001)
+  value: "39.7"
+  unit: years, county median age
+  as_of: "2023"
+  method: |
+    2023 five-year estimates. Under-18 sums B01001 male 3-6 and female 27-30; 65-and-over sums male
+    20-25 and female 44-49. The twelve townships and Lima sum to the county's 101,685. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
