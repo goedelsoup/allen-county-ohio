@@ -1,0 +1,57 @@
+id: a-before-and-after-needs-a-before
+summary: >-
+  Since genesis this corpus has described Allen County as reoriented from agriculture to industry.
+  It measured Lima's population over four phases and Lima's factories in the last one, and never
+  measured a farm. When the farms were finally counted the "after" was intact and the "before" was
+  still there — 2,939 farms in 1910 against 2,858 in 1900, on 92.5 per cent of the county's land.
+context: |
+  Four nodes carried the claim, in four wordings. [`lima-oil-strike`](../corpus/event/lima-oil-strike.yml):
+  "the county's economy was reoriented from agriculture to petroleum and the manufacturing that
+  followed it". [`lima-oil-boom`](../corpus/period/lima-oil-boom.yml), in a structured property:
+  "the county's shift from agriculture to manufacturing". [`standard-oil`](../corpus/organization/standard-oil.yml):
+  "attached this county to a national industrial economy in a way its agriculture never had".
+  [`lima`](../corpus/place/lima.yml): "the reason its history is not an agricultural one".
+
+  All four were tagged `[inference]`, which is honest as far as it goes, and all four were drawn
+  from evidence about one side only. The corpus held Lima's population from 1850, the county's from
+  1830, the refinery, the strike, the boom, and as of last phase 3,607 manufacturing wage earners.
+  It held nothing at all about farming — no acreage, no crop, no animal, no farm.
+
+  The 1910 agriculture chapter says the county had **more** farms after twenty-five years of oil
+  than before it, two per cent less land in them, and more improved acreage. The farm sector had not
+  receded. A city had been added beside it.
+decision: |
+  **Before asserting that something changed from A to B, check that the corpus measures A.**
+
+  Where it does not, the claim is about B and should be written as a claim about B. "Lima became an
+  industrial city" was always supportable. "The county turned away from farming" was a different
+  sentence that no evidence in the corpus reached, and it was the one that got written, four times,
+  because it is the more satisfying shape.
+rationale: |
+  **An `[inference]` tag does not distinguish "inferred from partial evidence" from "inferred from
+  evidence about a different subject".** All four claims were correctly tagged and all four were
+  unsupported in the same specific way, and the tag had no room to say so. That is a real limit of
+  the scheme, recorded here rather than fixed: the remedy is the habit, not a new tag.
+
+  **This is the fourth version of one failure, and it is not the same as the other three.**
+  In [the window was the finding](the-window-was-the-finding.yml) the caveat was right and the
+  headline wrong. In [a baseline is a choice](a-baseline-is-a-choice.yml) the headline was right and
+  inflated by where it was measured from. In
+  [state a refusal at the grain it protects](state-a-refusal-at-the-grain-it-protects.yml) a refusal
+  was right and overstated. Those three are all errors of *width* — a true claim stretched. This one
+  is an error of *coverage*: a claim with two terms, one of which was never observed. Stretching is
+  caught by asking how wide the evidence is; this is caught only by asking what the sentence's other
+  half would look like if it were measured.
+
+  **The tell is available in advance and cost nothing to check.** A comparison names two things. The
+  corpus's own catalogue of what it has measured is a `grep` away, and running it against the second
+  term of each comparison in a node is a cheap standing check. That it was never run is the finding,
+  not the wording of any one sentence.
+
+  **The counter-consideration.** A corpus of a place will always assert more context than it
+  measures, and demanding a measurement for every term would silence most of what a reference work
+  is for. The rule is narrower than that: it applies to *comparative* claims the corpus makes in its
+  own voice about its own subject — where the whole content of the sentence is a relation between
+  two magnitudes. Received context attributed to a source is a different case and stays.
+status: accepted
+date: "2026-08-30"
