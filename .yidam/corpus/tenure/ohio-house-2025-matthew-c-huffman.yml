@@ -1,0 +1,29 @@
+class: tenure
+label: Matthew C. Huffman, Member of the Ohio House of Representatives, 78th District, term of 2025–2026
+description: |
+  Matthew C. Huffman holds this seat under a term that began 2025-01-01 and is scheduled to expire 2026-12-31.
+  [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  **This node is a term, not a career.** `ended` is absent because the holder is serving; the expiry
+  above is scheduled and has not happened.
+
+  [open] The corpus holds nothing about this member beyond the roster line — no committee, no
+  leadership office, no prior service. A two-year term beginning in 2025 is the whole record.
+
+  The term runs two years, computed from its own two dates rather than read from a statute.
+  [inference] `how_began` is recorded as elected because the source is a roster of elected officials
+  for a term it dates. [inference]
+properties:
+  began: "2025-01-01"
+  how_began: elected
+links:
+  - target: ../person/matthew-c-huffman.yml
+    relationship: held-by
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../office/member-of-the-ohio-house-for-district-78.yml
+    relationship: of-office
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../tenure.ont.yml
+    relationship: instance-of

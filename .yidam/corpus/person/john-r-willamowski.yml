@@ -1,0 +1,23 @@
+class: person
+label: John R. Willamowski
+description: |
+  Judge of the Third District Court of Appeals, holding a term that began 2025-02-09. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  This officer is chosen by the electors of the seventeen counties of the Third District, of which Allen
+  is one. [verified] — same source.
+
+  The roster gives a name, a party and two dates, so this node carries no date of birth, no
+  biography and no prior office beyond what is noted on the tenure. [open] Nor does it establish
+  where this person lives: unlike a county officer, who must be an elector of the county, a
+  district officer need only be an elector of the district, and this corpus has not read the
+  provision that says so.
+
+  That absence has a structural consequence worth naming: this node carries no outgoing edge but
+  `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge,
+  and a district officer reaches it only through the office and the term. [inference]
+properties:
+  occupation: judge
+links:
+  - target: ../person.ont.yml
+    relationship: instance-of

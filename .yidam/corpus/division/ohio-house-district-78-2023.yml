@@ -1,0 +1,32 @@
+class: division
+label: Ohio House District 78 (2023 map)
+description: |
+  The Ohio House district Allen County votes in under the map now in force, adopted by the Ohio
+  Redistricting Commission on 29 September 2023 to govern the rest of the decade. [verified] —
+  [All About Redistricting — Ohio](../../catalog/all-about-redistricting-ohio.md) for the map's date
+  and [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md) for
+  the county's district.
+
+  **The county's House district was renumbered, not redrawn into pieces.** Under the map in force at
+  the 2020 census this county was [House District 4](ohio-house-district-4-2020.yml), coterminous
+  with the county to the byte. It is now the 78th. [verified] — same two sources.
+
+  **The county is not split.** The elections roster names one state representative for Allen County
+  and one only; a split county would list two. [inference] — reasoned here from the roster's shape
+  rather than from any boundary file.
+
+  [open] This node has no boundary. The corpus knows the district's number and that this county
+  votes in it, and not where its line runs or which other counties it contains. Whether it is still
+  coterminous with the county, as the 4th was, is unestablished — the renumbering is evidence the
+  map changed and no evidence of how.
+properties:
+  division_type: state legislative district
+  effective_from: "2023-09-29"
+  drawn_by: Ohio Redistricting Commission
+links:
+  - target: ../place/allen-county.yml
+    relationship: partially-covers
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../division.ont.yml
+    relationship: instance-of
