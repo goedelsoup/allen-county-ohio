@@ -9,9 +9,9 @@ const decline = assertion('county-population-decline')
 const concentration = assertion('decline-concentrated-in-lima')
 const breadth = assertion('decline-is-not-suburbanization')
 const mechanism = assertion('decline-is-migration-and-deaths')
-const century = assertion('lima-was-this-size-in-1920')
+const century = assertion('lima-grew-fivefold-after-the-oil')
 
-// The county chart is the assertion's own figures: the five numbers the corpus enumerated
+// The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
 const countySpec: LineSpec = {
   kind: 'line',
@@ -90,7 +90,7 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
 
 <Base
   title="Population"
-  lede="Allen County has lost people at every point it has been measured since 1970. What that does and does not show is the whole of this page."
+  lede="Allen County peaked in 1980 and has fallen at every count since. What that does and does not show is the whole of this page."
 >
   <AssertionCard assertion={decline} open />
 
@@ -160,20 +160,19 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   </section>
 
   <section>
-    <h2>And the decline runs from a peak nobody here can locate</h2>
+    <h2>Before the series begins</h2>
     <p>
       Everything above begins in 1970, because 1970 was the earliest figure this corpus held.
-      Three county histories — 1885, 1906 and 1921 — carry Lima's counts from before it, and they
-      do not extend the story so much as unsettle it. The city tripled in the twenty years after
-      the 1885 oil strike and doubled again by 1920, and then it was already about the size it
-      would be in 2000.
+      Three county histories — 1885, 1906 and 1921 — carry Lima's counts from before it. The city
+      tripled in the twenty years after the 1885 oil strike and doubled again by 1920, reaching
+      41,306 people, and it went on growing to 53,734 by 1970. It is 35,579 today.
     </p>
     <AssertionCard assertion={century} />
 
     <ChartFigure
       id="century"
-      title="Lima before the series begins"
-      caption="Three counts from three county histories, not from the Census Bureau. The gaps are twenty years wide and the corpus has no observations inside them; the 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city."
+      title="Lima, 1880 to 1970"
+      caption="The first three counts come from three county histories rather than from the Census Bureau; the 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. The gaps are decades wide and the corpus has no observations inside them — 1930 to 1960 is still missing, so 1970 is a lower bound on the peak and not necessarily the peak."
       columns={['Census', 'Residents']}
       rows={century.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
       height={280}

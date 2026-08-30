@@ -12,6 +12,7 @@ location:
     value: https://www2.census.gov/programs-surveys/popest/tables/1900-1980/counties/totals/e7079co.txt
     description: fixed-width text, all US counties
 used-by:
+  - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-population-1970.yml
   - ../corpus/question/pre-1970-population-series.yml
 ---

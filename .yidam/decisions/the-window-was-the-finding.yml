@@ -1,0 +1,60 @@
+id: the-window-was-the-finding
+summary: >-
+  For thirty phases this corpus said Allen County had declined since 1970 and carefully noted that
+  it could not prove 1970 was a peak, because 1970 was where its data began. The 1990 Census volume
+  supplied 1940–1990: the county grew through the 1970s and peaked in 1980. The caveat was right and
+  the headline was wrong, and the corpus published the headline.
+context: |
+  [`deindustrialization`](../corpus/period/deindustrialization.yml) has carried, almost from genesis,
+  both of these:
+
+    Allen County counted 111,144 at the 1970 census and 100,866 at the 2024 estimate — a loss of
+    10,278 people, or 9.2%, across five decades with no reversal at any measured point.
+
+    It does not establish that 1970 is the start. 1970 is the earliest figure the corpus holds,
+    and a series that begins at its own first observation cannot show that the first observation
+    was a peak.
+
+  The second sentence was the corpus's sharpest refusal. Two separate tripwires — one in the Rust
+  publication gate, one in the site's own tests — were written to fail if it ever stopped being
+  detected, precisely so the chart could not travel without it.
+
+  It was correct. Between 1970 and 1980 the county grew by 1,097 to 112,241, its highest count ever,
+  and fell from there. "No reversal at any measured point" was true of the data and false of the
+  county: the one decade that rose was the one decade outside the window.
+decision: |
+  **Where a series is bounded by retrieval rather than by the world, say so in the headline and not
+  only in the caveat.**
+
+  The corpus did the hard half right. It named the limitation, tagged it, wired two tests to keep it
+  attached to the chart, and refused for thirty phases to claim 1970 was a peak. What it did not do
+  is let that shape the assertion the reader meets first, which said "has fallen at every measured
+  point since 1970" — a sentence that is *about the corpus's window* while sounding like a sentence
+  about the county.
+
+  The site's assertion now reads "Allen County peaked in 1980, not 1970. It has fallen at every
+  count since," and the chart spans seven counts instead of five.
+
+  Both tripwires were repointed rather than deleted, to the refusal that survives one subject down:
+  Lima's series still begins at its own first federal observation, 1970, and the city may have been
+  larger in 1960. Each carries a comment saying what the old pin was and why it was retired —
+  because a test whose reason is lost gets deleted by the next person who trips over it.
+rationale: |
+  **A caveat and a headline are not interchangeable, and the corpus has been treating them as if
+  the caveat could carry the weight.** A reader who takes one sentence from a page takes the first
+  one. Every mechanism this repository built — the claim tags, the refusal whitelist, the gate that
+  makes an assertion answer the refusals of every node it cites — routes the caveat *to* the reader,
+  and none of them stops the headline from being wrong in a way the caveat then corrects.
+
+  The concrete rule that follows: when a `[open]` says the corpus cannot see past the edge of its
+  own data, the statement built on that data should be phrased about the data. "Every figure this
+  corpus holds since 1970 is lower than the one before" would have been true, unfalsifiable by the
+  1980 count, and much less satisfying to write. That last part is the tell.
+
+  There is a companion failure in the same phase, at half the scale, and it is the reason to state
+  the rule generally rather than blame the 1970 window. One phase ago the corpus held Lima at 41,306
+  in 1920 and 40,307 in 2000 and concluded "eighty years net to roughly nothing". Two points that
+  happen to be level are not a plateau; between them the city rose to 53,734 and fell. Same error in
+  a different geometry — a chord described as if it were the curve.
+status: accepted
+date: "2026-08-29"

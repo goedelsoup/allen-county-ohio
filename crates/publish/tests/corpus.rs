@@ -95,9 +95,20 @@ fn the_committed_feeds_are_what_the_corpus_says() {
 #[test]
 fn the_corpus_still_refuses_the_reading_a_population_chart_invites() {
     // This corpus's sharpest refusal, and the reason the check is node-level rather than
-    // block-level: `deindustrialization` demonstrates a five-decade decline in one paragraph
-    // and refuses the reading that 1970 was a peak in the next. If the refusal detector ever
-    // stops matching this sentence, the site keeps the chart and loses the caveat.
+    // block-level: `deindustrialization` demonstrates a decline in one paragraph and refuses
+    // the reading its chart invites in the next. If the refusal detector ever stops matching,
+    // the site keeps the chart and loses the caveat.
+    //
+    // The pinned sentence has changed once, and the reason is worth recording where the next
+    // reader of this test will find it. It used to be "It does not establish that 1970 is the
+    // start", because every figure the corpus held began at 1970 and a series starting at its
+    // own first observation cannot show that observation was a peak. The 1990 Census volume
+    // then supplied 1940-1990 and settled it: the county peaked in 1980, so the refusal was
+    // answered by evidence rather than dropped, and the assertion above now states the peak.
+    //
+    // What remains unresolved is the same worry one subject down: Lima's series still begins
+    // at its own first federal observation, 1970, and the city may have been larger in 1960.
+    // That is what this test now guards.
     let text = std::fs::read_to_string(corpus_dir().join("period/deindustrialization.yml"))
         .expect("the node is there");
     let description = text
@@ -112,7 +123,9 @@ fn the_corpus_still_refuses_the_reading_a_population_chart_invites() {
         .collect();
 
     assert!(
-        refusals.iter().any(|r| r.contains("1970 is the start")),
+        refusals
+            .iter()
+            .any(|r| r.contains("Lima peaked in 1970 rather than earlier")),
         "the refusal is no longer detected; found {refusals:?}"
     );
 
@@ -125,7 +138,7 @@ fn the_corpus_still_refuses_the_reading_a_population_chart_invites() {
         decline
             .caveats
             .iter()
-            .any(|c| c.contains("1970 is the start")),
+            .any(|c| c.contains("Lima peaked in 1970 rather than earlier")),
         "the refusal did not reach the reader"
     );
 }
@@ -135,7 +148,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 208, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 210, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,
