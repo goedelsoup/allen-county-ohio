@@ -319,6 +319,30 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-farms-did-not-go-anywhere",
+        statement: "Twenty-five years after the oil strike, Allen County had more farms than \
+                    before it — 2,939 against 2,858 — on 92.5 per cent of its land area.",
+        topic: "population",
+        // Two bars that are almost the same height, which is the whole finding. The corpus
+        // described this county as reoriented away from farming for nine phases before it
+        // measured a farm.
+        supports: &[
+            support!(
+                "measure/allen-county-farms-1900-1910.yml",
+                "**The county had 2,939 farms in 1910 and 2,858 in 1900, on 240,472 acres against 245,283.**"
+            ),
+            support!(
+                "measure/allen-county-farms-1900-1910.yml",
+                "**Nine-tenths of Allen County was farmland in 1910 — 240,472 acres of 259,840, or 92.5 per cent.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1900", value: 245_283.0, literal: "245,283" },
+            Figure { label: "1910", value: 240_472.0, literal: "240,472" },
+        ],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",

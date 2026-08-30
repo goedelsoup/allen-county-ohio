@@ -17,6 +17,9 @@ location:
       unreliable for reading a three-up table across columns; every figure here was read from a
       rendered image.
 used-by:
+  - ../corpus/measure/allen-county-domestic-animals-1910.yml
+  - ../corpus/measure/allen-county-farm-output-1909.yml
+  - ../corpus/measure/allen-county-farms-1900-1910.yml
   - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-townships-1890-1910.yml
   - ../corpus/measure/lima-manufactures-1899-1909.yml
@@ -79,12 +82,36 @@ The prose around those tables carries three things the tables do not: Lima's lea
 valued between $5,000,000 and $10,000,000; and it was one of five Ohio cities out of thirty-seven
 whose product value **fell** between 1899 and 1904.
 
-**What else is in it, unread, with page numbers this time.** The agriculture chapter runs county
-columns across the page rather than county rows down it, and holds at least: *Table 2, number,
-acreage and value of farms classified by tenure*; *Table 3, live stock products and domestic
-animals*; *Table 4, value of all crops and principal classes thereof*; and *Table 6, number and
-value of domestic animals not on farms, by counties*. Allen County is the second column in each,
-after Adams. There is also a mines and quarries chapter and, in the population section, tables on
-school attendance, illiteracy, marital condition and nativity. No occupations table: the abstract
-says so itself. The corpus has now read two chapters of five. See
+**Its agriculture chapter measures the other half of the county.** Printed pages 639–686, PDF pages
+74–121, two tables to a sheet. *Table 1, farms and farm property* (printed 656, Allen on 656) and
+*Table 2, farms classified by tenure* (printed 665) give the stock — 2,939 farms on 240,472 acres,
+92.5 per cent of the county's land area, worth $25,992,184. *Table 3, live stock products* (lower
+half of the same sheets), *Table 4, value of all crops* (printed 674) and *Table 5, selected farm
+expenses and receipts* (lower half again) give the 1909 flow. *Table 6, domestic animals not on
+farms* (printed 683) counts the animals in the town lots. Allen is the second county column in each,
+after Adams. See [the farms](../corpus/measure/allen-county-farms-1900-1910.yml),
+[what they produced](../corpus/measure/allen-county-farm-output-1909.yml) and
+[the animals](../corpus/measure/allen-county-domestic-animals-1910.yml).
+
+**The chapter refuses a total, in its own words**, and the corpus adopts the refusal:
+
+> if [receipts from live stock] were added to the value of the crops the sum would not correctly
+> represent the total value of farm products, because, as already more fully explained, duplication
+> would result from the fact that part of the crops are fed to the live stock.
+
+**Two of its tables were not in the earlier survey of this volume.** That survey named Tables 2, 3, 4
+and 6 and missed *Table 1*, which is the master table the other four hang off, and *Table 5*, which
+holds the only farm-expense figures the corpus has. Both were found by reading the chapter rather
+than its table list — the table list was assembled from running heads, and a two-tables-to-a-sheet
+layout puts half the tables somewhere a running head never mentions. See
+[a source is not exhausted by one question](../decisions/a-source-is-not-exhausted-by-one-question.yml).
+
+**Its state column carries a footnote that this corpus used as a check.** The Ohio total for
+domestic animals, poultry and bees exceeds the sum of its own components by exactly $390, and the
+footnote reads "Includes deer, valued at $390." The residual was computed before the footnote was
+read, which is the cheapest possible confirmation that every component was read correctly.
+
+**What else is in it, still unread, with page numbers.** A mines and quarries chapter, and in the
+population section tables on school attendance, illiteracy, marital condition and nativity. No
+occupations table: the abstract says so itself. The corpus has now read three chapters of five. See
 [a source is not exhausted by one question](../decisions/a-source-is-not-exhausted-by-one-question.yml).

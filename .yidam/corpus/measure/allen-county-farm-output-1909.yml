@@ -1,0 +1,61 @@
+class: measure
+label: Allen County farm output and farm expenses, 1909
+description: |
+  What the county's farms grew, sold and spent in the same year the corpus measures Lima's factories.
+  [verified] —
+  [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md),
+  statistics of agriculture, Tables 3, 4 and 5.
+
+      value of all crops   $2,425,973    cereals            $1,565,890
+                                         hay and forage       $534,014
+                                         vegetables           $154,672
+                                         all other crops       $93,440
+                                         other grains/seeds     $31,840
+                                         fruits and nuts        $46,117
+
+      corn      51,293 acres  1,984,727 bu     dairy products (excl. home use)  $279,950
+      oats      30,156 acres    894,916 bu     poultry and eggs produced        $373,331
+      wheat     14,541 acres    195,319 bu     wool and mohair                   $48,110
+      rye        3,107 acres     41,897 bu     receipts, sale of animals      $1,402,878
+      hay       39,664 acres     55,571 tons   honey and wax                        $585
+
+  **Corn was half the county's cropland and two-thirds of its grain.** [verified] — same source.
+  Cereals took 100,285 acres and yielded 3,146,354 bushels; corn alone was 51,293 of those acres.
+  Wheat was a minor crop here, on a seventh of the cereal acreage. The county grew no tobacco and no
+  sugar beets at all.
+
+  **Farms spent $184,390 in cash on labour in 1909**, with 1,571 of the 2,939 farms reporting any,
+  plus $47,888 in rent and board furnished. [verified] — same source, Table 5. Fertilizer took
+  $12,957 across 428 farms and feed $63,780 across 708. Receipts from the sale of feedable crops
+  were $423,118.
+
+  **The corpus will not add these figures into a total, because the source says not to.** [verified]
+  — same source: if receipts from live stock "were added to the value of the crops the sum would not
+  correctly represent the total value of farm products, because, as already more fully explained,
+  duplication would result from the fact that part of the crops are fed to the live stock." So the
+  county's crops were worth $2,425,973 and its dairy, poultry and wool were worth what is printed
+  above, and there is no county figure here for the value of farm output as a whole. [open]
+
+  **Against this, Lima's factories made $7,753,877 of products in the same year.** [verified] —
+  [Lima manufactures](lima-manufactures-1899-1909.yml), from the manufactures chapter of this same
+  volume. [inference] Both are gross output and neither nets out what was bought to make it, so the
+  ratio of about three to one is a comparison of two gross figures and not of two incomes.
+properties:
+  parameter: value of crops, live stock products and farm expenses, Allen County
+  value: "2425973"
+  unit: dollars, value of all crops
+  as_of: "1909"
+  method: |
+    Thirteenth Census of Agriculture, for the calendar year 1909. Read from rendered images of a
+    400-dpi scan. Checked by arithmetic self-closure: the six crop-value classes sum to $2,425,973
+    exactly; the six cereals sum to the printed cereal acreage and to the printed bushel total; the
+    six tame grasses sum to the tame-grass acreage and tonnage, and those plus three minor forages
+    sum to the hay total — eight closures with no residual. The orchard and small-fruit itemisations
+    leave residuals, as they do in the state column, because both omit minor kinds. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1910-abstract-supplement-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

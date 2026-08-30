@@ -204,8 +204,16 @@
           "tier": "inference"
         },
         {
-          "text": "The strike `affected` the county and not only the city: the Lima–Indiana field extended well beyond the corporate boundary, and the county's economy was reoriented from agriculture to petroleum and the manufacturing that followed it. [inference] That is why this node carries an `affected` edge to the county alongside its `occurred-in` edge to Lima — the two say different things, and only the first is true of the ground outside the city.",
+          "text": "The strike `affected` the county and not only the city: the Lima–Indiana field extended well beyond the corporate boundary. [inference] That is why this node carries an `affected` edge to the county alongside its `occurred-in` edge to Lima — the two say different things, and only the first is true of the ground outside the city.",
           "tier": "inference"
+        },
+        {
+          "text": "**What the strike did to the county was add, not replace.** This node used to say the county's economy \"was reoriented from agriculture to petroleum and the manufacturing that followed it\", which was written before the corpus had measured any agriculture at all. It has now. Twenty-five years after the strike, Allen County had 2,939 farms against 2,858 in 1900, 92.5 per cent of its land area in farms, and improved acreage higher than before the boom began. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md); see [the county's farms](../measure/allen-county-farms-1900-1910.yml). The farms did not go anywhere. A city grew beside them. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The one farm figure that moved sharply is price.** An acre of Allen County farmland went from $38.39 in 1900 to $76.28 in 1910, and all farm property rose 89.0 per cent against 58.7 for Ohio. [verified] — same source, which prints both percentages.",
+          "tier": "verified"
         },
         {
           "text": "[verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). A book that catalogues a $12,000 flour mill would not have missed an oil field in the town it is written about. So the strike had not happened, or had not yet registered, when this went to press — which bounds it from below without naming a well, and is the first independent support this corpus has for the year 1885 at all. [inference]",
@@ -235,7 +243,7 @@
       "refusals": [
         "**A source printed in 1885 does not know this happened, and that is evidence.** The county history published that year is exhaustive about Lima's industry — it names the paper mills, the machine works, the iron fence company, the egg-carrier patent, the gas works, every bank and the year each was organized."
       ],
-      "withheld": 5
+      "withheld": 6
     },
     {
       "id": "event/ottawa-removal.yml",
@@ -1303,6 +1311,105 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-domestic-animals-1910.yml",
+      "class": "measure",
+      "label": "Allen County domestic animals, on farms and off, 1910",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1910-04-15",
+        "method": "Thirteenth Census of Agriculture, enumerated April 15, 1910. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: on the farms the seven animal values sum to the printed $2,501,226 exactly, and cattle, horses, mules, swine and sheep each sum from their own age and sex classes; off the farms the five values sum to $350,736 exactly. The colonies-of- bees value is damaged on this scan and was recovered as $2,561 from the property total, an identity that closes exactly in the neighbouring county column. County totals are added here. [inference]",
+        "parameter": "domestic animals on and off farms, Allen County",
+        "unit": "horses",
+        "value": "14676"
+      },
+      "blocks": [
+        {
+          "text": "The county's animals counted twice over — once on the farms and once inside the town lots. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md), statistics of agriculture, Table 1 (farms and ranges) and Table 6 (not on farms).",
+          "tier": "verified"
+        },
+        {
+          "text": "**There were 14,676 horses in Allen County in 1910 — one for every 3.9 people.** [inference] — computed from the two tables, against the county's 56,580. The horses were worth $1,391,032 on the farms and $304,989 off them, together more than half the value of every animal in the county.",
+          "tier": "inference"
+        },
+        {
+          "text": "**1,788 inclosures that were not farms kept animals**, holding 2,766 horses, 887 cattle and 664 swine. [verified] — same source, Table 6. This is the town half of the county: a place that was half city by population and nine-tenths farm by ground still moved itself on horses, and 713 of its dairy cows stood in yards rather than fields. See [Lima](../place/lima.yml) and [the farms](allen-county-farms-1900-1910.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The swine outnumbered the people.** [inference] — 59,695 against 56,580, computed here. Sheep and goats came to 41,240 and cattle to 21,336.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-farm-output-1909.yml",
+      "class": "measure",
+      "label": "Allen County farm output and farm expenses, 1909",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1909",
+        "method": "Thirteenth Census of Agriculture, for the calendar year 1909. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: the six crop-value classes sum to $2,425,973 exactly; the six cereals sum to the printed cereal acreage and to the printed bushel total; the six tame grasses sum to the tame-grass acreage and tonnage, and those plus three minor forages sum to the hay total — eight closures with no residual. The orchard and small-fruit itemisations leave residuals, as they do in the state column, because both omit minor kinds. [verified]",
+        "parameter": "value of crops, live stock products and farm expenses, Allen County",
+        "unit": "dollars, value of all crops",
+        "value": "2425973"
+      },
+      "blocks": [
+        {
+          "text": "What the county's farms grew, sold and spent in the same year the corpus measures Lima's factories. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md), statistics of agriculture, Tables 3, 4 and 5.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Corn was half the county's cropland and two-thirds of its grain.** [verified] — same source. Cereals took 100,285 acres and yielded 3,146,354 bushels; corn alone was 51,293 of those acres. Wheat was a minor crop here, on a seventh of the cereal acreage. The county grew no tobacco and no sugar beets at all.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Farms spent $184,390 in cash on labour in 1909**, with 1,571 of the 2,939 farms reporting any, plus $47,888 in rent and board furnished. [verified] — same source, Table 5. Fertilizer took $12,957 across 428 farms and feed $63,780 across 708. Receipts from the sale of feedable crops were $423,118.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Against this, Lima's factories made $7,753,877 of products in the same year.** [verified] — [Lima manufactures](lima-manufactures-1899-1909.yml), from the manufactures chapter of this same volume. [inference] Both are gross output and neither nets out what was bought to make it, so the ratio of about three to one is a comparison of two gross figures and not of two incomes.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-farms-1900-1910.yml",
+      "class": "measure",
+      "label": "Allen County farms and farm property, 1900–1910",
+      "tier": "verified",
+      "properties": {
+        "as_of": "1910-04-15",
+        "method": "Thirteenth Census of Agriculture, enumerated April 15, 1910, with 1900 comparatives printed in italics. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: the three tenure classes of Table 2 sum to Table 1's farm count, acreage, improved acreage and land-and-buildings value independently; the ten size classes sum to 2,939; improved plus woodland plus other unimproved sums to land in farms; the four property components sum to the total in both years; and all six printed averages and percentages recompute. [verified]",
+        "parameter": "farms, farm acreage and value of farm property, Allen County",
+        "unit": "farms",
+        "value": "2939"
+      },
+      "blocks": [
+        {
+          "text": "What the county was made of, on the ground, at the height of the oil boom. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md), statistics of agriculture, Tables 1 and 2.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nine-tenths of Allen County was farmland in 1910 — 240,472 acres of 259,840, or 92.5 per cent.** [verified] — same source, which prints the percentage and the land area beside it. Of that, 203,222 acres were improved, 32,316 were woodland in farms and 4,934 were otherwise unimproved. The average farm was 81.8 acres; the commonest was between 50 and 99 acres, and 1,138 of the 2,939 were that size. One farm in the county exceeded 500 acres and none reached 1,000.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county had 2,939 farms in 1910 and 2,858 in 1900, on 240,472 acres against 245,283.** [verified] — same source. Farms rose by 81 and farmland fell by 4,811 acres, about 2 per cent, while improved acreage *rose* by 6,757. Twenty-five years after [the strike](../event/lima-oil-strike.yml), whatever the boom did to this county, it had not taken the farms out of it. See [Lima manufactures](lima-manufactures-1899-1909.yml) for the other side of the same volume, and [what the county was](../period/lima-oil-boom.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The farms that multiplied were rented ones.** Owner-operated farms fell from 2,089 to 2,046 while tenanted farms rose from 730 to 871, and tenancy went from 25.5 to 29.6 per cent of all farms. [verified] — same source, Table 2. Of the 871 tenants, 509 paid shares and 275 paid cash. Of 2,046 owners, 655 carried mortgage debt and 1,378 were free of it.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-governor-vote-2018.yml",
@@ -2648,7 +2755,11 @@
           "tier": "inference"
         },
         {
-          "text": "It matters to this corpus as the mechanism by which a local discovery became a national one. The strike made oil available; Standard made it saleable, and in doing so attached this county to a national industrial economy in a way its agriculture never had. [inference]",
+          "text": "It matters to this corpus as the mechanism by which a local discovery became a national one. The strike made oil available; Standard made it saleable, and in doing so attached this county to a national industrial economy in a way its agriculture never had. [inference] That clause is a claim about reach, and the corpus can now say what it is not a claim about. In 1909 the county's crops were worth $2,425,973 and its farms took $1,402,878 for animals sold, against $7,753,877 of products from Lima's factories; the county's farm property stood at $25,992,184 in April 1910. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md); see [the farms](../measure/allen-county-farms-1900-1910.yml), [what they produced](../measure/allen-county-farm-output-1909.yml) and [Lima manufactures](../measure/lima-manufactures-1899-1909.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "Those numbers do not settle which sector was larger, and this node does not claim they do. The farm figure that can be compared with manufactured output is a flow and the farm figure that is impressive is a stock, and the corpus holds no capital figure for Lima's factories to set against $25,992,184. What \"in a way its agriculture never had\" asserts is that the oil went to a national market and the corn did not — and even that is an inference, because the corpus has not measured where either went. [inference]",
           "tier": "inference"
         },
         {
@@ -2775,7 +2886,7 @@
       "tier": "inference",
       "properties": {
         "began": "1885",
-        "character": "A local discovery converted into national industry, and the county's shift from agriculture to manufacturing. [inference]",
+        "character": "A local discovery converted into national industry, added on top of a farming county that kept farming. This field said \"the county's shift from agriculture to manufacturing\" until the agriculture was measured and had not shifted. [inference]",
         "ended": "1910"
       },
       "blocks": [
@@ -2784,7 +2895,7 @@
           "tier": "inference"
         },
         {
-          "text": "Its character is the attachment of a local agricultural economy to national capital. The refinery, the growth of Lima's population, and much of the built fabric of the city date from it. [inference] The field's dominance was relatively brief — it was displaced as new fields opened elsewhere — but the refining capacity it justified is still operating, which is why the period's most durable legacy is [a site](../site/lima-refinery.yml) rather than an industry. [inference]",
+          "text": "Its character is the attachment of a local agricultural economy to national capital. The refinery, the growth of Lima's population, and much of the built fabric of the city date from it. [inference] *Attachment* is the right word and *replacement* is not: the agriculture was still there at the end of the period, on 92.5 per cent of the county's land. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md); see [the county's farms](../measure/allen-county-farms-1900-1910.yml). The field's dominance was relatively brief — it was displaced as new fields opened elsewhere — but the refining capacity it justified is still operating, which is why the period's most durable legacy is [a site](../site/lima-refinery.yml) rather than an industry. [inference]",
           "tier": "inference"
         },
         {
@@ -3801,12 +3912,16 @@
           "tier": "verified"
         },
         {
+          "text": "**Once, nine-tenths of it was farms.** In 1910 the county held 2,939 farms covering 240,472 of its 259,840 acres — 92.5 per cent of the land area — with 203,222 acres improved and $25,992,184 of farm property standing on them. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md); see [the county's farms](../measure/allen-county-farms-1900-1910.yml), [what they produced](../measure/allen-county-farm-output-1909.yml) and [its animals](../measure/allen-county-domestic-animals-1910.yml). That is the same census that counts 30,508 people in Lima, so the county was already more than half city by population while still being nine-tenths farm by ground. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**It rose for a hundred and fifty years and has fallen for forty-four.** The peak is 1980 and the county is now smaller than it was in 1960. [inference] The first two figures count different ground — the [reorganization of 1848](../event/reorganization-of-1848.yml) moved 138 square miles — so the series is continuous only from 1850.",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "place/amanda-township.yml",
@@ -4453,7 +4568,7 @@
           "tier": "verified"
         },
         {
-          "text": "Lima is the county's industrial centre and the reason its history is not an agricultural one: the 1885 oil strike, the locomotive works, and the tank plant are all here or on its edge. [inference] Its population has been falling since the 1970s and continues to fall — see [Lima population, 2020](../measure/lima-population-2020.yml) and [Lima population, 2024](../measure/lima-population-2024.yml).",
+          "text": "Lima is the county's industrial centre: the 1885 oil strike, the locomotive works, and the tank plant are all here or on its edge. [inference] This node used to add \"and the reason its history is not an agricultural one\", which the county's own figures do not bear — in 1910, with Lima already holding more than half the county's people, 92.5 per cent of the county's land was still in farms. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md); see [the county's farms](../measure/allen-county-farms-1900-1910.yml). Lima is why the county's history is not *only* agricultural. [inference] Its population has been falling since the 1970s and continues to fall — see [Lima population, 2020](../measure/lima-population-2020.yml) and [Lima population, 2024](../measure/lima-population-2024.yml).",
           "tier": "inference"
         },
         {
@@ -6716,6 +6831,27 @@
       "relationship": "partially-within",
       "tier": "verified",
       "source": "catalog/census-block-assignment-2020.md"
+    },
+    {
+      "from": "measure/allen-county-domestic-animals-1910.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1910-abstract-supplement-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-farm-output-1909.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1910-abstract-supplement-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-farms-1900-1910.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1910-abstract-supplement-ohio.md"
     },
     {
       "from": "measure/allen-county-governor-vote-2018.yml",

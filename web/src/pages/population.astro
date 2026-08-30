@@ -14,6 +14,7 @@ const peaks = assertion('three-peaks-thirty-years-apart')
 const townships = assertion('every-township-grew')
 const whole = assertion('the-county-has-a-complete-series')
 const work = assertion('the-only-employment-figures')
+const farms = assertion('the-farms-did-not-go-anywhere')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -116,6 +117,16 @@ const workSpec: BarSpec = {
   labelValues: true,
 }
 
+// Two bars that are nearly the same height. That is the finding, and a line between two points
+// would draw a trend across a gap that holds no observations.
+const farmSpec: BarSpec = {
+  kind: 'bar',
+  categories: farms.figures.map((f) => f.label),
+  values: farms.figures.map((f) => f.value),
+  yTitle: 'Acres of land in farms, Allen County',
+  labelValues: true,
+}
+
 const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
 )
@@ -212,6 +223,35 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       height={280}
     />
     <script type="application/json" data-chart-spec="work" set:html={JSON.stringify(workSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>And the thing it was supposed to have replaced</h2>
+    <p>
+      For nine phases this corpus described Allen County as a farming county reoriented by oil into
+      an industrial one, and in all that time it had not measured a single farm. The same 1910 volume
+      that counts Lima's factory workers counts the county's farms, and they had not gone anywhere:
+      2,939 of them in 1910 against 2,858 in 1900, covering 240,472 of the county's 259,840 acres.
+      More farms than before the boom, on two per cent less land, with more of that land improved.
+    </p>
+    <p>
+      What the oil years did to farming here shows up in one figure only, and it is a price. An acre
+      of Allen County farmland went from $38.39 in 1900 to $76.28 in 1910, and the county's farm
+      property rose 89.0 per cent against 58.7 per cent for Ohio as a whole. Whether that was oil
+      money bidding up the land is the obvious reading, and the corpus has nothing that would
+      separate it from the general rise in Midwestern land values over the same decade.
+    </p>
+    <AssertionCard assertion={farms} />
+
+    <ChartFigure
+      id="farms"
+      title="Land in farms, Allen County, 1900 and 1910"
+      caption="Thirteenth Census of Agriculture. The county was already more than half city by population in 1910 — Lima held 30,508 of 56,580 — while still being nine-tenths farm by ground. This is the only agricultural census the corpus has read, so nothing here shows when the farmland began to go."
+      columns={['Census year', 'Acres in farms']}
+      rows={farms.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="farms" set:html={JSON.stringify(farmSpec)} is:inline />
   </section>
 
   <section>

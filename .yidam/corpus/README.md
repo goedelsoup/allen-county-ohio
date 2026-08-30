@@ -30,7 +30,7 @@ Sorted by: kind, then alphabetically.
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
-| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 6v / 6i / 1o | 101 |
+| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 8v / 7i / 2o | 117 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
@@ -68,6 +68,9 @@ Sorted by: kind, then alphabetically.
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 4v / 0i / 1o | 35 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 4v / 0i / 1o | 37 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
+| [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 2v / 3i / 1o | 55 |
+| [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
+| [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 7v / 1i / 2o | 61 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
@@ -112,10 +115,10 @@ Sorted by: kind, then alphabetically.
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 5v / 0i / 1o | 41 |
-| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 4v / 2i / 1o | 37 |
+| [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 5v / 3i / 1o | 52 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 3v / 4i / 2o | 44 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 12 | 10v / 11i / 3o | 168 |
-| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 4v / 7i / 2o | 59 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 5v / 7i / 2o | 63 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 6v / 3i / 2o | 61 |
@@ -160,7 +163,7 @@ Sorted by: kind, then alphabetically.
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 4v / 2i / 1o | 58 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 5v / 3i / 2o | 71 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 9v / 2i / 1o | 65 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
@@ -175,7 +178,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 15v / 3i / 1o | 119 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 16v / 4i / 1o | 124 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
