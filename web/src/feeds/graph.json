@@ -322,6 +322,36 @@
       "withheld": 2
     },
     {
+      "id": "jurisdiction/allen-county-court-of-common-pleas.yml",
+      "class": "jurisdiction",
+      "label": "Allen County Court of Common Pleas",
+      "tier": "inference",
+      "properties": {
+        "jurisdiction_type": "court district",
+        "seat": "Lima"
+      },
+      "blocks": [
+        {
+          "text": "**It is divided five ways by its own rules and staffed four.** The court's local rules, adopted under Article IV, Section V(B) of the Ohio Constitution and effective 1 February 2023, govern practice \"in the General Trial Division, Criminal Division, Domestic Relations Division, and where applicable, the Juvenile Division and Probate Division\". [verified] — [the court's local rules](../../catalog/allen-county-common-pleas-local-rules.md). Four judges are elected, to the [General](../office/judge-of-the-common-pleas-general-division.yml) (two seats), [Domestic Relations](../office/judge-of-the-common-pleas-domestic-relations-division.yml) and [Probate](../office/judge-of-the-common-pleas-probate-division.yml) divisions. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md). The Criminal Division has no separately elected judge. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three sources divide this court three ways and none of them is wrong.** The rules divide practice into five, the county's site divides it into three offices with their own sites, and the ballot divides it into four seats. They are answers to different questions and the corpus keeps all three rather than picking one. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "Its judges serve six years where every other elected officer of this county serves four. [verified] — same roster; the length is arithmetic on the term dates. [inference] Three of the four terms begin in February and one in January.",
+          "tier": "inference"
+        },
+        {
+          "text": "Its records are kept by [the clerk of courts](../office/allen-county-clerk-of-courts.yml), an elected county officer who is not part of the court. [verified] — [the clerk's site](../../catalog/allen-county-official-site.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "jurisdiction/allen-county-government.yml",
       "class": "jurisdiction",
       "label": "Allen County (government)",
@@ -349,10 +379,14 @@
         {
           "text": "That sentence stood on this node as an untethered `[inference]` for nine phases, naming all nine offices while the corpus held nodes for one of them. See [a deep instance can hide an empty class](../../decisions/a-deep-instance-can-hide-an-empty-class.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**Three courts sit over this ground and none of them is the county government.** [The Court of Common Pleas](allen-county-court-of-common-pleas.yml) is the county's trial court, [the Lima Municipal Court](lima-municipal-court.yml) covers the whole county despite its name, and [the Third District Court of Appeals](third-district-court-of-appeals.yml) covers this county and sixteen others from an office in Lima. Six judges are elected by this county's voters, on six-year terms where every administrative officer serves four. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "jurisdiction/allen-east-local-school-district.yml",
@@ -766,6 +800,33 @@
       "withheld": 1
     },
     {
+      "id": "jurisdiction/lima-municipal-court.yml",
+      "class": "jurisdiction",
+      "label": "Lima Municipal Court",
+      "tier": "inference",
+      "properties": {
+        "authority_source": "Ohio Revised Code §1901.02, which names this court and fixes its territory as Allen County. [verified]",
+        "jurisdiction_type": "court district",
+        "seat": "Lima"
+      },
+      "blocks": [
+        {
+          "text": "**Its name says Lima and its territory is the county.** \"The Lima municipal court has jurisdiction within Allen county.\" [verified] — [Ohio Revised Code §1901.02](../../catalog/ohio-revised-code.md), quoted verbatim. The general rule in the same section is that municipal courts \"have jurisdiction within the corporate limits of their respective municipal corporations\"; Lima is one of the named exceptions, and the exception is the whole county. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A second source agrees without saying so.** Its two judges appear on the roster of *Allen County's* elected officials rather than Lima's, which is where they would appear if the court's electorate were the city. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md). [inference] — a court's judges are elected by the electors of its territory, so a countywide electorate implies a countywide territory.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two judges sit, on six-year terms**, which is the same length the [common pleas](allen-county-court-of-common-pleas.yml) judges serve and half again the four years every elected administrative officer of the county serves. [verified] — same roster. See [the office](../office/judge-of-the-lima-municipal-court.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "jurisdiction/marion-township.yml",
       "class": "jurisdiction",
       "label": "Marion Township (government)",
@@ -1123,6 +1184,40 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "jurisdiction/third-district-court-of-appeals.yml",
+      "class": "jurisdiction",
+      "label": "Ohio Third District Court of Appeals",
+      "tier": "inference",
+      "properties": {
+        "jurisdiction_type": "court district",
+        "seat": "Lima"
+      },
+      "blocks": [
+        {
+          "text": "**The only jurisdiction in this corpus larger than the county, and it is seated inside it.** The Third District hears appeals from seventeen Ohio counties — Allen, Auglaize, Crawford, Defiance, Hancock, Hardin, Henry, Logan, Marion, Mercer, Paulding, Putnam, Seneca, Shelby, Union, Van Wert and Wyandot — and its office is at 204 N. Main Street in Lima. [verified] — [the court's own site](../../catalog/third-district-court-of-appeals.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Every other jurisdiction here is the county or a piece of it. This one contains the county, which is why it is the first node to make [`covers`](allen-county-court-of-common-pleas.yml) point at ground the corpus does not otherwise describe: sixteen of its seventeen counties are outside this corpus entirely. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Its records for this district are kept by a county officer.** The Allen County [clerk of courts](../office/allen-county-clerk-of-courts.yml) handles the filing and preservation of the Third District's documents alongside those of the county's own trial court. [verified] — [the clerk's site](../../catalog/allen-county-official-site.md). So an elected officer of one county keeps the record of a court serving seventeen. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Four judges sit** — John R. Willamowski, William R. Zimmerman, Mark C. Miller and Juergen A. Waldick. [verified] — [the court's site](../../catalog/third-district-court-of-appeals.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**They have no nodes here, and the reason is a rule rather than an omission.** This corpus writes a person and a tenure where Allen County's own electors choose the officer. These four are chosen by the electors of seventeen counties, so the county is one seventeenth of their constituency and a person node here would misdescribe whose officer they are. The names are in the catalog. [inference] See [the name is the seat, not the extent](../../decisions/the-name-is-the-seat-not-the-extent.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "jurisdiction/village-of-beaverdam.yml",
@@ -2699,7 +2794,7 @@
           "tier": "verified"
         },
         {
-          "text": "**It serves a court that is not the county's own.** The Third District Court of Appeals sits over seventeen Ohio counties, and its records for this one are kept here — so the office is the point where a county officer does work for a regional court. [inference] The corpus holds no node for either court; see the gap below.",
+          "text": "**It serves a court that is not the county's own.** The [Third District Court of Appeals](../jurisdiction/third-district-court-of-appeals.yml) hears appeals from seventeen Ohio counties, and its records are kept here — so the office is the point where a county officer does work for a regional court. [verified] — [the court's own site](../../catalog/third-district-court-of-appeals.md), which names the seventeen. That count was an [inference] on this node for one phase and is now read from the source.",
           "tier": "inference"
         },
         {
@@ -2708,6 +2803,10 @@
         },
         {
           "text": "The present term runs 6 January 2025 to 31 December 2028, four years. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md). The holder of this office is barred by statute from also being [county engineer](allen-county-engineer.yml). [verified] — [Ohio Revised Code §315.02](../../catalog/ohio-revised-code.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The courts this office serves now have nodes: [the Court of Common Pleas](../jurisdiction/allen-county-court-of-common-pleas.yml), [the Lima Municipal Court](../jurisdiction/lima-municipal-court.yml) — whose territory is the whole county despite its name — and [the Third District](../jurisdiction/third-district-court-of-appeals.yml). [verified] — the sources named above.",
           "tier": "verified"
         }
       ],
@@ -2910,6 +3009,122 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "office/judge-of-the-common-pleas-domestic-relations-division.yml",
+      "class": "office",
+      "label": "Judge of the Court of Common Pleas, Domestic Relations Division",
+      "tier": "inference",
+      "properties": {
+        "office_type": "judicial",
+        "seats": "1",
+        "selection_method": "countywide election",
+        "term_length": "6 years"
+      },
+      "blocks": [
+        {
+          "text": "The single-seat bench for divorce, dissolution, custody and support in Allen County. [inference] — the division's subject-matter is not established by any source this corpus holds; the name is.",
+          "tier": "inference"
+        },
+        {
+          "text": "One judge holds it, on a six-year term running 1 January 2023 to 31 December 2028. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md); the length is arithmetic on those dates. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "The [court's rules](../../catalog/allen-county-common-pleas-local-rules.md) name a Domestic Relations Division among the five divisions they govern, and the county maintains a separate site for it. [verified] — same rules and [the county's court-system page](../../catalog/allen-county-official-site.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "office/judge-of-the-common-pleas-general-division.yml",
+      "class": "office",
+      "label": "Judge of the Court of Common Pleas, General Division",
+      "tier": "inference",
+      "properties": {
+        "office_type": "judicial",
+        "seats": "2",
+        "selection_method": "countywide election",
+        "term_length": "6 years"
+      },
+      "blocks": [
+        {
+          "text": "**Two judges hold it at once**, which makes it the second multi-seat office in this corpus after [the board of commissioners](allen-county-board-of-commissioners.yml). [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), which assigns two of the county's four common pleas judges to the General Division.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its terms run six years and the two seats are offset by two.** One runs 1 January 2025 to 31 December 2030 and the other 9 February 2023 to 8 February 2029. [verified] — same source; the length is arithmetic on those dates. [inference] So the two seats never fall vacant together, the same effect the [commissioners'](allen-county-board-of-commissioners.yml) statute achieves by staggering, reached here by a different means. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "The [court's own rules](../../catalog/allen-county-common-pleas-local-rules.md) call this the \"General Trial Division\" and name a separate Criminal Division beside it, which has no elected judge of its own. [verified]",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "office/judge-of-the-common-pleas-probate-division.yml",
+      "class": "office",
+      "label": "Judge of the Court of Common Pleas, Probate Division",
+      "tier": "inference",
+      "properties": {
+        "office_type": "judicial",
+        "seats": "1",
+        "selection_method": "countywide election",
+        "term_length": "6 years"
+      },
+      "blocks": [
+        {
+          "text": "The single-seat bench for wills, estates, guardianships and — on the county's own arrangement of its courts — juvenile matters, which are administered together here. [verified] — [the county's court-system page](../../catalog/allen-county-official-site.md), which lists Probate Court and Juvenile Court as separate sites; [inference] that one elected judge covers both follows from the roster naming only a Probate Division seat among the four.",
+          "tier": "inference"
+        },
+        {
+          "text": "One judge holds it, on a six-year term running 9 February 2021 to 8 February 2027. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its term expires second-soonest of any seat in this corpus**, on 8 February 2027, behind only [the offset commissioner's](allen-county-board-of-commissioners.yml) 31 December 2026. [inference] — computed here across the seventeen seats whose current term dates the corpus holds.",
+          "tier": "inference"
+        },
+        {
+          "text": "The [court's rules](../../catalog/allen-county-common-pleas-local-rules.md) govern practice in the Probate Division and the Juvenile Division \"where applicable\", treating them as two divisions where the ballot treats them as one seat. [verified]",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
+    },
+    {
+      "id": "office/judge-of-the-lima-municipal-court.yml",
+      "class": "office",
+      "label": "Judge of the Lima Municipal Court",
+      "tier": "inference",
+      "properties": {
+        "office_type": "judicial",
+        "seats": "2",
+        "selection_method": "countywide election",
+        "term_length": "6 years"
+      },
+      "blocks": [
+        {
+          "text": "Two judges hold this office at once, elected by the whole county rather than by the city the court is named for. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), which lists them among Allen County's elected officials; and [Ohio Revised Code §1901.02](../../catalog/ohio-revised-code.md): \"The Lima municipal court has jurisdiction within Allen county.\"",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its terms run six years and the two seats are offset by two.** One runs 1 January 2022 to 31 December 2027 and the other 1 January 2024 to 31 December 2029. [verified] — same roster; the length is arithmetic on those dates. [inference] Both begin in January, unlike the [common pleas general division](judge-of-the-common-pleas-general-division.yml), whose two seats begin in different months.",
+          "tier": "inference"
+        },
+        {
+          "text": "A municipal judge here serves six years and an [administrative county officer](allen-county-auditor.yml) four. That holds across every office in this corpus that states a term length — four judicial offices at six years and nine elected administrative ones at four, thirteen offices and seventeen seats. [inference] — computed here. It rests on one county's roster and is a pattern in the data, not a rule this corpus has read anywhere. The [mayor of Lima](mayor-of-lima.yml) is the one office node with no term length at all, and is excluded from the count for that reason.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "office/mayor-of-lima.yml",
@@ -3830,6 +4045,27 @@
       "withheld": 1
     },
     {
+      "id": "person/jeffrey-l-reed.yml",
+      "class": "person",
+      "label": "Jeffrey L. Reed",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Court of Common Pleas, General Division, holding a six-year term that began 2023-02-09. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "person/jennifer-moree-mcbride.yml",
       "class": "person",
       "label": "Jennifer Moree McBride",
@@ -3938,6 +4174,27 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "person/john-richard-payne.yml",
+      "class": "person",
+      "label": "John Richard Payne",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Lima Municipal Court, holding a six-year term that began 2024-01-01. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "person/john-thomas-meyer.yml",
@@ -4051,6 +4308,27 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "person/matt-c-staley.yml",
+      "class": "person",
+      "label": "Matt C. Staley",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Court of Common Pleas, Domestic Relations Division, holding a six-year term that began 2023-01-01. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "person/matthew-b-treglia.yml",
@@ -4272,6 +4550,69 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "person/tammie-k-hursh.yml",
+      "class": "person",
+      "label": "Tammie K. Hursh",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Lima Municipal Court, holding a six-year term that began 2022-01-01. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "person/terri-lynn-kohlrieser.yml",
+      "class": "person",
+      "label": "Terri Lynn Kohlrieser",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Court of Common Pleas, General Division, holding a six-year term that began 2025-01-01. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "person/todd-e-kohlrieser.yml",
+      "class": "person",
+      "label": "Todd E. Kohlrieser",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Court of Common Pleas, Probate Division, holding a six-year term that began 2021-02-09. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "person/william-h-harter.yml",
@@ -6118,6 +6459,32 @@
       "withheld": 2
     },
     {
+      "id": "tenure/domestic-2023-matt-c-staley.yml",
+      "class": "tenure",
+      "label": "Matt C. Staley, Judge of the Court of Common Pleas, Domestic Relations Division, term of 2023–2028",
+      "tier": "inference",
+      "properties": {
+        "began": "2023-01-01",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Matt C. Staley holds this seat on the Allen County Court of Common Pleas under a term that began 2023-01-01 and is scheduled to expire 2028-12-31. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "A second source names him as the county's Domestic Relations judge. [verified] — [the county's court-system page](../../catalog/allen-county-official-site.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "tenure/engineer-2025-brion-e-rhodes.yml",
       "class": "tenure",
       "label": "Brion E. Rhodes, Engineer of Allen County, term of 2025–2028",
@@ -6133,6 +6500,124 @@
         },
         {
           "text": "`how_began` is recorded as elected because the roster this comes from is a roster of elected officials for a term it dates; no source states the manner of taking office directly. [inference] The term runs four years, computed from its own two dates rather than read from a statute. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "tenure/general-2023-jeffrey-l-reed.yml",
+      "class": "tenure",
+      "label": "Jeffrey L. Reed, Judge of the Court of Common Pleas, General Division, term of 2023–2029",
+      "tier": "inference",
+      "properties": {
+        "began": "2023-02-09",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Jeffrey L. Reed holds this seat on the Allen County Court of Common Pleas under a term that began 2023-02-09 and is scheduled to expire 2029-02-08. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This is the General Division seat whose term begins in February, two years out of step with the other. [verified] — same roster.",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "tenure/general-2025-terri-lynn-kohlrieser.yml",
+      "class": "tenure",
+      "label": "Terri Lynn Kohlrieser, Judge of the Court of Common Pleas, General Division, term of 2025–2030",
+      "tier": "inference",
+      "properties": {
+        "began": "2025-01-01",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Terri Lynn Kohlrieser holds this seat on the Allen County Court of Common Pleas under a term that began 2025-01-01 and is scheduled to expire 2030-12-31. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This is the General Division seat whose term begins in January; the other begins in February. [verified] — same roster.",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "tenure/municipal-2022-tammie-k-hursh.yml",
+      "class": "tenure",
+      "label": "Tammie K. Hursh, Judge of the Lima Municipal Court, term of 2022–2027",
+      "tier": "inference",
+      "properties": {
+        "began": "2022-01-01",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Tammie K. Hursh holds this seat on the Lima Municipal Court under a term that began 2022-01-01 and is scheduled to expire 2027-12-31. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "tenure/municipal-2024-john-richard-payne.yml",
+      "class": "tenure",
+      "label": "John Richard Payne, Judge of the Lima Municipal Court, term of 2024–2029",
+      "tier": "inference",
+      "properties": {
+        "began": "2024-01-01",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "John Richard Payne holds this seat on the Lima Municipal Court under a term that began 2024-01-01 and is scheduled to expire 2029-12-31. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "tenure/probate-2021-todd-e-kohlrieser.yml",
+      "class": "tenure",
+      "label": "Todd E. Kohlrieser, Judge of the Court of Common Pleas, Probate Division, term of 2021–2027",
+      "tier": "inference",
+      "properties": {
+        "began": "2021-02-09",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Todd E. Kohlrieser holds this seat on the Allen County Court of Common Pleas under a term that began 2021-02-09 and is scheduled to expire 2027-02-08. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
           "tier": "inference"
         }
       ],
@@ -7067,6 +7552,13 @@
       "source": null
     },
     {
+      "from": "jurisdiction/allen-county-court-of-common-pleas.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "covers",
+      "tier": "verified",
+      "source": "catalog/allen-county-common-pleas-local-rules.md"
+    },
+    {
       "from": "jurisdiction/allen-county-government.yml",
       "to": "event/erection-of-allen-county.yml",
       "relationship": "erected-by",
@@ -7354,6 +7846,13 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "jurisdiction/lima-municipal-court.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "covers",
+      "tier": "verified",
+      "source": "catalog/ohio-revised-code.md"
+    },
+    {
       "from": "jurisdiction/marion-township.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "territory-within",
@@ -7513,6 +8012,13 @@
       "relationship": "territory-within",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "jurisdiction/third-district-court-of-appeals.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "covers",
+      "tier": "verified",
+      "source": "catalog/third-district-court-of-appeals.md"
     },
     {
       "from": "jurisdiction/village-of-beaverdam.yml",
@@ -8033,6 +8539,34 @@
       "source": null
     },
     {
+      "from": "office/judge-of-the-common-pleas-domestic-relations-division.yml",
+      "to": "jurisdiction/allen-county-court-of-common-pleas.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "office/judge-of-the-common-pleas-general-division.yml",
+      "to": "jurisdiction/allen-county-court-of-common-pleas.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "office/judge-of-the-common-pleas-probate-division.yml",
+      "to": "jurisdiction/allen-county-court-of-common-pleas.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "office/judge-of-the-lima-municipal-court.yml",
+      "to": "jurisdiction/lima-municipal-court.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-revised-code.md"
+    },
+    {
       "from": "office/mayor-of-lima.yml",
       "to": "jurisdiction/city-of-lima.yml",
       "relationship": "established-within",
@@ -8362,6 +8896,13 @@
       "source": null
     },
     {
+      "from": "person/jeffrey-l-reed.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "person/jennifer-moree-mcbride.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
@@ -8384,6 +8925,13 @@
     },
     {
       "from": "person/john-keller.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "person/john-richard-payne.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
       "tier": "inference",
@@ -8419,6 +8967,13 @@
     },
     {
       "from": "person/mathias-ridenour.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "person/matt-c-staley.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
       "tier": "inference",
@@ -8496,6 +9051,27 @@
     },
     {
       "from": "person/sherman-e-eley.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "person/tammie-k-hursh.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "person/terri-lynn-kohlrieser.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "person/todd-e-kohlrieser.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
       "tier": "inference",
@@ -9083,6 +9659,20 @@
       "source": "catalog/ohio-boe-elected-officials-allen.md"
     },
     {
+      "from": "tenure/domestic-2023-matt-c-staley.yml",
+      "to": "person/matt-c-staley.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/domestic-2023-matt-c-staley.yml",
+      "to": "office/judge-of-the-common-pleas-domestic-relations-division.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
       "from": "tenure/engineer-2025-brion-e-rhodes.yml",
       "to": "person/brion-e-rhodes.yml",
       "relationship": "held-by",
@@ -9092,6 +9682,76 @@
     {
       "from": "tenure/engineer-2025-brion-e-rhodes.yml",
       "to": "office/allen-county-engineer.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/general-2023-jeffrey-l-reed.yml",
+      "to": "person/jeffrey-l-reed.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/general-2023-jeffrey-l-reed.yml",
+      "to": "office/judge-of-the-common-pleas-general-division.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/general-2025-terri-lynn-kohlrieser.yml",
+      "to": "person/terri-lynn-kohlrieser.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/general-2025-terri-lynn-kohlrieser.yml",
+      "to": "office/judge-of-the-common-pleas-general-division.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/municipal-2022-tammie-k-hursh.yml",
+      "to": "person/tammie-k-hursh.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/municipal-2022-tammie-k-hursh.yml",
+      "to": "office/judge-of-the-lima-municipal-court.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/municipal-2024-john-richard-payne.yml",
+      "to": "person/john-richard-payne.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/municipal-2024-john-richard-payne.yml",
+      "to": "office/judge-of-the-lima-municipal-court.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/probate-2021-todd-e-kohlrieser.yml",
+      "to": "person/todd-e-kohlrieser.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/probate-2021-todd-e-kohlrieser.yml",
+      "to": "office/judge-of-the-common-pleas-probate-division.yml",
       "relationship": "of-office",
       "tier": "verified",
       "source": "catalog/ohio-boe-elected-officials-allen.md"

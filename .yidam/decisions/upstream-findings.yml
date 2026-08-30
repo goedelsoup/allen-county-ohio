@@ -89,9 +89,16 @@ decision: |
   *descriptions* sprawling. The budget and the thing it now measures have come apart: a corpus
   that documents where its edges come from pays for it out of its prose allowance.
 
-  Raised locally in `division.ont.yml` and `measure.ont.yml` with the argument in a comment.
-  Upstream the fix is to count the `description` block rather than the file, which is what the
-  check is named for.
+  Raised locally in `division.ont.yml`, `measure.ont.yml` and now `tenure.ont.yml` with the
+  argument in a comment. Upstream the fix is to count the `description` block rather than the file,
+  which is what the check is named for.
+
+  The `tenure` case is the clearest evidence for that fix, because the ratio is worst there. A
+  tenure's fixed structure — frontmatter, two properties, three links with tags and sources — is
+  18 lines before any prose, against a budget of 25. Seven lines of allowance for a class whose
+  whole job is to say who held what, when, how it began and how it ended. Raising the number to 35
+  brought eleven pre-existing findings under the limit as a side effect, which is a sign the limit
+  was measuring the wrong thing rather than that the nodes were long.
 
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
