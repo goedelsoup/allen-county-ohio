@@ -51,6 +51,26 @@ no sampling error, which is why the county's population carries no interval and 
 Suppressed and unavailable values use other negative sentinels; no figure in this corpus is taken
 from a negative cell. [verified]
 
-**What else is in it, unread.** Educational attainment, housing tenure and vacancy, commuting time,
-language, disability, veteran status, health insurance, and the year-by-year five-year files back to
-2009. This corpus has taken six tables from one year.
+**Six more tables were taken for housing.** B25002 occupancy, B25003 tenure, B25034 year structure
+built, B25035 median year built, B25077 median value and B25064 median gross rent. The same thirteen
+subdivisions close against the county row again — units 44,697, occupied 40,928, vacant 3,769,
+owner-occupied 27,960, and every one of the eleven year-built bands — so the housing tables
+partition this county fifteen more times over. [verified]
+
+**Two of its sentinels turn up in the housing tables where they had not before.** Median gross rent
+returns `-666666666` for Amanda and Perry townships — the value is unavailable, not zero — and the
+margin column beside it reads `-222222222`. [verified] No figure in this corpus is taken from a
+negative cell, and the two townships are recorded as having no published median rent rather than a
+low one.
+
+**A 2024 file is published and this corpus reads 2023.** Every table has an `acsdt5y2024-` sibling of
+almost the same size. It is not a later observation of the same thing: the 2023 file covers
+2019–2023 and the 2024 file covers 2020–2024, so they share four of five years and a difference
+between them is mostly the two years that changed places. [inference] The corpus stays on 2023 for
+now because its income, race, age and housing tables are all that vintage and they close against
+each other. Moving means moving all of them.
+
+**What else is in it, unread.** Educational attainment, commuting time, language, disability,
+veteran status, health insurance, housing cost burden, mortgage status, and the year-by-year
+five-year files back to 2009 — the earlier ones in a different format, since the table-based
+summary file exists only from 2021. This corpus has taken twelve tables from one year.
