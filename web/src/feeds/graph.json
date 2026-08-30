@@ -1275,7 +1275,7 @@
         }
       ],
       "refusals": [
-        "county reference that cannot say who represents the county in the legislature is not a reference. The rule is replaced, and all four judges now have [an office](../office/judge-of-the-third-district-court-of-appeals.yml), a person node and a term. See [a scope rule met its second case](../../decisions/a-scope-rule-met-its-second-case.yml)."
+        "**They had no nodes here for one phase, on a rule that did not survive its second case.** The rule was that this corpus writes a person where Allen County's *own* electors choose the officer; applied next to the county's state senator and state representative, it excluded those too, and a county reference that cannot say who represents the county in the legislature is not a reference. The rule is replaced, and all four judges now have [an office](../office/judge-of-the-third-district-court-of-appeals.yml), a person node and a term. See [a scope rule met its second case](../../decisions/a-scope-rule-met-its-second-case.yml)."
       ],
       "withheld": 2
     },
@@ -1538,8 +1538,12 @@
           "tier": "inference"
         },
         {
-          "text": "**Health care did not simply rise past manufacturing.** It reached 11,744 in 2010 and 11,656 in 2015 and has fallen since, to 9,711 in 2020 and 9,151 in 2022. [verified] — same source, sector 62. So the county's largest sector lost about 2,500 jobs in twelve years while [manufacturing gained 1,446](allen-county-manufacturing-employment-1986-2022.yml). [inference]",
+          "text": "**Health care did not simply rise past manufacturing, and this node had the shape of its fall wrong.** Sector 62 peaked at **12,431 in 2013** — not at the 11,744 of 2010 this node used to call its high — and stood above 11,744 again in 2016, before falling to 9,151 in 2022. [verified] — same source, read every year rather than every fifth; see [the annual series](allen-county-health-care-employment-2010-2022.yml) and [a sample is not a series](../../decisions/a-sample-is-not-a-series.yml). Against 2010 the county's largest sector still lost 2,593 while [manufacturing gained 1,446](allen-county-manufacturing-employment-1986-2022.yml). [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**What contracted is now established, even though why is not.** Of the 2,593 lost since 2010, hospitals are 1,866, nursing and residential care 549, social assistance 170, and ambulatory care 8. [verified] — the annual series. The county's five hospitals are named, and their own reported full-time equivalents fell across the same span. See [hospital employment](allen-county-hospital-employment-2011-2023.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -1635,6 +1639,91 @@
         {
           "text": "Who turns out changes far more here than how they vote. [inference] — from three elections, which is enough to see the pattern and not enough to date it.",
           "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "class": "measure",
+      "label": "Allen County health care employment by subsector, 2010–2022",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2022",
+        "method": "County files, fipstate 39 fipscty 003. The four subsectors sum to the sector total exactly in all thirteen years, so no line is suppressed. [verified]",
+        "parameter": "paid employees for pay period including March 12, NAICS 62 and its four subsectors",
+        "unit": "employees",
+        "value": "9151"
+      },
+      "blocks": [
+        {
+          "text": "The county's largest private sector, every year rather than every fifth. [verified] — [County Business Patterns](../../catalog/census-county-business-patterns.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sector peaked at 12,431 in 2013, in a year nobody had looked at**, and hospitals are where the fall since went: 1,866 of the 2,593 lost from 2010, 1,049 of the 3,280 lost from the 2013 peak. [verified] Which share depends on the baseline, and all three are in [a sample is not a series](../../decisions/a-sample-is-not-a-series.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This does not establish why any of it fell."
+      ],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-hospital-beds-2011-2023.yml",
+      "class": "measure",
+      "label": "Allen County hospital beds, 2011–2023",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2023",
+        "method": "`Number of Beds` for CCNs 360009, 360066, 360263, 361322 and 362020. The total takes one row per hospital per year, which in FY2014 means Kindred's first row only — it filed twice that year across a change of fiscal year. [verified]",
+        "parameter": "Number of Beds",
+        "unit": "beds, all five hospitals",
+        "value": "502"
+      },
+      "blocks": [
+        {
+          "text": "Beds reported by each of the county's five hospitals, every fiscal year from 2011 to 2023. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's bed count fell 13 per cent and one hospital's fell 44.** [Lima Memorial](../organization/lima-memorial-health-system.yml) went from 195 beds to 110, with a low of 95 in 2019, while [St. Rita's](../organization/mercy-health-st-ritas-medical-center.yml) ended seven beds higher than it began. The three small hospitals never moved: twelve, twenty-five and twenty-six in all thirteen years. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "**Beds and staff moved in opposite directions at the same hospital.** Lima Memorial lost 44 per cent of its beds and gained 28 per cent of its [full-time equivalents](allen-county-hospital-employment-2011-2023.yml) across the same thirteen years. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "class": "measure",
+      "label": "Allen County hospital employment, 2011–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "CCNs 360009, 360066, 360263, 361322 and 362020 across the thirteen annual files — 66 rows. County totals sum the four calendar-year filers; [Kindred](../organization/kindred-hospital-lima.yml) left the calendar year after FY2013, so FY2014 holds two of its rows. [verified]",
+        "parameter": "FTE - Employees on Payroll",
+        "unit": "full-time equivalents, four calendar-year-filing hospitals",
+        "value": "2913.00"
+      },
+      "blocks": [
+        {
+          "text": "Full-time equivalents on payroll at each of the county's five hospitals. Thirteen fiscal years were read, 2011 to 2023; four are shown and every figure below is computed from all thirteen. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's hospital employment fell 19 per cent, and one hospital fell by more than the whole.** The four calendar-year filers went from 3,598.20 to 2,913.00, a fall of 685.20; [St. Rita's](../organization/mercy-health-st-ritas-medical-center.yml) alone fell 1,019.08 while [Lima Memorial](../organization/lima-memorial-health-system.yml) rose 278.89 and [the Institute](../organization/institute-for-orthopaedic-surgery.yml) rose 74.05. [verified] Most of St. Rita's drop — 625 — is on the FY2013/FY2014 boundary, where it began filing as an LLC, and is not only employment. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "A full-time equivalent is not an employee, so no figure here may be subtracted from [County Business Patterns](allen-county-health-care-employment-2010-2022.yml), which counts people on a payroll: 3,677 FTE against 4,848 employees in 2011, 2,990 against 3,211 in 2022. [verified]",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -3427,7 +3516,7 @@
         }
       ],
       "refusals": [
-        "seventh of Senate District 12 by land area, and while the corpus cannot say what fraction it is now, a Senate district covering one county is not a shape Ohio draws."
+        "**This is not a seat Allen County fills by itself.** Under the 2020 map the county was roughly a seventh of Senate District 12 by land area, and while the corpus cannot say what fraction it is now, a Senate district covering one county is not a shape Ohio draws."
       ],
       "withheld": 1
     },
@@ -3456,6 +3545,48 @@
       "withheld": 3
     },
     {
+      "id": "organization/bluffton-hospital.yml",
+      "class": "organization",
+      "label": "Bluffton Hospital",
+      "tier": "verified",
+      "properties": {
+        "also_known_as": "Blanchard Valley Regional Health Center",
+        "founded": "1982-07-06",
+        "industry": "hospitals",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "A twenty-five-bed critical access hospital at 139 Garau Street in [Bluffton](../place/bluffton.yml), with an emergency department. [verified] — [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md), CCN 361322. It is the only one of the county's five hospitals outside Lima and its edge, and the only one in a village.",
+          "tier": "verified"
+        },
+        {
+          "text": "Its municipality was checked and not assumed: the county's address file reads `MUNI` BLUFFTON and `USPS_CITY` BLUFFTON, and TIGERweb puts the point in Bluffton village within [Richland Township](../place/richland-township.yml). [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and [TIGERweb](../../catalog/tigerweb-census2020.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is owned in the next county.** Blanchard Valley Health System of Findlay, in Hancock County, holds 100 per cent of it, with association dates of 27 January 1983 and 1 July 1995. [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The body is not the name.** It enrolls as **Blanchard Valley Regional Health Center**, incorporated in Ohio on 6 July 1982 — a name that belongs to a river valley in Hancock County and says nothing about Bluffton. [verified] — same source. Its 101 individual owners are the largest such list of the county's five hospitals, and are not recorded here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the smallest employer of the four calendar-year filers and it has shrunk.** 108.25 full-time equivalents in 2011 and 89.19 in 2023, with a spike to 183.25 in 2016 and 146 in 2017 that the corpus cannot explain. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md); see [the series](../measure/allen-county-hospital-employment-2011-2023.yml). Twenty-five beds in every one of the thirteen years, unmoved. See [the beds](../measure/allen-county-hospital-beds-2011-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only Allen County hospital to report a loss in 2020.** Its net patient revenue fell from $22.9 million in 2019 to $8.8 million in 2020 and its net income was **negative $5,799,086**, against positive figures at all four of the others. [verified] — same source. Both recovered the following year.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus does not establish that the pandemic caused that year."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "organization/bluffton-university.yml",
       "class": "organization",
       "label": "Bluffton University",
@@ -3482,6 +3613,85 @@
       "withheld": 2
     },
     {
+      "id": "organization/institute-for-orthopaedic-surgery.yml",
+      "class": "organization",
+      "label": "Institute for Orthopaedic Surgery",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "West Central Ohio Group Ltd.; Orthopedic Institute of Ohio (county address file)",
+        "founded": "1997-03-10",
+        "industry": "hospitals",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "A proprietary acute care hospital at 801 Medical Drive, twelve beds, with **no emergency department** — the only one of the county's five without one. [verified] — [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md), CCN 360263.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is not in Lima, and this is the fourth time this corpus has had to say that about a Lima address.** Its postal address is Lima; the county's own address file leaves `MUNI` blank for both units at 801 Medical Drive while `USPS_CITY` reads LIMA; and TIGERweb puts the point in [Perry Township](../place/perry-township.yml) and in no incorporated place. [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and [TIGERweb](../../catalog/tigerweb-census2020.md). Two authorities, agreeing, checked before the claim was written rather than after. See [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml), whose first three instances were the refinery, the tank plant and the county's heavy industry generally.",
+          "tier": "verified"
+        },
+        {
+          "text": "So the county's only for-profit hospital stands on unincorporated ground, as its refinery and its tank plant do. No municipality levies on any of the three. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is majority-owned by the hospital across town.** Mercy Health–St. Rita's holds 51 per cent of it directly, from 1 April 2004; West Central Ohio Physicians Group Ltd. holds the other 49 and the operational and managerial control; and Bon Secours Mercy Health Inc appears above St. Rita's as the indirect 51 per cent holder from 1 September 2018. [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md). So a physician-owned specialty hospital is majority-owned by a general one — see [St. Rita's](mercy-health-st-ritas-medical-center.yml) — which is a particular arrangement, and this node records it without characterising it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The body is not the name.** It enrolls as **West Central Ohio Group Ltd.**, incorporated in Ohio on 10 March 1997. [verified] — same source. The county's address file knows the two units at this address as the \"Orthopedic Institute of Ohio\" and the \"Institute for Orthopedic Surgery Physical Therapy\" — a third and fourth spelling of the thing, neither of them the name Medicare enrolls. [verified] — the address file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the county's smallest hospital and the only one that has grown in almost every year.** 101.01 full-time equivalents in 2011 rising to 175.06 in 2023, up 73 per cent, with a single dip in 2016. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md); see [the series](../measure/allen-county-hospital-employment-2011-2023.yml). Twelve beds in every one of the thirteen years. See [the beds](../measure/allen-county-hospital-beds-2011-2023.yml), where the three small hospitals hold their bed counts flat and the two large ones do not.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
+    },
+    {
+      "id": "organization/kindred-hospital-lima.yml",
+      "class": "organization",
+      "label": "Kindred Hospital Lima",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "SCCI Hospitals of America LLC",
+        "industry": "hospitals",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "A twenty-six-bed long-term acute care hospital enrolled at 730 West Market Street in [Lima](../place/lima.yml) — the address of [Mercy Health–St. Rita's](mercy-health-st-ritas-medical-center.yml). [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md), CCN 362020. A long-term acute care hospital operating inside a host hospital is an ordinary arrangement; this node records the shared address and makes no claim about the arrangement. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is the hospital that the roster of hospitals does not have.** Care Compare's Hospital General Information file lists 193 Ohio hospitals in six types and has no long-term care category, so this one is absent from it — no CCN 362020 anywhere in the file, and the only row at this address is St. Rita's. [verified] — [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md). Allen County has four hospitals or five depending on which federal file is asked, and neither file is wrong about the thing it counts.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its owners run thirteen deep and all of them are in Louisville, Kentucky.** One direct owner, SCCI Health Services LLC, holding 100 per cent from 13 July 1998; twelve indirect ones, the three most recent attached on 23 December 2021 and named for Knight rather than Kindred. [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The body is not the name.** It enrolls as **SCCI Hospitals of America LLC**, with no incorporation date stated — the only one of the county's five whose enrollment record leaves that field empty. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only Allen County hospital that does not file on the calendar year.** It filed 1 January to 31 December through FY2013 and 1 September to 31 August ever since, which puts two of its rows in the FY2014 file — a stub from 1 January to 31 August 2014 and a full year from 1 September. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md). Its 64 to 94 full-time equivalents are therefore held outside every county total this corpus computes, and stated separately. See [the series](../measure/allen-county-hospital-employment-2011-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "79.2 full-time equivalents in 2011 and 64.1 in the year beginning September 2023, on twenty-six beds throughout. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "organization/lima-locomotive-works.yml",
       "class": "organization",
       "label": "Lima Locomotive Works",
@@ -3501,6 +3711,82 @@
         }
       ],
       "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "organization/lima-memorial-health-system.yml",
+      "class": "organization",
+      "label": "Lima Memorial Health System",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "Lima Memorial Joint Operating Company",
+        "founded": "1999-05-12",
+        "industry": "hospitals",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "An acute care hospital at 1001 Bellefontaine Avenue in [Lima](../place/lima.yml), with an emergency department and an overall Medicare rating of 3. [verified] — [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md), CCN 360009.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only hospital in this county that answers to nobody outside it.** The federal owners file lists no organizational owner for it at all — 22 owners, every one of them a person, being fifteen corporate directors, four managing employees and three officers. [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md). The other four all have a corporate parent, three of them outside Allen County. See [Mercy Health–St. Rita's](mercy-health-st-ritas-medical-center.yml), [Bluffton Hospital](bluffton-hospital.yml), [the Institute for Orthopaedic Surgery](institute-for-orthopaedic-surgery.yml) and [Kindred Hospital Lima](kindred-hospital-lima.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The body is not the name.** It enrolls as the **Lima Memorial Joint Operating Company**, incorporated in Ohio on 12 May 1999, and trades as Lima Memorial Health System. [verified] — same source. `founded` here dates the corporation and not the hospital.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the county's second-largest hospital employer and the only large one that has grown.** 982.94 full-time equivalents in 2011 and 1,261.83 in 2023, up 28 per cent. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md); see [the series](../measure/allen-county-hospital-employment-2011-2023.yml). Over the same thirteen years its bed count fell from 195 to 110, and stood as low as 95 in 2019. See [the beds](../measure/allen-county-hospital-beds-2011-2023.yml). More staff and half the beds is the shape of hospital work moving out of the ward, and this corpus has measured the shape and not the cause. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "It has one further Medicare enrollment, 36T009, flagged as its rehabilitation unit. [verified] — the enrollment file.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know."
+      ],
+      "withheld": 1
+    },
+    {
+      "id": "organization/mercy-health-st-ritas-medical-center.yml",
+      "class": "organization",
+      "label": "Mercy Health–St. Rita's Medical Center",
+      "tier": "verified",
+      "properties": {
+        "also_known_as": "Mercy Health-St Ritas Medical Center LLC; St. Ritas Medical Center (cost reports through FY2013)",
+        "founded": "1970-05-05",
+        "industry": "hospitals",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "An acute care hospital at 730 West Market Street in [Lima](../place/lima.yml), with an emergency department and an overall Medicare rating of 4 — the higher of the county's two rated hospitals. [verified] — [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md), CCN 360066. Its enrollment carries five subgroup flags where the others carry one or none: acute care, psychiatric, rehabilitation, and psychiatric and rehabilitation units. [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the county's largest hospital by every measure this corpus holds, and it is owned in Cincinnati.** Bon Secours Mercy Health Inc holds 100 per cent of it, recorded from 1 January 2020, and the same body appears as the indirect 51 per cent owner of [the Institute for Orthopaedic Surgery](institute-for-orthopaedic-surgery.yml). [verified] — [CMS provider enrollment](../../catalog/cms-provider-enrollment.md). Two of Allen County's five hospitals therefore answer to one non-profit corporation in another county.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its legal name is not its trading name, and the change of legal name is visible in the accounts.** It enrolls as Mercy Health-St Ritas Medical Center LLC, incorporated in Ohio on 5 May 1970. [verified] — same source. It filed cost reports as \"St. Ritas Medical Center\" through FY2013 and as \"St. Ritas Medical Center LLC\" from FY2014, and across that boundary its reported full-time equivalents fell from 2,303 to 1,678 and its salaries from $145.5 million to $94.6 million. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its employment fell by more than the county's whole hospital decline.** 2,406 full-time equivalents in 2011 against 1,386.92 in 2023 — a fall of 1,019, where the four calendar-year filers together fell by 685. [verified] — same source; see [the series](../measure/allen-county-hospital-employment-2011-2023.yml). Its beds did not follow: 322 in 2011 and 329 in 2023, the steadiest bed count of the five. See [the beds](../measure/allen-county-hospital-beds-2011-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A second hospital operates inside it.** [Kindred Hospital Lima](kindred-hospital-lima.yml) enrolls at this same street address. [verified] — the enrollment file. It is a separate body with a separate CCN and an owner in Kentucky, and this node makes no claim about the arrangement between them.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "Whether a quarter of this hospital's workforce left the county or moved to another employer inside the same system, the corpus cannot say."
+      ],
       "withheld": 1
     },
     {
@@ -8849,6 +9135,62 @@
       "source": "catalog/openelections-ohio.md"
     },
     {
+      "from": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-county-business-patterns.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-beds-2011-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "to": "organization/mercy-health-st-ritas-medical-center.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "to": "organization/lima-memorial-health-system.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "to": "organization/institute-for-orthopaedic-surgery.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "to": "organization/bluffton-hospital.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-hospital-employment-2011-2023.yml",
+      "to": "organization/kindred-hospital-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
       "from": "measure/allen-county-housing-units-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -9360,6 +9702,13 @@
       "source": null
     },
     {
+      "from": "organization/bluffton-hospital.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
       "from": "organization/bluffton-university.yml",
       "to": "place/bluffton.yml",
       "relationship": "seated-in",
@@ -9367,11 +9716,39 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "organization/institute-for-orthopaedic-surgery.yml",
+      "to": "place/perry-township.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "organization/kindred-hospital-lima.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
       "from": "organization/lima-locomotive-works.yml",
       "to": "place/lima.yml",
       "relationship": "seated-in",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "organization/lima-memorial-health-system.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "organization/mercy-health-st-ritas-medical-center.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
     },
     {
       "from": "organization/solar-refining-company.yml",

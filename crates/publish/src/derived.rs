@@ -390,6 +390,80 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "health-care-fell-too",
+        statement: "Health care passed manufacturing to become Allen County's largest private \
+                    employer sector, and then it fell too — from 12,431 in 2013 to 9,151 in 2022. \
+                    Hospitals are 1,866 of the 2,593 jobs the sector has lost since 2010.",
+        topic: "population",
+        // The figures are the composition of the loss rather than the series, because the
+        // series was what the corpus got wrong: it was read at five-year steps and the peak
+        // fell in a year that was never sampled. See a-sample-is-not-a-series.
+        supports: &[
+            support!(
+                "measure/allen-county-employment-by-sector-1986-2022.yml",
+                "Sector 62 peaked at **12,431 in 2013**"
+            ),
+            support!(
+                "measure/allen-county-employment-by-sector-1986-2022.yml",
+                "Of the 2,593 lost since 2010, hospitals are 1,866, nursing and residential care 549, social assistance 170, and ambulatory care 8."
+            ),
+            support!(
+                "measure/allen-county-health-care-employment-2010-2022.yml",
+                "**The sector peaked at 12,431 in 2013, in a year nobody had looked at**, and hospitals are where the fall since went"
+            ),
+        ],
+        // The corpus can now say what contracted and still cannot say why, and the site carries
+        // the second half beside the first rather than letting a composition chart imply a cause.
+        answers: &["does not establish why any of it fell"],
+        figures: &[
+            Figure { label: "Hospitals", value: 1_866.0, literal: "1,866" },
+            Figure { label: "Nursing and residential care", value: 549.0, literal: "549" },
+            Figure { label: "Social assistance", value: 170.0, literal: "170" },
+            Figure { label: "Ambulatory care", value: 8.0, literal: "8" },
+        ],
+    },
+    Assertion {
+        id: "five-hospitals-one-locally-owned",
+        statement: "Allen County has five Medicare-certified hospitals. One of them has no \
+                    corporate owner at all. The other four answer to Cincinnati, Findlay and \
+                    Louisville.",
+        topic: "population",
+        // The first assertion this site makes about a private employer operating in the county
+        // today. Cited to the five organization nodes rather than to a measure, because the
+        // claim is about who they are and not about a number.
+        supports: &[
+            support!(
+                "organization/lima-memorial-health-system.yml",
+                "The federal owners file lists no organizational owner for it at all"
+            ),
+            support!(
+                "organization/mercy-health-st-ritas-medical-center.yml",
+                "Bon Secours Mercy Health Inc holds 100 per cent of it, recorded from 1 January 2020"
+            ),
+            support!(
+                "organization/bluffton-hospital.yml",
+                "Blanchard Valley Health System of Findlay, in Hancock County, holds 100 per cent of it"
+            ),
+            support!(
+                "organization/kindred-hospital-lima.yml",
+                "**Its owners run thirteen deep and all of them are in Louisville, Kentucky.**"
+            ),
+            support!(
+                "organization/institute-for-orthopaedic-surgery.yml",
+                "Mercy Health\u{2013}St. Rita's holds 51 per cent of it directly, from 1 April 2004"
+            ),
+        ],
+        // Three refusals from three of the five nodes, carried rather than routed around. Two of
+        // them are the same shape — a figure moved and the corpus cannot say whether the thing it
+        // measures moved with it — and the third is about a founding this corpus has not found.
+        answers: &[
+            "the corpus does not know",
+            "the corpus cannot say",
+            "does not establish that the pandemic caused",
+        ],
+        figures: &[],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",

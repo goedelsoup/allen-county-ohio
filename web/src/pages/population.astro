@@ -16,6 +16,8 @@ const whole = assertion('the-county-has-a-complete-series')
 const work = assertion('the-only-employment-figures')
 const factories = assertion('the-factories-stopped-leaving')
 const farms = assertion('the-farms-did-not-go-anywhere')
+const health = assertion('health-care-fell-too')
+const hospitals = assertion('five-hospitals-one-locally-owned')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -110,6 +112,17 @@ const wholeSpec: LineSpec = {
 
 // Three points five years apart, which is why they are bars: the gaps are not decades and a
 // line across them would imply a path through 1902 that nobody counted.
+// Four components of one subtraction, so a bar chart and not a line: these are the pieces of
+// a single twelve-year loss, not a series through time. They sum to 2,593, which is the whole
+// of it — the four subsectors close against the sector total in every one of the thirteen years.
+const healthSpec: BarSpec = {
+  kind: 'bar',
+  categories: health.figures.map((f) => f.label),
+  values: health.figures.map((f) => f.value),
+  yTitle: 'Jobs lost, 2010–2022',
+  labelValues: true,
+}
+
 const workSpec: BarSpec = {
   kind: 'bar',
   categories: work.figures.map((f) => f.label),
@@ -266,8 +279,8 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       the county went on losing people. On the separate County Business Patterns count, private
       employment fell by 3,709 between 2010 and 2022 while manufacturing rose by 1,446, so every net
       job lost in those twelve years was lost somewhere else. The largest single loss was health
-      care, down from 11,744 to 9,151, and health care is now the county's biggest private employer
-      sector.
+      care, down 2,593 to 9,151, and health care is now the county's biggest private employer
+      sector — and falling, which the next section is about.
     </p>
     <p>
       And for thirty-one years before any of that, the county's jobs went <em>up</em>. Total
@@ -288,6 +301,63 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       share a span. Deindustrialization runs 1979 to 2009 and has ended. Depopulation runs from
       1970 and has not. The old start date was read off the population series and written on a node
       named for industry, which nothing could contradict until the industry was counted.
+    </p>
+  </section>
+
+  <section>
+    <h2>What replaced it is falling too</h2>
+    <p>
+      Health care overtook manufacturing to become Allen County's largest private employer sector,
+      and it did not hold. It <strong>peaked at 12,431 in 2013</strong> and stood at 9,151 in 2022 —
+      a bigger fall, in nine years, than manufacturing managed in the twelve before it.
+    </p>
+    <p>
+      This page said something weaker and wronger until now. It said health care had fallen from
+      11,744 in 2010, because the corpus had read County Business Patterns at five-year steps and
+      2013 was not one of the steps. The levels were right and the shape was not, and a sample can
+      only ever report the first. The nine missing files were in the same directory as the four that
+      were taken.
+    </p>
+    <AssertionCard assertion={health} />
+
+    <ChartFigure
+      id="health"
+      title="Where Allen County's health care jobs went, 2010–2022"
+      caption="County Business Patterns, NAICS 62 and its four subsectors. The four sum to 2,593, which is the sector's whole loss against 2010 — they close against the sector total exactly in all thirteen years, so nothing here is suppressed or unaccounted. Measured from the 2013 peak instead, the sector lost 3,280 and ambulatory care rather than hospitals is the largest single piece; the corpus carries every baseline rather than the one that reads best."
+      columns={['Subsector', 'Jobs lost']}
+      rows={health.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="health" set:html={JSON.stringify(healthSpec)} is:inline />
+
+    <p>
+      Which is as far as the numbers go. The corpus can now say <em>what</em> contracted and still
+      holds nothing that says why, and 2020 sits inside the window with its effect on the 2022
+      reading unseparated.
+    </p>
+  </section>
+
+  <section>
+    <h2>Who the employers are</h2>
+    <p>
+      For eight phases this corpus measured a county's work and never named an employer. It now
+      names five, in the sector that employs the most people here — and the useful fact about them
+      is not their size.
+    </p>
+    <AssertionCard assertion={hospitals} />
+    <p>
+      Every one of the five trades under a name that is not the name of the body that enrolls with
+      Medicare. Two are unrecognisable from the sign: the orthopaedic hospital enrolls as West
+      Central Ohio Group Ltd., and Bluffton Hospital as Blanchard Valley Regional Health Center — a
+      name belonging to a valley in the next county, which is also where its owner is.
+    </p>
+    <p>
+      Two of them stand at the same address, 730 West Market Street, so the county's five hospitals
+      occupy four buildings. And one of them is not in Lima at all: the Institute for Orthopaedic
+      Surgery has a Lima postal address and sits in Perry Township, outside any municipality, as the
+      refinery and the tank plant do. That was checked before it was written rather than after,
+      which is the fourth time this corpus has had to ask the question and the first time it asked
+      it in advance.
     </p>
   </section>
 
