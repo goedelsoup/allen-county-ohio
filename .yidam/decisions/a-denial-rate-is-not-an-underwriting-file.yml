@@ -1,0 +1,60 @@
+id: a-denial-rate-is-not-an-underwriting-file
+summary: >-
+  The corpus now holds a source that records decisions made about individual people, and the first
+  number anyone computes from it is a denial rate by race. This states what may be said from that
+  file and what may not, and records the case where the file refused the story the phase arrived
+  with.
+context: |
+  Every source in this corpus until now counted things or filed returns. The HMDA register is
+  different in kind: 3,294 rows for Allen County in 2023, each one an application a lender acted on,
+  each carrying the applicant's race, sex, age band and income, and — where denied — a reason.
+
+  The numbers that come out of it are not small differences.
+
+      applications acted on          apps   denied    rate
+      white applicants              2,023      458   22.6%
+      Black applicants                174       66   37.9%
+
+  and the gap survives every cut the file supports. Under $50,000 of income it is 45.3 against
+  33.4; from $50,000 to $99,000, 38.0 against 20.5; at $100,000 and over, 25.6 against 15.8. Black
+  applicants in the middle band were denied more often than white applicants in the lowest.
+
+  What the file does not carry is the whole of what a lender decided on: no credit score, no
+  assets, no reserves, no employment record, no appraisal, no property condition. It has a
+  debt-to-income band and a loan-to-value ratio and stops. Credit history is the leading denial
+  reason in every group in this county.
+decision: |
+  **Publish the outcome, name the missing variables in the same breath, and never infer treatment.**
+
+  The corpus says: applications from Black applicants in Allen County were denied at 37.9 per cent
+  and from white applicants at 22.6, and this does not establish that they were treated
+  differently. Both halves travel together. The measure node carries the refusal, and the gate
+  propagates it to every assertion built on that node, so no page can quote the first half alone.
+
+  This is not a decision to be quiet about the number. A difference in outcomes is a fact about a
+  county, and a corpus that declined to record one because it could not explain it would be
+  refusing the easier half of its job. What it may not do is close the explanation with a word the
+  data does not contain.
+rationale: |
+  **The best argument for the rule is that the file used it on this phase.** The inquiry arrived
+  expecting a geographic story — a city whose houses are old and cheap, ringed by townships whose
+  houses are new, and a lending market that reads the difference. The register says no. **The
+  denial rate on a home purchase inside Lima's tracts is 13.9 per cent and outside them 14.4.**
+  Buying a house in Lima is not harder than buying one anywhere else in this county.
+
+  What is harder is borrowing against one already owned. Home improvement in Lima denies at 46.6
+  per cent against 27.5 outside; cash-out refinancing at 38.8 against 27.1; every purpose but
+  purchase at 42.9 against 27.6. And the reason the file gives shifts with the geography: 21 per
+  cent of denials in Lima tracts cite collateral against 13 per cent elsewhere. Collateral is the
+  house — median value $95,900, median year built 1953. A phase that had assumed its conclusion
+  would have found the first table and stopped.
+
+  **It is the third application of one discipline in three phases.** The catalog for the elections
+  roster twice refuses to read this county's uniform (R) as a fact about its voters without a
+  return beside it. [a roster of elected officials is not a record of elections](a-roster-of-elected-officials-is-not-a-record-of-elections.yml)
+  refuses to read an appointment rate as evidence that nobody stood. This refuses to read a denial
+  rate as evidence of how anyone was treated. In all three the corpus holds the outcome and lacks
+  the mechanism, and in all three the missing file is nameable: an election return, a candidate
+  filing, an underwriting file.
+status: accepted
+date: "2026-08-30"
