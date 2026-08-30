@@ -362,6 +362,26 @@
       ]
     },
     {
+      "id": "place-allen-county::mortgage-applications-acted-on,-originations,-denials-and-dollars-originated",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "mortgage applications acted on, originations, denials and dollars originated",
+      "unit": "applications acted on across seven years",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-home-lending-2018-2024.yml",
+          "label": "Allen County mortgage lending, 2018-2024",
+          "as_of": "2024",
+          "value": 24269.0,
+          "published": "24269",
+          "tier": "verified",
+          "source": "catalog/hmda-loan-application-register.md",
+          "method": "Rates use actions 1, 2 and 3 and exclude withdrawn, purchased and incomplete files, as in [the single year](allen-county-home-lending-2023.yml). [verified] \"Lima tracts\" is the same sixteen of thirty-five used there. Dollar totals are sums of published loan amounts, each rounded to a $10,000 midpoint, so a total of this size carries a rounding band of its own and is quoted to the nearest hundred thousand. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::mortgage-applications-acted-on,-originations-and-denials",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -378,6 +398,26 @@
           "tier": "verified",
           "source": "catalog/hmda-loan-application-register.md",
           "method": "Rates use actions 1, 2 and 3 — originated, approved and declined, denied — and exclude the 388 withdrawn, 197 purchased and 93 closed for incompleteness, none of which is a decision about a borrower. [verified] \"Lima tracts\" is the sixteen of the county's thirty-five whose 2020 population is majority Lima; they hold 32,575 of the city's 35,579 people and 3,093 who live outside it. [verified] — [block assignment](../../catalog/census-block-assignment-2020.md). Nine rows carry no tract, seven of them decisions; those seven are in the county's totals and in neither column, which is why the columns sum to 2,599 and not 2,606. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::mortgage-denial-rate-by-applicant-race,-and-by-race-within-four-controls",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "mortgage denial rate by applicant race, and by race within four controls",
+      "unit": "ratio of observed to expected denials for Black applicants",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-lending-denial-gap-2018-2024.yml",
+          "label": "Allen County mortgage denial rates by applicant race, 2018-2024",
+          "as_of": "2024",
+          "value": 1.68,
+          "published": "1.68",
+          "tier": "verified",
+          "source": "catalog/hmda-loan-application-register.md",
+          "method": "Rates use actions 1, 2 and 3. Race is the register's `derived_race`; 18 per cent of rows record none and are in no column here. Debt-to-income is grouped from a column that reports integers from 36 to 49 and bands elsewhere. Cells with fewer than ten white applications are dropped, which discards 17 per cent of Black applications rather than resting a rate on one or two files. [verified] Expected denials are the sum of the within-cell white rates over the matched Black applications; the standard deviation is that of the Poisson-binomial they define."
         }
       ]
     },
@@ -1511,15 +1551,24 @@
       ]
     },
     {
-      "id": "you-can-buy-in-lima-not-borrow-against-it",
-      "statement": "A mortgage to buy a house in Lima is denied at the rate it is denied anywhere in Allen County. A loan against a house already owned there is not.",
+      "id": "borrowing-against-a-house-in-lima",
+      "statement": "Across 2018–2024, mortgages to buy a house in Lima's census tracts were denied at 13.3 per cent against 10.8 elsewhere in the county. Loans against a house already owned there were denied at 37.7 per cent against 21.5.",
       "topic": "housing",
       "tier": "verified",
       "citations": [
         {
-          "node": "measure/allen-county-home-lending-2023.yml",
-          "node_label": "Allen County mortgage applications and denials, 2023",
-          "span": "The purchase denial rate inside the city's tracts is 13.9 per cent against 14.4 outside — the same figure. Every other purpose diverges, and taken together they are 42.9 against 27.6.",
+          "node": "measure/allen-county-home-lending-2018-2024.yml",
+          "node_label": "Allen County mortgage lending, 2018-2024",
+          "span": "Over 2018–2024 the purchase denial rate in Lima's tracts is 13.3 per cent against 10.8 elsewhere — 363 denials of 2,737 against 645 of 5,996 — and Lima's rate is the higher one in six of the seven years.",
+          "tier": "verified",
+          "sources": [
+            "catalog/hmda-loan-application-register.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-home-lending-2018-2024.yml",
+          "node_label": "Allen County mortgage lending, 2018-2024",
+          "span": "On everything but purchase, Lima's rate is 37.7 per cent against 21.5 — 1,104 denials of 2,926 against 2,000 of 9,289.",
           "tier": "verified",
           "sources": [
             "catalog/hmda-loan-application-register.md"
@@ -1527,28 +1576,92 @@
         }
       ],
       "caveats": [
-        "This does not establish that those applicants were treated differently."
+        "This does not establish why either gap is there."
       ],
       "figures": [
         {
           "label": "To buy, in Lima",
-          "value": 13.9,
-          "literal": "13.9"
+          "value": 13.3,
+          "literal": "13.3"
         },
         {
           "label": "To buy, elsewhere",
-          "value": 14.4,
-          "literal": "14.4"
+          "value": 10.8,
+          "literal": "10.8"
         },
         {
           "label": "Every other purpose, in Lima",
-          "value": 42.9,
-          "literal": "42.9"
+          "value": 37.7,
+          "literal": "37.7"
         },
         {
           "label": "Every other purpose, elsewhere",
-          "value": 27.6,
-          "literal": "27.6"
+          "value": 21.5,
+          "literal": "21.5"
+        }
+      ]
+    },
+    {
+      "id": "the-denial-gap-is-seven-years-old",
+      "statement": "Across 2018–2024, mortgage applications from Black applicants in Allen County were denied at 32.4 per cent and from white applicants at 17.8, and the gap appears in all seven years.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-lending-denial-gap-2018-2024.yml",
+          "node_label": "Allen County mortgage denial rates by applicant race, 2018-2024",
+          "span": "**It is a pattern and not a year.** Pooled over the seven, 32.4 per cent of applications from Black applicants were denied against 17.8 per cent from white applicants, and the yearly gap runs between 5.9 and 17.0 percentage points without once reversing.",
+          "tier": "verified",
+          "sources": [
+            "catalog/hmda-loan-application-register.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that any applicant was treated differently."
+      ],
+      "figures": [
+        {
+          "label": "Black applicants",
+          "value": 32.4,
+          "literal": "32.4"
+        },
+        {
+          "label": "White applicants",
+          "value": 17.8,
+          "literal": "17.8"
+        }
+      ]
+    },
+    {
+      "id": "the-lending-gap-is-not-composition",
+      "statement": "Sorted into cells of loan purpose, income, debt-to-income and loan-to-value, 955 applications from Black applicants in Allen County drew 223 denials where 132.5 were expected at the white rate in the same cells.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-lending-denial-gap-2018-2024.yml",
+          "node_label": "Allen County mortgage denial rates by applicant race, 2018-2024",
+          "span": "Those 955 drew **223 denials against 132.5 expected at the white rate in the same cells**, a ratio of 1.68 and 9.3 standard deviations from the null.",
+          "tier": "verified",
+          "sources": [
+            "catalog/hmda-loan-application-register.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that any applicant was treated differently."
+      ],
+      "figures": [
+        {
+          "label": "Denials observed",
+          "value": 223.0,
+          "literal": "223"
+        },
+        {
+          "label": "Expected at white rates",
+          "value": 132.5,
+          "literal": "132.5"
         }
       ]
     },

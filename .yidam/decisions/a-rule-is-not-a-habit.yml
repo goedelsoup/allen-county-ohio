@@ -1,0 +1,67 @@
+id: a-rule-is-not-a-habit
+summary: >-
+  Two phases ago this corpus adopted a rule — where a source publishes annually and the files are
+  cheap, read it annually. The next annual source it met was read for one year, and the claim it
+  published from that year is false of the other six. The rule was right, was written here, and did
+  not survive contact with the next phase.
+context: |
+  [a sample is not a series](a-sample-is-not-a-series.yml) was written after the corpus read County
+  Business Patterns at five-year steps and published a claim about the shape of the interior. Its
+  decision reads: *where a source publishes annually and the files are cheap, read it annually.*
+
+  The HMDA register is annual. Seven years sit at one URL pattern with byte-identical column names,
+  and the whole of 2018–2024 is thirty thousand rows and one loop. The phase that found it read
+  2023 and published:
+
+    **You can buy a house in Lima as easily as anywhere in this county. You cannot borrow against
+    one.**
+
+  Both halves came from a real table. The purchase denial rate in Lima's census tracts was 13.9 per
+  cent in 2023 against 14.4 outside them.
+
+      home purchase, denial rate      2018   2019   2020   2021   2022   2023   2024
+      Lima tracts                    12.2%  12.5%  14.6%  13.8%   9.7%  13.9%  15.8%
+      elsewhere in the county        11.4%  11.3%   9.4%   9.3%   9.4%  14.4%  10.5%
+
+  2023 is the only year of the seven in which Lima's rate is the lower one. Pooled, it is 13.3 per
+  cent against 10.8.
+
+  The catalog entry written in the same phase says, in its own last paragraph, *"every year from
+  2018 forward. This corpus has read one year."* Naming the gap did not prevent the claim.
+decision: |
+  **A phase that first reads an annual source reads all of it, in that phase.** Not "records that
+  more exists" — reads it. The cost of the second through seventh files is a loop over a URL that
+  is already written, and the cost of not reading them is a false sentence on a public page.
+
+  **And a comparison drawn from a dated source carries its date in the sentence.** The claim that
+  broke is tenseless: *you can buy a house in Lima as easily as anywhere in this county.* Written as
+  *in 2023, the purchase denial rate in Lima's tracts was 13.9 per cent against 14.4 outside*, it is
+  true, it stays true, and no later year can falsify it — because it never claimed anything about a
+  later year. A level with a date survives new data; a comparison without one does not.
+
+  The wrong claim is withdrawn from
+  [the single-year measure](../corpus/measure/allen-county-home-lending-2023.yml),
+  [Lima](../corpus/place/lima.yml) and the site, and replaced by the seven-year figures.
+rationale: |
+  **The interesting failure is not the claim, it is that the rule existed.** This corpus had already
+  diagnosed the exact error, in prose, two phases earlier, and had written the remedy as a decision
+  record with a name. The next phase read one file anyway. So the finding is not *we should read
+  annual sources annually* — that was already known — but that a decision record is not a
+  constraint. It is a note to a reader who happens to read it.
+
+  **No gate catches this and one nearly could.** A measure whose `as_of` is a single year, cited by
+  an assertion whose statement carries no year, is a mechanically detectable shape. It is also a
+  shape most of this corpus's assertions legitimately have — nine offices govern Allen County, and
+  the sentence needs no date. A check that fires on the whole corpus teaches nothing, and this is
+  recorded as a rejected design rather than an idea nobody had. What can be checked is much smaller
+  than what went wrong.
+
+  **What the correction leaves standing is the part that was actually a finding.** On everything but
+  a purchase, Lima's denial rate is 37.7 per cent against 21.5 — a gap of 16.2 points, against 2.5
+  on purchase. Seven years say the same thing 2023 said about the *shape*: what is hard in Lima is
+  borrowing against a house, not buying one. The single year got the shape right and the sharp
+  claim wrong, which is the same division
+  [a sample is not a series](a-sample-is-not-a-series.yml) drew between a level and a shape, running
+  the other way.
+status: accepted
+date: "2026-08-30"

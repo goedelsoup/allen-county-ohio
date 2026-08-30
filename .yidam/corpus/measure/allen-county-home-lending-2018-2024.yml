@@ -1,0 +1,69 @@
+class: measure
+label: Allen County mortgage lending, 2018-2024
+description: |
+  Seven years of every mortgage application acted on in this county. [verified] —
+  [the HMDA register](../../catalog/hmda-loan-application-register.md), 2018 through 2024.
+
+      year   decisions  originated  denied   rate   $ millions  lenders
+      2018       3,052       2,356     620   20.3%       254.1      175
+      2019       3,392       2,669     658   19.4%       323.7      189
+      2020       4,555       3,838     638   14.0%       513.1      194
+      2021       4,506       3,632     766   17.0%       503.8      200
+      2022       3,366       2,603     672   20.0%       346.5      205
+      2023       2,606       1,932     611   23.4%       270.3      191
+      2024       2,792       2,040     662   23.7%       322.9      209
+
+  **Half a billion dollars in 2020 and 2021, and half of that in 2023.** Lending doubled and fell
+  back inside four years while the number of institutions barely moved. [verified] — same source.
+  The denial rate ran the other way, from 14.0 per cent in 2020 to 23.7 in 2024, which is the
+  highest of the seven. [verified]
+
+  **The geography this corpus published from one year, over seven.**
+
+      home purchase, denial rate     everything else, denial rate
+      year     Lima tracts  elsewhere      Lima tracts  elsewhere
+      2018          12.2%      11.4%            39.0%      25.2%
+      2019          12.5%      11.3%            37.0%      22.3%
+      2020          14.6%       9.4%            27.7%      13.5%
+      2021          13.8%       9.3%            33.7%      18.3%
+      2022           9.7%       9.4%            42.3%      23.3%
+      **2023**  **13.9%**  **14.4%**            42.9%      27.6%
+      2024          15.8%      10.5%            44.3%      28.4%
+
+  **The corpus published "you can buy a house in Lima as easily as anywhere in this county" from
+  the one year in seven where that was true.** Over 2018–2024 the purchase denial rate in Lima's
+  tracts is 13.3 per cent against 10.8 elsewhere — 363 denials of 2,737 against 645 of 5,996 — and
+  Lima's rate is the higher one in six of the seven years. [verified] — same source. The claim is
+  withdrawn and replaced by the figures above; see
+  [a rule is not a habit](../../decisions/a-rule-is-not-a-habit.yml).
+
+  **What survives the correction is the size of the difference, which was the real finding.** On
+  everything but purchase, Lima's rate is 37.7 per cent against 21.5 — 1,104 denials of 2,926
+  against 2,000 of 9,289. The purchase gap is 2.5 percentage points and the other gap is 16.2, so
+  the shape of the 2023 reading holds and its sharper half does not. [verified] — same source.
+
+  This does not establish why either gap is there. The register records the decision and not the
+  file it was made from; see
+  [a denial rate is not an underwriting file](../../decisions/a-denial-rate-is-not-an-underwriting-file.yml).
+properties:
+  parameter: mortgage applications acted on, originations, denials and dollars originated
+  value: "24269"
+  unit: applications acted on across seven years
+  as_of: "2024"
+  method: |
+    Rates use actions 1, 2 and 3 and exclude withdrawn, purchased and incomplete files, as in
+    [the single year](allen-county-home-lending-2023.yml). [verified] "Lima tracts" is the same
+    sixteen of thirty-five used there. Dollar totals are sums of published loan amounts, each
+    rounded to a $10,000 midpoint, so a total of this size carries a rounding band of its own and
+    is quoted to the nearest hundred thousand. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

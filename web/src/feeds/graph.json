@@ -1906,6 +1906,41 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-home-lending-2018-2024.yml",
+      "class": "measure",
+      "label": "Allen County mortgage lending, 2018-2024",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2024",
+        "method": "Rates use actions 1, 2 and 3 and exclude withdrawn, purchased and incomplete files, as in [the single year](allen-county-home-lending-2023.yml). [verified] \"Lima tracts\" is the same sixteen of thirty-five used there. Dollar totals are sums of published loan amounts, each rounded to a $10,000 midpoint, so a total of this size carries a rounding band of its own and is quoted to the nearest hundred thousand. [inference]",
+        "parameter": "mortgage applications acted on, originations, denials and dollars originated",
+        "unit": "applications acted on across seven years",
+        "value": "24269"
+      },
+      "blocks": [
+        {
+          "text": "Seven years of every mortgage application acted on in this county. [verified] — [the HMDA register](../../catalog/hmda-loan-application-register.md), 2018 through 2024.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Half a billion dollars in 2020 and 2021, and half of that in 2023.** Lending doubled and fell back inside four years while the number of institutions barely moved. [verified] — same source. The denial rate ran the other way, from 14.0 per cent in 2020 to 23.7 in 2024, which is the highest of the seven. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "**The corpus published \"you can buy a house in Lima as easily as anywhere in this county\" from the one year in seven where that was true.** Over 2018–2024 the purchase denial rate in Lima's tracts is 13.3 per cent against 10.8 elsewhere — 363 denials of 2,737 against 645 of 5,996 — and Lima's rate is the higher one in six of the seven years. [verified] — same source. The claim is withdrawn and replaced by the figures above; see [a rule is not a habit](../../decisions/a-rule-is-not-a-habit.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What survives the correction is the size of the difference, which was the real finding.** On everything but purchase, Lima's rate is 37.7 per cent against 21.5 — 1,104 denials of 2,926 against 2,000 of 9,289. The purchase gap is 2.5 percentage points and the other gap is 16.2, so the shape of the 2023 reading holds and its sharper half does not. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This does not establish why either gap is there."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-home-lending-2023.yml",
       "class": "measure",
       "label": "Allen County mortgage applications and denials, 2023",
@@ -1923,7 +1958,11 @@
           "tier": "verified"
         },
         {
-          "text": "**You can buy a house in Lima as easily as anywhere in this county. You cannot borrow against one.** The purchase denial rate inside the city's tracts is 13.9 per cent against 14.4 outside — the same figure. Every other purpose diverges, and taken together they are 42.9 against 27.6. [verified] — same source.",
+          "text": "**In 2023 the purchase denial rate inside the city's tracts was 13.9 per cent and outside them 14.4, and every other purpose taken together was 42.9 against 27.6.** [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sentence this node used to open that paragraph with is withdrawn.** It read *you can buy a house in Lima as easily as anywhere in this county*, with no year in it, and 2023 is the only one of seven in which Lima's purchase rate is the lower one. Over 2018–2024 it is 13.3 per cent against 10.8. [verified] — [seven years](allen-county-home-lending-2018-2024.yml). The figures above are unchanged and were never wrong; what was wrong was reading a year as a county. See [a rule is not a habit](../../decisions/a-rule-is-not-a-habit.yml).",
           "tier": "verified"
         },
         {
@@ -2163,6 +2202,45 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "measure/allen-county-lending-denial-gap-2018-2024.yml",
+      "class": "measure",
+      "label": "Allen County mortgage denial rates by applicant race, 2018-2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Rates use actions 1, 2 and 3. Race is the register's `derived_race`; 18 per cent of rows record none and are in no column here. Debt-to-income is grouped from a column that reports integers from 36 to 49 and bands elsewhere. Cells with fewer than ten white applications are dropped, which discards 17 per cent of Black applications rather than resting a rate on one or two files. [verified] Expected denials are the sum of the within-cell white rates over the matched Black applications; the standard deviation is that of the Poisson-binomial they define.",
+        "parameter": "mortgage denial rate by applicant race, and by race within four controls",
+        "unit": "ratio of observed to expected denials for Black applicants",
+        "value": "1.68"
+      },
+      "blocks": [
+        {
+          "text": "Denial rates for the two races the register records in numbers this county can support, across seven years and inside every control the file carries. [verified] — [the HMDA register](../../catalog/hmda-loan-application-register.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is a pattern and not a year.** Pooled over the seven, 32.4 per cent of applications from Black applicants were denied against 17.8 per cent from white applicants, and the yearly gap runs between 5.9 and 17.0 percentage points without once reversing. [verified] — same source. The corpus opened this question saying 174 applications was one year of a small county; it is now 1,334 applications and 432 denials.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It survives every control this register carries, taken one at a time.** Twenty-three strata across four dimensions — loan purpose, applicant income, debt-to-income and loan-to-value — and the gap is positive in all twenty-three. [verified] It is 7.7 points on a home purchase and 24.1 on a home improvement loan; 10.4 points under $30,000 of income and 4.6 above $150,000; 30.4 points in the lowest debt-to-income band and 1.1 in the 43-to-49 band; 23.0 points below 60 per cent loan-to-value and 3.3 between 90 and 100. The gap is widest where denial is rarest and compresses where it is common, which is what a ceiling does to a difference and not a finding about risk. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Taken together rather than one at a time, it is a factor of 1.68.** Sorting every decision into a cell of loan purpose by income band by debt-to-income band by loan-to-value band gives 311 cells holding 955 Black applications — 83 per cent of those with all four controls present — in which at least ten white applications also sit. Those 955 drew **223 denials against 132.5 expected at the white rate in the same cells**, a ratio of 1.68 and 9.3 standard deviations from the null. [verified] — computed here from the same source. The same arithmetic run on white applications returns exactly 1.00, which is the check that it is arithmetic and not a thumb.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Composition is real and it is small.** Inside those 311 cells the unadjusted rates are 23.4 per cent against 12.2, a gap of 11.1 points; reweighting the white rate to the Black applicants' own mix of loan purpose, income, debt and equity moves the comparison to 13.9, which closes 15 per cent of it. [verified] Black applicants in this county do apply for different loans on different terms, and that is not most of the difference.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This does not establish that any applicant was treated differently."
+      ],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-manufacturing-employment-1969-2022.yml",
@@ -6880,8 +6958,12 @@
           "tier": "verified"
         },
         {
-          "text": "**You can buy a house here as easily as anywhere in the county, and you cannot borrow against one.** Mortgage applications to purchase in the city's census tracts were denied at 13.9 per cent in 2023 against 14.4 per cent elsewhere in Allen County; every other purpose was denied at 42.9 against 27.6, and 21 per cent of the denials here cite collateral against 13 per cent elsewhere. [verified] — [the register](../measure/allen-county-home-lending-2023.yml). Collateral is the house. [inference]",
+          "text": "**Borrowing against a house here is the hard thing, and buying one is a little harder too.** Across 2018–2024, mortgages to purchase in the city's census tracts were denied at 13.3 per cent against 10.8 elsewhere in Allen County, and every other purpose at 37.7 against 21.5. [verified] — [seven years of the register](../measure/allen-county-home-lending-2018-2024.yml). Twenty-one per cent of the 2023 denials here cite collateral against 13 per cent elsewhere. [verified] — [the single year](../measure/allen-county-home-lending-2023.yml). Collateral is the house. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "This node said until now that buying a house here was no harder than buying one anywhere in the county. That was 2023, the only year of seven in which Lima's purchase rate is the lower one, and it is withdrawn. [verified] — see [a rule is not a habit](../../decisions/a-rule-is-not-a-habit.yml).",
+          "tier": "verified"
         },
         {
           "text": "**It tripled after the oil, peaked at the 1970 census and has lost a third of itself since.** 757 in 1850, 7,567 in 1880, 21,723 in 1900, 41,326 in 1920, 42,287 in 1930, 44,711 in 1940, 50,246 in 1950, 51,037 in 1960, **53,734 in 1970**, 47,827 in 1980, 45,549 in 1990, 40,307 in 2000, 38,771 in 2010, 35,579 in 2020. [verified] — [1850–1960](../measure/lima-population-1850-1960.yml) and [1970–1990](../measure/lima-population-1970-1990.yml). **Every count rises to 1970 and every count falls after it**, so the peak is a census year and not an artefact of where the corpus's data began. The 1920 figure was 41,306 here until the Census contradicted the county history that supplied it.",
@@ -7641,30 +7723,30 @@
       "properties": {
         "claim_tag": "open",
         "opened": "2026-08-30",
-        "would_close_this": "The register's own unread columns first — loan-to-value ratio, debt-to-income band, rate spread, total loan costs and property value — which would say whether the two gaps survive the controls the file does carry. Then the years 2018 to 2024, which turn 174 applications into something like a thousand and would show whether either gap is a year or a pattern. Beyond the file: an underwriting record, a matched-pair test, or a supervisory examination, none of which is public."
+        "would_close_this": "Both routes this question named are spent. Loan-to-value, debt-to-income and the years 2018-2024 were read and the gap survived all of them; property value and rate spread remain, and would test the collateral hypothesis rather than the race one. What is left for the race gap is an underwriting record, a matched-pair test, or a supervisory examination, and none of the three is public. This question may not be closeable from outside a lender."
       },
       "blocks": [
         {
-          "text": "**By race.** Applications from Black applicants were denied at 37.9 per cent and from white applicants at 22.6, and the gap holds inside every income band: 45.3 against 33.4 under $50,000, 38.0 against 20.5 from $50,000 to $99,000, 25.6 against 15.8 at $100,000 and over. [verified] — [the register](../measure/allen-county-home-lending-2023.yml).",
+          "text": "**By race.** Pooled across 2018–2024, applications from Black applicants were denied at 32.4 per cent and from white applicants at 17.8, in all seven years and inside all twenty-three strata of the four controls the file carries. [verified] — [seven years of the gap](../measure/allen-county-lending-denial-gap-2018-2024.yml).",
           "tier": "verified"
         },
         {
-          "text": "**By purpose, and only outside purchase.** Buying a house inside Lima's tracts is denied at 13.9 per cent and outside them at 14.4 — the same. Borrowing against one already owned is 42.9 against 27.6. [verified] — same source.",
+          "text": "**By purpose.** Borrowing against a house already owned in Lima's tracts is denied at 37.7 per cent against 21.5 elsewhere; buying one is 13.3 against 10.8. [verified] — [seven years of the register](../measure/allen-county-home-lending-2018-2024.yml).",
           "tier": "verified"
         },
         {
-          "text": "**What makes the second one answerable and the first one harder.** The purpose gap has a candidate the file itself supplies: 21 per cent of denials in Lima tracts cite collateral against 13 per cent elsewhere, and collateral is the house. A loan against a $95,900 house built in 1953 is a different proposition from the same loan against a $210,200 house built in 1973. [inference] That is a hypothesis with a test in the same file, in columns this corpus has not read.",
-          "tier": "inference"
+          "text": "**Half of what this question asked for has been done, and it narrowed the question rather than closing it.** Both routes it named — the register's unread columns and six more years — were taken. The years turned 174 applications into 1,334 and the gap did not move. The columns turned a raw comparison into a controlled one: within 311 cells of purpose, income, debt-to-income and loan-to-value, 955 applications from Black applicants drew 223 denials against 132.5 expected at the white rate in the same cells. [verified] — same source. Composition explains fifteen per cent of the gap.",
+          "tier": "verified"
         },
         {
-          "text": "The race gap has no such candidate here. 174 applications is one year of a small county, and the income bands are three buckets standing in for underwriting. [inference] Neither the smallness nor the crudeness makes the gap go away; they make it unexplained.",
+          "text": "**The purpose gap still has a candidate in the file.** Twenty-one per cent of denials in Lima's tracts cite collateral against 13 per cent elsewhere, and collateral is the house: a loan against a $95,900 house built in 1953 is a different proposition from the same loan against a $210,200 house built in 1973. [inference] The register's property-value column would test that and has not been read.",
           "tier": "inference"
         }
       ],
       "refusals": [
         "The corpus does not know why either."
       ],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "question/why-allen-countys-villages-are-staffed-by-appointment.yml",
@@ -9990,6 +10072,20 @@
       "source": "catalog/census-county-business-patterns.md"
     },
     {
+      "from": "measure/allen-county-home-lending-2018-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hmda-loan-application-register.md"
+    },
+    {
+      "from": "measure/allen-county-home-lending-2018-2024.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hmda-loan-application-register.md"
+    },
+    {
       "from": "measure/allen-county-home-lending-2023.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -10093,6 +10189,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/allen-county-lending-denial-gap-2018-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hmda-loan-application-register.md"
     },
     {
       "from": "measure/allen-county-manufacturing-employment-1969-2022.yml",

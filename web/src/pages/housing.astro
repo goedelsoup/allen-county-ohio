@@ -7,7 +7,9 @@ import type { BarSpec } from '../scripts/charts'
 
 const ring = assertion('the-ring-was-built-while-the-city-was-full')
 const tenure = assertion('lima-rents-and-the-townships-own')
-const borrow = assertion('you-can-buy-in-lima-not-borrow-against-it')
+const borrow = assertion('borrowing-against-a-house-in-lima')
+const seven = assertion('the-denial-gap-is-seven-years-old')
+const composition = assertion('the-lending-gap-is-not-composition')
 const gap = assertion('the-denial-gap-that-does-not-resolve')
 
 const bars = (a: typeof tenure, yTitle: string): BarSpec => ({
@@ -20,6 +22,8 @@ const bars = (a: typeof tenure, yTitle: string): BarSpec => ({
 const tenureSpec = bars(tenure, 'Per cent of occupied units owner-occupied')
 const borrowSpec = bars(borrow, 'Per cent of applications denied')
 const gapSpec = bars(gap, 'Per cent of applications denied')
+const sevenSpec = bars(seven, 'Per cent of applications denied')
+const compositionSpec = bars(composition, 'Denials, 2018–2024')
 ---
 
 <Base
@@ -82,20 +86,26 @@ const gapSpec = bars(gap, 'Per cent of applications denied')
   <section>
     <h2>Buying, and borrowing against what you own</h2>
     <p>
-      Every mortgage application acted on in this county in 2023 is on public record: 2,606
-      decisions, 1,932 of them originations, $270.3 million lent by 191 institutions. One lender
-      made a third of it — Superior Credit Union, of 540 W. Market Street in Lima, with 646
-      originations where Rocket Mortgage made 63.
+      Every mortgage application acted on in this county is on public record, and seven years of it
+      are read here: 24,269 decisions between 2018 and 2024. Lending ran to $513.1 million in 2020
+      and $270.3 million in 2023, on between 175 and 209 institutions a year. One lender makes about
+      a third of it — Superior Credit Union, of 540 W. Market Street in Lima, with 646 originations
+      in 2023 where Rocket Mortgage made 63.
     </p>
     <p>
-      This section was expected to be about buying a house in Lima. The register says that is not
-      where the difference is.
+      This section was expected to be about buying a house in Lima, and the difference is not
+      mostly there. An earlier version of this page said flatly that buying a house in Lima is no
+      harder than buying one anywhere in the county. That was read off 2023 alone, which is the one
+      year of seven in which Lima's purchase denial rate is the lower one; over the seven it is
+      13.3 per cent against 10.8. The claim is withdrawn and the figures below replace it. What
+      holds is the size of the two gaps: two and a half points on a purchase, sixteen on everything
+      else.
     </p>
     <AssertionCard assertion={borrow} />
     <ChartFigure
       id="borrow"
-      title="Denial rates by purpose, 2023"
-      caption="Applications acted on — originated, approved and declined, or denied. 'In Lima' is the sixteen of the county's thirty-five census tracts whose population is majority Lima; they hold 32,575 of the city's 35,579 people and 3,093 who live outside it."
+      title="Denial rates by purpose, 2018–2024"
+      caption="2018–2024, applications acted on — originated, approved and declined, or denied. 'In Lima' is the sixteen of the county's thirty-five census tracts whose population is majority Lima; they hold 32,575 of the city's 35,579 people and 3,093 who live outside it."
       columns={['Applications', 'Per cent denied']}
       rows={borrow.figures.map((f) => [f.label, f.value.toFixed(1)])}
     />
@@ -111,6 +121,41 @@ const gapSpec = bars(gap, 'Per cent of applications denied')
 
   <section>
     <h2>The difference that does not resolve</h2>
+    <p>
+      This one was published from a single year too, and seven years make it larger rather than
+      smaller. The gap appears in all seven, between 5.9 and 17.0 percentage points, and never once
+      reverses.
+    </p>
+    <AssertionCard assertion={seven} />
+    <ChartFigure
+      id="seven"
+      title="Denial rate by applicant race, 2018–2024 pooled"
+      caption="24,269 decisions across seven years. 1,334 applications record a Black applicant and 19,673 a white one; 18 per cent of all rows record no race and are in neither bar."
+      columns={['Applicants', 'Per cent denied']}
+      rows={seven.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="seven" set:html={JSON.stringify(sevenSpec)} is:inline />
+    <p>
+      The obvious explanation is composition — that Black applicants in this county apply for
+      different loans, at different incomes, with different debt and different equity. They do, and
+      it is not most of the difference. Sorting every decision into a cell of loan purpose by income
+      band by debt-to-income band by loan-to-value band gives 311 cells in which applications from
+      both groups sit together.
+    </p>
+    <AssertionCard assertion={composition} />
+    <ChartFigure
+      id="composition"
+      title="Denials among 955 applications from Black applicants, 2018–2024"
+      caption="Expected denials are the sum of the white denial rate in each application's own cell of purpose, income, debt-to-income and loan-to-value. The same arithmetic applied to white applications returns exactly the number observed, which is the check that it is arithmetic."
+      columns={['', 'Denials']}
+      rows={composition.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="composition" set:html={JSON.stringify(compositionSpec)} is:inline />
+    <p>
+      That is a ratio of 1.68 and nine standard deviations from the null. Inside those cells the
+      unadjusted rates are 23.4 per cent against 12.2; reweighting the white rate to the Black
+      applicants' own mix moves it to 13.9, which closes fifteen per cent of the gap.
+    </p>
     <AssertionCard assertion={gap} />
     <ChartFigure
       id="gap"

@@ -1,0 +1,70 @@
+class: measure
+label: Allen County mortgage denial rates by applicant race, 2018-2024
+description: |
+  Denial rates for the two races the register records in numbers this county can support, across
+  seven years and inside every control the file carries. [verified] —
+  [the HMDA register](../../catalog/hmda-loan-application-register.md).
+
+      year    white apps  denied   Black apps  denied   gap
+      2018         2,575   19.2%          154   33.8%  14.5
+      2019         2,893   18.6%          151   24.5%   5.9
+      2020         3,860   12.5%          176   29.5%  17.0
+      2021         3,611   15.9%          238   28.6%  12.7
+      2022         2,672   18.5%          188   32.4%  13.9
+      2023         2,023   22.6%          174   37.9%  15.3
+      2024         2,039   22.5%          253   37.9%  15.4
+      ------------------------------------------------------
+      pooled      19,673   17.8%        1,334   32.4%  14.6
+
+  **It is a pattern and not a year.** Pooled over the seven, 32.4 per cent of applications from
+  Black applicants were denied against 17.8 per cent from white applicants, and the yearly gap runs
+  between 5.9 and 17.0 percentage points without once reversing. [verified] — same source. The
+  corpus opened this question saying 174 applications was one year of a small county; it is now
+  1,334 applications and 432 denials.
+
+  **It survives every control this register carries, taken one at a time.** Twenty-three strata
+  across four dimensions — loan purpose, applicant income, debt-to-income and loan-to-value — and
+  the gap is positive in all twenty-three. [verified] It is 7.7 points on a home purchase and 24.1
+  on a home improvement loan; 10.4 points under $30,000 of income and 4.6 above $150,000; 30.4
+  points in the lowest debt-to-income band and 1.1 in the 43-to-49 band; 23.0 points below 60 per
+  cent loan-to-value and 3.3 between 90 and 100. The gap is widest where denial is rarest and
+  compresses where it is common, which is what a ceiling does to a difference and not a finding
+  about risk. [inference]
+
+  **Taken together rather than one at a time, it is a factor of 1.68.** Sorting every decision into
+  a cell of loan purpose by income band by debt-to-income band by loan-to-value band gives 311
+  cells holding 955 Black applications — 83 per cent of those with all four controls present — in
+  which at least ten white applications also sit. Those 955 drew **223 denials against 132.5
+  expected at the white rate in the same cells**, a ratio of 1.68 and 9.3 standard deviations from
+  the null. [verified] — computed here from the same source. The same arithmetic run on white
+  applications returns exactly 1.00, which is the check that it is arithmetic and not a thumb.
+
+  **Composition is real and it is small.** Inside those 311 cells the unadjusted rates are 23.4 per
+  cent against 12.2, a gap of 11.1 points; reweighting the white rate to the Black applicants' own
+  mix of loan purpose, income, debt and equity moves the comparison to 13.9, which closes 15 per
+  cent of it. [verified] Black applicants in this county do apply for different loans on different
+  terms, and that is not most of the difference.
+
+  This does not establish that any applicant was treated differently. The register carries no
+  credit score, and a credit score is the largest thing a lender decides on that is in no column
+  here. See
+  [a denial rate is not an underwriting file](../../decisions/a-denial-rate-is-not-an-underwriting-file.yml).
+properties:
+  parameter: mortgage denial rate by applicant race, and by race within four controls
+  value: "1.68"
+  unit: ratio of observed to expected denials for Black applicants
+  as_of: "2024"
+  method: |
+    Rates use actions 1, 2 and 3. Race is the register's `derived_race`; 18 per cent of rows record
+    none and are in no column here. Debt-to-income is grouped from a column that reports integers
+    from 36 to 49 and bands elsewhere. Cells with fewer than ten white applications are dropped,
+    which discards 17 per cent of Black applications rather than resting a rate on one or two
+    files. [verified] Expected denials are the sum of the within-cell white rates over the matched
+    Black applications; the standard deviation is that of the Poisson-binomial they define.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -18,6 +18,11 @@ location:
       regardless of headers; `curl --compressed` or the bytes arrive as binary. Any year and any
       county FIPS may be substituted.
   - kind: url
+    value: https://ffiec.cfpb.gov/v2/data-browser-api/view/csv?counties=39003&years=2018
+    description: >-
+      The same for 2018, the first year of this format. All seven years 2018–2024 were taken:
+      30,938 rows, and the ninety-nine column names are byte-identical across every one of them.
+  - kind: url
     value: https://api.gleif.org/api/v1/lei-records/<lei>
     description: >-
       The register names lenders by Legal Entity Identifier and never in words. GLEIF resolves an
@@ -59,7 +64,28 @@ the file names none of them. The five largest by originations resolve to Superio
 Lima, the Union Bank Company of Columbus Grove, the Citizens National Bank of Bluffton, Huntington
 National Bank of Columbus and Premier Bank of Youngstown. [verified] — GLEIF.
 
+## Seven years, and the columns that let a comparison be controlled
+
+**All of it from 2018 is now read.** 30,938 rows across 2018–2024, the format unchanged. Lending in
+this county ran from $254.1 million in 2018 to $513.1 million in 2020, back to $270.3 million in
+2023 and $322.9 million in 2024, on between 175 and 209 institutions a year. [verified]
+
+**Three columns turn a comparison into a controlled one, and their coverage is the thing to check
+before using them.** Loan-to-value is present on 91 per cent of decisions and debt-to-income on 92,
+and the two are missing at nearly the same rate for white and Black applicants — 90.0 against 91.3
+per cent for loan-to-value, 92.6 against 93.5 for debt-to-income. [verified] So conditioning on them
+does not quietly select one group out of the comparison.
+
+**One asymmetry that does matter.** Loan-to-value is present on 92.9 per cent of originations and
+82.6 per cent of denials. [verified] A denied file is likelier to be missing it, so any
+loan-to-value stratum under-counts denials in a way this corpus cannot repair from the file.
+
+**Debt-to-income arrives in two shapes in one column.** Values between 36 and 49 are reported as
+integers and everything outside that range as a band — `<20%`, `20%-<30%`, `30%-<36%`, `50%-60%`,
+`>60%`. [verified] Any grouping has to handle both, and a naive numeric parse silently drops four
+fifths of the column.
+
 **What else is in it, unread.** Interest rate, rate spread, total loan costs, origination charges,
 discount points, loan term, introductory rate period, prepayment penalty, balloon payment,
-interest-only payment, negative amortization, manufactured-home land-property interest, and every
-year from 2018 forward. This corpus has read one year and about twelve of its ninety-nine columns.
+interest-only payment and manufactured-home land-property interest. This corpus has now read seven
+years and about eighteen of the ninety-nine columns.
