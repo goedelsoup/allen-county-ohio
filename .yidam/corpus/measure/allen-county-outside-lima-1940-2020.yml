@@ -1,0 +1,77 @@
+class: measure
+label: Allen County outside Lima, 1940–2020
+description: |
+  The county's population with [Lima](../place/lima.yml) taken out of it, at nine censuses.
+  [inference] — subtraction performed here; every input is a Census count already held by this
+  corpus.
+
+      1940    73,303  -  44,711  =  28,592      Lima is 61.0% of the county
+      1950    88,183  -  50,246  =  37,937                57.0%
+      1960   103,691  -  51,037  =  52,654                49.2%
+      1970   111,144  -  53,734  =  57,410                48.4%
+      1980   112,241  -  47,827  =  64,414                42.6%
+      1990   109,755  -  45,549  =  64,206                41.5%
+      2000   108,464  -  40,307  =  68,157                37.2%
+      2010   106,331  -  38,771  =  67,560                36.5%
+      2020   102,206  -  35,579  =  66,627                34.8%
+
+  Written out: **the county outside Lima held 28,592 people in 1940 and 68,157 in 2000, and has
+  fallen at both censuses since, to 66,627.** [inference] — same subtraction. County figures from
+  [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml),
+  [2010](allen-county-population-2010.yml) and
+  [the 2020 census count](allen-county-population-2020-census.yml); Lima from
+  [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml),
+  [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and
+  [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base
+  gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.
+
+  **This answers a question [deindustrialization](../period/deindustrialization.yml) left open.**
+  That node said the ring around Lima grew while the city emptied, and that "when the ring turned
+  is not established here". **It turned between 2000 and 2010.** The county outside Lima grew at
+  every census from 1940 to 2000 except one, more than doubling, and has fallen at the two since.
+  [inference]
+
+  **So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the
+  county as a whole in 1980, and the county outside Lima in 2000. [inference] — from the three
+  series above. A single line labelled "Allen County" hides all of this: from 1970 to 2000 the
+  county was falling and two thirds of it was growing.
+
+  **The exception is the decade the boundary moved, and it moves the right way.** Between 1980 and
+  1990 the balance fell by 208 — the only fall before 2000 — and it is the one decade in which Lima
+  is known to have annexed, from American, Bath and Shawnee townships. [verified] —
+  [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md),
+  Geographic Change Notes. Annexation moves people from the balance into the city without anybody
+  moving house, so it pushes this series down and the city's up. The 1980s fall is therefore an
+  upper bound on a decline and may be no decline at all. [inference]
+
+  **Lima's share of the county has fallen at every census since 1940, including the three at which
+  the city grew.** 61.0% in 1940 to 34.8% in 2020, through a decade in which the city gained 5,535
+  people and still lost four points of share. [inference] — computed above. The county was
+  redistributing before it was declining, and the two processes are seventy years out of phase.
+
+  **What the corroboration reaches and does not.** Between 2000 and 2010 the Census Bureau's own
+  "balance of county" — everything outside *every* incorporated place, a narrower base than this one
+  — fell from 50,809 to 50,048. [verified] —
+  [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md). Same
+  direction, different denominator: the difference between the two is Delphos, Bluffton,
+  Spencerville, Elida and the smaller villages, which this series keeps and that one removes.
+
+  [open] Whether Lima annexed after 2000. If it did, the fall since 2000 is larger than it looks;
+  the corpus holds annexation notes for the 1980s only, because that is the one decade a source
+  it holds happens to cover.
+properties:
+  parameter: county population less the city of Lima, decennial
+  value: "68157"
+  unit: persons
+  as_of: "2000"
+  method: |
+    Subtraction of the city count from the county count at each census, both from Census
+    publications this corpus already holds and cites. Not a published figure: no source states it,
+    and it is tagged as this corpus's inference throughout. The `value` above is the series
+    maximum. Boundaries are as reported at each census and are known to have moved once. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
