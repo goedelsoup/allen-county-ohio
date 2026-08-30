@@ -10060,13 +10060,6 @@
       "source": "catalog/census-acs-summary-file.md"
     },
     {
-      "from": "measure/allen-county-housing-age-2023.yml",
-      "to": "period/depopulation.yml",
-      "relationship": "describes",
-      "tier": "inference",
-      "source": null
-    },
-    {
       "from": "measure/allen-county-housing-stock-2023.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -10751,6 +10744,20 @@
       "relationship": "evidenced-by",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-housing-age-2023.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-housing-stock-2023.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
     },
     {
       "from": "period/depopulation.yml",
