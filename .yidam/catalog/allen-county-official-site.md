@@ -39,6 +39,17 @@ used-by:
   - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/office/allen-county-auditor.yml
+  - ../corpus/office/allen-county-board-of-commissioners.yml
+  - ../corpus/office/allen-county-clerk-of-courts.yml
+  - ../corpus/office/allen-county-coroner.yml
+  - ../corpus/office/allen-county-engineer.yml
+  - ../corpus/office/allen-county-prosecuting-attorney.yml
+  - ../corpus/office/allen-county-recorder.yml
+  - ../corpus/office/allen-county-treasurer.yml
+  - ../corpus/person/brion-e-rhodes.yml
+  - ../corpus/person/john-thomas-meyer.yml
+  - ../corpus/person/mona-s-losh.yml
   - ../corpus/place/beaverdam.yml
   - ../corpus/place/bluffton.yml
   - ../corpus/place/cairo.yml
@@ -49,6 +60,9 @@ used-by:
   - ../corpus/place/lima.yml
   - ../corpus/place/spencerville.yml
   - ../corpus/site/miami-and-erie-canal.yml
+  - ../corpus/tenure/coroner-2025-john-thomas-meyer.yml
+  - ../corpus/tenure/engineer-2025-brion-e-rhodes.yml
+  - ../corpus/tenure/recorder-2025-mona-s-losh.yml
 ---
 
 **What it settles.** Three phases of this corpus deferred the same thing: the `jurisdiction`

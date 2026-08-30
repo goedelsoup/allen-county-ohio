@@ -17,12 +17,16 @@ location:
       unreliable for reading a three-up table across columns; every figure here was read from a
       rendered image.
 used-by:
+  - ../corpus/event/lima-oil-strike.yml
   - ../corpus/measure/allen-county-domestic-animals-1910.yml
   - ../corpus/measure/allen-county-farm-output-1909.yml
   - ../corpus/measure/allen-county-farms-1900-1910.yml
   - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-townships-1890-1910.yml
   - ../corpus/measure/lima-manufactures-1899-1909.yml
+  - ../corpus/organization/standard-oil.yml
+  - ../corpus/period/lima-oil-boom.yml
+  - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
