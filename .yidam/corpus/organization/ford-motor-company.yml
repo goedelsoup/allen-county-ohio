@@ -1,0 +1,29 @@
+class: organization
+label: Ford Motor Company
+description: |
+  The parent company named against [the Lima engine plant](../site/ford-lima-engine-plant.yml),
+  which has reported to the Toxics Release Inventory in all thirty-eight years from 1987 to 2024 —
+  as long as the inventory has existed, and on four chemicals for 2024. [verified] —
+  [EPA TRI](../../catalog/epa-tri.md); see
+  [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). The facility files under the
+  name `FORD MOTOR CO LIMA ENGINE PLANT` with its mailing address at the plant itself.
+
+  **It carries no `seated-in` edge, and the absence is the claim.** `seated-in` means where an
+  organization is headquartered, and this one is not headquartered in Allen County. Pointing it at
+  the township its plant stands in would state something false in a structured field to avoid an
+  empty one. The node therefore carries `instance-of` alone, which is the same shape as the seven
+  district officers who represent this county and do not live in it. [inference]
+
+  That leaves the corpus without any edge for *the parent of a body operating here*, which is the
+  second time this gap has been named — the first was
+  [Mercy Health–St. Rita's](mercy-health-st-ritas-medical-center.yml) and its owner in Cincinnati.
+  Two phases, two classes, one missing relationship. [inference]
+
+  [open] What the plant makes, how many people work in it, and when it was built. This corpus names
+  the operator and nothing about the operation.
+properties:
+  org_type: company
+  industry: motor vehicle manufacturing
+links:
+  - target: ../organization.ont.yml
+    relationship: instance-of

@@ -1,7 +1,7 @@
 //! Runs the calculator against this repository's own corpus.
 //!
 //! Every assertion here is about the same thing: this tool ranks, and ranking does not answer
-//! which polygon a point is inside. The corpus knows the containment answers for its three
+//! which polygon a point is inside. The corpus knows the containment answers for its located
 //! sites from two independent boundary sources, so it can prove the ranking wrong on demand.
 
 use proximity::{between, load, near};
@@ -26,8 +26,11 @@ fn at(ps: &[proximity::Point], node: &str) -> (f64, f64) {
 #[test]
 fn every_coordinate_in_the_corpus_parses_and_lands_in_ohio() {
     let ps = points();
-    assert!(ps.len() >= 11, "8 places and 3 sites, at least");
-    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 3);
+    assert!(ps.len() >= 11, "8 places and 4 sites, at least");
+    // Four located sites: the courthouse, the refinery, the tank plant and the Ford engine
+    // plant. The last of the four arrived with the phase that asked who operates the works, and
+    // three of the four are outside every municipality.
+    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 4);
     for p in &ps {
         assert!((38.3..=42.4).contains(&p.lat), "{}: {}", p.node, p.lat);
         assert!((-85.0..=-80.4).contains(&p.lon), "{}: {}", p.node, p.lon);

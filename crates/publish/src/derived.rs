@@ -464,6 +464,65 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-refinery-outgrew-them",
+        statement: "The county's oldest industrial installation is bigger than it has ever been. \
+                    The Lima refinery could run 145,000 barrels of crude a day in 1994 and can run \
+                    183,000 now — the largest refinery in Ohio, and 36th of the 124 in the United \
+                    States.",
+        topic: "population",
+        // The counterweight to every other employment chart on this page. Manufacturing
+        // employment halved across the same span in which this plant's capacity rose a quarter,
+        // which is the difference between a county's output and its payroll.
+        supports: &[
+            support!(
+                "measure/lima-refinery-capacity-1994-2026.yml",
+                "**The refinery is larger than it has ever been in this series, and by a quarter.** 145,000 barrels per calendar day in 1994 against 183,000 in 2026"
+            ),
+            support!(
+                "measure/lima-refinery-capacity-1994-2026.yml",
+                "**It is the largest refinery in Ohio.** 183,000 against 172,800 and 150,800 at Toledo and 100,000 at Canton"
+            ),
+            support!(
+                "measure/lima-refinery-capacity-1994-2026.yml",
+                "**The trough is 146,120 in 2007, the last Premcor year, and the recovery is the Husky years.** Capacity fell 15,380 from the 161,500 it held through 2003"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1994", value: 145_000.0, literal: "145,000" },
+            Figure { label: "2003", value: 161_500.0, literal: "161,500" },
+            Figure { label: "2007", value: 146_120.0, literal: "146,120" },
+            Figure { label: "2026", value: 183_000.0, literal: "183,000" },
+        ],
+    },
+    Assertion {
+        id: "the-plants-are-outside-every-city",
+        statement: "All three of Allen County's large industrial installations stand outside every \
+                    municipality. The refinery and the tank plant are in Shawnee Township, the Ford \
+                    engine plant in Bath. All three have Lima postal addresses.",
+        topic: "population",
+        // Five instances of a-postal-address-is-not-a-municipality, and the last two were checked
+        // before the claim was written rather than after it.
+        supports: &[
+            support!(
+                "site/ford-lima-engine-plant.yml",
+                "**So all three of the county's large industrial installations stand outside every municipality.**"
+            ),
+            support!(
+                "site/lima-refinery.yml",
+                "**It has a Lima address and is not in Lima.**"
+            ),
+            support!(
+                "site/lima-army-tank-plant.yml",
+                "**It is not in Lima.** The plant stands in [Shawnee Township](../place/shawnee-township.yml)"
+            ),
+        ],
+        // Found only because the wrap fix in claim.rs made it visible. This refusal had been in
+        // the tank plant node and invisible to the gate, which is what the fix was about.
+        answers: &["this corpus does not know"],
+        figures: &[],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",

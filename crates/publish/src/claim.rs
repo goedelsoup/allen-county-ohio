@@ -139,7 +139,15 @@ fn sentence_end(text: &str, at: usize) -> usize {
 }
 
 /// The first refusing sentence in `text`, verbatim, if there is one.
-fn refusal(text: &str) -> Option<String> {
+///
+/// The search runs over the *normalized* block, not the raw one. Node prose is hard-wrapped at
+/// about 95 columns, so a trigger phrase can straddle a wrap — `this corpus does not\n  know` —
+/// and a raw substring search does not see it. Three of the corpus's twenty-six refusals were
+/// invisible to this function for that reason, and an assertion citing one of those nodes would
+/// have published without the caveat. That is the exact failure the gate exists to prevent, and
+/// it failed silently, because a refusal nobody detects looks identical to a node with none.
+fn refusal(raw: &str) -> Option<String> {
+    let text = &normalize(raw);
     let lower = text.to_lowercase();
     let at = REFUSALS.iter().filter_map(|p| lower.find(p)).min()?;
 
@@ -268,6 +276,22 @@ mod tests {
             r.starts_with("Whether that society"),
             "quoted from the wrong place: {r}"
         );
+    }
+
+    #[test]
+    fn a_trigger_phrase_split_by_a_line_wrap_is_still_found() {
+        // The worst of the three wrapping defects, because it fails to nothing. The phrase
+        // straddles the wrap, the raw substring search misses it, and the block looks like
+        // prose with no refusal in it — so an assertion citing the node publishes with no
+        // caveat and no complaint. Three of the corpus's refusals were hidden this way.
+        let text = "What changed in 1994 is who filed. Whether who operated changed with it,\n\
+                    this corpus does not\n  know, and the rest is a compliance arrangement. [open]";
+        let b = blocks(text);
+        let r = b[0]
+            .refusal
+            .as_deref()
+            .expect("refusal found across the wrap");
+        assert!(r.contains("does not know"), "quoted wrong: {r}");
     }
 
     #[test]

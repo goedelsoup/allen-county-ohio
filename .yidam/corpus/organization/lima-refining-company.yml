@@ -1,0 +1,39 @@
+class: organization
+label: Lima Refining Company
+description: |
+  The company that has operated [the Lima refinery](../site/lima-refinery.yml) since the 2008
+  report, and the fourth name in the operator column since 1994. [verified] —
+  [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md).
+
+  **Its corporate parent is in Canada, and the file has said so since 2010.** Husky Energy Inc from
+  the 2010 report through 2021, Cenovus Energy Inc in 2022, and Cenovus Marketing (USA) Inc from
+  2023. [verified] — same source. The `CORPORATION` column does not exist in reports before 2010,
+  so this node cannot say who owned the works in the two years it operated them before that. [open]
+
+  **It runs the largest refinery in Ohio.** 183,000 barrels per calendar day of atmospheric crude
+  distillation, against 172,800 at Toledo, 150,800 at the other Toledo refinery and 100,000 at
+  Canton — 30 per cent of the state's 606,600, and 36th of the 124 refineries in the United States.
+  [verified] — same source, the 2026 report. Its parent operates two of Ohio's four. [verified]
+
+  **It is also the county's oldest continuously reporting industrial facility to the EPA**, filing
+  under the Toxics Release Inventory in all thirty-eight years from 1987 to 2024, and filing on
+  twenty-five chemicals for 2024 — more than any other facility in the county except one.
+  [verified] — [EPA TRI](../../catalog/epa-tri.md); see
+  [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). The inventory's register
+  carries those thirty-eight years under this company's name and today's parent, which is an
+  artifact of how the register is built and not a claim that this company was there in 1987.
+  [verified] — see [a register is not a census](../../decisions/a-register-is-not-a-census.yml).
+
+  This node is the operator and not the works. The refinery has stood since 1886 and this name has
+  been on it since 2008, which is the distinction the [site](../site.ont.yml) class exists for.
+properties:
+  org_type: company
+  industry: petroleum refining
+  also_known_as: LIMA REFINING CO (EPA); Valero Lima Refinery (county address file, stale)
+links:
+  - target: ../place/shawnee-township.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../organization.ont.yml
+    relationship: instance-of

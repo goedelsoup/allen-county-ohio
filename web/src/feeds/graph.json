@@ -75,7 +75,9 @@
           "tier": "verified"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "The coincidence is also not permanent, and this node's `effective_to` being absent does not assert that it is — see [which congressional district Allen County is in now](../question/allen-county-current-congressional-district.yml) for the same vintage problem on the federal map."
+      ],
       "withheld": 3
     },
     {
@@ -854,7 +856,9 @@
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "The earlier form of this node said the boundary \"does not follow the municipal or township lines around it."
+      ],
       "withheld": 1
     },
     {
@@ -1275,7 +1279,7 @@
         }
       ],
       "refusals": [
-        "**They had no nodes here for one phase, on a rule that did not survive its second case.** The rule was that this corpus writes a person where Allen County's *own* electors choose the officer; applied next to the county's state senator and state representative, it excluded those too, and a county reference that cannot say who represents the county in the legislature is not a reference. The rule is replaced, and all four judges now have [an office](../office/judge-of-the-third-district-court-of-appeals.yml), a person node and a term. See [a scope rule met its second case](../../decisions/a-scope-rule-met-its-second-case.yml)."
+        "**They had no nodes here for one phase, on a rule that did not survive its second case.** The rule was that this corpus writes a person where Allen County's *own* electors choose the officer; applied next to the county's state senator and state representative, it excluded those too, and a county reference that cannot say who represents the county in the legislature is not a reference."
       ],
       "withheld": 2
     },
@@ -2392,6 +2396,39 @@
       "withheld": 4
     },
     {
+      "id": "measure/allen-county-tri-reporters-1987-2024.yml",
+      "class": "measure",
+      "label": "Allen County facilities reporting to the Toxics Release Inventory, 1987–2024",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2024",
+        "method": "The Envirofacts facility register for Allen County joined to `tri_reporting_form`, paged at 1,000 rows — 5,372 forms across 49 facility identifiers, reporting years 1987 to 2024. A facility is counted as filing in a year if any form carries that year. One register entry, Heat Treating Tech Inc, has no forms at all. [verified]",
+        "parameter": "facilities filing a TRI reporting form, Allen County",
+        "unit": "facilities, reporting year 2024",
+        "value": "20"
+      },
+      "blocks": [
+        {
+          "text": "Every facility in the county that filed for 2024, with the years it has filed and the parent company named against it now. [verified] — [EPA TRI](../../catalog/epa-tri.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Twenty facilities filed for 2024, and the register holds forty-nine.** Twenty-eight of the forty-eight that have ever filed did not file for 2024, and only three of those twenty-eight carry the register's closure flag. [verified] The flag is not a currency test; a filing is. See [a register is not a census](../../decisions/a-register-is-not-a-census.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Six have filed in all thirty-eight years** — the refinery, Dana, Ford, INEOS, FXI and Chemtrade at Cairo. [verified] Sixteen of the twenty have filed in twenty-seven years or more, and sixteen have no gap between their first year and their last, so the county's reporting industry is old and it has stayed. [verified] The column above is first year and last, not every year between: Procter & Gamble's span is thirty-eight years and its filings are thirty. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "Every parent above is a parent **now** — the register's attributes are current-state and say nothing about who owned any of these facilities earlier. And this is not a list of the county's employers: TRI covers facilities over a size threshold that handle listed chemicals, so it sees a foundry and not a hospital. No employment figure here rests on it. [verified]",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "measure/allen-county-turnout-2020.yml",
       "class": "measure",
       "label": "Allen County turnout, 2020 general election",
@@ -2758,6 +2795,43 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "measure/lima-refinery-capacity-1994-2026.yml",
+      "class": "measure",
+      "label": "Lima refinery operator and crude capacity, 1994–2026",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2026-01-01",
+        "method": "Thirty-one annual reports, `SITE` LIMA and `STATE_NAME` Ohio, taking the `TOTAL OPERABLE CAPACITY` row for barrels per calendar day. Every report from 1994 to 2026 except 1996 and 1998, which are not archived. Twelve are shown; every figure above is from all thirty-one. [verified]",
+        "parameter": "Atmospheric Crude Distillation Capacity (barrels per calendar day), Total Operable",
+        "unit": "barrels per calendar day",
+        "value": "183000"
+      },
+      "blocks": [
+        {
+          "text": "Who filed for [the refinery](../site/lima-refinery.yml) and how much crude it could run, as of 1 January of each report year. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The refinery is larger than it has ever been in this series, and by a quarter.** 145,000 barrels per calendar day in 1994 against 183,000 in 2026 — up 38,000, or 26 per cent — across the decades in which the county's [manufacturing employment](allen-county-manufacturing-employment-1969-2022.yml) fell by more than half. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md). The low is the first year and the high is the last four.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the largest refinery in Ohio.** 183,000 against 172,800 and 150,800 at Toledo and 100,000 at Canton — 30 per cent of the state's 606,600 barrels per calendar day, and 36th of the 124 refineries in the United States. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md), the 2026 report.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The trough is 146,120 in 2007, the last Premcor year, and the recovery is the Husky years.** Capacity fell 15,380 from the 161,500 it held through 2003, and has risen 36,880 since. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This series dates changes of filing entity and not changes of ownership, and the corporation column does not exist before the 2010 report. [verified] The 1996 and 1998 reports are not published, and the BP-to-Clark change falls in the second gap.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "measure/ohio-house-district-4-land-area-2020.yml",
@@ -3613,6 +3687,32 @@
       "withheld": 2
     },
     {
+      "id": "organization/ford-motor-company.yml",
+      "class": "organization",
+      "label": "Ford Motor Company",
+      "tier": "inference",
+      "properties": {
+        "industry": "motor vehicle manufacturing",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "The parent company named against [the Lima engine plant](../site/ford-lima-engine-plant.yml), which has reported to the Toxics Release Inventory in all thirty-eight years from 1987 to 2024 — as long as the inventory has existed, and on four chemicals for 2024. [verified] — [EPA TRI](../../catalog/epa-tri.md); see [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). The facility files under the name `FORD MOTOR CO LIMA ENGINE PLANT` with its mailing address at the plant itself.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It carries no `seated-in` edge, and the absence is the claim.** `seated-in` means where an organization is headquartered, and this one is not headquartered in Allen County. Pointing it at the township its plant stands in would state something false in a structured field to avoid an empty one. The node therefore carries `instance-of` alone, which is the same shape as the seven district officers who represent this county and do not live in it. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That leaves the corpus without any edge for *the parent of a body operating here*, which is the second time this gap has been named — the first was [Mercy Health–St. Rita's](mercy-health-st-ritas-medical-center.yml) and its owner in Cincinnati. Two phases, two classes, one missing relationship. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "organization/institute-for-orthopaedic-surgery.yml",
       "class": "organization",
       "label": "Institute for Orthopaedic Surgery",
@@ -3752,6 +3852,35 @@
       "withheld": 1
     },
     {
+      "id": "organization/lima-refining-company.yml",
+      "class": "organization",
+      "label": "Lima Refining Company",
+      "tier": "verified",
+      "properties": {
+        "also_known_as": "LIMA REFINING CO (EPA); Valero Lima Refinery (county address file, stale)",
+        "industry": "petroleum refining",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "The company that has operated [the Lima refinery](../site/lima-refinery.yml) since the 2008 report, and the fourth name in the operator column since 1994. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It runs the largest refinery in Ohio.** 183,000 barrels per calendar day of atmospheric crude distillation, against 172,800 at Toledo, 150,800 at the other Toledo refinery and 100,000 at Canton — 30 per cent of the state's 606,600, and 36th of the 124 refineries in the United States. [verified] — same source, the 2026 report. Its parent operates two of Ohio's four. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is also the county's oldest continuously reporting industrial facility to the EPA**, filing under the Toxics Release Inventory in all thirty-eight years from 1987 to 2024, and filing on twenty-five chemicals for 2024 — more than any other facility in the county except one. [verified] — [EPA TRI](../../catalog/epa-tri.md); see [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). The inventory's register carries those thirty-eight years under this company's name and today's parent, which is an artifact of how the register is built and not a claim that this company was there in 1987. [verified] — see [a register is not a census](../../decisions/a-register-is-not-a-census.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "The `CORPORATION` column does not exist in reports before 2010, so this node cannot say who owned the works in the two years it operated them before that."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "organization/mercy-health-st-ritas-medical-center.yml",
       "class": "organization",
       "label": "Mercy Health–St. Rita's Medical Center",
@@ -3815,6 +3944,10 @@
         {
           "text": "In 1918 it was one of nine Lima industrial firms that agreed to meet half the cost of equipping a machine shop at South High School, alongside Lima Locomotive Works and the Ohio Steel Foundry. [verified] — same source. It is also a corporate life member of the Lima Hospital Society, with the Buckeye Pipe Line Company, the Ohio Oil Company, the Lima Natural Gas Company and the Manhattan Oil Company. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**The far end of the chain it starts is now held.** BP Oil Corp. operated [the refinery](../site/lima-refinery.yml) in 1994, and [Lima Refining Company](lima-refining-company.yml) operates it now under Cenovus. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md). So the question this node has carried since genesis is no longer *who has it now*; it is the hundred and eight years in between.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -3848,6 +3981,10 @@
         },
         {
           "text": "Two more of its Lima entities are named in the record: the **Buckeye Pipe Line Company** and the **Ohio Oil Company**, which with Solar and the independent Manhattan Oil Company appear together as corporate subscribers to the Lima Hospital Society. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The refinery's present operator is established and the chain to it is not.** [Lima Refining Company](lima-refining-company.yml) has filed for the works since the 2008 federal report, under Husky Energy from 2010 and Cenovus from 2022, and BP Oil Corp. held it in 1994. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md). What the corpus still lacks is everything between 1886 and 1994.",
           "tier": "verified"
         }
       ],
@@ -7005,6 +7142,42 @@
       "withheld": 3
     },
     {
+      "id": "site/ford-lima-engine-plant.yml",
+      "class": "site",
+      "label": "Ford Lima Engine Plant",
+      "tier": "inference",
+      "properties": {
+        "address": "1155 Bible Road, Lima OH 45801 — a postal address, not a municipality.",
+        "coordinates": "40.774253, -84.084246",
+        "site_type": "factory",
+        "status": "in operation"
+      },
+      "blocks": [
+        {
+          "text": "An engine plant at 1155 Bible Road, operated by [Ford Motor Company](../organization/ford-motor-company.yml). [verified] — [EPA TRI](../../catalog/epa-tri.md), which names the facility `FORD MOTOR CO LIMA ENGINE PLANT` with Ford Motor Co as its parent and the plant itself as its mailing address.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It has a Lima address and is not in Lima.** The county's address file records it at 1155 Bible Road with `USPS_CITY` LIMA and `MUNI` **blank**, at 40.774253, -84.084246; TIGERweb, asked that point, puts it in [Bath Township](../place/bath-township.yml) and in no incorporated place. [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and [TIGERweb](../../catalog/tigerweb-census2020.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**So all three of the county's large industrial installations stand outside every municipality.** This plant in Bath Township, [the refinery](lima-refinery.yml) and [the tank plant](lima-army-tank-plant.yml) in [Shawnee](../place/shawnee-township.yml). [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon on all three against the 2020 county-subdivision and incorporated-place layers.",
+          "tier": "verified"
+        },
+        {
+          "text": "Three townships' ground and no city's, which is a fact about who may levy on them before it is a fact about geography. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is one of six Allen County facilities that have reported to the EPA in every one of the inventory's thirty-eight years.** The others are [the refinery](lima-refinery.yml), Dana Driveshaft Manufacturing, INEOS Nitriles, FXI at Spencerville, and Chemtrade's sulphur works at Cairo. [verified] — [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). Six of forty-eight, in a register where twenty-eight facilities have stopped filing.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "site/lima-army-tank-plant.yml",
       "class": "site",
       "label": "Joint Systems Manufacturing Center (Lima Army Tank Plant)",
@@ -7040,10 +7213,16 @@
         {
           "text": "Its presence makes Allen County's industrial base unusual in a specific way: the plant's workload is set by federal procurement rather than by any regional market, so the county has a major employer whose fortunes are decoupled from the deindustrialization that shaped the rest of its economy. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**One contractor name is attached to this plant now, for seven years thirty years ago.** The Toxics Release Inventory holds two records at this address: `U.S. ARMY JSMC GENERAL DYNAMICS LAND SYSTEMS`, parent General Dynamics Corp, filing from 1987 to 1993; and `U S ARMY JOINT SYSTEMS MANUFACTURING CENTER`, parent US Department of Defense, filing from 1994 to 2024. Same street, same coordinates. [verified] — [EPA TRI](../../catalog/epa-tri.md); see [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml).",
+          "tier": "verified"
         }
       ],
-      "refusals": [],
-      "withheld": 1
+      "refusals": [
+        "Whether the operator changed with it, this corpus does not know, and the reporting entity at a government-owned plant is a compliance arrangement rather than a contract award."
+      ],
+      "withheld": 2
     },
     {
       "id": "site/lima-locomotive-works-plant.yml",
@@ -7095,10 +7274,22 @@
         {
           "text": "**So the works were built by the Solar Refining Company, a Standard Oil subsidiary, from 1886.** [verified] — same source. That is the beginning of the ownership chain this node has asked for since genesis, and it explains what the corpus had already established by coordinate and could not explain: **the refinery sits outside every municipality because it was sited on a farm.** Standard picked 151 acres of open ground between two railroads in 1886, and no annexation has taken it since. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**The chain has its recent end now, and the present capacity with it.** The operator column of the federal refinery census reads BP Oil Corp. through the 1997 report, Clark Refining & Marketing in 1999 and 2000, Premcor Refining Group Inc from 2001 through 2007, and [Lima Refining Company](../organization/lima-refining-company.yml) from 2008 to now, under Husky Energy from 2010 and Cenovus from 2022. The works can run **183,000 barrels of crude per calendar day**, the largest refinery in Ohio and 36th of the 124 in the United States. [verified] — [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md); see [the series](../measure/lima-refinery-capacity-1994-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is bigger than it has ever been in that series, and by a quarter.** 145,000 barrels per calendar day in 1994 against 183,000 now. [verified] — same source. This node has said since genesis that the refinery \"has outlived every corporate arrangement that has owned it\"; it has also outgrown them, through the decades in which the county's [manufacturing employment](../measure/allen-county-manufacturing-employment-1969-2022.yml) fell by more than half. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two witnesses to the fact that a name outlives its owner.** The county's own address file still labels this site `VALERO LIMA REFINERY`, and the federal census never prints the word Valero in any year of any report. [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and the same EIA source. One of the two is naming somebody who is no longer here; both cannot be current. See [a register is not a census](../../decisions/a-register-is-not-a-census.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "site/miami-and-erie-canal.yml",
@@ -9331,6 +9522,13 @@
       "source": "catalog/census-1950-number-of-inhabitants-ohio.md"
     },
     {
+      "from": "measure/allen-county-tri-reporters-1987-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/epa-tri.md"
+    },
+    {
       "from": "measure/allen-county-turnout-2020.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -9483,6 +9681,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "measure/lima-refinery-capacity-1994-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/eia-refinery-capacity.md"
+    },
+    {
+      "from": "measure/lima-refinery-capacity-1994-2026.yml",
+      "to": "organization/lima-refining-company.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/eia-refinery-capacity.md"
     },
     {
       "from": "measure/ohio-house-district-4-land-area-2020.yml",
@@ -9739,6 +9951,13 @@
     {
       "from": "organization/lima-memorial-health-system.yml",
       "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "organization/lima-refining-company.yml",
+      "to": "place/shawnee-township.yml",
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/tigerweb-census2020.md"
@@ -10724,6 +10943,20 @@
       "source": null
     },
     {
+      "from": "site/ford-lima-engine-plant.yml",
+      "to": "place/bath-township.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "site/ford-lima-engine-plant.yml",
+      "to": "organization/ford-motor-company.yml",
+      "relationship": "operated-by",
+      "tier": "verified",
+      "source": "catalog/epa-tri.md"
+    },
+    {
       "from": "site/lima-army-tank-plant.yml",
       "to": "place/shawnee-township.yml",
       "relationship": "located-in",
@@ -10764,6 +10997,13 @@
       "relationship": "operated-by",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "site/lima-refinery.yml",
+      "to": "organization/lima-refining-company.yml",
+      "relationship": "operated-by",
+      "tier": "verified",
+      "source": "catalog/eia-refinery-capacity.md"
     },
     {
       "from": "site/miami-and-erie-canal.yml",

@@ -62,6 +62,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Atmospheric-Crude-Distillation-Capacity-(barrels-per-calendar-day),-Total-Operable",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Atmospheric Crude Distillation Capacity (barrels per calendar day), Total Operable",
+      "unit": "barrels per calendar day",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-refinery-capacity-1994-2026.yml",
+          "label": "Lima refinery operator and crude capacity, 1994–2026",
+          "as_of": "2026-01-01",
+          "value": 183000.0,
+          "published": "183000",
+          "tier": "verified",
+          "source": "catalog/eia-refinery-capacity.md",
+          "method": "Thirty-one annual reports, `SITE` LIMA and `STATE_NAME` Ohio, taking the `TOTAL OPERABLE CAPACITY` row for barrels per calendar day. Every report from 1994 to 2026 except 1996 and 1998, which are not archived. Twelve are shown; every figure above is from all thirty-one. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::FTE---Employees-on-Payroll",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -138,6 +158,26 @@
           "tier": "verified",
           "source": "catalog/census-1910-abstract-supplement-ohio.md",
           "method": "Thirteenth Census of Agriculture, enumerated April 15, 1910. Read from rendered images of a 400-dpi scan. Checked by arithmetic self-closure: on the farms the seven animal values sum to the printed $2,501,226 exactly, and cattle, horses, mules, swine and sheep each sum from their own age and sex classes; off the farms the five values sum to $350,736 exactly. The colonies-of- bees value is damaged on this scan and was recovered as $2,561 from the property total, an identity that closes exactly in the neighbouring county column. County totals are added here. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::facilities-filing-a-TRI-reporting-form,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "facilities filing a TRI reporting form, Allen County",
+      "unit": "facilities, reporting year 2024",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-tri-reporters-1987-2024.yml",
+          "label": "Allen County facilities reporting to the Toxics Release Inventory, 1987–2024",
+          "as_of": "2024",
+          "value": 20.0,
+          "published": "20",
+          "tier": "verified",
+          "source": "catalog/epa-tri.md",
+          "method": "The Envirofacts facility register for Allen County joined to `tri_reporting_form`, paged at 1,000 rows — 5,372 forms across 49 facility identifiers, reporting years 1987 to 2024. A facility is counted as filing in a year if any form carries that year. One register entry, Heat Treating Tech Inc, has no forms at all. [verified]"
         }
       ]
     },
@@ -1406,6 +1446,104 @@
         "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know.",
         "Whether a quarter of this hospital's workforce left the county or moved to another employer inside the same system, the corpus cannot say.",
         "This corpus does not establish that the pandemic caused that year."
+      ],
+      "figures": []
+    },
+    {
+      "id": "the-refinery-outgrew-them",
+      "statement": "The county's oldest industrial installation is bigger than it has ever been. The Lima refinery could run 145,000 barrels of crude a day in 1994 and can run 183,000 now — the largest refinery in Ohio, and 36th of the 124 in the United States.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/lima-refinery-capacity-1994-2026.yml",
+          "node_label": "Lima refinery operator and crude capacity, 1994–2026",
+          "span": "**The refinery is larger than it has ever been in this series, and by a quarter.** 145,000 barrels per calendar day in 1994 against 183,000 in 2026",
+          "tier": "verified",
+          "sources": [
+            "catalog/eia-refinery-capacity.md"
+          ]
+        },
+        {
+          "node": "measure/lima-refinery-capacity-1994-2026.yml",
+          "node_label": "Lima refinery operator and crude capacity, 1994–2026",
+          "span": "**It is the largest refinery in Ohio.** 183,000 against 172,800 and 150,800 at Toledo and 100,000 at Canton",
+          "tier": "verified",
+          "sources": [
+            "catalog/eia-refinery-capacity.md"
+          ]
+        },
+        {
+          "node": "measure/lima-refinery-capacity-1994-2026.yml",
+          "node_label": "Lima refinery operator and crude capacity, 1994–2026",
+          "span": "**The trough is 146,120 in 2007, the last Premcor year, and the recovery is the Husky years.** Capacity fell 15,380 from the 161,500 it held through 2003",
+          "tier": "verified",
+          "sources": [
+            "catalog/eia-refinery-capacity.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1994",
+          "value": 145000.0,
+          "literal": "145,000"
+        },
+        {
+          "label": "2003",
+          "value": 161500.0,
+          "literal": "161,500"
+        },
+        {
+          "label": "2007",
+          "value": 146120.0,
+          "literal": "146,120"
+        },
+        {
+          "label": "2026",
+          "value": 183000.0,
+          "literal": "183,000"
+        }
+      ]
+    },
+    {
+      "id": "the-plants-are-outside-every-city",
+      "statement": "All three of Allen County's large industrial installations stand outside every municipality. The refinery and the tank plant are in Shawnee Township, the Ford engine plant in Bath. All three have Lima postal addresses.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "site/ford-lima-engine-plant.yml",
+          "node_label": "Ford Lima Engine Plant",
+          "span": "**So all three of the county's large industrial installations stand outside every municipality.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/tigerweb-census2020.md"
+          ]
+        },
+        {
+          "node": "site/lima-refinery.yml",
+          "node_label": "Lima Refinery",
+          "span": "**It has a Lima address and is not in Lima.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/allen-county-gis-downloads.md",
+            "catalog/tigerweb-census2020.md"
+          ]
+        },
+        {
+          "node": "site/lima-army-tank-plant.yml",
+          "node_label": "Joint Systems Manufacturing Center (Lima Army Tank Plant)",
+          "span": "**It is not in Lima.** The plant stands in [Shawnee Township](../place/shawnee-township.yml)",
+          "tier": "verified",
+          "sources": [
+            "catalog/tigerweb-census2020.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Whether the operator changed with it, this corpus does not know, and the reporting entity at a government-owned plant is a compliance arrangement rather than a contract award."
       ],
       "figures": []
     },

@@ -1,0 +1,60 @@
+class: measure
+label: Lima refinery operator and crude capacity, 1994–2026
+description: |
+  Who filed for [the refinery](../site/lima-refinery.yml) and how much crude it could run, as of
+  1 January of each report year. [verified] —
+  [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md).
+
+      report  operating company            corporation             b/cd
+      1994    BP Oil Corp.                 —                     145,000
+      1995    BP Oil Corp.                 —                     161,000
+      1997    BP Oil Corp.                 —                     161,500
+      1999    Clark Refining & Marketing   —                     161,500
+      2001    Premcor Refg Group Inc       —                     161,500
+      2004    Premcor Refg Group Inc       —                     151,305
+      2007    PREMCOR REFINING GROUP INC   —                     146,120
+      2008    LIMA REFINING COMPANY        —                     146,200
+      2010    LIMA REFINING COMPANY        HUSKY ENERGY INC      150,000
+      2017    LIMA REFINING COMPANY        HUSKY ENERGY INC      177,000
+      2022    LIMA REFINING COMPANY        CENOVUS ENERGY INC    179,000
+      2026    LIMA REFINING COMPANY        CENOVUS MKTG (USA)    183,000
+
+  **The refinery is larger than it has ever been in this series, and by a quarter.** 145,000 barrels
+  per calendar day in 1994 against 183,000 in 2026 — up 38,000, or 26 per cent — across the decades
+  in which the county's [manufacturing employment](allen-county-manufacturing-employment-1969-2022.yml)
+  fell by more than half. [verified] —
+  [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md). The low is the first year
+  and the high is the last four.
+
+  **It is the largest refinery in Ohio.** 183,000 against 172,800 and 150,800 at Toledo and 100,000
+  at Canton — 30 per cent of the state's 606,600 barrels per calendar day, and 36th of the 124
+  refineries in the United States. [verified] —
+  [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md), the 2026 report.
+
+  **The trough is 146,120 in 2007, the last Premcor year, and the recovery is the Husky years.**
+  Capacity fell 15,380 from the 161,500 it held through 2003, and has risen 36,880 since. [verified] —
+  [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md).
+
+  This series dates changes of filing entity and not changes of ownership, and the corporation column
+  does not exist before the 2010 report. [verified] The 1996 and 1998 reports are not published, and
+  the BP-to-Clark change falls in the second gap.
+properties:
+  parameter: Atmospheric Crude Distillation Capacity (barrels per calendar day), Total Operable
+  value: "183000"
+  unit: barrels per calendar day
+  as_of: "2026-01-01"
+  method: |
+    Thirty-one annual reports, `SITE` LIMA and `STATE_NAME` Ohio, taking the `TOTAL OPERABLE
+    CAPACITY` row for barrels per calendar day. Every report from 1994 to 2026 except 1996 and 1998,
+    which are not archived. Twelve are shown; every figure above is from all thirty-one. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/eia-refinery-capacity.md
+  - target: ../organization/lima-refining-company.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/eia-refinery-capacity.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

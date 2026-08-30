@@ -18,6 +18,8 @@ const factories = assertion('the-factories-stopped-leaving')
 const farms = assertion('the-farms-did-not-go-anywhere')
 const health = assertion('health-care-fell-too')
 const hospitals = assertion('five-hospitals-one-locally-owned')
+const refinery = assertion('the-refinery-outgrew-them')
+const outside = assertion('the-plants-are-outside-every-city')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -120,6 +122,17 @@ const healthSpec: BarSpec = {
   categories: health.figures.map((f) => f.label),
   values: health.figures.map((f) => f.value),
   yTitle: 'Jobs lost, 2010–2022',
+  labelValues: true,
+}
+
+// Four points at uneven spacing across thirty-one reports, so a bar chart rather than a line:
+// the gaps between them are nine, four and nineteen years, and a line drawn across those states
+// a rate the spacing does not support. 1996 and 1998 are not published at all.
+const refinerySpec: BarSpec = {
+  kind: 'bar',
+  categories: refinery.figures.map((f) => f.label),
+  values: refinery.figures.map((f) => f.value),
+  yTitle: 'Barrels of crude per calendar day',
   labelValues: true,
 }
 
@@ -358,6 +371,63 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       refinery and the tank plant do. That was checked before it was written rather than after,
       which is the fourth time this corpus has had to ask the question and the first time it asked
       it in advance.
+    </p>
+  </section>
+
+  <section>
+    <h2>And the one that grew</h2>
+    <p>
+      Every other chart on this page counts people. This one counts what the county can make, and it
+      goes the other way. The refinery Standard Oil put on a Shawnee Township farm in 1886 could run
+      <strong>145,000 barrels of crude a day in 1994 and can run 183,000 now</strong> — up a quarter,
+      across the same decades in which the county's manufacturing employment fell by more than half.
+    </p>
+    <AssertionCard assertion={refinery} />
+
+    <ChartFigure
+      id="refinery"
+      title="Lima refinery crude capacity, 1994–2026"
+      caption="EIA Refinery Capacity Report, atmospheric crude distillation in barrels per calendar day, as of 1 January of each report year. Four of thirty-one reports are shown; 1996 and 1998 are not published. The 2007 trough is the last year the works filed as Premcor, and every year since is higher."
+      columns={['Report year', 'Barrels per calendar day']}
+      rows={refinery.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="refinery" set:html={JSON.stringify(refinerySpec)} is:inline />
+
+    <p>
+      A county's output and a county's payroll are not the same quantity, and this is the clearest
+      case of it here. The refinery is the largest in Ohio and thirty-sixth of the hundred and
+      twenty-four in the country, and nothing on this page says how many people work in it — because
+      no source the corpus holds does.
+    </p>
+    <p>
+      Who operates it was an open question in this corpus from its first day. It is BP through the
+      1997 report, Clark Refining, then Premcor, then the Lima Refining Company from 2008 — under
+      Husky Energy from 2010 and Cenovus since 2022. The hundred and eight years between the Solar
+      Refining Company in 1886 and BP in 1994 are still unsourced, and the federal census cannot
+      supply them: its corporate-parent column does not exist before 2010.
+    </p>
+    <p>
+      Meanwhile Allen County's own address file still labels the site <em>Valero Lima Refinery</em>,
+      and the federal census never prints the word Valero in any year of any report. Two authorities,
+      two companies, one set of works, and neither name carries a date.
+    </p>
+  </section>
+
+  <section>
+    <h2>None of them is in a city</h2>
+    <AssertionCard assertion={outside} open />
+    <p>
+      The refinery and the tank plant stand in Shawnee Township; the Ford engine plant stands in
+      Bath. All three have Lima postal addresses and none of them is in Lima, or in any other
+      municipality. That is a fact about who may levy on the county's industrial base before it is a
+      fact about geography.
+    </p>
+    <p>
+      The corpus asserted the opposite about the refinery and the tank plant from its first day, on
+      the strength of their addresses and their names. It has now had to check five times, and the
+      last two — the Institute for Orthopaedic Surgery and this engine plant — were checked before
+      the claim was written rather than after. One of those two was in Lima. The other was not.
     </p>
   </section>
 

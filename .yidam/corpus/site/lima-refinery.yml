@@ -39,8 +39,38 @@ description: |
   Standard picked 151 acres of open ground between two railroads in 1886, and no annexation has
   taken it since. [inference]
 
-  [open] The rest of the ownership chain — Solar Refining to the present operator — and the present
-  crude throughput. The corpus now has the first link and not the others.
+  **The chain has its recent end now, and the present capacity with it.** The operator column of the
+  federal refinery census reads BP Oil Corp. through the 1997 report, Clark Refining & Marketing in
+  1999 and 2000, Premcor Refining Group Inc from 2001 through 2007, and
+  [Lima Refining Company](../organization/lima-refining-company.yml) from 2008 to now, under Husky
+  Energy from 2010 and Cenovus from 2022. The works can run **183,000 barrels of crude per calendar
+  day**, the largest refinery in Ohio and 36th of the 124 in the United States. [verified] —
+  [EIA Refinery Capacity Report](../../catalog/eia-refinery-capacity.md); see
+  [the series](../measure/lima-refinery-capacity-1994-2026.yml).
+
+  **It is bigger than it has ever been in that series, and by a quarter.** 145,000 barrels per
+  calendar day in 1994 against 183,000 now. [verified] — same source. This node has said since
+  genesis that the refinery "has outlived every corporate arrangement that has owned it"; it has
+  also outgrown them, through the decades in which the county's
+  [manufacturing employment](../measure/allen-county-manufacturing-employment-1969-2022.yml) fell by
+  more than half. [inference]
+
+  **Two witnesses to the fact that a name outlives its owner.** The county's own address file still
+  labels this site `VALERO LIMA REFINERY`, and the federal census never prints the word Valero in
+  any year of any report. [verified] —
+  [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and the same EIA source. One of
+  the two is naming somebody who is no longer here; both cannot be current. See
+  [a register is not a census](../../decisions/a-register-is-not-a-census.yml).
+
+  [open] The middle of the chain. Solar Refining begins it in 1886 and BP holds it in 1994, and the
+  hundred and eight years between are unsourced here. The corporation column of the federal census
+  does not exist before its 2010 report, so that source cannot supply them.
+
+  [open] Whether the works cross the Lima boundary. The EPA puts this refinery 0.96 miles west of
+  the point the county's address file gives, in Lima city rather than Shawnee Township. [verified] —
+  [EPA TRI](../../catalog/epa-tri.md). The corpus keeps the county's point, which is address-matched
+  by the authority that maintains the addresses; but a site this size is an area and every source
+  here answers for a point in it.
 properties:
   site_type: refinery
   built: "1886"
@@ -59,5 +89,9 @@ links:
   - target: ../organization/standard-oil.yml
     relationship: operated-by
     claim_tag: inference
+  - target: ../organization/lima-refining-company.yml
+    relationship: operated-by
+    claim_tag: verified
+    source: ../../catalog/eia-refinery-capacity.md
   - target: ../site.ont.yml
     relationship: instance-of

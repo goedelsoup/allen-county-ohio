@@ -1,0 +1,57 @@
+id: a-register-is-not-a-census
+summary: >-
+  The EPA's Toxics Release Inventory holds forty-nine Allen County facilities and twenty of them
+  filed for 2024. Its closure flag catches three of the twenty-eight that stopped. And because its
+  facility table is current while its forms are historical, the refinery's 1987 form prints Cenovus
+  as the parent — a company the federal refinery census does not name until 2022.
+context: |
+  Two queries, one source, two ways to be wrong.
+
+      the register            49 facilities, 3 flagged closed
+      the forms               5,372, reporting years 1987 to 2024
+      filed for 2024          20
+      stopped filing          28, of which 3 are flagged
+
+  The flag catches about one departure in nine. Sundstrand's Lima electric power systems plant last
+  filed for 1995 and is not flagged; Fruehauf's Delphos parts plant last filed for 1991 and is not
+  flagged; Airfoil Textron last filed for 1988 and is not flagged. A count off the register would
+  have given this county forty-six live industrial facilities and it has twenty.
+
+  The second failure is quieter. `facility_name` and `parent_co_name` live in the register and
+  describe the present; the forms carry the years. Joined, every one of thirty-eight rows for the
+  refinery reads `LIMA REFINING CO` and `CENOVUS ENERGY INC.` — including the row for 1987.
+  [EIA](../catalog/eia-refinery-capacity.md) has BP Oil Corp. operating that refinery in 1994 and
+  Cenovus not appearing until 2022. Nothing in the TRI result says the parent column is a snapshot.
+  It reads as a history and it is a single value repeated.
+decision: |
+  **A register's currency is its most recent filing, never a status flag. And any attribute taken
+  from a register's entity table is stamped as *now* in the node that uses it.**
+
+  [`allen-county-tri-reporters-1987-2024`](../corpus/measure/allen-county-tri-reporters-1987-2024.yml)
+  lists the twenty that filed for 2024 and says the register holds forty-nine. Its parent column is
+  labelled *parent now* and the node says in prose that the column is about the present. The catalog
+  entry leads with both limits rather than with what the file contains.
+rationale: |
+  **This is the second of two consecutive phases in which a source published something other than
+  what it looked like it published, and the two failures are opposites.** In
+  [a sample is not a series](a-sample-is-not-a-series.yml) the corpus took four years from a source
+  that published thirteen and reported a shape the four could not support. Here the source published
+  thirty-eight rows of what looked like history and the history was one value repeated. Under-read
+  in one case and over-read in the other, and in neither was any single number wrong: every figure
+  in both was correct as published.
+
+  What separates them is where the error lives. A sample's error is in what you did not fetch. A
+  register's error is in what it does not date — and that one you can fetch the whole file and still
+  make.
+
+  **A local source corroborates the habit, which is the reason to name it rather than patch it.**
+  Allen County's own address file labels the refinery `VALERO LIMA REFINERY`, and EIA never prints
+  the word Valero in any year of any report. Two authorities naming two different companies for one
+  set of works, and neither carries a date on the name. A register keeps the name it has; only a
+  filing is dated.
+
+  **What it protects.** This phase was one query away from writing that Allen County has forty-six
+  industrial facilities and that Cenovus has been at the refinery since 1987. Both sentences would
+  have been drawn from a correct file, and both would have been false.
+status: accepted
+date: "2026-08-30"
