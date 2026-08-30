@@ -1,0 +1,61 @@
+id: naming-a-gap-is-not-leaving-it-empty
+summary: >-
+  Last phase closed by naming its own gap — the years 1970 to 1986, which County Business Patterns
+  cannot reach — and described that gap in the same sentence. Manufacturing in 1986 was "already
+  falling"; the corpus held "the second half of a fall". A BEA series reaching to 1969 shows 1986 as
+  a recovery year and the peak in 1973. The gap was correctly identified and then filled with a
+  guess drawn from the shape of the data beside it.
+context: |
+  The sentence, on two nodes:
+
+      County Business Patterns begins in 1986 with manufacturing already at 15,762 and already
+      falling. So the corpus now measures the second half of a decline and infers the first.
+
+  Every part of that is an inference and none of it was tagged as one — the block carried `[open]`,
+  which reads as *this is unknown*, while the prose inside it asserted a shape.
+
+  What the years actually hold: manufacturing employment of 17,623 in 1969, a peak of **18,400 in
+  1973**, 18,389 as late as 1979, a recession trough of 14,349 in 1982, and a four-year recovery to
+  17,163 by 1986. From the 1973 peak to 1986 the county lost 7 per cent of its manufacturing jobs.
+  From 1986 to the 2009 trough it lost 55 per cent. So 1986 was not mid-fall, and the span was not
+  the first half of anything — it was the peak and the plateau.
+
+  The false part was cheap to avoid. "County Business Patterns begins in 1986 and the corpus does
+  not know what preceded it" would have been three words shorter and correct.
+decision: |
+  **A span the corpus marks `[open]` gets no description. Name what is missing and what would close
+  it, and stop.**
+
+  Where the shape of the missing span matters to a claim, that is a reason to go and get it, not a
+  licence to project the measured shape backwards past the edge of the data.
+rationale: |
+  **This is a different error from the ones already recorded here, and the difference is where it
+  sits.** [the window was the finding](the-window-was-the-finding.yml) and
+  [a baseline is a choice](a-baseline-is-a-choice.yml) are about claims made from data the corpus
+  has. This one is a claim made about data the corpus does not have, written inside the sentence
+  admitting it does not have it. The `[open]` tag was doing the opposite of its job: it made the
+  paragraph feel careful, and the carefulness is what let an unexamined assertion ride along.
+
+  **Extrapolating a trend past the edge of a series is the specific move to distrust.** The measured
+  span fell steadily from 1986, so backwards extrapolation gave a steeper earlier fall. Reality gave
+  a peak. That is not bad luck: a series that opens partway through a long decline opens at an
+  arbitrary point, and there is no reason the years before an arbitrary point should continue the
+  trend after it. Business cycles are the ordinary reason — 1982 was a recession and 1986 a
+  recovery, and any decade of American manufacturing contains both.
+
+  **The check is mechanical.** After writing an `[open]`, read the sentences around it and ask
+  whether any of them says something about the missing thing other than that it is missing. Here two
+  did — "already falling" and "the second half" — and both were false.
+
+  **The counter-consideration.** A gap named with no shape at all is less useful to whoever tries to
+  close it: "1970 to 1986 is missing" tells a reader less than "1970 to 1986 is missing and probably
+  contains the peak". The answer is that a conjecture is allowed when it is marked as one and framed
+  as a thing to test — `would_close_this` on a question node is exactly that field. What is not
+  allowed is a conjecture written in the indicative inside a paragraph that reads as a disclaimer.
+
+  **And the cost was one phase.** The wrong sentence lived for one phase and was corrected by the
+  next retrieval, which is the system working. It is recorded because the sentence was written *by
+  the same process that identified the gap*, in the same paragraph, and that is a failure the gate
+  cannot see.
+status: accepted
+date: "2026-08-30"

@@ -142,6 +142,26 @@
       ]
     },
     {
+      "id": "place-allen-county::manufacturing-employment,-Allen-County,-all-jobs",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "manufacturing employment, Allen County, all jobs",
+      "unit": "jobs",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+          "label": "Allen County manufacturing employment, 1969–2022",
+          "as_of": "2022",
+          "value": 8715.0,
+          "published": "8715",
+          "tier": "verified",
+          "source": "catalog/bea-county-employment.md",
+          "method": "BEA CAEMP25S for 1969–2000 (SIC line 400) and CAEMP25N for 2001–2022 (NAICS line 500), read from the Ohio county files at GeoFIPS 39003. BEA counts jobs, including proprietors, part-time work, farm and government, where County Business Patterns counts employees of private establishments; the two are separate programmes and not one series. They agree on shape where they overlap, both placing the recent trough at the end of the 2000s and a recovery of about a fifth since. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::manufacturing-employment,-Allen-County,-private-employers",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -248,6 +268,26 @@
           "tier": "verified",
           "source": "catalog/census-county-business-patterns.md",
           "method": "County Business Patterns county files for 1986 and 2022, with sector 62 traced across 2000, 2005, 2010, 2015 and 2020. Both endpoint years close exactly: the ten 1986 SIC divisions sum to 45,917 and the twenty 2022 NAICS sectors to 42,814, each equal to its file's own total row. Government, the self-employed and farms are excluded. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::total-employment,-all-jobs,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "total employment, all jobs, Allen County",
+      "unit": "jobs",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-total-employment-1969-2022.yml",
+          "label": "Allen County total employment, 1969–2022",
+          "as_of": "2022",
+          "value": 64238.0,
+          "published": "64238",
+          "tier": "verified",
+          "source": "catalog/bea-county-employment.md",
+          "method": "BEA CAEMP25S line 10 for 1969–2000 and CAEMP25N line 10 for 2001–2022, Ohio county files at GeoFIPS 39003. Counts jobs rather than people, so a person holding two jobs is counted twice, and includes farm, government and proprietors. Not comparable with [County Business Patterns](allen-county-manufacturing-employment-1986-2022.yml), which counts private employees only. The comparison with population is a comparison of two programmes. [inference]"
         }
       ]
     },
@@ -1141,48 +1181,58 @@
     },
     {
       "id": "the-factories-stopped-leaving",
-      "statement": "Allen County manufacturing employment fell from 15,762 in 1986 to 7,127 in 2010 — and then rose, to 8,573 by 2022, while the county kept shrinking.",
+      "statement": "Allen County manufacturing employment peaked in 1973, at 18,400 — three years after Lima began to empty — and bottomed at 7,775 in 2009.",
       "topic": "population",
-      "tier": "inference",
+      "tier": "verified",
       "citations": [
         {
-          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
-          "node_label": "Allen County manufacturing employment, 1986–2022",
-          "span": "**Manufacturing employment in Allen County fell by 55 per cent between 1986 and 2010, from 15,762 to 7,127.**",
+          "node": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+          "node_label": "Allen County manufacturing employment, 1969–2022",
+          "span": "**Manufacturing employment in Allen County peaked in 1973, at 18,400.**",
           "tier": "verified",
           "sources": []
         },
         {
-          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
-          "node_label": "Allen County manufacturing employment, 1986–2022",
-          "span": "**And then it stopped, and reversed.** From the 2010 trough manufacturing rose to 8,917 in 2020 and stood at 8,573 in 2022 — up a fifth from the bottom.",
-          "tier": "inference",
+          "node": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+          "node_label": "Allen County manufacturing employment, 1969–2022",
+          "span": "**The trough is 7,775, in 2009 — a fall of 58 per cent from the peak, across thirty-six years.** [verified] — same source. Employment has risen since, to 8,715 in 2022, and has not been below 7,775 in any year on this series.",
+          "tier": "verified",
           "sources": []
         },
         {
-          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
-          "node_label": "Allen County manufacturing employment, 1986–2022",
-          "span": "**After 2010 the losses were not in manufacturing.**",
-          "tier": "inference",
+          "node": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+          "node_label": "Allen County manufacturing employment, 1969–2022",
+          "span": "**1986 was a recovery year, not a stage of the fall.** Manufacturing bottomed at 14,349 in 1982, rose four years running to 17,163 in 1986, and only then began the long decline.",
+          "tier": "verified",
           "sources": []
         }
       ],
       "caveats": [],
       "figures": [
         {
-          "label": "1986",
-          "value": 15762.0,
-          "literal": "15,762"
+          "label": "1973",
+          "value": 18400.0,
+          "literal": "18,400"
         },
         {
-          "label": "2010",
-          "value": 7127.0,
-          "literal": "7,127"
+          "label": "1982",
+          "value": 14349.0,
+          "literal": "14,349"
+        },
+        {
+          "label": "1986",
+          "value": 17163.0,
+          "literal": "17,163"
+        },
+        {
+          "label": "2009",
+          "value": 7775.0,
+          "literal": "7,775"
         },
         {
           "label": "2022",
-          "value": 8573.0,
-          "literal": "8,573"
+          "value": 8715.0,
+          "literal": "8,715"
         }
       ]
     },
