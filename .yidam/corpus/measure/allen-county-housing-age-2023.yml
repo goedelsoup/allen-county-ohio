@@ -1,0 +1,63 @@
+class: measure
+label: When Allen County's housing was built, 2023
+description: |
+  The year the county's standing housing was built, by band, for the county and for each of its
+  thirteen civil subdivisions. [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates,
+  table B25034. All eleven bands close exactly against the county's own row.
+
+      Allen County, by band              units          geography         median  pre-1940   1970s
+      1939 or earlier                   10,545          Allen County        1965     23.6%   18.6%
+      1940-1949                          2,559          **Lima**            1953     34.9%   12.4%
+      1950-1959                          6,529          American Twp        1973      7.1%   24.0%
+      1960-1969                          5,439          Shawnee Twp         1973      6.4%   30.4%
+      **1970-1979**                    **8,298**        Bath Twp            1975      6.9%   23.2%
+      1980-1989                          3,395          Perry Twp           1971     20.1%   14.2%
+      1990-1999                          3,725          Marion Twp          1958     37.0%   17.7%
+      2000-2009                          2,805          Richland Twp        1955     38.0%   13.1%
+      2010-2019                          1,287          Spencer Twp         1967     26.1%   22.9%
+      2020 or later                        115          Jackson Twp         1975     22.7%   17.9%
+
+  **The county's biggest building decade was the 1970s**, 8,298 units ± 585 against 6,529 ± 563 for
+  the 1950s. Only "1939 or earlier" holds more, and that band is not a decade — it is everything
+  before one. [verified] — same source.
+
+  **Six thousand three hundred and thirty-three of those 8,298 were built outside Lima.** The city
+  took 1,965 of the decade in which it reached its own peak of 53,734 and held 48.4 per cent of the
+  county. [verified] — the table and
+  [the city and the rest](allen-county-outside-lima-1890-2020.yml). The ring was built while the
+  city was full, not after it emptied. [inference]
+
+  **The median house in Lima was built in 1953 and the median house in Bath Township in 1975.**
+  Shawnee and American are 1973. Lima is 34.9 per cent pre-1940 where the three townships that ring
+  it are between 6.4 and 7.1. [verified] Marion at 37.0 per cent and Richland at 38.0 read higher
+  than Lima and this does not establish that they are older: 1,069 ± 235 of 2,886 ± 242 and 930 ±
+  195 of 2,449 ± 168 leave all three indistinguishable. [verified]
+
+  **11,327 units of this county's standing housing were built in 1980 or later**, a quarter of the
+  whole, and the county fell from 112,241 to 100,866 over the same span. [verified] — the table and
+  [the county](../place/allen-county.yml). The two are not a ratio and nothing here divides them —
+  one counts dwellings still standing and the other people — but a county losing eleven thousand
+  people built a quarter of its housing while doing it.
+
+  This does not establish why the housing was built where it was. A construction date is not a
+  zoning map, a subdivision approval or a mortgage, and the corpus holds none of the three.
+properties:
+  parameter: housing units by year structure built (B25034) and median year built (B25035)
+  value: "8298"
+  unit: housing units built 1970-1979
+  as_of: "2023"
+  method: |
+    Shares are computed here from published counts; the medians are published. [verified] The bands
+    describe *surviving* housing, so a low count for an early decade is demolition and construction
+    together and cannot be read as construction alone. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../period/depopulation.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

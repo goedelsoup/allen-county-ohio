@@ -1,0 +1,68 @@
+class: measure
+label: Allen County mortgage applications and denials, 2023
+description: |
+  Every mortgage application acted on in Allen County in 2023, by purpose, by census tract and by
+  the race the file records for the applicant. [verified] —
+  [the HMDA register](../../catalog/hmda-loan-application-register.md). Of 3,294 rows, 2,606 are
+  decisions about a borrower: 1,932 originated, 611 denied, 63 approved and declined. The county's
+  denial rate is 23.4 per cent and $270.3 million was lent.
+
+      purpose                    Lima tracts            elsewhere
+                              apps  denied  rate     apps  denied  rate
+      home purchase            388      54  13.9%     846     122  14.4%
+      home improvement         103      48  46.6%     320      88  27.5%
+      cash-out refinancing      85      33  38.8%     221      60  27.1%
+      refinancing               55      15  27.3%     170      40  23.5%
+      other                    100      51  51.0%     311      94  30.2%
+      ----------------------------------------------------------------
+      everything but purchase  343     147  42.9%   1,022     282  27.6%
+      every purpose            731     201  27.5%   1,868     404  21.6%
+
+  **You can buy a house in Lima as easily as anywhere in this county. You cannot borrow against
+  one.** The purchase denial rate inside the city's tracts is 13.9 per cent against 14.4 outside —
+  the same figure. Every other purpose diverges, and taken together they are 42.9 against 27.6.
+  [verified] — same source.
+
+  **The reason the register gives is the house.** Twenty-one per cent of denials in Lima tracts
+  cite collateral against 13 per cent elsewhere — 43 of 201 against 53 of 404 — where credit
+  history leads in both at 43 and 45. [verified] Collateral is the property, and Lima's median
+  house is worth $95,900 and was built in 1953. [verified] —
+  [the stock](allen-county-housing-stock-2023.yml) and [its age](allen-county-housing-age-2023.yml).
+  The median purchase loan originated in a Lima tract was $115,000 against $175,000 elsewhere, both
+  medians of $10,000 bands. [verified]
+
+  **Applications from Black applicants were denied at 37.9 per cent and from white applicants at
+  22.6** — 66 of 174 against 458 of 2,023 — and the gap holds inside every income band the corpus
+  cut. Under $50,000: 45.3 against 33.4. From $50,000 to $99,000: 38.0 against 20.5. At $100,000
+  and over: 25.6 against 15.8. [verified] Black applicants earning $50,000 to $99,000 were denied
+  more often than white applicants earning under $50,000. [verified]
+
+  This does not establish that those applicants were treated differently. The register holds no
+  credit score, no assets and no appraisal, and credit history leads the denial reasons in every
+  group here. A difference in outcomes is what it measures. See
+  [a denial rate is not an underwriting file](../../decisions/a-denial-rate-is-not-an-underwriting-file.yml)
+  and [the question](../question/why-allen-countys-lending-outcomes-differ.yml).
+properties:
+  parameter: mortgage applications acted on, originations and denials
+  value: "2606"
+  unit: applications acted on
+  as_of: "2023"
+  method: |
+    Rates use actions 1, 2 and 3 — originated, approved and declined, denied — and exclude the 388
+    withdrawn, 197 purchased and 93 closed for incompleteness, none of which is a decision about a
+    borrower. [verified] "Lima tracts" is the sixteen of the county's thirty-five whose 2020
+    population is majority Lima; they hold 32,575 of the city's 35,579 people and 3,093 who live
+    outside it. [verified] — [block assignment](../../catalog/census-block-assignment-2020.md).
+    Nine rows carry no tract, seven of them decisions; those seven are in the county's totals and
+    in neither column, which is why the columns sum to 2,599 and not 2,606. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
