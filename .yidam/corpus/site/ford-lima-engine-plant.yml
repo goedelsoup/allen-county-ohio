@@ -1,0 +1,48 @@
+class: site
+label: Ford Lima Engine Plant
+description: |
+  An engine plant at 1155 Bible Road, operated by [Ford Motor Company](../organization/ford-motor-company.yml).
+  [verified] — [EPA TRI](../../catalog/epa-tri.md), which names the facility
+  `FORD MOTOR CO LIMA ENGINE PLANT` with Ford Motor Co as its parent and the plant itself as its
+  mailing address.
+
+  **It has a Lima address and is not in Lima.** The county's address file records it at 1155 Bible
+  Road with `USPS_CITY` LIMA and `MUNI` **blank**, at 40.774253, -84.084246; TIGERweb, asked that
+  point, puts it in [Bath Township](../place/bath-township.yml) and in no incorporated place.
+  [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and
+  [TIGERweb](../../catalog/tigerweb-census2020.md).
+
+  That is the fifth instance of
+  [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml)
+  and the second asked in advance of the claim rather than after it.
+
+  **So all three of the county's large industrial installations stand outside every municipality.**
+  This plant in Bath Township, [the refinery](lima-refinery.yml) and
+  [the tank plant](lima-army-tank-plant.yml) in [Shawnee](../place/shawnee-township.yml). Three
+  townships' ground and no city's, which is a fact about who may levy on them before it is a fact
+  about geography. [inference]
+
+  **It is one of six Allen County facilities that have reported to the EPA in every one of the
+  inventory's thirty-eight years.** The others are [the refinery](lima-refinery.yml), Dana
+  Driveshaft Manufacturing, INEOS Nitriles, FXI at Spencerville, and Chemtrade's sulphur works at
+  Cairo. [verified] — [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). Six of
+  forty-eight, in a register where twenty-eight facilities have stopped filing.
+
+  [open] When it was built, what it makes, and how many people work in it. The corpus can say this
+  plant has been here since at least 1987 because it filed that year, and nothing earlier.
+properties:
+  site_type: factory
+  status: in operation
+  address: 1155 Bible Road, Lima OH 45801 — a postal address, not a municipality.
+  coordinates: "40.774253, -84.084246"
+links:
+  - target: ../place/bath-township.yml
+    relationship: located-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../organization/ford-motor-company.yml
+    relationship: operated-by
+    claim_tag: verified
+    source: ../../catalog/epa-tri.md
+  - target: ../site.ont.yml
+    relationship: instance-of

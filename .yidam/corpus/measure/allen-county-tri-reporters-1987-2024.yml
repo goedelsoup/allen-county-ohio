@@ -1,0 +1,60 @@
+class: measure
+label: Allen County facilities reporting to the Toxics Release Inventory, 1987–2024
+description: |
+  Every facility in the county that filed for 2024, with the years it has filed and the parent
+  company named against it now. [verified] — [EPA TRI](../../catalog/epa-tri.md).
+
+      facility                                      place        first-last  parent now
+      Chemtrade Logistics, Cairo sulfur products    Cairo       1987-2024  Chemtrade Holdco US
+      Dana Driveshaft Manufacturing LLC             Lima        1987-2024  Dana Inc
+      Ford Motor Co Lima Engine Plant               Lima        1987-2024  Ford Motor Co
+      FXI Inc. — Spencerville                       Spencerville 1987-2024 FXI Inc.
+      INEOS Nitriles USA LLC                        Lima        1987-2024  INEOS US I Inc
+      Lima Refining Co                              Lima        1987-2024  Cenovus Energy Inc.
+      Valtir LLC Plt 1055                           Lima        1988-2024  Rush Hour Holdco LLC
+      Sumiriko Ohio Inc                             Bluffton    1990-2024  —
+      Purina Animal Nutrition LLC — Lima            Lima        1991-2024  Land O Lakes Inc
+      Superior Forge & Steel Corp                   Lima        1991-2024  —
+      Whemco-Ohio Foundry Inc                       Lima        1991-2024  Whemco Inc
+      Fort Amanda Specialties LLC                   Lima        1993-2024  Fort Amanda Specialties
+      PCS Nitrogen Ohio L.P.                        Lima        1993-2024  Nutrien US Topco LLC
+      US Army Joint Systems Manufacturing Center    Lima        1994-2024  US Dept of Defense
+      Procter & Gamble Manufacturing Co Lima Plant  Lima        1987-2024  The Procter & Gamble Co
+      MPLX Terminals LLC — Lima OH Terminal         Lima        1998-2024  Marathon Petroleum Corp
+      ISP Lima LLC                                  Lima        2005-2024  Ashland Global Holdings
+      Guardian Lima LLC                             Lima        2011-2024  —
+      Rudolph Foods                                 Lima        2014-2024  —
+      Randall Bearings Inc.                         Lima        2022-2024  —
+
+  **Twenty facilities filed for 2024, and the register holds forty-nine.** Twenty-eight of the
+  forty-eight that have ever filed did not file for 2024, and only three of those twenty-eight carry
+  the register's closure flag. [verified] The flag is not a currency test; a filing is. See
+  [a register is not a census](../../decisions/a-register-is-not-a-census.yml).
+
+  **Six have filed in all thirty-eight years** — the refinery, Dana, Ford, INEOS, FXI and Chemtrade
+  at Cairo. [verified] Sixteen of the twenty have filed in twenty-seven years or more, and sixteen
+  have no gap between their first year and their last, so the county's reporting industry is old
+  and it has stayed. [verified] The column above is first year and last, not every year between:
+  Procter & Gamble's span is thirty-eight years and its filings are thirty. [verified]
+
+  Every parent above is a parent **now** — the register's attributes are current-state and say
+  nothing about who owned any of these facilities earlier. And this is not a list of the county's
+  employers: TRI covers facilities over a size threshold that handle listed chemicals, so it sees a
+  foundry and not a hospital. No employment figure here rests on it. [verified]
+properties:
+  parameter: facilities filing a TRI reporting form, Allen County
+  value: "20"
+  unit: facilities, reporting year 2024
+  as_of: "2024"
+  method: |
+    The Envirofacts facility register for Allen County joined to `tri_reporting_form`, paged at
+    1,000 rows — 5,372 forms across 49 facility identifiers, reporting years 1987 to 2024. A
+    facility is counted as filing in a year if any form carries that year. One register entry, Heat
+    Treating Tech Inc, has no forms at all. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/epa-tri.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
