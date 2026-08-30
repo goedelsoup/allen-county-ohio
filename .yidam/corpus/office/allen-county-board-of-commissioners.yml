@@ -1,0 +1,38 @@
+class: office
+label: Board of Allen County Commissioners
+description: |
+  The county's governing body, and the first multi-seat office in this corpus. Three commissioners
+  hold it at once, elected countywide to four-year terms. [verified] —
+  [Ohio Revised Code §305.01](../../catalog/ohio-revised-code.md): "The board of county
+  commissioners shall consist of three persons."
+
+  **The three seats are distinguished by the day their terms begin, one day apart.** One seat runs
+  from the first day of January after its election; of the two elected together, one begins on "the
+  second day of January next after his election" and the other on "the third day". [verified] —
+  same source. Allen County's roster shows exactly that: 1 January 2023, 2 January 2025 and
+  3 January 2025. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md). The
+  dates were read before the statute was, and the statute predicted them.
+
+  That staggering is why the board never turns over at once, and why
+  [`succession-audit`](../../skills/succession-audit.md) must not treat concurrent holders here as
+  the defect they would be on [the sheriff](allen-county-sheriff.yml). This is the office the
+  `seats` property was declared for, and until this phase nothing in the corpus used it that way.
+
+  The board meets in general session every Tuesday and Thursday. [verified] —
+  [the county's site](../../catalog/allen-county-official-site.md).
+
+  [open] What the board's powers are, and how they divide from the other eight elected offices.
+  The corpus holds the statute that constitutes the board and none of the chapters that empower it.
+properties:
+  office_type: elected
+  selection_method: countywide election, terms staggered by statute
+  term_length: 4 years
+  seats: "3"
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: established-within
+    claim_tag: verified
+    source: ../../catalog/ohio-revised-code.md
+  - target: ../office.ont.yml
+    relationship: instance-of

@@ -1,0 +1,23 @@
+class: person
+label: Brion E. Rhodes
+description: |
+  Engineer of Allen County, holding a term that began 2025-01-06. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  He carries the two registrations Ohio requires of a county engineer — professional engineer and
+  surveyor — and his own office styles him "P.E., P.S." [verified] — [the county's site](../../catalog/allen-county-official-site.md). That the office requires
+  both is separately established at [the office](../office/allen-county-engineer.yml). [verified] —
+  [Ohio Revised Code §315.02](../../catalog/ohio-revised-code.md).
+
+  The elections roster gives a name, a party and two dates, so this node carries no date of birth,
+  no biography and no prior office. Ohio requires an elected county officer to be an elector of the
+  county, so the `resided-in` edge below is a legal inference rather than a fact any source states.
+  [inference]
+properties:
+  occupation: county engineer
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+    claim_tag: inference
+  - target: ../person.ont.yml
+    relationship: instance-of
