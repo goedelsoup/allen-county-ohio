@@ -59,11 +59,18 @@ fn eighteen_ninety_three_has_two_claimants() {
 }
 
 #[test]
-fn an_office_with_no_tenures_loads_and_audits_clean() {
+fn every_office_has_a_holder_and_an_empty_one_would_still_audit_clean() {
+    // This pinned `office/mayor-of-lima.yml` as the corpus's one office with no tenures, which
+    // it was from genesis until the elected officials roster was read across every precinct
+    // and named the mayor. No office is empty now, so the corpus half of the assertion is
+    // inverted rather than repointed at another node: the claim is that there is none.
     let seats = load::office_seats(&corpus()).expect("office nodes load");
-    assert!(seats.contains_key("office/mayor-of-lima.yml"));
     let grouped = by_office(load::tenures(&corpus()).unwrap());
-    assert!(!grouped.contains_key("office/mayor-of-lima.yml"));
+    let empty: Vec<&String> = seats.keys().filter(|o| !grouped.contains_key(*o)).collect();
+    assert!(empty.is_empty(), "offices with no holder: {empty:?}");
+
+    // The property the pin was there for does not need such an office to exist: a seat with no
+    // terms is a roster with no gaps, not a roster with one.
     assert!(audit(1, &[]).is_clean());
 }
 
