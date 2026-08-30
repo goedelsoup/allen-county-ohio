@@ -110,7 +110,6 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         answers: &[
-            "It does not establish that Lima peaked in 1970 rather than earlier",
             "It does not establish anything about *manufacturing employment*",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
@@ -137,7 +136,6 @@ pub const ASSERTIONS: &[Assertion] = &[
             "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048"
         )],
         answers: &[
-            "It does not establish that Lima peaked in 1970 rather than earlier",
             "It does not establish anything about *manufacturing employment*",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
@@ -157,7 +155,6 @@ pub const ASSERTIONS: &[Assertion] = &[
             "eleven of the county's thirteen civil subdivisions lost population"
         )],
         answers: &[
-            "It does not establish that Lima peaked in 1970 rather than earlier",
             "It does not establish anything about *manufacturing employment*",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
@@ -166,20 +163,21 @@ pub const ASSERTIONS: &[Assertion] = &[
     },
     Assertion {
         id: "lima-grew-fivefold-after-the-oil",
-        statement: "The oil made the city: Lima went from 7,567 people in 1880 to 41,306 in \
-                    1920, and on to 53,734 by 1970.",
+        statement: "The oil made the city: Lima went from 7,567 people in 1880 to 41,326 in \
+                    1920, and on to its peak of 53,734 in 1970.",
         topic: "population",
-        // Cited to the measure rather than to the period node, because the point of this
-        // assertion is the figures and where they came from — three county histories, not the
-        // Census Bureau — and the measure is the node that says so.
+        // Cited to the federal series rather than to the three county histories this assertion
+        // used to rest on. Two of those three figures the Census confirms to the person and one
+        // it contradicts — 41,306 for 1920, against 41,326 — so the histories are now the
+        // corroboration and the Census is the citation.
         supports: &[
             support!(
-                "measure/lima-population-1880-1920.yml",
-                "the city held **7,567 people in 1880, 21,723 in 1900 and 41,306 in 1920**"
+                "measure/lima-population-1850-1960.yml",
+                "**Lima held 7,567 people in 1880, 21,723 in 1900, 41,326 in 1920, 42,287 in 1930, 44,711 in 1940, 50,246 in 1950 and 51,037 in 1960.**"
             ),
             support!(
-                "measure/lima-population-1880-1920.yml",
-                "**a fivefold rise in forty years**, which is the demographic shape of [the oil strike](../event/lima-oil-strike.yml)"
+                "measure/lima-population-1850-1960.yml",
+                "**Lima peaked at the 1970 census.**"
             ),
             support!(
                 "measure/lima-population-1970-1990.yml",
@@ -190,8 +188,42 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[
             Figure { label: "1880", value: 7_567.0, literal: "7,567" },
             Figure { label: "1900", value: 21_723.0, literal: "21,723" },
-            Figure { label: "1920", value: 41_306.0, literal: "41,306" },
+            Figure { label: "1920", value: 41_326.0, literal: "41,326" },
+            Figure { label: "1930", value: 42_287.0, literal: "42,287" },
+            Figure { label: "1940", value: 44_711.0, literal: "44,711" },
+            Figure { label: "1950", value: 50_246.0, literal: "50,246" },
+            Figure { label: "1960", value: 51_037.0, literal: "51,037" },
             Figure { label: "1970", value: 53_734.0, literal: "53,734" },
+        ],
+    },
+    Assertion {
+        id: "three-peaks-thirty-years-apart",
+        statement: "The city peaked in 1970, the county in 1980, and the county outside the city \
+                    in 2000.",
+        topic: "population",
+        // The one assertion on this page whose subject is arithmetic the corpus performed rather
+        // than a figure it was given, which is why it cites the node that carries the method.
+        supports: &[
+            support!(
+                "measure/allen-county-outside-lima-1940-2020.yml",
+                "**So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the county as a whole in 1980, and the county outside Lima in 2000."
+            ),
+            support!(
+                "measure/allen-county-outside-lima-1940-2020.yml",
+                "**the county outside Lima held 28,592 people in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1940", value: 28_592.0, literal: "28,592" },
+            Figure { label: "1950", value: 37_937.0, literal: "37,937" },
+            Figure { label: "1960", value: 52_654.0, literal: "52,654" },
+            Figure { label: "1970", value: 57_410.0, literal: "57,410" },
+            Figure { label: "1980", value: 64_414.0, literal: "64,414" },
+            Figure { label: "1990", value: 64_206.0, literal: "64,206" },
+            Figure { label: "2000", value: 68_157.0, literal: "68,157" },
+            Figure { label: "2010", value: 67_560.0, literal: "67,560" },
+            Figure { label: "2020", value: 66_627.0, literal: "66,627" },
         ],
     },
     Assertion {
