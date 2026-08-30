@@ -110,7 +110,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         answers: &[
-            "It does not establish anything about *manufacturing employment*",
+            "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
         ],
@@ -136,7 +136,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048"
         )],
         answers: &[
-            "It does not establish anything about *manufacturing employment*",
+            "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
         ],
@@ -155,7 +155,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             "eleven of the county's thirteen civil subdivisions lost population"
         )],
         answers: &[
-            "It does not establish anything about *manufacturing employment*",
+            "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
         ],
