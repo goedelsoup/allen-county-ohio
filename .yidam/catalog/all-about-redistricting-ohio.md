@@ -13,6 +13,7 @@ location:
     value: https://redistricting.lls.edu/state/ohio/
     description: Ohio's adopted maps, with dates and the bodies that adopted them
 used-by:
+  - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-house-district-78-2023.yml
   - ../corpus/division/ohio-senate-district-12-2023.yml
   - ../corpus/office/representative-in-congress-for-ohios-4th-district.yml

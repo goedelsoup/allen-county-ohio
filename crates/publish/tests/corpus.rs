@@ -119,6 +119,22 @@ fn the_corpus_still_refuses_the_reading_a_population_chart_invites() {
     // not measure manufacturing employment at all"; it now says "inside this period", which is
     // what the caveat was ever protecting. The pin moved with it, and it is the narrower phrase
     // on purpose. See .yidam/decisions/state-a-refusal-at-the-grain-it-protects.yml.
+    //
+    // A fourth event, and this one is an answer. `state-a-refusal-at-the-grain-it-protects` said
+    // that if a fourth narrowing arrived it was time to ask whether the caveat still had a
+    // subject. County Business Patterns supplied thirty-six years of Allen County manufacturing
+    // employment, all of it inside the period: 15,762 in 1986 down to 7,127 in 2010. So
+    //
+    //   "*manufacturing employment* inside this period"    ANSWERED by County Business Patterns
+    //
+    // and the question got asked. The caveat does still have a subject, and a better one. What
+    // the chart invites is a causal reading — the people left because the factories did — and
+    // the corpus has never licensed it. Before, it could not license it because the cause was
+    // unmeasured. Now it declines to because the two series diverge: 2010 to 2022, private
+    // employment fell 3,709 while manufacturing rose 1,446. The pin moves from an absence of
+    // evidence to a conflict in it, which is the stronger place for it to sit, and it is still
+    // something retrieval cannot answer because causation is not a thing you can download.
+    // See .yidam/decisions/the-fourth-narrowing-was-an-answer.yml.
     let text = std::fs::read_to_string(corpus_dir().join("period/deindustrialization.yml"))
         .expect("the node is there");
     let description = text
@@ -135,7 +151,7 @@ fn the_corpus_still_refuses_the_reading_a_population_chart_invites() {
     assert!(
         refusals
             .iter()
-            .any(|r| r.contains("*manufacturing employment* inside this period")),
+            .any(|r| r.contains("does not establish that")),
         "the refusal is no longer detected; found {refusals:?}"
     );
 
@@ -148,7 +164,7 @@ fn the_corpus_still_refuses_the_reading_a_population_chart_invites() {
         decline
             .caveats
             .iter()
-            .any(|c| c.contains("*manufacturing employment* inside this period")),
+            .any(|c| c.contains("does not establish that")),
         "the refusal did not reach the reader"
     );
 }
@@ -158,7 +174,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 285, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 287, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,

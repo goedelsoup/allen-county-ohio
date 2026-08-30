@@ -14,7 +14,9 @@ location:
     value: https://lookup.boe.ohio.gov/vtrapp/allen/cnm.aspx?task=voter&prsid=0004__1
     description: Allen County's elected officials, by office, with party and term start and end dates
 used-by:
+  - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-house-district-78-2023.yml
+  - ../corpus/division/ohio-senate-district-12-2020.yml
   - ../corpus/division/ohio-senate-district-12-2023.yml
   - ../corpus/jurisdiction/allen-county-court-of-common-pleas.yml
   - ../corpus/jurisdiction/allen-county-government.yml

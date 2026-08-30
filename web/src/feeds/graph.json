@@ -1513,6 +1513,39 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-employment-by-sector-1986-2022.yml",
+      "class": "measure",
+      "label": "Allen County employment by sector, 1986 and 2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "County Business Patterns county files for 1986 and 2022, with sector 62 traced across 2000, 2005, 2010, 2015 and 2020. Both endpoint years close exactly: the ten 1986 SIC divisions sum to 45,917 and the twenty 2022 NAICS sectors to 42,814, each equal to its file's own total row. Government, the self-employed and farms are excluded. [verified]",
+        "parameter": "private employment by industry sector, Allen County",
+        "unit": "employees, all private sectors",
+        "value": "42814"
+      },
+      "blocks": [
+        {
+          "text": "What the county's private workforce did, at the two ends of the only span this corpus can measure it over. [verified] — [County Business Patterns](../../catalog/census-county-business-patterns.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Health care is the county's largest private employer sector, and manufacturing is second.** [verified] — same source. In 1986 manufacturing employed more people than the next two divisions together.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two schemes are not comparable line by line and the top line is the point.** SIC \"services\" in 1986 is a division that NAICS breaks across health care, accommodation, professional services and more, so the 1986 column cannot be subtracted from the 2022 one sector by sector. [verified] — the break is a change of definition. What survives the break is the rank of manufacturing: first in 1986, second in 2022. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Health care did not simply rise past manufacturing.** It reached 11,744 in 2010 and 11,656 in 2015 and has fallen since, to 9,711 in 2020 and 9,151 in 2022. [verified] — same source, sector 62. So the county's largest sector lost about 2,500 jobs in twelve years while [manufacturing gained 1,446](allen-county-manufacturing-employment-1986-2022.yml). [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-farm-output-1909.yml",
       "class": "measure",
       "label": "Allen County farm output and farm expenses, 1909",
@@ -1658,6 +1691,43 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "measure/allen-county-manufacturing-employment-1986-2022.yml",
+      "class": "measure",
+      "label": "Allen County manufacturing employment, 1986–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "County Business Patterns county files, one year in five from 1986. Checked by arithmetic self-closure: in 1986 the ten SIC divisions sum to the printed county total exactly, and in 2022 the twenty NAICS sectors do the same. Years between leave residuals of 2 to 239, each year carrying at least one sector with suppressed employment. Corroborated at the recent end by [the QCEW](../../catalog/bls-qcew.md), which gives 8,661 for 2023 against 8,573 for 2022. Government, the self-employed and farms are excluded throughout. [verified]",
+        "parameter": "manufacturing employment, Allen County, private employers",
+        "unit": "employees",
+        "value": "8573"
+      },
+      "blocks": [
+        {
+          "text": "The measurement this corpus named a period after and did not have. [verified] — [County Business Patterns](../../catalog/census-county-business-patterns.md), private employers.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Manufacturing employment in Allen County fell by 55 per cent between 1986 and 2010, from 15,762 to 7,127.** [verified] — same source. That is [deindustrialization](../period/deindustrialization.yml) measured for the first time in this corpus, in the period named for it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And then it stopped, and reversed.** From the 2010 trough manufacturing rose to 8,917 in 2020 and stood at 8,573 in 2022 — up a fifth from the bottom. [verified] — same source. The county's named mechanism of decline stopped operating around 2010 and the county kept shrinking. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Total private employment peaked in 2005, not in 1986.** It rose from 45,917 to 52,699 while manufacturing was losing six thousand jobs, then fell to 42,814 by 2022. [verified] — same source. So the county replaced its manufacturing losses for twenty years and stopped being able to. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**After 2010 the losses were not in manufacturing.** Private employment fell 3,709 between 2010 and 2022 while manufacturing *rose* 1,446, so everything else fell by 5,155. [inference] — computed here.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-natural-change-2021-2024.yml",
@@ -3462,7 +3532,7 @@
       "tier": "inference",
       "properties": {
         "began": "1970",
-        "character": "Contraction of manufacturing employment and sustained population loss concentrated in the county seat. The population half is verified; the manufacturing half is not. [inference]"
+        "character": "Contraction of manufacturing employment and sustained population loss concentrated in the county seat. Both halves are now verified, and they came apart around 2010: manufacturing has risen since its trough while the population has not. [verified]"
       },
       "blocks": [
         {
@@ -3514,6 +3584,18 @@
           "tier": "inference"
         },
         {
+          "text": "**The refusal that stood on this node from genesis is answered.** It said the corpus established nothing about manufacturing employment inside this period — first in the form \"does not measure it at all\", then narrowed to \"inside this period\" when the 1909 figures arrived. The corpus now holds thirty-six years of it, all inside the period: **Allen County manufacturing employment fell from 15,762 in 1986 to 7,127 in 2010, a fall of 55 per cent.** [verified] — [the series](../measure/allen-county-manufacturing-employment-1986-2022.yml). The period's named mechanism is measured, and it happened.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the period's named mechanism stopped around 2010, while the county kept shrinking.** Manufacturing employment rose from that trough to 8,917 in 2020 and stood at 8,573 in 2022, up a fifth. Private employment fell 3,709 between 2010 and 2022 while manufacturing rose 1,446, so the losses of the last twelve years were entirely outside manufacturing — the largest of them in health care, which fell from 11,744 to 9,151. [verified] — same source and [the sector composition](../measure/allen-county-employment-by-sector-1986-2022.yml). [inference] A period named for a mechanism that ceased operating a decade and a half ago has an end bound problem it did not have when the mechanism was merely unmeasured.",
+          "tier": "inference"
+        },
+        {
+          "text": "It does not establish that the county's population decline was caused by its manufacturing decline. That was unlicensed while manufacturing employment was unmeasured, and it is now contradicted for the recent past: between 2010 and 2022 the county's private employment fell by 3,709 while its manufacturing employment *rose* by 1,446. [verified] — [the series](../measure/allen-county-manufacturing-employment-1986-2022.yml). For the last twelve years of this period the proposed cause moves opposite to the effect.",
+          "tier": "verified"
+        },
+        {
           "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
           "tier": "verified"
         },
@@ -3523,11 +3605,11 @@
         }
       ],
       "refusals": [
-        "It does not establish anything about *manufacturing employment* inside this period.",
+        "It does not establish that the county's population decline was caused by its manufacturing decline.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "period/lima-oil-boom.yml",
@@ -8626,6 +8708,13 @@
       "source": "catalog/census-1910-abstract-supplement-ohio.md"
     },
     {
+      "from": "measure/allen-county-employment-by-sector-1986-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-county-business-patterns.md"
+    },
+    {
       "from": "measure/allen-county-farm-output-1909.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -8659,6 +8748,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/allen-county-manufacturing-employment-1986-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-county-business-patterns.md"
     },
     {
       "from": "measure/allen-county-natural-change-2021-2024.yml",

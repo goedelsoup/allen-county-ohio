@@ -1,0 +1,57 @@
+class: measure
+label: Allen County employment by sector, 1986 and 2022
+description: |
+  What the county's private workforce did, at the two ends of the only span this corpus can measure
+  it over. [verified] —
+  [County Business Patterns](../../catalog/census-county-business-patterns.md).
+
+      1986, SIC divisions                    2022, NAICS sectors
+      manufacturing            15,762        health care & social assistance   9,151
+      services                 11,733        manufacturing                     8,573
+      retail trade              9,135        retail trade                      5,496
+      wholesale trade           3,258        accommodation & food              4,408
+      finance/ins/real estate   1,934        admin & waste services            2,462
+      construction              1,930        wholesale trade                   2,188
+      transport/utilities       1,706        other services                    1,917
+      unclassified                254        construction                      1,772
+      agricultural services       136        transport & warehousing           1,444
+      mining                       69        professional & technical          1,217
+      ---------------------------------      educational services              1,186
+      total                    45,917        and eight sectors below 900
+                                             ---------------------------------
+                                             total                            42,814
+
+  **Health care is the county's largest private employer sector, and manufacturing is second.**
+  [verified] — same source. In 1986 manufacturing employed more people than the next two divisions
+  together.
+
+  **The two schemes are not comparable line by line and the top line is the point.** SIC "services"
+  in 1986 is a division that NAICS breaks across health care, accommodation, professional services
+  and more, so the 1986 column cannot be subtracted from the 2022 one sector by sector. [verified] —
+  the break is a change of definition. What survives the break is the rank of manufacturing: first in
+  1986, second in 2022. [inference]
+
+  **Health care did not simply rise past manufacturing.** It reached 11,744 in 2010 and 11,656 in
+  2015 and has fallen since, to 9,711 in 2020 and 9,151 in 2022. [verified] — same source, sector
+  62. So the county's largest sector lost about 2,500 jobs in twelve years while
+  [manufacturing gained 1,446](allen-county-manufacturing-employment-1986-2022.yml). [inference]
+
+  [open] Why health care contracted here after 2010. The corpus holds the figure and nothing that
+  would explain it, and 2020 is a pandemic year whose effect on the 2022 reading is not separated.
+properties:
+  parameter: private employment by industry sector, Allen County
+  value: "42814"
+  unit: employees, all private sectors
+  as_of: "2022"
+  method: |
+    County Business Patterns county files for 1986 and 2022, with sector 62 traced across 2000,
+    2005, 2010, 2015 and 2020. Both endpoint years close exactly: the ten 1986 SIC divisions sum
+    to 45,917 and the twenty 2022 NAICS sectors to 42,814, each equal to its file's own total row.
+    Government, the self-employed and farms are excluded. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-county-business-patterns.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

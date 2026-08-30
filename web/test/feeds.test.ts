@@ -94,10 +94,20 @@ describe('the assertions the pages render', () => {
   //
   // The phrase narrowed once, without the refusal being answered. Lima's wage earners for 1899,
   // 1904 and 1909 arrived and falsified the old wording — "does not measure it at all" — while
-  // leaving the claim it protects untouched. The pin is the narrow phrase on purpose.
+  // leaving the claim it protects untouched. The pin was the narrow phrase on purpose.
+  //
+  //   "*manufacturing employment* inside this period"  ANSWERED by County Business Patterns
+  //
+  // Thirty-six years of Allen County manufacturing employment, all of it inside the period:
+  // 15,762 in 1986 down to 7,127 in 2010. Three retirements and an answer, and the decision
+  // that set the narrow pin said a fourth event was the moment to ask whether the caveat still
+  // had a subject. It does, and a better one. What the chart invites is a causal reading, and
+  // the corpus now declines it not for want of a measurement but because the two series
+  // diverge: 2010 to 2022, private employment fell 3,709 while manufacturing rose 1,446.
+  // Causation stays something retrieval cannot answer.
   it('carries the corpus refusal that qualifies the population series', () => {
     const decline = assertion('county-population-decline')
-    expect(decline.caveats.join(' ')).toContain('*manufacturing employment* inside this period')
+    expect(decline.caveats.join(' ')).toContain('does not establish that')
   })
 })
 

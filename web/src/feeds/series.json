@@ -142,6 +142,26 @@
       ]
     },
     {
+      "id": "place-allen-county::manufacturing-employment,-Allen-County,-private-employers",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "manufacturing employment, Allen County, private employers",
+      "unit": "employees",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
+          "label": "Allen County manufacturing employment, 1986–2022",
+          "as_of": "2022",
+          "value": 8573.0,
+          "published": "8573",
+          "tier": "verified",
+          "source": "catalog/census-county-business-patterns.md",
+          "method": "County Business Patterns county files, one year in five from 1986. Checked by arithmetic self-closure: in 1986 the ten SIC divisions sum to the printed county total exactly, and in 2022 the twenty NAICS sectors do the same. Years between leave residuals of 2 to 239, each year carrying at least one sector with suppressed employment. Corroborated at the recent end by [the QCEW](../../catalog/bls-qcew.md), which gives 8,661 for 2023 against 8,573 for 2022. Government, the self-employed and farms are excluded throughout. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::natural-population-change,-four-years-to-2024",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -208,6 +228,26 @@
           "tier": "verified",
           "source": "catalog/openelections-ohio.md",
           "method": "Summed by candidate over the county's 88 precincts. The total is 360 fewer than the 48,353 ballots cast — an undervote of 0.7 per cent. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::private-employment-by-industry-sector,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "private employment by industry sector, Allen County",
+      "unit": "employees, all private sectors",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-employment-by-sector-1986-2022.yml",
+          "label": "Allen County employment by sector, 1986 and 2022",
+          "as_of": "2022",
+          "value": 42814.0,
+          "published": "42814",
+          "tier": "verified",
+          "source": "catalog/census-county-business-patterns.md",
+          "method": "County Business Patterns county files for 1986 and 2022, with sector 62 traced across 2000, 2005, 2010, 2015 and 2020. Both endpoint years close exactly: the ten 1986 SIC divisions sum to 45,917 and the twenty 2022 NAICS sectors to 42,814, each equal to its file's own total row. Government, the self-employed and farms are excluded. [verified]"
         }
       ]
     },
@@ -584,7 +624,7 @@
         }
       ],
       "caveats": [
-        "It does not establish anything about *manufacturing employment* inside this period.",
+        "It does not establish that the county's population decline was caused by its manufacturing decline.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -643,7 +683,7 @@
         }
       ],
       "caveats": [
-        "It does not establish anything about *manufacturing employment* inside this period.",
+        "It does not establish that the county's population decline was caused by its manufacturing decline.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -677,7 +717,7 @@
         }
       ],
       "caveats": [
-        "It does not establish anything about *manufacturing employment* inside this period.",
+        "It does not establish that the county's population decline was caused by its manufacturing decline.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -1098,6 +1138,53 @@
       ],
       "caveats": [],
       "figures": []
+    },
+    {
+      "id": "the-factories-stopped-leaving",
+      "statement": "Allen County manufacturing employment fell from 15,762 in 1986 to 7,127 in 2010 — and then rose, to 8,573 by 2022, while the county kept shrinking.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
+          "node_label": "Allen County manufacturing employment, 1986–2022",
+          "span": "**Manufacturing employment in Allen County fell by 55 per cent between 1986 and 2010, from 15,762 to 7,127.**",
+          "tier": "verified",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
+          "node_label": "Allen County manufacturing employment, 1986–2022",
+          "span": "**And then it stopped, and reversed.** From the 2010 trough manufacturing rose to 8,917 in 2020 and stood at 8,573 in 2022 — up a fifth from the bottom.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-manufacturing-employment-1986-2022.yml",
+          "node_label": "Allen County manufacturing employment, 1986–2022",
+          "span": "**After 2010 the losses were not in manufacturing.**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1986",
+          "value": 15762.0,
+          "literal": "15,762"
+        },
+        {
+          "label": "2010",
+          "value": 7127.0,
+          "literal": "7,127"
+        },
+        {
+          "label": "2022",
+          "value": 8573.0,
+          "literal": "8,573"
+        }
+      ]
     },
     {
       "id": "decline-is-migration-and-deaths",
