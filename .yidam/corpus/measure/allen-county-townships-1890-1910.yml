@@ -1,0 +1,73 @@
+class: measure
+label: Allen County townships, 1890–1910
+description: |
+  The county's thirteen minor civil divisions at three censuses — twelve townships and Ottawa,
+  which was Lima. [verified] —
+  [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md),
+  minor civil divisions table.
+
+                          1910     1900     1890        village                1910    1900    1890
+      Amanda             1,263    1,384    1,425
+      Auglaize           1,883    1,909    1,929        Harrod                  474     370     269
+      Bath               1,501    1,517    1,448
+      German             2,172    1,951    1,615        Elida                   447     440     399
+      Jackson            1,810    1,931    1,818        Lafayette               418     316     ...
+      Marion             4,665    4,573    4,723        Delphos (part)        2,556   2,289   2,331
+      Monroe             1,768    1,875    1,995        West Cairo              386     338     325
+      Ottawa            30,508   21,723   15,987        Lima city            30,508  21,723  15,981
+      Perry              1,602    1,467    1,537
+      Richland           4,214    4,099    3,434        Beaver Dam              455     477     397
+      Shawnee            1,312    1,493    1,279        Bluffton              1,953   1,783   1,290
+      Spencer            2,794    3,016    2,444        Spencerville          1,748   1,874   1,266
+      Sugar Creek        1,088    1,038    1,010
+                        ------   ------   ------
+                        56,580   47,976   40,644
+
+  Written out: **Allen County held 56,580 people in 1910**, and the twelve townships outside Lima
+  held 26,072 of them. [verified] — same source. That 1910 count was the last gap in the county's
+  decennial record, which now runs unbroken from 1830.
+
+  **Three columns and every one closes.** The thirteen divisions sum to the printed county total in
+  1910, 1900 and 1890 alike, with no residual, and Lima's four wards — 5,150, 8,010, 7,830 and
+  9,518 — sum to its 30,508. [verified] — computed here from the printed figures.
+
+  **Ottawa Township is measured here, by name, and the coextension is datable.** The row reads
+  "Ottawa township, coextensive with Lima city" and gives 15,987 for 1890 against the city's 15,981.
+  Six people, and they are real rather than a misprint: without them the 1890 column does not sum to
+  40,644. [verified] — same source and the arithmetic above. So Ottawa held six residents outside
+  Lima in 1890 and none at either census after. **The township and the city became exactly the same
+  ground between 1890 and 1900.** [inference] See
+  [what became of German and Ottawa townships](../question/what-became-of-german-and-ottawa-townships.yml).
+
+  **German Township is still German**, at all three censuses; it became
+  [American](../place/american-township.yml) in 1918. And Cairo is still **West Cairo**, which is a
+  third source for the older name and the first federal one. [verified] — same source.
+
+  **The countryside was shrinking while the county grew.** Five of the twelve townships outside Lima
+  held fewer people in 1910 than in 1890, and eight of them reached their lowest recorded count
+  somewhere between 1900 and 1940. [inference] — computed from this table and
+  [the 1930–1950 series](allen-county-townships-1930-1950.yml). Allen County outside Lima went from
+  24,663 in 1890 to 28,592 in 1940, a rise of 16 per cent, while the county rose 80 per cent and the
+  city 180. [inference] Everything that happened to this county between 1890 and 1940 happened in
+  one municipality.
+
+  [open] 1920, the one census between 1890 and 1950 with no township figures here. The 1921 county
+  history gives village populations for that year and not township ones.
+properties:
+  parameter: total resident population by minor civil division, decennial
+  value: "56580"
+  unit: persons
+  as_of: "1910"
+  method: |
+    Read from a rendered image of a 400-dpi scan; the volume's OCR text layer was used to find the
+    page and not to read the columns. Checked against three arithmetic closures the table supplies
+    and against two columns, 1900 and 1890, that this corpus already held from an unrelated county
+    history. The `value` above is the county total for 1910, the figure this table was fetched for.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1910-abstract-supplement-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

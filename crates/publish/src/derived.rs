@@ -197,6 +197,42 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-county-has-a-complete-series",
+        statement: "Allen County has a population count at every decennial census from 1830 to \
+                    2020: 578 at the first and 102,217 at the last, with the peak in 1980.",
+        topic: "population",
+        // Twenty-one figures, which is more than any other chart on this site plots, and the
+        // reason to plot them is that a reader who wants to know how big this county has ever
+        // been should not have to assemble the answer from four nodes.
+        supports: &[support!(
+            "place/allen-county.yml",
+            "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,203 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**"
+        )],
+        answers: &[],
+        figures: &[
+            Figure { label: "1830", value: 578.0, literal: "578" },
+            Figure { label: "1840", value: 9_079.0, literal: "9,079" },
+            Figure { label: "1850", value: 12_100.0, literal: "12,100" },
+            Figure { label: "1860", value: 19_185.0, literal: "19,185" },
+            Figure { label: "1870", value: 23_623.0, literal: "23,623" },
+            Figure { label: "1880", value: 31_314.0, literal: "31,314" },
+            Figure { label: "1890", value: 40_644.0, literal: "40,644" },
+            Figure { label: "1900", value: 47_976.0, literal: "47,976" },
+            Figure { label: "1910", value: 56_580.0, literal: "56,580" },
+            Figure { label: "1920", value: 68_203.0, literal: "68,203" },
+            Figure { label: "1930", value: 69_419.0, literal: "69,419" },
+            Figure { label: "1940", value: 73_303.0, literal: "73,303" },
+            Figure { label: "1950", value: 88_183.0, literal: "88,183" },
+            Figure { label: "1960", value: 103_691.0, literal: "103,691" },
+            Figure { label: "1970", value: 111_144.0, literal: "111,144" },
+            Figure { label: "1980", value: 112_241.0, literal: "112,241" },
+            Figure { label: "1990", value: 109_755.0, literal: "109,755" },
+            Figure { label: "2000", value: 108_464.0, literal: "108,464" },
+            Figure { label: "2010", value: 106_331.0, literal: "106,331" },
+            Figure { label: "2020", value: 102_217.0, literal: "102,217" },
+        ],
+    },
+    Assertion {
         id: "three-peaks-thirty-years-apart",
         statement: "The city peaked in 1970, the county in 1980, and the county outside the city \
                     in 2000.",
@@ -205,16 +241,20 @@ pub const ASSERTIONS: &[Assertion] = &[
         // than a figure it was given, which is why it cites the node that carries the method.
         supports: &[
             support!(
-                "measure/allen-county-outside-lima-1930-2020.yml",
+                "measure/allen-county-outside-lima-1890-2020.yml",
                 "**So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the county as a whole in 1980, and the county outside Lima in 2000."
             ),
             support!(
-                "measure/allen-county-outside-lima-1930-2020.yml",
-                "**the county outside Lima held 27,132 people in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
+                "measure/allen-county-outside-lima-1890-2020.yml",
+                "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
             ),
         ],
         answers: &[],
         figures: &[
+            Figure { label: "1890", value: 24_663.0, literal: "24,663" },
+            Figure { label: "1900", value: 26_253.0, literal: "26,253" },
+            Figure { label: "1910", value: 26_072.0, literal: "26,072" },
+            Figure { label: "1920", value: 26_877.0, literal: "26,877" },
             Figure { label: "1930", value: 27_132.0, literal: "27,132" },
             Figure { label: "1940", value: 28_592.0, literal: "28,592" },
             Figure { label: "1950", value: 37_937.0, literal: "37,937" },
@@ -230,8 +270,8 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "every-township-grew",
         statement: "Every one of the county's twelve townships is larger now than it was in \
-                    1930, while the county is below its 1980 peak and the city has lost a third \
-                    of itself.",
+                    1930 — and larger than in 1890 too, which is the harder test, because 1930 \
+                    was near the bottom.",
         topic: "population",
         // No figures. Twelve ratios on one axis would be a chart of arithmetic rather than of
         // the county, and the numbers behind them are in the node's own table where a reader
@@ -244,6 +284,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             support!(
                 "measure/allen-county-townships-1930-1950.yml",
                 "The whole balance is two and a half times its 1930 size while the county is below its 1980 peak and the city has lost a third of itself."
+            ),
+            support!(
+                "measure/allen-county-townships-1930-1950.yml",
+                "**But 1930 was near the bottom, and the second column is why that matters.**"
             ),
         ],
         answers: &[],

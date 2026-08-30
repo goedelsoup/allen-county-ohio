@@ -1,12 +1,16 @@
 class: measure
-label: Allen County outside Lima, 1930–2020
+label: Allen County outside Lima, 1890–2020
 description: |
-  The county's population with [Lima](../place/lima.yml) taken out of it, at nine censuses.
+  The county's population with [Lima](../place/lima.yml) taken out of it, at fourteen censuses.
   [inference] — subtraction performed here; every input is a Census count already held by this
   corpus.
 
-      1930    69,419  -  42,287  =  27,132      Lima is 60.9% of the county
-      1940    73,303  -  44,711  =  28,592                61.0%
+      1890    40,644  -  15,981  =  24,663      Lima is 39.3% of the county
+      1900    47,976  -  21,723  =  26,253                45.3%
+      1910    56,580  -  30,508  =  26,072                53.9%
+      1920    68,203  -  41,326  =  26,877                60.6%
+      1930    69,419  -  42,287  =  27,132                60.9%
+      1940    73,303  -  44,711  =  28,592                61.0%  <- Lima's share peaks
       1950    88,183  -  50,246  =  37,937                57.0%
       1960   103,691  -  51,037  =  52,654                49.2%
       1970   111,144  -  53,734  =  57,410                48.4%
@@ -16,29 +20,39 @@ description: |
       2010   106,331  -  38,771  =  67,560                36.5%
       2020   102,206  -  35,579  =  66,627                34.8%
 
-  Written out: **the county outside Lima held 27,132 people in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960,
+  Written out: **the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960,
   57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in
   2020.** [inference] — same subtraction. County figures from
   [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml),
   [2010](allen-county-population-2010.yml) and
   [the 2020 census count](allen-county-population-2020-census.yml), with 1930 from
-  [the townships table](allen-county-townships-1930-1950.yml); Lima from
+  [the 1950 townships table](allen-county-townships-1930-1950.yml) and 1890 to 1910 from
+  [the 1910 one](allen-county-townships-1890-1910.yml); Lima from
   [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml),
   [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and
   [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base
   gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.
 
-  **The 1930 and 1940 terms are measured as well as derived.** The twelve townships in
+  **Four of the fourteen terms are measured as well as derived.** The townships in
   [the 1950 volume's Table 6](allen-county-townships-1930-1950.yml) sum to 27,132 for 1930 and
-  28,592 for 1940 — the same two numbers this subtraction produces, from a source that never
-  performs it. [verified] — same table. Two of this series' ten terms are now confirmed by direct
-  measurement, and they are the two oldest.
+  28,592 for 1940, and the twelve outside Ottawa in
+  [the 1910 supplement](allen-county-townships-1890-1910.yml) sum to 24,657 for 1890 and 26,072 for
+  1910 — the same numbers this subtraction produces, from sources that never perform it.
+  [verified] — those tables. The 1890 pair differs by six, and correctly: the twelve exclude Ottawa
+  Township, which held six people outside Lima city that year and none afterwards.
+
+  **The first fifty years of this series are almost flat, and that is the finding.** From 24,663 in
+  1890 to 28,592 in 1940 the county outside Lima grew 16 per cent, while the county grew 80 per cent
+  and Lima 180. [inference] — computed here. Then it reversed: the balance is up 133 per cent since
+  1940 and the city is down a third since 1970. **Lima's share of the county peaked in 1940 at 61.0
+  per cent, having been 39.3 in 1890 and 34.8 in 2020** — a rise and a fall of almost exactly the
+  same size, hinged on one census. [inference]
 
   **This answers a question [deindustrialization](../period/deindustrialization.yml) left open.**
   That node said the ring around Lima grew while the city emptied, and that "when the ring turned
   is not established here". **It turned between 2000 and 2010.** The county outside Lima grew at
-  every census from 1930 to 2000 except one, two and a half times over, and has fallen at the two
-  since. [inference]
+  every census from 1910 to 2000 except one, and has fallen at the two since. It fell once before
+  that too, between 1900 and 1910. [inference]
 
   **So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the
   county as a whole in 1980, and the county outside Lima in 2000. [inference] — from the three
@@ -53,8 +67,9 @@ description: |
   moving house, so it pushes this series down and the city's up. The 1980s fall is therefore an
   upper bound on a decline and may be no decline at all. [inference]
 
-  **Lima's share of the county peaked in 1940 and has fallen at every census since, including the
-  three at which the city grew.** 60.9% in 1930, 61.0% in 1940, then down to 34.8% in 2020, through a decade in which the city gained 5,535
+  **Lima's share of the county rose at every census from 1890 to 1940 and has fallen at every one
+  since, including the three at which the city grew.** 39.3% in 1890 to 61.0% in 1940, then down to
+  34.8% in 2020, through a decade in which the city gained 5,535
   people and still lost four points of share. [inference] — computed above. The county was
   redistributing before it was declining, and the two processes are seventy years out of phase.
 
@@ -77,7 +92,9 @@ properties:
     Subtraction of the city count from the county count at each census, both from Census
     publications this corpus already holds and cites. Not a published figure: no source states it,
     and it is tagged as this corpus's inference throughout. The `value` above is the series
-    maximum. Boundaries are as reported at each census and are known to have moved once. [inference]
+    maximum. Boundaries are as reported at each census and are known to have moved in 1902, 1903,
+    1905, 1906, 1944 and between 1980 and 1990 — twice out of the city and four times into it.
+    [inference]
 links:
   - target: ../place/allen-county.yml
     relationship: describes
