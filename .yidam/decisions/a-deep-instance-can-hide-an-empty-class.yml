@@ -1,0 +1,66 @@
+id: a-deep-instance-can-hide-an-empty-class
+summary: >-
+  The `office` class held two instances for nine phases. One of them, the sheriff, had 39 tenures
+  running to 1831, a dedicated skill, a dedicated crate and a documented single-seat/multi-seat
+  distinction. All that machinery made the class look exercised. Ohio gives every county nine
+  elected offices; this corpus held one of them.
+context: |
+  The evidence was never hidden. Three separate things pointed at it and none was read as a gap.
+
+  **The class count was published every phase.** The site's manifest carries `by_class`, and
+  `"office": 2` sat in it beside `"tenure": 39` on every build.
+
+  **The ontology's own documentation described a node that did not exist.** `office.seats` is
+  annotated "How many people hold this office at once — three, for a board of commissioners", and
+  `office`'s class description gives "Judge of the Court of Common Pleas" as one of three worked
+  examples. Neither existed. So did `office.term_length`, declared and unused across both instances,
+  which [an unused property is an unasked question](an-unused-property-is-an-unasked-question.yml)
+  had already named as the sharpest available signal.
+
+  **The county government node listed all nine offices in prose.** It had said since early on that
+  the county is "governed by a three-member board of county commissioners alongside separately
+  elected auditor, treasurer, recorder, sheriff, prosecutor, clerk of courts, coroner and engineer",
+  tagged `[inference]`, with nodes behind exactly one of the nine.
+
+  **And the corpus looked straight at the imbalance and read it backwards.**
+  [state after nine phases](state-after-nine-phases.yml) observed that "eighty of this corpus's 174
+  nodes, 46 per cent, are the sheriff roster" and diagnosed it as the reason the base was thin — too
+  many rows. That is half the reading. The other half is that the same figure means eight offices
+  were missing, and it is the half that would have been actionable.
+decision: |
+  **Where a class's members are fixed and enumerable by the domain, a partially filled class is a
+  coverage defect, and depth in one member is not evidence against it.**
+
+  Nine county offices, twelve townships, eighty-eight Ohio counties: these are closed sets, and the
+  corpus can know its own denominator. Where the set is open — persons, sites, events — no count is
+  a defect, and the existing tests govern instead.
+rationale: |
+  **This does not loosen the rule that stopped the precincts.** The test from
+  [eighty-eight rows are not eighty-eight nodes](eighty-eight-rows-are-not-eighty-eight-nodes.yml)
+  — *write a node where members differ in kind, write a measure where they differ only in value* —
+  licenses this phase outright. The nine offices differ in kind about as sharply as members of one
+  class can: the coroner must be a licensed physician, the engineer must be a registered engineer
+  *and* a registered surveyor and may not be four of the other officers, the board seats three on
+  terms that begin on three consecutive days in January, and the auditor's term begins in March
+  while every other begins in January.
+
+  So the rule was right and its application was over-general. The corpus had learned, correctly and
+  three times over, to distrust the impulse to write a node per row; and it carried that caution to
+  a set where the members are not rows. A habit acquired to prevent one failure was quietly
+  preventing the opposite one.
+
+  **The relationship to the previous phase's finding.**
+  [a before-and-after needs a before](a-before-and-after-needs-a-before.yml) recorded a claim with
+  two terms of which one was never observed, and proposed the habit of asking what the unobserved
+  half would look like. This is the same failure one level up: a *class* with nine members of which
+  one was observed. Two consecutive phases, two coverage gaps, and in both the evidence was already
+  on disk and computable. Width errors get caught by reading harder; coverage errors only get caught
+  by counting.
+
+  **The counter-consideration.** "Closed set" is doing load-bearing work and can be stretched — a
+  determined reading makes almost anything enumerable, and the corpus would be back to writing rows.
+  The guard is that the denominator must come from outside the corpus and be stated: Ohio law fixes
+  nine county offices, so nine is the denominator and eight was the gap. Where no source states the
+  denominator, this record does not apply.
+status: accepted
+date: "2026-08-30"
