@@ -73,9 +73,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
-| [allen-county-outside-lima-1930-2020.yml](measure/allen-county-outside-lima-1930-2020.yml) | measure | Allen County outside Lima, 1940–2020 | 2 | 2v / 7i / 1o | 78 |
+| [allen-county-outside-lima-1930-2020.yml](measure/allen-county-outside-lima-1930-2020.yml) | measure | Allen County outside Lima, 1930–2020 | 2 | 3v / 7i / 1o | 86 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
-| [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 4v / 1i / 1o | 50 |
+| [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 5v / 2i / 1o | 60 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
 | [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
 | [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
@@ -84,6 +84,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 41 |
+| [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 2 | 8v / 3i / 1o | 103 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
@@ -158,11 +159,11 @@ Sorted by: kind, then alphabetically.
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 3v / 1i / 0o | 37 |
-| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 7v / 0i / 1o | 51 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 9v / 1i / 0o | 72 |
-| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 9v / 0i / 1o | 69 |
-| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 4v / 0i / 1o | 39 |
-| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 7v / 0i / 1o | 59 |
+| [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 8v / 1i / 1o | 59 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 10v / 3i / 0o | 85 |
+| [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 10v / 1i / 1o | 78 |
+| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 5v / 1i / 1o | 48 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 9v / 1i / 1o | 70 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 4v / 1i / 1o | 49 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 9v / 0i / 1o | 61 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 5v / 1i / 1o | 58 |
@@ -170,23 +171,23 @@ Sorted by: kind, then alphabetically.
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 6v / 1i / 0o | 44 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
-| [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 5v / 0i / 1o | 42 |
+| [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 6v / 0i / 1o | 49 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 10v / 2i / 1o | 93 |
-| [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 5v / 0i / 1o | 41 |
-| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 5v / 0i / 1o | 44 |
-| [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 5v / 0i / 1o | 35 |
-| [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 5v / 0i / 1o | 42 |
-| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 5v / 1i / 0o | 51 |
-| [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 6v / 0i / 1o | 46 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 13v / 3i / 1o | 106 |
+| [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 6v / 1i / 1o | 50 |
+| [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 6v / 1i / 1o | 51 |
+| [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 6v / 1i / 1o | 44 |
+| [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 6v / 1i / 1o | 50 |
+| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 7v / 2i / 0o | 61 |
+| [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 7v / 1i / 1o | 54 |
 | [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 8v / 0i / 1o | 58 |
-| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 6v / 0i / 0o | 52 |
+| [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 7v / 1i / 0o | 59 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 1v / 2i / 1o | 43 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 2o | 39 |
-| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 4 | 4v / 3i / 1o | 71 |
+| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 4 | 7v / 5i / 1o | 93 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |

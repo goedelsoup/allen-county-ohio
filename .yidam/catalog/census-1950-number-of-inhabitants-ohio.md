@@ -18,7 +18,23 @@ location:
       Allen County is on printed page 35-13; Table 4 (cities from earliest census) runs 35-8 to
       35-11; Table 5 (counties, 1930 to 1950) is 35-11.
 used-by:
+  - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-townships-1930-1950.yml
+  - ../corpus/place/amanda-township.yml
+  - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bath-township.yml
+  - ../corpus/place/beaverdam.yml
+  - ../corpus/place/jackson-township.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/place/marion-township.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/perry-township.yml
+  - ../corpus/place/richland-township.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/spencer-township.yml
+  - ../corpus/place/sugar-creek-township.yml
+  - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
 ---
 
 **Three arithmetic closures, and every Allen County figure sits inside one.** This is the same

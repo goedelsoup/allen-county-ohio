@@ -26,6 +26,7 @@ used-by:
   - ../corpus/measure/allen-county-net-migration-2021-2024.yml
   - ../corpus/measure/allen-county-population-2020.yml
   - ../corpus/measure/allen-county-population-2024.yml
+  - ../corpus/measure/allen-county-townships-1930-1950.yml
   - ../corpus/measure/lima-population-2020.yml
   - ../corpus/measure/lima-population-2024.yml
   - ../corpus/period/deindustrialization.yml

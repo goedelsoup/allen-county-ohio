@@ -1444,9 +1444,9 @@
       "withheld": 1
     },
     {
-      "id": "measure/allen-county-outside-lima-1940-2020.yml",
+      "id": "measure/allen-county-outside-lima-1930-2020.yml",
       "class": "measure",
-      "label": "Allen County outside Lima, 1940–2020",
+      "label": "Allen County outside Lima, 1930–2020",
       "tier": "inference",
       "properties": {
         "as_of": "2000",
@@ -1461,11 +1461,15 @@
           "tier": "inference"
         },
         {
-          "text": "Written out: **the county outside Lima held 28,592 people in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.** [inference] — same subtraction. County figures from [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml), [2010](allen-county-population-2010.yml) and [the 2020 census count](allen-county-population-2020-census.yml); Lima from [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml), [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.",
+          "text": "Written out: **the county outside Lima held 27,132 people in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.** [inference] — same subtraction. County figures from [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml), [2010](allen-county-population-2010.yml) and [the 2020 census count](allen-county-population-2020-census.yml), with 1930 from [the townships table](allen-county-townships-1930-1950.yml); Lima from [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml), [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.",
           "tier": "inference"
         },
         {
-          "text": "**This answers a question [deindustrialization](../period/deindustrialization.yml) left open.** That node said the ring around Lima grew while the city emptied, and that \"when the ring turned is not established here\". **It turned between 2000 and 2010.** The county outside Lima grew at every census from 1940 to 2000 except one, more than doubling, and has fallen at the two since. [inference]",
+          "text": "**The 1930 and 1940 terms are measured as well as derived.** The twelve townships in [the 1950 volume's Table 6](allen-county-townships-1930-1950.yml) sum to 27,132 for 1930 and 28,592 for 1940 — the same two numbers this subtraction produces, from a source that never performs it. [verified] — same table. Two of this series' ten terms are now confirmed by direct measurement, and they are the two oldest.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This answers a question [deindustrialization](../period/deindustrialization.yml) left open.** That node said the ring around Lima grew while the city emptied, and that \"when the ring turned is not established here\". **It turned between 2000 and 2010.** The county outside Lima grew at every census from 1930 to 2000 except one, two and a half times over, and has fallen at the two since. [inference]",
           "tier": "inference"
         },
         {
@@ -1477,7 +1481,7 @@
           "tier": "inference"
         },
         {
-          "text": "**Lima's share of the county has fallen at every census since 1940, including the three at which the city grew.** 61.0% in 1940 to 34.8% in 2020, through a decade in which the city gained 5,535 people and still lost four points of share. [inference] — computed above. The county was redistributing before it was declining, and the two processes are seventy years out of phase.",
+          "text": "**Lima's share of the county peaked in 1940 and has fallen at every census since, including the three at which the city grew.** 60.9% in 1930, 61.0% in 1940, then down to 34.8% in 2020, through a decade in which the city gained 5,535 people and still lost four points of share. [inference] — computed above. The county was redistributing before it was declining, and the two processes are seventy years out of phase.",
           "tier": "inference"
         },
         {
@@ -1544,6 +1548,10 @@
         },
         {
           "text": "**Housing grew when population did not.** Between 1970 and 1990 the county gained 7,281 housing units and lost 1,389 people. [inference] — computed from the figures above. Household size fell across the United States over those decades, so this is not peculiar to Allen County; what it does mean is that the county's building stock and its population stopped moving together around 1970, and the corpus's account of decline has until now been a population account only.",
+          "tier": "inference"
+        },
+        {
+          "text": "**1930 is no longer a gap: 69,419.** [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Tables 5 and 6, which give it twice. So the county ran 68,203 in 1920, **69,419 in 1930** and 73,303 in 1940 — a gain of 1,216 in the 1920s and 3,884 in the 1930s. [inference] — computed here; the source prints the second as 5.6 per cent and this corpus's arithmetic agrees. The county grew three times faster through the Depression decade than through the boom before it, which is the opposite of the shape the decades' reputations suggest and is [true of Lima too](lima-population-1850-1960.yml), at 2.3 per cent then 5.7.",
           "tier": "inference"
         }
       ],
@@ -1765,6 +1773,63 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "measure/allen-county-townships-1930-1950.yml",
+      "class": "measure",
+      "label": "Allen County townships, 1930–1950",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1930",
+        "method": "Read from rendered images of a 300-dpi scan; the volume's own OCR text layer was used as a second reader and its column association across a three-up table was not trusted. Checked against three arithmetic closures the table itself supplies. The 1940 and 1930 columns are on 1950 boundaries where the source could put them there and exclude Lima entirely; the `value` above is the twelve-township sum for 1930, which is the county less the city. [verified]",
+        "parameter": "total resident population by minor civil division, decennial",
+        "unit": "persons",
+        "value": "27132"
+      },
+      "blocks": [
+        {
+          "text": "Every one of the county's twelve townships at three censuses, and the villages inside them. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6, *Population of counties by minor civil divisions: 1930 to 1950*.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out, because a table is not prose: in 1930 **Marion Township was the county's largest outside Lima, with 4,959 people, and Perry its smallest at 1,515**; by 1950 Perry held 14,207 and American 25,151, because the city had crossed into both. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every figure sits inside an arithmetic closure.** The twelve 1950 counts sum to 88,183, which is the county total, and Lima's four parts inside them — 19,270 in American, 17,469 in Bath, 10,895 in Perry, 2,612 in Shawnee — sum to 50,246, which is Lima's own. The 1940 and 1930 columns exclude Lima, as the table's head warns they may, and they miss the county by exactly Lima: 28,592 + 44,711 = 73,303, and 27,132 + 42,287 = 69,419. [verified] — computed here from the printed figures. Three closures, no residual, and every number in the block participates in one.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1940 column is a figure this corpus had already computed and published as an inference.** A phase ago it derived \"the county outside Lima in 1940\" as 73,303 − 44,711 = 28,592. The twelve townships sum to 28,592. [verified] — same source. A derived figure and a measured one meeting to the person is the best evidence this corpus has yet had that its subtraction is doing what it says.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the county outside Lima now begins in 1930, at 27,132**, and rose to 28,592 by 1940 and 37,937 by 1950. [inference] — see [the balance series](allen-county-outside-lima-1930-2020.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The city is what moved, and the townships mostly did not.** Between 1930 and 1940 seven of the twelve gained and five lost, and the whole balance moved by 1,460 people on a base of 27,132 — five per cent across a decade. [inference] — computed above. Lima gained 2,424 in the same decade. Whatever was happening to this county in the 1930s was happening in one municipality.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Every one of the twelve is larger now than it was in 1930, and the comparison is sound.** The 1930 and 1940 columns exclude Lima, and so do today's township figures, because the Census treats the city as its own county subdivision — which is why the modern twelve sum to 66,686, exactly the 2020 estimates base less Lima. [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file, and arithmetic here. Against 1930:",
+          "tier": "verified"
+        },
+        {
+          "text": "The whole balance is two and a half times its 1930 size while the county is below its 1980 peak and the city has lost a third of itself. [inference] The two that grew sixfold, Shawnee and American, are the two Lima borders on its south and west.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In 1950 the four townships Lima had reached still net out correctly.** Taking the city's parts back off them gives American 5,881, Bath 5,450, Perry 3,312 and Shawnee 3,796, and all twelve then sum to 37,937 — the county less Lima. [verified] — computed here. That is the fourth closure this one table supports, and it is what makes the four affected townships comparable across the century rather than only from 1950.",
+          "tier": "verified"
+        },
+        {
+          "text": "Also recorded here because no node yet holds it: **Westwood**, an unincorporated place of 2,296 people in 1950, split 1,968 in American and 328 in Shawnee. [verified] — same source. It is not in the corpus's places and this is the only figure it has for it.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
     },
     {
       "id": "measure/allen-county-turnout-2020.yml",
@@ -2582,7 +2647,7 @@
           "tier": "inference"
         },
         {
-          "text": "**The ring turned between 2000 and 2010, and this node asked when.** The county outside Lima held 28,592 people in 1940, 68,157 in 2000, and 66,627 at the 2020 census — growth at every count for sixty years, and a fall at both counts since. [inference] — [the balance series](../measure/allen-county-outside-lima-1940-2020.yml), computed from Census counts on both sides. **So the county has three peaks and they are thirty years apart**: Lima in 1970, the county in 1980, the county outside Lima in 2000. [inference] This period is named for a process that reached the three of them in that order, and a single line labelled \"Allen County\" shows none of it.",
+          "text": "**The ring turned between 2000 and 2010, and this node asked when.** The county outside Lima held 28,592 people in 1940, 68,157 in 2000, and 66,627 at the 2020 census — growth at every count for sixty years, and a fall at both counts since. [inference] — [the balance series](../measure/allen-county-outside-lima-1930-2020.yml), computed from Census counts on both sides. **So the county has three peaks and they are thirty years apart**: Lima in 1970, the county in 1980, the county outside Lima in 2000. [inference] This period is named for a process that reached the three of them in that order, and a single line labelled \"Allen County\" shows none of it.",
           "tier": "inference"
         },
         {
@@ -3645,7 +3710,7 @@
       "id": "place/amanda-township.yml",
       "class": "place",
       "label": "Amanda Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "33.315 land, 1.076 water (2020)",
         "centroid": "40.734865, -84.272548",
@@ -3677,6 +3742,10 @@
         {
           "text": "**It is named for Fort Amanda**, built here in 1812 by Col. Poague's command and named for the colonel's wife. [verified] — same source. In the [reorganization of 1848](../event/reorganization-of-1848.yml) it lost sections 7 and 18 to [Spencer](spencer-township.yml) and was recomposed from the south half of Marion and its own north half. [verified] — same source.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 1,008 people in 1930, 975 in 1940 and 980 in 1950**, and 2,070 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). So it doubled, and all of it happened after 1950 — through the 1930s and 1940s the township was flat and slightly falling. [inference] It has no incorporated place, so every one of those people was and is counted in unincorporated territory.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -3724,8 +3793,12 @@
           "tier": "verified"
         },
         {
-          "text": "**The same page records the dissent**, three years after the fact: \"there are residents of the township who a little later on would not have voted for the change, because of sacred associations in early history. They do not hold the German people responsible for the conduct of some of their leaders.\" [verified] — same source. The corpus had declined to assert the obvious motive; the motive is confirmed, and so is that it was contested at the time.",
-          "tier": "verified"
+          "text": "**The same page records the dissent**, three years after the fact: \"there are residents of the township who a little later on would not have voted for the change, because of sacred associations in early history. They do not hold the German people responsible for the conduct of some of their leaders.\" [verified] — same source. The corpus had declined to assert the obvious motive; the motive is confirmed, and so is that it was contested at the time. **It held 2,560 people in 1930 and 2,957 in 1940**, before Lima crossed into it: the 1950 return is 25,151 of which 19,270 is Lima city, leaving 5,881 outside the city. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). At 14,571 in 2020 it is **more than five and a half times its 1930 size outside the city**, the second fastest growth of the county's twelve townships. [inference] [Elida](elida.yml) ran 542, 551 and 607 across the same three censuses, so almost none of that growth is the village.",
+          "tier": "inference"
+        },
+        {
+          "text": "The Census returns it as American at all three of those censuses, the earliest being 1930. That is consistent with, and no more than consistent with, the [renaming of August 16, 1918](../question/what-became-of-german-and-ottawa-townships.yml): the first federal count after the change already carries the new name. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -3735,7 +3808,7 @@
       "id": "place/auglaize-township.yml",
       "class": "place",
       "label": "Auglaize Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "35.99 land, 0.137 water (2020)",
         "centroid": "40.695518, -83.928053",
@@ -3775,6 +3848,10 @@
         {
           "text": "**The later history says Scioto is unexplained; the earlier one explains it.** In 1921 Rusler writes that \"when Allen County was organized in 1831, its four townships were Amanda, Bath, Jackson and Scioto; in 1832 there was a German but no Scioto and no explanation is offered about it.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). The explanation is in the book on the shelf beside it: the commissioners disestablished Scioto in December 1832 and attached its district to this township for judicial purposes. The corpus's older source answers its newer source's stated gap — which is the argument for holding both.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 1,675 people in 1930, 1,719 in 1940 and 1,912 in 1950**, and 2,764 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). It has grown at every observation the corpus holds, which no other township here has done, and it is also one of only two subdivisions in the county that gained population between 2020 and 2024. [inference] [Harrod](harrod.yml) ran 421, 422 and 482, so the village has been about a quarter of the township throughout and is now a sixth.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -3784,7 +3861,7 @@
       "id": "place/bath-township.yml",
       "class": "place",
       "label": "Bath Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "30.698 land, 1.347 water (2020)",
         "centroid": "40.781965, -84.042618",
@@ -3808,6 +3885,10 @@
         {
           "text": "**It is older than the county's own government and no record of its erection survives.** The 1885 compiler, working from the commissioners' books, found the name and organization of Bath in use before Allen County was organized and \"no record of its establishment either in the records of Allen or Mercer County\"; he concedes that by 1831 it was a regularly organized township with Lima at its centre, with Chris. Wood, John Schrouf and James Daniels as justices. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). This is the one township in the county whose erection is not on record anywhere the corpus has looked.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 2,875 people in 1930 and 3,438 in 1940**, before Lima crossed into it: the 1950 return is 22,919 of which 17,469 is Lima city, leaving 5,450 outside the city. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). At 9,399 in 2020 it is more than three times its 1930 size outside the city. [inference] The [refinery](../site/lima-refinery.yml) sits in [Shawnee](shawnee-township.yml) rather than here, but the annexations that took Lima's corporation into Bath are the same process, and one of them is dated: the city annexed from Bath between 1980 and 1990.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -3817,7 +3898,7 @@
       "id": "place/beaverdam.yml",
       "class": "place",
       "label": "Beaverdam",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "0.63 land (2020)",
         "centroid": "40.832487, -83.973383",
@@ -3841,6 +3922,10 @@
         {
           "text": "**The village is one voting precinct, exactly.** Precinct `BEAVERDAM` holds 319 people and 151 housing units, and every block in it is in the village and every block of the village is in it. [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with [TIGERweb](../../catalog/tigerweb-census2020.md) block geography. Four of the county's nine municipalities are single precincts on these terms; the other five are split, and [Lima](lima.yml) is cut into 23. [verified] — [the county's voting districts](../measure/allen-county-voting-districts-2020.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**The Census spelt it as two words until at least 1940.** \"Beaverdam village returned in 1940 as Beaver Dam.\" [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6, Allen County footnote. So the one-word form is the later one and the change is datable to between 1940 and 1950 in federal usage. [inference] The 1885 history agrees: it spells the place \"Beaver Dam\" throughout — scores of times in each of the two scans the corpus holds — and never as one word in either. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans. The two disagree on the tally, because they break lines differently; they do not disagree on the form. Which is what the etymology below would lead one to expect, and is the kind of agreement that makes the etymology likelier rather than merely repeated.",
+          "tier": "inference"
         },
         {
           "text": "**Established in 1853, and named for the beaver dams** that were abundant near the original town site. [verified] — [Allen County](../../catalog/allen-county-official-site.md), cities and villages page. The [Village of Beaverdam](../jurisdiction/village-of-beaverdam.yml) was incorporated twenty-five years later, in 1878.",
@@ -4146,6 +4231,10 @@
         {
           "text": "Its bounds were altered in December 1834 and the original Township 3 south, Range 8 east was set off again under the same name. [verified] — same source.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 1,537 people in 1930, 1,603 in 1940 and 1,731 in 1950**, and 3,144 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). It has roughly doubled, and [Lafayette](lafayette.yml) — 382, 411 and 444 across the same censuses — has not, so the growth is outside the village.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -4214,6 +4303,14 @@
           "tier": "verified"
         },
         {
+          "text": "**It lies in four townships, and the Census has said so since 1950.** American, Bath, Perry and Shawnee held 19,270, 17,469, 10,895 and 2,612 of the city's people at that census. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6. Those are the same four [Ottawa Township](../question/what-became-of-german-and-ottawa-townships.yml) was carved out of in 1857, and the 1940 census had returned the whole city as coextensive with Ottawa, which the 1950 volume calls nonexistent. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its earliest dated annexation is 1944**, from Shawnee Township. [verified] — same source, Allen County footnote. That is forty years earlier than the annexations the corpus previously held, and it means the caveat about the city's boundary moving underneath its counts reaches back at least to the 1940s rather than only to the 1980s. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "Lima is the county's industrial centre and the reason its history is not an agricultural one: the 1885 oil strike, the locomotive works, and the tank plant are all here or on its edge. [inference] Its population has been falling since the 1970s and continues to fall — see [Lima population, 2020](../measure/lima-population-2020.yml) and [Lima population, 2024](../measure/lima-population-2024.yml).",
           "tier": "inference"
         },
@@ -4245,7 +4342,7 @@
       "id": "place/marion-township.yml",
       "class": "place",
       "label": "Marion Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "42.371 land, 0.194 water (2020)",
         "centroid": "40.81041, -84.292789",
@@ -4273,6 +4370,10 @@
         {
           "text": "**Its present shape dates from 1848, not 1833.** In the [reorganization of that February](../event/reorganization-of-1848.yml) the original township was cut in half — the south half went into Amanda — and six sections from Jennings Township were added, giving the forty-two square miles it still has. [verified] — same source. Its first trustees after the change were Christian Stukey, Michael Swisher and Thomas J. Fair.",
           "tier": "verified"
+        },
+        {
+          "text": "**It was the county's largest township outside Lima in 1930**, with 4,959 people, against 4,924 in 1940 and 5,382 in 1950. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). At 6,629 in 2020 it has grown by a third in ninety years, the fourth slowest of the twelve, and the reason is [Delphos](delphos.yml): the city's Allen County part ran 3,055, 3,086 and 3,418 across those three censuses and has barely moved since. [inference] A township that was largest because it held a city stayed middling because the city stopped growing.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -4282,7 +4383,7 @@
       "id": "place/monroe-township.yml",
       "class": "place",
       "label": "Monroe Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "36.094 land, 0.076 water (2020)",
         "centroid": "40.864357, -84.060914",
@@ -4310,6 +4411,10 @@
         {
           "text": "**Organized in 1835 as a township of Putnam County**, on a petition to that county's commissioners, with John Peters, Peter Harpster and Anthony Early as trustees, Benjamin Parker clerk and Luke Tipton justice of the peace. **It was not in Allen County until 1848**, when this portion of Putnam was attached in the [reorganization](../event/reorganization-of-1848.yml) — which let it keep both its name and its organization while every township around it was recomposed. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 1,591 people in 1930, 1,622 in 1940 and 1,699 in 1950**, and 2,050 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). [Cairo](cairo.yml) ran 374, 440 and 505 across the same three censuses — the village grew by a third while the township grew by a fifteenth, so through the 1930s and 1940s Monroe was concentrating into its village. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -4319,7 +4424,7 @@
       "id": "place/perry-township.yml",
       "class": "place",
       "label": "Perry Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "32.704 land, 0.076 water (2020)",
         "centroid": "40.675113, -84.041425",
@@ -4343,6 +4448,10 @@
         {
           "text": "**Established by the county board in December 1833 and organized in April 1834** at the house of Joseph Crossley, with Hugh Skilling Sr., John Ridenour and Joseph Crossley elected trustees. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). Its twelve western sections had until then belonged to [Auglaize Township](auglaize-township.yml). [verified] — same source.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 1,515 people in 1930 — the smallest of the county's twelve — and 1,944 in 1940**, before Lima crossed into it: the 1950 return is 14,207 of which 10,895 is Lima city, leaving 3,312 outside the city. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). At 3,377 in 2020 the township outside Lima has gained sixty-five people in seventy years. [inference] It is the clearest case in the county of a township that grew by being annexed rather than by being settled: the ground kept filling and the city kept taking it.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -4352,7 +4461,7 @@
       "id": "place/richland-township.yml",
       "class": "place",
       "label": "Richland Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "41.648 land, 0.295 water (2020)",
         "centroid": "40.869365, -83.936562",
@@ -4380,6 +4489,10 @@
         {
           "text": "**It is named for Richland County, Ohio.** Henry Carter's reminiscence, recorded in 1885, credits David Miller — a shoemaker \"just in from Richland County\" — with pushing the new township through and giving it his former county's name. [verified] — same source. That is a settler's recollection of fifty years earlier, not a record entry, and it is the only name origin in the county that comes with the person who chose it.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 3,914 people in 1930, 3,765 in 1940 and 4,179 in 1950**, and 5,889 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). Its loss of 149 across the 1930s is the largest of the five townships that fell in that decade. [inference] [Bluffton](bluffton.yml) ran 2,035, 2,077 and 2,423 and [Beaverdam](beaverdam.yml) 360, 377 and 450, so the villages held their ground while the countryside around them emptied and then refilled.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -4411,8 +4524,12 @@
           "tier": "verified"
         },
         {
-          "text": "That is a fact about tax base and authority as much as geography: the two largest industrial installations in the county are outside every municipality that could levy on them, and the township is the government whose ground they sit on. [inference]",
+          "text": "That is a fact about tax base and authority as much as geography: the two largest industrial installations in the county are outside every municipality that could levy on them, and the township is the government whose ground they sit on. [inference] **It held 2,070 people in 1930 and 2,336 in 1940**, before Lima crossed into it: the 1950 return is 6,408 of which 2,612 is Lima city, leaving 3,796 outside the city. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). At 12,509 in 2020 it is **six times its 1930 size outside the city — the fastest growth of the county's twelve townships**. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**And the annexation into it is dated.** \"Part of Shawnee township annexed to Lima city in 1944.\" [verified] — same source, Allen County footnote. That is forty years earlier than the earliest annexation this corpus previously held, and it is the mechanism behind the 1950 return above.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -4422,7 +4539,7 @@
       "id": "place/spencer-township.yml",
       "class": "place",
       "label": "Spencer Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "23.308 land, 0.034 water (2020)",
         "centroid": "40.732439, -84.371928",
@@ -4454,6 +4571,10 @@
         {
           "text": "**It is named for Col. Spencer**, a member of the State Board of Public Works in 1848 and an ardent supporter of canal building — which is why the county's canal township carries a canal commissioner's name. [verified] — same source. See [the Miami and Erie Canal](../site/miami-and-erie-canal.yml), whose lock is in section 36 of this township. Charles C. Marshall was justice of the peace at organization.",
           "tier": "verified"
+        },
+        {
+          "text": "**It held 2,405 people in 1930, 2,340 in 1940 and 2,625 in 1950**, and 3,058 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). [Spencerville](spencerville.yml) ran 1,612, 1,623 and 1,826, which is two thirds of the township in 1930 and, at 2,205 of 3,058, nearly three quarters now: the village has taken a larger share of its township as both grew. This is a village with a township around it rather than the other way about. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -4512,7 +4633,7 @@
       "id": "place/sugar-creek-township.yml",
       "class": "place",
       "label": "Sugar Creek Township",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "24.094 land (2020)",
         "centroid": "40.824171, -84.173843",
@@ -4536,10 +4657,14 @@
         {
           "text": "**It is named for its sugar maple groves**, whose number and productiveness the 1885 compiler gives as the origin, adding that the Shawnee took their year's supply of maple sugar from this ground. [verified] — same source.",
           "tier": "verified"
+        },
+        {
+          "text": "It is in the corpus as the worked example of why [division](../division/) is a separate class from place: the census tract that covers this ground is [tract 39003010300](../division/census-tract-39003010300.yml), whose internal point lies about three quarters of a mile from the township's and whose land area is roughly five square miles larger. The two units nearly coincide and are not the same ground. **It held 1,023 people in 1930, 969 in 1940 and 990 in 1950**, and 1,226 at the 2020 estimates base. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). It is the least changed place in Allen County: a fifth larger after ninety years, the smallest growth of the twelve townships, and smaller in 1950 than it had been in 1930. [inference] It contains no incorporated place.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "place/westminster.yml",
@@ -4729,6 +4854,14 @@
         },
         {
           "text": "**It may never have formally ceased, and the corpus was looking for the wrong kind of event.** The Census Bureau's Ohio user note says: \"the Census Bureau, in agreement with the State of Ohio, does not recognize an Ohio township that is coextensive with a village or a city, and treats such places as independent of any MCD.\" [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md). So Ottawa's absence from every present-day federal source this corpus holds is explained by a **reporting rule**, not by an act of abolition — and the rule's condition is exactly the state the 1921 historian described, the city being coextensive with the township. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The Census Bureau called it nonexistent, in 1952, in a footnote.** \"Lima city in Bath, Perry, and Shawnee townships returned in 1940 as coextensive with nonexistent Ottawa township.\" [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6, Allen County footnote. That is thirty years earlier than the reporting rule this node already quotes and much blunter, and it is the word \"nonexistent\" that has to be read carefully: it is a statement about what the Bureau would recognize as a minor civil division for the 1950 tabulation, not a finding of Ohio law. [inference] The 1885 and 1921 histories both describe Ottawa's erection in May 1857 with its acreage, so it existed; what the Bureau is saying is that by 1940 it should not have been used, and that the 1940 return which did use it was wrong.",
+          "tier": "inference"
+        },
+        {
+          "text": "**And the 1950 volume puts Lima back into exactly the four townships Ottawa was carved out of.** Its Table 6 splits the city across [American](../place/american-township.yml) (19,270), [Bath](../place/bath-township.yml) (17,469), [Perry](../place/perry-township.yml) (10,895) and [Shawnee](../place/shawnee-township.yml) (2,612), summing to Lima's own 50,246. [verified] — same source. Ottawa was made in 1857 from 1,600 acres of Bath, 1,040 of German — which is American — 560 of Perry and a quarter section of Shawnee. The same four, ninety-three years apart. [verified] — same sources as above. The city had long since outgrown Ottawa's 3,360 acres, so this is not the original carve reappearing; it is evidence that Lima grew outward from Ottawa without ever crossing into a fifth township. [inference]",
           "tier": "inference"
         }
       ],
@@ -6442,7 +6575,7 @@
       "source": "catalog/census-popest-2024.md"
     },
     {
-      "from": "measure/allen-county-outside-lima-1940-2020.yml",
+      "from": "measure/allen-county-outside-lima-1930-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
       "tier": "inference",
@@ -6517,6 +6650,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-townships-1930-1950.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1950-number-of-inhabitants-ohio.md"
     },
     {
       "from": "measure/allen-county-turnout-2020.yml",
@@ -6863,7 +7003,7 @@
     },
     {
       "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-outside-lima-1940-2020.yml",
+      "to": "measure/allen-county-outside-lima-1930-2020.yml",
       "relationship": "evidenced-by",
       "tier": "inference",
       "source": null

@@ -228,6 +228,28 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "every-township-grew",
+        statement: "Every one of the county's twelve townships is larger now than it was in \
+                    1930, while the county is below its 1980 peak and the city has lost a third \
+                    of itself.",
+        topic: "population",
+        // No figures. Twelve ratios on one axis would be a chart of arithmetic rather than of
+        // the county, and the numbers behind them are in the node's own table where a reader
+        // who wants them can see what they were computed from.
+        supports: &[
+            support!(
+                "measure/allen-county-townships-1930-1950.yml",
+                "**Every one of the twelve is larger now than it was in 1930, and the comparison is sound.**"
+            ),
+            support!(
+                "measure/allen-county-townships-1930-1950.yml",
+                "The whole balance is two and a half times its 1930 size while the county is below its 1980 peak and the city has lost a third of itself."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",
