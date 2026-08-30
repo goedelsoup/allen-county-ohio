@@ -294,6 +294,31 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-only-employment-figures",
+        statement: "Lima had 3,607 manufacturing wage earners in 1909, up from 1,980 in 1899 — \
+                    and these are the only measurements of work this corpus holds, all of them \
+                    sixty years before the decline it describes.",
+        topic: "population",
+        // Three points, sixty years before the period they are shown beside. The chart is small
+        // and the sentence beneath it is the point: this is a baseline, not a mechanism.
+        supports: &[
+            support!(
+                "measure/lima-manufactures-1899-1909.yml",
+                "**Lima had 85 manufacturing establishments in 1909 employing 3,607 wage earners on average, against 2,733 in 1904 and 1,980 in 1899.**"
+            ),
+            support!(
+                "measure/lima-manufactures-1899-1909.yml",
+                "**The city's workforce grew 82 per cent in a decade and its output grew 25.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1899", value: 1_980.0, literal: "1,980" },
+            Figure { label: "1904", value: 2_733.0, literal: "2,733" },
+            Figure { label: "1909", value: 3_607.0, literal: "3,607" },
+        ],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",

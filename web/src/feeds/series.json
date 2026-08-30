@@ -362,6 +362,26 @@
       ]
     },
     {
+      "id": "place-lima::manufacturing-wage-earners-and-value-of-products,-city-of-Lima",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "manufacturing wage earners and value of products, city of Lima",
+      "unit": "wage earners",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-manufactures-1899-1909.yml",
+          "label": "Lima manufactures, 1899–1909",
+          "as_of": "1909",
+          "value": 3607.0,
+          "published": "3607",
+          "tier": "verified",
+          "source": "catalog/census-1910-abstract-supplement-ohio.md",
+          "method": "Census of Manufactures, taken for the calendar years 1909, 1904 and 1899. Read from rendered images of a 400-dpi scan and checked two ways: the two tables in the volume that report Lima independently agree on 3,607, and the 1909 detail row's components sum to its stated totals both for persons engaged and for wage earners on December 15. Establishments inside the corporate limits only. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-lima::total-resident-population",
       "subject": "place/lima.yml",
       "subject_label": "Lima",
@@ -504,7 +524,7 @@
         }
       ],
       "caveats": [
-        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
+        "It does not establish anything about *manufacturing employment* inside this period.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -563,7 +583,7 @@
         }
       ],
       "caveats": [
-        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
+        "It does not establish anything about *manufacturing employment* inside this period.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -597,7 +617,7 @@
         }
       ],
       "caveats": [
-        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
+        "It does not establish anything about *manufacturing employment* inside this period.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -924,6 +944,46 @@
       ],
       "caveats": [],
       "figures": []
+    },
+    {
+      "id": "the-only-employment-figures",
+      "statement": "Lima had 3,607 manufacturing wage earners in 1909, up from 1,980 in 1899 — and these are the only measurements of work this corpus holds, all of them sixty years before the decline it describes.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/lima-manufactures-1899-1909.yml",
+          "node_label": "Lima manufactures, 1899–1909",
+          "span": "**Lima had 85 manufacturing establishments in 1909 employing 3,607 wage earners on average, against 2,733 in 1904 and 1,980 in 1899.**",
+          "tier": "verified",
+          "sources": []
+        },
+        {
+          "node": "measure/lima-manufactures-1899-1909.yml",
+          "node_label": "Lima manufactures, 1899–1909",
+          "span": "**The city's workforce grew 82 per cent in a decade and its output grew 25.**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1899",
+          "value": 1980.0,
+          "literal": "1,980"
+        },
+        {
+          "label": "1904",
+          "value": 2733.0,
+          "literal": "2,733"
+        },
+        {
+          "label": "1909",
+          "value": 3607.0,
+          "literal": "3,607"
+        }
+      ]
     },
     {
       "id": "decline-is-migration-and-deaths",

@@ -1968,6 +1968,43 @@
       "withheld": 0
     },
     {
+      "id": "measure/lima-manufactures-1899-1909.yml",
+      "class": "measure",
+      "label": "Lima manufactures, 1899–1909",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1909",
+        "method": "Census of Manufactures, taken for the calendar years 1909, 1904 and 1899. Read from rendered images of a 400-dpi scan and checked two ways: the two tables in the volume that report Lima independently agree on 3,607, and the 1909 detail row's components sum to its stated totals both for persons engaged and for wage earners on December 15. Establishments inside the corporate limits only. [verified]",
+        "parameter": "manufacturing wage earners and value of products, city of Lima",
+        "unit": "wage earners",
+        "value": "3607"
+      },
+      "blocks": [
+        {
+          "text": "The first measurement of work this corpus has ever held. [verified] — [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md), statistics of manufactures.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **Lima had 85 manufacturing establishments in 1909 employing 3,607 wage earners on average, against 2,733 in 1904 and 1,980 in 1899.** [verified] — same source, the comparative city table and the detail table for cities of 10,000 to 50,000 inhabitants, which agree on 3,607.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The city's workforce grew 82 per cent in a decade and its output grew 25.** [inference] — computed here. Value per wage earner fell from $3,143 in 1899 to $1,766 in 1904 and recovered only to $2,150 by 1909. Something in Lima's industry became much less productive per head between 1899 and 1904 and had not recovered by 1909.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Thirty per cent of the wage earners were women** — 1,082 of 3,607 — and 51 were under sixteen. [verified] — same source. The two industries the volume names as Lima's leading ones are **\"tobacco manufactures and locomotives\"**, which is a workforce of cigar makers and a workforce of machinists in one city. [verified] — same source. See [the locomotive works](../site/lima-locomotive-works-plant.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima was in the group of Ohio cities with products valued between $5,000,000 and $10,000,000**, of thirty-seven cities over 10,000 people. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 5
+    },
+    {
       "id": "measure/lima-population-1850-1960.yml",
       "class": "measure",
       "label": "Lima population, 1850–1960",
@@ -2712,6 +2749,10 @@
           "tier": "verified"
         },
         {
+          "text": "**The corpus measures manufacturing employment at last, and not in this period.** Lima had 1,980 manufacturing wage earners in 1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments. [verified] — [Lima manufactures](../measure/lima-manufactures-1899-1909.yml). That is the first measurement of work this corpus has ever held, and it is a picture of the industrial city sixty years before this period says it began to come apart: a workforce that grew 82 per cent in a decade, in a city that grew 40. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
           "tier": "verified"
         },
@@ -2721,7 +2762,7 @@
         }
       ],
       "refusals": [
-        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
+        "It does not establish anything about *manufacturing employment* inside this period.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -6831,6 +6872,20 @@
       "source": "catalog/census-gazetteer-2020.md"
     },
     {
+      "from": "measure/lima-manufactures-1899-1909.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1910-abstract-supplement-ohio.md"
+    },
+    {
+      "from": "measure/lima-manufactures-1899-1909.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1910-abstract-supplement-ohio.md"
+    },
+    {
       "from": "measure/lima-population-1850-1960.yml",
       "to": "place/lima.yml",
       "relationship": "describes",
@@ -7148,6 +7203,13 @@
     {
       "from": "period/deindustrialization.yml",
       "to": "measure/allen-county-outside-lima-1890-2020.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/deindustrialization.yml",
+      "to": "measure/lima-manufactures-1899-1909.yml",
       "relationship": "evidenced-by",
       "tier": "inference",
       "source": null

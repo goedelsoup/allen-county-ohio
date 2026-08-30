@@ -89,12 +89,15 @@ describe('the assertions the pages render', () => {
   //
   // Both were refusals about where the corpus's data began, and retrieval answered both — the
   // county peaked in 1980, Lima in 1970 with twelve rising counts behind it. The pin is now
-  // the refusal no retrieval answers: the evidence here is population and the period is named
-  // for manufacturing employment, which the corpus does not measure. So this can only fail if
-  // the caveat is removed, which is the only reason to have it.
+  // the refusal no retrieval answers: the period is named for manufacturing employment and the
+  // corpus has no measurement of it inside the period.
+  //
+  // The phrase narrowed once, without the refusal being answered. Lima's wage earners for 1899,
+  // 1904 and 1909 arrived and falsified the old wording — "does not measure it at all" — while
+  // leaving the claim it protects untouched. The pin is the narrow phrase on purpose.
   it('carries the corpus refusal that qualifies the population series', () => {
     const decline = assertion('county-population-decline')
-    expect(decline.caveats.join(' ')).toContain('anything about *manufacturing employment*')
+    expect(decline.caveats.join(' ')).toContain('*manufacturing employment* inside this period')
   })
 })
 
