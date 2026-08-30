@@ -343,6 +343,22 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "nine-offices-eleven-officers",
+        statement: "Nine separately elected offices govern Allen County and eleven people hold \
+                    them, because the board of commissioners seats three.",
+        topic: "government",
+        // No chart. The finding is a set and its size, and a bar of nine against a bar of
+        // eleven would be decoration.
+        supports: &[
+            support!(
+                "jurisdiction/allen-county-government.yml",
+                "**Nine separately elected offices govern Allen County, and eleven people hold them, because the board of commissioners seats three.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",
