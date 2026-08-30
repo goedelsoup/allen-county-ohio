@@ -70,14 +70,14 @@
       "tier": "inference",
       "points": [
         {
-          "node": "measure/allen-county-outside-lima-1930-2020.yml",
-          "label": "Allen County outside Lima, 1930–2020",
+          "node": "measure/allen-county-outside-lima-1890-2020.yml",
+          "label": "Allen County outside Lima, 1890–2020",
           "as_of": "2000",
           "value": 68157.0,
           "published": "68157",
           "tier": "inference",
           "source": null,
-          "method": "Subtraction of the city count from the county count at each census, both from Census publications this corpus already holds and cites. Not a published figure: no source states it, and it is tagged as this corpus's inference throughout. The `value` above is the series maximum. Boundaries are as reported at each census and are known to have moved once. [inference]"
+          "method": "Subtraction of the city count from the county count at each census, both from Census publications this corpus already holds and cites. Not a published figure: no source states it, and it is tagged as this corpus's inference throughout. The `value` above is the series maximum. Boundaries are as reported at each census and are known to have moved in 1902, 1903, 1905, 1906, 1944 and between 1980 and 1990 — twice out of the city and four times into it. [inference]"
         }
       ]
     },
@@ -299,6 +299,16 @@
       "unit": "persons",
       "tier": "verified",
       "points": [
+        {
+          "node": "measure/allen-county-townships-1890-1910.yml",
+          "label": "Allen County townships, 1890–1910",
+          "as_of": "1910",
+          "value": 56580.0,
+          "published": "56580",
+          "tier": "verified",
+          "source": "catalog/census-1910-abstract-supplement-ohio.md",
+          "method": "Read from a rendered image of a 400-dpi scan; the volume's OCR text layer was used to find the page and not to read the columns. Checked against three arithmetic closures the table supplies and against two columns, 1900 and 1890, that this corpus already held from an unrelated county history. The `value` above is the county total for 1910, the figure this table was fetched for. [verified]"
+        },
         {
           "node": "measure/allen-county-townships-1930-1950.yml",
           "label": "Allen County townships, 1930–1950",
@@ -670,28 +680,166 @@
       ]
     },
     {
+      "id": "the-county-has-a-complete-series",
+      "statement": "Allen County has a population count at every decennial census from 1830 to 2020: 578 at the first and 102,217 at the last, with the peak in 1980.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "place/allen-county.yml",
+          "node_label": "Allen County",
+          "span": "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,203 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1830",
+          "value": 578.0,
+          "literal": "578"
+        },
+        {
+          "label": "1840",
+          "value": 9079.0,
+          "literal": "9,079"
+        },
+        {
+          "label": "1850",
+          "value": 12100.0,
+          "literal": "12,100"
+        },
+        {
+          "label": "1860",
+          "value": 19185.0,
+          "literal": "19,185"
+        },
+        {
+          "label": "1870",
+          "value": 23623.0,
+          "literal": "23,623"
+        },
+        {
+          "label": "1880",
+          "value": 31314.0,
+          "literal": "31,314"
+        },
+        {
+          "label": "1890",
+          "value": 40644.0,
+          "literal": "40,644"
+        },
+        {
+          "label": "1900",
+          "value": 47976.0,
+          "literal": "47,976"
+        },
+        {
+          "label": "1910",
+          "value": 56580.0,
+          "literal": "56,580"
+        },
+        {
+          "label": "1920",
+          "value": 68203.0,
+          "literal": "68,203"
+        },
+        {
+          "label": "1930",
+          "value": 69419.0,
+          "literal": "69,419"
+        },
+        {
+          "label": "1940",
+          "value": 73303.0,
+          "literal": "73,303"
+        },
+        {
+          "label": "1950",
+          "value": 88183.0,
+          "literal": "88,183"
+        },
+        {
+          "label": "1960",
+          "value": 103691.0,
+          "literal": "103,691"
+        },
+        {
+          "label": "1970",
+          "value": 111144.0,
+          "literal": "111,144"
+        },
+        {
+          "label": "1980",
+          "value": 112241.0,
+          "literal": "112,241"
+        },
+        {
+          "label": "1990",
+          "value": 109755.0,
+          "literal": "109,755"
+        },
+        {
+          "label": "2000",
+          "value": 108464.0,
+          "literal": "108,464"
+        },
+        {
+          "label": "2010",
+          "value": 106331.0,
+          "literal": "106,331"
+        },
+        {
+          "label": "2020",
+          "value": 102217.0,
+          "literal": "102,217"
+        }
+      ]
+    },
+    {
       "id": "three-peaks-thirty-years-apart",
       "statement": "The city peaked in 1970, the county in 1980, and the county outside the city in 2000.",
       "topic": "population",
       "tier": "inference",
       "citations": [
         {
-          "node": "measure/allen-county-outside-lima-1930-2020.yml",
-          "node_label": "Allen County outside Lima, 1930–2020",
+          "node": "measure/allen-county-outside-lima-1890-2020.yml",
+          "node_label": "Allen County outside Lima, 1890–2020",
           "span": "**So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the county as a whole in 1980, and the county outside Lima in 2000.",
           "tier": "inference",
           "sources": []
         },
         {
-          "node": "measure/allen-county-outside-lima-1930-2020.yml",
-          "node_label": "Allen County outside Lima, 1930–2020",
-          "span": "**the county outside Lima held 27,132 people in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**",
+          "node": "measure/allen-county-outside-lima-1890-2020.yml",
+          "node_label": "Allen County outside Lima, 1890–2020",
+          "span": "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**",
           "tier": "inference",
           "sources": []
         }
       ],
       "caveats": [],
       "figures": [
+        {
+          "label": "1890",
+          "value": 24663.0,
+          "literal": "24,663"
+        },
+        {
+          "label": "1900",
+          "value": 26253.0,
+          "literal": "26,253"
+        },
+        {
+          "label": "1910",
+          "value": 26072.0,
+          "literal": "26,072"
+        },
+        {
+          "label": "1920",
+          "value": 26877.0,
+          "literal": "26,877"
+        },
         {
           "label": "1930",
           "value": 27132.0,
@@ -746,7 +894,7 @@
     },
     {
       "id": "every-township-grew",
-      "statement": "Every one of the county's twelve townships is larger now than it was in 1930, while the county is below its 1980 peak and the city has lost a third of itself.",
+      "statement": "Every one of the county's twelve townships is larger now than it was in 1930 — and larger than in 1890 too, which is the harder test, because 1930 was near the bottom.",
       "topic": "population",
       "tier": "inference",
       "citations": [
@@ -763,6 +911,13 @@
           "node": "measure/allen-county-townships-1930-1950.yml",
           "node_label": "Allen County townships, 1930–1950",
           "span": "The whole balance is two and a half times its 1930 size while the county is below its 1980 peak and the city has lost a third of itself.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-townships-1930-1950.yml",
+          "node_label": "Allen County townships, 1930–1950",
+          "span": "**But 1930 was near the bottom, and the second column is why that matters.**",
           "tier": "inference",
           "sources": []
         }

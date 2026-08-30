@@ -21,6 +21,7 @@ used-by:
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1970-1990.yml
   - ../corpus/period/deindustrialization.yml
+  - ../corpus/place/lima.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
 ---

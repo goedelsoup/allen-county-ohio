@@ -17,7 +17,23 @@ location:
       unreliable for reading a three-up table across columns; every figure here was read from a
       rendered image.
 used-by:
+  - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-townships-1890-1910.yml
+  - ../corpus/place/amanda-township.yml
+  - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bath-township.yml
+  - ../corpus/place/cairo.yml
+  - ../corpus/place/jackson-township.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/place/marion-township.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/perry-township.yml
+  - ../corpus/place/richland-township.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/spencer-township.yml
+  - ../corpus/place/sugar-creek-township.yml
+  - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
 ---
 
 **It completes the county's decennial series.** Allen County was **56,580** in 1910, against 47,976

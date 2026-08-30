@@ -12,6 +12,7 @@ const mechanism = assertion('decline-is-migration-and-deaths')
 const century = assertion('lima-grew-fivefold-after-the-oil')
 const peaks = assertion('three-peaks-thirty-years-apart')
 const townships = assertion('every-township-grew')
+const whole = assertion('the-county-has-a-complete-series')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -95,6 +96,15 @@ const peaksSpec: LineSpec = {
   labelLast: true,
 }
 
+// Twenty-one points a decade apart. A line, and the only chart here that spans the whole
+// record — labelLast would put the number on 2020, which is not the point of it.
+const wholeSpec: LineSpec = {
+  kind: 'line',
+  x: whole.figures.map((f) => f.label),
+  series: [{ name: 'Allen County', y: whole.figures.map((f) => f.value) }],
+  yTitle: 'Residents',
+}
+
 const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
 )
@@ -105,6 +115,26 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   lede="Allen County peaked in 1980 and has fallen at every count since. What that does and does not show is the whole of this page."
 >
   <AssertionCard assertion={decline} open />
+
+  <section>
+    <h2>The whole record</h2>
+    <p>
+      The county has been counted every ten years since 1830 and this corpus now holds all
+      twenty-one counts. It grew at every census for a hundred and fifty years, peaked in 1980, and
+      has fallen at every census since — it is smaller today than it was in 1960. The first two
+      figures count different ground: the reorganization of 1848 moved 138 square miles.
+    </p>
+    <AssertionCard assertion={whole} />
+
+    <ChartFigure
+      id="whole"
+      title="Allen County, 1830–2020"
+      caption="Every decennial census. Assembled from three county histories and four Census publications; the 1850 figure is contested, with the 1885 history giving 12,100 and the 1906 one 12,116."
+      columns={['Census', 'Residents']}
+      rows={whole.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="whole" set:html={JSON.stringify(wholeSpec)} is:inline />
+  </section>
 
   <ChartFigure
     id="county-population"
