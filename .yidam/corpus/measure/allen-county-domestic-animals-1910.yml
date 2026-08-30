@@ -1,0 +1,55 @@
+class: measure
+label: Allen County domestic animals, on farms and off, 1910
+description: |
+  The county's animals counted twice over — once on the farms and once inside the town lots.
+  [verified] —
+  [Abstract of the Thirteenth Census, Supplement for Ohio](../../catalog/census-1910-abstract-supplement-ohio.md),
+  statistics of agriculture, Table 1 (farms and ranges) and Table 6 (not on farms).
+
+                     on farms      not on farms      county
+      horses           11,910            2,766       14,676
+      cattle           20,449              887       21,336
+        dairy cows      9,958              713       10,671
+      swine            59,031              664       59,695
+      sheep and goats  41,045              195       41,240
+      mules and asses     171               53          224
+      value        $2,501,226         $350,736   $2,851,962
+
+      On the farms that is 40,924 sheep and 121 goats, and 166 mules and 5 asses; off them the
+      census reports sheep with goats and mules with asses and burros, so the rows are made to match.
+
+  **There were 14,676 horses in Allen County in 1910 — one for every 3.9 people.** [inference] —
+  computed from the two tables, against the county's 56,580. The horses were worth $1,391,032 on the
+  farms and $304,989 off them, together more than half the value of every animal in the county.
+
+  **1,788 inclosures that were not farms kept animals**, holding 2,766 horses, 887 cattle and 664
+  swine. [verified] — same source, Table 6. This is the town half of the county: a place that was
+  half city by population and nine-tenths farm by ground still moved itself on horses, and 713 of
+  its dairy cows stood in yards rather than fields. See [Lima](../place/lima.yml) and
+  [the farms](allen-county-farms-1900-1910.yml).
+
+  **The swine outnumbered the people.** [inference] — 59,695 against 56,580, computed here. Sheep
+  and goats came to 41,240 and cattle to 21,336.
+
+  [open] There is no comparable count for any later year in this corpus, so nothing here shows when
+  the horses went. The 1910 volume is the only agricultural census the corpus has read.
+properties:
+  parameter: domestic animals on and off farms, Allen County
+  value: "14676"
+  unit: horses
+  as_of: "1910-04-15"
+  method: |
+    Thirteenth Census of Agriculture, enumerated April 15, 1910. Read from rendered images of a
+    400-dpi scan. Checked by arithmetic self-closure: on the farms the seven animal values sum to
+    the printed $2,501,226 exactly, and cattle, horses, mules, swine and sheep each sum from their
+    own age and sex classes; off the farms the five values sum to $350,736 exactly. The colonies-of-
+    bees value is damaged on this scan and was recovered as $2,561 from the property total, an
+    identity that closes exactly in the neighbouring county column. County totals are added here.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1910-abstract-supplement-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
