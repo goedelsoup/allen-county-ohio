@@ -89,6 +89,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
+| [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 8v / 2i / 3o | 75 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
 | [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 4v / 3i / 1o | 60 |
@@ -113,7 +114,7 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 5v / 0i / 1o | 41 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 4v / 2i / 1o | 37 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 3v / 4i / 2o | 44 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 11 | 9v / 10i / 3o | 155 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 12 | 10v / 11i / 3o | 168 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 4v / 7i / 2o | 59 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
