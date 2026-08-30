@@ -174,7 +174,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 306, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 310, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,
@@ -331,4 +331,41 @@ fn the_publication_ceiling_is_not_open() {
     // Guards the constant itself. Every other test here would still pass if `CEILING` were
     // widened to `Open`, and the whole apparatus would be off.
     assert!(CEILING < Tier::Open);
+}
+
+#[test]
+fn the_block_shape_that_hid_four_township_officers_is_reported() {
+    // Written for a paragraph this corpus shipped and then split: Bath Township's four
+    // officers, named and verified, followed by the admission that the township's erection
+    // year is still unknown. The block travels on its weakest tag, so naming the government
+    // of a township published nothing at all — and nothing was malformed, so nothing failed.
+    let mixed = blocks(
+        "**Who governs it now.** Its fiscal officer is Berlin Ralph Carroll II. [verified] — \
+         the roster. The corpus still cannot name the year it was erected. [open]\n",
+    );
+    assert_eq!(
+        publish::claim::withheld(&mixed[0]),
+        Some(Tier::Verified),
+        "a verified fact sitting behind an open one went unreported"
+    );
+
+    // The fix is a blank line, and the report has to go quiet when the author applies it.
+    let split = blocks(
+        "Its fiscal officer is Berlin Ralph Carroll II. [verified] — the roster.\n\n\
+         [open] The year this township was erected.\n",
+    );
+    assert!(
+        split.iter().all(|b| publish::claim::withheld(b).is_none()),
+        "splitting the block did not clear the report"
+    );
+
+    // It is a report and not a gate: this corpus has thirty-odd of these on purpose, and the
+    // feeds build clean with every one of them in place.
+    let nodes = nodes();
+    assert!(
+        !publish::withheld(&nodes).is_empty(),
+        "the corpus stopped exercising the report entirely; is it still wired up?"
+    );
+    let (_, defects) = build(&nodes).expect("feeds serialize");
+    assert!(defects.is_empty(), "the report became a gate");
 }

@@ -4,7 +4,8 @@ description: >-
   The Ohio boards of elections' own roster of every elected official of a county, with party
   and with the exact day each term begins and ends. It is the first source in this corpus that
   dates a present-day office holding to the day, and the first that covers the county's elected
-  offices as a set rather than one at a time.
+  offices as a set rather than one at a time. It is indexed by voting precinct, not by county,
+  and the county's whole roster is the union of its eighty-eight precinct pages.
 type: dataset
 obtained: true
 retrieved: 2026-08-30
@@ -12,7 +13,12 @@ ttl_days: 180
 location:
   - kind: url
     value: https://lookup.boe.ohio.gov/vtrapp/allen/cnm.aspx?task=voter&prsid=0004__1
-    description: Allen County's elected officials, by office, with party and term start and end dates
+    description: One precinct's ballot of offices, with holder, party, term start and term end
+  - kind: url
+    value: https://lookup.boe.ohio.gov/vtrapp/allen/cnm.aspx?task=voter&prsid=NNNN__1
+    description: >-
+      The same page for any precinct. Allen County's precincts are 0001 through 0088; 0089 and
+      above return an empty page. The union of the eighty-eight is the county's whole roster.
 used-by:
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-house-district-78-2023.yml
@@ -135,4 +141,43 @@ return beside it; see [the returns](openelections-ohio.md).
 **What it does not carry.** No prior holders, so it dates the current term and not the beginning of
 service — [the sheriff](../corpus/office/allen-county-sheriff.yml) has held office since 2017 and
 appears here with a term beginning in 2025. Both are true and they answer different questions. It
-gives no biography, no age, no district, and nothing about appointed officials.
+gives no biography, no age, no district, and nothing about appointed officials — meaning offices
+that are filled by appointment rather than election, of which this county has many and this roster
+none. That is a different thing from an *elective* office whose sitting holder arrived by
+appointment, and the roster is explicit about those; see below.
+
+## What one precinct page is, and what it is not
+
+**The URL is keyed to a precinct, and the earlier reading of this source did not know that.** The
+page named above is the ballot of one precinct: it lists the offices the voters of that precinct
+choose, and no others. Precinct 0004 votes for the President, the county offices, the Delphos city
+offices, the Marion Township offices and the Delphos school board — forty-four offices out of the
+hundred and one this county holds. Everything the first reading concluded from it was true, and it
+was a quarter of the roster.
+
+**The whole roster is the union of eighty-eight pages.** Retrieved by walking `prsid` from `0001`
+to `0092`; the first eighty-eight carry offices and the last four return an empty page, which is
+how the precinct count was established rather than assumed. Deduplicating on the office name and
+the hidden `hid_office` code the page carries gives:
+
+      class of government          offices  seats  held  vacant  appointed
+      townships                         24     48    48       0          1
+      villages                          15     52    47       5         25
+      cities (Lima, Delphos)            13     21    21       0          6
+      school boards and the ESC         10     50    50       0          7
+      county offices and courts         21     22    22       0          0
+      state and federal                 18     25    23       2          1
+      ---------------------------------------------------------------------
+      total                            101    218   211       7         40
+
+**It marks how a sitting officer arrived.** A holder who was appointed to fill a vacancy carries
+`*Appointed*` beside the name, and forty of the two hundred and eleven seated officers do.
+[verified] It also prints unfilled seats in the holder's place, as `1 Vacant Seat` or `2 Vacant
+Seats` with the term the seat would run — so a seat nobody holds is a row and not an absence, which
+is the only reason the vacancies above can be counted at all.
+
+**Two things in it are wrong on their face and are recorded rather than repaired.** Delphos's
+president of council is given a term commencing `1/1/2204`, and five holders — an Amanda trustee, a
+Monroe trustee, the Bath and Perry fiscal officers and one Supreme Court justice — are given
+`Commences: n/a` against a real expiry. [verified] The corpus quotes the expiry and says the start
+is not given, rather than inferring it from the office's usual term.

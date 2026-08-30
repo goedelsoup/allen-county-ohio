@@ -49,6 +49,20 @@ fn main() {
         std::process::exit(1);
     }
 
+    // Non-fatal, and printed in both modes. A block that pairs a verified fact with an open
+    // one publishes neither, and nothing about it looks wrong from inside the repository.
+    let withheld = publish::withheld(&nodes);
+    if !withheld.is_empty() {
+        eprintln!(
+            "{} block(s) hold a publishable claim beside an [open] one, so neither leaves:",
+            withheld.len()
+        );
+        for w in &withheld {
+            eprintln!("  {w}");
+        }
+        eprintln!();
+    }
+
     if check {
         let mut stale = Vec::new();
         for f in &files {
