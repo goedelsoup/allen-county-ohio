@@ -1,25 +1,32 @@
 class: office
 label: Mayor of Lima
 description: |
-  The elected chief executive of the [City of Lima](../jurisdiction/city-of-lima.yml).
-  [inference]
+  The elected chief executive of the [City of Lima](../jurisdiction/city-of-lima.yml), a single
+  seat filled at a citywide election for a four-year term. [verified] —
+  [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md).
 
-  Like the sheriff, it is a single-seat office and has no recorded holders. It is seeded
-  because an office node is meaningful without its tenures — it records that the position
-  exists, on what terms, and within which jurisdiction — while a tenure node without an office
-  would have nothing to attach to. Seeding offices and leaving tenures empty is the right way
-  round for a corpus that has the institutional structure and not yet the officeholders.
+  It was seeded with no holders, on the reasoning that an office node is meaningful without its
+  tenures — it records that the position exists, on what terms, and within which jurisdiction —
+  while a tenure without an office would have nothing to attach to. It stayed empty for a hundred
+  commits, and not because the source was missing: the roster names this mayor, and the corpus had
+  read one precinct's page of it. **It now has a holder**, and that holder is
+  [Sharetta T. Smith](../tenure/mayor-2025-sharetta-t-smith.yml), 2025 to 2029. [verified]
 
   [open] Whether Lima operates under a home-rule charter, and what that makes of the mayor's
   powers and term, is unverified. Ohio municipalities may adopt charters that alter the
-  statutory form of government substantially.
+  statutory form of government substantially. The term dates are now evidence and not an answer:
+  this office's year begins 1 December, the city council's on 2 and 5 January, and every office of
+  Delphos on 1 January. [verified] — same source. One city on three calendars is what a charter
+  looks like from outside it. [inference]
 properties:
   office_type: elected
   selection_method: citywide election
+  term_length: four years
   seats: "1"
 links:
   - target: ../jurisdiction/city-of-lima.yml
     relationship: established-within
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
   - target: ../office.ont.yml
     relationship: instance-of
