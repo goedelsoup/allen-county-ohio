@@ -99,22 +99,55 @@ const REFUSALS: [&str; 12] = [
     "not a proof of",
 ];
 
+/// Abbreviations whose period is not a sentence end.
+///
+/// Narrow on purpose, like `REFUSALS`. Without this a refusal that names St. Rita's is quoted
+/// from the middle of the markdown link — `Rita's](mercy-health-st-ritas-medical-center.yml),
+/// or of neither, the corpus does not know.` — which is what the public page rendered before
+/// this list existed.
+const ABBREVIATIONS: [&str; 7] = ["St.", "Mr.", "Mrs.", "Ms.", "Dr.", "Jr.", "Sr."];
+
+/// The index just after the last real sentence end before `at`, or the start of the block.
+///
+/// The block start is the right fallback and a line break is not. Node prose is hard-wrapped
+/// at about 95 columns — that is why `normalize` exists — so treating `\n` as a boundary
+/// truncated every refusal whose sentence ran past one wrap. The rule this corpus wrote down
+/// was "a refusal must start its own block"; the rule the code enforced was "…and fit on one
+/// line", and nothing said so.
+fn sentence_start(text: &str, at: usize) -> usize {
+    let mut head = &text[..at];
+    while let Some(i) = head.rfind(". ") {
+        if !ABBREVIATIONS.iter().any(|a| head[..=i].ends_with(a)) {
+            return i + 2;
+        }
+        head = &head[..i];
+    }
+    0
+}
+
+/// The index just after the first real sentence end at or after `at`, or the end of the block.
+fn sentence_end(text: &str, at: usize) -> usize {
+    let mut from = at;
+    while let Some(i) = text[from..].find(". ") {
+        let period = from + i;
+        if !ABBREVIATIONS.iter().any(|a| text[..=period].ends_with(a)) {
+            return period + 1;
+        }
+        from = period + 2;
+    }
+    text.len()
+}
+
 /// The first refusing sentence in `text`, verbatim, if there is one.
 fn refusal(text: &str) -> Option<String> {
     let lower = text.to_lowercase();
     let at = REFUSALS.iter().filter_map(|p| lower.find(p)).min()?;
 
     // Widen the hit to the sentence around it, so the reader gets the refusal and not a
-    // fragment. Sentence ends are approximated by `. ` — good enough for prose that has
-    // already been cut into paragraphs, and erring long is the safe direction here.
-    let start = text[..at]
-        .rfind(". ")
-        .map(|i| i + 2)
-        .unwrap_or_else(|| text[..at].rfind('\n').map(|i| i + 1).unwrap_or(0));
-    let end = text[at..]
-        .find(". ")
-        .map(|i| at + i + 1)
-        .unwrap_or(text.len());
+    // fragment. Sentence ends are approximated by `. ` outside a short abbreviation list —
+    // good enough for prose already cut into paragraphs, and erring long is the safe direction.
+    let start = sentence_start(text, at);
+    let end = sentence_end(text, at);
 
     // Claim markers are annotation, not prose. A refusal quoted with a stray `[verified]`
     // in front of it reads as though the tag belonged to the refusal.
@@ -199,6 +232,33 @@ mod tests {
         );
         let r = b[0].refusal.as_deref().expect("refusal found");
         assert_eq!(r, "It does not establish that 1970 is the start.");
+    }
+
+    #[test]
+    fn a_refusal_that_runs_past_a_line_wrap_is_quoted_whole() {
+        // The defect this test is named for shipped to the public site. Node prose is wrapped
+        // at about 95 columns, and the widener treated a wrap as a sentence boundary, so a
+        // refusal in a block's first sentence was published from the second line onward.
+        let text = "Whether a quarter of this hospital's workforce left the county or moved\n\
+                    to another employer inside the same system, the corpus cannot say. A renaming \
+                    that coincides is as good an explanation. [open]";
+        let b = blocks(text);
+        let r = b[0].refusal.as_deref().expect("refusal found");
+        assert!(r.starts_with("Whether a quarter"), "quoted from the wrong place: {r}");
+        assert!(r.ends_with("the corpus cannot say."), "quoted to the wrong place: {r}");
+    }
+
+    #[test]
+    fn an_abbreviation_is_not_a_sentence_end() {
+        // Also shipped: `Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the
+        // corpus does not know.` — a refusal quoted from inside a markdown link, because the
+        // period in "St." looked like the end of the previous sentence.
+        let text = "Whether that society is an ancestor of this hospital, of \
+                    [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the \
+                    corpus does not know. [open]";
+        let b = blocks(text);
+        let r = b[0].refusal.as_deref().expect("refusal found");
+        assert!(r.starts_with("Whether that society"), "quoted from the wrong place: {r}");
     }
 
     #[test]
