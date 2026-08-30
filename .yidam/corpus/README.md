@@ -74,11 +74,13 @@ Sorted by: kind, then alphabetically.
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 4v / 0i / 1o | 37 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 2v / 3i / 1o | 55 |
+| [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 5v / 2i / 1o | 57 |
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 7v / 1i / 2o | 61 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
+| [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 5v / 3i / 1o | 58 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 3v / 9i / 1o | 103 |
@@ -138,7 +140,7 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 5v / 0i / 1o | 41 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 5v / 3i / 1o | 52 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 3v / 4i / 2o | 44 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 12 | 10v / 11i / 3o | 168 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 12 | 14v / 11i / 3o | 196 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 5v / 7i / 2o | 63 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
