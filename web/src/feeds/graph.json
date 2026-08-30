@@ -1663,7 +1663,7 @@
         }
       ],
       "refusals": [
-        "Until then this corpus can say how many units there are and how many people, and cannot say how many are lived in — which matters for a county whose [population has been falling for fifty years](../period/deindustrialization.yml)."
+        "Until then this corpus can say how many units there are and how many people, and cannot say how many are lived in — which matters for a county whose [population has been falling for fifty years](../period/depopulation.yml)."
       ],
       "withheld": 1
     },
@@ -1858,7 +1858,7 @@
           "tier": "inference"
         },
         {
-          "text": "**This answers a question [deindustrialization](../period/deindustrialization.yml) left open.** That node said the ring around Lima grew while the city emptied, and that \"when the ring turned is not established here\". **It turned between 2000 and 2010.** The county outside Lima grew at every census from 1910 to 2000 except one, and has fallen at the two since. It fell once before that too, between 1900 and 1910. [inference]",
+          "text": "**This answers a question [depopulation](../period/depopulation.yml) left open.** That node said the ring around Lima grew while the city emptied, and that \"when the ring turned is not established here\". **It turned between 2000 and 2010.** The county outside Lima grew at every census from 1910 to 2000 except one, and has fallen at the two since. It fell once before that too, between 1900 and 1910. [inference]",
           "tier": "inference"
         },
         {
@@ -1928,7 +1928,7 @@
           "tier": "verified"
         },
         {
-          "text": "**The county's peak is 1980, not 1970, and the corpus has been saying 1970 since genesis.** 112,241 against 111,144 — a rise of 1,097 across the decade the corpus described as the start of a decline. [verified] — same source. Every figure this corpus held began at 1970 or later, so the sentence \"no reversal at any measured point\" in [deindustrialization](../period/deindustrialization.yml) was true of the data and false of the county. See [that node](../period/deindustrialization.yml), which now says so.",
+          "text": "**The county's peak is 1980, not 1970, and the corpus has been saying 1970 since genesis.** 112,241 against 111,144 — a rise of 1,097 across the decade the corpus described as the start of a decline. [verified] — same source. Every figure this corpus held began at 1970 or later, so the sentence \"no reversal at any measured point\" in [depopulation](../period/depopulation.yml) was true of the data and false of the county. See [that node](../period/depopulation.yml), which now says so.",
           "tier": "verified"
         },
         {
@@ -1969,7 +1969,7 @@
           "tier": "verified"
         },
         {
-          "text": "This is the earliest population figure in the corpus and the anchor the [deindustrialization](../period/deindustrialization.yml) claim rests on. Against the [2024 estimate](allen-county-population-2024.yml) of 100,866 the county has lost 10,278 people, or 9.2%, over 54 years. [inference] — arithmetic this corpus's; both figures verified.",
+          "text": "This is the earliest population figure in the corpus and the anchor the [depopulation](../period/depopulation.yml) claim rests on. Against the [2024 estimate](allen-county-population-2024.yml) of 100,866 the county has lost 10,278 people, or 9.2%, over 54 years. [inference] — arithmetic this corpus's; both figures verified.",
           "tier": "inference"
         }
       ],
@@ -2663,7 +2663,7 @@
           "tier": "inference"
         },
         {
-          "text": "The longer window is the one that carries weight. Against the [2000 base](lima-population-2000.yml) of 40,307, Lima has lost 5,617 people or 13.9% over 24 years, while the county lost 7.0% over the same span. [inference] When this node was written the corpus held only a four-year window and said so; the 2000 and 2010 figures have since been extracted and [deindustrialization](../period/deindustrialization.yml) now rests on them rather than on this comparison. This figure describes the **corporation's territory**, not the settlement in the ordinary sense: the Census Bureau tabulates Lima at the corporate boundary of the date, so what the number counts is whatever ground the [City of Lima](../jurisdiction/city-of-lima.yml) had annexed by then. [inference] The node therefore carries a `describes` edge to the jurisdiction as well as to the place. Both are true and they are not the same claim — the place is what the name denotes, and the jurisdiction is what the boundary encloses.",
+          "text": "The longer window is the one that carries weight. Against the [2000 base](lima-population-2000.yml) of 40,307, Lima has lost 5,617 people or 13.9% over 24 years, while the county lost 7.0% over the same span. [inference] When this node was written the corpus held only a four-year window and said so; the 2000 and 2010 figures have since been extracted and [depopulation](../period/depopulation.yml) now rests on them rather than on this comparison. This figure describes the **corporation's territory**, not the settlement in the ordinary sense: the Census Bureau tabulates Lima at the corporate boundary of the date, so what the number counts is whatever ground the [City of Lima](../jurisdiction/city-of-lima.yml) had annexed by then. [inference] The node therefore carries a `describes` edge to the jurisdiction as well as to the place. Both are true and they are not the same claim — the place is what the name denotes, and the jurisdiction is what the boundary encloses.",
           "tier": "inference"
         }
       ],
@@ -3602,16 +3602,67 @@
     {
       "id": "period/deindustrialization.yml",
       "class": "period",
-      "label": "Deindustrialization",
+      "label": "Deindustrialization in Allen County",
       "tier": "inference",
       "properties": {
-        "began": "1970",
-        "character": "Contraction of manufacturing employment and sustained population loss concentrated in the county seat. Both halves are now verified, and they came apart around 2010: manufacturing has risen since its trough while the population has not. [verified]"
+        "began": "1979",
+        "boundary_basis": "The start is the last year manufacturing employment stood within one per cent of its all-time peak — 18,389 in 1979 against 18,400 in 1973 — after which the series never returns to that level. [verified] The peak years 1973, 1974 and 1979 are all within one per cent of each other, so the plateau rather than the peak fixes the start. The end is the trough, 7,775 in 2009, with thirteen subsequent years all higher. [verified] Both bounds are computed from one series and would move if a second series with a different frame were preferred; County Business Patterns puts the trough one year later, in 2010. [inference]",
+        "character": "Contraction of manufacturing employment across the county, from a plateau at the 1973 peak to a trough in 2009, with a recession trough and recovery in the middle of it. It is not a period of falling employment generally: the county's total jobs rose through the first twenty-one years of it. [verified]",
+        "ended": "2009"
       },
       "blocks": [
         {
-          "text": "The span from roughly 1970 in which the county's manufacturing employment contracted and [Lima](../place/lima.yml) entered the sustained population decline it is still in. [inference]",
+          "text": "The span in which Allen County's manufacturing employment fell from a peak of 18,400 to a trough of 7,775 — fifty-eight per cent, across thirty years. [verified] — [the employment series](../measure/allen-county-manufacturing-employment-1969-2022.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The refusal that stood on this node from genesis is answered.** It said the corpus established nothing about manufacturing employment inside this period — first in the form \"does not measure it at all\", then narrowed to \"inside this period\" when the 1909 figures arrived. The corpus now holds fifty-four years of it: **Allen County manufacturing employment fell from a peak of 18,400 in 1973 to 7,775 in 2009, a fall of 58 per cent.** [verified] — [the long series](../measure/allen-county-manufacturing-employment-1969-2022.yml), corroborated in shape by [County Business Patterns](../measure/allen-county-manufacturing-employment-1986-2022.yml). The period's named mechanism is measured, and it happened.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What happened after the trough is why this period can be closed.** Manufacturing employment rose to 8,917 in 2020 and stood at 8,573 in 2022 on the County Business Patterns count, up a fifth from its bottom. Private employment fell 3,709 between 2010 and 2022 while manufacturing rose 1,446, so the losses of those twelve years were entirely outside manufacturing — the largest of them in health care, which fell from 11,744 to 9,151. [verified] — [County Business Patterns](../measure/allen-county-manufacturing-employment-1986-2022.yml) and [the sector composition](../measure/allen-county-employment-by-sector-1986-2022.yml). Whatever has been emptying this county since 2010, it is not its factories. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "It does not establish that the county's population decline was caused by its manufacturing decline. That was unlicensed while manufacturing employment was unmeasured, and it is now contradicted for the recent past: between 2010 and 2022 the county's private employment fell by 3,709 while its manufacturing employment *rose* by 1,446. [verified] — [the series](../measure/allen-county-manufacturing-employment-1986-2022.yml). For the last twelve years of this period the proposed cause moves opposite to the effect.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The years this node called open one phase ago are measured, and they do not contain a decline.** Allen County manufacturing employment was 17,623 in 1969, rose to a peak of **18,400 in 1973**, and stood at 18,389 as late as 1979. [verified] — [the long series](../measure/allen-county-manufacturing-employment-1969-2022.yml). The county's factories were still adding workers through the decade this period says the decline began in.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That is why this period no longer starts in 1970.** The old start was fixed from population and applied to manufacturing, and manufacturing did not turn until 1973 at the earliest and did not fall durably until after 1979. [verified] — same source. The node now begins at 1979, the last year within one per cent of the peak, and the population start it used to carry has gone with the population to [depopulation](depopulation.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The order is the part that matters.** [Lima](../place/lima.yml) peaked in 1970. Manufacturing peaked in 1973 and held near its peak until 1979. The county peaked in 1980. Employment of every kind peaked in 2000. [verified] — the long series, [total employment](../measure/allen-county-total-employment-1969-2022.yml) and the county's own population series. The city began emptying while the factories were still filling. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "It does not establish that the county's population decline was caused by its manufacturing decline."
+      ],
+      "withheld": 4
+    },
+    {
+      "id": "period/depopulation.yml",
+      "class": "period",
+      "label": "The depopulation of Lima and Allen County",
+      "tier": "inference",
+      "properties": {
+        "began": "1970",
+        "boundary_basis": "The start is measured on both subjects and they differ by ten years. Lima peaked at 53,734 in 1970 with twelve rising counts behind it; the county peaked at 112,241 in 1980 with fifteen. [verified] 1970 is taken as the period's start because it is the earlier of the two and because the city is where the loss is concentrated. [inference] No end: every measure the corpus holds through 2024 continues it.",
+        "character": "Sustained population loss, beginning in the county seat and reaching the county a decade later, and continuing after the manufacturing contraction that is usually named as its cause had ended. [verified]"
+      },
+      "blocks": [
+        {
+          "text": "The span from 1970 in which [Lima](../place/lima.yml) lost a third of its people and the county, from 1980, lost a tenth of its own. It continues. [verified] — [the county series](../place/allen-county.yml) and the measures below.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This node exists because a period was doing two jobs.** Until this phase the corpus held one period, [deindustrialization](deindustrialization.yml), covering both the county's manufacturing contraction and its population loss, on one start date of \"roughly 1970\". The two are now measured separately and they are not the same span: manufacturing peaked in 1973, fell from 1979 and bottomed in 2009, where the population turned in 1970 for the city and 1980 for the county and has not stopped. [verified] — [the employment series](../measure/allen-county-manufacturing-employment-1969-2022.yml). One process has ended and one has not. See [one period was doing two jobs](../../decisions/one-period-was-doing-two-jobs.yml).",
+          "tier": "verified"
         },
         {
           "text": "**There was a reversal, and this node said there was none.** Between 1970 and 1980 the county *grew*, from 111,144 to **112,241** — its highest count ever — before falling to 109,755 in 1990 and 108,464 in 2000. [verified] — [1990 Census, Population and Housing Unit Counts, Ohio](../../catalog/census-cph-2-37-ohio.md), Table 3. This node has said since genesis that there was \"no reversal at any measured point\", and that was true of the corpus's data and false of the county: every figure it held began at 1970 or later, so the one decade that rose was the one decade outside the window. **The county's peak is 1980.** See [the 1940–1990 series](../measure/allen-county-population-1940-1990.yml).",
@@ -3654,48 +3705,24 @@
           "tier": "verified"
         },
         {
-          "text": "**The corpus measures manufacturing employment at last, and not in this period.** Lima had 1,980 manufacturing wage earners in 1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments. [verified] — [Lima manufactures](../measure/lima-manufactures-1899-1909.yml). That is the first measurement of work this corpus has ever held, and it is a picture of the industrial city sixty years before this period says it began to come apart: a workforce that grew 82 per cent in a decade, in a city that grew 40. [inference]",
-          "tier": "inference"
-        },
-        {
-          "text": "**The refusal that stood on this node from genesis is answered.** It said the corpus established nothing about manufacturing employment inside this period — first in the form \"does not measure it at all\", then narrowed to \"inside this period\" when the 1909 figures arrived. The corpus now holds fifty-four years of it: **Allen County manufacturing employment fell from a peak of 18,400 in 1973 to 7,775 in 2009, a fall of 58 per cent.** [verified] — [the long series](../measure/allen-county-manufacturing-employment-1969-2022.yml), corroborated in shape by [County Business Patterns](../measure/allen-county-manufacturing-employment-1986-2022.yml). The period's named mechanism is measured, and it happened.",
-          "tier": "verified"
-        },
-        {
-          "text": "**And the period's named mechanism stopped around 2010, while the county kept shrinking.** Manufacturing employment rose from that trough to 8,917 in 2020 and stood at 8,573 in 2022, up a fifth. Private employment fell 3,709 between 2010 and 2022 while manufacturing rose 1,446, so the losses of the last twelve years were entirely outside manufacturing — the largest of them in health care, which fell from 11,744 to 9,151. [verified] — same source and [the sector composition](../measure/allen-county-employment-by-sector-1986-2022.yml). [inference] A period named for a mechanism that ceased operating a decade and a half ago has an end bound problem it did not have when the mechanism was merely unmeasured.",
-          "tier": "inference"
-        },
-        {
-          "text": "It does not establish that the county's population decline was caused by its manufacturing decline. That was unlicensed while manufacturing employment was unmeasured, and it is now contradicted for the recent past: between 2010 and 2022 the county's private employment fell by 3,709 while its manufacturing employment *rose* by 1,446. [verified] — [the series](../measure/allen-county-manufacturing-employment-1986-2022.yml). For the last twelve years of this period the proposed cause moves opposite to the effect.",
-          "tier": "verified"
-        },
-        {
-          "text": "**The years this node called open one phase ago are measured, and they do not contain a decline.** Allen County manufacturing employment was 17,623 in 1969, rose to a peak of **18,400 in 1973**, and stood at 18,389 as late as 1979. [verified] — [the long series](../measure/allen-county-manufacturing-employment-1969-2022.yml). The county's factories were still adding workers through the decade this period says the decline began in.",
-          "tier": "verified"
-        },
-        {
-          "text": "**So this period's start bound is wrong for the mechanism it is named after.** The name says manufacturing; manufacturing turned in 1973 at the earliest and did not fall durably until after 1979, with the sustained slide running from 1987. [verified] — same source. The start of \"roughly 1970\" was fixed from population, and the population turn and the manufacturing turn are not the same event. [inference]",
-          "tier": "inference"
-        },
-        {
-          "text": "**The order is the part that matters.** [Lima](../place/lima.yml) peaked in 1970. Manufacturing peaked in 1973 and held near its peak until 1979. The county peaked in 1980. Employment of every kind peaked in 2000. [verified] — the long series, [total employment](../measure/allen-county-total-employment-1969-2022.yml) and the county's own population series. The city began emptying while the factories were still filling. [inference]",
-          "tier": "inference"
-        },
-        {
           "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
           "tier": "verified"
         },
         {
           "text": "**The decline is broad and uneven.** Between the 2020 estimates base and 2024, eleven of the county's thirteen civil subdivisions lost population. Lima lost most in absolute terms — 841 of a county loss of 1,351 — and the only two that grew were Auglaize township, by 55, and Marion township, by 102, at the county's south-eastern and Delphos ends. [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md), sub-county file. So this is not a city emptying into its own suburbs: the suburban ring is shrinking too, slower. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "It does not establish that the county's population decline was caused by its manufacturing decline. The two spans overlap and do not coincide — the city began emptying three years before manufacturing peaked, and manufacturing has risen since 2009 while the population has not. [verified] — [the employment series](../measure/allen-county-manufacturing-employment-1969-2022.yml). A population series cannot establish a cause however many other series sit beside it, and that was true before this corpus had the other series. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
-        "It does not establish that the county's population decline was caused by its manufacturing decline.",
         "It does not establish that either mechanism reaches back before 2020.",
-        "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
+        "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage.",
+        "It does not establish that the county's population decline was caused by its manufacturing decline."
       ],
-      "withheld": 4
+      "withheld": 3
     },
     {
       "id": "period/lima-oil-boom.yml",
@@ -5935,7 +5962,7 @@
           "tier": "verified"
         },
         {
-          "text": "Between 2016 and 2020 its 23 precincts moved toward the Republicans by a mean of **3.2 points** while the county's other 65 moved 1.6 — the city drifting right about twice as fast as the ground around it, from a much more Democratic starting point. [verified] — same source, computed across three general elections. So the county's political division is narrowing from the city's side, which is the opposite of the direction its [population decline](../period/deindustrialization.yml) runs.",
+          "text": "Between 2016 and 2020 its 23 precincts moved toward the Republicans by a mean of **3.2 points** while the county's other 65 moved 1.6 — the city drifting right about twice as fast as the ground around it, from a much more Democratic starting point. [verified] — same source, computed across three general elections. So the county's political division is narrowing from the city's side, which is the opposite of the direction its [population decline](../period/depopulation.yml) runs.",
           "tier": "verified"
         },
         {
@@ -6409,7 +6436,7 @@
           "tier": "inference"
         },
         {
-          "text": "**The county's 1900–1960 series** would show whether 1970 was the peak or merely a late point on a plateau. The corpus asserted a decline *from* 1970 because 1970 was the earliest figure it had, which was a fact about the sources retrieved and not about the county. If the county was already falling before 1970, or still rising, the [deindustrialization](../period/deindustrialization.yml) node's start date was wrong. It was wrong, in the third of the three ways: the county was still rising. [inference]",
+          "text": "**The county's 1900–1960 series** would show whether 1970 was the peak or merely a late point on a plateau. The corpus asserted a decline *from* 1970 because 1970 was the earliest figure it had, which was a fact about the sources retrieved and not about the county. If the county was already falling before 1970, or still rising, the [depopulation](../period/depopulation.yml) node's start date was wrong. It was wrong, in the third of the three ways: the county was still rising. [inference]",
           "tier": "inference"
         },
         {
@@ -9369,73 +9396,31 @@
     },
     {
       "from": "period/deindustrialization.yml",
-      "to": "place/lima.yml",
-      "relationship": "concentrated-in",
-      "tier": "inference",
-      "source": null
+      "to": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/bea-county-employment.md"
     },
     {
       "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-population-1970.yml",
+      "to": "measure/allen-county-manufacturing-employment-1986-2022.yml",
       "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/census-county-business-patterns.md"
     },
     {
       "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-population-2000.yml",
+      "to": "measure/allen-county-employment-by-sector-1986-2022.yml",
       "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/census-county-business-patterns.md"
     },
     {
       "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-population-2010.yml",
+      "to": "measure/allen-county-total-employment-1969-2022.yml",
       "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
-    },
-    {
-      "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-population-2020.yml",
-      "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
-    },
-    {
-      "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-population-2024.yml",
-      "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
-    },
-    {
-      "from": "period/deindustrialization.yml",
-      "to": "measure/lima-population-2000.yml",
-      "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
-    },
-    {
-      "from": "period/deindustrialization.yml",
-      "to": "measure/lima-population-2010.yml",
-      "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
-    },
-    {
-      "from": "period/deindustrialization.yml",
-      "to": "measure/lima-population-1850-1960.yml",
-      "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
-    },
-    {
-      "from": "period/deindustrialization.yml",
-      "to": "measure/allen-county-outside-lima-1890-2020.yml",
-      "relationship": "evidenced-by",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/bea-county-employment.md"
     },
     {
       "from": "period/deindustrialization.yml",
@@ -9445,8 +9430,92 @@
       "source": null
     },
     {
+      "from": "period/depopulation.yml",
+      "to": "place/lima.yml",
+      "relationship": "concentrated-in",
+      "tier": "verified",
+      "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "period/deindustrialization.yml",
+      "relationship": "precedes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-population-1970.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-population-2000.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-population-2010.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-population-2020.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-population-2024.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/lima-population-2000.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/lima-population-2010.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/lima-population-1850-1960.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/depopulation.yml",
+      "to": "measure/allen-county-outside-lima-1890-2020.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "period/lima-oil-boom.yml",
       "to": "period/deindustrialization.yml",
+      "relationship": "precedes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/lima-oil-boom.yml",
+      "to": "period/depopulation.yml",
       "relationship": "precedes",
       "tier": "inference",
       "source": null

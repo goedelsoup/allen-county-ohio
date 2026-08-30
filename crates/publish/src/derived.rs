@@ -101,11 +101,11 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "**The county's peak is 1980, not 1970, and the corpus has been saying 1970 since genesis.**"
             ),
             support!(
-                "period/deindustrialization.yml",
+                "period/depopulation.yml",
                 "Between 1970 and 1980 the county *grew*, from 111,144 to **112,241** — its highest count ever — before falling to 109,755 in 1990 and 108,464 in 2000"
             ),
             support!(
-                "period/deindustrialization.yml",
+                "period/depopulation.yml",
                 "a loss of 10,278 people, or 9.2%, across five decades: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)"
             ),
         ],
@@ -132,7 +132,7 @@ pub const ASSERTIONS: &[Assertion] = &[
                     per cent while the rest of the county fell 1.5 per cent.",
         topic: "population",
         supports: &[support!(
-            "period/deindustrialization.yml",
+            "period/depopulation.yml",
             "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048"
         )],
         answers: &[
@@ -151,7 +151,7 @@ pub const ASSERTIONS: &[Assertion] = &[
                     subdivisions lost population between 2020 and 2024.",
         topic: "population",
         supports: &[support!(
-            "period/deindustrialization.yml",
+            "period/depopulation.yml",
             "eleven of the county's thirteen civil subdivisions lost population"
         )],
         answers: &[
