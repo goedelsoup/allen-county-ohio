@@ -1,8 +1,8 @@
 id: pin-the-tripwire-to-what-retrieval-cannot-answer
 summary: >-
   Two tests exist to fail if `deindustrialization` ever loses its refusal. Both have now been
-  repointed twice in four phases, because both times the refusal they guarded was about where the
-  corpus's data began — and retrieval answered it. A tripwire aimed at a retrievable gap is a chore
+  repointed in two consecutive phases, because both times the refusal they guarded was about where
+  the corpus's data began — and retrieval answered it. A tripwire aimed at a retrievable gap is a chore
   with a half-life. It is now aimed at the refusal no retrieval can answer.
 context: |
   `crates/publish/tests/corpus.rs` and `web/test/feeds.test.ts` each assert that a particular
@@ -17,8 +17,9 @@ context: |
     "Lima peaked in 1970 rather than earlier"               answered by the 1960 Census volume
 
   Both were true when written and both were about the same thing: the corpus's window began at its
-  own first observation. Both were retired by going and getting the earlier observations, four
-  phases apart, and each retirement required rewriting two tests.
+  own first observation. The first pin stood from the gate's first commit until the phase before
+  this one; the second stood for exactly one phase. Both were retired by going and getting the
+  earlier observations, and each retirement required rewriting two tests.
 decision: |
   **Pin the tripwire to the refusal that retrieval cannot answer.**
 
