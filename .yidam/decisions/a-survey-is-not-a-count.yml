@@ -1,0 +1,60 @@
+id: a-survey-is-not-a-count
+summary: >-
+  Every source in this corpus until now has been a count or a filing — a census, a payroll, a
+  cost report, an election return. The American Community Survey is a sample, and it publishes how
+  wrong it might be. Allen County's median household income is $62,001 ± $2,572, and the first
+  claim the corpus tried to write with it was one the margins do not support.
+context: |
+  The interval is not decoration. It varies by three orders of magnitude across one table:
+
+      United States      78,538  ±    176        0.2 per cent
+      Ohio               69,680  ±    287        0.4
+      Allen County       62,001  ±  2,572        4.1
+      Lima               43,370  ±  2,298        5.3
+      Shawnee Township   91,134  ±  5,929        6.5
+      Perry Township     53,272  ± 10,902       20.5
+      Amanda Township    99,148  ± 20,903       21.1
+
+  A five-year survey of 1,823 people in Amanda Township cannot say much narrowly, and the file says
+  so in the next column. Nothing else this corpus holds has that column: the decennial census
+  enumerates, County Business Patterns is a business register, the sheriff's roster is a list of
+  people who held an office.
+
+  **The first claim written from it was wrong and the margins caught it.** The draft said Lima has
+  the lowest household income in the county. It has the lowest *figure* — but Perry Township's is
+  higher by $9,902 against a combined margin of $11,142, so the two cannot be ordered. The claim
+  that survives is the one about distance: Lima against Shawnee Township is $47,764 against a
+  combined margin of $6,359, which is seven and a half times the margin and is not in doubt.
+decision: |
+  **Where a source publishes a margin, the node carries it, and no ordering or difference is
+  asserted whose gap is inside the combined margin.**
+
+  Combined margin is the root of the sum of squares, stated in the `method` block that uses it. A
+  comparison that fails the test is not softened to `[inference]` — an inference is a claim the
+  corpus is making, and this is a claim the evidence declines to support. It goes in the node as a
+  refusal, in the same voice as any other thing this corpus will not say.
+
+  Two are recorded that way already: Lima against Perry Township on income, and Allen County against
+  Ohio on poverty — 13.1 per cent against 13.2, on a combined margin of 1.2 points.
+rationale: |
+  **Third of three consecutive phases in which a source was not the thing it looked like, and this
+  one is the source's own doing.** In [a sample is not a series](a-sample-is-not-a-series.yml) the
+  corpus took four years from a file that published thirteen: our error, in what we fetched. In
+  [a register is not a census](a-register-is-not-a-census.yml) the file accumulated facilities and
+  never dated its attributes: the file's error, undeclared. Here the file declares its own
+  uncertainty in a column beside every figure, and the only way to get it wrong is to drop the
+  column. Not fetched, not undeclared — discarded.
+
+  **Why this is not just "report the error bars".** The corpus's whole apparatus is built on a
+  binary: a claim is `[verified]` when a source supports it. A survey makes that binary
+  insufficient, because the same file supports "Lima's median household income is about $43,000"
+  and refuses "Lima is the poorest subdivision in the county", and both are read off the same two
+  rows. The tag stays; what changes is that a comparison is now a separate claim from the figures
+  it compares, and has to clear its own bar.
+
+  **What it costs.** Real findings, and it should. The county has thirteen subdivisions and the
+  interesting ones are small, so most rankings among them are unavailable and most of the gradient
+  is not. What survives is the part that is enormous: a city at 48 per cent of the township beside
+  it, holding a third of the county's people and two thirds of its poor.
+status: accepted
+date: "2026-08-30"
