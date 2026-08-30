@@ -20,7 +20,7 @@ used-by:
   - ../corpus/measure/allen-county-population-2010.yml
   - ../corpus/measure/lima-population-2000.yml
   - ../corpus/measure/lima-population-2010.yml
-  - ../corpus/period/deindustrialization.yml
+  - ../corpus/period/depopulation.yml
   - ../corpus/place/fort-shawnee.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml

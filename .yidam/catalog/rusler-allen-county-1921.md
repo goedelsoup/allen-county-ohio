@@ -22,7 +22,7 @@ used-by:
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
-  - ../corpus/period/deindustrialization.yml
+  - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/james-a-hover.yml
   - ../corpus/place/american-township.yml

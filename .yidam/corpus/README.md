@@ -142,8 +142,9 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 5v / 0i / 1o | 41 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 5v / 3i / 1o | 52 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 3v / 4i / 2o | 44 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization | 12 | 18v / 13i / 3o | 215 |
-| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 2 | 5v / 7i / 2o | 63 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 6i / 2o | 111 |
+| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 12 | 14v / 10i / 1o | 177 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 5v / 7i / 2o | 66 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 6v / 3i / 2o | 61 |

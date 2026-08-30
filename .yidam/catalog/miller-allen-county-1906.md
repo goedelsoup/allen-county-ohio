@@ -26,7 +26,7 @@ used-by:
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
-  - ../corpus/period/deindustrialization.yml
+  - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
   - ../corpus/question/pre-1970-population-series.yml
