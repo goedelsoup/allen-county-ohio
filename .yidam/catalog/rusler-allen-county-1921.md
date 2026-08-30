@@ -18,6 +18,7 @@ location:
 used-by:
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
@@ -77,3 +78,17 @@ Buckeye Pipe Line and Manhattan Oil companies, and Standard Oil's cornering of t
 census figures for the county (68,203) and its townships; the electric railway; Rockport in Monroe
 Township, platted 1836 by Samuel Rockhill; West Cairo organized as a corporation on April 12, 1875;
 and Allentown's candidacy for the county seat in 1835.
+
+**One of its figures is wrong, and it is the one the corpus leaned on hardest.** Rusler gives Lima's
+1920 population as 41,306 in two separate chapters — once as "the 1920 Ottawa Township census report
+including Lima" and once in a list of the county's incorporated places. The Census Bureau gives
+**41,326**, and its table proves the value from both sides: 30,508 + 10,818 = 41,326 and
+41,326 + 961 = 42,287, all four numbers printed on the page. [verified] —
+[1960 Census, Number of Inhabitants, Ohio](census-1960-number-of-inhabitants-ohio.md), Table 5.
+
+The same passage of Rusler subtracts its own list of incorporated places from the county total and
+gets 17,180 where the list gives 18,180, so the arithmetic in that paragraph was not close-read by
+its author. What this does *not* license is discounting the volume: the corpus has taken twenty-odd
+claims from it and this is the first to fail a check. It is a reason to prefer the federal count for
+a federal count, which is a narrower conclusion than "Rusler is unreliable" and the only one the
+evidence supports.

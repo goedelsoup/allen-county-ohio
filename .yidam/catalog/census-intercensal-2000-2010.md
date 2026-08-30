@@ -15,6 +15,7 @@ location:
     value: https://www2.census.gov/programs-surveys/popest/datasets/2000-2010/intercensal/cities/sub-est00int.csv
     description: sub-county totals — places and minor civil divisions
 used-by:
+  - ../corpus/measure/allen-county-outside-lima-1940-2020.yml
   - ../corpus/measure/allen-county-population-2000.yml
   - ../corpus/measure/allen-county-population-2010.yml
   - ../corpus/measure/lima-population-2000.yml

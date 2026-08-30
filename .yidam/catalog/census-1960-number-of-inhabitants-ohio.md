@@ -17,6 +17,10 @@ location:
       rendered images. Table 5 begins on printed page 37-10; Lima is on 37-12.
 used-by:
   - ../corpus/measure/lima-population-1850-1960.yml
+  - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/measure/lima-population-1970-1990.yml
+  - ../corpus/period/deindustrialization.yml
+  - ../corpus/question/pre-1970-population-series.yml
 ---
 
 **What it settles.** [`pre-1970-population-series`](../corpus/question/pre-1970-population-series.yml)
