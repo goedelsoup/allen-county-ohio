@@ -18,7 +18,20 @@ edge_policy: characteristic
 # edges auditable is charged for it against a budget written to stop descriptions sprawling.
 # The budget is doing the wrong job here; raising it is the local fix and the finding is
 # recorded in `.yidam/decisions/upstream-findings.yml`.
-max_lines: 42
+#
+# Raised a third time, from 42, when a measure first described five *organizations* rather than
+# one place. `describes` takes place, jurisdiction, organization and division as targets, so a
+# figure about the county's five hospitals carries six of these edges and twenty-six lines of
+# links before a word of prose — against eight for a measure about one place. The fixed cost of
+# being auditable scales with how many subjects a node names, and the allowance does not.
+#
+# The honest reason for this particular number, though, is that 42 had stopped describing the
+# class. Eleven of the forty measures already exceeded it, two of them by more than double, and
+# `node-too-long` is a warning in a baseline nobody clears. 60 is set from the structural floor of
+# a six-edge measure, not from a belief that it will hold: eight instances still exceed it. A limit
+# that a quarter of a class violates is not a budget, and the fix is upstream — count the
+# `description` block, which is what the check is named for.  See Finding 4.
+max_lines: 60
 properties:
   - name: parameter
     type: string

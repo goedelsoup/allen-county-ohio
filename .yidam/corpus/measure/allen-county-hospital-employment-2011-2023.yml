@@ -1,0 +1,61 @@
+class: measure
+label: Allen County hospital employment, 2011–2023
+description: |
+  Full-time equivalents on payroll at each of the county's five hospitals. Thirteen fiscal years
+  were read, 2011 to 2023; four are shown and every figure below is computed from all thirteen.
+  [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md).
+
+      FY     St Rita's  Lima Mem'l   Institute  Bluffton   four filers │ Kindred
+      2011      2406.00     982.94      101.01    108.25      3598.20  │   79.20
+      2014      1678.23     954.14      116.00    109.00      2857.37  │ 87.1+90.6
+      2019      1593.00     982.54      130.11    102.00      2807.65  │   69.80
+      2023      1386.92    1261.83      175.06     89.19      2913.00  │   64.10
+
+  **The county's hospital employment fell 19 per cent, and one hospital fell by more than the
+  whole.** The four calendar-year filers went from 3,598.20 to 2,913.00, a fall of 685.20;
+  [St. Rita's](../organization/mercy-health-st-ritas-medical-center.yml) alone fell 1,019.08 while
+  [Lima Memorial](../organization/lima-memorial-health-system.yml) rose 278.89 and
+  [the Institute](../organization/institute-for-orthopaedic-surgery.yml) rose 74.05. [verified] Most
+  of St. Rita's drop — 625 — is on the FY2013/FY2014 boundary, where it began filing as an LLC, and
+  is not only employment. [inference]
+
+  A full-time equivalent is not an employee, so no figure here may be subtracted from
+  [County Business Patterns](allen-county-health-care-employment-2010-2022.yml), which counts people
+  on a payroll: 3,677 FTE against 4,848 employees in 2011, 2,990 against 3,211 in 2022. [verified]
+properties:
+  parameter: FTE - Employees on Payroll
+  value: "2913.00"
+  unit: full-time equivalents, four calendar-year-filing hospitals
+  as_of: "2023"
+  method: |
+    CCNs 360009, 360066, 360263, 361322 and 362020 across the thirteen annual files — 66 rows.
+    County totals sum the four calendar-year filers;
+    [Kindred](../organization/kindred-hospital-lima.yml) left the calendar year after FY2013, so
+    FY2014 holds two of its rows. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/mercy-health-st-ritas-medical-center.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/lima-memorial-health-system.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/institute-for-orthopaedic-surgery.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/bluffton-hospital.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/kindred-hospital-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

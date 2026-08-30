@@ -1,0 +1,55 @@
+class: organization
+label: Institute for Orthopaedic Surgery
+description: |
+  A proprietary acute care hospital at 801 Medical Drive, twelve beds, with **no emergency
+  department** — the only one of the county's five without one. [verified] —
+  [CMS Hospital General Information](../../catalog/cms-hospital-general-information.md), CCN 360263.
+
+  **It is not in Lima, and this is the fourth time this corpus has had to say that about a Lima
+  address.** Its postal address is Lima; the county's own address file leaves `MUNI` blank for both
+  units at 801 Medical Drive while `USPS_CITY` reads LIMA; and TIGERweb puts the point in
+  [Perry Township](../place/perry-township.yml) and in no incorporated place. [verified] —
+  [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and
+  [TIGERweb](../../catalog/tigerweb-census2020.md). Two authorities, agreeing, checked before the
+  claim was written rather than after. See
+  [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml),
+  whose first three instances were the refinery, the tank plant and the county's heavy industry
+  generally.
+
+  So the county's only for-profit hospital stands on unincorporated ground, as its refinery and its
+  tank plant do. No municipality levies on any of the three. [inference]
+
+  **It is majority-owned by the hospital across town.**
+  [Mercy Health–St. Rita's](mercy-health-st-ritas-medical-center.yml) holds 51 per cent directly
+  from 1 April 2004; West Central Ohio Physicians Group Ltd. holds the other 49 and the operational
+  and managerial control; and Bon Secours Mercy Health Inc appears above St. Rita's as the indirect
+  51 per cent holder from 1 September 2018. [verified] —
+  [CMS provider enrollment](../../catalog/cms-provider-enrollment.md). A physician-owned specialty
+  hospital that is 51 per cent owned by a general hospital is a particular arrangement and this node
+  records it without characterising it.
+
+  **The body is not the name.** It enrolls as **West Central Ohio Group Ltd.**, incorporated in Ohio
+  on 10 March 1997. [verified] — same source. The county's address file knows the two units at this
+  address as the "Orthopedic Institute of Ohio" and the "Institute for Orthopedic Surgery Physical
+  Therapy" — a third and fourth spelling of the thing, neither of them the name Medicare enrolls.
+  [verified] — the address file.
+
+  **It is the county's smallest hospital and the only one that has grown in almost every year.**
+  101.01 full-time equivalents in 2011 rising to 175.06 in 2023, up 73 per cent, with a single dip
+  in 2016. [verified] —
+  [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md); see
+  [the series](../measure/allen-county-hospital-employment-2011-2023.yml). Twelve beds in every one
+  of the thirteen years. See [the beds](../measure/allen-county-hospital-beds-2011-2023.yml), where
+  the three small hospitals hold their bed counts flat and the two large ones do not.
+properties:
+  org_type: company
+  industry: hospitals
+  also_known_as: West Central Ohio Group Ltd.; Orthopedic Institute of Ohio (county address file)
+  founded: "1997-03-10"
+links:
+  - target: ../place/perry-township.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../organization.ont.yml
+    relationship: instance-of
