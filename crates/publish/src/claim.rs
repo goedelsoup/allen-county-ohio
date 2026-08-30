@@ -244,8 +244,14 @@ mod tests {
                     that coincides is as good an explanation. [open]";
         let b = blocks(text);
         let r = b[0].refusal.as_deref().expect("refusal found");
-        assert!(r.starts_with("Whether a quarter"), "quoted from the wrong place: {r}");
-        assert!(r.ends_with("the corpus cannot say."), "quoted to the wrong place: {r}");
+        assert!(
+            r.starts_with("Whether a quarter"),
+            "quoted from the wrong place: {r}"
+        );
+        assert!(
+            r.ends_with("the corpus cannot say."),
+            "quoted to the wrong place: {r}"
+        );
     }
 
     #[test]
@@ -258,7 +264,10 @@ mod tests {
                     corpus does not know. [open]";
         let b = blocks(text);
         let r = b[0].refusal.as_deref().expect("refusal found");
-        assert!(r.starts_with("Whether that society"), "quoted from the wrong place: {r}");
+        assert!(
+            r.starts_with("Whether that society"),
+            "quoted from the wrong place: {r}"
+        );
     }
 
     #[test]
