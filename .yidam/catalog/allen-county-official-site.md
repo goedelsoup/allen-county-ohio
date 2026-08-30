@@ -20,6 +20,7 @@ location:
     value: https://allencountyohio.com/
     description: Index, and the linked sites of the nine elected county offices
 used-by:
+  - ../corpus/jurisdiction/allen-county-court-of-common-pleas.yml
   - ../corpus/jurisdiction/amanda-township.yml
   - ../corpus/jurisdiction/american-township.yml
   - ../corpus/jurisdiction/auglaize-township.yml
@@ -33,6 +34,7 @@ used-by:
   - ../corpus/jurisdiction/shawnee-township.yml
   - ../corpus/jurisdiction/spencer-township.yml
   - ../corpus/jurisdiction/sugar-creek-township.yml
+  - ../corpus/jurisdiction/third-district-court-of-appeals.yml
   - ../corpus/jurisdiction/village-of-beaverdam.yml
   - ../corpus/jurisdiction/village-of-cairo.yml
   - ../corpus/jurisdiction/village-of-elida.yml
@@ -47,6 +49,8 @@ used-by:
   - ../corpus/office/allen-county-prosecuting-attorney.yml
   - ../corpus/office/allen-county-recorder.yml
   - ../corpus/office/allen-county-treasurer.yml
+  - ../corpus/office/judge-of-the-common-pleas-domestic-relations-division.yml
+  - ../corpus/office/judge-of-the-common-pleas-probate-division.yml
   - ../corpus/person/brion-e-rhodes.yml
   - ../corpus/person/john-thomas-meyer.yml
   - ../corpus/person/mona-s-losh.yml
@@ -61,6 +65,7 @@ used-by:
   - ../corpus/place/spencerville.yml
   - ../corpus/site/miami-and-erie-canal.yml
   - ../corpus/tenure/coroner-2025-john-thomas-meyer.yml
+  - ../corpus/tenure/domestic-2023-matt-c-staley.yml
   - ../corpus/tenure/engineer-2025-brion-e-rhodes.yml
   - ../corpus/tenure/recorder-2025-mona-s-losh.yml
 ---

@@ -14,7 +14,9 @@ location:
     value: https://lookup.boe.ohio.gov/vtrapp/allen/cnm.aspx?task=voter&prsid=0004__1
     description: Allen County's elected officials, by office, with party and term start and end dates
 used-by:
+  - ../corpus/jurisdiction/allen-county-court-of-common-pleas.yml
   - ../corpus/jurisdiction/allen-county-government.yml
+  - ../corpus/jurisdiction/lima-municipal-court.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
@@ -24,23 +26,39 @@ used-by:
   - ../corpus/office/allen-county-recorder.yml
   - ../corpus/office/allen-county-sheriff.yml
   - ../corpus/office/allen-county-treasurer.yml
+  - ../corpus/office/judge-of-the-common-pleas-domestic-relations-division.yml
+  - ../corpus/office/judge-of-the-common-pleas-general-division.yml
+  - ../corpus/office/judge-of-the-common-pleas-probate-division.yml
+  - ../corpus/office/judge-of-the-lima-municipal-court.yml
   - ../corpus/person/beth-a-seibert.yml
   - ../corpus/person/brian-winegardner.yml
   - ../corpus/person/brion-e-rhodes.yml
   - ../corpus/person/cory-alan-noonan.yml
   - ../corpus/person/destiny-rae-caldwell.yml
+  - ../corpus/person/jeffrey-l-reed.yml
   - ../corpus/person/jennifer-moree-mcbride.yml
+  - ../corpus/person/john-richard-payne.yml
   - ../corpus/person/john-thomas-meyer.yml
   - ../corpus/person/krista-n-bohn.yml
+  - ../corpus/person/matt-c-staley.yml
   - ../corpus/person/mona-s-losh.yml
   - ../corpus/person/rachael-s-gilroy.yml
+  - ../corpus/person/tammie-k-hursh.yml
+  - ../corpus/person/terri-lynn-kohlrieser.yml
+  - ../corpus/person/todd-e-kohlrieser.yml
   - ../corpus/tenure/auditor-2023-rachael-s-gilroy.yml
   - ../corpus/tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml
   - ../corpus/tenure/commissioner-2023-brian-winegardner.yml
   - ../corpus/tenure/commissioner-2025-beth-a-seibert.yml
   - ../corpus/tenure/commissioner-2025-cory-alan-noonan.yml
   - ../corpus/tenure/coroner-2025-john-thomas-meyer.yml
+  - ../corpus/tenure/domestic-2023-matt-c-staley.yml
   - ../corpus/tenure/engineer-2025-brion-e-rhodes.yml
+  - ../corpus/tenure/general-2023-jeffrey-l-reed.yml
+  - ../corpus/tenure/general-2025-terri-lynn-kohlrieser.yml
+  - ../corpus/tenure/municipal-2022-tammie-k-hursh.yml
+  - ../corpus/tenure/municipal-2024-john-richard-payne.yml
+  - ../corpus/tenure/probate-2021-todd-e-kohlrieser.yml
   - ../corpus/tenure/prosecutor-2025-destiny-rae-caldwell.yml
   - ../corpus/tenure/recorder-2025-mona-s-losh.yml
   - ../corpus/tenure/sheriff-2017-matthew-b-treglia.yml

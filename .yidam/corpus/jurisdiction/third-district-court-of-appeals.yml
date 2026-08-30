@@ -1,0 +1,41 @@
+class: jurisdiction
+label: Ohio Third District Court of Appeals
+description: |
+  **The only jurisdiction in this corpus larger than the county, and it is seated inside it.** The
+  Third District hears appeals from seventeen Ohio counties — Allen, Auglaize, Crawford, Defiance,
+  Hancock, Hardin, Henry, Logan, Marion, Mercer, Paulding, Putnam, Seneca, Shelby, Union, Van Wert
+  and Wyandot — and its office is at 204 N. Main Street in Lima. [verified] —
+  [the court's own site](../../catalog/third-district-court-of-appeals.md).
+
+  Every other jurisdiction here is the county or a piece of it. This one contains the county, which
+  is why it is the first node to make [`covers`](allen-county-court-of-common-pleas.yml) point at
+  ground the corpus does not otherwise describe: sixteen of its seventeen counties are outside this
+  corpus entirely. [inference]
+
+  **Its records for this district are kept by a county officer.** The Allen County
+  [clerk of courts](../office/allen-county-clerk-of-courts.yml) handles the filing and preservation
+  of the Third District's documents alongside those of the county's own trial court. [verified] —
+  [the clerk's site](../../catalog/allen-county-official-site.md). So an elected officer of one
+  county keeps the record of a court serving seventeen. [inference]
+
+  **Four judges sit** — John R. Willamowski, William R. Zimmerman, Mark C. Miller and Juergen A.
+  Waldick. [verified] — [the court's site](../../catalog/third-district-court-of-appeals.md).
+
+  **They have no nodes here, and the reason is a rule rather than an omission.** This corpus writes
+  a person and a tenure where Allen County's own electors choose the officer. These four are chosen
+  by the electors of seventeen counties, so the county is one seventeenth of their constituency and
+  a person node here would misdescribe whose officer they are. The names are in the catalog.
+  [inference] See [the name is the seat, not the extent](../../decisions/the-name-is-the-seat-not-the-extent.yml).
+
+  [open] Whether the court sits in Lima as well as keeping its office here, and where. An address is
+  not a courtroom, and the corpus has established only the address.
+properties:
+  jurisdiction_type: court district
+  seat: Lima
+links:
+  - target: ../place/allen-county.yml
+    relationship: covers
+    claim_tag: verified
+    source: ../../catalog/third-district-court-of-appeals.md
+  - target: ../jurisdiction.ont.yml
+    relationship: instance-of

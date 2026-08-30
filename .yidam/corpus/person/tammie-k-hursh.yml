@@ -1,0 +1,23 @@
+class: person
+label: Tammie K. Hursh
+description: |
+  Judge of the Lima Municipal Court, holding a six-year term that began 2022-01-01. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  The elections roster gives a name, a party and two dates, so this node carries no date of birth,
+  no biography and no prior office. Ohio requires an elected county officer to be an elector of the
+  county, so the `resided-in` edge below is a legal inference rather than a fact any source states.
+  [inference]
+
+  [open] Whether this judge was ever admitted to the practice of law in Ohio, and when. It would be
+  surprising if a common pleas or municipal judge were not, and the corpus has not read the section
+  that requires it — the same discipline it applied to
+  [the coroner](../office/allen-county-coroner.yml), where the requirement was retrieved.
+properties:
+  occupation: judge
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+    claim_tag: inference
+  - target: ../person.ont.yml
+    relationship: instance-of

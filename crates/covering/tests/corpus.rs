@@ -35,11 +35,17 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
             "jurisdiction/elida-local-school-district.yml",
             "jurisdiction/lima-city-school-district.yml",
             "jurisdiction/perry-local-school-district.yml",
-            "jurisdiction/shawnee-local-school-district.yml"
+            "jurisdiction/shawnee-local-school-district.yml",
+            "jurisdiction/allen-county-court-of-common-pleas.yml",
+            "jurisdiction/lima-municipal-court.yml",
+            "jurisdiction/third-district-court-of-appeals.yml"
         ],
-        "the corpus dates none of these, and the answer must say so rather than implying six \
-         bodies were governing Lima in 1900 — five of them school districts whose boundaries \
-         are known only in the 2020 geography"
+        "the corpus dates none of these, and the answer must say so rather than implying nine \
+         bodies were governing Lima in 1900 — five school districts whose boundaries are known \
+         only in the 2020 geography, and three courts whose establishment the corpus has not \
+         dated at all. The courts arrived correctly: they cover the county, Lima is within it, \
+         and a court's authority over Lima in 1900 is exactly the kind of claim this split is \
+         here to refuse"
     );
 
     // Every 2020 division is set aside rather than dropped: the query considered it. Four of

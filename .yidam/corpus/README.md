@@ -34,7 +34,8 @@ Sorted by: kind, then alphabetically.
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
-| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 2v / 3i / 1o | 45 |
+| [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
+| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 3v / 3i / 2o | 56 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
 | [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 6v / 0i / 1o | 46 |
 | [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 6v / 0i / 1o | 46 |
@@ -49,6 +50,7 @@ Sorted by: kind, then alphabetically.
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 2v / 0i / 0o | 53 |
 | [jackson-township.yml](jurisdiction/jackson-township.yml) | jurisdiction | Jackson Township (government) | 2 | 5v / 0i / 2o | 43 |
 | [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 2v / 1i / 0o | 42 |
+| [lima-municipal-court.yml](jurisdiction/lima-municipal-court.yml) | jurisdiction | Lima Municipal Court | 2 | 5v / 1i / 1o | 41 |
 | [marion-township.yml](jurisdiction/marion-township.yml) | jurisdiction | Marion Township (government) | 2 | 6v / 0i / 1o | 46 |
 | [monroe-township.yml](jurisdiction/monroe-township.yml) | jurisdiction | Monroe Township (government) | 2 | 6v / 0i / 1o | 47 |
 | [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 2v / 0i / 0o | 30 |
@@ -60,6 +62,7 @@ Sorted by: kind, then alphabetically.
 | [spencer-township.yml](jurisdiction/spencer-township.yml) | jurisdiction | Spencer Township (government) | 3 | 7v / 0i / 1o | 49 |
 | [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
 | [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 6v / 0i / 1o | 47 |
+| [third-district-court-of-appeals.yml](jurisdiction/third-district-court-of-appeals.yml) | jurisdiction | Ohio Third District Court of Appeals | 2 | 3v / 3i / 1o | 41 |
 | [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 4v / 0i / 1o | 37 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
 | [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 3v / 0i / 2o | 32 |
@@ -112,13 +115,17 @@ Sorted by: kind, then alphabetically.
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 3v / 0i / 1o | 36 |
 | [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 3v / 0i / 1o | 35 |
 | [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 4v / 0i / 1o | 38 |
-| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 4v / 2i / 1o | 37 |
+| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 6v / 2i / 1o | 48 |
 | [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 3v / 1i / 1o | 35 |
 | [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 4v / 1i / 1o | 38 |
 | [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 2v / 1i / 1o | 31 |
 | [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 3v / 1i / 1o | 36 |
 | [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 4v / 1i / 0o | 50 |
 | [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 5v / 1i / 2o | 42 |
+| [judge-of-the-common-pleas-domestic-relations-division.yml](office/judge-of-the-common-pleas-domestic-relations-division.yml) | office | Judge of the Court of Common Pleas, Domestic Relations Division | 2 | 2v / 2i / 1o | 30 |
+| [judge-of-the-common-pleas-general-division.yml](office/judge-of-the-common-pleas-general-division.yml) | office | Judge of the Court of Common Pleas, General Division | 2 | 3v / 2i / 1o | 36 |
+| [judge-of-the-common-pleas-probate-division.yml](office/judge-of-the-common-pleas-probate-division.yml) | office | Judge of the Court of Common Pleas, Probate Division | 2 | 3v / 2i / 0o | 31 |
+| [judge-of-the-lima-municipal-court.yml](office/judge-of-the-lima-municipal-court.yml) | office | Judge of the Lima Municipal Court | 2 | 2v / 2i / 1o | 38 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
@@ -156,16 +163,19 @@ Sorted by: kind, then alphabetically.
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
+| [jeffrey-l-reed.yml](person/jeffrey-l-reed.yml) | person | Jeffrey L. Reed | 2 | 1v / 1i / 1o | 23 |
 | [jennifer-moree-mcbride.yml](person/jennifer-moree-mcbride.yml) | person | Jennifer Moree McBride | 2 | 1v / 1i / 0o | 21 |
 | [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 20 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
 | [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
+| [john-richard-payne.yml](person/john-richard-payne.yml) | person | John Richard Payne | 2 | 1v / 1i / 1o | 23 |
 | [john-thomas-meyer.yml](person/john-thomas-meyer.yml) | person | John Thomas Meyer | 2 | 3v / 1i / 0o | 23 |
 | [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
+| [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 1v / 1i / 1o | 23 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
 | [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 2v / 1i / 1o | 24 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
@@ -176,6 +186,9 @@ Sorted by: kind, then alphabetically.
 | [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
 | [samuel-forrer.yml](person/samuel-forrer.yml) | person | Samuel Forrer | 3 | 4v / 0i / 1o | 40 |
 | [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 1v / 1i / 0o | 18 |
+| [tammie-k-hursh.yml](person/tammie-k-hursh.yml) | person | Tammie K. Hursh | 2 | 1v / 1i / 1o | 23 |
+| [terri-lynn-kohlrieser.yml](person/terri-lynn-kohlrieser.yml) | person | Terri Lynn Kohlrieser | 2 | 1v / 1i / 1o | 23 |
+| [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 1v / 1i / 1o | 23 |
 | [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
 | [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
@@ -226,7 +239,13 @@ Sorted by: kind, then alphabetically.
 | [commissioner-2025-beth-a-seibert.yml](tenure/commissioner-2025-beth-a-seibert.yml) | tenure | Beth A. Seibert, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
 | [commissioner-2025-cory-alan-noonan.yml](tenure/commissioner-2025-cory-alan-noonan.yml) | tenure | Cory Alan Noonan, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
 | [coroner-2025-john-thomas-meyer.yml](tenure/coroner-2025-john-thomas-meyer.yml) | tenure | John Thomas Meyer, Coroner of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 33 |
+| [domestic-2023-matt-c-staley.yml](tenure/domestic-2023-matt-c-staley.yml) | tenure | Matt C. Staley, Judge of the Court of Common Pleas, Domestic Relations Division, term of 2023–2028 | 3 | 2v / 2i / 0o | 30 |
 | [engineer-2025-brion-e-rhodes.yml](tenure/engineer-2025-brion-e-rhodes.yml) | tenure | Brion E. Rhodes, Engineer of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 34 |
+| [general-2023-jeffrey-l-reed.yml](tenure/general-2023-jeffrey-l-reed.yml) | tenure | Jeffrey L. Reed, Judge of the Court of Common Pleas, General Division, term of 2023–2029 | 3 | 2v / 2i / 0o | 30 |
+| [general-2025-terri-lynn-kohlrieser.yml](tenure/general-2025-terri-lynn-kohlrieser.yml) | tenure | Terri Lynn Kohlrieser, Judge of the Court of Common Pleas, General Division, term of 2025–2030 | 3 | 2v / 2i / 1o | 33 |
+| [municipal-2022-tammie-k-hursh.yml](tenure/municipal-2022-tammie-k-hursh.yml) | tenure | Tammie K. Hursh, Judge of the Lima Municipal Court, term of 2022–2027 | 3 | 1v / 2i / 0o | 27 |
+| [municipal-2024-john-richard-payne.yml](tenure/municipal-2024-john-richard-payne.yml) | tenure | John Richard Payne, Judge of the Lima Municipal Court, term of 2024–2029 | 3 | 1v / 2i / 0o | 27 |
+| [probate-2021-todd-e-kohlrieser.yml](tenure/probate-2021-todd-e-kohlrieser.yml) | tenure | Todd E. Kohlrieser, Judge of the Court of Common Pleas, Probate Division, term of 2021–2027 | 3 | 1v / 2i / 1o | 31 |
 | [prosecutor-2025-destiny-rae-caldwell.yml](tenure/prosecutor-2025-destiny-rae-caldwell.yml) | tenure | Destiny Rae Caldwell, Prosecuting Attorney of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
 | [recorder-2025-mona-s-losh.yml](tenure/recorder-2025-mona-s-losh.yml) | tenure | Mona S. Losh, Recorder of Allen County, term of 2025–2028 | 3 | 2v / 3i / 0o | 33 |
 | [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 22 |

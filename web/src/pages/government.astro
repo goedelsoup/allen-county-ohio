@@ -10,7 +10,8 @@ const nine = assertion('nine-offices-eleven-officers')
 // An office with no tenure would show as a blank holder rather than silently vanish.
 const byId = new Map(nodes.map((n) => [n.id, n]))
 const offices = nodes
-  .filter((n) => n.class === 'office' && n.id.includes('allen-county'))
+  .filter((n) => n.class === 'office' && n.properties.office_type === 'elected')
+  .filter((n) => n.id.includes('allen-county'))
   .toSorted((a, b) => a.label.localeCompare(b.label))
 
 const holdersOf = (officeId: string) =>
@@ -44,6 +45,16 @@ const rows = offices.flatMap((o) => {
     i === 0 ? (o.properties.term_length ?? '—') : '',
   ])
 })
+
+const courts = nodes.filter((n) => n.properties.jurisdiction_type === 'court district')
+const judicial = nodes
+  .filter((n) => n.class === 'office' && n.properties.office_type === 'judicial')
+  .toSorted((a, b) => a.label.localeCompare(b.label))
+const judgeRows = judicial.flatMap((o) =>
+  currentOf(o.id)
+    .toSorted((a, b) => a.began.localeCompare(b.began))
+    .map((h, i) => [i === 0 ? o.label : '', h.person, h.began]),
+)
 
 const tenureCounts = offices.map((o) => [o.label, holdersOf(o.id).length])
 // An office is "traced" when the corpus holds more tenures than the office has seats — that
@@ -134,17 +145,51 @@ const traced = offices.filter(
   </section>
 
   <section>
-    <h2>What is still missing</h2>
+    <h2>The courts</h2>
     <p>
-      The courts. Allen County has a Court of Common Pleas with general, domestic relations, probate
-      and juvenile divisions, a municipal court, and four sitting common pleas judges serving
-      six-year terms — three of whom take office in February. This corpus holds no node for any
-      court or any judge, and the clerk of courts node says so.
+      {courts.length} courts sit over this ground and none of them is part of the county government. The
+      Court of Common Pleas is the county's trial court, divided five ways by its own rules and
+      staffed by four elected judges. The Third District Court of Appeals hears appeals from
+      seventeen Ohio counties and keeps its office at 204 N. Main Street in Lima, so a court
+      serving a sixth of the state is seated in this county and its records are kept by this
+      county's clerk.
     </p>
     <p>
-      Also missing: every holder of these eight offices before the current term, the powers each
-      office actually exercises, and the appointed officials and boards that do much of a county's
-      work without appearing on any ballot.
+      And the Lima Municipal Court's territory is not Lima. Ohio's statute gives the general rule
+      that a municipal court has jurisdiction "within the corporate limits of their respective
+      municipal corporations", then names this one as an exception: <em>"The Lima municipal court
+      has jurisdiction within Allen county."</em> A traffic case from Spencerville is heard by a
+      court named after a city thirteen miles away.
+    </p>
+
+    <DataTable
+      title="Judges elected by Allen County's voters"
+      caption="Six judges across two courts. Every judicial office in this corpus runs six years and every elected administrative one runs four — computed from one county's roster, so a pattern in the data rather than a rule read anywhere."
+      columns={['Court and division', 'Judge', 'Term began']}
+      rows={judgeRows}
+    />
+
+    <p>
+      The Third District's four judges — John R. Willamowski, William R. Zimmerman, Mark C. Miller
+      and Juergen A. Waldick — are not on that table and have no nodes in the corpus. They are
+      elected by the voters of all seventeen counties, and this corpus writes a person only where
+      Allen County's own electors choose the officer.
+    </p>
+  </section>
+
+  <section>
+    <h2>What is still missing</h2>
+    <p>
+      Every holder of these offices before the current term, except the sheriff's. The powers each
+      office actually exercises, as against the statute that creates it. The subject-matter
+      jurisdiction of both trial courts — the corpus has established their territories and neither's
+      competence. And the appointed officials and boards that do much of a county's work without
+      appearing on any ballot.
+    </p>
+    <p>
+      Two elected bodies are visible on the same roster this page is built from and are not here
+      yet: the county's state legislators, and the trustees and fiscal officers of the twelve
+      townships.
     </p>
   </section>
 </Base>
