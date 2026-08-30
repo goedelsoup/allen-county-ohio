@@ -1,0 +1,60 @@
+class: measure
+label: Allen County elective seats and how their holders arrived, 2026
+description: |
+  Every elective seat whose constituency lies inside Allen County, with the seat filled or vacant
+  and — where filled — whether the roster marks its holder as appointed to it. [verified] —
+  [the elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), read across all
+  eighty-eight precincts.
+
+      class of government          offices  seats  held  vacant  appointed
+      townships                         24     48    48       0          1
+      villages                          15     52    47       5         25
+      cities (Lima, Delphos)            13     21    21       0          6
+      school boards and the ESC         10     50    50       0          7
+      county offices and courts         21     22    22       0          0
+      state and federal                 18     25    23       2          1
+      ---------------------------------------------------------------------
+      total                            101    218   211       7         40
+
+  **Twenty-three per cent of this county's local government arrived by appointment.** Of the 166
+  seated township, village, city and school officers, 39 hold seats they were appointed to fill.
+  [verified] — same source. Every one of the twenty-two county offices and judgeships is filled,
+  and every one of them by election. [verified]
+
+  **The village form is where it concentrates, and size is not what separates it from the township
+  form.** Twenty-five of the forty-seven seated village officers were appointed and five village
+  seats stand empty, against one appointment and no vacancy across all forty-eight township seats.
+  [verified] — same source. [Spencer Township](../jurisdiction/spencer-township.yml) holds 3,024
+  people and [Spencerville](../jurisdiction/village-of-spencerville.yml) inside it holds 2,164, so
+  most of the township's people are the village's people and both govern them. [verified] —
+  [the race table](allen-county-race-2023.yml) and
+  [the estimates](../../catalog/census-popest-2024.md), a year apart in vintage. The township fills
+  four seats and elected all four; the village fills seven and appointed four of them. [verified]
+
+  **Two villages cannot fill their governments at all.** [Cairo](../jurisdiction/village-of-cairo.yml)'s
+  six-member council is five appointees and one vacant seat: no elected member sits on it.
+  [Harrod](../jurisdiction/village-of-harrod.yml)'s board of public affairs is three seats and all
+  three are empty; of its ten village seats, four are vacant, five are held by appointees and one —
+  a single council member — was elected. [verified] — same source.
+
+  This does not establish that these seats go unfilled because nobody stands for them. The roster
+  records how a sitting holder arrived and not whether anyone ran, and this corpus has not yet read
+  [the returns](../../catalog/openelections-ohio.md) for a village race.
+properties:
+  parameter: seated holders of elective office, and seats vacant, by class of government
+  value: "211"
+  unit: seated officeholders across 218 seats
+  as_of: "2026-08-30"
+  method: |
+    Union of the eighty-eight precinct pages of the boards of elections roster, deduplicated on the
+    office name and the page's own `hid_office` code. Vacancies are counted from the roster's own
+    `N Vacant Seat(s)` rows and appointments from its `*Appointed*` marker. [verified] The class
+    column is this corpus's grouping, not the roster's; the roster orders offices from the President
+    down and does not total anything. [inference]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
