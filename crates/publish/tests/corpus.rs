@@ -174,7 +174,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 298, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 303, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,
@@ -238,6 +238,45 @@ fn the_county_still_has_five_hospitals() {
         .map(|n| n.id)
         .collect();
     assert_eq!(hospitals.len(), 5, "hospital count moved: {hospitals:?}");
+}
+
+#[test]
+fn every_refusal_survives_the_way_its_node_is_wrapped() {
+    // The defect this guards shipped and was invisible: `refusal()` searched the raw block, node
+    // prose is hard-wrapped at about 95 columns, and three of this corpus's refusals had their
+    // trigger phrase split across a wrap. A refusal nobody detects looks exactly like a node with
+    // none, so an assertion citing one would have published with no caveat and no complaint.
+    //
+    // Checked here rather than only in the unit tests because the property is about the corpus:
+    // no node may state a refusal that the detector cannot see. Rewrapping a paragraph must never
+    // change whether its caveat reaches a reader.
+    const REFUSALS: [&str; 12] = [
+        "does not establish",
+        "does not assert",
+        "does not infer",
+        "do not infer",
+        "does not license",
+        "does not follow",
+        "does not know",
+        "cannot say",
+        "cannot show",
+        "cannot answer",
+        "is not containment",
+        "not a proof of",
+    ];
+    let mut missed = Vec::new();
+    for node in nodes() {
+        for block in &node.blocks {
+            let flat = publish::claim::normalize(&block.text).to_lowercase();
+            if REFUSALS.iter().any(|p| flat.contains(p)) && block.refusal.is_none() {
+                missed.push(format!("{}: {}", node.id, &flat[..flat.len().min(90)]));
+            }
+        }
+    }
+    assert!(
+        missed.is_empty(),
+        "refusals the detector cannot see: {missed:#?}"
+    );
 }
 
 #[test]
