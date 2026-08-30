@@ -258,6 +258,16 @@
           "tier": "verified",
           "source": "catalog/miller-allen-county-1906.md",
           "method": "Decennial census counts as compiled in 1906 from published returns, with the 1906 figure an estimate by the compilers. Not read from a Census Bureau publication. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-1940-1990.yml",
+          "label": "Allen County population, 1940–1990",
+          "as_of": "1980",
+          "value": 112241.0,
+          "published": "112241",
+          "tier": "verified",
+          "source": "catalog/census-cph-2-37-ohio.md",
+          "method": "Read from Table 3 by counting column positions against the header printed earlier in the document, and checked against the 1970 count this corpus already held from a different Census product. The `value` above is the series maximum, not its last term. [verified]"
         }
       ]
     },
@@ -378,6 +388,16 @@
           "tier": "verified",
           "source": "catalog/miller-allen-county-1906.md",
           "method": "Three county histories' compilations of published census returns, one figure from each. The 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. [verified]"
+        },
+        {
+          "node": "measure/lima-population-1970-1990.yml",
+          "label": "Lima population, 1970–1990",
+          "as_of": "1970",
+          "value": 53734.0,
+          "published": "53734",
+          "tier": "verified",
+          "source": "catalog/census-cph-2-37-ohio.md",
+          "method": "Read from the places table of the 1990 Ohio CPH-2 volume. The `value` above is the series maximum, which is also its first term — so it is a lower bound on the city's peak and not necessarily the peak. [verified]"
         }
       ]
     }
@@ -385,20 +405,37 @@
   "assertions": [
     {
       "id": "county-population-decline",
-      "statement": "Allen County's population has fallen at every measured point since 1970, from 111,144 to 100,866 — a loss of 10,278 people, or 9.2 per cent.",
+      "statement": "Allen County peaked in 1980, not 1970. It has fallen at every count since, from 112,241 to 100,866.",
       "topic": "population",
       "tier": "verified",
       "citations": [
         {
+          "node": "measure/allen-county-population-1940-1990.yml",
+          "node_label": "Allen County population, 1940–1990",
+          "span": "**The county's peak is 1980, not 1970, and the corpus has been saying 1970 since genesis.**",
+          "tier": "verified",
+          "sources": []
+        },
+        {
           "node": "period/deindustrialization.yml",
           "node_label": "Deindustrialization",
-          "span": "Allen County counted 111,144 at the 1970 census and 100,866 at the 2024 estimate — a loss of 10,278 people, or 9.2%, across five decades with no reversal at any measured point: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)",
+          "span": "Between 1970 and 1980 the county *grew*, from 111,144 to **112,241** — its highest count ever — before falling to 109,755 in 1990 and 108,464 in 2000",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-cph-2-37-ohio.md"
+          ]
+        },
+        {
+          "node": "period/deindustrialization.yml",
+          "node_label": "Deindustrialization",
+          "span": "a loss of 10,278 people, or 9.2%, across five decades: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)",
           "tier": "verified",
           "sources": []
         }
       ],
       "caveats": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start for Lima.",
+        "**What the evidence does not establish, stated plainly.** It does not establish that Lima peaked in 1970 rather than earlier: 1970 is the first of the three federal counts the corpus holds for the city, and a series that begins at its own first observation cannot show that the first observation was a peak.",
+        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -407,6 +444,16 @@
           "label": "1970",
           "value": 111144.0,
           "literal": "111,144"
+        },
+        {
+          "label": "1980",
+          "value": 112241.0,
+          "literal": "112,241"
+        },
+        {
+          "label": "1990",
+          "value": 109755.0,
+          "literal": "109,755"
         },
         {
           "label": "2000",
@@ -447,7 +494,8 @@
         }
       ],
       "caveats": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start for Lima.",
+        "**What the evidence does not establish, stated plainly.** It does not establish that Lima peaked in 1970 rather than earlier: 1970 is the first of the three federal counts the corpus holds for the city, and a series that begins at its own first observation cannot show that the first observation was a peak.",
+        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
@@ -481,15 +529,16 @@
         }
       ],
       "caveats": [
-        "**What the evidence does not establish, stated plainly.** It does not establish that 1970 is the start for Lima.",
+        "**What the evidence does not establish, stated plainly.** It does not establish that Lima peaked in 1970 rather than earlier: 1970 is the first of the three federal counts the corpus holds for the city, and a series that begins at its own first observation cannot show that the first observation was a peak.",
+        "It does not establish anything about *manufacturing employment*, which is the mechanism this period is named for and which the corpus does not measure at all: every figure here is population, and population decline is a consequence being read back as evidence for a cause.",
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage."
       ],
       "figures": []
     },
     {
-      "id": "lima-was-this-size-in-1920",
-      "statement": "Lima was already about its present size a century ago: 41,306 people in 1920, against 40,307 in 2000.",
+      "id": "lima-grew-fivefold-after-the-oil",
+      "statement": "The oil made the city: Lima went from 7,567 people in 1880 to 41,306 in 1920, and on to 53,734 by 1970.",
       "topic": "population",
       "tier": "inference",
       "citations": [
@@ -503,9 +552,18 @@
         {
           "node": "measure/lima-population-1880-1920.yml",
           "node_label": "Lima population, 1880–1920",
-          "span": "the city was **already at about its 2000 size in 1920**",
+          "span": "**a fivefold rise in forty years**, which is the demographic shape of [the oil strike](../event/lima-oil-strike.yml)",
           "tier": "inference",
           "sources": []
+        },
+        {
+          "node": "measure/lima-population-1970-1990.yml",
+          "node_label": "Lima population, 1970–1990",
+          "span": "**53,734 in 1970, 47,827 in 1980 and 45,549 in 1990.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-cph-2-37-ohio.md"
+          ]
         }
       ],
       "caveats": [],
@@ -524,6 +582,11 @@
           "label": "1920",
           "value": 41306.0,
           "literal": "41,306"
+        },
+        {
+          "label": "1970",
+          "value": 53734.0,
+          "literal": "53,734"
         }
       ]
     },

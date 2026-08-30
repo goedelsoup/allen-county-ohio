@@ -87,24 +87,40 @@ macro_rules! support {
 pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "county-population-decline",
-        statement: "Allen County's population has fallen at every measured point since 1970, \
-                    from 111,144 to 100,866 — a loss of 10,278 people, or 9.2 per cent.",
+        statement: "Allen County peaked in 1980, not 1970. It has fallen at every count since, \
+                    from 112,241 to 100,866.",
         topic: "population",
-        supports: &[support!(
-            "period/deindustrialization.yml",
-            "Allen County counted 111,144 at the 1970 census and 100,866 at the 2024 estimate — a loss of 10,278 people, or 9.2%, across five decades with no reversal at any measured point: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)"
-        )],
+        // This assertion used to read "fallen at every measured point since 1970" and cite a
+        // span saying "no reversal at any measured point". Both were true of the data the
+        // corpus held and false of the county: every figure began at 1970, and the one decade
+        // that rose was the one decade outside the window. The gate caught the change when the
+        // corpus corrected itself, which is the whole reason the spans are quoted.
+        supports: &[
+            support!(
+                "measure/allen-county-population-1940-1990.yml",
+                "**The county's peak is 1980, not 1970, and the corpus has been saying 1970 since genesis.**"
+            ),
+            support!(
+                "period/deindustrialization.yml",
+                "Between 1970 and 1980 the county *grew*, from 111,144 to **112,241** — its highest count ever — before falling to 109,755 in 1990 and 108,464 in 2000"
+            ),
+            support!(
+                "period/deindustrialization.yml",
+                "a loss of 10,278 people, or 9.2%, across five decades: 111,144 (1970), 108,464 (2000), 106,331 (2010), 102,217 (2020), 100,866 (2024)"
+            ),
+        ],
         answers: &[
-            "It does not establish that 1970 is the start",
+            "It does not establish that Lima peaked in 1970 rather than earlier",
+            "It does not establish anything about *manufacturing employment*",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
         ],
-        // The chart on the population page is this enumeration and nothing else. The corpus
-        // wrote the series out longhand, so the site plots the corpus's own five numbers
-        // rather than re-selecting among the six measures — which would be an editorial
-        // choice about comparability made silently, in a chart.
+        // The chart is the corpus's own enumerations, now spanning the peak the earlier version
+        // of this assertion could not see.
         figures: &[
             Figure { label: "1970", value: 111_144.0, literal: "111,144" },
+            Figure { label: "1980", value: 112_241.0, literal: "112,241" },
+            Figure { label: "1990", value: 109_755.0, literal: "109,755" },
             Figure { label: "2000", value: 108_464.0, literal: "108,464" },
             Figure { label: "2010", value: 106_331.0, literal: "106,331" },
             Figure { label: "2020", value: 102_217.0, literal: "102,217" },
@@ -121,7 +137,8 @@ pub const ASSERTIONS: &[Assertion] = &[
             "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048"
         )],
         answers: &[
-            "It does not establish that 1970 is the start",
+            "It does not establish that Lima peaked in 1970 rather than earlier",
+            "It does not establish anything about *manufacturing employment*",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
         ],
@@ -140,16 +157,17 @@ pub const ASSERTIONS: &[Assertion] = &[
             "eleven of the county's thirteen civil subdivisions lost population"
         )],
         answers: &[
-            "It does not establish that 1970 is the start",
+            "It does not establish that Lima peaked in 1970 rather than earlier",
+            "It does not establish anything about *manufacturing employment*",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
         ],
         figures: &[],
     },
     Assertion {
-        id: "lima-was-this-size-in-1920",
-        statement: "Lima was already about its present size a century ago: 41,306 people in \
-                    1920, against 40,307 in 2000.",
+        id: "lima-grew-fivefold-after-the-oil",
+        statement: "The oil made the city: Lima went from 7,567 people in 1880 to 41,306 in \
+                    1920, and on to 53,734 by 1970.",
         topic: "population",
         // Cited to the measure rather than to the period node, because the point of this
         // assertion is the figures and where they came from — three county histories, not the
@@ -161,7 +179,11 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
             support!(
                 "measure/lima-population-1880-1920.yml",
-                "the city was **already at about its 2000 size in 1920**"
+                "**a fivefold rise in forty years**, which is the demographic shape of [the oil strike](../event/lima-oil-strike.yml)"
+            ),
+            support!(
+                "measure/lima-population-1970-1990.yml",
+                "**53,734 in 1970, 47,827 in 1980 and 45,549 in 1990.**"
             ),
         ],
         answers: &[],
@@ -169,6 +191,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1880", value: 7_567.0, literal: "7,567" },
             Figure { label: "1900", value: 21_723.0, literal: "21,723" },
             Figure { label: "1920", value: 41_306.0, literal: "41,306" },
+            Figure { label: "1970", value: 53_734.0, literal: "53,734" },
         ],
     },
     Assertion {

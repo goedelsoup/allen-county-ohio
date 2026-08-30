@@ -81,9 +81,14 @@ describe('the assertions the pages render', () => {
     }
   })
 
+  // The pinned phrase moved once. It used to be "1970 is the start", the corpus's refusal to
+  // read its own chart as showing a 1970 peak when 1970 was merely where its data began. The
+  // 1990 Census volume settled that — the county peaked in 1980 — so the refusal was answered
+  // by evidence and the assertion now states the peak. The same worry survives one subject
+  // down, for Lima, whose series still begins at its own first federal observation.
   it('carries the corpus refusal that qualifies the population series', () => {
     const decline = assertion('county-population-decline')
-    expect(decline.caveats.join(' ')).toContain('1970 is the start')
+    expect(decline.caveats.join(' ')).toContain('Lima peaked in 1970 rather than earlier')
   })
 })
 
