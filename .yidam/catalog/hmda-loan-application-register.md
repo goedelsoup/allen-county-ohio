@@ -54,7 +54,7 @@ co-applicant's into one value, and 598 of the county's 3,294 rows are `Race Not 
 cent, which is not a small residual. [verified] Nothing here is a count of a race in this county;
 it is a count of applications whose file recorded one.
 
-**Lenders are LEIs.** One hundred and ninety distinct institutions lent in this county in 2023 and
+**Lenders are LEIs.** A hundred and ninety-one distinct institutions appear in this county's 2023
 the file names none of them. The five largest by originations resolve to Superior Credit Union of
 Lima, the Union Bank Company of Columbus Grove, the Citizens National Bank of Bluffton, Huntington
 National Bank of Columbus and Premier Bank of Youngstown. [verified] — GLEIF.
