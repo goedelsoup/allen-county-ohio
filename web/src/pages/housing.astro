@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import { assertion } from '../lib/feeds'
+import type { BarSpec } from '../scripts/charts'
+
+const ring = assertion('the-ring-was-built-while-the-city-was-full')
+const tenure = assertion('lima-rents-and-the-townships-own')
+const borrow = assertion('you-can-buy-in-lima-not-borrow-against-it')
+const gap = assertion('the-denial-gap-that-does-not-resolve')
+
+const bars = (a: typeof tenure, yTitle: string): BarSpec => ({
+  kind: 'bar',
+  x: a.figures.map((f) => f.label),
+  series: [{ name: yTitle, y: a.figures.map((f) => f.value) }],
+  yTitle,
+})
+
+const tenureSpec = bars(tenure, 'Per cent of occupied units owner-occupied')
+const borrowSpec = bars(borrow, 'Per cent of applications denied')
+const gapSpec = bars(gap, 'Per cent of applications denied')
+---
+
+<Base
+  title="Housing"
+  lede="What Allen County is built of, when it was built, and who was lent money against it."
+>
+  <section>
+    <h2>A county sorted by its houses</h2>
+    <p>
+      For ten phases this corpus counted the people of Allen County and held nothing about the
+      buildings they live in. It could say that a third of the county's people, two thirds of its
+      poor and three quarters of its Black residents are inside Lima, and it could not say what
+      Lima is made of. Six tables of the American Community Survey close that: 44,697 housing
+      units, and the county's thirteen civil subdivisions add up to the county's own row fifteen
+      separate times — units, occupancy, vacancy, tenure and every one of eleven year-built bands.
+    </p>
+    <AssertionCard assertion={tenure} />
+    <ChartFigure
+      id="tenure"
+      title="Owner-occupancy, 2023"
+      caption="Share of occupied housing units that are owner-occupied. American Community Survey five-year estimates. The county's figure is unremarkable and neither of the two things it is made of is."
+      columns={['Geography', 'Per cent owner-occupied']}
+      rows={tenure.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="tenure" set:html={JSON.stringify(tenureSpec)} is:inline />
+    <p>
+      Lima holds 35.4 per cent of the county's housing and 48.2 per cent of its empty housing. A
+      house in Shawnee Township, across the city's southern line, has a median value of $210,200
+      against $95,900 in Lima — 2.2 times, on a combined margin of error of $17,965 for a gap of
+      $114,300. Two townships have no published median rent at all: the survey returns its
+      unavailable-value code, which is not a low figure.
+    </p>
+  </section>
+
+  <section>
+    <h2>The ring was built while the city was full</h2>
+    <p>
+      The sorting this site has described since the population page was written had no date under
+      it. It has one now, from below. The median house standing in Lima was built in 1953; in Bath
+      Township it is 1975, and in Shawnee and American Township 1973. Lima is 34.9 per cent
+      pre-1940 where those three are between 6.4 and 7.1 per cent.
+    </p>
+    <AssertionCard assertion={ring} />
+    <p>
+      A sorting into an old cheap city and a new dear ring cannot be older than the ring, and the
+      ring went up in the decade Lima reached its peak of 53,734 people and still held 48.4 per
+      cent of the county. That bounds when the sorting could have happened. It does not say when
+      anyone moved, and nothing here says why the building went where it did — a construction date
+      is not a zoning map, a subdivision approval or a mortgage, and this corpus holds none of the
+      three.
+    </p>
+    <p>
+      One more thing the bands say. A quarter of the housing standing in Allen County was built in
+      1980 or later — 11,327 units — over a span in which the county fell from 112,241 people to
+      100,866. The two numbers are not a ratio and nothing here divides them. A county losing
+      people built a quarter of its housing while doing it.
+    </p>
+  </section>
+
+  <section>
+    <h2>Buying, and borrowing against what you own</h2>
+    <p>
+      Every mortgage application acted on in this county in 2023 is on public record: 2,606
+      decisions, 1,932 of them originations, $270.3 million lent by 191 institutions. One lender
+      made a third of it — Superior Credit Union, of 540 W. Market Street in Lima, with 646
+      originations where Rocket Mortgage made 63.
+    </p>
+    <p>
+      This section was expected to be about buying a house in Lima. The register says that is not
+      where the difference is.
+    </p>
+    <AssertionCard assertion={borrow} />
+    <ChartFigure
+      id="borrow"
+      title="Denial rates by purpose, 2023"
+      caption="Applications acted on — originated, approved and declined, or denied. 'In Lima' is the sixteen of the county's thirty-five census tracts whose population is majority Lima; they hold 32,575 of the city's 35,579 people and 3,093 who live outside it."
+      columns={['Applications', 'Per cent denied']}
+      rows={borrow.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="borrow" set:html={JSON.stringify(borrowSpec)} is:inline />
+    <p>
+      The register's own reason moves with the geography. Twenty-one per cent of denials in Lima's
+      tracts cite collateral, against 13 per cent elsewhere — 43 of 201 against 53 of 404 — where
+      credit history leads in both. Collateral is the house, and the median house in Lima is worth
+      $95,900 and was built in 1953. The median purchase loan originated in a Lima tract was
+      $115,000; elsewhere in the county it was $175,000.
+    </p>
+  </section>
+
+  <section>
+    <h2>The difference that does not resolve</h2>
+    <AssertionCard assertion={gap} />
+    <ChartFigure
+      id="gap"
+      title="Denial rates by applicant race, within income bands, 2023"
+      caption="Applications acted on, by the race the register derives from the applicant's own file. 598 of the county's 3,294 rows record no race at all and are in none of these bars."
+      columns={['Applicants', 'Per cent denied']}
+      rows={gap.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="gap" set:html={JSON.stringify(gapSpec)} is:inline />
+    <p>
+      Black applicants earning between $50,000 and $99,000 were denied more often than white
+      applicants earning under $50,000. That is what the file says, and it is not a finding about
+      how anyone was treated: the register carries no credit score, no assets, no reserves and no
+      appraisal, and credit history is the leading denial reason in every group here. This site
+      publishes the outcome and the missing variables together, and the corpus has an open question
+      that says what would settle it — the file's own unread columns first, then six more years of
+      it, and after that a record no member of the public can see.
+    </p>
+  </section>
+</Base>

@@ -222,6 +222,46 @@
       ]
     },
     {
+      "id": "place-allen-county::housing-units,-occupancy-status,-tenure,-median-value-and-median-gross-rent",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "housing units, occupancy status, tenure, median value and median gross rent",
+      "unit": "housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-housing-stock-2023.yml",
+          "label": "Allen County housing units, occupancy, tenure and value, 2023",
+          "as_of": "2023",
+          "value": 44697.0,
+          "published": "44697",
+          "tier": "verified",
+          "source": "catalog/census-acs-summary-file.md",
+          "method": "Tables B25002, B25003, B25077 and B25064 of the 2023 five-year file, joined on `GEO_ID`. Shares are computed here and medians are published. [verified] Owner-occupancy is of *occupied* units, so its denominator is 40,928 and not 44,697."
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::housing-units-by-year-structure-built-(B25034)-and-median-year-built-(B25035)",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "housing units by year structure built (B25034) and median year built (B25035)",
+      "unit": "housing units built 1970-1979",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-housing-age-2023.yml",
+          "label": "When Allen County's housing was built, 2023",
+          "as_of": "2023",
+          "value": 8298.0,
+          "published": "8298",
+          "tier": "verified",
+          "source": "catalog/census-acs-summary-file.md",
+          "method": "Shares are computed here from published counts; the medians are published. [verified] The bands describe *surviving* housing, so a low count for an early decade is demolition and construction together and cannot be read as construction alone. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::land-area",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -318,6 +358,26 @@
           "tier": "verified",
           "source": "catalog/census-acs-summary-file.md",
           "method": "2023 five-year estimates from the table-based summary file. The twelve townships and Lima are county-subdivision and place summary levels and partition the county: they sum to 101,685 people and 12,815 below poverty, both equal to the county row. Margins are as published, at 90 per cent; combined margins are the root of the sum of squares. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::mortgage-applications-acted-on,-originations-and-denials",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "mortgage applications acted on, originations and denials",
+      "unit": "applications acted on",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-home-lending-2023.yml",
+          "label": "Allen County mortgage applications and denials, 2023",
+          "as_of": "2023",
+          "value": 2606.0,
+          "published": "2606",
+          "tier": "verified",
+          "source": "catalog/hmda-loan-application-register.md",
+          "method": "Rates use actions 1, 2 and 3 — originated, approved and declined, denied — and exclude the 388 withdrawn, 197 purchased and 93 closed for incompleteness, none of which is a decision about a borrower. [verified] \"Lima tracts\" is the sixteen of the county's thirty-five whose 2020 population is majority Lima; they hold 32,575 of the city's 35,579 people and 3,093 who live outside it. [verified] — [block assignment](../../catalog/census-block-assignment-2020.md). Nine rows carry no tract, seven of them decisions; those seven are in the county's totals and in neither column, which is why the columns sum to 2,599 and not 2,606. [verified]"
         }
       ]
     },
@@ -1383,6 +1443,164 @@
       ],
       "caveats": [],
       "figures": []
+    },
+    {
+      "id": "the-ring-was-built-while-the-city-was-full",
+      "statement": "Allen County's biggest building decade was the 1970s — 8,298 homes — and 6,333 of them went up outside Lima, in the decade the city reached its own peak.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-age-2023.yml",
+          "node_label": "When Allen County's housing was built, 2023",
+          "span": "**The county's biggest building decade was the 1970s**, 8,298 units ± 585 against 6,529 ± 563 for the 1950s.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-housing-age-2023.yml",
+          "node_label": "When Allen County's housing was built, 2023",
+          "span": "**Six thousand three hundred and thirty-three of those 8,298 were built outside Lima.** The city took 1,965 of the decade in which it reached its own peak of 53,734 and held 48.4 per cent of the county.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "Marion at 37.0 per cent and Richland at 38.0 read higher than Lima and this does not establish that they are older: 1,069 ± 235 of 2,886 ± 242 and 930 ± 195 of 2,449 ± 168 leave all three indistinguishable.",
+        "This does not establish why the housing was built where it was."
+      ],
+      "figures": []
+    },
+    {
+      "id": "lima-rents-and-the-townships-own",
+      "statement": "Allen County is 68.3 per cent owner-occupied, which is an ordinary American figure made of Lima at 46.4 per cent and twelve townships between 72.0 and 91.0.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-stock-2023.yml",
+          "node_label": "Allen County housing units, occupancy, tenure and value, 2023",
+          "span": "Allen County is 68.3 per cent owner-occupied against 65.0 nationally — an unremarkable figure made of Lima at 46.4 per cent and twelve townships between 72.0 and 91.0, the city being the only subdivision below 70.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Perry Township's 17.0 per cent is the highest figure in the vacancy column, and this does not establish that it is the county's emptiest place: 290 vacant units ± 130 puts the rate between 9.4 and 24.7 per cent, straddling Lima's 11.5."
+      ],
+      "figures": [
+        {
+          "label": "United States",
+          "value": 65.0,
+          "literal": "65.0"
+        },
+        {
+          "label": "Allen County",
+          "value": 68.3,
+          "literal": "68.3"
+        },
+        {
+          "label": "Lima",
+          "value": 46.4,
+          "literal": "46.4"
+        }
+      ]
+    },
+    {
+      "id": "you-can-buy-in-lima-not-borrow-against-it",
+      "statement": "A mortgage to buy a house in Lima is denied at the rate it is denied anywhere in Allen County. A loan against a house already owned there is not.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-home-lending-2023.yml",
+          "node_label": "Allen County mortgage applications and denials, 2023",
+          "span": "The purchase denial rate inside the city's tracts is 13.9 per cent against 14.4 outside — the same figure. Every other purpose diverges, and taken together they are 42.9 against 27.6.",
+          "tier": "verified",
+          "sources": [
+            "catalog/hmda-loan-application-register.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that those applicants were treated differently."
+      ],
+      "figures": [
+        {
+          "label": "To buy, in Lima",
+          "value": 13.9,
+          "literal": "13.9"
+        },
+        {
+          "label": "To buy, elsewhere",
+          "value": 14.4,
+          "literal": "14.4"
+        },
+        {
+          "label": "Every other purpose, in Lima",
+          "value": 42.9,
+          "literal": "42.9"
+        },
+        {
+          "label": "Every other purpose, elsewhere",
+          "value": 27.6,
+          "literal": "27.6"
+        }
+      ]
+    },
+    {
+      "id": "the-denial-gap-that-does-not-resolve",
+      "statement": "Mortgage applications from Black applicants in Allen County were denied at 37.9 per cent and from white applicants at 22.6, and the gap holds inside every income band this corpus can cut.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-home-lending-2023.yml",
+          "node_label": "Allen County mortgage applications and denials, 2023",
+          "span": "**Applications from Black applicants were denied at 37.9 per cent and from white applicants at 22.6** — 66 of 174 against 458 of 2,023 — and the gap holds inside every income band the corpus cut. Under $50,000: 45.3 against 33.4. From $50,000 to $99,000: 38.0 against 20.5. At $100,000 and over: 25.6 against 15.8.",
+          "tier": "verified",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "This does not establish that those applicants were treated differently."
+      ],
+      "figures": [
+        {
+          "label": "Under $50k, Black",
+          "value": 45.3,
+          "literal": "45.3"
+        },
+        {
+          "label": "Under $50k, white",
+          "value": 33.4,
+          "literal": "33.4"
+        },
+        {
+          "label": "$50–99k, Black",
+          "value": 38.0,
+          "literal": "38.0"
+        },
+        {
+          "label": "$50–99k, white",
+          "value": 20.5,
+          "literal": "20.5"
+        },
+        {
+          "label": "$100k+, Black",
+          "value": 25.6,
+          "literal": "25.6"
+        },
+        {
+          "label": "$100k+, white",
+          "value": 15.8,
+          "literal": "15.8"
+        }
+      ]
     },
     {
       "id": "appointment-is-a-form-of-local-government",
