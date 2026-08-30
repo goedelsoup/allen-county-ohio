@@ -113,6 +113,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
+            // Added when `depopulation` gained the age measure. The gate demanded it of all three
+            // assertions resting on that node, which is the check working: a node grew a refusal
+            // and nothing built on it could go out without carrying it.
+            "does not establish that Lima is emptying because it is aging",
         ],
         // The chart is the corpus's own enumerations, now spanning the peak the earlier version
         // of this assertion could not see.
@@ -139,6 +143,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
+            // Added when `depopulation` gained the age measure. The gate demanded it of all three
+            // assertions resting on that node, which is the check working: a node grew a refusal
+            // and nothing built on it could go out without carrying it.
+            "does not establish that Lima is emptying because it is aging",
         ],
         figures: &[
             Figure { label: "Lima", value: 3.8, literal: "3.8%" },
@@ -158,6 +166,10 @@ pub const ASSERTIONS: &[Assertion] = &[
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
+            // Added when `depopulation` gained the age measure. The gate demanded it of all three
+            // assertions resting on that node, which is the check working: a node grew a refusal
+            // and nothing built on it could go out without carrying it.
+            "does not establish that Lima is emptying because it is aging",
         ],
         figures: &[],
     },
@@ -523,6 +535,59 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "what-the-concentration-is-made-of",
+        statement: "This corpus has said for ten phases that the county's decline is concentrated \
+                    in Lima. Lima is 34.7 per cent of the county's people, 64.1 per cent of its \
+                    poor, and 76.7 per cent of its Black residents.",
+        topic: "population",
+        // The three shares close exactly against the county's own rows, which is why they are
+        // plotted together: they are the same city measured three ways, not three estimates.
+        supports: &[
+            support!(
+                "measure/allen-county-income-and-poverty-2023.yml",
+                "35,304 of 101,685 residents — 34.7 per cent — and 8,214 of the 12,815 people below the poverty line, or 64.1 per cent."
+            ),
+            support!(
+                "measure/allen-county-race-2023.yml",
+                "8,290 of 10,805, or 76.7 per cent ± 4.6, against a 34.7 per cent share of the population."
+            ),
+            support!(
+                "measure/allen-county-income-and-poverty-2023.yml",
+                "$43,370 against\n  Shawnee Township's $91,134, a gap of $47,764 against a combined margin of $6,359."
+            ),
+        ],
+        answers: &[
+            "This does not establish that Lima has the lowest household income in the county.",
+            "This does not establish why the county is distributed this way.",
+        ],
+        figures: &[
+            Figure { label: "Population", value: 34.7, literal: "34.7" },
+            Figure { label: "People in poverty", value: 64.1, literal: "64.1" },
+            Figure { label: "Black residents", value: 76.7, literal: "76.7" },
+        ],
+    },
+    Assertion {
+        id: "lima-is-the-young-end",
+        statement: "And Lima is the young end of this county, not the old one — median age 35.4 \
+                    against the county's 39.7, with eleven of the twelve townships older.",
+        topic: "population",
+        // Published because two things this site already asserts compose into a false story if
+        // nobody says otherwise: natural decrease as a component of the loss, and the loss
+        // concentrated in Lima.
+        supports: &[
+            support!(
+                "measure/allen-county-age-structure-2023.yml",
+                "Its median age is 35.4 against the\n  county's 39.7, its 65-and-over share is 15.6 per cent against 18.7"
+            ),
+            support!(
+                "measure/allen-county-age-structure-2023.yml",
+                "Eleven of the twelve townships are older than the city by\n  the 65-and-over measure."
+            ),
+        ],
+        answers: &["The corpus does not establish that."],
+        figures: &[],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",
@@ -780,6 +845,42 @@ fn read_figure(literal: &str) -> Option<f64> {
 }
 
 /// Catalog entries a block's markdown links point at, as `catalog/<name>.md`.
+/// The sources a block rests on, resolving this corpus's "same source" back-reference.
+///
+/// A node's prose says "[verified] — [County Business Patterns](../../catalog/cbp.md)" once and
+/// "[verified] — same source" in every paragraph after it. Inside the node that is exact and
+/// readable. Publication takes a block out of its node, and a block-scoped reader of the second
+/// paragraph finds nothing — so twenty-six of this site's citations went out with a provenance
+/// badge and no provenance in it, from the first build.
+///
+/// The fix belongs here and not in the prose. Naming the catalog entry in every paragraph would
+/// make the nodes worse to read to make one extractor simpler, and the back-reference is a real
+/// feature of how the corpus writes: it means *the source named above*, and above is in the node.
+/// So the search widens to the node, in order, and a block with no citation of its own inherits
+/// the sources of the nearest block before it that has one.
+fn block_sources(node: &Node, block: &crate::claim::Block) -> Vec<String> {
+    let own = sources(&block.text);
+    if !own.is_empty() {
+        return own;
+    }
+    // Only inherit for an explicit back-reference. A block that cites nothing and says nothing
+    // about a source is resting on nothing, and this function must keep saying so.
+    if !block.text.contains("same source") {
+        return Vec::new();
+    }
+    let mut inherited = Vec::new();
+    for b in &node.blocks {
+        if std::ptr::eq(b, block) {
+            break;
+        }
+        let s = sources(&b.text);
+        if !s.is_empty() {
+            inherited = s;
+        }
+    }
+    inherited
+}
+
 fn sources(text: &str) -> Vec<String> {
     let mut found = Vec::new();
     let mut rest = text;
@@ -852,7 +953,7 @@ pub fn resolve(
                 node_label: node.label.clone(),
                 span: wanted,
                 tier,
-                sources: sources(&block.text),
+                sources: block_sources(node, block),
             });
 
             // Refusals are gathered from the whole node, not only the cited block. See the

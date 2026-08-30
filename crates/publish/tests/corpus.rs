@@ -174,7 +174,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 303, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 306, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,
@@ -276,6 +276,40 @@ fn every_refusal_survives_the_way_its_node_is_wrapped() {
     assert!(
         missed.is_empty(),
         "refusals the detector cannot see: {missed:#?}"
+    );
+}
+
+#[test]
+fn every_cited_block_names_the_source_it_rests_on() {
+    // Three phases running, a citation reached the public page with a provenance badge and no
+    // provenance in it. The cause is always the same and always reads fine in the file: a block
+    // ends "[verified] — same source", where the same source is a paragraph above. The reader of
+    // the node follows it; the reader of the site gets a claim attributed to nothing.
+    //
+    // `graph-lint` has a node-level version of this rule and it cannot see the case, because the
+    // node does draw on a source — just not in the block that went out. Publication is where the
+    // block becomes the unit, so this is where the block-level rule belongs.
+    // The rule is about `[verified]` and not about every block. A verified claim asserts that a
+    // source supports it, so the reader is owed the source. An `[inference]` block is the corpus
+    // reasoning over material it already holds — "computed here", "from the three series above" —
+    // and its provenance is the node it sits in, which the site shows beside it.
+    let (resolved, _) = resolve(ASSERTIONS, &nodes(), CEILING);
+    let mut bare = Vec::new();
+    for a in &resolved {
+        for c in &a.citations {
+            if c.tier == Tier::Verified && c.sources.is_empty() {
+                bare.push(format!(
+                    "{}: {} — {}",
+                    a.id,
+                    c.node,
+                    &c.span[..c.span.len().min(70)]
+                ));
+            }
+        }
+    }
+    assert!(
+        bare.is_empty(),
+        "verified citations resting on no source: {bare:#?}"
     );
 }
 
