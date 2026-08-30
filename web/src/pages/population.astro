@@ -14,6 +14,7 @@ const peaks = assertion('three-peaks-thirty-years-apart')
 const townships = assertion('every-township-grew')
 const whole = assertion('the-county-has-a-complete-series')
 const work = assertion('the-only-employment-figures')
+const factories = assertion('the-factories-stopped-leaving')
 const farms = assertion('the-farms-did-not-go-anywhere')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
@@ -127,6 +128,16 @@ const farmSpec: BarSpec = {
   labelValues: true,
 }
 
+// Three points across thirty-six years, so bars rather than a line: the corpus read nine files
+// and this chart shows the two ends and the floor between them.
+const factorySpec: BarSpec = {
+  kind: 'bar',
+  categories: factories.figures.map((f) => f.label),
+  values: factories.figures.map((f) => f.value),
+  yTitle: 'Manufacturing employment, Allen County',
+  labelValues: true,
+}
+
 const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
 )
@@ -203,14 +214,14 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   </section>
 
   <section>
-    <h2>The one thing this page cannot show</h2>
+    <h2>Where the industrial city started</h2>
     <p>
-      This period is named for manufacturing and every figure above is population. The corpus now
-      holds three counts of manufacturing employment and all three are from before 1910: Lima had
-      1,980 wage earners in 1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments, of whom
-      thirty per cent were women and fifty-one were under sixteen. Its leading industries were
-      tobacco and locomotives. That is the industrial city sixty years before the decline this page
-      describes, and it is a baseline rather than an explanation.
+      This period is named for manufacturing, and for eleven phases every figure on this page was
+      population. The corpus holds three counts from before 1910: Lima had 1,980 manufacturing wage
+      earners in 1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments, of whom thirty per
+      cent were women and fifty-one were under sixteen. Its leading industries were tobacco and
+      locomotives. That is the industrial city sixty years before the decline this page describes —
+      a baseline, and not an explanation.
     </p>
     <AssertionCard assertion={work} />
 
@@ -223,6 +234,43 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       height={280}
     />
     <script type="application/json" data-chart-spec="work" set:html={JSON.stringify(workSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>And what happened to it</h2>
+    <p>
+      The sentence this page used to carry — that manufacturing employment was the one thing it
+      could not show — is no longer true. County Business Patterns has counted Allen County's
+      private employers by industry every year since 1986, and the decline this period is named for
+      is in it: <strong>15,762 manufacturing jobs in 1986, 7,127 by 2010</strong>. Fifty-five per
+      cent of them, gone in twenty-four years.
+    </p>
+    <AssertionCard assertion={factories} />
+
+    <ChartFigure
+      id="factories"
+      title="Manufacturing employment, Allen County, 1986–2022"
+      caption="County Business Patterns, private employers only — government, the self-employed and farms are excluded. Industry codes change from SIC to NAICS in 1998, and manufacturing is not quite the same category on either side of that line. The corpus read nine years; the chart shows the ends and the floor."
+      columns={['Year', 'Manufacturing employees']}
+      rows={factories.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="factories" set:html={JSON.stringify(factorySpec)} is:inline />
+
+    <p>
+      Then it stopped. Manufacturing employment bottomed in 2010 and has risen a fifth since, to
+      8,573 in 2022 — while the county went on losing people and losing jobs. Between 2010 and 2022
+      private employment fell by 3,709 and manufacturing rose by 1,446, so every net job lost in
+      those twelve years was lost somewhere else. The largest single loss was health care, down
+      from 11,744 to 9,151, and health care is now the county's biggest private employer sector.
+    </p>
+    <p>
+      Which is why the caveat under the chart at the top of this page changed rather than
+      disappearing. It used to say the corpus had not measured the cause. It now says the corpus
+      does not establish that the population decline was caused by the manufacturing decline — and
+      it says so from a stronger position, because for the last twelve years of this period the
+      proposed cause moves opposite to the effect.
+    </p>
   </section>
 
   <section>

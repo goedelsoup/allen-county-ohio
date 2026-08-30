@@ -359,6 +359,34 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-factories-stopped-leaving",
+        statement: "Allen County manufacturing employment fell from 15,762 in 1986 to 7,127 in \
+                    2010 — and then rose, to 8,573 by 2022, while the county kept shrinking.",
+        topic: "population",
+        // The shape is the argument: a steep fall, a floor, and a partial recovery under a
+        // population line that never turns. Nine points, one per file read.
+        supports: &[
+            support!(
+                "measure/allen-county-manufacturing-employment-1986-2022.yml",
+                "**Manufacturing employment in Allen County fell by 55 per cent between 1986 and 2010, from 15,762 to 7,127.**"
+            ),
+            support!(
+                "measure/allen-county-manufacturing-employment-1986-2022.yml",
+                "**And then it stopped, and reversed.** From the 2010 trough manufacturing rose to 8,917 in 2020 and stood at 8,573 in 2022 — up a fifth from the bottom."
+            ),
+            support!(
+                "measure/allen-county-manufacturing-employment-1986-2022.yml",
+                "**After 2010 the losses were not in manufacturing.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1986", value: 15_762.0, literal: "15,762" },
+            Figure { label: "2010", value: 7_127.0, literal: "7,127" },
+            Figure { label: "2022", value: 8_573.0, literal: "8,573" },
+        ],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",
