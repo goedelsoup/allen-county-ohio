@@ -47,10 +47,13 @@ properties:
   as_of: "2026-08-30"
   method: |
     Union of the eighty-eight precinct pages of the boards of elections roster, deduplicated on the
-    office name and the page's own `hid_office` code. Vacancies are counted from the roster's own
-    `N Vacant Seat(s)` rows and appointments from its `*Appointed*` marker. [verified] The class
-    column is this corpus's grouping, not the roster's; the roster orders offices from the President
-    down and does not total anything. [inference]
+    office name and the page's own `hid_office` code. Vacancies are counted from its `N Vacant
+    Seat(s)` rows and appointments from its `*Appointed*` marker; the class column is this corpus's
+    grouping and the roster totals nothing. [verified] **It is a county's roster, so a ward seat of
+    a city that crosses the county line does not appear.** Delphos contributes ten seats here and
+    3,182 of its people live in Van Wert County, so its council is undercounted by an unknown
+    number of ward seats. [inference] No other government here is affected: Bluffton also crosses a
+    line and elects its council at large.
 links:
   - target: ../jurisdiction/allen-county-government.yml
     relationship: describes
