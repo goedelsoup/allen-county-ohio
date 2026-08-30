@@ -371,6 +371,86 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-ring-was-built-while-the-city-was-full",
+        statement: "Allen County's biggest building decade was the 1970s — 8,298 homes — and 6,333 \
+                    of them went up outside Lima, in the decade the city reached its own peak.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-housing-age-2023.yml",
+                "**The county's biggest building decade was the 1970s**, 8,298 units ± 585 against 6,529 ± 563 for the 1950s."
+            ),
+            support!(
+                "measure/allen-county-housing-age-2023.yml",
+                "**Six thousand three hundred and thirty-three of those 8,298 were built outside Lima.** The city took 1,965 of the decade in which it reached its own peak of 53,734 and held 48.4 per cent of the county."
+            ),
+        ],
+        answers: &[
+            "does not establish that they are older",
+            "This does not establish why the housing was built where it was.",
+        ],
+        figures: &[],
+    },
+    Assertion {
+        id: "lima-rents-and-the-townships-own",
+        statement: "Allen County is 68.3 per cent owner-occupied, which is an ordinary American \
+                    figure made of Lima at 46.4 per cent and twelve townships between 72.0 and 91.0.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-housing-stock-2023.yml",
+                "Allen County is 68.3 per cent owner-occupied against 65.0 nationally — an unremarkable figure made of Lima at 46.4 per cent and twelve townships between 72.0 and 91.0, the city being the only subdivision below 70."
+            ),
+        ],
+        answers: &["does not establish that it is the county's emptiest place"],
+        figures: &[
+            Figure { label: "United States", value: 65.0, literal: "65.0" },
+            Figure { label: "Allen County", value: 68.3, literal: "68.3" },
+            Figure { label: "Lima", value: 46.4, literal: "46.4" },
+        ],
+    },
+    Assertion {
+        id: "you-can-buy-in-lima-not-borrow-against-it",
+        statement: "A mortgage to buy a house in Lima is denied at the rate it is denied anywhere \
+                    in Allen County. A loan against a house already owned there is not.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-home-lending-2023.yml",
+                "The purchase denial rate inside the city's tracts is 13.9 per cent against 14.4 outside — the same figure. Every other purpose diverges, and taken together they are 42.9 against 27.6."
+            ),
+        ],
+        answers: &["does not establish that those applicants were treated differently"],
+        figures: &[
+            Figure { label: "To buy, in Lima", value: 13.9, literal: "13.9" },
+            Figure { label: "To buy, elsewhere", value: 14.4, literal: "14.4" },
+            Figure { label: "Every other purpose, in Lima", value: 42.9, literal: "42.9" },
+            Figure { label: "Every other purpose, elsewhere", value: 27.6, literal: "27.6" },
+        ],
+    },
+    Assertion {
+        id: "the-denial-gap-that-does-not-resolve",
+        statement: "Mortgage applications from Black applicants in Allen County were denied at 37.9 \
+                    per cent and from white applicants at 22.6, and the gap holds inside every \
+                    income band this corpus can cut.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-home-lending-2023.yml",
+                "**Applications from Black applicants were denied at 37.9 per cent and from white applicants at 22.6** — 66 of 174 against 458 of 2,023 — and the gap holds inside every income band the corpus cut. Under $50,000: 45.3 against 33.4. From $50,000 to $99,000: 38.0 against 20.5. At $100,000 and over: 25.6 against 15.8."
+            ),
+        ],
+        answers: &["does not establish that those applicants were treated differently"],
+        figures: &[
+            Figure { label: "Under $50k, Black", value: 45.3, literal: "45.3" },
+            Figure { label: "Under $50k, white", value: 33.4, literal: "33.4" },
+            Figure { label: "$50–99k, Black", value: 38.0, literal: "38.0" },
+            Figure { label: "$50–99k, white", value: 20.5, literal: "20.5" },
+            Figure { label: "$100k+, Black", value: 25.6, literal: "25.6" },
+            Figure { label: "$100k+, white", value: 15.8, literal: "15.8" },
+        ],
+    },
+    Assertion {
         id: "appointment-is-a-form-of-local-government",
         statement: "Thirty-nine of the 166 people holding local elective office in Allen County \
                     were appointed to the seat rather than elected to it. None of the county's \

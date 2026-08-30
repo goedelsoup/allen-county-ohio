@@ -1,0 +1,48 @@
+class: organization
+label: Superior Credit Union, Inc.
+description: |
+  The largest home lender in Allen County by a distance. It originated **646 of the 1,932 mortgages
+  made in this county in 2023 — a third of them** — where the second-largest lender made 113.
+  [verified] — [the HMDA register](../../catalog/hmda-loan-application-register.md), and
+  [the county's lending](../measure/allen-county-home-lending-2023.yml).
+
+  **It is the reason this county's mortgage market is a local one.** A hundred and ninety-one
+  institutions lent here in 2023, including Rocket Mortgage and loanDepot, and neither reached
+  seventy originations. The three largest after this one are the Union Bank Company of Columbus
+  Grove, the Citizens National Bank of Bluffton and Huntington National Bank; the first two are
+  seated in or beside this county. [verified] — same source.
+
+  **It denied less often than the county did**: 133 of 795 applications it acted on, 16.7 per cent,
+  against 23.4 per cent countywide. [verified] Nothing here explains that. A lender with a third of
+  a market is not comparable to the market it dominates, because most of the market's applications
+  are its own. [inference]
+
+  **The register names it by Legal Entity Identifier and never in words.** `254900ARL5FDX2OOH702`
+  resolves to this name, previously *Superior Financial Credit Union, Inc.*, active, registered in
+  Ohio, LEI issued 16 January 2018. [verified] —
+  [GLEIF](../../catalog/hmda-loan-application-register.md).
+
+  **Two addresses, and one of them is shared.** Its legal address is 540 W. Market Street, Lima
+  45801; its headquarters address is 4230 Elida Road, Lima 45807 — which is also the address given
+  by *Superior Financial Solutions, LLC*, the eighth-largest lender in the county at 55
+  originations. [verified]
+
+  [open] Whether one of those two holds the other. A shared address is not a corporate structure.
+
+  [open] Whether the Elida Road address is inside the City of Lima. The postal city is Lima and the
+  ZIP is Elida's, which is the exact case
+  [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml)
+  was written for. The `seated-in` edge below rests on the Market Street address instead.
+
+  [open] When it was founded, how many members it has, and where its branches are. The register
+  says who lent and never who the lender is.
+properties:
+  org_type: credit union
+  industry: mortgage lending
+links:
+  - target: ../place/lima.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../organization.ont.yml
+    relationship: instance-of

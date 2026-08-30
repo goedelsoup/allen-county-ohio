@@ -1,0 +1,45 @@
+class: question
+label: Why do Allen County's mortgage outcomes differ by race and by purpose?
+description: |
+  Two differences in one year's register, neither of them explained here. [open]
+
+  **By race.** Applications from Black applicants were denied at 37.9 per cent and from white
+  applicants at 22.6, and the gap holds inside every income band: 45.3 against 33.4 under $50,000,
+  38.0 against 20.5 from $50,000 to $99,000, 25.6 against 15.8 at $100,000 and over. [verified] —
+  [the register](../measure/allen-county-home-lending-2023.yml).
+
+  **By purpose, and only outside purchase.** Buying a house inside Lima's tracts is denied at 13.9
+  per cent and outside them at 14.4 — the same. Borrowing against one already owned is 42.9 against
+  27.6. [verified] — same source.
+
+  The corpus does not know why either. A denial rate is an outcome and the file holds no credit
+  score, no assets and no appraisal; see
+  [a denial rate is not an underwriting file](../../decisions/a-denial-rate-is-not-an-underwriting-file.yml).
+
+  **What makes the second one answerable and the first one harder.** The purpose gap has a
+  candidate the file itself supplies: 21 per cent of denials in Lima tracts cite collateral against
+  13 per cent elsewhere, and collateral is the house. A loan against a $95,900 house built in 1953
+  is a different proposition from the same loan against a $210,200 house built in 1973. [inference]
+  That is a hypothesis with a test in the same file, in columns this corpus has not read.
+
+  The race gap has no such candidate here. 174 applications is one year of a small county, and the
+  income bands are three buckets standing in for underwriting. [inference] Neither the smallness
+  nor the crudeness makes the gap go away; they make it unexplained.
+properties:
+  claim_tag: open
+  opened: "2026-08-30"
+  would_close_this: |
+    The register's own unread columns first — loan-to-value ratio, debt-to-income band, rate spread,
+    total loan costs and property value — which would say whether the two gaps survive the controls
+    the file does carry. Then the years 2018 to 2024, which turn 174 applications into something
+    like a thousand and would show whether either gap is a year or a pattern. Beyond the file: an
+    underwriting record, a matched-pair test, or a supervisory examination, none of which is public.
+links:
+  - target: ../measure/allen-county-home-lending-2023.yml
+    relationship: concerns
+  - target: ../place/lima.yml
+    relationship: concerns
+  - target: ../place/allen-county.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

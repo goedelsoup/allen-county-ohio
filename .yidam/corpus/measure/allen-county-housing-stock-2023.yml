@@ -1,0 +1,61 @@
+class: measure
+label: Allen County housing units, occupancy, tenure and value, 2023
+description: |
+  Housing units, vacancy, owner-occupancy, median value and median gross rent for the county, its
+  thirteen civil subdivisions, the state and the nation. [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates.
+
+      geography                units   vacant   owner-occ   median value   median rent
+      United States      142,332,876    10.4%       65.0%       $303,400        $1,348
+      Ohio                 5,271,573     8.4%       67.0%       $199,200          $988
+      Allen County            44,697     8.4%       68.3%       $158,400          $898
+      -----------------------------------------------------------------------------------
+      **Lima**                15,802    11.5%       46.4%        $95,900          $865
+      American Township        6,719     6.2%       72.0%       $169,500          $970
+      Shawnee Township         5,407     5.6%       83.0%       $210,200          $969
+      Bath Township            4,017     8.1%       82.8%       $170,600        $1,040
+      Marion Township          2,886     3.9%       75.7%       $157,100          $806
+      Richland Township        2,449     7.3%       81.0%       $192,300          $842
+      Perry Township           1,701    17.0%       79.7%       $159,900             —
+      Spencer Township         1,305     9.6%       72.6%       $169,900          $844
+      Jackson Township         1,190     6.7%       90.7%       $181,500          $963
+      Auglaize Township        1,144     4.8%       86.3%       $171,800        $1,280
+      Monroe Township            867     3.1%       87.1%       $118,800          $690
+      Amanda Township            686     1.2%       91.0%       $222,800             —
+      Sugar Creek Township       524     6.3%       86.8%       $210,700        $1,306
+
+  **The county looks American and neither of its halves does.** Allen County is 68.3 per cent
+  owner-occupied against 65.0 nationally — an unremarkable figure made of Lima at 46.4 per cent and
+  twelve townships between 72.0 and 91.0, the city being the only subdivision below 70. [verified] —
+  same source.
+
+  **Lima holds 35.4 per cent of the county's housing and 48.2 per cent of its empty housing**, 1,817
+  vacant units of 3,769. [verified] Four figures close exactly against the county's own row —
+  44,697 units, 40,928 occupied, 3,769 vacant, 27,960 owner-occupied — so the thirteen subdivisions
+  partition the county four more times. [verified]
+
+  **A house in Shawnee Township is worth 2.2 times a house in Lima**, $210,200 against $95,900, on
+  a combined margin of $17,965 for a gap of $114,300; the city's median value is 31.6 per cent of
+  the nation's. [verified]
+
+  Perry Township's 17.0 per cent is the highest figure in the vacancy column, and this does not
+  establish that it is the county's emptiest place: 290 vacant units ± 130 puts the rate between
+  9.4 and 24.7 per cent, straddling Lima's 11.5. [verified] The dashes are the file's
+  unavailable-value sentinel and not a low rent. See
+  [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml).
+properties:
+  parameter: housing units, occupancy status, tenure, median value and median gross rent
+  value: "44697"
+  unit: housing units
+  as_of: "2023"
+  method: |
+    Tables B25002, B25003, B25077 and B25064 of the 2023 five-year file, joined on `GEO_ID`. Shares
+    are computed here and medians are published. [verified] Owner-occupancy is of *occupied* units,
+    so its denominator is 40,928 and not 44,697.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
