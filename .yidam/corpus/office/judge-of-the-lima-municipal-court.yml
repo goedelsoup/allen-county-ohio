@@ -1,0 +1,38 @@
+class: office
+label: Judge of the Lima Municipal Court
+description: |
+  Two judges hold this office at once, elected by the whole county rather than by the city the court
+  is named for. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), which
+  lists them among Allen County's elected officials; and
+  [Ohio Revised Code §1901.02](../../catalog/ohio-revised-code.md): "The Lima municipal court has
+  jurisdiction within Allen county."
+
+  **Its terms run six years and the two seats are offset by two.** One runs 1 January 2022 to
+  31 December 2027 and the other 1 January 2024 to 31 December 2029. [verified] — same roster; the
+  length is arithmetic on those dates. [inference] Both begin in January, unlike the
+  [common pleas general division](judge-of-the-common-pleas-general-division.yml), whose two seats
+  begin in different months.
+
+  A municipal judge here serves six years and an
+  [administrative county officer](allen-county-auditor.yml) four. That holds across every office in
+  this corpus that states a term length — four judicial offices at six years and nine elected
+  administrative ones at four, thirteen offices and seventeen seats. [inference] — computed here.
+  It rests on one county's roster and is a pattern in the data, not a rule this corpus has read
+  anywhere. The [mayor of Lima](mayor-of-lima.yml) is the one office node with no term length at
+  all, and is excluded from the count for that reason.
+
+  [open] What this court's subject-matter jurisdiction is. Its territory is established and its
+  competence is not — see [the court](../jurisdiction/lima-municipal-court.yml).
+properties:
+  office_type: judicial
+  selection_method: countywide election
+  term_length: 6 years
+  seats: "2"
+links:
+  - target: ../jurisdiction/lima-municipal-court.yml
+    relationship: established-within
+    claim_tag: verified
+    source: ../../catalog/ohio-revised-code.md
+  - target: ../office.ont.yml
+    relationship: instance-of
