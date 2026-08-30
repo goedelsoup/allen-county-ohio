@@ -1,0 +1,52 @@
+class: measure
+label: Allen County total employment, 1969–2022
+description: |
+  Every job in the county, counted the same way for fifty-four years. [verified] —
+  [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), total employment
+  including proprietors, part-time work, farm and government.
+
+      SIC, 1969–2000                     NAICS, 2001–2022
+      1969   56,562                      2001   69,825   (peak of its segment)
+      1972   54,610  (low of its segment) 2009   62,898
+      1980   58,688                      2020   61,140   (low of its segment)
+      1990   65,107                      2022   64,238
+      2000   72,973  (peak of its segment)
+
+  **The county's jobs rose for thirty-one years while its people fell.** Employment went from 56,562
+  in 1969 to 72,973 in 2000 — a gain of 16,411, or 29 per cent. [verified] — same source. Over the
+  same span the county's population fell from 111,144 to 108,464. [verified] —
+  [the county series](../place/allen-county.yml).
+
+  **Jobs peaked twenty years after people did.** The county's population peaked in 1980 and its
+  employment in 2000. [inference] — the two peaks are read from different sources and compared here.
+  Whatever this county lost between 1980 and 2000, it was not work.
+
+  **Employment has fallen since, and by less than manufacturing did.** From 69,825 in 2001 to 64,238
+  in 2022, a loss of 5,587 or 8 per cent, against
+  [manufacturing's](allen-county-manufacturing-employment-1969-2022.yml) fall of 3,182 over the same
+  years. So manufacturing accounts for more than half the county's total job loss since 2001 while
+  being about a seventh of its jobs. [inference] — computed here.
+
+  **The 2001 step is a change of scheme, not of fortune.** Total employment reads 72,973 for 2000
+  under SIC and 69,825 for 2001 under NAICS. [verified] — same source. A drop of 3,148 in one year
+  across a classification change is not read here as a real fall, and the two segments are not
+  subtracted from each other. [open] How much of the step is definitional is not established.
+properties:
+  parameter: total employment, all jobs, Allen County
+  value: "64238"
+  unit: jobs
+  as_of: "2022"
+  method: |
+    BEA CAEMP25S line 10 for 1969–2000 and CAEMP25N line 10 for 2001–2022, Ohio county files at
+    GeoFIPS 39003. Counts jobs rather than people, so a person holding two jobs is counted twice,
+    and includes farm, government and proprietors. Not comparable with
+    [County Business Patterns](allen-county-manufacturing-employment-1986-2022.yml), which counts
+    private employees only. The comparison with population is a comparison of two programmes.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/bea-county-employment.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

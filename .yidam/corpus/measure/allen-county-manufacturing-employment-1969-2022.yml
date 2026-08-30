@@ -1,0 +1,60 @@
+class: measure
+label: Allen County manufacturing employment, 1969–2022
+description: |
+  Fifty-four years of the mechanism this county's history is told through. [verified] —
+  [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), county employment by
+  industry.
+
+      SIC, 1969–2000                          NAICS, 2001–2022
+      1969  17,623   1980  16,704             2001  11,897   2012   7,986
+      1970  16,840   1981  15,543             2002  11,341   2013   8,506
+      1971  15,916   1982  14,349             2003  10,840   2014   8,692
+      1972  16,243   1983  14,502             2004  10,651   2015   9,048
+      1973  18,400   1984  15,729             2005  11,063   2016   9,014
+      1974  18,396   1985  16,189             2006  10,120   2017   9,218
+      1975  16,651   1986  17,163             2007   9,060   2018   9,338
+      1976  16,895   1987  17,092             2008   8,411   2019   8,941
+      1977  17,220   1990  15,590             2009   7,775   2020   8,624
+      1978  18,017   1995  12,480             2010   7,876   2021   8,514
+      1979  18,389   2000  13,106             2011   7,969   2022   8,715
+
+  **Manufacturing employment in Allen County peaked in 1973, at 18,400.** [verified] — same source.
+  Not in 1969, and not before this corpus's [deindustrialization](../period/deindustrialization.yml)
+  is said to begin. The county's factories were still adding workers into the late 1970s: 18,389 in
+  1979, within eleven of the peak six years earlier.
+
+  **The trough is 7,775, in 2009 — a fall of 58 per cent from the peak, across thirty-six years.**
+  [verified] — same source. Employment has risen since, to 8,715 in 2022, and has not been below
+  7,775 in any year on this series.
+
+  **1986 was a recovery year, not a stage of the fall.** Manufacturing bottomed at 14,349 in 1982,
+  rose four years running to 17,163 in 1986, and only then began the long decline. [verified] — same
+  source. That matters because it is where
+  [the corpus's other series](allen-county-manufacturing-employment-1986-2022.yml) opens, and
+  because the last phase described this span, while calling it open, as a fall already under way.
+  See [naming a gap is not leaving it empty](../../decisions/naming-a-gap-is-not-leaving-it-empty.yml).
+
+  **Almost the whole decline is after 1986.** From the 1973 peak to 1986 manufacturing lost 1,237
+  jobs, 7 per cent; from 1986 to 2009 it lost 9,388, 55 per cent. [inference] — computed here.
+
+  [open] The 2001 step. Manufacturing reads 13,106 for 2000 under SIC and 11,897 for 2001 under
+  NAICS, and how much of that 1,209 is definitional is not established here.
+properties:
+  parameter: manufacturing employment, Allen County, all jobs
+  value: "8715"
+  unit: jobs
+  as_of: "2022"
+  method: |
+    BEA CAEMP25S for 1969–2000 (SIC line 400) and CAEMP25N for 2001–2022 (NAICS line 500), read
+    from the Ohio county files at GeoFIPS 39003. BEA counts jobs, including proprietors, part-time
+    work, farm and government, where County Business Patterns counts employees of private
+    establishments; the two are separate programmes and not one series. They agree on shape where
+    they overlap, both placing the recent trough at the end of the 2000s and a recovery of about a
+    fifth since. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/bea-county-employment.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
