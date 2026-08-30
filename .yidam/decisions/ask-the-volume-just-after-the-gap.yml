@@ -1,0 +1,57 @@
+id: ask-the-volume-just-after-the-gap
+summary: >-
+  Each decennial "Number of Inhabitants" volume tabulates backward as well as forward, and how far
+  back depends on the grain. So the volume to fetch for a missing year is not the one published in
+  that year, and not the latest one; it is the earliest volume whose backward window still reaches
+  the year at the grain wanted. Used twice now, correctly both times.
+context: |
+  [`pre-1970-population-series`](../corpus/question/pre-1970-population-series.yml) predicted its own
+  answer would come from "the 1970 and 1980 Census of Population volumes for Ohio". It came from the
+  **1960** volume, whose Table 5 runs each incorporated place back to its earliest census. The
+  prediction had the right family and the wrong decade, and that was recorded beside it.
+
+  Applied deliberately the next phase, the rule found Allen County's 1930 count and its twelve
+  townships for 1930, 1940 and 1950 on the first try, in the
+  [1950 volume](../catalog/census-1950-number-of-inhabitants-ohio.md). What the two volumes carry:
+
+    grain                          1950 volume      1960 volume
+    the state                      1800-1950        1800-1960
+    incorporated places 10,000+    earliest-1950    earliest-1960
+    counties                       1930-1950        1960 and 1950
+    minor civil divisions          1930-1950        1940-1960
+
+  The county series shortens as the place series lengthens, and the MCD window slides forward one
+  decade per volume. Nothing about "later is better" survives contact with that table.
+decision: |
+  **To find year Y at grain G, fetch the earliest volume published after Y whose table at grain G
+  still reaches back to Y.** What the two volumes above actually support, stated as windows rather
+  than as a maxim:
+
+    minor civil divisions   volume V covers V-20 to V, in both volumes — so fetch any V
+                            between Y and Y+20
+    places of 10,000+       earliest census to V, in both — so any V at or after Y
+    counties                V-20 to V in the 1950 volume, V-10 to V in the 1960 one. The
+                            window narrowed. Take the earlier volume.
+
+  Recorded as windows because they are what makes the rule work and they are not derivable from it;
+  the county row is the reason to check rather than assume.
+rationale: |
+  **The instinct is to reach for the most recent publication, and it is wrong here in a way that
+  costs whole phases.** The 1990 volume this corpus catalogued first gives counties 1940-1990 and
+  places 1970-1990 — nothing before 1940 for either. Two phases were spent describing 1930 and the
+  pre-1970 city as gaps in the record when they were gaps in the retrieval, and the volume that
+  closed them was published forty years earlier than the one already on the shelf.
+
+  The deeper reason is that these volumes are not archives, they are reports: each was written to
+  situate its own census against the recent past, so its backward reach is a function of what its
+  authors thought a reader in that year needed. A place's whole history was worth printing; a
+  county's was not. That is an editorial judgment from the 1950s, and it now determines what this
+  corpus can know about Allen County in 1930.
+
+  The residual is exactly what the rule predicts. Allen County in 1910 is the one census between
+  1830 and 2020 the corpus does not hold, and no volume it has reaches it — the county window in
+  the 1950 volume begins at 1930, and the histories stop at 1906 and resume at 1920. The rule says
+  where to look next: the 1930 or 1940 volume, whose county tables may reach 1910 if the window then
+  was as wide as the 1950 one's. It names a shelf, not an answer.
+status: accepted
+date: "2026-08-30"

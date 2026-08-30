@@ -205,16 +205,17 @@ pub const ASSERTIONS: &[Assertion] = &[
         // than a figure it was given, which is why it cites the node that carries the method.
         supports: &[
             support!(
-                "measure/allen-county-outside-lima-1940-2020.yml",
+                "measure/allen-county-outside-lima-1930-2020.yml",
                 "**So the county has three peaks and they are thirty years apart.** Lima peaked in 1970, the county as a whole in 1980, and the county outside Lima in 2000."
             ),
             support!(
-                "measure/allen-county-outside-lima-1940-2020.yml",
-                "**the county outside Lima held 28,592 people in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
+                "measure/allen-county-outside-lima-1930-2020.yml",
+                "**the county outside Lima held 27,132 people in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
             ),
         ],
         answers: &[],
         figures: &[
+            Figure { label: "1930", value: 27_132.0, literal: "27,132" },
             Figure { label: "1940", value: 28_592.0, literal: "28,592" },
             Figure { label: "1950", value: 37_937.0, literal: "37,937" },
             Figure { label: "1960", value: 52_654.0, literal: "52,654" },
@@ -225,6 +226,28 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2010", value: 67_560.0, literal: "67,560" },
             Figure { label: "2020", value: 66_627.0, literal: "66,627" },
         ],
+    },
+    Assertion {
+        id: "every-township-grew",
+        statement: "Every one of the county's twelve townships is larger now than it was in \
+                    1930, while the county is below its 1980 peak and the city has lost a third \
+                    of itself.",
+        topic: "population",
+        // No figures. Twelve ratios on one axis would be a chart of arithmetic rather than of
+        // the county, and the numbers behind them are in the node's own table where a reader
+        // who wants them can see what they were computed from.
+        supports: &[
+            support!(
+                "measure/allen-county-townships-1930-1950.yml",
+                "**Every one of the twelve is larger now than it was in 1930, and the comparison is sound.**"
+            ),
+            support!(
+                "measure/allen-county-townships-1930-1950.yml",
+                "The whole balance is two and a half times its 1930 size while the county is below its 1980 peak and the city has lost a third of itself."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
     },
     Assertion {
         id: "decline-is-migration-and-deaths",
