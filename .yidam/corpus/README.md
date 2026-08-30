@@ -81,7 +81,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 7v / 1i / 2o | 61 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2022 | 2 | 3v / 0i / 1o | 42 |
-| [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 10v / 0i / 0o | 68 |
+| [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
+| [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
 | [allen-county-hospital-beds-2011-2023.yml](measure/allen-county-hospital-beds-2011-2023.yml) | measure | Allen County hospital beds, 2011–2023 | 2 | 4v / 0i / 1o | 42 |
 | [allen-county-hospital-employment-2011-2023.yml](measure/allen-county-hospital-employment-2011-2023.yml) | measure | Allen County hospital employment, 2011–2023 | 7 | 4v / 1i / 0o | 61 |
 | [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 2 | 7v / 2i / 0o | 60 |
@@ -89,6 +90,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
+| [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 5v / 1i / 1o | 60 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
@@ -248,7 +250,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 24v / 5i / 1o | 169 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 26v / 5i / 1o | 175 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
@@ -267,7 +269,7 @@ Sorted by: kind, then alphabetically.
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
-| [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 2v / 2i / 1o | 45 |
+| [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 4v / 1i / 2o | 57 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 4v / 1i / 1o | 51 |
