@@ -1,0 +1,62 @@
+id: a-sample-is-not-a-series
+summary: >-
+  The corpus read County Business Patterns at five-year steps and published that health care
+  "reached 11,744 in 2010 and 11,656 in 2015 and has fallen since". The annual file has the sector
+  at 12,431 in 2013 and 12,050 in 2016, both above the figure called the high. The nine years that
+  falsify the sentence were in the same directory as the four that were taken.
+context: |
+  [`allen-county-employment-by-sector-1986-2022`](../corpus/measure/allen-county-employment-by-sector-1986-2022.yml)
+  says in its own `method` what it did: sector 62 "traced across 2000, 2005, 2010, 2015 and 2020".
+  Four of those fall inside 2010–2022, where County Business Patterns publishes thirteen.
+
+      sampled                    the years between
+      2010   11,744              2011  11,626   2012  11,700
+      2015   11,656              2013  12,431   2014  10,922
+      2020    9,711              2016  12,050   2017  11,255
+      2022    9,151              2018  10,170   2019  10,028   2021  9,807
+
+  Every level the sample reported is right. The shape it reported is not: the sector's peak is
+  12,431 in 2013, three years after the year the corpus called its high, and it was above 11,744
+  again in 2016 — after the year the corpus said the fall began. "Has fallen since" was a claim
+  about the interior of a window, made from a sample containing none of the years that contradict
+  it.
+
+  The nine missing files came to 127 megabytes and one loop over the same URL pattern.
+decision: |
+  **Where a source publishes annually and the files are cheap, read it annually. Where a sample is
+  taken anyway, the node says it is a sample and makes no claim about shape.**
+
+  The health care series is now annual —
+  [`allen-county-health-care-employment-2010-2022`](../corpus/measure/allen-county-health-care-employment-2010-2022.yml)
+  — and the sector node's sentence is corrected rather than softened. The manufacturing series was
+  already annual from [BEA](../catalog/bea-county-employment.md), which is why the same error is not
+  in it: the corpus was saved there by a source that only ships whole series.
+rationale: |
+  **A sample is safe for a level and unsafe for a shape, and that line is the whole rule.** Every
+  claim the corpus built on those four years about a *level* survives untouched — 9,151 in 2022,
+  health care larger than manufacturing, the sector's rank. The single claim about a *shape* is the
+  one that broke.
+
+  **This is the third of a family, and the difference from the other two is the point.** In
+  [the window was the finding](the-window-was-the-finding.yml) the window's start was wherever the
+  data began, and the caveat was right while the headline was wrong. In
+  [a baseline is a choice](a-baseline-is-a-choice.yml) the baseline was the oldest observation held,
+  and the headline was right but drew force it had not earned. Here both ends of the window are
+  right and correctly dated, and nobody looked at the middle. Three failures of the same organ —
+  where a series is read from — and no two of them are the same mistake.
+
+  **And the answer this unlocks has the second failure in it too.** The county's health care decline
+  is now attributable by subsector, and the attribution moves with the baseline:
+
+      from        sector lost   hospitals   ambulatory   nursing & residential
+      2010            2,593       1,866         8            549
+      2013 (peak)     3,280       1,049     1,733            517
+      2016            2,899       1,259     1,031            534
+
+  Hospitals are the largest single contributor from two of the three and second from the third, and
+  nursing and residential care is 16 to 21 per cent of it on all three. So the honest statement is
+  that the decline is broad and hospital-led, and the measure node carries every baseline rather
+  than the one that reads best — which is what `a-baseline-is-a-choice` asked for, met here for the
+  second time and prospectively rather than after publication.
+status: accepted
+date: "2026-08-30"
