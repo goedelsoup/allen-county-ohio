@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import DataTable from '../components/DataTable.astro'
+import { assertion, nodes, edges } from '../lib/feeds'
+
+const nine = assertion('nine-offices-eleven-officers')
+
+// Built from the graph rather than typed out, so the page cannot drift from the corpus.
+// An office with no tenure would show as a blank holder rather than silently vanish.
+const byId = new Map(nodes.map((n) => [n.id, n]))
+const offices = nodes
+  .filter((n) => n.class === 'office' && n.id.includes('allen-county'))
+  .toSorted((a, b) => a.label.localeCompare(b.label))
+
+const holdersOf = (officeId: string) =>
+  edges
+    .filter((e) => e.relationship === 'of-office' && e.to === officeId)
+    .map((e) => byId.get(e.from))
+    .filter((t): t is NonNullable<typeof t> => Boolean(t))
+    .map((tenure) => {
+      const held = edges.find((e) => e.relationship === 'held-by' && e.from === tenure.id)
+      return {
+        person: (held && byId.get(held.to)?.label) ?? '—',
+        began: tenure.properties.began ?? '',
+        ended: tenure.properties.ended ?? '',
+        label: tenure.label,
+      }
+    })
+    .toSorted((a, b) => b.began.localeCompare(a.began))
+
+// A current holder is one whose tenure has no `ended` — not the one with the latest start.
+// Sorting by start date put the wrong sheriff here: Everett and Treglia both began in 2017,
+// because Everett's term ended in the year Treglia's began.
+const currentOf = (officeId: string) =>
+  holdersOf(officeId).filter((h) => !h.ended)
+
+const rows = offices.flatMap((o) => {
+  const held = currentOf(o.id).toSorted((a, b) => a.began.localeCompare(b.began))
+  return held.map((h, i) => [
+    i === 0 ? o.label : '',
+    h.person,
+    h.began,
+    i === 0 ? (o.properties.term_length ?? '—') : '',
+  ])
+})
+
+const tenureCounts = offices.map((o) => [o.label, holdersOf(o.id).length])
+// An office is "traced" when the corpus holds more tenures than the office has seats — that
+// is, at least one predecessor. Three commissioners in three seats is not a line of holders.
+const traced = offices.filter(
+  (o) => holdersOf(o.id).length > Number(o.properties.seats ?? '1'),
+).length
+---
+
+<Base
+  title="Government"
+  lede="The nine elected offices that govern Allen County, who holds them, and how far back this corpus can see."
+>
+  <section>
+    <h2>Nine offices, eleven officers</h2>
+    <p>
+      Ohio counties are not home-rule corporations. They are administrative subdivisions of the
+      state, and the state fixes what offices they have: a board of three commissioners elected
+      countywide, and eight other officers elected separately. Allen County has all nine and no
+      more, and nothing on this page distinguishes it from the other eighty-seven Ohio counties
+      except the names.
+    </p>
+    <AssertionCard assertion={nine} />
+
+    <DataTable
+      title="The elected offices of Allen County"
+      caption="Holders and term commencement dates from the Ohio boards of elections' county lookup, read 30 August 2026. A term start is not a start of service: six of these officers may have held office longer, and this corpus does not know."
+      columns={['Office', 'Holder', 'Term began', 'Term']}
+      rows={rows}
+    />
+  </section>
+
+  <section>
+    <h2>Three seats, three days apart</h2>
+    <p>
+      The board's three commissioners hold terms that begin on the first, second and third day of
+      January. That looks like a clerical artifact and is not one: Ohio law assigns those three
+      dates precisely so the seats stay distinguishable and the board never turns over at once.
+      One seat is elected two years out of step with the other two.
+    </p>
+    <p>
+      The auditor is the only county officer whose term does not begin in January. It begins on the
+      second Monday in March — 13 March 2023 for the present term, which was that Monday. Both
+      rules were read out of the statute <em>after</em> the dates had been read off the elections
+      roster, and each predicted what was already in hand.
+    </p>
+  </section>
+
+  <section>
+    <h2>Two offices you must be qualified to hold</h2>
+    <p>
+      Most of these offices ask only that the holder be an elector of the county. Two ask more. The
+      coroner must be a physician licensed to practise medicine or osteopathic medicine and in good
+      standing, and must have held that licence for two years before election — which in a county of
+      about a hundred thousand people makes the candidate pool a profession rather than an
+      electorate. The engineer must be <em>both</em> a registered professional engineer and a
+      registered surveyor.
+    </p>
+    <p>
+      The engineer's statute also disqualifies four of the county's other elected officers by name:
+      the clerk of courts, the sheriff, the treasurer and the recorder may not hold it. Every one of
+      those four is a node in this corpus, which is what makes that clause a constraint on the graph
+      and not just a sentence in a code book.
+    </p>
+  </section>
+
+  <section>
+    <h2>How far back this page can see</h2>
+    <p>
+      Not far, and unevenly. Of the nine offices, {traced} holds any predecessor at all — the
+      sheriff, whose own office publishes a roster back to 1831. The other eight have the present
+      term and nothing before it, because the source that names them is a roster of who holds
+      office now.
+    </p>
+    <p>
+      That asymmetry is the reason this page exists at all. For nine phases this corpus held two
+      offices — the sheriff, with thirty-nine tenures back to 1831, and the mayor of Lima — and the
+      depth of the first made the class look worked. It was one office in extraordinary detail and
+      eight missing entirely.
+    </p>
+
+    <DataTable
+      title="Tenures held per office"
+      caption="What the corpus has read, not what the county has had. A count of one means the present term and no predecessor."
+      columns={['Office', 'Tenures in the corpus']}
+      rows={tenureCounts}
+    />
+  </section>
+
+  <section>
+    <h2>What is still missing</h2>
+    <p>
+      The courts. Allen County has a Court of Common Pleas with general, domestic relations, probate
+      and juvenile divisions, a municipal court, and four sitting common pleas judges serving
+      six-year terms — three of whom take office in February. This corpus holds no node for any
+      court or any judge, and the clerk of courts node says so.
+    </p>
+    <p>
+      Also missing: every holder of these eight offices before the current term, the powers each
+      office actually exercises, and the appointed officials and boards that do much of a county's
+      work without appearing on any ballot.
+    </p>
+  </section>
+</Base>

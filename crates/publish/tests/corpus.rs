@@ -158,7 +158,7 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
     // A cheap tripwire against the loader silently skipping a class directory — the shape of
     // failure that leaves every gate passing and a third of the county missing from the map.
     let nodes = nodes();
-    assert_eq!(nodes.len(), 218, "corpus node count moved; update this pin");
+    assert_eq!(nodes.len(), 246, "corpus node count moved; update this pin");
     assert_eq!(
         nodes.iter().filter(|n| n.class == "place").count(),
         25,
@@ -170,6 +170,36 @@ fn the_corpuss_own_counts_are_what_the_feed_reports() {
             .all(|n| !n.class.is_empty() && !n.id.is_empty()),
         "a node loaded without a class or an id"
     );
+}
+
+#[test]
+fn every_elected_county_office_ohio_creates_has_a_node() {
+    // The closed-set check argued for in `a-deep-instance-can-hide-an-empty-class`. Ohio gives
+    // every county these nine elected offices, so nine is a denominator the corpus does not get
+    // to choose. For nine phases it held one of them while the class looked exercised, because
+    // the sheriff alone carried 39 tenures and a crate. A count is the only thing that catches
+    // that; reading harder does not.
+    let ids: Vec<String> = nodes()
+        .into_iter()
+        .filter(|n| n.class == "office")
+        .map(|n| n.id)
+        .collect();
+    for office in [
+        "office/allen-county-auditor.yml",
+        "office/allen-county-board-of-commissioners.yml",
+        "office/allen-county-clerk-of-courts.yml",
+        "office/allen-county-coroner.yml",
+        "office/allen-county-engineer.yml",
+        "office/allen-county-prosecuting-attorney.yml",
+        "office/allen-county-recorder.yml",
+        "office/allen-county-sheriff.yml",
+        "office/allen-county-treasurer.yml",
+    ] {
+        assert!(
+            ids.iter().any(|id| id == office),
+            "no node for {office} — Ohio creates this office in every county"
+        );
+    }
 }
 
 #[test]

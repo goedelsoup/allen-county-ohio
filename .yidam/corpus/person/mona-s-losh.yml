@@ -1,0 +1,24 @@
+class: person
+label: Mona S. Losh
+description: |
+  Recorder of Allen County, holding a term that began 2025-01-06. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  Serving since January 2005. [verified] —
+  [the county recorder's site](../../catalog/allen-county-official-site.md). [open] Whether that
+  makes her the county's longest-serving present officer is not established: the elections roster
+  gives current terms only, so for six of the nine officers the corpus does not know when service
+  began.
+
+  The elections roster gives a name, a party and two dates, so this node carries no date of birth,
+  no biography and no prior office. Ohio requires an elected county officer to be an elector of the
+  county, so the `resided-in` edge below is a legal inference rather than a fact any source states.
+  [inference]
+properties:
+  occupation: county recorder
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+    claim_tag: inference
+  - target: ../person.ont.yml
+    relationship: instance-of

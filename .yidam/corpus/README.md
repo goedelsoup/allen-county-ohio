@@ -34,7 +34,7 @@ Sorted by: kind, then alphabetically.
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
-| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 0v / 2i / 1o | 28 |
+| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 2 | 2v / 3i / 1o | 45 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
 | [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 6v / 0i / 1o | 46 |
 | [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 6v / 0i / 1o | 46 |
@@ -110,7 +110,15 @@ Sorted by: kind, then alphabetically.
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 5v / 4i / 0o | 52 |
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 3v / 0i / 1o | 36 |
-| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 2v / 1i / 0o | 38 |
+| [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 3v / 0i / 1o | 35 |
+| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 4v / 0i / 1o | 38 |
+| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 4v / 2i / 1o | 37 |
+| [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 3v / 1i / 1o | 35 |
+| [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 4v / 1i / 1o | 38 |
+| [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 2v / 1i / 1o | 31 |
+| [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 3v / 1i / 1o | 36 |
+| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 4v / 1i / 0o | 50 |
+| [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 5v / 1i / 2o | 42 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
@@ -123,12 +131,17 @@ Sorted by: kind, then alphabetically.
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 6v / 3i / 2o | 61 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
+| [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
+| [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
+| [brion-e-rhodes.yml](person/brion-e-rhodes.yml) | person | Brion E. Rhodes | 2 | 3v / 1i / 0o | 23 |
 | [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 18 |
 | [christopher-wood.yml](person/christopher-wood.yml) | person | Christopher Wood | 2 | 5v / 0i / 1o | 45 |
 | [clay-t-cotterman.yml](person/clay-t-cotterman.yml) | person | Clay T. Cotterman | 2 | 1v / 1i / 0o | 18 |
+| [cory-alan-noonan.yml](person/cory-alan-noonan.yml) | person | Cory Alan Noonan | 2 | 2v / 1i / 0o | 21 |
 | [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
+| [destiny-rae-caldwell.yml](person/destiny-rae-caldwell.yml) | person | Destiny Rae Caldwell | 2 | 1v / 1i / 0o | 21 |
 | [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 1v / 1i / 1o | 20 |
 | [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 18 |
 | [elias-a-bogart.yml](person/elias-a-bogart.yml) | person | Elias A. Bogart | 2 | 1v / 1i / 0o | 18 |
@@ -143,15 +156,20 @@ Sorted by: kind, then alphabetically.
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
+| [jennifer-moree-mcbride.yml](person/jennifer-moree-mcbride.yml) | person | Jennifer Moree McBride | 2 | 1v / 1i / 0o | 21 |
 | [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 20 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
 | [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
+| [john-thomas-meyer.yml](person/john-thomas-meyer.yml) | person | John Thomas Meyer | 2 | 3v / 1i / 0o | 23 |
 | [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
+| [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
+| [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 2v / 1i / 1o | 24 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
+| [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
 | [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
 | [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
@@ -202,6 +220,15 @@ Sorted by: kind, then alphabetically.
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 4 | 4v / 2i / 1o | 63 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 6v / 5i / 1o | 70 |
+| [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
+| [clerk-of-courts-2025-jennifer-moree-mcbride.yml](tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml) | tenure | Jennifer Moree McBride, Clerk of Courts of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
+| [commissioner-2023-brian-winegardner.yml](tenure/commissioner-2023-brian-winegardner.yml) | tenure | Brian Winegardner, Commissioner of Allen County, term of 2023–2026 | 3 | 2v / 2i / 0o | 31 |
+| [commissioner-2025-beth-a-seibert.yml](tenure/commissioner-2025-beth-a-seibert.yml) | tenure | Beth A. Seibert, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
+| [commissioner-2025-cory-alan-noonan.yml](tenure/commissioner-2025-cory-alan-noonan.yml) | tenure | Cory Alan Noonan, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
+| [coroner-2025-john-thomas-meyer.yml](tenure/coroner-2025-john-thomas-meyer.yml) | tenure | John Thomas Meyer, Coroner of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 33 |
+| [engineer-2025-brion-e-rhodes.yml](tenure/engineer-2025-brion-e-rhodes.yml) | tenure | Brion E. Rhodes, Engineer of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 34 |
+| [prosecutor-2025-destiny-rae-caldwell.yml](tenure/prosecutor-2025-destiny-rae-caldwell.yml) | tenure | Destiny Rae Caldwell, Prosecuting Attorney of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
+| [recorder-2025-mona-s-losh.yml](tenure/recorder-2025-mona-s-losh.yml) | tenure | Mona S. Losh, Recorder of Allen County, term of 2025–2028 | 3 | 2v / 3i / 0o | 33 |
 | [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1835-john-keller.yml](tenure/sheriff-1835-john-keller.yml) | tenure | John Keller, Sheriff of Allen County, 1835–1839 | 3 | 1v / 0i / 0o | 23 |
 | [sheriff-1839-alexander-beatty.yml](tenure/sheriff-1839-alexander-beatty.yml) | tenure | Alexander Beatty, Sheriff of Allen County, 1839–1843 | 3 | 1v / 0i / 0o | 22 |
@@ -240,7 +267,8 @@ Sorted by: kind, then alphabetically.
 | [sheriff-1992-daniel-w-beck.yml](tenure/sheriff-1992-daniel-w-beck.yml) | tenure | Daniel W. Beck, Sheriff of Allen County, 1992–2009 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-2009-samuel-a-crish.yml](tenure/sheriff-2009-samuel-a-crish.yml) | tenure | Samuel A. Crish, Sheriff of Allen County, 2009–2017 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-2017-james-k-everett.yml](tenure/sheriff-2017-james-k-everett.yml) | tenure | James K. Everett, Sheriff of Allen County, 2017–2017 | 3 | 1v / 0i / 0o | 22 |
-| [sheriff-2017-matthew-b-treglia.yml](tenure/sheriff-2017-matthew-b-treglia.yml) | tenure | Matthew B. Treglia, Sheriff of Allen County, 2017–present | 3 | 2v / 0i / 0o | 24 |
+| [sheriff-2017-matthew-b-treglia.yml](tenure/sheriff-2017-matthew-b-treglia.yml) | tenure | Matthew B. Treglia, Sheriff of Allen County, 2017–present | 3 | 3v / 1i / 0o | 33 |
+| [treasurer-2025-krista-n-bohn.yml](tenure/treasurer-2025-krista-n-bohn.yml) | tenure | Krista N. Bohn, Treasurer of Allen County, term of 2025–2029 | 3 | 1v / 1i / 1o | 29 |
 <!-- /REGEN -->
 
 ## Semantic index status

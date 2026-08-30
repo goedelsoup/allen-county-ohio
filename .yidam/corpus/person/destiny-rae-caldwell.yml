@@ -1,0 +1,21 @@
+class: person
+label: Destiny Rae Caldwell
+description: |
+  Prosecuting Attorney of Allen County, holding a term that began 2025-01-06. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  The prosecutor's own site gives the name as "Destiny R. Caldwell"; the elections roster gives
+  "Destiny Rae Caldwell".
+
+  The elections roster gives a name, a party and two dates, so this node carries no date of birth,
+  no biography and no prior office. Ohio requires an elected county officer to be an elector of the
+  county, so the `resided-in` edge below is a legal inference rather than a fact any source states.
+  [inference]
+properties:
+  occupation: county prosecuting attorney
+links:
+  - target: ../place/allen-county.yml
+    relationship: resided-in
+    claim_tag: inference
+  - target: ../person.ont.yml
+    relationship: instance-of
