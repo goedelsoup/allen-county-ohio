@@ -1,0 +1,66 @@
+id: a-scope-rule-met-its-second-case
+summary: >-
+  Last phase this corpus wrote a scope rule — it holds a person and a tenure where *Allen County's
+  own electors* choose the officer — and used it to exclude four appellate judges elected by
+  seventeen counties. The next phase's first case was the county's state senator and state
+  representative, elected by districts spanning several counties. The rule excluded them too, and a
+  county reference that cannot say who represents the county is not a reference.
+context: |
+  The rule was written to settle one case, and it settled it. Then it met a case it had not been
+  written for and gave an answer nobody would defend.
+
+  The failure is not that the rule was vague. It was precise, and precisely wrong: "Allen County's
+  own electors" excludes every officer chosen by a constituency larger than the county, and two of
+  the three most-looked-up officers in any county reference — the state representative and the state
+  senator — are exactly that.
+
+  It was also already contradicted by a node that existed when it was written.
+  [`mayor-of-lima`](../corpus/office/mayor-of-lima.yml) has been in this corpus since early on, an
+  office chosen by the electors of one city rather than by the county's. The rule as stated does not
+  license it, and the rule's author did not notice, because the rule was checked against the case it
+  was written for and against nothing else.
+decision: |
+  **This corpus holds a person and a tenure where the officer is chosen by a constituency that is
+  smaller than the state and includes ground in Allen County.**
+
+  Statewide and national officers — the governor, the attorney general, the United States senators,
+  the president, the justices of the Supreme Court of Ohio — are recorded in the catalog entry for
+  the roster that names them, and given no nodes. They are identical for all eighty-eight Ohio
+  counties, which is the same reason the [Revised Code](../catalog/ohio-revised-code.md) sections
+  are catalogued rather than asserted as facts about this county.
+
+  Under the replacement: county officers, township trustees, municipal officers, the two common
+  pleas benches, the municipal court, the state representative, the state senator, the member of
+  Congress and the four judges of the Third District all qualify. The four appellate judges excluded
+  last phase now have nodes.
+rationale: |
+  **The discriminator is whether the office distinguishes this county from its neighbours.** A
+  district smaller than the state has a composition, and Allen County's presence in it is a fact
+  about Allen County. A statewide office has no composition to speak of: saying that Ohio's
+  attorney general is Dave Yost tells a reader nothing about this county that is not equally true
+  of Ashtabula.
+
+  **What was actually wrong with the first rule was its evidence base.** It was inferred from one
+  case, and one case cannot distinguish the feature that matters from features that merely happened
+  to be present. "Elected by this county's electors" and "elected by a constituency smaller than
+  the state that includes this county" both fit the appellate-judge case and diverge on the very
+  next one. This corpus has recorded that shape twice before, in
+  [the window was the finding](the-window-was-the-finding.yml) and
+  [legibility is a property of the table](legibility-is-a-property-of-the-table.yml): *a rule
+  generalised from the shape of the last thing looked at.* This is the same diagnosis applied to a
+  rule about the corpus rather than about the county.
+
+  **The cheap check that would have caught it is to run a new rule against the cases already on
+  disk before adopting it.** `mayor-of-lima` was sitting there. A scope rule can be tested against
+  the corpus's own existing nodes in the time it takes to list a directory, and the test is: does
+  the rule license everything already here? If not, either the rule is wrong or those nodes are, and
+  either answer is worth having before the rule is written down.
+
+  **The counter-consideration.** Replacing a rule one phase after adopting it is a bad habit if it
+  becomes one — a rule that changes whenever it is inconvenient constrains nothing. The defence is
+  that this replacement was forced by a case the rule got visibly wrong rather than by preference,
+  that it is strictly wider and so retires no existing node, and that it is recorded with the test
+  that would have prevented it. A third version, adopted for a third case, would be evidence the
+  corpus is fitting rules to instances rather than finding them.
+status: accepted
+date: "2026-08-30"

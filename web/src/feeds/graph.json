@@ -76,7 +76,34 @@
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
+    },
+    {
+      "id": "division/ohio-house-district-78-2023.yml",
+      "class": "division",
+      "label": "Ohio House District 78 (2023 map)",
+      "tier": "inference",
+      "properties": {
+        "division_type": "state legislative district",
+        "drawn_by": "Ohio Redistricting Commission",
+        "effective_from": "2023-09-29"
+      },
+      "blocks": [
+        {
+          "text": "The Ohio House district Allen County votes in under the map now in force, adopted by the Ohio Redistricting Commission on 29 September 2023 to govern the rest of the decade. [verified] — [All About Redistricting — Ohio](../../catalog/all-about-redistricting-ohio.md) for the map's date and [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md) for the county's district.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's House district was renumbered, not redrawn into pieces.** Under the map in force at the 2020 census this county was [House District 4](ohio-house-district-4-2020.yml), coterminous with the county to the byte. It is now the 78th. [verified] — same two sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county is not split.** The elections roster names one state representative for Allen County and one only; a split county would list two. [inference] — reasoned here from the roster's shape rather than from any boundary file.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "division/ohio-senate-district-12-2020.yml",
@@ -100,7 +127,38 @@
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "Whether this node and that one describe the same polygon is exactly what the corpus cannot say."
+      ],
+      "withheld": 2
+    },
+    {
+      "id": "division/ohio-senate-district-12-2023.yml",
+      "class": "division",
+      "label": "Ohio Senate District 12 (2023 map)",
+      "tier": "inference",
+      "properties": {
+        "division_type": "state legislative district",
+        "drawn_by": "Ohio Redistricting Commission",
+        "effective_from": "2023-09-29"
+      },
+      "blocks": [
+        {
+          "text": "The Ohio Senate district Allen County votes in under the map now in force, adopted 29 September 2023. [verified] — [All About Redistricting — Ohio](../../catalog/all-about-redistricting-ohio.md) and [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its number did not change and that is not evidence its ground did not.** The county was in [Senate District 12](ohio-senate-district-12-2020.yml) under the map in force at the 2020 census and is in a district of the same number now, across a redistricting that renumbered its House district from the 4th to [the 78th](ohio-house-district-78-2023.yml). A number surviving a new map says the legislature reused it, not that it kept its lines. [inference] This node is separate from the 2020 one for that reason, and either may turn out to describe ground the other does not.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county is not split**, on the same reasoning as the House district: the roster names one state senator for Allen County. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "The 2020 node could say Allen County was about a seventh of the district by land area; this one cannot say even that."
+      ],
       "withheld": 1
     },
     {
@@ -1212,12 +1270,14 @@
           "tier": "verified"
         },
         {
-          "text": "**They have no nodes here, and the reason is a rule rather than an omission.** This corpus writes a person and a tenure where Allen County's own electors choose the officer. These four are chosen by the electors of seventeen counties, so the county is one seventeenth of their constituency and a person node here would misdescribe whose officer they are. The names are in the catalog. [inference] See [the name is the seat, not the extent](../../decisions/the-name-is-the-seat-not-the-extent.yml).",
-          "tier": "inference"
+          "text": "Their terms all begin in February and no two expire in the same year. [verified] — same source.",
+          "tier": "verified"
         }
       ],
-      "refusals": [],
-      "withheld": 1
+      "refusals": [
+        "county reference that cannot say who represents the county in the legislature is not a reference. The rule is replaced, and all four judges now have [an office](../office/judge-of-the-third-district-court-of-appeals.yml), a person node and a term. See [a scope rule met its second case](../../decisions/a-scope-rule-met-its-second-case.yml)."
+      ],
+      "withheld": 2
     },
     {
       "id": "jurisdiction/village-of-beaverdam.yml",
@@ -3127,6 +3187,34 @@
       "withheld": 1
     },
     {
+      "id": "office/judge-of-the-third-district-court-of-appeals.yml",
+      "class": "office",
+      "label": "Judge of the Third District Court of Appeals",
+      "tier": "inference",
+      "properties": {
+        "office_type": "judicial",
+        "seats": "4",
+        "selection_method": "district election",
+        "term_length": "6 years"
+      },
+      "blocks": [
+        {
+          "text": "The appellate bench that hears Allen County's appeals, and the office this corpus declined to write one phase ago. Four judges hold it, on six-year terms. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**All four terms begin in February and no two expire in the same year**, running to 8 February 2027, 8 February 2029, 10 February 2029 and 8 February 2031. [verified] — same source. Two expire two days apart in 2029, which is the same device the [board of commissioners](allen-county-board-of-commissioners.yml) uses to keep seats distinguishable. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "It is a judicial office at six years, like every other judicial office here, against four for the county's elected administrators. [inference] — computed across this corpus.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "office/mayor-of-lima.yml",
       "class": "office",
       "label": "Mayor of Lima",
@@ -3144,6 +3232,84 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "office/member-of-the-ohio-house-for-district-78.yml",
+      "class": "office",
+      "label": "Member of the Ohio House of Representatives, 78th District",
+      "tier": "inference",
+      "properties": {
+        "office_type": "elected",
+        "seats": "1",
+        "selection_method": "district election",
+        "term_length": "2 years"
+      },
+      "blocks": [
+        {
+          "text": "Allen County's seat in the lower chamber of the Ohio General Assembly, under the map adopted 29 September 2023. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its term is two years — the shortest of any office in this corpus.** The present term runs 1 January 2025 to 31 December 2026. [verified] — same source; the length is arithmetic on those dates. [inference] Every other office here runs four years or six, so this is the one seat whose holder faces the voters in every even year.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "office/member-of-the-ohio-senate-for-district-12.yml",
+      "class": "office",
+      "label": "Member of the Ohio Senate, 12th District",
+      "tier": "inference",
+      "properties": {
+        "office_type": "elected",
+        "seats": "1",
+        "selection_method": "district election",
+        "term_length": "4 years"
+      },
+      "blocks": [
+        {
+          "text": "Allen County's seat in the upper chamber of the Ohio General Assembly, under the map adopted 29 September 2023. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Its term is four years, running 1 January 2025 to 31 December 2028. [verified] — same source; the length is arithmetic on those dates. [inference] So this county's two legislators serve terms of different lengths, and its senator outlasts two of its representative's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This is not a seat Allen County fills by itself.** Under the 2020 map the county was roughly a seventh of Senate District 12 by land area, and while the corpus cannot say what fraction it is now, a Senate district covering one county is not a shape Ohio draws. [inference] See [the district](../division/ohio-senate-district-12-2023.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "seventh of Senate District 12 by land area, and while the corpus cannot say what fraction it is now, a Senate district covering one county is not a shape Ohio draws."
+      ],
+      "withheld": 1
+    },
+    {
+      "id": "office/representative-in-congress-for-ohios-4th-district.yml",
+      "class": "office",
+      "label": "Representative in Congress, Ohio's 4th District",
+      "tier": "verified",
+      "properties": {
+        "office_type": "elected",
+        "seats": "1",
+        "selection_method": "district election",
+        "term_length": "2 years"
+      },
+      "blocks": [
+        {
+          "text": "The seat Allen County's present member of the United States House of Representatives holds. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Its term is two years, running 3 January 2025 to 2 January 2027. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "organization/bluffton-university.yml",
@@ -4024,6 +4190,31 @@
       "withheld": 4
     },
     {
+      "id": "person/james-d-jordan.yml",
+      "class": "person",
+      "label": "James D. Jordan",
+      "tier": "inference",
+      "properties": {
+        "occupation": "legislator"
+      },
+      "blocks": [
+        {
+          "text": "Representative in Congress, Ohio's 4th District, holding a term that began 2025-01-03. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of a district that includes Allen County. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "person/james-k-everett.yml",
       "class": "person",
       "label": "James K. Everett",
@@ -4176,6 +4367,31 @@
       "withheld": 0
     },
     {
+      "id": "person/john-r-willamowski.yml",
+      "class": "person",
+      "label": "John R. Willamowski",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Third District Court of Appeals, holding a term that began 2025-02-09. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of the seventeen counties of the Third District, of which Allen is one. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "person/john-richard-payne.yml",
       "class": "person",
       "label": "John Richard Payne",
@@ -4243,6 +4459,31 @@
       "withheld": 0
     },
     {
+      "id": "person/juergen-a-waldick.yml",
+      "class": "person",
+      "label": "Juergen A. Waldick",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Third District Court of Appeals, holding a term that began 2023-02-11. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of the seventeen counties of the Third District, of which Allen is one. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "person/krista-n-bohn.yml",
       "class": "person",
       "label": "Krista N. Bohn",
@@ -4287,6 +4528,31 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "person/mark-c-miller.yml",
+      "class": "person",
+      "label": "Mark C. Miller",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Third District Court of Appeals, holding a term that began 2021-02-09. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of the seventeen counties of the Third District, of which Allen is one. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "person/mathias-ridenour.yml",
@@ -4350,6 +4616,31 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "person/matthew-c-huffman.yml",
+      "class": "person",
+      "label": "Matthew C. Huffman",
+      "tier": "inference",
+      "properties": {
+        "occupation": "legislator"
+      },
+      "blocks": [
+        {
+          "text": "Member of the Ohio House of Representatives, 78th District, holding a term that began 2025-01-01. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of a district that includes Allen County. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "person/mona-s-losh.yml",
@@ -4552,6 +4843,31 @@
       "withheld": 0
     },
     {
+      "id": "person/susan-manchester.yml",
+      "class": "person",
+      "label": "Susan Manchester",
+      "tier": "inference",
+      "properties": {
+        "occupation": "legislator"
+      },
+      "blocks": [
+        {
+          "text": "Member of the Ohio Senate, 12th District, holding a term that began 2025-01-01. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of a district that includes Allen County. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "person/tammie-k-hursh.yml",
       "class": "person",
       "label": "Tammie K. Hursh",
@@ -4678,6 +4994,31 @@
       "withheld": 1
     },
     {
+      "id": "person/william-r-zimmerman.yml",
+      "class": "person",
+      "label": "William R. Zimmerman",
+      "tier": "inference",
+      "properties": {
+        "occupation": "judge"
+      },
+      "blocks": [
+        {
+          "text": "Judge of the Third District Court of Appeals, holding a term that began 2023-02-09. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "This officer is chosen by the electors of the seventeen counties of the Third District, of which Allen is one. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "person/william-tingle.yml",
       "class": "person",
       "label": "William Tingle",
@@ -4754,12 +5095,16 @@
           "tier": "inference"
         },
         {
+          "text": "**Who represents it, and under which map.** The county sends one member to the Ohio House from [the 78th District](../division/ohio-house-district-78-2023.yml) and one to the Ohio Senate from [the 12th](../division/ohio-senate-district-12-2023.yml), both under the legislative map adopted 29 September 2023; and it is not split between districts in either chamber. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md); [inference] for the not-split, reasoned from the roster naming one of each. Its sitting member of Congress sits for the 4th District. [verified] — same source.",
+          "tier": "inference"
+        },
+        {
           "text": "**It rose for a hundred and fifty years and has fallen for forty-four.** The peak is 1980 and the county is now smaller than it was in 1960. [inference] The first two figures count different ground — the [reorganization of 1848](../event/reorganization-of-1848.yml) moved 138 square miles — so the series is continuous only from 1850.",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "place/amanda-township.yml",
@@ -5826,18 +6171,26 @@
       "properties": {
         "claim_tag": "open",
         "opened": "2026-08-28",
-        "would_close_this": "A current county-to-congressional-district relationship file from the Census Bureau, if one is published for the 118th or 119th Congress under a path this corpus has not found; the Ohio Secretary of State's district map, retrieved by hand rather than by an automated client; or the enacted redistricting plan itself, which names its constituent counties."
+        "would_close_this": "A county-to-congressional-district relationship file from the Census Bureau reflecting the plan adopted 31 October 2025, if one is published under a path this corpus has not found; the Ohio Secretary of State's district map, retrieved by hand rather than by an automated client; or the enacted plan itself, which names its constituent counties. An elections roster will not do it, and now the corpus knows why: a roster names the sitting member, and a sitting member is evidence about the map that elected him."
       },
       "blocks": [
         {
           "text": "At the 2020 census, all 3,552 of Allen County's census blocks fell in [Ohio's 4th congressional district](../division/ohio-congressional-district-4-2020.yml). [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Half of it is now answered, and the half that is answered is not the half that was asked.** Allen County's sitting member of Congress is [James D. Jordan](../person/james-d-jordan.yml) of Ohio's 4th District, serving 3 January 2025 to 2 January 2027. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), an elections roster that names officeholders by county and was reachable where the geography files were not.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's state legislative districts did close**, because the legislative map adopted 29 September 2023 is the map still in force and is the one the same election ran on. The county is in [House District 78](../division/ohio-house-district-78-2023.yml) and [Senate District 12](../division/ohio-senate-district-12-2023.yml). [verified] — the same two sources. One roster, one election, two vintages, and the difference decided which half of this question could close.",
           "tier": "verified"
         }
       ],
       "refusals": [
         "The corpus does not know the county's current district and does not guess it."
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "question/namesake-of-allen-county.yml",
@@ -6437,6 +6790,30 @@
       "withheld": 1
     },
     {
+      "id": "tenure/congress-2025-james-d-jordan.yml",
+      "class": "tenure",
+      "label": "James D. Jordan, Representative in Congress, Ohio's 4th District, term of 2025–2027",
+      "tier": "inference",
+      "properties": {
+        "began": "2025-01-03",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "James D. Jordan holds this seat under a term that began 2025-01-03 and is scheduled to expire 2027-01-02. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs two years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "So this tenure establishes who represents Allen County and does not establish which district the county is now in."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "tenure/coroner-2025-john-thomas-meyer.yml",
       "class": "tenure",
       "label": "John Thomas Meyer, Coroner of Allen County, term of 2025–2028",
@@ -6596,6 +6973,50 @@
         },
         {
           "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "tenure/ohio-house-2025-matthew-c-huffman.yml",
+      "class": "tenure",
+      "label": "Matthew C. Huffman, Member of the Ohio House of Representatives, 78th District, term of 2025–2026",
+      "tier": "inference",
+      "properties": {
+        "began": "2025-01-01",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Matthew C. Huffman holds this seat under a term that began 2025-01-01 and is scheduled to expire 2026-12-31. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs two years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "tenure/ohio-senate-2025-susan-manchester.yml",
+      "class": "tenure",
+      "label": "Susan Manchester, Member of the Ohio Senate, 12th District, term of 2025–2028",
+      "tier": "inference",
+      "properties": {
+        "began": "2025-01-01",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Susan Manchester holds this seat under a term that began 2025-01-01 and is scheduled to expire 2028-12-31. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs four years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
           "tier": "inference"
         }
       ],
@@ -7389,6 +7810,106 @@
       "withheld": 0
     },
     {
+      "id": "tenure/third-district-2021-mark-c-miller.yml",
+      "class": "tenure",
+      "label": "Mark C. Miller, Judge of the Third District Court of Appeals, term of 2021–2027",
+      "tier": "inference",
+      "properties": {
+        "began": "2021-02-09",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Mark C. Miller holds this seat under a term that began 2021-02-09 and is scheduled to expire 2027-02-08. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "First elected in 2020, to the vacancy created by Judge Vernon Preston's retirement. [verified] — [the court's own site](../../catalog/third-district-court-of-appeals.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "tenure/third-district-2023-juergen-a-waldick.yml",
+      "class": "tenure",
+      "label": "Juergen A. Waldick, Judge of the Third District Court of Appeals, term of 2023–2029",
+      "tier": "inference",
+      "properties": {
+        "began": "2023-02-11",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "Juergen A. Waldick holds this seat under a term that began 2023-02-11 and is scheduled to expire 2029-02-10. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "tenure/third-district-2023-william-r-zimmerman.yml",
+      "class": "tenure",
+      "label": "William R. Zimmerman, Judge of the Third District Court of Appeals, term of 2023–2029",
+      "tier": "inference",
+      "properties": {
+        "began": "2023-02-09",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "William R. Zimmerman holds this seat under a term that began 2023-02-09 and is scheduled to expire 2029-02-08. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Elected to this court on 8 November 2016. [verified] — [the court's own site](../../catalog/third-district-court-of-appeals.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "tenure/third-district-2025-john-r-willamowski.yml",
+      "class": "tenure",
+      "label": "John R. Willamowski, Judge of the Third District Court of Appeals, term of 2025–2031",
+      "tier": "inference",
+      "properties": {
+        "began": "2025-02-09",
+        "how_began": "elected"
+      },
+      "blocks": [
+        {
+          "text": "John R. Willamowski holds this seat under a term that began 2025-02-09 and is scheduled to expire 2031-02-08. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "First elected to this court in 2006 and re-elected to a fourth term in 2024. [verified] — [the court's own site](../../catalog/third-district-court-of-appeals.md). The three earlier terms have no nodes.",
+          "tier": "verified"
+        },
+        {
+          "text": "The term runs six years, computed from its own two dates rather than read from a statute. [inference] `how_began` is recorded as elected because the source is a roster of elected officials for a term it dates. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "tenure/treasurer-2025-krista-n-bohn.yml",
       "class": "tenure",
       "label": "Krista N. Bohn, Treasurer of Allen County, term of 2025–2029",
@@ -7454,11 +7975,25 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "division/ohio-house-district-78-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "partially-covers",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
       "from": "division/ohio-senate-district-12-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "covers",
       "tier": "verified",
       "source": "catalog/census-block-assignment-2020.md"
+    },
+    {
+      "from": "division/ohio-senate-district-12-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "partially-covers",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
     },
     {
       "from": "division/voting-district-lima-1a-2020.yml",
@@ -8567,8 +9102,36 @@
       "source": "catalog/ohio-revised-code.md"
     },
     {
+      "from": "office/judge-of-the-third-district-court-of-appeals.yml",
+      "to": "jurisdiction/third-district-court-of-appeals.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
       "from": "office/mayor-of-lima.yml",
       "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "established-within",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "office/member-of-the-ohio-house-for-district-78.yml",
+      "to": "division/ohio-house-district-78-2023.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "office/member-of-the-ohio-senate-for-district-12.yml",
+      "to": "division/ohio-senate-district-12-2023.yml",
+      "relationship": "established-within",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "office/representative-in-congress-for-ohios-4th-district.yml",
+      "to": "division/ohio-congressional-district-4-2020.yml",
       "relationship": "established-within",
       "tier": "inference",
       "source": null
@@ -9645,6 +10208,20 @@
       "source": "catalog/ohio-boe-elected-officials-allen.md"
     },
     {
+      "from": "tenure/congress-2025-james-d-jordan.yml",
+      "to": "person/james-d-jordan.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/congress-2025-james-d-jordan.yml",
+      "to": "office/representative-in-congress-for-ohios-4th-district.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
       "from": "tenure/coroner-2025-john-thomas-meyer.yml",
       "to": "person/john-thomas-meyer.yml",
       "relationship": "held-by",
@@ -9738,6 +10315,34 @@
     {
       "from": "tenure/municipal-2024-john-richard-payne.yml",
       "to": "office/judge-of-the-lima-municipal-court.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/ohio-house-2025-matthew-c-huffman.yml",
+      "to": "person/matthew-c-huffman.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/ohio-house-2025-matthew-c-huffman.yml",
+      "to": "office/member-of-the-ohio-house-for-district-78.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/ohio-senate-2025-susan-manchester.yml",
+      "to": "person/susan-manchester.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/ohio-senate-2025-susan-manchester.yml",
+      "to": "office/member-of-the-ohio-senate-for-district-12.yml",
       "relationship": "of-office",
       "tier": "verified",
       "source": "catalog/ohio-boe-elected-officials-allen.md"
@@ -10329,6 +10934,62 @@
       "relationship": "of-office",
       "tier": "verified",
       "source": "catalog/acso-past-sheriffs.md"
+    },
+    {
+      "from": "tenure/third-district-2021-mark-c-miller.yml",
+      "to": "person/mark-c-miller.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2021-mark-c-miller.yml",
+      "to": "office/judge-of-the-third-district-court-of-appeals.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2023-juergen-a-waldick.yml",
+      "to": "person/juergen-a-waldick.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2023-juergen-a-waldick.yml",
+      "to": "office/judge-of-the-third-district-court-of-appeals.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2023-william-r-zimmerman.yml",
+      "to": "person/william-r-zimmerman.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2023-william-r-zimmerman.yml",
+      "to": "office/judge-of-the-third-district-court-of-appeals.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2025-john-r-willamowski.yml",
+      "to": "person/john-r-willamowski.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/third-district-2025-john-r-willamowski.yml",
+      "to": "office/judge-of-the-third-district-court-of-appeals.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
     },
     {
       "from": "tenure/treasurer-2025-krista-n-bohn.yml",

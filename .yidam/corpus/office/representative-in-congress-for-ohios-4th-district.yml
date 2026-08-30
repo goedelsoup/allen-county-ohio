@@ -1,0 +1,36 @@
+class: office
+label: Representative in Congress, Ohio's 4th District
+description: |
+  The seat Allen County's present member of the United States House of Representatives holds.
+  [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  Its term is two years, running 3 January 2025 to 2 January 2027. [verified] — same source.
+
+  **This office is the corpus's clearest case of a seat outliving its map.** Its holder was elected
+  in November 2024 under the congressional plan of March 2022. That plan was replaced on 31 October
+  2025 by a new map valid for the rest of the decade. [verified] —
+  [All About Redistricting — Ohio](../../catalog/all-about-redistricting-ohio.md). So the number in
+  this node's label describes the district that elected the sitting member and may or may not
+  describe the district this county is in for the election of 2026. [open]
+
+  That is why this node has no `established-within` edge to a district. The corpus holds no division
+  node for a 4th District under the map now in force, because it has not established that Allen
+  County is in one — see
+  [which congressional district Allen County is in now](../question/allen-county-current-congressional-district.yml).
+  The edge below points at the 2020-geography district instead, and says in its own tag that it is
+  the weaker kind of claim.
+
+  [open] Whether this seat should be split into two nodes, one per map. The corpus has one seat and
+  two maps, and has not decided whether that is one office or two.
+properties:
+  office_type: elected
+  selection_method: district election
+  term_length: 2 years
+  seats: "1"
+links:
+  - target: ../division/ohio-congressional-district-4-2020.yml
+    relationship: established-within
+    claim_tag: inference
+  - target: ../office.ont.yml
+    relationship: instance-of

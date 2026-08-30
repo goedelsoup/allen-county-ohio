@@ -37,3 +37,13 @@ edges:
     target: organization
     direction: out
     description: The non-governmental body this office belongs to.
+  - relationship: established-within
+    target: division
+    direction: out
+    description: |
+      The apportionment district an elected seat belongs to — a legislative seat, an appellate
+      judgeship. Declared here when the first such office was established. A seat of this kind is
+      not established within a unit of government but within a district, and the difference is
+      load-bearing: the district is redrawn on a decennial cycle and may be renumbered, where a
+      jurisdiction persists. An office pointing at a division is therefore saying that its own
+      identity is only as durable as a map.

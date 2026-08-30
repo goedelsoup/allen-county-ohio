@@ -25,8 +25,10 @@ Sorted by: kind, then alphabetically.
 |---|---|---|---|---|---|
 | [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 4 | 3v / 1i / 0o | 43 |
 | [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 32 |
-| [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 42 |
-| [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 28 |
+| [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 3v / 0i / 1o | 50 |
+| [ohio-house-district-78-2023.yml](division/ohio-house-district-78-2023.yml) | division | Ohio House District 78 (2023 map) | 2 | 2v / 1i / 1o | 32 |
+| [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 3v / 1i / 1o | 34 |
+| [ohio-senate-district-12-2023.yml](division/ohio-senate-district-12-2023.yml) | division | Ohio Senate District 12 (2023 map) | 2 | 1v / 2i / 1o | 31 |
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
@@ -62,7 +64,7 @@ Sorted by: kind, then alphabetically.
 | [spencer-township.yml](jurisdiction/spencer-township.yml) | jurisdiction | Spencer Township (government) | 3 | 7v / 0i / 1o | 49 |
 | [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
 | [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 6v / 0i / 1o | 47 |
-| [third-district-court-of-appeals.yml](jurisdiction/third-district-court-of-appeals.yml) | jurisdiction | Ohio Third District Court of Appeals | 2 | 3v / 3i / 1o | 41 |
+| [third-district-court-of-appeals.yml](jurisdiction/third-district-court-of-appeals.yml) | jurisdiction | Ohio Third District Court of Appeals | 2 | 4v / 2i / 1o | 45 |
 | [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 4v / 0i / 1o | 37 |
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 1v / 0i / 0o | 23 |
 | [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 3v / 0i / 2o | 32 |
@@ -126,7 +128,11 @@ Sorted by: kind, then alphabetically.
 | [judge-of-the-common-pleas-general-division.yml](office/judge-of-the-common-pleas-general-division.yml) | office | Judge of the Court of Common Pleas, General Division | 2 | 3v / 2i / 1o | 36 |
 | [judge-of-the-common-pleas-probate-division.yml](office/judge-of-the-common-pleas-probate-division.yml) | office | Judge of the Court of Common Pleas, Probate Division | 2 | 3v / 2i / 0o | 31 |
 | [judge-of-the-lima-municipal-court.yml](office/judge-of-the-lima-municipal-court.yml) | office | Judge of the Lima Municipal Court | 2 | 2v / 2i / 1o | 38 |
+| [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 2v / 2i / 1o | 37 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 0v / 1i / 1o | 25 |
+| [member-of-the-ohio-house-for-district-78.yml](office/member-of-the-ohio-house-for-district-78.yml) | office | Member of the Ohio House of Representatives, 78th District | 2 | 2v / 1i / 1o | 31 |
+| [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
+| [representative-in-congress-for-ohios-4th-district.yml](office/representative-in-congress-for-ohios-4th-district.yml) | office | Representative in Congress, Ohio's 4th District | 2 | 3v / 0i / 2o | 36 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 5v / 0i / 1o | 41 |
@@ -162,6 +168,7 @@ Sorted by: kind, then alphabetically.
 | [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 18 |
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
+| [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 1 | 2v / 1i / 1o | 22 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
 | [jeffrey-l-reed.yml](person/jeffrey-l-reed.yml) | person | Jeffrey L. Reed | 2 | 1v / 1i / 1o | 23 |
 | [jennifer-moree-mcbride.yml](person/jennifer-moree-mcbride.yml) | person | Jennifer Moree McBride | 2 | 1v / 1i / 0o | 21 |
@@ -169,14 +176,18 @@ Sorted by: kind, then alphabetically.
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
 | [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
+| [john-r-willamowski.yml](person/john-r-willamowski.yml) | person | John R. Willamowski | 1 | 2v / 1i / 1o | 23 |
 | [john-richard-payne.yml](person/john-richard-payne.yml) | person | John Richard Payne | 2 | 1v / 1i / 1o | 23 |
 | [john-thomas-meyer.yml](person/john-thomas-meyer.yml) | person | John Thomas Meyer | 2 | 3v / 1i / 0o | 23 |
 | [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
+| [juergen-a-waldick.yml](person/juergen-a-waldick.yml) | person | Juergen A. Waldick | 1 | 2v / 1i / 1o | 23 |
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
+| [mark-c-miller.yml](person/mark-c-miller.yml) | person | Mark C. Miller | 1 | 2v / 1i / 1o | 23 |
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
 | [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 1v / 1i / 1o | 23 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
+| [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 1 | 2v / 1i / 1o | 22 |
 | [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 2v / 1i / 1o | 24 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
@@ -186,15 +197,17 @@ Sorted by: kind, then alphabetically.
 | [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
 | [samuel-forrer.yml](person/samuel-forrer.yml) | person | Samuel Forrer | 3 | 4v / 0i / 1o | 40 |
 | [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 1v / 1i / 0o | 18 |
+| [susan-manchester.yml](person/susan-manchester.yml) | person | Susan Manchester | 1 | 2v / 1i / 1o | 22 |
 | [tammie-k-hursh.yml](person/tammie-k-hursh.yml) | person | Tammie K. Hursh | 2 | 1v / 1i / 1o | 23 |
 | [terri-lynn-kohlrieser.yml](person/terri-lynn-kohlrieser.yml) | person | Terri Lynn Kohlrieser | 2 | 1v / 1i / 1o | 23 |
 | [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 1v / 1i / 1o | 23 |
 | [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
 | [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
+| [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 2v / 1i / 1o | 23 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 5v / 3i / 2o | 71 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 2 | 7v / 4i / 3o | 83 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 9v / 2i / 1o | 65 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
@@ -219,7 +232,7 @@ Sorted by: kind, then alphabetically.
 | [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 8v / 0i / 1o | 58 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 8v / 2i / 0o | 65 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
-| [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 1v / 1i / 1o | 38 |
+| [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 4v / 1i / 2o | 63 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 1v / 2i / 1o | 43 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 2o | 39 |
@@ -238,6 +251,7 @@ Sorted by: kind, then alphabetically.
 | [commissioner-2023-brian-winegardner.yml](tenure/commissioner-2023-brian-winegardner.yml) | tenure | Brian Winegardner, Commissioner of Allen County, term of 2023–2026 | 3 | 2v / 2i / 0o | 31 |
 | [commissioner-2025-beth-a-seibert.yml](tenure/commissioner-2025-beth-a-seibert.yml) | tenure | Beth A. Seibert, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
 | [commissioner-2025-cory-alan-noonan.yml](tenure/commissioner-2025-cory-alan-noonan.yml) | tenure | Cory Alan Noonan, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
+| [congress-2025-james-d-jordan.yml](tenure/congress-2025-james-d-jordan.yml) | tenure | James D. Jordan, Representative in Congress, Ohio's 4th District, term of 2025–2027 | 3 | 2v / 2i / 1o | 32 |
 | [coroner-2025-john-thomas-meyer.yml](tenure/coroner-2025-john-thomas-meyer.yml) | tenure | John Thomas Meyer, Coroner of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 33 |
 | [domestic-2023-matt-c-staley.yml](tenure/domestic-2023-matt-c-staley.yml) | tenure | Matt C. Staley, Judge of the Court of Common Pleas, Domestic Relations Division, term of 2023–2028 | 3 | 2v / 2i / 0o | 30 |
 | [engineer-2025-brion-e-rhodes.yml](tenure/engineer-2025-brion-e-rhodes.yml) | tenure | Brion E. Rhodes, Engineer of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 34 |
@@ -245,6 +259,8 @@ Sorted by: kind, then alphabetically.
 | [general-2025-terri-lynn-kohlrieser.yml](tenure/general-2025-terri-lynn-kohlrieser.yml) | tenure | Terri Lynn Kohlrieser, Judge of the Court of Common Pleas, General Division, term of 2025–2030 | 3 | 2v / 2i / 1o | 33 |
 | [municipal-2022-tammie-k-hursh.yml](tenure/municipal-2022-tammie-k-hursh.yml) | tenure | Tammie K. Hursh, Judge of the Lima Municipal Court, term of 2022–2027 | 3 | 1v / 2i / 0o | 27 |
 | [municipal-2024-john-richard-payne.yml](tenure/municipal-2024-john-richard-payne.yml) | tenure | John Richard Payne, Judge of the Lima Municipal Court, term of 2024–2029 | 3 | 1v / 2i / 0o | 27 |
+| [ohio-house-2025-matthew-c-huffman.yml](tenure/ohio-house-2025-matthew-c-huffman.yml) | tenure | Matthew C. Huffman, Member of the Ohio House of Representatives, 78th District, term of 2025–2026 | 3 | 1v / 2i / 1o | 29 |
+| [ohio-senate-2025-susan-manchester.yml](tenure/ohio-senate-2025-susan-manchester.yml) | tenure | Susan Manchester, Member of the Ohio Senate, 12th District, term of 2025–2028 | 3 | 1v / 2i / 0o | 26 |
 | [probate-2021-todd-e-kohlrieser.yml](tenure/probate-2021-todd-e-kohlrieser.yml) | tenure | Todd E. Kohlrieser, Judge of the Court of Common Pleas, Probate Division, term of 2021–2027 | 3 | 1v / 2i / 1o | 31 |
 | [prosecutor-2025-destiny-rae-caldwell.yml](tenure/prosecutor-2025-destiny-rae-caldwell.yml) | tenure | Destiny Rae Caldwell, Prosecuting Attorney of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
 | [recorder-2025-mona-s-losh.yml](tenure/recorder-2025-mona-s-losh.yml) | tenure | Mona S. Losh, Recorder of Allen County, term of 2025–2028 | 3 | 2v / 3i / 0o | 33 |
@@ -287,6 +303,10 @@ Sorted by: kind, then alphabetically.
 | [sheriff-2009-samuel-a-crish.yml](tenure/sheriff-2009-samuel-a-crish.yml) | tenure | Samuel A. Crish, Sheriff of Allen County, 2009–2017 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-2017-james-k-everett.yml](tenure/sheriff-2017-james-k-everett.yml) | tenure | James K. Everett, Sheriff of Allen County, 2017–2017 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-2017-matthew-b-treglia.yml](tenure/sheriff-2017-matthew-b-treglia.yml) | tenure | Matthew B. Treglia, Sheriff of Allen County, 2017–present | 3 | 3v / 1i / 0o | 33 |
+| [third-district-2021-mark-c-miller.yml](tenure/third-district-2021-mark-c-miller.yml) | tenure | Mark C. Miller, Judge of the Third District Court of Appeals, term of 2021–2027 | 3 | 2v / 2i / 0o | 29 |
+| [third-district-2023-juergen-a-waldick.yml](tenure/third-district-2023-juergen-a-waldick.yml) | tenure | Juergen A. Waldick, Judge of the Third District Court of Appeals, term of 2023–2029 | 3 | 2v / 2i / 1o | 31 |
+| [third-district-2023-william-r-zimmerman.yml](tenure/third-district-2023-william-r-zimmerman.yml) | tenure | William R. Zimmerman, Judge of the Third District Court of Appeals, term of 2023–2029 | 3 | 2v / 2i / 0o | 29 |
+| [third-district-2025-john-r-willamowski.yml](tenure/third-district-2025-john-r-willamowski.yml) | tenure | John R. Willamowski, Judge of the Third District Court of Appeals, term of 2025–2031 | 3 | 2v / 2i / 0o | 30 |
 | [treasurer-2025-krista-n-bohn.yml](tenure/treasurer-2025-krista-n-bohn.yml) | tenure | Krista N. Bohn, Treasurer of Allen County, term of 2025–2029 | 3 | 1v / 1i / 1o | 29 |
 <!-- /REGEN -->
 

@@ -56,6 +56,19 @@ const judgeRows = judicial.flatMap((o) =>
     .map((h, i) => [i === 0 ? o.label : '', h.person, h.began]),
 )
 
+// Representation: the offices whose constituency is a district rather than the county. They are
+// the ones that point at a division, or at the appellate court that is not the county's own.
+const REP = [
+  'office/member-of-the-ohio-house-for-district-78.yml',
+  'office/member-of-the-ohio-senate-for-district-12.yml',
+  'office/representative-in-congress-for-ohios-4th-district.yml',
+]
+const repRows = REP.flatMap((id) => {
+  const o = byId.get(id)
+  if (!o) throw new Error(`no office ${id} in the feed`)
+  return currentOf(id).map((h) => [o.label, h.person, h.began])
+})
+
 const tenureCounts = offices.map((o) => [o.label, holdersOf(o.id).length])
 // An office is "traced" when the corpus holds more tenures than the office has seats — that
 // is, at least one predecessor. Three commissioners in three seats is not a line of holders.
@@ -170,10 +183,43 @@ const traced = offices.filter(
     />
 
     <p>
-      The Third District's four judges — John R. Willamowski, William R. Zimmerman, Mark C. Miller
-      and Juergen A. Waldick — are not on that table and have no nodes in the corpus. They are
-      elected by the voters of all seventeen counties, and this corpus writes a person only where
-      Allen County's own electors choose the officer.
+      The Third District's four judges sit on that table too, and did not last week. They are
+      elected by the voters of all seventeen counties, and a rule written one phase ago excluded
+      them on that ground. The rule's next case was this county's own state senator and state
+      representative, elected by multi-county districts, which it excluded as well — so the rule
+      went. This corpus now holds a person wherever the constituency is smaller than the state and
+      includes ground in Allen County.
+    </p>
+  </section>
+
+  <section>
+    <h2>Who represents the county</h2>
+    <p>
+      One member of the Ohio House, one of the Ohio Senate, one of Congress. The county is split
+      between districts in neither state chamber — the roster names one of each, and a split county
+      would name two.
+    </p>
+
+    <DataTable
+      title="Allen County's representation"
+      caption="From the Ohio boards of elections' county lookup, read 30 August 2026. The House seat runs two years, the Senate seat four, and the congressional seat two — the shortest terms in this corpus, against four years for a county officer and six for a judge."
+      columns={['Seat', 'Holder', 'Term began']}
+      rows={repRows}
+    />
+
+    <p>
+      The state legislative districts are current: Ohio's legislative map was adopted on 29 September
+      2023 and is the map still in force, the one the November 2024 election ran on. The county was
+      House District 4 under the previous map — a district coterminous with the county, to the byte
+      — and is the 78th now.
+    </p>
+    <p>
+      The congressional seat is a different matter, and it is the reason this page will not tell you
+      which congressional district Allen County is in. Ohio adopted a new congressional map on
+      31 October 2025. The county's sitting representative was elected in November 2024, under the
+      map that one replaced. So the roster establishes who represents this county and not which
+      district the county is now in, and the corpus has an open question that says so rather than
+      closing the gap with a guess. One roster, one election, two vintages.
     </p>
   </section>
 
@@ -187,9 +233,9 @@ const traced = offices.filter(
       appearing on any ballot.
     </p>
     <p>
-      Two elected bodies are visible on the same roster this page is built from and are not here
-      yet: the county's state legislators, and the trustees and fiscal officers of the twelve
-      townships.
+      The trustees and fiscal officers of the twelve townships are visible on the same roster this
+      page is built from and are not here yet — forty-eight officers, elected by township rather
+      than county, and the largest single block of elected officials the corpus still does not hold.
     </p>
   </section>
 </Base>

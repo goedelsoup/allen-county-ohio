@@ -1,0 +1,31 @@
+class: office
+label: Member of the Ohio House of Representatives, 78th District
+description: |
+  Allen County's seat in the lower chamber of the Ohio General Assembly, under the map adopted
+  29 September 2023. [verified] —
+  [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).
+
+  **Its term is two years — the shortest of any office in this corpus.** The present term runs
+  1 January 2025 to 31 December 2026. [verified] — same source; the length is arithmetic on those
+  dates. [inference] Every other office here runs four years or six, so this is the one seat whose
+  holder faces the voters in every even year.
+
+  **The seat is established within a district and not within a government**, which is why this node
+  points at [a division](../division/ohio-house-district-78-2023.yml) rather than a jurisdiction.
+  The distinction is not pedantry here: the same county's seat was the 4th District under the
+  previous map, so the office's own number is only as durable as the map that drew it.
+
+  [open] Whether this district is confined to Allen County, as its predecessor was, or reaches into
+  neighbouring counties. The corpus knows the county votes in it and not what else does.
+properties:
+  office_type: elected
+  selection_method: district election
+  term_length: 2 years
+  seats: "1"
+links:
+  - target: ../division/ohio-house-district-78-2023.yml
+    relationship: established-within
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../office.ont.yml
+    relationship: instance-of

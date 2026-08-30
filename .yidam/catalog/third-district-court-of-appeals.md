@@ -17,6 +17,10 @@ location:
 used-by:
   - ../corpus/jurisdiction/third-district-court-of-appeals.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
+  - ../corpus/tenure/third-district-2021-mark-c-miller.yml
+  - ../corpus/tenure/third-district-2023-juergen-a-waldick.yml
+  - ../corpus/tenure/third-district-2023-william-r-zimmerman.yml
+  - ../corpus/tenure/third-district-2025-john-r-willamowski.yml
 ---
 
 **Its office is in Allen County**, at 204 N. Main Street in Lima — the same street as the county
