@@ -56,6 +56,28 @@ pub fn publishable_property(value: &str, ceiling: Tier) -> bool {
     tier_of(value).is_none_or(|t| t.reaches(ceiling))
 }
 
+/// The strongest claim in a block whose weakest claim is `[open]`, if there is one.
+///
+/// Such a block travels on `Open` and does not leave the repository, so a verified fact
+/// sitting in it is withheld — not by any rule visibly failing, but by the sentence beside
+/// it. Nothing is malformed, every claim is tagged, and the only symptom is a fact that
+/// quietly does not appear on the site. Four consecutive phases have written one of these and
+/// caught it by reading.
+///
+/// This is a report and never a gate. Narrowing a verified claim with what is still unknown
+/// about it is usually exactly right — thirty-odd blocks in this corpus do it deliberately —
+/// and only the author can tell that case from the accident. What the report buys is that the
+/// author is told which blocks are in the state, instead of having to remember to look.
+pub fn withheld(block: &Block) -> Option<Tier> {
+    if block.tier != Some(Tier::Open) {
+        return None;
+    }
+    tags(&block.text)
+        .into_iter()
+        .filter(|t| *t != Tier::Open)
+        .min()
+}
+
 /// Every `[verified]`, `[inference]` or `[open]` marker in `text`, in order.
 fn tags(text: &str) -> Vec<Tier> {
     let bytes = text.as_bytes();

@@ -42,6 +42,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-government::seated-holders-of-elective-office,-and-seats-vacant,-by-class-of-government",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "seated holders of elective office, and seats vacant, by class of government",
+      "unit": "seated officeholders across 218 seats",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-elected-seats-2026.yml",
+          "label": "Allen County elective seats and how their holders arrived, 2026",
+          "as_of": "2026-08-30",
+          "value": 211.0,
+          "published": "211",
+          "tier": "verified",
+          "source": "catalog/ohio-boe-elected-officials-allen.md",
+          "method": "Union of the eighty-eight precinct pages of the boards of elections roster, deduplicated on the office name and the page's own `hid_office` code. Vacancies are counted from its `N Vacant Seat(s)` rows and appointments from its `*Appointed*` marker; the class column is this corpus's grouping and the roster totals nothing. [verified] **It is a county's roster, so a ward seat of a city that crosses the county line does not appear.** Delphos contributes ten seats here and 3,182 of its people live in Van Wert County, so its council is undercounted by an unknown number of ward seats. [inference] No other government here is affected: Bluffton also crosses a line and elects its council at large."
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::voting-districts",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -1355,6 +1375,92 @@
           "node": "jurisdiction/allen-county-government.yml",
           "node_label": "Allen County (government)",
           "span": "**Nine separately elected offices govern Allen County, and eleven people hold them, because the board of commissioners seats three.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "appointment-is-a-form-of-local-government",
+      "statement": "Thirty-nine of the 166 people holding local elective office in Allen County were appointed to the seat rather than elected to it. None of the county's twenty-two officers and judges was.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-elected-seats-2026.yml",
+          "node_label": "Allen County elective seats and how their holders arrived, 2026",
+          "span": "Of the 166 seated township, village, city and school officers, 39 hold seats they were appointed to fill.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-elected-seats-2026.yml",
+          "node_label": "Allen County elective seats and how their holders arrived, 2026",
+          "span": "Every one of the twenty-two county offices and judgeships is filled, and every one of them by election.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that these seats go unfilled because nobody stands for them."
+      ],
+      "figures": []
+    },
+    {
+      "id": "two-villages-cannot-fill-their-governments",
+      "statement": "Cairo's six-member council is five appointees and a vacancy, and Harrod has ten elective seats of which one is held by someone its voters chose.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "jurisdiction/village-of-cairo.yml",
+          "node_label": "Village of Cairo",
+          "span": "**No elected member sits on this village's council.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "jurisdiction/village-of-harrod.yml",
+          "node_label": "Village of Harrod",
+          "span": "**One person in this village's government of ten seats was put there by its voters.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-townships-are-named",
+      "statement": "Every township in Allen County has three trustees and a fiscal officer, and this corpus now names all forty-eight of them.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "jurisdiction/allen-county-government.yml",
+          "node_label": "Allen County (government)",
+          "span": "the forty-eight trustees and fiscal officers of the twelve townships arrived when the roster was read across all eighty-eight of its precinct pages rather than one.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "jurisdiction/shawnee-township.yml",
+          "node_label": "Shawnee Township (government)",
+          "span": "Every township in this county has three trustees and one fiscal officer, each on a four-year term",
           "tier": "verified",
           "sources": [
             "catalog/ohio-boe-elected-officials-allen.md"

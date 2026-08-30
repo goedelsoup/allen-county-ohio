@@ -53,6 +53,26 @@ pub struct File {
     pub json: String,
 }
 
+/// Every block holding a publishable claim beside an `[open]` one, as `node — opening words`.
+///
+/// Reported by `publish-feeds` and gated by nothing; [`claim::withheld`] says why it cannot be
+/// a gate. The point is that the author is shown the blocks in this state rather than having
+/// to remember that the state exists.
+pub fn withheld(nodes: &[load::Node]) -> Vec<String> {
+    let mut out = Vec::new();
+    for node in nodes {
+        for block in &node.blocks {
+            let Some(strongest) = claim::withheld(block) else {
+                continue;
+            };
+            let text = claim::normalize(&block.text);
+            let opening: String = text.chars().take(72).collect();
+            out.push(format!("{} [{strongest}] {opening}…", node.id));
+        }
+    }
+    out
+}
+
 /// Build every feed from a loaded corpus.
 ///
 /// Returns the files and every defect found. A caller writing files while defects exist is

@@ -371,6 +371,63 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "appointment-is-a-form-of-local-government",
+        statement: "Thirty-nine of the 166 people holding local elective office in Allen County \
+                    were appointed to the seat rather than elected to it. None of the county's \
+                    twenty-two officers and judges was.",
+        topic: "government",
+        // No chart. Five bars of small integers would flatter the finding into a trend; what
+        // matters is one ratio against another, and the sentence carries both.
+        supports: &[
+            support!(
+                "measure/allen-county-elected-seats-2026.yml",
+                "Of the 166 seated township, village, city and school officers, 39 hold seats they were appointed to fill."
+            ),
+            support!(
+                "measure/allen-county-elected-seats-2026.yml",
+                "Every one of the twenty-two county offices and judgeships is filled, and every one of them by election."
+            ),
+        ],
+        answers: &["does not establish that these seats go unfilled"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-villages-cannot-fill-their-governments",
+        statement: "Cairo's six-member council is five appointees and a vacancy, and Harrod has \
+                    ten elective seats of which one is held by someone its voters chose.",
+        topic: "government",
+        supports: &[
+            support!(
+                "jurisdiction/village-of-cairo.yml",
+                "**No elected member sits on this village's council.**"
+            ),
+            support!(
+                "jurisdiction/village-of-harrod.yml",
+                "**One person in this village's government of ten seats was put there by its voters.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-townships-are-named",
+        statement: "Every township in Allen County has three trustees and a fiscal officer, and \
+                    this corpus now names all forty-eight of them.",
+        topic: "government",
+        supports: &[
+            support!(
+                "jurisdiction/allen-county-government.yml",
+                "the forty-eight trustees and fiscal officers of the twelve townships arrived when the roster was read across all eighty-eight of its precinct pages rather than one."
+            ),
+            support!(
+                "jurisdiction/shawnee-township.yml",
+                "Every township in this county has three trustees and one fiscal officer, each on a four-year term"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "the-factories-stopped-leaving",
         statement: "Allen County manufacturing employment peaked in 1973, at 18,400 — three years \
                     after Lima began to empty — and bottomed at 7,775 in 2009.",

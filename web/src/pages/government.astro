@@ -5,6 +5,9 @@ import DataTable from '../components/DataTable.astro'
 import { assertion, nodes, edges } from '../lib/feeds'
 
 const nine = assertion('nine-offices-eleven-officers')
+const appointed = assertion('appointment-is-a-form-of-local-government')
+const twoVillages = assertion('two-villages-cannot-fill-their-governments')
+const townships = assertion('the-townships-are-named')
 
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 // An office with no tenure would show as a blank holder rather than silently vanish.
@@ -79,7 +82,7 @@ const traced = offices.filter(
 
 <Base
   title="Government"
-  lede="The nine elected offices that govern Allen County, who holds them, and how far back this corpus can see."
+  lede="The nine elected offices that govern Allen County, the two hundred and eleven people who hold elective office over its ground, and how far back this corpus can see."
 >
   <section>
     <h2>Nine offices, eleven officers</h2>
@@ -224,18 +227,62 @@ const traced = offices.filter(
   </section>
 
   <section>
+    <h2>The government below the county</h2>
+    <p>
+      Nine offices is what the state gives a county. It is not what governs this ground. Twelve
+      townships, seven villages, two cities, nine school boards and an educational service centre
+      sit under the county, and between them they fill a hundred and seventy-one elective seats to
+      the county's twenty-two.
+    </p>
+    <p>
+      The roster this page is built from is indexed by voting precinct, not by county: each page
+      lists the offices its own precinct votes on and no others. For nine phases this corpus read
+      one of those pages and took it for the roster. Reading all eighty-eight gives the whole of
+      it — a hundred and one offices, two hundred and eighteen seats, seven of them empty.
+    </p>
+    <AssertionCard assertion={townships} />
+    <p>
+      Each township elects two trustees in one odd year and the third two years later, and its
+      fiscal officer on a term year that begins on 1 April where every trustee's begins on
+      1 January. Nothing this corpus reasoned about the shape of a township board would have
+      produced that last detail; it came off the seats.
+    </p>
+
+    <h3>Appointment is a form of government here</h3>
+    <AssertionCard assertion={appointed} />
+    <p>
+      It concentrates in one form of government and not in small places generally. Twenty-five of
+      the forty-seven seated village officers were appointed; across all forty-eight township seats
+      there is one. Spencer Township and Spencerville govern nearly the same people, and the
+      township elected all four of its officers while the village appointed four of its seven.
+      Jackson Township and the village of Lafayette are run out of the same building at 225 E.
+      Sugar Street and are staffed in opposite ways.
+    </p>
+    <AssertionCard assertion={twoVillages} />
+    <p>
+      Nor is it the smallest places failing. Beaverdam is the smallest village in the county and
+      Bluffton the largest, and they are the two that appoint least. Why the village form is
+      staffed this way and the township form is not is an open question in this corpus, and it
+      stays open: a roster records how a sitting officer arrived, never whether anyone stood. The
+      election returns would say, and no village race has been read.
+    </p>
+  </section>
+
+  <section>
     <h2>What is still missing</h2>
     <p>
       Every holder of these offices before the current term, except the sheriff's. The powers each
       office actually exercises, as against the statute that creates it. The subject-matter
       jurisdiction of both trial courts — the corpus has established their territories and neither's
       competence. And the appointed officials and boards that do much of a county's work without
-      appearing on any ballot.
+      appearing on any ballot, which is now the largest block of officeholders this corpus does not
+      hold, the townships having been named.
     </p>
     <p>
-      The trustees and fiscal officers of the twelve townships are visible on the same roster this
-      page is built from and are not here yet — forty-eight officers, elected by township rather
-      than county, and the largest single block of elected officials the corpus still does not hold.
+      Delphos is the one government on this page that is knowably incomplete. Its ward council seats
+      are voted on inside their wards, and 3,182 of the city's people live in Van Wert County, so an
+      Allen County roster cannot see any ward west of the line. Ten of its seats appear here and
+      they are not the whole of its council.
     </p>
   </section>
 </Base>
