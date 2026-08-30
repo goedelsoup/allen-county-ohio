@@ -21,7 +21,11 @@ location:
   - kind: url
     value: https://codes.ohio.gov/ohio-revised-code/section-319.01
     description: County auditor — chosen quadrennially, term begins the second Monday in March
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-1901.02
+    description: Municipal court territorial jurisdiction — the Lima court's is the whole county
 used-by:
+  - ../corpus/jurisdiction/lima-municipal-court.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
@@ -29,6 +33,7 @@ used-by:
   - ../corpus/office/allen-county-engineer.yml
   - ../corpus/office/allen-county-recorder.yml
   - ../corpus/office/allen-county-treasurer.yml
+  - ../corpus/office/judge-of-the-lima-municipal-court.yml
   - ../corpus/person/brion-e-rhodes.yml
   - ../corpus/person/john-thomas-meyer.yml
   - ../corpus/tenure/auditor-2023-rachael-s-gilroy.yml
@@ -66,6 +71,14 @@ term dates and the auditor's March date were read from
 [the elections roster](ohio-boe-elected-officials-allen.md) before these sections were fetched, and
 each statutory rule predicts the dates already in hand — 1 January, 2 January and 3 January for the
 three commissioners, and 13 March 2023 for the auditor, which is the second Monday of that March.
+
+> §1901.02 — municipal courts "have jurisdiction within the corporate limits of their respective
+> municipal corporations", and then, among the named exceptions: "The Lima municipal court has
+> jurisdiction within Allen county."
+
+That last one is the only section here that says something true of this county and not of the other
+eighty-seven, and it is the section that stopped the corpus writing that a court called after Lima
+serves Lima. See [the name is the seat, not the extent](../decisions/the-name-is-the-seat-not-the-extent.yml).
 
 **What it is not used for here.** The corpus has not read the chapters establishing the treasurer,
 recorder, prosecutor or clerk of courts, so those offices carry their term length as arithmetic on
