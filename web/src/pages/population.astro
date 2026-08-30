@@ -20,6 +20,8 @@ const health = assertion('health-care-fell-too')
 const hospitals = assertion('five-hospitals-one-locally-owned')
 const refinery = assertion('the-refinery-outgrew-them')
 const outside = assertion('the-plants-are-outside-every-city')
+const concentration2 = assertion('what-the-concentration-is-made-of')
+const young = assertion('lima-is-the-young-end')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -136,6 +138,18 @@ const refinerySpec: BarSpec = {
   labelValues: true,
 }
 
+// One city measured three ways against the same denominator, so the bars are comparable and
+// the reading is the distance between them. They are not shares of a whole and a pie would say
+// they were.
+const concentrationSpec: BarSpec = {
+  kind: 'bar',
+  categories: concentration2.figures.map((f) => f.label),
+  values: concentration2.figures.map((f) => f.value),
+  yTitle: "Lima's share of the county",
+  tickSuffix: '%',
+  labelValues: true,
+}
+
 const workSpec: BarSpec = {
   kind: 'bar',
   categories: work.figures.map((f) => f.label),
@@ -232,6 +246,65 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       ])}
     />
     <script type="application/json" data-chart-spec="indexed" set:html={JSON.stringify(indexSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>What the concentration is made of</h2>
+    <p>
+      This page has said for ten versions that the county's loss is concentrated in Lima, and until
+      now it could not say what Lima is. It is a third of the county's people, two thirds of its
+      poor, and three quarters of its Black residents — and the three shares close exactly against
+      the county's own rows, so this is one city measured three ways rather than three estimates.
+    </p>
+    <AssertionCard assertion={concentration2} open />
+
+    <ChartFigure
+      id="concentration2"
+      title="Lima's share of Allen County, 2023"
+      caption="American Community Survey, 2023 five-year estimates. Ohio's twelve townships and Lima partition the county, and the three sums — 101,685 people, 12,815 below poverty, 10,805 Black residents — are the county's own figures. The bars are three measures of one city against one denominator, not parts of a whole."
+      columns={['Measure', "Lima's share"]}
+      rows={concentration2.figures.map((f) => [f.label, `${f.value}%`])}
+      height={260}
+    />
+    <script type="application/json" data-chart-spec="concentration2" set:html={JSON.stringify(concentrationSpec)} is:inline />
+
+    <p>
+      Lima's median household income is <strong>$43,370</strong>, against $91,134 in Shawnee Township
+      across its southern line — forty-eight per cent — and fifty-five per cent of the national
+      figure. Outside the city and the two townships that touch it, the county runs between ninety
+      and ninety-seven per cent white; eight of the twelve townships have fewer than a hundred Black
+      residents, and two report none.
+    </p>
+    <p>
+      What this describes is a county as it now stands. It does not date the sorting, and nothing
+      retrieved here says whether it is the residue of a process the decline covers or one that
+      finished before the decline began.
+    </p>
+    <p>
+      This is also the first source on this page that publishes how wrong it might be. Every figure
+      in it carries a margin — Amanda Township's median household income is $99,148 give or take
+      $20,903 — and the first claim written from it was one the margins refused. Lima has the lowest
+      household income figure in the county and cannot be said to have the lowest household income:
+      Perry Township's is higher by $9,902 against a combined margin of $11,142. The gap that does
+      survive is the one against Shawnee, which is seven and a half times its margin.
+    </p>
+  </section>
+
+  <section>
+    <h2>But not because it is old</h2>
+    <AssertionCard assertion={young} open />
+    <p>
+      Two things this page already says compose into a story that is not true. It says the county
+      loses people partly to natural decrease — more deaths than births — and it says the loss is
+      concentrated in Lima. Put together, those describe a city dying of age.
+    </p>
+    <p>
+      Lima's median age is 35.4 against the county's 39.7. Its share over sixty-five is 15.6 per cent
+      against 18.7, and its share under eighteen is higher than the county's. Eleven of the twelve
+      townships are older than the city. Perry Township is 27.9 per cent over sixty-five; Lima is the
+      young end of this county and the townships are the old one, and whatever natural decrease the
+      county has is not principally the city's.
+    </p>
   </section>
 
   <section>

@@ -535,6 +535,59 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "what-the-concentration-is-made-of",
+        statement: "This corpus has said for ten phases that the county's decline is concentrated \
+                    in Lima. Lima is 34.7 per cent of the county's people, 64.1 per cent of its \
+                    poor, and 76.7 per cent of its Black residents.",
+        topic: "population",
+        // The three shares close exactly against the county's own rows, which is why they are
+        // plotted together: they are the same city measured three ways, not three estimates.
+        supports: &[
+            support!(
+                "measure/allen-county-income-and-poverty-2023.yml",
+                "35,304 of 101,685 residents — 34.7 per cent — and 8,214 of the 12,815 people below the poverty line, or 64.1 per cent."
+            ),
+            support!(
+                "measure/allen-county-race-2023.yml",
+                "8,290 of 10,805, or 76.7 per cent ± 4.6, against a 34.7 per cent share of the population."
+            ),
+            support!(
+                "measure/allen-county-income-and-poverty-2023.yml",
+                "$43,370 against\n  Shawnee Township's $91,134, a gap of $47,764 against a combined margin of $6,359."
+            ),
+        ],
+        answers: &[
+            "This does not establish that Lima has the lowest household income in the county.",
+            "This does not establish why the county is distributed this way.",
+        ],
+        figures: &[
+            Figure { label: "Population", value: 34.7, literal: "34.7" },
+            Figure { label: "People in poverty", value: 64.1, literal: "64.1" },
+            Figure { label: "Black residents", value: 76.7, literal: "76.7" },
+        ],
+    },
+    Assertion {
+        id: "lima-is-the-young-end",
+        statement: "And Lima is the young end of this county, not the old one — median age 35.4 \
+                    against the county's 39.7, with eleven of the twelve townships older.",
+        topic: "population",
+        // Published because two things this site already asserts compose into a false story if
+        // nobody says otherwise: natural decrease as a component of the loss, and the loss
+        // concentrated in Lima.
+        supports: &[
+            support!(
+                "measure/allen-county-age-structure-2023.yml",
+                "Its median age is 35.4 against the\n  county's 39.7, its 65-and-over share is 15.6 per cent against 18.7"
+            ),
+            support!(
+                "measure/allen-county-age-structure-2023.yml",
+                "Eleven of the twelve townships are older than the city by\n  the 65-and-over measure."
+            ),
+        ],
+        answers: &["The corpus does not establish that."],
+        figures: &[],
+    },
+    Assertion {
         id: "decline-is-migration-and-deaths",
         statement: "Over the four full years to 2024 the county lost 1,271 people: 506 to \
                     natural decrease and 793 to net migration.",
