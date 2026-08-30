@@ -29,7 +29,7 @@ used-by:
   - ../corpus/measure/allen-county-townships-1930-1950.yml
   - ../corpus/measure/lima-population-2020.yml
   - ../corpus/measure/lima-population-2024.yml
-  - ../corpus/period/deindustrialization.yml
+  - ../corpus/period/depopulation.yml
   - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
