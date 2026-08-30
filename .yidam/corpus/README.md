@@ -25,9 +25,9 @@ Sorted by: kind, then alphabetically.
 |---|---|---|---|---|---|
 | [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 4 | 3v / 1i / 0o | 43 |
 | [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 32 |
-| [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 2v / 0i / 0o | 42 |
+| [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 3v / 0i / 1o | 50 |
 | [ohio-house-district-78-2023.yml](division/ohio-house-district-78-2023.yml) | division | Ohio House District 78 (2023 map) | 2 | 2v / 1i / 1o | 32 |
-| [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 2v / 1i / 0o | 28 |
+| [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 3v / 1i / 1o | 34 |
 | [ohio-senate-district-12-2023.yml](division/ohio-senate-district-12-2023.yml) | division | Ohio Senate District 12 (2023 map) | 2 | 1v / 2i / 1o | 31 |
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |

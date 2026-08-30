@@ -48,9 +48,11 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
          here to refuse"
     );
 
-    // Every 2020 division is set aside rather than dropped: the query considered it. Four of
-    // them now — the three legislative districts and the precinct that covers part of the city.
-    assert_eq!(c.excluded.len(), 4);
+    // Every division is set aside rather than dropped: the query considered it. Six now — the
+    // three districts of the 2020 map, the two of the 2023 map, and the precinct that covers
+    // part of the city. The 2023 pair are excluded on their own `effective_from`, which is the
+    // check working: a district adopted in September 2023 governed nothing in 1900.
+    assert_eq!(c.excluded.len(), 6);
     assert!(c.excluded.iter().all(|m| m.class == "division"));
 }
 
