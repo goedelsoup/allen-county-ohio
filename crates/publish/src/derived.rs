@@ -360,30 +360,33 @@ pub const ASSERTIONS: &[Assertion] = &[
     },
     Assertion {
         id: "the-factories-stopped-leaving",
-        statement: "Allen County manufacturing employment fell from 15,762 in 1986 to 7,127 in \
-                    2010 — and then rose, to 8,573 by 2022, while the county kept shrinking.",
+        statement: "Allen County manufacturing employment peaked in 1973, at 18,400 — three years \
+                    after Lima began to empty — and bottomed at 7,775 in 2009.",
         topic: "population",
-        // The shape is the argument: a steep fall, a floor, and a partial recovery under a
-        // population line that never turns. Nine points, one per file read.
+        // The chart used to start in 1986, which is the one year in this series most likely to
+        // mislead: a recovery high partway along, read as a stage of the fall. It now starts at
+        // the peak, because the peak is the finding.
         supports: &[
             support!(
-                "measure/allen-county-manufacturing-employment-1986-2022.yml",
-                "**Manufacturing employment in Allen County fell by 55 per cent between 1986 and 2010, from 15,762 to 7,127.**"
+                "measure/allen-county-manufacturing-employment-1969-2022.yml",
+                "**Manufacturing employment in Allen County peaked in 1973, at 18,400.**"
             ),
             support!(
-                "measure/allen-county-manufacturing-employment-1986-2022.yml",
-                "**And then it stopped, and reversed.** From the 2010 trough manufacturing rose to 8,917 in 2020 and stood at 8,573 in 2022 — up a fifth from the bottom."
+                "measure/allen-county-manufacturing-employment-1969-2022.yml",
+                "**The trough is 7,775, in 2009 — a fall of 58 per cent from the peak, across thirty-six years.** [verified] — same source. Employment has risen since, to 8,715 in 2022, and has not been below 7,775 in any year on this series."
             ),
             support!(
-                "measure/allen-county-manufacturing-employment-1986-2022.yml",
-                "**After 2010 the losses were not in manufacturing.**"
+                "measure/allen-county-manufacturing-employment-1969-2022.yml",
+                "**1986 was a recovery year, not a stage of the fall.** Manufacturing bottomed at 14,349 in 1982, rose four years running to 17,163 in 1986, and only then began the long decline."
             ),
         ],
         answers: &[],
         figures: &[
-            Figure { label: "1986", value: 15_762.0, literal: "15,762" },
-            Figure { label: "2010", value: 7_127.0, literal: "7,127" },
-            Figure { label: "2022", value: 8_573.0, literal: "8,573" },
+            Figure { label: "1973", value: 18_400.0, literal: "18,400" },
+            Figure { label: "1982", value: 14_349.0, literal: "14,349" },
+            Figure { label: "1986", value: 17_163.0, literal: "17,163" },
+            Figure { label: "2009", value: 7_775.0, literal: "7,775" },
+            Figure { label: "2022", value: 8_715.0, literal: "8,715" },
         ],
     },
     Assertion {

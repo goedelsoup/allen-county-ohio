@@ -1693,6 +1693,43 @@
       "withheld": 0
     },
     {
+      "id": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+      "class": "measure",
+      "label": "Allen County manufacturing employment, 1969–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "BEA CAEMP25S for 1969–2000 (SIC line 400) and CAEMP25N for 2001–2022 (NAICS line 500), read from the Ohio county files at GeoFIPS 39003. BEA counts jobs, including proprietors, part-time work, farm and government, where County Business Patterns counts employees of private establishments; the two are separate programmes and not one series. They agree on shape where they overlap, both placing the recent trough at the end of the 2000s and a recovery of about a fifth since. [verified]",
+        "parameter": "manufacturing employment, Allen County, all jobs",
+        "unit": "jobs",
+        "value": "8715"
+      },
+      "blocks": [
+        {
+          "text": "Fifty-four years of the mechanism this county's history is told through. [verified] — [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), county employment by industry.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Manufacturing employment in Allen County peaked in 1973, at 18,400.** [verified] — same source. Not in 1969, and not before this corpus's [deindustrialization](../period/deindustrialization.yml) is said to begin. The county's factories were still adding workers into the late 1970s: 18,389 in 1979, within eleven of the peak six years earlier.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The trough is 7,775, in 2009 — a fall of 58 per cent from the peak, across thirty-six years.** [verified] — same source. Employment has risen since, to 8,715 in 2022, and has not been below 7,775 in any year on this series.",
+          "tier": "verified"
+        },
+        {
+          "text": "**1986 was a recovery year, not a stage of the fall.** Manufacturing bottomed at 14,349 in 1982, rose four years running to 17,163 in 1986, and only then began the long decline. [verified] — same source. That matters because it is where [the corpus's other series](allen-county-manufacturing-employment-1986-2022.yml) opens, and because the last phase described this span, while calling it open, as a fall already under way. See [naming a gap is not leaving it empty](../../decisions/naming-a-gap-is-not-leaving-it-empty.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Almost the whole decline is after 1986.** From the 1973 peak to 1986 manufacturing lost 1,237 jobs, 7 per cent; from 1986 to 2009 it lost 9,388, 55 per cent. [inference] — computed here.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-manufacturing-employment-1986-2022.yml",
       "class": "measure",
       "label": "Allen County manufacturing employment, 1986–2022",
@@ -1723,6 +1760,10 @@
         },
         {
           "text": "**After 2010 the losses were not in manufacturing.** Private employment fell 3,709 between 2010 and 2022 while manufacturing *rose* 1,446, so everything else fell by 5,155. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The sentence that stood here was wrong and is the reason this node is no longer the corpus's main employment series.** It said County Business Patterns \"begins in 1986 with manufacturing already at 15,762 and already falling\", and called this \"the second half of a fall\". A BEA series reaching back to 1969 shows 1986 as a recovery year — manufacturing bottomed at 14,349 in 1982 and had climbed four years running by 1986 — and shows the peak at 18,400 in 1973. [verified] — [the long series](allen-county-manufacturing-employment-1969-2022.yml). Nor was it the second half: 93 per cent of the fall from peak to trough happened after 1986. [inference] See [naming a gap is not leaving it empty](../../decisions/naming-a-gap-is-not-leaving-it-empty.yml).",
           "tier": "inference"
         }
       ],
@@ -2125,6 +2166,39 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "measure/allen-county-total-employment-1969-2022.yml",
+      "class": "measure",
+      "label": "Allen County total employment, 1969–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "BEA CAEMP25S line 10 for 1969–2000 and CAEMP25N line 10 for 2001–2022, Ohio county files at GeoFIPS 39003. Counts jobs rather than people, so a person holding two jobs is counted twice, and includes farm, government and proprietors. Not comparable with [County Business Patterns](allen-county-manufacturing-employment-1986-2022.yml), which counts private employees only. The comparison with population is a comparison of two programmes. [inference]",
+        "parameter": "total employment, all jobs, Allen County",
+        "unit": "jobs",
+        "value": "64238"
+      },
+      "blocks": [
+        {
+          "text": "Every job in the county, counted the same way for fifty-four years. [verified] — [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), total employment including proprietors, part-time work, farm and government.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's jobs rose for thirty-one years while its people fell.** Employment went from 56,562 in 1969 to 72,973 in 2000 — a gain of 16,411, or 29 per cent. [verified] — same source. Over the same span the county's population fell from 111,144 to 108,464. [verified] — [the county series](../place/allen-county.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Jobs peaked twenty years after people did.** The county's population peaked in 1980 and its employment in 2000. [inference] — the two peaks are read from different sources and compared here. Whatever this county lost between 1980 and 2000, it was not work.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Employment has fallen since, and by less than manufacturing did.** From 69,825 in 2001 to 64,238 in 2022, a loss of 5,587 or 8 per cent, against [manufacturing's](allen-county-manufacturing-employment-1969-2022.yml) fall of 3,182 over the same years. So manufacturing accounts for more than half the county's total job loss since 2001 while being about a seventh of its jobs. [inference] — computed here.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-townships-1890-1910.yml",
@@ -3584,7 +3658,7 @@
           "tier": "inference"
         },
         {
-          "text": "**The refusal that stood on this node from genesis is answered.** It said the corpus established nothing about manufacturing employment inside this period — first in the form \"does not measure it at all\", then narrowed to \"inside this period\" when the 1909 figures arrived. The corpus now holds thirty-six years of it, all inside the period: **Allen County manufacturing employment fell from 15,762 in 1986 to 7,127 in 2010, a fall of 55 per cent.** [verified] — [the series](../measure/allen-county-manufacturing-employment-1986-2022.yml). The period's named mechanism is measured, and it happened.",
+          "text": "**The refusal that stood on this node from genesis is answered.** It said the corpus established nothing about manufacturing employment inside this period — first in the form \"does not measure it at all\", then narrowed to \"inside this period\" when the 1909 figures arrived. The corpus now holds fifty-four years of it: **Allen County manufacturing employment fell from a peak of 18,400 in 1973 to 7,775 in 2009, a fall of 58 per cent.** [verified] — [the long series](../measure/allen-county-manufacturing-employment-1969-2022.yml), corroborated in shape by [County Business Patterns](../measure/allen-county-manufacturing-employment-1986-2022.yml). The period's named mechanism is measured, and it happened.",
           "tier": "verified"
         },
         {
@@ -3594,6 +3668,18 @@
         {
           "text": "It does not establish that the county's population decline was caused by its manufacturing decline. That was unlicensed while manufacturing employment was unmeasured, and it is now contradicted for the recent past: between 2010 and 2022 the county's private employment fell by 3,709 while its manufacturing employment *rose* by 1,446. [verified] — [the series](../measure/allen-county-manufacturing-employment-1986-2022.yml). For the last twelve years of this period the proposed cause moves opposite to the effect.",
           "tier": "verified"
+        },
+        {
+          "text": "**The years this node called open one phase ago are measured, and they do not contain a decline.** Allen County manufacturing employment was 17,623 in 1969, rose to a peak of **18,400 in 1973**, and stood at 18,389 as late as 1979. [verified] — [the long series](../measure/allen-county-manufacturing-employment-1969-2022.yml). The county's factories were still adding workers through the decade this period says the decline began in.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So this period's start bound is wrong for the mechanism it is named after.** The name says manufacturing; manufacturing turned in 1973 at the earliest and did not fall durably until after 1979, with the sustained slide running from 1987. [verified] — same source. The start of \"roughly 1970\" was fixed from population, and the population turn and the manufacturing turn are not the same event. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The order is the part that matters.** [Lima](../place/lima.yml) peaked in 1970. Manufacturing peaked in 1973 and held near its peak until 1979. The county peaked in 1980. Employment of every kind peaked in 2000. [verified] — the long series, [total employment](../measure/allen-county-total-employment-1969-2022.yml) and the county's own population series. The city began emptying while the factories were still filling. [inference]",
+          "tier": "inference"
         },
         {
           "text": "**The mechanism, for the first time.** Across the four full years 2021 to 2024 the county lost 1,271 people: **506 to natural decrease and 793 to net migration**, with a residual of 28. [verified] — [natural change](../measure/allen-county-natural-change-2021-2024.yml) and [net migration](../measure/allen-county-net-migration-2021-2024.yml), both from the same Population Estimates file this node has cited since its second phase. More people leave than arrive, and more die than are born, and the first is the larger of the two.",
@@ -8750,6 +8836,13 @@
       "source": "catalog/census-gazetteer-2020.md"
     },
     {
+      "from": "measure/allen-county-manufacturing-employment-1969-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bea-county-employment.md"
+    },
+    {
       "from": "measure/allen-county-manufacturing-employment-1986-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -8846,6 +8939,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-total-employment-1969-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bea-county-employment.md"
     },
     {
       "from": "measure/allen-county-townships-1890-1910.yml",
