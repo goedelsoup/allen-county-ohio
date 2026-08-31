@@ -1,13 +1,43 @@
 /*
  * Allen County Atlas — colour.
  *
- * Ported verbatim from the design system (tokens/colors.css). Warm throughout:
- * one parchment ramp for surfaces, one warm sepia-black ink ramp for text and
+ * Ported from the design system (tokens/colors.css). Warm throughout: one
+ * parchment ramp for surfaces, one warm sepia-black ink ramp for text and
  * rules, four accent inks borrowed from 19th-century county atlases. There is
  * no grey and no pure black anywhere in the system.
  *
  * Components reference the semantic aliases; the base ramps exist to author
  * new tokens from, not to be used directly.
+ *
+ * ---- The contrast pass ----
+ *
+ * The design system shipped with a caveat: "colour contrast was composed by eye
+ * against the parchment surfaces; a formal WCAG pass has not been run." It was
+ * right to flag it, and understated the result. Measured against all four
+ * parchment grounds, four text roles failed AA for normal text, one of them at
+ * 2.20:1.
+ *
+ * The grounds are the reason. Parchment is a light warm ramp, and its darkest
+ * surface (--parchment-300) sits at a luminance where the ink ramp cannot go
+ * lighter than --ink-500 and still be read. That is not a defect in the design;
+ * it is what composing on paper costs, and it is a fixed budget every text role
+ * has to be spent inside.
+ *
+ * Every value below is now checked rather than composed: `web/test/contrast.test.ts`
+ * reads this file, resolves the aliases, and fails the build on any text role
+ * under 4.5:1 on any of the four surfaces. Two changes departed from the ported
+ * values, both marked ▲ where they appear:
+ *
+ *   --ochre-700   #8a6417 → #5c420f
+ *   --text-muted  --ink-500 → --ink-600
+ *
+ * Yellow at a given HSL lightness carries far more luminance than red or green
+ * at the same lightness, so the ported --ochre-700 reached only 4.25:1 on the
+ * page ground where every other -700 accent reached 6.4–7.7:1. It was the odd
+ * step in the ramp, not a missing one, so it is corrected in place rather than
+ * worked around with an --ochre-800. --text-muted moves down one step so that
+ * --text-faint can take --ink-500 without the two roles collapsing into one
+ * colour. Both belong upstream; see issue #8.
  */
 
 :root {
@@ -47,7 +77,7 @@
   --indigo-300: #7c8da1;
   --indigo-100: #d7dde4;
 
-  --ochre-700: #8a6417;
+  --ochre-700: #5c420f; /* ▲ was #8a6417 — see the contrast pass above */
   --ochre-500: #b98a2e; /* survey lines, caution, "disputed" */
   --ochre-300: #d8b872;
   --ochre-100: #f2e4c4;
@@ -55,12 +85,20 @@
   /* ---- Semantic: text ---- */
   --text-strong: var(--ink-900);
   --text-body: var(--ink-700);
-  --text-muted: var(--ink-500);
-  --text-faint: var(--ink-400);
+  --text-muted: var(--ink-600); /* ▲ was --ink-500 — see the contrast pass above */
+  --text-faint: var(--ink-500);
   --text-inverse: var(--parchment-100);
   --text-link: var(--indigo-500);
-  --text-link-hover: var(--rubric-500);
-  --text-annotation: var(--rubric-500);
+
+  /*
+   * The hover and annotation inks take the -700 rubric rather than the -500.
+   * The -500 is the design's signature and stays wherever it is a mark or set
+   * large — the drop cap, the active nav rule — but at label size it reaches
+   * only 4.36:1 on the sunken ground, and a role has to be safe on every
+   * surface it might travel to.
+   */
+  --text-link-hover: var(--rubric-700);
+  --text-annotation: var(--rubric-700);
 
   /* ---- Semantic: surfaces ---- */
   --surface-page: var(--parchment-200);
@@ -78,11 +116,30 @@
   --rule-faint: var(--parchment-400);
   --rule-focus: var(--rubric-500);
 
-  /* ---- Semantic: status ---- */
+  /*
+   * ---- Semantic: status ----
+   *
+   * Two roles per status, because a status ink and a status word want different
+   * things from the same hue. The -500 inks are composed as marks on parchment
+   * — a dot, a chip, a dashed edge — and the ochre one reads at 2.47:1 against
+   * the page, which is right for a mark and unreadable as a word. The -text
+   * variants are the same hues at the step that can be read at label size on
+   * any of the four grounds.
+   *
+   * Neither carries meaning alone. Every badge, relation and status row in this
+   * site prints its tier as a word beside the ink, so a reader never has to tell
+   * verified from inference by hue — which is also why the marks are not held to
+   * the 3:1 bar for graphical objects: nothing here is understood only by seeing
+   * them.
+   */
   --status-verified: var(--verdigris-500);
   --status-disputed: var(--ochre-500);
   --status-missing: var(--ink-300);
   --status-error: var(--rubric-500);
+
+  --status-verified-text: var(--verdigris-700);
+  --status-disputed-text: var(--ochre-700);
+  --status-open-text: var(--rubric-700);
 
   /* ---- Era ramp (period coding, oldest to newest) ---- */
   --era-pre1820: #6c5b43;
