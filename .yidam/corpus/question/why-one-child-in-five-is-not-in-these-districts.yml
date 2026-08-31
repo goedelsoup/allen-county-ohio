@@ -1,0 +1,48 @@
+class: question
+label: Where are the children who live in these districts and are not enrolled in them?
+description: |
+  Twenty thousand four hundred and forty-four children aged 5 to 17 live in the twelve school
+  districts holding ground in Allen County. Sixteen thousand one hundred and thirteen are enrolled
+  in them. [verified] —
+  [child poverty](../measure/allen-county-school-district-poverty-2023.yml) and
+  [enrolment](../measure/allen-county-school-enrolment-2010-2023.yml). The corpus does not know
+  where the other 4,331 are. [open]
+
+  **The two numbers do not measure quite the same thing, and that accounts for some of it.** The
+  first is a modelled resident population aged 5 to 17; the second is fall membership, which
+  includes a district's eighteen-year-old seniors and excludes five-year-olds who have not started.
+  [inference] Neither is a count, and the gap of 21.2 per cent is a difference between two
+  instruments before it is a difference about children.
+
+  **What the gap plausibly contains, in no order and with no measurement here.** Private and
+  parochial schools — Lima and Delphos both have Catholic systems this corpus has never recorded.
+  Community schools. Home instruction. State scholarship programmes that move a pupil's funding to
+  a nonpublic school. And open enrolment across district lines, which nets to nothing across the
+  twelve only if every transfer stays inside them. [open]
+
+  **It matters because of what the corpus has just published.** A district's spending per pupil is
+  computed on its enrolment, and a district's child poverty rate on its resident children. If the
+  two populations differ by a fifth, and differ by more in one district than another, then the two
+  measures are not describing the same set of families — and this corpus has set them side by side
+  in twelve nodes. [inference] Nothing here says the difference is uneven. Nothing says it is not.
+
+  This is the first question in this corpus that arises from putting two of its own sources
+  together rather than from either one being incomplete.
+properties:
+  claim_tag: open
+  opened: "2026-08-30"
+  would_close_this: |
+    Ohio's nonpublic school enrolment reports, which give private and parochial enrolment by county
+    and would name the schools this corpus has never recorded. The state's community school
+    directory. Open-enrolment and scholarship counts by district, which the state publishes for the
+    funding formula. Any one of the four would turn a share of the 4,331 into a number; all four
+    would close it.
+links:
+  - target: ../measure/allen-county-school-enrolment-2010-2023.yml
+    relationship: concerns
+  - target: ../measure/allen-county-school-district-poverty-2023.yml
+    relationship: concerns
+  - target: ../jurisdiction/lima-city-school-district.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of
