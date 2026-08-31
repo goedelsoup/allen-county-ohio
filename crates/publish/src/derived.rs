@@ -371,6 +371,78 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-schools-empty-faster-than-the-county",
+        statement: "Enrolment in the twelve school districts holding ground in Allen County fell \
+                    from 17,985 to 16,113 between 2010 and 2023 — 10.4 per cent, where the county's \
+                    population fell 3.9 per cent to the 2020 census.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-school-enrolment-2010-2023.yml",
+                "**The series, annually: 17,985, 17,830, 17,766, 17,565, 17,634, 17,656, 17,518, 17,333, 17,107, 16,921, 16,774, 16,124, 16,127 and 16,113.**"
+            ),
+            support!(
+                "measure/allen-county-school-enrolment-2010-2023.yml",
+                "The twelve lost 1,872 pupils, 10.4 per cent, over a span in which Allen County's population fell 3.9 per cent to the 2020 census and 5.1 per cent to the 2024 estimate."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2010", value: 17_985.0, literal: "17,985" },
+            Figure { label: "2011", value: 17_830.0, literal: "17,830" },
+            Figure { label: "2012", value: 17_766.0, literal: "17,766" },
+            Figure { label: "2013", value: 17_565.0, literal: "17,565" },
+            Figure { label: "2014", value: 17_634.0, literal: "17,634" },
+            Figure { label: "2015", value: 17_656.0, literal: "17,656" },
+            Figure { label: "2016", value: 17_518.0, literal: "17,518" },
+            Figure { label: "2017", value: 17_333.0, literal: "17,333" },
+            Figure { label: "2018", value: 17_107.0, literal: "17,107" },
+            Figure { label: "2019", value: 16_921.0, literal: "16,921" },
+            Figure { label: "2020", value: 16_774.0, literal: "16,774" },
+            Figure { label: "2021", value: 16_124.0, literal: "16,124" },
+            Figure { label: "2022", value: 16_127.0, literal: "16,127" },
+            Figure { label: "2023", value: 16_113.0, literal: "16,113" },
+        ],
+    },
+    Assertion {
+        id: "lima-schools-spend-most-and-raise-least",
+        statement: "Lima City Schools spends more per pupil than any district in Allen County and \
+                    raises the smallest share of it locally — 18.4 per cent, against 59.2 from the \
+                    state and 22.4 from the federal government.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-school-finance-2023.yml",
+                "Lima City is the county's largest district and its highest spender at $19,321, and 18.4 per cent of its revenue is local where every other district here is between 37.0 and 65.8: 59.2 per cent comes from the state and 22.4 from the federal government."
+            ),
+            support!(
+                "measure/allen-county-school-finance-2023.yml",
+                "Lima raises $3,098 a pupil in property tax where Shawnee raises $7,727 — a ratio of 2.49. The median house in Lima is worth $95,900 and in Shawnee Township $210,200, a ratio of 2.19."
+            ),
+        ],
+        answers: &["does not establish that any district is spending well or badly"],
+        figures: &[
+            Figure { label: "Local", value: 18.4, literal: "18.4" },
+            Figure { label: "State", value: 59.2, literal: "59.2" },
+            Figure { label: "Federal", value: 22.4, literal: "22.4" },
+        ],
+    },
+    Assertion {
+        id: "half-the-countys-poor-children-are-in-one-district",
+        statement: "Lima City Schools holds a quarter of the twelve districts' school-age children \
+                    and very nearly half of the poor ones — 1,626 of 3,368 — on a child poverty \
+                    rate of 31.7 per cent against Bluffton's 5.6.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-school-district-poverty-2023.yml",
+                "**Lima City Schools is 31.7 per cent child poverty and Bluffton is 5.6.** Lima holds a quarter of the twelve districts' school-age children and very nearly half of their poor ones — 1,626 of 3,368."
+            ),
+        ],
+        answers: &["does not establish a rate that can be ranked against another district"],
+        figures: &[],
+    },
+    Assertion {
         id: "the-ring-was-built-while-the-city-was-full",
         statement: "Allen County's biggest building decade was the 1970s — 8,298 homes — and 6,333 \
                     of them went up outside Lima, in the decade the city reached its own peak.",

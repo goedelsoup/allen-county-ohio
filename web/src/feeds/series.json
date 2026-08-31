@@ -82,6 +82,66 @@
       ]
     },
     {
+      "id": "jurisdiction-lima-city-school-district::children-aged-5-to-17-in-poverty,-by-school-district",
+      "subject": "jurisdiction/lima-city-school-district.yml",
+      "subject_label": "Lima City School District",
+      "parameter": "children aged 5 to 17 in poverty, by school district",
+      "unit": "children in poverty across the twelve districts",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-district-poverty-2023.yml",
+          "label": "Children in poverty in Allen County's school districts, 2023",
+          "as_of": "2023",
+          "value": 3368.0,
+          "published": "3368",
+          "tier": "verified",
+          "source": "catalog/census-saipe-school-districts.md",
+          "method": "Joined on the five-digit LEA code prefixed with the state FIPS, matching the `fips_code` these district nodes carry. [verified] Rates are computed here as the poverty count over the 5-to-17 population; the file publishes neither the rate nor an interval."
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-lima-city-school-district::current-spending-per-pupil,-revenue-by-source,-and-property-tax-per-pupil",
+      "subject": "jurisdiction/lima-city-school-district.yml",
+      "subject_label": "Lima City School District",
+      "parameter": "current spending per pupil, revenue by source, and property tax per pupil",
+      "unit": "dollars of current spending per pupil, Lima City Schools",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-finance-2023.yml",
+          "label": "What Allen County's school districts spend and where it comes from, 2023",
+          "as_of": "2023",
+          "value": 19321.0,
+          "published": "19321",
+          "tier": "verified",
+          "source": "catalog/census-school-system-finances.md",
+          "method": "`PPCSTOT` for spending, `PCTLTOT`/`PCTSTOT`/`PCTFTOT` for the shares, and `LOCRPROP` divided by `ENROLL` for property tax per pupil, which the file does not publish and the corpus computes. [verified] Dollars are nominal and this is one year, so nothing here needs a deflator; a level quoted against another year would."
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-lima-city-school-district::fall-enrolment,-by-school-district",
+      "subject": "jurisdiction/lima-city-school-district.yml",
+      "subject_label": "Lima City School District",
+      "parameter": "fall enrolment, by school district",
+      "unit": "pupils in the twelve districts, 2023",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-enrolment-2010-2023.yml",
+          "label": "Enrolment in Allen County's twelve school districts, 2010-2023",
+          "as_of": "2023",
+          "value": 16113.0,
+          "published": "16113",
+          "tier": "verified",
+          "source": "catalog/census-school-system-finances.md",
+          "method": "`ENROLL` from the annual survey, read by column name across three column layouts and joined on `NCESID`, which is the `fips_code` these district nodes already carry. [verified] Twelve of twelve matched in all fourteen years. Percentage changes are computed here from the endpoints."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Atmospheric-Crude-Distillation-Capacity-(barrels-per-calendar-day),-Total-Operable",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1482,6 +1542,170 @@
         }
       ],
       "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-schools-empty-faster-than-the-county",
+      "statement": "Enrolment in the twelve school districts holding ground in Allen County fell from 17,985 to 16,113 between 2010 and 2023 — 10.4 per cent, where the county's population fell 3.9 per cent to the 2020 census.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-enrolment-2010-2023.yml",
+          "node_label": "Enrolment in Allen County's twelve school districts, 2010-2023",
+          "span": "**The series, annually: 17,985, 17,830, 17,766, 17,565, 17,634, 17,656, 17,518, 17,333, 17,107, 16,921, 16,774, 16,124, 16,127 and 16,113.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-school-system-finances.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-enrolment-2010-2023.yml",
+          "node_label": "Enrolment in Allen County's twelve school districts, 2010-2023",
+          "span": "The twelve lost 1,872 pupils, 10.4 per cent, over a span in which Allen County's population fell 3.9 per cent to the 2020 census and 5.1 per cent to the 2024 estimate.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-school-system-finances.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2010",
+          "value": 17985.0,
+          "literal": "17,985"
+        },
+        {
+          "label": "2011",
+          "value": 17830.0,
+          "literal": "17,830"
+        },
+        {
+          "label": "2012",
+          "value": 17766.0,
+          "literal": "17,766"
+        },
+        {
+          "label": "2013",
+          "value": 17565.0,
+          "literal": "17,565"
+        },
+        {
+          "label": "2014",
+          "value": 17634.0,
+          "literal": "17,634"
+        },
+        {
+          "label": "2015",
+          "value": 17656.0,
+          "literal": "17,656"
+        },
+        {
+          "label": "2016",
+          "value": 17518.0,
+          "literal": "17,518"
+        },
+        {
+          "label": "2017",
+          "value": 17333.0,
+          "literal": "17,333"
+        },
+        {
+          "label": "2018",
+          "value": 17107.0,
+          "literal": "17,107"
+        },
+        {
+          "label": "2019",
+          "value": 16921.0,
+          "literal": "16,921"
+        },
+        {
+          "label": "2020",
+          "value": 16774.0,
+          "literal": "16,774"
+        },
+        {
+          "label": "2021",
+          "value": 16124.0,
+          "literal": "16,124"
+        },
+        {
+          "label": "2022",
+          "value": 16127.0,
+          "literal": "16,127"
+        },
+        {
+          "label": "2023",
+          "value": 16113.0,
+          "literal": "16,113"
+        }
+      ]
+    },
+    {
+      "id": "lima-schools-spend-most-and-raise-least",
+      "statement": "Lima City Schools spends more per pupil than any district in Allen County and raises the smallest share of it locally — 18.4 per cent, against 59.2 from the state and 22.4 from the federal government.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-finance-2023.yml",
+          "node_label": "What Allen County's school districts spend and where it comes from, 2023",
+          "span": "Lima City is the county's largest district and its highest spender at $19,321, and 18.4 per cent of its revenue is local where every other district here is between 37.0 and 65.8: 59.2 per cent comes from the state and 22.4 from the federal government.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-school-system-finances.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-finance-2023.yml",
+          "node_label": "What Allen County's school districts spend and where it comes from, 2023",
+          "span": "Lima raises $3,098 a pupil in property tax where Shawnee raises $7,727 — a ratio of 2.49. The median house in Lima is worth $95,900 and in Shawnee Township $210,200, a ratio of 2.19.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "This does not establish that any district is spending well or badly."
+      ],
+      "figures": [
+        {
+          "label": "Local",
+          "value": 18.4,
+          "literal": "18.4"
+        },
+        {
+          "label": "State",
+          "value": 59.2,
+          "literal": "59.2"
+        },
+        {
+          "label": "Federal",
+          "value": 22.4,
+          "literal": "22.4"
+        }
+      ]
+    },
+    {
+      "id": "half-the-countys-poor-children-are-in-one-district",
+      "statement": "Lima City Schools holds a quarter of the twelve districts' school-age children and very nearly half of the poor ones — 1,626 of 3,368 — on a child poverty rate of 31.7 per cent against Bluffton's 5.6.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-district-poverty-2023.yml",
+          "node_label": "Children in poverty in Allen County's school districts, 2023",
+          "span": "**Lima City Schools is 31.7 per cent child poverty and Bluffton is 5.6.** Lima holds a quarter of the twelve districts' school-age children and very nearly half of their poor ones — 1,626 of 3,368.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-school-districts.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish a rate that can be ranked against another district."
+      ],
       "figures": []
     },
     {
