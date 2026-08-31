@@ -1,0 +1,82 @@
+class: measure
+label: Allen County survey sections, 2026
+description: |
+  The rectangular survey grid the county is drawn on: **404 sections across fifteen
+  township-range cells**, T1S–T4S by R4E–R8E, numbered 1 to 36 within each. [verified] —
+  [Allen County GIS REST](../../catalog/allen-county-gis-rest.md), layer 55.
+
+  **It closes against the county to within five hundredths of a square mile.** The sections
+  total **406.805 square miles**; the county's own gazetteer record is 402.545 land plus 4.306
+  water, **406.851**. [verified] — same layer and
+  [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md). Two sources that share no
+  method — the Census Bureau computing from a boundary file, the county from its own survey —
+  and a mean section of 639.7 acres against a nominal 640. This is the corpus's first
+  measurement of the county as *land* rather than as population or jurisdiction. [inference]
+
+  **Why the corpus wanted it.** Every question this corpus has failed to close in the last two
+  phases was a question about ground rather than about jurisdiction: where the county jail stood
+  in 1933, where the Lima Tank Depot stood in 1943, whether the Depot is the ground the tank
+  plant occupies now, when the Ford engine plant was built. Land through time is indexed by the
+  survey, because that is how the Recorder's tract books are organized. [inference]
+
+  **The ground each of the corpus's own sites stands on**, computed from its coordinates.
+  [verified] — same layer, cross-checked against layer 51 parcel numbers:
+
+      Joint Systems Manufacturing Center    T4S R6E §14   Section Ground volume 34A
+      Lima Refinery                         T4S R6E §1    Section Ground volume 34
+      Ford Lima Engine Plant                T3S R7E §17   Section Ground volume 28A
+      Allen County Courthouse               T3S R7E §31   Section Ground volume 28A-2
+      Lima                                  T3S R6E §36   Section Ground volume 31A-2
+
+  The volume names come from the Recorder's own book list. [verified] —
+  [Section Ground book list](../../catalog/allen-county-recorder-section-ground.md).
+
+  **The code is written two ways and the two are different strings.** Layer 55 writes the
+  section as the county writes it and a parcel number pads it to two digits, so T4S R6E §1 is
+  `461` in one place and `4601` in the other. **Ninety-six of the 404 sections have a
+  single-digit number**, so a string join between the forms silently drops 24 per cent of the
+  county. [verified] — same layer, checked against every parcel prefix on that ground.
+
+  **Two witnesses, twenty-seven agreements.** All 29 nodes in this corpus that carry a point
+  were located twice: by polygon against layer 55, and by the leading digits of the parcel
+  containing the same point. [verified] — same sources.
+
+  [Bluffton](../place/bluffton.yml) is one of the two that disagree — layer 55 puts its internal
+  point in T2S R8E §1 and the parcel there is in §12, directly south. The village straddles the
+  Allen–Hancock line, so its internal point is the whole village's and sits near that section
+  line rather than inside either section with a margin. The corpus does not assert Bluffton's
+  section. [open]
+
+  **One polygon in the layer is two sections.** T3S R8E §5 is 1,282.2 acres on a footprint 1.04
+  by 2.01 miles, where its thirty-five neighbours average 641 and none is missing. [verified] —
+  same layer. It is one section's number drawn over two sections' ground.
+
+  [Beaverdam](../place/beaverdam.yml) stands inside it and has no parcel under its internal
+  point, so it has no second witness and its section is not established. [open]
+
+  **The Recorder's thirty volumes nearly partition the same grid.** Their section runs expand to
+  416 slots: 402 sections in exactly one book, T4S R5E §8 in two, T4S R5E §18 in none, and
+  thirteen in a book but not in the county's grid. [verified] —
+  [the book list](../../catalog/allen-county-recorder-section-ground.md).
+
+  The thirteen sit at the county's western edge where a survey township crosses into Van Wert,
+  which would explain all of them if a Recorder's township volume follows the survey rather than
+  the county line. That has not been checked. [open]
+properties:
+  parameter: sections of the rectangular survey, and their area
+  as_of: "2026-08-30"
+  unit: sections
+  value: "404"
+  method: |
+    Layer 55 returned in one request under the service's 1000-record cap; three zero-area
+    duplicate polygons removed, leaving 404. Areas are the layer's own `SHAPE.area` in square
+    feet. Points were projected onto EPSG:3734 in `crates/ground` and located by crossing-number
+    test; the projection was checked against the county's server, which was asked to project the
+    same seven points itself and named the same seven sections. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-gis-rest.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

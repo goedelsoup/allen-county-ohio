@@ -1009,7 +1009,11 @@ pub const ASSERTIONS: &[Assertion] = &[
             "place/bluffton.yml",
             "He was brought up from Dayton in the autumn of 1933 charged with robbing \"the Bluffton, O., Commercial Bank of $2200\", and was awaiting trial at Lima when three men shot the sheriff and took him out of the cell."
         )],
-        answers: &[],
+        // Arrived by propagation, from a phase about the survey grid rather than about a bank
+        // robbery: Bluffton's two witnesses to its own ground disagree because the village
+        // straddles a county line, so the node refuses to name its section and every assertion
+        // citing the node has to carry that.
+        answers: &["The corpus does not assert its section"],
         figures: &[Figure { label: "Charged sum", value: 2_200.0, literal: "2200" }],
     },
     Assertion {
