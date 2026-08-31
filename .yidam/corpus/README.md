@@ -33,7 +33,8 @@ Sorted by: kind, then alphabetically.
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
-| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 8v / 7i / 2o | 117 |
+| [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
+| [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 10v / 9i / 2o | 134 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 3 | 4v / 1i / 1o | 44 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
@@ -176,7 +177,7 @@ Sorted by: kind, then alphabetically.
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 5v / 7i / 2o | 66 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 6v / 3i / 2o | 61 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 7v / 3i / 2o | 69 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
 | [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
@@ -222,7 +223,7 @@ Sorted by: kind, then alphabetically.
 | [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 1v / 1i / 1o | 23 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
 | [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 1 | 2v / 1i / 1o | 22 |
-| [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 2v / 1i / 1o | 24 |
+| [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 3v / 2i / 1o | 36 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
@@ -280,7 +281,7 @@ Sorted by: kind, then alphabetically.
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 4v / 1i / 2o | 57 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
-| [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 5v / 2i / 1o | 60 |
+| [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 11v / 5i / 2o | 103 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 8v / 4i / 3o | 93 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 1v / 3i / 2o | 43 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
