@@ -1,0 +1,69 @@
+id: the-control-is-the-figure-that-cannot-move
+summary: >-
+  The annexation gap closed and immediately produced a worse problem: the Census Bureau's area
+  figures move for two reasons and print as one number. This records the rule adopted for telling
+  them apart — read every area change against an entity whose boundary could not have changed —
+  and the cost of the rule, which is that most of the corpus's township-level area comparisons are
+  now known to be unusable rather than merely untested.
+context: |
+  [`lima-land-area-2020`](../corpus/measure/lima-land-area-2020.yml) has said since genesis that
+  comparing a municipality's area across years without the annexations between them "compares two
+  different pieces of ground", and that the corpus held no annexation events for
+  [`boundary-comparability`](../skills/boundary-comparability.md) to read. Nine nodes carried some
+  version of the same caveat.
+
+  The events arrived: fifty-seven of them, dated, with ordinance numbers, from
+  [the Boundary and Annexation Survey](../catalog/census-bas-boundary-changes-ohio.md). The obvious
+  next move was to run the comparison the caveat was waiting for — subtract the annexations from
+  the area change and read what is left.
+
+  It does not work, and the reason is visible in one line. **Allen County's land area falls from
+  404.43 to 402.50 square miles between the 2000 and 2010 volumes.** The county's boundary did not
+  move inward in that decade; its only recorded change since 1990 is a gain from Putnam. Its total
+  area is 406.88 and 406.85, the same to a hundredth. Twelve hundred acres moved from the land
+  column to the water column of an entity that lost nothing.
+decision: |
+  **Every area comparison in this corpus is read against a control**, and the control is an entity
+  in the same table, measured by the same programme, whose boundary is known not to have moved. For
+  county subdivisions the control is the county. For the county it is the county's own total area.
+
+  Applied to the decade the annexation record covers, this produces three verdicts rather than one:
+
+  **Lima's growth is real.** 12.78 to 13.56 square miles of land, 12.88 to 13.79 of total — an area
+  change eight times the size of the county's whole remeasurement error, against 601 acres the city
+  reported annexing. The measured and the reported agree to 3.1 per cent on total area.
+
+  **The townships' losses are not readable.** Every township but Spencer shows less land in 2010
+  than in 2000, including the seven that gave nothing to anyone. Perry shows the largest fall in
+  the county, 474 acres, and Perry did lose ground to Lima — but so did American, at 294, and
+  Amanda, which lost nothing to anybody, shows 128. The signal is inside the noise and no
+  arithmetic here can take it out.
+
+  **The county's own series is a series about measurement.** 404.43, 402.50, 402.545 is not a
+  history of Allen County's land.
+rationale: |
+  **Why this is not a rule about the Census Bureau being unreliable.** The 2010 volume says the
+  thing outright — boundary corrections "are shown as annexations or detachments even if no legal
+  action occurred", and "most places shown with a detachment resulted from such corrections." The
+  Bureau published the caveat. What it cannot do is put it in the column, because the column holds
+  one number and two causes.
+
+  **Why a control and not a threshold.** The first instinct was to set a size below which an area
+  change is called noise. That fails the same way the precinct thresholds failed in
+  [node-worthiness-is-a-property-of-the-member](node-worthiness-is-a-property-of-the-member.yml):
+  it asks *how much* when the question is *of what kind*. A 474-acre change in Perry Township and a
+  128-acre change in Amanda are the same kind of number and no threshold separates them. What
+  separates them is that a fourteenth row in the same table moved 1,235 acres while standing still.
+
+  **The corpus was already doing this and had not noticed.** The
+  [survey-section grid](../catalog/allen-county-gis-rest.md) was accepted as the survey rather than
+  as decoration because 407 polygons summed to 406.805 square miles against the county's 406.851 —
+  an arithmetic self-closure against a figure from an unrelated method. The
+  [1950 volume](../catalog/census-1950-number-of-inhabitants-ohio.md) was trusted from one scan
+  because its townships had to add to its county. This is the same move made deliberately and named,
+  and the naming is what lets it be applied to a case where the closure *fails*.
+
+  **What it costs.** Nine nodes carried a caveat that said the boundary question was untested. It
+  is now tested, and the answer for eleven of the thirteen subdivisions is worse than untested: the
+  figures exist, they are federal, they are precise to a hundredth of a square mile, and they
+  cannot be differenced. Saying so is the whole point of having run the check.
