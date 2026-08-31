@@ -44,12 +44,15 @@ used-by:
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/measure/allen-county-civil-war-dead.yml
+  - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/office/mayor-of-lima.yml
   - ../corpus/period/canal-era.yml
   - ../corpus/period/lima-oil-boom.yml
+  - ../corpus/period/the-civil-war-in-allen-county.yml
   - ../corpus/person/benjamin-faurot.yml
   - ../corpus/person/christopher-wood.yml
   - ../corpus/person/henry-d-v-williams.yml
@@ -84,6 +87,7 @@ used-by:
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/camp-lima.yml
   - ../corpus/site/miami-and-erie-canal.yml
   - ../corpus/tenure/mayor-1842-henry-d-v-williams.yml
 ---
@@ -143,3 +147,34 @@ Every line above was searched for before it was written. The first version of th
 and it named the twentieth century while the nineteenth-century village foundings it was silent
 about were three pages from the township chapters — see
 [a-source-is-not-exhausted-by-one-question](../decisions/a-source-is-not-exhausted-by-one-question.yml).
+
+**Its military chapter is a dataset.** Chapter IX, pages 318-378, is sixty pages on the Civil War,
+of which forty-nine are roster: field officers by rank, then captains, first and second lieutenants,
+then the non-commissioned officers and privates alphabetically — name, regiment, date of enlistment,
+and date of death, resignation, transfer or discharge. The compiler totals it himself at **1,920**,
+twice, in the same paragraph, and never counts anything else about it. Everything the corpus has
+derived from it — the dead, where they died, which regiments the county filled — was got by parsing
+the roster rather than by reading the prose. See
+[a printed list is a dataset](../decisions/a-printed-list-is-a-dataset.yml) and
+[what the county sent](../corpus/measure/allen-county-civil-war-service.yml).
+
+The chapter's other half is the local organization of the war, and it is dense with dates: the
+Delphos Guards in April 1861, the Auxiliary Aid Society at Lima on April 23, 1862, the Armstrong
+Guards on April 27, 1861, the Shawnee Home Guards on May 4 with sixty-eight names, Col. Hiram
+Stotts' company of dragoons on May 6 with fifty-six privates, the Military Committee of 1861 and its
+different membership in 1863, and the Provost Marshal's order of June 2, 1863 organizing Subdistricts
+7 and 8 with their enrolling officers and Board of Enrollment. None of that is in the corpus yet.
+
+**Its digit substitution is worst in this chapter**, because the chapter is almost entirely dates.
+Scan B renders 1862 as 1802, 1864 as 1804 and 1865 as 1805 throughout the roster, at a rate high
+enough that a year taken from it alone is unsafe. Scan A does not share the fault and is missing
+more entries. The two together are usable and neither alone is — which is the case
+[two scans of one book](../decisions/two-scans-of-one-book.yml) was written for, met at scale.
+
+**What else is in it, still unread.** Chapter VII prints the county's vote election by election
+from 1831 to 1884; Chapter VIII a roll of every lawyer admitted 1831-1884; Chapter X the county's
+newspapers by town, twenty-odd of them; Chapter XI the founding of every church; Chapter XII the
+pioneer and town schools. The military chapter's own last pages carry the Ohio National Guard, the
+cavalry, light and heavy artillery, the twenty-six independent batteries, and the ladies' aid
+societies.
+
