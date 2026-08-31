@@ -63,7 +63,17 @@ them and this corpus has not checked that it does. [open]
 county's own section-to-book assignments are not functions, and a lookup promising one answer
 would have to invent one.
 
-## Four pages have been read
+## Eight pages have been read
+
+**Volume 0034A, pages 89 to 92** — the whole certified run for the **NW quarter of section 14,
+T4S R6E**, the ground the
+[Joint Systems Manufacturing Center](../corpus/site/lima-army-tank-plant.yml) stands on. Certified
+8 December 2015. About 70 deed rows and 60 mortgage rows, running **1835 to 2015**.
+
+They answer the question the tank plant node has carried since genesis and answer it against the
+received story: the United States acquired this ground in **five warranty deeds between 20 and 28
+June 1951**, and the quarter was in private hands, mortgaged and crossed by pipeline easements,
+through the whole of the Second World War.
 
 Volume **0028A, pages 163 to 166** — the whole certified run for the **NW quarter of section 17,
 T3S R7E**, which is part of the ground under the
