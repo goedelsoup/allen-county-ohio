@@ -612,6 +612,26 @@
       ]
     },
     {
+      "id": "place-allen-county::sections-of-the-rectangular-survey,-and-their-area",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "sections of the rectangular survey, and their area",
+      "unit": "sections",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-survey-sections.yml",
+          "label": "Allen County survey sections, 2026",
+          "as_of": "2026-08-30",
+          "value": 404.0,
+          "published": "404",
+          "tier": "verified",
+          "source": "catalog/allen-county-gis-rest.md",
+          "method": "Layer 55 returned in one request under the service's 1000-record cap; three zero-area duplicate polygons removed, leaving 404. Areas are the layer's own `SHAPE.area` in square feet. Points were projected onto EPSG:3734 in `crates/ground` and located by crossing-number test; the projection was checked against the county's server, which was asked to project the same seven points itself and named the same seven sections. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::total-employment,-all-jobs,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -2680,7 +2700,9 @@
           ]
         }
       ],
-      "caveats": [],
+      "caveats": [
+        "The corpus does not assert its section."
+      ],
       "figures": [
         {
           "label": "Charged sum",

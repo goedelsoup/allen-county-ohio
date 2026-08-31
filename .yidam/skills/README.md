@@ -30,6 +30,7 @@ Fields per skill: filename, name, description, agents that invoke it.
 |---|---|
 | [boundary-comparability](boundary-comparability.md) | Decide whether two measures describe the same ground, given the annexations between them |
 | [edge-audit](edge-audit.md) | Check that every edge in the corpus says what kind of claim it is |
+| [ground-at](ground-at.md) | The survey section a point stands on, and the Recorder volume that abstracts it |
 | [jurisdiction-at](jurisdiction-at.md) | Return every jurisdiction and division covering a place on a given date |
 | [proximity](proximity.md) | Return corpus nodes within a radius of a point, ordered by distance |
 | [succession-audit](succession-audit.md) | Report gaps and overlaps in an office's line of holders, from its tenure nodes |

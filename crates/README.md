@@ -178,6 +178,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 |---|---|
 | [—](crates/) | — |
 | [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
+| [ground](ground/) | The survey section a point stands on, and the Recorder book that holds its title |
 | [provenance](provenance/) | Whether every edge in the corpus says what kind of claim it is |
 | [proximity](proximity/) | Corpus nodes within a radius of a point, ordered by distance |
 | [publish](publish/) | The public feed, and the rules a claim must pass to leave this repository |

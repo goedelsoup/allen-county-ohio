@@ -3086,6 +3086,61 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-survey-sections.yml",
+      "class": "measure",
+      "label": "Allen County survey sections, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026-08-30",
+        "method": "Layer 55 returned in one request under the service's 1000-record cap; three zero-area duplicate polygons removed, leaving 404. Areas are the layer's own `SHAPE.area` in square feet. Points were projected onto EPSG:3734 in `crates/ground` and located by crossing-number test; the projection was checked against the county's server, which was asked to project the same seven points itself and named the same seven sections. [verified]",
+        "parameter": "sections of the rectangular survey, and their area",
+        "unit": "sections",
+        "value": "404"
+      },
+      "blocks": [
+        {
+          "text": "The rectangular survey grid the county is drawn on: **404 sections across fifteen township-range cells**, T1S–T4S by R4E–R8E, numbered 1 to 36 within each. [verified] — [Allen County GIS REST](../../catalog/allen-county-gis-rest.md), layer 55.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It closes against the county to within five hundredths of a square mile.** The sections total **406.805 square miles**; the county's own gazetteer record is 402.545 land plus 4.306 water, **406.851**. [verified] — same layer and [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md). Two sources that share no method — the Census Bureau computing from a boundary file, the county from its own survey — and a mean section of 639.7 acres against a nominal 640. This is the corpus's first measurement of the county as *land* rather than as population or jurisdiction. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Why the corpus wanted it.** Every question this corpus has failed to close in the last two phases was a question about ground rather than about jurisdiction: where the county jail stood in 1933, where the Lima Tank Depot stood in 1943, whether the Depot is the ground the tank plant occupies now, when the Ford engine plant was built. Land through time is indexed by the survey, because that is how the Recorder's tract books are organized. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The ground each of the corpus's own sites stands on**, computed from its coordinates. [verified] — same layer, cross-checked against layer 51 parcel numbers:",
+          "tier": "verified"
+        },
+        {
+          "text": "The volume names come from the Recorder's own book list. [verified] — [Section Ground book list](../../catalog/allen-county-recorder-section-ground.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The code is written two ways and the two are different strings.** Layer 55 writes the section as the county writes it and a parcel number pads it to two digits, so T4S R6E §1 is `461` in one place and `4601` in the other. **Ninety-six of the 404 sections have a single-digit number**, so a string join between the forms silently drops 24 per cent of the county. [verified] — same layer, checked against every parcel prefix on that ground.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two witnesses, twenty-seven agreements.** All 29 nodes in this corpus that carry a point were located twice: by polygon against layer 55, and by the leading digits of the parcel containing the same point. [verified] — same sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One polygon in the layer is two sections.** T3S R8E §5 is 1,282.2 acres on a footprint 1.04 by 2.01 miles, where its thirty-five neighbours average 641 and none is missing. [verified] — same layer. It is one section's number drawn over two sections' ground.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Recorder's thirty volumes nearly partition the same grid.** Their section runs expand to 416 slots: 402 sections in exactly one book, T4S R5E §8 in two, T4S R5E §18 in none, and thirteen in a book but not in the county's grid. [verified] — [the book list](../../catalog/allen-county-recorder-section-ground.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "The corpus does not assert Bluffton's section."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-total-employment-1969-2022.yml",
       "class": "measure",
       "label": "Allen County total employment, 1969–2022",
@@ -6919,10 +6974,14 @@
         {
           "text": "**Frederick Shull established it**, laying it out on Sections 29, 30, 31 and 32 of [Richland Township](richland-township.yml) — the original town bounded by North Street, Lima Street and Church Street. He was the village's postmaster when the office moved here about 1849, four years before the plat. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). The county's page gives 1853 and no name; this source gives the name, and the two agree on the year against an OCR reading of 1858 in the other scan — see [two scans of one book](../../decisions/two-scans-of-one-book.yml), where an unrelated source settling a scanning dispute is the case the rule was written for.",
           "tier": "verified"
+        },
+        {
+          "text": "**Its ground is the one piece of this county the survey grid cannot name.** Beaverdam's internal point falls inside the county's polygon for T3S R8E §5, and that polygon is 1,282 acres on a footprint 1.04 by 2.01 miles — one section's number drawn over two sections' ground. No parcel contains the point either, so there is no second witness. [verified] — [the survey sections](../measure/allen-county-survey-sections.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "place/bluffton.yml",
@@ -6956,10 +7015,16 @@
         {
           "text": "**Its bank is why John Dillinger was in the Allen County jail.** He was brought up from Dayton in the autumn of 1933 charged with robbing \"the Bluffton, O., Commercial Bank of $2200\", and was awaiting trial at Lima when three men shot the sheriff and took him out of the cell. [verified] — [Chronicling America](../../catalog/chronicling-america.md), *The Washington Daily News*, 13 October 1933; see [the raid on the Allen County jail](../event/allen-county-jail-raid-1933.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Its two witnesses to its own ground disagree, and the county line is why.** The section grid puts Bluffton's internal point in T2S R8E §1; the parcel containing the same point is numbered into §12, directly south. [verified] — [the survey sections](../measure/allen-county-survey-sections.yml). The point is the *whole* village's, Hancock County included, so it sits near that section line rather than inside either section with a margin — which is the same straddle that makes this village `Bluffton village (pt.)` in every census table. [inference]",
+          "tier": "inference"
         }
       ],
-      "refusals": [],
-      "withheld": 2
+      "refusals": [
+        "The corpus does not assert its section."
+      ],
+      "withheld": 3
     },
     {
       "id": "place/cairo.yml",
@@ -8256,6 +8321,14 @@
         {
           "text": "**It is one of six Allen County facilities that have reported to the EPA in every one of the inventory's thirty-eight years.** The others are [the refinery](lima-refinery.yml), Dana Driveshaft Manufacturing, INEOS Nitriles, FXI at Spencerville, and Chemtrade's sulphur works at Cairo. [verified] — [the reporters](../measure/allen-county-tri-reporters-1987-2024.yml). Six of forty-eight, in a register where twenty-eight facilities have stopped filing.",
           "tier": "verified"
+        },
+        {
+          "text": "**It stands on T3S R7E section 17**, which the Recorder abstracts in **Section Ground volume 28A**. [verified] — [Allen County GIS REST](../../catalog/allen-county-gis-rest.md) layer 55, cross-checked against the parcel number on the same point, and [the Recorder's book list](../../catalog/allen-county-recorder-section-ground.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "That matters more here than anywhere else in the corpus, because this node's open question has no newspaper route at all — no paper in the national archive reaches 1957 for it — and a tract page records a conveyance whether or not anyone reported it. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -8309,6 +8382,14 @@
         {
           "text": "**There was also an Army installation, and it is a different thing again.** The [Lima Tank Depot](lima-tank-depot.yml) was under construction in January 1943, operated by a contractor, and existed to finish and dispatch vehicles built at arsenals elsewhere rather than to build them. [verified] — same archive.",
           "tier": "verified"
+        },
+        {
+          "text": "**The ground now has a name and a book.** The plant stands on **T4S R6E section 14**, and the Recorder abstracts that section in **Section Ground volume 34A**. [verified] — [Allen County GIS REST](../../catalog/allen-county-gis-rest.md) layer 55, cross-checked against the parcel number on the same point, and [the Recorder's book list](../../catalog/allen-county-recorder-section-ground.md); see [the survey sections](../measure/allen-county-survey-sections.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "That is not an answer. It is the first time this corpus can say *where to look* for one: a tract index runs from the federal patent forward and records who conveyed this ground to whom and when, which is the shape of the question this node has been asking since genesis. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -8425,6 +8506,10 @@
         {
           "text": "**It outlived the war by at least five years.** The Depot appealed its workers' draft classifications to the local board in 1945, and was still operating and named in 1950. [verified] — same archive, *The Bluffton News*, 22 March 1945 and 9 February 1950.",
           "tier": "verified"
+        },
+        {
+          "text": "If it stood where the tank plant stands, that ground is **T4S R6E section 14**, abstracted in **Section Ground volume 34A**. [verified] — [the survey sections](../measure/allen-county-survey-sections.yml). The conditional is the whole of the claim: the section is where to look, not where the Depot was. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -10875,6 +10960,13 @@
       "source": "catalog/census-school-system-finances.md"
     },
     {
+      "from": "measure/allen-county-survey-sections.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-gis-rest.md"
+    },
+    {
       "from": "measure/allen-county-total-employment-1969-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -11937,6 +12029,13 @@
       "relationship": "resided-in",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "place/allen-county.yml",
+      "to": "measure/allen-county-survey-sections.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/allen-county-gis-rest.md"
     },
     {
       "from": "place/allen-county.yml",
