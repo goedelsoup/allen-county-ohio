@@ -29,7 +29,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-house-district-78-2023.yml](division/ohio-house-district-78-2023.yml) | division | Ohio House District 78 (2023 map) | 2 | 2v / 1i / 1o | 32 |
 | [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 3v / 1i / 1o | 34 |
 | [ohio-senate-district-12-2023.yml](division/ohio-senate-district-12-2023.yml) | division | Ohio Senate District 12 (2023 map) | 2 | 1v / 2i / 1o | 31 |
-| [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
+| [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 5v / 1i / 0o | 55 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
@@ -93,7 +93,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 8v / 1i / 2o | 69 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 7v / 3i / 0o | 77 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
-| [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 8v / 0i / 1o | 81 |
+| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 2 | 5v / 4i / 2o | 98 |
+| [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2022 | 2 | 3v / 0i / 1o | 42 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
@@ -101,7 +102,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-hospital-employment-2011-2023.yml](measure/allen-county-hospital-employment-2011-2023.yml) | measure | Allen County hospital employment, 2011–2023 | 7 | 4v / 1i / 0o | 61 |
 | [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 2 | 7v / 2i / 0o | 60 |
 | [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 2 | 7v / 0i / 0o | 61 |
-| [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 3v / 0i / 1o | 34 |
+| [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
@@ -111,6 +112,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
+| [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 3v / 9i / 1o | 103 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 7v / 2i / 0o | 64 |
@@ -277,7 +279,7 @@ Sorted by: kind, then alphabetically.
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 2v / 1i / 1o | 23 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 10v / 7i / 2o | 127 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 11v / 7i / 2o | 134 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 9v / 2i / 1o | 65 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
@@ -292,7 +294,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 35v / 8i / 1o | 236 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 37v / 9i / 1o | 251 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
@@ -311,18 +313,22 @@ Sorted by: kind, then alphabetically.
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 6 | 2v / 1i / 1o | 52 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
-| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
+| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 8v / 3i / 1o | 113 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
-| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 8v / 1i / 1o | 77 |
+| [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 5v / 2i / 1o | 51 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 10v / 2i / 1o | 87 |
+| [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 2v / 3i / 2o | 48 |
 | [camp-lima.yml](site/camp-lima.yml) | site | Camp Lima | 2 | 6v / 2i / 3o | 56 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 11v / 5i / 2o | 103 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 13v / 7i / 3o | 133 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 1v / 3i / 2o | 43 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
+| [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 9v / 4i / 2o | 72 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 84 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 10v / 4i / 1o | 84 |
+| [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 3v / 2i / 1o | 41 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
 | [clerk-of-courts-2025-jennifer-moree-mcbride.yml](tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml) | tenure | Jennifer Moree McBride, Clerk of Courts of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
 | [commissioner-2023-brian-winegardner.yml](tenure/commissioner-2023-brian-winegardner.yml) | tenure | Brian Winegardner, Commissioner of Allen County, term of 2023–2026 | 3 | 2v / 2i / 0o | 31 |
