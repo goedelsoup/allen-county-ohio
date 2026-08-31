@@ -1,0 +1,91 @@
+class: measure
+label: The mayors of Lima, 1842-1886
+description: |
+  Every mayor of Lima from the town's organization to the printing of the county's first history —
+  **twenty-four men over twenty-seven terms in forty-four years.** [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), the organic and
+  official history of Ottawa Township, printed pages 476-481, and the list of mayors since 1873 on
+  page 481.
+
+      1842-44  Henry D. V. Williams      1861-64  John R. Hughes
+      1844-45  H. F. Hubbard             1864-65  J. T. Heckman
+      1845-46  John P. Fay               1865-68  John Collett
+      1846-47  Thomas Delzell            1868-69  Thomas M. Robb
+      1847-48  Aurelius N. Smith         1869-70  George W. Overmyer
+      1848-49  James Cunningham          1870-74  Richard Metheany
+      1849-50  Thomas Delzell            1874-76  John C. Dunlevy
+      1850-51  Thomas Milligan           1876-80  John B. Townsend
+      1851-53  Samuel A. Baxter          1880-82  Frank E. Mead
+      1853-54  Thomas Milligan           1882-84  H. S. Prophet
+      1854-56  Samuel A. Baxter          1884-86  William McComb
+      1856-57  James E. Harriott
+      1857-58  John Melhorn
+      1858-59  James A. Newell
+      1859-60  John L. Hughes
+      1860-61  E. G. Hamilton
+
+  **The corpus's own estimate of this line was wrong in both terms.** It said "about forty holders
+  in forty-three years", written from the shape of the passage rather than from counting it. The
+  count is twenty-four men, twenty-seven terms, and forty-four years from March 1842 to the book's
+  own last entry of 1884-86. [inference] — computed here from the list above.
+
+  **Three men served twice**, and none of the three consecutively: Thomas Delzell in 1846 and 1849,
+  Thomas Milligan in 1850 and 1853, and Samuel A. Baxter in 1851 and 1854. [verified] — same
+  source. Richard Metheany served the longest single stretch, four years from 1870.
+
+  **Two mayors resigned in office and a third resigned and was reappointed.** Thomas Milligan
+  resigned in January 1854 and Samuel A. Baxter was appointed to the remainder; Thomas M. Robb
+  resigned in September 1869 and the council elected
+  [George W. Overmyer](../person/george-w-overmyer.yml) in his place; and John Melhorn resigned in
+  1857 and "was appointed in May to fill unexpired term". [verified] — same source. Overmyer is the
+  only mayor in this line the council chose rather than the voters. [inference]
+
+  **The book gives the whole council beside the mayor, and the council is where the corpus's other
+  people appear.** [Benjamin C. Faurot](../person/benjamin-faurot.yml) was elected a village
+  trustee in 1867, eighteen years before the well that made him; Matthias H. Nichols was a trustee
+  in 1849, twelve years before he raised the county's first company for the war and after three
+  terms in Congress; Thomas K. Jacobs was a trustee in 1842, marshal in 1846 and treasurer in 1853,
+  and introduced the bill in the Ohio House in April 1861 to tax the county for soldiers' families.
+  [verified] — same source; see
+  [the first company](../event/the-first-lima-company-1861.yml).
+
+  **The two digitizations disagree about the date the list starts, and the list settles it.** Scan
+  B prints "The mayors of Lima since 1873" and gives Richard Metheany, 1873; scan A prints 1878 in
+  both places. A list beginning in 1878 cannot open with a man serving 1874-76, so scan B is right
+  and no preference between the scans was needed to say so. [inference] — computed here; see
+  [three witnesses and three dates](../../decisions/three-witnesses-and-three-dates.yml). The same
+  substitution runs through scan A here — 1849 as 1840, 1853 as 1858, Richard as Bichard, Melhorn
+  as Melhom — and every one of them is caught by the sequence it sits in.
+
+  [open] Whether John L. Hughes, mayor in 1859, and John R. Hughes, mayor in 1861, are one man.
+  Both scans give the two initials, and the book carries at least four Hugheses in Lima in these
+  years — a J. R. Hughes on the war aid society, a Charles M. Hughes captaining a company, a
+  Richard S. Hughes lieutenant-colonel of the 151st, and a John L. Hughes in the 81st. The corpus
+  reads them as two and cannot show it.
+
+  [open] The hundred and thirty-nine years after 1886. This line stops where its source stops, and
+  the next mayor this corpus can name took office in 2025.
+properties:
+  parameter: mayors of Lima, 1842 to 1886
+  value: "24"
+  unit: distinct holders
+  as_of: "1885"
+  method: |
+    Read from the 1885 county history's chapter on Ottawa Township and Lima City, which narrates
+    the municipal elections year by year from 1842 to 1873 and then prints a list of mayors from
+    1873 to 1885. Both archive.org digitizations were read and compared line by line; they agree
+    on every name and differ only where scan A substitutes a digit or a letter, each of which is
+    resolved by the sequence rather than by preferring a scan. [verified]
+
+    Terms are counted as continuous runs under one man, so a re-election is not a new term and the
+    three men who returned after an interval are counted twice. Years are the years of election as
+    the book gives them; the book runs by election year and not by term, so a range like 1851-53 is
+    "elected in 1851, succeeded by the man elected in 1853" and not an assertion about the day
+    either man took office. [inference]
+links:
+  - target: ../office/mayor-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

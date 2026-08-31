@@ -31,7 +31,9 @@ used-by:
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/period/the-civil-war-in-allen-county.yml
+  - ../corpus/person/h-s-prophet.yml
   - ../corpus/person/james-a-hover.yml
+  - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
   - ../corpus/place/cairo.yml

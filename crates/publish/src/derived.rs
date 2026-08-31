@@ -1555,6 +1555,32 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-mayoral-line-stops-in-1886",
+        statement: "Lima had twenty-four mayors between 1842 and 1886, and then this corpus \
+                    cannot name one for a hundred and thirty-nine years.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "Every mayor of Lima from the town's organization to the printing of the county's first history — **twenty-four men over twenty-seven terms in forty-four years.**"
+            ),
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "**Three men served twice**, and none of the three consecutively: Thomas Delzell in 1846 and 1849, Thomas Milligan in 1850 and 1853, and Samuel A. Baxter in 1851 and 1854."
+            ),
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "**Two mayors resigned in office and a third resigned and was reappointed.**"
+            ),
+            support!(
+                "tenure/mayor-1882-h-s-prophet.yml",
+                "William McComb follows for 1884-86, and after that this corpus can name no mayor of Lima until 2025."
+            ),
+        ],
+        answers: &["The corpus reads them as two and cannot show it"],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

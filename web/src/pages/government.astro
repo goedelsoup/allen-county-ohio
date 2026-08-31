@@ -9,6 +9,7 @@ const appointed = assertion('appointment-is-a-form-of-local-government')
 const twoVillages = assertion('two-villages-cannot-fill-their-governments')
 const townships = assertion('the-townships-are-named')
 const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
+const mayors = assertion('the-mayoral-line-stops-in-1886')
 
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 // An office with no tenure would show as a blank holder rather than silently vanish.
@@ -313,6 +314,71 @@ const traced = offices.filter(
       are voted on inside their wards, and 3,182 of the city's people live in Van Wert County, so an
       Allen County roster cannot see any ward west of the line. Ten of its seats appear here and
       they are not the whole of its council.
+    </p>
+  </section>
+
+  <section>
+    <h2>The mayors, and the gap after them</h2>
+    <AssertionCard assertion={mayors} />
+    <p>
+      The 1885 county history narrates Lima's municipal elections year by year from the town's
+      organization on 29 March 1842 and then prints a list of mayors to 1886. That is twenty-four
+      men over twenty-seven terms in forty-four years. This site had said "about forty holders in
+      forty-three years" for twelve phases, written from the shape of the passage rather than from
+      counting it, and both halves were wrong.
+    </p>
+    <table>
+      <caption>Mayors of Lima, 1842–1886</caption>
+      <thead><tr><th scope="col">Years</th><th scope="col">Mayor</th></tr></thead>
+      <tbody>
+        <tr><td>1842–44</td><td>Henry D. V. Williams</td></tr>
+        <tr><td>1844–45</td><td>H. F. Hubbard</td></tr>
+        <tr><td>1845–46</td><td>John P. Fay</td></tr>
+        <tr><td>1846–47</td><td>Thomas Delzell</td></tr>
+        <tr><td>1847–48</td><td>Aurelius N. Smith</td></tr>
+        <tr><td>1848–49</td><td>James Cunningham</td></tr>
+        <tr><td>1849–50</td><td>Thomas Delzell</td></tr>
+        <tr><td>1850–51</td><td>Thomas Milligan</td></tr>
+        <tr><td>1851–53</td><td>Samuel A. Baxter</td></tr>
+        <tr><td>1853–54</td><td>Thomas Milligan</td></tr>
+        <tr><td>1854–56</td><td>Samuel A. Baxter</td></tr>
+        <tr><td>1856–57</td><td>James E. Harriott</td></tr>
+        <tr><td>1857–58</td><td>John Melhorn</td></tr>
+        <tr><td>1858–59</td><td>James A. Newell</td></tr>
+        <tr><td>1859–60</td><td>John L. Hughes</td></tr>
+        <tr><td>1860–61</td><td>E. G. Hamilton</td></tr>
+        <tr><td>1861–64</td><td>John R. Hughes</td></tr>
+        <tr><td>1864–65</td><td>J. T. Heckman</td></tr>
+        <tr><td>1865–68</td><td>John Collett</td></tr>
+        <tr><td>1868–69</td><td>Thomas M. Robb</td></tr>
+        <tr><td>1869–70</td><td>George W. Overmyer</td></tr>
+        <tr><td>1870–74</td><td>Richard Metheany</td></tr>
+        <tr><td>1874–76</td><td>John C. Dunlevy</td></tr>
+        <tr><td>1876–80</td><td>John B. Townsend</td></tr>
+        <tr><td>1880–82</td><td>Frank E. Mead</td></tr>
+        <tr><td>1882–84</td><td>H. S. Prophet</td></tr>
+        <tr><td>1884–86</td><td>William McComb</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Four of the twenty-four have pages of their own here and twenty do not, which is a decision
+      rather than an unfinished job: a holder earns a node when something about that holder does not
+      fit the line. Samuel A. Baxter was mayor twice and appointed once between, and is probably the
+      Dr. Samuel A. Baxter who co-wrote the 1906 county history — which would mean the technical
+      account of the first oil well that this site has leaned on was written partly by a man who had
+      been Lima's mayor thirty-four years before it was drilled. George W. Overmyer is the only
+      mayor in the line no election produced; the council chose him in September 1869 when Robb
+      resigned, and he was probate judge in 1881 on the committee that picked the plans for the
+      present courthouse. Richard Metheany appears in the table six times across twenty-six years.
+      And two sources spell H. S. Prophet differently.
+    </p>
+    <p>
+      The book prints the whole council beside the mayor, and that is where the rest of this site
+      turns up. Benjamin C. Faurot was elected a village trustee in 1867, eighteen years before the
+      well that made him. Matthias H. Nichols was a trustee in 1849, after three terms in Congress
+      and twelve years before he raised the county's first company for the war. Thomas K. Jacobs was
+      trustee, marshal and treasurer, and introduced the bill in the Ohio House in April 1861 to tax
+      the county for soldiers' families.
     </p>
   </section>
 </Base>
