@@ -152,5 +152,117 @@
         "verified": 75
       }
     }
+  },
+  "classes": {
+    "division": {
+      "label": "Division",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A bounded area that an authority defines as a unit of administration, election, or statistical reporting, and that holds no governmental authority of its own — a ward, a voting precinct, a census tract, a congressional district. It is irreducible because it is the grain at which elections and public statistics are reported, and because it is redrawn on a schedule that has nothing to do with the jurisdictions it sits inside."
+    },
+    "event": {
+      "label": "Event",
+      "ontology": "ufo",
+      "foundational_type": "event",
+      "edge_policy": "characteristic",
+      "required": [
+        "occurred"
+      ],
+      "description": "A bounded happening at a stated time — a treaty signing, an act of erection, a strike, a fire, a plant closing, an election. It is irreducible because a happening has participants and a date, and because the corpus's temporal spine is built from things that occurred rather than from dates attached to things that persist."
+    },
+    "jurisdiction": {
+      "label": "Jurisdiction",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A unit of government holding authority over a defined territory — the county, a township, a municipal corporation, a school district. It is irreducible and distinct from the place it governs because it has a creation instrument, officers, a budget and a boundary that annexation moves, none of which are true of the ground or its name."
+    },
+    "measure": {
+      "label": "Measure",
+      "ontology": "ufo",
+      "foundational_type": "quality",
+      "edge_policy": "characteristic",
+      "required": [
+        "parameter",
+        "value",
+        "as_of"
+      ],
+      "description": "A quantity recorded for a named subject at a stated time, carrying the source it came from. It is a class rather than a property because a figure without its date, its unit and its provenance is not checkable, and because putting numbers on the node they describe is the ordinary way a citation gets lost."
+    },
+    "natural-feature": {
+      "label": "Natural Feature",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A physical feature of the land or water that nobody built — a river, a creek, a watershed, a moraine, a bedrock formation, an aquifer. It is irreducible and separate from site on the built/unbuilt line, which is the distinction that decides whether a thing has an operator: a river has a drainage and a mouth, and no one runs it."
+    },
+    "office": {
+      "label": "Office",
+      "ontology": "ufo",
+      "foundational_type": "role",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A named position of authority that persists across the people who hold it — Sheriff of Allen County, Mayor of Lima, Judge of the Court of Common Pleas. It is a Role in the strict sense: contingent and relational, played by a person for a time rather than constituting what that person is, which is why it is a class and not a property."
+    },
+    "organization": {
+      "label": "Organization",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A named collective actor that is not a unit of government — a company, an agency, a congregation, a college, a newspaper, an association, a union. It is irreducible because a collective acts, is named, and persists across its members, and because it is separated from jurisdiction on one line only: whether it holds governmental authority over territory."
+    },
+    "period": {
+      "label": "Period",
+      "ontology": "ufo",
+      "foundational_type": "event",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A named span the corpus interprets as a unit — the canal era, the oil boom, deindustrialization. It shares UFO's event type with the class above and is nonetheless a different thing: an event has a date and participants, while a period has bounds and a character and is what other things are situated in. The distinction is not duration but whether the node is a happening or an interpretation of a span, and it is the corpus that authors the interpretation."
+    },
+    "person": {
+      "label": "Person",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A named individual human being. It is a Kind in the strict sense — a person does not stop being one by leaving office or leaving the county — which is exactly why the offices they hold and the intervals they hold them for cannot be properties of this class."
+    },
+    "place": {
+      "label": "Place",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A named area of ground that people refer to by its name — the county itself, a township as territory, a city, a village, an unincorporated crossroads, a neighborhood. It is irreducible because a name on the land outlives every authority that has governed it and every boundary drawn around it: Lima the place and the City of Lima the corporation have different birthdays, different extents, and different histories."
+    },
+    "question": {
+      "label": "Question",
+      "ontology": "ufo",
+      "foundational_type": "situation",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A live question the corpus has opened and not closed. It is a class because the commit vocabulary makes opening and closing a question a first-class knowledge act, and a research instrument that cannot name its own open questions as nodes has nowhere for those verbs to land."
+    },
+    "site": {
+      "label": "Site",
+      "ontology": "ufo",
+      "foundational_type": "kind",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "A fixed work of human construction and the ground it occupies — a refinery, a plant, a canal, a rail line, a courthouse, a quarry, a lock. It is irreducible because a built work outlasts the organizations that operate it and is transferred between them, so its identity cannot be folded into either the place it stands in or the company that runs it."
+    },
+    "tenure": {
+      "label": "Tenure",
+      "ontology": "ufo",
+      "foundational_type": "relator",
+      "edge_policy": "characteristic",
+      "required": [],
+      "description": "One person's holding of one office over one interval. It is a Relator in the strict sense — a first-class node mediating a relationship and carrying its own identity, dates and terms — and it exists as a class because \"who held this office in 1893\" is otherwise encodable only as prose on a person or as a date-qualified edge, and is unqueryable in both forms."
+    }
   }
 }

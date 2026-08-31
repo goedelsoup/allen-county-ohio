@@ -36,7 +36,12 @@ fn main() {
         Err(e) => fail(&format!("reading {}: {e}", corpus_dir.display())),
     };
 
-    let (files, defects) = match build(&nodes) {
+    let classes = match load::classes(&corpus_dir) {
+        Ok(c) => c,
+        Err(e) => fail(&format!("reading {}: {e}", corpus_dir.display())),
+    };
+
+    let (files, defects) = match build(&nodes, &classes) {
         Ok(v) => v,
         Err(e) => fail(&format!("serializing feeds: {e}")),
     };
@@ -82,8 +87,9 @@ fn main() {
             std::process::exit(1);
         }
         println!(
-            "feeds current — {} node(s) at the {CEILING} ceiling",
-            nodes.len()
+            "feeds current — {} node(s) in {} class(es) at the {CEILING} ceiling",
+            nodes.len(),
+            classes.len()
         );
         return;
     }

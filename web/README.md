@@ -39,6 +39,11 @@ corpus — no timestamp, no commit hash — so `cargo test` can compare the comm
 against a fresh derivation and fail when they differ. **The derivation is the gate**, which is
 what the directory conventions ask of anything outside the corpus that derives from it.
 
+The manifest carries the ontology across the same boundary: what each class declares itself
+to be, read from `.yidam/corpus/<class>.ont.yml`. An entry page can then say what licenses
+the structure it is rendering — that a tenure is a relator is *why* its dates sit on the
+holding and not on the person — without this side of the line holding a second copy of it.
+
 ```
 mise run publish          # rewrite src/feeds/ from the corpus
 mise run publish-check    # report whether what is committed is current

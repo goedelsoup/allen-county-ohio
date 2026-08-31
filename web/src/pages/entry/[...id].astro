@@ -19,6 +19,7 @@ import PropertiesGrid from '../../components/entry/PropertiesGrid.astro'
 import RecordStatus from '../../components/entry/RecordStatus.astro'
 import Refusals from '../../components/entry/Refusals.astro'
 import RelationsList from '../../components/entry/RelationsList.astro'
+import SchemaCard from '../../components/entry/SchemaCard.astro'
 import SourcesList from '../../components/entry/SourcesList.astro'
 import TierBadge from '../../components/TierBadge.astro'
 import EventBlock from '../../components/entry/class/EventBlock.astro'
@@ -171,6 +172,8 @@ const crumbs = [
     </article>
 
     <aside>
+      <SchemaCard cls={node.class} />
+
       {
         coords && (
           <Card label="On the map" meta={mouth ? 'source' : undefined}>

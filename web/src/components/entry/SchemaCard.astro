@@ -1,0 +1,74 @@
+---
+// What licenses the structure the rest of the page is showing.
+//
+// Every entry page shows the same apparatus — properties, edges, tiers, sources — and this
+// card is the only thing on the page that says why that apparatus takes the shape it does
+// for this class in particular. That a tenure is a relator is the reason its dates sit on
+// the holding rather than on the person, and the reader can otherwise only infer it.
+//
+// Four rows, as the boards draw it, and at most one of them in rubric. Which rows and which
+// accent is `schemaRows`; what it comes to is that all thirteen classes declare
+// `characteristic` and seven of them are plain kinds requiring nothing, so seven of these
+// cards accent nothing at all. That is the honest result: being a relator is an argument for
+// a class, and being a kind is not.
+//
+// Nothing here is stated by this file. It is `.yidam/corpus/<class>.ont.yml` as the feed
+// carries it, including the closing paragraph, which is the class's own account of itself
+// rather than a paraphrase written for a sidebar.
+
+import Card from './Card.astro'
+import { classSchema } from '../../lib/feeds'
+import { schemaRows } from '../../lib/entry'
+
+interface Props {
+  cls: string
+}
+
+const { cls } = Astro.props
+const schema = classSchema(cls)
+const rows = schemaRows(cls)
+---
+
+{
+  schema && (
+    <Card label="Schema" meta={cls}>
+      <dl class="schema">
+        {rows.map((row) => (
+          <>
+            <dt>{row.label}</dt>
+            <dd class:list={[row.accent && 'accent']}>{row.value}</dd>
+          </>
+        ))}
+      </dl>
+      <p class="why">{schema.description}</p>
+    </Card>
+  )
+}
+
+<style>
+  .schema {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-3) var(--space-5);
+    margin: 0;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-muted);
+  }
+  dd {
+    margin: 0;
+    text-align: right;
+    color: var(--text-body);
+    overflow-wrap: anywhere;
+  }
+  .accent {
+    color: var(--rubric-500);
+  }
+  .why {
+    margin: var(--space-4) 0 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule-hairline);
+    font: var(--weight-regular) var(--size-body-s) / 1.5 var(--font-serif);
+    color: var(--text-muted);
+  }
+</style>
