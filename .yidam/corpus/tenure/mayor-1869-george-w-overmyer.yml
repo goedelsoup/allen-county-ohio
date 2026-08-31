@@ -1,0 +1,30 @@
+class: tenure
+label: George W. Overmyer, Mayor of Lima, 1869-1870
+description: |
+  [George W. Overmyer](../person/george-w-overmyer.yml) was elected
+  [Mayor of Lima](../office/mayor-of-lima.yml) **by the council** in September 1869, in place of
+  Thomas M. Robb, who had resigned. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md).
+
+  **It is the only mayoralty in the town's first forty-four years that no election produced.**
+  [inference] — computed from [the line](../measure/lima-mayors-1842-1886.yml). `how_began` is
+  recorded as `appointed` because the ontology's vocabulary has no term for a council choosing a
+  mayor, and `elected` would carry the wrong meaning to a reader who takes it for a public vote.
+
+  Richard Metheany was elected in 1870. [verified] — same source.
+properties:
+  began: "1869-09"
+  ended: "1870"
+  how_began: appointed
+  how_ended: term expired
+links:
+  - target: ../person/george-w-overmyer.yml
+    relationship: held-by
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../office/mayor-of-lima.yml
+    relationship: of-office
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../tenure.ont.yml
+    relationship: instance-of
