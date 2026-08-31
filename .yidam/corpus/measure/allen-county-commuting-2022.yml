@@ -1,0 +1,71 @@
+class: measure
+label: Who comes and goes to work in Allen County, 2022
+description: |
+  Half the jobs in this county are held by people who do not live in it. [verified] —
+  [LEHD Origin-Destination Employment Statistics](../../catalog/lehd-lodes.md), LODES8, all jobs,
+  2022.
+
+      jobs located in Allen County                     48,730
+        held by people who live in the county          24,461   50.2%
+        held by people who commute in                  24,269   49.8%
+      jobs held by Allen County residents              42,835
+        in the county                                  24,461   57.1%
+        outside it                                     18,374   42.9%
+      net                                              +5,895
+
+  **The three flows, in one line.** 24,461 people both live and work in Allen County, 24,269 commute
+  into it, and 18,374 residents leave it for work — on 48,730 jobs located here and 42,835 held by
+  people who live here. [verified] — same source.
+
+  **The county draws 5,895 more workers than it sends**, and 42,643 people cross its line in one
+  direction or the other on a working day. [inference] — computed here from the rows above.
+
+  **Where they come from and where they go are not the same counties.** The largest sources of
+  in-commuters are Auglaize with 3,298, Putnam 2,986, Van Wert 2,016, Hardin 1,453 and Hancock
+  1,007 — the ring of rural counties around this one. The largest destinations for residents who
+  leave are Auglaize 1,988, **Franklin 1,723**, Hancock 1,458, Putnam 1,371 and Shelby 1,118.
+  [verified] — same source.
+
+  **Franklin County is a hundred miles away and this corpus does not read it as a commute.** The
+  1,723 are spread across many Columbus tracts, the largest holding 79, so it is not one employer's
+  administrative address; it is what a file that has passed disclosure avoidance looks like at small
+  grain. [inference] See
+  [the flow is real and the cell is not](../../decisions/the-flow-is-real-and-the-cell-is-not.yml).
+
+  **Lima holds 46.1 per cent of the county's jobs and 37.2 per cent of its employed residents.**
+  22,460 jobs in the sixteen tracts whose internal point falls inside the city, against 15,950
+  residents with jobs. [inference] — computed here, on the same sixteen tracts used for
+  [life expectancy](allen-county-life-expectancy-2010-2015.yml). The city is a net importer of
+  workers inside a county that is a net importer of workers.
+
+  **The three flows are alike in what they pay.** Of jobs held by residents working in the county,
+  47.1 per cent are in the file's top earnings band, above $3,333 a month; of in-commuters' jobs,
+  50.8 per cent; of out-commuters', 49.4. [verified] — same source. The corpus expected the
+  in-commuters to hold the better-paid work and they do not measurably.
+
+  **Two independent counts of the county's jobs agree within two per cent.** 48,730 here for 2022
+  against 49,690 covered jobs in 2024. [inference] —
+  [the wage file](allen-county-wages-2024.yml). They are different years, different programmes and
+  different definitions of a job, and they land 960 apart.
+properties:
+  parameter: jobs located in the county, and where their holders live
+  value: "48730"
+  unit: jobs
+  as_of: "2022"
+  method: |
+    LODES8 origin-destination files for Ohio, `JT00` — all jobs — for 2022, filtered to
+    origin-destination pairs with a block in Allen County on either end, plus the auxiliary file for
+    workers living outside Ohio. Counties are read from the first five digits of a block identifier
+    and "Lima" from the tract whose internal point falls inside the city's 2020 boundary, which is a
+    statement about where a tract's centre is. Earnings bands are the file's own `SE01`, `SE02` and
+    `SE03`. Every total here is a sum over thousands of cells; no cell is quoted. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/lehd-lodes.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
