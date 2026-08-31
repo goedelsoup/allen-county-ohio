@@ -1,0 +1,108 @@
+class: measure
+label: Allen County land area by subdivision, 2000–2024
+description: |
+  **The county's thirteen subdivisions, measured at two censuses and then every year for thirteen
+  years.** Allen County is divided into twelve townships and one city that belongs to none of them,
+  and those thirteen figures sum to the county. [verified] —
+  [the 2000 volume](../../catalog/census-phc-3-37-ohio.md) and
+  [the 2010 volume](../../catalog/census-cph-2-37-ohio-2010.md), county-subdivision tables, with
+  [the gazetteer](../../catalog/census-gazetteer-2020.md) for the annual series.
+
+      subdivision      2000 land   2010 land    change     acres
+      Amanda               33.51       33.31     -0.20      -128
+      American             24.48       24.02     -0.46      -294
+      Auglaize             36.15       35.99     -0.16      -102
+      Bath                 30.98       30.70     -0.28      -179
+      Jackson              35.79       35.72     -0.07       -45
+      Lima city            12.78       13.56     +0.78      +499
+      Marion               42.57       42.37     -0.20      -128
+      Monroe               36.20       36.09     -0.11       -70
+      Perry                33.43       32.69     -0.74      -474
+      Richland             41.94       41.65     -0.29      -186
+      Shawnee              29.18       28.98     -0.20      -128
+      Spencer              23.26       23.31     +0.05       +32
+      Sugar Creek          24.15       24.09     -0.06       -38
+      sum                 404.42      402.48     -1.94     -1242
+      county, printed     404.43      402.50     -1.93     -1235
+
+  **The sum closes against the printed county in both years**, to a hundredth of a square mile —
+  404.42 against 404.43 and 402.48 against 402.50 — which is thirteen figures rounded to two places
+  agreeing with a fourteenth. [inference] — addition performed here on
+  [the two volumes](../../catalog/census-cph-2-37-ohio-2010.md). It closes again in the current
+  geography: the twelve townships hold 388.927 square miles in the 2024 gazetteer and
+  [Lima](../place/lima.yml) 13.619, together **402.546** against the county's own 402.545.
+  [verified] — [the gazetteer](../../catalog/census-gazetteer-2020.md), Ohio county-subdivision,
+  place and county files for 2024.
+
+  ## The county lost 1,235 acres it did not lose
+
+  **Allen County's land area falls from 404.43 to 402.50 square miles between the two volumes**,
+  and its total area does not move — 406.88 against 406.85. [verified] — the same tables. No
+  land left this county in that decade; the county's only recorded boundary change since 1990 was a
+  *gain*, from Putnam. [verified] — [the 2000 volume](../../catalog/census-phc-3-37-ohio.md),
+  geographic change notes. Twelve hundred acres were reclassified from land to water on paper.
+
+  **So eleven of the twelve townships lost ground and none of them lost ground.** Every township
+  but Spencer shows a smaller land area in 2010 than in 2000, and the three that actually gave
+  ground to Lima — American, Bath and Perry — are not distinguishable in that column from Amanda
+  and Marion, which gave nothing to anybody. [inference] — computed here from the two tables. Perry
+  shows the largest fall of any subdivision, 474 acres, and Perry's real loss to Lima is somewhere
+  inside it and cannot be recovered from it.
+
+  **Only Lima grows**, by 499 acres of land and 582 of total area, against 601 acres of annexation
+  it reported in the same decade. [verified] — the same tables, against
+  [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md) as read in
+  [the annexation record](allen-county-annexations-1990-2024.yml). That is the one subdivision
+  whose area change is dominated by a real event rather than by a remeasurement, and it is dominated
+  by it only because the event was large.
+
+  ## The annual series, and what it can and cannot see
+
+  The gazetteer has published Ohio place and county-subdivision files every year since 2012, so the
+  county's outline can be watched rather than sampled. [verified] —
+  [the gazetteer](../../catalog/census-gazetteer-2020.md), 2012 through 2024.
+
+  **The clearest annexation in the whole thirteen years is a transfer of 4,483 square metres.**
+  Between the 2021 and 2022 files Lima gains 4,483 square metres and Bath Township loses 4,484 —
+  1.11 acres, matched to one square metre by two rows that were computed independently.
+  [verified] — same files. There is no record of it in
+  [the annexation survey](../../catalog/census-bas-boundary-changes-ohio.md), whose last Lima entry
+  is dated June 2017.
+
+  **Lima is the only municipality here whose annexations are visible at township level**, because
+  it is the only one independent of any township: the Census Bureau tabulates Ohio villages inside
+  the townships that contain them, so when Elida or Bluffton annexes, the township it annexes from
+  does not change by a square metre. [inference] — the tabulation rule is
+  [the 2010 volume's](../../catalog/census-cph-2-37-ohio-2010.md), the consequence is this
+  corpus's. Elida gained 40.3 acres between the 2021 and 2022 files and American Township, which
+  surrounds it, gained and lost nothing.
+
+  **And the biggest single-year jump in the series is not an annexation at all.**
+  [Fort Shawnee](../place/fort-shawnee.yml) grows by 1,506 acres — 2.35 square miles, a fifth of
+  Lima — between the 2012 and 2013 files, and in the same step its legal/statistical code changes
+  from 47, village, to 57, census designated place. [verified] — same files. The village occupied
+  7.21 square miles at both the 2000 and 2010 censuses; the CDP drawn in its place occupies 9.51.
+  [verified] — [the 2000](../../catalog/census-phc-3-37-ohio.md) and
+  [2010](../../catalog/census-cph-2-37-ohio-2010.md) volumes and the 2020 gazetteer.
+properties:
+  parameter: land area by county subdivision
+  value: "402.50"
+  unit: square miles
+  as_of: "2010"
+  method: |
+    Land and total area for all thirteen Allen County subdivisions read from the county-subdivision
+    tables of the 2000 and 2010 Population and Housing Unit Counts volumes for Ohio, both born
+    digital and extracted exactly rather than by OCR; annual figures from the Ohio place,
+    county-subdivision and county gazetteer files for 2012 through 2024, converted from square
+    metres at 2,589,988.11 m² to the square mile and 4,046.8564224 m² to the acre. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-cph-2-37-ohio-2010.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-cph-2-37-ohio-2010.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

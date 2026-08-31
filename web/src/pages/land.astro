@@ -9,6 +9,8 @@ const farmland = assertion('the-county-is-two-thirds-farmland')
 const hogs = assertion('the-hogs-multiplied-as-the-keepers-halved')
 const rented = assertion('most-of-the-farmland-is-rented')
 const yields = assertion('an-acre-yields-five-times-what-it-did')
+const annexed = assertion('the-annexations-are-dated-now')
+const control = assertion('the-county-lost-land-it-never-lost')
 
 // Bars, not a line. The 1910 observation and the 2002 one are ninety-two years apart and
 // nothing measured between them; a line would draw that segment, and its shape is exactly
@@ -25,6 +27,12 @@ const hogSpec = line(
   { yTitle: 'Head', labelLast: true, zeroBased: true },
 )
 
+const annexedSpec = bar(
+  annexed.figures.map((f) => f.label),
+  annexed.figures.map((f) => f.value),
+  { yTitle: 'Acres reported annexed, 1990–2024', labelValues: true },
+)
+
 const yieldSpec = bar(
   yields.figures.map((f) => f.label),
   yields.figures.map((f) => f.value),
@@ -34,7 +42,7 @@ const yieldSpec = bar(
 
 <Base
   title="Land"
-  lede="Two thirds of Allen County is farms. This is what stands on that ground, who owns it, and what it grows."
+  lede="Two thirds of Allen County is farms. This is what stands on that ground, who owns it, what it grows, and where the lines drawn around it have moved."
 >
   <section>
     <h2>The other nine-tenths</h2>
@@ -124,6 +132,72 @@ const yieldSpec = bar(
       went with them: 30,156 acres of oats in 1909 and 11 acres in 2022, and where there were 3,107
       acres of rye there is now one operation in the county growing it, whose acreage the census
       withholds because one operation is all there is.
+    </p>
+  </section>
+
+  <section>
+    <h2>Where the lines moved</h2>
+    <p>
+      Until this phase the corpus held three dated boundary changes for the whole county — 1903,
+      1905 and 1944, all of them footnotes in census volumes — and said so in nine different nodes,
+      each warning that a population or area figure for Lima describes whatever ground the
+      corporation held on the day. The Census Bureau collects annexations through a survey it runs
+      every year and publishes the answers by state. Ohio's files hold fifty-seven for this county.
+    </p>
+    <AssertionCard assertion={annexed} />
+    <ChartFigure
+      id="annexed"
+      title="Acres reported annexed, 1990–2024"
+      caption="What each municipality told the Boundary and Annexation Survey it had annexed, summed over every record with an acreage. Five of the fifty-seven records state none, so every bar is a floor. Delphos and Bluffton cross county lines and their totals include ground on the Van Wert and Hancock sides."
+      columns={['Municipality', 'Acres']}
+      rows={annexed.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="annexed" set:html={JSON.stringify(annexedSpec)} is:inline />
+    <p>
+      Lima's eleven acts are the shape of it: fifteen acres in 1990, six in 1991, then ten and a
+      half years in which the city reported nothing, then 601 acres in eight annexations between
+      June 2002 and December 2009, then one act in June 2017 and nothing since. Ordinance 90-02 of
+      24 June 2002, at 215.9 acres, is the largest single annexation in the county's record and the
+      one that ends the pause.
+    </p>
+    <p>
+      Elida is the entry that does not work. Five records totalling 912.9 acres, for a village that
+      occupies 745.6 — and one of the five, ordinance 622-92 of March 1992, claims exactly 640.0
+      acres, which is a square mile to the acre and the size of a survey section rather than of a
+      parcel. Reported acreage is what a clerk wrote on a form. It is not a survey, and this site
+      does not treat it as one.
+    </p>
+    <p>
+      Two of the fifty-seven changed something larger than a village. Between the 1990 and 2000
+      censuses Marion Township took ground from Jennings Township across the line in Putnam County,
+      which moved <strong>the county's own outline</strong> — the second time those two townships
+      have exchanged ground, the first being the reorganization of 1848. In the same decade Jackson
+      Township lost ground to Bath, which is the only township-to-township transfer on record here
+      after 1848 and carries no ordinance number anywhere, because a township is not a reporting
+      entity in the survey.
+    </p>
+    <AssertionCard assertion={control} />
+    <p>
+      Having the annexations does not make the area figures comparable, and finding out why was the
+      more useful half of this work. The Census Bureau's land-area column moves for two reasons —
+      ground changing hands, and the same ground being remeasured on better coordinates — and
+      prints as one number. Allen County's land area falls from 404.43 square miles in the 2000
+      volume to 402.50 in the 2010 one while its total area holds at 406.88 and 406.85. Nothing
+      left the county; twelve hundred acres crossed from the land column to the water column.
+    </p>
+    <p>
+      So eleven of the twelve townships show less land in 2010 than in 2000, including seven that
+      gave ground to nobody, and Perry — which did give ground to Lima — shows the largest fall in
+      the county at 474 acres, indistinguishable from Amanda's 128. The rule this site now applies
+      is to read every area change against something in the same table that could not have moved.
+      For the subdivisions that is the county; for the county it is its own total.
+    </p>
+    <p>
+      Lima survives that test by a factor of eight, and the check it survives is worth stating
+      plainly. The city reported 601 acres of annexation to the survey across the 2000s. The Census
+      Bureau, measuring a polygon and not reading a form, found Lima's total area larger by 582.4
+      acres between the two censuses. A city clerk's eight forms and a federal boundary file agree
+      to three per cent, and neither knew about the other.
     </p>
   </section>
 </Base>

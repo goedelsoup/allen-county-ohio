@@ -30,6 +30,12 @@ location:
   - kind: url
     value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_unsd_national.zip
     description: unified school districts
+  - kind: url_template
+    value: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/{year}_Gazetteer/{year}_gaz_{level}_39.txt
+    description: >-
+      The same files for every vintage from 2012 to 2024 — there is no 2010 or 2011 Ohio place
+      file. Retrieved 2026-08-31 for `place`, `cousubs` and `counties`, which is what turns a
+      single snapshot into a thirteen-year series of the ground each entity is tabulated at.
 used-by:
   - ../corpus/division/census-tract-39003010300.yml
   - ../corpus/division/ohio-congressional-district-4-2020.yml

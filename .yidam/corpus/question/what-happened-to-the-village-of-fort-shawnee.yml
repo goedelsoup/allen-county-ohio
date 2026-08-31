@@ -8,32 +8,53 @@ description: |
   [Census Intercensal Estimates, 2000–2010](../../catalog/census-intercensal-2000-2010.md).
 
   A village is an incorporated municipality; a CDP is a statistical construct with no
-  government at all. So something changed between the 2010 and 2020 geographies, and the
-  corpus does not know what. [open]
+  government at all. So something changed between the 2010 and 2020 geographies.
 
-  Two readings fit the same evidence and they are not close to equivalent. Either the
+  Two readings fit that evidence and they are not close to equivalent. Either the
   municipal corporation **dissolved** — which is a governance event with a date, a petition
   and probably an election, and which would mean Shawnee Township absorbed its functions — or
   the Census Bureau **reclassified** it for reasons of its own, leaving the corporation intact
   and only the tabulation changed. The first is a fact about Allen County. The second is a
   fact about a federal statistical program.
 
-  The corpus deliberately writes neither. No `jurisdiction` node for a Village of Fort Shawnee
-  exists, and none should until this is settled: creating one with `abolished: 2010s` would
-  assert the first reading by structure, and creating one without would assert the second.
-  This is the same restraint as
-  [the county's namesake](namesake-of-allen-county.yml) — a well-formed node that answers an
-  open question is worse than no node.
+  **A source that counts governments rather than polygons now separates them.** The 2012 Census of
+  Governments lists `VILLAGE OF FORT SHAWNEE`, census ID `36200250100000`, presiding officer
+  *Mayor*, 2050 W Breese Rd, Lima OH 45806. The 2017 list does not carry it, and neither does
+  2022; `TOWNSHIP OF SHAWNEE` is in all three. [verified] —
+  [the government unit lists](../../catalog/census-of-governments-unit-lists.md).
 
-  [open] Which of the two occurred, and when.
+  That is not a geography product. Its unit of observation is the government, so an absent row is
+  evidence about the corporation and not about the tabulation, and the first reading is the one
+  the evidence points at. [inference] — the reasoning is this corpus's.
+
+  **And the change is datable to a year.** The Bureau's gazetteer carries Fort Shawnee with legal
+  code 47, village, and 7.155 square miles of land in the 2012 vintage, and with code 57, census
+  designated place, and 9.508 square miles in the 2013 vintage — the largest single-year area
+  change of any place in the county in thirteen years, and not an annexation. [verified] —
+  [the gazetteer](../../catalog/census-gazetteer-2020.md), Ohio place files for 2012 and 2013.
+
+  So the roster that still lists it and the map that has already stopped are the same year apart:
+  the corporation was surveyed as existing in 2012 and drawn as not existing in 2013. [inference]
+
+  The corpus still writes no `jurisdiction` node for a Village of Fort Shawnee, and the reason has
+  changed rather than gone. It is no longer that the corpus cannot tell a dissolution from a
+  reclassification; it is that a jurisdiction node would have to carry an `abolished` date, and the
+  best this evidence supports is a year inferred from the gap between two federal products. This is
+  the same restraint as [the county's namesake](namesake-of-allen-county.yml) — a well-formed node
+  that answers an open question is worse than no node.
+
+  [open] The instrument and the date. Ohio ends a village two ways — dissolution under Chapter 703
+  and merger with the township under Chapter 709 — and no source here says which, or on what day,
+  or by whose vote. The federal record narrows it to 2012 and stops.
 properties:
   claim_tag: open
   opened: "2026-08-28"
   would_close_this: |
-    Ohio Secretary of State or Allen County records of municipal dissolution, or the county's
-    own list of political subdivisions; alternatively the Census Bureau's Boundary and
-    Annexation Survey for the relevant year, which records why a place's status changed and
-    would distinguish a dissolution from a reclassification directly.
+    Allen County commissioners' journal or the Ohio Secretary of State's record for 2012, either
+    of which would carry the petition and the certification. The Census Bureau's Boundary and
+    Annexation Survey was named here as the likely answer and is not: Ohio's files hold fifty-seven
+    Allen County records between 1990 and 2024 and every one of them is an annexation, with no row
+    for Fort Shawnee at any date.
 links:
   - target: ../place/fort-shawnee.yml
     relationship: concerns

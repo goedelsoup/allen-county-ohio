@@ -282,6 +282,26 @@
       ]
     },
     {
+      "id": "place-allen-county::annexations-reported-to-the-Boundary-and-Annexation-Survey",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "annexations reported to the Boundary and Annexation Survey",
+      "unit": "records",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-annexations-1990-2024.yml",
+          "label": "Allen County annexations, 1990–2024",
+          "as_of": "2024-11-12",
+          "value": 57.0,
+          "published": "57",
+          "tier": "verified",
+          "source": "catalog/census-bas-boundary-changes-ohio.md",
+          "method": "Every row of Ohio's BAS boundary-change files whose entity FIPS place code is one of the ten Allen County places — Beaverdam 04752, Bluffton 07426, Cairo 10884, Delphos 21602, Elida 24808, Fort Shawnee 27944, Harrod 34118, Lafayette 41118, Lima 43554, Spencerville 74034. Sixteen tab-delimited files, two record layouts, joined on the fields the readme names. Delphos and Bluffton cross county lines and the pre-2018 layout carries no county column, so their totals include ground on the Van Wert and Hancock sides. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::average-weekly-wage,-all-industries,-all-ownerships",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -498,6 +518,26 @@
           "tier": "verified",
           "source": "catalog/census-gazetteer-2020.md",
           "method": "Computed by the Census Bureau from the 2020 TIGER geography. A county's land area is not fixed across geographies — a later vintage may differ. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::land-area-by-county-subdivision",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "land area by county subdivision",
+      "unit": "square miles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-land-area-2000-2024.yml",
+          "label": "Allen County land area by subdivision, 2000–2024",
+          "as_of": "2010",
+          "value": 402.5,
+          "published": "402.50",
+          "tier": "verified",
+          "source": "catalog/census-cph-2-37-ohio-2010.md",
+          "method": "Land and total area for all thirteen Allen County subdivisions read from the county-subdivision tables of the 2000 and 2010 Population and Housing Unit Counts volumes for Ohio, both born digital and extracted exactly rather than by OCR; annual figures from the Ohio place, county-subdivision and county gazetteer files for 2012 through 2024, converted from square metres at 2,589,988.11 m² to the square mile and 4,046.8564224 m² to the acre. [verified]"
         }
       ]
     },
@@ -4138,6 +4178,124 @@
       "caveats": [
         "The corpus reads them as two and cannot show it."
       ],
+      "figures": []
+    },
+    {
+      "id": "the-annexations-are-dated-now",
+      "statement": "Seven Allen County municipalities annexed 3,029.8 acres in fifty-seven dated acts between 1990 and 2024, and eight of Lima's fall in as many years.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-annexations-1990-2024.yml",
+          "node_label": "Allen County annexations, 1990–2024",
+          "span": "**Fifty-seven annexations, all of them dated, none of them held by this corpus until now.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-bas-boundary-changes-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-annexations-1990-2024.yml",
+          "node_label": "Allen County annexations, 1990–2024",
+          "span": "Written out: **Delphos reported twenty-six annexations totalling 784.4 acres, Lima eleven totalling 622.0, Bluffton nine totalling 477.5, Elida five totalling 912.9, Spencerville four totalling 209.7, and Cairo and Harrod one each of 10.4 and 12.9 — fifty-seven records and 3,029.8 acres in thirty-five years.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-bas-boundary-changes-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-annexations-1990-2024.yml",
+          "node_label": "Allen County annexations, 1990–2024",
+          "span": "**The shape is a decade of nothing, then a burst, then nothing again.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-bas-boundary-changes-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-annexations-1990-2024.yml",
+          "node_label": "Allen County annexations, 1990–2024",
+          "span": "**Lima reported 601.0 acres of annexation effective inside the 2000s, and the Census Bureau's own measurement of Lima grew by 582.4 acres over the same decade.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-phc-3-37-ohio.md",
+            "catalog/census-cph-2-37-ohio-2010.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Elida",
+          "value": 912.9,
+          "literal": "912.9"
+        },
+        {
+          "label": "Delphos",
+          "value": 784.4,
+          "literal": "784.4"
+        },
+        {
+          "label": "Lima",
+          "value": 622.0,
+          "literal": "622.0"
+        },
+        {
+          "label": "Bluffton",
+          "value": 477.5,
+          "literal": "477.5"
+        },
+        {
+          "label": "Spencerville",
+          "value": 209.7,
+          "literal": "209.7"
+        },
+        {
+          "label": "Harrod",
+          "value": 12.9,
+          "literal": "12.9"
+        },
+        {
+          "label": "Cairo",
+          "value": 10.4,
+          "literal": "10.4"
+        }
+      ]
+    },
+    {
+      "id": "the-county-lost-land-it-never-lost",
+      "statement": "Allen County's land area falls 1,235 acres between two censuses in which it gained ground, so no township's area change can be read.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-land-area-2000-2024.yml",
+          "node_label": "Allen County land area by subdivision, 2000–2024",
+          "span": "**Allen County's land area falls from 404.43 to 402.50 square miles between the two volumes**, and its total area does not move — 406.88 against 406.85.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-phc-3-37-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-land-area-2000-2024.yml",
+          "node_label": "Allen County land area by subdivision, 2000–2024",
+          "span": "**So eleven of the twelve townships lost ground and none of them lost ground.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-land-area-2000-2024.yml",
+          "node_label": "Allen County land area by subdivision, 2000–2024",
+          "span": "**Only Lima grows**, by 499 acres of land and 582 of total area, against 601 acres of annexation it reported in the same decade.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-bas-boundary-changes-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [],
       "figures": []
     },
     {

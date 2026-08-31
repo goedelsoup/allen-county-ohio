@@ -1581,6 +1581,62 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-annexations-are-dated-now",
+        statement: "Seven Allen County municipalities annexed 3,029.8 acres in fifty-seven \
+                    dated acts between 1990 and 2024, and eight of Lima's fall in as many years.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-annexations-1990-2024.yml",
+                "**Fifty-seven annexations, all of them dated, none of them held by this corpus until now.**"
+            ),
+            support!(
+                "measure/allen-county-annexations-1990-2024.yml",
+                "Written out: **Delphos reported twenty-six annexations totalling 784.4 acres, Lima eleven totalling 622.0, Bluffton nine totalling 477.5, Elida five totalling 912.9, Spencerville four totalling 209.7, and Cairo and Harrod one each of 10.4 and 12.9 — fifty-seven records and 3,029.8 acres in thirty-five years.**"
+            ),
+            support!(
+                "measure/allen-county-annexations-1990-2024.yml",
+                "**The shape is a decade of nothing, then a burst, then nothing again.**"
+            ),
+            support!(
+                "measure/allen-county-annexations-1990-2024.yml",
+                "**Lima reported 601.0 acres of annexation effective inside the 2000s, and the Census Bureau's own measurement of Lima grew by 582.4 acres over the same decade.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Elida", value: 912.9, literal: "912.9" },
+            Figure { label: "Delphos", value: 784.4, literal: "784.4" },
+            Figure { label: "Lima", value: 622.0, literal: "622.0" },
+            Figure { label: "Bluffton", value: 477.5, literal: "477.5" },
+            Figure { label: "Spencerville", value: 209.7, literal: "209.7" },
+            Figure { label: "Harrod", value: 12.9, literal: "12.9" },
+            Figure { label: "Cairo", value: 10.4, literal: "10.4" },
+        ],
+    },
+    Assertion {
+        id: "the-county-lost-land-it-never-lost",
+        statement: "Allen County's land area falls 1,235 acres between two censuses in which it \
+                    gained ground, so no township's area change can be read.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-land-area-2000-2024.yml",
+                "**Allen County's land area falls from 404.43 to 402.50 square miles between the two volumes**, and its total area does not move — 406.88 against 406.85."
+            ),
+            support!(
+                "measure/allen-county-land-area-2000-2024.yml",
+                "**So eleven of the twelve townships lost ground and none of them lost ground.**"
+            ),
+            support!(
+                "measure/allen-county-land-area-2000-2024.yml",
+                "**Only Lima grows**, by 499 acres of land and 582 of total area, against 601 acres of annexation it reported in the same decade."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
