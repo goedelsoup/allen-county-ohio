@@ -1,0 +1,77 @@
+class: measure
+label: Allen County farms, farmland and farm income, 2002–2022
+description: |
+  Five agricultural censuses of the county's largest land use, and the first this corpus has read
+  since 1910. [verified] —
+  [USDA Census of Agriculture](../../catalog/usda-census-of-agriculture.md), county files.
+
+                      2002      2007      2012      2017      2022
+      farms            968       946       904       855       897
+      acres        188,150   187,238   183,186   186,623   178,921
+      mean size        194       198       203       218       199
+      median size       79        70        73        71        53
+      cropland     168,444   170,421   163,025   172,699   165,982
+      pasture        3,040     3,768     5,538     3,308     1,646
+      woodland       9,745     8,756     8,853     6,583     6,951
+      sales $m        41.3      87.6     144.1     139.9     240.8
+        crops         30.2      64.6     109.8      85.8     140.7
+        animals       11.0      23.0      34.3      54.1     100.2
+
+  **Allen County was 92.5 per cent farmland in 1910 and is 69.4 per cent farmland now** — 178,921
+  acres of the 257,629 in its 402.545 square miles. [inference] — computed here from
+  [the 1910 farms](allen-county-farms-1900-1910.yml) and
+  [the county's land area](allen-county-land-area-2020.yml). The two censuses measure land area on
+  different geographies, so the shares are firmer than the difference between them.
+
+  **Nine-tenths of the fall happened before this series begins.** Land in farms was 240,472 acres in
+  1910 and 188,150 in 2002 — 52,322 acres gone — against 9,229 more across the twenty years since.
+  [inference] — same two sources. There is no agricultural census between them in this catalog, so
+  this corpus knows that the farmland went and cannot say when. See
+  [when the farmland went](../question/when-the-farmland-went.yml).
+
+  **Land in farms, five censuses in one line.** 188,150 acres in 2002, 187,238 in 2007, 183,186 in
+  2012, 186,623 in 2017 and 178,921 in 2022, against 240,472 in 1910. [verified] — same source, and
+  [the 1910 farms](allen-county-farms-1900-1910.yml).
+
+  **More than half the county's farmland is worked by someone who does not own it.** 94,325 of
+  178,921 acres are rented — 90,661 by 268 part-owner operations and 3,664 by 38 tenants — and the
+  591 operations that own everything they farm hold 34,912 acres between them, a fifth of the total.
+  [verified] — same source, tenure domain, whose four figures close on the county acreage exactly.
+
+  **So 268 operations farm 78.4 per cent of the ground.** [inference] — computed here. In 1910 the
+  same county held 2,939 farms, of which 2,046 were owner-operated. [verified] —
+  [the 1910 farms](allen-county-farms-1900-1910.yml).
+
+  **The census cannot resolve its own headline.** The county profile prints farms up 5 per cent and
+  land in farms down 4 per cent since 2017; the figures are 897 ± 69 farms and 178,921 ± 16,171
+  acres, so the first change is inside one standard error and the second is inside half of one.
+  [verified] — same source, Appendix A Table C. **39.0 per cent of the county's farm count is
+  adjustment for coverage, nonresponse and misclassification rather than a returned form**, and
+  28.6 per cent of its acreage is. The corpus does not read the sales row of that table, whose
+  standard error is printed in a unit the table does not name.
+
+  **Federal money reached 344 of the 897.** $1,898,000 in 2022, of which $698,000 went to 283
+  operations for conservation and wetlands and $1,200,000 to 86 for everything else. [verified] —
+  same source. Expenses were $168,593,000 against $240,849,000 of sales; feed alone was
+  $34,822,000, a fifth of all spending, in a county whose animals are described
+  [next door](allen-county-livestock-2002-2022.yml).
+properties:
+  parameter: farms, land in farms and value of products sold, Allen County
+  value: "897"
+  unit: farms
+  as_of: "2022-12-31"
+  method: |
+    Census of Agriculture, taken for the 2022 calendar year, read from NASS's Quick Stats bulk
+    county file and checked against the published county profile, which agrees on every headline
+    figure. The four tenure rows sum to land in farms exactly and the two sales components sum to
+    the total exactly. NASS defines a farm as "any place from which $1,000 or more of agricultural
+    products were produced and sold, or normally would have been sold, during the census year",
+    which is not the definition the 1910 census used. [verified] See
+    [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml).
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usda-census-of-agriculture.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

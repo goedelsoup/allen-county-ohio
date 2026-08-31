@@ -1,0 +1,62 @@
+class: measure
+label: Allen County crops, 2022, against 1909
+description: |
+  What the county grows, beside what it grew in the year this corpus already measures. [verified] —
+  [USDA Census of Agriculture](../../catalog/usda-census-of-agriculture.md), county file, and
+  [Abstract of the Thirteenth Census](../../catalog/census-1910-abstract-supplement-ohio.md).
+
+                        1909 acres      1909 yield          2022 acres      2022 yield
+      soybeans                   —               —              76,200   4,340,775 bu
+      corn for grain        51,293   1,984,727 bu              64,776  12,483,782 bu
+      wheat                 14,541     195,319 bu               9,252     757,084 bu
+      oats                  30,156     894,916 bu                  11           (D)
+      rye                    3,107      41,897 bu                 (D)           (D)
+      hay                   39,664      55,571 tons             2,431       7,284 tons
+      popcorn                    —               —                 793   2,694,725 lb
+
+  **The county's largest crop did not exist here in 1909.** Soybeans took 76,200 acres in 2022,
+  more than corn, and the 1910 census names no soybean acreage in Allen County at all. [verified] —
+  [the Census of Agriculture](../../catalog/usda-census-of-agriculture.md) and
+  [the Thirteenth Census](../../catalog/census-1910-abstract-supplement-ohio.md).
+
+  **An acre of Allen County corn yields five times what it did**, 192.7 bushels against 38.7, and an
+  acre of wheat six times, 81.8 against 13.4. [inference] — computed here by division. The county
+  grew a quarter more corn acres in 2022 than in 1909 and took six and a quarter times the grain
+  off them.
+
+  **The oats went with the horses.** 30,156 acres of oats in 1909, 11 acres on three operations in
+  2022; 3,107 acres of rye then, and now one operation in the county, whose acreage the census
+  withholds because one operation is all there is. [verified] — same sources. Hay fell from 39,664
+  acres to 2,431. Together those three crops were 72,927 acres in 1909 — twenty-eight per cent of
+  the county — and they were what fed the 14,676 horses and 21,336 cattle counted in
+  [the same volume](allen-county-domestic-animals-1910.yml).
+
+  **Two crops are now 84.9 per cent of the harvest.** Soybeans and corn take 140,976 of the county's
+  165,982 cropland acres. [inference] — computed here. What is left is wheat, 2,686 acres of hay and
+  haylage, 793 acres of popcorn on fourteen operations, and $1,663,000 of vegetables, fruit, nursery
+  stock and everything else together. [verified] —
+  [the 2022 county profile](../../catalog/usda-census-of-agriculture.md).
+
+  **Nothing here measures the years between.** The two columns are 113 years apart and this corpus
+  holds no crop acreage for any year inside them, so a reader can see that the rotation changed and
+  cannot see when. [open] See [when the farmland went](../question/when-the-farmland-went.yml).
+properties:
+  parameter: crop acreage and production, Allen County
+  value: "76200"
+  unit: acres of soybeans
+  as_of: "2022-12-31"
+  method: |
+    Census of Agriculture, harvested acreage and production for the 2022 calendar year, read from
+    NASS's Quick Stats bulk county file. The 1909 column is the Thirteenth Census, enumerated
+    April 15 1910 for the 1909 crop year. Yields are computed here by dividing production by
+    harvested acres, which is not how either census reports yield and is comparable only because
+    both report both terms. [inference] `(D)` is a suppressed cell, not a zero; a dash is a crop
+    the source does not name for this county in that year, which for 1909 soybeans is a statement
+    about the volume's crop list and not a count of zero acres. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usda-census-of-agriculture.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
