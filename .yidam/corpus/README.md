@@ -84,6 +84,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 7i / 2o | 106 |
+| [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
@@ -93,9 +94,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 8v / 1i / 2o | 69 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 7v / 3i / 0o | 77 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
-| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 2 | 5v / 4i / 2o | 98 |
+| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 2 | 6v / 5i / 2o | 111 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2022 | 2 | 3v / 0i / 1o | 42 |
+| [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 2 | 9v / 5i / 2o | 114 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
 | [allen-county-hospital-beds-2011-2023.yml](measure/allen-county-hospital-beds-2011-2023.yml) | measure | Allen County hospital beds, 2011–2023 | 2 | 4v / 0i / 1o | 42 |
@@ -182,18 +184,23 @@ Sorted by: kind, then alphabetically.
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
 | [president-of-lima-city-council.yml](office/president-of-lima-city-council.yml) | office | President of Lima City Council | 2 | 2v / 0i / 1o | 27 |
 | [representative-in-congress-for-ohios-4th-district.yml](office/representative-in-congress-for-ohios-4th-district.yml) | office | Representative in Congress, Ohio's 4th District | 2 | 3v / 0i / 2o | 36 |
+| [apollo-career-center.yml](organization/apollo-career-center.yml) | organization | Apollo Career Center | 2 | 4v / 3i / 1o | 44 |
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
-| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
+| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 5v / 3i / 1o | 55 |
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
 | [institute-for-orthopaedic-surgery.yml](organization/institute-for-orthopaedic-surgery.yml) | organization | Institute for Orthopaedic Surgery | 2 | 6v / 1i / 0o | 55 |
+| [james-a-rhodes-state-college.yml](organization/james-a-rhodes-state-college.yml) | organization | James A. Rhodes State College | 2 | 6v / 1i / 2o | 50 |
 | [kindred-hospital-lima.yml](organization/kindred-hospital-lima.yml) | organization | Kindred Hospital Lima | 2 | 6v / 1i / 1o | 52 |
 | [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 2v / 3i / 1o | 41 |
 | [lima-memorial-health-system.yml](organization/lima-memorial-health-system.yml) | organization | Lima Memorial Health System | 2 | 6v / 1i / 1o | 52 |
 | [lima-refining-company.yml](organization/lima-refining-company.yml) | organization | Lima Refining Company | 2 | 6v / 0i / 1o | 39 |
 | [mercy-health-st-ritas-medical-center.yml](organization/mercy-health-st-ritas-medical-center.yml) | organization | Mercy Health–St. Rita's Medical Center | 2 | 7v / 0i / 1o | 53 |
+| [ohio-state-beauty-academy.yml](organization/ohio-state-beauty-academy.yml) | organization | Ohio State Beauty Academy | 2 | 3v / 3i / 1o | 42 |
+| [ohio-state-university-at-lima.yml](organization/ohio-state-university-at-lima.yml) | organization | Ohio State University-Lima Campus | 2 | 6v / 1i / 1o | 45 |
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 6v / 0i / 1o | 49 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
+| [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 8i / 3o | 123 |
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 13i / 2o | 232 |
@@ -279,11 +286,11 @@ Sorted by: kind, then alphabetically.
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 2v / 1i / 1o | 23 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 11v / 7i / 2o | 134 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 13v / 7i / 2o | 141 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 3 | 9v / 2i / 1o | 65 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
-| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 7v / 2i / 1o | 60 |
+| [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 8v / 3i / 1o | 69 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 10v / 1i / 2o | 79 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 6v / 2i / 3o | 67 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
@@ -313,7 +320,7 @@ Sorted by: kind, then alphabetically.
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 6 | 2v / 1i / 1o | 52 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
-| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 8v / 3i / 1o | 113 |
+| [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
