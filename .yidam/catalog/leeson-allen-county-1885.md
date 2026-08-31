@@ -23,6 +23,7 @@ location:
 used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
+  - ../corpus/event/organization-of-the-town-of-lima-1842.yml
   - ../corpus/event/reorganization-of-1848.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/jurisdiction/amanda-township.yml
@@ -46,10 +47,12 @@ used-by:
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/office/mayor-of-lima.yml
   - ../corpus/period/canal-era.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
   - ../corpus/person/christopher-wood.yml
+  - ../corpus/person/henry-d-v-williams.yml
   - ../corpus/person/john-franks.yml
   - ../corpus/person/samuel-forrer.yml
   - ../corpus/place/allen-county.yml
@@ -82,6 +85,7 @@ used-by:
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/miami-and-erie-canal.yml
+  - ../corpus/tenure/mayor-1842-henry-d-v-williams.yml
 ---
 
 **What it is.** A subscription county history of the kind produced across the Midwest in the

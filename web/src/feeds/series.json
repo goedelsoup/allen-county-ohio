@@ -82,6 +82,26 @@
       ]
     },
     {
+      "id": "jurisdiction-city-of-lima::seated-holders-of-the-city's-elective-offices",
+      "subject": "jurisdiction/city-of-lima.yml",
+      "subject_label": "City of Lima",
+      "parameter": "seated holders of the city's elective offices",
+      "unit": "seats",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-city-government-2026.yml",
+          "label": "The elective government of Lima, 2026",
+          "as_of": "2026-08-27",
+          "value": 11.0,
+          "published": "11",
+          "tier": "verified",
+          "source": "catalog/ohio-boe-elected-officials-allen.md",
+          "method": "Union of the twenty-three Lima precinct pages of the boards of elections roster — precincts 0005 through 0027 — deduplicated on the office name. `as_of` is the roster's own \"last updated\" stamp and not the day of retrieval. The seven ward offices are counted as seven, which is how the source names them; a county-wide count that deduplicates differently will not agree on the office total and will agree on the seats. [verified]"
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-lima-city-school-district::children-aged-5-to-17-in-poverty,-by-school-district",
       "subject": "jurisdiction/lima-city-school-district.yml",
       "subject_label": "Lima City School District",
@@ -3129,6 +3149,45 @@
           "literal": "7"
         }
       ]
+    },
+    {
+      "id": "lima-elects-by-ward-and-fills-its-seats",
+      "statement": "Lima elects all seven of its council members by ward and none at large — the only government in Allen County chosen by district. It fills eleven seats and one of them is an appointee, where the seven villages fill fifty-two and twenty-five are.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/lima-city-government-2026.yml",
+          "node_label": "The elective government of Lima, 2026",
+          "span": "**Eleven seats, eleven offices, none vacant, and one filled by appointment.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/lima-city-government-2026.yml",
+          "node_label": "The elective government of Lima, 2026",
+          "span": "Its seven council members are chosen one per ward and it elects none at large; every village here elects its council at large, both township boards are elected township-wide, and Delphos elects three at large beside two by ward.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-elected-seats-2026.yml",
+          "node_label": "Allen County elective seats and how their holders arrived, 2026",
+          "span": "Twenty-five of the forty-seven seated village officers were appointed and five village seats stand empty, against one appointment and no vacancy across all forty-eight township seats.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that these seats go unfilled because nobody stands for them."
+      ],
+      "figures": []
     },
     {
       "id": "an-address-is-not-a-municipality",

@@ -1,0 +1,68 @@
+class: measure
+label: The elective government of Lima, 2026
+description: |
+  Every elective seat of the [City of Lima](../jurisdiction/city-of-lima.yml), its holder, and the
+  day the term turns. [verified] —
+  [the elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), read across the
+  twenty-three of the county's eighty-eight precincts that lie in the city.
+
+      office                     holder                     term            next election
+      Mayor                      Sharetta T. Smith           1 Dec 25 - 30 Nov 29   6 Nov 29
+      Auditor                    Randall S. Bartels          1 Jan 26 - 31 Dec 29   6 Nov 29
+      Director of Law            Anthony Layton Geiger       1 Jan 26 - 31 Dec 29   6 Nov 29
+      President of Council       Jamie Lamar Dixon Jr.       1 Jan 24 -  2 Jan 28   2 Nov 27
+      Council, 1st Ward          Todd Gordon                 5 Jan 26 -  6 Jan 30   6 Nov 29
+      Council, 2nd Ward          Anthony C. Wilkerson        1 Jan 24 -  2 Jan 28   2 Nov 27
+      Council, 3rd Ward          Jesse James Lowe II         5 Jan 26 -  6 Jan 30   6 Nov 29
+      Council, 4th Ward          Jeannine M. Jordan          1 Jan 24 -  2 Jan 28   2 Nov 27
+      Council, 5th Ward          Thomas Michael Wa Jones     5 Jan 26 -  6 Jan 30   6 Nov 29
+      Council, 6th Ward          Derry L. Glenn              1 Jan 24 -  2 Jan 28   2 Nov 27
+      Council, 7th Ward          Jonathan M. Neeper          5 Jan 26 -  6 Jan 30   6 Nov 29
+
+  **Eleven seats, eleven offices, none vacant, and one filled by appointment.** [verified] — same
+  source, which marks Jeannine M. Jordan of the fourth ward `*Appointed*` and none of the other ten.
+
+  **That is the sharpest contrast in this county's local government.** Twenty-five of the
+  forty-seven seated village officers were appointed to their seats and five village seats stand
+  empty; Lima seats eleven and appointed one. [verified] —
+  [the county's elective seats](allen-county-elected-seats-2026.yml). The city that holds a third of
+  the county's people is the local government whose seats get contested. [inference] See
+  [why the villages are staffed by appointment](../question/why-allen-countys-villages-are-staffed-by-appointment.yml).
+
+  **Lima is the only government in Allen County that elects by district.** Its seven council members
+  are chosen one per ward and it elects none at large; every village here elects its council at
+  large, both township boards are elected township-wide, and Delphos elects three at large beside
+  two by ward. [verified] — same source.
+
+  **The wards are staggered by parity.** First, third, fifth and seventh began on 5 January 2026;
+  second, fourth and sixth on 1 January 2024. [verified] — same source. Four seats and three
+  alternate every two years, so no single election can turn the council over.
+
+  **One city, four term calendars.** The mayor's year runs 1 December to 30 November; the auditor's
+  and the law director's 1 January to 31 December; the president's and the even wards' 1 January to
+  2 January; the odd wards' 5 January to 6 January. [verified] — same source. The office node called
+  this "what a charter looks like from outside it" when it had three of the four.
+
+  **Not one of the eleven carries a party.** The roster prints (R) or (D) beside county and state
+  holders and beside some village ones, and beside none of Lima's. [verified] — same source.
+
+  [open] This is a roster of seats and not a description of a government. Lima's council has a clerk
+  and the city has departments, and neither appears here, because neither is elected.
+properties:
+  parameter: seated holders of the city's elective offices
+  value: "11"
+  unit: seats
+  as_of: "2026-08-27"
+  method: |
+    Union of the twenty-three Lima precinct pages of the boards of elections roster — precincts 0005
+    through 0027 — deduplicated on the office name. `as_of` is the roster's own "last updated" stamp
+    and not the day of retrieval. The seven ward offices are counted as seven, which is how the
+    source names them; a county-wide count that deduplicates differently will not agree on the
+    office total and will agree on the seats. [verified]
+links:
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

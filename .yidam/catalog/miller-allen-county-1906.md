@@ -26,15 +26,18 @@ used-by:
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/office/mayor-of-lima.yml
   - ../corpus/organization/lima-memorial-health-system.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
+  - ../corpus/person/henry-d-v-williams.yml
   - ../corpus/place/lima.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/when-allen-county-was-organized.yml
+  - ../corpus/tenure/mayor-1842-henry-d-v-williams.yml
 ---
 
 **What it is.** The middle volume of the county's three histories, and the only one written by local

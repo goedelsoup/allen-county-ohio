@@ -1183,6 +1183,30 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "lima-elects-by-ward-and-fills-its-seats",
+        statement: "Lima elects all seven of its council members by ward and none at large — the \
+                    only government in Allen County chosen by district. It fills eleven seats and \
+                    one of them is an appointee, where the seven villages fill fifty-two and \
+                    twenty-five are.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/lima-city-government-2026.yml",
+                "**Eleven seats, eleven offices, none vacant, and one filled by appointment.**"
+            ),
+            support!(
+                "measure/lima-city-government-2026.yml",
+                "Its seven council members are chosen one per ward and it elects none at large; every village here elects its council at large, both township boards are elected township-wide, and Delphos elects three at large beside two by ward."
+            ),
+            support!(
+                "measure/allen-county-elected-seats-2026.yml",
+                "Twenty-five of the forty-seven seated village officers were appointed and five village seats stand empty, against one appointment and no vacancy across all forty-eight township seats."
+            ),
+        ],
+        answers: &["This does not establish that these seats go unfilled because nobody stands for them"],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

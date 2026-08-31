@@ -19,6 +19,11 @@ location:
     description: >-
       The same page for any precinct. Allen County's precincts are 0001 through 0088; 0089 and
       above return an empty page. The union of the eighty-eight is the county's whole roster.
+      **Precincts 0005 through 0027 are the City of Lima's**, three or four to each of its seven
+      wards, and are the only pages that carry the city's own offices.
+      **It refuses a default client.** A request without a browser user agent is answered 403 with
+      an "Ohio Secretary of State's Office Website Maintenance" page that is not maintenance; the
+      same URL with an ordinary browser user-agent string returns the roster.
 used-by:
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-house-district-78-2023.yml
@@ -50,6 +55,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-elected-seats-2026.yml
+  - ../corpus/measure/lima-city-government-2026.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
@@ -59,26 +65,39 @@ used-by:
   - ../corpus/office/allen-county-recorder.yml
   - ../corpus/office/allen-county-sheriff.yml
   - ../corpus/office/allen-county-treasurer.yml
+  - ../corpus/office/clerk-of-the-lima-municipal-court.yml
   - ../corpus/office/judge-of-the-common-pleas-domestic-relations-division.yml
   - ../corpus/office/judge-of-the-common-pleas-general-division.yml
   - ../corpus/office/judge-of-the-common-pleas-probate-division.yml
   - ../corpus/office/judge-of-the-lima-municipal-court.yml
   - ../corpus/office/judge-of-the-third-district-court-of-appeals.yml
+  - ../corpus/office/lima-city-auditor.yml
+  - ../corpus/office/lima-director-of-law.yml
   - ../corpus/office/mayor-of-lima.yml
+  - ../corpus/office/member-of-lima-city-council.yml
   - ../corpus/office/member-of-the-ohio-house-for-district-78.yml
   - ../corpus/office/member-of-the-ohio-senate-for-district-12.yml
+  - ../corpus/office/president-of-lima-city-council.yml
   - ../corpus/office/representative-in-congress-for-ohios-4th-district.yml
+  - ../corpus/person/anthony-c-wilkerson.yml
+  - ../corpus/person/anthony-layton-geiger.yml
   - ../corpus/person/beth-a-seibert.yml
   - ../corpus/person/brian-winegardner.yml
   - ../corpus/person/brion-e-rhodes.yml
   - ../corpus/person/cory-alan-noonan.yml
+  - ../corpus/person/derry-l-glenn.yml
   - ../corpus/person/destiny-rae-caldwell.yml
   - ../corpus/person/james-d-jordan.yml
+  - ../corpus/person/james-g-link.yml
+  - ../corpus/person/jamie-lamar-dixon-jr.yml
+  - ../corpus/person/jeannine-m-jordan.yml
   - ../corpus/person/jeffrey-l-reed.yml
   - ../corpus/person/jennifer-moree-mcbride.yml
+  - ../corpus/person/jesse-james-lowe-ii.yml
   - ../corpus/person/john-r-willamowski.yml
   - ../corpus/person/john-richard-payne.yml
   - ../corpus/person/john-thomas-meyer.yml
+  - ../corpus/person/jonathan-m-neeper.yml
   - ../corpus/person/juergen-a-waldick.yml
   - ../corpus/person/krista-n-bohn.yml
   - ../corpus/person/mark-c-miller.yml
@@ -86,11 +105,14 @@ used-by:
   - ../corpus/person/matthew-c-huffman.yml
   - ../corpus/person/mona-s-losh.yml
   - ../corpus/person/rachael-s-gilroy.yml
+  - ../corpus/person/randall-s-bartels.yml
   - ../corpus/person/sharetta-t-smith.yml
   - ../corpus/person/susan-manchester.yml
   - ../corpus/person/tammie-k-hursh.yml
   - ../corpus/person/terri-lynn-kohlrieser.yml
+  - ../corpus/person/thomas-michael-wa-jones.yml
   - ../corpus/person/todd-e-kohlrieser.yml
+  - ../corpus/person/todd-gordon.yml
   - ../corpus/person/william-r-zimmerman.yml
   - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
@@ -117,6 +139,17 @@ used-by:
   - ../corpus/tenure/engineer-2025-brion-e-rhodes.yml
   - ../corpus/tenure/general-2023-jeffrey-l-reed.yml
   - ../corpus/tenure/general-2025-terri-lynn-kohlrieser.yml
+  - ../corpus/tenure/lima-auditor-2026-randall-s-bartels.yml
+  - ../corpus/tenure/lima-council-1st-ward-2026-todd-gordon.yml
+  - ../corpus/tenure/lima-council-2nd-ward-2024-anthony-c-wilkerson.yml
+  - ../corpus/tenure/lima-council-3rd-ward-2026-jesse-james-lowe-ii.yml
+  - ../corpus/tenure/lima-council-4th-ward-2024-jeannine-m-jordan.yml
+  - ../corpus/tenure/lima-council-5th-ward-2026-thomas-michael-wa-jones.yml
+  - ../corpus/tenure/lima-council-6th-ward-2024-derry-l-glenn.yml
+  - ../corpus/tenure/lima-council-7th-ward-2026-jonathan-m-neeper.yml
+  - ../corpus/tenure/lima-council-president-2024-jamie-lamar-dixon-jr.yml
+  - ../corpus/tenure/lima-law-2026-anthony-layton-geiger.yml
+  - ../corpus/tenure/lima-municipal-clerk-2022-james-g-link.yml
   - ../corpus/tenure/mayor-2025-sharetta-t-smith.yml
   - ../corpus/tenure/municipal-2022-tammie-k-hursh.yml
   - ../corpus/tenure/municipal-2024-john-richard-payne.yml
