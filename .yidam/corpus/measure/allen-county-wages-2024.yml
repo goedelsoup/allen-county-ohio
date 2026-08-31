@@ -1,0 +1,72 @@
+class: measure
+label: What work pays in Allen County, 2024
+description: |
+  Thirteen phases measured how many people work here and not one measured what they are paid.
+  [verified] — [Quarterly Census of Employment and Wages](../../catalog/bls-qcew.md), annual
+  averages for 2024, all ownerships.
+
+  **49,690 covered jobs in 2,586 establishments, at an average weekly wage of $1,131 and an average
+  annual pay of $58,790.** [verified] — same source.
+
+  **That is 89.3 per cent of the Ohio average weekly wage and 77.8 per cent of the national one** —
+  $1,131 against $1,267 and $1,454. [inference] — computed here from the same source's Ohio and
+  national files. A worker in this county earns about four fifths of what a worker in the country
+  does.
+
+  **The county's largest employer is health care and its largest payer is manufacturing.**
+
+      sector                              estabs      jobs   average annual pay
+      health care and social assistance      329     9,767      $60,502
+      manufacturing                          131     8,779      $92,088
+      retail trade                           380     5,261      $34,261
+      accommodation and food services        240     4,737      $20,844
+      educational services                    64     3,899      $47,735
+      administrative and waste services      142     3,288      $52,432
+      wholesale trade                        138     2,386      $66,152
+      construction                           214     2,130      $69,824
+      public administration                   69     1,908      $72,538
+      professional and technical services    192     1,623      $74,569
+
+  [verified] — same source, county by NAICS sector, summed across ownerships.
+
+  **The five largest sectors, in jobs and in pay.** Health care 9,767 jobs at $60,502 a year;
+  manufacturing 8,779 at $92,088; retail trade 5,261 at $34,261; accommodation and food services
+  4,737 at $20,844; educational services 3,899 at $47,735. [verified] — same source.
+
+  **Manufacturing is 17.9 per cent of the jobs and 28.0 per cent of the wages.** [inference] —
+  computed here. It is the only sector in the county whose share of pay is more than half again its
+  share of employment.
+
+  **Retail trade and food service together employ more people than manufacturing and pay a tenth of
+  the county's wages.** 9,998 jobs against 8,779, and 9.7 per cent of $2,884,327,418 in total annual
+  wages. [inference] — computed here. Health care, the largest employer of all, takes 20.5 per cent
+  of the wages on 19.9 per cent of the jobs.
+
+  **The two extremes are 4.4 times apart.** Utilities pays $93,106 a year across 202 jobs and
+  accommodation and food services $20,844 across 4,737. [verified] — same source. Information
+  employs fifty-two people in the whole county.
+
+  [open] These are wages paid by establishments in Allen County, not incomes of Allen County
+  residents, and half the jobs here are held by people who live elsewhere. See
+  [who comes and goes](allen-county-commuting-2022.yml). Nothing here is a household income and
+  nothing here counts a job that is not covered by unemployment insurance.
+properties:
+  parameter: average weekly wage, all industries, all ownerships
+  value: "1131"
+  unit: dollars per week
+  as_of: "2024"
+  method: |
+    QCEW annual averages, aggregation level 74 for the sector table and 70 for the county total,
+    read from the BLS open CSV API. Sector figures are summed across ownership codes, so a sector's
+    row includes its government establishments; average annual pay per sector is total annual wages
+    divided by average annual employment, which is this corpus's arithmetic over the source's two
+    published fields. The eighteen sectors sum to 49,113 jobs against the county total of 49,690;
+    the residual is employment the file places at aggregation levels this table does not read.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/bls-qcew.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
