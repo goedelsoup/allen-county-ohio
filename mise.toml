@@ -123,6 +123,16 @@ if [ ! -d web/node_modules ]; then echo "run 'npm ci' in web/ first"; exit 1; fi
 node web/scripts/fetch-boundaries.mjs
 """
 
+# ── the ground key (crates/ground) ────────────────────────────────────────
+# Reaches the network, like `boundaries` above and for the same reason: its
+# output is committed, so no build and no CI run needs the county to be up.
+# It rebuilds only the sections some corpus node stands on — see
+# `.yidam/decisions/what-crosses-from-the-recorder.yml` for why not all 404.
+
+[tasks.ground-fixture]
+description = "Rebuild crates/ground's section fixture from the county's live layer 55."
+run = "python3 crates/ground/fixtures/refresh.py"
+
 # ── the site (web/) ───────────────────────────────────────────────────────
 # Each no-ops with a loud line when web/node_modules is absent rather than
 # failing a fresh clone. CI always installs, so CI is where these are binding.
