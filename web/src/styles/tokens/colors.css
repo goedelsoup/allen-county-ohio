@@ -1,0 +1,94 @@
+/*
+ * Allen County Atlas — colour.
+ *
+ * Ported verbatim from the design system (tokens/colors.css). Warm throughout:
+ * one parchment ramp for surfaces, one warm sepia-black ink ramp for text and
+ * rules, four accent inks borrowed from 19th-century county atlases. There is
+ * no grey and no pure black anywhere in the system.
+ *
+ * Components reference the semantic aliases; the base ramps exist to author
+ * new tokens from, not to be used directly.
+ */
+
+:root {
+  /* ---- Parchment (surfaces) ---- */
+  --parchment-50: #fcf7ea;
+  --parchment-100: #f7eeda;
+  --parchment-200: #f1e4c6;
+  --parchment-300: #e9d7ae;
+  --parchment-400: #dec694;
+  --parchment-500: #cdb07a;
+  --foxing: #c9a97e; /* age-spot tint used in washes */
+
+  /* ---- Ink (text + rules) ---- */
+  --ink-900: #1e1913;
+  --ink-800: #2c251b;
+  --ink-700: #3e3325;
+  --ink-600: #544733;
+  --ink-500: #6c5b43;
+  --ink-400: #8b7658;
+  --ink-300: #a89073;
+  --ink-200: #c3ae90;
+  --ink-100: #dccdb2;
+
+  /* ---- Accents (drawn from 19th-c. map inks) ---- */
+  --rubric-700: #7e2e1f;
+  --rubric-500: #a6402c; /* primary action, annotations, footnote markers */
+  --rubric-300: #c97a63;
+  --rubric-100: #efd6cc;
+
+  --verdigris-700: #2f4a3b;
+  --verdigris-500: #4b6f5a; /* township green, vegetation, "verified" */
+  --verdigris-300: #8aa795;
+  --verdigris-100: #dce6de;
+
+  --indigo-700: #22334a;
+  --indigo-500: #2f4159; /* water, links, chrome */
+  --indigo-300: #7c8da1;
+  --indigo-100: #d7dde4;
+
+  --ochre-700: #8a6417;
+  --ochre-500: #b98a2e; /* survey lines, caution, "disputed" */
+  --ochre-300: #d8b872;
+  --ochre-100: #f2e4c4;
+
+  /* ---- Semantic: text ---- */
+  --text-strong: var(--ink-900);
+  --text-body: var(--ink-700);
+  --text-muted: var(--ink-500);
+  --text-faint: var(--ink-400);
+  --text-inverse: var(--parchment-100);
+  --text-link: var(--indigo-500);
+  --text-link-hover: var(--rubric-500);
+  --text-annotation: var(--rubric-500);
+
+  /* ---- Semantic: surfaces ---- */
+  --surface-page: var(--parchment-200);
+  --surface-card: var(--parchment-100);
+  --surface-raised: var(--parchment-50);
+  --surface-sunken: var(--parchment-300);
+  --surface-ink: var(--ink-800);
+  --surface-map: #e4d3b0;
+  --surface-overlay: rgb(30 25 19 / 55%);
+  --surface-scrim: rgb(241 228 198 / 82%);
+
+  /* ---- Semantic: lines ---- */
+  --rule-hairline: var(--ink-200);
+  --rule-strong: var(--ink-600);
+  --rule-faint: var(--parchment-400);
+  --rule-focus: var(--rubric-500);
+
+  /* ---- Semantic: status ---- */
+  --status-verified: var(--verdigris-500);
+  --status-disputed: var(--ochre-500);
+  --status-missing: var(--ink-300);
+  --status-error: var(--rubric-500);
+
+  /* ---- Era ramp (period coding, oldest to newest) ---- */
+  --era-pre1820: #6c5b43;
+  --era-1820: #8a6417;
+  --era-1860: #a6402c;
+  --era-1900: #4b6f5a;
+  --era-1940: #2f4159;
+  --era-1980: #6b3a52;
+}

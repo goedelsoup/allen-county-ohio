@@ -5,9 +5,11 @@ import { manifest } from '../lib/feeds'
 interface Props {
   title: string
   lede?: string
+  /** Entry pages carry the design's own article header, so the page head is suppressed. */
+  bare?: boolean
 }
 
-const { title, lede } = Astro.props
+const { title, lede, bare = false } = Astro.props
 const here = Astro.url.pathname.replace(/\/$/, '') || '/'
 
 const SITE = 'Allen County, Ohio'
@@ -37,16 +39,31 @@ const nav = [
     <title>{documentTitle}</title>
     <meta name="description" content={lede ?? 'A civic reference for Allen County, Ohio.'} />
     <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
 
+    <div class="head-rule"></div>
+
     <header class="masthead">
       <div class="masthead-inner">
         <a class="wordmark" href="/">
-          <strong>Allen County</strong><span>Ohio</span>
+          <span class="wordmark-name">Allen County</span>
+          <span class="wordmark-tags">
+            <span class="eyebrow">A civic reference</span>
+            <span class="wordmark-tick"></span>
+            <span class="eyebrow">Ohio</span>
+          </span>
         </a>
-        <nav aria-label="Sections">
+      </div>
+      <div class="navbar">
+        <nav class="nav-inner" aria-label="Sections">
           <ul>
             {
               nav.map((item) => (
@@ -58,15 +75,21 @@ const nav = [
               ))
             }
           </ul>
+          <span class="nav-spacer"></span>
+          <span class="nav-meta data">Feed v{manifest.feed_version}</span>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <div class="page-head">
-        <h1>{title}</h1>
-        {lede && <p class="lede">{lede}</p>}
-      </div>
+      {
+        !bare && (
+          <div class="page-head">
+            <h1>{title}</h1>
+            {lede && <p class="lede">{lede}</p>}
+          </div>
+        )
+      }
       <slot />
     </main>
 
@@ -91,102 +114,135 @@ const nav = [
         position: absolute;
         left: -9999px;
         top: 0;
-        background: var(--surface);
-        padding: 0.75rem 1rem;
+        background: var(--surface-raised);
+        padding: var(--space-4) var(--space-5);
         z-index: 10;
       }
       .skip:focus {
         left: 0;
       }
 
+      /* The ink bar the design puts above every page, before the paper starts. */
+      .head-rule {
+        height: 4px;
+        background: var(--surface-ink);
+      }
+
       .masthead {
-        border-bottom: 1px solid var(--rule);
-        background: var(--surface);
-        position: sticky;
-        top: 0;
-        z-index: 5;
+        border-bottom: 1px solid var(--ink-400);
+        background: var(--surface-card);
+        background-image: var(--wash-foxing);
       }
       .masthead-inner {
-        max-width: 78rem;
+        max-width: var(--width-content);
+        margin: 0 auto;
+        padding: var(--space-8) var(--gutter) var(--space-7);
+      }
+      .wordmark {
+        color: var(--text-strong);
+        text-decoration: none;
+        display: inline-block;
+      }
+      .wordmark-name {
+        display: block;
+        font: var(--weight-regular) var(--size-display-m) / 1 var(--font-display);
+        letter-spacing: var(--tracking-display);
+      }
+      .wordmark-tags {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin-top: var(--space-3);
+      }
+      .wordmark-tick {
+        width: 16px;
+        height: 1px;
+        background: var(--rule-hairline);
+      }
+
+      .navbar {
+        border-top: 1px solid var(--rule-hairline);
+      }
+      .nav-inner {
+        max-width: var(--width-content);
         margin: 0 auto;
         padding: 0 var(--gutter);
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem 1.5rem;
         align-items: center;
-        min-height: 3.5rem;
+        flex-wrap: wrap;
+        gap: 0 var(--space-7);
       }
-      .wordmark {
-        color: var(--ink);
-        text-decoration: none;
-        display: flex;
-        align-items: baseline;
-        gap: 0.5rem;
-        font-size: 1rem;
-      }
-      .wordmark span {
-        color: var(--ink-muted);
-        font-size: 0.8125rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-      nav ul {
+      .nav-inner ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.25rem 1.25rem;
+        gap: 0 var(--space-7);
         list-style: none;
         margin: 0;
         padding: 0;
       }
-      nav a {
-        color: var(--ink-secondary);
-        text-decoration: none;
-        font-size: 0.9375rem;
-        padding: 0.25rem 0;
-        border-bottom: 2px solid transparent;
+      .nav-inner a {
         display: block;
+        padding: var(--space-4) 0;
+        margin-bottom: -1px;
+        border-bottom: 2px solid transparent;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-family: var(--font-smallcaps);
+        font-size: var(--size-body-s);
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        transition: var(--transition-control);
       }
-      nav a:hover {
-        color: var(--ink);
+      .nav-inner a:hover {
+        color: var(--text-strong);
       }
-      nav a[aria-current='page'] {
-        color: var(--ink);
-        border-bottom-color: var(--series-1);
+      .nav-inner a[aria-current='page'] {
+        color: var(--text-strong);
+        border-bottom-color: var(--rubric-500);
+      }
+      .nav-spacer {
+        flex: 1;
+      }
+      .nav-meta {
+        font-size: var(--size-micro);
+        color: var(--text-faint);
       }
 
       main {
-        max-width: 78rem;
+        max-width: var(--width-content);
         margin: 0 auto;
-        padding: 2.5rem var(--gutter) 4rem;
+        padding: var(--space-9) var(--gutter) var(--space-13);
       }
       .page-head {
         max-width: var(--measure);
-        margin-bottom: 2.5rem;
+        margin-bottom: var(--space-10);
       }
       .lede {
-        font-size: 1.125rem;
-        color: var(--ink-secondary);
-        margin: 0;
+        margin: var(--space-5) 0 0;
+        font: var(--weight-regular) var(--size-body-l) / 1.5 var(--font-serif);
+        color: var(--text-muted);
       }
 
       footer {
-        border-top: 1px solid var(--rule);
-        background: var(--surface);
+        border-top: 1px solid var(--ink-400);
+        background: var(--surface-sunken);
+        background-image: var(--paper-grain);
       }
       .footer-inner {
-        max-width: 78rem;
+        max-width: var(--width-content);
         margin: 0 auto;
-        padding: 2rem var(--gutter) 3rem;
-        color: var(--ink-secondary);
-        font-size: 0.9375rem;
+        padding: var(--space-10) var(--gutter) var(--space-12);
+        color: var(--text-muted);
+        font: var(--weight-regular) var(--size-body-s) / 1.55 var(--font-serif);
       }
       .footer-inner p {
         max-width: var(--measure);
       }
       .fine {
-        color: var(--ink-muted);
-        font-size: 0.8125rem;
         margin: 0;
+        font: var(--type-data);
+        font-size: var(--size-micro);
+        color: var(--text-faint);
       }
     </style>
   </body>
