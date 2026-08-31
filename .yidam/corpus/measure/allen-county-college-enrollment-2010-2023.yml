@@ -1,0 +1,75 @@
+class: measure
+label: Allen County college enrolment, 2010-2023
+description: |
+  **The county's colleges have lost a third of their students in thirteen years, and all six of
+  them have lost students.** [verified] —
+  [IPEDS](../../catalog/ipeds.md), twelve-month unduplicated headcount, all students.
+
+      year   Rhodes    UNOH   Apollo  OSU-Lima  Bluffton   OSBA     total
+      2010    5,555   5,050    2,648     1,887     1,292    270    16,702
+      2013    4,878   5,354    1,275     1,301     1,407    245    14,460
+      2016    5,595   5,092    1,270     1,279     1,151    182    14,569
+      2019    5,155   4,383    1,036     1,161       839    111    12,685
+      2020    4,832   4,072    1,147     1,204       860    106    12,221
+      2021    4,684   3,746    1,127     1,245       807    115    11,724
+      2022    4,508   3,384    1,297     1,149       856    127    11,321
+      2023    4,247   3,200    1,439       983       800    120    10,789
+
+  **16,702 to 10,789 is a fall of 35.4 per cent.** [inference] — computed here. Institution by
+  institution: the Ohio State Beauty Academy down 55.6 per cent, Ohio State's Lima campus 47.9,
+  Apollo Career Center 45.7, the University of Northwestern Ohio 36.6, Bluffton University 38.1,
+  and Rhodes State College 23.5 — the smallest fall, at the largest institution.
+
+  **The county did not shrink anything like that fast.** Allen County went from 106,331 people in
+  2010 to 102,206 in 2020, a fall of 3.9 per cent. [verified] —
+  [the 2010 count](allen-county-population-2010.yml) and
+  [the 2020 count](allen-county-population-2020-census.yml). Enrolment fell nine times faster than
+  population over an overlapping period, so whatever is happening here is not the county emptying
+  out. [inference] — computed here.
+
+  **It is not a pandemic either, though the pandemic is in the series.** The fall from 2010 to 2019
+  is 4,017 students, or 24.0 per cent, and it is complete before Covid: every one of the six was
+  below its 2010 figure by 2019, and the largest fall between consecutive observations here is
+  Apollo Career Center's 2,648 to 1,275 between 2010 and 2013 — 1,373 students, before the decade
+  was half over. [inference] — computed here. The years after 2019 continue a line that was already
+  drawn.
+
+  **The two largest held up longest and then did not.** Rhodes State and the University of
+  Northwestern Ohio were both marginally above their 2010 figures as late as 2016, while the four
+  smaller institutions had already fallen; between 2016 and 2023 Rhodes lost 1,348 students and
+  Northwestern Ohio 1,892. [inference] — computed here.
+
+  [open] Whether the students went somewhere else or stopped enrolling. This file counts students
+  at institutions, not people in a county, and a county's own residents may be enrolled anywhere;
+  IPEDS reports residence only for first-time students, and only by state.
+
+  [open] What the trough is. The series is still falling in 2023, which is the last year the
+  collection has published, and no year in it is a turn.
+properties:
+  parameter: twelve-month unduplicated headcount at Allen County institutions
+  value: "10789"
+  unit: students
+  as_of: "2023"
+  method: |
+    IPEDS twelve-month enrolment, level 1 (all students), summed over the six institutions the
+    directory places in county 39003. The collection year labels the academic year ending in it,
+    so 2023 is 2022-23. [verified]
+
+    The file's column layout changes across the period and the change is silent: before 2020 the
+    level code is `EFFYLEV` and from 2020 it is `EFFYALEV`, with `EFFYLEV` retained beside it and
+    carrying a different code set. Reading the old name in the new files returns nothing for every
+    institution, which looks exactly like an institution that closed. The values are also space-
+    padded. Both are noted here because the first version of this table read four years as zero.
+    [inference]
+
+    Twelve-month headcount is used rather than autumn headcount because two of the six institutions
+    are non-degree-granting and enrol in cohorts through the year: Apollo Career Center's autumn
+    headcount is 527 against a twelve-month 1,439, and an autumn series would misstate its size by
+    a factor of three. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ipeds.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
