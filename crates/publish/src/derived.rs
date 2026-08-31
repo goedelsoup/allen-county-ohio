@@ -1017,6 +1017,112 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[Figure { label: "Charged sum", value: 2_200.0, literal: "2200" }],
     },
     Assertion {
+        id: "the-county-is-two-thirds-farmland",
+        statement: "Nine-tenths of Allen County was farmland in 1910 and two-thirds of it is \
+                    now. Nine-tenths of what left went in the ninety-two years no census in \
+                    this catalog covers.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-farms-2002-2022.yml",
+                "**Allen County was 92.5 per cent farmland in 1910 and is 69.4 per cent farmland now** — 178,921 acres of the 257,629 in its 402.545 square miles."
+            ),
+            support!(
+                "measure/allen-county-farms-2002-2022.yml",
+                "Land in farms was 240,472 acres in 1910 and 188,150 in 2002 — 52,322 acres gone — against 9,229 more across the twenty years since."
+            ),
+            support!(
+                "measure/allen-county-farms-2002-2022.yml",
+                "188,150 acres in 2002, 187,238 in 2007, 183,186 in 2012, 186,623 in 2017 and 178,921 in 2022, against 240,472 in 1910."
+            ),
+        ],
+        // The node's whole finding is that it has one observation at each end of a century and
+        // none in between, so the refusal is the assertion's other half rather than a caveat on it.
+        answers: &["so this corpus knows that the farmland went and cannot say when"],
+        // Bars and not a line. A line between 1910 and 2002 draws a segment through ninety-two
+        // years that nothing measured, and the shape of that segment is exactly what this corpus
+        // refuses to assert.
+        figures: &[
+            Figure { label: "1910", value: 240_472.0, literal: "240,472" },
+            Figure { label: "2002", value: 188_150.0, literal: "188,150" },
+            Figure { label: "2007", value: 187_238.0, literal: "187,238" },
+            Figure { label: "2012", value: 183_186.0, literal: "183,186" },
+            Figure { label: "2017", value: 186_623.0, literal: "186,623" },
+            Figure { label: "2022", value: 178_921.0, literal: "178,921" },
+        ],
+    },
+    Assertion {
+        id: "the-hogs-multiplied-as-the-keepers-halved",
+        statement: "Allen County kept 31,741 hogs on 59 places in 2002 and 235,800 on 28 in \
+                    2022. The herd multiplied more than sevenfold while the places keeping it \
+                    halved.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-livestock-2002-2022.yml",
+                "31,741 head on 59 operations in 2002 against 235,800 on 28 in 2022 — an average herd of 538 becoming one of 8,421."
+            ),
+            support!(
+                "measure/allen-county-livestock-2002-2022.yml",
+                "31,741 hogs in 2002, 62,910 in 2007, 80,372 in 2012, 178,781 in 2017 and 235,800 in 2022, kept on 59, 60, 46, 56 and 28 operations."
+            ),
+            support!(
+                "measure/allen-county-livestock-2002-2022.yml",
+                "Of 377,816 head sold in 2022, 281,194 were produced under production contract on twelve operations — the census's own term for an animal fed by one party and owned by another."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2002", value: 31_741.0, literal: "31,741" },
+            Figure { label: "2007", value: 62_910.0, literal: "62,910" },
+            Figure { label: "2012", value: 80_372.0, literal: "80,372" },
+            Figure { label: "2017", value: 178_781.0, literal: "178,781" },
+            Figure { label: "2022", value: 235_800.0, literal: "235,800" },
+        ],
+    },
+    Assertion {
+        id: "most-of-the-farmland-is-rented",
+        statement: "More than half of Allen County's farmland is worked by someone who \
+                    does not own it, and 268 operations farm 78.4 per cent of the ground.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-farms-2002-2022.yml",
+                "94,325 of 178,921 acres are rented — 90,661 by 268 part-owner operations and 3,664 by 38 tenants — and the 591 operations that own everything they farm hold 34,912 acres between them, a fifth of the total."
+            ),
+            support!(
+                "measure/allen-county-farms-2002-2022.yml",
+                "**So 268 operations farm 78.4 per cent of the ground.**"
+            ),
+        ],
+        answers: &["so this corpus knows that the farmland went and cannot say when"],
+        figures: &[],
+    },
+    Assertion {
+        id: "an-acre-yields-five-times-what-it-did",
+        statement: "An acre of Allen County corn yields five times what it did in 1909 and an \
+                    acre of wheat six times — and the county's largest crop today was not \
+                    grown here at all.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-crops-2022.yml",
+                "**An acre of Allen County corn yields five times what it did**, 192.7 bushels against 38.7, and an acre of wheat six times, 81.8 against 13.4."
+            ),
+            support!(
+                "measure/allen-county-crops-2022.yml",
+                "Soybeans took 76,200 acres in 2022, more than corn, and the 1910 census names no soybean acreage in Allen County at all."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Corn, 1909", value: 38.7, literal: "38.7" },
+            Figure { label: "Corn, 2022", value: 192.7, literal: "192.7" },
+            Figure { label: "Wheat, 1909", value: 13.4, literal: "13.4" },
+            Figure { label: "Wheat, 2022", value: 81.8, literal: "81.8" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

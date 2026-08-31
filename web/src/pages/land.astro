@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import { assertion } from '../lib/feeds'
+import { bar, line } from '../lib/chart-spec'
+
+const farmland = assertion('the-county-is-two-thirds-farmland')
+const hogs = assertion('the-hogs-multiplied-as-the-keepers-halved')
+const rented = assertion('most-of-the-farmland-is-rented')
+const yields = assertion('an-acre-yields-five-times-what-it-did')
+
+// Bars, not a line. The 1910 observation and the 2002 one are ninety-two years apart and
+// nothing measured between them; a line would draw that segment, and its shape is exactly
+// what this corpus refuses to assert.
+const farmlandSpec = bar(
+  farmland.figures.map((f) => f.label),
+  farmland.figures.map((f) => f.value),
+  { yTitle: 'Acres in farms' },
+)
+
+const hogSpec = line(
+  hogs.figures.map((f) => f.label),
+  [{ name: 'Hogs on 31 December', y: hogs.figures.map((f) => f.value) }],
+  { yTitle: 'Head', labelLast: true, zeroBased: true },
+)
+
+const yieldSpec = bar(
+  yields.figures.map((f) => f.label),
+  yields.figures.map((f) => f.value),
+  { yTitle: 'Bushels per acre', labelValues: true },
+)
+---
+
+<Base
+  title="Land"
+  lede="Two thirds of Allen County is farms. This is what stands on that ground, who owns it, and what it grows."
+>
+  <section>
+    <h2>The other nine-tenths</h2>
+    <p>
+      This site spent eleven phases on the third of the county that lives in Lima and said nothing
+      about the two thirds of its surface that is farmland. The federal agricultural census has been
+      taken every five years since long before any of the rest of this, and until now the corpus had
+      read exactly one of them — the volume for 1909, which found the county 92.5 per cent farms.
+    </p>
+    <AssertionCard assertion={farmland} />
+    <ChartFigure
+      id="farmland"
+      title="Land in farms"
+      caption="Census of Agriculture. There is no observation between 1910 and 2002: the bars are five years apart at the right-hand end and ninety-two years apart at the left, and nothing here says what the line did in between."
+      columns={['Census', 'Acres in farms']}
+      rows={farmland.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="farmland" set:html={JSON.stringify(farmlandSpec)} is:inline />
+    <p>
+      That is the shape of the gap and it is worth stating plainly. Of the 61,551 acres that left
+      the county's farms, 52,322 went before the first census this corpus can read. It knows the
+      farmland went. It cannot say whether it went in one decade or in nine, and a county that lost
+      fifty thousand acres to drainage, to the oil field, to Lima's annexations or to the interstate
+      lost them for four different reasons.
+    </p>
+  </section>
+
+  <section>
+    <h2>A hog county</h2>
+    <p>
+      The county profile the census publishes for a general reader leads with farms, land and sales,
+      and all three of them barely move. The figure that moved is an inventory row on the second
+      page.
+    </p>
+    <AssertionCard assertion={hogs} />
+    <ChartFigure
+      id="hogs"
+      title="Hogs in Allen County, 2002–2022"
+      caption="Inventory at 31 December of each census year. The operations holding them went 59, 60, 46, 56, 28 across the same five censuses."
+      columns={['Census', 'Head']}
+      rows={hogs.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="hogs" set:html={JSON.stringify(hogSpec)} is:inline />
+    <p>
+      Hogs are $75.3 million of the county's $240.8 million of agricultural sales, which is fourth
+      in Ohio. Of 377,816 head sold in 2022, 281,194 were raised under production contract on twelve
+      operations — the census's own term for an animal fed by one party and owned by another. In
+      2017 it was 144,480 of 324,947 on twenty-one. The share went from 44 per cent to 74 while the
+      number of places doing it fell by nine.
+    </p>
+    <p>
+      In 1910 this county held 59,695 swine and 56,580 people, and the measure written from that
+      census observed that the swine outnumbered the people. They still do, by 235,800 to 100,866.
+      Everything else in the 1910 count is gone: 14,676 horses became 316, 41,240 sheep and goats
+      became 1,499, and the 10,671 dairy cows became a figure the census will not print, because
+      eight operations hold it and one is large enough that the total would disclose it.
+    </p>
+  </section>
+
+  <section>
+    <h2>Who owns it</h2>
+    <AssertionCard assertion={rented} />
+    <p>
+      The county had 2,939 farms in 1910 and 897 in 2022, and this site does not subtract the one
+      from the other. A farm in 1910 was land under one manager, with nothing under three acres
+      counted unless it produced $250; a farm in 2022 is any place selling $1,000 or more. Two
+      counts on two thresholds are not a series. What is comparable is acres, animals and bushels,
+      and those are what every figure on this page is made of.
+    </p>
+  </section>
+
+  <section>
+    <h2>What it grows</h2>
+    <AssertionCard assertion={yields} />
+    <ChartFigure
+      id="yields"
+      title="Yield per harvested acre, 1909 and 2022"
+      caption="Production divided by harvested acres, from the two censuses' own figures for both terms. Neither census reports yield this way; the ratio is computed here because both print the numerator and the denominator."
+      columns={['Crop and year', 'Bushels per acre']}
+      rows={yields.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="yields" set:html={JSON.stringify(yieldSpec)} is:inline />
+    <p>
+      Soybeans and corn are 84.9 per cent of the county's cropland. The rest is 9,252 acres of
+      wheat, 2,686 of hay and haylage, 793 of popcorn on fourteen operations, and $1.66 million of
+      vegetables, fruit, nursery stock and everything else together. The crops that fed the horses
+      went with them: 30,156 acres of oats in 1909 and 11 acres in 2022, and where there were 3,107
+      acres of rye there is now one operation in the county growing it, whose acreage the census
+      withholds because one operation is all there is.
+    </p>
+  </section>
+</Base>

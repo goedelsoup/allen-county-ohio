@@ -2010,6 +2010,43 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-crops-2022.yml",
+      "class": "measure",
+      "label": "Allen County crops, 2022, against 1909",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022-12-31",
+        "method": "Census of Agriculture, harvested acreage and production for the 2022 calendar year, read from NASS's Quick Stats bulk county file. The 1909 column is the Thirteenth Census, enumerated April 15 1910 for the 1909 crop year. Yields are computed here by dividing production by harvested acres, which is not how either census reports yield and is comparable only because both report both terms. [inference] `(D)` is a suppressed cell, not a zero; a dash is a crop the source does not name for this county in that year, which for 1909 soybeans is a statement about the volume's crop list and not a count of zero acres. [verified]",
+        "parameter": "crop acreage and production, Allen County",
+        "unit": "acres of soybeans",
+        "value": "76200"
+      },
+      "blocks": [
+        {
+          "text": "What the county grows, beside what it grew in the year this corpus already measures. [verified] — [USDA Census of Agriculture](../../catalog/usda-census-of-agriculture.md), county file, and [Abstract of the Thirteenth Census](../../catalog/census-1910-abstract-supplement-ohio.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's largest crop did not exist here in 1909.** Soybeans took 76,200 acres in 2022, more than corn, and the 1910 census names no soybean acreage in Allen County at all. [verified] — [the Census of Agriculture](../../catalog/usda-census-of-agriculture.md) and [the Thirteenth Census](../../catalog/census-1910-abstract-supplement-ohio.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**An acre of Allen County corn yields five times what it did**, 192.7 bushels against 38.7, and an acre of wheat six times, 81.8 against 13.4. [inference] — computed here by division. The county grew a quarter more corn acres in 2022 than in 1909 and took six and a quarter times the grain off them.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The oats went with the horses.** 30,156 acres of oats in 1909, 11 acres on three operations in 2022; 3,107 acres of rye then, and now one operation in the county, whose acreage the census withholds because one operation is all there is. [verified] — same sources. Hay fell from 39,664 acres to 2,431. Together those three crops were 72,927 acres in 1909 — twenty-eight per cent of the county — and they were what fed the 14,676 horses and 21,336 cattle counted in [the same volume](allen-county-domestic-animals-1910.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two crops are now 84.9 per cent of the harvest.** Soybeans and corn take 140,976 of the county's 165,982 cropland acres. [inference] — computed here. What is left is wheat, 2,686 acres of hay and haylage, 793 acres of popcorn on fourteen operations, and $1,663,000 of vegetables, fruit, nursery stock and everything else together. [verified] — [the 2022 county profile](../../catalog/usda-census-of-agriculture.md).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-domestic-animals-1910.yml",
       "class": "measure",
       "label": "Allen County domestic animals, on farms and off, 1910",
@@ -2037,9 +2074,15 @@
         {
           "text": "**The swine outnumbered the people.** [inference] — 59,695 against 56,580, computed here. Sheep and goats came to 41,240 and cattle to 21,336.",
           "tier": "inference"
+        },
+        {
+          "text": "**There is a later count now, and it does not say when the horses went.** In 2022 the county held 316 horses and ponies, 8,576 cattle, 877 sheep and 622 goats, and a dairy herd the census will not print. [verified] — [the Census of Agriculture](../../catalog/usda-census-of-agriculture.md); see [the modern livestock](allen-county-livestock-2002-2022.yml). Every animal in the 1910 table is down by nine-tenths or more except the swine, which nearly quadrupled to 235,800.",
+          "tier": "verified"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "So the fall from 14,676 happened somewhere in the ninety-two years between, and this corpus still cannot say when."
+      ],
       "withheld": 3
     },
     {
@@ -2175,10 +2218,65 @@
         {
           "text": "**The farms that multiplied were rented ones.** Owner-operated farms fell from 2,089 to 2,046 while tenanted farms rose from 730 to 871, and tenancy went from 25.5 to 29.6 per cent of all farms. [verified] — same source, Table 2. Of the 871 tenants, 509 paid shares and 275 paid cash. Of 2,046 owners, 655 carried mortgage debt and 1,378 were free of it.",
           "tier": "verified"
+        },
+        {
+          "text": "**The other end of the century is measured now.** 178,921 acres in 2022, 69.4 per cent of the county, with 94,325 of those acres rented from somebody else. [verified] — [the Census of Agriculture](../../catalog/usda-census-of-agriculture.md); see [the modern series](allen-county-farms-2002-2022.yml). The 2,939 farms of 1910 and the 897 of 2022 are not subtracted here: the two censuses use different definitions of a farm, and the difference between the thresholds is not a quantity anything in this corpus can supply. See [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-farms-2002-2022.yml",
+      "class": "measure",
+      "label": "Allen County farms, farmland and farm income, 2002–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022-12-31",
+        "method": "Census of Agriculture, taken for the 2022 calendar year, read from NASS's Quick Stats bulk county file and checked against the published county profile, which agrees on every headline figure. The four tenure rows sum to land in farms exactly and the two sales components sum to the total exactly. NASS defines a farm as \"any place from which $1,000 or more of agricultural products were produced and sold, or normally would have been sold, during the census year\", which is not the definition the 1910 census used. [verified] See [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml).",
+        "parameter": "farms, land in farms and value of products sold, Allen County",
+        "unit": "farms",
+        "value": "897"
+      },
+      "blocks": [
+        {
+          "text": "Five agricultural censuses of the county's largest land use, and the first this corpus has read since 1910. [verified] — [USDA Census of Agriculture](../../catalog/usda-census-of-agriculture.md), county files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County was 92.5 per cent farmland in 1910 and is 69.4 per cent farmland now** — 178,921 acres of the 257,629 in its 402.545 square miles. [inference] — computed here from [the 1910 farms](allen-county-farms-1900-1910.yml) and [the county's land area](allen-county-land-area-2020.yml). The two censuses measure land area on different geographies, so the shares are firmer than the difference between them.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Nine-tenths of the fall happened before this series begins.** Land in farms was 240,472 acres in 1910 and 188,150 in 2002 — 52,322 acres gone — against 9,229 more across the twenty years since. [inference] — same two sources. There is no agricultural census between them in this catalog, so this corpus knows that the farmland went and cannot say when. See [when the farmland went](../question/when-the-farmland-went.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Land in farms, five censuses in one line.** 188,150 acres in 2002, 187,238 in 2007, 183,186 in 2012, 186,623 in 2017 and 178,921 in 2022, against 240,472 in 1910. [verified] — same source, and [the 1910 farms](allen-county-farms-1900-1910.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**More than half the county's farmland is worked by someone who does not own it.** 94,325 of 178,921 acres are rented — 90,661 by 268 part-owner operations and 3,664 by 38 tenants — and the 591 operations that own everything they farm hold 34,912 acres between them, a fifth of the total. [verified] — same source, tenure domain, whose four figures close on the county acreage exactly.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So 268 operations farm 78.4 per cent of the ground.** [inference] — computed here. In 1910 the same county held 2,939 farms, of which 2,046 were owner-operated. [verified] — [the 1910 farms](allen-county-farms-1900-1910.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The census cannot resolve its own headline.** The county profile prints farms up 5 per cent and land in farms down 4 per cent since 2017; the figures are 897 ± 69 farms and 178,921 ± 16,171 acres, so the first change is inside one standard error and the second is inside half of one. [verified] — same source, Appendix A Table C. **39.0 per cent of the county's farm count is adjustment for coverage, nonresponse and misclassification rather than a returned form**, and 28.6 per cent of its acreage is. The corpus does not read the sales row of that table, whose standard error is printed in a unit the table does not name.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Federal money reached 344 of the 897.** $1,898,000 in 2022, of which $698,000 went to 283 operations for conservation and wetlands and $1,200,000 to 86 for everything else. [verified] — same source. Expenses were $168,593,000 against $240,849,000 of sales; feed alone was $34,822,000, a fifth of all spending, in a county whose animals are described [next door](allen-county-livestock-2002-2022.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "There is no agricultural census between them in this catalog, so this corpus knows that the farmland went and cannot say when."
+      ],
+      "withheld": 1
     },
     {
       "id": "measure/allen-county-governor-vote-2018.yml",
@@ -2571,6 +2669,51 @@
       "refusals": [
         "This does not establish that any applicant was treated differently."
       ],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-livestock-2002-2022.yml",
+      "class": "measure",
+      "label": "Allen County livestock, 2002–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022-12-31",
+        "method": "Census of Agriculture, inventory taken at December 31 of the census year and sales for the calendar year, read from NASS's Quick Stats bulk county file and checked against the published county profile, which prints the same 2022 and 2017 inventories. `(D)` marks a cell NASS suppressed to avoid disclosing an individual operation and is not a small number; nothing here infers a value for one. Comparisons to 1910 set a count of animals on farms and off them against a count on farms alone, which in 1910 differed by about one per cent for swine. [inference]",
+        "parameter": "livestock inventory, Allen County",
+        "unit": "hogs",
+        "value": "235800"
+      },
+      "blocks": [
+        {
+          "text": "What the county keeps, and how few places keep it. [verified] — [USDA Census of Agriculture](../../catalog/usda-census-of-agriculture.md), county files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The hogs multiplied more than sevenfold while the places keeping them halved.** 31,741 head on 59 operations in 2002 against 235,800 on 28 in 2022 — an average herd of 538 becoming one of 8,421. [inference] — computed here from the five censuses. Nothing else moved: cattle ended where they began, and sheep, horses and milk cows are where they were or lower.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The count, five censuses in one line.** 31,741 hogs in 2002, 62,910 in 2007, 80,372 in 2012, 178,781 in 2017 and 235,800 in 2022, kept on 59, 60, 46, 56 and 28 operations. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three quarters of the hogs sold were raised for someone else.** Of 377,816 head sold in 2022, 281,194 were produced under production contract on twelve operations — the census's own term for an animal fed by one party and owned by another. [verified] — same source. In 2017 it was 144,480 of 324,947 on twenty-one operations, so the contracted share went from 44 to 74 per cent while the number of operations doing it fell by nine.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Hogs are now two fifths of everything the county sells.** $75,254,000 of $240,849,000, against $7,488,000 of $41,264,000 in 2002. [verified] — same source. The county ranks 4th in Ohio for hog sales and 23rd for agricultural sales altogether. [verified] — [the 2022 county profile](../../catalog/usda-census-of-agriculture.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Against 1910: the swine outnumbered the people then by 59,695 to 56,580, and now by 235,800 to 100,866.** [inference] — computed here from [the 1910 animals](allen-county-domestic-animals-1910.yml) and [the 2024 estimate](allen-county-population-2024.yml). Two and a third hogs a head, where there had been one and a twentieth.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Everything else in that 1910 count is gone.** 14,676 horses became 316; 41,240 sheep and goats became 1,499; 21,336 cattle became 8,576; and the 10,671 dairy cows became a figure the census will not print, because eight operations hold it and one of them is large enough that publishing the total would disclose it. [verified] — same sources, and Appendix A, which states the suppression rules. This corpus withholds figures for the same reason and by hand; see [what may leave the repository](../../decisions/what-may-leave-the-repository.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
       "withheld": 2
     },
     {
@@ -6832,6 +6975,14 @@
           "tier": "inference"
         },
         {
+          "text": "**It is two-thirds farms now, and it is a hog county.** 178,921 acres in 2022 — 69.4 per cent of the land area — on 897 operations, of which 268 part-owners farm 78.4 per cent of the ground and more than half of all farmland is rented from somebody else. [verified] — [the Census of Agriculture](../../catalog/usda-census-of-agriculture.md); see [the modern farms](../measure/allen-county-farms-2002-2022.yml), [the livestock](../measure/allen-county-livestock-2002-2022.yml) and [the crops](../measure/allen-county-crops-2022.yml). The county held 31,741 hogs on 59 places in 2002 and 235,800 on 28 in 2022, and sells more of them than of anything else it raises.",
+          "tier": "verified"
+        },
+        {
+          "text": "So the county's other nine-tenths has an answer at both ends and none in the middle: 52,322 of the 61,551 acres that left the farms went in the ninety-two years no census in this catalog covers. [inference] — computed here from the two censuses. See [when the farmland went](../question/when-the-farmland-went.yml). The 1910 and 2022 farm counts are not subtracted anywhere in this corpus, because the two censuses define a farm differently; see [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml).",
+          "tier": "inference"
+        },
+        {
           "text": "**Who represents it, and under which map.** The county sends one member to the Ohio House from [the 78th District](../division/ohio-house-district-78-2023.yml) and one to the Ohio Senate from [the 12th](../division/ohio-senate-district-12-2023.yml), both under the legislative map adopted 29 September 2023; and it is not split between districts in either chamber. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md); [inference] for the not-split, reasoned from the roster naming one of each. Its sitting member of Congress sits for the 4th District. [verified] — same source.",
           "tier": "inference"
         },
@@ -6841,7 +6992,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 4
+      "withheld": 3
     },
     {
       "id": "place/amanda-township.yml",
@@ -8213,6 +8364,35 @@
         }
       ],
       "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "question/when-the-farmland-went.yml",
+      "class": "question",
+      "label": "When did Allen County stop being nine-tenths farmland?",
+      "tier": "inference",
+      "properties": {
+        "claim_tag": "open",
+        "opened": "2026-08-30",
+        "would_close_this": "One agricultural census at county grain between 1910 and 2002, and preferably three. The census was taken in 1920, 1925 and then every five years to 1954, every four or five to 1978, and every five to 1997; the Census Bureau conducted it through 1992 and NASS from 1997. Each printed volume carries an Ohio county table of farms, land in farms, crop acreage and livestock — the same rows this question is short of. NASS's own online publication begins at 2002 and does not reach back: the bulk Quick Stats extracts stop there, `qs.census1997.txt.gz` does not exist, and the Cornell historical archive that used to hold the scans now redirects into nass.usda.gov without them. So the volumes are the shelf and the route to them is not NASS. This names a shelf and not an answer, which is what [asking the volume just after the gap](../../decisions/ask-the-volume-just-after-the-gap.yml) says to do when the obvious source has been tried."
+      },
+      "blocks": [
+        {
+          "text": "Allen County held 240,472 acres in farms in 1910, 92.5 per cent of its land, and 178,921 acres in 2022, 69.4 per cent of it. [verified] — [Abstract of the Thirteenth Census](../../catalog/census-1910-abstract-supplement-ohio.md) and [the Census of Agriculture](../../catalog/usda-census-of-agriculture.md); see [the 1910 farms](../measure/allen-county-farms-1900-1910.yml) and [the modern series](../measure/allen-county-farms-2002-2022.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nine-tenths of that loss is inside a window this corpus cannot see.** By 2002, the first year of the modern series, the county was already down to 188,150 acres. So 52,322 of the 61,551 acres went between 1910 and 2002, and 9,229 in the twenty years since. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "The same window swallows every other change the two ends disagree about. The horses were 14,676 in 1910 and 618 in 2002. The sheep were 41,240 and 835. Oats took 30,156 acres and then 194. Soybeans were not a crop in this county in 1909 and were its largest in 2002. Every one of those turned somewhere in ninety-two unmeasured years. [verified] — same two sources.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say whether the farmland left in one decade or in nine, and the difference matters: a county that lost fifty thousand acres to drainage failure, to the oil field, to Lima's annexations or to the interstate lost them for four different reasons, and only the last of those can be dated from anything already here."
+      ],
       "withheld": 1
     },
     {
@@ -10836,6 +11016,13 @@
       "source": "catalog/census-acs-summary-file.md"
     },
     {
+      "from": "measure/allen-county-crops-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usda-census-of-agriculture.md"
+    },
+    {
       "from": "measure/allen-county-domestic-animals-1910.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -10869,6 +11056,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-1910-abstract-supplement-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-farms-2002-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usda-census-of-agriculture.md"
     },
     {
       "from": "measure/allen-county-governor-vote-2018.yml",
@@ -11009,6 +11203,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/hmda-loan-application-register.md"
+    },
+    {
+      "from": "measure/allen-county-livestock-2002-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usda-census-of-agriculture.md"
     },
     {
       "from": "measure/allen-county-manufacturing-employment-1969-2022.yml",

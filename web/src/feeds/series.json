@@ -222,6 +222,26 @@
       ]
     },
     {
+      "id": "place-allen-county::crop-acreage-and-production,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "crop acreage and production, Allen County",
+      "unit": "acres of soybeans",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-crops-2022.yml",
+          "label": "Allen County crops, 2022, against 1909",
+          "as_of": "2022-12-31",
+          "value": 76200.0,
+          "published": "76200",
+          "tier": "verified",
+          "source": "catalog/usda-census-of-agriculture.md",
+          "method": "Census of Agriculture, harvested acreage and production for the 2022 calendar year, read from NASS's Quick Stats bulk county file. The 1909 column is the Thirteenth Census, enumerated April 15 1910 for the 1909 crop year. Yields are computed here by dividing production by harvested acres, which is not how either census reports yield and is comparable only because both report both terms. [inference] `(D)` is a suppressed cell, not a zero; a dash is a crop the source does not name for this county in that year, which for 1909 soybeans is a statement about the volume's crop list and not a count of zero acres. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::domestic-animals-on-and-off-farms,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -282,6 +302,26 @@
       ]
     },
     {
+      "id": "place-allen-county::farms,-land-in-farms-and-value-of-products-sold,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "farms, land in farms and value of products sold, Allen County",
+      "unit": "farms",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-farms-2002-2022.yml",
+          "label": "Allen County farms, farmland and farm income, 2002–2022",
+          "as_of": "2022-12-31",
+          "value": 897.0,
+          "published": "897",
+          "tier": "verified",
+          "source": "catalog/usda-census-of-agriculture.md",
+          "method": "Census of Agriculture, taken for the 2022 calendar year, read from NASS's Quick Stats bulk county file and checked against the published county profile, which agrees on every headline figure. The four tenure rows sum to land in farms exactly and the two sales components sum to the total exactly. NASS defines a farm as \"any place from which $1,000 or more of agricultural products were produced and sold, or normally would have been sold, during the census year\", which is not the definition the 1910 census used. [verified] See [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml)."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::housing-units,-occupancy-status,-tenure,-median-value-and-median-gross-rent",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -338,6 +378,26 @@
           "tier": "verified",
           "source": "catalog/census-gazetteer-2020.md",
           "method": "Computed by the Census Bureau from the 2020 TIGER geography. A county's land area is not fixed across geographies — a later vintage may differ. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::livestock-inventory,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "livestock inventory, Allen County",
+      "unit": "hogs",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-livestock-2002-2022.yml",
+          "label": "Allen County livestock, 2002–2022",
+          "as_of": "2022-12-31",
+          "value": 235800.0,
+          "published": "235800",
+          "tier": "verified",
+          "source": "catalog/usda-census-of-agriculture.md",
+          "method": "Census of Agriculture, inventory taken at December 31 of the census year and sales for the calendar year, read from NASS's Quick Stats bulk county file and checked against the published county profile, which prints the same 2022 and 2017 inventories. `(D)` marks a cell NASS suppressed to avoid disclosing an individual operation and is not a small number; nothing here infers a value for one. Comparisons to 1910 set a count of animals on farms and off them against a count on farms alone, which in 1910 differed by about one per cent for swine. [inference]"
         }
       ]
     },
@@ -2708,6 +2768,209 @@
           "label": "Charged sum",
           "value": 2200.0,
           "literal": "2200"
+        }
+      ]
+    },
+    {
+      "id": "the-county-is-two-thirds-farmland",
+      "statement": "Nine-tenths of Allen County was farmland in 1910 and two-thirds of it is now. Nine-tenths of what left went in the ninety-two years no census in this catalog covers.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-farms-2002-2022.yml",
+          "node_label": "Allen County farms, farmland and farm income, 2002–2022",
+          "span": "**Allen County was 92.5 per cent farmland in 1910 and is 69.4 per cent farmland now** — 178,921 acres of the 257,629 in its 402.545 square miles.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-farms-2002-2022.yml",
+          "node_label": "Allen County farms, farmland and farm income, 2002–2022",
+          "span": "Land in farms was 240,472 acres in 1910 and 188,150 in 2002 — 52,322 acres gone — against 9,229 more across the twenty years since.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-farms-2002-2022.yml",
+          "node_label": "Allen County farms, farmland and farm income, 2002–2022",
+          "span": "188,150 acres in 2002, 187,238 in 2007, 183,186 in 2012, 186,623 in 2017 and 178,921 in 2022, against 240,472 in 1910.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "There is no agricultural census between them in this catalog, so this corpus knows that the farmland went and cannot say when."
+      ],
+      "figures": [
+        {
+          "label": "1910",
+          "value": 240472.0,
+          "literal": "240,472"
+        },
+        {
+          "label": "2002",
+          "value": 188150.0,
+          "literal": "188,150"
+        },
+        {
+          "label": "2007",
+          "value": 187238.0,
+          "literal": "187,238"
+        },
+        {
+          "label": "2012",
+          "value": 183186.0,
+          "literal": "183,186"
+        },
+        {
+          "label": "2017",
+          "value": 186623.0,
+          "literal": "186,623"
+        },
+        {
+          "label": "2022",
+          "value": 178921.0,
+          "literal": "178,921"
+        }
+      ]
+    },
+    {
+      "id": "the-hogs-multiplied-as-the-keepers-halved",
+      "statement": "Allen County kept 31,741 hogs on 59 places in 2002 and 235,800 on 28 in 2022. The herd multiplied more than sevenfold while the places keeping it halved.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-livestock-2002-2022.yml",
+          "node_label": "Allen County livestock, 2002–2022",
+          "span": "31,741 head on 59 operations in 2002 against 235,800 on 28 in 2022 — an average herd of 538 becoming one of 8,421.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-livestock-2002-2022.yml",
+          "node_label": "Allen County livestock, 2002–2022",
+          "span": "31,741 hogs in 2002, 62,910 in 2007, 80,372 in 2012, 178,781 in 2017 and 235,800 in 2022, kept on 59, 60, 46, 56 and 28 operations.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-livestock-2002-2022.yml",
+          "node_label": "Allen County livestock, 2002–2022",
+          "span": "Of 377,816 head sold in 2022, 281,194 were produced under production contract on twelve operations — the census's own term for an animal fed by one party and owned by another.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2002",
+          "value": 31741.0,
+          "literal": "31,741"
+        },
+        {
+          "label": "2007",
+          "value": 62910.0,
+          "literal": "62,910"
+        },
+        {
+          "label": "2012",
+          "value": 80372.0,
+          "literal": "80,372"
+        },
+        {
+          "label": "2017",
+          "value": 178781.0,
+          "literal": "178,781"
+        },
+        {
+          "label": "2022",
+          "value": 235800.0,
+          "literal": "235,800"
+        }
+      ]
+    },
+    {
+      "id": "most-of-the-farmland-is-rented",
+      "statement": "More than half of Allen County's farmland is worked by someone who does not own it, and 268 operations farm 78.4 per cent of the ground.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-farms-2002-2022.yml",
+          "node_label": "Allen County farms, farmland and farm income, 2002–2022",
+          "span": "94,325 of 178,921 acres are rented — 90,661 by 268 part-owner operations and 3,664 by 38 tenants — and the 591 operations that own everything they farm hold 34,912 acres between them, a fifth of the total.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farms-2002-2022.yml",
+          "node_label": "Allen County farms, farmland and farm income, 2002–2022",
+          "span": "**So 268 operations farm 78.4 per cent of the ground.**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "There is no agricultural census between them in this catalog, so this corpus knows that the farmland went and cannot say when."
+      ],
+      "figures": []
+    },
+    {
+      "id": "an-acre-yields-five-times-what-it-did",
+      "statement": "An acre of Allen County corn yields five times what it did in 1909 and an acre of wheat six times — and the county's largest crop today was not grown here at all.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-crops-2022.yml",
+          "node_label": "Allen County crops, 2022, against 1909",
+          "span": "**An acre of Allen County corn yields five times what it did**, 192.7 bushels against 38.7, and an acre of wheat six times, 81.8 against 13.4.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-crops-2022.yml",
+          "node_label": "Allen County crops, 2022, against 1909",
+          "span": "Soybeans took 76,200 acres in 2022, more than corn, and the 1910 census names no soybean acreage in Allen County at all.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md",
+            "catalog/census-1910-abstract-supplement-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Corn, 1909",
+          "value": 38.7,
+          "literal": "38.7"
+        },
+        {
+          "label": "Corn, 2022",
+          "value": 192.7,
+          "literal": "192.7"
+        },
+        {
+          "label": "Wheat, 1909",
+          "value": 13.4,
+          "literal": "13.4"
+        },
+        {
+          "label": "Wheat, 2022",
+          "value": 81.8,
+          "literal": "81.8"
         }
       ]
     },
