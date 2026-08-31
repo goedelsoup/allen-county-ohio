@@ -34,6 +34,7 @@ used-by:
   - ../corpus/place/american-township.yml
   - ../corpus/place/shawnee-township.yml
   - ../corpus/question/who-lives-in-the-county-without-housing.yml
+  - ../corpus/site/allen-correctional-institution.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/ford-lima-engine-plant.yml
   - ../corpus/site/lima-army-tank-plant.yml

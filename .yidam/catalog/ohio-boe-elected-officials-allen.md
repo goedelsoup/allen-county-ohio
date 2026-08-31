@@ -33,19 +33,31 @@ used-by:
   - ../corpus/jurisdiction/allen-county-educational-service-center.yml
   - ../corpus/jurisdiction/allen-county-government.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
+  - ../corpus/jurisdiction/amanda-township.yml
+  - ../corpus/jurisdiction/american-township.yml
+  - ../corpus/jurisdiction/auglaize-township.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
+  - ../corpus/jurisdiction/bath-township.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
   - ../corpus/jurisdiction/city-of-delphos.yml
   - ../corpus/jurisdiction/city-of-lima.yml
   - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
   - ../corpus/jurisdiction/delphos-city-school-district.yml
   - ../corpus/jurisdiction/elida-local-school-district.yml
+  - ../corpus/jurisdiction/jackson-township.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
   - ../corpus/jurisdiction/lima-municipal-court.yml
+  - ../corpus/jurisdiction/marion-township.yml
+  - ../corpus/jurisdiction/monroe-township.yml
   - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
   - ../corpus/jurisdiction/perry-local-school-district.yml
+  - ../corpus/jurisdiction/perry-township.yml
+  - ../corpus/jurisdiction/richland-township.yml
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
+  - ../corpus/jurisdiction/shawnee-township.yml
+  - ../corpus/jurisdiction/spencer-township.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/sugar-creek-township.yml
   - ../corpus/jurisdiction/village-of-beaverdam.yml
   - ../corpus/jurisdiction/village-of-bluffton.yml
   - ../corpus/jurisdiction/village-of-cairo.yml

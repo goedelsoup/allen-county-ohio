@@ -57,6 +57,10 @@ used-by:
   - ../corpus/organization/bluffton-hospital.yml
   - ../corpus/organization/bluffton-university.yml
   - ../corpus/organization/institute-for-orthopaedic-surgery.yml
+  - ../corpus/organization/kindred-hospital-lima.yml
+  - ../corpus/organization/lima-memorial-health-system.yml
+  - ../corpus/organization/lima-refining-company.yml
+  - ../corpus/organization/mercy-health-st-ritas-medical-center.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml

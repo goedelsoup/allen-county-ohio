@@ -43,6 +43,7 @@ used-by:
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/camp-lima.yml
   - ../corpus/site/lima-refinery.yml
+  - ../corpus/site/lima-state-hospital.yml
   - ../corpus/site/miami-and-erie-canal.yml
 ---
 

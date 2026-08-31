@@ -37,22 +37,77 @@ description: |
   present without households and without registering. Three measurements of the same absence is
   not a name. [inference]
 
-  [open] What holds 1,360 people in that block, and whether the three institutions are three or
-  one — Ohio has consolidated prisons under names the county's file may predate.
+  **It is a prison, and the block is its fence.** All 1,360 are counted in adult correctional
+  facilities, and the block carries the same land area to the square metre — 364,210 — and the same
+  internal point to seven decimal places as the Census Bureau's landmark for
+  [Allen Correctional Institution](../site/allen-correctional-institution.yml). [verified] —
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md) and
+  [the landmark file](../../catalog/census-tiger-landmarks.md). The adjacent block holding 153 is
+  [Oakwood](../site/oakwood-correctional-facility.yml), identified the same way. And the 398 at
+  Bluffton are college student housing in the federal file, not only an address match.
+
+  **The inference this node made was right and its method was wrong.** It reasoned that an
+  institution's address point sits at its gate while its residents are counted inside its fence,
+  and that is exactly what happened. But it could not have been shown by matching addresses to
+  blocks in any amount of care, because the two files mean different things. What settled it was a
+  join between two files the same agency draws from the same polygon. [inference] — see
+  [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).
+
+  **The three institutions are two, and the third closed in 2004.** Ohio's Department of
+  Rehabilitation and Correction lists Lima Correctional Institution among facilities that have
+  since closed. [verified] —
+  [the department's facilities page](../../catalog/odrc-facilities.md). The county's address file
+  has carried it for twenty-two years, which is why counting names in that file gave three.
+
+  **The wider answer is that 3,522 people in this county live outside households**, 3.4 per cent
+  of it: 1,513 in correctional facilities, 966 in nursing homes, 788 in student housing and 255 in
+  what the census calls other noninstitutional facilities and defines as shelters, group homes and
+  residential treatment centres. [verified] —
+  [the group quarters](../measure/allen-county-group-quarters-2020.yml). The question was asked
+  about one block and the file answered it for all 3,552.
+
+  [open] What the 104 people in student housing in Bath Township are attending, and why the county
+  jail counted zero.
 properties:
-  claim_tag: open
+  claim_tag: verified
   opened: "2026-08-29"
+  closed: "2026-08-31"
+  resolution: |
+    Block `390030112001004` is Allen Correctional Institution and its 1,360 residents are counted
+    in adult correctional facilities; the adjacent block holding 153 is Oakwood Correctional
+    Facility; block `390030101001002` and its 398 are Bluffton University student housing. The
+    three state institutions in the county's address file are two: Lima Correctional Institution
+    closed in 2004.
+
+    Both prisons were identified by geometry rather than by address — the census block and the
+    Census Bureau's landmark carry the same land area and the same internal point — after address
+    matching, nearest-landmark and the operating agency's own website had each failed in a
+    different way.
   would_close_this: |
     The Ohio Department of Rehabilitation and Correction's facility list, which gives each
     institution's current name, address and population; or the Census Bureau's group-quarters
     tabulation from the 2020 redistricting file, which reports institutional population by type
     and is not served by TIGERweb.
+
+    The second of those closed it, and the first was needed too but not in the form expected: the
+    department's site renders its current institutions in JavaScript and serves a plain client
+    nothing, and the one list in its HTML is of the facilities it has closed. That list is what
+    resolved the three-or-one half of the question. The lesson for this field is that an agency's
+    website can be the right source for the opposite of what it is asked.
 links:
   - target: ../place/lima.yml
     relationship: concerns
   - target: ../organization/bluffton-university.yml
     relationship: concerns
   - target: ../measure/allen-county-housing-units-2020.yml
+    relationship: concerns
+  - target: ../measure/allen-county-group-quarters-2020.yml
+    relationship: concerns
+  - target: ../site/allen-correctional-institution.yml
+    relationship: concerns
+  - target: ../site/oakwood-correctional-facility.yml
+    relationship: concerns
+  - target: ../site/allen-county-justice-center.yml
     relationship: concerns
   - target: ../question.ont.yml
     relationship: instance-of

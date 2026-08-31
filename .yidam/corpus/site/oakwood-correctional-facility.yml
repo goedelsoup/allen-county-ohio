@@ -1,0 +1,41 @@
+class: site
+label: Oakwood Correctional Facility
+description: |
+  The larger and emptier of the two state institutions north of [Lima](../place/lima.yml): 342
+  acres holding 153 people, against ninety acres holding 1,360 half a mile south. [verified] —
+  [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), where it is *Oakwood Corr
+  Faclty*, feature class K1237, area identifier `1104690933479`; and
+  [the group quarters](../measure/allen-county-group-quarters-2020.yml).
+
+  **It is identified the same way its neighbour is, and the identification is exact.** Block
+  `390030112001001` and the landmark carry the same land area — 1,383,460 square metres — and the
+  same internal point, `+40.7812913 -084.1012253`. [verified] — the landmark file against
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md)'s geographic
+  header. See [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).
+
+  **Its 153 residents are counted as prisoners, not as patients.** Allen County records zero people
+  in "other institutional facilities", the category that holds psychiatric hospitals, and 1,513 in
+  correctional facilities for adults, of whom these are 153. [verified] —
+  [the group quarters](../measure/allen-county-group-quarters-2020.yml). A facility that treats can
+  still be a facility that confines, and the census classifies by the second. [inference]
+
+  **The ratio of ground to people is the thing to notice.** At 342 acres for 153 residents it holds
+  one person for every 2.2 acres, where the institution to its south holds fifteen people to the
+  acre. [inference] — computed here. That is the shape of a hospital farm rather than a prison, and
+  [the Lima State Hospital](lima-state-hospital.yml) that stood north of Lima from 1915 had 576
+  acres and worked them with its patients.
+
+  [open] Whether it is that hospital under a later name. The corpus holds the hospital in 1915 and
+  1920, holds this facility in 2020 and 2024, and holds nothing that connects them — no renaming,
+  no conveyance, no continuous roll.
+properties:
+  site_type: correctional facility
+  status: in operation
+  coordinates: "40.7812913, -84.1012253"
+links:
+  - target: ../place/lima.yml
+    relationship: located-in
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: ../site.ont.yml
+    relationship: instance-of

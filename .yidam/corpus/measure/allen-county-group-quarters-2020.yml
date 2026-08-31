@@ -1,0 +1,98 @@
+class: measure
+label: Allen County group quarters, 2020
+description: |
+  The 3,522 people the 2020 census counted in Allen County who were not living in a household —
+  3.4 per cent of its 102,206, in 43 of its 3,552 blocks. [verified] —
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), Table P5, summed
+  from block records.
+
+      institutionalized                                 2,479
+        correctional facilities for adults              1,513   in 2 blocks
+        nursing / skilled-nursing facilities              966   in 15 blocks
+        juvenile facilities                                 0
+        other institutional facilities                      0
+      noninstitutionalized                              1,043
+        college / university student housing              788   in 7 blocks
+        other noninstitutional facilities                 255   in 20 blocks
+        military quarters                                   0
+      total                                             3,522
+
+  **Two of the county's blocks are its two state prisons, and the census drew the block on the
+  fence.** Block `390030112001004` holds 1,360 people, all of them in adult correctional
+  facilities; the Census Bureau's own landmark file gives *Allen Correctional Instn* the same land
+  area to the square metre — 364,210 — and the same internal point to seven decimal places,
+  `+40.7751673 -084.0996846`. Block `390030112001001` holds 153 and matches *Oakwood Corr Faclty*
+  the same way, at 1,383,460 square metres and `+40.7812913 -084.1012253`. [verified] —
+  [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md) against the redistricting file's
+  geographic header. See
+  [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).
+
+  **Lima holds nearly two thirds of the county's group quarters on a third of its people.** 2,210
+  of the 3,522, including every one of the 1,513 in correctional facilities. [inference] — computed
+  here from the same file.
+
+      Lima city         2,210    1,513 correctional, 289 nursing, 190 college, 218 other
+      Richland twp        665    494 college, 171 nursing
+      American twp        173    nursing
+      Marion twp          141    133 nursing, 8 other
+      Shawnee twp         139    120 nursing, 19 other
+      Bath twp            106    104 college, 2 other
+      Perry twp            44    36 nursing, 8 other
+      Spencer twp          44    nursing
+
+  **The nursing homes are the county's most distributed institution.** 966 people in fifteen
+  blocks across the city and seven townships, the largest holding 132 — from Bluffton in the
+  north-east to Delphos in the north-west to Shawnee in the south. [inference] — computed here.
+  Nothing else in this table is spread at all: the prisons are two blocks, and 494 of the 788
+  in student housing are on one campus.
+
+  **"Other noninstitutional facilities" is the census's name for shelter.** The category covers
+  emergency and transitional shelters for people experiencing homelessness, group homes intended
+  for adults, residential treatment centres, workers' quarters and Job Corps centres. [verified] —
+  [the technical documentation](../../catalog/census-2020-redistricting-file.md), Appendix B. The
+  county has 255 such residents, and 124 of them are in six blocks of one downtown Lima tract.
+
+  **The county records no juvenile facility, no psychiatric-hospital population and no military
+  quarters at all.** [verified] — same source. The zero for other institutional facilities is
+  worth reading carefully rather than as an absence: that category is where psychiatric hospitals
+  are counted, and this county's psychiatric hospital is
+  [Oakwood](../site/oakwood-correctional-facility.yml), whose residents are inmates and are
+  therefore counted as correctional. [inference]
+
+  [open] What the 104 people in college student housing in Bath Township are attending. They are
+  in one block east of Lima that falls inside no college or university landmark, and the corpus
+  holds no directory of the county's post-secondary institutions.
+
+  [open] Whether the count at the county jail is right. Every one of the county's 1,513
+  correctional residents is in the two state blocks, which leaves nothing at
+  [the Allen County Justice Center](../site/allen-county-justice-center.yml) — and the census
+  records that block's total population as zero.
+properties:
+  parameter: population in group quarters, Allen County
+  value: "3522"
+  unit: people
+  as_of: 2020-04-01
+  method: |
+    Table P5, Group Quarters Population by Major Group Quarters Type, from the Ohio file of the
+    2020 Census Redistricting Data Summary File (P.L. 94-171). Summed from the 3,552 block
+    records for county 39003, joined to the geographic header on LOGRECNO. The block sums close
+    on the file's own county record exactly, in every one of the ten cells. [verified]
+
+    The Census Bureau's API serves the same table from the Demographic and Housing Characteristics
+    file and refuses the request without a key, which is why the flat file was taken instead —
+    the same reason this corpus reads the ACS from its summary file rather than its API.
+
+    Institution identification is by geometry, not by address: a block is identified with a
+    landmark only where the two carry the same land area and the same internal point. Two do.
+    [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).
+
+    The 2020 census applied disclosure avoidance to every published block figure, so a single
+    small cell is noisy; the county totals are not, and the two large correctional cells are
+    corroborated by the geometry they sit on.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

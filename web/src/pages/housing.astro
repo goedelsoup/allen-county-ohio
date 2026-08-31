@@ -11,6 +11,9 @@ const borrow = assertion('borrowing-against-a-house-in-lima')
 const seven = assertion('the-denial-gap-is-seven-years-old')
 const composition = assertion('the-lending-gap-is-not-composition')
 const gap = assertion('the-denial-gap-that-does-not-resolve')
+const outside = assertion('three-thousand-people-live-outside-households')
+const empty = assertion('one-lima-housing-unit-in-nine-is-empty')
+const fence = assertion('the-census-drew-the-block-on-the-fence')
 
 // `categories` and `values` are what the bar renderer reads. This helper was written with a
 // line's `x` and `series` for a phase, so all five of this page's charts drew a trace over two
@@ -28,12 +31,84 @@ const borrowSpec = bars(borrow, 'Per cent of applications denied')
 const gapSpec = bars(gap, 'Per cent of applications denied')
 const sevenSpec = bars(seven, 'Per cent of applications denied')
 const compositionSpec = bars(composition, 'Denials, 2018–2024')
+const outsideSpec = bars(outside, 'People')
+const emptySpec = bars(empty, 'Per cent of housing units vacant')
 ---
 
 <Base
   title="Housing"
   lede="What Allen County is built of, when it was built, and who was lent money against it."
 >
+  <section>
+    <h2>Who is not in a house at all</h2>
+    <AssertionCard assertion={outside} />
+    <p>
+      Everything else on this page counts housing units and the people in them. This is the
+      remainder: 3,522 people the 2020 census found in Allen County who were not living in a
+      household, in forty-three of its 3,552 blocks. The county records no juvenile facility, no
+      psychiatric-hospital population and no military quarters.
+    </p>
+    <ChartFigure
+      id="group-quarters"
+      title="Allen County's group quarters population by type, 2020"
+      caption="2020 Census Redistricting Data Summary File, Table P5, summed from block records. 'Shelters and group homes' is the census's 'other noninstitutional facilities', which its Appendix B defines as emergency and transitional shelters for people experiencing homelessness, group homes intended for adults, and residential treatment centres."
+      columns={['Type', 'People']}
+      rows={outside.figures.map((f) => [f.label, String(f.value)])}
+    />
+    <script type="application/json" data-chart-spec="group-quarters" set:html={JSON.stringify(outsideSpec)} is:inline />
+    <p>
+      Lima holds 2,210 of the 3,522 on a third of the county's people, including every one of the
+      1,513 in correctional facilities. The nursing homes are the only institution the county
+      spreads out: 966 people in fifteen blocks across the city and seven townships, the largest of
+      them holding 132. The 788 in student housing are mostly one campus — 494 of them at Bluffton
+      University — and the 255 in shelters, group homes and treatment centres are mostly one
+      downtown tract, which holds 124 of them.
+    </p>
+    <AssertionCard assertion={fence} />
+    <p>
+      For two phases this site could say that one Lima block held 1,360 people and no housing units
+      and could not say what it was. The county's address file put a single point inside it, an
+      auto wrecking yard, and put the three institutional addresses it carries half a mile west.
+      The join that worked was between two files the Census Bureau draws from the same polygon: the
+      block and the landmark carry the same land area to the square metre and the same internal
+      point to seven decimal places, for Allen Correctional Institution and again for Oakwood. One
+      of the three names in the county's file is a prison that closed in 2004.
+    </p>
+    <p>
+      That also explains a puzzle on the elections side of this corpus. The precinct containing
+      both institutions has the lowest voter-registration ratio of the county's eighty-eight, at
+      0.28 per resident against a median of 0.68. Take the 1,513 out and it is 0.53, inside the
+      band every other precinct occupies. The lowest registration rate in Allen County is a
+      prison, and nothing on the face of the map says so.
+    </p>
+  </section>
+
+  <section>
+    <h2>And how many houses are empty</h2>
+    <AssertionCard assertion={empty} />
+    <ChartFigure
+      id="vacancy"
+      title="Vacancy rate, 2020, city against county against the emptiest township"
+      caption="2020 Census Redistricting Data Summary File, Table H1, summed from block records. Vacancy is total units less occupied units; the file does not say why a unit is empty, which is in the Demographic and Housing Characteristics file and not in this one."
+      columns={['Subdivision', 'Per cent vacant']}
+      rows={empty.figures.map((f) => [f.label, f.value.toFixed(2)])}
+    />
+    <script type="application/json" data-chart-spec="vacancy" set:html={JSON.stringify(emptySpec)} is:inline />
+    <p>
+      With the group quarters count beside it the county's household size falls out exactly: 3,522
+      people outside households, so 98,684 in them, in 40,935 occupied units — 2.411 people per
+      household. Lima's is 2.344, the smallest of the thirteen subdivisions; Amanda Township's is
+      2.691, the largest.
+    </p>
+    <p>
+      This corpus had been using persons per housing unit as a stand-in and saying in the node that
+      it was not household size, because vacant units sat in the denominator and institutional
+      residents in the numerator. The open block that said so named the right table and the wrong
+      obstacle: the Census API will not serve it without a key, and the flat file the API is built
+      over needs no key at all. The figure was one download away for two phases.
+    </p>
+  </section>
+
   <section>
     <h2>A county sorted by its houses</h2>
     <p>
