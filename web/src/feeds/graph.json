@@ -2396,6 +2396,51 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-health-2023.yml",
+      "class": "measure",
+      "label": "CDC's health estimates for Allen County and Lima, 2022–2023",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2023",
+        "method": "Crude prevalence only, because the tract file publishes nothing else and a crude figure must not be set against an age-adjusted one. Thirty-five of the forty measures rest on BRFSS 2023 and five — all teeth lost, dental visits, mammograms, colorectal screening, short sleep — on BRFSS 2022. \"Differs by more than the confidence limits allow\" means the city's published interval and the county's do not overlap, which is a weaker test than a significance test and is the only one these published fields support. [verified]",
+        "parameter": "modelled prevalence of health measures, county and city",
+        "unit": "per cent of Lima adults food insecure, as estimated",
+        "value": "25.9"
+      },
+      "blocks": [
+        {
+          "text": "The corpus's first health source, and it is a model rather than a measurement. [verified] — [CDC PLACES](../../catalog/cdc-places.md), which publishes forty measures for the county, for the City of Lima and for all thirty-five of the county's 2020 census tracts. Every figure below is what CDC estimates, not what anyone counted here; see [a modelled estimate is not an observation](../../decisions/a-modelled-estimate-is-not-an-observation.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Thirteen of the forty differ between Lima and its county by more than their confidence limits allow**, and eleven of the thirteen are Lima the worse. [verified] — same source, crude prevalence throughout, comparing the city's interval with the county's.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Five of the top eight are not diseases.** Food stamps, food insecurity, housing insecurity, utility shut-off threat and lack of reliable transportation are the measures CDC groups as health-related social needs, and they are where the city and the county separate most. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**No chronic-disease gap clears the intervals at all.** Diabetes, high blood pressure, coronary heart disease, stroke, asthma, chronic obstructive pulmonary disease, depression and obesity all estimate higher in Lima and every one of those differences sits inside its own confidence limits. [verified] — same source. So on this model the city and the county differ in what people are short of and in what has happened to their teeth, and not measurably in what they have been diagnosed with.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The dental pair is the one place two measures corroborate each other.** A quarter of Lima residents over sixty-five have lost all their teeth against a sixth countywide, and half the city's adults saw a dentist in the year against 58 per cent of the county's. [verified] — same source. Both gaps clear their intervals and they point the same way.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The tracts spread much further than the city and the county do.** Across the thirty-five, CDC's estimate of adults receiving food stamps runs from 4.9 to 46.1 per cent, food insecurity from 7.2 to 41.3, fair or poor health from 13.9 to 40.5, and total tooth loss among the over-65s from 7.6 to 42.7. [verified] — same source. One tract, `39003014100`, holds the county's highest estimate on nine of those ten measures on a population of 1,695.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The file closes on the corpus's own count.** The thirty-five tract populations sum to 102,206, which is the county's 2020 census total and the closure this corpus has used since its block composition phase. [verified] — same source and [the 2020 count](allen-county-population-2020-census.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-health-care-employment-2010-2022.yml",
       "class": "measure",
       "label": "Allen County health care employment by subsector, 2010–2022",
@@ -2758,6 +2803,51 @@
         "This does not establish that any applicant was treated differently."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-life-expectancy-2010-2015.yml",
+      "class": "measure",
+      "label": "Life expectancy at birth in Allen County's census tracts, 2010–2015",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2015",
+        "method": "NCHS estimates for 2010–2015, on 2010 census tracts. The join to Lima is by tract identifier to the 2020 tract file and then by that tract's published internal point against the city's 2020 boundary polygon — so it is a statement about where a tract's centre falls and not about how many of its people live in the city. Two of the thirty tracts have no 2020 identifier and are excluded from every comparison, and are in the range and the median. Medians and weighted means are this corpus's arithmetic; every input is NCHS's or the Census Bureau's. [inference]",
+        "parameter": "life expectancy at birth, by census tract",
+        "unit": "years between the county's highest and lowest tract",
+        "value": "13.7"
+      },
+      "blocks": [
+        {
+          "text": "How long people born here can expect to live, and how far it varies inside one county of a hundred thousand. [verified] — [NCHS USALEEP](../../catalog/nchs-usaleep.md), which builds an abridged life table for each census tract from death certificates and population.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Thirty tracts, and 13.7 years between the highest and the lowest.** From **69.1** years in tract `39003012600` to **82.8** in `39003011300`, on a median of 78.0. [verified] — same source. The two ends are more than five combined standard errors apart, on published errors of 1.72 each, so the spread is not an artefact of small counts.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A tract whose centre is inside Lima expects about five fewer years than one outside it.** Thirteen of the twenty-eight tracts this file can be joined to the 2020 geography have their internal point inside the city; their median is **72.7** years against **79.0** for the fifteen outside, and weighted by tract population, 73.9 against 79.1. [inference] — computed here from [the same file](../../catalog/nchs-usaleep.md) and [TIGERweb's place boundary](../../catalog/tigerweb-census2020.md).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two groups barely overlap.** The highest Lima tract is 78.2 and the lowest tract outside the city is 74.0, so eleven of the thirteen inside sit below every tract outside but one. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Sixteen of the county's thirty-five tracts have their internal point inside Lima**, which is the same number the corpus reached by a different method — the sixteen whose 2020 block population is majority Lima. [verified] — same boundary file and [the lending register](allen-county-home-lending-2018-2024.yml). Two routes to the same count is not proof that they name the same sixteen, and this corpus has not checked that they do. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's own figure is not stated here.** Population-weighted across the twenty-eight tracts that join, life expectancy is 76.9 years — but those tracts hold 82,484 of the county's 102,206 people, because two 2010 tracts were split in the 2020 redraw and seven 2020 tracts have no 2010 row. [inference] — computed here. Four fifths of a county is not a county, and NCHS publishes no county figure in this file.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Against Ohio.** The state's 2,772 tracts run from 60.0 to 89.2 years on a median of 76.9, so Allen County's median sits half a year above the state's and its range is well inside it. [verified] — same file, all Ohio rows.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "measure/allen-county-livestock-2002-2022.yml",
@@ -5706,6 +5796,10 @@
           "tier": "verified"
         },
         {
+          "text": "**And the city is younger and dies sooner, which is not a contradiction and is worth stating together.** Median age 35.4 against the county's 39.7, and a median tract life expectancy of 72.7 years against 79.0 outside the city. [inference] — [age structure](../measure/allen-county-age-structure-2023.yml) and [life expectancy by tract](../measure/allen-county-life-expectancy-2010-2015.yml). A population can be young because its old people did not get old.",
+          "tier": "inference"
+        },
+        {
           "text": "This corpus does not establish that Lima is emptying because it is aging. It carries natural decrease as a component of the county's loss and it carries the concentration in Lima, and those two facts invite that conclusion; the age measure contradicts it. Whatever natural decrease this county has, it is not principally the city's. [verified] — same source.",
           "tier": "verified"
         },
@@ -5717,10 +5811,11 @@
       "refusals": [
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage.",
+        "It does not follow that Lima's mortality is what makes the county smaller.",
         "This corpus does not establish that Lima is emptying because it is aging.",
         "It does not establish that the county's population decline was caused by its manufacturing decline."
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "period/lima-oil-boom.yml",
@@ -8353,6 +8448,14 @@
         },
         {
           "text": "Two railroads reached it because two railroads chose to cross there, in 1854 and 1858, and the canal towns fifteen miles west did not get a crossing. [verified] — [the first railroad](../event/the-first-railroad-reaches-allen-county.yml). By 1906 the city was \"one of the five great trunk lines, which center in this city\", with two shops employing more than five hundred men each and ten fast passenger trains a day on one road alone. [verified] — same source. No passenger train has called at any crossing in this county in the current inventory. [verified] — [the network now](../measure/allen-county-railroads-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A person born in one of its census tracts could expect about five fewer years than one born elsewhere in this county.** The thirteen tracts whose centres fall inside the city have a median life expectancy of 72.7 years against 79.0 for the fifteen outside, and the highest Lima tract, 78.2, sits below all but one of them. [inference] — [life expectancy by tract](../measure/allen-county-life-expectancy-2010-2015.yml), from NCHS estimates for 2010–2015 built on death certificates.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What CDC estimates separates the city from its county in material conditions rather than in disease.** Of forty measures, thirteen differ by more than their confidence limits allow, and the largest are food stamps, food insecurity, tooth loss, housing insecurity and the threat of a utility shut-off. No chronic-disease gap clears at all. [verified] — [the health estimates](../measure/allen-county-health-2023.yml). Those figures are a model's and not a count of anyone here, and the model's own inputs include the income and poverty data this node cites above — so they may not be used to explain one by the other. See [a modelled estimate is not an observation](../../decisions/a-modelled-estimate-is-not-an-observation.yml).",
           "tier": "verified"
         },
         {
@@ -12074,6 +12177,20 @@
       "source": "catalog/openelections-ohio.md"
     },
     {
+      "from": "measure/allen-county-health-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cdc-places.md"
+    },
+    {
+      "from": "measure/allen-county-health-2023.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cdc-places.md"
+    },
+    {
       "from": "measure/allen-county-health-care-employment-2010-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -12205,6 +12322,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/hmda-loan-application-register.md"
+    },
+    {
+      "from": "measure/allen-county-life-expectancy-2010-2015.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nchs-usaleep.md"
+    },
+    {
+      "from": "measure/allen-county-life-expectancy-2010-2015.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-livestock-2002-2022.yml",
