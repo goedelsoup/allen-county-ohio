@@ -10,8 +10,8 @@ succession has a hole in it or whether two figures describe the same ground.
 
 - **succession-audit** — reads an `office` and its `tenure` nodes; reports gaps and
   overlaps in the line of holders
-- **boundary-comparability** — reads a `measure`, the `place` it describes, and the
-  annexation and erection `event` nodes between two dates; reports whether two figures
+- **boundary-comparability** — reads a `measure`, the `place` it describes, the annexation
+  record and any erection `event` nodes between two dates; reports whether two figures
   describe the same ground
 - **jurisdiction-at** — given a `place` and a date, returns every `jurisdiction` and
   `division` that covered it then
