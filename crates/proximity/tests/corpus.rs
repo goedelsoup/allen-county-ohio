@@ -27,12 +27,16 @@ fn at(ps: &[proximity::Point], node: &str) -> (f64, f64) {
 fn every_coordinate_in_the_corpus_parses_and_lands_in_ohio() {
     let ps = points();
     assert!(ps.len() >= 11, "8 places and 4 sites, at least");
-    // Seven located sites. Four are works: the refinery, the tank plant and the Ford engine
-    // plant, of which three are outside every municipality, plus the courthouse. The other three
-    // are places of confinement, and they arrived from a file that gives a coordinate for a
-    // reason the other sources do not — the Census Bureau's landmark file publishes an internal
-    // point per feature, which is what let two of them be matched to a census block exactly.
-    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 7);
+    // Eight located sites. Four are works: the refinery, the tank plant and the Ford engine
+    // plant, of which three are outside every municipality, plus the courthouse. Three more are
+    // places of confinement, and they arrived from a file that gives a coordinate for a reason
+    // the other sources do not — the Census Bureau's landmark file publishes an internal point
+    // per feature, which is what let two of them be matched to a census block exactly.
+    //
+    // The eighth is Fort Amanda, and it is the only one whose coordinate lands outside Allen
+    // County: 40.6830556, -84.27, which is in Ohio and 990 feet into Auglaize County. This test
+    // asks for Ohio and not for this county, and the distinction was theoretical until now.
+    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 8);
     for p in &ps {
         assert!((38.3..=42.4).contains(&p.lat), "{}: {}", p.node, p.lat);
         assert!((-85.0..=-80.4).contains(&p.lon), "{}: {}", p.node, p.lon);
