@@ -143,6 +143,7 @@ Sorted by: kind, then alphabetically.
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
 | [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 8v / 2i / 3o | 75 |
+| [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 5v / 4i / 2o | 91 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
 | [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 4v / 3i / 1o | 60 |
@@ -178,7 +179,7 @@ Sorted by: kind, then alphabetically.
 | [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 2v / 2i / 1o | 37 |
 | [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
 | [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
-| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 6v / 2i / 2o | 55 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 7v / 3i / 2o | 71 |
 | [member-of-lima-city-council.yml](office/member-of-lima-city-council.yml) | office | Member of Lima City Council | 2 | 3v / 0i / 1o | 33 |
 | [member-of-the-ohio-house-for-district-78.yml](office/member-of-the-ohio-house-for-district-78.yml) | office | Member of the Ohio House of Representatives, 78th District | 2 | 2v / 1i / 1o | 31 |
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
@@ -210,7 +211,7 @@ Sorted by: kind, then alphabetically.
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
 | [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 1v / 2i / 1o | 22 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 8v / 4i / 2o | 78 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 9v / 5i / 2o | 86 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
 | [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
@@ -230,6 +231,8 @@ Sorted by: kind, then alphabetically.
 | [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 22 |
 | [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 18 |
 | [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 18 |
+| [george-w-overmyer.yml](person/george-w-overmyer.yml) | person | George W. Overmyer | 2 | 5v / 1i / 1o | 40 |
+| [h-s-prophet.yml](person/h-s-prophet.yml) | person | H. S. Prophet | 2 | 3v / 1i / 1o | 37 |
 | [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
 | [henry-d-v-williams.yml](person/henry-d-v-williams.yml) | person | Henry D. V. Williams | 2 | 3v / 1i / 1o | 36 |
 | [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 20 |
@@ -268,6 +271,8 @@ Sorted by: kind, then alphabetically.
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
 | [randall-s-bartels.yml](person/randall-s-bartels.yml) | person | Randall S. Bartels | 2 | 2v / 1i / 1o | 21 |
+| [richard-metheany.yml](person/richard-metheany.yml) | person | Richard Metheany | 2 | 3v / 1i / 1o | 39 |
+| [samuel-a-baxter.yml](person/samuel-a-baxter.yml) | person | Samuel A. Baxter | 2 | 3v / 3i / 1o | 43 |
 | [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
 | [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
 | [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
@@ -301,7 +306,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 37v / 9i / 1o | 251 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 38v / 9i / 1o | 258 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
@@ -358,7 +363,12 @@ Sorted by: kind, then alphabetically.
 | [lima-council-president-2024-jamie-lamar-dixon-jr.yml](tenure/lima-council-president-2024-jamie-lamar-dixon-jr.yml) | tenure | Jamie Lamar Dixon Jr., President of Lima City Council, term of 2024–2028 | 3 | 2v / 1i / 1o | 27 |
 | [lima-law-2026-anthony-layton-geiger.yml](tenure/lima-law-2026-anthony-layton-geiger.yml) | tenure | Anthony Layton Geiger, Director of Law of the City of Lima, term of 2026–2029 | 3 | 2v / 1i / 1o | 27 |
 | [lima-municipal-clerk-2022-james-g-link.yml](tenure/lima-municipal-clerk-2022-james-g-link.yml) | tenure | James G. Link, Clerk of the Lima Municipal Court, term of 2022–2027 | 3 | 2v / 1i / 1o | 27 |
-| [mayor-1842-henry-d-v-williams.yml](tenure/mayor-1842-henry-d-v-williams.yml) | tenure | Henry D. V. Williams, Mayor of Lima, from 1842 | 3 | 3v / 1i / 1o | 35 |
+| [mayor-1842-henry-d-v-williams.yml](tenure/mayor-1842-henry-d-v-williams.yml) | tenure | Henry D. V. Williams, Mayor of Lima, from 1842 | 3 | 4v / 1i / 0o | 35 |
+| [mayor-1851-samuel-a-baxter.yml](tenure/mayor-1851-samuel-a-baxter.yml) | tenure | Samuel A. Baxter, Mayor of Lima, 1851-1853 | 3 | 1v / 1i / 0o | 32 |
+| [mayor-1854-samuel-a-baxter.yml](tenure/mayor-1854-samuel-a-baxter.yml) | tenure | Samuel A. Baxter, Mayor of Lima, 1854-1856 | 3 | 2v / 1i / 0o | 30 |
+| [mayor-1869-george-w-overmyer.yml](tenure/mayor-1869-george-w-overmyer.yml) | tenure | George W. Overmyer, Mayor of Lima, 1869-1870 | 3 | 2v / 1i / 0o | 30 |
+| [mayor-1870-richard-metheany.yml](tenure/mayor-1870-richard-metheany.yml) | tenure | Richard Metheany, Mayor of Lima, 1870-1874 | 3 | 2v / 1i / 0o | 30 |
+| [mayor-1882-h-s-prophet.yml](tenure/mayor-1882-h-s-prophet.yml) | tenure | H. S. Prophet, Mayor of Lima, 1882-1884 | 3 | 3v / 0i / 0o | 31 |
 | [mayor-2025-sharetta-t-smith.yml](tenure/mayor-2025-sharetta-t-smith.yml) | tenure | Sharetta T. Smith, Mayor of Lima, term of 2025–2029 | 3 | 3v / 2i / 0o | 35 |
 | [municipal-2022-tammie-k-hursh.yml](tenure/municipal-2022-tammie-k-hursh.yml) | tenure | Tammie K. Hursh, Judge of the Lima Municipal Court, term of 2022–2027 | 3 | 1v / 2i / 0o | 27 |
 | [municipal-2024-john-richard-payne.yml](tenure/municipal-2024-john-richard-payne.yml) | tenure | John Richard Payne, Judge of the Lima Municipal Court, term of 2024–2029 | 3 | 1v / 2i / 0o | 27 |
