@@ -1,0 +1,41 @@
+---
+// The one sanctioned way to draw an icon.
+//
+// The glyph is inlined and painted with `currentColor`, so an icon takes the ink of whatever
+// it sits in and no caller ever sets a stroke. Stroke width is the design system's 1.5,
+// which is what keeps the line work from competing with letterpress type.
+
+import { GLYPHS } from '../../lib/icons'
+
+interface Props {
+  name: string
+  /** The system's sizes: 13, 16, 18, 22, 28. */
+  size?: number
+  class?: string
+}
+
+const { name, size = 16, class: className } = Astro.props
+const glyph = GLYPHS[name]
+if (!glyph) throw new Error(`no glyph "${name}" — add it to lib/icons.ts from the design system`)
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  set:html={glyph}
+/>
+
+<style>
+  svg {
+    flex: 0 0 auto;
+    display: block;
+  }
+</style>

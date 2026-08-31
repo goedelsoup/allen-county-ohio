@@ -1,0 +1,119 @@
+---
+// A period has bounds and a character, and is what other things are situated in.
+//
+// The bounds are an interpretation rather than a decree, so the entry shows the
+// span against its neighbours: where two periods abut, the shared edge is the
+// one most likely to be argued about, and the `precedes` edges are what say
+// which spans touch.
+
+import SpanBar from '../SpanBar.astro'
+import { entryPath, year } from '../../../lib/entry'
+import { edges, nodes, type Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+
+const periods = nodes.filter((n) => n.class === 'period')
+const bounds = periods
+  .flatMap((p) => [year(p.properties.began ?? ''), year(p.properties.ended ?? '')])
+  .filter((y): y is number => y !== null)
+
+const min = bounds.length > 0 ? Math.min(...bounds) : null
+const max = bounds.length > 0 ? Math.max(...bounds) : null
+const start = year(node.properties.began ?? '')
+const end = year(node.properties.ended ?? '')
+
+const follows = edges
+  .filter((e) => e.relationship === 'precedes' && e.to === node.id)
+  .map((e) => nodes.find((n) => n.id === e.from))
+  .filter((n): n is Node => Boolean(n))
+
+const precedes = edges
+  .filter((e) => e.relationship === 'precedes' && e.from === node.id)
+  .map((e) => nodes.find((n) => n.id === e.to))
+  .filter((n): n is Node => Boolean(n))
+
+const neighbours = [
+  ...follows.map((n) => ({ node: n, side: 'Preceded by' })),
+  ...precedes.map((n) => ({ node: n, side: 'Precedes' })),
+]
+---
+
+{
+  min !== null && max !== null && max > min && start !== null && (
+    <SpanBar
+      min={min}
+      max={max}
+      start={start}
+      end={end}
+      leftLabel={String(min)}
+      rightLabel={String(max)}
+      openLabel="No close recorded"
+      note="This span against every period the corpus draws. Where two abut, the shared edge is the one under argument."
+    />
+  )
+}
+
+{
+  neighbours.length > 0 && (
+    <>
+      <h2 class="section">Where the span touches</h2>
+      <ul class="neighbours">
+        {neighbours.map(({ node: n, side }) => (
+          <li>
+            <span class="side eyebrow">{side}</span>
+            <span class="body">
+              <a href={entryPath(n.id)}>{n.label}</a>
+              <span class="dates">
+                {n.properties.began ?? '—'}
+                {n.properties.ended ? `–${n.properties.ended}` : '–'}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+}
+
+<style>
+  .section {
+    margin: var(--space-9) 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+  .neighbours {
+    list-style: none;
+    margin: var(--space-5) 0 var(--space-9);
+    padding: 0;
+    border-bottom: 1px solid var(--ink-300);
+  }
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+  }
+  li:first-child {
+    border-top: 1px solid var(--ink-300);
+  }
+  .side {
+    width: 104px;
+    flex: 0 0 auto;
+  }
+  .body {
+    flex: 1;
+    font: var(--weight-regular) var(--size-body-s) / 1.4 var(--font-serif);
+  }
+  .dates {
+    display: block;
+    margin-top: 2px;
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    color: var(--text-faint);
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+// What the corpus declines to say, printed rather than routed around.
+//
+// A refusal is the corpus answering a question with the fact that it cannot answer it. The
+// publication rules require it be carried rather than dropped, and the design already has
+// the right form for it: the framed callout a question uses for what would close it.
+
+interface Props {
+  refusals: string[]
+  wouldClose?: string
+}
+
+const { refusals, wouldClose } = Astro.props
+---
+
+{
+  (refusals.length > 0 || wouldClose) && (
+    <aside class="refusal">
+      <span class="refusal-label">{wouldClose ? 'What would close this' : 'What this entry does not say'}</span>
+      {refusals.map((text) => (
+        <p class="refusal-text">{text}</p>
+      ))}
+      {wouldClose && <p class="refusal-close">{wouldClose}</p>}
+    </aside>
+  )
+}
+
+<style>
+  .refusal {
+    display: flow-root;
+    clear: right;
+    margin: var(--space-8) 0;
+    padding: var(--pad-panel) var(--space-8);
+    background-color: var(--surface-card);
+    background-image: var(--wash-foxing);
+    border: 1px solid var(--ink-300);
+    border-top: 3px solid var(--rubric-500);
+    box-shadow: var(--shadow-card);
+  }
+  .refusal-label {
+    font-family: var(--font-smallcaps);
+    font-size: var(--size-micro);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--rubric-500);
+  }
+  .refusal-text {
+    margin: var(--space-4) 0 0;
+    font: var(--weight-regular) var(--size-subhead) / 1.55 var(--font-serif);
+    color: var(--text-strong);
+  }
+  .refusal-close {
+    margin: var(--space-4) 0 0;
+    font: var(--weight-regular) var(--size-body-s) / 1.55 var(--font-serif);
+    color: var(--text-muted);
+  }
+  .refusal-text + .refusal-close {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule-hairline);
+  }
+</style>

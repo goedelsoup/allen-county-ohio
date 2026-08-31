@@ -1,0 +1,60 @@
+---
+// What is known about the record itself, as distinct from what it says.
+
+import type { Node } from '../../lib/feeds'
+
+interface Props {
+  node: Node
+  relations: number
+  sources: number
+}
+
+const { node, relations, sources } = Astro.props
+
+const rows: Array<{ label: string; value: string; tone?: 'disputed' }> = [
+  { label: 'Claim tag', value: node.tier },
+  { label: 'Relations', value: String(relations) },
+  { label: 'Sources', value: String(sources) },
+  { label: 'Paragraphs', value: String(node.blocks.length) },
+]
+
+// Withholding is the publication rule doing its work, so the count is printed rather than
+// quietly omitted: a reader can see that the page is shorter than the node.
+if (node.withheld > 0) {
+  rows.push({ label: 'Withheld', value: `${node.withheld} by the rule`, tone: 'disputed' })
+}
+if (node.refusals.length > 0) {
+  rows.push({ label: 'Refusals', value: String(node.refusals.length), tone: 'disputed' })
+}
+---
+
+<dl class="status">
+  {
+    rows.map((row) => (
+      <>
+        <dt>{row.label}</dt>
+        <dd class:list={[row.tone]}>{row.value}</dd>
+      </>
+    ))
+  }
+</dl>
+
+<style>
+  .status {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3) var(--space-5);
+    margin: 0;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-muted);
+  }
+  dd {
+    margin: 0;
+    text-align: right;
+    color: var(--text-body);
+  }
+  .disputed {
+    color: var(--status-disputed);
+  }
+</style>

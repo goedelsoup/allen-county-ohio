@@ -1,0 +1,400 @@
+---
+// One entry, for any class.
+//
+// The apparatus is the same everywhere because the corpus gives every node the
+// same shape: tagged paragraphs, structured properties, edges that are claims in
+// their own right, and whatever the publication rule withheld. What changes by
+// class is the furniture — and each board's furniture is the argument its class
+// exists to make, so it is built where the feed supports it and left out, named,
+// where it does not.
+
+import Base from '../../layouts/Base.astro'
+import Badge from '../../components/entry/Badge.astro'
+import Breadcrumb from '../../components/entry/Breadcrumb.astro'
+import Card from '../../components/entry/Card.astro'
+import Icon from '../../components/entry/Icon.astro'
+import KeyList from '../../components/entry/KeyList.astro'
+import Locator from '../../components/entry/Locator.astro'
+import PropertiesGrid from '../../components/entry/PropertiesGrid.astro'
+import RecordStatus from '../../components/entry/RecordStatus.astro'
+import Refusals from '../../components/entry/Refusals.astro'
+import RelationsList from '../../components/entry/RelationsList.astro'
+import SourcesList from '../../components/entry/SourcesList.astro'
+import TierBadge from '../../components/TierBadge.astro'
+import EventBlock from '../../components/entry/class/EventBlock.astro'
+import MeasureBlock from '../../components/entry/class/MeasureBlock.astro'
+import OfficeBlock from '../../components/entry/class/OfficeBlock.astro'
+import PeriodBlock from '../../components/entry/class/PeriodBlock.astro'
+import PersonBlock from '../../components/entry/class/PersonBlock.astro'
+import QuestionBlock from '../../components/entry/class/QuestionBlock.astro'
+import TenureBlock from '../../components/entry/class/TenureBlock.astro'
+import { nodes, type Node } from '../../lib/feeds'
+import {
+  aliasesFor,
+  className,
+  entryPath,
+  entrySlug,
+  glyphFor,
+  keysFor,
+  parseCoords,
+  pluralFor,
+  relationsFor,
+  resolveCorpusLink,
+  sourcesFor,
+} from '../../lib/entry'
+import { inline } from '../../lib/prose'
+
+export function getStaticPaths() {
+  return nodes.map((node) => ({ params: { id: entrySlug(node.id) }, props: { node } }))
+}
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+
+const relations = relationsFor(node.id)
+const sources = sourcesFor(node)
+const keys = keysFor(node)
+const aliases = aliasesFor(node)
+const [lede, ...body] = node.blocks
+
+// Coordinates live under a different key in each class that has them.
+const coords =
+  parseCoords(node.properties.centroid) ??
+  parseCoords(node.properties.coordinates) ??
+  parseCoords(node.properties.source)
+const mouth = parseCoords(node.properties.mouth)
+
+// The dateline is whatever this class uses to place itself in time. The corpus
+// does not agree on one key, so the first of these that the node carries shows.
+const DATE_KEYS = ['began', 'ended', 'as_of', 'opened', 'closed', 'effective_from', 'established',
+  'erected', 'founded', 'built', 'occurred', 'occurred_through', 'status', 'place_type',
+  'feature_type', 'site_type', 'division_type', 'jurisdiction_type', 'org_type', 'office_type',
+  'event_type', 'occupation']
+const dateline = DATE_KEYS.filter((k) => node.properties[k])
+  .slice(0, 4)
+  .map((k) => node.properties[k])
+
+const crumbs = [
+  { label: 'Allen County', href: '/' },
+  { label: pluralFor(node.class), href: `/entry#${node.class}` },
+  { label: node.label },
+]
+---
+
+<Base title={node.label} lede={lede ? lede.text.slice(0, 180) : undefined} bare>
+  <div class="entry-top">
+    <Breadcrumb items={crumbs} />
+    <a class="back" href={`/entry#${node.class}`}>
+      <Icon name="chevron-left" size={13} />
+      Back to {pluralFor(node.class).toLowerCase()}
+    </a>
+  </div>
+
+  <div class="entry">
+    <article>
+      <div class="eyebrow-row">
+        <Icon name={glyphFor(node.class)} size={16} />
+        <span class="eyebrow">{className(node.class)}</span>
+      </div>
+
+      <h1>{node.label}</h1>
+
+      {
+        node.class === 'measure' ? (
+          <MeasureBlock node={node} />
+        ) : (
+          <div class="dateline">
+            {node.class === 'event' && node.properties.occurred && (
+              <span class="date-chip">{node.properties.occurred}</span>
+            )}
+            <span class="dateline-data">
+              {dateline.length > 0 ? dateline.join(' · ') : node.id}
+            </span>
+            <Badge tier={node.tier} />
+          </div>
+        )
+      }
+
+      {lede && <p class="lede" set:html={inline(lede.text, resolveCorpusLink)} />}
+
+      <Refusals refusals={node.refusals} wouldClose={node.properties.would_close_this} />
+
+      {node.class === 'tenure' && <TenureBlock node={node} />}
+      {node.class === 'office' && <OfficeBlock node={node} />}
+      {node.class === 'person' && <PersonBlock node={node} />}
+      {node.class === 'question' && <QuestionBlock node={node} concerns={relations.length} />}
+      {node.class === 'event' && <EventBlock node={node} />}
+      {node.class === 'period' && <PeriodBlock node={node} />}
+
+      {
+        body.length > 0 && (
+          <div class="prose">
+            {body.map((block, i) => (
+              <div class="claim">
+                <p class:list={[i === 0 && 'drop']} set:html={inline(block.text, resolveCorpusLink)} />
+                <TierBadge tier={block.tier} />
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      {
+        Object.keys(node.properties).length > 0 && (
+          <>
+            <h2 class="section">Properties</h2>
+            <PropertiesGrid properties={node.properties} />
+          </>
+        )
+      }
+
+      {
+        relations.length > 0 && (
+          <>
+            <h2 class="section">Relations</h2>
+            <RelationsList relations={relations} />
+          </>
+        )
+      }
+
+      {
+        sources.length > 0 && (
+          <>
+            <h2 class="section">Sources</h2>
+            <SourcesList sources={sources} />
+          </>
+        )
+      }
+    </article>
+
+    <aside>
+      {
+        coords && (
+          <Card label="On the map" meta={mouth ? 'source' : undefined}>
+            <Locator lat={coords.lat} lon={coords.lon} />
+          </Card>
+        )
+      }
+
+      {
+        mouth && (
+          <Card variant="flat" label="Mouth">
+            <Locator lat={mouth.lat} lon={mouth.lon} />
+          </Card>
+        )
+      }
+
+      {
+        keys.length > 0 && (
+          <Card label="External keys" meta={String(keys.length)}>
+            <KeyList keys={keys} />
+            <p class="key-note">
+              Keys into other people’s systems, and not interchangeable: a GNIS id names the
+              ground, a GEOID keys the incorporated place.
+            </p>
+          </Card>
+        )
+      }
+
+      {
+        aliases.length > 0 && (
+          <Card variant="flat" label="Also known as" meta={String(aliases.length)}>
+            <ul class="aliases">
+              {aliases.map((alias) => (
+                <li>{alias}</li>
+              ))}
+            </ul>
+          </Card>
+        )
+      }
+
+      <Card label="Record status" meta={node.class}>
+        <RecordStatus node={node} relations={relations.length} sources={sources.length} />
+      </Card>
+
+      {
+        relations.length > 0 && (
+          <Card variant="flat" label="Reached from here">
+            <ul class="near">
+              {relations
+                .filter((r) => r.other)
+                .slice(0, 6)
+                .map((r) => (
+                  <li>
+                    <a href={entryPath(r.other!.id)}>{r.other!.label}</a>
+                    <span class="near-meta">{r.edge.relationship}</span>
+                  </li>
+                ))}
+            </ul>
+          </Card>
+        )
+      }
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .entry-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-left: auto;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-smallcaps);
+    font-size: var(--size-label);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .back:hover {
+    color: var(--text-link-hover);
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 316px;
+    gap: var(--space-11);
+    align-items: start;
+  }
+
+  .eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: var(--ink-400);
+  }
+  h1 {
+    margin: var(--space-4) 0 0;
+    font: var(--weight-regular) var(--size-display-m) / 1.06 var(--font-display);
+    color: var(--text-strong);
+  }
+  .dateline {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
+    padding-bottom: var(--space-5);
+    border-bottom: 3px double var(--ink-300);
+  }
+  /* An event's date is the entry's whole subject, so it is set on ink. */
+  .date-chip {
+    flex: 0 0 auto;
+    padding: 3px var(--space-3);
+    background: var(--surface-ink);
+    color: var(--parchment-50);
+    font: var(--type-data);
+    font-size: var(--size-label);
+  }
+  .dateline-data {
+    flex: 1;
+    min-width: 0;
+    font: var(--type-data);
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+  }
+
+  .lede {
+    max-width: var(--measure-prose);
+    margin: var(--space-7) 0 0;
+    padding-left: var(--space-6);
+    border-left: 2px solid var(--rubric-300);
+    font: var(--weight-regular) 20px / 1.5 var(--font-serif);
+    color: var(--text-strong);
+  }
+
+  .prose {
+    max-width: var(--measure-prose);
+    margin-top: var(--space-8);
+  }
+  .claim {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-bottom: var(--space-6);
+  }
+  .claim p {
+    margin: 0;
+    font: var(--type-prose);
+    color: var(--text-body);
+  }
+  /* The design opens the body with a rubric drop cap, as a printed entry would. */
+  .claim p.drop::first-letter {
+    float: left;
+    padding: 6px 10px 0 0;
+    font-family: var(--font-display);
+    font-size: 66px;
+    line-height: 0.78;
+    color: var(--rubric-500);
+  }
+
+  .section {
+    margin: var(--space-9) 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    position: sticky;
+    top: var(--space-7);
+  }
+  .key-note {
+    margin: var(--space-4) 0 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule-hairline);
+    font: var(--weight-regular) var(--size-body-s) / 1.45 var(--font-serif);
+    color: var(--text-muted);
+  }
+  .aliases {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font: var(--weight-regular) var(--size-body-s) / 1.6 var(--font-serif);
+    color: var(--text-body);
+  }
+  .near {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .near li {
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+  }
+  .near li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .near a {
+    font: var(--weight-regular) var(--size-body-s) / 1.4 var(--font-serif);
+  }
+  .near-meta {
+    display: block;
+    margin-top: 2px;
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    color: var(--text-faint);
+  }
+
+  @media (width < 62rem) {
+    .entry {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-9);
+    }
+    aside {
+      position: static;
+    }
+  }
+</style>

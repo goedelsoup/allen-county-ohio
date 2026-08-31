@@ -1,0 +1,49 @@
+---
+// An office is a role: contingent and relational, played by a person for a time.
+//
+// Holdings are dated relations rather than properties of the seat, so the office
+// lists them and does not sum them. Where one person appears twice, that is two
+// holdings and one person, which the table shows without comment.
+
+import HoldingsTable from '../HoldingsTable.astro'
+import { holdingsFor } from '../../../lib/entry'
+import type { Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+const holdings = holdingsFor(node, 'holders')
+
+const people = new Set(holdings.map((h) => h.person?.id).filter(Boolean))
+const repeat = holdings.length - people.size
+---
+
+{
+  holdings.length > 0 && (
+    <>
+      <h2 class="section">Holders</h2>
+      <p class="count">
+        {holdings.length} {holdings.length === 1 ? 'holding' : 'holdings'} recorded, {people.size}
+        {people.size === 1 ? ' person' : ' persons'}
+        {repeat > 0 && ` — ${repeat} ${repeat === 1 ? 'is a return' : 'are returns'} to the seat.`}
+      </p>
+      <HoldingsTable holdings={holdings} view="holders" />
+    </>
+  )
+}
+
+<style>
+  .section {
+    margin: var(--space-9) 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+  .count {
+    margin: var(--space-4) 0 0;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+</style>

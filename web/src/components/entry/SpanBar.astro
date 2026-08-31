@@ -1,0 +1,125 @@
+---
+// One interval drawn against a wider one.
+//
+// Four of the boards want the same picture and mean different things by it: a
+// tenure against the life of its seat, a question against the time it has stood
+// open, an event as a tick inside the period it opens, a period against its
+// neighbours. The difference is what the ends mean, so the ends are what the
+// caller supplies — and an interval that has not ended is drawn with an open,
+// dashed mark rather than simply running to the edge, because "still going" and
+// "ends here" must not look alike.
+
+interface Props {
+  min: number
+  max: number
+  start: number
+  /** Absent means the interval has not closed. */
+  end?: number | null
+  /** A fainter interval behind the run — the period an event sits in. */
+  band?: { start: number; end: number }
+  leftLabel: string
+  rightLabel: string
+  openLabel?: string
+  note?: string
+}
+
+const { min, max, start, end = null, band, leftLabel, rightLabel, openLabel, note } = Astro.props
+
+const span = max - min
+const pct = (value: number) => (span > 0 ? ((value - min) / span) * 100 : 0)
+
+const runLeft = pct(start)
+// An open interval stops short of the edge. Running it to the end of the scale
+// would draw "still going" exactly like "ends here", which is the one
+// distinction this bar exists to keep.
+const runRight = end === null ? Math.min(pct(max), 78) : pct(end)
+const runWidth = Math.max(runRight - runLeft, 0.8)
+---
+
+<div class="span">
+  <div class="track">
+    {
+      band && (
+        <span
+          class="band"
+          style={`left:${pct(band.start)}%;width:${Math.max(pct(band.end) - pct(band.start), 0.8)}%`}
+        />
+      )
+    }
+    <span class:list={['run', end === null && 'run-open']} style={`left:${runLeft}%;width:${runWidth}%`} />
+    <span class="tick" style={`left:${runLeft}%`} />
+    {end !== null && <span class="tick" style={`left:${runRight}%`} />}
+    {end === null && <span class="unclosed" style={`left:${runRight}%`} />}
+  </div>
+  <div class="scale">
+    <span>{leftLabel}</span>
+    <span class:list={[end === null && 'open-end']}>{end === null ? (openLabel ?? rightLabel) : rightLabel}</span>
+  </div>
+  {note && <p class="note">{note}</p>}
+</div>
+
+<style>
+  .span {
+    margin: var(--space-7) 0 var(--space-8);
+  }
+  .track {
+    position: relative;
+    height: 20px;
+  }
+  .track::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 7px;
+    height: 6px;
+    background: var(--parchment-300);
+  }
+  .band {
+    position: absolute;
+    top: 4px;
+    height: 12px;
+    background: var(--rubric-500);
+    opacity: 0.18;
+  }
+  .run {
+    position: absolute;
+    top: 7px;
+    height: 6px;
+    background: var(--rubric-500);
+  }
+  .run-open {
+    opacity: 0.35;
+  }
+  .tick {
+    position: absolute;
+    top: 0;
+    width: 3px;
+    height: 20px;
+    background: var(--rubric-700);
+  }
+  /* Dashed and unfilled: the end has not happened, as against not being known. */
+  .unclosed {
+    position: absolute;
+    top: 4px;
+    width: 11px;
+    height: 11px;
+    border: 1.5px dashed var(--ochre-500);
+  }
+  .scale {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-5);
+    margin-top: var(--space-2);
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    color: var(--text-faint);
+  }
+  .open-end {
+    color: var(--ochre-500);
+  }
+  .note {
+    margin: var(--space-3) 0 0;
+    font: var(--weight-regular) var(--size-body-s) / 1.5 var(--font-serif);
+    color: var(--text-muted);
+  }
+</style>

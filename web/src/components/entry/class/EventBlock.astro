@@ -1,0 +1,59 @@
+---
+// An event is a thing that occurred: a date, a place, participants.
+//
+// The atlas builds its temporal spine from happenings rather than from dates
+// hung on things that persist, so the event is drawn as a tick — and where it
+// sits inside a period the corpus names, that span is shaded behind it. The
+// tick is the event; the band is what it is situated in.
+
+import SpanBar from '../SpanBar.astro'
+import { year } from '../../../lib/entry'
+import { edges, nodes, type Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+
+const occurred = year(node.properties.occurred ?? '')
+const through = year(node.properties.occurred_through ?? '')
+
+// The period this happening is situated in, where an edge says so.
+const periodEdge = edges
+  .filter((e) => e.from === node.id)
+  .map((e) => nodes.find((n) => n.id === e.to))
+  .find((n) => n?.class === 'period')
+
+const bandStart = year(periodEdge?.properties.began ?? '')
+const bandEnd = year(periodEdge?.properties.ended ?? '')
+const band = bandStart !== null && bandEnd !== null ? { start: bandStart, end: bandEnd } : undefined
+
+// The spine runs across the corpus's own dated events, so one event's place on
+// it is measured against the others rather than against an arbitrary century.
+const eventYears = nodes
+  .filter((n) => n.class === 'event')
+  .map((n) => year(n.properties.occurred ?? ''))
+  .filter((y): y is number => y !== null)
+const min = Math.min(...eventYears, band?.start ?? Infinity)
+const max = Math.max(...eventYears, band?.end ?? -Infinity)
+---
+
+{
+  occurred !== null && max > min && (
+    <SpanBar
+      min={min}
+      max={max}
+      start={occurred}
+      end={through ?? occurred}
+      band={band}
+      leftLabel={String(min)}
+      rightLabel={String(max)}
+      note={
+        periodEdge
+          ? `The tick is the event; the band is ${periodEdge.label}, the span it is situated in.`
+          : 'The tick is the event, against the corpus’s other dated happenings.'
+      }
+    />
+  )
+}

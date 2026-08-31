@@ -1,0 +1,70 @@
+---
+// The node's structured fields, as the design's two-column register.
+//
+// Short values are mono because they are data; a long one is set in serif because at that
+// length it is a sentence and mono stops being readable. The corpus writes both into the
+// same map, so the split is made here on length rather than declared per field.
+
+import { propertyLabel } from '../../lib/entry'
+
+interface Props {
+  properties: Record<string, string>
+}
+
+const { properties } = Astro.props
+const entries = Object.entries(properties)
+---
+
+{
+  entries.length > 0 && (
+    <dl class="properties">
+      {entries.map(([key, value]) => (
+        <>
+          <dt class="eyebrow">{propertyLabel(key)}</dt>
+          <dd class:list={[value.length > 80 ? 'prose' : 'datum']}>{value}</dd>
+        </>
+      ))}
+    </dl>
+  )
+}
+
+<style>
+  .properties {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    margin: var(--space-5) 0 var(--space-9);
+    border-top: 1px solid var(--ink-300);
+    border-bottom: 1px solid var(--ink-300);
+  }
+  dt {
+    padding: var(--space-4) var(--space-5) var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+  }
+  dd {
+    margin: 0;
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+    color: var(--text-body);
+    overflow-wrap: anywhere;
+  }
+  .datum {
+    font: var(--type-data);
+  }
+  .prose {
+    font: var(--weight-regular) var(--size-body-s) / 1.55 var(--font-serif);
+  }
+
+  @media (width < 34rem) {
+    .properties {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    dt {
+      padding-bottom: 0;
+      border-top: 1px solid var(--rule-hairline);
+    }
+    dd {
+      border-top: 0;
+      padding-top: var(--space-2);
+    }
+  }
+</style>
