@@ -1701,13 +1701,18 @@ mod tests {
         // list they inherited nothing, so a cited block ending "[verified] — same page" went
         // out with a provenance badge and no provenance in it.
         for phrase in ["same source", "same page", "same archive", "same dispatch"] {
-            assert!(back_reference(&format!("A fact. [verified] — {phrase}.")), "{phrase}");
+            assert!(
+                back_reference(&format!("A fact. [verified] — {phrase}.")),
+                "{phrase}"
+            );
         }
     }
 
     #[test]
     fn an_argument_that_merely_says_same_inherits_nothing() {
-        assert!(!back_reference("The same reasoning applies to the townships."));
+        assert!(!back_reference(
+            "The same reasoning applies to the townships."
+        ));
         assert!(!back_reference("Two scans of the same edition."));
     }
 
