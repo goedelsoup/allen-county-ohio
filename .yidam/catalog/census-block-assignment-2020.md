@@ -15,6 +15,7 @@ used-by:
   - ../corpus/division/ohio-congressional-district-4-2020.yml
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-senate-district-12-2020.yml
+  - ../corpus/division/voting-district-lima-1a-2020.yml
   - ../corpus/jurisdiction/allen-east-local-school-district.yml
   - ../corpus/jurisdiction/bath-local-school-district.yml
   - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
@@ -27,7 +28,12 @@ used-by:
   - ../corpus/jurisdiction/perry-local-school-district.yml
   - ../corpus/jurisdiction/shawnee-local-school-district.yml
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/village-of-beaverdam.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
+  - ../corpus/jurisdiction/village-of-elida.yml
+  - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
+  - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-home-lending-2023.yml
   - ../corpus/measure/allen-county-population-2020-census.yml

@@ -54,15 +54,27 @@ used-by:
   - ../corpus/person/brion-e-rhodes.yml
   - ../corpus/person/john-thomas-meyer.yml
   - ../corpus/person/mona-s-losh.yml
+  - ../corpus/place/amanda-township.yml
+  - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bath-township.yml
   - ../corpus/place/beaverdam.yml
   - ../corpus/place/bluffton.yml
   - ../corpus/place/cairo.yml
   - ../corpus/place/delphos.yml
   - ../corpus/place/elida.yml
   - ../corpus/place/harrod.yml
+  - ../corpus/place/jackson-township.yml
   - ../corpus/place/lafayette.yml
   - ../corpus/place/lima.yml
+  - ../corpus/place/marion-township.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/perry-township.yml
+  - ../corpus/place/richland-township.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/spencer-township.yml
   - ../corpus/place/spencerville.yml
+  - ../corpus/place/sugar-creek-township.yml
   - ../corpus/site/miami-and-erie-canal.yml
   - ../corpus/tenure/coroner-2025-john-thomas-meyer.yml
   - ../corpus/tenure/domestic-2023-matt-c-staley.yml
