@@ -1,11 +1,14 @@
 id: upstream-findings
 summary: >-
-  Four findings against the pinned yidam. Two defects in `yidam crates-index` found while
-  writing the first crate, and two gaps in the corpus format found while tagging every edge in
-  the graph. None reported upstream yet.
+  Five findings against the pinned yidam. Two defects in `yidam crates-index` found while
+  writing the first crate, two gaps in the corpus format found while tagging every edge in
+  the graph, and one in what genesis installs, found the first time CI ran on a remote. None
+  reported upstream yet.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
-  repository builds from `.yidam.toml`, and the newest the origin has.
+  repository builds from `.yidam.toml`, and the newest the origin has. Finding 5 was found on
+  2026-08-31 against the same pin, by a different route: the repository acquired a remote and
+  CI ran somewhere other than a developer's machine for the first time.
 
   The directory conventions say a defect in the prelude, CI, CLI or conventions should go
   upstream rather than being worked around locally, because a local workaround is invisible to
@@ -115,6 +118,35 @@ decision: |
   something nobody is willing to act on, and the value of raising the number is only that the
   declared figure stops being fiction.
 
+  **Finding 5 — genesis replaces one workflow and leaves six.**
+
+  `.github/workflows/ci.yml` is installed at genesis and its own header explains the reasoning:
+  yidam's CI builds paths that "do not survive the `vendor:` step, so inheriting that workflow
+  gives you a green build that compiles nothing." The argument is correct and was applied to
+  exactly one file. The template's other six — `docs`, `editor`, `install-channels`,
+  `publish-crates`, `release`, `tap` — were carried into this repository unchanged, and every
+  one references the same layout that does not survive: `yidam/web/docs`, `yidam/cli`,
+  `yidam/editors/vscode`, `yidam/bundle.yiz`, or publishes to `goedelsoup/tap` and
+  `goedelsoup/yidam-vscode`.
+
+  What it cost: nothing for 459 commits, because the repository had no remote and Actions never
+  ran. The first push to a remote turned `main` red — `docs` triggers on every push and pull
+  request and fails resolving `cache-dependency-path: yidam/web/docs/package-lock.json`. The
+  cost is not the failure but where it lands: on the first push a derived repository ever
+  publishes, on `main`, at the moment its history becomes public, and attributable to whatever
+  change happened to be in that push rather than to genesis. Four of the remaining five are
+  latent behind tag namespaces a derived repo will never cut; `install-channels` carries a
+  Monday 07:00 UTC cron and would have failed weekly and silently.
+
+  Upstream the fix is that genesis should remove the template's workflow directory rather than
+  overwrite one file in it — the same reasoning `ci.yml` already documents, carried to the other
+  six. A derived repository cannot discover this by reading, because the workflows are correct
+  YAML referring to paths that were real in the repository they came from.
+
+  **Worked around** by deleting all six, in the commit preceding this one. Nothing to restore on
+  re-vendor: if genesis is fixed they will not arrive again, and if it is not, they will and
+  should be deleted again.
+
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
 
@@ -136,7 +168,15 @@ rationale: |
   costs, which is the sort of report a derived repository is uniquely placed to make and a
   template author is not.
 
+  Finding 5 is the only one of the five a derived repository cannot find by reading its own
+  files. The six workflows are valid YAML naming paths that were real where they came from, so
+  nothing is malformed and no gate objects; they are wrong only in a repository that vendored
+  them. It took a remote and a first public push to surface, which means every derived repo
+  that has not yet acquired one is carrying it undetected — and will meet it at the least
+  convenient moment, when `main` goes red on the commit that published the repository.
+
   What an upstream report should carry, per the conventions: the pin (1162287), what it cost
   here (one bisection of a manifest, one workaround comment, 205 hand-tagged edges and a crate
-  to keep them tagged), and where each workaround is so it can be removed. Filing the issue is
-  an outward-facing action and has not been taken without the elector's say-so.
+  to keep them tagged, and six deleted workflow files), and where each workaround is so it can
+  be removed. Filing the issue is an outward-facing action and has not been taken without the
+  elector's say-so.
