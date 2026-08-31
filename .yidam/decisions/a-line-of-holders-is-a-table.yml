@@ -1,0 +1,70 @@
+id: a-line-of-holders-is-a-table
+summary: >-
+  The 1885 history gives every mayor of Lima from 1842 to 1886. Writing them as nodes would have
+  been twenty-four people and twenty-seven tenures — fifty rows of one table, in a corpus that has
+  already diagnosed itself for exactly that. The line is published as a measure and four of the
+  twenty-four get nodes. This records the test, and the cost, which falls on the succession audit.
+context: |
+  The office node had carried an open for twelve phases: "This corpus has written two of them.
+  Forty tenures is a phase of its own and the source is already on the shelf." The source is on the
+  shelf, the phase came, and the obvious execution was fifty new nodes.
+
+  Against that stands the corpus's own diagnosis in
+  [state-after-nine-phases](state-after-nine-phases.yml): eighty of 174 nodes, 46 per cent, were
+  the sheriff roster — 41 people and 39 tenures, each node one row of one table — and that was
+  named as the reason the base was thin, "not because the roster is wrong, but because a corpus can
+  look large while saying little". Fifty mayoral rows would have taken the corpus to 438 nodes of
+  which a quarter were two rosters.
+
+  And [node-worthiness-is-a-property-of-the-member](node-worthiness-is-a-property-of-the-member.yml)
+  had already settled the test on a different table: *a member earns a node when something about
+  it does not fit the table — a relationship to another node, or a disagreement between sources
+  about it.*
+
+  Applied here the test does real work rather than merely refusing. Four of the twenty-four fail to
+  fit, each for a reason the table cannot hold:
+
+    - **Samuel A. Baxter** — mayor twice and appointed once between, and probably the Dr. Samuel A.
+      Baxter who co-wrote the 1906 county history, which is a catalog source. A relationship to
+      another node, and one the table cannot express.
+    - **George W. Overmyer** — the only mayor in the line no election produced, and later the
+      probate judge on the committee that chose the present courthouse, which this corpus already
+      held without knowing his name.
+    - **Richard Metheany** — trustee, recorder, trustee, trustee, treasurer, mayor, across twenty-
+      six years. He is in the table six times and the table has one column for him.
+    - **H. S. Prophet** — two sources spell him differently and the roster carries two Prophets
+      who are probably one man. A disagreement between sources about the member.
+
+  The other twenty are a name and a pair of years, and a node for each would assert nothing the
+  row does not.
+decision: |
+  **A line of holders is published as a measure. A holder earns a node when something about that
+  holder does not fit the line.**
+
+  - **The table is the primary artifact**, and it is complete: every year, every name, the men who
+    served twice, the resignations. It closes the office's open by publishing the succession, not
+    by promising to write it later.
+  - **Write the member node where the member has an edge the table cannot carry** — to a source, to
+    another office, to an event, to a second node about the same man.
+  - **Write it also where the sources disagree about the member**, because that disagreement is a
+    claim and a claim needs somewhere to live.
+  - **Do not write a node to complete a set.** A line with four of twenty-four written is not
+    incomplete; the line is in the measure.
+rationale: |
+  **The cost is real and falls in one place.** `crates/succession` audits an office's holders for
+  gaps and overlaps, and it reads tenure nodes. A succession published as a table is invisible to
+  it: the Mayor of Lima now has seven tenure nodes spanning 1842 to 2025, and the audit will report
+  that line as almost entirely gap, which it is, and will not see the forty-four years the corpus
+  can actually account for.
+
+  That is the honest trade and it is stated rather than engineered around. The alternative — fifty
+  nodes so that a check can run — is writing data for the benefit of a program rather than a
+  reader, and the program is the corpus's own. If the audit should read tables as well as tenures,
+  that is a change to the audit.
+
+  **What would reopen this.** A second independent source for the same line. The 1885 book is one
+  witness read once for every name in it, and a city directory, a charter history or the council's
+  own minutes would let each holder be checked rather than transcribed — and a disagreement about
+  any of them would make that holder, by this rule, a node.
+status: accepted
+date: "2026-08-31"
