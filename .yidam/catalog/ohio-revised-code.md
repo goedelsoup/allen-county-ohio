@@ -35,6 +35,8 @@ location:
       Board membership in city school districts — three to five members elected at large below
       50,000 population, which is why Lima's board seats five
 used-by:
+  - ../corpus/jurisdiction/allen-county-educational-service-center.yml
+  - ../corpus/jurisdiction/lima-city-school-district.yml
   - ../corpus/jurisdiction/lima-municipal-court.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml

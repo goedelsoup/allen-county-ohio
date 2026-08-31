@@ -53,7 +53,9 @@ used-by:
   - ../corpus/measure/lima-population-2020-census.yml
   - ../corpus/measure/lima-population-2020.yml
   - ../corpus/natural-feature/auglaize-river.yml
+  - ../corpus/organization/bluffton-hospital.yml
   - ../corpus/organization/bluffton-university.yml
+  - ../corpus/organization/institute-for-orthopaedic-surgery.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
@@ -71,6 +73,7 @@ used-by:
   - ../corpus/question/where-the-auglaize-rises.yml
   - ../corpus/question/who-lives-in-the-county-without-housing.yml
   - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/ford-lima-engine-plant.yml
   - ../corpus/site/lima-army-tank-plant.yml
   - ../corpus/site/lima-refinery.yml
 ---
