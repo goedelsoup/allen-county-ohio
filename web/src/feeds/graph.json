@@ -167,7 +167,7 @@
       "id": "division/voting-district-lima-1a-2020.yml",
       "class": "division",
       "label": "Lima 1A voting district (2020 geography)",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "1.548 land (2020 geography)",
         "division_type": "voting precinct",
@@ -182,6 +182,18 @@
         {
           "text": "**It is where three sources disagree with each other in a way that means something.** Its 908 registered voters are 0.28 per resident, the lowest of the county's 88 precincts against a median of 0.68 and a next-lowest of 0.54. [verified] — [OpenElections](../../catalog/openelections-ohio.md) against TIGERweb block population. One of its 43 blocks holds 1,360 people in **zero** housing units, and set those aside and the ratio is 0.48 — low, and inside the range the rest of the county occupies.",
           "tier": "verified"
+        },
+        {
+          "text": "The county's state correctional institutions stand in this precinct. [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md), address points projected and tested against the precinct polygon.",
+          "tier": "verified"
+        },
+        {
+          "text": "**They are now named, and they are the whole of it.** The block holding 1,360 is [Allen Correctional Institution](../site/allen-correctional-institution.yml) and a second block in this precinct holds 153 at [Oakwood](../site/oakwood-correctional-facility.yml) — 1,513 people between them, every one counted in adult correctional facilities, and every person the 2020 census counted in a correctional facility anywhere in Allen County. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml); see [the question this closed](../question/who-lives-in-the-county-without-housing.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the precinct's registration ratio is a prison and not a puzzle.** Take both institutions out and 908 registrations stand against 1,727 residents — a ratio of **0.53**, which is inside the band the rest of the county occupies and above the earlier estimate of 0.48 made with only one of the two blocks known. [inference] — computed here. The lowest registration ratio of eighty-eight precincts turns out to be an artefact of where the state put two institutions, and nothing on the face of the map says so.",
+          "tier": "inference"
         },
         {
           "text": "It voted 287 to 234 for Trump over Biden on a 58.4 per cent turnout — nearly the county's most balanced precinct in a county that went 69 to 29. [verified] — OpenElections.",
@@ -2583,10 +2595,51 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-group-quarters-2020.yml",
+      "class": "measure",
+      "label": "Allen County group quarters, 2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2020-04-01",
+        "method": "Table P5, Group Quarters Population by Major Group Quarters Type, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171). Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO. The block sums close on the file's own county record exactly, in every one of the ten cells. [verified] The Census Bureau's API serves the same table from the Demographic and Housing Characteristics file and refuses the request without a key, which is why the flat file was taken instead — the same reason this corpus reads the ACS from its summary file rather than its API. Institution identification is by geometry, not by address: a block is identified with a landmark only where the two carry the same land area and the same internal point. Two do. [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml). The 2020 census applied disclosure avoidance to every published block figure, so a single small cell is noisy; the county totals are not, and the two large correctional cells are corroborated by the geometry they sit on.",
+        "parameter": "population in group quarters, Allen County",
+        "unit": "people",
+        "value": "3522"
+      },
+      "blocks": [
+        {
+          "text": "The 3,522 people the 2020 census counted in Allen County who were not living in a household — 3.4 per cent of its 102,206, in 43 of its 3,552 blocks. [verified] — [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), Table P5, summed from block records.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two of the county's blocks are its two state prisons, and the census drew the block on the fence.** Block `390030112001004` holds 1,360 people, all of them in adult correctional facilities; the Census Bureau's own landmark file gives *Allen Correctional Instn* the same land area to the square metre — 364,210 — and the same internal point to seven decimal places, `+40.7751673 -084.0996846`. Block `390030112001001` holds 153 and matches *Oakwood Corr Faclty* the same way, at 1,383,460 square metres and `+40.7812913 -084.1012253`. [verified] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md) against the redistricting file's geographic header. See [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima holds nearly two thirds of the county's group quarters on a third of its people.** 2,210 of the 3,522, including every one of the 1,513 in correctional facilities. [inference] — computed here from the same file.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The nursing homes are the county's most distributed institution.** 966 people in fifteen blocks across the city and seven townships, the largest holding 132 — from Bluffton in the north-east to Delphos in the north-west to Shawnee in the south. [inference] — computed here. Nothing else in this table is spread at all: the prisons are two blocks, and 494 of the 788 in student housing are on one campus.",
+          "tier": "inference"
+        },
+        {
+          "text": "**\"Other noninstitutional facilities\" is the census's name for shelter.** The category covers emergency and transitional shelters for people experiencing homelessness, group homes intended for adults, residential treatment centres, workers' quarters and Job Corps centres. [verified] — [the technical documentation](../../catalog/census-2020-redistricting-file.md), Appendix B. The county has 255 such residents, and 124 of them are in six blocks of one downtown Lima tract.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county records no juvenile facility, no psychiatric-hospital population and no military quarters at all.** [verified] — same source. The zero for other institutional facilities is worth reading carefully rather than as an absence: that category is where psychiatric hospitals are counted, and this county's psychiatric hospital is [Oakwood](../site/oakwood-correctional-facility.yml), whose residents are inmates and are therefore counted as correctional. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-health-2023.yml",
       "class": "measure",
       "label": "CDC's health estimates for Allen County and Lima, 2022–2023",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2023",
         "method": "Crude prevalence only, because the tract file publishes nothing else and a crude figure must not be set against an age-adjusted one. Thirty-five of the forty measures rest on BRFSS 2023 and five — all teeth lost, dental visits, mammograms, colorectal screening, short sleep — on BRFSS 2022. \"Differs by more than the confidence limits allow\" means the city's published interval and the county's do not overlap, which is a weaker test than a significance test and is the only one these published fields support. [verified]",
@@ -2618,6 +2671,14 @@
         {
           "text": "**The tracts spread much further than the city and the county do.** Across the thirty-five, CDC's estimate of adults receiving food stamps runs from 4.9 to 46.1 per cent, food insecurity from 7.2 to 41.3, fair or poor health from 13.9 to 40.5, and total tooth loss among the over-65s from 7.6 to 42.7. [verified] — same source. One tract, `39003014100`, holds the county's highest estimate on nine of those ten measures on a population of 1,695.",
           "tier": "verified"
+        },
+        {
+          "text": "**Part of what is in that tract is now on record.** `39003014100` is downtown Lima: it holds [the courthouse](../site/allen-county-courthouse.yml) and [the county jail](../site/allen-county-justice-center.yml), and **124 of the county's 255 residents of shelters, group homes and residential treatment centres** — the census's \"other noninstitutional facilities\" — across six of its blocks. [verified] — [the group quarters](allen-county-group-quarters-2020.yml) and [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "That is 48.6 per cent of the county's such population on 1.7 per cent of its people, and 7.3 per cent of the tract's own 1,695. [inference] — computed here. A tract that holds the county's highest modelled estimate on nine of ten health measures is also the tract that holds its shelters, which is a coincidence worth naming and not an explanation: the estimates are modelled from a survey of households and this population is not in households at all.",
+          "tier": "inference"
         },
         {
           "text": "**The file closes on the corpus's own count.** The thirty-five tract populations sum to 102,206, which is the county's 2020 census total and the closure this corpus has used since its block composition phase. [verified] — same source and [the 2020 count](allen-county-population-2020-census.yml).",
@@ -2869,7 +2930,7 @@
       "id": "measure/allen-county-housing-units-2020.yml",
       "class": "measure",
       "label": "Allen County housing units, 2020 census",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2020-04-01",
         "method": "Sum of block-level `HU100` from the 2020 Census redistricting file, as served by TIGERweb. Total units, occupied and vacant together. [verified]",
@@ -2885,11 +2946,17 @@
         {
           "text": "Against [the enumeration](allen-county-population-2020-census.yml) of 102,206 that is 2.29 people per housing unit. The figure varies across the county's thirteen civil subdivisions from 2.19 in [Lima](../place/lima.yml) and [American Township](../place/american-township.yml) to 2.57 in [Amanda](../place/amanda-township.yml) and [Richland](../place/richland-township.yml). [verified] — same source, by block composition.",
           "tier": "verified"
+        },
+        {
+          "text": "**Both terms are now separated and the ratio has a replacement.** 40,935 of the 44,563 units were occupied and 3,628 were vacant, and 3,522 people were living outside households, which makes the county's average household **2.411 people**. [verified] — [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), Tables H1 and P5; see [the occupancy](allen-county-occupancy-2020.yml) and [the group quarters](allen-county-group-quarters-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "The open block that stood here named the right table and the wrong obstacle. It said the occupancy table was unavailable because TIGERweb does not serve it and the API will not release it without a key, both of which are true; what it did not consider is that the redistricting file the API is built over is a flat download that needs no key at all. [inference] The figure was one file away for two phases. This matters for a county whose [population has been falling for fifty years](../period/depopulation.yml), because a falling population that keeps its houses is a different thing from one that loses them, and Lima's vacancy rate is 11.2 per cent against 4.5 in Amanda Township.",
+          "tier": "inference"
         }
       ],
-      "refusals": [
-        "Until then this corpus can say how many units there are and how many people, and cannot say how many are lived in — which matters for a county whose [population has been falling for fifty years](../period/depopulation.yml)."
-      ],
+      "refusals": [],
       "withheld": 1
     },
     {
@@ -3216,6 +3283,47 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-occupancy-2020.yml",
+      "class": "measure",
+      "label": "Allen County housing occupancy and household size, 2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2020-04-01",
+        "method": "Table H1, Occupancy Status, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171), file segment 02, the last three fields of each record. Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO and grouped by the header's county-subdivision code. [verified] Household size is population less group-quarters population, over occupied units, computed here for each subdivision. [inference] It is the definition the Census Bureau uses for average household size, and it is stated here rather than taken from a published table because no published table at this geography is held. Both closures were checked: the thirteen subdivision populations sum to the county's 102,206 and their units to 44,563, with no residual.",
+        "parameter": "occupied housing units, Allen County",
+        "unit": "occupied housing units",
+        "value": "40935"
+      },
+      "blocks": [
+        {
+          "text": "The table this corpus asked for two phases ago and could not get: how many of Allen County's 44,563 housing units were lived in on 1 April 2020. **40,935 were occupied and 3,628 were vacant** — a vacancy rate of 8.14 per cent. [verified] — [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), Table H1, summed from block records.",
+          "tier": "verified"
+        },
+        {
+          "text": "**With the group quarters count beside it the county's household size falls out exactly.** 3,522 people were not in households at all, so 98,684 were, in 40,935 occupied units: **2.411 people per household**. [inference] — computed here against [the group quarters](allen-county-group-quarters-2020.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — same file, summed by county subdivision; household size computed here. The columns close on the county: the populations sum to 102,206 and the units to 44,563.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One in nine housing units in Lima had nobody in it.** 11.2 per cent against 8.14 for the county and 4.5 for Amanda Township, and no township comes within three points of the city. [inference] — computed here. See [Lima](../place/lima.yml), whose emptiness this corpus has described from American Community Survey estimates and can now state from a count.",
+          "tier": "inference"
+        },
+        {
+          "text": "**And Lima's households are the smallest in the county.** 2.344 people against Amanda Township's 2.691, a spread of 0.35 of a person across thirteen subdivisions. [inference] — computed here. The city is not merely emptier by units; the units that are occupied hold fewer people.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This settles a reading the corpus had refused.** The persons-per-unit ratio it had been using put group-quarters residents in the numerator and vacant units in the denominator, so it could not be read as household size. Both terms are now separated and the true figure is available for every subdivision. [inference] — see [the housing units](allen-county-housing-units-2020.yml), whose open block this closes.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-outside-lima-1890-2020.yml",
@@ -8049,6 +8157,10 @@
           "tier": "inference"
         },
         {
+          "text": "**Three and a half thousand of its people do not live in a household.** 3,522 of 102,206 — 1,513 in correctional facilities, 966 in nursing homes, 788 in student housing and 255 in shelters, group homes and residential treatment centres — leaving 98,684 in 40,935 occupied units, an average household of 2.411. Another 3,628 units stood empty. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml) and [the occupancy](../measure/allen-county-occupancy-2020.yml).",
+          "tier": "verified"
+        },
+        {
           "text": "**It sent one person in ten to the Civil War.** A county of 19,185 in 1860 put 1,920 men into United States service over the four years, and at least 164 of them did not come home. [inference] — [what the county sent](../measure/allen-county-civil-war-service.yml) and [the dead](../measure/allen-county-civil-war-dead.yml). It was also, for a few weeks in August 1862, the rendezvous of the whole Eighth Military District: about 1,600 men camped across the Ottawa from a town of fewer than two thousand. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md); see [Camp Lima](../site/camp-lima.yml).",
           "tier": "inference"
         },
@@ -8733,6 +8845,14 @@
         {
           "text": "This node said until now that buying a house here was no harder than buying one anywhere in the county. That was 2023, the only year of seven in which Lima's purchase rate is the lower one, and it is withdrawn. [verified] — see [a rule is not a habit](../../decisions/a-rule-is-not-a-habit.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**One housing unit in nine here is empty, and its households are the county's smallest.** 16,028 units, 14,237 occupied, 1,791 vacant — an 11.2 per cent vacancy rate against 8.14 for the county and 4.5 for Amanda Township — and 2.344 people per occupied unit against Amanda's 2.691. [verified] — [the occupancy](../measure/allen-county-occupancy-2020.yml). No township comes within three points of the city on the first or within a tenth of a person on the second.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It holds nearly two thirds of the county's people who live outside households.** 2,210 of 3,522, including all 1,513 in correctional facilities — the two state institutions north of the city, [Allen Correctional](../site/allen-correctional-institution.yml) and [Oakwood](../site/oakwood-correctional-facility.yml), each of which the Census Bureau treats as a block of its own. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml). Their ground was the farm of [the Lima State Hospital](../site/lima-state-hospital.yml), in Bath Township when the 1921 history described it and inside the city now. [inference]",
+          "tier": "inference"
         },
         {
           "text": "**It was a garrison town for a fortnight in 1862, and the garrison outnumbered the town.** Lima had 1,989 people at the 1860 census; in August 1862 about 1,600 men were camped across the Ottawa River at [Camp Lima](../site/camp-lima.yml), the rendezvous of Ohio's Eighth Military District. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md).",
@@ -9520,9 +9640,11 @@
       "label": "Who are the 1,360 people in a Lima block with no housing units?",
       "tier": "inference",
       "properties": {
-        "claim_tag": "open",
+        "claim_tag": "verified",
+        "closed": "2026-08-31",
         "opened": "2026-08-29",
-        "would_close_this": "The Ohio Department of Rehabilitation and Correction's facility list, which gives each institution's current name, address and population; or the Census Bureau's group-quarters tabulation from the 2020 redistricting file, which reports institutional population by type and is not served by TIGERweb."
+        "resolution": "Block `390030112001004` is Allen Correctional Institution and its 1,360 residents are counted in adult correctional facilities; the adjacent block holding 153 is Oakwood Correctional Facility; block `390030101001002` and its 398 are Bluffton University student housing. The three state institutions in the county's address file are two: Lima Correctional Institution closed in 2004. Both prisons were identified by geometry rather than by address — the census block and the Census Bureau's landmark carry the same land area and the same internal point — after address matching, nearest-landmark and the operating agency's own website had each failed in a different way.",
+        "would_close_this": "The Ohio Department of Rehabilitation and Correction's facility list, which gives each institution's current name, address and population; or the Census Bureau's group-quarters tabulation from the 2020 redistricting file, which reports institutional population by type and is not served by TIGERweb. The second of those closed it, and the first was needed too but not in the form expected: the department's site renders its current institutions in JavaScript and serves a plain client nothing, and the one list in its HTML is of the facilities it has closed. That list is what resolved the three-or-one half of the question. The lesson for this field is that an agency's website can be the right source for the opposite of what it is asked."
       },
       "blocks": [
         {
@@ -9548,6 +9670,22 @@
         {
           "text": "A census count, a housing count and a registration roll therefore agree that these residents are present without households and without registering. Three measurements of the same absence is not a name. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**It is a prison, and the block is its fence.** All 1,360 are counted in adult correctional facilities, and the block carries the same land area to the square metre — 364,210 — and the same internal point to seven decimal places as the Census Bureau's landmark for [Allen Correctional Institution](../site/allen-correctional-institution.yml). [verified] — [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md) and [the landmark file](../../catalog/census-tiger-landmarks.md). The adjacent block holding 153 is [Oakwood](../site/oakwood-correctional-facility.yml), identified the same way. And the 398 at Bluffton are college student housing in the federal file, not only an address match.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The inference this node made was right and its method was wrong.** It reasoned that an institution's address point sits at its gate while its residents are counted inside its fence, and that is exactly what happened. But it could not have been shown by matching addresses to blocks in any amount of care, because the two files mean different things. What settled it was a join between two files the same agency draws from the same polygon. [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The three institutions are two, and the third closed in 2004.** Ohio's Department of Rehabilitation and Correction lists Lima Correctional Institution among facilities that have since closed. [verified] — [the department's facilities page](../../catalog/odrc-facilities.md). The county's address file has carried it for twenty-two years, which is why counting names in that file gave three.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The wider answer is that 3,522 people in this county live outside households**, 3.4 per cent of it: 1,513 in correctional facilities, 966 in nursing homes, 788 in student housing and 255 in what the census calls other noninstitutional facilities and defines as shelters, group homes and residential treatment centres. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml). The question was asked about one block and the file answered it for all 3,552.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -9645,6 +9783,41 @@
       "withheld": 3
     },
     {
+      "id": "site/allen-correctional-institution.yml",
+      "class": "site",
+      "label": "Allen Correctional Institution",
+      "tier": "inference",
+      "properties": {
+        "coordinates": "40.7751673, -84.0996846",
+        "site_type": "correctional facility",
+        "status": "in operation"
+      },
+      "blocks": [
+        {
+          "text": "A state prison in the north of [Lima](../place/lima.yml), on ninety acres that the Census Bureau treats as a census block of its own. [verified] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), where it is *Allen Correctional Instn*, feature class K1237, area identifier `1104493892418`.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The block and the institution are the same polygon.** Block `390030112001004` and the landmark carry the same land area — 364,210 square metres, 90.0 acres — and the same internal point, `+40.7751673 -084.0996846`, to seven decimal places. [verified] — the landmark file against [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md)'s geographic header. The Census Bureau drew the block boundary on the fence, which is why the identification needs no address at all; see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It held 1,360 people on 1 April 2020**, every one of them counted in adult correctional facilities, in a block with no housing units. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml). That is 1.3 per cent of Allen County's population and 90 per cent of everyone the census counted in correctional facilities here. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This is what the corpus had been looking at without a name.** The county's own address file puts one point in this block and labels it `BIBLE ROAD AUTO WRECKING AT 505 BIBLE RD`, and the three institutional addresses it carries sit about half a mile west, on North West Street. [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md). An address point at a gate and a population inside a fence are different geographies, and the corpus reasoned to that conclusion before it could show it. [inference] — see [the question this closes](../question/who-lives-in-the-county-without-housing.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**One of the three names in that address file belongs to a prison that no longer exists.** Ohio's Department of Rehabilitation and Correction lists Lima Correctional Institution among facilities that \"have since closed\", closed 2004. [verified] — [the department's facilities page](../../catalog/odrc-facilities.md). The county's file has carried it for twenty-two years.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "site/allen-county-courthouse.yml",
       "class": "site",
       "label": "Allen County Courthouse",
@@ -9686,12 +9859,49 @@
           "tier": "verified"
         },
         {
+          "text": "**The county's jail stands seventy-five metres away, and the census counted nobody in it.** The Census Bureau's landmark for [the Allen County Justice Center](allen-county-justice-center.yml) is at 40.7437104, -84.1054470 on 1.38 acres, and the block it falls in has a published 2020 population of zero. [verified] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md) and [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md); the distance computed here. [inference] The county has kept its jail beside its courtroom since the first courthouse, which was sold at auction with the jail in July 1841. [verified] — the 1885 history, as above.",
+          "tier": "inference"
+        },
+        {
           "text": "**The 1842 courthouse's site is now known, and a commercial block took it.** The second courthouse stood where the Cincinnati Block later stood, and it was still the county's building in April 1861, when a flag was strung on a wire between Ashton Hall and it and Lima's congregations gathered under it to hear that Fort Sumter had been fired on. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md); see [the first company](../event/the-first-lima-company-1861.yml).",
           "tier": "verified"
         }
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "site/allen-county-justice-center.yml",
+      "class": "site",
+      "label": "Allen County Justice Center",
+      "tier": "inference",
+      "properties": {
+        "coordinates": "40.7437104, -84.1054470",
+        "site_type": "correctional facility",
+        "status": "in operation"
+      },
+      "blocks": [
+        {
+          "text": "The county's own place of confinement, seventy-five metres from [the courthouse](allen-county-courthouse.yml) at the centre of [Lima](../place/lima.yml). [verified] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), where it is *Allen County Justice Ctr*, feature class K1236 — a county or municipal facility, distinct from the K1237 the two state prisons carry — at `+40.7437104 -084.1054470` on 5,598 square metres, 1.38 acres. The distance from the courthouse's own point is computed here. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "It is the smallest of the four confinement landmarks the Census Bureau carries in this county by a factor of sixty-five, and the only one of them downtown. [inference] — computed from the same file. The state builds on farmland at the edge of the city; the county builds beside its courtroom.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 2020 census recorded nobody here.** The Justice Center falls in block `390030141002021`, a downtown block of 22,244 square metres whose published population is **zero** — no residents, no group quarters, and no correctional population. Every one of the county's 1,513 people in adult correctional facilities is in the two state blocks north of the city. [verified] — [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), block record, and [the group quarters](../measure/allen-county-group-quarters-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "A county jail holds people on any given night, and 1 April 2020 was a night. [inference] The corpus does not know whether the census missed them, whether disclosure avoidance moved them, or whether the landmark and the working jail are no longer the same building.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "The corpus does not know whether the census missed them, whether disclosure avoidance moved them, or whether the landmark and the working jail are no longer the same building."
+      ],
+      "withheld": 2
     },
     {
       "id": "site/camp-lima.yml",
@@ -9967,6 +10177,52 @@
       "withheld": 3
     },
     {
+      "id": "site/lima-state-hospital.yml",
+      "class": "site",
+      "label": "Lima State Hospital",
+      "tier": "inference",
+      "properties": {
+        "built": "1915-07-01",
+        "site_type": "hospital"
+      },
+      "blocks": [
+        {
+          "text": "Ohio's hospital for the criminally insane, north of [Lima](../place/lima.yml), authorised by an act of the Ohio Assembly on **25 April 1904** and opened for patients on **1 July 1915**. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It was won rather than assigned.** Governor Myron T. Herrick appointed a committee to choose the site, a number of other communities offered ground, and the Hon. Walter B. Ritchie sat on the committee and used his influence for Lima while the Lima Club worked to secure it. The same club is credited with bringing the Ohio Steel Works. [verified] — same source. A county that had spent thirty years competing for railways and refineries competed for this the same way. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**In December 1920 it held 789 men and 165 women.** [verified] — same source. That is 954 people in a county of 68,203, and it makes the hospital at that moment more populous than every incorporated place in Allen County except four. The same book lists them: Lima 41,306, Delphos 3,169 in the Allen part, Bluffton 1,950, Spencerville 1,543, then Elida 509, Beaver Dam 394, Harrod 389, Lafayette 383 and West Cairo 380. [verified] — same source; the comparison computed here. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It was a farm as much as a hospital, and the patients worked it.** 576 acres, all but about thirty of natural forest cleared and cultivated, in Bath Township north from Lima, bought by the state for $63,622 and \"said to be the poorest land in Allen County\". [verified] — same source. In 1920 it produced 433,280 pounds of milk, 9,084 pounds of butter, 762 dozen eggs, 19,405 pounds of pork, 7,299 of lard, 4,148 of beef and 1,850 of veal; the crop valuation was $9,362.33 and the whole production $14,520, none of it sold. The property inventory came to $1,833,639.83 and the equipment to $82,929.30, and the state's maintenance pro rata was $21,977.84.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1918 influenza reached it and the book counts the cases.** 244 cases of flu, of which 8 per cent died — about twenty people. [verified] — same source. It is the only figure this corpus holds for the pandemic in Allen County.",
+          "tier": "verified"
+        },
+        {
+          "text": "Its superintendent was Dr. Charles H. Clark, allowed three assistant physicians, of whom two were in post; visitors were admitted on Tuesdays and Thursdays; and twice a year the superintendent entertained the Allen County Medical Society at a clinic. [verified] — same source. Of the patients the book writes that \"all must return to the penal institution from which they were committed for their final freedom\", which is the sentence that says what kind of institution it was. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The ground it stood on is almost certainly the ground the state still confines people on.** The three correctional landmarks the Census Bureau carries in this county — [Allen Correctional Institution](allen-correctional-institution.yml), [Oakwood](oakwood-correctional-facility.yml) and the Western Ohio Regional Treatment and Rehabilitation Center — all stand north of Lima within a mile of one another and come to about 450 acres together, against this farm's 576. [inference] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), computed here. No source held here carries the conveyance, the renaming, or the division of the tract.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What was Bath Township in 1921 is Lima city now.** The 1921 history places the farm in Bath Township; the Census Bureau puts all three institutions in Lima city, census tract 112. [verified] — the 1921 history and [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md). Lima's boundary moved north over the ground at some point in the century between, which is one more datum for an annexation record this corpus barely has. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "site/lima-tank-depot.yml",
       "class": "site",
       "label": "Lima Tank Depot",
@@ -10062,6 +10318,37 @@
         {
           "text": "**Delphos is verified as a canal town after all**, on the same source that halves nothing: it sits \"on the Miami and Erie Canal, above the confluence of that waterway with the Wabash and Erie Canal system\", and the canal opened there in 1845. [verified] — same source. Its `located-in` edge is no longer an inference.",
           "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "site/oakwood-correctional-facility.yml",
+      "class": "site",
+      "label": "Oakwood Correctional Facility",
+      "tier": "inference",
+      "properties": {
+        "coordinates": "40.7812913, -84.1012253",
+        "site_type": "correctional facility",
+        "status": "in operation"
+      },
+      "blocks": [
+        {
+          "text": "The larger and emptier of the two state institutions north of [Lima](../place/lima.yml): 342 acres holding 153 people, against ninety acres holding 1,360 half a mile south. [verified] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), where it is *Oakwood Corr Faclty*, feature class K1237, area identifier `1104690933479`; and [the group quarters](../measure/allen-county-group-quarters-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is identified the same way its neighbour is, and the identification is exact.** Block `390030112001001` and the landmark carry the same land area — 1,383,460 square metres — and the same internal point, `+40.7812913 -084.1012253`. [verified] — the landmark file against [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md)'s geographic header. See [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its 153 residents are counted as prisoners, not as patients.** Allen County records zero people in \"other institutional facilities\", the category that holds psychiatric hospitals, and 1,513 in correctional facilities for adults, of whom these are 153. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml). A facility that treats can still be a facility that confines, and the census classifies by the second. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The ratio of ground to people is the thing to notice.** At 342 acres for 153 residents it holds one person for every 2.2 acres, where the institution to its south holds fifteen people to the acre. [inference] — computed here. That is the shape of a hospital farm rather than a prison, and [the Lima State Hospital](lima-state-hospital.yml) that stood north of Lima from 1915 had 576 acres and worked them with its patients.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -12565,6 +12852,13 @@
       "source": "catalog/openelections-ohio.md"
     },
     {
+      "from": "measure/allen-county-group-quarters-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
       "from": "measure/allen-county-health-2023.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -12759,6 +13053,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "measure/allen-county-occupancy-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
     },
     {
       "from": "measure/allen-county-outside-lima-1890-2020.yml",
@@ -14525,6 +14826,13 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "site/allen-correctional-institution.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
       "from": "site/allen-county-courthouse.yml",
       "to": "place/lima.yml",
       "relationship": "located-in",
@@ -14533,6 +14841,20 @@
     },
     {
       "from": "site/allen-county-courthouse.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "operated-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "site/allen-county-justice-center.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/census-tiger-landmarks.md"
+    },
+    {
+      "from": "site/allen-county-justice-center.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "operated-by",
       "tier": "inference",
@@ -14609,6 +14931,13 @@
       "source": "catalog/eia-refinery-capacity.md"
     },
     {
+      "from": "site/lima-state-hospital.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "site/lima-tank-depot.yml",
       "to": "place/allen-county.yml",
       "relationship": "located-in",
@@ -14628,6 +14957,13 @@
       "relationship": "located-in",
       "tier": "verified",
       "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "site/oakwood-correctional-facility.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
     },
     {
       "from": "tenure/auditor-2023-rachael-s-gilroy.yml",

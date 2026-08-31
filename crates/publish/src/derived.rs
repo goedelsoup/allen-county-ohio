@@ -1405,6 +1405,81 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "three-thousand-people-live-outside-households",
+        statement: "3,522 people in Allen County were not living in a household when the 2020 \
+                    census counted them — one in twenty-nine, in 43 of its 3,552 blocks.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-group-quarters-2020.yml",
+                "The 3,522 people the 2020 census counted in Allen County who were not living in a household — 3.4 per cent of its 102,206, in 43 of its 3,552 blocks."
+            ),
+            support!(
+                "measure/allen-county-group-quarters-2020.yml",
+                "**Lima holds nearly two thirds of the county's group quarters on a third of its people.** 2,210 of the 3,522, including every one of the 1,513 in correctional facilities."
+            ),
+            support!(
+                "measure/allen-county-group-quarters-2020.yml",
+                "**The nursing homes are the county's most distributed institution.** 966 people in fifteen blocks across the city and seven townships, the largest holding 132"
+            ),
+            support!(
+                "measure/allen-county-group-quarters-2020.yml",
+                "the prisons are two blocks, and 494 of the 788 in student housing are on one campus."
+            ),
+            support!(
+                "measure/allen-county-group-quarters-2020.yml",
+                "The county has 255 such residents, and 124 of them are in six blocks of one downtown Lima tract."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Correctional facilities", value: 1_513.0, literal: "1,513" },
+            Figure { label: "Nursing facilities", value: 966.0, literal: "966" },
+            Figure { label: "Student housing", value: 788.0, literal: "788" },
+            Figure { label: "Shelters and group homes", value: 255.0, literal: "255" },
+        ],
+    },
+    Assertion {
+        id: "one-lima-housing-unit-in-nine-is-empty",
+        statement: "Allen County had 44,563 housing units in 2020 and 3,628 of them stood empty. \
+                    Lima's vacancy rate is 11.2 per cent, and no township in the county comes \
+                    within three points of it.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-occupancy-2020.yml",
+                "**40,935 were occupied and 3,628 were vacant** — a vacancy rate of 8.14 per cent."
+            ),
+            support!(
+                "measure/allen-county-occupancy-2020.yml",
+                "**One in nine housing units in Lima had nobody in it.** 11.2 per cent against 8.14 for the county and 4.5 for Amanda Township, and no township comes within three points of the city."
+            ),
+            support!(
+                "measure/allen-county-occupancy-2020.yml",
+                "3,522 people were not in households at all, so 98,684 were, in 40,935 occupied units: **2.411 people per household**."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima city", value: 11.2, literal: "11.2" },
+            Figure { label: "Allen County", value: 8.14, literal: "8.14" },
+            Figure { label: "Amanda township", value: 4.5, literal: "4.5" },
+        ],
+    },
+    Assertion {
+        id: "the-census-drew-the-block-on-the-fence",
+        statement: "Two Allen County census blocks are its two state prisons. The block and the \
+                    Census Bureau's own landmark carry the same land area to the square metre and \
+                    the same internal point to seven decimal places.",
+        topic: "geography",
+        supports: &[support!(
+            "measure/allen-county-group-quarters-2020.yml",
+            "**Two of the county's blocks are its two state prisons, and the census drew the block on the fence.** Block `390030112001004` holds 1,360 people, all of them in adult correctional facilities; the Census Bureau's own landmark file gives *Allen Correctional Instn* the same land area to the square metre — 364,210 — and the same internal point to seven decimal places, `+40.7751673 -084.0996846`."
+        )],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

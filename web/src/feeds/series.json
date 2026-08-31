@@ -722,6 +722,26 @@
       ]
     },
     {
+      "id": "place-allen-county::occupied-housing-units,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "occupied housing units, Allen County",
+      "unit": "occupied housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-occupancy-2020.yml",
+          "label": "Allen County housing occupancy and household size, 2020",
+          "as_of": "2020-04-01",
+          "value": 40935.0,
+          "published": "40935",
+          "tier": "verified",
+          "source": "catalog/census-2020-redistricting-file.md",
+          "method": "Table H1, Occupancy Status, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171), file segment 02, the last three fields of each record. Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO and grouped by the header's county-subdivision code. [verified] Household size is population less group-quarters population, over occupied units, computed here for each subdivision. [inference] It is the definition the Census Bureau uses for average household size, and it is stated here rather than taken from a published table because no published table at this geography is held. Both closures were checked: the thirteen subdivision populations sum to the county's 102,206 and their units to 44,563, with no residual."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::open-highway-rail-grade-crossings",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -778,6 +798,26 @@
           "tier": "verified",
           "source": "catalog/census-acs-summary-file.md",
           "method": "2023 five-year estimates. Race categories are \"alone\" except the two-or-more column; Hispanic origin is asked separately and overlaps every race column, so the rows do not sum to 100. The twelve townships and Lima partition the county: 2,515 plus 8,290 is 10,805, the county row. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::population-in-group-quarters,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "population in group quarters, Allen County",
+      "unit": "people",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "label": "Allen County group quarters, 2020",
+          "as_of": "2020-04-01",
+          "value": 3522.0,
+          "published": "3522",
+          "tier": "verified",
+          "source": "catalog/census-2020-redistricting-file.md",
+          "method": "Table P5, Group Quarters Population by Major Group Quarters Type, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171). Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO. The block sums close on the file's own county record exactly, in every one of the ten cells. [verified] The Census Bureau's API serves the same table from the Demographic and Housing Characteristics file and refuses the request without a key, which is why the flat file was taken instead — the same reason this corpus reads the ACS from its summary file rather than its API. Institution identification is by geometry, not by address: a block is identified with a landmark only where the two carry the same land area and the same internal point. Two do. [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml). The 2020 census applied disclosure avoidance to every published block figure, so a single small cell is noisy; the county totals are not, and the two large correctional cells are corroborated by the geometry they sit on."
         }
       ]
     },
@@ -3703,6 +3743,146 @@
           "literal": "2"
         }
       ]
+    },
+    {
+      "id": "three-thousand-people-live-outside-households",
+      "statement": "3,522 people in Allen County were not living in a household when the 2020 census counted them — one in twenty-nine, in 43 of its 3,552 blocks.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "node_label": "Allen County group quarters, 2020",
+          "span": "The 3,522 people the 2020 census counted in Allen County who were not living in a household — 3.4 per cent of its 102,206, in 43 of its 3,552 blocks.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-redistricting-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "node_label": "Allen County group quarters, 2020",
+          "span": "**Lima holds nearly two thirds of the county's group quarters on a third of its people.** 2,210 of the 3,522, including every one of the 1,513 in correctional facilities.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-tiger-landmarks.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "node_label": "Allen County group quarters, 2020",
+          "span": "**The nursing homes are the county's most distributed institution.** 966 people in fifteen blocks across the city and seven townships, the largest holding 132",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "node_label": "Allen County group quarters, 2020",
+          "span": "the prisons are two blocks, and 494 of the 788 in student housing are on one campus.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "node_label": "Allen County group quarters, 2020",
+          "span": "The county has 255 such residents, and 124 of them are in six blocks of one downtown Lima tract.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-redistricting-file.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Correctional facilities",
+          "value": 1513.0,
+          "literal": "1,513"
+        },
+        {
+          "label": "Nursing facilities",
+          "value": 966.0,
+          "literal": "966"
+        },
+        {
+          "label": "Student housing",
+          "value": 788.0,
+          "literal": "788"
+        },
+        {
+          "label": "Shelters and group homes",
+          "value": 255.0,
+          "literal": "255"
+        }
+      ]
+    },
+    {
+      "id": "one-lima-housing-unit-in-nine-is-empty",
+      "statement": "Allen County had 44,563 housing units in 2020 and 3,628 of them stood empty. Lima's vacancy rate is 11.2 per cent, and no township in the county comes within three points of it.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-occupancy-2020.yml",
+          "node_label": "Allen County housing occupancy and household size, 2020",
+          "span": "**40,935 were occupied and 3,628 were vacant** — a vacancy rate of 8.14 per cent.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-redistricting-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-occupancy-2020.yml",
+          "node_label": "Allen County housing occupancy and household size, 2020",
+          "span": "**One in nine housing units in Lima had nobody in it.** 11.2 per cent against 8.14 for the county and 4.5 for Amanda Township, and no township comes within three points of the city.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-occupancy-2020.yml",
+          "node_label": "Allen County housing occupancy and household size, 2020",
+          "span": "3,522 people were not in households at all, so 98,684 were, in 40,935 occupied units: **2.411 people per household**.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lima city",
+          "value": 11.2,
+          "literal": "11.2"
+        },
+        {
+          "label": "Allen County",
+          "value": 8.14,
+          "literal": "8.14"
+        },
+        {
+          "label": "Amanda township",
+          "value": 4.5,
+          "literal": "4.5"
+        }
+      ]
+    },
+    {
+      "id": "the-census-drew-the-block-on-the-fence",
+      "statement": "Two Allen County census blocks are its two state prisons. The block and the Census Bureau's own landmark carry the same land area to the square metre and the same internal point to seven decimal places.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-group-quarters-2020.yml",
+          "node_label": "Allen County group quarters, 2020",
+          "span": "**Two of the county's blocks are its two state prisons, and the census drew the block on the fence.** Block `390030112001004` holds 1,360 people, all of them in adult correctional facilities; the Census Bureau's own landmark file gives *Allen Correctional Instn* the same land area to the square metre — 364,210 — and the same internal point to seven decimal places, `+40.7751673 -084.0996846`.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-tiger-landmarks.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
     },
     {
       "id": "an-address-is-not-a-municipality",
