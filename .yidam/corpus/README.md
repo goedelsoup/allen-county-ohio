@@ -35,6 +35,7 @@ Sorted by: kind, then alphabetically.
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
+| [organization-of-the-town-of-lima-1842.yml](event/organization-of-the-town-of-lima-1842.yml) | event | The organization of the town of Lima | 3 | 6v / 0i / 1o | 53 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 3 | 4v / 1i / 1o | 44 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
@@ -52,7 +53,7 @@ Sorted by: kind, then alphabetically.
 | [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 7v / 0i / 1o | 46 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 5v / 0i / 1o | 61 |
 | [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 5v / 1i / 2o | 51 |
-| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 3v / 3i / 2o | 59 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 5v / 4i / 3o | 74 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 4v / 0i / 1o | 44 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 6v / 0i / 0o | 55 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 4v / 0i / 0o | 67 |
@@ -128,6 +129,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-tri-reporters-1987-2024.yml](measure/allen-county-tri-reporters-1987-2024.yml) | measure | Allen County facilities reporting to the Toxics Release Inventory, 1987–2024 | 2 | 7v / 0i / 0o | 60 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
+| [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 2v / 1i / 0o | 37 |
 | [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 8v / 2i / 3o | 75 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
@@ -157,14 +159,19 @@ Sorted by: kind, then alphabetically.
 | [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 3v / 1i / 1o | 36 |
 | [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 4v / 1i / 0o | 50 |
 | [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 5v / 1i / 2o | 42 |
+| [clerk-of-the-lima-municipal-court.yml](office/clerk-of-the-lima-municipal-court.yml) | office | Clerk of the Lima Municipal Court | 2 | 2v / 0i / 1o | 28 |
 | [judge-of-the-common-pleas-domestic-relations-division.yml](office/judge-of-the-common-pleas-domestic-relations-division.yml) | office | Judge of the Court of Common Pleas, Domestic Relations Division | 2 | 2v / 2i / 1o | 30 |
 | [judge-of-the-common-pleas-general-division.yml](office/judge-of-the-common-pleas-general-division.yml) | office | Judge of the Court of Common Pleas, General Division | 2 | 3v / 2i / 1o | 36 |
 | [judge-of-the-common-pleas-probate-division.yml](office/judge-of-the-common-pleas-probate-division.yml) | office | Judge of the Court of Common Pleas, Probate Division | 2 | 3v / 2i / 0o | 31 |
 | [judge-of-the-lima-municipal-court.yml](office/judge-of-the-lima-municipal-court.yml) | office | Judge of the Lima Municipal Court | 2 | 2v / 2i / 1o | 38 |
 | [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 2v / 2i / 1o | 37 |
-| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 3v / 1i / 1o | 34 |
+| [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
+| [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 6v / 2i / 2o | 55 |
+| [member-of-lima-city-council.yml](office/member-of-lima-city-council.yml) | office | Member of Lima City Council | 2 | 3v / 0i / 1o | 33 |
 | [member-of-the-ohio-house-for-district-78.yml](office/member-of-the-ohio-house-for-district-78.yml) | office | Member of the Ohio House of Representatives, 78th District | 2 | 2v / 1i / 1o | 31 |
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
+| [president-of-lima-city-council.yml](office/president-of-lima-city-council.yml) | office | President of Lima City Council | 2 | 2v / 0i / 1o | 27 |
 | [representative-in-congress-for-ohios-4th-district.yml](office/representative-in-congress-for-ohios-4th-district.yml) | office | Representative in Congress, Ohio's 4th District | 2 | 3v / 0i / 2o | 36 |
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 2v / 2i / 1o | 37 |
@@ -184,6 +191,8 @@ Sorted by: kind, then alphabetically.
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 7v / 8i / 2o | 80 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
+| [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
+| [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 1v / 2i / 1o | 22 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 8v / 4i / 2o | 78 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
@@ -196,6 +205,7 @@ Sorted by: kind, then alphabetically.
 | [clay-t-cotterman.yml](person/clay-t-cotterman.yml) | person | Clay T. Cotterman | 2 | 1v / 1i / 0o | 18 |
 | [cory-alan-noonan.yml](person/cory-alan-noonan.yml) | person | Cory Alan Noonan | 2 | 2v / 1i / 0o | 21 |
 | [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
+| [derry-l-glenn.yml](person/derry-l-glenn.yml) | person | Derry L. Glenn | 2 | 2v / 1i / 1o | 21 |
 | [destiny-rae-caldwell.yml](person/destiny-rae-caldwell.yml) | person | Destiny Rae Caldwell | 2 | 1v / 1i / 0o | 21 |
 | [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 2v / 1i / 1o | 26 |
 | [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 18 |
@@ -204,6 +214,7 @@ Sorted by: kind, then alphabetically.
 | [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 18 |
 | [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 18 |
 | [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
+| [henry-d-v-williams.yml](person/henry-d-v-williams.yml) | person | Henry D. V. Williams | 2 | 3v / 1i / 1o | 36 |
 | [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 20 |
 | [henry-van-gunter.yml](person/henry-van-gunter.yml) | person | Henry Van Gunter | 2 | 1v / 1i / 0o | 18 |
 | [hiram-stotts.yml](person/hiram-stotts.yml) | person | Hiram Stotts | 2 | 1v / 1i / 0o | 18 |
@@ -211,10 +222,14 @@ Sorted by: kind, then alphabetically.
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
 | [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 1 | 2v / 1i / 1o | 22 |
+| [james-g-link.yml](person/james-g-link.yml) | person | James G. Link | 2 | 2v / 1i / 1o | 22 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
+| [jamie-lamar-dixon-jr.yml](person/jamie-lamar-dixon-jr.yml) | person | Jamie Lamar Dixon Jr. | 2 | 2v / 1i / 1o | 21 |
+| [jeannine-m-jordan.yml](person/jeannine-m-jordan.yml) | person | Jeannine M. Jordan | 2 | 2v / 1i / 2o | 21 |
 | [jeffrey-l-reed.yml](person/jeffrey-l-reed.yml) | person | Jeffrey L. Reed | 2 | 1v / 1i / 1o | 23 |
 | [jennifer-moree-mcbride.yml](person/jennifer-moree-mcbride.yml) | person | Jennifer Moree McBride | 2 | 1v / 1i / 0o | 21 |
 | [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 4v / 2i / 1o | 43 |
+| [jesse-james-lowe-ii.yml](person/jesse-james-lowe-ii.yml) | person | Jesse James Lowe II | 2 | 2v / 1i / 1o | 21 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
 | [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
@@ -222,6 +237,7 @@ Sorted by: kind, then alphabetically.
 | [john-richard-payne.yml](person/john-richard-payne.yml) | person | John Richard Payne | 2 | 1v / 1i / 1o | 23 |
 | [john-thomas-meyer.yml](person/john-thomas-meyer.yml) | person | John Thomas Meyer | 2 | 3v / 1i / 0o | 23 |
 | [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
+| [jonathan-m-neeper.yml](person/jonathan-m-neeper.yml) | person | Jonathan M. Neeper | 2 | 2v / 1i / 1o | 21 |
 | [juergen-a-waldick.yml](person/juergen-a-waldick.yml) | person | Juergen A. Waldick | 1 | 2v / 1i / 1o | 23 |
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
@@ -234,6 +250,7 @@ Sorted by: kind, then alphabetically.
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
+| [randall-s-bartels.yml](person/randall-s-bartels.yml) | person | Randall S. Bartels | 2 | 2v / 1i / 1o | 21 |
 | [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
 | [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
 | [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
@@ -243,7 +260,9 @@ Sorted by: kind, then alphabetically.
 | [susan-manchester.yml](person/susan-manchester.yml) | person | Susan Manchester | 1 | 2v / 1i / 1o | 22 |
 | [tammie-k-hursh.yml](person/tammie-k-hursh.yml) | person | Tammie K. Hursh | 2 | 1v / 1i / 1o | 23 |
 | [terri-lynn-kohlrieser.yml](person/terri-lynn-kohlrieser.yml) | person | Terri Lynn Kohlrieser | 2 | 1v / 1i / 1o | 23 |
+| [thomas-michael-wa-jones.yml](person/thomas-michael-wa-jones.yml) | person | Thomas Michael Wa Jones | 2 | 1v / 2i / 1o | 22 |
 | [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 1v / 1i / 1o | 23 |
+| [todd-gordon.yml](person/todd-gordon.yml) | person | Todd Gordon | 2 | 2v / 1i / 1o | 21 |
 | [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
 | [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
@@ -286,7 +305,7 @@ Sorted by: kind, then alphabetically.
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
-| [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 4v / 1i / 2o | 57 |
+| [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 11v / 5i / 2o | 103 |
@@ -306,6 +325,18 @@ Sorted by: kind, then alphabetically.
 | [engineer-2025-brion-e-rhodes.yml](tenure/engineer-2025-brion-e-rhodes.yml) | tenure | Brion E. Rhodes, Engineer of Allen County, term of 2025–2028 | 3 | 2v / 2i / 1o | 34 |
 | [general-2023-jeffrey-l-reed.yml](tenure/general-2023-jeffrey-l-reed.yml) | tenure | Jeffrey L. Reed, Judge of the Court of Common Pleas, General Division, term of 2023–2029 | 3 | 2v / 2i / 0o | 30 |
 | [general-2025-terri-lynn-kohlrieser.yml](tenure/general-2025-terri-lynn-kohlrieser.yml) | tenure | Terri Lynn Kohlrieser, Judge of the Court of Common Pleas, General Division, term of 2025–2030 | 3 | 2v / 2i / 1o | 33 |
+| [lima-auditor-2026-randall-s-bartels.yml](tenure/lima-auditor-2026-randall-s-bartels.yml) | tenure | Randall S. Bartels, Auditor of the City of Lima, term of 2026–2029 | 3 | 2v / 1i / 1o | 29 |
+| [lima-council-1st-ward-2026-todd-gordon.yml](tenure/lima-council-1st-ward-2026-todd-gordon.yml) | tenure | Todd Gordon, Member of Lima City Council for the 1st Ward, term of 2026–2030 | 3 | 2v / 1i / 1o | 27 |
+| [lima-council-2nd-ward-2024-anthony-c-wilkerson.yml](tenure/lima-council-2nd-ward-2024-anthony-c-wilkerson.yml) | tenure | Anthony C. Wilkerson, Member of Lima City Council for the 2nd Ward, term of 2024–2028 | 3 | 2v / 1i / 1o | 27 |
+| [lima-council-3rd-ward-2026-jesse-james-lowe-ii.yml](tenure/lima-council-3rd-ward-2026-jesse-james-lowe-ii.yml) | tenure | Jesse James Lowe II, Member of Lima City Council for the 3rd Ward, term of 2026–2030 | 3 | 2v / 1i / 1o | 27 |
+| [lima-council-4th-ward-2024-jeannine-m-jordan.yml](tenure/lima-council-4th-ward-2024-jeannine-m-jordan.yml) | tenure | Jeannine M. Jordan, Member of Lima City Council for the 4th Ward, term of 2024–2028 | 3 | 2v / 1i / 2o | 31 |
+| [lima-council-5th-ward-2026-thomas-michael-wa-jones.yml](tenure/lima-council-5th-ward-2026-thomas-michael-wa-jones.yml) | tenure | Thomas Michael Wa Jones, Member of Lima City Council for the 5th Ward, term of 2026–2030 | 3 | 2v / 1i / 1o | 27 |
+| [lima-council-6th-ward-2024-derry-l-glenn.yml](tenure/lima-council-6th-ward-2024-derry-l-glenn.yml) | tenure | Derry L. Glenn, Member of Lima City Council for the 6th Ward, term of 2024–2028 | 3 | 2v / 1i / 1o | 26 |
+| [lima-council-7th-ward-2026-jonathan-m-neeper.yml](tenure/lima-council-7th-ward-2026-jonathan-m-neeper.yml) | tenure | Jonathan M. Neeper, Member of Lima City Council for the 7th Ward, term of 2026–2030 | 3 | 2v / 1i / 1o | 26 |
+| [lima-council-president-2024-jamie-lamar-dixon-jr.yml](tenure/lima-council-president-2024-jamie-lamar-dixon-jr.yml) | tenure | Jamie Lamar Dixon Jr., President of Lima City Council, term of 2024–2028 | 3 | 2v / 1i / 1o | 27 |
+| [lima-law-2026-anthony-layton-geiger.yml](tenure/lima-law-2026-anthony-layton-geiger.yml) | tenure | Anthony Layton Geiger, Director of Law of the City of Lima, term of 2026–2029 | 3 | 2v / 1i / 1o | 27 |
+| [lima-municipal-clerk-2022-james-g-link.yml](tenure/lima-municipal-clerk-2022-james-g-link.yml) | tenure | James G. Link, Clerk of the Lima Municipal Court, term of 2022–2027 | 3 | 2v / 1i / 1o | 27 |
+| [mayor-1842-henry-d-v-williams.yml](tenure/mayor-1842-henry-d-v-williams.yml) | tenure | Henry D. V. Williams, Mayor of Lima, from 1842 | 3 | 3v / 1i / 1o | 35 |
 | [mayor-2025-sharetta-t-smith.yml](tenure/mayor-2025-sharetta-t-smith.yml) | tenure | Sharetta T. Smith, Mayor of Lima, term of 2025–2029 | 3 | 3v / 2i / 0o | 35 |
 | [municipal-2022-tammie-k-hursh.yml](tenure/municipal-2022-tammie-k-hursh.yml) | tenure | Tammie K. Hursh, Judge of the Lima Municipal Court, term of 2022–2027 | 3 | 1v / 2i / 0o | 27 |
 | [municipal-2024-john-richard-payne.yml](tenure/municipal-2024-john-richard-payne.yml) | tenure | John Richard Payne, Judge of the Lima Municipal Court, term of 2024–2029 | 3 | 1v / 2i / 0o | 27 |
