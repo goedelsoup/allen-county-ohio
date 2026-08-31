@@ -5,22 +5,19 @@ import ChartFigure from '../components/ChartFigure.astro'
 import DataTable from '../components/DataTable.astro'
 import StatTile from '../components/StatTile.astro'
 import { assertion, seriesById } from '../lib/feeds'
-import type { LineSpec } from '../scripts/charts'
+import { line } from '../lib/chart-spec'
 
 const rising = assertion('republican-share-rising')
 const swing = assertion('democratic-ground-moved-fastest')
 const eleven = assertion('eleven-precincts')
 
-const shareSpec: LineSpec = {
-  kind: 'line',
-  x: rising.figures.map((f) => f.label),
-  series: [
+const shareSpec = line(rising.figures.map((f) => f.label), [
     { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
-  ],
+  ], {
   yTitle: 'Per cent',
   tickSuffix: '%',
   labelLast: true,
-}
+})
 
 const turnout = seriesById('jurisdiction-allen-county-government::ballots-cast,-general-election')
 const presidential = seriesById('place-allen-county::presidential-votes-cast')

@@ -784,8 +784,15 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         // Found only because the wrap fix in claim.rs made it visible. This refusal had been in
-        // the tank plant node and invisible to the gate, which is what the fix was about.
-        answers: &["this corpus does not know"],
+        // the tank plant node and invisible to the gate, which is what the fix was about. The
+        // second entry arrived the same way and by a different route: a later phase added a
+        // refusal to that node about which wartime installation stands on this ground, and this
+        // assertion — which is about which township the ground is in — failed the build until it
+        // carried it. Propagation working, on an assertion nobody was editing.
+        answers: &[
+            "this corpus does not know",
+            "cannot say whether either of them stands on this ground",
+        ],
         figures: &[],
     },
     Assertion {
@@ -919,6 +926,44 @@ pub const ASSERTIONS: &[Assertion] = &[
         )],
         answers: &[],
         figures: &[],
+    },
+    Assertion {
+        id: "the-county-had-two-tank-installations",
+        statement: "Allen County had two tank installations in the Second World War, two years and \
+                    a category apart: the Lima Locomotive Works, which built medium tanks from \
+                    1941, and the Lima Tank Depot, which finished and forwarded vehicles built \
+                    elsewhere.",
+        topic: "history",
+        supports: &[
+            support!(
+                "site/lima-locomotive-works-plant.yml",
+                "In February 1941 the works had \"under construction a new $290,000 factory building\", which the local press read as confirmation that it was switching part of its activity to defense production; by that August medium tank production was scheduled to begin \"this fall\"."
+            ),
+            support!(
+                "site/lima-tank-depot.yml",
+                "Vehicles arrived \"in a 'raw' state of completion to Lima from the tank arsenals throughout the United States\", and it was at the Depot that the modifications for a particular theatre of operations were installed, the vehicle given a final run on the Depot's proving ground, sealed, and put on a road train for a shipping port."
+            ),
+        ],
+        answers: &[
+            "does not establish where the Depot stood",
+            "does not establish whether this is the ground the",
+        ],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-war-turned-the-locomotive-works-books",
+        statement: "The Lima Locomotive Works booked 51 locomotives in 1940 against 14 in 1939, \
+                    and turned a net profit of $87,007 after a net loss of $134,326.",
+        topic: "history",
+        supports: &[support!(
+            "organization/lima-locomotive-works.yml",
+            "The company booked orders for 51 locomotives in 1940 against 14 in 1939, closed 1940 with a backlog of 32 engines and 19 delivered in the year, and turned a net profit of $87,007 after a net loss of $134,326 in 1939."
+        )],
+        answers: &[],
+        figures: &[
+            Figure { label: "1939", value: 14.0, literal: "14" },
+            Figure { label: "1940", value: 51.0, literal: "51" },
+        ],
     },
     Assertion {
         id: "the-night-the-jail-was-taken",
@@ -1166,7 +1211,7 @@ fn block_sources(node: &Node, block: &crate::claim::Block) -> Vec<String> {
     }
     // Only inherit for an explicit back-reference. A block that cites nothing and says nothing
     // about a source is resting on nothing, and this function must keep saying so.
-    if !block.text.contains("same source") {
+    if !back_reference(&block.text) {
         return Vec::new();
     }
     let mut inherited = Vec::new();
@@ -1180,6 +1225,37 @@ fn block_sources(node: &Node, block: &crate::claim::Block) -> Vec<String> {
         }
     }
     inherited
+}
+
+/// Nouns a block may point back with, after "[verified] — same ".
+///
+/// Closed, and for the same reason [`crate::claim::REFUSALS`] is: a pattern loose enough to
+/// match "the same reasoning applies" would inherit provenance into blocks that are arguing
+/// rather than citing, and inheriting a source is exactly as consequential as naming one.
+///
+/// It was one entry — `source` — for eleven phases, which was right while every source was a
+/// dataset. Then the corpus took a newspaper, and blocks began saying "same page", "same
+/// archive" and "same dispatch" because those are what a reader of a newspaper node needs.
+/// Forty-three blocks were carrying a back-reference this function did not recognise, every
+/// one of them one citation away from publishing a provenance badge with nothing in it.
+const BACK_REFERENCES: [&str; 12] = [
+    "same source",
+    "same page",
+    "same archive",
+    "same file",
+    "same roster",
+    "same volume",
+    "same table",
+    "same dispatch",
+    "same series",
+    "same register",
+    "same dataset",
+    "same book",
+];
+
+/// Whether `text` points back at the source named in an earlier block of its node.
+pub fn back_reference(text: &str) -> bool {
+    BACK_REFERENCES.iter().any(|r| text.contains(r))
 }
 
 fn sources(text: &str) -> Vec<String> {
@@ -1617,6 +1693,22 @@ mod tests {
     fn catalog_links_in_the_cited_block_become_the_citation_sources() {
         let text = "A figure. [verified] — [Gazetteer](../../catalog/census-gazetteer-2020.md).";
         assert_eq!(sources(text), vec!["catalog/census-gazetteer-2020.md"]);
+    }
+
+    #[test]
+    fn a_newspaper_back_reference_inherits_like_a_dataset_one() {
+        // "same page" and "same archive" are what a newspaper node says. Before the closed
+        // list they inherited nothing, so a cited block ending "[verified] — same page" went
+        // out with a provenance badge and no provenance in it.
+        for phrase in ["same source", "same page", "same archive", "same dispatch"] {
+            assert!(back_reference(&format!("A fact. [verified] — {phrase}.")), "{phrase}");
+        }
+    }
+
+    #[test]
+    fn an_argument_that_merely_says_same_inherits_nothing() {
+        assert!(!back_reference("The same reasoning applies to the townships."));
+        assert!(!back_reference("Two scans of the same edition."));
     }
 
     #[test]

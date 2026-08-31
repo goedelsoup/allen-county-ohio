@@ -1,0 +1,67 @@
+class: site
+label: Lima Tank Depot
+description: |
+  A United States Army installation at Lima during and after the Second World War: the place where
+  combat vehicles built elsewhere were finished, tested and dispatched to the fighting fronts.
+  [verified] — [Chronicling America](../../catalog/chronicling-america.md), *The Bluffton News*,
+  3 August 1944, page 2.
+
+  **It did not build tanks. That is the whole point of it.** Vehicles arrived "in a 'raw' state of
+  completion to Lima from the tank arsenals throughout the United States", and it was at the Depot
+  that the modifications for a particular theatre of operations were installed, the vehicle given a
+  final run on the Depot's proving ground, sealed, and put on a road train for a shipping port. The
+  officer in charge described it as "the central supply base for combat vehicles": when troops in
+  the field needed tanks, "the officers do not order from a particular factory. The order is flashed
+  to Washington war headquarters and in turn to Lima." [verified] — same page.
+
+  **It was operated by a contractor.** Automotive News reports the Depot in February 1944 as
+  "operated by United Motors Service, Inc.", whose plant-protection force had just received the War
+  Department's Guidon Award following an inspection on 3 December. [verified] — same archive,
+  *Automotive News*, 21 February 1944, page 28. A government installation run by a private company
+  is the same arrangement [the tank plant](lima-army-tank-plant.yml) operates under today, eighty
+  years apart, and this is the earlier of the only two contractor names this corpus holds for
+  either. [inference]
+
+  **It was under construction in January 1943**, which places it two years later than the
+  Locomotive Works' tank building and makes the two separate undertakings rather than one. A
+  construction worker at the Depot — a brick mason foreman — died in St. Rita's hospital of injuries
+  from falling beneath the wheels of a truck. [verified] — same archive, *The Bluffton News*,
+  21 January 1943, page 6.
+
+  **How many vehicles it handled is not recorded here, because the only figure is unreadable.** The
+  August 1944 headline reads `Lima Tank Depot Has Prepared 75,01)0 Combat Vehicles For War Use`, and
+  the body text that would repeat it is cut off mid-sentence by the scan. The obvious reading of
+  `75,01)0` is seventy-five thousand and this corpus does not write down a digit it has seen once,
+  through damaged OCR, in a headline. [open] See
+  [two scans of one book](../../decisions/two-scans-of-one-book.yml), whose reasoning applies
+  unchanged to newsprint.
+
+  **Its workforce came from thirteen counties.** The majority of employees travelled to the Depot
+  from within a radius of fifty miles, across an area of thirteen counties. [verified] — same page.
+  That is a larger labour shed than anything else this corpus records for Allen County, and it is
+  a wartime measure of the county's reach that no census gives. [inference]
+
+  **It outlived the war by at least five years.** The Depot appealed its workers' draft
+  classifications to the local board in 1945, and was still operating and named in 1950.
+  [verified] — same archive, *The Bluffton News*, 22 March 1945 and 9 February 1950.
+
+  This node does not establish where the Depot stood. No source read here gives an address, an
+  acreage or a township, so there is no `coordinates` property and the `located-in` edge reaches
+  only as far as the county. [open]
+
+  It does not establish whether this is the ground the
+  [Joint Systems Manufacturing Center](lima-army-tank-plant.yml) occupies today. Two
+  government-owned, contractor-operated tank installations at Lima, forty years apart, are very
+  plausibly one place — and plausibly is not a source. See
+  [a second node is not an assertion of difference](../../decisions/a-second-node-is-not-an-assertion-of-difference.yml).
+  [open]
+properties:
+  site_type: depot
+  status: unknown
+links:
+  - target: ../place/allen-county.yml
+    relationship: located-in
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../site.ont.yml
+    relationship: instance-of

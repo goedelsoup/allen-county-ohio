@@ -6,31 +6,9 @@
 // lets one build serve both modes and follow a viewer who changes theme mid-visit.
 
 import Plotly from 'plotly.js-basic-dist-min'
+import type { BarSpec, ChartSpec, LineSpec } from '../lib/chart-spec'
 
-export interface LineSpec {
-  kind: 'line'
-  x: (string | number)[]
-  series: { name: string; y: (number | null)[] }[]
-  xTitle?: string
-  yTitle?: string
-  tickSuffix?: string
-  /** Label the last point of each series directly, so identity is never colour alone. */
-  labelLast?: boolean
-  /** Start the y-axis at zero. Off by default: a decline of 9% on a 0-based axis is a flat line. */
-  zeroBased?: boolean
-}
-
-export interface BarSpec {
-  kind: 'bar'
-  categories: string[]
-  values: number[]
-  yTitle?: string
-  tickSuffix?: string
-  /** Print each bar's value at its end. Only ever used where there are few enough bars. */
-  labelValues?: boolean
-}
-
-export type ChartSpec = LineSpec | BarSpec
+export type { BarSpec, ChartSpec, LineSpec }
 
 interface Theme {
   surface: string

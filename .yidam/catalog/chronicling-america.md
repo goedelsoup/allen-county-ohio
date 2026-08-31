@@ -56,14 +56,26 @@ staff correspondent sent north. That is not a small qualification, and it is the
 through 1959, with every year of that span present.** Density varies — 1951 has 9 issues and 1940
 has 29, against 53 in 1959 — so a run that looks continuous by year is not continuous by week. It
 is the first source this corpus holds that was written in Allen County and published in Allen
-County, and this phase did not spend it. What it will and will not answer:
+County.
 
-    what it is        a village weekly, and it reads like one — council bids for a fire
-                      pumper, church suppers, who visited whom
-    what it covers    Bluffton, Richland Township, and the Hancock County side of the village
-    what it does not  Lima. A full-text search for the tank plant across 1940–1943 returns
-                      the fire department's booster tank and nothing else
-    when it starts    1939, which is six years after the night this phase is about
+**A correction, one phase later.** This entry said the paper "does not" cover Lima, on the evidence
+that a full-text search for the tank plant across 1940–1943 returned the fire department's booster
+tank and nothing else. That was a bad search reported as a property of the source. The Bluffton News
+runs a weekly page headed **ALLEN COUNTY**, and it is where the second phase to use this archive
+found the Lima Locomotive Works' 1940 annual report, its tank contract, Lima's municipal debt, a
+Lima and Allen County committee on truck routing, the Lima Tank Depot under construction, Ohio Steel
+Foundry's Army-Navy "E" pennant, the county's war bond total and the draft board's classification
+appeals. What it will and will not answer:
+
+    what it is        a village weekly with a county page — church suppers and who visited
+                      whom on one page, the county's largest employer's balance sheet on
+                      another
+    what it covers    Bluffton, Richland Township, the Hancock County side of the village,
+                      and Allen County generally, at a week's remove and often via the wire
+    what it does not  originate most of its Lima news. The county page reprints Associated
+                      Press and Lima dispatches, so it is usually a witness at one remove —
+                      see two papers printing one dispatch
+    when it starts    1939, which is six years after the night the first phase was about
 
 **Its OCR fails differently from the county histories.** [Leeson 1885](leeson-allen-county-1885.md)
 substitutes digits; [Rusler 1921](rusler-allen-county-1921.md) drops and doubles letters. Newsprint
@@ -78,7 +90,13 @@ Press dispatch, the identification of the killer, the three murder trials at Lim
 and the two deaths that ended the case. See
 [the raid on the Allen County jail](../corpus/event/allen-county-jail-raid-1933.yml).
 
-**What it carries that this phase did not take.** The Bluffton News in full. Also, for whoever
-comes next: the archive's `location_county` facet matches on the *name*, so `allen` returns Allen
+**Three other papers here reach Allen County.** *Automotive News* (Detroit) and the
+*Toledo Union Journal* both cover its plants as trade and union news respectively, and the
+*Evening Star* (Washington, D.C.) is digitized continuously into the 1960s and carries the county
+whenever it becomes national. Between them they are the reason the archive reaches Lima at all,
+given that no Lima paper is in it.
+
+**What it carries that these phases did not take.** The Bluffton News in full — 952 issues, and two
+phases have read perhaps a dozen. Also, for whoever comes next: the archive's `location_county` facet matches on the *name*, so `allen` returns Allen
 County, Kansas and Allen County, Kentucky alongside Ohio's, and a search filtered that way will
 quietly hand back the Iola Register.
