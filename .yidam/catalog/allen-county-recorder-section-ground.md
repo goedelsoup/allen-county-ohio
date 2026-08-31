@@ -63,13 +63,36 @@ them and this corpus has not checked that it does. [open]
 county's own section-to-book assignments are not functions, and a lookup promising one answer
 would have to invent one.
 
+## Four pages have been read
+
+Volume **0028A, pages 163 to 166** — the whole certified run for the **NW quarter of section 17,
+T3S R7E**, which is part of the ground under the
+[Ford Lima engine plant](../corpus/site/ford-lima-engine-plant.yml). Supplied by the account
+holder as PDFs; the archive is not reached from this repository.
+
+They are scans with no text layer, rendered at 200 dpi and read by eye. The typescript is clean —
+this is the certified re-transcription, not the handwritten original — and the four sheets carry
+about 95 deed rows and 90 mortgage rows between them, running from **1834 to 2003**.
+
+Each sheet is headed by the Recorder's certificate: *"I hereby certify on this day, Aug 11, 2011,
+this abstract page was correctly transcribed and proofed by two deputies"*, over the signature of
+[Mona S. Losh](../corpus/person/mona-s-losh.yml), who this corpus already held as the county's
+recorder. The certificate dates the transcription, not the record.
+
+**What a sheet is, and why one is not enough.** Reading page 166 alone — the last sheet — gives
+Ford Motor Company's earliest appearance on this ground as 2 March 1956. The run gives 24 August
+1955, on a sheet three pages earlier. A quarter's sheets are chronological and a sheet is not a
+quarter; a date read off one of them is a ceiling, not an answer.
+
 ## What has not been taken, and why
 
-The books themselves. Retrieval of archive pages is free and the office has settled programmatic
+The volumes at large. Retrieval of archive pages is free and the office has settled programmatic
 access at one page a second, so this is a choice rather than a limit — see
-[what crosses from the recorder](../decisions/what-crosses-from-the-recorder.yml). The book list
-is a finding aid; the volumes are title records naming private parties, and this corpus takes a
-page only against a question it has already written down.
+[what crosses from the recorder](../decisions/what-crosses-from-the-recorder.yml) and
+[what a tract page may be quoted for](../decisions/what-a-tract-page-may-be-quoted-for.yml). The
+book list is a finding aid; the volumes are title records naming private parties, and this corpus
+takes a page against a question it has already written down and takes from the page the answer to
+that question.
 
 ## used-by
 
