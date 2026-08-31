@@ -784,8 +784,15 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         // Found only because the wrap fix in claim.rs made it visible. This refusal had been in
-        // the tank plant node and invisible to the gate, which is what the fix was about.
-        answers: &["this corpus does not know"],
+        // the tank plant node and invisible to the gate, which is what the fix was about. The
+        // second entry arrived the same way and by a different route: a later phase added a
+        // refusal to that node about which wartime installation stands on this ground, and this
+        // assertion — which is about which township the ground is in — failed the build until it
+        // carried it. Propagation working, on an assertion nobody was editing.
+        answers: &[
+            "this corpus does not know",
+            "cannot say whether either of them stands on this ground",
+        ],
         figures: &[],
     },
     Assertion {
@@ -1166,7 +1173,7 @@ fn block_sources(node: &Node, block: &crate::claim::Block) -> Vec<String> {
     }
     // Only inherit for an explicit back-reference. A block that cites nothing and says nothing
     // about a source is resting on nothing, and this function must keep saying so.
-    if !block.text.contains("same source") {
+    if !back_reference(&block.text) {
         return Vec::new();
     }
     let mut inherited = Vec::new();
@@ -1180,6 +1187,37 @@ fn block_sources(node: &Node, block: &crate::claim::Block) -> Vec<String> {
         }
     }
     inherited
+}
+
+/// Nouns a block may point back with, after "[verified] — same ".
+///
+/// Closed, and for the same reason [`crate::claim::REFUSALS`] is: a pattern loose enough to
+/// match "the same reasoning applies" would inherit provenance into blocks that are arguing
+/// rather than citing, and inheriting a source is exactly as consequential as naming one.
+///
+/// It was one entry — `source` — for eleven phases, which was right while every source was a
+/// dataset. Then the corpus took a newspaper, and blocks began saying "same page", "same
+/// archive" and "same dispatch" because those are what a reader of a newspaper node needs.
+/// Forty-three blocks were carrying a back-reference this function did not recognise, every
+/// one of them one citation away from publishing a provenance badge with nothing in it.
+const BACK_REFERENCES: [&str; 12] = [
+    "same source",
+    "same page",
+    "same archive",
+    "same file",
+    "same roster",
+    "same volume",
+    "same table",
+    "same dispatch",
+    "same series",
+    "same register",
+    "same dataset",
+    "same book",
+];
+
+/// Whether `text` points back at the source named in an earlier block of its node.
+pub fn back_reference(text: &str) -> bool {
+    BACK_REFERENCES.iter().any(|r| text.contains(r))
 }
 
 fn sources(text: &str) -> Vec<String> {
@@ -1617,6 +1655,22 @@ mod tests {
     fn catalog_links_in_the_cited_block_become_the_citation_sources() {
         let text = "A figure. [verified] — [Gazetteer](../../catalog/census-gazetteer-2020.md).";
         assert_eq!(sources(text), vec!["catalog/census-gazetteer-2020.md"]);
+    }
+
+    #[test]
+    fn a_newspaper_back_reference_inherits_like_a_dataset_one() {
+        // "same page" and "same archive" are what a newspaper node says. Before the closed
+        // list they inherited nothing, so a cited block ending "[verified] — same page" went
+        // out with a provenance badge and no provenance in it.
+        for phrase in ["same source", "same page", "same archive", "same dispatch"] {
+            assert!(back_reference(&format!("A fact. [verified] — {phrase}.")), "{phrase}");
+        }
+    }
+
+    #[test]
+    fn an_argument_that_merely_says_same_inherits_nothing() {
+        assert!(!back_reference("The same reasoning applies to the townships."));
+        assert!(!back_reference("Two scans of the same edition."));
     }
 
     #[test]
