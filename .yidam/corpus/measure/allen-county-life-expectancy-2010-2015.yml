@@ -1,0 +1,65 @@
+class: measure
+label: Life expectancy at birth in Allen County's census tracts, 2010–2015
+description: |
+  How long people born here can expect to live, and how far it varies inside one county of a
+  hundred thousand. [verified] — [NCHS USALEEP](../../catalog/nchs-usaleep.md), which builds an
+  abridged life table for each census tract from death certificates and population.
+
+  **Thirty tracts, and 13.7 years between the highest and the lowest.** From **69.1** years in tract
+  `39003012600` to **82.8** in `39003011300`, on a median of 78.0. [verified] — same source. The two
+  ends are more than five combined standard errors apart, on published errors of 1.72 each, so the
+  spread is not an artefact of small counts.
+
+  **A tract whose centre is inside Lima expects about five fewer years than one outside it.**
+  Thirteen of the twenty-eight tracts this file can be joined to the 2020 geography have their
+  internal point inside the city; their median is **72.7** years against **79.0** for the fifteen
+  outside, and weighted by tract population, 73.9 against 79.1. [inference] — computed here from
+  [the same file](../../catalog/nchs-usaleep.md) and
+  [TIGERweb's place boundary](../../catalog/tigerweb-census2020.md).
+
+  **The two groups barely overlap.** The highest Lima tract is 78.2 and the lowest tract outside the
+  city is 74.0, so eleven of the thirteen inside sit below every tract outside but one. [inference]
+  — computed here.
+
+  **Sixteen of the county's thirty-five tracts have their internal point inside Lima**, which is the
+  same number the corpus reached by a different method — the sixteen whose 2020 block population is
+  majority Lima. [verified] — same boundary file and
+  [the lending register](allen-county-home-lending-2018-2024.yml). Two routes to the same count is
+  not proof that they name the same sixteen, and this corpus has not checked that they do.
+  [inference]
+
+  **The county's own figure is not stated here.** Population-weighted across the twenty-eight tracts
+  that join, life expectancy is 76.9 years — but those tracts hold 82,484 of the county's 102,206
+  people, because two 2010 tracts were split in the 2020 redraw and seven 2020 tracts have no 2010
+  row. [inference] — computed here. Four fifths of a county is not a county, and NCHS publishes no
+  county figure in this file.
+
+  **Against Ohio.** The state's 2,772 tracts run from 60.0 to 89.2 years on a median of 76.9, so
+  Allen County's median sits half a year above the state's and its range is well inside it.
+  [verified] — same file, all Ohio rows.
+
+  [open] Whether any of this still holds. The estimates are for 2010–2015 and were published in
+  2018; the corpus's other health source is 2022–2023 and measures nothing comparable. Nothing here
+  says what a decade did.
+properties:
+  parameter: life expectancy at birth, by census tract
+  value: "13.7"
+  unit: years between the county's highest and lowest tract
+  as_of: "2015"
+  method: |
+    NCHS estimates for 2010–2015, on 2010 census tracts. The join to Lima is by tract identifier to
+    the 2020 tract file and then by that tract's published internal point against the city's 2020
+    boundary polygon — so it is a statement about where a tract's centre falls and not about how
+    many of its people live in the city. Two of the thirty tracts have no 2020 identifier and are
+    excluded from every comparison, and are in the range and the median. Medians and weighted means
+    are this corpus's arithmetic; every input is NCHS's or the Census Bureau's. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nchs-usaleep.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
