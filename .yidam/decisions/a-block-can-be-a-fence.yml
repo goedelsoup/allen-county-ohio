@@ -1,0 +1,67 @@
+id: a-block-can-be-a-fence
+summary: >-
+  For two phases this corpus tried to name the institution holding 1,360 people by matching
+  address points to a census block, and got an auto wrecking yard. The join that worked was
+  between two files the same agency draws from the same geometry: where a block and a landmark
+  carry the same land area and the same internal point, they are the same polygon, and the
+  identification is exact rather than probable.
+context: |
+  Block `390030112001004` in Lima holds 1,360 people and no housing units. The corpus found it by
+  reading population against housing at block level, could not name it, and reasoned — correctly,
+  as it turned out — that an institution's address point sits at its gate while its residents are
+  counted inside its fence. But reasoning was all it had. The county's address file put exactly one
+  point inside the block, labelled `BIBLE ROAD AUTO WRECKING AT 505 BIBLE RD`, and put the three
+  institutional addresses it carries half a mile west on North West Street.
+
+  Three separate attempts had by then failed on the same problem, each in its own way:
+
+    - **address-point-in-polygon**, which returns whatever the county geocoded to that spot, and
+      a large campus is geocoded to its street frontage
+    - **nearest landmark**, which returns something for every point and cannot tell 400 metres
+      from 4 kilometres of meaning
+    - **the facility list of the operating agency**, which in this case is rendered by JavaScript
+      and returns no institution names to a client that does not run it
+
+  What settled it took no reasoning at all. The Census Bureau publishes a landmark file with each
+  feature's land area and internal point; its redistricting file publishes the same two fields for
+  each block. For *Allen Correctional Instn* both files give **364,210** square metres and
+  **+40.7751673 −084.0996846**. For *Oakwood Corr Faclty* both give **1,383,460** and
+  **+40.7812913 −084.1012253**. Land area computed to the square metre and an internal point to
+  seven decimals do not coincide by accident; they coincide because one polygon produced both rows.
+decision: |
+  **Identify a statistical unit with a real-world feature only where the publisher's own geometry
+  says they are the same shape. Everything else is a lead.**
+
+  - **Join on the geometry, not on a name or an address.** Land area and internal point are
+    computed from the polygon and travel with it between a publisher's files. A name is typed and
+    an address is a mailing convenience.
+  - **Require both fields to match.** An internal point alone can be shared by a block and its
+    parent; a land area alone can coincide between unrelated small features. Together, at the
+    published precision, they are an identity.
+  - **Where they do not match, say what the relationship is instead of asserting one.** A block
+    *inside* a landmark is a containment and may be reported as one — the two blocks of student
+    housing inside a university's polygon are that. A block merely *near* a landmark is nothing,
+    and 400 metres is near.
+  - **Do not treat the operator's own website as the authority of first resort.** It is the
+    authority on the institution and frequently unreadable; the mapping agency is the authority on
+    where it is and publishes flat files.
+rationale: |
+  **The failure this replaces was not carelessness, it was a category error.** An address is an
+  assertion about where mail goes. A census block is an assertion about where people were counted.
+  For a house those coincide and the join is free, which is why the method looked sound for as long
+  as this corpus only asked about houses. For an institution on ninety acres behind a fence they
+  come apart by half a mile, and no amount of care in the address matching would have closed the
+  gap, because the gap is in what the two files mean.
+
+  **The rule generalises past prisons.** Every large single-purpose parcel is liable to this —
+  hospitals, campuses, airports, refineries, plants — and this corpus has nodes for several of
+  them whose `located-in` edges rest on address points. The geometry test is available for all of
+  them, costs one file, and returns either an identity or an honest nothing.
+
+  **It also bounds what the identification licenses.** Knowing that a block is a prison says
+  nothing about which prison, when it opened, or what stood there before. The two facilities named
+  here are named by the mapping agency, in 2024, and the corpus still cannot say when either began
+  or whether the ground was the state hospital farm of 1915. A geometric identity is an identity
+  of shape at one moment, which is exactly as much as it claims and no more.
+status: accepted
+date: "2026-08-31"
