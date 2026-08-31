@@ -10,11 +10,19 @@ const succession = assertion('the-office-passed-from-father-to-son')
 const bank = assertion('the-man-in-the-cell-was-charged-with-an-allen-county-bank')
 const tanks = assertion('the-county-had-two-tank-installations')
 const books = assertion('the-war-turned-the-locomotive-works-books')
+const railTown = assertion('lima-was-a-railroad-town-before-an-oil-town')
+const noTrains = assertion('no-passenger-train-calls-in-this-county')
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
   labelValues: true,
 })
+
+const crossingSpec = bar(
+  noTrains.figures.map((f) => f.label),
+  noTrains.figures.map((f) => f.value),
+  { yTitle: 'Open crossings', labelValues: true },
+)
 
 // The spine is read out of the graph, never typed here. A page that lists the county's dated
 // record by hand would keep saying "1885" long after a phase had added something later, and the
@@ -117,6 +125,59 @@ const since = new Date().getUTCFullYear() - last
         }
       </tbody>
     </table>
+  </section>
+
+  <section>
+    <h2>Why Lima is where it is</h2>
+    <p>
+      This site has told the county's industrial story as an oil story since the population page
+      was written, and the oil is not where it starts. Two railroads chose to cross at Lima —
+      one in 1854 and one four years later — and the canal towns fifteen miles west, which had
+      the head start, did not get a crossing.
+    </p>
+    <AssertionCard assertion={railTown} />
+    <p>
+      The county paid $50,000 in stock for the first of them and later sold the stock at par, so
+      the road cost it nothing. In 1872 Lima and Ottawa Township voted on $100,000 of bonds for
+      two more lines: something over 700 votes were cast and eight of them were against. By 1883
+      there were about 102 miles of main track in the county, and by 1906 two railroad shops in
+      Lima employed more than five hundred men each.
+    </p>
+    <p>
+      One date on the table above is not a date so much as a range. Three county histories name
+      the same first railroad and give three different years — 1853, 1854 and 1856 — and none of
+      them cites the record it read. The corpus takes 1854, because it is the nearest witness's
+      year and because the same book that dates the opening latest also reports that the
+      locomotive used to build the line arrived in 1854, by canal, as freight to Delphos. A
+      construction engine delivered in 1854 cannot serve a line already open in 1853.
+    </p>
+  </section>
+
+  <section>
+    <h2>And what is left of it</h2>
+    <AssertionCard assertion={noTrains} />
+    <ChartFigure
+      id="crossings"
+      title="Open highway-rail crossings by place, 2026"
+      caption="FRA Highway-Rail Grade Crossing Inventory. A crossing is a place a road meets a track, so this counts encounters and not miles; the corpus has no modern track mileage to set against the 102 miles of 1883."
+      columns={['Place', 'Open crossings']}
+      rows={noTrains.figures.map((f) => [f.label, String(f.value)])}
+    />
+    <script type="application/json" data-chart-spec="crossings" set:html={JSON.stringify(crossingSpec)} is:inline />
+    <p>
+      Two of the five are Class I railroads and three are short lines. The busiest is CSX, at up to
+      24 trains a day and 60 miles an hour through Lima; the one with the most crossings is the
+      Chicago, Fort Wayne & Eastern, a single-track short line running east and west through Lima,
+      Lafayette, Delphos and Elida — which is the axis the first railroad was built along, still
+      carrying the name of the city it was built toward.
+    </p>
+    <p>
+      A hundred and four more crossings in this county are on record as closed, including every one
+      Conrail ever reported and every one Grand Trunk Western did. In 1906 ten fast passenger trains
+      a day passed through Lima on one road alone, besides the mails and the limited express, and in
+      1921 a traveller could go to bed here and wake in Chicago. The inventory records passenger
+      trains per day at every crossing in the county and records zero at all of them.
+    </p>
   </section>
 
   <section>
