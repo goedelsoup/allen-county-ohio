@@ -3,37 +3,51 @@ label: What happened at the two irregular sheriff transitions?
 description: |
   The [past-sheriffs roster](../../catalog/acso-past-sheriffs.md) is continuous from 1831 to
   the present with no gaps and no overlaps. [verified] Two of its thirty-nine entries are
-  nonetheless irregular in a way the source does not explain, and both have an obvious reading
-  the corpus declines to write down.
+  nonetheless irregular in a way the source does not explain, and both had an obvious reading
+  the corpus declined to write down. One of them is now answered.
 
-  **1931–1933 Jess L. Sarber, then 1933–1935 Donald F. Sarber.** A two-year term ending
-  mid-decade, followed immediately by a holder of the same surname. [verified] The reading
-  that suggests itself is that the first died or left office and a relative succeeded him. The
-  roster says neither, and a `how_ended` of "died in office" written on that basis would be an
-  inference wearing the costume of a record — the field would look exactly like the ones
-  supported by evidence. [open]
+  **1931–1933 Jess L. Sarber, then 1933–1935 Donald F. Sarber — answered, and the obvious
+  reading was right.** Jess L. Sarber was shot dead in the Allen County jail on the night of
+  12 October 1933 by three men who came to free John Dillinger, and his son Donald succeeded
+  him. [verified] — [Chronicling America](../../catalog/chronicling-america.md); a Lima
+  dispatch of 4 March 1934 describes the accused as awaiting trial for "the slaying of the
+  sheriff's father" and calls the dead man "the elder Sarber, who preceded his son as
+  sheriff". See [the raid on the Allen County jail](../event/allen-county-jail-raid-1933.yml).
 
-  **2017–2017 James K. Everett.** The only entry whose range begins and ends in the same year,
-  sitting between an eight-year holder and the current one. [verified] The obvious reading is
-  an appointment to fill a vacancy, which is how Ohio fills a county office between elections.
-  The roster does not say that either. [open]
+  What the roster would not carry — a `how_ended` of "died in office" and a `how_began` of
+  "succeeded" — is now on the two tenure nodes, sourced. The question was right to hold them
+  out: the fields look identical whether they were read off a record or off a resemblance, and
+  it took a second source to tell those apart.
 
-  Both are recorded here rather than in the tenure nodes because a tenure node's fields are
-  read by [succession-audit](../../skills/succession-audit.md), and a plausible `how_ended`
+  **2017–2017 James K. Everett — still open.** The only entry whose range begins and ends in
+  the same year, sitting between an eight-year holder and the current one. [verified] The
+  obvious reading is an appointment to fill a vacancy, which is how Ohio fills a county office
+  between elections. The roster does not say that, and nothing retrieved since does. [open]
+
+  **The route that closed the first half is not the route this question named.** It asked for
+  Lima newspaper coverage, and no Lima newspaper is digitized in the national archive — the
+  county seat's press is simply absent from it. What answered the question was a wire dispatch
+  reprinted in Washington, D.C., about a trial, five months after the fact. A question that
+  names its own closer can be answered by something it did not think of, which is an argument
+  for writing the closer down loosely.
+
+  Both cases are recorded here rather than in the tenure nodes because a tenure node's fields
+  are read by [succession-audit](../../skills/succession-audit.md), and a plausible `how_ended`
   would be consumed by it as fact. An open question is read by people.
 properties:
   claim_tag: open
   opened: "2026-08-28"
   would_close_this: |
-    Allen County commissioners' journals or common pleas records for 1933 and 2017, which
-    record a vacancy and its filling; or contemporary Lima newspaper coverage, which would
-    date and explain both. For the 2017 case, the county's own record of the appointment.
+    For 2017: the county's own record of the appointment, or Allen County commissioners' or
+    common pleas records for that year, which record a vacancy and its filling. A federal
+    court docket in the Northern District of Ohio would establish a prosecution and not an
+    appointment, and the corpus wants the second. The 1933 half is closed.
 links:
   - target: ../office/allen-county-sheriff.yml
     relationship: concerns
-  - target: ../person/jess-l-sarber.yml
-    relationship: concerns
   - target: ../person/james-k-everett.yml
+    relationship: concerns
+  - target: ../event/allen-county-jail-raid-1933.yml
     relationship: concerns
   - target: ../question.ont.yml
     relationship: instance-of
