@@ -1,0 +1,68 @@
+id: of-here-is-not-located-here
+summary: >-
+  Fort Amanda is the origin of Allen County's settlement, the namesake of one of its townships,
+  and the site of its first post office, and it stands nine hundred and ninety feet outside the
+  county. This records the rule for holding such a thing — a node, with the containment stated as
+  history rather than as geography — and the two ontology edges that carry it.
+context: |
+  Three county histories place Fort Amanda in Allen County. The 1885 book opens its settlement
+  chapter with "The initial point in the history of the settlement of Allen County must be known
+  as Fort Amanda" and calls it the county's first post office; the 1906 book reprints that;
+  the 1921 book says outright that "in its traditions Fort Amanda belongs to Allen County."
+
+  It is in Auglaize County. The federal gazetteer says so, and the county's own map service says
+  so by silence — the fort's coordinate returns nothing from the township layer, nothing from the
+  survey-section layer and nothing from the parcel layer, where a control point a mile north
+  returns `AMANDA TOWNSHIP` from the first of them. Walking north along the same meridian until
+  the service begins to answer puts the county line 0.188 miles away.
+
+  The 1921 history knows this and argues with it in the same paragraph that reports it: "It was a
+  rude fate that removed Fort Amanda with its historic traditions from the bounds of Allen County.
+  However, it is used as an Allen County asset today because the military post located there was
+  in Allen County. The Bible says 'Prove all things and hold fast that which is good,' and in its
+  traditions Fort Amanda belongs to Allen County."
+
+  So the question is not whether the histories are wrong. They are right about 1812 and wrong about
+  1885, and they never noticed the difference because the boundary moved under a fact they had
+  already written down.
+decision: |
+  **The fort gets a node, and the containment is stated twice, differently.**
+
+  `site/fort-amanda.yml` carries **`formerly-in` → `place/allen-county.yml`**, a new edge on the
+  site class, because `located-in` carries no date and would assert present containment. The
+  distinction is the whole finding and it belongs in the graph, not only in the prose.
+
+  `place/amanda-township.yml` carries **`named-for` → `site/fort-amanda.yml`**, a new target for an
+  edge the place class already declared toward `person`. The township is named for the fort in all
+  three histories and nothing contests it.
+
+  **No person node for Poague, and none for Amanda.** Col. Thomas Poague built the fort, named it,
+  and cut the road from St. Marys to Fort Defiance; his wife's name is on a township. Everything
+  the corpus can say about either is a cell on the fort's node — a name, a rank, an act — and
+  neither has a relationship to another node or a disagreement between sources.
+  [node-worthiness-is-a-property-of-the-member](node-worthiness-is-a-property-of-the-member.yml)
+  answers this without a new rule, and it answers the same way it did for eighty-eight precincts
+  and twenty-four mayors.
+rationale: |
+  **This is the mirror of a decision three phases old.**
+  [located-here-is-not-of-here](located-here-is-not-of-here.yml) was written when six colleges
+  stood on Allen County ground and taught mostly people from somewhere else: a boundary sum is a
+  fact about ground and not about a community. Fort Amanda is the same sentence read backwards.
+  It is of here and not located here, and the corpus needed both halves of the distinction before
+  either was safe to use.
+
+  **Why the graph and not just the prose.** [John Allen](../corpus/person/john-allen.yml) has
+  carried this argument since genesis. The corpus declined to write a `named-for` edge from the
+  county to that node because the identification is contested, and said why: such an edge "would
+  be well-formed, would resolve, would pass every check this repository runs, and would settle by
+  structure a matter the prose says is open." The same reasoning read positively is that where a
+  naming *is* settled, the edge should exist — and this is the first one the corpus can defend.
+  A `located-in` edge from the fort to Allen County would be the failure that node warns about,
+  and `formerly-in` is the cost of avoiding it: one more relationship in the ontology, in exchange
+  for a graph that cannot be queried into saying something false.
+
+  **What this does not license.** Not every fact with a Lima address is Allen County's, and not
+  everything a county history claims is inside the line is inside it. The test applied here was
+  cheap and should be applied again: a federal gazetteer for the county name, and the county's own
+  map for the polygon. It took two requests. The claim it overturned had stood in print since 1885
+  and in this corpus since the township node was written.
