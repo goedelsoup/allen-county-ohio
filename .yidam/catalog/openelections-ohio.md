@@ -23,6 +23,7 @@ location:
     description: Directory listing; 2012, 2016 and 2018 are siblings, 2022 and 2024 have no precinct file
 used-by:
   - ../corpus/division/voting-district-lima-1a-2020.yml
+  - ../corpus/measure/allen-county-elected-seats-2026.yml
   - ../corpus/measure/allen-county-governor-vote-2018.yml
   - ../corpus/measure/allen-county-presidential-vote-2016.yml
   - ../corpus/measure/allen-county-presidential-vote-2020.yml
@@ -30,6 +31,7 @@ used-by:
   - ../corpus/measure/allen-county-voting-districts-2020.yml
   - ../corpus/place/lima.yml
   - ../corpus/question/who-lives-in-the-county-without-housing.yml
+  - ../corpus/question/why-allen-countys-villages-are-staffed-by-appointment.yml
 ---
 
 **What it carries for this county.** 88 precincts, each with registered voters, ballots cast, and

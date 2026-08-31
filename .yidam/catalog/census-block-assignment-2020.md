@@ -29,6 +29,7 @@ used-by:
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
+  - ../corpus/measure/allen-county-home-lending-2023.yml
   - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-voting-districts-2020.yml
   - ../corpus/measure/lima-population-2020-census.yml

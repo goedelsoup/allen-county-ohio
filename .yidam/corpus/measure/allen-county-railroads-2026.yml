@@ -1,0 +1,66 @@
+class: measure
+label: Allen County's railroads, 2026
+description: |
+  What is left of the network, counted at every place a road crosses it. [verified] —
+  [FRA Highway-Rail Grade Crossing Inventory](../../catalog/fra-crossing-inventory.md).
+
+      railroad                          class     open crossings   closed
+      Chicago, Ft. Wayne & Eastern      III                  65        1
+      CSX Transportation                I                    42       20
+      Norfolk Southern                  I                    40       49
+      R. J. Corman, Western Ohio Line   III                  27        6
+      Indiana & Ohio Railway            III                  26        1
+      Rail Switching Service            n/a                   1        -
+      Conrail                           -                     -       24
+      Grand Trunk Western               -                     -        3
+
+  **Not one of the 201 open crossings sees a passenger train.** [verified] — same source, which
+  records passenger trains per day at every crossing and records zero at all of them. In 1906 ten
+  fast passenger trains a day passed through Lima on the Chicago & Erie alone, besides the mails and
+  the limited express, and in 1921 a traveller could go to bed in Allen County and wake in Chicago
+  or New York. [verified] —
+  [the network then](allen-county-railroads-1883-1921.yml).
+
+  **One line carries most of the traffic and it is not the one with most of the crossings.** CSX
+  runs up to 24 through trains a day at 60 miles an hour on two main tracks at Robb Avenue in Lima;
+  the Chicago, Fort Wayne & Eastern, which has 65 open crossings to CSX's 42, runs at most 10 a day
+  at 40, on one track. Norfolk Southern's 40 open crossings see at most two trains a day at ten
+  miles an hour. [verified] — same source.
+
+  **The closed crossings are the record of who left.** 104 of the county's 305 crossing records are
+  marked closed, including every one of Conrail's 24 and every one of Grand Trunk Western's 3.
+  [verified] — same source. Norfolk Southern has more closed crossings in this county than open
+  ones.
+
+  **The busiest railroad in the county is a short line named for Fort Wayne.** The Chicago, Fort
+  Wayne & Eastern's crossings sit in Lima, Lafayette, Delphos and Elida — east of Lima and west of
+  it, on the axis the Ohio & Indiana was built along in 1854. [inference] — the towns are the
+  source's, the identification is this corpus's, and it rests on route and name rather than on any
+  corporate record. See [the first railroad](../event/the-first-railroad-reaches-allen-county.yml).
+
+  **Lima holds 108 of the 201.** Then Spencerville with 16, Lafayette 15, Beaverdam 14, Delphos 13,
+  Elida 12, Cairo 10 and Bluffton 7. [verified] — same source. 171 of the 201 are at grade; 21 pass
+  under the railroad and 9 over it.
+
+  [open] No mileage. The inventory counts crossings and not track, so nothing here is comparable to
+  the 102 miles of main track the county had in 1883, and this corpus cannot say whether the
+  network shrank, moved or merely changed hands.
+properties:
+  parameter: open highway-rail grade crossings
+  value: "201"
+  unit: crossings
+  as_of: "2026-08-30"
+  method: |
+    Current Form 71 inventory as of retrieval, filtered to FIPS 39003, counting rows whose
+    `crossingclosed` field is `No`. 95 of the 201 open rows were last revised in 2025 and 92 in
+    2026; twelve carry revisions from 2014 to 2024 and are stale to that degree. A crossing is a
+    place a road meets a track, so a railroad with many crossings is not necessarily a railroad with
+    much track or much traffic — the train counts are recorded separately and are used here for
+    that. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fra-crossing-inventory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

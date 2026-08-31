@@ -582,6 +582,26 @@
       ]
     },
     {
+      "id": "place-allen-county::open-highway-rail-grade-crossings",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "open highway-rail grade crossings",
+      "unit": "crossings",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-railroads-2026.yml",
+          "label": "Allen County's railroads, 2026",
+          "as_of": "2026-08-30",
+          "value": 201.0,
+          "published": "201",
+          "tier": "verified",
+          "source": "catalog/fra-crossing-inventory.md",
+          "method": "Current Form 71 inventory as of retrieval, filtered to FIPS 39003, counting rows whose `crossingclosed` field is `No`. 95 of the 201 open rows were last revised in 2025 and 92 in 2026; twelve carry revisions from 2014 to 2024 and are stale to that degree. A crossing is a place a road meets a track, so a railroad with many crossings is not necessarily a railroad with much track or much traffic — the train counts are recorded separately and are used here for that. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::paid-employees-for-pay-period-including-March-12,-NAICS-62-and-its-four-subsectors",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -668,6 +688,26 @@
           "tier": "verified",
           "source": "catalog/census-county-business-patterns.md",
           "method": "County Business Patterns county files for 1986 and 2022, with sector 62 traced across 2000, 2005, 2010, 2015 and 2020. Both endpoint years close exactly: the ten 1986 SIC divisions sum to 45,917 and the twenty 2022 NAICS sectors to 42,814, each equal to its file's own total row. Government, the self-employed and farms are excluded. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::railroad-main-track-in-the-county",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "railroad main track in the county",
+      "unit": "miles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-railroads-1883-1921.yml",
+          "label": "Allen County's railroads, 1872–1921",
+          "as_of": "1883",
+          "value": 102.0,
+          "published": "102",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Read from the full text of three county histories on archive.org, the 1885 book in two independent scans. The mileage is the 1885 book's, compiled from official records of 1883 and prefaced \"about\". The employment figures are as the sources print them — a range for 1879 and a floor for 1906 — and are not counts; nothing here averages a range or treats \"more than 500\" as 500. [verified]"
         }
       ]
     },
@@ -2971,6 +3011,122 @@
           "label": "Wheat, 2022",
           "value": 81.8,
           "literal": "81.8"
+        }
+      ]
+    },
+    {
+      "id": "lima-was-a-railroad-town-before-an-oil-town",
+      "statement": "Lima was an industrial city six years before the oil. In 1879 it stood at the crossing of three railroads, all of which kept repair shops there, and the largest establishment in town was a locomotive shop.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-railroads-1883-1921.yml",
+          "node_label": "Allen County's railroads, 1872–1921",
+          "span": "In March 1879, at a population of about 7,000, the *Allen County Republican* described the city as standing at the crossing of the Pittsburg, Fort Wayne & Chicago, the Dayton & Michigan and the Lake Erie & Louisville, with all three keeping repair shops there, a street railroad running from the Union Depot, and the Dayton & Michigan shops covering some eight acres and employing 200 to 300 men.",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-railroads-1883-1921.yml",
+          "node_label": "Allen County's railroads, 1872–1921",
+          "span": "there is no rival in the 1879 list: the next largest establishments named are furniture factories of seven to twenty-five hands.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "event/the-first-railroad-reaches-allen-county.yml",
+          "node_label": "The first railroad reaches Allen County",
+          "span": "Within a decade Lima stood at the crossing of the two roads and Delphos, the canal town, did not.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "The corpus cannot say how large the railroad workforce of this county ever was."
+      ],
+      "figures": []
+    },
+    {
+      "id": "no-passenger-train-calls-in-this-county",
+      "statement": "Five railroads still cross Allen County at 201 open crossings, 108 of them in Lima. Not one of the 201 sees a passenger train.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-railroads-2026.yml",
+          "node_label": "Allen County's railroads, 2026",
+          "span": "**Not one of the 201 open crossings sees a passenger train.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/fra-crossing-inventory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-railroads-2026.yml",
+          "node_label": "Allen County's railroads, 2026",
+          "span": "**Lima holds 108 of the 201.** Then Spencerville with 16, Lafayette 15, Beaverdam 14, Delphos 13, Elida 12, Cairo 10 and Bluffton 7.",
+          "tier": "verified",
+          "sources": [
+            "catalog/fra-crossing-inventory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-railroads-1883-1921.yml",
+          "node_label": "Allen County's railroads, 1872–1921",
+          "span": "**By 1906 two shops employed more than five hundred men each**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "The inventory counts crossings and not track, so nothing here is comparable to the 102 miles of main track the county had in 1883, and this corpus cannot say whether the network shrank, moved or merely changed hands.",
+        "The corpus cannot say how large the railroad workforce of this county ever was."
+      ],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 108.0,
+          "literal": "108"
+        },
+        {
+          "label": "Spencerville",
+          "value": 16.0,
+          "literal": "16"
+        },
+        {
+          "label": "Lafayette",
+          "value": 15.0,
+          "literal": "15"
+        },
+        {
+          "label": "Beaverdam",
+          "value": 14.0,
+          "literal": "14"
+        },
+        {
+          "label": "Delphos",
+          "value": 13.0,
+          "literal": "13"
+        },
+        {
+          "label": "Elida",
+          "value": 12.0,
+          "literal": "12"
+        },
+        {
+          "label": "Cairo",
+          "value": 10.0,
+          "literal": "10"
+        },
+        {
+          "label": "Bluffton",
+          "value": 7.0,
+          "literal": "7"
         }
       ]
     },

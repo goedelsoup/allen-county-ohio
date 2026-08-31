@@ -17,11 +17,15 @@ location:
       on archive.org and is not held.
 used-by:
   - ../corpus/event/lima-oil-strike.yml
+  - ../corpus/event/renaming-of-german-township-1918.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
+  - ../corpus/period/canal-era.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/james-a-hover.yml
@@ -34,6 +38,7 @@ used-by:
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/lima-refinery.yml
+  - ../corpus/site/miami-and-erie-canal.yml
 ---
 
 **What it is.** The same commercial genre as

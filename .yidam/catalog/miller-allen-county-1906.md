@@ -22,13 +22,17 @@ location:
 used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
+  - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
+  - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/organization/lima-memorial-health-system.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
+  - ../corpus/place/lima.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/when-allen-county-was-organized.yml
 ---

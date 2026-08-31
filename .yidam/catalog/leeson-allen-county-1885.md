@@ -24,6 +24,7 @@ used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/jurisdiction/amanda-township.yml
   - ../corpus/jurisdiction/american-township.yml
   - ../corpus/jurisdiction/auglaize-township.yml
@@ -43,6 +44,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
+  - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/period/canal-era.yml
   - ../corpus/period/lima-oil-boom.yml
@@ -50,6 +52,7 @@ used-by:
   - ../corpus/person/christopher-wood.yml
   - ../corpus/person/john-franks.yml
   - ../corpus/person/samuel-forrer.yml
+  - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml

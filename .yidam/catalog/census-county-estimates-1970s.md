@@ -14,6 +14,8 @@ location:
 used-by:
   - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-population-1970.yml
+  - ../corpus/period/depopulation.yml
+  - ../corpus/place/allen-county.yml
   - ../corpus/question/pre-1970-population-series.yml
 ---
 

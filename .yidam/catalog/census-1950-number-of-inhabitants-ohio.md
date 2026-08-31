@@ -20,6 +20,7 @@ location:
 used-by:
   - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-townships-1930-1950.yml
+  - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml

@@ -1123,6 +1123,66 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "lima-was-a-railroad-town-before-an-oil-town",
+        statement: "Lima was an industrial city six years before the oil. In 1879 it stood at \
+                    the crossing of three railroads, all of which kept repair shops there, and \
+                    the largest establishment in town was a locomotive shop.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-railroads-1883-1921.yml",
+                "In March 1879, at a population of about 7,000, the *Allen County Republican* described the city as standing at the crossing of the Pittsburg, Fort Wayne & Chicago, the Dayton & Michigan and the Lake Erie & Louisville, with all three keeping repair shops there, a street railroad running from the Union Depot, and the Dayton & Michigan shops covering some eight acres and employing 200 to 300 men."
+            ),
+            support!(
+                "measure/allen-county-railroads-1883-1921.yml",
+                "there is no rival in the 1879 list: the next largest establishments named are furniture factories of seven to twenty-five hands."
+            ),
+            support!(
+                "event/the-first-railroad-reaches-allen-county.yml",
+                "Within a decade Lima stood at the crossing of the two roads and Delphos, the canal town, did not."
+            ),
+        ],
+        // The node refuses a workforce total and this assertion needs none: it rests on what one
+        // newspaper listed in one week, which is a ranking of the establishments it names and not
+        // a count of anybody.
+        answers: &["The corpus cannot say how large the railroad workforce of this county ever was"],
+        figures: &[],
+    },
+    Assertion {
+        id: "no-passenger-train-calls-in-this-county",
+        statement: "Five railroads still cross Allen County at 201 open crossings, 108 of them \
+                    in Lima. Not one of the 201 sees a passenger train.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-railroads-2026.yml",
+                "**Not one of the 201 open crossings sees a passenger train.**"
+            ),
+            support!(
+                "measure/allen-county-railroads-2026.yml",
+                "**Lima holds 108 of the 201.** Then Spencerville with 16, Lafayette 15, Beaverdam 14, Delphos 13, Elida 12, Cairo 10 and Bluffton 7."
+            ),
+            support!(
+                "measure/allen-county-railroads-1883-1921.yml",
+                "**By 1906 two shops employed more than five hundred men each**"
+            ),
+        ],
+        answers: &[
+            "The corpus cannot say how large the railroad workforce of this county ever was",
+            "this corpus cannot say whether the network shrank, moved or merely changed hands",
+        ],
+        figures: &[
+            Figure { label: "Lima", value: 108.0, literal: "108" },
+            Figure { label: "Spencerville", value: 16.0, literal: "16" },
+            Figure { label: "Lafayette", value: 15.0, literal: "15" },
+            Figure { label: "Beaverdam", value: 14.0, literal: "14" },
+            Figure { label: "Delphos", value: 13.0, literal: "13" },
+            Figure { label: "Elida", value: 12.0, literal: "12" },
+            Figure { label: "Cairo", value: 10.0, literal: "10" },
+            Figure { label: "Bluffton", value: 7.0, literal: "7" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

@@ -22,6 +22,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/measure/allen-county-elected-seats-2026.yml
   - ../corpus/measure/allen-county-natural-change-2021-2024.yml
   - ../corpus/measure/allen-county-net-migration-2021-2024.yml
   - ../corpus/measure/allen-county-population-2020.yml
@@ -52,6 +53,7 @@ used-by:
   - ../corpus/place/spencerville.yml
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/question/pre-1970-population-series.yml
+  - ../corpus/question/why-allen-countys-villages-are-staffed-by-appointment.yml
 ---
 
 Comma-delimited files from the Census Bureau's Population Estimates Program. The county file

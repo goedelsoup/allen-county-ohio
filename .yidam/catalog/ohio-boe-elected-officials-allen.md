@@ -25,8 +25,31 @@ used-by:
   - ../corpus/division/ohio-senate-district-12-2020.yml
   - ../corpus/division/ohio-senate-district-12-2023.yml
   - ../corpus/jurisdiction/allen-county-court-of-common-pleas.yml
+  - ../corpus/jurisdiction/allen-county-educational-service-center.yml
   - ../corpus/jurisdiction/allen-county-government.yml
+  - ../corpus/jurisdiction/allen-east-local-school-district.yml
+  - ../corpus/jurisdiction/bath-local-school-district.yml
+  - ../corpus/jurisdiction/bluffton-exempted-village-school-district.yml
+  - ../corpus/jurisdiction/city-of-delphos.yml
+  - ../corpus/jurisdiction/city-of-lima.yml
+  - ../corpus/jurisdiction/columbus-grove-local-school-district.yml
+  - ../corpus/jurisdiction/delphos-city-school-district.yml
+  - ../corpus/jurisdiction/elida-local-school-district.yml
+  - ../corpus/jurisdiction/lima-city-school-district.yml
   - ../corpus/jurisdiction/lima-municipal-court.yml
+  - ../corpus/jurisdiction/pandora-gilboa-local-school-district.yml
+  - ../corpus/jurisdiction/perry-local-school-district.yml
+  - ../corpus/jurisdiction/shawnee-local-school-district.yml
+  - ../corpus/jurisdiction/spencerville-local-school-district.yml
+  - ../corpus/jurisdiction/village-of-beaverdam.yml
+  - ../corpus/jurisdiction/village-of-bluffton.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
+  - ../corpus/jurisdiction/village-of-elida.yml
+  - ../corpus/jurisdiction/village-of-harrod.yml
+  - ../corpus/jurisdiction/village-of-lafayette.yml
+  - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
+  - ../corpus/measure/allen-county-elected-seats-2026.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
@@ -41,6 +64,7 @@ used-by:
   - ../corpus/office/judge-of-the-common-pleas-probate-division.yml
   - ../corpus/office/judge-of-the-lima-municipal-court.yml
   - ../corpus/office/judge-of-the-third-district-court-of-appeals.yml
+  - ../corpus/office/mayor-of-lima.yml
   - ../corpus/office/member-of-the-ohio-house-for-district-78.yml
   - ../corpus/office/member-of-the-ohio-senate-for-district-12.yml
   - ../corpus/office/representative-in-congress-for-ohios-4th-district.yml
@@ -62,12 +86,25 @@ used-by:
   - ../corpus/person/matthew-c-huffman.yml
   - ../corpus/person/mona-s-losh.yml
   - ../corpus/person/rachael-s-gilroy.yml
+  - ../corpus/person/sharetta-t-smith.yml
   - ../corpus/person/susan-manchester.yml
   - ../corpus/person/tammie-k-hursh.yml
   - ../corpus/person/terri-lynn-kohlrieser.yml
   - ../corpus/person/todd-e-kohlrieser.yml
   - ../corpus/person/william-r-zimmerman.yml
   - ../corpus/place/allen-county.yml
+  - ../corpus/place/amanda-township.yml
+  - ../corpus/place/american-township.yml
+  - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bath-township.yml
+  - ../corpus/place/jackson-township.yml
+  - ../corpus/place/marion-township.yml
+  - ../corpus/place/monroe-township.yml
+  - ../corpus/place/perry-township.yml
+  - ../corpus/place/richland-township.yml
+  - ../corpus/place/shawnee-township.yml
+  - ../corpus/place/spencer-township.yml
+  - ../corpus/place/sugar-creek-township.yml
   - ../corpus/question/allen-county-current-congressional-district.yml
   - ../corpus/tenure/auditor-2023-rachael-s-gilroy.yml
   - ../corpus/tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml
@@ -80,6 +117,7 @@ used-by:
   - ../corpus/tenure/engineer-2025-brion-e-rhodes.yml
   - ../corpus/tenure/general-2023-jeffrey-l-reed.yml
   - ../corpus/tenure/general-2025-terri-lynn-kohlrieser.yml
+  - ../corpus/tenure/mayor-2025-sharetta-t-smith.yml
   - ../corpus/tenure/municipal-2022-tammie-k-hursh.yml
   - ../corpus/tenure/municipal-2024-john-richard-payne.yml
   - ../corpus/tenure/ohio-house-2025-matthew-c-huffman.yml
