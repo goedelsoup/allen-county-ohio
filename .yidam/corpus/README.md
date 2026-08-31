@@ -38,6 +38,7 @@ Sorted by: kind, then alphabetically.
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 3 | 4v / 1i / 1o | 44 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
+| [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States buys the tank plant's ground | 3 | 3v / 2i / 3o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
@@ -115,6 +116,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 5v / 0i / 0o | 62 |
+| [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 8v / 1i / 1o | 78 |
+| [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2010-2023 | 3 | 7v / 1i / 1o | 69 |
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 3 | 5v / 3i / 0o | 65 |
@@ -175,13 +178,13 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 6v / 0i / 1o | 49 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
-| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 3v / 4i / 2o | 44 |
+| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 6i / 2o | 111 |
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 12i / 1o | 221 |
-| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 5v / 7i / 2o | 66 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 7v / 8i / 2o | 80 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 7v / 3i / 2o | 69 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 8v / 4i / 2o | 78 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
 | [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
@@ -262,7 +265,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 28v / 5i / 1o | 184 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 32v / 6i / 1o | 202 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
@@ -291,7 +294,7 @@ Sorted by: kind, then alphabetically.
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 1v / 3i / 2o | 43 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 84 |
-| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 6v / 5i / 1o | 70 |
+| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 10v / 4i / 1o | 84 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
 | [clerk-of-courts-2025-jennifer-moree-mcbride.yml](tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml) | tenure | Jennifer Moree McBride, Clerk of Courts of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
 | [commissioner-2023-brian-winegardner.yml](tenure/commissioner-2023-brian-winegardner.yml) | tenure | Brian Winegardner, Commissioner of Allen County, term of 2023–2026 | 3 | 2v / 2i / 0o | 31 |
