@@ -24,6 +24,16 @@ location:
   - kind: url
     value: https://codes.ohio.gov/ohio-revised-code/section-1901.02
     description: Municipal court territorial jurisdiction — the Lima court's is the whole county
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3311.05
+    description: >-
+      Educational service center defined — a county's territory less its city and exempted village
+      school districts, plus and minus territory attached or detached for school purposes
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3313.02
+    description: >-
+      Board membership in city school districts — three to five members elected at large below
+      50,000 population, which is why Lima's board seats five
 used-by:
   - ../corpus/jurisdiction/lima-municipal-court.yml
   - ../corpus/office/allen-county-auditor.yml

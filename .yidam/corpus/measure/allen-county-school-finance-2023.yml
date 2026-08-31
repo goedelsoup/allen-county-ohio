@@ -1,0 +1,65 @@
+class: measure
+label: What Allen County's school districts spend and where it comes from, 2023
+description: |
+  Current spending per pupil and the source of every revenue dollar, for the twelve districts
+  holding ground in Allen County, fiscal 2023. [verified] —
+  [the school finance survey](../../catalog/census-school-system-finances.md).
+
+      district             pupils   $/pupil   local%  state%  federal%   property tax per pupil
+      **Lima**              3,394   $19,321    18.4    59.2      22.4                   $3,098
+      Shawnee               2,289   $13,260    65.8    24.9       9.3                   $7,727
+      Elida                 2,183   $13,472    51.3    34.4      14.3                   $6,939
+      Bath                  1,692   $12,305    53.4    37.4       9.3                   $6,297
+      Bluffton              1,204   $10,839    45.7    47.0       7.3                   $3,582
+      Allen East            1,065   $10,941    37.0    55.6       7.4                   $3,668
+      Spencerville            926   $13,662    41.5    50.2       8.3                   $3,728
+      Delphos                 888   $12,539    58.7    27.4      13.9                   $6,256
+      Columbus Grove          756   $15,384    45.4    47.3       7.2                   $4,085
+      Perry                   723   $13,791    48.2    38.4      13.4                   $6,409
+      Pandora-Gilboa          521   $15,610    53.9    40.7       5.4                   $4,670
+      Waynesfield-Goshen      472   $17,896    39.0    52.2       8.8                   $3,835
+
+  **The district that spends the most per pupil raises the least of it.** Lima City is the county's
+  largest district and its highest spender at $19,321, and 18.4 per cent of its revenue is local
+  where every other district here is between 37.0 and 65.8: 59.2 per cent comes from the state and
+  22.4 from the federal government. [verified] — same source. That is compensatory aid
+  working the way it is designed to, and it is worth saying plainly rather than as a surprise.
+  [inference]
+
+  **Under it is the property tax, and under that is the housing.** Lima raises $3,098 a pupil in
+  property tax where Shawnee raises $7,727 — a ratio of 2.49. The median house in Lima is worth
+  $95,900 and in Shawnee Township $210,200, a ratio of 2.19. [verified] —
+  [the housing stock](allen-county-housing-stock-2023.yml). The two ratios are not the same number
+  and they are close, and a district's tax base is what its houses are worth. [inference]
+
+  **High spending per pupil has two different causes here and only one of them is poverty.** The
+  three smallest districts — Waynesfield-Goshen at 472 pupils, Pandora-Gilboa at 521 and Columbus
+  Grove at 756 — are the second, third and fourth highest spenders in the county, on child poverty
+  rates between 6.6 and 10.2 per cent against Lima's 31.7. [verified] —
+  [the poverty file](allen-county-school-district-poverty-2023.yml). A school has costs that do not
+  divide, and a district of five hundred divides them by five hundred. [inference]
+
+  This does not establish that any district is spending well or badly. The survey counts dollars
+  and pupils and nothing about what a pupil learns; the corpus holds no attainment, attendance or
+  graduation figure for any school in this county.
+properties:
+  parameter: current spending per pupil, revenue by source, and property tax per pupil
+  value: "19321"
+  unit: dollars of current spending per pupil, Lima City Schools
+  as_of: "2023"
+  method: |
+    `PPCSTOT` for spending, `PCTLTOT`/`PCTSTOT`/`PCTFTOT` for the shares, and `LOCRPROP` divided by
+    `ENROLL` for property tax per pupil, which the file does not publish and the corpus computes.
+    [verified] Dollars are nominal and this is one year, so nothing here needs a deflator; a level
+    quoted against another year would.
+links:
+  - target: ../jurisdiction/lima-city-school-district.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-school-system-finances.md
+  - target: ../jurisdiction/shawnee-local-school-district.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-school-system-finances.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

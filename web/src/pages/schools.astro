@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import { assertion, nodes } from '../lib/feeds'
+import type { BarSpec, LineSpec } from '../scripts/charts'
+
+const empty = assertion('the-schools-empty-faster-than-the-county')
+const money = assertion('lima-schools-spend-most-and-raise-least')
+const poor = assertion('half-the-countys-poor-children-are-in-one-district')
+
+const emptySpec: LineSpec = {
+  kind: 'line',
+  x: empty.figures.map((f) => f.label),
+  series: [{ name: 'Pupils', y: empty.figures.map((f) => f.value) }],
+  yTitle: 'Pupils enrolled',
+  labelLast: true,
+}
+
+const moneySpec: BarSpec = {
+  kind: 'bar',
+  x: money.figures.map((f) => f.label),
+  series: [{ name: 'Per cent of revenue', y: money.figures.map((f) => f.value) }],
+  yTitle: 'Per cent of revenue',
+}
+
+// Built from the graph rather than typed out, so the page cannot drift from the corpus.
+const districts = nodes
+  .filter((n) => n.properties.jurisdiction_type === 'school district')
+  .toSorted((a, b) => a.label.localeCompare(b.label))
+---
+
+<Base
+  title="Schools"
+  lede="Twelve school districts hold ground in Allen County. This is what they cost, who governs them, and how fast they are emptying."
+>
+  <section>
+    <h2>Twelve districts, and none of them is the county</h2>
+    <p>
+      Every other geography on this site closes. Ohio's twelve townships and Lima add up to Allen
+      County exactly, in every table the census publishes. The {districts.length} school districts do
+      not: five of them hold ground in Putnam, Auglaize, Van Wert or Hancock, and together they
+      held 117,057 people in 2023 against a county of 101,685. A figure for "the districts" is not
+      a figure for the county, and nothing on this page pretends otherwise.
+    </p>
+    <p>
+      There is a thirteenth school jurisdiction and it is not a district. The educational service
+      center is defined by the Revised Code as a county's territory less its city and exempted
+      village school districts — so it is Allen County minus Lima City, minus the Allen part of
+      Delphos City and minus the Allen part of Bluffton. It has a five-member elected board and no
+      boundary of its own.
+    </p>
+  </section>
+
+  <section>
+    <h2>The schools are emptying twice as fast as the county</h2>
+    <AssertionCard assertion={empty} />
+    <ChartFigure
+      id="enrolment"
+      title="Enrolment in the twelve districts, 2010–2023"
+      caption="Fall enrolment from the Census Bureau's annual survey of school system finances, read for every year rather than sampled. Ten of the thirteen year-on-year steps are declines, and one dwarfs the rest: 650 pupils in 2021, where no other year moves by more than 226."
+      columns={['Year', 'Pupils']}
+      rows={empty.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="enrolment" set:html={JSON.stringify(emptySpec)} is:inline />
+    <p>
+      Three districts lost a fifth of their pupils over those thirteen years — Lima at 20.7 per
+      cent, Delphos at 20.2 and Waynesfield-Goshen at 20.0. One grew: Bluffton, up 8.8 per cent,
+      which is also the cheapest district per pupil and the lowest in child poverty. Allen East lost
+      eight pupils in thirteen years.
+    </p>
+  </section>
+
+  <section>
+    <h2>The district that spends the most raises the least of it</h2>
+    <AssertionCard assertion={money} />
+    <ChartFigure
+      id="lima-revenue"
+      title="Where Lima City Schools' revenue comes from, 2023"
+      caption="Every other district in the county raises between 37.0 and 65.8 per cent of its revenue locally. This is compensatory state and federal aid working the way it is designed to."
+      columns={['Source', 'Per cent of revenue']}
+      rows={money.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="lima-revenue" set:html={JSON.stringify(moneySpec)} is:inline />
+    <p>
+      Underneath the shares is the tax base, and underneath the tax base is the housing. Lima raises
+      $3,098 a pupil in property tax where Shawnee Local raises $7,727 — a ratio of 2.49, against
+      2.19 for the two places' median house values. A district's tax base is what its houses are
+      worth, which is the same sorting <a href="/housing">the housing page</a> measures from the
+      other end.
+    </p>
+    <p>
+      High spending per pupil has a second cause here that has nothing to do with poverty. The three
+      smallest districts — Waynesfield-Goshen at 472 pupils, Pandora-Gilboa at 521 and Columbus
+      Grove at 756 — are the second, third and fourth highest spenders in the county, on child
+      poverty rates between 6.6 and 10.2 per cent. A school has costs that do not divide, and a
+      district of five hundred divides them by five hundred.
+    </p>
+  </section>
+
+  <section>
+    <h2>Who governs them</h2>
+    <p>
+      Nine of the twelve boards appear on Allen County's ballot: forty-five people on five-seat
+      boards, four-year terms staggered two and three. Five of the forty-five were appointed rather
+      than elected to the seat, which is a lighter rate than this county's villages and heavier than
+      its townships.
+    </p>
+    <p>
+      Three boards are missing and it is not a gap in retrieval. A school board is elected by its own
+      district's voters, and Columbus Grove and Pandora-Gilboa are centred in Putnam County and
+      Waynesfield-Goshen in Auglaize, so no Allen County precinct votes on any of them. It is the
+      same shape as Delphos's council wards west of the county line, arriving from the other
+      direction — a roster is a county's roster, and a jurisdiction that straddles a line is
+      partly invisible in it.
+    </p>
+  </section>
+
+  <section>
+    <h2>The poor children are in one district</h2>
+    <AssertionCard assertion={poor} />
+    <p>
+      This is the fourth instrument to describe the same shape. A decennial count, a survey with
+      margins, a finance return and now a federal poverty model all say that Lima holds about a
+      third of this county's people and about half of whatever is being measured about
+      disadvantage. Perry Local is the exception that does not fit either story: 22.1 per cent child
+      poverty on 602 children, the county's second-highest rate, in a district whose ground is not
+      the township it is named for.
+    </p>
+    <p>
+      One thing this page cannot tell you. 20,444 children aged 5 to 17 live in these twelve
+      districts and 16,113 are enrolled in them. Some of the difference is that the two figures are
+      different instruments; the rest is private and parochial schools, community schools, home
+      instruction and open enrolment, none of which this corpus has ever recorded. It is an open
+      question, and it is the first one here that came from putting two of the corpus's own sources
+      beside each other.
+    </p>
+  </section>
+</Base>
