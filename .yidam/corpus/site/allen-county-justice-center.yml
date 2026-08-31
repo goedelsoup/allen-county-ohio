@@ -1,0 +1,48 @@
+class: site
+label: Allen County Justice Center
+description: |
+  The county's own place of confinement, seventy-five metres from
+  [the courthouse](allen-county-courthouse.yml) at the centre of [Lima](../place/lima.yml).
+  [verified] — [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), where it is *Allen
+  County Justice Ctr*, feature class K1236 — a county or municipal facility, distinct from the
+  K1237 the two state prisons carry — at `+40.7437104 -084.1054470` on 5,598 square metres, 1.38
+  acres. The distance from the courthouse's own point is computed here. [inference]
+
+  It is the smallest of the four confinement landmarks the Census Bureau carries in this county by
+  a factor of sixty-five, and the only one of them downtown. [inference] — computed from the same
+  file. The state builds on farmland at the edge of the city; the county builds beside its
+  courtroom.
+
+  **The 2020 census recorded nobody here.** The Justice Center falls in block `390030141002021`,
+  a downtown block of 22,244 square metres whose published population is **zero** — no residents,
+  no group quarters, and no correctional population. Every one of the county's 1,513 people in
+  adult correctional facilities is in the two state blocks north of the city. [verified] —
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), block record,
+  and [the group quarters](../measure/allen-county-group-quarters-2020.yml).
+
+  A county jail holds people on any given night, and 1 April 2020 was a night. [inference] The
+  corpus does not know whether the census missed them, whether disclosure avoidance moved them, or
+  whether the landmark and the working jail are no longer the same building.
+
+  [open] Which of those it is. The Census Bureau's group-quarters enumeration reports by facility
+  and is not published at that grain; the sheriff's own daily population count would settle
+  whether anybody was in the building.
+
+  [open] When it was built, and what it replaced. This county's jail is where
+  [the 1933 raid](../event/allen-county-jail-raid-1933.yml) happened and where Sheriff Jess L.
+  Sarber was shot, and nothing here establishes that the building of that night and the building
+  in this landmark are the same one.
+properties:
+  site_type: correctional facility
+  status: in operation
+  coordinates: "40.7437104, -84.1054470"
+links:
+  - target: ../place/lima.yml
+    relationship: located-in
+    claim_tag: verified
+    source: ../../catalog/census-tiger-landmarks.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: operated-by
+    claim_tag: inference
+  - target: ../site.ont.yml
+    relationship: instance-of

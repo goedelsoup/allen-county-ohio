@@ -1,0 +1,76 @@
+class: measure
+label: Allen County housing occupancy and household size, 2020
+description: |
+  The table this corpus asked for two phases ago and could not get: how many of Allen County's
+  44,563 housing units were lived in on 1 April 2020. **40,935 were occupied and 3,628 were
+  vacant** — a vacancy rate of 8.14 per cent. [verified] —
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), Table H1, summed
+  from block records.
+
+  **With the group quarters count beside it the county's household size falls out exactly.** 3,522
+  people were not in households at all, so 98,684 were, in 40,935 occupied units: **2.411 people
+  per household**. [inference] — computed here against
+  [the group quarters](allen-county-group-quarters-2020.yml).
+
+      subdivision      population   units   occupied  vacant  vacancy   in GQ   household size
+      Lima city            35,579  16,028     14,237   1,791   11.2%     2,210        2.344
+      American twp         14,538   6,648      6,242     406    6.1%       173        2.301
+      Shawnee twp          12,482   5,300      4,961     339    6.4%       139        2.488
+      Bath twp              9,399   4,081      3,823     258    6.3%       106        2.431
+      Marion twp            6,629   2,837      2,649     188    6.6%       141        2.449
+      Richland twp          5,871   2,287      2,135     152    6.6%       665        2.438
+      Perry twp             3,382   1,546      1,417     129    8.3%        44        2.356
+      Jackson twp           3,143   1,286      1,210      76    5.9%         0        2.598
+      Spencer twp           3,067   1,235      1,167      68    5.5%        44        2.590
+      Auglaize twp          2,757   1,136      1,048      88    7.7%         0        2.631
+      Monroe twp            2,067     862        807      55    6.4%         0        2.561
+      Amanda twp            2,061     802        766      36    4.5%         0        2.691
+      Sugar Creek twp       1,231     515        473      42    8.2%         0        2.603
+
+  [verified] — same file, summed by county subdivision; household size computed here. The columns
+  close on the county: the populations sum to 102,206 and the units to 44,563.
+
+  **One in nine housing units in Lima had nobody in it.** 11.2 per cent against 8.14 for the county
+  and 4.5 for Amanda Township, and no township comes within three points of the city. [inference] —
+  computed here. See [Lima](../place/lima.yml), whose emptiness this corpus has described from
+  American Community Survey estimates and can now state from a count.
+
+  **And Lima's households are the smallest in the county.** 2.344 people against Amanda Township's
+  2.691, a spread of 0.35 of a person across thirteen subdivisions. [inference] — computed here.
+  The city is not merely emptier by units; the units that are occupied hold fewer people.
+
+  **This settles a reading the corpus had refused.** The persons-per-unit ratio it had been using
+  put group-quarters residents in the numerator and vacant units in the denominator, so it could
+  not be read as household size. Both terms are now separated and the true figure is available for
+  every subdivision. [inference] — see
+  [the housing units](allen-county-housing-units-2020.yml), whose open block this closes.
+
+  [open] Why the units are empty. Occupancy status in this file is a binary; the vacancy-status
+  table that distinguishes for-rent, for-sale, seasonal, and other vacant is not in the
+  redistricting file and is in the Demographic and Housing Characteristics file, which the API will
+  not serve without a key and which this corpus has not fetched as a flat file.
+properties:
+  parameter: occupied housing units, Allen County
+  value: "40935"
+  unit: occupied housing units
+  as_of: 2020-04-01
+  method: |
+    Table H1, Occupancy Status, from the Ohio file of the 2020 Census Redistricting Data Summary
+    File (P.L. 94-171), file segment 02, the last three fields of each record. Summed from the
+    3,552 block records for county 39003, joined to the geographic header on LOGRECNO and grouped
+    by the header's county-subdivision code. [verified]
+
+    Household size is population less group-quarters population, over occupied units, computed
+    here for each subdivision. [inference] It is the definition the Census Bureau uses for average
+    household size, and it is stated here rather than taken from a published table because no
+    published table at this geography is held.
+
+    Both closures were checked: the thirteen subdivision populations sum to the county's 102,206
+    and their units to 44,563, with no residual.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

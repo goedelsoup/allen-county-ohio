@@ -1,0 +1,51 @@
+class: site
+label: Allen Correctional Institution
+description: |
+  A state prison in the north of [Lima](../place/lima.yml), on ninety acres that the Census Bureau
+  treats as a census block of its own. [verified] —
+  [TIGER/Line landmarks](../../catalog/census-tiger-landmarks.md), where it is *Allen Correctional
+  Instn*, feature class K1237, area identifier `1104493892418`.
+
+  **The block and the institution are the same polygon.** Block `390030112001004` and the landmark
+  carry the same land area — 364,210 square metres, 90.0 acres — and the same internal point,
+  `+40.7751673 -084.0996846`, to seven decimal places. [verified] — the landmark file against
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md)'s geographic
+  header. The Census Bureau drew the block boundary on the fence, which is why the identification
+  needs no address at all; see
+  [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).
+
+  **It held 1,360 people on 1 April 2020**, every one of them counted in adult correctional
+  facilities, in a block with no housing units. [verified] —
+  [the group quarters](../measure/allen-county-group-quarters-2020.yml). That is 1.3 per cent of
+  Allen County's population and 90 per cent of everyone the census counted in correctional
+  facilities here. [inference] — computed here.
+
+  **This is what the corpus had been looking at without a name.** The county's own address file
+  puts one point in this block and labels it `BIBLE ROAD AUTO WRECKING AT 505 BIBLE RD`, and the
+  three institutional addresses it carries sit about half a mile west, on North West Street.
+  [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md). An address point at
+  a gate and a population inside a fence are different geographies, and the corpus reasoned to that
+  conclusion before it could show it. [inference] — see
+  [the question this closes](../question/who-lives-in-the-county-without-housing.yml).
+
+  **One of the three names in that address file belongs to a prison that no longer exists.** Ohio's
+  Department of Rehabilitation and Correction lists Lima Correctional Institution among facilities
+  that "have since closed", closed 2004. [verified] —
+  [the department's facilities page](../../catalog/odrc-facilities.md). The county's file has
+  carried it for twenty-two years.
+
+  [open] When it opened and what it replaced. The corpus has this institution in 2020 and 2024 and
+  at no earlier date, and the ground it stands on was the farm of
+  [the Lima State Hospital](lima-state-hospital.yml) in 1921 — probably, and not yet demonstrably,
+  the same ground.
+properties:
+  site_type: correctional facility
+  status: in operation
+  coordinates: "40.7751673, -84.0996846"
+links:
+  - target: ../place/lima.yml
+    relationship: located-in
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: ../site.ont.yml
+    relationship: instance-of
