@@ -928,6 +928,44 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-county-had-two-tank-installations",
+        statement: "Allen County had two tank installations in the Second World War, two years and \
+                    a category apart: the Lima Locomotive Works, which built medium tanks from \
+                    1941, and the Lima Tank Depot, which finished and forwarded vehicles built \
+                    elsewhere.",
+        topic: "history",
+        supports: &[
+            support!(
+                "site/lima-locomotive-works-plant.yml",
+                "In February 1941 the works had \"under construction a new $290,000 factory building\", which the local press read as confirmation that it was switching part of its activity to defense production; by that August medium tank production was scheduled to begin \"this fall\"."
+            ),
+            support!(
+                "site/lima-tank-depot.yml",
+                "Vehicles arrived \"in a 'raw' state of completion to Lima from the tank arsenals throughout the United States\", and it was at the Depot that the modifications for a particular theatre of operations were installed, the vehicle given a final run on the Depot's proving ground, sealed, and put on a road train for a shipping port."
+            ),
+        ],
+        answers: &[
+            "does not establish where the Depot stood",
+            "does not establish whether this is the ground the",
+        ],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-war-turned-the-locomotive-works-books",
+        statement: "The Lima Locomotive Works booked 51 locomotives in 1940 against 14 in 1939, \
+                    and turned a net profit of $87,007 after a net loss of $134,326.",
+        topic: "history",
+        supports: &[support!(
+            "organization/lima-locomotive-works.yml",
+            "The company booked orders for 51 locomotives in 1940 against 14 in 1939, closed 1940 with a backlog of 32 engines and 19 delivered in the year, and turned a net profit of $87,007 after a net loss of $134,326 in 1939."
+        )],
+        answers: &[],
+        figures: &[
+            Figure { label: "1939", value: 14.0, literal: "14" },
+            Figure { label: "1940", value: 51.0, literal: "51" },
+        ],
+    },
+    Assertion {
         id: "the-night-the-jail-was-taken",
         statement: "On the night of 12 October 1933 three armed men walked into the Allen County \
                     jail at Lima, shot the sheriff and freed John Dillinger. It is the county's \
