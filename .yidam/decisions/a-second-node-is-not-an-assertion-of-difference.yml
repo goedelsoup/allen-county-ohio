@@ -1,0 +1,65 @@
+id: a-second-node-is-not-an-assertion-of-difference
+summary: >-
+  The corpus found a wartime Army tank installation at Lima and already held a present-day one.
+  They are very plausibly the same ground and no source read here says so. Folding them together
+  asserts an identity the corpus cannot support; leaving the new one out asserts that it did not
+  exist. Two nodes and a stated open question assert neither, and that is the rule adopted.
+context: |
+  [The Joint Systems Manufacturing Center](../corpus/site/lima-army-tank-plant.yml) has been in the
+  corpus since genesis: government-owned, contractor-operated, in Shawnee Township at
+  40.6994478, -84.137903, with an `[open]` asking for its construction date and its wartime origin.
+
+  This phase found [the Lima Tank Depot](../corpus/site/lima-tank-depot.yml) — an Army installation
+  under construction in January 1943, operated by United Motors Service, Inc. in 1944, finishing and
+  dispatching combat vehicles built at arsenals elsewhere, still running in 1950. No source read
+  here gives its address, its acreage or its township.
+
+  So the corpus has two government-owned, contractor-operated tank installations at the same small
+  Ohio city, and the honest state of its knowledge is that it does not know whether they are one
+  place. Every instinct says they are. The received account of the plant is that it dates from the
+  war, and here is a war-dated tank installation. That is precisely the shape of reasoning this
+  corpus refuses elsewhere: it is
+  [the sheriff's surname argument](two-papers-printing-one-dispatch-are-one-witness.yml) again, in
+  a different costume, and that one took a second source and eleven phases to settle.
+
+  What makes the choice sharp is that **both defaults assert something**. Writing the Depot into the
+  plant's node as its wartime origin asserts continuity of ground. Omitting the Depot asserts, by
+  silence, that the corpus has nothing about tanks at Lima before 1987 — which is now false.
+decision: |
+  **Make the second node, and put the identity question on both of them.**
+
+  1. Where two sources describe institutions that differ in **kind** — one builds vehicles, one
+     finishes and forwards them — each gets a node, even where they may share ground.
+  2. The identity question is written as an `[open]` on **both** nodes, not on one. A reader who
+     arrives at either must be told the other exists and that the relation is unresolved.
+  3. Neither node inherits the other's properties. The Depot gets no coordinates from the plant,
+     and the plant gets no `built` date from the Depot.
+
+  Applied here, the plant's `[open]` narrows rather than closes: its construction date is still
+  unknown, and it now has a named candidate antecedent it is not permitted to claim.
+
+  **A third option was considered and rejected**: one node with two names and a note. It is what a
+  reader would want if the identity holds, and it is unrecoverable if it does not — a merged node
+  cannot be split later without knowing which sentence belonged to which institution, and the whole
+  point is that the corpus does not know.
+rationale: |
+  **The generalisable form: a node is a claim about existence, not about distinctness.** The corpus
+  has treated it that way before without saying so.
+  [Ohio House District 4](../corpus/division/ohio-house-district-4-2020.yml) and
+  [Allen County](../corpus/place/allen-county.yml) describe a byte-identical polygon in two nodes,
+  and the argument there was that they are different *kinds* of thing occupying one shape. The
+  same argument covers this case, with the difference that there the shape was known to be shared
+  and here it is not.
+
+  Also worth recording: this is the second time in two phases that the corpus has met a
+  same-name, same-place, probably-connected pair and declined to connect it — Jess and Donald
+  Sarber were the first, and that one turned out to be exactly what it looked like. A rule that
+  only ever fires where the guess is wrong would not be a rule. The Sarber case was resolved by
+  a source, not by relenting, and this one is waiting for the same thing.
+
+  **What would settle it.** A property record, a National Register nomination, an Army real-estate
+  history, or any wartime source giving the Depot an address, an acreage or a township. Allen
+  County's own parcel data reaches the plant's ground today and would not, on its own, say what
+  stood there in 1943.
+status: accepted
+date: "2026-08-30"
