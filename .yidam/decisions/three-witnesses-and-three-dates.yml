@@ -1,0 +1,71 @@
+id: three-witnesses-and-three-dates
+summary: >-
+  Three county histories name the same first railroad and give three different years. Cross-source
+  agreement — the thing this corpus prefers to cross-scan agreement — simply fails here, and the
+  scan-preference rule fails in the direction it predicted least. What replaces both is a physical
+  fact that constrains the date, and a published spread where none is found.
+context: |
+  This phase read the railroad passages of all three county histories the catalog holds. On the
+  first railroad into Allen County, all three name the same road — the Ohio & Indiana, Crestline to
+  Fort Wayne — and none of them agrees with another about when it opened.
+
+    Miller 1906    "opened from Crestline to Fort Wayne in 1853 ... This was Lima's first railway"
+    Leeson 1885    "opened from Crestline to Ft. Wayne in 1854, under authority granted by the
+                    Legislature, March 20, 1850"
+    Rusler 1921    "the first railroad in the county in 1856, with the opening of the Fort Wayne
+                    steam line"
+
+  On the second road they split two to one the other way: Leeson and Miller both put the Dayton &
+  Michigan through the county in 1858, and Rusler puts it in 1857 — one year after his own date for
+  the first road, so his pair is internally consistent and two years early.
+
+  **And the scan rule broke.** [two-scans-of-one-book](two-scans-of-one-book.yml) says that where
+  the 1885 book's two digitizations differ, scan B is preferred, because B is the cleaner read. On
+  the Chicago & Atlantic, scan B gives "opened from Lima to Marion, May 1, **1833**" and scan A
+  gives **1883**. 1833 is impossible — the book was published in 1885 and describes the road as
+  recently opened — and Miller, twenty-one years later, prints 1883 independently. The preferred
+  scan is the wrong one, and the rule's own escape clause is what caught it.
+decision: |
+  **Where independent compilations disagree on a date, the spread is the finding. Publish it.**
+
+  - Do not take a majority of compilations. Three books are not three witnesses to an opening; they
+    are three later writers who each read something, and none of the three names what.
+  - Do not prefer the most recent. Rusler is the latest and the furthest out on both roads.
+  - Prefer the nearest witness in time, and say that is what you are doing. Leeson is thirty-one
+    years from the event; Miller fifty-two; Rusler sixty-seven.
+  - **Look for a physical fact the date has to accommodate.** Rusler, whose date is latest, also
+    reports that the first steam locomotive in the county arrived in 1854 by canal, as freight to
+    Delphos, for construction work on this same road. A construction engine delivered in 1854
+    cannot serve a line that opened in 1853. That check is independent of who is nearest and it
+    eliminates the earliest of the three readings without needing to rank the books.
+
+  So the corpus records **1854**, states all three years in the node, and marks the day and the
+  meaning of "opened" as open.
+
+  The scan-preference clause of [two-scans-of-one-book](two-scans-of-one-book.yml) is downgraded
+  from a preference to a tiebreak of last resort: cleaner OCR is a property of the pipeline and not
+  of the page, and a digit that changes the century is caught by the impossibility check or by
+  another source or not at all.
+rationale: |
+  **The rule this amends was right about the mechanism and wrong about the remedy.** Its finding —
+  that this typeface reads 3 as 8, and that a county history is full of years beginning 18 — is
+  confirmed again here, in the opposite direction: 1883 read as 1833. What does not survive is the
+  idea that one scan can be trusted over the other. Both scans of this book are machine readings of
+  the same ink; whichever is cleaner overall, either can lose a digit on any given line, and there
+  is no way to know which from inside the pair.
+
+  **What [a single witness read once](a-single-witness-read-once.yml) got right, and its limit.**
+  That decision says cross-source agreement is stronger than cross-scan agreement — different
+  author, different publisher, no shared text. It is, and it is why 1883 is now secure. But it was
+  written on four cases where the sources agreed, and it did not say what to do when they do not.
+  This is that case, and the answer is not to keep looking for a majority. It is to find a
+  constraint that is not a citation.
+
+  **The general shape.** Every date in this corpus that came from a county history is a date some
+  compiler chose, and this is the first time three of them have been set against each other on one
+  fact. They disagreed. That is not a defect in these three books; it is what a compilation is. It
+  bears on every other date the corpus took from one of them and did not check against the other
+  two — of which there are many, and each is now a single witness read once whether or not it is
+  labelled that way.
+status: accepted
+date: "2026-08-30"
