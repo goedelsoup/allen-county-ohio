@@ -1,0 +1,66 @@
+class: measure
+label: Enrolment in Allen County's twelve school districts, 2010-2023
+description: |
+  Fall enrolment in every school district holding ground in Allen County, annually for fourteen
+  years. [verified] —
+  [the school finance survey](../../catalog/census-school-system-finances.md).
+
+      the twelve districts, total enrolment
+      2010  17,985     2015  17,656     2020  16,774
+      2011  17,830     2016  17,518     2021  16,124
+      2012  17,766     2017  17,333     2022  16,127
+      2013  17,565     2018  17,107     2023  16,113
+      2014  17,634     2019  16,921
+
+      district              2010    2023   change
+      Lima                 4,280   3,394   -20.7%
+      Shawnee              2,496   2,289    -8.3%
+      Elida                2,344   2,183    -6.9%
+      Bath                 1,803   1,692    -6.2%
+      Bluffton             1,107   1,204    +8.8%
+      Allen East           1,073   1,065    -0.7%
+      Delphos              1,113     888   -20.2%
+      Spencerville           947     926    -2.2%
+      Columbus Grove         896     756   -15.6%
+      Perry                  770     723    -6.1%
+      Pandora-Gilboa         566     521    -8.0%
+      Waynesfield-Goshen     590     472   -20.0%
+
+  **The schools are emptying about twice as fast as the county.** The twelve lost 1,872 pupils, 10.4
+  per cent, over a span in which Allen County's population fell 3.9 per cent to the 2020 census and
+  5.1 per cent to the 2024 estimate. [verified] — the table and
+  [the county](../place/allen-county.yml).
+
+  **Three districts lost a fifth and one grew.** Lima at −20.7 per cent, Waynesfield-Goshen at
+  −20.0 and Delphos at −20.2; Bluffton is up 8.8 per cent and Allen East has not moved. [verified]
+  — same source. The loss is as concentrated inside the school geography as
+  [the population loss is inside the county](../period/depopulation.yml). [inference]
+
+  **The fall is not one event.** Enrolment declines in ten of the thirteen year-on-year steps and
+  rises in three — 2014, 2015 and 2022 — and one step dwarfs the rest: a drop of 650 in 2021, where
+  no other year moves by more than 226. [verified] Whether that step is the pandemic, and whether
+  those pupils went to another school or out of the county, is not in this file. [open]
+
+  This is not a measurement of Allen County. Five of these districts hold ground in Putnam, Auglaize,
+  Van Wert or Hancock counties, and the twelve together held 117,057 people in 2023 against the
+  county's 101,685. [verified] — [the poverty file](allen-county-school-district-poverty-2023.yml).
+  A school geography is the first one in this corpus that does not close against the county.
+properties:
+  parameter: fall enrolment, by school district
+  value: "16113"
+  unit: pupils in the twelve districts, 2023
+  as_of: "2023"
+  method: |
+    `ENROLL` from the annual survey, read by column name across three column layouts and joined on
+    `NCESID`, which is the `fips_code` these district nodes already carry. [verified] Twelve of
+    twelve matched in all fourteen years. Percentage changes are computed here from the endpoints.
+links:
+  - target: ../jurisdiction/lima-city-school-district.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-school-system-finances.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

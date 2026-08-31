@@ -1,0 +1,64 @@
+class: measure
+label: Children in poverty in Allen County's school districts, 2023
+description: |
+  The modelled number of children aged 5 to 17 in poverty in each district holding ground in Allen
+  County, with the district's whole population. [verified] —
+  [SAIPE school district estimates](../../catalog/census-saipe-school-districts.md), 2023.
+
+      district              population   aged 5-17   in poverty   rate
+      **Lima**                  27,746       5,125        1,626   31.7%
+      Elida                     18,623       3,128          536   17.1%
+      Shawnee                   16,828       2,948          260    8.8%
+      Bath                      11,939       1,795          222   12.4%
+      Delphos                    9,794       1,616          171   10.6%
+      Bluffton                   6,354       1,078           60    5.6%
+      Allen East                 5,829       1,093           86    7.9%
+      Spencerville               5,102         928          103   11.1%
+      Columbus Grove             5,079       1,014           81    8.0%
+      Perry                      3,611         602          133   22.1%
+      Pandora-Gilboa             3,475         677           45    6.6%
+      Waynesfield-Goshen         2,677         440           45   10.2%
+      ------------------------------------------------------------------
+      the twelve                117,057      20,444        3,368   16.5%
+
+  **Lima City Schools is 31.7 per cent child poverty and Bluffton is 5.6.** Lima holds a quarter of
+  the twelve districts' school-age children and very nearly half of their poor ones — 1,626 of
+  3,368. [verified] — same source, and computed here.
+
+  **This is the same sorting the corpus has already measured, arriving through a third instrument.**
+  Lima is 34.7 per cent of the county's people, 64.1 per cent of its poor, 46.4 per cent
+  owner-occupied where every township is above 72, and its median house is worth 46 per cent of
+  Shawnee Township's. [verified] —
+  [race](allen-county-race-2023.yml), [income](allen-county-income-and-poverty-2023.yml) and
+  [housing](allen-county-housing-stock-2023.yml). A survey, a model and a finance return describe
+  one shape. [inference]
+
+  **Perry is the district that does not fit either story.** 22.1 per cent child poverty on 602
+  children — the county's second-highest rate — in a township whose median household income the
+  margins would not let this corpus call lower than Lima's. [verified] The district and the
+  township are not the same ground: Perry Local reaches into Lima. [inference]
+
+  **These twelve are not the county and their sum is not a county figure.** 117,057 people against
+  the county's 101,685, because five of the districts hold ground in Putnam, Auglaize, Van Wert or
+  Hancock. The 16.5 per cent in the last row is a rate for twelve districts, not for Allen County.
+  [verified]
+
+  This does not establish a rate that can be ranked against another district. The file publishes
+  three integers at this geography and no interval at all, where the state and county files carry
+  confidence bounds; only differences of the size between Lima and Bluffton are stated here.
+properties:
+  parameter: children aged 5 to 17 in poverty, by school district
+  value: "3368"
+  unit: children in poverty across the twelve districts
+  as_of: "2023"
+  method: |
+    Joined on the five-digit LEA code prefixed with the state FIPS, matching the `fips_code` these
+    district nodes carry. [verified] Rates are computed here as the poverty count over the 5-to-17
+    population; the file publishes neither the rate nor an interval.
+links:
+  - target: ../jurisdiction/lima-city-school-district.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-saipe-school-districts.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
