@@ -1,0 +1,83 @@
+id: two-papers-printing-one-dispatch-are-one-witness
+summary: >-
+  A newspaper archive looks like it ends the corpus's single-witness problem forever: hundreds of
+  papers, searchable at once, agreeing with each other. They agree because most of them are
+  printing the same wire copy. Ten papers carrying one United Press dispatch are one witness read
+  ten times, which is the thing `a-single-witness-read-once` already warned about, wearing a
+  disguise that makes it look like corroboration.
+context: |
+  This corpus has two rules about how many readings a fact needs.
+  [two-scans-of-one-book](two-scans-of-one-book.yml) requires two independent digitizations before
+  a date from a county history enters, because OCR fails silently on digits.
+  [a-single-witness-read-once](a-single-witness-read-once.yml) covers what happens when only one
+  scan exists — the claim is recorded as resting on one witness, and the node says so.
+
+  [Chronicling America](../catalog/chronicling-america.md) appears to make both rules obsolete. A
+  search for `Sarber` across 1933 and 1934 returns pages from North Carolina, Washington, Alaska,
+  Texas and Indiana. The date agrees everywhere. The name agrees everywhere.
+
+  Then read the datelines. The North Carolina page carries `LIMA, 0., Oct. 13.—(UP)`. The
+  Washington paper of the same morning carries a rewritten version of the same United Press
+  service. The Alaska paper of a year later carries the same agency's follow-up. Distance on a map
+  is not independence; a wire service is one reporter whose copy was set in type in forty
+  composing rooms.
+
+  Two things sharpened this while the raid node was being written.
+
+  **One dispatch contradicted itself inside one column.** The United Press account of the night has
+  Sheriff Sarber dying "20 minutes later in a hospital" in its fourth paragraph and "a few minutes
+  later" in its thirteenth. Both readings were set in the same type on the same page. Counting that
+  page twice, because two papers ran it, would have produced agreement out of a story that does not
+  even agree with itself.
+
+  **A retrospective got the date wrong by nine days.** The Key West Citizen of 23 July 1934,
+  printing a chronology of Dillinger's career after his death, dates the raid "On Oct. 21" and puts
+  the Michigan City prison break at nineteen convicts where every contemporaneous report says ten.
+  A retrospective is compiled from clippings and inherits their errors while shedding their
+  datelines, so it reads like a source and behaves like a summary.
+decision: |
+  **Count agencies and datelines, not papers.**
+
+  1. Two papers printing the same wire dispatch are **one witness**. Corroboration requires a
+     different agency, a different dateline, or a staff correspondent — and the corpus names which
+     it has.
+  2. **A retrospective chronology is never a witness.** It is a finding aid: use it to learn that
+     an event exists and what date to search, then go and read a paper printed that week.
+  3. Where only one dispatch exists, the node **says so and quotes it**, rather than paraphrasing
+     it into the corpus's own voice where its single-sourced-ness disappears.
+
+  Applied to the night of 12 October 1933, the date is safe, and it is not safe because many papers
+  printed it. It is attested by a United Press dispatch of 13 October 1933, by an Associated Press
+  story from Lima of 4 March 1934 written about the trials, and by an Associated Press story from
+  Columbus of 23 September 1934 written about a prison break — two agencies, three purposes, eleven
+  months apart. The detail of Deputy Wilbur Sharp, by contrast, rests on the single United Press
+  dispatch, and the node quotes it rather than asserting it.
+
+  **A stricter rule was considered and rejected.** Requiring two independent witnesses for every
+  claim would have emptied the node of everything that makes it worth reading — the argument in the
+  jail office, the wife and the deputy locked in the freed man's cell, the cars on Main Street.
+  Those are single-witness details, they are worth having, and the corpus's existing answer to a
+  single witness is to say it is one, not to discard it.
+rationale: |
+  **The generalisable form: agreement between sources is only evidence when the sources could have
+  disagreed.** Every rule this corpus has about corroboration is really this rule. Two scans of one
+  book could have disagreed, because they were made by different machines from different copies —
+  that is why two scans count. Two printings of one dispatch could not have, because there is one
+  original and typesetting does not re-report a story.
+
+  It generalises past newspapers, and the corpus should expect to meet it again. A federal
+  statistical table republished by a state agency is one witness. A county's page that quotes its
+  own charter is one witness with the charter. The question to ask of any second source is not
+  "does it say the same thing" but "was it in a position to say something different".
+
+  **What this does not license.** It is not a claim that wire copy is unreliable. The United Press
+  account of the raid is detailed, was filed within hours, and every checkable thing in it survives
+  the trial coverage five months later. The rule is about how many times a witness may be counted,
+  not about whether it should be believed.
+
+  **What it costs.** The corpus's newspaper reach is narrower than the archive's size suggests.
+  Nine pages were read for the raid node and they amount to four or five independent accounts, not
+  nine. That is worth recording next to the catalog entry's issue counts, which are large enough to
+  be misleading about how much this corpus can actually learn from them.
+status: accepted
+date: "2026-08-30"

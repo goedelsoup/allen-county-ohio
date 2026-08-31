@@ -1,0 +1,158 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import { assertion, nodes } from '../lib/feeds'
+
+const raid = assertion('the-night-the-jail-was-taken')
+const succession = assertion('the-office-passed-from-father-to-son')
+const bank = assertion('the-man-in-the-cell-was-charged-with-an-allen-county-bank')
+
+// The spine is read out of the graph, never typed here. A page that lists the county's dated
+// record by hand would keep saying "1885" long after a phase had added something later, and the
+// gap this page is largely about would be the first thing to go stale.
+const year = (s: string | undefined) => (s ? Number(s.slice(0, 4)) : Number.NaN)
+
+const events = nodes
+  .filter((n) => n.class === 'event' && !Number.isNaN(year(n.properties.occurred)))
+  .map((n) => ({ node: n, at: year(n.properties.occurred), on: n.properties.occurred }))
+  .toSorted((a, b) => a.at - b.at)
+
+const periods = nodes
+  .filter((n) => n.class === 'period' && !Number.isNaN(year(n.properties.began)))
+  .map((n) => ({ node: n, from: year(n.properties.began), to: year(n.properties.ended) }))
+  .toSorted((a, b) => a.from - b.from)
+
+// The longest run of years with no dated event in it, computed from the same list the table
+// renders. Written as a pair so the prose below can name both ends without repeating itself.
+const gaps = events.slice(1).map((e, i) => ({ from: events[i].at, to: e.at }))
+const widest = gaps.reduce((a, b) => (b.to - b.from > a.to - a.from ? b : a), gaps[0])
+const last = events[events.length - 1].at
+const since = new Date().getUTCFullYear() - last
+---
+
+<Base
+  title="History"
+  lede="Everything this corpus can date, in order — and the stretches between."
+>
+  <section>
+    <h2>The county's dated record, and the hole in the middle of it</h2>
+    <p>
+      A civic reference should be able to say when things happened. This one can say it {
+        events.length
+      } times. The list below is not a history of Allen County; it is the subset of the county's
+      history that this corpus has put a date on from a source it can cite, which is a much
+      smaller thing and is shown here at its real size.
+    </p>
+    <table>
+      <caption>Dated events in the corpus, earliest first</caption>
+      <thead>
+        <tr><th scope="col">Date</th><th scope="col">Event</th><th scope="col">Kind</th></tr>
+      </thead>
+      <tbody>
+        {
+          events.map((e) => (
+            <tr>
+              <td>{e.on}</td>
+              <td>{e.node.label}</td>
+              <td>{e.node.properties.event_type ?? '—'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <p>
+      The gaps are the point. The widest run with nothing dated in it is {widest.to - widest.from}
+      years, from {widest.from} to {widest.to}; the longest of all is the {since} years since {last},
+      because nothing after the raid has been recorded here as a happening on a day at all. That is
+      not because nothing happened. The plants that employ this county were built inside that span.
+      It is because the corpus spent those phases counting rather than dating, and a count has no
+      date on it — it has a year and a table.
+    </p>
+    <p>
+      Between the oil strike and the raid the same pattern holds in reverse. The corpus can tell you
+      that Lima's manufacturing workforce grew 82 per cent between 1899 and 1909 and that the county
+      reached 56,580 people in 1910, and it cannot tell you the day either thing happened, because
+      neither is the kind of thing that has one. What it has known across those years is what Allen
+      County <em>was</em>. What happened in them is newer work.
+    </p>
+    <p>
+      One entry on this list was added because the list existed. The 1918 renaming of German
+      Township had been established two phases earlier, with the day and the petition's own
+      language, and recorded as prose on a place and on a question — which is where an answer goes
+      and not where a happening goes. It was missing from every view built on the event class, and
+      the stretch after 1885 was reading fifteen years emptier than the corpus's own knowledge.
+      Publishing found it; reading had not.
+    </p>
+    <p>
+      The named spans do reach across it, because a period is a claim about a stretch rather than
+      about a day:
+    </p>
+    <table>
+      <caption>Named periods in the corpus</caption>
+      <thead>
+        <tr><th scope="col">Span</th><th scope="col">Period</th></tr>
+      </thead>
+      <tbody>
+        {
+          periods.map((p) => (
+            <tr>
+              <td>{p.from}–{Number.isNaN(p.to) ? 'present' : p.to}</td>
+              <td>{p.node.label}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>The night the jail was taken</h2>
+    <AssertionCard assertion={raid} />
+    <p>
+      Three men came into the Allen County jail at Lima after dark on 12 October 1933, demanded
+      that the prisoner be handed over, shot Sheriff Jess L. Sarber when he fought them, locked his
+      wife and his deputy in the cell they had just emptied, took every gun in the building and
+      drove west. The prisoner was John Dillinger. Sarber died within the hour.
+    </p>
+    <AssertionCard assertion={bank} />
+    <p>
+      That is the part usually left out of the telling, and it is the part that makes this the
+      county's event rather than a national one that happened to land here. Dillinger was in the
+      Allen County jail because he was charged with robbing an Allen County bank — the Commercial
+      Bank at Bluffton, twenty miles up the road. The night started inside the county.
+    </p>
+    <p>
+      Harry Pierpont, Charles Makley and Russell Clark were tried at Lima the following spring,
+      three trials of about a week each, with Ohio National Guardsmen holding the town — machine
+      gun nests at the approaches to the jail, another at the end of the cell corridor, and nobody
+      admitted without a written order from the sheriff, the prosecutor or the judge. Within
+      twelve months and five days of the raid, Makley had been shot dead in an escape attempt,
+      Pierpont had been electrocuted and Clark was serving life.
+    </p>
+  </section>
+
+  <section>
+    <h2>What it changed about this county's government</h2>
+    <AssertionCard assertion={succession} />
+    <p>
+      The sheriff's roster on this site has shown the same two lines since the corpus first read
+      it: Jess L. Sarber, 1931–1933, and then Donald F. Sarber, 1933–1935. A two-year term ending
+      mid-decade, and the same surname straight after it. The roster gives no reason for either,
+      and for eleven phases this corpus declined to supply one, because a record saying
+      <em>died in office</em> and a guess saying <em>died in office</em> are indistinguishable once
+      written down.
+    </p>
+    <p>
+      It took a newspaper to settle it, and not the one anyone would have looked for. No Lima paper
+      is digitized in the national archive — the county seat's press is simply absent — so the
+      answer came from a wire story about a trial, reprinted in a Washington evening paper five
+      months after the fact, which calls the murdered man "the elder Sarber, who preceded his son
+      as sheriff".
+    </p>
+    <p>
+      The other irregular line in the roster is still unexplained. James K. Everett begins and ends
+      in 2017, the only holder in thirty-nine whose term does not cross a year, and the obvious
+      reading — an appointment to fill a vacancy — is still only the obvious reading.
+    </p>
+  </section>
+</Base>

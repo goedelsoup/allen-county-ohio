@@ -1,0 +1,44 @@
+class: event
+label: The renaming of German Township
+description: |
+  On 16 August 1918 the Allen County commissioners, acting on a citizens' petition, changed the
+  name of German Township to [American Township](../place/american-township.yml). [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).
+
+  The petition's stated ground was formal: Article II says only "that good cause is shown why the
+  name of said township should be changed", and stipulates that the change "shall in no wise affect
+  the right of property, or the internal concerns of said township". The historian who prints it
+  reads the language for what it is — "'good cause' means patriotism" — and records that school
+  books were being reset and businesses were dropping the word. [verified] — same source.
+
+  **This node exists because the corpus had the date and no place to put it.** The renaming was
+  established two phases before this one and recorded as prose on a place and a question, which is
+  where an answer goes and not where a happening goes. It was therefore absent from every view
+  built on the event class, including the site's timeline, and its absence made the county's
+  eighteen-eighty-five-to-nineteen-thirty-three gap look wider than the corpus's own knowledge.
+  [verified] — the corpus's own history; see
+  [what became of German and Ottawa townships](../question/what-became-of-german-and-ottawa-townships.yml).
+
+  It is one of two Allen County township name changes this corpus knows of, and the only one whose
+  day it has. [inference] The instrument is the same one that erected every township in the county
+  and incorporated every village here: a petition and an order of the county commissioners.
+  [verified] — same source.
+
+  This node does not establish how the vote went or who signed the petition. The 1921 volume prints
+  the article and the outcome, notes that some residents "would not have voted for the change,
+  because of sacred associations in early history", and names nobody. [open]
+properties:
+  occurred: 1918-08-16
+  event_type: renaming
+  location_description: German Township, Allen County, by order of the county commissioners.
+links:
+  - target: ../place/american-township.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/rusler-allen-county-1921.md
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/rusler-allen-county-1921.md
+  - target: ../event.ont.yml
+    relationship: instance-of
