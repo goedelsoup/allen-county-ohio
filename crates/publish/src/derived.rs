@@ -921,6 +921,53 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-night-the-jail-was-taken",
+        statement: "On the night of 12 October 1933 three armed men walked into the Allen County \
+                    jail at Lima, shot the sheriff and freed John Dillinger. It is the county's \
+                    first recorded event of the twentieth century.",
+        topic: "history",
+        supports: &[support!(
+            "event/allen-county-jail-raid-1933.yml",
+            "freed the prisoner John Dillinger from his cell, locked the sheriff's wife and his deputy in it, stripped the building of its guns and ammunition and drove west out of town."
+        )],
+        answers: &[
+            "does not establish where the jail stood",
+            "does not establish what the trials cost the county",
+        ],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-office-passed-from-father-to-son",
+        statement: "The sheriff's roster shows Jess L. Sarber ending in 1933 and Donald F. Sarber \
+                    beginning, and gives no reason for either. The reason is that the first was \
+                    killed in office and the second was his son.",
+        topic: "history",
+        supports: &[
+            support!(
+                "question/two-irregular-sheriff-transitions.yml",
+                "Jess L. Sarber was shot dead in the Allen County jail on the night of 12 October 1933 by three men who came to free John Dillinger, and his son Donald succeeded him."
+            ),
+            support!(
+                "tenure/sheriff-1931-jess-l-sarber.yml",
+                "Jess L. Sarber held the office of Sheriff of Allen County from 1931 until he was shot dead in the county jail on 12 October 1933."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-man-in-the-cell-was-charged-with-an-allen-county-bank",
+        statement: "Dillinger was in this county's jail because he was charged with robbing a bank \
+                    in this county — the Commercial Bank at Bluffton, of $2200.",
+        topic: "history",
+        supports: &[support!(
+            "place/bluffton.yml",
+            "He was brought up from Dayton in the autumn of 1933 charged with robbing \"the Bluffton, O., Commercial Bank of $2200\", and was awaiting trial at Lima when three men shot the sheriff and took him out of the cell."
+        )],
+        answers: &[],
+        figures: &[Figure { label: "Charged sum", value: 2_200.0, literal: "2200" }],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
