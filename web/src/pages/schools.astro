@@ -3,26 +3,25 @@ import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import { assertion, nodes } from '../lib/feeds'
-import type { BarSpec, LineSpec } from '../scripts/charts'
+import { bar, line } from '../lib/chart-spec'
 
 const empty = assertion('the-schools-empty-faster-than-the-county')
 const money = assertion('lima-schools-spend-most-and-raise-least')
 const poor = assertion('half-the-countys-poor-children-are-in-one-district')
 
-const emptySpec: LineSpec = {
-  kind: 'line',
-  x: empty.figures.map((f) => f.label),
-  series: [{ name: 'Pupils', y: empty.figures.map((f) => f.value) }],
+const emptySpec = line(empty.figures.map((f) => f.label), [{ name: 'Pupils', y: empty.figures.map((f) => f.value) }], {
   yTitle: 'Pupils enrolled',
   labelLast: true,
-}
+})
 
-const moneySpec: BarSpec = {
-  kind: 'bar',
-  x: money.figures.map((f) => f.label),
-  series: [{ name: 'Per cent of revenue', y: money.figures.map((f) => f.value) }],
+// Shaped as the renderer reads a bar — `categories` and `values`, not a line's `x` and
+// `series`. It was written the other way for one phase and rendered a bar trace with two
+// undefined arrays, silently: nothing typechecks a spec, and the table view underneath was
+// correct the whole time, so every test passed over an empty chart.
+const moneySpec = bar(money.figures.map((f) => f.label), money.figures.map((f) => f.value), {
   yTitle: 'Per cent of revenue',
-}
+  tickSuffix: '%',
+})
 
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 const districts = nodes

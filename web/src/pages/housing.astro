@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import { assertion } from '../lib/feeds'
-import type { BarSpec } from '../scripts/charts'
+import { bar } from '../lib/chart-spec'
 
 const ring = assertion('the-ring-was-built-while-the-city-was-full')
 const tenure = assertion('lima-rents-and-the-townships-own')
@@ -12,12 +12,16 @@ const seven = assertion('the-denial-gap-is-seven-years-old')
 const composition = assertion('the-lending-gap-is-not-composition')
 const gap = assertion('the-denial-gap-that-does-not-resolve')
 
-const bars = (a: typeof tenure, yTitle: string): BarSpec => ({
-  kind: 'bar',
-  x: a.figures.map((f) => f.label),
-  series: [{ name: yTitle, y: a.figures.map((f) => f.value) }],
-  yTitle,
-})
+// `categories` and `values` are what the bar renderer reads. This helper was written with a
+// line's `x` and `series` for a phase, so all five of this page's charts drew a trace over two
+// undefined arrays and rendered empty — silently, because the table under each one was right
+// and nothing typechecked the spec. See the check added to the gate.
+const bars = (a: typeof tenure, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle },
+  )
 
 const tenureSpec = bars(tenure, 'Per cent of occupied units owner-occupied')
 const borrowSpec = bars(borrow, 'Per cent of applications denied')

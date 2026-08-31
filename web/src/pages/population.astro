@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import { assertion, seriesById } from '../lib/feeds'
-import type { BarSpec, LineSpec } from '../scripts/charts'
+import { bar, line } from '../lib/chart-spec'
 
 const decline = assertion('county-population-decline')
 const concentration = assertion('decline-concentrated-in-lima')
@@ -25,13 +25,10 @@ const young = assertion('lima-is-the-young-end')
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
-const countySpec: LineSpec = {
-  kind: 'line',
-  x: decline.figures.map((f) => f.label),
-  series: [{ name: 'Allen County', y: decline.figures.map((f) => f.value) }],
+const countySpec = line(decline.figures.map((f) => f.label), [{ name: 'Allen County', y: decline.figures.map((f) => f.value) }], {
   yTitle: 'Residents',
   labelLast: true,
-}
+})
 
 // The comparison chart indexes two measured series to a common base. Two measures of very
 // different size on one axis would be a dual-axis chart, which invents a correlation; an
@@ -53,130 +50,94 @@ const indexed = (points: typeof county.points) => {
   return points.map((p) => Math.round((p.value / base) * 1000) / 10)
 }
 
-const indexSpec: LineSpec = {
-  kind: 'line',
-  x: dates,
-  series: [
+const indexSpec = line(dates, [
     { name: 'Allen County', y: indexed(countyEst) },
     { name: 'Lima', y: indexed(limaEst) },
-  ],
+  ], {
   yTitle: '2000 = 100',
   labelLast: true,
-}
+})
 
-const rateSpec: BarSpec = {
-  kind: 'bar',
-  categories: concentration.figures.map((f) => f.label),
-  values: concentration.figures.map((f) => f.value),
+const rateSpec = bar(concentration.figures.map((f) => f.label), concentration.figures.map((f) => f.value), {
   yTitle: 'Per cent lost, 2000–2010',
   tickSuffix: '%',
   labelValues: true,
-}
+})
 
 // Two negative components on one axis. A bar chart is right here and a pie chart would not
 // be: these are two independent forces that happen to point the same way, not shares of a
 // whole, and the residual of 28 the corpus names belongs to neither.
-const mechanismSpec: BarSpec = {
-  kind: 'bar',
-  categories: mechanism.figures.map((f) => f.label),
-  values: mechanism.figures.map((f) => f.value),
+const mechanismSpec = bar(mechanism.figures.map((f) => f.label), mechanism.figures.map((f) => f.value), {
   yTitle: 'People, four years to 2024',
   labelValues: true,
-}
+})
 
 // Eight counts at uneven spacing — twenty years to 1920, ten thereafter. Still a bar chart
 // rather than a line: a line drawn across categories of unequal width states a rate the
 // spacing does not support, and the 1880-to-1900 step is twice the others.
-const centurySpec: BarSpec = {
-  kind: 'bar',
-  categories: century.figures.map((f) => f.label),
-  values: century.figures.map((f) => f.value),
+const centurySpec = bar(century.figures.map((f) => f.label), century.figures.map((f) => f.value), {
   yTitle: 'Residents of Lima',
   labelValues: true,
-}
+})
 
 // Nine decennial counts a decade apart, so a line is right here where it was wrong above:
 // the spacing is even and every point is an enumeration rather than an estimate.
-const peaksSpec: LineSpec = {
-  kind: 'line',
-  x: peaks.figures.map((f) => f.label),
-  series: [{ name: 'Allen County outside Lima', y: peaks.figures.map((f) => f.value) }],
+const peaksSpec = line(peaks.figures.map((f) => f.label), [{ name: 'Allen County outside Lima', y: peaks.figures.map((f) => f.value) }], {
   yTitle: 'Residents',
   labelLast: true,
-}
+})
 
 // Twenty-one points a decade apart. A line, and the only chart here that spans the whole
 // record — labelLast would put the number on 2020, which is not the point of it.
-const wholeSpec: LineSpec = {
-  kind: 'line',
-  x: whole.figures.map((f) => f.label),
-  series: [{ name: 'Allen County', y: whole.figures.map((f) => f.value) }],
+const wholeSpec = line(whole.figures.map((f) => f.label), [{ name: 'Allen County', y: whole.figures.map((f) => f.value) }], {
   yTitle: 'Residents',
-}
+})
 
 // Three points five years apart, which is why they are bars: the gaps are not decades and a
 // line across them would imply a path through 1902 that nobody counted.
 // Four components of one subtraction, so a bar chart and not a line: these are the pieces of
 // a single twelve-year loss, not a series through time. They sum to 2,593, which is the whole
 // of it — the four subsectors close against the sector total in every one of the thirteen years.
-const healthSpec: BarSpec = {
-  kind: 'bar',
-  categories: health.figures.map((f) => f.label),
-  values: health.figures.map((f) => f.value),
+const healthSpec = bar(health.figures.map((f) => f.label), health.figures.map((f) => f.value), {
   yTitle: 'Jobs lost, 2010–2022',
   labelValues: true,
-}
+})
 
 // Four points at uneven spacing across thirty-one reports, so a bar chart rather than a line:
 // the gaps between them are nine, four and nineteen years, and a line drawn across those states
 // a rate the spacing does not support. 1996 and 1998 are not published at all.
-const refinerySpec: BarSpec = {
-  kind: 'bar',
-  categories: refinery.figures.map((f) => f.label),
-  values: refinery.figures.map((f) => f.value),
+const refinerySpec = bar(refinery.figures.map((f) => f.label), refinery.figures.map((f) => f.value), {
   yTitle: 'Barrels of crude per calendar day',
   labelValues: true,
-}
+})
 
 // One city measured three ways against the same denominator, so the bars are comparable and
 // the reading is the distance between them. They are not shares of a whole and a pie would say
 // they were.
-const concentrationSpec: BarSpec = {
-  kind: 'bar',
-  categories: concentration2.figures.map((f) => f.label),
-  values: concentration2.figures.map((f) => f.value),
+const concentrationSpec = bar(concentration2.figures.map((f) => f.label), concentration2.figures.map((f) => f.value), {
   yTitle: "Lima's share of the county",
   tickSuffix: '%',
   labelValues: true,
-}
+})
 
-const workSpec: BarSpec = {
-  kind: 'bar',
-  categories: work.figures.map((f) => f.label),
-  values: work.figures.map((f) => f.value),
+const workSpec = bar(work.figures.map((f) => f.label), work.figures.map((f) => f.value), {
   yTitle: 'Manufacturing wage earners, Lima',
   labelValues: true,
-}
+})
 
 // Two bars that are nearly the same height. That is the finding, and a line between two points
 // would draw a trend across a gap that holds no observations.
-const farmSpec: BarSpec = {
-  kind: 'bar',
-  categories: farms.figures.map((f) => f.label),
-  values: farms.figures.map((f) => f.value),
+const farmSpec = bar(farms.figures.map((f) => f.label), farms.figures.map((f) => f.value), {
   yTitle: 'Acres of land in farms, Allen County',
   labelValues: true,
-}
+})
 
 // Three points across thirty-six years, so bars rather than a line: the corpus read nine files
 // and this chart shows the two ends and the floor between them.
-const factorySpec: BarSpec = {
-  kind: 'bar',
-  categories: factories.figures.map((f) => f.label),
-  values: factories.figures.map((f) => f.value),
+const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures.map((f) => f.value), {
   yTitle: 'Manufacturing employment, Allen County',
   labelValues: true,
-}
+})
 
 const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
   a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
