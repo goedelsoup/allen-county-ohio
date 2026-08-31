@@ -162,7 +162,7 @@ Sorted by: kind, then alphabetically.
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
 | [institute-for-orthopaedic-surgery.yml](organization/institute-for-orthopaedic-surgery.yml) | organization | Institute for Orthopaedic Surgery | 2 | 6v / 1i / 0o | 55 |
 | [kindred-hospital-lima.yml](organization/kindred-hospital-lima.yml) | organization | Kindred Hospital Lima | 2 | 6v / 1i / 1o | 52 |
-| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 0v / 2i / 1o | 24 |
+| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 2v / 3i / 1o | 41 |
 | [lima-memorial-health-system.yml](organization/lima-memorial-health-system.yml) | organization | Lima Memorial Health System | 2 | 6v / 1i / 1o | 52 |
 | [lima-refining-company.yml](organization/lima-refining-company.yml) | organization | Lima Refining Company | 2 | 6v / 0i / 1o | 39 |
 | [mercy-health-st-ritas-medical-center.yml](organization/mercy-health-st-ritas-medical-center.yml) | organization | Mercy Health–St. Rita's Medical Center | 2 | 7v / 0i / 1o | 53 |
@@ -280,9 +280,10 @@ Sorted by: kind, then alphabetically.
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 4v / 1i / 1o | 51 |
-| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 5v / 3i / 2o | 63 |
-| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 0v / 2i / 1o | 26 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 7v / 3i / 3o | 81 |
+| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 1v / 3i / 2o | 43 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
+| [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 6v / 2i / 3o | 67 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 6v / 5i / 1o | 70 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
 | [clerk-of-courts-2025-jennifer-moree-mcbride.yml](tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml) | tenure | Jennifer Moree McBride, Clerk of Courts of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
