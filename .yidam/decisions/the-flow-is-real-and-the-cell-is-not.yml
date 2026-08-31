@@ -1,0 +1,59 @@
+id: the-flow-is-real-and-the-cell-is-not
+summary: >-
+  The commuting file records 1,723 Allen County residents working in Franklin County, a hundred
+  miles away, spread thinly across Columbus. The aggregate is worth publishing and the cell is not
+  worth reading. A file that has passed disclosure avoidance may be summed and may not be quoted.
+context: |
+  [LODES](../catalog/lehd-lodes.md) publishes, for every census block in the country, how many jobs
+  in it are held by residents of every other block. Allen County's file has 61,765 such pairs. The
+  aggregates it produces are sharp and corroborated: 48,730 jobs in the county against
+  [49,690 covered jobs](../corpus/measure/allen-county-wages-2024.yml) two years later, from a
+  different programme with a different definition — 960 apart.
+
+  The detail is not like that. Among the counties Allen County residents are recorded as working in,
+  Franklin — Columbus, a hundred miles south-east — ranks second, above Hancock and Putnam, which
+  are adjacent. Its 1,723 are spread over many Columbus tracts with a maximum of 79 in any one, so
+  it is not one employer's headquarters address standing in for its worksites.
+
+  The file's own front matter says what it is:
+
+  > The U.S. Census Bureau reviewed this data product for unauthorized disclosure of confidential
+  > information and approved the disclosure avoidance practices applied to this release.
+
+  A block-to-block table of where people work cannot be published as collected. Whatever the
+  Bureau's method, a small cell in this file is a protected quantity, and a rank order built out of
+  small cells inherits that.
+decision: |
+  **Sum it freely; quote no cell.**
+
+  - Every figure this corpus takes from LODES is a sum over thousands of pairs — a county total, a
+    direction of flow, an earnings band, a set of sixteen tracts. Those are what the file is for.
+  - No block appears in a node. No single origin-destination pair appears in a node.
+  - A county-to-county flow may be **reported** and may not be **read**. The corpus states that
+    1,723 residents are recorded as working in Franklin County and declines to call that a commute,
+    because the number is a sum of small protected cells and because a hundred-mile daily journey is
+    not what the sentence would ordinarily mean.
+  - Where a LODES aggregate can be checked against a source that is not disclosure-protected, check
+    it and say so in the node. The 48,730 against 49,690 is why the county totals here are trusted
+    at all.
+rationale: |
+  **This is a different failure from the one named last phase.**
+  [A modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml) governs
+  a number that was predicted rather than seen. LODES saw everything it reports: these are
+  administrative records of actual jobs. What has been done to them is protection, not prediction,
+  and protection degrades a cell while leaving a sum almost intact. So the rules are opposite in
+  shape — PLACES may be quoted at any grain and never used relationally; LODES may be used
+  relationally and never quoted at grain.
+
+  **The tell was a plausible number in an implausible place.** Nothing about 1,723 looks wrong.
+  Columbus is Ohio's largest labour market and some people do keep a house in Lima and a job there.
+  It is the *rank* that gives it away: a county a hundred miles off standing above two that share a
+  border. A corpus reading only the top of a list would have written a sentence about Allen County
+  commuting to Columbus and been unable to say what was wrong with it.
+
+  **And the check that makes the rest usable was free.** The corpus already held a covered-employment
+  count from an unrelated programme. Two counts of the same thing 960 apart is not proof that either
+  is right; it is proof that neither is a fabrication, which is exactly the assurance a
+  disclosure-protected file cannot give about itself.
+status: accepted
+date: "2026-08-31"
