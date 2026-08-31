@@ -1,0 +1,77 @@
+id: what-crosses-from-the-recorder
+summary: >-
+  A sibling repository on the same county sits on the same disk and holds, among other things,
+  the one file this corpus decided never to fetch. Convenience is not a licence. What crosses is
+  a catalogued source this repository retrieves for itself, never a path into someone else's
+  cache — and the survey framework crosses freely while title and party data does not.
+context: |
+  `allen-recorder` is a yidam repository indexing the Allen County Recorder's instrument set —
+  116 nodes, its own catalog, ~14,000 lines of Rust, and a working connector to the Recorder's
+  archives. Its central question is what can be recovered about the history of land from a record
+  built to be searched by name. It holds the tract index this corpus needs and a great deal else.
+
+  Its cache also holds `GovernmaxExtract.txt`, which
+  [auditor-parcels-access-terms](auditor-parcels-access-terms.yml) named **by filename** as one of
+  two files this corpus deliberately never fetched — "the names of private individuals attached to
+  the addresses of their homes, county-wide, updated weekly" — and whose enforcement it stated as
+  *the data is not on the disk*.
+
+  That enforcement was written against a future agent who might fetch it. It was not written
+  against a sibling directory two levels up that already has it. The file was opened here once,
+  for three lines, to establish what it contains; it contains what the decision said, a named
+  couple at their home address on the third row. Nothing from it has been used.
+
+  The question is live because the obvious way to spend the recorder is to read its cache. The
+  parcel geometry there is owner-free and 21 MB; the section grid could have been derived from it
+  in one pass. It was not. Layer 55 was fetched here, and the 29 point-in-parcel checks were 29
+  requests to the county, because a fact this corpus publishes should have been retrieved by the
+  repository that publishes it.
+decision: |
+  **A sibling repository is a source, not a directory.**
+
+  1. **Nothing crosses by filesystem.** What crosses is a source: catalogued here, retrieved by
+     this repository, and cited by the nodes that rest on it. The recorder's own findings may be
+     read the way any prior work is read — to know what to go and check — and are not evidence
+     here until this corpus has checked them.
+  2. **The survey framework crosses freely.** Township, range, section; the section grid; the
+     ground key; the Recorder's book list. None of it names a person, and the last is a finding
+     aid to volumes rather than the volumes.
+  3. **Title and party records do not cross on convenience.** A tract page names grantors and
+     grantees, and the county's abstracts run to the present. A page is retrieved against a
+     question already written down in this corpus, and what is taken from it is the answer to
+     that question.
+  4. **`GovernmaxExtract` and `Current_Taxinfo` stay off this disk and out of this corpus**,
+     including by way of any figure derived from them. The earlier decision holds unchanged; this
+     one only says that a sibling's copy is not an exception to it.
+
+  **Rule four is the one with teeth, and it costs something.** The recorder established the ground
+  key from that extract — 18,089 of 18,206 rows agreeing, 99.36 per cent — which is a better
+  calibration than anything reachable without it. This corpus does not cite that figure. It
+  established the same key twice over from sources that carry no person: the county's own
+  `Township` and `Range` fields on layer 55, and 29 point-in-parcel checks against layer 51.
+rationale: |
+  **The generalisable form: an access decision is about the corpus, not about the fetch.** Reading
+  the earlier decision as a rule about who runs `curl` makes a sibling checkout a loophole, and a
+  rule with a loophole that size is a preference. Reading it as a rule about what may be *in* this
+  corpus makes the sibling irrelevant, which is the reading that survives.
+
+  It also happens to be the reading that produces better work. Deriving the section grid from the
+  recorder's parcel cache would have been one pass over a file already on the disk. Fetching layer
+  55 instead produced the county's own `Township` and `Range` fields as separate columns, which
+  decompose the ground code directly rather than by inference — and produced the area closure
+  against the gazetteer, and the 1,282-acre polygon, neither of which the parcel route would have
+  shown.
+
+  **What this does not say.** It is not a judgment about `allen-recorder`, which is doing a
+  different job under its own rules and needs the extract for a question this corpus does not ask.
+  Two repositories on one county may hold different things; the boundary is what makes them two
+  repositories rather than one badly organized one.
+
+  **The line that will be tested next.** A Section Ground page abstracting the tank plant's ground
+  will name whoever conveyed it to the United States, and may name living parties further down the
+  sheet. The rule above says the page is fetched against a written question and answers it. What
+  it does not yet say is how much of a page may be quoted when the question is "when did the Army
+  acquire this", and the answer sits three rows above a 2019 sale between two private people.
+  That is the next decision, and it is better made against a real page than in advance.
+status: accepted
+date: "2026-08-30"
