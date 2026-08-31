@@ -35,6 +35,7 @@ used-by:
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
   - ../corpus/person/henry-d-v-williams.yml
+  - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/place/lima.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/when-allen-county-was-organized.yml
@@ -104,4 +105,20 @@ command.
 **What else is in it, still unread.** Its biographical volume is full of war service — Squirrel
 Hunters, the Sultana, deaths at Corinth and Shiloh — attached to named men, at a level of detail
 the 1885 roster's four fields cannot carry.
+
+**One of its two authors was probably mayor of Lima in 1851.** The title page gives Charles C.
+Miller and Dr. Samuel A. Baxter, "both of Lima"; the 1885 history gives a Samuel A. Baxter elected
+mayor in 1851, appointed mayor in January 1854 in place of a man who had resigned, elected again
+that year and re-elected in 1855, and serving as surgeon of the 18th Ohio from March 1863 to
+November 1865. The 1921 history says Baxter "contributed a number of reminiscent chapters" to this
+volume.
+
+A physician who was mayor at twenty-six would have been past eighty when this book appeared, which
+is old and not impossible, and reminiscent chapters are what a man of that age contributes. The
+corpus records it as probable and not shown — no source held here gives either man a date of birth
+— and notes the consequence either way: **the geology chapter this corpus has leaned on hardest,
+the technical account of the first oil well, was written by men who were in the town when it was
+drilled**, and on this reading one of them had been its mayor thirty-four years earlier. See
+[Samuel A. Baxter](../corpus/person/samuel-a-baxter.yml) and
+[the line of mayors](../corpus/measure/lima-mayors-1842-1886.yml).
 

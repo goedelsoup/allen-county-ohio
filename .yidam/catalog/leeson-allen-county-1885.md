@@ -48,6 +48,7 @@ used-by:
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
+  - ../corpus/measure/lima-mayors-1842-1886.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/office/mayor-of-lima.yml
   - ../corpus/period/canal-era.yml
@@ -55,8 +56,12 @@ used-by:
   - ../corpus/period/the-civil-war-in-allen-county.yml
   - ../corpus/person/benjamin-faurot.yml
   - ../corpus/person/christopher-wood.yml
+  - ../corpus/person/george-w-overmyer.yml
+  - ../corpus/person/h-s-prophet.yml
   - ../corpus/person/henry-d-v-williams.yml
   - ../corpus/person/john-franks.yml
+  - ../corpus/person/richard-metheany.yml
+  - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/person/samuel-forrer.yml
   - ../corpus/place/allen-county.yml
   - ../corpus/place/amanda-township.yml
@@ -90,6 +95,11 @@ used-by:
   - ../corpus/site/camp-lima.yml
   - ../corpus/site/miami-and-erie-canal.yml
   - ../corpus/tenure/mayor-1842-henry-d-v-williams.yml
+  - ../corpus/tenure/mayor-1851-samuel-a-baxter.yml
+  - ../corpus/tenure/mayor-1854-samuel-a-baxter.yml
+  - ../corpus/tenure/mayor-1869-george-w-overmyer.yml
+  - ../corpus/tenure/mayor-1870-richard-metheany.yml
+  - ../corpus/tenure/mayor-1882-h-s-prophet.yml
 ---
 
 **What it is.** A subscription county history of the kind produced across the Midwest in the
