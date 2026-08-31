@@ -1,0 +1,76 @@
+id: a-printed-list-is-a-dataset
+summary: >-
+  A nineteenth-century book printed forty-nine pages of soldiers' names, gave a total, and never
+  said how many of them died. Both facts are recoverable by counting, and they are recoverable to
+  very different accuracies. This sets out which derived quantities from an OCR'd list may be
+  published, in what form, and why a count of words is safer than a count of records.
+context: |
+  The 1885 county history's military chapter is a roster: name, regiment, date of enlistment, date
+  of death or resignation or transfer or discharge, one entry per man, alphabetical, 1,920 of them
+  by the compiler's own count. It is a dataset that happens to be set in type, and this corpus has
+  two independent machine readings of the page.
+
+  Parsed the same way, the two scans give different answers to the same questions, and the size of
+  the disagreement depends entirely on what is being asked:
+
+      what is counted                 scan B    scan A    printed    disagreement
+      roster records                   1,877     1,745      1,920        7.6%
+      records recording a death          170       164         --        3.6%
+      deaths at Corinth                   11        11         --        0
+      deaths at Atlanta                    9         9         --        0
+      records naming the 81st Ohio       455       240         --          90%
+
+  The pattern is not random. **Record boundaries are layout**, and layout is what OCR loses: a
+  running head swallowed into a line, a surname whose capital is read as two letters, an entry
+  with every field blank. **A death is a word** — `died`, `killed`, `k'd` — and words survive. A
+  regiment is a *number* next to an ordinal suffix, and digits are exactly what this typeface
+  loses: one scan reads "81st" as "8l8t" and "Slst" throughout, so its regiment tallies are halved
+  while its death tallies move by six.
+
+  The same chapter also proves the general point in the other direction. Its statistical paragraph
+  gives four different figures for the county's war service — 776, 1,100-1,200, 1,411, 1,920 — and
+  every one of them is a *printed* number that no amount of parsing improves on. The parse is not
+  competing with the book. It answers a question the book did not ask.
+decision: |
+  **A printed list may be counted, and what the count is good for depends on what OCR does to the
+  thing being counted.**
+
+  - **Never publish a parse in place of a printed total.** Where the compiler totalled his own
+    list, his figure is the measurement and the parse is a check on it. Report both, and report
+    the recovery rate.
+  - **Publish a derived quantity the book never stated only as a floor**, and take the floor from
+    the *lower* of the two scans. Every failure mode of this method — an entry not recognised, an
+    abbreviation mangled, a fate the compiler never learned — pushes the count down. None pushes
+    it up. A floor with a known direction is a usable number; a midpoint between two scans is not.
+  - **Prefer to count words over records, and never count digits.** A word-level marker is robust
+    across digitizations; a record boundary is fragile; an ordinal number in this typeface is
+    unusable. Where a distribution rests on digits, publish the **ranking** the two scans agree on
+    and withhold the counts they do not.
+  - **State the parse in the node's `method`**, in enough detail that another reader could get the
+    same number or a different one and know which. The stop list, the anchor, the validation
+    against the printed order, the scan each figure came from.
+  - **Do not enter the list itself.** Counting 1,920 names is a measurement; copying 1,920 names
+    into 1,920 nodes is a transcription project, and it would put the corpus's own OCR errors into
+    the graph as people. Quote entries as evidence; do not import them as data.
+rationale: |
+  **The rule follows from what the failures actually are.** This corpus already knew that this
+  typeface loses digits — [two scans of one book](two-scans-of-one-book.yml) was written when 1883
+  read as 1833, and [three witnesses and three dates](three-witnesses-and-three-dates.yml) demoted
+  the scan preference when the cleaner scan turned out to be the wrong one. What is new here is
+  that the same defect has a *shape*: it is concentrated in numerals and in layout, and it barely
+  touches prose. A method that leans on prose is therefore not merely safer on average; it is safer
+  in the specific way this source fails.
+
+  **The floor rule is the honest form of an undercount.** The alternative — publishing 170 because
+  the better scan found 170 — asserts a precision the pair does not support, and the difference
+  between the two readings is not noise around a true value. It is one reading finding things the
+  other missed. Taking the minimum says exactly what the corpus knows: at least this many, and the
+  error is all in one direction.
+
+  **The last clause is a limit on ambition, not on curiosity.** A roster of 1,920 men is the most
+  granular record this corpus has of any period before the twentieth century, and it would be easy
+  to argue that each man deserves a node. He would deserve one from a clean source. From this one
+  the corpus would be manufacturing 1,920 assertions with a known error rate and no way to check
+  any single one of them, which is the opposite of what a name is for.
+status: accepted
+date: "2026-08-31"

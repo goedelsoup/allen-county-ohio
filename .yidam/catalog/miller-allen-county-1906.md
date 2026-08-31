@@ -23,6 +23,7 @@ used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1880-1920.yml
@@ -37,6 +38,7 @@ used-by:
   - ../corpus/place/lima.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/when-allen-county-was-organized.yml
+  - ../corpus/site/camp-lima.yml
   - ../corpus/tenure/mayor-1842-henry-d-v-williams.yml
 ---
 
@@ -74,3 +76,32 @@ is the one place the later volume is the better source.
 **What it carries that this phase did not take.** A chapter on the Welsh settlement of Gomer, a
 population series for Ohio and Allen County running back before 1885, city officials of Lima, and a
 township-by-township account that would cross-check the 1885 book at every point.
+
+**Its Civil War statistics are quoted, and it names a source the catalog does not hold.** The whole
+statistical passage — Camp Lima, the Eighth Military District, the enrollment of 3,792, the 1,411
+enlisted, the 163 Squirrel Hunters, the roster total of 1,920 — is set in quotation marks and
+introduced as "From the 'Allen County History' of 1875 we take the following". The text inside the
+quotation marks is [the 1885 history](leeson-allen-county-1885.md) word for word, including its
+total of its own roster, which a book of 1875 could not have printed.
+
+Either the attribution is wrong or both books drew on something earlier that this catalog does not
+hold — the 1921 history mentions Horace S. Knapp's Allen County data in a world atlas of 1875 and a
+Historical Sketch of Allen County of 1880, and holds neither. The consequence for the corpus is the
+same in both cases: **on the Civil War this volume is not an independent witness**, and any figure
+it shares with the 1885 book is one witness, not two. See
+[what the county sent](../corpus/measure/allen-county-civil-war-service.yml).
+
+**Where it does speak for itself about the war, it introduces errors.** Outside the quotation it
+writes "Of the 100,224 common soldiers which Ohio sent to the war, Allen County furnished 776",
+dropping the "in 1861" that the 1885 book puts in the same sentence and turning a first-year cohort
+into a whole-war total — an error the 1921 history then inherits and sets against a different
+figure as though the two conflicted. It also converts a statement about the *First Ohio Volunteer
+Infantry* into one about this county ("in just 60 hours thereafter soldiers from this county were
+en route for Washington"), and dates Isaiah S. Pillars' appointment as commander of Camp Lima to
+1861, a year in which — by the dates in the passage it has just quoted — there was no Camp Lima to
+command.
+
+**What else is in it, still unread.** Its biographical volume is full of war service — Squirrel
+Hunters, the Sultana, deaths at Corinth and Shiloh — attached to named men, at a level of detail
+the 1885 roster's four fields cannot carry.
+

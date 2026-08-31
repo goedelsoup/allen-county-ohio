@@ -558,6 +558,42 @@
       "withheld": 1
     },
     {
+      "id": "event/the-first-lima-company-1861.yml",
+      "class": "event",
+      "label": "The raising of the first Lima company",
+      "tier": "inference",
+      "properties": {
+        "event_type": "mobilization",
+        "location_description": "Lima, at the second Allen County courthouse and on the square before it.",
+        "occurred": "1861-04-14",
+        "occurred_through": "1861-04-22"
+      },
+      "blocks": [
+        {
+          "text": "Eight days between the news of Fort Sumter reaching Lima and the county's first company being inducted into United States service — ninety-two men, rank and file. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The officers were M. H. Nichols captain, C. M. Hughes lieutenant, T. J. Hustler second lieutenant, J. A. Anderson sergeant, J. N. Cunningham second sergeant, William Bradley third, W. H. Ward fourth, and C. C. Oldfield, Milton Titus, J. B. Davison and Samuel McClure corporals. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The book dates the first day April 12 and calls it a Sunday, and it cannot be both.** April 12, 1861 was a Friday; the Sunday of that week was the 14th, the day the garrison marched out of Fort Sumter and the day the wires would have carried it into northwestern Ohio. The corpus takes the weekday over the date, because the scene the book describes — congregations in church, a flag raised, a crowd on the way out — is a Sunday scene and the rest of the sequence is dated consistently around it. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It happened at the second courthouse, not the one that stands.** The flag was strung between Ashton Hall and the courthouse, \"in the days of the second Allen County courthouse on the site of the Cincinnati Block\". [verified] — same source. The building on Main Street today is the third and opened in 1884; see [the courthouse](../site/allen-county-courthouse.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the sixty hours, corrected.** Two of the three county histories say the county had men on the road to Washington within sixty hours; the phrase belongs to the First Ohio Volunteer Infantry, not to Allen County, and this sequence — from the same book that repeats it — is what actually happened. [inference] — see [what the county sent](../measure/allen-county-civil-war-service.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "event/the-first-railroad-reaches-allen-county.yml",
       "class": "event",
       "label": "The first railroad reaches Allen County",
@@ -2096,6 +2132,108 @@
         "The corpus does not establish that."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-civil-war-dead.yml",
+      "class": "measure",
+      "label": "Allen County's Civil War dead, counted from the roster",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1885",
+        "method": "Both archive.org digitizations of the 1885 county history were parsed into roster records — a capitalised surname after a sentence break, followed by a given name — over the five sections of Chapter IX's roster, filtered against a stop list of place names, months, unit words and running heads. Scan B yields 1,877 records and scan A 1,745, against a printed 1,920. A record counts as a death if it carries any of: `died`, an abbreviated `d.` followed by a date or a place, `killed`, `k'd`, `k'l'd`, `k.` before a place, `mortally`, `drowned`, or `lost on`. The published value is the **lower** of the two scans, because every failure mode here — an unrecognised entry, an OCR-mangled abbreviation, a roster silent about a man's fate — pushes the count down, and none pushes it up. [inference] Place of death is counted only where the place name falls within one clause of the word recording the death, so that a man who enlisted at one place and died at another is not counted twice. The two scans agree exactly at Corinth and Atlanta and differ by one at Nashville. Regiment counts are **not** published: the two scans differ on those by up to a factor of two, because one of them reads \"81st\" as \"8l8t\". [inference]",
+        "parameter": "Allen County men recorded as dying in United States service, Civil War",
+        "unit": "men, a floor",
+        "value": "164"
+      },
+      "blocks": [
+        {
+          "text": "The 1885 roster records the fate of each of its 1,920 men and never totals them. This is that total, computed. [inference] — counted from both digitizations of [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), Chapter IX; method in the properties below and in [a printed list is a dataset](../../decisions/a-printed-list-is-a-dataset.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**At least 164 of the 1,920 did not come home** — 8.5 per cent of the men of record — and the figure is a floor, not a total. The lower of two independent readings of the same page is taken, and neither reading recovers every entry. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**About one death in five was in action.** By cause, taking the lower reading of each so that every figure is a floor: **35** killed or mortally wounded, **5** dead of wounds, **3** drowned or lost at sea, and **121** whom the roster gives a place and a date and no cause at all. [inference] — computed here. Those places are hospitals and camps, and this is the ordinary arithmetic of that war seen from one county.",
+          "tier": "inference"
+        },
+        {
+          "text": "**More Allen County men died at Corinth, Mississippi, than anywhere else.** Taking the lower of the two readings at each place: Corinth **11**, Atlanta **9**, Nashville **9**, Chattanooga **4**, Rome **3**, Andersonville **2**, Resaca **2**, Knoxville **2**. [inference] — computed here, counting only a place named within a clause of the word recording the death, so that a man who enlisted at one place and died at another is counted once.",
+          "tier": "inference"
+        },
+        {
+          "text": "Corinth is where the 81st Ohio — the regiment this county filled most — fought on October 3 and 4, 1862 and then wintered, and the eleven are a mixture of both: some killed on those two days, some dead of disease in the camp the following spring. [inference] — the roster's own entries.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three deaths in the list are not military at all, and both scans carry them word for word.** Abraham Baumgardner of the 81st drowned at Hamburgh, Tennessee, on August 25, 1862; B. F. Burget of the 180th drowned near Fort Monroe on April 23, 1865, a fortnight after Appomattox; and Joseph Harter of McLaughlin's Squad was \"lost on Str. Sultana\", the steamer that burned and sank above Memphis on April 27, 1865 carrying released prisoners home. [verified] — the 1885 history, both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "The *Sultana* entry is where the two-scan rule earns its keep: the cleaner scan reads the year as **1805** and the other reads **1865**. [inference] — computed here; see [two scans of one book](../../decisions/two-scans-of-one-book.yml). The same eight-for-nought substitution runs through that scan's whole military chapter, which is why no date in it is taken from one reading alone.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three men died in Confederate prisons**, two at Andersonville and one at Belle Isle, and the roster names them the way it names everything else — in the field where a discharge date would go. [verified] — the 1885 history.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-civil-war-service.yml",
+      "class": "measure",
+      "label": "Allen County in United States service, 1861-1865",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1885",
+        "method": "Read from the military chapter of the 1885 county history, whose roster covers 1861-1865 and was compiled twenty years after the close. The 1,920 is the compiler's own total of his own list, stated twice. The check is a parse of the roster text from both archive.org digitizations of the book: entries are detected as a capitalised surname following a sentence break and followed by a given name, filtered against a stop list of place names, months, unit words and running heads, and validated against the alphabetical order the roster is printed in. Scan B yields 1,877 records and scan A 1,745, against 1,920 printed. [inference] The regiment ranking is computed from the same records and is reported as a ranking rather than as counts, because the two scans disagree on the counts by up to a factor of two — scan A renders \"81st\" variously as \"8l8t\" and \"Slst\" — and agree on the order of the first six. [inference]",
+        "parameter": "Allen County men in United States service, Civil War",
+        "unit": "men named in the roster",
+        "value": "1920"
+      },
+      "blocks": [
+        {
+          "text": "Every figure the county's own histories print for its Civil War service, with what each one actually counts. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), Chapter IX, Military History, pages 318-378.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1,920 is a roster total and the roster is printed**, forty-nine pages of it: field officers by rank, then captains, first and second lieutenants, then the non-commissioned officers and privates, alphabetically, each with regiment, date of enlistment and date of death, resignation, transfer or discharge. The book states the total twice, in the same paragraph, and gives the same number both times. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**An independent parse of the roster recovers 1,877 of the 1,920 — 97.8 per cent.** The other digitization of the same book recovers 1,745, or 90.9 per cent. Neither reaches the printed total and both are the same order; the count is a check on the number, not a replacement for it. [inference] — computed here; see [a printed list is a dataset](../../decisions/a-printed-list-is-a-dataset.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The enrollment is the county's own and not the district's.** The 3,792 is stated in a sentence about the Eighth Military District, which was more than one county. Against the county's 19,185 people in 1860 it is 19.8 per cent, which is what a militia enrollment of men eighteen to forty-five comes to; against a district of eight counties it would be a twelfth of that. [inference] — computed here against [the 1860 count](allen-county-population-1830-1900.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The regiments the county filled are not the regiments Camp Lima raised.** Sorted by how often each appears in the roster, the order is the same in both digitizations: the **81st** Ohio Volunteer Infantry first by a wide margin, then the **118th**, the **151st** Ohio National Guard, the **180th**, the **99th** and the **54th**. [inference] — computed here. The 99th and the 118th were the two ordered mustered at [Camp Lima](../site/camp-lima.yml); the 81st, which the county filled most, was not.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 776 was corrupted in transmission, and the corruption is datable.** The 1885 book says the 776 are the Allen County men \"whose names occur in the roster of the 100,224 men, contributed by Ohio, **in 1861**\". [verified] — the 1885 history. Twenty-one years later the year is gone: \"Of the 100,224 common soldiers which Ohio sent to the war, Allen County furnished 776.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). Fifteen years after that the figure is a whole-war total in conflict with another: \"one account says Allen County had 776 soldiers in the Civil war, while another says the official report, October 1, 1863, accredits 1,200 men to the army and navy from Allen County\". [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "There is no conflict. A first-year cohort and a two-and-a-half-year credit are different measurements, and the 1921 book is setting them against each other because the 1906 book dropped four words. [inference] — the three passages above, read together.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The same three books do it a second time with the sixty hours.** The 1885 book says of the *First Ohio Volunteer Infantry* that \"within sixty hours after Lincoln's call for men, the First was en route to Washington\" — a fact about a state regiment, in a list of state regiments. [verified] — the 1885 history. The 1906 book: \"in just 60 hours thereafter soldiers from this county were en route for Washington.\" [verified] — the 1906 history. The 1921 book moves the clock's start from Lincoln's call to the attack on Fort Sumter: \"within sixty hours after the attack on Fort Sumter it had a company of soldiers en route.\" [verified] — the 1921 history.",
+          "tier": "verified"
+        },
+        {
+          "text": "A statewide fact became a county one, and then acquired three extra days. What actually happened is in the 1921 book, four sentences later, dated: Fort Sumter fired on, the printer Charles N. Moyer to Columbus on April 16, the company ready on April 19 and inducted on April 22 — a week after Lincoln's call, not sixty hours. [inference] — the 1921 history, read against itself. See [the first company](../event/the-first-lima-company-1861.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-commuting-2022.yml",
@@ -5968,6 +6106,45 @@
       "withheld": 1
     },
     {
+      "id": "period/the-civil-war-in-allen-county.yml",
+      "class": "period",
+      "label": "The Civil War in Allen County",
+      "tier": "inference",
+      "properties": {
+        "began": "1861-04-14",
+        "character": "A rural county of nineteen thousand people sustaining a military effort of nineteen hundred men for four years, and organizing itself around that effort — an aid society, a military committee, a relief tax, a board of enrollment, and a camp of rendezvous for eight counties. [inference]",
+        "ended": "1865"
+      },
+      "blocks": [
+        {
+          "text": "The four years in which a county of 19,185 people put **1,920 men** into United States service — one person in ten, counting women, children and the old. [inference] — computed here against [the 1860 count](../measure/allen-county-population-1830-1900.yml); the 1,920 is [the roster's own total](../measure/allen-county-civil-war-service.yml). It is the first period this corpus has named that is not about what the county produced.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It begins on a Sunday morning at the courthouse, and the source has the day wrong.** Rusler puts Lima's congregations in church on \"a bright Sunday morning, April 12, 1861\" when the word came that Fort Sumter had been fired on; a flag went up on a wire between Ashton Hall and the courthouse, the congregations gathered under it when services ended, and a store box was made into a platform. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "April 12, 1861 was a **Friday**. The Sunday was the 14th, the day Sumter's garrison marched out, which is when the news would have reached a town in northwestern Ohio. [inference] — computed here. The scene is not in doubt; its date is off by two days, and the book supplies the correction four sentences later by dating everything that follows.",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — [the 1885 history](../../catalog/leeson-allen-county-1885.md) for the first, second and fourth; the 1921 history for the third, which attributes it to an official report it does not name. See [what the county sent](../measure/allen-county-civil-war-service.yml), where the transmission of the first of them is traced through three books and found to have been corrupted on the way.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What it cost is not in any of the three books as a number.** The 1885 roster records the fate of each man and never adds them up. Counted, at least **165** of the 1,920 died in service, and only about one in four of those was killed. More Allen County men died at Nashville, a hospital town, than in any battle. [inference] — [the dead](../measure/allen-county-civil-war-dead.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It ends without an ending in the record.** The rosters stop at muster-out and the county histories move to the Grand Army posts, Memorial Hall and the Woman's Relief Corps — organized within three years of the close, and the oldest women's society in the county. [verified] — the 1921 history. The character of the span is set by the going out and not the coming home, because that is what the sources chose to record.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "person/aaron-fisher.yml",
       "class": "person",
       "label": "Aaron Fisher",
@@ -7872,6 +8049,10 @@
           "tier": "inference"
         },
         {
+          "text": "**It sent one person in ten to the Civil War.** A county of 19,185 in 1860 put 1,920 men into United States service over the four years, and at least 164 of them did not come home. [inference] — [what the county sent](../measure/allen-county-civil-war-service.yml) and [the dead](../measure/allen-county-civil-war-dead.yml). It was also, for a few weeks in August 1862, the rendezvous of the whole Eighth Military District: about 1,600 men camped across the Ottawa from a town of fewer than two thousand. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md); see [Camp Lima](../site/camp-lima.yml).",
+          "tier": "inference"
+        },
+        {
           "text": "**It rose for a hundred and fifty years and has fallen for forty-four.** The peak is 1980 and the county is now smaller than it was in 1960. [inference] The first two figures count different ground — the [reorganization of 1848](../event/reorganization-of-1848.yml) moved 138 square miles — so the series is continuous only from 1850.",
           "tier": "inference"
         }
@@ -8551,6 +8732,14 @@
         },
         {
           "text": "This node said until now that buying a house here was no harder than buying one anywhere in the county. That was 2023, the only year of seven in which Lima's purchase rate is the lower one, and it is withdrawn. [verified] — see [a rule is not a habit](../../decisions/a-rule-is-not-a-habit.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It was a garrison town for a fortnight in 1862, and the garrison outnumbered the town.** Lima had 1,989 people at the 1860 census; in August 1862 about 1,600 men were camped across the Ottawa River at [Camp Lima](../site/camp-lima.yml), the rendezvous of Ohio's Eighth Military District. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Its war began on a Sunday morning at the second courthouse, with a flag on a wire between Ashton Hall and the building and a store box for a platform; the first company was ninety-two men and was inducted eight days later. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md); see [the first company](../event/the-first-lima-company-1861.yml).",
           "tier": "verified"
         },
         {
@@ -9495,6 +9684,48 @@
         {
           "text": "**The building committee corroborates a sheriff.** It included \"John Franks, Sheriff\" in 1881, and [the roster](../person/john-franks.yml) kept by the sheriff's own office gives his term as 1877-1881. Two records with no common source agree on the man and the year. [verified] — same source and [past-sheriffs roster](../../catalog/acso-past-sheriffs.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**The 1842 courthouse's site is now known, and a commercial block took it.** The second courthouse stood where the Cincinnati Block later stood, and it was still the county's building in April 1861, when a flag was strung on a wire between Ashton Hall and it and Lima's congregations gathered under it to hear that Fort Sumter had been fired on. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md); see [the first company](../event/the-first-lima-company-1861.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
+      "id": "site/camp-lima.yml",
+      "class": "site",
+      "label": "Camp Lima",
+      "tier": "inference",
+      "properties": {
+        "built": "1862-08-11",
+        "site_type": "military camp"
+      },
+      "blocks": [
+        {
+          "text": "The Civil War camp of rendezvous for Ohio's Eighth Military District, on the Shawnee road across the Ottawa River from [Lima](../place/lima.yml). [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md), which also carries a picture of it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In August 1862 there were about 1,600 men camped there.** [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). Lima had 1,989 people at the census two years earlier. [verified] — [the city's series](../measure/lima-population-1850-1960.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "For a few weeks the camp was very nearly a second Lima, and the larger half of it was from somewhere else: the Eighth District was more than one county, and Allen County's whole contribution to the war was 1,920 men over four years. [inference] — computed here against [what the county sent](../measure/allen-county-civil-war-service.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two regiments were ordered mustered here** — the 99th Ohio Volunteer Infantry, which opened the camp on August 11, 1862 and was full that day, and the 118th, ordered formed about the same time. [verified] — the 1885 history. Neither is the regiment this county filled most; that was the 81st, which was organised in September 1861, before there was a camp.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The station is a year older than the camp, and the later books collapse the two.** Lima was selected as a military station in August 1861, with Isaiah S. Pillars as commandant; the Eighth Military District was organised with its rendezvous here in July 1862; the camp opened in August 1862. [verified] — the 1885 history. The 1906 and 1921 histories both compress this into a single sentence: that Pillars was appointed commander of Camp Lima in 1861, by Governor Tod, and that the 81st, 99th and 118th were organised under him. [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md) and the 1921 history.",
+          "tier": "verified"
+        },
+        {
+          "text": "There was no Camp Lima in 1861 to command, and the 81st was raised before there was. [inference] — the 1885 history's own dates, read against the later two. What the later books have done is take a designation of 1861 and a camp of 1862 and give them one date, which is the same failure this corpus found twice more in the same two volumes; see [what the county sent](../measure/allen-county-civil-war-service.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -11634,6 +11865,20 @@
       "source": "catalog/leeson-allen-county-1885.md"
     },
     {
+      "from": "event/the-first-lima-company-1861.yml",
+      "to": "place/lima.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "event/the-first-lima-company-1861.yml",
+      "to": "period/the-civil-war-in-allen-county.yml",
+      "relationship": "situated-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
       "from": "event/the-first-railroad-reaches-allen-county.yml",
       "to": "place/allen-county.yml",
       "relationship": "occurred-in",
@@ -12234,6 +12479,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-civil-war-dead.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-civil-war-service.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
     },
     {
       "from": "measure/allen-county-commuting-2022.yml",
@@ -13335,6 +13594,27 @@
       "source": null
     },
     {
+      "from": "period/the-civil-war-in-allen-county.yml",
+      "to": "period/lima-oil-boom.yml",
+      "relationship": "precedes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/the-civil-war-in-allen-county.yml",
+      "to": "measure/allen-county-civil-war-service.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "period/the-civil-war-in-allen-county.yml",
+      "to": "measure/allen-county-civil-war-dead.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "person/aaron-fisher.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
@@ -14257,6 +14537,13 @@
       "relationship": "operated-by",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "site/camp-lima.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
     },
     {
       "from": "site/ford-lima-engine-plant.yml",

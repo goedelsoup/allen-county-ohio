@@ -162,6 +162,46 @@
       ]
     },
     {
+      "id": "place-allen-county::Allen-County-men-in-United-States-service,-Civil-War",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County men in United States service, Civil War",
+      "unit": "men named in the roster",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-civil-war-service.yml",
+          "label": "Allen County in United States service, 1861-1865",
+          "as_of": "1885",
+          "value": 1920.0,
+          "published": "1920",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Read from the military chapter of the 1885 county history, whose roster covers 1861-1865 and was compiled twenty years after the close. The 1,920 is the compiler's own total of his own list, stated twice. The check is a parse of the roster text from both archive.org digitizations of the book: entries are detected as a capitalised surname following a sentence break and followed by a given name, filtered against a stop list of place names, months, unit words and running heads, and validated against the alphabetical order the roster is printed in. Scan B yields 1,877 records and scan A 1,745, against 1,920 printed. [inference] The regiment ranking is computed from the same records and is reported as a ranking rather than as counts, because the two scans disagree on the counts by up to a factor of two — scan A renders \"81st\" variously as \"8l8t\" and \"Slst\" — and agree on the order of the first six. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::Allen-County-men-recorded-as-dying-in-United-States-service,-Civil-War",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County men recorded as dying in United States service, Civil War",
+      "unit": "men, a floor",
+      "tier": "inference",
+      "points": [
+        {
+          "node": "measure/allen-county-civil-war-dead.yml",
+          "label": "Allen County's Civil War dead, counted from the roster",
+          "as_of": "1885",
+          "value": 164.0,
+          "published": "164",
+          "tier": "inference",
+          "source": null,
+          "method": "Both archive.org digitizations of the 1885 county history were parsed into roster records — a capitalised surname after a sentence break, followed by a given name — over the five sections of Chapter IX's roster, filtered against a stop list of place names, months, unit words and running heads. Scan B yields 1,877 records and scan A 1,745, against a printed 1,920. A record counts as a death if it carries any of: `died`, an abbreviated `d.` followed by a date or a place, `killed`, `k'd`, `k'l'd`, `k.` before a place, `mortally`, `drowned`, or `lost on`. The published value is the **lower** of the two scans, because every failure mode here — an unrecognised entry, an OCR-mangled abbreviation, a roster silent about a man's fate — pushes the count down, and none pushes it up. [inference] Place of death is counted only where the place name falls within one clause of the word recording the death, so that a man who enlisted at one place and died at another is not counted twice. The two scans agree exactly at Corinth and Atlanta and differ by one at Nashville. Regiment counts are **not** published: the two scans differ on those by up to a factor of two, because one of them reads \"81st\" as \"8l8t\". [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Atmospheric-Crude-Distillation-Capacity-(barrels-per-calendar-day),-Total-Operable",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -3523,6 +3563,144 @@
           "label": "Commute out",
           "value": 18374.0,
           "literal": "18,374"
+        }
+      ]
+    },
+    {
+      "id": "one-person-in-ten-went-to-war",
+      "statement": "Allen County had 19,185 people in 1860 and put 1,920 men into United States service over the four years of the Civil War — one person in ten, counting women, children and the old.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "period/the-civil-war-in-allen-county.yml",
+          "node_label": "The Civil War in Allen County",
+          "span": "The four years in which a county of 19,185 people put **1,920 men** into United States service — one person in ten, counting women, children and the old.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-civil-war-service.yml",
+          "node_label": "Allen County in United States service, 1861-1865",
+          "span": "**The 1,920 is a roster total and the roster is printed**, forty-nine pages of it",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-civil-war-service.yml",
+          "node_label": "Allen County in United States service, 1861-1865",
+          "span": "There is no conflict. A first-year cohort and a two-and-a-half-year credit are different measurements, and the 1921 book is setting them against each other because the 1906 book dropped four words.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-roster-never-totalled-its-own-dead",
+      "statement": "The 1885 county history records the fate of each of its 1,920 soldiers and never adds them up. Counted, at least 164 did not come home, and only about one death in five was in action.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-civil-war-dead.yml",
+          "node_label": "Allen County's Civil War dead, counted from the roster",
+          "span": "**At least 164 of the 1,920 did not come home** — 8.5 per cent of the men of record — and the figure is a floor, not a total.",
+          "tier": "inference",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-civil-war-dead.yml",
+          "node_label": "Allen County's Civil War dead, counted from the roster",
+          "span": "**About one death in five was in action.** By cause, taking the lower reading of each so that every figure is a floor: **35** killed or mortally wounded, **5** dead of wounds, **3** drowned or lost at sea, and **121** whom the roster gives a place and a date and no cause at all.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Killed or mortally wounded",
+          "value": 35.0,
+          "literal": "35"
+        },
+        {
+          "label": "Died of wounds",
+          "value": 5.0,
+          "literal": "5"
+        },
+        {
+          "label": "Drowned or lost at sea",
+          "value": 3.0,
+          "literal": "3"
+        },
+        {
+          "label": "No cause recorded",
+          "value": 121.0,
+          "literal": "121"
+        }
+      ]
+    },
+    {
+      "id": "more-died-at-corinth-than-anywhere",
+      "statement": "More Allen County men died at Corinth, Mississippi than at any other named place — where the 81st Ohio, the regiment the county filled most, fought in October 1862 and then wintered.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-civil-war-dead.yml",
+          "node_label": "Allen County's Civil War dead, counted from the roster",
+          "span": "**More Allen County men died at Corinth, Mississippi, than anywhere else.** Taking the lower of the two readings at each place: Corinth **11**, Atlanta **9**, Nashville **9**, Chattanooga **4**, Rome **3**, Andersonville **2**, Resaca **2**, Knoxville **2**.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Corinth, Miss.",
+          "value": 11.0,
+          "literal": "11"
+        },
+        {
+          "label": "Atlanta, Ga.",
+          "value": 9.0,
+          "literal": "9"
+        },
+        {
+          "label": "Nashville, Tenn.",
+          "value": 9.0,
+          "literal": "9"
+        },
+        {
+          "label": "Chattanooga, Tenn.",
+          "value": 4.0,
+          "literal": "4"
+        },
+        {
+          "label": "Rome, Ga.",
+          "value": 3.0,
+          "literal": "3"
+        },
+        {
+          "label": "Andersonville, Ga.",
+          "value": 2.0,
+          "literal": "2"
+        },
+        {
+          "label": "Resaca, Ga.",
+          "value": 2.0,
+          "literal": "2"
+        },
+        {
+          "label": "Knoxville, Tenn.",
+          "value": 2.0,
+          "literal": "2"
         }
       ]
     },

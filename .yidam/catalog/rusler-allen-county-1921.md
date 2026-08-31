@@ -19,7 +19,9 @@ used-by:
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/renaming-of-german-township-1918.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/event/the-first-lima-company-1861.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
@@ -28,6 +30,7 @@ used-by:
   - ../corpus/period/canal-era.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
+  - ../corpus/period/the-civil-war-in-allen-county.yml
   - ../corpus/person/james-a-hover.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
@@ -37,6 +40,8 @@ used-by:
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
   - ../corpus/question/when-allen-county-was-organized.yml
+  - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/camp-lima.yml
   - ../corpus/site/lima-refinery.yml
   - ../corpus/site/miami-and-erie-canal.yml
 ---
@@ -97,3 +102,32 @@ its author. What this does *not* license is discounting the volume: the corpus h
 claims from it and this is the first to fail a check. It is a reason to prefer the federal count for
 a federal count, which is a narrower conclusion than "Rusler is unreliable" and the only one the
 evidence supports.
+
+**Its war chapter is the only narrative of Allen County's Civil War the corpus holds**, pages
+439-449 of volume I, and it does what the 1885 book does not: it tells the story of a particular
+morning. Fort Sumter, a flag on a wire between Ashton Hall and the second courthouse, the
+congregations gathering as services end, Rev. T. P. Johnson and Martin Armstrong on a store box, and
+the printer Charles N. Moyer stepping forward first. It then dates the week that followed — Columbus
+on April 16, the company ready on April 19 at ninety-two men rank and file, inducted April 22 — and
+names its eleven officers and non-commissioned officers. It also carries a photograph of Camp Lima.
+
+**And it contains its own correction.** Four sentences before that dated week it repeats the claim
+that the county had men on the road "within sixty hours after the attack on Fort Sumter", which is a
+statement about a state regiment and not this county, and which its own sequence disproves. It
+likewise sets the morning on "a bright Sunday morning, April 12, 1861"; April 12 was a Friday. Both
+are the kind of error this volume makes and this volume also supplies the material to catch — see
+[the first company](../corpus/event/the-first-lima-company-1861.yml).
+
+**It is honest about the numbers in a way the earlier books are not.** On how many men the county
+sent it prints two figures and refuses to choose: "one account says Allen County had 776 soldiers in
+the Civil war, while another says the official report, October 1, 1863, accredits 1,200 men to the
+army and navy from Allen County". The 776 is the 1885 book's, stripped of its year on the way
+through the 1906 volume; the 1,200 is attributed to an official report the book does not name and
+the corpus does not hold.
+
+**What else is in its military pages, still unread.** The Grand Army of the Republic posts and their
+G. A. R. monument at Lafayette, Memorial Hall and the 1908 state encampment that produced it, the
+Woman's Relief Corps — organized within three years of the close and the oldest women's society in
+the county — the Lima City Guards and their muster-out after 1898, the Spencerville armory, the
+Spanish-American War, and the World War chapters that follow it. The corpus has none of them.
+
