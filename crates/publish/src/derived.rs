@@ -1336,6 +1336,75 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "one-person-in-ten-went-to-war",
+        statement: "Allen County had 19,185 people in 1860 and put 1,920 men into United States \
+                    service over the four years of the Civil War — one person in ten, counting \
+                    women, children and the old.",
+        topic: "history",
+        supports: &[
+            support!(
+                "period/the-civil-war-in-allen-county.yml",
+                "The four years in which a county of 19,185 people put **1,920 men** into United States service — one person in ten, counting women, children and the old."
+            ),
+            support!(
+                "measure/allen-county-civil-war-service.yml",
+                "**The 1,920 is a roster total and the roster is printed**, forty-nine pages of it"
+            ),
+            support!(
+                "measure/allen-county-civil-war-service.yml",
+                "There is no conflict. A first-year cohort and a two-and-a-half-year credit are different measurements, and the 1921 book is setting them against each other because the 1906 book dropped four words."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-roster-never-totalled-its-own-dead",
+        statement: "The 1885 county history records the fate of each of its 1,920 soldiers and \
+                    never adds them up. Counted, at least 164 did not come home, and only about \
+                    one death in five was in action.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-civil-war-dead.yml",
+                "**At least 164 of the 1,920 did not come home** — 8.5 per cent of the men of record — and the figure is a floor, not a total."
+            ),
+            support!(
+                "measure/allen-county-civil-war-dead.yml",
+                "**About one death in five was in action.** By cause, taking the lower reading of each so that every figure is a floor: **35** killed or mortally wounded, **5** dead of wounds, **3** drowned or lost at sea, and **121** whom the roster gives a place and a date and no cause at all."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Killed or mortally wounded", value: 35.0, literal: "35" },
+            Figure { label: "Died of wounds", value: 5.0, literal: "5" },
+            Figure { label: "Drowned or lost at sea", value: 3.0, literal: "3" },
+            Figure { label: "No cause recorded", value: 121.0, literal: "121" },
+        ],
+    },
+    Assertion {
+        id: "more-died-at-corinth-than-anywhere",
+        statement: "More Allen County men died at Corinth, Mississippi than at any other named \
+                    place — where the 81st Ohio, the regiment the county filled most, fought in \
+                    October 1862 and then wintered.",
+        topic: "history",
+        supports: &[support!(
+            "measure/allen-county-civil-war-dead.yml",
+            "**More Allen County men died at Corinth, Mississippi, than anywhere else.** Taking the lower of the two readings at each place: Corinth **11**, Atlanta **9**, Nashville **9**, Chattanooga **4**, Rome **3**, Andersonville **2**, Resaca **2**, Knoxville **2**."
+        )],
+        answers: &[],
+        figures: &[
+            Figure { label: "Corinth, Miss.", value: 11.0, literal: "11" },
+            Figure { label: "Atlanta, Ga.", value: 9.0, literal: "9" },
+            Figure { label: "Nashville, Tenn.", value: 9.0, literal: "9" },
+            Figure { label: "Chattanooga, Tenn.", value: 4.0, literal: "4" },
+            Figure { label: "Rome, Ga.", value: 3.0, literal: "3" },
+            Figure { label: "Andersonville, Ga.", value: 2.0, literal: "2" },
+            Figure { label: "Resaca, Ga.", value: 2.0, literal: "2" },
+            Figure { label: "Knoxville, Tenn.", value: 2.0, literal: "2" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

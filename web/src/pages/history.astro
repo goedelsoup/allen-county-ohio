@@ -12,11 +12,26 @@ const tanks = assertion('the-county-had-two-tank-installations')
 const books = assertion('the-war-turned-the-locomotive-works-books')
 const railTown = assertion('lima-was-a-railroad-town-before-an-oil-town')
 const noTrains = assertion('no-passenger-train-calls-in-this-county')
+const wentToWar = assertion('one-person-in-ten-went-to-war')
+const warDead = assertion('the-roster-never-totalled-its-own-dead')
+const corinth = assertion('more-died-at-corinth-than-anywhere')
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
   labelValues: true,
 })
+
+const causeSpec = bar(
+  warDead.figures.map((f) => f.label),
+  warDead.figures.map((f) => f.value),
+  { yTitle: 'Men (a floor)', labelValues: true },
+)
+
+const corinthSpec = bar(
+  corinth.figures.map((f) => f.label),
+  corinth.figures.map((f) => f.value),
+  { yTitle: 'Men (a floor)', labelValues: true },
+)
 
 const crossingSpec = bar(
   noTrains.figures.map((f) => f.label),
@@ -177,6 +192,66 @@ const since = new Date().getUTCFullYear() - last
       a day passed through Lima on one road alone, besides the mails and the limited express, and in
       1921 a traveller could go to bed here and wake in Chicago. The inventory records passenger
       trains per day at every crossing in the county and records zero at all of them.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the county sent, and what it did not get back</h2>
+    <AssertionCard assertion={wentToWar} />
+    <p>
+      Between the canal and the oil this site had nothing. The corpus had eleven dated events and
+      no Civil War in it at all, while the source sat on the shelf: sixty pages of the 1885 county
+      history, of which forty-nine are roster. A county of 19,185 people put 1,920 men into United
+      States service, which is one person in ten counting women, children and the old.
+    </p>
+    <p>
+      Its war began on a Sunday morning at the second courthouse — a flag strung on a wire between
+      Ashton Hall and the building, the congregations gathering under it as services ended, a store
+      box for a platform. The first company was ninety-two men and was inducted eight days later.
+      For a fortnight in August 1862 the county held the rendezvous of Ohio's Eighth Military
+      District: about 1,600 men camped across the Ottawa River from a city of 1,989.
+    </p>
+    <AssertionCard assertion={warDead} />
+    <ChartFigure
+      id="war-dead-cause"
+      title="Allen County's Civil War dead, by what the roster records"
+      caption="Counted from the 1885 roster, which records each man's fate and never totals them. Every figure is the lower of two digitizations of the same page, so every figure is a floor."
+      columns={['Recorded as', 'Men']}
+      rows={warDead.figures.map((f) => [f.label, String(f.value)])}
+    />
+    <script type="application/json" data-chart-spec="war-dead-cause" set:html={JSON.stringify(causeSpec)} is:inline />
+    <p>
+      The largest bar is the one that says nothing. For a hundred and twenty-one of these men the
+      roster gives a place and a date and no cause, and the places are hospitals and camps rather
+      than battlefields. That is the ordinary arithmetic of that war, and a county roster is where
+      a county keeps it.
+    </p>
+    <AssertionCard assertion={corinth} />
+    <ChartFigure
+      id="war-dead-place"
+      title="Where Allen County's Civil War dead died, by named place"
+      caption="A place counts only where it is named within a clause of the word recording the death, so a man who enlisted at one place and died at another is counted once. Lower of two digitizations at each place."
+      columns={['Place', 'Men']}
+      rows={corinth.figures.map((f) => [f.label, String(f.value)])}
+    />
+    <script type="application/json" data-chart-spec="war-dead-place" set:html={JSON.stringify(corinthSpec)} is:inline />
+    <p>
+      Three of the deaths are not military at all, and both digitizations carry them word for word:
+      two men drowned, one at Hamburgh in Tennessee in 1862 and one near Fort Monroe a fortnight
+      after Appomattox, and a third was lost on the <em>Sultana</em>, the steamer that burned above
+      Memphis in April 1865 carrying released prisoners home. The cleaner of the two scans reads
+      that year as 1805; the other reads 1865, which is the whole argument for keeping two.
+    </p>
+    <p>
+      The three figures the county's own books give for its service — 776, 1,200 and 1,920 — are
+      not in conflict, and the reason they look like it is a transmission error this corpus can
+      date. The 1885 book says 776 men were traced into the roster of the 100,224 Ohio contributed
+      <em>in 1861</em>. The 1906 book drops the year. The 1921 book then reports it as a whole-war
+      total and sets it against an official credit of October 1863, as though a first-year cohort
+      and a two-and-a-half-year credit were the same measurement. The same two books do it again
+      with a sentence about the First Ohio Volunteer Infantry, which becomes a claim that Allen
+      County had men on the road within sixty hours — and the 1921 book disproves itself four
+      sentences later by dating the actual week, which took eight days.
     </p>
   </section>
 
