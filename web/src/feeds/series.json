@@ -222,6 +222,26 @@
       ]
     },
     {
+      "id": "place-allen-county::average-weekly-wage,-all-industries,-all-ownerships",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "average weekly wage, all industries, all ownerships",
+      "unit": "dollars per week",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-wages-2024.yml",
+          "label": "What work pays in Allen County, 2024",
+          "as_of": "2024",
+          "value": 1131.0,
+          "published": "1131",
+          "tier": "verified",
+          "source": "catalog/bls-qcew.md",
+          "method": "QCEW annual averages, aggregation level 74 for the sector table and 70 for the county total, read from the BLS open CSV API. Sector figures are summed across ownership codes, so a sector's row includes its government establishments; average annual pay per sector is total annual wages divided by average annual employment, which is this corpus's arithmetic over the source's two published fields. The eighteen sectors sum to 49,113 jobs against the county total of 49,690; the residual is employment the file places at aggregation levels this table does not read. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::county-population-less-the-city-of-Lima,-decennial",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -378,6 +398,26 @@
           "tier": "verified",
           "source": "catalog/census-acs-summary-file.md",
           "method": "Shares are computed here from published counts; the medians are published. [verified] The bands describe *surviving* housing, so a low count for an early decade is demolition and construction together and cannot be read as construction alone. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::jobs-located-in-the-county,-and-where-their-holders-live",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "jobs located in the county, and where their holders live",
+      "unit": "jobs",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "label": "Who comes and goes to work in Allen County, 2022",
+          "as_of": "2022",
+          "value": 48730.0,
+          "published": "48730",
+          "tier": "verified",
+          "source": "catalog/lehd-lodes.md",
+          "method": "LODES8 origin-destination files for Ohio, `JT00` — all jobs — for 2022, filtered to origin-destination pairs with a block in Allen County on either end, plus the auxiliary file for workers living outside Ohio. Counties are read from the first five digits of a block identifier and \"Lima\" from the tract whose internal point falls inside the city's 2020 boundary, which is a statement about where a tract's centre is. Earnings bands are the file's own `SE01`, `SE02` and `SE03`. Every total here is a sum over thousands of cells; no cell is quoted. [verified]"
         }
       ]
     },
@@ -3373,6 +3413,116 @@
           "label": "Teeth lost 65+, highest",
           "value": 42.7,
           "literal": "42.7"
+        }
+      ]
+    },
+    {
+      "id": "the-biggest-employer-is-not-the-biggest-payer",
+      "statement": "Health care is the largest employer in Allen County and manufacturing is the largest payer. Retail and food service together employ more people than manufacturing and take a tenth of the county's wages.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-wages-2024.yml",
+          "node_label": "What work pays in Allen County, 2024",
+          "span": "Health care 9,767 jobs at $60,502 a year; manufacturing 8,779 at $92,088; retail trade 5,261 at $34,261; accommodation and food services 4,737 at $20,844; educational services 3,899 at $47,735.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-qcew.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-wages-2024.yml",
+          "node_label": "What work pays in Allen County, 2024",
+          "span": "It is the only sector in the county whose share of pay is more than half again its share of employment.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-wages-2024.yml",
+          "node_label": "What work pays in Allen County, 2024",
+          "span": "9,998 jobs against 8,779, and 9.7 per cent of $2,884,327,418 in total annual wages.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Manufacturing",
+          "value": 92088.0,
+          "literal": "92,088"
+        },
+        {
+          "label": "Health care",
+          "value": 60502.0,
+          "literal": "60,502"
+        },
+        {
+          "label": "Education",
+          "value": 47735.0,
+          "literal": "47,735"
+        },
+        {
+          "label": "Retail trade",
+          "value": 34261.0,
+          "literal": "34,261"
+        },
+        {
+          "label": "Food service",
+          "value": 20844.0,
+          "literal": "20,844"
+        }
+      ]
+    },
+    {
+      "id": "half-the-jobs-here-are-held-by-outsiders",
+      "statement": "Half of Allen County's jobs are held by people who live somewhere else, and two fifths of its employed residents work outside it. 42,643 people cross the county line on a working day.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "24,461 people both live and work in Allen County, 24,269 commute into it, and 18,374 residents leave it for work — on 48,730 jobs located here and 42,835 held by people who live here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/lehd-lodes.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "**The county draws 5,895 more workers than it sends**, and 42,643 people cross its line in one direction or the other on a working day.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "Of jobs held by residents working in the county, 47.1 per cent are in the file's top earnings band, above $3,333 a month; of in-commuters' jobs, 50.8 per cent; of out-commuters', 49.4.",
+          "tier": "verified",
+          "sources": [
+            "catalog/lehd-lodes.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Live and work here",
+          "value": 24461.0,
+          "literal": "24,461"
+        },
+        {
+          "label": "Commute in",
+          "value": 24269.0,
+          "literal": "24,269"
+        },
+        {
+          "label": "Commute out",
+          "value": 18374.0,
+          "literal": "18,374"
         }
       ]
     },

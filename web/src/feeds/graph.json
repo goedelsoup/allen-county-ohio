@@ -2098,6 +2098,55 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-commuting-2022.yml",
+      "class": "measure",
+      "label": "Who comes and goes to work in Allen County, 2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "LODES8 origin-destination files for Ohio, `JT00` — all jobs — for 2022, filtered to origin-destination pairs with a block in Allen County on either end, plus the auxiliary file for workers living outside Ohio. Counties are read from the first five digits of a block identifier and \"Lima\" from the tract whose internal point falls inside the city's 2020 boundary, which is a statement about where a tract's centre is. Earnings bands are the file's own `SE01`, `SE02` and `SE03`. Every total here is a sum over thousands of cells; no cell is quoted. [verified]",
+        "parameter": "jobs located in the county, and where their holders live",
+        "unit": "jobs",
+        "value": "48730"
+      },
+      "blocks": [
+        {
+          "text": "Half the jobs in this county are held by people who do not live in it. [verified] — [LEHD Origin-Destination Employment Statistics](../../catalog/lehd-lodes.md), LODES8, all jobs, 2022.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The three flows, in one line.** 24,461 people both live and work in Allen County, 24,269 commute into it, and 18,374 residents leave it for work — on 48,730 jobs located here and 42,835 held by people who live here. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county draws 5,895 more workers than it sends**, and 42,643 people cross its line in one direction or the other on a working day. [inference] — computed here from the rows above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Where they come from and where they go are not the same counties.** The largest sources of in-commuters are Auglaize with 3,298, Putnam 2,986, Van Wert 2,016, Hardin 1,453 and Hancock 1,007 — the ring of rural counties around this one. The largest destinations for residents who leave are Auglaize 1,988, **Franklin 1,723**, Hancock 1,458, Putnam 1,371 and Shelby 1,118. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Franklin County is a hundred miles away and this corpus does not read it as a commute.** The 1,723 are spread across many Columbus tracts, the largest holding 79, so it is not one employer's administrative address; it is what a file that has passed disclosure avoidance looks like at small grain. [inference] See [the flow is real and the cell is not](../../decisions/the-flow-is-real-and-the-cell-is-not.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima holds 46.1 per cent of the county's jobs and 37.2 per cent of its employed residents.** 22,460 jobs in the sixteen tracts whose internal point falls inside the city, against 15,950 residents with jobs. [inference] — computed here, on the same sixteen tracts used for [life expectancy](allen-county-life-expectancy-2010-2015.yml). The city is a net importer of workers inside a county that is a net importer of workers.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The three flows are alike in what they pay.** Of jobs held by residents working in the county, 47.1 per cent are in the file's top earnings band, above $3,333 a month; of in-commuters' jobs, 50.8 per cent; of out-commuters', 49.4. [verified] — same source. The corpus expected the in-commuters to hold the better-paid work and they do not measurably.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two independent counts of the county's jobs agree within two per cent.** 48,730 here for 2022 against 49,690 covered jobs in 2024. [inference] — [the wage file](allen-county-wages-2024.yml). They are different years, different programmes and different definitions of a job, and they land 960 apart.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "measure/allen-county-crops-2022.yml",
       "class": "measure",
       "label": "Allen County crops, 2022, against 1909",
@@ -3885,6 +3934,55 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-wages-2024.yml",
+      "class": "measure",
+      "label": "What work pays in Allen County, 2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "QCEW annual averages, aggregation level 74 for the sector table and 70 for the county total, read from the BLS open CSV API. Sector figures are summed across ownership codes, so a sector's row includes its government establishments; average annual pay per sector is total annual wages divided by average annual employment, which is this corpus's arithmetic over the source's two published fields. The eighteen sectors sum to 49,113 jobs against the county total of 49,690; the residual is employment the file places at aggregation levels this table does not read. [verified]",
+        "parameter": "average weekly wage, all industries, all ownerships",
+        "unit": "dollars per week",
+        "value": "1131"
+      },
+      "blocks": [
+        {
+          "text": "Thirteen phases measured how many people work here and not one measured what they are paid. [verified] — [Quarterly Census of Employment and Wages](../../catalog/bls-qcew.md), annual averages for 2024, all ownerships.",
+          "tier": "verified"
+        },
+        {
+          "text": "**49,690 covered jobs in 2,586 establishments, at an average weekly wage of $1,131 and an average annual pay of $58,790.** [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That is 89.3 per cent of the Ohio average weekly wage and 77.8 per cent of the national one** — $1,131 against $1,267 and $1,454. [inference] — computed here from the same source's Ohio and national files. A worker in this county earns about four fifths of what a worker in the country does.",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — same source, county by NAICS sector, summed across ownerships.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The five largest sectors, in jobs and in pay.** Health care 9,767 jobs at $60,502 a year; manufacturing 8,779 at $92,088; retail trade 5,261 at $34,261; accommodation and food services 4,737 at $20,844; educational services 3,899 at $47,735. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Manufacturing is 17.9 per cent of the jobs and 28.0 per cent of the wages.** [inference] — computed here. It is the only sector in the county whose share of pay is more than half again its share of employment.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Retail trade and food service together employ more people than manufacturing and pay a tenth of the county's wages.** 9,998 jobs against 8,779, and 9.7 per cent of $2,884,327,418 in total annual wages. [inference] — computed here. Health care, the largest employer of all, takes 20.5 per cent of the wages on 19.9 per cent of the jobs.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two extremes are 4.4 times apart.** Utilities pays $93,106 a year across 202 jobs and accommodation and food services $20,844 across 4,737. [verified] — same source. Information employs fifty-two people in the whole county.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "measure/lima-city-government-2026.yml",
@@ -5683,6 +5781,10 @@
           "tier": "verified"
         },
         {
+          "text": "**The sector that shrank is still the one that pays.** Manufacturing is 17.9 per cent of the county's covered jobs in 2024 and 28.0 per cent of its wages, at an average annual pay of $92,088 — the only sector here whose share of pay is more than half again its share of employment. [inference] — computed from [what work pays](../measure/allen-county-wages-2024.yml). Health care overtook it in headcount and pays $60,502; retail trade and food service together employ more people than manufacturing and take 9.7 per cent of the county's wages.",
+          "tier": "inference"
+        },
+        {
           "text": "**What happened after the trough is why this period can be closed.** Manufacturing employment rose to 8,917 in 2020 and stood at 8,573 in 2022 on the County Business Patterns count, up a fifth from its bottom. Private employment fell 3,709 between 2010 and 2022 while manufacturing rose 1,446, so the losses of those twelve years were entirely outside manufacturing — the largest of them in health care, which fell from 11,744 to 9,151. [verified] — [County Business Patterns](../measure/allen-county-manufacturing-employment-1986-2022.yml) and [the sector composition](../measure/allen-county-employment-by-sector-1986-2022.yml). Whatever has been emptying this county since 2010, it is not its factories. [inference]",
           "tier": "inference"
         },
@@ -5704,9 +5806,10 @@
         }
       ],
       "refusals": [
+        "This corpus has one year of wages and cannot say when that gap opened.",
         "It does not establish that the county's population decline was caused by its manufacturing decline."
       ],
-      "withheld": 4
+      "withheld": 5
     },
     {
       "id": "period/depopulation.yml",
@@ -7757,6 +7860,14 @@
           "tier": "inference"
         },
         {
+          "text": "**Half the jobs in it are held by people who live somewhere else.** 48,730 jobs are located in Allen County and 24,461 of them are held by residents; 24,269 people commute in and 18,374 residents commute out, so 42,643 cross the county line on a working day and the county draws 5,895 more workers than it sends. [verified] — [who comes and goes](../measure/allen-county-commuting-2022.yml). The in-commuters come mostly from the ring of rural counties — Auglaize, Putnam, Van Wert, Hardin, Hancock.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And it pays about four fifths of what the country pays.** An average weekly wage of $1,131 in 2024 against $1,267 for Ohio and $1,454 nationally, across 49,690 covered jobs. [inference] — [what work pays](../measure/allen-county-wages-2024.yml). Health care is the largest employer at 9,767 jobs and manufacturing the largest payer, at 8,779 jobs and 28.0 per cent of all wages.",
+          "tier": "inference"
+        },
+        {
           "text": "**Who represents it, and under which map.** The county sends one member to the Ohio House from [the 78th District](../division/ohio-house-district-78-2023.yml) and one to the Ohio Senate from [the 12th](../division/ohio-senate-district-12-2023.yml), both under the legislative map adopted 29 September 2023; and it is not split between districts in either chamber. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md); [inference] for the not-split, reasoned from the roster naming one of each. Its sitting member of Congress sits for the 4th District. [verified] — same source.",
           "tier": "inference"
         },
@@ -8449,6 +8560,10 @@
         {
           "text": "Two railroads reached it because two railroads chose to cross there, in 1854 and 1858, and the canal towns fifteen miles west did not get a crossing. [verified] — [the first railroad](../event/the-first-railroad-reaches-allen-county.yml). By 1906 the city was \"one of the five great trunk lines, which center in this city\", with two shops employing more than five hundred men each and ten fast passenger trains a day on one road alone. [verified] — same source. No passenger train has called at any crossing in this county in the current inventory. [verified] — [the network now](../measure/allen-county-railroads-2026.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**It holds 46.1 per cent of the county's jobs and 37.2 per cent of its employed residents.** 22,460 jobs sit in the sixteen tracts whose internal point falls inside the city, against 15,950 residents with work. [inference] — [who comes and goes](../measure/allen-county-commuting-2022.yml). The city is a net importer of workers inside a county that is a net importer of workers, and it holds a third of the county's people.",
+          "tier": "inference"
         },
         {
           "text": "**A person born in one of its census tracts could expect about five fewer years than one born elsewhere in this county.** The thirteen tracts whose centres fall inside the city have a median life expectancy of 72.7 years against 79.0 for the fifteen outside, and the highest Lima tract, 78.2, sits below all but one of them. [inference] — [life expectancy by tract](../measure/allen-county-life-expectancy-2010-2015.yml), from NCHS estimates for 2010–2015 built on death certificates.",
@@ -12121,6 +12236,20 @@
       "source": "catalog/census-acs-summary-file.md"
     },
     {
+      "from": "measure/allen-county-commuting-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/lehd-lodes.md"
+    },
+    {
+      "from": "measure/allen-county-commuting-2022.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-crops-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -12560,6 +12689,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-block-assignment-2020.md"
+    },
+    {
+      "from": "measure/allen-county-wages-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bls-qcew.md"
     },
     {
       "from": "measure/lima-city-government-2026.yml",

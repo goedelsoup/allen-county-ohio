@@ -1280,6 +1280,62 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-biggest-employer-is-not-the-biggest-payer",
+        statement: "Health care is the largest employer in Allen County and manufacturing is the \
+                    largest payer. Retail and food service together employ more people than \
+                    manufacturing and take a tenth of the county's wages.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-wages-2024.yml",
+                "Health care 9,767 jobs at $60,502 a year; manufacturing 8,779 at $92,088; retail trade 5,261 at $34,261; accommodation and food services 4,737 at $20,844; educational services 3,899 at $47,735."
+            ),
+            support!(
+                "measure/allen-county-wages-2024.yml",
+                "It is the only sector in the county whose share of pay is more than half again its share of employment."
+            ),
+            support!(
+                "measure/allen-county-wages-2024.yml",
+                "9,998 jobs against 8,779, and 9.7 per cent of $2,884,327,418 in total annual wages."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Manufacturing", value: 92_088.0, literal: "92,088" },
+            Figure { label: "Health care", value: 60_502.0, literal: "60,502" },
+            Figure { label: "Education", value: 47_735.0, literal: "47,735" },
+            Figure { label: "Retail trade", value: 34_261.0, literal: "34,261" },
+            Figure { label: "Food service", value: 20_844.0, literal: "20,844" },
+        ],
+    },
+    Assertion {
+        id: "half-the-jobs-here-are-held-by-outsiders",
+        statement: "Half of Allen County's jobs are held by people who live somewhere else, and \
+                    two fifths of its employed residents work outside it. 42,643 people cross the \
+                    county line on a working day.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "24,461 people both live and work in Allen County, 24,269 commute into it, and 18,374 residents leave it for work — on 48,730 jobs located here and 42,835 held by people who live here."
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**The county draws 5,895 more workers than it sends**, and 42,643 people cross its line in one direction or the other on a working day."
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "Of jobs held by residents working in the county, 47.1 per cent are in the file's top earnings band, above $3,333 a month; of in-commuters' jobs, 50.8 per cent; of out-commuters', 49.4."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Live and work here", value: 24_461.0, literal: "24,461" },
+            Figure { label: "Commute in", value: 24_269.0, literal: "24,269" },
+            Figure { label: "Commute out", value: 18_374.0, literal: "18,374" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

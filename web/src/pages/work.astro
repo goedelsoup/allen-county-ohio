@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import { assertion } from '../lib/feeds'
+import { bar } from '../lib/chart-spec'
+
+const pay = assertion('the-biggest-employer-is-not-the-biggest-payer')
+const commute = assertion('half-the-jobs-here-are-held-by-outsiders')
+
+const paySpec = bar(
+  pay.figures.map((f) => f.label),
+  pay.figures.map((f) => f.value),
+  { yTitle: 'Average annual pay' },
+)
+
+const commuteSpec = bar(
+  commute.figures.map((f) => f.label),
+  commute.figures.map((f) => f.value),
+  { yTitle: 'People', labelValues: true },
+)
+---
+
+<Base
+  title="Work"
+  lede="What work there is in Allen County, what it pays, and how many of the people doing it live somewhere else."
+>
+  <section>
+    <h2>Thirteen phases of counting jobs, and none of counting pay</h2>
+    <p>
+      This corpus has held the county's employment since its ninth phase — by sector, back to 1969,
+      through the manufacturing decline and out the other side. It had never held a wage. The
+      Quarterly Census of Employment and Wages publishes both, and the two rank the county
+      differently.
+    </p>
+    <AssertionCard assertion={pay} />
+    <ChartFigure
+      id="pay"
+      title="Average annual pay by sector, 2024"
+      caption="Quarterly Census of Employment and Wages, annual averages, all ownerships. Pay is total annual wages divided by average annual employment — the file publishes both terms and not this ratio."
+      columns={['Sector', 'Average annual pay']}
+      rows={pay.figures.map((f) => [f.label, '$' + f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="pay" set:html={JSON.stringify(paySpec)} is:inline />
+    <p>
+      Across all 49,690 covered jobs the average weekly wage is $1,131 — 89.3 per cent of Ohio's
+      and 77.8 per cent of the country's. A worker here earns about four fifths of what a worker in
+      the United States does.
+    </p>
+    <p>
+      Manufacturing is 17.9 per cent of the jobs and 28.0 per cent of the wages, the only sector in
+      the county whose share of pay is more than half again its share of employment. The period this
+      site calls deindustrialization ended with manufacturing still the best-paid large sector here;
+      what replaced the jobs did not replace the pay. The corpus holds one year of wages and cannot
+      say when that gap opened.
+    </p>
+  </section>
+
+  <section>
+    <h2>Half the jobs here belong to somebody else's county</h2>
+    <AssertionCard assertion={commute} />
+    <ChartFigure
+      id="commute"
+      title="The journey to work, 2022"
+      caption="LEHD Origin-Destination Employment Statistics, all jobs. In-commuters come mostly from the ring of rural counties — Auglaize, Putnam, Van Wert, Hardin, Hancock."
+      columns={['', 'People']}
+      rows={commute.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="commute" set:html={JSON.stringify(commuteSpec)} is:inline />
+    <p>
+      Lima holds 46.1 per cent of the county's jobs and 37.2 per cent of its employed residents, so
+      the city is a net importer of workers inside a county that is a net importer of workers. And
+      the three flows are alike in what they pay: 47.1, 50.8 and 49.4 per cent of them are in the
+      file's top earnings band. The obvious story — that the good jobs go to people who drive in —
+      is not in the data.
+    </p>
+    <p>
+      One figure on this page is reported and not read. Franklin County — Columbus, a hundred miles
+      away — is the second-largest recorded destination for Allen County residents who work outside
+      it, above two counties that share a border. The 1,723 are spread thinly across many Columbus
+      tracts. A block-to-block table of where people work cannot be published as collected, and this
+      is what a disclosure-protected file looks like at small grain: the sums are sound and the
+      cells are not. The county totals are trusted here because an unrelated programme counted
+      49,690 jobs where this one counted 48,730.
+    </p>
+  </section>
+</Base>
