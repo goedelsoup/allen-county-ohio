@@ -22,10 +22,12 @@ location:
 used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
+  - ../corpus/event/settlers-occupy-fort-amanda-1817.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
+  - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/office/mayor-of-lima.yml
   - ../corpus/organization/lima-memorial-health-system.yml

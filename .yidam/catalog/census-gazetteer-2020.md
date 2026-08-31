@@ -66,6 +66,8 @@ used-by:
   - ../corpus/jurisdiction/spencerville-local-school-district.yml
   - ../corpus/jurisdiction/sugar-creek-township.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
+  - ../corpus/measure/allen-county-annexations-1990-2024.yml
+  - ../corpus/measure/allen-county-land-area-2000-2024.yml
   - ../corpus/measure/allen-county-land-area-2020.yml
   - ../corpus/measure/allen-county-survey-sections.yml
   - ../corpus/measure/lima-land-area-2020.yml

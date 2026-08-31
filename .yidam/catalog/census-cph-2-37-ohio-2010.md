@@ -17,11 +17,12 @@ location:
       2499. Digits in this volume are separated by comma and the decimal point is rendered with a
       space, `13 .79`, which is a typesetting artifact and not a value.
 used-by:
+  - ../corpus/jurisdiction/city-of-lima.yml
   - ../corpus/measure/allen-county-annexations-1990-2024.yml
   - ../corpus/measure/allen-county-land-area-2000-2024.yml
   - ../corpus/measure/lima-population-2000.yml
+  - ../corpus/place/bath-township.yml
   - ../corpus/place/fort-shawnee.yml
-  - ../corpus/place/lima.yml
 ---
 
 **The Allen County change note, whole:**
