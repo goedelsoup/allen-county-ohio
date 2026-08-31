@@ -89,6 +89,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 8v / 1i / 2o | 69 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 7v / 3i / 0o | 77 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
+| [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 8v / 0i / 1o | 81 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2022 | 2 | 3v / 0i / 1o | 42 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
@@ -100,6 +101,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
+| [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 4v / 5i / 1o | 65 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 5v / 1i / 1o | 60 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
@@ -187,7 +189,7 @@ Sorted by: kind, then alphabetically.
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 6i / 2o | 111 |
-| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 12i / 1o | 221 |
+| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 13i / 2o | 232 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 7v / 8i / 2o | 80 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
@@ -284,7 +286,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 32v / 6i / 1o | 202 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 33v / 7i / 1o | 218 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
