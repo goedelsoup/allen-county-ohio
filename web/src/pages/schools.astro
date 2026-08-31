@@ -8,6 +8,9 @@ import { bar, line } from '../lib/chart-spec'
 const empty = assertion('the-schools-empty-faster-than-the-county')
 const money = assertion('lima-schools-spend-most-and-raise-least')
 const poor = assertion('half-the-countys-poor-children-are-in-one-district')
+const colleges = assertion('the-county-lost-a-third-of-its-college-students')
+const tuition = assertion('in-state-tuition-here-runs-eightfold')
+const fields = assertion('the-second-largest-field-of-study-is-not-a-local-one')
 
 const emptySpec = line(empty.figures.map((f) => f.label), [{ name: 'Pupils', y: empty.figures.map((f) => f.value) }], {
   yTitle: 'Pupils enrolled',
@@ -22,6 +25,18 @@ const moneySpec = bar(money.figures.map((f) => f.label), money.figures.map((f) =
   yTitle: 'Per cent of revenue',
   tickSuffix: '%',
 })
+
+const collegesSpec = bar(
+  colleges.figures.map((f) => f.label),
+  colleges.figures.map((f) => f.value),
+  { yTitle: 'Per cent of 2010 enrolment lost', tickSuffix: '%' },
+)
+
+const tuitionSpec = bar(
+  tuition.figures.map((f) => f.label),
+  tuition.figures.map((f) => f.value),
+  { yTitle: 'In-state tuition and fees, 2023-24' },
+)
 
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 const districts = nodes
@@ -133,6 +148,63 @@ const districts = nodes
       instruction and open enrolment, none of which this corpus has ever recorded. It is an open
       question, and it is the first one here that came from putting two of the corpus's own sources
       beside each other.
+    </p>
+  </section>
+
+  <section>
+    <h2>And what happens after the twelfth grade</h2>
+    <p>
+      Six post-secondary institutions have addresses in Allen County, and until this phase this
+      corpus had a node for one of them. They enrol 8,615 students in the autumn and 10,789 across
+      the twelve months, and award 2,918 credentials a year — of which 2,482, or 85.1 per cent, are
+      below a bachelor's degree. The county grants 1,110 associate's degrees and 1,106 certificates
+      of a year or less against 375 bachelor's degrees and 58 master's.
+    </p>
+    <AssertionCard assertion={colleges} />
+    <ChartFigure
+      id="college-fall"
+      title="Enrolment lost since 2010, by institution"
+      caption="IPEDS twelve-month unduplicated headcount, 2010 against 2023. The county's own population fell 3.9 per cent between its 2010 and 2020 censuses; two thirds of this fall was complete before 2020."
+      columns={['Institution', 'Per cent of 2010 enrolment lost']}
+      rows={colleges.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="college-fall" set:html={JSON.stringify(collegesSpec)} is:inline />
+    <p>
+      The largest is Rhodes State College, at 3,968 students — of whom 615 are full-time and 3,353
+      are not, so a college of four thousand is the size of two thousand. It shares 4240 Campus
+      Drive with Ohio State's Lima campus, in Bath Township outside the city both are named for,
+      and the Census Bureau puts the two in the same block. A third pair share a block as well: the
+      Ohio State Beauty Academy stands where the University of Northwestern Ohio does, and IPEDS
+      records it as a member of that university's system.
+    </p>
+    <AssertionCard assertion={fields} />
+    <p>
+      The county's largest field of study is health professions, at 757 awards, which agrees with a
+      county whose largest employer is health care. Its second is mechanic and repair technologies,
+      at 706 — every one of them from the University of Northwestern Ohio, which draws 582 of its
+      877 entering students from outside Ohio, most of them from Michigan, Indiana, Pennsylvania and
+      New York. The county's other two institutions that report the question draw 99.1 and 97.0 per
+      cent of their entering students from Ohio.
+    </p>
+    <p>
+      So the second-largest thing this county's colleges do is not a fact about this county's
+      workforce, and this site says so in the same breath as the number. That is a rule now.
+    </p>
+    <AssertionCard assertion={tuition} />
+    <ChartFigure
+      id="tuition"
+      title="Tuition and fees for an Ohio resident, 2023-24"
+      caption="IPEDS academic-year charges. Apollo Career Center and the Ohio State Beauty Academy price by programme rather than by year and are not in this table. Out of state, Rhodes State charges $9,120 and Ohio State-Lima $34,443; the two private institutions charge everyone the same."
+      columns={['Institution', 'Tuition and fees']}
+      rows={tuition.figures.map((f) => [f.label, '$' + f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="tuition" set:html={JSON.stringify(tuitionSpec)} is:inline />
+    <p>
+      Only two of the six provide housing at all — Bluffton University with 780 beds and the
+      University of Northwestern Ohio with 1,684. Bluffton has had more beds than students for
+      years: 838 beds and 1,292 students in 2010, 780 and 678 now. Neither college on the shared
+      campus east of Lima has ever reported a bed, which leaves the 104 people the 2020 census
+      counted in student housing half a kilometre south of it unexplained.
     </p>
   </section>
 </Base>

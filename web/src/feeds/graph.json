@@ -2248,6 +2248,43 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-college-enrollment-2010-2023.yml",
+      "class": "measure",
+      "label": "Allen County college enrolment, 2010-2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "IPEDS twelve-month enrolment, level 1 (all students), summed over the six institutions the directory places in county 39003. The collection year labels the academic year ending in it, so 2023 is 2022-23. [verified] The file's column layout changes across the period and the change is silent: before 2020 the level code is `EFFYLEV` and from 2020 it is `EFFYALEV`, with `EFFYLEV` retained beside it and carrying a different code set. Reading the old name in the new files returns nothing for every institution, which looks exactly like an institution that closed. The values are also space- padded. Both are noted here because the first version of this table read four years as zero. [inference] Twelve-month headcount is used rather than autumn headcount because two of the six institutions are non-degree-granting and enrol in cohorts through the year: Apollo Career Center's autumn headcount is 527 against a twelve-month 1,439, and an autumn series would misstate its size by a factor of three. [inference]",
+        "parameter": "twelve-month unduplicated headcount at Allen County institutions",
+        "unit": "students",
+        "value": "10789"
+      },
+      "blocks": [
+        {
+          "text": "**The county's colleges have lost a third of their students in thirteen years, and all six of them have lost students.** [verified] — [IPEDS](../../catalog/ipeds.md), twelve-month unduplicated headcount, all students.",
+          "tier": "verified"
+        },
+        {
+          "text": "**16,702 to 10,789 is a fall of 35.4 per cent.** [inference] — computed here. Institution by institution: the Ohio State Beauty Academy down 55.6 per cent, Ohio State's Lima campus 47.9, Apollo Career Center 45.7, the University of Northwestern Ohio 36.6, Bluffton University 38.1, and Rhodes State College 23.5 — the smallest fall, at the largest institution.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county did not shrink anything like that fast.** Allen County went from 106,331 people in 2010 to 102,206 in 2020, a fall of 3.9 per cent. [verified] — [the 2010 count](allen-county-population-2010.yml) and [the 2020 count](allen-county-population-2020-census.yml). Enrolment fell nine times faster than population over an overlapping period, so whatever is happening here is not the county emptying out. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is not a pandemic either, though the pandemic is in the series.** The fall from 2010 to 2019 is 4,017 students, or 24.0 per cent, and it is complete before Covid: every one of the six was below its 2010 figure by 2019, and the largest fall between consecutive observations here is Apollo Career Center's 2,648 to 1,275 between 2010 and 2013 — 1,373 students, before the decade was half over. [inference] — computed here. The years after 2019 continue a line that was already drawn.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two largest held up longest and then did not.** Rhodes State and the University of Northwestern Ohio were both marginally above their 2010 figures as late as 2016, while the four smaller institutions had already fallen; between 2016 and 2023 Rhodes lost 1,348 students and Northwestern Ohio 1,892. [inference] — computed here.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-commuting-2022.yml",
       "class": "measure",
       "label": "Who comes and goes to work in Allen County, 2022",
@@ -2630,6 +2667,10 @@
         {
           "text": "**The county records no juvenile facility, no psychiatric-hospital population and no military quarters at all.** [verified] — same source. The zero for other institutional facilities is worth reading carefully rather than as an absence: that category is where psychiatric hospitals are counted, and this county's psychiatric hospital is [Oakwood](../site/oakwood-correctional-facility.yml), whose residents are inmates and are therefore counted as correctional. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**The county's student housing does not sit where its students are.** Only two of the six post-secondary institutions in Allen County provide institutionally controlled housing, and they reported 2,228 beds between them in 2020 — Bluffton University 692 and the University of Northwestern Ohio 1,536. Against that the census counted 788 people in college student housing, 35 per cent of the beds. [verified] — [IPEDS](../../catalog/ipeds.md), institutional characteristics, against the redistricting file. Census day 2020 fell some weeks after American campuses sent their students home, and this corpus cannot separate that from ordinary vacancy. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -2714,6 +2755,55 @@
         "This does not establish why any of it fell."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-higher-education-2023.yml",
+      "class": "measure",
+      "label": "Higher education in Allen County, 2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023-10-15",
+        "method": "Integrated Postsecondary Education Data System, 2023-24 collection. Institutions selected by the directory file's `COUNTYCD` equal to 39003, which returns six, all of them active. Autumn headcount and full-time equivalent from the derived enrolment file; twelve-month unduplicated headcount from the twelve-month enrolment file at level 1, all students; awards from the completions file, first majors only, with the institution-total rows excluded; housing capacity and price from the institutional characteristics files. [verified] Award levels are the file's own eight categories rather than a simplification, because two of them — certificates under twelve weeks and certificates of twelve weeks to a year — are together 38 per cent of everything this county awards, and a table that collapses them into \"certificates\" hides the shape of what two of the six institutions do. [inference] Both totals close: the six institutions' awards sum to 2,918 by institution and by level, and to the same figure across the field families. [inference]",
+        "parameter": "post-secondary students enrolled, Allen County",
+        "unit": "students, autumn headcount",
+        "value": "8615"
+      },
+      "blocks": [
+        {
+          "text": "Six post-secondary institutions, 8,615 students in the autumn and 10,789 over the twelve months, and 2,918 credentials awarded in the academic year. [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 directory and the enrolment, completions and characteristics surveys for the same cycle.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's largest college is a two-year one and its students are mostly part-time.** [Rhodes State](../organization/james-a-rhodes-state-college.yml) enrols 3,968 in the autumn, of whom 615 are full-time and 3,353 are not; its full-time equivalent is 1,968, half its headcount. [verified] — same source. Every other institution in the county is majority full-time.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two of the six share an address.** Rhodes State and [Ohio State's Lima campus](../organization/ohio-state-university-at-lima.yml) are both at 4240 Campus Drive, in [Bath Township](../place/bath-township.yml) outside the city whose name they carry, and the Census Bureau puts both in the same block. [verified] — same source and [the Census geocoder](../../catalog/census-tiger-landmarks.md). A third pair share a block too: the Ohio State Beauty Academy is at 1760 North Eastown Road, in the block that holds [the University of Northwestern Ohio](../organization/university-of-northwestern-ohio.yml)'s own address, and IPEDS records it as a member of that university's system. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same source, first majors. 2,482 of the 2,918 are below the baccalaureate, which is 85.1 per cent. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — same source, completions by two-digit CIP family, first majors, all award levels. Health care is also the county's largest employer, at 9,767 jobs; see [what work pays](allen-county-wages-2024.yml). Those two facts agree, and the second-largest field does not agree with anything in the county's labour market. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Every one of the 706 awards in vehicle repair is from one institution, and two thirds of its entering students come from outside Ohio.** Of 877 first-time students at the University of Northwestern Ohio in autumn 2023, 295 were Ohio residents and 582 were not — 101 from Michigan, 83 from Indiana, 48 from Pennsylvania, 31 from New York. At Rhodes State 432 of 436 were Ohio residents, and at Ohio State's Lima campus 255 of 263. [verified] — same source, residence of first-time students.",
+          "tier": "verified"
+        },
+        {
+          "text": "So the county's second-largest field of study is not a local labour supply and should not be read as one; see [located here is not of here](../../decisions/located-here-is-not-of-here.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**In-state tuition and fees run from $4,560 to $35,498, an eightfold spread.** Rhodes State $4,560, Ohio State-Lima $8,937, Northwestern Ohio $11,352, Bluffton $35,498. Out of state the two public institutions charge $9,120 and $34,443; the two private ones charge the same to everyone. [verified] — same source, 2023-24 academic year charges. Apollo Career Center and the Beauty Academy price by programme rather than by year and are not in that table.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 7
     },
     {
       "id": "measure/allen-county-home-lending-2018-2024.yml",
@@ -5557,6 +5647,41 @@
       "withheld": 3
     },
     {
+      "id": "organization/apollo-career-center.yml",
+      "class": "organization",
+      "label": "Apollo Career Center",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "Apollo JVS, Apollo Joint Vocational School",
+        "industry": "career and technical education",
+        "org_type": "college"
+      },
+      "blocks": [
+        {
+          "text": "The county's public career and technical centre, on Shawnee Road in [Shawnee Township](../place/shawnee-township.yml), and the institution whose size depends most on how you ask: **527 students in autumn 2023 and 1,439 over the twelve months.** [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "It is a public institution below the two-year level and grants no degrees. Everything it awards is a certificate: **672 of them in 2022-23**, of which 533 took less than twelve weeks and 85 took between twelve weeks and a year. [verified] — same source, completions, first majors. Its largest field is health professions at 351 awards, then homeland security and protective services at 109 and transportation at 83.",
+          "tier": "verified"
+        },
+        {
+          "text": "That makes it the county's second largest awarder of credentials after [the University of Northwestern Ohio](university-of-northwestern-ohio.yml), on a fifth of that university's enrolment. [inference] — computed here. Short credentials are what it produces, and they are produced fast.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is also the fastest-shrinking large institution in the county's series**, and it shrank early: 2,648 students in 2010, 1,275 in 2013, 1,036 in 2019. [verified] — [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml). It is the only one of the six that has grown since 2020, from 1,147 to 1,439. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "IPEDS records it under three names — Apollo Career Center, Apollo JVS and Apollo Joint Vocational School — which is what a joint vocational school district looks like in a federal file that has no class for one. [verified] — same source. Its adult-education arm is the part IPEDS surveys; its secondary programmes are not in this collection at all. [inference] See [the county's school districts](../measure/allen-county-school-finance-2023.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "organization/bluffton-hospital.yml",
       "class": "organization",
       "label": "Bluffton Hospital",
@@ -5618,6 +5743,18 @@
         },
         {
           "text": "That block is in [Bluffton](../place/bluffton.yml) village, which settles by assignment rather than by inference where the university sits. [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is now measured as an institution and not only as a block.** 678 students in autumn 2023 and 800 over the twelve months, 647 of them full-time; 190 credentials awarded in 2022-23 — 159 bachelor's degrees, 28 master's and 3 post-baccalaureate certificates, and nothing below a bachelor's, which no other institution in the county can say. [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 collection. Its largest fields are business and management at 54 awards and education at 35. Tuition and fees are $35,498, the highest in the county by a factor of three.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It has more beds than students, and it has for years.** 780 beds against 678 students in 2023; 838 against 1,292 in 2010. [verified] — same source. Enrolment fell 38.1 per cent over that period while the beds fell 7 per cent, so a campus built for a larger college is being kept up by a smaller one. [inference] — computed here; see [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "It is one of only two institutions in Allen County that provide housing at all — the other is [the University of Northwestern Ohio](university-of-northwestern-ohio.yml), whose 1,684 beds are more than twice as many. [verified] — same source. Neither institution on the shared campus east of Lima has ever reported any.",
           "tier": "verified"
         }
       ],
@@ -5689,6 +5826,45 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "organization/james-a-rhodes-state-college.yml",
+      "class": "organization",
+      "label": "James A. Rhodes State College",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "Rhodes State College",
+        "industry": "higher education",
+        "org_type": "college"
+      },
+      "blocks": [
+        {
+          "text": "The county's largest post-secondary institution and the only public one that grants degrees at scale: 3,968 students in autumn 2023 and 4,247 over the twelve months. [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its students are mostly part-time, and that is the fact to hold on to.** 615 full-time against 3,353 part-time, for a full-time equivalent of 1,968 — half its headcount, and the only institution in the county whose FTE is half its enrolment. [verified] — same source. A college of four thousand that is the size of two thousand is a college people attend around a job. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "It is a public institution at the four-year level, offering the bachelor's degree, and in 2022-23 it awarded none: **261 associate's degrees and 507 certificates**, of which 367 took between twelve weeks and a year and 74 took less than twelve weeks. [verified] — same source, completions, first majors. Its largest field is health professions at 366 awards, then business and management at 174 and engineering technologies at 162.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It shares an address with a second institution.** 4240 Campus Drive is also [Ohio State's Lima campus](ohio-state-university-at-lima.yml), and the Census Bureau puts both in block `390030113012040`, in [Bath Township](../place/bath-township.yml) rather than in the city both give as their post town. [verified] — same source and [the Census geocoder](../../catalog/census-tiger-landmarks.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It provides no housing.** Neither institution on that campus reported institutionally controlled housing in 2020 or in 2023. [verified] — same source, institutional characteristics. That matters for reading the county's group-quarters count; see [the group quarters](../measure/allen-county-group-quarters-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Tuition and fees are $4,560 a year in state and $9,120 out of it — the lowest of the four institutions in the county that price by the year, and an eighth of what the county's private university charges. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "organization/kindred-hospital-lima.yml",
@@ -5869,6 +6045,79 @@
       "withheld": 1
     },
     {
+      "id": "organization/ohio-state-beauty-academy.yml",
+      "class": "organization",
+      "label": "Ohio State Beauty Academy",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "OSBA",
+        "industry": "cosmetology instruction",
+        "org_type": "college"
+      },
+      "blocks": [
+        {
+          "text": "The smallest of the county's six post-secondary institutions and its only private for-profit one: 96 students in autumn 2023, 120 over the twelve months, and 44 credentials awarded, all of them in personal and culinary services. [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It belongs to the University of Northwestern Ohio.** IPEDS names that university as its parent system, and the Census Bureau puts its address at 1760 North Eastown Road in the same block as the university's own. [verified] — same source and [the Census geocoder](../../catalog/census-tiger-landmarks.md); see [the university](university-of-northwestern-ohio.yml). A for-profit academy inside a not-for- profit university's system is an arrangement worth noticing and not one this corpus can explain from a directory row. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "Its name has nothing to do with the Ohio State University, whose Lima campus is [a different institution twelve kilometres east](ohio-state-university-at-lima.yml). [inference] — the distance computed here from the two addresses in the same file.",
+          "tier": "inference"
+        },
+        {
+          "text": "Every one of its students is full-time, and its enrolment has more than halved since 2010 — 270 to 120, the steepest fall of the six. [verified] — same source and [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "It is in the corpus because a county reference that lists five of six institutions has chosen which ones count, and the choice would fall on the smallest, the newest and the for-profit one every time. [inference] See [node worthiness is a property of the member](../../decisions/node-worthiness-is-a-property-of-the-member.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "organization/ohio-state-university-at-lima.yml",
+      "class": "organization",
+      "label": "Ohio State University-Lima Campus",
+      "tier": "inference",
+      "properties": {
+        "industry": "higher education",
+        "org_type": "college"
+      },
+      "blocks": [
+        {
+          "text": "A regional campus of the Ohio State University, 740 students in autumn 2023 and 983 over the twelve months, sharing a site with [Rhodes State College](james-a-rhodes-state-college.yml) at 4240 Campus Drive. [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only institution in the county that belongs to a system**, and the system is the Ohio State University's main campus at Columbus. [verified] — same source, which records the parent by name and by identifier for this institution and for no other in Allen County except the Ohio State Beauty Academy, whose parent is [the University of Northwestern Ohio](university-of-northwestern-ohio.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "In 2022-23 it awarded **90 bachelor's degrees and 50 associate's** and no certificates at all. With [Bluffton](bluffton-university.yml), whose 190 awards are all baccalaureate or above, it is one of only two institutions in the county whose output is mostly degrees rather than short credentials. [verified] — same source, completions, first majors. Its largest field is liberal arts and general studies at 50 awards, then education at 30.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It has lost nearly half its students since 2010** — 1,887 to 983 on the twelve-month count, a fall of 47.9 per cent, the second steepest of the county's six. [verified] — [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Tuition and fees are $8,937 in state and $34,443 out of it, a ratio of 3.9 to 1 where Rhodes State's is 2 to 1. [verified] — same source. 255 of its 263 first-time students in autumn 2023 were Ohio residents, so almost nobody pays the second figure. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "It provides no housing, and its campus is in [Bath Township](../place/bath-township.yml) outside the city it is named for. [verified] — same source and [the Census geocoder](../../catalog/census-tiger-landmarks.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "organization/solar-refining-company.yml",
       "class": "organization",
       "label": "Solar Refining Company",
@@ -5974,6 +6223,56 @@
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "organization/university-of-northwestern-ohio.yml",
+      "class": "organization",
+      "label": "University of Northwestern Ohio",
+      "tier": "inference",
+      "properties": {
+        "industry": "higher education",
+        "org_type": "college"
+      },
+      "blocks": [
+        {
+          "text": "A private not-for-profit university on North Cable Road, in [American Township](../place/american-township.yml) rather than in the city its post town names — 2,606 students in autumn 2023 and 3,200 over the twelve months — the county's second largest, its largest residential institution, and the one that awards the most. [verified] — [IPEDS](../../catalog/ipeds.md), 2023-24 collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It awards more credentials than any other institution here and almost all of them are in one field.** 1,104 awards in 2022-23, of which **694 are in mechanic and repair technologies** — 24.2 per cent of everything awarded in Allen County, and every single one of that field's awards in the county. Then business and management at 133 and agriculture at 93. [verified] — same source, completions, first majors.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two thirds of its entering students come from outside Ohio.** Of 877 first-time students in autumn 2023, 295 were Ohio residents and 582 were not: 101 from Michigan, 83 from Indiana, 48 from Pennsylvania, 31 from New York. [verified] — same source, residence of first-time students. The county's other two institutions that report the question draw 99.1 and 97.0 per cent of their entering students from Ohio.",
+          "tier": "verified"
+        },
+        {
+          "text": "So the largest single thing the county's colleges do is train people from other states to repair vehicles, and reading that as a measure of Allen County's workforce would be a mistake. [inference] — see [located here is not of here](../../decisions/located-here-is-not-of-here.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It has 1,684 beds, more than twice the county's other residential campus**, and had 1,536 in 2020. [verified] — same source, institutional characteristics. Bluffton University's are 780 and 692; no other institution in the county has any.",
+          "tier": "verified"
+        },
+        {
+          "text": "Its students are almost all full-time — 2,434 of 2,606, a full-time equivalent of 2,501 against a headcount of 2,606 — which is the opposite shape to [Rhodes State](james-a-rhodes-state-college.yml)'s. [verified] — same source. Tuition and fees are $11,352, the same for residents and non-residents.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Ohio State Beauty Academy is in its system.** IPEDS records the academy's parent as this university, and the Census Bureau puts the academy's address in the same block as this university's. [verified] — same source and [the Census geocoder](../../catalog/census-tiger-landmarks.md); see [the academy](ohio-state-beauty-academy.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its enrolment has fallen by more than a third since 2010**, 5,050 to 3,200 on the twelve-month count, and 1,892 of that loss is since 2016. [verified] — [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its address is a Lima one and its ground is not in Lima.** The Census Bureau puts 1441 North Cable Road in unincorporated American Township, inside no municipality at all, while two of the blocks holding its student housing are in Lima city — so the campus crosses the line. [verified] — [the Census geocoder](../../catalog/census-tiger-landmarks.md) and [the group quarters](../measure/allen-county-group-quarters-2020.yml); see [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "period/canal-era.yml",
@@ -8157,6 +8456,10 @@
           "tier": "inference"
         },
         {
+          "text": "**Six colleges stand in it and they have lost a third of their students since 2010.** 8,615 in the autumn of 2023 and 10,789 across the twelve months, against 16,702 in 2010 — a fall of 35.4 per cent while the county itself fell 3.9. [verified] — [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml). Together they award 2,918 credentials a year, of which 85 per cent are below a bachelor's degree. [verified] — [higher education](../measure/allen-county-higher-education-2023.yml).",
+          "tier": "verified"
+        },
+        {
           "text": "**Three and a half thousand of its people do not live in a household.** 3,522 of 102,206 — 1,513 in correctional facilities, 966 in nursing homes, 788 in student housing and 255 in shelters, group homes and residential treatment centres — leaving 98,684 in 40,935 occupied units, an average household of 2.411. Another 3,628 units stood empty. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml) and [the occupancy](../measure/allen-county-occupancy-2020.yml).",
           "tier": "verified"
         },
@@ -8378,6 +8681,10 @@
         },
         {
           "text": "**It held 2,875 people in 1930 and 3,438 in 1940**, before Lima crossed into it: the 1950 return is 22,919 of which 17,469 is Lima city, leaving 5,450 outside the city. [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Table 6; see [the township series](../measure/allen-county-townships-1930-1950.yml). At 9,399 in 2020 it is more than three times its 1930 size outside the city. [inference] The [refinery](../site/lima-refinery.yml) sits in [Shawnee](shawnee-township.yml) rather than here, but the annexations that took Lima's corporation into Bath are the same process, and one of them is dated: the city annexed from Bath between 1980 and 1990.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two of the county's six colleges stand in it, and both give Lima as their post town.** [Rhodes State College](../organization/james-a-rhodes-state-college.yml) and [Ohio State's Lima campus](../organization/ohio-state-university-at-lima.yml) share 4240 Campus Drive, which the Census Bureau places in this township and in no incorporated place. [verified] — [IPEDS](../../catalog/ipeds.md) and [the Census geocoder](../../catalog/census-tiger-landmarks.md). Between them they enrol 4,708 students, more than half the county's total. [inference] — computed here against [higher education](../measure/allen-county-higher-education-2023.yml).",
           "tier": "inference"
         }
       ],
@@ -9685,6 +9992,10 @@
         },
         {
           "text": "**The wider answer is that 3,522 people in this county live outside households**, 3.4 per cent of it: 1,513 in correctional facilities, 966 in nursing homes, 788 in student housing and 255 in what the census calls other noninstitutional facilities and defines as shelters, group homes and residential treatment centres. [verified] — [the group quarters](../measure/allen-county-group-quarters-2020.yml). The question was asked about one block and the file answered it for all 3,552.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Half of the remainder is narrower now and no closer to an answer.** The county's six post-secondary institutions are on record, and the two that share the campus nearest the 104-person block have never reported a bed between them. [verified] — [IPEDS](../../catalog/ipeds.md), institutional characteristics 2010 to 2023; see [higher education](../measure/allen-county-higher-education-2023.yml).",
           "tier": "verified"
         }
       ],
@@ -12782,6 +13093,13 @@
       "source": "catalog/leeson-allen-county-1885.md"
     },
     {
+      "from": "measure/allen-county-college-enrollment-2010-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ipeds.md"
+    },
+    {
       "from": "measure/allen-county-commuting-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -12878,6 +13196,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-county-business-patterns.md"
+    },
+    {
+      "from": "measure/allen-county-higher-education-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ipeds.md"
     },
     {
       "from": "measure/allen-county-home-lending-2018-2024.yml",
@@ -13671,6 +13996,13 @@
       "source": null
     },
     {
+      "from": "organization/apollo-career-center.yml",
+      "to": "place/shawnee-township.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/ipeds.md"
+    },
+    {
       "from": "organization/bluffton-hospital.yml",
       "to": "place/bluffton.yml",
       "relationship": "seated-in",
@@ -13690,6 +14022,13 @@
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "organization/james-a-rhodes-state-college.yml",
+      "to": "place/bath-township.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/ipeds.md"
     },
     {
       "from": "organization/kindred-hospital-lima.yml",
@@ -13727,6 +14066,20 @@
       "source": "catalog/tigerweb-census2020.md"
     },
     {
+      "from": "organization/ohio-state-beauty-academy.yml",
+      "to": "place/american-township.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/census-tiger-landmarks.md"
+    },
+    {
+      "from": "organization/ohio-state-university-at-lima.yml",
+      "to": "place/bath-township.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/ipeds.md"
+    },
+    {
       "from": "organization/solar-refining-company.yml",
       "to": "place/lima.yml",
       "relationship": "seated-in",
@@ -13746,6 +14099,13 @@
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/hmda-loan-application-register.md"
+    },
+    {
+      "from": "organization/university-of-northwestern-ohio.yml",
+      "to": "place/american-township.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/census-tiger-landmarks.md"
     },
     {
       "from": "period/canal-era.yml",

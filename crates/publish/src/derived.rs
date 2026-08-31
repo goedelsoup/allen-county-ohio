@@ -1480,6 +1480,81 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-county-lost-a-third-of-its-college-students",
+        statement: "Allen County's six colleges enrolled 16,702 students in 2010 and 10,789 in \
+                    2023 — a fall of 35.4 per cent, against a county that fell 3.9 per cent \
+                    between its last two censuses. All six lost students.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-college-enrollment-2010-2023.yml",
+                "**The county's colleges have lost a third of their students in thirteen years, and all six of them have lost students.**"
+            ),
+            support!(
+                "measure/allen-county-college-enrollment-2010-2023.yml",
+                "**16,702 to 10,789 is a fall of 35.4 per cent.** [inference] — computed here. Institution by institution: the Ohio State Beauty Academy down 55.6 per cent, Ohio State's Lima campus 47.9, Apollo Career Center 45.7, the University of Northwestern Ohio 36.6, Bluffton University 38.1, and Rhodes State College 23.5 — the smallest fall, at the largest institution."
+            ),
+            support!(
+                "measure/allen-county-college-enrollment-2010-2023.yml",
+                "Allen County went from 106,331 people in 2010 to 102,206 in 2020, a fall of 3.9 per cent."
+            ),
+            support!(
+                "measure/allen-county-college-enrollment-2010-2023.yml",
+                "The fall from 2010 to 2019 is 4,017 students, or 24.0 per cent, and it is complete before Covid"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Ohio State Beauty Academy", value: 55.6, literal: "55.6" },
+            Figure { label: "Ohio State-Lima", value: 47.9, literal: "47.9" },
+            Figure { label: "Apollo Career Center", value: 45.7, literal: "45.7" },
+            Figure { label: "Bluffton University", value: 38.1, literal: "38.1" },
+            Figure { label: "Univ of Northwestern Ohio", value: 36.6, literal: "36.6" },
+            Figure { label: "Rhodes State College", value: 23.5, literal: "23.5" },
+        ],
+    },
+    Assertion {
+        id: "in-state-tuition-here-runs-eightfold",
+        statement: "A year of tuition and fees in Allen County costs between $4,560 and $35,498 \
+                    depending which of its colleges you attend.",
+        topic: "schools",
+        supports: &[support!(
+            "measure/allen-county-higher-education-2023.yml",
+            "**In-state tuition and fees run from $4,560 to $35,498, an eightfold spread.** Rhodes State $4,560, Ohio State-Lima $8,937, Northwestern Ohio $11,352, Bluffton $35,498."
+        )],
+        answers: &[],
+        figures: &[
+            Figure { label: "Rhodes State College", value: 4_560.0, literal: "4,560" },
+            Figure { label: "Ohio State-Lima", value: 8_937.0, literal: "8,937" },
+            Figure { label: "Univ of Northwestern Ohio", value: 11_352.0, literal: "11,352" },
+            Figure { label: "Bluffton University", value: 35_498.0, literal: "35,498" },
+        ],
+    },
+    Assertion {
+        id: "the-second-largest-field-of-study-is-not-a-local-one",
+        statement: "Allen County's colleges award 2,918 credentials a year, of which 85.1 per \
+                    cent are below a bachelor's degree. The largest field is health; the second \
+                    is vehicle repair, taught at one institution that draws two thirds of its \
+                    entering students from outside Ohio.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-higher-education-2023.yml",
+                "Six post-secondary institutions, 8,615 students in the autumn and 10,789 over the twelve months, and 2,918 credentials awarded in the academic year."
+            ),
+            support!(
+                "measure/allen-county-higher-education-2023.yml",
+                "2,482 of the 2,918 are below the baccalaureate, which is 85.1 per cent."
+            ),
+            support!(
+                "measure/allen-county-higher-education-2023.yml",
+                "**Every one of the 706 awards in vehicle repair is from one institution, and two thirds of its entering students come from outside Ohio.** Of 877 first-time students at the University of Northwestern Ohio in autumn 2023, 295 were Ohio residents and 582 were not — 101 from Michigan, 83 from Indiana, 48 from Pennsylvania, 31 from New York. At Rhodes State 432 of 436 were Ohio residents, and at Ohio State's Lima campus 255 of 263."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
