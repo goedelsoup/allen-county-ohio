@@ -1,0 +1,57 @@
+---
+// External identifiers, kept apart from the rest of the properties.
+//
+// They are keys into other people's systems, and the boards are emphatic that
+// two of them can name different things under one heading: a GNIS id names the
+// ground, a GEOID keys the incorporated place. Listing them together, labelled,
+// is what stops them being used interchangeably.
+
+interface Props {
+  keys: Array<{ label: string; value: string }>
+}
+
+const { keys } = Astro.props
+---
+
+<dl class="keys">
+  {
+    keys.map((key) => (
+      <>
+        <dt>{key.label}</dt>
+        <dd>{key.value}</dd>
+      </>
+    ))
+  }
+</dl>
+
+<style>
+  .keys {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 0;
+    margin: 0;
+  }
+  dt {
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--rule-hairline);
+    font-family: var(--font-smallcaps);
+    font-size: var(--size-micro);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  dd {
+    margin: 0;
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--rule-hairline);
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-body);
+    overflow-wrap: anywhere;
+  }
+  dt:first-of-type,
+  dt:first-of-type + dd {
+    border-top: 0;
+    padding-top: 0;
+  }
+</style>

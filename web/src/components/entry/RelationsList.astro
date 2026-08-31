@@ -1,0 +1,112 @@
+---
+// Edges as claims.
+//
+// An edge in this corpus asserts something about the world and carries its own claim tag —
+// and, where it is verified, the source that supports *that relationship* rather than the
+// node at either end. So every row prints the tag and names the source: a relation with no
+// source behind it is an inference, and the page says which it is rather than letting the
+// two look alike.
+
+import Icon from './Icon.astro'
+import { className, entryPath, glyphFor, type Relation } from '../../lib/entry'
+import { sourceName } from '../../lib/prose'
+
+interface Props {
+  relations: Relation[]
+}
+
+const { relations } = Astro.props
+
+function relationLabel(relationship: string, direction: 'out' | 'in'): string {
+  const word = relationship.replace(/-/g, ' ')
+  const label = word.charAt(0).toUpperCase() + word.slice(1)
+  return direction === 'out' ? label : `${label} by`
+}
+---
+
+{
+  relations.length > 0 && (
+    <ul class="relations">
+      {relations.map(({ edge, direction, other, otherId }) => (
+        <li>
+          <span class:list={['rel-label', 'eyebrow', edge.tier]}>
+            {relationLabel(edge.relationship, direction)}
+          </span>
+          <span class="rel-body">
+            <span class="rel-target">
+              <Icon name={glyphFor(other?.class ?? '')} size={13} />
+              {other ? (
+                <a href={entryPath(other.id)}>{other.label}</a>
+              ) : (
+                <span class="rel-absent">{otherId}</span>
+              )}
+            </span>
+            <span class="rel-meta">
+              {className(other?.class ?? 'unknown').toLowerCase()} · {direction} · {edge.tier}
+              {edge.source ? <> · {sourceName(edge.source)}</> : <> · no source on the edge</>}
+            </span>
+          </span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<style>
+  .relations {
+    list-style: none;
+    margin: var(--space-5) 0 var(--space-9);
+    padding: 0;
+    border-bottom: 1px solid var(--rule-hairline);
+  }
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+  }
+  .rel-label {
+    width: 128px;
+    flex: 0 0 auto;
+  }
+  /* Tier is carried by the word in .rel-meta as well; the ink is a second signal, not the only one. */
+  .rel-label.verified {
+    color: var(--status-verified);
+  }
+  .rel-label.inference {
+    color: var(--status-disputed);
+  }
+  .rel-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .rel-target {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font: var(--weight-regular) var(--size-body) / 1.4 var(--font-serif);
+    color: var(--text-faint);
+  }
+  .rel-absent {
+    color: var(--text-faint);
+    font: var(--type-data);
+  }
+  .rel-meta {
+    display: block;
+    margin-top: 3px;
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    color: var(--text-faint);
+  }
+
+  @media (width < 34rem) {
+    li {
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .rel-label {
+      width: auto;
+    }
+  }
+</style>

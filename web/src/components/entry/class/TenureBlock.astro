@@ -1,0 +1,66 @@
+---
+// A tenure is a relator: one person's holding of one office over one interval.
+//
+// The seat is what makes a term legible, so the entry draws the whole
+// succession and places this holding inside it. The bar spans the recorded
+// holdings rather than the life of the office, because the corpus knows its
+// first and last tenure and does not always know when the seat was created.
+
+import SpanBar from '../SpanBar.astro'
+import HoldingsTable from '../HoldingsTable.astro'
+import { holdingsFor, year, type Holding } from '../../../lib/entry'
+import type { Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+const chain: Holding[] = holdingsFor(node, 'seat')
+
+const years = chain
+  .flatMap((h) => [year(h.began), year(h.ended)])
+  .filter((y): y is number => y !== null)
+const min = years.length > 0 ? Math.min(...years) : null
+const max = years.length > 0 ? Math.max(...years) : null
+
+const start = year(node.properties.began ?? '')
+const end = year(node.properties.ended ?? '')
+const showBar = min !== null && max !== null && max > min && start !== null
+---
+
+{
+  showBar && (
+    <SpanBar
+      min={min!}
+      max={max!}
+      start={start!}
+      end={end}
+      leftLabel={String(min)}
+      rightLabel={String(max)}
+      openLabel="No end recorded"
+      note={
+        end === null
+          ? 'This term against every holding of the seat the corpus records. No end date: the holder is serving, or the end is not established.'
+          : 'This term against every holding of the seat the corpus records.'
+      }
+    />
+  )
+}
+
+{
+  chain.length > 1 && (
+    <>
+      <h2 class="section">The seat, tenure by tenure</h2>
+      <HoldingsTable holdings={chain} view="seat" currentId={node.id} />
+    </>
+  )
+}
+
+<style>
+  .section {
+    margin: var(--space-9) 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+</style>

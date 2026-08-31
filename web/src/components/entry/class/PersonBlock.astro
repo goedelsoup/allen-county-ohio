@@ -1,0 +1,50 @@
+---
+// A person is a kind: they do not stop being one by leaving office.
+//
+// That is why the terms are edges and not properties here. The consequence is
+// visible in the table — where a holder returns to the same office after a gap,
+// the two holdings stand apart, and whatever changed in between belongs to the
+// office and its district rather than to the person.
+
+import HoldingsTable from '../HoldingsTable.astro'
+import { holdingsFor } from '../../../lib/entry'
+import type { Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+const holdings = holdingsFor(node, 'offices')
+
+const offices = new Set(holdings.map((h) => h.office?.id).filter(Boolean))
+const returned = holdings.length > offices.size
+---
+
+{
+  holdings.length > 0 && (
+    <>
+      <h2 class="section">Offices held</h2>
+      <p class="count">
+        {holdings.length} {holdings.length === 1 ? 'holding' : 'holdings'} of {offices.size}
+        {offices.size === 1 ? ' office' : ' offices'}
+        {returned && ' — one of them returned to.'}
+      </p>
+      <HoldingsTable holdings={holdings} view="offices" />
+    </>
+  )
+}
+
+<style>
+  .section {
+    margin: var(--space-9) 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+  .count {
+    margin: var(--space-4) 0 0;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+</style>

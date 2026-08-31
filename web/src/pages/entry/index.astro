@@ -1,0 +1,129 @@
+---
+// The way in to the entries.
+//
+// Ordered by class rather than alphabetically across the whole corpus, because the class is
+// what tells a reader what kind of thing they are about to read — a tenure and a measure
+// answer different questions and a single A–Z list hides that.
+
+import Base from '../../layouts/Base.astro'
+import Icon from '../../components/entry/Icon.astro'
+import TierBadge from '../../components/TierBadge.astro'
+import { nodes } from '../../lib/feeds'
+import { CLASS_PRESENTATION, entryPath, glyphFor, nodesOfClass, pluralFor } from '../../lib/entry'
+
+const classes = Object.keys(CLASS_PRESENTATION)
+  .map((cls) => ({ cls, items: nodesOfClass(cls) }))
+  .filter((group) => group.items.length > 0)
+  .toSorted((a, b) => b.items.length - a.items.length)
+---
+
+<Base
+  title="Entries"
+  lede={`Every node this corpus publishes — ${nodes.length} of them, across ${classes.length} classes. Each entry carries the tag it was written with, the edges it asserts, and the sources behind them.`}
+>
+  <nav class="jump" aria-label="Classes">
+    {
+      classes.map(({ cls, items }) => (
+        <a href={`#${cls}`}>
+          <Icon name={glyphFor(cls)} size={13} />
+          {pluralFor(cls)}
+          <span class="count">{items.length}</span>
+        </a>
+      ))
+    }
+  </nav>
+
+  {
+    classes.map(({ cls, items }) => (
+      <section id={cls}>
+        <h2>
+          <Icon name={glyphFor(cls)} size={18} />
+          {pluralFor(cls)}
+          <span class="count">{items.length}</span>
+        </h2>
+        <ul>
+          {items.map((n) => (
+            <li>
+              <a href={entryPath(n.id)}>{n.label}</a>
+              <TierBadge tier={n.tier} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>
+
+<style>
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-bottom: var(--space-11);
+    padding-bottom: var(--space-7);
+    border-bottom: 1px solid var(--ink-300);
+  }
+  .jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--surface-card);
+    border: 1px solid var(--rule-hairline);
+    border-radius: var(--radius-pill);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-smallcaps);
+    font-size: var(--size-label);
+    letter-spacing: var(--tracking-smallcaps);
+    text-transform: uppercase;
+  }
+  .jump a:hover {
+    color: var(--text-strong);
+    border-color: var(--ink-300);
+  }
+
+  section {
+    margin-bottom: var(--space-11);
+    scroll-margin-top: var(--space-7);
+  }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--ink-300);
+    font: var(--type-entry-title);
+    color: var(--text-strong);
+  }
+  .count {
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 2;
+    column-gap: var(--space-11);
+  }
+  li {
+    break-inside: avoid;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-5);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--rule-hairline);
+  }
+  li a {
+    font: var(--weight-regular) var(--size-body-s) / 1.4 var(--font-serif);
+  }
+
+  @media (width < 48rem) {
+    ul {
+      columns: 1;
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+// A question is a situation: something the corpus has not settled.
+//
+// Drawn as an interval that has not closed rather than as a task that is late.
+// The months are computed against the build so the figure cannot go stale in
+// the way a written "twenty-one months open" would.
+
+import SpanBar from '../SpanBar.astro'
+import { year } from '../../../lib/entry'
+import type { Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+  concerns: number
+}
+
+const { node, concerns } = Astro.props
+
+const opened = node.properties.opened ?? ''
+const closed = node.properties.closed ?? ''
+const openedYear = year(opened)
+const closedYear = year(closed)
+const thisYear = new Date().getFullYear()
+
+const months = opened
+  ? Math.max(
+      0,
+      Math.round(
+        ((closed ? new Date(closed).getTime() : Date.now()) - new Date(opened).getTime()) /
+          (1000 * 60 * 60 * 24 * 30.44),
+      ),
+    )
+  : null
+
+const turns =
+  concerns === 0
+    ? 'Nothing published turns on it yet.'
+    : `${concerns} ${concerns === 1 ? 'relation moves' : 'relations move'} with the answer.`
+---
+
+{
+  openedYear !== null && (
+    <SpanBar
+      min={openedYear}
+      max={Math.max(closedYear ?? thisYear, openedYear + 1)}
+      start={openedYear}
+      end={closedYear}
+      leftLabel={`Opened ${opened}`}
+      rightLabel={closed ? `Closed ${closed}` : ''}
+      openLabel="No close date"
+      note={`${months !== null ? `${months} months ${closed ? 'stood' : 'open'}. ` : ''}${turns}`}
+    />
+  )
+}

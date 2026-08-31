@@ -1,0 +1,71 @@
+---
+// The catalog sources this entry's prose cites, numbered in order of first appearance.
+//
+// Sources are first-class content in this corpus, so they get their own block rather than
+// ad-hoc markup at the foot of a paragraph.
+
+import Icon from './Icon.astro'
+import { sourceName } from '../../lib/prose'
+
+interface Props {
+  sources: string[]
+}
+
+const { sources } = Astro.props
+---
+
+{
+  sources.length > 0 && (
+    <ol class="sources">
+      {sources.map((path, i) => (
+        <li>
+          <span class="index">{i + 1}</span>
+          <span class="body">
+            <span class="name">{sourceName(path)}</span>
+            <span class="path">{path}</span>
+          </span>
+          <Icon name="quote" size={13} />
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+<style>
+  .sources {
+    list-style: none;
+    margin: var(--space-5) 0 0;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+    color: var(--text-faint);
+  }
+  .index {
+    flex: 0 0 auto;
+    width: 1.5em;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--rubric-500);
+  }
+  .body {
+    flex: 1;
+    min-width: 0;
+  }
+  .name {
+    display: block;
+    font: var(--weight-regular) var(--size-body-s) / 1.4 var(--font-serif);
+    color: var(--text-body);
+  }
+  .path {
+    display: block;
+    margin-top: 2px;
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    overflow-wrap: anywhere;
+  }
+</style>

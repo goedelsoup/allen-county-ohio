@@ -1,0 +1,56 @@
+---
+// A printed card: parchment, a foxing wash, a hairline and an ink-bleed shadow.
+//
+// The flat variant is what goes inside another card — the system allows two levels of card
+// and no more, and the inner one does not repeat the wash or the lift.
+
+interface Props {
+  variant?: 'default' | 'flat'
+  label?: string
+  meta?: string
+}
+
+const { variant = 'default', label, meta } = Astro.props
+---
+
+<section class:list={['card', variant]}>
+  {
+    label && (
+      <div class="card-head">
+        <span class="eyebrow">{label}</span>
+        {meta && <span class="card-meta">{meta}</span>}
+      </div>
+    )
+  }
+  <slot />
+</section>
+
+<style>
+  .card {
+    padding: var(--pad-card);
+    border: 1px solid var(--rule-hairline);
+    border-radius: var(--radius-md);
+  }
+  .default {
+    background-color: var(--surface-card);
+    background-image: var(--wash-foxing);
+    box-shadow: var(--shadow-card);
+  }
+  .flat {
+    background: var(--surface-sunken);
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .card-head .eyebrow {
+    flex: 1;
+  }
+  .card-meta {
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    color: var(--text-faint);
+  }
+</style>

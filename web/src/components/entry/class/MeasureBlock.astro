@@ -1,0 +1,77 @@
+---
+// A measure carries one figure and the apparatus that makes it checkable.
+//
+// The board makes the figure the dateline — set in the display face at 56px,
+// with its unit and its as-of date beside it — because on a measure entry the
+// number *is* the headline matter, and a mono dateline would bury it.
+//
+// The board also shows a comparability series beneath, marking which
+// neighbouring figures may not be set against this one. That is not built:
+// `series.json` is keyed by division, jurisdiction and place, never by measure,
+// and comparability is exactly the kind of claim this corpus refuses to infer.
+// Assembling a series by matching parameter strings would assert a continuity
+// no source supports. It needs the feed to carry the judgement first.
+
+import Badge from '../Badge.astro'
+import type { Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+const value = node.properties.value
+const unit = node.properties.unit
+const asOf = node.properties.as_of
+---
+
+<div class="dateline">
+  {value && <span class:list={['figure', value.length > 12 && 'figure-long']}>{value}</span>}
+  <span class="gloss">
+    {unit && <span class="eyebrow">{unit}</span>}
+    {asOf && <span class="asof">as of {asOf}</span>}
+  </span>
+  <span class="spacer"></span>
+  <Badge tier={node.tier} />
+</div>
+
+<style>
+  .dateline {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+    padding-bottom: var(--space-5);
+    border-bottom: 3px double var(--ink-300);
+  }
+  .figure {
+    font: var(--weight-regular) 56px / 0.9 var(--font-display);
+    color: var(--text-strong);
+  }
+  /* A value that is a phrase rather than a numeral cannot carry display size. */
+  .figure-long {
+    font: var(--weight-regular) var(--size-heading) / 1.2 var(--font-serif);
+  }
+  .gloss {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-bottom: 4px;
+    min-width: 0;
+  }
+  .asof {
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-muted);
+  }
+  .spacer {
+    flex: 1;
+  }
+
+  @media (width < 34rem) {
+    .dateline {
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+  }
+</style>
