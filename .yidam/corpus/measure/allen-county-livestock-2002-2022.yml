@@ -1,0 +1,73 @@
+class: measure
+label: Allen County livestock, 2002–2022
+description: |
+  What the county keeps, and how few places keep it. [verified] —
+  [USDA Census of Agriculture](../../catalog/usda-census-of-agriculture.md), county files.
+
+                          2002      2007      2012      2017      2022
+      hogs              31,741    62,910    80,372   178,781   235,800
+        operations          59        60        46        56        28
+      cattle             8,116     6,915     5,210     6,018     8,576
+        operations         169       122       106       127       121
+      sheep                835       820       704       962       877
+      horses, ponies       618       721       930       509       316
+      milk cows            454       682       228       (D)       (D)
+        operations          13        11         5         6         8
+
+  **The hogs multiplied more than sevenfold while the places keeping them halved.** 31,741 head on
+  59 operations in 2002 against 235,800 on 28 in 2022 — an average herd of 538 becoming one of
+  8,421. [inference] — computed here from the five censuses. Nothing else moved: cattle ended where
+  they began, and sheep, horses and milk cows are where they were or lower.
+
+  **The count, five censuses in one line.** 31,741 hogs in 2002, 62,910 in 2007, 80,372 in 2012,
+  178,781 in 2017 and 235,800 in 2022, kept on 59, 60, 46, 56 and 28 operations. [verified] — same
+  source.
+
+  **Three quarters of the hogs sold were raised for someone else.** Of 377,816 head sold in 2022,
+  281,194 were produced under production contract on twelve operations — the census's own term for
+  an animal fed by one party and owned by another. [verified] — same source. In 2017 it was 144,480
+  of 324,947 on twenty-one operations, so the contracted share went from 44 to 74 per cent while
+  the number of operations doing it fell by nine.
+
+  **Hogs are now two fifths of everything the county sells.** $75,254,000 of $240,849,000, against
+  $7,488,000 of $41,264,000 in 2002. [verified] — same source. The county ranks 4th in Ohio for hog
+  sales and 23rd for agricultural sales altogether. [verified] —
+  [the 2022 county profile](../../catalog/usda-census-of-agriculture.md).
+
+  **Against 1910: the swine outnumbered the people then by 59,695 to 56,580, and now by 235,800 to
+  100,866.** [inference] — computed here from
+  [the 1910 animals](allen-county-domestic-animals-1910.yml) and
+  [the 2024 estimate](allen-county-population-2024.yml). Two and a third hogs a head, where there
+  had been one and a twentieth.
+
+  **Everything else in that 1910 count is gone.** 14,676 horses became 316; 41,240 sheep and goats
+  became 1,499; 21,336 cattle became 8,576; and the 10,671 dairy cows became a figure the census
+  will not print, because eight operations hold it and one of them is large enough that publishing
+  the total would disclose it. [verified] — same sources, and Appendix A, which states the
+  suppression rules. This corpus withholds figures for the same reason and by hand; see
+  [what may leave the repository](../../decisions/what-may-leave-the-repository.yml).
+
+  **When the horses went is still not answerable here.** There were already only 618 in 2002, so the
+  fall from 14,676 happened inside the ninety-two years this catalog does not cover. [open] The 1910
+  measure asked this question and it survives the phase that was meant to close it. See
+  [when the farmland went](../question/when-the-farmland-went.yml).
+properties:
+  parameter: livestock inventory, Allen County
+  value: "235800"
+  unit: hogs
+  as_of: "2022-12-31"
+  method: |
+    Census of Agriculture, inventory taken at December 31 of the census year and sales for the
+    calendar year, read from NASS's Quick Stats bulk county file and checked against the published
+    county profile, which prints the same 2022 and 2017 inventories. `(D)` marks a cell NASS
+    suppressed to avoid disclosing an individual operation and is not a small number; nothing here
+    infers a value for one. Comparisons to 1910 set a count of animals on farms and off them
+    against a count on farms alone, which in 1910 differed by about one per cent for swine.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usda-census-of-agriculture.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -1,0 +1,76 @@
+id: a-farm-count-is-a-definition
+summary: >-
+  Allen County had 2,939 farms in 1910 and 897 in 2022, and the difference is not 2,042 farms
+  because the two censuses count different things. The corpus compares the county's acres, animals
+  and bushels across the century and refuses to subtract one farm count from the other.
+context: |
+  This phase set the Thirteenth Census of Agriculture beside five modern ones, and the first
+  sentence anyone would write from the two is wrong.
+
+    1910   2,939 farms   240,472 acres   59,695 swine   51,293 acres of corn
+    2022     897 farms   178,921 acres  235,800 hogs    64,776 acres of corn
+
+  A farm in 1910 was all the land directly farmed by one manager, and nothing under three acres
+  counted unless it produced $250 or more in 1909. A farm in 2022 is
+  [any place from which $1,000 or more of agricultural products were produced and sold, or normally
+  would have been sold](../catalog/usda-census-of-agriculture.md). One threshold is an area with an
+  output escape; the other is output alone. $250 of 1909 produce is not $1,000 of 2022 produce, and
+  three acres is not a dollar figure at all.
+
+  The direction of the bias is not even determinable. The modern threshold admits a suburban lot
+  selling $1,100 of produce that 1910 would have excluded on acreage; the acreage rule admitted a
+  three-acre plot selling nothing, which 2022 excludes. Two rules that cross cannot be composed into
+  a correction.
+
+  The census says as much about its own recent history. Between 2017 and 2022 the county's farm
+  count *rose* from 855 to 897 while its acreage fell, and Appendix A gives the 2022 count a
+  standard error of 69. The rise is inside the noise, and 39.0 per cent of the count is adjustment
+  for coverage, nonresponse and misclassification rather than a returned form.
+decision: |
+  **Compare what both censuses measure the same way, and say so where they do not.**
+
+    acres in farms       comparable — an area under one definition of "in farms" in each year,
+                         and the definitions of *farm* move the boundary of that area far less
+                         than they move the count of parcels inside it
+    animal inventories   comparable — a head is a head; note only that 1910 counted animals off
+                         farms as well, which for swine was about one per cent
+    crop acreage and
+    production           comparable — and yield, being their ratio, is the most comparable
+                         figure in the whole comparison
+    farm counts          NOT comparable. Publish each beside its own threshold, never their
+                         difference, and never a rate of decline computed from them
+
+  Where a count is the only figure available, the corpus states both thresholds in the same
+  sentence as the two numbers, so a reader cannot take the subtraction the text refuses to perform.
+
+  This does not forbid using the modern counts against each other: 968, 946, 904, 855, 897 across
+  2002 to 2022 are one definition read five times, and the series is sound within the standard
+  errors the census publishes for it.
+rationale: |
+  **The failure this prevents is specific and this corpus has already made its cousin.** Four phases
+  went by describing containment with gazetteer points because a point and a polygon both answer
+  "where"; the fix was to notice that they answer it differently rather than imprecisely. A 1910
+  farm and a 2022 farm are the same shape of trap. Both are integers labelled *farms*, both sit in
+  a federal agricultural census, and nothing in either publication flags the incompatibility on the
+  page where the number is printed. It is in an appendix, in a sentence about scope.
+
+  **The rule earns its keep by what it leaves standing.** Refusing the count costs one sentence and
+  keeps four: the farmland fell by a quarter, the hogs multiplied nearly fourfold, an acre of corn
+  yields five times what it did, and the oats and horses left together. Those are the findings, and
+  none of them needs a farm count.
+
+  **And it points at where the findings actually were.** The county profile — the page the census
+  writes for a reader — leads with the farm count, the acreage and the sales, which is to say with
+  the one figure that is not comparable and two that moved less than their own standard errors. The
+  sevenfold rise in hogs, the collapse from 59 keepers to 28, the 281,194 head raised under contract
+  for someone else, and the 94,325 acres worked by people who do not own them are all in rows the
+  profile does not print. A source's own emphasis is an editorial judgment about a general reader,
+  and it is not evidence about which of its rows changed.
+  **One thing this rule wants and the graph cannot express.** Comparability is a relation between
+  two measures, and `measure` declares no edge to another `measure` — only `describes`, out to the
+  place. So "these two figures may be set beside each other, and this source licenses it" lives in
+  prose in four nodes now and in no edge anywhere, and `edge-audit` cannot see it. Recorded rather
+  than fixed: adding a relationship to the ontology is its own decision and does not belong inside
+  a phase about hogs.
+status: accepted
+date: "2026-08-30"
