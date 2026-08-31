@@ -18,6 +18,7 @@ location:
       rendered image.
 used-by:
   - ../corpus/event/lima-oil-strike.yml
+  - ../corpus/measure/allen-county-crops-2022.yml
   - ../corpus/measure/allen-county-domestic-animals-1910.yml
   - ../corpus/measure/allen-county-farm-output-1909.yml
   - ../corpus/measure/allen-county-farms-1900-1910.yml
@@ -42,6 +43,7 @@ used-by:
   - ../corpus/place/spencer-township.yml
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/question/what-became-of-german-and-ottawa-townships.yml
+  - ../corpus/question/when-the-farmland-went.yml
 ---
 
 **It completes the county's decennial series.** Allen County was **56,580** in 1910, against 47,976
