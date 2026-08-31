@@ -37,32 +37,33 @@ Sorted by: kind, then alphabetically.
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
+| [allen-county-educational-service-center.yml](jurisdiction/allen-county-educational-service-center.yml) | jurisdiction | Allen County Educational Service Center | 2 | 5v / 0i / 2o | 44 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 3 | 5v / 3i / 2o | 73 |
-| [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 3v / 0i / 0o | 54 |
+| [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 6v / 0i / 0o | 68 |
 | [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 7v / 0i / 0o | 48 |
 | [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 8v / 0i / 0o | 49 |
 | [auglaize-township.yml](jurisdiction/auglaize-township.yml) | jurisdiction | Auglaize Township (government) | 2 | 8v / 0i / 1o | 55 |
-| [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 4v / 0i / 0o | 52 |
+| [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 6v / 0i / 1o | 66 |
 | [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 7v / 0i / 1o | 46 |
-| [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 3v / 0i / 0o | 45 |
+| [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 5v / 0i / 1o | 61 |
 | [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 5v / 1i / 2o | 51 |
 | [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 3v / 3i / 2o | 59 |
-| [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 2v / 0i / 0o | 30 |
-| [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 3v / 0i / 0o | 41 |
-| [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 2v / 0i / 0o | 53 |
+| [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 4v / 0i / 1o | 44 |
+| [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 6v / 0i / 0o | 55 |
+| [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 4v / 0i / 0o | 67 |
 | [jackson-township.yml](jurisdiction/jackson-township.yml) | jurisdiction | Jackson Township (government) | 2 | 8v / 0i / 1o | 50 |
-| [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 2v / 1i / 0o | 42 |
+| [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 6v / 2i / 0o | 64 |
 | [lima-municipal-court.yml](jurisdiction/lima-municipal-court.yml) | jurisdiction | Lima Municipal Court | 2 | 5v / 1i / 1o | 41 |
 | [marion-township.yml](jurisdiction/marion-township.yml) | jurisdiction | Marion Township (government) | 2 | 8v / 0i / 0o | 51 |
 | [monroe-township.yml](jurisdiction/monroe-township.yml) | jurisdiction | Monroe Township (government) | 2 | 8v / 1i / 0o | 53 |
-| [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 2v / 0i / 0o | 30 |
-| [perry-local-school-district.yml](jurisdiction/perry-local-school-district.yml) | jurisdiction | Perry Local School District | 4 | 2v / 0i / 0o | 34 |
+| [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 4v / 1i / 1o | 43 |
+| [perry-local-school-district.yml](jurisdiction/perry-local-school-district.yml) | jurisdiction | Perry Local School District | 4 | 5v / 1i / 0o | 50 |
 | [perry-township.yml](jurisdiction/perry-township.yml) | jurisdiction | Perry Township (government) | 2 | 7v / 0i / 0o | 46 |
 | [richland-township.yml](jurisdiction/richland-township.yml) | jurisdiction | Richland Township (government) | 2 | 8v / 0i / 0o | 51 |
-| [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 7 | 3v / 0i / 0o | 52 |
+| [shawnee-local-school-district.yml](jurisdiction/shawnee-local-school-district.yml) | jurisdiction | Shawnee Local School District | 7 | 7v / 0i / 0o | 68 |
 | [shawnee-township.yml](jurisdiction/shawnee-township.yml) | jurisdiction | Shawnee Township (government) | 2 | 8v / 1i / 0o | 59 |
 | [spencer-township.yml](jurisdiction/spencer-township.yml) | jurisdiction | Spencer Township (government) | 3 | 9v / 1i / 0o | 56 |
-| [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 3v / 0i / 0o | 41 |
+| [spencerville-local-school-district.yml](jurisdiction/spencerville-local-school-district.yml) | jurisdiction | Spencerville Local School District | 5 | 5v / 0i / 0o | 53 |
 | [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 8v / 1i / 0o | 50 |
 | [third-district-court-of-appeals.yml](jurisdiction/third-district-court-of-appeals.yml) | jurisdiction | Ohio Third District Court of Appeals | 2 | 4v / 2i / 1o | 45 |
 | [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 6v / 1i / 1o | 47 |
@@ -72,7 +73,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 4v / 0i / 2o | 40 |
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
-| [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 2v / 0i / 0o | 32 |
+| [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 4v / 0i / 1o | 45 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 2v / 3i / 1o | 55 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 8v / 1i / 0o | 63 |
@@ -107,6 +108,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 5v / 0i / 0o | 62 |
+| [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
+| [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2010-2023 | 3 | 7v / 1i / 1o | 69 |
+| [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 3 | 5v / 3i / 0o | 65 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 2 | 8v / 4i / 1o | 113 |
@@ -271,6 +275,7 @@ Sorted by: kind, then alphabetically.
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 4 | 5v / 2i / 1o | 58 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 4v / 1i / 2o | 57 |
+| [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 7v / 1i / 1o | 69 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 4v / 1i / 1o | 51 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 5v / 3i / 2o | 63 |
