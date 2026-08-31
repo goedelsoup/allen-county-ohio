@@ -12,11 +12,23 @@ description: |
 
   **It is not household size and must not be read as one.** Vacant units are in the denominator
   and people living in group quarters are in the numerator, so a low ratio can mean small
-  households, empty houses, or neither. [open] Separating them needs the occupancy table from the
-  2020 redistricting file, which TIGERweb does not serve and the Census API will not release
-  without a key. Until then this corpus can say how many units there are and how many people, and
-  cannot say how many are lived in — which matters for a county whose
-  [population has been falling for fifty years](../period/depopulation.yml).
+  households, empty houses, or neither.
+
+  **Both terms are now separated and the ratio has a replacement.** 40,935 of the 44,563 units were
+  occupied and 3,628 were vacant, and 3,522 people were living outside households, which makes the
+  county's average household **2.411 people**. [verified] —
+  [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), Tables H1 and P5;
+  see [the occupancy](allen-county-occupancy-2020.yml) and
+  [the group quarters](allen-county-group-quarters-2020.yml).
+
+  The open block that stood here named the right table and the wrong obstacle. It said the
+  occupancy table was unavailable because TIGERweb does not serve it and the API will not release
+  it without a key, both of which are true; what it did not consider is that the redistricting file
+  the API is built over is a flat download that needs no key at all. [inference] The figure was one
+  file away for two phases. This matters for a county whose
+  [population has been falling for fifty years](../period/depopulation.yml), because a falling
+  population that keeps its houses is a different thing from one that loses them, and Lima's
+  vacancy rate is 11.2 per cent against 4.5 in Amanda Township.
 properties:
   parameter: total housing units
   value: "44563"
