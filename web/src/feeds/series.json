@@ -402,6 +402,26 @@
       ]
     },
     {
+      "id": "place-allen-county::life-expectancy-at-birth,-by-census-tract",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "life expectancy at birth, by census tract",
+      "unit": "years between the county's highest and lowest tract",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-life-expectancy-2010-2015.yml",
+          "label": "Life expectancy at birth in Allen County's census tracts, 2010–2015",
+          "as_of": "2015",
+          "value": 13.7,
+          "published": "13.7",
+          "tier": "verified",
+          "source": "catalog/nchs-usaleep.md",
+          "method": "NCHS estimates for 2010–2015, on 2010 census tracts. The join to Lima is by tract identifier to the 2020 tract file and then by that tract's published internal point against the city's 2020 boundary polygon — so it is a statement about where a tract's centre falls and not about how many of its people live in the city. Two of the thirty tracts have no 2020 identifier and are excluded from every comparison, and are in the range and the median. Medians and weighted means are this corpus's arithmetic; every input is NCHS's or the Census Bureau's. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::livestock-inventory,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -498,6 +518,26 @@
           "tier": "verified",
           "source": "catalog/census-acs-summary-file.md",
           "method": "2023 five-year estimates from the table-based summary file. The twelve townships and Lima are county-subdivision and place summary levels and partition the county: they sum to 101,685 people and 12,815 below poverty, both equal to the county row. Margins are as published, at 90 per cent; combined margins are the root of the sum of squares. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::modelled-prevalence-of-health-measures,-county-and-city",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "modelled prevalence of health measures, county and city",
+      "unit": "per cent of Lima adults food insecure, as estimated",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-health-2023.yml",
+          "label": "CDC's health estimates for Allen County and Lima, 2022–2023",
+          "as_of": "2023",
+          "value": 25.9,
+          "published": "25.9",
+          "tier": "verified",
+          "source": "catalog/cdc-places.md",
+          "method": "Crude prevalence only, because the tract file publishes nothing else and a crude figure must not be set against an age-adjusted one. Thirty-five of the forty measures rest on BRFSS 2023 and five — all teeth lost, dental visits, mammograms, colorectal screening, short sleep — on BRFSS 2022. \"Differs by more than the confidence limits allow\" means the city's published interval and the county's do not overlap, which is a weaker test than a significance test and is the only one these published fields support. [verified]"
         }
       ]
     },
@@ -1152,6 +1192,7 @@
       "caveats": [
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage.",
+        "It does not follow that Lima's mortality is what makes the county smaller.",
         "This corpus does not establish that Lima is emptying because it is aging.",
         "It does not establish that the county's population decline was caused by its manufacturing decline."
       ],
@@ -1212,6 +1253,7 @@
       "caveats": [
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage.",
+        "It does not follow that Lima's mortality is what makes the county smaller.",
         "This corpus does not establish that Lima is emptying because it is aging.",
         "It does not establish that the county's population decline was caused by its manufacturing decline."
       ],
@@ -1247,6 +1289,7 @@
       "caveats": [
         "It does not establish that either mechanism reaches back before 2020.",
         "It does not establish that the decline has ended: fifteen people on 100,851 is far inside what a modelled estimate can resolve, one year is not a direction, and the same programme revises its own earlier years with every vintage.",
+        "It does not follow that Lima's mortality is what makes the county smaller.",
         "This corpus does not establish that Lima is emptying because it is aging.",
         "It does not establish that the county's population decline was caused by its manufacturing decline."
       ],
@@ -3188,6 +3231,150 @@
         "This does not establish that these seats go unfilled because nobody stands for them."
       ],
       "figures": []
+    },
+    {
+      "id": "lima-tracts-live-five-years-less",
+      "statement": "A person born in one of Lima's census tracts could expect about five fewer years than one born elsewhere in Allen County. Across the county's thirty tracts the range is 13.7 years.",
+      "topic": "health",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-life-expectancy-2010-2015.yml",
+          "node_label": "Life expectancy at birth in Allen County's census tracts, 2010–2015",
+          "span": "From **69.1** years in tract `39003012600` to **82.8** in `39003011300`, on a median of 78.0.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nchs-usaleep.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-life-expectancy-2010-2015.yml",
+          "node_label": "Life expectancy at birth in Allen County's census tracts, 2010–2015",
+          "span": "their median is **72.7** years against **79.0** for the fifteen outside, and weighted by tract population, 73.9 against 79.1.",
+          "tier": "inference",
+          "sources": [
+            "catalog/nchs-usaleep.md",
+            "catalog/tigerweb-census2020.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-life-expectancy-2010-2015.yml",
+          "node_label": "Life expectancy at birth in Allen County's census tracts, 2010–2015",
+          "span": "**The two groups barely overlap.** The highest Lima tract is 78.2 and the lowest tract outside the city is 74.0",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lowest tract",
+          "value": 69.1,
+          "literal": "69.1"
+        },
+        {
+          "label": "Lima tracts, median",
+          "value": 72.7,
+          "literal": "72.7"
+        },
+        {
+          "label": "Other tracts, median",
+          "value": 79.0,
+          "literal": "79.0"
+        },
+        {
+          "label": "Highest tract",
+          "value": 82.8,
+          "literal": "82.8"
+        }
+      ]
+    },
+    {
+      "id": "the-health-gap-is-a-gap-in-conditions",
+      "statement": "Thirteen of CDC's forty health measures separate Lima from its county by more than their confidence limits allow. Five of the top eight are not diseases, and no chronic-disease gap clears at all.",
+      "topic": "health",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-health-2023.yml",
+          "node_label": "CDC's health estimates for Allen County and Lima, 2022–2023",
+          "span": "**Thirteen of the forty differ between Lima and its county by more than their confidence limits allow**, and eleven of the thirteen are Lima the worse.",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-places.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-health-2023.yml",
+          "node_label": "CDC's health estimates for Allen County and Lima, 2022–2023",
+          "span": "Food stamps, food insecurity, housing insecurity, utility shut-off threat and lack of reliable transportation are the measures CDC groups as health-related social needs, and they are where the city and the county separate most.",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-places.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-health-2023.yml",
+          "node_label": "CDC's health estimates for Allen County and Lima, 2022–2023",
+          "span": "Diabetes, high blood pressure, coronary heart disease, stroke, asthma, chronic obstructive pulmonary disease, depression and obesity all estimate higher in Lima and every one of those differences sits inside its own confidence limits.",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-places.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-health-2023.yml",
+          "node_label": "CDC's health estimates for Allen County and Lima, 2022–2023",
+          "span": "CDC's estimate of adults receiving food stamps runs from 4.9 to 46.1 per cent, food insecurity from 7.2 to 41.3, fair or poor health from 13.9 to 40.5, and total tooth loss among the over-65s from 7.6 to 42.7.",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-places.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Food stamps, lowest tract",
+          "value": 4.9,
+          "literal": "4.9"
+        },
+        {
+          "label": "Food stamps, highest",
+          "value": 46.1,
+          "literal": "46.1"
+        },
+        {
+          "label": "Food insecurity, lowest",
+          "value": 7.2,
+          "literal": "7.2"
+        },
+        {
+          "label": "Food insecurity, highest",
+          "value": 41.3,
+          "literal": "41.3"
+        },
+        {
+          "label": "Fair or poor health, lowest",
+          "value": 13.9,
+          "literal": "13.9"
+        },
+        {
+          "label": "Fair or poor health, highest",
+          "value": 40.5,
+          "literal": "40.5"
+        },
+        {
+          "label": "Teeth lost 65+, lowest",
+          "value": 7.6,
+          "literal": "7.6"
+        },
+        {
+          "label": "Teeth lost 65+, highest",
+          "value": 42.7,
+          "literal": "42.7"
+        }
+      ]
     },
     {
       "id": "an-address-is-not-a-municipality",

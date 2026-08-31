@@ -110,6 +110,9 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         answers: &[
+            // Arrived by propagation when the corpus gained life expectancy by tract: the
+            // period node now refuses the reading that Lima's mortality is the county's loss.
+            "It does not follow that Lima's mortality is what makes the county smaller",
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
@@ -140,6 +143,9 @@ pub const ASSERTIONS: &[Assertion] = &[
             "between 2000 and 2010 Lima fell 3.8% while the balance of Allen County — everything outside every incorporated place — fell 1.5%, from 50,809 to 50,048"
         )],
         answers: &[
+            // Arrived by propagation when the corpus gained life expectancy by tract: the
+            // period node now refuses the reading that Lima's mortality is the county's loss.
+            "It does not follow that Lima's mortality is what makes the county smaller",
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
@@ -163,6 +169,9 @@ pub const ASSERTIONS: &[Assertion] = &[
             "eleven of the county's thirteen civil subdivisions lost population"
         )],
         answers: &[
+            // Arrived by propagation when the corpus gained life expectancy by tract: the
+            // period node now refuses the reading that Lima's mortality is the county's loss.
+            "It does not follow that Lima's mortality is what makes the county smaller",
             "It does not establish that the county's population decline was caused",
             "It does not establish that either mechanism reaches back before 2020",
             "It does not establish that the decline has ended",
@@ -1205,6 +1214,70 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
         answers: &["This does not establish that these seats go unfilled because nobody stands for them"],
         figures: &[],
+    },
+    Assertion {
+        id: "lima-tracts-live-five-years-less",
+        statement: "A person born in one of Lima's census tracts could expect about five fewer \
+                    years than one born elsewhere in Allen County. Across the county's thirty \
+                    tracts the range is 13.7 years.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-life-expectancy-2010-2015.yml",
+                "From **69.1** years in tract `39003012600` to **82.8** in `39003011300`, on a median of 78.0."
+            ),
+            support!(
+                "measure/allen-county-life-expectancy-2010-2015.yml",
+                "their median is **72.7** years against **79.0** for the fifteen outside, and weighted by tract population, 73.9 against 79.1."
+            ),
+            support!(
+                "measure/allen-county-life-expectancy-2010-2015.yml",
+                "**The two groups barely overlap.** The highest Lima tract is 78.2 and the lowest tract outside the city is 74.0"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lowest tract", value: 69.1, literal: "69.1" },
+            Figure { label: "Lima tracts, median", value: 72.7, literal: "72.7" },
+            Figure { label: "Other tracts, median", value: 79.0, literal: "79.0" },
+            Figure { label: "Highest tract", value: 82.8, literal: "82.8" },
+        ],
+    },
+    Assertion {
+        id: "the-health-gap-is-a-gap-in-conditions",
+        statement: "Thirteen of CDC's forty health measures separate Lima from its county by more \
+                    than their confidence limits allow. Five of the top eight are not diseases, \
+                    and no chronic-disease gap clears at all.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-health-2023.yml",
+                "**Thirteen of the forty differ between Lima and its county by more than their confidence limits allow**, and eleven of the thirteen are Lima the worse."
+            ),
+            support!(
+                "measure/allen-county-health-2023.yml",
+                "Food stamps, food insecurity, housing insecurity, utility shut-off threat and lack of reliable transportation are the measures CDC groups as health-related social needs, and they are where the city and the county separate most."
+            ),
+            support!(
+                "measure/allen-county-health-2023.yml",
+                "Diabetes, high blood pressure, coronary heart disease, stroke, asthma, chronic obstructive pulmonary disease, depression and obesity all estimate higher in Lima and every one of those differences sits inside its own confidence limits."
+            ),
+            support!(
+                "measure/allen-county-health-2023.yml",
+                "CDC's estimate of adults receiving food stamps runs from 4.9 to 46.1 per cent, food insecurity from 7.2 to 41.3, fair or poor health from 13.9 to 40.5, and total tooth loss among the over-65s from 7.6 to 42.7."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Food stamps, lowest tract", value: 4.9, literal: "4.9" },
+            Figure { label: "Food stamps, highest", value: 46.1, literal: "46.1" },
+            Figure { label: "Food insecurity, lowest", value: 7.2, literal: "7.2" },
+            Figure { label: "Food insecurity, highest", value: 41.3, literal: "41.3" },
+            Figure { label: "Fair or poor health, lowest", value: 13.9, literal: "13.9" },
+            Figure { label: "Fair or poor health, highest", value: 40.5, literal: "40.5" },
+            Figure { label: "Teeth lost 65+, lowest", value: 7.6, literal: "7.6" },
+            Figure { label: "Teeth lost 65+, highest", value: 42.7, literal: "42.7" },
+        ],
     },
     Assertion {
         id: "an-address-is-not-a-municipality",

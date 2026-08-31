@@ -1,0 +1,74 @@
+id: a-modelled-estimate-is-not-an-observation
+summary: >-
+  The corpus's first health source publishes a number for every census tract in the county and
+  surveyed almost nobody in any of them. PLACES fits national survey responses to local demographic
+  covariates, and the American Community Survey — this corpus's own source for income, poverty and
+  race — is one of those covariates. So the obvious use of the data, explaining Lima's health by
+  Lima's poverty, is circular. What the corpus may and may not do with a small-area model.
+context: |
+  [CDC PLACES](../catalog/cdc-places.md) gives forty health measures for all 35 of Allen County's
+  2020 census tracts, and the estimates are coherent, plausible and strongly patterned: Lima is
+  worse than its county on thirty of the forty, and the largest gaps are food stamps, food
+  insecurity, tooth loss and housing insecurity. Every one of those has an obvious explanation in
+  facts the corpus already holds — Lima holds 64.1 per cent of the county's poor on a median
+  household income 48 per cent of the township across its southern line.
+
+  That explanation is not available. The dataset's own description names its inputs:
+
+  > Data sources used to generate these model-based estimates are Behavioral Risk Factor
+  > Surveillance System (BRFSS) 2023 or 2022 data, Census Bureau 2020 population data, and American
+  > Community Survey 2019-2023 or 2018–2022 estimates.
+
+  The BRFSS is a telephone survey with a national sample. It does not sample census tracts. The
+  tract estimate is a prediction from a model whose covariates are the tract's demographic and
+  socioeconomic profile — which is the ACS, which is where this corpus's poverty and income figures
+  come from. Reading "Lima's food insecurity is 25.9 per cent because Lima is poor" out of PLACES is
+  reading the model's input back out of its output.
+
+  The corpus's second health source is not like this.
+  [USALEEP](../catalog/nchs-usaleep.md) builds an abridged life table for each tract from **death
+  certificates and population** — records of the event being measured, in the place being measured —
+  smoothed where the counts are small. Both are estimates. Only one of them counts deaths.
+decision: |
+  **Three rules, in order of how often they will bite.**
+
+  1. **State the estimate as the publisher's, never as the place's.** "CDC estimates 25.9 per cent"
+     and not "25.9 per cent of Lima's adults". The claim the corpus can verify is that the model
+     produced the number, and that is what a citation to a modelled dataset supports.
+
+  2. **Never use a modelled estimate as evidence for a relationship whose other term is one of the
+     model's inputs.** Poverty, income, race, age and housing tenure are ACS variables and are
+     therefore inputs here. So PLACES may not be used to show that poor places are sicker, that
+     Lima's health follows its income, or that the lending gap and the health gap have a common
+     cause. It may be used to say what CDC estimates, and to compare one geography's estimate with
+     another's on the same model.
+
+  3. **Prefer an estimate built on records of the event to one built on survey responses about it**,
+     and say which is which in the node. This corpus states a life expectancy for a Lima tract and
+     declines to state a diabetes prevalence for one, and the difference is not confidence — both
+     files publish a standard error — it is what was counted.
+rationale: |
+  **This is the third time the corpus has had to name what a source is rather than what it says.**
+  [A survey is not a count](a-survey-is-not-a-count.yml) separated the American Community Survey's
+  five-year estimates from a census. [A register is not a census](a-register-is-not-a-census.yml)
+  separated the mortgage register from a population. Both of those are still observations of
+  somebody. A small-area model is the first source here that is not: no one in these tracts was
+  asked anything, and the number is real in the sense that a weather forecast is real.
+
+  **The temptation is exactly proportional to how good the data looks.** Forty measures on 35
+  tracts, with confidence limits, summing to the county's own census population — it has every mark
+  of a careful source, and it is careful. The care is in the modelling. Nothing about the file's
+  quality makes its estimates into observations, and the better it looks the more likely the corpus
+  is to forget that.
+
+  **What it costs and what it buys.** It costs the single most quotable finding available: that
+  Lima's health gap is its poverty gap. It buys the ability to say something the corpus could not
+  say at all a phase ago — that the county's tracts differ by 13.7 years of life expectancy, from a
+  file that counted the deaths — and to say it without the circularity that would have made the
+  quotable version worthless.
+
+  The rule has an escape and it should be named. A source that estimates *from records of the
+  outcome* may be used relationally, because the outcome was observed even where the covariates were
+  modelled. USALEEP is such a source. Rule 2 binds PLACES and does not bind it.
+status: accepted
+date: "2026-08-31"

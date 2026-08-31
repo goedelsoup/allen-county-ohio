@@ -1,0 +1,81 @@
+class: measure
+label: CDC's health estimates for Allen County and Lima, 2022–2023
+description: |
+  The corpus's first health source, and it is a model rather than a measurement. [verified] —
+  [CDC PLACES](../../catalog/cdc-places.md), which publishes forty measures for the county, for the
+  City of Lima and for all thirty-five of the county's 2020 census tracts. Every figure below is
+  what CDC estimates, not what anyone counted here; see
+  [a modelled estimate is not an observation](../../decisions/a-modelled-estimate-is-not-an-observation.yml).
+
+  **Thirteen of the forty differ between Lima and its county by more than their confidence limits
+  allow**, and eleven of the thirteen are Lima the worse. [verified] — same source, crude
+  prevalence throughout, comparing the city's interval with the county's.
+
+                                                    county   Lima
+      received food stamps, past 12 months            12.6   25.5
+      food insecurity, past 12 months                 14.8   25.9
+      all teeth lost, adults 65+                      15.4   24.8
+      housing insecurity, past 12 months              12.0   19.7
+      utility shut-off threat, past 12 months          8.7   15.6
+      fair or poor self-rated health                  20.7   27.5
+      current cigarette smoking                       17.0   22.8
+      lack of reliable transportation                  8.1   13.5
+      independent living disability                    8.8   12.1
+      vision disability                                5.1    7.7
+      self-care disability                             4.0    6.1
+      visited a dentist in the past year              58.0   50.0
+      cancer other than skin                           9.0    7.1
+
+  **Five of the top eight are not diseases.** Food stamps, food insecurity, housing insecurity,
+  utility shut-off threat and lack of reliable transportation are the measures CDC groups as
+  health-related social needs, and they are where the city and the county separate most.
+  [verified] — same source.
+
+  **No chronic-disease gap clears the intervals at all.** Diabetes, high blood pressure, coronary
+  heart disease, stroke, asthma, chronic obstructive pulmonary disease, depression and obesity all
+  estimate higher in Lima and every one of those differences sits inside its own confidence limits.
+  [verified] — same source. So on this model the city and the county differ in what people are short
+  of and in what has happened to their teeth, and not measurably in what they have been diagnosed
+  with.
+
+  **The dental pair is the one place two measures corroborate each other.** A quarter of Lima
+  residents over sixty-five have lost all their teeth against a sixth countywide, and half the
+  city's adults saw a dentist in the year against 58 per cent of the county's. [verified] — same
+  source. Both gaps clear their intervals and they point the same way.
+
+  **The tracts spread much further than the city and the county do.** Across the thirty-five, CDC's
+  estimate of adults receiving food stamps runs from 4.9 to 46.1 per cent, food insecurity from 7.2
+  to 41.3, fair or poor health from 13.9 to 40.5, and total tooth loss among the over-65s from 7.6
+  to 42.7. [verified] — same source. One tract, `39003014100`, holds the county's highest estimate
+  on nine of those ten measures on a population of 1,695.
+
+  [open] What is in that tract. The corpus holds no source that describes a neighbourhood, and a
+  tract identifier is not a place name.
+
+  **The file closes on the corpus's own count.** The thirty-five tract populations sum to 102,206,
+  which is the county's 2020 census total and the closure this corpus has used since its block
+  composition phase. [verified] — same source and
+  [the 2020 count](allen-county-population-2020-census.yml).
+properties:
+  parameter: modelled prevalence of health measures, county and city
+  value: "25.9"
+  unit: per cent of Lima adults food insecure, as estimated
+  as_of: "2023"
+  method: |
+    Crude prevalence only, because the tract file publishes nothing else and a crude figure must not
+    be set against an age-adjusted one. Thirty-five of the forty measures rest on BRFSS 2023 and
+    five — all teeth lost, dental visits, mammograms, colorectal screening, short sleep — on BRFSS
+    2022. "Differs by more than the confidence limits allow" means the city's published interval and
+    the county's do not overlap, which is a weaker test than a significance test and is the only one
+    these published fields support. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cdc-places.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cdc-places.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

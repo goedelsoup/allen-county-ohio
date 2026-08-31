@@ -46,6 +46,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-housing-units-2020.yml
+  - ../corpus/measure/allen-county-life-expectancy-2010-2015.yml
   - ../corpus/measure/allen-county-population-2020-census.yml
   - ../corpus/measure/allen-county-population-2020.yml
   - ../corpus/measure/allen-county-turnout-2020.yml
