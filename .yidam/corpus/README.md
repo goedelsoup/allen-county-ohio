@@ -31,9 +31,11 @@ Sorted by: kind, then alphabetically.
 | [ohio-senate-district-12-2023.yml](division/ohio-senate-district-12-2023.yml) | division | Ohio Senate District 12 (2023 map) | 2 | 1v / 2i / 1o | 31 |
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 4v / 0i / 1o | 41 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
+| [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 8v / 7i / 2o | 117 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
+| [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 3 | 4v / 1i / 1o | 44 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 5v / 1i / 1o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
@@ -186,7 +188,7 @@ Sorted by: kind, then alphabetically.
 | [cory-alan-noonan.yml](person/cory-alan-noonan.yml) | person | Cory Alan Noonan | 2 | 2v / 1i / 0o | 21 |
 | [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
 | [destiny-rae-caldwell.yml](person/destiny-rae-caldwell.yml) | person | Destiny Rae Caldwell | 2 | 1v / 1i / 0o | 21 |
-| [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 1v / 1i / 1o | 20 |
+| [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 2v / 1i / 1o | 26 |
 | [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 18 |
 | [elias-a-bogart.yml](person/elias-a-bogart.yml) | person | Elias A. Bogart | 2 | 1v / 1i / 0o | 18 |
 | [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 22 |
@@ -203,7 +205,7 @@ Sorted by: kind, then alphabetically.
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
 | [jeffrey-l-reed.yml](person/jeffrey-l-reed.yml) | person | Jeffrey L. Reed | 2 | 1v / 1i / 1o | 23 |
 | [jennifer-moree-mcbride.yml](person/jennifer-moree-mcbride.yml) | person | Jennifer Moree McBride | 2 | 1v / 1i / 0o | 21 |
-| [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 1v / 1i / 1o | 20 |
+| [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 3v / 1i / 1o | 31 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
 | [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
@@ -245,7 +247,7 @@ Sorted by: kind, then alphabetically.
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 7v / 2i / 1o | 60 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 9v / 1i / 1o | 70 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 4v / 1i / 1o | 49 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 5v / 1i / 2o | 57 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 5v / 1i / 1o | 58 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 7v / 0i / 1o | 52 |
@@ -254,7 +256,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 8v / 0i / 1o | 55 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 26v / 5i / 1o | 175 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 28v / 5i / 1o | 184 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 8v / 1i / 1o | 58 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
@@ -267,8 +269,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 4v / 1i / 2o | 63 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 1v / 2i / 1o | 43 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
-| [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 2o | 39 |
-| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 4 | 9v / 6i / 1o | 108 |
+| [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 1o | 56 |
+| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 9v / 6i / 1o | 111 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 1v / 0i / 2o | 43 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
@@ -328,8 +330,8 @@ Sorted by: kind, then alphabetically.
 | [sheriff-1923-harvey-b-crosson.yml](tenure/sheriff-1923-harvey-b-crosson.yml) | tenure | Harvey B. Crosson, Sheriff of Allen County, 1923–1927 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1927-john-w-cook.yml](tenure/sheriff-1927-john-w-cook.yml) | tenure | John W. Cook, Sheriff of Allen County, 1927–1929 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1929-benjamin-s-miller.yml](tenure/sheriff-1929-benjamin-s-miller.yml) | tenure | Benjamin S. Miller, Sheriff of Allen County, 1929–1931 | 3 | 1v / 0i / 0o | 22 |
-| [sheriff-1931-jess-l-sarber.yml](tenure/sheriff-1931-jess-l-sarber.yml) | tenure | Jess L. Sarber, Sheriff of Allen County, 1931–1933 | 3 | 1v / 0i / 0o | 22 |
-| [sheriff-1933-donald-f-sarber.yml](tenure/sheriff-1933-donald-f-sarber.yml) | tenure | Donald F. Sarber, Sheriff of Allen County, 1933–1935 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1931-jess-l-sarber.yml](tenure/sheriff-1931-jess-l-sarber.yml) | tenure | Jess L. Sarber, Sheriff of Allen County, 1931–1933 | 3 | 1v / 0i / 0o | 27 |
+| [sheriff-1933-donald-f-sarber.yml](tenure/sheriff-1933-donald-f-sarber.yml) | tenure | Donald F. Sarber, Sheriff of Allen County, 1933–1935 | 3 | 1v / 1i / 0o | 28 |
 | [sheriff-1935-ralph-s-marshall.yml](tenure/sheriff-1935-ralph-s-marshall.yml) | tenure | Ralph S. Marshall, Sheriff of Allen County, 1935–1937 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1937-william-v-daley.yml](tenure/sheriff-1937-william-v-daley.yml) | tenure | William V. Daley, Sheriff of Allen County, 1937–1945 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1945-william-r-dailey.yml](tenure/sheriff-1945-william-r-dailey.yml) | tenure | William R. Dailey, Sheriff of Allen County, 1945–1953 | 3 | 1v / 0i / 0o | 22 |
