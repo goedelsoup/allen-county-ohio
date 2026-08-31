@@ -1,0 +1,42 @@
+class: organization
+label: Ohio State Beauty Academy
+description: |
+  The smallest of the county's six post-secondary institutions and its only private for-profit
+  one: 96 students in autumn 2023, 120 over the twelve months, and 44 credentials awarded, all of
+  them in personal and culinary services. [verified] —
+  [IPEDS](../../catalog/ipeds.md), 2023-24 collection.
+
+  **It belongs to the University of Northwestern Ohio.** IPEDS names that university as its parent
+  system, and the Census Bureau puts its address at 1760 North Eastown Road in the same block as
+  the university's own. [verified] — same source and
+  [the Census geocoder](../../catalog/census-tiger-landmarks.md); see
+  [the university](university-of-northwestern-ohio.yml). A for-profit academy inside a not-for-
+  profit university's system is an arrangement worth noticing and not one this corpus can explain
+  from a directory row. [inference]
+
+  Its name has nothing to do with the Ohio State University, whose Lima campus is
+  [a different institution twelve kilometres east](ohio-state-university-at-lima.yml). [inference] —
+  the distance computed here from the two addresses in the same file.
+
+  Every one of its students is full-time, and its enrolment has more than halved since 2010 — 270
+  to 120, the steepest fall of the six. [verified] — same source and
+  [the enrolment series](../measure/allen-county-college-enrollment-2010-2023.yml).
+
+  It is in the corpus because a county reference that lists five of six institutions has chosen
+  which ones count, and the choice would fall on the smallest, the newest and the for-profit one
+  every time. [inference] See
+  [node worthiness is a property of the member](../../decisions/node-worthiness-is-a-property-of-the-member.yml).
+
+  [open] Whether it is licensed as a cosmetology school by the Ohio Board of Cosmetology, and under
+  what name. The federal file gives an alias, `OSBA`, and no state licence number.
+properties:
+  org_type: college
+  industry: cosmetology instruction
+  also_known_as: OSBA
+links:
+  - target: ../place/american-township.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/census-tiger-landmarks.md
+  - target: ../organization.ont.yml
+    relationship: instance-of

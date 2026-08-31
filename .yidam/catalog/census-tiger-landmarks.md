@@ -22,6 +22,12 @@ location:
 used-by:
   - ../corpus/measure/allen-county-group-quarters-2020.yml
   - ../corpus/measure/allen-county-health-2023.yml
+  - ../corpus/measure/allen-county-higher-education-2023.yml
+  - ../corpus/organization/james-a-rhodes-state-college.yml
+  - ../corpus/organization/ohio-state-beauty-academy.yml
+  - ../corpus/organization/ohio-state-university-at-lima.yml
+  - ../corpus/organization/university-of-northwestern-ohio.yml
+  - ../corpus/place/bath-township.yml
   - ../corpus/question/who-lives-in-the-county-without-housing.yml
   - ../corpus/site/allen-correctional-institution.yml
   - ../corpus/site/allen-county-courthouse.yml

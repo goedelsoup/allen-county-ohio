@@ -822,6 +822,26 @@
       ]
     },
     {
+      "id": "place-allen-county::post-secondary-students-enrolled,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "post-secondary students enrolled, Allen County",
+      "unit": "students, autumn headcount",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-higher-education-2023.yml",
+          "label": "Higher education in Allen County, 2023",
+          "as_of": "2023-10-15",
+          "value": 8615.0,
+          "published": "8615",
+          "tier": "verified",
+          "source": "catalog/ipeds.md",
+          "method": "Integrated Postsecondary Education Data System, 2023-24 collection. Institutions selected by the directory file's `COUNTYCD` equal to 39003, which returns six, all of them active. Autumn headcount and full-time equivalent from the derived enrolment file; twelve-month unduplicated headcount from the twelve-month enrolment file at level 1, all students; awards from the completions file, first majors only, with the institution-total rows excluded; housing capacity and price from the institutional characteristics files. [verified] Award levels are the file's own eight categories rather than a simplification, because two of them — certificates under twelve weeks and certificates of twelve weeks to a year — are together 38 per cent of everything this county awards, and a table that collapses them into \"certificates\" hides the shape of what two of the six institutions do. [inference] Both totals close: the six institutions' awards sum to 2,918 by institution and by level, and to the same figure across the field families. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::presidential-votes-cast",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1078,6 +1098,26 @@
           "tier": "verified",
           "source": "catalog/census-1950-number-of-inhabitants-ohio.md",
           "method": "Read from rendered images of a 300-dpi scan; the volume's own OCR text layer was used as a second reader and its column association across a three-up table was not trusted. Checked against three arithmetic closures the table itself supplies. The 1940 and 1930 columns are on 1950 boundaries where the source could put them there and exclude Lima entirely; the `value` above is the twelve-township sum for 1930, which is the county less the city. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::twelve-month-unduplicated-headcount-at-Allen-County-institutions",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "twelve-month unduplicated headcount at Allen County institutions",
+      "unit": "students",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-college-enrollment-2010-2023.yml",
+          "label": "Allen County college enrolment, 2010-2023",
+          "as_of": "2023",
+          "value": 10789.0,
+          "published": "10789",
+          "tier": "verified",
+          "source": "catalog/ipeds.md",
+          "method": "IPEDS twelve-month enrolment, level 1 (all students), summed over the six institutions the directory places in county 39003. The collection year labels the academic year ending in it, so 2023 is 2022-23. [verified] The file's column layout changes across the period and the change is silent: before 2020 the level code is `EFFYLEV` and from 2020 it is `EFFYALEV`, with `EFFYLEV` retained beside it and carrying a different code set. Reading the old name in the new files returns nothing for every institution, which looks exactly like an institution that closed. The values are also space- padded. Both are noted here because the first version of this table read four years as zero. [inference] Twelve-month headcount is used rather than autumn headcount because two of the six institutions are non-degree-granting and enrol in cohorts through the year: Apollo Career Center's autumn headcount is 527 against a twelve-month 1,439, and an autumn series would misstate its size by a factor of three. [inference]"
         }
       ]
     },
@@ -3875,6 +3915,154 @@
           "node": "measure/allen-county-group-quarters-2020.yml",
           "node_label": "Allen County group quarters, 2020",
           "span": "**Two of the county's blocks are its two state prisons, and the census drew the block on the fence.** Block `390030112001004` holds 1,360 people, all of them in adult correctional facilities; the Census Bureau's own landmark file gives *Allen Correctional Instn* the same land area to the square metre — 364,210 — and the same internal point to seven decimal places, `+40.7751673 -084.0996846`.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-tiger-landmarks.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-county-lost-a-third-of-its-college-students",
+      "statement": "Allen County's six colleges enrolled 16,702 students in 2010 and 10,789 in 2023 — a fall of 35.4 per cent, against a county that fell 3.9 per cent between its last two censuses. All six lost students.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-college-enrollment-2010-2023.yml",
+          "node_label": "Allen County college enrolment, 2010-2023",
+          "span": "**The county's colleges have lost a third of their students in thirteen years, and all six of them have lost students.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ipeds.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-college-enrollment-2010-2023.yml",
+          "node_label": "Allen County college enrolment, 2010-2023",
+          "span": "**16,702 to 10,789 is a fall of 35.4 per cent.** [inference] — computed here. Institution by institution: the Ohio State Beauty Academy down 55.6 per cent, Ohio State's Lima campus 47.9, Apollo Career Center 45.7, the University of Northwestern Ohio 36.6, Bluffton University 38.1, and Rhodes State College 23.5 — the smallest fall, at the largest institution.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-college-enrollment-2010-2023.yml",
+          "node_label": "Allen County college enrolment, 2010-2023",
+          "span": "Allen County went from 106,331 people in 2010 to 102,206 in 2020, a fall of 3.9 per cent.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-college-enrollment-2010-2023.yml",
+          "node_label": "Allen County college enrolment, 2010-2023",
+          "span": "The fall from 2010 to 2019 is 4,017 students, or 24.0 per cent, and it is complete before Covid",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Ohio State Beauty Academy",
+          "value": 55.6,
+          "literal": "55.6"
+        },
+        {
+          "label": "Ohio State-Lima",
+          "value": 47.9,
+          "literal": "47.9"
+        },
+        {
+          "label": "Apollo Career Center",
+          "value": 45.7,
+          "literal": "45.7"
+        },
+        {
+          "label": "Bluffton University",
+          "value": 38.1,
+          "literal": "38.1"
+        },
+        {
+          "label": "Univ of Northwestern Ohio",
+          "value": 36.6,
+          "literal": "36.6"
+        },
+        {
+          "label": "Rhodes State College",
+          "value": 23.5,
+          "literal": "23.5"
+        }
+      ]
+    },
+    {
+      "id": "in-state-tuition-here-runs-eightfold",
+      "statement": "A year of tuition and fees in Allen County costs between $4,560 and $35,498 depending which of its colleges you attend.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-higher-education-2023.yml",
+          "node_label": "Higher education in Allen County, 2023",
+          "span": "**In-state tuition and fees run from $4,560 to $35,498, an eightfold spread.** Rhodes State $4,560, Ohio State-Lima $8,937, Northwestern Ohio $11,352, Bluffton $35,498.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-tiger-landmarks.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Rhodes State College",
+          "value": 4560.0,
+          "literal": "4,560"
+        },
+        {
+          "label": "Ohio State-Lima",
+          "value": 8937.0,
+          "literal": "8,937"
+        },
+        {
+          "label": "Univ of Northwestern Ohio",
+          "value": 11352.0,
+          "literal": "11,352"
+        },
+        {
+          "label": "Bluffton University",
+          "value": 35498.0,
+          "literal": "35,498"
+        }
+      ]
+    },
+    {
+      "id": "the-second-largest-field-of-study-is-not-a-local-one",
+      "statement": "Allen County's colleges award 2,918 credentials a year, of which 85.1 per cent are below a bachelor's degree. The largest field is health; the second is vehicle repair, taught at one institution that draws two thirds of its entering students from outside Ohio.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-higher-education-2023.yml",
+          "node_label": "Higher education in Allen County, 2023",
+          "span": "Six post-secondary institutions, 8,615 students in the autumn and 10,789 over the twelve months, and 2,918 credentials awarded in the academic year.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ipeds.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-higher-education-2023.yml",
+          "node_label": "Higher education in Allen County, 2023",
+          "span": "2,482 of the 2,918 are below the baccalaureate, which is 85.1 per cent.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-tiger-landmarks.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-higher-education-2023.yml",
+          "node_label": "Higher education in Allen County, 2023",
+          "span": "**Every one of the 706 awards in vehicle repair is from one institution, and two thirds of its entering students come from outside Ohio.** Of 877 first-time students at the University of Northwestern Ohio in autumn 2023, 295 were Ohio residents and 582 were not — 101 from Michigan, 83 from Indiana, 48 from Pennsylvania, 31 from New York. At Rhodes State 432 of 436 were Ohio residents, and at Ohio State's Lima campus 255 of 263.",
           "tier": "verified",
           "sources": [
             "catalog/census-tiger-landmarks.md"

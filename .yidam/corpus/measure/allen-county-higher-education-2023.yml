@@ -1,0 +1,114 @@
+class: measure
+label: Higher education in Allen County, 2023
+description: |
+  Six post-secondary institutions, 8,615 students in the autumn and 10,789 over the twelve months,
+  and 2,918 credentials awarded in the academic year. [verified] —
+  [IPEDS](../../catalog/ipeds.md), 2023-24 directory and the enrolment, completions and
+  characteristics surveys for the same cycle.
+
+      institution                        control          highest   autumn  12-month  beds  awards
+      James A. Rhodes State College      public           bachelor   3,968     4,247     -     768
+      University of Northwestern Ohio    private NFP      master     2,606     3,200 1,684   1,104
+      Ohio State University-Lima Campus  public           bachelor     740       983     -     140
+      Bluffton University                private NFP      master       678       800   780     190
+      Apollo Career Center               public, <2 yr    none         527     1,439     -     672
+      Ohio State Beauty Academy          private FP       none          96       120     -      44
+      total                                                          8,615    10,789 2,464   2,918
+
+  **The county's largest college is a two-year one and its students are mostly part-time.**
+  [Rhodes State](../organization/james-a-rhodes-state-college.yml) enrols 3,968 in the autumn, of
+  whom 615 are full-time and 3,353 are not; its full-time equivalent is 1,968, half its headcount.
+  [verified] — same source. Every other institution in the county is majority full-time.
+
+  **Two of the six share an address.** Rhodes State and
+  [Ohio State's Lima campus](../organization/ohio-state-university-at-lima.yml) are both at 4240
+  Campus Drive, in [Bath Township](../place/bath-township.yml) outside the city whose name they
+  carry, and the Census Bureau puts both in the same block. [verified] — same source and
+  [the Census geocoder](../../catalog/census-tiger-landmarks.md). A third pair share a block too:
+  the Ohio State Beauty Academy is at 1760 North Eastown Road, in the block that holds
+  [the University of Northwestern Ohio](../organization/university-of-northwestern-ohio.yml)'s own
+  address, and IPEDS records it as a member of that university's system. [verified] — same source.
+
+  **Five sixths of what the county awards is below a bachelor's degree.**
+
+      associate's degrees                     1,110
+      certificates of under 12 weeks            654
+      certificates of 12 weeks to a year        452
+      bachelor's degrees                        375
+      awards of one to two years                242
+      master's degrees                           58
+      awards of two to four years                24
+      post-baccalaureate certificates             3
+      total                                   2,918
+
+  [verified] — same source, first majors. 2,482 of the 2,918 are below the baccalaureate, which is
+  85.1 per cent. [inference] — computed here.
+
+  **And the largest field is health, with vehicle repair a close second.**
+
+      health professions                                        757   25.9%
+      mechanic and repair technologies                          706   24.2%
+      business and management                                   375   12.9%
+      engineering technologies                                  232    8.0%
+      homeland security and protective services                 134    4.6%
+      transportation                                            130    4.5%
+      agriculture                                                96    3.3%
+      personal and culinary services                             93    3.2%
+      education                                                  67    2.3%
+      liberal arts and general studies                           57    2.0%
+
+  [verified] — same source, completions by two-digit CIP family, first majors, all award levels.
+  Health care is also the county's largest employer, at 9,767 jobs; see
+  [what work pays](allen-county-wages-2024.yml). Those two facts agree, and the second-largest
+  field does not agree with anything in the county's labour market. [inference]
+
+  **Every one of the 706 awards in vehicle repair is from one institution, and two thirds of its
+  entering students come from outside Ohio.** Of 877 first-time students at the University of
+  Northwestern Ohio in autumn 2023, 295 were Ohio residents and 582 were not — 101 from Michigan,
+  83 from Indiana, 48 from Pennsylvania, 31 from New York. At Rhodes State 432 of 436 were Ohio
+  residents, and at Ohio State's Lima campus 255 of 263. [verified] — same source, residence of
+  first-time students.
+
+  So the county's second-largest field of study is not a local labour supply and should not be
+  read as one; see
+  [located here is not of here](../../decisions/located-here-is-not-of-here.yml). [inference]
+
+  **In-state tuition and fees run from $4,560 to $35,498, an eightfold spread.** Rhodes State
+  $4,560, Ohio State-Lima $8,937, Northwestern Ohio $11,352, Bluffton $35,498. Out of state the
+  two public institutions charge $9,120 and $34,443; the two private ones charge the same to
+  everyone. [verified] — same source, 2023-24 academic year charges. Apollo Career Center and the
+  Beauty Academy price by programme rather than by year and are not in that table.
+
+  [open] What any of it costs after aid, and what any of it earns. IPEDS publishes net price by
+  income band and the College Scorecard publishes post-enrolment earnings by institution and by
+  field; neither is held here.
+
+  [open] Who teaches at them. The staff and salary surveys are part of the same collection and
+  were not taken.
+properties:
+  parameter: post-secondary students enrolled, Allen County
+  value: "8615"
+  unit: students, autumn headcount
+  as_of: "2023-10-15"
+  method: |
+    Integrated Postsecondary Education Data System, 2023-24 collection. Institutions selected by
+    the directory file's `COUNTYCD` equal to 39003, which returns six, all of them active. Autumn
+    headcount and full-time equivalent from the derived enrolment file; twelve-month unduplicated
+    headcount from the twelve-month enrolment file at level 1, all students; awards from the
+    completions file, first majors only, with the institution-total rows excluded; housing capacity
+    and price from the institutional characteristics files. [verified]
+
+    Award levels are the file's own eight categories rather than a simplification, because two of
+    them — certificates under twelve weeks and certificates of twelve weeks to a year — are
+    together 38 per cent of everything this county awards, and a table that collapses them into
+    "certificates" hides the shape of what two of the six institutions do. [inference]
+
+    Both totals close: the six institutions' awards sum to 2,918 by institution and by level, and
+    to the same figure across the field families. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ipeds.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
