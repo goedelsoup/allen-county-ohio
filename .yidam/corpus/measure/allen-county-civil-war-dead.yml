@@ -1,0 +1,86 @@
+class: measure
+label: Allen County's Civil War dead, counted from the roster
+description: |
+  The 1885 roster records the fate of each of its 1,920 men and never totals them. This is that
+  total, computed. [inference] — counted from both digitizations of
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), Chapter IX; method in
+  the properties below and in
+  [a printed list is a dataset](../../decisions/a-printed-list-is-a-dataset.yml).
+
+                                    scan B    scan A
+      records parsed                 1,877     1,745      against 1,920 printed
+      with a death recorded            170       164
+        killed, or mortally             37        35
+        of wounds                        5         5
+        drowned or lost at sea           3         3
+        died, cause not stated         125       121
+
+  **At least 164 of the 1,920 did not come home** — 8.5 per cent of the men of record — and the
+  figure is a floor, not a total. The lower of two independent readings of the same page is taken,
+  and neither reading recovers every entry. [inference] — computed here.
+
+  **About one death in five was in action.** Thirty-five killed and five of wounds against one
+  hundred and twenty-one that the roster records with a place and a date and no cause. Those
+  places are hospitals and camps. [inference] — computed here. It is the ordinary arithmetic of
+  that war seen from one county, and the roster is where a county keeps it.
+
+  **More Allen County men died at Corinth, Mississippi, than anywhere else.** Both scans give
+  eleven, and both give nine at Atlanta; Nashville is nine in one reading and ten in the other.
+  [inference] — computed here, counting only a place named within a clause of the word that
+  records the death. Corinth is where the 81st Ohio — the regiment this county filled most —
+  fought on October 3 and 4, 1862 and then wintered, and the eleven are a mixture of both: some
+  killed on those two days, some dead of disease in the camp the following spring.
+
+  **Three deaths in the list are not military at all, and both scans carry them word for word.**
+  Abraham Baumgardner of the 81st drowned at Hamburgh, Tennessee, on August 25, 1862; B. F. Burget
+  of the 180th drowned near Fort Monroe on April 23, 1865, a fortnight after Appomattox; and Joseph
+  Harter of McLaughlin's Squad was "lost on Str. Sultana", the steamer that burned and sank above
+  Memphis on April 27, 1865 carrying released prisoners home. [verified] — the 1885 history, both
+  scans.
+
+  The *Sultana* entry is where the two-scan rule earns its keep: the cleaner scan reads the year as
+  **1805** and the other reads **1865**. [inference] — computed here; see
+  [two scans of one book](../../decisions/two-scans-of-one-book.yml). The same eight-for-nought
+  substitution runs through that scan's whole military chapter, which is why no date in it is taken
+  from one reading alone.
+
+  **Three men died in Confederate prisons**, two at Andersonville and one at Belle Isle, and the
+  roster names them the way it names everything else — in the field where a discharge date would
+  go. [verified] — the 1885 history.
+
+  [open] The true total. A roster compiled twenty years after the close, from memory and from what
+  survivors brought in, undercounts the dead of any county, and this parse then undercounts the
+  roster. The direction of both errors is known and their size is not.
+
+  [open] What the survivors died of later. The 1885 book is silent, the 1890 census's special
+  schedule of surviving Union veterans is not held, and the corpus has no count of Allen County
+  veterans at any date after the war.
+properties:
+  parameter: Allen County men recorded as dying in United States service, Civil War
+  value: "164"
+  unit: men, a floor
+  as_of: "1885"
+  method: |
+    Both archive.org digitizations of the 1885 county history were parsed into roster records —
+    a capitalised surname after a sentence break, followed by a given name — over the five
+    sections of Chapter IX's roster, filtered against a stop list of place names, months, unit
+    words and running heads. Scan B yields 1,877 records and scan A 1,745, against a printed
+    1,920.
+
+    A record counts as a death if it carries any of: `died`, an abbreviated `d.` followed by a
+    date or a place, `killed`, `k'd`, `k'l'd`, `k.` before a place, `mortally`, `drowned`, or
+    `lost on`. The published value is the **lower** of the two scans, because every failure mode
+    here — an unrecognised entry, an OCR-mangled abbreviation, a roster silent about a man's
+    fate — pushes the count down, and none pushes it up. [inference]
+
+    Place of death is counted only where the place name falls within one clause of the word
+    recording the death, so that a man who enlisted at one place and died at another is not
+    counted twice. The two scans agree exactly at Corinth and Atlanta and differ by one at
+    Nashville. Regiment counts are **not** published: the two scans differ on those by up to a
+    factor of two, because one of them reads "81st" as "8l8t". [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

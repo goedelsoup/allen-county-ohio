@@ -1,0 +1,106 @@
+class: measure
+label: Allen County in United States service, 1861-1865
+description: |
+  Every figure the county's own histories print for its Civil War service, with what each one
+  actually counts. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), Chapter IX, Military
+  History, pages 318-378.
+
+      776          traced into the roster of the 100,224 men Ohio contributed in 1861
+      900-1,000    turned out up to September 25, 1861, in seven named companies
+      1,100-1,200  mustered into service before the close of 1861
+      3,792        the enrollment, against which 1,411 had enlisted by September 1, 1862
+      163          Allen County men in the Squirrel Hunters at Cincinnati, 1862
+      1,920        the total number of troops whose names are of record
+
+  **The 1,920 is a roster total and the roster is printed**, forty-nine pages of it: field officers
+  by rank, then captains, first and second lieutenants, then the non-commissioned officers and
+  privates, alphabetically, each with regiment, date of enlistment and date of death, resignation,
+  transfer or discharge. The book states the total twice, in the same paragraph, and gives the same
+  number both times. [verified] — same source.
+
+  **An independent parse of the roster recovers 1,877 of the 1,920 — 97.8 per cent.** The other
+  digitization of the same book recovers 1,745, or 90.9 per cent. Neither reaches the printed total
+  and both are the same order; the count is a check on the number, not a replacement for it.
+  [inference] — computed here; see
+  [a printed list is a dataset](../../decisions/a-printed-list-is-a-dataset.yml).
+
+  **The enrollment is the county's own and not the district's.** The 3,792 is stated in a sentence
+  about the Eighth Military District, which was more than one county. Against the county's 19,185
+  people in 1860 it is 19.8 per cent, which is what a militia enrollment of men eighteen to
+  forty-five comes to; against a district of eight counties it would be a twelfth of that.
+  [inference] — computed here against
+  [the 1860 count](allen-county-population-1830-1900.yml).
+
+  **The regiments the county filled are not the regiments Camp Lima raised.** Sorted by how often
+  each appears in the roster, the order is the same in both digitizations: the **81st** Ohio
+  Volunteer Infantry first by a wide margin, then the **118th**, the **151st** Ohio National Guard,
+  the **180th**, the **99th** and the **54th**. [inference] — computed here. The 99th and the 118th
+  were the two ordered mustered at [Camp Lima](../site/camp-lima.yml); the 81st, which the county
+  filled most, was not.
+
+  **The 776 was corrupted in transmission, and the corruption is datable.** The 1885 book says the
+  776 are the Allen County men "whose names occur in the roster of the 100,224 men, contributed by
+  Ohio, **in 1861**". [verified] — the 1885 history. Twenty-one years later the year is gone: "Of
+  the 100,224 common soldiers which Ohio sent to the war, Allen County furnished 776." [verified] —
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). Fifteen years after
+  that the figure is a whole-war total in conflict with another: "one account says Allen County had
+  776 soldiers in the Civil war, while another says the official report, October 1, 1863, accredits
+  1,200 men to the army and navy from Allen County". [verified] —
+  [the 1921 history](../../catalog/rusler-allen-county-1921.md).
+
+  There is no conflict. A first-year cohort and a two-and-a-half-year credit are different
+  measurements, and the 1921 book is setting them against each other because the 1906 book dropped
+  four words. [inference] — the three passages above, read together.
+
+  **The same three books do it a second time with the sixty hours.** The 1885 book says of the
+  *First Ohio Volunteer Infantry* that "within sixty hours after Lincoln's call for men, the First
+  was en route to Washington" — a fact about a state regiment, in a list of state regiments.
+  [verified] — the 1885 history. The 1906 book: "in just 60 hours thereafter soldiers from this
+  county were en route for Washington." [verified] — the 1906 history. The 1921 book moves the
+  clock's start from Lincoln's call to the attack on Fort Sumter: "within sixty hours after the
+  attack on Fort Sumter it had a company of soldiers en route." [verified] — the 1921 history.
+
+  A statewide fact became a county one, and then acquired three extra days. What actually happened
+  is in the 1921 book, four sentences later, dated: Fort Sumter fired on, the printer Charles N.
+  Moyer to Columbus on April 16, the company ready on April 19 and inducted on April 22 — a week
+  after Lincoln's call, not sixty hours. [inference] — the 1921 history, read against itself. See
+  [the first company](../event/the-first-lima-company-1861.yml).
+
+  [open] What the 1906 book was actually quoting. It introduces the whole statistical passage as
+  "From the 'Allen County History' of 1875 we take the following", and then prints the 1885 book's
+  text word for word — including its roster total, which an 1875 book could not have had. Either
+  the attribution is wrong or both books drew on a third the catalog does not hold. The corpus
+  cannot tell which from the two volumes it has, and the 1906 book is therefore not an independent
+  witness to any figure in this node.
+
+  [open] The names. The roster holds 1,920 of them and this corpus has entered none of them as
+  nodes, which is a deliberate limit and not an oversight: the corpus counts the list and quotes
+  from it, and does not copy it.
+properties:
+  parameter: Allen County men in United States service, Civil War
+  value: "1920"
+  unit: men named in the roster
+  as_of: "1885"
+  method: |
+    Read from the military chapter of the 1885 county history, whose roster covers 1861-1865 and
+    was compiled twenty years after the close. The 1,920 is the compiler's own total of his own
+    list, stated twice.
+
+    The check is a parse of the roster text from both archive.org digitizations of the book:
+    entries are detected as a capitalised surname following a sentence break and followed by a
+    given name, filtered against a stop list of place names, months, unit words and running heads,
+    and validated against the alphabetical order the roster is printed in. Scan B yields 1,877
+    records and scan A 1,745, against 1,920 printed. [inference]
+
+    The regiment ranking is computed from the same records and is reported as a ranking rather
+    than as counts, because the two scans disagree on the counts by up to a factor of two — scan A
+    renders "81st" variously as "8l8t" and "Slst" — and agree on the order of the first six.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
