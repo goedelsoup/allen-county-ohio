@@ -1,0 +1,69 @@
+/*
+ * Allen County Atlas — type.
+ *
+ * Ported from the design system (tokens/typography.css). Serif-first: a display
+ * letterpress face for titles, a warm garalde for prose, a humanist sans for
+ * interface text, small caps for labels, mono for data.
+ *
+ * The families are Google Fonts substitutions — no binaries were supplied with
+ * the brief. The webfont link lives in Base.astro; swap both for self-hosted
+ * files when real faces arrive and nothing else changes.
+ *
+ * Floors: never below 13.5px for controls, never below 12px for labels.
+ */
+
+:root {
+  /* families */
+  --font-display: 'IM Fell English', 'EB Garamond', georgia, serif;
+  --font-serif: 'EB Garamond', georgia, 'Times New Roman', serif;
+  --font-sans: 'Alegreya Sans', optima, 'Gill Sans', sans-serif;
+  --font-smallcaps: 'Alegreya Sans SC', 'Alegreya Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, menlo, monospace;
+
+  /* sizes — serif-first ramp, 1.22 ratio */
+  --size-display-xl: 64px;
+  --size-display-l: 48px;
+  --size-display-m: 36px;
+  --size-title: 28px;
+  --size-heading: 22px;
+  --size-subhead: 19px;
+  --size-body-l: 19px;
+  --size-body: 17px;
+  --size-body-s: 15px;
+  --size-caption: 13.5px;
+  --size-label: 12px;
+  --size-micro: 11px;
+
+  /* line heights */
+  --leading-display: 1.06;
+  --leading-title: 1.18;
+  --leading-body: 1.62;
+  --leading-tight: 1.34;
+  --leading-mono: 1.45;
+
+  /* tracking */
+  --tracking-display: 0.005em;
+  --tracking-body: 0;
+  --tracking-smallcaps: 0.09em;
+  --tracking-label: 0.14em;
+  --tracking-mono: 0.02em;
+
+  /* weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* measures */
+  --measure-prose: 68ch;
+  --measure-narrow: 46ch;
+
+  /* semantic type roles */
+  --type-page-title: var(--weight-regular) var(--size-display-l) / var(--leading-display) var(--font-display);
+  --type-entry-title: var(--weight-regular) var(--size-title) / var(--leading-title) var(--font-display);
+  --type-section: var(--weight-semibold) var(--size-heading) / var(--leading-tight) var(--font-serif);
+  --type-prose: var(--weight-regular) var(--size-body) / var(--leading-body) var(--font-serif);
+  --type-ui: var(--weight-medium) var(--size-body-s) / var(--leading-tight) var(--font-sans);
+  --type-eyebrow: var(--weight-medium) var(--size-label) / 1.2 var(--font-smallcaps);
+  --type-data: var(--weight-regular) var(--size-caption) / var(--leading-mono) var(--font-mono);
+}

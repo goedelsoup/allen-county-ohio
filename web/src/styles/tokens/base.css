@@ -1,0 +1,113 @@
+/*
+ * Allen County Atlas — element resets.
+ *
+ * Ported from the design system (tokens/base.css). Headings are regular weight
+ * because the display face carries the emphasis; the focus ring is a parchment
+ * gap plus a rubric ring and appears on every interactive element.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-color: var(--surface-page);
+  color: var(--text-body);
+  font: var(--type-prose);
+  text-wrap: pretty;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--text-strong);
+  font-weight: var(--weight-regular);
+}
+
+h1 {
+  font: var(--type-page-title);
+}
+
+h2 {
+  font: var(--type-entry-title);
+}
+
+h3 {
+  font: var(--type-section);
+}
+
+h4 {
+  font: var(--weight-semibold) var(--size-subhead) / var(--leading-tight) var(--font-serif);
+}
+
+p {
+  margin: 0 0 var(--space-6);
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--ink-200);
+  transition: var(--transition-control);
+}
+
+a:hover {
+  color: var(--text-link-hover);
+  text-decoration-color: currentcolor;
+}
+
+a:active {
+  color: var(--rubric-700);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+small {
+  font-size: var(--size-caption);
+}
+
+hr {
+  border: 0;
+  border-top: var(--border-hairline);
+  margin: var(--space-8) 0;
+}
+
+::selection {
+  background: var(--ochre-100);
+  color: var(--ink-900);
+}
+
+.eyebrow {
+  font-family: var(--font-smallcaps);
+  font-size: var(--size-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.data {
+  font: var(--type-data);
+  letter-spacing: var(--tracking-mono);
+  color: var(--text-muted);
+}
