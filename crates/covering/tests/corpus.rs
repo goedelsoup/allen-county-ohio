@@ -189,6 +189,20 @@ fn every_place_and_site_in_the_corpus_answers_and_lands_under_the_county() {
     assert!(ids.len() >= 13, "expected the corpus's places and sites");
 
     for id in ids {
+        // The one exception, and it is the finding rather than a defect. Fort Amanda is the
+        // origin of this county's settlement and the namesake of one of its townships, and it
+        // stands 990 feet outside the line: it carries `formerly-in` to the county and
+        // `located-in` to nothing, because it has been in Auglaize County since 1848. The query
+        // is right to refuse — the corpus does not hold the ground it stands on — and this
+        // assertion is here so that a later `located-in` edge, which would be well formed and
+        // false, fails the build. See `.yidam/decisions/of-here-is-not-located-here.yml`.
+        if id == "site/fort-amanda.yml" {
+            assert!(
+                covering(&g, &id, None).is_err(),
+                "fort-amanda is not on ground this corpus covers and must not answer as if it were"
+            );
+            continue;
+        }
         let c = covering(&g, &id, None).unwrap_or_else(|e| panic!("{id}: {e}"));
         if id == "place/allen-county.yml" {
             continue;

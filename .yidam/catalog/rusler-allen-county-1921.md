@@ -19,12 +19,16 @@ used-by:
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/renaming-of-german-township-1918.yml
   - ../corpus/event/reorganization-of-1848.yml
+  - ../corpus/event/settlers-occupy-fort-amanda-1817.yml
+  - ../corpus/event/the-building-of-fort-amanda-1812.yml
   - ../corpus/event/the-first-lima-company-1861.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
+  - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
   - ../corpus/period/canal-era.yml
@@ -44,6 +48,7 @@ used-by:
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/camp-lima.yml
+  - ../corpus/site/fort-amanda.yml
   - ../corpus/site/lima-refinery.yml
   - ../corpus/site/lima-state-hospital.yml
   - ../corpus/site/miami-and-erie-canal.yml

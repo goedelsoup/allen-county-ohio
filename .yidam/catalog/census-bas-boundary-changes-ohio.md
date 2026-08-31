@@ -29,10 +29,15 @@ location:
       14-APR-94, and the OCR breaks the column association within rows — a date on one line and
       its ordinance number on the next. See the defect below.
 used-by:
+  - ../corpus/jurisdiction/city-of-lima.yml
   - ../corpus/measure/allen-county-annexations-1990-2024.yml
   - ../corpus/measure/allen-county-land-area-2000-2024.yml
-  - ../corpus/place/allen-county.yml
-  - ../corpus/place/lima.yml
+  - ../corpus/measure/allen-county-outside-lima-1890-2020.yml
+  - ../corpus/measure/lima-land-area-2020.yml
+  - ../corpus/measure/lima-population-2000.yml
+  - ../corpus/place/elida.yml
+  - ../corpus/place/fort-shawnee.yml
+  - ../corpus/place/jackson-township.yml
 ---
 
 **What a row is.** An Ohio annexation is not one act. A petition goes to the board of county

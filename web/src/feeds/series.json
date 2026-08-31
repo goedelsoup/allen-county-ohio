@@ -1370,6 +1370,26 @@
           "method": "Three county histories' compilations of published census returns, one figure from each. The 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. [verified] The value above is **superseded**: the Census gives 41,326 for the same date and this node keeps 41,306 because its subject is what the histories printed. For Lima's 1920 population, cite [the federal series](lima-population-1850-1960.yml). [verified]"
         }
       ]
+    },
+    {
+      "id": "site-fort-amanda::graves-in-the-military-cemetery-at-Fort-Amanda",
+      "subject": "site/fort-amanda.yml",
+      "subject_label": "Fort Amanda",
+      "parameter": "graves in the military cemetery at Fort Amanda",
+      "unit": "graves",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/fort-amanda-graves-and-boats.yml",
+          "label": "Fort Amanda's two seventy-fives",
+          "as_of": "1885",
+          "value": 75.0,
+          "published": "75",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Counted on the ground by the compiler of the 1885 county history as seventy-five mounds, repeated as \"some 75\" in 1906 by a book that reprints the 1885 text, and reported in 1915 as an estimate against about forty surviving markers. No register exists: the garrison's records were destroyed. [verified]"
+        }
+      ]
     }
   ],
   "assertions": [
@@ -4292,6 +4312,52 @@
           "tier": "verified",
           "sources": [
             "catalog/census-bas-boundary-changes-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-county-is-settled-from-outside-itself",
+      "statement": "Allen County's first settlement, its first post office and the fort a township is named for all stand nine hundred and ninety feet outside the county.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "event/settlers-occupy-fort-amanda-1817.yml",
+          "node_label": "Settlers occupy the blockhouses at Fort Amanda, 1817",
+          "span": "**The first American settlement in Allen County was three men moving into an abandoned army post.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "site/fort-amanda.yml",
+          "node_label": "Fort Amanda",
+          "span": "**It is not in Allen County and this corpus is the first thing here to say so.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/gnis-domestic-names-ohio.md",
+            "catalog/allen-county-gis-rest.md"
+          ]
+        },
+        {
+          "node": "site/fort-amanda.yml",
+          "node_label": "Fort Amanda",
+          "span": "**It misses by a fifth of a mile.** Walking the same meridian north from the fort until the county's map begins to answer puts the line at latitude 40.685776, which is 0.188 statute miles — about 990 feet — north of the fort.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "site/fort-amanda.yml",
+          "node_label": "Fort Amanda",
+          "span": "**It was in Allen County until 1848**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
           ]
         }
       ],

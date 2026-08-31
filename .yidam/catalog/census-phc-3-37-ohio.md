@@ -16,10 +16,13 @@ location:
       not OCR. The Geographic Change Notes are in the User Notes front matter; the Allen County
       block of the county-subdivision table begins at extracted line 2784.
 used-by:
+  - ../corpus/jurisdiction/city-of-lima.yml
+  - ../corpus/measure/allen-county-annexations-1990-2024.yml
   - ../corpus/measure/allen-county-land-area-2000-2024.yml
   - ../corpus/measure/lima-population-2000.yml
   - ../corpus/place/allen-county.yml
   - ../corpus/place/fort-shawnee.yml
+  - ../corpus/place/jackson-township.yml
   - ../corpus/place/marion-township.yml
 ---
 

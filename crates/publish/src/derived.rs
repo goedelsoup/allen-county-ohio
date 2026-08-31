@@ -1637,6 +1637,32 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-county-is-settled-from-outside-itself",
+        statement: "Allen County's first settlement, its first post office and the fort a township \
+                    is named for all stand nine hundred and ninety feet outside the county.",
+        topic: "history",
+        supports: &[
+            support!(
+                "event/settlers-occupy-fort-amanda-1817.yml",
+                "**The first American settlement in Allen County was three men moving into an abandoned army post.**"
+            ),
+            support!(
+                "site/fort-amanda.yml",
+                "**It is not in Allen County and this corpus is the first thing here to say so.**"
+            ),
+            support!(
+                "site/fort-amanda.yml",
+                "**It misses by a fifth of a mile.** Walking the same meridian north from the fort until the county's map begins to answer puts the line at latitude 40.685776, which is 0.188 statute miles — about 990 feet — north of the fort."
+            ),
+            support!(
+                "site/fort-amanda.yml",
+                "**It was in Allen County until 1848**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

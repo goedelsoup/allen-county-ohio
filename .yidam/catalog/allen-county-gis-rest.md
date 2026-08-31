@@ -95,3 +95,6 @@ layer 55, and by the first four digits of whatever parcel in layer 51 contains t
 - `crates/ground` — the projection, the section lookup, and the Recorder book mapping
 - [`ground-at`](../skills/ground-at.md)
 - [Allen County survey sections](../corpus/measure/allen-county-survey-sections.yml)
+- [Fort Amanda](../corpus/site/fort-amanda.yml) — the point-in-polygon that returns nothing, and
+  the binary search along -84.27 that puts the county line at 40.685776
+- [Amanda Township](../corpus/place/amanda-township.yml)
