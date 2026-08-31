@@ -20,6 +20,10 @@ fn nodes() -> Vec<load::Node> {
     load::corpus(&corpus_dir()).expect("corpus loads")
 }
 
+fn classes() -> Vec<load::Class> {
+    load::classes(&corpus_dir()).expect("the ontology loads")
+}
+
 #[test]
 fn every_assertion_this_site_makes_still_rests_on_the_prose_it_cites() {
     let (resolved, defects) = resolve(ASSERTIONS, &nodes(), CEILING);
@@ -39,7 +43,7 @@ fn every_assertion_this_site_makes_still_rests_on_the_prose_it_cites() {
 fn nothing_tagged_open_leaves_the_repository() {
     // The one rule with no exception and no flag. Checked over the serialized bytes rather
     // than over the structs, because the question is what the file contains.
-    let (files, _) = build(&nodes()).expect("feeds serialize");
+    let (files, _) = build(&nodes(), &classes()).expect("feeds serialize");
     for f in &files {
         assert!(
             !f.json.contains("[open]"),
@@ -67,8 +71,8 @@ fn every_published_claim_carries_a_tag_that_reaches_the_ceiling() {
 fn the_feeds_are_a_pure_function_of_the_corpus() {
     // What `publish-feeds --check` depends on. A timestamp or a commit hash in a feed would
     // make the gate fail on every commit and be switched off within a week.
-    let (first, _) = build(&nodes()).expect("feeds serialize");
-    let (second, _) = build(&nodes()).expect("feeds serialize");
+    let (first, _) = build(&nodes(), &classes()).expect("feeds serialize");
+    let (second, _) = build(&nodes(), &classes()).expect("feeds serialize");
     for (a, b) in first.iter().zip(second.iter()) {
         assert_eq!(a.name, b.name);
         assert_eq!(a.json, b.json, "{} is not reproducible", a.name);
@@ -78,7 +82,7 @@ fn the_feeds_are_a_pure_function_of_the_corpus() {
 #[test]
 fn the_committed_feeds_are_what_the_corpus_says() {
     let feeds = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../web/src/feeds");
-    let (files, _) = build(&nodes()).expect("feeds serialize");
+    let (files, _) = build(&nodes(), &classes()).expect("feeds serialize");
     for f in &files {
         let path = feeds.join(f.name);
         let on_disk = std::fs::read_to_string(&path)
@@ -366,6 +370,80 @@ fn the_block_shape_that_hid_four_township_officers_is_reported() {
         !publish::withheld(&nodes).is_empty(),
         "the corpus stopped exercising the report entirely; is it still wired up?"
     );
-    let (_, defects) = build(&nodes).expect("feeds serialize");
+    let (_, defects) = build(&nodes, &classes()).expect("feeds serialize");
     assert!(defects.is_empty(), "the report became a gate");
+}
+
+#[test]
+fn every_class_an_entry_page_can_render_declares_what_it_is() {
+    // The Schema card is the one piece of furniture common to all thirteen classes, and it
+    // reads the manifest. A class with instances but no declaration would render a card with
+    // holes in it — and nothing else in the pipeline would notice, because the instances load
+    // fine and the ontology file is only ever read here.
+    let classes = classes();
+    for node in nodes() {
+        assert!(
+            classes.iter().any(|c| c.class == node.class),
+            "{}: class `{}` has instances but no {}.ont.yml",
+            node.id,
+            node.class,
+            node.class
+        );
+    }
+}
+
+#[test]
+fn the_ontology_reaches_the_feed_as_the_corpus_declares_it() {
+    // Not "the card looks right" but "the feed says what the ont file says". The whole point
+    // of carrying this across the boundary was to stop the site holding a second copy, so
+    // what is pinned is that the copy in the feed is not a paraphrase.
+    for class in classes() {
+        assert_eq!(
+            class.ontology, "ufo",
+            "{}: an ontology this corpus does not use",
+            class.class
+        );
+        assert!(!class.label.is_empty(), "{}: no label", class.class);
+        assert!(
+            !class.foundational_type.is_empty(),
+            "{}: no foundational type",
+            class.class
+        );
+        assert!(
+            !class.edge_policy.is_empty(),
+            "{}: no edge policy",
+            class.class
+        );
+        assert!(
+            !class.description.is_empty(),
+            "{}: nothing said about why the class exists",
+            class.class
+        );
+        assert!(
+            !class.description.contains('\n'),
+            "{}: the description reached the feed still wrapped",
+            class.class
+        );
+    }
+
+    let by_name = |name: &str| {
+        classes()
+            .into_iter()
+            .find(|c| c.class == name)
+            .unwrap_or_else(|| panic!("no {name} class"))
+    };
+
+    // The two the design boards argue from. A tenure is a relator — which is *why* its dates
+    // sit on the holding and not on the person — and a measure is checkable only with all
+    // three of these present, which is why the class declares them required.
+    assert_eq!(by_name("tenure").foundational_type, "relator");
+    assert_eq!(
+        by_name("measure").required,
+        vec!["parameter", "value", "as_of"],
+        "the required trio moved; the Schema card accents it"
+    );
+    assert!(
+        by_name("person").required.is_empty(),
+        "person gained a required property, which changes what its card accents"
+    );
 }

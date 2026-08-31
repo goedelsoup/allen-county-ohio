@@ -7,11 +7,11 @@
 //
 // Only the feeds are read here, which is the site's whole contract. The class table below is
 // deliberately presentation and nothing else: a glyph and a plural. A class's foundational
-// type and edge policy are corpus facts, they live in `.yidam/corpus/*.ont.yml`, and copying
-// them into this file would be exactly the drift the publication gate exists to prevent —
-// they belong in the feed before they belong on a page.
+// type and edge policy are corpus facts, and they reach the page the only way they may — the
+// feed carries them from `.yidam/corpus/*.ont.yml`, and `SchemaCard` renders what it finds.
+// Restating them here would be exactly the drift the publication gate exists to prevent.
 
-import { edges, nodes, type Edge, type Node, type Tier } from './feeds'
+import { classSchema, edges, nodes, type Edge, type Node, type Tier } from './feeds'
 
 /** Glyph and plural for each class. Presentation only — see the note above. */
 export const CLASS_PRESENTATION: Record<string, { glyph: string; plural: string }> = {
@@ -36,6 +36,42 @@ export function glyphFor(cls: string): string {
 
 export function pluralFor(cls: string): string {
   return CLASS_PRESENTATION[cls]?.plural ?? cls
+}
+
+export interface SchemaRow {
+  label: string
+  value: string
+  /** Whether this row is the one the card sets in rubric. At most one row per class. */
+  accent: boolean
+}
+
+/**
+ * The Schema card's rows for one class, or none where the corpus declares no such class.
+ *
+ * Four rows, of which the fourth is whichever declaration is specific to the class: the
+ * properties a node of it may not omit, or — where it requires none — its edge policy.
+ *
+ * At most one row is accented, and it is the one that departs from the default. `kind` and
+ * `characteristic` are what most of the thirteen classes say, so most cards accent nothing.
+ * Where a class both requires properties and is not a kind, the requirement takes the accent:
+ * the card makes one point, and the sharper one is what a node of this class may not omit.
+ */
+export function schemaRows(cls: string): SchemaRow[] {
+  const schema = classSchema(cls)
+  if (!schema) return []
+
+  return [
+    { label: 'Class', value: schema.label, accent: false },
+    { label: 'Ontology', value: schema.ontology.toUpperCase(), accent: false },
+    {
+      label: 'Foundational',
+      value: schema.foundational_type,
+      accent: schema.required.length === 0 && schema.foundational_type !== 'kind',
+    },
+    schema.required.length > 0
+      ? { label: 'Required', value: schema.required.join(' · '), accent: true }
+      : { label: 'Edge policy', value: schema.edge_policy, accent: false },
+  ]
 }
 
 /** A class name as it reads in a sentence: `natural-feature` → `Natural feature`. */

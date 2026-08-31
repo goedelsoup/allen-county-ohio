@@ -20,6 +20,34 @@ struct RawLink {
 }
 
 #[derive(Debug, Deserialize)]
+struct RawFoundational {
+    ontology: String,
+    #[serde(rename = "type")]
+    kind: String,
+}
+
+#[derive(Debug, Deserialize)]
+struct RawProperty {
+    name: String,
+    #[serde(default)]
+    required: bool,
+}
+
+#[derive(Debug, Deserialize)]
+struct RawOntology {
+    class: String,
+    #[serde(default)]
+    label: String,
+    foundational_type: RawFoundational,
+    #[serde(default)]
+    edge_policy: String,
+    #[serde(default)]
+    description: String,
+    #[serde(default)]
+    properties: Vec<RawProperty>,
+}
+
+#[derive(Debug, Deserialize)]
 struct RawNode {
     class: String,
     #[serde(default)]
@@ -63,6 +91,28 @@ impl Node {
     pub fn property(&self, key: &str) -> Option<&str> {
         self.properties.get(key).map(String::as_str)
     }
+}
+
+/// What a class declares about itself.
+///
+/// Every field is read from `<class>.ont.yml` and none is computed. The corpus states its
+/// own ontology there, and this is the only place that reads it — a second statement of
+/// what a tenure is would be a second thing to keep true.
+#[derive(Debug, Clone)]
+pub struct Class {
+    /// The class name, which is also its corpus directory: `natural-feature`.
+    pub class: String,
+    /// The class's display name: `Natural Feature`.
+    pub label: String,
+    /// The ontology the foundational type is drawn from — `ufo` throughout this corpus.
+    pub ontology: String,
+    /// `kind`, `role`, `relator`, `event`, `quality` or `situation`.
+    pub foundational_type: String,
+    pub edge_policy: String,
+    /// The class's own account of why it exists, as one paragraph.
+    pub description: String,
+    /// Properties the class declares `required: true`, in the order it declares them.
+    pub required: Vec<String>,
 }
 
 #[derive(Debug)]
@@ -113,6 +163,50 @@ fn resolve(class_dir: &str, target: &str) -> String {
         Some(rest) => rest.to_string(),
         None => format!("{class_dir}/{target}"),
     }
+}
+
+/// Load every class declaration in `corpus_dir`.
+///
+/// These sit beside the class directories as `<class>.ont.yml`, and they are the corpus's
+/// statement of its own ontology: what kind of thing each class is, and which of its
+/// properties a node of that class may not omit. The site renders it rather than restating
+/// it, which is the same rule that keeps `web/` off the node files.
+pub fn classes(corpus_dir: &Path) -> Result<Vec<Class>, LoadError> {
+    let mut paths: Vec<PathBuf> = std::fs::read_dir(corpus_dir)?
+        .filter_map(Result::ok)
+        .map(|e| e.path())
+        .filter(|p| p.to_string_lossy().ends_with(".ont.yml"))
+        .collect();
+    paths.sort();
+
+    let mut classes = Vec::new();
+    for path in paths {
+        let text = std::fs::read_to_string(&path)?;
+        let raw: RawOntology = serde_yaml::from_str(&text).map_err(|source| LoadError::Yaml {
+            path: path.clone(),
+            source,
+        })?;
+
+        classes.push(Class {
+            class: raw.class,
+            label: raw.label,
+            ontology: raw.foundational_type.ontology,
+            foundational_type: raw.foundational_type.kind,
+            edge_policy: raw.edge_policy,
+            // The `description` is a folded block wrapped at the corpus's line width. It is
+            // one paragraph in every class file, so collapsing the wrapping is the whole of
+            // the transformation — the same thing `claim::normalize` does to node prose.
+            description: crate::claim::normalize(&raw.description),
+            required: raw
+                .properties
+                .into_iter()
+                .filter(|p| p.required)
+                .map(|p| p.name)
+                .collect(),
+        });
+    }
+
+    Ok(classes)
 }
 
 /// Load every instance node under `corpus_dir`.

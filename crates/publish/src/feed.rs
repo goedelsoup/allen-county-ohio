@@ -9,7 +9,7 @@
 //! the committed feeds byte for byte and fail on a stale one.
 
 use crate::derived::Resolved;
-use crate::load::Node;
+use crate::load::{Class, Node};
 use crate::tier::Tier;
 use serde::Serialize;
 use std::collections::BTreeMap;
@@ -18,6 +18,11 @@ use std::collections::BTreeMap;
 ///
 /// Bump when a consumer would break: a field removed, a field's meaning changed, a shape
 /// altered. Adding a field is not a break.
+///
+/// `manifest.classes` was added under that rule and did not bump it. Every consumer of the
+/// four feeds reads exactly what it read before; the manifest simply carries one more key.
+/// Bumping for an addition would spend the signal that means *stop and read the diff*, and
+/// then it would mean nothing when a field's sense actually changes.
 pub const FEED_VERSION: u32 = 1;
 
 /// Relationships that describe the corpus rather than the world.
@@ -40,6 +45,50 @@ pub struct Manifest {
     pub feed_version: u32,
     pub policy: Policy,
     pub corpus: Counts,
+    /// What each class declares itself to be, keyed by class name.
+    pub classes: BTreeMap<String, ClassSchema>,
+}
+
+/// A class's ontology, as the class states it.
+///
+/// This is not derived from the instances and does not move when they do: it is
+/// `<class>.ont.yml` carried across the feed boundary so a page can say what licenses the
+/// structure it is rendering — that a tenure is a relator is *why* the dates sit on the
+/// holding rather than on the person.
+#[derive(Debug, Serialize)]
+pub struct ClassSchema {
+    pub label: String,
+    pub ontology: String,
+    pub foundational_type: String,
+    pub edge_policy: String,
+    /// Properties a node of this class may not omit, in declaration order.
+    pub required: Vec<String>,
+    /// The class's own account of why it exists.
+    pub description: String,
+}
+
+/// The declared ontology, keyed by class.
+///
+/// Every declared class is carried, including one the corpus has no instance of yet: the
+/// ontology is what the corpus says it is, and a class with nothing in it is a fact about
+/// the corpus rather than a reason to hide the declaration.
+pub fn schema(classes: &[Class]) -> BTreeMap<String, ClassSchema> {
+    classes
+        .iter()
+        .map(|c| {
+            (
+                c.class.clone(),
+                ClassSchema {
+                    label: c.label.clone(),
+                    ontology: c.ontology.clone(),
+                    foundational_type: c.foundational_type.clone(),
+                    edge_policy: c.edge_policy.clone(),
+                    required: c.required.clone(),
+                    description: c.description.clone(),
+                },
+            )
+        })
+        .collect()
 }
 
 #[derive(Debug, Default, Serialize)]

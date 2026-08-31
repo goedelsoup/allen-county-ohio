@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { nodes } from '../src/lib/feeds'
+import { classes, classSchema, nodes } from '../src/lib/feeds'
 import {
   aliasesFor,
   className,
@@ -12,6 +12,7 @@ import {
   propertyLabel,
   relationsFor,
   resolveCorpusLink,
+  schemaRows,
   sourcesFor,
   year,
 } from '../src/lib/entry'
@@ -181,5 +182,64 @@ describe('years', () => {
     expect(year('1885')).toBe(1885)
     expect(year('c. 1903')).toBe(1903)
     expect(year('')).toBeNull()
+  })
+})
+
+describe('the schema card', () => {
+  it('has a declaration for every class the site renders a page for', () => {
+    // The card is the one piece of furniture common to all thirteen classes. A class with
+    // nodes but no declaration would render a card with holes in it, and the only place that
+    // would show is the page itself.
+    const missing = [...new Set(nodes.map((n) => n.class))].filter((c) => !classSchema(c))
+    expect(missing).toEqual([])
+  })
+
+  it('says what the corpus declares, not what this file thinks', () => {
+    // The whole reason the ontology crossed the feed boundary. If these ever have to be
+    // edited to match a corpus change, the copy has drifted and the feed is doing nothing.
+    expect(classSchema('tenure')?.foundational_type).toBe('relator')
+    expect(classSchema('office')?.foundational_type).toBe('role')
+    expect(classSchema('question')?.foundational_type).toBe('situation')
+    expect(classSchema('measure')?.required).toEqual(['parameter', 'value', 'as_of'])
+    expect(classSchema('person')?.required).toEqual([])
+  })
+
+  it('gives four rows, the last of them class-specific', () => {
+    const tenure = schemaRows('tenure')
+    expect(tenure.map((r) => r.label)).toEqual(['Class', 'Ontology', 'Foundational', 'Edge policy'])
+
+    // A class that requires properties spends the fourth row on them instead. Edge policy is
+    // `characteristic` for all thirteen, so it is what the card says when it has nothing
+    // sharper to say.
+    const measure = schemaRows('measure')
+    expect(measure.map((r) => r.label)).toEqual(['Class', 'Ontology', 'Foundational', 'Required'])
+    expect(measure[3].value).toBe('parameter · value · as_of')
+  })
+
+  it('accents at most one row, and only where the class departs from the default', () => {
+    for (const cls of Object.keys(classes)) {
+      const accented = schemaRows(cls).filter((r) => r.accent)
+      expect(accented.length, `${cls} accents ${accented.length} rows`).toBeLessThanOrEqual(1)
+    }
+
+    // A relator is an argument for a class; a kind is not, and its card stays quiet.
+    expect(schemaRows('tenure').find((r) => r.accent)?.value).toBe('relator')
+    expect(schemaRows('person').some((r) => r.accent)).toBe(false)
+
+    // Where a class both requires properties and is not a kind, the requirement takes it —
+    // one point per card, and the requirement is the sharper one.
+    expect(schemaRows('measure').find((r) => r.accent)?.label).toBe('Required')
+    expect(schemaRows('measure').find((r) => r.label === 'Foundational')?.accent).toBe(false)
+  })
+
+  it('carries the class’s own account of itself, unwrapped', () => {
+    for (const [cls, schema] of Object.entries(classes)) {
+      expect(schema.description.length, `${cls} says nothing about why it exists`).toBeGreaterThan(0)
+      expect(schema.description, `${cls} reached the feed still wrapped`).not.toContain('\n')
+    }
+  })
+
+  it('gives nothing for a class the corpus does not declare', () => {
+    expect(schemaRows('sasquatch')).toEqual([])
   })
 })

@@ -77,7 +77,14 @@ pub fn withheld(nodes: &[load::Node]) -> Vec<String> {
 ///
 /// Returns the files and every defect found. A caller writing files while defects exist is
 /// publishing unchecked claims, so `main` refuses to.
-pub fn build(nodes: &[load::Node]) -> Result<(Vec<File>, Vec<derived::Defect>), serde_json::Error> {
+///
+/// `classes` is the corpus's own ontology, and it is passed in rather than inferred from the
+/// nodes for the reason the whole crate exists: what a class is, is declared, and a feed that
+/// guessed it from the instances would be stating it a second time.
+pub fn build(
+    nodes: &[load::Node],
+    classes: &[load::Class],
+) -> Result<(Vec<File>, Vec<derived::Defect>), serde_json::Error> {
     let (graph, mut counts) = feed::graph(nodes, CEILING);
     let series = feed::series(nodes, CEILING);
     let points = feed::map(nodes, CEILING);
@@ -91,6 +98,7 @@ pub fn build(nodes: &[load::Node]) -> Result<(Vec<File>, Vec<derived::Defect>), 
             rationale: RATIONALE,
         },
         corpus: counts,
+        classes: feed::schema(classes),
     };
 
     Ok((

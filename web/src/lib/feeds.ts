@@ -95,6 +95,26 @@ export interface MapPoint {
   area_sq_mi: string | null
 }
 
+/**
+ * What a class declares itself to be.
+ *
+ * Read from `manifest.json`, which carries `.yidam/corpus/<class>.ont.yml` across the feed
+ * boundary. Nothing here is derived from the instances: it is the corpus's own statement of
+ * its ontology, and this site renders it rather than keeping a second copy.
+ */
+export interface ClassSchema {
+  label: string
+  /** The ontology the foundational type is drawn from — `ufo` throughout this corpus. */
+  ontology: string
+  /** `kind`, `role`, `relator`, `event`, `quality` or `situation`. */
+  foundational_type: string
+  edge_policy: string
+  /** Properties a node of this class may not omit, in declaration order. */
+  required: string[]
+  /** The class's own account of why it exists. */
+  description: string
+}
+
 export interface Manifest {
   feed_version: number
   policy: { ceiling: Tier; rationale: string }
@@ -112,9 +132,13 @@ export interface Manifest {
     by_class: Record<string, number>
     edge_tags: Record<string, Record<string, number>>
   }
+  classes: Record<string, ClassSchema>
 }
 
 export const manifest = manifestFeed as Manifest
+
+/** The declared ontology, keyed by class. */
+export const classes = manifest.classes
 export const nodes = graphFeed.nodes as Node[]
 export const edges = graphFeed.edges as Edge[]
 export const series = seriesFeed.series as Series[]
@@ -145,6 +169,11 @@ export function seriesById(id: string): Series {
   const found = series.find((s) => s.id === id)
   if (!found) throw new Error(`no series "${id}" in the feed`)
   return found
+}
+
+/** What one class declares itself to be, or undefined if the corpus does not declare it. */
+export function classSchema(cls: string): ClassSchema | undefined {
+  return classes[cls]
 }
 
 /** One node by `class/name.yml`. */
