@@ -47,6 +47,9 @@ Sorted by: kind, then alphabetically.
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
+| [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 3 | 5v / 1i / 1o | 48 |
+| [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
+| [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 4v / 1i / 1o | 41 |
 | [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 4v / 3i / 1o | 60 |
 | [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 3v / 3i / 1o | 47 |
@@ -63,10 +66,10 @@ Sorted by: kind, then alphabetically.
 | [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 8v / 0i / 0o | 49 |
 | [auglaize-township.yml](jurisdiction/auglaize-township.yml) | jurisdiction | Auglaize Township (government) | 2 | 8v / 0i / 1o | 55 |
 | [bath-local-school-district.yml](jurisdiction/bath-local-school-district.yml) | jurisdiction | Bath Local School District | 6 | 6v / 0i / 1o | 66 |
-| [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 7v / 0i / 1o | 46 |
+| [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 8v / 1i / 1o | 56 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 5v / 0i / 1o | 61 |
-| [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 6v / 2i / 2o | 61 |
-| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 13v / 4i / 3o | 117 |
+| [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 8v / 2i / 2o | 69 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 13v / 4i / 3o | 118 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 4v / 0i / 1o | 44 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 6v / 0i / 0o | 55 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 4v / 0i / 0o | 67 |
@@ -86,10 +89,10 @@ Sorted by: kind, then alphabetically.
 | [sugar-creek-township.yml](jurisdiction/sugar-creek-township.yml) | jurisdiction | Sugar Creek Township (government) | 2 | 8v / 1i / 0o | 50 |
 | [third-district-court-of-appeals.yml](jurisdiction/third-district-court-of-appeals.yml) | jurisdiction | Ohio Third District Court of Appeals | 2 | 4v / 2i / 1o | 45 |
 | [village-of-beaverdam.yml](jurisdiction/village-of-beaverdam.yml) | jurisdiction | Village of Beaverdam | 2 | 6v / 1i / 1o | 47 |
-| [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 3v / 1i / 0o | 37 |
-| [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 5v / 1i / 2o | 42 |
+| [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 5v / 1i / 0o | 48 |
+| [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 7v / 1i / 1o | 50 |
 | [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 6v / 1i / 2o | 46 |
-| [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 4v / 0i / 2o | 40 |
+| [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 5v / 1i / 2o | 53 |
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 4v / 0i / 1o | 45 |
@@ -135,11 +138,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 5v / 1i / 1o | 60 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
+| [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 3 | 10v / 3i / 1o | 117 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
-| [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 4v / 10i / 0o | 110 |
+| [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 7v / 2i / 0o | 64 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
@@ -342,8 +346,8 @@ Sorted by: kind, then alphabetically.
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 12v / 2i / 3o | 96 |
-| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 13v / 3i / 3o | 105 |
+| [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 11v / 1i / 1o | 77 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 7v / 1i / 1o | 72 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 11v / 2i / 2o | 84 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
