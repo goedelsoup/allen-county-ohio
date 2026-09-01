@@ -227,7 +227,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         // been should not have to assemble the answer from four nodes.
         supports: &[support!(
             "place/allen-county.yml",
-            "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,203 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**"
+            "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,223 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**"
         )],
         answers: &[],
         figures: &[
@@ -240,7 +240,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1890", value: 40_644.0, literal: "40,644" },
             Figure { label: "1900", value: 47_976.0, literal: "47,976" },
             Figure { label: "1910", value: 56_580.0, literal: "56,580" },
-            Figure { label: "1920", value: 68_203.0, literal: "68,203" },
+            Figure { label: "1920", value: 68_223.0, literal: "68,223" },
             Figure { label: "1930", value: 69_419.0, literal: "69,419" },
             Figure { label: "1940", value: 73_303.0, literal: "73,303" },
             Figure { label: "1950", value: 88_183.0, literal: "88,183" },
@@ -267,7 +267,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
             support!(
                 "measure/allen-county-outside-lima-1890-2020.yml",
-                "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
+                "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,897 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
             ),
         ],
         answers: &[],
@@ -275,7 +275,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1890", value: 24_663.0, literal: "24,663" },
             Figure { label: "1900", value: 26_253.0, literal: "26,253" },
             Figure { label: "1910", value: 26_072.0, literal: "26,072" },
-            Figure { label: "1920", value: 26_877.0, literal: "26,877" },
+            Figure { label: "1920", value: 26_897.0, literal: "26,897" },
             Figure { label: "1930", value: 27_132.0, literal: "27,132" },
             Figure { label: "1940", value: 28_592.0, literal: "28,592" },
             Figure { label: "1950", value: 37_937.0, literal: "37,937" },
