@@ -25,6 +25,26 @@ const concentration2 = assertion('what-the-concentration-is-made-of')
 const young = assertion('lima-is-the-young-end')
 const counted1920 = assertion('the-census-counted-what-the-history-estimated')
 const forties = assertion('the-migration-arrived-in-the-forties')
+const stopped = assertion('the-workforce-stopped-growing-in-1914')
+
+// Lima's factory workforce at six censuses. From the assertion's own figures, so the chart cannot
+// drift from the prose the gate checked.
+const stoppedSpec = line(
+  stopped.figures.map((f) => f.label),
+  [{ name: 'Manufacturing wage earners, Lima', y: stopped.figures.map((f) => f.value) }],
+  { yTitle: 'Manufacturing wage earners, city of Lima', zeroBased: true, labelLast: true },
+)
+
+// The county and the city in 1929, and the difference between them. Typed out because the third
+// column is computed and the graph carries only the two the volume prints.
+const manufactures1929 = [
+  ['Establishments', '108', '72', '36'],
+  ['Wage earners', '6,588', '4,548', '2,040'],
+  ['Horsepower', '21,717', '13,030', '8,687'],
+  ['Wages', '$8,337,261', '$5,666,171', '$2,671,090'],
+  ['Value of products', '$47,139,403', '$29,595,853', '$17,543,550'],
+  ['Value added', '$18,544,201', '$13,391,977', '$5,152,224'],
+]
 
 const bornSpec = bar(
   counted1920.figures.map((f) => f.label),
@@ -335,6 +355,40 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       height={280}
     />
     <script type="application/json" data-chart-spec="work" set:html={JSON.stringify(workSpec)} is:inline />
+    <AssertionCard assertion={stopped} />
+    <p>
+      Three more censuses have since been read, from the Ohio state volume of each, and they change
+      the shape of that baseline. Lima's factory workforce grew by 146 per cent in the fifteen years
+      to 1914 — and then by twenty-five people in the five years after it, a span that contains a
+      world war. By 1929 it was 4,548, three hundred and twenty-eight below the 1914 figure. The
+      growth had stopped fifteen years before the Depression and forty before the decline this page
+      is named for.
+    </p>
+    <ChartFigure
+      id="lima-workforce-1899-1929"
+      title="Lima manufacturing wage earners, 1899–1929"
+      caption="The count of establishments falls from 108 in 1919 to 72 in 1929, and about half of that is the Bureau raising its minimum from $500 of product to $5,000 — a change it measured at a 21.6 per cent reduction nationally. Wage earners are unaffected: 99.4 per cent of them worked in establishments above the higher line."
+      columns={['Census year', 'Wage earners']}
+      rows={stopped.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={300}
+    />
+    <script type="application/json" data-chart-spec="lima-workforce-1899-1929" set:html={JSON.stringify(stoppedSpec)} is:inline />
+    <p>
+      The 1929 volume is also the first that reports Allen County at all, which lets the city be set
+      against the county around it for the first time before 1969.
+    </p>
+    <DataTable
+      title="Manufacturing in Allen County and Lima, 1929"
+      caption="The first two columns are the volume's; the third is the difference. The 2,040 wage earners outside the city line averaged $1,309 in wages against $1,246 inside it, and added $2,526 of value each against $2,944 — the shape of processing rather than assembly, in a county whose refinery stands outside every municipality."
+      columns={['', 'Allen County', 'Lima', 'Outside Lima']}
+      rows={manufactures1929}
+    />
+    <p>
+      And the county's 6,588 wage earners in 1929 are fewer than the 8,715 manufacturing jobs it
+      recorded in 2022 — even after allowing for the salaried officers and clerks the census
+      excluded and the modern series counts. Whatever this county's industrial century was, its top
+      is inside the forty years between 1929 and 1969 that no volume covers.
+    </p>
   </section>
 
   <section>
