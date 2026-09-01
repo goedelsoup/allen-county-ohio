@@ -3047,11 +3047,19 @@
           "tier": "verified"
         },
         {
-          "text": "**Two thousand five hundred people, and nearly all of them in Lima.** \"It is estimated that there are 2,500 negroes in Allen County. ... The Allen County negroes are nearly all in Lima. A few families live in Delphos, and a few live in the country.\" [verified] — same source. Against a county of 68,203 in 1920 that is 3.7 per cent. [inference] — computed against [the 1910–1940 series](allen-county-population-1940-1990.yml).",
+          "text": "**Two thousand five hundred people, and nearly all of them in Lima.** \"It is estimated that there are 2,500 negroes in Allen County. ... The Allen County negroes are nearly all in Lima. A few families live in Delphos, and a few live in the country.\" [verified] — same source. Against a county of 68,223 in 1920 that would be 3.7 per cent. [inference] — computed against [the 1920 census](allen-county-population-by-race-1920.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The census counted 1,385, and the book's estimate is almost twice it.** 1,385 in the county and 1,243 in Lima — 2.0 per cent and 3.0. [verified] — [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md), taken the year before this book was printed. The book is right that they were nearly all in Lima: the census puts 89.7 per cent of them there. [inference] — computed here. It is its number that is wrong, and this node keeps the quotation as printed.",
           "tier": "inference"
         },
         {
           "text": "**Two voter counts, four years apart, and the second one includes women.** \"In 1916, there were 552 negro voters in Lima; there has been an exodus of negroes to Allen County within the last four years, and in 1920, counting the women, there were almost 1,000 negro voters.\" [verified] — same source. The book's own explanation joins two causes it does not separate — migration into the county, and the Nineteenth Amendment doubling every electorate in it. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The second of those counts cannot be right.** Lima held 1,243 Black residents at the 1920 census, so \"almost 1,000 negro voters\" would be four out of every five of them, children included. [inference] — computed against [the 1920 census](allen-county-population-by-race-1920.yml). The 1916 figure of 552 is 44.4 per cent of the same population, which is high for adult men and not impossible in a community migration had made young and male — the census counts 751 Black males in the county against 634 females. [verified] — same source.",
           "tier": "inference"
         },
         {
@@ -3217,7 +3225,7 @@
           "tier": "verified"
         },
         {
-          "text": "**The book's arithmetic checks against the census.** The county held 68,203 people in 1920 and 17,000 is 24.9 per cent of them. [inference] — computed against [the 1910–1940 counts](allen-county-population-1940-1990.yml). The estimate is at least internally consistent, which is more than a round number in a county history usually is.",
+          "text": "**The book's arithmetic checks against the census.** The county held 68,223 people in 1920 and 17,000 is 24.9 per cent of them. [inference] — computed against [the 1910–1940 counts](allen-county-population-1940-1990.yml). The estimate is at least internally consistent, which is more than a round number in a county history usually is.",
           "tier": "inference"
         },
         {
@@ -4081,6 +4089,57 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-foreign-born-1920.yml",
+      "class": "measure",
+      "label": "Allen County's foreign-born, 1920",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1920",
+        "method": "Read from a page image at 300 dpi. Table 12 splits the countries into two blocks, each of which restarts at Adams County, so Allen's row had to be read from two pages three apart and rejoined; the check that it was rejoined correctly is that the twenty-two figures sum to the printed total of 2,753. Country names are the census's own for 1920 — Jugo-Slavia, Czechoslovakia and Syria are as printed, and the countries they name had existed for two years, one year and none at all as sovereign states. [verified]",
+        "parameter": "foreign-born white population",
+        "unit": "persons",
+        "value": "2,753"
+      },
+      "blocks": [
+        {
+          "text": "Where the county's immigrants came from, counted by country, at the census the corpus has been arguing about immigration without. [verified] — [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md), Table 12.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same table, whose twenty-two columns sum to 2,753, the total it prints.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures, the nine largest: Germany 627, Italy 312, Ireland 309, Canada 174, Switzerland 171, England 167, Austria 158, Russia 131 and Wales 120.** [verified] — [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md), Table 12.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One person in six in this county was an immigrant or an immigrant's child.** 2,753 foreign-born white, 4,422 native white of foreign parentage and 4,099 of mixed parentage — 11,274 of 68,223, or 16.5 per cent. In Lima it was 7,490 of 41,326, or 18.1 per cent. [inference] — computed from [the 1920 race and nativity count](allen-county-population-by-race-1920.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures: 2,753 foreign-born of 68,223, and 11,274 of foreign or mixed stock — 4.0 per cent and 16.5.** [inference] — the same computation.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The largest group is the one the county had renamed a township to disown.** Germany sends 627, more than twice the next country, and the census was taken two years after [German Township became Marion](../event/renaming-of-german-township-1918.yml). [verified] — the table above. The county also had a German-language weekly within living memory; see [Der Lima Courier](../organization/der-lima-courier.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two of the county's oldest communities are legible in the column of countries.** Switzerland sends 171, and [Bluffton](../place/bluffton.yml) was settled by Swiss Mennonites; Wales sends 120, and [Gomer](../place/gomer.yml) was a Welsh settlement whose first preaching was in 1838. [inference] — the table read against those two nodes. Neither is a large number and both are large for what they are: Ohio as a whole has 9,656 Swiss and 7,772 Welsh across 88 counties, so Allen holds 1.8 per cent of the state's Swiss and 1.5 per cent of its Welsh on 1.2 per cent of its people. [inference] — computed from the state row of the same table.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's own historical society had no count of this and said so.** The 1921 history reports that \"as yet no papers are on file showing the foreign population of Allen County\", in the same paragraph that has its congressman opposing \"indiscriminate immigration from Europe\". [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [Benjamin F. Welty](../person/benjamin-f-welty.yml). The count existed. It had been taken the year before, by the government he sat in.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This is one year, and the corpus holds no foreign-born count for the county before 1920 or after it, so it cannot say whether 16.5 per cent was a peak, a decline or a rise."
+      ],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-funds-2025.yml",
@@ -5785,7 +5844,7 @@
           "tier": "inference"
         },
         {
-          "text": "Written out: **the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.** [inference] — same subtraction. County figures from [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml), [2010](allen-county-population-2010.yml) and [the 2020 census count](allen-county-population-2020-census.yml), with 1930 from [the 1950 townships table](allen-county-townships-1930-1950.yml) and 1890 to 1910 from [the 1910 one](allen-county-townships-1890-1910.yml); Lima from [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml), [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.",
+          "text": "Written out: **the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,897 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.** [inference] — same subtraction. County figures from [1940–1990](allen-county-population-1940-1990.yml), [2000](allen-county-population-2000.yml), [2010](allen-county-population-2010.yml) and [the 2020 census count](allen-county-population-2020-census.yml), with 1930 from [the 1950 townships table](allen-county-townships-1930-1950.yml) and 1890 to 1910 from [the 1910 one](allen-county-townships-1890-1910.yml); Lima from [1850–1960](lima-population-1850-1960.yml), [1970–1990](lima-population-1970-1990.yml), [2000](lima-population-2000.yml), [2010](lima-population-2010.yml) and [2020](lima-population-2020-census.yml). The 2020 pair is census-to-census; the estimates base gives 102,217 and 35,531 for the same date and would put this series' last term at 66,686.",
           "tier": "inference"
         },
         {
@@ -5797,7 +5856,11 @@
           "tier": "inference"
         },
         {
-          "text": "**Two errors, and the corpus can separate them.** Its Lima figure is 41,306 where the census prints 41,326, twenty low; correcting that gives 50,043 and a remainder of **18,160**. And 18,160 is what this table's own 1920 term gives independently — 26,877 less the eight non-Lima villages' 8,717. [inference] — same computation, against [Lima's series](lima-population-1850-1960.yml). **Two routes agree on 18,160 and the book prints 17,180**, which is a transposition of its own subtraction and not a different definition.",
+          "text": "**Two errors, and the corpus can separate them.** Its Lima figure is 41,306 where the census prints 41,326, twenty low. [inference] — same computation, against [Lima's series](lima-population-1850-1960.yml). **Two routes agree and the book prints 17,180**, which is a transposition of its own subtraction and not a different definition.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The book is twenty low twice, and the two errors cancel.** Its county total of 68,203 is twenty short of the census's 68,223, exactly as its Lima figure of 41,306 is twenty short of 41,326. [verified] — [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md); see [the 1920 race and nativity count](allen-county-population-by-race-1920.yml). Correct both and the nine places sum to 50,043 against a county of 68,223, leaving **18,180** — which is what the book's own uncorrected arithmetic produced, and what this table's 1920 term now gives independently: 26,897 less the eight non-Lima villages' 8,717. [inference] — computed here.",
           "tier": "inference"
         },
         {
@@ -5891,7 +5954,7 @@
           "tier": "inference"
         },
         {
-          "text": "**1930 is no longer a gap: 69,419.** [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Tables 5 and 6, which give it twice. So the county ran 68,203 in 1920, **69,419 in 1930** and 73,303 in 1940 — a gain of 1,216 in the 1920s and 3,884 in the 1930s. [inference] — computed here; the source prints the second as 5.6 per cent and this corpus's arithmetic agrees. The county grew three times faster through the Depression decade than through the boom before it, which is the opposite of the shape the decades' reputations suggest and is [true of Lima too](lima-population-1850-1960.yml), at 2.3 per cent then 5.7.",
+          "text": "**1930 is no longer a gap: 69,419.** [verified] — [1950 Census, Number of Inhabitants, Ohio](../../catalog/census-1950-number-of-inhabitants-ohio.md), Tables 5 and 6, which give it twice. So the county ran 68,223 in 1920, **69,419 in 1930** and 73,303 in 1940 — a gain of 1,196 in the 1920s and 3,884 in the 1930s. [inference] — computed here; the source prints the second as 5.6 per cent and this corpus's arithmetic agrees. The county grew three times faster through the Depression decade than through the boom before it, which is the opposite of the shape the decades' reputations suggest and is [true of Lima too](lima-population-1850-1960.yml), at 2.3 per cent then 5.7.",
           "tier": "inference"
         },
         {
@@ -6059,6 +6122,57 @@
       "withheld": 0
     },
     {
+      "id": "measure/allen-county-population-by-race-1920.yml",
+      "class": "measure",
+      "label": "Allen County population by race and nativity, 1920",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1920",
+        "method": "Read from page images rendered at 300 dpi, because the text layer of both volumes garbles digits — it renders Lima's row as \"4l, 320 40,0li2 OU. \\l\". Two arithmetic checks were run before any figure was written down: the county's race lines sum to the printed total, and the city's white lines sum to the printed total white. The county figure is the compendium's, which is the federal count; the city figure is the abstract's, which is the same census. Where the county history and the census disagree, both are given and neither quotation is altered. [verified]",
+        "parameter": "population enumerated as Negro, Allen County",
+        "unit": "persons",
+        "value": "1,385"
+      },
+      "blocks": [
+        {
+          "text": "The federal count of who lived in this county in 1920, against the county's own account of itself written the year after. [verified] — [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md), Table 9, and the 1920 abstract's Table 34 for the city.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same two tables; the county's four race lines sum to 68,223 and Lima's four white lines sum to 40,062, which are the totals printed.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima held nine-tenths of the county's Black residents and a third of its white ones.** 1,243 of 1,385, or 89.7 per cent, against a 60.6 per cent share of the county's population. [inference] — computed here. The concentration the corpus measures in 2023 at 76.7 per cent was sharper a century earlier, not looser. See [the 2023 count](allen-county-race-2023.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's total is twenty higher than the figure this corpus has been using.** It has carried 68,203 for 1920 in seven places, and that number came from [the 1921 county history](../../catalog/rusler-allen-county-1921.md), printed before the census was published; the federal count is 68,223 and its own components sum to it. [verified] — both sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1921 history's estimate of the county's Black population is almost twice the census count.** It says \"it is estimated that there are 2,500 negroes in Allen County\" and that they are \"nearly all in Lima\". The census counted 1,385 in the county and 1,243 in Lima. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md) for the estimate and [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md) for the count; see [the county's own account](allen-county-black-community-1916-1921.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: the book estimated 2500 for the county, the census counted 1385 there and 1243 in Lima, and the book's thousand voters would be 80.5 per cent of that 1243.** [inference] — computed here from [the census](../../catalog/census-1920-state-compendium-ohio.md) and [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "inference"
+        },
+        {
+          "text": "**One of the book's two voter counts cannot be right.** It gives \"in 1916, there were 552 negro voters in Lima\" and \"in 1920, counting the women, there were almost 1,000\". Against a Black population of 1,243 in Lima in 1920, a thousand voters would be four out of every five people in it, children included. [inference] — the arithmetic, which does not say which of the two is wrong or whether the book means the county. Its 1916 figure of 552 is 44.4 per cent of the same population, which is high for adult men alone and not impossible in a community that migration had made young and male: the census counts 751 Black males in the county against 634 females. [verified] — the compendium.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The book is not wrong about where they lived.** It says the Black community was concentrated in Lima and the census agrees within four percentage points. What it is wrong about is how many, and the corpus keeps its quotations as printed and does not adjust them. [inference] — see [the 1916–1921 account](allen-county-black-community-1916-1921.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "The corpus now has 1,385 in 1920 and 10,805 in 2023 and no count in between, so it cannot say when the county's Black population grew or how fast."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-presidential-vote-2016.yml",
       "class": "measure",
       "label": "Allen County presidential vote, 2016",
@@ -6128,7 +6242,7 @@
       "id": "measure/allen-county-race-2023.yml",
       "class": "measure",
       "label": "Allen County population by race, 2023",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2023",
         "method": "2023 five-year estimates. Race categories are \"alone\" except the two-or-more column; Hispanic origin is asked separately and overlaps every race column, so the rows do not sum to 100. The twelve townships and Lima partition the county: 2,515 plus 8,290 is 10,805, the county row. [verified]",
@@ -6140,6 +6254,10 @@
         {
           "text": "Race and Hispanic origin for the county, its thirteen civil subdivisions, the state and the nation. [verified] — [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates.",
           "tier": "verified"
+        },
+        {
+          "text": "**A century ago the county was 2.0 per cent Black and Lima 3.0.** 1,385 of 68,223 and 1,243 of 41,326 at the census of 1920, against 10,805 of 101,685 and 8,290 of 35,304 now. [verified] — [the 1920 census](allen-county-population-by-race-1920.yml). Lima's Black population is nearly seven times what it was; the city's total is fifteen per cent smaller. [inference] — computed here.",
+          "tier": "inference"
         },
         {
           "text": "**Lima holds a third of the county's people and three quarters of its Black residents.** 8,290 of 10,805, or 76.7 per cent ± 4.6, against a 34.7 per cent share of the population. [verified] — same source. The twelve townships hold the other 2,515, and the two sum exactly to the county's figure.",
@@ -7137,7 +7255,7 @@
           "tier": "inference"
         },
         {
-          "text": "**One in sixteen.** Against the county's 68,203 at the 1920 census, 4,158 is 6.1 per cent of everybody — one person in sixteen, counting women, children and the old. The Civil War figure was one in ten. [inference] — computed here from [the population series](allen-county-outside-lima-1890-2020.yml) and [the Civil War service](allen-county-civil-war-service.yml).",
+          "text": "**One in sixteen.** Against the county's 68,223 at the 1920 census, 4,158 is 6.1 per cent of everybody — one person in sixteen, counting women, children and the old. The Civil War figure was one in ten. [inference] — computed here from [the population series](allen-county-outside-lima-1890-2020.yml) and [the Civil War service](allen-county-civil-war-service.yml).",
           "tier": "inference"
         }
       ],
@@ -10409,7 +10527,7 @@
           "tier": "inference"
         },
         {
-          "text": "**The county's 1970 peak is no longer an artefact of where the data began.** The series now runs 578 in 1830 through 47,976 in 1900 and 68,203 in 1920 to 111,144 in 1970, and every decade of it rises. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). Four counts are still missing, 1930 to 1960, and nothing in ninety years of ascent suggests a reversal inside them. [inference] For the county, this node's start date is now argued rather than assumed.",
+          "text": "**The county's 1970 peak is no longer an artefact of where the data began.** The series now runs 578 in 1830 through 47,976 in 1900 and 68,223 in 1920 to 111,144 in 1970, and every decade of it rises. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). Four counts are still missing, 1930 to 1960, and nothing in ninety years of ascent suggests a reversal inside them. [inference] For the county, this node's start date is now argued rather than assumed.",
           "tier": "inference"
         },
         {
@@ -10820,7 +10938,11 @@
           "tier": "verified"
         },
         {
-          "text": "**The same book records what else he was known for.** It says the county's foreign population \"has not materially increased in several years, and Congressman B. F. Welty has actively opposed indiscriminate immigration from Europe\", in a passage that goes on to ask \"how long this country is to maintain its identity\". [verified] — same source, quoted as printed. The same passage says the Historical Society had no papers on file showing the county's foreign population, and this corpus holds no measure of it either — a hundred and five years later the gap is still there. [inference] — the corpus's own measure class, searched.",
+          "text": "**The same book records what else he was known for.** It says the county's foreign population \"has not materially increased in several years, and Congressman B. F. Welty has actively opposed indiscriminate immigration from Europe\", in a passage that goes on to ask \"how long this country is to maintain its identity\". [verified] — same source, quoted as printed. The same passage says the Historical Society had no papers on file showing the county's foreign population.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The count existed, and the government he sat in had taken it the year before.** Allen County had 2,753 foreign-born white residents in 1920 — 627 of them German, 312 Italian, 309 Irish — and 11,274 people, one in six, who were immigrants or the children of immigrants. [verified] — [the 1920 foreign-born count](../measure/allen-county-foreign-born-1920.yml). In Lima, where he practised, it was better than one in six: 7,490 of 41,326. [inference] — computed there.",
           "tier": "inference"
         },
         {
@@ -13266,7 +13388,7 @@
           "tier": "verified"
         },
         {
-          "text": "**Its whole population history, with no gaps.** The county has a count at every decennial census from 1830 to 2020 and an estimate for 2024: **578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,203 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).** [verified] — assembled from [1830–1900](../measure/allen-county-population-1830-1900.yml), [1890–1910](../measure/allen-county-townships-1890-1910.yml), [1940–1990](../measure/allen-county-population-1940-1990.yml) and the four modern measures — which rest between them on [Leeson 1885](../../catalog/leeson-allen-county-1885.md), [the 1910 Ohio supplement](../../catalog/census-1910-abstract-supplement-ohio.md), [the 1950 volume](../../catalog/census-1950-number-of-inhabitants-ohio.md), [CPH-2-37](../../catalog/census-cph-2-37-ohio.md), [the 1970s county estimates](../../catalog/census-county-estimates-1970s.md), [the intercensals](../../catalog/census-intercensal-2000-2010.md) and [Population Estimates](../../catalog/census-popest-2024.md). Every figure is from a published table. Twenty-one observations, and until this phase two of them were missing.",
+          "text": "**Its whole population history, with no gaps.** The county has a count at every decennial census from 1830 to 2020 and an estimate for 2024: **578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,223 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).** [verified] — assembled from [1830–1900](../measure/allen-county-population-1830-1900.yml), [1890–1910](../measure/allen-county-townships-1890-1910.yml), [1940–1990](../measure/allen-county-population-1940-1990.yml) and the four modern measures — which rest between them on [Leeson 1885](../../catalog/leeson-allen-county-1885.md), [the 1910 Ohio supplement](../../catalog/census-1910-abstract-supplement-ohio.md), [the 1950 volume](../../catalog/census-1950-number-of-inhabitants-ohio.md), [CPH-2-37](../../catalog/census-cph-2-37-ohio.md), [the 1970s county estimates](../../catalog/census-county-estimates-1970s.md), [the intercensals](../../catalog/census-intercensal-2000-2010.md) and [Population Estimates](../../catalog/census-popest-2024.md). Every figure is from a published table. Twenty-one observations, and until this phase two of them were missing.",
           "tier": "verified"
         },
         {
@@ -14726,7 +14848,7 @@
           "tier": "verified"
         },
         {
-          "text": "For the county, the series now runs 578 (1830) through 47,976 (1900) and 68,203 (1920) to the 111,144 of 1970 the corpus already held. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). **Every decade rises.** So the county's 1970 peak is no longer an artefact of where the corpus's data began — it is a peak with ninety years of ascent behind it and no earlier candidate. What remains missing for the county is 1930 to 1960, four counts, and nothing in the shape so far suggests a reversal inside them. [inference] (Three of the four arrived the phase after that was written, and there *was* a reversal — just later, in the 1970s. One count is missing now: 1930.)",
+          "text": "For the county, the series now runs 578 (1830) through 47,976 (1900) and 68,223 (1920) to the 111,144 of 1970 the corpus already held. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md) and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the county series](../measure/allen-county-population-1830-1900.yml). **Every decade rises.** So the county's 1970 peak is no longer an artefact of where the corpus's data began — it is a peak with ninety years of ascent behind it and no earlier candidate. What remains missing for the county is 1930 to 1960, four counts, and nothing in the shape so far suggests a reversal inside them. [inference] (Three of the four arrived the phase after that was written, and there *was* a reversal — just later, in the 1970s. One count is missing now: 1930.)",
           "tier": "inference"
         },
         {
@@ -15767,7 +15889,7 @@
           "tier": "inference"
         },
         {
-          "text": "**In December 1920 it held 789 men and 165 women.** [verified] — same source. That is 954 people in a county of 68,203, and it makes the hospital at that moment more populous than every incorporated place in Allen County except four. The same book lists them: Lima 41,306, Delphos 3,169 in the Allen part, Bluffton 1,950, Spencerville 1,543, then Elida 509, Beaver Dam 394, Harrod 389, Lafayette 383 and West Cairo 380. [verified] — same source; the comparison computed here. [inference]",
+          "text": "**In December 1920 it held 789 men and 165 women.** [verified] — same source. That is 954 people in a county of 68,223, and it makes the hospital at that moment more populous than every incorporated place in Allen County except four. The same book lists them: Lima 41,306, Delphos 3,169 in the Allen part, Bluffton 1,950, Spencerville 1,543, then Elida 509, Beaver Dam 394, Harrod 389, Lafayette 383 and West Cairo 380. [verified] — same source; the comparison computed here. [inference]",
           "tier": "inference"
         },
         {
@@ -19084,6 +19206,13 @@
       "source": "catalog/usda-census-of-agriculture.md"
     },
     {
+      "from": "measure/allen-county-foreign-born-1920.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1920-state-compendium-ohio.md"
+    },
+    {
       "from": "measure/allen-county-funds-2025.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -19649,6 +19778,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "measure/allen-county-population-by-race-1920.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1920-state-compendium-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-population-by-race-1920.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1920-state-compendium-ohio.md"
     },
     {
       "from": "measure/allen-county-presidential-vote-2016.yml",

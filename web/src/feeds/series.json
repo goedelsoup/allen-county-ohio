@@ -942,6 +942,26 @@
       ]
     },
     {
+      "id": "place-allen-county::foreign-born-white-population",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "foreign-born white population",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-foreign-born-1920.yml",
+          "label": "Allen County's foreign-born, 1920",
+          "as_of": "1920",
+          "value": 2753.0,
+          "published": "2,753",
+          "tier": "verified",
+          "source": "catalog/census-1920-state-compendium-ohio.md",
+          "method": "Read from a page image at 300 dpi. Table 12 splits the countries into two blocks, each of which restarts at Adams County, so Allen's row had to be read from two pages three apart and rejoined; the check that it was rejoined correctly is that the twenty-two figures sum to the printed total of 2,753. Country names are the census's own for 1920 — Jugo-Slavia, Czechoslovakia and Syria are as printed, and the countries they name had existed for two years, one year and none at all as sovereign states. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::highway-bridges-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1558,6 +1578,26 @@
           "tier": "verified",
           "source": "catalog/census-acs-summary-file.md",
           "method": "2023 five-year estimates. Race categories are \"alone\" except the two-or-more column; Hispanic origin is asked separately and overlaps every race column, so the rows do not sum to 100. The twelve townships and Lima partition the county: 2,515 plus 8,290 is 10,805, the county row. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::population-enumerated-as-Negro,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "population enumerated as Negro, Allen County",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-population-by-race-1920.yml",
+          "label": "Allen County population by race and nativity, 1920",
+          "as_of": "1920",
+          "value": 1385.0,
+          "published": "1,385",
+          "tier": "verified",
+          "source": "catalog/census-1920-state-compendium-ohio.md",
+          "method": "Read from page images rendered at 300 dpi, because the text layer of both volumes garbles digits — it renders Lima's row as \"4l, 320 40,0li2 OU. \\l\". Two arithmetic checks were run before any figure was written down: the county's race lines sum to the printed total, and the city's white lines sum to the printed total white. The county figure is the compendium's, which is the federal count; the city figure is the abstract's, which is the same census. Where the county history and the census disagree, both are given and neither quotation is altered. [verified]"
         }
       ]
     },
@@ -2562,7 +2602,7 @@
         {
           "node": "place/allen-county.yml",
           "node_label": "Allen County",
-          "span": "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,203 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**",
+          "span": "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,223 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**",
           "tier": "verified",
           "sources": [
             "catalog/leeson-allen-county-1885.md",
@@ -2624,8 +2664,8 @@
         },
         {
           "label": "1920",
-          "value": 68203.0,
-          "literal": "68,203"
+          "value": 68223.0,
+          "literal": "68,223"
         },
         {
           "label": "1930",
@@ -2695,7 +2735,7 @@
         {
           "node": "measure/allen-county-outside-lima-1890-2020.yml",
           "node_label": "Allen County outside Lima, 1890–2020",
-          "span": "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**",
+          "span": "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,897 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**",
           "tier": "inference",
           "sources": []
         }
@@ -2719,8 +2759,8 @@
         },
         {
           "label": "1920",
-          "value": 26877.0,
-          "literal": "26,877"
+          "value": 26897.0,
+          "literal": "26,897"
         },
         {
           "label": "1930",
@@ -7061,7 +7101,7 @@
           "span": "**Two voter counts, four years apart, and the second one includes women.** \"In 1916, there were 552 negro voters in Lima; there has been an exodus of negroes to Allen County within the last four years, and in 1920, counting the women, there were almost 1,000 negro voters.\"",
           "tier": "inference",
           "sources": [
-            "catalog/rusler-allen-county-1921.md"
+            "catalog/census-1920-state-compendium-ohio.md"
           ]
         },
         {
@@ -7070,7 +7110,7 @@
           "span": "**On segregation the book contradicts itself in a page.**",
           "tier": "inference",
           "sources": [
-            "catalog/rusler-allen-county-1921.md"
+            "catalog/census-1920-state-compendium-ohio.md"
           ]
         },
         {
@@ -7362,6 +7402,126 @@
           "label": "1982–2022, 40 years",
           "value": 18335.0,
           "literal": "18,335"
+        }
+      ]
+    },
+    {
+      "id": "the-census-counted-what-the-history-estimated",
+      "statement": "The 1921 county history estimated 2,500 Black residents in Allen County. The census taken the year before counted 1,385, and 1,243 of those were in Lima. The same book said nobody had counted the county's foreign-born; the census had counted 2,753 of them, from twenty-one countries.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-population-by-race-1920.yml",
+          "node_label": "Allen County population by race and nativity, 1920",
+          "span": "**The 1921 history's estimate of the county's Black population is almost twice the census count.** It says \"it is estimated that there are 2,500 negroes in Allen County\" and that they are \"nearly all in Lima\". The census counted 1,385 in the county and 1,243 in Lima.",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md",
+            "catalog/census-1920-state-compendium-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1920.yml",
+          "node_label": "Allen County population by race and nativity, 1920",
+          "span": "**In figures: the book estimated 2500 for the county, the census counted 1385 there and 1243 in Lima, and the book's thousand voters would be 80.5 per cent of that 1243.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-1920-state-compendium-ohio.md",
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1920.yml",
+          "node_label": "Allen County population by race and nativity, 1920",
+          "span": "**Lima held nine-tenths of the county's Black residents and a third of its white ones.** 1,243 of 1,385, or 89.7 per cent, against a 60.6 per cent share of the county's population.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1920.yml",
+          "node_label": "Allen County population by race and nativity, 1920",
+          "span": "**The county's total is twenty higher than the figure this corpus has been using.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-foreign-born-1920.yml",
+          "node_label": "Allen County's foreign-born, 1920",
+          "span": "**In figures, the nine largest: Germany 627, Italy 312, Ireland 309, Canada 174, Switzerland 171, England 167, Austria 158, Russia 131 and Wales 120.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-1920-state-compendium-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-foreign-born-1920.yml",
+          "node_label": "Allen County's foreign-born, 1920",
+          "span": "**One person in six in this county was an immigrant or an immigrant's child.** 2,753 foreign-born white, 4,422 native white of foreign parentage and 4,099 of mixed parentage — 11,274 of 68,223, or 16.5 per cent. In Lima it was 7,490 of 41,326, or 18.1 per cent.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-foreign-born-1920.yml",
+          "node_label": "Allen County's foreign-born, 1920",
+          "span": "**The county's own historical society had no count of this and said so.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "The corpus now has 1,385 in 1920 and 10,805 in 2023 and no count in between, so it cannot say when the county's Black population grew or how fast.",
+        "This is one year, and the corpus holds no foreign-born count for the county before 1920 or after it, so it cannot say whether 16.5 per cent was a peak, a decline or a rise."
+      ],
+      "figures": [
+        {
+          "label": "Germany",
+          "value": 627.0,
+          "literal": "627"
+        },
+        {
+          "label": "Italy",
+          "value": 312.0,
+          "literal": "312"
+        },
+        {
+          "label": "Ireland",
+          "value": 309.0,
+          "literal": "309"
+        },
+        {
+          "label": "Canada",
+          "value": 174.0,
+          "literal": "174"
+        },
+        {
+          "label": "Switzerland",
+          "value": 171.0,
+          "literal": "171"
+        },
+        {
+          "label": "England",
+          "value": 167.0,
+          "literal": "167"
+        },
+        {
+          "label": "Austria",
+          "value": 158.0,
+          "literal": "158"
+        },
+        {
+          "label": "Russia",
+          "value": 131.0,
+          "literal": "131"
+        },
+        {
+          "label": "Wales",
+          "value": 120.0,
+          "literal": "120"
         }
       ]
     },

@@ -2677,6 +2677,61 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-census-counted-what-the-history-estimated",
+        statement: "The 1921 county history estimated 2,500 Black residents in Allen County. The \
+                    census taken the year before counted 1,385, and 1,243 of those were in Lima. \
+                    The same book said nobody had counted the county's foreign-born; the census \
+                    had counted 2,753 of them, from twenty-one countries.",
+        topic: "population",
+        supports: &[
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**The 1921 history's estimate of the county's Black population is almost twice the census\n  count.** It says \"it is estimated that there are 2,500 negroes in Allen County\" and that they are\n  \"nearly all in Lima\". The census counted 1,385 in the county and 1,243 in Lima."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**In figures: the book estimated 2500 for the county, the census counted 1385 there and 1243 in\n  Lima, and the book's thousand voters would be 80.5 per cent of that 1243.**"
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**Lima held nine-tenths of the county's Black residents and a third of its white ones.** 1,243 of\n  1,385, or 89.7 per cent, against a 60.6 per cent share of the county's population."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**The county's total is twenty higher than the figure this corpus has been using.**"
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1920.yml",
+                "**In figures, the nine largest: Germany 627, Italy 312, Ireland 309, Canada 174, Switzerland 171,\n  England 167, Austria 158, Russia 131 and Wales 120.**"
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1920.yml",
+                "**One person in six in this county was an immigrant or an immigrant's child.** 2,753 foreign-born\n  white, 4,422 native white of foreign parentage and 4,099 of mixed parentage \u{2014} 11,274 of 68,223, or\n  16.5 per cent. In Lima it was 7,490 of 41,326, or 18.1 per cent."
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1920.yml",
+                "**The county's own historical society had no count of this and said so.**"
+            ),
+        ],
+        answers: &[
+            // Both nodes refuse a trend, and this assertion makes none: it is one census,
+            // used to test a book written the year after it. The refusals travel with it.
+            "it cannot say when the county's Black population grew or how fast",
+            "it cannot say whether 16.5 per cent was a peak, a decline or a rise",
+        ],
+        figures: &[
+            Figure { label: "Germany", value: 627.0, literal: "627" },
+            Figure { label: "Italy", value: 312.0, literal: "312" },
+            Figure { label: "Ireland", value: 309.0, literal: "309" },
+            Figure { label: "Canada", value: 174.0, literal: "174" },
+            Figure { label: "Switzerland", value: 171.0, literal: "171" },
+            Figure { label: "England", value: 167.0, literal: "167" },
+            Figure { label: "Austria", value: 158.0, literal: "158" },
+            Figure { label: "Russia", value: 131.0, literal: "131" },
+            Figure { label: "Wales", value: 120.0, literal: "120" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
