@@ -1,0 +1,66 @@
+id: a-grand-total-is-not-a-budget
+summary: >-
+  This corpus had one node about money in 458, and it was about schools. The county's own auditor
+  publishes the county's own books, monthly, back to 2016. The first figure in them is
+  $374,841,546.99 and it is not what the county has: nearly half of it is money the treasurer
+  collects for other governments and hands on, and the fund the county's elected offices actually
+  run on is a tenth of it.
+context: |
+  [state-after-sixty-six-phases](state-after-sixty-six-phases.yml) named six gaps and the fifth was
+  "the catalog is federal": of the sources held then, the local ones were three county histories,
+  the county's site, the city's site, the sheriff's roster and the county's GIS, and everything
+  else was Washington or Columbus. It has not moved since.
+
+  Money was not on that list, because nobody had noticed it was missing. A corpus that can say who
+  holds every elected office in this county, to the day, and cannot say what any of those offices
+  costs, is not a civic reference yet.
+
+  Two federal routes were tried first and both are now closed to an automated client: the Census
+  API answers "Missing Key" on every endpoint, and its bulk finance directory rejects the request
+  outright. The State Auditor's audit search returns 403. The county's own auditor returns 200.
+decision: |
+  **The headline number in a public financial report answers a question the reader did not ask.**
+  The December 2025 revenue report totals $374,841,546.99 across 437 funds. What the county
+  government runs on is the General Fund at $39,567,582.57 — **10.6 per cent of it**.
+
+      the whole report                    374,841,547
+      52 custodial funds numbered 9xxx    181,069,850     48.3%
+      of which real estate tax            139,249,231     37.1%
+      the General Fund                     39,567,583     10.6%
+
+  **The test that separates them is arithmetic, not a label, because the source has no label.**
+  Fifteen funds took in and paid out the same amount to the cent — second-half real estate at
+  $58,725,512.16, federal withholding at $4,113,093.70, the undivided township gas tax at
+  $2,054,424.69. A fund whose two sides match exactly is a conduit. The county's largest single
+  money figure, the $139 million real estate duplicate, belongs to twelve school districts, two
+  cities, twelve villages, twelve townships, a library and a park district; the county's own share
+  of it is 3.3 per cent.
+
+  **So quote the fund, never the report.** Where this corpus states a figure from these books it
+  names which fund it came from, and where it states a total it says what the total is over.
+
+  **The same rule caught the audit.** Allen County's liabilities rose $36,758,891 between 2022 and
+  2023 and the county borrowed nothing: the movement is a pension line revalued under GASB 68. What
+  it owes to lenders is $16,281,525.
+rationale: |
+  **This is the fifth consecutive phase in which a file's headline geography or headline total
+  turned out to be administrative.** [a grant file counts offices not
+  ground](a-grant-file-counts-offices-not-ground.yml) for a federal applicant's domicile, the
+  ballot-versus-register split for the elected seats, [an address of record is not a
+  residence](an-address-of-record-is-not-a-residence.yml) for the attorney register, [a weekly
+  reports events, not states](a-weekly-reports-events-not-states.yml) for a newspaper's dates — and
+  now a grand total that is a cashier's drawer. The pattern is no longer a series of coincidences
+  and is worth checking for first rather than last.
+
+  **Why the county's own auditor and not the state's.** Because it answers. Three better-known
+  routes to the same numbers are closed to an automated client, and the office that keeps the books
+  publishes them itself, monthly, in a WordPress upload directory, with no key and no challenge.
+  The corpus's federal bias is partly a bias of convenience, and this is what it cost: sixty-three
+  sources and no idea what the sheriff spends.
+
+  **What this does not license.** It does not license calling the difference between a fund's
+  revenue and its expenditure a surplus or a deficit — a summary report carries no fund balance, and
+  the General Fund's $5,263,742 gap in 2025 may be a drawdown of carryover. It does not license
+  splitting the $139 million among taxing districts, which needs the tax settlement. And it does not
+  license reading one month's unaudited report as a year: the December 2025 statements are headed
+  31 December and stamped as generated on the 30th.
