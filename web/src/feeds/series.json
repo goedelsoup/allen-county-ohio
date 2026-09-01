@@ -1512,6 +1512,26 @@
       ]
     },
     {
+      "id": "place-allen-county::public-library-income-from-all-sources",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "public library income from all sources",
+      "unit": "US dollars",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-libraries-2024.yml",
+          "label": "Allen County's public libraries, 2024",
+          "as_of": "2024-12-31",
+          "value": 6528885.0,
+          "published": "6528885",
+          "tier": "verified",
+          "source": "catalog/imls-public-libraries-survey.md",
+          "method": "The FY2024 public-use administrative-entity and outlet files, filtered to `STABR` OH and `CNTY` ALLEN. Three administrative entities and eight outlets. County totals are the sum of the three reported rows and are not adjusted for the two service areas that cross the county line, which is why they are reported as service-area figures and never as per-resident-of-Allen-County figures. State and national comparisons are computed over the same file. Every quoted cell carries an `R_24` reported flag. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::railroad-main-track-in-the-county",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -6343,6 +6363,91 @@
           "label": "Lafayette",
           "value": 1.0,
           "literal": "1"
+        }
+      ]
+    },
+    {
+      "id": "three-per-cent-of-the-library-money-is-local",
+      "statement": "Three per cent of what Allen County's libraries live on is local government money and seventy-one per cent is the state's — the inverse of the American average. That is Ohio's funding structure, not this county's choice, and the same dollar is a conduit fund in the county auditor's books.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-libraries-2024.yml",
+          "node_label": "Allen County's public libraries, 2024",
+          "span": "**Three per cent of what these libraries spend is local government money and seventy-one per cent is the state's.** Income of $6,528,885 across the three: $194,728 local, $4,622,683 state, $417 federal and $1,711,057 from everything else.",
+          "tier": "inference",
+          "sources": [
+            "catalog/imls-public-libraries-survey.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-libraries-2024.yml",
+          "node_label": "Allen County's public libraries, 2024",
+          "span": "**That is Ohio, not Allen County.** Ohio's 251 systems take 47.7 per cent of income locally and 42.9 per cent from the state, and among the state's 88 counties Allen ranks sixteenth from the bottom on the local share.",
+          "tier": "inference",
+          "sources": [
+            "catalog/imls-public-libraries-survey.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-libraries-2024.yml",
+          "node_label": "Allen County's public libraries, 2024",
+          "span": "**The county seat's library reports no local government revenue whatsoever.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/imls-public-libraries-survey.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-libraries-2024.yml",
+          "node_label": "Allen County's public libraries, 2024",
+          "span": "**Every resident of this county is inside exactly one library's legal service area.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/imls-public-libraries-survey.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-libraries-2024.yml",
+          "node_label": "Allen County's public libraries, 2024",
+          "span": "**Eight buildings, 101,109 square feet, and two of the nine municipalities have none.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/imls-public-libraries-survey.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-funds-2025.yml",
+          "node_label": "What passes through Allen County's books, 2025",
+          "span": "**One of those fifteen conduits is what pays for the county's libraries.** \"Local government library and township parks\", $4,495,636.25 in and $4,495,636.25 out, is this county's share of Ohio's public library fund",
+          "tier": "verified",
+          "sources": [
+            "catalog/imls-public-libraries-survey.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "State",
+          "value": 4622683.0,
+          "literal": "4,622,683"
+        },
+        {
+          "label": "Other",
+          "value": 1711057.0,
+          "literal": "1,711,057"
+        },
+        {
+          "label": "Local",
+          "value": 194728.0,
+          "literal": "194,728"
+        },
+        {
+          "label": "Federal",
+          "value": 417.0,
+          "literal": "417"
         }
       ]
     },

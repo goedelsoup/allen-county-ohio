@@ -18,6 +18,24 @@ const lostYear = assertion('the-1906-list-lost-a-year')
 const roll = assertion('the-register-dates-them-but-cannot-place-them')
 const dotted = assertion('the-ninety-nine-year-hole-is-dotted')
 const money = assertion('a-grand-total-is-not-a-budget')
+const libraries = assertion('three-per-cent-of-the-library-money-is-local')
+
+const librarySpec = bar(
+  libraries.figures.map((f) => f.label),
+  libraries.figures.map((f) => f.value),
+  { yTitle: 'Library income by level of government, 2024 (US$)', labelValues: true },
+)
+
+const libraryOutlets = [
+  ['Lima Public Library', 'Lima', '650 W. Market St.', 60650, 2988],
+  ['Delphos Public Library', 'Delphos', '309 W. 2nd St.', 15989, 2496],
+  ['Bluffton Public Library', 'Bluffton', '145 S. Main St.', 12874, 2834],
+  ['Spencerville branch', 'Spencerville', '2489 Wisher Dr.', 5625, 1872],
+  ['Elida branch', 'Elida', '500 E. Kiracofe Ave.', 3990, 1872],
+  ['Cairo branch', 'Cairo', '108 Everett Dr.', 1281, 1872],
+  ['Lafayette branch', 'Lafayette', '225 E. Sugar St.', 600, 1092],
+  ['OSU Lima campus', 'Lima', '4240 Campus Dr.', 100, 2964],
+]
 
 const moneySpec = bar(
   money.figures.map((f) => f.label),
@@ -733,5 +751,45 @@ const traced = offices.filter(
       liabilities rose $36,758,891 between 2022 and 2023 and it borrowed nothing — the movement is a
       pension line revalued under an accounting standard. What it owes to lenders is $16,281,525.
     </p>
+  </section>
+
+  <section>
+    <h2>Three cents in the dollar</h2>
+    <AssertionCard assertion={libraries} />
+    <p>
+      Allen County has three public library systems and eight buildings. Between them they took in
+      $6,528,885 in 2024 and $194,728 of it — three per cent — came from local government. Across
+      the United States the same column is 85.5 per cent. The county seat's library reports a zero
+      in it.
+    </p>
+    <ChartFigure
+      id="library-money"
+      title="Allen County public library income by source, 2024"
+      caption="Every figure here was reported by the library rather than imputed. 'Other' is a single survey column with no breakdown; for Lima Public Library alone it is $1,603,932, nearly a third of that system's revenue."
+      columns={['Source', 'US$']}
+      rows={libraries.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="library-money" set:html={JSON.stringify(librarySpec)} is:inline />
+    <p>
+      That is a fact about Ohio before it is a fact about Allen County. Ohio pays for its libraries
+      from Columbus: the state's 251 systems take 42.9 per cent of their income from the state
+      against a national 6.7, and among Ohio's 88 counties Allen is sixteenth from the bottom on the
+      local share. Putnam and Shelby report no local money at all.
+    </p>
+    <p>
+      And the money is the same money this page has already counted. The county's own books carry a
+      fund called "local government library and township parks" that took in $4,495,636.25 in 2025
+      and paid out $4,495,636.25 — one of the fifteen conduits above. Ohio's tax commissioner
+      certifies the public library fund to <em>counties</em> and pays it to the county auditor, who
+      allocates it. The state's books record a payment to a county, the county's books record a fund
+      it does not own, and the library's books record a receipt from the state. Three ledgers, one
+      dollar, and no two of these figures may be differenced.
+    </p>
+    <DataTable
+      title="Eight buildings"
+      caption="101,109 square feet in all. Every resident of the county is inside exactly one library's legal service area — Lima's covers 88.2 per cent of it, and Bluffton's and Delphos's are school districts that reach over the county line. Beaverdam and Harrod have no outlet."
+      columns={['Outlet', 'Town', 'Address', 'Square feet', 'Hours a year']}
+      rows={libraryOutlets}
+    />
   </section>
 </Base>
