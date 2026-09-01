@@ -1,0 +1,79 @@
+class: measure
+label: Allen County's congregations, 2020
+description: |
+  A hundred and sixty congregations, forty-nine religious bodies, and 58,696 people reported as
+  adherents of one of them. [verified] —
+  [the 2020 U.S. Religion Census](../../catalog/us-religion-census-2020.md).
+
+  **That is 57.4 per cent of the county, and the denominator is the census count.** 102,206, the
+  same figure this corpus holds from
+  [the 2020 census](allen-county-population-2020-census.yml). [verified] — same source. The other
+  42.6 per cent are people no religious body reported, which is not the same as people who belong to
+  none.
+
+  **Two bodies hold nearly half of it.** The Catholic Church has 14,732 adherents in 8
+  congregations — a quarter of the county's total in five per cent of its churches, and by far the
+  largest congregations here at some 1,842 apiece — and non-denominational Christian churches have
+  11,530 in 25. [verified] — same source. Together, 44.7 per cent of adherents. [inference] —
+  computed.
+
+      body                                        congregations   adherents
+      Catholic Church                                         8      14,732
+      Non-denominational Christian churches                  25      11,530
+      Church of the Nazarene                                  3       5,619
+      United Methodist Church                                24       5,327
+      National Missionary Baptist Convention                 13       4,394
+      Evangelical Lutheran Church in America                  7       2,574
+      Christian and Missionary Alliance                       3       2,162
+      Assemblies of God                                       3       1,520
+      Muslim Estimate                                         3       1,407
+      American Baptist Churches in the USA                    4       1,070
+      the other 39 bodies                                    67       8,361
+
+  **Seventeen congregations belong to historically Black denominations and they hold 5,365
+  adherents.** The National Missionary Baptist Convention with 13 and 4,394, the National Baptist
+  Convention USA with 2 and 701, the African Methodist Episcopal Church with 1 and 150, and the
+  Church of God in Christ with 1 and 120. [inference] — the four groups summed; the file does not
+  aggregate them and does not describe any congregation's membership by race.
+
+  **Sixteen congregations and 1,794 adherents are Anabaptist in origin, and the tradition is a
+  century and three-quarters old here.** Mennonite Church USA has 3 and 536, the Church of the
+  Brethren 4 and 534, the Missionary Church 4 and 324, the two Old German Baptist Brethren bodies 2
+  and 178, and three smaller Mennonite bodies 1 congregation each and 222 between them. [inference]
+  — summed from the same rows, and the grouping is this corpus's: the file has no Anabaptist column,
+  and the Missionary Church is Mennonite in descent and evangelical in present practice. The
+  Mennonites came to Richland Township from Holmes County in 1848. [verified] —
+  [the churches of 1906 and 1921](allen-county-churches-1906-1921.yml).
+
+  **This county has fewer churches for its size than most of the country and more adherents than
+  most of its neighbours.** 156.5 congregations per 100,000 people ranks 2,160th of 3,146 counties;
+  57.4 per cent adherence ranks 904th. [verified] — same source, its own rank columns. The regional
+  gradient is sharp. Reading the eight counties around this one: Mercer 77.6 per cent, Putnam 72.0
+  and Shelby 63.9 to the south and west; Auglaize 52.2 due south; and Hancock 41.2, Logan 38.7, Van
+  Wert 35.5 and Hardin 30.8 to the north and east. Allen at 57.4 sits between the two groups, and
+  the high ones are the German Catholic settlement country of west-central Ohio. [inference] —
+  computed from the same county sheet; the settlement explanation is this corpus's and no source
+  here states it.
+
+  [open] What any of this looked like in between. The corpus now holds a county count for 2020 and a
+  county estimate for 1921 and nothing at all for the ninety-nine years between them; the federal
+  Census of Religious Bodies ran to 1936 and is not held here.
+properties:
+  parameter: religious congregations in Allen County
+  value: "160"
+  unit: congregations
+  as_of: "2020"
+  method: |
+    The county summary sheet and the group-by-county sheet of the 2020 U.S. Religion Census,
+    filtered to FIPS 39003. The 49 group rows sum to the summary sheet's 160 congregations and
+    58,696 adherents exactly, which is the check that the read is complete. Adherents are as each
+    religious body reported them and the bodies do not share a definition; nine congregations report
+    no adherent figure and are counted as congregations only. Neighbouring counties are read from
+    the same sheet. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/us-religion-census-2020.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
