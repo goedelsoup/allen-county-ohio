@@ -1,0 +1,55 @@
+id: a-file-has-more-than-one-date
+summary: >-
+  The 2025 National Bridge Inventory describes a bridge built in 1909 and gives its traffic as a
+  count taken in 2015. Three of its dates are different things and the edition year is the least
+  informative of them. This records how a dataset's own date fields are read before `as_of` is set.
+context: |
+  Every measure in this corpus carries `as_of`, described in the ontology as "the date the figure
+  describes — not the date it was published". That distinction was written for a source with one
+  date, where the only trap is citing the publication year.
+
+  A per-row federal file is not that. The 2025 Ohio bridge file carries, for each structure, the
+  year it was built, the year of the traffic count beside it, and the date of the inspection the
+  condition ratings come from. **293 of Allen County's 364 rows give a traffic count taken in 2015.**
+  A corpus that reads the file in 2026 and writes "39,060 vehicles a day (2025)" has published a
+  ten-year-old number under a fresh date, and nothing downstream can tell.
+decision: |
+  **Before setting `as_of`, list the file's date fields and say which one each figure belongs to.**
+  The edition year dates the compilation and nothing in it. If a field has a companion field naming
+  its year, that companion is the figure's date and must be cited.
+
+  **A count and its date travel together or not at all.** `ADT_029` without `YEAR_ADT_030` is not a
+  traffic figure, it is a number. Where the corpus publishes such a figure, the year of the
+  observation goes in the same sentence, not in the method block.
+
+  **One node may need several dates, and that is the right answer rather than a problem.** The
+  bridges measure is `as_of` 2025 because the *count of structures* is a property of the 2025
+  edition — a bridge is in the file or it is not. The traffic figure inside it is 2015. The
+  structure it describes was built in 1909. Splitting the node to make one date true would be worse:
+  it would separate figures that belong to one subject in order to satisfy a schema field.
+
+  **Where a file gives no per-field date, say the edition year is a ceiling and not a date.** The
+  condition ratings here come from "the most recent inspection", which is bounded above by the
+  edition and below by the inspection cycle, and the corpus states the bound rather than inventing a
+  year.
+rationale: |
+  **This is the failure that leaves no trace.** A wrong name gets corrected by the next reader; a
+  sum that does not close announces itself. A fresh-looking date on a stale figure is invisible, it
+  survives every check this corpus runs, and it is the specific thing a reference is for.
+
+  **It is a different failure from the ones already recorded.**
+  [a-modelled-estimate-is-not-an-observation](a-modelled-estimate-is-not-an-observation.yml) is
+  about how a number was produced. [a-sample-is-not-a-series](a-sample-is-not-a-series.yml) is about
+  what a number may be compared with. Both assume the number is *of* the year the corpus assigns it.
+  This one is about that assignment.
+
+  **The tell is in the file, and it is generous.** The National Bridge Inventory does not hide the
+  problem — it ships a `YEAR_ADT` column precisely so a reader can see it, and the corpus found the
+  ten-year lag by reading that column rather than by suspecting anything. A federal file that
+  bothers to date its own fields is telling you those fields have different dates, and the corpus's
+  obligation is to notice, not to detect.
+
+  **What this does not license.** Discounting a figure for being old. A 2015 traffic count on a rural
+  county road is very likely still about right, and the corpus says the year rather than declining
+  the number. Nor does it license backdating `as_of` on the containing node: the count of 364
+  structures really is a 2025 fact.
