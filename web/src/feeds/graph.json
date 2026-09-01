@@ -2812,6 +2812,81 @@
       "withheld": 7
     },
     {
+      "id": "measure/allen-county-attorney-register-2026.yml",
+      "class": "measure",
+      "label": "The Allen County roll of Ohio attorneys, 1925–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026-09-01",
+        "method": "One POST to the directory's `Ajax.ashx` with `county=Allen` and every other field empty. The response carried `TooManyResults: false`, so the 334 rows are the whole answer at the 1,000-row cap rather than a truncation. The county filter is a substring match and is not scoped to a state; the same query with `state=IN` returns zero rows, which is how these were confirmed to be Ohio addresses and not Fort Wayne's. Counts by status, by decade and by admitted-by are tallies of those rows and nothing is estimated. [verified]",
+        "parameter": "persons admitted in Ohio with an Allen County address of record",
+        "unit": "registrants",
+        "value": "334"
+      },
+      "blocks": [
+        {
+          "text": "**Three hundred and thirty-four people have given the Supreme Court of Ohio an address of record in Allen County, and one hundred and forty-four of them may practice law.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), queried by county on 1 September 2026 and returned complete rather than capped.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is a roll and not a bar.** It is cumulative, never purged, and its admissions run from 6 January 1925 to 17 November 2025 — a hundred years and eleven months. [verified] — same source. Nothing in it marks a person as dead, and it is not a list of the lawyers now working in this county: it is a list of the addresses on file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The century shows in the statuses, and every registrant admitted before 1940 is in the same one.** All sixty-three of them are `Not Required`, and no `Active` registrant here was admitted before 1966. [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The eleven decade totals are 20, 23, 24, 23, 26, 44, 46, 42, 23, 41 and 21, and the active column beside them is 0, 0, 0, 0, 2, 10, 26, 28, 21, 36 and 21.** [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The eight Retired are a closed class with a date on it.** Every one was admitted between 1943 and 1962, and the Court stopped offering the status on 1 September 2007, so no ninth can ever be added. [inference] — the admission years are the source's; the closure is the source's; that no ninth can join follows from the two.",
+          "tier": "inference"
+        },
+        {
+          "text": "**`Not Required` is the second-largest category and the Court will not say what it is.** Its definition in the source is \"for a variety of reasons ... please contact the Office of Attorney Services\". It cannot be read as \"deceased\": four of the 138 dated ones were admitted since 2000, and one is a 2017 admission. [verified] — same source. The corpus records the count and declines to name the reasons.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three hundred and twenty-five of the 334 were admitted by examination.** Seven came in by motion, one by transfer of a Uniform Bar Examination score, and one carries `Not Admitted` with no admission date at all. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Admission is a ceremony, so the dates repeat.** The 333 dated admissions fall on 166 distinct days, and three days carry six of these registrants each — 3 November 1973, 4 November 1985 and 6 November 1989. [verified] — same source, counted here. A shared admission date is therefore no evidence at all that two people are connected.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The registration number is an identifier and not a sequence.** They run from 774 to 106164, and sorting the 333 dated registrants by admission date leaves 133 of the 332 adjacent pairs with a higher number before a lower one. [inference] — computed from the same rows.",
+          "tier": "inference"
+        },
+        {
+          "text": "**A rate, stated as a rate and not as a workforce.** 144 active registrations against [100,866 residents](allen-county-population-2024.yml) is one for every 700 people. [inference] — the two figures are three years apart and the numerator is addresses, not persons at work.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Thirteen of the 334 are officers this corpus already names.** Six judges of the county's own courts, four of [the Third District](../office/judge-of-the-third-district-court-of-appeals.yml), the prosecuting attorney, Lima's director of law and the county's member of the Ohio House. Every one of the thirteen was admitted by examination, the earliest on 7 May 1979 and the most recent on 17 November 2008, and all thirteen are active. [verified] — same source, read against [the elections roster](../../catalog/ohio-boe-elected-officials-allen.md). The join is a match on a name and a county; neither source carries an identifier for a person. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Five of the thirteen were admitted on two days.** Three of the officers now sitting — an appellate judge, a second appellate judge and the county's member of the Ohio House — were admitted together on 4 November 1985, and two more on 1 November 1983. [verified] — same source. That is the ceremony and not a connection between them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county in this register is the county of a business address.** Its own disclaimer reads: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. This corpus cannot say from it where any of the thirteen lives. [verified] — same source, its definitions panel.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The count is a floor, and the county's own geography is what shows it.** Of 305 registrants with a Lima, Ohio address, 298 name Allen County and seven name no county at all — and Lima lies wholly in Allen County. [verified] — same source. Against that, [Delphos](../place/delphos.yml) divides thirteen Allen to seven Van Wert with none left over and [Bluffton](../place/bluffton.yml) six Allen to two Hancock with none left over. The field is complete for the two cities a county line runs through and incomplete for the one it does not, so the true number of Ohio attorneys with an Allen County address is at least 341. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say from it where any of the thirteen lives."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-bridge-crossings-2025.yml",
       "class": "measure",
       "label": "What Allen County's bridges cross, 2025",
@@ -8854,6 +8929,10 @@
           "tier": "inference"
         },
         {
+          "text": "**Admitted to the practice of law in Ohio by examination on 1 November 1983, registration number 6150.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns exactly one Anthony Layton Geiger, with an Allen County address of record and an active status.",
+          "tier": "verified"
+        },
+        {
           "text": "Ohio requires an elected municipal officer to be an elector of the municipality, so the `resided-in` edge below is a legal inference rather than a fact any source read here states. [inference]",
           "tier": "inference"
         }
@@ -9194,6 +9273,10 @@
         {
           "text": "Prosecuting Attorney of Allen County, holding a term that began 2025-01-06. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 17 November 2008, registration number 83779.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns exactly one Destiny Caldwell in the state, with an Allen County address of record and an active status. The office is one the corpus holds a statutory qualification for; this is the first holder of it whose qualification is dated. [inference]",
+          "tier": "inference"
         },
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
@@ -9670,11 +9753,21 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "It does not reach this member either. One James Jordan is registered in Ohio, admitted in 1966, and carries a different middle name from the one this roster prints. [verified] — same source, searched statewide. Joining them would be a guess about a person, and the register offers nothing to guess with.",
+          "tier": "verified"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -9785,10 +9878,18 @@
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 1 November 1983, registration number 15784.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns a Jeffrey Lee Reed of that number, an Allen County address of record and an active status. That the registrant and the judge are the same person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That address does not corroborate the `resided-in` edge below. The directory lists a business address and shows a residence only when no valid business address is on file, so an Allen County entry for a judge who sits in Lima is what it would return either way. [verified] — same source, its own disclaimer; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "person/jennifer-moree-mcbride.yml",
@@ -9960,11 +10061,25 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 4 November 1985, registration number 29627.** [verified] — same source, which returns a John Randall Willamowski of that number with an Allen County address of record and an active status. That the registrant and the judge are one person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And that Allen County address is exactly what the register would return whichever county this judge lives in**, because [the court](../office/judge-of-the-third-district-court-of-appeals.yml) sits in Lima and hears appeals from seventeen counties. The datum is consistent with residence here and equally consistent with a desk here. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -9983,10 +10098,18 @@
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 5 November 2007, registration number 82482.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns a John Richard Payne of that number, an Allen County address of record and an active status. That the registrant and the judge are the same person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That address does not corroborate the `resided-in` edge below. The directory lists a business address and shows a residence only when no valid business address is on file, so an Allen County entry for a judge who sits in Lima is what it would return either way. [verified] — same source, its own disclaimer; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "person/john-thomas-meyer.yml",
@@ -10077,11 +10200,25 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 4 November 1985, registration number 30399.** [verified] — same source, which returns a Juergen Arthur Waldick of that number with an Allen County address of record and an active status. That the registrant and the judge are one person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And that Allen County address is exactly what the register would return whichever county this judge lives in**, because [the court](../office/judge-of-the-third-district-court-of-appeals.yml) sits in Lima and hears appeals from seventeen counties. The datum is consistent with residence here and equally consistent with a desk here. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -10148,11 +10285,25 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 18 November 1991, registration number 55702.** [verified] — same source, which returns a Mark Christian Miller of that number with an Allen County address of record and an active status. That the registrant and the judge are one person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And that Allen County address is exactly what the register would return whichever county this judge lives in**, because [the court](../office/judge-of-the-third-district-court-of-appeals.yml) sits in Lima and hears appeals from seventeen counties. The datum is consistent with residence here and equally consistent with a desk here. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -10192,10 +10343,18 @@
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 2 November 1979, registration number 2227.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns a Matt Charles Staley of that number, an Allen County address of record and an active status. That the registrant and the judge are the same person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That address does not corroborate the `resided-in` edge below. The directory lists a business address and shows a residence only when no valid business address is on file, so an Allen County entry for a judge who sits in Lima is what it would return either way. [verified] — same source, its own disclaimer; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "person/matthew-b-treglia.yml",
@@ -10236,11 +10395,21 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "It returns a Matthew Carl Huffman, admitted by examination on 4 November 1985 and holding registration number 29473, with an Allen County address of record. [verified] — same source. Six Huffmans appear in that county's register and two of them are named Matthew, so the join to this member is a middle initial and a county, and the county is a mailing address. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -10590,11 +10759,21 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "It does not reach this member at all: no attorney of this name is registered in Ohio under any address. [verified] — same source, searched statewide. The instrument that answers the question for four judges of this county is silent about a senator who is not a lawyer, which is the ordinary case and worth recording once.",
+          "tier": "verified"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -10613,10 +10792,18 @@
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 13 November 1995, registration number 65323.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns a Tammie Kay Hursh of that number, an Allen County address of record and an active status. That the registrant and the judge are the same person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That address does not corroborate the `resided-in` edge below. The directory lists a business address and shows a residence only when no valid business address is on file, so an Allen County entry for a judge who sits in Lima is what it would return either way. [verified] — same source, its own disclaimer; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "person/terri-lynn-kohlrieser.yml",
@@ -10634,10 +10821,18 @@
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 13 November 2001, registration number 73982.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns a Terri Lynn Kohlrieser of that number, an Allen County address of record and an active status. That the registrant and the judge are the same person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That address does not corroborate the `resided-in` edge below. The directory lists a business address and shows a residence only when no valid business address is on file, so an Allen County entry for a judge who sits in Lima is what it would return either way. [verified] — same source, its own disclaimer; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "person/thomas-michael-wa-jones.yml",
@@ -10680,10 +10875,18 @@
         {
           "text": "The elections roster gives a name, a party and two dates, so this node carries no date of birth, no biography and no prior office. Ohio requires an elected county officer to be an elector of the county, so the `resided-in` edge below is a legal inference rather than a fact any source states. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 18 November 2002, registration number 75240.** [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md), which returns a Todd Edward Kohlrieser of that number, an Allen County address of record and an active status. That the registrant and the judge are the same person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "That address does not corroborate the `resided-in` edge below. The directory lists a business address and shows a residence only when no valid business address is on file, so an Allen County entry for a judge who sits in Lima is what it would return either way. [verified] — same source, its own disclaimer; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "person/todd-gordon.yml",
@@ -10791,11 +10994,25 @@
           "tier": "verified"
         },
         {
+          "text": "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address. An attorney's residence address is displayed only if the attorney has not provided a valid business address.\" A result does not say which of the two it returned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md); see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Admitted to the practice of law in Ohio by examination on 7 May 1979, registration number 22102.** [verified] — same source, which returns a William Ray Zimmerman of that number with an Allen County address of record and an active status. That the registrant and the judge are one person is a match on a name and a county, not an identifier either source carries. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And that Allen County address is exactly what the register would return whichever county this judge lives in**, because [the court](../office/judge-of-the-third-district-court-of-appeals.yml) sits in Lima and hears appeals from seventeen counties. The datum is consistent with residence here and equally consistent with a desk here. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "That absence has a structural consequence worth naming: this node carries no outgoing edge but `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge, and a district officer reaches it only through the office and the term. [inference]",
           "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "**A second source was read for that question and it cannot answer it either.** The Supreme Court of Ohio's register of attorneys can be searched by county, and its own disclaimer says what that county is: \"The directory lists an attorney's business address."
+      ],
       "withheld": 1
     },
     {
@@ -11271,6 +11488,10 @@
         {
           "text": "**And three-quarters of the county's 2007 flood damage was in this ZIP code.** 45817 holds 109 of Allen County's 227 owner registrations for the flood of August 2007, 91 of its 195 inspections and $481,404 of the $663,302 of inspected damage — 72.6 per cent, at an average of $4,416.55 a property. [verified] — [the household aid](../measure/allen-county-household-disaster-aid-2007-2020.yml). The village, its university and its school district were all paid public assistance for it. [verified] — [who was paid](../measure/allen-county-disaster-aid-applicants-2005-2025.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**A third witness to the county line, and it is a mailing list.** The eight Ohio attorneys with a Bluffton address of record divide six to Allen County and two to Hancock, with none left unassigned — the same clean split [Delphos](delphos.yml) shows on its own line. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md). That register's county is self-reported and is incomplete where no county line runs through a city, so its completeness here is the straddle appearing in a source with no reason to care about it. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -11371,6 +11592,10 @@
         {
           "text": "**It was an interurban town as well as a steam one.** The 1906 history lists it on four steam railways \"besides being on one of the best traction lines in the country — The Fort Wayne, Van Wert & Lima\". [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). By 1921 it still had interurban service to Lima and Fort Wayne; see [the interurban](../measure/allen-county-interurban-1901-1921.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**A third witness to the county line, and it is a mailing list.** The twenty Ohio attorneys with a Delphos address of record divide thirteen to Allen County and seven to Van Wert, with none left unassigned. [verified] — [the attorney directory](../../catalog/ohio-attorney-directory.md). The county on that register is self-reported and is demonstrably incomplete elsewhere — seven Lima addresses carry no county at all, and Lima lies wholly in one — so its completeness here is the straddle appearing in a source with no reason to care about it. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -16219,6 +16444,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-attorney-register-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-attorney-directory.md"
     },
     {
       "from": "measure/allen-county-bridge-crossings-2025.yml",

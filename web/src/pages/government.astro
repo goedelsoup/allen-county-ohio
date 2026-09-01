@@ -2,7 +2,9 @@
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import DataTable from '../components/DataTable.astro'
+import ChartFigure from '../components/ChartFigure.astro'
 import { assertion, nodes, edges } from '../lib/feeds'
+import { bar } from '../lib/chart-spec'
 
 const nine = assertion('nine-offices-eleven-officers')
 const appointed = assertion('appointment-is-a-form-of-local-government')
@@ -13,6 +15,31 @@ const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
 const mayors = assertion('the-mayoral-line-reaches-1922')
 const crimeStep = assertion('a-step-that-is-not-a-crime-wave')
 const lostYear = assertion('the-1906-list-lost-a-year')
+const roll = assertion('the-register-dates-them-but-cannot-place-them')
+
+const rollSpec = bar(
+  roll.figures.map((f) => f.label),
+  roll.figures.map((f) => f.value),
+  { yTitle: 'Admissions to the Ohio bar', labelValues: true },
+)
+
+// Typed out because the admission dates live in node prose, not in a property the graph carries.
+// Sorted by admission so the two shared ceremony days sit together.
+const admitted = [
+  ['William Ray Zimmerman', 'Third District Court of Appeals', '7 May 1979', '22102'],
+  ['Matt Charles Staley', 'Common Pleas, Domestic Relations', '2 November 1979', '2227'],
+  ['Jeffrey Lee Reed', 'Common Pleas, General', '1 November 1983', '15784'],
+  ['Anthony Layton Geiger', 'Director of Law, Lima', '1 November 1983', '6150'],
+  ['Juergen Arthur Waldick', 'Third District Court of Appeals', '4 November 1985', '30399'],
+  ['John Randall Willamowski', 'Third District Court of Appeals', '4 November 1985', '29627'],
+  ['Matthew Carl Huffman', 'Ohio House, 78th District', '4 November 1985', '29473'],
+  ['Mark Christian Miller', 'Third District Court of Appeals', '18 November 1991', '55702'],
+  ['Tammie Kay Hursh', 'Lima Municipal Court', '13 November 1995', '65323'],
+  ['Terri Lynn Kohlrieser', 'Common Pleas, General', '13 November 2001', '73982'],
+  ['Todd Edward Kohlrieser', 'Common Pleas, Probate', '18 November 2002', '75240'],
+  ['John Richard Payne', 'Lima Municipal Court', '5 November 2007', '82482'],
+  ['Destiny Rae Caldwell', 'Prosecuting Attorney of Allen County', '17 November 2008', '83779'],
+]
 
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 // An office with no tenure would show as a blank holder rather than silently vanish.
@@ -531,6 +558,57 @@ const traced = offices.filter(
       identically. Angie Basinger in Lima is Angela Lynn Basinger in Ottawa; Kevin Ewing is Kevin D
       Ewing; Michelle Steinke is Michelle R Steinke. Nothing in the source carries an identifier for
       a person, so matching one across two counties is a guess about a middle initial.
+    </p>
+  </section>
+
+  <section>
+    <h2>The register dates them and cannot place them</h2>
+    <AssertionCard assertion={roll} />
+    <p>
+      The Supreme Court of Ohio keeps a public register of everyone ever admitted to practise law in
+      this state. Searched for the county of the address an attorney has given the Court, it returns
+      334 people for Allen County — and it settles a question thirteen pages on this site had left
+      open. Every judge who sits in this county, the four judges of the Third District who hear its
+      appeals, the prosecuting attorney and Lima's director of law are admitted Ohio attorneys, and
+      every one of the thirteen came in by examination rather than by motion.
+    </p>
+    <DataTable
+      caption="Thirteen officers this site already named, with the day each was admitted and the registration number the Court gave them. Three were admitted together on 4 November 1985 and two more on 1 November 1983 — admission is a ceremony, so a shared date says nothing about a connection."
+      columns={['Officer', 'Office', 'Admitted', 'Reg. no.']}
+      rows={admitted}
+    />
+    <p>
+      What the register cannot do is say where any of them lives. Its own disclaimer is explicit:
+      the directory lists a business address, and shows a residence only when no valid business
+      address is on file — and a result does not tell you which of the two you are looking at. The
+      Third District sits in Lima and hears appeals from seventeen counties, so an Allen County
+      entry is exactly what this register would return for an appellate judge living in any of them.
+      Seven pages here ask where a district officer lives. They still ask it, now for a reason with
+      a citation under it instead of for want of looking.
+    </p>
+    <ChartFigure
+      id="bar-admissions"
+      title="Admissions to the Ohio bar by people with an Allen County address, by decade"
+      caption="A roll, not a bar. Nothing in this register marks a person as dead, so the early decades are people, not practitioners: all sixty-three admitted before 1940 sit in a status the Court calls Not Required, and no active registrant here was admitted before 1966."
+      columns={['Decade', 'Admissions']}
+      rows={roll.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="bar-admissions" set:html={JSON.stringify(rollSpec)} is:inline />
+    <p>
+      Read straight, the chart looks like a county that grew lawyers steadily for a century. It is
+      not a time series of anything. The register is cumulative and never purged: its admissions run
+      from 6 January 1925 to 17 November 2025, and 139 of the 334 sit under a status the Court
+      defines as "an attorney who is not required to register ... for a variety of reasons" and will
+      not elaborate on. Of the 334, 144 may practise today, and against the county's 100,866
+      residents that is one for every 700 people.
+    </p>
+    <p>
+      One more thing fell out of it, and it is about the ground rather than the bar. The county in
+      this register is self-reported, and the county's own geography catches it. Twenty registrants
+      with a Delphos address divide thirteen to Allen and seven to Van Wert with none left over;
+      eight in Bluffton divide six to Allen and two to Hancock, also with none left over. Both
+      cities straddle a county line, and a mailing list with no reason to care reproduces both
+      exactly. Lima straddles nothing — and seven of its 305 registrants carry no county at all.
     </p>
   </section>
 </Base>
