@@ -1,0 +1,82 @@
+class: measure
+label: The school boards of Allen County's twelve districts, 2026
+description: |
+  **Twelve boards of education, sixty seats, and only forty-five of them are on a ballot in this
+  county.** [verified] —
+  [the elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), Allen County,
+  queried by district type.
+
+      district                     seats  on an Allen ballot
+      Allen East LSD                   5   yes
+      Bath LSD                         5   yes
+      Bluffton EVSD                    5   yes
+      Columbus Grove LSD               5   no
+      Delphos City                     5   yes
+      Elida LSD                        5   yes
+      Lima City                        5   yes
+      Pandora-Gilboa LSD               5   no
+      Perry LSD                        5   yes
+      Shawnee LSD                      5   yes
+      Spencerville LSD                 5   yes
+      Waynesfield-Goshen LSD           5   no
+
+  **The county's own roster answers this question two ways and the two answers differ.** Queried
+  by district type it returns all twelve boards with their members. Queried precinct by precinct
+  across all eighty-eight precincts it returns nine, and never
+  [Columbus Grove](../jurisdiction/columbus-grove-local-school-district.yml),
+  [Pandora-Gilboa](../jurisdiction/pandora-gilboa-local-school-district.yml) or
+  [Waynesfield-Goshen](../jurisdiction/waynesfield-goshen-local-school-district.yml). [verified] —
+  same source, both views read here.
+
+  **They are not in conflict; they answer different questions.** The precinct view lists what an
+  Allen County elector votes on, and no elector here votes on those three boards. The district-type
+  view lists the boards of every district holding ground in this county. [inference] The corpus had
+  read only the first and had concluded that the three boards were absent from the roster. They
+  were absent from the ballot.
+
+  **The fifteen people the corpus said it could not name.** [verified] — same source.
+
+      Columbus Grove       Jon Diller, Kevin M Schumacher, Mindy Troyer, Brian E Jones,
+                           Ned A Stechschulte
+      Pandora-Gilboa       Angie Basinger, Phillip R Buell, Vance Nofziger, Jeff Gerding,
+                           Jeffrey A Kempf
+      Waynesfield-Goshen   Thomas B Brookhart, Michelle Steinke, Brad Vorhes, Kevin Ewing,
+                           David Pepple
+
+  **The neighbouring counties' rosters carry the same fifteen people under different names.** Putnam
+  County gives Angela Lynn Basinger for Angie Basinger, Brian E. Jones for Brian E Jones; Auglaize
+  gives Kevin D Ewing, David J Pepple, Michelle R Steinke and Brad V Vorhes. **Eight of the fifteen
+  are rendered identically and seven are not**, across two boards of elections publishing from the
+  same state system. [verified] —
+  [the same lookup](../../catalog/ohio-boe-elected-officials-allen.md) at its Putnam and Auglaize
+  addresses; counted here.
+
+  **Every one of the sixty seats is filled and one holder is marked as having no commencement
+  date.** Phillip R Buell's term expires 31 December 2027 and the field that says when it began
+  reads `n/a` on both counties' pages. [verified] — same source. [open] How he came to the seat.
+
+  [open] Whether an Allen County elector inside one of those three districts votes for its board at
+  all, and if so where that ballot is issued. The precinct sweep says no Allen precinct carries the
+  office; 489 people in Monroe Township, 39 in Richland and an unmeasured number in Auglaize
+  Township live in those districts. [verified] —
+  [the districts' own nodes](../jurisdiction/columbus-grove-local-school-district.yml).
+properties:
+  parameter: boards of education of school districts holding ground in Allen County
+  value: "12"
+  unit: boards
+  as_of: "2026"
+  method: |
+    Fetched from the Ohio boards of elections lookup by posting the district-type form with
+    `cmbDistrictCat` = 8, which returns every school board in a county in one response — the same
+    database the corpus previously read as eighty-eight separate precinct pages. Seats are the
+    roster's own `Total Seats`. Names are printed as the Allen County view renders them, which is
+    not always as a neighbouring county renders the same person; where they differ both are given
+    and neither is corrected. Treasurers are excluded: they are appointed officers and not
+    elective seats. [inference]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

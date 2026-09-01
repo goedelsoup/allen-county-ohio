@@ -15,6 +15,16 @@ location:
     value: https://lookup.boe.ohio.gov/vtrapp/allen/cnm.aspx?task=voter&prsid=0004__1
     description: One precinct's ballot of offices, with holder, party, term start and term end
   - kind: url
+    value: https://lookup.boe.ohio.gov/vtrapp/<county>/cnm.aspx?task=voter
+    description: >-
+      The same application for any Ohio county — `putnam`, `auglaize`, and the other eighty-five.
+      **This entry's name is narrower than the source it describes**, and is kept because dozens of
+      nodes cite it. It is an ASP.NET form: GET the page, POST back with `cmbDistrictCat` set to a
+      district type, then POST again with `btnsubmit`, carrying `__VIEWSTATE`,
+      `__VIEWSTATEGENERATOR` and `__EVENTVALIDATION` and a cookie jar. `X3` returns a whole county's
+      officials in one response — 754 KB for Putnam — and `8` returns its school boards. A
+      `cmbDistName` filter appears after the first postback and lists the districts by name.
+  - kind: url
     value: https://lookup.boe.ohio.gov/vtrapp/allen/cnm.aspx?task=voter&prsid=NNNN__1
     description: >-
       The same page for any precinct. Allen County's precincts are 0001 through 0088; 0089 and
@@ -67,6 +77,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/jurisdiction/waynesfield-goshen-local-school-district.yml
   - ../corpus/measure/allen-county-elected-seats-2026.yml
+  - ../corpus/measure/allen-county-school-boards-2026.yml
   - ../corpus/measure/lima-city-government-2026.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
@@ -177,6 +188,19 @@ used-by:
   - ../corpus/tenure/third-district-2025-john-r-willamowski.yml
   - ../corpus/tenure/treasurer-2025-krista-n-bohn.yml
 ---
+
+**It answers the same question two ways and the answers differ.** Queried precinct by precinct,
+Allen County's roster carries nine boards of education; queried by district type it carries twelve,
+adding Columbus Grove, Pandora-Gilboa and Waynesfield-Goshen, whose districts hold ground here and
+whose boards no Allen precinct ballots. Neither view is wrong: the first lists what an elector votes
+on and the second lists the boards of every district in the county. A reader who takes either for
+the other gets a true sentence about the wrong thing.
+
+**It renders the same person differently in different counties.** The fifteen members of those three
+boards appear on the Allen roster and on the Putnam and Auglaize rosters, and eight of the fifteen
+are spelled identically. Angie Basinger on one page is Angela Lynn Basinger on another; Kevin Ewing
+is Kevin D Ewing. There is no identifier on a holder, so joining people across counties is a string
+match on a name the source does not stabilise.
 
 **It closes the corpus's largest structural gap.** Before it, the `office` class held two instances —
 [the sheriff](../corpus/office/allen-county-sheriff.yml) and the mayor of Lima — against the nine
