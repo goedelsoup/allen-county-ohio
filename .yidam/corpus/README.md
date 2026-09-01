@@ -37,7 +37,7 @@ Sorted by: kind, then alphabetically.
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
 | [organization-of-the-town-of-lima-1842.yml](event/organization-of-the-town-of-lima-1842.yml) | event | The organization of the town of Lima | 3 | 6v / 0i / 1o | 53 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
-| [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 3 | 4v / 1i / 1o | 44 |
+| [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 4 | 4v / 1i / 1o | 48 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 8v / 2i / 1o | 75 |
 | [settlers-occupy-fort-amanda-1817.yml](event/settlers-occupy-fort-amanda-1817.yml) | event | Settlers occupy the blockhouses at Fort Amanda, 1817 | 3 | 7v / 1i / 0o | 53 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
@@ -145,6 +145,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
+| [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
+| [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
@@ -195,6 +197,7 @@ Sorted by: kind, then alphabetically.
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 5v / 3i / 1o | 55 |
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
+| [gramm-bernstein-motor-truck-company.yml](organization/gramm-bernstein-motor-truck-company.yml) | organization | Gramm-Bernstein Motor Truck Company | 2 | 7v / 0i / 2o | 50 |
 | [institute-for-orthopaedic-surgery.yml](organization/institute-for-orthopaedic-surgery.yml) | organization | Institute for Orthopaedic Surgery | 2 | 6v / 1i / 0o | 55 |
 | [james-a-rhodes-state-college.yml](organization/james-a-rhodes-state-college.yml) | organization | James A. Rhodes State College | 2 | 6v / 1i / 2o | 50 |
 | [kindred-hospital-lima.yml](organization/kindred-hospital-lima.yml) | organization | Kindred Hospital Lima | 2 | 6v / 1i / 1o | 52 |
@@ -204,15 +207,16 @@ Sorted by: kind, then alphabetically.
 | [mercy-health-st-ritas-medical-center.yml](organization/mercy-health-st-ritas-medical-center.yml) | organization | Mercy Health–St. Rita's Medical Center | 2 | 7v / 0i / 1o | 53 |
 | [ohio-state-beauty-academy.yml](organization/ohio-state-beauty-academy.yml) | organization | Ohio State Beauty Academy | 2 | 3v / 3i / 1o | 42 |
 | [ohio-state-university-at-lima.yml](organization/ohio-state-university-at-lima.yml) | organization | Ohio State University-Lima Campus | 2 | 6v / 1i / 1o | 45 |
-| [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 6v / 0i / 1o | 49 |
+| [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 7v / 0i / 1o | 55 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
 | [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 8i / 3o | 123 |
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 13i / 2o | 232 |
-| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 3 | 7v / 8i / 2o | 80 |
+| [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 4 | 7v / 8i / 2o | 83 |
 | [the-civil-war-in-allen-county.yml](period/the-civil-war-in-allen-county.yml) | period | The Civil War in Allen County | 4 | 3v / 5i / 3o | 82 |
+| [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 3 | 8v / 2i / 2o | 68 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
@@ -343,7 +347,7 @@ Sorted by: kind, then alphabetically.
 | [fort-amanda.yml](site/fort-amanda.yml) | site | Fort Amanda | 2 | 15v / 2i / 0o | 98 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 13v / 7i / 3o | 133 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 2v / 4i / 2o | 51 |
-| [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 5v / 3i / 0o | 47 |
+| [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 6v / 4i / 0o | 57 |
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
 | [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 9v / 4i / 2o | 72 |
