@@ -1,0 +1,85 @@
+class: measure
+label: Allen County's severe weather record, 1950–2026
+description: |
+  **Three hundred and ninety events in seventy-six years, and the series is a history of
+  observation before it is a history of weather.** [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), filtered to Ohio, county Allen.
+
+  **The count rises monotonically across seven decades and the tornadoes do not.** [verified] —
+  same source, counted here.
+
+      decade   all events   tornadoes
+      1950s             4           1
+      1960s             8           2
+      1970s            12           4
+      1980s            32           3
+      1990s            58           2
+      2000s            95           3
+      2010s           121           4
+
+  **The seven decade totals are 4, 8, 12, 32, 58, 95 and 121, and the tornado column beside them is
+  1, 2, 4, 3, 2, 3, 4.** The first series is in strictly increasing order, which is one arrangement
+  of the 5,040 that seven distinct numbers can take; the second is not ordered at all, and four
+  events in the 1950s against 121 in the 2010s is a factor of thirty. [inference] — computed from
+  the same source. **Tornado is the only category
+  counted in every one of those decades**, which is what makes it the control. [verified] — same
+  source; see [the tornadoes](allen-county-tornadoes-1950-2026.yml).
+
+  **Sixteen event types appear here and thirteen of them start in 1996 or later.** Tornado begins
+  in 1950, thunderstorm wind in 1955, hail in 1959; then nothing new for thirty-seven years, and
+  then flash flood, ice storm, winter storm and cold/wind chill all first appear in 1996, flood and
+  high wind in 1997, heavy snow in 1999, strong wind in 2004, lightning in 2006, blizzard in 2007,
+  winter weather in 2010, extreme cold in 2014 and heavy rain in 2020. [verified] — same source,
+  first year of each type computed here. See
+  [a category has a birthday](../../decisions/a-category-has-a-birthday.yml).
+
+  **So the two halves are 1.63 events a year and 10.16.** Seventy-five events in the forty-six
+  years to 1995 against 315 in the thirty-one years from 1996 — six times the rate — while the
+  tornado rate goes from 0.24 a year to 0.39 on counts of eleven and twelve. [inference] — computed
+  here. The corpus reports the halves and refuses the trend across them.
+
+  **Eleven people have been killed by weather in this county since 1950 and all eleven died in the
+  same minute.** The file's only fatalities are the eleven of the tornado of 11 April 1965. Of 134
+  direct injuries, 130 are that tornado's hundred and the thirty of July 1950. [verified] — same
+  source; see [that evening](../event/the-tornado-of-11-april-1965.yml).
+
+  **Three episodes are three-quarters of all the damage.** $9,408,250 of property damage is
+  recorded across the whole file, and the tornadoes of 1950 and 1965 at $2.5 million each and the
+  windstorm of 22 June 2006 at $1,970,000 are $6,970,000 of it — 74.1 per cent. [verified] — same
+  source, summed here. Crop damage across seventy-six years is $55,000.
+
+  **The record is written by the county's own residents.** Of the 293 rows that name a reporter,
+  240 name a person — trained spotters, emergency managers, police, broadcast media, amateur radio
+  operators, newspapers and the public — 43 name an instrument, eight are National Weather Service
+  storm surveys and two say "unknown". [verified] — same source. **That is the mechanism behind the
+  rising count**: a file filled by people telephoning a forecast office grows when there are more
+  people willing to telephone, and the reporter field is empty on all eighty-nine rows before 1998.
+  [inference]
+
+  **More than half of it falls in four months of twelve.** May through August hold 219 of the 390
+  rows, June and July alone hold 144, and October holds five. [verified] — same source, counted
+  here.
+
+  [open] Whether the county's weather has in fact changed. Nothing in this file can answer that,
+  and the instrument that could — a continuous station record of temperature and precipitation —
+  is not in this catalog.
+properties:
+  parameter: severe weather events recorded for Allen County
+  value: "390"
+  unit: events
+  as_of: "2026"
+  method: |
+    Seventy-seven annual detail files downloaded whole from the NCEI bulk directory and filtered
+    locally on `STATE` = OHIO and `CZ_NAME` = ALLEN; there is no county query. The 390 rows are 287
+    county-designated and 103 zone-designated, and the split follows NWS Directive 10-1605 exactly.
+    Decade counts for the 2020s are omitted from the table above because the decade is not over —
+    it stood at 60 when this was compiled. Damage is summed from the file's `K`/`M` suffixed
+    estimates in nominal dollars of the year of each event, undeflated, and the file's own
+    documentation calls them estimates. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

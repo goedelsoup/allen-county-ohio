@@ -1,0 +1,47 @@
+class: event
+label: The tornado of 19 July 1950
+description: |
+  **The first thing in the county's weather record, and it injured thirty people.** An F3 tornado
+  tracked 9.7 miles across a path 300 yards wide, killed nobody and did an estimated $2.5 million
+  of property damage. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10086810.
+
+  **It ran from the south-east edge of Lima to Beaverdam.** The file gives a start at 40.72, −84.08
+  — 2.2 miles from [Lima](../place/lima.yml)'s centre — and an end at 40.83, −83.97, two-tenths of
+  a mile from [Beaverdam](../place/beaverdam.yml). Those endpoints are 9.53 miles apart against a
+  stated track of 9.7. [inference] — computed here from the same source.
+
+  **Its clock is stamped in a timezone this county has never kept.** The row reads 15:15 with
+  `CZ_TIMEZONE` = CST, and so does every other row here from 1950 to 1991; Allen County is on
+  Eastern time. If the stamp means what it says, the local clock read 16:15. [inference] — same
+  source. See [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
+
+  **It is the corpus's first dated happening between the jail raid of 1933 and the government's
+  purchase of the tank plant ground in 1951.** [verified] —
+  [the jail raid](allen-county-jail-raid-1933.yml) and
+  [the tank plant purchase](the-united-states-buys-the-tank-plant-ground-1951.yml).
+
+  **Its damage figure and the 2006 windstorm's cannot be compared.** $2.5 million in 1950 dollars
+  and $1,970,000 in 2006 dollars are in different currencies, and this file carries no deflator.
+  [inference] — see [the storm record](../measure/allen-county-storm-events-1950-2026.yml).
+
+  [open] What it struck. The row carries no narrative — narratives begin in 1996 — and nothing here
+  names a road, a farm or a building. Thirty injuries in a county that held 88,183 people at the
+  census of that year — [the population](../measure/allen-county-population-1940-1990.yml) — is a
+  substantial local event about which this corpus holds one line of numbers.
+properties:
+  occurred: 1950-07-19
+  event_type: tornado
+  location_description: |
+    A 9.7-mile track from 40.72, −84.08 to 40.83, −83.97, 300 yards at its widest, crossing the
+    county from the south-east side of Lima to Beaverdam. [verified] — the same source.
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/beaverdam.yml
+    relationship: affected
+    claim_tag: inference
+  - target: ../event.ont.yml
+    relationship: instance-of
