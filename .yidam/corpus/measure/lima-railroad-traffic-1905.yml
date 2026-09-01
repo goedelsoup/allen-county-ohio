@@ -1,0 +1,66 @@
+class: measure
+label: Lima's railroad traffic, 1905
+description: |
+  A page of the 1906 county history prints thirty-odd figures about Lima's railroads. Six are
+  arithmetic, one does not follow, and one settles an argument the book has with itself. [verified] —
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), whose transportation
+  chapter dates itself to 1905.
+
+  **The passenger count closes exactly, twice.** The book lists six steam roads with their daily
+  passenger trains — 14, 10, 12, 6, 6 and 1 — and two interurbans with 20 and 8, then says "there
+  are 49 steam and 28 electric trains landing passengers in Lima daily, making a total of 77
+  trains". The steam figures sum to **49**, the electric to **28**, and the two to **77**.
+  [verified] — same source, arithmetic performed here on its printed list. Nothing was dropped
+  between the list and the total, which is the only evidence available that the list is complete.
+  [inference]
+
+  **The forecast on the same page does not close.** Four additions are promised for 1906: twenty
+  more cars when the Western Ohio reaches Toledo, the Fort Wayne, Van Wert & Lima rising from eight
+  to twenty-five, sixteen on its new Ottawa branch, and twenty on the Lima & Toledo. That is 73
+  added to 77, or **150**; the book says **145**. [verified] — same source. No reading of the
+  paragraph produces 145: folding the Ottawa branch into the twenty-five gives 134, counting the
+  twenty-five as additional gives 158. [inference]
+
+  **Eight figures produce fourteen.** 143 trains × 52 cars = 7,436 cars; × 30 tons = 223,080 tons;
+  127 car-load cars × 30 = 3,810 tons; 178 × 30 = 5,340; 114 less-than-car-load cars × 5 = 570;
+  134 × 5 = 670. [verified] — same source, arithmetic performed here. Five counts and three rates
+  yield six more figures, so **six of the fourteen numbers in that block are products of the other
+  eight** and its tonnages carry no information its car counts do not. [inference] — see
+  [arithmetic that closes is about the compiler](../../decisions/arithmetic-that-closes-is-about-the-compiler.yml).
+
+  **And 143 is not the same count as the trains on the list.** The six roads' freight trains sum to
+  90 a day; "in and out" would make 180. Neither is 143, so the freight block was compiled from a
+  different return than the trunk-line table on the facing page. [inference] — same source.
+
+  **Most of what moved through Lima had no business there.** 127 + 178 + 114 + 134 is **553** cars
+  handled at the freight offices daily against 7,436 in and out — 7 to 15 per cent, depending on
+  whether a through car is counted twice. [inference] — the same figures.
+
+  **The first exact railroad employment count this corpus holds.** 108 men in the railway yards day
+  and night and 74 in the freight offices, **182**, beside 73 miles of yard trackage and 16 shifting
+  engines. [verified] — same source. Every earlier figure was a range or a floor; see
+  [the railroads](allen-county-railroads-1883-1921.yml).
+
+  **Forty-four counties, not forty-six.** The book says Lima's trunk lines run "direct to half of
+  the counties in the State — to be exact, 46", then says twice elsewhere that a train may be
+  boarded in **44** counties and reach Lima without a change of cars. [verified] — same source. Ohio
+  has 88 counties, so half is 44 and the sentence contradicts its own adverb. [verified] —
+  [the 2020 Gazetteer](../../catalog/census-gazetteer-2020.md), 88 Ohio county rows. The corpus
+  reads 44. [inference] — resting on a county count no source here establishes for 1905.
+properties:
+  parameter: passenger trains landing in Lima daily
+  value: "77"
+  unit: trains
+  as_of: "1905"
+  method: |
+    Read from the transportation chapter of the 1906 county history, which dates itself to 1905 by
+    saying the Western Ohio "was completed four years ago, in the spring of 1901". Every sum and
+    product above was computed here from figures the book prints, and each is reported as closing
+    or not closing rather than corrected. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
