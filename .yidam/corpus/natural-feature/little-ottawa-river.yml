@@ -1,0 +1,29 @@
+class: natural-feature
+label: Little Ottawa River
+description: |
+  A stream that rises and ends inside Allen County — source 40.6600501, -84.0952244, mouth
+  40.7056059, -84.1538377. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1042678, mapped on the
+  Cridersville quadrangle. It is one of the few named watercourses here whose whole recorded extent
+  is in this county. [inference] — computed from
+  [the county's named features](../measure/allen-county-named-features-2026.yml), where most streams
+  cross a line at one end or the other.
+
+  **Its name says what its water does and the gazetteer does not.** GNIS records no downstream
+  feature, and this mouth is eighteen kilometres south-west of the point where
+  [Hog Creek](hog-creek.yml) and [Little Hog Creek](little-hog-creek.yml) join to become
+  [the Ottawa River](ottawa-river.yml). [inference] — computed here. So the name is evidence about
+  the relationship and the coordinates are not, and this corpus writes no `flows-into` edge on the
+  strength of a name. [open] What it flows into, and where it meets it.
+properties:
+  feature_type: stream
+  gnis_id: "1042678"
+  mouth: 40.7056059, -84.1538377
+  source: 40.6600501, -84.0952244
+links:
+  - target: ../place/allen-county.yml
+    relationship: traverses
+    claim_tag: verified
+    source: ../../catalog/gnis-domestic-names-ohio.md
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of
