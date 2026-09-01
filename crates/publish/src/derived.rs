@@ -2167,6 +2167,53 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "a-county-column-is-a-filing-decision",
+        statement: "The federal gazetteer files 109 named features in Allen County and 120 of \
+                    them stand on Allen County ground. Every one of the eleven the column loses \
+                    is a stream that rises here and is filed where it ends — the Ottawa River \
+                    among them, which runs through the middle of Lima and is recorded under \
+                    Putnam County.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-named-features-2026.yml",
+                "**The federal gazetteer files 109 named features in Allen County and 120 of them stand on Allen\n  County ground.**"
+            ),
+            support!(
+                "measure/allen-county-named-features-2026.yml",
+                "**By coordinate the nine classes run 38 populated places, 33 streams, 23 civil divisions, 13\n  reservoirs, 7 canals, 3 census areas, 1 lake, 1 channel and 1 military installation.**"
+            ),
+            support!(
+                "measure/allen-county-named-features-2026.yml",
+                "**Every one of the eleven the column misses is a stream that rises here and ends somewhere\n  else.**"
+            ),
+            support!(
+                "measure/allen-county-named-features-2026.yml",
+                "**The twelfth is the mirror case and it breaks the rule the catalog states.**"
+            ),
+            support!(
+                "measure/allen-county-named-features-2026.yml",
+                "**Three names in the county are used twice.**"
+            ),
+            support!(
+                "measure/allen-county-named-features-2026.yml",
+                "**The gazetteer and the city do not agree about Lima's reservoirs.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Populated Place", value: 38.0, literal: "38" },
+            Figure { label: "Stream", value: 33.0, literal: "33" },
+            Figure { label: "Civil", value: 23.0, literal: "23" },
+            Figure { label: "Reservoir", value: 13.0, literal: "13" },
+            Figure { label: "Canal", value: 7.0, literal: "7" },
+            Figure { label: "Census", value: 3.0, literal: "3" },
+            Figure { label: "Lake", value: 1.0, literal: "1" },
+            Figure { label: "Channel", value: 1.0, literal: "1" },
+            Figure { label: "Military", value: 1.0, literal: "1" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

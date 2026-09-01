@@ -1,0 +1,55 @@
+id: a-county-column-is-a-filing-decision
+summary: >-
+  The federal gazetteer's Allen County is 109 features. Allen County's ground carries 120. Every one
+  of the eleven the column loses is a stream that rises here and ends in another county, and the one
+  feature the ground loses is the city this corpus already knows straddles a line. A county column
+  records where a clerk filed a thing, and a polygon records where it is.
+context: |
+  [gnis-domestic-names-ohio](../catalog/gnis-domestic-names-ohio.md) has been in this catalog since
+  genesis and its entry already says the trap out loud: "A stream is filed under the county of its
+  mouth. This is the trap and it is not a small one ... Taking the county's rows as 'the county's
+  named features' would omit the county's principal watercourse, and would do it silently."
+
+  The corpus wrote that, took six features out of the file, and left the other hundred and three
+  where they were. Nothing had ever counted what the trap costs.
+decision: |
+  **Read a gazetteer by ground, not by its county column, and say which you used.** Testing every
+  Ohio feature's primary and source coordinates against the Census Bureau's polygon for this county
+  returns 120 features against the column's 109.
+
+      Populated Place  39 / 38     Stream  21 / 33     Civil  23 / 23
+      Reservoir        13 / 13     Canal    7 /  7     Census  3 /  3
+      Lake              1 /  1     Channel  1 /  1     Military 1 / 1
+
+  **The whole of the difference is one class and one direction.** Eleven streams rise in Allen
+  County and are filed where they discharge — nine in Putnam, one in Hardin, and the Auglaize in
+  Defiance, sixty miles downstream. The county column is not wrong; it answers "where does this
+  thing end", and the corpus had been reading it as "where is this thing".
+
+  **Near a boundary the two disagree in both directions and neither is authoritative.** Wrestle
+  Creek's mouth is 426 metres inside this county and GNIS files it under Auglaize, which is a
+  counter-example to the rule this catalog itself states. Delphos is filed under Allen and its point
+  falls in Van Wert. Within half a kilometre of a line, a filing decision and a polygon test are two
+  opinions.
+
+  **So a count of a county's features is a method, not a fact, and it carries the method with it.**
+  Where this corpus states such a count it says whether it counted by column or by ground.
+rationale: |
+  **The catalog named this trap and the naming did not fix it.** That is the finding worth keeping.
+  A caveat written into a source entry protects the claims made after it and does nothing about the
+  claims never made: the corpus knew the Ottawa River was misfiled, said so, wrote the node — and
+  the other ten streams in the same position stayed invisible because nobody counted. A warning is
+  not an inventory.
+
+  **Sixth consecutive phase in which an administrative key turned out not to be a geographic one.**
+  A federal grant file keyed to an applicant's domicile, a roster keyed to a ballot rather than a
+  register, an attorney directory keyed to a business address, a newspaper keyed to events rather
+  than states, a fund report keyed to a cashier's drawer, and now a name file keyed to a mouth. Six
+  is not a coincidence; it is what public data is like.
+
+  **What this does not license.** It does not license reading the polygon result as complete. A
+  stream that neither rises nor ends in this county but crosses it has two coordinates outside the
+  polygon and will be missed by both methods, and GNIS carries no course to test. Nor does it
+  license inferring a stream's course, its receiving water, or its length from two endpoints — the
+  two nodes this phase writes each refuse exactly that, and one of them refuses to connect a creek
+  to the township that shares its name.

@@ -1,0 +1,34 @@
+class: natural-feature
+label: Sugar Creek
+description: |
+  A creek that rises in Allen County at 40.7983854, -83.9157744 and discharges in Putnam County at
+  40.9592178, -84.1821688, where the gazetteer files it. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1046795, mapped on the Kalida
+  quadrangle. It is one of the eleven streams that
+  [the county column loses](../measure/allen-county-named-features-2026.yml).
+
+  **The county has a township of this name and the corpus cannot connect them.**
+  [Sugar Creek Township](../place/sugar-creek-township.yml)'s internal point is 40.824171,
+  -84.173843; this creek's two known points are 28.6 kilometres apart on a line that passes north and
+  east of it. [inference] — computed from the two sources. Two endpoints do not describe a course,
+  so the corpus does not say the creek misses the township; it says GNIS gives it no reason to say
+  the creek reaches it. [open] Whether the township is named for this creek, for another Sugar
+  Creek, or for something else. The instrument is the township's erection record, which this corpus
+  does not hold.
+
+  **Its outflow is not established here.** GNIS records a mouth coordinate and no downstream
+  feature, and the corpus does not infer a receiving stream from proximity — the discipline
+  [Little Hog Creek](little-hog-creek.yml) already states for exactly this reason. [open] What it
+  flows into. The instrument is the flow network's `downstream_comid`.
+properties:
+  feature_type: creek
+  gnis_id: "1046795"
+  mouth: 40.9592178, -84.1821688 — in Putnam County
+  source: 40.7983854, -83.9157744 — in Allen County
+links:
+  - target: ../place/allen-county.yml
+    relationship: traverses
+    claim_tag: verified
+    source: ../../catalog/gnis-domestic-names-ohio.md
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of

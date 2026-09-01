@@ -12,13 +12,18 @@ location:
     value: https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/DomesticNames/DomesticNames_OH_Text.zip
     description: Ohio domestic names, pipe-delimited — Text/DomesticNames_OH.txt
 used-by:
+  - ../corpus/measure/allen-county-named-features-2026.yml
+  - ../corpus/measure/allen-county-water-systems-2026.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/natural-feature/great-black-swamp.yml
   - ../corpus/natural-feature/hog-creek.yml
   - ../corpus/natural-feature/little-hog-creek.yml
+  - ../corpus/natural-feature/little-ottawa-river.yml
   - ../corpus/natural-feature/maumee-river.yml
   - ../corpus/natural-feature/ottawa-river.yml
+  - ../corpus/natural-feature/sugar-creek.yml
   - ../corpus/place/amanda-township.yml
+  - ../corpus/place/delphos.yml
   - ../corpus/question/where-the-auglaize-rises.yml
   - ../corpus/site/fort-amanda.yml
   - ../corpus/site/lima-army-tank-plant.yml
@@ -39,6 +44,16 @@ County, **Indiana**, whose seat is Fort Wayne, and both Allen Counties carry `co
 this file on `county_name == "Allen"` returns 113 rows, four of which are 90 miles away, and
 two of those four — the St. Joseph and the St. Marys — are the rivers that *form* the Maumee,
 so they look exactly like features this corpus should want.
+
+**The trap has now been counted and the rule has a counter-example.** Reading every Ohio row's
+primary and source coordinates against this county's polygon returns **120** features against the
+county column's **109**, and all eleven of the difference are streams that rise here and are filed
+where they end. Wrestle Creek runs the other way: its mouth is 426 metres inside Allen County and
+the file puts it in Auglaize. [verified] — computed here; see
+[the named features](../corpus/measure/allen-county-named-features-2026.yml) and
+[a county column is a filing decision](../decisions/a-county-column-is-a-filing-decision.yml). The
+paragraph below named this trap at genesis, and naming it protected the claims that were made and
+did nothing about the hundred and three features nobody read.
 
 **A stream is filed under the county of its mouth.** This is the trap and it is not a small
 one. `county_name` is a single value, and for a linear feature it names where the feature
