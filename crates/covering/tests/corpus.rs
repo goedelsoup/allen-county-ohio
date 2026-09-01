@@ -22,8 +22,14 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
     let dated: Vec<&str> = c.dated.iter().map(|m| m.node.as_str()).collect();
     assert_eq!(
         dated,
-        vec!["jurisdiction/allen-county-government.yml"],
-        "the county government is the only covering body this corpus has dated"
+        vec![
+            "jurisdiction/city-of-lima.yml",
+            "jurisdiction/allen-county-government.yml"
+        ],
+        "two covering bodies are dated for 1900: the county government, erected 1820, and the \
+         city of Lima, whose corporation was organized on 29 March 1842. Lima moved from the \
+         undated list to this one when its founding date reached the corporation's own field \
+         from an event node that had held it since the settlements phase"
     );
 
     let undated: Vec<&str> = c.undated.iter().map(|m| m.node.as_str()).collect();
@@ -31,7 +37,6 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
         undated,
         vec![
             "jurisdiction/bath-local-school-district.yml",
-            "jurisdiction/city-of-lima.yml",
             "jurisdiction/elida-local-school-district.yml",
             "jurisdiction/lima-city-school-district.yml",
             "jurisdiction/perry-local-school-district.yml",
@@ -40,7 +45,7 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
             "jurisdiction/lima-municipal-court.yml",
             "jurisdiction/third-district-court-of-appeals.yml"
         ],
-        "the corpus dates none of these, and the answer must say so rather than implying nine \
+        "the corpus dates none of these, and the answer must say so rather than implying eight \
          bodies were governing Lima in 1900 — five school districts whose boundaries are known \
          only in the 2020 geography, and three courts whose establishment the corpus has not \
          dated at all. The courts arrived correctly: they cover the county, Lima is within it, \
