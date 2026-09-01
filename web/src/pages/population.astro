@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
+import DataTable from '../components/DataTable.astro'
 import { assertion, seriesById } from '../lib/feeds'
 import { bar, line } from '../lib/chart-spec'
 
@@ -22,6 +23,26 @@ const refinery = assertion('the-refinery-outgrew-them')
 const outside = assertion('the-plants-are-outside-every-city')
 const concentration2 = assertion('what-the-concentration-is-made-of')
 const young = assertion('lima-is-the-young-end')
+const counted1920 = assertion('the-census-counted-what-the-history-estimated')
+
+const bornSpec = bar(
+  counted1920.figures.map((f) => f.label),
+  counted1920.figures.map((f) => f.value),
+  { yTitle: 'Foreign-born residents of Allen County, 1920, by country of birth', labelValues: true },
+)
+
+// The 1920 composition of the county and the city, side by side. Typed out because the two halves
+// come from two tables of the same census and the graph carries them as one measure.
+const composition1920 = [
+  ['Total population', '68,223', '41,326'],
+  ['Native white', '64,064', '40,062 (all white)'],
+  ['— of native parentage', '55,543', '32,572'],
+  ['— of foreign parentage', '4,422', '3,080'],
+  ['— of mixed parentage', '4,099', '2,493'],
+  ['Foreign-born white', '2,753', '1,917'],
+  ['Negro', '1,385', '1,243'],
+  ['Other', '21', '—'],
+]
 
 // The county chart is the assertion's own figures: the seven numbers the corpus enumerated
 // inside the sentence the assertion cites, checked against that sentence at build time.
@@ -578,4 +599,51 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       margin-top: 3rem;
     }
   </style>
+
+  <section>
+    <h2>The census counted what the history estimated</h2>
+    <AssertionCard assertion={counted1920} />
+    <p>
+      The 1921 county history has a chapter about the county's Black residents, and it opens with an
+      estimate: "it is estimated that there are 2,500 negroes in Allen County ... The Allen County
+      negroes are nearly all in Lima." The census had been taken the year before. It counted 1,385
+      in the county and 1,243 in Lima — so the book is right about where they lived, and out by a
+      factor of 1.81 about how many.
+    </p>
+    <p>
+      Its two voter counts are the sharper problem. It says there were 552 Black voters in Lima in
+      1916 and, "in 1920, counting the women, there were almost 1,000". A thousand voters in a city
+      with 1,243 Black residents would be four out of every five of them, children included. The
+      1916 figure is 44.4 per cent of the same population, which is high for adult men and not
+      impossible in a community migration had made young and male: the census counts 751 Black males
+      in the county against 634 females.
+    </p>
+    <DataTable
+      title="Allen County and Lima in 1920"
+      caption="The county's four race lines sum to the printed total of 68,223 and the city's four white lines to the printed 40,062, which is how these figures were checked before they were written down. Lima held 89.7 per cent of the county's Black residents and 60.6 per cent of its people."
+      columns={['', 'Allen County', 'Lima']}
+      rows={composition1920}
+    />
+    <p>
+      The same book says that "as yet no papers are on file showing the foreign population of Allen
+      County", in the paragraph where its congressman opposes "indiscriminate immigration from
+      Europe". The count existed. The census had taken it the year before, and it found 2,753
+      foreign-born white residents from twenty-one named countries — and, with their native-born
+      children, 11,274 people of foreign or mixed stock, one in six of the county.
+    </p>
+    <ChartFigure
+      id="born-1920"
+      title="Where the county's foreign-born came from, 1920"
+      caption="Twenty-one countries and a residual of 85, summing exactly to the 2,753 the table prints. Switzerland's 171 are Bluffton's Mennonites and Wales's 120 are Gomer; Germany's 627 belong to the country whose name the county had taken off a township two years earlier."
+      columns={['Country of birth', 'Residents']}
+      rows={counted1920.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="born-1920" set:html={JSON.stringify(bornSpec)} is:inline />
+    <p>
+      One more thing fell out of reading the volume: the county's 1920 population is 68,223, not the
+      68,203 this site has been printing. That number came from the county history too, and it is
+      twenty low — exactly as the same book's figure for Lima, 41,306, is twenty low against the
+      census's 41,326. The corpus had already caught the second and never checked the first.
+    </p>
+  </section>
 </Base>

@@ -227,7 +227,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         // been should not have to assemble the answer from four nodes.
         supports: &[support!(
             "place/allen-county.yml",
-            "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,203 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**"
+            "**578 (1830), 9,079 (1840), 12,100 (1850), 19,185 (1860), 23,623 (1870), 31,314 (1880), 40,644 (1890), 47,976 (1900), 56,580 (1910), 68,223 (1920), 69,419 (1930), 73,303 (1940), 88,183 (1950), 103,691 (1960), 111,144 (1970), 112,241 (1980), 109,755 (1990), 108,464 (2000), 106,331 (2010), 102,217 (2020) and 100,866 (2024).**"
         )],
         answers: &[],
         figures: &[
@@ -240,7 +240,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1890", value: 40_644.0, literal: "40,644" },
             Figure { label: "1900", value: 47_976.0, literal: "47,976" },
             Figure { label: "1910", value: 56_580.0, literal: "56,580" },
-            Figure { label: "1920", value: 68_203.0, literal: "68,203" },
+            Figure { label: "1920", value: 68_223.0, literal: "68,223" },
             Figure { label: "1930", value: 69_419.0, literal: "69,419" },
             Figure { label: "1940", value: 73_303.0, literal: "73,303" },
             Figure { label: "1950", value: 88_183.0, literal: "88,183" },
@@ -267,7 +267,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
             support!(
                 "measure/allen-county-outside-lima-1890-2020.yml",
-                "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,877 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
+                "**the county outside Lima held 24,663 people in 1890, 26,253 in 1900, 26,072 in 1910, 26,897 in 1920, 27,132 in 1930, 28,592 in 1940, 37,937 in 1950, 52,654 in 1960, 57,410 in 1970, 64,414 in 1980, 64,206 in 1990, 68,157 in 2000, 67,560 in 2010 and 66,627 in 2020.**"
             ),
         ],
         answers: &[],
@@ -275,7 +275,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1890", value: 24_663.0, literal: "24,663" },
             Figure { label: "1900", value: 26_253.0, literal: "26,253" },
             Figure { label: "1910", value: 26_072.0, literal: "26,072" },
-            Figure { label: "1920", value: 26_877.0, literal: "26,877" },
+            Figure { label: "1920", value: 26_897.0, literal: "26,897" },
             Figure { label: "1930", value: 27_132.0, literal: "27,132" },
             Figure { label: "1940", value: 28_592.0, literal: "28,592" },
             Figure { label: "1950", value: 37_937.0, literal: "37,937" },
@@ -2674,6 +2674,61 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1950\u{2013}1954, 4 years", value: 12926.0, literal: "12,926" },
             Figure { label: "1954\u{2013}1982, 28 years", value: 17762.0, literal: "17,762" },
             Figure { label: "1982\u{2013}2022, 40 years", value: 18335.0, literal: "18,335" },
+        ],
+    },
+    Assertion {
+        id: "the-census-counted-what-the-history-estimated",
+        statement: "The 1921 county history estimated 2,500 Black residents in Allen County. The \
+                    census taken the year before counted 1,385, and 1,243 of those were in Lima. \
+                    The same book said nobody had counted the county's foreign-born; the census \
+                    had counted 2,753 of them, from twenty-one countries.",
+        topic: "population",
+        supports: &[
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**The 1921 history's estimate of the county's Black population is almost twice the census\n  count.** It says \"it is estimated that there are 2,500 negroes in Allen County\" and that they are\n  \"nearly all in Lima\". The census counted 1,385 in the county and 1,243 in Lima."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**In figures: the book estimated 2500 for the county, the census counted 1385 there and 1243 in\n  Lima, and the book's thousand voters would be 80.5 per cent of that 1243.**"
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**Lima held nine-tenths of the county's Black residents and a third of its white ones.** 1,243 of\n  1,385, or 89.7 per cent, against a 60.6 per cent share of the county's population."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1920.yml",
+                "**The county's total is twenty higher than the figure this corpus has been using.**"
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1920.yml",
+                "**In figures, the nine largest: Germany 627, Italy 312, Ireland 309, Canada 174, Switzerland 171,\n  England 167, Austria 158, Russia 131 and Wales 120.**"
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1920.yml",
+                "**One person in six in this county was an immigrant or an immigrant's child.** 2,753 foreign-born\n  white, 4,422 native white of foreign parentage and 4,099 of mixed parentage \u{2014} 11,274 of 68,223, or\n  16.5 per cent. In Lima it was 7,490 of 41,326, or 18.1 per cent."
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1920.yml",
+                "**The county's own historical society had no count of this and said so.**"
+            ),
+        ],
+        answers: &[
+            // Both nodes refuse a trend, and this assertion makes none: it is one census,
+            // used to test a book written the year after it. The refusals travel with it.
+            "it cannot say when the county's Black population grew or how fast",
+            "it cannot say whether 16.5 per cent was a peak, a decline or a rise",
+        ],
+        figures: &[
+            Figure { label: "Germany", value: 627.0, literal: "627" },
+            Figure { label: "Italy", value: 312.0, literal: "312" },
+            Figure { label: "Ireland", value: 309.0, literal: "309" },
+            Figure { label: "Canada", value: 174.0, literal: "174" },
+            Figure { label: "Switzerland", value: 171.0, literal: "171" },
+            Figure { label: "England", value: 167.0, literal: "167" },
+            Figure { label: "Austria", value: 158.0, literal: "158" },
+            Figure { label: "Russia", value: 131.0, literal: "131" },
+            Figure { label: "Wales", value: 120.0, literal: "120" },
         ],
     },
     Assertion {

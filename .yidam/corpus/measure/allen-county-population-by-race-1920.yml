@@ -1,0 +1,86 @@
+class: measure
+label: Allen County population by race and nativity, 1920
+description: |
+  The federal count of who lived in this county in 1920, against the county's own account of itself
+  written the year after. [verified] —
+  [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md), Table 9, and the
+  1920 abstract's Table 34 for the city.
+
+      Allen County, 1920                     Lima, 1920
+      total                68,223            total                41,326
+      native white         64,064   93.9%    total white           40,062   96.9%
+        native parentage   55,543              native parentage    32,572   78.8%
+        foreign parentage   4,422              foreign parentage    3,080    7.5%
+        mixed parentage     4,099              mixed parentage      2,493    6.0%
+      foreign-born white    2,753    4.0%    foreign-born white     1,917    4.6%
+      Negro                 1,385    2.0%    Negro                  1,243    3.0%
+      other                    21
+
+  [verified] — same two tables; the county's four race lines sum to 68,223 and Lima's four white
+  lines sum to 40,062, which are the totals printed.
+
+  **Lima held nine-tenths of the county's Black residents and a third of its white ones.** 1,243 of
+  1,385, or 89.7 per cent, against a 60.6 per cent share of the county's population. [inference] —
+  computed here. The concentration the corpus measures in 2023 at 76.7 per cent was sharper a
+  century earlier, not looser. See [the 2023 count](allen-county-race-2023.yml).
+
+  **The county's total is twenty higher than the figure this corpus has been using.** It has carried
+  68,203 for 1920 in seven places, and that number came from
+  [the 1921 county history](../../catalog/rusler-allen-county-1921.md), printed before the census
+  was published; the federal count is 68,223 and its own components sum to it. [verified] — both
+  sources.
+
+  **The 1921 history's estimate of the county's Black population is almost twice the census
+  count.** It says "it is estimated that there are 2,500 negroes in Allen County" and that they are
+  "nearly all in Lima". The census counted 1,385 in the county and 1,243 in Lima. [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md) for the
+  estimate and
+  [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md) for the count; see
+  [the county's own account](allen-county-black-community-1916-1921.yml).
+
+  **In figures: the book estimated 2500 for the county, the census counted 1385 there and 1243 in
+  Lima, and the book's thousand voters would be 80.5 per cent of that 1243.** [inference] — computed
+  here from
+  [the census](../../catalog/census-1920-state-compendium-ohio.md) and
+  [the 1921 history](../../catalog/rusler-allen-county-1921.md).
+
+  **One of the book's two voter counts cannot be right.** It gives "in 1916, there were 552 negro
+  voters in Lima" and "in 1920, counting the women, there were almost 1,000". Against a Black
+  population of 1,243 in Lima in 1920, a thousand voters would be four out of every five people in
+  it, children included. [inference] — the arithmetic, which does not say which of the two is wrong
+  or whether the book means the county. Its 1916 figure of 552 is 44.4 per cent of the same
+  population, which is high for adult men alone and not impossible in a community that migration had
+  made young and male: the census counts 751 Black males in the county against 634 females.
+  [verified] — the compendium.
+
+  **The book is not wrong about where they lived.** It says the Black community was concentrated in
+  Lima and the census agrees within four percentage points. What it is wrong about is how many, and
+  the corpus keeps its quotations as printed and does not adjust them. [inference] — see
+  [the 1916–1921 account](allen-county-black-community-1916-1921.yml).
+
+  [open] Every census between this one and 2023. The corpus now has 1,385 in 1920 and 10,805 in
+  2023 and no count in between, so it cannot say when the county's Black population grew or how
+  fast. The same table exists in the 1930, 1940, 1950 and 1960 volumes and none has been read.
+properties:
+  parameter: population enumerated as Negro, Allen County
+  value: "1,385"
+  unit: persons
+  as_of: "1920"
+  method: |
+    Read from page images rendered at 300 dpi, because the text layer of both volumes garbles digits
+    — it renders Lima's row as "4l, 320 40,0li2 OU. \l". Two arithmetic checks were run before any
+    figure was written down: the county's race lines sum to the printed total, and the city's white
+    lines sum to the printed total white. The county figure is the compendium's, which is the
+    federal count; the city figure is the abstract's, which is the same census. Where the county
+    history and the census disagree, both are given and neither quotation is altered. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1920-state-compendium-ohio.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1920-state-compendium-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
