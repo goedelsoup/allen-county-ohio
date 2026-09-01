@@ -25,6 +25,7 @@ used-by:
   - ../corpus/measure/allen-county-group-quarters-2020.yml
   - ../corpus/measure/allen-county-housing-units-2020.yml
   - ../corpus/measure/allen-county-occupancy-2020.yml
+  - ../corpus/measure/allen-county-population-by-race-1970-2020.yml
   - ../corpus/place/allen-county.yml
   - ../corpus/place/lima.yml
   - ../corpus/question/who-lives-in-the-county-without-housing.yml
