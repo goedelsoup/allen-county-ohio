@@ -21,6 +21,7 @@ const corinth = assertion('more-died-at-corinth-than-anywhere')
 const trains = assertion('the-page-adds-up-and-the-forecast-does-not')
 const declared = assertion('ten-declarations-eight-incidents')
 const sky = assertion('the-blizzard-is-not-in-the-weather-file')
+const paid = assertion('eighty-four-cents-in-the-dollar')
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
@@ -61,6 +62,12 @@ const skySpec = bar(
   sky.figures.map((f) => f.label),
   sky.figures.map((f) => f.value),
   { yTitle: 'Severe weather reports', labelValues: true },
+)
+
+const paidSpec = bar(
+  paid.figures.map((f) => f.label),
+  paid.figures.map((f) => f.value),
+  { yTitle: 'Federal share obligated (US$)', labelValues: true },
 )
 
 // The spine is read out of the graph, never typed here. A page that lists the county's dated
@@ -779,6 +786,74 @@ const since = new Date().getUTCFullYear() - last
       broadcast media, amateur radio operators, newspapers and the public — against 43 that name an
       instrument. Seventy-seven of the 390 reports are located at Lima, against twenty-one for
       Delphos. That is where the people who telephone are, and not where the storms are.
+    </p>
+  </section>
+
+  <section>
+    <h2>What a disaster costs, and who is paid</h2>
+    <AssertionCard assertion={paid} />
+    <ChartFigure
+      id="disaster-money"
+      title="Federal public assistance obligated for Allen County applicants, 2005–2025"
+      caption="Nominal dollars twenty years apart, so the two bars are not comparable as purchasing power. Fifteen years of storms against one pandemic."
+      columns={['Period', 'Federal share']}
+      rows={paid.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="disaster-money" set:html={JSON.stringify(paidSpec)} is:inline />
+    <p>
+      The declarations are dates and the weather is dates. This is the money, and it took twenty
+      years to arrive: obligations run from 20 April 2005 to 28 May 2025, and the largest project
+      of the 2020 declaration was still being paid out in February 2025.
+    </p>
+    <p>
+      Ninety-five projects, $10,608,108 of federal share, four of the county's ten declarations.
+      Eighty-four cents in every dollar is the pandemic, on seven of the ninety-five projects. Of
+      the eighty-eight weather projects, forty-nine are debris removal or emergency protective
+      measures and seventy-nine cents in their dollar went on those two things. Nine projects in
+      twenty years are roads and bridges. One is a water control facility. Nothing here rebuilds
+      anything, which is the shape of what a federal disaster actually is in a county like this
+      one: someone comes and picks up the branches.
+    </p>
+    <p>
+      A disaster is also the one occasion on which nearly every government in Allen County files
+      the same form. Twenty-eight registered applicants appear, and they are close to the whole
+      civil apparatus of the place: the city of Lima, the city of Delphos, seven villages, eight of the twelve townships, the county and its commissioners and its engineer
+      and its health department, a school district, a university, a fire department, a hospital and
+      a home. The winter storms of December 2004 and January 2005 paid twenty-two of them at once.
+      Cairo is the only municipality in the county that never appears.
+    </p>
+    <p>
+      Two of them are worth pausing on. Delphos files twice, as "Delphos, City of (Allen County)"
+      and "Delphos, City of (Van Wert County)", because one municipal corporation standing on a
+      county line becomes two rows in a file keyed to counties, and both were paid. And the Village
+      of Fort Shawnee — which this site elsewhere records as having quietly ceased to exist around
+      2012 — was paid $34,799 in June 2005, which is a fourth federal witness to a corporation whose
+      end still has no date.
+    </p>
+    <p>
+      Then the largest single fact in the file, and the one that should be read most carefully.
+      Lima Memorial Health System received $8,777,201 — eighty-three per cent of every federal
+      disaster dollar in this county's twenty-year record — for pandemic emergency protective
+      measures. No other Allen County hospital appears at all. That is not because they claimed
+      nothing. The ledger is keyed to the county an applicant is registered in, and Bon Secours
+      Mercy Health, Inc., which owns St. Rita's in Lima, files from Cincinnati: its nine projects
+      and $183,291,707 are counted in Hamilton County. Lima Memorial appears here because it is the
+      only hospital in the county with no corporate parent — a fact this site already held from
+      Medicare enrollment records, and which turns out to be the reason the county's disaster
+      accounts look the way they do.
+    </p>
+    <p>
+      So $10,608,108 is a floor and a composition, not a measurement of what federal disaster money
+      did in Allen County. It is what was spent by bodies that keep their books here.
+    </p>
+    <p>
+      Households are a smaller and stranger story. Two declarations have put money into homes. The
+      flood of August 2007 brought 316 registrations, 272 inspections, $663,302 of recorded damage
+      and $641,634 of assistance — and 109 of the 227 owner registrations, and $481,404 of the
+      damage, were in Bluffton's ZIP code alone. The 2020 declaration brought 568 registrations,
+      $3,595,938, and not one inspection: a biological incident damages no houses, so every dollar
+      is classed "other needs" and what it bought is not written anywhere in the file. This site
+      says how much and declines to say what for.
     </p>
   </section>
 

@@ -22,7 +22,9 @@ used-by:
   - ../corpus/event/allen-county-declared-for-hurricane-katrina-2005.yml
   - ../corpus/event/the-tornado-of-11-april-1965.yml
   - ../corpus/event/the-tornadoes-of-april-1965.yml
+  - ../corpus/event/the-winter-storms-of-2004-2005.yml
   - ../corpus/measure/allen-county-disaster-declarations-1965-2020.yml
+  - ../corpus/measure/allen-county-household-disaster-aid-2007-2020.yml
   - ../corpus/measure/ottawa-river-peak-flows-1924-2025.yml
 ---
 

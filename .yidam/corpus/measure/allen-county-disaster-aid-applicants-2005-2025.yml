@@ -1,0 +1,86 @@
+class: measure
+label: Who was paid federal disaster aid in Allen County, 2005–2025
+description: |
+  **Twenty-eight applicants, and one hospital took 82.74 per cent of the money.** [verified] —
+  [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), the public
+  assistance projects joined to the applicant register on `applicantId`, scoped to Ohio.
+
+      applicant                                  projects   federal share   declarations
+      Lima Memorial Health System                       4      $8,777,201   2020
+      Lima, City of                                    15        $952,940   2005 2007 2012
+      Allen County Engineer                             9        $110,405   2005 2007 2012
+      Bluffton University                               9        $107,406   2007 2012
+      Mennonite Memorial Home                           2         $94,356   2020
+      Bluffton, Village of                             14         $85,078   2005 2007 2012
+      Shawnee, Township of                              2         $72,446   2005
+      Allen County Health Department                    1         $68,948   2020
+      Bath, Township of                                 2         $48,182   2005
+      Delphos, City of (Allen County)                   6         $41,075   2012
+      Allen County                                      3         $36,157   2005 2007
+      Fort Shawnee, Village of                          2         $34,799   2005
+      Jackson, Township of                              1         $25,394   2005
+      Lafayette, Village of                             1         $23,370   2005
+      American, Township of                             1         $22,510   2005
+      Spencerville, Village of                          3         $18,582   2005 2012
+      Perry, Township of                                2         $16,577   2005
+      Harrod, Village of                                1         $16,293   2005
+      Bluffton Exempted Village School District         4         $15,575   2007 2012
+      Richland, Township of                             2          $8,854   2005
+      Delphos, City of (Van Wert County)                2          $7,710   2005
+      Salem, Township of (Auglaize County)              2          $5,614   2005 2012
+      Elida, Village of                                 2          $5,349   2005
+      Beaverdam, Village of                             1          $4,540   2005
+      Amanda, Township of                               1          $2,900   2005
+      American Township Fire Department                 1          $2,676   2005
+      Allen County Commissioners                        1          $1,740   2005
+      Sugar Creek, Township of                          1          $1,433   2005
+
+  **A disaster is the one occasion on which nearly every government in this county files the same
+  form.** Nine of the county's ten municipal corporations appear — Lima, Delphos and the villages
+  of Bluffton, Elida, Fort Shawnee, Harrod, Lafayette, Spencerville and Beaverdam — and eight of
+  its twelve townships. [verified] — same source. **The only municipality absent is
+  [Cairo](../place/cairo.yml)**, and the four townships absent are Auglaize, Marion, Monroe and
+  Spencer. [inference] — computed against the corpus's own roster.
+
+  **The county files as four separate applicants.** Allen County, the Allen County Commissioners,
+  the Allen County Engineer and the Allen County Health Department each hold their own
+  `applicantId`, and each was paid separately. [verified] — same source; see
+  [the engineer](../office/allen-county-engineer.yml).
+
+  **Delphos files twice because it stands in two counties.** "Delphos, City of (Allen County)" and
+  "Delphos, City of (Van Wert County)" are two registrations of one municipal corporation, and both
+  were paid — $41,075 and $7,710. [verified] — same source; see
+  [the city](../jurisdiction/city-of-delphos.yml). A township of Auglaize County is here too, for
+  work counted in this one.
+
+  **Five of the twenty-eight are not units of government**: Lima Memorial Health System, the
+  Mennonite Memorial Home at Bluffton, Bluffton University, the Bluffton Exempted Village School
+  District and the American Township Fire Department. Together they are $8,997,214 — 84.8 per cent
+  of everything — and all but $220,013 of that is one hospital in one year. [inference] — computed
+  here. What the Mennonite Memorial Home is, this corpus does not hold. [open]
+
+  [open] Why no other hospital in this county appears. [Lima Memorial](../organization/lima-memorial-health-system.yml)
+  is the only one of the five with no corporate parent, and its parent-owned neighbours would file
+  through an applicant registered where the parent is. That is a mechanism and not a finding: the
+  corpus has not established that any of them claimed.
+properties:
+  parameter: applicants paid federal public assistance for work in Allen County
+  value: "28"
+  unit: applicants
+  as_of: "2025-05-28"
+  method: |
+    Distinct `applicantId` across the county's 95 project rows, resolved to names through the
+    applicant register with the filter scoped to Ohio. Scoping is required: `003-99003-00`, the
+    identifier the county government itself files under, returns more than a hundred and eighty
+    county governments across the United States and an unscoped join names a Delaware one. Dollars
+    are the federal share obligated, nominal, summed per applicant and rounded to the dollar; the
+    table's rounded rows do not sum exactly to the total published in
+    [the assistance measure](allen-county-disaster-assistance-2005-2025.yml). Parenthesised county
+    names are the file's own. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openfema-assistance-programs.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
