@@ -1,0 +1,93 @@
+class: measure
+label: Allen County's foreign-born, 1930–1950
+description: |
+  What became of the immigrant population the corpus counted at 1920, taken from the state
+  population volume of the three censuses after it. [verified] —
+  [the state population volumes, 1930–1960](../../catalog/census-population-volumes-1930-1960-ohio.md).
+
+      census    foreign-born white    share of county    county population
+      1920                   2,753             4.04%               68,223
+      1930                   2,219             3.20%               69,419
+      1940                   1,682             2.29%               73,303
+      1950                   1,485             1.68%               88,183
+
+  [verified] — same volumes, with [the 1920 compendium](../../catalog/census-1920-state-compendium-ohio.md)
+  for the first row; each census's race and nativity lines sum to its printed county total.
+
+  **The county's foreign-born population fell by 46 per cent in thirty years while the county grew
+  by 29.** 2,753 down to 1,485, against 68,223 up to 88,183. [verified] — the volumes above. It
+  falls in every decade: 534 fewer in the 1920s, 537 fewer in the 1930s, 197 fewer in the 1940s.
+  [inference] — computed here.
+
+  **In figures: 2753 in 1920, 2219 in 1930, 1682 in 1940 and 1485 in 1950.** [verified] —
+  [the state population volumes](../../catalog/census-population-volumes-1930-1960-ohio.md).
+
+  **16.5 per cent was the peak.** The 1920 count left open whether the foreign stock it measured was
+  rising or falling, and the three censuses after it fall without interruption. The federal statute
+  of 1924 that ended open immigration from Europe sits between the first two rows. [verified] —
+  the series above; see [the 1920 count](allen-county-foreign-born-1920.yml).
+
+  **Where they came from in 1950, all twenty-eight columns, summing to the printed 1,485.**
+
+      Italy               246      Poland           53      Rumania          20
+      Germany             222      U.S.S.R.         50      Sweden           17
+      England and Wales   149      Scotland         37      Mexico           17
+      Canada (other)      118      Yugoslavia       30      Norway            6
+      Austria              72      Netherlands      29      Denmark           6
+      Other Europe         67      Czechoslovakia   28      Finland           3
+      Hungary              65      France           27      Northern Ireland  1
+      Greece               60      Asia             22      Other America     9
+      Ireland (Eire)       57      Lithuania        22      Canada (French)  13
+                                                            all other        39
+
+  [verified] —
+  [the 1950 volume](../../catalog/census-population-volumes-1930-1960-ohio.md), Table 42a, added
+  column by column.
+
+  **Italy has passed Germany.** 246 against 222, where in 1920 it was Germany 627 against Italy 312.
+  The German-born population of this county fell by two thirds in thirty years and the Italian-born
+  by a fifth. [inference] — the two tables differenced; see
+  [the 1920 count](allen-county-foreign-born-1920.yml).
+
+  **Ireland fell hardest of the large groups.** 309 in 1920, and 58 in 1950 counting Eire and the
+  North together — a fall of 81 per cent, in a county whose canal and railroad labour it had
+  supplied. [inference] — the same two tables.
+
+  **The two communities the 1920 table made legible cannot be found in the 1950 one.** Switzerland
+  has no column of its own in 1950 and Wales is folded into England, so the 171 Swiss who stand for
+  [Bluffton](../place/bluffton.yml) and the 120 Welsh who stand for [Gomer](../place/gomer.yml)
+  have no successor figure. [verified] — the 1950 table's own column headings. What the corpus
+  loses here is not people but a category. [inference] — see
+  [two volumes are not one series](../../decisions/two-volumes-are-not-one-series.yml).
+
+  **Lima held about three fifths of them and its share was falling too.** 1,917 of the county's
+  2,753 in 1920, 1,091 of 1,682 in 1940, 922 of 1,485 in 1950 — 69.6, 64.9 and 62.1 per cent.
+  [verified] —
+  [the state population volumes](../../catalog/census-population-volumes-1930-1960-ohio.md) for the
+  last two and [the 1920 count](allen-county-population-by-race-1920.yml) for the first.
+
+  [open] 1960 and after. The 1960 volume's county table gives white without splitting it by
+  nativity, so this series ends at 1950 and the corpus has no foreign-born count for the county
+  between then and the American Community Survey.
+properties:
+  parameter: foreign-born white population
+  value: "1,485"
+  unit: persons
+  as_of: "1950"
+  method: |
+    Read from page images at 300 dpi. The 1930 and 1940 figures are sums of the printed male and
+    female lines and were checked against the county total; the 1950 figure is printed as a total
+    and its twenty-eight country columns were added independently and came to it exactly. Country
+    names are the census's own for 1950 — Yugoslavia, U.S.S.R. and Eire are as printed, and they
+    are not the names the 1920 table used for the same ground. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-population-volumes-1930-1960-ohio.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-population-volumes-1930-1960-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
