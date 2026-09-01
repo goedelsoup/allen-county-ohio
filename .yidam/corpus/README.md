@@ -142,6 +142,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 5v / 1i / 1o | 60 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
+| [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 3 | 10v / 3i / 1o | 117 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
@@ -177,7 +178,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
 | [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 2 | 5v / 4i / 1o | 65 |
-| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 6v / 3i / 1o | 67 |
+| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 7v / 4i / 1o | 75 |
 | [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
@@ -207,10 +208,12 @@ Sorted by: kind, then alphabetically.
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 39 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 34 |
+| [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 2 | 1v / 2i / 1o | 29 |
 | [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 3v / 0i / 0o | 42 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 8v / 5i / 0o | 70 |
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 4v / 1i / 1o | 45 |
+| [sugar-creek.yml](natural-feature/sugar-creek.yml) | natural-feature | Sugar Creek | 2 | 1v / 1i / 2o | 34 |
 | [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 39 |
 | [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 5v / 0i / 1o | 42 |
 | [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 7v / 2i / 1o | 50 |
@@ -358,7 +361,7 @@ Sorted by: kind, then alphabetically.
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 14v / 4i / 3o | 111 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 11v / 1i / 1o | 77 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 8v / 2i / 1o | 79 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 9v / 3i / 1o | 85 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 11v / 2i / 2o | 84 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
