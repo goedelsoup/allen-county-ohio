@@ -40,7 +40,7 @@ Sorted by: kind, then alphabetically.
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
 | [organization-of-the-town-of-lima-1842.yml](event/organization-of-the-town-of-lima-1842.yml) | event | The organization of the town of Lima | 3 | 6v / 0i / 1o | 53 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
-| [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 4 | 4v / 1i / 1o | 48 |
+| [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 4 | 5v / 1i / 2o | 57 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 8v / 2i / 1o | 75 |
 | [settlers-occupy-fort-amanda-1817.yml](event/settlers-occupy-fort-amanda-1817.yml) | event | Settlers occupy the blockhouses at Fort Amanda, 1817 | 3 | 7v / 1i / 0o | 53 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
@@ -48,6 +48,7 @@ Sorted by: kind, then alphabetically.
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 3 | 5v / 1i / 1o | 48 |
+| [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
 | [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 4v / 1i / 1o | 41 |
@@ -147,6 +148,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
+| [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 9v / 2i / 1o | 88 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
@@ -160,7 +162,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 5v / 0i / 0o | 62 |
-| [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 10v / 2i / 1o | 89 |
+| [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 11v / 2i / 1o | 96 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
@@ -232,7 +234,7 @@ Sorted by: kind, then alphabetically.
 | [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 3v / 3i / 1o | 41 |
 | [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
 | [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
-| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 13v / 3i / 2o | 114 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 14v / 3i / 2o | 123 |
 | [member-of-lima-city-council.yml](office/member-of-lima-city-council.yml) | office | Member of Lima City Council | 2 | 3v / 0i / 1o | 33 |
 | [member-of-the-ohio-house-for-district-78.yml](office/member-of-the-ohio-house-for-district-78.yml) | office | Member of the Ohio House of Representatives, 78th District | 2 | 2v / 1i / 1o | 31 |
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
@@ -241,6 +243,7 @@ Sorted by: kind, then alphabetically.
 | [apollo-career-center.yml](organization/apollo-career-center.yml) | organization | Apollo Career Center | 2 | 4v / 3i / 1o | 44 |
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 5v / 3i / 1o | 55 |
+| [der-lima-courier.yml](organization/der-lima-courier.yml) | organization | Der Lima Courier | 2 | 4v / 1i / 1o | 35 |
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
 | [fort-wayne-van-wert-and-lima-traction-company.yml](organization/fort-wayne-van-wert-and-lima-traction-company.yml) | organization | The Fort Wayne, Van Wert & Lima Traction Company | 3 | 4v / 1i / 1o | 60 |
 | [gramm-bernstein-motor-truck-company.yml](organization/gramm-bernstein-motor-truck-company.yml) | organization | Gramm-Bernstein Motor Truck Company | 2 | 7v / 0i / 2o | 50 |
@@ -257,6 +260,10 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 7v / 0i / 1o | 55 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
+| [the-bluffton-news.yml](organization/the-bluffton-news.yml) | organization | The Bluffton News | 2 | 4v / 1i / 1o | 44 |
+| [the-lima-citizen.yml](organization/the-lima-citizen.yml) | organization | The Lima Citizen | 2 | 5v / 1i / 1o | 40 |
+| [the-lima-news.yml](organization/the-lima-news.yml) | organization | The Lima News | 2 | 6v / 1i / 1o | 56 |
+| [the-porcupine.yml](organization/the-porcupine.yml) | organization | The Porcupine | 2 | 3v / 1i / 1o | 36 |
 | [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
 | [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
