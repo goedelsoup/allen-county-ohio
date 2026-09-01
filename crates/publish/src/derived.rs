@@ -1689,6 +1689,36 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-two-war-lists-do-not-join",
+        statement: "Allen County counted its World War soldiers twice and got different \
+                    answers, and the man its Legion post is named for is in only one of them.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-world-war-service.yml",
+                "**The narrative says about thirty-five hundred and the roster twenty pages later holds more than four thousand names.**"
+            ),
+            support!(
+                "measure/allen-county-world-war-service.yml",
+                "Written out: **the American Legion's figure is 3,260 enlistments, rising to about 3,500 with officers and men credited elsewhere; the printed roster yields at least 4,158 names.**"
+            ),
+            support!(
+                "measure/allen-county-world-war-dead.yml",
+                "**At most forty-seven of the ninety-five dead are absent from the roster of the served**, matched on surname and first initial."
+            ),
+            support!(
+                "measure/allen-county-world-war-dead.yml",
+                "**One of the absent is the man the post is named for.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Legion enlistments", value: 3_260.0, literal: "3,260" },
+            Figure { label: "With officers and men credited elsewhere", value: 3_500.0, literal: "3,500" },
+            Figure { label: "Names in the printed roster", value: 4_158.0, literal: "4,158" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

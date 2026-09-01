@@ -1,0 +1,73 @@
+class: measure
+label: Allen County's World War dead
+description: |
+  **Ninety-five names under the heading "On Fame's Eternal Camping Ground".** The county's honour
+  roll of men who died in military or naval service in the First World War, printed alphabetically
+  from Harry Apostol to Thor Zetlitz. [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), the
+  closing pages of chapter XLIV; count performed here, and it is a floor for the same reason
+  [the service roster's is](allen-county-world-war-service.yml).
+
+  The parse accepted 95 name lines and rejected two — `Ross` and `Alexander` — which are the second
+  halves of `MacDonnell, Duncan` and `Turner, Aberdeen`, wrapped across a line. So the list is 95
+  men and the parse and the page agree. [inference] — read here.
+
+  **It was compiled by different hands from the service roster.** Elmer McClain says "especial care
+  was taken" over the mortuary list: every newspaper in the county was asked to help, the William
+  Paul Gallagher Post of the American Legion was appealed to, and he credits Mrs. Irene Mills
+  Jackson of the Home Service Bureau of the American Red Cross and Mrs. James Pillars, secretary of
+  the Allen County Historical and Archaeological Society. [verified] — same source.
+
+  ## The two lists do not join
+
+  **At most forty-seven of the ninety-five dead are absent from the roster of the served**, matched
+  on surname and first initial. At least forty-eight are present. [inference] — computed here; the
+  direction is fixed, because any OCR failure in either list breaks a match and pushes the absences
+  up, never down.
+
+  **One of the absent is the man the post is named for.** The honour roll carries
+  `Gallagher, William Paul`. The service roster is alphabetical and the slot where he belongs is
+  occupied by other men: `Galberach, William H.` then `Gallant, William H,` then `Gallapool, C.
+  Ralph`, `Gallaspie, Edward L.`, `Gallont, Charles J.`, `Galloway, Earl D.` No *Gallagher*, in any
+  spelling a search of the five thousand lines will find. [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), the two
+  lists read against each other. The American Legion post in Lima is the William Paul Gallagher Post No. 96; it helped
+  compile the honour roll; and the list of who served, assembled with that post's help, does not
+  have him.
+
+  That is not a defect in either list. It is what two lists made by different people out of
+  different sources look like when they are set next to each other, and it is the measure of how
+  far either can be trusted alone. [inference] — see
+  [one scan is a floor and a residue](../../decisions/one-scan-is-a-floor-and-a-residue.yml).
+
+  ## Against the county's other war
+
+  **One in forty-four, against one in eleven.** Ninety-five dead out of at least 4,158 who served
+  is 2.3 per cent. The county's Civil War roster of 1,920 names records 170 deaths, 8.9 per cent.
+  [inference] — computed here from
+  [the service roster](allen-county-world-war-service.yml) and
+  [the Civil War dead](allen-county-civil-war-dead.yml). Four times as many men went and a quarter
+  as many of them died, in a war a fifth as long.
+
+  [open] How they died and where. The Civil War roster gave a cause of death for 49 of its 170 and
+  the corpus could tally Corinth, Atlanta and Andersonville from it. This list gives ninety-five
+  names and nothing else — no unit, no date, no place — so the influenza that killed 8 per cent of
+  the cases at [the state hospital](../site/lima-state-hospital.yml) the same autumn cannot be
+  separated here from the Argonne.
+properties:
+  parameter: Allen County men who died in service, First World War
+  value: "95"
+  unit: men
+  as_of: "1921"
+  method: |
+    Every line of the printed honour roll matching `Surname, Given`, counted from the single
+    digitization of the 1921 history. Two rejected lines were identified as wrapped continuations
+    of accepted names and are not additional men. Overlap with the service roster computed on
+    normalised surname plus first initial. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/rusler-allen-county-1921.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

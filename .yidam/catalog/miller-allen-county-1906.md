@@ -30,6 +30,7 @@ used-by:
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/office/mayor-of-lima.yml
+  - ../corpus/organization/gramm-bernstein-motor-truck-company.yml
   - ../corpus/organization/lima-memorial-health-system.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml

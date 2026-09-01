@@ -25,16 +25,20 @@ used-by:
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
+  - ../corpus/measure/allen-county-world-war-dead.yml
+  - ../corpus/measure/allen-county-world-war-service.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/natural-feature/auglaize-river.yml
+  - ../corpus/organization/gramm-bernstein-motor-truck-company.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
   - ../corpus/period/canal-era.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/period/the-civil-war-in-allen-county.yml
+  - ../corpus/period/the-world-war-in-allen-county.yml
   - ../corpus/person/h-s-prophet.yml
   - ../corpus/person/james-a-hover.yml
   - ../corpus/person/samuel-a-baxter.yml
@@ -49,6 +53,7 @@ used-by:
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/camp-lima.yml
   - ../corpus/site/fort-amanda.yml
+  - ../corpus/site/lima-memorial-hall.yml
   - ../corpus/site/lima-refinery.yml
   - ../corpus/site/lima-state-hospital.yml
   - ../corpus/site/miami-and-erie-canal.yml
