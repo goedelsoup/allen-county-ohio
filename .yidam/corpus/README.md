@@ -44,6 +44,7 @@ Sorted by: kind, then alphabetically.
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 8v / 2i / 1o | 75 |
 | [settlers-occupy-fort-amanda-1817.yml](event/settlers-occupy-fort-amanda-1817.yml) | event | Settlers occupy the blockhouses at Fort Amanda, 1817 | 3 | 7v / 1i / 0o | 53 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
+| [the-contested-commissioner-election-of-1920.yml](event/the-contested-commissioner-election-of-1920.yml) | event | The contested commissioner election of 1920 | 2 | 4v / 1i / 1o | 40 |
 | [the-execution-of-andrew-brentlinger-1872.yml](event/the-execution-of-andrew-brentlinger-1872.yml) | event | The execution of Andrew Brentlinger, 1872 | 4 | 7v / 2i / 2o | 62 |
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
@@ -110,7 +111,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
-| [allen-county-common-pleas-bench-1833-1920.yml](measure/allen-county-common-pleas-bench-1833-1920.yml) | measure | The Allen County common pleas bench, 1833–1920 | 3 | 12v / 2i / 1o | 97 |
+| [allen-county-commissioners-1831-1920.yml](measure/allen-county-commissioners-1831-1920.yml) | measure | The Allen County board of commissioners, 1831–1920 | 3 | 14v / 2i / 2o | 112 |
+| [allen-county-common-pleas-bench-1833-1920.yml](measure/allen-county-common-pleas-bench-1833-1920.yml) | measure | The Allen County common pleas bench, 1833–1920 | 3 | 13v / 2i / 2o | 109 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-congregations-2020.yml](measure/allen-county-congregations-2020.yml) | measure | Allen County's congregations, 2020 | 2 | 6v / 4i / 1o | 79 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
@@ -162,7 +164,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
 | [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 10v / 2i / 1o | 93 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
-| [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 16v / 4i / 2o | 148 |
+| [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 17v / 5i / 2o | 155 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 7v / 2i / 0o | 64 |
@@ -231,7 +233,7 @@ Sorted by: kind, then alphabetically.
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 4v / 1i / 1o | 45 |
 | [sugar-creek.yml](natural-feature/sugar-creek.yml) | natural-feature | Sugar Creek | 2 | 1v / 1i / 2o | 34 |
 | [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 39 |
-| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 5v / 0i / 1o | 42 |
+| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 9v / 0i / 2o | 66 |
 | [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 7v / 2i / 1o | 50 |
 | [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 5v / 1i / 2o | 43 |
 | [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 10v / 5i / 1o | 72 |
@@ -295,6 +297,7 @@ Sorted by: kind, then alphabetically.
 | [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 4 | 8v / 2i / 2o | 71 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
+| [alexander-shenk.yml](person/alexander-shenk.yml) | person | Alexander Shenk | 2 | 3v / 2i / 1o | 37 |
 | [allen-l-metheany.yml](person/allen-l-metheany.yml) | person | Allen L. Metheany | 2 | 3v / 1i / 2o | 34 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
 | [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 2v / 2i / 1o | 27 |
@@ -382,6 +385,7 @@ Sorted by: kind, then alphabetically.
 | [thomas-michael-wa-jones.yml](person/thomas-michael-wa-jones.yml) | person | Thomas Michael Wa Jones | 2 | 1v / 2i / 1o | 22 |
 | [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 3v / 2i / 0o | 31 |
 | [todd-gordon.yml](person/todd-gordon.yml) | person | Todd Gordon | 2 | 2v / 1i / 1o | 21 |
+| [william-akerman.yml](person/william-akerman.yml) | person | William Akerman | 2 | 2v / 2i / 1o | 38 |
 | [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
 | [william-l-ferguson.yml](person/william-l-ferguson.yml) | person | William L. Ferguson | 2 | 4v / 0i / 3o | 39 |
 | [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
@@ -446,6 +450,7 @@ Sorted by: kind, then alphabetically.
 | [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 3v / 2i / 1o | 41 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
 | [clerk-of-courts-2025-jennifer-moree-mcbride.yml](tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml) | tenure | Jennifer Moree McBride, Clerk of Courts of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
+| [commissioner-1884-alexander-shenk.yml](tenure/commissioner-1884-alexander-shenk.yml) | tenure | Alexander Shenk, Allen County Commissioner, 1884–1886 | 3 | 1v / 2i / 0o | 33 |
 | [commissioner-2023-brian-winegardner.yml](tenure/commissioner-2023-brian-winegardner.yml) | tenure | Brian Winegardner, Commissioner of Allen County, term of 2023–2026 | 3 | 2v / 2i / 0o | 31 |
 | [commissioner-2025-beth-a-seibert.yml](tenure/commissioner-2025-beth-a-seibert.yml) | tenure | Beth A. Seibert, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
 | [commissioner-2025-cory-alan-noonan.yml](tenure/commissioner-2025-cory-alan-noonan.yml) | tenure | Cory Alan Noonan, Commissioner of Allen County, term of 2025–2029 | 3 | 2v / 2i / 0o | 31 |
