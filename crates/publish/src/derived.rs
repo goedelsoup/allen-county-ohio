@@ -2395,6 +2395,51 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-houses-went-where-the-city-is-not",
+        statement: "Allen County authorized 5,437 new houses in thirty-six years and Lima, a third \
+                    of the county, got 367 of them. Half went to the three townships that wrap \
+                    around the city. The county lost 7,549 people over the same span and Lima lost \
+                    9,970, so the ground outside it gained.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-new-houses-by-place-1990-2025.yml",
+                "**Lima holds a third of the county's people and got 367 of its 5,437 new houses — 6.8 per cent.**"
+            ),
+            support!(
+                "measure/allen-county-new-houses-by-place-1990-2025.yml",
+                "**Half of them went to the three townships that wrap around it.** American Township 1,098,\n  Shawnee Township 981 and Bath Township 643 — 2,722 between them, 50.1 per cent of the county's\n  new houses on ground that touches the city line."
+            ),
+            support!(
+                "measure/allen-county-new-houses-by-place-1990-2025.yml",
+                "**A new house in Shawnee Township was reported at $211,559 and one in Lima at $95,879.**"
+            ),
+            support!(
+                "measure/allen-county-new-houses-by-place-1990-2025.yml",
+                "**The county did not shrink. Lima did, and the ground around it grew.** Between 1990 and 2020 the\n  county lost 7,549 people and Lima lost 9,970, which means everywhere else gained 2,421."
+            ),
+            support!(
+                "measure/allen-county-building-permits-1990-2025.yml",
+                "**The county authorized 2,252 houses in the 1990s and 587 in the 2010s.**"
+            ),
+            support!(
+                "measure/allen-county-building-permits-1990-2025.yml",
+                "**The peak is 2004 at 331 houses and the floor is 2011 at 35 — a fall of 89.4 per cent in seven\n  years.**"
+            ),
+            support!(
+                "measure/allen-county-building-permits-1990-2025.yml",
+                "**A permit is not a house and this node never treats it as one.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "American Twp", value: 1098.0, literal: "1,098" },
+            Figure { label: "Shawnee Twp", value: 981.0, literal: "981" },
+            Figure { label: "Bath Twp", value: 643.0, literal: "643" },
+            Figure { label: "Lima", value: 367.0, literal: "367" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

@@ -3007,6 +3007,51 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-building-permits-1990-2025.yml",
+      "class": "measure",
+      "label": "Allen County's residential building permits, 1990–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-12-31",
+        "method": "Thirty-six annual county files parsed on the row with state FIPS 39 and county FIPS 003. Units and value are summed across the four structure-size groups the survey publishes — 1-unit, 2-unit, 3-4 unit and 5+ unit — and the four sum to the file's own totals in every year, which is the check. Value is as reported, in the dollars of each year, and is never deflated or averaged across years. Decade averages are of the annual counts, not of a monthly series. [verified]",
+        "parameter": "single-family houses authorized by building permit",
+        "unit": "dwelling units",
+        "value": "5429"
+      },
+      "blocks": [
+        {
+          "text": "Thirty-six years of what this county authorized anyone to build. [verified] — [the Building Permits Survey](../../catalog/census-building-permits.md), county file, every annual year from 1990 to 2025.",
+          "tier": "verified"
+        },
+        {
+          "text": "**5,429 single-family houses and 6,969 dwellings of all kinds, at a reported construction value of $968,246,660.** [verified] — same source, summed across the 36 annual files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county authorized 2,252 houses in the 1990s and 587 in the 2010s.** A fall of nearly three quarters between two decades in which the county's population changed by less than seven per cent. [verified] — same source; the population comparison is [inference], against [the 1940–1990 series](allen-county-population-1940-1990.yml) and [the 2020 census](allen-county-population-2020-census.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The peak is 2004 at 331 houses and the floor is 2011 at 35 — a fall of 89.4 per cent in seven years.** [verified] — same source; the percentage is [inference], computed here. The recovery has been partial and slow: 2025's 121 is the third-highest year since 2007 and still 63 per cent below 2004.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The reported cost of a new house in this county rose from $91,359 to $321,268.** 1990's 199 houses at $18,180,563 against 2025's 121 at $38,873,435. [inference] — computed from the same file. These are the applicant's estimates in the money of the year and are not adjusted; the corpus offers no real-terms comparison because it holds no deflator.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Twenty-three of the thirty-six years contain no apartment building of five units or more.** Multifamily construction here is four projects and a long silence: 282 units in 1997, 132 in 2017, 94 in 2021 and 88 in 2019 account for 596 of the 36-year total of 774. [verified] — same source, the 5+ unit columns read year by year.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A permit is not a house and this node never treats it as one.** The 6,125 dwellings authorized between 1990 and 2019 are 13.7 per cent of the 44,563 housing units counted in 2020, but nothing here says any of them was built or that anything else was pulled down. [verified] — same source and [the 2020 occupancy count](allen-county-occupancy-2020.yml); the ratio is [inference] and is an upper bound on new stock, not a measure of it.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-churches-1906-1921.yml",
       "class": "measure",
       "label": "Allen County's churches, 1906 and 1921",
@@ -5010,6 +5055,51 @@
         },
         {
           "text": "**Six funds are named major.** The General Fund, the Motor Vehicle and Gasoline Tax, Job and Family Services, Developmental Disabilities and American Rescue Plan special revenue funds, and the Sewer enterprise fund. [verified] — same source. All six appear among the largest funds in [the 2025 report](allen-county-funds-2025.yml), which names no fund major and 437 funds at all.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+      "class": "measure",
+      "label": "Where Allen County's new houses went, 1990–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-12-31",
+        "method": "Thirty-six annual Midwest place files, filtered to state FIPS 39 and county FIPS 003, giving 21 named places plus an \"Allen County Part\" row. Place names are stripped of the survey's footnote markers before matching, without which one place becomes several across the series. Value per house is a place's whole reported value over its whole reported units and is an average across years, not a figure for any year. The place rows total 5,437 single-family units against the county file's 5,429; the two are not reconciled here. [verified]",
+        "parameter": "single-family houses authorized, by place",
+        "unit": "dwelling units",
+        "value": "5437"
+      },
+      "blocks": [
+        {
+          "text": "The same thirty-six years of permits, read at place grain, and the answer is not the county seat. [verified] — [the Building Permits Survey](../../catalog/census-building-permits.md), Midwest place files, 1990 through 2025.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima holds a third of the county's people and got 367 of its 5,437 new houses — 6.8 per cent.** [verified] — same source; the share is [inference], computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Half of them went to the three townships that wrap around it.** American Township 1,098, Shawnee Township 981 and Bath Township 643 — 2,722 between them, 50.1 per cent of the county's new houses on ground that touches the city line. [verified] — same source, the share computed here. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A new house in Shawnee Township was reported at $211,559 and one in Lima at $95,879.** The county seat's new houses cost less than half what its southern neighbour's did, on the applicant's own estimate at the time of permit, and Lima is the cheapest of the county's ten busiest places. [inference] — computed from the same file; these are unadjusted values across thirty-six years and each place's figure is an average over its own mix of years.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima is the only place in the county that built apartments.** 734 of the county's 774 units in buildings of five or more are Lima's, 94.8 per cent, and Delphos has the other 40. Counting every structure size, Lima authorized 1,280 dwellings — but 57 per cent of them are in buildings, not houses. [verified] — same source; the shares are [inference].",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county did not shrink. Lima did, and the ground around it grew.** Between 1990 and 2020 the county lost 7,549 people and Lima lost 9,970, which means everywhere else gained 2,421. The building permits say where. [inference] — computed against [the 1940–1990 series](allen-county-population-1940-1990.yml), [Lima 1970–1990](lima-population-1970-1990.yml) and [the 2020 census](allen-county-population-2020-census.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Four of the county's nine municipalities are barely in the record.** Beaverdam authorized 9 houses in thirty-six years, Harrod 7, Lafayette 5 and Cairo 27. [verified] — same source. A village that permits one house every four years is not growing and not quite still.",
           "tier": "verified"
         }
       ],
@@ -9671,6 +9761,10 @@
           "tier": "verified"
         },
         {
+          "text": "**The county's loss is Lima's loss and more.** Between 1990 and 2020 the county fell 7,549 and Lima fell 9,970, so the ground outside the city gained 2,421 over the same thirty years. [inference] — computed from the series this node already cites. The building permits say where it went: half the county's new houses since 1990 were authorized in the three townships that wrap around the city, and 6.8 per cent of them in the city. [verified] — [where the new houses went](../measure/allen-county-new-houses-by-place-1990-2025.yml). This period is named for depopulation and half of what it describes is relocation.",
+          "tier": "inference"
+        },
+        {
           "text": "The period keeps its name and its subject and its start moves to what the record shows: the county's population turned in the 1970s and fell from 1980. [inference] Whether manufacturing employment turned earlier is still unmeasured here, and it is the thing the period is named for.",
           "tier": "inference"
         },
@@ -12417,6 +12511,10 @@
         {
           "text": "The Census returns it as American at all three of those censuses, the earliest being 1930. That is consistent with, and no more than consistent with, the [renaming of August 16, 1918](../question/what-became-of-german-and-ottawa-townships.yml): the first federal count after the change already carries the new name. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**More new houses were authorized here than anywhere else in the county.** 1,098 single-family houses between 1990 and 2025, 20.2 per cent of the county's 5,437, at a reported $160,579 each. With [Shawnee](shawnee-township.yml) and [Bath](bath-township.yml) — the other two townships wrapping [Lima](lima.yml) — it accounts for half of everything the county authorized in thirty-six years. [verified] — [where the new houses went](../measure/allen-county-new-houses-by-place-1990-2025.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -13195,6 +13293,10 @@
         {
           "text": "**The city is the county's weather record.** Seventy-seven of the 390 severe weather reports here name Lima as their location, against twenty-one for Delphos, the next place. [verified] — [the storm record](../measure/allen-county-storm-events-1950-2026.yml). **That is where the reporters are, not where the storms are.** [inference] On 22 June 2006 a line of wind blew over every power pole and traffic signal on a stretch of Shawnee Road and left about two-thirds of the county without power. [verified] — [the windstorm](../event/the-windstorm-of-22-june-2006.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**It is the county's cheapest place to build and the only one that builds apartments.** 367 single-family houses were authorized here between 1990 and 2025, 6.8 per cent of the county's 5,437, at a reported $95,879 each — against $211,559 in Shawnee Township next door. Over the same years 734 of the county's 774 dwellings in buildings of five units or more were authorized inside this city. [verified] — [where the new houses went](../measure/allen-county-new-houses-by-place-1990-2025.yml). Values are the applicant's estimate at the time of permit and are not adjusted for the years between.",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -13421,6 +13523,10 @@
         },
         {
           "text": "**It keeps its own police force**, one of three townships in the county that do, and it has reported to the national incident-based system since February 2012. [verified] — [the reporting agencies](../measure/allen-county-law-enforcement-agencies-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It built the county's most expensive new houses.** 981 single-family houses were authorized here between 1990 and 2025 — 18.0 per cent of the county's — at a reported $211,559 each, the highest of the county's ten busiest places and more than twice [Lima](lima.yml)'s $95,879. [verified] — [where the new houses went](../measure/allen-county-new-houses-by-place-1990-2025.yml).",
           "tier": "verified"
         }
       ],
@@ -17713,6 +17819,13 @@
       "source": "catalog/national-bridge-inventory.md"
     },
     {
+      "from": "measure/allen-county-building-permits-1990-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-building-permits.md"
+    },
+    {
       "from": "measure/allen-county-churches-1906-1921.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -18173,6 +18286,41 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/allen-county-auditor-financials.md"
+    },
+    {
+      "from": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-building-permits.md"
+    },
+    {
+      "from": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-building-permits.md"
+    },
+    {
+      "from": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+      "to": "place/american-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-building-permits.md"
+    },
+    {
+      "from": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+      "to": "place/shawnee-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-building-permits.md"
+    },
+    {
+      "from": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+      "to": "place/bath-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-building-permits.md"
     },
     {
       "from": "measure/allen-county-newspapers-1843-2026.yml",

@@ -1,0 +1,64 @@
+class: measure
+label: Allen County's residential building permits, 1990–2025
+description: |
+  Thirty-six years of what this county authorized anyone to build. [verified] —
+  [the Building Permits Survey](../../catalog/census-building-permits.md), county file, every annual
+  year from 1990 to 2025.
+
+  **5,429 single-family houses and 6,969 dwellings of all kinds, at a reported construction value of
+  $968,246,660.** [verified] — same source, summed across the 36 annual files.
+
+  **The county authorized 2,252 houses in the 1990s and 587 in the 2010s.** A fall of nearly three
+  quarters between two decades in which the county's population changed by less than seven per cent.
+  [verified] — same source; the population comparison is [inference], against
+  [the 1940–1990 series](allen-county-population-1940-1990.yml) and
+  [the 2020 census](allen-county-population-2020-census.yml).
+
+      decade      single-family   all dwellings   yearly average
+      1990-1999           2,252           2,941            225.2
+      2000-2009           1,952           2,159            195.2
+      2010-2019             587           1,025             58.7
+      2020-2025             638             844            106.3
+
+  **The peak is 2004 at 331 houses and the floor is 2011 at 35 — a fall of 89.4 per cent in seven
+  years.** [verified] — same source; the percentage is [inference], computed here. The recovery has
+  been partial and slow: 2025's 121 is the third-highest year since 2007 and still 63 per cent below
+  2004.
+
+  **The reported cost of a new house in this county rose from $91,359 to $321,268.** 1990's 199
+  houses at $18,180,563 against 2025's 121 at $38,873,435. [inference] — computed from the same
+  file. These are the applicant's estimates in the money of the year and are not adjusted; the
+  corpus offers no real-terms comparison because it holds no deflator.
+
+  **Twenty-three of the thirty-six years contain no apartment building of five units or more.**
+  Multifamily construction here is four projects and a long silence: 282 units in 1997, 132 in 2017,
+  94 in 2021 and 88 in 2019 account for 596 of the 36-year total of 774. [verified] — same source,
+  the 5+ unit columns read year by year.
+
+  **A permit is not a house and this node never treats it as one.** The 6,125 dwellings authorized
+  between 1990 and 2019 are 13.7 per cent of the 44,563 housing units counted in 2020, but nothing
+  here says any of them was built or that anything else was pulled down. [verified] — same source
+  and [the 2020 occupancy count](allen-county-occupancy-2020.yml); the ratio is [inference] and is
+  an upper bound on new stock, not a measure of it.
+
+  [open] The years before 1990. The survey exists from 1980 in other products and the county files
+  on this server begin in 1990, so the corpus cannot see the construction of the decade in which
+  [the county's population peaked](../period/depopulation.yml).
+properties:
+  parameter: single-family houses authorized by building permit
+  value: "5429"
+  unit: dwelling units
+  as_of: "2025-12-31"
+  method: |
+    Thirty-six annual county files parsed on the row with state FIPS 39 and county FIPS 003. Units
+    and value are summed across the four structure-size groups the survey publishes — 1-unit,
+    2-unit, 3-4 unit and 5+ unit — and the four sum to the file's own totals in every year, which is
+    the check. Value is as reported, in the dollars of each year, and is never deflated or averaged
+    across years. Decade averages are of the annual counts, not of a monthly series. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-building-permits.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

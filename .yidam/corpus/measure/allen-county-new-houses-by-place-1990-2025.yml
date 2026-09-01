@@ -1,0 +1,90 @@
+class: measure
+label: Where Allen County's new houses went, 1990–2025
+description: |
+  The same thirty-six years of permits, read at place grain, and the answer is not the county seat.
+  [verified] — [the Building Permits Survey](../../catalog/census-building-permits.md), Midwest place
+  files, 1990 through 2025.
+
+  **Lima holds a third of the county's people and got 367 of its 5,437 new houses — 6.8 per cent.**
+  [verified] — same source; the share is [inference], computed here.
+
+  **Half of them went to the three townships that wrap around it.** American Township 1,098,
+  Shawnee Township 981 and Bath Township 643 — 2,722 between them, 50.1 per cent of the county's
+  new houses on ground that touches the city line. [verified] — same source, the share computed
+  here. [inference]
+
+      place                    houses    share    value each
+      American Township         1,098    20.2%      $160,579
+      Shawnee Township            981    18.0%      $211,559
+      Bath Township               643    11.8%      $138,994
+      Marion Township             494     9.1%      $146,888
+      Lima                        367     6.8%       $95,879
+      Bluffton                    295     5.4%      $180,410
+      Elida                       294     5.4%      $149,616
+      Perry Township              289     5.3%      $122,981
+      Delphos                     238     4.4%      $147,240
+      Richland Township           177     3.3%      $176,207
+      the other eleven places     561    10.3%
+
+  **A new house in Shawnee Township was reported at $211,559 and one in Lima at $95,879.** The
+  county seat's new houses cost less than half what its southern neighbour's did, on the applicant's
+  own estimate at the time of permit, and Lima is the cheapest of the county's ten busiest places.
+  [inference] — computed from the same file; these are unadjusted values across thirty-six years and
+  each place's figure is an average over its own mix of years.
+
+  **Lima is the only place in the county that built apartments.** 734 of the county's 774 units in
+  buildings of five or more are Lima's, 94.8 per cent, and Delphos has the other 40. Counting every
+  structure size, Lima authorized 1,280 dwellings — but 57 per cent of them are in buildings, not
+  houses. [verified] — same source; the shares are [inference].
+
+  **The county did not shrink. Lima did, and the ground around it grew.** Between 1990 and 2020 the
+  county lost 7,549 people and Lima lost 9,970, which means everywhere else gained 2,421. The
+  building permits say where. [inference] — computed against
+  [the 1940–1990 series](allen-county-population-1940-1990.yml),
+  [Lima 1970–1990](lima-population-1970-1990.yml) and
+  [the 2020 census](allen-county-population-2020-census.yml).
+
+  **Four of the county's nine municipalities are barely in the record.** Beaverdam authorized 9
+  houses in thirty-six years, Harrod 7, Lafayette 5 and Cairo 27. [verified] — same source. A
+  village that permits one house every four years is not growing and not quite still.
+
+  [open] Whether the ring townships' houses are on annexed ground or on township ground that stayed
+  township. The corpus holds
+  [fifty-seven annexations 1990–2024](allen-county-annexations-1990-2024.yml) and has not crossed
+  them against this file; until it does, "Lima built 367 houses" and "367 houses were built inside
+  Lima's 2025 boundary" are different statements and only the first is made here.
+properties:
+  parameter: single-family houses authorized, by place
+  value: "5437"
+  unit: dwelling units
+  as_of: "2025-12-31"
+  method: |
+    Thirty-six annual Midwest place files, filtered to state FIPS 39 and county FIPS 003, giving 21
+    named places plus an "Allen County Part" row. Place names are stripped of the survey's footnote
+    markers before matching, without which one place becomes several across the series. Value per
+    house is a place's whole reported value over its whole reported units and is an average across
+    years, not a figure for any year. The place rows total 5,437 single-family units against the
+    county file's 5,429; the two are not reconciled here. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-building-permits.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-building-permits.md
+  - target: ../place/american-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-building-permits.md
+  - target: ../place/shawnee-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-building-permits.md
+  - target: ../place/bath-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-building-permits.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
