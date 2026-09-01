@@ -29,6 +29,7 @@ const hogSpec = line(
 
 const bridges = assertion('not-one-state-bridge-is-in-poor-condition')
 const gauge = assertion('the-gauge-was-not-there')
+const drinks = assertion('the-city-drinks-from-the-river-nobody-measures')
 
 const bridgeSpec = bar(
   bridges.figures.map((f) => f.label),
@@ -286,6 +287,59 @@ const yieldSpec = bar(
       declaration, and neither did the second largest in 2015. That is a statement about the FEMA
       file, which is complete for those years and does not have this county in it. "No large flow in
       2004" would be a statement about nothing at all: the gauge was switched off.
+    </p>
+  </section>
+
+  <section>
+    <h2>Where the county drinks from</h2>
+    <p>
+      Eight community water systems serve 84,476 people in Allen County, and six of them are a town
+      — Lima, Delphos, Bluffton, Elida, Spencerville and Beaverdam. The other two are a mobile home
+      park and a campground. Against the county's 100,866 in 2024 that leaves about one person in
+      six on none of them, though the figure is loose: these are self-reported service populations,
+      and Bluffton and Delphos both straddle county lines.
+    </p>
+    <AssertionCard assertion={drinks} />
+    <table>
+      <caption>Community water systems, 2026</caption>
+      <thead><tr><th scope="col">System</th><th scope="col">Served</th><th scope="col">Connections</th><th scope="col">Its own sources</th></tr></thead>
+      <tbody>
+        <tr><td>Lima City</td><td>65,619</td><td>27,113</td><td>6 reservoirs, 4 river intakes</td></tr>
+        <tr><td>Delphos City</td><td>7,101</td><td>2,750</td><td>1 river intake, 1 reservoir, 9 wells</td></tr>
+        <tr><td>Bluffton Village</td><td>4,125</td><td>1,505</td><td>8 wells, and a purchase</td></tr>
+        <tr><td>Elida Village</td><td>4,109</td><td>1,684</td><td>none — it buys from Lima</td></tr>
+        <tr><td>Spencerville Village</td><td>2,261</td><td>1,000</td><td>5 wells</td></tr>
+        <tr><td>Brightstar Lima MHP</td><td>480</td><td>204</td><td>1 well</td></tr>
+        <tr><td>Sun Valley Campground</td><td>462</td><td>244</td><td>1 well</td></tr>
+        <tr><td>Beaverdam Village</td><td>319</td><td>170</td><td>3 wells</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Lima's system serves nearly twice the city's own population and sells to Elida on top of it,
+      and every drop of it is surface water that has been stored first: six named reservoirs —
+      Ferguson, Bresler, Metzger, Williams, Twin Lakes and Lost Creek — each with its own intake,
+      plus four more on the Ottawa and the Auglaize. That is also the answer to something the last
+      section raised: a county with no natural lakes has thirty-one lake and reservoir monitoring
+      stations because a city's water supply is standing in them.
+    </p>
+    <p>
+      Two of those intakes are on the Auglaize, which drains 219 square miles above Spencerville and
+      has never had a year of peak flow recorded. The county's largest water system draws on the
+      river nobody measures, and the gauged one is the smaller.
+    </p>
+    <p>
+      The compliance record runs to 197 violations across thirty-eight systems since 1984, of which
+      twenty concern the water and the rest concern monitoring, reporting and record-keeping. All
+      twenty have been resolved — and there are ten resolutions between them, because Bluffton was
+      over a standard for ten consecutive quarters from October 2013 and cleared all ten on one day
+      in April 2016. Counting the rows would put a village's single two-and-a-half-year failure
+      ahead of a city's three separate ones.
+    </p>
+    <p>
+      The violation count rises steeply — two in the 1980s, 24 in the 1990s, 25 in the 2000s, 61 in
+      the 2010s, 85 in the six years since 2020 — and nearly all of the increase is paperwork. The
+      number of federal drinking water rules to be monitored under grew across the same span. The
+      count is recorded here and the trend is not.
     </p>
   </section>
 

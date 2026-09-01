@@ -1022,6 +1022,26 @@
       ]
     },
     {
+      "id": "place-allen-county::people-served-by-community-water-systems-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "people served by community water systems in Allen County",
+      "unit": "people",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-water-systems-2026.yml",
+          "label": "Allen County's public water systems, 2026",
+          "as_of": "2026",
+          "value": 84476.0,
+          "published": "84476",
+          "tier": "verified",
+          "source": "catalog/epa-sdwis.md",
+          "method": "Selected on the `OH02` identifier prefix, which is Ohio's county code for Allen, and restricted to `pws_activity_code` A and `pws_type_code` CWS. The thirty-three active non-community systems — rest areas, campgrounds, schools, a tavern — are excluded, because they serve people who are passing through or at work and counting them against a resident population would double-count. Populations are as each system reports them and are service populations, not residents of any boundary this corpus holds. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::population-by-race-(B02001)-and-Hispanic-origin-(B03003)",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1168,6 +1188,26 @@
           "tier": "verified",
           "source": "catalog/leeson-allen-county-1885.md",
           "method": "Read from the full text of three county histories on archive.org, the 1885 book in two independent scans. The mileage is the 1885 book's, compiled from official records of 1883 and prefaced \"about\". The employment figures are as the sources print them: a range for 1879, a floor for the shops in 1906, and an exact count for the yards and freight offices in 1905. Nothing here averages a range or treats \"more than 500\" as 500, and the three are not added together. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::recorded-drinking-water-violations-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "recorded drinking water violations in Allen County",
+      "unit": "violations",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-water-violations-1984-2026.yml",
+          "label": "Drinking water violations in Allen County, 1984–2026",
+          "as_of": "2026",
+          "value": 197.0,
+          "published": "197",
+          "tier": "verified",
+          "source": "catalog/epa-sdwis.md",
+          "method": "All rows for systems whose identifier begins `OH02`, whatever the system's type or current status — so a tavern that closed in 1998 is counted. Health-based is the file's own `is_health_based_ind`, not a threshold chosen here. Distinct problems are counted by grouping on system and return-to-compliance date, which merges Bluffton's ten quarterly rows and leaves every other health-based violation on its own. The 2020s figure covers six years and eight months, not ten. [verified]"
         }
       ]
     },
@@ -4961,6 +5001,50 @@
           "tier": "verified",
           "sources": [
             "catalog/usgs-nwis.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-city-drinks-from-the-river-nobody-measures",
+      "statement": "Lima's water system serves sixty-five per cent of Allen County out of six reservoirs and four river intakes, two of them on a river with no flow record.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-water-systems-2026.yml",
+          "node_label": "Allen County's public water systems, 2026",
+          "span": "**Lima's system serves more than the county seat by a factor of two.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-sdwis.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-water-systems-2026.yml",
+          "node_label": "Allen County's public water systems, 2026",
+          "span": "**Everything Lima drinks is surface water, and it is stored.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/epa-sdwis.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-water-systems-2026.yml",
+          "node_label": "Allen County's public water systems, 2026",
+          "span": "**The city drinks from the river nobody measures.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-water-violations-1984-2026.yml",
+          "node_label": "Drinking water violations in Allen County, 1984–2026",
+          "span": "**Twenty violations, ten resolutions.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-sdwis.md"
           ]
         }
       ],

@@ -1855,6 +1855,32 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-city-drinks-from-the-river-nobody-measures",
+        statement: "Lima's water system serves sixty-five per cent of Allen County out of six \
+                    reservoirs and four river intakes, two of them on a river with no flow record.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-water-systems-2026.yml",
+                "**Lima's system serves more than the county seat by a factor of two.**"
+            ),
+            support!(
+                "measure/allen-county-water-systems-2026.yml",
+                "**Everything Lima drinks is surface water, and it is stored.**"
+            ),
+            support!(
+                "measure/allen-county-water-systems-2026.yml",
+                "**The city drinks from the river nobody measures.**"
+            ),
+            support!(
+                "measure/allen-county-water-violations-1984-2026.yml",
+                "**Twenty violations, ten resolutions.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
