@@ -102,10 +102,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 6v / 2i / 1o | 75 |
+| [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
+| [allen-county-congregations-2020.yml](measure/allen-county-congregations-2020.yml) | measure | Allen County's congregations, 2020 | 2 | 6v / 4i / 1o | 79 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
 | [allen-county-disaster-aid-applicants-2005-2025.yml](measure/allen-county-disaster-aid-applicants-2005-2025.yml) | measure | Who was paid federal disaster aid in Allen County, 2005–2025 | 2 | 4v / 3i / 2o | 86 |
 | [allen-county-disaster-assistance-2005-2025.yml](measure/allen-county-disaster-assistance-2005-2025.yml) | measure | Federal disaster assistance to Allen County, 2005–2025 | 2 | 5v / 4i / 1o | 67 |
@@ -244,7 +246,7 @@ Sorted by: kind, then alphabetically.
 | [apollo-career-center.yml](organization/apollo-career-center.yml) | organization | Apollo Career Center | 2 | 4v / 3i / 1o | 44 |
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
 | [bluffton-public-library.yml](organization/bluffton-public-library.yml) | organization | Bluffton Public Library | 2 | 5v / 2i / 1o | 42 |
-| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 5v / 3i / 1o | 55 |
+| [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 6v / 3i / 1o | 64 |
 | [delphos-public-library.yml](organization/delphos-public-library.yml) | organization | Delphos Public Library | 2 | 5v / 1i / 1o | 42 |
 | [der-lima-courier.yml](organization/der-lima-courier.yml) | organization | Der Lima Courier | 2 | 4v / 1i / 1o | 35 |
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
@@ -257,6 +259,7 @@ Sorted by: kind, then alphabetically.
 | [lima-memorial-health-system.yml](organization/lima-memorial-health-system.yml) | organization | Lima Memorial Health System | 2 | 8v / 2i / 1o | 68 |
 | [lima-public-library.yml](organization/lima-public-library.yml) | organization | Lima Public Library | 2 | 7v / 1i / 1o | 50 |
 | [lima-refining-company.yml](organization/lima-refining-company.yml) | organization | Lima Refining Company | 2 | 6v / 0i / 1o | 39 |
+| [market-street-presbyterian-church.yml](organization/market-street-presbyterian-church.yml) | organization | Market Street Presbyterian Church | 2 | 6v / 0i / 1o | 47 |
 | [mercy-health-st-ritas-medical-center.yml](organization/mercy-health-st-ritas-medical-center.yml) | organization | Mercy Health–St. Rita's Medical Center | 2 | 7v / 0i / 1o | 53 |
 | [ohio-electric-railway.yml](organization/ohio-electric-railway.yml) | organization | The Ohio Electric Railway Company | 1 | 5v / 3i / 1o | 61 |
 | [ohio-state-beauty-academy.yml](organization/ohio-state-beauty-academy.yml) | organization | Ohio State Beauty Academy | 2 | 3v / 3i / 1o | 42 |
@@ -264,10 +267,12 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 7v / 0i / 1o | 55 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
+| [temple-beth-israel.yml](organization/temple-beth-israel.yml) | organization | Temple Beth Israel | 2 | 3v / 1i / 2o | 37 |
 | [the-bluffton-news.yml](organization/the-bluffton-news.yml) | organization | The Bluffton News | 2 | 4v / 1i / 1o | 44 |
 | [the-lima-citizen.yml](organization/the-lima-citizen.yml) | organization | The Lima Citizen | 2 | 5v / 1i / 1o | 40 |
 | [the-lima-news.yml](organization/the-lima-news.yml) | organization | The Lima News | 2 | 6v / 1i / 1o | 56 |
 | [the-porcupine.yml](organization/the-porcupine.yml) | organization | The Porcupine | 2 | 3v / 1i / 1o | 36 |
+| [trinity-methodist-episcopal-church.yml](organization/trinity-methodist-episcopal-church.yml) | organization | Trinity Methodist Episcopal Church | 2 | 4v / 2i / 1o | 48 |
 | [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
 | [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
@@ -372,12 +377,12 @@ Sorted by: kind, then alphabetically.
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 14v / 4i / 3o | 111 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 17v / 4i / 3o | 122 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 11v / 1i / 1o | 77 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 10v / 4i / 1o | 95 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 11v / 2i / 2o | 84 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
-| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
+| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 7v / 1i / 1o | 73 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 9v / 0i / 2o | 64 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 8v / 1i / 1o | 66 |
@@ -398,6 +403,7 @@ Sorted by: kind, then alphabetically.
 | [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 9v / 6i / 1o | 111 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 4v / 3i / 1o | 71 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
+| [when-limas-first-congregation-was-organized.yml](question/when-limas-first-congregation-was-organized.yml) | question | When Lima's first congregation was organized | 4 | 3v / 1i / 0o | 49 |
 | [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 6 | 2v / 1i / 1o | 52 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
