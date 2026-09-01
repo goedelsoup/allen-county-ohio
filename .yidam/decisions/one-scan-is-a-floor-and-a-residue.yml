@@ -1,0 +1,62 @@
+id: one-scan-is-a-floor-and-a-residue
+summary: >-
+  The 1921 county history prints two rosters — five thousand lines of who served in the World War
+  and ninety-five of who died — and unlike the 1885 book it exists in exactly one digitization.
+  This records how a printed list is counted when the two-scan standard cannot be met, and what
+  happened when the two lists in that one book were joined to each other.
+context: |
+  [a-printed-list-is-a-dataset](a-printed-list-is-a-dataset.yml) set the method for counting an
+  OCR'd roster: publish a derived quantity only as a floor, and take the floor from the *lower* of
+  two independent scans, because every failure mode of the parse subtracts and none adds. The whole
+  procedure assumed two readings. [two-scans-of-one-book](two-scans-of-one-book.yml) assumed the
+  same thing for dates.
+
+  The 1885 history has two scans. **The 1921 history has one.** A search of archive.org returns a
+  single item for it, and volume two — the biographical volume — is not there at all. The corpus
+  has used that book as "a single witness read once" for individual figures before; it has never
+  had to count five thousand lines of it.
+decision: |
+  **A count from one scan is still a floor, and the residue is published beside it.**
+
+  The floor is the count, for the reason the two-scan rule already established: an entry the parser
+  cannot recognise is an entry lost, never an entry invented. What one scan cannot supply is a
+  *measure of the distance* to the true figure, which is exactly what a second scan gives.
+
+  So the substitute is to report what the parser rejected. The World War roster yields 4,158 lines
+  matching a name pattern and 96 it could not classify, and those 96 are printed in the node — they
+  visibly include `Augsburger Donald`, `Beamer Ray`, `Biederman William`, names whose comma the scan
+  lost entirely, and fragments of names broken across a line. A reader can see that 4,158 is short
+  and by roughly how much, without a second book.
+
+  **Duplicates are counted and not removed.** Thirty-six accepted lines repeat a name already in
+  the list. Silently deduplicating would substitute this corpus's judgment for the compiler's; the
+  figure published is his list's length, with the duplication reported as a property of it.
+
+  **And where a book prints two lists, joining them is a measurement of the compilers.** The
+  honour roll and the service roster in this chapter were assembled by different people from
+  different sources. Matched on surname and first initial, **at most forty-seven of the
+  ninety-five dead are absent from the roster of the served** — and one of the absent is William
+  Paul Gallagher, the man the Lima American Legion post is named for, a post that helped compile
+  the honour roll. The corpus publishes the join as a fact about the lists, not as a correction to
+  either.
+rationale: |
+  **Why the residue and not an estimate.** The tempting move is to extrapolate: 96 rejected lines,
+  most of them names, therefore about 4,240. That converts a countable thing into a modelled one
+  and buries the modelling in a single number. Printing the rejects costs three lines and lets the
+  reader do the arithmetic that this corpus refuses to do on their behalf.
+
+  **Why the Gallagher case is worth its space.** It is the one instance in this parse that can be
+  checked without a computer. The roster is alphabetical, and the slot runs `Galberach`, `Gallant`,
+  `Gallapool`, `Gallaspie`, `Gallont`, `Galloway`. There is no `Gallagher` between them. That is not
+  an OCR failure — an OCR failure would put a mangled string in the sequence, and the sequence is
+  continuous. The name is not in the list.
+
+  A single missing name is trivial. What it demonstrates is not: two lists in one chapter, made by
+  overlapping committees in the same county within three years of the event, disagree about who was
+  there. Any figure derived by joining them is a figure about the joining.
+
+  **What this does not license.** It is not permission to treat one scan as equivalent to two for
+  *dates*. The failure this corpus catalogued in [two-scans-of-one-book](two-scans-of-one-book.yml)
+  is a 3 read as an 8, which produces a well-formed year fifty years wrong and leaves no residue at
+  all. A miscounted roster announces its own uncertainty; a misread digit does not. Counting a list
+  from one scan is allowed. Dating an event from one scan is still not.
