@@ -1,0 +1,69 @@
+class: measure
+label: What passes through Allen County's books, 2025
+description: |
+  **The county's revenue report ends at $374,841,546.99 and the county government does not have
+  $374,841,546.99.** [verified] —
+  [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md), the YTD
+  summary revenue and expenditure reports for December 2025. Revenue is spread over 437 named funds
+  and expenditure over 413, and the grand total is the sum of all of them.
+
+      what                                        revenue      share of grand total
+      the whole report                        374,841,547            100.0%
+      the 52 funds numbered 9xxx              181,069,850             48.3%
+      of which, real estate tax collected     139,249,231             37.1%
+      the General Fund                         39,567,583             10.6%
+
+  **Nearly half of the grand total is money the county holds for somebody else.** The 9xxx funds
+  are custodial: first-half and second-half real estate collections, payroll withholding for
+  federal and Ohio income tax and Medicare, deferred compensation, the undivided local government
+  fund, the undivided township gas tax, undivided vehicle fees, and an insurance pool. [verified] —
+  same source, fund by fund.
+
+  **Fifteen funds took in and paid out the same amount to the cent.** Second-half real estate
+  $58,725,512.16, local government library and township parks $4,495,636.25, federal income tax
+  withholding $4,113,093.70, the undivided local government fund $3,794,888.36, the undivided
+  township gas tax $2,054,424.69, Medicare $1,438,939.58 and nine more. [verified] — computed by
+  matching the two reports fund by fund. A fund where the year's receipts equal the year's
+  disbursements exactly is a conduit, not an income. [inference]
+
+  **The tax duplicate is the largest number in this county's public accounts and it belongs to
+  everyone but the county.** $139,249,231 of real estate tax passed through the treasurer's hands
+  in 2025 — for the twelve school districts, the two cities, the twelve villages, the twelve
+  townships, the library, the park district and the county itself. [verified] — same source. The
+  county's own share of it, the $4,554,766 that reaches
+  [the General Fund](allen-county-general-fund-2025.yml), is **3.3 per cent**. [inference] —
+  computed here.
+
+  **The report's own percentage column shows the trap.** Actual revenue is 179.7 per cent of the
+  revised estimate of $208,648,489.80, because custodial funds are not budgeted and appear in the
+  actual column with a zero beside them. [verified] — same source. A reader who takes "179.7%
+  collected" as a county running far ahead of its budget has read a real number about a fictional
+  quantity. [inference]
+
+  **Expenditure comes to $370,746,613.34 against the same 437-fund universe**, and the 9xxx funds
+  account for $180,718,867.13 of it. [verified] — same source.
+
+  [open] Which taxing districts receive the $139 million, and in what shares. The summary report
+  carries the collection as one line in and one line out. The instrument is the Auditor's tax
+  settlement, which this corpus does not hold, and no figure in this node may be split among
+  districts without it.
+properties:
+  parameter: total revenue recorded across all county funds
+  value: "374841546.99"
+  unit: US dollars
+  as_of: 2025-12-30
+  method: |
+    Two PDFs converted with `pdftotext -layout` and parsed on the source's own fund blocks —
+    `ACCOUNTS FOR:` to `TOTAL REVENUES` on one side and to `TOTAL EXPENSES` on the other. The
+    per-fund figures sum to the grand totals the reports themselves print, which is the check that
+    the parse is complete: 437 funds to $374,841,546.99 and 413 to $370,746,613.34. The `as_of` is
+    the report's generation date rather than the 31 December it is headed with. Custodial funds are
+    identified by their fund number beginning 9 and by the equality of their two sides, not by any
+    label the source applies, because the source applies none. [verified]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-financials.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

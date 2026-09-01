@@ -1,0 +1,71 @@
+class: measure
+label: Allen County's audited net position, 2023
+description: |
+  **The county was worth $177,505,194 at the end of 2023 and $153,534,116 at the end of 2022.**
+  [verified] — the State Auditor's report on Allen County for the year ended 31 December 2023,
+  published by
+  [the county auditor](../../catalog/allen-county-auditor-financials.md). These are the audited,
+  accrual-basis figures; everything in
+  [the monthly reports](allen-county-general-fund-2025.yml) is neither audited nor accrual.
+
+      Table 1, as the report prints it            2023            2022
+      total assets                          274,248,492     268,547,687
+        of which capital assets, net        130,673,068     125,166,779
+      total liabilities                     111,018,312      74,259,421
+      total net position                    177,505,194     153,534,116
+        net investment in capital assets    105,855,979      97,668,127
+        restricted                           61,400,633      61,139,276
+        unrestricted                         10,248,582      (5,273,287)
+
+  **Liabilities rose $36,758,891 in a year in which the county borrowed nothing.** One line moved
+  further than the total: the long-term pension liability went from $20,113,541 to $66,841,464, a
+  rise of $46,727,923, against which current liabilities fell $9,291,841. [verified] — same source,
+  Table 1. Deferred inflows for pension fell from $26,745,448 to $1,122,333 over the same year,
+  which is the other half of the same actuarial swing. [verified] — same table. A reader who takes
+  "liabilities up fifty per cent" as borrowing has read a real number about the wrong thing.
+  [inference]
+
+  **What the county actually owes to lenders is $16,281,525.** At 31 December 2023 governmental
+  activities carried $103,179 in special assessment bonds, $1,068,908 in Ohio Public Works
+  Commission loans and $1,905,267 in Ohio Water Development Authority loans; the sewer enterprise
+  carried $13,204,171 more in OWDA loans. [verified] — same source. That is fifteen per cent of the
+  county's reported liabilities and six per cent of its assets. [inference] — computed here.
+
+  **Its unrestricted governmental position crossed from a $13,128,479 deficit to $34,905 below
+  zero.** [verified] — same table. A third of the county's net position, $61,400,633, is restricted
+  and another $105,855,979 is the buildings and roads themselves, so $10,248,582 of $177,505,194 —
+  under six per cent — is unrestricted. [inference] — computed here.
+
+  **The permissive sales tax is the series both sources carry.** $20,678,894 in 2022 and
+  $20,760,806 in 2023 here, against $21,272,590 in
+  [the 2025 monthly report](allen-county-general-fund-2025.yml). [verified] — the two sources, read
+  against each other. Three years, one direction, and the only figure this corpus can follow across
+  the audited and unaudited books.
+
+  **Six funds are named major.** The General Fund, the Motor Vehicle and Gasoline Tax, Job and
+  Family Services, Developmental Disabilities and American Rescue Plan special revenue funds, and
+  the Sewer enterprise fund. [verified] — same source. All six appear among the largest funds in
+  [the 2025 report](allen-county-funds-2025.yml), which names no fund major and 437 funds at all.
+
+  [open] Every year but 2023 and 2022. The audits run from 2010 and this reads the latest of them.
+  Also what the county's component units are: the report says they are 73 and 24 per cent of the
+  aggregated assets and revenues, and this corpus has not read which bodies they are.
+properties:
+  parameter: total net position, primary government
+  value: "177505194"
+  unit: US dollars
+  as_of: 2023-12-31
+  method: |
+    One PDF, `Allen_County_23_Allen_Report_FINAL.pdf`, converted with `pdftotext -layout`. Every
+    figure is quoted from the report's own Table 1 and its Capital Assets and Debt Administration
+    section, in the dollars it prints and without rounding. The changes between 2022 and 2023 are
+    subtractions of two printed figures and are marked as computed. The report labels its
+    management discussion "Unaudited"; the statements it discusses are audited, and the figures
+    above are from the statements. [verified]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-financials.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
