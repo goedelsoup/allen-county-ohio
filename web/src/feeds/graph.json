@@ -2362,6 +2362,86 @@
       "withheld": 7
     },
     {
+      "id": "measure/allen-county-bridge-crossings-2025.yml",
+      "class": "measure",
+      "label": "What Allen County's bridges cross, 2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Counted here from the 2025 Ohio file, selecting Allen County and matching `FEATURES_DESC_006A` and `FACILITY_CARRIED_007` by substring. Those fields are free text entered by the state and are inconsistently abbreviated, so a bridge described as \"AUGLAIZE RIVER FAULKNER\" is counted to the Auglaize and one described as \"STREAM SLABTOWN RD\" is counted to nothing. The counts are therefore floors, and the residue is structures over unnamed water. [inference]",
+        "parameter": "bridges crossing the Ottawa River in Allen County",
+        "unit": "structures",
+        "value": "41"
+      },
+      "blocks": [
+        {
+          "text": "**Forty-one of the county's bridges cross the Ottawa River** — nearly twice as many as cross the Auglaize, which is the larger river. [verified] — [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), 2025 Ohio file, matched on the free-text description of what each structure spans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Ottawa's lead is Lima's.** The Auglaize is the county's principal river and it runs through farmland; the Ottawa runs through the county seat, and a city is a place where every street has to get across the water. [inference] — computed here against [the city](../place/lima.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Twenty-one structures carry Interstate 75 and twenty-four carry U.S. Route 30**, and a further twenty-nine cross over one or the other. Forty-five of the county's 364 bridges — one in eight — exist because of two roads built in the middle of the last century. [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The busiest structure in the county carries Interstate 75 over Lost Creek**, at 39,060 vehicles a day. [verified] — same source. That figure is a 2015 count in a 2025 file, as are the counts on 293 of the county's 364 bridges; see [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the third transport network the corpus holds for this county and the first that is current.** The canal is a ditch, the interurban stops in 1921, and the railroads' last measured mileage is 1883. [verified] — see [the canal](../site/miami-and-erie-canal.yml), [the interurban](allen-county-interurban-1901-1921.yml) and [the railroads](allen-county-railroads-1883-1921.yml). Every one of them crossed the same water in the same places, and this is the only one of the four for which the corpus can say how many times.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-bridges-2025.yml",
+      "class": "measure",
+      "label": "Allen County's bridges, 2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Selected from the 2025 Ohio delimited file on `COUNTY_CODE_003` = 3 and counted here. \"Poor\" is the minimum of items 58, 59, 60 and 62 being 4 or less, which is the Federal Highway Administration's own rule; structures with no rating in any of the four are not counted either way, and there were none. The count is of structures in the county whatever the owner, which is not the same as the count of bridges the county maintains. [verified]",
+        "parameter": "highway bridges in Allen County",
+        "unit": "structures",
+        "value": "364"
+      },
+      "blocks": [
+        {
+          "text": "**364 highway bridges stand in Allen County**, and not one of the hundred and three the state owns is in poor condition. [verified] — [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), 2025 Ohio file, county code 3.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same source, counted here. Written out: **not one of the state's 103 bridges here is in poor condition, 29 of the county's 242 are, and 4 of the municipalities' 19 — 0.0, 12.0 and 21.1 per cent.** **A bridge in this county is in poor condition or not according to who owns it**, and the ladder runs from the government furthest away to the one nearest. [inference] — computed here. The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file.",
+          "tier": "inference"
+        },
+        {
+          "text": "**No township owns a bridge, and that is the law rather than an accident.** The county engineer \"shall have general charge of the ... maintenance, and repair of all bridges and highways within the engineer's county, under the jurisdiction of the board of county commissioners\"; townships build and improve roads. [verified] — [Ohio Revised Code §5543.01](../../catalog/ohio-revised-code.md). Three hundred and sixty-four rows of a federal file agree with one sentence of state law; see [the county engineer](../office/allen-county-engineer.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's own count is 371 and this one is 364, and neither is wrong.** The engineer's office reports 371 bridges and over 1,400 culverts. This inventory admits a structure only if it spans more than twenty feet, and the rule holds in the data: the shortest of the 364 is 6.4 metres against a threshold of 6.1, with no exception. So the seven are not missing — they are short. [inference] — computed here; see [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Half of them predate 1980.** 179 of 364 were built before that year, with the peak in the interstate decades — 69 in the 1960s and 72 in the 1970s, 39 per cent of the county's bridges in twenty years. [verified] — same source, counted here. The median structure is 19.2 metres long; the longest is 241.2 metres, a 1964 state structure carrying County Road 185 over Interstate 75, a Norfolk Southern line and another county road at once.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The oldest was built in 1909 and it is still a county bridge.** [verified] — same source; see [the Hay Road bridge](../site/hay-road-bridge.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-civil-war-dead.yml",
       "class": "measure",
       "label": "Allen County's Civil War dead, counted from the roster",
@@ -3669,6 +3749,10 @@
         },
         {
           "text": "**No industry.** Not the [locomotive works](../site/lima-locomotive-works-plant.yml), which built Shays and Berkshires and gave the county its name in the trade; not [the refinery](../site/lima-refinery.yml), running since 1886; not [the tank plant](../site/lima-army-tank-plant.yml) or [the Ford engine plant](../site/ford-lima-engine-plant.yml). [verified] — the county's whole list above. A county whose nineteenth and twentieth centuries were made of iron, oil and rolling stock has twenty-six commercial and domestic buildings and a stadium on the federal register, and nothing it made anything in. [inference] — observed here; see [a register records nominations](../../decisions/a-register-records-nominations.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**One thing in this county has been judged eligible for the Register and is not on it.** The federal bridge inventory codes the 1909 Hay Road structure over the Auglaize River as eligible, and every other one of the county's 364 bridges as not applicable; no bridge appears among the twenty-nine listings above. [verified] — [the National Bridge Inventory](../../catalog/national-bridge-inventory.md); see [the Hay Road bridge](../site/hay-road-bridge.yml). Eligibility is a determination made in the course of federal review, and a nomination is a thing somebody files — which is what [a register records nominations](../../decisions/a-register-records-nominations.yml) says, met here from the other side. [inference]",
           "tier": "inference"
         }
       ],
@@ -5481,6 +5565,10 @@
         {
           "text": "**It rises in this county**, at 40.6669957, -83.8938286 in Auglaize township — the township named after it. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon. So Allen County is not merely drained by the Auglaize; it is the ground the river starts on. See [where the Auglaize rises](../question/where-the-auglaize-rises.yml). Its whole subbasin, `04100007`, is one of the seven that make up the Maumee's drainage; the four blocks of that township on [the Scioto side](scioto-river-basin.yml) drain the opposite way, so the divide and this river's source are in the same township. [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**Twenty-two highway bridges cross it in Allen County, and the oldest bridge in the county is one of them.** The Hay Road structure in [Auglaize Township](../place/auglaize-township.yml) was built in 1909 and is still carrying traffic. [verified] — [what the bridges cross](../measure/allen-county-bridge-crossings-2025.yml) and [the Hay Road bridge](../site/hay-road-bridge.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -5657,6 +5745,10 @@
         },
         {
           "text": "Being the watercourse Lima grew on, it was also the receiving water for the refinery and the works — the environmental history of this stream and the industrial history of the city are the same subject. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Forty-one highway bridges cross it — more than cross any other water in the county, and nearly twice the Auglaize's twenty-two**, though the Auglaize is the larger river. [verified] — [what the bridges cross](../measure/allen-county-bridge-crossings-2025.yml). The difference is [Lima](../place/lima.yml): this river runs through the county seat, and a city is a place where every street has to get over the water. [inference]",
           "tier": "inference"
         }
       ],
@@ -5841,6 +5933,18 @@
         },
         {
           "text": "The present term runs 6 January 2025 to 31 December 2028, four years. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md); the length is arithmetic on those dates and not a statute this corpus has read. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A federal inventory now stands beside those figures, and the two counts differ by seven.** The National Bridge Inventory holds **364** bridges in Allen County — 242 owned by the county, 103 by the state, 19 by municipalities and none at all by a township — against this office's 371. [verified] — [the bridges](../measure/allen-county-bridges-2025.yml). The inventory admits only structures spanning more than twenty feet, and its shortest here is 6.4 metres against a threshold of 6.1, so the seven are short rather than absent. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The zero is this office's own statute, seen from Washington.** No township in the county owns a bridge, because the county engineer \"shall have general charge of the ... maintenance, and repair of all bridges and highways within the engineer's county, under the jurisdiction of the board of county commissioners\", while townships build and improve roads. [verified] — [Ohio Revised Code §5543.01](../../catalog/ohio-revised-code.md). §5591.02 puts the bridges inside municipal corporations on the commissioners too, where the road is a county road and not a state highway. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the condition figures are a ladder by owner.** None of the state's 103 is in poor condition; 29 of this office's 242 are, and 4 of the municipalities' 19. [verified] — [the bridges](../measure/allen-county-bridges-2025.yml). Twelve per cent is the number attached to this office, and it is the number a reader should attach to it rather than the county-wide nine. [inference]",
           "tier": "inference"
         }
       ],
@@ -11653,6 +11757,42 @@
       "withheld": 3
     },
     {
+      "id": "site/hay-road-bridge.yml",
+      "class": "site",
+      "label": "The Hay Road bridge over the Auglaize River",
+      "tier": "inference",
+      "properties": {
+        "built": "1909",
+        "coordinates": "40.674411, -83.918481",
+        "site_type": "bridge",
+        "status": "in operation"
+      },
+      "blocks": [
+        {
+          "text": "**The oldest bridge in Allen County, built in 1909, and the only one of the county's 364 that the federal inventory marks as eligible for the National Register.** [verified] — [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), 2025 Ohio file, item 37 coded 2 for this structure and 5 — not applicable — for every other bridge in the county.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eligible and not listed.** None of the county's twenty-nine National Register entries is a bridge. [verified] — [the register](../measure/allen-county-national-register.yml). Eligibility is a determination made in the course of federal review and is not a nomination; a bridge can carry it for decades without anyone filing. [inference] — see [a register records nominations](../../decisions/a-register-records-nominations.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is a small structure on a small road.** 14.6 metres long, one span of the county's median length or less, owned and maintained by the county, carrying Hay Road over [the Auglaize River](../natural-feature/auglaize-river.yml) in the county's south-east. [verified] — the inventory.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It stands in [Auglaize Township](../place/auglaize-township.yml)**, at 40.674411, -83.918481. [verified] — the inventory for the coordinates and [the Census geocoder](../../catalog/census-tiger-landmarks.md) for the township, which returns Allen County, Auglaize township and Census Tract 115 for that point. The corpus places it rather than assuming it, because the point is four miles from a county line. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**What the file will not tell you is what it is called.** The inventory carries the road and the water and no name, and gives it the structure number 0234753. It is a hundred and seventeen years old, it is the oldest thing in this county that people still drive over, and the corpus knows it only as a row. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "site/lima-army-tank-plant.yml",
       "class": "site",
       "label": "Joint Systems Manufacturing Center (Lima Army Tank Plant)",
@@ -14722,6 +14862,27 @@
       "source": "catalog/census-bas-boundary-changes-ohio.md"
     },
     {
+      "from": "measure/allen-county-bridge-crossings-2025.yml",
+      "to": "natural-feature/ottawa-river.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/national-bridge-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-bridges-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/national-bridge-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-bridges-2025.yml",
+      "to": "office/allen-county-engineer.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/national-bridge-inventory.md"
+    },
+    {
       "from": "measure/allen-county-civil-war-dead.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -17072,6 +17233,13 @@
       "relationship": "formerly-in",
       "tier": "verified",
       "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "site/hay-road-bridge.yml",
+      "to": "place/auglaize-township.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/census-tiger-landmarks.md"
     },
     {
       "from": "site/lima-army-tank-plant.yml",

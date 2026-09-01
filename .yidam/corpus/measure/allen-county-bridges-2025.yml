@@ -1,0 +1,75 @@
+class: measure
+label: Allen County's bridges, 2025
+description: |
+  **364 highway bridges stand in Allen County**, and not one of the hundred and three the state
+  owns is in poor condition. [verified] —
+  [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), 2025 Ohio file,
+  county code 3.
+
+  **Three owners, three conditions.** Poor is the lowest of the deck, superstructure, substructure
+  and culvert ratings being 4 or less.
+
+      owner        bridges   poor    share
+      state            103      0     0.0%
+      county           242     29    12.0%
+      municipal         19      4    21.1%
+      township           0      —        —
+      all              364     33     9.1%
+
+  [verified] — same source, counted here. Written out: **not one of the state's 103 bridges here is
+  in poor condition, 29 of the county's 242 are, and 4 of the municipalities' 19 — 0.0, 12.0 and
+  21.1 per cent.** **A bridge in this county is in poor condition or not according to who owns
+  it**, and the ladder runs from the government furthest away to the one nearest. [inference] —
+  computed here. The corpus does not know why, and the two obvious readings —
+  that the state maintains better, or that the state owns newer and larger structures on the
+  interstate — are not separated by anything in this file.
+
+  **No township owns a bridge, and that is the law rather than an accident.** The county engineer
+  "shall have general charge of the ... maintenance, and repair of all bridges and highways within
+  the engineer's county, under the jurisdiction of the board of county commissioners"; townships
+  build and improve roads. [verified] —
+  [Ohio Revised Code §5543.01](../../catalog/ohio-revised-code.md). Three hundred and sixty-four rows
+  of a federal file agree with one sentence of state law; see
+  [the county engineer](../office/allen-county-engineer.yml).
+
+  **The county's own count is 371 and this one is 364, and neither is wrong.** The engineer's office
+  reports 371 bridges and over 1,400 culverts. This inventory admits a structure only if it spans
+  more than twenty feet, and the rule holds in the data: the shortest of the 364 is 6.4 metres
+  against a threshold of 6.1, with no exception. So the seven are not missing — they are short.
+  [inference] — computed here; see
+  [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml).
+
+  **Half of them predate 1980.** 179 of 364 were built before that year, with the peak in the
+  interstate decades — 69 in the 1960s and 72 in the 1970s, 39 per cent of the county's bridges in
+  twenty years. [verified] — same source, counted here. The median structure is 19.2 metres long;
+  the longest is 241.2 metres, a 1964 state structure carrying County Road 185 over Interstate 75,
+  a Norfolk Southern line and another county road at once.
+
+  **The oldest was built in 1909 and it is still a county bridge.** [verified] — same source; see
+  [the Hay Road bridge](../site/hay-road-bridge.yml).
+
+  [open] Why the state's hundred and three are all sound. Separating maintenance from age would need
+  the condition ratings crossed with year built and structure type, which this file supports and
+  this phase did not do.
+properties:
+  parameter: highway bridges in Allen County
+  value: "364"
+  unit: structures
+  as_of: "2025"
+  method: |
+    Selected from the 2025 Ohio delimited file on `COUNTY_CODE_003` = 3 and counted here. "Poor" is
+    the minimum of items 58, 59, 60 and 62 being 4 or less, which is the Federal Highway
+    Administration's own rule; structures with no rating in any of the four are not counted either
+    way, and there were none. The count is of structures in the county whatever the owner, which is
+    not the same as the count of bridges the county maintains. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/national-bridge-inventory.md
+  - target: ../office/allen-county-engineer.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/national-bridge-inventory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

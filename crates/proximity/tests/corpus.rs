@@ -41,7 +41,7 @@ fn every_coordinate_in_the_corpus_parses_and_lands_in_ohio() {
     // the National Register, whose Allen County points are all typed `Arbitrary point`. The one
     // listing checkable against a surveyed coordinate — the courthouse — is 31.9 m off, so these
     // two are good for a township and a survey section and are not used for anything finer.
-    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 10);
+    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 11);
     for p in &ps {
         assert!((38.3..=42.4).contains(&p.lat), "{}: {}", p.node, p.lat);
         assert!((-85.0..=-80.4).contains(&p.lon), "{}: {}", p.node, p.lon);
