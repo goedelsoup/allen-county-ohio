@@ -153,8 +153,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
 | [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
-| [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 9v / 2i / 1o | 89 |
+| [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 10v / 2i / 1o | 93 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
+| [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 13v / 2i / 2o | 131 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 7v / 2i / 0o | 64 |
@@ -225,11 +226,11 @@ Sorted by: kind, then alphabetically.
 | [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 39 |
 | [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 5v / 0i / 1o | 42 |
 | [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 7v / 2i / 1o | 50 |
-| [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 4v / 1i / 1o | 37 |
-| [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 9v / 4i / 1o | 66 |
-| [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 3v / 1i / 1o | 34 |
+| [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 5v / 1i / 2o | 43 |
+| [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 10v / 5i / 1o | 72 |
+| [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 4v / 1i / 1o | 43 |
 | [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 4v / 1i / 1o | 38 |
-| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 7v / 4i / 1o | 72 |
+| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 8v / 4i / 1o | 79 |
 | [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 6v / 2i / 2o | 48 |
 | [clerk-of-the-lima-municipal-court.yml](office/clerk-of-the-lima-municipal-court.yml) | office | Clerk of the Lima Municipal Court | 2 | 2v / 0i / 1o | 28 |
 | [judge-of-the-common-pleas-domestic-relations-division.yml](office/judge-of-the-common-pleas-domestic-relations-division.yml) | office | Judge of the Court of Common Pleas, Domestic Relations Division | 2 | 2v / 2i / 1o | 30 |
@@ -271,6 +272,7 @@ Sorted by: kind, then alphabetically.
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
 | [temple-beth-israel.yml](organization/temple-beth-israel.yml) | organization | Temple Beth Israel | 2 | 3v / 1i / 2o | 37 |
 | [the-bluffton-news.yml](organization/the-bluffton-news.yml) | organization | The Bluffton News | 2 | 4v / 1i / 1o | 44 |
+| [the-lima-argus.yml](organization/the-lima-argus.yml) | organization | The Lima Argus | 2 | 2v / 1i / 1o | 40 |
 | [the-lima-citizen.yml](organization/the-lima-citizen.yml) | organization | The Lima Citizen | 2 | 5v / 1i / 1o | 40 |
 | [the-lima-news.yml](organization/the-lima-news.yml) | organization | The Lima News | 2 | 6v / 1i / 1o | 56 |
 | [the-porcupine.yml](organization/the-porcupine.yml) | organization | The Porcupine | 2 | 3v / 1i / 1o | 36 |
@@ -295,6 +297,7 @@ Sorted by: kind, then alphabetically.
 | [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
 | [brion-e-rhodes.yml](person/brion-e-rhodes.yml) | person | Brion E. Rhodes | 2 | 3v / 1i / 0o | 23 |
 | [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 18 |
+| [charles-n-lamison.yml](person/charles-n-lamison.yml) | person | Charles N. Lamison | 2 | 5v / 1i / 1o | 40 |
 | [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 18 |
 | [christopher-wood.yml](person/christopher-wood.yml) | person | Christopher Wood | 2 | 5v / 0i / 1o | 45 |
@@ -343,6 +346,7 @@ Sorted by: kind, then alphabetically.
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
 | [mark-c-miller.yml](person/mark-c-miller.yml) | person | Mark C. Miller | 1 | 4v / 3i / 1o | 40 |
+| [mathias-h-nichols.yml](person/mathias-h-nichols.yml) | person | Mathias H. Nichols | 2 | 5v / 1i / 1o | 41 |
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
 | [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 3v / 2i / 0o | 31 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
@@ -462,6 +466,8 @@ Sorted by: kind, then alphabetically.
 | [ohio-house-2025-matthew-c-huffman.yml](tenure/ohio-house-2025-matthew-c-huffman.yml) | tenure | Matthew C. Huffman, Member of the Ohio House of Representatives, 78th District, term of 2025–2026 | 3 | 1v / 2i / 1o | 29 |
 | [ohio-senate-2025-susan-manchester.yml](tenure/ohio-senate-2025-susan-manchester.yml) | tenure | Susan Manchester, Member of the Ohio Senate, 12th District, term of 2025–2028 | 3 | 1v / 2i / 0o | 26 |
 | [probate-2021-todd-e-kohlrieser.yml](tenure/probate-2021-todd-e-kohlrieser.yml) | tenure | Todd E. Kohlrieser, Judge of the Court of Common Pleas, Probate Division, term of 2021–2027 | 3 | 1v / 2i / 1o | 31 |
+| [prosecutor-1851-mathias-h-nichols.yml](tenure/prosecutor-1851-mathias-h-nichols.yml) | tenure | Mathias H. Nichols, Prosecuting Attorney of Allen County, 1851–1852 | 3 | 2v / 0i / 0o | 33 |
+| [prosecutor-1852-charles-n-lamison.yml](tenure/prosecutor-1852-charles-n-lamison.yml) | tenure | Charles N. Lamison, Prosecuting Attorney of Allen County, 1852–1855 | 3 | 2v / 1i / 0o | 38 |
 | [prosecutor-2025-destiny-rae-caldwell.yml](tenure/prosecutor-2025-destiny-rae-caldwell.yml) | tenure | Destiny Rae Caldwell, Prosecuting Attorney of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
 | [recorder-2025-mona-s-losh.yml](tenure/recorder-2025-mona-s-losh.yml) | tenure | Mona S. Losh, Recorder of Allen County, term of 2025–2028 | 3 | 2v / 3i / 0o | 33 |
 | [sheriff-1831-henry-lippencott.yml](tenure/sheriff-1831-henry-lippencott.yml) | tenure | Henry Lippencott, Sheriff of Allen County, 1831–1835 | 3 | 1v / 0i / 0o | 22 |
