@@ -1,0 +1,59 @@
+class: measure
+label: Drinking water violations in Allen County, 1984–2026
+description: |
+  **197 recorded violations across thirty-eight systems in forty-two years, of which twenty concern
+  the water.** [verified] — [EPA SDWIS](../../catalog/epa-sdwis.md), violations for systems
+  beginning `OH02`.
+
+      MR   74   monitoring / reporting        MCL  14   a measured exceedance
+      Other 48                                RPT   8   reporting
+      MON  47   monitoring                    TT    6   a treatment step missed
+
+  The twenty health-based violations are exactly the fourteen `MCL` and the six `TT`, and nothing
+  else in the file is flagged health-based. [verified] — same source, counted here.
+
+  **Twenty violations, ten resolutions.** Every one has returned to compliance, and the return dates
+  group them in pairs: ten of Bluffton's are one problem. [verified] — same source; see
+  [the file carries its own grouping key](../../decisions/the-file-carries-its-own-grouping-key.yml).
+
+  **Bluffton Village was over a standard for ten consecutive quarters**, October 2013 to March 2016,
+  on contaminant 2950 — 0.104 milligrams per litre against a limit of 0.08 in the first quarter —
+  and returned to compliance on 7 April 2016, closing all ten at once. [verified] — same source.
+
+  **Lima City has exceeded the same standard twice**, in the first quarter of 2022 and the second of
+  2024, the latter at 0.087 against 0.08, and cleared each within months. It also missed a treatment
+  step in December 2016. [verified] — same source. Both Lima and Bluffton drink surface water; five
+  of the seven systems with a health-based violation are the county's smallest — a campground, a
+  chiropractor's office, a rescue mission, a community centre and a school. [verified] — same
+  source.
+
+  **The count rises steeply and the water is not the reason.** Two violations in the 1980s, 24 in
+  the 1990s, 25 in the 2000s, 61 in the 2010s and 85 in the six years since 2020. Nearly all of the
+  increase is monitoring and reporting, and the number of federal drinking water rules to be
+  monitored under grew across the same span. [inference] — computed here. The corpus records the
+  count and refuses the trend, as it does for
+  [the disaster declarations](allen-county-disaster-declarations-1965-2020.yml).
+
+  [open] What contaminant 2950 is. The violation rows give the measured value, the unit and the
+  standard; the reference table that would name the substance answers "the table is not available"
+  to every query. The corpus can say a system was thirty per cent over a limit and not what the
+  limit is on.
+properties:
+  parameter: recorded drinking water violations in Allen County
+  value: "197"
+  unit: violations
+  as_of: "2026"
+  method: |
+    All rows for systems whose identifier begins `OH02`, whatever the system's type or current
+    status — so a tavern that closed in 1998 is counted. Health-based is the file's own
+    `is_health_based_ind`, not a threshold chosen here. Distinct problems are counted by grouping on
+    system and return-to-compliance date, which merges Bluffton's ten quarterly rows and leaves
+    every other health-based violation on its own. The 2020s figure covers six years and eight
+    months, not ten. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/epa-sdwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
