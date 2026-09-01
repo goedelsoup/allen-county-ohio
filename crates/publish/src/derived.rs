@@ -2018,6 +2018,34 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "twelve-boards-and-nine-ballots",
+        statement: "Twelve boards of education govern school districts holding ground in Allen \
+                    County, and only nine of them appear on any ballot here. The county's own \
+                    roster of officials answers that question two ways, and this corpus had read \
+                    only one of them.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-school-boards-2026.yml",
+                "**Twelve boards of education, sixty seats, and only forty-five of them are on a ballot in this\n  county.**"
+            ),
+            support!(
+                "measure/allen-county-school-boards-2026.yml",
+                "**The county's own roster answers this question two ways and the two answers differ.**"
+            ),
+            support!(
+                "measure/allen-county-school-boards-2026.yml",
+                "**The neighbouring counties' rosters carry the same fifteen people under different names.**"
+            ),
+            support!(
+                "measure/allen-county-elected-seats-2026.yml",
+                "**This counts the ballot and not the register, and the roster answers both ways.**"
+            ),
+        ],
+        answers: &["This does not establish that these seats go unfilled because nobody stands for them"],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
