@@ -1775,6 +1775,34 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "not-one-state-bridge-is-in-poor-condition",
+        statement: "Allen County's 364 highway bridges are in poor condition or not according to \
+                    who owns them, and the state's hundred and three are all sound.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-bridges-2025.yml",
+                "Written out: **not one of the state's 103 bridges here is\n  in poor condition, 29 of the county's 242 are, and 4 of the municipalities' 19 — 0.0, 12.0 and\n  21.1 per cent.**"
+            ),
+            support!(
+                "measure/allen-county-bridges-2025.yml",
+                "**No township owns a bridge, and that is the law rather than an accident.**"
+            ),
+            support!(
+                "measure/allen-county-bridges-2025.yml",
+                "**The county's own count is 371 and this one is 364, and neither is wrong.**"
+            ),
+        ],
+        answers: &[
+            "The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file",
+        ],
+        figures: &[
+            Figure { label: "State-owned, poor", value: 0.0, literal: "0.0" },
+            Figure { label: "County-owned, poor", value: 12.0, literal: "12.0" },
+            Figure { label: "Municipally owned, poor", value: 21.1, literal: "21.1" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

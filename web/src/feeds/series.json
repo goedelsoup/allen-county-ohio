@@ -162,6 +162,26 @@
       ]
     },
     {
+      "id": "natural-feature-ottawa-river::bridges-crossing-the-Ottawa-River-in-Allen-County",
+      "subject": "natural-feature/ottawa-river.yml",
+      "subject_label": "Ottawa River",
+      "parameter": "bridges crossing the Ottawa River in Allen County",
+      "unit": "structures",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-bridge-crossings-2025.yml",
+          "label": "What Allen County's bridges cross, 2025",
+          "as_of": "2025",
+          "value": 41.0,
+          "published": "41",
+          "tier": "verified",
+          "source": "catalog/national-bridge-inventory.md",
+          "method": "Counted here from the 2025 Ohio file, selecting Allen County and matching `FEATURES_DESC_006A` and `FACILITY_CARRIED_007` by substring. Those fields are free text entered by the state and are inconsistently abbreviated, so a bridge described as \"AUGLAIZE RIVER FAULKNER\" is counted to the Auglaize and one described as \"STREAM SLABTOWN RD\" is counted to nothing. The counts are therefore floors, and the residue is structures over unnamed water. [inference]"
+        }
+      ]
+    },
+    {
       "id": "office-mayor-of-lima::entries-in-the-printed-lists-of-Lima's-mayors-beginning-after-April-1886",
       "subject": "office/mayor-of-lima.yml",
       "subject_label": "Mayor of Lima",
@@ -498,6 +518,26 @@
           "tier": "verified",
           "source": "catalog/usda-census-of-agriculture.md",
           "method": "Census of Agriculture, taken for the 2022 calendar year, read from NASS's Quick Stats bulk county file and checked against the published county profile, which agrees on every headline figure. The four tenure rows sum to land in farms exactly and the two sales components sum to the total exactly. NASS defines a farm as \"any place from which $1,000 or more of agricultural products were produced and sold, or normally would have been sold, during the census year\", which is not the definition the 1910 census used. [verified] See [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml)."
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::highway-bridges-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "highway bridges in Allen County",
+      "unit": "structures",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-bridges-2025.yml",
+          "label": "Allen County's bridges, 2025",
+          "as_of": "2025",
+          "value": 364.0,
+          "published": "364",
+          "tier": "verified",
+          "source": "catalog/national-bridge-inventory.md",
+          "method": "Selected from the 2025 Ohio delimited file on `COUNTY_CODE_003` = 3 and counted here. \"Poor\" is the minimum of items 58, 59, 60 and 62 being 4 or less, which is the Federal Highway Administration's own rule; structures with no rating in any of the four are not counted either way, and there were none. The count is of structures in the county whatever the owner, which is not the same as the count of bridges the county maintains. [verified]"
         }
       ]
     },
@@ -4717,6 +4757,59 @@
           "label": "Forecast implied by its own additions",
           "value": 150.0,
           "literal": "150"
+        }
+      ]
+    },
+    {
+      "id": "not-one-state-bridge-is-in-poor-condition",
+      "statement": "Allen County's 364 highway bridges are in poor condition or not according to who owns them, and the state's hundred and three are all sound.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-bridges-2025.yml",
+          "node_label": "Allen County's bridges, 2025",
+          "span": "Written out: **not one of the state's 103 bridges here is in poor condition, 29 of the county's 242 are, and 4 of the municipalities' 19 — 0.0, 12.0 and 21.1 per cent.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/national-bridge-inventory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-bridges-2025.yml",
+          "node_label": "Allen County's bridges, 2025",
+          "span": "**No township owns a bridge, and that is the law rather than an accident.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-revised-code.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-bridges-2025.yml",
+          "node_label": "Allen County's bridges, 2025",
+          "span": "**The county's own count is 371 and this one is 364, and neither is wrong.**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file."
+      ],
+      "figures": [
+        {
+          "label": "State-owned, poor",
+          "value": 0.0,
+          "literal": "0.0"
+        },
+        {
+          "label": "County-owned, poor",
+          "value": 12.0,
+          "literal": "12.0"
+        },
+        {
+          "label": "Municipally owned, poor",
+          "value": 21.1,
+          "literal": "21.1"
         }
       ]
     },

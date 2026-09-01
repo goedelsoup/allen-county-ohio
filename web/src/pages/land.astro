@@ -27,6 +27,14 @@ const hogSpec = line(
   { yTitle: 'Head', labelLast: true, zeroBased: true },
 )
 
+const bridges = assertion('not-one-state-bridge-is-in-poor-condition')
+
+const bridgeSpec = bar(
+  bridges.figures.map((f) => f.label),
+  bridges.figures.map((f) => f.value),
+  { yTitle: 'Per cent of bridges in poor condition', labelValues: true },
+)
+
 const annexedSpec = bar(
   annexed.figures.map((f) => f.label),
   annexed.figures.map((f) => f.value),
@@ -200,4 +208,51 @@ const yieldSpec = bar(
       to three per cent, and neither knew about the other.
     </p>
   </section>
+  <section>
+    <h2>What crosses the water</h2>
+    <p>
+      Three hundred and sixty-four highway bridges stand in Allen County. Forty-one of them cross
+      the Ottawa River — nearly twice as many as cross the Auglaize, which is the larger river, and
+      the difference is Lima: the Auglaize runs through farmland and the Ottawa runs through the
+      county seat, where every street has to get over the water. Twenty-two cross the Auglaize,
+      twenty Sugar Creek, fourteen Riley Creek.
+    </p>
+    <AssertionCard assertion={bridges} />
+    <ChartFigure
+      id="bridgecond"
+      title="Bridges in poor condition, by who owns them"
+      caption="Poor is the lowest of the deck, superstructure, substructure and culvert ratings being 4 or less, which is the Federal Highway Administration's own rule. The three owners hold 103, 242 and 19 structures. No township in Ohio owns a bridge: state law puts them all on the county engineer and the commissioners."
+      columns={['Owner', 'Per cent poor']}
+      rows={bridges.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="bridgecond" set:html={JSON.stringify(bridgeSpec)} is:inline />
+    <p>
+      Why the state's hundred and three are all sound is not in this file. Two readings fit — that
+      the state maintains better, or that the state owns the newer and larger structures, most of
+      them on an interstate built in the 1960s — and nothing in the inventory separates them. What
+      can be said is which number belongs to which government: twelve per cent is the county
+      engineer's figure, not nine.
+    </p>
+    <p>
+      The county's own site says it has 371 bridges and more than 1,400 culverts; the federal
+      inventory holds 364. Neither is wrong. A structure enters this inventory only if it spans more
+      than twenty feet, and the rule holds in the data — the shortest of the 364 is 6.4 metres
+      against a threshold of 6.1, with no exception. The seven are not missing. They are short.
+    </p>
+    <p>
+      Half the county's bridges predate 1980, and the peak is the interstate decades: 69 built in
+      the 1960s and 72 in the 1970s, thirty-nine per cent of them in twenty years. The oldest was
+      built in 1909 and still carries Hay Road over the Auglaize River in Auglaize Township. It is
+      the only one of the 364 the federal file marks as eligible for the National Register, and none
+      of the county's twenty-nine Register entries is a bridge. It has no name in the record — only
+      a road, a river, and the structure number 0234753.
+    </p>
+    <p>
+      One caution about the traffic figures here. The busiest structure in the county carries
+      Interstate 75 over Lost Creek at 39,060 vehicles a day — a count taken in 2015 and printed in
+      the 2025 file, as are the counts on 293 of the county's 364 bridges. The edition year dates the
+      compilation and nothing inside it.
+    </p>
+  </section>
+
 </Base>
