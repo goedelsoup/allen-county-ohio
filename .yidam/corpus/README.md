@@ -41,6 +41,7 @@ Sorted by: kind, then alphabetically.
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 8v / 2i / 1o | 75 |
 | [settlers-occupy-fort-amanda-1817.yml](event/settlers-occupy-fort-amanda-1817.yml) | event | Settlers occupy the blockhouses at Fort Amanda, 1817 | 3 | 7v / 1i / 0o | 53 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
+| [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States buys the tank plant's ground | 3 | 3v / 2i / 3o | 56 |
@@ -109,6 +110,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 2 | 7v / 0i / 0o | 61 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
+| [allen-county-interurban-1901-1921.yml](measure/allen-county-interurban-1901-1921.yml) | measure | Allen County's interurban railways, 1901–1921 | 2 | 7v / 2i / 1o | 67 |
 | [allen-county-land-area-2000-2024.yml](measure/allen-county-land-area-2000-2024.yml) | measure | Allen County land area by subdivision, 2000–2024 | 3 | 10v / 3i / 0o | 108 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
@@ -132,7 +134,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 5v / 0i / 0o | 62 |
-| [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 8v / 1i / 1o | 78 |
+| [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 10v / 2i / 1o | 89 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2010-2023 | 3 | 7v / 1i / 1o | 69 |
@@ -160,7 +162,9 @@ Sorted by: kind, then alphabetically.
 | [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 3 | 2v / 1i / 0o | 34 |
 | [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 4v / 2i / 0o | 41 |
 | [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 40 |
+| [lima-railroad-traffic-1905.yml](measure/lima-railroad-traffic-1905.yml) | measure | Lima's railroad traffic, 1905 | 2 | 8v / 6i / 0o | 66 |
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
+| [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 6v / 4i / 0o | 53 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
@@ -197,6 +201,7 @@ Sorted by: kind, then alphabetically.
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 5v / 3i / 1o | 55 |
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
+| [fort-wayne-van-wert-and-lima-traction-company.yml](organization/fort-wayne-van-wert-and-lima-traction-company.yml) | organization | The Fort Wayne, Van Wert & Lima Traction Company | 3 | 4v / 1i / 1o | 60 |
 | [gramm-bernstein-motor-truck-company.yml](organization/gramm-bernstein-motor-truck-company.yml) | organization | Gramm-Bernstein Motor Truck Company | 2 | 7v / 0i / 2o | 50 |
 | [institute-for-orthopaedic-surgery.yml](organization/institute-for-orthopaedic-surgery.yml) | organization | Institute for Orthopaedic Surgery | 2 | 6v / 1i / 0o | 55 |
 | [james-a-rhodes-state-college.yml](organization/james-a-rhodes-state-college.yml) | organization | James A. Rhodes State College | 2 | 6v / 1i / 2o | 50 |
@@ -205,12 +210,14 @@ Sorted by: kind, then alphabetically.
 | [lima-memorial-health-system.yml](organization/lima-memorial-health-system.yml) | organization | Lima Memorial Health System | 2 | 6v / 1i / 1o | 52 |
 | [lima-refining-company.yml](organization/lima-refining-company.yml) | organization | Lima Refining Company | 2 | 6v / 0i / 1o | 39 |
 | [mercy-health-st-ritas-medical-center.yml](organization/mercy-health-st-ritas-medical-center.yml) | organization | Mercy Health–St. Rita's Medical Center | 2 | 7v / 0i / 1o | 53 |
+| [ohio-electric-railway.yml](organization/ohio-electric-railway.yml) | organization | The Ohio Electric Railway Company | 1 | 5v / 3i / 1o | 61 |
 | [ohio-state-beauty-academy.yml](organization/ohio-state-beauty-academy.yml) | organization | Ohio State Beauty Academy | 2 | 3v / 3i / 1o | 42 |
 | [ohio-state-university-at-lima.yml](organization/ohio-state-university-at-lima.yml) | organization | Ohio State University-Lima Campus | 2 | 6v / 1i / 1o | 45 |
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 7v / 0i / 1o | 55 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
 | [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
+| [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 8i / 3o | 123 |
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 13i / 2o | 232 |
@@ -221,7 +228,7 @@ Sorted by: kind, then alphabetically.
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
 | [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 1v / 2i / 1o | 22 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 9v / 5i / 2o | 86 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 10v / 5i / 2o | 96 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
 | [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
@@ -306,17 +313,17 @@ Sorted by: kind, then alphabetically.
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
-| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 10v / 1i / 2o | 79 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 6v / 2i / 3o | 67 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 11v / 1i / 2o | 86 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 7v / 2i / 3o | 75 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 6v / 1i / 1o | 64 |
-| [elida.yml](place/elida.yml) | place | Elida | 4 | 8v / 1i / 1o | 62 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 7v / 1i / 1o | 72 |
+| [elida.yml](place/elida.yml) | place | Elida | 4 | 9v / 1i / 1o | 71 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 9v / 0i / 2o | 64 |
-| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 7v / 0i / 1o | 57 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 38v / 9i / 1o | 258 |
+| [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 8v / 1i / 1o | 66 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 40v / 9i / 1o | 270 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 9v / 1i / 1o | 65 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
