@@ -1748,7 +1748,7 @@
       "id": "jurisdiction/columbus-grove-local-school-district.yml",
       "class": "jurisdiction",
       "label": "Columbus Grove Local School District",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "fips_code": "3904931",
         "jurisdiction_type": "school district"
@@ -1763,8 +1763,12 @@
           "tier": "verified"
         },
         {
-          "text": "**Its board is not on Allen County's roster, and the reason is the same as Delphos's wards.** A school board is elected by the voters of its district, and this district's centre is in Putnam County, so no Allen County precinct votes on it. Nine of the twelve districts here have boards this corpus can name and three do not. [verified] — [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "text": "**Its board is not on any Allen County ballot, and it is on Allen County's roster.** No Allen precinct votes on it — verified across all eighty-eight — and the same county roster, queried by district type rather than by precinct, returns the board and its five members. [verified] — [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md), both views; see [the school boards](../measure/allen-county-school-boards-2026.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Its board is Jon Diller, Kevin M Schumacher and Mindy Troyer to 31 December 2027, and Brian E Jones and Ned A Stechschulte to 31 December 2029.** [verified] — same source, corroborated by the Putnam County view, which renders two of the five names differently. **This node said the Putnam roster would name them; the Allen roster already did.** [inference]",
+          "tier": "inference"
         },
         {
           "text": "756 pupils in 2023 against 896 in 2010, a fall of 15.6 per cent; $15,384 of current spending a pupil, which is the fourth-highest figure in the county on its fourth-smallest roll; 8.0 per cent child poverty. [verified] — [enrolment](../measure/allen-county-school-enrolment-2010-2023.yml), [the finance survey](../measure/allen-county-school-finance-2023.yml) and [child poverty](../measure/allen-county-school-district-poverty-2023.yml).",
@@ -1772,7 +1776,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "jurisdiction/delphos-city-school-district.yml",
@@ -2051,7 +2055,7 @@
           "tier": "verified"
         },
         {
-          "text": "**Its board is not on Allen County's roster.** A school board is elected by its own district's voters, and this district's centre is in Putnam County, so no Allen precinct votes on it. [verified] — [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "text": "**Its board is not on any Allen County ballot, and it is on Allen County's roster.** No Allen precinct votes on it, and the same roster queried by district type returns the board. [verified] — [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md), both views; see [the school boards](../measure/allen-county-school-boards-2026.yml).",
           "tier": "verified"
         },
         {
@@ -2696,12 +2700,16 @@
           "tier": "verified"
         },
         {
+          "text": "**Its board is Thomas B Brookhart, Michelle Steinke and Brad Vorhes to 31 December 2027, and Kevin Ewing and David Pepple to 31 December 2029.** [verified] — [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md), queried by district type; the Auglaize County view carries the same five people and spells four of them differently. See [the school boards](../measure/allen-county-school-boards-2026.yml). **No Allen County precinct ballots this board**, verified across all eighty-eight. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
           "text": "**It is the smallest district holding ground in this county and the second-highest spender per pupil.** 472 pupils in 2023 against 590 in 2010 — a fall of 20.0 per cent, one of the three steepest here — at $17,896 a pupil on 10.2 per cent child poverty. [verified] — [enrolment](../measure/allen-county-school-enrolment-2010-2023.yml), [the finance survey](../measure/allen-county-school-finance-2023.yml) and [child poverty](../measure/allen-county-school-district-poverty-2023.yml).",
           "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "measure/allen-county-age-structure-2023.yml",
@@ -3297,6 +3305,10 @@
       "blocks": [
         {
           "text": "Every elective seat whose constituency lies inside Allen County, with the seat filled or vacant and — where filled — whether the roster marks its holder as appointed to it. [verified] — [the elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), read across all eighty-eight precincts.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This counts the ballot and not the register, and the roster answers both ways.** The same lookup queried by district type returns twelve boards of education for this county, not nine: the three districts centred in Putnam and Auglaize counties have boards here and no Allen precinct votes on them. Their fifteen seats are outside the table above because the table is of seats an Allen County elector fills. [verified] — same source, both views; see [the school boards](allen-county-school-boards-2026.yml).",
           "tier": "verified"
         },
         {
@@ -5086,6 +5098,43 @@
         "The inventory counts crossings and not track, so nothing here is comparable to the 102 miles of main track the county had in 1883, and this corpus cannot say whether the network shrank, moved or merely changed hands."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-school-boards-2026.yml",
+      "class": "measure",
+      "label": "The school boards of Allen County's twelve districts, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Fetched from the Ohio boards of elections lookup by posting the district-type form with `cmbDistrictCat` = 8, which returns every school board in a county in one response — the same database the corpus previously read as eighty-eight separate precinct pages. Seats are the roster's own `Total Seats`. Names are printed as the Allen County view renders them, which is not always as a neighbouring county renders the same person; where they differ both are given and neither is corrected. Treasurers are excluded: they are appointed officers and not elective seats. [inference]",
+        "parameter": "boards of education of school districts holding ground in Allen County",
+        "unit": "boards",
+        "value": "12"
+      },
+      "blocks": [
+        {
+          "text": "**Twelve boards of education, sixty seats, and only forty-five of them are on a ballot in this county.** [verified] — [the elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), Allen County, queried by district type.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's own roster answers this question two ways and the two answers differ.** Queried by district type it returns all twelve boards with their members. Queried precinct by precinct across all eighty-eight precincts it returns nine, and never [Columbus Grove](../jurisdiction/columbus-grove-local-school-district.yml), [Pandora-Gilboa](../jurisdiction/pandora-gilboa-local-school-district.yml) or [Waynesfield-Goshen](../jurisdiction/waynesfield-goshen-local-school-district.yml). [verified] — same source, both views read here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**They are not in conflict; they answer different questions.** The precinct view lists what an Allen County elector votes on, and no elector here votes on those three boards. The district-type view lists the boards of every district holding ground in this county. [inference] The corpus had read only the first and had concluded that the three boards were absent from the roster. They were absent from the ballot.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The fifteen people the corpus said it could not name.** [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The neighbouring counties' rosters carry the same fifteen people under different names.** Putnam County gives Angela Lynn Basinger for Angie Basinger, Brian E. Jones for Brian E Jones; Auglaize gives Kevin D Ewing, David J Pepple, Michelle R Steinke and Brad V Vorhes. **Eight of the fifteen are rendered identically and seven are not**, across two boards of elections publishing from the same state system. [verified] — [the same lookup](../../catalog/ohio-boe-elected-officials-allen.md) at its Putnam and Auglaize addresses; counted here.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
     },
     {
       "id": "measure/allen-county-school-district-poverty-2023.yml",
@@ -16688,6 +16737,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/fra-crossing-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-school-boards-2026.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-boe-elected-officials-allen.md"
     },
     {
       "from": "measure/allen-county-school-district-poverty-2023.yml",

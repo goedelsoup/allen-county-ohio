@@ -42,6 +42,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-government::boards-of-education-of-school-districts-holding-ground-in-Allen-County",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "boards of education of school districts holding ground in Allen County",
+      "unit": "boards",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-boards-2026.yml",
+          "label": "The school boards of Allen County's twelve districts, 2026",
+          "as_of": "2026",
+          "value": 12.0,
+          "published": "12",
+          "tier": "verified",
+          "source": "catalog/ohio-boe-elected-officials-allen.md",
+          "method": "Fetched from the Ohio boards of elections lookup by posting the district-type form with `cmbDistrictCat` = 8, which returns every school board in a county in one response — the same database the corpus previously read as eighty-eight separate precinct pages. Seats are the roster's own `Total Seats`. Names are printed as the Allen County view renders them, which is not always as a neighbouring county renders the same person; where they differ both are given and neither is corrected. Treasurers are excluded: they are appointed officers and not elective seats. [inference]"
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::municipal-corporations-in-Allen-County-with-a-recorded-founding-date",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -5511,6 +5531,54 @@
         }
       ],
       "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "twelve-boards-and-nine-ballots",
+      "statement": "Twelve boards of education govern school districts holding ground in Allen County, and only nine of them appear on any ballot here. The county's own roster of officials answers that question two ways, and this corpus had read only one of them.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-boards-2026.yml",
+          "node_label": "The school boards of Allen County's twelve districts, 2026",
+          "span": "**Twelve boards of education, sixty seats, and only forty-five of them are on a ballot in this county.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-boards-2026.yml",
+          "node_label": "The school boards of Allen County's twelve districts, 2026",
+          "span": "**The county's own roster answers this question two ways and the two answers differ.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-boards-2026.yml",
+          "node_label": "The school boards of Allen County's twelve districts, 2026",
+          "span": "**The neighbouring counties' rosters carry the same fifteen people under different names.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-elected-seats-2026.yml",
+          "node_label": "Allen County elective seats and how their holders arrived, 2026",
+          "span": "**This counts the ballot and not the register, and the roster answers both ways.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that these seats go unfilled because nobody stands for them."
+      ],
       "figures": []
     },
     {
