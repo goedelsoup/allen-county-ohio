@@ -1663,6 +1663,32 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "sixteen-of-twenty-nine-are-one-days-work",
+        statement: "Allen County has twenty-nine properties on the National Register, sixteen of \
+                    them signed on one day in 1982, and nothing it made anything in.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-national-register.yml",
+                "**Twenty-nine listings, and seventeen of them are one year.**"
+            ),
+            support!(
+                "measure/allen-county-national-register.yml",
+                "Written out: **twenty-nine listings between 15 October 1966 and 27 October 2004 — twenty-six buildings, two structures and one historic district — of which sixteen were signed on a single day, 7 October 1982, under the Lima Multiple Resource Area submission.**"
+            ),
+            support!(
+                "measure/allen-county-national-register.yml",
+                "**Twenty of the twenty-nine stand in one square mile.**"
+            ),
+            support!(
+                "measure/allen-county-national-register.yml",
+                "**Allen County has a single National Historic Landmark and it is the Deep Cut**"
+            ),
+        ],
+        answers: &["The dataset carries `STATUS: Listed` on all twenty-nine and would simply omit a delisted property, so it cannot answer its own question"],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

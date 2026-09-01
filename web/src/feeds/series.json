@@ -952,6 +952,26 @@
       ]
     },
     {
+      "id": "place-allen-county::properties-listed-on-the-National-Register-of-Historic-Places",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "properties listed on the National Register of Historic Places",
+      "unit": "listings",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-national-register.yml",
+          "label": "Allen County on the National Register, 1966–2004",
+          "as_of": "2026-08-31",
+          "value": 29.0,
+          "published": "29",
+          "tier": "verified",
+          "source": "catalog/nrhp-national-register.md",
+          "method": "Layers 0 and 1 of the NPS `nrhp_locations` map service queried on `State='OHIO' AND County='Allen'` and unioned — 26 points and 3 polygons, no property in both. Polygon centroids computed here from the returned rings. Each of the 29 resulting coordinates put to the Allen County GIS township and section layers. Certification dates are the file's two-digit years read as 19xx above 30 and 20xx below. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::railroad-main-track-in-the-county",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -4362,6 +4382,54 @@
         }
       ],
       "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "sixteen-of-twenty-nine-are-one-days-work",
+      "statement": "Allen County has twenty-nine properties on the National Register, sixteen of them signed on one day in 1982, and nothing it made anything in.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-national-register.yml",
+          "node_label": "Allen County on the National Register, 1966–2004",
+          "span": "**Twenty-nine listings, and seventeen of them are one year.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/nrhp-national-register.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-national-register.yml",
+          "node_label": "Allen County on the National Register, 1966–2004",
+          "span": "Written out: **twenty-nine listings between 15 October 1966 and 27 October 2004 — twenty-six buildings, two structures and one historic district — of which sixteen were signed on a single day, 7 October 1982, under the Lima Multiple Resource Area submission.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/nrhp-national-register.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-national-register.yml",
+          "node_label": "Allen County on the National Register, 1966–2004",
+          "span": "**Twenty of the twenty-nine stand in one square mile.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/allen-county-gis-rest.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-national-register.yml",
+          "node_label": "Allen County on the National Register, 1966–2004",
+          "span": "**Allen County has a single National Historic Landmark and it is the Deep Cut**",
+          "tier": "verified",
+          "sources": [
+            "catalog/nrhp-national-register.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "The dataset carries `STATUS: Listed` on all twenty-nine and would simply omit a delisted property, so it cannot answer its own question."
+      ],
       "figures": []
     },
     {

@@ -1,0 +1,75 @@
+id: a-register-records-nominations
+summary: >-
+  Twenty-nine National Register listings arrived, sixteen of them signed on one day in 1982, and
+  none of them on any building this county made anything in. This records the rule taken from
+  that — a register measures who filed paperwork, not what mattered — and the consequence, which
+  is that being listed does not earn a site node here.
+context: |
+  [The site class](../corpus/site.ont.yml) has declared an `nrhp_id` property since genesis and no
+  node had ever carried one. The dataset behind it turns out to be one request: the National Park
+  Service publishes the whole Register as a map service, and Allen County's share of it is
+  twenty-nine properties with reference numbers, listing dates, contributing-feature counts and a
+  link to the nomination file at the National Archives.
+
+  The obvious move was twenty-nine site nodes. The corpus's site class holds thirteen, which is its
+  thinnest load-bearing class after natural-feature, and every one of the twenty-nine has a name, an
+  address, a date and a coordinate. It would more than triple the class in one phase.
+
+  Three things in the data argue against it.
+
+  **Sixteen of the twenty-nine were signed on 7 October 1982**, under a single Multiple Resource
+  Area submission for downtown Lima. Twenty of the twenty-nine stand in one survey section. Ten of
+  the county's twelve townships hold nothing at all, and no village but Delphos does.
+
+  **Nothing the county made anything in is on it.** Not the locomotive works, not the refinery
+  running since 1886, not the tank plant, not the Ford engine plant. A county whose two centuries
+  are iron, oil and rolling stock has twenty-six commercial and domestic buildings, a stadium and a
+  canal cut.
+
+  **Its one National Historic Landmark is a ditch** two miles south of Spencerville, entered on
+  15 October 1966, the day the Register began.
+decision: |
+  **The Register is a measure, not a roster of nodes.**
+  [`allen-county-national-register`](../corpus/measure/allen-county-national-register.yml) holds all
+  twenty-nine with their dates, their reference numbers and the survey section each stands in. Two
+  buildings get nodes and neither gets one for being listed:
+
+  [Allen County Memorial Hall](../corpus/site/lima-memorial-hall.yml), because the county's
+  historical society and its museum are in it, because the 1921 history this corpus reads was
+  written out of that collection, and because a meeting this corpus already holds took place in the
+  building — the one that produced the Fort Amanda monument.
+
+  [the Pennsylvania Railroad passenger depot](../corpus/site/lima-pennsylvania-railroad-depot.yml),
+  because the corpus already asserts that no passenger train calls anywhere in this county, and a
+  claim about an absent service is stronger when the building it was provided from is a node.
+
+  **Two existing nodes gain their reference number and nothing else changes** — the courthouse and
+  the canal. Both were written before this source was held and neither needs rewriting because of
+  it, which is the test working.
+rationale: |
+  **What a listing is evidence of.** That somebody prepared a nomination, that a State Historic
+  Preservation Office forwarded it, and that the Keeper signed it. Each of those is an act by a
+  person, and the pattern in this county is the shape of the acts and not the shape of the county:
+  a burst in 1982 when someone did downtown Lima as a batch, a sixteen-year silence from 1986, and
+  nothing at all since 2004. Reading that list as "what Allen County has worth keeping" reads a
+  filing history as a judgment about buildings.
+
+  This is the same mistake as three earlier ones, in a new dress. A place roster taken from a file
+  that lists governments; a claim that precinct names were unreachable, taken from one file's
+  columns; a school-district boundary read off a source that was really a filter. Each time the
+  corpus generalised from the shape of a source to the shape of the county. The register is a
+  source with a very particular shape, and the shape is a stack of paperwork.
+
+  **Why not zero nodes.** The two that are written pass the test the corpus already uses: a member
+  earns a node when something about *it* does not fit the table
+  ([node-worthiness-is-a-property-of-the-member](node-worthiness-is-a-property-of-the-member.yml)).
+  For the memorial hall the thing that does not fit is a relationship to an event and to a book;
+  for the depot it is a relationship to an assertion this site already publishes. Neither is a
+  column in a register.
+
+  **What the data is good for, and it is a lot.** It dates the county's own act of remembering,
+  it gives the corpus the field it declared and never filled, and it produces the only independent
+  check available on a coordinate the corpus already held: the Register's point for the courthouse
+  is 31.9 metres from the county surveyor's, against a file that advertises ±12. That is a
+  calibration, and it is why points from this source are used here to identify a township and a
+  survey section and never a parcel.

@@ -36,7 +36,12 @@ fn every_coordinate_in_the_corpus_parses_and_lands_in_ohio() {
     // The eighth is Fort Amanda, and it is the only one whose coordinate lands outside Allen
     // County: 40.6830556, -84.27, which is in Ohio and 990 feet into Auglaize County. This test
     // asks for Ohio and not for this county, and the distinction was theoretical until now.
-    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 8);
+    //
+    // The last two are Memorial Hall and the Pennsylvania depot, and their coordinates come from
+    // the National Register, whose Allen County points are all typed `Arbitrary point`. The one
+    // listing checkable against a surveyed coordinate — the courthouse — is 31.9 m off, so these
+    // two are good for a township and a survey section and are not used for anything finer.
+    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 10);
     for p in &ps {
         assert!((38.3..=42.4).contains(&p.lat), "{}: {}", p.node, p.lat);
         assert!((-85.0..=-80.4).contains(&p.lon), "{}: {}", p.node, p.lon);
