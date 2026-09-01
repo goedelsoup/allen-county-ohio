@@ -1,0 +1,88 @@
+class: measure
+label: Allen County's newspapers, 1843–2026
+description: |
+  Every newspaper the Library of Congress records as published in this county, and how much of it a
+  reader can still get at. [verified] —
+  [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md), the county's whole set
+  retrieved 1 September 2026.
+
+  **Ninety-nine bibliographic records carry Allen County and ninety-seven of them were printed in
+  it.** By place of publication that is 66 in Lima, 18 in Delphos, 6 in Spencerville, 5 in Bluffton,
+  1 in Elida and 1 in Lafayette. [verified] — same source, every record's imprint checked. The two
+  outsiders are *The Lutheran Evangelist* of Springfield and the *Shawnee Cridersville Press* of
+  Wapakoneta.
+
+      66  Lima            48  weekly          97  English
+      18  Delphos         36  daily            2  German
+       6  Spencerville     7  semiweekly
+       5  Bluffton         4  frequency unrecorded
+       1  Elida            3  monthly, semimonthly, irregular
+       1  Lafayette        1  triweekly
+
+  **One of the ninety-nine is digitized.** The Bluffton News, and only the twenty-one years of it
+  from 1939 to 1959, out of the hundred and fifty-one it has been printing since 28 July 1875. The
+  other ninety-eight titles exist as paper and microfilm or as nothing at all, and sixty-six of them
+  are Lima's. [verified] — same source, the `partof_collection` facet: Chronicling America, 1.
+
+  **Forty-three of the ninety-nine have no library reporting a copy.** Fifty-six do: the Ohio
+  History Connection reports runs of 43 titles and the Lima Public Library of 19, and twelve other
+  institutions from Boston to Chicago hold one or two each. [verified] — same source, holdings
+  counted across all 99. This is a count of what was reported to a union list and not a proof that
+  nothing survives. [inference] — a library that never joined the Newspaper Program is invisible to
+  it.
+
+  **The first was a weekly called The Porcupine and it lasted seven months.** Volume 1, number 1 is
+  dated 4 March 1843, eleven months after
+  [Lima was organized as a town](../event/organization-of-the-town-of-lima-1842.yml) and twelve
+  years after the county was organized. [verified] — same source. See
+  [The Porcupine](../organization/the-porcupine.yml).
+
+  **Most of them are older than the century.** Fifty-six of the ninety-nine began before 1900,
+  sixteen between 1900 and 1929, seventeen from 1930 onward, and ten give no start year. The busiest
+  decade in the county's history for founding a newspaper was the 1890s, with sixteen. [inference] —
+  computed from the start dates, which are the cataloguer's earliest sighted issue and not the
+  printer's first.
+
+  **Three of them are still going and one is the county seat's only daily.** [verified] — same
+  source: The Lima News, the Bluffton News and Spencerville's Journal-News carry an open end date.
+  Lima has been a one-daily city since
+  [the Star and Republican-Gazette ceased on 4 March 1933](../organization/the-lima-news.yml),
+  except for the six and a half years of
+  [the Lima Citizen](../organization/the-lima-citizen.yml).
+
+  **Twenty-seven of the ninety-nine have a party.** Ten Republican, six Democratic, six Independent,
+  two Whig, and three that changed — including the surviving daily, "Independent, 1926-1931;
+  Democratic, 1932+". [verified] — same source, quoting Gutgesell's *Guide to Ohio Newspapers, 1974*
+  in each of the 27 notes. The two Whig papers are Lima's third and fourth, 1844 and 1847, and the
+  two Democratic ones its first and second.
+
+  **Two were printed in German and neither can be read.** *Der Lima Courier* from 30 August 1877 and
+  the *Delphos Kleeblatt* from December 1889 to 3 August 1905. [verified] — same source. No library
+  reports a copy of the Courier at all. See [Der Lima Courier](../organization/der-lima-courier.yml).
+
+  [open] What the three county histories say about any of these papers. All three have press
+  chapters this corpus has never read, and they are the only source held here that could say who
+  edited them, what they cost, and why they stopped.
+properties:
+  parameter: newspaper titles recorded as published in Allen County
+  value: "97"
+  unit: titles
+  as_of: "2026-09-01"
+  method: |
+    The Library of Congress collection endpoint faceted to `location_county:allen` and
+    `location_state:ohio`, `c=200`, which returns all 99 records in one response, followed by the
+    full item record for each of the 99. Place of publication is `location_city` checked against the
+    county's twelve settlements; two records match none of them and are excluded from the 97.
+    Frequency, language and party are read from the item records and not inferred. Holdings are
+    counted as records whose `holding_data.data` is non-empty. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/us-newspaper-directory.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/us-newspaper-directory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
