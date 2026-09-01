@@ -47,6 +47,7 @@ Sorted by: kind, then alphabetically.
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
+| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 4v / 1i / 1o | 41 |
 | [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 3v / 2i / 1o | 41 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States buys the tank plant's ground | 3 | 3v / 2i / 3o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
@@ -97,7 +98,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
-| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 4v / 4i / 1o | 65 |
+| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 5v / 4i / 1o | 74 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 8v / 1i / 0o | 63 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
@@ -154,6 +155,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
+| [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 2 | 4v / 3i / 1o | 58 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
@@ -174,14 +176,15 @@ Sorted by: kind, then alphabetically.
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
 | [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
-| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 7v / 4i / 0o | 60 |
+| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 6v / 3i / 1o | 66 |
+| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 8v / 5i / 0o | 68 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 39 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 34 |
 | [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 3v / 0i / 0o | 42 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
-| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 6v / 5i / 0o | 59 |
-| [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 3v / 0i / 1o | 36 |
+| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 8v / 5i / 0o | 70 |
+| [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 4v / 1i / 1o | 45 |
 | [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 3v / 0i / 1o | 35 |
 | [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 4v / 0i / 1o | 38 |
 | [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 6v / 2i / 1o | 48 |
