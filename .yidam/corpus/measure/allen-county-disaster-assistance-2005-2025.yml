@@ -1,0 +1,67 @@
+class: measure
+label: Federal disaster assistance to Allen County, 2005–2025
+description: |
+  **$10,608,108 of federal money on 95 projects, and eighty-four cents of every dollar is the
+  pandemic.** [verified] —
+  [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), public assistance
+  funded projects, Ohio, Allen County. This closes the cost question
+  [the declarations](allen-county-disaster-declarations-1965-2020.yml) opened.
+
+      declaration                        projects  applicants   federal share
+      DR-1580  winter storms 2004–05           41          22      $1,243,330
+      DR-1720  storms and flooding 2007        26           6        $183,182
+      DR-4077  storms and winds 2012           21           8        $241,091
+      DR-4507  COVID-19 2020                    7           3      $8,940,505
+      total                                    95          28     $10,608,108
+
+  **Four of the county's ten declarations produced funded projects.** [verified] — same source. The
+  1965 and 1978 declarations predate the file; the 2004 declaration was designated for hazard
+  mitigation only; the three emergency declarations of 2005, 2012 and 2020 are each paired with a
+  major disaster declaration that carries the projects. [inference] — computed from
+  [the declarations](allen-county-disaster-declarations-1965-2020.yml).
+
+  **The pandemic is 84.28 per cent of the money on 7.4 per cent of the projects.** Eighty-eight
+  weather projects across fifteen years came to $1,667,603, against $8,940,505 for seven pandemic
+  projects. [inference] — computed here.
+
+  **What a federal disaster buys in this county is cleanup.** Fifty-four of the 95 projects are
+  Debris Removal or Emergency Protective Measures, and among the 88 weather projects it is 49 of
+  88 and $1,321,835 of $1,667,603 — seventy-nine cents in the dollar for picking things up and
+  keeping people safe while it happened. Nine projects in twenty years are Roads and Bridges and
+  one is a Water Control Facility. [verified] — same source, counted here. **Nothing here rebuilds
+  anything.** [inference]
+
+  **The pandemic projects are the same category and not the same thing.** Five of the seven are
+  Emergency Protective Measures and two are Management Costs; the largest, at $4,645,416 federal,
+  covers March to June 2020 at one hospital, and the county health department's is titled "ACPH
+  Super POD Project #1". [verified] — same source.
+
+  **The money arrives years after the weather.** Obligations run from 20 April 2005 to 28 May 2025,
+  and the 2020 declaration's largest project was still being obligated in February 2025 — four years
+  and eleven months after the incident began. All 95 projects are closed out. [verified] — same
+  source.
+
+  [open] What the state and local shares came to. The file gives a project amount and a federal
+  share and the difference is not always the local share: one $23,122 debris project carries a
+  federal share of $1,740, seven and a half per cent where the rest of that declaration is at
+  seventy-five, and nothing in the file says why.
+properties:
+  parameter: federal share obligated for public assistance projects in Allen County
+  value: "10608108.26"
+  unit: US dollars, nominal
+  as_of: "2025-05-28"
+  method: |
+    Fetched from the OpenFEMA public assistance funded projects endpoint filtered to
+    `stateAbbreviation` OH and `county` "Allen County" — the longer spelling, which this dataset
+    requires and the declarations dataset does not — and summed here. The `as_of` is the last
+    obligation date in the file and not the query date: this file grows. Dollars are nominal and
+    span twenty years, so the four declaration rows above are not comparable to one another as
+    amounts of purchasing power. The applicant count is of distinct `applicantId`s and treats the
+    two Delphos registrations as two, because the file does. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openfema-assistance-programs.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

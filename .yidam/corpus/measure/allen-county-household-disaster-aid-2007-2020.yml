@@ -1,0 +1,67 @@
+class: measure
+label: Federal aid to Allen County households, 2007 and 2020
+description: |
+  **Two disasters have put federal money into households here, and the pandemic put in five and a
+  half times what the flood did.** [verified] —
+  [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), housing assistance
+  to owners and to renters, Ohio, county "Allen (County)".
+
+      disaster                    registrations  inspections  approved  households paid
+      DR-1720  flood, Aug 2007               316          272       217         $641,634
+      DR-4507  COVID-19, 2020                568            0       507       $3,595,938
+
+  **The 2007 flood was inspected and the pandemic was not.** Two hundred and seventy-two properties
+  were visited in 2007 and $663,302 of damage was written down; $486,239 of the money that followed
+  was for repair or replacement. Under the 2020 declaration nobody was inspected, nothing was
+  recorded as damaged, and every dollar of the $3,595,938 is classed Other Needs — not repair, not
+  rent. [verified] — same source.
+
+  **What that money bought is not in this file.** A biological incident does not damage a house,
+  and the corpus declines to name the programme behind a category code it has no source for.
+  [open] What 507 Allen County households were paid for in 2020.
+
+  **The corpus's declaration table said two of ten brought money to households. It is three.** The
+  flag the corpus read is `iaProgramDeclared`, true for 1965 and 2007 only. There is a fourth flag,
+  `ihProgramDeclared` — the Individuals and Households Program — true for 2007 and for the 2020
+  major disaster declaration, and it is the one under which the $3,595,938 was paid. [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md); see
+  [the declarations](allen-county-disaster-declarations-1965-2020.yml), which now says so.
+
+  **Three-quarters of the 2007 flood damage in this county was in Bluffton.** ZIP 45817 holds 109
+  of the 227 owner registrations, 91 of the 195 owner inspections and $481,404 of the $663,302
+  written down — 72.6 per cent — and the average inspected damage there was $4,416.55. [verified] —
+  same source, computed here. The Blanchard River crested near a record at Ottawa that week; see
+  [the storm record](allen-county-storm-events-1950-2026.yml).
+
+  **The 2007 rows are coherent and the 2020 rows are not.** The flood's sixteen ZIP codes are Allen
+  County's and its neighbours'. The pandemic's twenty-one include Pittsburgh, Richmond Heights
+  outside Cleveland, Sherwood in Defiance County and Union City on the Indiana line, all filed under
+  Allen County. [verified] — same source. **A programme that inspects a property knows where it is
+  and a programme that pays a person knows where the person wrote from.** [inference] — see
+  [a grant file counts offices, not ground](../../decisions/a-grant-file-counts-offices-not-ground.yml).
+
+  **Five hundred and forty-five of the 568 pandemic registrations are classed as renters.** In a
+  county where 27,960 of 40,928 occupied units are owner-occupied — over two-thirds — that is a
+  classification produced by a programme with no inspection rather than a fact about tenure.
+  [inference] — [the housing stock](allen-county-housing-stock-2023.yml). The corpus reports the
+  split and reads nothing into it.
+properties:
+  parameter: federal individual and household assistance approved in Allen County
+  value: "4237572"
+  unit: US dollars, nominal
+  as_of: "2020"
+  method: |
+    Two endpoints, owners and renters, filtered to state OH and county "Allen (County)" — a third
+    spelling of the county on the same API — and summed here. `value` is the two disasters' approved
+    IHP amounts added: $641,634 for 2007 and $3,595,938 for 2020, in nominal dollars thirteen years
+    apart, which is a total and not a comparable one. Registrations are `validRegistrations` and are
+    not households: a household that registers and is found ineligible is counted here. The two
+    endpoints carry different fields — owners have an inspected-damage dollar figure and renters
+    have damage bands — so no damage total is computed across both. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openfema-assistance-programs.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
