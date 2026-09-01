@@ -1,0 +1,77 @@
+class: measure
+label: Allen County in the World War — how many served
+description: |
+  **The narrative says about thirty-five hundred and the roster twenty pages later holds more than
+  four thousand names.** Both are in the same chapter of the same book. [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), chapter
+  XLIV, "Allen County in the Wars".
+
+      3,260    "young men are known to have enlisted from Allen County", reported by
+               Dr. E. D. Sinks, commander of the American Legion of Ohio, William P.
+               Gallagher Post No. 96
+        100    officers, whom that report does not include
+        250    men from Allen County "accredited to other localities", approximately
+      3,500    "approximately 3,500 young men from Allen County who went into the service"
+      4,158    name lines counted here in the roster the same chapter prints — a floor
+
+  Written out: **the American Legion's figure is 3,260 enlistments, rising to about 3,500 with
+  officers and men credited elsewhere; the printed roster yields at least 4,158 names.**
+  [verified] for the first three — same source; [inference] for the last, counted here.
+
+  **The roster is a document with a compiler and a method.** It is the "World War Military and
+  Naval List" of Elmer McClain, an Allen County man who enlisted and did transport duty and kept a
+  card system. He appealed to the newspapers, checked his cards against other lists, and drew on
+  twelve named sources: ex-service men, the YMCA at the camps and in Lima, the American Legion, the
+  Federal Employment Bureau, a local citizens committee, the county recorder's office, the 1919
+  Lima city directory, the township chairmen of the Victory Loan campaign, the Knights of Columbus,
+  the Red Cross, the local draft board and the Allen County Historical Society. [verified] — same
+  source, which gives the list numbered.
+
+  **And he says what it is worth.** "In spite of all effort to make it so, the compiler knows that
+  it is not in every respect either perfectly complete or perfectly accurate, but it is the most
+  complete and accurate list in existence"; and, on why: "Many young men from Allen County enlisted
+  in various parts of the United States throughout the war, and no official list of these men
+  exists." [verified] — same source.
+
+  **The book cannot spell him.** He is "Elmert McClain" in the paragraph introducing the list and
+  "Elmer McClain" in the line above the first name. [verified] — same source, two lines apart.
+
+  ## What the count is and is not
+
+  4,158 is a floor and the residue proves it. The parser accepted 4,088 lines of the form
+  `Surname, Given` and a further 70 where the comma had been read as a full stop; it left 96 lines
+  it could not classify, and those visibly include names whose comma was lost altogether —
+  `Augsburger Donald`, `Beamer Ray`, `Biederman William`, `Bixler Aurora`, `Creps Clark W.` — and
+  fragments of names broken across a line. [inference] — parse performed here on the one scan that
+  exists; see [one scan is a floor and a residue](../../decisions/one-scan-is-a-floor-and-a-residue.yml).
+
+  **Thirty-six of the accepted lines repeat a name already in the list.** [inference] — computed
+  here on surname and given name normalised. The compiler warned that the list is not perfectly
+  accurate and this is one shape that takes.
+
+  **One in sixteen.** Against the county's 68,203 at the 1920 census, 4,158 is 6.1 per cent of
+  everybody — one person in sixteen, counting women, children and the old. The Civil War figure
+  was one in ten. [inference] — computed here from
+  [the population series](allen-county-outside-lima-1890-2020.yml) and
+  [the Civil War service](allen-county-civil-war-service.yml).
+
+  [open] Whether the gap between 3,500 and 4,158 is the Legion undercounting, McClain
+  over-including men from neighbouring counties, or both. The book states the second risk itself
+  and does not quantify it.
+properties:
+  parameter: Allen County men in military or naval service, First World War
+  value: "4158"
+  unit: names
+  as_of: "1921"
+  method: |
+    Every line of Elmer McClain's printed roster matching `Surname, Given` or `Surname. Given`,
+    counted from the single archive.org digitization of the 1921 history — 4,088 plus 70. Ninety-six
+    further lines were rejected and are reported rather than estimated. Duplicates were not removed
+    from the published figure; they are counted separately. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/rusler-allen-county-1921.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
