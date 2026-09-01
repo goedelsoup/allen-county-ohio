@@ -3517,6 +3517,57 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-national-register.yml",
+      "class": "measure",
+      "label": "Allen County on the National Register, 1966–2004",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026-08-31",
+        "method": "Layers 0 and 1 of the NPS `nrhp_locations` map service queried on `State='OHIO' AND County='Allen'` and unioned — 26 points and 3 polygons, no property in both. Polygon centroids computed here from the returned rings. Each of the 29 resulting coordinates put to the Allen County GIS township and section layers. Certification dates are the file's two-digit years read as 19xx above 30 and 20xx below. [verified]",
+        "parameter": "properties listed on the National Register of Historic Places",
+        "unit": "listings",
+        "value": "29"
+      },
+      "blocks": [
+        {
+          "text": "**Twenty-nine listings, and seventeen of them are one year.** Everything in Allen County on the National Register of Historic Places, with the day the Keeper signed each one. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md), points and polygons queried together on `State='OHIO' AND County='Allen'`.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **twenty-nine listings between 15 October 1966 and 27 October 2004 — twenty-six buildings, two structures and one historic district — of which sixteen were signed on a single day, 7 October 1982, under the Lima Multiple Resource Area submission.** [verified] — same source. Seven listings precede 1982 and five follow it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sixteen are a document, not a decade.** More than half of what this county has on the federal register arrived in one nomination, and the corpus reads that the way it read [its own sheriff roster](../../decisions/eighty-eight-rows-are-not-eighty-eight-nodes.yml): a list can look long and be one act. Between the Barr Hotel in May 1986 and Lima Stadium in March 2002 nothing at all was added, and nothing has been added in the twenty-one years since the last. [inference] — computed here from the certification dates.",
+          "tier": "inference"
+        },
+        {
+          "text": "Every one of the twenty-nine falls inside the county's own map, checked a point at a time. [verified] — [Allen County GIS](../../catalog/allen-county-gis-rest.md), point-in-polygon against the township and survey-section layers.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Twenty of the twenty-nine stand in one square mile.** Survey section 31 of T3S R7E — downtown Lima — holds the courthouse, the theatre, the stadium and every block building of the 1982 submission. [verified] — same join. **Ten of the county's twelve townships hold nothing**, and neither does any village but Delphos: Bluffton, Elida, Cairo, Harrod, Lafayette, Beaverdam, Spencerville and Fort Shawnee have no listing of any kind. [verified] — same source against [the county's places](../place/allen-county.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two listings name a town they do not stand in**, and the file says so in a field of its own. The Deep Cut is filed under Spencerville and lies in Spencer Township; the Griffith Breese Farm is filed under Lima, at 2875 Fort Amanda Rd, and lies in Shawnee Township. Both carry `Vicinity: True`. [verified] — same source. The federal register keeps a column for exactly the distinction this corpus had to argue for from a refinery — see [an address is not a municipality](../site/lima-refinery.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County has a single National Historic Landmark and it is the Deep Cut**, a canal excavation two miles south of Spencerville, listed 15 October 1966 — the day the National Register began, when the existing Landmarks were entered into it as a body. [verified] — [the NPS dataset](../../catalog/nrhp-national-register.md), `Is_NHL` set on one of twenty-nine. It is also the county's oldest listing by eight years and the only one that is not a building or a district. See [the canal](../site/miami-and-erie-canal.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**No industry.** Not the [locomotive works](../site/lima-locomotive-works-plant.yml), which built Shays and Berkshires and gave the county its name in the trade; not [the refinery](../site/lima-refinery.yml), running since 1886; not [the tank plant](../site/lima-army-tank-plant.yml) or [the Ford engine plant](../site/ford-lima-engine-plant.yml). [verified] — the county's whole list above. A county whose nineteenth and twentieth centuries were made of iron, oil and rolling stock has twenty-six commercial and domestic buildings and a stadium on the federal register, and nothing it made anything in. [inference] — observed here; see [a register records nominations](../../decisions/a-register-records-nominations.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "The dataset carries `STATUS: Listed` on all twenty-nine and would simply omit a delisted property, so it cannot answer its own question."
+      ],
+      "withheld": 6
+    },
+    {
       "id": "measure/allen-county-natural-change-2021-2024.yml",
       "class": "measure",
       "label": "Allen County natural change, 2021–2024",
@@ -9322,8 +9373,12 @@
           "tier": "verified"
         },
         {
-          "text": "The city grew as a port on the Miami and Erie Canal, which is why it sits on the county edge rather than on any natural centre. [inference] See [the Miami and Erie Canal](../site/miami-and-erie-canal.yml). **It was four towns before it was one.** The county records Delphos as originally Howard, Section Ten, West Bredeick and East Bredeick, merged into a single town in 1851. [verified] — [Allen County](../../catalog/allen-county-official-site.md), cities and villages page. That is the only municipality in the county the source describes as made rather than founded, and it is a different kind of origin from a platted town site: four settlements with four names, none of which survives on the map.",
+          "text": "The city grew as a port on the Miami and Erie Canal, which is why it sits on the county edge rather than on any natural centre. [inference] See [the Miami and Erie Canal](../site/miami-and-erie-canal.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**It is the only place in this county besides Lima with anything on the National Register.** Two listings, both on the Allen County side: St. John Catholic Church, listed 3 January 1980, and the Marks Family House, 1 April 1982. Every other village in the county has none. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md); see [the county's list](../measure/allen-county-national-register.yml). **It was four towns before it was one.** The county records Delphos as originally Howard, Section Ten, West Bredeick and East Bredeick, merged into a single town in 1851. [verified] — [Allen County](../../catalog/allen-county-official-site.md), cities and villages page. That is the only municipality in the county the source describes as made rather than founded, and it is a different kind of origin from a platted town site: four settlements with four names, none of which survives on the map.",
+          "tier": "verified"
         },
         {
           "text": "**The merged town was incorporated by an act of February 7, 1851**, and held its first election on March 3, returning Lester Bliss as mayor and Smith Talbott as recorder. The corporation spent $80.67 in its first year. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans agreeing on the act's date. That puts a day on the year [the county's own page](../../catalog/allen-county-official-site.md) gives for the merger, from a source that had never seen it.",
@@ -10029,6 +10084,10 @@
           "tier": "verified"
         },
         {
+          "text": "**The county's only National Historic Landmark is filed under this village and is not in it.** The Miami and Erie Canal's Deep Cut, listed 15 October 1966, gives its address as \"2 mi. S of Spencerville on OH 66\", carries the register's `Vicinity` flag, and falls in [Spencer Township](spencer-township.yml) outside the corporation. The village itself holds no listing of any kind. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md) against [Allen County GIS](../../catalog/allen-county-gis-rest.md); see [the county's list](../measure/allen-county-national-register.yml).",
+          "tier": "verified"
+        },
+        {
           "text": "**It was laid out about 1844-45 for Tyler, McConnell and Conover of Dayton**, who bought 350 acres and built a mill at the upper canal lock. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), quoting Dr. Campbell's 1880 reminiscence. Speculators from Dayton buying at a lock the year the canal opened is what a canal town's founding looks like from the inside.",
           "tier": "verified"
         },
@@ -10641,6 +10700,7 @@
         "address": "301 N Main Street, Lima OH 45801",
         "built": "1884",
         "coordinates": "40.7430708, -84.1051751",
+        "nrhp_id": "74001392",
         "site_type": "courthouse",
         "status": "in operation"
       },
@@ -10660,6 +10720,14 @@
         {
           "text": "**The architect was G. H. Maetzel of Columbus**, whose plans were adopted September 20 and who was appointed October 27, 1881. The county issued $142,500 in bonds, let eleven contracts on November 10, 1881 — $39,000 of Berea cut stone, $35,600 of iron work — and the total came to about $160,000 with $10,000 of stained cherry furniture. [verified] — same source. The corner-stone was placed on the Fourth of July \"without ceremony\".",
           "tier": "verified"
+        },
+        {
+          "text": "**It has been on the National Register since 24 July 1974**, reference `74001392`, the county's second listing and its first building. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**And it is the calibration for every other point that source gives.** The Register's coordinate for this building is 40.742983, -84.105535 — **31.9 metres** from the 40.7430708, -84.1051751 the county surveyor's file gives and this node has carried since it was written. [inference] — distance computed here. The federal file advertises ±12 metres and marks every Allen County point `Arbitrary point`, so the advertised figure is the one to distrust; see [a register records nominations](../../decisions/a-register-records-nominations.yml).",
+          "tier": "inference"
         },
         {
           "text": "**The vote that authorised it is also a census of the county's civil geography in 1881**, returned in fifteen units: twelve townships by name — German and Ottawa among them — Lima City with its four wards itemised, and [Richland](../place/richland-township.yml) appearing not by name but as its two precincts, Bluffton and Beaver Dam. Thirteen townships, fifteen returns. [verified] — same source. See [what became of German and Ottawa townships](../question/what-became-of-german-and-ottawa-townships.yml).",
@@ -11004,10 +11072,82 @@
         {
           "text": "That makes this plant, and not [the tank plant](lima-army-tank-plant.yml), the first place in Allen County where tanks were built. [inference] The two are separate undertakings two years apart; so is [the Lima Tank Depot](lima-tank-depot.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**Nothing here is on the National Register, and nothing else the county built anything in is either.** Allen County has twenty-nine federal listings and not one is a factory, a refinery or a shop; the Register holds this county's stores, houses, churches, a theatre, a stadium, a depot and a canal cut. [verified] — [the county's list](../measure/allen-county-national-register.yml). Absence from a register is evidence about nominations and not about buildings, which is the whole of [a register records nominations](../../decisions/a-register-records-nominations.yml). [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "site/lima-memorial-hall.yml",
+      "class": "site",
+      "label": "Allen County Memorial Hall",
+      "tier": "inference",
+      "properties": {
+        "address": "W. Elm and S. Elizabeth Sts., Lima OH",
+        "coordinates": "40.737597, -84.106242",
+        "nrhp_id": "79001779",
+        "site_type": "memorial hall"
+      },
+      "blocks": [
+        {
+          "text": "The county's soldiers' memorial building in Lima, at West Elm and South Elizabeth Streets, on the National Register since 7 May 1979 as reference `79001779`. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the county's memory, kept in one room.** The Allen County Historical and Archaeological Society was organised in Lima across three meetings — December 1908, 4 January 1909 and 15 January 1909 — and \"the story of the organization of the historical society and of the building of the Allen County Memorial Hall are closely linked together. When it was nearing completion it offered permanent shelter for the society.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). The county provided the cases; James Pillars, a former county surveyor, was its curator by acclamation and his widow succeeded him. So the building was near enough to finished to house a museum by about 1909. [inference] — the corpus has no construction date for it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This corpus has been reading a book written in this building's collection.** The society's rule was that \"all papers read before the society become its property, and thus there is a complete Allen County history on file in the archives\", and the 1921 history is the work of a man who moved in those rooms. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One event this corpus already holds happened here.** The movement that produced the Fort Amanda monument began at a meeting called by William Rusler on 4 February 1913 \"in Memorial Hall\". [verified] — same source, which names the building without the county's name in front of it. That it is this hall and not another is an inference: the same book indexes `Allen County Memorial Hall` and `Memorial Hall` to the same volume and puts the county museum in it, and the only other memorial hall it names is a Salvation Army building not yet built in 1913. [inference] — see [the fort](fort-amanda.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The first courthouse bell stands in front of it, cracked.** \"The bell now resting in front of Memorial Hall is the first Allen County courthouse bell, and therefore it was the first fire bell in Lima ... there is a crack — an injury to the bell.\" [verified] — same source. That is the bell of [the pioneer courthouse](allen-county-courthouse.yml) contracted for $175 in 1831 and sold at auction in 1841, standing outside a building put up seventy years later. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
+    },
+    {
+      "id": "site/lima-pennsylvania-railroad-depot.yml",
+      "class": "site",
+      "label": "Lima Pennsylvania Railroad Passenger Depot",
+      "tier": "inference",
+      "properties": {
+        "address": "424 N. Central Ave., Lima OH",
+        "coordinates": "40.745008, -84.101894",
+        "nrhp_id": "03000805",
+        "site_type": "railway station"
+      },
+      "blocks": [
+        {
+          "text": "The passenger station of the Pennsylvania Railroad at 424 North Central Avenue in Lima, on the National Register since 21 August 2003 as reference `03000805`. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md). It stands in survey section 30 of T3S R7E, half a mile north-east of the courthouse. [verified] — [Allen County GIS](../../catalog/allen-county-gis-rest.md), point-in-polygon against the section layer.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only building in this county the federal register holds for the thing the county was built on.** Twenty-nine listings and not one of them is a factory, a refinery or a shop; this is a waiting room. [verified] — [the county's list](../measure/allen-county-national-register.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The road it belonged to is the county's first.** The Ohio & Indiana reached Lima in 1854 on the Crestline-to-Fort Wayne line that later became the Pennsylvania, and by 1883 ten fast passenger trains a day passed through Lima on the Chicago & Erie alone, besides the mails and the limited express. [verified] — [the railway network](../measure/allen-county-railroads-1883-1921.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**No passenger train calls in this county now.** Five railroads still cross Allen County at 201 open crossings and not one of them sees a passenger train. [verified] — [the crossings](../measure/allen-county-railroads-2026.yml). The depot was listed in 2003, which is a statement about a building and not about a service. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "site/lima-refinery.yml",
@@ -11157,6 +11297,7 @@
       "properties": {
         "built": "1845",
         "gnis_id": "1057843",
+        "nrhp_id": "66000603",
         "site_type": "canal",
         "status": "abandoned"
       },
@@ -11180,6 +11321,14 @@
         {
           "text": "Lima, notably, is not on the canal — the county's industrial centre grew at the crossing of two railroads instead, and by 1879 all three of the roads then serving it kept repair shops there. [verified] — [the network](../measure/allen-county-railroads-1883-1921.yml). That is part of why the canal towns and the county seat have such different nineteenth-century trajectories. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**A cut through it two miles south of Spencerville is Allen County's only National Historic Landmark.** The Deep Cut was entered on the National Register on 15 October 1966 as reference `66000603` — the day the Register itself began, when the standing Landmarks were entered as a body — and it is the county's oldest listing by eight years, its only Landmark, and the only one of its twenty-nine that is neither a building nor a district. [verified] — [the NPS spatial dataset](../../catalog/nrhp-national-register.md); see [the county's list](../measure/allen-county-national-register.yml). The reference number below is that segment's and not the whole canal's.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is filed under Spencerville and is not in it.** The listing carries `Vicinity: True` and its point falls in [Spencer Township](../place/spencer-township.yml), outside the village. [verified] — the same dataset against [Allen County GIS](../../catalog/allen-county-gis-rest.md), point-in-polygon.",
+          "tier": "verified"
         },
         {
           "text": "**GNIS names it and this node declines its coordinate.** The canal is feature 1057843, filed under Henry County with a primary coordinate at 41.3269935, -84.1943905 and a source of `0.0, 0.0`. [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md). That primary point is about 34 miles north of Delphos [inference], because a names file gives one coordinate per feature and this feature is a 250-mile canal. Writing it into `coordinates` would put the Delphos reach in Henry County, and writing the source into anything would put a canal in the Gulf of Guinea. The identifier is worth keeping; the coordinate is not.",
@@ -14126,6 +14275,20 @@
       "source": "catalog/census-county-business-patterns.md"
     },
     {
+      "from": "measure/allen-county-national-register.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nrhp-national-register.md"
+    },
+    {
+      "from": "measure/allen-county-national-register.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nrhp-national-register.md"
+    },
+    {
       "from": "measure/allen-county-natural-change-2021-2024.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -16077,6 +16240,20 @@
       "relationship": "operated-by",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "site/lima-memorial-hall.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/nrhp-national-register.md"
+    },
+    {
+      "from": "site/lima-pennsylvania-railroad-depot.yml",
+      "to": "place/lima.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/nrhp-national-register.md"
     },
     {
       "from": "site/lima-refinery.yml",
