@@ -958,6 +958,16 @@
           "tier": "verified",
           "source": "catalog/census-1920-state-compendium-ohio.md",
           "method": "Read from a page image at 300 dpi. Table 12 splits the countries into two blocks, each of which restarts at Adams County, so Allen's row had to be read from two pages three apart and rejoined; the check that it was rejoined correctly is that the twenty-two figures sum to the printed total of 2,753. Country names are the census's own for 1920 — Jugo-Slavia, Czechoslovakia and Syria are as printed, and the countries they name had existed for two years, one year and none at all as sovereign states. [verified]"
+        },
+        {
+          "node": "measure/allen-county-foreign-born-1930-1950.yml",
+          "label": "Allen County's foreign-born, 1930–1950",
+          "as_of": "1950",
+          "value": 1485.0,
+          "published": "1,485",
+          "tier": "verified",
+          "source": "catalog/census-population-volumes-1930-1960-ohio.md",
+          "method": "Read from page images at 300 dpi. The 1930 and 1940 figures are sums of the printed male and female lines and were checked against the county total; the 1950 figure is printed as a total and its twenty-eight country columns were added independently and came to it exactly. Country names are the census's own for 1950 — Yugoslavia, U.S.S.R. and Eire are as printed, and they are not the names the 1920 table used for the same ground. [verified]"
         }
       ]
     },
@@ -1598,6 +1608,16 @@
           "tier": "verified",
           "source": "catalog/census-1920-state-compendium-ohio.md",
           "method": "Read from page images rendered at 300 dpi, because the text layer of both volumes garbles digits — it renders Lima's row as \"4l, 320 40,0li2 OU. \\l\". Two arithmetic checks were run before any figure was written down: the county's race lines sum to the printed total, and the city's white lines sum to the printed total white. The county figure is the compendium's, which is the federal count; the city figure is the abstract's, which is the same census. Where the county history and the census disagree, both are given and neither quotation is altered. [verified]"
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1930-1960.yml",
+          "label": "Allen County population by race, 1930–1960",
+          "as_of": "1960",
+          "value": 7322.0,
+          "published": "7,322",
+          "tier": "verified",
+          "source": "catalog/census-population-volumes-1930-1960-ohio.md",
+          "method": "Read from page images rendered at 250 to 300 dpi, because three of the four volumes have no text layer and the fourth's is OCR that garbles every digit. Each census was taken from the table that prints race by sex, and each column was added before it was written down: the four or seven race lines sum to the printed county total in every year, the twelve townships sum to the county in 1940 and 1960, and the four county totals — 69,419, 73,303, 88,183 and 103,691 — match the figures this corpus already held from a different volume. The label is the census's own for each year and is not modernised. [verified]"
         }
       ]
     },
@@ -7473,10 +7493,7 @@
           ]
         }
       ],
-      "caveats": [
-        "The corpus now has 1,385 in 1920 and 10,805 in 2023 and no count in between, so it cannot say when the county's Black population grew or how fast.",
-        "This is one year, and the corpus holds no foreign-born count for the county before 1920 or after it, so it cannot say whether 16.5 per cent was a peak, a decline or a rise."
-      ],
+      "caveats": [],
       "figures": [
         {
           "label": "Germany",
@@ -7544,6 +7561,99 @@
       ],
       "caveats": [],
       "figures": []
+    },
+    {
+      "id": "the-migration-arrived-in-the-forties",
+      "statement": "Allen County's Black population grew by 531 people in the twenty years after 1920 and by 2,475 in the ten years after that. The Great Migration of 1916 to 1930 went past this county; the one that followed the war did not. Its foreign-born population moved the other way over the same forty years, falling by 46 per cent while the county grew by 29.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-population-by-race-1930-1960.yml",
+          "node_label": "Allen County population by race, 1930–1960",
+          "span": "**The county's Black population grew by 531 people in the twenty years to 1940 and by 2,475 in the ten years after.** 1,385 in 1920, 1,686 in 1930, 1,916 in 1940, then 4,391 in 1950 and 7,322 in 1960.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-population-volumes-1930-1960-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1930-1960.yml",
+          "node_label": "Allen County population by race, 1930–1960",
+          "span": "**In figures: 1385 in 1920, 1686 in 1930, 1916 in 1940, 4391 in 1950 and 7322 in 1960.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-population-volumes-1930-1960-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1930-1960.yml",
+          "node_label": "Allen County population by race, 1930–1960",
+          "span": "**The migration that reached most northern industrial cities between 1916 and 1930 did not reach this one.** The decades in which Detroit, Cleveland and Youngstown were transformed added 301 people and then 230 to Allen County.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1930-1960.yml",
+          "node_label": "Allen County population by race, 1930–1960",
+          "span": "**Lima's share of the county's Black residents fell in every decade it can be measured.** 1,243 of 1,385 in 1920, or 89.7 per cent; 1,561 of 1,916 in 1940, or 81.5; 3,278 of 4,391 in 1950, or 74.7. In 2023 it is 76.7.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-population-volumes-1930-1960-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-population-by-race-1930-1960.yml",
+          "node_label": "Allen County population by race, 1930–1960",
+          "span": "**In 1940 three of every four Black residents of the county outside Lima were in Bath Township.** The county held 1,916 and Lima 1,561, leaving 355; Bath Township held 260 of them, in a rural township of 3,438 people.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-population-volumes-1930-1960-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-foreign-born-1930-1950.yml",
+          "node_label": "Allen County's foreign-born, 1930–1950",
+          "span": "**The county's foreign-born population fell by 46 per cent in thirty years while the county grew by 29.** 2,753 down to 1,485, against 68,223 up to 88,183.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-foreign-born-1930-1950.yml",
+          "node_label": "Allen County's foreign-born, 1930–1950",
+          "span": "**Italy has passed Germany.** 246 against 222, where in 1920 it was Germany 627 against Italy 312.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1920",
+          "value": 1385.0,
+          "literal": "1385"
+        },
+        {
+          "label": "1930",
+          "value": 1686.0,
+          "literal": "1686"
+        },
+        {
+          "label": "1940",
+          "value": 1916.0,
+          "literal": "1916"
+        },
+        {
+          "label": "1950",
+          "value": 4391.0,
+          "literal": "4391"
+        },
+        {
+          "label": "1960",
+          "value": 7322.0,
+          "literal": "7322"
+        }
+      ]
     }
   ]
 }

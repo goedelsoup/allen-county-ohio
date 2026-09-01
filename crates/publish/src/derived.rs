@@ -2714,10 +2714,9 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         answers: &[
-            // Both nodes refuse a trend, and this assertion makes none: it is one census,
-            // used to test a book written the year after it. The refusals travel with it.
-            "it cannot say when the county's Black population grew or how fast",
-            "it cannot say whether 16.5 per cent was a peak, a decline or a rise",
+            // Both refusals are gone from the cited nodes: the four censuses between 1920 and 1960
+            // have been read, so neither node refuses a trend any more, and an answer to a refusal
+            // nobody makes is withdrawn with it. See `the-migration-arrived-in-the-forties`.
         ],
         figures: &[
             Figure { label: "Germany", value: 627.0, literal: "627" },
@@ -2742,6 +2741,53 @@ pub const ASSERTIONS: &[Assertion] = &[
         )],
         answers: &[],
         figures: &[],
+    },
+    Assertion {
+        id: "the-migration-arrived-in-the-forties",
+        statement: "Allen County's Black population grew by 531 people in the twenty years after \
+                    1920 and by 2,475 in the ten years after that. The Great Migration of 1916 to \
+                    1930 went past this county; the one that followed the war did not. Its \
+                    foreign-born population moved the other way over the same forty years, falling \
+                    by 46 per cent while the county grew by 29.",
+        topic: "population",
+        supports: &[
+            support!(
+                "measure/allen-county-population-by-race-1930-1960.yml",
+                "**The county's Black population grew by 531 people in the twenty years to 1940 and by 2,475 in\n  the ten years after.** 1,385 in 1920, 1,686 in 1930, 1,916 in 1940, then 4,391 in 1950 and 7,322\n  in 1960."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1930-1960.yml",
+                "**In figures: 1385 in 1920, 1686 in 1930, 1916 in 1940, 4391 in 1950 and 7322 in 1960.**"
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1930-1960.yml",
+                "**The migration that reached most northern industrial cities between 1916 and 1930 did not reach\n  this one.** The decades in which Detroit, Cleveland and Youngstown were transformed added 301\n  people and then 230 to Allen County."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1930-1960.yml",
+                "**Lima's share of the county's Black residents fell in every decade it can be measured.** 1,243\n  of 1,385 in 1920, or 89.7 per cent; 1,561 of 1,916 in 1940, or 81.5; 3,278 of 4,391 in 1950, or\n  74.7. In 2023 it is 76.7."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1930-1960.yml",
+                "**In 1940 three of every four Black residents of the county outside Lima were in Bath Township.**\n  The county held 1,916 and Lima 1,561, leaving 355; Bath Township held 260 of them, in a rural\n  township of 3,438 people."
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1930-1950.yml",
+                "**The county's foreign-born population fell by 46 per cent in thirty years while the county grew\n  by 29.** 2,753 down to 1,485, against 68,223 up to 88,183."
+            ),
+            support!(
+                "measure/allen-county-foreign-born-1930-1950.yml",
+                "**Italy has passed Germany.** 246 against 222, where in 1920 it was Germany 627 against Italy 312."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1920", value: 1_385.0, literal: "1385" },
+            Figure { label: "1930", value: 1_686.0, literal: "1686" },
+            Figure { label: "1940", value: 1_916.0, literal: "1916" },
+            Figure { label: "1950", value: 4_391.0, literal: "4391" },
+            Figure { label: "1960", value: 7_322.0, literal: "7322" },
+        ],
     },
 ];
 

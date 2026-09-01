@@ -1,0 +1,68 @@
+id: two-volumes-are-not-one-series
+summary: >-
+  Four census volumes gave Allen County's Black population at four censuses, and the same four
+  volumes offered a 22-point finding about Perry Township that is entirely an artifact of Lima's
+  territory entering the township table between 1940 and 1950. This records the rule adopted for
+  differencing figures that come from separately published volumes: before subtracting, name what
+  changed in the column heading, and say so beside the difference.
+context: |
+  [ask-the-volume-just-after-the-gap](ask-the-volume-just-after-the-gap.yml) settled which volume to
+  fetch for a missing year. It is silent on what to do once two of them are on the disk, and that is
+  where this phase nearly went wrong.
+
+  The four Ohio population volumes for 1930, 1940, 1950 and 1960 are one publisher, one census, one
+  state and four different tables. Across them:
+
+  - The race lines are four in 1930 and 1940 (native white, foreign-born white, Negro, other races),
+    four in 1950, and seven in 1960 (white, Negro, Indian, Japanese, Chinese, Filipino, other). The
+    1960 county table gives white without splitting it by nativity, which ends the foreign-born
+    series at 1950 whether or not anyone noticed.
+  - The country-of-birth columns are twenty-one named countries in 1920 and twenty-seven in 1950,
+    and they are not nested. Switzerland has a column in 1920 and none in 1950; Wales has its own
+    column in 1920 and is inside England in 1950. The two immigrant communities this county was
+    founded on became uncountable, in a table with *more* columns than the one before it.
+  - The minor civil divisions exclude Lima in 1930 and 1940 and include the parts of it inside them
+    in 1950 and 1960. Perry Township is 1,944 people in 1940 and 15,045 in 1960 for that reason
+    alone.
+
+  The near-miss is the third one. Perry Township is 27.6 per cent Black in 1960 and 5.2 per cent in
+  the 2023 American Community Survey. Written as a change it is the largest racial shift in any node
+  of this corpus. It is not a change. It is a township that held half of south Lima being compared
+  with a township that does not.
+decision: |
+  **A figure from one volume may be differenced against a figure from another only after the two
+  column headings have been read side by side and what changed between them has been written down.**
+  The note goes beside the difference, in the same block, not in the method field.
+
+  **Three practical consequences.**
+
+  1. Where a category is dropped, the successor figure is absent rather than zero, and the corpus
+     says which volume dropped it. Switzerland at 171 in 1920 has no 1950 number — not a fall to
+     nothing, a column that stopped being printed.
+  2. Where a geographic label survives a boundary change, the label is not evidence of continuity.
+     The corpus already holds [the control is the figure that cannot move](the-control-is-the-figure-that-cannot-move.yml)
+     for area; this extends it to any table whose rows are places, and the check is the same — find
+     the figure that could not have moved for the same reason, which here is the county total.
+  3. A difference that survives all of this is worth more than a difference that was never tested.
+     The Black population series 1920 to 1960 is differenceable because the county boundary did not
+     move, the county total closes in all four volumes, and the race line kept both its name and its
+     definition across the four.
+rationale: |
+  **This is the cross-publication case, and the corpus's existing rules are all intra-series.**
+  [a-reporting-change-has-a-date-and-a-control](a-reporting-change-has-a-date-and-a-control.yml)
+  handles a break inside one publisher's running file, found in a second endpoint.
+  [a-category-has-a-birthday](a-category-has-a-birthday.yml) handles categories appearing inside one
+  file over time. Both assume a series that a publisher maintains. Four decennial volumes are not a
+  series anybody maintains; they are four books, each designed for its own decade, and the continuity
+  between them is something the reader supplies.
+
+  **The reason it is worth a rule is that the failure is silent and it flatters.** A dropped column
+  reads as a collapse to zero. A township that has swallowed a city reads as a neighbourhood
+  transformed. Both produce findings that are larger and more quotable than the true ones, which is
+  the direction of error a corpus is least likely to catch in itself.
+
+  **The cost is one sentence per comparison and this phase paid it four times.** Every difference
+  taken across two of these volumes carries the note in the block that states it — the race labels,
+  the missing Switzerland column, the folded Wales column, and the township geography. The county
+  series, which passes the test cleanly, says so too, because a comparison that has been checked and
+  one that has not should look different on the page.
