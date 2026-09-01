@@ -748,6 +748,37 @@
       "withheld": 1
     },
     {
+      "id": "event/the-contested-commissioner-election-of-1920.yml",
+      "class": "event",
+      "label": "The contested commissioner election of 1920",
+      "tier": "inference",
+      "properties": {
+        "event_type": "election",
+        "location_description": "Allen County, at large; the board is elected countywide. [verified]",
+        "occurred": "1920-11"
+      },
+      "blocks": [
+        {
+          "text": "Three men were elected to the Allen County board in November 1920 and one of them refused the term he was given. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The dispute was not about who won. It was about which of the three seats each winner got.** \"In the 1920 election the short term expiring January 21, 1923, fell to Mr. Craig, Gray and Thompson filling the terms expiring two years later; however, Mr. Craig took exception to the election returns, claiming that he received more votes than either of the others, entitling him to the long term of service. He has since been awarded one of the long terms and Mr. Gray the short term.\" [verified] — same source, quoted in full because the outcome is a single clause of it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only account this corpus holds of how a staggered board assigns its terms.** The office is three seats with terms that do not expire together, and the statute this corpus has read says only when each begins. What happens when three men are elected at once to seats of unequal length is answered here, and answered by a protest rather than by a rule: the largest poll took the longest term. [inference] — see [the board](../office/allen-county-board-of-commissioners.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It dates a term boundary that has since moved.** The short term expired on 21 January 1923; the county's three commissioners now take office on the first, second and third of January. [verified] — same source and [the Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/the-execution-of-andrew-brentlinger-1872.yml",
       "class": "event",
       "label": "The execution of Andrew Brentlinger, 1872",
@@ -3361,20 +3392,81 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-commissioners-1831-1920.yml",
+      "class": "measure",
+      "label": "The Allen County board of commissioners, 1831–1920",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1920",
+        "method": "The 1906 list was parsed from the archive.org full text and then checked by hand against the scan, because the OCR breaks names across lines and the shift-register test is worthless if a name is wrong in one row and right in the next: \"H. B. Thorn\" for Henry B. Thorn in 1837 alone would have manufactured two departures. Four such artifacts were reconciled — that abbreviation, \"Bernard Escli\" for Esch, \"Franeis M. Clum\" for Francis, and a stray comma in \"Alexander, Conrad\" — and each is a scan defect rather than a difference between editions. The 1921 list was transcribed by hand. The count of 68 is persons: fifty-three in the dated list plus fifteen names the 1921 book adds after Charles W. Johnston, with the initialled forms matched to their full forms only where the surname and the position in sequence both agree. [verified]",
+        "parameter": "men named as county commissioner, 1831–1920",
+        "unit": "persons",
+        "value": "68"
+      },
+      "blocks": [
+        {
+          "text": "Seventy-five annual photographs of a three-man board, sixty-eight men, and a printing convention that turns out to be an audit. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), \"Board of County Commissioners\", and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), \"County Commissioners\".",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1906 book prints the board at the end of every year from 1831 to 1905 — seventy-five rows, three names each, and fifty-three men.** The county's first board, seated in June 1831, was James S. Daniels, John G. Wood and Samuel Stewart. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), counted row by row. The 1921 book adds fifteen more names to 1920, so sixty-eight men held the office in its first ninety years. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), the two rosters compared.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every row is the row before it, shifted one place right.** The new commissioner is written first, the previous first name second, the previous second name third — and the man in third place is the one who goes. Of the sixty-three transitions from 1842 to 1905, fifty-eight are exactly that and five are not. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its seventy-five rows differenced in order.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: 75 rows and 74 transitions between them — 50 in which a new commissioner arrives and is written first, 2 in which a new man arrives and is not, and 22 in which nobody arrives and the order rotates anyway.** [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), differenced row by row.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The rule holds even in the twenty-two years when nobody new arrives.** In every one of those the three men are the same three and the order still turns over: the third name becomes the first, twenty-two times out of twenty-two, without a single exception in seventy-five years. [verified] — same series. So the first column is not one thing. In an election year it is the incoming commissioner; in a year without one it is the incoming president of the board.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Both books explain that column and neither explains all of it.** The 1906 book says \"the first person named is in most cases the commissioner elected that year\". The 1921 book says the old rosters name \"the president of the board first\", and that \"it seems that there has sometimes been reorganization when there has not been an election\". [verified] — the two prefaces. The reorganization was not sometimes. It was every year the board did not change, and it went round in order. [inference] — computed from the series.",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — the same differencing; the 1884 quotation is the book's. Four turns out of course that the book does not mark are visible because the shape of the list marks them. [inference] — see [the shape of a list is evidence](../../decisions/the-shape-of-a-list-is-evidence.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The book skips 1889 and says nothing about it.** It runs 1888 to 1890 with no row between, and the hole manufactures two false careers: John Akerman and William Bice both appear to leave the board and return, and neither did. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), the printed list.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Before 1842 the pattern is not there.** Eight of the first eleven transitions break it, against five of the next sixty-three. [verified] — same series.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The seat's calendar has moved twice and the corpus can date neither move.** The 1906 book says that in its later years \"the term of office began in September following the election\"; the 1921 book reports a term \"expiring January 21, 1923\"; the county's three seats now begin on the first, second and third of January. [verified] — the two histories and [the Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md); see [the board](../office/allen-county-board-of-commissioners.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1921 roster is undated, drops one man, and respells seven.** It gives the names \"without further effort to show their time of service\" and, once its spellings are reconciled, contains every one of the 1906 book's fifty-three except John P. Mitchell, commissioner in 1832 and 1833 — four of the other missing five being named in the paragraph above the list. [verified] — the two rosters compared name by name. It writes Ackerman for Akerman, Bixbey for Bixby, Zanglenn for Zanglein, Johnzy for Johnzey, Lippencott for Lippincott, James C. for James H. Coleman, and **Albert Shenk for Alexander Shenk** — which is a different given name, not a different spelling. [verified] — same comparison; see [Alexander Shenk](../person/alexander-shenk.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-common-pleas-bench-1833-1920.yml",
       "class": "measure",
       "label": "The Allen County common pleas bench, 1833–1920",
       "tier": "inference",
       "properties": {
         "as_of": "1920",
-        "method": "Transcribed by hand from the full text of both histories on archive.org. The count of 27 is the three associate judges of 1831, the twenty presidents and judges the 1906 book names in sequence, and the four the 1921 book adds after it; Metcalf is counted once although the 1906 book gives him two spans. It is a count of persons named as sitting, not of terms, and it is not a count of Allen County's own judges: for most of this period the seat was a multi-county one and the books name the holder's home county where they know it. Dates are given as printed, including the scan's \"1S80\" for James H. Day's start, which is reported here as 1880 and flagged nowhere else because the surrounding sentence dates his resignation to 1892. [verified]",
+        "method": "Transcribed by hand from the full text of both histories on archive.org. The count of 34 is the ten associate judges the 1921 book names between 1831 and 1851, the twenty presidents and judges the 1906 book names in sequence, and the four the 1921 book adds after 1906; Metcalf is counted once although the 1906 book gives him two spans. The three associate judges of 1831 are counted in the ten, not twice. It is a count of persons named as sitting, not of terms, and it is not a count of Allen County's own judges: for most of this period the seat was a multi-county one and the books name the holder's home county where they know it. Dates are given as printed, including the scan's \"1S80\" for James H. Day's start, which is reported here as 1880 and flagged nowhere else because the surrounding sentence dates his resignation to 1892. [verified]",
         "parameter": "named holders of the common pleas bench serving Allen County, 1831–1920",
         "unit": "persons",
-        "value": "27"
+        "value": "34"
       },
       "blocks": [
         {
-          "text": "Twenty-seven named judges in eighty-seven years, three redrawings of the district they sat in, and a term boundary the county's bench still turns on. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), \"Common Pleas Judges\", and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).",
+          "text": "Thirty-four named judges from 1831 to 1920, three redrawings of the district they sat in, and a term boundary the county's bench still turns on. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), \"Common Pleas Judges\", and [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).",
           "tier": "verified"
         },
         {
@@ -3415,7 +3507,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-commuting-2022.yml",
@@ -5586,6 +5678,10 @@
         },
         {
           "text": "**All six of that claim have since been checked against the federal record and all six hold.** Brice in the Senate 1891–97, Nichols in the House 1853–59, Lamison 1871–75, Yoder 1887–91, Welty 1917–21 and Cable 1921–25 and again 1929–33. [verified] — [the congress-legislators file](../../catalog/congress-legislators.md); see [the county in Congress](allen-county-in-congress-1831-1933.yml). A fifth of the six turns out to have held a county post as well: Calvin S. Brice \"was employed in the auditor's office of Allen County\" in 1863, before the war took him back. [verified] — the 1906 history's biography of him. Only Cable went to Washington without working in this courthouse first. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county commissioners are now read, and the rule they needed was not the one this node asked for.** The board is printed year by year from June 1831 — seventy-five rows, fifty-three men — and the rule is internal to the list: every row is the one before it shifted a place right, and the man in third place is the one who goes. [verified] — [the board of 1831–1920](allen-county-commissioners-1831-1920.yml). The September overlap the book warns about is real and is not what makes the list readable; the shift is. [inference] — see [the shape of a list is evidence](../../decisions/the-shape-of-a-list-is-evidence.yml).",
           "tier": "inference"
         }
       ],
@@ -8198,10 +8294,18 @@
         {
           "text": "The board meets in general session every Tuesday and Thursday. [verified] — [the county's site](../../catalog/allen-county-official-site.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**The staggering has been fought over.** In November 1920 three commissioners were elected at once to seats of unequal length, and W. W. Craig \"took exception to the election returns, claiming that he received more votes than either of the others, entitling him to the long term of service\". He got one. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the contested election](../event/the-contested-commissioner-election-of-1920.yml). It is the only account this corpus holds of how the seats are assigned when they are filled together.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1921 history states the office's reach in a sentence the statute does not.** \"While all other county officers have their duties outlined by statute, the county commissioners have latitude. They may use their own discretion in many things.\" It adds that they \"have control of all public property, and if they see fit they may even sell the courthouse\", that the county auditor is an ex-officio member who keeps the record of proceedings, and that the sheriff preserves order. [verified] — same source.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "office/allen-county-clerk-of-courts.yml",
@@ -10504,6 +10608,32 @@
       ],
       "refusals": [],
       "withheld": 0
+    },
+    {
+      "id": "person/alexander-shenk.yml",
+      "class": "person",
+      "label": "Alexander Shenk",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "Albert Shenk, in the 1921 history. [verified]",
+        "occupation": "county commissioner"
+      },
+      "blocks": [
+        {
+          "text": "**He entered in place of Charles C. Marshall.** The 1906 history's board for 1884 reads \"Joseph A. States, Alexander Shenk (vice Marshall) and Abraham Crider\" — the parenthesis is the book's, and it is the only one in the whole seventy-five-year list. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md); see [the tenure](../tenure/commissioner-1884-alexander-shenk.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**His name is second in that row and it should not be.** In every other year with a new commissioner the new man is written first, fifty times out of fifty-two; the two exceptions are this row and the row after the book's missing year. He was not elected that autumn, so the column that names the year's incoming commissioner had nobody to name. [inference] — [the board of 1831–1920](../measure/allen-county-commissioners-1831-1920.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 1921 history calls him Albert.** Its undated roster of commissioners has \"Albert Shenk\" between C. C. Marshall and John Ackerman — the same position in the same sequence, and a different given name. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). The corpus takes the 1906 form, which is the dated one and the one that gives him three separate years. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "person/allen-l-metheany.yml",
@@ -12829,6 +12959,35 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "person/william-akerman.yml",
+      "class": "person",
+      "label": "William Akerman",
+      "tier": "inference",
+      "properties": {
+        "occupation": "county commissioner"
+      },
+      "blocks": [
+        {
+          "text": "**He is in twelve of the seventy-five printed boards — 1847 to 1852, and 1871 to 1876.** No other man in that list is in more than seven. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), counted row by row; see [the board of 1831–1920](../measure/allen-county-commissioners-1831-1920.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Both spells are regular and that is what makes them readable.** Each is six consecutive rows and each begins with his name in first place, which in that roster means the commissioner elected that year. Nothing about either entry or either exit breaks the list's shape, so neither is a tenure node under [a table is the line and a tenure is the turn](../../decisions/a-table-is-the-line-and-a-tenure-is-the-turn.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**He was president of the board four times.** The first column also names the presiding commissioner in years when the board did not change, and it fell to him in 1850, 1874 — and to his entering self in 1847 and 1871. [inference] — the same series; see the roster's two conventions.",
+          "tier": "inference"
+        },
+        {
+          "text": "**A John Akerman is on the same board forty years later**, in 1887, 1888 and 1890 to 1892, and the 1921 history spells both men Ackerman. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). The corpus holds no relation between them.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "person/william-h-harter.yml",
@@ -15732,6 +15891,33 @@
       "withheld": 1
     },
     {
+      "id": "tenure/commissioner-1884-alexander-shenk.yml",
+      "class": "tenure",
+      "label": "Alexander Shenk, Allen County Commissioner, 1884–1886",
+      "tier": "inference",
+      "properties": {
+        "began": "1884",
+        "ended": "1886",
+        "how_began": "succeeded"
+      },
+      "blocks": [
+        {
+          "text": "[Alexander Shenk](../person/alexander-shenk.yml) came onto the board in place of Charles C. Marshall. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), which prints the 1884 board as \"Joseph A. States, Alexander Shenk (vice Marshall) and Abraham Crider\".",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is a node because the book gives a reason and not only a date**, which is the second of the three tests in [a table is the line and a tenure is the turn](../../decisions/a-table-is-the-line-and-a-tenure-is-the-turn.yml). It passes the first as well: he is one of five men in seventy-five years whose entry breaks the roster's own shift, and the only one the book marks. [inference] — [the board of 1831–1920](../measure/allen-county-commissioners-1831-1920.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The ending is where the printed roster stops naming him and nothing more.** He is in the rows for 1884, 1885 and 1886 and out of the row for 1887. Whether that is a term expiring or a term he was filling out is not stated, and Marshall's own term would have run to about then. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
+    },
+    {
       "id": "tenure/commissioner-2023-brian-winegardner.yml",
       "class": "tenure",
       "label": "Brian Winegardner, Commissioner of Allen County, term of 2023–2026",
@@ -17755,6 +17941,13 @@
       "source": "catalog/leeson-allen-county-1885.md"
     },
     {
+      "from": "event/the-contested-commissioner-election-of-1920.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
       "from": "event/the-execution-of-andrew-brentlinger-1872.yml",
       "to": "place/lima.yml",
       "relationship": "occurred-in",
@@ -18670,6 +18863,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/ipeds.md"
+    },
+    {
+      "from": "measure/allen-county-commissioners-1831-1920.yml",
+      "to": "office/allen-county-board-of-commissioners.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "measure/allen-county-commissioners-1831-1920.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
     },
     {
       "from": "measure/allen-county-common-pleas-bench-1833-1920.yml",
@@ -20492,6 +20699,13 @@
       "source": null
     },
     {
+      "from": "person/alexander-shenk.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "person/allen-l-metheany.yml",
       "to": "place/lima.yml",
       "relationship": "resided-in",
@@ -21054,6 +21268,13 @@
     {
       "from": "person/todd-gordon.yml",
       "to": "place/lima.yml",
+      "relationship": "resided-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "person/william-akerman.yml",
+      "to": "place/allen-county.yml",
       "relationship": "resided-in",
       "tier": "inference",
       "source": null
@@ -21701,6 +21922,20 @@
       "relationship": "of-office",
       "tier": "verified",
       "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "tenure/commissioner-1884-alexander-shenk.yml",
+      "to": "person/alexander-shenk.yml",
+      "relationship": "held-by",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "tenure/commissioner-1884-alexander-shenk.yml",
+      "to": "office/allen-county-board-of-commissioners.yml",
+      "relationship": "of-office",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
     },
     {
       "from": "tenure/commissioner-2023-brian-winegardner.yml",

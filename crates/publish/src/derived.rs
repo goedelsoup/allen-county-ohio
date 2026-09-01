@@ -2588,6 +2588,51 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-board-is-printed-as-a-shift-register",
+        statement: "The 1906 county history prints the Allen County board once a year for \
+                    seventy-five years, and each row is the row before it moved a place right. \
+                    Fifty-eight of the sixty-three transitions after 1842 obey it exactly, and \
+                    every one that does not is either an event the book never mentions or a hole \
+                    in the printing.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-commissioners-1831-1920.yml",
+                "**The 1906 book prints the board at the end of every year from 1831 to 1905 \u{2014} seventy-five rows,\n  three names each, and fifty-three men.**"
+            ),
+            support!(
+                "measure/allen-county-commissioners-1831-1920.yml",
+                "**Every row is the row before it, shifted one place right.** The new commissioner is written\n  first, the previous first name second, the previous second name third \u{2014} and the man in third place\n  is the one who goes. Of the sixty-three transitions from 1842 to 1905, fifty-eight are exactly\n  that and five are not."
+            ),
+            support!(
+                "measure/allen-county-commissioners-1831-1920.yml",
+                "**In figures: 75 rows and 74 transitions between them \u{2014} 50 in which a new commissioner arrives and\n  is written first, 2 in which a new man arrives and is not, and 22 in which nobody arrives and the\n  order rotates anyway.**"
+            ),
+            support!(
+                "measure/allen-county-commissioners-1831-1920.yml",
+                "**The rule holds even in the twenty-two years when nobody new arrives.** In every one of those the\n  three men are the same three and the order still turns over: the third name becomes the first,\n  twenty-two times out of twenty-two, without a single exception in seventy-five years."
+            ),
+            support!(
+                "measure/allen-county-commissioners-1831-1920.yml",
+                "**Both books explain that column and neither explains all of it.**"
+            ),
+            support!(
+                "measure/allen-county-commissioners-1831-1920.yml",
+                "**The book skips 1889 and says nothing about it.** It runs 1888 to 1890 with no row between, and\n  the hole manufactures two false careers: John Akerman and William Bice both appear to leave the\n  board and return, and neither did."
+            ),
+            support!(
+                "tenure/commissioner-1884-alexander-shenk.yml",
+                "**It is a node because the book gives a reason and not only a date**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "New man, written first", value: 50.0, literal: "50" },
+            Figure { label: "New man, written second", value: 2.0, literal: "2" },
+            Figure { label: "No new man; order rotates", value: 22.0, literal: "22" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
