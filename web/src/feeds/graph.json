@@ -1439,6 +1439,10 @@
         {
           "text": "**It has governed itself under a charter of its own since 1 January 1922.** On that day the commission-manager form came into effect and the office of mayor was abolished, ending eighty years of aldermanic government; the movement had begun early in 1919 and the 1912 revision of the Ohio Constitution is what made it available. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the commission government](../event/lima-adopts-commission-government-1922.yml). The charter \"secures home rule for Lima except that the charter shall in no way interfere with the tax limit laws of the state governing municipalities\". [verified] — same source.",
           "tier": "verified"
+        },
+        {
+          "text": "**It owns the county's water.** The city's system serves 65,619 people on 27,113 connections — sixty-five per cent of Allen County, and nearly twice the city's own population — and sells to [Elida](../place/elida.yml) on top of that. Its supply is six reservoirs, each with its own intake — Ferguson, Bresler, Metzger, Williams, Twin Lakes and Lost Creek — and four further intakes on the Ottawa and Auglaize rivers. [verified] — [the water systems](../measure/allen-county-water-systems-2026.yml). The 1921 history's remark that the state utilities commission regulates every rate \"unless municipally owned as in Lima and Delphos\" is still true of both cities a century later. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -4988,10 +4992,96 @@
         {
           "text": "**Every one of the 184 sites drains to Lake Erie.** 168 are in the Auglaize subbasin `04100007`, 14 in the Blanchard `04100008`, and two in other Maumee units; none is in an Ohio River unit. [verified] — same source. **That is an absence of instruments and not evidence about the divide**: the corpus has already established that four census blocks in [Auglaize Township](../place/auglaize-township.yml), holding ninety-nine people, drain to [the Scioto](../natural-feature/scioto-river-basin.yml), and ninety-nine people do not get a gauge. [inference] — see [silence from a source that would have spoken](../../decisions/silence-from-a-source-that-would-have-spoken.yml), which this is not an instance of.",
           "tier": "inference"
+        },
+        {
+          "text": "**The thirty-one lake and reservoir stations are the drinking water.** Allen County has no natural lakes; Lima's water system owns six named reservoirs, each with an intake, and Delphos a seventh. [verified] — [the water systems](allen-county-water-systems-2026.yml). A monitoring network concentrated on standing water in a county with none of it is a network watching a city's supply. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-water-systems-2026.yml",
+      "class": "measure",
+      "label": "Allen County's public water systems, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Selected on the `OH02` identifier prefix, which is Ohio's county code for Allen, and restricted to `pws_activity_code` A and `pws_type_code` CWS. The thirty-three active non-community systems — rest areas, campgrounds, schools, a tavern — are excluded, because they serve people who are passing through or at work and counting them against a resident population would double-count. Populations are as each system reports them and are service populations, not residents of any boundary this corpus holds. [verified]",
+        "parameter": "people served by community water systems in Allen County",
+        "unit": "people",
+        "value": "84476"
+      },
+      "blocks": [
+        {
+          "text": "**Eight community water systems serve 84,476 people, and six of them are the town.** [verified] — [EPA SDWIS](../../catalog/epa-sdwis.md), systems with identifiers beginning `OH02`, active only.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima's system serves more than the county seat by a factor of two.** Lima held 35,579 people at the 2020 census and its water system reports serving 65,619 — sixty-five per cent of the county — before counting the 4,109 it sells to [Elida](../place/elida.yml). [verified] — same source and [the 2020 count](lima-population-2020-census.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Everything Lima drinks is surface water, and it is stored.** Its facility list carries six named reservoirs — Ferguson, Bresler, Metzger, Williams, Twin Lakes and Lost Creek — with an intake on each, and four more intakes on [the Ottawa](../natural-feature/ottawa-river.yml) and [the Auglaize](../natural-feature/auglaize-river.yml). [verified] — same source, facility table. **That is what the thirty-one lake and reservoir monitoring stations in a county with no natural lakes are.** [inference] — see [the gauges](allen-county-water-gauges-2026.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The city drinks from the river nobody measures.** Two of its intakes are on the Auglaize, which has 219 square miles of drainage above Spencerville and not one year of recorded peak flow. [verified] — [the peak flows](ottawa-river-peak-flows-1924-2025.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two of the eight own no surface source and are coded as surface anyway.** Elida buys from Lima; Bluffton owns eight wells and buys surface water from Ottawa Village in Putnam County. The system-level `gw_sw_code` describes the water in the pipe and not the ground it came from. [verified] — same source, facility table.",
+          "tier": "verified"
+        },
+        {
+          "text": "**About one person in six is on none of them.** The eight report 84,476 against the county's 100,866 in 2024 — 84 per cent. The residual is not a count of private wells: these are self-reported service populations, and Bluffton and Delphos both straddle county lines. [inference] — computed against [the 2024 estimate](allen-county-population-2024.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-water-violations-1984-2026.yml",
+      "class": "measure",
+      "label": "Drinking water violations in Allen County, 1984–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "All rows for systems whose identifier begins `OH02`, whatever the system's type or current status — so a tavern that closed in 1998 is counted. Health-based is the file's own `is_health_based_ind`, not a threshold chosen here. Distinct problems are counted by grouping on system and return-to-compliance date, which merges Bluffton's ten quarterly rows and leaves every other health-based violation on its own. The 2020s figure covers six years and eight months, not ten. [verified]",
+        "parameter": "recorded drinking water violations in Allen County",
+        "unit": "violations",
+        "value": "197"
+      },
+      "blocks": [
+        {
+          "text": "**197 recorded violations across thirty-eight systems in forty-two years, of which twenty concern the water.** [verified] — [EPA SDWIS](../../catalog/epa-sdwis.md), violations for systems beginning `OH02`.",
+          "tier": "verified"
+        },
+        {
+          "text": "The twenty health-based violations are exactly the fourteen `MCL` and the six `TT`, and nothing else in the file is flagged health-based. [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Twenty violations, ten resolutions.** Every one has returned to compliance, and the return dates group them in pairs: ten of Bluffton's are one problem. [verified] — same source; see [the file carries its own grouping key](../../decisions/the-file-carries-its-own-grouping-key.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Bluffton Village was over a standard for ten consecutive quarters**, October 2013 to March 2016, on contaminant 2950 — 0.104 milligrams per litre against a limit of 0.08 in the first quarter — and returned to compliance on 7 April 2016, closing all ten at once. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima City has exceeded the same standard twice**, in the first quarter of 2022 and the second of 2024, the latter at 0.087 against 0.08, and cleared each within months. It also missed a treatment step in December 2016. [verified] — same source. Both Lima and Bluffton drink surface water; five of the seven systems with a health-based violation are the county's smallest — a campground, a chiropractor's office, a rescue mission, a community centre and a school. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The count rises steeply and the water is not the reason.** Two violations in the 1980s, 24 in the 1990s, 25 in the 2000s, 61 in the 2010s and 85 in the six years since 2020. Nearly all of the increase is monitoring and reporting, and the number of federal drinking water rules to be monitored under grew across the same span. [inference] — computed here. The corpus records the count and refuses the trend, as it does for [the disaster declarations](allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-world-war-dead.yml",
@@ -5829,6 +5919,10 @@
         },
         {
           "text": "**It is the larger river and the ungauged one.** The USGS site near Spencerville drains 219 square miles against 160 for the Ottawa at Allentown, and neither it nor the Kossuth site at 201 square miles has an annual peak record; the Ottawa has two. [verified] — [the monitoring sites](../measure/allen-county-water-gauges-2026.yml). Everything this corpus can say about how much water moves through Allen County is about the smaller river, because the smaller river runs through the city. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima drinks from it, and it is the river with no flow record.** Two of the city's ten surface intakes are on the Auglaize. [verified] — [the water systems](../measure/allen-county-water-systems-2026.yml). So the county's largest water system draws on 219 square miles of drainage for which not one annual peak has ever been recorded, while the smaller Ottawa has two gauges and seventy-nine water years. [inference]",
           "tier": "inference"
         }
       ],
@@ -10353,6 +10447,10 @@
         {
           "text": "**An interurban ran down its main street, and the through route it belonged to crossed the whole state.** \"An electric railway passes directly through Main street, starting from Toledo and ending in Cincinnati, thus making Bluffton a railroad center.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). The same book's transportation chapter, counting trains that landed passengers in Lima, does not name this line; see [the interurban](../measure/allen-county-interurban-1901-1921.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Its water crosses a county line and its records show why that matters.** The village owns eight wells and buys surface water from Ottawa Village in Putnam County, which is why the federal file codes it a surface-water system though it owns no intake. [verified] — [the water systems](../measure/allen-county-water-systems-2026.yml). It was over a drinking-water standard for ten consecutive quarters from October 2013, the longest such run in the county's record, and cleared all ten on 7 April 2016. [verified] — [the violations](../measure/allen-county-water-violations-1984-2026.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -10498,6 +10596,10 @@
         {
           "text": "**An interurban ran through it, parallel to the steam road.** \"It is situated on the Pittsburg, Fort Wayne & Chicago Railway and the Fort Wayne, Van Wert & Lima traction line\", and in 1905 the Pennsylvania handled 484 car-loads of freight at this station, principally grain and live-stock. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). It is the only village in the county the sources place on [the interurban Lima financed](../organization/fort-wayne-van-wert-and-lima-traction-company.yml) by name and by station rather than by compass.",
           "tier": "verified"
+        },
+        {
+          "text": "**Its water is Lima's.** The village owns no source of its own: its one supply facility is a permanent consecutive connection from the Lima City system, and it serves 4,109 people on 1,684 connections — more than twice the village's own population, so most of its customers are in [American Township](american-township.yml) around it. [verified] — [the water systems](../measure/allen-county-water-systems-2026.yml). [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -15753,6 +15855,27 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/usgs-nwis.md"
+    },
+    {
+      "from": "measure/allen-county-water-systems-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/epa-sdwis.md"
+    },
+    {
+      "from": "measure/allen-county-water-systems-2026.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/epa-sdwis.md"
+    },
+    {
+      "from": "measure/allen-county-water-violations-1984-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/epa-sdwis.md"
     },
     {
       "from": "measure/allen-county-world-war-dead.yml",

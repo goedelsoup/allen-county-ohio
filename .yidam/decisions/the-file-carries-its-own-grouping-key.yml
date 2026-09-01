@@ -1,0 +1,60 @@
+id: the-file-carries-its-own-grouping-key
+summary: >-
+  Three unrelated files in four phases have been counted by the row where the corpus meant to count
+  the thing, and every one of them shipped the field that groups its rows correctly. This records
+  the check, and the reason it keeps being needed.
+context: |
+  The pattern has now appeared three times, in sources with nothing in common.
+
+    **Ten declarations, eight incidents.** The federal disaster file gives Allen County ten rows.
+    Two pairs share an incident window — an emergency declaration and a major disaster declaration
+    for one storm, seven weeks apart, and two for one pandemic eighteen days apart. The window is a
+    field.
+
+    **Forty-one entries, more terms than that.** Three printings of Lima's mayors give a consecutive
+    re-election its own entry twice and fold three consecutive terms into one entry once. What
+    disambiguates them is the printed years, which two of the three lists carry.
+
+    **Twenty violations, ten problems.** Ten of Bluffton's quarterly exceedances share one
+    return-to-compliance date: one problem, two and a half years long. The date is a field.
+
+  In every case the naive count is larger than the true one, in every case it is publishable and
+  wrong, and in every case the file already knew.
+decision: |
+  **Before publishing a count of rows, look for the field that groups them, and group by it.** The
+  field has a recognisable shape: an interval that repeats across rows, a resolution date shared by
+  a run, an identifier that is not the primary key. If such a field exists, the row count is a count
+  of records and the group count is a count of events.
+
+  **Publish both when they differ, and say which is which.** "Ten declarations for eight incidents"
+  and "twenty violations, ten problems" are better sentences than either number alone, and they are
+  the only honest ones: the row count is a real property of the file and a reader will meet it
+  elsewhere.
+
+  **Make the grouping explicit in `method`.** Name the field. A reader who disagrees with the
+  grouping can then redo it, which is the whole point of putting the method beside the figure.
+
+  **Where no grouping field exists, say the count is of records.** The corpus has 364 bridges and no
+  reason to think any two rows are one bridge; it says 364 structures and means it. The rule is not
+  a suspicion of every count — it is a check that takes one look at the schema.
+rationale: |
+  **The failure is systematic, not accidental, and the reason is worth naming.** An administrative
+  file records *acts*: a declaration signed, a violation cited, a name printed in a list. A corpus
+  asks about *the world*: how many storms, how many times the water was unsafe, how many men held
+  the office. One act per happening is the exception, not the rule — a serious problem generates
+  many acts, and a formality generates one. So the row count is biased upward exactly where the
+  subject matters most.
+
+  **Bluffton is the clean case.** Ten rows is ten quarters of testing, which is what a regulator
+  does; one problem is what the village had. A corpus that published "Bluffton has ten health-based
+  violations and Lima has three" would have compared a village's single failure against a city's
+  three separate ones, and got the ordering backwards.
+
+  **It is cheap and it has never once been wasted.** Three files, three groupings, three corrections,
+  and none took more than a line of code. Against that, each of the three naive counts would have
+  survived every check in the gate: they are verified, sourced, correctly tagged, and arithmetically
+  right about the wrong quantity.
+
+  **What this does not license.** Grouping to taste. The key has to be a field the publisher put
+  there — an incident window, a resolution date — and not a similarity the corpus notices between
+  rows. Two violations at one system in one year are two problems unless the file says otherwise.

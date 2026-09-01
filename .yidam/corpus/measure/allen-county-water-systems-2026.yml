@@ -1,0 +1,67 @@
+class: measure
+label: Allen County's public water systems, 2026
+description: |
+  **Eight community water systems serve 84,476 people, and six of them are the town.** [verified] —
+  [EPA SDWIS](../../catalog/epa-sdwis.md), systems with identifiers beginning `OH02`, active only.
+
+      system                     served   connections  owner   its own sources
+      Lima City                  65,619        27,113  local   6 reservoirs, 4 river intakes
+      Delphos City                7,101         2,750  local   1 river intake, 1 reservoir, 9 wells
+      Bluffton Village            4,125         1,505  local   8 wells, and a purchase
+      Elida Village               4,109         1,684  local   none — it buys from Lima
+      Spencerville Village        2,261         1,000  local   5 wells
+      Brightstar Lima MHP           480           204  private 1 well
+      Sun Valley Campground         462           244  private 1 well
+      Beaverdam Village             319           170  local   3 wells
+
+  **Lima's system serves more than the county seat by a factor of two.** Lima held 35,579 people at
+  the 2020 census and its water system reports serving 65,619 — sixty-five per cent of the county —
+  before counting the 4,109 it sells to [Elida](../place/elida.yml). [verified] — same source and
+  [the 2020 count](lima-population-2020-census.yml).
+
+  **Everything Lima drinks is surface water, and it is stored.** Its facility list carries six named
+  reservoirs — Ferguson, Bresler, Metzger, Williams, Twin Lakes and Lost Creek — with an intake on
+  each, and four more intakes on [the Ottawa](../natural-feature/ottawa-river.yml) and
+  [the Auglaize](../natural-feature/auglaize-river.yml). [verified] — same source, facility table.
+  **That is what the thirty-one lake and reservoir monitoring stations in a county with no natural
+  lakes are.** [inference] — see [the gauges](allen-county-water-gauges-2026.yml).
+
+  **The city drinks from the river nobody measures.** Two of its intakes are on the Auglaize, which
+  has 219 square miles of drainage above Spencerville and not one year of recorded peak flow.
+  [verified] — [the peak flows](ottawa-river-peak-flows-1924-2025.yml). [inference]
+
+  **Two of the eight own no surface source and are coded as surface anyway.** Elida buys from Lima;
+  Bluffton owns eight wells and buys surface water from Ottawa Village in Putnam County. The
+  system-level `gw_sw_code` describes the water in the pipe and not the ground it came from.
+  [verified] — same source, facility table.
+
+  **About one person in six is on none of them.** The eight report 84,476 against the county's
+  100,866 in 2024 — 84 per cent. The residual is not a count of private wells: these are
+  self-reported service populations, and Bluffton and Delphos both straddle county lines.
+  [inference] — computed against [the 2024 estimate](allen-county-population-2024.yml).
+
+  [open] Where the sixteen thousand get their water, and from what depth. The corpus holds ninety
+  USGS groundwater sites in this county and has read none of them.
+properties:
+  parameter: people served by community water systems in Allen County
+  value: "84476"
+  unit: people
+  as_of: "2026"
+  method: |
+    Selected on the `OH02` identifier prefix, which is Ohio's county code for Allen, and restricted
+    to `pws_activity_code` A and `pws_type_code` CWS. The thirty-three active non-community systems
+    — rest areas, campgrounds, schools, a tavern — are excluded, because they serve people who are
+    passing through or at work and counting them against a resident population would double-count.
+    Populations are as each system reports them and are service populations, not residents of any
+    boundary this corpus holds. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/epa-sdwis.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/epa-sdwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
