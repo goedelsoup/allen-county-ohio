@@ -58,14 +58,25 @@ carries is a report of who won a Lima election, which is a fact about country we
 about this archive; see
 [a weekly reports events, not states](../decisions/a-weekly-reports-events-not-states.yml).
 
-**No Lima newspaper is in it.** The county seat had daily papers through the whole of this period
+**No Lima newspaper is in it, and now the corpus knows the denominator.** Sixty-six newspaper
+titles were printed in Lima and not one of them is digitized here; ninety-nine were printed in the
+county and one is. [verified] —
+[the U.S. newspaper directory](us-newspaper-directory.md); see
+[the county's newspapers](../corpus/measure/allen-county-newspapers-1843-2026.yml). This entry
+stated the limit correctly for six phases and stated it without a scale, which is how a one per cent
+sample reads as a qualification; see
+[an index of the held is not an inventory of the made](../decisions/an-index-of-the-held-is-not-an-inventory-of-the-made.yml).
+The county seat had daily papers through the whole of this period
 and none of them is digitized here. Every fact this corpus has taken from the archive about Lima
 was therefore reported from somewhere else — a wire desk, a Washington evening paper, an Indiana
 staff correspondent sent north. That is not a small qualification, and it is the reason for
 [two papers printing one dispatch](../decisions/two-papers-printing-one-dispatch-are-one-witness.yml).
 
-**One Allen County paper is.** The Bluffton News, `sn87076554`, a weekly: **952 issues, 1939
-through 1959, with every year of that span present.** Density varies — 1951 has 9 issues and 1940
+**One Allen County paper is, and the archive holds a seventh of it.** The Bluffton News,
+`sn87076554`, a weekly: **952 issues, 1939 through 1959, with every year of that span present** —
+out of a hundred and fifty-one years running from 28 July 1875, of which Bowling Green State
+University holds microfilm continuously from 28 May 1896 to 31 December 1960. [verified] — the
+directory's holdings record; see [The Bluffton News](../corpus/organization/the-bluffton-news.yml). Density varies — 1951 has 9 issues and 1940
 has 29, against 53 in 1959 — so a run that looks continuous by year is not continuous by week. It
 is the first source this corpus holds that was written in Allen County and published in Allen
 County.
