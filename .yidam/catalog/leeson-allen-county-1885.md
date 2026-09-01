@@ -29,6 +29,9 @@ used-by:
   - ../corpus/event/the-building-of-fort-amanda-1812.yml
   - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/event/the-incorporation-of-delphos-1851.yml
+  - ../corpus/event/the-naming-and-incorporation-of-bluffton-1861.yml
+  - ../corpus/event/the-organization-of-cairo-1875.yml
   - ../corpus/jurisdiction/amanda-township.yml
   - ../corpus/jurisdiction/american-township.yml
   - ../corpus/jurisdiction/auglaize-township.yml
@@ -44,11 +47,13 @@ used-by:
   - ../corpus/jurisdiction/spencer-township.yml
   - ../corpus/jurisdiction/sugar-creek-township.yml
   - ../corpus/jurisdiction/village-of-beaverdam.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
   - ../corpus/measure/allen-county-civil-war-dead.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
+  - ../corpus/measure/allen-county-municipal-incorporations-1842-1904.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml

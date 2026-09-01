@@ -25,9 +25,15 @@ used-by:
   - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-lima-company-1861.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/event/the-naming-and-incorporation-of-bluffton-1861.yml
+  - ../corpus/jurisdiction/bath-township.yml
   - ../corpus/jurisdiction/city-of-lima.yml
+  - ../corpus/jurisdiction/village-of-bluffton.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-interurban-1901-1921.yml
+  - ../corpus/measure/allen-county-municipal-incorporations-1842-1904.yml
+  - ../corpus/measure/allen-county-outside-lima-1890-2020.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/allen-county-world-war-dead.yml
   - ../corpus/measure/allen-county-world-war-service.yml
@@ -56,6 +62,7 @@ used-by:
   - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
+  - ../corpus/place/bluffton.yml
   - ../corpus/place/cairo.yml
   - ../corpus/place/elida.yml
   - ../corpus/place/lima.yml

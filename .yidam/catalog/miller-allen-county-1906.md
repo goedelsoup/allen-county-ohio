@@ -25,8 +25,13 @@ used-by:
   - ../corpus/event/settlers-occupy-fort-amanda-1817.yml
   - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/event/the-naming-and-incorporation-of-bluffton-1861.yml
+  - ../corpus/event/the-organization-of-cairo-1875.yml
+  - ../corpus/jurisdiction/village-of-bluffton.yml
+  - ../corpus/jurisdiction/village-of-cairo.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-interurban-1901-1921.yml
+  - ../corpus/measure/allen-county-municipal-incorporations-1842-1904.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
@@ -51,6 +56,7 @@ used-by:
   - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/place/beaverdam.yml
   - ../corpus/place/bluffton.yml
+  - ../corpus/place/cairo.yml
   - ../corpus/place/delphos.yml
   - ../corpus/place/elida.yml
   - ../corpus/place/lafayette.yml
