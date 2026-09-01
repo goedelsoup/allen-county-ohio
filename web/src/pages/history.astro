@@ -25,6 +25,32 @@ const sky = assertion('the-blizzard-is-not-in-the-weather-file')
 const paid = assertion('eighty-four-cents-in-the-dollar')
 const war = assertion('the-third-war-is-counted-by-its-dead')
 const press = assertion('ninety-nine-papers-and-one-of-them-online')
+const colonel = assertion('a-colonel-of-that-name-in-the-war-of-1812')
+
+const colonelSpec = bar(
+  colonel.figures.map((f) => f.label),
+  colonel.figures.map((f) => f.value),
+  { yTitle: 'The fourteen counties of 1820, by what Howe says about the name', labelValues: true },
+)
+
+// What Howe's 1847 formation sentence gives for each of the fourteen. Typed out because the
+// attributions are quotations and the graph carries them as one measure.
+const namesOf1820 = [
+  ['Hancock', 'John Hancock, first president of the revolutionary congress'],
+  ['Henry', 'Patrick Henry, the celebrated Virginian orator in the revolutionary era'],
+  ['Marion', 'Gen. Francis Marion, of South Carolina, a partisan officer of the revolution'],
+  ['Mercer', 'Gen. Hugh Mercer, a Virginia officer who fell at Princeton, Jan. 3d, 1777'],
+  ['Paulding', 'John Paulding, of Peekskill, one of the three militia men who captured Major Andre'],
+  ['Putnam', 'Gen. Israel Putnam, born at Salem, Mass., 1718, died at Brooklyn, Conn., 1790'],
+  ['Van Wert', 'Isaac Van Wart, one of the three captors of Maj. Andre, died 1828, aged 68'],
+  ['Williams', 'David Williams, of Tarrytown, one of the three captors of Maj. Andre'],
+  ['Seneca', 'the tribe who had a reservation within its limits'],
+  ['Allen', '“a colonel of that name in the war of 1812”'],
+  ['Wood', '“the brave and chivalrous Col. Wood, a distinguished officer of engineers in the war of 1812”'],
+  ['Crawford', '— no namesake given'],
+  ['Hardin', '— no namesake given'],
+  ['Sandusky', '— no namesake given'],
+]
 const faith = assertion('a-hundred-and-sixty-congregations')
 const jail = assertion('three-times-a-mob-came-to-the-jail')
 
@@ -1104,6 +1130,54 @@ const since = new Date().getUTCFullYear() - last
       community began with Levi Jacobs about 1850 and "never located in any other town in Allen
       County" — a dozen families in 1878, about a hundred and some 350 people by 1921, seven years
       after they built Temple Beth Israel.
+    </p>
+  </section>
+
+  <section>
+    <h2>Who the county is named for</h2>
+    <AssertionCard assertion={colonel} />
+    <p>
+      Two men are usually offered: Ethan Allen of Vermont, and John Allen, a Kentucky colonel
+      killed at the River Raisin in January 1813. The earliest general account of Ohio's counties
+      this site holds is Henry Howe's, published in 1847 — thirty-eight years before the county's
+      own first history — and it settles half the question in one clause: Allen was
+      <em>"named in honor of a colonel of that name in the war of 1812."</em> Ethan Allen died in
+      1789.
+    </p>
+    <p>
+      What Howe has is a rank and a war, not a man, and forty years of revision did not supply one.
+      Of the fourteen counties the act of 12 February 1820 laid out of the cession, he attributes
+      eleven; eight of the persons he names in full, and two he gives only a rank and a war — Allen
+      and Wood, the two most recent deaths on the list.
+    </p>
+    <ChartFigure
+      id="counties-of-1820"
+      title="The fourteen counties of 1820, by what Howe's formation sentence gives"
+      caption="Every man Howe names in full belongs to the Revolution — including Paulding, Van Wert and Williams, the three militiamen who took Major André in 1780, given a county each on adjoining ground. The two he identifies only by rank and war are the two officers of 1812."
+      columns={['', 'Counties']}
+      rows={colonel.figures.map((f) => [f.label, f.value])}
+      height={260}
+    />
+    <script type="application/json" data-chart-spec="counties-of-1820" set:html={JSON.stringify(colonelSpec)} is:inline />
+    <DataTable
+      title="What Howe's 1847 formation sentence says of each"
+      caption="Read entry by entry rather than by search: the attribution appears only in the formation sentence, and a keyword search for “named in honor” finds two of the eleven."
+      columns={['County', 'Named from']}
+      rows={namesOf1820}
+    />
+    <p>
+      The Ethan Allen story has a source and a date. The 1921 county history dates the act, then
+      reasons from the company the name keeps — the assembly "evidently had in mind a number of
+      Revolutionary patriots" — and turns to "the life and character of the patriot <em>seemingly</em>
+      honored in the name of Allen County," followed by a page and a half on Ethan Allen. Both
+      hedges are the book's own. Sixty-five pages earlier the same volume has Col. John Allen riding
+      out with 110 men toward Frenchtown, and never joins the two.
+    </p>
+    <p>
+      One correction falls out of this. This site used to say the 1885 county history "gives
+      namesakes freely" and declines to give one here. It does not: its chapter on Ohio's counties
+      runs to seventy-nine entries and carries exactly one namesake, its first. The silence about
+      Allen was the book's habit, not a judgment about Allen.
     </p>
   </section>
 

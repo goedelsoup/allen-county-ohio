@@ -2837,6 +2837,48 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1929", value: 4_548.0, literal: "4548" },
         ],
     },
+    Assertion {
+        id: "a-colonel-of-that-name-in-the-war-of-1812",
+        statement: "The earliest printed account of Ohio's counties says Allen County was named \
+                    for a colonel of the War of 1812, and cannot name him. Of the fourteen \
+                    counties the 1820 act laid out, Allen and Wood are the only two Howe \
+                    attributes to a man whose name he withholds \u{2014} and Ethan Allen, the \
+                    other candidate usually offered, died in 1789.",
+        topic: "history",
+        supports: &[
+            support!(
+                "question/namesake-of-allen-county.yml",
+                "**The earliest source held here makes the attribution, and it rules out one of the two\n  candidates.** Howe's *Historical Collections of Ohio*, 1847: \"Allen was formed April 1st, 1820,\n  from Indian territory, and named in honor of a colonel of that name in the war of 1812: it was\n  temporarily attached to Mercer county for judicial purposes.\""
+            ),
+            support!(
+                "measure/ohio-counties-of-1820-and-their-names.yml",
+                "**Eight of the ten persons Howe names in full, and two he identifies by rank and war alone.**\n  The two are Allen and Wood, and the description he gives each is the same: an officer of the war\n  of 1812."
+            ),
+            support!(
+                "measure/ohio-counties-of-1820-and-their-names.yml",
+                "**In figures: 14 counties, 11 attributions, 8 named in full and 2 given only a rank and a war.**"
+            ),
+            support!(
+                "measure/ohio-counties-of-1820-and-their-names.yml",
+                "**Three of the fourteen commemorate one event.** Paulding, Van Wert and Williams are the three\n  militiamen who took Major Andr\u{e9} in 1780, given a county each and adjoining ground in the\n  north-west of the state."
+            ),
+            support!(
+                "question/namesake-of-allen-county.yml",
+                "**The Ethan Allen attribution has a source, a date, and an author who marked it as a guess.**"
+            ),
+            support!(
+                "question/namesake-of-allen-county.yml",
+                "**A claim this node made about the 1885 history is withdrawn.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Counties in the act", value: 14.0, literal: "14" },
+            Figure { label: "Given a namesake", value: 11.0, literal: "11" },
+            Figure { label: "Named in full", value: 8.0, literal: "8" },
+            Figure { label: "Rank and war only", value: 2.0, literal: "2" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -722,6 +722,26 @@
       ]
     },
     {
+      "id": "place-allen-county::counties-erected-from-the-cession-by-the-act-of-12-February-1820",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "counties erected from the cession by the act of 12 February 1820",
+      "unit": "counties",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/ohio-counties-of-1820-and-their-names.yml",
+          "label": "The Ohio counties of 1820 and the names Howe gives them",
+          "as_of": "1820",
+          "value": 14.0,
+          "published": "14",
+          "tier": "verified",
+          "source": "catalog/howe-historical-collections-of-ohio.md",
+          "method": "Read from the whitespace-normalised full text of both Howe editions on archive.org, entry by entry rather than by search, because the formation sentence is the only place an attribution appears and a keyword search for \"named in honor\" returns two of the eleven. The 1847 edition gives \"formed ... April 1st, 1820\" for thirteen of the fourteen and gives Marion only an organization date of 1824; the fourteenth name is taken from [the 1921 county history](../../catalog/rusler-allen-county-1921.md), which lists the group the act provided for and includes Union, a county erected by a different act five weeks earlier. The discrepancy is reported rather than resolved. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::county-population-less-the-city-of-Lima,-decennial",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -7795,6 +7815,91 @@
           "label": "1929",
           "value": 4548.0,
           "literal": "4548"
+        }
+      ]
+    },
+    {
+      "id": "a-colonel-of-that-name-in-the-war-of-1812",
+      "statement": "The earliest printed account of Ohio's counties says Allen County was named for a colonel of the War of 1812, and cannot name him. Of the fourteen counties the 1820 act laid out, Allen and Wood are the only two Howe attributes to a man whose name he withholds — and Ethan Allen, the other candidate usually offered, died in 1789.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "question/namesake-of-allen-county.yml",
+          "node_label": "Who is Allen County named for?",
+          "span": "**The earliest source held here makes the attribution, and it rules out one of the two candidates.** Howe's *Historical Collections of Ohio*, 1847: \"Allen was formed April 1st, 1820, from Indian territory, and named in honor of a colonel of that name in the war of 1812: it was temporarily attached to Mercer county for judicial purposes.\"",
+          "tier": "inference",
+          "sources": [
+            "catalog/howe-historical-collections-of-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/ohio-counties-of-1820-and-their-names.yml",
+          "node_label": "The Ohio counties of 1820 and the names Howe gives them",
+          "span": "**Eight of the ten persons Howe names in full, and two he identifies by rank and war alone.** The two are Allen and Wood, and the description he gives each is the same: an officer of the war of 1812.",
+          "tier": "inference",
+          "sources": [
+            "catalog/howe-historical-collections-of-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/ohio-counties-of-1820-and-their-names.yml",
+          "node_label": "The Ohio counties of 1820 and the names Howe gives them",
+          "span": "**In figures: 14 counties, 11 attributions, 8 named in full and 2 given only a rank and a war.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/howe-historical-collections-of-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/ohio-counties-of-1820-and-their-names.yml",
+          "node_label": "The Ohio counties of 1820 and the names Howe gives them",
+          "span": "**Three of the fourteen commemorate one event.** Paulding, Van Wert and Williams are the three militiamen who took Major André in 1780, given a county each and adjoining ground in the north-west of the state.",
+          "tier": "inference",
+          "sources": [
+            "catalog/howe-historical-collections-of-ohio.md"
+          ]
+        },
+        {
+          "node": "question/namesake-of-allen-county.yml",
+          "node_label": "Who is Allen County named for?",
+          "span": "**The Ethan Allen attribution has a source, a date, and an author who marked it as a guess.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "question/namesake-of-allen-county.yml",
+          "node_label": "Who is Allen County named for?",
+          "span": "**A claim this node made about the 1885 history is withdrawn.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Counties in the act",
+          "value": 14.0,
+          "literal": "14"
+        },
+        {
+          "label": "Given a namesake",
+          "value": 11.0,
+          "literal": "11"
+        },
+        {
+          "label": "Named in full",
+          "value": 8.0,
+          "literal": "8"
+        },
+        {
+          "label": "Rank and war only",
+          "value": 2.0,
+          "literal": "2"
         }
       ]
     }
