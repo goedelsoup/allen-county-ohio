@@ -22,6 +22,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-court-of-common-pleas::named-holders-of-the-common-pleas-bench-serving-Allen-County,-1831–1920",
+      "subject": "jurisdiction/allen-county-court-of-common-pleas.yml",
+      "subject_label": "Allen County Court of Common Pleas",
+      "parameter": "named holders of the common pleas bench serving Allen County, 1831–1920",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-common-pleas-bench-1833-1920.yml",
+          "label": "The Allen County common pleas bench, 1833–1920",
+          "as_of": "1920",
+          "value": 27.0,
+          "published": "27",
+          "tier": "verified",
+          "source": "catalog/miller-allen-county-1906.md",
+          "method": "Transcribed by hand from the full text of both histories on archive.org. The count of 27 is the three associate judges of 1831, the twenty presidents and judges the 1906 book names in sequence, and the four the 1921 book adds after it; Metcalf is counted once although the 1906 book gives him two spans. It is a count of persons named as sitting, not of terms, and it is not a count of Allen County's own judges: for most of this period the seat was a multi-county one and the books name the holder's home county where they know it. Dates are given as printed, including the scan's \"1S80\" for James H. Day's start, which is reported here as 1880 and flagged nowhere else because the surrounding sentence dates his resignation to 1892. [verified]"
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::General-Fund-revenue",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -1182,6 +1202,26 @@
       ]
     },
     {
+      "id": "place-allen-county::members-of-the-U.S.-House-named-as-representing-the-county,-1831–1906",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "members of the U.S. House named as representing the county, 1831–1906",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-in-congress-1831-1933.yml",
+          "label": "Allen County in Congress, 1831–1933",
+          "as_of": "1906",
+          "value": 18.0,
+          "published": "18",
+          "tier": "verified",
+          "source": "catalog/miller-allen-county-1906.md",
+          "method": "The 1906 book's list transcribed by hand — the scan runs the district headings into the prose and an automatic reading would lose them, which is where its only error is. The federal record was queried for Ohio districts 3, 4 and 5 for every Congress from 1831 to 1907 and matched to the book by surname within the book's own spans; the two spelling differences the match threw up (Emery for Emory, Le Blond for LeBlond) are the transcriber's and not the record's. The count of eighteen is persons, not entries: Potter and Le Fevre each appear twice under different headings. The federal file is authority for who sat for a district and is not authority for which district this county was in, so no claim here derives the second from the first. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::modelled-prevalence-of-health-measures,-county-and-city",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1278,6 +1318,26 @@
           "tier": "verified",
           "source": "catalog/gnis-domestic-names-ohio.md",
           "method": "The Ohio domestic names file, 17,921 rows, filtered two ways. First on `county_name == \"Allen\"` and `state_numeric == 39`, which is the filter the catalog entry already documents and which returns 109. Second by ray-casting every Ohio row's primary and source coordinates against the Census Bureau's 2020 county polygon for GEOID 39003, 1,243 vertices, counting a feature if either coordinate falls inside; that returns 120. Distances to the boundary are computed on a local flat-earth approximation and are quoted only to the nearest metre, which is well inside what that approximation supports at this latitude. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::names-in-the-county's-two-General-Assembly-rosters",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "names in the county's two General Assembly rosters",
+      "unit": "entries",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-general-assembly-1833-1906.yml",
+          "label": "Allen County in the Ohio General Assembly, 1833–1906",
+          "as_of": "1906",
+          "value": 70.0,
+          "published": "70",
+          "tier": "verified",
+          "source": "catalog/miller-allen-county-1906.md",
+          "method": "Both lists transcribed by hand from the full text on archive.org. They are printed as running prose separated by commas, not as tables, and the scan has damage in the names — \"Cr.ites\" for Crites, \"William Ruler\" where a Rusler may be meant — so the entries are given as printed and no spelling is corrected against anything. The count of 70 is entries, not persons: three senate names occur twice and one name occurs in both chambers, so the seventy entries are sixty-six people. The assembly counts are inclusive of both endpoints and are floors, since the book postdates the 74th. [verified]"
         }
       ]
     },
@@ -7000,6 +7060,101 @@
           "label": "1920",
           "value": 1000.0,
           "literal": "1,000"
+        }
+      ]
+    },
+    {
+      "id": "three-rosters-and-only-one-can-be-checked",
+      "statement": "The 1906 county history prints three rosters of Allen County's legislators in one chapter. Nineteen of the twenty entries in the congressional one survive an entry-by-entry check against the federal record; the other two give seventy names in order and not a single date.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-congress-1831-1933.yml",
+          "node_label": "Allen County in Congress, 1831–1933",
+          "span": "**In figures: 20 entries, 18 men, 10 home counties, 3 of the 18 from Allen, and 1 entry that fails the check against the federal record.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md",
+            "catalog/congress-legislators.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-in-congress-1831-1933.yml",
+          "node_label": "Allen County in Congress, 1831–1933",
+          "span": "**Nineteen of the twenty entries survive the check and one does not.** Laid against the federal record Congress by Congress, every name, district and span in the book is confirmed except 1891–1896: the book files Fernando C. Layton of Auglaize under the Fourth for that whole span, and Layton sat for the Fifth in the 52nd Congress and the Fourth in the 53rd and 54th.",
+          "tier": "verified",
+          "sources": [
+            "catalog/congress-legislators.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-in-congress-1831-1933.yml",
+          "node_label": "Allen County in Congress, 1831–1933",
+          "span": "**The county changed congressional districts four times in seventy-five years and never held the same number twice running.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-general-assembly-1833-1906.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 1833–1906",
+          "span": "**In figures: 35 representatives against at least 39 General Assemblies, and 35 senate entries — 32 people — against at least 43.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-general-assembly-1833-1906.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 1833–1906",
+          "span": "**Neither list carries a year, and the book's own datings show they cannot be read as one name per assembly.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-general-assembly-1833-1906.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 1833–1906",
+          "span": "**What that costs is not hypothetical.** This corpus already holds \"the Boesel railroad bill\", passed by the Legislature in April 1872, which put $100,000 of bonds to a vote in Lima and Ottawa Township and carried with eight votes against. A Charles Boesel stands sixteenth in this senate roster.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-common-pleas-bench-1833-1920.yml",
+          "node_label": "The Allen County common pleas bench, 1833–1920",
+          "span": "**The bench's odd term dates are at least a hundred and eighteen years old.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "The corpus cannot say they are the same man, because the list that would say so has no years in it."
+      ],
+      "figures": [
+        {
+          "label": "Representatives named",
+          "value": 35.0,
+          "literal": "35"
+        },
+        {
+          "label": "Assemblies since the 36th",
+          "value": 39.0,
+          "literal": "39"
+        },
+        {
+          "label": "Senate entries",
+          "value": 35.0,
+          "literal": "35"
+        },
+        {
+          "label": "Assemblies since the 32nd",
+          "value": 43.0,
+          "literal": "43"
         }
       ]
     },

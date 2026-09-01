@@ -20,12 +20,37 @@ const dotted = assertion('the-ninety-nine-year-hole-is-dotted')
 const money = assertion('a-grand-total-is-not-a-budget')
 const libraries = assertion('three-per-cent-of-the-library-money-is-local')
 const officers = assertion('a-line-of-holders-for-every-office')
+const rosters = assertion('three-rosters-and-only-one-can-be-checked')
 
 const officerSpec = bar(
   officers.figures.map((f) => f.label),
   officers.figures.map((f) => f.value),
   { yTitle: 'Holders named, 1831–1906', labelValues: true },
 )
+
+const rosterSpec = bar(
+  rosters.figures.map((f) => f.label),
+  rosters.figures.map((f) => f.value),
+  { yTitle: 'Names printed against General Assemblies elapsed', labelValues: true },
+)
+
+// The five district headings the 1906 history prints, with the members under each. Typed out
+// because the members are the book's prose, not nodes the graph carries.
+const congressDistricts = [
+  ['Third', 'to 1842', 'Joseph H. Crane, Patrick G. Goode'],
+  ['Fifth', '1843–1852', 'Emory D. Potter, William Sawyer, Emory D. Potter, Alfred P. Edgerton'],
+  ['Fourth', '1853–1862', 'Mathias H. Nichols, William Allen'],
+  [
+    'Fifth',
+    '1863–1882',
+    'Francis C. LeBlond, William Mungen, Charles N. Lamison, Americus V. Rice, Benjamin Le Fevre',
+  ],
+  [
+    'Fourth',
+    'from 1883',
+    'Benjamin Le Fevre, Charles M. Anderson, S. S. Yoder, Fred C. Layton, George A. Marshall, Robert B. Gordon, Harvey C. Garber',
+  ],
+]
 
 const firstOfficers = [
   ['Treasurer', 'Adam White', 1831, 27],
@@ -849,6 +874,65 @@ const traced = offices.filter(
       "served as prosecuting attorney two terms". Nichols had resigned in 1852 to enter Congress,
       having founded the county's second newspaper nine years earlier by selling his waistcoat to
       buy paper for the first issue.
+    </p>
+  </section>
+
+  <section>
+    <h2>Three rosters, and only one can be checked</h2>
+    <AssertionCard assertion={rosters} />
+    <p>
+      The same 1906 history prints the county's legislators in one chapter: a list of its members
+      of Congress, a list of its members of the Ohio House, and a list of its state senators. The
+      first gives district headings, home counties and years. The other two give names separated by
+      commas, and stop.
+    </p>
+    <p>
+      The congressional list can therefore be tested, and it holds. Laid against the federal record
+      Congress by Congress, nineteen of its twenty entries are confirmed exactly — twenty entries,
+      eighteen men, ten home counties, three of them from Allen County. The one that fails is
+      Fernando C. Layton, filed under the Fourth District for 1891–96 when he sat for the Fifth
+      until 1893. It is the only kind of place the book's method could fail: a map moving under a
+      sitting member. The book had handled that case correctly eight years earlier, splitting
+      Benjamin Le Fevre across two headings when the county changed districts and he stayed its
+      member.
+    </p>
+    <DataTable
+      title="Five headings, three numbers"
+      caption="Allen County changed congressional district four times in seventy-five years and never held the same number twice running. The Fourth of 1853 is not the Fourth of 1883, and neither is the Fourth the county votes in today."
+      columns={['District', 'Years', 'Members the book names']}
+      rows={congressDistricts}
+    />
+    <p>
+      The two state lists cannot be tested at all, because there is nothing in them to test. The
+      House list begins with the 36th General Assembly, seated 4 December 1837; the Senate list with
+      the 32nd, seated 2 December 1833. The same book cites the 74th General Assembly as of 1901.
+      Thirty-five representatives are spread over at least thirty-nine assemblies and thirty-five
+      senate entries over at least forty-three, and three of the senate names recur — so that list
+      is a list of terms rather than of men, and says nothing about which terms.
+    </p>
+    <ChartFigure
+      id="assembly-names"
+      title="Names printed, against General Assemblies elapsed"
+      caption="Both counts are floors: the assemblies are counted inclusively to the 74th, which the book cites as of 1901, and the book itself was printed in 1906."
+      columns={['Roster', 'Count']}
+      rows={rosters.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="assembly-names" set:html={JSON.stringify(rosterSpec)} is:inline />
+    <p>
+      What that costs is not hypothetical. This site holds the Boesel railroad bill, passed by the
+      Ohio legislature in April 1872, which put $100,000 of bonds to a vote in Lima and Ottawa
+      Township and carried with eight votes against. A Charles Boesel stands sixteenth of the
+      thirty-five entries in the senate roster. Sixteenth of thirty-five across seventy-three years
+      interpolates to about 1866, which is close enough to be tempting and is not evidence of
+      anything. The two are held apart.
+    </p>
+    <p>
+      One name of the seventy can be dated, and the sentence that dates it is ninety pages away in
+      the book's chapter of legal biographies: Isaiah S. Pillars, twenty-fifth in the House roster,
+      "In 1871 he was elected Representative, but declined a second term". He had commanded Camp
+      Lima with the rank of colonel in 1861, was elected Attorney General of Ohio in 1877, and used
+      his one term in the legislature to resist a tax levy for railroad construction and to write a
+      minority report in favour of abolishing capital punishment.
     </p>
   </section>
 </Base>

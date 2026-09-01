@@ -2537,6 +2537,57 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "three-rosters-and-only-one-can-be-checked",
+        statement: "The 1906 county history prints three rosters of Allen County's legislators in \
+                    one chapter. Nineteen of the twenty entries in the congressional one survive an \
+                    entry-by-entry check against the federal record; the other two give seventy \
+                    names in order and not a single date.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-in-congress-1831-1933.yml",
+                "**In figures: 20 entries, 18 men, 10 home counties, 3 of the 18 from Allen, and 1 entry that fails\n  the check against the federal record.**"
+            ),
+            support!(
+                "measure/allen-county-in-congress-1831-1933.yml",
+                "**Nineteen of the twenty entries survive the check and one does not.** Laid against the federal\n  record Congress by Congress, every name, district and span in the book is confirmed except\n  1891\u{2013}1896: the book files Fernando C. Layton of Auglaize under the Fourth for that whole span, and\n  Layton sat for the Fifth in the 52nd Congress and the Fourth in the 53rd and 54th."
+            ),
+            support!(
+                "measure/allen-county-in-congress-1831-1933.yml",
+                "**The county changed congressional districts four times in seventy-five years and never held the\n  same number twice running.**"
+            ),
+            support!(
+                "measure/allen-county-general-assembly-1833-1906.yml",
+                "**In figures: 35 representatives against at least 39 General Assemblies, and 35 senate entries \u{2014}\n  32 people \u{2014} against at least 43.**"
+            ),
+            support!(
+                "measure/allen-county-general-assembly-1833-1906.yml",
+                "**Neither list carries a year, and the book's own datings show they cannot be read as one name per\n  assembly.**"
+            ),
+            support!(
+                "measure/allen-county-general-assembly-1833-1906.yml",
+                "**What that costs is not hypothetical.** This corpus already holds \"the Boesel railroad bill\",\n  passed by the Legislature in April 1872, which put $100,000 of bonds to a vote in Lima and Ottawa\n  Township and carried with eight votes against. A Charles Boesel stands sixteenth in this senate\n  roster."
+            ),
+            support!(
+                "measure/allen-county-common-pleas-bench-1833-1920.yml",
+                "**The bench's odd term dates are at least a hundred and eighteen years old.**"
+            ),
+        ],
+        answers: &[
+            // The General Assembly measure refuses to identify the Boesel of the roster with
+            // the Boesel of the 1872 bond bill. That refusal is not routed around here: it is
+            // the assertion. A list with no years in it cannot be joined to a dated event, and
+            // saying so is the whole claim.
+            "cannot say they are the same man",
+        ],
+        figures: &[
+            Figure { label: "Representatives named", value: 35.0, literal: "35" },
+            Figure { label: "Assemblies since the 36th", value: 39.0, literal: "39" },
+            Figure { label: "Senate entries", value: 35.0, literal: "35" },
+            Figure { label: "Assemblies since the 32nd", value: 43.0, literal: "43" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
