@@ -1,0 +1,68 @@
+id: a-category-has-a-birthday
+summary: >-
+  Allen County's severe weather count rises from four events in the 1950s to 121 in the 2010s and
+  its tornado count does not. The rise is thirteen categories being born, not thirty times the
+  weather. This records how to date a category's birth from the file itself, and why the corpus
+  crossed the file against an unrelated one to find what its silence hides.
+context: |
+  [a-reporting-change-has-a-date-and-a-control](a-reporting-change-has-a-date-and-a-control.yml)
+  was written one phase ago for the sheriff's offense counts: find the documented break, cut the
+  series there, report the halves, and test with a control the same definitional change would move
+  the other way.
+
+  The NOAA Storm Events Database is the same problem in three ways that decision does not cover.
+  The break is not one date but a schedule — sixteen event types with sixteen different first
+  years. The publisher's documentation of that schedule is a JavaScript page that returns nothing
+  to a fetch, so there is no `nibrs_start_date` field to look up. And the control is not a second
+  measure of a different thing; it is the one category that has been counted since the beginning.
+decision: |
+  **When a file counts events by category, compute each category's first appearance before reading
+  any count.** The result is the schedule of the file's own coverage. In this county: tornado 1950,
+  thunderstorm wind 1955, hail 1959 — and then nothing new for thirty-seven years, then flash
+  flood, ice storm, winter storm and cold in 1996, and nine more types after. Thirteen of sixteen
+  categories are younger than 1996. That table is the break, and it is derivable from the data when
+  it is not fetchable from the publisher.
+
+  **A zero before a category's first year means "not counted yet", never "did not happen".** Write
+  it that way in the node. The count of blizzards in Allen County before 2007 is not zero; it is
+  undefined.
+
+  **When one category spans the whole file, it is the control, and it is a better one than a
+  different measure.** Tornado is counted in all seven decades here. The total goes 4, 8, 12, 32,
+  58, 95, 121 — strictly increasing, one ordering of 5,040. The tornado column goes 1, 2, 4, 3, 2,
+  3, 4. Same county, same file, same seventy-six years, and the difference between the two columns
+  is the growth of the file rather than the growth of the weather.
+
+  **Then cross the file against an independent record of the same events, to find what its silence
+  hides.** An internal control shows that a rise is an artefact. It cannot show what is missing.
+  Allen County's six federally declared weather disasters were matched one by one against this file:
+  five have a dated event in it — 1965, 2004, 2005, 2007, 2012 — and the sixth, the blizzard of
+  January 1978, has nothing, because in 1978 this database did not record blizzards. **No amount of
+  reading the weather file discovers the blizzard. Only the administrative file does.**
+rationale: |
+  **The internal control and the external cross-check answer different questions.** The control
+  answers "is this rise real?" — no. The cross-check answers "is this absence real?" — also no, and
+  the two are not the same doubt. A corpus that only ran the control would have published a correct
+  and useless statement: that the record grows because the recording grew. Running the county's
+  declarations against it produced a specific missing storm with a date.
+
+  **Deriving the schedule beats trusting the documentation, here and generally.** The published
+  coverage note would say the database records all forty-eight event types from 1996. That is true
+  nationally and it is not what this county's file does: heavy rain does not appear here until 2020,
+  lightning until 2006, blizzard until 2007. A national start date is an upper bound on when a
+  category could appear in one county, not the date it did. The first-appearance table is the local
+  truth and costs one pass over the rows.
+
+  **The same shape has now appeared in five files in six phases** — mayoral lists that mix terms and
+  runs, ten declarations for eight incidents, twenty drinking-water violations with ten resolutions,
+  a sheriff's offenses split by a definition change, and now a weather record whose categories have
+  birthdays. See [the-file-carries-its-own-grouping-key](the-file-carries-its-own-grouping-key.yml).
+  The recurring lesson is that an administrative or observational file counts **acts of recording**,
+  and the unit of recording has a history that is not the history of the thing recorded.
+
+  **What this does not license.** Treating every flat control as proof. The tornado rate here rose
+  from 0.24 a year to 0.39 across 1996 on counts of eleven and twelve, which is not nothing; what
+  carries the argument is that the decade series is unordered while the total's is strictly ordered
+  across seven decades. On counts this small the control bounds the artefact, it does not eliminate
+  the possibility of real change, and the corpus says so rather than claiming the weather is
+  constant.
