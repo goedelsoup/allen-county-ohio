@@ -3007,6 +3007,59 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-churches-1906-1921.yml",
+      "class": "measure",
+      "label": "Allen County's churches, 1906 and 1921",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1920",
+        "method": "Read from the full text of the 1906 and 1921 county histories on archive.org. The 1921 figure is the book's own report of a survey it does not name a date for; the corpus dates it 1920 from the population it implies and marks that an inference. Bluffton's memberships are transcribed as the 1906 book prints them and are not summed into any county total, because no comparable count exists for the rest of the county in either book. [verified]",
+        "parameter": "communicants in Allen County",
+        "unit": "communicants",
+        "value": "17000"
+      },
+      "blocks": [
+        {
+          "text": "**A survey in about 1920 put the county's church-going at a quarter of its people and its communicants at something like seventeen thousand.** \"The survey has shown the overlapped church parish both in town and country, the majority of people in the towns passing other churches to reach their own, and since only about 25 per cent of the population attends church there are something like 17,000 communicants in Allen County.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), which attributes it to \"the National, State and County Religious Survey\".",
+          "tier": "verified"
+        },
+        {
+          "text": "**The book's arithmetic checks against the census.** The county held 68,203 people in 1920 and 17,000 is 24.9 per cent of them. [inference] — computed against [the 1910–1940 counts](allen-county-population-1940-1990.yml). The estimate is at least internally consistent, which is more than a round number in a county history usually is.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is not comparable with the 2020 figure and the corpus does not trend the two.** 1921 counts people who attend; 2020 counts people a religious body reports as adherents, including children in bodies that count them. Twenty-five per cent and 57.4 per cent are answers to different questions asked a century apart. [inference] — see [the congregations of 2020](allen-county-congregations-2020.yml) and [the control is the figure that cannot move](../../decisions/the-control-is-the-figure-that-cannot-move.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Bluffton in 1906 had eight congregations and the book counted every member.** [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), which calls the village \"a village of churches\". In order: Methodist Episcopal 180, German Reformed 150, Church of Christ 113, Presbyterian 58, St. Mary's Catholic 50, Evangelical Lutheran 45, and the Mennonite Church of Bluffton 31 — then the Swiss Mennonite Church, \"embracing St. John's and Ebenezer congregations as well as the one of Bluffton\", with 640.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Swiss Mennonite figure is not a Bluffton figure and the corpus does not add it in.** It is a total for three congregations — St. John's, Ebenezer and the Bluffton one — and only the third is in the village. The seven village congregations come to 627 between them, against a village of 1,783 in 1900 and 1,953 in 1910; the Swiss Mennonite 640 would nearly double that and would be counting the surrounding country. [inference] — computed against [the 1890–1910 divisions](allen-county-townships-1890-1910.yml). Membership rolls in a farming township reach past the corporation line, and no figure here is a share of a place.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Trinity Methodist's cornerstone dates the county seat's oldest congregation in six figures.** \"In 1829 there was a mission; in 1832 there was a church organization; in 1835 there was a mission house, and in 1852 there was a church; in 1872 there was a second church, and in 1910 the present magnificent edifice.\" [verified] — the 1921 history, quoting the stone. Its own text dates the dedication of that edifice to 17 March 1912, so the stone and the page disagree by two years.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1921 book makes two claims about Trinity that it does not source and this corpus does not adopt.** That it is \"said to be the seventh largest Methodist Church in the world\", and that its home missionary society of 800 members is \"said to be the largest similar organization in the world\". Its membership is given as 2,000. [verified] — same source, quoted with its hedges intact.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima's synagogue was built in 1914.** \"Temple Beth Israel, the Jewish Synagogue in Lima, was erected in 1914 — the Jewish year 5674 — and over the door is this inscription: 'Mine House of Prayer for All Peoples.'\" [verified] — same source. See [Temple Beth Israel](../organization/temple-beth-israel.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**By 1870 the denominational map was set.** \"In the first half-century about all the denominations were planted in Allen County that are here today — 1870 being considered the semi-centennial in local history.\" [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-civil-war-dead.yml",
       "class": "measure",
       "label": "Allen County's Civil War dead, counted from the roster",
@@ -3193,6 +3246,47 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-congregations-2020.yml",
+      "class": "measure",
+      "label": "Allen County's congregations, 2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2020",
+        "method": "The county summary sheet and the group-by-county sheet of the 2020 U.S. Religion Census, filtered to FIPS 39003. The 49 group rows sum to the summary sheet's 160 congregations and 58,696 adherents exactly, which is the check that the read is complete. Adherents are as each religious body reported them and the bodies do not share a definition; nine congregations report no adherent figure and are counted as congregations only. Neighbouring counties are read from the same sheet. [verified]",
+        "parameter": "religious congregations in Allen County",
+        "unit": "congregations",
+        "value": "160"
+      },
+      "blocks": [
+        {
+          "text": "A hundred and sixty congregations, forty-nine religious bodies, and 58,696 people reported as adherents of one of them. [verified] — [the 2020 U.S. Religion Census](../../catalog/us-religion-census-2020.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**That is 57.4 per cent of the county, and the denominator is the census count.** 102,206, the same figure this corpus holds from [the 2020 census](allen-county-population-2020-census.yml). [verified] — same source. The other 42.6 per cent are people no religious body reported, which is not the same as people who belong to none.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two bodies hold nearly half of it.** The Catholic Church has 14,732 adherents in 8 congregations — a quarter of the county's total in five per cent of its churches, and by far the largest congregations here at some 1,842 apiece — and non-denominational Christian churches have 11,530 in 25. [verified] — same source. Together, 44.7 per cent of adherents. [inference] — computed.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Seventeen congregations belong to historically Black denominations and they hold 5,365 adherents.** The National Missionary Baptist Convention with 13 and 4,394, the National Baptist Convention USA with 2 and 701, the African Methodist Episcopal Church with 1 and 150, and the Church of God in Christ with 1 and 120. [inference] — the four groups summed; the file does not aggregate them and does not describe any congregation's membership by race.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Sixteen congregations and 1,794 adherents are Anabaptist in origin, and the tradition is a century and three-quarters old here.** Mennonite Church USA has 3 and 536, the Church of the Brethren 4 and 534, the Missionary Church 4 and 324, the two Old German Baptist Brethren bodies 2 and 178, and three smaller Mennonite bodies 1 congregation each and 222 between them. [inference] — summed from the same rows, and the grouping is this corpus's: the file has no Anabaptist column, and the Missionary Church is Mennonite in descent and evangelical in present practice. The Mennonites came to Richland Township from Holmes County in 1848. [verified] — [the churches of 1906 and 1921](allen-county-churches-1906-1921.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**This county has fewer churches for its size than most of the country and more adherents than most of its neighbours.** 156.5 congregations per 100,000 people ranks 2,160th of 3,146 counties; 57.4 per cent adherence ranks 904th. [verified] — same source, its own rank columns. The regional gradient is sharp. Reading the eight counties around this one: Mercer 77.6 per cent, Putnam 72.0 and Shelby 63.9 to the south and west; Auglaize 52.2 due south; and Hancock 41.2, Logan 38.7, Van Wert 35.5 and Hardin 30.8 to the north and east. Allen at 57.4 sits between the two groups, and the high ones are the German Catholic settlement country of west-central Ohio. [inference] — computed from the same county sheet; the settlement explanation is this corpus's and no source here states it.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-crops-2022.yml",
@@ -8433,6 +8527,10 @@
           "tier": "inference"
         },
         {
+          "text": "**It was founded as Central Mennonite College and its cornerstone was laid on 19 June 1900.** \"The Mennonites have established in Bluffton a college which is an ornament to the town as well as being an institution of unusual advantage to the citizens. It was founded by the Middle District Conference of the Mennonites of North America.\" Its first president was Noah Calvin Hirschy, appointed in 1901, who held the chair of Greek and Biblical languages alongside the presidency and had been ordained in the Mennonite ministry on 6 May 1894. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). The affiliation this node carried as an inference is therefore founding fact, not present association.",
+          "tier": "verified"
+        },
+        {
           "text": "**Its residential population is now a measured number.** Census block `390030101001002` holds 398 people in 2 housing units — a population living almost entirely outside housing, which is what a campus looks like in the block file. The county's address file puts Ropp Hall 0.02 miles from that block's internal point, with Bren Dell Hall, College Hall and Musselman Library inside 0.15. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md) block layer and [Allen County GIS](../../catalog/allen-county-gis-downloads.md). The 398 are students in residence on census day; they are not the university's enrolment, and the campus is not necessarily one block. [inference]",
           "tier": "inference"
         },
@@ -8885,6 +8983,37 @@
       "withheld": 2
     },
     {
+      "id": "organization/market-street-presbyterian-church.yml",
+      "class": "organization",
+      "label": "Market Street Presbyterian Church",
+      "tier": "verified",
+      "properties": {
+        "founded": "1833-08",
+        "industry": "Presbyterian congregation",
+        "org_type": "congregation"
+      },
+      "blocks": [
+        {
+          "text": "**The 1906 account.** \"The first Presbyterian Church of Lima was organized August 1, 1833, by Rev. Thomas Clark and Rev. James Cunningham, Mr. and Mrs. Alexander Beatty, Mr. and Mrs. John Ward, Mr. and Mrs. John Jameson and Crain Valentine. John Jameson and Alexander Beatty were chosen elders.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). Nine people, seven of them lay.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1921 account.** \"The Market Street Presbyterian Church having been organized August 24, 1833, by the Rev. James Cunningham and the Rev. Thomas Clark ... When the Market Street Presbyterian Church was organized it had fourteen charter members.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). Same year, same two ministers, a different day and five more members. See [when Lima's first congregation was organized](../question/when-limas-first-congregation-was-organized.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It split twice and reunited twice in forty years.** A brick church on West Elm Street in 1834; a frame building at Elizabeth and Spring in 1845; in February 1855 thirteen members withdrew and organized a second \"New School\" church; a third, Central Presbyterian, separated under Rev. T. P. Johnston with 54 members; the New School rejoined in 1869 as \"Union Presbyterian\"; and on 4 September 1872 Central joined too, \"making the Presbyterians of Lima again one body\". [verified] — the 1906 history.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1921 book dates its present edifice.** Construction began in 1879 and it was dedicated a year later. [verified] — the 1921 history, which adds the complaint that \"cornerstone information is public property, but not all building committees have seen fit to furnish it.\"",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "organization/mercy-health-st-ritas-medical-center.yml",
       "class": "organization",
       "label": "Mercy Health–St. Rita's Medical Center",
@@ -9146,6 +9275,29 @@
       "withheld": 3
     },
     {
+      "id": "organization/temple-beth-israel.yml",
+      "class": "organization",
+      "label": "Temple Beth Israel",
+      "tier": "inference",
+      "properties": {
+        "founded": "1914",
+        "industry": "Jewish congregation",
+        "org_type": "congregation"
+      },
+      "blocks": [
+        {
+          "text": "**It was erected in 1914.** \"Temple Beth Israel, the Jewish Synagogue in Lima, was erected in 1914 — the Jewish year 5674 — and over the door is this inscription: 'Mine House of Prayer for All Peoples.'\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nothing in the 2020 religion census answers whether it survives.** The county's 49 reporting bodies include no Jewish group of any branch. [verified] — [the congregations of 2020](../measure/allen-county-congregations-2020.yml). That is a fact about which bodies filed a return, not about whether a congregation exists; the same file carries no congregation for the Baha'i Faith and 23 adherents. [inference] — see [an index of the held is not an inventory of the made](../../decisions/an-index-of-the-held-is-not-an-inventory-of-the-made.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "organization/the-bluffton-news.yml",
       "class": "organization",
       "label": "The Bluffton News",
@@ -9287,6 +9439,41 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "organization/trinity-methodist-episcopal-church.yml",
+      "class": "organization",
+      "label": "Trinity Methodist Episcopal Church",
+      "tier": "inference",
+      "properties": {
+        "founded": "1832",
+        "industry": "Methodist Episcopal congregation",
+        "org_type": "congregation"
+      },
+      "blocks": [
+        {
+          "text": "**The stone gives six dates.** \"In 1829 there was a mission; in 1832 there was a church organization; in 1835 there was a mission house, and in 1852 there was a church; in 1872 there was a second church, and in 1910 the present magnificent edifice.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), quoting the cornerstone at Trinity.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A mission in 1829 puts Methodist preaching in Lima before the town had a government and three years before it had a church organization.** [Lima was organized as a town in 1842](../event/organization-of-the-town-of-lima-1842.yml) and [the county in 1831](../event/erection-of-allen-county.yml). [inference] — the dates differenced.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The stone and the book disagree by two years about the present building.** The stone says 1910; the same page says \"the present edifice was dedicated on March 17, 1912\". A cornerstone is laid and a building is dedicated and those are different acts, which may be the whole of it. [verified] — same source, both statements; the reconciliation is [inference] and untested.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The book's account of its own founding is not settled.** \"There are divergent accounts of the organization of Trinity, one writer saying that in 1833 John Alexander and James Finney, missionaries from St. Marys, visited the community and established the church. It seems that Patrick G. Goode had organized a Sunday school two years earlier.\" [verified] — same source. That writer's 1833 is a year after the stone's 1832; see [when Lima's first congregation was organized](../question/when-limas-first-congregation-was-organized.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two superlatives the book reports and does not source.** Trinity \"is now said to be the seventh largest Methodist Church in the world\", and its home missionary society of 800 members is \"said to be the largest similar organization in the world\". Its membership is given as 2,000. [verified] — same source, with the hedges as printed. This corpus records that the book said it and adopts neither claim.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "organization/university-of-northwestern-ohio.yml",
@@ -12428,8 +12615,12 @@
           "tier": "verified"
         },
         {
-          "text": "It is the seat of Bluffton University and has a Swiss Mennonite settlement history that distinguishes it from the rest of the county. [inference] **It was originally known as Shannon.** [verified] — [Allen County](../../catalog/allen-county-official-site.md), cities and villages page, which also names [Bluffton University](../organization/bluffton-university.yml) here and its Mennonite affiliation.",
+          "text": "It is the seat of Bluffton University and has a Swiss Mennonite settlement history that distinguishes it from the rest of the county. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**The settlement history is now documented and it is dated 1848.** \"The Mennonites are quite numerous in Richland township, having come from Holmes County in 1848. John Thut was unanimously elected to the office of bishop of Richland township, October 6, 1857.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). By 1906 the same book calls the village \"a village of churches\" with eight congregations, of which the Swiss Mennonite Church — St. John's, Ebenezer and the Bluffton congregation together — was much the largest at 640 members. [verified] — same source; see [the churches of 1906 and 1921](../measure/allen-county-churches-1906-1921.yml). Three Mennonite Church USA congregations and 536 adherents are still recorded in this county in 2020. [verified] — [the congregations of 2020](../measure/allen-county-congregations-2020.yml). **It was originally known as Shannon.** [verified] — [Allen County](../../catalog/allen-county-official-site.md), cities and villages page, which also names [Bluffton University](../organization/bluffton-university.yml) here and its Mennonite affiliation.",
+          "tier": "verified"
         },
         {
           "text": "**Platted in 1837 as Shannon, by Joseph Deford**, on Sections 1 and 12 of [Richland Township](richland-township.yml) — four blocks bounded by Jackson, Monroe, Jefferson and Riley streets. **The name was changed to Bluffton in 1872-73**, \"although long prior to this the latter name was bestowed upon it\". [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans agreeing. At 1837 it is the county's second-oldest platted town after [Lima](lima.yml).",
@@ -12676,7 +12867,7 @@
       "id": "place/gomer.yml",
       "class": "place",
       "label": "Gomer",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "area_sq_mi": "2.286 land, 0.008 water (2020)",
         "centroid": "40.845448, -84.182796",
@@ -12695,6 +12886,18 @@
         },
         {
           "text": "**It was laid out in 1850 by Samuel Ramsay and James Nicholas**, on Sections 20, 21, 28 and 29, with the first and second additions made by D. D. Nicholas. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), which also records it as the only post office in the township — as it is still the township's only settlement.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The first Welsh preaching here predates the village by twelve years, and it happened in the house of the man who laid the village out.** \"In 1838, when Rev. B. W. Chidlaw of Paddys Run first preached in the Welsh tongue to the people of the settlement in the home of James Nicholas, the pulpit was improvised from clapboards.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). James Nicholas laid out Gomer with Samuel Ramsay in 1850. [inference] — the same name in two sources, and neither says they are the same man.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The first Welsh log church, and a disagreement about when.** The 1921 book puts it at 1841; the 1906 book says of the same settlement that \"the first log church was built in the year 1839\". [verified] — the 1921 history and [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). An old account of the building, quoted in 1921: \"The building was not large and the architecture was not grand, and the interior furnishings were not elaborate, but it was larger and better than any of the\" homes around it — the sentence is cut off at a page break in the scan and the corpus does not complete it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The organ divided them in 1857.** \"The organ was introduced into the first Welsh church in 1857, and the congregation was divided in sentiment about it.\" [verified] — the 1921 history, which also records the settlement reviewing \"its seventy-five years of church history\" in 1913 — dating itself from 1838 — and names five permanent Welsh ministers: Michael Martz, Henry Morris, A. R. Brebbs, John W. Thomas and David Jones.",
           "tier": "verified"
         },
         {
@@ -13671,6 +13874,39 @@
         }
       ],
       "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "question/when-limas-first-congregation-was-organized.yml",
+      "class": "question",
+      "label": "When Lima's first congregation was organized",
+      "tier": "inference",
+      "properties": {
+        "claim_tag": "open",
+        "opened": "2026-09-01",
+        "would_close_this": "The session records of the Market Street Presbyterian Church, or Trinity's own church register, or the minutes of the Ohio Conference of the Methodist Episcopal Church for 1829–1833. Failing those, a Lima newspaper of the period — but the earliest title the county is recorded as having printed is 1843, ten years after the fact, so no contemporary local press exists to consult. See [the county's newspapers](../measure/allen-county-newspapers-1843-2026.yml)."
+      },
+      "blocks": [
+        {
+          "text": "**The 1921 book says the Methodists.** \"It would seem that the Methodists were first in Lima. The cornerstone at Trinity indicates as much; the whole story is told in imperishable stone; in 1829 there was a mission; in 1832 there was a church organization.\" And then, on the same page, \"there are divergent accounts of the organization of Trinity, one writer saying that in 1833 John Alexander and James Finney, missionaries from St. Marys, visited the community and established the church. It seems that Patrick G. Goode had organized a Sunday school two years earlier.\" [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md). So the same page offers 1832 from a stone and 1833 from a writer, and a Sunday school in 1831 that was not a church.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two books also disagree about the Presbyterians' day.** 1 August 1833 with nine people named, against 24 August 1833 with fourteen charter members. [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md) and [the 1921 history](../../catalog/rusler-allen-county-1921.md); see [the Market Street church](../organization/market-street-presbyterian-church.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the disagreement is not.** It is not a conflict about which century or which decade: every account puts a first congregation in Lima between 1829 and 1833, in a town that had no government until 1842 and in a county organized in 1831. The corpus can say the county seat had organized religion before it had a corporation. [inference] It cannot say which body had it first.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 1921 book also disqualifies the earliest candidate itself.** \"While the Fort Amanda church effort was prehistoric as far as the Allen County of today is concerned\" — a reference to the mission activity around [Fort Amanda](../site/fort-amanda.yml), which the book sets aside rather than counts. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "It cannot say which body had it first."
+      ],
       "withheld": 1
     },
     {
@@ -17477,6 +17713,20 @@
       "source": "catalog/national-bridge-inventory.md"
     },
     {
+      "from": "measure/allen-county-churches-1906-1921.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "measure/allen-county-churches-1906-1921.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
       "from": "measure/allen-county-civil-war-dead.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -17510,6 +17760,13 @@
       "relationship": "describes",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "measure/allen-county-congregations-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/us-religion-census-2020.md"
     },
     {
       "from": "measure/allen-county-crops-2022.yml",
@@ -18821,6 +19078,13 @@
       "source": "catalog/tigerweb-census2020.md"
     },
     {
+      "from": "organization/market-street-presbyterian-church.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
       "from": "organization/mercy-health-st-ritas-medical-center.yml",
       "to": "place/lima.yml",
       "relationship": "seated-in",
@@ -18863,6 +19127,13 @@
       "source": "catalog/hmda-loan-application-register.md"
     },
     {
+      "from": "organization/temple-beth-israel.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
       "from": "organization/the-bluffton-news.yml",
       "to": "place/bluffton.yml",
       "relationship": "seated-in",
@@ -18889,6 +19160,13 @@
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "organization/trinity-methodist-episcopal-church.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
     },
     {
       "from": "organization/university-of-northwestern-ohio.yml",

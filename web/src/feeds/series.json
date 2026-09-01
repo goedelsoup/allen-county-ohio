@@ -642,6 +642,26 @@
       ]
     },
     {
+      "id": "place-allen-county::communicants-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "communicants in Allen County",
+      "unit": "communicants",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-churches-1906-1921.yml",
+          "label": "Allen County's churches, 1906 and 1921",
+          "as_of": "1920",
+          "value": 17000.0,
+          "published": "17000",
+          "tier": "verified",
+          "source": "catalog/rusler-allen-county-1921.md",
+          "method": "Read from the full text of the 1906 and 1921 county histories on archive.org. The 1921 figure is the book's own report of a survey it does not name a date for; the corpus dates it 1920 from the population it implies and marks that an inference. Bluffton's memberships are transcribed as the 1906 book prints them and are not summed into any county total, because no comparable count exists for the rest of the county in either book. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::county-population-less-the-city-of-Lima,-decennial",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1568,6 +1588,26 @@
           "tier": "verified",
           "source": "catalog/epa-sdwis.md",
           "method": "All rows for systems whose identifier begins `OH02`, whatever the system's type or current status — so a tavern that closed in 1998 is counted. Health-based is the file's own `is_health_based_ind`, not a threshold chosen here. Distinct problems are counted by grouping on system and return-to-compliance date, which merges Bluffton's ten quarterly rows and leaves every other health-based violation on its own. The 2020s figure covers six years and eight months, not ten. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::religious-congregations-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "religious congregations in Allen County",
+      "unit": "congregations",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-congregations-2020.yml",
+          "label": "Allen County's congregations, 2020",
+          "as_of": "2020",
+          "value": 160.0,
+          "published": "160",
+          "tier": "verified",
+          "source": "catalog/us-religion-census-2020.md",
+          "method": "The county summary sheet and the group-by-county sheet of the 2020 U.S. Religion Census, filtered to FIPS 39003. The 49 group rows sum to the summary sheet's 160 congregations and 58,696 adherents exactly, which is the check that the read is complete. Adherents are as each religious body reported them and the bodies do not share a definition; nine congregations report no adherent figure and are counted as congregations only. Neighbouring counties are read from the same sheet. [verified]"
         }
       ]
     },
@@ -6448,6 +6488,123 @@
           "label": "Federal",
           "value": 417.0,
           "literal": "417"
+        }
+      ]
+    },
+    {
+      "id": "a-hundred-and-sixty-congregations",
+      "statement": "A hundred and sixty congregations of forty-nine religious bodies report 58,696 adherents in Allen County — 57.4 per cent of it. A survey a century earlier put church-going at a quarter. The two figures answer different questions and this site does not draw a line between them.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-congregations-2020.yml",
+          "node_label": "Allen County's congregations, 2020",
+          "span": "A hundred and sixty congregations, forty-nine religious bodies, and 58,696 people reported as adherents of one of them.",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-religion-census-2020.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-congregations-2020.yml",
+          "node_label": "Allen County's congregations, 2020",
+          "span": "**That is 57.4 per cent of the county, and the denominator is the census count.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-religion-census-2020.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-congregations-2020.yml",
+          "node_label": "Allen County's congregations, 2020",
+          "span": "**Two bodies hold nearly half of it.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/us-religion-census-2020.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-congregations-2020.yml",
+          "node_label": "Allen County's congregations, 2020",
+          "span": "Reading the eight counties around this one: Mercer 77.6 per cent, Putnam 72.0 and Shelby 63.9 to the south and west; Auglaize 52.2 due south; and Hancock 41.2, Logan 38.7, Van Wert 35.5 and Hardin 30.8 to the north and east. Allen at 57.4 sits between the two groups",
+          "tier": "inference",
+          "sources": [
+            "catalog/us-religion-census-2020.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-churches-1906-1921.yml",
+          "node_label": "Allen County's churches, 1906 and 1921",
+          "span": "**A survey in about 1920 put the county's church-going at a quarter of its people and its communicants at something like seventeen thousand.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-churches-1906-1921.yml",
+          "node_label": "Allen County's churches, 1906 and 1921",
+          "span": "**It is not comparable with the 2020 figure and the corpus does not trend the two.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-churches-1906-1921.yml",
+          "node_label": "Allen County's churches, 1906 and 1921",
+          "span": "**Lima's synagogue was built in 1914.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Mercer",
+          "value": 77.6,
+          "literal": "77.6"
+        },
+        {
+          "label": "Putnam",
+          "value": 72.0,
+          "literal": "72.0"
+        },
+        {
+          "label": "Shelby",
+          "value": 63.9,
+          "literal": "63.9"
+        },
+        {
+          "label": "Allen",
+          "value": 57.4,
+          "literal": "57.4"
+        },
+        {
+          "label": "Auglaize",
+          "value": 52.2,
+          "literal": "52.2"
+        },
+        {
+          "label": "Hancock",
+          "value": 41.2,
+          "literal": "41.2"
+        },
+        {
+          "label": "Logan",
+          "value": 38.7,
+          "literal": "38.7"
+        },
+        {
+          "label": "Van Wert",
+          "value": 35.5,
+          "literal": "35.5"
+        },
+        {
+          "label": "Hardin",
+          "value": 30.8,
+          "literal": "30.8"
         }
       ]
     },

@@ -2345,6 +2345,56 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "a-hundred-and-sixty-congregations",
+        statement: "A hundred and sixty congregations of forty-nine religious bodies report 58,696 \
+                    adherents in Allen County — 57.4 per cent of it. A survey a century earlier put \
+                    church-going at a quarter. The two figures answer different questions and this \
+                    site does not draw a line between them.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-congregations-2020.yml",
+                "A hundred and sixty congregations, forty-nine religious bodies, and 58,696 people reported as\n  adherents of one of them."
+            ),
+            support!(
+                "measure/allen-county-congregations-2020.yml",
+                "**That is 57.4 per cent of the county, and the denominator is the census count.**"
+            ),
+            support!(
+                "measure/allen-county-congregations-2020.yml",
+                "**Two bodies hold nearly half of it.**"
+            ),
+            support!(
+                "measure/allen-county-congregations-2020.yml",
+                "Reading the eight counties around this one: Mercer 77.6 per cent, Putnam 72.0\n  and Shelby 63.9 to the south and west; Auglaize 52.2 due south; and Hancock 41.2, Logan 38.7, Van\n  Wert 35.5 and Hardin 30.8 to the north and east. Allen at 57.4 sits between the two groups"
+            ),
+            support!(
+                "measure/allen-county-churches-1906-1921.yml",
+                "**A survey in about 1920 put the county's church-going at a quarter of its people and its\n  communicants at something like seventeen thousand.**"
+            ),
+            support!(
+                "measure/allen-county-churches-1906-1921.yml",
+                "**It is not comparable with the 2020 figure and the corpus does not trend the two.**"
+            ),
+            support!(
+                "measure/allen-county-churches-1906-1921.yml",
+                "**Lima's synagogue was built in 1914.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Mercer", value: 77.6, literal: "77.6" },
+            Figure { label: "Putnam", value: 72.0, literal: "72.0" },
+            Figure { label: "Shelby", value: 63.9, literal: "63.9" },
+            Figure { label: "Allen", value: 57.4, literal: "57.4" },
+            Figure { label: "Auglaize", value: 52.2, literal: "52.2" },
+            Figure { label: "Hancock", value: 41.2, literal: "41.2" },
+            Figure { label: "Logan", value: 38.7, literal: "38.7" },
+            Figure { label: "Van Wert", value: 35.5, literal: "35.5" },
+            Figure { label: "Hardin", value: 30.8, literal: "30.8" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

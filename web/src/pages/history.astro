@@ -25,6 +25,24 @@ const sky = assertion('the-blizzard-is-not-in-the-weather-file')
 const paid = assertion('eighty-four-cents-in-the-dollar')
 const war = assertion('the-third-war-is-counted-by-its-dead')
 const press = assertion('ninety-nine-papers-and-one-of-them-online')
+const faith = assertion('a-hundred-and-sixty-congregations')
+
+const faithSpec = bar(
+  faith.figures.map((f) => f.label),
+  faith.figures.map((f) => f.value),
+  { yTitle: 'Adherents as a share of population, 2020 (%)', labelValues: true },
+)
+
+const blufftonChurches = [
+  ['Swiss Mennonite (three congregations)', 640],
+  ['Methodist Episcopal', 180],
+  ['German Reformed', 150],
+  ['Church of Christ', 113],
+  ['Presbyterian', 58],
+  ["St. Mary's Catholic", 50],
+  ['Evangelical Lutheran', 45],
+  ['Mennonite Church of Bluffton', 31],
+]
 
 const pressSpec = bar(
   press.figures.map((f) => f.label),
@@ -978,6 +996,54 @@ const since = new Date().getUTCFullYear() - last
       cataloguer's words, by "striking and locked out workers of the Lima news". Four days after the
       News came back, Lima had a second daily: the Lima Citizen, 1 July 1957 to 7 January 1964. It
       is the last competitor the city has had.
+    </p>
+  </section>
+
+  <section>
+    <h2>A hundred and sixty congregations</h2>
+    <AssertionCard assertion={faith} />
+    <p>
+      Forty-nine religious bodies report a congregation in Allen County and between them they
+      report 58,696 adherents — 57.4 per cent of the county's 102,206 people. Two bodies hold
+      nearly half of that: the Catholic Church, 14,732 adherents in eight congregations, and the
+      non-denominational Christian churches, 11,530 in twenty-five. Seventeen congregations belong
+      to historically Black denominations and sixteen are Anabaptist in origin.
+    </p>
+    <ChartFigure
+      id="county-adherents"
+      title="Allen County and its neighbours: adherents as a share of population, 2020"
+      caption="Adherents are what each religious body reported, and the bodies do not share a definition — some count baptized infants, some confessing adults. The remaining share of any county is people no body reported, which is not the same as people who belong to none."
+      columns={['County', 'Per cent']}
+      rows={faith.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="county-adherents" set:html={JSON.stringify(faithSpec)} is:inline />
+    <p>
+      The gradient across this corner of Ohio is steep and Allen sits in the middle of it. Mercer,
+      Putnam and Shelby, in the German Catholic settlement country to the south and west, run 64 to
+      78 per cent. Hardin, Van Wert, Logan and Hancock, to the north and east, run 31 to 41.
+    </p>
+    <p>
+      A century earlier the county counted itself differently. A religious survey reported in 1921
+      put church attendance at "about 25 per cent of the population" and communicants at "something
+      like 17,000" — which, against a county of 68,203 in 1920, works out to 24.9 per cent, so the
+      estimate at least checks against the census. It is not the same measurement as the 2020 one.
+      One counts people who attend; the other counts people a religious body reports. This site
+      holds both and draws no line between them.
+    </p>
+    <DataTable
+      title="Bluffton in 1906, member by member"
+      caption="The 1906 county history called Bluffton 'a village of churches' and printed every membership. The Swiss Mennonite figure covers St. John's, Ebenezer and the Bluffton congregation together and is not a village number; the seven village congregations come to 627, against a village of 1,783 in 1900."
+      columns={['Congregation', 'Members']}
+      rows={blufftonChurches}
+    />
+    <p>
+      The oldest congregation in the county seat is disputed between two books. Trinity Methodist's
+      cornerstone reads a mission in 1829 and a church organization in 1832; the Market Street
+      Presbyterian church was organized in August 1833, on the first of the month with nine people
+      by one account and on the twenty-fourth with fourteen charter members by the other. What all
+      the accounts agree on is that Lima had organized religion before it had a town government,
+      which it did not get until 1842. Its synagogue, Temple Beth Israel, was built in 1914 — the
+      Jewish year 5674 — with "Mine House of Prayer for All Peoples" over the door.
     </p>
   </section>
 
