@@ -1,0 +1,56 @@
+class: measure
+label: Offenses reported by the Allen County Sheriff, 2015–2024
+description: |
+  **The sheriff's violent offenses nearly tripled between 2020 and 2021, and his property offenses
+  fell.** [verified] —
+  [the FBI Crime Data Explorer](../../catalog/fbi-crime-data-explorer.md), Allen County Sheriff's
+  Office.
+
+      period      violent (mean)   property (mean)
+      2015-2020             33.5             713
+      2021-2024             89.8             576
+      change                2.68x           0.81x
+
+  **The line between those two periods is 1 December 2020, and it is in a different file.** That is
+  the date the office began incident-based reporting. [verified] — same source, Ohio agency list;
+  see [the agencies](allen-county-law-enforcement-agencies-2026.yml). Nothing in the monthly series
+  marks it.
+
+  **A change that triples one measure and lowers another at the same agency in the same month is a
+  change in counting.** A rise in violence would not spare property crime, and a better-resourced
+  office would not report fewer burglaries. The corpus reads the step as definitional and does not
+  publish a crime trend across it. [inference] — see
+  [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).
+
+  **What can be said about each half.** Before the change: 27 to 50 violent offenses a year over
+  23,000-odd people, a rate near 120 per hundred thousand. After: 79 to 114, a rate near 380.
+  Property offenses fell in both halves and stand at 483 in 2024, the lowest of the ten years.
+  [verified] — same source, computed here.
+
+  **This office polices what nobody else does.** Its service population is 24,079, a quarter of the
+  county — the unincorporated ground outside [Lima](../place/lima.yml) and outside the three
+  townships that keep their own forces. [verified] — same source. It is the same office whose
+  thirty-nine holders since 1831 are the largest single line in this corpus. [verified] —
+  [the office](../office/allen-county-sheriff.yml).
+
+  [open] Whether the 2021 figure of 114 is the transition or the peak. Four years is a short series
+  and the highest of them is the first after the change, which is the shape a definitional step
+  makes and also the shape a real one makes.
+properties:
+  parameter: violent offenses reported by the Allen County Sheriff's Office
+  value: "86"
+  unit: offenses
+  as_of: "2024"
+  method: |
+    Monthly counts summed to calendar years. The two periods are divided at the office's own
+    incident-based reporting start of 1 December 2020, so 2020 sits in the earlier period and 2021
+    in the later; the one month of overlap is not adjusted for. No figure here is computed across
+    the two periods except the ratio, which is reported precisely to show that the two measures move
+    opposite ways. [inference]
+links:
+  - target: ../office/allen-county-sheriff.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fbi-crime-data-explorer.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

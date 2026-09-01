@@ -1,0 +1,57 @@
+id: a-reporting-change-has-a-date-and-a-control
+summary: >-
+  The Allen County Sheriff's violent offenses nearly tripled between 2020 and 2021 and his property
+  offenses fell a fifth. The date that explains it is not in the series — it is one field in a
+  different endpoint. This records how a series break is found and how a real change is told from a
+  definitional one.
+context: |
+  [the-control-is-the-figure-that-cannot-move](the-control-is-the-figure-that-cannot-move.yml)
+  established that a suspect figure is tested against one that could not have moved for the same
+  reason: the county's land area fell by 1,235 acres it did not lose, and the control was a boundary
+  that had not changed.
+
+  That was a comparison across two *publications*. This is a comparison across two *regimes* inside
+  one series, and the two need different handling — because the break is invisible in the series and
+  documented somewhere else entirely.
+
+  The FBI's monthly counts for the sheriff's office run smoothly from 2015 to 2024 with no marker in
+  them. The agency roster, a separate endpoint, carries `nibrs_start_date` = 1 December 2020.
+decision: |
+  **Fetch the metadata that dates the reporting regime before reading any administrative series.**
+  A count published by an agency about itself is a count under a definition, and the definition has a
+  start date that the publisher usually records — but not in the series. Look for it in the agency,
+  instrument, survey or edition record, and look before rather than after the trend is computed.
+
+  **Cut the series at the documented break and report the halves.** Not a footnote under one series:
+  two periods, each with its own summary. Where the corpus computes anything across the break it
+  says so and says why, as here, where the ratio exists only to show the break.
+
+  **Then run a control at the same unit across the same break.** The test is a second measure the
+  same agency reports, that the same definitional change would not move the same way. Violent and
+  property offenses are that pair here. **Violent tripled and property fell.** A real rise in
+  offending does not spare one category while multiplying the other in the same month, and a
+  better-resourced office does not record fewer burglaries. The break is definitional.
+
+  **A control that moves with the suspect figure does not prove the change is real** — it only fails
+  to prove it is definitional. Say that, and leave the question open. The test is one-sided.
+rationale: |
+  **The naive reading is the one a reader would reach unaided, and it is alarming.** "Violent crime
+  in the unincorporated county nearly tripled in 2021" is what the numbers say and what a chart
+  would show. It is not a fabrication; it is a true statement about a series that changed underneath
+  itself. This corpus would have published it, because it is verified, sourced and correctly tagged.
+
+  **The control is what makes the finding decidable rather than merely doubted.** Suspicion of a
+  break is cheap and unpublishable. A second measure at the same agency, across the same month,
+  moving the other way is evidence, and it converts "this might be a reporting artefact" into "this
+  is a reporting artefact and here is the pair of numbers that shows it".
+
+  **The metadata is where these breaks live, generally.** A gauge has a period of record, a survey
+  has a redesign year, a classification has a revision — this corpus already carries BEA employment
+  split at the 2001 change from SIC to NAICS, and that break is in the series' own documentation and
+  not in its values. The sheriff's is the same pattern in an unfamiliar file, and the rule is to look
+  for it every time rather than to recognise it when it happens to be famous.
+
+  **What this does not license.** Cutting a series wherever it jumps. The cut has to be at a date the
+  publisher documents. An unexplained jump with no documented break beside it is a finding to
+  investigate, not a break to assume — and if no break can be found, the jump is the corpus's problem
+  to report, not to smooth away.

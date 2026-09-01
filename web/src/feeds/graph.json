@@ -3677,6 +3677,43 @@
       "withheld": 0
     },
     {
+      "id": "measure/allen-county-law-enforcement-agencies-2026.yml",
+      "class": "measure",
+      "label": "Allen County's reporting police agencies, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Read from the Ohio agency list, selecting the county key ALLEN, which is the FBI's own assignment and not a geographic test — an agency serving two counties appears under a combined key and would be missed here. Dates are the file's `nibrs_start_date` verbatim. The population figures are each agency's own service population, which is not a census figure and does not sum to the county. [verified]",
+        "parameter": "law enforcement agencies reporting for Allen County",
+        "unit": "agencies",
+        "value": "10"
+      },
+      "blocks": [
+        {
+          "text": "**Ten agencies report crime in Allen County, and the two that police most of it began last.** [verified] — [the FBI Crime Data Explorer](../../catalog/fbi-crime-data-explorer.md), Ohio agency list, county key ALLEN.",
+          "tier": "verified"
+        },
+        {
+          "text": "The dates are each agency's `nibrs_start_date` — when it changed from summary reporting to incident-based reporting. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A village of nineteen hundred people converted sixteen years before the county seat.** Elida began in September 2005 and [Lima](../place/lima.yml) in January 2021. [verified] — same source. So a county-level crime series assembled from these agencies changes what it is made of in almost every year between 2004 and 2021, and changes most in the last two. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Six of the ten are townships or a village; two are park rangers.** Three townships that ring Lima keep their own forces — [Shawnee](../place/shawnee-township.yml), [American](../place/american-township.yml) and [Perry](../place/perry-township.yml) — which is what a county looks like when its suburbs are unincorporated. [inference] — see [the townships](allen-county-outside-lima-1890-2020.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two of the ten are held here and eight are not.** The Lima Police Department and [the Sheriff's Office](../office/allen-county-sheriff.yml) cover 34,552 and 24,079 people respectively — 58,631 of the county's 100,866, or 58 per cent. [verified] — same source and [the 2024 estimate](allen-county-population-2024.yml). The remaining eight were not fetched because the demonstration key ran out of requests, not because they are unavailable.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-lending-denial-gap-2018-2024.yml",
       "class": "measure",
       "label": "Allen County mortgage denial rates by applicant race, 2018-2024",
@@ -4631,6 +4668,43 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-sheriff-offenses-2015-2024.yml",
+      "class": "measure",
+      "label": "Offenses reported by the Allen County Sheriff, 2015–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Monthly counts summed to calendar years. The two periods are divided at the office's own incident-based reporting start of 1 December 2020, so 2020 sits in the earlier period and 2021 in the later; the one month of overlap is not adjusted for. No figure here is computed across the two periods except the ratio, which is reported precisely to show that the two measures move opposite ways. [inference]",
+        "parameter": "violent offenses reported by the Allen County Sheriff's Office",
+        "unit": "offenses",
+        "value": "86"
+      },
+      "blocks": [
+        {
+          "text": "**The sheriff's violent offenses nearly tripled between 2020 and 2021, and his property offenses fell.** [verified] — [the FBI Crime Data Explorer](../../catalog/fbi-crime-data-explorer.md), Allen County Sheriff's Office.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The line between those two periods is 1 December 2020, and it is in a different file.** That is the date the office began incident-based reporting. [verified] — same source, Ohio agency list; see [the agencies](allen-county-law-enforcement-agencies-2026.yml). Nothing in the monthly series marks it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A change that triples one measure and lowers another at the same agency in the same month is a change in counting.** A rise in violence would not spare property crime, and a better-resourced office would not report fewer burglaries. The corpus reads the step as definitional and does not publish a crime trend across it. [inference] — see [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**What can be said about each half.** Before the change: 27 to 50 violent offenses a year over 23,000-odd people, a rate near 120 per hundred thousand. After: 79 to 114, a rate near 380. Property offenses fell in both halves and stand at 483 in 2024, the lowest of the ten years. [verified] — same source, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This office polices what nobody else does.** Its service population is 24,079, a quarter of the county — the unincorporated ground outside [Lima](../place/lima.yml) and outside the three townships that keep their own forces. [verified] — same source. It is the same office whose thirty-nine holders since 1831 are the largest single line in this corpus. [verified] — [the office](../office/allen-county-sheriff.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-survey-sections.yml",
       "class": "measure",
       "label": "Allen County survey sections, 2026",
@@ -5257,6 +5331,45 @@
         }
       ],
       "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/lima-crime-2015-2024.yml",
+      "class": "measure",
+      "label": "Crime reported in Lima, 2015–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Monthly offense and clearance counts summed to calendar years and divided by the agency's own population as the file gives it for June of each year. That population is not the census's — the file puts Lima at 36,452 in 2020 against a census count of 35,579 — so this rate is comparable with the Ohio and United States rates in the same file and not with anything computed from a census denominator. [verified] The department began incident-based reporting on 1 January 2021, so the years before and after that line are not strictly one series. [inference]",
+        "parameter": "violent crime rate, Lima Police Department jurisdiction",
+        "unit": "offenses per 100,000 people",
+        "value": "769.9"
+      },
+      "blocks": [
+        {
+          "text": "**Lima's violent crime rate has been between two and three times Ohio's in every one of ten years.** [verified] — [the FBI Crime Data Explorer](../../catalog/fbi-crime-data-explorer.md), Lima Police Department.",
+          "tier": "verified"
+        },
+        {
+          "text": "The agency rates are computed here from counts and the agency's own population; the Ohio and United States rates are the file's, being the sum of its twelve monthly values. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Violent crime here has no trend and property crime fell by forty per cent.** The violent count averaged 280 a year over 2015–2019 and 265 over 2020–2024; the property rate went from 5,672 per hundred thousand to 3,421, a fall of 39.7 per cent. [verified] — same source, computed here. The two measures move independently, which is worth stating because they are usually reported as one number. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The clearance rate more than doubled.** 14.6 per cent of violent offenses cleared in 2016 and 12.3 per cent in 2020, against 30.5 per cent in each of 2023 and 2024. [verified] — same source. Whether that is better police work, fewer and different offenses, or the incident-based reporting the department adopted in January 2021 counting differently, this source cannot say. [inference] — see [the agencies](allen-county-law-enforcement-agencies-2026.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The ratio to Ohio is the stable thing.** 2.38, 2.97, 2.36, 2.07, 2.23, 2.05, 2.02, 2.72, 2.27, 2.47 — no year outside 2.0 to 3.0, across a decade in which Ohio's own rate rose and fell. [verified] — same source, computed here. A city whose absolute rate wanders and whose ratio to its state does not is being moved by whatever moves the state. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "Whether that is better police work, fewer and different offenses, or the incident-based reporting the department adopted in January 2021 counting differently, this source cannot say."
+      ],
       "withheld": 2
     },
     {
@@ -6410,6 +6523,10 @@
         {
           "text": "This office is one of nine elected county offices, and the only one whose line of holders this corpus can trace. For the other eight it holds the present term and nothing before it. [verified] — same source; see [the county government](../jurisdiction/allen-county-government.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**What the office reports now, and the break in the middle of it.** It polices 24,079 people — the unincorporated county outside Lima and outside the three townships with their own forces — and its violent offenses averaged 33.5 a year to 2020 and 89.8 since, while its property offenses fell from 713 to 576. The line between the two is 1 December 2020, when the office began incident-based reporting. [verified] — [the sheriff's offenses](../measure/allen-county-sheriff-offenses-2015-2024.yml). The corpus reads the step as a change in counting and publishes no crime trend across it. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -10957,6 +11074,10 @@
         {
           "text": "**In 1905, 77 passenger trains a day landed here, 49 steam and 28 electric**, and 182 men worked the yards and freight offices. [verified] — [the traffic of 1905](../measure/lima-railroad-traffic-1905.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Its violent crime rate has been between two and three times Ohio's in every year from 2015 to 2024**, and its property crime rate fell forty per cent across the same decade. In 2024 the rate was 769.9 per hundred thousand against 311.9 for Ohio and 363.6 for the United States. [verified] — [the crime record](../measure/lima-crime-2015-2024.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -11179,6 +11300,10 @@
         },
         {
           "text": "**And the annexation into it is dated.** \"Part of Shawnee township annexed to Lima city in 1944.\" [verified] — same source, Allen County footnote. That is forty years earlier than the earliest annexation this corpus previously held, and it is the mechanism behind the 1950 return above.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It keeps its own police force**, one of three townships in the county that do, and it has reported to the national incident-based system since February 2012. [verified] — [the reporting agencies](../measure/allen-county-law-enforcement-agencies-2026.yml).",
           "tier": "verified"
         }
       ],
@@ -15577,6 +15702,13 @@
       "source": "catalog/census-gazetteer-2020.md"
     },
     {
+      "from": "measure/allen-county-law-enforcement-agencies-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fbi-crime-data-explorer.md"
+    },
+    {
       "from": "measure/allen-county-lending-denial-gap-2018-2024.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -15794,6 +15926,13 @@
       "source": "catalog/census-school-system-finances.md"
     },
     {
+      "from": "measure/allen-county-sheriff-offenses-2015-2024.yml",
+      "to": "office/allen-county-sheriff.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fbi-crime-data-explorer.md"
+    },
+    {
       "from": "measure/allen-county-survey-sections.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -15904,6 +16043,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/ohio-boe-elected-officials-allen.md"
+    },
+    {
+      "from": "measure/lima-crime-2015-2024.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fbi-crime-data-explorer.md"
     },
     {
       "from": "measure/lima-land-area-2020.yml",
