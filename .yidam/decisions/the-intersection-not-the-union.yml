@@ -1,0 +1,58 @@
+id: the-intersection-not-the-union
+summary: >-
+  Allen County has four federal declarations for flooding and a gauged river, and the two records
+  overlap on none of the four. Three fall in a ten-year hole in the gauge and the fourth was a wind
+  storm. This records how two series are crossed: compute the years both cover first, and say how
+  many cases the comparison actually rests on.
+context: |
+  Two sources arrived in consecutive phases that appear to describe the same thing. The federal
+  disaster declarations name Allen County ten times between 1965 and 2020, four of them for flooding.
+  The USGS peak-streamflow record for the Ottawa River at Lima covers water years 1989 to 2025.
+
+  Crossed naively, they say something striking: the largest measured flood in the modern record —
+  5,700 cubic feet a second on 28 February 2011 — brought no federal aid, and the years that did
+  bring aid are nowhere near the top of the flow record.
+
+  The first half of that is true. The second is an artefact. **The Lima gauge is missing water years
+  2000 to 2009 exactly, and three of the four flood declarations fall inside that hole.** The gauge's
+  silence is not the river's.
+decision: |
+  **Before crossing two records, compute the span both cover and count the cases inside it.** Not
+  the span either covers. Not the span the corpus assumes from the two end dates. The intersection,
+  and then the number of events in it.
+
+  **Publish that number beside the comparison.** Here it is one: of ten declarations, exactly one
+  non-pandemic declaration falls inside the gauge's record, and it was titled for straight-line
+  winds. A finding that rests on one case has to say so, and a reader who is told "four flood
+  declarations and a flow record" will assume four.
+
+  **An absence in a crossed result is an absence in one of the records until you say which.** "No
+  declaration in 2011" is a statement about the FEMA file, which is complete for that year and does
+  not have the county in it. "No large flow in 2004" is not a statement about the river at all.
+  Distinguish the two in the sentence, not in the method block.
+
+  **Where the intersection is empty, say the comparison could not be made.** That is a result. It is
+  a better one than a correlation computed across a hole, and it names the retrieval that would fix
+  it — here, whether any other gauge in the county was running between 2000 and 2009.
+rationale: |
+  **The naive crossing would have produced this corpus's best-sounding sentence of the phase.** "The
+  county's largest flood in forty years brought no federal aid, and the floods that did were not
+  large" is publishable, memorable, and half wrong. Nothing in the gate would have caught it: both
+  figures are verified, both cite a source, and the claim is an inference properly tagged.
+
+  **This is a different failure from the ones already recorded.**
+  [a-file-has-more-than-one-date](a-file-has-more-than-one-date.yml) is about mistaking a field's
+  vintage. [a-sample-is-not-a-series](a-sample-is-not-a-series.yml) is about treating scattered
+  observations as continuous. Both concern one source. This one only appears when two are laid
+  against each other, and it is invisible in either alone: the FEMA file is complete, the gauge file
+  is honest about its rows, and neither says a word about the other's coverage.
+
+  **It generalises past the water.** This corpus holds a dozen series with different starts — BEA
+  employment from 1969, County Business Patterns from 1986, the annexations from 1990, the bridges'
+  condition from one inspection cycle, the mayors in three overlapping printings. Any two of them
+  can be crossed and most of them have been. The rule is cheap: compute the overlap, count the
+  cases, print the count.
+
+  **What this does not license.** Refusing to cross series at all. The one case here is still worth
+  reporting — a wind declaration whose water year peaked ranked sixteenth of twenty-seven is a small
+  fact and a true one. What is not acceptable is reporting it as four.
