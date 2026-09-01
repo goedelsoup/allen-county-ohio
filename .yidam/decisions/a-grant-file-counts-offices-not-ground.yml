@@ -1,0 +1,67 @@
+id: a-grant-file-counts-offices-not-ground
+summary: >-
+  Bon Secours Mercy Health owns a hospital in Lima and holds $183,291,707 of federal pandemic
+  money, every dollar of it counted in Hamilton County. Allen County's own housing-assistance rows
+  name Pittsburgh. And the applicant key that joins the two files returns a hundred and eighty
+  different county governments. Three ways a federal grant file's geography is not geography.
+context: |
+  [a-category-has-a-birthday](a-category-has-a-birthday.yml) and
+  [a-reporting-change-has-a-date-and-a-control](a-reporting-change-has-a-date-and-a-control.yml)
+  are about *when* an administrative file counts. This is about *where*.
+
+  The corpus went to OpenFEMA to close a question it had left open — what its ten disaster
+  declarations cost — and found the answer keyed to a county field that means three different
+  things in three sibling datasets on one API, and joined by an identifier that is not unique.
+decision: |
+  **Before reading a county total out of a grant file, establish what the county field is a
+  property of.** Not the ground, in any of the three cases here.
+
+  In **public assistance** it is the *applicant's registered county*. Lima Memorial Health System
+  is locally owned and files as an Allen County applicant, so its $8,777,201 of pandemic money is in
+  the county's ledger. Bon Secours Mercy Health, Inc. owns another Lima hospital, files as
+  applicant `061-UWDML-00` in Cincinnati, and its nine projects and $183,291,707 are counted in
+  Hamilton County. **The county's federal disaster ledger contains the hospital it owns and not the
+  ones it does not**, and the corpus already knew from a different file which was which.
+
+  In **housing assistance** it is the county attached to a registration. Where the programme
+  inspected a property — the flood of August 2007 — the rows are coherent and every ZIP is local.
+  Where it did not — the pandemic — Allen County's rows name Pittsburgh, Richmond Heights and
+  Sherwood. **A programme that visits a house knows where the house is; a programme that pays a
+  person knows where the person wrote from.**
+
+  In the **applicant register** there is no county field at all, and `applicantId` is not a national
+  key: `003-99003-00` resolves to more than a hundred and eighty county governments across the
+  United States. **Scope every join to the state, and check that the scoping changed the answer** —
+  the unscoped join here silently named a Delaware county as the recipient of Allen County's money,
+  and nothing in either file would have caught it.
+
+  **So a county total from a grant file is a floor and a composition, never a measurement.** Say
+  which, in the node. The corpus publishes $10,608,108 for Allen County and says in the same breath
+  that the figure excludes whatever a parent-owned hospital in Lima was paid.
+rationale: |
+  **The error this prevents is invisible and confident.** Every one of the three defects produces a
+  well-formed number. A sum over 95 rows, a total per applicant, a county aggregate — each passes
+  every internal check, reconciles against itself, and is wrong about the thing a reader would take
+  it for. There is no arithmetic tell. The only way to find it is to ask what the key is attached
+  to, which costs one query against the file's own documentation or one probe at a row that ought
+  to be somewhere else.
+
+  **The probe that found it was cheap and is generalisable.** Query a key you believe is unique
+  without its scope and count the answers. Query a geography you believe is local and read the town
+  names. Both took one request. The corpus has now done the equivalent three times — an address is
+  not a municipality, a tract page names a company and not a person, and a grant file counts
+  offices — and the shape is the same each time: **a file records where its paperwork lives.**
+
+  **It also explains something the corpus had already found and not connected.**
+  [Lima Memorial](../corpus/organization/lima-memorial-health-system.yml) was noted, from Medicare
+  enrollment, as the only hospital in the county with no corporate parent. That was a fact about
+  ownership. It turns out to be the reason the county appears to have received eight and three
+  quarter million dollars of federal pandemic money and not, on the face of the same file, anything
+  at all for its largest hospital. A structural fact in one file is a measurement artefact in
+  another, and the corpus is only able to see that because it holds both.
+
+  **What this does not license.** Attributing the $183,291,707 to Allen County, or any share of it.
+  The corpus cannot say what Bon Secours spent in Lima, because that file is keyed to Cincinnati
+  just as firmly as the other is keyed here. The finding is that the ledger is a ledger of
+  applicants; the county's true figure is not recoverable from it and the corpus says so rather
+  than estimating.
