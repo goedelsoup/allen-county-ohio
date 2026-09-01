@@ -17,6 +17,21 @@ const crimeStep = assertion('a-step-that-is-not-a-crime-wave')
 const lostYear = assertion('the-1906-list-lost-a-year')
 const roll = assertion('the-register-dates-them-but-cannot-place-them')
 const dotted = assertion('the-ninety-nine-year-hole-is-dotted')
+const money = assertion('a-grand-total-is-not-a-budget')
+
+const moneySpec = bar(
+  money.figures.map((f) => f.label),
+  money.figures.map((f) => f.value),
+  { yTitle: 'General Fund spending, 2025 (US$)', labelValues: true },
+)
+
+// Typed out because these are fund totals from a PDF, not properties the graph carries.
+const funds = [
+  ['The whole revenue report, 437 funds', '$374,841,547', '100%'],
+  ['52 custodial funds numbered 9xxx', '$181,069,850', '48.3%'],
+  ['— of which real estate tax collected for others', '$139,249,231', '37.1%'],
+  ['The General Fund, which the county runs on', '$39,567,583', '10.6%'],
+]
 
 // Typed out because these are dates a newspaper printed, not term dates the graph carries.
 // The point of the table is that the last column exists and the middle one does not.
@@ -667,6 +682,56 @@ const traced = offices.filter(
       councilman becomes vice mayor. Even with all that, the village's line will not close — W. A.
       Howe is reported defeated in November 1945 and named as mayor in May 1946, April 1951 and
       September 1952. Holding office between elections is a state, and a weekly reports events.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the county costs</h2>
+    <AssertionCard assertion={money} />
+    <p>
+      This site could name every elected officer of Allen County to the day and could not say what
+      one of them cost. The county auditor publishes the county's books — monthly revenue and
+      expenditure for every fund back to 2016, and the State Auditor's audited statements back to
+      2010 — and three better-known routes to the same numbers are closed to an automated client
+      while the office that keeps the books is not.
+    </p>
+    <ChartFigure
+      id="office-cost"
+      title="What each elected Allen County office spent from the General Fund, 2025"
+      caption="The county engineer is missing from this chart because it spends nothing from this fund: it draws $8,456,595 from the Motor Vehicle and Gas Tax fund instead, second only to the sheriff. An office may draw on funds outside the General Fund, so these are not totals."
+      columns={['Office', 'General Fund spending, 2025']}
+      rows={money.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="office-cost" set:html={JSON.stringify(moneySpec)} is:inline />
+    <p>
+      The sheriff's office costs half again as much as the county's other seven elected offices
+      together — $10,786,007 against $7,113,672, of which $4,373,597 is jail operations. At the
+      other end, Allen County's share of the Third District Court of Appeals is $30,542, the
+      smallest departmental line in the fund and what one of seventeen counties pays toward a bench
+      they choose together.
+    </p>
+    <p>
+      The fund those offices spend from took in $39,567,583 in 2025, and more than half of it is
+      sales tax. Interest on the county's cash came to $5,148,389, which is more than the property
+      tax levied for this fund — so about an eighth of the county's general revenue arrives without
+      anyone having voted for it.
+    </p>
+    <h3>The number to be careful with</h3>
+    <p>
+      The same report's grand total is $374,841,547, and the county does not have it.
+    </p>
+    <DataTable
+      caption="Nearly half the county's books is money it holds for somebody else. Fifteen funds took in and paid out the same amount to the cent — second-half real estate at $58,725,512.16, federal withholding at $4,113,093.70 — and a fund whose two sides match exactly is a conduit, not an income."
+      columns={['What', 'Revenue, 2025', 'Share']}
+      rows={funds}
+    />
+    <p>
+      The $139 million is the real estate tax the treasurer collects for twelve school districts,
+      two cities, twelve villages, twelve townships, a library and a park district. It is the
+      largest number in this county's public accounts and the county's own share of it is 3.3 per
+      cent. The audited books tell the same kind of story from the other side: Allen County's
+      liabilities rose $36,758,891 between 2022 and 2023 and it borrowed nothing — the movement is a
+      pension line revalued under an accounting standard. What it owes to lenders is $16,281,525.
     </p>
   </section>
 </Base>

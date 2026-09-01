@@ -2122,6 +2122,51 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "a-grand-total-is-not-a-budget",
+        statement: "Allen County's books total $374,841,547 and the county government runs on \
+                    $39,567,583 of it. Nearly half the rest is tax the treasurer collects for \
+                    other governments and hands straight on, and the sheriff's office alone costs \
+                    half again as much as the county's other seven elected offices together.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-funds-2025.yml",
+                "**The county's revenue report ends at $374,841,546.99 and the county government does not have\n  $374,841,546.99.**"
+            ),
+            support!(
+                "measure/allen-county-funds-2025.yml",
+                "**Nearly half of the grand total is money the county holds for somebody else.**"
+            ),
+            support!(
+                "measure/allen-county-funds-2025.yml",
+                "**Fifteen funds took in and paid out the same amount to the cent.**"
+            ),
+            support!(
+                "measure/allen-county-general-fund-2025.yml",
+                "**The county government runs on $39,567,582.57, and more than half of it is sales tax.**"
+            ),
+            support!(
+                "measure/allen-county-general-fund-2025.yml",
+                "**In order, the eight are 10,786,007, 3,304,189, 1,394,273, 713,258, 497,075, 475,391, 388,472\n  and 341,014.**"
+            ),
+            support!(
+                "measure/allen-county-net-position-2023.yml",
+                "**Liabilities rose $36,758,891 in a year in which the county borrowed nothing.**"
+            ),
+        ],
+        answers: &["This corpus cannot say what any of them costs in total, because an office may also draw on funds outside this one, as the engineer does."],
+        figures: &[
+            Figure { label: "Sheriff", value: 10786007.0, literal: "10,786,007" },
+            Figure { label: "Commissioners", value: 3304189.0, literal: "3,304,189" },
+            Figure { label: "Prosecutor", value: 1394273.0, literal: "1,394,273" },
+            Figure { label: "Clerk of Courts", value: 713258.0, literal: "713,258" },
+            Figure { label: "Auditor", value: 497075.0, literal: "497,075" },
+            Figure { label: "Coroner", value: 475391.0, literal: "475,391" },
+            Figure { label: "Recorder", value: 388472.0, literal: "388,472" },
+            Figure { label: "Treasurer", value: 341014.0, literal: "341,014" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
