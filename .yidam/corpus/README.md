@@ -31,6 +31,8 @@ Sorted by: kind, then alphabetically.
 | [ohio-senate-district-12-2023.yml](division/ohio-senate-district-12-2023.yml) | division | Ohio Senate District 12 (2023 map) | 2 | 1v / 2i / 1o | 31 |
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 5v / 1i / 0o | 55 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
+| [allen-county-declared-for-covid-19-2020.yml](event/allen-county-declared-for-covid-19-2020.yml) | event | Allen County is declared for COVID-19, March 2020 | 3 | 4v / 2i / 1o | 48 |
+| [allen-county-declared-for-hurricane-katrina-2005.yml](event/allen-county-declared-for-hurricane-katrina-2005.yml) | event | Allen County is declared for Hurricane Katrina, September 2005 | 3 | 4v / 1i / 1o | 40 |
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
@@ -45,11 +47,12 @@ Sorted by: kind, then alphabetically.
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
+| [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 3v / 2i / 1o | 41 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States buys the tank plant's ground | 3 | 3v / 2i / 3o | 56 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
 | [allen-county-educational-service-center.yml](jurisdiction/allen-county-educational-service-center.yml) | jurisdiction | Allen County Educational Service Center | 2 | 5v / 0i / 2o | 44 |
-| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 3 | 5v / 3i / 2o | 73 |
+| [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 3 | 6v / 3i / 2o | 82 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 6v / 0i / 0o | 68 |
 | [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 7v / 0i / 0o | 48 |
 | [american-township.yml](jurisdiction/american-township.yml) | jurisdiction | American Township (government) | 2 | 8v / 0i / 0o | 49 |
@@ -94,6 +97,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
+| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 4v / 4i / 1o | 65 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 8v / 1i / 0o | 63 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
@@ -131,7 +135,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
 | [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
 | [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
-| [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 3v / 0i / 0o | 32 |
+| [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 4v / 1i / 0o | 40 |
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
@@ -314,7 +318,7 @@ Sorted by: kind, then alphabetically.
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 2v / 1i / 1o | 23 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
-| [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 15v / 7i / 2o | 156 |
+| [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 16v / 7i / 2o | 162 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 4 | 10v / 3i / 1o | 82 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
