@@ -25,6 +25,20 @@ location:
     value: https://codes.ohio.gov/ohio-revised-code/section-1901.02
     description: Municipal court territorial jurisdiction — the Lima court's is the whole county
   - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-5543.01
+    description: >-
+      General powers and duties of the county engineer. Division (A)(1) gives the engineer "general
+      charge of the ... maintenance, and repair of all bridges and highways within the engineer's
+      county, under the jurisdiction of the board of county commissioners"; (A)(2) gives the engineer
+      charge of township road work done by township trustees. Effective 10 June 2004.
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-5591.02
+    description: >-
+      "Commissioners must build certain bridges." The board of county commissioners "shall construct
+      and keep in repair all necessary bridges in municipal corporations on all county roads and
+      improved roads that are of general and public utility ... and that are not on state highways."
+      Effective 30 June 2007.
+  - kind: url
     value: https://codes.ohio.gov/ohio-revised-code/section-3311.05
     description: >-
       Educational service center defined — a county's territory less its city and exempted village
@@ -38,6 +52,7 @@ used-by:
   - ../corpus/jurisdiction/allen-county-educational-service-center.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
   - ../corpus/jurisdiction/lima-municipal-court.yml
+  - ../corpus/measure/allen-county-bridges-2025.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
@@ -95,3 +110,10 @@ serves Lima. See [the name is the seat, not the extent](../decisions/the-name-is
 **What it is not used for here.** The corpus has not read the chapters establishing the treasurer,
 recorder, prosecutor or clerk of courts, so those offices carry their term length as arithmetic on
 the roster's dates rather than as statute.
+
+**Two of its sections turned up as a shape in a federal file.** Allen County has 364 highway bridges
+in the National Bridge Inventory and not one of them is owned by a township — which is §5543.01 and
+§5591.02 read from the outside, since those sections put every bridge in the county on the
+commissioners and the engineer, and leave townships the roads. A statute this corpus already held
+for its licensing clause turns out to be visible in a count. See
+[the bridges](../corpus/measure/allen-county-bridges-2025.yml).

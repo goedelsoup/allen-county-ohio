@@ -32,6 +32,7 @@ used-by:
   - ../corpus/site/allen-correctional-institution.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/allen-county-justice-center.yml
+  - ../corpus/site/hay-road-bridge.yml
   - ../corpus/site/lima-state-hospital.yml
   - ../corpus/site/oakwood-correctional-facility.yml
 ---
