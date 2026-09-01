@@ -9,7 +9,8 @@ const appointed = assertion('appointment-is-a-form-of-local-government')
 const twoVillages = assertion('two-villages-cannot-fill-their-governments')
 const townships = assertion('the-townships-are-named')
 const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
-const mayors = assertion('the-mayoral-line-stops-in-1886')
+const mayors = assertion('the-mayoral-line-reaches-1922')
+const lostYear = assertion('the-1906-list-lost-a-year')
 
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 // An office with no tenure would show as a blank holder rather than silently vanish.
@@ -318,7 +319,7 @@ const traced = offices.filter(
   </section>
 
   <section>
-    <h2>The mayors, and the gap after them</h2>
+    <h2>The mayors, and where the office went</h2>
     <AssertionCard assertion={mayors} />
     <p>
       The 1885 county history narrates Lima's municipal elections year by year from the town's
@@ -363,15 +364,94 @@ const traced = offices.filter(
     <p>
       Four of the twenty-four have pages of their own here and twenty do not, which is a decision
       rather than an unfinished job: a holder earns a node when something about that holder does not
-      fit the line. Samuel A. Baxter was mayor twice and appointed once between, and is probably the
-      Dr. Samuel A. Baxter who co-wrote the 1906 county history — which would mean the technical
-      account of the first oil well that this site has leaned on was written partly by a man who had
-      been Lima's mayor thirty-four years before it was drilled. George W. Overmyer is the only
+      fit the line. Samuel A. Baxter was mayor twice and appointed once between, and this site
+      used to say he was probably the Dr. Samuel A. Baxter who co-wrote the 1906 county history. The
+      1906 book's own list of mayors calls the man of 1851 "Samuel A. Baxter, Sr." and the man of
+      1896 "Dr. Samuel A. Baxter", and a list that says Senior is distinguishing him from someone.
+      Father and son fits the printed evidence better than one man of eighty-one, and the
+      identification is now unresolved rather than probable. George W. Overmyer is the only
       mayor in the line no election produced; the council chose him in September 1869 when Robb
       resigned, and he was probate judge in 1881 on the committee that picked the plans for the
       present courthouse. Richard Metheany appears in the table six times across twenty-six years.
       And two sources spell H. S. Prophet differently.
     </p>
+    <h3>Three books, four slots, and a year with nobody in it</h3>
+    <AssertionCard assertion={lostYear} />
+    <p>
+      The 1906 and 1921 histories print this same line, and all three agree on every one of forty-odd
+      names except four consecutive slots in the 1850s. The 1885 line reads Milligan, Baxter,
+      Milligan, Baxter. The 1906 list drops the second Baxter. The 1921 list drops the second
+      Milligan and the second Baxter both — which is what a copyist does reading a repeated pair.
+    </p>
+    <p>
+      Which of them is right is settled without leaving the page. Delete Baxter's second term and
+      the two names after it slide two years earlier, until James A. Newell's April 1858 stops them,
+      leaving April 1857 to April 1858 with no mayor at all — the only such hole in the 1906 list's
+      thirty-four entries. A list that merely disagreed would not leave a year empty.
+    </p>
+    <p>
+      Collating the three also found an error here rather than in them. The 1885 mayor list prints
+      "John B. Townsend"; the same volume prints James B. Townsend in its election returns, in its
+      index, and in a biography of the man — an attorney born in 1851 who paid for his legal studies
+      by touring the country with a company of vocalists selling his father's patent medicines, and
+      who took the office at twenty-five. Two other corrections that looked identical were not taken:
+      the 1885 book prints Delzell seventeen times against Dalzell four, and the 1906 and 1921 lists
+      are one lineage rather than two witnesses, since the 1921 book says it follows "the most recent
+      report in Lima."
+    </p>
+
+    <h3>The line to 1922</h3>
+    <p>
+      The office did not run out; it was abolished. The commission-manager form of government came
+      into effect on 1 January 1922, at the end of Mayor Burkhardt's term, after what the 1921
+      history calls four-score years in which Lima "has been ruled by a mayor" — the town organized
+      in March 1842, so four-score is exact to the quarter.
+    </p>
+    <table>
+      <caption>Mayors of Lima, 1886–1922</caption>
+      <thead><tr><th scope="col">Years</th><th scope="col">Mayor</th></tr></thead>
+      <tbody>
+        <tr><td>1884–90</td><td>William McComb, Jr.</td></tr>
+        <tr><td>1890–92</td><td>Ira R. Longsworth</td></tr>
+        <tr><td>1892–94</td><td>William McComb, Jr.</td></tr>
+        <tr><td>1894–96</td><td>James V. Smiley</td></tr>
+        <tr><td>1896–98</td><td>Dr. Samuel A. Baxter</td></tr>
+        <tr><td>1898–1900</td><td>H. S. Prophet</td></tr>
+        <tr><td>1900–02</td><td>William McComb, Jr.</td></tr>
+        <tr><td>1902–04</td><td>L. H. Rogers</td></tr>
+        <tr><td>1904–06</td><td>Theodore D. Robb</td></tr>
+        <tr><td>1906–08</td><td>Theodore D. Robb</td></tr>
+        <tr><td>1908–10</td><td>Fred C. Becker</td></tr>
+        <tr><td>1910–12</td><td>George Dyer</td></tr>
+        <tr><td>1912–14</td><td>C. N. Shook</td></tr>
+        <tr><td>1914–16</td><td>Theodore D. Robb, who died in office</td></tr>
+        <tr><td>1916–18</td><td>B. H. Simpson</td></tr>
+        <tr><td>1918–20</td><td>B. H. Simpson</td></tr>
+        <tr><td>1920–22</td><td>F. A. Burkhardt</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Everything to 1904 is dated by the 1906 history. Everything after it is dated here: the 1921
+      list gives nine entries after L. H. Rogers and no years at all, but it states the term — two
+      years — and it dates the abolition. Nine two-year terms from April 1904 land in April 1922,
+      and the quarter-year residue is the calendar moving, which the same 1906 book shows in its
+      list of city solicitors, where every boundary is April until one turns on January 1906.
+    </p>
+    <p>
+      The book checks itself once and passes: Theodore D. Robb appears three times in the list, and
+      a biographical passage elsewhere in the same volume calls him "three times mayor of Lima". He
+      died in the third, and the list says the term "was finished by Miles Standish", who is named
+      nowhere else in it. The last mayor, F. A. Burkhardt, sat on the book's own advisory board of
+      editors and wrote a chapter in it — so the volume's enthusiasm for the charter that ended his
+      office was printed while he held it.
+    </p>
+    <p>
+      What is still missing is ninety-nine years, 1922 to 2021, and not for want of asking: the
+      city's site names its sitting mayor, dates her first election to 2021, and names no
+      predecessor. Its sitemap carries no roster of former mayors, and its only history page belongs
+      to the fire department.
+    </p>
+
     <p>
       The book prints the whole council beside the mayor, and that is where the rest of this site
       turns up. Benjamin C. Faurot was elected a village trustee in 1867, eighteen years before the
