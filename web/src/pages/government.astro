@@ -21,12 +21,40 @@ const money = assertion('a-grand-total-is-not-a-budget')
 const libraries = assertion('three-per-cent-of-the-library-money-is-local')
 const officers = assertion('a-line-of-holders-for-every-office')
 const rosters = assertion('three-rosters-and-only-one-can-be-checked')
+const board = assertion('the-board-is-printed-as-a-shift-register')
 
 const officerSpec = bar(
   officers.figures.map((f) => f.label),
   officers.figures.map((f) => f.value),
   { yTitle: 'Holders named, 1831–1906', labelValues: true },
 )
+
+const boardSpec = bar(
+  board.figures.map((f) => f.label),
+  board.figures.map((f) => f.value),
+  { yTitle: 'The 74 transitions between the roster\'s 75 rows', labelValues: true },
+)
+
+// Four consecutive rows as the book prints them, to show the shift and the rotation. Typed out
+// because these are rows of a printed list, not nodes the graph carries.
+const boardRows = [
+  ['1875', 'William W. Williams', 'William Akerman', 'Bernard Esch'],
+  ['1876', 'Jacob Crites', 'William W. Williams', 'William Akerman'],
+  ['1877', 'Francis M. Clum', 'Jacob Crites', 'William W. Williams'],
+  ['1878', 'William W. Williams', 'Francis M. Clum', 'Jacob Crites'],
+  ['1879', 'Jacob Crites', 'William W. Williams', 'Francis M. Clum'],
+  ['1880', 'Francis M. Clum', 'Jacob Crites', 'William W. Williams'],
+  ['1881', 'Joseph A. States', 'Francis M. Clum', 'Jacob Crites'],
+]
+
+// The five rows after 1842 that break the shift, and what each turns out to be.
+const boardBreaks = [
+  ['1848', 'Samuel B. Walker goes from second place, a year early', 'a departure out of course'],
+  ['1865', 'Almon E. Hadsell and Freeman Bell both go at once', 'a departure out of course'],
+  ['1884', '"Alexander Shenk (vice Marshall)", written second', "the book's own annotation"],
+  ['1890', 'the row before it is not there', 'the book skips 1889'],
+  ['1894', 'George D. Kanawl and William Bice both go at once', 'a departure out of course'],
+]
 
 const rosterSpec = bar(
   rosters.figures.map((f) => f.label),
@@ -933,6 +961,58 @@ const traced = offices.filter(
       Lima with the rank of colonel in 1861, was elected Attorney General of Ohio in 1877, and used
       his one term in the legislature to resist a tax levy for railroad construction and to write a
       minority report in favour of abolishing capital punishment.
+    </p>
+  </section>
+
+  <section>
+    <h2>The board is printed as a shift register</h2>
+    <AssertionCard assertion={board} />
+    <p>
+      The same book prints the county's governing body once a year for seventy-five years — three
+      names a row, from June 1831 to 1905. It looks like a list of who was on the board. It is
+      something better: a mechanism. Each row is the row above it moved one place to the right. The
+      new commissioner is written first, the previous first name second, the previous second name
+      third, and the man who was third is gone.
+    </p>
+    <DataTable
+      title="Seven rows, three men, and one arrival"
+      caption="1876 to 1880 is the same three men reprinted four times with the order turning over; 1881 is an election. In both cases the row is the row above shifted right, and the difference is only who fills the first column."
+      columns={['Year', 'First', 'Second', 'Third']}
+      rows={boardRows}
+    />
+    <p>
+      In the twenty-two years when the board did not change at all, the three names are reprinted
+      with the third moved to the front — twenty-two times out of twenty-two, with no exception in
+      seventy-five years. So the first column does two jobs. In an election year it names the
+      incoming commissioner; in a year without one it names the incoming president of the board.
+      That is why the 1906 history explains the column one way ("the first person named is in most
+      cases the commissioner elected that year") and the 1921 history another ("naming the president
+      of the board first"), and why both are right about the half of the series they describe.
+    </p>
+    <ChartFigure
+      id="board-transitions"
+      title="What happens between one printed board and the next"
+      caption="Seventy-four transitions between seventy-five rows. The two rows where a new man is not written first are the two anomalies: 1884, where he was not elected but appointed in another man's place, and 1890, which follows the year the book forgot to print."
+      columns={['Kind of transition', 'Years']}
+      rows={board.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="board-transitions" set:html={JSON.stringify(boardSpec)} is:inline />
+    <p>
+      The value of a mechanism is that it can be violated. Five rows after 1842 break it, and each
+      break is a fact the book does not otherwise state — except one, which is a fact about the
+      book.
+    </p>
+    <DataTable
+      title="The five rows that break the shift"
+      caption="Only 1884 is annotated in the book — 'Alexander Shenk (vice Marshall)', the one parenthesis in seventy-five years of list — and it is the only one of the five that gets a node of its own, because an anomaly is not a reason. 1889 is missing from the book entirely, and its absence makes John Akerman and William Bice look as though they left the board and came back."
+      columns={['Year', 'What breaks', 'What it is']}
+      rows={boardBreaks}
+    />
+    <p>
+      Before 1842 the pattern is not there: eight of the first eleven transitions break it, against
+      five of the next sixty-three. Either the board's terms were not yet regular in the county's
+      first decade or the compiler's sources for it were poorer. The shape of the list is evidence
+      that something differs. It is not evidence of which.
     </p>
   </section>
 </Base>

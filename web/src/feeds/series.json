@@ -33,11 +33,11 @@
           "node": "measure/allen-county-common-pleas-bench-1833-1920.yml",
           "label": "The Allen County common pleas bench, 1833–1920",
           "as_of": "1920",
-          "value": 27.0,
-          "published": "27",
+          "value": 34.0,
+          "published": "34",
           "tier": "verified",
           "source": "catalog/miller-allen-county-1906.md",
-          "method": "Transcribed by hand from the full text of both histories on archive.org. The count of 27 is the three associate judges of 1831, the twenty presidents and judges the 1906 book names in sequence, and the four the 1921 book adds after it; Metcalf is counted once although the 1906 book gives him two spans. It is a count of persons named as sitting, not of terms, and it is not a count of Allen County's own judges: for most of this period the seat was a multi-county one and the books name the holder's home county where they know it. Dates are given as printed, including the scan's \"1S80\" for James H. Day's start, which is reported here as 1880 and flagged nowhere else because the surrounding sentence dates his resignation to 1892. [verified]"
+          "method": "Transcribed by hand from the full text of both histories on archive.org. The count of 34 is the ten associate judges the 1921 book names between 1831 and 1851, the twenty presidents and judges the 1906 book names in sequence, and the four the 1921 book adds after 1906; Metcalf is counted once although the 1906 book gives him two spans. The three associate judges of 1831 are counted in the ten, not twice. It is a count of persons named as sitting, not of terms, and it is not a count of Allen County's own judges: for most of this period the seat was a multi-county one and the books name the holder's home county where they know it. Dates are given as printed, including the scan's \"1S80\" for James H. Day's start, which is reported here as 1880 and flagged nowhere else because the surrounding sentence dates his resignation to 1892. [verified]"
         }
       ]
     },
@@ -338,6 +338,26 @@
           "tier": "verified",
           "source": "catalog/usgs-nwis.md",
           "method": "Fetched from the USGS peak-streamflow service for site 04187500 and 04187100 and counted here by water year, which runs 1 October to 30 September and is named for the year it ends in. The two gauges are not combined into one series and no figure here is computed across both. The `value` is the largest peak either gauge recorded and the `as_of` is the day it happened, which is not the same as the largest flow the river has ever carried: the record covers 79 of the 102 years between 1924 and 2025, and none before. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "office-allen-county-board-of-commissioners::men-named-as-county-commissioner,-1831–1920",
+      "subject": "office/allen-county-board-of-commissioners.yml",
+      "subject_label": "Board of Allen County Commissioners",
+      "parameter": "men named as county commissioner, 1831–1920",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "label": "The Allen County board of commissioners, 1831–1920",
+          "as_of": "1920",
+          "value": 68.0,
+          "published": "68",
+          "tier": "verified",
+          "source": "catalog/miller-allen-county-1906.md",
+          "method": "The 1906 list was parsed from the archive.org full text and then checked by hand against the scan, because the OCR breaks names across lines and the shift-register test is worthless if a name is wrong in one row and right in the next: \"H. B. Thorn\" for Henry B. Thorn in 1837 alone would have manufactured two departures. Four such artifacts were reconciled — that abbreviation, \"Bernard Escli\" for Esch, \"Franeis M. Clum\" for Francis, and a stray comma in \"Alexander, Conrad\" — and each is a scan defect rather than a difference between editions. The 1921 list was transcribed by hand. The count of 68 is persons: fifty-three in the dated list plus fifteen names the 1921 book adds after Charles W. Johnston, with the initialled forms matched to their full forms only where the surname and the position in sequence both agree. [verified]"
         }
       ]
     },
@@ -7155,6 +7175,92 @@
           "label": "Assemblies since the 32nd",
           "value": 43.0,
           "literal": "43"
+        }
+      ]
+    },
+    {
+      "id": "the-board-is-printed-as-a-shift-register",
+      "statement": "The 1906 county history prints the Allen County board once a year for seventy-five years, and each row is the row before it moved a place right. Fifty-eight of the sixty-three transitions after 1842 obey it exactly, and every one that does not is either an event the book never mentions or a hole in the printing.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "node_label": "The Allen County board of commissioners, 1831–1920",
+          "span": "**The 1906 book prints the board at the end of every year from 1831 to 1905 — seventy-five rows, three names each, and fifty-three men.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md",
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "node_label": "The Allen County board of commissioners, 1831–1920",
+          "span": "**Every row is the row before it, shifted one place right.** The new commissioner is written first, the previous first name second, the previous second name third — and the man in third place is the one who goes. Of the sixty-three transitions from 1842 to 1905, fifty-eight are exactly that and five are not.",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "node_label": "The Allen County board of commissioners, 1831–1920",
+          "span": "**In figures: 75 rows and 74 transitions between them — 50 in which a new commissioner arrives and is written first, 2 in which a new man arrives and is not, and 22 in which nobody arrives and the order rotates anyway.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "node_label": "The Allen County board of commissioners, 1831–1920",
+          "span": "**The rule holds even in the twenty-two years when nobody new arrives.** In every one of those the three men are the same three and the order still turns over: the third name becomes the first, twenty-two times out of twenty-two, without a single exception in seventy-five years.",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "node_label": "The Allen County board of commissioners, 1831–1920",
+          "span": "**Both books explain that column and neither explains all of it.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-commissioners-1831-1920.yml",
+          "node_label": "The Allen County board of commissioners, 1831–1920",
+          "span": "**The book skips 1889 and says nothing about it.** It runs 1888 to 1890 with no row between, and the hole manufactures two false careers: John Akerman and William Bice both appear to leave the board and return, and neither did.",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "tenure/commissioner-1884-alexander-shenk.yml",
+          "node_label": "Alexander Shenk, Allen County Commissioner, 1884–1886",
+          "span": "**It is a node because the book gives a reason and not only a date**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "New man, written first",
+          "value": 50.0,
+          "literal": "50"
+        },
+        {
+          "label": "New man, written second",
+          "value": 2.0,
+          "literal": "2"
+        },
+        {
+          "label": "No new man; order rotates",
+          "value": 22.0,
+          "literal": "22"
         }
       ]
     },
