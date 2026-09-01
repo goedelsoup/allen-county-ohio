@@ -1,0 +1,66 @@
+class: measure
+label: Peak flows on the Ottawa River, 1924–2025
+description: |
+  **The Ottawa River has been gauged for seventy-nine water years and the record is in two halves
+  that cannot be joined.** [verified] —
+  [USGS peak streamflow](../../catalog/usgs-nwis.md).
+
+      gauge                          water years   n    drainage    largest peak
+      04187500 at Allentown          1924-1981     52   160 sq mi   7,740 cfs  1959-01-22
+      04187100 at Lima               1989-2025     27   128 sq mi   5,700 cfs  2011-02-28
+
+  **They are different places, different periods, and seven water years apart.** Allentown is
+  downstream of Lima and drains a quarter more ground; nothing gauged the river between water year
+  1982 and water year 1988. [verified] — same source. The median annual peak is 3,240 cubic feet a
+  second at Allentown and 3,210 at Lima — almost identical from a basin a quarter smaller — and the
+  corpus does not read that as a change in the river, because the two figures are from different
+  decades and either urbanisation or the weather of two eras would explain it. [inference]
+
+  **Each half has holes and the holes have shapes.** Allentown is missing water years 1936 to 1938
+  and 1940 to 1942 — the Depression and the war. Lima is missing **2000 to 2009 exactly**, ten
+  consecutive years. [verified] — same source, computed here.
+
+  **That ten-year hole swallowed three of the county's four flood declarations.** The federal
+  disaster declarations for severe storms and flooding fall in 2004, 2005 and 2007, and the gauge
+  was not running in any of them. [verified] — same source and
+  [the declarations](allen-county-disaster-declarations-1965-2020.yml). What was in the river in
+  those three years is not recorded anywhere this corpus can reach.
+
+  **And the largest measured flood in the modern record brought no federal declaration at all.**
+  5,700 cubic feet a second on 28 February 2011 is the highest of the Lima gauge's 27 water years,
+  and 2011 is not a declaration year; nor is 2015, the second highest. [verified] —
+  [USGS peak streamflow](../../catalog/usgs-nwis.md) and
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md).
+  This is not evidence that the aid was misdirected. It is evidence that a declaration is an
+  administrative act, which the declarations node had to reason its way to and this measures.
+  [inference]
+
+  **The two records overlap on one weather declaration in sixty years.** The gauge covers water
+  years 1989-1999 and 2010-2025; the only non-pandemic declaration inside that window is the storm
+  of June 2012, and that water year's peak — 3,170 cfs on 30 November 2011, sixteenth of
+  twenty-seven — was not in that storm, which the declaration titles as straight-line winds.
+  [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md) and
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md), computed here; see
+  [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).
+
+  [open] What the river did in 2000-2009, and whether any gauge in the county was running. The
+  corpus has checked the two with a peak record and not the other twenty-seven stream sites.
+properties:
+  parameter: highest recorded peak flow on the Ottawa River
+  value: "7740"
+  unit: cubic feet per second
+  as_of: "1959-01-22"
+  method: |
+    Fetched from the USGS peak-streamflow service for site 04187500 and 04187100 and counted here by
+    water year, which runs 1 October to 30 September and is named for the year it ends in. The two
+    gauges are not combined into one series and no figure here is computed across both. The `value`
+    is the largest peak either gauge recorded and the `as_of` is the day it happened, which is not
+    the same as the largest flow the river has ever carried: the record covers 79 of the 102 years
+    between 1924 and 2025, and none before. [inference]
+links:
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

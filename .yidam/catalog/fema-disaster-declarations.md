@@ -22,6 +22,7 @@ used-by:
   - ../corpus/event/allen-county-declared-for-hurricane-katrina-2005.yml
   - ../corpus/event/the-tornadoes-of-april-1965.yml
   - ../corpus/measure/allen-county-disaster-declarations-1965-2020.yml
+  - ../corpus/measure/ottawa-river-peak-flows-1924-2025.yml
 ---
 
 **What a row is.** Not a disaster — a **declaration**, which is a presidential act taken on a state
