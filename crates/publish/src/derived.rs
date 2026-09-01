@@ -2258,6 +2258,52 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "ninety-nine-papers-and-one-of-them-online",
+        statement: "Ninety-nine newspapers have been printed in Allen County and one of them is \
+                    digitized. Forty-three have no library reporting a copy. This site read the \
+                    one for six phases and called the other ninety-eight the county's press.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-newspapers-1843-2026.yml",
+                "**Ninety-nine bibliographic records carry Allen County and ninety-seven of them were printed in\n  it.** By place of publication that is 66 in Lima, 18 in Delphos, 6 in Spencerville, 5 in Bluffton,\n  1 in Elida and 1 in Lafayette."
+            ),
+            support!(
+                "measure/allen-county-newspapers-1843-2026.yml",
+                "**One of the ninety-nine is digitized.**"
+            ),
+            support!(
+                "measure/allen-county-newspapers-1843-2026.yml",
+                "**Forty-three of the ninety-nine have no library reporting a copy.**"
+            ),
+            support!(
+                "measure/allen-county-newspapers-1843-2026.yml",
+                "**The first was a weekly called The Porcupine and it lasted seven months.**"
+            ),
+            support!(
+                "measure/allen-county-newspapers-1843-2026.yml",
+                "**Most of them are older than the century.**"
+            ),
+            support!(
+                "organization/the-lima-news.yml",
+                "**Nine titles carry one unbroken issue count from 27 October 1884 to now.**"
+            ),
+            support!(
+                "event/the-lima-news-strike-of-1957.yml",
+                "**The strikers printed their own paper on the day the presses stopped.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima", value: 66.0, literal: "66" },
+            Figure { label: "Delphos", value: 18.0, literal: "18" },
+            Figure { label: "Spencerville", value: 6.0, literal: "6" },
+            Figure { label: "Bluffton", value: 5.0, literal: "5" },
+            Figure { label: "Elida", value: 1.0, literal: "1" },
+            Figure { label: "Lafayette", value: 1.0, literal: "1" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

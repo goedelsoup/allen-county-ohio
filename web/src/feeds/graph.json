@@ -636,7 +636,7 @@
       "refusals": [
         "This node does not establish how the vote went or who signed the petition."
       ],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "event/reorganization-of-1848.yml",
@@ -882,6 +882,42 @@
         },
         {
           "text": "**The corporation's date was in this book the whole time.** The corpus has cited the 1885 history in dozens of nodes and had never asked it this question; the field on [the city](../jurisdiction/city-of-delphos.yml) stood empty for sixty-eight phases. [inference] — see [a count of absences is not an agenda](../../decisions/a-count-of-absences-is-not-an-agenda.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "event/the-lima-news-strike-of-1957.yml",
+      "class": "event",
+      "label": "The Lima News strike of 1957",
+      "tier": "inference",
+      "properties": {
+        "event_type": "strike",
+        "location_description": "Lima, Ohio. No address is given for the plant or for the strikers' press. [verified]",
+        "occurred": "1957-05-10",
+        "occurred_through": "1957-06-27"
+      },
+      "blocks": [
+        {
+          "text": "A seven-week stoppage that shut the county seat's only daily and left two newspapers behind it. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md), three bibliographic records read together.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Lima News was suspended from 10 May to 27 June 1957 due to a strike.** That is the whole of what its own record says about it, in one sentence. [verified] — same source; see [The Lima News](../organization/the-lima-news.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The strikers printed their own paper on the day the presses stopped.** *The Bulletin*, Lima, Ohio — \"No. 1 (May 10, 1957)-no. 4 (June 27, 1957)\", imprint \"Lima, Ohio : Union Newspaper Workers, 1957\", and the note \"Published by striking and locked out workers of the Lima news\". [verified] — same source. Its first issue and the suspension share a date, and so do its last and the resumption.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four numbers in seven weeks, and every one of them survives.** The Ohio History Connection reports the full run, 10 May to 27 June 1957, on microfilm roll 25189. [verified] — same source, the holdings record. It is one of the shortest complete newspaper runs the county has.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four days after the News came back, Lima had a second daily.** [The Lima Citizen](../organization/the-lima-citizen.yml) is dated first year, number 1, 1 July 1957, and ran to 7 January 1964. [verified] — same source. The directory states the two facts and does not join them; the corpus joins them and says so. [inference]",
           "tier": "inference"
         }
       ],
@@ -4834,6 +4870,59 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-newspapers-1843-2026.yml",
+      "class": "measure",
+      "label": "Allen County's newspapers, 1843–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026-09-01",
+        "method": "The Library of Congress collection endpoint faceted to `location_county:allen` and `location_state:ohio`, `c=200`, which returns all 99 records in one response, followed by the full item record for each of the 99. Place of publication is `location_city` checked against the county's twelve settlements; two records match none of them and are excluded from the 97. Frequency, language and party are read from the item records and not inferred. Holdings are counted as records whose `holding_data.data` is non-empty. [verified]",
+        "parameter": "newspaper titles recorded as published in Allen County",
+        "unit": "titles",
+        "value": "97"
+      },
+      "blocks": [
+        {
+          "text": "Every newspaper the Library of Congress records as published in this county, and how much of it a reader can still get at. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md), the county's whole set retrieved 1 September 2026.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Ninety-nine bibliographic records carry Allen County and ninety-seven of them were printed in it.** By place of publication that is 66 in Lima, 18 in Delphos, 6 in Spencerville, 5 in Bluffton, 1 in Elida and 1 in Lafayette. [verified] — same source, every record's imprint checked. The two outsiders are *The Lutheran Evangelist* of Springfield and the *Shawnee Cridersville Press* of Wapakoneta.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One of the ninety-nine is digitized.** The Bluffton News, and only the twenty-one years of it from 1939 to 1959, out of the hundred and fifty-one it has been printing since 28 July 1875. The other ninety-eight titles exist as paper and microfilm or as nothing at all, and sixty-six of them are Lima's. [verified] — same source, the `partof_collection` facet: Chronicling America, 1.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Forty-three of the ninety-nine have no library reporting a copy.** Fifty-six do: the Ohio History Connection reports runs of 43 titles and the Lima Public Library of 19, and twelve other institutions from Boston to Chicago hold one or two each. [verified] — same source, holdings counted across all 99. This is a count of what was reported to a union list and not a proof that nothing survives. [inference] — a library that never joined the Newspaper Program is invisible to it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The first was a weekly called The Porcupine and it lasted seven months.** Volume 1, number 1 is dated 4 March 1843, eleven months after [Lima was organized as a town](../event/organization-of-the-town-of-lima-1842.yml) and twelve years after the county was organized. [verified] — same source. See [The Porcupine](../organization/the-porcupine.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Most of them are older than the century.** Fifty-six of the ninety-nine began before 1900, sixteen between 1900 and 1929, seventeen from 1930 onward, and ten give no start year. The busiest decade in the county's history for founding a newspaper was the 1890s, with sixteen. [inference] — computed from the start dates, which are the cataloguer's earliest sighted issue and not the printer's first.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three of them are still going and one is the county seat's only daily.** [verified] — same source: The Lima News, the Bluffton News and Spencerville's Journal-News carry an open end date. Lima has been a one-daily city since [the Star and Republican-Gazette ceased on 4 March 1933](../organization/the-lima-news.yml), except for the six and a half years of [the Lima Citizen](../organization/the-lima-citizen.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Twenty-seven of the ninety-nine have a party.** Ten Republican, six Democratic, six Independent, two Whig, and three that changed — including the surviving daily, \"Independent, 1926-1931; Democratic, 1932+\". [verified] — same source, quoting Gutgesell's *Guide to Ohio Newspapers, 1974* in each of the 27 notes. The two Whig papers are Lima's third and fourth, 1844 and 1847, and the two Democratic ones its first and second.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two were printed in German and neither can be read.** *Der Lima Courier* from 30 August 1877 and the *Delphos Kleeblatt* from December 1889 to 3 August 1905. [verified] — same source. No library reports a copy of the Courier at all. See [Der Lima Courier](../organization/der-lima-courier.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-occupancy-2020.yml",
       "class": "measure",
       "label": "Allen County housing occupancy and household size, 2020",
@@ -5285,6 +5374,10 @@
         },
         {
           "text": "**The county voted for two of those lines and eight people voted against.** The Boesel railroad bill passed the Legislature in April 1872, and at a special election on 25 May 1872 Lima and Ottawa Township voted on $100,000 of bonds for the Lima, Lafayette & Mississippi and the Lake Erie & Louisville. \"Something over 700 votes were cast and only eight of those were against the appropriation.\" Both roads were put through in 1872 and later consolidated as the Lake Erie & Western. [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The paper quoted below is now a catalogued title.** The *Allen County Republican* of Lima ran weekly from 1877 to its last number, volume 16 number 57 of 17 July 1891, and the Ohio History Connection reports film of 4 January 1889 to 17 July 1891 and nothing earlier — so the issue of 14 March 1879 quoted here survives, as far as any union list knows, only inside the 1906 history. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md); see [the county's newspapers](allen-county-newspapers-1843-2026.yml).",
           "tier": "verified"
         },
         {
@@ -8007,6 +8100,10 @@
           "tier": "verified"
         },
         {
+          "text": "**The seventeen-year half of this gap now has a reel number.** The Bluffton weekly that named the mayors of 1939 to 1956 is on microfilm at Bowling Green State University continuously from 28 May 1896 to 31 December 1960, so 1922 to 1939 is inside a run this corpus has not read rather than outside every run there is. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md), the holdings record; see [The Bluffton News](../organization/the-bluffton-news.yml) and [an index of the held is not an inventory of the made](../../decisions/an-index-of-the-held-is-not-an-inventory-of-the-made.yml).",
+          "tier": "verified"
+        },
+        {
           "text": "**There is a charter.** The city's own site links \"Lima City Charter and Code\" to the American Legal Publishing code library. [verified] — [the city's site](../../catalog/city-of-lima-official-site.md).",
           "tier": "verified"
         },
@@ -8266,6 +8363,37 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "organization/der-lima-courier.yml",
+      "class": "organization",
+      "label": "Der Lima Courier",
+      "tier": "inference",
+      "properties": {
+        "founded": "1877-08-30",
+        "industry": "German-language weekly newspaper publishing",
+        "org_type": "newspaper"
+      },
+      "blocks": [
+        {
+          "text": "A German-language weekly published in Lima from 1877, and one of two German papers this county is recorded as having had. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Jahrgang 1, Nummer 1 is dated 30 August 1877.** The record gives no last issue, no publisher and no price — the imprint is \"Lima, Ohio : [s.n.]\" — and its subject heading is \"Germans--Ohio--Lima--Newspapers\". [verified] — same source, the item record read in full.",
+          "tier": "verified"
+        },
+        {
+          "text": "**No library anywhere reports holding a copy.** Its `holding_data` is an empty list, one of the forty-three in the county's ninety-nine that no institution has claimed. [verified] — same source. So the corpus can say this paper existed and can say nothing that was in it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A German press is what a German township implies and this is the first evidence of one.** The county had a township named German until [1918](../event/renaming-of-german-township-1918.yml), and until now the corpus held the renaming without holding anything the community itself produced. [inference] — the two facts joined; the directory does not connect them and the paper was printed in Lima, not in the township.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "organization/ford-motor-company.yml",
@@ -8850,6 +8978,149 @@
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "organization/the-bluffton-news.yml",
+      "class": "organization",
+      "label": "The Bluffton News",
+      "tier": "inference",
+      "properties": {
+        "founded": "1875-07-28",
+        "industry": "weekly newspaper publishing",
+        "org_type": "newspaper"
+      },
+      "blocks": [
+        {
+          "text": "The village weekly this corpus has read more of than any other document, and the only Allen County newspaper the Library of Congress has digitized. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md) and [Chronicling America](../../catalog/chronicling-america.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It began with the issue of 28 July 1875 and it has not stopped.** Published by the Bluffton News Publishing Company, weekly, and the record carries no end date. [verified] — the directory.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A hundred and fifty-one years exist and twenty-one of them are online.** Chronicling America holds 1939 through 1959; the microfilm at Bowling Green State University runs 15 November 1877, then 22 July 1880 to 13 June 1889, 18 February 1892 to 26 December 1895, and **28 May 1896 continuously to 31 December 1960**, with a further reel for 1 December 1970 to 30 December 1982. The Ohio History Connection reports paper volumes besides. [verified] — the directory, the holdings record read in full.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That changes what this corpus can still ask of it.** The digitized window opens in 1939, which is why [Lima's mayors 1922–1939](../office/mayor-of-lima.yml) are still missing and 1939–1956 are not. The film covers 1922 to 1939 without a gap, in Bowling Green. [inference] — the holdings ranges read against the corpus's own open interval; nothing on that film has been read here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is the source of four mayors of Lima, two villages' election returns and a county's war news.** [verified] — [the mayors named inside the gap](../measure/lima-mayors-1939-1956.yml), [Bluffton and Beaverdam elections](../measure/bluffton-and-beaverdam-elections-1939-1959.yml) and [the second war](../period/the-second-world-war-in-allen-county.yml). What it reports and what it does not is set out in [a weekly reports events, not states](../../decisions/a-weekly-reports-events-not-states.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "organization/the-lima-citizen.yml",
+      "class": "organization",
+      "label": "The Lima Citizen",
+      "tier": "inference",
+      "properties": {
+        "dissolved": "1964-01-07",
+        "founded": "1957-07-01",
+        "industry": "daily newspaper publishing",
+        "org_type": "newspaper"
+      },
+      "blocks": [
+        {
+          "text": "A second daily in Lima, founded four days after a strike at the first one ended and dead six and a half years later. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**First year, number 1 is dated 1 July 1957 and volume 7, number 190 is dated 7 January 1964.** Daily except Saturday, published by the Lima Citizen Printing Company. [verified] — same source, the item record read in full.",
+          "tier": "verified"
+        },
+        {
+          "text": "**[The Lima News](the-lima-news.yml) had been shut by a strike from 10 May to 27 June 1957.** The Citizen's first issue is four days after the older paper resumed. [verified] — same source, both records; see [the strike](../event/the-lima-news-strike-of-1957.yml). The directory states the suspension and states the founding and does not connect them; the connection is this corpus's. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is the last competitor Lima has had.** No newspaper record for the city after 1964 carries a daily frequency, and the county has been a one-daily county since. [verified] — same source, all 66 Lima records checked; see [the county's newspapers](../measure/allen-county-newspapers-1843-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Lima Public Library reports the whole run and nobody else reports any of it.** Originals for 1 July 1957 to 30 December 1960 and microfilm for 1 July 1957 to 7 January 1964. [verified] — same source, the holdings record.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "organization/the-lima-news.yml",
+      "class": "organization",
+      "label": "The Lima News",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "Lima Sunday News on Sundays. Earlier titles in the same volume count: The Lima News and Times-Democrat, The Lima Daily News and Times-Democrat, The Lima Times-Democrat, The Times-Democrat, The Lima Daily Times, The Lima Daily Democratic Times, The Daily Democratic Times. [verified]",
+        "founded": "1926-06-21",
+        "industry": "daily newspaper publishing",
+        "org_type": "newspaper"
+      },
+      "blocks": [
+        {
+          "text": "The county seat's daily, and since 1964 the only one. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It has published under this title since 21 June 1926, and the title is younger than the paper by forty-two years.** The record opens \"43rd year (June 21, 1926)-\": the paper arrived at its present name already counting its forty-third volume. Gutgesell's guide labels it \"Independent, 1926-1931; Democratic, 1932+\". [verified] — same source, quoting the record's notes.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nine titles carry one unbroken issue count from 27 October 1884 to now.** Each successor begins at the number after its predecessor's last, and the directory prints both ends. [verified] — same source, the nine records read in full:",
+          "tier": "verified"
+        },
+        {
+          "text": "**The arithmetic closes.** A first volume beginning in October 1884 puts the thirty-sixth year in 1919–20 and the forty-third in 1926–27, which is where the directory puts them. [inference] — computed from the two volume-year statements and the founding date; the records themselves do not connect the Lima News to the Daily Democratic Times, only each title to the next.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In the merger of 1920 the paper kept one parent's name and the other's age.** The Lima Daily News, founded November 1897, ran to its \"24th year (May 2, 1920)\"; the combined paper appeared the next day as the thirty-sixth. The News gave the surviving title and the Times-Democrat the surviving count. [verified] — same source, both records.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its worst interruption is a strike.** Suspended 10 May to 27 June 1957; see [the strike](../event/the-lima-news-strike-of-1957.yml). [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "organization/the-porcupine.yml",
+      "class": "organization",
+      "label": "The Porcupine",
+      "tier": "inference",
+      "properties": {
+        "dissolved": "1843",
+        "founded": "1843-03-04",
+        "industry": "weekly newspaper publishing",
+        "org_type": "newspaper"
+      },
+      "blocks": [
+        {
+          "text": "The first newspaper printed in Allen County, a Lima weekly that began and ended in 1843. [verified] — [the U.S. newspaper directory](../../catalog/us-newspaper-directory.md), which holds no Allen County title with an earlier issue.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Volume 1, number 1 is dated 4 March 1843, and it ceased the same year.** The imprint is \"Lima, Allen County, Ohio : M.M. Gillett & A. Hoffman, 1843-\". Gutgesell's guide calls it \"Democratic\". [verified] — same source, quoting the record's notes.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima had a newspaper eleven months after it had a town government.** The town was organized on [29 March 1842](../event/organization-of-the-town-of-lima-1842.yml); the county had been organized eleven years and erected twenty-three. [inference] — the two dates differenced.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What is left of it is eleven issues on one reel.** The Ohio History Connection reports 4 March, 18 March, 1 April, 22 and 29 April, 27 May, 10 June, 8 and 22 July, 19 August, 9 September and 30 September to 14 October 1843, all on microfilm roll 39808, and no other institution reports a copy. [verified] — same source, the holdings record, reported March 2024.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "organization/university-of-northwestern-ohio.yml",
@@ -16287,6 +16558,27 @@
       "source": "catalog/leeson-allen-county-1885.md"
     },
     {
+      "from": "event/the-lima-news-strike-of-1957.yml",
+      "to": "place/lima.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "event/the-lima-news-strike-of-1957.yml",
+      "to": "organization/the-lima-news.yml",
+      "relationship": "involved",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "event/the-lima-news-strike-of-1957.yml",
+      "to": "organization/the-lima-citizen.yml",
+      "relationship": "involved",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "event/the-naming-and-incorporation-of-bluffton-1861.yml",
       "to": "jurisdiction/village-of-bluffton.yml",
       "relationship": "affected",
@@ -17428,6 +17720,20 @@
       "source": "catalog/allen-county-auditor-financials.md"
     },
     {
+      "from": "measure/allen-county-newspapers-1843-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "measure/allen-county-newspapers-1843-2026.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
       "from": "measure/allen-county-occupancy-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -18226,6 +18532,13 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "organization/der-lima-courier.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
       "from": "organization/fort-wayne-van-wert-and-lima-traction-company.yml",
       "to": "place/lima.yml",
       "relationship": "seated-in",
@@ -18329,6 +18642,34 @@
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/hmda-loan-application-register.md"
+    },
+    {
+      "from": "organization/the-bluffton-news.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "organization/the-lima-citizen.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "organization/the-lima-news.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "organization/the-porcupine.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/us-newspaper-directory.md"
     },
     {
       "from": "organization/university-of-northwestern-ohio.yml",
