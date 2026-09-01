@@ -28,6 +28,7 @@ const hogSpec = line(
 )
 
 const bridges = assertion('not-one-state-bridge-is-in-poor-condition')
+const gauge = assertion('the-gauge-was-not-there')
 
 const bridgeSpec = bar(
   bridges.figures.map((f) => f.label),
@@ -252,6 +253,39 @@ const yieldSpec = bar(
       Interstate 75 over Lost Creek at 39,060 vehicles a day — a count taken in 2015 and printed in
       the 2025 file, as are the counts on 293 of the county's 364 bridges. The edition year dates the
       compilation and nothing inside it.
+    </p>
+  </section>
+
+  <section>
+    <h2>The river, measured</h2>
+    <p>
+      Allen County holds 184 USGS water monitoring sites — ninety groundwater wells, thirty-one lake
+      stations, twenty-nine on streams — and two usable records of how much water a river carries. A
+      county can be thick with instruments and thin with measurements.
+    </p>
+    <p>
+      Both are on the Ottawa, and they are in two halves that cannot be joined. A gauge at Allentown
+      ran from 1924 to 1981 over 160 square miles of drainage; one at Lima has run since 1989 over
+      128. Seven water years separate them. The largest flow ever measured on this river is 7,740
+      cubic feet a second, on 22 January 1959 — more than twice the median annual peak and nineteen
+      per cent above the next largest. The Auglaize is the bigger river and has no peak record at
+      all, which is the same asymmetry the bridges show: forty-one crossings of the Ottawa against
+      twenty-two of the Auglaize, because Lima sits on the Ottawa.
+    </p>
+    <AssertionCard assertion={gauge} />
+    <p>
+      There is an obvious thing to do with a flow record and a list of federal disaster
+      declarations, and it does not work. The county has four declarations for storms and flooding —
+      2004, 2005, 2007 and 2012 — and the Lima gauge is missing water years 2000 to 2009 exactly.
+      Three of the four fall inside the hole. The fourth, June 2012, is titled for straight-line
+      winds, and that water year's peak ranked sixteenth of twenty-seven and was not in that storm.
+    </p>
+    <p>
+      What survives the check is one half of the striking sentence. The largest measured flood in
+      the modern record — 5,700 cubic feet a second on 28 February 2011 — brought no federal
+      declaration, and neither did the second largest in 2015. That is a statement about the FEMA
+      file, which is complete for those years and does not have this county in it. "No large flow in
+      2004" would be a statement about nothing at all: the gauge was switched off.
     </p>
   </section>
 

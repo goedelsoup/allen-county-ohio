@@ -1829,6 +1829,32 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-gauge-was-not-there",
+        statement: "Allen County has four federal declarations for flooding and a gauged river, \
+                    and the gauge was switched off for three of them.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/ottawa-river-peak-flows-1924-2025.yml",
+                "**That ten-year hole swallowed three of the county's four flood declarations.**"
+            ),
+            support!(
+                "measure/ottawa-river-peak-flows-1924-2025.yml",
+                "**And the largest measured flood in the modern record brought no federal declaration at all.**"
+            ),
+            support!(
+                "measure/ottawa-river-peak-flows-1924-2025.yml",
+                "**The two records overlap on one weather declaration in sixty years.**"
+            ),
+            support!(
+                "measure/ottawa-river-peak-flows-1924-2025.yml",
+                "**The Ottawa River has been gauged for seventy-nine water years and the record is in two halves\n  that cannot be joined.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

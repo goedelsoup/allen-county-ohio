@@ -182,6 +182,26 @@
       ]
     },
     {
+      "id": "natural-feature-ottawa-river::highest-recorded-peak-flow-on-the-Ottawa-River",
+      "subject": "natural-feature/ottawa-river.yml",
+      "subject_label": "Ottawa River",
+      "parameter": "highest recorded peak flow on the Ottawa River",
+      "unit": "cubic feet per second",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/ottawa-river-peak-flows-1924-2025.yml",
+          "label": "Peak flows on the Ottawa River, 1924–2025",
+          "as_of": "1959-01-22",
+          "value": 7740.0,
+          "published": "7740",
+          "tier": "verified",
+          "source": "catalog/usgs-nwis.md",
+          "method": "Fetched from the USGS peak-streamflow service for site 04187500 and 04187100 and counted here by water year, which runs 1 October to 30 September and is named for the year it ends in. The two gauges are not combined into one series and no figure here is computed across both. The `value` is the largest peak either gauge recorded and the `as_of` is the day it happened, which is not the same as the largest flow the river has ever carried: the record covers 79 of the 102 years between 1924 and 2025, and none before. [inference]"
+        }
+      ]
+    },
+    {
       "id": "office-mayor-of-lima::entries-in-the-printed-lists-of-Lima's-mayors-beginning-after-April-1886",
       "subject": "office/mayor-of-lima.yml",
       "subject_label": "Mayor of Lima",
@@ -358,6 +378,26 @@
           "tier": "verified",
           "source": "catalog/cms-hospital-cost-reports.md",
           "method": "`Number of Beds` for CCNs 360009, 360066, 360263, 361322 and 362020. The total takes one row per hospital per year, which in FY2014 means Kindred's first row only — it filed twice that year across a change of fiscal year. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::USGS-water-monitoring-sites-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "USGS water monitoring sites in Allen County",
+      "unit": "sites",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-water-gauges-2026.yml",
+          "label": "Allen County's water monitoring sites, 2026",
+          "as_of": "2026",
+          "value": 184.0,
+          "published": "184",
+          "tier": "verified",
+          "source": "catalog/usgs-nwis.md",
+          "method": "Fetched from the USGS site service with `siteStatus=all`, which is required or discontinued gauges are omitted — and the discontinued ones carry most of the county's long record. Site types are the service's own two-letter codes, collapsed here to their first letter group. The count is of sites the service lists for this county whatever their status or period of record, and is not a count of instruments now running. [verified]"
         }
       ]
     },
@@ -4873,6 +4913,54 @@
           "tier": "verified",
           "sources": [
             "catalog/fema-disaster-declarations.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-gauge-was-not-there",
+      "statement": "Allen County has four federal declarations for flooding and a gauged river, and the gauge was switched off for three of them.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/ottawa-river-peak-flows-1924-2025.yml",
+          "node_label": "Peak flows on the Ottawa River, 1924–2025",
+          "span": "**That ten-year hole swallowed three of the county's four flood declarations.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/usgs-nwis.md"
+          ]
+        },
+        {
+          "node": "measure/ottawa-river-peak-flows-1924-2025.yml",
+          "node_label": "Peak flows on the Ottawa River, 1924–2025",
+          "span": "**And the largest measured flood in the modern record brought no federal declaration at all.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/usgs-nwis.md",
+            "catalog/fema-disaster-declarations.md"
+          ]
+        },
+        {
+          "node": "measure/ottawa-river-peak-flows-1924-2025.yml",
+          "node_label": "Peak flows on the Ottawa River, 1924–2025",
+          "span": "**The two records overlap on one weather declaration in sixty years.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/usgs-nwis.md",
+            "catalog/fema-disaster-declarations.md"
+          ]
+        },
+        {
+          "node": "measure/ottawa-river-peak-flows-1924-2025.yml",
+          "node_label": "Peak flows on the Ottawa River, 1924–2025",
+          "span": "**The Ottawa River has been gauged for seventy-nine water years and the record is in two halves that cannot be joined.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/usgs-nwis.md"
           ]
         }
       ],

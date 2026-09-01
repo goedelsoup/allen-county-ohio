@@ -846,6 +846,37 @@
       "withheld": 1
     },
     {
+      "id": "event/the-ottawa-river-flood-of-1959.yml",
+      "class": "event",
+      "label": "The Ottawa River flood of January 22, 1959",
+      "tier": "inference",
+      "properties": {
+        "event_type": "flood",
+        "location_description": "Measured at the Ottawa River gauge at Allentown, downstream of Lima, draining 160 square miles. The measurement is of one point on the river; the extent of the event is not established here, which is why the edge below points at the county and not at [the river](../natural-feature/ottawa-river.yml). [verified] — the same source.",
+        "occurred": "1959-01-22"
+      },
+      "blocks": [
+        {
+          "text": "**The largest flow ever measured on the Ottawa River: 7,740 cubic feet a second at Allentown on 22 January 1959, at a gauge height of 10.88 feet.** [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md), site 04187500.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is more than twice the median annual peak** of 3,240 cubic feet a second across that gauge's fifty-two water years, and it stands nineteen per cent above the next largest, 6,160 in March 1939. [verified] — same source, computed here; see [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It sits in one of the corpus's two remaining holes in the record of what happened here.** The spine had nothing between 1955 and 1965 until this phase, and this is a dated thing in the middle of it — established by an instrument rather than by anybody's account. [inference] — see [a dataset can make an event](../../decisions/a-dataset-can-make-an-event.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is a flow and not a flood, and the corpus is careful about the difference.** A discharge figure says how much water passed the gauge and nothing about what the water reached. Whether this one left the banks, what it covered, and whether anyone was harmed are not in this source and are not in any source held here — there was no federal disaster declaration for Allen County that year, and the county's first is six years later. [verified] — [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/the-tornadoes-of-april-1965.yml",
       "class": "event",
       "label": "The tornado declaration of April 1965",
@@ -2798,6 +2829,10 @@
         },
         {
           "text": "**The longest incident in the file is 1,207 days.** COVID-19 ran from 20 January 2020 to 11 May 2023 on both its rows; the longest of the other eight is forty-one days. [verified] — same source, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**These cannot be crossed with the river's flow record, and finding that out was the point.** The Ottawa River gauge at Lima is missing water years 2000 to 2009 exactly, and the declarations for storms and flooding fall in 2004, 2005 and 2007. Exactly one non-pandemic declaration here lies inside the gauge's record — June 2012, titled for straight-line winds, in a water year whose peak ranked sixteenth of twenty-seven. [verified] — [the peak flows](ottawa-river-peak-flows-1924-2025.yml); see [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).",
           "tier": "verified"
         }
       ],
@@ -4922,6 +4957,43 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-water-gauges-2026.yml",
+      "class": "measure",
+      "label": "Allen County's water monitoring sites, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Fetched from the USGS site service with `siteStatus=all`, which is required or discontinued gauges are omitted — and the discontinued ones carry most of the county's long record. Site types are the service's own two-letter codes, collapsed here to their first letter group. The count is of sites the service lists for this county whatever their status or period of record, and is not a count of instruments now running. [verified]",
+        "parameter": "USGS water monitoring sites in Allen County",
+        "unit": "sites",
+        "value": "184"
+      },
+      "blocks": [
+        {
+          "text": "**The county holds 184 water monitoring sites and two usable stream records.** [verified] — [USGS NWIS](../../catalog/usgs-nwis.md), site service, county 39003, all statuses.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Twenty-nine stream sites and two annual peak records between them.** The rest are levels, samples or one-off measurements; three of the county's larger stream gauges answer the peak-flow service with a 200 and no rows. A county can be thick with instruments and thin with measurements. [inference] — computed here; see [the peak flows](ottawa-river-peak-flows-1924-2025.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The drainage areas put the county's rivers in order.** [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "The Auglaize is the larger river and the Ottawa is the gauged one, which is [the same asymmetry the bridges show](allen-county-bridge-crossings-2025.yml): forty-one crossings of the Ottawa against twenty-two of the Auglaize. Both follow from the same fact, which is that [Lima](../place/lima.yml) sits on the Ottawa. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Every one of the 184 sites drains to Lake Erie.** 168 are in the Auglaize subbasin `04100007`, 14 in the Blanchard `04100008`, and two in other Maumee units; none is in an Ohio River unit. [verified] — same source. **That is an absence of instruments and not evidence about the divide**: the corpus has already established that four census blocks in [Auglaize Township](../place/auglaize-township.yml), holding ninety-nine people, drain to [the Scioto](../natural-feature/scioto-river-basin.yml), and ninety-nine people do not get a gauge. [inference] — see [silence from a source that would have spoken](../../decisions/silence-from-a-source-that-would-have-spoken.yml), which this is not an instance of.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-world-war-dead.yml",
       "class": "measure",
       "label": "Allen County's World War dead",
@@ -5682,6 +5754,47 @@
       "withheld": 2
     },
     {
+      "id": "measure/ottawa-river-peak-flows-1924-2025.yml",
+      "class": "measure",
+      "label": "Peak flows on the Ottawa River, 1924–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1959-01-22",
+        "method": "Fetched from the USGS peak-streamflow service for site 04187500 and 04187100 and counted here by water year, which runs 1 October to 30 September and is named for the year it ends in. The two gauges are not combined into one series and no figure here is computed across both. The `value` is the largest peak either gauge recorded and the `as_of` is the day it happened, which is not the same as the largest flow the river has ever carried: the record covers 79 of the 102 years between 1924 and 2025, and none before. [inference]",
+        "parameter": "highest recorded peak flow on the Ottawa River",
+        "unit": "cubic feet per second",
+        "value": "7740"
+      },
+      "blocks": [
+        {
+          "text": "**The Ottawa River has been gauged for seventy-nine water years and the record is in two halves that cannot be joined.** [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**They are different places, different periods, and seven water years apart.** Allentown is downstream of Lima and drains a quarter more ground; nothing gauged the river between water year 1982 and water year 1988. [verified] — same source. The median annual peak is 3,240 cubic feet a second at Allentown and 3,210 at Lima — almost identical from a basin a quarter smaller — and the corpus does not read that as a change in the river, because the two figures are from different decades and either urbanisation or the weather of two eras would explain it. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Each half has holes and the holes have shapes.** Allentown is missing water years 1936 to 1938 and 1940 to 1942 — the Depression and the war. Lima is missing **2000 to 2009 exactly**, ten consecutive years. [verified] — same source, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That ten-year hole swallowed three of the county's four flood declarations.** The federal disaster declarations for severe storms and flooding fall in 2004, 2005 and 2007, and the gauge was not running in any of them. [verified] — same source and [the declarations](allen-county-disaster-declarations-1965-2020.yml). What was in the river in those three years is not recorded anywhere this corpus can reach.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the largest measured flood in the modern record brought no federal declaration at all.** 5,700 cubic feet a second on 28 February 2011 is the highest of the Lima gauge's 27 water years, and 2011 is not a declaration year; nor is 2015, the second highest. [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md) and [OpenFEMA](../../catalog/fema-disaster-declarations.md). This is not evidence that the aid was misdirected. It is evidence that a declaration is an administrative act, which the declarations node had to reason its way to and this measures. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two records overlap on one weather declaration in sixty years.** The gauge covers water years 1989-1999 and 2010-2025; the only non-pandemic declaration inside that window is the storm of June 2012, and that water year's peak — 3,170 cfs on 30 November 2011, sixteenth of twenty-seven — was not in that storm, which the declaration titles as straight-line winds. [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md) and [OpenFEMA](../../catalog/fema-disaster-declarations.md), computed here; see [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "natural-feature/auglaize-river.yml",
       "class": "natural-feature",
       "label": "Auglaize River",
@@ -5713,6 +5826,10 @@
         {
           "text": "**Twenty-two highway bridges cross it in Allen County, and the oldest bridge in the county is one of them.** The Hay Road structure in [Auglaize Township](../place/auglaize-township.yml) was built in 1909 and is still carrying traffic. [verified] — [what the bridges cross](../measure/allen-county-bridge-crossings-2025.yml) and [the Hay Road bridge](../site/hay-road-bridge.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**It is the larger river and the ungauged one.** The USGS site near Spencerville drains 219 square miles against 160 for the Ottawa at Allentown, and neither it nor the Kossuth site at 201 square miles has an annual peak record; the Ottawa has two. [verified] — [the monitoring sites](../measure/allen-county-water-gauges-2026.yml). Everything this corpus can say about how much water moves through Allen County is about the smaller river, because the smaller river runs through the city. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -5894,6 +6011,14 @@
         {
           "text": "**Forty-one highway bridges cross it — more than cross any other water in the county, and nearly twice the Auglaize's twenty-two**, though the Auglaize is the larger river. [verified] — [what the bridges cross](../measure/allen-county-bridge-crossings-2025.yml). The difference is [Lima](../place/lima.yml): this river runs through the county seat, and a city is a place where every street has to get over the water. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**It is the only river in the county with a measured flow, and its record is in two halves.** A gauge at Allentown ran 1924 to 1981 over 160 square miles of drainage; one at Lima has run since 1989 over 128. Seven water years separate them and nothing gauged the river in between. [verified] — [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The largest flow ever measured here is 7,740 cubic feet a second, on 22 January 1959**, more than twice the median annual peak and nineteen per cent above the next largest. [verified] — same source; see [the flood of 1959](../event/the-ottawa-river-flood-of-1959.yml). The largest in the modern half is 5,700, on 28 February 2011.",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -5905,7 +6030,7 @@
       "id": "natural-feature/scioto-river-basin.yml",
       "class": "natural-feature",
       "label": "Scioto River Basin",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "feature_type": "watershed",
         "huc_code": "05060001"
@@ -5922,6 +6047,10 @@
         {
           "text": "The subwatershed those four blocks sit in is `050600010101`, **Cottonwood Ditch** — a headwater of the Scioto rising in Auglaize Township. [verified] — same source. It is the only named feature on the Ohio River side of the divide in this county.",
           "tier": "verified"
+        },
+        {
+          "text": "**No instrument stands on this side of the divide.** All 184 USGS water monitoring sites in Allen County are in Maumee hydrologic units — 168 in the Auglaize, 14 in the Blanchard, two in others — and none in an Ohio River unit. [verified] — [the monitoring sites](../measure/allen-county-water-gauges-2026.yml). That is an absence of gauges and not evidence against the four blocks above: ninety-nine people and a headwater ditch do not get a gauge, and the instrument network was never asked the question this node answers. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -14436,6 +14565,13 @@
       "source": "catalog/rusler-allen-county-1921.md"
     },
     {
+      "from": "event/the-ottawa-river-flood-of-1959.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
       "from": "event/the-tornadoes-of-april-1965.yml",
       "to": "place/allen-county.yml",
       "relationship": "affected",
@@ -15612,6 +15748,13 @@
       "source": "catalog/bls-qcew.md"
     },
     {
+      "from": "measure/allen-county-water-gauges-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
       "from": "measure/allen-county-world-war-dead.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -15827,6 +15970,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/ottawa-river-peak-flows-1924-2025.yml",
+      "to": "natural-feature/ottawa-river.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
     },
     {
       "from": "natural-feature/auglaize-river.yml",
