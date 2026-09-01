@@ -522,6 +522,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Black-residents-of-Allen-County,-as-estimated",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Black residents of Allen County, as estimated",
+      "unit": "people",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-black-community-1916-1921.yml",
+          "label": "Allen County's Black community, 1916–1921",
+          "as_of": "1921",
+          "value": 2500.0,
+          "published": "2500",
+          "tier": "verified",
+          "source": "catalog/rusler-allen-county-1921.md",
+          "method": "Read from the full text of the 1921 county history on archive.org. Every figure is the book's estimate and the book says so — \"it is estimated\", \"almost\", \"about\" — and none is a count. The quotations are transcribed as printed, including the period's terminology, because paraphrase would silently improve a source this corpus is also reporting the limits of. The 1920 population against which the share is computed is the census figure the corpus already holds, not the book's. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::FTE---Employees-on-Payroll",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1958,6 +1978,26 @@
           "tier": "verified",
           "source": "catalog/openelections-ohio.md",
           "method": "Summed by candidate over the county's 88 precincts, from a volunteer transcription of the certified returns. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::Jewish-residents-of-Lima,-as-estimated",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "Jewish residents of Lima, as estimated",
+      "unit": "people",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-jewish-community-1850-1921.yml",
+          "label": "Allen County's Jewish community, 1850–1921",
+          "as_of": "1921",
+          "value": 350.0,
+          "published": "350",
+          "tier": "verified",
+          "source": "catalog/rusler-allen-county-1921.md",
+          "method": "Read from the full text of the 1921 county history on archive.org. Every figure is the book's and every one is hedged in the book — \"perhaps\", \"about\", \"less than\". The share of Lima is computed against the census count the corpus already holds and not against any figure in the book. [verified]"
         }
       ]
     },
@@ -6867,6 +6907,99 @@
           "label": "Probate Judge",
           "value": 12.0,
           "literal": "12"
+        }
+      ]
+    },
+    {
+      "id": "three-times-a-mob-came-to-the-jail",
+      "statement": "A crowd has come to the Allen County jail three times in sixty-one years and this site held only the last. Fifty men guarded it in 1872, a mob nearly hanged the sheriff in 1916 for hiding a Black prisoner, and a sheriff was shot dead in it in 1933.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "event/the-mob-at-the-allen-county-jail-1916.yml",
+          "node_label": "The mob at the Allen County jail, 1916",
+          "span": "On 30 August 1916 a mob came to the county jail in Lima to take a Black prisoner, and when the sheriff would not say where he had hidden him they put a rope round the sheriff's neck.",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "event/the-mob-at-the-allen-county-jail-1916.yml",
+          "node_label": "The mob at the Allen County jail, 1916",
+          "span": "**It is the second of three times a mob has come to this jail and the corpus held only the third.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/chronicling-america.md"
+          ]
+        },
+        {
+          "node": "event/the-execution-of-andrew-brentlinger-1872.yml",
+          "node_label": "The execution of Andrew Brentlinger, 1872",
+          "span": "**Fifty men guarded the jail the night before.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "event/the-execution-of-andrew-brentlinger-1872.yml",
+          "node_label": "The execution of Andrew Brentlinger, 1872",
+          "span": "**Neither date the book offers was a Friday.** 7 April 1872 fell on a Sunday and 15 April on a Monday; the Fridays that month were the 5th, 12th, 19th and 26th.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-black-community-1916-1921.yml",
+          "node_label": "Allen County's Black community, 1916–1921",
+          "span": "**Two thousand five hundred people, and nearly all of them in Lima.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-black-community-1916-1921.yml",
+          "node_label": "Allen County's Black community, 1916–1921",
+          "span": "**Two voter counts, four years apart, and the second one includes women.** \"In 1916, there were 552 negro voters in Lima; there has been an exodus of negroes to Allen County within the last four years, and in 1920, counting the women, there were almost 1,000 negro voters.\"",
+          "tier": "inference",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-black-community-1916-1921.yml",
+          "node_label": "Allen County's Black community, 1916–1921",
+          "span": "**On segregation the book contradicts itself in a page.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-jewish-community-1850-1921.yml",
+          "node_label": "Allen County's Jewish community, 1850–1921",
+          "span": "**A dozen families in 1878 and about a hundred in 1921.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "The only hanging this corpus holds any record of in Allen County, and the book that records it cannot say which day it happened."
+      ],
+      "figures": [
+        {
+          "label": "1916",
+          "value": 552.0,
+          "literal": "552"
+        },
+        {
+          "label": "1920",
+          "value": 1000.0,
+          "literal": "1,000"
         }
       ]
     },

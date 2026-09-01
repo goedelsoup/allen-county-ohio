@@ -26,6 +26,19 @@ const paid = assertion('eighty-four-cents-in-the-dollar')
 const war = assertion('the-third-war-is-counted-by-its-dead')
 const press = assertion('ninety-nine-papers-and-one-of-them-online')
 const faith = assertion('a-hundred-and-sixty-congregations')
+const jail = assertion('three-times-a-mob-came-to-the-jail')
+
+const jailSpec = bar(
+  jail.figures.map((f) => f.label),
+  jail.figures.map((f) => f.value),
+  { yTitle: 'Black voters in Lima', labelValues: true },
+)
+
+const jailCrowds = [
+  ['April 1872', "Andrew Brentlinger's execution", 'Fifty armed men guard the jail against a threatened mob. No one is hurt.'],
+  ['30 Aug 1916', 'A mob demands a Black prisoner', 'Sheriff Sherman Eley hides Charles Daniels and refuses to say where. The mob puts a rope round his neck; he is hospitalised and later given a medal.'],
+  ['12 Oct 1933', 'The jail raid', 'Sheriff Jess Sarber is shot dead in his own jail.'],
+]
 
 const faithSpec = bar(
   faith.figures.map((f) => f.label),
@@ -1044,6 +1057,53 @@ const since = new Date().getUTCFullYear() - last
       the accounts agree on is that Lima had organized religion before it had a town government,
       which it did not get until 1842. Its synagogue, Temple Beth Israel, was built in 1914 — the
       Jewish year 5674 — with "Mine House of Prayer for All Peoples" over the door.
+    </p>
+  </section>
+
+  <section>
+    <h2>Three times a mob came to the jail</h2>
+    <AssertionCard assertion={jail} />
+    <p>
+      This site has held the raid of October 1933 since its early phases — the night Sheriff Jess
+      Sarber was shot dead in the Allen County jail. It turns out to be the third such night, not
+      the first, and the 1921 county history had both of the others on facing pages.
+    </p>
+    <DataTable
+      title="Sixty-one years, three crowds"
+      caption="The 1921 history states the sheriff's duty in the same paragraph as its roster of holders: he 'is provided with a domicile in connection with the bastile, and it becomes his duty to prevent lynchings, riots and all violent disorders.'"
+      columns={['When', 'What', 'What happened']}
+      rows={jailCrowds}
+    />
+    <p>
+      The book cannot give a day for the 1872 hanging — it prints "Friday, April 7 or 15, 1872 —
+      there being conflicting reports about it". Neither date was a Friday. The 7th was a Sunday and
+      the 15th a Monday, and the Fridays that April were the 5th, 12th, 19th and 26th. Governor
+      Rutherford B. Hayes had granted the condemned man a hundred days' reprieve from a sentence
+      date of 20 January, which lands on 29 April, later than either.
+    </p>
+    <p>
+      The same volume carries the only description this site holds of the county's Black population
+      before the census tables of the present century: about 2,500 people in 1921, nearly all of
+      them in Lima, with four congregations and five fraternal orders. Its two voter counts are four
+      years apart and the second is the first to include women.
+    </p>
+    <ChartFigure
+      id="lima-black-voters"
+      title="Black voters in Lima, as the 1921 county history reports them"
+      caption="The book gives one cause — migration into the county — for a change that also spans the Nineteenth Amendment, and does not separate the two. Both figures are the book's estimates, not counts."
+      columns={['Year', 'Voters']}
+      rows={jail.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="lima-black-voters" set:html={JSON.stringify(jailSpec)} is:inline />
+    <p>
+      It is a source that has to be read against itself. On one page: "While most of the negroes
+      live in certain localities, there is no segregation." On the next: "It is said the negroes do
+      not live north of the Pennsylvania railway tracks in Lima," and "once in a while the color
+      line is drawn, and the negroes remain south of the railway tracks for safety." This site
+      records the contradiction and does not resolve it. The same chapter says the county's Jewish
+      community began with Levi Jacobs about 1850 and "never located in any other town in Allen
+      County" — a dozen families in 1878, about a hundred and some 350 people by 1921, seven years
+      after they built Temple Beth Israel.
     </p>
   </section>
 

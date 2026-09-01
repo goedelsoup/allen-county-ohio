@@ -2486,6 +2486,57 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "three-times-a-mob-came-to-the-jail",
+        statement: "A crowd has come to the Allen County jail three times in sixty-one years and \
+                    this site held only the last. Fifty men guarded it in 1872, a mob nearly hanged \
+                    the sheriff in 1916 for hiding a Black prisoner, and a sheriff was shot dead in \
+                    it in 1933.",
+        topic: "history",
+        supports: &[
+            support!(
+                "event/the-mob-at-the-allen-county-jail-1916.yml",
+                "On 30 August 1916 a mob came to the county jail in Lima to take a Black prisoner, and when the\n  sheriff would not say where he had hidden him they put a rope round the sheriff's neck."
+            ),
+            support!(
+                "event/the-mob-at-the-allen-county-jail-1916.yml",
+                "**It is the second of three times a mob has come to this jail and the corpus held only the\n  third.**"
+            ),
+            support!(
+                "event/the-execution-of-andrew-brentlinger-1872.yml",
+                "**Fifty men guarded the jail the night before.**"
+            ),
+            support!(
+                "event/the-execution-of-andrew-brentlinger-1872.yml",
+                "**Neither date the book offers was a Friday.** 7 April 1872 fell on a Sunday and 15 April on a\n  Monday; the Fridays that month were the 5th, 12th, 19th and 26th."
+            ),
+            support!(
+                "measure/allen-county-black-community-1916-1921.yml",
+                "**Two thousand five hundred people, and nearly all of them in Lima.**"
+            ),
+            support!(
+                "measure/allen-county-black-community-1916-1921.yml",
+                "**Two voter counts, four years apart, and the second one includes women.** \"In 1916, there were\n  552 negro voters in Lima; there has been an exodus of negroes to Allen County within the last four\n  years, and in 1920, counting the women, there were almost 1,000 negro voters.\""
+            ),
+            support!(
+                "measure/allen-county-black-community-1916-1921.yml",
+                "**On segregation the book contradicts itself in a page.**"
+            ),
+            support!(
+                "measure/allen-county-jewish-community-1850-1921.yml",
+                "**A dozen families in 1878 and about a hundred in 1921.**"
+            ),
+        ],
+        answers: &[
+            // The Brentlinger node refuses a day for the hanging. This assertion dates the
+            // crowd at the jail to the year and to the night before, and to nothing finer.
+            "cannot say which day it happened",
+        ],
+        figures: &[
+            Figure { label: "1916", value: 552.0, literal: "552" },
+            Figure { label: "1920", value: 1000.0, literal: "1,000" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
