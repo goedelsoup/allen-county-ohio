@@ -22,6 +22,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-government::General-Fund-revenue",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "General Fund revenue",
+      "unit": "US dollars",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-general-fund-2025.yml",
+          "label": "Allen County's General Fund, 2025",
+          "as_of": "2025-12-30",
+          "value": 39567582.57,
+          "published": "39567582.57",
+          "tier": "verified",
+          "source": "catalog/allen-county-auditor-financials.md",
+          "method": "One PDF, the YTD summary revenue report for period 2025 12, and one more for expenditure, both converted with `pdftotext -layout` and parsed on the source's own `TOTAL` lines. The `as_of` is the date the report was generated, not the 31 December it is headed with, because the report was produced the day before the period it covers ended and the figures were still moving. Nothing is audited. Department figures are taken from the top of the source's own hierarchy: the sheriff's two sub-lines sum exactly to the office total, so adding every `TOTAL` line would double-count. [verified]"
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::ballots-cast,-general-election",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -98,6 +118,46 @@
           "tier": "verified",
           "source": "catalog/ohio-boe-elected-officials-allen.md",
           "method": "Union of the eighty-eight precinct pages of the boards of elections roster, deduplicated on the office name and the page's own `hid_office` code. Vacancies are counted from its `N Vacant Seat(s)` rows and appointments from its `*Appointed*` marker; the class column is this corpus's grouping and the roster totals nothing. [verified] **It is a county's roster, so a ward seat of a city that crosses the county line does not appear.** Delphos contributes ten seats here and 3,182 of its people live in Van Wert County, so its council is undercounted by an unknown number of ward seats. [inference] No other government here is affected: Bluffton also crosses a line and elects its council at large."
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-allen-county-government::total-net-position,-primary-government",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "total net position, primary government",
+      "unit": "US dollars",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-net-position-2023.yml",
+          "label": "Allen County's audited net position, 2023",
+          "as_of": "2023-12-31",
+          "value": 177505194.0,
+          "published": "177505194",
+          "tier": "verified",
+          "source": "catalog/allen-county-auditor-financials.md",
+          "method": "One PDF, `Allen_County_23_Allen_Report_FINAL.pdf`, converted with `pdftotext -layout`. Every figure is quoted from the report's own Table 1 and its Capital Assets and Debt Administration section, in the dollars it prints and without rounding. The changes between 2022 and 2023 are subtractions of two printed figures and are marked as computed. The report labels its management discussion \"Unaudited\"; the statements it discusses are audited, and the figures above are from the statements. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-allen-county-government::total-revenue-recorded-across-all-county-funds",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "total revenue recorded across all county funds",
+      "unit": "US dollars",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-funds-2025.yml",
+          "label": "What passes through Allen County's books, 2025",
+          "as_of": "2025-12-30",
+          "value": 374841546.99,
+          "published": "374841546.99",
+          "tier": "verified",
+          "source": "catalog/allen-county-auditor-financials.md",
+          "method": "Two PDFs converted with `pdftotext -layout` and parsed on the source's own fund blocks — `ACCOUNTS FOR:` to `TOTAL REVENUES` on one side and to `TOTAL EXPENSES` on the other. The per-fund figures sum to the grand totals the reports themselves print, which is the check that the parse is complete: 437 funds to $374,841,546.99 and 413 to $370,746,613.34. The `as_of` is the report's generation date rather than the 31 December it is headed with. Custodial funds are identified by their fund number beginning 9 and by the equality of their two sides, not by any label the source applies, because the source applies none. [verified]"
         }
       ]
     },
@@ -5810,6 +5870,109 @@
         "This corpus cannot say who was mayor of Lima on any day but the fourteen printed above."
       ],
       "figures": []
+    },
+    {
+      "id": "a-grand-total-is-not-a-budget",
+      "statement": "Allen County's books total $374,841,547 and the county government runs on $39,567,583 of it. Nearly half the rest is tax the treasurer collects for other governments and hands straight on, and the sheriff's office alone costs half again as much as the county's other seven elected offices together.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-funds-2025.yml",
+          "node_label": "What passes through Allen County's books, 2025",
+          "span": "**The county's revenue report ends at $374,841,546.99 and the county government does not have $374,841,546.99.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/allen-county-auditor-financials.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-funds-2025.yml",
+          "node_label": "What passes through Allen County's books, 2025",
+          "span": "**Nearly half of the grand total is money the county holds for somebody else.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/allen-county-auditor-financials.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-funds-2025.yml",
+          "node_label": "What passes through Allen County's books, 2025",
+          "span": "**Fifteen funds took in and paid out the same amount to the cent.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-general-fund-2025.yml",
+          "node_label": "Allen County's General Fund, 2025",
+          "span": "**The county government runs on $39,567,582.57, and more than half of it is sales tax.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/allen-county-auditor-financials.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-general-fund-2025.yml",
+          "node_label": "Allen County's General Fund, 2025",
+          "span": "**In order, the eight are 10,786,007, 3,304,189, 1,394,273, 713,258, 497,075, 475,391, 388,472 and 341,014.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-net-position-2023.yml",
+          "node_label": "Allen County's audited net position, 2023",
+          "span": "**Liabilities rose $36,758,891 in a year in which the county borrowed nothing.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/allen-county-auditor-financials.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what any of them costs in total, because an office may also draw on funds outside this one, as the engineer does."
+      ],
+      "figures": [
+        {
+          "label": "Sheriff",
+          "value": 10786007.0,
+          "literal": "10,786,007"
+        },
+        {
+          "label": "Commissioners",
+          "value": 3304189.0,
+          "literal": "3,304,189"
+        },
+        {
+          "label": "Prosecutor",
+          "value": 1394273.0,
+          "literal": "1,394,273"
+        },
+        {
+          "label": "Clerk of Courts",
+          "value": 713258.0,
+          "literal": "713,258"
+        },
+        {
+          "label": "Auditor",
+          "value": 497075.0,
+          "literal": "497,075"
+        },
+        {
+          "label": "Coroner",
+          "value": 475391.0,
+          "literal": "475,391"
+        },
+        {
+          "label": "Recorder",
+          "value": 388472.0,
+          "literal": "388,472"
+        },
+        {
+          "label": "Treasurer",
+          "value": 341014.0,
+          "literal": "341,014"
+        }
+      ]
     },
     {
       "id": "an-address-is-not-a-municipality",

@@ -3567,6 +3567,98 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-funds-2025.yml",
+      "class": "measure",
+      "label": "What passes through Allen County's books, 2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-12-30",
+        "method": "Two PDFs converted with `pdftotext -layout` and parsed on the source's own fund blocks — `ACCOUNTS FOR:` to `TOTAL REVENUES` on one side and to `TOTAL EXPENSES` on the other. The per-fund figures sum to the grand totals the reports themselves print, which is the check that the parse is complete: 437 funds to $374,841,546.99 and 413 to $370,746,613.34. The `as_of` is the report's generation date rather than the 31 December it is headed with. Custodial funds are identified by their fund number beginning 9 and by the equality of their two sides, not by any label the source applies, because the source applies none. [verified]",
+        "parameter": "total revenue recorded across all county funds",
+        "unit": "US dollars",
+        "value": "374841546.99"
+      },
+      "blocks": [
+        {
+          "text": "**The county's revenue report ends at $374,841,546.99 and the county government does not have $374,841,546.99.** [verified] — [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md), the YTD summary revenue and expenditure reports for December 2025. Revenue is spread over 437 named funds and expenditure over 413, and the grand total is the sum of all of them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nearly half of the grand total is money the county holds for somebody else.** The 9xxx funds are custodial: first-half and second-half real estate collections, payroll withholding for federal and Ohio income tax and Medicare, deferred compensation, the undivided local government fund, the undivided township gas tax, undivided vehicle fees, and an insurance pool. [verified] — same source, fund by fund.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Fifteen funds took in and paid out the same amount to the cent.** Second-half real estate $58,725,512.16, local government library and township parks $4,495,636.25, federal income tax withholding $4,113,093.70, the undivided local government fund $3,794,888.36, the undivided township gas tax $2,054,424.69, Medicare $1,438,939.58 and nine more. [verified] — computed by matching the two reports fund by fund. A fund where the year's receipts equal the year's disbursements exactly is a conduit, not an income. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The tax duplicate is the largest number in this county's public accounts and it belongs to everyone but the county.** $139,249,231 of real estate tax passed through the treasurer's hands in 2025 — for the twelve school districts, the two cities, the twelve villages, the twelve townships, the library, the park district and the county itself. [verified] — same source. The county's own share of it, the $4,554,766 that reaches [the General Fund](allen-county-general-fund-2025.yml), is **3.3 per cent**. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The report's own percentage column shows the trap.** Actual revenue is 179.7 per cent of the revised estimate of $208,648,489.80, because custodial funds are not budgeted and appear in the actual column with a zero beside them. [verified] — same source. A reader who takes \"179.7% collected\" as a county running far ahead of its budget has read a real number about a fictional quantity. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Expenditure comes to $370,746,613.34 against the same 437-fund universe**, and the 9xxx funds account for $180,718,867.13 of it. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-general-fund-2025.yml",
+      "class": "measure",
+      "label": "Allen County's General Fund, 2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-12-30",
+        "method": "One PDF, the YTD summary revenue report for period 2025 12, and one more for expenditure, both converted with `pdftotext -layout` and parsed on the source's own `TOTAL` lines. The `as_of` is the date the report was generated, not the 31 December it is headed with, because the report was produced the day before the period it covers ended and the figures were still moving. Nothing is audited. Department figures are taken from the top of the source's own hierarchy: the sheriff's two sub-lines sum exactly to the office total, so adding every `TOTAL` line would double-count. [verified]",
+        "parameter": "General Fund revenue",
+        "unit": "US dollars",
+        "value": "39567582.57"
+      },
+      "blocks": [
+        {
+          "text": "**The county government runs on $39,567,582.57, and more than half of it is sales tax.** [verified] — [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md), the YTD summary revenue report for December 2025. It is the first figure this corpus holds for what the county government takes in.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county earns more from interest on its money than it levies in property tax for this fund.** $5,148,389 against $4,554,766. [inference] — computed from the table above, whose figures are the source's. The two are not comparable as policy — one is a rate the electors set and the other is what a balance earns — and that is the point: an eighth of the county's general revenue arrives without anyone voting for it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The sales tax came in twelve per cent over estimate and the fund came in eighteen per cent over.** $21,272,590 was budgeted at $19,000,000; the fund as a whole was estimated at $33,445,264. [verified] — same source. The 2023 audit says the same thing in words: changes from the final budget to actual revenues \"were sizable due to conservative estimates for sales taxes, intergovernmental, and interest revenues\". [verified] — [the audited statements](allen-county-net-position-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eight elected offices spend from this fund and the sheriff is half of them.** [verified] — same source, the YTD summary expenditure report for December 2025.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sheriff's office costs half again as much as the other seven together** — $10,786,007 against $7,113,672, of which $6,412,410 is the office and $4,373,597 is jail operations. [inference] — computed from the same report, which prints the two sub-lines and their sum.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In order, the eight are 10,786,007, 3,304,189, 1,394,273, 713,258, 497,075, 475,391, 388,472 and 341,014.** [verified] — same report, read off the table above. This corpus cannot say what any of them costs in total, because an office may also draw on funds outside this one, as the engineer does. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The engineer takes nothing from the general fund and is not cheap.** Five engineer lines in the Motor Vehicle and Gas Tax fund come to $8,456,595 of that fund's $8,599,026 — administration $1,243,366, roads $4,113,070, bridges $1,564,124, bill-back $1,212,510 and the garage $323,525. [verified] — same source. The office is paid for by the tax on the fuel used on the roads it maintains, which is why it is absent from the table above and not because it is small.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The four divisions of the common pleas court cost $5,802,358 between them** — juvenile $3,594,905, general $1,190,159, domestic relations $555,204 and probate $462,090. Two more courts appear beside them: the Lima Municipal Court at $214,080 and Allen County's share of [the Third District Court of Appeals](../office/judge-of-the-third-district-court-of-appeals.yml) at $30,542. [verified] — same source. The appellate line is what a seventeen-county court costs one of its seventeen, and it is the smallest departmental figure in the fund. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say what any of them costs in total, because an office may also draw on funds outside this one, as the engineer does."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-governor-vote-2018.yml",
       "class": "measure",
       "label": "Allen County vote for governor, 2018",
@@ -4646,6 +4738,47 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-net-position-2023.yml",
+      "class": "measure",
+      "label": "Allen County's audited net position, 2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023-12-31",
+        "method": "One PDF, `Allen_County_23_Allen_Report_FINAL.pdf`, converted with `pdftotext -layout`. Every figure is quoted from the report's own Table 1 and its Capital Assets and Debt Administration section, in the dollars it prints and without rounding. The changes between 2022 and 2023 are subtractions of two printed figures and are marked as computed. The report labels its management discussion \"Unaudited\"; the statements it discusses are audited, and the figures above are from the statements. [verified]",
+        "parameter": "total net position, primary government",
+        "unit": "US dollars",
+        "value": "177505194"
+      },
+      "blocks": [
+        {
+          "text": "**The county was worth $177,505,194 at the end of 2023 and $153,534,116 at the end of 2022.** [verified] — the State Auditor's report on Allen County for the year ended 31 December 2023, published by [the county auditor](../../catalog/allen-county-auditor-financials.md). These are the audited, accrual-basis figures; everything in [the monthly reports](allen-county-general-fund-2025.yml) is neither audited nor accrual.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Liabilities rose $36,758,891 in a year in which the county borrowed nothing.** One line moved further than the total: the long-term pension liability went from $20,113,541 to $66,841,464, a rise of $46,727,923, against which current liabilities fell $9,291,841. [verified] — same source, Table 1. Deferred inflows for pension fell from $26,745,448 to $1,122,333 over the same year, which is the other half of the same actuarial swing. [verified] — same table. A reader who takes \"liabilities up fifty per cent\" as borrowing has read a real number about the wrong thing. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**What the county actually owes to lenders is $16,281,525.** At 31 December 2023 governmental activities carried $103,179 in special assessment bonds, $1,068,908 in Ohio Public Works Commission loans and $1,905,267 in Ohio Water Development Authority loans; the sewer enterprise carried $13,204,171 more in OWDA loans. [verified] — same source. That is fifteen per cent of the county's reported liabilities and six per cent of its assets. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Its unrestricted governmental position crossed from a $13,128,479 deficit to $34,905 below zero.** [verified] — same table. A third of the county's net position, $61,400,633, is restricted and another $105,855,979 is the buildings and roads themselves, so $10,248,582 of $177,505,194 — under six per cent — is unrestricted. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The permissive sales tax is the series both sources carry.** $20,678,894 in 2022 and $20,760,806 in 2023 here, against $21,272,590 in [the 2025 monthly report](allen-county-general-fund-2025.yml). [verified] — the two sources, read against each other. Three years, one direction, and the only figure this corpus can follow across the audited and unaudited books.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Six funds are named major.** The General Fund, the Motor Vehicle and Gasoline Tax, Job and Family Services, Developmental Disabilities and American Rescue Plan special revenue funds, and the Sewer enterprise fund. [verified] — same source. All six appear among the largest funds in [the 2025 report](allen-county-funds-2025.yml), which names no fund major and 437 funds at all.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-occupancy-2020.yml",
@@ -7299,6 +7432,10 @@
         {
           "text": "**And the condition figures are a ladder by owner.** None of the state's 103 is in poor condition; 29 of this office's 242 are, and 4 of the municipalities' 19. [verified] — [the bridges](../measure/allen-county-bridges-2025.yml). Twelve per cent is the number attached to this office, and it is the number a reader should attach to it rather than the county-wide nine. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**It spends nothing from the General Fund and $8,456,595 from the Motor Vehicle and Gas Tax fund** — administration $1,243,366, roads $4,113,070, bridges $1,564,124, bill-back $1,212,510 and the garage $323,525, in 2025. [verified] — [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md); see [the General Fund](../measure/allen-county-general-fund-2025.yml). The office is paid for by the tax on the fuel burned on the roads it maintains, and it costs more than every other elected county office except the sheriff. [inference] — computed there.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -7400,6 +7537,10 @@
         {
           "text": "**What the office reports now, and the break in the middle of it.** It polices 24,079 people — the unincorporated county outside Lima and outside the three townships with their own forces — and its violent offenses averaged 33.5 a year to 2020 and 89.8 since, while its property offenses fell from 713 to 576. The line between the two is 1 December 2020, when the office began incident-based reporting. [verified] — [the sheriff's offenses](../measure/allen-county-sheriff-offenses-2015-2024.yml). The corpus reads the step as a change in counting and publishes no crime trend across it. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**It spent $10,786,007 from the General Fund in 2025, half again as much as the county's other seven elected offices together.** The report splits it: $6,412,410 for the office and $4,373,597 for jail operations. [verified] — [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md); see [the General Fund](../measure/allen-county-general-fund-2025.yml). It is the largest departmental figure in the fund by a factor of three. [inference] — computed there.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -7434,8 +7575,8 @@
           "tier": "verified"
         },
         {
-          "text": "The holder of this office is barred by statute from also being [county engineer](allen-county-engineer.yml). [verified] — [Ohio Revised Code §315.02](../../catalog/ohio-revised-code.md).",
-          "tier": "verified"
+          "text": "The holder of this office is barred by statute from also being [county engineer](allen-county-engineer.yml). [verified] — [Ohio Revised Code §315.02](../../catalog/ohio-revised-code.md). **It spent $341,014 from the General Fund in 2025 and passed $139,249,231 through its hands.** The office is the cheapest of the county's elected offices to run and it collects the real estate tax for every taxing district in the county. [verified] — [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md); see [the General Fund](../measure/allen-county-general-fund-2025.yml). See [what passes through the books](../measure/allen-county-funds-2025.yml); the county's own share of that collection is 3.3 per cent. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -16796,6 +16937,20 @@
       "source": "catalog/usda-census-of-agriculture.md"
     },
     {
+      "from": "measure/allen-county-funds-2025.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-financials.md"
+    },
+    {
+      "from": "measure/allen-county-general-fund-2025.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-financials.md"
+    },
+    {
       "from": "measure/allen-county-governor-vote-2018.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -17074,6 +17229,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "measure/allen-county-net-position-2023.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-financials.md"
     },
     {
       "from": "measure/allen-county-occupancy-2020.yml",

@@ -1,0 +1,102 @@
+class: measure
+label: Allen County's General Fund, 2025
+description: |
+  **The county government runs on $39,567,582.57, and more than half of it is sales tax.**
+  [verified] —
+  [the Auditor's financial statements](../../catalog/allen-county-auditor-financials.md), the YTD
+  summary revenue report for December 2025. It is the first figure this corpus holds for what the
+  county government takes in.
+
+      revenue category            2025 actual   share
+      sales tax                   21,272,590    53.8%
+      interest                     5,148,389    13.0%
+      property taxes               4,554,766    11.5%
+      charges for services         3,488,390     8.8%
+      intergovernmental            3,303,929     8.4%
+      rent                           749,713     1.9%
+      other financing sources        622,714     1.6%
+      transfers in                   200,000     0.5%
+      miscellaneous                  115,500     0.3%
+      fines and forfeitures           74,283     0.2%
+      advances in                     25,000     0.1%
+      licenses and permits             6,275     0.0%
+      other revenue                    6,034     0.0%
+      -------------------------------------------------
+      total                       39,567,583
+
+  **The county earns more from interest on its money than it levies in property tax for this
+  fund.** $5,148,389 against $4,554,766. [inference] — computed from the table above, whose figures
+  are the source's. The two are not comparable as policy — one is a rate the electors set and the
+  other is what a balance earns — and that is the point: an eighth of the county's general revenue
+  arrives without anyone voting for it.
+
+  **The sales tax came in twelve per cent over estimate and the fund came in eighteen per cent
+  over.** $21,272,590 was budgeted at $19,000,000; the fund as a whole was estimated at
+  $33,445,264. [verified] — same source. The 2023 audit says the same thing in words: changes from
+  the final budget to actual revenues "were sizable due to conservative estimates for sales taxes,
+  intergovernmental, and interest revenues". [verified] —
+  [the audited statements](allen-county-net-position-2023.yml).
+
+  **Eight elected offices spend from this fund and the sheriff is half of them.** [verified] —
+  same source, the YTD summary expenditure report for December 2025.
+
+      office                    2025 spending
+      sheriff                      10,786,007
+      board of commissioners        3,304,189
+      prosecuting attorney          1,394,273
+      clerk of courts                 713,258
+      auditor                         497,075
+      coroner                         475,391
+      recorder                        388,472
+      treasurer                       341,014
+      engineer                              0
+
+  **The sheriff's office costs half again as much as the other seven together** — $10,786,007
+  against $7,113,672, of which $6,412,410 is the office and $4,373,597 is jail operations.
+  [inference] — computed from the same report, which prints the two sub-lines and their sum.
+
+  **In order, the eight are 10,786,007, 3,304,189, 1,394,273, 713,258, 497,075, 475,391, 388,472
+  and 341,014.** [verified] — same report, read off the table above. This corpus cannot say what
+  any of them costs in total, because an office may also draw on funds outside this one, as the
+  engineer does. [inference]
+
+  **The engineer takes nothing from the general fund and is not cheap.** Five engineer lines in the
+  Motor Vehicle and Gas Tax fund come to $8,456,595 of that fund's $8,599,026 — administration
+  $1,243,366, roads $4,113,070, bridges $1,564,124, bill-back $1,212,510 and the garage $323,525.
+  [verified] — same source. The office is paid for by the tax on the fuel used on the roads it
+  maintains, which is why it is absent from the table above and not because it is small.
+
+  **The four divisions of the common pleas court cost $5,802,358 between them** — juvenile
+  $3,594,905, general $1,190,159, domestic relations $555,204 and probate $462,090. Two more courts
+  appear beside them: the Lima Municipal Court at $214,080 and Allen County's share of
+  [the Third District Court of Appeals](../office/judge-of-the-third-district-court-of-appeals.yml)
+  at $30,542. [verified] — same source. The appellate line is what a seventeen-county court costs
+  one of its seventeen, and it is the smallest departmental figure in the fund. [inference]
+
+  **The fund spent $5,263,742 more than it took in, and this source cannot call that a deficit.**
+  Expenditure was $44,831,324.89 against a revised budget of $49,350,577.67, 90.9 per cent used.
+  [verified] — same source. A summary report carries no fund balance, so whether the difference is
+  a drawdown of carryover or a shortfall is not answerable from it. [open]
+
+  [open] What the general fund held at the start and end of the year, and every year before 2025.
+  The monthly reports run to 2016 and this reads one month of one of them.
+properties:
+  parameter: General Fund revenue
+  value: "39567582.57"
+  unit: US dollars
+  as_of: 2025-12-30
+  method: |
+    One PDF, the YTD summary revenue report for period 2025 12, and one more for expenditure, both
+    converted with `pdftotext -layout` and parsed on the source's own `TOTAL` lines. The `as_of` is
+    the date the report was generated, not the 31 December it is headed with, because the report was
+    produced the day before the period it covers ended and the figures were still moving. Nothing is
+    audited. Department figures are taken from the top of the source's own hierarchy: the sheriff's
+    two sub-lines sum exactly to the office total, so adding every `TOTAL` line would double-count.
+    [verified]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-financials.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
