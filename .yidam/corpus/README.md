@@ -62,7 +62,7 @@ Sorted by: kind, then alphabetically.
 | [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 7v / 0i / 1o | 46 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 5v / 0i / 1o | 61 |
 | [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 5v / 1i / 2o | 51 |
-| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 10v / 4i / 3o | 100 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 12v / 4i / 3o | 111 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 4v / 0i / 1o | 44 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 6v / 0i / 0o | 55 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 4v / 0i / 0o | 67 |
@@ -155,7 +155,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 2 | 4v / 0i / 0o | 42 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
-| [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 2 | 4v / 3i / 1o | 58 |
+| [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 2 | 5v / 4i / 1o | 65 |
+| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 6v / 3i / 1o | 67 |
+| [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
@@ -177,7 +179,7 @@ Sorted by: kind, then alphabetically.
 | [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 6v / 3i / 1o | 66 |
-| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 8v / 5i / 0o | 68 |
+| [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 9v / 6i / 0o | 75 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 39 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 34 |
@@ -327,10 +329,10 @@ Sorted by: kind, then alphabetically.
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 11v / 1i / 2o | 86 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 7v / 2i / 3o | 75 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 9v / 2i / 3o | 84 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 7v / 1i / 1o | 72 |
-| [elida.yml](place/elida.yml) | place | Elida | 4 | 9v / 1i / 1o | 71 |
+| [elida.yml](place/elida.yml) | place | Elida | 4 | 10v / 2i / 1o | 78 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
