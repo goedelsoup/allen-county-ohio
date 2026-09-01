@@ -42,6 +42,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-government::municipal-corporations-in-Allen-County-with-a-recorded-founding-date",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "municipal corporations in Allen County with a recorded founding date",
+      "unit": "municipal corporations",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-municipal-incorporations-1842-1904.yml",
+          "label": "When Allen County's municipalities were incorporated, 1842–1904",
+          "as_of": "1878-05-13",
+          "value": 8.0,
+          "published": "8",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Read from the full text of three county histories on archive.org, the 1885 book in two independent scans, and checked against the county's own cities-and-villages page. `as_of` is the latest founding date the corpus can state and not the query date, because the count is of corporations founded by then. Where two dates exist the table prints both and the `erected` property on each corporation carries the authorising one. Dates given only as a year are printed as a year; nothing here is promoted to a day. [inference]"
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::seated-holders-of-elective-office,-and-seats-vacant,-by-class-of-government",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -5442,6 +5462,56 @@
           "literal": "8,940,505"
         }
       ]
+    },
+    {
+      "id": "the-villages-have-birthdays-now",
+      "statement": "Eight of Allen County's nine municipal corporations now carry a founding date. Four of the four that were missing were in books this corpus had already read for other things; the ninth is bounded to a five-year window; and one township's blank belongs to the record rather than to the corpus.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-municipal-incorporations-1842-1904.yml",
+          "node_label": "When Allen County's municipalities were incorporated, 1842–1904",
+          "span": "**Eight of the county's nine municipal corporations have a founding date, and every one of them was in a book this corpus already held.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md",
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-municipal-incorporations-1842-1904.yml",
+          "node_label": "When Allen County's municipalities were incorporated, 1842–1904",
+          "span": "**\"Incorporated\" is three different legal acts here and the corpus's one field flattens them.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md",
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-municipal-incorporations-1842-1904.yml",
+          "node_label": "When Allen County's municipalities were incorporated, 1842–1904",
+          "span": "**The gap that is left is one village and it is bounded.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/allen-county-official-site.md"
+          ]
+        },
+        {
+          "node": "jurisdiction/bath-township.yml",
+          "node_label": "Bath Township (government)",
+          "span": "**A second compiler looked thirty-six years later and reported the same absence.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
     },
     {
       "id": "an-address-is-not-a-municipality",

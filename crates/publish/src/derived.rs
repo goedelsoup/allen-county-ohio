@@ -1990,6 +1990,34 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-villages-have-birthdays-now",
+        statement: "Eight of Allen County's nine municipal corporations now carry a founding \
+                    date. Four of the four that were missing were in books this corpus had \
+                    already read for other things; the ninth is bounded to a five-year window; \
+                    and one township's blank belongs to the record rather than to the corpus.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-municipal-incorporations-1842-1904.yml",
+                "**Eight of the county's nine municipal corporations have a founding date, and every one of them\n  was in a book this corpus already held.**"
+            ),
+            support!(
+                "measure/allen-county-municipal-incorporations-1842-1904.yml",
+                "**\"Incorporated\" is three different legal acts here and the corpus's one field flattens them.**"
+            ),
+            support!(
+                "measure/allen-county-municipal-incorporations-1842-1904.yml",
+                "**The gap that is left is one village and it is bounded.**"
+            ),
+            support!(
+                "jurisdiction/bath-township.yml",
+                "**A second compiler looked thirty-six years later and reported the same absence.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

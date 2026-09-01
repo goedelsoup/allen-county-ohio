@@ -41,6 +41,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-lafayette.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/measure/allen-county-municipal-incorporations-1842-1904.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
   - ../corpus/office/allen-county-clerk-of-courts.yml
