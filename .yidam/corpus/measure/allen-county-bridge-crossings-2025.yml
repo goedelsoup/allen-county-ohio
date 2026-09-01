@@ -1,0 +1,63 @@
+class: measure
+label: What Allen County's bridges cross, 2025
+description: |
+  **Forty-one of the county's bridges cross the Ottawa River** — nearly twice as many as cross the
+  Auglaize, which is the larger river. [verified] —
+  [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), 2025 Ohio file,
+  matched on the free-text description of what each structure spans.
+
+      41  [Ottawa River](../natural-feature/ottawa-river.yml)
+      22  [Auglaize River](../natural-feature/auglaize-river.yml)
+      20  Sugar Creek
+      19  Interstate 75
+      14  Riley Creek
+      11  Pike Run
+      10  U.S. Route 30
+      10  Flat Fork Creek
+       6  Lost Creek
+       3  [Hog Creek](../natural-feature/hog-creek.yml)
+
+  **The Ottawa's lead is Lima's.** The Auglaize is the county's principal river and it runs through
+  farmland; the Ottawa runs through the county seat, and a city is a place where every street has
+  to get across the water. [inference] — computed here against
+  [the city](../place/lima.yml).
+
+  **Twenty-one structures carry Interstate 75 and twenty-four carry U.S. Route 30**, and a further
+  twenty-nine cross over one or the other. Forty-five of the county's 364 bridges — one in eight —
+  exist because of two roads built in the middle of the last century. [verified] — same source,
+  counted here.
+
+  **The busiest structure in the county carries Interstate 75 over Lost Creek**, at 39,060 vehicles
+  a day. [verified] — same source. That figure is a 2015 count in a 2025 file, as are the counts on
+  293 of the county's 364 bridges; see
+  [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
+
+  **This is the third transport network the corpus holds for this county and the first that is
+  current.** The canal is a ditch, the interurban stops in 1921, and the railroads' last measured
+  mileage is 1883. [verified] — see
+  [the canal](../site/miami-and-erie-canal.yml),
+  [the interurban](allen-county-interurban-1901-1921.yml) and
+  [the railroads](allen-county-railroads-1883-1921.yml). Every one of them crossed the same water in
+  the same places, and this is the only one of the four for which the corpus can say how many times.
+
+  [open] Where the roads are, as against where the bridges are. This file describes structures and
+  not pavement; the county's 353 miles of county road and 550 of township road are a claim of the
+  engineer's office that no source here has checked.
+properties:
+  parameter: bridges crossing the Ottawa River in Allen County
+  value: "41"
+  unit: structures
+  as_of: "2025"
+  method: |
+    Counted here from the 2025 Ohio file, selecting Allen County and matching `FEATURES_DESC_006A`
+    and `FACILITY_CARRIED_007` by substring. Those fields are free text entered by the state and are
+    inconsistently abbreviated, so a bridge described as "AUGLAIZE RIVER FAULKNER" is counted to the
+    Auglaize and one described as "STREAM SLABTOWN RD" is counted to nothing. The counts are
+    therefore floors, and the residue is structures over unnamed water. [inference]
+links:
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/national-bridge-inventory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
