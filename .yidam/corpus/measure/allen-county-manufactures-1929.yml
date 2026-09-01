@@ -1,0 +1,85 @@
+class: measure
+label: Allen County manufactures, 1929
+description: |
+  The first measurement of manufacturing this corpus holds at county grain, and the only one before
+  1969. [verified] —
+  [Census of Manufactures, Ohio, 1929](../../catalog/census-of-manufactures-1919-1929.md), Table 2.
+
+                        Allen County        Lima      outside Lima
+      establishments             108          72                36
+      wage earners             6,588       4,548             2,040
+      horsepower              21,717      13,030             8,687
+      wages               $8,337,261  $5,666,171        $2,671,090
+      value of products  $47,139,403 $29,595,853       $17,543,550
+      value added        $18,544,201 $13,391,977        $5,152,224
+
+  [verified] — same table for the first two columns; the third is the difference and is computed
+  here. [inference] The county's cost of materials, containers, fuel and purchased energy was
+  $28,595,202, and the value of products less that cost is the value added the table prints.
+
+  **Allen County had 108 manufacturing establishments in 1929, employing 6,588 wage earners, and
+  Lima held two thirds of the first and 69 per cent of the second.** [verified] —
+  [the 1929 volume](../../catalog/census-of-manufactures-1919-1929.md), Table 2. The county's
+  population that year was 69,419 by the census taken the following spring, so one resident in
+  ten and a half worked in a factory. [inference] — computed against
+  [the county by race, 1930–1960](allen-county-population-by-race-1930-1960.yml).
+
+  **In figures: 108 establishments, 6588 wage earners and 47139403 dollars of product in the
+  county, against 72, 4548 and 29595853 in Lima.** [verified] —
+  [the 1929 volume](../../catalog/census-of-manufactures-1919-1929.md), Table 2.
+
+  **The third of the county's industry that stood outside Lima paid better per head and added
+  less.** The 2,040 wage earners outside the city line averaged $1,309 in wages against $1,246
+  inside it, and produced $2,526 of value added each against $2,944. [inference] — computed here
+  from the two rows. That is the shape of processing rather than assembly, and
+  [the Solar refinery](../site/lima-refinery.yml) stands outside every municipality in the county.
+  [inference] — the reading is this corpus's and the table names no establishment.
+
+  **This bounds a question the corpus opened at 1909 and left standing.** The city's figures may
+  or may not have included the refinery; the county's include it either way, and the gap between
+  them is 36 establishments, 2,040 wage earners and $17,543,550 of product. [verified] — the two
+  rows of the same table; see
+  [the city's first three censuses](lima-manufactures-1899-1909.yml).
+
+  **The county was less of a factory county in 1929 than it was forty years later.** 6,588 wage
+  earners in a county of 69,419 in 1929; 17,623 manufacturing employees in a county of 111,144 in
+  1969. [verified] —
+  [the 1929 volume](../../catalog/census-of-manufactures-1919-1929.md) and
+  [the BEA series](allen-county-manufacturing-employment-1969-2022.yml). The two counts are not the
+  same instrument: the census's "wage earners" exclude salaried officers, clerks and proprietors,
+  who were 292 of Lima's 3,899 persons engaged in 1909, and the BEA figure includes them. Scaling
+  by that ratio puts 1929 at about 7,120 comparable employees, which is still below the 8,715 the
+  county recorded in 2022. [inference] — computed here.
+
+  **So the peak sits inside the forty years no volume covers.** The corpus now holds 1929 and 1969
+  and nothing between, and the higher of the two is the later one. [inference] — the two series
+  above.
+
+  [open] 1931 to 1967. No county manufacturing figure was found for any year in that span, which
+  contains the Depression, the tank plant, the refinery's expansion and the whole of the county's
+  war production.
+properties:
+  parameter: manufacturing wage earners, Allen County
+  value: "6588"
+  unit: wage earners
+  as_of: "1929"
+  method: |
+    Read from a page image at 300 dpi; the volume has no text layer. The row was checked three
+    ways before it was written down: the cost of materials and containers plus the cost of fuel and
+    purchased energy equals the printed total cost, the value of products less that total equals
+    the printed value added, and the population column prints 69,419, which is the 1930 count this
+    corpus already holds from three other volumes. The scan renders the value of products as
+    47,130,403; the two identities require 47,139,403 and every other row on the page closes them
+    exactly. Establishments here are those reporting products of $5,000 or more, which is not the
+    basis used before 1921. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-of-manufactures-1919-1929.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-of-manufactures-1919-1929.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

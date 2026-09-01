@@ -1232,6 +1232,26 @@
       ]
     },
     {
+      "id": "place-allen-county::manufacturing-wage-earners,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "manufacturing wage earners, Allen County",
+      "unit": "wage earners",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-manufactures-1929.yml",
+          "label": "Allen County manufactures, 1929",
+          "as_of": "1929",
+          "value": 6588.0,
+          "published": "6588",
+          "tier": "verified",
+          "source": "catalog/census-of-manufactures-1919-1929.md",
+          "method": "Read from a page image at 300 dpi; the volume has no text layer. The row was checked three ways before it was written down: the cost of materials and containers plus the cost of fuel and purchased energy equals the printed total cost, the value of products less that total equals the printed value added, and the population column prints 69,419, which is the 1930 count this corpus already holds from three other volumes. The scan renders the value of products as 47,130,403; the two identities require 47,139,403 and every other row on the page closes them exactly. Establishments here are those reporting products of $5,000 or more, which is not the basis used before 1921. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::median-age-(B01002)-and-population-by-age-(B01001)",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -2202,6 +2222,26 @@
       ]
     },
     {
+      "id": "place-lima::manufacturing-wage-earners,-city-of-Lima",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "manufacturing wage earners, city of Lima",
+      "unit": "wage earners",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-manufactures-1914-1929.yml",
+          "label": "Lima manufactures, 1914–1929",
+          "as_of": "1929",
+          "value": 4548.0,
+          "published": "4548",
+          "tier": "verified",
+          "source": "catalog/census-of-manufactures-1919-1929.md",
+          "method": "Read from page images at 300 dpi; neither volume has a text layer. The 1919 figures are the printed totals of Table 14 and were confirmed by adding its three ownership columns, which come to the printed total in every row taken. The 1929 figures are from Table 2, whose cost and value columns close the identity the volume defines for value added. Establishment counts are not comparable across 1919 and 1929 and the reason is stated above rather than adjusted for. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-lima::manufacturing-wage-earners-and-value-of-products,-city-of-Lima",
       "subject": "place/lima.yml",
       "subject_label": "Lima",
@@ -2869,7 +2909,7 @@
     },
     {
       "id": "the-only-employment-figures",
-      "statement": "Lima had 3,607 manufacturing wage earners in 1909, up from 1,980 in 1899 — and these are the only measurements of work this corpus holds, all of them sixty years before the decline it describes.",
+      "statement": "Lima had 3,607 manufacturing wage earners in 1909, up from 1,980 in 1899 — the earliest measurement of work this corpus holds, and sixty years earlier than the series that records the decline.",
       "topic": "population",
       "tier": "inference",
       "citations": [
@@ -7652,6 +7692,109 @@
           "label": "1960",
           "value": 7322.0,
           "literal": "7322"
+        }
+      ]
+    },
+    {
+      "id": "the-workforce-stopped-growing-in-1914",
+      "statement": "Lima's factory workforce grew by 146 per cent in the fifteen years to 1914 and by twenty-five people in the five years after it, and was smaller again by 1929. The county's first manufacturing measurement, taken that year, is 6,588 wage earners — fewer than the county recorded in 2022.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/lima-manufactures-1914-1929.yml",
+          "node_label": "Lima manufactures, 1914–1929",
+          "span": "**Lima's factory workforce grew by 146 per cent in the fifteen years to 1914 and by twenty-five people in the five years after it.** 1,980 wage earners in 1899, 4,876 in 1914, 4,901 in 1919.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-of-manufactures-1919-1929.md"
+          ]
+        },
+        {
+          "node": "measure/lima-manufactures-1914-1929.yml",
+          "node_label": "Lima manufactures, 1914–1929",
+          "span": "**In figures: 1980 in 1899, 2733 in 1904, 3607 in 1909, 4876 in 1914, 4901 in 1919 and 4548 in 1929.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-of-manufactures-1919-1929.md",
+            "catalog/census-1910-abstract-supplement-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/lima-manufactures-1914-1929.yml",
+          "node_label": "Lima manufactures, 1914–1929",
+          "span": "**A third of the city's establishments appear to vanish in the 1920s and about half of that is a definition.** 108 in 1919 against 72 in 1929.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-manufactures-1919-1929.md"
+          ]
+        },
+        {
+          "node": "measure/lima-manufactures-1914-1929.yml",
+          "node_label": "Lima manufactures, 1914–1929",
+          "span": "**Two out of five establishments were corporations and they held nine in ten of the jobs.** In 1919, 48 of Lima's 108 establishments were owned by corporations, and those 48 employed 4,432 of the 4,901 wage earners and made $21,817,237 of the $23,638,764.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-of-manufactures-1919-1929.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-manufactures-1929.yml",
+          "node_label": "Allen County manufactures, 1929",
+          "span": "**Allen County had 108 manufacturing establishments in 1929, employing 6,588 wage earners, and Lima held two thirds of the first and 69 per cent of the second.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-manufactures-1919-1929.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-manufactures-1929.yml",
+          "node_label": "Allen County manufactures, 1929",
+          "span": "**The county was less of a factory county in 1929 than it was forty years later.** 6,588 wage earners in a county of 69,419 in 1929; 17,623 manufacturing employees in a county of 111,144 in 1969.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-manufactures-1919-1929.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-manufactures-1929.yml",
+          "node_label": "Allen County manufactures, 1929",
+          "span": "**The third of the county's industry that stood outside Lima paid better per head and added less.** The 2,040 wage earners outside the city line averaged $1,309 in wages against $1,246 inside it, and produced $2,526 of value added each against $2,944.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1899",
+          "value": 1980.0,
+          "literal": "1980"
+        },
+        {
+          "label": "1904",
+          "value": 2733.0,
+          "literal": "2733"
+        },
+        {
+          "label": "1909",
+          "value": 3607.0,
+          "literal": "3607"
+        },
+        {
+          "label": "1914",
+          "value": 4876.0,
+          "literal": "4876"
+        },
+        {
+          "label": "1919",
+          "value": 4901.0,
+          "literal": "4901"
+        },
+        {
+          "label": "1929",
+          "value": 4548.0,
+          "literal": "4548"
         }
       ]
     }

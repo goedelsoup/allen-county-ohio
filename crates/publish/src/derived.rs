@@ -317,11 +317,12 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "the-only-employment-figures",
         statement: "Lima had 3,607 manufacturing wage earners in 1909, up from 1,980 in 1899 — \
-                    and these are the only measurements of work this corpus holds, all of them \
-                    sixty years before the decline it describes.",
+                    the earliest measurement of work this corpus holds, and sixty years earlier \
+                    than the series that records the decline.",
         topic: "population",
         // Three points, sixty years before the period they are shown beside. The chart is small
-        // and the sentence beneath it is the point: this is a baseline, not a mechanism.
+        // and the sentence beneath it is the point: this is a baseline, not a mechanism. Three
+        // more censuses were added later; see `the-workforce-stopped-growing-in-1914`.
         supports: &[
             support!(
                 "measure/lima-manufactures-1899-1909.yml",
@@ -2787,6 +2788,53 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1940", value: 1_916.0, literal: "1916" },
             Figure { label: "1950", value: 4_391.0, literal: "4391" },
             Figure { label: "1960", value: 7_322.0, literal: "7322" },
+        ],
+    },
+    Assertion {
+        id: "the-workforce-stopped-growing-in-1914",
+        statement: "Lima's factory workforce grew by 146 per cent in the fifteen years to 1914 and \
+                    by twenty-five people in the five years after it, and was smaller again by \
+                    1929. The county's first manufacturing measurement, taken that year, is 6,588 \
+                    wage earners — fewer than the county recorded in 2022.",
+        topic: "population",
+        supports: &[
+            support!(
+                "measure/lima-manufactures-1914-1929.yml",
+                "**Lima's factory workforce grew by 146 per cent in the fifteen years to 1914 and by twenty-five\n  people in the five years after it.** 1,980 wage earners in 1899, 4,876 in 1914, 4,901 in 1919."
+            ),
+            support!(
+                "measure/lima-manufactures-1914-1929.yml",
+                "**In figures: 1980 in 1899, 2733 in 1904, 3607 in 1909, 4876 in 1914, 4901 in 1919 and 4548 in\n  1929.**"
+            ),
+            support!(
+                "measure/lima-manufactures-1914-1929.yml",
+                "**A third of the city's establishments appear to vanish in the 1920s and about half of that is a\n  definition.** 108 in 1919 against 72 in 1929."
+            ),
+            support!(
+                "measure/lima-manufactures-1914-1929.yml",
+                "**Two out of five establishments were corporations and they held nine in ten of the jobs.** In\n  1919, 48 of Lima's 108 establishments were owned by corporations, and those 48 employed 4,432 of\n  the 4,901 wage earners and made $21,817,237 of the $23,638,764."
+            ),
+            support!(
+                "measure/allen-county-manufactures-1929.yml",
+                "**Allen County had 108 manufacturing establishments in 1929, employing 6,588 wage earners, and\n  Lima held two thirds of the first and 69 per cent of the second.**"
+            ),
+            support!(
+                "measure/allen-county-manufactures-1929.yml",
+                "**The county was less of a factory county in 1929 than it was forty years later.** 6,588 wage\n  earners in a county of 69,419 in 1929; 17,623 manufacturing employees in a county of 111,144 in\n  1969."
+            ),
+            support!(
+                "measure/allen-county-manufactures-1929.yml",
+                "**The third of the county's industry that stood outside Lima paid better per head and added\n  less.** The 2,040 wage earners outside the city line averaged $1,309 in wages against $1,246\n  inside it, and produced $2,526 of value added each against $2,944."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1899", value: 1_980.0, literal: "1980" },
+            Figure { label: "1904", value: 2_733.0, literal: "2733" },
+            Figure { label: "1909", value: 3_607.0, literal: "3607" },
+            Figure { label: "1914", value: 4_876.0, literal: "4876" },
+            Figure { label: "1919", value: 4_901.0, literal: "4901" },
+            Figure { label: "1929", value: 4_548.0, literal: "4548" },
         ],
     },
 ];
