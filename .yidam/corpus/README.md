@@ -116,6 +116,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 5v / 1i / 1o | 60 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
+| [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 3 | 9v / 2i / 1o | 106 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
@@ -304,7 +305,7 @@ Sorted by: kind, then alphabetically.
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 10v / 1i / 2o | 79 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 6v / 2i / 3o | 67 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 5v / 1i / 1o | 58 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 6v / 1i / 1o | 64 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 8v / 1i / 1o | 62 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
@@ -318,7 +319,7 @@ Sorted by: kind, then alphabetically.
 | [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 8v / 2i / 1o | 58 |
 | [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 8v / 2i / 0o | 67 |
 | [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 8v / 2i / 1o | 61 |
-| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 8v / 0i / 1o | 58 |
+| [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 9v / 0i / 1o | 67 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 8v / 2i / 0o | 65 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 4v / 1i / 2o | 63 |
@@ -335,17 +336,19 @@ Sorted by: kind, then alphabetically.
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 5v / 2i / 1o | 51 |
-| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 10v / 2i / 1o | 87 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 11v / 3i / 1o | 99 |
 | [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 2v / 3i / 2o | 48 |
 | [camp-lima.yml](site/camp-lima.yml) | site | Camp Lima | 2 | 6v / 2i / 3o | 56 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 11v / 5i / 2o | 103 |
 | [fort-amanda.yml](site/fort-amanda.yml) | site | Fort Amanda | 2 | 15v / 2i / 0o | 98 |
 | [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 13v / 7i / 3o | 133 |
-| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 1v / 3i / 2o | 43 |
+| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 2v / 4i / 2o | 51 |
+| [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 5v / 3i / 0o | 47 |
+| [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
 | [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 9v / 4i / 2o | 72 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 84 |
-| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 10v / 4i / 1o | 84 |
+| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 12v / 4i / 1o | 99 |
 | [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 3v / 2i / 1o | 41 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
 | [clerk-of-courts-2025-jennifer-moree-mcbride.yml](tenure/clerk-of-courts-2025-jennifer-moree-mcbride.yml) | tenure | Jennifer Moree McBride, Clerk of Courts of Allen County, term of 2025–2028 | 3 | 1v / 2i / 0o | 28 |
