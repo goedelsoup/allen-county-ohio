@@ -19,6 +19,25 @@ const roll = assertion('the-register-dates-them-but-cannot-place-them')
 const dotted = assertion('the-ninety-nine-year-hole-is-dotted')
 const money = assertion('a-grand-total-is-not-a-budget')
 const libraries = assertion('three-per-cent-of-the-library-money-is-local')
+const officers = assertion('a-line-of-holders-for-every-office')
+
+const officerSpec = bar(
+  officers.figures.map((f) => f.label),
+  officers.figures.map((f) => f.value),
+  { yTitle: 'Holders named, 1831–1906', labelValues: true },
+)
+
+const firstOfficers = [
+  ['Treasurer', 'Adam White', 1831, 27],
+  ['Prosecuting Attorney', 'Aaron M. Miller', 1831, 22],
+  ['Sheriff', 'Henry Lippincott', 1831, 21],
+  ['Recorder', 'Nathan Daniels', 1831, 20],
+  ['Auditor', 'William G. Woods', 1831, 19],
+  ['Clerk of Common Pleas', 'John Ward', 1831, 14],
+  ['Surveyor', 'John Jackson', 1831, 14],
+  ['Coroner', 'H. Clippenger', 1844, 20],
+  ['Probate Judge', 'William S. Rose', 1851, 12],
+]
 
 const librarySpec = bar(
   libraries.figures.map((f) => f.label),
@@ -791,5 +810,45 @@ const traced = offices.filter(
       columns={['Outlet', 'Town', 'Address', 'Square feet', 'Hours a year']}
       rows={libraryOutlets}
     />
+  </section>
+
+  <section>
+    <h2>A line of holders for every office</h2>
+    <AssertionCard assertion={officers} />
+    <p>
+      Until now this site could answer "who has been sheriff of Allen County" back to 1831 and, for
+      every other county office, only "who holds it today". The 1906 county history prints a roster
+      of county officials from the county's organization to the year it went to press: nine offices
+      and 169 named holdings.
+    </p>
+    <ChartFigure
+      id="county-officers"
+      title="Holders of each Allen County office named in the 1906 roster"
+      caption="Years are the book's and are given without months. Every office but two begins in 1831 with the county's organization: the coroners open at 1844, and the probate judgeship at 1851, when the new state constitution created the court."
+      columns={['Office', 'Holders']}
+      rows={officers.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="county-officers" set:html={JSON.stringify(officerSpec)} is:inline />
+    <DataTable
+      title="Who was first"
+      caption="The office now called County Engineer was the County Surveyor for its first seventy-three years, and the statute still requires its holder to be a registered surveyor as well as an engineer."
+      columns={['Office', 'First holder', 'From', 'Holders to 1906']}
+      rows={firstOfficers}
+    />
+    <p>
+      The sheriffs are the check on the whole thing. A book printed in 1906 and a roster published
+      on the sheriff's own website in the 2020s name the same twenty-one men in the same order from
+      1831 to 1905, and differ on exactly two years — both of them the book's, and one of them
+      impossible. It is the strongest corroboration this site holds for any nineteenth-century
+      succession.
+    </p>
+    <p>
+      The 1921 history is the weaker witness. Its list of prosecuting attorneys runs from Mathias H.
+      Nichols in 1851 straight to Jasper Gutridge in 1859, dropping three holders and seven years —
+      and its own account of the county bar, forty pages later, says that one of the men it dropped
+      "served as prosecuting attorney two terms". Nichols had resigned in 1852 to enter Congress,
+      having founded the county's second newspaper nine years earlier by selling his waistcoat to
+      buy paper for the first issue.
+    </p>
   </section>
 </Base>

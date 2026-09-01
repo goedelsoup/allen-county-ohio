@@ -2440,6 +2440,52 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "a-line-of-holders-for-every-office",
+        statement: "This site knew the county's sheriffs back to 1831 and, for every other county \
+                    office, only who holds it today. A roster printed in 1906 supplies 169 names \
+                    across nine offices — and corroborates the sheriffs, name for name, from a \
+                    book and a website 120 years apart.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-officers-1831-1906.yml",
+                "The county's roster of every elected officer from its organization to the year the book was\n  printed — nine offices, seventy-five years, and until now the corpus held one holder of each."
+            ),
+            support!(
+                "measure/allen-county-officers-1831-1906.yml",
+                "**The sheriffs are the check on all of it, and the book loses two years to the printer.** The\n  1906 roster and\n  [the sheriff's own modern roster](../../catalog/acso-past-sheriffs.md) name the same twenty-one\n  men in the same order from 1831 to 1905."
+            ),
+            support!(
+                "measure/allen-county-officers-1831-1906.yml",
+                "**The county went thirteen years without a coroner in the record.**"
+            ),
+            support!(
+                "measure/allen-county-officers-1831-1906.yml",
+                "**The office now called County Engineer was the County Surveyor for its first seventy-three\n  years.**"
+            ),
+            support!(
+                "measure/allen-county-officers-1831-1906.yml",
+                "**The 1921 book contradicts its own roster forty pages later.**"
+            ),
+            support!(
+                "measure/allen-county-officers-1831-1906.yml",
+                "**In order, the nine counts are 27 treasurers, 22 prosecuting attorneys, 21 sheriffs, 20\n  recorders, 20 coroners, 19 auditors, 14 surveyors, 14 clerks of the common pleas and 12 probate\n  judges — 169 named holdings in seventy-five years.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Treasurer", value: 27.0, literal: "27" },
+            Figure { label: "Prosecutor", value: 22.0, literal: "22" },
+            Figure { label: "Sheriff", value: 21.0, literal: "21" },
+            Figure { label: "Recorder", value: 20.0, literal: "20" },
+            Figure { label: "Coroner", value: 20.0, literal: "20" },
+            Figure { label: "Auditor", value: 19.0, literal: "19" },
+            Figure { label: "Surveyor", value: 14.0, literal: "14" },
+            Figure { label: "Clerk", value: 14.0, literal: "14" },
+            Figure { label: "Probate Judge", value: 12.0, literal: "12" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
