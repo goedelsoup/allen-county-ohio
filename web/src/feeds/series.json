@@ -202,6 +202,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Allen-County-men-in-military-or-naval-service,-First-World-War",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County men in military or naval service, First World War",
+      "unit": "names",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-world-war-service.yml",
+          "label": "Allen County in the World War — how many served",
+          "as_of": "1921",
+          "value": 4158.0,
+          "published": "4158",
+          "tier": "verified",
+          "source": "catalog/rusler-allen-county-1921.md",
+          "method": "Every line of Elmer McClain's printed roster matching `Surname, Given` or `Surname. Given`, counted from the single archive.org digitization of the 1921 history — 4,088 plus 70. Ninety-six further lines were rejected and are reported rather than estimated. Duplicates were not removed from the published figure; they are counted separately. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Allen-County-men-recorded-as-dying-in-United-States-service,-Civil-War",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -218,6 +238,26 @@
           "tier": "inference",
           "source": null,
           "method": "Both archive.org digitizations of the 1885 county history were parsed into roster records — a capitalised surname after a sentence break, followed by a given name — over the five sections of Chapter IX's roster, filtered against a stop list of place names, months, unit words and running heads. Scan B yields 1,877 records and scan A 1,745, against a printed 1,920. A record counts as a death if it carries any of: `died`, an abbreviated `d.` followed by a date or a place, `killed`, `k'd`, `k'l'd`, `k.` before a place, `mortally`, `drowned`, or `lost on`. The published value is the **lower** of the two scans, because every failure mode here — an unrecognised entry, an OCR-mangled abbreviation, a roster silent about a man's fate — pushes the count down, and none pushes it up. [inference] Place of death is counted only where the place name falls within one clause of the word recording the death, so that a man who enlisted at one place and died at another is not counted twice. The two scans agree exactly at Corinth and Atlanta and differ by one at Nashville. Regiment counts are **not** published: the two scans differ on those by up to a factor of two, because one of them reads \"81st\" as \"8l8t\". [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::Allen-County-men-who-died-in-service,-First-World-War",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County men who died in service, First World War",
+      "unit": "men",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-world-war-dead.yml",
+          "label": "Allen County's World War dead",
+          "as_of": "1921",
+          "value": 95.0,
+          "published": "95",
+          "tier": "verified",
+          "source": "catalog/rusler-allen-county-1921.md",
+          "method": "Every line of the printed honour roll matching `Surname, Given`, counted from the single digitization of the 1921 history. Two rejected lines were identified as wrapped continuations of accepted names and are not additional men. Overlap with the service roster computed on normalised surname plus first initial. [inference]"
         }
       ]
     },
@@ -4431,6 +4471,66 @@
         "The dataset carries `STATUS: Listed` on all twenty-nine and would simply omit a delisted property, so it cannot answer its own question."
       ],
       "figures": []
+    },
+    {
+      "id": "the-two-war-lists-do-not-join",
+      "statement": "Allen County counted its World War soldiers twice and got different answers, and the man its Legion post is named for is in only one of them.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-world-war-service.yml",
+          "node_label": "Allen County in the World War — how many served",
+          "span": "**The narrative says about thirty-five hundred and the roster twenty pages later holds more than four thousand names.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-world-war-service.yml",
+          "node_label": "Allen County in the World War — how many served",
+          "span": "Written out: **the American Legion's figure is 3,260 enlistments, rising to about 3,500 with officers and men credited elsewhere; the printed roster yields at least 4,158 names.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-world-war-dead.yml",
+          "node_label": "Allen County's World War dead",
+          "span": "**At most forty-seven of the ninety-five dead are absent from the roster of the served**, matched on surname and first initial.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-world-war-dead.yml",
+          "node_label": "Allen County's World War dead",
+          "span": "**One of the absent is the man the post is named for.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Legion enlistments",
+          "value": 3260.0,
+          "literal": "3,260"
+        },
+        {
+          "label": "With officers and men credited elsewhere",
+          "value": 3500.0,
+          "literal": "3,500"
+        },
+        {
+          "label": "Names in the printed roster",
+          "value": 4158.0,
+          "literal": "4,158"
+        }
+      ]
     },
     {
       "id": "an-address-is-not-a-municipality",

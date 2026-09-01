@@ -4576,6 +4576,100 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-world-war-dead.yml",
+      "class": "measure",
+      "label": "Allen County's World War dead",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1921",
+        "method": "Every line of the printed honour roll matching `Surname, Given`, counted from the single digitization of the 1921 history. Two rejected lines were identified as wrapped continuations of accepted names and are not additional men. Overlap with the service roster computed on normalised surname plus first initial. [inference]",
+        "parameter": "Allen County men who died in service, First World War",
+        "unit": "men",
+        "value": "95"
+      },
+      "blocks": [
+        {
+          "text": "**Ninety-five names under the heading \"On Fame's Eternal Camping Ground\".** The county's honour roll of men who died in military or naval service in the First World War, printed alphabetically from Harry Apostol to Thor Zetlitz. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), the closing pages of chapter XLIV; count performed here, and it is a floor for the same reason [the service roster's is](allen-county-world-war-service.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "The parse accepted 95 name lines and rejected two — `Ross` and `Alexander` — which are the second halves of `MacDonnell, Duncan` and `Turner, Aberdeen`, wrapped across a line. So the list is 95 men and the parse and the page agree. [inference] — read here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It was compiled by different hands from the service roster.** Elmer McClain says \"especial care was taken\" over the mortuary list: every newspaper in the county was asked to help, the William Paul Gallagher Post of the American Legion was appealed to, and he credits Mrs. Irene Mills Jackson of the Home Service Bureau of the American Red Cross and Mrs. James Pillars, secretary of the Allen County Historical and Archaeological Society. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**At most forty-seven of the ninety-five dead are absent from the roster of the served**, matched on surname and first initial. At least forty-eight are present. [inference] — computed here; the direction is fixed, because any OCR failure in either list breaks a match and pushes the absences up, never down.",
+          "tier": "inference"
+        },
+        {
+          "text": "**One of the absent is the man the post is named for.** The honour roll carries `Gallagher, William Paul`. The service roster is alphabetical and the slot where he belongs is occupied by other men: `Galberach, William H.` then `Gallant, William H,` then `Gallapool, C. Ralph`, `Gallaspie, Edward L.`, `Gallont, Charles J.`, `Galloway, Earl D.` No *Gallagher*, in any spelling a search of the five thousand lines will find. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), the two lists read against each other. The American Legion post in Lima is the William Paul Gallagher Post No. 96; it helped compile the honour roll; and the list of who served, assembled with that post's help, does not have him.",
+          "tier": "verified"
+        },
+        {
+          "text": "That is not a defect in either list. It is what two lists made by different people out of different sources look like when they are set next to each other, and it is the measure of how far either can be trusted alone. [inference] — see [one scan is a floor and a residue](../../decisions/one-scan-is-a-floor-and-a-residue.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**One in forty-four, against one in eleven.** Ninety-five dead out of at least 4,158 who served is 2.3 per cent. The county's Civil War roster of 1,920 names records 170 deaths, 8.9 per cent. [inference] — computed here from [the service roster](allen-county-world-war-service.yml) and [the Civil War dead](allen-county-civil-war-dead.yml). Four times as many men went and a quarter as many of them died, in a war a fifth as long.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-world-war-service.yml",
+      "class": "measure",
+      "label": "Allen County in the World War — how many served",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1921",
+        "method": "Every line of Elmer McClain's printed roster matching `Surname, Given` or `Surname. Given`, counted from the single archive.org digitization of the 1921 history — 4,088 plus 70. Ninety-six further lines were rejected and are reported rather than estimated. Duplicates were not removed from the published figure; they are counted separately. [inference]",
+        "parameter": "Allen County men in military or naval service, First World War",
+        "unit": "names",
+        "value": "4158"
+      },
+      "blocks": [
+        {
+          "text": "**The narrative says about thirty-five hundred and the roster twenty pages later holds more than four thousand names.** Both are in the same chapter of the same book. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), chapter XLIV, \"Allen County in the Wars\".",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **the American Legion's figure is 3,260 enlistments, rising to about 3,500 with officers and men credited elsewhere; the printed roster yields at least 4,158 names.** [verified] for the first three — same source; [inference] for the last, counted here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The roster is a document with a compiler and a method.** It is the \"World War Military and Naval List\" of Elmer McClain, an Allen County man who enlisted and did transport duty and kept a card system. He appealed to the newspapers, checked his cards against other lists, and drew on twelve named sources: ex-service men, the YMCA at the camps and in Lima, the American Legion, the Federal Employment Bureau, a local citizens committee, the county recorder's office, the 1919 Lima city directory, the township chairmen of the Victory Loan campaign, the Knights of Columbus, the Red Cross, the local draft board and the Allen County Historical Society. [verified] — same source, which gives the list numbered.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And he says what it is worth.** \"In spite of all effort to make it so, the compiler knows that it is not in every respect either perfectly complete or perfectly accurate, but it is the most complete and accurate list in existence\"; and, on why: \"Many young men from Allen County enlisted in various parts of the United States throughout the war, and no official list of these men exists.\" [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The book cannot spell him.** He is \"Elmert McClain\" in the paragraph introducing the list and \"Elmer McClain\" in the line above the first name. [verified] — same source, two lines apart.",
+          "tier": "verified"
+        },
+        {
+          "text": "4,158 is a floor and the residue proves it. The parser accepted 4,088 lines of the form `Surname, Given` and a further 70 where the comma had been read as a full stop; it left 96 lines it could not classify, and those visibly include names whose comma was lost altogether — `Augsburger Donald`, `Beamer Ray`, `Biederman William`, `Bixler Aurora`, `Creps Clark W.` — and fragments of names broken across a line. [inference] — parse performed here on the one scan that exists; see [one scan is a floor and a residue](../../decisions/one-scan-is-a-floor-and-a-residue.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Thirty-six of the accepted lines repeat a name already in the list.** [inference] — computed here on surname and given name normalised. The compiler warned that the list is not perfectly accurate and this is one shape that takes.",
+          "tier": "inference"
+        },
+        {
+          "text": "**One in sixteen.** Against the county's 68,203 at the 1920 census, 4,158 is 6.1 per cent of everybody — one person in sixteen, counting women, children and the old. The Civil War figure was one in ten. [inference] — computed here from [the population series](allen-county-outside-lima-1890-2020.yml) and [the Civil War service](allen-county-civil-war-service.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/fort-amanda-graves-and-boats.yml",
       "class": "measure",
       "label": "Fort Amanda's two seventy-fives",
@@ -6151,6 +6245,40 @@
       "withheld": 1
     },
     {
+      "id": "organization/gramm-bernstein-motor-truck-company.yml",
+      "class": "organization",
+      "label": "Gramm-Bernstein Motor Truck Company",
+      "tier": "verified",
+      "properties": {
+        "industry": "motor truck manufacture",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "A Lima truck builder, and the county's industrial contribution to the First World War. \"Lima industry was represented on the war front by the Liberty truck.\" [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The firm's own words about it are quoted and they are careful.** \"While Gramm-Bernstein feel a pardonable pride in the unusual recognition accorded them in this great World war task, still they have greater pleasure and satisfaction in the thought that they were equipped with facilities and experience which they could devote to so worthy an undertaking.\" [verified] — same source, quoting \"one local concern\".",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its head ran the county's war at home.** B. A. Gramm was named chairman of the Allen County Council of Defense when \"the community was wrought up over war prospects\" — the body that took charge of food conservation and coordinated every other war activity in the county. [verified] — same source. The man who built the trucks chaired the committee that rationed the flour.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It was one of the nine firms that equipped a high school.** On 20 September 1918 it joined the Ohio Steel Foundry, the Lima Steel Casting Company, [Solar Refining](solar-refining-company.yml), Lima Locomotive Works, East Iron and Machine, Chalmers Manufacturing, Buckeye Machine and Steiner Brothers in agreeing to meet half the $26,000 cost of a machine shop for Lima's South High School. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The corpus can locate it only by a cemetery.** The book's one placement of the works is incidental: the abandoned \"New Cemetery\" outside old Lima is \"near the Gramm-Bernstein factory\". [verified] — same source. No address, no acreage, no coordinate, so there is no `site` node for the plant and none should be written until there is something to put in it.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "organization/institute-for-orthopaedic-surgery.yml",
       "class": "organization",
       "label": "Institute for Orthopaedic Surgery",
@@ -6501,6 +6629,10 @@
         },
         {
           "text": "Thirty-five years later the 1921 historian's summary of what the boom left is one clause: \"About all that is left is the Solar refinery and the different companies dealing in oil commodities.\" [verified] — same source. The refinery had already outlasted the field that justified it, which is the fact [the boom's](../period/lima-oil-boom.yml) end bound is really about.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It moved the Red Cross for nothing.** \"In Lima all drayage was donated by the Solar Refinery Company\" during the war, while the county's Red Cross chapter was supplying nurses to the influenza epidemic and lending them to other communities. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see [the period](../period/the-world-war-in-allen-county.yml).",
           "tier": "verified"
         },
         {
@@ -6913,6 +7045,49 @@
       ],
       "refusals": [],
       "withheld": 4
+    },
+    {
+      "id": "period/the-world-war-in-allen-county.yml",
+      "class": "period",
+      "label": "The World War in Allen County",
+      "tier": "inference",
+      "properties": {
+        "began": "1917-04",
+        "character": "A county with no camp, no battle and no invasion, organising a war out of committees: a draft board, a council of defense, a Red Cross chapter, a war savings drive, a truck factory and a hall where men were sworn in and fed lunch. [inference]",
+        "ended": "1918-11-11"
+      },
+      "blocks": [
+        {
+          "text": "The nineteen months in which a county of sixty-eight thousand put **at least 4,158 men** into United States service — one person in sixteen — and organised itself around a war it never saw. [inference] — computed here against the 1920 census; the roster count is [the list's own](../measure/allen-county-world-war-service.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It has no local beginning the sources will give.** The Civil War period in this corpus opens on a named Sunday at the courthouse with a flag on a wire. This one opens with committees. The 1921 history describes the county before the war as \"resting secure in their remoteness, the farmer continued to till his fields\", and dates nothing between that and the draft board. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the county built for it was a truck.** \"Lima industry was represented on the war front by the Liberty truck\", built by [Gramm-Bernstein](../organization/gramm-bernstein-motor-truck-company.yml), and the book's own caption calls it the first truck used in the war. [verified] — same source. Three of the volume's photographs are of it, one a convoy in Lima's Public Square before leaving for Washington.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What it built for itself was an administration.** A draft board serving without pay — F. M. Watt and Clarence Breese for the county outside Lima, with James J. Weadock, George H. Quail, Dr. T. R. Thomas and J. L. Van Pelt; a Council of Defense chaired by B. A. Gramm, whose woman's branch passed from Mrs. Kent W. Hughes to Mrs. Lena B. Davis to avoid overlapping the Red Cross; a War Savings committee under H. E. Simonton. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And it met its money quota and then stopped.** Allen County's War Savings quota was $1,297,000 and it subscribed $1,367,000, $70,000 over. In 1919, with the war finished, Ohio as a whole took 25 per cent of its quota and Allen County 30 — \"a good relative showing\", and the book adds that \"the people did not incline to make a sacrifice again\". [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its induction hall is a building this corpus already holds.** [Memorial Hall](../site/lima-memorial-hall.yml) was where men were sworn in, \"from a radius many miles in every direction from Lima\", and luncheons were served to everybody entering the service. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The war reached the county's map.** German Township became American on 16 August 1918, on a petition of its own citizens. [verified] — [the renaming](../event/renaming-of-german-township-1918.yml). And it reached the state hospital: 244 cases of influenza that autumn, of which 8 per cent died. [verified] — [the hospital](../site/lima-state-hospital.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "person/aaron-fisher.yml",
@@ -11110,6 +11285,10 @@
           "tier": "inference"
         },
         {
+          "text": "**Men were sworn into the World War in it.** \"Memorial Hall was a busy center in wartime; the soldiers inducted into the service there represented a radius many miles in every direction from Lima; they did not all live in Allen County ... all Allen County boys lined up there and luncheons were served to everybody entering the service.\" [verified] — same source. A building put up to remember one war became the room the next one's men left from; see [the period](../period/the-world-war-in-allen-county.yml). It is also part of why the county's own count of who served is uncertain — the hall drew men from beyond the county line and the roster had to be sifted afterwards. [inference] — see [the service roster](../measure/allen-county-world-war-service.yml).",
+          "tier": "inference"
+        },
+        {
           "text": "**The first courthouse bell stands in front of it, cracked.** \"The bell now resting in front of Memorial Hall is the first Allen County courthouse bell, and therefore it was the first fire bell in Lima ... there is a crack — an injury to the bell.\" [verified] — same source. That is the bell of [the pioneer courthouse](allen-county-courthouse.yml) contracted for $175 in 1831 and sold at auction in 1841, standing outside a building put up seventy years later. [inference]",
           "tier": "inference"
         }
@@ -13289,6 +13468,13 @@
     },
     {
       "from": "event/renaming-of-german-township-1918.yml",
+      "to": "period/the-world-war-in-allen-county.yml",
+      "relationship": "situated-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "event/renaming-of-german-township-1918.yml",
       "to": "place/american-township.yml",
       "relationship": "affected",
       "tier": "verified",
@@ -14506,6 +14692,20 @@
       "source": "catalog/bls-qcew.md"
     },
     {
+      "from": "measure/allen-county-world-war-dead.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "measure/allen-county-world-war-service.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
       "from": "measure/fort-amanda-graves-and-boats.yml",
       "to": "site/fort-amanda.yml",
       "relationship": "describes",
@@ -14954,6 +15154,13 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "organization/gramm-bernstein-motor-truck-company.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
       "from": "organization/institute-for-orthopaedic-surgery.yml",
       "to": "place/perry-township.yml",
       "relationship": "seated-in",
@@ -15179,6 +15386,13 @@
     },
     {
       "from": "period/lima-oil-boom.yml",
+      "to": "period/the-world-war-in-allen-county.yml",
+      "relationship": "precedes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/lima-oil-boom.yml",
       "to": "period/deindustrialization.yml",
       "relationship": "precedes",
       "tier": "inference",
@@ -15211,6 +15425,20 @@
       "relationship": "evidenced-by",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "period/the-world-war-in-allen-county.yml",
+      "to": "measure/allen-county-world-war-service.yml",
+      "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/the-world-war-in-allen-county.yml",
+      "to": "measure/allen-county-world-war-dead.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/rusler-allen-county-1921.md"
     },
     {
       "from": "person/aaron-fisher.yml",
