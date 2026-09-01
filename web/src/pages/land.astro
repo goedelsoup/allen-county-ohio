@@ -13,6 +13,25 @@ const yields = assertion('an-acre-yields-five-times-what-it-did')
 const annexed = assertion('the-annexations-are-dated-now')
 const birthdays = assertion('the-villages-have-birthdays-now')
 const control = assertion('the-county-lost-land-it-never-lost')
+const fourYears = assertion('a-fifth-of-the-farmland-went-in-four-years')
+
+const fourYearsSpec = bar(
+  fourYears.figures.map((f) => f.label),
+  fourYears.figures.map((f) => f.value),
+  { yTitle: 'Acres of farmland lost, by stretch', labelValues: true },
+)
+
+// The seven census years the corpus now holds for land in farms. Typed out because they come
+// from four different sources and the point of the table is that they are one series.
+const farmSeries = [
+  ['1910', '2,939', '240,472', '92.5%', 'Thirteenth Census'],
+  ['1950', '2,560', '227,944', '—', '1954 volume, prior-year column'],
+  ['1954', '2,097', '215,018', '81.9%', '1954 Census of Agriculture'],
+  ['1982', '1,202', '197,256', '—', '1987 volume, prior-year column'],
+  ['1987', '1,148', '201,190', '77.7%', '1987 Census of Agriculture'],
+  ['2002', '968', '188,150', '—', 'Census of Agriculture'],
+  ['2022', '897', '178,921', '69.4%', 'Census of Agriculture'],
+]
 
 // Bars, not a line. The 1910 observation and the 2002 one are ninety-two years apart and
 // nothing measured between them; a line would draw that segment, and its shape is exactly
@@ -518,4 +537,53 @@ const yieldSpec = bar(
     </p>
   </section>
 
+
+  <section>
+    <h2>A fifth of the farmland went in four years</h2>
+    <AssertionCard assertion={fourYears} />
+    <p>
+      Two days ago this site could say that Allen County was 92.5 per cent farmland in 1910 and is
+      69.4 per cent farmland now, and could not say a word about the ninety-two years between. The
+      printed census volumes for 1954 and 1987 are scanned on archive.org, and each of them prints
+      the census before it in the next column — so two books gave four census years, and the fall
+      turns out not to have been steady at all.
+    </p>
+    <DataTable
+      title="Land in farms, seven census years"
+      caption="The 1950 and 1982 figures are the prior-year columns of the 1954 and 1987 volumes, which is what makes each pair comparable: one publisher, one table, one set of column headings. The proportions are the ones the volumes print, against land areas that themselves move a little between censuses."
+      columns={['Year', 'Farms', 'Acres in farms', 'Share of the county', 'Source']}
+      rows={farmSeries}
+    />
+    <ChartFigure
+      id="farmland-stretches"
+      title="Acres of farmland lost, by stretch of the record"
+      caption="Four bars of roughly equal height. Three of them are forty, twenty-eight and forty years long. The second is four."
+      columns={['Stretch', 'Acres lost']}
+      rows={fourYears.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="farmland-stretches" set:html={JSON.stringify(fourYearsSpec)} is:inline />
+    <p>
+      Between 1950 and 1954 the county lost 12,926 acres of farmland — 3,232 a year, against 313 a
+      year for the forty years before it — and 18.1 per cent of its farms. It is not a local event:
+      Ohio lost 4.66 per cent of its land in farms over the same four years and this county 5.67,
+      and Ohio lost 11.2 per cent of its farms against Allen's 18.1. The county falls harder than
+      the state and in the same direction, which is what a national turn looks like. The known break
+      in the census's definition of a farm is 1959, outside this pair.
+    </p>
+    <p>
+      Two other things the record now dates. Between 1954 and 1982 the county lost 17,762 acres of
+      farmland and gained 16,749 acres of harvested cropland — the two nearly cancel, so what left
+      was pasture, woodland and farmstead rather than the ground under the corn. And the only rise
+      in the whole series, 3,934 acres between 1982 and 1987, happens while an acre of Allen County
+      farmland loses a quarter of its value, $2,023 to $1,504. In the same five years the county's
+      "other cropland" went from 3,593 acres to 20,121. Land retired from production is still land
+      in farms.
+    </p>
+    <p>
+      And the crop changeover has a date. In 1949 the county harvested 26,213 acres of oats and
+      17,393 of soybeans; in 1954, 22,498 of oats and 22,991 of soybeans. The crop that did not
+      exist in this county in 1909 had passed the one that fed its horses before the interstate was
+      built — and the oats survived that crossing at 22,498 acres and were down to eleven by 2022.
+    </p>
+  </section>
 </Base>

@@ -1047,7 +1047,9 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
         // The node's whole finding is that it has one observation at each end of a century and
         // none in between, so the refusal is the assertion's other half rather than a caveat on it.
-        answers: &["so this corpus knows that the farmland went and cannot say when"],
+        // The refusal this answered is gone: the corpus can now say when, and the
+        // measure says so instead. Withdrawn with it.
+        answers: &[],
         // Bars and not a line. A line between 1910 and 2002 draws a segment through ninety-two
         // years that nothing measured, and the shape of that segment is exactly what this corpus
         // refuses to assert.
@@ -1104,7 +1106,9 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "**So 268 operations farm 78.4 per cent of the ground.**"
             ),
         ],
-        answers: &["so this corpus knows that the farmland went and cannot say when"],
+        // The refusal this answered is gone: the corpus can now say when, and the
+        // measure says so instead. Withdrawn with it.
+        answers: &[],
         figures: &[],
     },
     Assertion {
@@ -2630,6 +2634,46 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "New man, written first", value: 50.0, literal: "50" },
             Figure { label: "New man, written second", value: 2.0, literal: "2" },
             Figure { label: "No new man; order rotates", value: 22.0, literal: "22" },
+        ],
+    },
+    Assertion {
+        id: "a-fifth-of-the-farmland-went-in-four-years",
+        statement: "Allen County lost 61,551 acres of farmland between 1910 and 2022, and 12,926 \
+                    of them went in the four years from 1950 to 1954 \u{2014} a fifth of the century's \
+                    loss, at ten times the rate of the forty years before it.",
+        topic: "geography",
+        supports: &[
+            support!(
+                "measure/allen-county-farms-1949-1987.yml",
+                "**The county's farmland fell 61,551 acres between 1910 and 2022, and a fifth of that went in four\n  years.** Between 1950 and 1954 it lost 12,926 acres \u{2014} 21.0 per cent of the whole century's loss,\n  at 3,232 acres a year, against 313 a year for the forty years before it."
+            ),
+            support!(
+                "measure/allen-county-farms-1949-1987.yml",
+                "**In figures: 12,528 acres went in the 40 years to 1950, 12,926 in the 4 years to 1954, 17,762 in\n  the 28 years to 1982 and 18,335 in the 40 since.**"
+            ),
+            support!(
+                "measure/allen-county-farms-1949-1987.yml",
+                "**It is not a local event and it is probably not a definition.** Ohio lost 4.66 per cent of its\n  land in farms over the same four years and Allen County 5.67; Ohio lost 11.2 per cent of its farms\n  and Allen 18.1."
+            ),
+            support!(
+                "measure/allen-county-farms-1949-1987.yml",
+                "**Between 1954 and 1982 the county lost farmland and grew more crops on what was left.** Land in\n  farms fell 17,762 acres; harvested cropland rose 16,749."
+            ),
+            support!(
+                "measure/allen-county-farms-1949-1987.yml",
+                "**The only rise in the whole series is the 1980s farm crisis.** Land in farms went *up* 3,934\n  acres between 1982 and 1987 while the value of an acre fell 25.7 per cent, from $2,023 to $1,504,\n  and the value of a farm 17.0 per cent."
+            ),
+            support!(
+                "measure/allen-county-farms-1949-1987.yml",
+                "**Soybeans passed oats between 1949 and 1954.** In 1949 the county harvested 26,213 acres of oats\n  and 17,393 of soybeans for beans; in 1954, 22,498 of oats and 22,991 of soybeans."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1910\u{2013}1950, 40 years", value: 12528.0, literal: "12,528" },
+            Figure { label: "1950\u{2013}1954, 4 years", value: 12926.0, literal: "12,926" },
+            Figure { label: "1954\u{2013}1982, 28 years", value: 17762.0, literal: "17,762" },
+            Figure { label: "1982\u{2013}2022, 40 years", value: 18335.0, literal: "18,335" },
         ],
     },
     Assertion {

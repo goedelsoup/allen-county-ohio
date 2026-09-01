@@ -1082,6 +1082,26 @@
       ]
     },
     {
+      "id": "place-allen-county::land-in-farms",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "land in farms",
+      "unit": "acres",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "label": "Allen County farms, 1949–1987",
+          "as_of": "1954",
+          "value": 215018.0,
+          "published": "215,018",
+          "tier": "verified",
+          "source": "catalog/census-of-agriculture-historical.md",
+          "method": "Read off page images rendered at 400 dpi from the two archive.org scans, because the text layers of both volumes are unusable — the 1987 PDF drops its numeric grid entirely and the djvu text of both delivers digits as an unaligned stream. The headline value is 1954's because it is the figure the four-year fall lands on and the one most heavily cross-checked. Each figure was verified against another in the same column: an acreage against the farm count and the printed average, and an acreage against the printed proportion in farms. The 1950 and 1982 columns are taken from the 1954 and 1987 volumes respectively rather than from the censuses of those years, which is what makes each pair internally comparable. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::law-enforcement-agencies-reporting-for-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -4061,13 +4081,11 @@
           "span": "188,150 acres in 2002, 187,238 in 2007, 183,186 in 2012, 186,623 in 2017 and 178,921 in 2022, against 240,472 in 1910.",
           "tier": "verified",
           "sources": [
-            "catalog/usda-census-of-agriculture.md"
+            "catalog/census-of-agriculture-historical.md"
           ]
         }
       ],
-      "caveats": [
-        "There is no agricultural census between them in this catalog, so this corpus knows that the farmland went and cannot say when."
-      ],
+      "caveats": [],
       "figures": [
         {
           "label": "1910",
@@ -4120,7 +4138,7 @@
           "span": "31,741 hogs in 2002, 62,910 in 2007, 80,372 in 2012, 178,781 in 2017 and 235,800 in 2022, kept on 59, 60, 46, 56 and 28 operations.",
           "tier": "verified",
           "sources": [
-            "catalog/usda-census-of-agriculture.md"
+            "catalog/census-of-agriculture-historical.md"
           ]
         },
         {
@@ -4129,7 +4147,7 @@
           "span": "Of 377,816 head sold in 2022, 281,194 were produced under production contract on twelve operations — the census's own term for an animal fed by one party and owned by another.",
           "tier": "verified",
           "sources": [
-            "catalog/usda-census-of-agriculture.md"
+            "catalog/census-of-agriculture-historical.md"
           ]
         }
       ],
@@ -4174,7 +4192,7 @@
           "span": "94,325 of 178,921 acres are rented — 90,661 by 268 part-owner operations and 3,664 by 38 tenants — and the 591 operations that own everything they farm hold 34,912 acres between them, a fifth of the total.",
           "tier": "verified",
           "sources": [
-            "catalog/usda-census-of-agriculture.md"
+            "catalog/census-of-agriculture-historical.md"
           ]
         },
         {
@@ -4185,9 +4203,7 @@
           "sources": []
         }
       ],
-      "caveats": [
-        "There is no agricultural census between them in this catalog, so this corpus knows that the farmland went and cannot say when."
-      ],
+      "caveats": [],
       "figures": []
     },
     {
@@ -7261,6 +7277,91 @@
           "label": "No new man; order rotates",
           "value": 22.0,
           "literal": "22"
+        }
+      ]
+    },
+    {
+      "id": "a-fifth-of-the-farmland-went-in-four-years",
+      "statement": "Allen County lost 61,551 acres of farmland between 1910 and 2022, and 12,926 of them went in the four years from 1950 to 1954 — a fifth of the century's loss, at ten times the rate of the forty years before it.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "node_label": "Allen County farms, 1949–1987",
+          "span": "**The county's farmland fell 61,551 acres between 1910 and 2022, and a fifth of that went in four years.** Between 1950 and 1954 it lost 12,926 acres — 21.0 per cent of the whole century's loss, at 3,232 acres a year, against 313 a year for the forty years before it.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-agriculture-historical.md",
+            "catalog/census-1910-abstract-supplement-ohio.md",
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "node_label": "Allen County farms, 1949–1987",
+          "span": "**In figures: 12,528 acres went in the 40 years to 1950, 12,926 in the 4 years to 1954, 17,762 in the 28 years to 1982 and 18,335 in the 40 since.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-agriculture-historical.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "node_label": "Allen County farms, 1949–1987",
+          "span": "**It is not a local event and it is probably not a definition.** Ohio lost 4.66 per cent of its land in farms over the same four years and Allen County 5.67; Ohio lost 11.2 per cent of its farms and Allen 18.1.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "node_label": "Allen County farms, 1949–1987",
+          "span": "**Between 1954 and 1982 the county lost farmland and grew more crops on what was left.** Land in farms fell 17,762 acres; harvested cropland rose 16,749.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-agriculture-historical.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "node_label": "Allen County farms, 1949–1987",
+          "span": "**The only rise in the whole series is the 1980s farm crisis.** Land in farms went *up* 3,934 acres between 1982 and 1987 while the value of an acre fell 25.7 per cent, from $2,023 to $1,504, and the value of a farm 17.0 per cent.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-agriculture-historical.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farms-1949-1987.yml",
+          "node_label": "Allen County farms, 1949–1987",
+          "span": "**Soybeans passed oats between 1949 and 1954.** In 1949 the county harvested 26,213 acres of oats and 17,393 of soybeans for beans; in 1954, 22,498 of oats and 22,991 of soybeans.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-of-agriculture-historical.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1910–1950, 40 years",
+          "value": 12528.0,
+          "literal": "12,528"
+        },
+        {
+          "label": "1950–1954, 4 years",
+          "value": 12926.0,
+          "literal": "12,926"
+        },
+        {
+          "label": "1954–1982, 28 years",
+          "value": 17762.0,
+          "literal": "17,762"
+        },
+        {
+          "label": "1982–2022, 40 years",
+          "value": 18335.0,
+          "literal": "18,335"
         }
       ]
     },
