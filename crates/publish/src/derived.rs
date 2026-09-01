@@ -1805,7 +1805,7 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "ten-declarations-eight-incidents",
         statement: "Allen County has been federally declared a disaster area ten times since 1965 \
-                    for eight incidents, and only twice did the money reach households.",
+                    for eight incidents, and three of the ten put money into households.",
         topic: "history",
         supports: &[
             support!(
@@ -1814,7 +1814,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
             support!(
                 "measure/allen-county-disaster-declarations-1965-2020.yml",
-                "**Two of the ten brought money to households.**"
+                "**Three of the ten brought money to households, and this node said two.**"
             ),
             support!(
                 "measure/allen-county-disaster-declarations-1965-2020.yml",
@@ -1945,6 +1945,48 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1990s", value: 58.0, literal: "58" },
             Figure { label: "2000s", value: 95.0, literal: "95" },
             Figure { label: "2010s", value: 121.0, literal: "121" },
+        ],
+    },
+    Assertion {
+        id: "eighty-four-cents-in-the-dollar",
+        statement: "Allen County's applicants have been paid $10.6 million of federal disaster \
+                    money since 2005. Eighty-four cents in the dollar is the pandemic, \
+                    eighty-three cents is one hospital, and the ledger is keyed to where an \
+                    applicant is registered rather than to where the work was done.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-disaster-assistance-2005-2025.yml",
+                "**$10,608,108 of federal money on 95 projects, and eighty-four cents of every dollar is the\n  pandemic.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-assistance-2005-2025.yml",
+                "**The pandemic is 84.28 per cent of the money on 7.4 per cent of the projects.** Eighty-eight\n  weather projects across fifteen years came to $1,667,603, against $8,940,505 for seven pandemic\n  projects."
+            ),
+            support!(
+                "measure/allen-county-disaster-assistance-2005-2025.yml",
+                "**What a federal disaster buys in this county is cleanup.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+                "**Twenty-eight applicants, and one hospital took 82.74 per cent of the money.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+                "**A disaster is the one occasion on which nearly every government in this county files the same\n  form.**"
+            ),
+            support!(
+                "organization/lima-memorial-health-system.yml",
+                "**Having no corporate parent is why that money is in this county's ledger.**"
+            ),
+        ],
+        answers: &[
+            "the corpus cannot say what any of that $183 million was spent on in Lima",
+            "the corpus does not know",
+        ],
+        figures: &[
+            Figure { label: "Weather, 2005-2012", value: 1_667_603.0, literal: "1,667,603" },
+            Figure { label: "Pandemic, 2020", value: 8_940_505.0, literal: "8,940,505" },
         ],
     },
     Assertion {

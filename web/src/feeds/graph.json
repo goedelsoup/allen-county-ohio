@@ -254,12 +254,16 @@
         {
           "text": "**It is the only event in this corpus that overlaps a census.** The 2020 census was taken inside this incident window, and the county's group-quarters counts, its housing occupancy and its population were all enumerated during it. [inference] — see [the group quarters](../measure/allen-county-group-quarters-2020.yml) and [the 2020 count](../measure/allen-county-population-2020-census.yml). The corpus does not assert that the enumeration was affected; it records that the two overlap, which is a thing a reader of those figures should know and could not otherwise learn here.",
           "tier": "inference"
+        },
+        {
+          "text": "**And it bought a house out of a floodplain.** The mitigation allocation this declaration generated funded a riverine property acquisition, approved April 2023 and closed 18 August 2026. [verified] — [the mitigation](../measure/allen-county-hazard-mitigation-2003-2026.yml). A declaration generates money for hazards it had nothing to do with. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
         "The corpus does not assert that the enumeration was affected; it records that the two overlap, which is a thing a reader of those figures should know and could not otherwise learn here."
       ],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "event/allen-county-declared-for-hurricane-katrina-2005.yml",
@@ -1075,6 +1079,46 @@
       "withheld": 1
     },
     {
+      "id": "event/the-winter-storms-of-2004-2005.yml",
+      "class": "event",
+      "label": "The winter storms of December 2004 and January 2005",
+      "tier": "inference",
+      "properties": {
+        "event_type": "winter storm",
+        "location_description": "County-wide. The incident window is the declaration's; the two dated weather events inside it are a winter storm and an ice storm, both recorded for the county as a whole. [verified] — the same sources.",
+        "occurred": "2004-12-22",
+        "occurred_through": "2005-02-01"
+      },
+      "blocks": [
+        {
+          "text": "**The broadest disaster in the county's federal record: twenty-two separate governments and bodies were paid for it, more than any other event before or since.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), DR-1580; see [who was paid](../measure/allen-county-disaster-aid-applicants-2005-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It ran from 22 December 2004 to 1 February 2005** — forty-one days, and the forty-one days [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml) already named as the longest non-pandemic incident window this county has — and was declared on 15 February 2005 as \"Severe Winter Storms, Flooding, and Mudslides\". [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md); see [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The weather record holds two events inside that window and no more.** A winter storm on 22 December 2004, the first day of the incident, and an ice storm on 5 January 2005. [verified] — [the storm record](../measure/allen-county-storm-events-1950-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What it cost was mostly branches.** Forty-one projects, $1,243,330 of federal money, and twenty of the forty-one are Debris Removal at $964,518 — seventy-eight cents in the dollar for clearing what the ice brought down. One project in the whole declaration is Roads and Bridges. [verified] — [the assistance](../measure/allen-county-disaster-assistance-2005-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is why the corpus can name the county's local governments from a federal grant file.** Nine of the county's ten municipal corporations, eight of its twelve townships, the county, its commissioners, its engineer, a village fire department and a township of Auglaize County all filed for this one storm. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And it is the corpus's only dated event that is established by an accounting record rather than by an observation or a book.** The storm file records two days of weather; the grant file records forty-two days of consequence and twenty-two bodies clearing it. [inference] — see [a dataset can make an event](../../decisions/a-dataset-can-make-an-event.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/treaty-of-st-marys.yml",
       "class": "event",
       "label": "Treaty of St. Marys",
@@ -1509,6 +1553,10 @@
         {
           "text": "**Five of these ten seats are held by appointees, and the ten are not the whole government.** This roster is a county's roster, and 3,182 of the city's 7,117 people live in Van Wert County: a ward seat is voted on inside its ward, so any ward of this city lying west of the line is invisible here. The corpus does not read these ten as the council of Delphos. [inference] Compare [Bluffton](village-of-bluffton.yml), whose council is elected at large and therefore appears whole in an Allen County roster despite the same kind of split. [verified] — [the seat count](../measure/allen-county-elected-seats-2026.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**It files with the federal government twice.** \"Delphos, City of (Allen County)\" and \"Delphos, City of (Van Wert County)\" are two registered applicants for federal disaster aid, with two identifiers, and both were paid — $41,075 for the storm of 2012 and $7,710 for the winter of 2004–05. [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md); see [who was paid](../measure/allen-county-disaster-aid-applicants-2005-2025.yml). **One municipal corporation on a county line is two rows in a file keyed to counties**, which is the same shape as a Lima address that is not in Lima. [inference] — see [a grant file counts offices, not ground](../../decisions/a-grant-file-counts-offices-not-ground.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -1571,6 +1619,10 @@
         },
         {
           "text": "**It owns the county's water.** The city's system serves 65,619 people on 27,113 connections — sixty-five per cent of Allen County, and nearly twice the city's own population — and sells to [Elida](../place/elida.yml) on top of that. Its supply is six reservoirs, each with its own intake — Ferguson, Bresler, Metzger, Williams, Twin Lakes and Lost Creek — and four further intakes on the Ottawa and Auglaize rivers. [verified] — [the water systems](../measure/allen-county-water-systems-2026.yml). The 1921 history's remark that the state utilities commission regulates every rate \"unless municipally owned as in Lima and Delphos\" is still true of both cities a century later. [verified] — [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the county's largest recipient of federal disaster aid that is a government.** Fifteen projects across the storms of 2005, 2007 and 2012, $952,940 of federal money — more than the next eleven governments in the county put together, and nine per cent of everything the county's applicants have been paid. [verified] — [who was paid](../measure/allen-county-disaster-aid-applicants-2005-2025.yml).",
           "tier": "verified"
         }
       ],
@@ -2928,6 +2980,80 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+      "class": "measure",
+      "label": "Who was paid federal disaster aid in Allen County, 2005–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-05-28",
+        "method": "Distinct `applicantId` across the county's 95 project rows, resolved to names through the applicant register with the filter scoped to Ohio. Scoping is required: `003-99003-00`, the identifier the county government itself files under, returns more than a hundred and eighty county governments across the United States and an unscoped join names a Delaware one. Dollars are the federal share obligated, nominal, summed per applicant and rounded to the dollar; the table's rounded rows do not sum exactly to the total published in [the assistance measure](allen-county-disaster-assistance-2005-2025.yml). Parenthesised county names are the file's own. [inference]",
+        "parameter": "applicants paid federal public assistance for work in Allen County",
+        "unit": "applicants",
+        "value": "28"
+      },
+      "blocks": [
+        {
+          "text": "**Twenty-eight applicants, and one hospital took 82.74 per cent of the money.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), the public assistance projects joined to the applicant register on `applicantId`, scoped to Ohio.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A disaster is the one occasion on which nearly every government in this county files the same form.** Nine of the county's ten municipal corporations appear — Lima, Delphos and the villages of Bluffton, Elida, Fort Shawnee, Harrod, Lafayette, Spencerville and Beaverdam — and eight of its twelve townships. [verified] — same source. **The only municipality absent is [Cairo](../place/cairo.yml)**, and the four townships absent are Auglaize, Marion, Monroe and Spencer. [inference] — computed against the corpus's own roster.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county files as four separate applicants.** Allen County, the Allen County Commissioners, the Allen County Engineer and the Allen County Health Department each hold their own `applicantId`, and each was paid separately. [verified] — same source; see [the engineer](../office/allen-county-engineer.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Delphos files twice because it stands in two counties.** \"Delphos, City of (Allen County)\" and \"Delphos, City of (Van Wert County)\" are two registrations of one municipal corporation, and both were paid — $41,075 and $7,710. [verified] — same source; see [the city](../jurisdiction/city-of-delphos.yml). A township of Auglaize County is here too, for work counted in this one.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-disaster-assistance-2005-2025.yml",
+      "class": "measure",
+      "label": "Federal disaster assistance to Allen County, 2005–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-05-28",
+        "method": "Fetched from the OpenFEMA public assistance funded projects endpoint filtered to `stateAbbreviation` OH and `county` \"Allen County\" — the longer spelling, which this dataset requires and the declarations dataset does not — and summed here. The `as_of` is the last obligation date in the file and not the query date: this file grows. Dollars are nominal and span twenty years, so the four declaration rows above are not comparable to one another as amounts of purchasing power. The applicant count is of distinct `applicantId`s and treats the two Delphos registrations as two, because the file does. [inference]",
+        "parameter": "federal share obligated for public assistance projects in Allen County",
+        "unit": "US dollars, nominal",
+        "value": "10608108.26"
+      },
+      "blocks": [
+        {
+          "text": "**$10,608,108 of federal money on 95 projects, and eighty-four cents of every dollar is the pandemic.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), public assistance funded projects, Ohio, Allen County. This closes the cost question [the declarations](allen-county-disaster-declarations-1965-2020.yml) opened.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four of the county's ten declarations produced funded projects.** [verified] — same source. The 1965 and 1978 declarations predate the file; the 2004 declaration was designated for hazard mitigation only; the three emergency declarations of 2005, 2012 and 2020 are each paired with a major disaster declaration that carries the projects. [inference] — computed from [the declarations](allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The pandemic is 84.28 per cent of the money on 7.4 per cent of the projects.** Eighty-eight weather projects across fifteen years came to $1,667,603, against $8,940,505 for seven pandemic projects. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What a federal disaster buys in this county is cleanup.** Fifty-four of the 95 projects are Debris Removal or Emergency Protective Measures, and among the 88 weather projects it is 49 of 88 and $1,321,835 of $1,667,603 — seventy-nine cents in the dollar for picking things up and keeping people safe while it happened. Nine projects in twenty years are Roads and Bridges and one is a Water Control Facility. [verified] — same source, counted here. **Nothing here rebuilds anything.** [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The pandemic projects are the same category and not the same thing.** Five of the seven are Emergency Protective Measures and two are Management Costs; the largest, at $4,645,416 federal, covers March to June 2020 at one hospital, and the county health department's is titled \"ACPH Super POD Project #1\". [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The money arrives years after the weather.** Obligations run from 20 April 2005 to 28 May 2025, and the 2020 declaration's largest project was still being obligated in February 2025 — four years and eleven months after the incident began. All 95 projects are closed out. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-disaster-declarations-1965-2020.yml",
       "class": "measure",
       "label": "Allen County's federal disaster declarations, 1965–2020",
@@ -2949,8 +3075,12 @@
           "tier": "inference"
         },
         {
-          "text": "**Two of the ten brought money to households.** Individual Assistance was designated in 1965 and in 2007 and in no other year; eight of the ten carried Public Assistance, which is aid to governments for debris and public works. [verified] — same source. **What a federal disaster usually means in this county is a bill to the county, not a cheque to a family.** [inference]",
+          "text": "**Nine of the ten carried Public Assistance**, which is aid to governments for debris and public works — every declaration but the hazard-mitigation-only one of September 2004. [verified] — same source. **What a federal disaster usually means in this county is a bill to the county, not a cheque to a family.** [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Three of the ten brought money to households, and this node said two.** Individual Assistance, the flag `iaProgramDeclared`, was designated in 1965 and 2007 and in no other year — that part stands. But the file carries a fourth flag this node had not read, `ihProgramDeclared`, the Individuals and Households Program, and it is true for 2007 **and for the COVID-19 major disaster declaration of 31 March 2020**, under which $3,595,938 reached 507 households here. [verified] — same source; see [the household aid](allen-county-household-disaster-aid-2007-2020.yml). The earlier count was of three flags where the file prints four.",
+          "tier": "verified"
         },
         {
           "text": "**A county nine hundred miles from the Gulf has a hurricane declaration.** EM-3250-OH, 13 September 2005, \"Hurricane Katrina evacuation\" — Public Assistance for a county that took in people. [verified] — same source; see [the Katrina declaration](../event/allen-county-declared-for-hurricane-katrina-2005.yml).",
@@ -2970,6 +3100,10 @@
         },
         {
           "text": "**The sixth is the blizzard of January 1978 and the weather file does not contain it.** There is no Allen County row for 1978 at all, and no row of any kind within thirty days of that declaration, because the first blizzard this county's weather record admits is in 2007. **The administrative file holds the storm the observational file cannot see.** [verified] — same source; see [a category has a birthday](../../decisions/a-category-has-a-birthday.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What they cost is now held, and four of the ten account for all of it.** $10,608,108 of federal public assistance on 95 projects, of which $8,940,505 — eighty-four per cent — is the 2020 pandemic declaration and $1,667,603 is fifteen years of weather. [verified] — [the assistance](allen-county-disaster-assistance-2005-2025.yml). Three hazard mitigation projects and $4,237,572 to households sit beside it. [verified] — [the mitigation](allen-county-hazard-mitigation-2003-2026.yml) and [the household aid](allen-county-household-disaster-aid-2007-2020.yml).",
           "tier": "verified"
         },
         {
@@ -3287,6 +3421,47 @@
       "withheld": 4
     },
     {
+      "id": "measure/allen-county-hazard-mitigation-2003-2026.yml",
+      "class": "measure",
+      "label": "Allen County's federal hazard mitigation, 2003–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026-08-18",
+        "method": "Fetched from the OpenFEMA hazard mitigation assistance projects endpoint filtered to state Ohio and county \"Allen\" — the short spelling, where the public assistance endpoint requires \"Allen County\". `as_of` is the last close-out date in the file. The federal share for the denied project is null rather than zero and is printed as absent, because a project that was never obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years and are not summed. [inference]",
+        "parameter": "federal hazard mitigation projects recorded for Allen County",
+        "unit": "projects",
+        "value": "3"
+      },
+      "blocks": [
+        {
+          "text": "**Three projects in twenty-three years: a plan, a house bought, and a house refused.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), hazard mitigation assistance projects, Ohio, county Allen.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's flood buyout was paid for with pandemic money.** DR-4507 is the COVID-19 major disaster declaration, and the project it funded is \"Acquisition of Private Real Property (Structures and Land) – Riverine\" — one property, bought out, at a ninety per cent federal share. [verified] — same source. **A mitigation allocation is generated by a declaration and is not confined to the hazard that caused it**, which is why a biological incident bought a house out of a floodplain. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The mitigation plan was bought with another county's disaster.** DR-1484 is an Ohio declaration of 2003 that never named Allen County; the recipient is \"Statewide\" and the subrecipient is Allen County, which used $34,500 of federal money to write a Local Multihazard Mitigation Plan. [verified] — same source, checked against [the declarations](allen-county-disaster-declarations-1965-2020.yml), which has no 2003 row.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The refused project passed its own benefit-cost test.** FMA-PJ-05-OH-2016-009, a Flood Mitigation Assistance acquisition of one riverine property, carries a benefit-cost ratio of 1.63 and net benefits of $221,479 against a project cost of $135,540 — and its status is \"Not Approved / Denied\", with no approval date, no obligation and no federal share. [verified] — same source. **It is the only Allen County record in this file that names a benefit-cost ratio at all**; both HMGP rows carry zero. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**So the county's whole federal flood-buyout record is two houses, one bought and one not.** [inference] — computed here. Neither is located: `projectCounties` reads ALLEN and there is no coordinate, address or watershed in the file. [verified] — same source.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The buyout took three years and four months for one house.** Initially approved 5 April 2023, obligated on the 7th, closed 18 August 2026. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-health-2023.yml",
       "class": "measure",
       "label": "CDC's health estimates for Allen County and Lima, 2022–2023",
@@ -3546,6 +3721,47 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-household-disaster-aid-2007-2020.yml",
+      "class": "measure",
+      "label": "Federal aid to Allen County households, 2007 and 2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2020",
+        "method": "Two endpoints, owners and renters, filtered to state OH and county \"Allen (County)\" — a third spelling of the county on the same API — and summed here. `value` is the two disasters' approved IHP amounts added: $641,634 for 2007 and $3,595,938 for 2020, in nominal dollars thirteen years apart, which is a total and not a comparable one. Registrations are `validRegistrations` and are not households: a household that registers and is found ineligible is counted here. The two endpoints carry different fields — owners have an inspected-damage dollar figure and renters have damage bands — so no damage total is computed across both. [inference]",
+        "parameter": "federal individual and household assistance approved in Allen County",
+        "unit": "US dollars, nominal",
+        "value": "4237572"
+      },
+      "blocks": [
+        {
+          "text": "**Two disasters have put federal money into households here, and the pandemic put in five and a half times what the flood did.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), housing assistance to owners and to renters, Ohio, county \"Allen (County)\".",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 2007 flood was inspected and the pandemic was not.** Two hundred and seventy-two properties were visited in 2007 and $663,302 of damage was written down; $486,239 of the money that followed was for repair or replacement. Under the 2020 declaration nobody was inspected, nothing was recorded as damaged, and every dollar of the $3,595,938 is classed Other Needs — not repair, not rent. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The corpus's declaration table said two of ten brought money to households. It is three.** The flag the corpus read is `iaProgramDeclared`, true for 1965 and 2007 only. There is a fourth flag, `ihProgramDeclared` — the Individuals and Households Program — true for 2007 and for the 2020 major disaster declaration, and it is the one under which the $3,595,938 was paid. [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md); see [the declarations](allen-county-disaster-declarations-1965-2020.yml), which now says so.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three-quarters of the 2007 flood damage in this county was in Bluffton.** ZIP 45817 holds 109 of the 227 owner registrations, 91 of the 195 owner inspections and $481,404 of the $663,302 written down — 72.6 per cent — and the average inspected damage there was $4,416.55. [verified] — same source, computed here. The Blanchard River crested near a record at Ottawa that week; see [the storm record](allen-county-storm-events-1950-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 2007 rows are coherent and the 2020 rows are not.** The flood's sixteen ZIP codes are Allen County's and its neighbours'. The pandemic's twenty-one include Pittsburgh, Richmond Heights outside Cleveland, Sherwood in Defiance County and Union City on the Indiana line, all filed under Allen County. [verified] — same source. **A programme that inspects a property knows where it is and a programme that pays a person knows where the person wrote from.** [inference] — see [a grant file counts offices, not ground](../../decisions/a-grant-file-counts-offices-not-ground.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Five hundred and forty-five of the 568 pandemic registrations are classed as renters.** In a county where 27,960 of 40,928 occupied units are owner-occupied — over two-thirds — that is a classification produced by a programme with no inspection rather than a fact about tenure. [inference] — [the housing stock](allen-county-housing-stock-2023.yml). The corpus reports the split and reads nothing into it.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-housing-age-2023.yml",
@@ -7608,12 +7824,21 @@
           "tier": "inference"
         },
         {
+          "text": "**It received $8,777,201 of federal pandemic money — eighty-three per cent of every federal disaster dollar recorded for this county since 2005.** Four projects under the COVID-19 declaration: three of Emergency Protective Measures covering March 2020 to May 2023, the largest at $4,645,416, and one of management costs. [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md); see [who was paid](../measure/allen-county-disaster-aid-applicants-2005-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Having no corporate parent is why that money is in this county's ledger.** The public assistance file is keyed to the applicant's registered county. Bon Secours Mercy Health, Inc., which owns [St. Rita's](mercy-health-st-ritas-medical-center.yml) in Lima, files as applicant `061-UWDML-00` in Cincinnati, and its nine projects and $183,291,707 are counted in Hamilton County. [verified] — same source. **The ownership fact recorded above and the accounting fact here are the same fact seen in two files**, and the corpus cannot say what any of that $183 million was spent on in Lima. [inference] — see [a grant file counts offices, not ground](../../decisions/a-grant-file-counts-offices-not-ground.yml).",
+          "tier": "inference"
+        },
+        {
           "text": "It has one further Medicare enrollment, 36T009, flagged as its rehabilitation unit. [verified] — the enrollment file.",
           "tier": "verified"
         }
       ],
       "refusals": [
-        "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know."
+        "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know.",
+        "**The ownership fact recorded above and the accounting fact here are the same fact seen in two files**, and the corpus cannot say what any of that $183 million was spent on in Lima."
       ],
       "withheld": 1
     },
@@ -10811,6 +11036,10 @@
         {
           "text": "**The county's deadliest tornado ended near here.** The F4 of 11 April 1965 is recorded ending at 40.87, −83.87, 1.8 miles from the village, after 17.8 miles from Elida. [verified] — [the tornado](../event/the-tornado-of-11-april-1965.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**And three-quarters of the county's 2007 flood damage was in this ZIP code.** 45817 holds 109 of Allen County's 227 owner registrations for the flood of August 2007, 91 of its 195 inspections and $481,404 of the $663,302 of inspected damage — 72.6 per cent, at an average of $4,416.55 a property. [verified] — [the household aid](../measure/allen-county-household-disaster-aid-2007-2020.yml). The village, its university and its school district were all paid public assistance for it. [verified] — [who was paid](../measure/allen-county-disaster-aid-applicants-2005-2025.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -11955,6 +12184,10 @@
         },
         {
           "text": "So the roster that still lists it and the map that has already stopped are the same year apart: the corporation was surveyed as existing in 2012 and drawn as not existing in 2013. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A fourth federal file names the corporation and does not narrow the year.** \"Fort Shawnee, Village of\" is a registered applicant for federal disaster aid and was paid $34,799 on two projects for the winter storms of 2004–05, both obligated 24 June 2005. [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md). That is seven years before the gap the gazetteer and the government lists place the change in, so it adds a witness to the corporation's existence and nothing to its end. [inference]",
           "tier": "inference"
         }
       ],
@@ -15116,6 +15349,13 @@
       "source": "catalog/noaa-storm-events.md"
     },
     {
+      "from": "event/the-winter-storms-of-2004-2005.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/openfema-assistance-programs.md"
+    },
+    {
       "from": "event/treaty-of-st-marys.yml",
       "to": "place/allen-county.yml",
       "relationship": "affected",
@@ -15767,6 +16007,20 @@
       "source": "catalog/usda-census-of-agriculture.md"
     },
     {
+      "from": "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/openfema-assistance-programs.md"
+    },
+    {
+      "from": "measure/allen-county-disaster-assistance-2005-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/openfema-assistance-programs.md"
+    },
+    {
       "from": "measure/allen-county-disaster-declarations-1965-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -15828,6 +16082,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
+      "from": "measure/allen-county-hazard-mitigation-2003-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/openfema-assistance-programs.md"
     },
     {
       "from": "measure/allen-county-health-2023.yml",
@@ -15933,6 +16194,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/cms-hospital-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-household-disaster-aid-2007-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/openfema-assistance-programs.md"
     },
     {
       "from": "measure/allen-county-housing-age-2023.yml",

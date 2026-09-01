@@ -442,6 +442,26 @@
       ]
     },
     {
+      "id": "place-allen-county::applicants-paid-federal-public-assistance-for-work-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "applicants paid federal public assistance for work in Allen County",
+      "unit": "applicants",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+          "label": "Who was paid federal disaster aid in Allen County, 2005–2025",
+          "as_of": "2025-05-28",
+          "value": 28.0,
+          "published": "28",
+          "tier": "verified",
+          "source": "catalog/openfema-assistance-programs.md",
+          "method": "Distinct `applicantId` across the county's 95 project rows, resolved to names through the applicant register with the filter scoped to Ohio. Scoping is required: `003-99003-00`, the identifier the county government itself files under, returns more than a hundred and eighty county governments across the United States and an unscoped join names a Delaware one. Dollars are the federal share obligated, nominal, summed per applicant and rounded to the dollar; the table's rounded rows do not sum exactly to the total published in [the assistance measure](allen-county-disaster-assistance-2005-2025.yml). Parenthesised county names are the file's own. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::average-weekly-wage,-all-industries,-all-ownerships",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -598,6 +618,66 @@
           "tier": "verified",
           "source": "catalog/fema-disaster-declarations.md",
           "method": "Fetched from the OpenFEMA v2 API filtered to `fipsStateCode` 39 and `fipsCountyCode` 003, and counted here. The `as_of` is the last declaration and not the query date: this file grows, and the figure is a count of what had happened by then. Distinct incidents are counted by grouping rows on the incident window, which merges 2012's pair and 2020's and separates the two of 2004 and 2005. Incident dates before 2004 are not usable — the 1965 and 1978 rows give an incident beginning and ending on the day the declaration was signed. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::federal-hazard-mitigation-projects-recorded-for-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "federal hazard mitigation projects recorded for Allen County",
+      "unit": "projects",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-hazard-mitigation-2003-2026.yml",
+          "label": "Allen County's federal hazard mitigation, 2003–2026",
+          "as_of": "2026-08-18",
+          "value": 3.0,
+          "published": "3",
+          "tier": "verified",
+          "source": "catalog/openfema-assistance-programs.md",
+          "method": "Fetched from the OpenFEMA hazard mitigation assistance projects endpoint filtered to state Ohio and county \"Allen\" — the short spelling, where the public assistance endpoint requires \"Allen County\". `as_of` is the last close-out date in the file. The federal share for the denied project is null rather than zero and is printed as absent, because a project that was never obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years and are not summed. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::federal-individual-and-household-assistance-approved-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "federal individual and household assistance approved in Allen County",
+      "unit": "US dollars, nominal",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-household-disaster-aid-2007-2020.yml",
+          "label": "Federal aid to Allen County households, 2007 and 2020",
+          "as_of": "2020",
+          "value": 4237572.0,
+          "published": "4237572",
+          "tier": "verified",
+          "source": "catalog/openfema-assistance-programs.md",
+          "method": "Two endpoints, owners and renters, filtered to state OH and county \"Allen (County)\" — a third spelling of the county on the same API — and summed here. `value` is the two disasters' approved IHP amounts added: $641,634 for 2007 and $3,595,938 for 2020, in nominal dollars thirteen years apart, which is a total and not a comparable one. Registrations are `validRegistrations` and are not households: a household that registers and is found ineligible is counted here. The two endpoints carry different fields — owners have an inspected-damage dollar figure and renters have damage bands — so no damage total is computed across both. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::federal-share-obligated-for-public-assistance-projects-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "federal share obligated for public assistance projects in Allen County",
+      "unit": "US dollars, nominal",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-disaster-assistance-2005-2025.yml",
+          "label": "Federal disaster assistance to Allen County, 2005–2025",
+          "as_of": "2025-05-28",
+          "value": 10608108.26,
+          "published": "10608108.26",
+          "tier": "verified",
+          "source": "catalog/openfema-assistance-programs.md",
+          "method": "Fetched from the OpenFEMA public assistance funded projects endpoint filtered to `stateAbbreviation` OH and `county` \"Allen County\" — the longer spelling, which this dataset requires and the declarations dataset does not — and summed here. The `as_of` is the last obligation date in the file and not the query date: this file grows. Dollars are nominal and span twenty years, so the four declaration rows above are not comparable to one another as amounts of purchasing power. The applicant count is of distinct `applicantId`s and treats the two Delphos registrations as two, because the file does. [inference]"
         }
       ]
     },
@@ -3007,6 +3087,7 @@
       ],
       "caveats": [
         "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know.",
+        "**The ownership fact recorded above and the accounting fact here are the same fact seen in two files**, and the corpus cannot say what any of that $183 million was spent on in Lima.",
         "Whether a quarter of this hospital's workforce left the county or moved to another employer inside the same system, the corpus cannot say.",
         "This corpus does not establish that the pandemic caused that year."
       ],
@@ -5015,9 +5096,9 @@
     },
     {
       "id": "ten-declarations-eight-incidents",
-      "statement": "Allen County has been federally declared a disaster area ten times since 1965 for eight incidents, and only twice did the money reach households.",
+      "statement": "Allen County has been federally declared a disaster area ten times since 1965 for eight incidents, and three of the ten put money into households.",
       "topic": "history",
-      "tier": "inference",
+      "tier": "verified",
       "citations": [
         {
           "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
@@ -5031,8 +5112,8 @@
         {
           "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
           "node_label": "Allen County's federal disaster declarations, 1965–2020",
-          "span": "**Two of the ten brought money to households.**",
-          "tier": "inference",
+          "span": "**Three of the ten brought money to households, and this node said two.**",
+          "tier": "verified",
           "sources": [
             "catalog/fema-disaster-declarations.md"
           ]
@@ -5283,6 +5364,82 @@
           "label": "2010s",
           "value": 121.0,
           "literal": "121"
+        }
+      ]
+    },
+    {
+      "id": "eighty-four-cents-in-the-dollar",
+      "statement": "Allen County's applicants have been paid $10.6 million of federal disaster money since 2005. Eighty-four cents in the dollar is the pandemic, eighty-three cents is one hospital, and the ledger is keyed to where an applicant is registered rather than to where the work was done.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-disaster-assistance-2005-2025.yml",
+          "node_label": "Federal disaster assistance to Allen County, 2005–2025",
+          "span": "**$10,608,108 of federal money on 95 projects, and eighty-four cents of every dollar is the pandemic.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/openfema-assistance-programs.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-assistance-2005-2025.yml",
+          "node_label": "Federal disaster assistance to Allen County, 2005–2025",
+          "span": "**The pandemic is 84.28 per cent of the money on 7.4 per cent of the projects.** Eighty-eight weather projects across fifteen years came to $1,667,603, against $8,940,505 for seven pandemic projects.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-disaster-assistance-2005-2025.yml",
+          "node_label": "Federal disaster assistance to Allen County, 2005–2025",
+          "span": "**What a federal disaster buys in this county is cleanup.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/openfema-assistance-programs.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+          "node_label": "Who was paid federal disaster aid in Allen County, 2005–2025",
+          "span": "**Twenty-eight applicants, and one hospital took 82.74 per cent of the money.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/openfema-assistance-programs.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-aid-applicants-2005-2025.yml",
+          "node_label": "Who was paid federal disaster aid in Allen County, 2005–2025",
+          "span": "**A disaster is the one occasion on which nearly every government in this county files the same form.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/openfema-assistance-programs.md"
+          ]
+        },
+        {
+          "node": "organization/lima-memorial-health-system.yml",
+          "node_label": "Lima Memorial Health System",
+          "span": "**Having no corporate parent is why that money is in this county's ledger.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/openfema-assistance-programs.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know.",
+        "**The ownership fact recorded above and the accounting fact here are the same fact seen in two files**, and the corpus cannot say what any of that $183 million was spent on in Lima."
+      ],
+      "figures": [
+        {
+          "label": "Weather, 2005-2012",
+          "value": 1667603.0,
+          "literal": "1,667,603"
+        },
+        {
+          "label": "Pandemic, 2020",
+          "value": 8940505.0,
+          "literal": "8,940,505"
         }
       ]
     },
