@@ -162,6 +162,26 @@
       ]
     },
     {
+      "id": "office-mayor-of-lima::entries-in-the-printed-lists-of-Lima's-mayors-beginning-after-April-1886",
+      "subject": "office/mayor-of-lima.yml",
+      "subject_label": "Mayor of Lima",
+      "parameter": "entries in the printed lists of Lima's mayors beginning after April 1886",
+      "unit": "entries",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-mayors-1886-1922.yml",
+          "label": "The mayors of Lima, 1886–1922",
+          "as_of": "1922",
+          "value": 16.0,
+          "published": "16",
+          "tier": "verified",
+          "source": "catalog/miller-allen-county-1906.md",
+          "method": "Read from the 1906 history's dated list of mayors and the 1921 history's undated ordered list, which are very likely one lineage rather than two witnesses: the 1921 book says it is following \"the most recent report in Lima\", which \"enumerates the mayors from the beginning\". Dates to 1904 are the 1906 book's. Dates after 1904 are computed here from that book's last dated entry, the 1921 book's statement of the two-year term, and the 1 January 1922 abolition, and are reported as an inference that closes rather than as a source's dating. The count is of entries as printed. It is not a count of terms and not a count of men: the lists give a consecutive re-election its own entry twice and fold three terms into one entry once. [inference]"
+        }
+      ]
+    },
+    {
       "id": "office-mayor-of-lima::mayors-of-Lima,-1842-to-1886",
       "subject": "office/mayor-of-lima.yml",
       "subject_label": "Mayor of Lima",
@@ -4273,8 +4293,8 @@
       "figures": []
     },
     {
-      "id": "the-mayoral-line-stops-in-1886",
-      "statement": "Lima had twenty-four mayors between 1842 and 1886, and then this corpus cannot name one for a hundred and thirty-nine years.",
+      "id": "the-mayoral-line-reaches-1922",
+      "statement": "Lima had twenty-four mayors between 1842 and 1886, and the office it filled stopped existing on 1 January 1922.",
       "topic": "government",
       "tier": "inference",
       "citations": [
@@ -4306,12 +4326,55 @@
           ]
         },
         {
-          "node": "tenure/mayor-1882-h-s-prophet.yml",
-          "node_label": "H. S. Prophet, Mayor of Lima, 1882-1884",
-          "span": "William McComb follows for 1884-86, and after that this corpus can name no mayor of Lima until 2025.",
+          "node": "measure/lima-mayors-1886-1922.yml",
+          "node_label": "The mayors of Lima, 1886–1922",
+          "span": "**The line ends rather than continues.** F. A. Burkhardt was the last mayor of Lima under the aldermanic form",
           "tier": "verified",
           "sources": [
-            "catalog/leeson-allen-county-1885.md"
+            "catalog/rusler-allen-county-1921.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "The corpus reads them as two and cannot show it."
+      ],
+      "figures": []
+    },
+    {
+      "id": "the-1906-list-lost-a-year",
+      "statement": "Three books print Lima's mayors from 1842. The 1906 list dropped one man and left a year with no mayor in it, which is how the corpus knows it dropped him.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/lima-mayors-1842-1886.yml",
+          "node_label": "The mayors of Lima, 1842-1886",
+          "span": "**The 1906 list has a year with nobody in it, and that is what settles it.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/lima-mayors-1842-1886.yml",
+          "node_label": "The mayors of Lima, 1842-1886",
+          "span": "leaving **April 1857 to April 1858 with no mayor at all**, the only such hole in thirty-four entries",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/lima-mayors-1842-1886.yml",
+          "node_label": "The mayors of Lima, 1842-1886",
+          "span": "**The 1921 list lost one more, at the same place.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/lima-mayors-1842-1886.yml",
+          "node_label": "The mayors of Lima, 1842-1886",
+          "span": "**One name in this table is simply wrong, and the book it came from says so three times.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md",
+            "catalog/rusler-allen-county-1921.md"
           ]
         }
       ],

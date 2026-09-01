@@ -30,6 +30,8 @@ used-by:
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
+  - ../corpus/measure/lima-mayors-1842-1886.yml
+  - ../corpus/measure/lima-mayors-1886-1922.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/measure/lima-railroad-traffic-1905.yml
   - ../corpus/measure/lima-street-railway-1878-1921.yml
@@ -43,7 +45,9 @@ used-by:
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
+  - ../corpus/person/h-s-prophet.yml
   - ../corpus/person/henry-d-v-williams.yml
+  - ../corpus/person/james-b-townsend.yml
   - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/place/beaverdam.yml
   - ../corpus/place/bluffton.yml
@@ -55,6 +59,7 @@ used-by:
   - ../corpus/question/when-allen-county-was-organized.yml
   - ../corpus/site/camp-lima.yml
   - ../corpus/tenure/mayor-1842-henry-d-v-williams.yml
+  - ../corpus/tenure/mayor-1882-h-s-prophet.yml
 ---
 
 **What it is.** The middle volume of the county's three histories, and the only one written by local

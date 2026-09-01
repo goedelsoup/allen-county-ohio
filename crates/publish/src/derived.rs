@@ -1555,9 +1555,9 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
-        id: "the-mayoral-line-stops-in-1886",
-        statement: "Lima had twenty-four mayors between 1842 and 1886, and then this corpus \
-                    cannot name one for a hundred and thirty-nine years.",
+        id: "the-mayoral-line-reaches-1922",
+        statement: "Lima had twenty-four mayors between 1842 and 1886, and the office it \
+                    filled stopped existing on 1 January 1922.",
         topic: "government",
         supports: &[
             support!(
@@ -1573,8 +1573,34 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "**Two mayors resigned in office and a third resigned and was reappointed.**"
             ),
             support!(
-                "tenure/mayor-1882-h-s-prophet.yml",
-                "William McComb follows for 1884-86, and after that this corpus can name no mayor of Lima until 2025."
+                "measure/lima-mayors-1886-1922.yml",
+                "**The line ends rather than continues.** F. A. Burkhardt was the last mayor of Lima under the\n  aldermanic form"
+            ),
+        ],
+        answers: &["The corpus reads them as two and cannot show it"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-1906-list-lost-a-year",
+        statement: "Three books print Lima's mayors from 1842. The 1906 list dropped one man and \
+                    left a year with no mayor in it, which is how the corpus knows it dropped him.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "**The 1906 list has a year with nobody in it, and that is what settles it.**"
+            ),
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "leaving **April 1857 to April 1858 with no mayor at all**, the only such hole in\n  thirty-four entries"
+            ),
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "**The 1921 list lost one more, at the same place.**"
+            ),
+            support!(
+                "measure/lima-mayors-1842-1886.yml",
+                "**One name in this table is simply wrong, and the book it came from says so three times.**"
             ),
         ],
         answers: &["The corpus reads them as two and cannot show it"],
