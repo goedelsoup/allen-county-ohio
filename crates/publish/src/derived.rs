@@ -2090,6 +2090,38 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-ninety-nine-year-hole-is-dotted",
+        statement: "Lima's mayoralty was said to be unrecorded for ninety-nine years. A weekly \
+                    newspaper published twelve miles away names four of its mayors between 1939 \
+                    and 1956, and not one of the mentions is an election report — so the office \
+                    gains four holders and no term dates at all.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/lima-mayors-1939-1956.yml",
+                "**Not one of those fourteen mentions is an election report.**"
+            ),
+            support!(
+                "measure/lima-mayors-1939-1956.yml",
+                "**What it does establish is that Lima had a mayor, and a council, and a charter.**"
+            ),
+            support!(
+                "measure/lima-mayors-1939-1956.yml",
+                "**One mayor died in office and the estate is the evidence.**"
+            ),
+            support!(
+                "measure/bluffton-and-beaverdam-elections-1939-1959.yml",
+                "**1945 — a write-in beat a man who had no opponent.**"
+            ),
+            support!(
+                "measure/bluffton-and-beaverdam-elections-1939-1959.yml",
+                "**The line does not close, and the paper is why.**"
+            ),
+        ],
+        answers: &["This corpus cannot say who was mayor of Lima on any day but the fourteen printed above."],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
