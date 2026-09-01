@@ -102,6 +102,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 6v / 2i / 1o | 75 |
+| [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 7v / 4i / 1o | 64 |
 | [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
@@ -151,6 +152,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
+| [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
 | [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 9v / 2i / 1o | 89 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
@@ -277,7 +279,7 @@ Sorted by: kind, then alphabetically.
 | [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 8i / 3o | 123 |
-| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 13i / 2o | 232 |
+| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 20v / 14i / 2o | 240 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 4 | 7v / 8i / 2o | 83 |
 | [the-civil-war-in-allen-county.yml](period/the-civil-war-in-allen-county.yml) | period | The Civil War in Allen County | 4 | 3v / 5i / 3o | 82 |
 | [the-second-world-war-in-allen-county.yml](period/the-second-world-war-in-allen-county.yml) | period | The Second World War in Allen County | 2 | 8v / 4i / 3o | 71 |
@@ -373,7 +375,7 @@ Sorted by: kind, then alphabetically.
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 3v / 1i / 2o | 31 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 16v / 7i / 2o | 162 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 4 | 10v / 3i / 1o | 82 |
-| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
+| [american-township.yml](place/american-township.yml) | place | American Township | 3 | 13v / 4i / 0o | 107 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
@@ -386,12 +388,12 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 9v / 0i / 2o | 64 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 8v / 1i / 1o | 66 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 43v / 10i / 1o | 284 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 44v / 10i / 1o | 292 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 9v / 1i / 1o | 65 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
 | [richland-township.yml](place/richland-township.yml) | place | Richland Township | 3 | 8v / 2i / 1o | 58 |
-| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 9v / 2i / 0o | 72 |
+| [shawnee-township.yml](place/shawnee-township.yml) | place | Shawnee Township | 3 | 10v / 2i / 0o | 77 |
 | [spencer-township.yml](place/spencer-township.yml) | place | Spencer Township | 3 | 8v / 2i / 1o | 61 |
 | [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 9v / 0i / 1o | 67 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 8v / 2i / 0o | 65 |
