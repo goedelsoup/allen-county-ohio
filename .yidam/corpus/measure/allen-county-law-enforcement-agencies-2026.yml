@@ -1,0 +1,58 @@
+class: measure
+label: Allen County's reporting police agencies, 2026
+description: |
+  **Ten agencies report crime in Allen County, and the two that police most of it began last.**
+  [verified] — [the FBI Crime Data Explorer](../../catalog/fbi-crime-data-explorer.md), Ohio agency
+  list, county key ALLEN.
+
+      2004-06  Johnny Appleseed Metropolitan Park District
+      2005-09  Elida Police Department
+      2006-02  Spencerville Police Department
+      2006-06  Marion Township Police Department
+      2008-01  American Township Police Department
+      2008-03  Perry Township Police Department
+      2008-07  Lima Park Services Ranger Division
+      2012-02  Shawnee Township Police Department
+      2020-12  Allen County Sheriff's Office
+      2021-01  Lima Police Department
+
+  The dates are each agency's `nibrs_start_date` — when it changed from summary reporting to
+  incident-based reporting. [verified] — same source.
+
+  **A village of nineteen hundred people converted sixteen years before the county seat.** Elida
+  began in September 2005 and [Lima](../place/lima.yml) in January 2021. [verified] — same source.
+  So a county-level crime series assembled from these agencies changes what it is made of in almost
+  every year between 2004 and 2021, and changes most in the last two. [inference]
+
+  **Six of the ten are townships or a village; two are park rangers.** Three townships that ring
+  Lima keep their own forces — [Shawnee](../place/shawnee-township.yml),
+  [American](../place/american-township.yml) and [Perry](../place/perry-township.yml) — which is
+  what a county looks like when its suburbs are unincorporated. [inference] — see
+  [the townships](allen-county-outside-lima-1890-2020.yml).
+
+  **Two of the ten are held here and eight are not.** The Lima Police Department and
+  [the Sheriff's Office](../office/allen-county-sheriff.yml) cover 34,552 and 24,079 people
+  respectively — 58,631 of the county's 100,866, or 58 per cent. [verified] — same source and
+  [the 2024 estimate](allen-county-population-2024.yml). The remaining eight were not fetched
+  because the demonstration key ran out of requests, not because they are unavailable.
+
+  [open] The eight agencies not read, and whether Delphos, Bluffton and the smaller villages appear
+  under a neighbouring county's key. Both are one registered API key away.
+properties:
+  parameter: law enforcement agencies reporting for Allen County
+  value: "10"
+  unit: agencies
+  as_of: "2026"
+  method: |
+    Read from the Ohio agency list, selecting the county key ALLEN, which is the FBI's own
+    assignment and not a geographic test — an agency serving two counties appears under a combined
+    key and would be missed here. Dates are the file's `nibrs_start_date` verbatim. The population
+    figures are each agency's own service population, which is not a census figure and does not sum
+    to the county. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fbi-crime-data-explorer.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
