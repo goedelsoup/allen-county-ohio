@@ -18,6 +18,7 @@ const noTrains = assertion('no-passenger-train-calls-in-this-county')
 const wentToWar = assertion('one-person-in-ten-went-to-war')
 const warDead = assertion('the-roster-never-totalled-its-own-dead')
 const corinth = assertion('more-died-at-corinth-than-anywhere')
+const trains = assertion('the-page-adds-up-and-the-forecast-does-not')
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
@@ -40,6 +41,12 @@ const corinthSpec = bar(
   corinth.figures.map((f) => f.label),
   corinth.figures.map((f) => f.value),
   { yTitle: 'Men (a floor)', labelValues: true },
+)
+
+const trainsSpec = bar(
+  trains.figures.map((f) => f.label),
+  trains.figures.map((f) => f.value),
+  { yTitle: 'Passenger trains a day into Lima', labelValues: true },
 )
 
 const crossingSpec = bar(
@@ -377,6 +384,61 @@ const since = new Date().getUTCFullYear() - last
       year and because the same book that dates the opening latest also reports that the
       locomotive used to build the line arrived in 1854, by canal, as freight to Delphos. A
       construction engine delivered in 1854 cannot serve a line already open in 1853.
+    </p>
+  </section>
+
+  <section>
+    <h2>The road under four names, and the page that adds itself up</h2>
+    <p>
+      Between the steam railroads and what is left of them there was an electric one, and this site
+      had never mentioned it. Lima's own street railway ran horse cars from June 1878 — five cents,
+      seven in the morning to ten at night, and in winter the company put the cars away and ran
+      sleighs. On 4 July 1886 the town stood in the rain on the public square to watch a car move
+      with nothing pulling it. By 1921 the fifteen miles of track in the city belonged to a company
+      with six hundred miles of it and power stations in other towns.
+    </p>
+    <p>
+      Four company names carried that railway across forty-three years — the Lima Street Railroad
+      Company, the Lima Electric Railway &amp; Light Company, the Lima &amp; Toledo Traction Company
+      and the Ohio Electric — and exactly one of the three transfers between them is dated in any
+      source here: 1 July 1905, and the book puts it in a biography rather than in its chapter on
+      transportation.
+    </p>
+    <p>
+      Beyond the city, three interurbans were named in 1905 and two were left by 1921. What became
+      of the one Lima paid for is not in either county history; it is in a federal census. The 1917
+      directory of operating electric railway companies prints <em>The Ohio Electric Ry. Co.</em>
+      and, in italics beneath it — the volume's notation for a company whose road somebody else
+      leases and runs — <em>Fort Wayne, Van Wert &amp; Lima Traction Co., The</em>. The road
+      "projected by Lima men and financed in a large degree by Lima capital", which its own county
+      history called "destined to become one of the greatest traction interests in the country",
+      is a line item under an operator seated elsewhere. The company still existed. It just no
+      longer ran anything.
+    </p>
+    <AssertionCard assertion={trains} />
+    <ChartFigure
+      id="trains1905"
+      title="Trains landing passengers in Lima, counted and forecast"
+      caption="The first three bars are the 1906 county history counting: its six steam roads sum to 49, its two interurbans to 28, and the two to the 77 it prints. The last two are the same page a paragraph later, forecasting 1906. Its own four additions come to 150; it says 145, and no reading of the paragraph reaches that."
+      columns={['Count', 'Trains a day']}
+      rows={trains.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="trains1905" set:html={JSON.stringify(trainsSpec)} is:inline />
+    <p>
+      Adding a table up turns out to be worth doing twice over. It vouches for the list: nothing
+      fell out between the six roads enumerated and the 49 reported, which is the only evidence
+      available that the list is complete. And it demotes the figures that read most like a survey.
+      In the freight block on the same page, 143 trains times 52 cars is exactly the 7,436 cars
+      printed, and times 30 tons is exactly the 223,080 tons printed; four more tonnages are the
+      same trick. Five counts and three rates produce fourteen numbers, of which six are arithmetic.
+      A quarter of a million tons a day through a city of twenty-odd thousand is a real figure and
+      it is not a second observation — it is the first one multiplied out.
+    </p>
+    <p>
+      One thing the page settles for good. It boasts that Lima's trunk lines run "direct to half of
+      the counties in the State — to be exact, 46", and says twice elsewhere that a train may be
+      boarded in 44 counties and reach Lima without changing cars. Ohio has 88 counties. Half is 44,
+      and the sentence contradicts its own adverb.
     </p>
   </section>
 

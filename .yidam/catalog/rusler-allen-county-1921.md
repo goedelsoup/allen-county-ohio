@@ -21,19 +21,24 @@ used-by:
   - ../corpus/event/reorganization-of-1848.yml
   - ../corpus/event/settlers-occupy-fort-amanda-1817.yml
   - ../corpus/event/the-building-of-fort-amanda-1812.yml
+  - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-lima-company-1861.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
+  - ../corpus/measure/allen-county-interurban-1901-1921.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/allen-county-world-war-dead.yml
   - ../corpus/measure/allen-county-world-war-service.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/measure/lima-street-railway-1878-1921.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/organization/gramm-bernstein-motor-truck-company.yml
+  - ../corpus/organization/ohio-electric-railway.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
+  - ../corpus/organization/western-ohio-railway.yml
   - ../corpus/period/canal-era.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml

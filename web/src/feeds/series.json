@@ -522,6 +522,26 @@
       ]
     },
     {
+      "id": "place-allen-county::interurban-railway-companies-serving-Lima",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "interurban railway companies serving Lima",
+      "unit": "companies",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-interurban-1901-1921.yml",
+          "label": "Allen County's interurban railways, 1901–1921",
+          "as_of": "1921",
+          "value": 2.0,
+          "published": "2",
+          "tier": "verified",
+          "source": "catalog/rusler-allen-county-1921.md",
+          "method": "Read from the transportation, township and county chapters of the 1906 history, the 1921 history, and the 1917 federal directory. The 1905 figure of three counts names printed in one chapter; a fourth name appears in another chapter of the same book and is not added, because nothing establishes that it is a fourth company rather than a fourth name. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::jobs-located-in-the-county,-and-where-their-holders-live",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1027,7 +1047,7 @@
           "published": "102",
           "tier": "verified",
           "source": "catalog/leeson-allen-county-1885.md",
-          "method": "Read from the full text of three county histories on archive.org, the 1885 book in two independent scans. The mileage is the 1885 book's, compiled from official records of 1883 and prefaced \"about\". The employment figures are as the sources print them — a range for 1879 and a floor for 1906 — and are not counts; nothing here averages a range or treats \"more than 500\" as 500. [verified]"
+          "method": "Read from the full text of three county histories on archive.org, the 1885 book in two independent scans. The mileage is the 1885 book's, compiled from official records of 1883 and prefaced \"about\". The employment figures are as the sources print them: a range for 1879, a floor for the shops in 1906, and an exact count for the yards and freight offices in 1905. Nothing here averages a range or treats \"more than 500\" as 500, and the three are not added together. [verified]"
         }
       ]
     },
@@ -1282,6 +1302,26 @@
       ]
     },
     {
+      "id": "place-lima::company-names-under-which-Lima's-street-railway-was-operated",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "company names under which Lima's street railway was operated",
+      "unit": "companies",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-street-railway-1878-1921.yml",
+          "label": "Lima's street railway under four names, 1878–1921",
+          "as_of": "1921",
+          "value": 4.0,
+          "published": "4",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Counted from three county histories, each naming the operator of its own day, plus the 1917 federal directory for the absence of the third name. Names, not companies: no source states that any one of these bodies became the next, and the corpus counts what was printed. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-lima::land-area",
       "subject": "place/lima.yml",
       "subject_label": "Lima",
@@ -1318,6 +1358,26 @@
           "tier": "verified",
           "source": "catalog/census-1910-abstract-supplement-ohio.md",
           "method": "Census of Manufactures, taken for the calendar years 1909, 1904 and 1899. Read from rendered images of a 400-dpi scan and checked two ways: the two tables in the volume that report Lima independently agree on 3,607, and the 1909 detail row's components sum to its stated totals both for persons engaged and for wage earners on December 15. Establishments inside the corporate limits only. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::passenger-trains-landing-in-Lima-daily",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "passenger trains landing in Lima daily",
+      "unit": "trains",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-railroad-traffic-1905.yml",
+          "label": "Lima's railroad traffic, 1905",
+          "as_of": "1905",
+          "value": 77.0,
+          "published": "77",
+          "tier": "verified",
+          "source": "catalog/miller-allen-county-1906.md",
+          "method": "Read from the transportation chapter of the 1906 county history, which dates itself to 1905 by saying the Western Ohio \"was completed four years ago, in the spring of 1901\". Every sum and product above was computed here from figures the book prints, and each is reported as closing or not closing rather than corrected. [verified]"
         }
       ]
     },
@@ -4529,6 +4589,71 @@
           "label": "Names in the printed roster",
           "value": 4158.0,
           "literal": "4,158"
+        }
+      ]
+    },
+    {
+      "id": "the-page-adds-up-and-the-forecast-does-not",
+      "statement": "The 1906 county history totals its own railroad columns to the unit, and the forecast on the same page does not follow from its own figures.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/lima-railroad-traffic-1905.yml",
+          "node_label": "Lima's railroad traffic, 1905",
+          "span": "The steam figures sum to **49**, the electric to **28**, and the two to **77**.",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/lima-railroad-traffic-1905.yml",
+          "node_label": "Lima's railroad traffic, 1905",
+          "span": "That is 73 added to 77, or **150**; the book says **145**.",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "measure/lima-railroad-traffic-1905.yml",
+          "node_label": "Lima's railroad traffic, 1905",
+          "span": "**six of the fourteen numbers in that block are products of the other eight**",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Six are arithmetic, one does not follow, and one settles an argument the book has with itself."
+      ],
+      "figures": [
+        {
+          "label": "Steam trains landing daily, 1905",
+          "value": 49.0,
+          "literal": "49"
+        },
+        {
+          "label": "Electric trains landing daily, 1905",
+          "value": 28.0,
+          "literal": "28"
+        },
+        {
+          "label": "Total, as the book prints it",
+          "value": 77.0,
+          "literal": "77"
+        },
+        {
+          "label": "Forecast for 1906, as the book prints it",
+          "value": 145.0,
+          "literal": "145"
+        },
+        {
+          "label": "Forecast implied by its own additions",
+          "value": 150.0,
+          "literal": "150"
         }
       ]
     },
