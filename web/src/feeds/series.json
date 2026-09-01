@@ -1262,6 +1262,26 @@
       ]
     },
     {
+      "id": "place-allen-county::newspaper-titles-recorded-as-published-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "newspaper titles recorded as published in Allen County",
+      "unit": "titles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-newspapers-1843-2026.yml",
+          "label": "Allen County's newspapers, 1843–2026",
+          "as_of": "2026-09-01",
+          "value": 97.0,
+          "published": "97",
+          "tier": "verified",
+          "source": "catalog/us-newspaper-directory.md",
+          "method": "The Library of Congress collection endpoint faceted to `location_county:allen` and `location_state:ohio`, `c=200`, which returns all 99 records in one response, followed by the full item record for each of the 99. Place of publication is `location_city` checked against the county's twelve settlements; two records match none of them and are excluded from the 97. Frequency, language and party are read from the item records and not inferred. Holdings are counted as records whose `holding_data.data` is non-empty. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::occupied-housing-units,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -3990,7 +4010,7 @@
           "span": "In March 1879, at a population of about 7,000, the *Allen County Republican* described the city as standing at the crossing of the Pittsburg, Fort Wayne & Chicago, the Dayton & Michigan and the Lake Erie & Louisville, with all three keeping repair shops there, a street railroad running from the Union Depot, and the Dayton & Michigan shops covering some eight acres and employing 200 to 300 men.",
           "tier": "verified",
           "sources": [
-            "catalog/miller-allen-county-1906.md"
+            "catalog/us-newspaper-directory.md"
           ]
         },
         {
@@ -4043,7 +4063,7 @@
           "span": "**By 1906 two shops employed more than five hundred men each**",
           "tier": "verified",
           "sources": [
-            "catalog/miller-allen-county-1906.md"
+            "catalog/us-newspaper-directory.md"
           ]
         }
       ],
@@ -6221,6 +6241,108 @@
           "label": "Died of injuries",
           "value": 0.0,
           "literal": "0"
+        }
+      ]
+    },
+    {
+      "id": "ninety-nine-papers-and-one-of-them-online",
+      "statement": "Ninety-nine newspapers have been printed in Allen County and one of them is digitized. Forty-three have no library reporting a copy. This site read the one for six phases and called the other ninety-eight the county's press.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-newspapers-1843-2026.yml",
+          "node_label": "Allen County's newspapers, 1843–2026",
+          "span": "**Ninety-nine bibliographic records carry Allen County and ninety-seven of them were printed in it.** By place of publication that is 66 in Lima, 18 in Delphos, 6 in Spencerville, 5 in Bluffton, 1 in Elida and 1 in Lafayette.",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-newspaper-directory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-newspapers-1843-2026.yml",
+          "node_label": "Allen County's newspapers, 1843–2026",
+          "span": "**One of the ninety-nine is digitized.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-newspaper-directory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-newspapers-1843-2026.yml",
+          "node_label": "Allen County's newspapers, 1843–2026",
+          "span": "**Forty-three of the ninety-nine have no library reporting a copy.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/us-newspaper-directory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-newspapers-1843-2026.yml",
+          "node_label": "Allen County's newspapers, 1843–2026",
+          "span": "**The first was a weekly called The Porcupine and it lasted seven months.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-newspaper-directory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-newspapers-1843-2026.yml",
+          "node_label": "Allen County's newspapers, 1843–2026",
+          "span": "**Most of them are older than the century.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "organization/the-lima-news.yml",
+          "node_label": "The Lima News",
+          "span": "**Nine titles carry one unbroken issue count from 27 October 1884 to now.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-newspaper-directory.md"
+          ]
+        },
+        {
+          "node": "event/the-lima-news-strike-of-1957.yml",
+          "node_label": "The Lima News strike of 1957",
+          "span": "**The strikers printed their own paper on the day the presses stopped.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/us-newspaper-directory.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 66.0,
+          "literal": "66"
+        },
+        {
+          "label": "Delphos",
+          "value": 18.0,
+          "literal": "18"
+        },
+        {
+          "label": "Spencerville",
+          "value": 6.0,
+          "literal": "6"
+        },
+        {
+          "label": "Bluffton",
+          "value": 5.0,
+          "literal": "5"
+        },
+        {
+          "label": "Elida",
+          "value": 1.0,
+          "literal": "1"
+        },
+        {
+          "label": "Lafayette",
+          "value": 1.0,
+          "literal": "1"
         }
       ]
     },
