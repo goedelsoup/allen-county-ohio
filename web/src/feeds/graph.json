@@ -3628,6 +3628,10 @@
           "tier": "inference"
         },
         {
+          "text": "**One of those fifteen conduits is what pays for the county's libraries.** \"Local government library and township parks\", $4,495,636.25 in and $4,495,636.25 out, is this county's share of Ohio's public library fund — a state appropriation that [ORC 5747.47](https://codes.ohio.gov/ohio-revised-code/section-5747.47) certifies to the *county* and pays monthly to the county auditor, who allocates it through the budget commission. The three libraries book their share of it as revenue from the state. [verified] — the statute and [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md); see [the county's libraries](allen-county-libraries-2024.yml). The two figures are the same instrument and may not be differenced: this fund also carries township parks, two of the three libraries serve across the county line, and the years are 2025 and 2024.",
+          "tier": "verified"
+        },
+        {
           "text": "**The tax duplicate is the largest number in this county's public accounts and it belongs to everyone but the county.** $139,249,231 of real estate tax passed through the treasurer's hands in 2025 — for the twelve school districts, the two cities, the twelve villages, the twelve townships, the library, the park district and the county itself. [verified] — same source. The county's own share of it, the $4,554,766 that reaches [the General Fund](allen-county-general-fund-2025.yml), is **3.3 per cent**. [inference] — computed here.",
           "tier": "inference"
         },
@@ -3641,7 +3645,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-general-fund-2025.yml",
@@ -4454,6 +4458,55 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-libraries-2024.yml",
+      "class": "measure",
+      "label": "Allen County's public libraries, 2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024-12-31",
+        "method": "The FY2024 public-use administrative-entity and outlet files, filtered to `STABR` OH and `CNTY` ALLEN. Three administrative entities and eight outlets. County totals are the sum of the three reported rows and are not adjusted for the two service areas that cross the county line, which is why they are reported as service-area figures and never as per-resident-of-Allen-County figures. State and national comparisons are computed over the same file. Every quoted cell carries an `R_24` reported flag. [verified]",
+        "parameter": "public library income from all sources",
+        "unit": "US dollars",
+        "value": "6528885"
+      },
+      "blocks": [
+        {
+          "text": "Three library systems, eight buildings, and where the money for them comes from. [verified] — [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md), FY2024, every figure below reported by the library rather than imputed.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three per cent of what these libraries spend is local government money and seventy-one per cent is the state's.** Income of $6,528,885 across the three: $194,728 local, $4,622,683 state, $417 federal and $1,711,057 from everything else. [verified] — same source, summed across the three records. Nationally the same three columns run 85.5 per cent local and 6.7 per cent state, so this county's libraries are funded almost exactly the inverse of the American average. [inference] — computed over all 9,249 systems in the file.",
+          "tier": "inference"
+        },
+        {
+          "text": "**That is Ohio, not Allen County.** Ohio's 251 systems take 47.7 per cent of income locally and 42.9 per cent from the state, and among the state's 88 counties Allen ranks sixteenth from the bottom on the local share. Putnam and Shelby report no local money at all; Hancock reports 20.4 per cent. [inference] — computed from the same file. The instrument is [the public library fund](https://codes.ohio.gov/ohio-revised-code/section-5747.47), a state appropriation certified to counties, and it is the reason a figure here cannot be read as a statement about what this county chooses to spend.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county seat's library reports no local government revenue whatsoever.** $0 against $3,865,935 from the state and $1,603,932 from other sources. It is one of 48 Ohio systems out of 251 with a zero in that column. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every resident of this county is inside exactly one library's legal service area.** Lima's is the county at 88.2 per cent of it; Bluffton's and Delphos's are school districts and cover the rest, reaching over the county line as those districts do. The three sum to 106,514 against a county of 100,866. [verified] — same source, the `LSAGEOTYPE` and `LSAGEORATIO` columns.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eight buildings, 101,109 square feet, and two of the nine municipalities have none.** Lima's main library is 60,650 square feet and its five branches are Spencerville 5,625, Elida 3,990, Cairo 1,281, Lafayette 600 and a hundred square feet on the Ohio State Lima campus; Delphos is 15,989 and Bluffton 12,874. Beaverdam and Harrod have no outlet. [verified] — same source, the outlet file, and the county's municipal list.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Use is below the state's middle and above the country's.** 272,012 visits and 842,085 loans across a service population of 106,514 — 2.55 visits and 7.91 loans a head, against Ohio medians of 3.54 and 9.93 and United States medians of 2.96 and 5.05. Nearly a quarter of the loans, 23.8 per cent, are electronic. [inference] — computed from the same file; medians are per-system and the county figures are pooled, which flatters neither direction consistently.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Forty-seven and two-thirds full-time staff, of whom fourteen and three-quarters are librarians.** [verified] — same source. Every one of Lima's 10.85 librarians and Bluffton's 1.94 holds an ALA master's degree; none of Delphos's 1.93 does.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-life-expectancy-2010-2015.yml",
       "class": "measure",
       "label": "Life expectancy at birth in Allen County's census tracts, 2010–2015",
@@ -4895,7 +4948,7 @@
           "tier": "verified"
         },
         {
-          "text": "**Forty-three of the ninety-nine have no library reporting a copy.** Fifty-six do: the Ohio History Connection reports runs of 43 titles and the Lima Public Library of 19, and twelve other institutions from Boston to Chicago hold one or two each. [verified] — same source, holdings counted across all 99. This is a count of what was reported to a union list and not a proof that nothing survives. [inference] — a library that never joined the Newspaper Program is invisible to it.",
+          "text": "**Forty-three of the ninety-nine have no library reporting a copy.** Fifty-six do: the Ohio History Connection reports runs of 43 titles and [the Lima Public Library](../organization/lima-public-library.yml) of 19, and twelve other institutions from Boston to Chicago hold one or two each. [verified] — same source, holdings counted across all 99. This is a count of what was reported to a union list and not a proof that nothing survives. [inference] — a library that never joined the Newspaper Program is invisible to it.",
           "tier": "inference"
         },
         {
@@ -8327,6 +8380,45 @@
       "withheld": 2
     },
     {
+      "id": "organization/bluffton-public-library.yml",
+      "class": "organization",
+      "label": "Bluffton Public Library",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "FSCS identifier OH0027. [verified]",
+        "industry": "public library",
+        "org_type": "agency"
+      },
+      "blocks": [
+        {
+          "text": "A single library on South Main Street serving the Bluffton school district, 6,438 people. [verified] — [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md), FY2024.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the most used library in the county and the smallest service area.** 58,084 visits against 6,438 people is 9.02 a head, against an Ohio median of 3.54 and a United States median of 2.96, and more than five times [Lima](lima-public-library.yml)'s rate. [inference] — computed from the same file. Circulation is 98,374, or 15.28 a head.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It spent more than it took in.** $503,432 of operating expenditure against $479,475 of income — a shortfall of $23,957, the only one of the county's three libraries to report one. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It takes the largest local share in the county and it is still under a third.** $142,230 from local government, $294,991 from the state, $42,254 from other sources. [verified] — same source; see [the county's libraries](../measure/allen-county-libraries-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**12,874 square feet, 2,834 hours a year, 6.26 full-time staff.** Both its librarians hold an ALA master's degree. It holds 42,063 volumes and spent $53,857 on collections. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its service area is a school district and school districts cross county lines.** The survey files it as `SCHOOL DISTRICT (UNIFIED)` at a ratio of 1, and [the Bluffton exempted village district](../jurisdiction/bluffton-exempted-village-school-district.yml) reaches into Hancock and Putnam counties, so some of these 6,438 do not live in Allen County. [inference] — the district's own extent, not stated in this file.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "organization/bluffton-university.yml",
       "class": "organization",
       "label": "Bluffton University",
@@ -8363,6 +8455,41 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "organization/delphos-public-library.yml",
+      "class": "organization",
+      "label": "Delphos Public Library",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "FSCS identifier OH0066. [verified]",
+        "industry": "public library",
+        "org_type": "agency"
+      },
+      "blocks": [
+        {
+          "text": "A single library on West Second Street serving the Delphos city school district, 9,903 people. [verified] — [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md), FY2024.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The survey files it under Allen County and geocodes it into Van Wert.** `CNTY` reads ALLEN; the building's census tract is `39161020500`, whose first five digits are Van Wert County's FIPS code, and the record's `CNTYPOP` is 28,887, which is Van Wert's population and not this one's. [verified] — same source, the record read in full. [Delphos](../place/delphos.yml) straddles the line and the library stands on the far side of it; see [the administrative key is not the thing](../../decisions/the-administrative-key-is-not-the-thing.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It lends more per head than any library in the county.** 288,306 loans against 9,903 people is 29.11 a head, three times Ohio's median of 9.93 and nearly six times the United States median. Visits are 67,392, or 6.81 a head. [inference] — computed from the same file.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Nine cents in the dollar are local.** $52,498 from local government, $461,757 from the state, $417 federal and $64,871 from other sources, against $535,660 of operating expenditure. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**15,989 square feet, 2,496 hours a year, 5.11 full-time staff, and no librarian with an ALA master's degree.** It reports 1.93 full-time librarians and zero holding the degree — the only one of the county's three that does. It holds 76,752 volumes, more than half again [Bluffton](bluffton-public-library.yml)'s, and spent $55,442 on collections. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "organization/der-lima-courier.yml",
@@ -8687,6 +8814,45 @@
         "Whether that society is an ancestor of this hospital, of [St. Rita's](mercy-health-st-ritas-medical-center.yml), or of neither, the corpus does not know.",
         "**The ownership fact recorded above and the accounting fact here are the same fact seen in two files**, and the corpus cannot say what any of that $183 million was spent on in Lima."
       ],
+      "withheld": 1
+    },
+    {
+      "id": "organization/lima-public-library.yml",
+      "class": "organization",
+      "label": "Lima Public Library",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "FSCS identifier OH0121, state library identifier 221C. [verified]",
+        "industry": "public library",
+        "org_type": "agency"
+      },
+      "blocks": [
+        {
+          "text": "The county's library: one main building on West Market Street, five branches, and a legal service area of 90,173 people — eighty-eight per cent of Allen County. [verified] — [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md), FY2024.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is named for a city, legally based in a school district, and serves a county.** Its legal basis is `SD`, a school district free public library under [ORC 3375.15](https://codes.ohio.gov/ohio-revised-code/section-3375.15) — seven trustees appointed by a board of education, none of whom may have sat on that board within the previous year — and the survey files its service area as `COUNTY` at a ratio of 0.882. [verified] — same source and the statute; see [the administrative key is not the thing](../../decisions/the-administrative-key-is-not-the-thing.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It received no local government money in 2024.** $3,865,935 from the state, $1,603,932 from other sources, $0 from local government and $0 from federal, against operating expenditure of $3,051,076 and capital expenditure of $387,354 with no capital revenue reported. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Six buildings and one of them is a hundred square feet.** The main library at 650 West Market Street is 60,650 square feet and open 2,988 hours a year; Spencerville is 5,625, Elida 3,990, Cairo 1,281 and Lafayette 600, each open 1,872 hours except Lafayette's 1,092; the Ohio State Lima campus outlet is 100 square feet and open 2,964. [verified] — same source, the outlet file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A quarter of the people it serves are registered with it.** 24,819 borrowers against 90,173, and 146,536 visits — 1.63 a head, against an Ohio median of 3.54. Circulation is 455,405, of which 137,462 is electronic. It holds 149,348 volumes and spent $444,669 on collections, fourteen and a half per cent of what it spent to operate. [verified] — same source; the per-head comparison is [inference], computed against the file's per-system medians.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is one of the two institutions that hold this county's newspapers.** The Library of Congress union list records it as reporting runs of 19 Allen County newspaper titles, second only to the Ohio History Connection's 43. [verified] — [the county's newspapers](../measure/allen-county-newspapers-1843-2026.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
       "withheld": 1
     },
     {
@@ -12380,6 +12546,10 @@
         {
           "text": "Delphos straddles the Allen–Van Wert county line, and the Census Bureau's Allen County rows record it as `Delphos city (pt.)` for exactly that reason: the 3,941 counted there in the 2020 estimates base is the Allen County portion, not the city. [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md). Any figure for Delphos taken from an Allen County table and reported as the city's population understates it. Its edge to the county is `partially-within` for the same reason, matching the qualification [the Village of Bluffton](../jurisdiction/village-of-bluffton.yml) already carries.",
           "tier": "verified"
+        },
+        {
+          "text": "**A third file now splits the city the same way and lands on the far side.** The federal library survey files [the Delphos Public Library](../organization/delphos-public-library.yml) under Allen County and geocodes its building into census tract 39161020500, which is Van Wert's. [verified] — [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md). The Census Bureau is the only one of the corpus's three sources on this city that handles the split explicitly — it writes `Delphos city (pt.)`. The Library of Congress files eighteen Delphos newspapers under Allen County, one of them titled \"Delphos, Van Wert County, Ohio\", and IMLS contradicts itself in two columns of one row. [inference] — the three read together. A file that names this city and then names a county is making a choice, and it does not always say which.",
+          "tier": "inference"
         },
         {
           "text": "The city grew as a port on the Miami and Erie Canal, which is why it sits on the county edge rather than on any natural centre. [inference] See [the Miami and Erie Canal](../site/miami-and-erie-canal.yml).",
@@ -17636,6 +17806,34 @@
       "source": "catalog/hmda-loan-application-register.md"
     },
     {
+      "from": "measure/allen-county-libraries-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
+    },
+    {
+      "from": "measure/allen-county-libraries-2024.yml",
+      "to": "organization/lima-public-library.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
+    },
+    {
+      "from": "measure/allen-county-libraries-2024.yml",
+      "to": "organization/bluffton-public-library.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
+    },
+    {
+      "from": "measure/allen-county-libraries-2024.yml",
+      "to": "organization/delphos-public-library.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
+    },
+    {
       "from": "measure/allen-county-life-expectancy-2010-2015.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -18525,11 +18723,25 @@
       "source": "catalog/tigerweb-census2020.md"
     },
     {
+      "from": "organization/bluffton-public-library.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
+    },
+    {
       "from": "organization/bluffton-university.yml",
       "to": "place/bluffton.yml",
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/census-block-assignment-2020.md"
+    },
+    {
+      "from": "organization/delphos-public-library.yml",
+      "to": "place/delphos.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
     },
     {
       "from": "organization/der-lima-courier.yml",
@@ -18593,6 +18805,13 @@
       "relationship": "seated-in",
       "tier": "verified",
       "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "organization/lima-public-library.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/imls-public-libraries-survey.md"
     },
     {
       "from": "organization/lima-refining-company.yml",

@@ -1,0 +1,88 @@
+class: measure
+label: Allen County's public libraries, 2024
+description: |
+  Three library systems, eight buildings, and where the money for them comes from. [verified] —
+  [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md), FY2024, every
+  figure below reported by the library rather than imputed.
+
+  **Three per cent of what these libraries spend is local government money and seventy-one per cent
+  is the state's.** Income of $6,528,885 across the three: $194,728 local, $4,622,683 state, $417
+  federal and $1,711,057 from everything else. [verified] — same source, summed across the three
+  records. Nationally the same three columns run 85.5 per cent local and 6.7 per cent state, so this
+  county's libraries are funded almost exactly the inverse of the American average. [inference] —
+  computed over all 9,249 systems in the file.
+
+  **That is Ohio, not Allen County.** Ohio's 251 systems take 47.7 per cent of income locally and
+  42.9 per cent from the state, and among the state's 88 counties Allen ranks sixteenth from the
+  bottom on the local share. Putnam and Shelby report no local money at all; Hancock reports 20.4
+  per cent. [inference] — computed from the same file. The instrument is
+  [the public library fund](https://codes.ohio.gov/ohio-revised-code/section-5747.47), a state
+  appropriation certified to counties, and it is the reason a figure here cannot be read as a
+  statement about what this county chooses to spend.
+
+      system                     service area   income     state share   visits   circulation
+      Lima Public Library              90,173  5,469,867        70.7%   146,536       455,405
+      Delphos Public Library            9,903    579,543        79.7%    67,392       288,306
+      Bluffton Public Library           6,438    479,475        61.5%    58,084        98,374
+
+  **The county seat's library reports no local government revenue whatsoever.** $0 against
+  $3,865,935 from the state and $1,603,932 from other sources. It is one of 48 Ohio systems out of
+  251 with a zero in that column. [verified] — same source.
+
+  **Every resident of this county is inside exactly one library's legal service area.** Lima's is
+  the county at 88.2 per cent of it; Bluffton's and Delphos's are school districts and cover the
+  rest, reaching over the county line as those districts do. The three sum to 106,514 against a
+  county of 100,866. [verified] — same source, the `LSAGEOTYPE` and `LSAGEORATIO` columns.
+
+  **Eight buildings, 101,109 square feet, and two of the nine municipalities have none.** Lima's
+  main library is 60,650 square feet and its five branches are Spencerville 5,625, Elida 3,990,
+  Cairo 1,281, Lafayette 600 and a hundred square feet on the Ohio State Lima campus; Delphos is
+  15,989 and Bluffton 12,874. Beaverdam and Harrod have no outlet. [verified] — same source, the
+  outlet file, and the county's municipal list.
+
+  **Use is below the state's middle and above the country's.** 272,012 visits and 842,085 loans
+  across a service population of 106,514 — 2.55 visits and 7.91 loans a head, against Ohio medians
+  of 3.54 and 9.93 and United States medians of 2.96 and 5.05. Nearly a quarter of the loans, 23.8
+  per cent, are electronic. [inference] — computed from the same file; medians are per-system and
+  the county figures are pooled, which flatters neither direction consistently.
+
+  **Forty-seven and two-thirds full-time staff, of whom fourteen and three-quarters are librarians.**
+  [verified] — same source. Every one of Lima's 10.85 librarians and Bluffton's 1.94 holds an ALA
+  master's degree; none of Delphos's 1.93 does.
+
+  [open] What the $1,711,057 of "other" income is — for Lima alone it is $1,603,932, nearly a third
+  of that system's revenue, and the survey has one column for it. And who the twenty-one trustees
+  are: all three are school district libraries under
+  [ORC 3375.15](https://codes.ohio.gov/ohio-revised-code/section-3375.15), seven members each,
+  appointed by a board of education and named nowhere in this file.
+properties:
+  parameter: public library income from all sources
+  value: "6528885"
+  unit: US dollars
+  as_of: "2024-12-31"
+  method: |
+    The FY2024 public-use administrative-entity and outlet files, filtered to `STABR` OH and `CNTY`
+    ALLEN. Three administrative entities and eight outlets. County totals are the sum of the three
+    reported rows and are not adjusted for the two service areas that cross the county line, which
+    is why they are reported as service-area figures and never as per-resident-of-Allen-County
+    figures. State and national comparisons are computed over the same file. Every quoted cell
+    carries an `R_24` reported flag. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/imls-public-libraries-survey.md
+  - target: ../organization/lima-public-library.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/imls-public-libraries-survey.md
+  - target: ../organization/bluffton-public-library.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/imls-public-libraries-survey.md
+  - target: ../organization/delphos-public-library.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/imls-public-libraries-survey.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

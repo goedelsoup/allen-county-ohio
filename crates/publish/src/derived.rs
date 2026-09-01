@@ -2304,6 +2304,47 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "three-per-cent-of-the-library-money-is-local",
+        statement: "Three per cent of what Allen County's libraries live on is local government \
+                    money and seventy-one per cent is the state's — the inverse of the American \
+                    average. That is Ohio's funding structure, not this county's choice, and the \
+                    same dollar is a conduit fund in the county auditor's books.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-libraries-2024.yml",
+                "**Three per cent of what these libraries spend is local government money and seventy-one per cent\n  is the state's.** Income of $6,528,885 across the three: $194,728 local, $4,622,683 state, $417\n  federal and $1,711,057 from everything else."
+            ),
+            support!(
+                "measure/allen-county-libraries-2024.yml",
+                "**That is Ohio, not Allen County.** Ohio's 251 systems take 47.7 per cent of income locally and\n  42.9 per cent from the state, and among the state's 88 counties Allen ranks sixteenth from the\n  bottom on the local share."
+            ),
+            support!(
+                "measure/allen-county-libraries-2024.yml",
+                "**The county seat's library reports no local government revenue whatsoever.**"
+            ),
+            support!(
+                "measure/allen-county-libraries-2024.yml",
+                "**Every resident of this county is inside exactly one library's legal service area.**"
+            ),
+            support!(
+                "measure/allen-county-libraries-2024.yml",
+                "**Eight buildings, 101,109 square feet, and two of the nine municipalities have none.**"
+            ),
+            support!(
+                "measure/allen-county-funds-2025.yml",
+                "**One of those fifteen conduits is what pays for the county's libraries.** \"Local government\n  library and township parks\", $4,495,636.25 in and $4,495,636.25 out, is this county's share of\n  Ohio's public library fund"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "State", value: 4622683.0, literal: "4,622,683" },
+            Figure { label: "Other", value: 1711057.0, literal: "1,711,057" },
+            Figure { label: "Local", value: 194728.0, literal: "194,728" },
+            Figure { label: "Federal", value: 417.0, literal: "417" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

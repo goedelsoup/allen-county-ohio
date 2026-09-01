@@ -1,0 +1,42 @@
+class: organization
+label: Delphos Public Library
+description: |
+  A single library on West Second Street serving the Delphos city school district, 9,903 people.
+  [verified] — [the Public Libraries Survey](../../catalog/imls-public-libraries-survey.md), FY2024.
+
+  **The survey files it under Allen County and geocodes it into Van Wert.** `CNTY` reads ALLEN;
+  the building's census tract is `39161020500`, whose first five digits are Van Wert County's FIPS
+  code, and the record's `CNTYPOP` is 28,887, which is Van Wert's population and not this one's.
+  [verified] — same source, the record read in full. [Delphos](../place/delphos.yml) straddles the
+  line and the library stands on the far side of it; see
+  [the administrative key is not the thing](../../decisions/the-administrative-key-is-not-the-thing.yml).
+
+  **It lends more per head than any library in the county.** 288,306 loans against 9,903 people is
+  29.11 a head, three times Ohio's median of 9.93 and nearly six times the United States median.
+  Visits are 67,392, or 6.81 a head. [inference] — computed from the same file.
+
+  **Nine cents in the dollar are local.** $52,498 from local government, $461,757 from the state,
+  $417 federal and $64,871 from other sources, against $535,660 of operating expenditure.
+  [verified] — same source.
+
+  **15,989 square feet, 2,496 hours a year, 5.11 full-time staff, and no librarian with an ALA
+  master's degree.** It reports 1.93 full-time librarians and zero holding the degree — the only one
+  of the county's three that does. It holds 76,752 volumes, more than half again
+  [Bluffton](bluffton-public-library.yml)'s, and spent $55,442 on collections. [verified] — same
+  source.
+
+  [open] Who its seven trustees are, when it was established, and which county's budget commission
+  allocates its share of the public library fund. The survey names the state as the payer and does
+  not say which county certified the entitlement.
+properties:
+  org_type: agency
+  industry: public library
+  also_known_as: |
+    FSCS identifier OH0066. [verified]
+links:
+  - target: ../place/delphos.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/imls-public-libraries-survey.md
+  - target: ../organization.ont.yml
+    relationship: instance-of
