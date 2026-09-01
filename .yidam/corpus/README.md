@@ -102,7 +102,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 6v / 2i / 1o | 75 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
-| [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 7i / 2o | 106 |
+| [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
@@ -181,6 +181,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 7v / 4i / 1o | 75 |
 | [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
+| [allen-county-world-war-ii-dead-1941-1946.yml](measure/allen-county-world-war-ii-dead-1941-1946.yml) | measure | Allen County's Army dead and missing, 1941–1946 | 2 | 9v / 5i / 1o | 87 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
@@ -263,7 +264,8 @@ Sorted by: kind, then alphabetically.
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 19v / 13i / 2o | 232 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 4 | 7v / 8i / 2o | 83 |
 | [the-civil-war-in-allen-county.yml](period/the-civil-war-in-allen-county.yml) | period | The Civil War in Allen County | 4 | 3v / 5i / 3o | 82 |
-| [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 3 | 8v / 2i / 2o | 68 |
+| [the-second-world-war-in-allen-county.yml](period/the-second-world-war-in-allen-county.yml) | period | The Second World War in Allen County | 2 | 8v / 4i / 3o | 71 |
+| [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 4 | 8v / 2i / 2o | 71 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [allen-l-metheany.yml](person/allen-l-metheany.yml) | person | Allen L. Metheany | 2 | 3v / 1i / 2o | 34 |
@@ -404,7 +406,7 @@ Sorted by: kind, then alphabetically.
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
 | [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 9v / 4i / 2o | 72 |
-| [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 84 |
+| [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 87 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 12v / 4i / 1o | 99 |
 | [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 3v / 2i / 1o | 41 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
