@@ -22,6 +22,13 @@ const trains = assertion('the-page-adds-up-and-the-forecast-does-not')
 const declared = assertion('ten-declarations-eight-incidents')
 const sky = assertion('the-blizzard-is-not-in-the-weather-file')
 const paid = assertion('eighty-four-cents-in-the-dollar')
+const war = assertion('the-third-war-is-counted-by-its-dead')
+
+const warSpec = bar(
+  war.figures.map((f) => f.label),
+  war.figures.map((f) => f.value),
+  { yTitle: 'Allen County Army dead and missing, 1941–1946', labelValues: true },
+)
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
@@ -854,6 +861,54 @@ const since = new Date().getUTCFullYear() - last
       $3,595,938, and not one inspection: a biological incident damages no houses, so every dollar
       is classed "other needs" and what it bought is not written anywhere in the file. This site
       says how much and declines to say what for.
+    </p>
+  </section>
+
+  <section>
+    <h2>One hundred and seventy-one</h2>
+    <AssertionCard assertion={war} />
+    <p>
+      This site named the Civil War and the World War as periods in Allen County's history and left
+      unnamed the war that made Lima a tank town. It had a roster of who served in each of the first
+      two and nothing at all for the third.
+    </p>
+    <p>
+      The War Department published an Honor List of Dead and Missing for every state in 1946,
+      tabulated county by county. Allen County's entry is 171 — every man from this county who died
+      or was still missing in the Army between the declaration of unlimited national emergency on
+      27 May 1941 and a cut-off of 31 January 1946. Against 73,303 people here in 1940, that is one
+      death for every 429.
+    </p>
+    <ChartFigure
+      id="ww2-dead"
+      title="Allen County's Army dead and missing, 1941–1946, by type of casualty"
+      caption="The Army's own six categories. DNB — died, non-battle — is the source's term for sickness, homicide, suicide or accident outside combat areas, including training and maneuver deaths. Navy, Marine Corps and Coast Guard dead are not in this list."
+      columns={['Type of casualty', 'Count']}
+      rows={war.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="ww2-dead" set:html={JSON.stringify(warSpec)} is:inline />
+    <p>
+      A third of them did not die in battle. Fourteen more were never found: they were declared dead
+      under a 1942 statute that required conclusive proof or overwhelming evidence and a year's
+      lapse from the disappearance. One man was still carried as missing when the list closed.
+    </p>
+    <p>
+      The county's war began before the country's, and two sources say so independently. In February
+      1941 the Lima Locomotive Works had a $290,000 factory building under construction that the
+      local press read as conversion to defense work, and by that August medium tank production was
+      scheduled for the autumn. The Honor List itself opens in May 1941. Both are before Pearl
+      Harbor. What followed was three separate undertakings two years apart — the Locomotive Works
+      building tanks from 1941, the Lima Tank Depot under construction in January 1943 and finishing
+      vehicles built elsewhere, and the tank plant that carries the county's name today, whose
+      ground was not bought until 1951.
+    </p>
+    <p>
+      One caution belongs on the number itself. The county in this list is the county of an address
+      a man gave when he entered the Army — or, failing that, of his next of kin, or of his draft
+      board. It is not where he lived and not where he is buried. The War Department set the rule
+      out in five numbered clauses and explained why it chose counties at all: "information media
+      rarely circulate in areas smaller than counties, and draft boards are located on a
+      county-population basis."
     </p>
   </section>
 

@@ -6138,6 +6138,59 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+      "class": "measure",
+      "label": "Allen County's Army dead and missing, 1941–1946",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1946-01-31",
+        "method": "Read from the page images of the Ohio volume: the tabulation page for the six category counts and the two county pages for the roll. The 171 and its six components are the tabulation's own figures, transcribed and checked to sum. The count of names was made from the same images — 69 in the first column, 70 in the second, 32 on the following page — and is reported as a check on the printed total rather than as a substitute for it. No name is transcribed here: this corpus counts war rolls and does not copy them, as it did for [1861](allen-county-civil-war-service.yml) and [1917](allen-county-world-war-service.yml). [verified]",
+        "parameter": "Army dead and missing credited to Allen County",
+        "unit": "persons",
+        "value": "171"
+      },
+      "blocks": [
+        {
+          "text": "**One hundred and seventy-one men from Allen County died or were still missing in the Army of the United States between 27 May 1941 and 31 January 1946.** [verified] — [the War Department's Honor List for Ohio](../../catalog/ww2-honor-list-ohio.md), tabulation by counties and types of casualties.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The six categories run 87 killed in action, 13 dead of wounds, 0 dead of injuries, 56 dead non-battle, 14 declared dead under Public Law 490 and 1 still missing.** [verified] — same source, transcribed from its tabulation and checked to sum.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One in three of them did not die in battle.** Fifty-six of the 171 are DNB — the source's own category for sickness, homicide, suicide or accident outside combat areas, \"including training and maneuver deaths\". [verified] — same source, its definitions page. Against 87 killed in action and 13 dead of wounds, that is 56 of 171, or 32.7 per cent. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Fourteen were declared dead rather than found dead**, under Public Law 490, which the source says requires \"conclusive proof that the person is dead or equally overwhelming evidence\" and is made \"only after review and after a lapse of at least one year from the time of disappearance\". [verified] — same source. One man was still carried as missing when the list closed. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "**The roll is printed and an independent count of it reaches the printed total exactly.** The names run over two pages, 139 on the first and 32 on the second, and 139 plus 32 is 171. [inference] — counted here from the page images; the 171 is [the tabulation's own](../../catalog/ww2-honor-list-ohio.md). Where the corpus's Civil War roster recovered 97.8 per cent of its printed total by an independent parse, this one recovers all of it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Against the county's 73,303 people in 1940 that is one death for every 429.** [inference] — computed against [the 1940 census](allen-county-population-1940-1990.yml). The corpus states the rate and not a comparison with its other two wars, because it does not hold the same quantity for any of the three: the Civil War and the World War are counted here by [men who served](allen-county-civil-war-service.yml), and this war by men who died. A ratio of service to service and a ratio of deaths to population are different numbers about different things. [inference] — see [the second world war](../period/the-second-world-war-in-allen-county.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is more than twice any neighbouring county's toll and it is not out of line.** Hancock 94, Hardin 77, Shelby 74, Auglaize 72, Van Wert 71, Mercer 70, Logan 52 and Putnam 50, against Allen's 171. [verified] — same tabulation. Allen was the most populous of the nine in 1940. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county here is the county of an address given at enlistment, not of a home and not of a grave.** Where no home address was given the man is filed under the county of his next of kin or emergency addressee, and failing that under the county of his draft board. Ohio's tabulation carries a \"State at Large\" row of 89 for the cases none of the rules reaches. [verified] — [the Honor List](../../catalog/ww2-honor-list-ohio.md), its foreword, which sets the rule out in five numbered clauses; see [the administrative key is not the thing](../../decisions/the-administrative-key-is-not-the-thing.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three things this number is not.** It is not the county's war dead: the Army published this list and the Navy, Marine Corps and Coast Guard are not in it. It is not final: the War Department calls it preliminary and says names would be added. And it is not a count of deaths in combat, as the DNB column shows. [verified] — the source's foreword, all three.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-world-war-service.yml",
       "class": "measure",
       "label": "Allen County in the World War — how many served",
@@ -9164,6 +9217,41 @@
       ],
       "refusals": [],
       "withheld": 4
+    },
+    {
+      "id": "period/the-second-world-war-in-allen-county.yml",
+      "class": "period",
+      "label": "The Second World War in Allen County",
+      "tier": "inference",
+      "properties": {
+        "began": "1941-05-27",
+        "character": "A county that built and finished tanks for a war it never saw, and paid one death for every 429 of its people. Its industry converted before the country entered, its home front is legible only at village scale, and a third of its dead died away from combat. [inference]",
+        "ended": "1946-01-31"
+      },
+      "blocks": [
+        {
+          "text": "**The third of this county's wars to be named here, and the first the corpus counts by its dead rather than by its service.** One hundred and seventy-one men from Allen County died or were still missing in the Army between May 1941 and January 1946 — one for every 429 people the county held in 1940. [verified] — [the Honor List](../measure/allen-county-world-war-ii-dead-1941-1946.yml); the rate computed against [the 1940 census](../measure/allen-county-population-1940-1990.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's war began before the country's, and two independent sources say so.** In February 1941 [the Locomotive Works](../site/lima-locomotive-works-plant.yml) had a new $290,000 factory building under construction which the local press read as conversion to defense work, and by that August medium tank production was scheduled for the autumn. [verified] — [The Bluffton News](../../catalog/chronicling-america.md), 20 February 1941, and the *Evening Star*, 24 August 1941. The War Department's own roll of the dead opens on 27 May 1941, the declaration of unlimited national emergency. [verified] — [the Honor List](../../catalog/ww2-honor-list-ohio.md). Both dates are before Pearl Harbor.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its character is a county that made vehicles for a war it never saw, in three separate undertakings two years apart.** The Locomotive Works built medium tanks from 1941; [the Lima Tank Depot](../site/lima-tank-depot.yml) was under construction in January 1943 and by August 1944 was \"the central supply base for combat vehicles\", finishing tanks built elsewhere and dispatching them by road train; and [the tank plant](../site/lima-army-tank-plant.yml) that carries the county's name today was not built until the ground was bought in 1951. [verified] — the sources on each of those nodes. Two of the three are this war and the third is the one after it, and the corpus keeps them apart because the county's own memory does not. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And it was organised, as the last war was, out of committees and canvasses.** Bluffton's contribution to the nationwide war chest campaign was $1,800 in 1943, \"about $75 more than the total contributed\" the year before, announced by its mayor as co-chairman of the canvass. [verified] — same source, 4 November 1943, page 1. That is the grain at which this corpus can see the home front: one village's collection, in a weekly published there.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A third of the dead did not die in battle.** Fifty-six of the 171 are the source's DNB category — sickness, homicide, suicide or accident outside combat areas, \"including training and maneuver deaths\". [verified] — [the Honor List](../measure/allen-county-world-war-ii-dead-1941-1946.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "period/the-world-war-in-allen-county.yml",
@@ -17606,6 +17694,13 @@
       "source": "catalog/rusler-allen-county-1921.md"
     },
     {
+      "from": "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ww2-honor-list-ohio.md"
+    },
+    {
       "from": "measure/allen-county-world-war-service.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -18421,6 +18516,20 @@
       "from": "period/the-civil-war-in-allen-county.yml",
       "to": "measure/allen-county-civil-war-dead.yml",
       "relationship": "evidenced-by",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "period/the-second-world-war-in-allen-county.yml",
+      "to": "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/ww2-honor-list-ohio.md"
+    },
+    {
+      "from": "period/the-world-war-in-allen-county.yml",
+      "to": "period/the-second-world-war-in-allen-county.yml",
+      "relationship": "precedes",
       "tier": "inference",
       "source": null
     },
