@@ -24,12 +24,32 @@ const outside = assertion('the-plants-are-outside-every-city')
 const concentration2 = assertion('what-the-concentration-is-made-of')
 const young = assertion('lima-is-the-young-end')
 const counted1920 = assertion('the-census-counted-what-the-history-estimated')
+const forties = assertion('the-migration-arrived-in-the-forties')
 
 const bornSpec = bar(
   counted1920.figures.map((f) => f.label),
   counted1920.figures.map((f) => f.value),
   { yTitle: 'Foreign-born residents of Allen County, 1920, by country of birth', labelValues: true },
 )
+
+// The county's Black population at five censuses. Drawn from the assertion's own figures so the
+// chart cannot drift from the prose the gate checked.
+const migrationSpec = line(
+  forties.figures.map((f) => f.label),
+  [{ name: 'Black residents of Allen County', y: forties.figures.map((f) => f.value) }],
+  { yTitle: 'Persons enumerated as Negro, Allen County', zeroBased: true, labelLast: true },
+)
+
+// The four censuses read this phase, with 1920 and 2023 for the ends. Typed out because the six
+// rows come from six publications and the graph carries them as six measures.
+const raceSeries = [
+  ['1920', '68,223', '1,385', '2.03%', '2,753'],
+  ['1930', '69,419', '1,686', '2.43%', '2,219'],
+  ['1940', '73,303', '1,916', '2.61%', '1,682'],
+  ['1950', '88,183', '4,391', '4.98%', '1,485'],
+  ['1960', '103,691', '7,322', '7.06%', '—'],
+  ['2023', '101,685', '10,805', '10.6%', '—'],
+]
 
 // The 1920 composition of the county and the city, side by side. Typed out because the two halves
 // come from two tables of the same census and the graph carries them as one measure.
@@ -644,6 +664,41 @@ const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
       68,203 this site has been printing. That number came from the county history too, and it is
       twenty low — exactly as the same book's figure for Lima, 41,306, is twenty low against the
       census's 41,326. The corpus had already caught the second and never checked the first.
+    </p>
+    <AssertionCard assertion={forties} />
+    <p>
+      That 1920 count sat alone for a century, with the next figure this site could give being the
+      2023 estimates. The four censuses in between are in the Ohio population volume of each, and
+      three of the four have no text layer at all — every number below was read off a rendered page
+      image and added up before it was written down.
+    </p>
+    <ChartFigure
+      id="black-population-1920-1960"
+      title="Allen County's Black population, 1920 to 1960"
+      caption="The First Great Migration, which transformed Detroit, Cleveland and Youngstown between 1916 and 1930, added 301 people to this county and then 230. The decade that moved the number is the 1940s, when Lima was building locomotives and tanks."
+      columns={['Census', 'Residents']}
+      rows={forties.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="black-population-1920-1960" set:html={JSON.stringify(migrationSpec)} is:inline />
+    <DataTable
+      title="Allen County by race and nativity, 1920 to 2023"
+      caption="Each census's race lines sum to the printed county total, which is how these were checked. The 1960 county table gives white without splitting it by nativity, which is why the foreign-born series stops at 1950."
+      columns={['Census', 'County', 'Black', 'Share', 'Foreign-born white']}
+      rows={raceSeries}
+    />
+    <p>
+      The immigrant population went the other way over the same forty years, and it went without
+      interruption: 2,753 in 1920, 2,219 in 1930, 1,682 in 1940, 1,485 in 1950 — down 46 per cent
+      while the county grew 29. Federal statute closed European immigration in 1924, and the two
+      curves cross in the 1930s. By 1950 Italy has passed Germany, 246 to 222, where in 1920 it was
+      Germany 627 to Italy 312.
+    </p>
+    <p>
+      Two of the 1920 columns have no 1950 successor at all. Switzerland, whose 171 stood for
+      Bluffton, has no column of its own in the later table, and Wales, whose 120 stood for Gomer,
+      is folded into England. That is not a fall to nothing; it is a column that stopped being
+      printed — which is the reason this phase also wrote down a rule about differencing figures
+      that come from two different books.
     </p>
   </section>
 </Base>
