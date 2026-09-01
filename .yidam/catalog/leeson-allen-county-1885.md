@@ -27,6 +27,7 @@ used-by:
   - ../corpus/event/reorganization-of-1848.yml
   - ../corpus/event/settlers-occupy-fort-amanda-1817.yml
   - ../corpus/event/the-building-of-fort-amanda-1812.yml
+  - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/jurisdiction/amanda-township.yml
   - ../corpus/jurisdiction/american-township.yml
@@ -53,6 +54,7 @@ used-by:
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-mayors-1842-1886.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/measure/lima-street-railway-1878-1921.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/office/mayor-of-lima.yml
   - ../corpus/period/canal-era.yml

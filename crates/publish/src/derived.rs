@@ -1719,6 +1719,36 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-page-adds-up-and-the-forecast-does-not",
+        statement: "The 1906 county history totals its own railroad columns to the unit, and the \
+                    forecast on the same page does not follow from its own figures.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/lima-railroad-traffic-1905.yml",
+                "The steam figures sum to **49**, the electric to **28**, and the two to **77**."
+            ),
+            support!(
+                "measure/lima-railroad-traffic-1905.yml",
+                "That is 73 added to 77, or **150**; the book says **145**."
+            ),
+            support!(
+                "measure/lima-railroad-traffic-1905.yml",
+                "**six of the fourteen numbers in that block are products of the other\n  eight**"
+            ),
+        ],
+        answers: &[
+            "Six are arithmetic, one does not follow, and one settles an argument the book has with itself",
+        ],
+        figures: &[
+            Figure { label: "Steam trains landing daily, 1905", value: 49.0, literal: "49" },
+            Figure { label: "Electric trains landing daily, 1905", value: 28.0, literal: "28" },
+            Figure { label: "Total, as the book prints it", value: 77.0, literal: "77" },
+            Figure { label: "Forecast for 1906, as the book prints it", value: 145.0, literal: "145" },
+            Figure { label: "Forecast implied by its own additions", value: 150.0, literal: "150" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

@@ -71,6 +71,7 @@ used-by:
   - ../corpus/measure/allen-county-land-area-2020.yml
   - ../corpus/measure/allen-county-survey-sections.yml
   - ../corpus/measure/lima-land-area-2020.yml
+  - ../corpus/measure/lima-railroad-traffic-1905.yml
   - ../corpus/measure/ohio-house-district-4-land-area-2020.yml
   - ../corpus/natural-feature/auglaize-river.yml
   - ../corpus/place/allen-county.yml

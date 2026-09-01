@@ -23,22 +23,33 @@ used-by:
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/settlers-occupy-fort-amanda-1817.yml
+  - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
+  - ../corpus/measure/allen-county-interurban-1901-1921.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-population-1880-1920.yml
+  - ../corpus/measure/lima-railroad-traffic-1905.yml
+  - ../corpus/measure/lima-street-railway-1878-1921.yml
   - ../corpus/office/mayor-of-lima.yml
+  - ../corpus/organization/fort-wayne-van-wert-and-lima-traction-company.yml
   - ../corpus/organization/gramm-bernstein-motor-truck-company.yml
   - ../corpus/organization/lima-memorial-health-system.yml
   - ../corpus/organization/solar-refining-company.yml
   - ../corpus/organization/standard-oil.yml
+  - ../corpus/organization/western-ohio-railway.yml
   - ../corpus/period/depopulation.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/person/benjamin-faurot.yml
   - ../corpus/person/henry-d-v-williams.yml
   - ../corpus/person/samuel-a-baxter.yml
+  - ../corpus/place/beaverdam.yml
+  - ../corpus/place/bluffton.yml
+  - ../corpus/place/delphos.yml
+  - ../corpus/place/elida.yml
+  - ../corpus/place/lafayette.yml
   - ../corpus/place/lima.yml
   - ../corpus/question/pre-1970-population-series.yml
   - ../corpus/question/when-allen-county-was-organized.yml
