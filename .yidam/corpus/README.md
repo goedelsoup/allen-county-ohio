@@ -115,7 +115,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-common-pleas-bench-1833-1920.yml](measure/allen-county-common-pleas-bench-1833-1920.yml) | measure | The Allen County common pleas bench, 1833–1920 | 3 | 13v / 2i / 2o | 109 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-congregations-2020.yml](measure/allen-county-congregations-2020.yml) | measure | Allen County's congregations, 2020 | 2 | 6v / 4i / 1o | 79 |
-| [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
+| [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 7v / 3i / 1o | 71 |
 | [allen-county-disaster-aid-applicants-2005-2025.yml](measure/allen-county-disaster-aid-applicants-2005-2025.yml) | measure | Who was paid federal disaster aid in Allen County, 2005–2025 | 2 | 4v / 3i / 2o | 86 |
 | [allen-county-disaster-assistance-2005-2025.yml](measure/allen-county-disaster-assistance-2005-2025.yml) | measure | Federal disaster assistance to Allen County, 2005–2025 | 2 | 5v / 4i / 1o | 67 |
 | [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 10v / 4i / 1o | 108 |
@@ -123,8 +123,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 9v / 1i / 0o | 70 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
-| [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 8v / 1i / 2o | 69 |
-| [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 7v / 3i / 0o | 77 |
+| [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 9v / 2i / 2o | 77 |
+| [allen-county-farms-1949-1987.yml](measure/allen-county-farms-1949-1987.yml) | measure | Allen County farms, 1949–1987 | 2 | 11v / 6i / 2o | 106 |
+| [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
 | [allen-county-funds-2025.yml](measure/allen-county-funds-2025.yml) | measure | What passes through Allen County's books, 2025 | 2 | 8v / 3i / 2o | 82 |
 | [allen-county-general-assembly-1833-1906.yml](measure/allen-county-general-assembly-1833-1906.yml) | measure | Allen County in the Ohio General Assembly, 1833–1906 | 4 | 10v / 2i / 2o | 90 |
 | [allen-county-general-fund-2025.yml](measure/allen-county-general-fund-2025.yml) | measure | Allen County's General Fund, 2025 | 2 | 9v / 4i / 2o | 102 |
@@ -152,7 +153,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
 | [allen-county-libraries-2024.yml](measure/allen-county-libraries-2024.yml) | measure | Allen County's public libraries, 2024 | 5 | 7v / 3i / 1o | 88 |
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 4v / 5i / 1o | 65 |
-| [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 6v / 3i / 1o | 73 |
+| [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 5v / 1i / 1o | 60 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
@@ -426,7 +427,7 @@ Sorted by: kind, then alphabetically.
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 4v / 3i / 1o | 71 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-limas-first-congregation-was-organized.yml](question/when-limas-first-congregation-was-organized.yml) | question | When Lima's first congregation was organized | 4 | 3v / 1i / 0o | 49 |
-| [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 6 | 2v / 1i / 1o | 52 |
+| [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 6 | 6v / 3i / 2o | 97 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
