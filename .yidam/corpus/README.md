@@ -36,7 +36,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
-| [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 6v / 2i / 2o | 53 |
+| [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 7v / 3i / 2o | 63 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
 | [organization-of-the-town-of-lima-1842.yml](event/organization-of-the-town-of-lima-1842.yml) | event | The organization of the town of Lima | 3 | 6v / 0i / 1o | 53 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
@@ -178,13 +178,15 @@ Sorted by: kind, then alphabetically.
 | [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
+| [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
 | [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 8v / 2i / 3o | 75 |
 | [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 8v / 9i / 2o | 136 |
-| [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 6v / 3i / 1o | 75 |
+| [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 7v / 3i / 2o | 83 |
+| [lima-mayors-1939-1956.yml](measure/lima-mayors-1939-1956.yml) | measure | Mayors of Lima named inside the gap, 1939–1956 | 2 | 8v / 2i / 1o | 91 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
 | [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 4v / 3i / 1o | 60 |
@@ -223,7 +225,7 @@ Sorted by: kind, then alphabetically.
 | [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 2v / 2i / 1o | 37 |
 | [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
 | [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
-| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 11v / 3i / 2o | 99 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 13v / 3i / 2o | 114 |
 | [member-of-lima-city-council.yml](office/member-of-lima-city-council.yml) | office | Member of Lima City Council | 2 | 3v / 0i / 1o | 33 |
 | [member-of-the-ohio-house-for-district-78.yml](office/member-of-the-ohio-house-for-district-78.yml) | office | Member of the Ohio House of Representatives, 78th District | 2 | 2v / 1i / 1o | 31 |
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
@@ -258,6 +260,7 @@ Sorted by: kind, then alphabetically.
 | [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 3 | 8v / 2i / 2o | 68 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
+| [allen-l-metheany.yml](person/allen-l-metheany.yml) | person | Allen L. Metheany | 2 | 3v / 1i / 2o | 34 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
 | [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 2v / 2i / 1o | 27 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 10v / 5i / 2o | 96 |
@@ -281,6 +284,7 @@ Sorted by: kind, then alphabetically.
 | [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 18 |
 | [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 18 |
 | [frank-a-burkhardt.yml](person/frank-a-burkhardt.yml) | person | Frank A. Burkhardt | 2 | 2v / 1i / 1o | 35 |
+| [frank-e-mcclain.yml](person/frank-e-mcclain.yml) | person | Frank E. McClain | 2 | 6v / 0i / 2o | 42 |
 | [george-w-overmyer.yml](person/george-w-overmyer.yml) | person | George W. Overmyer | 2 | 5v / 1i / 1o | 40 |
 | [h-s-prophet.yml](person/h-s-prophet.yml) | person | H. S. Prophet | 2 | 5v / 2i / 1o | 49 |
 | [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
@@ -322,7 +326,7 @@ Sorted by: kind, then alphabetically.
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
 | [randall-s-bartels.yml](person/randall-s-bartels.yml) | person | Randall S. Bartels | 2 | 2v / 1i / 1o | 21 |
-| [richard-metheany.yml](person/richard-metheany.yml) | person | Richard Metheany | 2 | 3v / 1i / 1o | 39 |
+| [richard-metheany.yml](person/richard-metheany.yml) | person | Richard Metheany | 2 | 4v / 2i / 1o | 45 |
 | [samuel-a-baxter.yml](person/samuel-a-baxter.yml) | person | Samuel A. Baxter | 2 | 5v / 5i / 1o | 65 |
 | [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
 | [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
@@ -337,11 +341,12 @@ Sorted by: kind, then alphabetically.
 | [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 3v / 2i / 0o | 31 |
 | [todd-gordon.yml](person/todd-gordon.yml) | person | Todd Gordon | 2 | 2v / 1i / 1o | 21 |
 | [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
+| [william-l-ferguson.yml](person/william-l-ferguson.yml) | person | William L. Ferguson | 2 | 4v / 0i / 3o | 39 |
 | [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 4v / 3i / 1o | 40 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
-| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
+| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 3v / 1i / 2o | 31 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 16v / 7i / 2o | 162 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 4 | 10v / 3i / 1o | 82 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
@@ -381,7 +386,7 @@ Sorted by: kind, then alphabetically.
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 5v / 2i / 1o | 51 |
-| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 11v / 3i / 1o | 99 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 12v / 4i / 1o | 110 |
 | [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 2v / 3i / 2o | 48 |
 | [camp-lima.yml](site/camp-lima.yml) | site | Camp Lima | 2 | 6v / 2i / 3o | 56 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 3 | 11v / 5i / 2o | 103 |
