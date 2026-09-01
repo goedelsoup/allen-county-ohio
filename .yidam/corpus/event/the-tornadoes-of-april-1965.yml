@@ -1,0 +1,41 @@
+class: event
+label: The tornado declaration of April 1965
+description: |
+  **The first thing this corpus can date in Allen County after 1955**, and it arrived in a table
+  rather than in a book. On 14 April 1965 the county was named in federal disaster declaration
+  DR-191-OH, "Tornadoes & Severe Storms", with both Individual and Public Assistance designated.
+  [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md).
+
+  **It is one of only two declarations in fifty-five years that brought money to households here.**
+  The other is 2007. [verified] — same source; see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).
+
+  **The date is the declaration's, and the storm's is not in this file.** The record gives an
+  incident beginning and ending on 14 April 1965, which is also the day the declaration was signed
+  and the day the request was made. A tornado outbreak severe enough to bring federal aid to
+  households did not last zero days; the field was filled with the declaration date, as it was for
+  the 1978 blizzard. [inference] — see
+  [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
+
+  **So the corpus dates the declaration and not the weather.** `occurred` below is 14 April 1965
+  because that is what the source establishes: a presidential act naming this county. What the sky
+  did, and when, is not held here. [inference]
+
+  [open] The storm. Its date, its track, whether it touched ground in this county at all or whether
+  Allen was designated within a multi-county declaration for damage concentrated elsewhere, and what
+  it destroyed. A newspaper of that week would answer all four, and
+  [Chronicling America](../../catalog/chronicling-america.md) is in this catalog and does not reach
+  1965.
+properties:
+  occurred: 1965-04-14
+  event_type: disaster declaration
+  location_description: |
+    Allen County, as the declaration's `designatedArea` names it. The declaration is county-wide and
+    says nothing about where within the county anything happened. [verified] — the same source.
+links:
+  - target: ../place/allen-county.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/fema-disaster-declarations.md
+  - target: ../event.ont.yml
+    relationship: instance-of

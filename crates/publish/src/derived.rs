@@ -1803,6 +1803,32 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "ten-declarations-eight-incidents",
+        statement: "Allen County has been federally declared a disaster area ten times since 1965 \
+                    for eight incidents, and only twice did the money reach households.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-disaster-declarations-1965-2020.yml",
+                "**Ten declarations in fifty-five years, for eight distinct incidents.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-declarations-1965-2020.yml",
+                "**Two of the ten brought money to households.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-declarations-1965-2020.yml",
+                "**A county nine hundred miles from the Gulf has a hurricane declaration.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-declarations-1965-2020.yml",
+                "**The longest incident in the file is 1,207 days.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

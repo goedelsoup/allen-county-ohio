@@ -1,0 +1,40 @@
+class: event
+label: Allen County is declared for Hurricane Katrina, September 2005
+description: |
+  **A county in north-west Ohio has a hurricane declaration.** On 13 September 2005 Allen County was
+  named in EM-3250-OH, "Hurricane Katrina Evacuation", with Public Assistance designated and an
+  incident window running 29 August to 1 October 2005. [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md).
+
+  **What was declared was the sheltering, not the storm.** An evacuation declaration reimburses a
+  state and its local governments for taking in people from somewhere else; the hazard is nine
+  hundred miles away and the cost is here. [inference] This is the only one of the county's ten
+  declarations whose incident did not happen in Ohio. [verified] — same source; see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).
+
+  **It carried no Individual Assistance**, which is the ordinary shape here: eight of the county's
+  ten declarations paid governments and two paid households. [verified] — same source.
+
+  [open] What Allen County actually did — how many people it housed, where, at whose expense, and
+  for how long. The declaration establishes that the county was designated and nothing about what
+  followed; FEMA's public-assistance project endpoint is keyed to this declaration number and was
+  not fetched.
+properties:
+  occurred: 2005-09-13
+  occurred_through: 2005-10-01
+  event_type: disaster declaration
+  location_description: |
+    Allen County. `occurred` is the declaration date; `occurred_through` is the end of the incident
+    window the file gives, which for this record is a real window rather than a repeated declaration
+    date. [verified] — the same source.
+links:
+  - target: ../place/allen-county.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/fema-disaster-declarations.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/fema-disaster-declarations.md
+  - target: ../event.ont.yml
+    relationship: instance-of

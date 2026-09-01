@@ -1,0 +1,63 @@
+id: a-dataset-can-make-an-event
+summary: >-
+  This corpus had sixteen dated events and not one of them was after 1955, in a county for which it
+  holds annual employment since 1969, fifty-seven dated annexations and twenty-nine dated Register
+  listings. The record is not missing. The corpus was reading tables as quantities and books as
+  stories, and only books were producing events.
+context: |
+  The `event` class exists, in its own words, because "the corpus's temporal spine is built from
+  things that occurred rather than from dates attached to things that persist". Sixty-six phases in,
+  that spine runs 1812, 1817, 1818, 1820, 1832, 1842, 1848, 1854, 1861, 1885, 1886, 1918, 1922,
+  1933, 1951, 1955 — and stops.
+
+  Every one of those came from a book. The three county histories produced eleven; deed records and
+  a federal land file produced the last three. Nothing that arrived as a dataset ever became an
+  event, though the datasets are full of dates: 57 annexations with effective dates, 29 Register
+  listings with listing dates, a refinery whose capacity changes year by year, 364 bridges each with
+  a year built.
+
+  The gap between the last event and today is seventy-one years, and it is the longest span in the
+  spine by a factor of two.
+decision: |
+  **When a retrieval yields a singular dated happening, make an event, whatever file it arrived in.**
+  The test is not the source's format. It is three questions about the row: did something occur once,
+  to a named subject, on a stated date? A presidential declaration naming Allen County on 13
+  September 2005 passes all three. A bridge's year built does not — it is a property of a thing that
+  persists, which is exactly what the class was defined against.
+
+  **Not every row is an event, and the difference is where the interest lies.** Fifty-seven
+  annexations are a measure, because what the corpus wants from them is the aggregate and the
+  pattern; ten disaster declarations are events, because each is a separate act with a separate
+  consequence and the aggregate of ten is nearly meaningless. The rule of thumb: if you would write
+  a sentence about *this* row, it is an event; if you would only ever write a sentence about the
+  column, it is a measure.
+
+  **A measure and an event may both be made from the same rows, and should be where both readings
+  are wanted.** The ten declarations are one measure and three of them are also events. That is not
+  duplication: the measure carries the count, the rate and the refusal to read a trend into it; the
+  events carry what one declaration meant. They cite the same source and say different things.
+
+  **Date the act, not the world, and say which you dated.** The 1965 row establishes that a
+  declaration was signed on 14 April. It does not establish when the tornadoes were, and the file's
+  own incident dates for that year are the declaration date repeated. The event node is dated to the
+  act and says so in its first paragraph.
+rationale: |
+  **The defect was invisible from every node.** Each of the sixteen events is correct. Each of the
+  eighty-five measures is correct. Nothing in the gate looks at the shape of a class, and no reader
+  of any single node would notice that the county's narrative time stopped during the Eisenhower
+  administration. It took counting the class to see it, which is the argument for counting classes.
+
+  **It is a bias with a cause, and the cause is the corpus's own success.** The early phases read
+  books, because books were what could be reached; the later phases retrieved datasets, because that
+  is where a county's modern record lives. A dataset answers "how many" without being asked "when",
+  and a corpus that stops asking gets a hundred years of quantities with nothing happening in them.
+
+  **The correction is cheap and the omission was not.** Three event nodes from one API call move the
+  spine from 1955 to 2020. What was lost in the meantime is not the dates — they were in the corpus
+  all along, inside measures — but the ability to ask the graph what happened in a decade, which is
+  the first question anyone brings to a county's history.
+
+  **What this does not license.** Manufacturing events out of rows to fill a chart. The spine should
+  be thin where the county was quiet, and a decade with nothing in it is a finding as long as the
+  corpus has looked. What is not acceptable is a decade with nothing in it because nobody thought to
+  look in the file already on the disk.

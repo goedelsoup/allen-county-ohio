@@ -1,0 +1,84 @@
+id: state-after-sixty-six-phases
+summary: >-
+  Fifty-seven phases have settled since the last account of this corpus's own state, and four
+  decisions still cite a figure from it that is no longer true. What the corpus is made of now, what
+  the shape of it says, and where the next gaps are.
+supersedes: state-after-nine-phases
+context: |
+  [state-after-nine-phases](state-after-nine-phases.yml) was written at 143 nodes with three of five
+  calculators built and nine sources cataloged. It diagnosed a corpus that was mostly one roster and
+  named five gaps, worst first.
+
+  `yidam status`: **429 nodes** · 57 sources · claims 1792v / 671i / 317o in the corpus · genesis
+  2026-08-28. Workspace: thirteen crates. Sixty-six phases merged.
+
+      person 86   measure 85   tenure 80   jurisdiction 38   place 25   office 23
+      organization 21   site 16   event 16   question 13   natural-feature 8
+      division 8   period 6
+
+  **Three of that decision's five gaps are closed, one is half closed, and one closed in a way that
+  turned out to be the next problem.** All nine municipalities have nodes. Pre-1970 population is a
+  series from 1830. The mayor's office has holders and a line running 1842 to 1922. Incorporation
+  dates are **half** done: four of the nine municipal jurisdictions carry `erected`, and 22 of all
+  38 jurisdictions carry none. And the annexations — "no annexation `event` exists", the worst gap
+  of the five — were closed with fifty-seven dated records inside a *measure*, which is precisely
+  the habit this phase went on to diagnose.
+decision: |
+  **The figure four other decisions cite is now wrong and this is where a reader finds that out.**
+  [a-deep-instance-can-hide-an-empty-class](a-deep-instance-can-hide-an-empty-class.yml),
+  [a-line-of-holders-is-a-table](a-line-of-holders-is-a-table.yml),
+  [eighty-eight-rows-are-not-eighty-eight-nodes](eighty-eight-rows-are-not-eighty-eight-nodes.yml)
+  and [the-civil-geography](the-civil-geography.yml) all quote "eighty of this corpus's 174 nodes,
+  46 per cent, are the sheriff roster". **It is 39 tenures and 38 people, 77 of 429 — eighteen per
+  cent.** Those decisions are not amended: they recorded the state correctly when they were written,
+  and a knowledge graph whose history is its git log does not go back and fix the past. This node is
+  the correction, and it is what their link now leads to.
+
+  **The corpus's remaining gaps, worst first.**
+
+  1. **Its narrative time stopped in 1955 and its statistical time did not.** Sixteen dated events
+     when this phase opened, none in the last seventy-one years, against fifty-three measures
+     carrying an `as_of` in the 2020s alone. This phase adds three and carries the spine to 2020,
+     which is a beginning and not a fix; see
+     [a dataset can make an event](a-dataset-can-make-an-event.yml).
+  2. **The mayoral line has a ninety-nine-year hole, 1922 to 2021**, and the city's own site will
+     not close it. This is now the corpus's largest single documented gap in a named series.
+  3. **Five of nine municipal jurisdictions still carry no `erected` date**, and 22 of 38
+     jurisdictions overall. This was the second-worst gap fifty-seven phases ago and it is half
+     where it was left.
+  4. **Six of thirteen classes have fewer than twenty instances.** `period` has six, `division` and
+     `natural-feature` eight each. The county's water is eight nodes and its named eras are six,
+     against eighty-five measures.
+  5. **The catalog is federal.** Of 57 sources, the local ones are three county histories, the
+     county's site, the city's site, the sheriff's roster and the county's GIS. Everything else is
+     Washington or Columbus. That is the same finding as
+     [the-corpus-had-a-federal-bias](the-corpus-had-a-federal-bias.yml) and it has not moved.
+  6. **317 `[open]` markers across 246 nodes** — more than half of every node in the corpus carries
+     at least one unanswered question. That is not a defect; it is the instrument working. But
+     nothing ranks them, and no phase has ever been chosen by reading them.
+rationale: |
+  **What the shape says that no node says.** Three classes — person, measure, tenure — are 251 of
+  429 nodes, and two of those three are mostly rosters. The corpus is a very good table of who held
+  what and how many there were of things. It is much thinner on what happened, where it happened,
+  and what the land is: `event`, `period`, `natural-feature` and `division` together are 38 nodes,
+  nine per cent.
+
+  **The measure distribution is the same bias in another dimension.** Of 85 measures, 53 carry an
+  `as_of` in the 2020s and five carry one between 1930 and 1999. Several of the 53 are long series
+  reaching back — the manufacturing employment runs from 1969 — so this understates the coverage.
+  It does not understate the habit: the corpus reaches for the current file first, and the
+  mid-century is held almost entirely as the tail of series pinned to a recent year.
+
+  **Nine phases in, the diagnosis was containment: points for everything and boundaries for
+  nothing.** That was closed by building the covering and proximity crates and retrieving polygons.
+  Sixty-six phases in, the diagnosis is *time*: dates for everything and a spine for nothing. The
+  parallel is close enough to be worth stating — in both cases the corpus had the facts and lacked
+  the structure that makes them answerable, and in both cases it took counting a class rather than
+  reading one to see it.
+
+  **What has not gone wrong, and is worth recording because it was the risk.** The gate has held.
+  Every phase since the ninth has run `graph-check`, `graph-lint` and `regen --check` clean before
+  merging, the claim tags have not decayed — 1779 verified against 661 inference is a ratio that has
+  improved, not slipped — and no phase has published an `[open]` claim. The publication tier
+  machinery has caught real defects in four separate phases, twice by refusing an assertion that
+  routed around a refusal the corpus had made on the page it cited.

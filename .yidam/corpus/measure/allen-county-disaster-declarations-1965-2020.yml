@@ -1,0 +1,65 @@
+class: measure
+label: Allen County's federal disaster declarations, 1965–2020
+description: |
+  **Ten declarations in fifty-five years, for eight distinct incidents.** [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md), disaster declarations summaries, Ohio
+  county 003.
+
+      declared     type  incident                                    IA PA HM
+      1965-04-14   DR    tornadoes & severe storms                    y  y  -
+      1978-01-26   EM    blizzards & snowstorms                       -  y  -
+      2004-09-19   DR    severe storms and flooding                   -  -  y
+      2005-02-15   DR    severe winter storms, flooding, mudslides    -  y  y
+      2005-09-13   EM    Hurricane Katrina evacuation                 -  y  -
+      2007-08-27   DR    severe storms, flooding, and tornadoes       y  y  y
+      2012-06-30   EM    severe storms                                -  y  -
+      2012-08-20   DR    severe storms and straight-line winds        -  y  y
+      2020-03-13   EM    COVID-19                                     -  y  -
+      2020-03-31   DR    COVID-19 pandemic                            -  y  y
+
+  **Counting declarations is not counting disasters.** The June 2012 storm produced an emergency
+  declaration on 30 June and a major disaster declaration on 20 August, seven weeks apart, for the
+  same four-day incident window; COVID-19 produced two in eighteen days. Ten rows, eight incidents.
+  [inference] — computed here from the incident windows.
+
+  **Two of the ten brought money to households.** Individual Assistance was designated in 1965 and
+  in 2007 and in no other year; eight of the ten carried Public Assistance, which is aid to
+  governments for debris and public works. [verified] — same source. **What a federal disaster
+  usually means in this county is a bill to the county, not a cheque to a family.** [inference]
+
+  **A county nine hundred miles from the Gulf has a hurricane declaration.** EM-3250-OH, 13
+  September 2005, "Hurricane Katrina evacuation" — Public Assistance for a county that took in
+  people. [verified] — same source; see
+  [the Katrina declaration](../event/allen-county-declared-for-hurricane-katrina-2005.yml).
+
+  **The rate looks like it rose tenfold and almost certainly did not.** Two declarations in the
+  thirty-nine years to 2004 and eight in the sixteen after. A programme that changed its coverage,
+  its designation threshold and its politics is a likelier cause than weather changing by a factor
+  of ten, and nothing in this file separates them. [inference] The corpus records the count and
+  refuses the trend.
+
+  **The longest incident in the file is 1,207 days.** COVID-19 ran from 20 January 2020 to 11 May
+  2023 on both its rows; the longest of the other eight is forty-one days. [verified] — same source,
+  computed here.
+
+  [open] What any of them cost. FEMA serves public-assistance project and hazard-mitigation grant
+  endpoints keyed to these declaration numbers, and none was fetched.
+properties:
+  parameter: federal disaster and emergency declarations naming Allen County
+  value: "10"
+  unit: declarations
+  as_of: "2020"
+  method: |
+    Fetched from the OpenFEMA v2 API filtered to `fipsStateCode` 39 and `fipsCountyCode` 003, and
+    counted here. The `as_of` is the last declaration and not the query date: this file grows, and
+    the figure is a count of what had happened by then. Distinct incidents are counted by grouping
+    rows on the incident window, which merges 2012's pair and 2020's and separates the two of 2004
+    and 2005. Incident dates before 2004 are not usable — the 1965 and 1978 rows give an incident
+    beginning and ending on the day the declaration was signed. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-disaster-declarations.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

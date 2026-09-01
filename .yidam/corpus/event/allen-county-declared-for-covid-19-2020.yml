@@ -1,0 +1,48 @@
+class: event
+label: Allen County is declared for COVID-19, March 2020
+description: |
+  **The most recent thing this corpus can date**, and the longest incident in the county's federal
+  record by a factor of twenty-nine. Allen County was named in EM-3457-OH on 13 March 2020 and again
+  in DR-4507-OH on 31 March 2020, both carrying an incident window from 20 January 2020 to 11 May
+  2023 — **1,207 days**, against forty-one for the longest of the county's other declarations.
+  [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md); see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).
+
+  **Two declarations, one incident.** The emergency declaration came eighteen days before the major
+  disaster declaration, on identical incident dates. That is the same pattern as June 2012, where an
+  emergency was declared on the 30th and a major disaster seven weeks later for one four-day storm.
+  [verified] — same source. Counting rows here counts federal acts, not events in the world.
+  [inference]
+
+  **Neither carried Individual Assistance.** Both designated Public Assistance and the major
+  disaster declaration added Hazard Mitigation. [verified] — same source.
+
+  **It is the only event in this corpus that overlaps a census.** The 2020 census was taken inside
+  this incident window, and the county's group-quarters counts, its housing occupancy and its
+  population were all enumerated during it. [inference] — see
+  [the group quarters](../measure/allen-county-group-quarters-2020.yml) and
+  [the 2020 count](../measure/allen-county-population-2020-census.yml). The corpus does not assert
+  that the enumeration was affected; it records that the two overlap, which is a thing a reader of
+  those figures should know and could not otherwise learn here.
+
+  [open] What happened in the county. Deaths, cases, hospital load, school closure, the fate of the
+  two prisons and the state hospital, all of which are institutions this corpus holds and none of
+  which it can say anything about for these three years.
+properties:
+  occurred: 2020-03-13
+  occurred_through: 2023-05-11
+  event_type: disaster declaration
+  location_description: |
+    Allen County. `occurred` is the earlier of the two declaration dates and `occurred_through` the
+    end of the incident window both records give. [verified] — the same source.
+links:
+  - target: ../place/allen-county.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/fema-disaster-declarations.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/fema-disaster-declarations.md
+  - target: ../event.ont.yml
+    relationship: instance-of
