@@ -46,6 +46,18 @@ scrape that reads `CONTENT` from every element renders "automobiles" as `au tomo
 three times over, and every quotation taken from it is unusable. Read `SUBS_CONTENT` on part one
 and skip part two.
 
+**And it is a source about Lima all the same, which an earlier reading of this entry denied.**
+The paragraph below is true and the conclusion once drawn from it was not. The Bluffton weekly
+carries a standing column of news notes from four counties, and inside it are four mayors of Lima
+between 1939 and 1956, a fifth named as a former one, the cost of a Lima mayoral campaign, a
+non-partisan city primary with its turnout, a mayoral candidate shot dead, and a county-wide bond
+issue to remodel the courthouse. [verified] — searched for "mayor of Lima" and "Lima mayor" and
+read page by page; see
+[the mayors named inside the gap](../corpus/measure/lima-mayors-1939-1956.yml). What it never
+carries is a report of who won a Lima election, which is a fact about country weeklies and not
+about this archive; see
+[a weekly reports events, not states](../decisions/a-weekly-reports-events-not-states.yml).
+
 **No Lima newspaper is in it.** The county seat had daily papers through the whole of this period
 and none of them is digitized here. Every fact this corpus has taken from the archive about Lima
 was therefore reported from somewhere else — a wire desk, a Washington evening paper, an Indiana
