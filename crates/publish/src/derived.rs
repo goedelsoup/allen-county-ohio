@@ -1881,6 +1881,33 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "a-step-that-is-not-a-crime-wave",
+        statement: "The Allen County Sheriff's violent offenses nearly tripled in 2021 and his \
+                    property offenses fell, and the month between them is the month he changed \
+                    how he counts.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-sheriff-offenses-2015-2024.yml",
+                "**The sheriff's violent offenses nearly tripled between 2020 and 2021, and his property offenses\n  fell.**"
+            ),
+            support!(
+                "measure/allen-county-sheriff-offenses-2015-2024.yml",
+                "**The line between those two periods is 1 December 2020, and it is in a different file.**"
+            ),
+            support!(
+                "measure/allen-county-sheriff-offenses-2015-2024.yml",
+                "**A change that triples one measure and lowers another at the same agency in the same month is a\n  change in counting.**"
+            ),
+            support!(
+                "measure/allen-county-law-enforcement-agencies-2026.yml",
+                "**A village of nineteen hundred people converted sixteen years before the county seat.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

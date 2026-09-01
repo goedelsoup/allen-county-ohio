@@ -202,6 +202,26 @@
       ]
     },
     {
+      "id": "office-allen-county-sheriff::violent-offenses-reported-by-the-Allen-County-Sheriff's-Office",
+      "subject": "office/allen-county-sheriff.yml",
+      "subject_label": "Sheriff of Allen County",
+      "parameter": "violent offenses reported by the Allen County Sheriff's Office",
+      "unit": "offenses",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-sheriff-offenses-2015-2024.yml",
+          "label": "Offenses reported by the Allen County Sheriff, 2015–2024",
+          "as_of": "2024",
+          "value": 86.0,
+          "published": "86",
+          "tier": "verified",
+          "source": "catalog/fbi-crime-data-explorer.md",
+          "method": "Monthly counts summed to calendar years. The two periods are divided at the office's own incident-based reporting start of 1 December 2020, so 2020 sits in the earlier period and 2021 in the later; the one month of overlap is not adjusted for. No figure here is computed across the two periods except the ratio, which is reported precisely to show that the two measures move opposite ways. [inference]"
+        }
+      ]
+    },
+    {
       "id": "office-mayor-of-lima::entries-in-the-printed-lists-of-Lima's-mayors-beginning-after-April-1886",
       "subject": "office/mayor-of-lima.yml",
       "subject_label": "Mayor of Lima",
@@ -718,6 +738,26 @@
           "tier": "verified",
           "source": "catalog/census-cph-2-37-ohio-2010.md",
           "method": "Land and total area for all thirteen Allen County subdivisions read from the county-subdivision tables of the 2000 and 2010 Population and Housing Unit Counts volumes for Ohio, both born digital and extracted exactly rather than by OCR; annual figures from the Ohio place, county-subdivision and county gazetteer files for 2012 through 2024, converted from square metres at 2,589,988.11 m² to the square mile and 4,046.8564224 m² to the acre. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::law-enforcement-agencies-reporting-for-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "law enforcement agencies reporting for Allen County",
+      "unit": "agencies",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-law-enforcement-agencies-2026.yml",
+          "label": "Allen County's reporting police agencies, 2026",
+          "as_of": "2026",
+          "value": 10.0,
+          "published": "10",
+          "tier": "verified",
+          "source": "catalog/fbi-crime-data-explorer.md",
+          "method": "Read from the Ohio agency list, selecting the county key ALLEN, which is the FBI's own assignment and not a geographic test — an agency serving two counties appears under a combined key and would be missed here. Dates are the file's `nibrs_start_date` verbatim. The population figures are each agency's own service population, which is not a census figure and does not sum to the county. [verified]"
         }
       ]
     },
@@ -1648,6 +1688,26 @@
           "tier": "verified",
           "source": "catalog/miller-allen-county-1906.md",
           "method": "Three county histories' compilations of published census returns, one figure from each. The 1900 and 1920 figures are for Ottawa Township, which both sources state was coextensive with the city. [verified] The value above is **superseded**: the Census gives 41,326 for the same date and this node keeps 41,306 because its subject is what the histories printed. For Lima's 1920 population, cite [the federal series](lima-population-1850-1960.yml). [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::violent-crime-rate,-Lima-Police-Department-jurisdiction",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "violent crime rate, Lima Police Department jurisdiction",
+      "unit": "offenses per 100,000 people",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-crime-2015-2024.yml",
+          "label": "Crime reported in Lima, 2015–2024",
+          "as_of": "2024",
+          "value": 769.9,
+          "published": "769.9",
+          "tier": "verified",
+          "source": "catalog/fbi-crime-data-explorer.md",
+          "method": "Monthly offense and clearance counts summed to calendar years and divided by the agency's own population as the file gives it for June of each year. That population is not the census's — the file puts Lima at 36,452 in 2020 against a census count of 35,579 — so this rate is comparable with the Ohio and United States rates in the same file and not with anything computed from a census denominator. [verified] The department began incident-based reporting on 1 January 2021, so the years before and after that line are not strictly one series. [inference]"
         }
       ]
     },
@@ -5045,6 +5105,50 @@
           "tier": "verified",
           "sources": [
             "catalog/epa-sdwis.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "a-step-that-is-not-a-crime-wave",
+      "statement": "The Allen County Sheriff's violent offenses nearly tripled in 2021 and his property offenses fell, and the month between them is the month he changed how he counts.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-sheriff-offenses-2015-2024.yml",
+          "node_label": "Offenses reported by the Allen County Sheriff, 2015–2024",
+          "span": "**The sheriff's violent offenses nearly tripled between 2020 and 2021, and his property offenses fell.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/fbi-crime-data-explorer.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-sheriff-offenses-2015-2024.yml",
+          "node_label": "Offenses reported by the Allen County Sheriff, 2015–2024",
+          "span": "**The line between those two periods is 1 December 2020, and it is in a different file.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/fbi-crime-data-explorer.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-sheriff-offenses-2015-2024.yml",
+          "node_label": "Offenses reported by the Allen County Sheriff, 2015–2024",
+          "span": "**A change that triples one measure and lowers another at the same agency in the same month is a change in counting.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-law-enforcement-agencies-2026.yml",
+          "node_label": "Allen County's reporting police agencies, 2026",
+          "span": "**A village of nineteen hundred people converted sixteen years before the county seat.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/fbi-crime-data-explorer.md"
           ]
         }
       ],
