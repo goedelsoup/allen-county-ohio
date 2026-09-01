@@ -1,0 +1,58 @@
+class: measure
+label: Allen County's water monitoring sites, 2026
+description: |
+  **The county holds 184 water monitoring sites and two usable stream records.** [verified] —
+  [USGS NWIS](../../catalog/usgs-nwis.md), site service, county 39003, all statuses.
+
+      90  groundwater wells        19  agricultural
+      31  lake or reservoir        13  atmospheric
+      29  stream                    2  soil / other
+
+  **Twenty-nine stream sites and two annual peak records between them.** The rest are levels,
+  samples or one-off measurements; three of the county's larger stream gauges answer the peak-flow
+  service with a 200 and no rows. A county can be thick with instruments and thin with
+  measurements. [inference] — computed here; see
+  [the peak flows](ottawa-river-peak-flows-1924-2025.yml).
+
+  **The drainage areas put the county's rivers in order.** [verified] — same source.
+
+      219 sq mi  Auglaize River near Spencerville      128  Ottawa River at Lima
+      201        Auglaize River near Kossuth           124  Ottawa River at the D.T.&I. bridge
+      160        Ottawa River at Allentown             64.4 Riley Creek near Bluffton
+
+  The Auglaize is the larger river and the Ottawa is the gauged one, which is
+  [the same asymmetry the bridges show](allen-county-bridge-crossings-2025.yml): forty-one crossings
+  of the Ottawa against twenty-two of the Auglaize. Both follow from the same fact, which is that
+  [Lima](../place/lima.yml) sits on the Ottawa. [inference]
+
+  **Every one of the 184 sites drains to Lake Erie.** 168 are in the Auglaize subbasin `04100007`,
+  14 in the Blanchard `04100008`, and two in other Maumee units; none is in an Ohio River unit.
+  [verified] — same source. **That is an absence of instruments and not evidence about the divide**:
+  the corpus has already established that four census blocks in
+  [Auglaize Township](../place/auglaize-township.yml), holding ninety-nine people, drain to
+  [the Scioto](../natural-feature/scioto-river-basin.yml), and ninety-nine people do not get a
+  gauge. [inference] — see
+  [silence from a source that would have spoken](../../decisions/silence-from-a-source-that-would-have-spoken.yml),
+  which this is not an instance of.
+
+  [open] Whether any of the ninety groundwater wells has a water-level record, and what it says.
+  Allen County sits over the aquifer the whole region draws on, and this corpus holds nothing about
+  it at all.
+properties:
+  parameter: USGS water monitoring sites in Allen County
+  value: "184"
+  unit: sites
+  as_of: "2026"
+  method: |
+    Fetched from the USGS site service with `siteStatus=all`, which is required or discontinued
+    gauges are omitted — and the discontinued ones carry most of the county's long record. Site
+    types are the service's own two-letter codes, collapsed here to their first letter group. The
+    count is of sites the service lists for this county whatever their status or period of record,
+    and is not a count of instruments now running. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
