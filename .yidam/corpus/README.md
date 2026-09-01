@@ -33,7 +33,7 @@ Sorted by: kind, then alphabetically.
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
 | [allen-county-declared-for-covid-19-2020.yml](event/allen-county-declared-for-covid-19-2020.yml) | event | Allen County is declared for COVID-19, March 2020 | 3 | 7v / 3i / 2o | 68 |
 | [allen-county-declared-for-hurricane-katrina-2005.yml](event/allen-county-declared-for-hurricane-katrina-2005.yml) | event | Allen County is declared for Hurricane Katrina, September 2005 | 3 | 4v / 1i / 1o | 40 |
-| [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
+| [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 13v / 1i / 3o | 128 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
 | [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 7v / 3i / 2o | 63 |
@@ -44,11 +44,13 @@ Sorted by: kind, then alphabetically.
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 8v / 2i / 1o | 75 |
 | [settlers-occupy-fort-amanda-1817.yml](event/settlers-occupy-fort-amanda-1817.yml) | event | Settlers occupy the blockhouses at Fort Amanda, 1817 | 3 | 7v / 1i / 0o | 53 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
+| [the-execution-of-andrew-brentlinger-1872.yml](event/the-execution-of-andrew-brentlinger-1872.yml) | event | The execution of Andrew Brentlinger, 1872 | 4 | 7v / 2i / 2o | 62 |
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 3 | 5v / 1i / 1o | 48 |
 | [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
+| [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 5 | 6v / 1i / 1o | 59 |
 | [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 4v / 1i / 1o | 41 |
@@ -100,6 +102,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 9v / 4i / 1o | 132 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
+| [allen-county-black-community-1916-1921.yml](measure/allen-county-black-community-1916-1921.yml) | measure | Allen County's Black community, 1916–1921 | 3 | 13v / 3i / 3o | 82 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 6v / 2i / 1o | 75 |
 | [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 7v / 4i / 1o | 64 |
@@ -137,6 +140,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
 | [allen-county-interurban-1901-1921.yml](measure/allen-county-interurban-1901-1921.yml) | measure | Allen County's interurban railways, 1901–1921 | 2 | 7v / 2i / 1o | 67 |
+| [allen-county-jewish-community-1850-1921.yml](measure/allen-county-jewish-community-1850-1921.yml) | measure | Allen County's Jewish community, 1850–1921 | 3 | 8v / 2i / 1o | 63 |
 | [allen-county-land-area-2000-2024.yml](measure/allen-county-land-area-2000-2024.yml) | measure | Allen County land area by subdivision, 2000–2024 | 3 | 10v / 3i / 0o | 108 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-law-enforcement-agencies-2026.yml](measure/allen-county-law-enforcement-agencies-2026.yml) | measure | Allen County's reporting police agencies, 2026 | 2 | 5v / 2i / 1o | 58 |
@@ -155,7 +159,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
 | [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 10v / 2i / 1o | 93 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
-| [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 13v / 2i / 2o | 131 |
+| [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 14v / 3i / 2o | 139 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 7v / 2i / 0o | 64 |
@@ -270,7 +274,7 @@ Sorted by: kind, then alphabetically.
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 7v / 0i / 1o | 55 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
 | [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
-| [temple-beth-israel.yml](organization/temple-beth-israel.yml) | organization | Temple Beth Israel | 2 | 3v / 1i / 2o | 37 |
+| [temple-beth-israel.yml](organization/temple-beth-israel.yml) | organization | Temple Beth Israel | 2 | 4v / 1i / 2o | 44 |
 | [the-bluffton-news.yml](organization/the-bluffton-news.yml) | organization | The Bluffton News | 2 | 4v / 1i / 1o | 44 |
 | [the-lima-argus.yml](organization/the-lima-argus.yml) | organization | The Lima Argus | 2 | 2v / 1i / 1o | 40 |
 | [the-lima-citizen.yml](organization/the-lima-citizen.yml) | organization | The Lima Citizen | 2 | 5v / 1i / 1o | 40 |
@@ -353,6 +357,7 @@ Sorted by: kind, then alphabetically.
 | [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 1 | 4v / 2i / 1o | 34 |
 | [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 3v / 2i / 1o | 36 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
+| [peter-mccown.yml](person/peter-mccown.yml) | person | Peter McCown | 2 | 4v / 1i / 3o | 35 |
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
 | [randall-s-bartels.yml](person/randall-s-bartels.yml) | person | Randall S. Bartels | 2 | 2v / 1i / 1o | 21 |
@@ -363,7 +368,7 @@ Sorted by: kind, then alphabetically.
 | [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
 | [samuel-forrer.yml](person/samuel-forrer.yml) | person | Samuel Forrer | 3 | 4v / 0i / 1o | 40 |
 | [sharetta-t-smith.yml](person/sharetta-t-smith.yml) | person | Sharetta T. Smith | 2 | 2v / 1i / 1o | 22 |
-| [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 1v / 1i / 0o | 18 |
+| [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 2v / 1i / 0o | 26 |
 | [susan-manchester.yml](person/susan-manchester.yml) | person | Susan Manchester | 1 | 4v / 1i / 1o | 34 |
 | [tammie-k-hursh.yml](person/tammie-k-hursh.yml) | person | Tammie K. Hursh | 2 | 3v / 2i / 0o | 31 |
 | [terri-lynn-kohlrieser.yml](person/terri-lynn-kohlrieser.yml) | person | Terri Lynn Kohlrieser | 2 | 3v / 2i / 0o | 31 |
@@ -492,7 +497,7 @@ Sorted by: kind, then alphabetically.
 | [sheriff-1902-eugene-barr.yml](tenure/sheriff-1902-eugene-barr.yml) | tenure | Eugene Barr, Sheriff of Allen County, 1902–1906 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1906-henry-van-gunter.yml](tenure/sheriff-1906-henry-van-gunter.yml) | tenure | Henry Van Gunter, Sheriff of Allen County, 1906–1910 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1910-f-m-watt.yml](tenure/sheriff-1910-f-m-watt.yml) | tenure | F. M. Watt, Sheriff of Allen County, 1910–1914 | 3 | 1v / 0i / 0o | 22 |
-| [sheriff-1914-sherman-e-eley.yml](tenure/sheriff-1914-sherman-e-eley.yml) | tenure | Sherman E. Eley, Sheriff of Allen County, 1914–1918 | 3 | 1v / 0i / 0o | 22 |
+| [sheriff-1914-sherman-e-eley.yml](tenure/sheriff-1914-sherman-e-eley.yml) | tenure | Sherman E. Eley, Sheriff of Allen County, 1914–1918 | 3 | 2v / 0i / 0o | 30 |
 | [sheriff-1918-charles-w-baxter.yml](tenure/sheriff-1918-charles-w-baxter.yml) | tenure | Charles W. Baxter, Sheriff of Allen County, 1918–1923 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1923-harvey-b-crosson.yml](tenure/sheriff-1923-harvey-b-crosson.yml) | tenure | Harvey B. Crosson, Sheriff of Allen County, 1923–1927 | 3 | 1v / 0i / 0o | 22 |
 | [sheriff-1927-john-w-cook.yml](tenure/sheriff-1927-john-w-cook.yml) | tenure | John W. Cook, Sheriff of Allen County, 1927–1929 | 3 | 1v / 0i / 0o | 22 |
