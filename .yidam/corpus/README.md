@@ -34,6 +34,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 12v / 1i / 3o | 119 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 4v / 0i / 2o | 49 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
+| [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 6v / 2i / 2o | 53 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
 | [organization-of-the-town-of-lima-1842.yml](event/organization-of-the-town-of-lima-1842.yml) | event | The organization of the town of Lima | 3 | 6v / 0i / 1o | 53 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
@@ -57,7 +58,7 @@ Sorted by: kind, then alphabetically.
 | [bath-township.yml](jurisdiction/bath-township.yml) | jurisdiction | Bath Township (government) | 2 | 7v / 0i / 1o | 46 |
 | [bluffton-exempted-village-school-district.yml](jurisdiction/bluffton-exempted-village-school-district.yml) | jurisdiction | Bluffton Exempted Village School District | 6 | 5v / 0i / 1o | 61 |
 | [city-of-delphos.yml](jurisdiction/city-of-delphos.yml) | jurisdiction | City of Delphos | 2 | 5v / 1i / 2o | 51 |
-| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 8v / 4i / 3o | 90 |
+| [city-of-lima.yml](jurisdiction/city-of-lima.yml) | jurisdiction | City of Lima | 2 | 10v / 4i / 3o | 100 |
 | [columbus-grove-local-school-district.yml](jurisdiction/columbus-grove-local-school-district.yml) | jurisdiction | Columbus Grove Local School District | 3 | 4v / 0i / 1o | 44 |
 | [delphos-city-school-district.yml](jurisdiction/delphos-city-school-district.yml) | jurisdiction | Delphos City School District | 5 | 6v / 0i / 0o | 55 |
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 4v / 0i / 0o | 67 |
@@ -153,7 +154,8 @@ Sorted by: kind, then alphabetically.
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
 | [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 8v / 2i / 3o | 75 |
-| [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 5v / 4i / 2o | 91 |
+| [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 8v / 9i / 2o | 136 |
+| [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 6v / 3i / 1o | 75 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
 | [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 4v / 3i / 1o | 60 |
@@ -191,7 +193,7 @@ Sorted by: kind, then alphabetically.
 | [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 2v / 2i / 1o | 37 |
 | [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
 | [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
-| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 7v / 3i / 2o | 71 |
+| [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 11v / 3i / 2o | 99 |
 | [member-of-lima-city-council.yml](office/member-of-lima-city-council.yml) | office | Member of Lima City Council | 2 | 3v / 0i / 1o | 33 |
 | [member-of-the-ohio-house-for-district-78.yml](office/member-of-the-ohio-house-for-district-78.yml) | office | Member of the Ohio House of Representatives, 78th District | 2 | 2v / 1i / 1o | 31 |
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 2v / 2i / 1o | 30 |
@@ -248,8 +250,9 @@ Sorted by: kind, then alphabetically.
 | [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 22 |
 | [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 18 |
 | [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 18 |
+| [frank-a-burkhardt.yml](person/frank-a-burkhardt.yml) | person | Frank A. Burkhardt | 2 | 2v / 1i / 1o | 35 |
 | [george-w-overmyer.yml](person/george-w-overmyer.yml) | person | George W. Overmyer | 2 | 5v / 1i / 1o | 40 |
-| [h-s-prophet.yml](person/h-s-prophet.yml) | person | H. S. Prophet | 2 | 3v / 1i / 1o | 37 |
+| [h-s-prophet.yml](person/h-s-prophet.yml) | person | H. S. Prophet | 2 | 5v / 2i / 1o | 49 |
 | [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
 | [henry-d-v-williams.yml](person/henry-d-v-williams.yml) | person | Henry D. V. Williams | 2 | 3v / 1i / 1o | 36 |
 | [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 20 |
@@ -258,6 +261,7 @@ Sorted by: kind, then alphabetically.
 | [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 18 |
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
+| [james-b-townsend.yml](person/james-b-townsend.yml) | person | James B. Townsend | 2 | 5v / 2i / 1o | 52 |
 | [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 1 | 2v / 1i / 1o | 22 |
 | [james-g-link.yml](person/james-g-link.yml) | person | James G. Link | 2 | 2v / 1i / 1o | 22 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
@@ -289,7 +293,7 @@ Sorted by: kind, then alphabetically.
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
 | [randall-s-bartels.yml](person/randall-s-bartels.yml) | person | Randall S. Bartels | 2 | 2v / 1i / 1o | 21 |
 | [richard-metheany.yml](person/richard-metheany.yml) | person | Richard Metheany | 2 | 3v / 1i / 1o | 39 |
-| [samuel-a-baxter.yml](person/samuel-a-baxter.yml) | person | Samuel A. Baxter | 2 | 3v / 3i / 1o | 43 |
+| [samuel-a-baxter.yml](person/samuel-a-baxter.yml) | person | Samuel A. Baxter | 2 | 5v / 5i / 1o | 65 |
 | [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
 | [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
 | [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
@@ -388,8 +392,8 @@ Sorted by: kind, then alphabetically.
 | [mayor-1854-samuel-a-baxter.yml](tenure/mayor-1854-samuel-a-baxter.yml) | tenure | Samuel A. Baxter, Mayor of Lima, 1854-1856 | 3 | 2v / 1i / 0o | 30 |
 | [mayor-1869-george-w-overmyer.yml](tenure/mayor-1869-george-w-overmyer.yml) | tenure | George W. Overmyer, Mayor of Lima, 1869-1870 | 3 | 2v / 1i / 0o | 30 |
 | [mayor-1870-richard-metheany.yml](tenure/mayor-1870-richard-metheany.yml) | tenure | Richard Metheany, Mayor of Lima, 1870-1874 | 3 | 2v / 1i / 0o | 30 |
-| [mayor-1882-h-s-prophet.yml](tenure/mayor-1882-h-s-prophet.yml) | tenure | H. S. Prophet, Mayor of Lima, 1882-1884 | 3 | 3v / 0i / 0o | 31 |
-| [mayor-2025-sharetta-t-smith.yml](tenure/mayor-2025-sharetta-t-smith.yml) | tenure | Sharetta T. Smith, Mayor of Lima, term of 2025–2029 | 3 | 3v / 2i / 0o | 35 |
+| [mayor-1882-h-s-prophet.yml](tenure/mayor-1882-h-s-prophet.yml) | tenure | H. S. Prophet, Mayor of Lima, 1882-1884 | 3 | 4v / 0i / 0o | 36 |
+| [mayor-2025-sharetta-t-smith.yml](tenure/mayor-2025-sharetta-t-smith.yml) | tenure | Sharetta T. Smith, Mayor of Lima, term of 2025–2029 | 3 | 5v / 3i / 0o | 50 |
 | [municipal-2022-tammie-k-hursh.yml](tenure/municipal-2022-tammie-k-hursh.yml) | tenure | Tammie K. Hursh, Judge of the Lima Municipal Court, term of 2022–2027 | 3 | 1v / 2i / 0o | 27 |
 | [municipal-2024-john-richard-payne.yml](tenure/municipal-2024-john-richard-payne.yml) | tenure | John Richard Payne, Judge of the Lima Municipal Court, term of 2024–2029 | 3 | 1v / 2i / 0o | 27 |
 | [ohio-house-2025-matthew-c-huffman.yml](tenure/ohio-house-2025-matthew-c-huffman.yml) | tenure | Matthew C. Huffman, Member of the Ohio House of Representatives, 78th District, term of 2025–2026 | 3 | 1v / 2i / 1o | 29 |
