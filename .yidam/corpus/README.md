@@ -98,6 +98,7 @@ Sorted by: kind, then alphabetically.
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 6v / 0i / 0o | 50 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 9v / 4i / 1o | 132 |
+| [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 6v / 2i / 1o | 75 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
@@ -258,7 +259,7 @@ Sorted by: kind, then alphabetically.
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
-| [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 1v / 2i / 1o | 22 |
+| [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 2v / 2i / 1o | 27 |
 | [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 10v / 5i / 2o | 96 |
 | [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
@@ -272,7 +273,7 @@ Sorted by: kind, then alphabetically.
 | [cory-alan-noonan.yml](person/cory-alan-noonan.yml) | person | Cory Alan Noonan | 2 | 2v / 1i / 0o | 21 |
 | [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
 | [derry-l-glenn.yml](person/derry-l-glenn.yml) | person | Derry L. Glenn | 2 | 2v / 1i / 1o | 21 |
-| [destiny-rae-caldwell.yml](person/destiny-rae-caldwell.yml) | person | Destiny Rae Caldwell | 2 | 1v / 1i / 0o | 21 |
+| [destiny-rae-caldwell.yml](person/destiny-rae-caldwell.yml) | person | Destiny Rae Caldwell | 2 | 2v / 2i / 0o | 28 |
 | [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 2v / 1i / 1o | 26 |
 | [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 18 |
 | [elias-a-bogart.yml](person/elias-a-bogart.yml) | person | Elias A. Bogart | 2 | 1v / 1i / 0o | 18 |
@@ -291,31 +292,31 @@ Sorted by: kind, then alphabetically.
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
 | [james-b-townsend.yml](person/james-b-townsend.yml) | person | James B. Townsend | 2 | 5v / 2i / 1o | 52 |
-| [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 1 | 2v / 1i / 1o | 22 |
+| [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 1 | 4v / 1i / 1o | 34 |
 | [james-g-link.yml](person/james-g-link.yml) | person | James G. Link | 2 | 2v / 1i / 1o | 22 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
 | [jamie-lamar-dixon-jr.yml](person/jamie-lamar-dixon-jr.yml) | person | Jamie Lamar Dixon Jr. | 2 | 2v / 1i / 1o | 21 |
 | [jeannine-m-jordan.yml](person/jeannine-m-jordan.yml) | person | Jeannine M. Jordan | 2 | 2v / 1i / 2o | 21 |
-| [jeffrey-l-reed.yml](person/jeffrey-l-reed.yml) | person | Jeffrey L. Reed | 2 | 1v / 1i / 1o | 23 |
+| [jeffrey-l-reed.yml](person/jeffrey-l-reed.yml) | person | Jeffrey L. Reed | 2 | 3v / 2i / 0o | 31 |
 | [jennifer-moree-mcbride.yml](person/jennifer-moree-mcbride.yml) | person | Jennifer Moree McBride | 2 | 1v / 1i / 0o | 21 |
 | [jess-l-sarber.yml](person/jess-l-sarber.yml) | person | Jess L. Sarber | 2 | 4v / 2i / 1o | 43 |
 | [jesse-james-lowe-ii.yml](person/jesse-james-lowe-ii.yml) | person | Jesse James Lowe II | 2 | 2v / 1i / 1o | 21 |
 | [john-allen.yml](person/john-allen.yml) | person | John Allen | 2 | 0v / 1i / 1o | 27 |
 | [john-franks.yml](person/john-franks.yml) | person | John Franks | 2 | 2v / 1i / 0o | 26 |
 | [john-keller.yml](person/john-keller.yml) | person | John Keller | 2 | 2v / 1i / 0o | 20 |
-| [john-r-willamowski.yml](person/john-r-willamowski.yml) | person | John R. Willamowski | 1 | 2v / 1i / 1o | 23 |
-| [john-richard-payne.yml](person/john-richard-payne.yml) | person | John Richard Payne | 2 | 1v / 1i / 1o | 23 |
+| [john-r-willamowski.yml](person/john-r-willamowski.yml) | person | John R. Willamowski | 1 | 4v / 3i / 1o | 40 |
+| [john-richard-payne.yml](person/john-richard-payne.yml) | person | John Richard Payne | 2 | 3v / 2i / 0o | 31 |
 | [john-thomas-meyer.yml](person/john-thomas-meyer.yml) | person | John Thomas Meyer | 2 | 3v / 1i / 0o | 23 |
 | [john-w-cook.yml](person/john-w-cook.yml) | person | John W. Cook | 2 | 1v / 1i / 0o | 18 |
 | [jonathan-m-neeper.yml](person/jonathan-m-neeper.yml) | person | Jonathan M. Neeper | 2 | 2v / 1i / 1o | 21 |
-| [juergen-a-waldick.yml](person/juergen-a-waldick.yml) | person | Juergen A. Waldick | 1 | 2v / 1i / 1o | 23 |
+| [juergen-a-waldick.yml](person/juergen-a-waldick.yml) | person | Juergen A. Waldick | 1 | 4v / 3i / 1o | 40 |
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
-| [mark-c-miller.yml](person/mark-c-miller.yml) | person | Mark C. Miller | 1 | 2v / 1i / 1o | 23 |
+| [mark-c-miller.yml](person/mark-c-miller.yml) | person | Mark C. Miller | 1 | 4v / 3i / 1o | 40 |
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
-| [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 1v / 1i / 1o | 23 |
+| [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 3v / 2i / 0o | 31 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
-| [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 1 | 2v / 1i / 1o | 22 |
+| [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 1 | 4v / 2i / 1o | 34 |
 | [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 3v / 2i / 1o | 36 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
@@ -329,16 +330,16 @@ Sorted by: kind, then alphabetically.
 | [samuel-forrer.yml](person/samuel-forrer.yml) | person | Samuel Forrer | 3 | 4v / 0i / 1o | 40 |
 | [sharetta-t-smith.yml](person/sharetta-t-smith.yml) | person | Sharetta T. Smith | 2 | 2v / 1i / 1o | 22 |
 | [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 1v / 1i / 0o | 18 |
-| [susan-manchester.yml](person/susan-manchester.yml) | person | Susan Manchester | 1 | 2v / 1i / 1o | 22 |
-| [tammie-k-hursh.yml](person/tammie-k-hursh.yml) | person | Tammie K. Hursh | 2 | 1v / 1i / 1o | 23 |
-| [terri-lynn-kohlrieser.yml](person/terri-lynn-kohlrieser.yml) | person | Terri Lynn Kohlrieser | 2 | 1v / 1i / 1o | 23 |
+| [susan-manchester.yml](person/susan-manchester.yml) | person | Susan Manchester | 1 | 4v / 1i / 1o | 34 |
+| [tammie-k-hursh.yml](person/tammie-k-hursh.yml) | person | Tammie K. Hursh | 2 | 3v / 2i / 0o | 31 |
+| [terri-lynn-kohlrieser.yml](person/terri-lynn-kohlrieser.yml) | person | Terri Lynn Kohlrieser | 2 | 3v / 2i / 0o | 31 |
 | [thomas-michael-wa-jones.yml](person/thomas-michael-wa-jones.yml) | person | Thomas Michael Wa Jones | 2 | 1v / 2i / 1o | 22 |
-| [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 1v / 1i / 1o | 23 |
+| [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 3v / 2i / 0o | 31 |
 | [todd-gordon.yml](person/todd-gordon.yml) | person | Todd Gordon | 2 | 2v / 1i / 1o | 21 |
 | [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
 | [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
-| [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 2v / 1i / 1o | 23 |
+| [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 4v / 3i / 1o | 40 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
 | [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 2v / 1i / 1o | 20 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 3 | 16v / 7i / 2o | 162 |
@@ -347,9 +348,9 @@ Sorted by: kind, then alphabetically.
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 13v / 3i / 3o | 105 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 14v / 4i / 3o | 111 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 11v / 1i / 1o | 77 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 7v / 1i / 1o | 72 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 8v / 2i / 1o | 79 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 11v / 2i / 2o | 84 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
