@@ -48,8 +48,11 @@ Sorted by: kind, then alphabetically.
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 4v / 1i / 1o | 41 |
-| [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 3v / 2i / 1o | 41 |
+| [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 4v / 3i / 1o | 60 |
+| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 3v / 3i / 1o | 47 |
+| [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 6v / 4i / 1o | 55 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States buys the tank plant's ground | 3 | 3v / 2i / 3o | 56 |
+| [the-windstorm-of-22-june-2006.yml](event/the-windstorm-of-22-june-2006.yml) | event | The windstorm of 22 June 2006 | 3 | 7v / 3i / 1o | 62 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
 | [allen-county-educational-service-center.yml](jurisdiction/allen-county-educational-service-center.yml) | jurisdiction | Allen County Educational Service Center | 2 | 5v / 0i / 2o | 44 |
@@ -98,7 +101,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 3 | 5v / 4i / 0o | 71 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 5v / 3i / 1o | 62 |
-| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 5v / 4i / 1o | 74 |
+| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 7v / 4i / 1o | 89 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 8v / 1i / 0o | 63 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
@@ -149,7 +152,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2010-2023 | 3 | 7v / 1i / 1o | 69 |
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 3 | 5v / 3i / 0o | 65 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
+| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
+| [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 2 | 8v / 4i / 1o | 113 |
@@ -181,7 +186,7 @@ Sorted by: kind, then alphabetically.
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
 | [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
-| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 6v / 3i / 1o | 66 |
+| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 8v / 4i / 1o | 80 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 9v / 6i / 0o | 75 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 2 | 1v / 3i / 1o | 33 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 39 |
@@ -197,7 +202,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 8v / 3i / 1o | 60 |
 | [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 2v / 1i / 1o | 31 |
 | [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 3v / 1i / 1o | 36 |
-| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 5v / 2i / 0o | 59 |
+| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 6v / 3i / 1o | 67 |
 | [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 5v / 1i / 2o | 42 |
 | [clerk-of-the-lima-municipal-court.yml](office/clerk-of-the-lima-municipal-court.yml) | office | Clerk of the Lima Municipal Court | 2 | 2v / 0i / 1o | 28 |
 | [judge-of-the-common-pleas-domestic-relations-division.yml](office/judge-of-the-common-pleas-domestic-relations-division.yml) | office | Judge of the Court of Common Pleas, Domestic Relations Division | 2 | 2v / 2i / 1o | 30 |
@@ -331,17 +336,17 @@ Sorted by: kind, then alphabetically.
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 12v / 4i / 0o | 100 |
 | [auglaize-township.yml](place/auglaize-township.yml) | place | Auglaize Township | 3 | 11v / 2i / 1o | 85 |
 | [bath-township.yml](place/bath-township.yml) | place | Bath Township | 3 | 10v / 3i / 1o | 82 |
-| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 11v / 1i / 2o | 86 |
-| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 9v / 2i / 3o | 84 |
+| [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
+| [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 10v / 2i / 3o | 88 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 10v / 1i / 1o | 69 |
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 7v / 1i / 1o | 72 |
-| [elida.yml](place/elida.yml) | place | Elida | 4 | 10v / 2i / 1o | 78 |
+| [elida.yml](place/elida.yml) | place | Elida | 4 | 11v / 2i / 2o | 84 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 4v / 0i / 1o | 50 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 9v / 0i / 2o | 64 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 8v / 1i / 1o | 66 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 41v / 9i / 1o | 276 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 43v / 10i / 1o | 284 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 9v / 1i / 1o | 65 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
