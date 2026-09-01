@@ -1652,6 +1652,46 @@
       ]
     },
     {
+      "id": "place-allen-county::single-family-houses-authorized,-by-place",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "single-family houses authorized, by place",
+      "unit": "dwelling units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+          "label": "Where Allen County's new houses went, 1990–2025",
+          "as_of": "2025-12-31",
+          "value": 5437.0,
+          "published": "5437",
+          "tier": "verified",
+          "source": "catalog/census-building-permits.md",
+          "method": "Thirty-six annual Midwest place files, filtered to state FIPS 39 and county FIPS 003, giving 21 named places plus an \"Allen County Part\" row. Place names are stripped of the survey's footnote markers before matching, without which one place becomes several across the series. Value per house is a place's whole reported value over its whole reported units and is an average across years, not a figure for any year. The place rows total 5,437 single-family units against the county file's 5,429; the two are not reconciled here. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::single-family-houses-authorized-by-building-permit",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "single-family houses authorized by building permit",
+      "unit": "dwelling units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-building-permits-1990-2025.yml",
+          "label": "Allen County's residential building permits, 1990–2025",
+          "as_of": "2025-12-31",
+          "value": 5429.0,
+          "published": "5429",
+          "tier": "verified",
+          "source": "catalog/census-building-permits.md",
+          "method": "Thirty-six annual county files parsed on the row with state FIPS 39 and county FIPS 003. Units and value are summed across the four structure-size groups the survey publishes — 1-unit, 2-unit, 3-4 unit and 5+ unit — and the four sum to the file's own totals in every year, which is the check. Value is as reported, in the dollars of each year, and is never deflated or averaged across years. Decade averages are of the annual counts, not of a monthly series. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::tornadoes-recorded-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -6605,6 +6645,98 @@
           "label": "Hardin",
           "value": 30.8,
           "literal": "30.8"
+        }
+      ]
+    },
+    {
+      "id": "the-houses-went-where-the-city-is-not",
+      "statement": "Allen County authorized 5,437 new houses in thirty-six years and Lima, a third of the county, got 367 of them. Half went to the three townships that wrap around the city. The county lost 7,549 people over the same span and Lima lost 9,970, so the ground outside it gained.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+          "node_label": "Where Allen County's new houses went, 1990–2025",
+          "span": "**Lima holds a third of the county's people and got 367 of its 5,437 new houses — 6.8 per cent.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+          "node_label": "Where Allen County's new houses went, 1990–2025",
+          "span": "**Half of them went to the three townships that wrap around it.** American Township 1,098, Shawnee Township 981 and Bath Township 643 — 2,722 between them, 50.1 per cent of the county's new houses on ground that touches the city line.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+          "node_label": "Where Allen County's new houses went, 1990–2025",
+          "span": "**A new house in Shawnee Township was reported at $211,559 and one in Lima at $95,879.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-new-houses-by-place-1990-2025.yml",
+          "node_label": "Where Allen County's new houses went, 1990–2025",
+          "span": "**The county did not shrink. Lima did, and the ground around it grew.** Between 1990 and 2020 the county lost 7,549 people and Lima lost 9,970, which means everywhere else gained 2,421.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-building-permits-1990-2025.yml",
+          "node_label": "Allen County's residential building permits, 1990–2025",
+          "span": "**The county authorized 2,252 houses in the 1990s and 587 in the 2010s.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-building-permits-1990-2025.yml",
+          "node_label": "Allen County's residential building permits, 1990–2025",
+          "span": "**The peak is 2004 at 331 houses and the floor is 2011 at 35 — a fall of 89.4 per cent in seven years.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-building-permits-1990-2025.yml",
+          "node_label": "Allen County's residential building permits, 1990–2025",
+          "span": "**A permit is not a house and this node never treats it as one.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "American Twp",
+          "value": 1098.0,
+          "literal": "1,098"
+        },
+        {
+          "label": "Shawnee Twp",
+          "value": 981.0,
+          "literal": "981"
+        },
+        {
+          "label": "Bath Twp",
+          "value": 643.0,
+          "literal": "643"
+        },
+        {
+          "label": "Lima",
+          "value": 367.0,
+          "literal": "367"
         }
       ]
     },

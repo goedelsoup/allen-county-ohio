@@ -33,6 +33,20 @@ const bridges = assertion('not-one-state-bridge-is-in-poor-condition')
 const gauge = assertion('the-gauge-was-not-there')
 const drinks = assertion('the-city-drinks-from-the-river-nobody-measures')
 const named = assertion('a-county-column-is-a-filing-decision')
+const houses = assertion('the-houses-went-where-the-city-is-not')
+
+const housesSpec = bar(
+  houses.figures.map((f) => f.label),
+  houses.figures.map((f) => f.value),
+  { yTitle: 'Single-family houses authorized, 1990–2025', labelValues: true },
+)
+
+const permitDecades = [
+  ['1990–1999', 2252, 2941, '225.2'],
+  ['2000–2009', 1952, 2159, '195.2'],
+  ['2010–2019', 587, 1025, '58.7'],
+  ['2020–2025', 638, 844, '106.3'],
+]
 
 const namedSpec = bar(
   named.figures.map((f) => f.label),
@@ -461,6 +475,46 @@ const yieldSpec = bar(
       appears only as Deep Cut, classed Channel. And the gazetteer and the city of Lima do not agree
       about Lima's reservoirs: the city names six, the gazetteer carries four of them, has no
       Bresler anywhere in Ohio, and adds eight the city does not name.
+    </p>
+  </section>
+
+  <section>
+    <h2>The houses went where the city is not</h2>
+    <AssertionCard assertion={houses} />
+    <p>
+      Between 1990 and 2025 Allen County authorized 5,437 new single-family houses. Lima — a third
+      of the county's population — was issued 367 of them, 6.8 per cent. American Township took
+      1,098, Shawnee Township 981 and Bath Township 643: the three townships that wrap around the
+      city account for half of everything the county built in thirty-six years.
+    </p>
+    <ChartFigure
+      id="new-houses"
+      title="Single-family houses authorized, 1990–2025, the four busiest places"
+      caption="A permit is authorization to build, not a building. It says nothing about whether the work was done or whether anything was demolished to make room."
+      columns={['Place', 'Houses']}
+      rows={houses.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="new-houses" set:html={JSON.stringify(housesSpec)} is:inline />
+    <p>
+      The money follows the same line. A new house in Shawnee Township was reported to the permit
+      office at $211,559 and one in Lima at $95,879 — the city is the cheapest of the county's ten
+      busiest places to build in, by a factor of two against its southern neighbour. Lima is also
+      the only place in the county that builds apartments: 734 of the county's 774 dwellings in
+      buildings of five units or more were authorized inside it, and Delphos has the other forty.
+    </p>
+    <DataTable
+      title="Thirty-six years, four decades"
+      caption="Reported construction value across the whole span is $968,246,660, in the dollars of each year and not adjusted. Twenty-three of the thirty-six years contain no apartment building of five units or more at all."
+      columns={['Decade', 'Single-family', 'All dwellings', 'Houses a year']}
+      rows={permitDecades}
+    />
+    <p>
+      The peak year is 2004, at 331 houses, and the floor is 2011, at 35 — an 89.4 per cent fall in
+      seven years, and the recovery has not come close to reversing it. But the sharper number is
+      the one that pairs with the census. Between 1990 and 2020 the county lost 7,549 people and
+      Lima lost 9,970, which means the ground outside the city gained 2,421. Allen County's
+      depopulation is, over these thirty years, half relocation — and the permits say which half
+      mile it moved to.
     </p>
   </section>
 
