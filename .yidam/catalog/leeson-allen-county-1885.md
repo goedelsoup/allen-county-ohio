@@ -65,6 +65,7 @@ used-by:
   - ../corpus/person/george-w-overmyer.yml
   - ../corpus/person/h-s-prophet.yml
   - ../corpus/person/henry-d-v-williams.yml
+  - ../corpus/person/james-b-townsend.yml
   - ../corpus/person/john-franks.yml
   - ../corpus/person/richard-metheany.yml
   - ../corpus/person/samuel-a-baxter.yml

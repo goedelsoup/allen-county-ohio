@@ -16,6 +16,7 @@ location:
       Marked NOT_IN_COPYRIGHT. Volume II, the biographical volume, is indexed here but is not
       on archive.org and is not held.
 used-by:
+  - ../corpus/event/lima-adopts-commission-government-1922.yml
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/renaming-of-german-township-1918.yml
   - ../corpus/event/reorganization-of-1848.yml
@@ -24,16 +25,20 @@ used-by:
   - ../corpus/event/the-first-electric-car-in-lima-1886.yml
   - ../corpus/event/the-first-lima-company-1861.yml
   - ../corpus/event/the-first-railroad-reaches-allen-county.yml
+  - ../corpus/jurisdiction/city-of-lima.yml
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-interurban-1901-1921.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/allen-county-world-war-dead.yml
   - ../corpus/measure/allen-county-world-war-service.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
+  - ../corpus/measure/lima-mayors-1842-1886.yml
+  - ../corpus/measure/lima-mayors-1886-1922.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/measure/lima-street-railway-1878-1921.yml
   - ../corpus/natural-feature/auglaize-river.yml
+  - ../corpus/office/mayor-of-lima.yml
   - ../corpus/organization/gramm-bernstein-motor-truck-company.yml
   - ../corpus/organization/ohio-electric-railway.yml
   - ../corpus/organization/solar-refining-company.yml
@@ -44,8 +49,10 @@ used-by:
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/period/the-civil-war-in-allen-county.yml
   - ../corpus/period/the-world-war-in-allen-county.yml
+  - ../corpus/person/frank-a-burkhardt.yml
   - ../corpus/person/h-s-prophet.yml
   - ../corpus/person/james-a-hover.yml
+  - ../corpus/person/james-b-townsend.yml
   - ../corpus/person/samuel-a-baxter.yml
   - ../corpus/place/american-township.yml
   - ../corpus/place/auglaize-township.yml
