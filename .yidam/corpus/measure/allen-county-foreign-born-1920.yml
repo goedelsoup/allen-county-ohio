@@ -1,0 +1,70 @@
+class: measure
+label: Allen County's foreign-born, 1920
+description: |
+  Where the county's immigrants came from, counted by country, at the census the corpus has been
+  arguing about immigration without. [verified] —
+  [State Compendium, Ohio](../../catalog/census-1920-state-compendium-ohio.md), Table 12.
+
+  **2,753 foreign-born white residents, from twenty-one named countries and one residual.**
+
+      Germany         627      Wales           120      Sweden           30
+      Italy           312      Greece           90      Jugo-Slavia      26
+      Ireland         309      Hungary          88      Rumania          26
+      Canada          174      Poland           57      Lithuania        13
+      Switzerland     171      Scotland         57      Finland           8
+      England         167      Czechoslovakia   38      Syria             4
+      Austria         158      Russia          131      all other        85
+
+  [verified] — same table, whose twenty-two columns sum to 2,753, the total it prints.
+
+  **One person in six in this county was an immigrant or an immigrant's child.** 2,753 foreign-born
+  white, 4,422 native white of foreign parentage and 4,099 of mixed parentage — 11,274 of 68,223, or
+  16.5 per cent. In Lima it was 7,490 of 41,326, or 18.1 per cent. [inference] — computed from
+  [the 1920 race and nativity count](allen-county-population-by-race-1920.yml).
+
+  **In figures: 2,753 foreign-born of 68,223, and 11,274 of foreign or mixed stock — 4.0 per cent
+  and 16.5.** [inference] — the same computation.
+
+  **The largest group is the one the county had renamed a township to disown.** Germany sends 627,
+  more than twice the next country, and the census was taken two years after
+  [German Township became Marion](../event/renaming-of-german-township-1918.yml). [verified] — the
+  table above. The county also had a German-language weekly within living memory; see
+  [Der Lima Courier](../organization/der-lima-courier.yml).
+
+  **Two of the county's oldest communities are legible in the column of countries.** Switzerland
+  sends 171, and [Bluffton](../place/bluffton.yml) was settled by Swiss Mennonites; Wales sends 120,
+  and [Gomer](../place/gomer.yml) was a Welsh settlement whose first preaching was in 1838.
+  [inference] — the table read against those two nodes. Neither is a large number and both are
+  large for what they are: Ohio as a whole has 9,656 Swiss and 7,772 Welsh across 88 counties, so
+  Allen holds 1.8 per cent of the state's Swiss and 1.5 per cent of its Welsh on 1.2 per cent of its
+  people. [inference] — computed from the state row of the same table.
+
+  **The county's own historical society had no count of this and said so.** The 1921 history reports
+  that "as yet no papers are on file showing the foreign population of Allen County", in the same
+  paragraph that has its congressman opposing "indiscriminate immigration from Europe". [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md); see
+  [Benjamin F. Welty](../person/benjamin-f-welty.yml). The count existed. It had been taken the
+  year before, by the government he sat in.
+
+  [open] Every other census. This is one year, and the corpus holds no foreign-born count for the
+  county before 1920 or after it, so it cannot say whether 16.5 per cent was a peak, a decline or a
+  rise.
+properties:
+  parameter: foreign-born white population
+  value: "2,753"
+  unit: persons
+  as_of: "1920"
+  method: |
+    Read from a page image at 300 dpi. Table 12 splits the countries into two blocks, each of which
+    restarts at Adams County, so Allen's row had to be read from two pages three apart and rejoined;
+    the check that it was rejoined correctly is that the twenty-two figures sum to the printed total
+    of 2,753. Country names are the census's own for 1920 — Jugo-Slavia, Czechoslovakia and Syria
+    are as printed, and the countries they name had existed for two years, one year and none at all
+    as sovereign states. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1920-state-compendium-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
