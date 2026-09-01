@@ -2214,6 +2214,50 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-third-war-is-counted-by-its-dead",
+        statement: "One hundred and seventy-one men from Allen County died or were still missing \
+                    in the Army between May 1941 and January 1946 — one for every 429 people the \
+                    county held in 1940, and a third of them died away from combat. It is the \
+                    county's third named war and the first the corpus counts by its dead rather \
+                    than by its service.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+                "**One hundred and seventy-one men from Allen County died or were still missing in the Army of the\n  United States between 27 May 1941 and 31 January 1946.**"
+            ),
+            support!(
+                "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+                "**One in three of them did not die in battle.**"
+            ),
+            support!(
+                "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+                "**The six categories run 87 killed in action, 13 dead of wounds, 0 dead of injuries, 56 dead\n  non-battle, 14 declared dead under Public Law 490 and 1 still missing.**"
+            ),
+            support!(
+                "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+                "**Against the county's 73,303 people in 1940 that is one death for every 429.**"
+            ),
+            support!(
+                "measure/allen-county-world-war-ii-dead-1941-1946.yml",
+                "**The county here is the county of an address given at enlistment, not of a home and not of a\n  grave.**"
+            ),
+            support!(
+                "period/the-second-world-war-in-allen-county.yml",
+                "**The county's war began before the country's, and two independent sources say so.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Killed in action", value: 87.0, literal: "87" },
+            Figure { label: "Died, non-battle", value: 56.0, literal: "56" },
+            Figure { label: "Finding of death", value: 14.0, literal: "14" },
+            Figure { label: "Died of wounds", value: 13.0, literal: "13" },
+            Figure { label: "Missing", value: 1.0, literal: "1" },
+            Figure { label: "Died of injuries", value: 0.0, literal: "0" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",
