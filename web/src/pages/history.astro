@@ -19,6 +19,7 @@ const wentToWar = assertion('one-person-in-ten-went-to-war')
 const warDead = assertion('the-roster-never-totalled-its-own-dead')
 const corinth = assertion('more-died-at-corinth-than-anywhere')
 const trains = assertion('the-page-adds-up-and-the-forecast-does-not')
+const declared = assertion('ten-declarations-eight-incidents')
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
@@ -671,4 +672,45 @@ const since = new Date().getUTCFullYear() - last
       keeping in view when reading it.
     </p>
   </section>
+  <section>
+    <h2>The spine, and where it stopped</h2>
+    <p>
+      The table of dated events above is built from the corpus rather than typed here, and until
+      this phase it ended in 1955. Sixteen events, none in the last seventy-one years — in a county
+      for which this site holds annual manufacturing employment since 1969, fifty-seven dated
+      annexations, twenty-nine dated Register listings and the year every one of 364 bridges was
+      built. The record was never missing. Every event here had come out of a book, and nothing that
+      arrived as a dataset had ever been allowed to become one.
+    </p>
+    <AssertionCard assertion={declared} />
+    <p>
+      One API call moves the spine from 1955 to 2020. Ten federal disaster declarations name Allen
+      County: tornadoes in 1965, a blizzard in 1978, then nothing for twenty-six years, then severe
+      storms and flooding in 2004, 2005, 2007 and 2012, and COVID-19 in 2020. The rate looks like it
+      rose tenfold and almost certainly did not — a programme that changed its coverage and its
+      designation threshold is a likelier cause than north-west Ohio's weather changing by a factor
+      of ten, and nothing in the file separates them.
+    </p>
+    <p>
+      Two of the ten declarations brought Individual Assistance, which is money to households, in
+      1965 and 2007. The other eight brought Public Assistance, which is money to governments for
+      debris and public works. What a federal disaster has usually meant in this county is a bill to
+      the county.
+    </p>
+    <p>
+      Two of them are not what they look like. A county in north-west Ohio has a hurricane
+      declaration — EM-3250-OH, September 2005, "Hurricane Katrina Evacuation", which reimburses a
+      place for taking in people from somewhere else. And the longest incident in the county's
+      federal record ran 1,207 days: COVID-19, from 20 January 2020 to 11 May 2023, against
+      forty-one days for the longest of the other eight. The 2020 census was taken inside it.
+    </p>
+    <p>
+      Counting the rows would have got this wrong. The June 2012 storm produced an emergency
+      declaration on the 30th and a major disaster declaration seven weeks later for the same
+      four-day incident; COVID-19 produced two in eighteen days. Ten declarations, eight incidents.
+      And the incident dates before 2004 are not usable at all: the 1965 tornado and the 1978
+      blizzard are each recorded as beginning and ending on the day the declaration was signed.
+    </p>
+  </section>
+
 </Base>

@@ -522,6 +522,26 @@
       ]
     },
     {
+      "id": "place-allen-county::federal-disaster-and-emergency-declarations-naming-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "federal disaster and emergency declarations naming Allen County",
+      "unit": "declarations",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
+          "label": "Allen County's federal disaster declarations, 1965–2020",
+          "as_of": "2020",
+          "value": 10.0,
+          "published": "10",
+          "tier": "verified",
+          "source": "catalog/fema-disaster-declarations.md",
+          "method": "Fetched from the OpenFEMA v2 API filtered to `fipsStateCode` 39 and `fipsCountyCode` 003, and counted here. The `as_of` is the last declaration and not the query date: this file grows, and the figure is a count of what had happened by then. Distinct incidents are counted by grouping rows on the incident window, which merges 2012's pair and 2020's and separates the two of 2004 and 2005. Incident dates before 2004 are not usable — the 1965 and 1978 rows give an incident beginning and ending on the day the declaration was signed. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::highway-bridges-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -4812,6 +4832,52 @@
           "literal": "21.1"
         }
       ]
+    },
+    {
+      "id": "ten-declarations-eight-incidents",
+      "statement": "Allen County has been federally declared a disaster area ten times since 1965 for eight incidents, and only twice did the money reach households.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
+          "node_label": "Allen County's federal disaster declarations, 1965–2020",
+          "span": "**Ten declarations in fifty-five years, for eight distinct incidents.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/fema-disaster-declarations.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
+          "node_label": "Allen County's federal disaster declarations, 1965–2020",
+          "span": "**Two of the ten brought money to households.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/fema-disaster-declarations.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
+          "node_label": "Allen County's federal disaster declarations, 1965–2020",
+          "span": "**A county nine hundred miles from the Gulf has a hurricane declaration.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/fema-disaster-declarations.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
+          "node_label": "Allen County's federal disaster declarations, 1965–2020",
+          "span": "**The longest incident in the file is 1,207 days.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/fema-disaster-declarations.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
     },
     {
       "id": "an-address-is-not-a-municipality",

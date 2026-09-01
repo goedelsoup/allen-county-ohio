@@ -228,6 +228,68 @@
       "withheld": 2
     },
     {
+      "id": "event/allen-county-declared-for-covid-19-2020.yml",
+      "class": "event",
+      "label": "Allen County is declared for COVID-19, March 2020",
+      "tier": "inference",
+      "properties": {
+        "event_type": "disaster declaration",
+        "location_description": "Allen County. `occurred` is the earlier of the two declaration dates and `occurred_through` the end of the incident window both records give. [verified] — the same source.",
+        "occurred": "2020-03-13",
+        "occurred_through": "2023-05-11"
+      },
+      "blocks": [
+        {
+          "text": "**The most recent thing this corpus can date**, and the longest incident in the county's federal record by a factor of twenty-nine. Allen County was named in EM-3457-OH on 13 March 2020 and again in DR-4507-OH on 31 March 2020, both carrying an incident window from 20 January 2020 to 11 May 2023 — **1,207 days**, against forty-one for the longest of the county's other declarations. [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md); see [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two declarations, one incident.** The emergency declaration came eighteen days before the major disaster declaration, on identical incident dates. That is the same pattern as June 2012, where an emergency was declared on the 30th and a major disaster seven weeks later for one four-day storm. [verified] — same source. Counting rows here counts federal acts, not events in the world. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Neither carried Individual Assistance.** Both designated Public Assistance and the major disaster declaration added Hazard Mitigation. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the only event in this corpus that overlaps a census.** The 2020 census was taken inside this incident window, and the county's group-quarters counts, its housing occupancy and its population were all enumerated during it. [inference] — see [the group quarters](../measure/allen-county-group-quarters-2020.yml) and [the 2020 count](../measure/allen-county-population-2020-census.yml). The corpus does not assert that the enumeration was affected; it records that the two overlap, which is a thing a reader of those figures should know and could not otherwise learn here.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "The corpus does not assert that the enumeration was affected; it records that the two overlap, which is a thing a reader of those figures should know and could not otherwise learn here."
+      ],
+      "withheld": 1
+    },
+    {
+      "id": "event/allen-county-declared-for-hurricane-katrina-2005.yml",
+      "class": "event",
+      "label": "Allen County is declared for Hurricane Katrina, September 2005",
+      "tier": "inference",
+      "properties": {
+        "event_type": "disaster declaration",
+        "location_description": "Allen County. `occurred` is the declaration date; `occurred_through` is the end of the incident window the file gives, which for this record is a real window rather than a repeated declaration date. [verified] — the same source.",
+        "occurred": "2005-09-13",
+        "occurred_through": "2005-10-01"
+      },
+      "blocks": [
+        {
+          "text": "**A county in north-west Ohio has a hurricane declaration.** On 13 September 2005 Allen County was named in EM-3250-OH, \"Hurricane Katrina Evacuation\", with Public Assistance designated and an incident window running 29 August to 1 October 2005. [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What was declared was the sheltering, not the storm.** An evacuation declaration reimburses a state and its local governments for taking in people from somewhere else; the hazard is nine hundred miles away and the cost is here. [inference] This is the only one of the county's ten declarations whose incident did not happen in Ohio. [verified] — same source; see [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It carried no Individual Assistance**, which is the ordinary shape here: eight of the county's ten declarations paid governments and two paid households. [verified] — same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/allen-county-jail-raid-1933.yml",
       "class": "event",
       "label": "The raid on the Allen County jail",
@@ -784,6 +846,37 @@
       "withheld": 1
     },
     {
+      "id": "event/the-tornadoes-of-april-1965.yml",
+      "class": "event",
+      "label": "The tornado declaration of April 1965",
+      "tier": "inference",
+      "properties": {
+        "event_type": "disaster declaration",
+        "location_description": "Allen County, as the declaration's `designatedArea` names it. The declaration is county-wide and says nothing about where within the county anything happened. [verified] — the same source.",
+        "occurred": "1965-04-14"
+      },
+      "blocks": [
+        {
+          "text": "**The first thing this corpus can date in Allen County after 1955**, and it arrived in a table rather than in a book. On 14 April 1965 the county was named in federal disaster declaration DR-191-OH, \"Tornadoes & Severe Storms\", with both Individual and Public Assistance designated. [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is one of only two declarations in fifty-five years that brought money to households here.** The other is 2007. [verified] — same source; see [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The date is the declaration's, and the storm's is not in this file.** The record gives an incident beginning and ending on 14 April 1965, which is also the day the declaration was signed and the day the request was made. A tornado outbreak severe enough to bring federal aid to households did not last zero days; the field was filled with the declaration date, as it was for the 1978 blizzard. [inference] — see [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**So the corpus dates the declaration and not the weather.** `occurred` below is 14 April 1965 because that is what the source establishes: a presidential act naming this county. What the sky did, and when, is not held here. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/the-united-states-buys-the-tank-plant-ground-1951.yml",
       "class": "event",
       "label": "The United States buys the tank plant's ground",
@@ -940,6 +1033,10 @@
         },
         {
           "text": "**What that reading found is a fact about this county's government and not about its townships.** Two hundred and eleven people hold elective office over ground in Allen County, and thirty-nine of the hundred and sixty-six local ones were appointed to the seat rather than elected to it — none of them in this government, twenty-five of them in the seven villages. [verified] — [the seat count](../measure/allen-county-elected-seats-2026.yml). Every one of the twenty-two county offices and judgeships is filled, and filled by election.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eight of the county's ten federal disaster declarations designated Public Assistance**, which is aid to state and local governments for debris removal and the repair of public works, and only two designated Individual Assistance. What a federal disaster has usually meant here is a bill to this body rather than a cheque to a household. [verified] — [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml); see [Katrina](../event/allen-county-declared-for-hurricane-katrina-2005.yml) and [COVID-19](../event/allen-county-declared-for-covid-19-2020.yml).",
           "tier": "verified"
         }
       ],
@@ -2667,6 +2764,47 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-disaster-declarations-1965-2020.yml",
+      "class": "measure",
+      "label": "Allen County's federal disaster declarations, 1965–2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2020",
+        "method": "Fetched from the OpenFEMA v2 API filtered to `fipsStateCode` 39 and `fipsCountyCode` 003, and counted here. The `as_of` is the last declaration and not the query date: this file grows, and the figure is a count of what had happened by then. Distinct incidents are counted by grouping rows on the incident window, which merges 2012's pair and 2020's and separates the two of 2004 and 2005. Incident dates before 2004 are not usable — the 1965 and 1978 rows give an incident beginning and ending on the day the declaration was signed. [inference]",
+        "parameter": "federal disaster and emergency declarations naming Allen County",
+        "unit": "declarations",
+        "value": "10"
+      },
+      "blocks": [
+        {
+          "text": "**Ten declarations in fifty-five years, for eight distinct incidents.** [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md), disaster declarations summaries, Ohio county 003.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Counting declarations is not counting disasters.** The June 2012 storm produced an emergency declaration on 30 June and a major disaster declaration on 20 August, seven weeks apart, for the same four-day incident window; COVID-19 produced two in eighteen days. Ten rows, eight incidents. [inference] — computed here from the incident windows.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two of the ten brought money to households.** Individual Assistance was designated in 1965 and in 2007 and in no other year; eight of the ten carried Public Assistance, which is aid to governments for debris and public works. [verified] — same source. **What a federal disaster usually means in this county is a bill to the county, not a cheque to a family.** [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A county nine hundred miles from the Gulf has a hurricane declaration.** EM-3250-OH, 13 September 2005, \"Hurricane Katrina evacuation\" — Public Assistance for a county that took in people. [verified] — same source; see [the Katrina declaration](../event/allen-county-declared-for-hurricane-katrina-2005.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The rate looks like it rose tenfold and almost certainly did not.** Two declarations in the thirty-nine years to 2004 and eight in the sixteen after. A programme that changed its coverage, its designation threshold and its politics is a likelier cause than weather changing by a factor of ten, and nothing in this file separates them. [inference] The corpus records the count and refuses the trend.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The longest incident in the file is 1,207 days.** COVID-19 ran from 20 January 2020 to 11 May 2023 on both its rows; the longest of the other eight is forty-one days. [verified] — same source, computed here.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-domestic-animals-1910.yml",
       "class": "measure",
       "label": "Allen County domestic animals, on farms and off, 1910",
@@ -4066,7 +4204,7 @@
       "id": "measure/allen-county-population-2020-census.yml",
       "class": "measure",
       "label": "Allen County population, 2020 census",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2020-04-01",
         "method": "Sum of block-level `POP100` from the 2020 Census redistricting file, as served by TIGERweb. Not a modelled figure and not subject to later revision. [verified]",
@@ -4082,9 +4220,15 @@
         {
           "text": "The figure is a sum and not a published total, so it carries the sum's own check: the Allen County portions of the twelve school districts covering the county also sum to 102,206, from a different partition of the same blocks. [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).",
           "tier": "verified"
+        },
+        {
+          "text": "**This count was taken inside a federally declared disaster.** The COVID-19 incident window for Allen County runs 20 January 2020 to 11 May 2023, and Census Day is 1 April 2020. [verified] — [the COVID-19 declaration](../event/allen-county-declared-for-covid-19-2020.yml). The corpus does not assert that the enumeration was affected — nothing held here would establish it — and records the overlap because a reader of this figure should know it and could not otherwise learn it here. [inference]",
+          "tier": "inference"
         }
       ],
-      "refusals": [],
+      "refusals": [
+        "The corpus does not assert that the enumeration was affected — nothing held here would establish it — and records the overlap because a reader of this figure should know it and could not otherwise learn it here."
+      ],
       "withheld": 1
     },
     {
@@ -9746,6 +9890,10 @@
         {
           "text": "**It is small enough to be invisible in the county's own total area**, which is 406.88 square miles in the 2000 volume, 406.85 in the 2010 one and 406.851 in the 2020 gazetteer — three hundredths of a square mile across twenty years and a boundary change. The *land* figure in the same three sources reads 404.43, 402.50 and 402.545, a fall of more than twelve hundred acres in a county that gained ground. [verified] — the same volumes and [the 2020 gazetteer](../../catalog/census-gazetteer-2020.md). What moved was the line between land and water on a map, not the line around the county; see [the control is the figure that cannot move](../../decisions/the-control-is-the-figure-that-cannot-move.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**It has been named in ten federal disaster declarations since 1965**, for eight distinct incidents — tornadoes, a blizzard, four rounds of severe storms and flooding, an evacuation from a hurricane nine hundred miles away, and a pandemic. Two of the ten brought money to households. [verified] — [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -14036,6 +14184,34 @@
       "source": "catalog/tigerweb-census2020.md"
     },
     {
+      "from": "event/allen-county-declared-for-covid-19-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/fema-disaster-declarations.md"
+    },
+    {
+      "from": "event/allen-county-declared-for-covid-19-2020.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/fema-disaster-declarations.md"
+    },
+    {
+      "from": "event/allen-county-declared-for-hurricane-katrina-2005.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/fema-disaster-declarations.md"
+    },
+    {
+      "from": "event/allen-county-declared-for-hurricane-katrina-2005.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/fema-disaster-declarations.md"
+    },
+    {
       "from": "event/allen-county-jail-raid-1933.yml",
       "to": "place/lima.yml",
       "relationship": "occurred-in",
@@ -14258,6 +14434,13 @@
       "relationship": "affected",
       "tier": "verified",
       "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "event/the-tornadoes-of-april-1965.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/fema-disaster-declarations.md"
     },
     {
       "from": "event/the-united-states-buys-the-tank-plant-ground-1951.yml",
@@ -14923,6 +15106,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/usda-census-of-agriculture.md"
+    },
+    {
+      "from": "measure/allen-county-disaster-declarations-1965-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fema-disaster-declarations.md"
     },
     {
       "from": "measure/allen-county-domestic-animals-1910.yml",
