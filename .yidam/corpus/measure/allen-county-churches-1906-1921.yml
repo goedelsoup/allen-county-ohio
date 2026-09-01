@@ -1,0 +1,87 @@
+class: measure
+label: Allen County's churches, 1906 and 1921
+description: |
+  What the county's two twentieth-century histories counted, and the one county-wide religious
+  figure either of them prints.
+
+  **A survey in about 1920 put the county's church-going at a quarter of its people and its
+  communicants at something like seventeen thousand.** "The survey has shown the overlapped church
+  parish both in town and country, the majority of people in the towns passing other churches to
+  reach their own, and since only about 25 per cent of the population attends church there are
+  something like 17,000 communicants in Allen County." [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), which
+  attributes it to "the National, State and County Religious Survey".
+
+  **The book's arithmetic checks against the census.** The county held 68,203 people in 1920 and
+  17,000 is 24.9 per cent of them. [inference] — computed against
+  [the 1910–1940 counts](allen-county-population-1940-1990.yml). The estimate is at least internally
+  consistent, which is more than a round number in a county history usually is.
+
+  **It is not comparable with the 2020 figure and the corpus does not trend the two.** 1921 counts
+  people who attend; 2020 counts people a religious body reports as adherents, including children
+  in bodies that count them. Twenty-five per cent and 57.4 per cent are answers to different
+  questions asked a century apart. [inference] — see
+  [the congregations of 2020](allen-county-congregations-2020.yml) and
+  [the control is the figure that cannot move](../../decisions/the-control-is-the-figure-that-cannot-move.yml).
+
+  **Bluffton in 1906 had eight congregations and the book counted every member.** [verified] —
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), which calls the
+  village "a village of churches". In order: Methodist Episcopal 180, German Reformed 150, Church of
+  Christ 113, Presbyterian 58, St. Mary's Catholic 50, Evangelical Lutheran 45, and the Mennonite
+  Church of Bluffton 31 — then the Swiss Mennonite Church, "embracing St. John's and Ebenezer
+  congregations as well as the one of Bluffton", with 640.
+
+  **The Swiss Mennonite figure is not a Bluffton figure and the corpus does not add it in.** It is
+  a total for three congregations — St. John's, Ebenezer and the Bluffton one — and only the third
+  is in the village. The seven village congregations come to 627 between them, against a village of
+  1,783 in 1900 and 1,953 in 1910; the Swiss Mennonite 640 would nearly double that and would be
+  counting the surrounding country. [inference] — computed against
+  [the 1890–1910 divisions](allen-county-townships-1890-1910.yml). Membership rolls in a farming
+  township reach past the corporation line, and no figure here is a share of a place.
+
+  **Trinity Methodist's cornerstone dates the county seat's oldest congregation in six figures.**
+  "In 1829 there was a mission; in 1832 there was a church organization; in 1835 there was a mission
+  house, and in 1852 there was a church; in 1872 there was a second church, and in 1910 the present
+  magnificent edifice." [verified] — the 1921 history, quoting the stone. Its own text dates the
+  dedication of that edifice to 17 March 1912, so the stone and the page disagree by two years.
+
+  **The 1921 book makes two claims about Trinity that it does not source and this corpus does not
+  adopt.** That it is "said to be the seventh largest Methodist Church in the world", and that its
+  home missionary society of 800 members is "said to be the largest similar organization in the
+  world". Its membership is given as 2,000. [verified] — same source, quoted with its hedges intact.
+
+  **Lima's synagogue was built in 1914.** "Temple Beth Israel, the Jewish Synagogue in Lima, was
+  erected in 1914 — the Jewish year 5674 — and over the door is this inscription: 'Mine House of
+  Prayer for All Peoples.'" [verified] — same source. See
+  [Temple Beth Israel](../organization/temple-beth-israel.yml).
+
+  **By 1870 the denominational map was set.** "In the first half-century about all the denominations
+  were planted in Allen County that are here today — 1870 being considered the semi-centennial in
+  local history." [verified] — same source.
+
+  [open] Whether a full return of the "National, State and County Religious Survey" for this county
+  survives anywhere. The 1921 book quotes one sentence of its conclusions and prints none of its
+  tables, and the federal Census of Religious Bodies for 1916, 1926 and 1936 would answer the same
+  question independently and is not held here.
+properties:
+  parameter: communicants in Allen County
+  value: "17000"
+  unit: communicants
+  as_of: "1920"
+  method: |
+    Read from the full text of the 1906 and 1921 county histories on archive.org. The 1921 figure is
+    the book's own report of a survey it does not name a date for; the corpus dates it 1920 from the
+    population it implies and marks that an inference. Bluffton's memberships are transcribed as the
+    1906 book prints them and are not summed into any county total, because no comparable count
+    exists for the rest of the county in either book. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/rusler-allen-county-1921.md
+  - target: ../place/bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
