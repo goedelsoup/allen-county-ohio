@@ -1,0 +1,90 @@
+class: measure
+label: Lima manufactures, 1914–1929
+description: |
+  Three more censuses of the city's factories, taken from the state volume of each. [verified] —
+  [Census of Manufactures, Ohio, 1919 and 1929](../../catalog/census-of-manufactures-1919-1929.md).
+
+      census   establishments   wage earners   value of products   minimum size
+      1899                  -          1,980          $6,222,432   $500, hand trades included
+      1904                  -          2,733          $4,827,556   $500
+      1909                 85          3,607          $7,753,877   $500
+      1914                 97          4,876         $11,598,580   $500
+      1919                108          4,901         $23,638,764   $500
+      1929                 72          4,548         $29,595,853   $5,000
+
+  [verified] — the 1919 and 1929 volumes for the last three rows and
+  [the 1910 supplement](../../catalog/census-1910-abstract-supplement-ohio.md) for the first three;
+  see [the city's first three censuses](lima-manufactures-1899-1909.yml).
+
+  **Lima's factory workforce grew by 146 per cent in the fifteen years to 1914 and by twenty-five
+  people in the five years after it.** 1,980 wage earners in 1899, 4,876 in 1914, 4,901 in 1919.
+  [verified] —
+  [the 1919 volume](../../catalog/census-of-manufactures-1919-1929.md), Table 14. By 1929 it was
+  4,548, which is 328 fewer than in 1914 and is the last figure this corpus holds before the
+  Depression. [verified] — the 1929 volume, Table 2.
+
+  **In figures: 1980 in 1899, 2733 in 1904, 3607 in 1909, 4876 in 1914, 4901 in 1919 and 4548 in
+  1929.** [verified] —
+  [the two volumes](../../catalog/census-of-manufactures-1919-1929.md) and
+  [the 1910 supplement](../../catalog/census-1910-abstract-supplement-ohio.md).
+
+  **The five years the war ran across produced no growth in the number of people employed and a
+  doubling of what they were paid for.** Value of products went from $11,598,580 to $23,638,764,
+  and wage earners from 4,876 to 4,901. [verified] —
+  [the 1919 volume](../../catalog/census-of-manufactures-1919-1929.md), Table 14. The 1919 census
+  was taken for the calendar year after the armistice and at 1919 prices, so most of that doubling
+  is the price level and the date is past the war's peak. [inference] — stated here as a limit on
+  the comparison rather than as a measurement of prices, which this corpus does not hold.
+
+  **A third of the city's establishments appear to vanish in the 1920s and about half of that is a
+  definition.** 108 in 1919 against 72 in 1929. The censuses through 1919 collected from every
+  establishment with products of $500 or more; the biennial censuses from 1921 collected only from
+  those with $5,000 or more, and the Bureau puts the effect of that change at a 21.6 per cent
+  reduction in establishments nationally. [verified] —
+  [the 1929 volume's General Explanations](../../catalog/census-of-manufactures-1919-1929.md),
+  section 13. Applying that rate to 1919 gives about 85 comparable establishments against 72, a
+  fall of a seventh rather than a third. [inference] — computed here; see
+  [two volumes are not one series](../../decisions/two-volumes-are-not-one-series.yml).
+
+  **The wage-earner column survives the same change and that is why it is the series this node
+  leads with.** The Bureau reports that establishments above the $5,000 line held 99.4 per cent of
+  all wage earners and 99.7 per cent of the value of products at the census where it measured the
+  break. [verified] — same section.
+
+  **Two out of five establishments were corporations and they held nine in ten of the jobs.** In
+  1919, 48 of Lima's 108 establishments were owned by corporations, and those 48 employed 4,432 of
+  the 4,901 wage earners and made $21,817,237 of the $23,638,764. In 1914 it was 42 of 97, holding
+  4,619 of 4,876 and $10,826,368 of $11,598,580. [verified] —
+  [the 1919 volume](../../catalog/census-of-manufactures-1919-1929.md), Table 14, whose three
+  ownership columns sum to each printed total.
+
+  **The city's factory workforce tracked its population almost exactly across the whole period.**
+  3,607 wage earners against 30,508 residents in 1909–10, 4,901 against 41,326 in 1919–20, 4,548
+  against 42,287 in 1929–30 — 11.8, 11.9 and 10.8 wage earners for every hundred people.
+  [inference] — computed against [Lima](../place/lima.yml).
+
+  [open] 1931 to 1969. Forty years, containing the Depression, the war plants and the beginning of
+  the fall, and no volume covering them was found on the publisher's site.
+properties:
+  parameter: manufacturing wage earners, city of Lima
+  value: "4548"
+  unit: wage earners
+  as_of: "1929"
+  method: |
+    Read from page images at 300 dpi; neither volume has a text layer. The 1919 figures are the
+    printed totals of Table 14 and were confirmed by adding its three ownership columns, which come
+    to the printed total in every row taken. The 1929 figures are from Table 2, whose cost and
+    value columns close the identity the volume defines for value added. Establishment counts are
+    not comparable across 1919 and 1929 and the reason is stated above rather than adjusted for.
+    [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-of-manufactures-1919-1929.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-of-manufactures-1919-1929.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
