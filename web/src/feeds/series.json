@@ -1202,6 +1202,26 @@
       ]
     },
     {
+      "id": "place-allen-county::persons-admitted-in-Ohio-with-an-Allen-County-address-of-record",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "persons admitted in Ohio with an Allen County address of record",
+      "unit": "registrants",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-attorney-register-2026.yml",
+          "label": "The Allen County roll of Ohio attorneys, 1925–2026",
+          "as_of": "2026-09-01",
+          "value": 334.0,
+          "published": "334",
+          "tier": "verified",
+          "source": "catalog/ohio-attorney-directory.md",
+          "method": "One POST to the directory's `Ajax.ashx` with `county=Allen` and every other field empty. The response carried `TooManyResults: false`, so the 334 rows are the whole answer at the 1,000-row cap rather than a truncation. The county filter is a substring match and is not scoped to a state; the same query with `state=IN` returns zero rows, which is how these were confirmed to be Ohio addresses and not Fort Wayne's. Counts by status, by decade and by admitted-by are tallies of those rows and nothing is estimated. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::population-by-race-(B02001)-and-Hispanic-origin-(B03003)",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -5580,6 +5600,119 @@
         "This does not establish that these seats go unfilled because nobody stands for them."
       ],
       "figures": []
+    },
+    {
+      "id": "the-register-dates-them-but-cannot-place-them",
+      "statement": "Every judge who sits in Allen County is an Ohio attorney admitted by examination, and the register that proves it cannot say where any of them lives. Its county is the county of a business address, and it holds a hundred-year roll of 334 people of whom 144 may still practise.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-attorney-register-2026.yml",
+          "node_label": "The Allen County roll of Ohio attorneys, 1925–2026",
+          "span": "**Three hundred and thirty-four people have given the Supreme Court of Ohio an address of record in Allen County, and one hundred and forty-four of them may practice law.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-attorney-directory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-attorney-register-2026.yml",
+          "node_label": "The Allen County roll of Ohio attorneys, 1925–2026",
+          "span": "**Thirteen of the 334 are officers this corpus already names.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-attorney-register-2026.yml",
+          "node_label": "The Allen County roll of Ohio attorneys, 1925–2026",
+          "span": "**The county in this register is the county of a business address.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-attorney-register-2026.yml",
+          "node_label": "The Allen County roll of Ohio attorneys, 1925–2026",
+          "span": "**The eleven decade totals are 20, 23, 24, 23, 26, 44, 46, 42, 23, 41 and 21, and the active column beside them is 0, 0, 0, 0, 2, 10, 26, 28, 21, 36 and 21.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-attorney-directory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-attorney-register-2026.yml",
+          "node_label": "The Allen County roll of Ohio attorneys, 1925–2026",
+          "span": "**The count is a floor, and the county's own geography is what shows it.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/ohio-boe-elected-officials-allen.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say from it where any of the thirteen lives."
+      ],
+      "figures": [
+        {
+          "label": "1920s",
+          "value": 20.0,
+          "literal": "20"
+        },
+        {
+          "label": "1930s",
+          "value": 23.0,
+          "literal": "23"
+        },
+        {
+          "label": "1940s",
+          "value": 24.0,
+          "literal": "24"
+        },
+        {
+          "label": "1950s",
+          "value": 23.0,
+          "literal": "23"
+        },
+        {
+          "label": "1960s",
+          "value": 26.0,
+          "literal": "26"
+        },
+        {
+          "label": "1970s",
+          "value": 44.0,
+          "literal": "44"
+        },
+        {
+          "label": "1980s",
+          "value": 46.0,
+          "literal": "46"
+        },
+        {
+          "label": "1990s",
+          "value": 42.0,
+          "literal": "42"
+        },
+        {
+          "label": "2000s",
+          "value": 23.0,
+          "literal": "23"
+        },
+        {
+          "label": "2010s",
+          "value": 41.0,
+          "literal": "41"
+        },
+        {
+          "label": "2020s",
+          "value": 21.0,
+          "literal": "21"
+        }
+      ]
     },
     {
       "id": "an-address-is-not-a-municipality",

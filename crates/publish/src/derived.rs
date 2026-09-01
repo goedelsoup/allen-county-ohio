@@ -2046,6 +2046,50 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-register-dates-them-but-cannot-place-them",
+        statement: "Every judge who sits in Allen County is an Ohio attorney admitted by \
+                    examination, and the register that proves it cannot say where any of them \
+                    lives. Its county is the county of a business address, and it holds a \
+                    hundred-year roll of 334 people of whom 144 may still practise.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-attorney-register-2026.yml",
+                "**Three hundred and thirty-four people have given the Supreme Court of Ohio an address of record\n  in Allen County, and one hundred and forty-four of them may practice law.**"
+            ),
+            support!(
+                "measure/allen-county-attorney-register-2026.yml",
+                "**Thirteen of the 334 are officers this corpus already names.**"
+            ),
+            support!(
+                "measure/allen-county-attorney-register-2026.yml",
+                "**The county in this register is the county of a business address.**"
+            ),
+            support!(
+                "measure/allen-county-attorney-register-2026.yml",
+                "**The eleven decade totals are 20, 23, 24, 23, 26, 44, 46, 42, 23, 41 and 21, and the active\n  column beside them is 0, 0, 0, 0, 2, 10, 26, 28, 21, 36 and 21.**"
+            ),
+            support!(
+                "measure/allen-county-attorney-register-2026.yml",
+                "**The count is a floor, and the county's own geography is what shows it.**"
+            ),
+        ],
+        answers: &["This corpus cannot say from it where any of the thirteen lives."],
+        figures: &[
+            Figure { label: "1920s", value: 20.0, literal: "20" },
+            Figure { label: "1930s", value: 23.0, literal: "23" },
+            Figure { label: "1940s", value: 24.0, literal: "24" },
+            Figure { label: "1950s", value: 23.0, literal: "23" },
+            Figure { label: "1960s", value: 26.0, literal: "26" },
+            Figure { label: "1970s", value: 44.0, literal: "44" },
+            Figure { label: "1980s", value: 46.0, literal: "46" },
+            Figure { label: "1990s", value: 42.0, literal: "42" },
+            Figure { label: "2000s", value: 23.0, literal: "23" },
+            Figure { label: "2010s", value: 41.0, literal: "41" },
+            Figure { label: "2020s", value: 21.0, literal: "21" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

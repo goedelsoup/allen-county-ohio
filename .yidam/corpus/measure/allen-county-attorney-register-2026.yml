@@ -1,0 +1,111 @@
+class: measure
+label: The Allen County roll of Ohio attorneys, 1925–2026
+description: |
+  **Three hundred and thirty-four people have given the Supreme Court of Ohio an address of record
+  in Allen County, and one hundred and forty-four of them may practice law.** [verified] —
+  [the attorney directory](../../catalog/ohio-attorney-directory.md), queried by county on
+  1 September 2026 and returned complete rather than capped.
+
+      status         count   what the Court says it means
+      Active           144   may practice law in Ohio
+      Not Required     139   "not required to register ... for a variety of reasons"
+      Inactive          43   may not practice or hold themselves out as able to
+      Retired            8   65 or older at registration; status abolished 1 September 2007
+      -----------------------
+      total            334
+
+  **This is a roll and not a bar.** It is cumulative, never purged, and its admissions run from
+  6 January 1925 to 17 November 2025 — a hundred years and eleven months. [verified] — same source.
+  Nothing in it marks a person as dead, and it is not a list of the lawyers now working in this
+  county: it is a list of the addresses on file.
+
+  **The century shows in the statuses, and every registrant admitted before 1940 is in the same
+  one.** All sixty-three of them are `Not Required`, and no `Active` registrant here was admitted
+  before 1966. [verified] — same source, counted here.
+
+      decade of admission   1920s 1930s 1940s 1950s 1960s 1970s 1980s 1990s 2000s 2010s 2020s
+      all statuses             20    23    24    23    26    44    46    42    23    41    21
+      of those, Active          0     0     0     0     2    10    26    28    21    36    21
+
+  **The eleven decade totals are 20, 23, 24, 23, 26, 44, 46, 42, 23, 41 and 21, and the active
+  column beside them is 0, 0, 0, 0, 2, 10, 26, 28, 21, 36 and 21.** [verified] — same source,
+  counted here.
+
+  **The eight Retired are a closed class with a date on it.** Every one was admitted between 1943
+  and 1962, and the Court stopped offering the status on 1 September 2007, so no ninth can ever be
+  added. [inference] — the admission years are the source's; the closure is the source's; that no
+  ninth can join follows from the two.
+
+  **`Not Required` is the second-largest category and the Court will not say what it is.** Its
+  definition in the source is "for a variety of reasons ... please contact the Office of Attorney
+  Services". It cannot be read as "deceased": four of the 138 dated ones were admitted since 2000,
+  and one is a 2017 admission. [verified] — same source. The corpus records the count and declines
+  to name the reasons.
+
+  **Three hundred and twenty-five of the 334 were admitted by examination.** Seven came in by
+  motion, one by transfer of a Uniform Bar Examination score, and one carries `Not Admitted` with
+  no admission date at all. [verified] — same source.
+
+  **Admission is a ceremony, so the dates repeat.** The 333 dated admissions fall on 166 distinct
+  days, and three days carry six of these registrants each — 3 November 1973, 4 November 1985 and
+  6 November 1989. [verified] — same source, counted here. A shared admission date is therefore no
+  evidence at all that two people are connected.
+
+  **The registration number is an identifier and not a sequence.** They run from 774 to 106164, and
+  sorting the 333 dated registrants by admission date leaves 133 of the 332 adjacent pairs with a
+  higher number before a lower one. [inference] — computed from the same rows.
+
+  **A rate, stated as a rate and not as a workforce.** 144 active registrations against
+  [100,866 residents](allen-county-population-2024.yml) is one for every 700 people. [inference] —
+  the two figures are three years apart and the numerator is addresses, not persons at work.
+
+  **Thirteen of the 334 are officers this corpus already names.** Six judges of the county's own
+  courts, four of [the Third District](../office/judge-of-the-third-district-court-of-appeals.yml),
+  the prosecuting attorney, Lima's director of law and the county's member of the Ohio House. Every
+  one of the thirteen was admitted by examination, the earliest on 7 May 1979 and the most recent on
+  17 November 2008, and all thirteen are active. [verified] — same source, read against
+  [the elections roster](../../catalog/ohio-boe-elected-officials-allen.md). The join is a match on a
+  name and a county; neither source carries an identifier for a person. [inference]
+
+  **Five of the thirteen were admitted on two days.** Three of the officers now sitting — an
+  appellate judge, a second appellate judge and the county's member of the Ohio House — were
+  admitted together on 4 November 1985, and two more on 1 November 1983. [verified] — same source.
+  That is the ceremony and not a connection between them.
+
+  **The county in this register is the county of a business address.** Its own disclaimer reads:
+  "The directory lists an attorney's business address. An attorney's residence address is displayed
+  only if the attorney has not provided a valid business address." A result does not say which of
+  the two it returned. This corpus cannot say from it where any of the thirteen lives. [verified] —
+  same source, its definitions panel.
+
+  **The count is a floor, and the county's own geography is what shows it.** Of 305 registrants with
+  a Lima, Ohio address, 298 name Allen County and seven name no county at all — and Lima lies wholly
+  in Allen County. [verified] — same source. Against that, [Delphos](../place/delphos.yml) divides
+  thirteen Allen to seven Van Wert with none left over and [Bluffton](../place/bluffton.yml) six
+  Allen to two Hancock with none left over. The field is complete for the two cities a county line
+  runs through and incomplete for the one it does not, so the true number of Ohio attorneys with an
+  Allen County address is at least 341. [inference]
+
+  [open] What `Not Required` covers, and how many of the 139 are dead. The Office of Attorney
+  Services answers by telephone and this corpus has not called. Also every field the individual
+  record carries and the search result does not: employer, address, law school and discipline
+  history, each behind a second request keyed to the registration number.
+properties:
+  parameter: persons admitted in Ohio with an Allen County address of record
+  value: "334"
+  unit: registrants
+  as_of: 2026-09-01
+  method: |
+    One POST to the directory's `Ajax.ashx` with `county=Allen` and every other field empty. The
+    response carried `TooManyResults: false`, so the 334 rows are the whole answer at the 1,000-row
+    cap rather than a truncation. The county filter is a substring match and is not scoped to a
+    state; the same query with `state=IN` returns zero rows, which is how these were confirmed to
+    be Ohio addresses and not Fort Wayne's. Counts by status, by decade and by admitted-by are
+    tallies of those rows and nothing is estimated. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-attorney-directory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
