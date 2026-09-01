@@ -1,0 +1,62 @@
+class: event
+label: The windstorm of 22 June 2006
+description: |
+  **A line of wind crossed the whole county in twenty minutes and left two-thirds of it without
+  power.** Nine Allen County rows share one episode: Delphos and Spencerville at 14:05, Lima from
+  14:15, a tornado at Beaverdam at 14:18, Bluffton at 14:25. Gusts were estimated at 70 knots over
+  Lima, 60 at Delphos and Spencerville, 52 at Bluffton. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), episode 1213131.
+
+  **$1,970,000 of damage, which is more than any weather here but the tornadoes of 1950 and 1965.**
+  Those two and this one are $6,970,000 of the $9,408,250 the file records for seventy-six years.
+  [verified] — same source, summed here; see
+  [the storm record](../measure/allen-county-storm-events-1950-2026.yml).
+
+  **Most of that was aircraft.** "Three aircraft hangars destroyed. About 17 airplanes and the
+  Allen County Sheriff's Office helicopter were significantly damaged or destroyed" — $1.6 million
+  on one row, reported by the county's emergency manager. [verified] — same source. It is the only
+  mention of an aircraft, an airfield or an air unit anywhere in this corpus, and see
+  [the sheriff](../office/allen-county-sheriff.yml).
+
+  **In Lima the wind took the street furniture.** "Along a strech of Shawnee Rd. from Fort Amanda
+  Rd. to Reed Rd., every power pole and traffic signal was blown over, completely blocking the
+  road." A motel roof collapsed on Harding Highway, an automotive shop's roof came down at Jackson
+  Street and Findlay Road, three tractor-trailers were blown over on Interstate 75, and about
+  two-thirds of the county lost power. [verified] — same source, quoting the event narratives.
+
+  **It moved at about seventy miles an hour.** Delphos and Bluffton are 23.7 miles apart and the
+  file's first and last reports are twenty minutes apart, which is 71 miles an hour across the
+  ground. [inference] — computed here from
+  [the two villages' centroids](../place/bluffton.yml).
+
+  **Five of its nine reports came from a newspaper, two from amateur radio operators, one from the
+  emergency manager and one from a storm survey.** [verified] — same source. **This is what the
+  county's weather record is made of.** [inference]
+
+  **The file's injury count and the file's own prose disagree.** `INJURIES_DIRECT` totals two across
+  the episode and `INJURIES_INDIRECT` reads zero on all nine rows, while the narrative on one of
+  them says "there were also up to 15 indirect injuries from automobile accidents during the
+  storm". [verified] — same source. The corpus records two, which is what the countable field says,
+  and records that the field is not the whole of what the forecaster wrote down. [inference]
+
+  [open] What it cost the county to put back, and whether it drew a federal declaration. There is
+  none for 2006 in
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml) — a storm that
+  darkened two-thirds of the county did not meet the threshold, or was not requested.
+properties:
+  occurred: 2006-06-22
+  event_type: severe thunderstorm
+  location_description: |
+    County-wide. Reports run from Delphos and Spencerville in the west through Lima to Beaverdam and
+    Bluffton in the east, between 14:05 and 14:25 Eastern. [verified] — the same source.
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/lima.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../event.ont.yml
+    relationship: instance-of

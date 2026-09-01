@@ -20,6 +20,7 @@ const warDead = assertion('the-roster-never-totalled-its-own-dead')
 const corinth = assertion('more-died-at-corinth-than-anywhere')
 const trains = assertion('the-page-adds-up-and-the-forecast-does-not')
 const declared = assertion('ten-declarations-eight-incidents')
+const sky = assertion('the-blizzard-is-not-in-the-weather-file')
 
 const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
   yTitle: 'Locomotives ordered',
@@ -54,6 +55,12 @@ const crossingSpec = bar(
   noTrains.figures.map((f) => f.label),
   noTrains.figures.map((f) => f.value),
   { yTitle: 'Open crossings', labelValues: true },
+)
+
+const skySpec = bar(
+  sky.figures.map((f) => f.label),
+  sky.figures.map((f) => f.value),
+  { yTitle: 'Severe weather reports', labelValues: true },
 )
 
 // The spine is read out of the graph, never typed here. A page that lists the county's dated
@@ -710,6 +717,68 @@ const since = new Date().getUTCFullYear() - last
       four-day incident; COVID-19 produced two in eighteen days. Ten declarations, eight incidents.
       And the incident dates before 2004 are not usable at all: the 1965 tornado and the 1978
       blizzard are each recorded as beginning and ending on the day the declaration was signed.
+    </p>
+  </section>
+
+  <section>
+    <h2>What the sky did</h2>
+    <AssertionCard assertion={sky} />
+    <ChartFigure
+      id="storm-decades"
+      title="Severe weather reports for Allen County, by decade"
+      caption="Not a weather series. The National Weather Service recorded three kinds of event here before 1996 and sixteen after, and this line is mostly the categories arriving. The 2020s are omitted because the decade is not over."
+      columns={['Decade', 'Reports']}
+      rows={sky.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="storm-decades" set:html={JSON.stringify(skySpec)} is:inline />
+    <p>
+      The declarations above date a federal act. This dates the weather, and it comes from a file
+      the corpus should have read seven phases earlier: 390 reports for Allen County since 1950,
+      every tornado, hail fall, thunderstorm gust, ice storm and blizzard the National Weather
+      Service holds for this ground. It answers a question the county's 1965 disaster node asked and
+      gave up on.
+    </p>
+    <p>
+      Read straight, the chart says the weather here got thirty times worse in seventy years. It
+      says nothing of the kind. Tornado is the only category counted in every one of those decades,
+      and its column goes 1, 2, 4, 3, 2, 3, 4 — up and down, while the total climbs in strict order
+      across all seven. Thirteen of the file's sixteen event types are younger than 1996. The count
+      of blizzards in Allen County before 2007 is not zero; it is undefined.
+    </p>
+    <p>
+      That much a control inside the file can show. What it cannot show is what the file is missing,
+      and for that the corpus crossed it against the county's ten federal declarations. Five of the
+      six weather disasters have a dated storm in the weather file — a flash flood inside the 2004
+      window, a winter storm on the opening day of the 2005 one, a flash flood in 2007, four
+      thunderstorm-wind reports on the day the June 2012 incident opens. The sixth is the blizzard
+      of January 1978, and there is no Allen County row for 1978 at all. The administrative file
+      holds a storm the observational file cannot see.
+    </p>
+    <p>
+      The county's deadliest weather is dated now. An F4 tornado crossed the north of the county on
+      the evening of 11 April 1965, running 17.8 miles from Elida to Bluffton on a path 400 yards
+      wide, killing eleven people and injuring a hundred. The federal declaration came three days
+      later and recorded the incident as beginning and ending on the day it was signed. Those eleven
+      are the only weather deaths in seventy-six years of this county's record, and the companion
+      file that carries an age and a location for each death holds seventeen rows for the entire
+      United States in 1965 and none of them is this event's. A count of eleven is the whole of what
+      survives.
+    </p>
+    <p>
+      Two other storms are worth the county's memory. An F3 on 19 July 1950 ran from the south-east
+      edge of Lima to Beaverdam and injured thirty. And on 22 June 2006 a line of wind crossed the
+      whole county in twenty minutes — Delphos and Spencerville at 14:05, Lima from 14:15, a tornado
+      at Beaverdam at 14:18, Bluffton at 14:25 — blowing over every power pole and traffic signal on
+      a stretch of Shawnee Road, destroying three hangars and about seventeen aircraft and the
+      sheriff's helicopter, and leaving two-thirds of the county without power. Those three storms
+      are $6,970,000 of the $9,408,250 in damage the whole seventy-six years records.
+    </p>
+    <p>
+      One last thing about this file, which is the most local thing in it. Of the 293 reports that
+      name who called them in, 240 name a person — trained spotters, emergency managers, police,
+      broadcast media, amateur radio operators, newspapers and the public — against 43 that name an
+      instrument. Seventy-seven of the 390 reports are located at Lima, against twenty-one for
+      Delphos. That is where the people who telephone are, and not where the storms are.
     </p>
   </section>
 

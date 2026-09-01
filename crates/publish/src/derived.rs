@@ -1908,6 +1908,46 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "the-blizzard-is-not-in-the-weather-file",
+        statement: "Allen County's severe weather record grew thirty-fold between the 1950s and \
+                    the 2010s and its tornado count did not. Thirteen of its sixteen event types \
+                    were born in 1996 or later, and the blizzard that brought the county a \
+                    federal emergency in 1978 is not in the file at all.",
+        topic: "history",
+        supports: &[
+            support!(
+                "measure/allen-county-storm-events-1950-2026.yml",
+                "**The count rises monotonically across seven decades and the tornadoes do not.**"
+            ),
+            support!(
+                "measure/allen-county-storm-events-1950-2026.yml",
+                "**The seven decade totals are 4, 8, 12, 32, 58, 95 and 121, and the tornado column beside them is\n  1, 2, 4, 3, 2, 3, 4.**"
+            ),
+            support!(
+                "measure/allen-county-storm-events-1950-2026.yml",
+                "**Sixteen event types appear here and thirteen of them start in 1996 or later.**"
+            ),
+            support!(
+                "measure/allen-county-storm-events-1950-2026.yml",
+                "**Eleven people have been killed by weather in this county since 1950 and all eleven died in the\n  same minute.**"
+            ),
+            support!(
+                "measure/allen-county-disaster-declarations-1965-2020.yml",
+                "**The sixth is the blizzard of January 1978 and the weather file does not contain it.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1950s", value: 4.0, literal: "4" },
+            Figure { label: "1960s", value: 8.0, literal: "8" },
+            Figure { label: "1970s", value: 12.0, literal: "12" },
+            Figure { label: "1980s", value: 32.0, literal: "32" },
+            Figure { label: "1990s", value: 58.0, literal: "58" },
+            Figure { label: "2000s", value: 95.0, literal: "95" },
+            Figure { label: "2010s", value: 121.0, literal: "121" },
+        ],
+    },
+    Assertion {
         id: "an-address-is-not-a-municipality",
         statement: "A Lima postal address is not the city of Lima. The refinery has one and \
                     stands in Shawnee Township.",

@@ -1,0 +1,82 @@
+class: measure
+label: Allen County's tornadoes, 1950–2026
+description: |
+  **Twenty-three tornadoes in seventy-six years, and two of them are almost everything.** [verified]
+  — [the Storm Events Database](../../catalog/noaa-storm-events.md).
+
+      date          scale  track mi  width yd  deaths  injuries  damage   from → to
+      1950-07-19    F3          9.7       300       0        30  $2.5M    SE Lima → Beaverdam
+      1965-04-11    F4         17.8       400      11       100  $2.5M    Elida → Bluffton
+      1965-05-26    F1            0        33       0         0  $25K
+      1970-08-22    —             0        33       0         0  $2.5K
+      1971-06-02    F3         31.5       200       0         0  $25K     N of Bluffton → out of county
+      1973-06-26    F0           .2        17       0         0  $250
+      1979-07-30    F0            0        33       0         0  $25K
+      1980-04-08    F1            1       100       0         1  $250K
+      1980-04-08    F1           .5        77       0         0  $250K
+      1981-06-21    F1          2.7        33       0         0  $250K
+      1992-02-18    F0           .2        13       0         0  $0
+      1998-07-19    F0           .1        25       0         0           Lima
+      2002-09-20    F1           .1        25       0         0  $50K     Delphos
+      2003-08-26    F0           .1        10       0         0  $1K      Lima
+      2006-06-22    F1           .1        50       0         0  $20K     Beaverdam
+      2010-06-11    EF0         .13        25       0         0  $0       Lima
+      2010-10-26    EF0        1.39        20       0         0  $8K      Fort Shawnee
+      2011-04-19    EF0        1.94       100       0         0  $0       Spencerville
+      2011-04-19    EF1         .71       100       0         0  $0       Cairo
+      2021-08-11    EF0        3.87        50       0         0  $0       Landeck
+      2023-04-01    EF0         .78        75       0         0           Lafayette
+      2023-04-01    EF0         .23        50       0         0  $10K     Westminster
+      2023-04-01    EF0         .62        50       0         0  $20K     Westminster
+
+  **One tornado has killed anyone here and one other has injured more than one person.** Eleven
+  deaths and a hundred injuries on 11 April 1965; thirty injuries on 19 July 1950; one injury in
+  April 1980; nothing else. [verified] — same source. **Fourteen of the twenty-three did less than
+  $25,000 of measured damage, and seven of those fourteen did none the file records** — five rows
+  read zero and two are blank. [verified] — same source, counted here.
+
+  **The strong ones are all in the first half.** The three tornadoes rated F3 or F4 fall in 1950,
+  1965 and 1971, and nothing since 1981 has been rated above F1: of the thirteen from 1992 on, ten
+  are F0 or EF0 and three are F1 or EF1. [verified] — same source. **This is not evidence that the
+  tornadoes weakened.**
+  Ratings before the 1990s were assigned retrospectively from damage reports and the modern ones
+  from ground surveys, and a survey that finds no damage rates EF0. [inference]
+
+  **The track lengths close on their own coordinates, and one of them leaves the county.** The 1965
+  track's endpoints are 17.92 miles apart against a stated 17.8; 1950's are 9.53 against 9.7;
+  1971's are 31.33 against 31.5. But 1971's endpoint is 25.6 miles east of Bluffton, far outside
+  Allen County: **`TOR_LENGTH` is the length of the tornado, not the length of it that was in this
+  county**, and the column cannot be summed to a figure about this ground. [inference] — computed
+  here from the file's own latitudes and longitudes.
+
+  **The coordinate field changed meaning about 2010 and the file does not say so.** Every tornado
+  from 1998 through 2006 has an identical begin and end coordinate on a five- or
+  sixtieth-of-a-degree grid, against a stated track of a tenth of a mile — those are the nearest
+  town's position. Every tornado from 2010 on reproduces its stated track length from its
+  coordinates to two decimal places. [inference] — same computation. See
+  [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
+
+  [open] The two 1980 rows carry the same date, the same minute, the same rating and the same
+  damage figure with different track lengths, and no coordinates. Whether that is one tornado
+  entered twice or two that touched down together is not answerable from this file.
+properties:
+  parameter: tornadoes recorded in Allen County
+  value: "23"
+  unit: tornadoes
+  as_of: "2026"
+  method: |
+    Rows where `EVENT_TYPE` is Tornado in the county's 390-row extract, sorted by begin date.
+    Scale is the file's `TOR_F_SCALE`, which mixes the Fujita scale used before February 2007 with
+    the Enhanced Fujita scale used after and marks neither; the two are printed as the file prints
+    them and are not treated as one series. The 1970 row carries no rating at all. Damage is the
+    file's nominal-dollar estimate; a blank means the field is empty, which is not the same as
+    `$0` and seven rows have one or the other. Place names in the last column are this corpus's,
+    taken as the nearest node to the file's coordinates, except where the file names a location
+    itself. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -1,0 +1,60 @@
+class: event
+label: The tornado of 11 April 1965
+description: |
+  **The deadliest thing that has happened in Allen County in the corpus's whole weather record, and
+  the only thing in it that has killed anybody.** An F4 tornado, 17.8 miles of track, 400 yards at
+  its widest, **eleven dead and a hundred injured**, $2.5 million of property damage. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10083979.
+
+  **It crossed the north of the county diagonally, from Elida to Bluffton.** The file starts it at
+  40.80, −84.20, nine-tenths of a mile from [Elida](../place/elida.yml), and ends it at 40.87,
+  −83.87, 1.8 miles from [Bluffton](../place/bluffton.yml). Those endpoints are 17.92 miles apart
+  against a stated track of 17.8, so the track and the coordinates are the same tornado.
+  [inference] — computed here from the same source. It passed north of
+  [Lima](../place/lima.yml).
+
+  **This is the storm the corpus said it did not hold.**
+  [The declaration of April 1965](the-tornadoes-of-april-1965.yml) asked four questions — the
+  storm's date, its track, whether it touched ground in this county at all, and what it destroyed —
+  and answered none. The first three are answered above. **The declaration came three days after
+  the tornado**, on 14 April, and the declaration file recorded the incident as beginning and
+  ending on the day it was signed. [verified] — same source and
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md).
+
+  **The corpus looked for it in the wrong instrument.** That node named a newspaper of that week as
+  the source that would answer, and observed that this catalog holds none reaching 1965. The answer
+  was in a federal weather database that had been publishing it since before the corpus existed.
+  [inference]
+
+  **Eleven people were killed and the file holds nothing else about them.** The companion fatality
+  file, which carries an age, a sex and a location for each death, has seventeen rows for the whole
+  United States in 1965 and not one of them belongs to this event. [verified] — same source. **A
+  count of eleven is the entire record.**
+
+  **Its clock is stamped Central for a county on Eastern time.** The row reads 20:30 with
+  `CZ_TIMEZONE` = CST, as does every row here from 1950 to 1991. If the stamp means what it says,
+  the local clock read 21:30. [inference] — same source.
+
+  [open] What it struck, and where the eleven died. There is no narrative — narratives begin in
+  1996 — and no place name below the county. Whether this was one tornado of a larger outbreak that
+  day is not established by anything in this catalog either.
+properties:
+  occurred: 1965-04-11
+  event_type: tornado
+  location_description: |
+    A 17.8-mile track from 40.80, −84.20 to 40.87, −83.87, 400 yards at its widest, running
+    west-north-west to east across the northern half of the county from Elida to Bluffton.
+    [verified] — the same source.
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/elida.yml
+    relationship: affected
+    claim_tag: inference
+  - target: ../place/bluffton.yml
+    relationship: affected
+    claim_tag: inference
+  - target: ../event.ont.yml
+    relationship: instance-of
