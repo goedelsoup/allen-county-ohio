@@ -103,7 +103,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 9v / 4i / 1o | 132 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
-| [allen-county-black-community-1916-1921.yml](measure/allen-county-black-community-1916-1921.yml) | measure | Allen County's Black community, 1916–1921 | 3 | 15v / 5i / 3o | 97 |
+| [allen-county-black-community-1916-1921.yml](measure/allen-county-black-community-1916-1921.yml) | measure | Allen County's Black community, 1916–1921 | 3 | 16v / 5i / 3o | 104 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 6v / 2i / 1o | 75 |
 | [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 7v / 4i / 1o | 64 |
@@ -126,7 +126,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 9v / 2i / 2o | 77 |
 | [allen-county-farms-1949-1987.yml](measure/allen-county-farms-1949-1987.yml) | measure | Allen County farms, 1949–1987 | 2 | 11v / 6i / 2o | 106 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
-| [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 6v / 4i / 1o | 74 |
+| [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 7v / 4i / 1o | 77 |
+| [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 3 | 9v / 4i / 1o | 93 |
 | [allen-county-funds-2025.yml](measure/allen-county-funds-2025.yml) | measure | What passes through Allen County's books, 2025 | 2 | 8v / 3i / 2o | 82 |
 | [allen-county-general-assembly-1833-1906.yml](measure/allen-county-general-assembly-1833-1906.yml) | measure | Allen County in the Ohio General Assembly, 1833–1906 | 4 | 10v / 2i / 2o | 90 |
 | [allen-county-general-fund-2025.yml](measure/allen-county-general-fund-2025.yml) | measure | Allen County's General Fund, 2025 | 2 | 9v / 4i / 2o | 102 |
@@ -176,10 +177,11 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 4v / 1i / 0o | 40 |
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
-| [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 6v / 4i / 1o | 86 |
+| [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
+| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 12v / 5i / 1o | 119 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
-| [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 6v / 1i / 0o | 67 |
+| [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 7v / 2i / 0o | 74 |
 | [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 13v / 3i / 1o | 114 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
@@ -447,7 +449,7 @@ Sorted by: kind, then alphabetically.
 | [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 6v / 4i / 0o | 57 |
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 5 | 8v / 3i / 2o | 97 |
-| [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 9v / 4i / 2o | 72 |
+| [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 10v / 5i / 2o | 80 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 87 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 12v / 4i / 1o | 99 |
 | [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 3v / 2i / 1o | 41 |
