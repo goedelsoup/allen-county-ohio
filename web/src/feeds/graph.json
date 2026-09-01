@@ -6336,7 +6336,7 @@
           "tier": "verified"
         },
         {
-          "text": "**Lima's share of the county's Black residents fell in every decade it can be measured.** 1,243 of 1,385 in 1920, or 89.7 per cent; 1,561 of 1,916 in 1940, or 81.5; 3,278 of 4,391 in 1950, or 74.7. In 2023 it is 76.7. [verified] — [the state population volumes](../../catalog/census-population-volumes-1930-1960-ohio.md) for 1940 and 1950, [the 1920 count](allen-county-population-by-race-1920.yml) and [the 2023 count](allen-county-race-2023.yml) for the ends. The dispersal the corpus reads in the present was already running in 1940. [inference] — computed here.",
+          "text": "**Lima's share of the county's Black residents fell across every decade this node can measure.** 1,243 of 1,385 in 1920, or 89.7 per cent; 1,561 of 1,916 in 1940, or 81.5; 3,278 of 4,391 in 1950, or 74.7. [verified] — [the state population volumes](../../catalog/census-population-volumes-1930-1960-ohio.md) for 1940 and 1950 and [the 1920 count](allen-county-population-by-race-1920.yml) for the first. **It did not keep falling.** By 1970 the share was 86.7 per cent and by 1990 it was 88.9, which is where it stood in 1920; the fall the corpus reads in the present begins after that. [verified] — [the censuses after this one](allen-county-population-by-race-1970-2020.yml). This node said the share fell in every decade it could be measured, and the sentence was true of the three decades in it and false of the century. [inference]",
           "tier": "inference"
         },
         {
@@ -6358,9 +6358,80 @@
         {
           "text": "**Those four are the four townships Lima had grown into, and that is why the figure looks the way it does.** The 1960 township counts include the parts of the city inside them, as the 1950 ones do and the 1930 and 1940 ones do not. [verified] — [the townships, 1930–1950](allen-county-townships-1930-1950.yml). Setting Perry's 27.6 per cent in 1960 beside Perry's 5.2 per cent in 2023 would be setting a township that contained half of south Lima beside a township that does not. [inference] — see [two volumes are not one series](../../decisions/two-volumes-are-not-one-series.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**1970 through 2020 is closed.** Six more censuses now follow this one: 9,234 · 10,975 · 12,313 · 13,225 · 12,639 · 12,573, the last of which is not comparable with the first five. [verified] — [the censuses after this one](allen-county-population-by-race-1970-2020.yml). The county has a Black population at every decennial census from 1920 to 2020 with no gap, and the growth this node found in the 1940s continues without a reversal for another sixty years.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-population-by-race-1970-2020.yml",
+      "class": "measure",
+      "label": "Allen County population by race, 1970–2020",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2020",
+        "method": "1970 and 1980 read from page images rendered at 300 dpi, because neither volume has a text layer; 1990, 2000 and 2010 from `pdftotext -layout` on volumes that extract exactly; 2020 computed from the pipe-delimited redistricting file. Each census was checked against something it did not have to agree with: 1970's race and sex rows both sum to its printed county total and its five named other races to their printed subtotal; the thirteen county subdivisions sum to the county in every printed column in 1980, 1990 and 2020; the 2000 and 2010 race categories sum to their printed county totals; and the 2020 file's own hierarchy closes at every level — six single races to the one-race line, fifteen pairs to the two-race line, the four multiple lines to the two-or-more line, and that to the total. The county totals 111,144, 112,241, 109,755, 108,473, 106,331 and 102,206 are the figures this corpus already held from unrelated products. [verified]",
+        "parameter": "population enumerated as Negro, Black, or Black or African American alone, Allen County",
+        "unit": "persons",
+        "value": "12,573"
+      },
+      "blocks": [
+        {
+          "text": "The six censuses between the county's 1960 composition and the present, read from the state volume of each and, for 2020, from the redistricting file. [verified] — [the general characteristics volumes, 1970–2010](../../catalog/census-general-population-characteristics-1970-2010.md) and [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "The label is each census's own — \"Negro\" through 1970, \"Black\" from 1980, \"Black or African American alone\" from 2000 — and is not modernised. [verified] — the volumes above.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's Black population grew at every census from 1920 to 2000.** 1,385 · 1,686 · 1,916 · 4,391 · 7,322 · 9,234 · 10,975 · 12,313 · 13,225, across eighty years and nine counts with no reversal in any of them. [verified] — [the general characteristics volumes](../../catalog/census-general-population-characteristics-1970-2010.md) for the last four and [the earlier volumes](allen-county-population-by-race-1930-1960.yml) for the rest.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: 9234 in 1970, 10975 in 1980, 12313 in 1990, 13225 in 2000, 12639 in 2010 and 12573 in 2020.** [verified] — [the general characteristics volumes](../../catalog/census-general-population-characteristics-1970-2010.md) and [the redistricting file](../../catalog/census-2020-redistricting-file.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two of those decades are decades in which the county was emptying.** Allen County peaked at 112,241 in 1980 and has fallen at every census since; between 1980 and 2000 it lost 3,768 people and gained 2,250 Black residents. [inference] — computed here against [the county's totals](allen-county-population-1940-1990.yml). The county's Black share doubled between 1950 and 1980 and rose again by half between 1980 and 2000, and the whole of the second rise happened inside a decline.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Then it stops — and 2000 is also where the question changes.** 13,225 · 12,639 · 12,573 reads as a plateau, and the census that begins it is the first at which a person could be counted as more than one race. The county's two-or-more-races count over the same three censuses is 1,577, 2,796 and 6,237. [verified] — [the 2000 and 2010 volumes](../../catalog/census-general-population-characteristics-1970-2010.md) and [the redistricting file](../../catalog/census-2020-redistricting-file.md), table P1.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Counted the way every census before 2000 counted, the county's Black population in 2020 is 15,636.** That is Black alone plus every multiple-race combination that names Black — thirty-two of table P1's seventy-one cells — and it is 3,063 above the alone figure and 18 per cent above the 2000 peak the alone series shows. [verified] — the redistricting file, with the thirty-two cells identified from the data dictionary in [the national technical documentation](../../catalog/census-2020-redistricting-file.md), chapter 6. The plateau is a category splitting, not a population that stopped growing. [inference] — see [two volumes are not one series](../../decisions/two-volumes-are-not-one-series.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima's share of the county's Black residents did not fall in every decade, and this corpus has said that it did.** It fell from 89.7 per cent in 1920 to 74.7 in 1950 — and then rose, to 86.7 in 1970, 88.1 in 1980 and **88.9 in 1990**, which is where it stood in 1920. Only after that does it fall again: 80.3, 81.1, 78.8. [verified] — the volumes above and [the earlier censuses](allen-county-population-by-race-1930-1960.yml). The dispersal the corpus read out of 1920 to 1950 reversed completely and the one it reads in the present is forty years old, not a hundred. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The reversal has a boundary in it.** Lima annexed from Shawnee Township in 1944 and again through the 1950s and 1960s, so part of the 1950-to-1970 rise in the city's share is ground moving across the city line rather than people moving across it. [inference] — see [the annexation record](allen-county-annexations-1990-2024.yml) and [the city](../jurisdiction/city-of-lima.yml). How much of it is boundary is not established here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**By 2020 three subdivisions hold nineteen in twenty of the county's Black residents.** Lima 9,908, American Township 1,476 and Shawnee Township 517 make 11,901 of 12,573, or 94.7 per cent; six of the twelve townships have fewer than twenty-five. [verified] — the redistricting file, in which the thirteen subdivisions sum to the county exactly in every column read.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same file; the seven remaining townships are Amanda, Auglaize, Jackson, Marion, Monroe, Spencer and Sugar Creek.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The census and the survey disagree by 1,768 people on a figure this corpus publishes.** The 2020 census counted 12,573 Black-alone residents of Allen County; the American Community Survey's 2019–2023 five-year estimate is 10,805 ± 658. The interval does not reach the count — the gap is 2.7 times the margin — and the two instruments disagree in opposite directions on White alone as well, 80,753 counted against 82,251 ± 428 estimated. They agree almost exactly on the multiple-race total: 6,237 counted, 6,255 ± 762 estimated. [verified] — [the redistricting file](../../catalog/census-2020-redistricting-file.md) and [the American Community Survey](../../catalog/census-acs-summary-file.md), table B02001. This corpus does not establish why they differ. It is not sampling error at that size, and it is not disclosure avoidance, which moves county race cells by tens. [inference] — see [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus does not establish why they differ."
+      ],
       "withheld": 3
     },
     {
@@ -6451,7 +6522,11 @@
           "tier": "inference"
         },
         {
-          "text": "**The rise is not steady and the corpus can now say when it happened.** 1,385 in 1920, 1,686 in 1930, 1,916 in 1940, then 4,391 in 1950 and 7,322 in 1960 — more growth in the single decade of the 1940s than in the two decades before it together. [verified] — [the four censuses between](allen-county-population-by-race-1930-1960.yml). Lima's share fell through the whole of it, from 89.7 per cent in 1920 to 74.7 in 1950, and the 76.7 measured here is the end of a long slide rather than a recent one. [inference] — computed against the same.",
+          "text": "**The rise is not steady and the corpus can now say when it happened.** 1,385 in 1920, 1,686 in 1930, 1,916 in 1940, then 4,391 in 1950 and 7,322 in 1960 — more growth in the single decade of the 1940s than in the two decades before it together. [verified] — [the four censuses between](allen-county-population-by-race-1930-1960.yml). It went on rising without a break for four more censuses: 9,234 in 1970, 10,975 in 1980, 12,313 in 1990 and 13,225 in 2000, which is nine consecutive counts and eighty years. [verified] — [the censuses after 1960](allen-county-population-by-race-1970-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima's share is not the end of a long slide, and this node said it was.** It fell from 89.7 per cent in 1920 to 74.7 in 1950 and then went back up, to 88.9 by 1990 — its 1920 level — before falling again to 78.8 at the census of 2020. [verified] — the same series. The 76.7 measured here is the low point of a thirty-year fall, not a hundred-year one. [inference] — computed against the same.",
           "tier": "inference"
         },
         {
@@ -6461,6 +6536,10 @@
         {
           "text": "**Eight of the twelve townships have fewer than a hundred Black residents**, and two report none. [verified] Outside Lima and the two townships that adjoin it — American at 10.1 per cent and Shawnee at 4.1 — the county is between 90 and 97 per cent white. [verified]",
           "tier": "verified"
+        },
+        {
+          "text": "**The census counted 1,768 more Black residents here in 2020 than this survey estimates for 2019–2023, and the interval does not reach it.** 12,573 counted against 10,805 ± 658, a gap of 2.7 margins, on a county whose total moved by 521 people between the two. The same pair disagrees the other way on White alone — 80,753 counted against 82,251 ± 428 — and agrees almost exactly on the multiple-race total, 6,237 counted against 6,255 ± 762. [verified] — [the 2020 count](allen-county-population-by-race-1970-2020.yml) and this source, table B02001. Every share on this page is a survey's share and the county has a count of the same thing three years earlier that puts it at 12.3 per cent rather than 10.6. [inference] — computed here; see [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -20174,6 +20253,34 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-population-volumes-1930-1960-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-population-by-race-1970-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-general-population-characteristics-1970-2010.md"
+    },
+    {
+      "from": "measure/allen-county-population-by-race-1970-2020.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-general-population-characteristics-1970-2010.md"
+    },
+    {
+      "from": "measure/allen-county-population-by-race-1970-2020.yml",
+      "to": "place/american-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
+      "from": "measure/allen-county-population-by-race-1970-2020.yml",
+      "to": "place/shawnee-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
     },
     {
       "from": "measure/allen-county-presidential-vote-2016.yml",
