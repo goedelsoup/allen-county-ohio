@@ -877,6 +877,80 @@
       "withheld": 1
     },
     {
+      "id": "event/the-tornado-of-11-april-1965.yml",
+      "class": "event",
+      "label": "The tornado of 11 April 1965",
+      "tier": "inference",
+      "properties": {
+        "event_type": "tornado",
+        "location_description": "A 17.8-mile track from 40.80, −84.20 to 40.87, −83.87, 400 yards at its widest, running west-north-west to east across the northern half of the county from Elida to Bluffton. [verified] — the same source.",
+        "occurred": "1965-04-11"
+      },
+      "blocks": [
+        {
+          "text": "**The deadliest thing that has happened in Allen County in the corpus's whole weather record, and the only thing in it that has killed anybody.** An F4 tornado, 17.8 miles of track, 400 yards at its widest, **eleven dead and a hundred injured**, $2.5 million of property damage. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10083979.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It crossed the north of the county diagonally, from Elida to Bluffton.** The file starts it at 40.80, −84.20, nine-tenths of a mile from [Elida](../place/elida.yml), and ends it at 40.87, −83.87, 1.8 miles from [Bluffton](../place/bluffton.yml). Those endpoints are 17.92 miles apart against a stated track of 17.8, so the track and the coordinates are the same tornado. [inference] — computed here from the same source. It passed north of [Lima](../place/lima.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**This is the storm the corpus said it did not hold.** [The declaration of April 1965](the-tornadoes-of-april-1965.yml) asked four questions — the storm's date, its track, whether it touched ground in this county at all, and what it destroyed — and answered none. The first three are answered above. **The declaration came three days after the tornado**, on 14 April, and the declaration file recorded the incident as beginning and ending on the day it was signed. [verified] — same source and [OpenFEMA](../../catalog/fema-disaster-declarations.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The corpus looked for it in the wrong instrument.** That node named a newspaper of that week as the source that would answer, and observed that this catalog holds none reaching 1965. The answer was in a federal weather database that had been publishing it since before the corpus existed. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Eleven people were killed and the file holds nothing else about them.** The companion fatality file, which carries an age, a sex and a location for each death, has seventeen rows for the whole United States in 1965 and not one of them belongs to this event. [verified] — same source. **A count of eleven is the entire record.**",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its clock is stamped Central for a county on Eastern time.** The row reads 20:30 with `CZ_TIMEZONE` = CST, as does every row here from 1950 to 1991. If the stamp means what it says, the local clock read 21:30. [inference] — same source.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "event/the-tornado-of-19-july-1950.yml",
+      "class": "event",
+      "label": "The tornado of 19 July 1950",
+      "tier": "inference",
+      "properties": {
+        "event_type": "tornado",
+        "location_description": "A 9.7-mile track from 40.72, −84.08 to 40.83, −83.97, 300 yards at its widest, crossing the county from the south-east side of Lima to Beaverdam. [verified] — the same source.",
+        "occurred": "1950-07-19"
+      },
+      "blocks": [
+        {
+          "text": "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody and did an estimated $2.5 million of property damage. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10086810.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It ran from the south-east edge of Lima to Beaverdam.** The file gives a start at 40.72, −84.08 — 2.2 miles from [Lima](../place/lima.yml)'s centre — and an end at 40.83, −83.97, two-tenths of a mile from [Beaverdam](../place/beaverdam.yml). Those endpoints are 9.53 miles apart against a stated track of 9.7. [inference] — computed here from the same source.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Its clock is stamped in a timezone this county has never kept.** The row reads 15:15 with `CZ_TIMEZONE` = CST, and so does every other row here from 1950 to 1991; Allen County is on Eastern time. If the stamp means what it says, the local clock read 16:15. [inference] — same source. See [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is the corpus's first dated happening between the jail raid of 1933 and the government's purchase of the tank plant ground in 1951.** [verified] — [the jail raid](allen-county-jail-raid-1933.yml) and [the tank plant purchase](the-united-states-buys-the-tank-plant-ground-1951.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its damage figure and the 2006 windstorm's cannot be compared.** $2.5 million in 1950 dollars and $1,970,000 in 2006 dollars are in different currencies, and this file carries no deflator. [inference] — see [the storm record](../measure/allen-county-storm-events-1950-2026.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/the-tornadoes-of-april-1965.yml",
       "class": "event",
       "label": "The tornado declaration of April 1965",
@@ -901,6 +975,18 @@
         },
         {
           "text": "**So the corpus dates the declaration and not the weather.** `occurred` below is 14 April 1965 because that is what the source establishes: a presidential act naming this county. What the sky did, and when, is not held here. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three of those four questions are now answered, and not by a newspaper.** The storm was an F4 tornado on **11 April 1965**, three days before this declaration; it ran 17.8 miles from Elida to Bluffton; it killed eleven people and injured a hundred. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md); see [the tornado](the-tornado-of-11-april-1965.yml). **It touched ground in this county and it is the only weather that has ever killed anybody here.** [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That confirms what this node inferred about its own dates.** The tornado is three days outside an incident window one day long, and that one day is the declaration date. The field was filled with the declaration date, as this node said it was. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**This node named the wrong instrument.** It said a newspaper of that week would answer all four questions and that this catalog held none reaching 1965. The answer was in a federal weather database, published continuously since before this corpus existed and never asked. [inference]",
           "tier": "inference"
         }
       ],
@@ -944,6 +1030,49 @@
         "This node does not establish when anything was built on the ground it describes."
       ],
       "withheld": 3
+    },
+    {
+      "id": "event/the-windstorm-of-22-june-2006.yml",
+      "class": "event",
+      "label": "The windstorm of 22 June 2006",
+      "tier": "inference",
+      "properties": {
+        "event_type": "severe thunderstorm",
+        "location_description": "County-wide. Reports run from Delphos and Spencerville in the west through Lima to Beaverdam and Bluffton in the east, between 14:05 and 14:25 Eastern. [verified] — the same source.",
+        "occurred": "2006-06-22"
+      },
+      "blocks": [
+        {
+          "text": "**A line of wind crossed the whole county in twenty minutes and left two-thirds of it without power.** Nine Allen County rows share one episode: Delphos and Spencerville at 14:05, Lima from 14:15, a tornado at Beaverdam at 14:18, Bluffton at 14:25. Gusts were estimated at 70 knots over Lima, 60 at Delphos and Spencerville, 52 at Bluffton. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), episode 1213131.",
+          "tier": "verified"
+        },
+        {
+          "text": "**$1,970,000 of damage, which is more than any weather here but the tornadoes of 1950 and 1965.** Those two and this one are $6,970,000 of the $9,408,250 the file records for seventy-six years. [verified] — same source, summed here; see [the storm record](../measure/allen-county-storm-events-1950-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Most of that was aircraft.** \"Three aircraft hangars destroyed. About 17 airplanes and the Allen County Sheriff's Office helicopter were significantly damaged or destroyed\" — $1.6 million on one row, reported by the county's emergency manager. [verified] — same source. It is the only mention of an aircraft, an airfield or an air unit anywhere in this corpus, and see [the sheriff](../office/allen-county-sheriff.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**In Lima the wind took the street furniture.** \"Along a strech of Shawnee Rd. from Fort Amanda Rd. to Reed Rd., every power pole and traffic signal was blown over, completely blocking the road.\" A motel roof collapsed on Harding Highway, an automotive shop's roof came down at Jackson Street and Findlay Road, three tractor-trailers were blown over on Interstate 75, and about two-thirds of the county lost power. [verified] — same source, quoting the event narratives.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It moved at about seventy miles an hour.** Delphos and Bluffton are 23.7 miles apart and the file's first and last reports are twenty minutes apart, which is 71 miles an hour across the ground. [inference] — computed here from [the two villages' centroids](../place/bluffton.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Five of its nine reports came from a newspaper, two from amateur radio operators, one from the emergency manager and one from a storm survey.** [verified] — same source. **This is what the county's weather record is made of.** [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The file's injury count and the file's own prose disagree.** `INJURIES_DIRECT` totals two across the episode and `INJURIES_INDIRECT` reads zero on all nine rows, while the narrative on one of them says \"there were also up to 15 indirect injuries from automobile accidents during the storm\". [verified] — same source. The corpus records two, which is what the countable field says, and records that the field is not the whole of what the forecaster wrote down. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "event/treaty-of-st-marys.yml",
@@ -2836,6 +2965,14 @@
           "tier": "verified"
         },
         {
+          "text": "**Six of these ten are for weather, and five of the six now have a storm with a date.** Matched against the county's severe weather record: the 2004 declaration has a flash flood inside its window, the 2005 pair of winter declarations has a winter storm on the first day of the window and an ice storm inside it, 2007 has a flash flood, and the June 2012 storm has four thunderstorm-wind reports on the exact day the incident window opens. 1965 has a tornado three days before a window one day long. [verified] — [the storm record](allen-county-storm-events-1950-2026.yml) and [the Storm Events Database](../../catalog/noaa-storm-events.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sixth is the blizzard of January 1978 and the weather file does not contain it.** There is no Allen County row for 1978 at all, and no row of any kind within thirty days of that declaration, because the first blizzard this county's weather record admits is in 2007. **The administrative file holds the storm the observational file cannot see.** [verified] — same source; see [a category has a birthday](../../decisions/a-category-has-a-birthday.yml).",
+          "tier": "verified"
+        },
+        {
           "text": "**These cannot be crossed with the river's flow record, and finding that out was the point.** The Ottawa River gauge at Lima is missing water years 2000 to 2009 exactly, and the declarations for storms and flooding fall in 2004, 2005 and 2007. Exactly one non-pandemic declaration here lies inside the gauge's record — June 2012, titled for straight-line winds, in a water year whose peak ranked sixteenth of twenty-seven. [verified] — [the peak flows](ottawa-river-peak-flows-1924-2025.yml); see [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).",
           "tier": "verified"
         }
@@ -4705,6 +4842,59 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-storm-events-1950-2026.yml",
+      "class": "measure",
+      "label": "Allen County's severe weather record, 1950–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Seventy-seven annual detail files downloaded whole from the NCEI bulk directory and filtered locally on `STATE` = OHIO and `CZ_NAME` = ALLEN; there is no county query. The 390 rows are 287 county-designated and 103 zone-designated, and the split follows NWS Directive 10-1605 exactly. Decade counts for the 2020s are omitted from the table above because the decade is not over — it stood at 60 when this was compiled. Damage is summed from the file's `K`/`M` suffixed estimates in nominal dollars of the year of each event, undeflated, and the file's own documentation calls them estimates. [verified]",
+        "parameter": "severe weather events recorded for Allen County",
+        "unit": "events",
+        "value": "390"
+      },
+      "blocks": [
+        {
+          "text": "**Three hundred and ninety events in seventy-six years, and the series is a history of observation before it is a history of weather.** [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), filtered to Ohio, county Allen.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The count rises monotonically across seven decades and the tornadoes do not.** [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The seven decade totals are 4, 8, 12, 32, 58, 95 and 121, and the tornado column beside them is 1, 2, 4, 3, 2, 3, 4.** The first series is in strictly increasing order, which is one arrangement of the 5,040 that seven distinct numbers can take; the second is not ordered at all, and four events in the 1950s against 121 in the 2010s is a factor of thirty. [inference] — computed from the same source. **Tornado is the only category counted in every one of those decades**, which is what makes it the control. [verified] — same source; see [the tornadoes](allen-county-tornadoes-1950-2026.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Sixteen event types appear here and thirteen of them start in 1996 or later.** Tornado begins in 1950, thunderstorm wind in 1955, hail in 1959; then nothing new for thirty-seven years, and then flash flood, ice storm, winter storm and cold/wind chill all first appear in 1996, flood and high wind in 1997, heavy snow in 1999, strong wind in 2004, lightning in 2006, blizzard in 2007, winter weather in 2010, extreme cold in 2014 and heavy rain in 2020. [verified] — same source, first year of each type computed here. See [a category has a birthday](../../decisions/a-category-has-a-birthday.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the two halves are 1.63 events a year and 10.16.** Seventy-five events in the forty-six years to 1995 against 315 in the thirty-one years from 1996 — six times the rate — while the tornado rate goes from 0.24 a year to 0.39 on counts of eleven and twelve. [inference] — computed here. The corpus reports the halves and refuses the trend across them.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Eleven people have been killed by weather in this county since 1950 and all eleven died in the same minute.** The file's only fatalities are the eleven of the tornado of 11 April 1965. Of 134 direct injuries, 130 are that tornado's hundred and the thirty of July 1950. [verified] — same source; see [that evening](../event/the-tornado-of-11-april-1965.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three episodes are three-quarters of all the damage.** $9,408,250 of property damage is recorded across the whole file, and the tornadoes of 1950 and 1965 at $2.5 million each and the windstorm of 22 June 2006 at $1,970,000 are $6,970,000 of it — 74.1 per cent. [verified] — same source, summed here. Crop damage across seventy-six years is $55,000.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The record is written by the county's own residents.** Of the 293 rows that name a reporter, 240 name a person — trained spotters, emergency managers, police, broadcast media, amateur radio operators, newspapers and the public — 43 name an instrument, eight are National Weather Service storm surveys and two say \"unknown\". [verified] — same source. **That is the mechanism behind the rising count**: a file filled by people telephoning a forecast office grows when there are more people willing to telephone, and the reporter field is empty on all eighty-nine rows before 1998. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**More than half of it falls in four months of twelve.** May through August hold 219 of the 390 rows, June and July alone hold 144, and October holds five. [verified] — same source, counted here.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-survey-sections.yml",
       "class": "measure",
       "label": "Allen County survey sections, 2026",
@@ -4758,6 +4948,43 @@
         "The corpus does not assert Bluffton's section."
       ],
       "withheld": 4
+    },
+    {
+      "id": "measure/allen-county-tornadoes-1950-2026.yml",
+      "class": "measure",
+      "label": "Allen County's tornadoes, 1950–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Rows where `EVENT_TYPE` is Tornado in the county's 390-row extract, sorted by begin date. Scale is the file's `TOR_F_SCALE`, which mixes the Fujita scale used before February 2007 with the Enhanced Fujita scale used after and marks neither; the two are printed as the file prints them and are not treated as one series. The 1970 row carries no rating at all. Damage is the file's nominal-dollar estimate; a blank means the field is empty, which is not the same as `$0` and seven rows have one or the other. Place names in the last column are this corpus's, taken as the nearest node to the file's coordinates, except where the file names a location itself. [inference]",
+        "parameter": "tornadoes recorded in Allen County",
+        "unit": "tornadoes",
+        "value": "23"
+      },
+      "blocks": [
+        {
+          "text": "**Twenty-three tornadoes in seventy-six years, and two of them are almost everything.** [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**One tornado has killed anyone here and one other has injured more than one person.** Eleven deaths and a hundred injuries on 11 April 1965; thirty injuries on 19 July 1950; one injury in April 1980; nothing else. [verified] — same source. **Fourteen of the twenty-three did less than $25,000 of measured damage, and seven of those fourteen did none the file records** — five rows read zero and two are blank. [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The strong ones are all in the first half.** The three tornadoes rated F3 or F4 fall in 1950, 1965 and 1971, and nothing since 1981 has been rated above F1: of the thirteen from 1992 on, ten are F0 or EF0 and three are F1 or EF1. [verified] — same source. **This is not evidence that the tornadoes weakened.** Ratings before the 1990s were assigned retrospectively from damage reports and the modern ones from ground surveys, and a survey that finds no damage rates EF0. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The track lengths close on their own coordinates, and one of them leaves the county.** The 1965 track's endpoints are 17.92 miles apart against a stated 17.8; 1950's are 9.53 against 9.7; 1971's are 31.33 against 31.5. But 1971's endpoint is 25.6 miles east of Bluffton, far outside Allen County: **`TOR_LENGTH` is the length of the tornado, not the length of it that was in this county**, and the column cannot be summed to a figure about this ground. [inference] — computed here from the file's own latitudes and longitudes.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The coordinate field changed meaning about 2010 and the file does not say so.** Every tornado from 1998 through 2006 has an identical begin and end coordinate on a five- or sixtieth-of-a-degree grid, against a stated track of a tenth of a mile — those are the nearest town's position. Every tornado from 2010 on reproduces its stated track length from its coordinates to two decimal places. [inference] — same computation. See [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-total-employment-1969-2022.yml",
@@ -5992,6 +6219,14 @@
         {
           "text": "**The two records overlap on one weather declaration in sixty years.** The gauge covers water years 1989-1999 and 2010-2025; the only non-pandemic declaration inside that window is the storm of June 2012, and that water year's peak — 3,170 cfs on 30 November 2011, sixteenth of twenty-seven — was not in that storm, which the declaration titles as straight-line winds. [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md) and [OpenFEMA](../../catalog/fema-disaster-declarations.md), computed here; see [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**A third file covers the gauge's ten-year hole and does not fill it.** The county's severe weather record has ninety-five events in the 2000s, including flash floods in 2003, 2004 and 2007. [verified] — [the storm record](allen-county-storm-events-1950-2026.yml). **But a flash flood report is a road under water, not a discharge**, and no arithmetic joins the two: the weather file records that water reached somewhere and the gauge records how much passed a point. The hole in the flow record stays a hole. [inference] — see [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**And the largest flow ever measured here is in none of the three files but this one.** January 1959 brought no federal declaration, and the weather record did not begin counting floods until 1996. [verified] — [the declarations](allen-county-disaster-declarations-1965-2020.yml) and the storm record above.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -6530,7 +6765,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "office/allen-county-treasurer.yml",
@@ -10519,6 +10754,10 @@
         {
           "text": "**Two railways ran through it and one of them was electric.** \"The Lake Erie & Western Railroad and the Lima & Findlay traction line pass through the village.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). The Lima & Findlay is named in that book's township chapters and in none of its transportation chapter; see [the interurban](../measure/allen-county-interurban-1901-1921.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Two tornadoes have been recorded at this village, fifty-six years apart.** The F3 of 19 July 1950 ended two-tenths of a mile from it after 9.7 miles from the south-east side of Lima, and an F1 touched down here at 14:18 on 22 June 2006 in the middle of the windstorm that crossed the county. [verified] — [the tornado of 1950](../event/the-tornado-of-19-july-1950.yml) and [the tornadoes](../measure/allen-county-tornadoes-1950-2026.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -10567,6 +10806,10 @@
         },
         {
           "text": "**Its water crosses a county line and its records show why that matters.** The village owns eight wells and buys surface water from Ottawa Village in Putnam County, which is why the federal file codes it a surface-water system though it owns no intake. [verified] — [the water systems](../measure/allen-county-water-systems-2026.yml). It was over a drinking-water standard for ten consecutive quarters from October 2013, the longest such run in the county's record, and cleared all ten on 7 April 2016. [verified] — [the violations](../measure/allen-county-water-violations-1984-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's deadliest tornado ended near here.** The F4 of 11 April 1965 is recorded ending at 40.87, −83.87, 1.8 miles from the village, after 17.8 miles from Elida. [verified] — [the tornado](../event/the-tornado-of-11-april-1965.yml).",
           "tier": "verified"
         }
       ],
@@ -10722,7 +10965,7 @@
       "refusals": [
         "What the excess is, this corpus does not know: reported acreage is what a village put on a form, and a form is not a survey."
       ],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "place/fort-shawnee.yml",
@@ -11078,6 +11321,10 @@
         {
           "text": "**Its violent crime rate has been between two and three times Ohio's in every year from 2015 to 2024**, and its property crime rate fell forty per cent across the same decade. In 2024 the rate was 769.9 per hundred thousand against 311.9 for Ohio and 363.6 for the United States. [verified] — [the crime record](../measure/lima-crime-2015-2024.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**The city is the county's weather record.** Seventy-seven of the 390 severe weather reports here name Lima as their location, against twenty-one for Delphos, the next place. [verified] — [the storm record](../measure/allen-county-storm-events-1950-2026.yml). **That is where the reporters are, not where the storms are.** [inference] On 22 June 2006 a line of wind blew over every power pole and traffic signal on a stretch of Shawnee Road and left about two-thirds of the county without power. [verified] — [the windstorm](../event/the-windstorm-of-22-june-2006.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -14799,6 +15046,41 @@
       "source": "catalog/usgs-nwis.md"
     },
     {
+      "from": "event/the-tornado-of-11-april-1965.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-events.md"
+    },
+    {
+      "from": "event/the-tornado-of-11-april-1965.yml",
+      "to": "place/elida.yml",
+      "relationship": "affected",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "event/the-tornado-of-11-april-1965.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "affected",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "event/the-tornado-of-19-july-1950.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-events.md"
+    },
+    {
+      "from": "event/the-tornado-of-19-july-1950.yml",
+      "to": "place/beaverdam.yml",
+      "relationship": "affected",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "event/the-tornadoes-of-april-1965.yml",
       "to": "place/allen-county.yml",
       "relationship": "affected",
@@ -14818,6 +15100,20 @@
       "relationship": "occurred-at",
       "tier": "verified",
       "source": "catalog/allen-county-recorder-section-ground.md"
+    },
+    {
+      "from": "event/the-windstorm-of-22-june-2006.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-events.md"
+    },
+    {
+      "from": "event/the-windstorm-of-22-june-2006.yml",
+      "to": "place/lima.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-events.md"
     },
     {
       "from": "event/treaty-of-st-marys.yml",
@@ -15933,11 +16229,25 @@
       "source": "catalog/fbi-crime-data-explorer.md"
     },
     {
+      "from": "measure/allen-county-storm-events-1950-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-events.md"
+    },
+    {
       "from": "measure/allen-county-survey-sections.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/allen-county-gis-rest.md"
+    },
+    {
+      "from": "measure/allen-county-tornadoes-1950-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-events.md"
     },
     {
       "from": "measure/allen-county-total-employment-1969-2022.yml",

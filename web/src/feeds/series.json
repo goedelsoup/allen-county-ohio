@@ -1272,6 +1272,46 @@
       ]
     },
     {
+      "id": "place-allen-county::severe-weather-events-recorded-for-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "severe weather events recorded for Allen County",
+      "unit": "events",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-storm-events-1950-2026.yml",
+          "label": "Allen County's severe weather record, 1950–2026",
+          "as_of": "2026",
+          "value": 390.0,
+          "published": "390",
+          "tier": "verified",
+          "source": "catalog/noaa-storm-events.md",
+          "method": "Seventy-seven annual detail files downloaded whole from the NCEI bulk directory and filtered locally on `STATE` = OHIO and `CZ_NAME` = ALLEN; there is no county query. The 390 rows are 287 county-designated and 103 zone-designated, and the split follows NWS Directive 10-1605 exactly. Decade counts for the 2020s are omitted from the table above because the decade is not over — it stood at 60 when this was compiled. Damage is summed from the file's `K`/`M` suffixed estimates in nominal dollars of the year of each event, undeflated, and the file's own documentation calls them estimates. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::tornadoes-recorded-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "tornadoes recorded in Allen County",
+      "unit": "tornadoes",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-tornadoes-1950-2026.yml",
+          "label": "Allen County's tornadoes, 1950–2026",
+          "as_of": "2026",
+          "value": 23.0,
+          "published": "23",
+          "tier": "verified",
+          "source": "catalog/noaa-storm-events.md",
+          "method": "Rows where `EVENT_TYPE` is Tornado in the county's 390-row extract, sorted by begin date. Scale is the file's `TOR_F_SCALE`, which mixes the Fujita scale used before February 2007 with the Enhanced Fujita scale used after and marks neither; the two are printed as the file prints them and are not treated as one series. The 1970 row carries no rating at all. Damage is the file's nominal-dollar estimate; a blank means the field is empty, which is not the same as `$0` and seven rows have one or the other. Place names in the last column are this corpus's, taken as the nearest node to the file's coordinates, except where the file names a location itself. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::total-employment,-all-jobs,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -5154,6 +5194,97 @@
       ],
       "caveats": [],
       "figures": []
+    },
+    {
+      "id": "the-blizzard-is-not-in-the-weather-file",
+      "statement": "Allen County's severe weather record grew thirty-fold between the 1950s and the 2010s and its tornado count did not. Thirteen of its sixteen event types were born in 1996 or later, and the blizzard that brought the county a federal emergency in 1978 is not in the file at all.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-storm-events-1950-2026.yml",
+          "node_label": "Allen County's severe weather record, 1950–2026",
+          "span": "**The count rises monotonically across seven decades and the tornadoes do not.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-storm-events.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-storm-events-1950-2026.yml",
+          "node_label": "Allen County's severe weather record, 1950–2026",
+          "span": "**The seven decade totals are 4, 8, 12, 32, 58, 95 and 121, and the tornado column beside them is 1, 2, 4, 3, 2, 3, 4.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/noaa-storm-events.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-storm-events-1950-2026.yml",
+          "node_label": "Allen County's severe weather record, 1950–2026",
+          "span": "**Sixteen event types appear here and thirteen of them start in 1996 or later.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-storm-events.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-storm-events-1950-2026.yml",
+          "node_label": "Allen County's severe weather record, 1950–2026",
+          "span": "**Eleven people have been killed by weather in this county since 1950 and all eleven died in the same minute.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-storm-events.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-disaster-declarations-1965-2020.yml",
+          "node_label": "Allen County's federal disaster declarations, 1965–2020",
+          "span": "**The sixth is the blizzard of January 1978 and the weather file does not contain it.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-storm-events.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1950s",
+          "value": 4.0,
+          "literal": "4"
+        },
+        {
+          "label": "1960s",
+          "value": 8.0,
+          "literal": "8"
+        },
+        {
+          "label": "1970s",
+          "value": 12.0,
+          "literal": "12"
+        },
+        {
+          "label": "1980s",
+          "value": 32.0,
+          "literal": "32"
+        },
+        {
+          "label": "1990s",
+          "value": 58.0,
+          "literal": "58"
+        },
+        {
+          "label": "2000s",
+          "value": 95.0,
+          "literal": "95"
+        },
+        {
+          "label": "2010s",
+          "value": 121.0,
+          "literal": "121"
+        }
+      ]
     },
     {
       "id": "an-address-is-not-a-municipality",
