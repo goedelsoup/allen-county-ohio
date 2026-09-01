@@ -115,6 +115,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 8v / 1i / 2o | 69 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 7v / 3i / 0o | 77 |
+| [allen-county-funds-2025.yml](measure/allen-county-funds-2025.yml) | measure | What passes through Allen County's books, 2025 | 2 | 7v / 3i / 1o | 69 |
+| [allen-county-general-fund-2025.yml](measure/allen-county-general-fund-2025.yml) | measure | Allen County's General Fund, 2025 | 2 | 9v / 4i / 2o | 102 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 3v / 1i / 1o | 34 |
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 2 | 6v / 5i / 2o | 111 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 2 | 6v / 4i / 1o | 60 |
@@ -143,6 +145,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 3 | 10v / 3i / 1o | 117 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 2 | 3v / 1i / 0o | 34 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
+| [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 5v / 12i / 0o | 125 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
@@ -208,21 +211,21 @@ Sorted by: kind, then alphabetically.
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 8v / 5i / 0o | 70 |
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 4v / 1i / 1o | 45 |
-| [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 3v / 0i / 1o | 35 |
-| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 4v / 0i / 1o | 38 |
-| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 6v / 2i / 1o | 48 |
-| [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 3v / 1i / 1o | 35 |
-| [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 8v / 3i / 1o | 60 |
-| [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 2v / 1i / 1o | 31 |
-| [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 3v / 1i / 1o | 36 |
-| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 6v / 3i / 1o | 67 |
-| [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 5v / 1i / 2o | 42 |
+| [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 39 |
+| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 5v / 0i / 1o | 42 |
+| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 7v / 2i / 1o | 50 |
+| [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 4v / 1i / 1o | 37 |
+| [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 9v / 4i / 1o | 66 |
+| [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 3v / 1i / 1o | 34 |
+| [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 4v / 1i / 1o | 38 |
+| [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 7v / 4i / 1o | 72 |
+| [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 6v / 2i / 2o | 48 |
 | [clerk-of-the-lima-municipal-court.yml](office/clerk-of-the-lima-municipal-court.yml) | office | Clerk of the Lima Municipal Court | 2 | 2v / 0i / 1o | 28 |
 | [judge-of-the-common-pleas-domestic-relations-division.yml](office/judge-of-the-common-pleas-domestic-relations-division.yml) | office | Judge of the Court of Common Pleas, Domestic Relations Division | 2 | 2v / 2i / 1o | 30 |
 | [judge-of-the-common-pleas-general-division.yml](office/judge-of-the-common-pleas-general-division.yml) | office | Judge of the Court of Common Pleas, General Division | 2 | 3v / 2i / 1o | 36 |
 | [judge-of-the-common-pleas-probate-division.yml](office/judge-of-the-common-pleas-probate-division.yml) | office | Judge of the Court of Common Pleas, Probate Division | 2 | 3v / 2i / 0o | 31 |
 | [judge-of-the-lima-municipal-court.yml](office/judge-of-the-lima-municipal-court.yml) | office | Judge of the Lima Municipal Court | 2 | 2v / 2i / 1o | 38 |
-| [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 2v / 2i / 1o | 37 |
+| [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 3v / 3i / 1o | 41 |
 | [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
 | [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 13v / 3i / 2o | 114 |
