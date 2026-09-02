@@ -14,6 +14,31 @@ const annexed = assertion('the-annexations-are-dated-now')
 const birthdays = assertion('the-villages-have-birthdays-now')
 const control = assertion('the-county-lost-land-it-never-lost')
 const fourYears = assertion('a-fifth-of-the-farmland-went-in-four-years')
+const sawtooth = assertion('the-farmland-did-not-drain')
+
+// The complete record: eighteen census years of land in farms, with the farm count beside it and
+// the annual rate of change across each interval. Typed out because the corpus holds it as one
+// measure and this table is what the phase was for.
+const fullFarmland = [
+  ['1910', '240,472', '2,939', '—'],
+  ['1920', '241,488', '2,909', '+102'],
+  ['1925', '228,249', '2,722', '−2,648'],
+  ['1930', '230,424', '2,684', '+435'],
+  ['1935', '235,791', '3,016', '+1,073'],
+  ['1940', '225,630', '2,574', '−2,032'],
+  ['1945', '227,038', '2,511', '+282'],
+  ['1950', '227,944', '2,560', '+181'],
+  ['1954', '215,018', '2,097', '−3,232'],
+  ['1959', '206,047', '1,755', '−1,794'],
+  ['1964', '211,196', '1,659', '+1,030'],
+  ['1969', '215,862', '1,611', '+933'],
+  ['1974', '205,706', '1,354', '−2,031'],
+  ['1978', '195,604', '1,244', '−2,526'],
+  ['1982', '197,256', '1,202', '+413'],
+  ['1987', '201,190', '1,148', '+787'],
+  ['2002', '188,150', '968', '−869'],
+  ['2022', '178,921', '897', '−461'],
+]
 const winters = assertion('the-winters-warmed-and-the-summers-did-not')
 const frost = assertion('the-frost-free-season-is-three-weeks-longer')
 
@@ -103,6 +128,12 @@ const farmSeries = [
 // Bars, not a line. The 1910 observation and the 2002 one are ninety-two years apart and
 // nothing measured between them; a line would draw that segment, and its shape is exactly
 // what this corpus refuses to assert.
+const sawtoothSpec = line(sawtooth.figures.map((f) => f.label), [
+    { name: 'Acres in farms', y: sawtooth.figures.map((f) => f.value) },
+  ], {
+  yTitle: 'Acres',
+})
+
 const farmlandSpec = bar(
   farmland.figures.map((f) => f.label),
   farmland.figures.map((f) => f.value),
@@ -697,17 +728,58 @@ const yieldSpec = bar(
     <p>
       Two other things the record now dates. Between 1954 and 1982 the county lost 17,762 acres of
       farmland and gained 16,749 acres of harvested cropland — the two nearly cancel, so what left
-      was pasture, woodland and farmstead rather than the ground under the corn. And the only rise
-      in the whole series, 3,934 acres between 1982 and 1987, happens while an acre of Allen County
-      farmland loses a quarter of its value, $2,023 to $1,504. In the same five years the county's
-      "other cropland" went from 3,593 acres to 20,121. Land retired from production is still land
-      in farms.
+      was pasture, woodland and farmstead rather than the ground under the corn. And the rise of
+      3,934 acres between 1982 and 1987 happens while an acre of Allen County farmland loses a
+      quarter of its value, $2,023 to $1,504. In the same five years the county's "other cropland"
+      went from 3,593 acres to 20,121. Land retired from production is still land in farms.
     </p>
     <p>
       And the crop changeover has a date. In 1949 the county harvested 26,213 acres of oats and
       17,393 of soybeans; in 1954, 22,498 of oats and 22,991 of soybeans. The crop that did not
       exist in this county in 1909 had passed the one that fed its horses before the interstate was
       built — and the oats survived that crossing at 22,498 acres and were down to eleven by 2022.
+    </p>
+  </section>
+
+  <section>
+    <h2>It did not drain. It sawtoothed.</h2>
+    <p>
+      Everything above rests on seven census years. There are eighteen. The whole printed run of the
+      Census of Agriculture is scanned on the National Agricultural Statistics Service's own host,
+      table by table, at the address the old Cornell agricultural archive redirects to — which this
+      site had recorded as redirecting <em>without</em> the scans. Ten Ohio volumes closed the gap,
+      and each of them prints the census before it, so ten of the eighteen years are printed twice
+      in two different books and agree to the acre.
+    </p>
+    <AssertionCard assertion={sawtooth} open />
+    <ChartFigure
+      id="farmland-full"
+      title="Acres in farms, Allen County, eight of eighteen census years"
+      caption="Acres rather than share of the county: the land-area denominator moves between volumes — 259,840 acres in 1925, 262,405 in 1969 — and a line of percentages would carry that as if it were farmland."
+      columns={['Year', 'Acres in farms']}
+      rows={sawtooth.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={320}
+    />
+    <script type="application/json" data-chart-spec="farmland-full" set:html={JSON.stringify(sawtoothSpec)} is:inline />
+    <DataTable
+      title="Land in farms, every census year from 1910"
+      caption="The last column is the average annual change since the row above. Farm counts are not comparable across the definition changes of 1959, 1974 and 1978 — the 1959 change alone removed 75 Allen County farms from the count without anyone selling anything."
+      columns={['Year', 'Acres in farms', 'Farms', 'Acres a year']}
+      rows={fullFarmland}
+    />
+    <p>
+      The forty years this site called the flattest stretch in the record are the least flat. They
+      net 313 acres a year and contain 23,400 acres of loss and 10,872 of recovery — a rise of
+      1,016, a fall of 13,239, a recovery of 7,542, a fall of 10,161 and a recovery of 2,314, in
+      that order. An average taken across two endpoints described none of it.
+    </p>
+    <p class="note">
+      One year in eighteen disagrees with itself. The 1964 volume gives Allen County 211,196 acres
+      in farms and the 1969 volume gives 211,195 for the same census — one acre, one bureau, five
+      years apart, with nothing on either page to catch it. It is the second time this site has
+      found a publisher printing its own figure two ways, after the Ohio Secretary of State's two
+      readings of the 1896 vote, and the rule is the same: the census's own year wins and the
+      divergence is published.
     </p>
   </section>
 

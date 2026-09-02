@@ -2929,6 +2929,60 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-farmland-did-not-drain",
+        statement: "Allen County's farmland did not go once. Nine of the seventeen intervals in a \
+                    now-complete record are rises: 87,824 acres left its farms between 1910 and \
+                    2022 and 26,273 came back, three returned for every ten lost. The peak is 1920 \
+                    and not 1910, and the largest single loss is the 13,239 acres of 1920 to 1925 \
+                    \u{2014} larger than the 1950\u{2013}54 collapse this corpus had published as the sharpest \
+                    stretch of the century, and invisible to it.",
+        topic: "land",
+        // The acreage is plotted rather than the share of the county's land area: the land-area
+        // denominator moves between volumes — 259,840 acres in 1925, 262,405 in 1969 — and a line
+        // of percentages would carry that as if it were farmland.
+        supports: &[
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**The farmland did not drain. It sawtoothed.** Nine of the seventeen intervals are rises. Across\n  the whole record 87,824 acres left the county's farms and 26,273 came back, for a net loss of\n  61,551 \u{2014} **three acres returned for every ten lost**."
+            ),
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**In figures: 240,472 acres in 1910, 241,488 in 1920, 235,791 in 1935, 215,018 in 1954, 206,047 in\n  1959, 215,862 in 1969, 195,604 in 1978 and 178,921 in 2022.**"
+            ),
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**The county's farmland peak is 1920, not 1910.** 241,488 acres, a thousand above the 1910 figure\n  this corpus has treated as the top of the series since it first held one."
+            ),
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**The largest single loss in the record is one nobody here had seen.** Allen County lost 13,239\n  acres of farmland between 1920 and 1925 \u{2014} more than the 12,926 it lost between 1950 and 1954,\n  which this corpus had published as the sharpest stretch of the century."
+            ),
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**And that published finding survives anyway, on the measure it was made on.** 1950 to 1954 is\n  four years and 1920 to 1925 is five, so the rate is 3,232 acres a year against 2,648, and 1950\u{2013}54\n  is still the fastest loss in the record."
+            ),
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**The farm count peaks in the Depression.** 3,016 farms in 1935 against 2,939 in 1910 and 2,684 in\n  1930 \u{2014} and the farmland with them, 5,367 acres more in 1935 than five years before."
+            ),
+            support!(
+                "measure/allen-county-farmland-1910-2022.yml",
+                "**The nineteen-sixties gained farmland, inside one definition.** 206,047 acres in 1959 and 215,862\n  in 1969, a rise of 9,815 or 4.8 per cent, across three censuses that share a farm definition."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1910", value: 240_472.0, literal: "240,472" },
+            Figure { label: "1920", value: 241_488.0, literal: "241,488" },
+            Figure { label: "1935", value: 235_791.0, literal: "235,791" },
+            Figure { label: "1954", value: 215_018.0, literal: "215,018" },
+            Figure { label: "1959", value: 206_047.0, literal: "206,047" },
+            Figure { label: "1969", value: 215_862.0, literal: "215,862" },
+            Figure { label: "1978", value: 195_604.0, literal: "195,604" },
+            Figure { label: "2022", value: 178_921.0, literal: "178,921" },
+        ],
+    },
+    Assertion {
         id: "the-county-dies-younger-than-its-state",
         statement: "Allen County has gone from healthier than America to a quarter worse than it. \
                     Its rate of years lost before seventy-five was below the national rate in the \
