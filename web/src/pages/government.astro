@@ -106,6 +106,8 @@ const swing = assertion('democratic-ground-moved-fastest')
 const eleven = assertion('eleven-precincts')
 
 const rising = assertion('republican-share-rising')
+
+const halfRun = assertion('half-the-run-and-the-hole-is-one-block')
 const shareSpec = line(rising.figures.map((f) => f.label), [
     { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
   ], {
@@ -379,6 +381,16 @@ const correlation = swing.figures[0]
       That asymmetry is the reason this page exists at all: one office in extraordinary detail and
       eight missing entirely, which reads as a worked class and is not one.
     </p>
+
+    <h3>The presidential record is exactly half read, and the unread half is one block</h3>
+    <AssertionCard assertion={halfRun} />
+    <p>
+      That shape is the useful part. A record with holes scattered through it is a record you keep
+      chipping at; this one has a single wall in it, and the wall is the nineteen elections between
+      the county that voted for Bryan and the county that voted for Trump. Whatever turned Allen
+      County Republican happened behind it. Ohio's own election office would answer the question and
+      its website refuses every client that asks.
+    </p>
     <Gloss>
       For nine phases the office class held two members — the sheriff, with thirty-nine tenures back
       to 1831, and the mayor of Lima — and the depth of the first made the class look finished.
@@ -395,6 +407,10 @@ const correlation = swing.figures[0]
     <section class="onward">
       <h2>Where this goes on</h2>
       <ul>
+        <li>
+          <a href="/read/the-democratic-column">The Democratic column</a>
+          <span class="why">Five elections added to the modern run, and a third of one column gone in eight years while the other grew.</span>
+        </li>
         <li>
           <a href="/read/the-government-below-the-county">The government below the county</a>
           <span class="why">Thirteen townships, nine villages and a city — and appointment is how two of them get filled.</span>

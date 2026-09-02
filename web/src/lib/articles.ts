@@ -268,6 +268,15 @@ export const ARTICLES: Article[] = [
 
   // ── Government ──────────────────────────────────────────────────────────
   {
+    slug: 'the-democratic-column',
+    title: 'The Democratic column',
+    dek: 'Five elections added to the modern run, and a third of one column gone in eight years while the other grew.',
+    section: 'government',
+    era: [2000, 2020],
+    assertions: ['the-democratic-column-lost-a-third-of-itself'],
+    entries: ['place/allen-county.yml'],
+  },
+  {
     slug: 'the-government-below-the-county',
     title: 'The government below the county',
     dek: 'Thirteen townships, nine villages and a city — and in two of the villages, appointment is how the government gets filled.',

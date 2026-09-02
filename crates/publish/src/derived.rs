@@ -3456,6 +3456,96 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2024", value: 3970.0, literal: "3,970" },
         ],
     },
+    Assertion {
+        id: "the-democratic-column-lost-a-third-of-itself",
+        statement: "2008 is Allen County's modern high-water mark on both sides \u{2014} its largest \
+                    total vote, its largest Democratic vote, and the only Republican share under \
+                    sixty in the modern run. Over the eight years to 2016 the Democratic vote fell \
+                    6,228, a third of itself, while the total vote fell 4,448 and the Republican \
+                    vote rose 547: the whole of the turnout decline and more came out of one \
+                    column.",
+        topic: "elections",
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**2008 is the modern high-water mark, and it is high on both sides.** It is the largest total\n  vote of the six modern elections at 50,263, the largest Democratic vote at 19,522, and the\n  Republicans' worst share at 59.6 per cent \u{2014} their only showing under sixty in the whole modern\n  run."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The Democratic column lost a third of itself in eight years, and it lost more than turnout\n  did.** From 2008 to 2016 the Democratic vote fell 6,228 \u{2014} 31.9 per cent \u{2014} while the total vote\n  fell 4,448. The Republican vote *rose* by 547 across the same eight years."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The county's Republican share is not a straight line and 2008 is the dip, not the start.** It\n  runs 65.4, 66.1, 59.6, 61.2, 66.5 and 69.0 across the six modern elections: two above\n  sixty-five, a two-election trough, and then a climb past where it began."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**In figures, the Republican share: 65.4 per cent in 2000, 66.1 in 2004, 59.6 in 2008, 61.2 in\n  2012, 66.5 in 2016 and 69.0 in 2020.**"
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The margin in 2020 is the largest in this corpus's whole record of this county, and the\n  largest the other way is 1,354.** R+18,967 in 2020 against Bryan's D+1,354 in 1908. Allen County\n  gave Bryan 55.2 per cent in 1896 and Biden 29.5 per cent in 2020."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2000", value: 65.4, literal: "65.4" },
+            Figure { label: "2004", value: 66.1, literal: "66.1" },
+            Figure { label: "2008", value: 59.6, literal: "59.6" },
+            Figure { label: "2012", value: 61.2, literal: "61.2" },
+            Figure { label: "2016", value: 66.5, literal: "66.5" },
+            Figure { label: "2020", value: 69.0, literal: "69.0" },
+        ],
+    },
+    Assertion {
+        id: "two-compilers-one-canvass-and-one-vote",
+        statement: "Two independent compilations of Ohio's certified county canvass disagree by \
+                    exactly one vote in two of the five elections both cover. In 2008 the two \
+                    errors cancel, so both files report the same total and no arithmetic in either \
+                    can catch it. In 2012 the Secretary of State's own workbook settles it, and \
+                    the compilation that matches the workbook is the volunteer transcription.",
+        topic: "elections",
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**Two compilations of one canvass disagree twice in five elections, each time by one vote.** For\n  2008 the lab gives McCain 29,941 and Obama 19,521 where OpenElections gives 29,940 and 19,522 \u{2014}\n  one vote each way, so both files total 50,263 and no arithmetic in either can catch it. For 2012\n  the lab gives Obama 17,913 against OpenElections' 17,914, and there the totals differ too."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The 2012 disagreement is settled and the lab is wrong.** The Ohio Secretary of State's own\n  final-results workbook, which OpenElections ships beside its transcription, gives Allen County\n  Obama 17,914, Romney 29,502 and a presidential total of 48,236 \u{2014} the transcription exactly."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The residue is where the two compilations really part.** For 2016 both give Trump 30,487 and\n  Clinton 13,294 and then differ by 79 on everything else, 2,034 against 2,113. That is a\n  disagreement about which write-ins count rather than a transcription error, and it is not read\n  here as one side being wrong."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**2004 rests on one witness and the others on two.** OpenElections has no Ohio general-election\n  file for 2004 at all, so that row has no second reading."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "half-the-run-and-the-hole-is-one-block",
+        statement: "The corpus now holds 21 of the 42 presidential elections from 1856 to 2020 \u{2014} \
+                    exactly half. The 21 it does not hold are 1912, 1916, and then every election \
+                    from 1924 to 1996 without a break, with 1920 sitting inside that block as the \
+                    only year read.",
+        topic: "elections",
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**This closes half the run and leaves the other half in one piece.** With these five the corpus\n  holds 21 of the 42 presidential elections from 1856 to 2020. The 21 it does not hold are 1912\n  and 1916, and then every election from 1924 to 1996 without a break \u{2014} a nineteen-election block\n  with 1920 sitting inside it as the only year read."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1856-1884.yml",
+                "**The other end of the run is now held too, and the hole between them has a shape.** Five modern\n  elections were read from two compilations of the state canvass, so the corpus holds 21 of the 42\n  presidential elections from 1856 to 2020 \u{2014} exactly half."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
