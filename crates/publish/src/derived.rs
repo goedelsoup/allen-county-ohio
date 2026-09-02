@@ -2929,6 +2929,90 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-county-dies-younger-than-its-state",
+        statement: "Allen County has gone from healthier than America to a quarter worse than it. \
+                    Its rate of years lost before seventy-five was below the national rate in the \
+                    first three windows of the record and above it in the twenty-one since; deaths \
+                    before seventy-five rose 46.1 per cent between 2011\u{2013}2013 and 2020\u{2013}2022 \
+                    while the under-75 population fell 4.0 per cent. And it is not the opioid \
+                    county the state's reputation would predict: its overdose rate is 15 per cent \
+                    below Ohio's, and what it exceeds the state on is suicide, road deaths, \
+                    homicide and firearms.",
+        topic: "health",
+        // Nine windows of the county's own rate are plotted rather than all twenty-four: the
+        // windows overlap by two years, so consecutive points are not independent and a line
+        // through every one of them would read as more measurement than the file contains.
+        supports: &[
+            support!(
+                "measure/allen-county-premature-death-1997-2022.yml",
+                "**The county has gone from healthier than America to a quarter worse than it, and the crossing is\n  early.** Allen County is below the national rate in the first three windows only \u{2014} 7,162 against\n  7,705 in 1997\u{2013}1999 \u{2014} and above it in the twenty-one since, ending 25.5 per cent above."
+            ),
+            support!(
+                "measure/allen-county-premature-death-1997-2022.yml",
+                "**In figures, taking every third window: the county's rate runs 7,162, 7,599, 7,819, 7,428, 6,759,\n  7,142, 9,033, 8,518 and 10,482, against a national 7,705, 7,535, 7,345, 7,090, 6,704, 6,601,\n  6,901, 7,282 and 8,352.**"
+            ),
+            support!(
+                "measure/allen-county-premature-death-1997-2022.yml",
+                "**The count says the same thing without a denominator in it, which matters here.** Deaths before\n  seventy-five in Allen County were 1,306 in the three years 2011\u{2013}2013 and **1,908** in 2020\u{2013}2022, a\n  rise of **46.1 per cent**, while the county's under-75 population in the same two windows fell 4.0\n  per cent, from 293,386 to 281,611 person-years."
+            ),
+            support!(
+                "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+                "**A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an\n  American and 0.9 fewer than an Ohioan.**"
+            ),
+            support!(
+                "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+                "**It is not the opioid county the state's reputation would predict.** Allen County's overdose rate\n  of 38.1 is **15 per cent below Ohio's** 44.7, and it is one of only four rows where the county\n  does better than the state. What it exceeds the state on is suicide by 14 per cent, motor vehicle\n  crashes by 10 per cent, homicide by 9 and firearms by 5."
+            ),
+            support!(
+                "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+                "**The gap between the county's Black and white residents is wider here than in the state or the\n  country.** Life expectancy is 68.1 years for Black residents and 75.0 for white ones, a gap of\n  **6.91 years**, against 5.48 in Ohio and 5.08 nationally."
+            ),
+        ],
+        answers: &[
+            "does not infer a cause from a curve",
+            "cannot say from these figures whether the cause is who lives where or what happens to whom",
+        ],
+        figures: &[
+            Figure { label: "1997\u{2013}99", value: 7_162.0, literal: "7,162" },
+            Figure { label: "2000\u{2013}02", value: 7_599.0, literal: "7,599" },
+            Figure { label: "2003\u{2013}05", value: 7_819.0, literal: "7,819" },
+            Figure { label: "2006\u{2013}08", value: 7_428.0, literal: "7,428" },
+            Figure { label: "2009\u{2013}11", value: 6_759.0, literal: "6,759" },
+            Figure { label: "2012\u{2013}14", value: 7_142.0, literal: "7,142" },
+            Figure { label: "2015\u{2013}17", value: 9_033.0, literal: "9,033" },
+            Figure { label: "2018\u{2013}20", value: 8_518.0, literal: "8,518" },
+            Figure { label: "2020\u{2013}22", value: 10_482.0, literal: "10,482" },
+        ],
+    },
+    Assertion {
+        id: "overdose-deaths-fell-by-two-thirds",
+        statement: "Drug overdose deaths in Allen County peaked in the twelve months to February \
+                    2023 at fifty-four and the twelve months to December 2025 count seventeen \u{2014} a \
+                    fall of 68.5 per cent, steeper than Ohio's 56.1 and the nation's 36.6, and \
+                    below where the county's record starts.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+                "**The epidemic peaked here in the twelve months to February 2023 at fifty-four deaths, and the\n  twelve months to December 2025 count seventeen \u{2014} a fall of 68.5 per cent.**"
+            ),
+            support!(
+                "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+                "**The fall is steeper than the state's and much steeper than the country's.** Measured to the same\n  endpoint of December 2025, Ohio is down **56.1 per cent** from its peak of 5,582 in the twelve\n  months to April 2021, and the United States down **36.6 per cent** from 111,466 in the twelve\n  months to June 2023."
+            ),
+            support!(
+                "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+                "**This is the one health figure the corpus holds twice, from two pipelines, and they agree\n  exactly.** The three December windows of 2020, 2021 and 2022 sum to 116 deaths; the final NCHS\n  mortality file, by way of\n  [County Health Rankings](../../catalog/county-health-rankings.md), gives Allen County 116 drug\n  overdose deaths for 2020\u{2013}2022."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Allen County", value: 68.5, literal: "68.5" },
+            Figure { label: "Ohio", value: 56.1, literal: "56.1" },
+            Figure { label: "United States", value: 36.6, literal: "36.6" },
+        ],
+    },
+    Assertion {
         id: "the-county-did-not-turn-with-1896",
         statement: "The realignment of 1896 did not reach Allen County. William McKinley, Ohio's \
                     own governor at the head of the ticket, gained five points here over 1892 and \

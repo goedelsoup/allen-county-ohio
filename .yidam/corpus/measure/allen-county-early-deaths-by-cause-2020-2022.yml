@@ -1,0 +1,81 @@
+class: measure
+label: What Allen County dies of early, 2016–2022
+description: |
+  Eleven mortality measures for the county against its state and the nation, each with the count
+  behind it and the years it covers. [verified] —
+  [County Health Rankings](../../catalog/county-health-rankings.md), 2025 annual release, with the
+  data years taken from the publisher's technical documentation rather than from the file.
+
+      measure                            years      Allen     Ohio       US   Allen count
+      premature death (YPLL-75)        2020-2022   10,482    9,740    8,352     1,908 deaths
+      premature age-adjusted mortality 2020-2022    517.6    470.8    406.6     1,908 deaths
+      life expectancy, years           2020-2022     74.3     75.2     77.1               —
+      injury deaths                    2018-2022     95.1    100.7     83.6       485 deaths
+      drug overdose deaths             2020-2022     38.1     44.7     30.8       116 deaths
+      suicides                         2018-2022     16.8     14.7     14.0        83 deaths
+      firearm fatalities               2018-2022     15.5     14.7     13.4        79 deaths
+      motor vehicle crash deaths       2016-2022     12.1     11.1     12.3        87 deaths
+      homicides                        2016-2022      7.8      7.2      6.5        56 deaths
+      infant mortality, per 1,000      2016-2022      6.4      7.0      5.6        55 deaths
+      child mortality                  2019-2022     54.8     59.2     51.6        58 deaths
+
+  [verified] — same dataset. All rates are per 100,000 except life expectancy and infant mortality;
+  the year spans are not the same across rows and no row here should be read against another as
+  though they were. [inference] — stated here.
+
+  **A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an
+  American and 0.9 fewer than an Ohioan.** [verified] — same dataset. The county is worse than the
+  state on seven of the eleven measures in the table and worse than the nation on ten of them; the
+  one it beats the nation on is motor vehicle crash deaths. [inference] — counted here.
+
+  **It is not the opioid county the state's reputation would predict.** Allen County's overdose rate
+  of 38.1 is **15 per cent below Ohio's** 44.7, and it is one of only four rows where the county
+  does better than the state. What it exceeds the state on is suicide by 14 per cent, motor vehicle
+  crashes by 10 per cent, homicide by 9 and firearms by 5. [inference] — computed from the table
+  above.
+
+  **The gap between the county's Black and white residents is wider here than in the state or the
+  country.** Life expectancy is 68.1 years for Black residents and 75.0 for white ones, a gap of
+  **6.91 years**, against 5.48 in Ohio and 5.08 nationally. [verified] — same dataset, race-specific
+  columns, 2020–2022.
+
+  **On years lost the ratio is nearly two to one.** Black residents of the county lose 18,933 years
+  before seventy-five per 100,000 against 9,584 for white residents — a ratio of **1.98**, against
+  1.77 in Ohio and 1.70 nationally. On age-adjusted mortality the same comparison is 823 against
+  491, a ratio of 1.68. [verified] — same dataset. Both ratios are the widest of the three
+  geographies, and this corpus cannot say from these figures whether the cause is who lives where or
+  what happens to whom. [inference] — stated here.
+
+  **No other race category is published for this county.** Ohio and the nation carry Hispanic, Asian
+  and American Indian figures; Allen County carries Black and white and, for life expectancy, a
+  Hispanic value of 87.6 years that rests on a population too small for a life table and is not
+  quoted as a finding here. [verified] — same dataset; see
+  [a modelled estimate is not an observation](../../decisions/a-modelled-estimate-is-not-an-observation.yml).
+
+  **Against the corpus's other health source, which is a model.** CDC's estimates put Lima worse
+  than its county on eleven of thirteen separated measures, and five of the top eight are not
+  diseases. Nothing above has a grain below the county, so the two cannot be joined. [verified] —
+  [the CDC estimates](allen-county-health-2023.yml).
+
+  [open] What the county's residents die of, as against how many of them die. These eleven measures
+  are the publisher's selection and not a cause-of-death table; the agency that holds one will not
+  serve it below the national level to a machine.
+properties:
+  parameter: life expectancy at birth, Allen County
+  value: "74.3"
+  unit: years
+  as_of: "2022"
+  method: |
+    Read from the publisher's 2025 annual release CSV, one row for Allen County and one each for
+    Ohio and the United States, taking the `_rawvalue`, `_numerator` and race-specific columns. The
+    data years are from the publisher's technical documentation, which the CSV does not carry, and
+    they differ by measure — three years for premature death and overdoses, five for suicides and
+    firearms, seven for homicides and motor vehicle deaths. Counts are the numerator column, which
+    holds deaths rather than the years of potential life lost the codebook claims. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/county-health-rankings.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
