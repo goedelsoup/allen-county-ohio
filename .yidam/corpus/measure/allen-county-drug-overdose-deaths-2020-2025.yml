@@ -1,0 +1,71 @@
+class: measure
+label: Drug overdose deaths in Allen County, 2020–2025
+description: |
+  Seventy-two twelve-month-ending counts, one for each month from January 2020 to December 2025, from
+  a live flow of death certificates rather than from a final annual file. [verified] —
+  [CDC's provisional county counts](../../catalog/cdc-provisional-overdose-counts.md), FIPS 39003,
+  data as of 5 July 2026.
+
+      twelve months ending      Allen    per 100,000
+      January 2020                 18           17.6
+      December 2020                34           33.3
+      December 2021                33           32.3
+      December 2022                49           47.9
+      February 2023 (peak)         54           52.8
+      December 2023                32           31.3
+      December 2024                32           31.3
+      December 2025                17           16.6
+
+  [verified] — same file for the counts. The rates are this corpus's arithmetic against the county's
+  2020 census population of 102,206 and are not the publisher's; the population is held constant
+  across six years in which it did not hold constant. [inference] — computed against
+  [the 2020 count](allen-county-population-2020-census.yml).
+
+  **The epidemic peaked here in the twelve months to February 2023 at fifty-four deaths, and the
+  twelve months to December 2025 count seventeen — a fall of 68.5 per cent.** [verified] — same
+  file. That is below where the series starts: the twelve months ending January 2020 count eighteen.
+
+  **The fall is steeper than the state's and much steeper than the country's.** Measured to the same
+  endpoint of December 2025, Ohio is down **56.1 per cent** from its peak of 5,582 in the twelve
+  months to April 2021, and the United States down **36.6 per cent** from 111,466 in the twelve
+  months to June 2023. [verified] —
+  [the state and national file](../../catalog/cdc-provisional-overdose-counts.md).
+
+  **And the county peaked late.** Ohio's worst twelve months ended in April 2021; Allen County's
+  ended twenty-two months later, four months before the nation's. [inference] — computed from the
+  two files.
+
+  **This is the one health figure the corpus holds twice, from two pipelines, and they agree
+  exactly.** The three December windows of 2020, 2021 and 2022 sum to 116 deaths; the final NCHS
+  mortality file, by way of
+  [County Health Rankings](../../catalog/county-health-rankings.md), gives Allen County 116 drug
+  overdose deaths for 2020–2022. [verified] — the two sources.
+
+  **What the fall does not do is close the gap in the other node.** The county's premature death
+  rate rises to its highest in 2020–2022, when overdoses were rising too, and this corpus has no
+  figure after 2022 for deaths of any other kind. Whether the county's early deaths fell with its
+  overdoses is not established here. [inference] — see
+  [the premature death series](allen-county-premature-death-1997-2022.yml).
+
+  [open] Whether the fall held after December 2025. The county file stops there; the state file runs
+  three months further and Ohio is still falling in it.
+properties:
+  parameter: drug overdose deaths, Allen County, twelve months ending
+  value: "17"
+  unit: deaths
+  as_of: 2025-12-31
+  method: |
+    Pulled from the publisher's Socrata endpoint filtered on FIPS 39003, seventy-two rows, no
+    suppression: the county's counts run from 16 to 54 and the withholding threshold is ten. Every
+    row is a twelve-month-ending total, so consecutive rows overlap by eleven months and no two may
+    be added. Ohio and national figures are taken from the publisher's separate state file rather
+    than by summing county rows, because the number of Ohio counties reporting falls from 73 to 45
+    across this period as counties drop below the threshold, which would invent a decline. Counts
+    are provisional. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cdc-provisional-overdose-counts.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
