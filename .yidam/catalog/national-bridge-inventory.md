@@ -8,20 +8,27 @@ description: >-
   the first source in this catalog that describes hundreds of individual built works in one county.
 type: dataset
 obtained: true
-retrieved: 2026-09-01
+retrieved: 2026-09-02
 ttl_days: 365
 location:
   - kind: url
     value: https://www.fhwa.dot.gov/bridge/nbi/2025/delimited/OH25.txt
     description: >-
       The 2025 Ohio file, 26,713 rows and 11.0 MB, comma-delimited with a header row. Allen County
-      is `COUNTY_CODE_003` = 3, which selects **364** rows. Earlier editions sit at the same path
-      with the year changed; 2024 is present and was not read.
+      is `COUNTY_CODE_003` = 3, which selects **364** rows.
+  - kind: url
+    value: https://www.fhwa.dot.gov/bridge/nbi/1992/delimited/OH92.txt
+    description: >-
+      The 1992 edition, the oldest the publisher offers, at the same path with the year changed. It
+      and the editions for 1995, 1998, 2001, 2004, 2007, 2010, 2013, 2016, 2019 and 2022 are now
+      read as well, which makes this the first source in the catalog held as a series of editions
+      rather than as a snapshot.
 used-by:
   - ../corpus/measure/allen-county-bridge-crossings-2025.yml
   - ../corpus/measure/allen-county-bridges-2025.yml
   - ../corpus/measure/allen-county-national-register.yml
   - ../corpus/site/hay-road-bridge.yml
+  - ../corpus/measure/allen-county-bridge-condition-1992-2025.yml
 ---
 
 **What it is.** A federal register of highway bridges, compiled from state inspection returns under
@@ -50,6 +57,27 @@ which is the Federal Highway Administration's own published rule and not a thres
 The `FEATURES_DESC_006A` and `FACILITY_CARRIED_007` strings are free text entered by the state, are
 inconsistently abbreviated — `IR 75`, `IR 75 NB`, `IR 75 & NS RR` — and are normalised here by
 substring rather than parsed.
+
+**Older editions carry two kinds of row and only one of them is a bridge.** `RECORD_TYPE_005A` is
+`1` for the structure and `2` for a second record describing the route that passes beneath it. Every
+row in the 2025 Allen County selection is type 1, so the count of 364 above needs no filter; the
+1992 selection has 436 rows for 393 structures. Reading the series without that filter produces a
+fall of seventy-two bridges between 1992 and 2025 that did not happen. [verified] — the two files.
+
+**A bridge that is replaced leaves the file rather than changing.** Ohio issues a new structure
+number when a structure is rebuilt, so a replacement appears in an edition-to-edition link as a
+disappearance and an arrival, and the reconstruction field stays blank. Eighteen of the twenty-one
+state-owned bridges rated poor here in 1992 are absent from the 2025 file while the state's holding
+grew by seven. [verified] — the two files, linked on `STRUCTURE_NUMBER_008`.
+
+**One edition of this file does not belong to the series that surrounds it.** Allen County's
+county-owned bridges go from five in poor condition in the 2023 edition to thirty-one in the 2024,
+on a stock that changed by three structures. Ohio as a whole moves from 4.64 to 4.71 per cent poor
+across the same pair, and none of Allen's six neighbours moves at all. The inspection dates in the
+file show real 2023 inspections behind the change, and among the county's own bridges both tails of
+the rating scale grew at once. [verified] — the 2023 and 2024 Ohio files, counted here. The corpus
+reads the 2025 edition for what a structure is and the 2022 edition for how many were in poor
+condition, and says so wherever it does.
 
 **What it will not answer.** Culverts under twenty feet, of which the county engineer reports more
 than fourteen hundred; pedestrian and railroad bridges that carry no highway; and anything about

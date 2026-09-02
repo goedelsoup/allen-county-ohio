@@ -1781,8 +1781,9 @@ pub const ASSERTIONS: &[Assertion] = &[
     },
     Assertion {
         id: "not-one-state-bridge-is-in-poor-condition",
-        statement: "Allen County's 364 highway bridges are in poor condition or not according to \
-                    who owns them, and the state's hundred and three are all sound.",
+        statement: "In the 2025 edition of the federal inventory, Allen County's 364 highway \
+                    bridges are in poor condition or not according to who owns them, and the \
+                    state's hundred and three are all sound.",
         topic: "geography",
         supports: &[
             support!(
@@ -1799,7 +1800,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
         ],
         answers: &[
-            "The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file",
+            "does not know why the state replaced its bad bridges and the county did not",
         ],
         figures: &[
             Figure { label: "State-owned, poor", value: 0.0, literal: "0.0" },
@@ -3125,6 +3126,59 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2000s", value: 179.1, literal: "179.1" },
             Figure { label: "2010s", value: 186.0, literal: "186.0" },
             Figure { label: "2020s", value: 182.5, literal: "182.5" },
+        ],
+    },
+    Assertion {
+        id: "the-state-replaced-its-bridges",
+        statement: "In 1992 the state owned the worst bridges in Allen County \u{2014} 21.9 per cent of \
+                    them in poor condition against the county's 5.8. It has had none since 2019. \
+                    Eighteen of those twenty-one are gone from the inventory while the state's \
+                    holding grew, so it replaced them rather than repaired them; and its stock is \
+                    the older of the two, built at a median of 1970 against the county's 1982.",
+        topic: "geography",
+        // Twelve editions of one file at three-year intervals, plotted for the state alone. The
+        // county's line is in the table beside it and not on the chart, because its last point is
+        // the one the corpus has just shown to be an artefact and a line would draw the eye to it.
+        supports: &[
+            support!(
+                "measure/allen-county-bridge-condition-1992-2025.yml",
+                "**In figures: 21.9 per cent of the state's bridges in this county were in poor condition in 1992,\n  16.0 in 1995, 19.1 in 1998, 5.1 in 2001, 2.1 in 2004, 2.1 in 2007, 2.9 in 2010, 1.0 in 2013, 1.0\n  in 2016, 0.0 in 2019, 0.0 in 2022 and 0.0 in 2025.**"
+            ),
+            support!(
+                "measure/allen-county-bridge-condition-1992-2025.yml",
+                "**In 1992 the state owned the worst bridges in Allen County.** Twenty-one of its ninety-six were\n  in poor condition, 21.9 per cent, against sixteen of the county's two hundred and seventy-seven,\n  5.8 per cent."
+            ),
+            support!(
+                "measure/allen-county-bridge-condition-1992-2025.yml",
+                "**It did not repair them. It replaced them.** Of the twenty-one state bridges rated poor in 1992,\n  eighteen are absent from the 2025 file altogether and three survive under the same structure\n  number with better ratings. Every one of the eighteen was built between 1940 and 1962, and the\n  state's holding rose from 96 structures to 103 across the same years, so they left by replacement\n  rather than by abandonment."
+            ),
+            support!(
+                "measure/allen-county-bridge-condition-1992-2025.yml",
+                "**Age was the other reading and the file refutes it.** The state's median bridge in this county\n  was built in 1970 and the county's in 1982; 57 of the state's 103 predate 1980 against 112 of the\n  county's 242, so the state's stock is the older of the two on both measures."
+            ),
+            support!(
+                "measure/allen-county-bridge-condition-1992-2025.yml",
+                "**And the ratings moved both ways at once.** Among the county's own bridges, superstructures rated\n  4 went from 3 to 14 between those two editions and substructures from 3 to 13, while decks rated 9\n  went from 22 to 39 and superstructures rated 9 from 22 to 38."
+            ),
+            support!(
+                "site/hay-road-bridge.yml",
+                "**Its condition is the best it has been recorded at, and nothing was done to it.** The deck, the\n  superstructure and the substructure were rated 5, 6 and 5 in the 1992 edition, 5, 5 and 4 in 2010,\n  6, 5 and 5 in 2022, and **7, 7 and 7 in 2025**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1992", value: 21.9, literal: "21.9" },
+            Figure { label: "1995", value: 16.0, literal: "16.0" },
+            Figure { label: "1998", value: 19.1, literal: "19.1" },
+            Figure { label: "2001", value: 5.1, literal: "5.1" },
+            Figure { label: "2004", value: 2.1, literal: "2.1" },
+            Figure { label: "2007", value: 2.1, literal: "2.1" },
+            Figure { label: "2010", value: 2.9, literal: "2.9" },
+            Figure { label: "2013", value: 1.0, literal: "1.0" },
+            Figure { label: "2016", value: 1.0, literal: "1.0" },
+            Figure { label: "2019", value: 0.0, literal: "0.0" },
+            Figure { label: "2022", value: 0.0, literal: "0.0" },
+            Figure { label: "2025", value: 0.0, literal: "0.0" },
         ],
     },
 ];

@@ -1052,6 +1052,26 @@
       ]
     },
     {
+      "id": "place-allen-county::highway-bridges-in-poor-condition-by-owner,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "highway bridges in poor condition by owner, Allen County",
+      "unit": "per cent of state-owned bridges, 1992",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-bridge-condition-1992-2025.yml",
+          "label": "Allen County bridge condition by owner, 1992–2025",
+          "as_of": "2025",
+          "value": 21.9,
+          "published": "21.9",
+          "tier": "verified",
+          "source": "catalog/national-bridge-inventory.md",
+          "method": "Twelve editions of the Ohio delimited file, selected on `COUNTY_CODE_003` = 3 and on `RECORD_TYPE_005A` = 1. That second filter is necessary and was not needed for the 2025 edition alone: the older files carry a second row for some structures describing the route beneath them, and 1992 has 436 rows for 393 bridges. Counting rows rather than structures would have invented a fall of seventy-two bridges that did not happen. [verified] \"Poor\" is the minimum of items 58, 59, 60 and 62 being 4 or less, the Federal Highway Administration's own rule, applied identically in every edition. Structures are linked across editions on `STRUCTURE_NUMBER_008`, which Ohio reassigns when a bridge is replaced, so a replacement appears as a disappearance and a new number rather than as a changed row. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::housing-units,-occupancy-status,-tenure,-median-value-and-median-gross-rent",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -5869,7 +5889,7 @@
     },
     {
       "id": "not-one-state-bridge-is-in-poor-condition",
-      "statement": "Allen County's 364 highway bridges are in poor condition or not according to who owns them, and the state's hundred and three are all sound.",
+      "statement": "In the 2025 edition of the federal inventory, Allen County's 364 highway bridges are in poor condition or not according to who owns them, and the state's hundred and three are all sound.",
       "topic": "geography",
       "tier": "inference",
       "citations": [
@@ -5900,7 +5920,7 @@
         }
       ],
       "caveats": [
-        "The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file."
+        "The corpus does not know why the state replaced its bad bridges and the county did not; the obvious answer is money, and no source held here carries either agency's capital budget."
       ],
       "figures": [
         {
@@ -8627,6 +8647,125 @@
           "label": "2020s",
           "value": 182.5,
           "literal": "182.5"
+        }
+      ]
+    },
+    {
+      "id": "the-state-replaced-its-bridges",
+      "statement": "In 1992 the state owned the worst bridges in Allen County — 21.9 per cent of them in poor condition against the county's 5.8. It has had none since 2019. Eighteen of those twenty-one are gone from the inventory while the state's holding grew, so it replaced them rather than repaired them; and its stock is the older of the two, built at a median of 1970 against the county's 1982.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-bridge-condition-1992-2025.yml",
+          "node_label": "Allen County bridge condition by owner, 1992–2025",
+          "span": "**In figures: 21.9 per cent of the state's bridges in this county were in poor condition in 1992, 16.0 in 1995, 19.1 in 1998, 5.1 in 2001, 2.1 in 2004, 2.1 in 2007, 2.9 in 2010, 1.0 in 2013, 1.0 in 2016, 0.0 in 2019, 0.0 in 2022 and 0.0 in 2025.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/national-bridge-inventory.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-bridge-condition-1992-2025.yml",
+          "node_label": "Allen County bridge condition by owner, 1992–2025",
+          "span": "**In 1992 the state owned the worst bridges in Allen County.** Twenty-one of its ninety-six were in poor condition, 21.9 per cent, against sixteen of the county's two hundred and seventy-seven, 5.8 per cent.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-bridge-condition-1992-2025.yml",
+          "node_label": "Allen County bridge condition by owner, 1992–2025",
+          "span": "**It did not repair them. It replaced them.** Of the twenty-one state bridges rated poor in 1992, eighteen are absent from the 2025 file altogether and three survive under the same structure number with better ratings. Every one of the eighteen was built between 1940 and 1962, and the state's holding rose from 96 structures to 103 across the same years, so they left by replacement rather than by abandonment.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-bridge-condition-1992-2025.yml",
+          "node_label": "Allen County bridge condition by owner, 1992–2025",
+          "span": "**Age was the other reading and the file refutes it.** The state's median bridge in this county was built in 1970 and the county's in 1982; 57 of the state's 103 predate 1980 against 112 of the county's 242, so the state's stock is the older of the two on both measures.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-bridge-condition-1992-2025.yml",
+          "node_label": "Allen County bridge condition by owner, 1992–2025",
+          "span": "**And the ratings moved both ways at once.** Among the county's own bridges, superstructures rated 4 went from 3 to 14 between those two editions and substructures from 3 to 13, while decks rated 9 went from 22 to 39 and superstructures rated 9 from 22 to 38.",
+          "tier": "inference",
+          "sources": [
+            "catalog/national-bridge-inventory.md"
+          ]
+        },
+        {
+          "node": "site/hay-road-bridge.yml",
+          "node_label": "The Hay Road bridge over the Auglaize River",
+          "span": "**Its condition is the best it has been recorded at, and nothing was done to it.** The deck, the superstructure and the substructure were rated 5, 6 and 5 in the 1992 edition, 5, 5 and 4 in 2010, 6, 5 and 5 in 2022, and **7, 7 and 7 in 2025**",
+          "tier": "verified",
+          "sources": [
+            "catalog/national-bridge-inventory.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1992",
+          "value": 21.9,
+          "literal": "21.9"
+        },
+        {
+          "label": "1995",
+          "value": 16.0,
+          "literal": "16.0"
+        },
+        {
+          "label": "1998",
+          "value": 19.1,
+          "literal": "19.1"
+        },
+        {
+          "label": "2001",
+          "value": 5.1,
+          "literal": "5.1"
+        },
+        {
+          "label": "2004",
+          "value": 2.1,
+          "literal": "2.1"
+        },
+        {
+          "label": "2007",
+          "value": 2.1,
+          "literal": "2.1"
+        },
+        {
+          "label": "2010",
+          "value": 2.9,
+          "literal": "2.9"
+        },
+        {
+          "label": "2013",
+          "value": 1.0,
+          "literal": "1.0"
+        },
+        {
+          "label": "2016",
+          "value": 1.0,
+          "literal": "1.0"
+        },
+        {
+          "label": "2019",
+          "value": 0.0,
+          "literal": "0.0"
+        },
+        {
+          "label": "2022",
+          "value": 0.0,
+          "literal": "0.0"
+        },
+        {
+          "label": "2025",
+          "value": 0.0,
+          "literal": "0.0"
         }
       ]
     }
