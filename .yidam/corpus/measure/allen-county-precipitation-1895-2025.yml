@@ -1,0 +1,75 @@
+class: measure
+label: Allen County precipitation, 1895–2025
+description: |
+  A hundred and thirty-one complete years of monthly rainfall for the county, from the same record
+  as [its temperature](allen-county-temperature-1895-2025.yml). [verified] —
+  [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county precipitation, computed over
+  complete calendar years.
+
+      thirty years        annual      April–September
+      1895–1924          35.52 in         19.99 in
+      1996–2025          39.18 in         23.26 in
+      -----------------------------------------------
+      change             +3.66 in        +3.27 in
+                          (+10.3%)         (+16.4%)
+
+  [verified] — same source, averaged here over the two windows at the ends of the record.
+
+  **Almost all of the additional rain falls in the growing season.** Of 3.66 inches added to the
+  year, 3.27 fall between April and September; March is **drier** by half an inch and January by a
+  seventh. [verified] — same source, month by month:
+
+      Jan −0.15   Feb +0.48   Mar −0.52   Apr +0.66   May +1.14   Jun +0.42
+      Jul +0.27   Aug +0.43   Sep +0.35   Oct +0.36   Nov +0.11   Dec +0.11
+
+  **In figures: the county's annual rainfall by decade ran 35.21, 35.61, 36.86, 33.78, 34.86, 36.65,
+  31.73, 35.22, 35.07, 37.06, 38.54 and 42.07 inches from the 1900s to the 2010s.** [verified] —
+  same source. The 2010s are the wettest decade of the record by three and a half inches and the
+  1960s the driest by three.
+
+  **The driest year is 1963 and the wettest is 2011, and they are forty-eight years and thirty
+  inches apart.** 22.70 inches against 52.56. [verified] — same source. 1963 is also the seventh
+  coldest year in the record, and October of that year gave the county fourteen hundredths of an
+  inch. [verified] — same source.
+
+  **The wettest month in a hundred and thirty-one years is June 2015, at 13.48 inches.** The second
+  is August 2007 at 10.54, and nothing else in the record reaches ten. [verified] — same source.
+  The June average is 3.97 inches and the August average 3.18, so those two months ran three times
+  normal and three and a third times normal. [inference] — computed here.
+
+  **Both of those months are years the corpus already had a reason to look at.** August 2007 sits
+  inside the ten-year hole in the Lima river gauge — 2000 to 2009, which swallowed three of the
+  county's four federal flood declarations — and it is the wettest August of the hundred and
+  thirty-one. January 2005, another declaration year inside the same hole, is the fourth wettest
+  January. And the highest peak the modern gauge ever recorded, 5,700 cubic feet a second on 28
+  February 2011, falls in the fourth wettest February of the record, inside the wettest calendar
+  year of the record. [verified] —
+  [the peak flows](ottawa-river-peak-flows-1924-2025.yml) and this source. Two instruments that
+  share no data agree about which years were wet. [inference]
+
+  **The gauge's silences are not this record's.** Nothing gauged the Ottawa River between water
+  years 1982 and 1988 or between 2000 and 2009, and this record covers both stretches without a
+  missing month. It cannot say what was in the river; it can say what fell on the ground.
+  [inference] — see [the peak flows](ottawa-river-peak-flows-1924-2025.yml).
+
+  [open] Snow. This source measures precipitation as liquid water and does not separate it, so the
+  county has no snowfall record here at all — which matters for a place whose winters are the part
+  of its climate that changed.
+properties:
+  parameter: annual precipitation, Allen County
+  value: "39.18"
+  unit: inches, 1996–2025 average
+  as_of: "2025"
+  method: |
+    Parsed on the eleven-character key `33003` from the same NOAA release as the temperature files,
+    element code 01. Complete calendar years only: a year with any month coded −9.99 is dropped, so
+    the record runs 1895 through 2025 with no gap and 2026 is excluded. Annual figures are the sum
+    of the twelve printed monthly values and the thirty-year figures are the mean of those sums.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/noaa-nclimdiv-county.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

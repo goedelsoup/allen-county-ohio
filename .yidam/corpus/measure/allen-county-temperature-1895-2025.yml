@@ -1,0 +1,90 @@
+class: measure
+label: Allen County temperature, 1895–2025
+description: |
+  A hundred and thirty-one complete years of the county's monthly temperature, and the first thing
+  in this corpus that says what the weather here is. [verified] —
+  [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county average, maximum and minimum
+  temperature, computed over complete calendar years.
+
+      thirty years            mean      daily max   daily min   heating °days   cooling °days
+      1895–1924              49.60 F      59.41 F     39.78 F         6,350            778
+      1996–2025              51.63 F      61.11 F     42.14 F         5,725            886
+      -------------------------------------------------------------------------------------
+      change                 +2.03        +1.70       +2.36            −625           +108
+
+  [verified] — same source, averaged here over the two thirty-year windows at the ends of the record.
+
+  **The county is two degrees warmer than it was, and none of it is in summer.** The mean daily
+  maximum temperature of June, July and August was 82.48 °F across 1895–1924 and is 82.59 °F across
+  1996–2025 — a change of **eleven hundredths of a degree in a century**. [verified] — same source,
+  computed here. Everything the annual figure records happened in the other nine months.
+
+  **February is up five degrees and July is up two tenths.** Month by month, across the same two
+  windows: [verified] — same source.
+
+      Jan +1.19   Feb +4.98   Mar +2.18   Apr +2.34   May +1.30   Jun +1.80
+      Jul +0.22   Aug +1.00   Sep +1.39   Oct +1.91   Nov +2.25   Dec +3.79
+
+  **In figures: December, January and February warmed by 3.32 degrees on average and June, July and
+  August by 1.01.** [inference] — computed from the twelve figures above. A county that has warmed
+  by two degrees in the mean has warmed by three and a third in winter and by one in summer, and
+  the annual number says neither.
+
+  **The nights warmed faster than the days**, by 2.36 degrees against 1.70. [verified] — same source. Less cold at night, in winter, is the whole of the change.
+
+  **The hottest summers in the record are still the 1930s.** Ranked by mean daily maximum for June
+  to August: 1934 at 88.8 °F, 1936 at 88.2, 1933 at 86.9, 1988 at 86.8, 1952 at 86.6, 1944 at 86.4.
+  **None is later than 1988.** [verified] — same source. The county's cooling-degree-day record is
+  1934 as well, at 1,233, and it has stood for ninety-two years. [verified] — same source.
+
+  **The warmest years, on the other hand, are nearly all recent.** 2024 is the warmest year of the
+  hundred and thirty-one at 54.97 °F, a full degree above the next; eight of the ten warmest are
+  since 1991, and the ten coldest are 1917, 1904, 1924, 1978, 1912, 1958, 1963, 1907, 2014 and 1976.
+  [verified] — same source. A record that puts its hottest summers in the 1930s and its warmest
+  years in the 2010s and 2020s is describing a winter, not a summer. [inference]
+
+  **By decade**, with the county's heating and cooling demand beside it: [verified] — same source.
+
+      decade   mean °F   heating °days   cooling °days
+      1900s     49.25         6,447           754
+      1910s     49.44         6,398           770
+      1920s     49.90         6,205           732
+      1930s     51.22         5,963           979
+      1940s     50.51         6,077           836
+      1950s     50.28         6,128           797
+      1960s     49.18         6,442           712
+      1970s     49.56         6,358           776
+      1980s     50.19         6,190           831
+      1990s     50.87         5,888           771
+      2000s     51.05         5,861           811
+      2010s     51.60         5,788           945
+
+  **The 1960s are as cold as the 1900s and the 1930s are as warm as the 2000s.** The trend is not a
+  line and the corpus is not drawing one: the two warmest decades before 1990 are the 1930s and the
+  1940s, and the coldest decade of the whole record is the 1960s. [verified] — same source.
+  [inference] — the reading.
+
+  **What that costs and saves the county in fuel.** Heating degree days are down 625 a year, or 9.8
+  per cent, and cooling degree days up 108, or 13.9. 2024 is the lowest heating-demand year in the
+  record at 4,743. [verified] — same source, computed here. What the county actually burns is not
+  measured here. [open]
+properties:
+  parameter: annual mean temperature, Allen County
+  value: "51.63"
+  unit: degrees Fahrenheit, 1996–2025 average
+  as_of: "2025"
+  method: |
+    Six county files taken from the same NOAA release and parsed on the eleven-character key
+    `33003`, where 33 is NOAA's alphabetical code for Ohio and not its FIPS code. Only complete
+    calendar years are used, so 2026 is excluded and the record runs 1895 through 2025 without a
+    gap. The strongest check available was run first and passed: the average, maximum and minimum
+    temperature files are separate downloads, and across Allen County's 1,572 complete monthly cells
+    `(tmax + tmin) / 2` equals the average file to within a rounding step, the largest disagreement
+    in the whole record being 0.10 °F. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/noaa-nclimdiv-county.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
