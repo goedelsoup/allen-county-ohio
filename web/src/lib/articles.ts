@@ -321,6 +321,24 @@ export const ARTICLES: Article[] = [
 
   // ── Government ──────────────────────────────────────────────────────────
   {
+    slug: 'what-a-mill-is-worth',
+    title: 'What a mill is worth',
+    dek: 'One mill on this county raises $2,451,332, no two of its thirty-six taxing districts charge the same, and one of them stopped being a village.',
+    section: 'government',
+    era: [2012, 2025],
+    assertions: [
+      'what-a-mill-is-worth-here',
+      'the-column-changed-and-the-rate-did-not',
+      'the-school-district-is-the-tax-bill',
+      'the-village-stopped-levying-and-the-township-took-it',
+    ],
+    entries: [
+      'measure/allen-county-property-tax-rates-2012-2025.yml',
+      'measure/allen-county-assessed-valuation-2010-2023.yml',
+      'question/what-happened-to-the-village-of-fort-shawnee.yml',
+    ],
+  },
+  {
     slug: 'the-democratic-column',
     title: 'The Democratic column',
     dek: 'Five elections added to the modern run, and a third of one column gone in eight years while the other grew.',
