@@ -1,0 +1,63 @@
+id: the-api-serves-the-nation-and-refuses-the-county
+summary: >-
+  CDC WONDER answers a national query from a script and refuses a county one, in words, by policy.
+  The county figures exist and are served to a browser. Where a compiler supplies the grain the
+  publisher withholds, check the compiler at the grain the publisher does serve — and record the
+  check, because it is the difference between a transcription and a verified copy.
+context: |
+  This is the second publisher in this corpus to serve a person and refuse a machine, and the two
+  refusals are not the same shape.
+
+  The Ohio Secretary of State returns **403** to an automated client at every path, so the corpus
+  reads [OpenElections](../catalog/openelections-ohio.md) — volunteers converting his PDFs — and
+  says in that entry that every figure taken from it is a figure about what the transcription says.
+  No control was available: the office answers nothing.
+
+  CDC WONDER answers. Asked for deaths by year for the United States it returns a table. Asked for
+  the same thing for Allen County it returns a sentence: *"Only national data are available for this
+  dataset when using the WONDER web service. Please check that your query does not group results by
+  region, division, state, county or urbanization ... nor limit these location variables to any
+  specific values."* The county rows are not missing from the system; they are withheld from the
+  interface. [verified] — the response to dataset D76 with `F_D76.V9` set to 39003, 2026-09-02.
+
+  So the corpus reads [County Health Rankings](../catalog/county-health-rankings.md), which is a
+  compilation of the same NCHS files — and unlike the Ohio case, the publisher will answer a
+  question that tests it.
+decision: |
+  **When a publisher refuses a grain to a machine and a compiler supplies it, run the compiler
+  against the publisher at a grain the publisher does serve, and put the result in the catalog
+  entry.**
+
+  - Choose a check the compiler cannot have tuned: a whole column at a coarser grain, not a spot
+    figure. Here it is the national count of deaths before age 75, which the compiler publishes as
+    a numerator and the publisher will compute on request.
+  - Match on exact digits, over more than one window. 4,125,218 for 2018–2020 and 3,813,889 for
+    2016–2018, both exact.
+  - Record what the check licenses and what it does not, in the entry, next to the figures.
+  - Where no such check is possible — the Ohio Secretary of State — say that too, and keep calling
+    the source a transcription.
+
+  **A control at the wrong grain is still worth running, and this one paid for itself twice.** It
+  proved the compiler copies without corrupting, and it caught the compiler's own documentation
+  describing the numerator column as years of potential life lost when the column holds deaths. A
+  reader who trusted the codebook would have been out by a factor of twenty.
+rationale: |
+  **The honest limit is that the grain of the check is not the grain of the use.** An exact national
+  match says the pipeline that produced both numbers does not lose or invent digits. It cannot say
+  that Allen County's row is right, because nothing this corpus can reach will say that. What it
+  replaces is a worse position: taking a county figure from a third party with no idea whether that
+  party's arithmetic survives contact with its source.
+
+  **It also changes what the corpus can say about the publisher.** Both refusals here are policy
+  rather than absence — the Secretary of State prints his returns and the CDC computes county death
+  rates — and both are worth stating as facts about the record rather than as complaints. A civic
+  reference that cannot say how many of its residents died before seventy-five, from the agency that
+  knows, is describing its own government as much as its own health.
+
+  **The rule has an obvious failure mode: a compiler that is exact at the coarse grain and wrong at
+  the fine one.** Nothing here rules that out. What reduces it is a second, independent pipeline —
+  and for the one measure where the corpus has one, CDC's provisional county counts and the final
+  file agree on Allen County exactly, 116 overdose deaths across 2020–2022. That is a check at the
+  right grain, and it exists for one measure out of eleven.
+status: accepted
+date: "2026-09-02"
