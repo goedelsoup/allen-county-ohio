@@ -7317,6 +7317,63 @@
       "withheld": 0
     },
     {
+      "id": "measure/allen-county-private-schools-2013-2021.yml",
+      "class": "measure",
+      "label": "Allen County's private and community schools, 2013–2021",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2021",
+        "method": "Filtered on `PSTABB` = `OH` and `PCNTY` = `003`, which is state abbreviation and county FIPS rather than the five-digit code every other file here uses; the survey's own composite runs county-then-state and reads `00339`. Column names are not stable across editions — 2015–16 lower-cases every header — so each file's headers were upper-cased before matching, and a first pass that matched `NUMSTUDS` exactly silently found nothing for that year. Community schools are the 2022 Common Core of Data filtered on `county_code` = `39003` and `charter` = 1, after downloading all 3,695 Ohio rows: the API accepts a `county_code` parameter and ignores it. [verified]",
+        "parameter": "children in private schools, Allen County",
+        "unit": "pupils",
+        "value": "1108"
+      },
+      "blocks": [
+        {
+          "text": "Ten private schools, all of them in Lima, and 1,108 children in them. [verified] — [the Private School Universe Survey](../../catalog/nces-private-school-universe.md), 2021–22 public-use file.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same file, as published. The Center for Autism and Dyslexia is two records with one name and one town, and nothing in the file separates them; the total is left undeduplicated, and treating them as one institution would give 1,049 or 1,046 depending on which row is kept.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four Catholic schools hold 880 of the 1,108 — four fifths of the county's private enrolment in one church's system.** In figures: St Charles 368, Lima Central Catholic 195, St Gerard 184 and St Rose 133. The remaining six are five small evangelical schools and one school for autistic and dyslexic children, listed twice, and they hold 228 between them. [inference] — computed from the table above, on the same file.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Every private school in this county is in Lima.** Not one of the twelve townships, three villages or the county's second city has one. [verified] — same file, on the `PCITY` column.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two community schools stand in the county and hold 313 children.** Heir Force Community School with 238 and West Central Learning Academy II with 75, out of the 36 public schools located here. [verified] — [the Common Core of Data](../../catalog/nces-common-core-of-data.md), 2022.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That community-school count is a count of buildings, not of the county's children.** Ohio's largest community schools are statewide online schools recorded at their administrative address: Ohio Virtual Academy enrols 14,334 children from a building in Wood County, Alternative Education Academy 5,783, Ohio Connections Academy 5,380. Some of those children live here and none of them is in the 313. [verified] — same directory; [inference] — the reading is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — the five public-use files. The fall from 2019–20 to 2021–22 is 978 pupils and 939 of it — 96 per cent — is three schools leaving the file: Delphos St John's at 603, Temple Christian School at 237 and Golden Bridge Academy at 99. The seven schools present in both editions net 39. [inference] — matched school by school here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Over the same two editions Ohio's private enrolment rose.** 145,882 to 154,033, up 5.6 per cent, while this county's fell 46.9 per cent. Statewide, 185 schools leave the file and 215 arrive and the churn cancels; in one county nothing cancels. [verified] — the same two files. The opposite signs at the two grains are what showed the county's fall to be an artefact of the frame. [inference] — see [a frame is not a panel](../../decisions/a-frame-is-not-a-panel.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, the county's recorded private enrolment: 2,338 in 2013–14, 1,713 in 2015–16, 1,706 in 2017–18, 2,086 in 2019–20 and 1,108 in 2021–22.** [verified] — the five files. The 2013–14 figure counts Delphos St John's twice, once at 617 and once at 596, so even the first term is not what it appears. [inference] — read from the same files.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two schools this county has are not in the newest file at all.** Delphos St John's, at 603 the largest private school ever recorded here, and Temple Christian School in Lima at 237, are absent from Ohio's entire 2021–22 return under any spelling. [verified] — [a search of all 978 Ohio rows](../../catalog/nces-private-school-universe.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-race-2023.yml",
       "class": "measure",
       "label": "Allen County population by race, 2023",
@@ -16810,7 +16867,7 @@
       "properties": {
         "claim_tag": "open",
         "opened": "2026-08-30",
-        "would_close_this": "Ohio's nonpublic school enrolment reports, which give private and parochial enrolment by county and would name the schools this corpus has never recorded. The state's community school directory. Open-enrolment and scholarship counts by district, which the state publishes for the funding formula. Any one of the four would turn a share of the 4,331 into a number; all four would close it."
+        "would_close_this": "Two of the four things named here have been read and the question is narrowed rather than closed. The private schools are named and counted, from the federal survey rather than Ohio's reports; the community schools located in the county are named and counted, and that count has been shown to be the wrong shape, because Ohio's largest community schools are statewide online schools recorded at an office elsewhere. What remains would close it. Ohio's enrolment by district of residence for the statewide online community schools, which is the one figure that would turn the largest remaining category into a number. The state's home-instruction notifications, filed with the resident district. And open-enrolment and scholarship counts by district, which the state publishes for the funding formula. Ohio's own nonpublic directory would also settle whether two schools missing from the federal file are open, which is a smaller question this phase opened. A figure on any one of those three turns a share of the remaining 2,070 to 2,910 into a number; all three would close it."
       },
       "blocks": [
         {
@@ -16820,12 +16877,24 @@
         {
           "text": "**It matters because of what the corpus has just published.** A district's spending per pupil is computed on its enrolment, and a district's child poverty rate on its resident children. If the two populations differ by a fifth, and differ by more in one district than another, then the two measures are not describing the same set of families — and this corpus has set them side by side in twelve nodes. [inference] Nothing here says the difference is uneven. Nothing says it is not.",
           "tier": "inference"
+        },
+        {
+          "text": "**Between a third and a half of them now have a school.** Two federal files were read against this question. Ten private schools stand in Allen County, all of them in Lima, holding 1,108 children in 2021–22; two community schools stand here holding 313. Add the two schools the private-school file stopped listing but the county still has — Delphos St John's at 603 and Temple Christian at 237 — and the named total runs from **1,421 to 2,261, which is 32.8 to 52.2 per cent of the 4,331**. [inference] — computed here from [the private and community schools](../measure/allen-county-private-schools-2013-2021.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Four Catholic schools hold four fifths of the county's private enrolment**, and the two systems this question said the corpus had never recorded are recorded now: Lima's, in four schools, and Delphos St John's, which is the largest private school in the county's whole record. [verified] — [the Private School Universe Survey](../../catalog/nces-private-school-universe.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A caution about the arithmetic above.** The 4,331 is a gap in twelve *districts*; the 1,421 is a count in one *county*. The districts run past the county line and the county holds ground in no district it does not fully contain, so the two are not the same population. Delphos St John's is the clearest case: it serves the Delphos district, part of which is in Van Wert County, and the file put it in Allen County for four editions and in neither for the fifth. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
         "The corpus does not know where the other 4,331 are."
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "site/allen-correctional-institution.yml",
@@ -21572,6 +21641,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-private-schools-2013-2021.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nces-private-school-universe.md"
+    },
+    {
+      "from": "measure/allen-county-private-schools-2013-2021.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nces-private-school-universe.md"
     },
     {
       "from": "measure/allen-county-race-2023.yml",

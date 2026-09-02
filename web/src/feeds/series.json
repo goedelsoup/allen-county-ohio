@@ -742,6 +742,26 @@
       ]
     },
     {
+      "id": "place-allen-county::children-in-private-schools,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "children in private schools, Allen County",
+      "unit": "pupils",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "label": "Allen County's private and community schools, 2013–2021",
+          "as_of": "2021",
+          "value": 1108.0,
+          "published": "1108",
+          "tier": "verified",
+          "source": "catalog/nces-private-school-universe.md",
+          "method": "Filtered on `PSTABB` = `OH` and `PCNTY` = `003`, which is state abbreviation and county FIPS rather than the five-digit code every other file here uses; the survey's own composite runs county-then-state and reads `00339`. Column names are not stable across editions — 2015–16 lower-cases every header — so each file's headers were upper-cased before matching, and a first pass that matched `NUMSTUDS` exactly silently found nothing for that year. Community schools are the 2022 Common Core of Data filtered on `county_code` = `39003` and `charter` = 1, after downloading all 3,695 Ohio rows: the API accepts a `county_code` parameter and ignores it. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::communicants-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -9608,6 +9628,146 @@
       ],
       "caveats": [],
       "figures": []
+    },
+    {
+      "id": "four-catholic-schools-hold-four-fifths",
+      "statement": "Ten private schools stand in Allen County and every one of them is in Lima. Four Catholic schools hold 880 of their 1,108 pupils — four fifths of the county's private enrolment inside one church's system — and the other six hold 228 between them.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "Ten private schools, all of them in Lima, and 1,108 children in them.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-private-school-universe.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "**Four Catholic schools hold 880 of the 1,108 — four fifths of the county's private enrolment in one church's system.** In figures: St Charles 368, Lima Central Catholic 195, St Gerard 184 and St Rose 133. The remaining six are five small evangelical schools and one school for autistic and dyslexic children, listed twice, and they hold 228 between them.",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-private-school-universe.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "**Every private school in this county is in Lima.** Not one of the twelve townships, three villages or the county's second city has one.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-private-school-universe.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "**Two community schools stand in the county and hold 313 children.** Heir Force Community School with 238 and West Central Learning Academy II with 75, out of the 36 public schools located here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "St Charles",
+          "value": 368.0,
+          "literal": "368"
+        },
+        {
+          "label": "Lima Central Catholic",
+          "value": 195.0,
+          "literal": "195"
+        },
+        {
+          "label": "St Gerard",
+          "value": 184.0,
+          "literal": "184"
+        },
+        {
+          "label": "St Rose",
+          "value": 133.0,
+          "literal": "133"
+        },
+        {
+          "label": "The other six",
+          "value": 228.0,
+          "literal": "228"
+        }
+      ]
+    },
+    {
+      "id": "the-private-school-fall-is-in-the-file",
+      "statement": "Allen County's recorded private enrolment falls 46.9 per cent between the 2019–20 and 2021–22 editions of the federal survey, while Ohio's rises 5.6 per cent over the same two editions. Three schools leaving the file account for 96 per cent of the county's fall, and the seven present in both net 39 pupils. The collapse is in the survey's frame, not in the county.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "**In figures, the county's recorded private enrolment: 2,338 in 2013–14, 1,713 in 2015–16, 1,706 in 2017–18, 2,086 in 2019–20 and 1,108 in 2021–22.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "[verified] — the five public-use files. The fall from 2019–20 to 2021–22 is 978 pupils and 939 of it — 96 per cent — is three schools leaving the file: Delphos St John's at 603, Temple Christian School at 237 and Golden Bridge Academy at 99. The seven schools present in both editions net 39.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "**Over the same two editions Ohio's private enrolment rose.** 145,882 to 154,033, up 5.6 per cent, while this county's fell 46.9 per cent. Statewide, 185 schools leave the file and 215 arrive and the churn cancels; in one county nothing cancels.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-private-schools-2013-2021.yml",
+          "node_label": "Allen County's private and community schools, 2013–2021",
+          "span": "**Two schools this county has are not in the newest file at all.** Delphos St John's, at 603 the largest private school ever recorded here, and Temple Christian School in Lima at 237, are absent from Ohio's entire 2021–22 return under any spelling.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-private-school-universe.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2013–14",
+          "value": 2338.0,
+          "literal": "2,338"
+        },
+        {
+          "label": "2015–16",
+          "value": 1713.0,
+          "literal": "1,713"
+        },
+        {
+          "label": "2017–18",
+          "value": 1706.0,
+          "literal": "1,706"
+        },
+        {
+          "label": "2019–20",
+          "value": 2086.0,
+          "literal": "2,086"
+        },
+        {
+          "label": "2021–22",
+          "value": 1108.0,
+          "literal": "1,108"
+        }
+      ]
     }
   ]
 }

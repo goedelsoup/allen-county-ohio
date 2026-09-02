@@ -132,6 +132,15 @@ export const ARTICLES: Article[] = [
 
   // ── People ──────────────────────────────────────────────────────────────
   {
+    slug: 'the-schools-that-are-not-districts',
+    title: 'The schools that are not districts',
+    dek: 'Ten private schools and two community schools account for a third of the county’s missing children, in a survey whose roster cannot be differenced.',
+    section: 'people',
+    era: [2013, 2022],
+    assertions: ['four-catholic-schools-hold-four-fifths', 'the-private-school-fall-is-in-the-file'],
+    entries: ['place/allen-county.yml', 'place/lima.yml'],
+  },
+  {
     slug: 'lima-before-the-series-begins',
     title: 'Lima before the series begins',
     dek: 'The city grew fivefold after the oil, and the county outside it had three peaks thirty years apart.',
