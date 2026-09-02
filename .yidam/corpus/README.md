@@ -181,8 +181,11 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
 | [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 14v / 5i / 0o | 122 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
+| [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 6v / 4i / 2o | 76 |
+| [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
+| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 2 | 7v / 1i / 2o | 67 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
-| [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
+| [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 10v / 3i / 0o | 91 |
 | [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 13v / 3i / 1o | 114 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
@@ -431,7 +434,7 @@ Sorted by: kind, then alphabetically.
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 7v / 5i / 1o | 80 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 1o | 56 |
-| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 9v / 6i / 1o | 111 |
+| [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 11v / 6i / 1o | 118 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 4v / 3i / 1o | 71 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-limas-first-congregation-was-organized.yml](question/when-limas-first-congregation-was-organized.yml) | question | When Lima's first congregation was organized | 4 | 3v / 1i / 0o | 49 |
