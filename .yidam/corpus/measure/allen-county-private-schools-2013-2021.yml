@@ -1,0 +1,103 @@
+class: measure
+label: Allen County's private and community schools, 2013–2021
+description: |
+  Ten private schools, all of them in Lima, and 1,108 children in them. [verified] —
+  [the Private School Universe Survey](../../catalog/nces-private-school-universe.md), 2021–22
+  public-use file.
+
+      school                                  town      pupils   affiliation
+      St Charles Catholic School              Lima         368   Catholic
+      Lima Central Catholic High School       Lima         195   Catholic
+      St Gerard                               Lima         184   Catholic
+      St Rose Catholic School                 Lima         133   Catholic
+      The Center for Autism and Dyslexia      Lima          62   none
+      The Center for Autism and Dyslexia      Lima          59   none
+      Bible Believers Christian School        Lima          52   other religious
+      Pilgrim Christian School                Lima          26   other religious
+      The Lima Christian Academy              Lima          17   other religious
+      Liberty Christian School                Lima          12   other religious
+
+  [verified] — same file, as published. The Center for Autism and Dyslexia is two records with one
+  name and one town, and nothing in the file separates them; the total is left undeduplicated, and
+  treating them as one institution would give 1,049 or 1,046 depending on which row is kept.
+
+  **Four Catholic schools hold 880 of the 1,108 — four fifths of the county's private enrolment in
+  one church's system.** In figures: St Charles 368, Lima Central Catholic 195, St Gerard 184 and
+  St Rose 133. The remaining six are five small evangelical schools and one school for autistic and
+  dyslexic children, listed twice, and they hold 228 between them. [inference] — computed from the
+  table above, on the same file.
+
+  **Every private school in this county is in Lima.** Not one of the twelve townships, three
+  villages or the county's second city has one. [verified] — same file, on the `PCITY` column.
+
+  **Two community schools stand in the county and hold 313 children.** Heir Force Community School
+  with 238 and West Central Learning Academy II with 75, out of the 36 public schools located here.
+  [verified] — [the Common Core of Data](../../catalog/nces-common-core-of-data.md), 2022.
+
+  **That community-school count is a count of buildings, not of the county's children.** Ohio's
+  largest community schools are statewide online schools recorded at their administrative address:
+  Ohio Virtual Academy enrols 14,334 children from a building in Wood County, Alternative Education
+  Academy 5,783, Ohio Connections Academy 5,380. Some of those children live here and none of them
+  is in the 313. [verified] — same directory; [inference] — the reading is this corpus's.
+
+  **The five editions cannot be read as a series, and the reason is the survey and not the county.**
+
+      edition    schools   pupils
+      2013-14          9    2,338
+      2015-16          9    1,713
+      2017-18          9    1,706
+      2019-20         13    2,086
+      2021-22         10    1,108
+
+  [verified] — the five public-use files. The fall from 2019–20 to 2021–22 is 978 pupils and 939 of
+  it — 96 per cent — is three schools leaving the file: Delphos St John's at 603, Temple Christian
+  School at 237 and Golden Bridge Academy at 99. The seven schools present in both editions net 39.
+  [inference] — matched school by school here.
+
+  **Over the same two editions Ohio's private enrolment rose.** 145,882 to 154,033, up 5.6 per
+  cent, while this county's fell 46.9 per cent. Statewide, 185 schools leave the file and 215
+  arrive and the churn cancels; in one county nothing cancels. [verified] — the same two files. The
+  opposite signs at the two grains are what showed the county's fall to be an artefact of the
+  frame. [inference] — see
+  [a frame is not a panel](../../decisions/a-frame-is-not-a-panel.yml).
+
+  **In figures, the county's recorded private enrolment: 2,338 in 2013–14, 1,713 in 2015–16, 1,706
+  in 2017–18, 2,086 in 2019–20 and 1,108 in 2021–22.** [verified] — the five files. The 2013–14
+  figure counts Delphos St John's twice, once at 617 and once at 596, so even the first term is not
+  what it appears. [inference] — read from the same files.
+
+  **Two schools this county has are not in the newest file at all.** Delphos St John's, at 603 the
+  largest private school ever recorded here, and Temple Christian School in Lima at 237, are absent
+  from Ohio's entire 2021–22 return under any spelling. [verified] —
+  [a search of all 978 Ohio rows](../../catalog/nces-private-school-universe.md).
+
+  [open] Whether Delphos St John's and Temple Christian School are open. Absence from an edition is
+  absence from that edition's frame and is not a closure. Ohio's own nonpublic-school directory
+  would settle it and is not held here.
+properties:
+  parameter: children in private schools, Allen County
+  value: "1108"
+  unit: pupils
+  as_of: "2021"
+  method: |
+    Filtered on `PSTABB` = `OH` and `PCNTY` = `003`, which is state abbreviation and county FIPS
+    rather than the five-digit code every other file here uses; the survey's own composite runs
+    county-then-state and reads `00339`. Column names are not stable across editions — 2015–16
+    lower-cases every header — so each file's headers were upper-cased before matching, and a first
+    pass that matched `NUMSTUDS` exactly silently found nothing for that year. Community schools
+    are the 2022 Common Core of Data filtered on `county_code` = `39003` and `charter` = 1, after
+    downloading all 3,695 Ohio rows: the API accepts a `county_code` parameter and ignores it.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nces-private-school-universe.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nces-private-school-universe.md
+  - target: ../question/why-one-child-in-five-is-not-in-these-districts.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of
