@@ -103,6 +103,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 9v / 4i / 1o | 132 |
+| [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 5 | 8v / 3i / 1o | 93 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-black-community-1916-1921.yml](measure/allen-county-black-community-1916-1921.yml) | measure | Allen County's Black community, 1916–1921 | 3 | 16v / 5i / 3o | 104 |
 | [allen-county-bridge-condition-1992-2025.yml](measure/allen-county-bridge-condition-1992-2025.yml) | measure | Allen County bridge condition by owner, 1992–2025 | 3 | 11v / 5i / 1o | 97 |
@@ -201,6 +202,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-private-schools-2013-2021.yml](measure/allen-county-private-schools-2013-2021.yml) | measure | Allen County's private and community schools, 2013–2021 | 4 | 10v / 5i / 1o | 103 |
+| [allen-county-property-tax-rates-2012-2025.yml](measure/allen-county-property-tax-rates-2012-2025.yml) | measure | Property tax rates in Allen County by taxing district, 2012–2025 | 5 | 11v / 1i / 1o | 144 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 10v / 3i / 0o | 91 |
 | [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 13v / 3i / 1o | 114 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
@@ -456,7 +458,7 @@ Sorted by: kind, then alphabetically.
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 1o | 56 |
 | [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 11v / 6i / 1o | 118 |
-| [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 3 | 4v / 3i / 1o | 71 |
+| [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 4 | 5v / 5i / 1o | 97 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-limas-first-congregation-was-organized.yml](question/when-limas-first-congregation-was-organized.yml) | question | When Lima's first congregation was organized | 4 | 3v / 1i / 0o | 49 |
 | [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 7 | 8v / 6i / 2o | 136 |
