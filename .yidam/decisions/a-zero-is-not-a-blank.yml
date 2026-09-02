@@ -1,0 +1,70 @@
+id: a-zero-is-not-a-blank
+summary: >-
+  The Lima weather station reported snowfall on two days across the twenty-eight winters from
+  1978–79 to 2005–06. It was not a snowless quarter-century. The observer stopped measuring snow
+  and the record kept writing zeros, so the gap is invisible to every check that looks for missing
+  values — and a seasonal total computed over it is not wrong-looking, it is wrong.
+context: |
+  The station's own columns say so if they are read against each other:
+
+      seasons 1978-79 to 2005-06     28
+      days with snowfall reported     2
+      days with precipitation at or
+      below 34 °F                   ~400
+      seasons with no snow day and
+      more than five such days       26
+
+  Every ordinary completeness test passes. The season has 365 snowfall observations. None is
+  missing, none is flagged, none fails a bounds check. The value is zero, and zero is a
+  measurement.
+
+  **The same file contains the honest form of the same absence.** Before 1929 the station reported
+  snow only from October to April and left the summer blank; in January 1959 it reported no
+  snowfall at all and the days are empty. Those gaps announce themselves. The 1978–2005 block does
+  not, and it is the longer of the two by a factor of three.
+
+  **This is not the failure the corpus has already written down.** In
+  [a register is not a census](a-register-is-not-a-census.yml) the file accumulated rows and never
+  dated its attributes; the defect was in what the file declared. In
+  [a modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml) the
+  file published a number nobody had measured, and said so. Here the file is honest about
+  everything it says and silent about the one thing that matters: whether anybody looked.
+decision: |
+  **Before a series is totalled or trended, every period in it is tested for the value that means
+  "nobody measured", and periods that fail are excluded by name rather than by a completeness
+  count.**
+
+  The test is a cross-column one and it has to be: the whole point is that the column under
+  suspicion looks complete. For snow it is *a season with no snowfall reported and five or more
+  days of precipitation falling at or below 34 °F*. For any other series the analogous test is
+  whichever other column in the same file makes the zero impossible.
+
+  A period that fails is dropped and listed. It is not filled from a neighbouring station, not
+  interpolated, and not silently folded into a mean.
+rationale: |
+  **What it cost, immediately.** Sixty-nine of the Lima station's hundred and twenty-five snow
+  seasons survive this rule and the rest are named. Twenty-six of the excluded seasons are one
+  consecutive block, which means the record's holes are not scattered — they are a quarter-century
+  in one place — and a snowfall trend computed across them would be comparing the 1910s with the
+  2010s while calling it a series. This corpus therefore publishes the county's mean seasonal
+  snowfall, its extremes and its largest single falls, and **refuses a snowfall trend**, which is
+  the one thing a reader would most want from a hundred and twenty-five years of snow.
+
+  **Why not fill it from Van Wert.** The station forty kilometres west has usable seasons inside
+  the hole, and its 1961–1990 mean is 42.3 inches against Lima's 26.6. Two stations that disagree
+  by sixteen inches on the era they both cover cannot substitute for each other on the era only one
+  covers. Snowfall is measured with a stick by a person, and it does not travel between yards the
+  way a monthly mean travels between counties.
+
+  **Why the threshold is 34 °F and not 32.** Snow reaches the ground at surface temperatures above
+  freezing routinely, and the test is meant to be hard to fail by accident rather than exact. Every
+  one of the twenty-six excluded seasons has at least five such days and most have more than ten;
+  no season outside the block fails on this test at all.
+
+  **What generalises.** A zero written where nothing was measured is the failure mode of every
+  record kept by a person filling in a form, which is most of what a county's history is made of.
+  A vacancy is not an absence of officers; a filing of none is not none filed. The rule above is
+  written for a series but the habit is the point: ask what the record does when nobody looks, and
+  do not assume it goes blank.
+status: accepted
+date: "2026-09-02"
