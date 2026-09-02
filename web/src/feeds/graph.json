@@ -7801,6 +7801,67 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-proprietors-1969-2022.yml",
+      "class": "measure",
+      "label": "Allen County proprietors and payroll employment, 1969–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "BEA's county employment tables, Ohio files, GeoFIPS 39003. Line 10 is total employment, 20 wage and salary, 40 proprietors, 50 farm proprietors and 60 nonfarm proprietors; 40 is 50 plus 60 in every year checked. The two tables are separate series on separate classifications and the join at 2000–2001 moves total employment by 3,148 and proprietors by 742, so no rate of change here crosses it. Industry detail in these files is suppressed as `(D)` for small cells and none of it is read. [verified]",
+        "parameter": "proprietors as a share of all employment",
+        "unit": "per cent",
+        "value": "18.6"
+      },
+      "blocks": [
+        {
+          "text": "**Nearly one job in five in Allen County belongs to somebody working for themselves, and that has never been true before in fifty-four years of record.** 11,964 proprietors against 52,274 wage and salary jobs in 2022 — 18.6 per cent of all employment, the highest figure in the series. [verified] — [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), CAEMP25S for 1969–2000 and CAEMP25N for 2001–2022, lines 10, 20, 40, 50 and 60.",
+          "tier": "verified"
+        },
+        {
+          "text": "The rule dividing the table is the classification break. The two segments are separate series and nothing here is differenced across the line; see [total employment](allen-county-total-employment-1969-2022.yml), which keeps the same rule. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two halves of the county's workforce moved together for thirty-one years and then parted.** Between 1969 and 2000 payroll jobs rose 26.3 per cent and proprietors 48.9 per cent, both growing. Between 2001 and 2022 payroll jobs fell 13.4 per cent and proprietors rose 26.1. [inference] — computed here within each segment.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Every job this county has lost since 2001 is a payroll job.** Wage and salary employment went from 60,335 to 52,274, a loss of 8,061; total employment fell 5,587 over the same years, because proprietors added 2,474. [inference] — computed here from the NAICS segment.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The proprietor share is at its record in the newest year and rose fastest in the three before it.** It ran between 12.0 and 14.9 per cent for the whole SIC segment, and from 13.6 per cent in 2001 to 18.6 in 2022. The rise from 9,946 in 2019 to 11,964 in 2022 is **+2,018, or 20.3 per cent** — the largest three-year rise in either segment of the record. [verified] — same source, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It also rose in the last deep recession, and by a third as much.** The share's SIC-segment maximum is 14.9 per cent in 1982, the year this county's manufacturing employment stood at 14,349 against a 1973 peak of 18,400. [verified] — same source; see [manufacturing](allen-county-manufacturing-employment-1969-2022.yml). Self-employment rising when payroll work is scarce is the shape both episodes have. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Farm proprietors have more than halved and the fall is the one thing spanning the break.** 1,668 in 1969, 1,401 in 1980, 1,266 in 1990, 1,060 in 2000, 1,013 in 2001, 812 in 2010 and 802 in 2022. It falls in the SIC segment and in the NAICS segment and across the join, which is what a real trend looks like when a classification changes underneath it. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nonfarm proprietors went the other way and did the work.** 5,202 in 1969 to 9,172 in 2000, and 8,477 in 2001 to 11,162 in 2022 — up 76.3 per cent in the first segment and 31.7 in the second. Every net proprietor this county has gained since 1969 is a nonfarm one, and then some. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three federal programmes count this county's jobs and they differ by fourteen thousand.** For 2022: 64,238 here, 49,136 covered jobs in the insurance filings, and — for 2024 — 49,640 in the occupational survey. The gap is not error. Proprietors account for 11,964 of it and the rest is work outside unemployment insurance. [inference] — computed here against [the commuting node's table](allen-county-commuting-2022.yml) and [the occupational survey](allen-county-occupations-2014-2024.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It answers a question the occupational survey left open.** That survey found sixty people in farming, fishing and forestry occupations in a county two thirds covered by farms, and said the reason was that it counts no self-employed person. This file counts 802 farm proprietors and 946 farm jobs of all kinds in the same county in 2022. [verified] — same source, lines 50 and 70; see [the occupational survey](allen-county-occupations-2014-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures, the proprietor share of all employment at six points: 12.1 per cent in 1969, 13.8 in 1980, 12.4 in 1990, 14.0 in 2000, 16.8 in 2010 and 18.6 in 2022.** [inference] — computed here from the table above.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-race-2023.yml",
       "class": "measure",
       "label": "Allen County population by race, 2023",
@@ -22306,6 +22367,34 @@
     {
       "from": "measure/allen-county-property-tax-rates-2012-2025.yml",
       "to": "measure/allen-county-school-finance-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-proprietors-1969-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bea-county-employment.md"
+    },
+    {
+      "from": "measure/allen-county-proprietors-1969-2022.yml",
+      "to": "measure/allen-county-total-employment-1969-2022.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/bea-county-employment.md"
+    },
+    {
+      "from": "measure/allen-county-proprietors-1969-2022.yml",
+      "to": "measure/allen-county-occupations-2014-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-proprietors-1969-2022.yml",
+      "to": "measure/allen-county-manufacturing-employment-1969-2022.yml",
       "relationship": "relates-to",
       "tier": "inference",
       "source": null

@@ -4231,6 +4231,90 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2012", value: 6688.0, literal: "6,688" },
         ],
     },
+    // ── Proprietors ──
+    Assertion {
+        id: "one-job-in-five-is-nobodys-payroll",
+        statement: "Allen County had 11,964 proprietors against 52,274 wage and salary jobs in \
+                    2022 \u{2014} 18.6 per cent of all employment, the highest in fifty-four years of \
+                    record. The share ran between 12.0 and 14.9 per cent for the whole of the \
+                    1969\u{2013}2000 series and has not stopped rising since 2001.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**Nearly one job in five in Allen County belongs to somebody working for themselves, and that has\n  never been true before in fifty-four years of record.** 11,964 proprietors against 52,274 wage and\n  salary jobs in 2022 \u{2014} 18.6 per cent of all employment, the highest figure in the series.\n  [verified] \u{2014} [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), CAEMP25S\n  for 1969\u{2013}2000 and CAEMP25N for 2001\u{2013}2022, lines 10, 20, 40, 50 and 60."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**In figures, the proprietor share of all employment at six points: 12.1 per cent in 1969, 13.8 in\n  1980, 12.4 in 1990, 14.0 in 2000, 16.8 in 2010 and 18.6 in 2022.** [inference] \u{2014} computed here\n  from the table above."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1969", value: 12.1, literal: "12.1" },
+            Figure { label: "1980", value: 13.8, literal: "13.8" },
+            Figure { label: "1990", value: 12.4, literal: "12.4" },
+            Figure { label: "2000", value: 14.0, literal: "14.0" },
+            Figure { label: "2010", value: 16.8, literal: "16.8" },
+            Figure { label: "2022", value: 18.6, literal: "18.6" },
+        ],
+    },
+    Assertion {
+        id: "every-job-lost-since-2001-is-a-payroll-job",
+        statement: "Allen County's payroll employment fell 8,061 between 2001 and 2022 while its \
+                    proprietors rose 2,474, so total employment fell 5,587. For thirty-one years \
+                    before that the two grew together \u{2014} payroll up 26.3 per cent, proprietors \
+                    up 48.9. The county's job loss is entirely on the payroll side.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**The two halves of the county's workforce moved together for thirty-one years and then parted.**\n  Between 1969 and 2000 payroll jobs rose 26.3 per cent and proprietors 48.9 per cent, both growing.\n  Between 2001 and 2022 payroll jobs fell 13.4 per cent and proprietors rose 26.1. [inference] \u{2014}\n  computed here within each segment."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**Every job this county has lost since 2001 is a payroll job.** Wage and salary employment went\n  from 60,335 to 52,274, a loss of 8,061; total employment fell 5,587 over the same years, because\n  proprietors added 2,474. [inference] \u{2014} computed here from the NAICS segment."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**The proprietor share is at its record in the newest year and rose fastest in the three before\n  it.** It ran between 12.0 and 14.9 per cent for the whole SIC segment, and from 13.6 per cent in\n  2001 to 18.6 in 2022. The rise from 9,946 in 2019 to 11,964 in 2022 is **+2,018, or 20.3 per\n  cent** \u{2014} the largest three-year rise in either segment of the record. [verified] \u{2014} same source,\n  computed here."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Payroll jobs lost", value: 8061.0, literal: "8,061" },
+            Figure { label: "Proprietors gained", value: 2474.0, literal: "2,474" },
+            Figure { label: "Net jobs lost", value: 5587.0, literal: "5,587" },
+        ],
+    },
+    Assertion {
+        id: "the-farm-proprietors-halved",
+        statement: "Allen County had 1,668 farm proprietors in 1969 and 802 in 2022. The fall runs \
+                    through both halves of a series broken by a classification change and across \
+                    the join itself, which is what a real trend looks like when the counting \
+                    changes underneath it. Every net proprietor the county has gained is a nonfarm \
+                    one.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**Farm proprietors have more than halved and the fall is the one thing spanning the break.**\n  1,668 in 1969, 1,401 in 1980, 1,266 in 1990, 1,060 in 2000, 1,013 in 2001, 812 in 2010 and 802 in\n  2022. It falls in the SIC segment and in the NAICS segment and across the join, which is what a\n  real trend looks like when a classification changes underneath it. [verified] \u{2014} same source."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**It answers a question the occupational survey left open.** That survey found sixty people in\n  farming, fishing and forestry occupations in a county two thirds covered by farms, and said the\n  reason was that it counts no self-employed person. This file counts 802 farm proprietors and 946\n  farm jobs of all kinds in the same county in 2022. [verified] \u{2014} same source, lines 50 and 70; see\n  [the occupational survey](allen-county-occupations-2014-2024.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1969", value: 1668.0, literal: "1,668" },
+            Figure { label: "1980", value: 1401.0, literal: "1,401" },
+            Figure { label: "1990", value: 1266.0, literal: "1,266" },
+            Figure { label: "2000", value: 1060.0, literal: "1,060" },
+            Figure { label: "2010", value: 812.0, literal: "812" },
+            Figure { label: "2022", value: 802.0, literal: "802" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
