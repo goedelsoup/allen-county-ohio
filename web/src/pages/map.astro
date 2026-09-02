@@ -1,9 +1,8 @@
 ---
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
-import { assertion, mapPoints } from '../lib/feeds'
+import { mapPoints } from '../lib/feeds'
 
-const address = assertion('an-address-is-not-a-municipality')
 const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
   acc[p.class] = (acc[p.class] ?? 0) + 1
   return acc
@@ -59,21 +58,10 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
     </div>
   </section>
 
-  <section>
-    <h2>What a map is for here</h2>
-    <p class="lede-narrow">
-      A table of edges can say a site is in a place. It cannot show you that the site is two
-      miles outside the boundary of the place named. This is the corpus's clearest case of
-      exactly that, and it was wrong from the first commit until two authorities were asked.
-    </p>
-    <AssertionCard assertion={address} open />
-    <p class="caution">
-      The corollary is the one the corpus states about itself: nearness is not containment. A
-      dot inside a shape on this map is a dot inside a shape. Where a node's location claim is
-      an <strong>inference</strong>, its badge says so, and no amount of visual coincidence
-      upgrades it.
-    </p>
-  </section>
+  <p class="handoff">
+    What a map is for here — and the location claim it caught — is on
+    <a href="/ground">Ground</a>.
+  </p>
 
   <script type="application/json" data-map-points set:html={JSON.stringify(mapPoints)} is:inline />
   <script>

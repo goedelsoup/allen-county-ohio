@@ -1,0 +1,584 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import DataTable from '../components/DataTable.astro'
+import { assertion, node, nodes, series, seriesById } from '../lib/feeds'
+import { bar, line } from '../lib/chart-spec'
+
+const concentration = assertion('decline-concentrated-in-lima')
+
+const breadth = assertion('decline-is-not-suburbanization')
+
+const mechanism = assertion('decline-is-migration-and-deaths')
+
+const whole = assertion('the-county-has-a-complete-series')
+
+const concentration2 = assertion('what-the-concentration-is-made-of')
+
+const young = assertion('lima-is-the-young-end')
+
+// The comparison chart indexes two measured series to a common base. Two measures of very
+// different size on one axis would be a dual-axis chart, which invents a correlation; an
+// index puts both on one honest scale.
+const county = seriesById('place-allen-county::total-resident-population')
+
+const lima = seriesById('place-lima::total-resident-population')
+
+// One enumeration and one estimates base share the 2020 date in both series. The estimates
+// line is the one that is comparable across all four dates, so the census figures are left
+// to the table rather than mixed into a series with them.
+const estimates = (points: typeof county.points) => points.filter((p) => !p.node.includes('-census'))
+
+const countyEst = estimates(county.points).filter((p) => p.as_of >= '2000')
+
+const limaEst = estimates(lima.points)
+
+const dates = countyEst.map((p) => p.as_of.slice(0, 4))
+
+const indexed = (points: typeof county.points) => {
+  const base = points[0].value
+  return points.map((p) => Math.round((p.value / base) * 1000) / 10)
+}
+
+const indexSpec = line(dates, [
+    { name: 'Allen County', y: indexed(countyEst) },
+    { name: 'Lima', y: indexed(limaEst) },
+  ], {
+  yTitle: '2000 = 100',
+  labelLast: true,
+})
+
+const rateSpec = bar(concentration.figures.map((f) => f.label), concentration.figures.map((f) => f.value), {
+  yTitle: 'Per cent lost, 2000–2010',
+  tickSuffix: '%',
+  labelValues: true,
+})
+
+// Two negative components on one axis. A bar chart is right here and a pie chart would not
+// be: these are two independent forces that happen to point the same way, not shares of a
+// whole, and the residual of 28 the corpus names belongs to neither.
+const mechanismSpec = bar(mechanism.figures.map((f) => f.label), mechanism.figures.map((f) => f.value), {
+  yTitle: 'People, four years to 2024',
+  labelValues: true,
+})
+
+// Twenty-one points a decade apart. A line, and the only chart here that spans the whole
+// record — labelLast would put the number on 2020, which is not the point of it.
+const wholeSpec = line(whole.figures.map((f) => f.label), [{ name: 'Allen County', y: whole.figures.map((f) => f.value) }], {
+  yTitle: 'Residents',
+})
+
+// One city measured three ways against the same denominator, so the bars are comparable and
+// the reading is the distance between them. They are not shares of a whole and a pie would say
+// they were.
+const concentrationSpec = bar(concentration2.figures.map((f) => f.label), concentration2.figures.map((f) => f.value), {
+  yTitle: "Lima's share of the county",
+  tickSuffix: '%',
+  labelValues: true,
+})
+
+const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
+  a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
+)
+
+const ring = assertion('the-ring-was-built-while-the-city-was-full')
+
+const tenure = assertion('lima-rents-and-the-townships-own')
+
+const empty = assertion('one-lima-housing-unit-in-nine-is-empty')
+
+// `categories` and `values` are what the bar renderer reads. This helper was written with a
+// line's `x` and `series` for a phase, so all five of this page's charts drew a trace over two
+// undefined arrays and rendered empty — silently, because the table under each one was right
+// and nothing typechecked the spec. See the check added to the gate.
+const bars = (a: typeof tenure, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle },
+  )
+
+const tenureSpec = bars(tenure, 'Per cent of occupied units owner-occupied')
+
+const emptySpec = bars(empty, 'Per cent of housing units vacant')
+
+const schoolsEmpty = assertion('the-schools-empty-faster-than-the-county')
+
+const poor = assertion('half-the-countys-poor-children-are-in-one-district')
+
+const schoolsEmptySpec = line(schoolsEmpty.figures.map((f) => f.label), [{ name: 'Pupils', y: schoolsEmpty.figures.map((f) => f.value) }], {
+  yTitle: 'Pupils enrolled',
+  labelLast: true,
+})
+
+// Built from the graph rather than typed out, so the page cannot drift from the corpus.
+const districts = nodes
+  .filter((n) => n.properties.jurisdiction_type === 'school district')
+  .toSorted((a, b) => a.label.localeCompare(b.label))
+
+const life = assertion('lima-tracts-live-five-years-less')
+
+const gap = assertion('the-health-gap-is-a-gap-in-conditions')
+
+const dying = assertion('the-county-dies-younger-than-its-state')
+
+// The county's rate at every third window, from the assertion's own figures, against the national
+// rate for the same nine windows. The national series is typed out because it is the control and
+// not the claim; both are in the corpus node the assertion cites.
+const nationalYpll = [7705, 7535, 7345, 7090, 6704, 6601, 6901, 7282, 8352]
+
+const ypllSpec = line(dying.figures.map((f) => f.label), [
+    { name: 'Allen County', y: dying.figures.map((f) => f.value) },
+    { name: 'United States', y: nationalYpll },
+  ], {
+  yTitle: 'Years lost before 75, per 100,000',
+})
+
+// The eleven mortality measures as the compilation publishes them, with the years each covers.
+// Typed out because the corpus holds them as one measure and the spans differ row by row.
+const causes = [
+  ['Premature death (years lost before 75)', '2020–2022', '10,482', '9,740', '8,352', '1,908'],
+  ['Premature age-adjusted mortality', '2020–2022', '517.6', '470.8', '406.6', '1,908'],
+  ['Life expectancy, years', '2020–2022', '74.3', '75.2', '77.1', '—'],
+  ['Injury deaths', '2018–2022', '95.1', '100.7', '83.6', '485'],
+  ['Drug overdose deaths', '2020–2022', '38.1', '44.7', '30.8', '116'],
+  ['Suicides', '2018–2022', '16.8', '14.7', '14.0', '83'],
+  ['Firearm fatalities', '2018–2022', '15.5', '14.7', '13.4', '79'],
+  ['Motor vehicle crash deaths', '2016–2022', '12.1', '11.1', '12.3', '87'],
+  ['Homicides', '2016–2022', '7.8', '7.2', '6.5', '56'],
+  ['Infant mortality, per 1,000 births', '2016–2022', '6.4', '7.0', '5.6', '55'],
+  ['Child mortality', '2019–2022', '54.8', '59.2', '51.6', '58'],
+]
+
+const lifeSpec = bar(
+  life.figures.map((f) => f.label),
+  life.figures.map((f) => f.value),
+  { yTitle: 'Years of life expectancy at birth', labelValues: true },
+)
+
+const spreadSpec = bar(
+  gap.figures.map((f) => f.label),
+  gap.figures.map((f) => f.value),
+  { yTitle: 'Per cent of adults, as estimated', tickSuffix: '%' },
+)
+---
+
+<Base
+  title="People"
+  lede="Allen County peaked in 1980 and has fallen at every count since. This page is about what the fall is made of, and about the sorting underneath it that a county total cannot show."
+>
+  <div class="reading">
+  <section>
+    <h2>The whole record</h2>
+    <p>
+      The county has been counted every ten years since 1830 and this corpus now holds all
+      twenty-one counts. It grew at every census for a hundred and fifty years, peaked in 1980, and
+      has fallen at every census since — it is smaller today than it was in 1960. The first two
+      figures count different ground: the reorganization of 1848 moved 138 square miles.
+    </p>
+    <AssertionCard assertion={whole} />
+
+    <ChartFigure
+      id="whole"
+      title="Allen County, 1830–2020"
+      caption="Every decennial census. Assembled from three county histories and four Census publications; the 1850 figure is contested, with the 1885 history giving 12,100 and the 1906 one 12,116."
+      columns={['Census', 'Residents']}
+      rows={whole.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="whole" set:html={JSON.stringify(wholeSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>Why it shrinks</h2>
+    <p>
+      Five decades of this page described a decline without explaining it. The Population
+      Estimates programme publishes the components of change — births, deaths, and migration
+      split into domestic and international — and the corpus had held that file, uncited on
+      these columns, since its second phase.
+    </p>
+    <AssertionCard assertion={mechanism} />
+
+    <ChartFigure
+      id="mechanism"
+      title="What the loss is made of, 2021–2024"
+      caption="The two forces are independent and both negative; a residual of 28 belongs to neither. Migration is the larger, and within it a domestic loss of 1,217 is partly offset by an international gain of 424."
+      columns={['Component', 'People']}
+      rows={mechanism.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="mechanism" set:html={JSON.stringify(mechanismSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>The loss is not spread evenly</h2>
+    <AssertionCard assertion={concentration} />
+
+    <ChartFigure
+      id="decline-rate"
+      title="Rate of loss, 2000–2010"
+      caption="Lima against everything in the county outside every incorporated place."
+      columns={['Where', 'Per cent lost']}
+      rows={concentration.figures.map((f) => [f.label, `${f.value}%`])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="decline-rate" set:html={JSON.stringify(rateSpec)} is:inline />
+
+    <ChartFigure
+      id="indexed"
+      title="City and county, indexed to 2000"
+      caption="Both series set to 100 at 2000, so two populations three times apart in size can share one axis. Estimates only — the decennial counts are in the table and are a different instrument. The indexing is arithmetic done on this page; every input is a Census figure from the corpus."
+      columns={['Date', 'Subject', 'Figure', 'Basis']}
+      rows={allPoints.map((p) => [
+        p.as_of,
+        p.node.startsWith('measure/lima') ? 'Lima' : 'Allen County',
+        p.value.toLocaleString('en-US'),
+        p.node.includes('-census') ? 'Decennial count' : 'Estimate',
+      ])}
+    />
+    <script type="application/json" data-chart-spec="indexed" set:html={JSON.stringify(indexSpec)} is:inline />
+
+    <h3>What the concentration is made of</h3>
+    <p>
+      This page has said for ten versions that the county's loss is concentrated in Lima, and until
+      now it could not say what Lima is. It is a third of the county's people, two thirds of its
+      poor, and three quarters of its Black residents — and the three shares close exactly against
+      the county's own rows, so this is one city measured three ways rather than three estimates.
+    </p>
+    <AssertionCard assertion={concentration2} open />
+
+    <ChartFigure
+      id="concentration2"
+      title="Lima's share of Allen County, 2023"
+      caption="American Community Survey, 2023 five-year estimates. Ohio's twelve townships and Lima partition the county, and the three sums — 101,685 people, 12,815 below poverty, 10,805 Black residents — are the county's own figures. The bars are three measures of one city against one denominator, not parts of a whole."
+      columns={['Measure', "Lima's share"]}
+      rows={concentration2.figures.map((f) => [f.label, `${f.value}%`])}
+      height={260}
+    />
+    <script type="application/json" data-chart-spec="concentration2" set:html={JSON.stringify(concentrationSpec)} is:inline />
+
+    <p>
+      Lima's median household income is <strong>$43,370</strong>, against $91,134 in Shawnee Township
+      across its southern line — forty-eight per cent — and fifty-five per cent of the national
+      figure. Outside the city and the two townships that touch it, the county runs between ninety
+      and ninety-seven per cent white; eight of the twelve townships have fewer than a hundred Black
+      residents, and two report none.
+    </p>
+    <p>
+      What this describes is a county as it now stands. It does not date the sorting, and nothing
+      retrieved here says whether it is the residue of a process the decline covers or one that
+      finished before the decline began.
+    </p>
+    <p>
+      This is also the first source on this page that publishes how wrong it might be. Every figure
+      in it carries a margin — Amanda Township's median household income is $99,148 give or take
+      $20,903 — and the first claim written from it was one the margins refused. Lima has the lowest
+      household income figure in the county and cannot be said to have the lowest household income:
+      Perry Township's is higher by $9,902 against a combined margin of $11,142. The gap that does
+      survive is the one against Shawnee, which is seven and a half times its margin.
+    </p>
+  </section>
+
+  <section>
+    <h2>Not age, and not suburbanization</h2>
+    <AssertionCard assertion={young} open />
+    <p>
+      Two things this page already says compose into a story that is not true. It says the county
+      loses people partly to natural decrease — more deaths than births — and it says the loss is
+      concentrated in Lima. Put together, those describe a city dying of age.
+    </p>
+    <p>
+      Lima's median age is 35.4 against the county's 39.7. Its share over sixty-five is 15.6 per cent
+      against 18.7, and its share under eighteen is higher than the county's. Eleven of the twelve
+      townships are older than the city. Perry Township is 27.9 per cent over sixty-five; Lima is the
+      young end of this county and the townships are the old one, and whatever natural decrease the
+      county has is not principally the city's.
+    </p>
+
+    <h3>And it is not suburbanization</h3>
+    <AssertionCard assertion={breadth} />
+  </section>
+
+  <section>
+    <h2>A county sorted by its houses</h2>
+    <p>
+      For ten phases this corpus counted the people of Allen County and held nothing about the
+      buildings they live in. It could say that a third of the county's people, two thirds of its
+      poor and three quarters of its Black residents are inside Lima, and it could not say what
+      Lima is made of. Six tables of the American Community Survey close that: 44,697 housing
+      units, and the county's thirteen civil subdivisions add up to the county's own row fifteen
+      separate times — units, occupancy, vacancy, tenure and every one of eleven year-built bands.
+    </p>
+    <AssertionCard assertion={tenure} />
+    <ChartFigure
+      id="tenure"
+      title="Owner-occupancy, 2023"
+      caption="Share of occupied housing units that are owner-occupied. American Community Survey five-year estimates. The county's figure is unremarkable and neither of the two things it is made of is."
+      columns={['Geography', 'Per cent owner-occupied']}
+      rows={tenure.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="tenure" set:html={JSON.stringify(tenureSpec)} is:inline />
+    <p>
+      Lima holds 35.4 per cent of the county's housing and 48.2 per cent of its empty housing. A
+      house in Shawnee Township, across the city's southern line, has a median value of $210,200
+      against $95,900 in Lima — 2.2 times, on a combined margin of error of $17,965 for a gap of
+      $114,300. Two townships have no published median rent at all: the survey returns its
+      unavailable-value code, which is not a low figure.
+    </p>
+
+    <h3>And how many houses are empty</h3>
+    <AssertionCard assertion={empty} />
+    <ChartFigure
+      id="vacancy"
+      title="Vacancy rate, 2020, city against county against the emptiest township"
+      caption="2020 Census Redistricting Data Summary File, Table H1, summed from block records. Vacancy is total units less occupied units; the file does not say why a unit is empty, which is in the Demographic and Housing Characteristics file and not in this one."
+      columns={['Subdivision', 'Per cent vacant']}
+      rows={empty.figures.map((f) => [f.label, f.value.toFixed(2)])}
+    />
+    <script type="application/json" data-chart-spec="vacancy" set:html={JSON.stringify(emptySpec)} is:inline />
+    <p>
+      With the group quarters count beside it the county's household size falls out exactly: 3,522
+      people outside households, so 98,684 in them, in 40,935 occupied units — 2.411 people per
+      household. Lima's is 2.344, the smallest of the thirteen subdivisions; Amanda Township's is
+      2.691, the largest.
+    </p>
+    <p>
+      This corpus had been using persons per housing unit as a stand-in and saying in the node that
+      it was not household size, because vacant units sat in the denominator and institutional
+      residents in the numerator. The open block that said so named the right table and the wrong
+      obstacle: the Census API will not serve it without a key, and the flat file the API is built
+      over needs no key at all. The figure was one download away for two phases.
+    </p>
+
+    <h3>The ring was built while the city was full</h3>
+    <p>
+      The sorting this site has described since the population page was written had no date under
+      it. It has one now, from below. The median house standing in Lima was built in 1953; in Bath
+      Township it is 1975, and in Shawnee and American Township 1973. Lima is 34.9 per cent
+      pre-1940 where those three are between 6.4 and 7.1 per cent.
+    </p>
+    <AssertionCard assertion={ring} />
+    <p>
+      A sorting into an old cheap city and a new dear ring cannot be older than the ring, and the
+      ring went up in the decade Lima reached its peak of 53,734 people and still held 48.4 per
+      cent of the county. That bounds when the sorting could have happened. It does not say when
+      anyone moved, and nothing here says why the building went where it did — a construction date
+      is not a zoning map, a subdivision approval or a mortgage, and this corpus holds none of the
+      three.
+    </p>
+    <p>
+      One more thing the bands say. A quarter of the housing standing in Allen County was built in
+      1980 or later — 11,327 units — over a span in which the county fell from 112,241 people to
+      100,866. The two numbers are not a ratio and nothing here divides them. A county losing
+      people built a quarter of its housing while doing it.
+    </p>
+  </section>
+
+  <section>
+    <h2>The schools are emptying twice as fast</h2>
+    <AssertionCard assertion={schoolsEmpty} />
+    <ChartFigure
+      id="enrolment"
+      title="Enrolment in the twelve districts, 2010–2023"
+      caption="Fall enrolment from the Census Bureau's annual survey of school system finances, read for every year rather than sampled. Ten of the thirteen year-on-year steps are declines, and one dwarfs the rest: 650 pupils in 2021, where no other year moves by more than 226."
+      columns={['Year', 'Pupils']}
+      rows={schoolsEmpty.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="enrolment" set:html={JSON.stringify(schoolsEmptySpec)} is:inline />
+    <p>
+      Three districts lost a fifth of their pupils over those thirteen years — Lima at 20.7 per
+      cent, Delphos at 20.2 and Waynesfield-Goshen at 20.0. One grew: Bluffton, up 8.8 per cent,
+      which is also the cheapest district per pupil and the lowest in child poverty. Allen East lost
+      eight pupils in thirteen years.
+    </p>
+
+    <h3>Twelve districts, and none of them is the county</h3>
+    <p>
+      Every other geography on this site closes. Ohio's twelve townships and Lima add up to Allen
+      County exactly, in every table the census publishes. The {districts.length} school districts do
+      not: five of them hold ground in Putnam, Auglaize, Van Wert or Hancock, and together they
+      held 117,057 people in 2023 against a county of 101,685. A figure for "the districts" is not
+      a figure for the county, and nothing on this page pretends otherwise.
+    </p>
+    <p>
+      There is a thirteenth school jurisdiction and it is not a district. The educational service
+      center is defined by the Revised Code as a county's territory less its city and exempted
+      village school districts — so it is Allen County minus Lima City, minus the Allen part of
+      Delphos City and minus the Allen part of Bluffton. It has a five-member elected board and no
+      boundary of its own.
+    </p>
+
+    <h3>The poor children are in one district</h3>
+    <AssertionCard assertion={poor} />
+    <p>
+      This is the fourth instrument to describe the same shape. A decennial count, a survey with
+      margins, a finance return and now a federal poverty model all say that Lima holds about a
+      third of this county's people and about half of whatever is being measured about
+      disadvantage. Perry Local is the exception that does not fit either story: 22.1 per cent child
+      poverty on 602 children, the county's second-highest rate, in a district whose ground is not
+      the township it is named for.
+    </p>
+    <p>
+      One thing this page cannot tell you. 20,444 children aged 5 to 17 live in these twelve
+      districts and 16,113 are enrolled in them. Some of the difference is that the two figures are
+      different instruments; the rest is private and parochial schools, community schools, home
+      instruction and open enrolment, none of which this corpus has ever recorded. It is an open
+      question, and it is the first one here that came from putting two of the corpus's own sources
+      beside each other.
+    </p>
+  </section>
+
+  <section>
+    <h2>Thirteen years, inside one county</h2>
+    <p>
+      For twelve phases this corpus counted the people of Allen County and held nothing about how
+      long any of them lived. The National Center for Health Statistics built a life table for
+      almost every census tract in the United States from death certificates and population, and
+      Allen County has thirty of them.
+    </p>
+    <AssertionCard assertion={life} />
+    <ChartFigure
+      id="life"
+      title="Life expectancy at birth by census tract, 2010–2015"
+      caption="NCHS USALEEP. The two ends are more than five combined standard errors apart, on published errors of about 1.7 years each. 'Lima tracts' are the thirteen whose internal point falls inside the city, which is a statement about where a tract's centre is and not about where its people live."
+      columns={['', 'Years']}
+      rows={life.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="life" set:html={JSON.stringify(lifeSpec)} is:inline />
+    <p>
+      The two groups barely overlap. The best Lima tract expects 78.2 years and the worst tract
+      outside the city expects 74.0, so eleven of the thirteen inside sit below every tract outside
+      but one. Weighted by population it is 73.9 years against 79.1.
+    </p>
+    <p>
+      No county figure is given here, and the reason is worth stating. Two of the file's tracts were
+      split when the census redrew its geography in 2020 and seven of the county's current tracts
+      have no 2010 predecessor with a published estimate, so the thirty rows cover 82,484 of the
+      county's 102,206 people. Four fifths of a county is not a county. Against Ohio's 2,772 tracts,
+      which run from 60.0 to 89.2 years, Allen County's median sits half a year above the state's.
+    </p>
+
+    <h3>From healthier than America to a quarter worse</h3>
+    <p>
+      Until this phase the corpus could tell you what share of Lima's adults a model estimates to
+      have diabetes and could not tell you how many people died here. The agency that knows will
+      answer a machine for the whole United States and refuses it for a county, in a sentence, by
+      policy; the county figures reach this page through a compiler, and the compiler was checked
+      against that agency at the grain it does serve — exactly, twice.
+    </p>
+    <AssertionCard assertion={dying} open />
+    <ChartFigure
+      id="ypll"
+      title="Years of life lost before 75, per 100,000, age-adjusted"
+      caption="Every third three-year window from 1997–1999 to 2020–2022. The windows overlap by two years, so consecutive points are not independent; the publisher flags breaks at 2004–2006 and 2019–2021, both changes to how the population denominator was estimated."
+      columns={['Window', 'Allen County', 'United States']}
+      rows={dying.figures.map((f, i) => [f.label, f.value.toLocaleString('en-US'), nationalYpll[i].toLocaleString('en-US')])}
+      height={320}
+    />
+    <script type="application/json" data-chart-spec="ypll" set:html={JSON.stringify(ypllSpec)} is:inline />
+    <p>
+      The count says it without a denominator, which matters when the publisher's two breaks in this
+      series are both denominator changes. Deaths before seventy-five in Allen County were 1,306 in
+      the three years 2011–2013 and 1,908 in 2020–2022 — a rise of 46.1 per cent, while the
+      county's under-75 population fell 4.0 per cent.
+    </p>
+    <DataTable
+      title="Eleven ways of dying early, and the years each covers"
+      caption="Rates per 100,000 except life expectancy and infant mortality. The year spans differ row by row and no row should be read against another as though they did not. The last column is the count of deaths behind the county's rate."
+      columns={['Measure', 'Years', 'Allen', 'Ohio', 'US', 'Allen count']}
+      rows={causes}
+    />
+    <p class="note">
+      No other race category is published for this county. Ohio and the nation carry Hispanic, Asian
+      and American Indian figures; Allen County carries Black and white, and a Hispanic life
+      expectancy of 87.6 years that rests on a population too small for a life table. It is not
+      quoted as a finding here.
+    </p>
+
+    <h3>What the difference is made of, and what it is not</h3>
+    <p>
+      The county's other health source covers forty measures at three geographies, and it is a
+      model rather than a measurement — CDC fits national survey responses to local demographic
+      profiles, so nobody in these tracts was asked anything.
+    </p>
+    <AssertionCard assertion={gap} />
+    <ChartFigure
+      id="spread"
+      title="Lowest and highest tract estimate, four measures"
+      caption="CDC PLACES, crude prevalence, all thirty-five of the county's 2020 tracts. One tract holds the county's highest estimate on nine of ten measures examined; what is in it, this corpus cannot say."
+      columns={['', 'Per cent']}
+      rows={gap.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="spread" set:html={JSON.stringify(spreadSpec)} is:inline />
+    <p>
+      Two measures corroborate each other, which is rare in a file like this. A quarter of Lima
+      residents over sixty-five are estimated to have lost all their teeth, against a sixth
+      countywide; and half the city's adults saw a dentist in the year against 58 per cent of the
+      county's. Both gaps clear their intervals and they point the same way.
+    </p>
+  </section>
+
+  <section>
+    <h2>The question this page will not answer</h2>
+    <p>
+      The obvious reading is that Lima's health gap is its poverty gap. This site holds the poverty
+      gap — the city has a third of the county's people and 64.1 per cent of those below the
+      poverty line, on a median household income 48 per cent of the township across its southern
+      line — and it will not join the two.
+    </p>
+    <p>
+      CDC names its own inputs: the Behavioral Risk Factor Surveillance System, Census population
+      counts, <em>and the American Community Survey</em>. The survey that supplies this site's
+      income and poverty figures is a covariate in the model that produces these health estimates.
+      Reading the poverty back out of the health number is reading the model's input out of its
+      output, and it would be worthless however true the conclusion happens to be.
+    </p>
+    <p>
+      The life expectancy figures are not subject to that. USALEEP counts deaths — actual
+      certificates, in the tract where they happened — and models only the smoothing. That is why
+      this page states a life expectancy for a Lima tract and declines to state a diabetes
+      prevalence for one. The difference is not confidence; both files publish a standard error. It
+      is what was counted.
+    </p>
+  </section>
+
+    <section class="onward">
+      <h2>Where this goes on</h2>
+      <ul>
+        <li>
+          <a href="/read/the-county-in-1920">The county in 1920</a>
+          <span class="why">The census counted what the county history had estimated, and in 2000 the category itself split.</span>
+        </li>
+        <li>
+          <a href="/read/lima-before-the-series-begins">Lima before the series begins</a>
+          <span class="why">The city grew fivefold after the oil; the county outside it had three peaks.</span>
+        </li>
+        <li>
+          <a href="/read/buying-and-borrowing">Buying, and borrowing against what you own</a>
+          <span class="why">A denial gap that income does not account for.</span>
+        </li>
+        <li>
+          <a href="/read/who-is-not-in-a-house-at-all">Who is not in a house at all</a>
+          <span class="why">Three thousand people here live outside a household.</span>
+        </li>
+        <li>
+          <a href="/read/after-the-twelfth-grade">After the twelfth grade</a>
+          <span class="why">The county lost a third of its college students.</span>
+        </li>
+        <li>
+          <a href="/read/the-overdose-epidemic-ending">The overdose epidemic, ending</a>
+          <span class="why">Overdose deaths fell by two thirds from their peak.</span>
+        </li>
+        <li>
+          <a href="/read#people">The reading room</a>
+          <span class="why">Every shorter piece filed under this section.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    import { renderCharts } from '../scripts/charts'
+    renderCharts()
+  </script>
+</Base>

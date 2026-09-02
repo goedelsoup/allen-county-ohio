@@ -1,0 +1,402 @@
+---
+import Base from '../layouts/Base.astro'
+import AssertionCard from '../components/AssertionCard.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import DataTable from '../components/DataTable.astro'
+import { assertion, series } from '../lib/feeds'
+import { bar, line } from '../lib/chart-spec'
+
+const farmland = assertion('the-county-is-two-thirds-farmland')
+
+const rented = assertion('most-of-the-farmland-is-rented')
+
+const yields = assertion('an-acre-yields-five-times-what-it-did')
+
+const fourYears = assertion('a-fifth-of-the-farmland-went-in-four-years')
+
+const sawtooth = assertion('the-farmland-did-not-drain')
+
+// The complete record: eighteen census years of land in farms, with the farm count beside it and
+// the annual rate of change across each interval. Typed out because the corpus holds it as one
+// measure and this table is what the phase was for.
+const fullFarmland = [
+  ['1910', '240,472', '2,939', '—'],
+  ['1920', '241,488', '2,909', '+102'],
+  ['1925', '228,249', '2,722', '−2,648'],
+  ['1930', '230,424', '2,684', '+435'],
+  ['1935', '235,791', '3,016', '+1,073'],
+  ['1940', '225,630', '2,574', '−2,032'],
+  ['1945', '227,038', '2,511', '+282'],
+  ['1950', '227,944', '2,560', '+181'],
+  ['1954', '215,018', '2,097', '−3,232'],
+  ['1959', '206,047', '1,755', '−1,794'],
+  ['1964', '211,196', '1,659', '+1,030'],
+  ['1969', '215,862', '1,611', '+933'],
+  ['1974', '205,706', '1,354', '−2,031'],
+  ['1978', '195,604', '1,244', '−2,526'],
+  ['1982', '197,256', '1,202', '+413'],
+  ['1987', '201,190', '1,148', '+787'],
+  ['2002', '188,150', '968', '−869'],
+  ['2022', '178,921', '897', '−461'],
+]
+
+const fourYearsSpec = bar(
+  fourYears.figures.map((f) => f.label),
+  fourYears.figures.map((f) => f.value),
+  { yTitle: 'Acres of farmland lost, by stretch', labelValues: true },
+)
+
+// The seven census years the corpus now holds for land in farms. Typed out because they come
+// from four different sources and the point of the table is that they are one series.
+const farmSeries = [
+  ['1910', '2,939', '240,472', '92.5%', 'Thirteenth Census'],
+  ['1950', '2,560', '227,944', '—', '1954 volume, prior-year column'],
+  ['1954', '2,097', '215,018', '81.9%', '1954 Census of Agriculture'],
+  ['1982', '1,202', '197,256', '—', '1987 volume, prior-year column'],
+  ['1987', '1,148', '201,190', '77.7%', '1987 Census of Agriculture'],
+  ['2002', '968', '188,150', '—', 'Census of Agriculture'],
+  ['2022', '897', '178,921', '69.4%', 'Census of Agriculture'],
+]
+
+// Bars, not a line. The 1910 observation and the 2002 one are ninety-two years apart and
+// nothing measured between them; a line would draw that segment, and its shape is exactly
+// what this corpus refuses to assert.
+const sawtoothSpec = line(sawtooth.figures.map((f) => f.label), [
+    { name: 'Acres in farms', y: sawtooth.figures.map((f) => f.value) },
+  ], {
+  yTitle: 'Acres',
+})
+
+const farmlandSpec = bar(
+  farmland.figures.map((f) => f.label),
+  farmland.figures.map((f) => f.value),
+  { yTitle: 'Acres in farms' },
+)
+
+const houses = assertion('the-houses-went-where-the-city-is-not')
+
+const housesSpec = bar(
+  houses.figures.map((f) => f.label),
+  houses.figures.map((f) => f.value),
+  { yTitle: 'Single-family houses authorized, 1990–2025', labelValues: true },
+)
+
+const permitDecades = [
+  ['1990–1999', 2252, 2941, '225.2'],
+  ['2000–2009', 1952, 2159, '195.2'],
+  ['2010–2019', 587, 1025, '58.7'],
+  ['2020–2025', 638, 844, '106.3'],
+]
+
+// Typed out: eleven streams the gazetteer files in another county because that is where they end.
+const lost = [
+  ['Auglaize River', 'Defiance'],
+  ['Big Run', 'Putnam'],
+  ['Cranberry Creek', 'Putnam'],
+  ['Cranberry Run', 'Putnam'],
+  ['Flat Fork', 'Putnam'],
+  ['Jennings Creek', 'Putnam'],
+  ['Little Riley Creek', 'Hardin'],
+  ['Ottawa River', 'Putnam'],
+  ['Plum Creek', 'Putnam'],
+  ['Rattlesnake Creek', 'Putnam'],
+  ['Sugar Creek', 'Putnam'],
+]
+
+const yieldSpec = bar(
+  yields.figures.map((f) => f.label),
+  yields.figures.map((f) => f.value),
+  { yTitle: 'Bushels per acre', labelValues: true },
+)
+
+const farms = assertion('the-farms-did-not-go-anywhere')
+
+// Two bars that are nearly the same height. That is the finding, and a line between two points
+// would draw a trend across a gap that holds no observations.
+const farmSpec = bar(farms.figures.map((f) => f.label), farms.figures.map((f) => f.value), {
+  yTitle: 'Acres of land in farms, Allen County',
+  labelValues: true,
+})
+
+const address = assertion('an-address-is-not-a-municipality')
+---
+
+<Base
+  title="Ground"
+  lede="Two thirds of Allen County is farms. This page is about what stands on that ground and what happens to the lines drawn on it — who owns it, what it grows, and where the farmland went."
+>
+  <div class="reading">
+  <section>
+    <h2>The other nine-tenths</h2>
+    <p>
+      This site spent eleven phases on the third of the county that lives in Lima and said nothing
+      about the two thirds of its surface that is farmland. The federal agricultural census has been
+      taken every five years since long before any of the rest of this, and until now the corpus had
+      read exactly one of them — the volume for 1909, which found the county 92.5 per cent farms.
+    </p>
+    <AssertionCard assertion={farmland} />
+    <ChartFigure
+      id="farmland"
+      title="Land in farms"
+      caption="Census of Agriculture. There is no observation between 1910 and 2002: the bars are five years apart at the right-hand end and ninety-two years apart at the left, and nothing here says what the line did in between."
+      columns={['Census', 'Acres in farms']}
+      rows={farmland.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="farmland" set:html={JSON.stringify(farmlandSpec)} is:inline />
+    <p>
+      That is the shape of the gap and it is worth stating plainly. Of the 61,551 acres that left
+      the county's farms, 52,322 went before the first census this corpus can read. It knows the
+      farmland went. It cannot say whether it went in one decade or in nine, and a county that lost
+      fifty thousand acres to drainage, to the oil field, to Lima's annexations or to the interstate
+      lost them for four different reasons.
+    </p>
+  </section>
+
+  <section>
+    <h2>Who owns it, and what it grows</h2>
+    <AssertionCard assertion={rented} />
+    <p>
+      The county had 2,939 farms in 1910 and 897 in 2022, and this site does not subtract the one
+      from the other. A farm in 1910 was land under one manager, with nothing under three acres
+      counted unless it produced $250; a farm in 2022 is any place selling $1,000 or more. Two
+      counts on two thresholds are not a series. What is comparable is acres, animals and bushels,
+      and those are what every figure on this page is made of.
+    </p>
+
+    <h3>What it grows</h3>
+    <AssertionCard assertion={yields} />
+    <ChartFigure
+      id="yields"
+      title="Yield per harvested acre, 1909 and 2022"
+      caption="Production divided by harvested acres, from the two censuses' own figures for both terms. Neither census reports yield this way; the ratio is computed here because both print the numerator and the denominator."
+      columns={['Crop and year', 'Bushels per acre']}
+      rows={yields.figures.map((f) => [f.label, f.value.toFixed(1)])}
+    />
+    <script type="application/json" data-chart-spec="yields" set:html={JSON.stringify(yieldSpec)} is:inline />
+    <p>
+      Soybeans and corn are 84.9 per cent of the county's cropland. The rest is 9,252 acres of
+      wheat, 2,686 of hay and haylage, 793 of popcorn on fourteen operations, and $1.66 million of
+      vegetables, fruit, nursery stock and everything else together. The crops that fed the horses
+      went with them: 30,156 acres of oats in 1909 and 11 acres in 2022, and where there were 3,107
+      acres of rye there is now one operation in the county growing it, whose acreage the census
+      withholds because one operation is all there is.
+    </p>
+  </section>
+
+  <section>
+    <h2>The oil did not take the farms</h2>
+    <p>
+      For nine phases this corpus described Allen County as a farming county reoriented by oil into
+      an industrial one, and in all that time it had not measured a single farm. The same 1910 volume
+      that counts Lima's factory workers counts the county's farms, and they had not gone anywhere:
+      2,939 of them in 1910 against 2,858 in 1900, covering 240,472 of the county's 259,840 acres.
+      More farms than before the boom, on two per cent less land, with more of that land improved.
+    </p>
+    <p>
+      What the oil years did to farming here shows up in one figure only, and it is a price. An acre
+      of Allen County farmland went from $38.39 in 1900 to $76.28 in 1910, and the county's farm
+      property rose 89.0 per cent against 58.7 per cent for Ohio as a whole. Whether that was oil
+      money bidding up the land is the obvious reading, and the corpus has nothing that would
+      separate it from the general rise in Midwestern land values over the same decade.
+    </p>
+    <AssertionCard assertion={farms} />
+
+    <ChartFigure
+      id="farms"
+      title="Land in farms, Allen County, 1900 and 1910"
+      caption="Thirteenth Census of Agriculture. The county was already more than half city by population in 1910 — Lima held 30,508 of 56,580 — while still being nine-tenths farm by ground. This is the only agricultural census the corpus has read, so nothing here shows when the farmland began to go."
+      columns={['Census year', 'Acres in farms']}
+      rows={farms.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="farms" set:html={JSON.stringify(farmSpec)} is:inline />
+  </section>
+
+  <section>
+    <h2>The houses went where the city is not</h2>
+    <AssertionCard assertion={houses} />
+    <p>
+      Between 1990 and 2025 Allen County authorized 5,437 new single-family houses. Lima — a third
+      of the county's population — was issued 367 of them, 6.8 per cent. American Township took
+      1,098, Shawnee Township 981 and Bath Township 643: the three townships that wrap around the
+      city account for half of everything the county built in thirty-six years.
+    </p>
+    <ChartFigure
+      id="new-houses"
+      title="Single-family houses authorized, 1990–2025, the four busiest places"
+      caption="A permit is authorization to build, not a building. It says nothing about whether the work was done or whether anything was demolished to make room."
+      columns={['Place', 'Houses']}
+      rows={houses.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="new-houses" set:html={JSON.stringify(housesSpec)} is:inline />
+    <p>
+      The money follows the same line. A new house in Shawnee Township was reported to the permit
+      office at $211,559 and one in Lima at $95,879 — the city is the cheapest of the county's ten
+      busiest places to build in, by a factor of two against its southern neighbour. Lima is also
+      the only place in the county that builds apartments: 734 of the county's 774 dwellings in
+      buildings of five units or more were authorized inside it, and Delphos has the other forty.
+    </p>
+    <DataTable
+      title="Thirty-six years, four decades"
+      caption="Reported construction value across the whole span is $968,246,660, in the dollars of each year and not adjusted. Twenty-three of the thirty-six years contain no apartment building of five units or more at all."
+      columns={['Decade', 'Single-family', 'All dwellings', 'Houses a year']}
+      rows={permitDecades}
+    />
+    <p>
+      The peak year is 2004, at 331 houses, and the floor is 2011, at 35 — an 89.4 per cent fall in
+      seven years, and the recovery has not come close to reversing it. But the sharper number is
+      the one that pairs with the census. Between 1990 and 2020 the county lost 7,549 people and
+      Lima lost 9,970, which means the ground outside the city gained 2,421. Allen County's
+      depopulation is, over these thirty years, half relocation — and the permits say which half
+      mile it moved to.
+    </p>
+  </section>
+
+  <section>
+    <h2>It did not drain. It sawtoothed.</h2>
+    <p>
+      Everything above rests on seven census years. There are eighteen. The whole printed run of the
+      Census of Agriculture is scanned on the National Agricultural Statistics Service's own host,
+      table by table, at the address the old Cornell agricultural archive redirects to — which this
+      site had recorded as redirecting <em>without</em> the scans. Ten Ohio volumes closed the gap,
+      and each of them prints the census before it, so ten of the eighteen years are printed twice
+      in two different books and agree to the acre.
+    </p>
+    <AssertionCard assertion={sawtooth} open />
+    <ChartFigure
+      id="farmland-full"
+      title="Acres in farms, Allen County, eight of eighteen census years"
+      caption="Acres rather than share of the county: the land-area denominator moves between volumes — 259,840 acres in 1925, 262,405 in 1969 — and a line of percentages would carry that as if it were farmland."
+      columns={['Year', 'Acres in farms']}
+      rows={sawtooth.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={320}
+    />
+    <script type="application/json" data-chart-spec="farmland-full" set:html={JSON.stringify(sawtoothSpec)} is:inline />
+    <DataTable
+      title="Land in farms, every census year from 1910"
+      caption="The last column is the average annual change since the row above. Farm counts are not comparable across the definition changes of 1959, 1974 and 1978 — the 1959 change alone removed 75 Allen County farms from the count without anyone selling anything."
+      columns={['Year', 'Acres in farms', 'Farms', 'Acres a year']}
+      rows={fullFarmland}
+    />
+    <p>
+      The forty years this site called the flattest stretch in the record are the least flat. They
+      net 313 acres a year and contain 23,400 acres of loss and 10,872 of recovery — a rise of
+      1,016, a fall of 13,239, a recovery of 7,542, a fall of 10,161 and a recovery of 2,314, in
+      that order. An average taken across two endpoints described none of it.
+    </p>
+    <p class="note">
+      One year in eighteen disagrees with itself. The 1964 volume gives Allen County 211,196 acres
+      in farms and the 1969 volume gives 211,195 for the same census — one acre, one bureau, five
+      years apart, with nothing on either page to catch it. It is the second time this site has
+      found a publisher printing its own figure two ways, after the Ohio Secretary of State's two
+      readings of the 1896 vote, and the rule is the same: the census's own year wins and the
+      divergence is published.
+    </p>
+
+    <h3>A fifth of the farmland went in four years</h3>
+    <AssertionCard assertion={fourYears} />
+    <p>
+      Two days ago this site could say that Allen County was 92.5 per cent farmland in 1910 and is
+      69.4 per cent farmland now, and could not say a word about the ninety-two years between. The
+      printed census volumes for 1954 and 1987 are scanned on archive.org, and each of them prints
+      the census before it in the next column — so two books gave four census years, and the fall
+      turns out not to have been steady at all.
+    </p>
+    <DataTable
+      title="Land in farms, seven census years"
+      caption="The 1950 and 1982 figures are the prior-year columns of the 1954 and 1987 volumes, which is what makes each pair comparable: one publisher, one table, one set of column headings. The proportions are the ones the volumes print, against land areas that themselves move a little between censuses."
+      columns={['Year', 'Farms', 'Acres in farms', 'Share of the county', 'Source']}
+      rows={farmSeries}
+    />
+    <ChartFigure
+      id="farmland-stretches"
+      title="Acres of farmland lost, by stretch of the record"
+      caption="Four bars of roughly equal height. Three of them are forty, twenty-eight and forty years long. The second is four."
+      columns={['Stretch', 'Acres lost']}
+      rows={fourYears.figures.map((f) => [f.label, f.value])}
+    />
+    <script type="application/json" data-chart-spec="farmland-stretches" set:html={JSON.stringify(fourYearsSpec)} is:inline />
+    <p>
+      Between 1950 and 1954 the county lost 12,926 acres of farmland — 3,232 a year, against 313 a
+      year for the forty years before it — and 18.1 per cent of its farms. It is not a local event:
+      Ohio lost 4.66 per cent of its land in farms over the same four years and this county 5.67,
+      and Ohio lost 11.2 per cent of its farms against Allen's 18.1. The county falls harder than
+      the state and in the same direction, which is what a national turn looks like. The known break
+      in the census's definition of a farm is 1959, outside this pair.
+    </p>
+    <p>
+      Two other things the record now dates. Between 1954 and 1982 the county lost 17,762 acres of
+      farmland and gained 16,749 acres of harvested cropland — the two nearly cancel, so what left
+      was pasture, woodland and farmstead rather than the ground under the corn. And the rise of
+      3,934 acres between 1982 and 1987 happens while an acre of Allen County farmland loses a
+      quarter of its value, $2,023 to $1,504. In the same five years the county's "other cropland"
+      went from 3,593 acres to 20,121. Land retired from production is still land in farms.
+    </p>
+    <p>
+      And the crop changeover has a date. In 1949 the county harvested 26,213 acres of oats and
+      17,393 of soybeans; in 1954, 22,498 of oats and 22,991 of soybeans. The crop that did not
+      exist in this county in 1909 had passed the one that fed its horses before the interstate was
+      built — and the oats survived that crossing at 22,498 acres and were down to eleven by 2022.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why the ground is drawn and not described</h2>
+    <p class="lede-narrow">
+      A table of edges can say a site is in a place. It cannot show you that the site is two
+      miles outside the boundary of the place named. This is the corpus's clearest case of
+      exactly that, and it was wrong from the first commit until two authorities were asked.
+    </p>
+    <AssertionCard assertion={address} open />
+    <p class="caution">
+      The corollary is the one the corpus states about itself: nearness is not containment. A
+      dot inside a shape on this map is a dot inside a shape. Where a node's location claim is
+      an <strong>inference</strong>, its badge says so, and no amount of visual coincidence
+      upgrades it.
+    </p>
+  </section>
+
+    <section class="onward">
+      <h2>Where this goes on</h2>
+      <ul>
+        <li>
+          <a href="/read/where-the-lines-moved">Where the lines moved</a>
+          <span class="why">Fifty-seven dated annexations, and a county that lost land it never lost.</span>
+        </li>
+        <li>
+          <a href="/read/the-weather-the-farms-are-in">The weather the farms are in</a>
+          <span class="why">The winters warmed and the summers did not; three more weeks between the frosts.</span>
+        </li>
+        <li>
+          <a href="/read/what-crosses-the-water">What crosses the water</a>
+          <span class="why">Three hundred and sixty-four bridges, and a state that replaced its own while the county kept its.</span>
+        </li>
+        <li>
+          <a href="/read/the-river-measured">The river, measured</a>
+          <span class="why">The city drinks from a river nobody gauges.</span>
+        </li>
+        <li>
+          <a href="/read/when-the-villages-began">When the villages began</a>
+          <span class="why">The county's villages have incorporation dates now.</span>
+        </li>
+        <li>
+          <a href="/read/a-hog-county">A hog county</a>
+          <span class="why">The hogs multiplied while the farms keeping them halved.</span>
+        </li>
+        <li>
+          <a href="/read/counted-two-ways">Counted two ways</a>
+          <span class="why">Two authorities disagree about how many named things stand here, and both are right.</span>
+        </li>
+        <li>
+          <a href="/read#ground">The reading room</a>
+          <span class="why">Every shorter piece filed under this section.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    import { renderCharts } from '../scripts/charts'
+    renderCharts()
+  </script>
+</Base>

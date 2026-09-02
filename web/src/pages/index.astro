@@ -24,6 +24,7 @@ const decline = assertion('county-population-decline')
   title="Allen County, Ohio"
   lede="A county of about a hundred thousand people in the northwest quarter of the state, seated at Lima. This site publishes what a documentary corpus can establish about it — and marks the places where it cannot."
 >
+  <div class="reading">
   <section class="tiles">
     <StatTile
       value={Number(latest.value).toLocaleString('en-US')}
@@ -73,63 +74,76 @@ const decline = assertion('county-population-decline')
 
   <section class="onward">
     <h2>Where to go</h2>
+    <p class="section-lede">
+      Five sections, each answering one question and ending when it has. What would have
+      buried them is in the reading room: thirty-seven shorter pieces, each resting on
+      passages the corpus can cite.
+    </p>
     <ul>
       <li>
-        <a href="/map">The map</a> — the corpus's places on the county's actual 2020 boundaries,
-        which is the only way to see a location claim that is wrong.
+        <a href="/ground">Ground</a>
+        <span class="why">
+          Two thirds of the county is farms, and the thing that changed on that ground since
+          1910 is not the crops.
+        </span>
       </li>
       <li>
-        <a href="/population">Population</a> — five decades of decline, and the reading the
-        corpus refuses to let that support.
+        <a href="/people">People</a>
+        <span class="why">
+          Five decades of decline, what the decline is made of, and the sorting underneath it
+          that a county total cannot show.
+        </span>
       </li>
       <li>
-        <a href="/land">Land</a> — two thirds of the county is farms, and the thing that changed
-        on it since 1910 is not the crops.
+        <a href="/work">Work</a>
+        <span class="why">
+          What happened to the factory county, what a job here pays, and the half of these
+          jobs held by people who live somewhere else.
+        </span>
       </li>
       <li>
-        <a href="/work">Work</a> — what a job here pays, and the half of these jobs held by people
-        who live in another county.
+        <a href="/government">Government</a>
+        <span class="why">
+          Nine offices, who chooses them, what they cost — and a county containing precincts
+          ninety points apart.
+        </span>
       </li>
       <li>
-        <a href="/health">Health</a> — thirteen years of life expectancy between one census tract
-        and another, and one reading this site refuses to make.
+        <a href="/history">History</a>
+        <span class="why">
+          Everything this corpus can date, and the stretches between, which are the larger
+          part of the record.
+        </span>
       </li>
       <li>
-        <a href="/elections">Elections</a> — three elections, one direction, and a county
-        containing precincts ninety points apart.
+        <a href="/read">The reading room</a>
+        <span class="why">
+          Thirty-seven shorter pieces — the fort across the line, ninety-nine papers, three
+          times a crowd came to the jail.
+        </span>
       </li>
       <li>
-        <a href="/corpus">What this rests on</a> — how much of this is sourced, how much is
-        inferred, and what was withheld.
+        <a href="/map">The map</a>
+        <span class="why">
+          The corpus's places on the county's actual 2020 boundaries, which is the only way to
+          see a location claim that is wrong.
+        </span>
+      </li>
+      <li>
+        <a href="/sources">Sources</a>
+        <span class="why">
+          How much of this is sourced, how much is inferred, and what was withheld.
+        </span>
       </li>
     </ul>
   </section>
+  </div>
 
   <style>
-    .tiles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3.5rem;
-    }
-    section {
-      margin-bottom: 3.5rem;
-    }
+    /* `.tiles`, `.section-lede` and `.onward` are in `styles/reading.css` now. */
     .opening {
-      font-size: 1.0625rem;
-    }
-    .section-lede {
-      max-width: var(--measure);
-      color: var(--ink-secondary);
-      margin-bottom: 1.75rem;
-    }
-    .onward ul {
-      max-width: var(--measure);
-      padding-left: 1.1rem;
-      color: var(--ink-secondary);
-    }
-    .onward li {
-      margin-bottom: 0.6rem;
+      font-size: var(--size-body-l);
+      margin-bottom: var(--space-12);
     }
   </style>
 </Base>

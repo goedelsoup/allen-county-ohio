@@ -3,11 +3,10 @@ import Article from '../../layouts/Article.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import { assertion } from '../../lib/feeds'
 
-const appointed = assertion('appointment-is-a-form-of-local-government')
-
-const twoVillages = assertion('two-villages-cannot-fill-their-governments')
-
 const townships = assertion('the-townships-are-named')
+const appointed = assertion('appointment-is-a-form-of-local-government')
+const twoVillages = assertion('two-villages-cannot-fill-their-governments')
+const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
 ---
 
 <Article slug="the-government-below-the-county">
@@ -48,5 +47,32 @@ const townships = assertion('the-townships-are-named')
     staffed this way and the township form is not is an open question in this corpus, and it
     stays open: a roster records how a sitting officer arrived, never whether anyone stood. The
     election returns would say, and no village race has been read.
+  </p>
+  <h3>The city</h3>
+  <p>
+    For eleven phases this corpus could name every sheriff of Allen County since 1831 and one
+    officer of the city that holds a third of the county's people. Lima's government is described
+    here for the first time: a mayor, an auditor, a director of law, a president of council and
+    seven council members, one for each ward.
+  </p>
+  <AssertionCard assertion={limaWards} />
+  <p>
+    The wards are staggered by parity — first, third, fifth and seventh turned over in January
+    2026, second, fourth and sixth in January 2024 — so four seats and three alternate every two
+    years and no single election can turn the council over. Nobody on the ballot for any of the
+    eleven carries a party letter, where the county and state holders on the same roster do.
+  </p>
+  <p>
+    And the city keeps four term calendars at once. The mayor's year runs 1 December to
+    30 November; the auditor's and the law director's 1 January to 31 December; the president's
+    and the even wards' 1 January to 2 January; the odd wards' 5 January to 6 January. That is
+    what a charter looks like from outside it, and Lima has one — its own site links "Lima City
+    Charter and Code" — which this corpus has located and not read, because the code library
+    refuses an automated client.
+  </p>
+  <p>
+    The city's first mayor was Henry D. V. Williams, elected when the town organized on 29 March
+    1842, eleven years after the county commissioners platted it and while they still ran it. The
+    1885 county history prints the mayor of every year between; the corpus holds two of them.
   </p>
 </Article>

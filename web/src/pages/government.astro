@@ -1,113 +1,15 @@
 ---
 import Base from '../layouts/Base.astro'
+import ChartFigure from '../components/ChartFigure.astro'
+import StatTile from '../components/StatTile.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import DataTable from '../components/DataTable.astro'
-import ChartFigure from '../components/ChartFigure.astro'
-import { assertion, nodes, edges } from '../lib/feeds'
-import { bar } from '../lib/chart-spec'
+import { assertion, edges, nodes, seriesById } from '../lib/feeds'
+import { bar, line } from '../lib/chart-spec'
 
 const nine = assertion('nine-offices-eleven-officers')
-const appointed = assertion('appointment-is-a-form-of-local-government')
-const boards = assertion('twelve-boards-and-nine-ballots')
-const twoVillages = assertion('two-villages-cannot-fill-their-governments')
-const townships = assertion('the-townships-are-named')
-const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
-const mayors = assertion('the-mayoral-line-reaches-1922')
-const crimeStep = assertion('a-step-that-is-not-a-crime-wave')
-const lostYear = assertion('the-1906-list-lost-a-year')
-const roll = assertion('the-register-dates-them-but-cannot-place-them')
-const dotted = assertion('the-ninety-nine-year-hole-is-dotted')
+
 const money = assertion('a-grand-total-is-not-a-budget')
-const libraries = assertion('three-per-cent-of-the-library-money-is-local')
-const officers = assertion('a-line-of-holders-for-every-office')
-const rosters = assertion('three-rosters-and-only-one-can-be-checked')
-const board = assertion('the-board-is-printed-as-a-shift-register')
-
-const officerSpec = bar(
-  officers.figures.map((f) => f.label),
-  officers.figures.map((f) => f.value),
-  { yTitle: 'Holders named, 1831–1906', labelValues: true },
-)
-
-const boardSpec = bar(
-  board.figures.map((f) => f.label),
-  board.figures.map((f) => f.value),
-  { yTitle: 'The 74 transitions between the roster\'s 75 rows', labelValues: true },
-)
-
-// Four consecutive rows as the book prints them, to show the shift and the rotation. Typed out
-// because these are rows of a printed list, not nodes the graph carries.
-const boardRows = [
-  ['1875', 'William W. Williams', 'William Akerman', 'Bernard Esch'],
-  ['1876', 'Jacob Crites', 'William W. Williams', 'William Akerman'],
-  ['1877', 'Francis M. Clum', 'Jacob Crites', 'William W. Williams'],
-  ['1878', 'William W. Williams', 'Francis M. Clum', 'Jacob Crites'],
-  ['1879', 'Jacob Crites', 'William W. Williams', 'Francis M. Clum'],
-  ['1880', 'Francis M. Clum', 'Jacob Crites', 'William W. Williams'],
-  ['1881', 'Joseph A. States', 'Francis M. Clum', 'Jacob Crites'],
-]
-
-// The five rows after 1842 that break the shift, and what each turns out to be.
-const boardBreaks = [
-  ['1848', 'Samuel B. Walker goes from second place, a year early', 'a departure out of course'],
-  ['1865', 'Almon E. Hadsell and Freeman Bell both go at once', 'a departure out of course'],
-  ['1884', '"Alexander Shenk (vice Marshall)", written second', "the book's own annotation"],
-  ['1890', 'the row before it is not there', 'the book skips 1889'],
-  ['1894', 'George D. Kanawl and William Bice both go at once', 'a departure out of course'],
-]
-
-const rosterSpec = bar(
-  rosters.figures.map((f) => f.label),
-  rosters.figures.map((f) => f.value),
-  { yTitle: 'Names printed against General Assemblies elapsed', labelValues: true },
-)
-
-// The five district headings the 1906 history prints, with the members under each. Typed out
-// because the members are the book's prose, not nodes the graph carries.
-const congressDistricts = [
-  ['Third', 'to 1842', 'Joseph H. Crane, Patrick G. Goode'],
-  ['Fifth', '1843–1852', 'Emory D. Potter, William Sawyer, Emory D. Potter, Alfred P. Edgerton'],
-  ['Fourth', '1853–1862', 'Mathias H. Nichols, William Allen'],
-  [
-    'Fifth',
-    '1863–1882',
-    'Francis C. LeBlond, William Mungen, Charles N. Lamison, Americus V. Rice, Benjamin Le Fevre',
-  ],
-  [
-    'Fourth',
-    'from 1883',
-    'Benjamin Le Fevre, Charles M. Anderson, S. S. Yoder, Fred C. Layton, George A. Marshall, Robert B. Gordon, Harvey C. Garber',
-  ],
-]
-
-const firstOfficers = [
-  ['Treasurer', 'Adam White', 1831, 27],
-  ['Prosecuting Attorney', 'Aaron M. Miller', 1831, 22],
-  ['Sheriff', 'Henry Lippincott', 1831, 21],
-  ['Recorder', 'Nathan Daniels', 1831, 20],
-  ['Auditor', 'William G. Woods', 1831, 19],
-  ['Clerk of Common Pleas', 'John Ward', 1831, 14],
-  ['Surveyor', 'John Jackson', 1831, 14],
-  ['Coroner', 'H. Clippenger', 1844, 20],
-  ['Probate Judge', 'William S. Rose', 1851, 12],
-]
-
-const librarySpec = bar(
-  libraries.figures.map((f) => f.label),
-  libraries.figures.map((f) => f.value),
-  { yTitle: 'Library income by level of government, 2024 (US$)', labelValues: true },
-)
-
-const libraryOutlets = [
-  ['Lima Public Library', 'Lima', '650 W. Market St.', 60650, 2988],
-  ['Delphos Public Library', 'Delphos', '309 W. 2nd St.', 15989, 2496],
-  ['Bluffton Public Library', 'Bluffton', '145 S. Main St.', 12874, 2834],
-  ['Spencerville branch', 'Spencerville', '2489 Wisher Dr.', 5625, 1872],
-  ['Elida branch', 'Elida', '500 E. Kiracofe Ave.', 3990, 1872],
-  ['Cairo branch', 'Cairo', '108 Everett Dr.', 1281, 1872],
-  ['Lafayette branch', 'Lafayette', '225 E. Sugar St.', 600, 1092],
-  ['OSU Lima campus', 'Lima', '4240 Campus Dr.', 100, 2964],
-]
 
 const moneySpec = bar(
   money.figures.map((f) => f.label),
@@ -123,52 +25,10 @@ const funds = [
   ['The General Fund, which the county runs on', '$39,567,583', '10.6%'],
 ]
 
-// Typed out because these are dates a newspaper printed, not term dates the graph carries.
-// The point of the table is that the last column exists and the middle one does not.
-const sampled = [
-  ['1939-11-23', 'Frank McClain', 'cut twelve street-department men 48 hours after taking office'],
-  ['1940-02-08', 'Frank E. McClain', 'called a civil service examination for chief of police'],
-  ['1941-11-20', 'Frank McClain', 're-elected; election expenses of $306.40'],
-  ['1942-06-04', 'Frank McClain', '48 more parking meters, bringing the city to 365'],
-  ['1943-11-04', 'Frank E. McClain', 'appointed a chief of police'],
-  ['1944-03-02', 'A. L. Metheany', 'council appropriated $10,000 for fire apparatus'],
-  ['1944-08-31', 'Allen L. Metheany', '“late mayor of Lima”; estate inventoried at $42,797.51'],
-  ['1945-05-10', 'William L. Ferguson', 'welcomed the manager of the Lima Reds'],
-  ['1945-07-19', 'W. I. Ferguson', 'his fire bureau closed City Hall’s third floor to meetings'],
-  ['1945-08-09', 'W. L. Ferguson', 'incumbent, one of two in a non-partisan primary'],
-  ['1945-09-13', 'William Ferguson', 'on vacation; the president of council acted in his place'],
-  ['1948-10-28', 'Frank E. McClain', '“Former Mayor of Lima”, running for county commissioner'],
-  ['1950-11-16', 'Corbin Shook', '“former Lima mayor”, named in his sister’s obituary'],
-  ['1956-09-06', 'Clyde L. Welty', 'proclaimed a “Symphony Day”'],
-]
-
-const rollSpec = bar(
-  roll.figures.map((f) => f.label),
-  roll.figures.map((f) => f.value),
-  { yTitle: 'Admissions to the Ohio bar', labelValues: true },
-)
-
-// Typed out because the admission dates live in node prose, not in a property the graph carries.
-// Sorted by admission so the two shared ceremony days sit together.
-const admitted = [
-  ['William Ray Zimmerman', 'Third District Court of Appeals', '7 May 1979', '22102'],
-  ['Matt Charles Staley', 'Common Pleas, Domestic Relations', '2 November 1979', '2227'],
-  ['Jeffrey Lee Reed', 'Common Pleas, General', '1 November 1983', '15784'],
-  ['Anthony Layton Geiger', 'Director of Law, Lima', '1 November 1983', '6150'],
-  ['Juergen Arthur Waldick', 'Third District Court of Appeals', '4 November 1985', '30399'],
-  ['John Randall Willamowski', 'Third District Court of Appeals', '4 November 1985', '29627'],
-  ['Matthew Carl Huffman', 'Ohio House, 78th District', '4 November 1985', '29473'],
-  ['Mark Christian Miller', 'Third District Court of Appeals', '18 November 1991', '55702'],
-  ['Tammie Kay Hursh', 'Lima Municipal Court', '13 November 1995', '65323'],
-  ['Terri Lynn Kohlrieser', 'Common Pleas, General', '13 November 2001', '73982'],
-  ['Todd Edward Kohlrieser', 'Common Pleas, Probate', '18 November 2002', '75240'],
-  ['John Richard Payne', 'Lima Municipal Court', '5 November 2007', '82482'],
-  ['Destiny Rae Caldwell', 'Prosecuting Attorney of Allen County', '17 November 2008', '83779'],
-]
-
 // Built from the graph rather than typed out, so the page cannot drift from the corpus.
 // An office with no tenure would show as a blank holder rather than silently vanish.
 const byId = new Map(nodes.map((n) => [n.id, n]))
+
 const offices = nodes
   .filter((n) => n.class === 'office' && n.properties.office_type === 'elected')
   .filter((n) => n.id.includes('allen-county'))
@@ -207,9 +67,11 @@ const rows = offices.flatMap((o) => {
 })
 
 const courts = nodes.filter((n) => n.properties.jurisdiction_type === 'court district')
+
 const judicial = nodes
   .filter((n) => n.class === 'office' && n.properties.office_type === 'judicial')
   .toSorted((a, b) => a.label.localeCompare(b.label))
+
 const judgeRows = judicial.flatMap((o) =>
   currentOf(o.id)
     .toSorted((a, b) => a.began.localeCompare(b.began))
@@ -223,6 +85,7 @@ const REP = [
   'office/member-of-the-ohio-senate-for-district-12.yml',
   'office/representative-in-congress-for-ohios-4th-district.yml',
 ]
+
 const repRows = REP.flatMap((id) => {
   const o = byId.get(id)
   if (!o) throw new Error(`no office ${id} in the feed`)
@@ -230,17 +93,42 @@ const repRows = REP.flatMap((id) => {
 })
 
 const tenureCounts = offices.map((o) => [o.label, holdersOf(o.id).length])
+
 // An office is "traced" when the corpus holds more tenures than the office has seats — that
 // is, at least one predecessor. Three commissioners in three seats is not a line of holders.
 const traced = offices.filter(
   (o) => holdersOf(o.id).length > Number(o.properties.seats ?? '1'),
 ).length
+
+const swing = assertion('democratic-ground-moved-fastest')
+
+const eleven = assertion('eleven-precincts')
+
+const rising = assertion('republican-share-rising')
+const shareSpec = line(rising.figures.map((f) => f.label), [
+    { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
+  ], {
+  yTitle: 'Per cent',
+  tickSuffix: '%',
+  labelLast: true,
+})
+
+const turnout = seriesById('jurisdiction-allen-county-government::ballots-cast,-general-election')
+const presidential = seriesById('place-allen-county::presidential-votes-cast')
+const governor = seriesById('place-allen-county::votes-cast-for-governor')
+
+const votes = [...presidential.points, ...governor.points].toSorted((a, b) =>
+  a.as_of.localeCompare(b.as_of),
+)
+
+const correlation = swing.figures[0]
 ---
 
 <Base
   title="Government"
-  lede="The nine elected offices that govern Allen County, the two hundred and eleven people who hold elective office over its ground, and how far back this corpus can see."
+  lede="Nine elected offices govern Allen County. This page is about what they are, who chooses them, what they cost, and how far back this corpus can see."
 >
+  <div class="reading">
   <section>
     <h2>Nine offices, eleven officers</h2>
     <p>
@@ -258,10 +146,8 @@ const traced = offices.filter(
       columns={['Office', 'Holder', 'Term began', 'Term']}
       rows={rows}
     />
-  </section>
 
-  <section>
-    <h2>Three seats, three days apart</h2>
+    <h3>Three seats, three days apart</h3>
     <p>
       The board's three commissioners hold terms that begin on the first, second and third day of
       January. That looks like a clerical artifact and is not one: Ohio law assigns those three
@@ -274,10 +160,8 @@ const traced = offices.filter(
       rules were read out of the statute <em>after</em> the dates had been read off the elections
       roster, and each predicted what was already in hand.
     </p>
-  </section>
 
-  <section>
-    <h2>Two offices you must be qualified to hold</h2>
+    <h3>Two offices you must be qualified to hold</h3>
     <p>
       Most of these offices ask only that the holder be an elector of the county. Two ask more. The
       coroner must be a physician licensed to practise medicine or osteopathic medicine and in good
@@ -292,29 +176,6 @@ const traced = offices.filter(
       those four is a node in this corpus, which is what makes that clause a constraint on the graph
       and not just a sentence in a code book.
     </p>
-  </section>
-
-  <section>
-    <h2>How far back this page can see</h2>
-    <p>
-      Not far, and unevenly. Of the nine offices, {traced} holds any predecessor at all — the
-      sheriff, whose own office publishes a roster back to 1831. The other eight have the present
-      term and nothing before it, because the source that names them is a roster of who holds
-      office now.
-    </p>
-    <p>
-      That asymmetry is the reason this page exists at all. For nine phases this corpus held two
-      offices — the sheriff, with thirty-nine tenures back to 1831, and the mayor of Lima — and the
-      depth of the first made the class look worked. It was one office in extraordinary detail and
-      eight missing entirely.
-    </p>
-
-    <DataTable
-      title="Tenures held per office"
-      caption="What the corpus has read, not what the county has had. A count of one means the present term and no predecessor."
-      columns={['Office', 'Tenures in the corpus']}
-      rows={tenureCounts}
-    />
   </section>
 
   <section>
@@ -383,395 +244,62 @@ const traced = offices.filter(
     </p>
   </section>
 
-  <section>
-    <h2>The government below the county</h2>
-    <p>
-      Nine offices is what the state gives a county. It is not what governs this ground. Twelve
-      townships, seven villages, two cities, nine school boards and an educational service centre
-      sit under the county, and between them they fill a hundred and seventy-one elective seats to
-      the county's twenty-two.
-    </p>
-    <p>
-      The roster this page is built from is indexed by voting precinct, not by county: each page
-      lists the offices its own precinct votes on and no others. For nine phases this corpus read
-      one of those pages and took it for the roster. Reading all eighty-eight gives the whole of
-      it — a hundred and one offices, two hundred and eighteen seats, seven of them empty.
-    </p>
-    <AssertionCard assertion={townships} />
-    <p>
-      Each township elects two trustees in one odd year and the third two years later, and its
-      fiscal officer on a term year that begins on 1 April where every trustee's begins on
-      1 January. Nothing this corpus reasoned about the shape of a township board would have
-      produced that last detail; it came off the seats.
-    </p>
-
-    <h3>Appointment is a form of government here</h3>
-    <AssertionCard assertion={appointed} />
-    <p>
-      It concentrates in one form of government and not in small places generally. Twenty-five of
-      the forty-seven seated village officers were appointed; across all forty-eight township seats
-      there is one. Spencer Township and Spencerville govern nearly the same people, and the
-      township elected all four of its officers while the village appointed four of its seven.
-      Jackson Township and the village of Lafayette are run out of the same building at 225 E.
-      Sugar Street and are staffed in opposite ways.
-    </p>
-    <AssertionCard assertion={twoVillages} />
-    <p>
-      Nor is it the smallest places failing. Beaverdam is the smallest village in the county and
-      Bluffton the largest, and they are the two that appoint least. Why the village form is
-      staffed this way and the township form is not is an open question in this corpus, and it
-      stays open: a roster records how a sitting officer arrived, never whether anyone stood. The
-      election returns would say, and no village race has been read.
-    </p>
-  </section>
-
-    <h3>The city</h3>
-    <p>
-      For eleven phases this corpus could name every sheriff of Allen County since 1831 and one
-      officer of the city that holds a third of the county's people. Lima's government is described
-      here for the first time: a mayor, an auditor, a director of law, a president of council and
-      seven council members, one for each ward.
-    </p>
-    <AssertionCard assertion={limaWards} />
-    <p>
-      The wards are staggered by parity — first, third, fifth and seventh turned over in January
-      2026, second, fourth and sixth in January 2024 — so four seats and three alternate every two
-      years and no single election can turn the council over. Nobody on the ballot for any of the
-      eleven carries a party letter, where the county and state holders on the same roster do.
-    </p>
-    <p>
-      And the city keeps four term calendars at once. The mayor's year runs 1 December to
-      30 November; the auditor's and the law director's 1 January to 31 December; the president's
-      and the even wards' 1 January to 2 January; the odd wards' 5 January to 6 January. That is
-      what a charter looks like from outside it, and Lima has one — its own site links "Lima City
-      Charter and Code" — which this corpus has located and not read, because the code library
-      refuses an automated client.
-    </p>
-    <p>
-      The city's first mayor was Henry D. V. Williams, elected when the town organized on 29 March
-      1842, eleven years after the county commissioners platted it and while they still ran it. The
-      1885 county history prints the mayor of every year between; the corpus holds two of them.
-    </p>
-  </section>
-
-  <section>
-    <h2>What is still missing</h2>
-    <p>
-      Every holder of these offices before the current term, except the sheriff's. The powers each
-      office actually exercises, as against the statute that creates it. The subject-matter
-      jurisdiction of both trial courts — the corpus has established their territories and neither's
-      competence. And the appointed officials and boards that do much of a county's work without
-      appearing on any ballot, which is now the largest block of officeholders this corpus does not
-      hold, the townships having been named.
-    </p>
-    <p>
-      Delphos is the one government on this page that is knowably incomplete. Its ward council seats
-      are voted on inside their wards, and 3,182 of the city's people live in Van Wert County, so an
-      Allen County roster cannot see any ward west of the line. Ten of its seats appear here and
-      they are not the whole of its council.
-    </p>
-  </section>
-
-  <section>
-    <h2>Who polices the county, and what the numbers do</h2>
-    <p>
-      Ten agencies report crime in Allen County: the Lima police, the county sheriff, three township
-      forces in the suburbs that never incorporated, three village departments, and two sets of park
-      rangers. They entered the national incident-based reporting system between June 2004 and
-      January 2021 — and the two that police most of the county entered last. Elida, a village of
-      1,904, converted sixteen years before the county seat.
-    </p>
-    <AssertionCard assertion={crimeStep} />
-    <p>
-      The sheriff's violent offenses averaged 33.5 a year from 2015 to 2020 and 89.8 from 2021 to
-      2024. Over the same break his property offenses fell from an average of 713 to 576. A rise in
-      violence does not spare property crime while nearly tripling assaults in the same month, and a
-      better-resourced office does not record fewer burglaries. The date that explains it is not in
-      the monthly series at all — it is one field in a different endpoint, the agency roster, which
-      gives 1 December 2020 as the day the office changed what it counts.
-    </p>
-    <p>
-      So this site publishes the two halves and no trend across them. Before: 27 to 50 violent
-      offenses a year over 23,000-odd people. After: 79 to 114. Property offenses fell in both
-      halves and stand at 483 in 2024, the lowest of the ten years.
-    </p>
-    <p>
-      Lima is a longer and steadier story. Its violent crime rate has been between two and three
-      times Ohio's in every one of ten years — 769.9 per hundred thousand in 2024 against 311.9 for
-      Ohio and 363.6 for the United States — and the ratio never leaves that band while Ohio's own
-      rate rises and falls beneath it. Its violent count has no trend at all: an average of 280 a
-      year over 2015–2019 and 265 over 2020–2024. What did move is property crime, down forty per
-      cent, and the clearance rate, which went from 12.3 per cent in 2020 to 30.5 in each of the
-      last two years.
-    </p>
-    <p>
-      Two of the ten agencies are held here and eight are not, covering 58,631 of the county's
-      100,866 people. That is a limit of the demonstration key this site queried with, not of the
-      source.
-    </p>
-  </section>
-
-  <section>
-    <h2>The mayors, and where the office went</h2>
-    <AssertionCard assertion={mayors} />
-    <p>
-      The 1885 county history narrates Lima's municipal elections year by year from the town's
-      organization on 29 March 1842 and then prints a list of mayors to 1886. That is twenty-four
-      men over twenty-seven terms in forty-four years. This site had said "about forty holders in
-      forty-three years" for twelve phases, written from the shape of the passage rather than from
-      counting it, and both halves were wrong.
-    </p>
-    <table>
-      <caption>Mayors of Lima, 1842–1886</caption>
-      <thead><tr><th scope="col">Years</th><th scope="col">Mayor</th></tr></thead>
-      <tbody>
-        <tr><td>1842–44</td><td>Henry D. V. Williams</td></tr>
-        <tr><td>1844–45</td><td>H. F. Hubbard</td></tr>
-        <tr><td>1845–46</td><td>John P. Fay</td></tr>
-        <tr><td>1846–47</td><td>Thomas Delzell</td></tr>
-        <tr><td>1847–48</td><td>Aurelius N. Smith</td></tr>
-        <tr><td>1848–49</td><td>James Cunningham</td></tr>
-        <tr><td>1849–50</td><td>Thomas Delzell</td></tr>
-        <tr><td>1850–51</td><td>Thomas Milligan</td></tr>
-        <tr><td>1851–53</td><td>Samuel A. Baxter</td></tr>
-        <tr><td>1853–54</td><td>Thomas Milligan</td></tr>
-        <tr><td>1854–56</td><td>Samuel A. Baxter</td></tr>
-        <tr><td>1856–57</td><td>James E. Harriott</td></tr>
-        <tr><td>1857–58</td><td>John Melhorn</td></tr>
-        <tr><td>1858–59</td><td>James A. Newell</td></tr>
-        <tr><td>1859–60</td><td>John L. Hughes</td></tr>
-        <tr><td>1860–61</td><td>E. G. Hamilton</td></tr>
-        <tr><td>1861–64</td><td>John R. Hughes</td></tr>
-        <tr><td>1864–65</td><td>J. T. Heckman</td></tr>
-        <tr><td>1865–68</td><td>John Collett</td></tr>
-        <tr><td>1868–69</td><td>Thomas M. Robb</td></tr>
-        <tr><td>1869–70</td><td>George W. Overmyer</td></tr>
-        <tr><td>1870–74</td><td>Richard Metheany</td></tr>
-        <tr><td>1874–76</td><td>John C. Dunlevy</td></tr>
-        <tr><td>1876–80</td><td>John B. Townsend</td></tr>
-        <tr><td>1880–82</td><td>Frank E. Mead</td></tr>
-        <tr><td>1882–84</td><td>H. S. Prophet</td></tr>
-        <tr><td>1884–86</td><td>William McComb</td></tr>
-      </tbody>
-    </table>
-    <p>
-      Four of the twenty-four have pages of their own here and twenty do not, which is a decision
-      rather than an unfinished job: a holder earns a node when something about that holder does not
-      fit the line. Samuel A. Baxter was mayor twice and appointed once between, and this site
-      used to say he was probably the Dr. Samuel A. Baxter who co-wrote the 1906 county history. The
-      1906 book's own list of mayors calls the man of 1851 "Samuel A. Baxter, Sr." and the man of
-      1896 "Dr. Samuel A. Baxter", and a list that says Senior is distinguishing him from someone.
-      Father and son fits the printed evidence better than one man of eighty-one, and the
-      identification is now unresolved rather than probable. George W. Overmyer is the only
-      mayor in the line no election produced; the council chose him in September 1869 when Robb
-      resigned, and he was probate judge in 1881 on the committee that picked the plans for the
-      present courthouse. Richard Metheany appears in the table six times across twenty-six years.
-      And two sources spell H. S. Prophet differently.
-    </p>
-    <h3>Three books, four slots, and a year with nobody in it</h3>
-    <AssertionCard assertion={lostYear} />
-    <p>
-      The 1906 and 1921 histories print this same line, and all three agree on every one of forty-odd
-      names except four consecutive slots in the 1850s. The 1885 line reads Milligan, Baxter,
-      Milligan, Baxter. The 1906 list drops the second Baxter. The 1921 list drops the second
-      Milligan and the second Baxter both — which is what a copyist does reading a repeated pair.
-    </p>
-    <p>
-      Which of them is right is settled without leaving the page. Delete Baxter's second term and
-      the two names after it slide two years earlier, until James A. Newell's April 1858 stops them,
-      leaving April 1857 to April 1858 with no mayor at all — the only such hole in the 1906 list's
-      thirty-four entries. A list that merely disagreed would not leave a year empty.
-    </p>
-    <p>
-      Collating the three also found an error here rather than in them. The 1885 mayor list prints
-      "John B. Townsend"; the same volume prints James B. Townsend in its election returns, in its
-      index, and in a biography of the man — an attorney born in 1851 who paid for his legal studies
-      by touring the country with a company of vocalists selling his father's patent medicines, and
-      who took the office at twenty-five. Two other corrections that looked identical were not taken:
-      the 1885 book prints Delzell seventeen times against Dalzell four, and the 1906 and 1921 lists
-      are one lineage rather than two witnesses, since the 1921 book says it follows "the most recent
-      report in Lima."
-    </p>
-
-    <h3>The line to 1922</h3>
-    <p>
-      The office did not run out; it was abolished. The commission-manager form of government came
-      into effect on 1 January 1922, at the end of Mayor Burkhardt's term, after what the 1921
-      history calls four-score years in which Lima "has been ruled by a mayor" — the town organized
-      in March 1842, so four-score is exact to the quarter.
-    </p>
-    <table>
-      <caption>Mayors of Lima, 1886–1922</caption>
-      <thead><tr><th scope="col">Years</th><th scope="col">Mayor</th></tr></thead>
-      <tbody>
-        <tr><td>1884–90</td><td>William McComb, Jr.</td></tr>
-        <tr><td>1890–92</td><td>Ira R. Longsworth</td></tr>
-        <tr><td>1892–94</td><td>William McComb, Jr.</td></tr>
-        <tr><td>1894–96</td><td>James V. Smiley</td></tr>
-        <tr><td>1896–98</td><td>Dr. Samuel A. Baxter</td></tr>
-        <tr><td>1898–1900</td><td>H. S. Prophet</td></tr>
-        <tr><td>1900–02</td><td>William McComb, Jr.</td></tr>
-        <tr><td>1902–04</td><td>L. H. Rogers</td></tr>
-        <tr><td>1904–06</td><td>Theodore D. Robb</td></tr>
-        <tr><td>1906–08</td><td>Theodore D. Robb</td></tr>
-        <tr><td>1908–10</td><td>Fred C. Becker</td></tr>
-        <tr><td>1910–12</td><td>George Dyer</td></tr>
-        <tr><td>1912–14</td><td>C. N. Shook</td></tr>
-        <tr><td>1914–16</td><td>Theodore D. Robb, who died in office</td></tr>
-        <tr><td>1916–18</td><td>B. H. Simpson</td></tr>
-        <tr><td>1918–20</td><td>B. H. Simpson</td></tr>
-        <tr><td>1920–22</td><td>F. A. Burkhardt</td></tr>
-      </tbody>
-    </table>
-    <p>
-      Everything to 1904 is dated by the 1906 history. Everything after it is dated here: the 1921
-      list gives nine entries after L. H. Rogers and no years at all, but it states the term — two
-      years — and it dates the abolition. Nine two-year terms from April 1904 land in April 1922,
-      and the quarter-year residue is the calendar moving, which the same 1906 book shows in its
-      list of city solicitors, where every boundary is April until one turns on January 1906.
-    </p>
-    <p>
-      The book checks itself once and passes: Theodore D. Robb appears three times in the list, and
-      a biographical passage elsewhere in the same volume calls him "three times mayor of Lima". He
-      died in the third, and the list says the term "was finished by Miles Standish", who is named
-      nowhere else in it. The last mayor, F. A. Burkhardt, sat on the book's own advisory board of
-      editors and wrote a chapter in it — so the volume's enthusiasm for the charter that ended his
-      office was printed while he held it.
-    </p>
-    <p>
-      What is still missing is ninety-nine years, 1922 to 2021, and not for want of asking: the
-      city's site names its sitting mayor, dates her first election to 2021, and names no
-      predecessor. Its sitemap carries no roster of former mayors, and its only history page belongs
-      to the fire department.
-    </p>
-
-    <p>
-      The book prints the whole council beside the mayor, and that is where the rest of this site
-      turns up. Benjamin C. Faurot was elected a village trustee in 1867, eighteen years before the
-      well that made him. Matthias H. Nichols was a trustee in 1849, after three terms in Congress
-      and twelve years before he raised the county's first company for the war. Thomas K. Jacobs was
-      trustee, marshal and treasurer, and introduced the bill in the Ohio House in April 1861 to tax
-      the county for soldiers' families.
-    </p>
-  </section>
-
-  <section>
-    <h2>Twelve boards, nine ballots</h2>
-    <AssertionCard assertion={boards} />
-    <p>
-      Twelve school districts hold ground in Allen County. Nine are centred here and three are not:
-      Columbus Grove and Pandora-Gilboa are Putnam County districts that reach across the line, and
-      Waynesfield-Goshen is an Auglaize one. Together they cover 489 people in Monroe Township, 39
-      in Richland, and a corner of Auglaize Township.
-    </p>
-    <p>
-      This site could not name those three boards, said so on each district's page, and named the
-      neighbouring county's roster as the source that would. It was wrong. The Ohio boards of
-      elections lookup answers two ways — precinct by precinct, or by district type — and Allen
-      County's own roster carries all twelve boards under the second. Read across all eighty-eight
-      precincts it carries nine, and never those three, because no elector in this county votes on
-      them.
-    </p>
-    <p>
-      So the roster answers two different questions and this site had asked only one. What an Allen
-      County voter fills is 218 seats. What governs the districts holding ground here is fifteen
-      seats more. Both numbers are right and they are not interchangeable.
-    </p>
-    <p>
-      One more thing came out of asking two counties the same question. The fifteen people appear on
-      the Allen roster and on the Putnam and Auglaize rosters, and eight of the fifteen are spelled
-      identically. Angie Basinger in Lima is Angela Lynn Basinger in Ottawa; Kevin Ewing is Kevin D
-      Ewing; Michelle Steinke is Michelle R Steinke. Nothing in the source carries an identifier for
-      a person, so matching one across two counties is a guess about a middle initial.
-    </p>
-  </section>
-
-  <section>
-    <h2>The register dates them and cannot place them</h2>
-    <AssertionCard assertion={roll} />
-    <p>
-      The Supreme Court of Ohio keeps a public register of everyone ever admitted to practise law in
-      this state. Searched for the county of the address an attorney has given the Court, it returns
-      334 people for Allen County — and it settles a question thirteen pages on this site had left
-      open. Every judge who sits in this county, the four judges of the Third District who hear its
-      appeals, the prosecuting attorney and Lima's director of law are admitted Ohio attorneys, and
-      every one of the thirteen came in by examination rather than by motion.
-    </p>
-    <DataTable
-      caption="Thirteen officers this site already named, with the day each was admitted and the registration number the Court gave them. Three were admitted together on 4 November 1985 and two more on 1 November 1983 — admission is a ceremony, so a shared date says nothing about a connection."
-      columns={['Officer', 'Office', 'Admitted', 'Reg. no.']}
-      rows={admitted}
+  <section class="tiles">
+    <StatTile
+      value={`${rising.figures[rising.figures.length - 1].value}%`}
+      label="Republican share, 2020"
+      note="Up 2.5 points across two presidential elections."
+      tier={rising.tier}
     />
+    <StatTile value="11 of 88" label="Precincts Biden won" note="Ten of them in Lima." tier={eleven.tier} />
+    <StatTile
+      value={correlation.literal}
+      label="2016 share against 2016–2020 swing"
+      note="The more Democratic a precinct was, the harder it moved right."
+      tier={swing.tier}
+    />
+    <StatTile
+      value={Number(turnout.points[0].value).toLocaleString('en-US')}
+      label="Ballots cast, 2020"
+      note="360 more than the presidential votes counted — an undervote of 0.7 per cent."
+      tier={turnout.points[0].tier}
+    />
+  </section>
+
+  <section>
+    <h2>A county ninety points wide</h2>
     <p>
-      What the register cannot do is say where any of them lives. Its own disclaimer is explicit:
-      the directory lists a business address, and shows a residence only when no valid business
-      address is on file — and a result does not tell you which of the two you are looking at. The
-      Third District sits in Lima and hears appeals from seventeen counties, so an Allen County
-      entry is exactly what this register would return for an appellate judge living in any of them.
-      Seven pages here ask where a district officer lives. They still ask it, now for a reason with
-      a citation under it instead of for want of looking.
+      The offices above are filled by an electorate that has moved one way through three
+      consecutive elections, and that moved fastest where it had been most Democratic.
     </p>
+    <AssertionCard assertion={rising} open />
     <ChartFigure
-      id="bar-admissions"
-      title="Admissions to the Ohio bar by people with an Allen County address, by decade"
-      caption="A roll, not a bar. Nothing in this register marks a person as dead, so the early decades are people, not practitioners: all sixty-three admitted before 1940 sit in a status the Court calls Not Required, and no active registrant here was admitted before 1966."
-      columns={['Decade', 'Admissions']}
-      rows={roll.figures.map((f) => [f.label, f.value])}
+      id="republican-share"
+      title="Republican share of the top-of-ticket vote"
+      caption="Two presidential elections with a governor's race between them. The 2018 figure is a different office and a different electorate; it is on the same line because the corpus put it there, in the passage above."
+      columns={['Election', 'Republican share']}
+      rows={rising.figures.map((f) => [f.label, `${f.value}%`])}
+      height={300}
     />
-    <script type="application/json" data-chart-spec="bar-admissions" set:html={JSON.stringify(rollSpec)} is:inline />
-    <p>
-      Read straight, the chart looks like a county that grew lawyers steadily for a century. It is
-      not a time series of anything. The register is cumulative and never purged: its admissions run
-      from 6 January 1925 to 17 November 2025, and 139 of the 334 sit under a status the Court
-      defines as "an attorney who is not required to register ... for a variety of reasons" and will
-      not elaborate on. Of the 334, 144 may practise today, and against the county's 100,866
-      residents that is one for every 700 people.
-    </p>
-    <p>
-      One more thing fell out of it, and it is about the ground rather than the bar. The county in
-      this register is self-reported, and the county's own geography catches it. Twenty registrants
-      with a Delphos address divide thirteen to Allen and seven to Van Wert with none left over;
-      eight in Bluffton divide six to Allen and two to Hancock, also with none left over. Both
-      cities straddle a county line, and a mailing list with no reason to care reproduces both
-      exactly. Lima straddles nothing — and seven of its 305 registrants carry no county at all.
-    </p>
-  </section>
-
-  <section>
-    <h2>The ninety-nine-year hole is dotted</h2>
-    <AssertionCard assertion={dotted} />
-    <p>
-      Lima abolished its mayor on 1 January 1922 and this site's next mayor of Lima was elected in
-      2021. Ninety-nine years with nothing in between, and the note on the office said so plainly:
-      no source here spans them. That was true, and it was the wrong test. A source does not have to
-      span a gap to put something in it.
-    </p>
-    <p>
-      The Bluffton News is the only Allen County newspaper in the Library of Congress's national
-      archive — a weekly, 952 issues, 1939 to 1959, twelve miles up the road from the county seat.
-      Asked who the mayor of Lima was, it answers fourteen times.
-    </p>
+    <script type="application/json" data-chart-spec="republican-share" set:html={JSON.stringify(shareSpec)} is:inline />
     <DataTable
-      caption="Every mention of a mayor of Lima this weekly prints between 1939 and 1956. The middle column is a name and the right-hand one is why the name was in the paper — an appointment, a ballgame, an estate. None of the fourteen is an election report."
-      columns={['Printed', 'Named as mayor', 'In a story about']}
-      rows={sampled}
+      title="Votes cast at the top of the ticket"
+      caption="A count of ballots, not a share — and not a chart, because a presidential and a gubernatorial electorate are not the same size and plotting them on one line would say they were."
+      columns={['Date', 'Contest', 'Votes']}
+      rows={votes.map((p) => [
+        p.as_of,
+        p.node.includes('governor') ? 'Governor' : 'President',
+        p.value.toLocaleString('en-US'),
+      ])}
     />
-    <p>
-      So the office gains four holders and no term dates at all. The gap is now two gaps — 1922 to
-      1939, where the question is when the mayor came back, and 1956 to 2021, where the question is
-      who — with a dotted stretch between them. Two of the fourteen close a real question along the
-      way: a mayor of Lima was calling civil service examinations "under provisions of the City
-      Charter" in February 1940, which is a charter and a mayor coexisting seventeen years after a
-      county history said the office had ended.
-    </p>
-    <p>
-      The same paper on its own village shows why fourteen mentions are not a line. Bluffton's
-      elections it reports in full: a mayor who took the seat in 1938 as president of council when
-      the elected one resigned, a write-in campaign that unseated an unopposed incumbent in 1945 by
-      225 votes to 208, a first councilwoman in 1957, and a stated custom that the highest-polling
-      councilman becomes vice mayor. Even with all that, the village's line will not close — W. A.
-      Howe is reported defeated in November 1945 and named as mayor in May 1946, April 1951 and
-      September 1952. Holding office between elections is a state, and a weekly reports events.
+    <AssertionCard assertion={eleven} />
+    <AssertionCard assertion={swing} />
+    <p class="note">
+      The precinct-level returns those two assertions rest on are not in this corpus as data —
+      by a recorded decision, the county's 88 precincts are held as one measure rather than 88
+      nodes, because every one of them has the same relationship to everything else. So this
+      page can tell you the shape of the result and cannot draw you a precinct map of it. The
+      <a href="/map">map</a> shows the precincts as ground, with the population each holds.
     </p>
   </section>
 
@@ -826,195 +354,79 @@ const traced = offices.filter(
   </section>
 
   <section>
-    <h2>Three cents in the dollar</h2>
-    <AssertionCard assertion={libraries} />
+    <h2>What is still missing</h2>
     <p>
-      Allen County has three public library systems and eight buildings. Between them they took in
-      $6,528,885 in 2024 and $194,728 of it — three per cent — came from local government. Across
-      the United States the same column is 85.5 per cent. The county seat's library reports a zero
-      in it.
-    </p>
-    <ChartFigure
-      id="library-money"
-      title="Allen County public library income by source, 2024"
-      caption="Every figure here was reported by the library rather than imputed. 'Other' is a single survey column with no breakdown; for Lima Public Library alone it is $1,603,932, nearly a third of that system's revenue."
-      columns={['Source', 'US$']}
-      rows={libraries.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="library-money" set:html={JSON.stringify(librarySpec)} is:inline />
-    <p>
-      That is a fact about Ohio before it is a fact about Allen County. Ohio pays for its libraries
-      from Columbus: the state's 251 systems take 42.9 per cent of their income from the state
-      against a national 6.7, and among Ohio's 88 counties Allen is sixteenth from the bottom on the
-      local share. Putnam and Shelby report no local money at all.
+      Every holder of these offices before the current term, except the sheriff's. The powers each
+      office actually exercises, as against the statute that creates it. The subject-matter
+      jurisdiction of both trial courts — the corpus has established their territories and neither's
+      competence. And the appointed officials and boards that do much of a county's work without
+      appearing on any ballot, which is now the largest block of officeholders this corpus does not
+      hold, the townships having been named.
     </p>
     <p>
-      And the money is the same money this page has already counted. The county's own books carry a
-      fund called "local government library and township parks" that took in $4,495,636.25 in 2025
-      and paid out $4,495,636.25 — one of the fifteen conduits above. Ohio's tax commissioner
-      certifies the public library fund to <em>counties</em> and pays it to the county auditor, who
-      allocates it. The state's books record a payment to a county, the county's books record a fund
-      it does not own, and the library's books record a receipt from the state. Three ledgers, one
-      dollar, and no two of these figures may be differenced.
+      Delphos is the one government on this page that is knowably incomplete. Its ward council seats
+      are voted on inside their wards, and 3,182 of the city's people live in Van Wert County, so an
+      Allen County roster cannot see any ward west of the line. Ten of its seats appear here and
+      they are not the whole of its council.
     </p>
+
+    <h3>How far back this page can see</h3>
+    <p>
+      Not far, and unevenly. Of the nine offices, {traced} holds any predecessor at all — the
+      sheriff, whose own office publishes a roster back to 1831. The other eight have the present
+      term and nothing before it, because the source that names them is a roster of who holds
+      office now.
+    </p>
+    <p>
+      That asymmetry is the reason this page exists at all. For nine phases this corpus held two
+      offices — the sheriff, with thirty-nine tenures back to 1831, and the mayor of Lima — and the
+      depth of the first made the class look worked. It was one office in extraordinary detail and
+      eight missing entirely.
+    </p>
+
     <DataTable
-      title="Eight buildings"
-      caption="101,109 square feet in all. Every resident of the county is inside exactly one library's legal service area — Lima's covers 88.2 per cent of it, and Bluffton's and Delphos's are school districts that reach over the county line. Beaverdam and Harrod have no outlet."
-      columns={['Outlet', 'Town', 'Address', 'Square feet', 'Hours a year']}
-      rows={libraryOutlets}
+      title="Tenures held per office"
+      caption="What the corpus has read, not what the county has had. A count of one means the present term and no predecessor."
+      columns={['Office', 'Tenures in the corpus']}
+      rows={tenureCounts}
     />
   </section>
 
-  <section>
-    <h2>A line of holders for every office</h2>
-    <AssertionCard assertion={officers} />
-    <p>
-      Until now this site could answer "who has been sheriff of Allen County" back to 1831 and, for
-      every other county office, only "who holds it today". The 1906 county history prints a roster
-      of county officials from the county's organization to the year it went to press: nine offices
-      and 169 named holdings.
-    </p>
-    <ChartFigure
-      id="county-officers"
-      title="Holders of each Allen County office named in the 1906 roster"
-      caption="Years are the book's and are given without months. Every office but two begins in 1831 with the county's organization: the coroners open at 1844, and the probate judgeship at 1851, when the new state constitution created the court."
-      columns={['Office', 'Holders']}
-      rows={officers.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="county-officers" set:html={JSON.stringify(officerSpec)} is:inline />
-    <DataTable
-      title="Who was first"
-      caption="The office now called County Engineer was the County Surveyor for its first seventy-three years, and the statute still requires its holder to be a registered surveyor as well as an engineer."
-      columns={['Office', 'First holder', 'From', 'Holders to 1906']}
-      rows={firstOfficers}
-    />
-    <p>
-      The sheriffs are the check on the whole thing. A book printed in 1906 and a roster published
-      on the sheriff's own website in the 2020s name the same twenty-one men in the same order from
-      1831 to 1905, and differ on exactly two years — both of them the book's, and one of them
-      impossible. It is the strongest corroboration this site holds for any nineteenth-century
-      succession.
-    </p>
-    <p>
-      The 1921 history is the weaker witness. Its list of prosecuting attorneys runs from Mathias H.
-      Nichols in 1851 straight to Jasper Gutridge in 1859, dropping three holders and seven years —
-      and its own account of the county bar, forty pages later, says that one of the men it dropped
-      "served as prosecuting attorney two terms". Nichols had resigned in 1852 to enter Congress,
-      having founded the county's second newspaper nine years earlier by selling his waistcoat to
-      buy paper for the first issue.
-    </p>
-  </section>
+    <section class="onward">
+      <h2>Where this goes on</h2>
+      <ul>
+        <li>
+          <a href="/read/the-government-below-the-county">The government below the county</a>
+          <span class="why">Thirteen townships, nine villages and a city — and appointment is how two of them get filled.</span>
+        </li>
+        <li>
+          <a href="/read/the-county-changed-sides">The county changed sides</a>
+          <span class="why">Democratic ground for thirty years, and it did not turn with 1896.</span>
+        </li>
+        <li>
+          <a href="/read/the-mayors-and-where-the-office-went">The mayors, and where the office went</a>
+          <span class="why">Three books, four slots, and a year with nobody in it.</span>
+        </li>
+        <li>
+          <a href="/read/three-rosters-one-checkable">Three rosters, one checkable</a>
+          <span class="why">A 1906 book prints a line of holders for every office; only one roster can be tested.</span>
+        </li>
+        <li>
+          <a href="/read/who-polices-the-county">Who polices the county</a>
+          <span class="why">A step in the reported numbers that is not a crime wave.</span>
+        </li>
+        <li>
+          <a href="/read/three-cents-in-the-dollar">Three cents in the dollar</a>
+          <span class="why">The county's public library raises three per cent of its money locally.</span>
+        </li>
+        <li>
+          <a href="/read#government">The reading room</a>
+          <span class="why">Every shorter piece filed under this section.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
 
-  <section>
-    <h2>Three rosters, and only one can be checked</h2>
-    <AssertionCard assertion={rosters} />
-    <p>
-      The same 1906 history prints the county's legislators in one chapter: a list of its members
-      of Congress, a list of its members of the Ohio House, and a list of its state senators. The
-      first gives district headings, home counties and years. The other two give names separated by
-      commas, and stop.
-    </p>
-    <p>
-      The congressional list can therefore be tested, and it holds. Laid against the federal record
-      Congress by Congress, nineteen of its twenty entries are confirmed exactly — twenty entries,
-      eighteen men, ten home counties, three of them from Allen County. The one that fails is
-      Fernando C. Layton, filed under the Fourth District for 1891–96 when he sat for the Fifth
-      until 1893. It is the only kind of place the book's method could fail: a map moving under a
-      sitting member. The book had handled that case correctly eight years earlier, splitting
-      Benjamin Le Fevre across two headings when the county changed districts and he stayed its
-      member.
-    </p>
-    <DataTable
-      title="Five headings, three numbers"
-      caption="Allen County changed congressional district four times in seventy-five years and never held the same number twice running. The Fourth of 1853 is not the Fourth of 1883, and neither is the Fourth the county votes in today."
-      columns={['District', 'Years', 'Members the book names']}
-      rows={congressDistricts}
-    />
-    <p>
-      The two state lists cannot be tested at all, because there is nothing in them to test. The
-      House list begins with the 36th General Assembly, seated 4 December 1837; the Senate list with
-      the 32nd, seated 2 December 1833. The same book cites the 74th General Assembly as of 1901.
-      Thirty-five representatives are spread over at least thirty-nine assemblies and thirty-five
-      senate entries over at least forty-three, and three of the senate names recur — so that list
-      is a list of terms rather than of men, and says nothing about which terms.
-    </p>
-    <ChartFigure
-      id="assembly-names"
-      title="Names printed, against General Assemblies elapsed"
-      caption="Both counts are floors: the assemblies are counted inclusively to the 74th, which the book cites as of 1901, and the book itself was printed in 1906."
-      columns={['Roster', 'Count']}
-      rows={rosters.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="assembly-names" set:html={JSON.stringify(rosterSpec)} is:inline />
-    <p>
-      What that costs is not hypothetical. This site holds the Boesel railroad bill, passed by the
-      Ohio legislature in April 1872, which put $100,000 of bonds to a vote in Lima and Ottawa
-      Township and carried with eight votes against. A Charles Boesel stands sixteenth of the
-      thirty-five entries in the senate roster. Sixteenth of thirty-five across seventy-three years
-      interpolates to about 1866, which is close enough to be tempting and is not evidence of
-      anything. The two are held apart.
-    </p>
-    <p>
-      One name of the seventy can be dated, and the sentence that dates it is ninety pages away in
-      the book's chapter of legal biographies: Isaiah S. Pillars, twenty-fifth in the House roster,
-      "In 1871 he was elected Representative, but declined a second term". He had commanded Camp
-      Lima with the rank of colonel in 1861, was elected Attorney General of Ohio in 1877, and used
-      his one term in the legislature to resist a tax levy for railroad construction and to write a
-      minority report in favour of abolishing capital punishment.
-    </p>
-  </section>
-
-  <section>
-    <h2>The board is printed as a shift register</h2>
-    <AssertionCard assertion={board} />
-    <p>
-      The same book prints the county's governing body once a year for seventy-five years — three
-      names a row, from June 1831 to 1905. It looks like a list of who was on the board. It is
-      something better: a mechanism. Each row is the row above it moved one place to the right. The
-      new commissioner is written first, the previous first name second, the previous second name
-      third, and the man who was third is gone.
-    </p>
-    <DataTable
-      title="Seven rows, three men, and one arrival"
-      caption="1876 to 1880 is the same three men reprinted four times with the order turning over; 1881 is an election. In both cases the row is the row above shifted right, and the difference is only who fills the first column."
-      columns={['Year', 'First', 'Second', 'Third']}
-      rows={boardRows}
-    />
-    <p>
-      In the twenty-two years when the board did not change at all, the three names are reprinted
-      with the third moved to the front — twenty-two times out of twenty-two, with no exception in
-      seventy-five years. So the first column does two jobs. In an election year it names the
-      incoming commissioner; in a year without one it names the incoming president of the board.
-      That is why the 1906 history explains the column one way ("the first person named is in most
-      cases the commissioner elected that year") and the 1921 history another ("naming the president
-      of the board first"), and why both are right about the half of the series they describe.
-    </p>
-    <ChartFigure
-      id="board-transitions"
-      title="What happens between one printed board and the next"
-      caption="Seventy-four transitions between seventy-five rows. The two rows where a new man is not written first are the two anomalies: 1884, where he was not elected but appointed in another man's place, and 1890, which follows the year the book forgot to print."
-      columns={['Kind of transition', 'Years']}
-      rows={board.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="board-transitions" set:html={JSON.stringify(boardSpec)} is:inline />
-    <p>
-      The value of a mechanism is that it can be violated. Five rows after 1842 break it, and each
-      break is a fact the book does not otherwise state — except one, which is a fact about the
-      book.
-    </p>
-    <DataTable
-      title="The five rows that break the shift"
-      caption="Only 1884 is annotated in the book — 'Alexander Shenk (vice Marshall)', the one parenthesis in seventy-five years of list — and it is the only one of the five that gets a node of its own, because an anomaly is not a reason. 1889 is missing from the book entirely, and its absence makes John Akerman and William Bice look as though they left the board and came back."
-      columns={['Year', 'What breaks', 'What it is']}
-      rows={boardBreaks}
-    />
-    <p>
-      Before 1842 the pattern is not there: eight of the first eleven transitions break it, against
-      five of the next sixty-three. Either the board's terms were not yet regular in the county's
-      first decade or the compiler's sources for it were poorer. The shape of the list is evidence
-      that something differs. It is not evidence of which.
-    </p>
-  </section>
   <script>
     import { renderCharts } from '../scripts/charts'
     renderCharts()

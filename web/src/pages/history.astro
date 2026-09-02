@@ -1,158 +1,15 @@
 ---
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
-import ChartFigure from '../components/ChartFigure.astro'
-import DataTable from '../components/DataTable.astro'
-import { assertion, nodes } from '../lib/feeds'
-import { bar } from '../lib/chart-spec'
+import { assertion, node, nodes } from '../lib/feeds'
 
 const raid = assertion('the-night-the-jail-was-taken')
-const fort = assertion('the-county-is-settled-from-outside-itself')
-const register = assertion('sixteen-of-twenty-nine-are-one-days-work')
-const warLists = assertion('the-two-war-lists-do-not-join')
-const succession = assertion('the-office-passed-from-father-to-son')
+
 const bank = assertion('the-man-in-the-cell-was-charged-with-an-allen-county-bank')
-const tanks = assertion('the-county-had-two-tank-installations')
-const books = assertion('the-war-turned-the-locomotive-works-books')
+
 const railTown = assertion('lima-was-a-railroad-town-before-an-oil-town')
-const noTrains = assertion('no-passenger-train-calls-in-this-county')
-const wentToWar = assertion('one-person-in-ten-went-to-war')
-const warDead = assertion('the-roster-never-totalled-its-own-dead')
-const corinth = assertion('more-died-at-corinth-than-anywhere')
-const trains = assertion('the-page-adds-up-and-the-forecast-does-not')
+
 const declared = assertion('ten-declarations-eight-incidents')
-const sky = assertion('the-blizzard-is-not-in-the-weather-file')
-const paid = assertion('eighty-four-cents-in-the-dollar')
-const war = assertion('the-third-war-is-counted-by-its-dead')
-const press = assertion('ninety-nine-papers-and-one-of-them-online')
-const colonel = assertion('a-colonel-of-that-name-in-the-war-of-1812')
-
-const colonelSpec = bar(
-  colonel.figures.map((f) => f.label),
-  colonel.figures.map((f) => f.value),
-  { yTitle: 'The fourteen counties of 1820, by what Howe says about the name', labelValues: true },
-)
-
-// What Howe's 1847 formation sentence gives for each of the fourteen. Typed out because the
-// attributions are quotations and the graph carries them as one measure.
-const namesOf1820 = [
-  ['Hancock', 'John Hancock, first president of the revolutionary congress'],
-  ['Henry', 'Patrick Henry, the celebrated Virginian orator in the revolutionary era'],
-  ['Marion', 'Gen. Francis Marion, of South Carolina, a partisan officer of the revolution'],
-  ['Mercer', 'Gen. Hugh Mercer, a Virginia officer who fell at Princeton, Jan. 3d, 1777'],
-  ['Paulding', 'John Paulding, of Peekskill, one of the three militia men who captured Major Andre'],
-  ['Putnam', 'Gen. Israel Putnam, born at Salem, Mass., 1718, died at Brooklyn, Conn., 1790'],
-  ['Van Wert', 'Isaac Van Wart, one of the three captors of Maj. Andre, died 1828, aged 68'],
-  ['Williams', 'David Williams, of Tarrytown, one of the three captors of Maj. Andre'],
-  ['Seneca', 'the tribe who had a reservation within its limits'],
-  ['Allen', '“a colonel of that name in the war of 1812”'],
-  ['Wood', '“the brave and chivalrous Col. Wood, a distinguished officer of engineers in the war of 1812”'],
-  ['Crawford', '— no namesake given'],
-  ['Hardin', '— no namesake given'],
-  ['Sandusky', '— no namesake given'],
-]
-const faith = assertion('a-hundred-and-sixty-congregations')
-const jail = assertion('three-times-a-mob-came-to-the-jail')
-
-const jailSpec = bar(
-  jail.figures.map((f) => f.label),
-  jail.figures.map((f) => f.value),
-  { yTitle: 'Black voters in Lima', labelValues: true },
-)
-
-const jailCrowds = [
-  ['April 1872', "Andrew Brentlinger's execution", 'Fifty armed men guard the jail against a threatened mob. No one is hurt.'],
-  ['30 Aug 1916', 'A mob demands a Black prisoner', 'Sheriff Sherman Eley hides Charles Daniels and refuses to say where. The mob puts a rope round his neck; he is hospitalised and later given a medal.'],
-  ['12 Oct 1933', 'The jail raid', 'Sheriff Jess Sarber is shot dead in his own jail.'],
-]
-
-const faithSpec = bar(
-  faith.figures.map((f) => f.label),
-  faith.figures.map((f) => f.value),
-  { yTitle: 'Adherents as a share of population, 2020 (%)', labelValues: true },
-)
-
-const blufftonChurches = [
-  ['Swiss Mennonite (three congregations)', 640],
-  ['Methodist Episcopal', 180],
-  ['German Reformed', 150],
-  ['Church of Christ', 113],
-  ['Presbyterian', 58],
-  ["St. Mary's Catholic", 50],
-  ['Evangelical Lutheran', 45],
-  ['Mennonite Church of Bluffton', 31],
-]
-
-const pressSpec = bar(
-  press.figures.map((f) => f.label),
-  press.figures.map((f) => f.value),
-  { yTitle: 'Newspaper titles printed, 1843–2026', labelValues: true },
-)
-
-const limaNewsLineage = [
-  ['The Daily Democratic Times', '27 Oct 1884', 'v.1 no.1'],
-  ['The Lima Daily Democratic Times', 'to 2 Feb 1889', '–v.5 no.89'],
-  ['The Lima Daily Times', '4 Feb 1889', 'v.5 no.90 – v.9 no.141'],
-  ['The Lima Times-Democrat', '1 Apr 1893', 'v.9 no.142 – v.11 no.287'],
-  ['The Times-Democrat', '18 Sep 1895', 'v.11 no.288 – ceased 1901'],
-  ['The Lima Times-Democrat', '9 Apr 1901', 'v.17 no.151 – 36th yr no.122'],
-  ['The Lima Daily News and Times-Democrat', '3 May 1920', '36th year'],
-  ['The Lima News and Times-Democrat', '6 Jun 1920', '36th – 43rd year'],
-  ['The Lima News', '21 Jun 1926', '43rd year – current'],
-]
-
-const warSpec = bar(
-  war.figures.map((f) => f.label),
-  war.figures.map((f) => f.value),
-  { yTitle: 'Allen County Army dead and missing, 1941–1946', labelValues: true },
-)
-
-const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
-  yTitle: 'Locomotives ordered',
-  labelValues: true,
-})
-
-const warListSpec = bar(
-  warLists.figures.map((f) => f.label),
-  warLists.figures.map((f) => f.value),
-  { yTitle: 'Allen County men in the World War', labelValues: true },
-)
-
-const causeSpec = bar(
-  warDead.figures.map((f) => f.label),
-  warDead.figures.map((f) => f.value),
-  { yTitle: 'Men (a floor)', labelValues: true },
-)
-
-const corinthSpec = bar(
-  corinth.figures.map((f) => f.label),
-  corinth.figures.map((f) => f.value),
-  { yTitle: 'Men (a floor)', labelValues: true },
-)
-
-const trainsSpec = bar(
-  trains.figures.map((f) => f.label),
-  trains.figures.map((f) => f.value),
-  { yTitle: 'Passenger trains a day into Lima', labelValues: true },
-)
-
-const crossingSpec = bar(
-  noTrains.figures.map((f) => f.label),
-  noTrains.figures.map((f) => f.value),
-  { yTitle: 'Open crossings', labelValues: true },
-)
-
-const skySpec = bar(
-  sky.figures.map((f) => f.label),
-  sky.figures.map((f) => f.value),
-  { yTitle: 'Severe weather reports', labelValues: true },
-)
-
-const paidSpec = bar(
-  paid.figures.map((f) => f.label),
-  paid.figures.map((f) => f.value),
-  { yTitle: 'Federal share obligated (US$)', labelValues: true },
-)
 
 // The spine is read out of the graph, never typed here. A page that lists the county's dated
 // record by hand would keep saying "1885" long after a phase had added something later, and the
@@ -172,15 +29,19 @@ const periods = nodes
 // The longest run of years with no dated event in it, computed from the same list the table
 // renders. Written as a pair so the prose below can name both ends without repeating itself.
 const gaps = events.slice(1).map((e, i) => ({ from: events[i].at, to: e.at }))
+
 const widest = gaps.reduce((a, b) => (b.to - b.from > a.to - a.from ? b : a), gaps[0])
+
 const last = events[events.length - 1].at
+
 const since = new Date().getUTCFullYear() - last
 ---
 
 <Base
   title="History"
-  lede="Everything this corpus can date, in order — and the stretches between."
+  lede="Everything this corpus can date, in order — and the stretches between. The gaps are the subject of this page as much as the entries are."
 >
+  <div class="reading">
   <section>
     <h2>The county's dated record, and the hole in the middle of it</h2>
     <p>
@@ -258,209 +119,6 @@ const since = new Date().getUTCFullYear() - last
   </section>
 
   <section>
-    <h2>The fort across the line</h2>
-    <p>
-      The county's dated record now opens in September 1812, with a stockade on the west bank of
-      the Auglaize: an acre and a half inside eleven-foot pickets set four feet into the ground,
-      four corner blockhouses with their upper storeys overhanging, a storehouse in the middle.
-      Colonel Thomas Poague's command built it after cutting the road from St. Marys, where
-      Harrison had his headquarters, to Fort Defiance, and Poague named it for his wife Amanda.
-    </p>
-    <AssertionCard assertion={fort} />
-    <p>
-      Three county histories place Fort Amanda in Allen County. The 1885 book opens its settlement
-      chapter with <em>the initial point in the history of the settlement of Allen County must be
-      known as Fort Amanda</em>, and calls it the county's first post office and its first place of
-      religious meeting. The 1906 book reprints that. The 1921 book knows better and argues with it
-      in the same paragraph — <em>it was a rude fate that removed Fort Amanda with its historic
-      traditions from the bounds of Allen County</em> — before settling the matter with a verse:
-      <em>Prove all things and hold fast that which is good, and in its traditions Fort Amanda
-      belongs to Allen County.</em>
-    </p>
-    <p>
-      The federal gazetteer puts it in Auglaize County. So does the county's own map service, by
-      declining to answer: the fort's coordinate returns nothing from the township layer, nothing
-      from the survey sections and nothing from the parcels, where a control point a mile north
-      returns <code>AMANDA TOWNSHIP</code> from the first of them. Walking north along the same
-      meridian until the service begins to answer puts the line at latitude 40.685776 — 0.188
-      statute miles, about nine hundred and ninety feet, from the fort. The 1848 act that made
-      Auglaize County kept <em>the north half of Amanda</em> and let the south half go with the
-      fort in it, so the township still carries the name and no longer contains what it is named
-      for.
-    </p>
-    <p>
-      What the fort did was carry freight. The garrison spent the winter of 1812–13 as a
-      shipbuilding company — one detail choosing trees, one felling, one sawing, one building flat
-      boats — and shipped flour downstream in barrels. The single contemporary document anyone
-      quotes is Green Clay's letter of 20 June 1813 from Camp Meigs, recording a consignment
-      received from Fort Amanda through Ensign Gray. The 1921 history calls that <em>an utter
-      impossibility on the Auglaize today</em> and gives the reason: the timber gone and the
-      country tiled, so the water runs off instead of standing. A river was made unnavigable by
-      clearing the ground around it.
-    </p>
-    <p>
-      There was never a battle here. The one death the sources record is Captain Enoch Dawson,
-      shot from ambush in October 1812 while eating grapes at the water's edge. Four years after
-      the garrison left, three men moved their families into the blockhouses — Andrew Russell,
-      Peter Diltz and William Van Ausdall — and two of the three are buried in the military
-      cemetery beside the soldiers, which is not what a national cemetery is.
-    </p>
-    <p>
-      Everything counted there comes out at seventy-five. Seventy-five mounds in 1885, some 75
-      graves in 1906, close to seventy-five in 1915 with only about forty carrying a marker — and
-      seventy-five flat boats built that first winter, on the facing subject a few pages earlier in
-      the same book. The identities went when the British burned the Capitol and the garrison's
-      records with it. And the 1906 history is not a third witness: its Fort Amanda chapter
-      reprints the 1885 text sentence for sentence, the same Harrison date and the same Ensign
-      Gray, which leaves two witnesses where the shelf appears to hold three.
-    </p>
-  </section>
-
-  <section>
-    <h2>The other war, and the list that outran the count</h2>
-    <p>
-      The same chapter of the same book that gave this site the Civil War gives the First World
-      War, and this site had never read it. Chapter XLIV of the 1921 county history, "Allen County
-      in the Wars", runs fifty pages and ends in two rosters.
-    </p>
-    <AssertionCard assertion={warLists} />
-    <ChartFigure
-      id="warlists"
-      title="How many Allen County men were in the World War"
-      caption="Three answers from one chapter. The first two are the American Legion's, reported by its Ohio commander; the third is a count of the names actually printed in the roster twenty pages later, and it is a floor — ninety-six further lines are visibly names the scan mangled."
-      columns={['Count', 'Men']}
-      rows={warLists.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
-    />
-    <script type="application/json" data-chart-spec="warlists" set:html={JSON.stringify(warListSpec)} is:inline />
-    <p>
-      The roster belongs to Elmer McClain, an Allen County man who enlisted, did transport duty and
-      kept a card system. He names twelve sources for it — ex-service men, the YMCA at the camps,
-      the American Legion, the Federal Employment Bureau, the county recorder's office, the 1919
-      Lima city directory, the township chairmen of the Victory Loan campaign, the Knights of
-      Columbus, the Red Cross, the draft board, the historical society — and he says what it is
-      worth: <em>the compiler knows that it is not in every respect either perfectly complete or
-      perfectly accurate, but it is the most complete and accurate list in existence.</em> The book
-      cannot spell him. He is Elmert in the paragraph that introduces the list and Elmer in the line
-      above the first name.
-    </p>
-    <p>
-      Ninety-five men are on the honour roll that follows, and the two lists do not join. Matched on
-      surname and first initial, at most forty-seven of the ninety-five dead are missing from the
-      roster of the served — and one of the missing is William Paul Gallagher. The service roster is
-      alphabetical and the slot where he belongs runs Galberach, Gallant, Gallapool, Gallaspie,
-      Gallont, Galloway: a continuous sequence with no Gallagher in it, which is what a name that
-      was never entered looks like rather than one the scan lost. The American Legion post in Lima
-      is the William Paul Gallagher Post No. 96, and it helped compile the honour roll.
-    </p>
-    <p>
-      Against the county's other war the shape is inverted. One person in sixteen served, against
-      one in ten in the Civil War; one in forty-four of them died, against one in eleven. Four times
-      as many men went and a quarter as many died, in a war a fifth as long. And where the Civil War
-      roster gave a cause of death for forty-nine men and let this site tally Corinth, Atlanta and
-      Andersonville, this list gives ninety-five names and nothing else — no unit, no date, no
-      place. The influenza that killed eight per cent of the cases at the state hospital that same
-      autumn cannot be told apart in it from the Argonne.
-    </p>
-    <p>
-      The county's war itself had no battle in it and no local beginning the sources will give. The
-      Civil War opened on a named Sunday at the courthouse with a flag strung on a wire. This one
-      opens with committees: a draft board serving without pay, a Council of Defense chaired by the
-      man who owned the truck works, a woman's branch that changed hands to avoid overlapping the
-      Red Cross, and a War Savings drive that beat its $1,297,000 quota by $70,000 — after which,
-      the book says, <em>the people did not incline to make a sacrifice again.</em> Men were sworn
-      in at Memorial Hall, from a radius many miles in every direction, and given lunch. What the
-      county built for the front was a truck, and the book captions it the first one used in the
-      war.
-    </p>
-  </section>
-
-  <section>
-    <h2>What is on the register, and what the register is</h2>
-    <AssertionCard assertion={register} />
-    <p>
-      The National Park Service publishes the whole National Register as a map service, and this
-      county's share of it is one request. Twenty-nine properties: twenty-six buildings, two
-      structures and one historic district, from 15 October 1966 to 27 October 2004. Twenty-five
-      are in Lima, two in Delphos, one in Shawnee Township and one in Spencer.
-    </p>
-    <table>
-      <caption>
-        Allen County on the National Register, by the date the Keeper signed each listing. The
-        last column but one is not from the register: every point was put to the county's own map
-        service, and all twenty-nine landed inside the county.
-      </caption>
-      <thead>
-        <tr><th scope="col">Listed</th><th scope="col">Property</th><th scope="col">Type</th><th scope="col">Address</th><th scope="col">Where</th><th scope="col">Ref.</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>1910-15</td><td>Miami And Erie Canal, Deep Cut</td><td>structure</td><td>2 mi. S of Spencerville on OH 66</td><td>Spencer Twp</td><td>66000603</td></tr>
-        <tr><td>1907-24</td><td>Allen County Courthouse</td><td>building</td><td>Courthouse Sq.</td><td>Lima</td><td>74001392</td></tr>
-        <tr><td>1912-12</td><td>Neely-Sieber House</td><td>building</td><td>620 W. Spring St.</td><td>Lima</td><td>76001360</td></tr>
-        <tr><td>1909-20</td><td>MacDonell House</td><td>building</td><td>632 W. Market St.</td><td>Lima</td><td>78001999</td></tr>
-        <tr><td>1905-07</td><td>Lima Memorial Hall</td><td>building</td><td>W. Elm and S. Elizabeth Sts.</td><td>Lima</td><td>79001779</td></tr>
-        <tr><td>1911-29</td><td>Metropolitan Block</td><td>building</td><td>300 N. Main St</td><td>Lima</td><td>79001780</td></tr>
-        <tr><td>1901-03</td><td>St. John Catholic Church</td><td>building</td><td>110 N. Franklin St.</td><td>Delphos</td><td>80002933</td></tr>
-        <tr><td>1904-01</td><td>Marks-Family House</td><td>building</td><td>233 N. Franklin St.</td><td>Delphos</td><td>82003537</td></tr>
-        <tr><td>1910-07</td><td>Adgate Block</td><td>building</td><td>300-306 S. Main St.</td><td>Lima</td><td>82001347</td></tr>
-        <tr><td>1910-07</td><td>Armory-Latisona Building</td><td>building</td><td>440 S. Main St.</td><td>Lima</td><td>82001348</td></tr>
-        <tr><td>1910-07</td><td>Cahill, Beck and R. C., Buildings</td><td>building</td><td>200-206 S. Main St.</td><td>Lima</td><td>82001349</td></tr>
-        <tr><td>1910-07</td><td>Dorsey Building</td><td>building</td><td>208 S. Main St.</td><td>Lima</td><td>82001350</td></tr>
-        <tr><td>1910-07</td><td>Elks Lodge</td><td>building</td><td>138 W. North St.</td><td>Lima</td><td>82001865</td></tr>
-        <tr><td>1910-07</td><td>First National Bank and Trust Building</td><td>building</td><td>43-53 Public Sq.</td><td>Lima</td><td>82001351</td></tr>
-        <tr><td>1910-07</td><td>Hotel Argonne</td><td>building</td><td>201 N. Elizabeth St.</td><td>Lima</td><td>82001352</td></tr>
-        <tr><td>1910-07</td><td>Klaus Block</td><td>building</td><td>401-405 N. Main St.</td><td>Lima</td><td>82001864</td></tr>
-        <tr><td>1910-07</td><td>Lima Cleaning and Pressing Company</td><td>building</td><td>436-438 S. Main St.</td><td>Lima</td><td>82001353</td></tr>
-        <tr><td>1910-07</td><td>Linneman Building</td><td>building</td><td>210-212 S. Main St.</td><td>Lima</td><td>82001867</td></tr>
-        <tr><td>1910-07</td><td>Martin Block and Kibby Block</td><td>building</td><td>140-146 S. Main St.</td><td>Lima</td><td>82001868</td></tr>
-        <tr><td>1910-07</td><td>Neal Clothing</td><td>building</td><td>74 Public Sq.</td><td>Lima</td><td>82001870</td></tr>
-        <tr><td>1910-07</td><td>Ohio Theatre</td><td>building</td><td>122 W. North St.</td><td>Lima</td><td>82001866</td></tr>
-        <tr><td>1910-07</td><td>Renz Block</td><td>building</td><td>320 N. Main St.</td><td>Lima</td><td>82001354</td></tr>
-        <tr><td>1910-07</td><td>U.S. Post Office</td><td>building</td><td>326 W. High St.</td><td>Lima</td><td>82001356</td></tr>
-        <tr><td>1910-07</td><td>Union Block</td><td>building</td><td>28-38 Public Sq.</td><td>Lima</td><td>82001355</td></tr>
-        <tr><td>1901-11</td><td>Breese, Griffith, Farm</td><td>building</td><td>2875 Fort Amanda Rd.</td><td>Shawnee Twp</td><td>83001942</td></tr>
-        <tr><td>1905-15</td><td>Barr Hotel</td><td>building</td><td>201--209 E. High and 200--218 N. Union Sts.</td><td>Lima</td><td>86001053</td></tr>
-        <tr><td>2003-21</td><td>Lima Stadium</td><td>structure</td><td>100 S. Calument Ave. and E. Market St.</td><td>Lima</td><td>02000219</td></tr>
-        <tr><td>2008-21</td><td>Lima Pennsylvania Railroad Passenger Depot</td><td>building</td><td>424 N. Central Ave.</td><td>Lima</td><td>03000805</td></tr>
-        <tr><td>2010-27</td><td>West Market Street Boulevard Historic District</td><td>district</td><td>1410-1529 W. Market St.</td><td>Lima</td><td>04001201</td></tr>
-      </tbody>
-    </table>
-    <p>
-      Sixteen of the twenty-nine were signed on one day, 7 October 1982, under a single Multiple
-      Resource Area submission for downtown Lima. Seven listings come before that day and five
-      after it. Between the Barr Hotel in May 1986 and Lima Stadium in March 2002 nothing was added
-      at all, and nothing has been added in the twenty-one years since the last. Twenty of the
-      twenty-nine stand in one square mile — survey section 31 of T3S R7E, which is downtown. Ten
-      of the county's twelve townships hold nothing, and no village but Delphos does.
-    </p>
-    <p>
-      The county's only National Historic Landmark is a ditch. The Miami and Erie Canal's Deep Cut,
-      two miles south of Spencerville, was entered on 15 October 1966 — the day the Register itself
-      began, when the standing Landmarks were entered as a body. It is the oldest listing here by
-      eight years and the only one that is neither a building nor a district. It is also filed
-      under a village it is not in: the register flags it <code>Vicinity: True</code>, and its point
-      falls in Spencer Township. The Griffith Breese Farm, filed under Lima on Fort Amanda Road, is
-      the same case in Shawnee Township. The federal file keeps a column for the distinction this
-      site had to argue for from a refinery.
-    </p>
-    <p>
-      And nothing this county made anything in is on the list. Not the locomotive works that built
-      Shays and Berkshires, not the refinery running since 1886, not the tank plant, not the Ford
-      engine plant. A county whose two centuries are iron, oil and rolling stock has store blocks,
-      houses, churches, a theatre, a stadium, a waiting room and a canal cut. Absence from a
-      register is evidence about nominations, not about buildings — which is the whole of what this
-      list can be read for. The pattern in it is the shape of the filing: a burst when somebody did
-      downtown Lima as a batch, a long silence, and nothing for two decades.
-    </p>
-    <p>
-      One more thing the source is good for. Its coordinate for the courthouse is 31.9 metres from
-      the one the county surveyor's file gives, which this site has carried since the courthouse was
-      written up, against a federal file that advertises plus or minus twelve. That is the only
-      independent check available on any point in the set, and it is why the points are pushed here
-      as far as a survey section and no further.
-    </p>
-  </section>
-
-  <section>
     <h2>Why Lima is where it is</h2>
     <p>
       This site has told the county's industrial story as an oil story since the population page
@@ -486,290 +144,6 @@ const since = new Date().getUTCFullYear() - last
     </p>
   </section>
 
-  <section>
-    <h2>The road under four names, and the page that adds itself up</h2>
-    <p>
-      Between the steam railroads and what is left of them there was an electric one, and this site
-      had never mentioned it. Lima's own street railway ran horse cars from June 1878 — five cents,
-      seven in the morning to ten at night, and in winter the company put the cars away and ran
-      sleighs. On 4 July 1886 the town stood in the rain on the public square to watch a car move
-      with nothing pulling it. By 1921 the fifteen miles of track in the city belonged to a company
-      with six hundred miles of it and power stations in other towns.
-    </p>
-    <p>
-      Four company names carried that railway across forty-three years — the Lima Street Railroad
-      Company, the Lima Electric Railway &amp; Light Company, the Lima &amp; Toledo Traction Company
-      and the Ohio Electric — and exactly one of the three transfers between them is dated in any
-      source here: 1 July 1905, and the book puts it in a biography rather than in its chapter on
-      transportation.
-    </p>
-    <p>
-      Beyond the city, three interurbans were named in 1905 and two were left by 1921. What became
-      of the one Lima paid for is not in either county history; it is in a federal census. The 1917
-      directory of operating electric railway companies prints <em>The Ohio Electric Ry. Co.</em>
-      and, in italics beneath it — the volume's notation for a company whose road somebody else
-      leases and runs — <em>Fort Wayne, Van Wert &amp; Lima Traction Co., The</em>. The road
-      "projected by Lima men and financed in a large degree by Lima capital", which its own county
-      history called "destined to become one of the greatest traction interests in the country",
-      is a line item under an operator seated elsewhere. The company still existed. It just no
-      longer ran anything.
-    </p>
-    <AssertionCard assertion={trains} />
-    <ChartFigure
-      id="trains1905"
-      title="Trains landing passengers in Lima, counted and forecast"
-      caption="The first three bars are the 1906 county history counting: its six steam roads sum to 49, its two interurbans to 28, and the two to the 77 it prints. The last two are the same page a paragraph later, forecasting 1906. Its own four additions come to 150; it says 145, and no reading of the paragraph reaches that."
-      columns={['Count', 'Trains a day']}
-      rows={trains.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
-    />
-    <script type="application/json" data-chart-spec="trains1905" set:html={JSON.stringify(trainsSpec)} is:inline />
-    <p>
-      Adding a table up turns out to be worth doing twice over. It vouches for the list: nothing
-      fell out between the six roads enumerated and the 49 reported, which is the only evidence
-      available that the list is complete. And it demotes the figures that read most like a survey.
-      In the freight block on the same page, 143 trains times 52 cars is exactly the 7,436 cars
-      printed, and times 30 tons is exactly the 223,080 tons printed; four more tonnages are the
-      same trick. Five counts and three rates produce fourteen numbers, of which six are arithmetic.
-      A quarter of a million tons a day through a city of twenty-odd thousand is a real figure and
-      it is not a second observation — it is the first one multiplied out.
-    </p>
-    <p>
-      One thing the page settles for good. It boasts that Lima's trunk lines run "direct to half of
-      the counties in the State — to be exact, 46", and says twice elsewhere that a train may be
-      boarded in 44 counties and reach Lima without changing cars. Ohio has 88 counties. Half is 44,
-      and the sentence contradicts its own adverb.
-    </p>
-  </section>
-
-  <section>
-    <h2>And what is left of it</h2>
-    <AssertionCard assertion={noTrains} />
-    <ChartFigure
-      id="crossings"
-      title="Open highway-rail crossings by place, 2026"
-      caption="FRA Highway-Rail Grade Crossing Inventory. A crossing is a place a road meets a track, so this counts encounters and not miles; the corpus has no modern track mileage to set against the 102 miles of 1883."
-      columns={['Place', 'Open crossings']}
-      rows={noTrains.figures.map((f) => [f.label, String(f.value)])}
-    />
-    <script type="application/json" data-chart-spec="crossings" set:html={JSON.stringify(crossingSpec)} is:inline />
-    <p>
-      Two of the five are Class I railroads and three are short lines. The busiest is CSX, at up to
-      24 trains a day and 60 miles an hour through Lima; the one with the most crossings is the
-      Chicago, Fort Wayne & Eastern, a single-track short line running east and west through Lima,
-      Lafayette, Delphos and Elida — which is the axis the first railroad was built along, still
-      carrying the name of the city it was built toward.
-    </p>
-    <p>
-      A hundred and four more crossings in this county are on record as closed, including every one
-      Conrail ever reported and every one Grand Trunk Western did. In 1906 ten fast passenger trains
-      a day passed through Lima on one road alone, besides the mails and the limited express, and in
-      1921 a traveller could go to bed here and wake in Chicago. The inventory records passenger
-      trains per day at every crossing in the county and records zero at all of them.
-    </p>
-  </section>
-
-  <section>
-    <h2>What the county sent, and what it did not get back</h2>
-    <AssertionCard assertion={wentToWar} />
-    <p>
-      Between the canal and the oil this site had nothing. The corpus had eleven dated events and
-      no Civil War in it at all, while the source sat on the shelf: sixty pages of the 1885 county
-      history, of which forty-nine are roster. A county of 19,185 people put 1,920 men into United
-      States service, which is one person in ten counting women, children and the old.
-    </p>
-    <p>
-      Its war began on a Sunday morning at the second courthouse — a flag strung on a wire between
-      Ashton Hall and the building, the congregations gathering under it as services ended, a store
-      box for a platform. The first company was ninety-two men and was inducted eight days later.
-      For a fortnight in August 1862 the county held the rendezvous of Ohio's Eighth Military
-      District: about 1,600 men camped across the Ottawa River from a city of 1,989.
-    </p>
-    <AssertionCard assertion={warDead} />
-    <ChartFigure
-      id="war-dead-cause"
-      title="Allen County's Civil War dead, by what the roster records"
-      caption="Counted from the 1885 roster, which records each man's fate and never totals them. Every figure is the lower of two digitizations of the same page, so every figure is a floor."
-      columns={['Recorded as', 'Men']}
-      rows={warDead.figures.map((f) => [f.label, String(f.value)])}
-    />
-    <script type="application/json" data-chart-spec="war-dead-cause" set:html={JSON.stringify(causeSpec)} is:inline />
-    <p>
-      The largest bar is the one that says nothing. For a hundred and twenty-one of these men the
-      roster gives a place and a date and no cause, and the places are hospitals and camps rather
-      than battlefields. That is the ordinary arithmetic of that war, and a county roster is where
-      a county keeps it.
-    </p>
-    <AssertionCard assertion={corinth} />
-    <ChartFigure
-      id="war-dead-place"
-      title="Where Allen County's Civil War dead died, by named place"
-      caption="A place counts only where it is named within a clause of the word recording the death, so a man who enlisted at one place and died at another is counted once. Lower of two digitizations at each place."
-      columns={['Place', 'Men']}
-      rows={corinth.figures.map((f) => [f.label, String(f.value)])}
-    />
-    <script type="application/json" data-chart-spec="war-dead-place" set:html={JSON.stringify(corinthSpec)} is:inline />
-    <p>
-      Three of the deaths are not military at all, and both digitizations carry them word for word:
-      two men drowned, one at Hamburgh in Tennessee in 1862 and one near Fort Monroe a fortnight
-      after Appomattox, and a third was lost on the <em>Sultana</em>, the steamer that burned above
-      Memphis in April 1865 carrying released prisoners home. The cleaner of the two scans reads
-      that year as 1805; the other reads 1865, which is the whole argument for keeping two.
-    </p>
-    <p>
-      The three figures the county's own books give for its service — 776, 1,200 and 1,920 — are
-      not in conflict, and the reason they look like it is a transmission error this corpus can
-      date. The 1885 book says 776 men were traced into the roster of the 100,224 Ohio contributed
-      <em>in 1861</em>. The 1906 book drops the year. The 1921 book then reports it as a whole-war
-      total and sets it against an official credit of October 1863, as though a first-year cohort
-      and a two-and-a-half-year credit were the same measurement. The same two books do it again
-      with a sentence about the First Ohio Volunteer Infantry, which becomes a claim that Allen
-      County had men on the road within sixty hours — and the 1921 book disproves itself four
-      sentences later by dating the actual week, which took eight days.
-    </p>
-  </section>
-
-  <section>
-    <h2>The night the jail was taken</h2>
-    <AssertionCard assertion={raid} />
-    <p>
-      Three men came into the Allen County jail at Lima after dark on 12 October 1933, demanded
-      that the prisoner be handed over, shot Sheriff Jess L. Sarber when he fought them, locked his
-      wife and his deputy in the cell they had just emptied, took every gun in the building and
-      drove west. The prisoner was John Dillinger. Sarber died within the hour.
-    </p>
-    <AssertionCard assertion={bank} />
-    <p>
-      That is the part usually left out of the telling, and it is the part that makes this the
-      county's event rather than a national one that happened to land here. Dillinger was in the
-      Allen County jail because he was charged with robbing an Allen County bank — the Commercial
-      Bank at Bluffton, in the north of the same county. The night started inside it.
-    </p>
-    <p>
-      Harry Pierpont, Charles Makley and Russell Clark were tried at Lima the following spring,
-      three trials of about a week each, with Ohio National Guardsmen holding the town — machine
-      gun nests at the approaches to the jail, another at the end of the cell corridor, and nobody
-      admitted without a written order from the sheriff, the prosecutor or the judge. Within
-      twelve months and five days of the raid, Makley had been shot dead in an escape attempt,
-      Pierpont had been electrocuted and Clark was serving life.
-    </p>
-  </section>
-
-  <section>
-    <h2>What it changed about this county's government</h2>
-    <AssertionCard assertion={succession} />
-    <p>
-      The sheriff's roster on this site has shown the same two lines since the corpus first read
-      it: Jess L. Sarber, 1931–1933, and then Donald F. Sarber, 1933–1935. A two-year term ending
-      mid-decade, and the same surname straight after it. The roster gives no reason for either,
-      and for eleven phases this corpus declined to supply one, because a record saying
-      <em>died in office</em> and a guess saying <em>died in office</em> are indistinguishable once
-      written down.
-    </p>
-    <p>
-      It took a newspaper to settle it, and not the one anyone would have looked for. No Lima paper
-      is digitized in the national archive — the county seat's press is simply absent — so the
-      answer came from a wire story about a trial, reprinted in a Washington evening paper five
-      months after the fact, which calls the murdered man "the elder Sarber, who preceded his son
-      as sheriff".
-    </p>
-    <p>
-      The other irregular line in the roster is still unexplained. James K. Everett begins and ends
-      in 2017, the only holder in thirty-nine whose term does not cross a year, and the obvious
-      reading — an appointment to fill a vacancy — is still only the obvious reading.
-    </p>
-  </section>
-
-  <section>
-    <h2>What a tract book knows</h2>
-    <p>
-      The Recorder keeps a second index that nobody browses: not by name, but by ground. Every
-      quarter section in the county has its own sheets, running from the federal patent forward,
-      and each row is a grantor, a grantee, a volume and page, an instrument type, and two dates —
-      when it was signed and when it was recorded. Four of those sheets have now been read, for the
-      north-west quarter of section 17 in Bath Township, which is part of the ground under the Ford
-      engine plant.
-    </p>
-    <p>
-      This site could not say when that plant was built. It can now say that Ford Motor Company
-      took the ground between August 1955 and August 1956, in five conveyances, four of them from a
-      company that had spent the preceding year buying the parcels up — and that a contractor filed
-      a lien for $91,546.07 against Ford on 30 September 1957 for work done on it. A lien is a
-      claim for labour, so it dates a building going up in a way no directory does.
-    </p>
-    <p>
-      The same four sheets carry two things the corpus was not looking for. The ground was a quarry
-      before it was a factory, held by the National Quarries Company from 1917 and the National Lime
-      &amp; Stone Company from 1944. And in September 1885, four and a half months after his well
-      came in at Lima, B. C. Faurot took an oil lease over part of this quarter — the first dated
-      instrument this corpus holds showing the oil boom reaching a piece of ground it can point at.
-    </p>
-    <p>
-      About ninety-five conveyances are recorded on those four sheets between 1834 and 2003. A dozen
-      of them are Ford's. The rest are a farming quarter changing hands, and this site does not
-      reproduce them: the question that fetched the page chooses which rows leave it.
-    </p>
-  </section>
-
-  <section>
-    <h2>Two tank plants, eight years later</h2>
-    <AssertionCard assertion={tanks} />
-    <p>
-      The county's best-known industrial fact is that it builds tanks, and the corpus could not say
-      since when. It can now say something better than a date, which is that the question has two
-      answers and they are not the same kind of thing. The Lima Locomotive Works — a private company
-      with its works here and its offices in New York — put up a $290,000 factory building in
-      February 1941 and was scheduled to begin turning out medium tanks that autumn, alongside
-      Chrysler, American Locomotive, Baldwin, Pullman Standard and Pressed Steel Car.
-    </p>
-    <p>
-      The Lima Tank Depot was something else. Still under construction in January 1943, run under
-      contract by United Motors Service, Inc., it existed to receive vehicles built at arsenals all
-      over the country "in a raw state of completion", fit the modifications a particular theatre
-      needed, test them on its own proving ground and put them on road trains for the ports. Its
-      officer in charge called it the central supply base for combat vehicles: troops in the field
-      did not order from a factory, they ordered from Washington, and Washington ordered from Lima.
-      Its workforce came in from thirteen counties.
-    </p>
-    <p>
-      For two phases this site declined to say whether either of them stands where the tank plant
-      stands today. Two government-owned, contractor-operated tank installations in one small Ohio
-      city are very plausibly one place, and there was no source that said so.
-    </p>
-    <p>
-      There is one now, and it says they are not. The Recorder's abstract for the ground the plant
-      occupies shows it in private hands through the whole of the Second World War — mortgaged in
-      1940, 1941 and 1944, leased to a fishing and game club in April 1940, crossed by pipeline
-      easements its owners granted in 1939, 1940 and 1949 — and conveyed to the United States in
-      five deeds between 20 and 28 June 1951, each recorded the day it was signed or the day
-      after. The Depot was under construction in January 1943. A farm was standing on this ground
-      when it was.
-    </p>
-    <p>
-      So the county's tank plant is not a wartime installation at all, on this evidence. It is a
-      Korean War one, bought six years after the war everyone tells the story about. The refusal
-      held for two phases and was right to.
-    </p>
-  </section>
-
-  <section>
-    <h2>What the war did to a locomotive builder's books</h2>
-    <AssertionCard assertion={books} />
-    <ChartFigure
-      id="locomotive-orders"
-      title="Locomotives ordered from the Lima Locomotive Works, 1939 and 1940"
-      caption="Two years, reported to the county in February 1941. Not a series: the corpus holds no other year of this company's orders, and two points are a comparison rather than a trend."
-      columns={['Year', 'Locomotives ordered']}
-      rows={books.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="locomotive-orders" set:html={JSON.stringify(booksSpec)} is:inline />
-    <p>
-      The county's largest employer went from a net loss of $134,326 to a net profit of $87,007 in
-      one year, on orders that more than tripled, and booked eighteen more locomotives in the first
-      seven weeks of 1941. Then it took a tank contract. Everything this corpus knows about the
-      commercial side of Allen County's war comes from one page of a village weekly, which is worth
-      keeping in view when reading it.
-    </p>
-  </section>
   <section>
     <h2>The spine, and where it stopped</h2>
     <p>
@@ -812,374 +186,65 @@ const since = new Date().getUTCFullYear() - last
   </section>
 
   <section>
-    <h2>What the sky did</h2>
-    <AssertionCard assertion={sky} />
-    <ChartFigure
-      id="storm-decades"
-      title="Severe weather reports for Allen County, by decade"
-      caption="Not a weather series. The National Weather Service recorded three kinds of event here before 1996 and sixteen after, and this line is mostly the categories arriving. The 2020s are omitted because the decade is not over."
-      columns={['Decade', 'Reports']}
-      rows={sky.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="storm-decades" set:html={JSON.stringify(skySpec)} is:inline />
+    <h2>The night the jail was taken</h2>
+    <AssertionCard assertion={raid} />
     <p>
-      The declarations above date a federal act. This dates the weather, and it comes from a file
-      the corpus should have read seven phases earlier: 390 reports for Allen County since 1950,
-      every tornado, hail fall, thunderstorm gust, ice storm and blizzard the National Weather
-      Service holds for this ground. It answers a question the county's 1965 disaster node asked and
-      gave up on.
+      Three men came into the Allen County jail at Lima after dark on 12 October 1933, demanded
+      that the prisoner be handed over, shot Sheriff Jess L. Sarber when he fought them, locked his
+      wife and his deputy in the cell they had just emptied, took every gun in the building and
+      drove west. The prisoner was John Dillinger. Sarber died within the hour.
+    </p>
+    <AssertionCard assertion={bank} />
+    <p>
+      That is the part usually left out of the telling, and it is the part that makes this the
+      county's event rather than a national one that happened to land here. Dillinger was in the
+      Allen County jail because he was charged with robbing an Allen County bank — the Commercial
+      Bank at Bluffton, in the north of the same county. The night started inside it.
     </p>
     <p>
-      Read straight, the chart says the weather here got thirty times worse in seventy years. It
-      says nothing of the kind. Tornado is the only category counted in every one of those decades,
-      and its column goes 1, 2, 4, 3, 2, 3, 4 — up and down, while the total climbs in strict order
-      across all seven. Thirteen of the file's sixteen event types are younger than 1996. The count
-      of blizzards in Allen County before 2007 is not zero; it is undefined.
-    </p>
-    <p>
-      That much a control inside the file can show. What it cannot show is what the file is missing,
-      and for that the corpus crossed it against the county's ten federal declarations. Five of the
-      six weather disasters have a dated storm in the weather file — a flash flood inside the 2004
-      window, a winter storm on the opening day of the 2005 one, a flash flood in 2007, four
-      thunderstorm-wind reports on the day the June 2012 incident opens. The sixth is the blizzard
-      of January 1978, and there is no Allen County row for 1978 at all. The administrative file
-      holds a storm the observational file cannot see.
-    </p>
-    <p>
-      The county's deadliest weather is dated now. An F4 tornado crossed the north of the county on
-      the evening of 11 April 1965, running 17.8 miles from Elida to Bluffton on a path 400 yards
-      wide, killing eleven people and injuring a hundred. The federal declaration came three days
-      later and recorded the incident as beginning and ending on the day it was signed. Those eleven
-      are the only weather deaths in seventy-six years of this county's record, and the companion
-      file that carries an age and a location for each death holds seventeen rows for the entire
-      United States in 1965 and none of them is this event's. A count of eleven is the whole of what
-      survives.
-    </p>
-    <p>
-      Two other storms are worth the county's memory. An F3 on 19 July 1950 ran from the south-east
-      edge of Lima to Beaverdam and injured thirty. And on 22 June 2006 a line of wind crossed the
-      whole county in twenty minutes — Delphos and Spencerville at 14:05, Lima from 14:15, a tornado
-      at Beaverdam at 14:18, Bluffton at 14:25 — blowing over every power pole and traffic signal on
-      a stretch of Shawnee Road, destroying three hangars and about seventeen aircraft and the
-      sheriff's helicopter, and leaving two-thirds of the county without power. Those three storms
-      are $6,970,000 of the $9,408,250 in damage the whole seventy-six years records.
-    </p>
-    <p>
-      One last thing about this file, which is the most local thing in it. Of the 293 reports that
-      name who called them in, 240 name a person — trained spotters, emergency managers, police,
-      broadcast media, amateur radio operators, newspapers and the public — against 43 that name an
-      instrument. Seventy-seven of the 390 reports are located at Lima, against twenty-one for
-      Delphos. That is where the people who telephone are, and not where the storms are.
+      Harry Pierpont, Charles Makley and Russell Clark were tried at Lima the following spring,
+      three trials of about a week each, with Ohio National Guardsmen holding the town — machine
+      gun nests at the approaches to the jail, another at the end of the cell corridor, and nobody
+      admitted without a written order from the sheriff, the prosecutor or the judge. Within
+      twelve months and five days of the raid, Makley had been shot dead in an escape attempt,
+      Pierpont had been electrocuted and Clark was serving life.
     </p>
   </section>
 
-  <section>
-    <h2>What a disaster costs, and who is paid</h2>
-    <AssertionCard assertion={paid} />
-    <ChartFigure
-      id="disaster-money"
-      title="Federal public assistance obligated for Allen County applicants, 2005–2025"
-      caption="Nominal dollars twenty years apart, so the two bars are not comparable as purchasing power. Fifteen years of storms against one pandemic."
-      columns={['Period', 'Federal share']}
-      rows={paid.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="disaster-money" set:html={JSON.stringify(paidSpec)} is:inline />
-    <p>
-      The declarations are dates and the weather is dates. This is the money, and it took twenty
-      years to arrive: obligations run from 20 April 2005 to 28 May 2025, and the largest project
-      of the 2020 declaration was still being paid out in February 2025.
-    </p>
-    <p>
-      Ninety-five projects, $10,608,108 of federal share, four of the county's ten declarations.
-      Eighty-four cents in every dollar is the pandemic, on seven of the ninety-five projects. Of
-      the eighty-eight weather projects, forty-nine are debris removal or emergency protective
-      measures and seventy-nine cents in their dollar went on those two things. Nine projects in
-      twenty years are roads and bridges. One is a water control facility. Nothing here rebuilds
-      anything, which is the shape of what a federal disaster actually is in a county like this
-      one: someone comes and picks up the branches.
-    </p>
-    <p>
-      A disaster is also the one occasion on which nearly every government in Allen County files
-      the same form. Twenty-eight registered applicants appear, and they are close to the whole
-      civil apparatus of the place: the city of Lima, the city of Delphos, seven villages, eight of the twelve townships, the county and its commissioners and its engineer
-      and its health department, a school district, a university, a fire department, a hospital and
-      a home. The winter storms of December 2004 and January 2005 paid twenty-two of them at once.
-      Cairo is the only municipality in the county that never appears.
-    </p>
-    <p>
-      Two of them are worth pausing on. Delphos files twice, as "Delphos, City of (Allen County)"
-      and "Delphos, City of (Van Wert County)", because one municipal corporation standing on a
-      county line becomes two rows in a file keyed to counties, and both were paid. And the Village
-      of Fort Shawnee — which this site elsewhere records as having quietly ceased to exist around
-      2012 — was paid $34,799 in June 2005, which is a fourth federal witness to a corporation whose
-      end still has no date.
-    </p>
-    <p>
-      Then the largest single fact in the file, and the one that should be read most carefully.
-      Lima Memorial Health System received $8,777,201 — eighty-three per cent of every federal
-      disaster dollar in this county's twenty-year record — for pandemic emergency protective
-      measures. No other Allen County hospital appears at all. That is not because they claimed
-      nothing. The ledger is keyed to the county an applicant is registered in, and Bon Secours
-      Mercy Health, Inc., which owns St. Rita's in Lima, files from Cincinnati: its nine projects
-      and $183,291,707 are counted in Hamilton County. Lima Memorial appears here because it is the
-      only hospital in the county with no corporate parent — a fact this site already held from
-      Medicare enrollment records, and which turns out to be the reason the county's disaster
-      accounts look the way they do.
-    </p>
-    <p>
-      So $10,608,108 is a floor and a composition, not a measurement of what federal disaster money
-      did in Allen County. It is what was spent by bodies that keep their books here.
-    </p>
-    <p>
-      Households are a smaller and stranger story. Two declarations have put money into homes. The
-      flood of August 2007 brought 316 registrations, 272 inspections, $663,302 of recorded damage
-      and $641,634 of assistance — and 109 of the 227 owner registrations, and $481,404 of the
-      damage, were in Bluffton's ZIP code alone. The 2020 declaration brought 568 registrations,
-      $3,595,938, and not one inspection: a biological incident damages no houses, so every dollar
-      is classed "other needs" and what it bought is not written anywhere in the file. This site
-      says how much and declines to say what for.
-    </p>
-  </section>
-
-  <section>
-    <h2>One hundred and seventy-one</h2>
-    <AssertionCard assertion={war} />
-    <p>
-      This site named the Civil War and the World War as periods in Allen County's history and left
-      unnamed the war that made Lima a tank town. It had a roster of who served in each of the first
-      two and nothing at all for the third.
-    </p>
-    <p>
-      The War Department published an Honor List of Dead and Missing for every state in 1946,
-      tabulated county by county. Allen County's entry is 171 — every man from this county who died
-      or was still missing in the Army between the declaration of unlimited national emergency on
-      27 May 1941 and a cut-off of 31 January 1946. Against 73,303 people here in 1940, that is one
-      death for every 429.
-    </p>
-    <ChartFigure
-      id="ww2-dead"
-      title="Allen County's Army dead and missing, 1941–1946, by type of casualty"
-      caption="The Army's own six categories. DNB — died, non-battle — is the source's term for sickness, homicide, suicide or accident outside combat areas, including training and maneuver deaths. Navy, Marine Corps and Coast Guard dead are not in this list."
-      columns={['Type of casualty', 'Count']}
-      rows={war.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="ww2-dead" set:html={JSON.stringify(warSpec)} is:inline />
-    <p>
-      A third of them did not die in battle. Fourteen more were never found: they were declared dead
-      under a 1942 statute that required conclusive proof or overwhelming evidence and a year's
-      lapse from the disappearance. One man was still carried as missing when the list closed.
-    </p>
-    <p>
-      The county's war began before the country's, and two sources say so independently. In February
-      1941 the Lima Locomotive Works had a $290,000 factory building under construction that the
-      local press read as conversion to defense work, and by that August medium tank production was
-      scheduled for the autumn. The Honor List itself opens in May 1941. Both are before Pearl
-      Harbor. What followed was three separate undertakings two years apart — the Locomotive Works
-      building tanks from 1941, the Lima Tank Depot under construction in January 1943 and finishing
-      vehicles built elsewhere, and the tank plant that carries the county's name today, whose
-      ground was not bought until 1951.
-    </p>
-    <p>
-      One caution belongs on the number itself. The county in this list is the county of an address
-      a man gave when he entered the Army — or, failing that, of his next of kin, or of his draft
-      board. It is not where he lived and not where he is buried. The War Department set the rule
-      out in five numbered clauses and explained why it chose counties at all: "information media
-      rarely circulate in areas smaller than counties, and draft boards are located on a
-      county-population basis."
-    </p>
-  </section>
-
-  <section>
-    <h2>Ninety-nine papers</h2>
-    <AssertionCard assertion={press} />
-    <p>
-      For six phases this site read one Allen County newspaper — the Bluffton weekly, the only one
-      the Library of Congress has digitized — and said so plainly each time: no Lima paper is in the
-      archive. That was true, and it was stated without a denominator. Ninety-nine newspapers have
-      been printed in this county. Sixty-six of them in Lima.
-    </p>
-    <ChartFigure
-      id="county-papers"
-      title="Allen County newspaper titles, 1843–2026, by place of publication"
-      caption="Ninety-seven of the ninety-nine records name a place of publication inside the county; the other two were printed at Springfield and at Wapakoneta and filed under Allen. Dates are the cataloguer's earliest and latest sighted issue, and forty-five of the ninety-nine leave one end open."
-      columns={['Town', 'Titles']}
-      rows={press.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="county-papers" set:html={JSON.stringify(pressSpec)} is:inline />
-    <p>
-      Forty-three of the ninety-nine have no library reporting a copy anywhere. Of the fifty-six
-      that do, the Ohio History Connection holds runs of forty-three and the Lima Public Library of
-      nineteen. That is a count of what was reported to a union list, not a proof that nothing
-      survives — but it is what a reader with a research library card can and cannot reach.
-    </p>
-    <p>
-      The first was <em>The Porcupine</em>, a Democratic weekly whose volume 1, number 1 is dated
-      4 March 1843 — eleven months after Lima had a town government at all. It lasted seven months.
-      Eleven issues of it survive, all on one reel in Columbus.
-    </p>
-    <p>
-      The oldest thing still running is a volume count. The Lima News has carried one unbroken issue
-      number through nine titles since 27 October 1884, each successor opening at the number after
-      its predecessor's last:
-    </p>
-    <DataTable
-      title="One issue count, nine mastheads"
-      caption="In the merger of May 1920 the paper kept the News's name and the Times-Democrat's age: the Lima Daily News ended its 24th year on 2 May and the combined paper appeared the next day as the 36th."
-      columns={['Title', 'From', 'Numbering']}
-      rows={limaNewsLineage}
-    />
-    <p>
-      And a strike is legible from three catalogue records and nothing else. The Lima News was
-      suspended from 10 May to 27 June 1957. <em>The Bulletin</em> — numbers 1 to 4, on exactly
-      those dates, imprint "Lima, Ohio : Union Newspaper Workers" — was published, in the
-      cataloguer's words, by "striking and locked out workers of the Lima news". Four days after the
-      News came back, Lima had a second daily: the Lima Citizen, 1 July 1957 to 7 January 1964. It
-      is the last competitor the city has had.
-    </p>
-  </section>
-
-  <section>
-    <h2>A hundred and sixty congregations</h2>
-    <AssertionCard assertion={faith} />
-    <p>
-      Forty-nine religious bodies report a congregation in Allen County and between them they
-      report 58,696 adherents — 57.4 per cent of the county's 102,206 people. Two bodies hold
-      nearly half of that: the Catholic Church, 14,732 adherents in eight congregations, and the
-      non-denominational Christian churches, 11,530 in twenty-five. Seventeen congregations belong
-      to historically Black denominations and sixteen are Anabaptist in origin.
-    </p>
-    <ChartFigure
-      id="county-adherents"
-      title="Allen County and its neighbours: adherents as a share of population, 2020"
-      caption="Adherents are what each religious body reported, and the bodies do not share a definition — some count baptized infants, some confessing adults. The remaining share of any county is people no body reported, which is not the same as people who belong to none."
-      columns={['County', 'Per cent']}
-      rows={faith.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="county-adherents" set:html={JSON.stringify(faithSpec)} is:inline />
-    <p>
-      The gradient across this corner of Ohio is steep and Allen sits in the middle of it. Mercer,
-      Putnam and Shelby, in the German Catholic settlement country to the south and west, run 64 to
-      78 per cent. Hardin, Van Wert, Logan and Hancock, to the north and east, run 31 to 41.
-    </p>
-    <p>
-      A century earlier the county counted itself differently. A religious survey reported in 1921
-      put church attendance at "about 25 per cent of the population" and communicants at "something
-      like 17,000" — which, against a county of 68,223 in 1920, works out to 24.9 per cent, so the
-      estimate at least checks against the census. It is not the same measurement as the 2020 one.
-      One counts people who attend; the other counts people a religious body reports. This site
-      holds both and draws no line between them.
-    </p>
-    <DataTable
-      title="Bluffton in 1906, member by member"
-      caption="The 1906 county history called Bluffton 'a village of churches' and printed every membership. The Swiss Mennonite figure covers St. John's, Ebenezer and the Bluffton congregation together and is not a village number; the seven village congregations come to 627, against a village of 1,783 in 1900."
-      columns={['Congregation', 'Members']}
-      rows={blufftonChurches}
-    />
-    <p>
-      The oldest congregation in the county seat is disputed between two books. Trinity Methodist's
-      cornerstone reads a mission in 1829 and a church organization in 1832; the Market Street
-      Presbyterian church was organized in August 1833, on the first of the month with nine people
-      by one account and on the twenty-fourth with fourteen charter members by the other. What all
-      the accounts agree on is that Lima had organized religion before it had a town government,
-      which it did not get until 1842. Its synagogue, Temple Beth Israel, was built in 1914 — the
-      Jewish year 5674 — with "Mine House of Prayer for All Peoples" over the door.
-    </p>
-  </section>
-
-  <section>
-    <h2>Three times a mob came to the jail</h2>
-    <AssertionCard assertion={jail} />
-    <p>
-      This site has held the raid of October 1933 since its early phases — the night Sheriff Jess
-      Sarber was shot dead in the Allen County jail. It turns out to be the third such night, not
-      the first, and the 1921 county history had both of the others on facing pages.
-    </p>
-    <DataTable
-      title="Sixty-one years, three crowds"
-      caption="The 1921 history states the sheriff's duty in the same paragraph as its roster of holders: he 'is provided with a domicile in connection with the bastile, and it becomes his duty to prevent lynchings, riots and all violent disorders.'"
-      columns={['When', 'What', 'What happened']}
-      rows={jailCrowds}
-    />
-    <p>
-      The book cannot give a day for the 1872 hanging — it prints "Friday, April 7 or 15, 1872 —
-      there being conflicting reports about it". Neither date was a Friday. The 7th was a Sunday and
-      the 15th a Monday, and the Fridays that April were the 5th, 12th, 19th and 26th. Governor
-      Rutherford B. Hayes had granted the condemned man a hundred days' reprieve from a sentence
-      date of 20 January, which lands on 29 April, later than either.
-    </p>
-    <p>
-      The same volume carries the only description this site holds of the county's Black population
-      before the census tables of the present century: about 2,500 people in 1921, nearly all of
-      them in Lima, with four congregations and five fraternal orders. Its two voter counts are four
-      years apart and the second is the first to include women.
-    </p>
-    <ChartFigure
-      id="lima-black-voters"
-      title="Black voters in Lima, as the 1921 county history reports them"
-      caption="The book gives one cause — migration into the county — for a change that also spans the Nineteenth Amendment, and does not separate the two. Both figures are the book's estimates, not counts."
-      columns={['Year', 'Voters']}
-      rows={jail.figures.map((f) => [f.label, f.value])}
-    />
-    <script type="application/json" data-chart-spec="lima-black-voters" set:html={JSON.stringify(jailSpec)} is:inline />
-    <p>
-      It is a source that has to be read against itself. On one page: "While most of the negroes
-      live in certain localities, there is no segregation." On the next: "It is said the negroes do
-      not live north of the Pennsylvania railway tracks in Lima," and "once in a while the color
-      line is drawn, and the negroes remain south of the railway tracks for safety." This site
-      records the contradiction and does not resolve it. The same chapter says the county's Jewish
-      community began with Levi Jacobs about 1850 and "never located in any other town in Allen
-      County" — a dozen families in 1878, about a hundred and some 350 people by 1921, seven years
-      after they built Temple Beth Israel.
-    </p>
-  </section>
-
-  <section>
-    <h2>Who the county is named for</h2>
-    <AssertionCard assertion={colonel} />
-    <p>
-      Two men are usually offered: Ethan Allen of Vermont, and John Allen, a Kentucky colonel
-      killed at the River Raisin in January 1813. The earliest general account of Ohio's counties
-      this site holds is Henry Howe's, published in 1847 — thirty-eight years before the county's
-      own first history — and it settles half the question in one clause: Allen was
-      <em>"named in honor of a colonel of that name in the war of 1812."</em> Ethan Allen died in
-      1789.
-    </p>
-    <p>
-      What Howe has is a rank and a war, not a man, and forty years of revision did not supply one.
-      Of the fourteen counties the act of 12 February 1820 laid out of the cession, he attributes
-      eleven; eight of the persons he names in full, and two he gives only a rank and a war — Allen
-      and Wood, the two most recent deaths on the list.
-    </p>
-    <ChartFigure
-      id="counties-of-1820"
-      title="The fourteen counties of 1820, by what Howe's formation sentence gives"
-      caption="Every man Howe names in full belongs to the Revolution — including Paulding, Van Wert and Williams, the three militiamen who took Major André in 1780, given a county each on adjoining ground. The two he identifies only by rank and war are the two officers of 1812."
-      columns={['', 'Counties']}
-      rows={colonel.figures.map((f) => [f.label, f.value])}
-      height={260}
-    />
-    <script type="application/json" data-chart-spec="counties-of-1820" set:html={JSON.stringify(colonelSpec)} is:inline />
-    <DataTable
-      title="What Howe's 1847 formation sentence says of each"
-      caption="Read entry by entry rather than by search: the attribution appears only in the formation sentence, and a keyword search for “named in honor” finds two of the eleven."
-      columns={['County', 'Named from']}
-      rows={namesOf1820}
-    />
-    <p>
-      The Ethan Allen story has a source and a date. The 1921 county history dates the act, then
-      reasons from the company the name keeps — the assembly "evidently had in mind a number of
-      Revolutionary patriots" — and turns to "the life and character of the patriot <em>seemingly</em>
-      honored in the name of Allen County," followed by a page and a half on Ethan Allen. Both
-      hedges are the book's own. Sixty-five pages earlier the same volume has Col. John Allen riding
-      out with 110 men toward Frenchtown, and never joins the two.
-    </p>
-    <p>
-      One correction falls out of this. This site used to say the 1885 county history "gives
-      namesakes freely" and declines to give one here. It does not: its chapter on Ohio's counties
-      runs to seventy-nine entries and carries exactly one namesake, its first. The silence about
-      Allen was the book's habit, not a judgment about Allen.
-    </p>
-  </section>
+    <section class="onward">
+      <h2>Where this goes on</h2>
+      <ul>
+        <li>
+          <a href="/read/the-fort-across-the-line">The fort across the line</a>
+          <span class="why">The county's first settlement stands nine hundred and ninety feet outside it.</span>
+        </li>
+        <li>
+          <a href="/read/who-the-county-is-named-for">Who the county is named for</a>
+          <span class="why">A colonel of the War of 1812, and the earliest account cannot name him.</span>
+        </li>
+        <li>
+          <a href="/read/one-person-in-ten">One person in ten</a>
+          <span class="why">The county put 1,920 men into the Civil War and never added up its own dead.</span>
+        </li>
+        <li>
+          <a href="/read/three-times-a-crowd-came-to-the-jail">Three times a crowd came to the jail</a>
+          <span class="why">Sixty-one years, three crowds, and an office that passed from father to son.</span>
+        </li>
+        <li>
+          <a href="/read/two-counts-of-one-war">Two counts of one war</a>
+          <span class="why">The county counted its World War soldiers twice and got different answers.</span>
+        </li>
+        <li>
+          <a href="/read/what-the-sky-did">What the sky did</a>
+          <span class="why">A thirty-fold rise in severe weather reports that is mostly categories arriving.</span>
+        </li>
+        <li>
+          <a href="/read#history">The reading room</a>
+          <span class="why">All thirteen shorter pieces filed under this section.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
 
   <script>
     import { renderCharts } from '../scripts/charts'

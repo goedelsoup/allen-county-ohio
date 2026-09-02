@@ -1,6 +1,7 @@
 ---
 import '../styles/tokens.css'
 import { manifest } from '../lib/feeds'
+import { INSTRUMENTS, SECTIONS } from '../lib/sections'
 
 interface Props {
   title: string
@@ -16,21 +17,6 @@ const SITE = 'Allen County, Ohio'
 // The home page is already called what the site is called; appending it reads as a stutter.
 const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
 
-const nav = [
-  { href: '/', label: 'The county' },
-  { href: '/map', label: 'Map' },
-  { href: '/history', label: 'History' },
-  { href: '/population', label: 'Population' },
-  { href: '/housing', label: 'Housing' },
-  { href: '/land', label: 'Land' },
-  { href: '/work', label: 'Work' },
-  { href: '/schools', label: 'Schools' },
-  { href: '/health', label: 'Health' },
-  { href: '/elections', label: 'Elections' },
-  { href: '/government', label: 'Government' },
-  { href: '/entry', label: 'Entries' },
-  { href: '/corpus', label: 'What this rests on' },
-]
 ---
 
 <html lang="en">
@@ -65,11 +51,15 @@ const nav = [
       </div>
       <div class="navbar">
         <nav class="nav-inner" aria-label="Sections">
-          <ul>
+          <ul class="reading-tabs">
             {
-              nav.map((item) => (
+              SECTIONS.map((item) => (
                 <li>
-                  <a href={item.href} aria-current={here === item.href ? 'page' : undefined}>
+                  <a
+                    href={item.href}
+                    title={item.question}
+                    aria-current={here === item.href ? 'page' : undefined}
+                  >
                     {item.label}
                   </a>
                 </li>
@@ -77,6 +67,21 @@ const nav = [
             }
           </ul>
           <span class="nav-spacer"></span>
+          <ul class="instrument-tabs" aria-label="Instruments">
+            {
+              INSTRUMENTS.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    title={item.question}
+                    aria-current={here.startsWith(item.href) ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
           <span class="nav-meta data">Feed v{manifest.feed_version}</span>
         </nav>
       </div>
@@ -175,12 +180,12 @@ const nav = [
       }
       .nav-inner ul {
         display: flex;
-        flex-wrap: wrap;
         gap: 0 var(--space-7);
         list-style: none;
         margin: 0;
         padding: 0;
       }
+
       .nav-inner a {
         display: block;
         padding: var(--space-4) 0;
@@ -201,12 +206,69 @@ const nav = [
         color: var(--text-strong);
         border-bottom-color: var(--rubric-500);
       }
+
+      /*
+       * The reading tabs and the instruments are two different things and were
+       * one undifferentiated row of thirteen. The instruments are what a reader
+       * reaches for; separating them is what stopped the map competing with the
+       * history page for the same eye.
+       *
+       * Scoped under .nav-inner rather than marked !important: `.nav-inner ul`
+       * is a class plus a type and would otherwise win the padding.
+       */
+      .nav-inner .instrument-tabs {
+        border-left: 1px solid var(--rule-hairline);
+        padding-left: var(--space-7);
+        gap: 0 var(--space-6);
+      }
+      .nav-inner .instrument-tabs a {
+        font-size: var(--size-micro);
+        color: var(--text-faint);
+        letter-spacing: var(--tracking-label);
+      }
+      .nav-inner .instrument-tabs a:hover,
+      .nav-inner .instrument-tabs a[aria-current='page'] {
+        color: var(--text-strong);
+      }
       .nav-spacer {
         flex: 1;
       }
       .nav-meta {
         font-size: var(--size-micro);
         color: var(--text-faint);
+        margin-left: var(--space-7);
+      }
+
+      /*
+       * Below the width that fits one row, the nav scrolls rather than wrapping.
+       * Thirteen wrapped items were a nine-line slab above every page on a
+       * phone; six and three are one line and a swipe.
+       */
+      @media (width < 58rem) {
+        .nav-inner {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          scrollbar-width: none;
+          gap: 0;
+        }
+        .nav-inner::-webkit-scrollbar {
+          display: none;
+        }
+        .nav-inner ul {
+          flex: 0 0 auto;
+        }
+        .nav-inner a {
+          white-space: nowrap;
+        }
+        .nav-spacer {
+          flex: 0 0 var(--space-6);
+        }
+        .nav-inner .instrument-tabs {
+          padding-left: var(--space-6);
+        }
+        .nav-meta {
+          display: none;
+        }
       }
 
       main {

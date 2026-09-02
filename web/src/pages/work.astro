@@ -2,29 +2,13 @@
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
-import { assertion } from '../lib/feeds'
-import { bar } from '../lib/chart-spec'
+import DataTable from '../components/DataTable.astro'
+import { assertion, series } from '../lib/feeds'
+import { bar, line } from '../lib/chart-spec'
 
 const pay = assertion('the-biggest-employer-is-not-the-biggest-payer')
+
 const commute = assertion('half-the-jobs-here-are-held-by-outsiders')
-const moved = assertion('the-factories-left-lima-and-not-the-county')
-
-const movedSpec = bar(
-  moved.figures.map((f) => f.label),
-  moved.figures.map((f) => f.value),
-  { yTitle: "Lima's share, per cent", labelValues: true },
-)
-
-// County, city and the difference, at the seven censuses that print both rows on one page.
-const factories = [
-  ['1929', '6,588', '4,548', '2,040', '69.0'],
-  ['1939', '6,164', '4,770', '1,394', '77.4'],
-  ['1947', '14,709', '11,361', '3,348', '77.2'],
-  ['1954', '14,691', '11,073', '3,618', '75.4'],
-  ['1958', '13,526', '6,018', '7,508', '44.5'],
-  ['1963', '14,897', '5,346', '9,551', '35.9'],
-  ['1967', '16,400', '6,700', '9,700', '40.9'],
-]
 
 const paySpec = bar(
   pay.figures.map((f) => f.label),
@@ -37,14 +21,78 @@ const commuteSpec = bar(
   commute.figures.map((f) => f.value),
   { yTitle: 'People', labelValues: true },
 )
+
+const work = assertion('the-only-employment-figures')
+
+const factories = assertion('the-factories-stopped-leaving')
+
+const health = assertion('health-care-fell-too')
+
+const hospitals = assertion('five-hospitals-one-locally-owned')
+
+const refinery = assertion('the-refinery-outgrew-them')
+
+const outside = assertion('the-plants-are-outside-every-city')
+
+const stopped = assertion('the-workforce-stopped-growing-in-1914')
+
+// Lima's factory workforce at six censuses. From the assertion's own figures, so the chart cannot
+// drift from the prose the gate checked.
+const stoppedSpec = line(
+  stopped.figures.map((f) => f.label),
+  [{ name: 'Manufacturing wage earners, Lima', y: stopped.figures.map((f) => f.value) }],
+  { yTitle: 'Manufacturing wage earners, city of Lima', zeroBased: true, labelLast: true },
+)
+
+// The county and the city in 1929, and the difference between them. Typed out because the third
+// column is computed and the graph carries only the two the volume prints.
+const manufactures1929 = [
+  ['Establishments', '108', '72', '36'],
+  ['Wage earners', '6,588', '4,548', '2,040'],
+  ['Horsepower', '21,717', '13,030', '8,687'],
+  ['Wages', '$8,337,261', '$5,666,171', '$2,671,090'],
+  ['Value of products', '$47,139,403', '$29,595,853', '$17,543,550'],
+  ['Value added', '$18,544,201', '$13,391,977', '$5,152,224'],
+]
+
+// Three points five years apart, which is why they are bars: the gaps are not decades and a
+// line across them would imply a path through 1902 that nobody counted.
+// Four components of one subtraction, so a bar chart and not a line: these are the pieces of
+// a single twelve-year loss, not a series through time. They sum to 2,593, which is the whole
+// of it — the four subsectors close against the sector total in every one of the thirteen years.
+const healthSpec = bar(health.figures.map((f) => f.label), health.figures.map((f) => f.value), {
+  yTitle: 'Jobs lost, 2010–2022',
+  labelValues: true,
+})
+
+// Four points at uneven spacing across thirty-one reports, so a bar chart rather than a line:
+// the gaps between them are nine, four and nineteen years, and a line drawn across those states
+// a rate the spacing does not support. 1996 and 1998 are not published at all.
+const refinerySpec = bar(refinery.figures.map((f) => f.label), refinery.figures.map((f) => f.value), {
+  yTitle: 'Barrels of crude per calendar day',
+  labelValues: true,
+})
+
+const workSpec = bar(work.figures.map((f) => f.label), work.figures.map((f) => f.value), {
+  yTitle: 'Manufacturing wage earners, Lima',
+  labelValues: true,
+})
+
+// Three points across thirty-six years, so bars rather than a line: the corpus read nine files
+// and this chart shows the two ends and the floor between them.
+const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures.map((f) => f.value), {
+  yTitle: 'Manufacturing employment, Allen County',
+  labelValues: true,
+})
 ---
 
 <Base
   title="Work"
-  lede="What work there is in Allen County, what it pays, and how many of the people doing it live somewhere else."
+  lede="Allen County was a factory county. This page is about what happened to that, what stands in its place, and who the work belongs to."
 >
+  <div class="reading">
   <section>
-    <h2>Thirteen phases of counting jobs, and none of counting pay</h2>
+    <h2>Thirteen ways of counting jobs, and none of counting pay</h2>
     <p>
       This corpus has held the county's employment since its ninth phase — by sector, back to 1969,
       through the manufacturing decline and out the other side. It had never held a wage. The
@@ -71,6 +119,228 @@ const commuteSpec = bar(
       site calls deindustrialization ended with manufacturing still the best-paid large sector here;
       what replaced the jobs did not replace the pay. The corpus holds one year of wages and cannot
       say when that gap opened.
+    </p>
+  </section>
+
+  <section>
+    <h2>Where the industrial city started</h2>
+    <p>
+      This period is named for manufacturing, and for eleven phases every figure on this page was
+      population. The corpus holds three counts from before 1910: Lima had 1,980 manufacturing wage
+      earners in 1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments, of whom thirty per
+      cent were women and fifty-one were under sixteen. Its leading industries were tobacco and
+      locomotives. That is the industrial city sixty years before the decline this page describes —
+      a baseline, and not an explanation.
+    </p>
+    <AssertionCard assertion={work} />
+
+    <ChartFigure
+      id="work"
+      title="Lima manufacturing wage earners, 1899–1909"
+      caption="Census of Manufactures. Establishments inside the city limits only, which the volume states in a footnote — and the county's largest industrial installation, the refinery, is outside the city line today. Between 1899 and 1904 the workforce grew 38 per cent while the value of what it made fell 22."
+      columns={['Census year', 'Wage earners']}
+      rows={work.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="work" set:html={JSON.stringify(workSpec)} is:inline />
+    <AssertionCard assertion={stopped} />
+    <p>
+      Three more censuses have since been read, from the Ohio state volume of each, and they change
+      the shape of that baseline. Lima's factory workforce grew by 146 per cent in the fifteen years
+      to 1914 — and then by twenty-five people in the five years after it, a span that contains a
+      world war. By 1929 it was 4,548, three hundred and twenty-eight below the 1914 figure. The
+      growth had stopped fifteen years before the Depression and forty before the decline this page
+      is named for.
+    </p>
+    <ChartFigure
+      id="lima-workforce-1899-1929"
+      title="Lima manufacturing wage earners, 1899–1929"
+      caption="The count of establishments falls from 108 in 1919 to 72 in 1929, and about half of that is the Bureau raising its minimum from $500 of product to $5,000 — a change it measured at a 21.6 per cent reduction nationally. Wage earners are unaffected: 99.4 per cent of them worked in establishments above the higher line."
+      columns={['Census year', 'Wage earners']}
+      rows={stopped.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={300}
+    />
+    <script type="application/json" data-chart-spec="lima-workforce-1899-1929" set:html={JSON.stringify(stoppedSpec)} is:inline />
+    <p>
+      The 1929 volume is also the first that reports Allen County at all, which lets the city be set
+      against the county around it for the first time before 1969.
+    </p>
+    <DataTable
+      title="Manufacturing in Allen County and Lima, 1929"
+      caption="The first two columns are the volume's; the third is the difference. The 2,040 wage earners outside the city line averaged $1,309 in wages against $1,246 inside it, and added $2,526 of value each against $2,944 — the shape of processing rather than assembly, in a county whose refinery stands outside every municipality."
+      columns={['', 'Allen County', 'Lima', 'Outside Lima']}
+      rows={manufactures1929}
+    />
+    <p>
+      And the county's 6,588 wage earners in 1929 are fewer than the 8,715 manufacturing jobs it
+      recorded in 2022 — even after allowing for the salaried officers and clerks the census
+      excluded and the modern series counts. Whatever this county's industrial century was, its top
+      is inside the forty years between 1929 and 1969 that no volume covers.
+    </p>
+  </section>
+
+  <section>
+    <h2>And what happened to it</h2>
+    <p>
+      The Bureau of Economic Analysis has counted this county's jobs by industry every year since
+      1969, and the decline this page is named for is in it, whole:
+      <strong>manufacturing employment peaked at 18,400 in 1973 and bottomed at 7,775 in 2009</strong>.
+      Fifty-eight per cent of it, over thirty-six years.
+    </p>
+    <p>
+      The peak is three years <em>after</em> Lima's population peak, and the county's factories were
+      still within eleven jobs of that peak in 1979. Whatever emptied the city, it had started
+      before the manufacturing decline that is supposed to explain it.
+    </p>
+    <AssertionCard assertion={factories} />
+
+    <ChartFigure
+      id="factories"
+      title="Manufacturing employment, Allen County, 1973–2022"
+      caption="BEA Regional Economic Accounts, all jobs including proprietors and government. The 1982 and 1986 points are here on purpose: 1982 is a recession trough and 1986 a recovery high, and an earlier version of this chart began at 1986 and read it as a stage of the fall. County Business Patterns, a separate programme counting private employees only, gives a lower level and the same shape."
+      columns={['Year', 'Manufacturing jobs']}
+      rows={factories.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="factories" set:html={JSON.stringify(factorySpec)} is:inline />
+
+    <p>
+      Then it stopped. Manufacturing bottomed in 2009 and has risen since, to 8,715 in 2022 — while
+      the county went on losing people. On the separate County Business Patterns count, private
+      employment fell by 3,709 between 2010 and 2022 while manufacturing rose by 1,446, so every net
+      job lost in those twelve years was lost somewhere else. The largest single loss was health
+      care, down 2,593 to 9,151, and health care is now the county's biggest private employer
+      sector — and falling, which the next section is about.
+    </p>
+    <p>
+      And for thirty-one years before any of that, the county's jobs went <em>up</em>. Total
+      employment rose from 56,562 in 1969 to 72,973 in 2000 — twenty-nine per cent — through the
+      whole of the period this page calls decline, and peaked twenty years after the population did.
+      Whatever Allen County lost between 1980 and 2000, it was not work.
+    </p>
+    <p>
+      Which is why the caveat under the chart at the top of this page changed rather than
+      disappearing. It used to say the corpus had not measured the cause. It now says the corpus
+      does not establish that the population decline was caused by the manufacturing decline — and
+      it says so from a stronger position, because for the last twelve years the proposed cause
+      moves opposite to the effect.
+    </p>
+    <p>
+      The corpus used to hold one period for all of this, called <em>deindustrialization</em> and
+      dated from roughly 1970. It now holds two, because these are two processes and they do not
+      share a span. Deindustrialization runs 1979 to 2009 and has ended. Depopulation runs from
+      1970 and has not. The old start date was read off the population series and written on a node
+      named for industry, which nothing could contradict until the industry was counted.
+    </p>
+  </section>
+
+  <section>
+    <h2>What replaced it is falling too</h2>
+    <p>
+      Health care overtook manufacturing to become Allen County's largest private employer sector,
+      and it did not hold. It <strong>peaked at 12,431 in 2013</strong> and stood at 9,151 in 2022 —
+      a bigger fall, in nine years, than manufacturing managed in the twelve before it.
+    </p>
+    <p>
+      This page said something weaker and wronger until now. It said health care had fallen from
+      11,744 in 2010, because the corpus had read County Business Patterns at five-year steps and
+      2013 was not one of the steps. The levels were right and the shape was not, and a sample can
+      only ever report the first. The nine missing files were in the same directory as the four that
+      were taken.
+    </p>
+    <AssertionCard assertion={health} />
+
+    <ChartFigure
+      id="health"
+      title="Where Allen County's health care jobs went, 2010–2022"
+      caption="County Business Patterns, NAICS 62 and its four subsectors. The four sum to 2,593, which is the sector's whole loss against 2010 — they close against the sector total exactly in all thirteen years, so nothing here is suppressed or unaccounted. Measured from the 2013 peak instead, the sector lost 3,280 and ambulatory care rather than hospitals is the largest single piece; the corpus carries every baseline rather than the one that reads best."
+      columns={['Subsector', 'Jobs lost']}
+      rows={health.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="health" set:html={JSON.stringify(healthSpec)} is:inline />
+
+    <p>
+      Which is as far as the numbers go. The corpus can now say <em>what</em> contracted and still
+      holds nothing that says why, and 2020 sits inside the window with its effect on the 2022
+      reading unseparated.
+    </p>
+
+    <h3>Who the employers are</h3>
+    <p>
+      For eight phases this corpus measured a county's work and never named an employer. It now
+      names five, in the sector that employs the most people here — and the useful fact about them
+      is not their size.
+    </p>
+    <AssertionCard assertion={hospitals} />
+    <p>
+      Every one of the five trades under a name that is not the name of the body that enrolls with
+      Medicare. Two are unrecognisable from the sign: the orthopaedic hospital enrolls as West
+      Central Ohio Group Ltd., and Bluffton Hospital as Blanchard Valley Regional Health Center — a
+      name belonging to a valley in the next county, which is also where its owner is.
+    </p>
+    <p>
+      Two of them stand at the same address, 730 West Market Street, so the county's five hospitals
+      occupy four buildings. And one of them is not in Lima at all: the Institute for Orthopaedic
+      Surgery has a Lima postal address and sits in Perry Township, outside any municipality, as the
+      refinery and the tank plant do. That was checked before it was written rather than after,
+      which is the fourth time this corpus has had to ask the question and the first time it asked
+      it in advance.
+    </p>
+  </section>
+
+  <section>
+    <h2>The one that grew, and where it stands</h2>
+    <p>
+      Every other chart on this page counts people. This one counts what the county can make, and it
+      goes the other way. The refinery Standard Oil put on a Shawnee Township farm in 1886 could run
+      <strong>145,000 barrels of crude a day in 1994 and can run 183,000 now</strong> — up a quarter,
+      across the same decades in which the county's manufacturing employment fell by more than half.
+    </p>
+    <AssertionCard assertion={refinery} />
+
+    <ChartFigure
+      id="refinery"
+      title="Lima refinery crude capacity, 1994–2026"
+      caption="EIA Refinery Capacity Report, atmospheric crude distillation in barrels per calendar day, as of 1 January of each report year. Four of thirty-one reports are shown; 1996 and 1998 are not published. The 2007 trough is the last year the works filed as Premcor, and every year since is higher."
+      columns={['Report year', 'Barrels per calendar day']}
+      rows={refinery.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="refinery" set:html={JSON.stringify(refinerySpec)} is:inline />
+
+    <p>
+      A county's output and a county's payroll are not the same quantity, and this is the clearest
+      case of it here. The refinery is the largest in Ohio and thirty-sixth of the hundred and
+      twenty-four in the country, and nothing on this page says how many people work in it — because
+      no source the corpus holds does.
+    </p>
+    <p>
+      Who operates it was an open question in this corpus from its first day. It is BP through the
+      1997 report, Clark Refining, then Premcor, then the Lima Refining Company from 2008 — under
+      Husky Energy from 2010 and Cenovus since 2022. The hundred and eight years between the Solar
+      Refining Company in 1886 and BP in 1994 are still unsourced, and the federal census cannot
+      supply them: its corporate-parent column does not exist before 2010.
+    </p>
+    <p>
+      Meanwhile Allen County's own address file still labels the site <em>Valero Lima Refinery</em>,
+      and the federal census never prints the word Valero in any year of any report. Two authorities,
+      two companies, one set of works, and neither name carries a date.
+    </p>
+
+    <h3>None of them is in a city</h3>
+    <AssertionCard assertion={outside} open />
+    <p>
+      The refinery and the tank plant stand in Shawnee Township; the Ford engine plant stands in
+      Bath. All three have Lima postal addresses and none of them is in Lima, or in any other
+      municipality. That is a fact about who may levy on the county's industrial base before it is a
+      fact about geography.
+    </p>
+    <p>
+      The corpus asserted the opposite about the refinery and the tank plant from its first day, on
+      the strength of their addresses and their names. It has now had to check five times, and the
+      last two — the Institute for Orthopaedic Surgery and this engine plant — were checked before
+      the claim was written rather than after. One of those two was in Lima. The other was not.
     </p>
   </section>
 
@@ -103,49 +373,29 @@ const commuteSpec = bar(
     </p>
   </section>
 
-  <section>
-    <h2>The factories left Lima and they did not leave the county</h2>
-    <p>
-      Between the 1929 census of manufactures and the federal employment series that opens in 1969
-      lay forty years this corpus could not see. It expected the county's industrial peak to be
-      somewhere inside them — the Depression at one end, the tank plant and the war in the middle.
-      Five volumes on a shelf nobody had walked hold six censuses of those years, and the peak is
-      not in them. The highest figure any of them returns is 16,400 in 1967, and the modern series
-      opens two years later at 17,623 and tops out at 18,400 in 1973.
-    </p>
-    <AssertionCard assertion={moved} />
-    <ChartFigure
-      id="moved"
-      title="Lima's share of Allen County's factory workforce, 1929–1967"
-      caption="Census of Manufactures, Ohio chapters. The first two censuses count wage earners and the last five count all employees, which is why the share is drawn and the levels are not: the city and the county change column together on the same page, so their ratio survives a break the two levels do not."
-      columns={['Census', 'County', 'Lima', 'Outside Lima', "Lima's share"]}
-      rows={factories}
-    />
-    <script type="application/json" data-chart-spec="moved" set:html={JSON.stringify(movedSpec)} is:inline />
-    <p>
-      Four years did it. In 1954 Lima held 11,073 of the county's 14,691 factory jobs; in 1958 it
-      held 6,018 of 13,526. The city lost 5,055 people and the county lost 1,165, so the ground
-      outside the city line went from 3,618 to 7,508 — it more than doubled. Across the nine years
-      to 1963 the two move almost exactly against each other: Lima down 5,727, the outside up 5,933,
-      the county up 206.
-    </p>
-    <p>
-      The city did not lose factories. It had 84 establishments in 1954 and 88 in 1958, and the
-      average one went from 132 people to 68. All three of the county's large industrial
-      installations stand outside every municipality — the refinery and the tank plant in Shawnee
-      Township, the Ford engine plant in Bath — and the newest of them was under construction on
-      Bible Road in September 1957, which this corpus dates from a mechanic's lien rather than from
-      anything a census says. The census names no establishment, so what it shows is the shape and
-      not the cause.
-    </p>
-    <p>
-      Two other things fell out of the volumes. The Depression cost this county 6.4 per cent of its
-      factory workforce against Ohio's 16.0, and cost Lima nothing at all — the city came out of the
-      decade with 222 more wage earners than it went in with. And a third of the county's 1967
-      workforce built vehicles: 5,400 people in nine establishments, taking $23.0 million of the
-      $32.8 million spent on new plant in the county that year.
-    </p>
-  </section>
+    <section class="onward">
+      <h2>Where this goes on</h2>
+      <ul>
+        <li>
+          <a href="/read/the-factories-left-lima">The factories left Lima</a>
+          <span class="why">They did not leave the county: the city's share fell for forty years while the county's held.</span>
+        </li>
+        <li>
+          <a href="/read/two-tank-plants">Two tank plants</a>
+          <span class="why">Two tank installations, two years and a category apart, and what the war did to a builder's books.</span>
+        </li>
+        <li>
+          <a href="/people">People</a>
+          <span class="why">The workforce is the population, counted a second way.</span>
+        </li>
+        <li>
+          <a href="/read#work">The reading room</a>
+          <span class="why">Every shorter piece filed under this section.</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
   <script>
     import { renderCharts } from '../scripts/charts'
     renderCharts()

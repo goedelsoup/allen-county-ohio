@@ -1,0 +1,102 @@
+/*
+ * The furniture a reading page is made of.
+ *
+ * These rules were duplicated in the <style> block of five topic pages — the
+ * same `.tiles` grid four times, the same `section` margin three times, the
+ * same `.note` twice — because a page that grew by appending sections also
+ * grew by appending the styles those sections needed. Composing six reading
+ * pages out of twelve made the duplication a correctness problem rather than
+ * an untidiness: a section moving from /health to /people would have left its
+ * `.tiles` rule behind.
+ *
+ * So the furniture is shared and the pages carry only what is theirs. A page
+ * still writes a <style> block for anything genuinely local — the map's
+ * canvas, the audit's tier cards.
+ *
+ * See `.yidam/decisions/a-page-is-an-argument-not-an-inbox.yml`.
+ */
+
+/* The movements of an argument, separated. */
+.reading section {
+  margin-top: var(--space-12);
+}
+
+.reading section:first-of-type {
+  margin-top: 0;
+}
+
+/*
+ * A row of figures, above the argument rather than inside it. Sized to fit
+ * four across at the content width and to fall to two and then one.
+ */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-11);
+}
+
+/* A page-level aside: what the section that follows does not establish. */
+.note {
+  max-width: var(--measure);
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  padding: var(--space-6) var(--space-7);
+  border-radius: var(--radius);
+  font-size: var(--size-body-s);
+}
+
+/*
+ * The paragraph under an h2 that says what the movement is for, where the
+ * heading alone does not carry it.
+ */
+.section-lede {
+  max-width: var(--measure);
+  color: var(--text-muted);
+  margin-bottom: var(--space-8);
+}
+
+/*
+ * The hand-off. Every reading page ends by naming what it did not cover and
+ * where that went, which is the difference between a page that ends and a page
+ * that stops.
+ */
+.onward {
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--rule-strong);
+  padding-top: var(--space-7);
+}
+
+.onward h2 {
+  font: var(--weight-medium) var(--size-body-s) / 1.2 var(--font-smallcaps);
+  letter-spacing: var(--tracking-smallcaps);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.onward ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5);
+  max-width: var(--measure);
+}
+
+.onward li {
+  border-left: 2px solid var(--rule-hairline);
+  padding-left: var(--space-5);
+}
+
+.onward a {
+  font: var(--weight-regular) var(--size-subhead) / 1.3 var(--font-serif);
+}
+
+.onward .why {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--size-caption);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
