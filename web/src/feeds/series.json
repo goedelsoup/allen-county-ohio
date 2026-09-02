@@ -2282,6 +2282,26 @@
       ]
     },
     {
+      "id": "place-allen-county::share-of-the-county-classified-as-cropland-or-pasture",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "share of the county classified as cropland or pasture",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "label": "What Allen County's ground is, 2008–2024",
+          "as_of": "2024",
+          "value": 70.3,
+          "published": "70.3",
+          "tier": "verified",
+          "source": "catalog/usda-cropscape-cdl.md",
+          "method": "CropScape's `GetCDLStat` for FIPS 39003, once per year 2008 through 2024. The call returns an XML element naming a CSV rather than the statistics themselves, and the CSV is fetched separately. Shares are computed against the classified total, which is 260,324 acres in every year from 2010 and within four acres of it in 2008 and 2009 — the file's own control on whether a year has been read correctly. Double-crop classes are counted once, in their own class, and so appear under neither of the crops they name. Slopes are least-squares fits over the seventeen annual totals. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::single-family-houses-authorized,-by-place",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -10883,6 +10903,195 @@
           "label": "United States",
           "value": 15.3,
           "literal": "15.3"
+        }
+      ]
+    },
+    {
+      "id": "what-the-farmland-became",
+      "statement": "Seventy per cent of Allen County is cropland and pasture, 17.8 per cent is developed and 10.4 per cent is forest. The county was 92.5 per cent farmland in 1910; what the missing third became is built ground and woodland, in that order, and there is more than twice as much of the first.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**Seventy per cent of Allen County is cropland and pasture, eighteen per cent is developed and ten per cent is forest.** [verified] — [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), 2024, every thirty-metre pixel in the county classified and counted.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-cropscape-cdl.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**The corpus knew the county was 92.5 per cent farmland in 1910 and 69.4 per cent in 2022, and had nothing that said what the other thirty per cent had become.** It is developed ground and woodland, in that order, and there is more than twice as much of the first as of the second. [inference] — computed here against [land in farms](allen-county-farmland-1910-2022.yml); see [the question](../question/when-the-farmland-went.yml).",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**Two instruments land within a point of each other on how much of the county is farmed.** This file puts crops and pasture at 70.3 per cent in 2024; the Census of Agriculture puts land in farms at 69.4 per cent in 2022. One counts pixels of growing things and the other counts acres a farm operator says they operate, so they are not the same quantity, and they agree anyway. [inference] — computed here against [the census of agriculture](../../catalog/usda-census-of-agriculture.md).",
+          "tier": "inference",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**In figures, the county's ground in 2024: 183,047 acres of crops and pasture, 46,307 developed, 27,037 forest and 3,076 water.** [verified] — read from the table above, same source.",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Crops and pasture",
+          "value": 183047.0,
+          "literal": "183,047"
+        },
+        {
+          "label": "Developed",
+          "value": 46307.0,
+          "literal": "46,307"
+        },
+        {
+          "label": "Forest",
+          "value": 27037.0,
+          "literal": "27,037"
+        },
+        {
+          "label": "Water",
+          "value": 3076.0,
+          "literal": "3,076"
+        }
+      ]
+    },
+    {
+      "id": "the-spring-the-county-was-not-planted",
+      "statement": "In 2019 one acre in five of Allen County's cropland was classified fallow — 37,726 acres against a median of 55 — with corn 25,865 acres below its neighbouring years. April to June that year brought 19.21 inches of rain against a long-run mean of 11.09, the third wettest planting season in a hundred and thirty-one.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**In 2019 one acre in five of this county's cropland was not planted.** `Fallow/Idle Cropland` holds 37,726 acres, against a median of 55 across the other sixteen years and a maximum elsewhere of 999. Corn fell 25,865 acres below the mean of the years either side and soybeans 7,854. [verified] — same source.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**The county's own rain record puts that year third wettest in a hundred and thirty-one.** April to June 2019 brought 19.21 inches against a long-run mean of 11.09 — behind only 2015 and 1957 — and May alone brought 7.38, the third wettest May of the record. [verified] — [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county precipitation, ranked here over the 131 complete years; see [the precipitation record](allen-county-precipitation-1895-2025.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**Two instruments with nothing in common say the same thing about one spring.** A satellite classifier that has never heard of a weather station, and a gridded rain record that has never seen a field, put the unplanted ground and the rain in the same twelve months. [inference] — the reasoning is this corpus's. Neither file records a farmer's decision, and the step from *wet* to *not planted* is not in either of them.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Acres fallow, 2019",
+          "value": 37726.0,
+          "literal": "37,726"
+        },
+        {
+          "label": "Corn shortfall",
+          "value": 25865.0,
+          "literal": "25,865"
+        },
+        {
+          "label": "Soybean shortfall",
+          "value": 7854.0,
+          "literal": "7,854"
+        }
+      ]
+    },
+    {
+      "id": "half-a-file-can-be-differenced",
+      "statement": "The same file that catches 2019 to the acre cannot measure development. Its developed class ranges over 3,226 acres in seventeen years and fits at minus thirty-five acres a year, in a county that annexed fifty-seven times between 1990 and 2024. One file, two classes, two epistemic statuses, and nothing in the file says which is which.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**The crop columns of that table may be differenced and the last two may not.** Developed ground ranges over 3,226 acres across the seventeen years — 6.9 per cent of the class — and its fitted slope is **minus 35 acres a year**, in a county that recorded fifty-seven annexations between 1990 and 2024 and builds two hundred-odd houses a year. Forest ranges over 21 per cent of itself and fits at plus 253. Those two columns are the classifier re-deciding, not the ground changing. [verified] — same source, computed here; see [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml) and [the annexations](allen-county-annexations-1990-2024.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-census-of-agriculture.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "soybeans-never-lost-the-lead",
+      "statement": "Soybeans have been Allen County's larger crop in every one of the seventeen years the pixels have been counted, never once reaching parity with corn. Winter wheat, meanwhile, lost two thirds of its ground between 2009 and 2012 and has not come back.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**Soybeans have been the larger crop in every one of the seventeen years.** The ratio of corn to soybean acreage runs between 0.63 and 0.90 and never reaches parity; the widest gap is 2017, with 97,740 acres of soybeans against 61,171 of corn. [verified] — same source, computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-land-cover-2008-2024.yml",
+          "node_label": "What Allen County's ground is, 2008–2024",
+          "span": "**Winter wheat lost two thirds of its ground in four years and never came back.** 21,483 acres in 2008, 25,210 in 2009, then 15,003, 17,196 and 6,688 in 2012; the highest of the twelve years since is 10,348. [verified] — same source.",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2008",
+          "value": 21483.0,
+          "literal": "21,483"
+        },
+        {
+          "label": "2009",
+          "value": 25210.0,
+          "literal": "25,210"
+        },
+        {
+          "label": "2010",
+          "value": 15003.0,
+          "literal": "15,003"
+        },
+        {
+          "label": "2011",
+          "value": 17196.0,
+          "literal": "17,196"
+        },
+        {
+          "label": "2012",
+          "value": 6688.0,
+          "literal": "6,688"
         }
       ]
     }
