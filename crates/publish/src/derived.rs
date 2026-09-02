@@ -3801,6 +3801,116 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Transport rise, repaired", value: 170.0, literal: "170" },
         ],
     },
+    // ── Environment ──
+    Assertion {
+        id: "the-county-leads-ohio-in-what-it-releases",
+        statement: "Allen County's facilities reported releasing more listed toxic chemical in \
+                    2024 than those of any other county in Ohio: 9,417,778 pounds, 18.0 per cent \
+                    of the state's total, on 0.85 per cent of its people. Two thirds of it went \
+                    down a deep injection well, a method only one other Ohio county used at all \
+                    that year; set the wells aside and the county is fifth.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**Allen County released more listed toxic chemical in 2024 than any other county in Ohio.**\n  9,417,778 pounds, 18.0 per cent of the state's 52.2 million, from 17 facilities \u{2014} ahead of\n  Ashtabula's 6.2 million from 28 and Cuyahoga's 4.7 million from 122. [verified] \u{2014} same dataset,\n  the whole state for 2024, summed here by county. The county holds 0.85 per cent of Ohio's people."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**That first place is made by a disposal method almost nobody else in Ohio uses.** 6.4 million of\n  the 9.4 million went down a deep injection well, and only two counties in the state injected\n  anything at all in 2024 \u{2014} this one and Sandusky. Set the wells aside and Allen is fifth, behind\n  Ashtabula, Gallia, Cuyahoga and Coshocton. [verified] \u{2014} same source, `UNINJ` media codes."
+            ),
+        ],
+        answers: &["cannot say that the fall in reported releases caused"],
+        figures: &[
+            Figure { label: "Allen", value: 9.4, literal: "9.4" },
+            Figure { label: "Ashtabula", value: 6.2, literal: "6.2" },
+            Figure { label: "Cuyahoga", value: 4.7, literal: "4.7" },
+        ],
+    },
+    Assertion {
+        id: "a-fifth-of-the-fall-is-the-list-changing",
+        statement: "Reported toxic releases in Allen County fall 86.5 per cent between 1987 and \
+                    2024. Restricted to the 85 chemicals reportable in every year of the series, \
+                    the fall is 64.2 per cent \u{2014} the difference is one chemical that left the \
+                    list. The air stream needs no such repair: 69.8 per cent raw against 69.9 \
+                    like-for-like.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**The headline fall is 86.5 per cent and the honest one is 64.2.** From 69,836,754 pounds in 1987\n  to 9,417,778 in 2024 on the raw totals; from 25,249,928 to 9,047,255 on the 85 chemicals\n  reportable throughout. The gap is one chemical: ammonium sulfate (solution), 126 million pounds\n  reported here in three years, off the list since 1993. [verified] \u{2014} same source, against the\n  chemical dictionary's `active_date` and `inactive_date`. See\n  [a revision that changes the roll](../../decisions/a-revision-that-changes-the-roll.yml)."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**The air series needs no such repair.** Air releases fall from 9,392,220 pounds to 2,836,097, a\n  drop of 69.8 per cent raw and 69.9 per cent like-for-like \u{2014} the delisted chemicals went almost\n  entirely down the wells, so they never sat in this stream. [verified] \u{2014} same dataset, the `AIR\n  FUG` and `AIR STACK` media codes."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**In figures, the four largest single-year totals and the four smallest**: 69,837 thousand pounds\n  in 1987, 59,213 in 1988, 58,030 in 1989 and 28,715 in 1991; 8,637 in 2023, 9,418 in 2024, 10,228\n  in 2020 and 10,630 in 2022. [inference] \u{2014} read from the table above."
+            ),
+        ],
+        answers: &["cannot say that the fall in reported releases caused"],
+        figures: &[
+            Figure { label: "Fall, as read", value: 86.5, literal: "86.5" },
+            Figure { label: "Fall, like-for-like", value: 64.2, literal: "64.2" },
+            Figure { label: "Fall, air only", value: 69.8, literal: "69.8" },
+        ],
+    },
+    Assertion {
+        id: "what-goes-to-the-air-fell-and-the-wells-did-not",
+        statement: "Carcinogenic releases to the air over Allen County fell 91.7 per cent between \
+                    1987 and 2024. Carcinogenic releases into its injection wells fell 9.9 per \
+                    cent and have been flat for two decades. The air stream also changed hands: \
+                    the nitriles plant was 88.3 per cent of it and a fertiliser works is 87.7 per \
+                    cent of it now.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**What goes into the air fell and what goes down the well did not.** Carcinogenic releases to air\n  fall from 546,216 pounds in 1987 to 45,369 in 2024, down 91.7 per cent. Carcinogenic releases to\n  injection wells go from 2,160,000 to 1,947,066, down 9.9 per cent, and average 2.59 million a\n  year over the first decade against 2.08 million over the last. [verified] \u{2014} same dataset,\n  `carc_ind` in the chemical dictionary."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**The air stream changed hands.** In 1987 the nitriles plant put 8,295,100 pounds into the air,\n  88.3 per cent of the county's total; in 2024 it put out 77,227. The largest air emitter now is\n  PCS Nitrogen at 2,485,957 pounds, 87.7 per cent of a much smaller total, and almost all of it\n  ammonia. One plant cut its air releases by ninety-nine per cent and a fertiliser works became the\n  county's chimney. [verified] \u{2014} same source, by facility."
+            ),
+        ],
+        answers: &["cannot say that the fall in reported releases caused"],
+        figures: &[
+            Figure { label: "Carcinogens to air, fall", value: 91.7, literal: "91.7" },
+            Figure { label: "Carcinogens to wells, fall", value: 9.9, literal: "9.9" },
+        ],
+    },
+    Assertion {
+        id: "what-ended-was-the-bad-day",
+        statement: "Allen County's median air-quality day is where it was in 1987 \u{2014} AQI 44 \
+                    then, 42 now. Its 90th percentile went from 112 to 58, and days unhealthy for \
+                    sensitive groups from 41 in 1998 to none in four of the last six years. What \
+                    improved over forty-five years of measurement was the bad day, not the \
+                    ordinary one.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-air-quality-1980-2024.yml",
+                "**The improvement is large and it is in the tail, not the middle.** The median day was AQI 44 in\n  1987 and 42 in 2024, which is barely a change. The 90th percentile went from 112 to 58, and days\n  at unhealthy for sensitive groups or worse from 32 to none. What ended was the bad day.\n  [verified] \u{2014} same file, `Median AQI` and `90th Percentile AQI`."
+            ),
+            support!(
+                "measure/allen-county-air-quality-1980-2024.yml",
+                "**Nineteen ninety-eight was the worst year in the record and 41 of its days were unhealthy for\n  somebody.** 17.3 per cent of the days monitored \u{2014} against 15.5 per cent in 1991, 16.4 in 1994 and\n  15.1 in both 1987 and 2002. No year since 2012 has passed 2.5 per cent. [verified] \u{2014} same source,\n  the share column above."
+            ),
+            support!(
+                "measure/allen-county-air-quality-1980-2024.yml",
+                "**In figures, the 90th-percentile AQI at five points in the record: 100 in 1990, 74 in 2000, 83\n  in 2010, 61 in 2019 and 58 in 2024.** [verified] \u{2014} read from the table above, same file."
+            ),
+        ],
+        answers: &["does not know what happened that"],
+        figures: &[
+            Figure { label: "1990", value: 100.0, literal: "100" },
+            Figure { label: "2000", value: 74.0, literal: "74" },
+            Figure { label: "2010", value: 83.0, literal: "83" },
+            Figure { label: "2019", value: 61.0, literal: "61" },
+            Figure { label: "2024", value: 58.0, literal: "58" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
