@@ -55,6 +55,24 @@ export const ARTICLES: Article[] = [
     entries: ['place/allen-county.yml'],
   },
   {
+    slug: 'first-in-ohio-and-the-air-is-clean',
+    title: 'First in Ohio, and the air is clean',
+    dek: 'No county in Ohio reported releasing more toxic chemical in 2024, and no year on record had fewer unhealthy days. Both are true and neither explains the other.',
+    section: 'ground',
+    era: [1980, 2024],
+    assertions: [
+      'the-county-leads-ohio-in-what-it-releases',
+      'a-fifth-of-the-fall-is-the-list-changing',
+      'what-goes-to-the-air-fell-and-the-wells-did-not',
+      'what-ended-was-the-bad-day',
+    ],
+    entries: [
+      'measure/allen-county-toxic-releases-1987-2024.yml',
+      'measure/allen-county-air-quality-1980-2024.yml',
+      'site/lima-refinery.yml',
+    ],
+  },
+  {
     slug: 'where-the-lines-moved',
     title: 'Where the lines moved',
     dek: 'Fifty-seven dated annexations, and a county that lost land it never lost.',

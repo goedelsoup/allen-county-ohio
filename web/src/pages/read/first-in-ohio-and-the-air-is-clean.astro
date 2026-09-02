@@ -1,0 +1,126 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const leads = assertion('the-county-leads-ohio-in-what-it-releases')
+const roll = assertion('a-fifth-of-the-fall-is-the-list-changing')
+const streams = assertion('what-goes-to-the-air-fell-and-the-wells-did-not')
+const badday = assertion('what-ended-was-the-bad-day')
+
+const spec = (a: typeof leads, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const leadsSpec = spec(leads, 'Million pounds, 2024')
+const rollSpec = spec(roll, 'Per cent fall, 1987–2024')
+const streamsSpec = spec(streams, 'Per cent fall, 1987–2024')
+const baddaySpec = spec(badday, '90th percentile AQI')
+---
+
+<Article slug="first-in-ohio-and-the-air-is-clean">
+  <p>
+    Seventeen industrial facilities in Allen County filed a form for 2024 saying how much listed
+    toxic chemical they had released. Added up, it is more than any other county in Ohio reported —
+    more than Cuyahoga, which has a hundred and twenty-two such facilities and thirteen times the
+    population. The county holds under one per cent of Ohio's people and eighteen per cent of what
+    Ohio reported putting out.
+  </p>
+  <AssertionCard assertion={leads} open />
+  <ChartFigure
+    id="counties"
+    title="The three largest county totals in Ohio, 2024"
+    caption="On-site releases in millions of pounds. Allen is first on 9.4 million from 17 facilities; Cuyahoga, third, reports 4.7 million from 122."
+    columns={['County', 'Million pounds']}
+    rows={leads.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="counties" set:html={JSON.stringify(leadsSpec)} is:inline />
+  <Gloss>
+    The inventory is not a measurement. A facility over a reporting threshold computes what it
+    released and files the number; nobody weighs it. The early years show the precision in the
+    figures themselves — 43,000,000 pounds, 11,000,000, 4,400,000 — round to two significant
+    figures because that is what the estimate was worth.
+  </Gloss>
+  <p>
+    Two thirds of the county's total went down a deep injection well, into a confined formation
+    below the drinking-water zone. That is a disposal method only one other county in Ohio used at
+    all in 2024. Set the wells aside and the county is fifth rather than first, which is a different
+    sentence about the same year and is also true.
+  </p>
+
+  <h2>The fall is real and smaller than the file first says</h2>
+  <p>
+    Over thirty-eight years the reported total drops from 69.8 million pounds to 9.4 — a fall of
+    86.5 per cent, and the most quotable number in the file. It is also not a comparison. What must
+    be reported is a list of chemicals with joining and leaving dates, and ammonium sulfate solution
+    was on that list for the first years of the series and is not on it now. This county reported
+    126 million pounds of it in three years.
+  </p>
+  <AssertionCard assertion={roll} />
+  <ChartFigure
+    id="roll"
+    title="The same fall, three ways"
+    caption="Restricted to the 85 chemicals reportable in every year of the series, the fall is 64.2 per cent rather than 86.5. Air releases need no such repair, because what left the list had gone down the wells."
+    columns={['Measure', 'Per cent fall']}
+    rows={roll.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="roll" set:html={JSON.stringify(rollSpec)} is:inline />
+
+  <h2>The air improved and the wells did not</h2>
+  <p>
+    Split by where the material went, the two streams have had different histories. Carcinogenic
+    releases to the air are down more than nine tenths. Carcinogenic releases into the injection
+    wells are almost exactly where they were in 1987, and have been flat for twenty years. The
+    chimney and the wellhead are not the same story and the county total tells neither.
+  </p>
+  <AssertionCard assertion={streams} />
+  <ChartFigure
+    id="streams"
+    title="Carcinogens, by where they went"
+    caption="Releases of chemicals the inventory flags as carcinogens, 1987 against 2024. To the air: 546,216 pounds down to 45,369. To the injection wells: 2,160,000 down to 1,947,066."
+    columns={['Stream', 'Per cent fall']}
+    rows={streams.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="streams" set:html={JSON.stringify(streamsSpec)} is:inline />
+  <p>
+    The air stream also changed hands completely. The nitriles plant on the county's east side put
+    8.3 million pounds into the air in 1987, seven eighths of the county's total, and 77,227 pounds
+    in 2024 — a cut of ninety-nine per cent. The largest emitter now is a fertiliser works, and
+    what it emits is mostly ammonia.
+  </p>
+
+  <h2>What the monitors measured</h2>
+  <p>
+    Beside all of that sits a second record, and it is measurement rather than estimate: forty-five
+    unbroken years of daily air-quality readings over this county. They improved, and they improved
+    in a particular way. The middle of the distribution has barely moved in forty years. The top of
+    it collapsed.
+  </p>
+  <AssertionCard assertion={badday} />
+  <ChartFigure
+    id="aqi"
+    title="The 90th-percentile air quality index, five points in the record"
+    caption="The day that only one in ten days is worse than. Lower is better; 100 is the threshold above which the air is unhealthy for sensitive groups."
+    columns={['Year', '90th percentile AQI']}
+    rows={badday.figures.map((f) => [f.label, String(f.value)])}
+  />
+  <script type="application/json" data-chart-spec="aqi" set:html={JSON.stringify(baddaySpec)} is:inline />
+  <p>
+    In 1998 forty-one days over Allen County were unhealthy for somebody. In four of the last six
+    years, none were. That is the whole of the improvement — the bad day ended, and the ordinary
+    day was always ordinary.
+  </p>
+  <p>
+    It is tempting to join the two records, and the arithmetic will not carry it. What sets this
+    county's index is ozone and fine particles, which drift in from a region far larger than the
+    county and are mostly not on the inventory's list at all; what is on the list is ammonia,
+    acetonitrile and propylene. Both series improve across the same decades. Neither is offered
+    here as the reason for the other.
+  </p>
+</Article>

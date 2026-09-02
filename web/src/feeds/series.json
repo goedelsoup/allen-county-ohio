@@ -842,6 +842,26 @@
       ]
     },
     {
+      "id": "place-allen-county::days-at-unhealthy-for-sensitive-groups-or-worse,-as-a-share-of-days-monitored",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "days at unhealthy for sensitive groups or worse, as a share of days monitored",
+      "unit": "days",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-air-quality-1980-2024.yml",
+          "label": "What the monitors measured over Allen County, 1980–2024",
+          "as_of": "2024",
+          "value": 0.0,
+          "published": "0",
+          "tier": "verified",
+          "source": "catalog/epa-airdata-aqi.md",
+          "method": "The EPA AirData annual AQI-by-county file for each year 1980–2024, unzipped, filtered to the row where `State` is Ohio and `County` is Allen. Shares are computed against `Days with AQI` rather than against 365. The six severity columns sum to `Days with AQI` in all forty-five rows and so do the per-pollutant columns, which is how the partition was confirmed. Ranks are over Ohio rows present in that year's file and are ranks among the monitored. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::domestic-animals-on-and-off-farms,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1748,6 +1768,26 @@
           "tier": "verified",
           "source": "catalog/census-2020-redistricting-file.md",
           "method": "Table H1, Occupancy Status, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171), file segment 02, the last three fields of each record. Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO and grouped by the header's county-subdivision code. [verified] Household size is population less group-quarters population, over occupied units, computed here for each subdivision. [inference] It is the definition the Census Bureau uses for average household size, and it is stated here rather than taken from a published table because no published table at this geography is held. Both closures were checked: the thirteen subdivision populations sum to the county's 102,206 and their units to 44,563, with no residual."
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::on-site-releases-of-listed-toxic-chemicals-reported-by-facilities-in-the-county",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "on-site releases of listed toxic chemicals reported by facilities in the county",
+      "unit": "pounds",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "label": "Toxic releases reported in Allen County, 1987–2024",
+          "as_of": "2024",
+          "value": 9417778.0,
+          "published": "9417778",
+          "tier": "verified",
+          "source": "catalog/epa-tri.md",
+          "method": "Envirofacts `tri_facility` filtered to Ohio and Allen County, joined to `tri_reporting_form` and `tri_release_qty`, all 55,329 release rows across reporting years 1987–2024. Quantities in grams — 252 rows, 11.5 grams in total, all dioxin — are excluded rather than converted. 1,506 rows carrying a range code instead of a quantity are excluded and could add at most 1.5 million pounds across the whole series. Historical media codes `LANDF8795` and `UNINJ8795` are summed with their replacements after checking that no form carries a nonzero quantity under both. The like-for-like column restricts to chemicals whose dictionary entry has an `active_date` of 1987 or earlier and no `inactive_date`. [verified]"
         }
       ]
     },
@@ -10180,6 +10220,211 @@
           "label": "Transport rise, repaired",
           "value": 170.0,
           "literal": "170"
+        }
+      ]
+    },
+    {
+      "id": "the-county-leads-ohio-in-what-it-releases",
+      "statement": "Allen County's facilities reported releasing more listed toxic chemical in 2024 than those of any other county in Ohio: 9,417,778 pounds, 18.0 per cent of the state's total, on 0.85 per cent of its people. Two thirds of it went down a deep injection well, a method only one other Ohio county used at all that year; set the wells aside and the county is fifth.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**Allen County released more listed toxic chemical in 2024 than any other county in Ohio.** 9,417,778 pounds, 18.0 per cent of the state's 52.2 million, from 17 facilities — ahead of Ashtabula's 6.2 million from 28 and Cuyahoga's 4.7 million from 122. [verified] — same dataset, the whole state for 2024, summed here by county. The county holds 0.85 per cent of Ohio's people.",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-tri.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**That first place is made by a disposal method almost nobody else in Ohio uses.** 6.4 million of the 9.4 million went down a deep injection well, and only two counties in the state injected anything at all in 2024 — this one and Sandusky. Set the wells aside and Allen is fifth, behind Ashtabula, Gallia, Cuyahoga and Coshocton. [verified] — same source, `UNINJ` media codes.",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-tri.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say that the fall in reported releases caused the improvement in measured air quality**, and the arithmetic runs against it: the county's air quality is set by ozone and fine particles, which are regional and mostly not on this list, while what is on this list is ammonia, acetonitrile and propylene."
+      ],
+      "figures": [
+        {
+          "label": "Allen",
+          "value": 9.4,
+          "literal": "9.4"
+        },
+        {
+          "label": "Ashtabula",
+          "value": 6.2,
+          "literal": "6.2"
+        },
+        {
+          "label": "Cuyahoga",
+          "value": 4.7,
+          "literal": "4.7"
+        }
+      ]
+    },
+    {
+      "id": "a-fifth-of-the-fall-is-the-list-changing",
+      "statement": "Reported toxic releases in Allen County fall 86.5 per cent between 1987 and 2024. Restricted to the 85 chemicals reportable in every year of the series, the fall is 64.2 per cent — the difference is one chemical that left the list. The air stream needs no such repair: 69.8 per cent raw against 69.9 like-for-like.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**The headline fall is 86.5 per cent and the honest one is 64.2.** From 69,836,754 pounds in 1987 to 9,417,778 in 2024 on the raw totals; from 25,249,928 to 9,047,255 on the 85 chemicals reportable throughout. The gap is one chemical: ammonium sulfate (solution), 126 million pounds reported here in three years, off the list since 1993. [verified] — same source, against the chemical dictionary's `active_date` and `inactive_date`. See [a revision that changes the roll](../../decisions/a-revision-that-changes-the-roll.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**The air series needs no such repair.** Air releases fall from 9,392,220 pounds to 2,836,097, a drop of 69.8 per cent raw and 69.9 per cent like-for-like — the delisted chemicals went almost entirely down the wells, so they never sat in this stream. [verified] — same dataset, the `AIR FUG` and `AIR STACK` media codes.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**In figures, the four largest single-year totals and the four smallest**: 69,837 thousand pounds in 1987, 59,213 in 1988, 58,030 in 1989 and 28,715 in 1991; 8,637 in 2023, 9,418 in 2024, 10,228 in 2020 and 10,630 in 2022. [inference] — read from the table above.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say that the fall in reported releases caused the improvement in measured air quality**, and the arithmetic runs against it: the county's air quality is set by ozone and fine particles, which are regional and mostly not on this list, while what is on this list is ammonia, acetonitrile and propylene."
+      ],
+      "figures": [
+        {
+          "label": "Fall, as read",
+          "value": 86.5,
+          "literal": "86.5"
+        },
+        {
+          "label": "Fall, like-for-like",
+          "value": 64.2,
+          "literal": "64.2"
+        },
+        {
+          "label": "Fall, air only",
+          "value": 69.8,
+          "literal": "69.8"
+        }
+      ]
+    },
+    {
+      "id": "what-goes-to-the-air-fell-and-the-wells-did-not",
+      "statement": "Carcinogenic releases to the air over Allen County fell 91.7 per cent between 1987 and 2024. Carcinogenic releases into its injection wells fell 9.9 per cent and have been flat for two decades. The air stream also changed hands: the nitriles plant was 88.3 per cent of it and a fertiliser works is 87.7 per cent of it now.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**What goes into the air fell and what goes down the well did not.** Carcinogenic releases to air fall from 546,216 pounds in 1987 to 45,369 in 2024, down 91.7 per cent. Carcinogenic releases to injection wells go from 2,160,000 to 1,947,066, down 9.9 per cent, and average 2.59 million a year over the first decade against 2.08 million over the last. [verified] — same dataset, `carc_ind` in the chemical dictionary.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-toxic-releases-1987-2024.yml",
+          "node_label": "Toxic releases reported in Allen County, 1987–2024",
+          "span": "**The air stream changed hands.** In 1987 the nitriles plant put 8,295,100 pounds into the air, 88.3 per cent of the county's total; in 2024 it put out 77,227. The largest air emitter now is PCS Nitrogen at 2,485,957 pounds, 87.7 per cent of a much smaller total, and almost all of it ammonia. One plant cut its air releases by ninety-nine per cent and a fertiliser works became the county's chimney. [verified] — same source, by facility.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say that the fall in reported releases caused the improvement in measured air quality**, and the arithmetic runs against it: the county's air quality is set by ozone and fine particles, which are regional and mostly not on this list, while what is on this list is ammonia, acetonitrile and propylene."
+      ],
+      "figures": [
+        {
+          "label": "Carcinogens to air, fall",
+          "value": 91.7,
+          "literal": "91.7"
+        },
+        {
+          "label": "Carcinogens to wells, fall",
+          "value": 9.9,
+          "literal": "9.9"
+        }
+      ]
+    },
+    {
+      "id": "what-ended-was-the-bad-day",
+      "statement": "Allen County's median air-quality day is where it was in 1987 — AQI 44 then, 42 now. Its 90th percentile went from 112 to 58, and days unhealthy for sensitive groups from 41 in 1998 to none in four of the last six years. What improved over forty-five years of measurement was the bad day, not the ordinary one.",
+      "topic": "health",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-air-quality-1980-2024.yml",
+          "node_label": "What the monitors measured over Allen County, 1980–2024",
+          "span": "**The improvement is large and it is in the tail, not the middle.** The median day was AQI 44 in 1987 and 42 in 2024, which is barely a change. The 90th percentile went from 112 to 58, and days at unhealthy for sensitive groups or worse from 32 to none. What ended was the bad day. [verified] — same file, `Median AQI` and `90th Percentile AQI`.",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-airdata-aqi.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-air-quality-1980-2024.yml",
+          "node_label": "What the monitors measured over Allen County, 1980–2024",
+          "span": "**Nineteen ninety-eight was the worst year in the record and 41 of its days were unhealthy for somebody.** 17.3 per cent of the days monitored — against 15.5 per cent in 1991, 16.4 in 1994 and 15.1 in both 1987 and 2002. No year since 2012 has passed 2.5 per cent. [verified] — same source, the share column above.",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-airdata-aqi.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-air-quality-1980-2024.yml",
+          "node_label": "What the monitors measured over Allen County, 1980–2024",
+          "span": "**In figures, the 90th-percentile AQI at five points in the record: 100 in 1990, 74 in 2000, 83 in 2010, 61 in 2019 and 58 in 2024.** [verified] — read from the table above, same file.",
+          "tier": "verified",
+          "sources": [
+            "catalog/epa-airdata-aqi.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not know what happened that year; the file records the index and not the cause."
+      ],
+      "figures": [
+        {
+          "label": "1990",
+          "value": 100.0,
+          "literal": "100"
+        },
+        {
+          "label": "2000",
+          "value": 74.0,
+          "literal": "74"
+        },
+        {
+          "label": "2010",
+          "value": 83.0,
+          "literal": "83"
+        },
+        {
+          "label": "2019",
+          "value": 61.0,
+          "literal": "61"
+        },
+        {
+          "label": "2024",
+          "value": 58.0,
+          "literal": "58"
         }
       ]
     }
