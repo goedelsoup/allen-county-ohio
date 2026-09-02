@@ -1,0 +1,128 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const became = assertion('what-the-farmland-became')
+const spring = assertion('the-spring-the-county-was-not-planted')
+const half = assertion('half-a-file-can-be-differenced')
+const beans = assertion('soybeans-never-lost-the-lead')
+
+const spec = (a: typeof became, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const becameSpec = spec(became, 'Acres, 2024')
+const springSpec = spec(spring, 'Acres')
+const beansSpec = spec(beans, 'Acres of winter wheat')
+---
+
+<Article slug="what-the-ground-is">
+  <p>
+    In 1910 Allen County was 92.5 per cent farmland — 240,472 acres in farms out of 259,840. In 2022
+    it was 69.4 per cent. That much has been on this site for a while, and so has the fact that
+    almost all of the loss happened in a ninety-two-year window nobody was counting. What has never
+    been here is the other side of the subtraction: what the missing third became.
+  </p>
+  <AssertionCard assertion={became} open />
+  <ChartFigure
+    id="cover"
+    title="Every acre of Allen County, classified, 2024"
+    caption="A satellite classifier assigns each thirty-metre pixel a class once a year. The 260,324 acres it counts here is within 484 acres of the county's land area from an unrelated federal file, which is how a year's read is checked."
+    columns={['Class', 'Acres']}
+    rows={became.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="cover" set:html={JSON.stringify(becameSpec)} is:inline />
+  <p>
+    Built ground and woodland, in that order, with roughly twice as much of the first. And a
+    reassuring coincidence: this file says 70.3 per cent of the county's pixels were growing
+    something in 2024, and the agricultural census says 69.4 per cent of its acres were in farms in
+    2022. Those are not the same quantity — one counts what a classifier sees, the other counts what
+    a farm operator reports operating, and a farm contains its own house, lane and woodlot. They
+    agree to within a point regardless.
+  </p>
+
+  <h2>The spring the county was not planted</h2>
+  <p>
+    One year in the seventeen does not look like the others. In 2019, 37,726 acres of Allen County
+    cropland — one acre in five — were classified as fallow or idle. The median for every other year
+    in the record is fifty-five acres.
+  </p>
+  <AssertionCard assertion={spring} />
+  <ChartFigure
+    id="spring"
+    title="What 2019 did to the county's cropland"
+    caption="Acres. The fallow figure is 2019's own; the corn and soybean figures are how far each fell below the mean of 2018 and 2020. Every other year in the record has fallow acreage between one and 999."
+    columns={['Measure', 'Acres']}
+    rows={spring.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="spring" set:html={JSON.stringify(springSpec)} is:inline />
+  <p>
+    The county's own rainfall record, which goes back to 1895 and has nothing to do with satellites,
+    puts April to June 2019 at 19.21 inches against a long-run mean of 11.09 — the third wettest
+    planting season in a hundred and thirty-one years, behind only 2015 and 1957. May alone brought
+    7.38 inches.
+  </p>
+  <p>
+    Two instruments with nothing in common name the same twelve months. What neither of them
+    contains is a farmer: no file here records a decision not to plant, or the insurance category
+    that decision falls under. The rain is measured and the empty ground is measured, and the line
+    between them is drawn by a reader.
+  </p>
+
+  <h2>Half of this file is worth differencing</h2>
+  <p>
+    A source that catches 2019 that cleanly earns some trust, and the temptation is to spend it on
+    the rest of the file. The same table has a column for developed land, and it would be very
+    convenient to know how much of this county has been built on and when.
+  </p>
+  <AssertionCard assertion={half} />
+  <Gloss>
+    The check is only possible because the corpus already holds fifty-seven dated annexations, a
+    building-permit series and new houses by place. A control the file cannot fake is the whole
+    method here, and it costs one fitted line.
+  </Gloss>
+  <p>
+    It fits at minus thirty-five acres a year. Allen County has been annexing and building without
+    interruption for the whole period, so a developed class that shrinks is not measuring
+    development — it is the classifier re-deciding which pixels are lawn and which are pasture,
+    about three thousand acres' worth, every year. The forest column is worse: it ranges over a
+    fifth of its own size.
+  </p>
+  <p>
+    So the crop columns of this table may be differenced and the last two may not, and nothing in
+    the file says so. That is not a fault in the data — the classes are built from different inputs
+    on different cycles and the product documents it — but it is a fault waiting for anyone who
+    treats a file as trustworthy or not rather than column by column. A single year still stands:
+    the 17.8 per cent of this county that is developed is a real classification of 2024. It is the
+    change in it that is unavailable.
+  </p>
+
+  <h2>What grows here</h2>
+  <p>
+    Corn is the crop people name when they picture Ohio, and in this county it has been the smaller
+    of the two for as long as the pixels have been counted. Soybeans lead in every one of the
+    seventeen years, by margins running from a tenth to more than a half.
+  </p>
+  <AssertionCard assertion={beans} />
+  <ChartFigure
+    id="wheat"
+    title="Winter wheat in Allen County, 2008 to 2012"
+    caption="Acres. Wheat ran above 15,000 acres in four of the first five years and has not passed 10,348 in the twelve years since. The corn and soybean series over the same period are flat by comparison."
+    columns={['Year', 'Acres']}
+    rows={beans.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="wheat" set:html={JSON.stringify(beansSpec)} is:inline />
+  <p>
+    The sharper change is underneath. Winter wheat held more than 21,000 acres in 2008 and 25,000 in
+    2009, then fell through 15,003 and 17,196 to 6,688 in 2012, and the best of the twelve years
+    since is 10,348. Hay and pasture went the same way more slowly, down two fifths across the
+    record. What replaced both is the same pair of crops that already led.
+  </p>
+</Article>

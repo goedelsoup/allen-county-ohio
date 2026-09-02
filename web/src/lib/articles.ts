@@ -46,6 +46,24 @@ export interface Article {
 export const ARTICLES: Article[] = [
   // ── Ground ──────────────────────────────────────────────────────────────
   {
+    slug: 'what-the-ground-is',
+    title: 'What the ground is',
+    dek: 'The county was nine-tenths farmland in 1910 and is seven-tenths now; the missing third is built ground and woodland. And one spring in seventeen, a fifth of the cropland went unplanted.',
+    section: 'ground',
+    era: [2008, 2024],
+    assertions: [
+      'what-the-farmland-became',
+      'the-spring-the-county-was-not-planted',
+      'half-a-file-can-be-differenced',
+      'soybeans-never-lost-the-lead',
+    ],
+    entries: [
+      'measure/allen-county-land-cover-2008-2024.yml',
+      'measure/allen-county-farmland-1910-2022.yml',
+      'question/when-the-farmland-went.yml',
+    ],
+  },
+  {
     slug: 'a-hog-county',
     title: 'A hog county',
     dek: 'The hogs multiplied while the farms keeping them halved, which is one fact about animals and another about who is left to keep them.',

@@ -4125,6 +4125,112 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "United States", value: 15.3, literal: "15.3" },
         ],
     },
+    // ── The ground itself ──
+    Assertion {
+        id: "what-the-farmland-became",
+        statement: "Seventy per cent of Allen County is cropland and pasture, 17.8 per cent is \
+                    developed and 10.4 per cent is forest. The county was 92.5 per cent farmland in \
+                    1910; what the missing third became is built ground and woodland, in that \
+                    order, and there is more than twice as much of the first.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Seventy per cent of Allen County is cropland and pasture, eighteen per cent is developed and\n  ten per cent is forest.** [verified] \u{2014}\n  [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), 2024, every thirty-metre pixel in\n  the county classified and counted."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**The corpus knew the county was 92.5 per cent farmland in 1910 and 69.4 per cent in 2022, and\n  had nothing that said what the other thirty per cent had become.** It is developed ground and\n  woodland, in that order, and there is more than twice as much of the first as of the second.\n  [inference] \u{2014} computed here against\n  [land in farms](allen-county-farmland-1910-2022.yml); see\n  [the question](../question/when-the-farmland-went.yml)."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Two instruments land within a point of each other on how much of the county is farmed.** This\n  file puts crops and pasture at 70.3 per cent in 2024; the Census of Agriculture puts land in farms\n  at 69.4 per cent in 2022. One counts pixels of growing things and the other counts acres a farm\n  operator says they operate, so they are not the same quantity, and they agree anyway. [inference]\n  \u{2014} computed here against\n  [the census of agriculture](../../catalog/usda-census-of-agriculture.md)."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**In figures, the county's ground in 2024: 183,047 acres of crops and pasture, 46,307 developed,\n  27,037 forest and 3,076 water.** [verified] \u{2014} read from the table above, same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Crops and pasture", value: 183047.0, literal: "183,047" },
+            Figure { label: "Developed", value: 46307.0, literal: "46,307" },
+            Figure { label: "Forest", value: 27037.0, literal: "27,037" },
+            Figure { label: "Water", value: 3076.0, literal: "3,076" },
+        ],
+    },
+    Assertion {
+        id: "the-spring-the-county-was-not-planted",
+        statement: "In 2019 one acre in five of Allen County's cropland was classified fallow \
+                    \u{2014} 37,726 acres against a median of 55 \u{2014} with corn 25,865 acres \
+                    below its neighbouring years. April to June that year brought 19.21 inches of \
+                    rain against a long-run mean of 11.09, the third wettest planting season in a \
+                    hundred and thirty-one.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**In 2019 one acre in five of this county's cropland was not planted.** `Fallow/Idle Cropland`\n  holds 37,726 acres, against a median of 55 across the other sixteen years and a maximum elsewhere\n  of 999. Corn fell 25,865 acres below the mean of the years either side and soybeans 7,854.\n  [verified] \u{2014} same source."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**The county's own rain record puts that year third wettest in a hundred and thirty-one.** April\n  to June 2019 brought 19.21 inches against a long-run mean of 11.09 \u{2014} behind only 2015 and 1957 \u{2014}\n  and May alone brought 7.38, the third wettest May of the record. [verified] \u{2014}\n  [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county precipitation, ranked here over the\n  131 complete years; see [the precipitation record](allen-county-precipitation-1895-2025.yml)."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Two instruments with nothing in common say the same thing about one spring.** A satellite\n  classifier that has never heard of a weather station, and a gridded rain record that has never\n  seen a field, put the unplanted ground and the rain in the same twelve months. [inference] \u{2014}\n  the reasoning is this corpus's. Neither file records a farmer's decision, and the step from\n  *wet* to *not planted* is not in either of them."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Acres fallow, 2019", value: 37726.0, literal: "37,726" },
+            Figure { label: "Corn shortfall", value: 25865.0, literal: "25,865" },
+            Figure { label: "Soybean shortfall", value: 7854.0, literal: "7,854" },
+        ],
+    },
+    Assertion {
+        id: "half-a-file-can-be-differenced",
+        statement: "The same file that catches 2019 to the acre cannot measure development. Its \
+                    developed class ranges over 3,226 acres in seventeen years and fits at minus \
+                    thirty-five acres a year, in a county that annexed fifty-seven times between \
+                    1990 and 2024. One file, two classes, two epistemic statuses, and nothing in \
+                    the file says which is which.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**The crop columns of that table may be differenced and the last two may not.** Developed ground\n  ranges over 3,226 acres across the seventeen years \u{2014} 6.9 per cent of the class \u{2014} and its fitted\n  slope is **minus 35 acres a year**, in a county that recorded fifty-seven annexations between 1990\n  and 2024 and builds two hundred-odd houses a year. Forest ranges over 21 per cent of itself and\n  fits at plus 253. Those two columns are the classifier re-deciding, not the ground changing.\n  [verified] \u{2014} same source, computed here; see\n  [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml) and\n  [the annexations](allen-county-annexations-1990-2024.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "soybeans-never-lost-the-lead",
+        statement: "Soybeans have been Allen County's larger crop in every one of the seventeen \
+                    years the pixels have been counted, never once reaching parity with corn. \
+                    Winter wheat, meanwhile, lost two thirds of its ground between 2009 and 2012 \
+                    and has not come back.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Soybeans have been the larger crop in every one of the seventeen years.** The ratio of corn to\n  soybean acreage runs between 0.63 and 0.90 and never reaches parity; the widest gap is 2017, with\n  97,740 acres of soybeans against 61,171 of corn. [verified] \u{2014} same source, computed here."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Winter wheat lost two thirds of its ground in four years and never came back.** 21,483 acres in\n  2008, 25,210 in 2009, then 15,003, 17,196 and 6,688 in 2012; the highest of the twelve years since\n  is 10,348. [verified] \u{2014} same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2008", value: 21483.0, literal: "21,483" },
+            Figure { label: "2009", value: 25210.0, literal: "25,210" },
+            Figure { label: "2010", value: 15003.0, literal: "15,003" },
+            Figure { label: "2011", value: 17196.0, literal: "17,196" },
+            Figure { label: "2012", value: 6688.0, literal: "6,688" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
