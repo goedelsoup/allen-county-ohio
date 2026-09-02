@@ -1,0 +1,97 @@
+class: measure
+label: Allen County bridge condition by owner, 1992–2025
+description: |
+  Twelve editions of the federal bridge inventory, read for the same county at three-year intervals.
+  [verified] — [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), Ohio
+  files 1992 to 2025, county code 3, structure records only.
+
+      edition   bridges   poor        state          county        municipal
+      1992         393     39     96 /21  21.9%   277 /16   5.8%   20 / 2
+      1995         394     38     94 /15  16.0%   279 /21   7.5%   21 / 2
+      1998         396     59     94 /18  19.1%   281 /38  13.5%   21 / 3
+      2001         402     45     98 / 5   5.1%   284 /34  12.0%   20 / 6
+      2004         386     41     96 / 2   2.1%   270 /34  12.6%   20 / 5
+      2007         387     32     96 / 2   2.1%   271 /27  10.0%   20 / 3
+      2010         396     41    102 / 3   2.9%   275 /34  12.4%   19 / 4
+      2013         378     31    100 / 1   1.0%   258 /24   9.3%   19 / 5
+      2016         392     22    103 / 1   1.0%   269 /18   6.7%   20 / 3
+      2019         378     14    104 / 0   0.0%   255 /11   4.3%   19 / 3
+      2022         370      9    104 / 0   0.0%   247 / 5   2.0%   18 / 3
+      2025         364     33    103 / 0   0.0%   242 /29  12.0%   19 / 4
+
+  **In figures: 21.9 per cent of the state's bridges in this county were in poor condition in 1992,
+  16.0 in 1995, 19.1 in 1998, 5.1 in 2001, 2.1 in 2004, 2.1 in 2007, 2.9 in 2010, 1.0 in 2013, 1.0
+  in 2016, 0.0 in 2019, 0.0 in 2022 and 0.0 in 2025.** [verified] — same source, counted here.
+
+  **In 1992 the state owned the worst bridges in Allen County.** Twenty-one of its ninety-six were
+  in poor condition, 21.9 per cent, against sixteen of the county's two hundred and seventy-seven,
+  5.8 per cent. The ladder this corpus published from the 2025 edition — state soundest, county
+  next, municipalities worst — ran the other way inside living memory. [verified] — the 1992 and
+  2025 files. [inference] — the comparison drawn here.
+
+  **It did not repair them. It replaced them.** Of the twenty-one state bridges rated poor in 1992,
+  eighteen are absent from the 2025 file altogether and three survive under the same structure
+  number with better ratings. Every one of the eighteen was built between 1940 and 1962, and the
+  state's holding rose from 96 structures to 103 across the same years, so they left by replacement
+  rather than by abandonment. [verified] — the two files, linked on structure number. [inference] —
+  the reading is this corpus's; the file records a disappearance and not a demolition.
+
+  **Age was the other reading and the file refutes it.** The state's median bridge in this county
+  was built in 1970 and the county's in 1982; 57 of the state's 103 predate 1980 against 112 of the
+  county's 242, so the state's stock is the older of the two on both measures. [verified] — the 2025
+  file, computed here. Whatever explains the state's record here, it is not that its bridges are
+  newer. [inference]
+
+  **What the county did instead is shrink.** Its holding fell from 277 structures to 242 while the
+  state's rose, and the county's poor count has never reached zero in any edition. [verified] —
+  the twelve files. [inference] — computed here.
+
+  **The last figure in the table is not like the others, and three tests say so.** The county's poor
+  count stood at 5 in the 2023 edition and 31 in the 2024, on 370 and 367 structures. Ohio as a
+  whole did not move — 4.64 per cent poor in 2023, 4.71 in 2024, 4.70 in 2025 — and neither did any
+  of the six counties that border this one. [verified] — the Ohio files for those editions, counted
+  here.
+
+  **And the ratings moved both ways at once.** Among the county's own bridges, superstructures rated
+  4 went from 3 to 14 between those two editions and substructures from 3 to 13, while decks rated 9
+  went from 22 to 39 and superstructures rated 9 from 22 to 38. [verified] — same files. A stock of
+  bridges does not deteriorate and improve in the same year; a new hand applying the same nine-point
+  scale does exactly this. [inference] — see
+  [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).
+
+  **The clearest single case is the county's oldest bridge.** The 1909 concrete arch on Hay Road was
+  rated 6 for its deck, 5 for its superstructure and 5 for its substructure in the 2022 edition and
+  7, 7 and 7 in the 2025 one, having been reconstructed in no year at all. [verified] — the two
+  files; see [the Hay Road bridge](../site/hay-road-bridge.yml).
+
+  [open] What happened in the county engineer's 2023 inspection round. The inspection dates in the
+  file move from 2022 to 2023 for every structure that changed, so the ratings come from real
+  inspections rather than from a re-coding of old ones; who performed them, and under what standard,
+  is not in this file or in any source this corpus holds.
+properties:
+  parameter: highway bridges in poor condition by owner, Allen County
+  value: "21.9"
+  unit: per cent of state-owned bridges, 1992
+  as_of: "2025"
+  method: |
+    Twelve editions of the Ohio delimited file, selected on `COUNTY_CODE_003` = 3 and on
+    `RECORD_TYPE_005A` = 1. That second filter is necessary and was not needed for the 2025 edition
+    alone: the older files carry a second row for some structures describing the route beneath
+    them, and 1992 has 436 rows for 393 bridges. Counting rows rather than structures would have
+    invented a fall of seventy-two bridges that did not happen. [verified]
+
+    "Poor" is the minimum of items 58, 59, 60 and 62 being 4 or less, the Federal Highway
+    Administration's own rule, applied identically in every edition. Structures are linked across
+    editions on `STRUCTURE_NUMBER_008`, which Ohio reassigns when a bridge is replaced, so a
+    replacement appears as a disappearance and a new number rather than as a changed row. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/national-bridge-inventory.md
+  - target: ../office/allen-county-engineer.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/national-bridge-inventory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
