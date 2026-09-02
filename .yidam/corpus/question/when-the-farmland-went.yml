@@ -54,13 +54,47 @@ description: |
   2002 — 62 per cent of the fall before the window opens and the rest after it closes. [verified] —
   the three sources.
 
-  [open] The forty years 1910 to 1950 and the twenty-eight 1954 to 1982. Both are now bounded at
-  both ends, which they were not, and the first of them holds 20.4 per cent of the loss and the
-  second 28.9. No Ohio volume for 1920, 1925, 1930, 1935, 1940, 1945, 1959, 1964, 1969, 1974 or 1978
-  was found on the host that yielded these two.
+  **Closed. Eighteen census years, no gap wider than fifteen, and the answer is that it did not
+  go once.** Nine of the seventeen intervals in the completed record are rises: 87,824 acres left
+  the county's farms and 26,273 came back, three returned for every ten lost. [verified] —
+  [the historical archive](../../catalog/agcensus-archive-1925-1978.md); see
+  [the whole series](../measure/allen-county-farmland-1910-2022.yml).
+
+  **The question asked when, and the answer has four dates rather than one.** The county's farmland
+  peak is 1920, not 1910. The largest single loss in the record is the 13,239 acres between 1920 and
+  1925 — larger than the 12,926 of 1950 to 1954 that this question published as the sharpest stretch
+  of the century, and invisible to it. Two more losses of about ten thousand acres each follow, 1935
+  to 1940 and 1969 to 1978. [verified] — same series.
+
+  **The finding this question was built on survives, on the measure it was made on.** 1950 to 1954
+  is four years and 1920 to 1925 is five, so 3,232 acres a year against 2,648 leaves 1950–54 the
+  fastest loss in the record. It is no longer the only one of its size. [inference] — computed
+  there.
+
+  **The forty years this question called the flattest stretch are the least flat.** They net 313
+  acres a year and contain 23,400 acres of loss and 10,872 of recovery, including the largest single
+  fall of the century and the largest single rise. The farm count peaks in 1935 at 3,016, above
+  1910's 2,939, and the farmland rises with it. [inference] — same series.
+
+  **What this leaves for the two candidates the question kept.** Lima's annexations and the
+  interstate are neither tested nor ruled out here, and what the filled years add is a constraint on
+  any explanation of them: the county's farmland **grew** by 9,815 acres across the 1959, 1964 and
+  1969 censuses, which share a farm definition. Whatever took the land, it gave some back in the
+  middle. [inference] — same series.
+
+  [open] Nothing about the shape of the loss. What is not established is any cause for any of the
+  four falls, and this corpus holds no source that would carry one.
 properties:
-  claim_tag: open
+  claim_tag: verified
   opened: "2026-08-30"
+  closed: "2026-09-02"
+  resolution: |
+    Allen County's land in farms is on record for eighteen census years from 1910 to 2022 with no
+    gap wider than fifteen, and the question's premise — that the farmland went, at some datable
+    moment — is half wrong. It went four times and came back nine, losing 87,824 acres gross and
+    recovering 26,273. Its peak is 1920 and not 1910; its largest single loss is 1920 to 1925 and
+    not 1950 to 1954, though 1950 to 1954 remains the fastest per year; and the forty years called
+    the flattest stretch in the record contain both the largest fall and the largest rise.
   would_close_this: |
     One agricultural census at county grain between 1910 and 2002, and preferably three. The census
     was taken in 1920, 1925 and then every five years to 1954, every four or five to 1978, and every
@@ -75,13 +109,16 @@ properties:
     what [asking the volume just after the gap](../../decisions/ask-the-volume-just-after-the-gap.yml)
     says to do when the obvious source has been tried.
 
-    Four of them are now read. The shelf turned out to be archive.org, which holds the Ohio volumes
-    for 1954 and 1987 as page scans, and each volume prints the census before it — so two books gave
-    1950, 1954, 1982 and 1987. The question asked for one census inside the window and preferably
-    three, and it has four. What remains open is narrower and needs a different volume: any Ohio
-    Census of Agriculture for 1920, 1925, 1930, 1935, 1940 or 1945 would date the flat forty years,
-    and any for 1959, 1964, 1969, 1974 or 1978 would date the twenty-eight. None of those is on the
-    host that yielded these two, and the 1982 volume is there and was not needed.
+    Four of them were read from archive.org, which holds the Ohio volumes for 1954 and 1987 as page
+    scans, and each volume prints the census before it — so two books gave 1950, 1954, 1982 and
+    1987. Eleven more were named as needed and recorded as not found.
+
+    **The paragraph above was wrong about the shelf, in the sentence that mattered.** It said the
+    Cornell historical archive "now redirects into nass.usda.gov without them". It redirects into
+    nass.usda.gov **with** them: the whole archive is mirrored at `/AgCensus/archive/`, twenty-eight
+    census years, a page per state part and a separate PDF for every table in it. Nine Ohio volumes
+    read there closed the question outright. The lesson is the one this repository keeps relearning
+    — a redirect was tested for where it went and not for what was at the end of it.
 links:
   - target: ../place/allen-county.yml
     relationship: concerns
@@ -92,6 +129,8 @@ links:
   - target: ../measure/allen-county-livestock-2002-2022.yml
     relationship: concerns
   - target: ../measure/allen-county-crops-2022.yml
+    relationship: concerns
+  - target: ../measure/allen-county-farmland-1910-2022.yml
     relationship: concerns
   - target: ../question.ont.yml
     relationship: instance-of
