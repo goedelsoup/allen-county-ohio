@@ -3367,6 +3367,95 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2025", value: 0.0, literal: "0.0" },
         ],
     },
+    Assertion {
+        id: "the-rate-converged-and-the-workforce-did-not",
+        statement: "Allen County's unemployment rate ran above Ohio's for twenty-four years \
+                    running and then stopped: the gap was 0.4 points in 2013, 0.0 in 2014, and has \
+                    averaged a tenth of a point since. Over the same record Ohio's labour force \
+                    grew 10.3 per cent and the county's fell 8.3, so the county stopped having a \
+                    higher share of its workers out of work partly by having fewer workers.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**The county's rate was above its state's for twenty-four years running, and then it stopped.**\n  Every year from 1990 to 2013 Allen County's annual rate exceeded Ohio's, by a mean of 1.0 points\n  and by as much as 2.1 in 1996. From 2014 the mean gap is 0.10 points and the county is at or below\n  the state in six of twelve years."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**It converged on the state and not on the country.** Against the national rate the county's mean\n  gap is +1.14 points in the 1990s, +1.25 in the 2000s and +0.28 from 2014 \u{2014} narrower, but it has\n  been below the nation in only two of the last twelve years."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**The convergence is a subtraction.** Across the record Ohio's labour force grew 10.3 per cent and\n  Allen County's fell 8.3."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**Fewer people work in this county now than in 1990.** Employed residents peaked at 49,671 in 2006\n  and stand at 45,950 in 2025 \u{2014} 3,721 fewer, a fall of 7.5 per cent \u{2014} and the 2025 figure is 2,623\n  below 1990's."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**April 2020 is the worst month in the record and nothing else is close.** The county's rate was\n  18.6 per cent, against a previous worst of 12.7 in March 2009."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**In figures: the county's annual rate was 7.7 per cent in 1990, 4.7 in 2000, 11.4 in 2009, 5.8 in\n  2014, 4.0 in 2019, 8.5 in 2020 and 4.8 in 2025**, and its labour force fell from 52,911 in 2006 to\n  48,288 in 2025."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1990", value: 7.7, literal: "7.7" },
+            Figure { label: "2000", value: 4.7, literal: "4.7" },
+            Figure { label: "2009", value: 11.4, literal: "11.4" },
+            Figure { label: "2014", value: 5.8, literal: "5.8" },
+            Figure { label: "2019", value: 4.0, literal: "4.0" },
+            Figure { label: "2020", value: 8.5, literal: "8.5" },
+            Figure { label: "2025", value: 4.8, literal: "4.8" },
+        ],
+    },
+    Assertion {
+        id: "eleven-years-of-more-jobs-than-workers",
+        statement: "Two programmes that never consult each other \u{2014} employers' insurance filings \
+                    for jobs, a household estimate for workers \u{2014} put more jobs inside Allen \
+                    County than the county has employed residents, in every one of the eleven years \
+                    both cover. The smallest difference is 3,362 and the largest 4,449.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**A third pair of programmes says the same thing for eleven years running.** The county's jobs are\n  counted where they are by the employer's insurance filings and its working residents are counted\n  where they live by a household estimate, and in every year both have covered, the first number is\n  larger than the second."
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**Eleven years, every difference positive, none smaller than 3,362 and none larger than 4,449.**"
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**In figures, the eleven differences: 4,132 in 2014, then 4,344, 3,892, 4,065, 4,449, 3,481,\n  3,673, 3,362, 3,800, 3,895 and 3,970 in 2024.**"
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**The three programmes agree on the sign and not on the size, and the reason is definitional.**\n  For 2022 the pair above puts the net at +3,800 where the table at the head of this node puts it at\n  +5,895."
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**The net is small and the gross is enormous, and only the gross is a fact about commuting.**\n  Somewhere between 3,800 and 5,895 more people work here than live-and-work here, on 42,643\n  crossings of the county line in a working day."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2014", value: 4132.0, literal: "4,132" },
+            Figure { label: "2015", value: 4344.0, literal: "4,344" },
+            Figure { label: "2016", value: 3892.0, literal: "3,892" },
+            Figure { label: "2017", value: 4065.0, literal: "4,065" },
+            Figure { label: "2018", value: 4449.0, literal: "4,449" },
+            Figure { label: "2019", value: 3481.0, literal: "3,481" },
+            Figure { label: "2020", value: 3673.0, literal: "3,673" },
+            Figure { label: "2021", value: 3362.0, literal: "3,362" },
+            Figure { label: "2022", value: 3800.0, literal: "3,800" },
+            Figure { label: "2023", value: 3895.0, literal: "3,895" },
+            Figure { label: "2024", value: 3970.0, literal: "3,970" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -245,6 +245,15 @@ export const ARTICLES: Article[] = [
 
   // ── Work ────────────────────────────────────────────────────────────────
   {
+    slug: 'the-rate-caught-up-with-ohio',
+    title: 'The rate caught up with Ohio',
+    dek: 'Twenty-four years above the state’s unemployment rate, and then a convergence made mostly of people leaving the labour force.',
+    section: 'work',
+    era: [1990, 2026],
+    assertions: ['the-rate-converged-and-the-workforce-did-not'],
+    entries: ['place/allen-county.yml'],
+  },
+  {
     slug: 'the-factories-left-lima',
     title: 'The factories left Lima',
     dek: 'They did not leave the county. Lima’s share of the factory workforce fell for forty years while the county’s held.',

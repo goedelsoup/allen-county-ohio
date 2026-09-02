@@ -3650,10 +3650,30 @@
         {
           "text": "**Two independent counts of the county's jobs agree within two per cent.** 48,730 here for 2022 against 49,690 covered jobs in 2024. [inference] — [the wage file](allen-county-wages-2024.yml). They are different years, different programmes and different definitions of a job, and they land 960 apart.",
           "tier": "inference"
+        },
+        {
+          "text": "**A third pair of programmes says the same thing for eleven years running.** The county's jobs are counted where they are by the employer's insurance filings and its working residents are counted where they live by a household estimate, and in every year both have covered, the first number is larger than the second. [verified] — the jobs column from [QCEW](../../catalog/bls-qcew.md) annual county files, the residents column from [Local Area Unemployment Statistics](../../catalog/bls-laus.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eleven years, every difference positive, none smaller than 3,362 and none larger than 4,449.** [inference] — counted here from the table above, on the same dataset pair.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, the eleven differences: 4,132 in 2014, then 4,344, 3,892, 4,065, 4,449, 3,481, 3,673, 3,362, 3,800, 3,895 and 3,970 in 2024.** [inference] — read from the table above. There is no trend in them; the largest is 2018 and the smallest 2021, and the series ends where it began.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The three programmes agree on the sign and not on the size, and the reason is definitional.** For 2022 the pair above puts the net at +3,800 where the table at the head of this node puts it at +5,895. The household estimate counts a resident who works for herself; the insurance filings do not count the job she made. So the resident column is the larger of the two definitions and the net it produces is the smaller. [inference] — computed here; neither figure is corrected toward the other.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The net is small and the gross is enormous, and only the gross is a fact about commuting.** Somewhere between 3,800 and 5,895 more people work here than live-and-work here, on 42,643 crossings of the county line in a working day. A county could post that net with a tenth of that traffic. [inference] — computed here from the rows above.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-congregations-2020.yml",
@@ -8024,6 +8044,67 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-unemployment-1990-2026.yml",
+      "class": "measure",
+      "label": "Allen County unemployment, 1990–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Allen County's four series were extracted from the 336 MB national county file and the file deleted; Ohio's from the states file; the national rate from the Current Population Survey's `LNU04000000` through the public API, because this programme does not publish a national figure of its own. Period `M13` is the agency's annual average and is quoted as published rather than recomputed, except for the national column, which has no `M13` here and is the mean of the year's months. County estimates are modelled and controlled to a state total; a tenth of a point between two counties in one month is not a finding, and nothing here rests on one. [verified]",
+        "parameter": "unemployment rate, Allen County, annual average",
+        "unit": "per cent",
+        "value": "4.8"
+      },
+      "blocks": [
+        {
+          "text": "Thirty-six annual averages and four hundred and thirty-nine months, from the first county-level labour figure this corpus holds that is not counted through an employer. [verified] — [Local Area Unemployment Statistics](../../catalog/bls-laus.md), series `LAUCN39003…` for the county, `LAUST39000…` for Ohio; the national rate is the Current Population Survey's own `LNU04000000`, averaged over each year's months.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same dataset, all three series as published; the county and state columns are annual averages the agency computes, and the national column is averaged here from its twelve months.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's rate was above its state's for twenty-four years running, and then it stopped.** Every year from 1990 to 2013 Allen County's annual rate exceeded Ohio's, by a mean of 1.0 points and by as much as 2.1 in 1996. From 2014 the mean gap is 0.10 points and the county is at or below the state in six of twelve years. [inference] — computed from the table above. The break is not gradual: the gap is 0.4 points in 2013 and 0.0 in 2014, and it has not been above 0.6 since.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It converged on the state and not on the country.** Against the national rate the county's mean gap is +1.14 points in the 1990s, +1.25 in the 2000s and +0.28 from 2014 — narrower, but it has been below the nation in only two of the last twelve years. Ohio sits above the nation over the same span, and what the county caught up with is Ohio. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The convergence is a subtraction.** Across the record Ohio's labour force grew 10.3 per cent and Allen County's fell 8.3. Measured from the county's own peak in 2006 the two are further apart still: Ohio is level at −0.1 per cent and the county is down 8.7 per cent, 4,623 people. The county stopped having a higher share of its workers out of work partly by having fewer workers. [inference] — computed from the same table and Ohio's own labour force series in the [same dataset](../../catalog/bls-laus.md).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Fewer people work in this county now than in 1990.** Employed residents peaked at 49,671 in 2006 and stand at 45,950 in 2025 — 3,721 fewer, a fall of 7.5 per cent — and the 2025 figure is 2,623 below 1990's. Thirty-five years of record and the employment column ends lower than it began. [inference] — computed from the table above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**April 2020 is the worst month in the record and nothing else is close.** The county's rate was 18.6 per cent, against a previous worst of 12.7 in March 2009. Employed residents fell from 46,352 in March to 38,831 in April, 7,521 people — 16.2 per cent of everyone working — inside thirty days, while the labour force fell by only 1,395. They were counted as unemployed rather than as gone. [verified] — same dataset, monthly series; [inference] on the arithmetic between months.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The same county met its two recessions in opposite shapes.** In 2009 it ran 2.3 points above Ohio at the worst month and was still above the state in 2010, 2011, 2012 and 2013. In 2020 it ran 2.7 points above Ohio in April and was *below* the state by June, and it has never since been more than 0.6 above. [verified] — same dataset. The 2008 shock left a mark on this county that the 2020 shock did not. [inference] — the comparison is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures: the county's annual rate was 7.7 per cent in 1990, 4.7 in 2000, 11.4 in 2009, 5.8 in 2014, 4.0 in 2019, 8.5 in 2020 and 4.8 in 2025**, and its labour force fell from 52,911 in 2006 to 48,288 in 2025. [inference] — read from the table above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**One month in the record has no rate at any level of government.** October 2025 is empty for the county, for Ohio and for the United States, carrying the agency's footnote *\"Data unavailable due to the 2025 lapse in appropriations.\"* The 2025 annual averages here are eleven-month averages that exclude it, which the file also says in a footnote of its own. So the calendar holds 439 months between January 1990 and July 2026 and this series holds 438 figures. [verified] — [the footnote file and the county's own rows](../../catalog/bls-laus.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The lowest month in the record is the most recent one it can be.** May 2026 reads 3.0 per cent, below April 2019's 3.3, which had stood as the record's floor. The last three months are marked preliminary in the file. [verified] — same dataset.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-voting-districts-2020.yml",
@@ -21565,6 +21646,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-unemployment-1990-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bls-laus.md"
     },
     {
       "from": "measure/allen-county-voting-districts-2020.yml",
