@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 const PAGES = join(import.meta.dirname, '../src/pages')
+const COMPONENTS = join(import.meta.dirname, '../src/components')
 
 /**
  * The main line says what is true of Allen County; the margin says how this site came to know
@@ -58,6 +59,22 @@ function offenders(source: string): string[] {
   })
 }
 
+function figureSpans(source: string): string[] {
+  return [...source.matchAll(/<figure[\s\S]*?<\/figure>/g)].map((m) => m[0])
+}
+
+// Walked, not listed. `entry/class/` is two directories down, and a check that stops at one
+// is a check that quietly stops covering whatever moves.
+function componentFiles(dir = COMPONENTS, prefix = ''): { file: string; source: string }[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory()
+      ? componentFiles(join(dir, e.name), `${prefix}${e.name}/`)
+      : e.name.endsWith('.astro')
+        ? [{ file: prefix + e.name, source: readFileSync(join(dir, e.name), 'utf8') }]
+        : [],
+  )
+}
+
 const readingPages = readdirSync(PAGES)
   .filter((f) => f.endsWith('.astro') && !EXEMPT.has(f))
   .map((file) => ({ file, source: readFileSync(join(PAGES, file), 'utf8') }))
@@ -100,5 +117,44 @@ describe('headings are claims, not continuations', () => {
 
   it.each(articles)('$file opens no heading with a conjunction', ({ source }) => {
     expect(CONTINUATION.test(source)).toBe(false)
+  })
+})
+
+describe('a figure is labelled, not headed', () => {
+  /**
+   * A heading inside a `<figure>` is a rank in the document outline that leads nowhere.
+   *
+   * `ChartFigure` and `DataTable` put the figure's title in an `h3` inside its own
+   * `<figcaption>`, and `AssertionCard` labelled its caveat block `h4` in a card whose
+   * statement is a paragraph. Under an article's `h1` that is a skipped rank, and it was one
+   * on thirty-six pages — forty-six skips, every one of them a label a reader would never
+   * navigate to. The type is unchanged; only the element is.
+   *
+   * The entry blocks keep their `h2`: those are sections of the entry page and sit under its
+   * `h1`, which is what a heading is for.
+   */
+  const components = componentFiles()
+
+  it.each(components)('$file puts no heading inside a figure', ({ source }) => {
+    const headed = figureSpans(source).filter((span) => /<h[1-6][\s>]/.test(span))
+    expect(headed).toEqual([])
+  })
+})
+
+describe('an article heads its movements at the rank the layout styles', () => {
+  /**
+   * `Article.astro` styles `.piece-body h2` and nothing below it, so a piece that opens a
+   * movement with an `h3` gets a heading the layout never sized and a rank skipped from the
+   * `h1` above it. Two pieces did — both lifted out of a topic page where the `h3` sat under
+   * that page's `h2`, and the rank came along with the prose.
+   *
+   * If a piece ever earns a sub-heading, the fix is to style `h3` in the layout and relax this
+   * check. What it forbids is inheriting a rank from wherever the paragraphs used to live.
+   */
+  it.each(articles)('$file heads its movements at h2', ({ source }) => {
+    const parts = source.split('---')
+    const body = parts.length > 2 ? parts.slice(2).join('---') : source
+    const ranks = [...body.matchAll(/<h([1-6])[\s>]/g)].map((m) => m[1])
+    expect([...new Set(ranks)].toSorted()).toEqual(ranks.length > 0 ? ['2'] : [])
   })
 })

@@ -12,7 +12,7 @@ const { title, caption, columns, rows } = Astro.props
 
 <figure class="table-figure">
   <figcaption>
-    <h3>{title}</h3>
+    <p class="fig-title">{title}</p>
     {caption && <p>{caption}</p>}
   </figcaption>
   <div class="scroll-x">
@@ -41,8 +41,11 @@ const { title, caption, columns, rows } = Astro.props
     border: 1px solid var(--rule);
     border-radius: var(--radius);
   }
-  figcaption h3 {
+  /* Not a heading, for the reason given in `ChartFigure.astro`. */
+  figcaption .fig-title {
     margin: 0 0 0.25rem;
+    color: var(--text-strong);
+    font: var(--type-section);
   }
   figcaption p {
     margin: 0 0 1rem;

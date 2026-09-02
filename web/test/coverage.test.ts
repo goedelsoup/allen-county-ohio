@@ -193,3 +193,31 @@ describe('the reading pages point at each other', () => {
     }
   })
 })
+
+describe('nothing links at a page that was retired', () => {
+  /**
+   * The redirects in `astro.config.mjs` are for links somebody else kept — a bookmark, another
+   * site, a printout. They are not a licence for this site to go on pointing at its own retired
+   * pages: a redirect costs the reader a hop, and the link text goes stale in a way no redirect
+   * can fix. One survived the restructure reading *the same sorting <a href="/housing">the
+   * housing page</a> measures* — a page that no longer exists, named as though it did.
+   *
+   * The list is read out of the config rather than repeated here, so retiring the next page
+   * extends this check without anybody remembering to.
+   */
+  const config = readFileSync(join(import.meta.dirname, '../astro.config.mjs'), 'utf8')
+  const block = config.match(/redirects:\s*\{([\s\S]*?)\n\s*\}/)?.[1] ?? ''
+  const retired = [...block.matchAll(/'(\/[a-z-]+)':/g)].map((m) => m[1])
+
+  it('found the retired paths to check against', () => {
+    // A regex that stops matching turns this whole describe into a no-op.
+    expect(retired.length).toBeGreaterThan(0)
+  })
+
+  it.each(retired.map((path) => ({ path })))('nothing links to $path', ({ path }) => {
+    const offenders = pages
+      .filter(({ source }) => new RegExp(`href="${path}/?"`).test(source))
+      .map(({ file }) => file)
+    expect(offenders).toEqual([])
+  })
+})
