@@ -14,12 +14,54 @@ const annexed = assertion('the-annexations-are-dated-now')
 const birthdays = assertion('the-villages-have-birthdays-now')
 const control = assertion('the-county-lost-land-it-never-lost')
 const fourYears = assertion('a-fifth-of-the-farmland-went-in-four-years')
+const winters = assertion('the-winters-warmed-and-the-summers-did-not')
 
 const fourYearsSpec = bar(
   fourYears.figures.map((f) => f.label),
   fourYears.figures.map((f) => f.value),
   { yTitle: 'Acres of farmland lost, by stretch', labelValues: true },
 )
+
+// Winter against summer, from the assertion's own two figures, so the chart cannot drift from the
+// prose the gate checked.
+const wintersSpec = bar(
+  winters.figures.map((f) => f.label),
+  winters.figures.map((f) => f.value),
+  { yTitle: 'Degrees Fahrenheit gained, 1895\u20131924 to 1996\u20132025', labelValues: true },
+)
+
+// The twelve months, both elements, at the two ends of the record. Typed out because the two
+// columns come from two files and the point of the table is that they disagree in shape.
+const monthChange = [
+  ['January', '+1.19', '\u22120.15'],
+  ['February', '+4.98', '+0.48'],
+  ['March', '+2.18', '\u22120.52'],
+  ['April', '+2.34', '+0.66'],
+  ['May', '+1.30', '+1.14'],
+  ['June', '+1.80', '+0.42'],
+  ['July', '+0.22', '+0.27'],
+  ['August', '+1.00', '+0.43'],
+  ['September', '+1.39', '+0.35'],
+  ['October', '+1.91', '+0.36'],
+  ['November', '+2.25', '+0.11'],
+  ['December', '+3.79', '+0.11'],
+]
+
+// Decade means, both elements, with the county's heating and cooling demand beside them.
+const climateDecades = [
+  ['1900s', '49.25', '35.21', '6,447', '754'],
+  ['1910s', '49.44', '35.61', '6,398', '770'],
+  ['1920s', '49.90', '36.86', '6,205', '732'],
+  ['1930s', '51.22', '33.78', '5,963', '979'],
+  ['1940s', '50.51', '34.86', '6,077', '836'],
+  ['1950s', '50.28', '36.65', '6,128', '797'],
+  ['1960s', '49.18', '31.73', '6,442', '712'],
+  ['1970s', '49.56', '35.22', '6,358', '776'],
+  ['1980s', '50.19', '35.07', '6,190', '831'],
+  ['1990s', '50.87', '37.06', '5,888', '771'],
+  ['2000s', '51.05', '38.54', '5,861', '811'],
+  ['2010s', '51.60', '42.07', '5,788', '945'],
+]
 
 // The seven census years the corpus now holds for land in farms. Typed out because they come
 // from four different sources and the point of the table is that they are one series.
@@ -584,6 +626,62 @@ const yieldSpec = bar(
       17,393 of soybeans; in 1954, 22,498 of oats and 22,991 of soybeans. The crop that did not
       exist in this county in 1909 had passed the one that fed its horses before the interstate was
       built — and the oats survived that crossing at 22,498 acres and were down to eleven by 2022.
+    </p>
+  </section>
+
+  <section>
+    <h2>The weather the farms are in</h2>
+    <p>
+      Everything above is about ground. This site has never said anything about the sky over it, and
+      it now has a hundred and thirty-one complete years of it — every month from January 1895,
+      county by county, from NOAA's gridded climate record. Allen County is 2.03&nbsp;°F warmer than
+      it was. Where that warmth went is the finding.
+    </p>
+    <AssertionCard assertion={winters} />
+    <ChartFigure
+      id="winter-against-summer"
+      title="Degrees gained, winter against summer"
+      caption="December–January–February and June–July–August, comparing the thirty years 1895–1924 with the thirty years 1996–2025. The annual mean rose 2.03 °F and reports neither of these."
+      columns={['Season', 'Degrees gained']}
+      rows={winters.figures.map((f) => [f.label, f.value])}
+      height={280}
+    />
+    <script type="application/json" data-chart-spec="winter-against-summer" set:html={JSON.stringify(wintersSpec)} is:inline />
+    <p>
+      The mean daily maximum of June, July and August was 82.48&nbsp;°F in 1895–1924 and is
+      82.59&nbsp;°F in 1996–2025 — eleven hundredths of a degree in a century. The hottest summers
+      here are still 1934 and 1936, and the county's cooling-degree-day record, set in 1934, has
+      stood for ninety-two years. The warmest <em>years</em>, meanwhile, are nearly all recent: 2024
+      is the warmest of the hundred and thirty-one, and eight of the ten warmest are since 1991. A
+      record that puts its hottest summers in the 1930s and its warmest years in the 2020s is
+      describing a winter.
+    </p>
+    <DataTable
+      title="What each month gained, 1895–1924 against 1996–2025"
+      caption="Temperature in degrees Fahrenheit, precipitation in inches. Nights warmed faster than days — the minimum rose 2.36 degrees against the maximum's 1.70 — and two months are drier than they were."
+      columns={['Month', 'Temperature', 'Precipitation']}
+      rows={monthChange}
+    />
+    <p>
+      The rain went up 3.66 inches a year, and 3.27 of those inches fall between April and September
+      — a sixth more water on the growing season than the county's farms had a century ago, at the
+      same time as the frost-season warmth that lets a crop start earlier. March, meanwhile, is
+      half an inch drier than it was.
+    </p>
+    <DataTable
+      title="Allen County by decade, 1900s to 2010s"
+      caption="The trend is not a line: the 1930s are as warm as the 2000s, the 1960s as cold as the 1900s and drier than any decade of the record, and the 2010s the wettest by three and a half inches. Heating demand is down a tenth since 1895–1924 and cooling demand up a seventh."
+      columns={['Decade', 'Mean °F', 'Precipitation (in)', 'Heating °days', 'Cooling °days']}
+      rows={climateDecades}
+    />
+    <p class="note">
+      Two instruments that share no data agree about which years were wet here. The wettest month in
+      the record is June 2015 at 13.48 inches and the second is August 2007 at 10.54 — and August
+      2007 falls inside the ten-year hole in the Lima river gauge, one of three federal flood
+      declarations this site could previously say nothing about. The gauge's own highest peak, 5,700
+      cubic feet a second on 28 February 2011, sits in the fourth wettest February of the record and
+      the wettest calendar year of it. The rainfall record cannot say what was in the river; it can
+      say what fell on the ground, and it is not silent where the gauge is.
     </p>
   </section>
 </Base>

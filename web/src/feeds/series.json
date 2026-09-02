@@ -662,6 +662,46 @@
       ]
     },
     {
+      "id": "place-allen-county::annual-mean-temperature,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "annual mean temperature, Allen County",
+      "unit": "degrees Fahrenheit, 1996–2025 average",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-temperature-1895-2025.yml",
+          "label": "Allen County temperature, 1895–2025",
+          "as_of": "2025",
+          "value": 51.63,
+          "published": "51.63",
+          "tier": "verified",
+          "source": "catalog/noaa-nclimdiv-county.md",
+          "method": "Six county files taken from the same NOAA release and parsed on the eleven-character key `33003`, where 33 is NOAA's alphabetical code for Ohio and not its FIPS code. Only complete calendar years are used, so 2026 is excluded and the record runs 1895 through 2025 without a gap. The strongest check available was run first and passed: the average, maximum and minimum temperature files are separate downloads, and across Allen County's 1,572 complete monthly cells `(tmax + tmin) / 2` equals the average file to within a rounding step, the largest disagreement in the whole record being 0.10 °F. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::annual-precipitation,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "annual precipitation, Allen County",
+      "unit": "inches, 1996–2025 average",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-precipitation-1895-2025.yml",
+          "label": "Allen County precipitation, 1895–2025",
+          "as_of": "2025",
+          "value": 39.18,
+          "published": "39.18",
+          "tier": "verified",
+          "source": "catalog/noaa-nclimdiv-county.md",
+          "method": "Parsed on the eleven-character key `33003` from the same NOAA release as the temperature files, element code 01. Complete calendar years only: a year with any month coded −9.99 is dropped, so the record runs 1895 through 2025 with no gap and 2026 is excluded. Annual figures are the sum of the twelve printed monthly values and the thirty-year figures are the mean of those sums. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::applicants-paid-federal-public-assistance-for-work-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -8165,6 +8205,79 @@
           "label": "1884",
           "value": 56.2,
           "literal": "56.2"
+        }
+      ]
+    },
+    {
+      "id": "the-winters-warmed-and-the-summers-did-not",
+      "statement": "Allen County is 2.03 °F warmer than it was a century ago and its summers are not. The mean daily maximum of June, July and August has moved eleven hundredths of a degree since 1895–1924; December, January and February have moved 3.32. The hottest summers in the record are still 1934 and 1936.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-temperature-1895-2025.yml",
+          "node_label": "Allen County temperature, 1895–2025",
+          "span": "**The county is two degrees warmer than it was, and none of it is in summer.** The mean daily maximum temperature of June, July and August was 82.48 °F across 1895–1924 and is 82.59 °F across 1996–2025 — a change of **eleven hundredths of a degree in a century**.",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-temperature-1895-2025.yml",
+          "node_label": "Allen County temperature, 1895–2025",
+          "span": "**In figures: December, January and February warmed by 3.32 degrees on average and June, July and August by 1.01.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-temperature-1895-2025.yml",
+          "node_label": "Allen County temperature, 1895–2025",
+          "span": "**The hottest summers in the record are still the 1930s.** Ranked by mean daily maximum for June to August: 1934 at 88.8 °F, 1936 at 88.2, 1933 at 86.9, 1988 at 86.8, 1952 at 86.6, 1944 at 86.4. **None is later than 1988.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-temperature-1895-2025.yml",
+          "node_label": "Allen County temperature, 1895–2025",
+          "span": "**The nights warmed faster than the days**, by 2.36 degrees against 1.70.",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-precipitation-1895-2025.yml",
+          "node_label": "Allen County precipitation, 1895–2025",
+          "span": "**Almost all of the additional rain falls in the growing season.** Of 3.66 inches added to the year, 3.27 fall between April and September; March is **drier** by half an inch and January by a seventh.",
+          "tier": "verified",
+          "sources": [
+            "catalog/noaa-nclimdiv-county.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-precipitation-1895-2025.yml",
+          "node_label": "Allen County precipitation, 1895–2025",
+          "span": "**Both of those months are years the corpus already had a reason to look at.**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "It cannot say what was in the river; it can say what fell on the ground."
+      ],
+      "figures": [
+        {
+          "label": "Winter",
+          "value": 3.32,
+          "literal": "3.32"
+        },
+        {
+          "label": "Summer",
+          "value": 1.01,
+          "literal": "1.01"
         }
       ]
     }
