@@ -842,6 +842,26 @@
       ]
     },
     {
+      "id": "place-allen-county::drug-overdose-deaths,-Allen-County,-twelve-months-ending",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "drug overdose deaths, Allen County, twelve months ending",
+      "unit": "deaths",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+          "label": "Drug overdose deaths in Allen County, 2020–2025",
+          "as_of": "2025-12-31",
+          "value": 17.0,
+          "published": "17",
+          "tier": "verified",
+          "source": "catalog/cdc-provisional-overdose-counts.md",
+          "method": "Pulled from the publisher's Socrata endpoint filtered on FIPS 39003, seventy-two rows, no suppression: the county's counts run from 16 to 54 and the withholding threshold is ten. Every row is a twelve-month-ending total, so consecutive rows overlap by eleven months and no two may be added. Ohio and national figures are taken from the publisher's separate state file rather than by summing county rows, because the number of Ohio counties reporting falls from 73 to 45 across this period as counties drop below the threshold, which would invent a decline. Counts are provisional. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::elected-county-officers-named,-1831–1906",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1228,6 +1248,26 @@
           "tier": "verified",
           "source": "catalog/fbi-crime-data-explorer.md",
           "method": "Read from the Ohio agency list, selecting the county key ALLEN, which is the FBI's own assignment and not a geographic test — an agency serving two counties appears under a combined key and would be missed here. Dates are the file's `nibrs_start_date` verbatim. The population figures are each agency's own service population, which is not a census figure and does not sum to the county. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::life-expectancy-at-birth,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "life expectancy at birth, Allen County",
+      "unit": "years",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+          "label": "What Allen County dies of early, 2016–2022",
+          "as_of": "2022",
+          "value": 74.3,
+          "published": "74.3",
+          "tier": "verified",
+          "source": "catalog/county-health-rankings.md",
+          "method": "Read from the publisher's 2025 annual release CSV, one row for Allen County and one each for Ohio and the United States, taking the `_rawvalue`, `_numerator` and race-specific columns. The data years are from the publisher's technical documentation, which the CSV does not carry, and they differ by measure — three years for premature death and overdoses, five for suicides and firearms, seven for homicides and motor vehicle deaths. Counts are the numerator column, which holds deaths rather than the years of potential life lost the codebook claims. [verified]"
         }
       ]
     },
@@ -2358,6 +2398,26 @@
           "tier": "verified",
           "source": "catalog/openelections-ohio.md",
           "method": "Summed by candidate over the county's 88 precincts, from a volunteer transcription of the certified returns. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::years-of-potential-life-lost-before-age-75-per-100,000,-age-adjusted,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "years of potential life lost before age 75 per 100,000, age-adjusted, Allen County",
+      "unit": "years per 100,000",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-premature-death-1997-2022.yml",
+          "label": "Premature death in Allen County, 1997–2022",
+          "as_of": "2022",
+          "value": 10482.0,
+          "published": "10482",
+          "tier": "verified",
+          "source": "catalog/county-health-rankings.md",
+          "method": "Read from the publisher's trends CSV, which carries a `yearspan` rather than a release year, so the series is one measure across twenty-four windows rather than twenty-four releases of a measure. Windows overlap by two years and consecutive values are not independent. The rate is age-adjusted to the 2000 US standard population; the numerator column is the count of deaths before seventy-five, which is not what the publisher's codebook says it is and was established by matching the national column against CDC WONDER exactly. See [the catalog entry](../../catalog/county-health-rankings.md). [verified]"
         }
       ]
     },
@@ -8255,6 +8315,170 @@
           "label": "2020",
           "value": 12573.0,
           "literal": "12573"
+        }
+      ]
+    },
+    {
+      "id": "the-county-dies-younger-than-its-state",
+      "statement": "Allen County has gone from healthier than America to a quarter worse than it. Its rate of years lost before seventy-five was below the national rate in the first three windows of the record and above it in the twenty-one since; deaths before seventy-five rose 46.1 per cent between 2011–2013 and 2020–2022 while the under-75 population fell 4.0 per cent. And it is not the opioid county the state's reputation would predict: its overdose rate is 15 per cent below Ohio's, and what it exceeds the state on is suicide, road deaths, homicide and firearms.",
+      "topic": "health",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-premature-death-1997-2022.yml",
+          "node_label": "Premature death in Allen County, 1997–2022",
+          "span": "**The county has gone from healthier than America to a quarter worse than it, and the crossing is early.** Allen County is below the national rate in the first three windows only — 7,162 against 7,705 in 1997–1999 — and above it in the twenty-one since, ending 25.5 per cent above.",
+          "tier": "inference",
+          "sources": [
+            "catalog/county-health-rankings.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-premature-death-1997-2022.yml",
+          "node_label": "Premature death in Allen County, 1997–2022",
+          "span": "**In figures, taking every third window: the county's rate runs 7,162, 7,599, 7,819, 7,428, 6,759, 7,142, 9,033, 8,518 and 10,482, against a national 7,705, 7,535, 7,345, 7,090, 6,704, 6,601, 6,901, 7,282 and 8,352.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/county-health-rankings.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-premature-death-1997-2022.yml",
+          "node_label": "Premature death in Allen County, 1997–2022",
+          "span": "**The count says the same thing without a denominator in it, which matters here.** Deaths before seventy-five in Allen County were 1,306 in the three years 2011–2013 and **1,908** in 2020–2022, a rise of **46.1 per cent**, while the county's under-75 population in the same two windows fell 4.0 per cent, from 293,386 to 281,611 person-years.",
+          "tier": "verified",
+          "sources": [
+            "catalog/county-health-rankings.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+          "node_label": "What Allen County dies of early, 2016–2022",
+          "span": "**A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an American and 0.9 fewer than an Ohioan.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/county-health-rankings.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+          "node_label": "What Allen County dies of early, 2016–2022",
+          "span": "**It is not the opioid county the state's reputation would predict.** Allen County's overdose rate of 38.1 is **15 per cent below Ohio's** 44.7, and it is one of only four rows where the county does better than the state. What it exceeds the state on is suicide by 14 per cent, motor vehicle crashes by 10 per cent, homicide by 9 and firearms by 5.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+          "node_label": "What Allen County dies of early, 2016–2022",
+          "span": "**The gap between the county's Black and white residents is wider here than in the state or the country.** Life expectancy is 68.1 years for Black residents and 75.0 for white ones, a gap of **6.91 years**, against 5.48 in Ohio and 5.08 nationally.",
+          "tier": "verified",
+          "sources": [
+            "catalog/county-health-rankings.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not infer a cause from a curve; see [what the county dies of](allen-county-early-deaths-by-cause-2020-2022.yml) and [the overdose series](allen-county-drug-overdose-deaths-2020-2025.yml), which are counts of their own and not an explanation of this one.",
+        "Both ratios are the widest of the three geographies, and this corpus cannot say from these figures whether the cause is who lives where or what happens to whom."
+      ],
+      "figures": [
+        {
+          "label": "1997–99",
+          "value": 7162.0,
+          "literal": "7,162"
+        },
+        {
+          "label": "2000–02",
+          "value": 7599.0,
+          "literal": "7,599"
+        },
+        {
+          "label": "2003–05",
+          "value": 7819.0,
+          "literal": "7,819"
+        },
+        {
+          "label": "2006–08",
+          "value": 7428.0,
+          "literal": "7,428"
+        },
+        {
+          "label": "2009–11",
+          "value": 6759.0,
+          "literal": "6,759"
+        },
+        {
+          "label": "2012–14",
+          "value": 7142.0,
+          "literal": "7,142"
+        },
+        {
+          "label": "2015–17",
+          "value": 9033.0,
+          "literal": "9,033"
+        },
+        {
+          "label": "2018–20",
+          "value": 8518.0,
+          "literal": "8,518"
+        },
+        {
+          "label": "2020–22",
+          "value": 10482.0,
+          "literal": "10,482"
+        }
+      ]
+    },
+    {
+      "id": "overdose-deaths-fell-by-two-thirds",
+      "statement": "Drug overdose deaths in Allen County peaked in the twelve months to February 2023 at fifty-four and the twelve months to December 2025 count seventeen — a fall of 68.5 per cent, steeper than Ohio's 56.1 and the nation's 36.6, and below where the county's record starts.",
+      "topic": "health",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+          "node_label": "Drug overdose deaths in Allen County, 2020–2025",
+          "span": "**The epidemic peaked here in the twelve months to February 2023 at fifty-four deaths, and the twelve months to December 2025 count seventeen — a fall of 68.5 per cent.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-provisional-overdose-counts.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+          "node_label": "Drug overdose deaths in Allen County, 2020–2025",
+          "span": "**The fall is steeper than the state's and much steeper than the country's.** Measured to the same endpoint of December 2025, Ohio is down **56.1 per cent** from its peak of 5,582 in the twelve months to April 2021, and the United States down **36.6 per cent** from 111,466 in the twelve months to June 2023.",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-provisional-overdose-counts.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+          "node_label": "Drug overdose deaths in Allen County, 2020–2025",
+          "span": "**This is the one health figure the corpus holds twice, from two pipelines, and they agree exactly.** The three December windows of 2020, 2021 and 2022 sum to 116 deaths; the final NCHS mortality file, by way of [County Health Rankings](../../catalog/county-health-rankings.md), gives Allen County 116 drug overdose deaths for 2020–2022.",
+          "tier": "verified",
+          "sources": [
+            "catalog/county-health-rankings.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Allen County",
+          "value": 68.5,
+          "literal": "68.5"
+        },
+        {
+          "label": "Ohio",
+          "value": 56.1,
+          "literal": "56.1"
+        },
+        {
+          "label": "United States",
+          "value": 36.6,
+          "literal": "36.6"
         }
       ]
     },

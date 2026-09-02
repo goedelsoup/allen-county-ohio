@@ -2,11 +2,48 @@
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
+import DataTable from '../components/DataTable.astro'
+import StatTile from '../components/StatTile.astro'
 import { assertion } from '../lib/feeds'
-import { bar } from '../lib/chart-spec'
+import { bar, line } from '../lib/chart-spec'
 
 const life = assertion('lima-tracts-live-five-years-less')
 const gap = assertion('the-health-gap-is-a-gap-in-conditions')
+const dying = assertion('the-county-dies-younger-than-its-state')
+const overdose = assertion('overdose-deaths-fell-by-two-thirds')
+
+// The county's rate at every third window, from the assertion's own figures, against the national
+// rate for the same nine windows. The national series is typed out because it is the control and
+// not the claim; both are in the corpus node the assertion cites.
+const nationalYpll = [7705, 7535, 7345, 7090, 6704, 6601, 6901, 7282, 8352]
+const ypllSpec = line(dying.figures.map((f) => f.label), [
+    { name: 'Allen County', y: dying.figures.map((f) => f.value) },
+    { name: 'United States', y: nationalYpll },
+  ], {
+  yTitle: 'Years lost before 75, per 100,000',
+})
+
+const overdoseSpec = bar(
+  overdose.figures.map((f) => f.label),
+  overdose.figures.map((f) => f.value),
+  { yTitle: 'Fall from peak', tickSuffix: '%', labelValues: true },
+)
+
+// The eleven mortality measures as the compilation publishes them, with the years each covers.
+// Typed out because the corpus holds them as one measure and the spans differ row by row.
+const causes = [
+  ['Premature death (years lost before 75)', '2020–2022', '10,482', '9,740', '8,352', '1,908'],
+  ['Premature age-adjusted mortality', '2020–2022', '517.6', '470.8', '406.6', '1,908'],
+  ['Life expectancy, years', '2020–2022', '74.3', '75.2', '77.1', '—'],
+  ['Injury deaths', '2018–2022', '95.1', '100.7', '83.6', '485'],
+  ['Drug overdose deaths', '2020–2022', '38.1', '44.7', '30.8', '116'],
+  ['Suicides', '2018–2022', '16.8', '14.7', '14.0', '83'],
+  ['Firearm fatalities', '2018–2022', '15.5', '14.7', '13.4', '79'],
+  ['Motor vehicle crash deaths', '2016–2022', '12.1', '11.1', '12.3', '87'],
+  ['Homicides', '2016–2022', '7.8', '7.2', '6.5', '56'],
+  ['Infant mortality, per 1,000 births', '2016–2022', '6.4', '7.0', '5.6', '55'],
+  ['Child mortality', '2019–2022', '54.8', '59.2', '51.6', '58'],
+]
 
 const lifeSpec = bar(
   life.figures.map((f) => f.label),
@@ -25,6 +62,76 @@ const spreadSpec = bar(
   title="Health"
   lede="How long people live in Allen County, how far that varies inside it, and what a model can and cannot be asked."
 >
+  <section class="tiles">
+    <StatTile value="74.3" label="Life expectancy at birth" note="2020–2022. Ohio 75.2, the United States 77.1." tier={dying.tier} />
+    <StatTile value="1,908" label="Deaths before 75, 2020–2022" note="1,306 in 2011–2013, on a population 4 per cent larger." tier={dying.tier} />
+    <StatTile value="6.91 yrs" label="Black–white life expectancy gap" note="Wider than Ohio's 5.48 or the nation's 5.08." tier={dying.tier} />
+    <StatTile value="17" label="Overdose deaths, year to Dec 2025" note="Fifty-four in the year to February 2023." tier={overdose.tier} />
+  </section>
+
+  <section>
+    <h2>From healthier than America to a quarter worse</h2>
+    <p>
+      Until this phase the corpus could tell you what share of Lima's adults a model estimates to
+      have diabetes and could not tell you how many people died here. The agency that knows will
+      answer a machine for the whole United States and refuses it for a county, in a sentence, by
+      policy; the county figures reach this page through a compiler, and the compiler was checked
+      against that agency at the grain it does serve — exactly, twice.
+    </p>
+    <AssertionCard assertion={dying} open />
+    <ChartFigure
+      id="ypll"
+      title="Years of life lost before 75, per 100,000, age-adjusted"
+      caption="Every third three-year window from 1997–1999 to 2020–2022. The windows overlap by two years, so consecutive points are not independent; the publisher flags breaks at 2004–2006 and 2019–2021, both changes to how the population denominator was estimated."
+      columns={['Window', 'Allen County', 'United States']}
+      rows={dying.figures.map((f, i) => [f.label, f.value.toLocaleString('en-US'), nationalYpll[i].toLocaleString('en-US')])}
+      height={320}
+    />
+    <script type="application/json" data-chart-spec="ypll" set:html={JSON.stringify(ypllSpec)} is:inline />
+    <p>
+      The count says it without a denominator, which matters when the publisher's two breaks in this
+      series are both denominator changes. Deaths before seventy-five in Allen County were 1,306 in
+      the three years 2011–2013 and 1,908 in 2020–2022 — a rise of 46.1 per cent, while the
+      county's under-75 population fell 4.0 per cent.
+    </p>
+    <DataTable
+      title="Eleven ways of dying early, and the years each covers"
+      caption="Rates per 100,000 except life expectancy and infant mortality. The year spans differ row by row and no row should be read against another as though they did not. The last column is the count of deaths behind the county's rate."
+      columns={['Measure', 'Years', 'Allen', 'Ohio', 'US', 'Allen count']}
+      rows={causes}
+    />
+    <p class="note">
+      No other race category is published for this county. Ohio and the nation carry Hispanic, Asian
+      and American Indian figures; Allen County carries Black and white, and a Hispanic life
+      expectancy of 87.6 years that rests on a population too small for a life table. It is not
+      quoted as a finding here.
+    </p>
+  </section>
+
+  <section>
+    <h2>The overdose epidemic, ending</h2>
+    <p>
+      One of those eleven rows has a second, faster source behind it. CDC publishes provisional
+      county counts monthly, each a total for the twelve months ending that month, and Allen
+      County's seventy-two windows are never suppressed.
+    </p>
+    <AssertionCard assertion={overdose} open />
+    <ChartFigure
+      id="overdose"
+      title="Fall in drug overdose deaths from each peak, to December 2025"
+      caption="Allen County's peak is the twelve months ending February 2023, Ohio's April 2021, the nation's June 2023 — so the three are measured from different months to the same endpoint. Ohio's figure is taken from CDC's state file rather than by summing its counties: the number of Ohio counties reporting falls from 73 to 45 across this period as counties drop below the suppression threshold, which would invent a decline."
+      columns={['', 'Fall from peak']}
+      rows={overdose.figures.map((f) => [f.label, `${f.value}%`])}
+    />
+    <script type="application/json" data-chart-spec="overdose" set:html={JSON.stringify(overdoseSpec)} is:inline />
+    <p>
+      What the fall does not do is close the gap above. The county's premature death rate is at its
+      highest in 2020–2022, when overdoses were still rising, and this site holds no figure after
+      2022 for deaths of any other kind. Whether the county's early deaths fell with its overdoses
+      is not established.
+    </p>
+  </section>
+
   <section>
     <h2>Thirteen years, inside one county</h2>
     <p>
@@ -103,4 +210,28 @@ const spreadSpec = bar(
       is what was counted.
     </p>
   </section>
+  <script>
+    import { renderCharts } from '../scripts/charts'
+    renderCharts()
+  </script>
+
+  <style>
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    section {
+      margin-top: 3rem;
+    }
+    .note {
+      max-width: var(--measure);
+      color: var(--ink-secondary);
+      background: var(--surface-sunken);
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius);
+      font-size: 0.9375rem;
+    }
+  </style>
 </Base>

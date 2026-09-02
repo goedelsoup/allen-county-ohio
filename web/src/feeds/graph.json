@@ -3912,6 +3912,102 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+      "class": "measure",
+      "label": "Drug overdose deaths in Allen County, 2020–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-12-31",
+        "method": "Pulled from the publisher's Socrata endpoint filtered on FIPS 39003, seventy-two rows, no suppression: the county's counts run from 16 to 54 and the withholding threshold is ten. Every row is a twelve-month-ending total, so consecutive rows overlap by eleven months and no two may be added. Ohio and national figures are taken from the publisher's separate state file rather than by summing county rows, because the number of Ohio counties reporting falls from 73 to 45 across this period as counties drop below the threshold, which would invent a decline. Counts are provisional. [verified]",
+        "parameter": "drug overdose deaths, Allen County, twelve months ending",
+        "unit": "deaths",
+        "value": "17"
+      },
+      "blocks": [
+        {
+          "text": "Seventy-two twelve-month-ending counts, one for each month from January 2020 to December 2025, from a live flow of death certificates rather than from a final annual file. [verified] — [CDC's provisional county counts](../../catalog/cdc-provisional-overdose-counts.md), FIPS 39003, data as of 5 July 2026.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same file for the counts. The rates are this corpus's arithmetic against the county's 2020 census population of 102,206 and are not the publisher's; the population is held constant across six years in which it did not hold constant. [inference] — computed against [the 2020 count](allen-county-population-2020-census.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The epidemic peaked here in the twelve months to February 2023 at fifty-four deaths, and the twelve months to December 2025 count seventeen — a fall of 68.5 per cent.** [verified] — same file. That is below where the series starts: the twelve months ending January 2020 count eighteen.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The fall is steeper than the state's and much steeper than the country's.** Measured to the same endpoint of December 2025, Ohio is down **56.1 per cent** from its peak of 5,582 in the twelve months to April 2021, and the United States down **36.6 per cent** from 111,466 in the twelve months to June 2023. [verified] — [the state and national file](../../catalog/cdc-provisional-overdose-counts.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the county peaked late.** Ohio's worst twelve months ended in April 2021; Allen County's ended twenty-two months later, four months before the nation's. [inference] — computed from the two files.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This is the one health figure the corpus holds twice, from two pipelines, and they agree exactly.** The three December windows of 2020, 2021 and 2022 sum to 116 deaths; the final NCHS mortality file, by way of [County Health Rankings](../../catalog/county-health-rankings.md), gives Allen County 116 drug overdose deaths for 2020–2022. [verified] — the two sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the fall does not do is close the gap in the other node.** The county's premature death rate rises to its highest in 2020–2022, when overdoses were rising too, and this corpus has no figure after 2022 for deaths of any other kind. Whether the county's early deaths fell with its overdoses is not established here. [inference] — see [the premature death series](allen-county-premature-death-1997-2022.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+      "class": "measure",
+      "label": "What Allen County dies of early, 2016–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "Read from the publisher's 2025 annual release CSV, one row for Allen County and one each for Ohio and the United States, taking the `_rawvalue`, `_numerator` and race-specific columns. The data years are from the publisher's technical documentation, which the CSV does not carry, and they differ by measure — three years for premature death and overdoses, five for suicides and firearms, seven for homicides and motor vehicle deaths. Counts are the numerator column, which holds deaths rather than the years of potential life lost the codebook claims. [verified]",
+        "parameter": "life expectancy at birth, Allen County",
+        "unit": "years",
+        "value": "74.3"
+      },
+      "blocks": [
+        {
+          "text": "Eleven mortality measures for the county against its state and the nation, each with the count behind it and the years it covers. [verified] — [County Health Rankings](../../catalog/county-health-rankings.md), 2025 annual release, with the data years taken from the publisher's technical documentation rather than from the file.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same dataset. All rates are per 100,000 except life expectancy and infant mortality; the year spans are not the same across rows and no row here should be read against another as though they were. [inference] — stated here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an American and 0.9 fewer than an Ohioan.** [verified] — same dataset. The county is worse than the state on seven of the eleven measures in the table and worse than the nation on ten of them; the one it beats the nation on is motor vehicle crash deaths. [inference] — counted here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is not the opioid county the state's reputation would predict.** Allen County's overdose rate of 38.1 is **15 per cent below Ohio's** 44.7, and it is one of only four rows where the county does better than the state. What it exceeds the state on is suicide by 14 per cent, motor vehicle crashes by 10 per cent, homicide by 9 and firearms by 5. [inference] — computed from the table above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The gap between the county's Black and white residents is wider here than in the state or the country.** Life expectancy is 68.1 years for Black residents and 75.0 for white ones, a gap of **6.91 years**, against 5.48 in Ohio and 5.08 nationally. [verified] — same dataset, race-specific columns, 2020–2022.",
+          "tier": "verified"
+        },
+        {
+          "text": "**On years lost the ratio is nearly two to one.** Black residents of the county lose 18,933 years before seventy-five per 100,000 against 9,584 for white residents — a ratio of **1.98**, against 1.77 in Ohio and 1.70 nationally. On age-adjusted mortality the same comparison is 823 against 491, a ratio of 1.68. [verified] — same dataset. Both ratios are the widest of the three geographies, and this corpus cannot say from these figures whether the cause is who lives where or what happens to whom. [inference] — stated here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**No other race category is published for this county.** Ohio and the nation carry Hispanic, Asian and American Indian figures; Allen County carries Black and white and, for life expectancy, a Hispanic value of 87.6 years that rests on a population too small for a life table and is not quoted as a finding here. [verified] — same dataset; see [a modelled estimate is not an observation](../../decisions/a-modelled-estimate-is-not-an-observation.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Against the corpus's other health source, which is a model.** CDC's estimates put Lima worse than its county on eleven of thirteen separated measures, and five of the top eight are not diseases. Nothing above has a grain below the county, so the two cannot be joined. [verified] — [the CDC estimates](allen-county-health-2023.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "Both ratios are the widest of the three geographies, and this corpus cannot say from these figures whether the cause is who lives where or what happens to whom."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-elected-seats-2026.yml",
       "class": "measure",
       "label": "Allen County elective seats and how their holders arrived, 2026",
@@ -5435,6 +5531,14 @@
         {
           "text": "**Against Ohio.** The state's 2,772 tracts run from 60.0 to 89.2 years on a median of 76.9, so Allen County's median sits half a year above the state's and its range is well inside it. [verified] — same file, all Ohio rows.",
           "tier": "verified"
+        },
+        {
+          "text": "**The county figure this node could not state now exists, from a different source and a later period.** Allen County's life expectancy at birth is **74.3 years** for 2020–2022 — 0.9 below Ohio's and 2.8 below the nation's. It is not comparable with the 76.9 computed above: different years, different method, and four fifths of a county against all of it. [verified] — [County Health Rankings](../../catalog/county-health-rankings.md); see [what the county dies of](allen-county-early-deaths-by-cause-2020-2022.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The five-year gap this node found between the city and the county is matched by a gap of the same size between the county's Black and white residents**, 6.91 years in 2020–2022. The two are not the same fact and this corpus has not shown that either explains the other. [verified] — [the same dataset](../../catalog/county-health-rankings.md).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -6734,6 +6838,61 @@
         "It cannot say what was in the river; it can say what fell on the ground."
       ],
       "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-premature-death-1997-2022.yml",
+      "class": "measure",
+      "label": "Premature death in Allen County, 1997–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "Read from the publisher's trends CSV, which carries a `yearspan` rather than a release year, so the series is one measure across twenty-four windows rather than twenty-four releases of a measure. Windows overlap by two years and consecutive values are not independent. The rate is age-adjusted to the 2000 US standard population; the numerator column is the count of deaths before seventy-five, which is not what the publisher's codebook says it is and was established by matching the national column against CDC WONDER exactly. See [the catalog entry](../../catalog/county-health-rankings.md). [verified]",
+        "parameter": "years of potential life lost before age 75 per 100,000, age-adjusted, Allen County",
+        "unit": "years per 100,000",
+        "value": "10482"
+      },
+      "blocks": [
+        {
+          "text": "Years of potential life lost before age 75, per 100,000 and age-adjusted, in twenty-four overlapping three-year windows — the corpus's first measurement of how long people here actually live, as against how long a model says they can expect to. [verified] — [County Health Rankings](../../catalog/county-health-rankings.md), trends file, measure 1.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same dataset; Allen County, Ohio and the United States rows. The last column is the count of deaths before seventy-five in the three years, and the file has none for 2009–2011.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county has gone from healthier than America to a quarter worse than it, and the crossing is early.** Allen County is below the national rate in the first three windows only — 7,162 against 7,705 in 1997–1999 — and above it in the twenty-one since, ending 25.5 per cent above. [verified] — same dataset. [inference] — the comparison is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is not that the county got worse first. America got better and the county did not.** The national rate falls at every one of the first fourteen steps, from 7,705 to 6,605; Allen County's in the same span goes 7,162, up to 7,928, back to 6,843 — it ends within 320 of where it started while the nation improves by 1,100. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, taking every third window: the county's rate runs 7,162, 7,599, 7,819, 7,428, 6,759, 7,142, 9,033, 8,518 and 10,482, against a national 7,705, 7,535, 7,345, 7,090, 6,704, 6,601, 6,901, 7,282 and 8,352.** [verified] — same dataset, rounded to whole years lost per 100,000.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Then both rise, and the county rises further.** From its low of 6,759 in 2009–2011 the rate is up **55.1 per cent** to 10,482. The national rate over the same span is up 24.6 per cent. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The count says the same thing without a denominator in it, which matters here.** Deaths before seventy-five in Allen County were 1,306 in the three years 2011–2013 and **1,908** in 2020–2022, a rise of **46.1 per cent**, while the county's under-75 population in the same two windows fell 4.0 per cent, from 293,386 to 281,611 person-years. [verified] — same dataset, numerator and denominator columns. That comparison is worth stating separately because the publisher flags two breaks in this series, at 2004–2006 and 2019–2021, and both are changes to how the population denominator was estimated. [verified] — [the trends codebook](../../catalog/county-health-rankings.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Against Ohio the county is usually the better of the two, and in the last window it is not.** Allen sits below the state rate in seventeen of the twenty-four windows, by as much as 9.3 per cent in 2009–2011; in 2020–2022 it is 7.6 per cent above, its worst standing against the state in the series. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Nothing here says why.** The measure counts deaths and not their causes. [inference] — computed here. This corpus does not infer a cause from a curve; see [what the county dies of](allen-county-early-deaths-by-cause-2020-2022.yml) and [the overdose series](allen-county-drug-overdose-deaths-2020-2025.yml), which are counts of their own and not an explanation of this one.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus does not infer a cause from a curve; see [what the county dies of](allen-county-early-deaths-by-cause-2020-2022.yml) and [the overdose series](allen-county-drug-overdose-deaths-2020-2025.yml), which are counts of their own and not an explanation of this one."
+      ],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-presidential-vote-1856-1884.yml",
@@ -20345,6 +20504,20 @@
       "source": "catalog/census-1910-abstract-supplement-ohio.md"
     },
     {
+      "from": "measure/allen-county-drug-overdose-deaths-2020-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cdc-provisional-overdose-counts.md"
+    },
+    {
+      "from": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/county-health-rankings.md"
+    },
+    {
       "from": "measure/allen-county-elected-seats-2026.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -21092,6 +21265,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/noaa-nclimdiv-county.md"
+    },
+    {
+      "from": "measure/allen-county-premature-death-1997-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/county-health-rankings.md"
     },
     {
       "from": "measure/allen-county-presidential-vote-1856-1884.yml",
