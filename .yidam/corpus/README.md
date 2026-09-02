@@ -110,7 +110,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 9v / 3i / 1o | 94 |
 | [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 7v / 4i / 1o | 64 |
-| [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 118 |
+| [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 120 |
 | [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
