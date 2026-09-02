@@ -197,6 +197,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 5 | 6v / 7i / 2o | 113 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
+| [allen-county-private-schools-2013-2021.yml](measure/allen-county-private-schools-2013-2021.yml) | measure | Allen County's private and community schools, 2013–2021 | 4 | 10v / 5i / 1o | 103 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 10v / 3i / 0o | 91 |
 | [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 13v / 3i / 1o | 114 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
@@ -459,7 +460,7 @@ Sorted by: kind, then alphabetically.
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
-| [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 1v / 2i / 2o | 48 |
+| [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 2v / 4i / 3o | 83 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 5v / 2i / 1o | 51 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 12v / 4i / 1o | 110 |
 | [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 2v / 3i / 2o | 48 |
