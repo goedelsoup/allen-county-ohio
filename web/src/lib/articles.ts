@@ -132,6 +132,19 @@ export const ARTICLES: Article[] = [
 
   // ── People ──────────────────────────────────────────────────────────────
   {
+    slug: 'fifth-worst-for-hearts',
+    title: 'Fifth worst for hearts',
+    dek: 'The county’s heart disease rate climbed while Ohio’s fell, and the gains that stopped in 2010 stopped only for people under 65.',
+    section: 'people',
+    era: [1999, 2024],
+    assertions: [
+      'fifth-worst-in-ohio-for-heart-disease',
+      'the-improvement-stopped-at-working-age',
+      'middling-on-hearts-worst-fifth-on-strokes',
+    ],
+    entries: ['place/allen-county.yml'],
+  },
+  {
     slug: 'the-schools-that-are-not-districts',
     title: 'The schools that are not districts',
     dek: 'Ten private schools and two community schools account for a third of the county’s missing children, in a survey whose roster cannot be differenced.',
