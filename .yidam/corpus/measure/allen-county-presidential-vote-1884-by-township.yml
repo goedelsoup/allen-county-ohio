@@ -1,0 +1,81 @@
+class: measure
+label: Allen County presidential vote by township and ward, 1884
+description: |
+  The last sub-county election return this corpus holds before 2016, printed as "the official count
+  of the votes polled in Allen County, November 4, 1884". [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), which gives it as two
+  columns headed only "Rep." and "Dem." and names the office in the sentence beneath: "St. John
+  received 59 votes in the county and Butler 30, for President." [inference] — so this is the
+  presidential count; the book does not label the columns with the office.
+
+      unit                      Rep.    Dem.   |  unit                     Rep.    Dem.
+      Amanda                     100     207   |  Marion                    211     302
+      Auglaize                   279     177   |  Monroe                    267     222
+      Bath                       129     192   |  Ottawa                     15      18
+      Delphos, First Ward         89     163   |  Perry                     155     190
+      Delphos, Second Ward        85     200   |  Richland — Bluffton       125     349
+      German                     108     250   |  Richland — Beaver Dam      85     176
+      Jackson                    159     273   |  Shawnee                   117     171
+      Lima, First Ward           364     316   |  Spencer                   159     322
+      Lima, Second Ward          429     282   |  Sugar Creek               133     111
+      Lima, Third Ward           103     381   |  ------------------------------------
+      Lima, Fourth Ward          260     139   |  Totals as printed        3,372   4,442
+
+  [verified] — same page, read from a 600-dpi render.
+
+  **Lima went Republican while the county went Democratic.** The city's four wards give 1,156 to
+  1,118; the county gives 3,372 to 4,442. Take the wards out and the rest of the county is 2,216 to
+  3,324 on the book's own totals, better than three to two Democratic. [inference] — computed from
+  the table above.
+
+  **That is the arrangement the county has since reversed end for end.** In 2020 eleven of the
+  county's eighty-eight precincts went Democratic and ten of them were in Lima; every township, both
+  cities' outer wards and every village went the other way. [verified] —
+  [the 2020 vote](allen-county-presidential-vote-2020.yml). The city was the Republican end of this
+  county and is now the only Democratic ground in it. [inference]
+
+  **Lima was already split by ward, and the split was wide.** Its Second Ward is 60.3 per cent
+  Republican and its Third is 78.7 per cent Democratic — the two most lopsided units of the twenty,
+  a mile apart. [inference] — computed here. Six of the twenty units go Republican: Auglaize, Monroe,
+  Sugar Creek and three of Lima's four wards.
+
+  **Ottawa Township polls thirty-three votes**, a seventh of the next smallest unit on the county's
+  ballot, twenty-seven years after it was erected to hold a growing Lima and one year before this
+  book was printed. Lima's four wards poll 2,274 beside it. [verified] — same page. See
+  [what became of German and Ottawa townships](../question/what-became-of-german-and-ottawa-townships.yml):
+  this is that answer as a number.
+
+  **The county's ballot in 1884 names a German Township**, which the county renamed American in
+  1918. It polls 108 to 250. [verified] — same page; see
+  [the renaming](../event/renaming-of-german-township-1918.yml).
+
+  **The Republican column adds to its printed total and the Democratic column does not.** The twenty
+  Republican figures sum to 3,372, exactly as printed. The twenty Democratic figures sum to 4,441
+  against a printed 4,442. [verified] — same page; the addition is this corpus's, of the twenty pairs
+  it prints, read from the page image at 600 dpi after the OCR had been discarded.
+
+  [open] Whether that one vote is the book's arithmetic or its typesetting. The figure carried
+  forward as the county's Democratic total is the book's own 4,442, not this corpus's 4,441.
+properties:
+  parameter: presidential votes by township and ward, Allen County
+  value: "20"
+  unit: townships and wards reporting
+  as_of: 1884-11-04
+  method: |
+    Read from a 600-dpi render of the archive.org scan, not from OCR. Both OCR passes available for
+    this book — the djvu text and the PDF text layer — return the Republican figure for Lima's Third
+    Ward as 108, and the page says 103; the typeface's 3 and 8 are near-identical at scanning
+    resolution and the difference is exactly the five votes that reconcile the Republican column to
+    its printed total. That reconciliation is the check on the whole column. The Democratic column
+    has no such check and is one short. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
