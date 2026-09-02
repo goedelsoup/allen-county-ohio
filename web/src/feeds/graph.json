@@ -3107,6 +3107,59 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-bridge-condition-1992-2025.yml",
+      "class": "measure",
+      "label": "Allen County bridge condition by owner, 1992–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Twelve editions of the Ohio delimited file, selected on `COUNTY_CODE_003` = 3 and on `RECORD_TYPE_005A` = 1. That second filter is necessary and was not needed for the 2025 edition alone: the older files carry a second row for some structures describing the route beneath them, and 1992 has 436 rows for 393 bridges. Counting rows rather than structures would have invented a fall of seventy-two bridges that did not happen. [verified] \"Poor\" is the minimum of items 58, 59, 60 and 62 being 4 or less, the Federal Highway Administration's own rule, applied identically in every edition. Structures are linked across editions on `STRUCTURE_NUMBER_008`, which Ohio reassigns when a bridge is replaced, so a replacement appears as a disappearance and a new number rather than as a changed row. [verified]",
+        "parameter": "highway bridges in poor condition by owner, Allen County",
+        "unit": "per cent of state-owned bridges, 1992",
+        "value": "21.9"
+      },
+      "blocks": [
+        {
+          "text": "Twelve editions of the federal bridge inventory, read for the same county at three-year intervals. [verified] — [the National Bridge Inventory](../../catalog/national-bridge-inventory.md), Ohio files 1992 to 2025, county code 3, structure records only.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: 21.9 per cent of the state's bridges in this county were in poor condition in 1992, 16.0 in 1995, 19.1 in 1998, 5.1 in 2001, 2.1 in 2004, 2.1 in 2007, 2.9 in 2010, 1.0 in 2013, 1.0 in 2016, 0.0 in 2019, 0.0 in 2022 and 0.0 in 2025.** [verified] — same source, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In 1992 the state owned the worst bridges in Allen County.** Twenty-one of its ninety-six were in poor condition, 21.9 per cent, against sixteen of the county's two hundred and seventy-seven, 5.8 per cent. The ladder this corpus published from the 2025 edition — state soundest, county next, municipalities worst — ran the other way inside living memory. [verified] — the 1992 and 2025 files. [inference] — the comparison drawn here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It did not repair them. It replaced them.** Of the twenty-one state bridges rated poor in 1992, eighteen are absent from the 2025 file altogether and three survive under the same structure number with better ratings. Every one of the eighteen was built between 1940 and 1962, and the state's holding rose from 96 structures to 103 across the same years, so they left by replacement rather than by abandonment. [verified] — the two files, linked on structure number. [inference] — the reading is this corpus's; the file records a disappearance and not a demolition.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Age was the other reading and the file refutes it.** The state's median bridge in this county was built in 1970 and the county's in 1982; 57 of the state's 103 predate 1980 against 112 of the county's 242, so the state's stock is the older of the two on both measures. [verified] — the 2025 file, computed here. Whatever explains the state's record here, it is not that its bridges are newer. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**What the county did instead is shrink.** Its holding fell from 277 structures to 242 while the state's rose, and the county's poor count has never reached zero in any edition. [verified] — the twelve files. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The last figure in the table is not like the others, and three tests say so.** The county's poor count stood at 5 in the 2023 edition and 31 in the 2024, on 370 and 367 structures. Ohio as a whole did not move — 4.64 per cent poor in 2023, 4.71 in 2024, 4.70 in 2025 — and neither did any of the six counties that border this one. [verified] — the Ohio files for those editions, counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the ratings moved both ways at once.** Among the county's own bridges, superstructures rated 4 went from 3 to 14 between those two editions and substructures from 3 to 13, while decks rated 9 went from 22 to 39 and superstructures rated 9 from 22 to 38. [verified] — same files. A stock of bridges does not deteriorate and improve in the same year; a new hand applying the same nine-point scale does exactly this. [inference] — see [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The clearest single case is the county's oldest bridge.** The 1909 concrete arch on Hay Road was rated 6 for its deck, 5 for its superstructure and 5 for its substructure in the 2022 edition and 7, 7 and 7 in the 2025 one, having been reconstructed in no year at all. [verified] — the two files; see [the Hay Road bridge](../site/hay-road-bridge.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-bridge-crossings-2025.yml",
       "class": "measure",
       "label": "What Allen County's bridges cross, 2025",
@@ -3161,7 +3214,19 @@
           "tier": "verified"
         },
         {
-          "text": "[verified] — same source, counted here. Written out: **not one of the state's 103 bridges here is in poor condition, 29 of the county's 242 are, and 4 of the municipalities' 19 — 0.0, 12.0 and 21.1 per cent.** **A bridge in this county is in poor condition or not according to who owns it**, and the ladder runs from the government furthest away to the one nearest. [inference] — computed here. The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file.",
+          "text": "[verified] — same source, counted here. Written out: **not one of the state's 103 bridges here is in poor condition, 29 of the county's 242 are, and 4 of the municipalities' 19 — 0.0, 12.0 and 21.1 per cent.** **A bridge in this county is in poor condition or not according to who owns it**, and in this edition the ladder runs from the government furthest away to the one nearest. [inference] — computed here. The corpus does not know why the state replaced its bad bridges and the county did not; the obvious answer is money, and no source held here carries either agency's capital budget.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two readings this node could not separate are now separated, and the age one is wrong.** The state's median bridge in this county was built in 1970 and the county's in 1982, and 57 of the state's 103 predate 1980 against 112 of the county's 242 — so the state's stock is the older of the two, not the newer. [verified] — same source, computed here; see [the condition series](allen-county-bridge-condition-1992-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the ladder ran the other way inside living memory.** In the 1992 edition twenty-one of the state's ninety-six bridges here were in poor condition, 21.9 per cent, against 5.8 per cent of the county's. Eighteen of those twenty-one are absent from the 2025 file and the state's holding grew from 96 structures to 103, so they were replaced. [verified] — the 1992 and 2025 editions, linked on structure number; see [the condition series](allen-county-bridge-condition-1992-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 12.0 per cent in the table above is one edition and it is the odd one.** The county's poor count was 5 in the 2023 edition and 31 in the 2024, while Ohio as a whole moved from 4.64 to 4.71 per cent and none of this county's six neighbours moved at all. [verified] — the Ohio files for those editions. The last figure this corpus can compare with the rest of the series is the 2022 edition's 2.0 per cent. [inference] — see [the condition series](allen-county-bridge-condition-1992-2025.yml).",
           "tier": "inference"
         },
         {
@@ -3182,7 +3247,7 @@
         }
       ],
       "refusals": [
-        "The corpus does not know why, and the two obvious readings — that the state maintains better, or that the state owns newer and larger structures on the interstate — are not separated by anything in this file."
+        "The corpus does not know why the state replaced its bad bridges and the county did not; the obvious answer is money, and no source held here carries either agency's capital budget."
       ],
       "withheld": 3
     },
@@ -16637,6 +16702,22 @@
         {
           "text": "**What the file will not tell you is what it is called.** The inventory carries the road and the water and no name, and gives it the structure number 0234753. It is a hundred and seventeen years old, it is the oldest thing in this county that people still drive over, and the corpus knows it only as a row. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**It is a concrete deck arch, one of five in the county and the oldest of them.** Item 43 codes it as concrete of type *arch — deck*; the other four carry the Lincoln Highway over the Auglaize (1926), Bluffton's Main Street over Riley Creek (1925), Treatment Plant Road over the Ottawa (1930) and North Street over the Ottawa (2004). [verified] — [the inventory](../../catalog/national-bridge-inventory.md), 2025 Ohio file. [inference] — the five counted here, out of 364 structures of which 175 are multiple box beams and 21 are through trusses.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Its condition is the best it has been recorded at, and nothing was done to it.** The deck, the superstructure and the substructure were rated 5, 6 and 5 in the 1992 edition, 5, 5 and 4 in 2010, 6, 5 and 5 in 2022, and **7, 7 and 7 in 2025** — with the reconstruction year blank in every one of the twelve editions read. [verified] — [the inventory](../../catalog/national-bridge-inventory.md), the twelve Ohio files; see [the condition series](../measure/allen-county-bridge-condition-1992-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "A hundred-and-sixteen-year-old arch does not gain three points on its substructure by standing still, and this is the clearest single case of the change that ran through the county's 2023 inspection round. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It carries about a hundred and seventy-five vehicles a day**, counted in 2016. [verified] — same source.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -20034,6 +20115,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "measure/allen-county-bridge-condition-1992-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/national-bridge-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-bridge-condition-1992-2025.yml",
+      "to": "office/allen-county-engineer.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/national-bridge-inventory.md"
     },
     {
       "from": "measure/allen-county-bridge-crossings-2025.yml",

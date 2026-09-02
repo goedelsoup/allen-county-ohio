@@ -116,6 +116,7 @@ const hogSpec = line(
 )
 
 const bridges = assertion('not-one-state-bridge-is-in-poor-condition')
+const replaced = assertion('the-state-replaced-its-bridges')
 const gauge = assertion('the-gauge-was-not-there')
 const drinks = assertion('the-city-drinks-from-the-river-nobody-measures')
 const named = assertion('a-county-column-is-a-filing-decision')
@@ -126,6 +127,29 @@ const housesSpec = bar(
   houses.figures.map((f) => f.value),
   { yTitle: 'Single-family houses authorized, 1990–2025', labelValues: true },
 )
+
+const replacedSpec = line(
+  replaced.figures.map((f) => f.label),
+  [{ name: 'State-owned bridges in poor condition', y: replaced.figures.map((f) => f.value) }],
+  { yTitle: 'Per cent poor', zeroBased: true, tickSuffix: '%' },
+)
+
+// Twelve editions, both owners. The state's line is charted; the county's is here because its
+// last term is the one this section shows to be an artefact of a single inspection round.
+const bridgeSeries = [
+  ['1992', '96 / 21', '21.9', '277 / 16', '5.8'],
+  ['1995', '94 / 15', '16.0', '279 / 21', '7.5'],
+  ['1998', '94 / 18', '19.1', '281 / 38', '13.5'],
+  ['2001', '98 / 5', '5.1', '284 / 34', '12.0'],
+  ['2004', '96 / 2', '2.1', '270 / 34', '12.6'],
+  ['2007', '96 / 2', '2.1', '271 / 27', '10.0'],
+  ['2010', '102 / 3', '2.9', '275 / 34', '12.4'],
+  ['2013', '100 / 1', '1.0', '258 / 24', '9.3'],
+  ['2016', '103 / 1', '1.0', '269 / 18', '6.7'],
+  ['2019', '104 / 0', '0.0', '255 / 11', '4.3'],
+  ['2022', '104 / 0', '0.0', '247 / 5', '2.0'],
+  ['2025', '103 / 0', '0.0', '242 / 29', '12.0'],
+]
 
 const permitDecades = [
   ['1990–1999', 2252, 2941, '225.2'],
@@ -353,11 +377,36 @@ const yieldSpec = bar(
     />
     <script type="application/json" data-chart-spec="bridgecond" set:html={JSON.stringify(bridgeSpec)} is:inline />
     <p>
-      Why the state's hundred and three are all sound is not in this file. Two readings fit — that
-      the state maintains better, or that the state owns the newer and larger structures, most of
-      them on an interstate built in the 1960s — and nothing in the inventory separates them. What
-      can be said is which number belongs to which government: twelve per cent is the county
-      engineer's figure, not nine.
+      Which number belongs to which government is the part worth keeping: twelve per cent is the
+      county engineer's figure, not nine.
+    </p>
+    <AssertionCard assertion={replaced} />
+    <ChartFigure
+      id="bridgereplaced"
+      title="State-owned bridges in Allen County in poor condition, 1992–2025"
+      caption="Twelve editions of the same federal file at three-year intervals. Older editions carry a second row for some structures describing the route beneath them; counting rows instead of structures would invent a fall of seventy-two bridges between 1992 and 2025 that did not happen."
+      columns={['Edition', 'State bridges / poor', 'Per cent', 'County bridges / poor', 'Per cent']}
+      rows={bridgeSeries}
+    />
+    <script type="application/json" data-chart-spec="bridgereplaced" set:html={JSON.stringify(replacedSpec)} is:inline />
+    <p>
+      Two readings used to fit the state's clean sheet — that it maintains better, or that it owns
+      newer structures — and the file separates them now. The state's median bridge here was built in
+      1970 and the county's in 1982; 57 of the state's 103 predate 1980 against 112 of the county's
+      242. The state's stock is the older of the two. What it did was not repair: of the twenty-one
+      state bridges rated poor in 1992, eighteen are simply absent from the 2025 file while the
+      state's holding grew from 96 structures to 103. Ohio issues a new structure number when a
+      bridge is rebuilt, so a replacement shows up as a disappearance.
+    </p>
+    <p class="note">
+      The county's last figure in that table is not like the rest of it. Its poor count was five in
+      the 2023 edition and thirty-one in the 2024, on a stock that changed by three structures —
+      while Ohio as a whole moved from 4.64 to 4.71 per cent and not one of Allen County's six
+      neighbours moved at all. The inspection dates behind the change are real 2023 inspections, and
+      among the county's own bridges both tails of the nine-point scale grew at once: superstructures
+      rated 4 went from three to fourteen and superstructures rated 9 from twenty-two to
+      thirty-eight. A stock of bridges does not deteriorate and improve in the same year. The last
+      county figure comparable with the rest of the series is the 2022 edition's 2.0 per cent.
     </p>
     <p>
       The county's own site says it has 371 bridges and more than 1,400 culverts; the federal
@@ -368,10 +417,18 @@ const yieldSpec = bar(
     <p>
       Half the county's bridges predate 1980, and the peak is the interstate decades: 69 built in
       the 1960s and 72 in the 1970s, thirty-nine per cent of them in twenty years. The oldest was
-      built in 1909 and still carries Hay Road over the Auglaize River in Auglaize Township. It is
-      the only one of the 364 the federal file marks as eligible for the National Register, and none
-      of the county's twenty-nine Register entries is a bridge. It has no name in the record — only
-      a road, a river, and the structure number 0234753.
+      built in 1909 and still carries Hay Road over the Auglaize River in Auglaize Township — a
+      concrete deck arch, one of five in the county and the oldest of them, carrying about 175
+      vehicles a day. It is the only one of the 364 the federal file marks as eligible for the
+      National Register, and none of the county's twenty-nine Register entries is a bridge. It has
+      no name in the record — only a road, a river, and the structure number 0234753.
+    </p>
+    <p>
+      It is also the clearest single case of what happened in the 2023 inspection round. Its deck,
+      superstructure and substructure were rated 5, 6 and 5 in 1992, 5, 5 and 4 in 2010, 6, 5 and 5
+      in 2022 — and 7, 7 and 7 in 2025, with the reconstruction year blank in every edition. A
+      hundred-and-sixteen-year-old arch does not gain three points on its substructure by standing
+      still.
     </p>
     <p>
       One caution about the traffic figures here. The busiest structure in the county carries
