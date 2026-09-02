@@ -179,10 +179,11 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
-| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 12v / 5i / 1o | 119 |
+| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 14v / 5i / 0o | 122 |
+| [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 6v / 0i / 0o | 42 |
-| [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 7v / 2i / 0o | 74 |
+| [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 10v / 3i / 0o | 91 |
 | [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 13v / 3i / 1o | 114 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
