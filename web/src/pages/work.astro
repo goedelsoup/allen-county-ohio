@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import DataTable from '../components/DataTable.astro'
@@ -94,11 +95,13 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
   <section>
     <h2>Thirteen ways of counting jobs, and none of counting pay</h2>
     <p>
-      This corpus has held the county's employment since its ninth phase — by sector, back to 1969,
-      through the manufacturing decline and out the other side. It had never held a wage. The
-      Quarterly Census of Employment and Wages publishes both, and the two rank the county
-      differently.
+      The Quarterly Census of Employment and Wages publishes both the jobs and the wages, and the
+      two rank the county differently.
     </p>
+    <Gloss>
+      This county's employment by sector has been held here since the ninth phase, back to 1969 —
+      through the manufacturing decline and out the other side. A wage never had been.
+    </Gloss>
     <AssertionCard assertion={pay} />
     <ChartFigure
       id="pay"
@@ -115,22 +118,17 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
     </p>
     <p>
       Manufacturing is 17.9 per cent of the jobs and 28.0 per cent of the wages, the only sector in
-      the county whose share of pay is more than half again its share of employment. The period this
-      site calls deindustrialization ended with manufacturing still the best-paid large sector here;
-      what replaced the jobs did not replace the pay. The corpus holds one year of wages and cannot
-      say when that gap opened.
+      the county whose share of pay is more than half again its share of employment. Deindustrialization ended with manufacturing still the best-paid large sector here: what replaced the jobs did not replace the pay. One year of wages cannot say when that gap opened.
     </p>
   </section>
 
   <section>
     <h2>Where the industrial city started</h2>
     <p>
-      This period is named for manufacturing, and for eleven phases every figure on this page was
-      population. The corpus holds three counts from before 1910: Lima had 1,980 manufacturing wage
-      earners in 1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments, of whom thirty per
-      cent were women and fifty-one were under sixteen. Its leading industries were tobacco and
-      locomotives. That is the industrial city sixty years before the decline this page describes —
-      a baseline, and not an explanation.
+      The industrial city is older than the decline. Lima had 1,980 manufacturing wage earners in
+      1899, 2,733 in 1904 and 3,607 in 1909, in 85 establishments, of whom thirty per cent were
+      women and fifty-one were under sixteen. Its leading industries were tobacco and locomotives.
+      That is this county sixty years before the fall below — a baseline, and not an explanation.
     </p>
     <AssertionCard assertion={work} />
 
@@ -145,12 +143,9 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
     <script type="application/json" data-chart-spec="work" set:html={JSON.stringify(workSpec)} is:inline />
     <AssertionCard assertion={stopped} />
     <p>
-      Three more censuses have since been read, from the Ohio state volume of each, and they change
-      the shape of that baseline. Lima's factory workforce grew by 146 per cent in the fifteen years
+      Three more censuses, from the Ohio state volume of each, change the shape of that baseline. Lima's factory workforce grew by 146 per cent in the fifteen years
       to 1914 — and then by twenty-five people in the five years after it, a span that contains a
-      world war. By 1929 it was 4,548, three hundred and twenty-eight below the 1914 figure. The
-      growth had stopped fifteen years before the Depression and forty before the decline this page
-      is named for.
+      world war. By 1929 it was 4,548, three hundred and twenty-eight below the 1914 figure. The growth had stopped fifteen years before the Depression and forty before the fall this page is named for.
     </p>
     <ChartFigure
       id="lima-workforce-1899-1929"
@@ -180,10 +175,9 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
   </section>
 
   <section>
-    <h2>And what happened to it</h2>
+    <h2>Down fifty-eight per cent, and then it stopped</h2>
     <p>
-      The Bureau of Economic Analysis has counted this county's jobs by industry every year since
-      1969, and the decline this page is named for is in it, whole:
+      The Bureau of Economic Analysis has counted this county's jobs by industry every year since 1969, and the fall is in it whole:
       <strong>manufacturing employment peaked at 18,400 in 1973 and bottomed at 7,775 in 2009</strong>.
       Fifty-eight per cent of it, over thirty-six years.
     </p>
@@ -214,16 +208,15 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
     </p>
     <p>
       And for thirty-one years before any of that, the county's jobs went <em>up</em>. Total
-      employment rose from 56,562 in 1969 to 72,973 in 2000 — twenty-nine per cent — through the
-      whole of the period this page calls decline, and peaked twenty years after the population did.
+      employment rose from 56,562 in 1969 to 72,973 in 2000 — twenty-nine per cent — through the whole of the period called deindustrialization, and peaked twenty years after the population did.
       Whatever Allen County lost between 1980 and 2000, it was not work.
     </p>
     <p>
-      Which is why the caveat under the chart at the top of this page changed rather than
-      disappearing. It used to say the corpus had not measured the cause. It now says the corpus
-      does not establish that the population decline was caused by the manufacturing decline — and
-      it says so from a stronger position, because for the last twelve years the proposed cause
-      moves opposite to the effect.
+      Which is why the caveat under the chart above narrowed rather than disappearing. It no
+      longer says only that the cause was not measured; it says that the population decline is not
+      established to have been caused by the manufacturing decline — and it says so from a
+      stronger position, because for the last twelve years the proposed cause moves opposite to
+      the effect.
     </p>
     <p>
       The corpus used to hold one period for all of this, called <em>deindustrialization</em> and
@@ -242,12 +235,13 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
       a bigger fall, in nine years, than manufacturing managed in the twelve before it.
     </p>
     <p>
-      This page said something weaker and wronger until now. It said health care had fallen from
-      11,744 in 2010, because the corpus had read County Business Patterns at five-year steps and
-      2013 was not one of the steps. The levels were right and the shape was not, and a sample can
-      only ever report the first. The nine missing files were in the same directory as the four that
-      were taken.
+      Health care fell from a peak in 2013, not from 2010. The levels were right and the shape was
+      not, and a sample can only ever report the first.
     </p>
+    <Gloss>
+      County Business Patterns had been read here at five-year steps, and 2013 was not one of them.
+      The nine missing files were in the same directory as the four that were taken.
+    </Gloss>
     <AssertionCard assertion={health} />
 
     <ChartFigure
@@ -268,10 +262,12 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
 
     <h3>Who the employers are</h3>
     <p>
-      For eight phases this corpus measured a county's work and never named an employer. It now
-      names five, in the sector that employs the most people here — and the useful fact about them
-      is not their size.
+      Five employers, in the sector that employs the most people here — and the useful fact about
+      them is not their size.
     </p>
+    <Gloss>
+      Eight phases measured a county's work here and never named an employer.
+    </Gloss>
     <AssertionCard assertion={hospitals} />
     <p>
       Every one of the five trades under a name that is not the name of the body that enrolls with
@@ -283,16 +279,14 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
       Two of them stand at the same address, 730 West Market Street, so the county's five hospitals
       occupy four buildings. And one of them is not in Lima at all: the Institute for Orthopaedic
       Surgery has a Lima postal address and sits in Perry Township, outside any municipality, as the
-      refinery and the tank plant do. That was checked before it was written rather than after,
-      which is the fourth time this corpus has had to ask the question and the first time it asked
-      it in advance.
+      refinery and the tank plant do. That was checked before it was written rather than after — the fourth time the question has come up here, and the first time it was asked in advance.
     </p>
   </section>
 
   <section>
     <h2>The one that grew, and where it stands</h2>
     <p>
-      Every other chart on this page counts people. This one counts what the county can make, and it
+      Every other chart here counts people. This one counts what the county can make, and it
       goes the other way. The refinery Standard Oil put on a Shawnee Township farm in 1886 could run
       <strong>145,000 barrels of crude a day in 1994 and can run 183,000 now</strong> — up a quarter,
       across the same decades in which the county's manufacturing employment fell by more than half.
@@ -310,17 +304,14 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
     <script type="application/json" data-chart-spec="refinery" set:html={JSON.stringify(refinerySpec)} is:inline />
 
     <p>
-      A county's output and a county's payroll are not the same quantity, and this is the clearest
-      case of it here. The refinery is the largest in Ohio and thirty-sixth of the hundred and
-      twenty-four in the country, and nothing on this page says how many people work in it — because
-      no source the corpus holds does.
+      A county's output and a county's payroll are not the same quantity, and this is the clearest case of it. The refinery is the largest in Ohio and thirty-sixth of the hundred and twenty-four in the country, and how many people work in it is not stated here, because no source read for this page says.
     </p>
     <p>
-      Who operates it was an open question in this corpus from its first day. It is BP through the
-      1997 report, Clark Refining, then Premcor, then the Lima Refining Company from 2008 — under
-      Husky Energy from 2010 and Cenovus since 2022. The hundred and eight years between the Solar
-      Refining Company in 1886 and BP in 1994 are still unsourced, and the federal census cannot
-      supply them: its corporate-parent column does not exist before 2010.
+      Who operates it: BP through the 1997 report, Clark Refining, then Premcor, then the Lima
+      Refining Company from 2008 — under Husky Energy from 2010 and Cenovus since 2022. The
+      hundred and eight years between the Solar Refining Company in 1886 and BP in 1994 are
+      unsourced, and the federal census cannot supply them: its corporate-parent column does not
+      exist before 2010.
     </p>
     <p>
       Meanwhile Allen County's own address file still labels the site <em>Valero Lima Refinery</em>,
@@ -363,7 +354,7 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
       is not in the data.
     </p>
     <p>
-      One figure on this page is reported and not read. Franklin County — Columbus, a hundred miles
+      One figure here is reported and not read. Franklin County — Columbus, a hundred miles
       away — is the second-largest recorded destination for Allen County residents who work outside
       it, above two counties that share a border. The 1,723 are spread thinly across many Columbus
       tracts. A block-to-block table of where people work cannot be published as collected, and this

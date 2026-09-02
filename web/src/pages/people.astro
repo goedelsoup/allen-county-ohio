@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import DataTable from '../components/DataTable.astro'
@@ -172,8 +173,7 @@ const spreadSpec = bar(
   <section>
     <h2>The whole record</h2>
     <p>
-      The county has been counted every ten years since 1830 and this corpus now holds all
-      twenty-one counts. It grew at every census for a hundred and fifty years, peaked in 1980, and
+      The county has been counted every ten years since 1830, twenty-one times. It grew at every census for a hundred and fifty years, peaked in 1980, and
       has fallen at every census since — it is smaller today than it was in 1960. The first two
       figures count different ground: the reorganization of 1848 moved 138 square miles.
     </p>
@@ -192,11 +192,14 @@ const spreadSpec = bar(
   <section>
     <h2>Why it shrinks</h2>
     <p>
-      Five decades of this page described a decline without explaining it. The Population
-      Estimates programme publishes the components of change — births, deaths, and migration
-      split into domestic and international — and the corpus had held that file, uncited on
-      these columns, since its second phase.
+      The decline is two forces, and the census names them. The Population Estimates programme
+      publishes the components of change — births, deaths, and migration split into domestic and
+      international.
     </p>
+    <Gloss>
+      Five decades of decline were described here before they were explained. The file had been in
+      the corpus, uncited on these columns, since its second phase.
+    </Gloss>
     <AssertionCard assertion={mechanism} />
 
     <ChartFigure
@@ -240,11 +243,14 @@ const spreadSpec = bar(
 
     <h3>What the concentration is made of</h3>
     <p>
-      This page has said for ten versions that the county's loss is concentrated in Lima, and until
-      now it could not say what Lima is. It is a third of the county's people, two thirds of its
-      poor, and three quarters of its Black residents — and the three shares close exactly against
+      The loss is concentrated in Lima, and Lima is a third of the county's people, two thirds of
+      its poor, and three quarters of its Black residents. The three shares close exactly against
       the county's own rows, so this is one city measured three ways rather than three estimates.
     </p>
+    <Gloss>
+      The concentration was asserted here through ten versions of this page before there was a
+      figure for what Lima is made of.
+    </Gloss>
     <AssertionCard assertion={concentration2} open />
 
     <ChartFigure
@@ -270,9 +276,8 @@ const spreadSpec = bar(
       finished before the decline began.
     </p>
     <p>
-      This is also the first source on this page that publishes how wrong it might be. Every figure
-      in it carries a margin — Amanda Township's median household income is $99,148 give or take
-      $20,903 — and the first claim written from it was one the margins refused. Lima has the lowest
+      This source publishes how wrong it might be. Every figure in it carries a margin — Amanda Township's median household income is $99,148 give or take
+      $20,903 — and the first claim drawn from it was one the margins refused. Lima has the lowest
       household income figure in the county and cannot be said to have the lowest household income:
       Perry Township's is higher by $9,902 against a combined margin of $11,142. The gap that does
       survive is the one against Shawnee, which is seven and a half times its margin.
@@ -283,9 +288,9 @@ const spreadSpec = bar(
     <h2>Not age, and not suburbanization</h2>
     <AssertionCard assertion={young} open />
     <p>
-      Two things this page already says compose into a story that is not true. It says the county
-      loses people partly to natural decrease — more deaths than births — and it says the loss is
-      concentrated in Lima. Put together, those describe a city dying of age.
+      Two true things above compose into a story that is not. The county loses people partly to
+      natural decrease — more deaths than births — and the loss is concentrated in Lima. Put
+      together, those describe a city dying of age.
     </p>
     <p>
       Lima's median age is 35.4 against the county's 39.7. Its share over sixty-five is 15.6 per cent
@@ -295,20 +300,21 @@ const spreadSpec = bar(
       county has is not principally the city's.
     </p>
 
-    <h3>And it is not suburbanization</h3>
+    <h3>Nor is it suburbanization</h3>
     <AssertionCard assertion={breadth} />
   </section>
 
   <section>
     <h2>A county sorted by its houses</h2>
     <p>
-      For ten phases this corpus counted the people of Allen County and held nothing about the
-      buildings they live in. It could say that a third of the county's people, two thirds of its
-      poor and three quarters of its Black residents are inside Lima, and it could not say what
-      Lima is made of. Six tables of the American Community Survey close that: 44,697 housing
-      units, and the county's thirteen civil subdivisions add up to the county's own row fifteen
-      separate times — units, occupancy, vacancy, tenure and every one of eleven year-built bands.
+      What Lima is made of is six tables of the American Community Survey: 44,697 housing units,
+      and the county's thirteen civil subdivisions add up to the county's own row fifteen separate
+      times — units, occupancy, vacancy, tenure and every one of eleven year-built bands.
     </p>
+    <Gloss>
+      Ten phases counted the people of Allen County and held nothing about the buildings they live
+      in: the shares above could be stated, and what Lima is made of could not.
+    </Gloss>
     <AssertionCard assertion={tenure} />
     <ChartFigure
       id="tenure"
@@ -326,7 +332,7 @@ const spreadSpec = bar(
       unavailable-value code, which is not a low figure.
     </p>
 
-    <h3>And how many houses are empty</h3>
+    <h3>How many houses are empty</h3>
     <AssertionCard assertion={empty} />
     <ChartFigure
       id="vacancy"
@@ -342,18 +348,17 @@ const spreadSpec = bar(
       household. Lima's is 2.344, the smallest of the thirteen subdivisions; Amanda Township's is
       2.691, the largest.
     </p>
-    <p>
-      This corpus had been using persons per housing unit as a stand-in and saying in the node that
-      it was not household size, because vacant units sat in the denominator and institutional
-      residents in the numerator. The open block that said so named the right table and the wrong
-      obstacle: the Census API will not serve it without a key, and the flat file the API is built
-      over needs no key at all. The figure was one download away for two phases.
-    </p>
+    <Gloss>
+      Household size stood in as persons per housing unit for two phases, with a node saying it
+      was not the same quantity — vacant units sat in the denominator and institutional residents
+      in the numerator. The open block that said so named the right table and the wrong obstacle:
+      the Census API will not serve it without a key, and the flat file the API is built over
+      needs none.
+    </Gloss>
 
     <h3>The ring was built while the city was full</h3>
     <p>
-      The sorting this site has described since the population page was written had no date under
-      it. It has one now, from below. The median house standing in Lima was built in 1953; in Bath
+      The sorting has a date under it, and it comes from below. The median house standing in Lima was built in 1953; in Bath
       Township it is 1975, and in Shawnee and American Township 1973. Lima is 34.9 per cent
       pre-1940 where those three are between 6.4 and 7.1 per cent.
     </p>
@@ -362,9 +367,7 @@ const spreadSpec = bar(
       A sorting into an old cheap city and a new dear ring cannot be older than the ring, and the
       ring went up in the decade Lima reached its peak of 53,734 people and still held 48.4 per
       cent of the county. That bounds when the sorting could have happened. It does not say when
-      anyone moved, and nothing here says why the building went where it did — a construction date
-      is not a zoning map, a subdivision approval or a mortgage, and this corpus holds none of the
-      three.
+      anyone moved, and nothing here says why the building went where it did — a construction date is not a zoning map, a subdivision approval or a mortgage, and none of the three has been read.
     </p>
     <p>
       One more thing the bands say. A quarter of the housing standing in Allen County was built in
@@ -394,11 +397,10 @@ const spreadSpec = bar(
 
     <h3>Twelve districts, and none of them is the county</h3>
     <p>
-      Every other geography on this site closes. Ohio's twelve townships and Lima add up to Allen
+      Every other geography here closes. Ohio's twelve townships and Lima add up to Allen
       County exactly, in every table the census publishes. The {districts.length} school districts do
       not: five of them hold ground in Putnam, Auglaize, Van Wert or Hancock, and together they
-      held 117,057 people in 2023 against a county of 101,685. A figure for "the districts" is not
-      a figure for the county, and nothing on this page pretends otherwise.
+      held 117,057 people in 2023 against a county of 101,685. A figure for "the districts" is not a figure for the county, and nothing below is labelled as one.
     </p>
     <p>
       There is a thirteenth school jurisdiction and it is not a district. The educational service
@@ -419,20 +421,17 @@ const spreadSpec = bar(
       the township it is named for.
     </p>
     <p>
-      One thing this page cannot tell you. 20,444 children aged 5 to 17 live in these twelve
-      districts and 16,113 are enrolled in them. Some of the difference is that the two figures are
-      different instruments; the rest is private and parochial schools, community schools, home
-      instruction and open enrolment, none of which this corpus has ever recorded. It is an open
-      question, and it is the first one here that came from putting two of the corpus's own sources
-      beside each other.
+      One thing these figures cannot tell you. 20,444 children aged 5 to 17 live in these twelve
+      districts and 16,113 are enrolled in them. Some of the difference is that the two figures
+      are different instruments; the rest is private and parochial schools, community schools,
+      home instruction and open enrolment. Where those children are is not settled here.
     </p>
   </section>
 
   <section>
     <h2>Thirteen years, inside one county</h2>
     <p>
-      For twelve phases this corpus counted the people of Allen County and held nothing about how
-      long any of them lived. The National Center for Health Statistics built a life table for
+      The National Center for Health Statistics built a life table for
       almost every census tract in the United States from death certificates and population, and
       Allen County has thirty of them.
     </p>
@@ -460,11 +459,10 @@ const spreadSpec = bar(
 
     <h3>From healthier than America to a quarter worse</h3>
     <p>
-      Until this phase the corpus could tell you what share of Lima's adults a model estimates to
-      have diabetes and could not tell you how many people died here. The agency that knows will
-      answer a machine for the whole United States and refuses it for a county, in a sentence, by
-      policy; the county figures reach this page through a compiler, and the compiler was checked
-      against that agency at the grain it does serve — exactly, twice.
+      The agency that knows how many people died here will answer a machine for the whole United
+      States and refuses it for a county, in a sentence, by policy. The county figures below
+      arrive through a compiler instead, and the compiler was checked against that agency at the
+      grain it does serve — exactly, twice.
     </p>
     <AssertionCard assertion={dying} open />
     <ChartFigure
@@ -521,23 +519,18 @@ const spreadSpec = bar(
   <section>
     <h2>The question this page will not answer</h2>
     <p>
-      The obvious reading is that Lima's health gap is its poverty gap. This site holds the poverty
-      gap — the city has a third of the county's people and 64.1 per cent of those below the
-      poverty line, on a median household income 48 per cent of the township across its southern
-      line — and it will not join the two.
+      The obvious reading is that Lima's health gap is its poverty gap. The poverty gap is above — the city has a third of the county's people and 64.1 per cent of those below the
+      poverty line, on a median household income 48 per cent of the township across its southern line — and the two are not joined here.
     </p>
     <p>
       CDC names its own inputs: the Behavioral Risk Factor Surveillance System, Census population
-      counts, <em>and the American Community Survey</em>. The survey that supplies this site's
-      income and poverty figures is a covariate in the model that produces these health estimates.
+      counts, <em>and the American Community Survey</em>. The survey that supplies the income and poverty figures above is a covariate in the model that produces these health estimates.
       Reading the poverty back out of the health number is reading the model's input out of its
       output, and it would be worthless however true the conclusion happens to be.
     </p>
     <p>
       The life expectancy figures are not subject to that. USALEEP counts deaths — actual
-      certificates, in the tract where they happened — and models only the smoothing. That is why
-      this page states a life expectancy for a Lima tract and declines to state a diabetes
-      prevalence for one. The difference is not confidence; both files publish a standard error. It
+      certificates, in the tract where they happened — and models only the smoothing. That is why a life expectancy is stated here for a Lima tract and a diabetes prevalence is not. The difference is not confidence; both files publish a standard error. It
       is what was counted.
     </p>
   </section>

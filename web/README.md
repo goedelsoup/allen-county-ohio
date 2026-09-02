@@ -7,17 +7,42 @@ See [web conventions](../.yidam/.vendor/prelude/guidelines/directories.md#web) f
 
 ## Status: a static site over the exported feeds
 
-Five pages, built by [Astro](https://astro.build) into `dist/` with no server behind them.
-[deck.gl](https://deck.gl) draws the county; [Plotly](https://plotly.com/javascript/) draws
-its measures. Nothing here reaches the network at build time or at read time.
+Six reading pages, thirty-seven shorter articles and three instruments, built by
+[Astro](https://astro.build) into `dist/` with no server behind them. [deck.gl](https://deck.gl)
+draws the county; [Plotly](https://plotly.com/javascript/) draws its measures. Nothing here
+reaches the network at build time or at read time.
 
-| Page | What it is for |
+**A reading page is an argument**: one question, movements that turn the answer, and an ending.
+It holds at most 1,800 words of prose and eight movements, and `test/shape.test.ts` is what
+holds it to that. Anything that would not serve the question is an article at `/read/<slug>` —
+which is the content type this directory did not have, and whose absence is the whole of the
+problem recorded in
+[a-page-is-an-argument-not-an-inbox](../.yidam/decisions/a-page-is-an-argument-not-an-inbox.yml).
+
+| Page | The question it answers |
 |---|---|
-| `/` | The county in four figures and three assertions |
+| `/` | What is this place, and what does this site claim to know about it? |
+| `/ground` | Two thirds of the county is farms — so what happens to the lines drawn on it? |
+| `/people` | The county is shrinking. Is it also sorting? |
+| `/work` | What happened to the factory county, and what stands in its place? |
+| `/government` | Who governs this county, how are they chosen, and what does it cost? |
+| `/history` | What can this corpus date, and what does the shape of the gaps mean? |
+| `/read` | The reading room: every shorter piece, by section and era |
+
+And the three instruments, set apart from the reading row in the nav because a reader reaches
+for them rather than reading them:
+
+| Instrument | What it is for |
+|---|---|
 | `/map` | The corpus's located nodes on the county's actual 2020 boundaries |
-| `/population` | Five decades of decline, and the reading the corpus refuses to license |
-| `/elections` | Three elections, one direction, precincts ninety points apart |
-| `/corpus` | The audit: what is sourced, what is inferred, what was withheld |
+| `/entry` | Every node the corpus publishes, by class |
+| `/sources` | The audit: what is sourced, what is inferred, what was withheld |
+
+**The margin, not the main line.** The site records what a claim cost to get — and that belongs
+beside the claim rather than in front of it. `<Gloss>` is where it goes, and
+`test/register.test.ts` keeps acquisition narration out of the reading pages' prose. What it
+bans is phase numbers and what this corpus used to hold; the site's own epistemic voice — *this
+page will not tell you which district* — is the point of the site and stays.
 
 ```
 mise run site-install     # once

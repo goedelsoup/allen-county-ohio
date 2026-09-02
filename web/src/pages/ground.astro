@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import DataTable from '../components/DataTable.astro'
@@ -129,11 +130,14 @@ const address = assertion('an-address-is-not-a-municipality')
   <section>
     <h2>The other nine-tenths</h2>
     <p>
-      This site spent eleven phases on the third of the county that lives in Lima and said nothing
-      about the two thirds of its surface that is farmland. The federal agricultural census has been
-      taken every five years since long before any of the rest of this, and until now the corpus had
-      read exactly one of them — the volume for 1909, which found the county 92.5 per cent farms.
+      Two thirds of Allen County's surface is farmland. The federal agricultural census has been
+      taken every five years since long before any of the rest of this, and the volume for 1909
+      found the county 92.5 per cent farms.
     </p>
+    <Gloss>
+      Eleven phases went to the third of the county that lives in Lima before one of them measured
+      a farm.
+    </Gloss>
     <AssertionCard assertion={farmland} />
     <ChartFigure
       id="farmland"
@@ -186,12 +190,15 @@ const address = assertion('an-address-is-not-a-municipality')
   <section>
     <h2>The oil did not take the farms</h2>
     <p>
-      For nine phases this corpus described Allen County as a farming county reoriented by oil into
-      an industrial one, and in all that time it had not measured a single farm. The same 1910 volume
-      that counts Lima's factory workers counts the county's farms, and they had not gone anywhere:
-      2,939 of them in 1910 against 2,858 in 1900, covering 240,472 of the county's 259,840 acres.
-      More farms than before the boom, on two per cent less land, with more of that land improved.
+      The oil did not take the farms. The same 1910 volume that counts Lima's factory workers
+      counts them: 2,939 in 1910 against 2,858 in 1900, covering 240,472 of the county's 259,840
+      acres. More farms than before the boom, on two per cent less land, with more of that land
+      improved.
     </p>
+    <Gloss>
+      Allen County was described here as a farming county reoriented by oil into an industrial one
+      for nine phases before a single farm was measured.
+    </Gloss>
     <p>
       What the oil years did to farming here shows up in one figure only, and it is a price. An acre
       of Allen County farmland went from $38.39 in 1900 to $76.28 in 1910, and the county's farm
@@ -255,13 +262,15 @@ const address = assertion('an-address-is-not-a-municipality')
   <section>
     <h2>It did not drain. It sawtoothed.</h2>
     <p>
-      Everything above rests on seven census years. There are eighteen. The whole printed run of the
-      Census of Agriculture is scanned on the National Agricultural Statistics Service's own host,
-      table by table, at the address the old Cornell agricultural archive redirects to — which this
-      site had recorded as redirecting <em>without</em> the scans. Ten Ohio volumes closed the gap,
-      and each of them prints the census before it, so ten of the eighteen years are printed twice
-      in two different books and agree to the acre.
+      Everything above rests on seven census years. There are eighteen. The whole printed run of
+      the Census of Agriculture is scanned on the National Agricultural Statistics Service's own
+      host, table by table, at the address the old Cornell agricultural archive redirects to. Ten
+      Ohio volumes close the gap, and each of them prints the census before it, so ten of the
+      eighteen years are printed twice in two different books and agree to the acre.
     </p>
+    <Gloss>
+      That address had been recorded here as redirecting, without the scans behind it.
+    </Gloss>
     <AssertionCard assertion={sawtooth} open />
     <ChartFigure
       id="farmland-full"
@@ -279,7 +288,7 @@ const address = assertion('an-address-is-not-a-municipality')
       rows={fullFarmland}
     />
     <p>
-      The forty years this site called the flattest stretch in the record are the least flat. They
+      The forty years that looked like the flattest stretch in the record are the least flat. They
       net 313 acres a year and contain 23,400 acres of loss and 10,872 of recovery — a rise of
       1,016, a fall of 13,239, a recovery of 7,542, a fall of 10,161 and a recovery of 2,314, in
       that order. An average taken across two endpoints described none of it.
@@ -287,20 +296,16 @@ const address = assertion('an-address-is-not-a-municipality')
     <p class="note">
       One year in eighteen disagrees with itself. The 1964 volume gives Allen County 211,196 acres
       in farms and the 1969 volume gives 211,195 for the same census — one acre, one bureau, five
-      years apart, with nothing on either page to catch it. It is the second time this site has
-      found a publisher printing its own figure two ways, after the Ohio Secretary of State's two
-      readings of the 1896 vote, and the rule is the same: the census's own year wins and the
+      years apart, with nothing on either page to catch it. It is the second publisher in this record to print its own figure two ways, after the Ohio Secretary of State's two readings of the 1896 vote, and the rule is the same: the census's own year wins and the
       divergence is published.
     </p>
 
     <h3>A fifth of the farmland went in four years</h3>
     <AssertionCard assertion={fourYears} />
     <p>
-      Two days ago this site could say that Allen County was 92.5 per cent farmland in 1910 and is
-      69.4 per cent farmland now, and could not say a word about the ninety-two years between. The
-      printed census volumes for 1954 and 1987 are scanned on archive.org, and each of them prints
-      the census before it in the next column — so two books gave four census years, and the fall
-      turns out not to have been steady at all.
+      The fall was not steady. The printed census volumes for 1954 and 1987 are scanned on
+      archive.org, and each of them prints the census before it in the next column — so two books
+      give four census years across the ninety-two between the ends of the record.
     </p>
     <DataTable
       title="Land in farms, seven census years"

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import Gloss from '../components/Gloss.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import StatTile from '../components/StatTile.astro'
 import AssertionCard from '../components/AssertionCard.astro'
@@ -204,12 +205,7 @@ const correlation = swing.figures[0]
     />
 
     <p>
-      The Third District's four judges sit on that table too, and did not last week. They are
-      elected by the voters of all seventeen counties, and a rule written one phase ago excluded
-      them on that ground. The rule's next case was this county's own state senator and state
-      representative, elected by multi-county districts, which it excluded as well — so the rule
-      went. This corpus now holds a person wherever the constituency is smaller than the state and
-      includes ground in Allen County.
+      The Third District's four judges sit on that table too. They are elected by the voters of all seventeen counties, which an earlier rule treated as putting them outside this county's record; the same rule then excluded Allen County's own state senator and state representative, elected by multi-county districts, so it went. A person is held here wherever the constituency is smaller than the state and includes ground in Allen County.
     </p>
   </section>
 
@@ -307,12 +303,15 @@ const correlation = swing.figures[0]
     <h2>What the county costs</h2>
     <AssertionCard assertion={money} />
     <p>
-      This site could name every elected officer of Allen County to the day and could not say what
-      one of them cost. The county auditor publishes the county's books — monthly revenue and
-      expenditure for every fund back to 2016, and the State Auditor's audited statements back to
-      2010 — and three better-known routes to the same numbers are closed to an automated client
-      while the office that keeps the books is not.
+      The county auditor publishes the county's books — monthly revenue and expenditure for every
+      fund back to 2016, and the State Auditor's audited statements back to 2010. Three better-
+      known routes to the same numbers are closed to an automated client while the office that
+      keeps the books is not.
     </p>
+    <Gloss>
+      Every elected officer of Allen County could be named here to the day before any of them could
+      be costed.
+    </Gloss>
     <ChartFigure
       id="office-cost"
       title="What each elected Allen County office spent from the General Fund, 2025"
@@ -360,8 +359,7 @@ const correlation = swing.figures[0]
       office actually exercises, as against the statute that creates it. The subject-matter
       jurisdiction of both trial courts — the corpus has established their territories and neither's
       competence. And the appointed officials and boards that do much of a county's work without
-      appearing on any ballot, which is now the largest block of officeholders this corpus does not
-      hold, the townships having been named.
+      appearing on any ballot, which is now the largest block of officeholders missing from this record, the townships having been named.
     </p>
     <p>
       Delphos is the one government on this page that is knowably incomplete. Its ward council seats
@@ -378,11 +376,13 @@ const correlation = swing.figures[0]
       office now.
     </p>
     <p>
-      That asymmetry is the reason this page exists at all. For nine phases this corpus held two
-      offices — the sheriff, with thirty-nine tenures back to 1831, and the mayor of Lima — and the
-      depth of the first made the class look worked. It was one office in extraordinary detail and
-      eight missing entirely.
+      That asymmetry is the reason this page exists at all: one office in extraordinary detail and
+      eight missing entirely, which reads as a worked class and is not one.
     </p>
+    <Gloss>
+      For nine phases the office class held two members — the sheriff, with thirty-nine tenures back
+      to 1831, and the mayor of Lima — and the depth of the first made the class look finished.
+    </Gloss>
 
     <DataTable
       title="Tenures held per office"
