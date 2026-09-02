@@ -3546,6 +3546,75 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &[],
         figures: &[],
     },
+    Assertion {
+        id: "four-catholic-schools-hold-four-fifths",
+        statement: "Ten private schools stand in Allen County and every one of them is in Lima. \
+                    Four Catholic schools hold 880 of their 1,108 pupils \u{2014} four fifths of the \
+                    county's private enrolment inside one church's system \u{2014} and the other six \
+                    hold 228 between them.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "Ten private schools, all of them in Lima, and 1,108 children in them."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Four Catholic schools hold 880 of the 1,108 \u{2014} four fifths of the county's private enrolment in\n  one church's system.** In figures: St Charles 368, Lima Central Catholic 195, St Gerard 184 and\n  St Rose 133. The remaining six are five small evangelical schools and one school for autistic and\n  dyslexic children, listed twice, and they hold 228 between them."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Every private school in this county is in Lima.** Not one of the twelve townships, three\n  villages or the county's second city has one."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Two community schools stand in the county and hold 313 children.** Heir Force Community School\n  with 238 and West Central Learning Academy II with 75, out of the 36 public schools located here."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "St Charles", value: 368.0, literal: "368" },
+            Figure { label: "Lima Central Catholic", value: 195.0, literal: "195" },
+            Figure { label: "St Gerard", value: 184.0, literal: "184" },
+            Figure { label: "St Rose", value: 133.0, literal: "133" },
+            Figure { label: "The other six", value: 228.0, literal: "228" },
+        ],
+    },
+    Assertion {
+        id: "the-private-school-fall-is-in-the-file",
+        statement: "Allen County's recorded private enrolment falls 46.9 per cent between the \
+                    2019\u{2013}20 and 2021\u{2013}22 editions of the federal survey, while Ohio's rises \
+                    5.6 per cent over the same two editions. Three schools leaving the file account \
+                    for 96 per cent of the county's fall, and the seven present in both net 39 \
+                    pupils. The collapse is in the survey's frame, not in the county.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**In figures, the county's recorded private enrolment: 2,338 in 2013\u{2013}14, 1,713 in 2015\u{2013}16, 1,706\n  in 2017\u{2013}18, 2,086 in 2019\u{2013}20 and 1,108 in 2021\u{2013}22.**"
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "[verified] \u{2014} the five public-use files. The fall from 2019\u{2013}20 to 2021\u{2013}22 is 978 pupils and 939 of\n  it \u{2014} 96 per cent \u{2014} is three schools leaving the file: Delphos St John's at 603, Temple Christian\n  School at 237 and Golden Bridge Academy at 99. The seven schools present in both editions net 39."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Over the same two editions Ohio's private enrolment rose.** 145,882 to 154,033, up 5.6 per\n  cent, while this county's fell 46.9 per cent. Statewide, 185 schools leave the file and 215\n  arrive and the churn cancels; in one county nothing cancels."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Two schools this county has are not in the newest file at all.** Delphos St John's, at 603 the\n  largest private school ever recorded here, and Temple Christian School in Lima at 237, are absent\n  from Ohio's entire 2021\u{2013}22 return under any spelling."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2013\u{2013}14", value: 2338.0, literal: "2,338" },
+            Figure { label: "2015\u{2013}16", value: 1713.0, literal: "1,713" },
+            Figure { label: "2017\u{2013}18", value: 1706.0, literal: "1,706" },
+            Figure { label: "2019\u{2013}20", value: 2086.0, literal: "2,086" },
+            Figure { label: "2021\u{2013}22", value: 1108.0, literal: "1,108" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -1,0 +1,92 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const catholic = assertion('four-catholic-schools-hold-four-fifths')
+const frame = assertion('the-private-school-fall-is-in-the-file')
+
+const catholicSpec = bar(
+  catholic.figures.map((f) => f.label),
+  catholic.figures.map((f) => f.value),
+  { yTitle: 'Pupils', labelValues: true },
+)
+
+const frameSpec = line(
+  frame.figures.map((f) => f.label),
+  [{ name: 'Allen County', y: frame.figures.map((f) => f.value) }],
+  { yTitle: 'Recorded private enrolment', labelLast: true },
+)
+---
+
+<Article slug="the-schools-that-are-not-districts">
+  <p>
+    Twenty thousand four hundred and forty-four children aged 5 to 17 live in the twelve school
+    districts that hold ground in Allen County. Sixteen thousand one hundred and thirteen are
+    enrolled in them. The other 4,331 had, until now, no school on this site at all.
+  </p>
+  <p>
+    Between a third and a half of them do now. Ten private schools stand in the county, and two
+    community schools, and together they hold somewhere between 1,421 and 2,261 children —
+    32.8 to 52.2 per cent of the gap.
+  </p>
+  <AssertionCard assertion={catholic} open />
+  <ChartFigure
+    id="catholic"
+    title="Private enrolment in Allen County, 2021–22"
+    caption="The other six are five small evangelical schools and one school for autistic and dyslexic children, which the survey lists twice with no way to tell whether that is two campuses or one record entered twice. The total is left as published rather than de-duplicated."
+    columns={['School', 'Pupils']}
+    rows={catholic.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="catholic" set:html={JSON.stringify(catholicSpec)} is:inline />
+  <p>
+    Every one of the ten is in Lima. Not a township, not a village, not the county's second city.
+    A county that spreads its public schooling across twelve districts concentrates all of its
+    private schooling inside one municipal boundary, and four fifths of that inside one church.
+  </p>
+
+  <h2>The series underneath will not bear weight</h2>
+  <p>
+    The same survey has published Allen County five times since 2013, and the five readings look
+    like a collapse. They are not one.
+  </p>
+  <AssertionCard assertion={frame} open />
+  <ChartFigure
+    id="frame"
+    title="What the survey recorded, edition by edition"
+    caption="Read as a series this is a 53 per cent fall with a spike in the middle. The 2013–14 figure counts Delphos St John's twice, once at 617 and once at 596; the last two editions each count one school twice; and the fall at the end is three schools leaving the survey's roster."
+    columns={['Edition', 'Recorded pupils']}
+    rows={frame.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="frame" set:html={JSON.stringify(frameSpec)} is:inline />
+  <p>
+    The check that caught it was to run the same subtraction on the state. Ohio's private enrolment
+    rises 5.6 per cent across the two editions in which this county's falls by nearly half, because
+    statewide the 185 schools that leave the roster are offset by the 215 that arrive. At the grain
+    of one county nothing offsets anything, and one school is the whole difference.
+  </p>
+  <p>
+    Two of the three that left are schools this county has: Delphos St John's, at 603 pupils the
+    largest private school in the county's whole record, and Temple Christian School in Lima at
+    237. Neither appears anywhere in Ohio's 2021–22 return under any spelling of its name. That is
+    not a closure — a school missing from an edition is missing from that edition's roster, which
+    is a fact about the survey and not about the school. Whether either is open is a question this
+    site cannot answer and Ohio's own nonpublic directory could settle in one request.
+  </p>
+
+  <h2>What is still missing has three names</h2>
+  <p>
+    Statewide online community schools, which enrol children from every county and are recorded at
+    an office in one of them — Ohio Virtual Academy alone holds 14,334, from a building in Wood
+    County, and not one of those children is in the 313 counted here. Home instruction, which is
+    registered with a family's resident district and appears on no school's roll. And open
+    enrolment across district lines, which nets to nothing across these twelve only if every
+    transfer stays inside them.
+  </p>
+  <p>
+    None of the three is measured on this site. Between two and three thousand children are inside
+    them.
+  </p>
+</Article>
