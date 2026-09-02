@@ -6362,6 +6362,75 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-occupations-2014-2024.yml",
+      "class": "measure",
+      "label": "Allen County occupations and wages, 2014 and 2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Read from the May 2024 and May 2014 metropolitan workbooks by `AREA` = 30620, parsed from the spreadsheets' XML parts because no spreadsheet library is installed. The two headers differ — `AREA` is the first column in 2024 and the second in 2014, the location quotient is `LOC_QUOTIENT` and `LOC QUOTIENT`, the group column `O_GROUP` and `OCC_GROUP` — and a reader written for one returns zero rows against the other with no error, which it did before the column was looked up by name. Location quotients are the file's own. Major-group changes across the two vintages were checked occupation by occupation for codes present in one year and absent in the other before any difference was written down. [verified]",
+        "parameter": "jobs in Allen County, all occupations",
+        "unit": "jobs",
+        "value": "49640"
+      },
+      "blocks": [
+        {
+          "text": "What people in this county do for a living, from the one federal survey that publishes occupations below the state line. [verified] — [Occupational Employment and Wage Statistics](../../catalog/bls-oews-metro.md), May 2024 and May 2014 metropolitan files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Lima metropolitan area is Allen County and nothing else**, so a metro file is a county file here. [verified] — the Census Bureau's 2023 delineation, where CBSA 30620 has exactly one row: Allen County, Ohio. Metropolitan definitions are revised, so this identity holds for the vintage checked. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**49,640 jobs, a median wage of $46,430 and a mean of $56,860, across 221 occupations.** [verified] — same file, May 2024. An independent programme counting the same year's jobs from insurance filings gives 49,690, a difference of one tenth of one per cent. [inference] — against [the wage file](allen-county-wages-2024.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county still makes things, and relative to America it makes more of them than it did.** Production occupations are its largest major group at 5,920 and its most concentrated at a location quotient of 2.10 — twice the national share of employment. Ten years earlier the count was 6,010 and the quotient 1.84. The jobs held roughly still while the country's fell away beneath them. [verified] — same source, the two vintages.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same source. The office and transportation rows in that table cannot be differenced as they stand; see below.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's occupational fingerprint names its landmarks.** The seven most concentrated occupations with 200 or more workers are chemical equipment operators at a location quotient of 5.58, multiple machine tool setters at 5.02, food batchmakers at 4.90, computer-controlled tool operators at 3.63, correctional officers at 2.98, welders at 2.93 and industrial engineers at 2.61. [verified] — same file. The first of those is [the refinery](../site/lima-refinery.yml) and the fifth is the state's two prisons here; an occupational survey that has never heard of either draws them anyway. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The occupations this county is shortest of are the ones the country grew.** Computer and mathematical work has a location quotient of 0.33 on 550 jobs — one third the national rate and the lowest of the 22 major groups. Legal is 0.38, farming 0.41 and business and financial operations 0.57. [verified] — same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Sixty people work in farming, fishing and forestry, in a county two thirds covered by farms.** [verified] — same file, against [178,921 acres of farmland](allen-county-farmland-1910-2022.yml). The survey counts wage and salary jobs and no self-employed person at all, and a farm operator is self-employed. [inference] The number is a fact about the instrument before it is a fact about the county.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Total employment did not move in a decade: 49,260 in 2014 and 49,640 in 2024, a rise of 380 or 0.8 per cent.** The median wage went from $31,450 to $46,430, up 47.6 per cent before any allowance for prices. [verified] — same source, both vintages.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Underneath the flat total, the largest single change is clerical and it is smaller than it looks.** Office and administrative support reads 7,340 in 2014 and 4,820 in 2024, a fall of 2,520. But `43-5081 Stock Clerks and Order Fillers`, 920 people here in 2014, was moved by the 2018 revision of the occupation codes into transportation and material moving, where it appears as `53-7065 Stockers and Order Fillers` with 1,100. [verified] — same source, the two files' detailed rows.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Repaired for that one move, the clerical fall is about a quarter and the warehouse rise is not a rise.** On a comparable base office and administrative support goes 6,420 to 4,820, down 1,600 or 24.9 per cent, and transportation and material moving goes 4,730 to 4,900, up 170 or 3.6 per cent. [inference] — computed here; see [a revision that moves a category](../../decisions/a-revision-that-moves-a-category.yml). The county did not replace clerks with warehouse workers. It lost about a quarter of its clerical work and kept everything else roughly where it was.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, the two groups as read and as repaired: office and administrative support falls by 2,520 as read and by 1,600 repaired; transportation and material moving rises by 1,090 as read and by 170 repaired.** [inference] — read from the two vintages and adjusted here for the one occupation that changed parents.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, the seven largest major groups in 2024: production 5,920, food preparation 4,970, transportation 4,900, office and administrative support 4,820, healthcare practitioners 4,450, sales 4,170 and management 2,950.** [verified] — same file.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-officers-1831-1906.yml",
       "class": "measure",
       "label": "Allen County's officers, 1831–1906",
@@ -21446,6 +21515,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
+      "from": "measure/allen-county-occupations-2014-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bls-oews-metro.md"
+    },
+    {
+      "from": "measure/allen-county-occupations-2014-2024.yml",
+      "to": "site/lima-refinery.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-officers-1831-1906.yml",

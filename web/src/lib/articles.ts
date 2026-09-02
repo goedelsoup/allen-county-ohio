@@ -267,6 +267,19 @@ export const ARTICLES: Article[] = [
 
   // ── Work ────────────────────────────────────────────────────────────────
   {
+    slug: 'what-the-work-is',
+    title: 'What the work is',
+    dek: 'Production is still the county’s largest occupation and more concentrated than a decade ago, and the clerical collapse underneath is smaller than it first reads.',
+    section: 'work',
+    era: [2014, 2024],
+    assertions: [
+      'the-county-kept-making-things',
+      'the-fingerprint-names-the-landmarks',
+      'the-clerks-went-and-the-warehouse-did-not-arrive',
+    ],
+    entries: ['place/allen-county.yml', 'site/lima-refinery.yml'],
+  },
+  {
     slug: 'the-rate-caught-up-with-ohio',
     title: 'The rate caught up with Ohio',
     dek: 'Twenty-four years above the state’s unemployment rate, and then a convergence made mostly of people leaving the labour force.',

@@ -1192,6 +1192,26 @@
       ]
     },
     {
+      "id": "place-allen-county::jobs-in-Allen-County,-all-occupations",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "jobs in Allen County, all occupations",
+      "unit": "jobs",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "label": "Allen County occupations and wages, 2014 and 2024",
+          "as_of": "2024",
+          "value": 49640.0,
+          "published": "49640",
+          "tier": "verified",
+          "source": "catalog/bls-oews-metro.md",
+          "method": "Read from the May 2024 and May 2014 metropolitan workbooks by `AREA` = 30620, parsed from the spreadsheets' XML parts because no spreadsheet library is installed. The two headers differ — `AREA` is the first column in 2024 and the second in 2014, the location quotient is `LOC_QUOTIENT` and `LOC QUOTIENT`, the group column `O_GROUP` and `OCC_GROUP` — and a reader written for one returns zero rows against the other with no error, which it did before the column was looked up by name. Location quotients are the file's own. Major-group changes across the two vintages were checked occupation by occupation for codes present in one year and absent in the other before any difference was written down. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::jobs-located-in-the-county,-and-where-their-holders-live",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -9960,6 +9980,206 @@
           "label": "White, stroke",
           "value": 14.9,
           "literal": "14.9"
+        }
+      ]
+    },
+    {
+      "id": "the-county-kept-making-things",
+      "statement": "Production is still Allen County's largest occupational group and its most concentrated: 5,920 jobs at 2.10 times the national share, against 6,010 at 1.84 ten years earlier. The jobs held roughly still while the country's fell away beneath them, on a county total that moved 0.8 per cent in the decade.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**The county still makes things, and relative to America it makes more of them than it did.** Production occupations are its largest major group at 5,920 and its most concentrated at a location quotient of 2.10 — twice the national share of employment. Ten years earlier the count was 6,010 and the quotient 1.84. The jobs held roughly still while the country's fell away beneath them.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**Total employment did not move in a decade: 49,260 in 2014 and 49,640 in 2024, a rise of 380 or 0.8 per cent.** The median wage went from $31,450 to $46,430, up 47.6 per cent before any allowance for prices.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**In figures, the seven largest major groups in 2024: production 5,920, food preparation 4,970, transportation 4,900, office and administrative support 4,820, healthcare practitioners 4,450, sales 4,170 and management 2,950.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Production",
+          "value": 5920.0,
+          "literal": "5,920"
+        },
+        {
+          "label": "Food preparation",
+          "value": 4970.0,
+          "literal": "4,970"
+        },
+        {
+          "label": "Transportation",
+          "value": 4900.0,
+          "literal": "4,900"
+        },
+        {
+          "label": "Office and admin",
+          "value": 4820.0,
+          "literal": "4,820"
+        },
+        {
+          "label": "Healthcare practitioners",
+          "value": 4450.0,
+          "literal": "4,450"
+        },
+        {
+          "label": "Sales",
+          "value": 4170.0,
+          "literal": "4,170"
+        },
+        {
+          "label": "Management",
+          "value": 2950.0,
+          "literal": "2,950"
+        }
+      ]
+    },
+    {
+      "id": "the-fingerprint-names-the-landmarks",
+      "statement": "Allen County's seven most concentrated occupations are chemical equipment operators at 5.58 times the national share, machine tool setters at 5.02, food batchmakers at 4.90, computer-controlled tool operators at 3.63, correctional officers at 2.98, welders at 2.93 and industrial engineers at 2.61. The first is the refinery and the fifth is the state's two prisons: a survey that has never heard of either draws them anyway.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**The county's occupational fingerprint names its landmarks.** The seven most concentrated occupations with 200 or more workers are chemical equipment operators at a location quotient of 5.58, multiple machine tool setters at 5.02, food batchmakers at 4.90, computer-controlled tool operators at 3.63, correctional officers at 2.98, welders at 2.93 and industrial engineers at 2.61.",
+          "tier": "inference",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**The occupations this county is shortest of are the ones the country grew.** Computer and mathematical work has a location quotient of 0.33 on 550 jobs — one third the national rate and the lowest of the 22 major groups. Legal is 0.38, farming 0.41 and business and financial operations 0.57.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**Sixty people work in farming, fishing and forestry, in a county two thirds covered by farms.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Chemical equipment operators",
+          "value": 5.58,
+          "literal": "5.58"
+        },
+        {
+          "label": "Machine tool setters",
+          "value": 5.02,
+          "literal": "5.02"
+        },
+        {
+          "label": "Food batchmakers",
+          "value": 4.9,
+          "literal": "4.90"
+        },
+        {
+          "label": "CNC tool operators",
+          "value": 3.63,
+          "literal": "3.63"
+        },
+        {
+          "label": "Correctional officers",
+          "value": 2.98,
+          "literal": "2.98"
+        },
+        {
+          "label": "Welders",
+          "value": 2.93,
+          "literal": "2.93"
+        },
+        {
+          "label": "Industrial engineers",
+          "value": 2.61,
+          "literal": "2.61"
+        }
+      ]
+    },
+    {
+      "id": "the-clerks-went-and-the-warehouse-did-not-arrive",
+      "statement": "Read straight off the major groups, Allen County lost 2,520 clerical jobs and gained 1,090 in transportation over ten years. But 920 of those people never changed jobs: the code they are filed under moved between the two groups in the 2018 revision. Repaired, the clerical fall is 1,600 and the warehouse rise is 170.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**Underneath the flat total, the largest single change is clerical and it is smaller than it looks.** Office and administrative support reads 7,340 in 2014 and 4,820 in 2024, a fall of 2,520. But `43-5081 Stock Clerks and Order Fillers`, 920 people here in 2014, was moved by the 2018 revision of the occupation codes into transportation and material moving, where it appears as `53-7065 Stockers and Order Fillers` with 1,100.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-oews-metro.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**Repaired for that one move, the clerical fall is about a quarter and the warehouse rise is not a rise.** On a comparable base office and administrative support goes 6,420 to 4,820, down 1,600 or 24.9 per cent, and transportation and material moving goes 4,730 to 4,900, up 170 or 3.6 per cent.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-occupations-2014-2024.yml",
+          "node_label": "Allen County occupations and wages, 2014 and 2024",
+          "span": "**In figures, the two groups as read and as repaired: office and administrative support falls by 2,520 as read and by 1,600 repaired; transportation and material moving rises by 1,090 as read and by 170 repaired.**",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Clerical fall, as read",
+          "value": 2520.0,
+          "literal": "2,520"
+        },
+        {
+          "label": "Clerical fall, repaired",
+          "value": 1600.0,
+          "literal": "1,600"
+        },
+        {
+          "label": "Transport rise, as read",
+          "value": 1090.0,
+          "literal": "1,090"
+        },
+        {
+          "label": "Transport rise, repaired",
+          "value": 170.0,
+          "literal": "170"
         }
       ]
     }
