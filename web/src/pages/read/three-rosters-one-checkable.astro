@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import DataTable from '../../components/DataTable.astro'
@@ -85,11 +86,13 @@ const firstOfficers = [
 <Article slug="three-rosters-one-checkable">
   <AssertionCard assertion={officers} />
   <p>
-    Until now this site could answer "who has been sheriff of Allen County" back to 1831 and, for
-    every other county office, only "who holds it today". The 1906 county history prints a roster
-    of county officials from the county's organization to the year it went to press: nine offices
-    and 169 named holdings.
-  </p>
+      The 1906 county history prints a roster of county officials from the county's organization
+      to the year it went to press: nine offices and 169 named holdings.
+    </p>
+    <Gloss>
+      “Who has been sheriff of Allen County” could be answered here back to 1831; for every other
+      county office, only “who holds it today”.
+    </Gloss>
   <ChartFigure
     id="county-officers"
     title="Holders of each Allen County office named in the 1906 roster"

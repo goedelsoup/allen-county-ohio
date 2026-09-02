@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import { assertion } from '../../lib/feeds'
 
@@ -12,11 +13,12 @@ const lostYear = assertion('the-1906-list-lost-a-year')
   <AssertionCard assertion={mayors} />
   <p>
     The 1885 county history narrates Lima's municipal elections year by year from the town's
-    organization on 29 March 1842 and then prints a list of mayors to 1886. That is twenty-four
-    men over twenty-seven terms in forty-four years. This site had said "about forty holders in
-    forty-three years" for twelve phases, written from the shape of the passage rather than from
-    counting it, and both halves were wrong.
+    organization on 29 March 1842 and then prints a list of mayors to 1886. That is twenty-four men over twenty-seven terms in forty-four years.
   </p>
+    <Gloss>
+      “About forty holders in forty-three years” stood here for twelve phases, written from the
+      shape of the passage rather than from counting it. Both halves were wrong.
+    </Gloss>
   <table>
     <caption>Mayors of Lima, 1842–1886</caption>
     <thead><tr><th scope="col">Years</th><th scope="col">Mayor</th></tr></thead>

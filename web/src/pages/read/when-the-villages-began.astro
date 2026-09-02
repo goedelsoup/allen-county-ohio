@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import { assertion } from '../../lib/feeds'
 
@@ -9,12 +10,15 @@ const birthdays = assertion('the-villages-have-birthdays-now')
 <Article slug="when-the-villages-began">
   <AssertionCard assertion={birthdays} />
   <p>
-    Allen County has nine municipal corporations, and until this phase five of them had no
-    founding date on this site. Four of the five turned out to be in the three county histories
-    of 1885, 1906 and 1921 — books this site has quoted for mayors, for railroads, for townships
-    and for a jail raid, and had never once asked when the villages were incorporated. No source
-    was fetched to close them.
-  </p>
+      Allen County has nine municipal corporations, and four of their founding dates were in the
+      three county histories of 1885, 1906 and 1921 all along. No source was fetched to close
+      them.
+    </p>
+    <Gloss>
+      Five of the nine had no founding date here. Those books had been quoted for mayors, for
+      railroads, for townships and for a jail raid, and never once asked when the villages were
+      incorporated.
+    </Gloss>
   <table>
     <thead>
       <tr><th>Corporation</th><th>Authorised</th><th>First mayor</th></tr>

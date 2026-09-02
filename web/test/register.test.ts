@@ -71,27 +71,11 @@ describe('the main line is about the county', () => {
     expect(offenders(source)).toEqual([])
   })
 
-  /**
-   * The articles are baselined, not exempted.
-   *
-   * Thirty-five paragraphs across thirty-seven pieces still narrate their own acquisition.
-   * They are gated against this number rather than against zero for the reason
-   * `.yidam/lint-baseline.yml` gives: a check that fails on inherited debt gets switched off
-   * and stays off. Lower it as pieces are revised; it must never rise.
-   */
-  const ARTICLE_BASELINE = 35
-
-  it('does not let the articles get worse', () => {
-    const found = articles.flatMap((a) => offenders(a.source).map((o) => `${a.file}: ${o}`))
-    expect(found.length).toBeLessThanOrEqual(ARTICLE_BASELINE)
-  })
-
-  it('has a baseline that is not over-stated', () => {
-    // The other half of the same argument: a baseline permitted to be wrong drifts, and one
-    // that over-lists silently re-permits whatever it over-lists.
-    const found = articles.flatMap((a) => offenders(a.source))
-    expect(found.length, `baseline is ${ARTICLE_BASELINE}, actual is ${found.length} — lower it`)
-      .toBeGreaterThan(ARTICLE_BASELINE - 5)
+  it.each(articles)('$file narrates no acquisition either', ({ source }) => {
+    // The articles were baselined at 35 when this check was written, in the manner of
+    // `.yidam/lint-baseline.yml`, and the baseline was worked off rather than lived with.
+    // There is nothing left to grandfather, so the check is the same one the reading pages get.
+    expect(offenders(source)).toEqual([])
   })
 })
 

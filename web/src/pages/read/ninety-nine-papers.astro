@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import DataTable from '../../components/DataTable.astro'
@@ -30,11 +31,15 @@ const limaNewsLineage = [
 <Article slug="ninety-nine-papers">
   <AssertionCard assertion={press} />
   <p>
-    For six phases this site read one Allen County newspaper — the Bluffton weekly, the only one
-    the Library of Congress has digitized — and said so plainly each time: no Lima paper is in the
-    archive. That was true, and it was stated without a denominator. Ninety-nine newspapers have
-    been printed in this county. Sixty-six of them in Lima.
-  </p>
+      One Allen County newspaper is digitized — the Bluffton weekly, the only one the Library of
+      Congress holds — and no Lima paper is in the archive. That is true, and it was long stated
+      without a denominator. Ninety-nine newspapers have been printed in this county. Sixty-six of
+      them in Lima.
+    </p>
+    <Gloss>
+      For six phases the Bluffton weekly was the only paper read here, and the absence of a Lima
+      paper was reported each time without a count of what was missing.
+    </Gloss>
   <ChartFigure
     id="county-papers"
     title="Allen County newspaper titles, 1843–2026, by place of publication"

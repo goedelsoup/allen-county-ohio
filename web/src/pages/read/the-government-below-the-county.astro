@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import { assertion } from '../../lib/feeds'
 
@@ -17,11 +18,14 @@ const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
     the county's twenty-two.
   </p>
   <p>
-    The roster this page is built from is indexed by voting precinct, not by county: each page
-    lists the offices its own precinct votes on and no others. For nine phases this corpus read
-    one of those pages and took it for the roster. Reading all eighty-eight gives the whole of
-    it — a hundred and one offices, two hundred and eighteen seats, seven of them empty.
-  </p>
+      The roster this piece is built from is indexed by voting precinct, not by county: each page
+      lists the offices its own precinct votes on and no others. Reading all eighty-eight gives
+      the whole of it — a hundred and one offices, two hundred and eighteen seats, seven of them
+      empty.
+    </p>
+    <Gloss>
+      One of those pages was read here for nine phases and taken for the roster.
+    </Gloss>
   <AssertionCard assertion={townships} />
   <p>
     Each township elects two trustees in one odd year and the third two years later, and its
@@ -50,11 +54,13 @@ const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
   </p>
   <h3>The city</h3>
   <p>
-    For eleven phases this corpus could name every sheriff of Allen County since 1831 and one
-    officer of the city that holds a third of the county's people. Lima's government is described
-    here for the first time: a mayor, an auditor, a director of law, a president of council and
-    seven council members, one for each ward.
-  </p>
+      Lima's government is a mayor, an auditor, a director of law, a president of council and
+      seven council members, one for each ward.
+    </p>
+    <Gloss>
+      Every sheriff of Allen County since 1831 could be named here for eleven phases, against one
+      officer of the city that holds a third of the county's people.
+    </Gloss>
   <AssertionCard assertion={limaWards} />
   <p>
     The wards are staggered by parity — first, third, fifth and seventh turned over in January
@@ -67,8 +73,7 @@ const limaWards = assertion('lima-elects-by-ward-and-fills-its-seats')
     30 November; the auditor's and the law director's 1 January to 31 December; the president's
     and the even wards' 1 January to 2 January; the odd wards' 5 January to 6 January. That is
     what a charter looks like from outside it, and Lima has one — its own site links "Lima City
-    Charter and Code" — which this corpus has located and not read, because the code library
-    refuses an automated client.
+    Charter and Code" — which is located and unread here, because the code library refuses an automated client.
   </p>
   <p>
     The city's first mayor was Henry D. V. Williams, elected when the town organized on 29 March

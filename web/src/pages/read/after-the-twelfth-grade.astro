@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -26,12 +27,14 @@ const tuitionSpec = bar(
 
 <Article slug="after-the-twelfth-grade">
   <p>
-    Six post-secondary institutions have addresses in Allen County, and until this phase this
-    corpus had a node for one of them. They enrol 8,615 students in the autumn and 10,789 across
+    Six post-secondary institutions have addresses in Allen County. They enrol 8,615 students in the autumn and 10,789 across
     the twelve months, and award 2,918 credentials a year — of which 2,482, or 85.1 per cent, are
     below a bachelor's degree. The county grants 1,110 associate's degrees and 1,106 certificates
     of a year or less against 375 bachelor's degrees and 58 master's.
   </p>
+    <Gloss>
+      Five of the six had no entry here until this piece was written.
+    </Gloss>
   <AssertionCard assertion={colleges} />
   <ChartFigure
     id="college-fall"

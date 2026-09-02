@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -33,12 +34,14 @@ const paidSpec = bar(
   />
   <script type="application/json" data-chart-spec="storm-decades" set:html={JSON.stringify(skySpec)} is:inline />
   <p>
-    The declarations above date a federal act. This dates the weather, and it comes from a file
-    the corpus should have read seven phases earlier: 390 reports for Allen County since 1950,
-    every tornado, hail fall, thunderstorm gust, ice storm and blizzard the National Weather
-    Service holds for this ground. It answers a question the county's 1965 disaster node asked and
-    gave up on.
-  </p>
+      The declarations above date a federal act. This dates the weather: 390 reports for Allen
+      County since 1950, every tornado, hail fall, thunderstorm gust, ice storm and blizzard the
+      National Weather Service holds for this ground. It answers a question the county's 1965
+      disaster node asked and gave up on.
+    </p>
+    <Gloss>
+      The file should have been read seven phases earlier.
+    </Gloss>
   <p>
     Read straight, the chart says the weather here got thirty times worse in seventy years. It
     says nothing of the kind. Tornado is the only category counted in every one of those decades,

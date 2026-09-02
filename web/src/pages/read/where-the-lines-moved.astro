@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -18,12 +19,14 @@ const annexedSpec = bar(
 
 <Article slug="where-the-lines-moved">
   <p>
-    Until this phase the corpus held three dated boundary changes for the whole county — 1903,
-    1905 and 1944, all of them footnotes in census volumes — and said so in nine different nodes,
-    each warning that a population or area figure for Lima describes whatever ground the
-    corporation held on the day. The Census Bureau collects annexations through a survey it runs
-    every year and publishes the answers by state. Ohio's files hold fifty-seven for this county.
-  </p>
+      The Census Bureau collects annexations through a survey it runs every year and publishes the
+      answers by state. Ohio's files hold fifty-seven for this county.
+    </p>
+    <Gloss>
+      Three dated boundary changes were held here — 1903, 1905 and 1944, all footnotes in census
+      volumes — and said so in nine different nodes, each warning that a population or area figure
+      for Lima describes whatever ground the corporation held on the day.
+    </Gloss>
   <AssertionCard assertion={annexed} />
   <ChartFigure
     id="annexed"
@@ -68,8 +71,7 @@ const annexedSpec = bar(
   <p>
     So eleven of the twelve townships show less land in 2010 than in 2000, including seven that
     gave ground to nobody, and Perry — which did give ground to Lima — shows the largest fall in
-    the county at 474 acres, indistinguishable from Amanda's 128. The rule this site now applies
-    is to read every area change against something in the same table that could not have moved.
+    the county at 474 acres, indistinguishable from Amanda's 128. The rule that follows is to read every area change against something in the same table that could not have moved.
     For the subdivisions that is the county; for the county it is its own total.
   </p>
   <p>

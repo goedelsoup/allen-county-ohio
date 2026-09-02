@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -31,12 +32,14 @@ const peaksSpec = line(peaks.figures.map((f) => f.label), [{ name: 'Allen County
 
 <Article slug="lima-before-the-series-begins">
   <p>
-    Everything above begins in 1970, because 1970 was the earliest figure this corpus held. The
-    city tripled in the twenty years after the 1885 oil strike and doubled again by 1920,
+    Everything above begins in 1970. The city tripled in the twenty years after the 1885 oil strike and doubled again by 1920,
     reaching 41,326 people, and went on rising at every census to 53,734 in 1970. It is 35,579
     today. Every count before 1970 is higher than the one before it and every count after is
     lower, so 1970 is the peak and not merely the earliest thing on the page.
   </p>
+    <Gloss>
+      1970 was the earliest figure held here, which is why the series starts where it does.
+    </Gloss>
   <AssertionCard assertion={century} />
 
   <ChartFigure

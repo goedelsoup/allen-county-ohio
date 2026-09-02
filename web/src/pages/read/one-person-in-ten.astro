@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -27,11 +28,14 @@ const corinthSpec = bar(
 <Article slug="one-person-in-ten">
   <AssertionCard assertion={wentToWar} />
   <p>
-    Between the canal and the oil this site had nothing. The corpus had eleven dated events and
-    no Civil War in it at all, while the source sat on the shelf: sixty pages of the 1885 county
-    history, of which forty-nine are roster. A county of 19,185 people put 1,920 men into United
-    States service, which is one person in ten counting women, children and the old.
-  </p>
+      A county of 19,185 people put 1,920 men into United States service, which is one person in
+      ten counting women, children and the old. The account of it is sixty pages of the 1885
+      county history, of which forty-nine are roster.
+    </p>
+    <Gloss>
+      Between the canal and the oil this record held eleven dated events and no Civil War at all,
+      while that chapter sat on the shelf.
+    </Gloss>
   <p>
     Its war began on a Sunday morning at the second courthouse — a flag strung on a wire between
     Ashton Hall and the building, the congregations gathering under it as services ended, a store

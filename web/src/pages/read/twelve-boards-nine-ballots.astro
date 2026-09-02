@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import { assertion } from '../../lib/feeds'
 
@@ -15,18 +16,23 @@ const boards = assertion('twelve-boards-and-nine-ballots')
     in Richland, and a corner of Auglaize Township.
   </p>
   <p>
-    This site could not name those three boards, said so on each district's page, and named the
-    neighbouring county's roster as the source that would. It was wrong. The Ohio boards of
-    elections lookup answers two ways — precinct by precinct, or by district type — and Allen
-    County's own roster carries all twelve boards under the second. Read across all eighty-eight
-    precincts it carries nine, and never those three, because no elector in this county votes on
-    them.
-  </p>
+      The Ohio boards of elections lookup answers two ways — precinct by precinct, or by district
+      type — and Allen County's own roster carries all twelve boards under the second. Read across
+      all eighty-eight precincts it carries nine, and never those three, because no elector in
+      this county votes on them.
+    </p>
+    <Gloss>
+      Three of the boards could not be named here, and the neighbouring county's roster was named as
+      the source that would name them. That was wrong.
+    </Gloss>
   <p>
-    So the roster answers two different questions and this site had asked only one. What an Allen
-    County voter fills is 218 seats. What governs the districts holding ground here is fifteen
-    seats more. Both numbers are right and they are not interchangeable.
-  </p>
+      So the roster answers two different questions. What an Allen County voter fills is 218
+      seats. What governs the districts holding ground here is fifteen seats more. Both numbers
+      are right and they are not interchangeable.
+    </p>
+    <Gloss>
+      Only the first of the two had been asked here.
+    </Gloss>
   <p>
     One more thing came out of asking two counties the same question. The fifteen people appear on
     the Allen roster and on the Putnam and Auglaize rosters, and eight of the fifteen are spelled
