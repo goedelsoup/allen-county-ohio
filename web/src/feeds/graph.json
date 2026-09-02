@@ -3030,6 +3030,59 @@
       "withheld": 7
     },
     {
+      "id": "measure/allen-county-assessed-valuation-2010-2023.yml",
+      "class": "measure",
+      "label": "Allen County's assessed valuation, reports of 2010–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "The *Property Taxes* note of each audited report posted by the Auditor, extracted with `pdftotext -layout`. Class figures are read from the twelve lines above the printed `Total Assessed Value` rather than by searching the document, because the class words appear elsewhere first and a document-wide search returns the wrong number silently — it did. Where the five classes are printed they are summed and checked against the printed total; every such year agrees exactly. The 2010–2013 reports print only real property and public utility property and are entered as totals with the classes blank. [verified]",
+        "parameter": "total assessed valuation of real and public utility property",
+        "unit": "dollars",
+        "value": "2451331690"
+      },
+      "blocks": [
+        {
+          "text": "**The county's taxable base was $2,451,331,690 in the newest audited report, and one mill on it raises $2,451,332.** [verified] — [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the *Property Taxes* note in the report for the year ended 31 December 2023.",
+          "tier": "verified"
+        },
+        {
+          "text": "Values are millions of dollars, and the year is the report's, not the lien date's. **County rate** is the full rate for all county operations in dollars per $1,000, as each report states it. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The base is a year older than the report that prints it.** The reports say so themselves: tax revenue received in a year is the collection of the previous year's taxes, levied on assessed values as of the previous January. [verified] — same source, the 2023 report. The rate in the same sentence is attached to the report's own fiscal year, and this corpus does not resolve that offset for the rate; the table above is labelled as the reports label themselves. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two reports of the fifteen are unreadable and they are at the two ends.** The 2016 report and the one posted in December 2025 are scans with no text layer, so the series has a hole at 2016 and stops at the report for 2023. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The base grew 31.6 per cent and the county's rate grew 31.0 per cent, and those are separate facts.** From $1,862,833,970 in the 2010 report to $2,451,331,690 in the 2023 report, against a county rate of $8.70 rising to $11.40. [inference] — computed here from the table above. At the full rate the county's own levy on the newest base is $27,945,181, before any reduction factor.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Residential property is 62.7 per cent of what this county taxes.** $1,537,113,750 of $2,451,331,690 in the 2023 report, against $474,900,790 commercial, industrial and mineral, $257,374,000 public utility and $181,943,150 agricultural. [verified] — same source. In every year that prints the five classes, they sum to the printed total exactly.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Agricultural value fell by a quarter while everything else rose.** From $240,015,570 in the 2015 report to $181,943,150 in the 2023 report, down 24.2 per cent, in the same years residential rose 33.7 per cent. Agricultural land here is taxed on what it yields rather than what it would sell for, under the current agricultural use valuation the Auditor administers. [verified] — same source; see [the Auditor](../office/allen-county-auditor.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 2021 reappraisal is visible in one step.** Residential value goes from $1,303,141,550 in the 2021 report to $1,525,140,550 in the 2022 report, a rise of 17.0 per cent in one year against 0.8 per cent the year before. [inference] — computed here; the Auditor's own account puts the last reappraisal at tax year 2021 payable 2022.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, the total assessed base at four reports: $1,862.8 million in 2010, $1,941.9 million in 2015, $2,153.9 million in 2021 and $2,451.3 million in 2023.** [verified] — read from the table above, same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-attorney-register-2026.yml",
       "class": "measure",
       "label": "The Allen County roll of Ohio attorneys, 1925–2026",
@@ -7553,6 +7606,67 @@
       ],
       "refusals": [],
       "withheld": 4
+    },
+    {
+      "id": "measure/allen-county-property-tax-rates-2012-2025.yml",
+      "class": "measure",
+      "label": "Property tax rates in Allen County by taxing district, 2012–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "The Auditor's tax rate summary PDF for each tax year 2012 through 2025, extracted with `pdftotext -layout` and parsed by tax set. Tax years 2012–2015 use one column order and 2016 onward another; the parser reads the layout from the page header rather than assuming one. Tax year 2013 prints the district name and its rates on separate lines and needs its own pairing rule. Effective rates are the file's own `RES-AGR EFFECTIVE RATE`, and reduction shares are computed here as one minus the effective rate over the full rate. Tax year 2011 and the five historical volumes are scans and are not read. [verified]",
+        "parameter": "full tax rate, highest taxing district in the county",
+        "unit": "mills",
+        "value": "71.974"
+      },
+      "blocks": [
+        {
+          "text": "**Thirty-six taxing districts, six authorities levying on each, and no two districts charging the same.** [verified] — [the Auditor's tax rate summaries](../../catalog/allen-county-auditor-tax-rates.md), tax years 2012 through 2025, one file each.",
+          "tier": "verified"
+        },
+        {
+          "text": "Rates are in mills — dollars per thousand dollars of taxable value. **Mean reduction** is the share of the full voted rate that Ohio's reduction factors take off before a residential or agricultural bill is computed, averaged over the districts. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county column is not a series.** It reads 6.150 in every tax set from 2012 through 2015 and 11.400 in every tax set from 2016, and across that boundary the total full rate of the thirty-six districts present in both years moves by between −1.710 and +0.700 mills, mean −0.332. Five mills moved out of *Library/Other* and into *County* when the report changed layout. [verified] — same files, differenced by tax set. See [a rule written for a classification caught a layout](../../decisions/a-rule-written-for-a-classification-caught-a-layout.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the county actually charges is in a different document, and it rose by a third.** The audited statements put the full rate for all county operations at $8.70 per $1,000 for the reports of 2010 to 2013, $9.70 for 2014 and 2015, and $11.40 from 2017 to 2023. [verified] — [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the *Property Taxes* note in each; see [the tax base](allen-county-assessed-valuation-2010-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The reduction factors have roughly doubled their bite in fourteen years.** The average district lost 19.6 per cent of its voted millage to them in tax year 2012 and 29.0 per cent in 2025, and the step is at 2024, the second year after the 2021 reappraisal. [verified] — same source, computed here across all districts in each year.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A tax set is an intersection and not a place.** *Shawnee L. S. D.* is four sets in 2025 — F20 at 53.674 mills, M39 at 52.174, G23 at 61.174 and L35 at 71.974 — one school district crossed by four combinations of township, village and library. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The school district is most of the bill everywhere.** Local school plus joint vocational millage is between 50.1 and 73.2 per cent of the full rate in every one of the thirty-six districts. [inference] — computed here from the 2025 table.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The highest and lowest bills are not the highest and lowest votes.** In 2025 Shawnee L35 has both the highest full rate at 71.974 and the highest effective rate at 54.233. But Delphos City S.D. votes 70.250 mills and collects 34.460, half of it reduced away, while Bath L.S.D. votes 51.497 and collects 44.322. The lowest effective rate in the county is Pandora-Gilboa's 30.562 on a full rate of 52.750. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures, the 2025 effective residential rates at four points: 54.233 in Shawnee L35, 44.322 in Bath, 34.460 in Delphos City S.D. and 30.562 in Pandora-Gilboa.** [verified] — read from the table below, same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every taxing district in the county, tax year 2025.** [verified] — same source, one row per tax set as the file prints it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Village of Fort Shawnee has a tax set here and stops levying inside it.** Set L36, *Fort Shawnee Corp.*, carries 2.150 mills of village tax in tax year 2012 and a township rate of 10.200 against the 15.600 its neighbours pay. It is absent from the 2013 file altogether. It returns in 2014 and 2015 with no village millage and a township rate of 15.600 — identical to the township's own set in every column — and is gone from 2016. [verified] — same source, tax sets L35 and L36. See [the village](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-race-2023.yml",
@@ -16793,7 +16907,7 @@
       "properties": {
         "claim_tag": "open",
         "opened": "2026-08-28",
-        "would_close_this": "Allen County commissioners' journal or the Ohio Secretary of State's record for 2012, either of which would carry the petition and the certification. The Census Bureau's Boundary and Annexation Survey was named here as the likely answer and is not: Ohio's files hold fifty-seven Allen County records between 1990 and 2024 and every one of them is an annexation, with no row for Fort Shawnee at any date."
+        "would_close_this": "Allen County commissioners' journal or the Ohio Secretary of State's record for 2012 or 2013, either of which would carry the petition and the certification. The Census Bureau's Boundary and Annexation Survey was named here as the likely answer and is not: Ohio's files hold fifty-seven Allen County records between 1990 and 2024 and every one of them is an annexation, with no row for Fort Shawnee at any date. The county Auditor's tax rate summaries have since narrowed the window and cannot close it: they record that the village stopped levying, not the instrument that stopped it."
       },
       "blocks": [
         {
@@ -16818,6 +16932,18 @@
         },
         {
           "text": "**A fourth federal file names the corporation and does not narrow the year.** \"Fort Shawnee, Village of\" is a registered applicant for federal disaster aid and was paid $34,799 on two projects for the winter storms of 2004–05, both obligated 24 June 2005. [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md). That is seven years before the gap the gazetteer and the government lists place the change in, so it adds a witness to the corporation's existence and nothing to its end. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A county taxing authority puts the change in the same year, and it is not a federal product.** The Auditor's tax rate summary for tax year 2012 carries tax set L36, *Fort Shawnee Corp.*, levying 2.150 mills of village tax, and charging its residents 10.200 mills of township tax where the rest of Shawnee Township pays 15.600. The tax year 2013 summary has no such set. In 2014 and 2015 the set reappears with no village millage and a township rate of 15.600 — identical to the township's own set in every one of its columns and to the third decimal — and from tax year 2016 it is gone. [verified] — [the Auditor's tax rate summaries](../../catalog/allen-county-auditor-tax-rates.md), tax sets L35 and L36; see [the rates](../measure/allen-county-property-tax-rates-2012-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**That is a second witness to the year and a first witness that is local.** The gazetteer draws Fort Shawnee as a village in 2012 and as a census designated place in 2013; the office that sets this county's tax rates has it levying in 2012 and not in 2013. Two instruments with nothing in common — a federal geography file and a county taxing authority — put the end of the corporation in the same twelve months. [inference] — the reasoning is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The tax set outliving the levy is the sharper detail.** A village that had merely stopped levying would keep a lower township rate, because a village's residents are outside some township levies; L36's township rate rises to the full 15.600 in the same move. The set that survives into 2014 and 2015 is a label on rows identical to the township's, which is what an administrative record looks like after the thing it names has gone. [inference]",
           "tier": "inference"
         }
       ],
@@ -20905,6 +21031,27 @@
       "source": "catalog/census-bas-boundary-changes-ohio.md"
     },
     {
+      "from": "measure/allen-county-assessed-valuation-2010-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-financials.md"
+    },
+    {
+      "from": "measure/allen-county-assessed-valuation-2010-2023.yml",
+      "to": "measure/allen-county-property-tax-rates-2012-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-tax-rates.md"
+    },
+    {
+      "from": "measure/allen-county-assessed-valuation-2010-2023.yml",
+      "to": "measure/allen-county-farmland-1910-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-attorney-register-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -21953,6 +22100,27 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/nces-private-school-universe.md"
+    },
+    {
+      "from": "measure/allen-county-property-tax-rates-2012-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-tax-rates.md"
+    },
+    {
+      "from": "measure/allen-county-property-tax-rates-2012-2025.yml",
+      "to": "measure/allen-county-assessed-valuation-2010-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/allen-county-auditor-financials.md"
+    },
+    {
+      "from": "measure/allen-county-property-tax-rates-2012-2025.yml",
+      "to": "measure/allen-county-school-finance-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-race-2023.yml",

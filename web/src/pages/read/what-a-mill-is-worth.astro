@@ -1,0 +1,134 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const base = assertion('what-a-mill-is-worth-here')
+const column = assertion('the-column-changed-and-the-rate-did-not')
+const schools = assertion('the-school-district-is-the-tax-bill')
+const village = assertion('the-village-stopped-levying-and-the-township-took-it')
+
+const spec = (a: typeof base, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const baseSpec = spec(base, 'Assessed value, $ million')
+const columnSpec = spec(column, 'Mills')
+const schoolSpec = spec(schools, 'Effective mills, 2025')
+const villageSpec = spec(village, 'Mills')
+---
+
+<Article slug="what-a-mill-is-worth">
+  <p>
+    A mill is a dollar per thousand dollars of taxable value, and it is the unit almost every local
+    government in Ohio is financed in. In Allen County one of them raises $2,451,332. That is the
+    whole tax base of the county — the schools', the townships', the villages', the library's and
+    the county's own — divided by a thousand, and nearly two thirds of it is somebody's house.
+  </p>
+  <AssertionCard assertion={base} open />
+  <ChartFigure
+    id="base"
+    title="Allen County's total assessed valuation, four audited reports"
+    caption="Millions of dollars. Ohio assesses real property at 35 per cent of appraised market value, so the county's property is worth roughly three times this. The step between 2021 and 2023 is the 2021 reappraisal arriving."
+    columns={['Report for', 'Assessed value, $m']}
+    rows={base.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="base" set:html={JSON.stringify(baseSpec)} is:inline />
+  <Gloss>
+    The audited statements have carried this table every year since 2010 and were read here only for
+    the balance sheet. The base sits in a note called Property Taxes, three lines under a sentence
+    giving the county's own rate.
+  </Gloss>
+  <p>
+    The one class that fell is farmland, down a quarter since 2015 while houses rose a third.
+    Agricultural land in Ohio is taxed on what it yields rather than what it would fetch, under a
+    formula the county auditor administers and the state rewrites, and the formula was rewritten.
+    Seven per cent of what this county taxes is farm ground in a county two thirds covered by farms.
+  </p>
+
+  <h2>The rate that rose by four fifths and did not</h2>
+  <p>
+    The auditor publishes what every taxing district charges, split into the six authorities that
+    levy it. Line the county's column up year by year and it reads 6.150 mills through 2015 and
+    11.400 from 2016 — an eighty-five per cent rise in a single year, in a county that voted on
+    nothing of the kind.
+  </p>
+  <AssertionCard assertion={column} />
+  <ChartFigure
+    id="column"
+    title="Two accounts of the county's own rate"
+    caption="The column jumps 5.250 mills between tax years 2015 and 2016 while the library column beside it falls 5.050. Across the same boundary the total rate of the thirty-six districts moves by between −1.710 and +0.700 mills. The audited statements, which never mention the column, give the rate as $8.70, $9.70, $11.40."
+    columns={['Reading', 'Mills']}
+    rows={column.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="column" set:html={JSON.stringify(columnSpec)} is:inline />
+  <p>
+    The report changed layout, and the county's column swapped places with the library's and took
+    five mills of county-wide levies with it. The test costs one subtraction per district: a real
+    five-mill levy moves every total by five, and these totals moved by a third of a mill on
+    average. The county's rate did rise over these years — by about a third, from $8.70 to $11.40 —
+    and that is a different sentence.
+  </p>
+
+  <h2>The school district is the tax bill</h2>
+  <p>
+    There are thirty-six taxing districts in this county and no two charge the same, because a
+    district is not a place but an intersection: this school district crossed by that township,
+    that village, that library. Shawnee Local Schools is four of them. What every one has in common
+    is that the schools are most of it — between half and three quarters of the full rate,
+    everywhere.
+  </p>
+  <AssertionCard assertion={schools} />
+  <ChartFigure
+    id="schools"
+    title="Effective residential rates, four Allen County districts, 2025"
+    caption="Ohio's reduction factors hold a district's revenue from existing property roughly flat as values rise, so a district whose property has appreciated collects a shrinking fraction of what it voted. The average district lost 19.6 per cent of its voted millage that way in 2012 and 29.0 per cent in 2025."
+    columns={['District', 'Effective mills']}
+    rows={schools.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="schools" set:html={JSON.stringify(schoolSpec)} is:inline />
+  <p>
+    Which is why the district that votes most is not the district that pays most. Delphos City
+    School District carries 70.250 voted mills and collects 34.460 of them; Bath carries 51.497 and
+    collects 44.322. Half of Delphos's millage has been reduced away and a seventh of Bath's, and
+    the difference is not a policy anybody chose — it is what the two districts' property has done
+    since the levies passed.
+  </p>
+
+  <h2>The district that stopped being a village</h2>
+  <p>
+    One row in these files answers a question asked elsewhere on this site. Tax set L36 is
+    <em>Fort Shawnee Corp.</em>, and in tax year 2012 it levies 2.150 mills of village tax and
+    charges its residents 10.200 mills of township tax where the rest of Shawnee Township pays
+    15.600 — the ordinary arrangement, because a village's residents sit outside some township
+    levies.
+  </p>
+  <AssertionCard assertion={village} />
+  <ChartFigure
+    id="village"
+    title="Tax set L36, Fort Shawnee, before and after"
+    caption="The 2013 file has no such tax set. When the label returns for 2014 and 2015 the village millage is zero and the township rate is the full 15.600, identical to Shawnee Township's own set in every column and to the third decimal. From 2016 the set is gone."
+    columns={['Line', 'Mills']}
+    rows={village.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="village" set:html={JSON.stringify(villageSpec)} is:inline />
+  <p>
+    Federal records had already put the end of the village between 2012 and 2013: the Census Bureau
+    draws it as a municipality in one year's gazetteer and as a statistical place in the next, and
+    the government unit lists carry it in 2012 and not afterwards. Now a county office that has
+    never heard of a gazetteer says the same thing, from the only evidence that would show it — the
+    village charging tax, and then not.
+  </p>
+  <p>
+    What none of them says is which chapter of the Revised Code ended it, on what day, or by whose
+    vote. Ohio dissolves a village one way and merges it into its township another, and the two are
+    different events with different consequences. Four federal records and one county record now
+    agree on a twelve-month window and stop there.
+  </p>
+</Article>

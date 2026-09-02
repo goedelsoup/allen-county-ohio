@@ -3911,6 +3911,125 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2024", value: 58.0, literal: "58" },
         ],
     },
+    // ── The property tax ──
+    Assertion {
+        id: "what-a-mill-is-worth-here",
+        statement: "One mill on Allen County's taxable property raises $2,451,332. The base is \
+                    $2,451,331,690 in the newest audited report, up 31.6 per cent since the 2010 \
+                    report, and 62.7 per cent of it is residential property. Agricultural value \
+                    went the other way, down 24.2 per cent since 2015.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**The county's taxable base was $2,451,331,690 in the newest audited report, and one mill on it\n  raises $2,451,332.** [verified] \u{2014}\n  [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the\n  *Property Taxes* note in the report for the year ended 31 December 2023."
+            ),
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**Residential property is 62.7 per cent of what this county taxes.** $1,537,113,750 of\n  $2,451,331,690 in the 2023 report, against $474,900,790 commercial, industrial and mineral,\n  $257,374,000 public utility and $181,943,150 agricultural. [verified] \u{2014} same source. In every year\n  that prints the five classes, they sum to the printed total exactly."
+            ),
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**Agricultural value fell by a quarter while everything else rose.** From $240,015,570 in the 2015\n  report to $181,943,150 in the 2023 report, down 24.2 per cent, in the same years residential rose\n  33.7 per cent. Agricultural land here is taxed on what it yields rather than what it would sell\n  for, under the current agricultural use valuation the Auditor administers. [verified] \u{2014} same\n  source; see [the Auditor](../office/allen-county-auditor.yml)."
+            ),
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**In figures, the total assessed base at four reports: $1,862.8 million in 2010, $1,941.9 million\n  in 2015, $2,153.9 million in 2021 and $2,451.3 million in 2023.** [verified] \u{2014} read from the table\n  above, same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2010", value: 1862.8, literal: "1,862.8" },
+            Figure { label: "2015", value: 1941.9, literal: "1,941.9" },
+            Figure { label: "2021", value: 2153.9, literal: "2,153.9" },
+            Figure { label: "2023", value: 2451.3, literal: "2,451.3" },
+        ],
+    },
+    Assertion {
+        id: "the-column-changed-and-the-rate-did-not",
+        statement: "The county column in Allen County's tax rate summaries reads 6.150 mills \
+                    through tax year 2015 and 11.400 from 2016, and nothing was levied: five mills \
+                    moved out of the neighbouring column when the report changed layout. What the \
+                    county actually charged went $8.70, $9.70, $11.40 \u{2014} a third, not four \
+                    fifths.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**The county column is not a series.** It reads 6.150 in every tax set from 2012 through 2015 and\n  11.400 in every tax set from 2016, and across that boundary the total full rate of the\n  thirty-six districts present in both years moves by between \u{2212}1.710 and +0.700 mills, mean \u{2212}0.332.\n  Five mills moved out of *Library/Other* and into *County* when the report changed layout.\n  [verified] \u{2014} same files, differenced by tax set. See\n  [a rule written for a classification caught a layout](../../decisions/a-rule-written-for-a-classification-caught-a-layout.yml)."
+            ),
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**What the county actually charges is in a different document, and it rose by a third.** The\n  audited statements put the full rate for all county operations at $8.70 per $1,000 for the reports\n  of 2010 to 2013, $9.70 for 2014 and 2015, and $11.40 from 2017 to 2023. [verified] \u{2014}\n  [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the\n  *Property Taxes* note in each; see\n  [the tax base](allen-county-assessed-valuation-2010-2023.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Column, to 2015", value: 6.15, literal: "6.150" },
+            Figure { label: "Column, from 2016", value: 11.4, literal: "11.400" },
+            Figure { label: "Audited, to 2013", value: 8.7, literal: "8.70" },
+            Figure { label: "Audited, 2014\u{2013}15", value: 9.7, literal: "9.70" },
+            Figure { label: "Audited, from 2017", value: 11.4, literal: "11.40" },
+        ],
+    },
+    Assertion {
+        id: "the-school-district-is-the-tax-bill",
+        statement: "School millage is between 50.1 and 73.2 per cent of the full tax rate in every \
+                    one of Allen County's thirty-six taxing districts. And the district that votes \
+                    most is not the one that pays most: Delphos City S.D. votes 70.250 mills and \
+                    collects 34.460, where Bath votes 51.497 and collects 44.322.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**The school district is most of the bill everywhere.** Local school plus joint vocational millage\n  is between 50.1 and 73.2 per cent of the full rate in every one of the thirty-six districts.\n  [inference] \u{2014} computed here from the 2025 table."
+            ),
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**The highest and lowest bills are not the highest and lowest votes.** In 2025 Shawnee L35 has\n  both the highest full rate at 71.974 and the highest effective rate at 54.233. But Delphos City\n  S.D. votes 70.250 mills and collects 34.460, half of it reduced away, while Bath L.S.D. votes\n  51.497 and collects 44.322. The lowest effective rate in the county is Pandora-Gilboa's 30.562 on\n  a full rate of 52.750. [verified] \u{2014} same source."
+            ),
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**In figures, the 2025 effective residential rates at four points: 54.233 in Shawnee L35, 44.322\n  in Bath, 34.460 in Delphos City S.D. and 30.562 in Pandora-Gilboa.** [verified] \u{2014} read from the\n  table below, same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Shawnee L35", value: 54.233, literal: "54.233" },
+            Figure { label: "Bath", value: 44.322, literal: "44.322" },
+            Figure { label: "Delphos City", value: 34.46, literal: "34.460" },
+            Figure { label: "Pandora-Gilboa", value: 30.562, literal: "30.562" },
+        ],
+    },
+    Assertion {
+        id: "the-village-stopped-levying-and-the-township-took-it",
+        statement: "Allen County's tax rate summary for 2012 has the Village of Fort Shawnee \
+                    levying 2.150 mills and its residents paying 10.200 mills of township tax \
+                    against their neighbours' 15.600. The 2013 file has no such district, and when \
+                    the label returns it charges the full township rate. A county office and a \
+                    federal map end the village in the same twelve months.",
+        topic: "government",
+        supports: &[
+            support!(
+                "question/what-happened-to-the-village-of-fort-shawnee.yml",
+                "**A county taxing authority puts the change in the same year, and it is not a federal product.**\n  The Auditor's tax rate summary for tax year 2012 carries tax set L36, *Fort Shawnee Corp.*, levying\n  2.150 mills of village tax, and charging its residents 10.200 mills of township tax where the rest\n  of Shawnee Township pays 15.600. The tax year 2013 summary has no such set. In 2014 and 2015 the\n  set reappears with no village millage and a township rate of 15.600 \u{2014} identical to the township's\n  own set in every one of its columns and to the third decimal \u{2014} and from tax year 2016 it is gone.\n  [verified] \u{2014}\n  [the Auditor's tax rate summaries](../../catalog/allen-county-auditor-tax-rates.md), tax sets L35\n  and L36; see [the rates](../measure/allen-county-property-tax-rates-2012-2025.yml)."
+            ),
+            support!(
+                "question/what-happened-to-the-village-of-fort-shawnee.yml",
+                "**That is a second witness to the year and a first witness that is local.** The gazetteer draws\n  Fort Shawnee as a village in 2012 and as a census designated place in 2013; the office that sets\n  this county's tax rates has it levying in 2012 and not in 2013. Two instruments with nothing in\n  common \u{2014} a federal geography file and a county taxing authority \u{2014} put the end of the corporation\n  in the same twelve months. [inference] \u{2014} the reasoning is this corpus's."
+            ),
+            support!(
+                "question/what-happened-to-the-village-of-fort-shawnee.yml",
+                "**The tax set outliving the levy is the sharper detail.** A village that had merely stopped\n  levying would keep a lower township rate, because a village's residents are outside some township\n  levies; L36's township rate rises to the full 15.600 in the same move. The set that survives into\n  2014 and 2015 is a label on rows identical to the township's, which is what an administrative\n  record looks like after the thing it names has gone. [inference]"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Village tax, 2012", value: 2.15, literal: "2.150" },
+            Figure { label: "Township tax, 2012", value: 10.2, literal: "10.200" },
+            Figure { label: "Township tax, 2014", value: 15.6, literal: "15.600" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -1,0 +1,93 @@
+class: measure
+label: Allen County's assessed valuation, reports of 2010–2023
+description: |
+  **The county's taxable base was $2,451,331,690 in the newest audited report, and one mill on it
+  raises $2,451,332.** [verified] —
+  [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the
+  *Property Taxes* note in the report for the year ended 31 December 2023.
+
+      report for   county rate   residential   agricultural   commercial etc   public utility        total
+      2010           8.70              —              —               —                —      1,862.8
+      2011           8.70              —              —               —                —      1,857.8
+      2012           8.70              —              —               —                —      1,825.6
+      2013           8.70              —              —               —                —      1,843.8
+      2014           9.70        1,149.3          147.7           438.5            114.2      1,849.8
+      2015           9.70        1,164.1          240.0           414.9            122.9      1,941.9
+      2017          11.40        1,170.5          238.7           417.1            164.8      1,991.1
+      2018          11.40        1,175.4          238.7           423.0            159.8      1,996.8
+      2019          11.40        1,287.7          200.2           426.7            159.6      2,074.2
+      2020          11.40        1,293.3          202.0           433.7            173.7      2,102.7
+      2021          11.40        1,303.1          203.3           437.8            209.6      2,153.9
+      2022          11.40        1,525.1          180.8           467.7            232.2      2,405.9
+      2023          11.40        1,537.1          181.9           474.9            257.4      2,451.3
+
+  Values are millions of dollars, and the year is the report's, not the lien date's. **County rate**
+  is the full rate for all county operations in dollars per $1,000, as each report states it.
+  [verified] — same source.
+
+  **The base is a year older than the report that prints it.** The reports say so themselves: tax
+  revenue received in a year is the collection of the previous year's taxes, levied on assessed
+  values as of the previous January. [verified] — same source, the 2023 report. The rate in the same
+  sentence is attached to the report's own fiscal year, and this corpus does not resolve that offset
+  for the rate; the table above is labelled as the reports label themselves. [inference]
+
+  **Two reports of the fifteen are unreadable and they are at the two ends.** The 2016 report and
+  the one posted in December 2025 are scans with no text layer, so the series has a hole at 2016 and
+  stops at the report for 2023. [verified] — same source.
+
+  **The base grew 31.6 per cent and the county's rate grew 31.0 per cent, and those are separate
+  facts.** From $1,862,833,970 in the 2010 report to $2,451,331,690 in the 2023 report, against a
+  county rate of $8.70 rising to $11.40. [inference] — computed here from the table above. At the
+  full rate the county's own levy on the newest base is $27,945,181, before any reduction factor.
+
+  **Residential property is 62.7 per cent of what this county taxes.** $1,537,113,750 of
+  $2,451,331,690 in the 2023 report, against $474,900,790 commercial, industrial and mineral,
+  $257,374,000 public utility and $181,943,150 agricultural. [verified] — same source. In every year
+  that prints the five classes, they sum to the printed total exactly.
+
+  **Agricultural value fell by a quarter while everything else rose.** From $240,015,570 in the 2015
+  report to $181,943,150 in the 2023 report, down 24.2 per cent, in the same years residential rose
+  33.7 per cent. Agricultural land here is taxed on what it yields rather than what it would sell
+  for, under the current agricultural use valuation the Auditor administers. [verified] — same
+  source; see [the Auditor](../office/allen-county-auditor.yml).
+
+  **The 2021 reappraisal is visible in one step.** Residential value goes from $1,303,141,550 in the
+  2021 report to $1,525,140,550 in the 2022 report, a rise of 17.0 per cent in one year against 0.8
+  per cent the year before. [inference] — computed here; the Auditor's own account puts the last
+  reappraisal at tax year 2021 payable 2022.
+
+  **In figures, the total assessed base at four reports: $1,862.8 million in 2010, $1,941.9 million
+  in 2015, $2,153.9 million in 2021 and $2,451.3 million in 2023.** [verified] — read from the table
+  above, same source.
+
+  [open] What the base was before 2010 and what it is now. The audited reports posted go back to the
+  2010 report and no further, and the two newest years are scans.
+properties:
+  parameter: total assessed valuation of real and public utility property
+  value: "2451331690"
+  unit: dollars
+  as_of: "2023"
+  method: |
+    The *Property Taxes* note of each audited report posted by the Auditor, extracted with
+    `pdftotext -layout`. Class figures are read from the twelve lines above the printed
+    `Total Assessed Value` rather than by searching the document, because the class words appear
+    elsewhere first and a document-wide search returns the wrong number silently — it did. Where the
+    five classes are printed they are summed and checked against the printed total; every such year
+    agrees exactly. The 2010–2013 reports print only real property and public utility property and
+    are entered as totals with the classes blank. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-financials.md
+  - target: ../office/allen-county-auditor.yml
+    relationship: concerns
+  - target: allen-county-property-tax-rates-2012-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-tax-rates.md
+  - target: allen-county-farmland-1910-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
