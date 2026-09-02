@@ -2766,7 +2766,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
             support!(
                 "measure/allen-county-population-by-race-1930-1960.yml",
-                "**Lima's share of the county's Black residents fell in every decade it can be measured.** 1,243\n  of 1,385 in 1920, or 89.7 per cent; 1,561 of 1,916 in 1940, or 81.5; 3,278 of 4,391 in 1950, or\n  74.7. In 2023 it is 76.7."
+                "**Lima's share of the county's Black residents fell across every decade this node can measure.**\n  1,243 of 1,385 in 1920, or 89.7 per cent; 1,561 of 1,916 in 1940, or 81.5; 3,278 of 4,391 in\n  1950, or 74.7."
             ),
             support!(
                 "measure/allen-county-population-by-race-1930-1960.yml",
@@ -2877,6 +2877,54 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Given a namesake", value: 11.0, literal: "11" },
             Figure { label: "Named in full", value: 8.0, literal: "8" },
             Figure { label: "Rank and war only", value: 2.0, literal: "2" },
+        ],
+    },
+    Assertion {
+        id: "the-category-split-in-2000",
+        statement: "Allen County's Black population grew at every census from 1920 to 2000 \
+                    including the twenty years after the county's own peak, and then appears to \
+                    stop. 2000 is also the first census at which a person could be counted as more \
+                    than one race. Counted the way the nine censuses before it counted, the 2020 \
+                    figure is 15,636 rather than 12,573.",
+        topic: "population",
+        // The plateau and the split are the same three censuses read two ways, which is why the
+        // alone series is plotted rather than the combination one: the flat line is the artifact.
+        supports: &[
+            support!(
+                "measure/allen-county-population-by-race-1970-2020.yml",
+                "**The county's Black population grew at every census from 1920 to 2000.** 1,385 \u{b7} 1,686 \u{b7} 1,916 \u{b7}\n  4,391 \u{b7} 7,322 \u{b7} 9,234 \u{b7} 10,975 \u{b7} 12,313 \u{b7} 13,225, across eighty years and nine counts with no\n  reversal in any of them."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1970-2020.yml",
+                "**In figures: 9234 in 1970, 10975 in 1980, 12313 in 1990, 13225 in 2000, 12639 in 2010 and 12573\n  in 2020.**"
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1970-2020.yml",
+                "**Two of those decades are decades in which the county was emptying.** Allen County peaked at\n  112,241 in 1980 and has fallen at every census since; between 1980 and 2000 it lost 3,768 people\n  and gained 2,250 Black residents."
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1970-2020.yml",
+                "**Counted the way every census before 2000 counted, the county's Black population in 2020 is\n  15,636.**"
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1970-2020.yml",
+                "**Lima's share of the county's Black residents did not fall in every decade, and this corpus has\n  said that it did.**"
+            ),
+            support!(
+                "measure/allen-county-population-by-race-1970-2020.yml",
+                "**The census and the survey disagree by 1,768 people on a figure this corpus publishes.** The 2020\n  census counted 12,573 Black-alone residents of Allen County; the American Community Survey's\n  2019\u{2013}2023 five-year estimate is 10,805 \u{b1} 658."
+            ),
+        ],
+        answers: &[
+            "This corpus does not establish why they differ.",
+        ],
+        figures: &[
+            Figure { label: "1970", value: 9_234.0, literal: "9234" },
+            Figure { label: "1980", value: 10_975.0, literal: "10975" },
+            Figure { label: "1990", value: 12_313.0, literal: "12313" },
+            Figure { label: "2000", value: 13_225.0, literal: "13225" },
+            Figure { label: "2010", value: 12_639.0, literal: "12639" },
+            Figure { label: "2020", value: 12_573.0, literal: "12573" },
         ],
     },
 ];
