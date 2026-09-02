@@ -27,6 +27,14 @@ used-by:
   - ../corpus/question/when-the-farmland-went.yml
 ---
 
+**These two are no longer the whole shelf.** They were catalogued when the eleven other census
+years between 1910 and 2002 could not be found. Nine of the eleven are on the National Agricultural
+Statistics Service's own host, table by table, at the address the old Cornell archive redirects to —
+see [the historical archive](agcensus-archive-1925-1978.md). What the 1954 volume here keeps for
+itself is **1950**: the archive's 1950 Ohio part is a table of contents and nothing else, so this
+scan is still the only route to that census at county grain. 1982 and 1987 are in both, and the
+1987 volume's figures were checked against the archive's.
+
 **These are page images, and the text layers are not usable.** The 1987 volume's PDF text layer
 carries the row stubs and the column headings and drops the numeric grid entirely; the djvu text of
 both volumes carries the numbers as an unaligned stream, one token to a line, with thousands
