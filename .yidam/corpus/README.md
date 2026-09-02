@@ -156,9 +156,11 @@ Sorted by: kind, then alphabetically.
 | [allen-county-libraries-2024.yml](measure/allen-county-libraries-2024.yml) | measure | Allen County's public libraries, 2024 | 5 | 7v / 3i / 1o | 88 |
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 4v / 5i / 1o | 65 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
-| [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 7v / 6i / 1o | 85 |
+| [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
+| [allen-county-manufactures-1939-1967.yml](measure/allen-county-manufactures-1939-1967.yml) | measure | Allen County manufactures, 1939–1967 | 2 | 11v / 7i / 2o | 111 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 6v / 2i / 1o | 69 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
+| [allen-county-manufacturing-outside-lima-1929-1967.yml](measure/allen-county-manufacturing-outside-lima-1929-1967.yml) | measure | Allen County manufacturing outside Lima, 1929–1967 | 3 | 4v / 8i / 1o | 85 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 3 | 10v / 3i / 1o | 117 |
@@ -179,7 +181,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
-| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 14v / 5i / 0o | 122 |
+| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 15v / 6i / 0o | 129 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
 | [allen-county-precipitation-1895-2025.yml](measure/allen-county-precipitation-1895-2025.yml) | measure | Allen County precipitation, 1895–2025 | 2 | 9v / 3i / 1o | 75 |
 | [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 6v / 4i / 2o | 76 |
@@ -217,8 +219,9 @@ Sorted by: kind, then alphabetically.
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
-| [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 11v / 3i / 3o | 95 |
-| [lima-manufactures-1914-1929.yml](measure/lima-manufactures-1914-1929.yml) | measure | Lima manufactures, 1914–1929 | 3 | 10v / 3i / 1o | 90 |
+| [lima-manufactures-1899-1909.yml](measure/lima-manufactures-1899-1909.yml) | measure | Lima manufactures, 1899–1909 | 3 | 12v / 4i / 2o | 98 |
+| [lima-manufactures-1914-1929.yml](measure/lima-manufactures-1914-1929.yml) | measure | Lima manufactures, 1914–1929 | 3 | 11v / 4i / 0o | 98 |
+| [lima-manufactures-1939-1967.yml](measure/lima-manufactures-1939-1967.yml) | measure | Lima manufactures, 1939–1967 | 3 | 9v / 3i / 1o | 79 |
 | [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 8v / 9i / 2o | 136 |
 | [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 7v / 3i / 2o | 83 |
 | [lima-mayors-1939-1956.yml](measure/lima-mayors-1939-1956.yml) | measure | Mayors of Lima named inside the gap, 1939–1956 | 2 | 8v / 2i / 1o | 91 |
@@ -303,7 +306,7 @@ Sorted by: kind, then alphabetically.
 | [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
 | [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
-| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 6 | 12v / 8i / 3o | 123 |
+| [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 8 | 13v / 12i / 2o | 144 |
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 20v / 14i / 2o | 240 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 4 | 7v / 8i / 2o | 83 |
 | [the-civil-war-in-allen-county.yml](period/the-civil-war-in-allen-county.yml) | period | The Civil War in Allen County | 4 | 3v / 5i / 3o | 82 |
