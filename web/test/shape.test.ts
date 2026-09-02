@@ -47,13 +47,18 @@ const readingPages = SECTIONS.map((s) => ({
 }))
 
 /**
- * /people carries four former pages — population, housing, health and schools — and is the one
- * page where the general budget was raised rather than met. The alternative was to lift two
- * more movements into articles, and they belong here: the sorting the page describes is one
- * argument, and cutting it into pieces to satisfy a number would be the number governing the
- * writing.
+ * 1,800 words of prose, and prose is the main line only.
+ *
+ * `<Gloss>` content is outside `<p>` and so outside this count, which is deliberate: the
+ * margin is apparatus and does not compete for the reader's attention the way a paragraph
+ * does. It is not a loophole — a page cannot get under the budget by moving its argument into
+ * the margin, because `register.test.ts` governs what may go there.
+ *
+ * `/people` was expected to need a raised budget: it carries four former pages, and the plan
+ * that produced this restructure said so. It came in at 1,764 after the register pass, so the
+ * exception was never taken. Add one here if a page earns it, with the argument beside it.
  */
-const BUDGET: Record<string, number> = { '/people': 2200 }
+const BUDGET: Record<string, number> = {}
 const DEFAULT_BUDGET = 1800
 
 describe('a reading page is an argument', () => {
