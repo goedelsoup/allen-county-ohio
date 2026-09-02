@@ -3705,6 +3705,102 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "White, stroke", value: 14.9, literal: "14.9" },
         ],
     },
+    Assertion {
+        id: "the-county-kept-making-things",
+        statement: "Production is still Allen County's largest occupational group and its most \
+                    concentrated: 5,920 jobs at 2.10 times the national share, against 6,010 at \
+                    1.84 ten years earlier. The jobs held roughly still while the country's fell \
+                    away beneath them, on a county total that moved 0.8 per cent in the decade.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**The county still makes things, and relative to America it makes more of them than it did.**\n  Production occupations are its largest major group at 5,920 and its most concentrated at a\n  location quotient of 2.10 \u{2014} twice the national share of employment. Ten years earlier the count\n  was 6,010 and the quotient 1.84. The jobs held roughly still while the country's fell away\n  beneath them."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Total employment did not move in a decade: 49,260 in 2014 and 49,640 in 2024, a rise of 380 or\n  0.8 per cent.** The median wage went from $31,450 to $46,430, up 47.6 per cent before any\n  allowance for prices."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**In figures, the seven largest major groups in 2024: production 5,920, food preparation 4,970,\n  transportation 4,900, office and administrative support 4,820, healthcare practitioners 4,450,\n  sales 4,170 and management 2,950.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Production", value: 5920.0, literal: "5,920" },
+            Figure { label: "Food preparation", value: 4970.0, literal: "4,970" },
+            Figure { label: "Transportation", value: 4900.0, literal: "4,900" },
+            Figure { label: "Office and admin", value: 4820.0, literal: "4,820" },
+            Figure { label: "Healthcare practitioners", value: 4450.0, literal: "4,450" },
+            Figure { label: "Sales", value: 4170.0, literal: "4,170" },
+            Figure { label: "Management", value: 2950.0, literal: "2,950" },
+        ],
+    },
+    Assertion {
+        id: "the-fingerprint-names-the-landmarks",
+        statement: "Allen County's seven most concentrated occupations are chemical equipment \
+                    operators at 5.58 times the national share, machine tool setters at 5.02, food \
+                    batchmakers at 4.90, computer-controlled tool operators at 3.63, correctional \
+                    officers at 2.98, welders at 2.93 and industrial engineers at 2.61. The first \
+                    is the refinery and the fifth is the state's two prisons: a survey that has \
+                    never heard of either draws them anyway.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**The county's occupational fingerprint names its landmarks.** The seven most concentrated\n  occupations with 200 or more workers are chemical equipment operators at a location quotient of\n  5.58, multiple machine tool setters at 5.02, food batchmakers at 4.90, computer-controlled tool\n  operators at 3.63, correctional officers at 2.98, welders at 2.93 and industrial engineers at\n  2.61."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**The occupations this county is shortest of are the ones the country grew.** Computer and\n  mathematical work has a location quotient of 0.33 on 550 jobs \u{2014} one third the national rate and\n  the lowest of the 22 major groups. Legal is 0.38, farming 0.41 and business and financial\n  operations 0.57."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Sixty people work in farming, fishing and forestry, in a county two thirds covered by farms.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Chemical equipment operators", value: 5.58, literal: "5.58" },
+            Figure { label: "Machine tool setters", value: 5.02, literal: "5.02" },
+            Figure { label: "Food batchmakers", value: 4.9, literal: "4.90" },
+            Figure { label: "CNC tool operators", value: 3.63, literal: "3.63" },
+            Figure { label: "Correctional officers", value: 2.98, literal: "2.98" },
+            Figure { label: "Welders", value: 2.93, literal: "2.93" },
+            Figure { label: "Industrial engineers", value: 2.61, literal: "2.61" },
+        ],
+    },
+    Assertion {
+        id: "the-clerks-went-and-the-warehouse-did-not-arrive",
+        statement: "Read straight off the major groups, Allen County lost 2,520 clerical jobs and \
+                    gained 1,090 in transportation over ten years. But 920 of those people never \
+                    changed jobs: the code they are filed under moved between the two groups in \
+                    the 2018 revision. Repaired, the clerical fall is 1,600 and the warehouse rise \
+                    is 170.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Underneath the flat total, the largest single change is clerical and it is smaller than it\n  looks.** Office and administrative support reads 7,340 in 2014 and 4,820 in 2024, a fall of\n  2,520. But `43-5081 Stock Clerks and Order Fillers`, 920 people here in 2014, was moved by the\n  2018 revision of the occupation codes into transportation and material moving, where it appears\n  as `53-7065 Stockers and Order Fillers` with 1,100."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Repaired for that one move, the clerical fall is about a quarter and the warehouse rise is\n  not a rise.** On a comparable base office and administrative support goes 6,420 to 4,820, down\n  1,600 or 24.9 per cent, and transportation and material moving goes 4,730 to 4,900, up 170 or\n  3.6 per cent."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**In figures, the two groups as read and as repaired: office and administrative support falls by\n  2,520 as read and by 1,600 repaired; transportation and material moving rises by 1,090 as read\n  and by 170 repaired.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Clerical fall, as read", value: 2520.0, literal: "2,520" },
+            Figure { label: "Clerical fall, repaired", value: 1600.0, literal: "1,600" },
+            Figure { label: "Transport rise, as read", value: 1090.0, literal: "1,090" },
+            Figure { label: "Transport rise, repaired", value: 170.0, literal: "170" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

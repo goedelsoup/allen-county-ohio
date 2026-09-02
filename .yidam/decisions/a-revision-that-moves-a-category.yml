@@ -1,0 +1,76 @@
+id: a-revision-that-moves-a-category
+summary: >-
+  920 people in Allen County moved from office work to warehouse work in 2018 without changing
+  jobs, because the occupation code they are filed under moved between two major groups. The
+  county total is untouched and two of its parts are wrong by roughly a fifth. Where a
+  classification is revised, the aggregate stays comparable and the parts do not, and the parts are
+  repaired from the crosswalk before they are differenced.
+context: |
+  This corpus already refuses to subtract two counts of different things
+  ([a-farm-count-is-a-definition](a-farm-count-is-a-definition.yml)) and knows how to date a
+  category's birth from a file's own silence
+  ([a-category-has-a-birthday](a-category-has-a-birthday.yml)). Neither covers this shape, and the
+  difference is exactly what makes it dangerous.
+
+  Nothing was defined differently and nothing was born. The same people are counted in both years,
+  under the same name, doing the same work. What changed is which **parent group** their code sits
+  in: `43-5081 Stock Clerks and Order Fillers` under office and administrative support in the 2010
+  Standard Occupational Classification became `53-7065 Stockers and Order Fillers` under
+  transportation and material moving in the 2018 revision.
+
+  Read straight off the major groups, Allen County between May 2014 and May 2024 looks like this:
+
+      office and administrative support     7,340 → 4,820      −2,520     −34.3%
+      transportation and material moving    3,810 → 4,900      +1,090     +28.6%
+
+  The obvious sentence is that this county replaced its clerks with warehouse workers. Repairing
+  the base for the one occupation that moved:
+
+      office and administrative support     6,420 → 4,820      −1,600     −24.9%
+      transportation and material moving    4,730 → 4,900        +170      +3.6%
+
+  The clerical fall is real and is two thirds of what it looked like. The warehouse boom is not a
+  boom; it is one code arriving.
+
+  The failure has a second face in the same file. Management appears to grow 68.6 per cent, and
+  most of that is occupations with no 2014 estimate at this metro's size acquiring one by 2024 —
+  suppression lifting, not managers arriving. An aggregate can be spoiled by a category appearing
+  as easily as by one moving.
+decision: |
+  **Where a classification is revised between two readings, the total is comparable and the parts
+  are not until the crosswalk has been applied.**
+
+  - Difference the **aggregate** freely. A revision that reshuffles codes does not change how many
+    people were counted, and the total is the one figure that survives it untouched.
+  - Before differencing any **part**, list the units present in one vintage and absent in the
+    other, at the most detailed level published. That list is short, it is where the whole problem
+    lives, and producing it costs one set-difference.
+  - Repair the base rather than the endpoint: move the departed unit's *earlier* value into the
+    group it later joins, and say in the node that the base was adjusted and by how much.
+  - Report the raw and repaired figures both. A reader who computes the raw difference elsewhere
+    should be able to see that this corpus knows why the two disagree.
+  - A unit that appears between vintages is not automatically growth. In a survey it is often
+    suppression lifting, and it is distinguished by whether the same unit is absent in the earlier
+    year at a *larger* geography too.
+rationale: |
+  **The wrong sentence was already written.** The first reading of this file produced "trucking and
+  warehousing replacing clerical work" as the county's decade story, and it survived until
+  somebody asked which detailed occupations made up the clerical fall. One list of missing codes
+  killed it. That is the whole argument for putting the list before the sentence.
+
+  **The aggregate's immunity is the useful half.** Because the total is untouched, a revision is
+  cheap to detect: sum the parts in both vintages, compare each sum against its own published
+  total, and any part-level movement that does not show up in the total is a candidate for
+  reclassification. This corpus has the total in every such file it holds.
+
+  **The repaired figure is still a claim about two surveys.** Moving 920 into a 2014 base does not
+  make the two years the same instrument; it makes them comparable enough to say a direction. The
+  clerical fall is reported here as about a quarter, not as 24.9 per cent, and the node says why.
+
+  **What this does not buy.** It says nothing about occupations that were split or merged rather
+  than moved — `Team Assemblers` and `Assemblers and Fabricators, All Other` become
+  `Miscellaneous Assemblers and Fabricators` inside one group here, which leaves that group
+  comparable and its detailed rows not. The rule above repairs parents. Repairing children is a
+  different and larger job this corpus has not done.
+status: accepted
+date: "2026-09-02"

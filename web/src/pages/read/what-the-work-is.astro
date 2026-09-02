@@ -1,0 +1,113 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const making = assertion('the-county-kept-making-things')
+const print = assertion('the-fingerprint-names-the-landmarks')
+const clerks = assertion('the-clerks-went-and-the-warehouse-did-not-arrive')
+
+const groupsSpec = bar(
+  making.figures.map((f) => f.label),
+  making.figures.map((f) => f.value),
+  { yTitle: 'Jobs', labelValues: true },
+)
+
+const lqSpec = bar(
+  print.figures.map((f) => f.label),
+  print.figures.map((f) => f.value),
+  { yTitle: 'Times the national share', labelValues: true },
+)
+
+const clerkSpec = bar(
+  clerks.figures.map((f) => f.label),
+  clerks.figures.map((f) => f.value),
+  { yTitle: 'Jobs', labelValues: true },
+)
+---
+
+<Article slug="what-the-work-is">
+  <p>
+    Allen County has 49,640 jobs, a median wage of $46,430, and 221 occupations with enough people
+    in them to publish. The largest group is not the one the county's recent history would
+    predict — it is still production, and relative to the country there is more of it here than
+    there was ten years ago.
+  </p>
+  <Gloss>
+    The occupational survey publishes for metropolitan areas, which almost everywhere means several
+    counties at once. The Lima metropolitan area is Allen County and nothing else — one row in the
+    Census Bureau's delineation file — so a metro table is a county table here. An unrelated
+    programme counting the same year's jobs from insurance filings gets 49,690 against this
+    survey's 49,640, one tenth of one per cent apart.
+  </Gloss>
+  <AssertionCard assertion={making} open />
+  <ChartFigure
+    id="groups"
+    title="The seven largest occupational groups, 2024"
+    caption="Employment is rounded to the nearest ten by the survey. Production leads on 5,920 and is also the most concentrated of the twenty-two groups, at 2.10 times the national share."
+    columns={['Group', 'Jobs']}
+    rows={making.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="groups" set:html={JSON.stringify(groupsSpec)} is:inline />
+
+  <h2>The concentrations name the buildings</h2>
+  <AssertionCard assertion={print} />
+  <ChartFigure
+    id="lq"
+    title="Most concentrated occupations, against the national share"
+    caption="Occupations with 200 or more workers. A value of 5.58 means this county employs chemical equipment operators at more than five times the rate the country does."
+    columns={['Occupation', 'Times national']}
+    rows={print.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="lq" set:html={JSON.stringify(lqSpec)} is:inline />
+  <p>
+    A survey that has never heard of the Lima refinery or the two state prisons draws both of them
+    from the shape of the workforce alone. The other direction is just as sharp: computer and
+    mathematical work runs at one third the national rate on 550 jobs — the thinnest of the
+    twenty-two groups — with legal at 0.38 and business and financial at 0.57. The county is
+    shortest of exactly the work the country spent thirty years adding.
+  </p>
+  <p>
+    And sixty people work in farming, fishing and forestry, in a county two thirds covered by
+    farms. That is a fact about the instrument before it is a fact about the county: the survey
+    counts wage and salary jobs, and a farm operator is self-employed.
+  </p>
+
+  <h2>A number that was wrong until somebody looked underneath</h2>
+  <p>
+    Total employment barely moved in the decade — 49,260 in 2014, 49,640 in 2024. Underneath it,
+    read straight off the groups, the county appeared to have lost 2,520 clerical jobs and gained
+    1,090 in transportation, which reads as a county trading its offices for its warehouses.
+  </p>
+  <AssertionCard assertion={clerks} open />
+  <ChartFigure
+    id="clerks"
+    title="The clerical fall and the warehouse rise, as read and repaired"
+    caption="920 people in this county were filed under office and administrative support in 2014 and under transportation and material moving in 2024, because the occupation code they sit in changed parents in the 2018 revision. They did not change jobs."
+    columns={['', 'Jobs']}
+    rows={clerks.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="clerks" set:html={JSON.stringify(clerkSpec)} is:inline />
+  <p>
+    The clerical loss is real and is two thirds of what it looked like. The warehouse boom is one
+    code arriving. What the decade actually did to this county's work is narrower than the first
+    reading: about a quarter of the clerical jobs gone, everything else roughly where it was, and
+    a total that moved 0.8 per cent in ten years.
+  </p>
+  <p>
+    One more group in that table cannot be trusted either, and for a different reason. Management
+    appears to grow 68.6 per cent across the decade, and most of that is occupations which had no
+    published estimate for a metro this size in 2014 and have one now. Suppression lifting looks
+    exactly like arrival, and nothing in the file distinguishes them. It is left as an open
+    question rather than counted as growth.
+  </p>
+  <p>
+    What did move, unambiguously, is pay. The county's median annual wage went from $31,450 to
+    $46,430 — up 47.6 per cent in nominal terms, on a workforce that grew by 380 people. How much
+    of that is prices rather than earnings this site cannot say, because it holds no deflator; the
+    figure is recorded as what the survey published and the question is left standing beside it.
+  </p>
+</Article>
