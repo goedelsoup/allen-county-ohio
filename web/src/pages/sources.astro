@@ -3,7 +3,8 @@ import Base from '../layouts/Base.astro'
 import DataTable from '../components/DataTable.astro'
 import StatTile from '../components/StatTile.astro'
 import TierBadge from '../components/TierBadge.astro'
-import { assertions, manifest, nodes } from '../lib/feeds'
+import AssertionCard from '../components/AssertionCard.astro'
+import { assertion, assertions, manifest, nodes } from '../lib/feeds'
 import { articlesIn } from '../lib/articles'
 import {
   SECTION_KEYS,
@@ -15,6 +16,8 @@ import {
 import { inline } from '../lib/prose'
 
 const c = manifest.corpus
+
+const compilers = assertion('two-compilers-one-canvass-and-one-vote')
 
 const tagTotals = Object.values(c.edge_tags).reduce<Record<string, number>>((acc, tags) => {
   for (const [tag, n] of Object.entries(tags)) acc[tag] = (acc[tag] ?? 0) + n
@@ -98,6 +101,19 @@ const verifiedShare = Math.round(
       A tier is computed on every build, never declared. An assertion drawn from several
       passages inherits the weakest of them, so a claim downgraded in the corpus is downgraded
       here on the next build rather than whenever somebody remembers.
+    </p>
+    <p class="prose">
+      A tier says a catalog source supports the claim. It does not say the source is right, and the
+      corpus's method for that is to hold two sources where it can and print the gap where they
+      part. Here is what that bought on one table.
+    </p>
+    <AssertionCard assertion={compilers} open />
+    <p class="prose fine">
+      Neither of those compilations is the election. Both stand between this site and eighty-eight
+      county boards' certificates, and the Ohio Secretary of State's website — which would serve the
+      certified returns — answers 403 to every client tried, three times now, under three different
+      names. Reading a second compiler is not redundancy here. It is the only error detection
+      available.
     </p>
   </section>
 

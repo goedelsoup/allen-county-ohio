@@ -127,3 +127,11 @@ postal. See [a-postal-address-is-not-a-municipality](../decisions/a-postal-addre
 officers, no budgets, and no election returns. The Ohio Secretary of State was probed again on
 2026-08-29 and still answers 403 to an automated client, on both its municipalities publication
 and its election-results index.
+
+**Probed a third time on 2026-09-02, and the block is not about the client's name.** Three agents
+were tried against three paths — the site root, the election-results index, and the 2020 official
+results page — under no user agent, under this corpus's own named agent with a contact address, and
+under a current desktop browser string. All nine returned 403. This is worth writing down because
+the same week a different federal server, `download.bls.gov`, turned out to be refusing only
+unnamed clients and to serve a named one; that is not what is happening here. [verified] — nine
+requests, made here.

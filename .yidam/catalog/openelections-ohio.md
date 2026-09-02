@@ -22,6 +22,7 @@ location:
     value: https://api.github.com/repos/openelections/openelections-data-oh/contents/2020
     description: Directory listing; 2012, 2016 and 2018 are siblings, 2022 and 2024 have no precinct file
 used-by:
+  - ../corpus/measure/allen-county-presidential-vote-2000-2016.yml
   - ../corpus/division/voting-district-lima-1a-2020.yml
   - ../corpus/measure/allen-county-elected-seats-2026.yml
   - ../corpus/measure/allen-county-governor-vote-2018.yml
@@ -84,3 +85,24 @@ archive.org holds it: see
 file is, and it does change what the corpus can say about it — the office whose present-day site
 returns 403 to an automated client published the same class of figure in a book, and the book is
 readable. The two do not overlap in time, so no figure here has yet been checked against one there.
+
+**It reaches back to 2000, and this corpus had read three years of it.** The Ohio repository holds
+general-election files for 2000, 2008, 2012, 2016 and 2020 — the presidential vote read here for
+2016 and 2020 came from the last two of those, and 2000, 2008 and 2012 sat unread beside them.
+[verified] — the repository's own listing, read 2026-09-02. It has **no general-election file for
+2004**: that directory holds a March primary and a parser, so the one presidential election in the
+run this project cannot supply is the one
+[the other compilation](medsl-county-returns.md) had to.
+
+**It carries a source it did not write, and that source outranks it.** `2012/FinalResults.xlsx` in
+the same directory is the Ohio Secretary of State's own final-results workbook for the 2012
+general — a `Contents` sheet, a `Master Sheet`, and one sheet per office, with a county to a row.
+Its `President` sheet gives Allen County Obama 17,914, Romney 29,502 and a presidential total of
+48,236. [verified] — the workbook, read here. That is the certified figure and the transcription
+beside it agrees with it exactly, which is the strongest thing this corpus can currently say about
+any modern county return: the compiler was checked against the compiled and did not drift.
+
+**And it is still not the canvass.** The workbook is the Secretary of State's, and the Secretary of
+State's is a compilation of eighty-eight county boards' certificates, none of which is held here.
+[inference] The site that would serve them
+[returns 403 to every client tried](allen-county-official-site.md).

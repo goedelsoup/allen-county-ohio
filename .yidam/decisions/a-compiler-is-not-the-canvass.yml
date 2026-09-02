@@ -1,0 +1,73 @@
+id: a-compiler-is-not-the-canvass
+summary: >-
+  Two university-and-volunteer compilations of Ohio's 2000–2016 county returns disagree by one vote
+  in two of five elections. For 2012 the Secretary of State's own workbook settles it and one
+  compiler is wrong; for 2008 no arbiter is held and the divergence is published. A compilation is
+  a witness to the canvass, never the canvass, and two of them are worth having precisely because
+  they can differ.
+context: |
+  [a-reprint-is-not-a-second-witness](a-reprint-is-not-a-second-witness.yml) settled the case where
+  the disagreeing parties are the *same office* printing its own figure twice. This is the
+  neighbouring case and the rule there does not reach it: here the disagreeing parties are two
+  outside compilers, working independently from the same certified canvass, and neither is the
+  publisher of record.
+
+  The five elections read this phase divide three ways:
+
+    2000   both compilations agree to the vote on every candidate and on the total
+    2004   only one compilation has it at all — OpenElections holds no Ohio general file for 2004
+    2008   McCain 29,941 / Obama 19,521 against 29,940 / 19,522 — one vote each way, totals equal
+    2012   Obama 17,913 against 17,914, and the totals differ too, 48,235 against 48,236
+    2016   both give Trump 30,487 and Clinton 13,294, and differ by 79 in the residue
+
+  The 2008 shape is the dangerous one. The two errors cancel, so both files carry a total of 50,263
+  and every share computed from either is right to three decimals. Nothing internal to either file
+  could find it; only the other file can.
+
+  The 2012 shape had an arbiter and it was in the same repository as one of the compilers.
+  OpenElections carries `2012/FinalResults.xlsx` — the Secretary of State's own final-results
+  workbook — beside its own transcription, and its `President` sheet gives Obama 17,914. The
+  transcription matches the workbook and the other compilation does not.
+
+  The 2016 shape is not a digit at all. Both compilations agree exactly on the two candidates who
+  decide the election and differ on what counts as an "other" vote — 2,034 against 2,113, on
+  totals of 45,815 and 45,894. That is a scope disagreement about write-ins, not an error.
+decision: |
+  **A compilation is a witness to the canvass and is never quoted as the canvass.**
+
+  - Where a certified return from the publisher of record is held, it wins outright, whatever the
+    compilations say and however many of them agree. A spreadsheet the Secretary of State published
+    is an abstract for this purpose; the format is not the point and the office is.
+  - Where two compilations agree, record that they agree and treat the figure as verified. Their
+    agreement is real evidence, unlike the agreement of two printings by one office, because
+    neither had access to the other.
+  - Where two compilations disagree and no arbiter is held, **publish both figures and say which
+    node's arithmetic uses which**. Do not average, do not pick the newer, and do not pick the one
+    whose total is rounder.
+  - Where only one compilation covers a year, say so in the node — a single-witness year is not the
+    same claim as a corroborated one, even inside the same table.
+  - A disagreement in the residue is reported as a scope difference, not as an error, unless
+    something shows one side dropped a candidate the other kept.
+rationale: |
+  **One vote decides nothing here and the class of figure decides everything.** 17,913 against
+  17,914 moves Allen County's 2012 Democratic share by two millionths. What it establishes is that
+  a compilation of this kind carries transcription error at the unit level, which is exactly the
+  grain at which somebody would want to use it — a corpus that publishes a county's vote to the
+  vote should know that its source is good to about the vote and not better.
+
+  **Two compilations are cheap and a canvass is unreachable.** The county boards' certificates are
+  not held here and the Secretary of State's site
+  [answers 403 to every client tried](../catalog/allen-county-official-site.md). Against that, the
+  marginal cost of reading a second compilation is one download, and it found two errors in five
+  elections. This is the strongest argument in the decision: the second compiler is not for
+  redundancy, it is the only error-detection available.
+
+  **The 2012 case shows the arbiter can be sitting inside the compiler's own repository.** Nobody
+  had to reach the Secretary of State to settle it. The lesson generalises: before recording a
+  compilation's figure as unverifiable, look at what the compiler shipped alongside its output.
+
+  **What this does not buy.** The Secretary of State's workbook is itself a compilation of
+  eighty-eight county boards' certificates. Preferring it settles which compiler transcribed
+  correctly and says nothing about what Allen County's board sent to Columbus.
+status: accepted
+date: "2026-09-02"

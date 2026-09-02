@@ -1,0 +1,111 @@
+class: measure
+label: Allen County presidential vote, 2000–2016
+description: |
+  Five elections, from two compilations of the state's certified canvass rather than from the
+  canvass. [verified] —
+  [MIT Election Data and Science Lab](../../catalog/medsl-county-returns.md) for all five and
+  [OpenElections](../../catalog/openelections-ohio.md) for 2000, 2008 and 2012; where the two
+  differ the divergence is below rather than averaged away.
+
+      year  Republican          Democrat            others   total    R%     D%    margin
+      2000  Bush      28,647   Gore      13,996    1,152  43,795   65.4   32.0   R+14,651
+      2004  Bush      32,585   Kerry     16,483      206  49,274   66.1   33.5   R+16,102
+      2008  McCain    29,940   Obama     19,522      801  50,263   59.6   38.8   R+10,418
+      2012  Romney    29,502   Obama     17,914      820  48,236   61.2   37.1   R+11,588
+      2016  Trump     30,487   Clinton   13,294    2,034  45,815   66.5   29.0   R+17,193
+
+  [verified] — same two sources; shares and margins computed here. The 2016 row is the figure
+  [this corpus already held](allen-county-presidential-vote-2016.yml) from a precinct sum, not a
+  new reading. Every row's three vote columns add to its total.
+
+  **2008 is the modern high-water mark, and it is high on both sides.** It is the largest total
+  vote of the six modern elections at 50,263, the largest Democratic vote at 19,522, and the
+  Republicans' worst share at 59.6 per cent — their only showing under sixty in the whole modern
+  run. [inference] — computed from the table above and
+  [the 2020 return](allen-county-presidential-vote-2020.yml).
+
+  **The Democratic column lost a third of itself in eight years, and it lost more than turnout
+  did.** From 2008 to 2016 the Democratic vote fell 6,228 — 31.9 per cent — while the total vote
+  fell 4,448. The Republican vote *rose* by 547 across the same eight years. So the whole of the
+  turnout decline and more came out of one column. [inference] — computed from the table above.
+
+  **The county's Republican share is not a straight line and 2008 is the dip, not the start.** It
+  runs 65.4, 66.1, 59.6, 61.2, 66.5 and 69.0 across the six modern elections: two above
+  sixty-five, a two-election trough, and then a climb past where it began. [inference] — the table
+  above with [2020](allen-county-presidential-vote-2020.yml).
+
+  **The margin in 2020 is the largest in this corpus's whole record of this county, and the
+  largest the other way is 1,354.** R+18,967 in 2020 against Bryan's D+1,354 in 1908. Allen County
+  gave Bryan 55.2 per cent in 1896 and Biden 29.5 per cent in 2020. [inference] — computed against
+  [the six elections to 1908](allen-county-presidential-vote-1888-1908.yml).
+
+  **In figures, the Republican share: 65.4 per cent in 2000, 66.1 in 2004, 59.6 in 2008, 61.2 in
+  2012, 66.5 in 2016 and 69.0 in 2020.** [inference] — computed from the table above and the 2020
+  node.
+
+  **Two compilations of one canvass disagree twice in five elections, each time by one vote.** For
+  2008 the lab gives McCain 29,941 and Obama 19,521 where OpenElections gives 29,940 and 19,522 —
+  one vote each way, so both files total 50,263 and no arithmetic in either can catch it. For 2012
+  the lab gives Obama 17,913 against OpenElections' 17,914, and there the totals differ too.
+  [verified] — the two files, compared here.
+
+  **The 2012 disagreement is settled and the lab is wrong.** The Ohio Secretary of State's own
+  final-results workbook, which OpenElections ships beside its transcription, gives Allen County
+  Obama 17,914, Romney 29,502 and a presidential total of 48,236 — the transcription exactly.
+  [verified] — [the workbook](../../catalog/openelections-ohio.md). The table above takes the
+  workbook's figures for 2012 and OpenElections' for 2008; see
+  [a compiler is not the canvass](../../decisions/a-compiler-is-not-the-canvass.yml).
+
+  [open] Which of the two 2008 figures is right. No certified return for that year is held here,
+  the divergence is one vote in each major column and cancels in the total, and nothing inside
+  either file can decide it.
+
+  **2004 rests on one witness and the others on two.** OpenElections has no Ohio general-election
+  file for 2004 at all, so that row has no second reading. [verified] — the repository's listing.
+
+  **The residue is where the two compilations really part.** For 2016 both give Trump 30,487 and
+  Clinton 13,294 and then differ by 79 on everything else, 2,034 against 2,113. That is a
+  disagreement about which write-ins count rather than a transcription error, and it is not read
+  here as one side being wrong. [inference] — the two files, compared here.
+
+  **This closes half the run and leaves the other half in one piece.** With these five the corpus
+  holds 21 of the 42 presidential elections from 1856 to 2020. The 21 it does not hold are 1912
+  and 1916, and then every election from 1924 to 1996 without a break — a nineteen-election block
+  with 1920 sitting inside it as the only year read. [inference] — counted here against
+  [1856–1884](allen-county-presidential-vote-1856-1884.yml),
+  [1888–1908](allen-county-presidential-vote-1888-1908.yml),
+  [1920](allen-county-presidential-vote-1920.yml),
+  [2016](allen-county-presidential-vote-2016.yml) and
+  [2020](allen-county-presidential-vote-2020.yml).
+
+  [open] When this county turned Republican. It voted Democratic eleven times in twelve from 1856
+  to 1900, Republican by 2,320 in 1920, and Republican by never less than 10,418 from 2000. The
+  turn is somewhere in the nineteen elections from 1924 to 1996 and no source held here reaches
+  them.
+properties:
+  parameter: presidential votes cast, Allen County
+  value: "45815"
+  unit: votes
+  as_of: "2016"
+  method: |
+    The lab's public GitHub mirror was read rather than its Dataverse deposit, whose data file is
+    behind a guestbook — a form for a person to fill in, not a request this corpus makes on its
+    behalf. That mirror stops at 2016, which is why 2020 here is the figure already held from
+    OpenElections and why 2024 is absent altogether. The OpenElections files are county-level
+    for 2000 and 2012 and a combined general file for 2008; the 2012 arbiter is
+    `2012/FinalResults.xlsx` in the same repository, read from its XML parts because no
+    spreadsheet library is installed. Ohio's own site was probed again and refuses every client.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/medsl-county-returns.md
+  - target: allen-county-presidential-vote-2016.yml
+    relationship: concerns
+  - target: allen-county-presidential-vote-2020.yml
+    relationship: concerns
+  - target: allen-county-presidential-vote-1920.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of
