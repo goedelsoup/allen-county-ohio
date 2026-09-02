@@ -110,6 +110,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 9v / 3i / 1o | 94 |
 | [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 7v / 4i / 1o | 64 |
+| [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 118 |
 | [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
@@ -143,7 +144,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 2 | 6v / 4i / 1o | 60 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2022 | 2 | 3v / 0i / 1o | 42 |
-| [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 3i / 2o | 97 |
+| [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 4i / 2o | 105 |
 | [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 2 | 9v / 5i / 2o | 114 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
