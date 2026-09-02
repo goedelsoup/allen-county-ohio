@@ -91,9 +91,11 @@ properties:
   parameter: cancer death rate, all sites, age-adjusted
   value: "159.0"
   unit: deaths per 100,000
-  as_of: "2019-2023"
+  as_of: "2023"
   method: |
-    State Cancer Profiles' CSV output — `output=1` — for Ohio counties, one request per site and
+    The value above is the all-sites age-adjusted death rate for the five years 2019–2023, dated
+    here by the last year of that window as this corpus dates its other multi-year mortality
+    measures. State Cancer Profiles' CSV output — `output=1` — for Ohio counties, one request per site and
     per stratum, nineteen sites for mortality and four for incidence. A site code with no dataset
     behind it returns an HTML page under HTTP 200, so every response is checked against its first
     line before parsing; twenty-eight codes were tried and nineteen are real. Rates are the file's
