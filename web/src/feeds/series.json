@@ -1252,6 +1252,46 @@
       ]
     },
     {
+      "id": "place-allen-county::manufacturing-employees,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "manufacturing employees, Allen County",
+      "unit": "employees",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-manufactures-1939-1967.yml",
+          "label": "Allen County manufactures, 1939–1967",
+          "as_of": "1967",
+          "value": 16400.0,
+          "published": "16400",
+          "tier": "verified",
+          "source": "catalog/census-of-manufactures-area-statistics-1939-1967.md",
+          "method": "Census of Manufactures, taken for the calendar years 1939, 1947, 1954, 1958, 1963 and 1967 and read from page images of five archive.org scans; none of the five has a usable text layer for tables. Establishments are those inside the county, on a $5,000 minimum through 1939 and on the Bureau's later size rules afterwards. Four population columns printed beside the manufacturing figures — 73,303 and 44,711 for 1940, 88,183 and 50,246 for 1950 — reproduce census counts this corpus already holds, and were checked before any figure here was written down. The 1967 volume's Lima area row equals the sum of Allen, Putnam and Van Wert in eleven of twelve columns exactly. [verified] The 1958 figure is printed three times and not identically: 13,526 in the 1958 volume, 13,534 in the 1963 volume's retrospective column, and 13,543 in that volume's row for the same area under its other name. This node takes the 1958 volume's own. The spread is seventeen people. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::manufacturing-employees-outside-the-city-of-Lima,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "manufacturing employees outside the city of Lima, Allen County",
+      "unit": "employees",
+      "tier": "inference",
+      "points": [
+        {
+          "node": "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+          "label": "Allen County manufacturing outside Lima, 1929–1967",
+          "as_of": "1967",
+          "value": 9700.0,
+          "published": "9700",
+          "tier": "inference",
+          "source": null,
+          "method": "Seven subtractions of a city row from a county row of the same table on the same page of the same volume, which is what makes them safe: the two rows share a census, a definition and a printing. 1929 is wage earners from the 1929 state chapter, 1939 wage earners from the 1939 one, and 1947 to 1967 all employees from the area statistics volumes. The 1967 pair is printed in thousands to one decimal, so its difference is good to about a hundred people either way. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::manufacturing-employment,-Allen-County,-all-jobs",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -2348,6 +2388,26 @@
           "tier": "verified",
           "source": "catalog/census-gazetteer-2020.md",
           "method": "Computed by the Census Bureau from the 2020 TIGER geography, reflecting the corporate boundary as of that geography. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::manufacturing-employees,-city-of-Lima",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "manufacturing employees, city of Lima",
+      "unit": "employees",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/lima-manufactures-1939-1967.yml",
+          "label": "Lima manufactures, 1939–1967",
+          "as_of": "1967",
+          "value": 6700.0,
+          "published": "6700",
+          "tier": "verified",
+          "source": "catalog/census-of-manufactures-area-statistics-1939-1967.md",
+          "method": "Census of Manufactures, read from page images of five archive.org scans. The city rows are for establishments inside the corporate limits; Lima's limits grew across this run and did not shrink, so a fall in a city row is not a boundary artifact. The 1954 and 1958 figures both appear in the 1958 volume, on one basis and one page, which is what makes the fall between them a comparison rather than a difference of volumes. The 1967 volume prints employment in thousands to one decimal, so 6,700 and 5,000 are 6.7 and 5.0 as printed. [verified] The 1958 volume prints 6,018 and the 1963 volume revises it to 6,035; this node takes the former, as it does for the county. [verified]"
         }
       ]
     },
@@ -8278,6 +8338,98 @@
           "label": "Summer",
           "value": 1.01,
           "literal": "1.01"
+        }
+      ]
+    },
+    {
+      "id": "the-factories-left-lima-and-not-the-county",
+      "statement": "Allen County's factories did not leave the county. They left Lima. The city held 77.4 per cent of the county's factory workforce in 1939 and 75.4 per cent as late as 1954; by 1963 it held 35.9, having lost 5,727 people while the ground outside its line gained 5,933. The industrial peak nobody could see across those forty years is not in them.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+          "node_label": "Allen County manufacturing outside Lima, 1929–1967",
+          "span": "**In figures: Lima held 69.0 per cent of the county's factory workforce in 1929, 77.4 in 1939, 77.2 in 1947, 75.4 in 1954, 44.5 in 1958, 35.9 in 1963 and 40.9 in 1967.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+          "node_label": "Allen County manufacturing outside Lima, 1929–1967",
+          "span": "**Between 1954 and 1958 the county's factory employment fell by 1,165 and Lima's fell by 5,055.** Outside the city line it rose from 3,618 to 7,508 — it more than doubled in four years.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-of-manufactures-area-statistics-1939-1967.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+          "node_label": "Allen County manufacturing outside Lima, 1929–1967",
+          "span": "**Across the nine years to 1963 the two move almost exactly against each other.** Lima lost 5,727 and the ground outside it gained 5,933, while the county as a whole gained 206.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-manufactures-1939-1967.yml",
+          "node_label": "Allen County manufactures, 1939–1967",
+          "span": "**The forty years this corpus could not see are measured, and the county's industrial peak is not in them.** The highest figure any census inside the gap returns is 16,400 in 1967, and the federal employment series that begins two years later opens at 17,623 and peaks at 18,400 in 1973.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/lima-manufactures-1939-1967.yml",
+          "node_label": "Lima manufactures, 1939–1967",
+          "span": "**The city did not lose factories. It lost large ones.** Lima had 84 manufacturing establishments in 1954 and 88 in 1958 — four more — while its employment fell by 5,055. The average establishment went from 132 people to 68.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+          "node_label": "Allen County manufacturing outside Lima, 1929–1967",
+          "span": "**Lima's share of the county's people peaked one census before its share of the county's work.** The city held 61.0 per cent of the county's population in 1940 and never more; it held 77.4 per cent of the county's factory workforce in 1939 and 75.4 as late as 1954.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say that the plant on Bible Road is where those people went."
+      ],
+      "figures": [
+        {
+          "label": "1929",
+          "value": 69.0,
+          "literal": "69.0"
+        },
+        {
+          "label": "1939",
+          "value": 77.4,
+          "literal": "77.4"
+        },
+        {
+          "label": "1947",
+          "value": 77.2,
+          "literal": "77.2"
+        },
+        {
+          "label": "1954",
+          "value": 75.4,
+          "literal": "75.4"
+        },
+        {
+          "label": "1958",
+          "value": 44.5,
+          "literal": "44.5"
+        },
+        {
+          "label": "1963",
+          "value": 35.9,
+          "literal": "35.9"
+        },
+        {
+          "label": "1967",
+          "value": 40.9,
+          "literal": "40.9"
         }
       ]
     }

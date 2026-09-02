@@ -1,0 +1,79 @@
+class: measure
+label: Lima manufactures, 1939–1967
+description: |
+  Five more censuses of the city's factories, from the same five volumes that carry the county.
+  [verified] —
+  [Census of Manufactures, Ohio area statistics, 1939–1967](../../catalog/census-of-manufactures-area-statistics-1939-1967.md).
+
+      census   establishments   employees   production workers   value added
+      1929                 72       4,548*                    -   $13,391,977
+      1939                 69       4,770*                    -   $12,295,942
+      1947                  -       11,361                    -   $56,351,000
+      1954                 84       11,073                7,618   $69,511,000
+      1958                 88        6,018                4,402   $43,105,000
+      1963                 84        5,346                3,820   $54,429,000
+      1967                 75        6,700                5,000  $105,800,000
+
+  \* wage earners, average for the year; the four rows below count all employees. [verified] —
+  same source, and [the 1929 volume](../../catalog/census-of-manufactures-1919-1929.md) for the
+  first row.
+
+  **In figures: 4548 in 1929, 4770 in 1939, 11361 in 1947, 11073 in 1954, 6018 in 1958, 5346 in
+  1963 and 6700 in 1967.** [verified] — same volumes.
+
+  **The city came through the Depression with more factory workers than it went in with.** 4,548
+  wage earners in 1929 and 4,770 in 1939, a gain of 222 in the decade Ohio lost 16.0 per cent of
+  its own. [verified] —
+  [the 1939 volume](../../catalog/census-of-manufactures-area-statistics-1939-1967.md), Tables 1
+  and 2, and [the 1929 volume](../../catalog/census-of-manufactures-1919-1929.md), Table 2.
+
+  **Then it more than doubled across the war and halved again in four years.** 4,770 in 1939,
+  11,361 in 1947, 11,073 in 1954, **6,018 in 1958**. The fall between 1954 and 1958 is 5,055 people
+  and 45.7 per cent. [verified] —
+  [the volumes](../../catalog/census-of-manufactures-area-statistics-1939-1967.md), the 1954 and
+  1958 figures both printed in the 1958 volume and on one basis. [inference] — the difference
+  computed here.
+
+  **The city did not lose factories. It lost large ones.** Lima had 84 manufacturing
+  establishments in 1954 and 88 in 1958 — four more — while its employment fell by 5,055. The
+  average establishment went from 132 people to 68. [verified] — same two columns of the same two
+  tables. [inference] — the ratio computed here. By 1967 there were 75 establishments and 89 people
+  in the average one.
+
+  **Where the county's money is made stopped being where its factories are.** Lima's value added
+  was $105.8 million in 1967 against the county's $244.6 million, so the city held 43 per cent of
+  it on 41 per cent of the employees — but in 1954 it had held 70 per cent of the value added on 75
+  per cent of the employees. [verified] —
+  [the 1954 and 1967 volumes](../../catalog/census-of-manufactures-area-statistics-1939-1967.md).
+  [inference] — the four shares computed here; see
+  [what stands outside the city line](allen-county-manufacturing-outside-lima-1929-1967.yml).
+
+  [open] Which establishments left the city line and whether any of them moved rather than closed.
+  The census names no establishment and this corpus has no directory of Lima's factories for any
+  year in this run.
+properties:
+  parameter: manufacturing employees, city of Lima
+  value: "6700"
+  unit: employees
+  as_of: "1967"
+  method: |
+    Census of Manufactures, read from page images of five archive.org scans. The city rows are for
+    establishments inside the corporate limits; Lima's limits grew across this run and did not
+    shrink, so a fall in a city row is not a boundary artifact. The 1954 and 1958 figures both
+    appear in the 1958 volume, on one basis and one page, which is what makes the fall between them
+    a comparison rather than a difference of volumes. The 1967 volume prints employment in
+    thousands to one decimal, so 6,700 and 5,000 are 6.7 and 5.0 as printed. [verified]
+
+    The 1958 volume prints 6,018 and the 1963 volume revises it to 6,035; this node takes the
+    former, as it does for the county. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-of-manufactures-area-statistics-1939-1967.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-of-manufactures-area-statistics-1939-1967.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

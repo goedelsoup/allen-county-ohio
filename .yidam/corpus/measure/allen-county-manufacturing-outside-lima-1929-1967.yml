@@ -1,0 +1,85 @@
+class: measure
+label: Allen County manufacturing outside Lima, 1929–1967
+description: |
+  The county's factory workforce with [Lima](../place/lima.yml) taken out of it, at seven censuses.
+  [inference] — subtraction performed here; every input is a census figure this corpus already
+  holds.
+
+      1929     6,588  -   4,548  =   2,040      Lima is 69.0% of the county
+      1939     6,164  -   4,770  =   1,394                77.4%  <- Lima's share peaks
+      1947    14,709  -  11,361  =   3,348                77.2%
+      1954    14,691  -  11,073  =   3,618                75.4%
+      1958    13,526  -   6,018  =   7,508                44.5%
+      1963    14,897  -   5,346  =   9,551                35.9%
+      1967    16,400  -   6,700  =   9,700                40.9%
+
+  **In figures: Lima held 69.0 per cent of the county's factory workforce in 1929, 77.4 in 1939,
+  77.2 in 1947, 75.4 in 1954, 44.5 in 1958, 35.9 in 1963 and 40.9 in 1967.** [inference] — the
+  seven ratios computed here from
+  [the county series](allen-county-manufactures-1939-1967.yml) and
+  [the city series](lima-manufactures-1939-1967.yml).
+
+  **The instrument changes in 1947 and the share does not care.** The first two rows count wage
+  earners and the last five count all employees, so the levels are not one series — but the city
+  and the county change column together in the same table on the same page, so the ratio of one to
+  the other is comparable across the break in a way the levels are not. [inference] — see
+  [two volumes are not one series](../../decisions/two-volumes-are-not-one-series.yml).
+
+  **Between 1954 and 1958 the county's factory employment fell by 1,165 and Lima's fell by 5,055.**
+  Outside the city line it rose from 3,618 to 7,508 — it more than doubled in four years.
+  [verified] —
+  [the two volumes](../../catalog/census-of-manufactures-area-statistics-1939-1967.md) for the four
+  city and county figures. [inference] — the two differences computed here.
+
+  **Across the nine years to 1963 the two move almost exactly against each other.** Lima lost 5,727
+  and the ground outside it gained 5,933, while the county as a whole gained 206. [inference] —
+  computed here from the same seven rows. This is not a county losing its factories. It is a county
+  whose factories left one municipality, in a decade, without leaving the county.
+
+  **The corpus already dated the ground.** All three of the county's large industrial installations
+  stand outside every municipality: [the refinery](../site/lima-refinery.yml) and
+  [the tank plant](../site/lima-army-tank-plant.yml) in
+  [Shawnee Township](../place/shawnee-township.yml), and
+  [the Ford engine plant](../site/ford-lima-engine-plant.yml) in
+  [Bath](../place/bath-township.yml). [verified] —
+  [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon on all three.
+
+  **And it dated the newest of them to the middle of this fall.** Ford took the Bible Road ground
+  by four conveyances between August 1955 and August 1956, and a mechanic's lien filed against it
+  on 30 September 1957 puts construction on the site that autumn. [verified] —
+  [the Recorder's section-ground books](../../catalog/allen-county-recorder-section-ground.md),
+  volume 0028A. The census of 1958 is the first that could count anyone working there, and it is
+  the census in which the ground outside Lima doubles. [inference]
+
+  [open] Whether those two facts are one fact.
+  This corpus cannot say that the plant on Bible Road is where those people went.
+  The census names no establishment, the Recorder's index names no employee, and one opening does
+  not account for 3,890 people appearing outside the city while 5,055 leave it.
+
+  **Lima's share of the county's people peaked one census before its share of the county's work.**
+  The city held 61.0 per cent of the county's population in 1940 and never more; it held 77.4 per
+  cent of the county's factory workforce in 1939 and 75.4 as late as 1954. [verified] —
+  [the county outside Lima](allen-county-outside-lima-1890-2020.yml) and the seven rows above. So
+  the people began leaving the city fifteen years before the work did, and the work left faster.
+  [inference] — the two series read together.
+properties:
+  parameter: manufacturing employees outside the city of Lima, Allen County
+  value: "9700"
+  unit: employees
+  as_of: "1967"
+  method: |
+    Seven subtractions of a city row from a county row of the same table on the same page of the
+    same volume, which is what makes them safe: the two rows share a census, a definition and a
+    printing. 1929 is wage earners from the 1929 state chapter, 1939 wage earners from the 1939
+    one, and 1947 to 1967 all employees from the area statistics volumes. The 1967 pair is printed
+    in thousands to one decimal, so its difference is good to about a hundred people either way.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

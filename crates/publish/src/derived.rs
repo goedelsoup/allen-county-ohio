@@ -3018,6 +3018,58 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Summer", value: 1.01, literal: "1.01" },
         ],
     },
+    Assertion {
+        id: "the-factories-left-lima-and-not-the-county",
+        statement: "Allen County's factories did not leave the county. They left Lima. The city \
+                    held 77.4 per cent of the county's factory workforce in 1939 and 75.4 per cent \
+                    as late as 1954; by 1963 it held 35.9, having lost 5,727 people while the \
+                    ground outside its line gained 5,933. The industrial peak nobody could see \
+                    across those forty years is not in them.",
+        topic: "work",
+        // The share is plotted rather than the levels because the levels are not one series:
+        // 1929 and 1939 count wage earners and the rest count all employees. The city and the
+        // county change column together in the same table, so the ratio survives the break that
+        // the two levels do not — which is the argument the node makes and the reason it is safe
+        // to draw seven points here.
+        supports: &[
+            support!(
+                "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+                "**In figures: Lima held 69.0 per cent of the county's factory workforce in 1929, 77.4 in 1939,\n  77.2 in 1947, 75.4 in 1954, 44.5 in 1958, 35.9 in 1963 and 40.9 in 1967.**"
+            ),
+            support!(
+                "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+                "**Between 1954 and 1958 the county's factory employment fell by 1,165 and Lima's fell by 5,055.**\n  Outside the city line it rose from 3,618 to 7,508 — it more than doubled in four years."
+            ),
+            support!(
+                "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+                "**Across the nine years to 1963 the two move almost exactly against each other.** Lima lost 5,727\n  and the ground outside it gained 5,933, while the county as a whole gained 206."
+            ),
+            support!(
+                "measure/allen-county-manufactures-1939-1967.yml",
+                "**The forty years this corpus could not see are measured, and the county's industrial peak is not\n  in them.** The highest figure any census inside the gap returns is 16,400 in 1967, and the federal\n  employment series that begins two years later opens at 17,623 and peaks at 18,400 in 1973."
+            ),
+            support!(
+                "measure/lima-manufactures-1939-1967.yml",
+                "**The city did not lose factories. It lost large ones.** Lima had 84 manufacturing\n  establishments in 1954 and 88 in 1958 — four more — while its employment fell by 5,055. The\n  average establishment went from 132 people to 68."
+            ),
+            support!(
+                "measure/allen-county-manufacturing-outside-lima-1929-1967.yml",
+                "**Lima's share of the county's people peaked one census before its share of the county's work.**\n  The city held 61.0 per cent of the county's population in 1940 and never more; it held 77.4 per\n  cent of the county's factory workforce in 1939 and 75.4 as late as 1954."
+            ),
+        ],
+        answers: &[
+            "cannot say that the plant on Bible Road is where those people went",
+        ],
+        figures: &[
+            Figure { label: "1929", value: 69.0, literal: "69.0" },
+            Figure { label: "1939", value: 77.4, literal: "77.4" },
+            Figure { label: "1947", value: 77.2, literal: "77.2" },
+            Figure { label: "1954", value: 75.4, literal: "75.4" },
+            Figure { label: "1958", value: 44.5, literal: "44.5" },
+            Figure { label: "1963", value: 35.9, literal: "35.9" },
+            Figure { label: "1967", value: 40.9, literal: "40.9" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
