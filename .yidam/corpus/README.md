@@ -205,6 +205,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-private-schools-2013-2021.yml](measure/allen-county-private-schools-2013-2021.yml) | measure | Allen County's private and community schools, 2013–2021 | 4 | 10v / 5i / 1o | 103 |
 | [allen-county-property-tax-rates-2012-2025.yml](measure/allen-county-property-tax-rates-2012-2025.yml) | measure | Property tax rates in Allen County by taxing district, 2012–2025 | 5 | 11v / 1i / 1o | 144 |
+| [allen-county-proprietors-1969-2022.yml](measure/allen-county-proprietors-1969-2022.yml) | measure | Allen County proprietors and payroll employment, 1969–2022 | 5 | 7v / 6i / 2o | 155 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 10v / 3i / 0o | 91 |
 | [allen-county-railroads-1883-1921.yml](measure/allen-county-railroads-1883-1921.yml) | measure | Allen County's railroads, 1872–1921 | 2 | 13v / 3i / 1o | 114 |
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
