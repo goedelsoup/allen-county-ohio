@@ -1,0 +1,78 @@
+class: measure
+label: Lima snowfall, 1901–2025
+description: |
+  The first snowfall this corpus has ever held. The county's monthly climate record measures
+  precipitation as liquid water and does not separate it; a station with a snow board does.
+  [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.
+
+  **Sixty-nine of the record's hundred and twenty-five winters can be totalled, and the mean of
+  those is 25.0 inches of snow a season.** The median is 23.9. [verified] — same source, seasons
+  running July to June and totalled here. [inference] — the mean and median computed here.
+
+      snowiest        1913–14   58.0 in   (15 days of snow)
+                      1911–12   55.4 in
+                      1909–10   54.9 in
+                      2013–14   51.2 in
+      least snowy     1918–19    2.0 in   (2 days of snow)
+                      2022–23    3.9 in
+                      1931–32    4.0 in
+                      2024–25    4.6 in
+
+  **The least snowy winter in the record checks out against the thermometer beside it.** In
+  November 1918 not one day had a maximum at or below freezing, and the whole of November to March
+  produced sixteen such days; the mean daily maximum was 49.2 °F in November, 45.8 in December and
+  50.8 in March. [verified] — same source, computed here. Two inches of snow in that winter is a
+  reading of a mild winter rather than of a missing column. [inference]
+
+  **The largest snowfall ever measured here is eighteen inches, on 13 January 1964, and three
+  columns of the record agree on it.** That day carried 1.80 inches of precipitation — a ten-to-one
+  ratio, which is what snow is — and the depth on the ground went from one inch on the 12th to
+  eighteen on the 13th and nineteen on the 14th. [verified] — same source. Nineteen inches is the
+  deepest snow the record holds, matched only by 28 to 31 January 1918. [verified] — same source.
+
+  **The next largest are 12.3 inches on 16 February 2021 and twelve inches on four days spread
+  across the century** — 3 November 1966, 26 November 1950, 16 November 1932 and 10 November 1913.
+  [verified] — same source. Three of the five largest falls in this county's record are in
+  November. [inference] — computed here.
+
+  **Snow here is a five-month affair and barely that.** Across the whole record, 88 days of snow
+  fell in November, 279 in December, 380 in January, 329 in February and 163 in March, against 43
+  in April, five in October and none in any other month. [verified] — same source.
+
+  **This record cannot be trended and the reason is the finding.** From the 1978–79 season through
+  2005–06 the station reported snowfall on **two days in twenty-eight winters**, while recording
+  hundreds of days of precipitation falling at or below 34 °F. Those seasons are not snowless, they
+  are unmeasured, and the file writes the absence as zeros rather than as blanks. [verified] — same
+  source. Thirty consecutive winters fall out of this series — every season from 1976–77 to
+  2005–06 — which is not a random hole, so a comparison of the 1910s with the 2010s across it would
+  be a selection and not a series. [inference] — see
+  [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml).
+
+  [open] What fell in the county between 1976 and 2006. No other station in Allen County reports
+  before 2009. The Van Wert station has usable seasons inside the hole, and its 1961–1990 mean of
+  42.3 inches against Lima's 26.6 is why they are not borrowed: two stations that disagree by
+  sixteen inches on the era they share cannot stand in for one another on the era only one of them
+  covers.
+properties:
+  parameter: seasonal snowfall, Lima station
+  value: "25.0"
+  unit: inches, mean of 69 usable seasons
+  as_of: "2025"
+  method: |
+    Snowfall is held in whole millimetres and converted here. A season runs from July to June and
+    is totalled only if each of November, December, January, February and March carries at least
+    25 daily observations, and only if it is not one of the seasons that reports no snow at all
+    while reporting five or more days of precipitation at or below 34 °F. Sixty-nine seasons pass
+    both, five fail the second and fifty-one fail the first. October and April are included when
+    reported and contribute 0.54 inches a season across the seasons that pass. [verified]
+
+    One value was discarded on the file's own bounds flag: 6 March 1930 reads 4,079 millimetres,
+    or a hundred and sixty inches in a day, which would have made 1929–30 the snowiest season in
+    the county's history by a factor of three. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -3070,6 +3070,63 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1967", value: 40.9, literal: "40.9" },
         ],
     },
+    Assertion {
+        id: "the-frost-free-season-is-three-weeks-longer",
+        statement: "Allen County's frost-free season averaged 160.5 days across 1902\u{2013}1931 and \
+                    averages 181.0 across 1996\u{2013}2025 \u{2014} the last freezing night of spring nine \
+                    days earlier, the first of autumn twelve days later. It is not a trend but a \
+                    step, and it is in the 1990s. At the other end of the year nothing has moved: \
+                    the hottest day ever measured here is still 109 \u{b0}F, in 1936.",
+        topic: "land",
+        // The decade series is plotted rather than the two thirty-year windows, because the shape
+        // is the argument: a flat century and then a step. Two windows would draw a slope.
+        supports: &[
+            support!(
+                "measure/allen-county-frost-free-season-1902-2025.yml",
+                "**Allen County's frost-free season is twenty and a half days longer than it was a century ago.**\n  The last freezing night of spring has moved nine days earlier and the first of autumn twelve days\n  later."
+            ),
+            support!(
+                "measure/allen-county-frost-free-season-1902-2025.yml",
+                "**In figures: the frost-free season averaged 156.8 days in the 1900s, 162.4 in the 1910s, 159.4\n  in the 1920s, 164.8 in the 1930s, 153.8 in the 1940s, 155.5 in the 1950s, 154.8 in the 1960s,\n  163.1 in the 1970s, 167.6 in the 1980s, 178.4 in the 1990s, 179.1 in the 2000s, 186.0 in the\n  2010s and 182.5 in the 2020s.**"
+            ),
+            support!(
+                "measure/allen-county-frost-free-season-1902-2025.yml",
+                "**It is not a trend. It is a step, and it is in the 1990s.** Every decade from the 1900s to the\n  1980s falls between 153.8 and 167.6 days; every decade from the 1990s falls between 178.4 and\n  186.0. There is no decade in between."
+            ),
+            support!(
+                "measure/allen-county-frost-free-season-1902-2025.yml",
+                "**The station stands in a city and the finding is not the city.** Van Wert 1 S, forty kilometres\n  west in another county and a town a third of Lima's size, gives 181.4 days for 1996\u{2013}2025 against\n  Lima's 181.0 \u{2014} four tenths of a day apart \u{2014} and its decade series steps in the same place, from\n  161.0 in the 1980s to 183.6 in the 1990s."
+            ),
+            support!(
+                "measure/allen-county-temperature-extremes-1901-2026.yml",
+                "**The hottest day ever recorded in Allen County is 109 \u{b0}F, on 14 July 1936.** The coldest is\n  \u{2212}21 \u{b0}F, reached twice \u{2014} on 20 January 1985 and again on 19 January 1994."
+            ),
+            support!(
+                "measure/allen-county-temperature-extremes-1901-2026.yml",
+                "**Four of them are after 1954.** Two on 15 and 16 July 1988, two on 29 June and 7 July 2012, and\n  nothing since."
+            ),
+            support!(
+                "measure/lima-snowfall-1901-2025.yml",
+                "**This record cannot be trended and the reason is the finding.** From the 1978\u{2013}79 season through\n  2005\u{2013}06 the station reported snowfall on **two days in twenty-eight winters**, while recording\n  hundreds of days of precipitation falling at or below 34 \u{b0}F."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1900s", value: 156.8, literal: "156.8" },
+            Figure { label: "1910s", value: 162.4, literal: "162.4" },
+            Figure { label: "1920s", value: 159.4, literal: "159.4" },
+            Figure { label: "1930s", value: 164.8, literal: "164.8" },
+            Figure { label: "1940s", value: 153.8, literal: "153.8" },
+            Figure { label: "1950s", value: 155.5, literal: "155.5" },
+            Figure { label: "1960s", value: 154.8, literal: "154.8" },
+            Figure { label: "1970s", value: 163.1, literal: "163.1" },
+            Figure { label: "1980s", value: 167.6, literal: "167.6" },
+            Figure { label: "1990s", value: 178.4, literal: "178.4" },
+            Figure { label: "2000s", value: 179.1, literal: "179.1" },
+            Figure { label: "2010s", value: 186.0, literal: "186.0" },
+            Figure { label: "2020s", value: 182.5, literal: "182.5" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

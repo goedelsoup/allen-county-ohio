@@ -1,0 +1,84 @@
+class: measure
+label: Allen County temperature extremes, 1901–2026
+description: |
+  The hottest and coldest days ever measured in Allen County, from 45,022 daily maxima and 45,032
+  daily minima kept at one station since 1 April 1901. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.
+
+  **The hottest day ever recorded in Allen County is 109 °F, on 14 July 1936.** The coldest is
+  −21 °F, reached twice — on 20 January 1985 and again on 19 January 1994. [verified] — same
+  source. The twelve hottest days in a hundred and twenty-five years fall in three summers: 1930,
+  1934 and 1936. [verified] — same source.
+
+  **Forty-five days in a hundred and twenty-five years reached 100 °F, and twenty-nine of them are
+  in the 1930s.** Thirteen in 1936 alone and nine in 1934. [verified] — same source, the days
+  counted here.
+
+  **Four of them are after 1954.** Two on 15 and 16 July 1988, two on 29 June and 7 July 2012, and
+  nothing since. [verified] — same source. Seventy-one years have produced four hundred-degree days
+  where the fifty-four before them produced forty-one. [inference] — computed here.
+
+  **The heat has not come back and the cold has gone.** [inference] — the two columns below,
+  counted here. Days at or above 90 °F and nights at or below 0 °F, per year, by decade, over the
+  hundred and thirteen years complete enough to count:
+
+      decade    90 °F days   0 °F nights        decade    90 °F days   0 °F nights
+      1900s        8.0          7.2             1960s       10.2          7.9
+      1910s       16.2          7.9             1970s        7.1          8.2
+      1920s        8.2          4.8             1980s       17.2          6.0
+      1930s       25.8          5.2             1990s        9.0          3.7
+      1940s       16.7          4.8             2000s        5.1          5.2
+      1950s       18.2          3.3             2010s        9.6          6.2
+                                                2020s       11.5          2.0
+
+  **In figures: 8.0 days at or above 90 °F a year in the 1900s, 16.2 in the 1910s, 8.2 in the
+  1920s, 25.8 in the 1930s, 16.7 in the 1940s, 18.2 in the 1950s, 10.2 in the 1960s, 7.1 in the
+  1970s, 17.2 in the 1980s, 9.0 in the 1990s, 5.1 in the 2000s, 9.6 in the 2010s and 11.5 in the
+  2020s.** [verified] — same source.
+
+  **This is the county's monthly record said again by a different instrument.** The divisional data
+  put the county's six hottest summers in 1934, 1936, 1933, 1988, 1952 and 1944 and its warmest
+  years in the 2020s. [verified] —
+  [the county's temperature](allen-county-temperature-1895-2025.yml). One thermometer in Lima,
+  counting days rather than averaging months, puts the same three summers at the top and the same
+  recent decades at the bottom of the cold column. [inference] The two agree on the shape and the
+  shape is the finding: **the hot end of this county's climate has not moved and the cold end
+  has.** [inference]
+
+  **The control is close enough to quote.** The station's mean daily maximum for June to August
+  1934 is 88.9 °F; the county division's, computed from other data in another phase, is 88.8. Its
+  1996–2025 annual mean is 51.64 °F against the division's 51.63. [verified] — computed here
+  against [the county's temperature](allen-county-temperature-1895-2025.yml).
+
+  [open] Whether the 1980s figure of 17.2 hot days a year is real. Six of that decade's ten years
+  lack the daily maxima to be counted, so the figure rests on four, and 1988 — which supplied two
+  of the record's four hundred-degree days since 1954 — is not among them.
+properties:
+  parameter: highest and lowest daily temperature recorded, Allen County
+  value: "109"
+  unit: degrees Fahrenheit, 14 July 1936
+  as_of: "2026"
+  method: |
+    Daily maxima and minima from GHCN-Daily station USC00334551, held in tenths of a degree Celsius
+    and converted here; 42.8 °C is 109.0 °F and −29.4 °C is −20.9 °F, so the record was almost
+    certainly written in whole degrees Fahrenheit and has made one round trip. Values carrying a
+    non-blank quality flag are discarded — 276 maxima and 323 minima, chiefly on internal
+    consistency. The extremes above are taken from every surviving observation; the threshold
+    counts per year use only the years carrying at least 350 daily maxima, which is 113 of the 124
+    complete calendar years from 1902 to 2025. The eleven excluded are 1921 and ten scattered
+    between 1980 and 2019, six of them in the 1980s, which is why that decade's row rests on 1983,
+    1984, 1986 and 1989. [verified]
+
+    A single station is a single yard, and the county has no second long daily record inside it.
+    Every threshold here is therefore a statement about the Lima station, and the claims about the
+    county rest on the divisional record agreeing with it. [inference]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

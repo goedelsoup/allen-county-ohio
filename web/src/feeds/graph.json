@@ -1129,8 +1129,20 @@
           "tier": "verified"
         },
         {
-          "text": "**The weather that produced it is now on the record, and it is not extraordinary.** January 1959 gave Allen County 4.43 inches of precipitation against a January mean of 2.38 — the twelfth wettest January of a hundred and thirty-one, not the first, and 1959 as a whole ranks twenty-seventh of the county's wet years at 40.48 inches. [verified] — [the county's precipitation](../measure/allen-county-precipitation-1895-2025.yml). A month of ordinary rank produced the largest flow ever measured here, which is a reason to look for snow or frozen ground rather than for rain, and neither is in any source this corpus holds. [inference]",
+          "text": "**The weather that produced it is now on the record, and the month is not extraordinary.** January 1959 gave Allen County 4.43 inches of precipitation against a January mean of 2.38 — the twelfth wettest January of a hundred and thirty-one, not the first, and 1959 as a whole ranks twenty-seventh of the county's wet years at 40.48 inches. [verified] — [the county's precipitation](../measure/allen-county-precipitation-1895-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two days are.** The Lima station recorded 1.84 inches of precipitation on 21 January 1959 and 1.20 on the 22nd — **3.04 inches in forty-eight hours, sixty-two per cent of everything that fell in the month**, and the 21st reached 56 °F. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. The gauge peaked on the second of those days. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**It fell on frozen ground.** The maximum temperature was 15 °F on 17 January and 15 °F again on the 18th, with a minimum of −2 °F, and had not been above 32 °F on eight of the preceding fourteen days. [verified] — same source. Two inches of warm rain in a day, onto ground that had been below freezing for a week, is the ordinary mechanism of a January flood. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A reading this node published is corrected.** It said a month of ordinary rank pointed at snow or frozen ground rather than rain. The ground was frozen and the rain was extraordinary: the monthly total was concealing a two-day event, which is what a monthly total does. Snowfall was not reported at this station that January and remains unmeasured. [verified] — same source; see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -4213,6 +4225,55 @@
       "withheld": 4
     },
     {
+      "id": "measure/allen-county-frost-free-season-1902-2025.yml",
+      "class": "measure",
+      "label": "Allen County frost-free season, 1902–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Computed from daily minimum temperatures at GHCN-Daily station USC00334551, converted from tenths of a degree Celsius. A year is counted only if it carries at least 340 daily minima and has at least one freezing night in each half of the year; 117 of the 125 years qualify. Values carrying a non-blank quality flag are discarded before the count — 323 minima in the record, almost all failing an internal consistency check. The season is the number of days strictly between the two freezes, so a last freeze on 25 April and a first on 24 October is 181 days. [verified] A single station measures a single yard. The claim this node makes about the county rests on the Van Wert station agreeing with it, and on the county's own divisional record moving the same way over the same century; it does not rest on the Lima thermometer alone. [inference]",
+        "parameter": "frost-free days between the last spring and first autumn minimum at or below 32 °F",
+        "unit": "days, mean of 1996–2025",
+        "value": "181.0"
+      },
+      "blocks": [
+        {
+          "text": "The number of days a year between the last freezing night of spring and the first of autumn, at the Lima station, for a hundred and seventeen years in which the count could be made. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551, minimum temperature at or below 32 °F.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County's frost-free season is twenty and a half days longer than it was a century ago.** The last freezing night of spring has moved nine days earlier and the first of autumn twelve days later. [verified] — same source, thirty years at each end and a hundred and seventeen counted altogether. [inference] — the two differences computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures: the frost-free season averaged 156.8 days in the 1900s, 162.4 in the 1910s, 159.4 in the 1920s, 164.8 in the 1930s, 153.8 in the 1940s, 155.5 in the 1950s, 154.8 in the 1960s, 163.1 in the 1970s, 167.6 in the 1980s, 178.4 in the 1990s, 179.1 in the 2000s, 186.0 in the 2010s and 182.5 in the 2020s.** [verified] — same source, the decade means computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is not a trend. It is a step, and it is in the 1990s.** Every decade from the 1900s to the 1980s falls between 153.8 and 167.6 days; every decade from the 1990s falls between 178.4 and 186.0. There is no decade in between. [inference] — the thirteen means above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The station stands in a city and the finding is not the city.** Van Wert 1 S, forty kilometres west in another county and a town a third of Lima's size, gives 181.4 days for 1996–2025 against Lima's 181.0 — four tenths of a day apart — and its decade series steps in the same place, from 161.0 in the 1980s to 183.6 in the 1990s. [verified] — [the second station](../../catalog/ghcn-daily-lima.md), USC00338609. Two thermometers twenty-five miles apart, one in a city of thirty-five thousand and one outside a town of ten, agree on the modern figure to within half a day and on when it changed. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The longest is 2016 at 210 days and the shortest is 1959 at 124.** 2016 ran from 15 April to 12 November; 1959 from 16 May to 18 September. [verified] — same source. The four longest seasons in the record are 2016, 2011, 2025 and 2000. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the same warming the county's monthly record already measured, arriving where it matters.** The division's minimum temperatures rose 2.36 °F between 1895–1924 and 1996–2025 and its winters rose 3.32 while its summers rose 1.01. [verified] — [the county's temperature](allen-county-temperature-1895-2025.yml). A season bounded at both ends by a night below freezing is the thing a warming of nights and shoulder seasons lengthens, and a mean daily maximum for June to August that has not moved is the thing it does not. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Which makes it the climate finding this county's ground actually feels.** Allen County had 178,921 acres in farms in 2022, 69.4 per cent of its land. [verified] — [the modern farm series](allen-county-farms-2002-2022.yml). Three more weeks between frosts, on 16.4 per cent more April-to-September rainfall than a century ago, is a different growing season from the one the corn and soybean rotation here was built in. [inference] — computed against [the county's precipitation](allen-county-precipitation-1895-2025.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-funds-2025.yml",
       "class": "measure",
       "label": "What passes through Allen County's books, 2025",
@@ -6598,6 +6659,10 @@
         {
           "text": "**The gauge's silences are not this record's.** Nothing gauged the Ottawa River between water years 1982 and 1988 or between 2000 and 2009, and this record covers both stretches without a missing month. It cannot say what was in the river; it can say what fell on the ground. [inference] — see [the peak flows](ottawa-river-peak-flows-1924-2025.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**Snow is now separated, by a different instrument.** A station in Lima has measured snowfall since 1901 and gives 25.0 inches in the mean usable season, 58.0 in the snowiest and 2.0 in the least. [verified] — [the snowfall record](lima-snowfall-1901-2025.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -7312,10 +7377,67 @@
         {
           "text": "**The 1960s are as cold as the 1900s and the 1930s are as warm as the 2000s.** The trend is not a line and the corpus is not drawing one: the two warmest decades before 1990 are the 1930s and the 1940s, and the coldest decade of the whole record is the 1960s. [verified] — same source. [inference] — the reading.",
           "tier": "inference"
+        },
+        {
+          "text": "**A daily record inside the county now says the same thing by counting instead of averaging.** The Lima station's mean daily maximum for June to August 1934 is 88.9 °F against the 88.8 this node computes from the division, and its 1996–2025 annual mean is 51.64 against 51.63. Counting days rather than averaging months, it finds forty-five days at or above 100 °F in a hundred and twenty-five years, twenty-nine of them in the 1930s and four since 1954, while nights at or below 0 °F have fallen from 8.2 a year in the 1970s to 2.0 in the 2020s. [verified] — [the daily extremes](allen-county-temperature-extremes-1901-2026.yml). Two instruments sharing no data agree that this county's hot end has not moved and its cold end has. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And the warming has a date on the ground.** The frost-free season here was 160.5 days across 1902–1931 and is 181.0 across 1996–2025 — the last spring freeze nine days earlier, the first of autumn twelve days later. [verified] — [the frost-free season](allen-county-frost-free-season-1902-2025.yml). That is what a winter and shoulder-season warming of two to three degrees does to a farm county, and it is not visible in any annual mean. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
       "withheld": 4
+    },
+    {
+      "id": "measure/allen-county-temperature-extremes-1901-2026.yml",
+      "class": "measure",
+      "label": "Allen County temperature extremes, 1901–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Daily maxima and minima from GHCN-Daily station USC00334551, held in tenths of a degree Celsius and converted here; 42.8 °C is 109.0 °F and −29.4 °C is −20.9 °F, so the record was almost certainly written in whole degrees Fahrenheit and has made one round trip. Values carrying a non-blank quality flag are discarded — 276 maxima and 323 minima, chiefly on internal consistency. The extremes above are taken from every surviving observation; the threshold counts per year use only the years carrying at least 350 daily maxima, which is 113 of the 124 complete calendar years from 1902 to 2025. The eleven excluded are 1921 and ten scattered between 1980 and 2019, six of them in the 1980s, which is why that decade's row rests on 1983, 1984, 1986 and 1989. [verified] A single station is a single yard, and the county has no second long daily record inside it. Every threshold here is therefore a statement about the Lima station, and the claims about the county rest on the divisional record agreeing with it. [inference]",
+        "parameter": "highest and lowest daily temperature recorded, Allen County",
+        "unit": "degrees Fahrenheit, 14 July 1936",
+        "value": "109"
+      },
+      "blocks": [
+        {
+          "text": "The hottest and coldest days ever measured in Allen County, from 45,022 daily maxima and 45,032 daily minima kept at one station since 1 April 1901. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The hottest day ever recorded in Allen County is 109 °F, on 14 July 1936.** The coldest is −21 °F, reached twice — on 20 January 1985 and again on 19 January 1994. [verified] — same source. The twelve hottest days in a hundred and twenty-five years fall in three summers: 1930, 1934 and 1936. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Forty-five days in a hundred and twenty-five years reached 100 °F, and twenty-nine of them are in the 1930s.** Thirteen in 1936 alone and nine in 1934. [verified] — same source, the days counted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four of them are after 1954.** Two on 15 and 16 July 1988, two on 29 June and 7 July 2012, and nothing since. [verified] — same source. Seventy-one years have produced four hundred-degree days where the fifty-four before them produced forty-one. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The heat has not come back and the cold has gone.** [inference] — the two columns below, counted here. Days at or above 90 °F and nights at or below 0 °F, per year, by decade, over the hundred and thirteen years complete enough to count:",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures: 8.0 days at or above 90 °F a year in the 1900s, 16.2 in the 1910s, 8.2 in the 1920s, 25.8 in the 1930s, 16.7 in the 1940s, 18.2 in the 1950s, 10.2 in the 1960s, 7.1 in the 1970s, 17.2 in the 1980s, 9.0 in the 1990s, 5.1 in the 2000s, 9.6 in the 2010s and 11.5 in the 2020s.** [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the county's monthly record said again by a different instrument.** The divisional data put the county's six hottest summers in 1934, 1936, 1933, 1988, 1952 and 1944 and its warmest years in the 2020s. [verified] — [the county's temperature](allen-county-temperature-1895-2025.yml). One thermometer in Lima, counting days rather than averaging months, puts the same three summers at the top and the same recent decades at the bottom of the cold column. [inference] The two agree on the shape and the shape is the finding: **the hot end of this county's climate has not moved and the cold end has.** [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The control is close enough to quote.** The station's mean daily maximum for June to August 1934 is 88.9 °F; the county division's, computed from other data in another phase, is 88.8. Its 1996–2025 annual mean is 51.64 °F against the division's 51.63. [verified] — computed here against [the county's temperature](allen-county-temperature-1895-2025.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-tornadoes-1950-2026.yml",
@@ -8779,6 +8901,51 @@
       ],
       "refusals": [],
       "withheld": 1
+    },
+    {
+      "id": "measure/lima-snowfall-1901-2025.yml",
+      "class": "measure",
+      "label": "Lima snowfall, 1901–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Snowfall is held in whole millimetres and converted here. A season runs from July to June and is totalled only if each of November, December, January, February and March carries at least 25 daily observations, and only if it is not one of the seasons that reports no snow at all while reporting five or more days of precipitation at or below 34 °F. Sixty-nine seasons pass both, five fail the second and fifty-one fail the first. October and April are included when reported and contribute 0.54 inches a season across the seasons that pass. [verified] One value was discarded on the file's own bounds flag: 6 March 1930 reads 4,079 millimetres, or a hundred and sixty inches in a day, which would have made 1929–30 the snowiest season in the county's history by a factor of three. [verified]",
+        "parameter": "seasonal snowfall, Lima station",
+        "unit": "inches, mean of 69 usable seasons",
+        "value": "25.0"
+      },
+      "blocks": [
+        {
+          "text": "The first snowfall this corpus has ever held. The county's monthly climate record measures precipitation as liquid water and does not separate it; a station with a snow board does. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Sixty-nine of the record's hundred and twenty-five winters can be totalled, and the mean of those is 25.0 inches of snow a season.** The median is 23.9. [verified] — same source, seasons running July to June and totalled here. [inference] — the mean and median computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The least snowy winter in the record checks out against the thermometer beside it.** In November 1918 not one day had a maximum at or below freezing, and the whole of November to March produced sixteen such days; the mean daily maximum was 49.2 °F in November, 45.8 in December and 50.8 in March. [verified] — same source, computed here. Two inches of snow in that winter is a reading of a mild winter rather than of a missing column. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The largest snowfall ever measured here is eighteen inches, on 13 January 1964, and three columns of the record agree on it.** That day carried 1.80 inches of precipitation — a ten-to-one ratio, which is what snow is — and the depth on the ground went from one inch on the 12th to eighteen on the 13th and nineteen on the 14th. [verified] — same source. Nineteen inches is the deepest snow the record holds, matched only by 28 to 31 January 1918. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The next largest are 12.3 inches on 16 February 2021 and twelve inches on four days spread across the century** — 3 November 1966, 26 November 1950, 16 November 1932 and 10 November 1913. [verified] — same source. Three of the five largest falls in this county's record are in November. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Snow here is a five-month affair and barely that.** Across the whole record, 88 days of snow fell in November, 279 in December, 380 in January, 329 in February and 163 in March, against 43 in April, five in October and none in any other month. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This record cannot be trended and the reason is the finding.** From the 1978–79 season through 2005–06 the station reported snowfall on **two days in twenty-eight winters**, while recording hundreds of days of precipitation falling at or below 34 °F. Those seasons are not snowless, they are unmeasured, and the file writes the absence as zeros rather than as blanks. [verified] — same source. Thirty consecutive winters fall out of this series — every season from 1976–77 to 2005–06 — which is not a random hole, so a comparison of the 1910s with the 2010s across it would be a selection and not a series. [inference] — see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/lima-street-railway-1878-1921.yml",
@@ -20079,6 +20246,20 @@
       "source": "catalog/census-population-volumes-1930-1960-ohio.md"
     },
     {
+      "from": "measure/allen-county-frost-free-season-1902-2025.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ghcn-daily-lima.md"
+    },
+    {
+      "from": "measure/allen-county-frost-free-season-1902-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-funds-2025.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -20891,6 +21072,20 @@
       "source": "catalog/noaa-nclimdiv-county.md"
     },
     {
+      "from": "measure/allen-county-temperature-extremes-1901-2026.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ghcn-daily-lima.md"
+    },
+    {
+      "from": "measure/allen-county-temperature-extremes-1901-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-tornadoes-1950-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -21239,6 +21434,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/eia-refinery-capacity.md"
+    },
+    {
+      "from": "measure/lima-snowfall-1901-2025.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ghcn-daily-lima.md"
     },
     {
       "from": "measure/lima-street-railway-1878-1921.yml",

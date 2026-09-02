@@ -1,0 +1,82 @@
+class: measure
+label: Allen County frost-free season, 1902–2025
+description: |
+  The number of days a year between the last freezing night of spring and the first of autumn, at
+  the Lima station, for a hundred and seventeen years in which the count could be made. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551, minimum temperature at or
+  below 32 °F.
+
+                    last spring freeze   first fall freeze   frost-free days
+      1902–1931          4 May               13 October            160.5
+      1996–2025         25 April             24 October            181.0
+
+  **Allen County's frost-free season is twenty and a half days longer than it was a century ago.**
+  The last freezing night of spring has moved nine days earlier and the first of autumn twelve days
+  later. [verified] — same source, thirty years at each end and a hundred and seventeen counted
+  altogether. [inference] — the two differences computed here.
+
+  **In figures: the frost-free season averaged 156.8 days in the 1900s, 162.4 in the 1910s, 159.4
+  in the 1920s, 164.8 in the 1930s, 153.8 in the 1940s, 155.5 in the 1950s, 154.8 in the 1960s,
+  163.1 in the 1970s, 167.6 in the 1980s, 178.4 in the 1990s, 179.1 in the 2000s, 186.0 in the
+  2010s and 182.5 in the 2020s.** [verified] — same source, the decade means computed here.
+
+  **It is not a trend. It is a step, and it is in the 1990s.** Every decade from the 1900s to the
+  1980s falls between 153.8 and 167.6 days; every decade from the 1990s falls between 178.4 and
+  186.0. There is no decade in between. [inference] — the thirteen means above.
+
+  **The station stands in a city and the finding is not the city.** Van Wert 1 S, forty kilometres
+  west in another county and a town a third of Lima's size, gives 181.4 days for 1996–2025 against
+  Lima's 181.0 — four tenths of a day apart — and its decade series steps in the same place, from
+  161.0 in the 1980s to 183.6 in the 1990s. [verified] —
+  [the second station](../../catalog/ghcn-daily-lima.md), USC00338609. Two thermometers twenty-five
+  miles apart, one in a city of thirty-five thousand and one outside a town of ten, agree on the
+  modern figure to within half a day and on when it changed. [inference]
+
+  **The longest is 2016 at 210 days and the shortest is 1959 at 124.** 2016 ran from 15 April to 12
+  November; 1959 from 16 May to 18 September. [verified] — same source. The four longest seasons in
+  the record are 2016, 2011, 2025 and 2000. [verified] — same source.
+
+  **This is the same warming the county's monthly record already measured, arriving where it
+  matters.** The division's minimum temperatures rose 2.36 °F between 1895–1924 and 1996–2025 and
+  its winters rose 3.32 while its summers rose 1.01. [verified] —
+  [the county's temperature](allen-county-temperature-1895-2025.yml). A season bounded at both ends
+  by a night below freezing is the thing a warming of nights and shoulder seasons lengthens, and a
+  mean daily maximum for June to August that has not moved is the thing it does not. [inference]
+
+  **Which makes it the climate finding this county's ground actually feels.** Allen County had
+  178,921 acres in farms in 2022, 69.4 per cent of its land. [verified] —
+  [the modern farm series](allen-county-farms-2002-2022.yml). Three more weeks between frosts, on
+  16.4 per cent more April-to-September rainfall than a century ago, is a different growing season
+  from the one the corn and soybean rotation here was built in. [inference] — computed against
+  [the county's precipitation](allen-county-precipitation-1895-2025.yml).
+
+  [open] What the county's farmers did with it. Whether planting dates, varieties or the rotation
+  moved with the frost dates is not in any source this corpus holds; the agricultural census counts
+  acres and animals and not calendars.
+properties:
+  parameter: frost-free days between the last spring and first autumn minimum at or below 32 °F
+  value: "181.0"
+  unit: days, mean of 1996–2025
+  as_of: "2025"
+  method: |
+    Computed from daily minimum temperatures at GHCN-Daily station USC00334551, converted from
+    tenths of a degree Celsius. A year is counted only if it carries at least 340 daily minima and
+    has at least one freezing night in each half of the year; 117 of the 125 years qualify. Values
+    carrying a non-blank quality flag are discarded before the count — 323 minima in the record,
+    almost all failing an internal consistency check. The season is the number of days strictly
+    between the two freezes, so a last freeze on 25 April and a first on 24 October is 181 days.
+    [verified]
+
+    A single station measures a single yard. The claim this node makes about the county rests on
+    the Van Wert station agreeing with it, and on the county's own divisional record moving the
+    same way over the same century; it does not rest on the Lima thermometer alone. [inference]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

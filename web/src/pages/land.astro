@@ -15,6 +15,7 @@ const birthdays = assertion('the-villages-have-birthdays-now')
 const control = assertion('the-county-lost-land-it-never-lost')
 const fourYears = assertion('a-fifth-of-the-farmland-went-in-four-years')
 const winters = assertion('the-winters-warmed-and-the-summers-did-not')
+const frost = assertion('the-frost-free-season-is-three-weeks-longer')
 
 const fourYearsSpec = bar(
   fourYears.figures.map((f) => f.label),
@@ -29,6 +30,30 @@ const wintersSpec = bar(
   winters.figures.map((f) => f.value),
   { yTitle: 'Degrees Fahrenheit gained, 1895\u20131924 to 1996\u20132025', labelValues: true },
 )
+
+const frostSpec = bar(
+  frost.figures.map((f) => f.label),
+  frost.figures.map((f) => f.value),
+  { yTitle: 'Frost-free days', zeroBased: false },
+)
+
+// Lima against Van Wert, decade by decade. Van Wert is in another county and is here only to
+// answer whether Lima's thermometer is measuring the climate or the city it stands in.
+const frostDecades = [
+  ['1900s', '156.8', '\u2014'],
+  ['1910s', '162.4', '\u2014'],
+  ['1920s', '159.4', '137.6'],
+  ['1930s', '164.8', '156.7'],
+  ['1940s', '153.8', '158.0'],
+  ['1950s', '155.5', '154.8'],
+  ['1960s', '154.8', '155.8'],
+  ['1970s', '163.1', '162.3'],
+  ['1980s', '167.6', '161.0'],
+  ['1990s', '178.4', '183.6'],
+  ['2000s', '179.1', '178.0'],
+  ['2010s', '186.0', '181.5'],
+  ['2020s', '182.5', '180.7'],
+]
 
 // The twelve months, both elements, at the two ends of the record. Typed out because the two
 // columns come from two files and the point of the table is that they disagree in shape.
@@ -682,6 +707,50 @@ const yieldSpec = bar(
       cubic feet a second on 28 February 2011, sits in the fourth wettest February of the record and
       the wettest calendar year of it. The rainfall record cannot say what was in the river; it can
       say what fell on the ground, and it is not silent where the gauge is.
+    </p>
+  </section>
+
+  <section>
+    <h2>Three more weeks between the frosts</h2>
+    <p>
+      Every weather record this site held until now was monthly, divisional or storm-driven. One
+      station in Lima has kept a daily maximum, minimum, rainfall, snowfall and snow depth since 1
+      April 1901 — 45,601 days — and it answers a question a monthly mean cannot: how long the
+      ground here goes without freezing.
+    </p>
+    <AssertionCard assertion={frost} />
+    <ChartFigure
+      id="frost"
+      title="Frost-free days a year, by decade"
+      caption="Days between the last spring minimum at or below 32 °F and the first of autumn, at the Lima station. A year is counted only if it carries 340 daily minima; 117 of 125 do."
+      columns={['Decade', 'Lima', 'Van Wert']}
+      rows={frostDecades}
+    />
+    <script type="application/json" data-chart-spec="frost" set:html={JSON.stringify(frostSpec)} is:inline />
+    <p>
+      The station sits inside a city of thirty-five thousand, which is the one thing that could
+      explain a warming measured entirely from night-time minima. It does not: Van Wert 1 S, in
+      another county and outside a town a third of Lima's size, gives 181.4 days for 1996–2025
+      against Lima's 181.0, and steps in the same decade. Two thermometers twenty-five miles apart
+      agree on the modern figure to within half a day and on when it changed.
+    </p>
+    <p>
+      At the other end of the year the same record says what the monthly one already said, by
+      counting instead of averaging. The hottest day ever measured in Allen County is 109 °F on 14
+      July 1936, and the twelve hottest fall in three summers — 1930, 1934 and 1936. Forty-five days
+      in a hundred and twenty-five years reached 100 °F; twenty-nine of them are in the 1930s, four
+      are after 1954, and none is after 2012. Nights at or below 0 °F have gone from 8.2 a year in
+      the 1970s to 2.0 in the 2020s. The cold end of this county's climate has moved and the hot end
+      has not.
+    </p>
+    <p class="note">
+      The same file finally separates snow from rain — 25.0 inches in the mean season, 58.0 in the
+      snowiest and 2.0 in the least — and then declines to draw a trend through it. From the 1978–79
+      season to 2005–06 the station reported snowfall on two days in twenty-eight winters while
+      recording hundreds of days of precipitation falling at or below 34 °F. Those winters are not
+      snowless; nobody measured, and the record wrote zeros instead of blanks. Thirty consecutive
+      seasons drop out, which leaves the 1910s and the 2010s with a quarter-century missing between
+      them, and a line through that is a selection rather than a series.
     </p>
   </section>
 </Base>
