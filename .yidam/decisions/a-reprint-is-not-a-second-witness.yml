@@ -1,0 +1,59 @@
+id: a-reprint-is-not-a-second-witness
+summary: >-
+  The Ohio Secretary of State printed Allen County's 1896 Republican vote three times in twelve
+  years, and one of the three differs by three votes. An office reprinting its own figure is not a
+  second witness to the election; it is a witness to its own first printing. Where printings
+  disagree the abstract wins, reprints are counted as one witness, and the divergence is published.
+context: |
+  This corpus already has rules for four shapes of disagreement, and none of them covers this one:
+
+    two-scans-of-one-book                one edition, two digitizations
+    a-single-witness-read-once           one book, one scan, nothing to check against
+    three-witnesses-and-three-dates      three compilers, three answers
+    arithmetic-that-closes-is-about-the-compiler   one table tested against itself
+
+  Here the disagreeing parties are the **same party**. The Secretary of State prints Allen County's
+  vote for president in 1896 as **4,959** in his abstract for that election, as **4,959** in the
+  comparative table of the 1904 volume, and as **4,956** in the comparative table of the 1908
+  volume. [verified] —
+  [the 1888–1910 series](../catalog/ohio-election-statistics-1888-1910.md).
+
+  **Nothing inside the 1908 volume could have caught it.** The comparative tables print two columns
+  a year and no totals, no pluralities and no state row, so 4,956 breaks no identity on its own
+  page. The self-checking that
+  [arithmetic-that-closes-is-about-the-compiler](arithmetic-that-closes-is-about-the-compiler.yml)
+  relies on is not available in a table built for comparison rather than for certification, and the
+  error is invisible from within the volume that carries it.
+decision: |
+  **Prefer the abstract over the retrospective, and count printings rather than volumes.**
+
+  - The abstract of the election's own year is the certified return. A comparative table is a copy
+    made for a reader's convenience, and every copy is an occasion to lose a digit.
+  - Three later tables derived from one abstract are **one** witness, not three. Agreement among
+    them is evidence that the office copied itself, and nothing more.
+  - Where an abstract is not held, take the earliest reprint and say which one it is.
+  - Publish the divergence in the node rather than silently choosing. A figure the publisher itself
+    states two ways is a fact about the source, and a reader who finds 4,956 elsewhere should be
+    able to see that this corpus knows.
+  - The check is cheap and now expected: any figure taken from a comparative table is looked for in
+    the abstract of its own year before it is written down.
+rationale: |
+  **The three votes do not matter and the shape does.** 4,956 against 4,959 changes no share in
+  this corpus by a hundredth of a point. What it changes is the standing of the whole class of
+  figures the corpus was about to take: four of the six elections in this phase were read from
+  comparative tables, because for four of them no abstract is held. Had the 1908 volume been the
+  only one read, its 1896 column would have entered the corpus as verified, from the publisher of
+  record, with no way to know.
+
+  **Agreement across printings is worth less than it looks.** The 1904 and 1896 volumes agree on
+  4,959, and that agreement is real but weak: the 1904 comparative table was almost certainly set
+  from the 1896 abstract, so the two are one document read twice. The corpus's older rule that
+  cross-source agreement beats cross-scan agreement holds here in a third form — cross-*printing*
+  agreement is weaker than either, because the second printing had access to the first.
+
+  **What this does not buy.** Every printing above rests on the same eighty-eight county boards'
+  certificates, which nothing here has seen. A figure confirmed in three volumes is a figure the
+  Secretary of State's office copied correctly, and says nothing about what Allen County's board
+  sent him.
+status: accepted
+date: "2026-09-02"
