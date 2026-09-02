@@ -1,0 +1,67 @@
+class: measure
+label: Allen County presidential vote, 1920
+description: |
+  **11,658 for Cox and 13,978 for Harding**, with 429 for Debs and 17 for Macauley — a Republican
+  plurality of 2,320 on 26,082 votes. [verified] —
+  [Ohio Election Statistics, 1920](../../catalog/ohio-election-statistics-1920.md), the Secretary of
+  State's table of votes by counties for candidates for president, first elector.
+
+      candidate                party            votes     share
+      Warren G. Harding        Republican      13,978     53.6%
+      James M. Cox             Democratic      11,658     44.7%
+      Eugene V. Debs           Socialist          429      1.6%
+      R. C. Macauley           Single Tax          17      0.1%
+      -----------------------------------------------------------
+      total                                    26,082
+
+  [verified] — the shares are this corpus's arithmetic on the volume's four printed columns.
+
+  **In figures: Harding 13978, Cox 11658, Debs 429 and Macauley 17, of 26082.** [verified] — same
+  table.
+
+  **This is the first official state election return this corpus holds.** Every other election
+  figure here comes either from a county history or from
+  [a volunteer transcription](../../catalog/openelections-ohio.md) of documents the Ohio Secretary
+  of State's present-day site will not serve to an automated client. This one is the Secretary of
+  State's own printed abstract. [verified] — see
+  [the catalog entry](../../catalog/ohio-election-statistics-1920.md).
+
+  **The county has changed sides since 1884, and this is the first figure that shows it.** Cleveland
+  carried Allen County by 1,070 votes in 1884 and the Democrat had carried it at seven of the eight
+  elections the county's history records; Harding carries it by 2,320. [verified] —
+  [the eight elections to 1884](allen-county-presidential-vote-1856-1884.yml). When the change
+  happened is not established here: thirty-two years and eight elections sit between the two
+  figures and this corpus holds none of them. [open]
+
+  **Both candidates were Ohio newspaper publishers and one of them was the sitting governor**, which
+  the county's own historian noticed the following year: "Aye, Allen County had its part in giving
+  Warren Gamaliel Harding, publisher of an Ohio newspaper, this signal honor. His competitor,
+  Governor James M. Cox, was also a newspaper publisher." [verified] —
+  [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md), whose
+  chapter on the county's newspapers is where it says so.
+
+  **The vote more than tripled between 1884 and 1920 and the county only doubled.** 7,903 votes on a
+  county of 31,314 at the 1880 census; 26,082 on 68,223 in 1920 — a vote 3.3 times larger on a
+  population 2.2 times larger, or one resident in four at the poll and then two in five. [inference] — computed against
+  [the county's own series](allen-county-population-1830-1900.yml) and
+  [the 1920 count](allen-county-population-by-race-1920.yml). November 1920 was the first
+  presidential election held after the Nineteenth Amendment, and this corpus holds no return that
+  separates the new electors from the old. [open]
+properties:
+  parameter: presidential votes cast, Allen County
+  value: "26082"
+  unit: votes
+  as_of: 1920-11-02
+  method: |
+    Read from a 400-dpi render of the Google scan, which has no text layer at all. The row checks
+    itself against the volume's own plurality column: the printed Republican plurality of 2,320 is
+    exactly 13,978 less 11,658, so a misread digit in either of the two leading figures would break
+    the identity. The total of 26,082 is this corpus's addition of the four candidate columns; the
+    volume prints no county-row total. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-election-statistics-1920.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

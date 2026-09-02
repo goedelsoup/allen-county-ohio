@@ -1722,6 +1722,26 @@
       ]
     },
     {
+      "id": "place-allen-county::presidential-votes-by-township-and-ward,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "presidential votes by township and ward, Allen County",
+      "unit": "townships and wards reporting",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-presidential-vote-1884-by-township.yml",
+          "label": "Allen County presidential vote by township and ward, 1884",
+          "as_of": "1884-11-04",
+          "value": 20.0,
+          "published": "20",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Read from a 600-dpi render of the archive.org scan, not from OCR. Both OCR passes available for this book — the djvu text and the PDF text layer — return the Republican figure for Lima's Third Ward as 108, and the page says 103; the typeface's 3 and 8 are near-identical at scanning resolution and the difference is exactly the five votes that reconcile the Republican column to its printed total. That reconciliation is the check on the whole column. The Democratic column has no such check and is one short. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::presidential-votes-cast",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -1748,6 +1768,36 @@
           "tier": "verified",
           "source": "catalog/openelections-ohio.md",
           "method": "Summed by candidate over the county's 88 precincts. The total is 360 fewer than the 48,353 ballots cast — an undervote of 0.7 per cent. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::presidential-votes-cast,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "presidential votes cast, Allen County",
+      "unit": "votes",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-presidential-vote-1856-1884.yml",
+          "label": "Allen County presidential vote, 1856–1884",
+          "as_of": "1884",
+          "value": 7903.0,
+          "published": "7903",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "Read from the archive.org scan of the 1885 volume at 320 to 600 dpi rather than from its OCR, because the typeface confuses 3 with 8 and the OCR inherits the confusion: it renders the Republican vote of Lima's Third Ward as 108 where the page says 103, and Greeley's county vote as 2,403 where the page says 2,463. Each year's presidential figures were checked against the same year's other offices on the same page, which in this county run within a few dozen votes of the head of the ticket. Totals in the table above are this corpus's addition of the candidate columns the book prints, not figures the book prints. [verified]"
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1920.yml",
+          "label": "Allen County presidential vote, 1920",
+          "as_of": "1920-11-02",
+          "value": 26082.0,
+          "published": "26082",
+          "tier": "verified",
+          "source": "catalog/ohio-election-statistics-1920.md",
+          "method": "Read from a 400-dpi render of the Google scan, which has no text layer at all. The row checks itself against the volume's own plurality column: the printed Republican plurality of 2,320 is exactly 13,978 less 11,658, so a misread digit in either of the two leading figures would break the identity. The total of 26,082 is this corpus's addition of the four candidate columns; the volume prints no county-row total. [verified]"
         }
       ]
     },
@@ -8015,6 +8065,106 @@
           "label": "2020",
           "value": 12573.0,
           "literal": "12573"
+        }
+      ]
+    },
+    {
+      "id": "the-county-changed-sides",
+      "statement": "Allen County was Democratic ground for most of the nineteenth century. The Democrat carried it at seven of the eight presidential elections its own 1885 history records, and in 1884 Lima was the Republican end of the county and the townships the Democratic end — the reverse of the arrangement it has today.",
+      "topic": "elections",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-presidential-vote-1856-1884.yml",
+          "node_label": "Allen County presidential vote, 1856–1884",
+          "span": "**The Democrat carried Allen County at seven of these eight elections, and the exception is the one the book says it is estimating.** 1856, 1860, 1868, 1872, 1876, 1880 and 1884 all go the Democratic way; only 1864 does not, and its two figures are the only round numbers in the chapter.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1856-1884.yml",
+          "node_label": "Allen County presidential vote, 1856–1884",
+          "span": "**In figures: the Democratic share was 50.0 per cent in 1856, 50.5 in 1860, 45.7 in 1864, 58.9 in 1868, 54.7 in 1872, 58.5 in 1876, 56.8 in 1880 and 56.2 in 1884.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1884-by-township.yml",
+          "node_label": "Allen County presidential vote by township and ward, 1884",
+          "span": "**Lima went Republican while the county went Democratic.** The city's four wards give 1,156 to 1,118; the county gives 3,372 to 4,442.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1884-by-township.yml",
+          "node_label": "Allen County presidential vote by township and ward, 1884",
+          "span": "**The Republican column adds to its printed total and the Democratic column does not.** The twenty Republican figures sum to 3,372, exactly as printed. The twenty Democratic figures sum to 4,441 against a printed 4,442.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1920.yml",
+          "node_label": "Allen County presidential vote, 1920",
+          "span": "**11,658 for Cox and 13,978 for Harding**, with 429 for Debs and 17 for Macauley — a Republican plurality of 2,320 on 26,082 votes.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-election-statistics-1920.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1920.yml",
+          "node_label": "Allen County presidential vote, 1920",
+          "span": "**This is the first official state election return this corpus holds.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md",
+            "catalog/ohio-election-statistics-1920.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1856",
+          "value": 50.0,
+          "literal": "50.0"
+        },
+        {
+          "label": "1860",
+          "value": 50.5,
+          "literal": "50.5"
+        },
+        {
+          "label": "1864",
+          "value": 45.7,
+          "literal": "45.7"
+        },
+        {
+          "label": "1868",
+          "value": 58.9,
+          "literal": "58.9"
+        },
+        {
+          "label": "1872",
+          "value": 54.7,
+          "literal": "54.7"
+        },
+        {
+          "label": "1876",
+          "value": 58.5,
+          "literal": "58.5"
+        },
+        {
+          "label": "1880",
+          "value": 56.8,
+          "literal": "56.8"
+        },
+        {
+          "label": "1884",
+          "value": 56.2,
+          "literal": "56.2"
         }
       ]
     }

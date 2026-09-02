@@ -1,0 +1,76 @@
+class: measure
+label: Allen County presidential vote, 1856–1884
+description: |
+  Eight presidential elections, from the county's own history, whose seventh chapter is an
+  election-returns appendix nobody has read here before. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), Chapter VII,
+  "Political History", which prints the county's returns office by office and year by year from
+  1831 to 1884.
+
+      year   Democrat                Republican               others                    total
+      1856   Buchanan      1,508     Fremont        1,416     Fillmore (Am.)      94    3,018
+      1860   Douglas       1,882     Lincoln        1,796     Breckinridge 29, Bell 21  3,728
+      1864   McClellan     1,600*    Lincoln        1,900*    —                         3,500*
+      1868   Seymour       2,550     Grant          1,779     —                         4,329
+      1872   Greeley       2,463**   Grant          2,010     O'Connor 31, Black 2      4,506
+      1876   Tilden        3,519     Hayes          2,480     Cooper (G.B.)       18    6,017
+      1880   Hancock       3,890     Garfield       2,906     Weaver 48, Dow 3          6,847
+      1884   Cleveland     4,442     Blaine         3,372     St. John 59, Butler 30    7,903
+
+  \* the book's own word: both 1864 figures are printed "(estimated)". \*\* Greeley ran as the
+  Liberal Republican nominee with Democratic endorsement, and the book files him under "L. R."
+  [verified] — same chapter.
+
+  **The Democrat carried Allen County at seven of these eight elections, and the exception is the
+  one the book says it is estimating.** 1856, 1860, 1868, 1872, 1876, 1880 and 1884 all go the
+  Democratic way; only 1864 does not, and its two figures are the only round numbers in the
+  chapter. [verified] — same chapter. [inference] — the count is this corpus's.
+
+  **In figures: the Democratic share was 50.0 per cent in 1856, 50.5 in 1860, 45.7 in 1864, 58.9 in
+  1868, 54.7 in 1872, 58.5 in 1876, 56.8 in 1880 and 56.2 in 1884.** [inference] — computed from the
+  table above; the 1864 term is a share of two estimates and the 1856 term is a plurality of 1,508
+  in 3,018 rather than a majority.
+
+  **The county that votes 69–29 Republican today spent the nineteenth century as Democratic ground.**
+  Its widest Democratic margin here is 1876, Tilden over Hayes by 1,039 on 6,017 votes; its widest
+  Republican margin is a figure the book will not vouch for. [inference] — computed here, against
+  [the 2020 vote](allen-county-presidential-vote-2020.yml).
+
+  **Two of the eight were near ties, and both came before the war.** Buchanan carried the county by
+  92 votes and Douglas by 86; no election after 1860 in this table is decided by fewer than 300.
+  [inference] — computed from the same table.
+
+  **The soldiers voted the other way from the county.** For 1864 the chapter prints, beside its two
+  estimates, an actual count of the soldiers' vote for presidential electors: 415 for the
+  Republican slate and 234 for the Democratic. [verified] — same chapter. Whether those 649 are
+  inside the 3,500 or beside it is not stated. [open]
+
+  **1852 is in the chapter and has no figures at all.** The heading, the three candidates and their
+  party labels are printed — Scott, Pierce, Hale — and the vote column is blank, on a page where
+  every other office that year carries a number. [verified] — same chapter.
+
+  [open] 1888 through 1916, and 1924 through 2012. The 1885 book ends where it ends and this corpus
+  holds one figure after it, [1920](allen-county-presidential-vote-1920.yml), before
+  [2016](allen-county-presidential-vote-2016.yml). The Ohio Secretary of State's *Ohio Election
+  Statistics* is published biennially and archive.org holds the volumes for 1895, 1901, 1905 and
+  1920; the rest of the run has not been located.
+properties:
+  parameter: presidential votes cast, Allen County
+  value: "7903"
+  unit: votes
+  as_of: "1884"
+  method: |
+    Read from the archive.org scan of the 1885 volume at 320 to 600 dpi rather than from its OCR,
+    because the typeface confuses 3 with 8 and the OCR inherits the confusion: it renders the
+    Republican vote of Lima's Third Ward as 108 where the page says 103, and Greeley's county vote
+    as 2,403 where the page says 2,463. Each year's presidential figures were checked against the
+    same year's other offices on the same page, which in this county run within a few dozen votes
+    of the head of the ticket. Totals in the table above are this corpus's addition of the
+    candidate columns the book prints, not figures the book prints. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -2927,6 +2927,53 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2020", value: 12_573.0, literal: "12573" },
         ],
     },
+    Assertion {
+        id: "the-county-changed-sides",
+        statement: "Allen County was Democratic ground for most of the nineteenth century. The \
+                    Democrat carried it at seven of the eight presidential elections its own 1885 \
+                    history records, and in 1884 Lima was the Republican end of the county and the \
+                    townships the Democratic end \u{2014} the reverse of the arrangement it has today.",
+        topic: "elections",
+        // The share series is plotted rather than the vote counts: the electorate triples across
+        // this range, and the counts would show that instead of the thing the assertion is about.
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-1856-1884.yml",
+                "**The Democrat carried Allen County at seven of these eight elections, and the exception is the\n  one the book says it is estimating.** 1856, 1860, 1868, 1872, 1876, 1880 and 1884 all go the\n  Democratic way; only 1864 does not, and its two figures are the only round numbers in the\n  chapter."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1856-1884.yml",
+                "**In figures: the Democratic share was 50.0 per cent in 1856, 50.5 in 1860, 45.7 in 1864, 58.9 in\n  1868, 54.7 in 1872, 58.5 in 1876, 56.8 in 1880 and 56.2 in 1884.**"
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1884-by-township.yml",
+                "**Lima went Republican while the county went Democratic.** The city's four wards give 1,156 to\n  1,118; the county gives 3,372 to 4,442."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1884-by-township.yml",
+                "**The Republican column adds to its printed total and the Democratic column does not.** The twenty\n  Republican figures sum to 3,372, exactly as printed. The twenty Democratic figures sum to 4,441\n  against a printed 4,442."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1920.yml",
+                "**11,658 for Cox and 13,978 for Harding**, with 429 for Debs and 17 for Macauley \u{2014} a Republican\n  plurality of 2,320 on 26,082 votes."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1920.yml",
+                "**This is the first official state election return this corpus holds.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1856", value: 50.0, literal: "50.0" },
+            Figure { label: "1860", value: 50.5, literal: "50.5" },
+            Figure { label: "1864", value: 45.7, literal: "45.7" },
+            Figure { label: "1868", value: 58.9, literal: "58.9" },
+            Figure { label: "1872", value: 54.7, literal: "54.7" },
+            Figure { label: "1876", value: 58.5, literal: "58.5" },
+            Figure { label: "1880", value: 56.8, literal: "56.8" },
+            Figure { label: "1884", value: 56.2, literal: "56.2" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -34,6 +34,7 @@ used-by:
   - ../corpus/measure/allen-county-interurban-1901-1921.yml
   - ../corpus/measure/allen-county-municipal-incorporations-1842-1904.yml
   - ../corpus/measure/allen-county-outside-lima-1890-2020.yml
+  - ../corpus/measure/allen-county-presidential-vote-1920.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/allen-county-world-war-dead.yml
   - ../corpus/measure/allen-county-world-war-service.yml
