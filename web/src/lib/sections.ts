@@ -12,6 +12,8 @@
 //
 // See `.yidam/decisions/a-page-is-an-argument-not-an-inbox.yml`.
 
+import { assertions, type Assertion } from './feeds'
+
 /** A reading page. The six of these are the site's argument; everything else is apparatus. */
 export interface Section {
   href: string
@@ -98,6 +100,25 @@ export const TOPIC_SECTION: Record<string, SectionKey> = {
   government: 'government',
   elections: 'government',
   history: 'history',
+}
+
+/**
+ * Every assertion the feed files under a topic this section takes.
+ *
+ * This is the mapping doing work rather than sitting in a test. `/sources` renders it, so the
+ * arrangement the site imposes on the corpus's taxonomy is visible on the page whose subject
+ * is what this site rests on — and a topic that maps nowhere shows up as a hole a reader can
+ * see, not only as a red test.
+ */
+export function assertionsForSection(key: SectionKey): Assertion[] {
+  return assertions.filter((a) => TOPIC_SECTION[a.topic] === key)
+}
+
+/** The feed topics this section takes, in the order the feed uses them. */
+export function topicsForSection(key: SectionKey): string[] {
+  return Object.entries(TOPIC_SECTION)
+    .filter(([, section]) => section === key)
+    .map(([topic]) => topic)
 }
 
 /** What the nav calls a section key. */

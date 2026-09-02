@@ -86,11 +86,19 @@ describe('headings are claims, not continuations', () => {
    * page alone — *And what happened to it*, *And the one that grew*, *But not because it is
    * old*.
    *
-   * Advisory: h3s inside a merged movement legitimately continue the h2 above them.
+   * This was written to cover `h2` only, on the argument that an `h3` folded into a movement
+   * legitimately continues the `h2` above it. That turned out to describe one heading of
+   * eighteen, and it was a redundancy rather than a continuation — an `h2` reading *Not age,
+   * and not suburbanization* over an `h3` reading *Nor is it suburbanization*. Both were
+   * rewritten as claims, so the check covers both ranks and there is nothing to exempt.
    */
-  const CONTINUATION = /<h2[^>]*>\s*(And|But|Or|So|Also|Then)\b/i
+  const CONTINUATION = /<h[23][^>]*>\s*(And|But|Or|So|Also|Then|Nor)\b/i
 
   it.each(readingPages)('$file opens no movement with a conjunction', ({ source }) => {
+    expect(CONTINUATION.test(source)).toBe(false)
+  })
+
+  it.each(articles)('$file opens no heading with a conjunction', ({ source }) => {
     expect(CONTINUATION.test(source)).toBe(false)
   })
 })

@@ -3,7 +3,13 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { ARTICLES, unresolvedDeclarations } from '../src/lib/articles'
 import { assertions, nodes } from '../src/lib/feeds'
-import { SECTIONS, SECTION_KEYS, TOPIC_SECTION } from '../src/lib/sections'
+import {
+  SECTIONS,
+  SECTION_KEYS,
+  TOPIC_SECTION,
+  assertionsForSection,
+  topicsForSection,
+} from '../src/lib/sections'
 
 const PAGES = join(import.meta.dirname, '../src/pages')
 
@@ -139,6 +145,36 @@ describe('the feed taxonomy maps onto the site arrangement', () => {
     const hrefs = new Set(SECTIONS.map((s) => s.href.slice(1)))
     for (const [topic, section] of Object.entries(TOPIC_SECTION)) {
       expect(hrefs.has(section), `${topic} → ${section}`).toBe(true)
+    }
+  })
+})
+
+describe('the mapping is rendered, not only declared', () => {
+  /**
+   * `assertionsFor(topic)` sat in `lib/feeds.ts` from the day the feed contract was written and
+   * was called by nothing, which is how ten of the seventeen assertions on the old `/land` came
+   * to carry the topic `geography` with nobody noticing. `TOPIC_SECTION` replaced it and spent
+   * one commit in exactly the same condition: declared, gated by this file, read by no page.
+   *
+   * So the mapping is rendered on `/sources`, whose subject is what this site rests on, and
+   * this is the tripwire on that — a mapping only a test reads is a mapping nobody checks
+   * against the world.
+   */
+  it('is read by a page and not only by this file', () => {
+    const consumers = pages.filter(
+      ({ file, source }) => file !== 'read/index.astro' && /assertionsForSection/.test(source),
+    )
+    expect(consumers.map((c) => c.file)).toContain('sources.astro')
+  })
+
+  it('places every assertion the feed publishes', () => {
+    const placed = SECTION_KEYS.reduce((n, key) => n + assertionsForSection(key).length, 0)
+    expect(placed).toBe(assertions.length)
+  })
+
+  it('gives every section at least one topic', () => {
+    for (const key of SECTION_KEYS) {
+      expect(topicsForSection(key).length, key).toBeGreaterThan(0)
     }
   })
 })

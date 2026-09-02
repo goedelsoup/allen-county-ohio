@@ -3,7 +3,15 @@ import Base from '../layouts/Base.astro'
 import DataTable from '../components/DataTable.astro'
 import StatTile from '../components/StatTile.astro'
 import TierBadge from '../components/TierBadge.astro'
-import { manifest, nodes } from '../lib/feeds'
+import { assertions, manifest, nodes } from '../lib/feeds'
+import { articlesIn } from '../lib/articles'
+import {
+  SECTION_KEYS,
+  assertionsForSection,
+  sectionLabel,
+  sectionPath,
+  topicsForSection,
+} from '../lib/sections'
 import { inline } from '../lib/prose'
 
 const c = manifest.corpus
@@ -29,6 +37,22 @@ const classRows = Object.entries(c.by_class)
 // a reader drawing something it cannot support, and they are worth more than most of what
 // surrounds them.
 const refusals = nodes.flatMap((n) => n.refusals.map((r) => ({ node: n.label, text: r })))
+
+// Where the corpus's claims end up. The feed files each assertion under one of ten topics
+// named for where the data came from; the site arranges them under five sections named for
+// what a reader wants to know. This is that arrangement, rendered — the mapping in
+// `lib/sections.ts` is the only place the two taxonomies meet, and this is the page whose
+// subject is what the site rests on, so it belongs here rather than in a test alone.
+const arrangement = SECTION_KEYS.map((key) => ({
+  key,
+  label: sectionLabel(key),
+  href: sectionPath(key),
+  topics: topicsForSection(key),
+  claims: assertionsForSection(key).length,
+  pieces: articlesIn(key).length,
+}))
+
+const placed = arrangement.reduce((n, s) => n + s.claims, 0)
 
 const verifiedShare = Math.round(
   (100 * (tagTotals.verified ?? 0)) / Object.values(tagTotals).reduce((a, b) => a + b, 0),
@@ -112,6 +136,54 @@ const verifiedShare = Math.round(
   />
 
   <section>
+    <h2>Where the claims went</h2>
+    <p class="prose">
+      The corpus files each of its {assertions.length} assertions under one of {
+        new Set(assertions.map((a) => a.topic)).size
+      } topics, named for where the data came from. This site arranges them under {
+        arrangement.length
+      } sections, named for what a reader wants to know. The two taxonomies are different on
+      purpose — the corpus keeps its own and the site keeps its own — and this is the whole of
+      the mapping between them.
+    </p>
+    <div class="scroll-x">
+      <table class="arrangement">
+        <thead>
+          <tr>
+            <th scope="col">Section</th>
+            <th scope="col">Takes the corpus topics</th>
+            <th scope="col">Claims</th>
+            <th scope="col">Pieces</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            arrangement.map((s) => (
+              <tr>
+                <th scope="row"><a href={s.href}>{s.label}</a></th>
+                <td class="topics">{s.topics.join(', ')}</td>
+                <td class="num">{s.claims}</td>
+                <td class="num">{s.pieces}</td>
+              </tr>
+            ))
+          }
+          <tr class="total">
+            <th scope="row">All</th>
+            <td class="topics">{new Set(assertions.map((a) => a.topic)).size} topics</td>
+            <td class="num">{placed}</td>
+            <td class="num">{arrangement.reduce((n, s) => n + s.pieces, 0)}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine prose">
+      Every one of the {assertions.length} is placed by this table, because every topic the feed
+      uses maps to a section — a check the build runs rather than a claim made here. Three are
+      also made on the home page, which takes no section of its own.
+    </p>
+  </section>
+
+  <section>
     <h2>What was withheld</h2>
     <div class="scroll-x">
       <table class="withheld">
@@ -163,6 +235,24 @@ const verifiedShare = Math.round(
       font-size: 0.9375rem;
       color: var(--ink-muted);
     }
+    .arrangement th[scope='row'] {
+      white-space: nowrap;
+    }
+    .arrangement .topics {
+      color: var(--text-muted);
+      font-size: var(--size-body-s);
+    }
+    .arrangement .num {
+      text-align: right;
+      font: var(--type-data);
+      font-variant-numeric: tabular-nums;
+    }
+    .arrangement .total th,
+    .arrangement .total td {
+      border-top: 1px solid var(--rule-strong);
+      color: var(--text-strong);
+    }
+
     .tiers {
       display: grid;
       gap: 1rem;
