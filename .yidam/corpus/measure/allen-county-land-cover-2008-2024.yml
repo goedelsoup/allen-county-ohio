@@ -1,0 +1,130 @@
+class: measure
+label: What Allen County's ground is, 2008–2024
+description: |
+  **Seventy per cent of Allen County is cropland and pasture, eighteen per cent is developed and
+  ten per cent is forest.** [verified] —
+  [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), 2024, every thirty-metre pixel in
+  the county classified and counted.
+
+      class                       acres     share
+      cropland and pasture       183,047    70.3%
+      developed                   46,307    17.8%
+      forest                      27,037    10.4%
+      open water                   3,076     1.2%
+      wetland                        704     0.3%
+      barren and shrub               154     0.1%
+      all classes                260,324   100.0%
+
+  **The corpus knew the county was 92.5 per cent farmland in 1910 and 69.4 per cent in 2022, and
+  had nothing that said what the other thirty per cent had become.** It is developed ground and
+  woodland, in that order, and there is more than twice as much of the first as of the second.
+  [inference] — computed here against
+  [land in farms](allen-county-farmland-1910-2022.yml); see
+  [the question](../question/when-the-farmland-went.yml).
+
+  **Two instruments land within a point of each other on how much of the county is farmed.** This
+  file puts crops and pasture at 70.3 per cent in 2024; the Census of Agriculture puts land in farms
+  at 69.4 per cent in 2022. One counts pixels of growing things and the other counts acres a farm
+  operator says they operate, so they are not the same quantity, and they agree anyway. [inference]
+  — computed here against
+  [the census of agriculture](../../catalog/usda-census-of-agriculture.md).
+
+  **Seventeen years, in acres.** [verified] — same source, one file a year.
+      year      corn   soybeans    wheat   hay/pasture   fallow    all crops   developed   forest
+      2008     53,540     82,506   21,483        28,945      137      187,691      47,522   22,410
+      2009     58,390     82,218   25,210        21,643       69      188,337      47,597   22,037
+      2010     59,752     85,581   15,003        27,780      157      188,708      45,107   23,473
+      2011     61,900     82,285   17,196        25,196       47      187,001      47,110   22,812
+      2012     72,892     80,629    6,688        26,510       55      187,529      47,538   22,033
+      2013     68,243     84,220    7,909        25,859       45      187,322      46,942   23,148
+      2014     70,671     84,224    8,392        23,753       17      187,791      46,268   22,786
+      2015     64,613     92,619    7,524        19,668      999      185,594      46,264   24,685
+      2016     64,173     91,790    7,827        21,409      196      186,854      46,196   23,655
+      2017     61,171     97,740    6,155        20,660       43      186,673      46,218   23,831
+      2018     63,930     92,740    8,155        20,690       29      186,665      46,104   23,629
+      2019     38,605     84,118    6,638        16,862   37,726      184,475      44,725   27,093
+      2020     65,009     91,204    8,729        19,076       22      184,777      44,439   26,765
+      2021     62,406     92,386    8,972        19,511        3      184,526      47,180   24,562
+      2022     60,992     92,383    9,418        20,162      207      184,102      47,665   24,460
+      2023     64,974     87,126   10,348        19,946        1      183,822      47,499   24,860
+      2024     65,583     90,067    8,821        16,675      315      183,047      46,307   27,037
+
+  **The crop columns of that table may be differenced and the last two may not.** Developed ground
+  ranges over 3,226 acres across the seventeen years — 6.9 per cent of the class — and its fitted
+  slope is **minus 35 acres a year**, in a county that recorded fifty-seven annexations between 1990
+  and 2024 and builds two hundred-odd houses a year. Forest ranges over 21 per cent of itself and
+  fits at plus 253. Those two columns are the classifier re-deciding, not the ground changing.
+  [verified] — same source, computed here; see
+  [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml) and
+  [the annexations](allen-county-annexations-1990-2024.yml).
+
+  **In 2019 one acre in five of this county's cropland was not planted.** `Fallow/Idle Cropland`
+  holds 37,726 acres, against a median of 55 across the other sixteen years and a maximum elsewhere
+  of 999. Corn fell 25,865 acres below the mean of the years either side and soybeans 7,854.
+  [verified] — same source.
+
+  **The county's own rain record puts that year third wettest in a hundred and thirty-one.** April
+  to June 2019 brought 19.21 inches against a long-run mean of 11.09 — behind only 2015 and 1957 —
+  and May alone brought 7.38, the third wettest May of the record. [verified] —
+  [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county precipitation, ranked here over the
+  131 complete years; see [the precipitation record](allen-county-precipitation-1895-2025.yml).
+
+  **Two instruments with nothing in common say the same thing about one spring.** A satellite
+  classifier that has never heard of a weather station, and a gridded rain record that has never
+  seen a field, put the unplanted ground and the rain in the same twelve months. [inference] —
+  the reasoning is this corpus's. Neither file records a farmer's decision, and the step from
+  *wet* to *not planted* is not in either of them.
+
+  **Soybeans have been the larger crop in every one of the seventeen years.** The ratio of corn to
+  soybean acreage runs between 0.63 and 0.90 and never reaches parity; the widest gap is 2017, with
+  97,740 acres of soybeans against 61,171 of corn. [verified] — same source, computed here.
+
+  **Winter wheat lost two thirds of its ground in four years and never came back.** 21,483 acres in
+  2008, 25,210 in 2009, then 15,003, 17,196 and 6,688 in 2012; the highest of the twelve years since
+  is 10,348. [verified] — same source.
+
+  **Hay and pasture fell by two fifths.** From 28,945 acres in 2008 to 16,675 in 2024, on a series
+  that moves smoothly enough to be read — it is a crop class, classified from that year's imagery,
+  and it falls in most years. [verified] — same source.
+
+  **In figures, the county's ground in 2024: 183,047 acres of crops and pasture, 46,307 developed,
+  27,037 forest and 3,076 water.** [verified] — read from the table above, same source.
+
+  [open] Whether the fallow ground of 2019 was prevented planting in the insurance sense. The
+  federal crop insurance and farm service records carry acreage certified as prevented from
+  planting, county by county, and this corpus does not hold them. What it has is a wet spring and
+  unplanted ground in the same year.
+
+  [open] How much of the county has been built on, and when. The developed class here cannot be
+  differenced and no other source this corpus holds measures development as **area** — annexations
+  count events, permits count buildings, and the assessed valuation counts money.
+properties:
+  parameter: share of the county classified as cropland or pasture
+  value: "70.3"
+  unit: per cent
+  as_of: "2024"
+  method: |
+    CropScape's `GetCDLStat` for FIPS 39003, once per year 2008 through 2024. The call returns an
+    XML element naming a CSV rather than the statistics themselves, and the CSV is fetched
+    separately. Shares are computed against the classified total, which is 260,324 acres in every
+    year from 2010 and within four acres of it in 2008 and 2009 — the file's own control on whether
+    a year has been read correctly. Double-crop classes are counted once, in their own class, and so
+    appear under neither of the crops they name. Slopes are least-squares fits over the seventeen
+    annual totals. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usda-cropscape-cdl.md
+  - target: allen-county-farmland-1910-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-precipitation-1895-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/noaa-nclimdiv-county.md
+  - target: allen-county-crops-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
