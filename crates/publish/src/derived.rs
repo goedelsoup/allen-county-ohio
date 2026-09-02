@@ -2974,6 +2974,50 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "1884", value: 56.2, literal: "56.2" },
         ],
     },
+    Assertion {
+        id: "the-winters-warmed-and-the-summers-did-not",
+        statement: "Allen County is 2.03 \u{b0}F warmer than it was a century ago and its summers are \
+                    not. The mean daily maximum of June, July and August has moved eleven \
+                    hundredths of a degree since 1895\u{2013}1924; December, January and February have \
+                    moved 3.32. The hottest summers in the record are still 1934 and 1936.",
+        topic: "land",
+        // The decade rainfall series is plotted rather than the temperature one: the temperature
+        // finding is about the shape inside the year, which a line of annual means would hide —
+        // which is the thing the assertion is against.
+        supports: &[
+            support!(
+                "measure/allen-county-temperature-1895-2025.yml",
+                "**The county is two degrees warmer than it was, and none of it is in summer.** The mean daily\n  maximum temperature of June, July and August was 82.48 \u{b0}F across 1895\u{2013}1924 and is 82.59 \u{b0}F across\n  1996\u{2013}2025 \u{2014} a change of **eleven hundredths of a degree in a century**."
+            ),
+            support!(
+                "measure/allen-county-temperature-1895-2025.yml",
+                "**In figures: December, January and February warmed by 3.32 degrees on average and June, July and\n  August by 1.01.**"
+            ),
+            support!(
+                "measure/allen-county-temperature-1895-2025.yml",
+                "**The hottest summers in the record are still the 1930s.** Ranked by mean daily maximum for June\n  to August: 1934 at 88.8 \u{b0}F, 1936 at 88.2, 1933 at 86.9, 1988 at 86.8, 1952 at 86.6, 1944 at 86.4.\n  **None is later than 1988.**"
+            ),
+            support!(
+                "measure/allen-county-temperature-1895-2025.yml",
+                "**The nights warmed faster than the days**, by 2.36 degrees against 1.70."
+            ),
+            support!(
+                "measure/allen-county-precipitation-1895-2025.yml",
+                "**Almost all of the additional rain falls in the growing season.** Of 3.66 inches added to the\n  year, 3.27 fall between April and September; March is **drier** by half an inch and January by a\n  seventh."
+            ),
+            support!(
+                "measure/allen-county-precipitation-1895-2025.yml",
+                "**Both of those months are years the corpus already had a reason to look at.**"
+            ),
+        ],
+        answers: &[
+            "It cannot say what was in the river; it can say what fell on the ground.",
+        ],
+        figures: &[
+            Figure { label: "Winter", value: 3.32, literal: "3.32" },
+            Figure { label: "Summer", value: 1.01, literal: "1.01" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

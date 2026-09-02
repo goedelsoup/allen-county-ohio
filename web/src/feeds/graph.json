@@ -1127,6 +1127,10 @@
         {
           "text": "**It is a flow and not a flood, and the corpus is careful about the difference.** A discharge figure says how much water passed the gauge and nothing about what the water reached. Whether this one left the banks, what it covered, and whether anyone was harmed are not in this source and are not in any source held here — there was no federal disaster declaration for Allen County that year, and the county's first is six years later. [verified] — [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**The weather that produced it is now on the record, and it is not extraordinary.** January 1959 gave Allen County 4.43 inches of precipitation against a January mean of 2.38 — the twelfth wettest January of a hundred and thirty-one, not the first, and 1959 as a whole ranks twenty-seventh of the county's wet years at 40.48 inches. [verified] — [the county's precipitation](../measure/allen-county-precipitation-1895-2025.yml). A month of ordinary rank produced the largest flow ever measured here, which is a reason to look for snow or frozen ground rather than for rain, and neither is in any source this corpus holds. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -6435,6 +6439,57 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-precipitation-1895-2025.yml",
+      "class": "measure",
+      "label": "Allen County precipitation, 1895–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Parsed on the eleven-character key `33003` from the same NOAA release as the temperature files, element code 01. Complete calendar years only: a year with any month coded −9.99 is dropped, so the record runs 1895 through 2025 with no gap and 2026 is excluded. Annual figures are the sum of the twelve printed monthly values and the thirty-year figures are the mean of those sums. [verified]",
+        "parameter": "annual precipitation, Allen County",
+        "unit": "inches, 1996–2025 average",
+        "value": "39.18"
+      },
+      "blocks": [
+        {
+          "text": "A hundred and thirty-one complete years of monthly rainfall for the county, from the same record as [its temperature](allen-county-temperature-1895-2025.yml). [verified] — [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county precipitation, computed over complete calendar years.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same source, averaged here over the two windows at the ends of the record.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Almost all of the additional rain falls in the growing season.** Of 3.66 inches added to the year, 3.27 fall between April and September; March is **drier** by half an inch and January by a seventh. [verified] — same source, month by month:",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: the county's annual rainfall by decade ran 35.21, 35.61, 36.86, 33.78, 34.86, 36.65, 31.73, 35.22, 35.07, 37.06, 38.54 and 42.07 inches from the 1900s to the 2010s.** [verified] — same source. The 2010s are the wettest decade of the record by three and a half inches and the 1960s the driest by three.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The driest year is 1963 and the wettest is 2011, and they are forty-eight years and thirty inches apart.** 22.70 inches against 52.56. [verified] — same source. 1963 is also the seventh coldest year in the record, and October of that year gave the county fourteen hundredths of an inch. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The wettest month in a hundred and thirty-one years is June 2015, at 13.48 inches.** The second is August 2007 at 10.54, and nothing else in the record reaches ten. [verified] — same source. The June average is 3.97 inches and the August average 3.18, so those two months ran three times normal and three and a third times normal. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Both of those months are years the corpus already had a reason to look at.** August 2007 sits inside the ten-year hole in the Lima river gauge — 2000 to 2009, which swallowed three of the county's four federal flood declarations — and it is the wettest August of the hundred and thirty-one. January 2005, another declaration year inside the same hole, is the fourth wettest January. And the highest peak the modern gauge ever recorded, 5,700 cubic feet a second on 28 February 2011, falls in the fourth wettest February of the record, inside the wettest calendar year of the record. [verified] — [the peak flows](ottawa-river-peak-flows-1924-2025.yml) and this source. Two instruments that share no data agree about which years were wet. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The gauge's silences are not this record's.** Nothing gauged the Ottawa River between water years 1982 and 1988 or between 2000 and 2009, and this record covers both stretches without a missing month. It cannot say what was in the river; it can say what fell on the ground. [inference] — see [the peak flows](ottawa-river-peak-flows-1924-2025.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "It cannot say what was in the river; it can say what fell on the ground."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-presidential-vote-1856-1884.yml",
       "class": "measure",
       "label": "Allen County presidential vote, 1856–1884",
@@ -7087,6 +7142,63 @@
       "refusals": [
         "The corpus does not assert Bluffton's section."
       ],
+      "withheld": 4
+    },
+    {
+      "id": "measure/allen-county-temperature-1895-2025.yml",
+      "class": "measure",
+      "label": "Allen County temperature, 1895–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Six county files taken from the same NOAA release and parsed on the eleven-character key `33003`, where 33 is NOAA's alphabetical code for Ohio and not its FIPS code. Only complete calendar years are used, so 2026 is excluded and the record runs 1895 through 2025 without a gap. The strongest check available was run first and passed: the average, maximum and minimum temperature files are separate downloads, and across Allen County's 1,572 complete monthly cells `(tmax + tmin) / 2` equals the average file to within a rounding step, the largest disagreement in the whole record being 0.10 °F. [verified]",
+        "parameter": "annual mean temperature, Allen County",
+        "unit": "degrees Fahrenheit, 1996–2025 average",
+        "value": "51.63"
+      },
+      "blocks": [
+        {
+          "text": "A hundred and thirty-one complete years of the county's monthly temperature, and the first thing in this corpus that says what the weather here is. [verified] — [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county average, maximum and minimum temperature, computed over complete calendar years.",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same source, averaged here over the two thirty-year windows at the ends of the record.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county is two degrees warmer than it was, and none of it is in summer.** The mean daily maximum temperature of June, July and August was 82.48 °F across 1895–1924 and is 82.59 °F across 1996–2025 — a change of **eleven hundredths of a degree in a century**. [verified] — same source, computed here. Everything the annual figure records happened in the other nine months.",
+          "tier": "verified"
+        },
+        {
+          "text": "**February is up five degrees and July is up two tenths.** Month by month, across the same two windows: [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: December, January and February warmed by 3.32 degrees on average and June, July and August by 1.01.** [inference] — computed from the twelve figures above. A county that has warmed by two degrees in the mean has warmed by three and a third in winter and by one in summer, and the annual number says neither.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The nights warmed faster than the days**, by 2.36 degrees against 1.70. [verified] — same source. Less cold at night, in winter, is the whole of the change.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The hottest summers in the record are still the 1930s.** Ranked by mean daily maximum for June to August: 1934 at 88.8 °F, 1936 at 88.2, 1933 at 86.9, 1988 at 86.8, 1952 at 86.6, 1944 at 86.4. **None is later than 1988.** [verified] — same source. The county's cooling-degree-day record is 1934 as well, at 1,233, and it has stood for ninety-two years. [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The warmest years, on the other hand, are nearly all recent.** 2024 is the warmest year of the hundred and thirty-one at 54.97 °F, a full degree above the next; eight of the ten warmest are since 1991, and the ten coldest are 1917, 1904, 1924, 1978, 1912, 1958, 1963, 1907, 2014 and 1976. [verified] — same source. A record that puts its hottest summers in the 1930s and its warmest years in the 2010s and 2020s is describing a winter, not a summer. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**By decade**, with the county's heating and cooling demand beside it: [verified] — same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1960s are as cold as the 1900s and the 1930s are as warm as the 2000s.** The trend is not a line and the corpus is not drawing one: the two warmest decades before 1990 are the 1930s and the 1940s, and the coldest decade of the whole record is the 1960s. [verified] — same source. [inference] — the reading.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
       "withheld": 4
     },
     {
@@ -8633,6 +8745,10 @@
         },
         {
           "text": "**And the largest measured flood in the modern record brought no federal declaration at all.** 5,700 cubic feet a second on 28 February 2011 is the highest of the Lima gauge's 27 water years, and 2011 is not a declaration year; nor is 2015, the second highest. [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md) and [OpenFEMA](../../catalog/fema-disaster-declarations.md). This is not evidence that the aid was misdirected. It is evidence that a declaration is an administrative act, which the declarations node had to reason its way to and this measures. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county now has a rainfall record where this one is silent, and it agrees where they meet.** August 2007 — inside the ten-year hole, in one of the three declaration years this gauge missed — is the wettest August of a hundred and thirty-one years, at 10.54 inches against an August mean of 3.18. January 2005, another of the three, is the fourth wettest January. And this gauge's own highest peak, 5,700 cubic feet a second on 28 February 2011, sits in the fourth wettest February of the record and the wettest calendar year of it. [verified] — [the county's precipitation](allen-county-precipitation-1895-2025.yml). What was in the river in 2004, 2005 and 2007 is still not recorded anywhere this corpus can reach; what fell out of the sky now is. [inference]",
           "tier": "inference"
         },
         {
@@ -20422,6 +20538,13 @@
       "source": "catalog/census-2020-redistricting-file.md"
     },
     {
+      "from": "measure/allen-county-precipitation-1895-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/noaa-nclimdiv-county.md"
+    },
+    {
       "from": "measure/allen-county-presidential-vote-1856-1884.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -20553,6 +20676,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/allen-county-gis-rest.md"
+    },
+    {
+      "from": "measure/allen-county-temperature-1895-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/noaa-nclimdiv-county.md"
     },
     {
       "from": "measure/allen-county-tornadoes-1950-2026.yml",
