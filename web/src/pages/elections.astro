@@ -10,6 +10,7 @@ import { line } from '../lib/chart-spec'
 const rising = assertion('republican-share-rising')
 const swing = assertion('democratic-ground-moved-fastest')
 const eleven = assertion('eleven-precincts')
+const changed = assertion('the-county-changed-sides')
 
 const shareSpec = line(rising.figures.map((f) => f.label), [
     { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
@@ -18,6 +19,42 @@ const shareSpec = line(rising.figures.map((f) => f.label), [
   tickSuffix: '%',
   labelLast: true,
 })
+
+// The Democratic share at the eight presidential elections the 1885 county history records. From
+// the assertion's own figures, so the chart cannot drift from the prose the gate checked.
+const oldSpec = line(changed.figures.map((f) => f.label), [
+    { name: 'Democratic share of the presidential vote', y: changed.figures.map((f) => f.value) },
+  ], {
+  yTitle: 'Per cent',
+  tickSuffix: '%',
+  labelLast: true,
+})
+
+// The 1884 count as the book prints it, twenty units and two columns. Typed out because the third
+// and fourth columns are computed and the graph carries the pair the book printed.
+const eighteenEightyFour = [
+  ['Lima, First Ward', '364', '316', 'R+48'],
+  ['Lima, Second Ward', '429', '282', 'R+147'],
+  ['Lima, Third Ward', '103', '381', 'D+278'],
+  ['Lima, Fourth Ward', '260', '139', 'R+121'],
+  ['Auglaize', '279', '177', 'R+102'],
+  ['Monroe', '267', '222', 'R+45'],
+  ['Sugar Creek', '133', '111', 'R+22'],
+  ['Ottawa', '15', '18', 'D+3'],
+  ['Perry', '155', '190', 'D+35'],
+  ['Shawnee', '117', '171', 'D+54'],
+  ['Bath', '129', '192', 'D+63'],
+  ['Delphos, First Ward', '89', '163', 'D+74'],
+  ['Marion', '211', '302', 'D+91'],
+  ['Richland — Beaver Dam', '85', '176', 'D+91'],
+  ['Amanda', '100', '207', 'D+107'],
+  ['Jackson', '159', '273', 'D+114'],
+  ['Delphos, Second Ward', '85', '200', 'D+115'],
+  ['German', '108', '250', 'D+142'],
+  ['Spencer', '159', '322', 'D+163'],
+  ['Richland — Bluffton', '125', '349', 'D+224'],
+  ['Allen County, as printed', '3,372', '4,442', 'D+1,070'],
+]
 
 const turnout = seriesById('jurisdiction-allen-county-government::ballots-cast,-general-election')
 const presidential = seriesById('place-allen-county::presidential-votes-cast')
@@ -91,6 +128,62 @@ const correlation = swing.figures[0]
       p.value.toLocaleString('en-US'),
     ])}
   />
+
+  <section>
+    <h2>The county changed sides</h2>
+    <p>
+      Everything above is three elections wide. The county's own history is not: its seventh chapter
+      is an election-returns appendix that prints the vote office by office and year by year from
+      1831 to 1884, and nobody had read it here. Read for president, it says that the county now
+      voting 69–29 Republican was Democratic ground for most of the nineteenth century.
+    </p>
+    <AssertionCard assertion={changed} />
+    <ChartFigure
+      id="democratic-share-1856-1884"
+      title="Democratic share of Allen County's presidential vote, 1856 to 1884"
+      caption="Seven of eight go Democratic. The exception is 1864, and 1864 is the one year the book prints its two figures marked (estimated) — the only round numbers in the chapter."
+      columns={['Election', 'Democratic share']}
+      rows={changed.figures.map((f) => [f.label, `${f.value}%`])}
+      height={300}
+    />
+    <script type="application/json" data-chart-spec="democratic-share-1856-1884" set:html={JSON.stringify(oldSpec)} is:inline />
+    <p>
+      The 1884 count is printed by township and ward, and it is the last sub-county return this site
+      holds before 2016. Lima's four wards went Republican 1,156 to 1,118 while the county went
+      Democratic 3,372 to 4,442 — the city was the Republican end of Allen County and the townships
+      the Democratic end, which is the arrangement of 2020 turned end for end. The city was already
+      split by ward, too: its Second was 60 per cent Republican and its Third 79 per cent Democratic,
+      a mile apart.
+    </p>
+    <DataTable
+      title="Allen County by township and ward, 4 November 1884"
+      caption="Sorted by margin, Republican units first. Ottawa Township polls thirty-three votes — a seventh of the next smallest unit — twenty-seven years after it was erected to hold a growing Lima. German Township, which the county renamed American in 1918, polls 358."
+      columns={['Unit', 'Rep.', 'Dem.', 'Margin']}
+      rows={eighteenEightyFour}
+    />
+    <p class="note">
+      The Republican column adds to its printed total of 3,372 exactly. The Democratic column adds to
+      4,441 against a printed 4,442, and this site does not know whether that vote is the book's
+      arithmetic or its typesetting; the county figure carried forward is the book's own. Getting
+      even that far meant discarding both OCR passes of the page: each renders Lima's Third Ward as
+      108 Republican where the page says 103, and those five votes are exactly what reconciles the
+      column.
+    </p>
+    <p>
+      Then a gap of thirty-two years, and one figure inside it. The Ohio Secretary of State printed
+      his own certified abstract of the 1920 returns, county by county, and Allen County went to
+      Warren G. Harding 13,978 to James M. Cox's 11,658, with 429 for Eugene V. Debs — a Republican
+      plurality of 2,320 on 26,082 votes. It is the first official state election return this site
+      holds; every other election figure here comes from a county history or from a volunteer
+      transcription of documents the Secretary of State's present-day site will not serve to an
+      automated client. The office that returns 403 in 2026 answered in 1921, in a book.
+    </p>
+    <p>
+      When the county changed sides is not established. Eight presidential elections sit between
+      Cleveland's 1,070-vote margin in 1884 and Harding's 2,320-vote margin in 1920, and this site
+      holds none of them.
+    </p>
+  </section>
 
   <script>
     import { renderCharts } from '../scripts/charts'
