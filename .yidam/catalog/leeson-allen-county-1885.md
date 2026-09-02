@@ -55,6 +55,8 @@ used-by:
   - ../corpus/measure/allen-county-civil-war-service.yml
   - ../corpus/measure/allen-county-municipal-incorporations-1842-1904.yml
   - ../corpus/measure/allen-county-population-1830-1900.yml
+  - ../corpus/measure/allen-county-presidential-vote-1856-1884.yml
+  - ../corpus/measure/allen-county-presidential-vote-1884-by-township.yml
   - ../corpus/measure/allen-county-railroads-1883-1921.yml
   - ../corpus/measure/fort-amanda-graves-and-boats.yml
   - ../corpus/measure/lima-mayors-1842-1886.yml
@@ -194,10 +196,24 @@ enough that a year taken from it alone is unsafe. Scan A does not share the faul
 more entries. The two together are usable and neither alone is — which is the case
 [two scans of one book](../decisions/two-scans-of-one-book.yml) was written for, met at scale.
 
-**What else is in it, still unread.** Chapter VII prints the county's vote election by election
-from 1831 to 1884; Chapter VIII a roll of every lawyer admitted 1831-1884; Chapter X the county's
-newspapers by town, twenty-odd of them; Chapter XI the founding of every church; Chapter XII the
-pioneer and town schools. The military chapter's own last pages carry the Ohio National Guard, the
+**Chapter VII is an election-returns appendix, and it has now been read for president.** Under the
+heading "County Elections" it prints the county's vote office by office and year by year — governor,
+congressman, every county office, the local questions, and at the presidential years the president
+— from 1831 to 1884, closing with the November 4, 1884 count broken out by township and ward. Down
+to 1843 it names only the winners; "in 1844 regular returns were filed", and from there it prints
+figures. What this corpus has taken is the eight presidential years and the 1884 township table; the
+rest of the chapter, which is the larger part of it, is still unread. See
+[the eight elections to 1884](../corpus/measure/allen-county-presidential-vote-1856-1884.yml).
+
+**Its typeface confuses 3 with 8, and in this chapter that is a vote.** Both OCR passes render the
+Republican figure for Lima's Third Ward as 108 where the page says 103, and Greeley's county vote as
+2,403 where the page says 2,463. The first error is exactly the five votes that reconcile the
+Republican column to its own printed total, so the column's arithmetic catches it; nothing catches
+the second but the page image. No figure in this chapter is safe from the OCR alone.
+
+**What else is in it, still unread.** The rest of Chapter VII; Chapter VIII a roll of every lawyer
+admitted 1831-1884; Chapter X the county's newspapers by town, twenty-odd of them; Chapter XI the
+founding of every church; Chapter XII the pioneer and town schools. The military chapter's own last pages carry the Ohio National Guard, the
 cavalry, light and heavy artillery, the twenty-six independent batteries, and the ladies' aid
 societies.
 

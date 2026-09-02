@@ -76,3 +76,11 @@ something else.
 county reference is most of what a board of elections actually runs. Nothing before 2012, and no
 2022 or 2024 precinct file exists in the repository, so the series stops before Ohio's post-2020
 maps took effect.
+
+**It is no longer the only election source here, and the other one is the authority.** The Ohio
+Secretary of State printed his own certified abstract of the 1920 returns, county by county, and
+archive.org holds it: see
+[Ohio Election Statistics, 1920](ohio-election-statistics-1920.md). That does not change what this
+file is, and it does change what the corpus can say about it — the office whose present-day site
+returns 403 to an automated client published the same class of figure in a book, and the book is
+readable. The two do not overlap in time, so no figure here has yet been checked against one there.
