@@ -1232,6 +1232,26 @@
       ]
     },
     {
+      "id": "place-allen-county::land-in-farms,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "land in farms, Allen County",
+      "unit": "acres",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "label": "Land in farms, Allen County, 1910–2022",
+          "as_of": "2022",
+          "value": 178921.0,
+          "published": "178921",
+          "tier": "verified",
+          "source": "catalog/agcensus-archive-1925-1978.md",
+          "method": "Every figure between 1920 and 1978 read from a 300-dpi render of the page, never from the text layer, which mangles digits in these typefaces — it gives Ohio's 1920 land in farms as 23,615,888 where the page prints 23,515,888 and its 1910 farm count as 272,046 against a printed 272,045. Land area, and so the percentage in farms, is not constant across the run: the volumes give the county 259,840 acres in 1925, 262,400 in 1940, 1945, 1959 and 1964, and 262,405 in 1969, so acreage rather than share is what this node compares. Farm counts are not comparable across the definition changes of 1959, 1974 and 1978; see [a farm count is a definition](../../decisions/a-farm-count-is-a-definition.yml). [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::law-enforcement-agencies-reporting-for-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -8315,6 +8335,116 @@
           "label": "2020",
           "value": 12573.0,
           "literal": "12573"
+        }
+      ]
+    },
+    {
+      "id": "the-farmland-did-not-drain",
+      "statement": "Allen County's farmland did not go once. Nine of the seventeen intervals in a now-complete record are rises: 87,824 acres left its farms between 1910 and 2022 and 26,273 came back, three returned for every ten lost. The peak is 1920 and not 1910, and the largest single loss is the 13,239 acres of 1920 to 1925 — larger than the 1950–54 collapse this corpus had published as the sharpest stretch of the century, and invisible to it.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**The farmland did not drain. It sawtoothed.** Nine of the seventeen intervals are rises. Across the whole record 87,824 acres left the county's farms and 26,273 came back, for a net loss of 61,551 — **three acres returned for every ten lost**.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**In figures: 240,472 acres in 1910, 241,488 in 1920, 235,791 in 1935, 215,018 in 1954, 206,047 in 1959, 215,862 in 1969, 195,604 in 1978 and 178,921 in 2022.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/agcensus-archive-1925-1978.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**The county's farmland peak is 1920, not 1910.** 241,488 acres, a thousand above the 1910 figure this corpus has treated as the top of the series since it first held one.",
+          "tier": "verified",
+          "sources": [
+            "catalog/agcensus-archive-1925-1978.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**The largest single loss in the record is one nobody here had seen.** Allen County lost 13,239 acres of farmland between 1920 and 1925 — more than the 12,926 it lost between 1950 and 1954, which this corpus had published as the sharpest stretch of the century.",
+          "tier": "verified",
+          "sources": [
+            "catalog/agcensus-archive-1925-1978.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**And that published finding survives anyway, on the measure it was made on.** 1950 to 1954 is four years and 1920 to 1925 is five, so the rate is 3,232 acres a year against 2,648, and 1950–54 is still the fastest loss in the record.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**The farm count peaks in the Depression.** 3,016 farms in 1935 against 2,939 in 1910 and 2,684 in 1930 — and the farmland with them, 5,367 acres more in 1935 than five years before.",
+          "tier": "verified",
+          "sources": [
+            "catalog/agcensus-archive-1925-1978.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-farmland-1910-2022.yml",
+          "node_label": "Land in farms, Allen County, 1910–2022",
+          "span": "**The nineteen-sixties gained farmland, inside one definition.** 206,047 acres in 1959 and 215,862 in 1969, a rise of 9,815 or 4.8 per cent, across three censuses that share a farm definition.",
+          "tier": "verified",
+          "sources": [
+            "catalog/agcensus-archive-1925-1978.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1910",
+          "value": 240472.0,
+          "literal": "240,472"
+        },
+        {
+          "label": "1920",
+          "value": 241488.0,
+          "literal": "241,488"
+        },
+        {
+          "label": "1935",
+          "value": 235791.0,
+          "literal": "235,791"
+        },
+        {
+          "label": "1954",
+          "value": 215018.0,
+          "literal": "215,018"
+        },
+        {
+          "label": "1959",
+          "value": 206047.0,
+          "literal": "206,047"
+        },
+        {
+          "label": "1969",
+          "value": 215862.0,
+          "literal": "215,862"
+        },
+        {
+          "label": "1978",
+          "value": 195604.0,
+          "literal": "195,604"
+        },
+        {
+          "label": "2022",
+          "value": 178921.0,
+          "literal": "178,921"
         }
       ]
     },
