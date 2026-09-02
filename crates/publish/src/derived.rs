@@ -3615,6 +3615,96 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2021\u{2013}22", value: 1108.0, literal: "1,108" },
         ],
     },
+    Assertion {
+        id: "fifth-worst-in-ohio-for-heart-disease",
+        statement: "Allen County's heart disease death rate rose 17.7 per cent across four \
+                    vintages of one federal measure while Ohio's fell 2.7 per cent. The county \
+                    went from 11.4 per cent above the state to 34.7 per cent above it, and from \
+                    the 21st worst county in Ohio to the 5th worst of 88.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**Allen County is now the fifth worst county in Ohio for heart disease.** [verified] \u{2014}\n  [the 2022\u{2013}2024 vintage](../../catalog/cdc-heart-disease-stroke-county.md), ranked here over\n  Ohio's 88 counties."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The county's rate rose 17.7 per cent across the four while Ohio's\n  fell 2.7 per cent, and the county went from 11.4 per cent above the state to 34.7 per cent\n  above.**"
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**In figures, the county's heart disease rate per 100,000 at ages 35 and over: 415.0 in 2018\u{2013}2020,\n  428.6 in 2019\u{2013}2021, 465.2 in 2021\u{2013}2023 and 488.4 in 2022\u{2013}2024, against Ohio's 372.5, 380.8, 375.6\n  and 362.6.**"
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**Stroke went the other way, and the county is now seventh best in Ohio.** 74.0 per 100,000 in\n  the 2013\u{2013}2015 vintage against 71.3 in 2022\u{2013}2024, while Ohio moved from 78.4 to 91.1 \u{2014} so the\n  county fell from rank 58 of 88 to rank 82."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2018\u{2013}2020", value: 415.0, literal: "415.0" },
+            Figure { label: "2019\u{2013}2021", value: 428.6, literal: "428.6" },
+            Figure { label: "2021\u{2013}2023", value: 465.2, literal: "465.2" },
+            Figure { label: "2022\u{2013}2024", value: 488.4, literal: "488.4" },
+        ],
+    },
+    Assertion {
+        id: "the-improvement-stopped-at-working-age",
+        statement: "Cardiovascular death rates among Allen County residents aged 35 to 64 fell \
+                    29.8 per cent from 1999 to 2010 and then rose 15.3 per cent to 2019. Among \
+                    those 65 and over the same rates fell 35.1 per cent and went on falling. The \
+                    county's old people kept improving and its working-age people stopped \u{2014} and \
+                    so did those of 77 of Ohio's 88 counties.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The improvement stopped at working age, and it stopped in 2010.** For cardiovascular disease\n  among people aged 35 to 64, the programme's own fitted trend is **\u{2212}29.8 per cent from 1999 to\n  2010 and +15.3 per cent from 2010 to 2019**. For the same disease among people 65 and over it is\n  \u{2212}35.1 per cent and then \u{2212}2.8 per cent."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**All heart disease, ages 35 to 64, is the sharpest version of it:** \u{2212}31.3 per cent to 2010, then\n  **+16.6 per cent** \u{2014} a rate of 99.4 per 100,000 in 2010 and 112.4 in 2019, undoing eight of the\n  eleven years of gains."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**That reversal is not this county's own.** Seventy-seven of Ohio's 88 counties show a rising\n  working-age cardiovascular rate from 2010 to 2019, and Allen ranks 22nd of the 88 on the size of\n  the rise and 37th of 88 on the 2019 level."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "35\u{2013}64, 1999\u{2013}2010", value: -29.8, literal: "\u{2212}29.8" },
+            Figure { label: "35\u{2013}64, 2010\u{2013}2019", value: 15.3, literal: "15.3" },
+            Figure { label: "65+, 1999\u{2013}2010", value: -35.1, literal: "\u{2212}35.1" },
+            Figure { label: "65+, 2010\u{2013}2019", value: -2.8, literal: "\u{2212}2.8" },
+        ],
+    },
+    Assertion {
+        id: "middling-on-hearts-worst-fifth-on-strokes",
+        statement: "Measured every five years for twenty, Allen County sits in the middle of \
+                    Ohio for working-age heart disease deaths and in the worst fifth for \
+                    working-age strokes \u{2014} ranks of 38th, 48th, 43rd and 39th against 15th, \
+                    14th, 16th and 16th of 88. Its Black-to-white ratio for those deaths is large \
+                    and ranks in the middle of Ohio, so the county's unusually wide racial gap in \
+                    life expectancy is not a cardiovascular gap.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**Where the county is genuinely unusual is stroke at working age, and it has been for twenty\n  years.** Its rank among Ohio's 88 counties for stroke deaths at ages 35 to 64 was 15th worst in\n  2005, 14th in 2010, 16th in 2015 and 16th in 2019, while its rank for heart disease over the same\n  four years ran 38th, 48th, 43rd and 39th."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The racial gap is large and it is ordinary for Ohio.** Among 35-to-64-year-olds in 2019, Black\n  residents' cardiovascular death rate is 208.2 against 131.1 for white \u{2014} a ratio of 1.59 \u{2014} and for\n  stroke 33.6 against 14.9, a ratio of 2.26."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Black, cardiovascular", value: 208.2, literal: "208.2" },
+            Figure { label: "White, cardiovascular", value: 131.1, literal: "131.1" },
+            Figure { label: "Black, stroke", value: 33.6, literal: "33.6" },
+            Figure { label: "White, stroke", value: 14.9, literal: "14.9" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

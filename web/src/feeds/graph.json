@@ -4858,6 +4858,63 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+      "class": "measure",
+      "label": "Allen County heart disease and stroke mortality, 1999–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Read from CDC's Socrata endpoints by `locationid` = `39003`. Ranks are computed over the 88 Ohio county rows of the same file, stratum and year, sorted worst first; where a county has no estimate it is excluded and the denominator is stated. The twenty-year file names this county `Allen` and the recent vintages name it `Allen County`, and a first ranking pass written for one and run against the other returned 88 counties with this one absent and raised nothing. Trend percentages are the programme's own fitted values from its `1999 - 2010` and `2010 - 2019` rows, not endpoint arithmetic: computing the 1999-to-2010 change from the endpoints gives −26.2 per cent where the file publishes −29.8, and the file's figure is the one quoted. [verified]",
+        "parameter": "heart disease death rate, ages 35 and over, Allen County",
+        "unit": "deaths per 100,000",
+        "value": "488.4"
+      },
+      "blocks": [
+        {
+          "text": "What this county's residents die of, for the two causes a federal programme will publish below the state line. [verified] — [CDC's county heart disease and stroke files](../../catalog/cdc-heart-disease-stroke-county.md). Every figure here is a modelled small-area rate and not a count of deaths.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County is now the fifth worst county in Ohio for heart disease.** [verified] — [the 2022–2024 vintage](../../catalog/cdc-heart-disease-stroke-county.md), ranked here over Ohio's 88 counties. Four vintages of one design, each a three-year average for ages 35 and over:",
+          "tier": "verified"
+        },
+        {
+          "text": "[verified] — same source, the four heart-disease vintages; ranks computed here over Ohio's 88 counties with 1 the worst. **The county's rate rose 17.7 per cent across the four while Ohio's fell 2.7 per cent, and the county went from 11.4 per cent above the state to 34.7 per cent above.** [inference] — computed from the table. Successive vintages share years, so these are four overlapping averages and not four independent readings.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Stroke went the other way, and the county is now seventh best in Ohio.** 74.0 per 100,000 in the 2013–2015 vintage against 71.3 in 2022–2024, while Ohio moved from 78.4 to 91.1 — so the county fell from rank 58 of 88 to rank 82. [verified] — same source, the two stroke vintages; ranks computed here. On one measure this county is in Ohio's worst six and on the other in its best seven, and both are cardiovascular. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The improvement stopped at working age, and it stopped in 2010.** For cardiovascular disease among people aged 35 to 64, the programme's own fitted trend is **−29.8 per cent from 1999 to 2010 and +15.3 per cent from 2010 to 2019**. For the same disease among people 65 and over it is −35.1 per cent and then −2.8 per cent. [verified] — same source, the twenty-year file, trend rows as published. The county's old people went on doing better and its working-age people stopped.",
+          "tier": "verified"
+        },
+        {
+          "text": "**All heart disease, ages 35 to 64, is the sharpest version of it:** −31.3 per cent to 2010, then **+16.6 per cent** — a rate of 99.4 per 100,000 in 2010 and 112.4 in 2019, undoing eight of the eleven years of gains. [verified] — same source. Both sexes reversed: men +10.6 per cent after 2010, women +12.4. [verified] — same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That reversal is not this county's own.** Seventy-seven of Ohio's 88 counties show a rising working-age cardiovascular rate from 2010 to 2019, and Allen ranks 22nd of the 88 on the size of the rise and 37th of 88 on the 2019 level. Whatever turned in 2010 turned across the state. [verified] — same file, all Ohio counties for those rows, ranked here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Where the county is genuinely unusual is stroke at working age, and it has been for twenty years.** Its rank among Ohio's 88 counties for stroke deaths at ages 35 to 64 was 15th worst in 2005, 14th in 2010, 16th in 2015 and 16th in 2019, while its rank for heart disease over the same four years ran 38th, 48th, 43rd and 39th. **Middling on hearts, in the worst fifth on strokes, every time it is measured.** [verified] — same file, ranked here for each year.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The racial gap is large and it is ordinary for Ohio.** Among 35-to-64-year-olds in 2019, Black residents' cardiovascular death rate is 208.2 against 131.1 for white — a ratio of 1.59 — and for stroke 33.6 against 14.9, a ratio of 2.26. [verified] — same file. Those ratios rank **28th and 23rd of the 43 Ohio counties where both can be estimated**, which is the middle. [inference] — computed here. So the county's [unusually wide Black–white life-expectancy gap](allen-county-early-deaths-by-cause-2020-2022.yml) is not explained by an unusually wide cardiovascular gap; the gap here is the ordinary American one.",
+          "tier": "inference"
+        },
+        {
+          "text": "**In figures, the county's heart disease rate per 100,000 at ages 35 and over: 415.0 in 2018–2020, 428.6 in 2019–2021, 465.2 in 2021–2023 and 488.4 in 2022–2024, against Ohio's 372.5, 380.8, 375.6 and 362.6.** [verified] — same source, the four heart-disease vintages.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-higher-education-2023.yml",
       "class": "measure",
       "label": "Higher education in Allen County, 2023",
@@ -20983,6 +21040,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-county-business-patterns.md"
+    },
+    {
+      "from": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cdc-heart-disease-stroke-county.md"
     },
     {
       "from": "measure/allen-county-higher-education-2023.yml",

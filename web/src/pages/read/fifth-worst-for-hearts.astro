@@ -1,0 +1,121 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const climb = assertion('fifth-worst-in-ohio-for-heart-disease')
+const stopped = assertion('the-improvement-stopped-at-working-age')
+const ranks = assertion('middling-on-hearts-worst-fifth-on-strokes')
+
+const climbSpec = line(
+  climb.figures.map((f) => f.label),
+  [
+    { name: 'Allen County', y: climb.figures.map((f) => f.value) },
+    { name: 'Ohio', y: [372.5, 380.8, 375.6, 362.6] },
+  ],
+  { yTitle: 'Deaths per 100,000', labelLast: true },
+)
+
+const stoppedSpec = bar(
+  stopped.figures.map((f) => f.label),
+  stopped.figures.map((f) => f.value),
+  { yTitle: 'Change in rate', tickSuffix: '%', labelValues: true },
+)
+---
+
+<Article slug="fifth-worst-for-hearts">
+  <p>
+    Allen County dies young. Its premature death rate crossed from below the national figure to a
+    quarter above it, and deaths before 75 rose 46 per cent on a population four per cent smaller.
+    The question that leaves is what people here are dying of, and for two causes there is now an
+    answer: heart disease is killing this county's residents at a rate that has been climbing for
+    four straight measurement windows while Ohio's has fallen.
+  </p>
+  <Gloss>
+    The agency that holds the death certificates serves the nation to a machine and refuses the
+    county by policy. One CDC programme publishes below the state line, for these two causes only,
+    and it can do so because it publishes no counts — every figure here is a modelled small-area
+    rate that borrows strength from neighbouring counties and adjacent years.
+  </Gloss>
+  <AssertionCard assertion={climb} open />
+  <ChartFigure
+    id="climb"
+    title="Heart disease deaths per 100,000, ages 35 and over"
+    caption="Four vintages of one design, each a three-year average, age-adjusted and spatially smoothed. Successive windows share years — 2018–2020 overlaps 2019–2021, 2021–2023 overlaps 2022–2024 — so these are four overlapping averages and not four independent readings."
+    columns={['Window', 'Allen County', 'Ohio']}
+    rows={[
+      ['2018–2020', '415.0', '372.5'],
+      ['2019–2021', '428.6', '380.8'],
+      ['2021–2023', '465.2', '375.6'],
+      ['2022–2024', '488.4', '362.6'],
+    ]}
+  />
+  <script type="application/json" data-chart-spec="climb" set:html={JSON.stringify(climbSpec)} is:inline />
+  <p>
+    The two lines diverge in both directions at once. Ohio's rate is lower at the end of the four
+    windows than at the start; the county's is 73 points higher. That is the whole finding, and it
+    is four years wide.
+  </p>
+
+  <h2>The gains stopped at working age, and stopped in 2010</h2>
+  <p>
+    A longer file, on a different design, splits the county's cardiovascular deaths by age. It runs
+    to 2019 and it carries the programme's own fitted trends rather than the arithmetic between
+    endpoints.
+  </p>
+  <AssertionCard assertion={stopped} open />
+  <ChartFigure
+    id="stopped"
+    title="Change in cardiovascular death rate, by age group"
+    caption="The programme's own fitted total percent change over each span, for ages 35–64 and 65-and-over. Computing the 1999-to-2010 figure from the endpoints instead gives −26.2 per cent; the fitted value is the one published and the one quoted."
+    columns={['Group and span', 'Change']}
+    rows={stopped.figures.map((f) => [f.label, `${f.value}%`])}
+  />
+  <script type="application/json" data-chart-spec="stopped" set:html={JSON.stringify(stoppedSpec)} is:inline />
+  <p>
+    Older residents went on improving through both spans. Working-age residents improved for eleven
+    years and then gave back most of it — for all heart disease the reversal undoes eight of the
+    eleven years of gains. And it is not a local event: 77 of Ohio's 88 counties show the same
+    working-age reversal, and this county is 22nd of the 88 on the size of it. Something turned in
+    2010 and it turned across the state.
+  </p>
+
+  <h2>Two cardiovascular causes, opposite ends of the state</h2>
+  <AssertionCard assertion={ranks} />
+  <DataTable
+    title="Where the county sits among Ohio's 88 counties"
+    caption="Rank 1 is the worst. The working-age ranks come from the twenty-year file at ages 35–64; the 2022–2024 ranks from the recent vintages at ages 35 and over. Different ages, different models, different years — the two sets are reported and not differenced."
+    columns={['Measure', 'Rank of 88']}
+    rows={[
+      ['Working-age stroke, 2005 / 2010 / 2015 / 2019', '15th / 14th / 16th / 16th'],
+      ['Working-age heart disease, same years', '38th / 48th / 43rd / 39th'],
+      ['Heart disease, 2022–2024, ages 35+', '5th'],
+      ['Stroke, 2022–2024, ages 35+', '82nd'],
+    ]}
+  />
+  <p>
+    On the newest measure this county is in Ohio's worst six for one cardiovascular cause and its
+    best seven for the other. On the older working-age measure the two were the other way round.
+    Both pairs are internally consistent; what cannot be done is to subtract one design from the
+    other and call the difference a change.
+  </p>
+  <p>
+    One thing the file rules out. This site holds a Black–white life-expectancy gap here of 6.91
+    years, wider than the state's or the nation's. The cardiovascular racial gap is large — Black
+    working-age residents die of stroke at 2.26 times the white rate — and it ranks 23rd of the 43
+    Ohio counties where both can be estimated, which is the middle. Whatever makes this county's
+    life-expectancy gap unusual, it is not that.
+  </p>
+  <p>
+    And two causes are two causes. Cancer kills more Americans than stroke; accidents kill more
+    people under 45 than either; diabetes, liver disease and respiratory disease are all absent
+    from this file, and the county's overdose deaths are counted by a different programme
+    altogether. So the answer to what this county dies of is, so far, one clear line about hearts,
+    one clear line about strokes, and a silence over everything else that no source held here can
+    fill.
+  </p>
+</Article>
