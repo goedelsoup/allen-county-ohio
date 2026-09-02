@@ -26,17 +26,17 @@ const baddaySpec = spec(badday, '90th percentile AQI')
 
 <Article slug="first-in-ohio-and-the-air-is-clean">
   <p>
-    Seventeen industrial facilities in Allen County filed a form for 2024 saying how much listed
-    toxic chemical they had released. Added up, it is more than any other county in Ohio reported —
-    more than Cuyahoga, which has a hundred and twenty-two such facilities and thirteen times the
-    population. The county holds under one per cent of Ohio's people and eighteen per cent of what
-    Ohio reported putting out.
+    Twenty industrial facilities in Allen County filed with the federal toxics inventory for 2024,
+    and seventeen of them reported a quantity released. Added up, it is more than any other county
+    in Ohio reported — more than Cuyahoga, which had a hundred and twenty-two reporting facilities
+    and thirteen times the population. The county holds under one per cent of Ohio's people and
+    eighteen per cent of what Ohio reported putting out.
   </p>
   <AssertionCard assertion={leads} open />
   <ChartFigure
     id="counties"
     title="The three largest county totals in Ohio, 2024"
-    caption="On-site releases in millions of pounds. Allen is first on 9.4 million from 17 facilities; Cuyahoga, third, reports 4.7 million from 122."
+    caption="On-site releases in millions of pounds. Allen is first on 9.4 million from 17 reporting facilities; Cuyahoga, third, reports 4.7 million from 122."
     columns={['County', 'Million pounds']}
     rows={leads.figures.map((f) => [f.label, f.value.toFixed(1)])}
   />

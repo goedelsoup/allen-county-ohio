@@ -3813,7 +3813,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         supports: &[
             support!(
                 "measure/allen-county-toxic-releases-1987-2024.yml",
-                "**Allen County released more listed toxic chemical in 2024 than any other county in Ohio.**\n  9,417,778 pounds, 18.0 per cent of the state's 52.2 million, from 17 facilities \u{2014} ahead of\n  Ashtabula's 6.2 million from 28 and Cuyahoga's 4.7 million from 122. [verified] \u{2014} same dataset,\n  the whole state for 2024, summed here by county. The county holds 0.85 per cent of Ohio's people."
+                "**Allen County released more listed toxic chemical in 2024 than any other county in Ohio.**\n  9,417,778 pounds, 18.0 per cent of the state's 52.2 million \u{2014} ahead of Ashtabula's 6.2 million\n  and Cuyahoga's 4.7 million, from 28 and 122 reporting facilities against this county's 17.\n  [verified] \u{2014} same dataset, the whole state for 2024, summed here by county. The county holds\n  0.85 per cent of Ohio's people."
             ),
             support!(
                 "measure/allen-county-toxic-releases-1987-2024.yml",
