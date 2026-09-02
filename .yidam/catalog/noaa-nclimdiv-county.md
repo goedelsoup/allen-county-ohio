@@ -28,6 +28,7 @@ location:
 used-by:
   - ../corpus/measure/allen-county-precipitation-1895-2025.yml
   - ../corpus/measure/allen-county-temperature-1895-2025.yml
+  - ../corpus/measure/allen-county-land-cover-2008-2024.yml
 ---
 
 **What it is, and what it is not.** It is not a weather station. County values are area-weighted
