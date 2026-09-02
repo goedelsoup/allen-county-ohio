@@ -1,0 +1,111 @@
+id: a-page-is-an-argument-not-an-inbox
+summary: >-
+  Eighty-three phases each appended a section to whichever topic page was nearest, because the
+  site had no unit between the page and the entry. Four pages held 81 per cent of its prose and
+  none of them had an argument. The site gains a third content type — the article — and every
+  reading page gains a word budget, a stated question and an ending.
+context: |
+  The site had exactly two content types: the topic page and the entry. There was no unit
+  smaller than a page and none larger than a node, so a phase that learned something had one
+  place to put it — the end of an existing page.
+
+  The commit log records the habit in its own words: *the weather record reaches /history*,
+  *the money reaches /history*, *the third war reaches /history*, *a hundred and sixty
+  congregations reaches /history*. Twenty-one times on that page alone.
+
+  Measured at `e40a168`, across the twelve topic pages:
+
+  - **25,342 words** of prose in **103 sections**.
+  - **81 per cent** of it on four pages. [`history`](../../web/src/pages/history.astro) held
+    7,628 words in 21 sections — thirty-five minutes of reading, with no two consecutive
+    sections about the same thing. [`work`](../../web/src/pages/work.astro) held 690 in three.
+    Both were tabs of equal weight in a thirteen-item nav.
+  - **129 of 340 paragraphs** narrated the corpus's own acquisition rather than the county —
+    *for nine phases this corpus described…*, *this site had never read it*, *publishing found
+    it; reading had not*.
+  - **Two** editorial links between topic pages in the whole site.
+
+  The tab list was the same accretion at the level of the nav: thirteen items in one
+  undifferentiated row, mixing five reading pages with three instruments, and adding one every
+  time a pipeline produced a topic.
+
+  Two structural facts made it worse than untidiness. The tabs were named for where data
+  arrived rather than for what a reader wants to know, so the population page carried the
+  county's entire industrial history — 1,521 words that describe work and ground — while
+  `/work` read as a stub. And `assertionsFor(topic)` had existed in
+  [`feeds.ts`](../../web/src/lib/feeds.ts) since the feed contract was written and was called
+  by nothing: every page hand-picked assertion ids, so ten of the seventeen on `/land` carried
+  the topic `geography` and nobody noticed.
+decision: |
+  **A reading page is an argument. It states one question, answers it in movements that turn
+  the answer, ends, and is capped.**
+
+  Six reading pages replace twelve topic pages — `/`, `/ground`, `/people`, `/work`,
+  `/government`, `/history` — and three instruments (`/map`, `/entry`, `/sources`) are set
+  apart from them in the nav rather than competing with them for the same row. A reading page
+  holds at most **1,800 words of prose and eight top-level sections**, and ends with a section
+  that closes rather than one that stops.
+
+  **The article is the third content type.** A short standalone piece at `/read/<slug>`: one
+  claim, 400–900 words, its own URL, its own place in an index. It is what the site was
+  missing, and its absence is the whole of the problem above — a phase with something to say
+  had nowhere to say it but the end of a page.
+
+  An article **declares** the assertions and entries it rests on, and the declaration is gated:
+  an id that does not resolve in the feed fails the build. This is the same shape as the
+  publication gate in [`crates/publish`](../../crates/publish/), and it is why the declaration
+  is a typed list rather than links in prose.
+
+  **Provenance moves to the margin, not to the bin.** The 129 self-referential paragraphs are
+  the site's distinguishing virtue and are kept, as a marginal gloss beside the claim they
+  qualify. The rule is one sentence: *the main line says what is true of Allen County; the
+  margin says how this site came to know it.*
+
+  **The structure is gated rather than remembered.** Six tests in `web/test/` — page shape,
+  register, assertion coverage, nav length, cross-linking, heading form — baselined at what
+  the site measured on the day they were written, in the manner of
+  [the lint baseline](../lint-baseline.yml), because a gate that fails on inherited debt gets
+  switched off and stays off.
+rationale: |
+  **The editorial fix alone would not have held.** Every one of those twenty-one sections was
+  a reasonable thing to write, and each was added by an agent doing exactly what the previous
+  one had done. Rewriting the pages without giving the next phase somewhere else to land buys
+  one clean release and then the same page back. The article type is the load-bearing part of
+  this decision; the re-imposition is what makes room for it.
+
+  **Nothing is discarded and the corpus is untouched.** The 103 sections are re-imposed, not
+  cut: 50 stay on or move between the six reading pages, 53 become or fold into 37 articles
+  averaging 481 words. Every assertion, verbatim span, tier and catalog source survives the
+  move, because the move is above the feed boundary entirely. If this reads worse than what it
+  replaced, `git revert` is the whole of the remedy — which is not true of a change to the
+  corpus, and is the reason to do the restructure this way round.
+
+  **The feed's topic taxonomy is not the site's information architecture, and is left alone.**
+  Retopicking would mean editing `&'static str` literals in
+  [`derived.rs`](../../crates/publish/src/derived.rs), regenerating the feeds and committing
+  the bytes — a corpus-side change made to serve a presentation decision. The ten feed topics
+  are mapped onto the six sections in `web/src/lib/sections.ts` instead. The corpus keeps its
+  own taxonomy; the site keeps its own arrangement; the mapping is one file and it is checked.
+
+  **Alternatives considered.**
+
+  *Attach the excursions to entry pages instead of creating articles.* The site already renders
+  534 of them and each is already a URL. Rejected: most of these pieces span several nodes —
+  the fort is a site, a township, two county histories and a boundary act — and an entry page
+  is apparatus for one node, not narrative across several. The link runs the other way instead:
+  an article names the entries it concerns, and each of those entries lists the articles that
+  name it.
+
+  *Two-tier navigation, keeping twelve pages under five headings.* Rejected because it fixes
+  the tab list without fixing the pages, and adds five landing pages whose only content is
+  links.
+
+  *Delete the process narration.* Rejected. It is the reason to trust the site.
+
+  **What would change the answer.** A second reader. The word budget and the six-page shape
+  are pitched at somebody arriving without a question, who needs the county explained. A
+  researcher arriving with one is served by `/entry` and by the articles' own index, and if
+  that becomes the majority audience the budget is the first thing to reconsider — the number
+  lives in a test file so that arguing with it is cheap.
+status: accepted
+date: "2026-09-02"
