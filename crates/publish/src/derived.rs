@@ -4030,6 +4030,101 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Township tax, 2014", value: 15.6, literal: "15.600" },
         ],
     },
+    // ── Cancer ──
+    Assertion {
+        id: "cancer-is-the-ordinary-half",
+        statement: "Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 \
+                    against Ohio's 160.3 and America's 145.4, and the rate is falling. The county \
+                    ranks 62nd of Ohio's 88 counties \u{2014} the lower middle \u{2014} where for \
+                    heart disease it is fifth at 1.35 times the state rate.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 against Ohio's 160.3\n  and America's 145.4 \u{2014} and the rate is falling.** [verified] \u{2014}\n  [State Cancer Profiles](../../catalog/nci-state-cancer-profiles.md), all sites, both sexes,\n  age-adjusted deaths 2019\u{2013}2023."
+            ),
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**This is not what the county dies of unusually.** Its all-sites cancer death rate is within a\n  point of Ohio's and it ranks 62nd of the state's 88 counties \u{2014} the lower middle. Set against the\n  same corpus's finding that this county is fifth of 88 for heart disease at 1.35 times the state\n  rate, cancer is the ordinary half of its mortality. [inference] \u{2014} computed here against\n  [heart disease and stroke](allen-county-heart-disease-and-stroke-1999-2024.yml)."
+            ),
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**In figures, the four sites the county loses most people to each year: lung and bronchus 59,\n  pancreas 19, colon and rectum 16 and breast 12.** [verified] \u{2014} read from the table above, same\n  source."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[
+            Figure { label: "Lung and bronchus", value: 59.0, literal: "59" },
+            Figure { label: "Pancreas", value: 19.0, literal: "19" },
+            Figure { label: "Colon and rectum", value: 16.0, literal: "16" },
+            Figure { label: "Breast", value: 12.0, literal: "12" },
+        ],
+    },
+    Assertion {
+        id: "the-cancer-burden-is-a-mens-burden",
+        statement: "Allen County men die of cancer at 201.9 per 100,000, above Ohio's 192.3 and 18 \
+                    per cent above America's 171.5. Its women die at 129.6, below Ohio's 137.4. \
+                    124 of the county's 220 annual cancer deaths are men's, and the sites it \
+                    exceeds the nation on are lung, oesophagus and pancreas.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**The burden is a men's burden.** Allen County men die of cancer at 201.9 per 100,000 against\n  Ohio's 192.3 and America's 171.5 \u{2014} 18 per cent above the national rate, and 43rd of 88. Its women\n  die at 129.6 against Ohio's 137.4 and America's 126.3, below the state and 74th of 88. [verified]\n  \u{2014} same source, sex-specific all-sites rates. 124 of the county's 220 annual cancer deaths are\n  men's."
+            ),
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**The sites the county exceeds the nation on are few and they are alike.** Lung and bronchus at\n  41.7 against 31.5, oesophagus at 5.6 against 3.7, pancreas at 13.7 against 11.3 \u{2014} the three\n  largest excesses over the national rate. It is *below* the nation on colon and rectum, breast,\n  liver and leukemia, and below Ohio on nine of the fifteen sites it has a published rate for.\n  [inference] \u{2014} computed here from the table above."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[
+            Figure { label: "Allen men", value: 201.9, literal: "201.9" },
+            Figure { label: "Ohio men", value: 192.3, literal: "192.3" },
+            Figure { label: "Allen women", value: 129.6, literal: "129.6" },
+            Figure { label: "Ohio women", value: 137.4, literal: "137.4" },
+        ],
+    },
+    Assertion {
+        id: "a-county-rank-comes-with-an-interval",
+        statement: "Allen County's cancer death rank of 62nd out of 88 carries a 95 per cent \
+                    interval of 29th to 80th, and its pancreas rank of 16th an interval of 2nd to \
+                    73rd. On nineteen deaths a year a rank is barely a statement, and this corpus \
+                    has published ranks it computed itself with no interval at all.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**The rank carries an interval and it is wide.** 62nd of 88 has a 95 per cent interval of 29th to\n  80th; the pancreas rank of 16th has an interval of 2nd to 73rd. On nineteen deaths a year a rank\n  is barely a statement. [verified] \u{2014} same source, the `CI*Rank` columns. See\n  [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml)."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The ratio is the firmer half of that sentence and the rank is the softer.** 1.347 times the\n  state rate rests on two estimates; fifth of 88 rests on eighty-eight of them, sorted, with no\n  interval carried into the sort \u{2014} and a source that does publish rank intervals puts a comparable\n  county rank's 95 per cent bounds tens of places wide. The rank here is a point estimate of a rank\n  and is not withdrawn; it is stated as one. [inference] \u{2014} see\n  [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml) and\n  [cancer](allen-county-cancer-2018-2023.yml)."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[],
+    },
+    Assertion {
+        id: "cancer-is-not-where-the-racial-gap-lives",
+        statement: "Black residents of Allen County die of cancer at 169.1 per 100,000 and white \
+                    residents at 160.8 \u{2014} a gap of 8.3 points, where Ohio's is 11.6 and the \
+                    nation's 15.3. The county's life-expectancy gap by race is the widest of the \
+                    three, so whatever makes it wide, cancer is not it.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**Cancer is not where this county's racial mortality gap lives.** Its Black residents die of\n  cancer at 169.1 per 100,000 and its white residents at 160.8, a gap of 8.3 points; in Ohio the\n  same gap is 11.6 and nationally 15.3. Both of this county's figures are below Ohio's for the same\n  group. [verified] \u{2014} same source, non-Hispanic race categories. The corpus separately holds a\n  life-expectancy gap of 6.91 years here against 5.48 in Ohio and 5.08 nationally \u{2014} the widest of\n  the three \u{2014} so whatever makes that gap unusually wide, it is not this. [inference] \u{2014} against\n  [what the county dies of early](allen-county-early-deaths-by-cause-2020-2022.yml)."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[
+            Figure { label: "Allen County", value: 8.3, literal: "8.3" },
+            Figure { label: "Ohio", value: 11.6, literal: "11.6" },
+            Figure { label: "United States", value: 15.3, literal: "15.3" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

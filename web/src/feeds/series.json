@@ -742,6 +742,26 @@
       ]
     },
     {
+      "id": "place-allen-county::cancer-death-rate,-all-sites,-age-adjusted",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "cancer death rate, all sites, age-adjusted",
+      "unit": "deaths per 100,000",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "label": "What cancer does in Allen County, 2018–2023",
+          "as_of": "2019-2023",
+          "value": 159.0,
+          "published": "159.0",
+          "tier": "verified",
+          "source": "catalog/nci-state-cancer-profiles.md",
+          "method": "State Cancer Profiles' CSV output — `output=1` — for Ohio counties, one request per site and per stratum, nineteen sites for mortality and four for incidence. A site code with no dataset behind it returns an HTML page under HTTP 200, so every response is checked against its first line before parsing; twenty-eight codes were tried and nineteen are real. Rates are the file's own age-adjusted figures and ranks are the file's own `CI*Rank`, not computed here. Mortality covers 2019–2023 and incidence 2018–2022, and no figure combines the two. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::children-in-private-schools,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -10691,6 +10711,178 @@
           "label": "Township tax, 2014",
           "value": 15.6,
           "literal": "15.600"
+        }
+      ]
+    },
+    {
+      "id": "cancer-is-the-ordinary-half",
+      "statement": "Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 against Ohio's 160.3 and America's 145.4, and the rate is falling. The county ranks 62nd of Ohio's 88 counties — the lower middle — where for heart disease it is fifth at 1.35 times the state rate.",
+      "topic": "health",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 against Ohio's 160.3 and America's 145.4 — and the rate is falling.** [verified] — [State Cancer Profiles](../../catalog/nci-state-cancer-profiles.md), all sites, both sexes, age-adjusted deaths 2019–2023.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nci-state-cancer-profiles.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**This is not what the county dies of unusually.** Its all-sites cancer death rate is within a point of Ohio's and it ranks 62nd of the state's 88 counties — the lower middle. Set against the same corpus's finding that this county is fifth of 88 for heart disease at 1.35 times the state rate, cancer is the ordinary half of its mortality. [inference] — computed here against [heart disease and stroke](allen-county-heart-disease-and-stroke-1999-2024.yml).",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**In figures, the four sites the county loses most people to each year: lung and bronchus 59, pancreas 19, colon and rectum 16 and breast 12.** [verified] — read from the table above, same source.",
+          "tier": "verified",
+          "sources": [
+            "catalog/cdc-places.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Lung, oesophagus and pancreas are the sites a tobacco explanation would predict and the corpus has no county-level exposure history, no latency model and no counterfactual, so it does not assert one."
+      ],
+      "figures": [
+        {
+          "label": "Lung and bronchus",
+          "value": 59.0,
+          "literal": "59"
+        },
+        {
+          "label": "Pancreas",
+          "value": 19.0,
+          "literal": "19"
+        },
+        {
+          "label": "Colon and rectum",
+          "value": 16.0,
+          "literal": "16"
+        },
+        {
+          "label": "Breast",
+          "value": 12.0,
+          "literal": "12"
+        }
+      ]
+    },
+    {
+      "id": "the-cancer-burden-is-a-mens-burden",
+      "statement": "Allen County men die of cancer at 201.9 per 100,000, above Ohio's 192.3 and 18 per cent above America's 171.5. Its women die at 129.6, below Ohio's 137.4. 124 of the county's 220 annual cancer deaths are men's, and the sites it exceeds the nation on are lung, oesophagus and pancreas.",
+      "topic": "health",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**The burden is a men's burden.** Allen County men die of cancer at 201.9 per 100,000 against Ohio's 192.3 and America's 171.5 — 18 per cent above the national rate, and 43rd of 88. Its women die at 129.6 against Ohio's 137.4 and America's 126.3, below the state and 74th of 88. [verified] — same source, sex-specific all-sites rates. 124 of the county's 220 annual cancer deaths are men's.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nci-state-cancer-profiles.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**The sites the county exceeds the nation on are few and they are alike.** Lung and bronchus at 41.7 against 31.5, oesophagus at 5.6 against 3.7, pancreas at 13.7 against 11.3 — the three largest excesses over the national rate. It is *below* the nation on colon and rectum, breast, liver and leukemia, and below Ohio on nine of the fifteen sites it has a published rate for. [inference] — computed here from the table above.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "Lung, oesophagus and pancreas are the sites a tobacco explanation would predict and the corpus has no county-level exposure history, no latency model and no counterfactual, so it does not assert one."
+      ],
+      "figures": [
+        {
+          "label": "Allen men",
+          "value": 201.9,
+          "literal": "201.9"
+        },
+        {
+          "label": "Ohio men",
+          "value": 192.3,
+          "literal": "192.3"
+        },
+        {
+          "label": "Allen women",
+          "value": 129.6,
+          "literal": "129.6"
+        },
+        {
+          "label": "Ohio women",
+          "value": 137.4,
+          "literal": "137.4"
+        }
+      ]
+    },
+    {
+      "id": "a-county-rank-comes-with-an-interval",
+      "statement": "Allen County's cancer death rank of 62nd out of 88 carries a 95 per cent interval of 29th to 80th, and its pancreas rank of 16th an interval of 2nd to 73rd. On nineteen deaths a year a rank is barely a statement, and this corpus has published ranks it computed itself with no interval at all.",
+      "topic": "health",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**The rank carries an interval and it is wide.** 62nd of 88 has a 95 per cent interval of 29th to 80th; the pancreas rank of 16th has an interval of 2nd to 73rd. On nineteen deaths a year a rank is barely a statement. [verified] — same source, the `CI*Rank` columns. See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/nci-state-cancer-profiles.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+          "node_label": "Allen County heart disease and stroke mortality, 1999–2024",
+          "span": "**The ratio is the firmer half of that sentence and the rank is the softer.** 1.347 times the state rate rests on two estimates; fifth of 88 rests on eighty-eight of them, sorted, with no interval carried into the sort — and a source that does publish rank intervals puts a comparable county rank's 95 per cent bounds tens of places wide. The rank here is a point estimate of a rank and is not withdrawn; it is stated as one. [inference] — see [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml) and [cancer](allen-county-cancer-2018-2023.yml).",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "Lung, oesophagus and pancreas are the sites a tobacco explanation would predict and the corpus has no county-level exposure history, no latency model and no counterfactual, so it does not assert one."
+      ],
+      "figures": []
+    },
+    {
+      "id": "cancer-is-not-where-the-racial-gap-lives",
+      "statement": "Black residents of Allen County die of cancer at 169.1 per 100,000 and white residents at 160.8 — a gap of 8.3 points, where Ohio's is 11.6 and the nation's 15.3. The county's life-expectancy gap by race is the widest of the three, so whatever makes it wide, cancer is not it.",
+      "topic": "health",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-cancer-2018-2023.yml",
+          "node_label": "What cancer does in Allen County, 2018–2023",
+          "span": "**Cancer is not where this county's racial mortality gap lives.** Its Black residents die of cancer at 169.1 per 100,000 and its white residents at 160.8, a gap of 8.3 points; in Ohio the same gap is 11.6 and nationally 15.3. Both of this county's figures are below Ohio's for the same group. [verified] — same source, non-Hispanic race categories. The corpus separately holds a life-expectancy gap of 6.91 years here against 5.48 in Ohio and 5.08 nationally — the widest of the three — so whatever makes that gap unusually wide, it is not this. [inference] — against [what the county dies of early](allen-county-early-deaths-by-cause-2020-2022.yml).",
+          "tier": "inference",
+          "sources": [
+            "catalog/cdc-places.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "Lung, oesophagus and pancreas are the sites a tobacco explanation would predict and the corpus has no county-level exposure history, no latency model and no counterfactual, so it does not assert one."
+      ],
+      "figures": [
+        {
+          "label": "Allen County",
+          "value": 8.3,
+          "literal": "8.3"
+        },
+        {
+          "label": "Ohio",
+          "value": 11.6,
+          "literal": "11.6"
+        },
+        {
+          "label": "United States",
+          "value": 15.3,
+          "literal": "15.3"
         }
       ]
     }

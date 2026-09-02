@@ -150,6 +150,24 @@ export const ARTICLES: Article[] = [
 
   // ── People ──────────────────────────────────────────────────────────────
   {
+    slug: 'the-ordinary-half',
+    title: 'The ordinary half',
+    dek: 'The county dies young, and cancer is not why. It kills at Ohio’s rate, falling — except among men, where it does not.',
+    section: 'people',
+    era: [2018, 2023],
+    assertions: [
+      'cancer-is-the-ordinary-half',
+      'the-cancer-burden-is-a-mens-burden',
+      'a-county-rank-comes-with-an-interval',
+      'cancer-is-not-where-the-racial-gap-lives',
+    ],
+    entries: [
+      'measure/allen-county-cancer-2018-2023.yml',
+      'measure/allen-county-heart-disease-and-stroke-1999-2024.yml',
+      'measure/allen-county-early-deaths-by-cause-2020-2022.yml',
+    ],
+  },
+  {
     slug: 'fifth-worst-for-hearts',
     title: 'Fifth worst for hearts',
     dek: 'The county’s heart disease rate climbed while Ohio’s fell, and the gains that stopped in 2010 stopped only for people under 65.',
