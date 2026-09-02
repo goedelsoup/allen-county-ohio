@@ -1,0 +1,128 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const ordinary = assertion('cancer-is-the-ordinary-half')
+const men = assertion('the-cancer-burden-is-a-mens-burden')
+const rank = assertion('a-county-rank-comes-with-an-interval')
+const gap = assertion('cancer-is-not-where-the-racial-gap-lives')
+
+const spec = (a: typeof ordinary, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const sitesSpec = spec(ordinary, 'Deaths a year')
+const sexSpec = spec(men, 'Deaths per 100,000')
+const gapSpec = spec(gap, 'Points, Black minus white')
+---
+
+<Article slug="the-ordinary-half">
+  <p>
+    Allen County dies young, and it does so on every measure taken of it: 74.3 years of life
+    expectancy against 77.1 for the country, more years lost before seventy-five than the state or
+    the nation, and a heart disease death rate a third above Ohio's. So the obvious next
+    question is what else is killing people here, and the obvious first candidate is cancer.
+  </p>
+  <p>
+    It is not. Cancer kills about 220 people a year in this county at a rate within a point of
+    Ohio's, and the rate is falling.
+  </p>
+  <AssertionCard assertion={ordinary} open />
+  <ChartFigure
+    id="sites"
+    title="The four cancers Allen County loses most people to each year"
+    caption="Average annual deaths, 2019–2023. Fifteen sites have a published rate here and four — stomach, cervix, uterus and thyroid — are suppressed because the county has three or fewer deaths a year from each."
+    columns={['Site', 'Deaths a year']}
+    rows={ordinary.figures.map((f) => [f.label, String(f.value)])}
+  />
+  <script type="application/json" data-chart-spec="sites" set:html={JSON.stringify(sitesSpec)} is:inline />
+  <Gloss>
+    The agency that holds the death certificates will not give a county to a machine, which is why
+    this site knew the county's heart disease and stroke rates and nothing else it dies of. The
+    National Cancer Institute publishes about twenty causes at county grain through a different
+    door.
+  </Gloss>
+  <p>
+    There is also less cancer here than in Ohio — 459 new cases per 100,000 against the state's 473
+    — and about as much dying of it. Diabetes and chronic lower respiratory disease are still
+    unmeasured at this grain, so the answer to what else kills people here is not complete. But the
+    largest candidate has been checked and it is ordinary.
+  </p>
+
+  <h2>Except that it is a men's disease here</h2>
+  <p>
+    Split by sex the county stops being average. Men die of cancer here at 201.9 per 100,000, above
+    Ohio's men and eighteen per cent above American men. Women die at 129.6, below Ohio's women and
+    close to the national rate. Of 220 cancer deaths a year, 124 are men.
+  </p>
+  <AssertionCard assertion={men} />
+  <ChartFigure
+    id="sex"
+    title="Cancer death rates by sex, Allen County and Ohio"
+    caption="Age-adjusted deaths per 100,000, 2019–2023. The national rates are 171.5 for men and 126.3 for women. The county's men rank 43rd of Ohio's 88 counties and its women 74th."
+    columns={['Group', 'Deaths per 100,000']}
+    rows={men.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="sex" set:html={JSON.stringify(sexSpec)} is:inline />
+  <p>
+    The sites tell the same story. Of fifteen with a published rate, the county exceeds the national
+    rate meaningfully on three — lung, oesophagus and pancreas — and sits below it on colon and
+    rectum, breast, liver and leukemia. Those three are the ones a tobacco explanation would
+    predict, and CDC estimates that 17.0 per cent of the county's adults and 22.8 per cent of Lima's
+    smoke. This site is not joining the two: it has no exposure history for this county, no latency
+    model, and nothing to compare against.
+  </p>
+
+  <h2>A rank is an estimate</h2>
+  <p>
+    The most-repeated sentence on this site is a rank. Fifth worst of 88 for heart disease. Rank 82
+    for stroke. First in Ohio for reported toxic releases. Every one of them was made by sorting
+    eighty-eight numbers and reading off a position, and every one was printed as an integer.
+  </p>
+  <AssertionCard assertion={rank} />
+  <p>
+    The cancer source publishes the interval on its own ranks, and that is how large the uncertainty
+    turns out to be. Sixty-second of eighty-eight means somewhere between twenty-ninth and eightieth
+    — which is to say, somewhere in the middle three-quarters, which is what having no idea looks
+    like in rank form. Sixteenth for pancreatic cancer, on nineteen deaths a year, means anywhere
+    from second to seventy-third.
+  </p>
+  <p>
+    So the ratio is the sentence worth trusting and the rank is the sentence worth reading with
+    care. A rate 1.35 times the state's rests on two estimates. A rank rests on eighty-eight and
+    shows none of them. The heart-disease finding is not withdrawn — that ratio is large and the
+    rank is probably in the worst tenth — but it now says on its face that it was sorted rather than
+    counted.
+  </p>
+
+  <h2>Where the gap is not</h2>
+  <p>
+    This county's Black residents live 6.91 fewer years than its white residents, a gap wider than
+    Ohio's 5.48 and the nation's 5.08. That is the largest single fact this site holds about health
+    here, and every cause it examines is a candidate explanation.
+  </p>
+  <AssertionCard assertion={gap} />
+  <ChartFigure
+    id="gap"
+    title="The racial gap in cancer death rates, three geographies"
+    caption="Black non-Hispanic minus white non-Hispanic age-adjusted rate, deaths per 100,000, 2019–2023. Allen County's gap is the narrowest of the three, and both of its figures are below Ohio's for the same group."
+    columns={['Geography', 'Gap, points']}
+    rows={gap.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="gap" set:html={JSON.stringify(gapSpec)} is:inline />
+  <p>
+    Cancer is not one. The gap here is 8.3 points where Ohio's is 11.6 and the nation's 15.3, and
+    both of the county's own figures sit below the state's for the same group. This is the second
+    cause to be checked against that gap and the second to come back narrower than expected — the
+    heart-disease record found a gap that was large and entirely ordinary for Ohio. Whatever makes
+    this county's racial life-expectancy gap the widest of the three, two of the biggest killers
+    have now been asked and neither answers.
+  </p>
+</Article>

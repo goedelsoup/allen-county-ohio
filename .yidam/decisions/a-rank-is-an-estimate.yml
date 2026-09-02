@@ -1,0 +1,68 @@
+id: a-rank-is-an-estimate
+summary: >-
+  This corpus has published "fifth worst county in Ohio" and "rank 82 of 88" and "22nd on the size
+  of the rise", each computed by sorting eighty-eight point estimates. A source that publishes the
+  interval on its own ranks puts Allen County's all-sites cancer rank at 62nd with a 95 per cent
+  interval of 29th to 80th, and its pancreas rank at 16th with an interval of 2nd to 73rd. A rank
+  over small counties is an estimate with a wide interval, and this corpus has been printing the
+  point.
+context: |
+  Ranking is the corpus's most-used comparative move and its cheapest. Sort the state's counties on
+  a rate, find this one, print the position. It reads as a fact — 62nd is an integer, and integers
+  do not look like estimates.
+
+  The National Cancer Institute's county reports publish `CI*Rank` with lower and upper bounds
+  beside it, and the bounds are not decoration:
+
+      all sites, both sexes      rank 62 of 88      interval 29 to 80
+      all sites, male            rank 43            interval 13 to 78
+      all sites, female          rank 74            interval 26 to 87
+      all sites, Black non-Hisp. rank 21            interval  3 to 29
+      pancreas                   rank 16            interval  2 to 73
+      lung and bronchus          rank 45            interval 18 to 74
+
+  Nineteen deaths a year from pancreatic cancer place this county anywhere from second worst to
+  seventy-third. The point estimate of 16th would, printed alone, be a sentence about a crisis.
+
+  The arithmetic is not surprising once stated. A rank is a function of eighty-eight noisy
+  quantities, and in a county of a hundred thousand the annual count behind a cause-specific rate is
+  in the tens. What is surprising is how confident the integer looks.
+
+  This corpus's own published ranks were computed exactly this way, from a spatially smoothed
+  three-year average with no interval carried into the sort:
+  [the heart-disease node](../corpus/measure/allen-county-heart-disease-and-stroke-1999-2024.yml)
+  says fifth worst of 88, and stroke 82nd, and 22nd on the size of a rise.
+decision: |
+  **Where a rank is published with an interval, quote the interval. Where this corpus computes a
+  rank itself, it is computing a point estimate of a rank and the node says so.**
+
+  - Lead with the **ratio**, not the rank. "1.35 times the state rate" rests on two numbers and
+    their intervals; "fifth worst of 88" rests on eighty-eight and hides all of them. The ratio is
+    the more robust sentence and usually the more informative one.
+  - A rank may still be printed. It is how a reader locates a county among its peers, and dropping
+    it loses more than it saves. It is printed **with** its basis: what was sorted, over how many
+    units, and whether an interval was available.
+  - **Treat a rank in the middle as no information at all.** An interval of 29 to 80 out of 88 says
+    the county is somewhere in the middle three-quarters, which is what "we cannot tell" looks like
+    in rank form.
+  - A rank at an extreme is worth more, and still not a point. Where the interval is unpublished,
+    say the rank was computed here from point estimates and give the ratio beside it.
+  - This applies to every ranking this corpus makes, not only to mortality: election, valuation,
+    release and employment ranks are the same object.
+rationale: |
+  **The correction runs backwards as well as forwards.** "Fifth worst in Ohio for heart disease"
+  was the headline of a recent phase and it was computed from eighty-eight point estimates. It is
+  not withdrawn: the underlying ratio is 1.347 times the state rate on a spatially smoothed
+  estimate, which is a large signal, and the rank is probably in the worst tenth. But the integer
+  was published as though it were counted, and it was sorted.
+
+  **Smoothing cuts both ways.** The heart-disease source is spatially smoothed, which narrows the
+  variance of each county's estimate and would narrow a rank interval too — and also borrows
+  strength from neighbours, so a rank computed on it is partly a rank of the neighbourhood. Neither
+  effect is quantified here. That is itself the argument for the ratio.
+
+  **What this does not buy.** It gives no method for computing an interval on a rank this corpus
+  has produced itself. Doing that properly needs each county's standard error, which the smoothed
+  files do not carry. The rule is to say what was done, not to manufacture a bound.
+status: accepted
+date: "2026-09-02"
