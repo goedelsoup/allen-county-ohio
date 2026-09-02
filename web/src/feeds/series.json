@@ -1890,6 +1890,16 @@
           "method": "Read from the archive.org scan of the 1885 volume at 320 to 600 dpi rather than from its OCR, because the typeface confuses 3 with 8 and the OCR inherits the confusion: it renders the Republican vote of Lima's Third Ward as 108 where the page says 103, and Greeley's county vote as 2,403 where the page says 2,463. Each year's presidential figures were checked against the same year's other offices on the same page, which in this county run within a few dozen votes of the head of the ticket. Totals in the table above are this corpus's addition of the candidate columns the book prints, not figures the book prints. [verified]"
         },
         {
+          "node": "measure/allen-county-presidential-vote-1888-1908.yml",
+          "label": "Allen County presidential vote, 1888–1908",
+          "as_of": "1908",
+          "value": 13718.0,
+          "published": "13718",
+          "tier": "verified",
+          "source": "catalog/ohio-election-statistics-1888-1910.md",
+          "method": "Every figure read from a page render; no figure taken from a text layer, which for these volumes is either column-major and unassemblable or row-major and wrong — it gives Allen 3,079 and 4,946 in 1892 where the page prints 3,579 and 4,945. Totals: 1892, 1900 and 1908 are the volumes' own printed total-vote columns and \"others\" is the residual; 1888, 1896 and 1904 are abstracts with every candidate column, and the total is this corpus's addition. 1888 and 1904 check against printed plurality columns, 1892 and 1896 and 1900 and 1908 against a second printing of the same county row in a different volume. [verified]"
+        },
+        {
           "node": "measure/allen-county-presidential-vote-1920.yml",
           "label": "Allen County presidential vote, 1920",
           "as_of": "1920-11-02",
@@ -8245,6 +8255,106 @@
           "label": "2020",
           "value": 12573.0,
           "literal": "12573"
+        }
+      ]
+    },
+    {
+      "id": "the-county-did-not-turn-with-1896",
+      "statement": "The realignment of 1896 did not reach Allen County. William McKinley, Ohio's own governor at the head of the ticket, gained five points here over 1892 and still lost the county by 1,401 votes — its widest Democratic margin of the six elections. The county did not turn at an election: across the seven from 1884 to 1908 its margin never left a band 331 votes wide while the vote cast grew 74 per cent, so a fixed block of votes was diluted rather than converted.",
+      "topic": "elections",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-presidential-vote-1888-1908.yml",
+          "node_label": "Allen County presidential vote, 1888–1908",
+          "span": "**The realignment of 1896 did not reach this county.** William McKinley was Ohio's own governor and the head of the ticket, and he gained five points here over Harrison's 1892 share — and still lost Allen County by 1,401 votes, the widest Democratic margin of the six.",
+          "tier": "inference",
+          "sources": [
+            "catalog/ohio-election-statistics-1888-1910.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1888-1908.yml",
+          "node_label": "Allen County presidential vote, 1888–1908",
+          "span": "**The county did not turn at an election. A fixed block of votes was diluted.** Across the seven presidential elections from 1884 to 1908 the margin never leaves a band 331 votes wide — 1,070, 1,362, 1,366, 1,401, 1,259, 1,111 and 1,354 — while the vote cast grows from 7,903 to 13,718, or 74 per cent. As a share the Democratic edge falls almost monotonically: 13.5 points, 14.9, 14.5, 12.2, 10.5, −9.6 and 9.9, the negative term being 1904 and the only one the Republican carried.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1888-1908.yml",
+          "node_label": "Allen County presidential vote, 1888–1908",
+          "span": "**The county's first Republican presidential majority since the Civil War is 1904, and it lasted one election.** Roosevelt takes 52.5 per cent; four years later Bryan takes 7,195 votes, the largest Democratic vote anywhere in this run, and the county goes back.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-election-statistics-1888-1910.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1888-1908.yml",
+          "node_label": "Allen County presidential vote, 1888–1908",
+          "span": "**Warren G. Harding lost this county before he won it.** Running for governor in 1910 he took 3,825 votes here against Judson Harmon's 5,837, on a total of 10,574; ten years later he carried it for president 13,978 to 11,658.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-election-statistics-1888-1910.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1888-1908.yml",
+          "node_label": "Allen County presidential vote, 1888–1908",
+          "span": "**The office printed one of these figures two ways.** McKinley's 1896 vote here is 4,959 in the abstract and in the 1904 volume, and 4,956 in the 1908 volume.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-election-statistics-1888-1910.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-presidential-vote-1920.yml",
+          "node_label": "Allen County presidential vote, 1920",
+          "span": "**Six of the eight elections in between are now held, and not one of them is the turn.** The county went Democratic in 1888, 1892, 1896, 1900 and 1908, and Republican once, in 1904, by 1,111 votes — a margin inside the same band as every Democratic one.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-election-statistics-1888-1910.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not know who the arriving voters were; the county gained 16,662 residents between 1880 and 1900 and no source held here says how they voted."
+      ],
+      "figures": [
+        {
+          "label": "1884",
+          "value": 13.5,
+          "literal": "13.5"
+        },
+        {
+          "label": "1888",
+          "value": 14.9,
+          "literal": "14.9"
+        },
+        {
+          "label": "1892",
+          "value": 14.5,
+          "literal": "14.5"
+        },
+        {
+          "label": "1896",
+          "value": 12.2,
+          "literal": "12.2"
+        },
+        {
+          "label": "1900",
+          "value": 10.5,
+          "literal": "10.5"
+        },
+        {
+          "label": "1904",
+          "value": -9.6,
+          "literal": "−9.6"
+        },
+        {
+          "label": "1908",
+          "value": 9.9,
+          "literal": "9.9"
         }
       ]
     },
