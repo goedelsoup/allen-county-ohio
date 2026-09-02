@@ -47,10 +47,19 @@ in either figure breaks the identity. [verified]
 
 **A note on the two 1920 volumes.** archive.org holds two items both titled *Ohio Election
 Statistics* and both dated 1920 — `ohioelectionsta02statgoog` and `ohioelectionsta03statgoog`. Only
-the first was read. The rest of the series is `ohioelectionsta00statgoog` (1895),
-`ohioelectionsta04statgoog` (1901) and `ohioelectionsta01statgoog` (1905), and the 1901 volume
-carries a running statewide table of the vote at every presidential and state election back to
-1803 — **state totals only**, which is why it does not close this county's gap.
+the first was read.
+
+**What this entry said about the rest of the series was wrong, in two ways.** It recorded three
+further items — `ohioelectionsta00statgoog` (1895), `ohioelectionsta04statgoog` (1901) and
+`ohioelectionsta01statgoog` (1905) — as single volumes, and treated the series as ending there.
+Each of the three is a **bound run of several years**: the one dated 1905 is 2,009 pages and carries
+the election statistics for 1898, 1903, 1904, 1905 and 1908. And the series does not begin in 1895 —
+before the separate title existed the returns were a division of the Secretary of State's *Annual
+Report*, which is why searching this title found nothing earlier. All six of the volumes now read
+are catalogued at
+[Ohio Election Statistics, 1888–1910](ohio-election-statistics-1888-1910.md). What was right is the
+observation about the 1901 volume's running table back to 1803: it is **state totals only**, and it
+is not what closed the gap.
 
 **What it does not carry.** No precincts and no townships: the county is one row. For anything
 below the county line in 1920 this corpus has nothing, and the last sub-county returns it holds

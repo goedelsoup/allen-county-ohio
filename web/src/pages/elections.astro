@@ -11,6 +11,7 @@ const rising = assertion('republican-share-rising')
 const swing = assertion('democratic-ground-moved-fastest')
 const eleven = assertion('eleven-precincts')
 const changed = assertion('the-county-changed-sides')
+const turned = assertion('the-county-did-not-turn-with-1896')
 
 const shareSpec = line(rising.figures.map((f) => f.label), [
     { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
@@ -54,6 +55,27 @@ const eighteenEightyFour = [
   ['Spencer', '159', '322', 'D+163'],
   ['Richland — Bluffton', '125', '349', 'D+224'],
   ['Allen County, as printed', '3,372', '4,442', 'D+1,070'],
+]
+
+// The Democratic margin as a share of the vote cast, 1884 to 1908. Signed: the 1904 term is
+// negative because the Republican carried that one, so the line dips through zero where the county
+// changed hands and comes back. From the assertion's own figures.
+const marginSpec = line(turned.figures.map((f) => f.label), [
+    { name: 'Democratic margin, points of the vote cast', y: turned.figures.map((f) => f.value) },
+  ], {
+  yTitle: 'Points',
+  labelLast: true,
+})
+
+// The six elections as the Secretary of State printed them, with the margin computed. Typed out
+// because the corpus holds them as one measure and the site wants the rows.
+const sixElections = [
+  ['1888', 'Harrison', '3,761', 'Cleveland', '5,123', '274', '9,158', 'D+1,362'],
+  ['1892', 'Harrison', '3,579', 'Cleveland', '4,945', '902', '9,426', 'D+1,366'],
+  ['1896', 'McKinley', '4,959', 'Bryan', '6,360', '210', '11,529', 'D+1,401'],
+  ['1900', 'McKinley', '5,281', 'Bryan', '6,540', '200', '12,021', 'D+1,259'],
+  ['1904', 'Roosevelt', '6,091', 'Parker', '4,980', '532', '11,603', 'R+1,111'],
+  ['1908', 'Taft', '5,841', 'Bryan', '7,195', '682', '13,718', 'D+1,354'],
 ]
 
 const turnout = seriesById('jurisdiction-allen-county-government::ballots-cast,-general-election')
@@ -178,10 +200,47 @@ const correlation = swing.figures[0]
       transcription of documents the Secretary of State's present-day site will not serve to an
       automated client. The office that returns 403 in 2026 answered in 1921, in a book.
     </p>
+  </section>
+
+  <section>
+    <h2>It did not turn with 1896</h2>
     <p>
-      When the county changed sides is not established. Eight presidential elections sit between
-      Cleveland's 1,070-vote margin in 1884 and Harding's 2,320-vote margin in 1920, and this site
-      holds none of them.
+      That gap is now six-eighths closed, and the office that closed it is the same one. The
+      Secretary of State's returns for these elections were not missing; they were filed under
+      another title. Three of the four <em>Ohio Election Statistics</em> items on archive.org are
+      bound runs of several years rather than single volumes, and before that title existed the
+      returns were a division of his <em>Annual Report</em>. Six volumes, six elections, and four of
+      them read out of reports published two, four or twelve years after the vote — because the
+      office reprints a county's presidential row beside the next odd year's governor.
+    </p>
+    <AssertionCard assertion={turned} open />
+    <ChartFigure
+      id="democratic-margin-1884-1908"
+      title="Democratic margin in Allen County, points of the vote cast"
+      caption="Signed, so 1904 is below the line: the county went Republican once and came straight back. The line falls steadily and the count behind it does not — every one of these seven margins is between 1,070 and 1,401 votes."
+      columns={['Election', 'Democratic margin']}
+      rows={turned.figures.map((f) => [f.label, `${f.value} pts`])}
+      height={300}
+    />
+    <script type="application/json" data-chart-spec="democratic-margin-1884-1908" set:html={JSON.stringify(marginSpec)} is:inline />
+    <DataTable
+      title="Allen County for president, 1888 to 1908"
+      caption="Bryan is on the 1896 ballot twice, Democratic and People's; the 34 votes on his second line are counted in the others column here, and moving them across takes his share from 55.2 to 55.5. The 1892 others column — 902 votes, 9.6 per cent — is half again the state's rate in the same table."
+      columns={['Year', 'Republican', 'Votes', 'Democrat', 'Votes', 'Others', 'Total', 'Margin']}
+      rows={sixElections}
+    />
+    <p class="note">
+      One of these figures is printed two ways by the office that certified it. McKinley's 1896 vote
+      in Allen County is 4,959 in the abstract for that election and in the comparative table of the
+      1904 volume, and 4,956 in the comparative table of the 1908 volume. Nothing inside the 1908
+      volume could catch it: its comparative tables print two columns a year and no totals, no
+      pluralities and no state row, so 4,956 breaks no identity on its own page. Only another
+      printing could, and the corpus now prefers the abstract and publishes the divergence.
+    </p>
+    <p>
+      What is left is 1912 and 1916. Archive.org holds no Ohio volume covering either, and those two
+      elections are where a margin that had sat between 1,070 and 1,401 votes for a quarter of a
+      century became Harding's 2,320.
     </p>
   </section>
 

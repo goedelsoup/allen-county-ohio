@@ -2929,6 +2929,54 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-county-did-not-turn-with-1896",
+        statement: "The realignment of 1896 did not reach Allen County. William McKinley, Ohio's \
+                    own governor at the head of the ticket, gained five points here over 1892 and \
+                    still lost the county by 1,401 votes \u{2014} its widest Democratic margin of the \
+                    six elections. The county did not turn at an election: across the seven from \
+                    1884 to 1908 its margin never left a band 331 votes wide while the vote cast \
+                    grew 74 per cent, so a fixed block of votes was diluted rather than converted.",
+        topic: "elections",
+        // The margin is plotted as a share rather than as a count of votes: the count is the thing
+        // that does not move, and a line of it would be flat where the finding is a slope.
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-1888-1908.yml",
+                "**The realignment of 1896 did not reach this county.** William McKinley was Ohio's own governor\n  and the head of the ticket, and he gained five points here over Harrison's 1892 share \u{2014} and still\n  lost Allen County by 1,401 votes, the widest Democratic margin of the six."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1888-1908.yml",
+                "**The county did not turn at an election. A fixed block of votes was diluted.** Across the seven\n  presidential elections from 1884 to 1908 the margin never leaves a band 331 votes wide \u{2014} 1,070,\n  1,362, 1,366, 1,401, 1,259, 1,111 and 1,354 \u{2014} while the vote cast grows from 7,903 to 13,718, or\n  74 per cent. As a share the Democratic edge falls almost monotonically: 13.5 points, 14.9, 14.5,\n  12.2, 10.5, \u{2212}9.6 and 9.9, the negative term being 1904 and the only one the Republican carried."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1888-1908.yml",
+                "**The county's first Republican presidential majority since the Civil War is 1904, and it lasted\n  one election.** Roosevelt takes 52.5 per cent; four years later Bryan takes 7,195 votes, the\n  largest Democratic vote anywhere in this run, and the county goes back."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1888-1908.yml",
+                "**Warren G. Harding lost this county before he won it.** Running for governor in 1910 he took\n  3,825 votes here against Judson Harmon's 5,837, on a total of 10,574; ten years later he carried\n  it for president 13,978 to 11,658."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1888-1908.yml",
+                "**The office printed one of these figures two ways.** McKinley's 1896 vote here is 4,959 in the\n  abstract and in the 1904 volume, and 4,956 in the 1908 volume."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1920.yml",
+                "**Six of the eight elections in between are now held, and not one of them is the turn.** The\n  county went Democratic in 1888, 1892, 1896, 1900 and 1908, and Republican once, in 1904, by 1,111\n  votes \u{2014} a margin inside the same band as every Democratic one."
+            ),
+        ],
+        answers: &["does not know who the arriving voters were"],
+        figures: &[
+            Figure { label: "1884", value: 13.5, literal: "13.5" },
+            Figure { label: "1888", value: 14.9, literal: "14.9" },
+            Figure { label: "1892", value: 14.5, literal: "14.5" },
+            Figure { label: "1896", value: 12.2, literal: "12.2" },
+            Figure { label: "1900", value: 10.5, literal: "10.5" },
+            Figure { label: "1904", value: -9.6, literal: "\u{2212}9.6" },
+            Figure { label: "1908", value: 9.9, literal: "9.9" },
+        ],
+    },
+    Assertion {
         id: "the-county-changed-sides",
         statement: "Allen County was Democratic ground for most of the nineteenth century. The \
                     Democrat carried it at seven of the eight presidential elections its own 1885 \
