@@ -2382,6 +2382,26 @@
       ]
     },
     {
+      "id": "place-allen-county::unemployment-rate,-Allen-County,-annual-average",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "unemployment rate, Allen County, annual average",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "label": "Allen County unemployment, 1990–2026",
+          "as_of": "2025",
+          "value": 4.8,
+          "published": "4.8",
+          "tier": "verified",
+          "source": "catalog/bls-laus.md",
+          "method": "Allen County's four series were extracted from the 336 MB national county file and the file deleted; Ohio's from the states file; the national rate from the Current Population Survey's `LNU04000000` through the public API, because this programme does not publish a national figure of its own. Period `M13` is the agency's annual average and is quoted as published rather than recomputed, except for the national column, which has no `M13` here and is the mean of the year's months. County estimates are modelled and controlled to a state total; a tenth of a point between two counties in one month is not a finding, and nothing here rests on one. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::value-of-crops,-live-stock-products-and-farm-expenses,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -9230,6 +9250,205 @@
           "label": "2025",
           "value": 0.0,
           "literal": "0.0"
+        }
+      ]
+    },
+    {
+      "id": "the-rate-converged-and-the-workforce-did-not",
+      "statement": "Allen County's unemployment rate ran above Ohio's for twenty-four years running and then stopped: the gap was 0.4 points in 2013, 0.0 in 2014, and has averaged a tenth of a point since. Over the same record Ohio's labour force grew 10.3 per cent and the county's fell 8.3, so the county stopped having a higher share of its workers out of work partly by having fewer workers.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "node_label": "Allen County unemployment, 1990–2026",
+          "span": "**The county's rate was above its state's for twenty-four years running, and then it stopped.** Every year from 1990 to 2013 Allen County's annual rate exceeded Ohio's, by a mean of 1.0 points and by as much as 2.1 in 1996. From 2014 the mean gap is 0.10 points and the county is at or below the state in six of twelve years.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "node_label": "Allen County unemployment, 1990–2026",
+          "span": "**It converged on the state and not on the country.** Against the national rate the county's mean gap is +1.14 points in the 1990s, +1.25 in the 2000s and +0.28 from 2014 — narrower, but it has been below the nation in only two of the last twelve years.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "node_label": "Allen County unemployment, 1990–2026",
+          "span": "**The convergence is a subtraction.** Across the record Ohio's labour force grew 10.3 per cent and Allen County's fell 8.3.",
+          "tier": "inference",
+          "sources": [
+            "catalog/bls-laus.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "node_label": "Allen County unemployment, 1990–2026",
+          "span": "**Fewer people work in this county now than in 1990.** Employed residents peaked at 49,671 in 2006 and stand at 45,950 in 2025 — 3,721 fewer, a fall of 7.5 per cent — and the 2025 figure is 2,623 below 1990's.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "node_label": "Allen County unemployment, 1990–2026",
+          "span": "**April 2020 is the worst month in the record and nothing else is close.** The county's rate was 18.6 per cent, against a previous worst of 12.7 in March 2009.",
+          "tier": "inference",
+          "sources": [
+            "catalog/bls-laus.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-unemployment-1990-2026.yml",
+          "node_label": "Allen County unemployment, 1990–2026",
+          "span": "**In figures: the county's annual rate was 7.7 per cent in 1990, 4.7 in 2000, 11.4 in 2009, 5.8 in 2014, 4.0 in 2019, 8.5 in 2020 and 4.8 in 2025**, and its labour force fell from 52,911 in 2006 to 48,288 in 2025.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "1990",
+          "value": 7.7,
+          "literal": "7.7"
+        },
+        {
+          "label": "2000",
+          "value": 4.7,
+          "literal": "4.7"
+        },
+        {
+          "label": "2009",
+          "value": 11.4,
+          "literal": "11.4"
+        },
+        {
+          "label": "2014",
+          "value": 5.8,
+          "literal": "5.8"
+        },
+        {
+          "label": "2019",
+          "value": 4.0,
+          "literal": "4.0"
+        },
+        {
+          "label": "2020",
+          "value": 8.5,
+          "literal": "8.5"
+        },
+        {
+          "label": "2025",
+          "value": 4.8,
+          "literal": "4.8"
+        }
+      ]
+    },
+    {
+      "id": "eleven-years-of-more-jobs-than-workers",
+      "statement": "Two programmes that never consult each other — employers' insurance filings for jobs, a household estimate for workers — put more jobs inside Allen County than the county has employed residents, in every one of the eleven years both cover. The smallest difference is 3,362 and the largest 4,449.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "**A third pair of programmes says the same thing for eleven years running.** The county's jobs are counted where they are by the employer's insurance filings and its working residents are counted where they live by a household estimate, and in every year both have covered, the first number is larger than the second.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-qcew.md",
+            "catalog/bls-laus.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "**Eleven years, every difference positive, none smaller than 3,362 and none larger than 4,449.**",
+          "tier": "inference",
+          "sources": [
+            "catalog/bls-qcew.md",
+            "catalog/bls-laus.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "**In figures, the eleven differences: 4,132 in 2014, then 4,344, 3,892, 4,065, 4,449, 3,481, 3,673, 3,362, 3,800, 3,895 and 3,970 in 2024.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "**The three programmes agree on the sign and not on the size, and the reason is definitional.** For 2022 the pair above puts the net at +3,800 where the table at the head of this node puts it at +5,895.",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-commuting-2022.yml",
+          "node_label": "Who comes and goes to work in Allen County, 2022",
+          "span": "**The net is small and the gross is enormous, and only the gross is a fact about commuting.** Somewhere between 3,800 and 5,895 more people work here than live-and-work here, on 42,643 crossings of the county line in a working day.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2014",
+          "value": 4132.0,
+          "literal": "4,132"
+        },
+        {
+          "label": "2015",
+          "value": 4344.0,
+          "literal": "4,344"
+        },
+        {
+          "label": "2016",
+          "value": 3892.0,
+          "literal": "3,892"
+        },
+        {
+          "label": "2017",
+          "value": 4065.0,
+          "literal": "4,065"
+        },
+        {
+          "label": "2018",
+          "value": 4449.0,
+          "literal": "4,449"
+        },
+        {
+          "label": "2019",
+          "value": 3481.0,
+          "literal": "3,481"
+        },
+        {
+          "label": "2020",
+          "value": 3673.0,
+          "literal": "3,673"
+        },
+        {
+          "label": "2021",
+          "value": 3362.0,
+          "literal": "3,362"
+        },
+        {
+          "label": "2022",
+          "value": 3800.0,
+          "literal": "3,800"
+        },
+        {
+          "label": "2023",
+          "value": 3895.0,
+          "literal": "3,895"
+        },
+        {
+          "label": "2024",
+          "value": 3970.0,
+          "literal": "3,970"
         }
       ]
     }

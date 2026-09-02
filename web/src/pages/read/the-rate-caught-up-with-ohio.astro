@@ -1,0 +1,124 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { line, bar } from '../../lib/chart-spec'
+
+const converged = assertion('the-rate-converged-and-the-workforce-did-not')
+
+const rateSpec = line(
+  ['1990', '2000', '2009', '2014', '2019', '2020', '2025'],
+  [{ name: 'Allen County', y: converged.figures.map((f) => f.value) }],
+  { yTitle: 'Unemployment rate', tickSuffix: '%', labelLast: true },
+)
+
+const forceSpec = bar(
+  ['Ohio, 1990 to 2025', 'Allen County, 1990 to 2025', 'Ohio, from 2006', 'Allen County, from 2006'],
+  [10.3, -8.3, -0.1, -8.7],
+  { yTitle: 'Change in labour force', tickSuffix: '%', labelValues: true },
+)
+---
+
+<Article slug="the-rate-caught-up-with-ohio">
+  <p>
+    For twenty-four years there was a simple thing to say about work in Allen County: more people
+    here were out of it than in Ohio generally. The county's annual unemployment rate exceeded the
+    state's in every year from 1990 to 2013 — by a full point on average, and by 2.1 points in
+    1996, a year when Ohio was at five per cent and this county was at seven.
+  </p>
+  <p>
+    That is no longer true, and it stopped being true abruptly. The gap was 0.4 points in 2013 and
+    0.0 in 2014, and across the twelve years since it has averaged a tenth of a point, with the
+    county at or below the state in half of them.
+  </p>
+  <AssertionCard assertion={converged} open />
+  <ChartFigure
+    id="rate"
+    title="Allen County's unemployment rate, at seven points in the record"
+    caption="Annual averages. The full series runs monthly from January 1990 and the seven years here are chosen to show its shape: the 1990s decline, the 2009 peak, the year the gap with Ohio closed, the pre-pandemic floor, the pandemic, and now."
+    columns={['Year', 'Rate']}
+    rows={converged.figures.map((f) => [f.label, `${f.value}%`])}
+  />
+  <script type="application/json" data-chart-spec="rate" set:html={JSON.stringify(rateSpec)} is:inline />
+
+  <h2>What closed the gap was not more work</h2>
+  <p>
+    A rate is a ratio, and this one has two ways to fall. Over the same thirty-five years Ohio's
+    labour force grew 10.3 per cent and this county's fell 8.3. Measured from the county's own peak
+    in 2006 the divergence is starker still: the state is level and the county is down 8.7 per
+    cent, 4,623 people.
+  </p>
+  <ChartFigure
+    id="force"
+    title="Labour force, county against state"
+    caption="The labour force is everyone working or looking for work. Ohio's is measured over the same months as the county's, from the same programme, and the 2006 baseline is the year Allen County's own labour force peaked."
+    columns={['', 'Change']}
+    rows={[
+      ['Ohio, 1990 to 2025', '+10.3%'],
+      ['Allen County, 1990 to 2025', '−8.3%'],
+      ['Ohio, from 2006', '−0.1%'],
+      ['Allen County, from 2006', '−8.7%'],
+    ]}
+  />
+  <script type="application/json" data-chart-spec="force" set:html={JSON.stringify(forceSpec)} is:inline />
+  <p>
+    Employed residents peaked at 49,671 in 2006 and stand at 45,950, which is 2,623 fewer than the
+    record's first year. Thirty-five years, and the number of Allen County residents with a job
+    ends lower than it began. The county stopped having a higher share of its workers out of work
+    partly by having fewer workers. What that fall is made of — retirement, departure, or people
+    who stopped looking — this series counts all three the same way and separates none of them.
+  </p>
+  <p>
+    One more thing the convergence is not: it is not with the country. The county's gap against the
+    national rate ran +1.14 points in the 1990s and +1.25 in the 2000s, and it is +0.28 from 2014 —
+    narrower, but the county has been below the nation in only two of the last twelve years. Ohio
+    sits above the nation as well. Allen County caught up with its state, not with the United
+    States.
+  </p>
+
+  <h2>The same county met its two recessions in opposite shapes</h2>
+  <p>
+    In 2009 the county ran 2.3 points above Ohio at the worst month and was still above the state
+    in 2010, 2011, 2012 and 2013 — four more years of it. In 2020 the county ran 2.7 points above
+    Ohio in April and was <em>below</em> the state by June, and it has never since been more than
+    0.6 above.
+  </p>
+  <p>
+    April 2020 is the worst month in the whole record and nothing else is close: 18.6 per cent,
+    against a previous worst of 12.7 in March 2009. Employed residents fell from 46,352 in March to
+    38,831 in April — 7,521 people, one in six of everyone working, in thirty days — while the
+    labour force fell by only 1,395. They were counted as out of work rather than as gone, and
+    within two years the rate was at 4.2. The 2008 shock left a mark on this county that the 2020
+    shock did not.
+  </p>
+
+  <h2>One month has no rate at any level of government</h2>
+  <p>
+    October 2025 is empty for Allen County, for Ohio and for the United States. The agency's own
+    footnote reads <em>"Data unavailable due to the 2025 lapse in appropriations"</em>, and a second
+    footnote says the 2025 annual averages here are eleven-month averages that exclude it. The
+    calendar holds 439 months between January 1990 and July 2026; this series holds 438 figures.
+  </p>
+  <DataTable
+    title="Where the record stands"
+    caption="Annual averages except the last row, which is a single month and is marked preliminary in the file."
+    columns={['', 'Figure']}
+    rows={[
+      ['Months on the calendar, Jan 1990 – Jul 2026', '439'],
+      ['Months with a figure', '438'],
+      ['Worst month', 'April 2020, 18.6%'],
+      ['Worst month before 2020', 'March 2009, 12.7%'],
+      ['Lowest month in the record', 'May 2026, 3.0%'],
+      ['Labour force peak', '2006, 52,911'],
+      ['Labour force, 2025', '48,288'],
+    ]}
+  />
+  <p>
+    The lowest month in the record is very nearly the last one in it. May 2026 reads 3.0 per cent,
+    under April 2019's 3.3, which had been the floor. It is the best month this county has had
+    since a machine began counting them, and it arrives on a labour force nine per cent smaller
+    than the one that produced the worst.
+  </p>
+</Article>
