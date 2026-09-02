@@ -1,0 +1,117 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const share = assertion('one-job-in-five-is-nobodys-payroll')
+const lost = assertion('every-job-lost-since-2001-is-a-payroll-job')
+const farm = assertion('the-farm-proprietors-halved')
+
+const spec = (a: typeof share, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const shareSpec = spec(share, 'Per cent of all employment')
+const lostSpec = spec(lost, 'Jobs, 2001 to 2022')
+const farmSpec = spec(farm, 'Farm proprietors')
+---
+
+<Article slug="nobodys-payroll">
+  <p>
+    Three federal programmes count the jobs in Allen County and they do not agree. The insurance
+    filings find 49,136 covered jobs in 2022. The occupational survey finds 49,640 in 2024. A third
+    finds 64,238. The gap is about fourteen thousand jobs, it is not an error, and most of it has a
+    name: people working for themselves.
+  </p>
+  <AssertionCard assertion={share} open />
+  <ChartFigure
+    id="share"
+    title="Proprietors as a share of all employment in Allen County"
+    caption="The 1969–2000 and 2001–2022 figures come from two tables on two industry classifications and are two series, not one; the join moves total employment by 3,148 jobs. Nothing here is differenced across it."
+    columns={['Year', 'Proprietor share']}
+    rows={share.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+  <Gloss>
+    These five line codes have been in this catalog since August and one of them was read. Line 10
+    is the total that has appeared on this site for months; lines 20, 40, 50 and 60 split it into
+    payroll work, proprietors, farm proprietors and nonfarm proprietors, and had never been opened.
+  </Gloss>
+  <p>
+    The arithmetic closes about as well as arithmetic across three programmes ever does. Take the
+    64,238 and remove the 11,964 proprietors and 52,274 payroll jobs are left; the insurance
+    filings count 49,136 of those, and the remaining three thousand are jobs that exist but sit
+    outside unemployment insurance — some farm work, some of the smallest nonprofits, railroads,
+    a few owners of their own incorporated businesses. None of the three counts is wrong. They
+    are answers to three different questions, and only one of them is <em>how many people here
+    are working</em>.
+  </p>
+  <p>
+    An unemployment insurance filing is made by an employer about an employee. An occupational
+    survey asks establishments what they pay people to do. Neither instrument has anywhere to put a
+    woman who cuts hair in her own chair, a man who hauls with his own truck, or a farmer. So the
+    county has a fifth of its working life that two of its three job counts are structurally unable
+    to see.
+  </p>
+
+  <h2>Everything lost since 2001 was a payroll job</h2>
+  <p>
+    For thirty-one years the two halves of the county's workforce grew together. Between 1969 and
+    2000 payroll employment rose 26.3 per cent and proprietors 48.9. Then they parted, and they have
+    been moving in opposite directions ever since.
+  </p>
+  <AssertionCard assertion={lost} />
+  <ChartFigure
+    id="lost"
+    title="What happened to Allen County employment, 2001 to 2022"
+    caption="Jobs. Payroll employment fell 13.4 per cent over the period and proprietors rose 26.1, so the county's net loss is about two thirds of its gross one."
+    columns={['Component', 'Jobs']}
+    rows={lost.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="lost" set:html={JSON.stringify(lostSpec)} is:inline />
+  <p>
+    The sharpest movement in the whole fifty-four years is the most recent one. Proprietors went
+    from 9,946 in 2019 to 11,964 in 2022 — up 2,018, or a fifth, in three years, with nothing like
+    it anywhere else in the record. The nearest thing is 1982, the worst year of this county's
+    manufacturing collapse, when manufacturing employment stood at 14,349 against a 1973 peak of
+    18,400 and the proprietor share hit its high for that whole era.
+  </p>
+  <p>
+    Self-employment rising when payroll work is scarce is a shape both episodes have, and this site
+    is not going further than that. Employment counts jobs, not hours and not income. A full-time
+    trade and a Saturday one count alike, and nothing here says which the county gained.
+  </p>
+
+  <h2>Except on the farms</h2>
+  <p>
+    One current runs the other way for the whole period. In 1969 the county had 1,668 farm
+    proprietors. It has 802.
+  </p>
+  <AssertionCard assertion={farm} />
+  <ChartFigure
+    id="farm"
+    title="Farm proprietors in Allen County, 1969 to 2022"
+    caption="The series falls inside the 1969–2000 table, inside the 2001–2022 table, and across the join between them — a trend that survives a change in how everything around it is classified."
+    columns={['Year', 'Farm proprietors']}
+    rows={farm.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="farm" set:html={JSON.stringify(farmSpec)} is:inline />
+  <p>
+    Every net proprietor this county has gained since 1969 is a nonfarm one, and then some: the
+    nonfarm figure more than doubled while the farm figure halved. The land did not empty — two
+    thirds of the county is still cropland and pasture — but the number of people who own the work
+    on it has fallen by half in two generations.
+  </p>
+  <p>
+    That number also settles a puzzle left standing elsewhere on this site. The occupational survey
+    finds sixty people in farming, fishing and forestry occupations in a county two thirds covered
+    by farms, and says so with a shrug: it counts no self-employed person. Here are the ones it
+    cannot see — eight hundred and two of them, and 946 farm jobs of every kind.
+  </p>
+</Article>

@@ -321,6 +321,23 @@ export const ARTICLES: Article[] = [
 
   // ── Work ────────────────────────────────────────────────────────────────
   {
+    slug: 'nobodys-payroll',
+    title: 'Nobody’s payroll',
+    dek: 'Three federal programmes count this county’s jobs and differ by fourteen thousand. Most of the difference is people working for themselves — nearly one job in five, the highest in fifty-four years.',
+    section: 'work',
+    era: [1969, 2022],
+    assertions: [
+      'one-job-in-five-is-nobodys-payroll',
+      'every-job-lost-since-2001-is-a-payroll-job',
+      'the-farm-proprietors-halved',
+    ],
+    entries: [
+      'measure/allen-county-proprietors-1969-2022.yml',
+      'measure/allen-county-total-employment-1969-2022.yml',
+      'measure/allen-county-occupations-2014-2024.yml',
+    ],
+  },
+  {
     slug: 'what-the-work-is',
     title: 'What the work is',
     dek: 'Production is still the county’s largest occupation and more concentrated than a decade ago, and the clerical collapse underneath is smaller than it first reads.',
