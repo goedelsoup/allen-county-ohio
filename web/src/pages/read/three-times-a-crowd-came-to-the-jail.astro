@@ -1,0 +1,95 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const raid = assertion('the-night-the-jail-was-taken')
+
+const succession = assertion('the-office-passed-from-father-to-son')
+
+const jail = assertion('three-times-a-mob-came-to-the-jail')
+
+const jailSpec = bar(
+  jail.figures.map((f) => f.label),
+  jail.figures.map((f) => f.value),
+  { yTitle: 'Black voters in Lima', labelValues: true },
+)
+
+const jailCrowds = [
+  ['April 1872', "Andrew Brentlinger's execution", 'Fifty armed men guard the jail against a threatened mob. No one is hurt.'],
+  ['30 Aug 1916', 'A mob demands a Black prisoner', 'Sheriff Sherman Eley hides Charles Daniels and refuses to say where. The mob puts a rope round his neck; he is hospitalised and later given a medal.'],
+  ['12 Oct 1933', 'The jail raid', 'Sheriff Jess Sarber is shot dead in his own jail.'],
+]
+---
+
+<Article slug="three-times-a-crowd-came-to-the-jail">
+  <AssertionCard assertion={jail} />
+  <p>
+    This site has held the raid of October 1933 since its early phases — the night Sheriff Jess
+    Sarber was shot dead in the Allen County jail. It turns out to be the third such night, not
+    the first, and the 1921 county history had both of the others on facing pages.
+  </p>
+  <DataTable
+    title="Sixty-one years, three crowds"
+    caption="The 1921 history states the sheriff's duty in the same paragraph as its roster of holders: he 'is provided with a domicile in connection with the bastile, and it becomes his duty to prevent lynchings, riots and all violent disorders.'"
+    columns={['When', 'What', 'What happened']}
+    rows={jailCrowds}
+  />
+  <p>
+    The book cannot give a day for the 1872 hanging — it prints "Friday, April 7 or 15, 1872 —
+    there being conflicting reports about it". Neither date was a Friday. The 7th was a Sunday and
+    the 15th a Monday, and the Fridays that April were the 5th, 12th, 19th and 26th. Governor
+    Rutherford B. Hayes had granted the condemned man a hundred days' reprieve from a sentence
+    date of 20 January, which lands on 29 April, later than either.
+  </p>
+  <p>
+    The same volume carries the only description this site holds of the county's Black population
+    before the census tables of the present century: about 2,500 people in 1921, nearly all of
+    them in Lima, with four congregations and five fraternal orders. Its two voter counts are four
+    years apart and the second is the first to include women.
+  </p>
+  <ChartFigure
+    id="lima-black-voters"
+    title="Black voters in Lima, as the 1921 county history reports them"
+    caption="The book gives one cause — migration into the county — for a change that also spans the Nineteenth Amendment, and does not separate the two. Both figures are the book's estimates, not counts."
+    columns={['Year', 'Voters']}
+    rows={jail.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="lima-black-voters" set:html={JSON.stringify(jailSpec)} is:inline />
+  <p>
+    It is a source that has to be read against itself. On one page: "While most of the negroes
+    live in certain localities, there is no segregation." On the next: "It is said the negroes do
+    not live north of the Pennsylvania railway tracks in Lima," and "once in a while the color
+    line is drawn, and the negroes remain south of the railway tracks for safety." This site
+    records the contradiction and does not resolve it. The same chapter says the county's Jewish
+    community began with Levi Jacobs about 1850 and "never located in any other town in Allen
+    County" — a dozen families in 1878, about a hundred and some 350 people by 1921, seven years
+    after they built Temple Beth Israel.
+  </p>
+
+  <h2>What it changed about this county's government</h2>
+  <AssertionCard assertion={succession} />
+  <p>
+    The sheriff's roster on this site has shown the same two lines since the corpus first read
+    it: Jess L. Sarber, 1931–1933, and then Donald F. Sarber, 1933–1935. A two-year term ending
+    mid-decade, and the same surname straight after it. The roster gives no reason for either,
+    and for eleven phases this corpus declined to supply one, because a record saying
+    <em>died in office</em> and a guess saying <em>died in office</em> are indistinguishable once
+    written down.
+  </p>
+  <p>
+    It took a newspaper to settle it, and not the one anyone would have looked for. No Lima paper
+    is digitized in the national archive — the county seat's press is simply absent — so the
+    answer came from a wire story about a trial, reprinted in a Washington evening paper five
+    months after the fact, which calls the murdered man "the elder Sarber, who preceded his son
+    as sheriff".
+  </p>
+  <p>
+    The other irregular line in the roster is still unexplained. James K. Everett begins and ends
+    in 2017, the only holder in thirty-nine whose term does not cross a year, and the obvious
+    reading — an appointment to fill a vacancy — is still only the obvious reading.
+  </p>
+</Article>

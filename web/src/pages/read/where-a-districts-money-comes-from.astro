@@ -1,0 +1,44 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const money = assertion('lima-schools-spend-most-and-raise-least')
+
+// Shaped as the renderer reads a bar — `categories` and `values`, not a line's `x` and
+// `series`. It was written the other way for one phase and rendered a bar trace with two
+// undefined arrays, silently: nothing typechecks a spec, and the table view underneath was
+// correct the whole time, so every test passed over an empty chart.
+const moneySpec = bar(money.figures.map((f) => f.label), money.figures.map((f) => f.value), {
+  yTitle: 'Per cent of revenue',
+  tickSuffix: '%',
+})
+---
+
+<Article slug="where-a-districts-money-comes-from">
+  <AssertionCard assertion={money} />
+  <ChartFigure
+    id="lima-revenue"
+    title="Where Lima City Schools' revenue comes from, 2023"
+    caption="Every other district in the county raises between 37.0 and 65.8 per cent of its revenue locally. This is compensatory state and federal aid working the way it is designed to."
+    columns={['Source', 'Per cent of revenue']}
+    rows={money.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="lima-revenue" set:html={JSON.stringify(moneySpec)} is:inline />
+  <p>
+    Underneath the shares is the tax base, and underneath the tax base is the housing. Lima raises
+    $3,098 a pupil in property tax where Shawnee Local raises $7,727 — a ratio of 2.49, against
+    2.19 for the two places' median house values. A district's tax base is what its houses are
+    worth, which is the same sorting <a href="/housing">the housing page</a> measures from the
+    other end.
+  </p>
+  <p>
+    High spending per pupil has a second cause here that has nothing to do with poverty. The three
+    smallest districts — Waynesfield-Goshen at 472 pupils, Pandora-Gilboa at 521 and Columbus
+    Grove at 756 — are the second, third and fourth highest spenders in the county, on child
+    poverty rates between 6.6 and 10.2 per cent. A school has costs that do not divide, and a
+    district of five hundred divides them by five hundred.
+  </p>
+</Article>

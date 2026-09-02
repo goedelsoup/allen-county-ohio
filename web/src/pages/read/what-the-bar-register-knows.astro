@@ -1,0 +1,141 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion, node } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const roll = assertion('the-register-dates-them-but-cannot-place-them')
+
+const dotted = assertion('the-ninety-nine-year-hole-is-dotted')
+
+// Typed out because these are dates a newspaper printed, not term dates the graph carries.
+// The point of the table is that the last column exists and the middle one does not.
+const sampled = [
+  ['1939-11-23', 'Frank McClain', 'cut twelve street-department men 48 hours after taking office'],
+  ['1940-02-08', 'Frank E. McClain', 'called a civil service examination for chief of police'],
+  ['1941-11-20', 'Frank McClain', 're-elected; election expenses of $306.40'],
+  ['1942-06-04', 'Frank McClain', '48 more parking meters, bringing the city to 365'],
+  ['1943-11-04', 'Frank E. McClain', 'appointed a chief of police'],
+  ['1944-03-02', 'A. L. Metheany', 'council appropriated $10,000 for fire apparatus'],
+  ['1944-08-31', 'Allen L. Metheany', '“late mayor of Lima”; estate inventoried at $42,797.51'],
+  ['1945-05-10', 'William L. Ferguson', 'welcomed the manager of the Lima Reds'],
+  ['1945-07-19', 'W. I. Ferguson', 'his fire bureau closed City Hall’s third floor to meetings'],
+  ['1945-08-09', 'W. L. Ferguson', 'incumbent, one of two in a non-partisan primary'],
+  ['1945-09-13', 'William Ferguson', 'on vacation; the president of council acted in his place'],
+  ['1948-10-28', 'Frank E. McClain', '“Former Mayor of Lima”, running for county commissioner'],
+  ['1950-11-16', 'Corbin Shook', '“former Lima mayor”, named in his sister’s obituary'],
+  ['1956-09-06', 'Clyde L. Welty', 'proclaimed a “Symphony Day”'],
+]
+
+const rollSpec = bar(
+  roll.figures.map((f) => f.label),
+  roll.figures.map((f) => f.value),
+  { yTitle: 'Admissions to the Ohio bar', labelValues: true },
+)
+
+// Typed out because the admission dates live in node prose, not in a property the graph carries.
+// Sorted by admission so the two shared ceremony days sit together.
+const admitted = [
+  ['William Ray Zimmerman', 'Third District Court of Appeals', '7 May 1979', '22102'],
+  ['Matt Charles Staley', 'Common Pleas, Domestic Relations', '2 November 1979', '2227'],
+  ['Jeffrey Lee Reed', 'Common Pleas, General', '1 November 1983', '15784'],
+  ['Anthony Layton Geiger', 'Director of Law, Lima', '1 November 1983', '6150'],
+  ['Juergen Arthur Waldick', 'Third District Court of Appeals', '4 November 1985', '30399'],
+  ['John Randall Willamowski', 'Third District Court of Appeals', '4 November 1985', '29627'],
+  ['Matthew Carl Huffman', 'Ohio House, 78th District', '4 November 1985', '29473'],
+  ['Mark Christian Miller', 'Third District Court of Appeals', '18 November 1991', '55702'],
+  ['Tammie Kay Hursh', 'Lima Municipal Court', '13 November 1995', '65323'],
+  ['Terri Lynn Kohlrieser', 'Common Pleas, General', '13 November 2001', '73982'],
+  ['Todd Edward Kohlrieser', 'Common Pleas, Probate', '18 November 2002', '75240'],
+  ['John Richard Payne', 'Lima Municipal Court', '5 November 2007', '82482'],
+  ['Destiny Rae Caldwell', 'Prosecuting Attorney of Allen County', '17 November 2008', '83779'],
+]
+---
+
+<Article slug="what-the-bar-register-knows">
+  <AssertionCard assertion={roll} />
+  <p>
+    The Supreme Court of Ohio keeps a public register of everyone ever admitted to practise law in
+    this state. Searched for the county of the address an attorney has given the Court, it returns
+    334 people for Allen County — and it settles a question thirteen pages on this site had left
+    open. Every judge who sits in this county, the four judges of the Third District who hear its
+    appeals, the prosecuting attorney and Lima's director of law are admitted Ohio attorneys, and
+    every one of the thirteen came in by examination rather than by motion.
+  </p>
+  <DataTable
+    caption="Thirteen officers this site already named, with the day each was admitted and the registration number the Court gave them. Three were admitted together on 4 November 1985 and two more on 1 November 1983 — admission is a ceremony, so a shared date says nothing about a connection."
+    columns={['Officer', 'Office', 'Admitted', 'Reg. no.']}
+    rows={admitted}
+  />
+  <p>
+    What the register cannot do is say where any of them lives. Its own disclaimer is explicit:
+    the directory lists a business address, and shows a residence only when no valid business
+    address is on file — and a result does not tell you which of the two you are looking at. The
+    Third District sits in Lima and hears appeals from seventeen counties, so an Allen County
+    entry is exactly what this register would return for an appellate judge living in any of them.
+    Seven pages here ask where a district officer lives. They still ask it, now for a reason with
+    a citation under it instead of for want of looking.
+  </p>
+  <ChartFigure
+    id="bar-admissions"
+    title="Admissions to the Ohio bar by people with an Allen County address, by decade"
+    caption="A roll, not a bar. Nothing in this register marks a person as dead, so the early decades are people, not practitioners: all sixty-three admitted before 1940 sit in a status the Court calls Not Required, and no active registrant here was admitted before 1966."
+    columns={['Decade', 'Admissions']}
+    rows={roll.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="bar-admissions" set:html={JSON.stringify(rollSpec)} is:inline />
+  <p>
+    Read straight, the chart looks like a county that grew lawyers steadily for a century. It is
+    not a time series of anything. The register is cumulative and never purged: its admissions run
+    from 6 January 1925 to 17 November 2025, and 139 of the 334 sit under a status the Court
+    defines as "an attorney who is not required to register ... for a variety of reasons" and will
+    not elaborate on. Of the 334, 144 may practise today, and against the county's 100,866
+    residents that is one for every 700 people.
+  </p>
+  <p>
+    One more thing fell out of it, and it is about the ground rather than the bar. The county in
+    this register is self-reported, and the county's own geography catches it. Twenty registrants
+    with a Delphos address divide thirteen to Allen and seven to Van Wert with none left over;
+    eight in Bluffton divide six to Allen and two to Hancock, also with none left over. Both
+    cities straddle a county line, and a mailing list with no reason to care reproduces both
+    exactly. Lima straddles nothing — and seven of its 305 registrants carry no county at all.
+  </p>
+
+  <h2>The ninety-nine-year hole is dotted</h2>
+  <AssertionCard assertion={dotted} />
+  <p>
+    Lima abolished its mayor on 1 January 1922 and this site's next mayor of Lima was elected in
+    2021. Ninety-nine years with nothing in between, and the note on the office said so plainly:
+    no source here spans them. That was true, and it was the wrong test. A source does not have to
+    span a gap to put something in it.
+  </p>
+  <p>
+    The Bluffton News is the only Allen County newspaper in the Library of Congress's national
+    archive — a weekly, 952 issues, 1939 to 1959, twelve miles up the road from the county seat.
+    Asked who the mayor of Lima was, it answers fourteen times.
+  </p>
+  <DataTable
+    caption="Every mention of a mayor of Lima this weekly prints between 1939 and 1956. The middle column is a name and the right-hand one is why the name was in the paper — an appointment, a ballgame, an estate. None of the fourteen is an election report."
+    columns={['Printed', 'Named as mayor', 'In a story about']}
+    rows={sampled}
+  />
+  <p>
+    So the office gains four holders and no term dates at all. The gap is now two gaps — 1922 to
+    1939, where the question is when the mayor came back, and 1956 to 2021, where the question is
+    who — with a dotted stretch between them. Two of the fourteen close a real question along the
+    way: a mayor of Lima was calling civil service examinations "under provisions of the City
+    Charter" in February 1940, which is a charter and a mayor coexisting seventeen years after a
+    county history said the office had ended.
+  </p>
+  <p>
+    The same paper on its own village shows why fourteen mentions are not a line. Bluffton's
+    elections it reports in full: a mayor who took the seat in 1938 as president of council when
+    the elected one resigned, a write-in campaign that unseated an unopposed incumbent in 1945 by
+    225 votes to 208, a first councilwoman in 1957, and a stated custom that the highest-polling
+    councilman becomes vice mayor. Even with all that, the village's line will not close — W. A.
+    Howe is reported defeated in November 1945 and named as mayor in May 1946, April 1951 and
+    September 1952. Holding office between elections is a state, and a weekly reports events.
+  </p>
+</Article>

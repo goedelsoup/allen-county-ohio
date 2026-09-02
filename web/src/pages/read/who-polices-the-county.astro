@@ -1,0 +1,45 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import { assertion } from '../../lib/feeds'
+
+const crimeStep = assertion('a-step-that-is-not-a-crime-wave')
+---
+
+<Article slug="who-polices-the-county">
+  <p>
+    Ten agencies report crime in Allen County: the Lima police, the county sheriff, three township
+    forces in the suburbs that never incorporated, three village departments, and two sets of park
+    rangers. They entered the national incident-based reporting system between June 2004 and
+    January 2021 — and the two that police most of the county entered last. Elida, a village of
+    1,904, converted sixteen years before the county seat.
+  </p>
+  <AssertionCard assertion={crimeStep} />
+  <p>
+    The sheriff's violent offenses averaged 33.5 a year from 2015 to 2020 and 89.8 from 2021 to
+    2024. Over the same break his property offenses fell from an average of 713 to 576. A rise in
+    violence does not spare property crime while nearly tripling assaults in the same month, and a
+    better-resourced office does not record fewer burglaries. The date that explains it is not in
+    the monthly series at all — it is one field in a different endpoint, the agency roster, which
+    gives 1 December 2020 as the day the office changed what it counts.
+  </p>
+  <p>
+    So this site publishes the two halves and no trend across them. Before: 27 to 50 violent
+    offenses a year over 23,000-odd people. After: 79 to 114. Property offenses fell in both
+    halves and stand at 483 in 2024, the lowest of the ten years.
+  </p>
+  <p>
+    Lima is a longer and steadier story. Its violent crime rate has been between two and three
+    times Ohio's in every one of ten years — 769.9 per hundred thousand in 2024 against 311.9 for
+    Ohio and 363.6 for the United States — and the ratio never leaves that band while Ohio's own
+    rate rises and falls beneath it. Its violent count has no trend at all: an average of 280 a
+    year over 2015–2019 and 265 over 2020–2024. What did move is property crime, down forty per
+    cent, and the clearance rate, which went from 12.3 per cent in 2020 to 30.5 in each of the
+    last two years.
+  </p>
+  <p>
+    Two of the ten agencies are held here and eight are not, covering 58,631 of the county's
+    100,866 people. That is a limit of the demonstration key this site queried with, not of the
+    source.
+  </p>
+</Article>

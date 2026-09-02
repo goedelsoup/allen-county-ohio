@@ -1,0 +1,72 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const warLists = assertion('the-two-war-lists-do-not-join')
+
+const warListSpec = bar(
+  warLists.figures.map((f) => f.label),
+  warLists.figures.map((f) => f.value),
+  { yTitle: 'Allen County men in the World War', labelValues: true },
+)
+---
+
+<Article slug="two-counts-of-one-war">
+  <p>
+    The same chapter of the same book that gave this site the Civil War gives the First World
+    War, and this site had never read it. Chapter XLIV of the 1921 county history, "Allen County
+    in the Wars", runs fifty pages and ends in two rosters.
+  </p>
+  <AssertionCard assertion={warLists} />
+  <ChartFigure
+    id="warlists"
+    title="How many Allen County men were in the World War"
+    caption="Three answers from one chapter. The first two are the American Legion's, reported by its Ohio commander; the third is a count of the names actually printed in the roster twenty pages later, and it is a floor — ninety-six further lines are visibly names the scan mangled."
+    columns={['Count', 'Men']}
+    rows={warLists.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="warlists" set:html={JSON.stringify(warListSpec)} is:inline />
+  <p>
+    The roster belongs to Elmer McClain, an Allen County man who enlisted, did transport duty and
+    kept a card system. He names twelve sources for it — ex-service men, the YMCA at the camps,
+    the American Legion, the Federal Employment Bureau, the county recorder's office, the 1919
+    Lima city directory, the township chairmen of the Victory Loan campaign, the Knights of
+    Columbus, the Red Cross, the draft board, the historical society — and he says what it is
+    worth: <em>the compiler knows that it is not in every respect either perfectly complete or
+    perfectly accurate, but it is the most complete and accurate list in existence.</em> The book
+    cannot spell him. He is Elmert in the paragraph that introduces the list and Elmer in the line
+    above the first name.
+  </p>
+  <p>
+    Ninety-five men are on the honour roll that follows, and the two lists do not join. Matched on
+    surname and first initial, at most forty-seven of the ninety-five dead are missing from the
+    roster of the served — and one of the missing is William Paul Gallagher. The service roster is
+    alphabetical and the slot where he belongs runs Galberach, Gallant, Gallapool, Gallaspie,
+    Gallont, Galloway: a continuous sequence with no Gallagher in it, which is what a name that
+    was never entered looks like rather than one the scan lost. The American Legion post in Lima
+    is the William Paul Gallagher Post No. 96, and it helped compile the honour roll.
+  </p>
+  <p>
+    Against the county's other war the shape is inverted. One person in sixteen served, against
+    one in ten in the Civil War; one in forty-four of them died, against one in eleven. Four times
+    as many men went and a quarter as many died, in a war a fifth as long. And where the Civil War
+    roster gave a cause of death for forty-nine men and let this site tally Corinth, Atlanta and
+    Andersonville, this list gives ninety-five names and nothing else — no unit, no date, no
+    place. The influenza that killed eight per cent of the cases at the state hospital that same
+    autumn cannot be told apart in it from the Argonne.
+  </p>
+  <p>
+    The county's war itself had no battle in it and no local beginning the sources will give. The
+    Civil War opened on a named Sunday at the courthouse with a flag strung on a wire. This one
+    opens with committees: a draft board serving without pay, a Council of Defense chaired by the
+    man who owned the truck works, a woman's branch that changed hands to avoid overlapping the
+    Red Cross, and a War Savings drive that beat its $1,297,000 quota by $70,000 — after which,
+    the book says, <em>the people did not incline to make a sacrifice again.</em> Men were sworn
+    in at Memorial Hall, from a radius many miles in every direction, and given lunch. What the
+    county built for the front was a truck, and the book captions it the first one used in the
+    war.
+  </p>
+</Article>

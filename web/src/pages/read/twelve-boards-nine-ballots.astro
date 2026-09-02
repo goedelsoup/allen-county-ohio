@@ -1,0 +1,37 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import { assertion } from '../../lib/feeds'
+
+const boards = assertion('twelve-boards-and-nine-ballots')
+---
+
+<Article slug="twelve-boards-nine-ballots">
+  <AssertionCard assertion={boards} />
+  <p>
+    Twelve school districts hold ground in Allen County. Nine are centred here and three are not:
+    Columbus Grove and Pandora-Gilboa are Putnam County districts that reach across the line, and
+    Waynesfield-Goshen is an Auglaize one. Together they cover 489 people in Monroe Township, 39
+    in Richland, and a corner of Auglaize Township.
+  </p>
+  <p>
+    This site could not name those three boards, said so on each district's page, and named the
+    neighbouring county's roster as the source that would. It was wrong. The Ohio boards of
+    elections lookup answers two ways — precinct by precinct, or by district type — and Allen
+    County's own roster carries all twelve boards under the second. Read across all eighty-eight
+    precincts it carries nine, and never those three, because no elector in this county votes on
+    them.
+  </p>
+  <p>
+    So the roster answers two different questions and this site had asked only one. What an Allen
+    County voter fills is 218 seats. What governs the districts holding ground here is fifteen
+    seats more. Both numbers are right and they are not interchangeable.
+  </p>
+  <p>
+    One more thing came out of asking two counties the same question. The fifteen people appear on
+    the Allen roster and on the Putnam and Auglaize rosters, and eight of the fifteen are spelled
+    identically. Angie Basinger in Lima is Angela Lynn Basinger in Ottawa; Kevin Ewing is Kevin D
+    Ewing; Michelle Steinke is Michelle R Steinke. Nothing in the source carries an identifier for
+    a person, so matching one across two counties is a guess about a middle initial.
+  </p>
+</Article>

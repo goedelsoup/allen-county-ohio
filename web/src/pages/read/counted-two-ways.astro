@@ -1,0 +1,74 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const named = assertion('a-county-column-is-a-filing-decision')
+
+const namedSpec = bar(
+  named.figures.map((f) => f.label),
+  named.figures.map((f) => f.value),
+  { yTitle: 'Named features standing on Allen County ground', labelValues: true },
+)
+
+// Typed out: eleven streams the gazetteer files in another county because that is where they end.
+const lost = [
+  ['Auglaize River', 'Defiance'],
+  ['Big Run', 'Putnam'],
+  ['Cranberry Creek', 'Putnam'],
+  ['Cranberry Run', 'Putnam'],
+  ['Flat Fork', 'Putnam'],
+  ['Jennings Creek', 'Putnam'],
+  ['Little Riley Creek', 'Hardin'],
+  ['Ottawa River', 'Putnam'],
+  ['Plum Creek', 'Putnam'],
+  ['Rattlesnake Creek', 'Putnam'],
+  ['Sugar Creek', 'Putnam'],
+]
+---
+
+<Article slug="counted-two-ways">
+  <AssertionCard assertion={named} />
+  <p>
+    The federal gazetteer is the authority on what things in this country are called. Ask it for
+    Allen County's named features by its county column and it returns 109. Test every Ohio
+    feature's coordinates against the county's own boundary instead and it returns 120.
+  </p>
+  <ChartFigure
+    id="named-features"
+    title="Named features standing on Allen County ground, by class"
+    caption="Counted by coordinate rather than by the file's county column. The two methods agree exactly on every class but one: streams, where the column gives 21 and the ground gives 33."
+    columns={['Feature class', 'Count']}
+    rows={named.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="named-features" set:html={JSON.stringify(namedSpec)} is:inline />
+  <p>
+    The whole of the difference is one class and one direction. A stream is filed under the county
+    where it ends, so eleven watercourses that rise in Allen County are on another county's books
+    — including the Ottawa River, which runs through the middle of Lima and is recorded under
+    Putnam.
+  </p>
+  <DataTable
+    caption="Eleven streams that rise in Allen County and are filed elsewhere, with the county each is filed under. A twelfth, Wrestle Creek, runs the other way: its mouth is 426 metres inside this county and the file puts it in Auglaize."
+    columns={['Stream', 'Filed under']}
+    rows={lost}
+  />
+  <p>
+    Counting by ground loses exactly one feature in return, and it is Delphos — filed under Allen
+    County with a point that falls in Van Wert. That is now the third independent source to catch
+    the straddle, after the Census Bureau's part-rows and an attorney register's self-reported
+    county.
+  </p>
+  <p>
+    A few other things fall out of reading the file rather than filtering it. Three names in the
+    county are used twice: two Little Riley Creeks, two Marsh Runs, and two Spencerville
+    Reservoirs 761 metres apart. Fourteen still waters are named and not one is natural. Seven
+    features are classed Canal and all seven are field ditches, while the county's actual canal
+    appears only as Deep Cut, classed Channel. And the gazetteer and the city of Lima do not agree
+    about Lima's reservoirs: the city names six, the gazetteer carries four of them, has no
+    Bresler anywhere in Ohio, and adds eight the city does not name.
+  </p>
+</Article>

@@ -1,0 +1,69 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const moved = assertion('the-factories-left-lima-and-not-the-county')
+
+const movedSpec = bar(
+  moved.figures.map((f) => f.label),
+  moved.figures.map((f) => f.value),
+  { yTitle: "Lima's share, per cent", labelValues: true },
+)
+
+// County, city and the difference, at the seven censuses that print both rows on one page.
+const factories = [
+  ['1929', '6,588', '4,548', '2,040', '69.0'],
+  ['1939', '6,164', '4,770', '1,394', '77.4'],
+  ['1947', '14,709', '11,361', '3,348', '77.2'],
+  ['1954', '14,691', '11,073', '3,618', '75.4'],
+  ['1958', '13,526', '6,018', '7,508', '44.5'],
+  ['1963', '14,897', '5,346', '9,551', '35.9'],
+  ['1967', '16,400', '6,700', '9,700', '40.9'],
+]
+---
+
+<Article slug="the-factories-left-lima">
+  <p>
+    Between the 1929 census of manufactures and the federal employment series that opens in 1969
+    lay forty years this corpus could not see. It expected the county's industrial peak to be
+    somewhere inside them — the Depression at one end, the tank plant and the war in the middle.
+    Five volumes on a shelf nobody had walked hold six censuses of those years, and the peak is
+    not in them. The highest figure any of them returns is 16,400 in 1967, and the modern series
+    opens two years later at 17,623 and tops out at 18,400 in 1973.
+  </p>
+  <AssertionCard assertion={moved} />
+  <ChartFigure
+    id="moved"
+    title="Lima's share of Allen County's factory workforce, 1929–1967"
+    caption="Census of Manufactures, Ohio chapters. The first two censuses count wage earners and the last five count all employees, which is why the share is drawn and the levels are not: the city and the county change column together on the same page, so their ratio survives a break the two levels do not."
+    columns={['Census', 'County', 'Lima', 'Outside Lima', "Lima's share"]}
+    rows={factories}
+  />
+  <script type="application/json" data-chart-spec="moved" set:html={JSON.stringify(movedSpec)} is:inline />
+  <p>
+    Four years did it. In 1954 Lima held 11,073 of the county's 14,691 factory jobs; in 1958 it
+    held 6,018 of 13,526. The city lost 5,055 people and the county lost 1,165, so the ground
+    outside the city line went from 3,618 to 7,508 — it more than doubled. Across the nine years
+    to 1963 the two move almost exactly against each other: Lima down 5,727, the outside up 5,933,
+    the county up 206.
+  </p>
+  <p>
+    The city did not lose factories. It had 84 establishments in 1954 and 88 in 1958, and the
+    average one went from 132 people to 68. All three of the county's large industrial
+    installations stand outside every municipality — the refinery and the tank plant in Shawnee
+    Township, the Ford engine plant in Bath — and the newest of them was under construction on
+    Bible Road in September 1957, which this corpus dates from a mechanic's lien rather than from
+    anything a census says. The census names no establishment, so what it shows is the shape and
+    not the cause.
+  </p>
+  <p>
+    Two other things fell out of the volumes. The Depression cost this county 6.4 per cent of its
+    factory workforce against Ohio's 16.0, and cost Lima nothing at all — the city came out of the
+    decade with 222 more wage earners than it went in with. And a third of the county's 1967
+    workforce built vehicles: 5,400 people in nine establishments, taking $23.0 million of the
+    $32.8 million spent on new plant in the county that year.
+  </p>
+</Article>

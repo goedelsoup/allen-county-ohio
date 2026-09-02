@@ -1,0 +1,74 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const tanks = assertion('the-county-had-two-tank-installations')
+
+const books = assertion('the-war-turned-the-locomotive-works-books')
+
+const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) => f.value), {
+  yTitle: 'Locomotives ordered',
+  labelValues: true,
+})
+---
+
+<Article slug="two-tank-plants">
+  <AssertionCard assertion={tanks} />
+  <p>
+    The county's best-known industrial fact is that it builds tanks, and the corpus could not say
+    since when. It can now say something better than a date, which is that the question has two
+    answers and they are not the same kind of thing. The Lima Locomotive Works — a private company
+    with its works here and its offices in New York — put up a $290,000 factory building in
+    February 1941 and was scheduled to begin turning out medium tanks that autumn, alongside
+    Chrysler, American Locomotive, Baldwin, Pullman Standard and Pressed Steel Car.
+  </p>
+  <p>
+    The Lima Tank Depot was something else. Still under construction in January 1943, run under
+    contract by United Motors Service, Inc., it existed to receive vehicles built at arsenals all
+    over the country "in a raw state of completion", fit the modifications a particular theatre
+    needed, test them on its own proving ground and put them on road trains for the ports. Its
+    officer in charge called it the central supply base for combat vehicles: troops in the field
+    did not order from a factory, they ordered from Washington, and Washington ordered from Lima.
+    Its workforce came in from thirteen counties.
+  </p>
+  <p>
+    For two phases this site declined to say whether either of them stands where the tank plant
+    stands today. Two government-owned, contractor-operated tank installations in one small Ohio
+    city are very plausibly one place, and there was no source that said so.
+  </p>
+  <p>
+    There is one now, and it says they are not. The Recorder's abstract for the ground the plant
+    occupies shows it in private hands through the whole of the Second World War — mortgaged in
+    1940, 1941 and 1944, leased to a fishing and game club in April 1940, crossed by pipeline
+    easements its owners granted in 1939, 1940 and 1949 — and conveyed to the United States in
+    five deeds between 20 and 28 June 1951, each recorded the day it was signed or the day
+    after. The Depot was under construction in January 1943. A farm was standing on this ground
+    when it was.
+  </p>
+  <p>
+    So the county's tank plant is not a wartime installation at all, on this evidence. It is a
+    Korean War one, bought six years after the war everyone tells the story about. The refusal
+    held for two phases and was right to.
+  </p>
+
+  <h2>What the war did to a locomotive builder's books</h2>
+  <AssertionCard assertion={books} />
+  <ChartFigure
+    id="locomotive-orders"
+    title="Locomotives ordered from the Lima Locomotive Works, 1939 and 1940"
+    caption="Two years, reported to the county in February 1941. Not a series: the corpus holds no other year of this company's orders, and two points are a comparison rather than a trend."
+    columns={['Year', 'Locomotives ordered']}
+    rows={books.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="locomotive-orders" set:html={JSON.stringify(booksSpec)} is:inline />
+  <p>
+    The county's largest employer went from a net loss of $134,326 to a net profit of $87,007 in
+    one year, on orders that more than tripled, and booked eighteen more locomotives in the first
+    seven weeks of 1941. Then it took a tank contract. Everything this corpus knows about the
+    commercial side of Allen County's war comes from one page of a village weekly, which is worth
+    keeping in view when reading it.
+  </p>
+</Article>

@@ -1,0 +1,84 @@
+---
+// A marginal note: how this site came to know the thing beside it.
+//
+// This corpus's best instinct is to say where a claim came from and what it cost to get, and
+// for eighty-three phases that instinct arrived in the main line — 129 of 340 paragraphs
+// opening *for nine phases this corpus described…*, *this site had never read it*,
+// *publishing found it; reading had not*. A reader who wanted to know about Allen County was
+// being handed the minutes of the meeting.
+//
+// Deleting them was the wrong fix: they are the reason to trust the page. So they move to the
+// margin, and the rule is one sentence — **the main line says what is true of Allen County;
+// the margin says how this site came to know it.**
+//
+// `register.test.ts` enforces the other half: process vocabulary in a page's own paragraphs
+// fails, and this is where it is meant to go instead.
+
+interface Props {
+  /** Shown above the note. The default is right nearly always; name it when it is not. */
+  label?: string
+}
+
+const { label = 'How this is known' } = Astro.props
+---
+
+<aside class="gloss">
+  <p class="gloss-label">{label}</p>
+  <div class="gloss-body"><slot /></div>
+</aside>
+
+<style>
+  /*
+   * The note hangs in the outer margin where there is room for it and folds into the column
+   * where there is not. `float` rather than a grid column because the surrounding prose is
+   * written by twelve different sections and none of them is in a position to declare a
+   * layout — a float needs nothing from its parent.
+   */
+  .gloss {
+    border-left: 2px solid var(--rule-hairline);
+    padding-left: var(--space-4);
+    margin: var(--space-5) 0;
+    color: var(--text-muted);
+  }
+
+  .gloss-label {
+    font: var(--type-eyebrow);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 var(--space-2);
+  }
+
+  .gloss-body {
+    font: var(--weight-regular) var(--size-caption) / 1.55 var(--font-sans);
+  }
+
+  .gloss-body :global(p) {
+    margin: 0 0 0.7em;
+  }
+
+  .gloss-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .gloss-body :global(em) {
+    color: var(--text-body);
+  }
+
+  /*
+   * Wide enough to hang it. 78rem rather than a round number: it is the width at which a
+   * 68ch measure plus a 24ch note plus both gutters stops crowding, measured rather than
+   * chosen.
+   */
+  @media (width >= 78rem) {
+    .gloss {
+      float: right;
+      clear: right;
+      width: 21ch;
+      margin: 0.35em -24ch 1em var(--space-6);
+      border-left: none;
+      border-top: 1px solid var(--rule-hairline);
+      padding: var(--space-3) 0 0;
+    }
+  }
+</style>

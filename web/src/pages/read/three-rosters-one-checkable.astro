@@ -1,0 +1,229 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion, nodes } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const officers = assertion('a-line-of-holders-for-every-office')
+
+const rosters = assertion('three-rosters-and-only-one-can-be-checked')
+
+const board = assertion('the-board-is-printed-as-a-shift-register')
+
+const officerSpec = bar(
+  officers.figures.map((f) => f.label),
+  officers.figures.map((f) => f.value),
+  { yTitle: 'Holders named, 1831–1906', labelValues: true },
+)
+
+const boardSpec = bar(
+  board.figures.map((f) => f.label),
+  board.figures.map((f) => f.value),
+  { yTitle: 'The 74 transitions between the roster\'s 75 rows', labelValues: true },
+)
+
+// Four consecutive rows as the book prints them, to show the shift and the rotation. Typed out
+// because these are rows of a printed list, not nodes the graph carries.
+const boardRows = [
+  ['1875', 'William W. Williams', 'William Akerman', 'Bernard Esch'],
+  ['1876', 'Jacob Crites', 'William W. Williams', 'William Akerman'],
+  ['1877', 'Francis M. Clum', 'Jacob Crites', 'William W. Williams'],
+  ['1878', 'William W. Williams', 'Francis M. Clum', 'Jacob Crites'],
+  ['1879', 'Jacob Crites', 'William W. Williams', 'Francis M. Clum'],
+  ['1880', 'Francis M. Clum', 'Jacob Crites', 'William W. Williams'],
+  ['1881', 'Joseph A. States', 'Francis M. Clum', 'Jacob Crites'],
+]
+
+// The five rows after 1842 that break the shift, and what each turns out to be.
+const boardBreaks = [
+  ['1848', 'Samuel B. Walker goes from second place, a year early', 'a departure out of course'],
+  ['1865', 'Almon E. Hadsell and Freeman Bell both go at once', 'a departure out of course'],
+  ['1884', '"Alexander Shenk (vice Marshall)", written second', "the book's own annotation"],
+  ['1890', 'the row before it is not there', 'the book skips 1889'],
+  ['1894', 'George D. Kanawl and William Bice both go at once', 'a departure out of course'],
+]
+
+const rosterSpec = bar(
+  rosters.figures.map((f) => f.label),
+  rosters.figures.map((f) => f.value),
+  { yTitle: 'Names printed against General Assemblies elapsed', labelValues: true },
+)
+
+// The five district headings the 1906 history prints, with the members under each. Typed out
+// because the members are the book's prose, not nodes the graph carries.
+const congressDistricts = [
+  ['Third', 'to 1842', 'Joseph H. Crane, Patrick G. Goode'],
+  ['Fifth', '1843–1852', 'Emory D. Potter, William Sawyer, Emory D. Potter, Alfred P. Edgerton'],
+  ['Fourth', '1853–1862', 'Mathias H. Nichols, William Allen'],
+  [
+    'Fifth',
+    '1863–1882',
+    'Francis C. LeBlond, William Mungen, Charles N. Lamison, Americus V. Rice, Benjamin Le Fevre',
+  ],
+  [
+    'Fourth',
+    'from 1883',
+    'Benjamin Le Fevre, Charles M. Anderson, S. S. Yoder, Fred C. Layton, George A. Marshall, Robert B. Gordon, Harvey C. Garber',
+  ],
+]
+
+const firstOfficers = [
+  ['Treasurer', 'Adam White', 1831, 27],
+  ['Prosecuting Attorney', 'Aaron M. Miller', 1831, 22],
+  ['Sheriff', 'Henry Lippincott', 1831, 21],
+  ['Recorder', 'Nathan Daniels', 1831, 20],
+  ['Auditor', 'William G. Woods', 1831, 19],
+  ['Clerk of Common Pleas', 'John Ward', 1831, 14],
+  ['Surveyor', 'John Jackson', 1831, 14],
+  ['Coroner', 'H. Clippenger', 1844, 20],
+  ['Probate Judge', 'William S. Rose', 1851, 12],
+]
+---
+
+<Article slug="three-rosters-one-checkable">
+  <AssertionCard assertion={officers} />
+  <p>
+    Until now this site could answer "who has been sheriff of Allen County" back to 1831 and, for
+    every other county office, only "who holds it today". The 1906 county history prints a roster
+    of county officials from the county's organization to the year it went to press: nine offices
+    and 169 named holdings.
+  </p>
+  <ChartFigure
+    id="county-officers"
+    title="Holders of each Allen County office named in the 1906 roster"
+    caption="Years are the book's and are given without months. Every office but two begins in 1831 with the county's organization: the coroners open at 1844, and the probate judgeship at 1851, when the new state constitution created the court."
+    columns={['Office', 'Holders']}
+    rows={officers.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="county-officers" set:html={JSON.stringify(officerSpec)} is:inline />
+  <DataTable
+    title="Who was first"
+    caption="The office now called County Engineer was the County Surveyor for its first seventy-three years, and the statute still requires its holder to be a registered surveyor as well as an engineer."
+    columns={['Office', 'First holder', 'From', 'Holders to 1906']}
+    rows={firstOfficers}
+  />
+  <p>
+    The sheriffs are the check on the whole thing. A book printed in 1906 and a roster published
+    on the sheriff's own website in the 2020s name the same twenty-one men in the same order from
+    1831 to 1905, and differ on exactly two years — both of them the book's, and one of them
+    impossible. It is the strongest corroboration this site holds for any nineteenth-century
+    succession.
+  </p>
+  <p>
+    The 1921 history is the weaker witness. Its list of prosecuting attorneys runs from Mathias H.
+    Nichols in 1851 straight to Jasper Gutridge in 1859, dropping three holders and seven years —
+    and its own account of the county bar, forty pages later, says that one of the men it dropped
+    "served as prosecuting attorney two terms". Nichols had resigned in 1852 to enter Congress,
+    having founded the county's second newspaper nine years earlier by selling his waistcoat to
+    buy paper for the first issue.
+  </p>
+
+  <h2>Three rosters, and only one can be checked</h2>
+  <AssertionCard assertion={rosters} />
+  <p>
+    The same 1906 history prints the county's legislators in one chapter: a list of its members
+    of Congress, a list of its members of the Ohio House, and a list of its state senators. The
+    first gives district headings, home counties and years. The other two give names separated by
+    commas, and stop.
+  </p>
+  <p>
+    The congressional list can therefore be tested, and it holds. Laid against the federal record
+    Congress by Congress, nineteen of its twenty entries are confirmed exactly — twenty entries,
+    eighteen men, ten home counties, three of them from Allen County. The one that fails is
+    Fernando C. Layton, filed under the Fourth District for 1891–96 when he sat for the Fifth
+    until 1893. It is the only kind of place the book's method could fail: a map moving under a
+    sitting member. The book had handled that case correctly eight years earlier, splitting
+    Benjamin Le Fevre across two headings when the county changed districts and he stayed its
+    member.
+  </p>
+  <DataTable
+    title="Five headings, three numbers"
+    caption="Allen County changed congressional district four times in seventy-five years and never held the same number twice running. The Fourth of 1853 is not the Fourth of 1883, and neither is the Fourth the county votes in today."
+    columns={['District', 'Years', 'Members the book names']}
+    rows={congressDistricts}
+  />
+  <p>
+    The two state lists cannot be tested at all, because there is nothing in them to test. The
+    House list begins with the 36th General Assembly, seated 4 December 1837; the Senate list with
+    the 32nd, seated 2 December 1833. The same book cites the 74th General Assembly as of 1901.
+    Thirty-five representatives are spread over at least thirty-nine assemblies and thirty-five
+    senate entries over at least forty-three, and three of the senate names recur — so that list
+    is a list of terms rather than of men, and says nothing about which terms.
+  </p>
+  <ChartFigure
+    id="assembly-names"
+    title="Names printed, against General Assemblies elapsed"
+    caption="Both counts are floors: the assemblies are counted inclusively to the 74th, which the book cites as of 1901, and the book itself was printed in 1906."
+    columns={['Roster', 'Count']}
+    rows={rosters.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="assembly-names" set:html={JSON.stringify(rosterSpec)} is:inline />
+  <p>
+    What that costs is not hypothetical. This site holds the Boesel railroad bill, passed by the
+    Ohio legislature in April 1872, which put $100,000 of bonds to a vote in Lima and Ottawa
+    Township and carried with eight votes against. A Charles Boesel stands sixteenth of the
+    thirty-five entries in the senate roster. Sixteenth of thirty-five across seventy-three years
+    interpolates to about 1866, which is close enough to be tempting and is not evidence of
+    anything. The two are held apart.
+  </p>
+  <p>
+    One name of the seventy can be dated, and the sentence that dates it is ninety pages away in
+    the book's chapter of legal biographies: Isaiah S. Pillars, twenty-fifth in the House roster,
+    "In 1871 he was elected Representative, but declined a second term". He had commanded Camp
+    Lima with the rank of colonel in 1861, was elected Attorney General of Ohio in 1877, and used
+    his one term in the legislature to resist a tax levy for railroad construction and to write a
+    minority report in favour of abolishing capital punishment.
+  </p>
+
+  <h2>The board is printed as a shift register</h2>
+  <AssertionCard assertion={board} />
+  <p>
+    The same book prints the county's governing body once a year for seventy-five years — three
+    names a row, from June 1831 to 1905. It looks like a list of who was on the board. It is
+    something better: a mechanism. Each row is the row above it moved one place to the right. The
+    new commissioner is written first, the previous first name second, the previous second name
+    third, and the man who was third is gone.
+  </p>
+  <DataTable
+    title="Seven rows, three men, and one arrival"
+    caption="1876 to 1880 is the same three men reprinted four times with the order turning over; 1881 is an election. In both cases the row is the row above shifted right, and the difference is only who fills the first column."
+    columns={['Year', 'First', 'Second', 'Third']}
+    rows={boardRows}
+  />
+  <p>
+    In the twenty-two years when the board did not change at all, the three names are reprinted
+    with the third moved to the front — twenty-two times out of twenty-two, with no exception in
+    seventy-five years. So the first column does two jobs. In an election year it names the
+    incoming commissioner; in a year without one it names the incoming president of the board.
+    That is why the 1906 history explains the column one way ("the first person named is in most
+    cases the commissioner elected that year") and the 1921 history another ("naming the president
+    of the board first"), and why both are right about the half of the series they describe.
+  </p>
+  <ChartFigure
+    id="board-transitions"
+    title="What happens between one printed board and the next"
+    caption="Seventy-four transitions between seventy-five rows. The two rows where a new man is not written first are the two anomalies: 1884, where he was not elected but appointed in another man's place, and 1890, which follows the year the book forgot to print."
+    columns={['Kind of transition', 'Years']}
+    rows={board.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="board-transitions" set:html={JSON.stringify(boardSpec)} is:inline />
+  <p>
+    The value of a mechanism is that it can be violated. Five rows after 1842 break it, and each
+    break is a fact the book does not otherwise state — except one, which is a fact about the
+    book.
+  </p>
+  <DataTable
+    title="The five rows that break the shift"
+    caption="Only 1884 is annotated in the book — 'Alexander Shenk (vice Marshall)', the one parenthesis in seventy-five years of list — and it is the only one of the five that gets a node of its own, because an anomaly is not a reason. 1889 is missing from the book entirely, and its absence makes John Akerman and William Bice look as though they left the board and came back."
+    columns={['Year', 'What breaks', 'What it is']}
+    rows={boardBreaks}
+  />
+  <p>
+    Before 1842 the pattern is not there: eight of the first eleven transitions break it, against
+    five of the next sixty-three. Either the board's terms were not yet regular in the county's
+    first decade or the compiler's sources for it were poorer. The shape of the list is evidence
+    that something differs. It is not evidence of which.
+  </p>
+</Article>

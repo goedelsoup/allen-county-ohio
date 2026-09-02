@@ -44,6 +44,7 @@ import {
   sourcesFor,
 } from '../../lib/entry'
 import { inline } from '../../lib/prose'
+import { articlesAbout } from '../../lib/articles'
 
 export function getStaticPaths() {
   return nodes.map((node) => ({ params: { id: entrySlug(node.id) }, props: { node } }))
@@ -56,6 +57,11 @@ interface Props {
 const { node } = Astro.props
 
 const relations = relationsFor(node.id)
+
+// The reading side, pointing back. An article declares the entries it concerns; this is that
+// declaration read from the other end, so a node can say what has been written about it
+// without the corpus keeping a second list of the prose.
+const pieces = articlesAbout(node.id)
 const sources = sourcesFor(node)
 const keys = keysFor(node)
 const aliases = aliasesFor(node)
@@ -166,6 +172,22 @@ const crumbs = [
           <>
             <h2 class="section">Sources</h2>
             <SourcesList sources={sources} />
+          </>
+        )
+      }
+
+      {
+        pieces.length > 0 && (
+          <>
+            <h2 class="section">Read about this</h2>
+            <ul class="pieces">
+              {pieces.map((p) => (
+                <li>
+                  <a href={`/read/${p.slug}`}>{p.title}</a>
+                  <span class="piece-dek">{p.dek}</span>
+                </li>
+              ))}
+            </ul>
           </>
         )
       }
@@ -389,6 +411,31 @@ const crumbs = [
     font: var(--type-data);
     font-size: var(--size-micro);
     color: var(--text-faint);
+  }
+
+  /*
+   * The reading side, listed on the node it is about. Set as prose rather than as cards: an
+   * article is something to read, and the apparatus above it is already carded.
+   */
+  .pieces {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-5);
+  }
+  .pieces li {
+    border-left: 2px solid var(--rule-hairline);
+    padding-left: var(--space-5);
+  }
+  .pieces a {
+    font: var(--weight-regular) var(--size-subhead) / 1.3 var(--font-serif);
+  }
+  .piece-dek {
+    display: block;
+    margin-top: var(--space-2);
+    font: var(--weight-regular) var(--size-caption) / 1.5 var(--font-serif);
+    color: var(--text-muted);
   }
 
   @media (width < 62rem) {

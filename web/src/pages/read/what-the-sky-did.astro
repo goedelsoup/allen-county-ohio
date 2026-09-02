@@ -1,0 +1,150 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const sky = assertion('the-blizzard-is-not-in-the-weather-file')
+
+const paid = assertion('eighty-four-cents-in-the-dollar')
+
+const skySpec = bar(
+  sky.figures.map((f) => f.label),
+  sky.figures.map((f) => f.value),
+  { yTitle: 'Severe weather reports', labelValues: true },
+)
+
+const paidSpec = bar(
+  paid.figures.map((f) => f.label),
+  paid.figures.map((f) => f.value),
+  { yTitle: 'Federal share obligated (US$)', labelValues: true },
+)
+---
+
+<Article slug="what-the-sky-did">
+  <AssertionCard assertion={sky} />
+  <ChartFigure
+    id="storm-decades"
+    title="Severe weather reports for Allen County, by decade"
+    caption="Not a weather series. The National Weather Service recorded three kinds of event here before 1996 and sixteen after, and this line is mostly the categories arriving. The 2020s are omitted because the decade is not over."
+    columns={['Decade', 'Reports']}
+    rows={sky.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="storm-decades" set:html={JSON.stringify(skySpec)} is:inline />
+  <p>
+    The declarations above date a federal act. This dates the weather, and it comes from a file
+    the corpus should have read seven phases earlier: 390 reports for Allen County since 1950,
+    every tornado, hail fall, thunderstorm gust, ice storm and blizzard the National Weather
+    Service holds for this ground. It answers a question the county's 1965 disaster node asked and
+    gave up on.
+  </p>
+  <p>
+    Read straight, the chart says the weather here got thirty times worse in seventy years. It
+    says nothing of the kind. Tornado is the only category counted in every one of those decades,
+    and its column goes 1, 2, 4, 3, 2, 3, 4 — up and down, while the total climbs in strict order
+    across all seven. Thirteen of the file's sixteen event types are younger than 1996. The count
+    of blizzards in Allen County before 2007 is not zero; it is undefined.
+  </p>
+  <p>
+    That much a control inside the file can show. What it cannot show is what the file is missing,
+    and for that the corpus crossed it against the county's ten federal declarations. Five of the
+    six weather disasters have a dated storm in the weather file — a flash flood inside the 2004
+    window, a winter storm on the opening day of the 2005 one, a flash flood in 2007, four
+    thunderstorm-wind reports on the day the June 2012 incident opens. The sixth is the blizzard
+    of January 1978, and there is no Allen County row for 1978 at all. The administrative file
+    holds a storm the observational file cannot see.
+  </p>
+  <p>
+    The county's deadliest weather is dated now. An F4 tornado crossed the north of the county on
+    the evening of 11 April 1965, running 17.8 miles from Elida to Bluffton on a path 400 yards
+    wide, killing eleven people and injuring a hundred. The federal declaration came three days
+    later and recorded the incident as beginning and ending on the day it was signed. Those eleven
+    are the only weather deaths in seventy-six years of this county's record, and the companion
+    file that carries an age and a location for each death holds seventeen rows for the entire
+    United States in 1965 and none of them is this event's. A count of eleven is the whole of what
+    survives.
+  </p>
+  <p>
+    Two other storms are worth the county's memory. An F3 on 19 July 1950 ran from the south-east
+    edge of Lima to Beaverdam and injured thirty. And on 22 June 2006 a line of wind crossed the
+    whole county in twenty minutes — Delphos and Spencerville at 14:05, Lima from 14:15, a tornado
+    at Beaverdam at 14:18, Bluffton at 14:25 — blowing over every power pole and traffic signal on
+    a stretch of Shawnee Road, destroying three hangars and about seventeen aircraft and the
+    sheriff's helicopter, and leaving two-thirds of the county without power. Those three storms
+    are $6,970,000 of the $9,408,250 in damage the whole seventy-six years records.
+  </p>
+  <p>
+    One last thing about this file, which is the most local thing in it. Of the 293 reports that
+    name who called them in, 240 name a person — trained spotters, emergency managers, police,
+    broadcast media, amateur radio operators, newspapers and the public — against 43 that name an
+    instrument. Seventy-seven of the 390 reports are located at Lima, against twenty-one for
+    Delphos. That is where the people who telephone are, and not where the storms are.
+  </p>
+
+  <h2>What a disaster costs, and who is paid</h2>
+  <AssertionCard assertion={paid} />
+  <ChartFigure
+    id="disaster-money"
+    title="Federal public assistance obligated for Allen County applicants, 2005–2025"
+    caption="Nominal dollars twenty years apart, so the two bars are not comparable as purchasing power. Fifteen years of storms against one pandemic."
+    columns={['Period', 'Federal share']}
+    rows={paid.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="disaster-money" set:html={JSON.stringify(paidSpec)} is:inline />
+  <p>
+    The declarations are dates and the weather is dates. This is the money, and it took twenty
+    years to arrive: obligations run from 20 April 2005 to 28 May 2025, and the largest project
+    of the 2020 declaration was still being paid out in February 2025.
+  </p>
+  <p>
+    Ninety-five projects, $10,608,108 of federal share, four of the county's ten declarations.
+    Eighty-four cents in every dollar is the pandemic, on seven of the ninety-five projects. Of
+    the eighty-eight weather projects, forty-nine are debris removal or emergency protective
+    measures and seventy-nine cents in their dollar went on those two things. Nine projects in
+    twenty years are roads and bridges. One is a water control facility. Nothing here rebuilds
+    anything, which is the shape of what a federal disaster actually is in a county like this
+    one: someone comes and picks up the branches.
+  </p>
+  <p>
+    A disaster is also the one occasion on which nearly every government in Allen County files
+    the same form. Twenty-eight registered applicants appear, and they are close to the whole
+    civil apparatus of the place: the city of Lima, the city of Delphos, seven villages, eight of the twelve townships, the county and its commissioners and its engineer
+    and its health department, a school district, a university, a fire department, a hospital and
+    a home. The winter storms of December 2004 and January 2005 paid twenty-two of them at once.
+    Cairo is the only municipality in the county that never appears.
+  </p>
+  <p>
+    Two of them are worth pausing on. Delphos files twice, as "Delphos, City of (Allen County)"
+    and "Delphos, City of (Van Wert County)", because one municipal corporation standing on a
+    county line becomes two rows in a file keyed to counties, and both were paid. And the Village
+    of Fort Shawnee — which this site elsewhere records as having quietly ceased to exist around
+    2012 — was paid $34,799 in June 2005, which is a fourth federal witness to a corporation whose
+    end still has no date.
+  </p>
+  <p>
+    Then the largest single fact in the file, and the one that should be read most carefully.
+    Lima Memorial Health System received $8,777,201 — eighty-three per cent of every federal
+    disaster dollar in this county's twenty-year record — for pandemic emergency protective
+    measures. No other Allen County hospital appears at all. That is not because they claimed
+    nothing. The ledger is keyed to the county an applicant is registered in, and Bon Secours
+    Mercy Health, Inc., which owns St. Rita's in Lima, files from Cincinnati: its nine projects
+    and $183,291,707 are counted in Hamilton County. Lima Memorial appears here because it is the
+    only hospital in the county with no corporate parent — a fact this site already held from
+    Medicare enrollment records, and which turns out to be the reason the county's disaster
+    accounts look the way they do.
+  </p>
+  <p>
+    So $10,608,108 is a floor and a composition, not a measurement of what federal disaster money
+    did in Allen County. It is what was spent by bodies that keep their books here.
+  </p>
+  <p>
+    Households are a smaller and stranger story. Two declarations have put money into homes. The
+    flood of August 2007 brought 316 registrations, 272 inspections, $663,302 of recorded damage
+    and $641,634 of assistance — and 109 of the 227 owner registrations, and $481,404 of the
+    damage, were in Bluffton's ZIP code alone. The 2020 declaration brought 568 registrations,
+    $3,595,938, and not one inspection: a biological incident damages no houses, so every dollar
+    is classed "other needs" and what it bought is not written anywhere in the file. This site
+    says how much and declines to say what for.
+  </p>
+</Article>

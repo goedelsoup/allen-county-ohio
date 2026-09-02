@@ -1,0 +1,248 @@
+---
+// One article: a short piece with one claim, its own URL, and its declaration rendered.
+//
+// The apparatus at the foot is the point of the type. A reading page holds an argument and
+// links out; an article holds one thing and says what it rests on — the assertions it cites
+// and the corpus entries it concerns, both declared in `src/lib/articles.ts` and both checked
+// to resolve before this page can build.
+
+import Base from './Base.astro'
+import { article, articlesIn, eraLabel } from '../lib/articles'
+import { node } from '../lib/feeds'
+import { entryPath } from '../lib/entry'
+import { sectionLabel, sectionPath } from '../lib/sections'
+
+interface Props {
+  /** The slug this file is named for. Its metadata comes from the registry. */
+  slug: string
+}
+
+const { slug } = Astro.props
+const meta = article(slug)
+
+// Neighbours within the section, so a reader who finishes one has somewhere to go that is not
+// the back button. Computed from the era ordering rather than declared.
+const siblings = articlesIn(meta.section)
+const at = siblings.findIndex((a) => a.slug === meta.slug)
+const previous = at > 0 ? siblings[at - 1] : undefined
+const next = at < siblings.length - 1 ? siblings[at + 1] : undefined
+
+const entries = meta.entries
+  .map((id) => ({ id, node: node(id) }))
+  .filter((e): e is { id: string; node: NonNullable<ReturnType<typeof node>> } => Boolean(e.node))
+---
+
+<Base title={meta.title} lede={meta.dek} bare>
+  <article class="piece">
+    <header class="piece-head">
+      <nav class="whence" aria-label="Breadcrumb">
+        <a href="/read">The reading room</a>
+        <span class="sep">·</span>
+        <a href={sectionPath(meta.section)}>{sectionLabel(meta.section)}</a>
+        <span class="sep">·</span>
+        <span class="era data">{eraLabel(meta)}</span>
+      </nav>
+      <h1>{meta.title}</h1>
+      <p class="dek">{meta.dek}</p>
+    </header>
+
+    <div class="piece-body">
+      <slot />
+    </div>
+
+    <footer class="piece-foot">
+      {
+        entries.length > 0 && (
+          <section class="concerns">
+            <h2>What this concerns</h2>
+            <p class="foot-note">
+              The corpus entries this piece is about. Each one lists this piece in return, which
+              is why the list is declared rather than gathered from the links above.
+            </p>
+            <ul>
+              {entries.map((e) => (
+                <li>
+                  <a href={entryPath(e.id)}>{e.node.label}</a>
+                  <span class="cls data">{e.node.class}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
+
+      <nav class="onward" aria-label="Nearby pieces">
+        {
+          previous && (
+            <a class="step back" href={`/read/${previous.slug}`}>
+              <span class="dir">Earlier in {sectionLabel(meta.section)}</span>
+              <span class="ttl">{previous.title}</span>
+            </a>
+          )
+        }
+        {
+          next && (
+            <a class="step fwd" href={`/read/${next.slug}`}>
+              <span class="dir">Later in {sectionLabel(meta.section)}</span>
+              <span class="ttl">{next.title}</span>
+            </a>
+          )
+        }
+      </nav>
+    </footer>
+  </article>
+
+  <!--
+    The chart renderer is loaded here rather than by each article, because the failure it
+    prevents has already happened once: `fix: forty-four charts on six pages that were never
+    drawing`. An article that forgets the import renders an empty div of the right height and
+    nothing complains. Loading it in the layout means an article cannot forget.
+
+    It is a no-op on a piece with no charts: `renderCharts` reads `script[data-chart-spec]`
+    and returns having found none.
+  -->
+  <script>
+    import { renderCharts } from '../scripts/charts'
+    renderCharts()
+  </script>
+</Base>
+
+<style>
+  .piece {
+    max-width: var(--measure);
+  }
+
+  .piece-head {
+    margin-bottom: var(--space-9);
+  }
+
+  .whence {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    font: var(--type-eyebrow);
+    letter-spacing: var(--tracking-smallcaps);
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+  }
+  .whence a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .whence a:hover {
+    color: var(--text-strong);
+    text-decoration: underline;
+  }
+  .whence .sep {
+    color: var(--text-faint);
+  }
+  .whence .era {
+    color: var(--text-faint);
+    font-size: var(--size-micro);
+    letter-spacing: var(--tracking-mono);
+  }
+
+  .piece-head h1 {
+    font: var(--weight-regular) var(--size-display-m) / var(--leading-title) var(--font-display);
+    letter-spacing: var(--tracking-display);
+    color: var(--text-strong);
+    margin: 0;
+  }
+
+  .dek {
+    margin: var(--space-5) 0 0;
+    font: var(--weight-regular) var(--size-body-l) / 1.5 var(--font-serif);
+    color: var(--text-muted);
+  }
+
+  /*
+   * The body is written by whichever page the piece was lifted out of, so it arrives with the
+   * markup those pages used and nothing more. Styling it here rather than asking every article
+   * to carry its own rules is what makes a lift a move instead of a rewrite.
+   */
+  .piece-body :global(h2) {
+    font: var(--type-section);
+    color: var(--text-strong);
+    margin: var(--space-10) 0 var(--space-5);
+  }
+  .piece-body :global(h2:first-child) {
+    margin-top: 0;
+  }
+  .piece-body :global(p) {
+    margin: 0 0 var(--space-6);
+  }
+
+  .piece-foot {
+    margin-top: var(--space-12);
+    border-top: 1px solid var(--rule-strong);
+    padding-top: var(--space-7);
+  }
+
+  .concerns h2 {
+    font: var(--weight-medium) var(--size-body-s) / 1.2 var(--font-smallcaps);
+    letter-spacing: var(--tracking-smallcaps);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 0 0 var(--space-3);
+  }
+  .foot-note {
+    font: var(--weight-regular) var(--size-caption) / 1.5 var(--font-serif);
+    color: var(--text-faint);
+    margin: 0 0 var(--space-5);
+    max-width: var(--measure-narrow);
+  }
+  .concerns ul {
+    list-style: none;
+    margin: 0 0 var(--space-9);
+    padding: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .concerns li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-4);
+  }
+  .concerns .cls {
+    font-size: var(--size-micro);
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+  }
+
+  .onward {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: var(--space-5);
+  }
+  .step {
+    display: block;
+    border-top: 2px solid var(--rule-hairline);
+    padding-top: var(--space-4);
+    text-decoration: none;
+    transition: var(--transition-control);
+  }
+  .step:hover {
+    border-top-color: var(--rubric-500);
+  }
+  .step .dir {
+    display: block;
+    font: var(--type-eyebrow);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: var(--space-2);
+  }
+  .step .ttl {
+    display: block;
+    font: var(--weight-regular) var(--size-subhead) / 1.3 var(--font-serif);
+    color: var(--text-strong);
+  }
+  .step.fwd {
+    text-align: right;
+  }
+  .step.fwd:only-child {
+    grid-column: 2;
+  }
+</style>

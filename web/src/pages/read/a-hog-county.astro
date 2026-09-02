@@ -1,0 +1,46 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { line } from '../../lib/chart-spec'
+
+const hogs = assertion('the-hogs-multiplied-as-the-keepers-halved')
+
+const hogSpec = line(
+  hogs.figures.map((f) => f.label),
+  [{ name: 'Hogs on 31 December', y: hogs.figures.map((f) => f.value) }],
+  { yTitle: 'Head', labelLast: true, zeroBased: true },
+)
+---
+
+<Article slug="a-hog-county">
+  <p>
+    The county profile the census publishes for a general reader leads with farms, land and sales,
+    and all three of them barely move. The figure that moved is an inventory row on the second
+    page.
+  </p>
+  <AssertionCard assertion={hogs} />
+  <ChartFigure
+    id="hogs"
+    title="Hogs in Allen County, 2002–2022"
+    caption="Inventory at 31 December of each census year. The operations holding them went 59, 60, 46, 56, 28 across the same five censuses."
+    columns={['Census', 'Head']}
+    rows={hogs.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="hogs" set:html={JSON.stringify(hogSpec)} is:inline />
+  <p>
+    Hogs are $75.3 million of the county's $240.8 million of agricultural sales, which is fourth
+    in Ohio. Of 377,816 head sold in 2022, 281,194 were raised under production contract on twelve
+    operations — the census's own term for an animal fed by one party and owned by another. In
+    2017 it was 144,480 of 324,947 on twenty-one. The share went from 44 per cent to 74 while the
+    number of places doing it fell by nine.
+  </p>
+  <p>
+    In 1910 this county held 59,695 swine and 56,580 people, and the measure written from that
+    census observed that the swine outnumbered the people. They still do, by 235,800 to 100,866.
+    Everything else in the 1910 count is gone: 14,676 horses became 316, 41,240 sheep and goats
+    became 1,499, and the 10,671 dairy cows became a figure the census will not print, because
+    eight operations hold it and one is large enough that the total would disclose it.
+  </p>
+</Article>

@@ -1,0 +1,92 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import { assertion } from '../../lib/feeds'
+
+const register = assertion('sixteen-of-twenty-nine-are-one-days-work')
+---
+
+<Article slug="twenty-nine-on-the-register">
+  <AssertionCard assertion={register} />
+  <p>
+    The National Park Service publishes the whole National Register as a map service, and this
+    county's share of it is one request. Twenty-nine properties: twenty-six buildings, two
+    structures and one historic district, from 15 October 1966 to 27 October 2004. Twenty-five
+    are in Lima, two in Delphos, one in Shawnee Township and one in Spencer.
+  </p>
+  <table>
+    <caption>
+      Allen County on the National Register, by the date the Keeper signed each listing. The
+      last column but one is not from the register: every point was put to the county's own map
+      service, and all twenty-nine landed inside the county.
+    </caption>
+    <thead>
+      <tr><th scope="col">Listed</th><th scope="col">Property</th><th scope="col">Type</th><th scope="col">Address</th><th scope="col">Where</th><th scope="col">Ref.</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1910-15</td><td>Miami And Erie Canal, Deep Cut</td><td>structure</td><td>2 mi. S of Spencerville on OH 66</td><td>Spencer Twp</td><td>66000603</td></tr>
+      <tr><td>1907-24</td><td>Allen County Courthouse</td><td>building</td><td>Courthouse Sq.</td><td>Lima</td><td>74001392</td></tr>
+      <tr><td>1912-12</td><td>Neely-Sieber House</td><td>building</td><td>620 W. Spring St.</td><td>Lima</td><td>76001360</td></tr>
+      <tr><td>1909-20</td><td>MacDonell House</td><td>building</td><td>632 W. Market St.</td><td>Lima</td><td>78001999</td></tr>
+      <tr><td>1905-07</td><td>Lima Memorial Hall</td><td>building</td><td>W. Elm and S. Elizabeth Sts.</td><td>Lima</td><td>79001779</td></tr>
+      <tr><td>1911-29</td><td>Metropolitan Block</td><td>building</td><td>300 N. Main St</td><td>Lima</td><td>79001780</td></tr>
+      <tr><td>1901-03</td><td>St. John Catholic Church</td><td>building</td><td>110 N. Franklin St.</td><td>Delphos</td><td>80002933</td></tr>
+      <tr><td>1904-01</td><td>Marks-Family House</td><td>building</td><td>233 N. Franklin St.</td><td>Delphos</td><td>82003537</td></tr>
+      <tr><td>1910-07</td><td>Adgate Block</td><td>building</td><td>300-306 S. Main St.</td><td>Lima</td><td>82001347</td></tr>
+      <tr><td>1910-07</td><td>Armory-Latisona Building</td><td>building</td><td>440 S. Main St.</td><td>Lima</td><td>82001348</td></tr>
+      <tr><td>1910-07</td><td>Cahill, Beck and R. C., Buildings</td><td>building</td><td>200-206 S. Main St.</td><td>Lima</td><td>82001349</td></tr>
+      <tr><td>1910-07</td><td>Dorsey Building</td><td>building</td><td>208 S. Main St.</td><td>Lima</td><td>82001350</td></tr>
+      <tr><td>1910-07</td><td>Elks Lodge</td><td>building</td><td>138 W. North St.</td><td>Lima</td><td>82001865</td></tr>
+      <tr><td>1910-07</td><td>First National Bank and Trust Building</td><td>building</td><td>43-53 Public Sq.</td><td>Lima</td><td>82001351</td></tr>
+      <tr><td>1910-07</td><td>Hotel Argonne</td><td>building</td><td>201 N. Elizabeth St.</td><td>Lima</td><td>82001352</td></tr>
+      <tr><td>1910-07</td><td>Klaus Block</td><td>building</td><td>401-405 N. Main St.</td><td>Lima</td><td>82001864</td></tr>
+      <tr><td>1910-07</td><td>Lima Cleaning and Pressing Company</td><td>building</td><td>436-438 S. Main St.</td><td>Lima</td><td>82001353</td></tr>
+      <tr><td>1910-07</td><td>Linneman Building</td><td>building</td><td>210-212 S. Main St.</td><td>Lima</td><td>82001867</td></tr>
+      <tr><td>1910-07</td><td>Martin Block and Kibby Block</td><td>building</td><td>140-146 S. Main St.</td><td>Lima</td><td>82001868</td></tr>
+      <tr><td>1910-07</td><td>Neal Clothing</td><td>building</td><td>74 Public Sq.</td><td>Lima</td><td>82001870</td></tr>
+      <tr><td>1910-07</td><td>Ohio Theatre</td><td>building</td><td>122 W. North St.</td><td>Lima</td><td>82001866</td></tr>
+      <tr><td>1910-07</td><td>Renz Block</td><td>building</td><td>320 N. Main St.</td><td>Lima</td><td>82001354</td></tr>
+      <tr><td>1910-07</td><td>U.S. Post Office</td><td>building</td><td>326 W. High St.</td><td>Lima</td><td>82001356</td></tr>
+      <tr><td>1910-07</td><td>Union Block</td><td>building</td><td>28-38 Public Sq.</td><td>Lima</td><td>82001355</td></tr>
+      <tr><td>1901-11</td><td>Breese, Griffith, Farm</td><td>building</td><td>2875 Fort Amanda Rd.</td><td>Shawnee Twp</td><td>83001942</td></tr>
+      <tr><td>1905-15</td><td>Barr Hotel</td><td>building</td><td>201--209 E. High and 200--218 N. Union Sts.</td><td>Lima</td><td>86001053</td></tr>
+      <tr><td>2003-21</td><td>Lima Stadium</td><td>structure</td><td>100 S. Calument Ave. and E. Market St.</td><td>Lima</td><td>02000219</td></tr>
+      <tr><td>2008-21</td><td>Lima Pennsylvania Railroad Passenger Depot</td><td>building</td><td>424 N. Central Ave.</td><td>Lima</td><td>03000805</td></tr>
+      <tr><td>2010-27</td><td>West Market Street Boulevard Historic District</td><td>district</td><td>1410-1529 W. Market St.</td><td>Lima</td><td>04001201</td></tr>
+    </tbody>
+  </table>
+  <p>
+    Sixteen of the twenty-nine were signed on one day, 7 October 1982, under a single Multiple
+    Resource Area submission for downtown Lima. Seven listings come before that day and five
+    after it. Between the Barr Hotel in May 1986 and Lima Stadium in March 2002 nothing was added
+    at all, and nothing has been added in the twenty-one years since the last. Twenty of the
+    twenty-nine stand in one square mile — survey section 31 of T3S R7E, which is downtown. Ten
+    of the county's twelve townships hold nothing, and no village but Delphos does.
+  </p>
+  <p>
+    The county's only National Historic Landmark is a ditch. The Miami and Erie Canal's Deep Cut,
+    two miles south of Spencerville, was entered on 15 October 1966 — the day the Register itself
+    began, when the standing Landmarks were entered as a body. It is the oldest listing here by
+    eight years and the only one that is neither a building nor a district. It is also filed
+    under a village it is not in: the register flags it <code>Vicinity: True</code>, and its point
+    falls in Spencer Township. The Griffith Breese Farm, filed under Lima on Fort Amanda Road, is
+    the same case in Shawnee Township. The federal file keeps a column for the distinction this
+    site had to argue for from a refinery.
+  </p>
+  <p>
+    And nothing this county made anything in is on the list. Not the locomotive works that built
+    Shays and Berkshires, not the refinery running since 1886, not the tank plant, not the Ford
+    engine plant. A county whose two centuries are iron, oil and rolling stock has store blocks,
+    houses, churches, a theatre, a stadium, a waiting room and a canal cut. Absence from a
+    register is evidence about nominations, not about buildings — which is the whole of what this
+    list can be read for. The pattern in it is the shape of the filing: a burst when somebody did
+    downtown Lima as a batch, a long silence, and nothing for two decades.
+  </p>
+  <p>
+    One more thing the source is good for. Its coordinate for the courthouse is 31.9 metres from
+    the one the county surveyor's file gives, which this site has carried since the courthouse was
+    written up, against a federal file that advertises plus or minus twelve. That is the only
+    independent check available on any point in the set, and it is why the points are pushed here
+    as far as a survey section and no further.
+  </p>
+</Article>

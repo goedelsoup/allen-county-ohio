@@ -1,0 +1,222 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const counted1920 = assertion('the-census-counted-what-the-history-estimated')
+
+const forties = assertion('the-migration-arrived-in-the-forties')
+
+const split = assertion('the-category-split-in-2000')
+
+const bornSpec = bar(
+  counted1920.figures.map((f) => f.label),
+  counted1920.figures.map((f) => f.value),
+  { yTitle: 'Foreign-born residents of Allen County, 1920, by country of birth', labelValues: true },
+)
+
+// The county's Black population at five censuses. Drawn from the assertion's own figures so the
+// chart cannot drift from the prose the gate checked.
+const migrationSpec = line(
+  forties.figures.map((f) => f.label),
+  [{ name: 'Black residents of Allen County', y: forties.figures.map((f) => f.value) }],
+  { yTitle: 'Persons enumerated as Negro, Allen County', zeroBased: true, labelLast: true },
+)
+
+// The four censuses read this phase, with 1920 and 2023 for the ends. Typed out because the six
+// rows come from six publications and the graph carries them as six measures.
+const raceSeries = [
+  ['1920', '68,223', '1,385', '2.03%', '2,753'],
+  ['1930', '69,419', '1,686', '2.43%', '2,219'],
+  ['1940', '73,303', '1,916', '2.61%', '1,682'],
+  ['1950', '88,183', '4,391', '4.98%', '1,485'],
+  ['1960', '103,691', '7,322', '7.06%', '—'],
+  ['2023', '101,685', '10,805', '10.6%', '—'],
+]
+
+// The county's Black population at the six censuses after 1960. From the assertion's own figures,
+// so the chart cannot drift from the prose the gate checked.
+const splitSpec = line(
+  split.figures.map((f) => f.label),
+  [{ name: 'Black residents of Allen County', y: split.figures.map((f) => f.value) }],
+  { yTitle: 'Black residents of Allen County', zeroBased: true, labelLast: true },
+)
+
+// The whole series at the county, with Lima beside it. Typed out because the eight rows come from
+// eight publications and the graph carries them as eight measures.
+const laterRace = [
+  ['1960', '103,691', '7,322', '7.06%', '51,037', '—', '—'],
+  ['1970', '111,144', '9,234', '8.31%', '53,734', '8,003', '86.7%'],
+  ['1980', '112,241', '10,975', '9.78%', '47,381', '9,670', '88.1%'],
+  ['1990', '109,755', '12,313', '11.22%', '45,549', '10,949', '88.9%'],
+  ['2000', '108,473', '13,225', '12.19%', '40,081', '10,614', '80.3%'],
+  ['2010', '106,331', '12,639', '11.89%', '38,771', '10,253', '81.1%'],
+  ['2020', '102,206', '12,573', '12.30%', '35,579', '9,908', '78.8%'],
+  ['2020, counted as before', '102,206', '15,636', '15.30%', '35,579', '11,932', '76.3%'],
+]
+
+// The thirteen subdivisions at 2020, two ways. Typed out because the second column is computed
+// from thirty-two cells of one table and the graph carries only the published one.
+const subdivisions2020 = [
+  ['Lima city', '35,579', '9,908', '11,932'],
+  ['American township', '14,538', '1,476', '1,808'],
+  ['Shawnee township', '12,482', '517', '755'],
+  ['Bath township', '9,399', '258', '404'],
+  ['Perry township', '3,382', '192', '263'],
+  ['Richland township', '5,871', '103', '152'],
+  ['the other seven townships', '20,955', '119', '322'],
+  ['Allen County', '102,206', '12,573', '15,636'],
+]
+
+// The 1920 composition of the county and the city, side by side. Typed out because the two halves
+// come from two tables of the same census and the graph carries them as one measure.
+const composition1920 = [
+  ['Total population', '68,223', '41,326'],
+  ['Native white', '64,064', '40,062 (all white)'],
+  ['— of native parentage', '55,543', '32,572'],
+  ['— of foreign parentage', '4,422', '3,080'],
+  ['— of mixed parentage', '4,099', '2,493'],
+  ['Foreign-born white', '2,753', '1,917'],
+  ['Negro', '1,385', '1,243'],
+  ['Other', '21', '—'],
+]
+---
+
+<Article slug="the-county-in-1920">
+  <AssertionCard assertion={counted1920} />
+  <p>
+    The 1921 county history has a chapter about the county's Black residents, and it opens with an
+    estimate: "it is estimated that there are 2,500 negroes in Allen County ... The Allen County
+    negroes are nearly all in Lima." The census had been taken the year before. It counted 1,385
+    in the county and 1,243 in Lima — so the book is right about where they lived, and out by a
+    factor of 1.81 about how many.
+  </p>
+  <p>
+    Its two voter counts are the sharper problem. It says there were 552 Black voters in Lima in
+    1916 and, "in 1920, counting the women, there were almost 1,000". A thousand voters in a city
+    with 1,243 Black residents would be four out of every five of them, children included. The
+    1916 figure is 44.4 per cent of the same population, which is high for adult men and not
+    impossible in a community migration had made young and male: the census counts 751 Black males
+    in the county against 634 females.
+  </p>
+  <DataTable
+    title="Allen County and Lima in 1920"
+    caption="The county's four race lines sum to the printed total of 68,223 and the city's four white lines to the printed 40,062, which is how these figures were checked before they were written down. Lima held 89.7 per cent of the county's Black residents and 60.6 per cent of its people."
+    columns={['', 'Allen County', 'Lima']}
+    rows={composition1920}
+  />
+  <p>
+    The same book says that "as yet no papers are on file showing the foreign population of Allen
+    County", in the paragraph where its congressman opposes "indiscriminate immigration from
+    Europe". The count existed. The census had taken it the year before, and it found 2,753
+    foreign-born white residents from twenty-one named countries — and, with their native-born
+    children, 11,274 people of foreign or mixed stock, one in six of the county.
+  </p>
+  <ChartFigure
+    id="born-1920"
+    title="Where the county's foreign-born came from, 1920"
+    caption="Twenty-one countries and a residual of 85, summing exactly to the 2,753 the table prints. Switzerland's 171 are Bluffton's Mennonites and Wales's 120 are Gomer; Germany's 627 belong to the country whose name the county had taken off a township two years earlier."
+    columns={['Country of birth', 'Residents']}
+    rows={counted1920.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="born-1920" set:html={JSON.stringify(bornSpec)} is:inline />
+  <p>
+    One more thing fell out of reading the volume: the county's 1920 population is 68,223, not the
+    68,203 this site has been printing. That number came from the county history too, and it is
+    twenty low — exactly as the same book's figure for Lima, 41,306, is twenty low against the
+    census's 41,326. The corpus had already caught the second and never checked the first.
+  </p>
+  <AssertionCard assertion={forties} />
+  <p>
+    That 1920 count sat alone for a century, with the next figure this site could give being the
+    2023 estimates. The four censuses in between are in the Ohio population volume of each, and
+    three of the four have no text layer at all — every number below was read off a rendered page
+    image and added up before it was written down.
+  </p>
+  <ChartFigure
+    id="black-population-1920-1960"
+    title="Allen County's Black population, 1920 to 1960"
+    caption="The First Great Migration, which transformed Detroit, Cleveland and Youngstown between 1916 and 1930, added 301 people to this county and then 230. The decade that moved the number is the 1940s, when Lima was building locomotives and tanks."
+    columns={['Census', 'Residents']}
+    rows={forties.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="black-population-1920-1960" set:html={JSON.stringify(migrationSpec)} is:inline />
+  <DataTable
+    title="Allen County by race and nativity, 1920 to 2023"
+    caption="Each census's race lines sum to the printed county total, which is how these were checked. The 1960 county table gives white without splitting it by nativity, which is why the foreign-born series stops at 1950."
+    columns={['Census', 'County', 'Black', 'Share', 'Foreign-born white']}
+    rows={raceSeries}
+  />
+  <p>
+    The immigrant population went the other way over the same forty years, and it went without
+    interruption: 2,753 in 1920, 2,219 in 1930, 1,682 in 1940, 1,485 in 1950 — down 46 per cent
+    while the county grew 29. Federal statute closed European immigration in 1924, and the two
+    curves cross in the 1930s. By 1950 Italy has passed Germany, 246 to 222, where in 1920 it was
+    Germany 627 to Italy 312.
+  </p>
+  <p>
+    Two of the 1920 columns have no 1950 successor at all. Switzerland, whose 171 stood for
+    Bluffton, has no column of its own in the later table, and Wales, whose 120 stood for Gomer,
+    is folded into England. That is not a fall to nothing; it is a column that stopped being
+    printed — which is the reason this phase also wrote down a rule about differencing figures
+    that come from two different books.
+  </p>
+
+  <h2>The category that split in 2000</h2>
+  <p>
+    The 1920-to-1960 series above stopped where it did because five censuses had never been read
+    here. They have been now — the general-characteristics volume of each, and for 2020 the
+    redistricting file — and the county's Black population has a count at every decennial census
+    from 1920 to 2020 with no gap in it.
+  </p>
+  <AssertionCard assertion={split} />
+  <ChartFigure
+    id="black-population-1970-2020"
+    title="Allen County's Black population, 1970 to 2020"
+    caption="Nine consecutive censuses of growth end at 2000, and the census that ends them is the first at which a person could be counted as more than one race. The flat line after 2000 is a category splitting, not a population that stopped."
+    columns={['Census', 'Residents']}
+    rows={split.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="black-population-1970-2020" set:html={JSON.stringify(splitSpec)} is:inline />
+  <p>
+    Two of those decades of growth are decades in which the county was emptying. Allen County
+    peaked at 112,241 people in 1980 and has fallen at every census since; between 1980 and 2000
+    it lost 3,768 residents and gained 2,250 Black ones. The share went from 2.0 per cent in 1920
+    to 7.1 in 1960 to 12.2 in 2000, and the last leg of that rise happened entirely inside a
+    decline.
+  </p>
+  <DataTable
+    title="Allen County and Lima by race, 1960 to 2020"
+    caption="Each census's own label — Negro through 1970, Black from 1980, Black alone from 2000. The last row counts 2020 the way the nine censuses before it counted: Black alone plus every multiple-race combination naming Black, which is thirty-two of the seventy-one cells of the redistricting file's race table."
+    columns={['Census', 'County', 'Black', 'Share', 'Lima', 'Lima Black', "Lima's share"]}
+    rows={laterRace}
+  />
+  <p>
+    This site has been saying that Lima's share of the county's Black residents fell in every
+    decade it could be measured, and that the 76.7 per cent the survey reports now is the end of a
+    long slide. It is not. The share fell from 89.7 per cent in 1920 to 74.7 in 1950 and then went
+    back up — 86.7, 88.1, 88.9 — until in 1990 it stood exactly where it had in 1920. The fall
+    this site reads in the present begins after that, and it is thirty years old rather than a
+    hundred. Part of the reversal is people and part of it is the city line, which Lima moved
+    outward from 1944 onward; how much of it is which is not established here.
+  </p>
+  <DataTable
+    title="Where the county's Black residents lived in 2020"
+    caption="The thirteen subdivisions sum to the county exactly in all three columns, which is how these were checked. Six of the twelve townships have fewer than twenty-five Black residents."
+    columns={['Subdivision', 'Population', 'Black alone', 'Black alone or in combination']}
+    rows={subdivisions2020}
+  />
+  <p>
+    One more thing came out of putting the count beside the survey. The 2020 census counted 12,573
+    Black-alone residents of this county; the American Community Survey's 2019–2023 estimate is
+    10,805, plus or minus 658. The interval does not reach the count — the gap is 2.7 margins — and
+    the two instruments miss each other the other way on White alone, 80,753 counted against
+    82,251 ± 428, while agreeing on the multiple-race total to within eighteen people. Every share
+    on this page's 2023 material is a survey's share, and a count of the same thing three years
+    earlier puts the county at 12.3 per cent rather than 10.6. This site does not say which is
+    nearer the truth; it says which is which.
+  </p>
+</Article>

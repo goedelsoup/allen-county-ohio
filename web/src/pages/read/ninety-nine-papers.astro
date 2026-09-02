@@ -1,0 +1,76 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const press = assertion('ninety-nine-papers-and-one-of-them-online')
+
+const pressSpec = bar(
+  press.figures.map((f) => f.label),
+  press.figures.map((f) => f.value),
+  { yTitle: 'Newspaper titles printed, 1843–2026', labelValues: true },
+)
+
+const limaNewsLineage = [
+  ['The Daily Democratic Times', '27 Oct 1884', 'v.1 no.1'],
+  ['The Lima Daily Democratic Times', 'to 2 Feb 1889', '–v.5 no.89'],
+  ['The Lima Daily Times', '4 Feb 1889', 'v.5 no.90 – v.9 no.141'],
+  ['The Lima Times-Democrat', '1 Apr 1893', 'v.9 no.142 – v.11 no.287'],
+  ['The Times-Democrat', '18 Sep 1895', 'v.11 no.288 – ceased 1901'],
+  ['The Lima Times-Democrat', '9 Apr 1901', 'v.17 no.151 – 36th yr no.122'],
+  ['The Lima Daily News and Times-Democrat', '3 May 1920', '36th year'],
+  ['The Lima News and Times-Democrat', '6 Jun 1920', '36th – 43rd year'],
+  ['The Lima News', '21 Jun 1926', '43rd year – current'],
+]
+---
+
+<Article slug="ninety-nine-papers">
+  <AssertionCard assertion={press} />
+  <p>
+    For six phases this site read one Allen County newspaper — the Bluffton weekly, the only one
+    the Library of Congress has digitized — and said so plainly each time: no Lima paper is in the
+    archive. That was true, and it was stated without a denominator. Ninety-nine newspapers have
+    been printed in this county. Sixty-six of them in Lima.
+  </p>
+  <ChartFigure
+    id="county-papers"
+    title="Allen County newspaper titles, 1843–2026, by place of publication"
+    caption="Ninety-seven of the ninety-nine records name a place of publication inside the county; the other two were printed at Springfield and at Wapakoneta and filed under Allen. Dates are the cataloguer's earliest and latest sighted issue, and forty-five of the ninety-nine leave one end open."
+    columns={['Town', 'Titles']}
+    rows={press.figures.map((f) => [f.label, f.value])}
+  />
+  <script type="application/json" data-chart-spec="county-papers" set:html={JSON.stringify(pressSpec)} is:inline />
+  <p>
+    Forty-three of the ninety-nine have no library reporting a copy anywhere. Of the fifty-six
+    that do, the Ohio History Connection holds runs of forty-three and the Lima Public Library of
+    nineteen. That is a count of what was reported to a union list, not a proof that nothing
+    survives — but it is what a reader with a research library card can and cannot reach.
+  </p>
+  <p>
+    The first was <em>The Porcupine</em>, a Democratic weekly whose volume 1, number 1 is dated
+    4 March 1843 — eleven months after Lima had a town government at all. It lasted seven months.
+    Eleven issues of it survive, all on one reel in Columbus.
+  </p>
+  <p>
+    The oldest thing still running is a volume count. The Lima News has carried one unbroken issue
+    number through nine titles since 27 October 1884, each successor opening at the number after
+    its predecessor's last:
+  </p>
+  <DataTable
+    title="One issue count, nine mastheads"
+    caption="In the merger of May 1920 the paper kept the News's name and the Times-Democrat's age: the Lima Daily News ended its 24th year on 2 May and the combined paper appeared the next day as the 36th."
+    columns={['Title', 'From', 'Numbering']}
+    rows={limaNewsLineage}
+  />
+  <p>
+    And a strike is legible from three catalogue records and nothing else. The Lima News was
+    suspended from 10 May to 27 June 1957. <em>The Bulletin</em> — numbers 1 to 4, on exactly
+    those dates, imprint "Lima, Ohio : Union Newspaper Workers" — was published, in the
+    cataloguer's words, by "striking and locked out workers of the Lima news". Four days after the
+    News came back, Lima had a second daily: the Lima Citizen, 1 July 1957 to 7 January 1964. It
+    is the last competitor the city has had.
+  </p>
+</Article>
