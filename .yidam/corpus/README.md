@@ -186,9 +186,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 15v / 6i / 0o | 129 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
 | [allen-county-precipitation-1895-2025.yml](measure/allen-county-precipitation-1895-2025.yml) | measure | Allen County precipitation, 1895–2025 | 2 | 10v / 3i / 1o | 79 |
-| [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 6v / 4i / 2o | 76 |
+| [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 8v / 4i / 2o | 87 |
 | [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
-| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 2 | 7v / 1i / 2o | 67 |
+| [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 2 | 8v / 4i / 1o | 81 |
+| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 2 | 8v / 1i / 2o | 76 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-race-2023.yml](measure/allen-county-race-2023.yml) | measure | Allen County population by race, 2023 | 3 | 10v / 3i / 0o | 91 |
