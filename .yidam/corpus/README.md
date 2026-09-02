@@ -217,7 +217,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 2 | 8v / 4i / 1o | 113 |
-| [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 7 | 11v / 3i / 2o | 153 |
+| [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 8 | 12v / 3i / 2o | 166 |
 | [allen-county-tri-reporters-1987-2024.yml](measure/allen-county-tri-reporters-1987-2024.yml) | measure | Allen County facilities reporting to the Toxics Release Inventory, 1987–2024 | 2 | 7v / 0i / 0o | 60 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 2 | 4v / 0i / 1o | 36 |
 | [allen-county-unemployment-1990-2026.yml](measure/allen-county-unemployment-1990-2026.yml) | measure | Allen County unemployment, 1990–2026 | 4 | 7v / 7i / 2o | 130 |
