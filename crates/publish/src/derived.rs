@@ -4478,6 +4478,49 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Black 2024", value: 1307.0, literal: "1,307" },
         ],
     },
+    Assertion {
+        id: "the-children-went-missing-faster-than-the-classrooms",
+        statement: "Allen County's under-18 population fell 7.3 per cent between the July estimates \
+                    of 2010 and 2019, while enrolment in its twelve school districts fell 5.9 per \
+                    cent over the same two autumns.",
+        topic: "population",
+        supports: &[support!("measure/allen-county-children-2010-2024.yml", "**This is most of why the schools emptied, and it is not all of it.** Across the 2010s series the\n  county's under-18 population fell 7.3 per cent between the July estimates of 2010 and 2019 \u{2014}\n  25,377 to 23,527 \u{2014} while enrolment in the twelve districts fell 5.9 per cent over the same two\n  autumns, 17,830 to 16,774. [inference] \u{2014} against\n  [the enrolment series](allen-county-school-enrolment-1988-2024.yml). The children went missing\n  faster than the classrooms did, which is the reverse of what a story about children leaving these\n  districts for other schools would predict, and it is one decade of evidence rather than a rule.")],
+        answers: &[],
+        figures: &[
+            Figure { label: "under-18 population", value: 7.3, literal: "7.3" },
+            Figure { label: "district enrolment", value: 5.9, literal: "5.9" },
+        ],
+    },
+    Assertion {
+        id: "the-under-fives-are-the-births",
+        statement: "Births in Allen County fell from 1,318 in 2011 to 1,200 in 2024, and the \
+                    county's under-five population is those births and nothing else — it matches \
+                    the five preceding years of them to within 1.6 per cent in every year checked.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-children-2010-2024.yml", "**Births fell nine per cent across the run and the low is 2021.** 1,318 in 2011 against 1,200 in\n  2024, with the fewest in the record \u{2014} 1,171 \u{2014} in the first full year after the pandemic began.\n  [verified] \u{2014} [the components files](../../catalog/census-popest-2024.md). **2010 and 2020 are\n  missing from that table on purpose**: each vintage's first year covers only the three months from\n  the census date to 30 June, 339 births in 2010 and 293 in 2020, and putting a partial year in a\n  column of full ones is how a false trough gets published. [verified] \u{2014} the same files."),
+            support!("measure/allen-county-children-2010-2024.yml", "**The county's under-five population is its own births and nothing else.** For every year of the\n  2010s where all five preceding birth counts are published in full, the estimated under-five\n  population matches their sum to within 1.6 per cent: 6,372 against 6,403 in 2015, 6,357 against\n  6,347 in 2016, 6,367 against 6,353 in 2017, 6,362 against 6,314 in 2018 and 6,303 against 6,206 in\n  2019. [inference] \u{2014} computed here from the age and component files. Migration moves this county's\n  adults; it does not appear to move its babies. The same check cannot be run on the 2020s series\n  because the 2020 birth count in these files is a three-month stub."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2011", value: 1318.0, literal: "1,318" },
+            Figure { label: "2021", value: 1171.0, literal: "1,171" },
+            Figure { label: "2024", value: 1200.0, literal: "1,200" },
+        ],
+    },
+    Assertion {
+        id: "two-vintages-disagree-about-the-children",
+        statement: "Two vintages of the Census Bureau's county estimates reach 1 July 2020 and \
+                    disagree. They put Allen County 157 people apart and its children 811 apart — \
+                    a seventh of a per cent on the total and 3.5 per cent on the part.",
+        topic: "population",
+        supports: &[support!("measure/allen-county-children-2010-2024.yml", "**1 July 2020 appears twice because two series reach it and they disagree.** The rows above the\n  break are the Vintage 2020 estimates, carried forward from the 2010 census; the rows below are\n  Vintage 2024, carried forward from the 2020 one. At the shared date they put the county 157 people\n  apart \u{2014} a seventh of one per cent \u{2014} and its children **811 apart**, which is 3.5 per cent.\n  [verified] \u{2014} [the two age files](../../catalog/census-popest-2024.md). See\n  [an estimate is anchored to a census](../../decisions/an-estimate-is-anchored-to-a-census.yml).")],
+        answers: &[],
+        figures: &[
+            Figure { label: "people", value: 157.0, literal: "157" },
+            Figure { label: "children under 18", value: 811.0, literal: "811" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

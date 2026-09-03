@@ -257,6 +257,22 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'how-many-children',
+    title: 'How many children',
+    dek: 'The county has fewer children than it had, and through the 2010s they went missing faster than the classrooms did.',
+    section: 'people',
+    era: [2010, 2024],
+    assertions: [
+      'the-children-went-missing-faster-than-the-classrooms',
+      'the-under-fives-are-the-births',
+      'two-vintages-disagree-about-the-children',
+    ],
+    entries: [
+      'measure/allen-county-children-2010-2024.yml',
+      'measure/allen-county-natural-change-2021-2024.yml',
+    ],
+  },
+  {
     slug: 'a-third-of-the-children',
     title: 'A third of the children',
     dek: 'The county has 6,910 fewer schoolchildren than in 1988, and its Black pupils are far less concentrated in Lima than they were.',

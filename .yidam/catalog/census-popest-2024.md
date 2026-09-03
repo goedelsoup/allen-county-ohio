@@ -14,6 +14,28 @@ location:
   - kind: url
     value: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/cities/totals/sub-est2024.csv
     description: sub-county totals — places and minor civil divisions
+  - kind: url
+    value: https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/counties/asrh/cc-est2024-agesex-39.csv
+    description: >-
+      County population by age and sex, Ohio, this vintage. Carries `UNDER5_TOT`, `AGE513_TOT`,
+      `AGE1417_TOT` and the rest as counts; it does not publish an under-18 column, which is the
+      sum of those three.
+  - kind: url
+    value: https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/asrh/CC-EST2020-AGESEX-39.csv
+    description: >-
+      The same file for the 2010s, and **its name is upper-case** — the lower-case form the newer
+      vintage uses returns a 404 page named `.csv`. It is a different series, not more years of
+      this one.
+  - kind: url
+    value: https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/counties/totals/co-est2019-alldata.csv
+    description: >-
+      Components of change for the 2010s — `BIRTHS2010` through `BIRTHS2019` and the same for
+      deaths and migration. The 2020s equivalent is the `co-est2024-alldata.csv` already listed.
+  - kind: url
+    value: https://www2.census.gov/programs-surveys/popest/technical-documentation/file-layouts/2010-2020/cc-est2020-agesex.pdf
+    description: >-
+      The file layout, which is the only place the `YEAR` codes are defined and the only place the
+      2010s series says it was built without the 2020 census.
 used-by:
   - ../corpus/jurisdiction/auglaize-township.yml
   - ../corpus/jurisdiction/village-of-beaverdam.yml
@@ -22,6 +44,7 @@ used-by:
   - ../corpus/jurisdiction/village-of-elida.yml
   - ../corpus/jurisdiction/village-of-harrod.yml
   - ../corpus/jurisdiction/village-of-spencerville.yml
+  - ../corpus/measure/allen-county-children-2010-2024.yml
   - ../corpus/measure/allen-county-elected-seats-2026.yml
   - ../corpus/measure/allen-county-natural-change-2021-2024.yml
   - ../corpus/measure/allen-county-net-migration-2021-2024.yml
@@ -96,3 +119,25 @@ fifty-four years this corpus's decline covers and nothing before 2020.
 components of change are all in the county file and none were read. They are the mechanism
 behind the population decline this corpus describes, and the decline is all it can currently
 describe.
+
+**`YEAR` is a code and not a year, and the codes differ between vintages.** In the 2010s age file
+1 is the 2010 census, 2 the estimates base, 3 through 12 the July estimates for 2010 to 2019, 13 the
+1 April 2020 estimate and 14 the 1 July 2020 estimate. In the 2020s file 1 is the 2020 base and 2
+through 6 are July 2020 to 2024. [verified] — the Bureau's file layout. Reading `YEAR` as a year
+puts every figure a decade out and raises nothing.
+
+**The first `BIRTHS` and `DEATHS` column of each vintage is a three-month stub.** `BIRTHS2010` is
+339 for Allen County and `BIRTHS2020` is 293, against about 1,200 in every full year, because each
+covers only the census date to 30 June. [verified] — the two components files. Plotted in a column
+of full years it is a collapse and a recovery that did not happen.
+
+**The two vintages disagree about this county's children by 3.5 per cent at the date they share.**
+1 July 2020: 101,980 people against 102,137, and 23,452 under eighteen against 24,263. [verified] —
+the two age files. The total agrees to a seventh of a per cent and the parts do not, which is why
+[an estimate is anchored to a census](../decisions/an-estimate-is-anchored-to-a-census.yml) says to
+test a seam on the figure being used.
+
+**The components files reach back further than the age files were taken.** `co-est2019-alldata.csv`
+carries births, deaths and both migration components for every county for 2010 to 2019, and the
+1990s and 2000s have their own vintages on paths this corpus has not walked. What is here is
+fifteen years, and the enrolment series it is used against runs thirty-seven. [verified]
