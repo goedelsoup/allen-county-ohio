@@ -1,0 +1,72 @@
+id: the-legend-is-not-the-record
+summary: >-
+  One state agency publishes two views of one well register. The map service calls 2,821 Allen
+  County wells *Unknown status*; the feature service behind it calls the same 2,821 *Historical
+  Production Well*. Sixty-one per cent of the shared rows carry different status words. A map's
+  vocabulary is a legend — chosen so a symbol can be drawn — and reading it as data imports the
+  drawing.
+context: |
+  Both services are ODNR's, both are current, both cover the same county, and they are joined on the
+  API number without ambiguity.
+
+      map service says                 register says                    wells
+      Unknown status                   Historical Production Well       2,821
+      Plugged and Abandoned            Plugged and Abandoned            1,703
+      Permit Expired                   Not Drilled                         45
+      Expired Permit                   Not Drilled                         25
+      Well Drilled                     Historical Production Well          17
+      Orphan Well - Ready              Historical Production Well           8
+      Orphan Well - Ready              Plugged and Abandoned                8
+
+  2,933 of 4,831 disagree. The map service is not wrong: its layer is named *Wells by Type (Symbol)*
+  and it exists to decide which dot to draw. It has no symbol for a well that produced long ago and
+  was never plugged, so those wells fall into the bucket a map keeps for everything it cannot
+  symbolise, and that bucket is spelled *Unknown*.
+
+  Read off the map, this county has 2,903 wells of unknown status. Read off the register, it has
+  2,851 wells that produced and have no plugging on file, 82 genuinely unknown, and a distinction
+  between the two that a reader needs. The first version is both more alarming and less true.
+
+  The same service also spells one category two ways — *Permit Expired* for 45 wells and *Expired
+  Permit* for 25 — which the register calls *Not Drilled* for all 70. A tally of the map's own words
+  would report three categories where there is one.
+decision: |
+  **Where a source publishes more than one view of the same rows, find the one the others are drawn
+  from and quote that. A view built for display is quoted for what it draws, never for what it
+  says.**
+
+  - **Join the views before quoting either.** The join is usually free — a shared key — and the
+    disagreement rate is the finding. Report it in the catalogue entry.
+  - **Treat a status word that reads as an absence as suspect until checked.** *Unknown*, *Other*,
+    *Not reported* and *N/A* are where a display bucket lands, and the same row often has a real
+    category one layer down. This is the sibling of
+    [a zero is not a blank](a-zero-is-not-a-blank.yml): there, a blank was being read as a count;
+    here, a category is being read as a blank.
+  - **Do not tally a legend's vocabulary.** Two spellings of one thing are one thing. A count of
+    distinct values in a display layer counts symbols.
+  - **Say which view every figure came from.** In a node that uses both, the `method` block names
+    which service supplied the counts, which supplied the statuses, and why.
+rationale: |
+  **This is not the register rule.**
+  [a register is not a census](a-register-is-not-a-census.yml) is about a file whose currency is its
+  last filing, and about attributes stamped *now* being read as history. Here there is no currency
+  problem at all: both views are current and both are correct about what they are. The failure is
+  that one of them is a picture.
+
+  **Nor is it the administrative-key rule.**
+  [the administrative key is not the thing](the-administrative-key-is-not-the-thing.yml) is about a
+  field that describes paperwork rather than the world. *Unknown status* does describe the world —
+  it says the drawer could not classify the well — and the mistake is reading that as a statement
+  about the well rather than about the drawing.
+
+  **The stakes here are not editorial.** 2,851 wells that produced and have no plugging on file is a
+  fact about a county whose people farm over them and drink from beneath them, and 108 of them are
+  in the state's orphan-well programme. Getting from *unknown* to *unplugged* is the difference
+  between a shrug and a number.
+
+  **What this does not license.** Preferring whichever view gives the more interesting answer. The
+  register wins because the map is drawn from it, and that is a fact about the two services that has
+  to be established rather than assumed — here by the map layer's own name and by the register
+  carrying fields the map does not expose.
+status: accepted
+date: "2026-09-03"

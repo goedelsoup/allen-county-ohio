@@ -1,0 +1,102 @@
+class: measure
+label: Oil and gas wells in Allen County
+description: |
+  Every well the state of Ohio holds a record of in this county: 4,849 of them, all vertical.
+  [verified] —
+  [the ODNR well register](../../catalog/odnr-oil-and-gas-wells.md), map service filtered to
+  `WL_CNTY='ALLEN'`.
+
+      status, as the register has it               wells    share
+      historical production well                   2,851    59.0%
+      plugged and abandoned                        1,715    35.5%
+      final restoration                               83     1.7%
+      unknown status                                  82     1.7%
+      not drilled                                     70     1.4%
+      field inspected, well not found                 12     0.2%
+      orphan well, ready or pending                   13     0.3%
+      storage, or dry and abandoned                    8     0.2%
+
+  **Three wells in five are recorded as having produced and are not recorded as having been
+  plugged.** 2,851 of the 4,834 in the feature service carry the status *historical production
+  well*, and not one of them carries a date of plugging. [verified] — the same source, the feature
+  service. 1,715 are recorded as plugged and abandoned, and 84 of those 1,715 carry the date it
+  happened. What the register establishes is the state of its own paperwork. [inference]
+
+  **A hundred and eight of them are in the state's orphan-well programme.** 52 referred, 35
+  scheduled under the traditional programme, 11 already plugged under it, 7 scheduled under the
+  federal programme, 2 permitted and 1 plugged as an emergency. [verified] — the same source,
+  `OrphanWellProgramStatus`. That is 2.2 per cent of the county's wells and it is the part of the
+  problem the state has counted.
+
+      wells per square mile          wells   sq mi   density
+      Bath                             783    30.7     25.51
+      Perry                            832    32.7     25.44
+      Shawnee                          517    29.0     17.85
+      American                         395    24.0     16.45
+      Lima                             206    13.6     15.13
+      Spencer                          346    23.3     14.84
+      Marion                           534    42.4     12.60
+      Richland                         486    41.6     11.67
+      Amanda                           311    33.3      9.34
+      Jackson                          284    35.7      7.95
+      Sugar Creek                      113    24.1      4.69
+      Monroe                            34    36.1      0.94
+      Auglaize                           8    36.0      0.22
+
+  **The field is a shape and its centre is just east of the city.** Bath and Perry, which wrap Lima
+  on the north and east, hold 1,615 wells between 63.4 square miles; Auglaize and Monroe, at the
+  county's south-east and north edges, hold 42 between 72.1. That is 25.51 wells to the square mile
+  in Bath and 25.44 in Perry against 0.94 in Monroe and 0.22 in Auglaize — the densest township has
+  116 times the wells per square mile of the thinnest. [verified] — every wellhead coordinate placed in
+  the thirteen county subdivisions of [TIGERweb](../../catalog/tigerweb-census2020.md) by point in
+  polygon;
+  all 4,849 fell inside one and their areas sum to 402.5 square miles against the gazetteer's
+  402.545.
+
+  **They are one formation at one depth.** 39 of the 43 wells in the county that name a producing
+  formation name the Trenton Limestone; of the 290 that record a total depth, the median is 1,332
+  feet and 230 fall between 1,200 and 1,399. [verified] — the same source. That is the Lima–Indiana
+  field, and the register describes it in a depth histogram rather than in a date.
+
+  **The register begins five years after the field does.** Its earliest completion date for this
+  county is 1890 and [the strike](../event/lima-oil-strike.yml) was 9 May 1885; thirty wells here
+  carry a completion date before 1920. [verified] — the same source against
+  [the 1906 history](../../catalog/miller-allen-county-1906.md).
+
+  This corpus cannot say how many wells the boom drilled. [inference] — the state's register is a
+  regulatory file that grew up around an industry already running, and what it preserves of the
+  nineteenth century is the hole in the ground rather than the record of making it. See
+  [the oil boom](../period/lima-oil-boom.yml).
+properties:
+  parameter: recorded oil and gas wells
+  value: "4849"
+  unit: wells
+  as_of: "2026"
+  method: |
+    Two ODNR services, paged 1,000 rows at a time. [verified] The map service gives 4,849 rows for
+    `WL_CNTY='ALLEN'` and the feature service 4,834 for `API_NO LIKE '34003%'`; 4,831 are in both,
+    18 in the map only and 1 in the feature service only. Counts of wells use the map service and
+    counts of statuses, dates and depths use the feature service, which is the register the map is
+    drawn from; the two disagree about the status of 2,933 of the 4,831 they share, and
+    [the legend is not the record](../../decisions/the-legend-is-not-the-record.yml) is why the
+    register wins. Density is by point in polygon against 2020 TIGERweb county subdivisions, not by
+    the file's own township column, because that column assigns wells inside the city to the survey
+    townships the city was carved out of.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/odnr-oil-and-gas-wells.md
+  - target: ../period/lima-oil-boom.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/odnr-oil-and-gas-wells.md
+  - target: ../site/lima-refinery.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../event/lima-oil-strike.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/odnr-oil-and-gas-wells.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

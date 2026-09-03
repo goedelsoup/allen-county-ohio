@@ -341,6 +341,24 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'the-wells-that-are-still-there',
+    title: 'The wells that are still there',
+    dek: 'The 1885 oil strike is the best-dated event in this county\u2019s history. Nobody had counted what it left behind: 4,849 holes, and no paper closing most of them.',
+    section: 'ground',
+    era: [1885, 2026],
+    assertions: [
+      'two-thousand-eight-hundred-wells-with-no-plugging-on-file',
+      'a-hundred-and-eight-orphan-wells',
+      'the-oil-field-is-a-shape-east-of-the-city',
+      'one-formation-at-one-depth',
+      'the-register-begins-after-the-field-does',
+    ],
+    entries: [
+      'measure/allen-county-oil-and-gas-wells-2026.yml',
+      'period/lima-oil-boom.yml',
+    ],
+  },
+  {
     slug: 'prime-if-drained',
     title: 'Prime if drained',
     dek: 'Three quarters of this county drains badly, and five acres in six of its prime farmland are prime only because somebody took the water off.',
