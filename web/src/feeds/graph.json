@@ -4457,6 +4457,57 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-elevation-2026.yml",
+      "class": "measure",
+      "label": "How high Allen County is, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "The elevation surface was exported over a bounding box of the county at 1,600 × 880 cells and clipped to [TIGER's 2024 county polygon](../../catalog/census-tiger-roads.md) with a cutline. [verified] The image service returns metres and the point service returns whatever it is asked for; every figure here is stated in feet and the conversion is 3.280839895. [verified] Natural relief excludes one contiguous component: the cells reachable from the county minimum without rising above 800 feet, which is 188 cells and 47.7 acres. The rim used for the pit's depth is the median of the 78 cells that touch that component from outside, not an annulus, so it is the ground the pit was cut into. [verified] The divide is `WBDLine` features carrying `hudigit` 2 — the boundary between two-digit hydrologic regions — intersected with the county polygon and measured in EPSG:6549, Ohio North in US survey feet; the projection was checked first by projecting the county polygon and comparing its area to the published one, agreeing to 0.010 per cent. [verified] Samples along the divide are every 500 feet of its projected length.",
+        "parameter": "elevation of the land surface, and the length of the continental divide within it",
+        "unit": "feet of natural relief",
+        "value": "337.7"
+      },
+      "blocks": [
+        {
+          "text": "The first elevations this corpus has held for any ground in this county. [verified] — [USGS 3DEP](../../catalog/usgs-3dep-elevation.md), the seamless elevation surface exported over the county and clipped to its boundary, 1,024,301 cells of about 30 metres.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county runs from 733.5 feet to 1,071.2 feet and that is 337.7 feet of relief across 402 square miles.** Its mean is 859.1 feet and its median 842.3. [verified] — the same source, computed here, with the quarry described below excluded.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its highest ground is where the continental divide enters it.** The high point is at 40.644716, −83.900309, in the county's south-east corner in [Auglaize Township](../place/auglaize-township.yml), 200 metres from the point where the boundary between the Great Lakes and Ohio hydrologic regions crosses the county's southern line. [verified] — the same surface and [the watershed boundary](../../catalog/usgs-watershed-boundary.md), computed here. The lowest natural ground is at 40.883216, −83.891034, at the opposite corner.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The divide runs 9.196 miles inside Allen County and every foot of it is in Auglaize Township.** It enters at the county's southern line at 40.644643, −83.902735 and leaves at the eastern line at 40.721021, −83.879880, cutting off the county's south-east corner. [verified] — [the WBDLine layer](../../catalog/usgs-watershed-boundary.md) at `hudigit` 2, clipped to [TIGER's county polygon](../../catalog/census-tiger-roads.md) and measured in EPSG:6549.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is one of the flattest pieces of continental divide there is.** Ninety-eight samples spaced 500 feet along it run from 991.3 to 1,065.9 feet — 74.6 feet of rise and fall over nine miles, on a mean of 1,022.9 and a standard deviation of 20.2, with 55 of the 98 within 20 feet of the median. [verified] — [the elevation point service](../../catalog/usgs-3dep-elevation.md), 98 queries. A person walking east across it would cross from the St. Lawrence watershed to the Gulf of Mexico without noticing a hill.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The ground on the far side is 2,303.0 acres.** The Ohio Region occupies 3.5984 square miles of Allen County, 0.885 per cent of it, all in Auglaize Township, against the 0.10 per cent of the county's population who live there. [verified] — [the same source's](../../catalog/usgs-watershed-boundary.md) region polygons, clipped to the county; see [the Scioto basin](../natural-feature/scioto-river-basin.yml). Nine times as much of this county drains to the Gulf as lives there, because the corner is farmland.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The lowest elevation anywhere in this county is 474.7 feet and it is a hole somebody dug.** A contiguous depression of 47.7 acres between 40.74906 and 40.75237 north falls 365.3 feet below the median of the cells that ring it, and the coordinate this corpus already held for [the National Lime & Stone quarry](allen-county-quarries-2000-2025.yml) — 40.750833, −84.086111 — lies inside it. [verified] — the same surface, flood-filled from its minimum, against [the mine register](../../catalog/msha-mine-data.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The hole is deeper than the county.** 365.3 feet from rim to floor against 337.7 feet between the county's highest and lowest natural ground, and the floor sits 258.8 feet below any ground in Allen County that nobody excavated. [inference] — computed here from the figures above. That comparison is why the county's minimum cannot be published as a fact about its terrain; see [an extreme in a surface has an address](../../decisions/an-extreme-in-a-surface-has-an-address.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how much stone has come out of that hole.** A pit's present volume is not a production figure: it is net of everything backfilled, it is dated to whenever the surface was flown, and it says nothing about the material removed above the original grade."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-employment-by-sector-1986-2022.yml",
       "class": "measure",
       "label": "Allen County employment by sector, 1986 and 2022",
@@ -7654,6 +7705,53 @@
         "This corpus cannot say how many wells the boom drilled."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-original-vegetation.yml",
+      "class": "measure",
+      "label": "What grew in Allen County before the surveys, mapped",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1966",
+        "method": "The statewide shapefile filtered by a spatial filter on the county polygon, each polygon intersected with it, and the intersections projected to EPSG:6549 for area. [verified] The thirteen vegetation names come from the enumerated domain in the file's own FGDC metadata and not from any re-hosted copy with the names already joined. [verified] Township shares divide the swamp area inside each 2024 county subdivision by that subdivision's own projected area, so Lima is listed as the separate unit the boundary file makes it. [verified] The hydric figures are the corpus's own, from the soil survey, and the two sources compute county area 18.7 acres apart — 260,340 against 260,358.7 — which is 0.007 per cent and is not reconciled here. [verified]",
+        "parameter": "original vegetation cover by type",
+        "unit": "acres of elm-ash swamp forest, of 260,358.7",
+        "value": "22433.9"
+      },
+      "blocks": [
+        {
+          "text": "The county's original vegetation, digitized from the map Robert B. Gordon drew in 1966 out of the earliest land survey records. [verified] — [ODNR's Original Natural Vegetation of Ohio](../../catalog/odnr-original-vegetation.md), clipped to [TIGER's county polygon](../../catalog/census-tiger-roads.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County was nine parts beech forest and less than one part swamp.** Two of Gordon's thirteen types occur here at all: **237,924.9 acres of beech forest**, and the swamp forest that gives [the Great Black Swamp](../natural-feature/great-black-swamp.yml) its name at **22,433.9 acres** of 260,358.7 — 8.6 per cent. [verified] — the same source. The two polygons' areas sum to the county's own area exactly, which is the check that the whole county is accounted for.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is not one swamp. It is nineteen.** The swamp forest inside this county falls into 19 separate bodies, the largest 5,007.9 acres and eleven of them lying wholly inside the county line. The biggest polygon that reaches in from outside, 14,414.4 acres, extends **west** into Van Wert County rather than north. [verified] — the same file, by polygon.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The hydric-soil proxy overstated the swamp by a factor of 4.1.** This corpus has carried 91,953 acres of hydric soil, 35.3 per cent of the county, as \"the nearest thing to an answer\" for where the swamp was. The mapped swamp forest is 22,433.9 acres, 24.4 per cent of the hydric acreage. [verified] — this file against [the soil survey](../../catalog/usda-ssurgo-soil-survey.md); see [the soils](allen-county-soils-2026.yml) and [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The proxy got the order roughly and the places wrongly.** Ranked across the twelve townships the two measures agree at a Spearman correlation of 0.685, and the disagreements are not small: Perry Township is fifth on hydric soil at 34.9 per cent and has no swamp forest at all, while Shawnee is tenth on hydric at 26.2 and fifth on swamp at 10.8. [inference] — computed here from the two files. Four townships with a third of their ground rated hydric — Perry, Jackson, Bath and the city — carried no swamp forest whatever.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The direction the corpus guessed is right and much weaker than it looked.** On the corpus's own grouping, the four townships whose centres lie north of 40.80° average 12.4 per cent swamp forest against 7.9 for the other eight, where on hydric soil the same two groups read 46.0 against 30.9. [inference] — the same two files. The northern lead survives and it is one township wide: take Marion out and it is gone.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The wet ground and the swamp are different facts and the county is mostly the first.** Three quarters of this county's hydric acres carried beech forest rather than swamp forest, which is what a lake plain that drains badly and still grows trees looks like. [inference] — computed from the two files above.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say when any of this was cleared.** Gordon's map is one surface at one moment — the moment of the earliest surveys — and nothing in it is a date."
+      ],
+      "withheld": 4
     },
     {
       "id": "measure/allen-county-outside-lima-1890-2020.yml",
@@ -12391,8 +12489,8 @@
       },
       "blocks": [
         {
-          "text": "The glacially-formed wetland that covered much of northwest Ohio until it was drained in the second half of the nineteenth century. Allen County lies at its southern margin, and its northern townships were within it. [inference]",
-          "tier": "inference"
+          "text": "The glacially-formed wetland that covered much of northwest Ohio until it was drained in the second half of the nineteenth century. Allen County lies at its southern margin, where what the name refers to is nineteen scattered bodies of swamp forest covering 8.6 per cent of the county rather than a continuous wetland across its northern townships. [verified] — [the original vegetation map](../../catalog/odnr-original-vegetation.md); see [what grew here](../measure/allen-county-original-vegetation.yml). The sentence this node opened with from genesis — that its northern townships were within it — is corrected below rather than removed, because the correction is the finding.",
+          "tier": "verified"
         },
         {
           "text": "It belongs in this corpus because it is the negative space in the county's settlement history: the swamp is why this part of Ohio was settled late relative to the south of the state, why the drainage tile and ditch systems are as extensive as they are, and why the land is as productive as it is now that they exist. [inference] It is also a feature that no longer exists as such, which is a thing this class must be able to hold — a natural-feature node is not required to describe present ground.",
@@ -12413,6 +12511,14 @@
         {
           "text": "**The driest ground in the county is the ground the county seat is on.** Lima is 13.4 per cent hydric and 33.2 per cent poorly drained or worse, against 74.7 for the county. [verified] — [the same survey](../../catalog/usda-ssurgo-soil-survey.md), clipped the same way. Bath, the township the city grew into, is the driest of the twelve at 21.1.",
           "tier": "verified"
+        },
+        {
+          "text": "**Where the swamp's boundary ran, from a map instead of a proxy.** Gordon's *Natural Vegetation of Ohio at the Time of the Earliest Land Surveys*, digitized by the state, puts **22,433.9 acres** of elm-ash swamp forest in this county — **8.6 per cent** of it, against 91.4 per cent beech forest and nothing else. [verified] — [the original vegetation map](../../catalog/odnr-original-vegetation.md), clipped here. This question is closed and the proxy it was opened against was wrong by a factor of 4.1: the hydric acres above are 91,953 and the mapped swamp is 24.4 per cent of them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The proxy's order was roughly right and its geography was not.** Across the twelve townships the two measures correlate at a Spearman 0.685, and Perry Township — fifth of twelve on hydric soil at 34.9 per cent — carries no swamp forest at all, as do Jackson, Bath and the city. [inference] — [the same map](../../catalog/odnr-original-vegetation.md) against the soil survey, computed here. The northern lead this node claimed survives at 12.4 per cent against 7.9 where the soil said 46.0 against 30.9, and it is one township wide. See [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -12627,12 +12733,24 @@
           "tier": "verified"
         },
         {
+          "text": "**Where the divide runs on the ground.** The boundary between the two hydrologic regions crosses **9.196 miles** of Allen County, entirely inside Auglaize Township, entering at the county's southern line at 40.644643, −83.902735 and leaving at its eastern line at 40.721021, −83.879880. [verified] — [the WBDLine layer](../../catalog/usgs-watershed-boundary.md) at `hudigit` 2, clipped and measured; see [the elevation node](../measure/allen-county-elevation-2026.yml). The open question this node carried named that layer and it was the right instrument.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The corner it cuts off is 2,303.0 acres, and it is nine times more of the county's ground than of its people.** 3.5984 square miles, 0.885 per cent of the county, against the 0.10 per cent of its population counted above. [verified] — the same source's region polygons, clipped to the county. Four blocks are a population and 2,303 acres are a place.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The divide is nine miles long and 74.6 feet tall.** Ninety-eight elevations spaced 500 feet along it run from 991.3 to 1,065.9 feet on a standard deviation of 20.2, and its high end is within 200 metres of the highest ground in Allen County. [verified] — [USGS 3DEP](../../catalog/usgs-3dep-elevation.md). Nothing on the ground marks it.",
+          "tier": "verified"
+        },
+        {
           "text": "**No instrument stands on this side of the divide.** All 184 USGS water monitoring sites in Allen County are in Maumee hydrologic units — 168 in the Auglaize, 14 in the Blanchard, two in others — and none in an Ohio River unit. [verified] — [the monitoring sites](../measure/allen-county-water-gauges-2026.yml). That is an absence of gauges and not evidence against the four blocks above: ninety-nine people and a headwater ditch do not get a gauge, and the instrument network was never asked the question this node answers. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "natural-feature/sugar-creek.yml",
@@ -23896,6 +24014,34 @@
       "source": "catalog/ohio-boe-elected-officials-allen.md"
     },
     {
+      "from": "measure/allen-county-elevation-2026.yml",
+      "to": "natural-feature/scioto-river-basin.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
+    },
+    {
+      "from": "measure/allen-county-elevation-2026.yml",
+      "to": "measure/allen-county-quarries-2000-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/msha-mine-data.md"
+    },
+    {
+      "from": "measure/allen-county-elevation-2026.yml",
+      "to": "measure/allen-county-original-vegetation.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-elevation-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-3dep-elevation.md"
+    },
+    {
       "from": "measure/allen-county-employment-by-sector-1986-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -25000,6 +25146,34 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/odnr-oil-and-gas-wells.md"
+    },
+    {
+      "from": "measure/allen-county-original-vegetation.yml",
+      "to": "natural-feature/great-black-swamp.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/odnr-original-vegetation.md"
+    },
+    {
+      "from": "measure/allen-county-original-vegetation.yml",
+      "to": "measure/allen-county-soils-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usda-ssurgo-soil-survey.md"
+    },
+    {
+      "from": "measure/allen-county-original-vegetation.yml",
+      "to": "measure/allen-county-farmland-1910-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-original-vegetation.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/odnr-original-vegetation.md"
     },
     {
       "from": "measure/allen-county-outside-lima-1890-2020.yml",
@@ -26522,6 +26696,13 @@
     },
     {
       "from": "natural-feature/great-black-swamp.yml",
+      "to": "measure/allen-county-original-vegetation.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/odnr-original-vegetation.md"
+    },
+    {
+      "from": "natural-feature/great-black-swamp.yml",
       "to": "place/allen-county.yml",
       "relationship": "traverses",
       "tier": "inference",
@@ -26596,6 +26777,13 @@
       "relationship": "traverses",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "natural-feature/scioto-river-basin.yml",
+      "to": "measure/allen-county-elevation-2026.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/usgs-3dep-elevation.md"
     },
     {
       "from": "natural-feature/scioto-river-basin.yml",

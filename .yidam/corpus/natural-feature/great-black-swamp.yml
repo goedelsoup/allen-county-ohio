@@ -2,8 +2,13 @@ class: natural-feature
 label: Great Black Swamp
 description: |
   The glacially-formed wetland that covered much of northwest Ohio until it was drained in
-  the second half of the nineteenth century. Allen County lies at its southern margin, and
-  its northern townships were within it. [inference]
+  the second half of the nineteenth century. Allen County lies at its southern margin, where what
+  the name refers to is nineteen scattered bodies of swamp forest covering 8.6 per cent of the
+  county rather than a continuous wetland across its northern townships. [verified] —
+  [the original vegetation map](../../catalog/odnr-original-vegetation.md); see
+  [what grew here](../measure/allen-county-original-vegetation.yml). The sentence this node opened
+  with from genesis — that its northern townships were within it — is corrected below rather than
+  removed, because the correction is the finding.
 
   It belongs in this corpus because it is the negative space in the county's settlement
   history: the swamp is why this part of Ohio was settled late relative to the south of the
@@ -46,15 +51,32 @@ description: |
   [the same survey](../../catalog/usda-ssurgo-soil-survey.md), clipped the same way. Bath, the
   township the city grew into, is the driest of the twelve at 21.1.
 
-  [open] Where the swamp's boundary actually ran. Hydric soil is a proxy and not a map: it records
-  where water stood long enough to make the soil, which is a wider thing than the wooded wetland the
-  name refers to and a narrower thing than the poorly drained county. Closing this needs a mapped
-  historic extent — Kaatz's 1955 historical geography or a state original-vegetation layer — and
-  neither has been obtained. See
+  **Where the swamp's boundary ran, from a map instead of a proxy.** Gordon's *Natural Vegetation of
+  Ohio at the Time of the Earliest Land Surveys*, digitized by the state, puts **22,433.9 acres** of
+  elm-ash swamp forest in this county — **8.6 per cent** of it, against 91.4 per cent beech forest
+  and nothing else. [verified] —
+  [the original vegetation map](../../catalog/odnr-original-vegetation.md), clipped here. This
+  question is closed and the proxy it was opened against was wrong by a factor of 4.1: the hydric
+  acres above are 91,953 and the mapped swamp is 24.4 per cent of them.
+
+  **The proxy's order was roughly right and its geography was not.** Across the twelve townships the
+  two measures correlate at a Spearman 0.685, and Perry Township — fifth of twelve on hydric soil at
+  34.9 per cent — carries no swamp forest at all, as do Jackson, Bath and the city. [inference] —
+  [the same map](../../catalog/odnr-original-vegetation.md) against the soil survey, computed here.
+  The northern lead this node claimed survives at 12.4 per cent against 7.9 where the soil said 46.0
+  against 30.9, and it is one township wide. See
   [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml).
+
+  [open] Whether the nineteen bodies were one wetland before the ditching. Gordon mapped forest
+  types and not hydrology, and a single swamp can carry two forest covers; the original survey field
+  notes rather than the map drawn from them would settle it.
 properties:
   feature_type: wetland
 links:
+  - target: ../measure/allen-county-original-vegetation.yml
+    relationship: evidenced-by
+    claim_tag: verified
+    source: ../../catalog/odnr-original-vegetation.md
   - target: ../place/allen-county.yml
     relationship: traverses
     claim_tag: inference

@@ -18,6 +18,7 @@ used-by:
   - ../corpus/natural-feature/ottawa-river.yml
   - ../corpus/natural-feature/scioto-river-basin.yml
   - ../corpus/place/auglaize-township.yml
+  - ../corpus/measure/allen-county-elevation-2026.yml
 ---
 
 Queried exactly like [TIGERweb](tigerweb-census2020.md) and for the same reason: a point or a
