@@ -1,0 +1,74 @@
+id: a-county-rate-can-describe-nowhere
+summary: >-
+  Allen County holds 22.3 subsidized housing units per thousand residents, eighteenth of Ohio's
+  eighty-eight. Lima holds 55.9 and would head the list; the rest of the county holds 4.7 and would
+  sit seventy-eighth. The county figure is a weighted average of two rates twelve times apart and
+  is true of nowhere in it. Before a county rate is ranked against other counties, the spread
+  inside the county is measured against the spread between them.
+context: |
+  Ohio's eighty-eight counties run from 0.91 subsidized units per thousand residents in Paulding to
+  31.36 in Cuyahoga — a range of 30.5. Allen County's own two parts run from 4.7 outside Lima to
+  55.9 inside it — a range of 51.1. **The county is more internally various, on this measure, than
+  the entire state is between counties.**
+
+      Allen County                   2,251 units    100,866 people     22.3 per 1,000   rank 18/88
+      Lima city                      1,938 units     34,690 people     55.9 per 1,000
+      the rest of Allen County         313 units     66,176 people      4.7 per 1,000
+
+  Inserted into the county list, Lima would rank first — at nearly twice Cuyahoga's 31.4, the
+  highest county rate in the state — and the remainder seventy-eighth, between Union and Geauga. That insertion is not a rank — a city and a county are not the same unit —
+  and it is the clearest way to show that the county number sits between two things and describes
+  neither.
+
+  **This corpus has already noticed the shape and not made it a rule.**
+  [The housing stock](../corpus/measure/allen-county-housing-stock-2023.yml) says it out loud:
+  "The county looks American and neither of its halves does" — 68.3 per cent owner-occupied against
+  65.0 nationally, made of Lima at 46.4 and twelve townships between 72.0 and 91.0. That node
+  published the observation about one measure. Nothing stopped the next measure from being ranked
+  against Ohio without it.
+decision: |
+  **Before publishing a county rate as a comparison with other counties, compute the same rate for
+  the largest subdivision and for the remainder, and compare that internal range with the range
+  across the comparison set.**
+
+  - Where the internal range is the **larger**, publish the split. The rank may still be given as an
+    answer to "where is this county in the state's filing", and must not be given as a description
+    of the place.
+  - Where the internal range is the smaller, the county rate stands and the split need not be
+    printed — but it was computed, and the node says it was.
+  - **Inserting a subdivision into a list of counties is a demonstration, not a rank**, and is
+    labelled as one wherever it is used. The units are not comparable; that is the point being made.
+  - Where the source publishes counties and nothing finer, say so and say that this county contains
+    the region's city. An untestable rate is reported with its limit attached, not silently.
+
+  The test costs one query. Every American Community Survey table this corpus has taken carries the
+  thirteen civil subdivisions beside the county row, and the federal housing files publish a place
+  level under the county for the same reason.
+rationale: |
+  **The sentence this prevents is true and misleading in the same breath.** "Allen County holds more
+  subsidized housing than the five counties around it put together" is arithmetic — 2,251 against
+  1,733 — and it reads as a fact about Allen County's character. What it records is that the county
+  contains the region's only city and the five others do not. Outside Lima this county sits with
+  Putnam and Van Wert, which is where its geography says it should sit.
+
+  **It is not the failure [a rank is an estimate](a-rank-is-an-estimate.yml) describes.** That one is
+  about the interval around a modelled rate, and its remedy is to lead with the ratio and treat a
+  mid-range rank as silence. Here there is no interval at all: these are administrative counts of
+  contracts, exact to the unit, and the rank is uninformative anyway. A number can be certain and
+  still be about no place.
+
+  **It is not [a county column is a filing decision](a-county-column-is-a-filing-decision.yml)
+  either.** There the county was wrong — a stream filed under the county of its mouth. Here every
+  unit is in the county it is in. The county is the right container and the wrong description.
+
+  **What it does not buy.** It says nothing about which unit *is* right. Lima's own 55.9 is a city
+  average over neighbourhoods that differ from each other, and the rule recurses until the geography
+  runs out or the cells are suppressed. The rule asks for one level of split, because one level is
+  what turns a rank that means nothing into two numbers that mean something, and because a corpus
+  that recursed forever would publish tracts and no sentences.
+
+  **And it needs a subdivision to exist.** Several federal sources this corpus reads stop at the
+  county — the employment tables, the mortality files, the climate divisions. For those the test
+  cannot be run, and the honest form is the last clause of the decision rather than an exemption.
+status: accepted
+date: "2026-09-02"
