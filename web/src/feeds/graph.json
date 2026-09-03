@@ -5485,6 +5485,73 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "class": "measure",
+      "label": "Housing cost burden in Allen County, 2006–2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "HUD CHAS county files for 2006–2010, 2011–2015, 2015–2019 and 2018–2022, Ohio state code 39 and county code 003, plus the 2018–2022 place file for Lima. Burden counts are the sum of the five income bands' `greater than 30%` and `greater than 50%` cells in Table 8 — for renters the columns based at `T8_est69`, for owners at `T8_est3` — and the denominators are the file's own published tenure totals, which differ from the sum of its rounded parts by a handful of households. [verified] Margins are the root of the sum of squares of the file's own `moe` columns, and a share's margin uses the Census proportion formula. The state and national rates are sums over every county row in the same file. The affordability ratios add Table 14B's vacant-for-rent units to Table 15C's occupied ones, which is how the shortage is normally measured. `value` is the county's owner and renter burdened households added, 3,905 and 4,725, for the 2018–2022 window only.",
+        "parameter": "households paying more than 30 per cent of income for housing",
+        "unit": "households",
+        "value": "8630"
+      },
+      "blocks": [
+        {
+          "text": "What housing costs the households living in it — by tenure, by income measured against the area median, and by the share of that income the rent or the mortgage takes. [verified] — [HUD's affordability tables](../../catalog/hud-chas.md), county and place files for four American Community Survey windows.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A renter in this county is two and a half times as likely as an owner to be paying more than thirty per cent of income for housing**, 35.7 per cent against 14.2, and more than three times as likely to be paying more than half, 17.4 per cent against 5.3. [verified] — the same file, Table 8, and the shares are computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The burden is almost entirely at the bottom of the income scale**, and above the area median it is close to absent. Of the 4,060 households living on less than 30 per cent of area median income, 2,515 pay more than half of it for housing — 61.9 per cent. Of the 23,700 households above 80 per cent of the area median, 680 pay more than 30 per cent of income, which is 2.9 per cent of them. [verified] — the same table; the two shares are computed here. Cheap housing is not the same thing as affordable housing, and this county's figures separate the two about as cleanly as a county's can.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The poorest renters carry it worst.** 1,600 of the county's 2,540 renter households below 30 per cent of area median income pay more than half of that income for shelter, which is 63.0 per cent of them; among owners in the same income band it is 915 of 1,520, or 60.2. [verified] — the same table.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A Black renter household is 1.7 times as likely to be paying more than half its income.** Of 9,310 white non-Hispanic renter households 1,450 do, 15.6 per cent; of 2,435 Black non-Hispanic renter households 645 do, 26.5. On the 30 per cent threshold the gap is 32.5 per cent against 43.5. [verified] — the same file, Table 9.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county rate describes both of its halves, which is the opposite of what subsidy does here.** Lima holds 7,355 of the county's 13,240 renter households and 1,665 of its 2,540 poorest, and its renter burden rate is 39.2 per cent ± 5.4 against 31.3 ± 11.1 for the twelve townships and five villages outside it. The gap is 8.0 points on a combined margin of 12.4. [verified] — the same tables, county and place files, with the margins the source publishes.",
+          "tier": "verified"
+        },
+        {
+          "text": "This corpus cannot say whether Lima's renters are more often cost-burdened than the rest of the county's. [inference] — the test is the one [a county rate can describe nowhere](../../decisions/a-county-rate-can-describe-nowhere.yml) requires before a county figure is published, and this is the first time it has been run and the county figure has survived it: on subsidized housing the two halves are 51 points apart, and on cost burden they are not separable at all.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Against the country, this county has moved and the country has not.** The county's four windows read 44.2, 45.9, 40.5 and 35.7 per cent and the nation's read 45.0, 45.8, 43.9 and 44.4. In the two earliest windows Allen County's renters were as likely to be cost-burdened as the nation's; in the most recent they are 8.7 points less likely, and the county's own margin on that rate is 3.7 points. [verified] — the same table read for every county in the file; the state and national figures are this corpus's own sums over the 3,222 county rows, and the margin is computed from the file's own. The fall from 45.9 to 35.7 is 10.2 points against a combined margin of 5.2.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two pandemic years are inside the newest window and they are not what moved it.** The 2015–2019 window ends before the pandemic and already stands 5.4 points below 2011–2015; from there to 2018–2022 the further fall of 4.8 points is inside a combined margin of 5.1. [inference] — the measurable movement happened in a window with no emergency income in it, which is the check [the intersection not the union](../../decisions/the-intersection-not-the-union.yml) asks for in a different form: a change is only the newest window's if the older windows do not already have it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**For a hundred of the county's poorest renter households there are eighty-one homes they could afford and thirty-nine they could move into.** 2,050 rental units in the county rent at or below what a household at 30 per cent of area median could pay — 1,945 occupied and 105 standing empty and for rent — against 2,540 such households; but 1,065 of the occupied ones house a household with a higher income, leaving 985. The ratios are 80.7 ± 6.2 and 38.8 ± 8.4 per hundred. [verified] — the same source, Tables 14B and 15C. The national figure computed the same way is 31.5, which is inside this county's margin.",
+          "tier": "verified"
+        },
+        {
+          "text": "**HUD's own rent for a two-bedroom here is above what the county's median renter pays.** The fair market rent for the Lima metropolitan area in fiscal 2025 is $1,040 for two bedrooms, $793 for one and $1,262 for three; the county's median gross rent across all sizes was $898. [verified] — [HUD's fair market rents](../../catalog/hud-fair-market-rents.md), FY2025 county file, against [the housing stock](allen-county-housing-stock-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A federal programme file and a federal survey do not agree about who is being helped.** HUD's own count of assisted households below 30 per cent of area median runs about 1,640 in this county over the same window, while the survey finds only 745 renter households in that band paying an affordable share of income. See [why HUD and the survey count different assisted renters](../question/why-hud-and-the-survey-count-different-assisted-renters.yml). [inference] Every rate on this page is a rate over a population that includes those households, and [a programme is invisible inside a survey](../../decisions/a-programme-is-invisible-inside-a-survey.yml) is the rule this corpus wrote for that.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say whether Lima's renters are more often cost-burdened than the rest of the county's."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-housing-stock-2023.yml",
       "class": "measure",
       "label": "Allen County housing units, occupancy, tenure and value, 2023",
@@ -8568,6 +8635,14 @@
         },
         {
           "text": "**Nineteen of the twenty-one have a physical inspection score and they run from 59 to 99.** The lowest belongs to an 85-unit property for elderly households in Lima, inspected 23 December 2025; the two without a score are the two newest and have never been inspected. [verified] — the same layer, whose scores carry their own inspection dates and span 10 March 2022 to 31 March 2026.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the other five renter households in six pay is now in the corpus, and it does not fit beside this.** 35.7 per cent of the county's renters pay more than thirty per cent of their income and 17.4 per cent pay more than half; see [housing cost burden](allen-county-housing-cost-burden-2006-2022.yml). Those rates are computed over a population that includes the households counted here, and the survey behind them does not ask whether a household has a subsidy — which is why HUD's own count of assisted households below 30 per cent of area median has no room in the survey's tables. See [why HUD and the survey count different assisted renters](../question/why-hud-and-the-survey-count-different-assisted-renters.yml) and [a programme is invisible inside a survey](../../decisions/a-programme-is-invisible-inside-a-survey.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The average wait of the households who did get in more than doubled.** `months_waiting` runs 10 in 2018, 13, 20, 20, 25, 18 and 29 in 2024. [verified] — the same files. Seven readings on a measure this noisy are a direction and not a trend, and the measure is still not the length of the list.",
           "tier": "verified"
         }
       ],
@@ -17800,6 +17875,37 @@
       "withheld": 2
     },
     {
+      "id": "question/why-hud-and-the-survey-count-different-assisted-renters.yml",
+      "class": "question",
+      "label": "Why do HUD's programme file and HUD's survey tables disagree about the county's assisted renters?",
+      "tier": "inference",
+      "properties": {
+        "claim_tag": "open",
+        "opened": "2026-09-02",
+        "would_close_this": "The CHAS methodology document, or the American Community Survey's own instructions to renters in assisted units, either of which would say whether the reported rent is the household's payment or the unit's contract rent. Failing that, the Allen Metropolitan Housing Authority's Form 50058 tenant data in aggregate, which reports tenant payment against income for its own households and would settle the question for at least the public housing and voucher programmes. HUD's own linked tenant-and-survey files would settle it outright and are not public."
+      },
+      "blocks": [
+        {
+          "text": "**A subsidy sets the tenant's rent at about thirty per cent of income, so an assisted household should be in the last column.** In every window there are roughly twice as many assisted households at that income level as there are renter households at that income level paying an affordable share. [verified] — [A Picture of Subsidized Households](../../catalog/hud-picture-of-subsidized-households.md), county files 2011 to 2022, `number_reported` times `pct_lt30_median`, averaged over each window, and [HUD's affordability tables](../../catalog/hud-chas.md), Table 8, columns `T8_est69`, `T8_est70` and `T8_est79`.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The gap survives the survey's own margins in all three windows.** Taking the survey's count at the top of its interval and the programme file at its lowest year still leaves 456, 470 and 676 assisted households recorded as paying more than thirty per cent of their income. [inference] — the arithmetic is this corpus's and follows [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml): a difference is only asserted when it is larger than the combined margin.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Widening the band weakens it, which is itself evidence.** At fifty per cent of area median the same comparison gives gaps of 579, 141 and 595, and the middle one is inside its margin. So part of the disagreement is two income definitions sorting the same households into different bands — and only part, because two windows of three still fail. [inference] — the same two sources.",
+          "tier": "inference"
+        },
+        {
+          "text": "Five explanations fit the shape and this corpus has evidence for none of them. The survey asks the household what its rent is, and a tenant of a project-based property may answer with the rent on the door rather than the share they pay. A voucher household renting above the payment standard pays the excess itself. HUD's income is annual income at the last recertification, adjusted for dependants, age, disability and medical costs; the survey's is unadjusted income over the past twelve months. The survey's gross rent adds tenant-paid utilities, which a utility allowance covers on HUD's side of the arithmetic and not on the survey's. And the programme file is a thirty-first of December snapshot while the survey is a five-year average of a rolling sample. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "question/why-one-child-in-five-is-not-in-these-districts.yml",
       "class": "question",
       "label": "Where are the children who live in these districts and are not enrolled in them?",
@@ -22184,6 +22290,48 @@
       "source": "catalog/census-acs-summary-file.md"
     },
     {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hud-chas.md"
+    },
+    {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hud-chas.md"
+    },
+    {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "measure/allen-county-housing-stock-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "measure/allen-county-subsidized-housing-2005-2025.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "measure/allen-county-income-and-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "question/why-hud-and-the-survey-count-different-assisted-renters.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-housing-stock-2023.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -23026,6 +23174,20 @@
     {
       "from": "measure/allen-county-subsidized-housing-2005-2025.yml",
       "to": "measure/allen-county-income-and-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-subsidized-housing-2005-2025.yml",
+      "to": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-subsidized-housing-2005-2025.yml",
+      "to": "question/why-hud-and-the-survey-count-different-assisted-renters.yml",
       "relationship": "relates-to",
       "tier": "inference",
       "source": null
