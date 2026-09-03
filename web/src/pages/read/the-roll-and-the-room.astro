@@ -1,0 +1,144 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const ordinary = assertion('two-thousand-and-twenty-was-an-ordinary-year')
+const state = assertion('the-county-used-to-out-vote-ohio')
+const roll = assertion('sixty-one-thousand-names-off-a-sixty-six-thousand-roll')
+const mode = assertion('election-day-stopped-being-the-day')
+const workers = assertion('two-hundred-and-fifty-two-people-run-it')
+const provisional = assertion('a-quarter-of-the-provisional-ballots-were-rejected')
+
+const spec = (a: typeof ordinary, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const ordinarySpec = spec(ordinary, 'Turnout, per cent of the roll')
+const rollSpec = spec(roll, 'Share of removals, 2008 to 2022')
+const modeSpec = spec(mode, 'Cast on election day, per cent')
+const workersSpec = spec(workers, 'Poll workers in 2024')
+const provisionalSpec = spec(provisional, 'Provisional ballots rejected, per cent')
+---
+
+<Article slug="the-roll-and-the-room">
+  <p>
+    Who Allen County voted for is a well-documented question. How the votes got there is not. After
+    every federal election the county board of elections fills in the same federal questionnaire as
+    every other board in the country: how many names were on the roll, how many came off and why,
+    how many ballots arrived and by which route, how many rooms were open and how many people stood
+    in them. Eleven elections of that, from 2004 to 2024, settle a question about the most-watched
+    of them that the certified returns on their own could not.
+  </p>
+  <AssertionCard assertion={ordinary} open />
+  <ChartFigure
+    id="ordinary"
+    title="Presidential turnout in Allen County"
+    caption="Ballots counted as a share of registered voters, at each presidential general election from 2004. The six sit inside 4.7 points, and 2020 is the third of them."
+    columns={['Year', 'Turnout']}
+    rows={ordinary.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="ordinary" set:html={JSON.stringify(ordinarySpec)} is:inline />
+  <p>
+    So the famous year was an unremarkable one here. What moves in this county is the midterms,
+    which run from 41.5 per cent to 56.6 — three times the presidential range. And the county's
+    standing against its state has quietly reversed.
+  </p>
+  <AssertionCard assertion={state} />
+  <p>
+    Through 2008 this county turned out two to three points better than Ohio as a whole. Since 2016
+    it has turned out one to three points worse, in every election, presidential and midterm alike.
+    Nothing in the survey explains a swing of five points relative to a state, and one election
+    would be noise; five in a row, all with the same sign, is not.
+  </p>
+
+  <h2>The roll is a working file</h2>
+  <p>
+    A turnout rate is ballots over registered voters, and the same office reports both on the same
+    form. The first is a certified count. The second is a list that office edits continuously, and
+    the survey records the editing.
+  </p>
+  <AssertionCard assertion={roll} />
+  <ChartFigure
+    id="roll"
+    title="Why a name comes off the roll"
+    caption="Share of the 55,243 registrations removed across the eight elections from 2008. Removals are events, not people: a voter taken off can register again, and between 3,313 and 9,674 new registrations arrive each cycle."
+    columns={['Reason', 'Share']}
+    rows={roll.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="roll" set:html={JSON.stringify(rollSpec)} is:inline />
+  <p>
+    9,770 names came off between the 2018 and 2020 elections and 1,560 in the two years before that.
+    On the register the county held in 2018, the same 48,353 ballots are 69.7 per cent rather than
+    71.8 — a gap wider than the one between 2020 and any other presidential year.
+  </p>
+  <Gloss>
+    Ohio makes the point without arithmetic. In 2024 its 88 counties ran one election under one
+    statute on one day and reported turnouts from 62.99 per cent to 98.56. Four jurisdictions in the
+    country reported more ballots than registrants. That is a rule now: publish the register's churn
+    beside any rate it denominates, and do not call a difference between two years a change unless
+    it survives holding the denominator still.
+  </Gloss>
+
+  <h2>How the ballots arrive</h2>
+  <p>
+    The other half of the machinery is where a ballot is filled in. Ohio counts three routes — in a
+    precinct on the day, in the board's office during the early period, or through the post — and
+    the survey's counts for them sum exactly to the certified total in ten of the eleven years.
+  </p>
+  <AssertionCard assertion={mode} />
+  <ChartFigure
+    id="mode"
+    title="Ballots cast in person on election day"
+    caption="As a share of all ballots counted. Early in-person voting is legally absentee voting in Ohio, so the two are one category before 2010 and the 2008 split cannot be read."
+    columns={['Year', 'On the day']}
+    rows={mode.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="mode" set:html={JSON.stringify(modeSpec)} is:inline />
+  <p>
+    The fall began well before 2020 and did not reverse after it. Between 2020 and 2024 mail ballots
+    dropped by 7,079 while in-person early ballots rose by 1,342 to 13,090 — the most in the record,
+    and all of them cast in a single room.
+  </p>
+
+  <h2>Thirty-three rooms</h2>
+  <p>
+    The county drew 139 precincts in 2004, 121 in 2008 and 88 from 2012, and that grid has not moved
+    across four presidential elections. The buildings kept shrinking anyway: 50 polling places in
+    2008 and 33 now, so a place that took 1,019 ballots then takes 1,420.
+  </p>
+  <AssertionCard assertion={workers} />
+  <ChartFigure
+    id="workers"
+    title="The age of a poll worker"
+    caption="Allen County, 2024. The 252 who staffed the election are 422 fewer than in 2016. Across Ohio's boards that reported an age table matching their own total, 62.6 per cent of poll workers were 61 or over."
+    columns={['Age', 'People']}
+    rows={workers.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="workers" set:html={JSON.stringify(workersSpec)} is:inline />
+  <p>
+    The rooms are not thin on the ground by the standard of the state — 2,006 registrants apiece
+    here against 2,499 across Ohio. The people are the shortage.
+  </p>
+  <AssertionCard assertion={provisional} />
+  <ChartFigure
+    id="provisional"
+    title="Provisional ballots rejected"
+    caption="As a share of provisional ballots cast. Ohio's counties together rejected 24.7 per cent in 2024 and 9.7 per cent in 2022, so whatever moved this is not local to Allen County."
+    columns={['Year', 'Rejected']}
+    rows={provisional.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="provisional" set:html={JSON.stringify(provisionalSpec)} is:inline />
+  <p>
+    The survey records what a clerk wrote in the reason box — 114 not registered, 63 without
+    acceptable identification against 22 four years earlier — and a reason box is a classification
+    and not a cause. Why nearly a quarter of this county's provisional ballots failed in 2024 is not
+    a question the file answers.
+  </p>
+</Article>

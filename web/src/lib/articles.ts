@@ -341,6 +341,26 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'the-roll-and-the-room',
+    title: 'The roll and the room',
+    dek: 'Eleven elections of machinery rather than result: what a turnout rate is divided by, and who is left to run the count.',
+    section: 'government',
+    era: [2004, 2024],
+    assertions: [
+      'two-thousand-and-twenty-was-an-ordinary-year',
+      'the-county-used-to-out-vote-ohio',
+      'sixty-one-thousand-names-off-a-sixty-six-thousand-roll',
+      'election-day-stopped-being-the-day',
+      'two-hundred-and-fifty-two-people-run-it',
+      'a-quarter-of-the-provisional-ballots-were-rejected',
+    ],
+    entries: [
+      'measure/allen-county-turnout-2004-2024.yml',
+      'measure/allen-county-voter-roll-removals-2006-2022.yml',
+      'measure/allen-county-polling-places-2004-2024.yml',
+    ],
+  },
+  {
     slug: 'fewer-doors',
     title: 'Fewer doors',
     dek: 'A fifth of this county\u2019s workplaces are gone and almost all of its jobs are not. What went was the shops with under ten people in them.',
