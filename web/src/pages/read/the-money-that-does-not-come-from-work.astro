@@ -1,0 +1,162 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { line } from '../../lib/chart-spec'
+
+const grew = assertion('income-rose-and-earnings-barely-did')
+const hole = assertion('twenty-years-to-get-back-to-1979')
+const job = assertion('a-job-here-pays-what-it-paid-in-1969')
+const half = assertion('half-the-growth-is-transfers')
+const quarter = assertion('a-quarter-of-the-income-is-a-transfer')
+const medical = assertion('half-the-transfers-are-medical')
+const inverted = assertion('the-composition-inverted')
+const two = assertion('two-federal-accounts-of-one-county')
+const diff = assertion('the-difference-is-medicare-and-medicaid')
+const ohio = assertion('ordinary-for-ohio-and-ohio-is-not-its-median')
+const nation = assertion('the-gap-with-the-nation-is-in-the-growth-rate')
+const commute = assertion('half-a-billion-in-earnings-goes-home-elsewhere')
+
+const incYears = [
+  1969, 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984,
+  1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
+  2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
+  2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024,
+]
+const total = [
+  32164, 31975, 32384, 33185, 35516, 34958, 34051, 35101, 36328, 37749, 37033, 35134, 33912, 33956,
+  35394, 38135, 39001, 40359, 39631, 39979, 40122, 39664, 38845, 40131, 39227, 40572, 40570, 40520,
+  41090, 43212, 44406, 44977, 44441, 44687, 45420, 45541, 45030, 45773, 46782, 46380, 46792, 47428,
+  47837, 48295, 47524, 48561, 50171, 50729, 51413, 52350, 52904, 56864, 58233, 54459, 55578, 56066,
+]
+const earn = [
+  25565, 25103, 25072, 25628, 27490, 26705, 25229, 26076, 27176, 28511, 27696, 24673, 22731, 22140,
+  22991, 25400, 26314, 27494, 27340, 27368, 26975, 26360, 25657, 26320, 25901, 26628, 26058, 25849,
+  26127, 27410, 28746, 29474, 28815, 29102, 29956, 30484, 30082, 30468, 30552, 29393, 28974, 29279,
+  29503, 29543, 29619, 29750, 30733, 31031, 31499, 32088, 32074, 31974, 32763, 31572, 32205, 32471,
+]
+const tr = [
+  2299, 2555, 2943, 3077, 3342, 3544, 4192, 4262, 4157, 4109, 4230, 4892, 4983, 5325, 5581, 5462,
+  5428, 5532, 5365, 5563, 5687, 6046, 6200, 6922, 6580, 6830, 7029, 7040, 7077, 7271, 7385, 7494,
+  7914, 8160, 8447, 8653, 8935, 9250, 9604, 10194, 11338, 11798, 11831, 11512, 11597, 11869, 12469,
+  12576, 12718, 12721, 13113, 17227, 17918, 15106, 14935, 15000,
+]
+const div = [
+  4299, 4317, 4361, 4480, 4684, 4709, 4630, 4763, 5000, 5129, 5107, 5570, 6198, 6492, 6822, 7273,
+  7259, 7333, 6928, 7045, 7460, 7258, 6988, 6889, 6749, 7112, 7482, 7631, 7888, 8533, 8275, 8010,
+  7712, 7425, 7017, 6403, 6012, 6056, 6627, 6792, 6480, 6351, 6503, 7240, 6309, 6942, 6969, 7122,
+  7195, 7542, 7718, 7664, 7553, 7781, 8439, 8595,
+]
+
+const fedYears = [
+  2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
+  2024,
+]
+const usas = [
+  961400487, 919546374, 737038871, 538936055, 439308572, 497432728, 475307521, 450400368, 476140899,
+  464299438, 520037772, 561427729, 778391403, 768892308, 589267213, 629668610, 626459645,
+]
+const beaTr = [
+  747043000, 825985000, 872143000, 899196000, 886880000, 904965000, 939600000, 981223000, 997885000,
+  1025557000, 1046562000, 1095125000, 1451704000, 1575673000, 1424579000, 1463057000, 1513000000,
+]
+
+const incSpec = line(
+  incYears,
+  [
+    { name: 'All personal income', y: total },
+    { name: 'Net earnings', y: earn },
+    { name: 'Transfers', y: tr },
+    { name: 'Dividends, interest, rent', y: div },
+  ],
+  { yTitle: 'Per person, 2024 dollars', labelLast: true },
+)
+
+const fedSpec = line(
+  fedYears,
+  [
+    { name: 'BEA transfer receipts', y: beaTr },
+    { name: 'USAspending awards', y: usas },
+  ],
+  { yTitle: 'Dollars a year', labelLast: true },
+)
+
+const dollars = (v: number) => `$${Math.round(v).toLocaleString('en-US')}`
+---
+
+<Article slug="the-money-that-does-not-come-from-work">
+  <p>
+    This reference knows what work there is in Allen County, who does it, what it pays by
+    occupation, and how often it hurts the people who do it. What it has never held is the money
+    itself — how much of it there is, whose it is, and where it comes from. The Bureau of Economic
+    Analysis has been keeping that account since 1969.
+  </p>
+  <AssertionCard assertion={grew} open />
+  <ChartFigure
+    id="inc"
+    title="Fifty-six years, per person, in 2024 dollars"
+    caption="Allen County personal income per resident and its three components, deflated by the national consumer price index. The gap between the top line and the second one is everything that is not pay for work."
+    columns={['Year', 'All income', 'Net earnings', 'Transfers', 'Dividends, interest, rent']}
+    rows={incYears.map((y, i) => [y, dollars(total[i]), dollars(earn[i]), dollars(tr[i]), dollars(div[i])])}
+    height={380}
+  />
+  <script type="application/json" data-chart-spec="inc" set:html={JSON.stringify(incSpec)} is:inline />
+  <AssertionCard assertion={hole} />
+  <AssertionCard assertion={job} />
+  <Gloss>
+    Three ways of asking the same question and one answer. Income per person is up three quarters
+    since 1969. Earnings per person are up a quarter. Earnings per job are up four per cent. The
+    third of those is the one a person would recognise: a job in this county buys about what a job
+    in this county bought when the tank plant was building tanks for Vietnam, and rather less than
+    one bought in 1979. Everything else in the first number came from somewhere other than work.
+  </Gloss>
+
+  <h2>Where the growth came from</h2>
+  <AssertionCard assertion={half} />
+  <AssertionCard assertion={quarter} />
+  <AssertionCard assertion={medical} />
+  <AssertionCard assertion={inverted} />
+  <p>
+    Which is a different county from the one a 1969 reader would have described. Then, the
+    government money arriving here was a pension: retirement and disability were three fifths of it
+    and medical care an eighth. Now medical care is nearly half, and the two programmes that make it
+    up — one for the old, one for the poor — send more into this county between them than every
+    Social Security cheque combined.
+  </p>
+
+  <h2>Two accounts of one county</h2>
+  <AssertionCard assertion={two} />
+  <ChartFigure
+    id="fed"
+    title="The same federal government, counted twice"
+    caption="Federal money reaching Allen County on two accounts: awards obligated to the place, and transfer receipts booked to the people who live in it. The ratio between them is not fixed, because the award line carries contracts and disaster money that move on their own."
+    columns={['Year', 'BEA transfer receipts', 'USAspending awards']}
+    rows={fedYears.map((y, i) => [y, dollars(beaTr[i]), dollars(usas[i])])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="fed" set:html={JSON.stringify(fedSpec)} is:inline />
+  <AssertionCard assertion={diff} />
+  <Gloss>
+    A Medicare payment is made to a hospital for treating a person. It is not an award to anybody in
+    Allen County, and the federal award system has no row for it here — ninety-nine assistance
+    listings in 2022 and not one of them is Medicare or Medicaid. The income account books it to the
+    county the patient lives in, because it is measuring that person's income. Neither account is
+    wrong and they are not two estimates of one quantity; they count two different acts, and between
+    the obligation and the receipt the money changes payee and changes county. The answer this
+    reference gave two phases ago to "what does the United States spend in Allen County" was
+    $668 million, correctly sourced and correctly labelled, and about half of what arrives.
+  </Gloss>
+
+  <h2>Two ways of being compared</h2>
+  <AssertionCard assertion={ohio} />
+  <AssertionCard assertion={nation} />
+  <AssertionCard assertion={commute} />
+  <p>
+    So: an ordinary Ohio county on both measures, and a long way behind the country on the one that
+    matters, which is the rate at which what people are paid grew. Half a billion dollars a year of
+    what is earned inside the county line goes home to somewhere else — the money form of a fact
+    this reference already held in people, and 1.8 points off it.
+  </p>
+</Article>

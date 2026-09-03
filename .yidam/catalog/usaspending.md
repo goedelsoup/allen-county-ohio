@@ -33,6 +33,7 @@ used-by:
   - ../corpus/measure/federal-contracts-in-allen-county-2008-2025.yml
   - ../corpus/site/lima-army-tank-plant.yml
   - ../corpus/site/lima-refinery.yml
+  - ../corpus/measure/allen-county-transfer-receipts-1969-2024.yml
 ---
 
 **Two geographies, one file, and the difference is not small.** Across federal years 2008 to 2025

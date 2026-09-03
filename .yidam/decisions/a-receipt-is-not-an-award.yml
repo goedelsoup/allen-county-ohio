@@ -1,0 +1,77 @@
+id: a-receipt-is-not-an-award
+summary: >-
+  Two federal accounts of Allen County in 2024 put the money the United States sends here at
+  $626,459,645 and $1,513,000,000. One counts awards obligated to a place; the other counts income
+  received by the people who live there. The difference is almost entirely Medicare and Medicaid,
+  which are paid to hospitals and booked to patients, and the corpus published the smaller number
+  two phases ago as though it were the answer.
+context: |
+  [federal money in Allen County](../corpus/measure/federal-money-in-allen-county-2008-2025.yml)
+  opens with "**The answer is $668,254,916 in federal year 2025**". The figure is right for what
+  USAspending counts. It is about half of what reaches this county.
+
+      federal year / calendar 2024                          Allen County
+      USAspending, all award types, place of performance     626,459,645
+      USAspending, direct payments to individuals            573,202,179
+      BEA, personal current transfer receipts              1,513,000,000
+
+  The gap is checkable from both sides, and in 2022 — the last year with a component breakdown —
+  it is:
+
+      BEA transfers minus USAspending direct payments        878,386,986
+      BEA medical benefits                                   668,013,000   76.0% of the gap
+        Medicare                                             389,761,000
+        public assistance medical care                       276,551,000
+      USAspending assistance listings, all 99 of them         550,548,594
+        of which Medicare or Medicaid                                  0
+        of which from Health and Human Services                6,415,154
+
+  A Medicare payment is made to a hospital for treating a person. It is not an award to anyone in
+  Allen County and the award system has no row for it here. BEA books it to the county the patient
+  lives in, because BEA is measuring that person's income.
+decision: |
+  **When two sources give a place's money, establish which act each of them counts — an obligation,
+  a disbursement, or a receipt — and whether the party paid is the party counted. Publish the
+  figure with the act named, and never subtract one from the other without saying what the
+  remainder is.**
+
+  The three questions, in order:
+
+  *What act?* An award file counts the moment a government commits money. An income account counts
+  the moment a person is treated as better off. Between those two moments a payment can change
+  hands, change payee and change county.
+
+  *Who is counted?* USAspending counts the recipient of the award — here, a hospital, a state
+  agency, a contractor. BEA counts the beneficiary. Where the payee and the beneficiary are
+  different parties in different places, the two accounts cannot be reconciled by geography at all.
+
+  *Is the ratio stable?* Here it is not: 0.78 in 2008, 2.18 in 2015, 1.87 in 2020, 2.42 in 2024,
+  because the award side carries contract and disaster money that moves on its own. So the gap is
+  structural and the size of it is not, and no single multiplier repairs a figure taken from one
+  account.
+rationale: |
+  **What it cost.** Two phases ago this corpus answered "what does the United States spend in Allen
+  County" with $668 million and a sentence about what a federal budget mostly does in a county like
+  this one. The sentence survives — payments to individuals dominate on either account — and the
+  number is an undercount of roughly half, missing the single largest thing the federal government
+  does for the people here. That node is revised in this phase rather than left standing.
+
+  **Why the gate could not catch it.** Every figure was verified, sourced, and correctly labelled
+  "place of performance". The defect was not in any claim; it was in believing that one complete
+  account of one kind of federal money was an account of federal money. A source that answers the
+  question asked is the hardest kind to audit.
+
+  **How this differs from the rule beside it.**
+  [a dollar has two addresses](a-dollar-has-two-addresses.yml) is about one file with two geography
+  fields, where the same act is attributed to two places. This is about two files counting two
+  different acts, where the geography is not the disagreement — both put the money in Allen County —
+  and the payee is not the person. The first is answered by naming the field; this one is answered
+  by naming the event.
+
+  **What it generalises to.** Any place-level total of public money: school funding counted as state
+  aid obligated against districts and as revenue received by them, hospital payments counted as
+  claims and as compensation, farm support counted as programme outlays and as farm income. Also to
+  private flows — an insurance benefit, a court award, a pension — wherever a payer, a payee and a
+  beneficiary are three parties rather than two.
+status: accepted
+date: "2026-09-03"
