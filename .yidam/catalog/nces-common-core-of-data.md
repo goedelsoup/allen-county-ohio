@@ -113,6 +113,14 @@ worked in these schools before then. [verified] — the annual files.
 **Staffing is a full-time-equivalent count and some of its zeros are real.** Nine of the county's
 twelve districts report `0.0` school psychologists in 2023 and three report a positive number; the
 column is populated for every district, so these are reported zeros rather than missing cells.
-[verified] — the 2023 directory. Whether a district with no psychologist of its own buys the
-service from the [educational service center](../corpus/jurisdiction/allen-county-educational-service-center.yml)
-is not in this file. [open]
+[verified] — the 2023 directory. The column itself opens in 2019 and is empty in every year before
+it, so a district reporting no psychologist before 2019 is reporting nothing at all. [verified] —
+the annual files.
+
+**And the answer to where the psychologists are was in this file the whole time.** The
+[educational service center](../corpus/jurisdiction/allen-county-educational-service-center.yml)
+has its own row in the same directory, and in 2023 it reports 14.45 school psychologists against an
+enrolment of zero — twice what all twelve districts report between them. That is what an
+educational service center is: a payroll the districts share. [verified] — the 2023 directory, the
+service center's row. Which district buys which hours is still not in the file, and does not need
+to be for the reported zeros to stop looking like an absence. [inference]
