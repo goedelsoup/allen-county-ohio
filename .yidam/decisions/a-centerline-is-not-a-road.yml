@@ -1,0 +1,66 @@
+id: a-centerline-is-not-a-road
+summary: >-
+  The Census Bureau draws 46.31 miles of Interstate 75 in Allen County and the Federal Highway
+  Administration measures 23.12. Neither is wrong: the interstate is divided, and one agency draws
+  a line per carriageway while the other measures a route once. A length taken off a map file is a
+  length of linework, and how many lines stand for one road is a drawing decision made by somebody
+  who was not asked the question being put to it.
+context: |
+  This corpus already knows that a map's words are chosen for drawing.
+  [the legend is not the record](the-legend-is-not-the-record.yml) was written about a well
+  register whose map service and feature service give different status words for the same 2,821
+  holes. That rule is about the attributes. This one is about the geometry, which looks like
+  measurement in a way a category never does.
+
+  Allen County's road linework and the federal highway file were read against each other on the two
+  roads both cover.
+
+      road      TIGER/Line 2024   HPMS 2018   ratio
+      I-75          46.31 mi      23.12 mi    2.0030
+      US 30         48.098 mi     24.06 mi    1.9991
+
+  Two roads, two agencies, and a factor of two to three parts in a thousand. The road file draws
+  I-75 as two lines of 23.167 and 23.139 miles and US 30 as its own pair. The highway file measures
+  each route once, from a begin point to an end point.
+
+  Nothing in either file announces this. The road file has a length only if you compute one, and it
+  computes cleanly; the highway file's begin and end points look like the same kind of number. The
+  disagreement is visible only when the two are put beside each other, and it is invisible in either
+  one alone — which is the whole reason a county's road mileage is worth computing twice.
+decision: |
+  **Before a length is taken from map geometry, establish how many lines the file draws for one
+  thing, and say so wherever the length is published.**
+
+  - **Check against a source that counts the other way.** A ratio near a small whole number is the
+    tell. Two independent measurements of the same road differ by a few per cent; they do not
+    differ by 2.0030.
+  - **Name what the number counts.** "Miles of pavement centerline" and "miles of route" are
+    different quantities and both are useful. A node that writes "miles of road" has published
+    neither, because the reader cannot tell which was meant.
+  - **The rule is not about roads.** A river drawn as a bank pair, a rail line drawn per track, a
+    boundary shared by two polygons and a parcel line drawn twice all fail the same way. Any total
+    computed by summing geometry inherits the cartographer's decisions about representation.
+  - **Watch the seams as well as the doubles.** A road running along a township line lies inside
+    both townships, so the twelve townships and one city of Allen County sum to 2,314.1 miles
+    against a county total of 2,225.6 — an excess of 88.5 miles, all of it real road counted twice.
+    A part that sums to more than its whole is the same defect in the other direction.
+rationale: |
+  **Geometry reads as measurement and is not.** A category in a file is obviously somebody's word;
+  a polyline is obviously the shape of the thing. That asymmetry is why this failure survives
+  scrutiny that catches the other one: a corpus that has learned to distrust a legend will still
+  trust a length, and the length is made of the same decisions.
+
+  **The error is large and it is not noise.** A factor of two is not a rounding difference or a
+  vintage difference. Published without the check, this county's interstate mileage would have been
+  wrong by 23 miles in a total of 2,225 — small as a share and complete as a fact.
+
+  **It compounds with the corpus's other geometric habits.** This repository places sites by
+  coordinate, measures distances between them, and asks which polygon a point falls in. Those are
+  all uses of geometry as evidence, and they are sound because a point is a point. A length is not,
+  and the difference had not been written down.
+
+  **What this does not license.** Refusing to publish a length. The county has a road mileage and
+  this corpus computes it; the rule asks that the number arrive with the sentence that says which
+  of the two quantities it is, and with the check that established the difference.
+status: accepted
+date: "2026-09-03"

@@ -1,0 +1,105 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const size = assertion('two-thousand-two-hundred-and-twenty-five-miles')
+const owner = assertion('one-mile-in-six-has-an-owner')
+const i75 = assertion('a-hundredth-of-the-road-and-a-third-of-the-traffic')
+const change = assertion('every-ownership-change-is-a-corporation-line')
+const lima = assertion('a-thirtieth-of-the-ground-and-an-eighth-of-the-road')
+const head = assertion('three-times-the-road-per-head-outside-lima')
+const drawn = assertion('one-interstate-drawn-twice')
+const frozen = assertion('the-map-stopped-before-the-county-did')
+
+const spec = (a: typeof size, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const ownerSpec = spec(owner, 'Centerline miles')
+const headSpec = spec(head, 'Miles of road per 1,000 residents')
+const frozenSpec = spec(frozen, 'Driveable centerline miles')
+---
+
+<Article slug="one-mile-in-six">
+  <p>
+    This corpus knew Allen County's bridges by owner and condition back to 1992, its road deaths
+    back to 1975 and its railroads back to 1883. It had never counted a mile of highway. Two files
+    close that, and they disagree about the county by a factor of two before they agree about
+    anything.
+  </p>
+  <AssertionCard assertion={size} open />
+  <p>
+    That is 5.53 miles for every square mile of ground and one bridge for every 6.11 miles of
+    pavement. It is also the last uncomplicated sentence in this piece.
+  </p>
+
+  <h2>Who owns it</h2>
+  <AssertionCard assertion={owner} />
+  <ChartFigure
+    id="owner"
+    title="The sixth that has an owner"
+    caption="Federal-aid highway miles in Allen County by owner, 2018. The four together are 359.2 miles of a 2,225.6-mile network; the state's half of them carries 72.0 per cent of the traffic."
+    columns={['Owner', 'Miles']}
+    rows={owner.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="owner" set:html={JSON.stringify(ownerSpec)} is:inline />
+  <AssertionCard assertion={i75} />
+  <AssertionCard assertion={change} />
+  <p>
+    Which says something about how this county is actually divided. The state and the county and the
+    townships hold their roads whole; the only place a road changes hands is where it crosses into a
+    village or a city. A corporation line is the one boundary that reaches down to the pavement.
+  </p>
+
+  <h2>Where it is</h2>
+  <AssertionCard assertion={lima} />
+  <AssertionCard assertion={head} />
+  <ChartFigure
+    id="head"
+    title="Road per head"
+    caption="Miles of road per thousand residents, 2024 linework against 2024 population. The figure that a city resident's density inverts."
+    columns={['Where', 'Miles per 1,000 people']}
+    rows={head.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="head" set:html={JSON.stringify(headSpec)} is:inline />
+  <p>
+    Both readings are true and they point opposite ways. Lima has the road packed twenty miles to
+    the square mile and the townships have it spread thin; per person, the arithmetic reverses and
+    the thin version is the expensive one. Nothing in either file carries a surface or a width, so
+    the corpus stops there.
+  </p>
+
+  <h2>What a mile is</h2>
+  <AssertionCard assertion={drawn} />
+  <Gloss>
+    A category in a file is obviously somebody's word. A polyline is obviously the shape of the
+    thing — and it is not. Interstate 75 is divided, so the Census Bureau draws it twice and the
+    Federal Highway Administration measures it once, and both are correct about different
+    quantities. The tell is the ratio: two independent measurements of one road differ by a few per
+    cent, not by 2.0030. The same defect runs the other way at the seams, where a road on a township
+    line lies inside both townships and this county's thirteen subdivisions sum to 2,314.1 miles
+    against a county total of 2,225.6.
+  </Gloss>
+  <AssertionCard assertion={frozen} />
+  <ChartFigure
+    id="frozen"
+    title="Six editions of one map"
+    caption="Driveable centerline miles in the Census Bureau's road file for Allen County. The last three editions are identical to a tenth of a mile."
+    columns={['Edition', 'Miles']}
+    rows={frozen.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="frozen" set:html={JSON.stringify(frozenSpec)} is:inline />
+  <p>
+    So the series cannot be differenced in either direction. The flat part is the Bureau not
+    revisiting the county, and the moves before it are the Bureau revisiting it: US 30 kept its
+    48.098 miles across the edition that reclassified 3.689 of them, and the county's secondary
+    total fell by almost exactly that. Nothing was built. A label moved on existing pavement.
+  </p>
+</Article>

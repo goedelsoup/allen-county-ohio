@@ -3621,6 +3621,135 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "two-thousand-two-hundred-and-twenty-five-miles",
+        statement: "Allen County has 2,225.6 miles of driveable road in 8,313 segments \u{2014} 5.53 \
+                    miles for every square mile of the county, and one bridge for every 6.11 miles \
+                    of it.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-roads-2010-2024.yml", "**Allen County has 2,225.6 miles of driveable road, 5.53 miles for every square mile of it.** [verified] \u{2014} [the Census Bureau's road linework](../../catalog/census-tiger-roads.md), 2024 edition, computed here against [the county's land area](allen-county-land-area-2020.yml)."),
+        ],
+        answers: &["cannot say how many miles of road Allen County maintains"],
+        figures: &[
+            Figure { label: "miles of road", value: 2225.6, literal: "2,225.6" },
+            Figure { label: "miles per square mile", value: 5.53, literal: "5.53" },
+        ],
+    },
+    Assertion {
+        id: "one-interstate-drawn-twice",
+        statement: "The Census Bureau draws 46.31 miles of Interstate 75 in Allen County and the \
+                    Federal Highway Administration measures 23.12. The interstate is divided and one \
+                    agency draws a line per carriageway; the ratios for I-75 and US 30 are 2.0030 \
+                    and 1.9991.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-roads-2010-2024.yml", "**The four primary-road segments are two roads drawn twice.** Interstate 75 appears as two lines of 23.167 and 23.139 miles and US 30 as two of 1.952 and 1.737, because the file draws one line per carriageway of a divided highway. The federal highway file measures the same interstate once, at 23.12 route miles, and the same US 30 at 24.06 against this file's 48.098 \u{2014} ratios of 2.0030 and 1.9991. [verified] \u{2014} the same source against [the federal-aid file](../../catalog/fhwa-hpms-public-release.md). Every figure in this node is therefore centerline miles and not route miles; see [a centerline is not a road](../../decisions/a-centerline-is-not-a-road.yml)."),
+        ],
+        answers: &["cannot say how many miles of road Allen County maintains"],
+        figures: &[
+            Figure { label: "US 30 ratio", value: 1.9991, literal: "1.9991" },
+            Figure { label: "I-75 ratio", value: 2.003, literal: "2.0030" },
+        ],
+    },
+    Assertion {
+        id: "one-mile-in-six-has-an-owner",
+        statement: "One file names the owner of a road in Allen County and it covers 359.2 of the \
+                    county's 2,225.6 miles. Half of that sixth belongs to the state, which carries \
+                    72.0 per cent of the traffic on it against the county's 16.7.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-federal-aid-highways-2018.yml", "**One file names the owner of a road in this county, and it covers a sixth of the network.** 359.2 miles of the county's 2,225.6, in 87 routes and 2,035 sections. [verified] \u{2014} [the HPMS public release](../../catalog/fhwa-hpms-public-release.md), against [the county's road linework](allen-county-roads-2010-2024.yml)."),
+            support!("measure/allen-county-federal-aid-highways-2018.yml", "**Half of it belongs to the state and the state carries seventy-two per cent of the traffic.** The state highway agency owns 182.1 of the 359.2 miles, the county 117.0, the municipalities 39.3 and the townships 20.8; the state's share of the daily vehicle-miles is 72.0 per cent against the county's 16.7, the municipalities' 8.3 and the townships' 3.0. [verified] \u{2014} the same source, computed here."),
+        ],
+        answers: &["cannot say who is responsible for the other 1,866 miles"],
+        figures: &[
+            Figure { label: "township", value: 20.8, literal: "20.8" },
+            Figure { label: "city or municipal", value: 39.3, literal: "39.3" },
+            Figure { label: "county", value: 117.0, literal: "117.0" },
+            Figure { label: "state", value: 182.1, literal: "182.1" },
+        ],
+    },
+    Assertion {
+        id: "a-hundredth-of-the-road-and-a-third-of-the-traffic",
+        statement: "Interstate 75 is 1.04 per cent of Allen County's road and carries 32.6 per cent \
+                    of the traffic on everything the federal file measures \u{2014} 835,274 \
+                    vehicle-miles a day over 23.12 miles, from 29,733 at the county line to 43,120 \
+                    through Lima.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-federal-aid-highways-2018.yml", "**Interstate 75 is 1.04 per cent of the county's road and a third of the traffic on everything this file measures.** 23.12 miles carrying 835,274 vehicle-miles a day \u{2014} 32.6 per cent of the federal-aid total \u{2014} with a daily count that runs from 29,733 at the county line to 43,120 through Lima. [verified] \u{2014} same source, by route."),
+        ],
+        answers: &["cannot say who is responsible for the other 1,866 miles"],
+        figures: &[
+            Figure { label: "at the county line", value: 29733.0, literal: "29,733" },
+            Figure { label: "through Lima", value: 43120.0, literal: "43,120" },
+        ],
+    },
+    Assertion {
+        id: "a-thirtieth-of-the-ground-and-an-eighth-of-the-road",
+        statement: "Lima holds 3.38 per cent of Allen County's land and 12.61 per cent of its road: \
+                    20.61 miles of street to the square mile against 5.00 for everywhere else in the \
+                    county.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-roads-2010-2024.yml", "**Lima is 3.38 per cent of the county's land and 12.61 per cent of its road.** The city carries 20.61 miles of street to the square mile against 5.00 for everywhere else. [verified] \u{2014} the same file, computed here against [Lima's land area](lima-land-area-2020.yml)."),
+        ],
+        answers: &["cannot say how many miles of road Allen County maintains"],
+        figures: &[
+            Figure { label: "Lima", value: 20.61, literal: "20.61" },
+            Figure { label: "the rest of the county", value: 5.0, literal: "5.00" },
+        ],
+    },
+    Assertion {
+        id: "three-times-the-road-per-head-outside-lima",
+        statement: "A person living outside Lima has 29.4 miles of road per thousand residents to a \
+                    Lima resident's 8.1 \u{2014} 3.63 times as much \u{2014} and no municipality is \
+                    responsible for most of it.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-roads-2010-2024.yml", "**Turned round, the ratio reverses and it is the more consequential figure.** A person living outside Lima has 29.4 miles of road per thousand residents to a Lima resident's 8.1 \u{2014} **3.63 times as much** \u{2014} and no municipality is responsible for most of it. [inference] \u{2014} the same linework against [Lima's population](lima-population-2024.yml) and [the county's](allen-county-population-2024.yml). The corpus does not read that as a claim about cost, because this file carries no surface, no width and no condition and a mile of township gravel is not a mile of city street. [inference]"),
+        ],
+        answers: &["cannot say how many miles of road Allen County maintains"],
+        figures: &[
+            Figure { label: "Lima", value: 8.1, literal: "8.1" },
+            Figure { label: "outside Lima", value: 29.4, literal: "29.4" },
+        ],
+    },
+    Assertion {
+        id: "the-map-stopped-before-the-county-did",
+        statement: "Allen County's road linework reads 2,226.7 miles in 2019, 2,225.6 in 2022 and \
+                    2,225.6 in 2024, across years in which seven municipalities were annexing \
+                    ground. Between 2016 and 2019 US 30's mileage is 48.098 in both editions while \
+                    3.689 miles of it move from secondary road to primary.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-roads-2010-2024.yml", "**The file's last three editions are identical and its earlier moves are the cartographer.** The county's driveable mileage reads 2,358.5 in 2010, 2,299.1 in 2013, 2,304.2 in 2016, 2,226.7 in 2019, 2,225.6 in 2022 and 2,225.6 in 2024. [verified] \u{2014} the same source, six editions of it, computed here."),
+            support!("measure/allen-county-roads-2010-2024.yml", "**Nothing in this county was built or removed to make those numbers.** Between the 2016 and 2019 editions US 30's mileage is 48.098 in both, to a thousandth, while 3.689 miles of it move from secondary road to primary and the county's secondary total falls by 3.743. Between 2016 and 2019 the file also loses 1,273 segments and 77.5 driveable miles, in three years during which seven municipalities were annexing ground and the county was authorising new houses. [verified] \u{2014} the same source, two editions of it, against [the annexations](allen-county-annexations-1990-2024.yml). Read as a series this file measures the Bureau's map maintenance; see [a column can empty into its neighbour](../../decisions/a-column-can-empty-into-its-neighbour.yml)."),
+        ],
+        answers: &["cannot say how many miles of road Allen County maintains"],
+        figures: &[
+            Figure { label: "2010", value: 2358.5, literal: "2,358.5" },
+            Figure { label: "2016", value: 2304.2, literal: "2,304.2" },
+            Figure { label: "2019", value: 2226.7, literal: "2,226.7" },
+            Figure { label: "2024", value: 2225.6, literal: "2,225.6" },
+        ],
+    },
+    Assertion {
+        id: "every-ownership-change-is-a-corporation-line",
+        statement: "23 of the 87 federal-aid routes in Allen County change owner along their length, \
+                    and every change is into a municipality \u{2014} 19 county roads and 4 township \
+                    roads. Not one changes between state and county, or county and township.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-federal-aid-highways-2018.yml", "**23 of the 87 routes change owner along their length, and every change is into a municipality.** 19 county roads become city or municipal and 4 township roads do; not one route in the county changes between state and county, or between county and township. The only ownership boundary this file records is a corporation line. [verified] \u{2014} same source, by route."),
+        ],
+        answers: &["cannot say who is responsible for the other 1,866 miles"],
+        figures: &[
+            Figure { label: "routes that change owner", value: 23.0, literal: "23" },
+            Figure { label: "routes in the county", value: 87.0, literal: "87" },
+        ],
+    },
+    Assertion {
         id: "the-rate-converged-and-the-workforce-did-not",
         statement: "Allen County's unemployment rate ran above Ohio's for twenty-four years \
                     running and then stopped: the gap was 0.4 points in 2013, 0.0 in 2014, and has \
