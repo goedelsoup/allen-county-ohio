@@ -34,6 +34,8 @@ location:
 used-by:
   - ../corpus/measure/allen-county-roads-2010-2024.yml
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
+  - ../corpus/measure/allen-county-elevation-2026.yml
+  - ../corpus/measure/allen-county-original-vegetation.yml
 ---
 
 **What it draws, and how much of it.** Nine feature classes appear in Allen County's 2024 file. Six
