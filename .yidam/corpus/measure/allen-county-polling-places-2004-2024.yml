@@ -1,0 +1,93 @@
+class: measure
+label: Allen County polling places and poll workers, 2004–2024
+description: |
+  The rooms this county votes in and the people who staff them, at each of the eleven federal
+  general elections from 2004 to 2024. [verified] —
+  [the Election Administration and Voting Survey](../../catalog/eac-election-administration-voting-survey.md),
+  Section D, `FIPSCode` 3900300000.
+
+      year   precincts   polling places   poll workers
+      2004         139               49            556
+      2006         139               50              —
+      2008         121               50            484
+      2010         121               48            531
+      2012          88               47            401
+      2014          88               46            430
+      2016          88               45            674
+      2018          88               38            654
+      2020          88               37            344
+      2022          88               33            334
+      2024          88               33            252
+
+  **The county cut its precincts by more than a third and did it in two steps.** 139 through 2006,
+  121 for 2008 and 2010, and 88 from 2012 to now. [verified] — the same file. The 88 are the
+  [voting districts](allen-county-voting-districts-2020.yml) this corpus holds by name and by
+  census block; [the 2006 ballot](allen-county-ballot-2006.yml) was counted over 51 more of them
+  than any ballot since 2010 has been.
+
+  **The polling places went with them and then kept going.** 50 in 2008 and 33 in 2022 and 2024, a
+  fall of a third, against a precinct count that has not moved since 2012. [verified] — the same
+  file, `D3a`; the 2004 and 2006 figures are the survey's combined count and are not on the same
+  footing. In 2008 each polling place took 1,019 ballots and in 2024 it took 1,420.
+
+  **One room in the county takes the early votes, in every year of the record.** [verified] — the
+  same file, `D4a`, which reads 1 for all eleven elections. In 2024 that one place took 13,090
+  ballots, 27.9 per cent of everything cast here, against 27,429 spread over 33 rooms on the day.
+
+  **This is not a county short of polling places by the standard of its state.** 66,201 registered
+  voters over 33 election-day places is 2,006 apiece; Ohio's 88 counties together run 8,074,098
+  registrants over 3,231 places, 2,499 apiece. [verified] — the same file summed over every Ohio
+  county board.
+
+      poll workers by age        2016    2020    2022    2024
+      40 or under                  71      34      15      15
+      41 to 60                    145      83      46      55
+      61 and over                 458     227     273     182
+      total                       674     344     334     252
+
+  **The people who run the elections are going away faster than the places are, and the ones left
+  are old.** 674 poll workers in 2016 and 252 in 2024 is a loss of 422 in eight years, close to
+  two-thirds of them. In
+  2024, 182 of the 252 were 61 or over — 72.2 per cent — and 15 were 40 or under. [verified] — the
+  same file. Across Ohio's county boards that reported an age table consistent with their own total,
+  62.6 per cent of poll workers were 61 or over, so this county is old for the state but not
+  unusual in it. [inference]
+
+  Two of the poll-worker figures cannot be used. The 2006 total is 139, which is that year's
+  precinct count and not a number of people; and the 2010 age bands sum to 895 against a reported
+  531. [verified] — the same file, checked band against total. Within 2024 the split inside the
+  61-and-over group also moves in a way the neighbouring years do not support — 9 aged 61 to 70
+  against 114 in 2022 — so only the combined band is quoted here.
+properties:
+  parameter: election-day polling places
+  value: "33"
+  unit: polling places
+  as_of: 2024-11-05
+  method: |
+    `D1a` precincts, `D3a` election-day polling places, `D4a` early-voting polling places and `D7a`
+    poll workers with the `D7b`–`D7g` age bands, for `FIPSCode` 3900300000, taken from the
+    harmonised retrospective panel for 2004–2022 and the separate 2024 release for 2024. [verified]
+    `D3a` does not exist before 2008; the 2004 and 2006 rows show `D2a`, a combined polling-place
+    count, which equals `D3a` in 2008, 2022 and 2024 and exceeds it by one in 2010 through 2016, so
+    those two years are within one of the election-day count and not on the same footing as it. Ohio figures are this corpus's
+    own sums over all 88 county boards. The state age comparison uses only the 73 counties whose age
+    bands sum to their own reported total and who reported more than 50 workers.
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-voting-districts-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-turnout-2004-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-ballot-2006.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
