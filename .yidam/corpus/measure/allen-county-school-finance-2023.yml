@@ -42,6 +42,16 @@ description: |
   This does not establish that any district is spending well or badly. The survey counts dollars
   and pupils and nothing about what a pupil learns; the corpus holds no attainment, attendance or
   graduation figure for any school in this county.
+  **The highest spender is also the lowest performer, and this node will not join the two.** Lima
+  spends $19,321 a pupil, 8.0 per cent more than the county's next-highest and 78.3 per cent more
+  than its lowest, and reads 42 per cent proficient in reading against a range of 62 to 83 across
+  the other eleven. [verified] — the same source against
+  [the assessment results](allen-county-test-proficiency-2009-2018.yml). Spending per pupil is
+  highest where the state and federal shares are highest, which is where the poverty is, so the
+  three quantities move together and nothing here orders them. [inference] The finance survey and
+  the outcome file are one year apart and describe the same twelve districts, which is enough for a
+  comparison and not enough for a mechanism.
+
 properties:
   parameter: current spending per pupil, revenue by source, and property tax per pupil
   value: "19321"
@@ -53,6 +63,10 @@ properties:
     [verified] Dollars are nominal and this is one year, so nothing here needs a deflator; a level
     quoted against another year would.
 links:
+  - target: allen-county-test-proficiency-2009-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
   - target: ../jurisdiction/lima-city-school-district.yml
     relationship: describes
     claim_tag: verified
