@@ -1,0 +1,68 @@
+id: a-proxy-must-outlast-what-it-proxies
+summary: >-
+  Two federal files describe wetland in Allen County. One says 704 acres and the other says 91,953,
+  and both are right: the first counts what is standing there now and the second counts ground that
+  formed under water and stayed that way after the water was taken off. A present-day measurement
+  may stand in for a past fact only where the property it measures survives the change being asked
+  about, and the node has to name the property and say why it survived.
+context: |
+  The corpus had carried an open question since its first geography phase: how much of this county
+  lay within the Great Black Swamp, and which townships. Nothing held could answer it, because the
+  swamp was drained between the 1850s and the 1890s and every source in the corpus describes the
+  county after that.
+
+  Two candidates, both federal, both current, both about wetness:
+
+      the Cropland Data Layer, 2024      wetland          704 acres     0.3%
+      the SSURGO soil survey, 2025       hydric soil   91,953 acres    35.3%
+
+  A hundred and thirty times apart on the same 260,000 acres. The first is an inventory of present
+  cover and answers *what is wet now*. The second is a rating of the soil profile, and a soil that
+  formed under standing water stays hydric after the tile goes in — which is exactly why the rating
+  exists and is exactly what makes it evidence about 1850.
+
+  Nothing in either file says which question it answers. Taking the first would have produced a
+  county with no swamp in it and a citation to support the claim.
+decision: |
+  **A present measurement may answer a past question only where the property measured is one the
+  intervening change does not reset. The node names the property, names the change, and says why the
+  one survived the other.**
+
+  - **Sort the candidates by persistence, not by subject.** Soil, landform, geology, drainage class,
+    surveyed section lines and place names carry the past forward. Land cover, land use, ownership,
+    population, employment and building stock do not; they are overwritten by the very event being
+    asked about, and a figure drawn from them describes the overwriting.
+  - **The claim keeps the proxy's tag, not the target's.** *35.3 per cent of the county is hydric
+    soil* is `[verified]`. *That is where the swamp was* is not, and does not become so by being
+    written in the same paragraph.
+  - **A proxy narrows an open question; it does not close one.** Say what would close it — here a
+    mapped historic extent — and leave the question standing until that arrives.
+  - **The proxy's own vintage still has to be checked.** This survey was republished in 2025 over
+    field work whose oldest source is dated 1965. For a property of the ground that is the right
+    vintage and an irrelevant date; for anything a person did after 1965 it would be the wrong file
+    entirely.
+rationale: |
+  **This is not the modelling rule.**
+  [a modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml) governs
+  a number produced by fitting national data to local covariates, and its danger is circularity.
+  Here nothing is modelled: both files are field observations, correctly made, of different things.
+  The danger is not that the number is soft but that it is hard and answers a question nobody asked.
+
+  **Nor is it the register rule.**
+  [a register is not a census](a-register-is-not-a-census.yml) is about a file whose currency is its
+  last filing. Both files here are current. The difference is what *current* means for the two
+  properties: current land cover is a fact about 2024, and current soil is a fact about the
+  Pleistocene.
+
+  **The 130-fold gap is the useful part to remember.** Two sources on one subject that disagree by
+  two orders of magnitude are usually not in conflict at all — they have different referents, and
+  the first move is to find the referents rather than to pick a winner. That is the same instinct as
+  [the intersection not the union](the-intersection-not-the-union.yml), applied to definitions
+  rather than to windows.
+
+  **What this does not license.** Using a persistent property as a free pass. Hydric soil is wider
+  than the wooded wetland the swamp's name refers to and narrower than the poorly drained county,
+  so it bounds the answer from neither side cleanly, and the open question stays open on exactly
+  that ground.
+status: accepted
+date: "2026-09-03"

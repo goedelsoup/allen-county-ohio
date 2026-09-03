@@ -8809,6 +8809,53 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-soils-2026.yml",
+      "class": "measure",
+      "label": "The soils of Allen County",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "One Soil Data Access query joining `legend`, `mapunit` and `component` on `areasymbol = 'OH003'`, returning 436 rows. [verified] Every share is acres weighted by component share of map unit — `muacres` times `comppct_r` over 100 — because a map unit is a mixture and its rating is not a single value. The alternatives are recorded in the catalogue and are not used. `as_of` is the survey's own restoration date of 27 August 2025; its field lineage runs from 1965. Drainage, hydric and taxonomic shares come from the component table and the prime-farmland share from the map-unit table, which is why the second is a share of map-unit acres rather than of components.",
+        "parameter": "land poorly drained or worse",
+        "unit": "per cent",
+        "value": "74.7"
+      },
+      "blocks": [
+        {
+          "text": "What the county is made of, by drainage, by wetness and by what it is good for. 260,340 acres in 80 map units and 436 soil components. [verified] — [the SSURGO soil survey](../../catalog/usda-ssurgo-soil-survey.md), `areasymbol` OH003, acres weighted by each component's share of its map unit.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three quarters of this county drains badly and one fortieth of it drains well.** 74.7 per cent is poorly drained or worse and 2.4 per cent is well drained. [verified] — the same file. That is the physical fact under the county's canal, its ditches and its tile, and it is the first time this corpus has held a number for it rather than an adjective.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Five acres in six of this county's prime farmland are prime only because they were drained.** 76.3 per cent of the county is classed prime *if drained* and 14.9 per cent is prime as it lies, so of the 91.3 per cent that can be prime farmland, 83.6 per cent of it needs the water taken off first. [verified] — the same file; the shares are computed here. The single most common phrase in the survey's own farmland column is a conditional.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three soil series are three quarters of the county.** Blount is 37.7 per cent of it, Pewamo 25.3 and Glynwood 12.0 — 75.0 between them — and all three formed in the same clayey glacial till. [verified] — the same file. Blount is somewhat poorly drained, Pewamo very poorly drained and Glynwood moderately well drained, so the county's wetness is largely one soil association read at three positions on a very slight slope. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The Black Swamp here is clay and not peat.** Histosols — the organic soils a person picturing a swamp would expect — cover 14 acres of 260,340. The county is 58.7 per cent Alfisols and 32.9 per cent Mollisols. [verified] — the same file. Water stood on this ground because the till beneath it would not let water through, not because the ground was made of what rotted in it. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**35.3 per cent of the county is hydric soil, which is ground that formed under standing water.** 91,953 acres. [verified] — the same file, `hydricrating`. Read against the drainage column it is almost exactly the very-poorly-drained share, 34.5 per cent, which is what the two ratings ought to do and is worth checking rather than assuming.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two federal files count wetland in this county and they are 130 times apart.** The Cropland Data Layer finds 704 acres of wetland in 2024 and this survey rates 91,953 acres hydric. [verified] — [the land cover](allen-county-land-cover-2008-2024.yml) against the same file. Both are right and they have different referents: one is what stands there now and the other is what the water made and left behind. See [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus does not assert that the hydric acres are the Great Black Swamp."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-storm-events-1950-2026.yml",
       "class": "measure",
       "label": "Allen County's severe weather record, 1950–2026",
@@ -11147,10 +11194,22 @@
         {
           "text": "**It has no GNIS record.** No feature named \"Great Black Swamp\" appears anywhere in the 17,921 rows of the Ohio file. [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md). That is not because the gazetteer omits vanished features: it carries 56 `Swamp` features in Ohio and marks the drained ones \"(historical)\" in the name itself. The likelier reason is that GNIS names features with a locatable point, and a wetland that covered much of northwest Ohio across a dozen counties does not have one. [inference] So this node keeps no identifier, and the absence is a fact about how gazetteers work rather than a gap in the retrieval.",
           "tier": "inference"
+        },
+        {
+          "text": "**The county's hydric soils are 35.3 per cent of it, and that is the nearest thing to an answer the corpus can hold.** 91,953 acres of 260,340 are rated hydric — ground that formed under standing water — and 74.7 per cent of the county is poorly drained or worse. [verified] — [the soil survey](../../catalog/usda-ssurgo-soil-survey.md); see [the soils](../measure/allen-county-soils-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The direction this node guessed at is right and the compass point is not.** The four townships whose centres lie north of 40.80° — Marion, Sugar Creek, Monroe and Richland — average 46.0 per cent hydric against 30.9 for the other eight, but Spencer in the far south-west is 45.2 and Richland in the north-east is 33.8. [verified] — the same survey, clipped to [TIGERweb](../../catalog/tigerweb-census2020.md) township polygons. The wet ground runs north and west; the sentence above said north. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The driest ground in the county is the ground the county seat is on.** Lima is 13.4 per cent hydric and 33.2 per cent poorly drained or worse, against 74.7 for the county. [verified] — [the same survey](../../catalog/usda-ssurgo-soil-survey.md), clipped the same way. Bath, the township the city grew into, is the driest of the twelve at 21.1.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "natural-feature/hog-creek.yml",
@@ -16393,7 +16452,7 @@
           "tier": "verified"
         },
         {
-          "text": "The land is glacial till plain, flat and poorly drained, and its northern reach lay within the Great Black Swamp until nineteenth-century drainage. [inference] That flatness is the reason the county's transport history runs through a canal and then a railway junction rather than through a river port: its streams drain north and west to the Auglaize and the Maumee and were never navigable here.",
+          "text": "The land is glacial till plain, and *poorly drained* is a measurement rather than an epithet: 74.7 per cent of it is poorly drained or worse and 2.4 per cent is well drained, with 35.3 per cent of its acres formed under standing water. [verified] — [the soil survey](../../catalog/usda-ssurgo-soil-survey.md); see [the soils](../measure/allen-county-soils-2026.yml). Its northern and western reach lay within [the Great Black Swamp](../natural-feature/great-black-swamp.yml) until nineteenth-century drainage. [inference] That flatness is the reason the county's transport history runs through a canal and then a railway junction rather than through a river port: its streams drain north and west to the Auglaize and the Maumee and were never navigable here.",
           "tier": "inference"
         },
         {
@@ -23806,6 +23865,34 @@
       "source": "catalog/fbi-crime-data-explorer.md"
     },
     {
+      "from": "measure/allen-county-soils-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usda-ssurgo-soil-survey.md"
+    },
+    {
+      "from": "measure/allen-county-soils-2026.yml",
+      "to": "natural-feature/great-black-swamp.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-soils-2026.yml",
+      "to": "measure/allen-county-farmland-1910-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-soils-2026.yml",
+      "to": "measure/allen-county-land-cover-2008-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-storm-events-1950-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -24441,6 +24528,13 @@
       "relationship": "traverses",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "natural-feature/great-black-swamp.yml",
+      "to": "measure/allen-county-soils-2026.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/usda-ssurgo-soil-survey.md"
     },
     {
       "from": "natural-feature/hog-creek.yml",
@@ -25764,6 +25858,13 @@
       "relationship": "resided-in",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "place/allen-county.yml",
+      "to": "measure/allen-county-soils-2026.yml",
+      "relationship": "evidenced-by",
+      "tier": "verified",
+      "source": "catalog/usda-ssurgo-soil-survey.md"
     },
     {
       "from": "place/allen-county.yml",

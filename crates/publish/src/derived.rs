@@ -999,6 +999,88 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "three-quarters-of-the-county-drains-badly",
+        statement: "74.7 per cent of Allen County is poorly drained or worse and 2.4 per cent is well drained. Poorly drained is a measurement of this ground rather than an epithet for it.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-soils-2026.yml", "**Three quarters of this county drains badly and one fortieth of it drains well.** 74.7 per cent is poorly drained or worse and 2.4 per cent is well drained."),
+            support!("measure/allen-county-soils-2026.yml", "**35.3 per cent of the county is hydric soil, which is ground that formed under standing water.** 91,953 acres."),
+        ],
+        answers: &["does not assert that the hydric acres are the Great Black Swamp"],
+        figures: &[
+            Figure { label: "poorly drained or worse", value: 74.7, literal: "74.7" },
+            Figure { label: "hydric soil", value: 35.3, literal: "35.3" },
+            Figure { label: "well drained", value: 2.4, literal: "2.4" },
+        ],
+    },
+    Assertion {
+        id: "prime-only-because-it-was-drained",
+        statement: "Five acres in six of Allen County's prime farmland are prime only because they were drained: 76.3 per cent of the county is classed prime if drained against 14.9 per cent prime as it lies.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-soils-2026.yml", "**Five acres in six of this county's prime farmland are prime only because they were drained.** 76.3 per cent of the county is classed prime *if drained* and 14.9 per cent is prime as it lies, so of the 91.3 per cent that can be prime farmland, 83.6 per cent of it needs the water taken off first."),
+        ],
+        answers: &["does not assert that the hydric acres are the Great Black Swamp"],
+        figures: &[
+            Figure { label: "prime if drained", value: 76.3, literal: "76.3" },
+            Figure { label: "prime as it lies", value: 14.9, literal: "14.9" },
+        ],
+    },
+    Assertion {
+        id: "the-black-swamp-here-is-clay",
+        statement: "The organic soils a person picturing a swamp would expect cover 14 acres of Allen County's 260,340. Water stood on this ground because the glacial till beneath it would not let water through.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-soils-2026.yml", "**The Black Swamp here is clay and not peat.** Histosols \u{2014} the organic soils a person picturing a swamp would expect \u{2014} cover 14 acres of 260,340. The county is 58.7 per cent Alfisols and 32.9 per cent Mollisols."),
+        ],
+        answers: &["does not assert that the hydric acres are the Great Black Swamp"],
+        figures: &[
+            Figure { label: "Alfisols", value: 58.7, literal: "58.7" },
+            Figure { label: "Mollisols", value: 32.9, literal: "32.9" },
+        ],
+    },
+    Assertion {
+        id: "two-files-a-hundred-and-thirty-times-apart",
+        statement: "One federal file finds 704 acres of wetland in Allen County and another rates 91,953 acres hydric. Both are right: one counts what stands there now, the other what the water made and left behind.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-soils-2026.yml", "**Two federal files count wetland in this county and they are 130 times apart.** The Cropland Data Layer finds 704 acres of wetland in 2024 and this survey rates 91,953 acres hydric."),
+        ],
+        answers: &["does not assert that the hydric acres are the Great Black Swamp"],
+        figures: &[
+            Figure { label: "wetland, 2024", value: 704.0, literal: "704" },
+            Figure { label: "hydric soil", value: 91953.0, literal: "91,953" },
+        ],
+    },
+    Assertion {
+        id: "the-wet-ground-runs-north-and-west",
+        statement: "Marion Township is 58.0 per cent hydric soil and Bath 21.1. The four townships north of 40.80\u{b0} average 46.0 per cent against 30.9 for the other eight \u{2014} but Spencer, in the far south-west, is 45.2.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/great-black-swamp.yml", "**The direction this node guessed at is right and the compass point is not.** The four townships whose centres lie north of 40.80\u{b0} \u{2014} Marion, Sugar Creek, Monroe and Richland \u{2014} average 46.0 per cent hydric against 30.9 for the other eight, but Spencer in the far south-west is 45.2 and Richland in the north-east is 33.8."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "north of 40.80\u{b0}", value: 46.0, literal: "46.0" },
+            Figure { label: "the other eight", value: 30.9, literal: "30.9" },
+            Figure { label: "Spencer", value: 45.2, literal: "45.2" },
+        ],
+    },
+    Assertion {
+        id: "the-county-seat-is-on-the-driest-ground",
+        statement: "Lima is 13.4 per cent hydric soil against 74.7 per cent poorly drained for the county, and Bath \u{2014} the township the city grew into \u{2014} is the driest of the twelve at 21.1 per cent.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/great-black-swamp.yml", "**The driest ground in the county is the ground the county seat is on.** Lima is 13.4 per cent hydric and 33.2 per cent poorly drained or worse, against 74.7 for the county. [verified] \u{2014} [the same survey](../../catalog/usda-ssurgo-soil-survey.md), clipped the same way. Bath, the township the city grew into, is the driest of the twelve at 21.1."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima", value: 13.4, literal: "13.4" },
+            Figure { label: "Bath", value: 21.1, literal: "21.1" },
+            Figure { label: "the county", value: 74.7, literal: "74.7" },
+        ],
+    },
+    Assertion {
         id: "republican-share-rising",
         statement: "Republican share of the top-of-ticket vote rose across three consecutive \
                     elections: 66.5 per cent in 2016, 67.3 in 2018, 69.0 in 2020.",
