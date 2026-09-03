@@ -58,6 +58,18 @@ description: |
   2014 onward — a 37 per cent consolidation in eight years, over a period in which its registered
   voters fell by 1,423. [verified] — the 2006, 2010 and 2020 files; see
   [the 2020 districts](allen-county-voting-districts-2020.yml).
+  **The board's own return to the federal government does not give the same roll.** It reports
+  66,460 registered voters for this election — 53,445 active and 13,015 inactive — against the
+  68,797 summed here out of the precinct workbook, a difference of 2,337. Its ballot count, 37,605,
+  is identical to the workbook's. [verified] —
+  [the Election Administration and Voting Survey](../../catalog/eac-election-administration-voting-survey.md).
+
+  [open] Which of the two registration figures is the roll on 7 November 2006. The two sources are
+  the same office answering two different forms; the survey's active and inactive columns sum to its
+  own total, so the discrepancy is not a definition of *active*, and the corpus holds nothing that
+  arbitrates. The certified count of ballots, which is what the rest of this node rests on, is not
+  in dispute.
+
 properties:
   parameter: ballots cast, general election
   value: "37605"
@@ -71,6 +83,10 @@ properties:
     Vote counts are floating-point in that file and are converted here; every value is integral.
     Shares are of the two major-party candidates only, computed here.
 links:
+  - target: allen-county-turnout-2004-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified
