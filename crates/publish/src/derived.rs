@@ -383,7 +383,7 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "the-schools-empty-faster-than-the-county",
         statement: "Enrolment in the twelve school districts holding ground in Allen County fell \
-                    from 17,985 to 16,113 between 2010 and 2023 — 10.4 per cent, where the county's \
+                    from 17,985 to 16,113 between 2009 and 2022 — 10.4 per cent, where the county's \
                     population fell 3.9 per cent to the 2020 census.",
         topic: "schools",
         supports: &[
@@ -398,20 +398,20 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
         answers: &[],
         figures: &[
-            Figure { label: "2010", value: 17_985.0, literal: "17,985" },
-            Figure { label: "2011", value: 17_830.0, literal: "17,830" },
-            Figure { label: "2012", value: 17_766.0, literal: "17,766" },
-            Figure { label: "2013", value: 17_565.0, literal: "17,565" },
-            Figure { label: "2014", value: 17_634.0, literal: "17,634" },
-            Figure { label: "2015", value: 17_656.0, literal: "17,656" },
-            Figure { label: "2016", value: 17_518.0, literal: "17,518" },
-            Figure { label: "2017", value: 17_333.0, literal: "17,333" },
-            Figure { label: "2018", value: 17_107.0, literal: "17,107" },
-            Figure { label: "2019", value: 16_921.0, literal: "16,921" },
-            Figure { label: "2020", value: 16_774.0, literal: "16,774" },
-            Figure { label: "2021", value: 16_124.0, literal: "16,124" },
-            Figure { label: "2022", value: 16_127.0, literal: "16,127" },
-            Figure { label: "2023", value: 16_113.0, literal: "16,113" },
+            Figure { label: "2009", value: 17_985.0, literal: "17,985" },
+            Figure { label: "2010", value: 17_830.0, literal: "17,830" },
+            Figure { label: "2011", value: 17_766.0, literal: "17,766" },
+            Figure { label: "2012", value: 17_565.0, literal: "17,565" },
+            Figure { label: "2013", value: 17_634.0, literal: "17,634" },
+            Figure { label: "2014", value: 17_656.0, literal: "17,656" },
+            Figure { label: "2015", value: 17_518.0, literal: "17,518" },
+            Figure { label: "2016", value: 17_333.0, literal: "17,333" },
+            Figure { label: "2017", value: 17_107.0, literal: "17,107" },
+            Figure { label: "2018", value: 16_921.0, literal: "16,921" },
+            Figure { label: "2019", value: 16_774.0, literal: "16,774" },
+            Figure { label: "2020", value: 16_124.0, literal: "16,124" },
+            Figure { label: "2021", value: 16_127.0, literal: "16,127" },
+            Figure { label: "2022", value: 16_113.0, literal: "16,113" },
         ],
     },
     Assertion {
@@ -4428,6 +4428,54 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2006 midterm", value: 54.7, literal: "54.7" },
             Figure { label: "2010 midterm", value: 48.4, literal: "48.4" },
             Figure { label: "2020 presidential", value: 71.8, literal: "71.8" },
+        ],
+    },
+    Assertion {
+        id: "a-third-of-the-schoolchildren-are-gone",
+        statement: "Allen County's twelve school districts held 22,760 pupils in 1988 and hold \
+                    15,850 — 30.4 per cent fewer, against a county population down 8.1 per cent \
+                    over the same span. Lima City Schools have lost half their children.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-enrolment-1988-2024.yml", "**Allen County has 6,910 fewer schoolchildren than it had in 1988 \u{2014} 30.4 per cent of them \u{2014} and\n  the high of the whole run is its first year.** [verified] \u{2014} the same files. The county's\n  population went from 109,755 in 1990 to 100,866 in 2024, a fall of 8.1 per cent, so the schools\n  emptied close to four times as fast as the county did. [inference] \u{2014} against\n  [1990](allen-county-population-1940-1990.yml) and\n  [2024](allen-county-population-2024.yml)."),
+            support!("measure/allen-county-school-enrolment-1988-2024.yml", "**Lima City Schools have lost half their children, and the city has not lost half its people.**\n  6,969 pupils in 1988 and 3,370 now, a fall of 51.6 per cent, against a city that went from 45,549\n  residents in 1990 to 34,690 in 2024 \u{2014} 23.8 per cent. The district emptied at more than twice the\n  rate of the city it serves. [inference] \u{2014} the same files against\n  [1990](lima-population-1970-1990.yml) and [2024](lima-population-2024.yml). Elida is the\n  next-steepest at \u{2212}38.8 per cent, and it borders the city on the north and west."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "county population", value: 8.1, literal: "8.1" },
+            Figure { label: "city of Lima", value: 23.8, literal: "23.8" },
+            Figure { label: "all schoolchildren", value: 30.4, literal: "30.4" },
+            Figure { label: "Lima's district", value: 51.6, literal: "51.6" },
+        ],
+    },
+    Assertion {
+        id: "lima-holds-fewer-of-the-black-pupils",
+        statement: "Lima City Schools held 82.3 per cent of Allen County's Black pupils in 1988 \
+                    and hold 66.4 per cent now. Elida went from 5.5 per cent of them to 14.4, and \
+                    Perry Local is the county's second most heavily Black district at 21.7.",
+        topic: "schools",
+        supports: &[support!("measure/allen-county-school-enrolment-by-race-1988-2024.yml", "**Black children are less concentrated in Lima than they were, and by a long way.** The city's\n  district held 82.3 per cent of the county's Black pupils in 1988, 79.2 in 2000, 69.6 in 2012 and\n  66.4 now. [verified] \u{2014} the same files, computed here. Over the same thirty-seven years Lima's\n  share of *all* the county's pupils fell from 30.6 per cent to 21.3, so the two shares moved the\n  same way and the Black share moved further. [inference]")],
+        answers: &["cannot say how much of that is the new category"],
+        figures: &[
+            Figure { label: "1988", value: 82.3, literal: "82.3" },
+            Figure { label: "2000", value: 79.2, literal: "79.2" },
+            Figure { label: "2012", value: 69.6, literal: "69.6" },
+            Figure { label: "2024", value: 66.4, literal: "66.4" },
+        ],
+    },
+    Assertion {
+        id: "the-share-that-held-because-both-halves-emptied",
+        statement: "Lima City Schools were 38.6 per cent Black in 1988 and are 38.8 per cent now, \
+                    across a district that lost half its children. The share held because both \
+                    halves emptied — Black enrolment 2,689 to 1,307, white-alone 4,155 to 1,067.",
+        topic: "schools",
+        supports: &[support!("measure/allen-county-school-enrolment-by-race-1988-2024.yml", "**The Black share of the district is the figure that did not move.** 38.6 per cent in 1988 and\n  38.8 now, across a district that lost half its children. [verified] \u{2014} same files. It is not a\n  share that held still through stability: Black enrolment fell from 2,689 to 1,307 and white-alone\n  enrolment from 4,155 to 1,067, and the ratio survived because both halves emptied. [inference]")],
+        answers: &["cannot say how much of that is the new category"],
+        figures: &[
+            Figure { label: "white-alone 1988", value: 4155.0, literal: "4,155" },
+            Figure { label: "white-alone 2024", value: 1067.0, literal: "1,067" },
+            Figure { label: "Black 1988", value: 2689.0, literal: "2,689" },
+            Figure { label: "Black 2024", value: 1307.0, literal: "1,307" },
         ],
     },
 ];

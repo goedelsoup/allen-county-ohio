@@ -1,0 +1,111 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const gone = assertion('a-third-of-the-schoolchildren-are-gone')
+const spread = assertion('lima-holds-fewer-of-the-black-pupils')
+const held = assertion('the-share-that-held-because-both-halves-emptied')
+
+const spec = (a: typeof gone, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const goneSpec = spec(gone, 'Per cent fall')
+const spreadSpec = spec(spread, "Lima's share of the county's Black pupils")
+const heldSpec = spec(held, 'Pupils enrolled')
+---
+
+<Article slug="a-third-of-the-children">
+  <p>
+    In the autumn of 1988 the twelve school districts holding ground in Allen County enrolled 22,760
+    children. This autumn they enrol 15,850. The high of the entire thirty-seven-year run is its
+    first year, and every year since has been a step down from it with three exceptions, none of
+    them larger than ninety pupils.
+  </p>
+  <AssertionCard assertion={gone} open />
+  <ChartFigure
+    id="gone"
+    title="What emptied, and how fast"
+    caption="Enrolment 1988 to 2024; population 1990 to 2024, the nearest census to the start of the school series. Four measures of the same county over roughly the same span."
+    columns={['Measure', 'Fall']}
+    rows={gone.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="gone" set:html={JSON.stringify(goneSpec)} is:inline />
+  <Gloss>
+    Fourteen of these years were already on this site, dated one too late. The finance survey labels
+    a count by the fiscal year the autumn opens; the reading here took that label for the autumn. The
+    federal school roll settles it without argument — its figure for the preceding year matches the
+    finance survey in fourteen years of fourteen and in twelve districts of twelve at both ends, and
+    its same-year figure matches in none. Seven nodes were corrected.
+  </Gloss>
+  <p>
+    The county's own population fell 8.1 per cent across the same span. Its schools fell nearly four
+    times as fast, which is what an ageing county looks like from inside a classroom: the loss is not
+    people leaving so much as people not being born. Lima City Schools have lost half their children
+    — 6,969 to 3,370 — against a city that lost less than a quarter of its residents. Bluffton is the
+    only one of the twelve that is larger than it was.
+  </p>
+
+  <h2>Where the Black children go to school</h2>
+  <p>
+    In 1988, four out of every five Black schoolchildren in Allen County were enrolled in one
+    district. That has changed more than any other figure in this series.
+  </p>
+  <AssertionCard assertion={spread} />
+  <ChartFigure
+    id="spread"
+    title="Lima City Schools' share of the county's Black pupils"
+    caption="Black enrolment in Lima City Schools as a share of Black enrolment in all twelve districts. Over the same years Lima's share of all the county's pupils fell from 30.6 per cent to 21.3, so both shares fell and this one fell further."
+    columns={['Year', "Lima's share"]}
+    rows={spread.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="spread" set:html={JSON.stringify(spreadSpec)} is:inline />
+  <p>
+    The districts that took them are the two that touch the city. Elida held 5.5 per cent of the
+    county's Black pupils in 1988 and holds 14.4 now; Perry Local, with 704 children in all, is 21.7
+    per cent Black and the second most heavily Black district in the county. Further out, nothing
+    much moved: Bluffton, Spencerville, Delphos, Allen East, Columbus Grove, Pandora-Gilboa and
+    Waynesfield-Goshen had sixteen Black children between them in 1988 and have sixty-two now, on
+    more than a third of the county's enrolment.
+  </p>
+
+  <h2>The share that did not move</h2>
+  <p>
+    Lima's own composition looks untouched. It was 38.6 per cent Black in 1988 and it is 38.8 per
+    cent Black now. That stability is an artefact of subtraction.
+  </p>
+  <AssertionCard assertion={held} />
+  <ChartFigure
+    id="held"
+    title="Lima City Schools by race, 1988 and 2024"
+    caption="Counts, not shares. The district lost 1,382 Black pupils and 3,088 white-alone pupils, and the ratio between the two came out almost where it started."
+    columns={['Group', 'Pupils']}
+    rows={held.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="held" set:html={JSON.stringify(heldSpec)} is:inline />
+  <p>
+    One caution belongs on that chart. "Two or more races" did not exist as a category in these files
+    until 2010, and it now holds 711 of Lima's 3,370 children. If every one of them would have been
+    counted white in 1988, the comparable figure today is 52.8 per cent white rather than 31.7. The
+    honest answer is an interval, and nothing in the file narrows it.
+  </p>
+  <p>
+    The same roll carries something the money files do not: what each district staffs. Pupils per
+    teacher runs from 12.8 to 18.9 and does not sort by wealth or size — the two lowest are the
+    county's smallest district and its poorest, low for opposite reasons. What does sort is
+    specialists. Nine of the twelve districts report no school psychologist at all. Lima has four.
+  </p>
+  <p>
+    And one year in the series remains unexplained. 2009 is the largest single-year fall on record,
+    967 pupils, and the only year in thirty-six when all twelve districts fell together. Twelve
+    districts moving the same way at once is the shape of a change in what gets counted rather than
+    of families leaving town, and the file does not say which it was.
+  </p>
+</Article>

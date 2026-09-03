@@ -266,13 +266,13 @@
       "subject": "jurisdiction/lima-city-school-district.yml",
       "subject_label": "Lima City School District",
       "parameter": "fall enrolment, by school district",
-      "unit": "pupils in the twelve districts, 2023",
+      "unit": "pupils in the twelve districts, autumn 2022",
       "tier": "verified",
       "points": [
         {
           "node": "measure/allen-county-school-enrolment-2010-2023.yml",
-          "label": "Enrolment in Allen County's twelve school districts, 2010-2023",
-          "as_of": "2023",
+          "label": "Enrolment in Allen County's twelve school districts, 2009-2022",
+          "as_of": "2022",
           "value": 16113.0,
           "published": "16113",
           "tier": "verified",
@@ -578,6 +578,26 @@
           "tier": "verified",
           "source": "catalog/rusler-allen-county-1921.md",
           "method": "Read from the full text of the 1921 county history on archive.org. Every figure is the book's estimate and the book says so — \"it is estimated\", \"almost\", \"about\" — and none is a count. The quotations are transcribed as printed, including the period's terminology, because paraphrase would silently improve a source this corpus is also reporting the limits of. The 1920 population against which the share is computed is the census figure the corpus already holds, not the book's. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::Black-share-of-enrolment-in-the-county's-twelve-school-districts",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Black share of enrolment in the county's twelve school districts",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-enrolment-by-race-1988-2024.yml",
+          "label": "Who the children in Allen County's schools are, 1988–2024",
+          "as_of": "2024",
+          "value": 12.4,
+          "published": "12.4",
+          "tier": "verified",
+          "source": "catalog/nces-common-core-of-data.md",
+          "method": "One request per year to the district enrolment endpoint for Ohio, `grade-99`, all race codes, filtered here to the twelve districts by NCES identifier. Race codes are 1 white, 2 Black, 3 Hispanic, 4 Asian, 5 American Indian or Alaska Native, 6 Native Hawaiian or Pacific Islander, 7 two or more, 9 unknown and 99 total; codes 4 to 6 and 9 are held and not printed above, and the county's Asian enrolment is 185 in 1988 and 121 now. Every share is computed here from counts. [verified] Category 7 is absent before 2010 and is shown as an em dash rather than a zero for that reason; see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml)."
         }
       ]
     },
@@ -978,6 +998,26 @@
           "tier": "verified",
           "source": "catalog/miller-allen-county-1906.md",
           "method": "Read from the full text of the 1906 county history on archive.org, the section headed \"Roster of County Officials\", transcribed by hand rather than parsed: the scan carries OCR damage in the years — 1S41 for 1841, 1833 where 1853 is meant — and a parser that trusted the digits would have produced a false succession. Each name-and-year pair is the book's; where a year is impossible it is reported as the book's and corrected only against an independent list, never inferred. The count of 169 is the nine offices summed and excludes the associate judges before 1851 and the commissioners. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::enrolment-in-the-county's-twelve-school-districts",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "enrolment in the county's twelve school districts",
+      "unit": "pupils",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-enrolment-1988-2024.yml",
+          "label": "Enrolment in Allen County's twelve school districts, 1988–2024",
+          "as_of": "2024",
+          "value": 15850.0,
+          "published": "15850",
+          "tier": "verified",
+          "source": "catalog/nces-common-core-of-data.md",
+          "method": "One request per year to the district enrolment endpoint for Ohio, `grade-99` and race code 99, filtered here to the twelve districts by NCES agency identifier. Every year from 1988 to 2024 returns all twelve; none is imputed and none is missing. [verified] The twelve are the districts holding ground in Allen County, three of which the federal file files under a neighbouring county — Delphos under Van Wert, Columbus Grove and Pandora-Gilboa under Putnam, Waynesfield-Goshen under Auglaize — so a filter on county code returns eight and not twelve. Staffing is the 2023 district directory, which is the fall of the 2023–24 school year and one year later than the fall the finance survey would call 2024. [verified]"
         }
       ]
     },
@@ -3659,13 +3699,13 @@
     },
     {
       "id": "the-schools-empty-faster-than-the-county",
-      "statement": "Enrolment in the twelve school districts holding ground in Allen County fell from 17,985 to 16,113 between 2010 and 2023 — 10.4 per cent, where the county's population fell 3.9 per cent to the 2020 census.",
+      "statement": "Enrolment in the twelve school districts holding ground in Allen County fell from 17,985 to 16,113 between 2009 and 2022 — 10.4 per cent, where the county's population fell 3.9 per cent to the 2020 census.",
       "topic": "schools",
       "tier": "verified",
       "citations": [
         {
           "node": "measure/allen-county-school-enrolment-2010-2023.yml",
-          "node_label": "Enrolment in Allen County's twelve school districts, 2010-2023",
+          "node_label": "Enrolment in Allen County's twelve school districts, 2009-2022",
           "span": "**The series, annually: 17,985, 17,830, 17,766, 17,565, 17,634, 17,656, 17,518, 17,333, 17,107, 16,921, 16,774, 16,124, 16,127 and 16,113.**",
           "tier": "verified",
           "sources": [
@@ -3674,7 +3714,7 @@
         },
         {
           "node": "measure/allen-county-school-enrolment-2010-2023.yml",
-          "node_label": "Enrolment in Allen County's twelve school districts, 2010-2023",
+          "node_label": "Enrolment in Allen County's twelve school districts, 2009-2022",
           "span": "The twelve lost 1,872 pupils, 10.4 per cent, over a span in which Allen County's population fell 3.9 per cent to the 2020 census and 5.1 per cent to the 2024 estimate.",
           "tier": "verified",
           "sources": [
@@ -3685,72 +3725,72 @@
       "caveats": [],
       "figures": [
         {
-          "label": "2010",
+          "label": "2009",
           "value": 17985.0,
           "literal": "17,985"
         },
         {
-          "label": "2011",
+          "label": "2010",
           "value": 17830.0,
           "literal": "17,830"
         },
         {
-          "label": "2012",
+          "label": "2011",
           "value": 17766.0,
           "literal": "17,766"
         },
         {
-          "label": "2013",
+          "label": "2012",
           "value": 17565.0,
           "literal": "17,565"
         },
         {
-          "label": "2014",
+          "label": "2013",
           "value": 17634.0,
           "literal": "17,634"
         },
         {
-          "label": "2015",
+          "label": "2014",
           "value": 17656.0,
           "literal": "17,656"
         },
         {
-          "label": "2016",
+          "label": "2015",
           "value": 17518.0,
           "literal": "17,518"
         },
         {
-          "label": "2017",
+          "label": "2016",
           "value": 17333.0,
           "literal": "17,333"
         },
         {
-          "label": "2018",
+          "label": "2017",
           "value": 17107.0,
           "literal": "17,107"
         },
         {
-          "label": "2019",
+          "label": "2018",
           "value": 16921.0,
           "literal": "16,921"
         },
         {
-          "label": "2020",
+          "label": "2019",
           "value": 16774.0,
           "literal": "16,774"
         },
         {
-          "label": "2021",
+          "label": "2020",
           "value": 16124.0,
           "literal": "16,124"
         },
         {
-          "label": "2022",
+          "label": "2021",
           "value": 16127.0,
           "literal": "16,127"
         },
         {
-          "label": "2023",
+          "label": "2022",
           "value": 16113.0,
           "literal": "16,113"
         }
@@ -11580,6 +11620,139 @@
           "label": "2020 presidential",
           "value": 71.8,
           "literal": "71.8"
+        }
+      ]
+    },
+    {
+      "id": "a-third-of-the-schoolchildren-are-gone",
+      "statement": "Allen County's twelve school districts held 22,760 pupils in 1988 and hold 15,850 — 30.4 per cent fewer, against a county population down 8.1 per cent over the same span. Lima City Schools have lost half their children.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-enrolment-1988-2024.yml",
+          "node_label": "Enrolment in Allen County's twelve school districts, 1988–2024",
+          "span": "**Allen County has 6,910 fewer schoolchildren than it had in 1988 — 30.4 per cent of them — and the high of the whole run is its first year.** [verified] — the same files. The county's population went from 109,755 in 1990 to 100,866 in 2024, a fall of 8.1 per cent, so the schools emptied close to four times as fast as the county did. [inference] — against [1990](allen-county-population-1940-1990.yml) and [2024](allen-county-population-2024.yml).",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-enrolment-1988-2024.yml",
+          "node_label": "Enrolment in Allen County's twelve school districts, 1988–2024",
+          "span": "**Lima City Schools have lost half their children, and the city has not lost half its people.** 6,969 pupils in 1988 and 3,370 now, a fall of 51.6 per cent, against a city that went from 45,549 residents in 1990 to 34,690 in 2024 — 23.8 per cent. The district emptied at more than twice the rate of the city it serves. [inference] — the same files against [1990](lima-population-1970-1990.yml) and [2024](lima-population-2024.yml). Elida is the next-steepest at −38.8 per cent, and it borders the city on the north and west.",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "county population",
+          "value": 8.1,
+          "literal": "8.1"
+        },
+        {
+          "label": "city of Lima",
+          "value": 23.8,
+          "literal": "23.8"
+        },
+        {
+          "label": "all schoolchildren",
+          "value": 30.4,
+          "literal": "30.4"
+        },
+        {
+          "label": "Lima's district",
+          "value": 51.6,
+          "literal": "51.6"
+        }
+      ]
+    },
+    {
+      "id": "lima-holds-fewer-of-the-black-pupils",
+      "statement": "Lima City Schools held 82.3 per cent of Allen County's Black pupils in 1988 and hold 66.4 per cent now. Elida went from 5.5 per cent of them to 14.4, and Perry Local is the county's second most heavily Black district at 21.7.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-enrolment-by-race-1988-2024.yml",
+          "node_label": "Who the children in Allen County's schools are, 1988–2024",
+          "span": "**Black children are less concentrated in Lima than they were, and by a long way.** The city's district held 82.3 per cent of the county's Black pupils in 1988, 79.2 in 2000, 69.6 in 2012 and 66.4 now. [verified] — the same files, computed here. Over the same thirty-seven years Lima's share of *all* the county's pupils fell from 30.6 per cent to 21.3, so the two shares moved the same way and the Black share moved further. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**Lima City Schools were 59.6 per cent white in 1988 and are 31.7 per cent white now, and the file cannot say how much of that is the new category.** 711 of the district's 3,370 children are in \"two or more races\"."
+      ],
+      "figures": [
+        {
+          "label": "1988",
+          "value": 82.3,
+          "literal": "82.3"
+        },
+        {
+          "label": "2000",
+          "value": 79.2,
+          "literal": "79.2"
+        },
+        {
+          "label": "2012",
+          "value": 69.6,
+          "literal": "69.6"
+        },
+        {
+          "label": "2024",
+          "value": 66.4,
+          "literal": "66.4"
+        }
+      ]
+    },
+    {
+      "id": "the-share-that-held-because-both-halves-emptied",
+      "statement": "Lima City Schools were 38.6 per cent Black in 1988 and are 38.8 per cent now, across a district that lost half its children. The share held because both halves emptied — Black enrolment 2,689 to 1,307, white-alone 4,155 to 1,067.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-enrolment-by-race-1988-2024.yml",
+          "node_label": "Who the children in Allen County's schools are, 1988–2024",
+          "span": "**The Black share of the district is the figure that did not move.** 38.6 per cent in 1988 and 38.8 now, across a district that lost half its children. [verified] — same files. It is not a share that held still through stability: Black enrolment fell from 2,689 to 1,307 and white-alone enrolment from 4,155 to 1,067, and the ratio survived because both halves emptied. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**Lima City Schools were 59.6 per cent white in 1988 and are 31.7 per cent white now, and the file cannot say how much of that is the new category.** 711 of the district's 3,370 children are in \"two or more races\"."
+      ],
+      "figures": [
+        {
+          "label": "white-alone 1988",
+          "value": 4155.0,
+          "literal": "4,155"
+        },
+        {
+          "label": "white-alone 2024",
+          "value": 1067.0,
+          "literal": "1,067"
+        },
+        {
+          "label": "Black 1988",
+          "value": 2689.0,
+          "literal": "2,689"
+        },
+        {
+          "label": "Black 2024",
+          "value": 1307.0,
+          "literal": "1,307"
         }
       ]
     }

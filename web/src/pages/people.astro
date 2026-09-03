@@ -387,8 +387,8 @@ const spreadSpec = bar(
     <AssertionCard assertion={schoolsEmpty} />
     <ChartFigure
       id="enrolment"
-      title="Enrolment in the twelve districts, 2010–2023"
-      caption="Fall enrolment from the Census Bureau's annual survey of school system finances, read for every year rather than sampled. Ten of the thirteen year-on-year steps are declines, and one dwarfs the rest: 650 pupils in 2021, where no other year moves by more than 226."
+      title="Enrolment in the twelve districts, 2009–2022"
+      caption="Fall enrolment from the Census Bureau's annual survey of school system finances, read for every year rather than sampled. Ten of the thirteen year-on-year steps are declines, and one dwarfs the rest: 650 pupils in 2020, where no other year moves by more than 226."
       columns={['Year', 'Pupils']}
       rows={schoolsEmpty.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
     />
@@ -550,6 +550,10 @@ const spreadSpec = bar(
         <li>
           <a href="/read/fifth-worst-for-hearts">Fifth worst for hearts</a>
           <span class="why">The heart disease rate climbed while Ohio's fell, and the gains that stopped in 2010 stopped only under 65.</span>
+        </li>
+        <li>
+          <a href="/read/a-third-of-the-children">A third of the children</a>
+          <span class="why">6,910 fewer schoolchildren than in 1988, and Black pupils far less concentrated in Lima than they were.</span>
         </li>
         <li>
           <a href="/read/the-schools-that-are-not-districts">The schools that are not districts</a>
