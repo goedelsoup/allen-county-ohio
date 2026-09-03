@@ -1,0 +1,134 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const care = assertion('the-most-dangerous-work-here-is-care')
+const risk = assertion('the-refinery-is-safer-than-the-nursing-home')
+const total = assertion('five-thousand-seven-hundred-recordable-injuries')
+const covid = assertion('the-pandemic-is-in-the-injury-logs')
+const trend = assertion('the-fall-is-real-and-the-trend-is-not')
+const deaths = assertion('three-workplace-deaths-and-that-is-ordinary')
+const ford = assertion('a-plant-headcount-arrived-in-a-safety-filing')
+const reach = assertion('one-workplace-in-ten-owes-a-safety-filing')
+
+const spec = (a: typeof care, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const careSpec = spec(care, 'Recordable cases per 100 full-time workers')
+const riskSpec = spec(risk, 'Recordable cases per 100 full-time workers')
+const trendSpec = spec(trend, 'Recordable cases in 2024')
+---
+
+<Article slug="the-work-that-replaced-the-work">
+  <p>
+    Allen County's factory employment fell by more than half, health care passed manufacturing in
+    2002 and led for twenty-one years, and in 2023 the two came level at about nine thousand
+    employees each. That much is a familiar shape for a county in this part of Ohio. What the trade
+    cost the people who do the work is a separate question, and the annual injury summaries that
+    large employers file with OSHA answer it.
+  </p>
+  <AssertionCard assertion={care} open />
+  <ChartFigure
+    id="care"
+    title="Two sectors, nine years"
+    caption="Recordable injuries and illnesses per 100 full-time workers, 2016 to 2024. Manufacturing worked sixty per cent more hours and recorded fewer cases."
+    columns={['Sector', 'Rate']}
+    rows={care.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="care" set:html={JSON.stringify(careSpec)} is:inline />
+  <p>
+    Health care stands above manufacturing in every one of the nine years, and not narrowly: 5.10
+    against 4.11 at the start of the run and 4.10 against 2.34 at the end. The sector that took the
+    county's employment lead is the sector that sends people home hurt.
+  </p>
+  <p>
+    A recordable case is one an employer's own log has to carry — anything past first aid, meaning
+    lost time, restricted duty, a transfer, or treatment a nurse cannot give. It counts a nurse's
+    back and a machinist's hand alike, which is what makes the two sectors comparable at all, and it
+    counts neither the near miss nor the injury nobody reported. The rate sets that count against
+    hours actually worked, so a sector cannot look safe by employing fewer people.
+  </p>
+
+  <h2>The safest place and the most dangerous</h2>
+  <AssertionCard assertion={risk} />
+  <ChartFigure
+    id="risk"
+    title="An oil refinery and a nursing home"
+    caption="Nine years of filings from each. The nine contractor firms working on the refinery's ground record 0.77, so the low figure is not the result of contracting the hazard out."
+    columns={['Workplace', 'Rate']}
+    rows={risk.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="risk" set:html={JSON.stringify(riskSpec)} is:inline />
+  <p>
+    The reasonable guess about a refinery's low rate is that its dangerous work is done by
+    contractors and recorded on somebody else's logbook. The file says otherwise. Nine contractor
+    firms filing from the same address record nine cases on 2,324,430 hours — the same rate as the
+    plant's own crews.
+  </p>
+  <p>
+    What separates the two is the kind of hazard rather than the amount of care taken. A refinery's
+    risks are rare and catastrophic, and a rate built from how often somebody is hurt cannot see
+    them at all. A nursing home's are frequent and ordinary: lifting people who cannot lift
+    themselves, and being struck by the ones who would rather not be lifted.
+  </p>
+
+  <h2>What nine years cost</h2>
+  <AssertionCard assertion={total} />
+  <AssertionCard assertion={deaths} />
+  <p>
+    Three deaths in nine years reads as a small number and is exactly the number this many hours of
+    work produces at the national rate. Reporting it as a finding would be reading noise; leaving it
+    out would be worse. The three were at a tank fabricator in 2016, an electroplating shop in 2019
+    and Ford's engine plant in 2021 — all three in manufacturing, in a county whose worst injury
+    rates are somewhere else entirely.
+  </p>
+  <AssertionCard assertion={covid} />
+  <p>
+    The pandemic is legible here in a way it is legible almost nowhere else in this county's record.
+    A respiratory illness contracted at work is recordable, and the hospitals and nursing homes
+    recorded them: 211 of the 216 the county logged in 2020.
+  </p>
+
+  <h2>Which way it is going</h2>
+  <p>
+    The county sat above Ohio's rate in each year from 2016 to 2020 and below it in each year since,
+    which is a crossing worth noticing and is not, by itself, a direction. Two questions hide inside
+    the sentence <em>the rate is falling</em>, and they have different answers.
+  </p>
+  <AssertionCard assertion={trend} />
+  <ChartFigure
+    id="trend"
+    title="What 2024 would have been"
+    caption="Cases the county's 2024 hours would have produced at 2019's rate, against the cases actually recorded."
+    columns={['Measure', 'Cases']}
+    rows={trend.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="trend" set:html={JSON.stringify(trendSpec)} is:inline />
+  <Gloss>
+    The published 2024 rate is 1.80, and it is wrong. One Lima nursing home reported 20,482,105
+    hours worked for 163 employees — 125,657 hours each, where a year holds 8,760 — against 204,728
+    hours the year before for 162. A hundredfold slip in one field, and a third of everything the
+    county's employers reported that year. The national file is worse: in 2019 an Arkansas
+    establishment with seven employees reported sixteen trillion hours, enough on its own to take
+    the national rate anyone could compute from the published file to 0.016 against a true 4.02.
+    Every error of this kind inflates a denominator, so every one makes workplaces look safer.
+  </Gloss>
+
+  <h2>What the file reaches</h2>
+  <AssertionCard assertion={reach} />
+  <AssertionCard assertion={ford} />
+  <p>
+    A workplace under the reporting threshold files nothing whatever happens in it, so none of this
+    is a count of how many people were hurt at work in Allen County. What it is instead is a
+    look inside the logbooks of the large end of the county's economy — including, incidentally, the
+    only public statement of how many people work at the engine plant on Bible Road.
+  </p>
+</Article>

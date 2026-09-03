@@ -1,0 +1,75 @@
+id: an-impossible-value-is-not-an-outlier
+summary: >-
+  In OSHA's 2019 injury file one Arkansas establishment with seven employees reports 16,831,620,723,179
+  hours worked — about two billion years — and that single row takes the national injury rate anyone
+  can compute from the file to 0.016 against a true 4.02. Before a rate is published from
+  self-reported administrative microdata, its denominator is tested against a physical bound, and the
+  bound and the count it removed are stated.
+context: |
+  This corpus has rules for figures that are uncertain and none for figures that are impossible.
+  [a survey is not a count](a-survey-is-not-a-count.yml) governs a published interval;
+  [a count of tens is a draw](a-count-of-tens-is-a-draw.yml) governs noise;
+  [a modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml) governs
+  what a model made up. All three assume the number is at least in the right universe.
+
+  The Injury Tracking Application is not that kind of file. An employer types its own hours into a
+  web form and nothing between the form and the published CSV checks that a person can work them.
+
+      the 2019 file    F.S. Sperry Company, Inc., 7 employees, 16,831,620,723,179 hours
+      the 2024 file    CDI, 133 employees, 862,847,000,000 hours
+      nine years       27,462 of 2,801,240 establishment-years, one in a hundred,
+                       report more hours per employee than a year contains
+
+  Their effect on a national rate anyone would compute from the published file:
+
+      year   rate as published   after impossible rows are dropped   factor
+      2019               0.016                              4.02      249
+      2024               0.280                              3.64       13
+      2023               1.379                              3.15        2.3
+
+  Allen County has its own instance and a smaller one. Lima Convalescent Home reports 20,482,105
+  hours for 163 employees in 2024, against 204,728 in 2023 for 162 — a hundredfold slip in a single
+  field, from an establishment whose own prior filings say what the figure should have been. It is a
+  third of everything the county's employers reported that year, and it takes the county rate from
+  2.82 to 1.80.
+decision: |
+  **A rate computed from self-reported administrative microdata is published only after its
+  denominator has been tested against a physical bound. State the bound, state how many rows it
+  removed, and state what the rate was before.**
+
+  - **The bound is physical, not statistical.** A year contains 8,760 hours and one person cannot
+    work more of them. That is a fact about time rather than about the distribution, and it needs no
+    threshold chosen by the analyst. Percentile trimming would be a different and worse rule: it
+    removes real large values and keeps impossible small ones.
+  - **Show that the choice does not carry the finding.** Screening Allen County at 8,760 hours per
+    employee and at a far stricter 4,000 gives rates that differ by at most 0.19 in any year and by
+    0.04 over the nine — so the finding survives the rule and does not depend on it. A screen whose
+    threshold moves the answer is doing the arguing.
+  - **Say what the right magnitude was where the file says it.** The same establishment's other
+    years, or the same field's other establishments, usually identify the slip as a factor of ten or
+    a hundred. Naming that is more useful to a reader than the word *outlier*.
+  - **The removed rows stay in the node.** An impossible denominator is a fact about the collection,
+    and a node that silently drops it has published a cleaner file than the one that exists.
+rationale: |
+  **The word *outlier* is what makes this go wrong.** An outlier is an unusual draw from the
+  distribution being measured, and the right treatments for it are contested — winsorise, trim,
+  model, keep. None of that applies to sixteen trillion hours, which is not an unusual amount of work
+  but a typing error, and treating it as a tail observation invites a percentile rule that would
+  keep it in a large enough file.
+
+  **The rate that a careless reader would publish is the one that flatters.** Every one of these
+  errors inflates the denominator, so every one makes workplaces look safer. Nothing in the file
+  warns of this, OSHA publishes no flag, and the direction is consistent — which is exactly the
+  shape of a bias that gets repeated because nobody's result looks wrong.
+
+  **This is a rule about who checked, not about who published.** The Injury Tracking Application is
+  a federal dataset from a federal agency and it is still a pile of employer-typed fields. The
+  distinction that matters is whether any step between the respondent and the file could have said
+  *no*, and for this file, for this column, none could.
+
+  **What this does not license.** Dropping figures that are merely surprising. A county whose rate
+  doubles, a plant that reports four times its neighbours' hours per worker, an establishment with
+  no injuries in nine years — none of those is impossible, and the rule reaches only what a physical
+  bound rejects.
+status: accepted
+date: "2026-09-03"
