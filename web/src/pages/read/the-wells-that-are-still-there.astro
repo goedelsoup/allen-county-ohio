@@ -1,0 +1,120 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const plugged = assertion('two-thousand-eight-hundred-wells-with-no-plugging-on-file')
+const orphan = assertion('a-hundred-and-eight-orphan-wells')
+const shape = assertion('the-oil-field-is-a-shape-east-of-the-city')
+const depth = assertion('one-formation-at-one-depth')
+const late = assertion('the-register-begins-after-the-field-does')
+
+const spec = (a: typeof plugged, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const pluggedSpec = spec(plugged, 'Wells')
+const orphanSpec = spec(orphan, 'Wells')
+const shapeSpec = spec(shape, 'Wells per square mile')
+const depthSpec = spec(depth, 'Wells, and feet')
+---
+
+<Article slug="the-wells-that-are-still-there">
+  <p>
+    The oil strike of 9 May 1885 is the best-dated event in this county's history, and until now
+    everything downstream of it was narrative: the population that doubled, the refinery that is
+    still running, the city that got its shape. The one thing nobody had counted was the holes. Ohio
+    keeps a register of every well it has a record of, and Allen County has four thousand eight
+    hundred and forty-nine. Every one of them is vertical, and none is flagged for the
+    Utica or the Marcellus: the horizontal drilling that reopened eastern Ohio after 2010 never came
+    to this county.
+  </p>
+  <AssertionCard assertion={plugged} open />
+  <ChartFigure
+    id="plugged"
+    title="What the register says became of them"
+    caption="Wells recorded as having produced carry no date of plugging at all. Of those recorded as plugged and abandoned, 84 carry the date it happened."
+    columns={['Status', 'Wells']}
+    rows={plugged.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="plugged" set:html={JSON.stringify(pluggedSpec)} is:inline />
+  <p>
+    A well that produced and was never plugged is a shaft to a limestone bed a quarter-mile down,
+    sitting under a field or a lawn or a road. What the register establishes is not that 2,851 such
+    shafts are open — it is that the state has no paper saying they were closed, which is a
+    different and smaller claim, and the only one available.
+  </p>
+  <Gloss>
+    Getting even that far took reading the right file. The same agency publishes a map of these wells
+    and the register the map is drawn from, and they disagree about 2,933 of the 4,831 rows they
+    share. The map calls 2,821 of them <em>Unknown status</em>; the register calls the same 2,821
+    <em>Historical Production Well</em>. The map is not lying — it has no symbol for a well that
+    produced long ago and was never plugged, so those wells land in the bucket a map keeps for what
+    it cannot draw. Read off the map, this county has 2,903 wells nobody knows anything about, which
+    is more alarming and less true.
+  </Gloss>
+  <AssertionCard assertion={orphan} />
+  <ChartFigure
+    id="orphan"
+    title="The wells the state has taken responsibility for"
+    caption="Allen County's share of Ohio's orphan-well programme: wells with no solvent owner, which the state plugs at public expense. It is 2.2 per cent of the county's wells."
+    columns={['Programme status', 'Wells']}
+    rows={orphan.figures.map((f) => [f.label, `${f.value.toFixed(0)}`])}
+  />
+  <script type="application/json" data-chart-spec="orphan" set:html={JSON.stringify(orphanSpec)} is:inline />
+  <p>
+    An orphan well is one with no solvent owner left to plug it, so the state does it. A hundred and
+    eight here have been identified, of which eleven have actually been plugged under the programme
+    and one was plugged as an emergency. The operator column on the other 4,741 reads
+    <em>HISTORIC OWNER</em>, which is the register's way of saying that whoever drilled the well is
+    not a company any more.
+  </p>
+
+  <h2>Where the field was</h2>
+  <AssertionCard assertion={shape} />
+  <ChartFigure
+    id="shape"
+    title="Wells per square mile"
+    caption="Every wellhead coordinate placed in a township by point-in-polygon. All 4,849 fell inside one, and the thirteen areas sum to 402.5 square miles against the gazetteer's 402.545."
+    columns={['Township', 'Per sq mi']}
+    rows={shape.figures.map((f) => [f.label, `${f.value.toFixed(2)}`])}
+  />
+  <script type="application/json" data-chart-spec="shape" set:html={JSON.stringify(shapeSpec)} is:inline />
+  <p>
+    The field is not the county. It is a band running north and east of Lima, thick under Bath and
+    Perry and effectively absent from Auglaize Township in the south-east corner, eight wells across
+    thirty-six square miles. Lima itself has 206, fifteen to the square mile under a city — drilled
+    when most of that ground was still farm.
+  </p>
+  <p>
+    That band is the reason for everything else on this page. It is not a fact about who owned what
+    or who drilled first; it is a fact about where one limestone bed comes close enough to the
+    surface to be worth reaching, and the towns, the refinery and the railway spurs were arranged
+    around it afterwards.
+  </p>
+  <AssertionCard assertion={depth} />
+  <ChartFigure
+    id="depth"
+    title="One bed, one depth"
+    caption="Of the 290 wells recording a total depth, four in five fall in a two-hundred-foot band. That band is the Trenton Limestone, which is what the Lima–Indiana field was."
+    columns={['Measure', 'Value']}
+    rows={depth.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="depth" set:html={JSON.stringify(depthSpec)} is:inline />
+
+  <h2>What the register cannot see</h2>
+  <AssertionCard assertion={late} />
+  <p>
+    Regulation arrived after the industry did. A permit date exists for 3.2 per cent of these wells,
+    a completion date for 2.2 and a plug date for 3.4, and the earliest completion in the county is
+    1890 — five years after the strike, by which time the field was already national news. So the
+    boom is countable in what it left and not in what it did: four thousand eight hundred and
+    forty-nine holes, of which the state can say when thirty of them were finished.
+  </p>
+</Article>
