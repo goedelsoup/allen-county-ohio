@@ -1,0 +1,70 @@
+id: an-estimate-is-anchored-to-a-census
+summary: >-
+  Two vintages of the Census Bureau's own county estimates give Allen County 101,980 and 102,137
+  people on 1 July 2020 — 157 apart — and give its under-18 population as 23,452 and 24,263, which
+  is 811 apart. Same publisher, same geography, same column names, same date. The earlier series
+  was never trued up to the 2020 census. Two vintages of an estimate are two series, and the seam
+  must be tested on the part being used rather than on the total.
+context: |
+  An estimate is not a measurement. It is a census carried forward: the enumerated population of
+  the last census, plus births, minus deaths, plus net migration, year by year. The Vintage 2020
+  file says so in its own notes, and says the other half out loud — the 2010s estimates were
+  "created without incorporation or consideration of the 2020 Census results."
+
+  So when the 2020 census arrived and put Allen County at 102,206 rather than the 101,980 the old
+  series had reached, every year of the 2010s series was left standing on an anchor that had moved.
+  The Bureau did not revise them. It started a new series.
+
+  What the two say about 1 July 2020, the one date they share:
+
+      series          total population   under 5   age 5–13   age 14–17   under 18
+      Vintage 2020             101,980     6,224     11,675       5,553     23,452
+      Vintage 2024             102,137     6,315     12,158       5,790     24,263
+      difference                  +157       +91       +483        +237       +811
+      as a share                 0.15%      1.5%       4.1%        4.3%       3.5%
+
+  **The total agrees to a seventh of a per cent and the children disagree by three and a half.**
+  A reader who checked the seam on the county's population would find nothing to worry about and
+  would then carry 811 children across it.
+decision: |
+  **Two vintages of an estimate series are two series. Report a trend inside one of them, or report
+  both and name the seam; do not splice and difference.**
+
+  - Where a series must cross a vintage boundary, **publish the seam's size in the same table** —
+    the two values at the shared date, and their difference — rather than in a note.
+  - **Test the seam on the figure being used, not on the headline.** The total is the quantity the
+    Bureau controls most tightly and is the least sensitive thing in the file; every part is looser
+    than it. A seam test on population passes here and licenses nothing.
+  - Prefer the later vintage where one is needed, and say why: it incorporates a census the earlier
+    could not see. That is a reason, not a proof, and it does not make the earlier years of the
+    later series comparable with the earlier years of the earlier one.
+  - Where a rate of change is wanted across a boundary and no single vintage spans it, give the
+    rate **within** each vintage and let the reader see two numbers. Two true rates are better than
+    one spliced one.
+rationale: |
+  **The near-miss was a whole phase's sentence.** Spliced across the seam, Allen County's under-18
+  population falls 7.9 per cent between 2010 and 2024. Within the 2010s vintage alone it falls 7.8
+  per cent in ten years; within the 2020s vintage it falls 3.4 per cent in four. The spliced figure
+  is not obviously wrong and is not any single source's answer, and 811 of the children it counts as
+  lost were never counted as present by the file that ends the series.
+
+  **This is not the failure the corpus has already written down.**
+  [Two volumes are not one series](two-volumes-are-not-one-series.yml) is about column headings
+  changing between separately published books, and its remedy — name what changed in the heading —
+  finds nothing here, because nothing changed in the heading.
+  [A revision that moves a category](a-revision-that-moves-a-category.yml) is about a classification
+  being redrawn under a stable total. Here the classification is stable, the geography is stable,
+  the publisher is one office, and the numbers still differ, because the thing underneath them is a
+  census and the census moved.
+
+  **The direction of the lesson is the opposite of the usual one.** The corpus's habit, from
+  [a revision that moves a category](a-revision-that-moves-a-category.yml), is that the aggregate
+  survives a revision and the parts do not. That habit holds here and is the reason the check has to
+  be run where the damage is: the aggregate's stability is not evidence about the parts, it is the
+  thing that hides them.
+
+  **What it does not buy.** It says nothing about which vintage is closer to the truth on any
+  particular date, and nothing about intercensal series, which are a third kind of file — revised
+  backward to sit between two censuses — and are neither of the two vintages compared here.
+status: accepted
+date: "2026-09-02"
