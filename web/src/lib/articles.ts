@@ -341,6 +341,25 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'prime-if-drained',
+    title: 'Prime if drained',
+    dek: 'Three quarters of this county drains badly, and five acres in six of its prime farmland are prime only because somebody took the water off.',
+    section: 'ground',
+    era: [1831, 2025],
+    assertions: [
+      'three-quarters-of-the-county-drains-badly',
+      'prime-only-because-it-was-drained',
+      'the-black-swamp-here-is-clay',
+      'two-files-a-hundred-and-thirty-times-apart',
+      'the-wet-ground-runs-north-and-west',
+      'the-county-seat-is-on-the-driest-ground',
+    ],
+    entries: [
+      'measure/allen-county-soils-2026.yml',
+      'natural-feature/great-black-swamp.yml',
+    ],
+  },
+  {
     slug: 'the-only-legible-district',
     title: 'The only legible district',
     dek: 'Ten years of graduation rates and test scores for twelve districts \u2014 and a disclosure rule that makes exactly one of them readable.',

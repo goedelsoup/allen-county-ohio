@@ -1,0 +1,123 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const drains = assertion('three-quarters-of-the-county-drains-badly')
+const prime = assertion('prime-only-because-it-was-drained')
+const clay = assertion('the-black-swamp-here-is-clay')
+const two = assertion('two-files-a-hundred-and-thirty-times-apart')
+const north = assertion('the-wet-ground-runs-north-and-west')
+const seat = assertion('the-county-seat-is-on-the-driest-ground')
+
+const spec = (a: typeof drains, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const drainsSpec = spec(drains, 'Per cent of the county')
+const primeSpec = spec(prime, 'Per cent of the county')
+const northSpec = spec(north, 'Per cent hydric soil')
+const seatSpec = spec(seat, 'Per cent hydric soil')
+---
+
+<Article slug="prime-if-drained">
+  <p>
+    Every account of this county opens by calling its land flat and poorly drained, and then moves on
+    to the canal or the railway or the oil. The soil survey turns that adjective into a number, and
+    the number is larger than the adjective suggests. It is also the only source that describes the
+    ground itself — not what has been built on it, grown out of it or taxed off it, but what is
+    underneath all three.
+  </p>
+  <AssertionCard assertion={drains} open />
+  <ChartFigure
+    id="drains"
+    title="How Allen County drains"
+    caption="Acres weighted by each soil component's share of its map unit, over 260,340 acres in 80 map units. Hydric soil is ground that formed under standing water."
+    columns={['Measure', 'Share']}
+    rows={drains.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="drains" set:html={JSON.stringify(drainsSpec)} is:inline />
+  <p>
+    Two and a half acres in a hundred drain well. That single figure explains a great deal about the
+    place: why it was settled late, why its ditches and tile are as extensive as they are, and why
+    almost every field in it is a piece of engineering as well as a piece of ground.
+  </p>
+  <AssertionCard assertion={prime} />
+  <ChartFigure
+    id="prime"
+    title="Prime farmland, and the condition attached"
+    caption="The survey's own farmland classification. A further 8.7 per cent is not prime farmland under any condition."
+    columns={['Class', 'Share']}
+    rows={prime.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="prime" set:html={JSON.stringify(primeSpec)} is:inline />
+  <p>
+    The commonest entry in the survey's farmland column is not a yes or a no. It is a conditional —
+    <em>prime farmland if drained</em> — and it covers three quarters of the county. Of all the land
+    here capable of being prime farmland, five acres in six qualify only with the water taken off.
+  </p>
+
+  <h2>Clay, not peat</h2>
+  <AssertionCard assertion={clay} />
+  <p>
+    A swamp suggests peat, and peat soils cover fourteen acres of this county's two hundred and sixty
+    thousand. What is actually here is clayey glacial till in three soil series — Blount, Pewamo and
+    Glynwood — which between them are three quarters of the county, sitting at three positions on a
+    very slight slope. Water stood on this ground not because the ground was made of what rotted in
+    it, but because nothing beneath it would let water through.
+  </p>
+
+  <h2>Where the swamp was</h2>
+  <AssertionCard assertion={two} />
+  <p>
+    The Great Black Swamp was drained between the 1850s and the 1890s, so no present-day survey of
+    what grows here can find it. The soil can. A soil that formed under standing water stays hydric
+    after the tile goes in, which is why the two files above are both correct and a hundred and
+    thirty times apart.
+  </p>
+  <Gloss>
+    That is a rule, not a coincidence. A present measurement may answer a past question only where
+    the property being measured survives the change in question. Soil, landform and section lines
+    carry the past forward; land cover, land use, ownership and employment are overwritten by the
+    very event you are asking about. And the claim keeps the proxy's tag: <em>35.3 per cent of the
+    county is hydric</em> is established, <em>that is where the swamp was</em> is not, and the
+    question stays open until a mapped historic extent turns up.
+  </Gloss>
+  <AssertionCard assertion={north} />
+  <ChartFigure
+    id="north"
+    title="Hydric soil by township"
+    caption="Soil map units clipped to township boundaries. Marion, in the north-west, is the wettest of the twelve; Spencer sits in the far south-west and is nearly as wet."
+    columns={['Group', 'Hydric']}
+    rows={north.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="north" set:html={JSON.stringify(northSpec)} is:inline />
+  <AssertionCard assertion={seat} />
+  <ChartFigure
+    id="seat"
+    title="The driest ground in the county"
+    caption="Lima against the county it sits in, and against Bath Township, which the city grew into."
+    columns={['Place', 'Hydric']}
+    rows={seat.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="seat" set:html={JSON.stringify(seatSpec)} is:inline />
+  <p>
+    Which is the sort of thing a soil map is for. The county commissioners platted Lima in 1831,
+    eleven years after the county was named and before most of it was settled, and the ground they
+    chose is the driest in it — under a quarter as wet as Marion Township, and the only part of
+    Allen County where two thirds of the land drains at least moderately well. Whether they knew
+    that or simply found the high ground between two creeks is not a question a soil survey answers.
+  </p>
+  <p>
+    What it does answer is the shape of what came after. Lima and the three townships wrapped around
+    it hold seven of every ten people in the county, and all four sit in the drier half of it; the
+    four wettest townships lie along the northern and western edges. Nobody chose the soil, and
+    almost everything since has been arranged around it.
+  </p>
+</Article>

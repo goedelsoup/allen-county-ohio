@@ -1622,6 +1622,26 @@
       ]
     },
     {
+      "id": "place-allen-county::land-poorly-drained-or-worse",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "land poorly drained or worse",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-soils-2026.yml",
+          "label": "The soils of Allen County",
+          "as_of": "2025",
+          "value": 74.7,
+          "published": "74.7",
+          "tier": "verified",
+          "source": "catalog/usda-ssurgo-soil-survey.md",
+          "method": "One Soil Data Access query joining `legend`, `mapunit` and `component` on `areasymbol = 'OH003'`, returning 436 rows. [verified] Every share is acres weighted by component share of map unit — `muacres` times `comppct_r` over 100 — because a map unit is a mixture and its rating is not a single value. The alternatives are recorded in the catalogue and are not used. `as_of` is the survey's own restoration date of 27 August 2025; its field lineage runs from 1965. Drainage, hydric and taxonomic shares come from the component table and the prime-farmland share from the map-unit table, which is why the second is a share of map-unit acres rather than of components."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::law-enforcement-agencies-reporting-for-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -5099,6 +5119,218 @@
           "label": "Bath Township",
           "value": 9399.0,
           "literal": "9,399"
+        }
+      ]
+    },
+    {
+      "id": "three-quarters-of-the-county-drains-badly",
+      "statement": "74.7 per cent of Allen County is poorly drained or worse and 2.4 per cent is well drained. Poorly drained is a measurement of this ground rather than an epithet for it.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-soils-2026.yml",
+          "node_label": "The soils of Allen County",
+          "span": "**Three quarters of this county drains badly and one fortieth of it drains well.** 74.7 per cent is poorly drained or worse and 2.4 per cent is well drained.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-ssurgo-soil-survey.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-soils-2026.yml",
+          "node_label": "The soils of Allen County",
+          "span": "**35.3 per cent of the county is hydric soil, which is ground that formed under standing water.** 91,953 acres.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-ssurgo-soil-survey.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not assert that the hydric acres are the Great Black Swamp."
+      ],
+      "figures": [
+        {
+          "label": "poorly drained or worse",
+          "value": 74.7,
+          "literal": "74.7"
+        },
+        {
+          "label": "hydric soil",
+          "value": 35.3,
+          "literal": "35.3"
+        },
+        {
+          "label": "well drained",
+          "value": 2.4,
+          "literal": "2.4"
+        }
+      ]
+    },
+    {
+      "id": "prime-only-because-it-was-drained",
+      "statement": "Five acres in six of Allen County's prime farmland are prime only because they were drained: 76.3 per cent of the county is classed prime if drained against 14.9 per cent prime as it lies.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-soils-2026.yml",
+          "node_label": "The soils of Allen County",
+          "span": "**Five acres in six of this county's prime farmland are prime only because they were drained.** 76.3 per cent of the county is classed prime *if drained* and 14.9 per cent is prime as it lies, so of the 91.3 per cent that can be prime farmland, 83.6 per cent of it needs the water taken off first.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-ssurgo-soil-survey.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not assert that the hydric acres are the Great Black Swamp."
+      ],
+      "figures": [
+        {
+          "label": "prime if drained",
+          "value": 76.3,
+          "literal": "76.3"
+        },
+        {
+          "label": "prime as it lies",
+          "value": 14.9,
+          "literal": "14.9"
+        }
+      ]
+    },
+    {
+      "id": "the-black-swamp-here-is-clay",
+      "statement": "The organic soils a person picturing a swamp would expect cover 14 acres of Allen County's 260,340. Water stood on this ground because the glacial till beneath it would not let water through.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-soils-2026.yml",
+          "node_label": "The soils of Allen County",
+          "span": "**The Black Swamp here is clay and not peat.** Histosols — the organic soils a person picturing a swamp would expect — cover 14 acres of 260,340. The county is 58.7 per cent Alfisols and 32.9 per cent Mollisols.",
+          "tier": "inference",
+          "sources": [
+            "catalog/usda-ssurgo-soil-survey.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not assert that the hydric acres are the Great Black Swamp."
+      ],
+      "figures": [
+        {
+          "label": "Alfisols",
+          "value": 58.7,
+          "literal": "58.7"
+        },
+        {
+          "label": "Mollisols",
+          "value": 32.9,
+          "literal": "32.9"
+        }
+      ]
+    },
+    {
+      "id": "two-files-a-hundred-and-thirty-times-apart",
+      "statement": "One federal file finds 704 acres of wetland in Allen County and another rates 91,953 acres hydric. Both are right: one counts what stands there now, the other what the water made and left behind.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-soils-2026.yml",
+          "node_label": "The soils of Allen County",
+          "span": "**Two federal files count wetland in this county and they are 130 times apart.** The Cropland Data Layer finds 704 acres of wetland in 2024 and this survey rates 91,953 acres hydric.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-ssurgo-soil-survey.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus does not assert that the hydric acres are the Great Black Swamp."
+      ],
+      "figures": [
+        {
+          "label": "wetland, 2024",
+          "value": 704.0,
+          "literal": "704"
+        },
+        {
+          "label": "hydric soil",
+          "value": 91953.0,
+          "literal": "91,953"
+        }
+      ]
+    },
+    {
+      "id": "the-wet-ground-runs-north-and-west",
+      "statement": "Marion Township is 58.0 per cent hydric soil and Bath 21.1. The four townships north of 40.80° average 46.0 per cent against 30.9 for the other eight — but Spencer, in the far south-west, is 45.2.",
+      "topic": "geography",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "natural-feature/great-black-swamp.yml",
+          "node_label": "Great Black Swamp",
+          "span": "**The direction this node guessed at is right and the compass point is not.** The four townships whose centres lie north of 40.80° — Marion, Sugar Creek, Monroe and Richland — average 46.0 per cent hydric against 30.9 for the other eight, but Spencer in the far south-west is 45.2 and Richland in the north-east is 33.8.",
+          "tier": "inference",
+          "sources": [
+            "catalog/tigerweb-census2020.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "north of 40.80°",
+          "value": 46.0,
+          "literal": "46.0"
+        },
+        {
+          "label": "the other eight",
+          "value": 30.9,
+          "literal": "30.9"
+        },
+        {
+          "label": "Spencer",
+          "value": 45.2,
+          "literal": "45.2"
+        }
+      ]
+    },
+    {
+      "id": "the-county-seat-is-on-the-driest-ground",
+      "statement": "Lima is 13.4 per cent hydric soil against 74.7 per cent poorly drained for the county, and Bath — the township the city grew into — is the driest of the twelve at 21.1 per cent.",
+      "topic": "geography",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "natural-feature/great-black-swamp.yml",
+          "node_label": "Great Black Swamp",
+          "span": "**The driest ground in the county is the ground the county seat is on.** Lima is 13.4 per cent hydric and 33.2 per cent poorly drained or worse, against 74.7 for the county. [verified] — [the same survey](../../catalog/usda-ssurgo-soil-survey.md), clipped the same way. Bath, the township the city grew into, is the driest of the twelve at 21.1.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usda-ssurgo-soil-survey.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 13.4,
+          "literal": "13.4"
+        },
+        {
+          "label": "Bath",
+          "value": 21.1,
+          "literal": "21.1"
+        },
+        {
+          "label": "the county",
+          "value": 74.7,
+          "literal": "74.7"
         }
       ]
     },
