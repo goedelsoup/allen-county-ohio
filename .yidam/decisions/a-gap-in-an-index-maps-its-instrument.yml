@@ -1,0 +1,77 @@
+id: a-gap-in-an-index-maps-its-instrument
+summary: >-
+  Seven of Lima's sixteen census tracts have no house price index. They are exactly the seven
+  tracts of the county's thirty-five where the fewest mortgages are written — ranks one through
+  seven on two separate measures, from a second agency's file, with no overlap at the boundary.
+  The omission is not a hole in the data. It is the data, and it measures the instrument the index
+  is made of.
+context: |
+  The FHFA House Price Index is built, in the agency's own words, "using appraisal values and sales
+  prices for mortgages bought or guaranteed by Fannie Mae and Freddie Mac", and it withholds an
+  index "in cases where sample sizes are small for the county area".
+
+  Read as a corpus normally reads a missing row, that is a nuisance: 28 tracts of 35, a gap to be
+  noted in a method block and worked around. Read the other way it is a published measurement of
+  where conforming mortgage credit reaches, at tract grain, annually, for forty years.
+
+  The test was available because the corpus already held a second file that measures the same
+  thing by a different route. Ranking all 35 tracts by originations per thousand housing units
+  over 2018–2024, and again by the originations the enterprises went on to buy:
+
+      the seven tracts with no index      ranks 1-7 of 35 on both measures
+      highest unindexed tract             38.7 enterprise-purchased loans per 1,000 units
+      lowest indexed tract                41.0
+      chance of that under any seven      1 in 6,724,520
+
+  Two agencies, two files, two purposes, and one line drawn through one city that neither of them
+  states.
+decision: |
+  **When a derived index omits a place, name the input the index is derived from, find a file that
+  measures that input directly, and report the omission as a measurement of it — or, if the two
+  disagree, as a defect in the index.**
+
+  Three parts, and the middle one is the work:
+
+  *Name the instrument.* Not "the data are missing" but "this index is made of enterprise-purchased
+  mortgages, and there are not enough of them here". The agency usually says so in a preamble
+  nobody reads.
+
+  *Find the second file.* The claim that the omission measures the instrument is a claim, and it is
+  checkable exactly when some other source counts the instrument's input. Here it was the lending
+  register the corpus had held since August. Where no such file exists the omission stays a gap and
+  is written as one.
+
+  *Do not extend the survivors.* The places that remain in the index are not a sample of the whole;
+  they are the top of it on the very variable that decides inclusion. Any finding computed over
+  them is stated with the count it covers. Nine of Lima's sixteen tracts have an index, and what
+  they say is a statement about 10,324 of the city's 16,022 homes.
+rationale: |
+  **What it caught.** The corpus was about to publish "house prices in Lima moved with the county's"
+  from nine tracts, which is true of those nine and is the single most misleading sentence available
+  in this dataset. The seven it would have left out hold 5,698 homes and 11,543 people, and they are
+  the seven where a buyer is least likely to get a conforming loan.
+
+  **Why this is not the rules the corpus already has.** In
+  [a zero is not a blank](a-zero-is-not-a-blank.yml) a column reported measurements nobody made, and
+  the fix was a cross-column test for the value that means "nobody looked". Here nothing is
+  misreported: the file is explicit that it withholds. In
+  [silence from a source that would have spoken](silence-from-a-source-that-would-have-spoken.yml)
+  an absence became evidence once the corpus could show the source reports comparable things — a
+  qualitative showing, in the same volume. This rule is the quantitative form of that showing, and
+  it takes a second file rather than a second passage. In
+  [a source is also a filter](a-source-is-also-a-filter.yml) the corpus's own roster inherited its
+  source's inclusion rule and lost two places; there the filter was invisible, and the lesson was to
+  audit the corpus. Here the filter is the finding.
+
+  **The failure mode on the other side.** A missing row is not automatically informative. An index
+  omits places for reasons that have nothing to do with the place — a boundary redraw, a vendor
+  change, a coding error, a year the agency did not publish. The whole weight of this rule sits on
+  the second file, and without it the honest sentence is that the corpus does not hold a reading
+  and does not know why.
+
+  **What it generalises to.** Any index built from an administrative subset: crop yields from
+  insured acres, wages from covered employment, crashes from reported crashes, prices from listed
+  sales. Each of them stops somewhere, and where each stops is a map of who is inside the
+  administrative system that makes it.
+status: accepted
+date: "2026-09-03"

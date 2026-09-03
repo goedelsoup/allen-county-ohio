@@ -104,7 +104,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 9v / 4i / 1o | 132 |
-| [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 5 | 8v / 3i / 1o | 93 |
+| [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-ballot-2006.yml](measure/allen-county-ballot-2006.yml) | measure | Allen County's ballot, 7 November 2006 | 6 | 7v / 3i / 2o | 107 |
 | [allen-county-black-community-1916-1921.yml](measure/allen-county-black-community-1916-1921.yml) | measure | Allen County's Black community, 1916–1921 | 3 | 16v / 5i / 3o | 104 |
@@ -159,10 +159,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
 | [allen-county-hospital-beds-2011-2023.yml](measure/allen-county-hospital-beds-2011-2023.yml) | measure | Allen County hospital beds, 2011–2023 | 2 | 4v / 0i / 1o | 42 |
 | [allen-county-hospital-employment-2011-2023.yml](measure/allen-county-hospital-employment-2011-2023.yml) | measure | Allen County hospital employment, 2011–2023 | 7 | 4v / 1i / 0o | 61 |
+| [allen-county-house-prices-1975-2025.yml](measure/allen-county-house-prices-1975-2025.yml) | measure | House prices in Allen County, 1975–2025 | 7 | 14v / 4i / 1o | 128 |
+| [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
 | [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 2 | 5v / 3i / 1o | 67 |
 | [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 2 | 7v / 2i / 0o | 60 |
 | [allen-county-housing-cost-burden-2006-2022.yml](measure/allen-county-housing-cost-burden-2006-2022.yml) | measure | Housing cost burden in Allen County, 2006–2022 | 8 | 11v / 4i / 0o | 153 |
-| [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 2 | 7v / 0i / 0o | 61 |
+| [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 4 | 10v / 0i / 0o | 83 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
