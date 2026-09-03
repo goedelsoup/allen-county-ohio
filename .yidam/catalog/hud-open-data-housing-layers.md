@@ -39,6 +39,7 @@ location:
       lists Housing Choice Vouchers by Tract and Public Housing Developments.
 used-by:
   - ../corpus/measure/allen-county-subsidized-housing-2005-2025.yml
+  - ../corpus/organization/allen-metropolitan-housing-authority.yml
 ---
 
 **Not one of these layers says what date it describes.** There is no year in any row, none in the

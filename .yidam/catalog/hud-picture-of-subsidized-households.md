@@ -35,6 +35,7 @@ location:
       the 2004–2008 paths appear.
 used-by:
   - ../corpus/measure/allen-county-subsidized-housing-2005-2025.yml
+  - ../corpus/organization/allen-metropolitan-housing-authority.yml
 ---
 
 **The site answers a scripted request with a success and an empty body.** `curl` without a browser
