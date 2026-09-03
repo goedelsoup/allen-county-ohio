@@ -24,11 +24,23 @@ description: |
   searched statewide. Joining them would be a guess about a person, and the register offers nothing
   to guess with.
 
-  That absence has a structural consequence worth naming: this node carries no outgoing edge but
-  `instance-of`. Every other person in this corpus reaches the county through a `resided-in` edge,
-  and a district officer reaches it only through the office and the term. [inference]
+  **The returns close half of the open question about prior office.** A candidate named Jim Jordan
+  won Ohio's 4th congressional district in this county at eight consecutive general elections from
+  2006 to 2020, and a candidate of that name won the county's 12th state senate district in 2000.
+  [verified] — [the congressional returns](../measure/allen-county-in-congress-2000-2020.yml) and
+  [the General Assembly returns](../measure/allen-county-in-the-general-assembly-2000-2020.yml).
+  That the returns and this roster name one person is an inference from an unbroken Republican
+  succession in one district, and from nothing in either file. [inference]
+
+  That absence had a structural consequence worth naming: until the returns arrived this node
+  carried no outgoing edge but `instance-of`. Every other person in this corpus reaches the county
+  through a `resided-in` edge, and a district officer reaches it only through the office, the term,
+  and now a table of votes. [inference]
 properties:
   occupation: legislator
 links:
+  - target: ../measure/allen-county-in-congress-2000-2020.yml
+    relationship: relates-to
+    claim_tag: inference
   - target: ../person.ont.yml
     relationship: instance-of

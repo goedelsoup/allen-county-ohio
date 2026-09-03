@@ -161,6 +161,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 2 | 7v / 0i / 0o | 61 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
+| [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
+| [allen-county-in-the-general-assembly-2000-2020.yml](measure/allen-county-in-the-general-assembly-2000-2020.yml) | measure | Allen County in the Ohio General Assembly, 2000–2020 | 3 | 8v / 1i / 1o | 79 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
 | [allen-county-interurban-1901-1921.yml](measure/allen-county-interurban-1901-1921.yml) | measure | Allen County's interurban railways, 1901–1921 | 2 | 7v / 2i / 1o | 67 |
 | [allen-county-jewish-community-1850-1921.yml](measure/allen-county-jewish-community-1850-1921.yml) | measure | Allen County's Jewish community, 1850–1921 | 3 | 8v / 2i / 1o | 63 |
@@ -398,7 +400,7 @@ Sorted by: kind, then alphabetically.
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
 | [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
 | [james-b-townsend.yml](person/james-b-townsend.yml) | person | James B. Townsend | 2 | 5v / 2i / 1o | 52 |
-| [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 1 | 4v / 1i / 1o | 34 |
+| [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 2 | 5v / 2i / 1o | 46 |
 | [james-g-link.yml](person/james-g-link.yml) | person | James G. Link | 2 | 2v / 1i / 1o | 22 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
 | [jamie-lamar-dixon-jr.yml](person/jamie-lamar-dixon-jr.yml) | person | Jamie Lamar Dixon Jr. | 2 | 2v / 1i / 1o | 21 |
@@ -423,7 +425,7 @@ Sorted by: kind, then alphabetically.
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
 | [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 3v / 2i / 0o | 31 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
-| [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 1 | 4v / 2i / 1o | 34 |
+| [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 2 | 5v / 3i / 1o | 44 |
 | [mona-s-losh.yml](person/mona-s-losh.yml) | person | Mona S. Losh | 2 | 3v / 2i / 1o | 36 |
 | [mp-hoagland.yml](person/mp-hoagland.yml) | person | M.P. Hoagland | 2 | 1v / 1i / 0o | 18 |
 | [peter-mccown.yml](person/peter-mccown.yml) | person | Peter McCown | 2 | 4v / 1i / 3o | 35 |
@@ -478,7 +480,7 @@ Sorted by: kind, then alphabetically.
 | [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 9v / 0i / 1o | 67 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 8v / 2i / 0o | 65 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
-| [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 3 | 4v / 1i / 2o | 63 |
+| [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 4 | 5v / 1i / 2o | 72 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 7v / 5i / 1o | 80 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 1o | 56 |

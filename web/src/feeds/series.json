@@ -752,6 +752,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Republican-share-of-all-votes-cast-for-U.S.-Representative",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Republican share of all votes cast for U.S. Representative",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-in-congress-2000-2020.yml",
+          "label": "Allen County's vote for Congress, 2000–2020",
+          "as_of": "2020",
+          "value": 70.0,
+          "published": "70.0",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "County-grain files where they exist; 2006, 2010 and 2018 summed over the county's precincts. 2004 has no Ohio general-election file in the repository at any grain, so it is absent rather than zero. Shares are of every vote recorded in the race, including minor candidates, rather than of the two-party vote. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Republican-share-of-the-two-party-vote-for-governor",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -3058,6 +3078,26 @@
           "tier": "verified",
           "source": "catalog/openelections-ohio.md",
           "method": "Summed by candidate over the county's 88 precincts, from a volunteer transcription of the certified returns. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::votes-for-the-winner,-Ohio-House-district-4",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "votes for the winner, Ohio House district 4",
+      "unit": "votes",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-in-the-general-assembly-2000-2020.yml",
+          "label": "Allen County in the Ohio General Assembly, 2000–2020",
+          "as_of": "2020",
+          "value": 38882.0,
+          "published": "38882",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "County-grain files for 2000, 2008, 2012, 2014, 2016 and 2020; 2006 and 2018 summed over the county's precincts. A contest is called unopposed where the statewide file records exactly one candidate for the district in every county it covers. Roll-off is the shortfall against the highest-voted statewide race on the same ballot, or against ballots cast where none is published. [verified]"
         }
       ]
     },
@@ -13101,6 +13141,223 @@
           "label": "highest",
           "value": 65.2,
           "literal": "65.2"
+        }
+      ]
+    },
+    {
+      "id": "the-fourth-district-for-twenty-years",
+      "statement": "Allen County has voted in Ohio's 4th congressional district at every general election from 2000 to 2020, and the Republican share of its vote for Congress runs 59.9 to 72.2 per cent, averaging 68.5. Its lowest year is 2006, when the seat changed hands.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-congress-2000-2020.yml",
+          "node_label": "Allen County's vote for Congress, 2000–2020",
+          "span": "**The county has not given a Democrat as much as two votes in five for Congress in twenty years.** The Republican share runs 59.9 to 72.2 per cent and averages 68.5. Its lowest year is 2006, which is the year the seat changed hands.",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who this county has sent to Congress since 2020."
+      ],
+      "figures": [
+        {
+          "label": "lowest, 2006",
+          "value": 59.9,
+          "literal": "59.9"
+        },
+        {
+          "label": "mean",
+          "value": 68.5,
+          "literal": "68.5"
+        },
+        {
+          "label": "highest, 2010",
+          "value": 72.2,
+          "literal": "72.2"
+        }
+      ]
+    },
+    {
+      "id": "one-name-on-this-ballot-for-twenty-years",
+      "statement": "A candidate named Jim Jordan won Ohio's 4th district in Allen County at eight consecutive general elections from 2006, and a candidate of that name won the county's 12th state senate district in 2000.",
+      "topic": "elections",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-congress-2000-2020.yml",
+          "node_label": "Allen County's vote for Congress, 2000–2020",
+          "span": "**One name has been on this ballot for twenty years.** A candidate named Jim Jordan won the 4th district here at eight consecutive general elections from 2006, and a candidate of that name won the county's 12th state senate district in 2000.",
+          "tier": "inference",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who this county has sent to Congress since 2020."
+      ],
+      "figures": []
+    },
+    {
+      "id": "sherrod-brown-came-closest",
+      "statement": "Sherrod Brown took 46.0 per cent of Allen County's Senate vote in 2006 and 40.2 in 2018 — the nearest a Democrat has come here. No Democrat running for the House reached 40 per cent in any of ten elections.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-congress-2000-2020.yml",
+          "node_label": "Allen County's vote for Congress, 2000–2020",
+          "span": "**The Senate is where a Democrat has come closest.** Sherrod Brown took 46.0 per cent here in 2006 and 40.2 in 2018; no Democrat in the House column reached 40 in any year.",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who this county has sent to Congress since 2020."
+      ],
+      "figures": [
+        {
+          "label": "2006",
+          "value": 46.0,
+          "literal": "46.0"
+        },
+        {
+          "label": "2018",
+          "value": 40.2,
+          "literal": "40.2"
+        }
+      ]
+    },
+    {
+      "id": "the-county-is-its-own-house-district",
+      "statement": "Ohio House district 4 is Allen County and nothing else: all 176 of the county's State Representative precinct rows in 2018 carry district 4, and every one of the 88 precincts recorded in that district anywhere in Ohio is an Allen County precinct.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-the-general-assembly-2000-2020.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 2000–2020",
+          "span": "**Ohio House district 4 is Allen County and nothing else.** All 176 of the county's State Representative precinct rows in 2018 carry district 4, and every one of the 88 precincts recorded in that district anywhere in Ohio is an Allen County precinct.",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who has represented this county in Columbus since 2020, or under what district lines."
+      ],
+      "figures": [
+        {
+          "label": "precinct rows",
+          "value": 176.0,
+          "literal": "176"
+        },
+        {
+          "label": "precincts",
+          "value": 88.0,
+          "literal": "88"
+        }
+      ]
+    },
+    {
+      "id": "four-contests-with-one-name-on-the-ballot",
+      "statement": "Four of the thirteen Ohio General Assembly contests in Allen County's returns had a single candidate — the Ohio House seat in 2008, 2016 and 2020, and the 12th senate district in 2016.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-the-general-assembly-2000-2020.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 2000–2020",
+          "span": "**Four of these thirteen contests had one name on the ballot.** The Ohio House seat in 2008, 2016 and 2020, and the senate seat in 2016; no second candidate appears for those districts in any county of the statewide file.",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who has represented this county in Columbus since 2020, or under what district lines."
+      ],
+      "figures": []
+    },
+    {
+      "id": "a-fifth-will-not-mark-an-unopposed-line",
+      "statement": "About a fifth of Allen County's voters skip an unopposed ballot line. The Ohio House race loses 20.5 per cent of the top-of-ticket vote in 2008, 24.7 in 2016 and 19.6 in 2020, against 3.3, 0.6 and 0.3 per cent in the years somebody was running against the winner.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-the-general-assembly-2000-2020.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 2000–2020",
+          "span": "**A fifth of the county's voters will not mark an unopposed ballot line.** Against the top of the ticket, the Ohio House race loses 20.5 per cent of the votes cast in 2008, **24.7 per cent** in 2016 and 19.6 in 2020 — and 3.3 per cent in 2012, 0.6 in 2014 and 0.3 in 2018, when somebody was running against the winner.",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who has represented this county in Columbus since 2020, or under what district lines."
+      ],
+      "figures": [
+        {
+          "label": "2008, unopposed",
+          "value": 20.5,
+          "literal": "20.5"
+        },
+        {
+          "label": "2016, unopposed",
+          "value": 24.7,
+          "literal": "24.7"
+        },
+        {
+          "label": "2020, unopposed",
+          "value": 19.6,
+          "literal": "19.6"
+        },
+        {
+          "label": "2012, opposed",
+          "value": 3.3,
+          "literal": "3.3"
+        }
+      ]
+    },
+    {
+      "id": "one-seat-one-man-four-years-apart",
+      "statement": "Matt Huffman's Ohio Senate district lost 22.6 per cent of Allen County's voters in 2016, when nobody opposed him, and 2.9 per cent in 2020, when somebody did.",
+      "topic": "elections",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-in-the-general-assembly-2000-2020.yml",
+          "node_label": "Allen County in the Ohio General Assembly, 2000–2020",
+          "span": "**The cleanest reading is one seat, one man, four years apart.** Matt Huffman's senate district loses **22.6 per cent** of the county's voters in 2016, when nobody opposed him, and **2.9 per cent** in 2020, when somebody did.",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say who has represented this county in Columbus since 2020, or under what district lines."
+      ],
+      "figures": [
+        {
+          "label": "2016, unopposed",
+          "value": 22.6,
+          "literal": "22.6"
+        },
+        {
+          "label": "2020, opposed",
+          "value": 2.9,
+          "literal": "2.9"
         }
       ]
     },
