@@ -4379,6 +4379,53 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-evictions-2001-2018.yml",
+      "class": "measure",
+      "label": "Eviction filings in Allen County, 2002–2018",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2018",
+        "method": "The Eviction Lab's court-issued county file, `fips_county` 39003, seventeen years from 2002 to 2018. [verified] Rates are `filings_observed` over `renting_hh`, both from that file; the denominator is interpolated between census and survey vintages and moves smoothly every year. State figures are sums over all Ohio rows in the same file — 87 counties in every year but 2017, which has 88 — and the rank is of county filing rates within each year. The trend is an ordinary least-squares fit of the annual rate on the year with the standard error from the residuals; no correction is made for serial correlation, which would widen it. The legacy and proprietary series are held and not used here, and their spread against this one is recorded in the catalogue entry.",
+        "parameter": "eviction cases filed",
+        "unit": "filings",
+        "value": "925"
+      },
+      "blocks": [
+        {
+          "text": "Eviction cases filed in this county's courts, and the households they were filed against, for every year the federal-scale collection covers. [verified] — [the Eviction Lab](../../catalog/eviction-lab-county-data.md), court-issued series, `fips_county` 39003.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One renter household in fifteen has an eviction filed against it in this county every year.** The rate runs between 5.69 and 7.99 per cent across seventeen years and averages 6.79. [verified] — the same file; the rates are the file's own numerator over its own denominator. Against the 35.7 per cent of this county's renters who pay more than a third of their income for housing, it is the sharp end of the same fact. [inference] — see [the cost burden](allen-county-housing-cost-burden-2006-2022.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The count does not move and the rate barely does.** Filings run from 766 to 982 with a mean of 865 and a standard deviation of 56, across seventeen years that contain a foreclosure crisis, a recession and a quarter more renter households. [verified] — the same file. The filing rate falls by 0.058 points a year, which is 0.92 points over the run against a mean of 6.79, on a standard error of 0.024 — a t of 2.4 on seventeen annual points. [inference] — the regression computed here. That is a real drift and a weak one, and it is about as small a movement as seventeen readings of this series could have found; see [a flat series is a claim](../../decisions/a-flat-series-is-a-claim.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The year-to-year movement is twice what chance alone would give and it goes nowhere.** A Poisson draw at a mean of 865 has a standard deviation of 29 and this series has 56. [inference] — computed here, and the test is the one [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml) asks for. So the county does have real eviction years and quiet ones — 982 in 2008 against 766 in 2002 — without having a direction.",
+          "tier": "inference"
+        },
+        {
+          "text": "**This county is below the state's rate and in the top fifth of its counties, and both are true.** The state figure is filings over renter households across all 87 reporting counties, so it is weighted towards the large urban ones where the rate is highest; the ranking gives every county one place regardless of size. Allen's rank runs from 8th to 22nd across the seventeen years, with a median of 14th. [verified] — the same file, all 87 Ohio counties. A sentence that says *below average* and a sentence that says *among the worst* are answering different questions here. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A filing is not a household and neither is an eviction.** 925 cases were filed in 2018 against 831 households; the ratio runs from 1.100 to 1.195 across the run, so between a tenth and a fifth of filings in any year are repeats against a household already sued. [verified] — the same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "This corpus cannot say how many people were put out of their homes. [inference] — the court-issued file counts filings and households sued; the legacy file counts judgments and stops in 2016; and a judgment is an order rather than a record that anyone moved.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say how many people were put out of their homes."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-farm-output-1909.yml",
       "class": "measure",
       "label": "Allen County farm output and farm expenses, 1909",
@@ -5605,7 +5652,7 @@
           "tier": "verified"
         },
         {
-          "text": "**A federal programme file and a federal survey do not agree about who is being helped.** HUD's own count of assisted households below 30 per cent of area median runs about 1,640 in this county over the same window, while the survey finds only 745 renter households in that band paying an affordable share of income. See [why HUD and the survey count different assisted renters](../question/why-hud-and-the-survey-count-different-assisted-renters.yml). [inference] Every rate on this page is a rate over a population that includes those households, and [a programme is invisible inside a survey](../../decisions/a-programme-is-invisible-inside-a-survey.yml) is the rule this corpus wrote for that.",
+          "text": "**A federal programme file and a federal survey do not agree about who is being helped.** HUD's own count of assisted households below 30 per cent of area median runs about 1,640 in this county over the same window, while the survey finds only 745 renter households in that band paying an affordable share of income. See [why HUD and the survey count different assisted renters](../question/why-hud-and-the-survey-count-different-assisted-renters.yml). [inference] Every rate on this page is a rate over a population that includes those households, and [a programme is invisible inside a survey](../../decisions/a-programme-is-invisible-inside-a-survey.yml) is the rule this corpus wrote for that. **The other end of it is a courthouse, and this node could not reach one.** Eviction cases are filed against about one renter household in fifteen in this county every year — 865 filings a year on average across 2002 to 2018, against 11,590 renter households at the start of that run and 14,412 at the end. [verified] — [the Eviction Lab](../../catalog/eviction-lab-county-data.md); see [the filings](allen-county-evictions-2001-2018.yml). The two series do not overlap cleanly — one ends in 2018 and the burden windows run to 2022 — and nothing here links a burdened household to a filed case. [inference]",
           "tier": "inference"
         }
       ],
@@ -22590,6 +22637,34 @@
       "source": "catalog/census-county-business-patterns.md"
     },
     {
+      "from": "measure/allen-county-evictions-2001-2018.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/eviction-lab-county-data.md"
+    },
+    {
+      "from": "measure/allen-county-evictions-2001-2018.yml",
+      "to": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-evictions-2001-2018.yml",
+      "to": "measure/allen-county-housing-stock-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-evictions-2001-2018.yml",
+      "to": "measure/allen-county-subsidized-housing-2005-2025.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-farm-output-1909.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -22910,6 +22985,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",
+      "to": "measure/allen-county-evictions-2001-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/eviction-lab-county-data.md"
     },
     {
       "from": "measure/allen-county-housing-cost-burden-2006-2022.yml",

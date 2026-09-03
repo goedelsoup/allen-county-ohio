@@ -1,0 +1,120 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const rate = assertion('one-renter-household-in-fifteen-is-sued')
+const flat = assertion('the-eviction-count-does-not-move')
+const disp = assertion('busy-eviction-years-with-no-direction')
+const rank = assertion('below-the-state-and-high-on-its-list')
+const serial = assertion('a-filing-is-not-a-household')
+
+const spec = (a: typeof rate, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const rateSpec = spec(rate, 'Filings per 100 renter households')
+const flatSpec = spec(flat, 'Eviction filings in a year')
+const dispSpec = spec(disp, 'Standard deviation, filings')
+const serialSpec = spec(serial, 'Count, 2018')
+---
+
+<Article slug="one-in-fifteen">
+  <p>
+    What renters in this county pay is well covered here: 35.7 per cent of them hand over more than
+    a third of their income for housing, and 17.4 per cent more than half. What happens to the ones
+    who cannot has been a blank, because it happens in a courthouse and nothing in the corpus reached
+    inside one. Eviction filings, county by county and year by year, close that.
+  </p>
+  <AssertionCard assertion={rate} open />
+  <ChartFigure
+    id="rate"
+    title="Eviction filings per hundred renter households"
+    caption="Allen County, 2002 to 2018. The denominator is renter households, interpolated between census and survey vintages, so it moves smoothly every year."
+    columns={['Year', 'Rate']}
+    rows={rate.figures.map((f) => [f.label, `${f.value.toFixed(2)}%`])}
+  />
+  <script type="application/json" data-chart-spec="rate" set:html={JSON.stringify(rateSpec)} is:inline />
+  <p>
+    Roughly one renter household in fifteen is sued for possession each year. That is the sharp end
+    of the cost-burden figures rather than a separate fact about the place — and it is worth being
+    clear that being sued is not the same as being put out, which the file cannot see.
+  </p>
+
+  <h2>A number that stays where it is</h2>
+  <p>
+    The obvious expectation is that eviction tracks the economy: more in a downturn, fewer when work
+    is plentiful, and a step somewhere around the housing crash. None of that is in the series. The
+    highest year is 2008 and the lowest is 2017, and the distance between them is two hundred and
+    sixteen cases.
+  </p>
+  <AssertionCard assertion={flat} />
+  <ChartFigure
+    id="flat"
+    title="Seventeen years of filings"
+    caption="Lowest, mean and highest. The years in between include the foreclosure crisis, the recession that followed it, and a rise of a quarter in the county's renter households."
+    columns={['Measure', 'Filings']}
+    rows={flat.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="flat" set:html={JSON.stringify(flatSpec)} is:inline />
+  <p>
+    Eight hundred and sixty-five a year, give or take fifty. Whatever moved in this county's housing
+    between 2002 and 2018 — and a great deal did — the number of households taken to court over rent
+    did not move with it.
+  </p>
+  <Gloss>
+    Which is a claim, and claims of that shape are the easy ones to get away with. So it comes with
+    its own arithmetic. Fitted against the year, the filing <em>rate</em> falls 0.058 points
+    annually, which is 0.92 points across the run on a standard error of 0.024. Two standard errors
+    is 0.76 points across the run — so these seventeen readings could have found a drift of about
+    eight tenths of a point and no smaller, and the drift they found is nine tenths. The count is
+    flat; the rate is very slightly not; and a node that says <em>nothing changed</em> without
+    naming the smallest change it could have seen is not saying anything.
+  </Gloss>
+  <AssertionCard assertion={disp} />
+  <ChartFigure
+    id="disp"
+    title="How much a flat series still moves"
+    caption="Observed year-to-year spread against the spread a Poisson process at the same mean would produce. Real variation, no direction."
+    columns={['Source of spread', 'Filings']}
+    rows={disp.figures.map((f) => [f.label, `${f.value.toFixed(0)}`])}
+  />
+  <script type="application/json" data-chart-spec="disp" set:html={JSON.stringify(dispSpec)} is:inline />
+  <p>
+    So the series is not smooth — it moves about twice as much year to year as a random process at
+    the same average would — but the movement has no direction in it. There are busy eviction years
+    in this county and quiet ones, and knowing which one you are in tells you nothing about the next.
+  </p>
+
+  <h2>Two true sentences</h2>
+  <AssertionCard assertion={rank} />
+  <p>
+    Allen County's filing rate sits below Ohio's and in the top fifth of Ohio's eighty-seven
+    reporting counties. Both statements come out of the same column. The state figure divides all
+    the filings by all the renter households, so Cuyahoga and Franklin dominate it and they have high
+    rates; the ranking gives Paulding and Cuyahoga one place each. Below average and near the top of
+    the list are not in tension — they are answers to different questions, and a page that prints
+    one without the other has chosen a mood.
+  </p>
+  <AssertionCard assertion={serial} />
+  <ChartFigure
+    id="serial"
+    title="Cases and households, 2018"
+    caption="The gap is repeat filings against a household already sued that year. Across the run the ratio runs from 1.100 to 1.195."
+    columns={['Measure', 'Count']}
+    rows={serial.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="serial" set:html={JSON.stringify(serialSpec)} is:inline />
+  <p>
+    Three quantities live under the word <em>eviction</em>: cases filed, households sued, and
+    judgments granted. This page reports the first two and stops. How many people actually left a
+    home in Allen County is not in any of the three files, and saying so is the honest end of a page
+    about people losing their housing.
+  </p>
+</Article>

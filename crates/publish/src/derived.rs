@@ -4655,6 +4655,71 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "one-renter-household-in-fifteen-is-sued",
+        statement: "An eviction case is filed against about one Allen County renter household in fifteen every year. The filing rate runs 5.69 to 7.99 per cent across seventeen years and averages 6.79.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-evictions-2001-2018.yml", "**One renter household in fifteen has an eviction filed against it in this county every year.** The rate runs between 5.69 and 7.99 per cent across seventeen years and averages 6.79."),
+        ],
+        answers: &["cannot say how many people were put out of their homes"],
+        figures: &[
+            Figure { label: "lowest year, 2017", value: 5.69, literal: "5.69" },
+            Figure { label: "mean", value: 6.79, literal: "6.79" },
+            Figure { label: "highest year, 2008", value: 7.99, literal: "7.99" },
+        ],
+    },
+    Assertion {
+        id: "the-eviction-count-does-not-move",
+        statement: "Allen County's eviction filings run 766 to 982 across seventeen years \u{2014} mean 865 \u{2014} through a foreclosure crisis, a recession and a quarter more renter households. The rate drifts down 0.92 points over the run, which is about the smallest movement seventeen readings could have found.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-evictions-2001-2018.yml", "**The count does not move and the rate barely does.** Filings run from 766 to 982 with a mean of 865 and a standard deviation of 56, across seventeen years that contain a foreclosure crisis, a recession and a quarter more renter households. [verified] \u{2014} the same file. The filing rate falls by 0.058 points a year, which is 0.92 points over the run against a mean of 6.79, on a standard error of 0.024 \u{2014} a t of 2.4 on seventeen annual points."),
+        ],
+        answers: &["cannot say how many people were put out of their homes"],
+        figures: &[
+            Figure { label: "lowest", value: 766.0, literal: "766" },
+            Figure { label: "mean", value: 865.0, literal: "865" },
+            Figure { label: "highest", value: 982.0, literal: "982" },
+        ],
+    },
+    Assertion {
+        id: "busy-eviction-years-with-no-direction",
+        statement: "The year-to-year spread in Allen County's eviction filings is twice what chance alone would give \u{2014} a standard deviation of 56 against a Poisson 29 \u{2014} and it goes nowhere. The county has busy years and quiet ones without having a trend.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-evictions-2001-2018.yml", "**The year-to-year movement is twice what chance alone would give and it goes nowhere.** A Poisson draw at a mean of 865 has a standard deviation of 29 and this series has 56."),
+        ],
+        answers: &["cannot say how many people were put out of their homes"],
+        figures: &[
+            Figure { label: "observed", value: 56.0, literal: "56" },
+            Figure { label: "chance alone", value: 29.0, literal: "29" },
+        ],
+    },
+    Assertion {
+        id: "below-the-state-and-high-on-its-list",
+        statement: "Allen County's eviction filing rate is below Ohio's and in the top fifth of Ohio's counties, and both are true. The state figure is weighted towards the large urban counties where the rate is highest; the ranking gives every county one place.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-evictions-2001-2018.yml", "**This county is below the state's rate and in the top fifth of its counties, and both are true.** The state figure is filings over renter households across all 87 reporting counties, so it is weighted towards the large urban ones where the rate is highest; the ranking gives every county one place regardless of size. Allen's rank runs from 8th to 22nd across the seventeen years, with a median of 14th."),
+        ],
+        answers: &["cannot say how many people were put out of their homes"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-filing-is-not-a-household",
+        statement: "925 eviction cases were filed in Allen County in 2018 against 831 households. Between a tenth and a fifth of filings in any year are repeats against a household already sued that year.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-evictions-2001-2018.yml", "**A filing is not a household and neither is an eviction.** 925 cases were filed in 2018 against 831 households; the ratio runs from 1.100 to 1.195 across the run, so between a tenth and a fifth of filings in any year are repeats against a household already sued."),
+            support!("measure/allen-county-evictions-2001-2018.yml", "This corpus cannot say how many people were put out of their homes."),
+        ],
+        answers: &["cannot say how many people were put out of their homes"],
+        figures: &[
+            Figure { label: "cases filed", value: 925.0, literal: "925" },
+            Figure { label: "households sued", value: 831.0, literal: "831" },
+        ],
+    },
+    Assertion {
         id: "the-burden-is-all-at-the-bottom",
         statement: "This county's housing cost problem is almost entirely a problem of its poorest \
                     households. Of those living on less than 30 per cent of area median income, \
