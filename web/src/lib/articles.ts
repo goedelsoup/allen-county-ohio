@@ -424,6 +424,27 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'what-comes-to-the-courthouse',
+    title: 'What comes to the courthouse',
+    dek: "Allen County's serious court shrank by more than a third in eleven years while its everyday court grew, foreclosures collapsed, and eviction filings did not move at all.",
+    section: 'government',
+    era: [2007, 2017],
+    assertions: [
+      'the-serious-court-shrank-and-the-everyday-one-grew',
+      'crime-is-the-part-that-did-not-move',
+      'juvenile-filings-fell-by-two-fifths',
+      'seven-judges-hear-all-of-it',
+      'one-collapsed-and-the-other-did-not-move',
+      'three-renters-for-every-owner',
+      'the-same-numbers-from-two-covers',
+    ],
+    entries: [
+      'measure/allen-county-court-caseloads-2007-2017.yml',
+      'measure/allen-county-foreclosures-and-evictions-2007-2017.yml',
+      'measure/allen-county-evictions-2001-2018.yml',
+    ],
+  },
+  {
     slug: 'the-wells-that-are-still-there',
     title: 'The wells that are still there',
     dek: 'The 1885 oil strike is the best-dated event in this county\u2019s history. Nobody had counted what it left behind: 4,849 holes, and no paper closing most of them.',
