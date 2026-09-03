@@ -1,0 +1,117 @@
+class: measure
+label: Allen County's private employers, 1986–2023
+description: |
+  Every private establishment on the federal business register in this county, counted once a year
+  for thirty-eight years, with its employment and its payroll. [verified] —
+  [County Business Patterns](../../catalog/census-county-business-patterns.md), county files 1986
+  through 2023, and [the consumer price index](../../catalog/bls-cpi.md) for the last column.
+
+      year   establishments   employees   payroll per employee   in 2023 dollars
+      1986            2,763      45,917                $19,658           $54,651
+      1990            2,761      47,164                $20,659           $48,163
+      1995            2,839      47,845                $23,920           $47,824
+      2000            2,839      51,839                $27,718           $49,045
+      2005            2,758      52,699                $29,756           $46,424
+      2010            2,548      46,523                $33,977           $47,478
+      2015            2,404      46,122                $39,964           $51,377
+      2020            2,286      45,012                $44,061           $51,874
+      2023            2,239      44,251                $52,858           $52,858
+
+  **The county lost a fifth of its workplaces and a twenty-fifth of its jobs.** Establishments fell
+  from 2,763 to 2,239, or 19.0 per cent, while employment fell from 45,917 to 44,251, or 3.6.
+  Average establishment size rose from 16.6 employees to 19.8. [verified] — the same files; the
+  shares are computed here.
+
+      employees        1986    2023   change
+      under 5         1,455     933     −522
+      5 to 9            601     502      −99
+      10 to 19          335     378      +43
+      20 to 49          227     259      +32
+      50 to 99           76      98      +22
+      100 to 249         51      51        0
+      250 to 499         10      10        0
+      500 to 999          4       4        0
+      1,000 or more       4       4        0
+
+  **Almost the whole loss is in the smallest workplaces.** The two smallest classes lost 621
+  establishments between them and every class of ten or more gained 97. [verified] — the same files, whose nine size columns sum to the establishment total
+  exactly in both years. The four classes above a hundred employees hold **exactly the same counts
+  in 2023 as in 1986** — 51, 10, 4 and 4. [verified] The county's large employers are as numerous as
+  they were; its small ones are not. [inference]
+
+  **Employment peaked in 2005 and bottomed in 2022, and 2023 was the fifth-largest rise in the
+  series.** 52,699 in 2005, 42,814 in 2022, 44,251 in 2023 — up 1,437, behind only 1989, 2005, 1998
+  and 2015. [verified] — the same files.
+
+  **Pay per employee has not moved in thirty-seven years, and which way it did not move depends on
+  the price index.** $19,658 in 1986 and $52,858 in 2023 is a rise of 169 per cent in the money of
+  each year. Deflated by the national consumer price index the 1986 figure is $54,651 in 2023
+  dollars, so real pay per employee is **3.3 per cent lower** than it was; deflated by the Midwest
+  index it is $51,467, so real pay is **2.7 per cent higher**. [verified] —
+  [the price index](../../catalog/bls-cpi.md), series `CUUR0000SA0` and `CUUR0200SA0`, annual
+  averages. Both readings say the same thing about the county and disagree only about its sign; see
+  [a deflator is a choice](../../decisions/a-deflator-is-a-choice.yml).
+
+  This corpus cannot say whether that flatness is wages standing still or hours doing so. The
+  employment column is a headcount for the pay period including March 12 and counts a part-time
+  worker as one employee, so a shift toward part-time work lowers payroll per employee without
+  lowering anybody's wage. [inference]
+
+  **Retail lost more jobs than manufacturing did.** Between 1998 and 2023 retail trade fell from
+  7,806 employees to 5,442 and from 535 establishments to 368; manufacturing fell from 9,886 to
+  9,133. [verified] — the same files, NAICS sectors 44 and 31. Wholesale trade lost 1,359 over the
+  same years, construction 515, information 464 and finance and insurance 420; the sectors that
+  gained are accommodation and food by 747, educational services by 117 and professional and
+  technical services by 94. [verified] — the same files, all twenty sectors. The sector this county is named after
+  in its own histories is not the one that shed the most work in the last twenty-five years.
+  [inference]
+
+  **And the two largest sectors are now the same size.** Manufacturing 9,133 and health care 9,150
+  in 2023, seventeen apart, after twenty-one years in which health care led — it passed
+  manufacturing in 2002 and peaked at 12,431 in 2013. [verified] — the same files. See
+  [health care](allen-county-health-care-employment-2010-2022.yml) and
+  [manufacturing](allen-county-manufacturing-employment-1986-2022.yml).
+
+  **What is not in any of this.** County Business Patterns counts private employers on the business
+  register: no government, no self-employed, no farms and no railroads. The county's own government,
+  its schools, its two state prisons and its
+  [nine thousand proprietors](allen-county-proprietors-1969-2022.yml) are all outside these figures.
+  [verified] — the same files' own scope.
+properties:
+  parameter: private establishments on the business register
+  value: "2239"
+  unit: establishments
+  as_of: "2023"
+  method: |
+    County files for every year 1986 to 2023, fipstate 39 and fipscty 003, read case-insensitively
+    because the column names are lower case through 2014 and upper case afterwards, and with the
+    smallest size class taken from `n1_4` through 2016 and `n<5` from 2017. [verified] The total row
+    is `sic` `----` through 1997 and `naics` `------` from 1998. Payroll is `ap`, annual payroll in
+    thousands of dollars; payroll per employee divides it by `emp`, the March 12 headcount, and is
+    therefore an average over full-time and part-time workers alike. Real figures use the annual
+    average of `CUUR0000SA0` unless the Midwest series is named. The sector comparison begins in 1998
+    because the 1997/1998 join changes the classification from SIC to NAICS.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-county-business-patterns.md
+  - target: allen-county-manufacturing-employment-1986-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-county-business-patterns.md
+  - target: allen-county-health-care-employment-2010-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-county-business-patterns.md
+  - target: allen-county-proprietors-1969-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-wages-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../period/deindustrialization.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

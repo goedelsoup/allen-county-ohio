@@ -1,0 +1,71 @@
+id: one-file-two-reliabilities
+summary: >-
+  The Cropland Data Layer's crop classes for Allen County move as farming moves — winter wheat
+  falls by two thirds and stays down, and 2019 puts 37,726 acres in fallow against a median of 55.
+  Its developed class, over the same seventeen years and the same pixels, has a fitted slope of
+  minus 35 acres a year in a county that has been building the whole time. One file, two classes,
+  two entirely different epistemic statuses, and nothing in the file says which is which.
+context: |
+  This corpus has rules for a source that is wrong, a source that is modelled
+  ([a-modelled-estimate-is-not-an-observation](a-modelled-estimate-is-not-an-observation.yml)), a
+  source read at the wrong interval ([a-sample-is-not-a-series](a-sample-is-not-a-series.yml)) and
+  a source whose structure was revised
+  ([a-rule-written-for-a-classification-caught-a-layout](a-rule-written-for-a-classification-caught-a-layout.yml)).
+  None of them covers a file that is excellent for one of its columns and useless for the one
+  beside it.
+
+  The Cropland Data Layer classifies every thirty-metre pixel in the county once a year. Its
+  agricultural classes are derived from that year's satellite imagery, which is what the product is
+  built and validated for. Its non-agricultural classes — developed, forest, water, wetland — are
+  carried in from a land-cover product on a different cycle and re-registered annually.
+
+      class                 2008-2024 range     as a share of the class     fitted slope
+      developed              44,439-47,665              6.9%                 -35 acres/yr
+      forest                 22,033-27,093             21.0%                +253 acres/yr
+      winter wheat            6,155-25,210            ------                 a real fall
+      fallow/idle                 1-37,726            ------                 a real year
+
+  The developed slope is the tell. Allen County recorded fifty-seven annexations between 1990 and
+  2024 and builds two hundred-odd houses a year, and this file has it losing developed ground.
+
+  What makes the trap dangerous is that the noisy classes are the interesting ones. "The county
+  gained two thousand developed acres in a year" is a publishable sentence and it is the classifier
+  re-deciding which pixels are lawn.
+decision: |
+  **Establish the reliability of each class before differencing any of them, and expect the answer
+  to differ within one file.**
+
+  - The test is a **control the file cannot fake**: a quantity whose true direction is known from
+    outside. Development here is known to be positive from annexations, building permits and new
+    houses by place, all held already. A class whose fitted slope has the wrong sign against a known
+    control is not measuring the thing its name says.
+  - Where no external control exists, compare the class's **year-to-year range against the change
+    being claimed**. A movement smaller than the class's own quiet-year range is not a finding.
+  - A class that fails the test is not discarded. **A single year of it is still a classification of
+    that year**, and may be quoted as a level with the vintage named, even where the series may not
+    be differenced. The 2024 shares of this county are worth publishing; the 2023-to-2024 change in
+    them is not.
+  - Say which half is which **in the node**, not only in the catalog. A reader who takes a table out
+    of a node takes the columns without the provenance.
+rationale: |
+  **The signal-to-noise ratio is a property of the column, not of the file.** A source is usually
+  judged whole — trusted or not, cited or not. This one is both, and so are most files assembled
+  from more than one input. The question "is this source good" has no answer; "is this column good
+  for this difference" does.
+
+  **The good half is very good, which is what makes the bad half dangerous.** 2019 in this county is
+  a 1,450-fold jump in one class, and it is real: the same year is the third wettest April-to-June
+  in a hundred and thirty-one years of the county's own rainfall record. A file that can catch that
+  earns a trust it should not be given uniformly.
+
+  **This is the fourth revision-shaped trap in four phases and the first that is not a revision.**
+  The chemical roll changed, the occupation's parent changed, the auditor's column changed. Here
+  nothing changed at all: the instrument re-measures the same ground every year and disagrees with
+  itself by more than the thing being looked for. The remedy is the same shape — find the control
+  first — and the cause is different, which is worth having written down separately.
+
+  **What this does not buy.** It gives no way to rescue a bad class. Development in this county
+  between 2008 and 2024 is not measured here and this corpus does not have another source that
+  measures it as area. Annexations and permits count events and parcels, not ground cover.
+status: accepted
+date: "2026-09-02"

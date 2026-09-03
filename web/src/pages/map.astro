@@ -201,6 +201,14 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
     section {
       margin-bottom: 3rem;
     }
+    /* The line handing the map's argument to /ground, which now carries it. */
+    .handoff {
+      max-width: var(--measure);
+      color: var(--text-muted);
+      border-left: 2px solid var(--rule-hairline);
+      padding-left: var(--space-5);
+      margin: var(--space-9) 0 0;
+    }
     .two-up {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));

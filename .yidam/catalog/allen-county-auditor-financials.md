@@ -43,6 +43,7 @@ location:
 used-by:
   - ../corpus/measure/allen-county-funds-2025.yml
   - ../corpus/measure/allen-county-general-fund-2025.yml
+  - ../corpus/measure/allen-county-assessed-valuation-2010-2023.yml
   - ../corpus/measure/allen-county-net-position-2023.yml
   - ../corpus/office/allen-county-auditor.yml
   - ../corpus/office/allen-county-board-of-commissioners.yml
@@ -82,3 +83,33 @@ cities, townships and libraries is one line in and one line out, with no breakdo
 it. No employee counts, no salaries. No cash balances by fund in the summary reports, which is why
 the difference between a fund's revenue and its expenditure cannot be read here as a surplus or a
 deficit.
+
+**The audited reports carry the county's tax base.** Every one of them has a *Property Taxes* note stating the full tax rate for all county operations that year and
+the assessed values the year's receipts were based on, broken into residential, agricultural,
+commercial/industrial/mineral, and public utility real and personal. Fifteen reports are posted;
+thirteen have a text layer and give the figures. [verified] —
+[the audited financial statements](https://allencountyohauditor.com/audited-financial-statements/),
+the *Property Taxes* note in each.
+
+**Two of the fifteen are scans and one of them is this decade's newest.** The 2016 report, posted
+as an unaudited GAAP report, and the report posted as `Financial-Statements.pdf` in December 2025
+yield no text at all. So the valuation series has a hole at one end and stops short at the other.
+[verified] — same source, each run through `pdftotext`.
+
+**The note's valuation is a year older than the report.** Its own words: real property tax revenues
+received in a year represent the collection of the previous year's taxes, levied on the assessed
+values of the previous January. A reader who files the 2023 report's figures under 2023 has filed
+tax year 2022's base a year late. [verified] — the 2023 report, *Property Taxes*. The rate in the
+same sentence is attached to the report's fiscal year rather than to the lien date, and this corpus
+does not resolve that offset for the rate; it reports both by the fiscal year the report names.
+[inference]
+
+**The two report formats break the classes differently.** The 2010 to 2013 reports give real
+property and public utility property and nothing finer; 2014 onward give the five classes. In every
+year that gives the five, they sum to the printed total exactly, which is the arithmetic check this
+corpus runs before quoting any of them. [verified] — same source, computed here.
+
+**The monthly reports and the tax budget are a different matter.** The tax budgets posted for 2010
+through 2024 are Konica Minolta scans with no text layer, so the county's own budgeted valuations
+are unread. [verified] — [the tax budget page](https://allencountyohauditor.com/tax-budget/), the
+2024 file.

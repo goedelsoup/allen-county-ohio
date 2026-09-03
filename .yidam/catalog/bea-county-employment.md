@@ -16,6 +16,10 @@ location:
   - kind: url
     value: https://apps.bea.gov/regional/zip/CAEMP25N.zip
     description: Employment by NAICS industry, all counties, 2001–2022.
+used-by:
+  - ../corpus/measure/allen-county-total-employment-1969-2022.yml
+  - ../corpus/measure/allen-county-manufacturing-employment-1969-2022.yml
+  - ../corpus/measure/allen-county-proprietors-1969-2022.yml
 ---
 
 **It closes the gap the last phase named and falsifies the sentence that named it.** That phase
@@ -42,3 +46,27 @@ segments separately for that reason. Manufacturing reads 13,106 for 2000 under S
 **What else is in it, unread.** Twenty-three industry lines per county per year for fifty-four years,
 including a farm/nonfarm split, proprietors' employment, and a government breakdown into federal
 civilian, military, state and local. This corpus has taken two of the twenty-three lines.
+
+**The line codes above 100 are industries and the five below it are the whole workforce split two
+ways.** Line 10 is total employment, 20 wage and salary, 40 proprietors, 50 farm proprietors and 60
+nonfarm proprietors, with 40 equal to 50 plus 60 in every Allen County year checked. Those five had
+been in this corpus's hands since August and only line 10 was read. [verified] — the two zips,
+Ohio files, GeoFIPS 39003.
+
+**The proprietor lines are what makes this source say something no other source here can.** The
+occupational survey and the insurance filings both count people on a payroll, so neither can see a
+proprietor; this file counts 11,964 of them in Allen County in 2022, nearly one job in five.
+[verified] — same source; see
+[the proprietors](../corpus/measure/allen-county-proprietors-1969-2022.yml).
+
+**The join between the two tables moves the total, so it is not a reshuffle.** Total employment goes
+from 72,973 in the last SIC year to 69,825 in the first NAICS year, wage and salary from 62,741 to
+60,335 and proprietors from 10,232 to 9,490. Under
+[a-revision-that-moves-a-category](../decisions/a-revision-that-moves-a-category.yml) an aggregate
+that moves is the sign that the change is not confined to how the parts are grouped, so the two
+tables are read as two series and nothing is differenced across the join. [verified] — same source,
+the 2000 and 2001 columns.
+
+**Industry detail is suppressed at small cells.** Forestry and fishing, utilities and mining all
+return `(D)` for this county in most years, so the industry lines cannot be summed to the total and
+none of them is read here. [verified] — same files.

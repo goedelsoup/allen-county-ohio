@@ -16,8 +16,42 @@ description: |
   [verified] — same source against [TIGERweb](../../catalog/tigerweb-census2020.md) block
   population.
 
-  [open] Whether 71.8 per cent is high or low for this county is not answerable here. This is one
-  election, and the corpus holds no other.
+  **71.8 per cent is the third of six presidential elections here, and an ordinary one.** 2004 at
+  73.3 per cent and 2008 at 72.1 stand above it; 2024 at 70.8, 2012 at 70.1 and 2016 at 68.7 stand
+  below, and the six fit inside 4.7 points. [verified] —
+  [the eleven elections](allen-county-turnout-2004-2024.yml), out of
+  [a federal survey of the county board](../../catalog/eac-election-administration-voting-survey.md)
+  that this node did not hold when it was written. The question this node carried for a hundred
+  and four phases is closed, and the answer is that the year was unremarkable.
+
+  **Part of what made it look high is the denominator.** 9,770 names came off this county's roll
+  between the 2018 and 2020 elections against 1,560 in the two years before; on the register the
+  county held in 2018 the same 48,353 ballots are 69.7 per cent rather than 71.8. [verified] —
+  [the removals](allen-county-voter-roll-removals-2006-2022.yml), out of
+  [the same survey](../../catalog/eac-election-administration-voting-survey.md); and see
+  [a denominator can be edited](../../decisions/a-denominator-can-be-edited.yml). Two points is
+  more than separates 2020 from any other presidential year in the run.
+
+  **The midterms are the county's other shape.** The Secretary of State's own precinct files put
+  Allen County at **54.7 per cent in 2006** — 37,605 ballots against 68,797 registered — and at
+  **48.4 per cent in 2010**, 33,867 against 69,931. [verified] —
+  [the 2006 ballot](allen-county-ballot-2006.yml) and
+  [OpenElections](../../catalog/openelections-ohio.md), 2010 file. Twenty-three points separate this
+  election from the lower of the two, which is the size of the presidential premium here and not a
+  trend. [inference]
+
+  **The registration roll shrank at almost exactly the rate the county did.** 69,931 registered in
+  2010 and 67,374 here, a fall of 2,557 or 3.66 per cent, against a population that went from
+  106,331 to 102,206 — 3.88 per cent. [inference] — the two election files against
+  [2010](allen-county-population-2010.yml) and
+  [the 2020 census](allen-county-population-2020-census.yml). The 2006 roll was 68,797, lower than
+  2010's, so the decade's high is in the middle of it.
+
+  **Three of these figures have now been confirmed by a second, unrelated pipeline.** The county
+  board's own return to the federal government gives 37,605 ballots for 2006, 33,867 for 2010 and
+  48,353 for 2020 — the same three numbers this node summed out of the precinct files. [verified] —
+  [the Election Administration and Voting Survey](../../catalog/eac-election-administration-voting-survey.md).
+  Its registered-voter counts match for 2010 and 2020 and differ by 2,337 for 2006.
 properties:
   parameter: ballots cast, general election
   value: "48353"
@@ -32,5 +66,13 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/openelections-ohio.md
+  - target: allen-county-turnout-2004-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-voter-roll-removals-2006-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
   - target: ../measure.ont.yml
     relationship: instance-of

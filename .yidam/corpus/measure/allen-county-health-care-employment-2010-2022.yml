@@ -1,7 +1,7 @@
 class: measure
-label: Allen County health care employment by subsector, 2010–2022
+label: Allen County health care employment by subsector, 2010–2023
 description: |
-  The county's largest private sector, every year rather than every fifth. [verified] —
+  The sector that was the county's largest for twenty-one years, every year rather than every fifth. [verified] —
   [County Business Patterns](../../catalog/census-county-business-patterns.md).
 
       yr    62=total  621 ambul  622 hosp  623 nursing  624 social
@@ -18,24 +18,36 @@ description: |
       2020     9,711      3,978     2,902        1,599       1,232
       2021     9,807      4,073     2,960        1,476       1,298
       2022     9,151      3,185     3,211        1,410       1,345
+      2023     9,150      3,182     3,267        1,419       1,282
 
   **The sector peaked at 12,431 in 2013, in a year nobody had looked at**, and hospitals are where
   the fall since went: 1,866 of the 2,593 lost from 2010, 1,049 of the 3,280 lost from the 2013
   peak. [verified] — same source. Which share depends on the baseline, and all three are in
   [a sample is not a series](../../decisions/a-sample-is-not-a-series.yml).
 
+  **The fall has stopped and the sector has lost its lead.** 2023 is 9,150, one employee below 2022
+  and 3,281 below the 2013 peak — a fall of 26.4 per cent in ten years. In the same year
+  manufacturing stands at 9,133, seventeen employees behind, which ends twenty-one years in which
+  health care was this county's largest private sector; it took the lead in 2002. [verified] — the
+  same source, sectors 62 and 31. See
+  [the private employers](allen-county-private-employers-1986-2023.yml).
+
   This does not establish why any of it fell. [open]
 properties:
   parameter: paid employees for pay period including March 12, NAICS 62 and its four subsectors
-  value: "9151"
+  value: "9150"
   unit: employees
-  as_of: "2022"
+  as_of: "2023"
   method: |
     County files, fipstate 39 fipscty 003. The four subsectors sum to the sector total exactly in
-    all thirteen years, so no line is suppressed. [verified]
+    all fourteen years, so no line is suppressed. [verified]
 links:
   - target: ../place/allen-county.yml
     relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-county-business-patterns.md
+  - target: allen-county-private-employers-1986-2023.yml
+    relationship: relates-to
     claim_tag: verified
     source: ../../catalog/census-county-business-patterns.md
   - target: ../measure.ont.yml

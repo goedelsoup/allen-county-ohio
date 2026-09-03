@@ -20,7 +20,7 @@ const { id, title, caption, columns, rows, height = 340 } = Astro.props
 
 <figure class="chart">
   <figcaption>
-    <h3>{title}</h3>
+    <p class="fig-title">{title}</p>
     {caption && <p>{caption}</p>}
   </figcaption>
 
@@ -57,8 +57,16 @@ const { id, title, caption, columns, rows, height = 340 } = Astro.props
     border: 1px solid var(--rule);
     border-radius: var(--radius);
   }
-  figcaption h3 {
+  /*
+   * A figcaption already labels its figure, so the title inside one is not a section
+   * heading and is not rendered as one: a chart called "Fall in drug overdose deaths"
+   * under an article's h1 was an h1→h3 skip on nineteen pages, and it was never a place
+   * a reader would navigate to. The type is unchanged.
+   */
+  figcaption .fig-title {
     margin: 0 0 0.25rem;
+    color: var(--text-strong);
+    font: var(--type-section);
   }
   figcaption p {
     margin: 0;

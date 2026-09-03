@@ -1,0 +1,72 @@
+class: measure
+label: Allen County vote for governor, 2002–2018
+description: |
+  Five consecutive elections for governor. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md); 2002, 2014 and 2018 from county files,
+  2006 and 2010 summed from the Secretary of State's own precinct files.
+
+      year   Republican             Democrat                  other   R share   all votes
+      2002   Taft         19,226    Hagan          8,581       1,891    69.1%      29,698
+      2006   Blackwell    17,184    **Strickland  18,000**     1,037    48.8%      36,221
+      2010   Kasich       18,982    Strickland    12,755       1,233    59.8%      32,970
+      2014   Kasich       19,587    FitzGerald     7,091         581    73.4%      27,259
+      2018   DeWine       24,200    Cordray       10,825         936    69.1%      35,961
+
+  `R share` is of the two-party vote.
+
+  **In 2006 Allen County voted for a Democrat, by 816 votes.** It is the only election in this
+  corpus's modern record — five for governor and six for president, from 2000 forward — that this
+  county has given to a Democratic candidate. [verified] — the same files and
+  [the presidential series](allen-county-presidential-vote-2000-2016.yml).
+
+  **In figures: the Republican share of the two-party vote was 69.1 per cent in 2002, 48.8 in 2006,
+  59.8 in 2010, 73.4 in 2014 and 69.1 in 2018.** The balance moves 24.6 points in the eight years
+  between 2006 and 2014, and the two ends of the run sit a twentieth of a point apart. [inference] —
+  arithmetic this corpus's, on the table above.
+
+  **That is a correction, and the corpus knows which of its habits produced it.**
+  [The 2018 node](allen-county-governor-vote-2018.yml) said that this county's partisan balance
+  barely moves and that "who turns out changes far more here than how they vote", from three
+  consecutive elections in 2016, 2018 and 2020. Five earlier elections were in the same repository.
+  See [a sample is not a series](../../decisions/a-sample-is-not-a-series.yml), which was written
+  about a sector's employment and applies here unchanged.
+
+  **The turnout observation survives the correction and gets sharper.** Votes for governor run from
+  27,259 in 2014 to 36,221 in 2006 — a third more people voting in the year the county went
+  Democratic than in the year it was most Republican. Whether that is the same people changing their
+  minds or different people arriving is not something a return can answer. [inference]
+
+  **Nothing here reaches 2022.** OpenElections has no Ohio file for that year at any grain, so the
+  most recent election for governor this corpus holds is seven years old. [verified] — the
+  repository's own tree.
+properties:
+  parameter: Republican share of the two-party vote for governor
+  value: "69.09"
+  unit: per cent
+  as_of: "2018"
+  method: |
+    2002, 2014 and 2018 are county-grain files. 2006 and 2010 are summed over the county's 139 and
+    121 precincts respectively, from the Secretary of State's own workbooks; the 2010 file's
+    `COUNTY TOTALS` row is excluded from the sum and used to check it. Vote counts in the 2006 and
+    2010 files are written as floating-point numbers and are converted here; every value is
+    integral. [verified] Shares are of the two major-party candidates only, computed here. The 2010
+    file carries no party column and party for that year is this corpus's, from the candidates.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-governor-vote-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-ballot-2006.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-presidential-vote-2000-2016.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

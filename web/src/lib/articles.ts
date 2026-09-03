@@ -46,6 +46,24 @@ export interface Article {
 export const ARTICLES: Article[] = [
   // ── Ground ──────────────────────────────────────────────────────────────
   {
+    slug: 'what-the-ground-is',
+    title: 'What the ground is',
+    dek: 'The county was nine-tenths farmland in 1910 and is seven-tenths now; the missing third is built ground and woodland. And one spring in seventeen, a fifth of the cropland went unplanted.',
+    section: 'ground',
+    era: [2008, 2024],
+    assertions: [
+      'what-the-farmland-became',
+      'the-spring-the-county-was-not-planted',
+      'half-a-file-can-be-differenced',
+      'soybeans-never-lost-the-lead',
+    ],
+    entries: [
+      'measure/allen-county-land-cover-2008-2024.yml',
+      'measure/allen-county-farmland-1910-2022.yml',
+      'question/when-the-farmland-went.yml',
+    ],
+  },
+  {
     slug: 'a-hog-county',
     title: 'A hog county',
     dek: 'The hogs multiplied while the farms keeping them halved, which is one fact about animals and another about who is left to keep them.',
@@ -53,6 +71,24 @@ export const ARTICLES: Article[] = [
     era: [2002, 2022],
     assertions: ['the-hogs-multiplied-as-the-keepers-halved'],
     entries: ['place/allen-county.yml'],
+  },
+  {
+    slug: 'first-in-ohio-and-the-air-is-clean',
+    title: 'First in Ohio, and the air is clean',
+    dek: 'No county in Ohio reported releasing more toxic chemical in 2024, and no year on record had fewer unhealthy days. Both are true and neither explains the other.',
+    section: 'ground',
+    era: [1980, 2024],
+    assertions: [
+      'the-county-leads-ohio-in-what-it-releases',
+      'a-fifth-of-the-fall-is-the-list-changing',
+      'what-goes-to-the-air-fell-and-the-wells-did-not',
+      'what-ended-was-the-bad-day',
+    ],
+    entries: [
+      'measure/allen-county-toxic-releases-1987-2024.yml',
+      'measure/allen-county-air-quality-1980-2024.yml',
+      'site/lima-refinery.yml',
+    ],
   },
   {
     slug: 'where-the-lines-moved',
@@ -132,6 +168,46 @@ export const ARTICLES: Article[] = [
 
   // ── People ──────────────────────────────────────────────────────────────
   {
+    slug: 'the-ordinary-half',
+    title: 'The ordinary half',
+    dek: 'The county dies young, and cancer is not why. It kills at Ohio’s rate, falling — except among men, where it does not.',
+    section: 'people',
+    era: [2018, 2023],
+    assertions: [
+      'cancer-is-the-ordinary-half',
+      'the-cancer-burden-is-a-mens-burden',
+      'a-county-rank-comes-with-an-interval',
+      'cancer-is-not-where-the-racial-gap-lives',
+    ],
+    entries: [
+      'measure/allen-county-cancer-2018-2023.yml',
+      'measure/allen-county-heart-disease-and-stroke-1999-2024.yml',
+      'measure/allen-county-early-deaths-by-cause-2020-2022.yml',
+    ],
+  },
+  {
+    slug: 'fifth-worst-for-hearts',
+    title: 'Fifth worst for hearts',
+    dek: 'The county’s heart disease rate climbed while Ohio’s fell, and the gains that stopped in 2010 stopped only for people under 65.',
+    section: 'people',
+    era: [1999, 2024],
+    assertions: [
+      'fifth-worst-in-ohio-for-heart-disease',
+      'the-improvement-stopped-at-working-age',
+      'middling-on-hearts-worst-fifth-on-strokes',
+    ],
+    entries: ['place/allen-county.yml'],
+  },
+  {
+    slug: 'the-schools-that-are-not-districts',
+    title: 'The schools that are not districts',
+    dek: 'Ten private schools and two community schools account for a third of the county’s missing children, in a survey whose roster cannot be differenced.',
+    section: 'people',
+    era: [2013, 2022],
+    assertions: ['four-catholic-schools-hold-four-fifths', 'the-private-school-fall-is-in-the-file'],
+    entries: ['place/allen-county.yml', 'place/lima.yml'],
+  },
+  {
     slug: 'lima-before-the-series-begins',
     title: 'Lima before the series begins',
     dek: 'The city grew fivefold after the oil, and the county outside it had three peaks thirty years apart.',
@@ -178,6 +254,148 @@ export const ARTICLES: Article[] = [
       'site/allen-correctional-institution.yml',
       'site/oakwood-correctional-facility.yml',
       'question/who-lives-in-the-county-without-housing.yml',
+    ],
+  },
+  {
+    slug: 'how-many-children',
+    title: 'How many children',
+    dek: 'The county has fewer children than it had, and through the 2010s they went missing faster than the classrooms did.',
+    section: 'people',
+    era: [2010, 2024],
+    assertions: [
+      'the-children-went-missing-faster-than-the-classrooms',
+      'the-under-fives-are-the-births',
+      'two-vintages-disagree-about-the-children',
+    ],
+    entries: [
+      'measure/allen-county-children-2010-2024.yml',
+      'measure/allen-county-natural-change-2021-2024.yml',
+    ],
+  },
+  {
+    slug: 'a-third-of-the-children',
+    title: 'A third of the children',
+    dek: 'The county has 6,910 fewer schoolchildren than in 1988, and its Black pupils are far less concentrated in Lima than they were.',
+    section: 'people',
+    era: [1988, 2024],
+    assertions: [
+      'a-third-of-the-schoolchildren-are-gone',
+      'lima-holds-fewer-of-the-black-pupils',
+      'the-share-that-held-because-both-halves-emptied',
+    ],
+    entries: [
+      'measure/allen-county-school-enrolment-1988-2024.yml',
+      'measure/allen-county-school-enrolment-by-race-1988-2024.yml',
+    ],
+  },
+  {
+    slug: 'one-renter-in-four',
+    title: 'One renter in four',
+    dek: 'Two thousand two hundred and fifty-one homes here have a federal subsidy on the rent, and eighty-six per cent of them are in Lima.',
+    section: 'people',
+    era: [2005, 2025],
+    assertions: [
+      'one-renter-household-in-six',
+      'more-subsidized-housing-than-the-five-around-it',
+      'the-same-homes-hold-fewer-people',
+    ],
+    entries: [
+      'measure/allen-county-subsidized-housing-2005-2025.yml',
+      'organization/allen-metropolitan-housing-authority.yml',
+    ],
+  },
+  {
+    slug: 'what-the-rent-takes',
+    title: 'What the rent takes',
+    dek: 'A renter here is two and a half times as likely as an owner to be paying more than they can afford, and almost the whole of it sits in the lowest income band.',
+    section: 'people',
+    era: [2006, 2022],
+    assertions: [
+      'renters-carry-what-owners-do-not',
+      'the-burden-is-all-at-the-bottom',
+      'a-black-renter-pays-more-of-less',
+      'the-county-moved-and-the-country-did-not',
+      'thirty-nine-homes-for-a-hundred-households',
+    ],
+    entries: [
+      'measure/allen-county-housing-cost-burden-2006-2022.yml',
+      'question/why-hud-and-the-survey-count-different-assisted-renters.yml',
+    ],
+  },
+  {
+    slug: 'seven-hundred-and-sixty',
+    title: 'Seven hundred and sixty',
+    dek: 'Fifty years of fatal crashes on this county\u2019s roads: a third fewer than there were, a year that stands outside the record, and a share with drink in it that has never moved.',
+    section: 'people',
+    era: [1975, 2024],
+    assertions: [
+      'seven-hundred-and-sixty-on-the-roads',
+      'the-roads-followed-ohio-not-the-country',
+      'the-worst-road-year-since-1978',
+      'the-drink-share-never-moved',
+      'the-crossings-stopped-killing-people',
+    ],
+    entries: [
+      'measure/allen-county-road-deaths-1975-2024.yml',
+      'measure/allen-county-rail-crossing-deaths-1980-2005.yml',
+    ],
+  },
+  {
+    slug: 'the-only-legible-district',
+    title: 'The only legible district',
+    dek: 'Ten years of graduation rates and test scores for twelve districts \u2014 and a disclosure rule that makes exactly one of them readable.',
+    section: 'people',
+    era: [2009, 2019],
+    assertions: [
+      'lima-reads-at-forty-two-per-cent',
+      'twelve-districts-fell-in-the-same-two-years',
+      'the-county-passed-the-state-without-improving',
+      'the-only-district-published-as-a-number',
+      'limas-graduation-rate-has-not-moved',
+      'the-county-graduation-rate-fell-and-the-states-rose',
+      'no-racial-gap-in-limas-graduation-rate',
+    ],
+    entries: [
+      'measure/allen-county-graduation-rates-2010-2019.yml',
+      'measure/allen-county-test-proficiency-2009-2018.yml',
+    ],
+  },
+  {
+    slug: 'the-roll-and-the-room',
+    title: 'The roll and the room',
+    dek: 'Eleven elections of machinery rather than result: what a turnout rate is divided by, and who is left to run the count.',
+    section: 'government',
+    era: [2004, 2024],
+    assertions: [
+      'two-thousand-and-twenty-was-an-ordinary-year',
+      'the-county-used-to-out-vote-ohio',
+      'sixty-one-thousand-names-off-a-sixty-six-thousand-roll',
+      'election-day-stopped-being-the-day',
+      'two-hundred-and-fifty-two-people-run-it',
+      'a-quarter-of-the-provisional-ballots-were-rejected',
+    ],
+    entries: [
+      'measure/allen-county-turnout-2004-2024.yml',
+      'measure/allen-county-voter-roll-removals-2006-2022.yml',
+      'measure/allen-county-polling-places-2004-2024.yml',
+    ],
+  },
+  {
+    slug: 'fewer-doors',
+    title: 'Fewer doors',
+    dek: 'A fifth of this county\u2019s workplaces are gone and almost all of its jobs are not. What went was the shops with under ten people in them.',
+    section: 'work',
+    era: [1986, 2023],
+    assertions: [
+      'a-fifth-of-the-workplaces-are-gone',
+      'the-small-workplaces-are-what-went',
+      'pay-that-has-not-moved-in-thirty-seven-years',
+      'retail-lost-more-than-manufacturing',
+      'the-two-largest-sectors-are-level-again',
+    ],
+    entries: [
+      'measure/allen-county-private-employers-1986-2023.yml',
+      'measure/allen-county-manufacturing-employment-1986-2022.yml',
     ],
   },
   {
@@ -245,6 +463,45 @@ export const ARTICLES: Article[] = [
 
   // ── Work ────────────────────────────────────────────────────────────────
   {
+    slug: 'nobodys-payroll',
+    title: 'Nobody’s payroll',
+    dek: 'Three federal programmes count this county’s jobs and differ by fourteen thousand. Most of the difference is people working for themselves — nearly one job in five, the highest in fifty-four years.',
+    section: 'work',
+    era: [1969, 2022],
+    assertions: [
+      'one-job-in-five-is-nobodys-payroll',
+      'every-job-lost-since-2001-is-a-payroll-job',
+      'the-farm-proprietors-halved',
+    ],
+    entries: [
+      'measure/allen-county-proprietors-1969-2022.yml',
+      'measure/allen-county-total-employment-1969-2022.yml',
+      'measure/allen-county-occupations-2014-2024.yml',
+    ],
+  },
+  {
+    slug: 'what-the-work-is',
+    title: 'What the work is',
+    dek: 'Production is still the county’s largest occupation and more concentrated than a decade ago, and the clerical collapse underneath is smaller than it first reads.',
+    section: 'work',
+    era: [2014, 2024],
+    assertions: [
+      'the-county-kept-making-things',
+      'the-fingerprint-names-the-landmarks',
+      'the-clerks-went-and-the-warehouse-did-not-arrive',
+    ],
+    entries: ['place/allen-county.yml', 'site/lima-refinery.yml'],
+  },
+  {
+    slug: 'the-rate-caught-up-with-ohio',
+    title: 'The rate caught up with Ohio',
+    dek: 'Twenty-four years above the state’s unemployment rate, and then a convergence made mostly of people leaving the labour force.',
+    section: 'work',
+    era: [1990, 2026],
+    assertions: ['the-rate-converged-and-the-workforce-did-not'],
+    entries: ['place/allen-county.yml'],
+  },
+  {
     slug: 'the-factories-left-lima',
     title: 'The factories left Lima',
     dek: 'They did not leave the county. Lima’s share of the factory workforce fell for forty years while the county’s held.',
@@ -258,6 +515,33 @@ export const ARTICLES: Article[] = [
   },
 
   // ── Government ──────────────────────────────────────────────────────────
+  {
+    slug: 'what-a-mill-is-worth',
+    title: 'What a mill is worth',
+    dek: 'One mill on this county raises $2,451,332, no two of its thirty-six taxing districts charge the same, and one of them stopped being a village.',
+    section: 'government',
+    era: [2012, 2025],
+    assertions: [
+      'what-a-mill-is-worth-here',
+      'the-column-changed-and-the-rate-did-not',
+      'the-school-district-is-the-tax-bill',
+      'the-village-stopped-levying-and-the-township-took-it',
+    ],
+    entries: [
+      'measure/allen-county-property-tax-rates-2012-2025.yml',
+      'measure/allen-county-assessed-valuation-2010-2023.yml',
+      'question/what-happened-to-the-village-of-fort-shawnee.yml',
+    ],
+  },
+  {
+    slug: 'the-democratic-column',
+    title: 'The Democratic column',
+    dek: 'Five elections added to the modern run, and a third of one column gone in eight years while the other grew.',
+    section: 'government',
+    era: [2000, 2020],
+    assertions: ['the-democratic-column-lost-a-third-of-itself'],
+    entries: ['place/allen-county.yml'],
+  },
   {
     slug: 'the-government-below-the-county',
     title: 'The government below the county',
@@ -347,6 +631,22 @@ export const ARTICLES: Article[] = [
     entries: [
       'office/allen-county-board-of-commissioners.yml',
       'office/allen-county-sheriff.yml',
+    ],
+  },
+  {
+    slug: 'the-one-democrat',
+    title: 'The one Democrat',
+    dek: 'In 2006 the county voted for a Democrat for governor — and for a Republican in every other race on the same ballot.',
+    section: 'government',
+    era: [2002, 2020],
+    assertions: [
+      'the-one-election-it-gave-a-democrat',
+      'one-democrat-carried-it-and-seven-did-not',
+      'the-presidential-premium-is-twenty-three-points',
+    ],
+    entries: [
+      'measure/allen-county-governor-vote-2002-2018.yml',
+      'measure/allen-county-ballot-2006.yml',
     ],
   },
   {

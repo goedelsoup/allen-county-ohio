@@ -383,7 +383,7 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "the-schools-empty-faster-than-the-county",
         statement: "Enrolment in the twelve school districts holding ground in Allen County fell \
-                    from 17,985 to 16,113 between 2010 and 2023 — 10.4 per cent, where the county's \
+                    from 17,985 to 16,113 between 2009 and 2022 — 10.4 per cent, where the county's \
                     population fell 3.9 per cent to the 2020 census.",
         topic: "schools",
         supports: &[
@@ -398,20 +398,20 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
         answers: &[],
         figures: &[
-            Figure { label: "2010", value: 17_985.0, literal: "17,985" },
-            Figure { label: "2011", value: 17_830.0, literal: "17,830" },
-            Figure { label: "2012", value: 17_766.0, literal: "17,766" },
-            Figure { label: "2013", value: 17_565.0, literal: "17,565" },
-            Figure { label: "2014", value: 17_634.0, literal: "17,634" },
-            Figure { label: "2015", value: 17_656.0, literal: "17,656" },
-            Figure { label: "2016", value: 17_518.0, literal: "17,518" },
-            Figure { label: "2017", value: 17_333.0, literal: "17,333" },
-            Figure { label: "2018", value: 17_107.0, literal: "17,107" },
-            Figure { label: "2019", value: 16_921.0, literal: "16,921" },
-            Figure { label: "2020", value: 16_774.0, literal: "16,774" },
-            Figure { label: "2021", value: 16_124.0, literal: "16,124" },
-            Figure { label: "2022", value: 16_127.0, literal: "16,127" },
-            Figure { label: "2023", value: 16_113.0, literal: "16,113" },
+            Figure { label: "2009", value: 17_985.0, literal: "17,985" },
+            Figure { label: "2010", value: 17_830.0, literal: "17,830" },
+            Figure { label: "2011", value: 17_766.0, literal: "17,766" },
+            Figure { label: "2012", value: 17_565.0, literal: "17,565" },
+            Figure { label: "2013", value: 17_634.0, literal: "17,634" },
+            Figure { label: "2014", value: 17_656.0, literal: "17,656" },
+            Figure { label: "2015", value: 17_518.0, literal: "17,518" },
+            Figure { label: "2016", value: 17_333.0, literal: "17,333" },
+            Figure { label: "2017", value: 17_107.0, literal: "17,107" },
+            Figure { label: "2018", value: 16_921.0, literal: "16,921" },
+            Figure { label: "2019", value: 16_774.0, literal: "16,774" },
+            Figure { label: "2020", value: 16_124.0, literal: "16,124" },
+            Figure { label: "2021", value: 16_127.0, literal: "16,127" },
+            Figure { label: "2022", value: 16_113.0, literal: "16,113" },
         ],
     },
     Assertion {
@@ -435,6 +435,106 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Local", value: 18.4, literal: "18.4" },
             Figure { label: "State", value: 59.2, literal: "59.2" },
             Figure { label: "Federal", value: 22.4, literal: "22.4" },
+        ],
+    },
+    Assertion {
+        id: "the-only-district-published-as-a-number",
+        statement: "Eleven of the 120 district-years of graduation data for Allen County carry an exact rate; ten of them are Lima City, the district with the worst rate. Every other district is published as a band, and the width of the band is set by the size of the cohort.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**One district in twelve is published as a number and it is the district with the worst rate.** 11 of this county's 120 district-years carry an exact graduation rate and 109 are published as a band; ten of the 11 are Lima and the eleventh is Shawnee in 2017."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "exact", value: 11.0, literal: "11" },
+            Figure { label: "banded", value: 109.0, literal: "109" },
+        ],
+    },
+    Assertion {
+        id: "limas-graduation-rate-has-not-moved",
+        statement: "Lima City's four-year graduation rate was 70 per cent in 2010 and 63 in 2019, and nine of the ten years sit between 63 and 70. It is the only rate in the county published as a number every year.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**Lima's rate is the one figure in the table that can be tracked, and it has not moved much.** 70 per cent in 2010, 78 in 2011, then 70, 66, 63, 69, 63, 65, 67 and 63."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "2010", value: 70.0, literal: "70" },
+            Figure { label: "2011", value: 78.0, literal: "78" },
+            Figure { label: "2013", value: 66.0, literal: "66" },
+            Figure { label: "2015", value: 69.0, literal: "69" },
+            Figure { label: "2017", value: 65.0, literal: "65" },
+            Figure { label: "2019", value: 63.0, literal: "63" },
+        ],
+    },
+    Assertion {
+        id: "the-county-graduation-rate-fell-and-the-states-rose",
+        statement: "Allen County's graduation rate can only be bounded, and the bounds are enough: 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019, two intervals that do not touch. The county stood clear of Ohio every year to 2015 and has overlapped it since 2016.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "Weighting each district's band by its cohort gives 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019 \u{2014} two intervals that do not touch, so the rate fell by at least 0.6 points and the fall does not depend on any assumption about where inside a band a district sits."),
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**The county was clear of the state for six years and has not been since.** Its lower bound stood above Ohio's upper bound in every year from 2010 to 2015; from 2016 the two intervals overlap, and in 2019 Ohio's band sits higher than the county's within the overlap."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "2011 lower", value: 87.0, literal: "87.0" },
+            Figure { label: "2011 upper", value: 90.9, literal: "90.9" },
+            Figure { label: "2019 lower", value: 82.5, literal: "82.5" },
+            Figure { label: "2019 upper", value: 86.4, literal: "86.4" },
+        ],
+    },
+    Assertion {
+        id: "no-racial-gap-in-limas-graduation-rate",
+        statement: "In Lima City, the only district here whose cohorts are large enough to publish by race, the white and Black graduation bands are disjoint in seven years of ten \u{2014} and the higher one is white in three and Black in four.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**In the county's only legible district the graduation rate does not differ by race.** Lima's white and Black bands are disjoint in seven of the ten years, and the higher one is white in three of those and Black in four; in the other three years the two bands are identical."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[],
+    },
+    Assertion {
+        id: "lima-reads-at-forty-two-per-cent",
+        statement: "Lima City reads 42 per cent proficient in 2018 against 62 in Perry and 83 in Bluffton, and 42 per cent in mathematics against 57 and 87. The figures rest on between 250 and 1,904 tests apiece.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**The largest district in the county is twenty points below the second-lowest and forty-one below the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "Lima", value: 42.0, literal: "42" },
+            Figure { label: "Perry", value: 62.0, literal: "62" },
+            Figure { label: "Bluffton", value: 83.0, literal: "83" },
+        ],
+    },
+    Assertion {
+        id: "twelve-districts-fell-in-the-same-two-years",
+        statement: "Reading proficiency fell in every one of Allen County's twelve districts between 2013 and 2015 \u{2014} by 18 points in Bluffton and 40 in Perry \u{2014} and the state fell 28.7. Twelve independently governed districts do not move together in two years unless the test does.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19 in Spencerville, 22 in Shawnee, and on up to 40 in Perry \u{2014} every district in the county, no exceptions, and the state fell 28.7 points over the same two years."),
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "Bluffton", value: 18.0, literal: "18" },
+            Figure { label: "Spencerville", value: 19.0, literal: "19" },
+            Figure { label: "Shawnee", value: 22.0, literal: "22" },
+            Figure { label: "Perry", value: 40.0, literal: "40" },
+        ],
+    },
+    Assertion {
+        id: "the-county-passed-the-state-without-improving",
+        statement: "Allen County's reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 above it in 2018; in mathematics, 0.3 above and then 7.2. The county did not improve \u{2014} the state fell further.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**The eleven districts other than Lima are 34 points above it and were 22 points above it.** The gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "reading, 2018", value: 4.5, literal: "4.5" },
+            Figure { label: "mathematics, 2018", value: 7.2, literal: "7.2" },
         ],
     },
     Assertion {
@@ -3365,6 +3465,1546 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2019", value: 0.0, literal: "0.0" },
             Figure { label: "2022", value: 0.0, literal: "0.0" },
             Figure { label: "2025", value: 0.0, literal: "0.0" },
+        ],
+    },
+    Assertion {
+        id: "the-rate-converged-and-the-workforce-did-not",
+        statement: "Allen County's unemployment rate ran above Ohio's for twenty-four years \
+                    running and then stopped: the gap was 0.4 points in 2013, 0.0 in 2014, and has \
+                    averaged a tenth of a point since. Over the same record Ohio's labour force \
+                    grew 10.3 per cent and the county's fell 8.3, so the county stopped having a \
+                    higher share of its workers out of work partly by having fewer workers.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**The county's rate was above its state's for twenty-four years running, and then it stopped.**\n  Every year from 1990 to 2013 Allen County's annual rate exceeded Ohio's, by a mean of 1.0 points\n  and by as much as 2.1 in 1996. From 2014 the mean gap is 0.10 points and the county is at or below\n  the state in six of twelve years."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**It converged on the state and not on the country.** Against the national rate the county's mean\n  gap is +1.14 points in the 1990s, +1.25 in the 2000s and +0.28 from 2014 \u{2014} narrower, but it has\n  been below the nation in only two of the last twelve years."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**The convergence is a subtraction.** Across the record Ohio's labour force grew 10.3 per cent and\n  Allen County's fell 8.3."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**Fewer people work in this county now than in 1990.** Employed residents peaked at 49,671 in 2006\n  and stand at 45,950 in 2025 \u{2014} 3,721 fewer, a fall of 7.5 per cent \u{2014} and the 2025 figure is 2,623\n  below 1990's."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**April 2020 is the worst month in the record and nothing else is close.** The county's rate was\n  18.6 per cent, against a previous worst of 12.7 in March 2009."
+            ),
+            support!(
+                "measure/allen-county-unemployment-1990-2026.yml",
+                "**In figures: the county's annual rate was 7.7 per cent in 1990, 4.7 in 2000, 11.4 in 2009, 5.8 in\n  2014, 4.0 in 2019, 8.5 in 2020 and 4.8 in 2025**, and its labour force fell from 52,911 in 2006 to\n  48,288 in 2025."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1990", value: 7.7, literal: "7.7" },
+            Figure { label: "2000", value: 4.7, literal: "4.7" },
+            Figure { label: "2009", value: 11.4, literal: "11.4" },
+            Figure { label: "2014", value: 5.8, literal: "5.8" },
+            Figure { label: "2019", value: 4.0, literal: "4.0" },
+            Figure { label: "2020", value: 8.5, literal: "8.5" },
+            Figure { label: "2025", value: 4.8, literal: "4.8" },
+        ],
+    },
+    Assertion {
+        id: "eleven-years-of-more-jobs-than-workers",
+        statement: "Two programmes that never consult each other \u{2014} employers' insurance filings \
+                    for jobs, a household estimate for workers \u{2014} put more jobs inside Allen \
+                    County than the county has employed residents, in every one of the eleven years \
+                    both cover. The smallest difference is 3,362 and the largest 4,449.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**A third pair of programmes says the same thing for eleven years running.** The county's jobs are\n  counted where they are by the employer's insurance filings and its working residents are counted\n  where they live by a household estimate, and in every year both have covered, the first number is\n  larger than the second."
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**Eleven years, every difference positive, none smaller than 3,362 and none larger than 4,449.**"
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**In figures, the eleven differences: 4,132 in 2014, then 4,344, 3,892, 4,065, 4,449, 3,481,\n  3,673, 3,362, 3,800, 3,895 and 3,970 in 2024.**"
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**The three programmes agree on the sign and not on the size, and the reason is definitional.**\n  For 2022 the pair above puts the net at +3,800 where the table at the head of this node puts it at\n  +5,895."
+            ),
+            support!(
+                "measure/allen-county-commuting-2022.yml",
+                "**The net is small and the gross is enormous, and only the gross is a fact about commuting.**\n  Somewhere between 3,800 and 5,895 more people work here than live-and-work here, on 42,643\n  crossings of the county line in a working day."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2014", value: 4132.0, literal: "4,132" },
+            Figure { label: "2015", value: 4344.0, literal: "4,344" },
+            Figure { label: "2016", value: 3892.0, literal: "3,892" },
+            Figure { label: "2017", value: 4065.0, literal: "4,065" },
+            Figure { label: "2018", value: 4449.0, literal: "4,449" },
+            Figure { label: "2019", value: 3481.0, literal: "3,481" },
+            Figure { label: "2020", value: 3673.0, literal: "3,673" },
+            Figure { label: "2021", value: 3362.0, literal: "3,362" },
+            Figure { label: "2022", value: 3800.0, literal: "3,800" },
+            Figure { label: "2023", value: 3895.0, literal: "3,895" },
+            Figure { label: "2024", value: 3970.0, literal: "3,970" },
+        ],
+    },
+    Assertion {
+        id: "the-democratic-column-lost-a-third-of-itself",
+        statement: "2008 is Allen County's modern high-water mark on both sides \u{2014} its largest \
+                    total vote, its largest Democratic vote, and the only Republican share under \
+                    sixty in the modern run. Over the eight years to 2016 the Democratic vote fell \
+                    6,228, a third of itself, while the total vote fell 4,448 and the Republican \
+                    vote rose 547: the whole of the turnout decline and more came out of one \
+                    column.",
+        topic: "elections",
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**2008 is the modern high-water mark, and it is high on both sides.** It is the largest total\n  vote of the six modern elections at 50,263, the largest Democratic vote at 19,522, and the\n  Republicans' worst share at 59.6 per cent \u{2014} their only showing under sixty in the whole modern\n  run."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The Democratic column lost a third of itself in eight years, and it lost more than turnout\n  did.** From 2008 to 2016 the Democratic vote fell 6,228 \u{2014} 31.9 per cent \u{2014} while the total vote\n  fell 4,448. The Republican vote *rose* by 547 across the same eight years."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The county's Republican share is not a straight line and 2008 is the dip, not the start.** It\n  runs 65.4, 66.1, 59.6, 61.2, 66.5 and 69.0 across the six modern elections: two above\n  sixty-five, a two-election trough, and then a climb past where it began."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**In figures, the Republican share: 65.4 per cent in 2000, 66.1 in 2004, 59.6 in 2008, 61.2 in\n  2012, 66.5 in 2016 and 69.0 in 2020.**"
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The margin in 2020 is the largest in this corpus's whole record of this county, and the\n  largest the other way is 1,354.** R+18,967 in 2020 against Bryan's D+1,354 in 1908. Allen County\n  gave Bryan 55.2 per cent in 1896 and Biden 29.5 per cent in 2020."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2000", value: 65.4, literal: "65.4" },
+            Figure { label: "2004", value: 66.1, literal: "66.1" },
+            Figure { label: "2008", value: 59.6, literal: "59.6" },
+            Figure { label: "2012", value: 61.2, literal: "61.2" },
+            Figure { label: "2016", value: 66.5, literal: "66.5" },
+            Figure { label: "2020", value: 69.0, literal: "69.0" },
+        ],
+    },
+    Assertion {
+        id: "two-compilers-one-canvass-and-one-vote",
+        statement: "Two independent compilations of Ohio's certified county canvass disagree by \
+                    exactly one vote in two of the five elections both cover. In 2008 the two \
+                    errors cancel, so both files report the same total and no arithmetic in either \
+                    can catch it. In 2012 the Secretary of State's own workbook settles it, and \
+                    the compilation that matches the workbook is the volunteer transcription.",
+        topic: "elections",
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**Two compilations of one canvass disagree twice in five elections, each time by one vote.** For\n  2008 the lab gives McCain 29,941 and Obama 19,521 where OpenElections gives 29,940 and 19,522 \u{2014}\n  one vote each way, so both files total 50,263 and no arithmetic in either can catch it. For 2012\n  the lab gives Obama 17,913 against OpenElections' 17,914, and there the totals differ too."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The 2012 disagreement is settled and the lab is wrong.** The Ohio Secretary of State's own\n  final-results workbook, which OpenElections ships beside its transcription, gives Allen County\n  Obama 17,914, Romney 29,502 and a presidential total of 48,236 \u{2014} the transcription exactly."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**The residue is where the two compilations really part.** For 2016 both give Trump 30,487 and\n  Clinton 13,294 and then differ by 79 on everything else, 2,034 against 2,113. That is a\n  disagreement about which write-ins count rather than a transcription error, and it is not read\n  here as one side being wrong."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**2004 rests on one witness and the others on two.** OpenElections has no Ohio general-election\n  file for 2004 at all, so that row has no second reading."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "half-the-run-and-the-hole-is-one-block",
+        statement: "The corpus now holds 21 of the 42 presidential elections from 1856 to 2020 \u{2014} \
+                    exactly half. The 21 it does not hold are 1912, 1916, and then every election \
+                    from 1924 to 1996 without a break, with 1920 sitting inside that block as the \
+                    only year read.",
+        topic: "elections",
+        supports: &[
+            support!(
+                "measure/allen-county-presidential-vote-2000-2016.yml",
+                "**This closes half the run and leaves the other half in one piece.** With these five the corpus\n  holds 21 of the 42 presidential elections from 1856 to 2020. The 21 it does not hold are 1912\n  and 1916, and then every election from 1924 to 1996 without a break \u{2014} a nineteen-election block\n  with 1920 sitting inside it as the only year read."
+            ),
+            support!(
+                "measure/allen-county-presidential-vote-1856-1884.yml",
+                "**The other end of the run is now held too, and the hole between them has a shape.** Five modern\n  elections were read from two compilations of the state canvass, so the corpus holds 21 of the 42\n  presidential elections from 1856 to 2020 \u{2014} exactly half."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "four-catholic-schools-hold-four-fifths",
+        statement: "Ten private schools stand in Allen County and every one of them is in Lima. \
+                    Four Catholic schools hold 880 of their 1,108 pupils \u{2014} four fifths of the \
+                    county's private enrolment inside one church's system \u{2014} and the other six \
+                    hold 228 between them.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "Ten private schools, all of them in Lima, and 1,108 children in them."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Four Catholic schools hold 880 of the 1,108 \u{2014} four fifths of the county's private enrolment in\n  one church's system.** In figures: St Charles 368, Lima Central Catholic 195, St Gerard 184 and\n  St Rose 133. The remaining six are five small evangelical schools and one school for autistic and\n  dyslexic children, listed twice, and they hold 228 between them."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Every private school in this county is in Lima.** Not one of the twelve townships, three\n  villages or the county's second city has one."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Two community schools stand in the county and hold 313 children.** Heir Force Community School\n  with 238 and West Central Learning Academy II with 75, out of the 36 public schools located here."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "St Charles", value: 368.0, literal: "368" },
+            Figure { label: "Lima Central Catholic", value: 195.0, literal: "195" },
+            Figure { label: "St Gerard", value: 184.0, literal: "184" },
+            Figure { label: "St Rose", value: 133.0, literal: "133" },
+            Figure { label: "The other six", value: 228.0, literal: "228" },
+        ],
+    },
+    Assertion {
+        id: "the-private-school-fall-is-in-the-file",
+        statement: "Allen County's recorded private enrolment falls 46.9 per cent between the \
+                    2019\u{2013}20 and 2021\u{2013}22 editions of the federal survey, while Ohio's rises \
+                    5.6 per cent over the same two editions. Three schools leaving the file account \
+                    for 96 per cent of the county's fall, and the seven present in both net 39 \
+                    pupils. The collapse is in the survey's frame, not in the county.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**In figures, the county's recorded private enrolment: 2,338 in 2013\u{2013}14, 1,713 in 2015\u{2013}16, 1,706\n  in 2017\u{2013}18, 2,086 in 2019\u{2013}20 and 1,108 in 2021\u{2013}22.**"
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "[verified] \u{2014} the five public-use files. The fall from 2019\u{2013}20 to 2021\u{2013}22 is 978 pupils and 939 of\n  it \u{2014} 96 per cent \u{2014} is three schools leaving the file: Delphos St John's at 603, Temple Christian\n  School at 237 and Golden Bridge Academy at 99. The seven schools present in both editions net 39."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Over the same two editions Ohio's private enrolment rose.** 145,882 to 154,033, up 5.6 per\n  cent, while this county's fell 46.9 per cent. Statewide, 185 schools leave the file and 215\n  arrive and the churn cancels; in one county nothing cancels."
+            ),
+            support!(
+                "measure/allen-county-private-schools-2013-2021.yml",
+                "**Two schools this county has are not in the newest file at all.** Delphos St John's, at 603 the\n  largest private school ever recorded here, and Temple Christian School in Lima at 237, are absent\n  from Ohio's entire 2021\u{2013}22 return under any spelling."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2013\u{2013}14", value: 2338.0, literal: "2,338" },
+            Figure { label: "2015\u{2013}16", value: 1713.0, literal: "1,713" },
+            Figure { label: "2017\u{2013}18", value: 1706.0, literal: "1,706" },
+            Figure { label: "2019\u{2013}20", value: 2086.0, literal: "2,086" },
+            Figure { label: "2021\u{2013}22", value: 1108.0, literal: "1,108" },
+        ],
+    },
+    Assertion {
+        id: "fifth-worst-in-ohio-for-heart-disease",
+        statement: "Allen County's heart disease death rate rose 17.7 per cent across four \
+                    vintages of one federal measure while Ohio's fell 2.7 per cent. The county \
+                    went from 11.4 per cent above the state to 34.7 per cent above it, and from \
+                    the 21st worst county in Ohio to the 5th worst of 88.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**Allen County is now the fifth worst county in Ohio for heart disease.** [verified] \u{2014}\n  [the 2022\u{2013}2024 vintage](../../catalog/cdc-heart-disease-stroke-county.md), ranked here over\n  Ohio's 88 counties."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The county's rate rose 17.7 per cent across the four while Ohio's\n  fell 2.7 per cent, and the county went from 11.4 per cent above the state to 34.7 per cent\n  above.**"
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**In figures, the county's heart disease rate per 100,000 at ages 35 and over: 415.0 in 2018\u{2013}2020,\n  428.6 in 2019\u{2013}2021, 465.2 in 2021\u{2013}2023 and 488.4 in 2022\u{2013}2024, against Ohio's 372.5, 380.8, 375.6\n  and 362.6.**"
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**Stroke went the other way, and the county is now seventh best in Ohio.** 74.0 per 100,000 in\n  the 2013\u{2013}2015 vintage against 71.3 in 2022\u{2013}2024, while Ohio moved from 78.4 to 91.1 \u{2014} so the\n  county fell from rank 58 of 88 to rank 82."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2018\u{2013}2020", value: 415.0, literal: "415.0" },
+            Figure { label: "2019\u{2013}2021", value: 428.6, literal: "428.6" },
+            Figure { label: "2021\u{2013}2023", value: 465.2, literal: "465.2" },
+            Figure { label: "2022\u{2013}2024", value: 488.4, literal: "488.4" },
+        ],
+    },
+    Assertion {
+        id: "the-improvement-stopped-at-working-age",
+        statement: "Cardiovascular death rates among Allen County residents aged 35 to 64 fell \
+                    29.8 per cent from 1999 to 2010 and then rose 15.3 per cent to 2019. Among \
+                    those 65 and over the same rates fell 35.1 per cent and went on falling. The \
+                    county's old people kept improving and its working-age people stopped \u{2014} and \
+                    so did those of 77 of Ohio's 88 counties.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The improvement stopped at working age, and it stopped in 2010.** For cardiovascular disease\n  among people aged 35 to 64, the programme's own fitted trend is **\u{2212}29.8 per cent from 1999 to\n  2010 and +15.3 per cent from 2010 to 2019**. For the same disease among people 65 and over it is\n  \u{2212}35.1 per cent and then \u{2212}2.8 per cent."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**All heart disease, ages 35 to 64, is the sharpest version of it:** \u{2212}31.3 per cent to 2010, then\n  **+16.6 per cent** \u{2014} a rate of 99.4 per 100,000 in 2010 and 112.4 in 2019, undoing eight of the\n  eleven years of gains."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**That reversal is not this county's own.** Seventy-seven of Ohio's 88 counties show a rising\n  working-age cardiovascular rate from 2010 to 2019, and Allen ranks 22nd of the 88 on the size of\n  the rise and 37th of 88 on the 2019 level."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "35\u{2013}64, 1999\u{2013}2010", value: -29.8, literal: "\u{2212}29.8" },
+            Figure { label: "35\u{2013}64, 2010\u{2013}2019", value: 15.3, literal: "15.3" },
+            Figure { label: "65+, 1999\u{2013}2010", value: -35.1, literal: "\u{2212}35.1" },
+            Figure { label: "65+, 2010\u{2013}2019", value: -2.8, literal: "\u{2212}2.8" },
+        ],
+    },
+    Assertion {
+        id: "middling-on-hearts-worst-fifth-on-strokes",
+        statement: "Measured every five years for twenty, Allen County sits in the middle of \
+                    Ohio for working-age heart disease deaths and in the worst fifth for \
+                    working-age strokes \u{2014} ranks of 38th, 48th, 43rd and 39th against 15th, \
+                    14th, 16th and 16th of 88. Its Black-to-white ratio for those deaths is large \
+                    and ranks in the middle of Ohio, so the county's unusually wide racial gap in \
+                    life expectancy is not a cardiovascular gap.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**Where the county is genuinely unusual is stroke at working age, and it has been for twenty\n  years.** Its rank among Ohio's 88 counties for stroke deaths at ages 35 to 64 was 15th worst in\n  2005, 14th in 2010, 16th in 2015 and 16th in 2019, while its rank for heart disease over the same\n  four years ran 38th, 48th, 43rd and 39th."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The racial gap is large and it is ordinary for Ohio.** Among 35-to-64-year-olds in 2019, Black\n  residents' cardiovascular death rate is 208.2 against 131.1 for white \u{2014} a ratio of 1.59 \u{2014} and for\n  stroke 33.6 against 14.9, a ratio of 2.26."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Black, cardiovascular", value: 208.2, literal: "208.2" },
+            Figure { label: "White, cardiovascular", value: 131.1, literal: "131.1" },
+            Figure { label: "Black, stroke", value: 33.6, literal: "33.6" },
+            Figure { label: "White, stroke", value: 14.9, literal: "14.9" },
+        ],
+    },
+    Assertion {
+        id: "the-county-kept-making-things",
+        statement: "Production is still Allen County's largest occupational group and its most \
+                    concentrated: 5,920 jobs at 2.10 times the national share, against 6,010 at \
+                    1.84 ten years earlier. The jobs held roughly still while the country's fell \
+                    away beneath them, on a county total that moved 0.8 per cent in the decade.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**The county still makes things, and relative to America it makes more of them than it did.**\n  Production occupations are its largest major group at 5,920 and its most concentrated at a\n  location quotient of 2.10 \u{2014} twice the national share of employment. Ten years earlier the count\n  was 6,010 and the quotient 1.84. The jobs held roughly still while the country's fell away\n  beneath them."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Total employment did not move in a decade: 49,260 in 2014 and 49,640 in 2024, a rise of 380 or\n  0.8 per cent.** The median wage went from $31,450 to $46,430, up 47.6 per cent before any\n  allowance for prices."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**In figures, the seven largest major groups in 2024: production 5,920, food preparation 4,970,\n  transportation 4,900, office and administrative support 4,820, healthcare practitioners 4,450,\n  sales 4,170 and management 2,950.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Production", value: 5920.0, literal: "5,920" },
+            Figure { label: "Food preparation", value: 4970.0, literal: "4,970" },
+            Figure { label: "Transportation", value: 4900.0, literal: "4,900" },
+            Figure { label: "Office and admin", value: 4820.0, literal: "4,820" },
+            Figure { label: "Healthcare practitioners", value: 4450.0, literal: "4,450" },
+            Figure { label: "Sales", value: 4170.0, literal: "4,170" },
+            Figure { label: "Management", value: 2950.0, literal: "2,950" },
+        ],
+    },
+    Assertion {
+        id: "the-fingerprint-names-the-landmarks",
+        statement: "Allen County's seven most concentrated occupations are chemical equipment \
+                    operators at 5.58 times the national share, machine tool setters at 5.02, food \
+                    batchmakers at 4.90, computer-controlled tool operators at 3.63, correctional \
+                    officers at 2.98, welders at 2.93 and industrial engineers at 2.61. The first \
+                    is the refinery and the fifth is the state's two prisons: a survey that has \
+                    never heard of either draws them anyway.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**The county's occupational fingerprint names its landmarks.** The seven most concentrated\n  occupations with 200 or more workers are chemical equipment operators at a location quotient of\n  5.58, multiple machine tool setters at 5.02, food batchmakers at 4.90, computer-controlled tool\n  operators at 3.63, correctional officers at 2.98, welders at 2.93 and industrial engineers at\n  2.61."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**The occupations this county is shortest of are the ones the country grew.** Computer and\n  mathematical work has a location quotient of 0.33 on 550 jobs \u{2014} one third the national rate and\n  the lowest of the 22 major groups. Legal is 0.38, farming 0.41 and business and financial\n  operations 0.57."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Sixty people work in farming, fishing and forestry, in a county two thirds covered by farms.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Chemical equipment operators", value: 5.58, literal: "5.58" },
+            Figure { label: "Machine tool setters", value: 5.02, literal: "5.02" },
+            Figure { label: "Food batchmakers", value: 4.9, literal: "4.90" },
+            Figure { label: "CNC tool operators", value: 3.63, literal: "3.63" },
+            Figure { label: "Correctional officers", value: 2.98, literal: "2.98" },
+            Figure { label: "Welders", value: 2.93, literal: "2.93" },
+            Figure { label: "Industrial engineers", value: 2.61, literal: "2.61" },
+        ],
+    },
+    Assertion {
+        id: "the-clerks-went-and-the-warehouse-did-not-arrive",
+        statement: "Read straight off the major groups, Allen County lost 2,520 clerical jobs and \
+                    gained 1,090 in transportation over ten years. But 920 of those people never \
+                    changed jobs: the code they are filed under moved between the two groups in \
+                    the 2018 revision. Repaired, the clerical fall is 1,600 and the warehouse rise \
+                    is 170.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Underneath the flat total, the largest single change is clerical and it is smaller than it\n  looks.** Office and administrative support reads 7,340 in 2014 and 4,820 in 2024, a fall of\n  2,520. But `43-5081 Stock Clerks and Order Fillers`, 920 people here in 2014, was moved by the\n  2018 revision of the occupation codes into transportation and material moving, where it appears\n  as `53-7065 Stockers and Order Fillers` with 1,100."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**Repaired for that one move, the clerical fall is about a quarter and the warehouse rise is\n  not a rise.** On a comparable base office and administrative support goes 6,420 to 4,820, down\n  1,600 or 24.9 per cent, and transportation and material moving goes 4,730 to 4,900, up 170 or\n  3.6 per cent."
+            ),
+            support!(
+                "measure/allen-county-occupations-2014-2024.yml",
+                "**In figures, the two groups as read and as repaired: office and administrative support falls by\n  2,520 as read and by 1,600 repaired; transportation and material moving rises by 1,090 as read\n  and by 170 repaired.**"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Clerical fall, as read", value: 2520.0, literal: "2,520" },
+            Figure { label: "Clerical fall, repaired", value: 1600.0, literal: "1,600" },
+            Figure { label: "Transport rise, as read", value: 1090.0, literal: "1,090" },
+            Figure { label: "Transport rise, repaired", value: 170.0, literal: "170" },
+        ],
+    },
+    // ── Environment ──
+    Assertion {
+        id: "the-county-leads-ohio-in-what-it-releases",
+        statement: "Allen County's facilities reported releasing more listed toxic chemical in \
+                    2024 than those of any other county in Ohio: 9,417,778 pounds, 18.0 per cent \
+                    of the state's total, on 0.85 per cent of its people. Two thirds of it went \
+                    down a deep injection well, a method only one other Ohio county used at all \
+                    that year; set the wells aside and the county is fifth.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**Allen County released more listed toxic chemical in 2024 than any other county in Ohio.**\n  9,417,778 pounds, 18.0 per cent of the state's 52.2 million \u{2014} ahead of Ashtabula's 6.2 million\n  and Cuyahoga's 4.7 million, from 28 and 122 reporting facilities against this county's 17.\n  [verified] \u{2014} same dataset, the whole state for 2024, summed here by county. The county holds\n  0.85 per cent of Ohio's people."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**That first place is made by a disposal method almost nobody else in Ohio uses.** 6.4 million of\n  the 9.4 million went down a deep injection well, and only two counties in the state injected\n  anything at all in 2024 \u{2014} this one and Sandusky. Set the wells aside and Allen is fifth, behind\n  Ashtabula, Gallia, Cuyahoga and Coshocton. [verified] \u{2014} same source, `UNINJ` media codes."
+            ),
+        ],
+        answers: &["cannot say that the fall in reported releases caused"],
+        figures: &[
+            Figure { label: "Allen", value: 9.4, literal: "9.4" },
+            Figure { label: "Ashtabula", value: 6.2, literal: "6.2" },
+            Figure { label: "Cuyahoga", value: 4.7, literal: "4.7" },
+        ],
+    },
+    Assertion {
+        id: "a-fifth-of-the-fall-is-the-list-changing",
+        statement: "Reported toxic releases in Allen County fall 86.5 per cent between 1987 and \
+                    2024. Restricted to the 85 chemicals reportable in every year of the series, \
+                    the fall is 64.2 per cent \u{2014} the difference is one chemical that left the \
+                    list. The air stream needs no such repair: 69.8 per cent raw against 69.9 \
+                    like-for-like.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**The headline fall is 86.5 per cent and the honest one is 64.2.** From 69,836,754 pounds in 1987\n  to 9,417,778 in 2024 on the raw totals; from 25,249,928 to 9,047,255 on the 85 chemicals\n  reportable throughout. The gap is one chemical: ammonium sulfate (solution), 126 million pounds\n  reported here in three years, off the list since 1993. [verified] \u{2014} same source, against the\n  chemical dictionary's `active_date` and `inactive_date`. See\n  [a revision that changes the roll](../../decisions/a-revision-that-changes-the-roll.yml)."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**The air series needs no such repair.** Air releases fall from 9,392,220 pounds to 2,836,097, a\n  drop of 69.8 per cent raw and 69.9 per cent like-for-like \u{2014} the delisted chemicals went almost\n  entirely down the wells, so they never sat in this stream. [verified] \u{2014} same dataset, the `AIR\n  FUG` and `AIR STACK` media codes."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**In figures, the four largest single-year totals and the four smallest**: 69,837 thousand pounds\n  in 1987, 59,213 in 1988, 58,030 in 1989 and 28,715 in 1991; 8,637 in 2023, 9,418 in 2024, 10,228\n  in 2020 and 10,630 in 2022. [inference] \u{2014} read from the table above."
+            ),
+        ],
+        answers: &["cannot say that the fall in reported releases caused"],
+        figures: &[
+            Figure { label: "Fall, as read", value: 86.5, literal: "86.5" },
+            Figure { label: "Fall, like-for-like", value: 64.2, literal: "64.2" },
+            Figure { label: "Fall, air only", value: 69.8, literal: "69.8" },
+        ],
+    },
+    Assertion {
+        id: "what-goes-to-the-air-fell-and-the-wells-did-not",
+        statement: "Carcinogenic releases to the air over Allen County fell 91.7 per cent between \
+                    1987 and 2024. Carcinogenic releases into its injection wells fell 9.9 per \
+                    cent and have been flat for two decades. The air stream also changed hands: \
+                    the nitriles plant was 88.3 per cent of it and a fertiliser works is 87.7 per \
+                    cent of it now.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**What goes into the air fell and what goes down the well did not.** Carcinogenic releases to air\n  fall from 546,216 pounds in 1987 to 45,369 in 2024, down 91.7 per cent. Carcinogenic releases to\n  injection wells go from 2,160,000 to 1,947,066, down 9.9 per cent, and average 2.59 million a\n  year over the first decade against 2.08 million over the last. [verified] \u{2014} same dataset,\n  `carc_ind` in the chemical dictionary."
+            ),
+            support!(
+                "measure/allen-county-toxic-releases-1987-2024.yml",
+                "**The air stream changed hands.** In 1987 the nitriles plant put 8,295,100 pounds into the air,\n  88.3 per cent of the county's total; in 2024 it put out 77,227. The largest air emitter now is\n  PCS Nitrogen at 2,485,957 pounds, 87.7 per cent of a much smaller total, and almost all of it\n  ammonia. One plant cut its air releases by ninety-nine per cent and a fertiliser works became the\n  county's chimney. [verified] \u{2014} same source, by facility."
+            ),
+        ],
+        answers: &["cannot say that the fall in reported releases caused"],
+        figures: &[
+            Figure { label: "Carcinogens to air, fall", value: 91.7, literal: "91.7" },
+            Figure { label: "Carcinogens to wells, fall", value: 9.9, literal: "9.9" },
+        ],
+    },
+    Assertion {
+        id: "what-ended-was-the-bad-day",
+        statement: "Allen County's median air-quality day is where it was in 1987 \u{2014} AQI 44 \
+                    then, 42 now. Its 90th percentile went from 112 to 58, and days unhealthy for \
+                    sensitive groups from 41 in 1998 to none in four of the last six years. What \
+                    improved over forty-five years of measurement was the bad day, not the \
+                    ordinary one.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-air-quality-1980-2024.yml",
+                "**The improvement is large and it is in the tail, not the middle.** The median day was AQI 44 in\n  1987 and 42 in 2024, which is barely a change. The 90th percentile went from 112 to 58, and days\n  at unhealthy for sensitive groups or worse from 32 to none. What ended was the bad day.\n  [verified] \u{2014} same file, `Median AQI` and `90th Percentile AQI`."
+            ),
+            support!(
+                "measure/allen-county-air-quality-1980-2024.yml",
+                "**Nineteen ninety-eight was the worst year in the record and 41 of its days were unhealthy for\n  somebody.** 17.3 per cent of the days monitored \u{2014} against 15.5 per cent in 1991, 16.4 in 1994 and\n  15.1 in both 1987 and 2002. No year since 2012 has passed 2.5 per cent. [verified] \u{2014} same source,\n  the share column above."
+            ),
+            support!(
+                "measure/allen-county-air-quality-1980-2024.yml",
+                "**In figures, the 90th-percentile AQI at five points in the record: 100 in 1990, 74 in 2000, 83\n  in 2010, 61 in 2019 and 58 in 2024.** [verified] \u{2014} read from the table above, same file."
+            ),
+        ],
+        answers: &["does not know what happened that"],
+        figures: &[
+            Figure { label: "1990", value: 100.0, literal: "100" },
+            Figure { label: "2000", value: 74.0, literal: "74" },
+            Figure { label: "2010", value: 83.0, literal: "83" },
+            Figure { label: "2019", value: 61.0, literal: "61" },
+            Figure { label: "2024", value: 58.0, literal: "58" },
+        ],
+    },
+    // ── The property tax ──
+    Assertion {
+        id: "what-a-mill-is-worth-here",
+        statement: "One mill on Allen County's taxable property raises $2,451,332. The base is \
+                    $2,451,331,690 in the newest audited report, up 31.6 per cent since the 2010 \
+                    report, and 62.7 per cent of it is residential property. Agricultural value \
+                    went the other way, down 24.2 per cent since 2015.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**The county's taxable base was $2,451,331,690 in the newest audited report, and one mill on it\n  raises $2,451,332.** [verified] \u{2014}\n  [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the\n  *Property Taxes* note in the report for the year ended 31 December 2023."
+            ),
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**Residential property is 62.7 per cent of what this county taxes.** $1,537,113,750 of\n  $2,451,331,690 in the 2023 report, against $474,900,790 commercial, industrial and mineral,\n  $257,374,000 public utility and $181,943,150 agricultural. [verified] \u{2014} same source. In every year\n  that prints the five classes, they sum to the printed total exactly."
+            ),
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**Agricultural value fell by a quarter while everything else rose.** From $240,015,570 in the 2015\n  report to $181,943,150 in the 2023 report, down 24.2 per cent, in the same years residential rose\n  33.7 per cent. Agricultural land here is taxed on what it yields rather than what it would sell\n  for, under the current agricultural use valuation the Auditor administers. [verified] \u{2014} same\n  source; see [the Auditor](../office/allen-county-auditor.yml)."
+            ),
+            support!(
+                "measure/allen-county-assessed-valuation-2010-2023.yml",
+                "**In figures, the total assessed base at four reports: $1,862.8 million in 2010, $1,941.9 million\n  in 2015, $2,153.9 million in 2021 and $2,451.3 million in 2023.** [verified] \u{2014} read from the table\n  above, same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2010", value: 1862.8, literal: "1,862.8" },
+            Figure { label: "2015", value: 1941.9, literal: "1,941.9" },
+            Figure { label: "2021", value: 2153.9, literal: "2,153.9" },
+            Figure { label: "2023", value: 2451.3, literal: "2,451.3" },
+        ],
+    },
+    Assertion {
+        id: "the-column-changed-and-the-rate-did-not",
+        statement: "The county column in Allen County's tax rate summaries reads 6.150 mills \
+                    through tax year 2015 and 11.400 from 2016, and nothing was levied: five mills \
+                    moved out of the neighbouring column when the report changed layout. What the \
+                    county actually charged went $8.70, $9.70, $11.40 \u{2014} a third, not four \
+                    fifths.",
+        topic: "government",
+        supports: &[
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**The county column is not a series.** It reads 6.150 in every tax set from 2012 through 2015 and\n  11.400 in every tax set from 2016, and across that boundary the total full rate of the\n  thirty-six districts present in both years moves by between \u{2212}1.710 and +0.700 mills, mean \u{2212}0.332.\n  Five mills moved out of *Library/Other* and into *County* when the report changed layout.\n  [verified] \u{2014} same files, differenced by tax set. See\n  [a rule written for a classification caught a layout](../../decisions/a-rule-written-for-a-classification-caught-a-layout.yml)."
+            ),
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**What the county actually charges is in a different document, and it rose by a third.** The\n  audited statements put the full rate for all county operations at $8.70 per $1,000 for the reports\n  of 2010 to 2013, $9.70 for 2014 and 2015, and $11.40 from 2017 to 2023. [verified] \u{2014}\n  [the audited financial statements](../../catalog/allen-county-auditor-financials.md), the\n  *Property Taxes* note in each; see\n  [the tax base](allen-county-assessed-valuation-2010-2023.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Column, to 2015", value: 6.15, literal: "6.150" },
+            Figure { label: "Column, from 2016", value: 11.4, literal: "11.400" },
+            Figure { label: "Audited, to 2013", value: 8.7, literal: "8.70" },
+            Figure { label: "Audited, 2014\u{2013}15", value: 9.7, literal: "9.70" },
+            Figure { label: "Audited, from 2017", value: 11.4, literal: "11.40" },
+        ],
+    },
+    Assertion {
+        id: "the-school-district-is-the-tax-bill",
+        statement: "School millage is between 50.1 and 73.2 per cent of the full tax rate in every \
+                    one of Allen County's thirty-six taxing districts. And the district that votes \
+                    most is not the one that pays most: Delphos City S.D. votes 70.250 mills and \
+                    collects 34.460, where Bath votes 51.497 and collects 44.322.",
+        topic: "schools",
+        supports: &[
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**The school district is most of the bill everywhere.** Local school plus joint vocational millage\n  is between 50.1 and 73.2 per cent of the full rate in every one of the thirty-six districts.\n  [inference] \u{2014} computed here from the 2025 table."
+            ),
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**The highest and lowest bills are not the highest and lowest votes.** In 2025 Shawnee L35 has\n  both the highest full rate at 71.974 and the highest effective rate at 54.233. But Delphos City\n  S.D. votes 70.250 mills and collects 34.460, half of it reduced away, while Bath L.S.D. votes\n  51.497 and collects 44.322. The lowest effective rate in the county is Pandora-Gilboa's 30.562 on\n  a full rate of 52.750. [verified] \u{2014} same source."
+            ),
+            support!(
+                "measure/allen-county-property-tax-rates-2012-2025.yml",
+                "**In figures, the 2025 effective residential rates at four points: 54.233 in Shawnee L35, 44.322\n  in Bath, 34.460 in Delphos City S.D. and 30.562 in Pandora-Gilboa.** [verified] \u{2014} read from the\n  table below, same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Shawnee L35", value: 54.233, literal: "54.233" },
+            Figure { label: "Bath", value: 44.322, literal: "44.322" },
+            Figure { label: "Delphos City", value: 34.46, literal: "34.460" },
+            Figure { label: "Pandora-Gilboa", value: 30.562, literal: "30.562" },
+        ],
+    },
+    Assertion {
+        id: "the-village-stopped-levying-and-the-township-took-it",
+        statement: "Allen County's tax rate summary for 2012 has the Village of Fort Shawnee \
+                    levying 2.150 mills and its residents paying 10.200 mills of township tax \
+                    against their neighbours' 15.600. The 2013 file has no such district, and when \
+                    the label returns it charges the full township rate. A county office and a \
+                    federal map end the village in the same twelve months.",
+        topic: "government",
+        supports: &[
+            support!(
+                "question/what-happened-to-the-village-of-fort-shawnee.yml",
+                "**A county taxing authority puts the change in the same year, and it is not a federal product.**\n  The Auditor's tax rate summary for tax year 2012 carries tax set L36, *Fort Shawnee Corp.*, levying\n  2.150 mills of village tax, and charging its residents 10.200 mills of township tax where the rest\n  of Shawnee Township pays 15.600. The tax year 2013 summary has no such set. In 2014 and 2015 the\n  set reappears with no village millage and a township rate of 15.600 \u{2014} identical to the township's\n  own set in every one of its columns and to the third decimal \u{2014} and from tax year 2016 it is gone.\n  [verified] \u{2014}\n  [the Auditor's tax rate summaries](../../catalog/allen-county-auditor-tax-rates.md), tax sets L35\n  and L36; see [the rates](../measure/allen-county-property-tax-rates-2012-2025.yml)."
+            ),
+            support!(
+                "question/what-happened-to-the-village-of-fort-shawnee.yml",
+                "**That is a second witness to the year and a first witness that is local.** The gazetteer draws\n  Fort Shawnee as a village in 2012 and as a census designated place in 2013; the office that sets\n  this county's tax rates has it levying in 2012 and not in 2013. Two instruments with nothing in\n  common \u{2014} a federal geography file and a county taxing authority \u{2014} put the end of the corporation\n  in the same twelve months. [inference] \u{2014} the reasoning is this corpus's."
+            ),
+            support!(
+                "question/what-happened-to-the-village-of-fort-shawnee.yml",
+                "**The tax set outliving the levy is the sharper detail.** A village that had merely stopped\n  levying would keep a lower township rate, because a village's residents are outside some township\n  levies; L36's township rate rises to the full 15.600 in the same move. The set that survives into\n  2014 and 2015 is a label on rows identical to the township's, which is what an administrative\n  record looks like after the thing it names has gone. [inference]"
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Village tax, 2012", value: 2.15, literal: "2.150" },
+            Figure { label: "Township tax, 2012", value: 10.2, literal: "10.200" },
+            Figure { label: "Township tax, 2014", value: 15.6, literal: "15.600" },
+        ],
+    },
+    // ── Cancer ──
+    Assertion {
+        id: "cancer-is-the-ordinary-half",
+        statement: "Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 \
+                    against Ohio's 160.3 and America's 145.4, and the rate is falling. The county \
+                    ranks 62nd of Ohio's 88 counties \u{2014} the lower middle \u{2014} where for \
+                    heart disease it is fifth at 1.35 times the state rate.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 against Ohio's 160.3\n  and America's 145.4 \u{2014} and the rate is falling.** [verified] \u{2014}\n  [State Cancer Profiles](../../catalog/nci-state-cancer-profiles.md), all sites, both sexes,\n  age-adjusted deaths 2019\u{2013}2023."
+            ),
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**This is not what the county dies of unusually.** Its all-sites cancer death rate is within a\n  point of Ohio's and it ranks 62nd of the state's 88 counties \u{2014} the lower middle. Set against the\n  same corpus's finding that this county is fifth of 88 for heart disease at 1.35 times the state\n  rate, cancer is the ordinary half of its mortality. [inference] \u{2014} computed here against\n  [heart disease and stroke](allen-county-heart-disease-and-stroke-1999-2024.yml)."
+            ),
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**In figures, the four sites the county loses most people to each year: lung and bronchus 59,\n  pancreas 19, colon and rectum 16 and breast 12.** [verified] \u{2014} read from the table above, same\n  source."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[
+            Figure { label: "Lung and bronchus", value: 59.0, literal: "59" },
+            Figure { label: "Pancreas", value: 19.0, literal: "19" },
+            Figure { label: "Colon and rectum", value: 16.0, literal: "16" },
+            Figure { label: "Breast", value: 12.0, literal: "12" },
+        ],
+    },
+    Assertion {
+        id: "the-cancer-burden-is-a-mens-burden",
+        statement: "Allen County men die of cancer at 201.9 per 100,000, above Ohio's 192.3 and 18 \
+                    per cent above America's 171.5. Its women die at 129.6, below Ohio's 137.4. \
+                    124 of the county's 220 annual cancer deaths are men's, and the sites it \
+                    exceeds the nation on are lung, oesophagus and pancreas.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**The burden is a men's burden.** Allen County men die of cancer at 201.9 per 100,000 against\n  Ohio's 192.3 and America's 171.5 \u{2014} 18 per cent above the national rate, and 43rd of 88. Its women\n  die at 129.6 against Ohio's 137.4 and America's 126.3, below the state and 74th of 88. [verified]\n  \u{2014} same source, sex-specific all-sites rates. 124 of the county's 220 annual cancer deaths are\n  men's."
+            ),
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**The sites the county exceeds the nation on are few and they are alike.** Lung and bronchus at\n  41.7 against 31.5, oesophagus at 5.6 against 3.7, pancreas at 13.7 against 11.3 \u{2014} the three\n  largest excesses over the national rate. It is *below* the nation on colon and rectum, breast,\n  liver and leukemia, and below Ohio on nine of the fifteen sites it has a published rate for.\n  [inference] \u{2014} computed here from the table above."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[
+            Figure { label: "Allen men", value: 201.9, literal: "201.9" },
+            Figure { label: "Ohio men", value: 192.3, literal: "192.3" },
+            Figure { label: "Allen women", value: 129.6, literal: "129.6" },
+            Figure { label: "Ohio women", value: 137.4, literal: "137.4" },
+        ],
+    },
+    Assertion {
+        id: "a-county-rank-comes-with-an-interval",
+        statement: "Allen County's cancer death rank of 62nd out of 88 carries a 95 per cent \
+                    interval of 29th to 80th, and its pancreas rank of 16th an interval of 2nd to \
+                    73rd. On nineteen deaths a year a rank is barely a statement, and this corpus \
+                    has published ranks it computed itself with no interval at all.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**The rank carries an interval and it is wide.** 62nd of 88 has a 95 per cent interval of 29th to\n  80th; the pancreas rank of 16th has an interval of 2nd to 73rd. On nineteen deaths a year a rank\n  is barely a statement. [verified] \u{2014} same source, the `CI*Rank` columns. See\n  [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml)."
+            ),
+            support!(
+                "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
+                "**The ratio is the firmer half of that sentence and the rank is the softer.** 1.347 times the\n  state rate rests on two estimates; fifth of 88 rests on eighty-eight of them, sorted, with no\n  interval carried into the sort \u{2014} and a source that does publish rank intervals puts a comparable\n  county rank's 95 per cent bounds tens of places wide. The rank here is a point estimate of a rank\n  and is not withdrawn; it is stated as one. [inference] \u{2014} see\n  [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml) and\n  [cancer](allen-county-cancer-2018-2023.yml)."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[],
+    },
+    Assertion {
+        id: "cancer-is-not-where-the-racial-gap-lives",
+        statement: "Black residents of Allen County die of cancer at 169.1 per 100,000 and white \
+                    residents at 160.8 \u{2014} a gap of 8.3 points, where Ohio's is 11.6 and the \
+                    nation's 15.3. The county's life-expectancy gap by race is the widest of the \
+                    three, so whatever makes it wide, cancer is not it.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-cancer-2018-2023.yml",
+                "**Cancer is not where this county's racial mortality gap lives.** Its Black residents die of\n  cancer at 169.1 per 100,000 and its white residents at 160.8, a gap of 8.3 points; in Ohio the\n  same gap is 11.6 and nationally 15.3. Both of this county's figures are below Ohio's for the same\n  group. [verified] \u{2014} same source, non-Hispanic race categories. The corpus separately holds a\n  life-expectancy gap of 6.91 years here against 5.48 in Ohio and 5.08 nationally \u{2014} the widest of\n  the three \u{2014} so whatever makes that gap unusually wide, it is not this. [inference] \u{2014} against\n  [what the county dies of early](allen-county-early-deaths-by-cause-2020-2022.yml)."
+            ),
+        ],
+        answers: &["does not assert one"],
+        figures: &[
+            Figure { label: "Allen County", value: 8.3, literal: "8.3" },
+            Figure { label: "Ohio", value: 11.6, literal: "11.6" },
+            Figure { label: "United States", value: 15.3, literal: "15.3" },
+        ],
+    },
+    // ── The ground itself ──
+    Assertion {
+        id: "what-the-farmland-became",
+        statement: "Seventy per cent of Allen County is cropland and pasture, 17.8 per cent is \
+                    developed and 10.4 per cent is forest. The county was 92.5 per cent farmland in \
+                    1910; what the missing third became is built ground and woodland, in that \
+                    order, and there is more than twice as much of the first.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Seventy per cent of Allen County is cropland and pasture, eighteen per cent is developed and\n  ten per cent is forest.** [verified] \u{2014}\n  [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), 2024, every thirty-metre pixel in\n  the county classified and counted."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**The corpus knew the county was 92.5 per cent farmland in 1910 and 69.4 per cent in 2022, and\n  had nothing that said what the other thirty per cent had become.** It is developed ground and\n  woodland, in that order, and there is more than twice as much of the first as of the second.\n  [inference] \u{2014} computed here against\n  [land in farms](allen-county-farmland-1910-2022.yml); see\n  [the question](../question/when-the-farmland-went.yml)."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Two instruments land within a point of each other on how much of the county is farmed.** This\n  file puts crops and pasture at 70.3 per cent in 2024; the Census of Agriculture puts land in farms\n  at 69.4 per cent in 2022. One counts pixels of growing things and the other counts acres a farm\n  operator says they operate, so they are not the same quantity, and they agree anyway. [inference]\n  \u{2014} computed here against\n  [the census of agriculture](../../catalog/usda-census-of-agriculture.md)."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**In figures, the county's ground in 2024: 183,047 acres of crops and pasture, 46,307 developed,\n  27,037 forest and 3,076 water.** [verified] \u{2014} read from the table above, same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Crops and pasture", value: 183047.0, literal: "183,047" },
+            Figure { label: "Developed", value: 46307.0, literal: "46,307" },
+            Figure { label: "Forest", value: 27037.0, literal: "27,037" },
+            Figure { label: "Water", value: 3076.0, literal: "3,076" },
+        ],
+    },
+    Assertion {
+        id: "the-spring-the-county-was-not-planted",
+        statement: "In 2019 one acre in five of Allen County's cropland was classified fallow \
+                    \u{2014} 37,726 acres against a median of 55 \u{2014} with corn 25,865 acres \
+                    below its neighbouring years. April to June that year brought 19.21 inches of \
+                    rain against a long-run mean of 11.09, the third wettest planting season in a \
+                    hundred and thirty-one.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**In 2019 one acre in five of this county's cropland was not planted.** `Fallow/Idle Cropland`\n  holds 37,726 acres, against a median of 55 across the other sixteen years and a maximum elsewhere\n  of 999. Corn fell 25,865 acres below the mean of the years either side and soybeans 7,854.\n  [verified] \u{2014} same source."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**The county's own rain record puts that year third wettest in a hundred and thirty-one.** April\n  to June 2019 brought 19.21 inches against a long-run mean of 11.09 \u{2014} behind only 2015 and 1957 \u{2014}\n  and May alone brought 7.38, the third wettest May of the record. [verified] \u{2014}\n  [NOAA nClimDiv](../../catalog/noaa-nclimdiv-county.md), county precipitation, ranked here over the\n  131 complete years; see [the precipitation record](allen-county-precipitation-1895-2025.yml)."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Two instruments with nothing in common say the same thing about one spring.** A satellite\n  classifier that has never heard of a weather station, and a gridded rain record that has never\n  seen a field, put the unplanted ground and the rain in the same twelve months. [inference] \u{2014}\n  the reasoning is this corpus's. Neither file records a farmer's decision, and the step from\n  *wet* to *not planted* is not in either of them."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Acres fallow, 2019", value: 37726.0, literal: "37,726" },
+            Figure { label: "Corn shortfall", value: 25865.0, literal: "25,865" },
+            Figure { label: "Soybean shortfall", value: 7854.0, literal: "7,854" },
+        ],
+    },
+    Assertion {
+        id: "half-a-file-can-be-differenced",
+        statement: "The same file that catches 2019 to the acre cannot measure development. Its \
+                    developed class ranges over 3,226 acres in seventeen years and fits at minus \
+                    thirty-five acres a year, in a county that annexed fifty-seven times between \
+                    1990 and 2024. One file, two classes, two epistemic statuses, and nothing in \
+                    the file says which is which.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**The crop columns of that table may be differenced and the last two may not.** Developed ground\n  ranges over 3,226 acres across the seventeen years \u{2014} 6.9 per cent of the class \u{2014} and its fitted\n  slope is **minus 35 acres a year**, in a county that recorded fifty-seven annexations between 1990\n  and 2024 and builds two hundred-odd houses a year. Forest ranges over 21 per cent of itself and\n  fits at plus 253. Those two columns are the classifier re-deciding, not the ground changing.\n  [verified] \u{2014} same source, computed here; see\n  [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml) and\n  [the annexations](allen-county-annexations-1990-2024.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "soybeans-never-lost-the-lead",
+        statement: "Soybeans have been Allen County's larger crop in every one of the seventeen \
+                    years the pixels have been counted, never once reaching parity with corn. \
+                    Winter wheat, meanwhile, lost two thirds of its ground between 2009 and 2012 \
+                    and has not come back.",
+        topic: "land",
+        supports: &[
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Soybeans have been the larger crop in every one of the seventeen years.** The ratio of corn to\n  soybean acreage runs between 0.63 and 0.90 and never reaches parity; the widest gap is 2017, with\n  97,740 acres of soybeans against 61,171 of corn. [verified] \u{2014} same source, computed here."
+            ),
+            support!(
+                "measure/allen-county-land-cover-2008-2024.yml",
+                "**Winter wheat lost two thirds of its ground in four years and never came back.** 21,483 acres in\n  2008, 25,210 in 2009, then 15,003, 17,196 and 6,688 in 2012; the highest of the twelve years since\n  is 10,348. [verified] \u{2014} same source."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2008", value: 21483.0, literal: "21,483" },
+            Figure { label: "2009", value: 25210.0, literal: "25,210" },
+            Figure { label: "2010", value: 15003.0, literal: "15,003" },
+            Figure { label: "2011", value: 17196.0, literal: "17,196" },
+            Figure { label: "2012", value: 6688.0, literal: "6,688" },
+        ],
+    },
+    // ── Proprietors ──
+    Assertion {
+        id: "one-job-in-five-is-nobodys-payroll",
+        statement: "Allen County had 11,964 proprietors against 52,274 wage and salary jobs in \
+                    2022 \u{2014} 18.6 per cent of all employment, the highest in fifty-four years of \
+                    record. The share ran between 12.0 and 14.9 per cent for the whole of the \
+                    1969\u{2013}2000 series and has not stopped rising since 2001.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**Nearly one job in five in Allen County belongs to somebody working for themselves, and that has\n  never been true before in fifty-four years of record.** 11,964 proprietors against 52,274 wage and\n  salary jobs in 2022 \u{2014} 18.6 per cent of all employment, the highest figure in the series.\n  [verified] \u{2014} [BEA Regional Economic Accounts](../../catalog/bea-county-employment.md), CAEMP25S\n  for 1969\u{2013}2000 and CAEMP25N for 2001\u{2013}2022, lines 10, 20, 40, 50 and 60."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**In figures, the proprietor share of all employment at six points: 12.1 per cent in 1969, 13.8 in\n  1980, 12.4 in 1990, 14.0 in 2000, 16.8 in 2010 and 18.6 in 2022.** [inference] \u{2014} computed here\n  from the table above."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1969", value: 12.1, literal: "12.1" },
+            Figure { label: "1980", value: 13.8, literal: "13.8" },
+            Figure { label: "1990", value: 12.4, literal: "12.4" },
+            Figure { label: "2000", value: 14.0, literal: "14.0" },
+            Figure { label: "2010", value: 16.8, literal: "16.8" },
+            Figure { label: "2022", value: 18.6, literal: "18.6" },
+        ],
+    },
+    Assertion {
+        id: "every-job-lost-since-2001-is-a-payroll-job",
+        statement: "Allen County's payroll employment fell 8,061 between 2001 and 2022 while its \
+                    proprietors rose 2,474, so total employment fell 5,587. For thirty-one years \
+                    before that the two grew together \u{2014} payroll up 26.3 per cent, proprietors \
+                    up 48.9. The county's job loss is entirely on the payroll side.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**The two halves of the county's workforce moved together for thirty-one years and then parted.**\n  Between 1969 and 2000 payroll jobs rose 26.3 per cent and proprietors 48.9 per cent, both growing.\n  Between 2001 and 2022 payroll jobs fell 13.4 per cent and proprietors rose 26.1. [inference] \u{2014}\n  computed here within each segment."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**Every job this county has lost since 2001 is a payroll job.** Wage and salary employment went\n  from 60,335 to 52,274, a loss of 8,061; total employment fell 5,587 over the same years, because\n  proprietors added 2,474. [inference] \u{2014} computed here from the NAICS segment."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**The proprietor share is at its record in the newest year and rose fastest in the three before\n  it.** It ran between 12.0 and 14.9 per cent for the whole SIC segment, and from 13.6 per cent in\n  2001 to 18.6 in 2022. The rise from 9,946 in 2019 to 11,964 in 2022 is **+2,018, or 20.3 per\n  cent** \u{2014} the largest three-year rise in either segment of the record. [verified] \u{2014} same source,\n  computed here."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Payroll jobs lost", value: 8061.0, literal: "8,061" },
+            Figure { label: "Proprietors gained", value: 2474.0, literal: "2,474" },
+            Figure { label: "Net jobs lost", value: 5587.0, literal: "5,587" },
+        ],
+    },
+    Assertion {
+        id: "the-farm-proprietors-halved",
+        statement: "Allen County had 1,668 farm proprietors in 1969 and 802 in 2022. The fall runs \
+                    through both halves of a series broken by a classification change and across \
+                    the join itself, which is what a real trend looks like when the counting \
+                    changes underneath it. Every net proprietor the county has gained is a nonfarm \
+                    one.",
+        topic: "work",
+        supports: &[
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**Farm proprietors have more than halved and the fall is the one thing spanning the break.**\n  1,668 in 1969, 1,401 in 1980, 1,266 in 1990, 1,060 in 2000, 1,013 in 2001, 812 in 2010 and 802 in\n  2022. It falls in the SIC segment and in the NAICS segment and across the join, which is what a\n  real trend looks like when a classification changes underneath it. [verified] \u{2014} same source."
+            ),
+            support!(
+                "measure/allen-county-proprietors-1969-2022.yml",
+                "**It answers a question the occupational survey left open.** That survey found sixty people in\n  farming, fishing and forestry occupations in a county two thirds covered by farms, and said the\n  reason was that it counts no self-employed person. This file counts 802 farm proprietors and 946\n  farm jobs of all kinds in the same county in 2022. [verified] \u{2014} same source, lines 50 and 70; see\n  [the occupational survey](allen-county-occupations-2014-2024.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "1969", value: 1668.0, literal: "1,668" },
+            Figure { label: "1980", value: 1401.0, literal: "1,401" },
+            Figure { label: "1990", value: 1266.0, literal: "1,266" },
+            Figure { label: "2000", value: 1060.0, literal: "1,060" },
+            Figure { label: "2010", value: 812.0, literal: "812" },
+            Figure { label: "2022", value: 802.0, literal: "802" },
+        ],
+    },
+    Assertion {
+        id: "one-renter-household-in-six",
+        statement: "One renter household in six in Allen County has a federal subsidy attached to \
+                    it — 2,251 subsidized units against 12,968 renter households. Inside Lima it is \
+                    one in four; outside Lima it is one in seventeen.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**One renter household in six in this county has a federal subsidy attached to it.** 2,251\n  subsidized units against 12,968 renter-occupied households \u{2014} 17.4 per cent. [inference] \u{2014}\n  computed here against table B25003 of the\n  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates,\n  which gives Allen County 40,928 occupied units of which 27,960 are owner-occupied."
+            ),
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**Inside Lima it is one renter household in four; outside Lima it is one in seventeen.** 1,938\n  subsidized units against Lima's 7,500 renter households is 25.8 per cent; 313 against the other\n  5,468 is 5.7 per cent. [inference] \u{2014} the place file against table B25003, which gives Lima 13,985\n  occupied units of which 6,485 are owner-occupied."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima", value: 25.8, literal: "25.8" },
+            Figure { label: "Allen County", value: 17.4, literal: "17.4" },
+            Figure { label: "outside Lima", value: 5.7, literal: "5.7" },
+        ],
+    },
+    Assertion {
+        id: "more-subsidized-housing-than-the-five-around-it",
+        statement: "Allen County holds more subsidized housing than Hancock, Hardin, Auglaize, Van \
+                    Wert and Putnam together — 2,251 units against 1,733 — and all of the excess is \
+                    Lima. Outside the city the county sits where its neighbours do.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**Allen County holds more subsidized housing than the five counties around it put together.**\n  2,251 units against 1,733, on less than half their people. [verified] \u{2014}\n  [the county file](../../catalog/hud-picture-of-subsidized-households.md), 2025 edition."
+            ),
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**And the comparison is about the city, not the county.** Allen's 22.3 per thousand is eighteenth\n  of Ohio's eighty-eight counties. Lima's own rate is 55.9 \u{2014} higher than any county in the state,\n  Cuyahoga's 31.4 included \u{2014} and the rest of Allen County's is 4.7, which would place it\n  seventy-eighth, between Union and Geauga and beside the rural neighbours it looks like.\n  [inference] \u{2014} computed here from the same two files. The range inside this one county, 51.1, is\n  larger than the range across the whole state, 30.5. See\n  [a county rate can describe nowhere](../../decisions/a-county-rate-can-describe-nowhere.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima", value: 55.9, literal: "55.9" },
+            Figure { label: "Allen County", value: 22.3, literal: "22.3" },
+            Figure { label: "outside Lima", value: 4.7, literal: "4.7" },
+        ],
+    },
+    Assertion {
+        id: "the-same-homes-hold-fewer-people",
+        statement: "Allen County's stock of subsidized homes has barely moved in seventeen years — \
+                    2,401 units in 2009 and 2,251 now — while the number of people living in them \
+                    fell from 4,801 to 4,266. The households got older and had fewer children.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "Units fell 6.2 per cent across the seventeen years and never left the band 2,173 to 2,401. People\n  fell 11.1 per cent, from 4,801 to 4,266. [inference] \u{2014} arithmetic this corpus's, on the table\n  above. **The same number of subsidized homes now hold five hundred and thirty-five fewer people.**"
+            ),
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**The households in them are older and have fewer children.** The share aged 62 or over was 21 per\n  cent in 2016 and is 32 now; the share that is a woman with children fell from 47 per cent in 2008\n  to 36. [verified] \u{2014} the same files. That is where the missing five hundred are: an elderly\n  household is smaller than a family, and the stock did not shrink, its occupants changed."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "subsidized units", value: 6.2, literal: "6.2" },
+            Figure { label: "people in them", value: 11.1, literal: "11.1" },
+        ],
+    },
+    Assertion {
+        id: "renters-carry-what-owners-do-not",
+        statement: "In Allen County a renter is two and a half times as likely as an owner to be \
+                    paying more than thirty per cent of income for housing, and more than three \
+                    times as likely to be paying more than half.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**A renter in this county is two and a half times as likely as an owner to be paying more than thirty per cent of income for housing**, 35.7 per cent against 14.2, and more than three times as likely to be paying more than half, 17.4 per cent against 5.3."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "renters over 30%", value: 35.7, literal: "35.7" },
+            Figure { label: "owners over 30%", value: 14.2, literal: "14.2" },
+            Figure { label: "renters over 50%", value: 17.4, literal: "17.4" },
+            Figure { label: "owners over 50%", value: 5.3, literal: "5.3" },
+        ],
+    },
+    Assertion {
+        id: "the-burden-is-all-at-the-bottom",
+        statement: "This county's housing cost problem is almost entirely a problem of its poorest \
+                    households. Of those living on less than 30 per cent of area median income, \
+                    61.9 per cent pay more than half of it for housing; above 80 per cent of area \
+                    median the burden is close to absent.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-housing-cost-burden-2006-2022.yml",
+                "**The burden is almost entirely at the bottom of the income scale**, and above the area median it is close to absent. Of the 4,060 households living on less than 30 per cent of area median income, 2,515 pay more than half of it for housing \u{2014} 61.9 per cent. Of the 23,700 households above 80 per cent of the area median, 680 pay more than 30 per cent of income, which is 2.9 per cent of them."
+            ),
+            support!(
+                "measure/allen-county-housing-cost-burden-2006-2022.yml",
+                "1,600 of the county's 2,540 renter households below 30 per cent of area median income pay more than half of that income for shelter, which is 63.0 per cent of them; among owners in the same income band it is 915 of 1,520, or 60.2."
+            ),
+        ],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "all households under 30% of area median", value: 61.9, literal: "61.9" },
+            Figure { label: "renters under 30%", value: 63.0, literal: "63.0" },
+            Figure { label: "owners under 30%", value: 60.2, literal: "60.2" },
+        ],
+    },
+    Assertion {
+        id: "the-county-moved-and-the-country-did-not",
+        statement: "Allen County's renters were as likely to be cost-burdened as the nation's \
+                    through two five-year windows. By 2018\u{2013}2022 they were 8.7 points less \
+                    likely, on a margin of 3.7 points.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**Against the country, this county has moved and the country has not.** The county's four windows read 44.2, 45.9, 40.5 and 35.7 per cent and the nation's read 45.0, 45.8, 43.9 and 44.4. In the two earliest windows Allen County's renters were as likely to be cost-burdened as the nation's; in the most recent they are 8.7 points less likely, and the county's own margin on that rate is 3.7 points."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "Allen 2006\u{2013}2010", value: 44.2, literal: "44.2" },
+            Figure { label: "Allen 2011\u{2013}2015", value: 45.9, literal: "45.9" },
+            Figure { label: "Allen 2015\u{2013}2019", value: 40.5, literal: "40.5" },
+            Figure { label: "Allen 2018\u{2013}2022", value: 35.7, literal: "35.7" },
+            Figure { label: "US 2006\u{2013}2010", value: 45.0, literal: "45.0" },
+            Figure { label: "US 2011\u{2013}2015", value: 45.8, literal: "45.8" },
+            Figure { label: "US 2015\u{2013}2019", value: 43.9, literal: "43.9" },
+            Figure { label: "US 2018\u{2013}2022", value: 44.4, literal: "44.4" },
+        ],
+    },
+    Assertion {
+        id: "thirty-nine-homes-for-a-hundred-households",
+        statement: "For a hundred of Allen County's poorest renter households there are eighty-one \
+                    homes cheap enough for them and thirty-nine they could actually move into. The \
+                    rest of the cheap stock is lived in by someone who earns more.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**For a hundred of the county's poorest renter households there are eighty-one homes they could afford and thirty-nine they could move into.** 2,050 rental units in the county rent at or below what a household at 30 per cent of area median could pay \u{2014} 1,945 occupied and 105 standing empty and for rent \u{2014} against 2,540 such households; but 1,065 of the occupied ones house a household with a higher income, leaving 985."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "households needing one", value: 2540.0, literal: "2,540" },
+            Figure { label: "homes they could afford", value: 2050.0, literal: "2,050" },
+            Figure { label: "of those, occupied by a higher income", value: 1065.0, literal: "1,065" },
+            Figure { label: "available to them", value: 985.0, literal: "985" },
+        ],
+    },
+    Assertion {
+        id: "a-black-renter-pays-more-of-less",
+        statement: "A Black renter household in Allen County is 1.7 times as likely as a white one \
+                    to be paying more than half its income for housing \u{2014} 26.5 per cent \
+                    against 15.6.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**A Black renter household is 1.7 times as likely to be paying more than half its income.** Of 9,310 white non-Hispanic renter households 1,450 do, 15.6 per cent; of 2,435 Black non-Hispanic renter households 645 do, 26.5. On the 30 per cent threshold the gap is 32.5 per cent against 43.5."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "white renters over 50%", value: 15.6, literal: "15.6" },
+            Figure { label: "Black renters over 50%", value: 26.5, literal: "26.5" },
+            Figure { label: "white renters over 30%", value: 32.5, literal: "32.5" },
+            Figure { label: "Black renters over 30%", value: 43.5, literal: "43.5" },
+        ],
+    },
+    Assertion {
+        id: "seven-hundred-and-sixty-on-the-roads",
+        statement: "Seven hundred and sixty people died in 666 crashes on Allen County's roads \
+                    between 1975 and 2024. The rate fell by two fifths across four decades and \
+                    then rose again.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "Seven hundred and sixty people died in 666 crashes on this county's roads in the fifty years from 1975 to 2024."
+            ),
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "The five decades run 17.3, 16.5, 14.3, 10.2 and 11.9 deaths per 100,000 people: the county's worst decade is its first and its best is 2005\u{2013}2014, and the decade just ended is worse than that one by fourteen deaths."
+            ),
+        ],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "1975\u{2013}1984", value: 17.3, literal: "17.3" },
+            Figure { label: "1985\u{2013}1994", value: 16.5, literal: "16.5" },
+            Figure { label: "1995\u{2013}2004", value: 14.3, literal: "14.3" },
+            Figure { label: "2005\u{2013}2014", value: 10.2, literal: "10.2" },
+            Figure { label: "2015\u{2013}2024", value: 11.9, literal: "11.9" },
+        ],
+    },
+    Assertion {
+        id: "the-roads-followed-ohio-not-the-country",
+        statement: "Allen County's road deaths fell with Ohio's and not with the nation's. \
+                    Indexed to 1975\u{2013}1984, the last decade stands at 62.9 here, 64.4 in Ohio \
+                    and 82.7 in the United States.",
+        topic: "health",
+        supports: &[support!(
+            "measure/allen-county-road-deaths-1975-2024.yml",
+            "**It is Ohio's shape and not the country's.** Indexed to 1975\u{2013}1984, the last decade stands at 62.9 here, 64.4 in Ohio and 82.7 in the United States."
+        )],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "Allen County", value: 62.9, literal: "62.9" },
+            Figure { label: "Ohio", value: 64.4, literal: "64.4" },
+            Figure { label: "United States", value: 82.7, literal: "82.7" },
+        ],
+    },
+    Assertion {
+        id: "the-worst-road-year-since-1978",
+        statement: "Twenty-five people died on this county's roads in 2021, the most since 1978, \
+                    in a decade averaging under eleven. Ohio rose ten per cent that year and the \
+                    nation eleven; Allen County rose a hundred and fifty.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "**One year in the fifty stands outside the rest of the record.** In 2021 there were 23 fatal crashes and 25 deaths, the most since 1978, in a county whose other nine years of that decade average 10.8."
+            ),
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "Ohio rose 10.1 per cent that year and the United States 10.8; Allen County rose 150. None of the 23 crashes killed more than two people, so it is not one catastrophe but twenty-three separate ones, seven of them in November."
+            ),
+        ],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "Allen County", value: 150.0, literal: "150" },
+            Figure { label: "Ohio", value: 10.1, literal: "10.1" },
+            Figure { label: "United States", value: 10.8, literal: "10.8" },
+        ],
+    },
+    Assertion {
+        id: "the-drink-share-never-moved",
+        statement: "A third of this county's fatal crashes involved a drinking driver in the \
+                    1970s and a third of them still did in 2020, while the number of fatal crashes \
+                    fell by a third.",
+        topic: "health",
+        supports: &[support!(
+            "measure/allen-county-road-deaths-1975-2024.yml",
+            "**A third of the fatal crashes involve a drinking driver and that share has not moved in forty-six years.** By decade it runs 33.3, 36.7, 29.6, 35.4 and 38.6 per cent \u{2014} 221 drinking drivers across 611 crashes."
+        )],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "1975\u{2013}1984", value: 33.3, literal: "33.3" },
+            Figure { label: "1985\u{2013}1994", value: 36.7, literal: "36.7" },
+            Figure { label: "1995\u{2013}2004", value: 29.6, literal: "29.6" },
+            Figure { label: "2005\u{2013}2014", value: 35.4, literal: "35.4" },
+            Figure { label: "2015\u{2013}2020", value: 38.6, literal: "38.6" },
+        ],
+    },
+    Assertion {
+        id: "the-crossings-stopped-killing-people",
+        statement: "Twenty-eight people died at Allen County railway crossings between 1980 and \
+                    2005 \u{2014} one road death in fifteen \u{2014} and none has died at one since. \
+                    Every crossing here known to have killed someone is now shut or gated.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+                "Twenty-eight people died in 25 crashes where an Allen County road meets a railway, between 1980 and 2005, and none has died at one since."
+            ),
+            support!(
+                "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+                "**Three of the nineteen have since been closed and all sixteen that remain open have gate arms**, against 94 of the county's 163 open public crossings, or 57.7 per cent."
+            ),
+            support!(
+                "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+                "Those 28 deaths are 6.6 per cent of the 423 who died on this county's roads between 1980 and 2005."
+            ),
+        ],
+        answers: &["cannot say whether the gates came before these deaths or after them"],
+        figures: &[
+            Figure { label: "died at a crossing, 1980\u{2013}2005", value: 28.0, literal: "28" },
+            Figure { label: "died on the county's roads, same years", value: 423.0, literal: "423" },
+        ],
+    },
+    Assertion {
+        id: "a-fifth-of-the-workplaces-are-gone",
+        statement: "Allen County has 2,239 private workplaces where it had 2,763 in 1986 \u{2014} a \
+                    fifth fewer \u{2014} while the number of jobs in them fell by a twenty-fifth. The \
+                    average workplace went from 16.6 employees to 19.8.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**The county lost a fifth of its workplaces and a twenty-fifth of its jobs.** Establishments fell from 2,763 to 2,239, or 19.0 per cent, while employment fell from 45,917 to 44,251, or 3.6. Average establishment size rose from 16.6 employees to 19.8."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "workplaces, 1986", value: 2763.0, literal: "2,763" },
+            Figure { label: "workplaces, 2023", value: 2239.0, literal: "2,239" },
+        ],
+    },
+    Assertion {
+        id: "the-small-workplaces-are-what-went",
+        statement: "The county's whole net loss of workplaces is at the bottom of the size scale: \
+                    621 fewer with under ten employees, 97 more with ten or more, and exactly as \
+                    many with a hundred or more as in 1986.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**Almost the whole loss is in the smallest workplaces.** The two smallest classes lost 621 establishments between them and every class of ten or more gained 97."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "workplaces under 10 employees, lost", value: 621.0, literal: "621" },
+            Figure { label: "workplaces of 10 or more, gained", value: 97.0, literal: "97" },
+        ],
+    },
+    Assertion {
+        id: "pay-that-has-not-moved-in-thirty-seven-years",
+        statement: "Payroll per private employee in this county is worth about what it was worth in \
+                    1986. Whether it is slightly less or slightly more depends on which price index \
+                    does the deflating.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "$19,658 in 1986 and $52,858 in 2023 is a rise of 169 per cent in the money of each year. Deflated by the national consumer price index the 1986 figure is $54,651 in 2023 dollars, so real pay per employee is **3.3 per cent lower** than it was; deflated by the Midwest index it is $51,467, so real pay is **2.7 per cent higher**."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "1986 pay, national index", value: 54651.0, literal: "54,651" },
+            Figure { label: "1986 pay, Midwest index", value: 51467.0, literal: "51,467" },
+            Figure { label: "2023 pay", value: 52858.0, literal: "52,858" },
+        ],
+    },
+    Assertion {
+        id: "retail-lost-more-than-manufacturing",
+        statement: "Retail trade has shed more of this county's jobs since 1998 than manufacturing \
+                    has \u{2014} 2,364 against 753 \u{2014} along with 167 of its stores.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**Retail lost more jobs than manufacturing did.** Between 1998 and 2023 retail trade fell from 7,806 employees to 5,442 and from 535 establishments to 368; manufacturing fell from 9,886 to 9,133."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "retail, 1998", value: 7806.0, literal: "7,806" },
+            Figure { label: "retail, 2023", value: 5442.0, literal: "5,442" },
+            Figure { label: "manufacturing, 1998", value: 9886.0, literal: "9,886" },
+            Figure { label: "manufacturing, 2023", value: 9133.0, literal: "9,133" },
+        ],
+    },
+    Assertion {
+        id: "the-two-largest-sectors-are-level-again",
+        statement: "Health care overtook manufacturing as this county's largest private sector in \
+                    2002 and led for twenty-one years. In 2023 the two are seventeen employees \
+                    apart, health care having fallen a quarter from its 2013 peak.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**And the two largest sectors are now the same size.** Manufacturing 9,133 and health care 9,150 in 2023, seventeen apart, after twenty-one years in which health care led \u{2014} it passed manufacturing in 2002 and peaked at 12,431 in 2013."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "health care, 2013 peak", value: 12431.0, literal: "12,431" },
+            Figure { label: "health care, 2023", value: 9150.0, literal: "9,150" },
+            Figure { label: "manufacturing, 2023", value: 9133.0, literal: "9,133" },
+        ],
+    },
+    Assertion {
+        id: "the-one-election-it-gave-a-democrat",
+        statement: "Allen County voted for Ted Strickland, a Democrat, for governor in 2006 — \
+                    18,000 to 17,184. It is the only election in this corpus's modern record, five \
+                    for governor and six for president, that the county has given to a Democrat.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-governor-vote-2002-2018.yml", "**In 2006 Allen County voted for a Democrat, by 816 votes.** It is the only election in this\n  corpus's modern record \u{2014} five for governor and six for president, from 2000 forward \u{2014} that this\n  county has given to a Democratic candidate. [verified] \u{2014} the same files and\n  [the presidential series](allen-county-presidential-vote-2000-2016.yml)."),
+            support!("measure/allen-county-governor-vote-2002-2018.yml", "**In figures: the Republican share of the two-party vote was 69.1 per cent in 2002, 48.8 in 2006,\n  59.8 in 2010, 73.4 in 2014 and 69.1 in 2018.** The balance moves 24.6 points in the eight years\n  between 2006 and 2014, and the two ends of the run sit a twentieth of a point apart. [inference] \u{2014}\n  arithmetic this corpus's, on the table above."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2002", value: 69.1, literal: "69.1" },
+            Figure { label: "2006", value: 48.8, literal: "48.8" },
+            Figure { label: "2010", value: 59.8, literal: "59.8" },
+            Figure { label: "2014", value: 73.4, literal: "73.4" },
+            Figure { label: "2018", value: 69.1, literal: "69.1" },
+        ],
+    },
+    Assertion {
+        id: "one-democrat-carried-it-and-seven-did-not",
+        statement: "On the same 2006 ballot the county gave Strickland 51.2 per cent of the \
+                    two-party vote and every other Democrat less — down to 40.2 per cent for \
+                    Congress. Sherrod Brown lost this county by 2,924 votes on a night he won Ohio.",
+        topic: "elections",
+        supports: &[support!("measure/allen-county-ballot-2006.yml", "**One Democrat carried this county and seven did not, on the same piece of paper.** Ted\n  Strickland took 51.2 per cent of the two-party vote for governor; the next-best Democrat on the\n  ballot, Sherrod Brown, took 45.9 and lost the county by 2,924 while winning Ohio; the worst,\n  Richard Siferd for Congress, took 40.2. The spread between the best and worst Democratic showings\n  is eleven points. [verified] \u{2014} the workbook; shares computed here. Split-ticket voting on that\n  scale is a fact about the ballot and not about any candidate, and this return cannot say which of\n  the eight races was the unusual one. [inference]")],
+        answers: &["cannot say which of the eight races was the unusual one"],
+        figures: &[
+            Figure { label: "Governor", value: 51.2, literal: "51.2" },
+            Figure { label: "U.S. Senate", value: 45.9, literal: "45.9" },
+            Figure { label: "U.S. House", value: 40.2, literal: "40.2" },
+        ],
+    },
+    Assertion {
+        id: "the-presidential-premium-is-twenty-three-points",
+        statement: "Allen County turned out 71.8 per cent of its registered voters in 2020 against \
+                    54.7 per cent in 2006 and 48.4 in 2010. The two low years are midterms, so the \
+                    twenty-three points between them are the presidential premium and not a trend.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2020.yml", "**71.8 per cent is the third of six presidential elections here, and an ordinary one.**"),
+            support!("measure/allen-county-turnout-2020.yml", "**The midterms are the county's other shape.** The Secretary of State's own precinct files put Allen County at **54.7 per cent in 2006** \u{2014} 37,605 ballots against 68,797 registered \u{2014} and at **48.4 per cent in 2010**, 33,867 against 69,931."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2006 midterm", value: 54.7, literal: "54.7" },
+            Figure { label: "2010 midterm", value: 48.4, literal: "48.4" },
+            Figure { label: "2020 presidential", value: 71.8, literal: "71.8" },
+        ],
+    },
+    Assertion {
+        id: "two-thousand-and-twenty-was-an-ordinary-year",
+        statement: "Allen County turned out 71.8 per cent of its registered voters in 2020 \u{2014} the third of six presidential elections here, behind 2004 and 2008 and ahead of 2024, 2012 and 2016. Twenty years of presidential turnout fit inside 4.7 points.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "**2020 was an ordinary presidential election here.** Its 71.8 per cent is the third of six, below 2004's 73.3 and 2008's 72.1 and above 2024's 70.8, 2012's 70.1 and 2016's 68.7. Twenty years of presidential turnout in this county fit inside 4.7 points."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[
+            Figure { label: "2004", value: 73.3, literal: "73.3" },
+            Figure { label: "2008", value: 72.1, literal: "72.1" },
+            Figure { label: "2020", value: 71.8, literal: "71.8" },
+            Figure { label: "2024", value: 70.8, literal: "70.8" },
+            Figure { label: "2012", value: 70.1, literal: "70.1" },
+            Figure { label: "2016", value: 68.7, literal: "68.7" },
+        ],
+    },
+    Assertion {
+        id: "the-county-used-to-out-vote-ohio",
+        statement: "This county turned out two to three points above the Ohio average in 2004, 2006 and 2008 and one to three points below it in every election since 2016. The swing is about five points relative to the state.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "**This county used to vote more than Ohio does and now it votes less.** It stood 2.9, 2.0 and 2.2 points above the state in 2004, 2006 and 2008, and 2.7, 3.1, 2.2, 2.8 and 1.7 points below it in 2016, 2018, 2020, 2022 and 2024."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[],
+    },
+    Assertion {
+        id: "election-day-stopped-being-the-day",
+        statement: "Election day carried 85.6 per cent of Allen County's ballots in 2006, 68.9 in 2012 and 47.2 in 2020. The pandemic's mail voting has since gone away and its early in-person voting has not: 13,090 early ballots in 2024, the most in the record.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "The election-day share was 85.6 per cent in 2006 and 76.5 in 2008; it fell to 68.9 in 2012 and has not been above 73 since."),
+            support!("measure/allen-county-turnout-2004-2024.yml", "In 2020 it was 47.2 per cent \u{2014} fewer than half the county's ballots were cast on the day \u{2014} and in 2024 it was 58.6."),
+            support!("measure/allen-county-turnout-2004-2024.yml", "Between 2020 and 2024 mail ballots fell by 7,079 and in-person early ballots rose by 1,342 to 13,090, the most in the record; election-day ballots rose by 4,611."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[
+            Figure { label: "2006", value: 85.6, literal: "85.6" },
+            Figure { label: "2008", value: 76.5, literal: "76.5" },
+            Figure { label: "2012", value: 68.9, literal: "68.9" },
+            Figure { label: "2020", value: 47.2, literal: "47.2" },
+            Figure { label: "2024", value: 58.6, literal: "58.6" },
+        ],
+    },
+    Assertion {
+        id: "sixty-one-thousand-names-off-a-sixty-six-thousand-roll",
+        statement: "The county board took 61,662 registrations off its voter roll across nine federal elections, against a roll that ends the run holding 66,650 names. The commonest reason is not death or moving away \u{2014} it is that a confirmation letter went unanswered.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-voter-roll-removals-2006-2022.yml", "61,662 registrations were taken off this county's voter roll across the nine federal elections from 2006 to 2022. The roll at the end of that run held 66,650 names."),
+            support!("measure/allen-county-voter-roll-removals-2006-2022.yml", "**The largest single reason a name comes off this roll is that a letter went unanswered.** Over the eight elections from 2008 the board removed 55,243 registrations and 24,086 of them \u{2014} 43.6 per cent \u{2014} were removed for failing to respond to a confirmation notice. [verified] \u{2014} the same file; 2006 is left out of the table because that year's total of 6,419 carries no breakdown. Dying and moving away, the two reasons a reader would expect to dominate, are 15.1 and 30.1 per cent."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "no response to a notice", value: 43.6, literal: "43.6" },
+            Figure { label: "moved away", value: 30.1, literal: "30.1" },
+            Figure { label: "died", value: 15.1, literal: "15.1" },
+        ],
+    },
+    Assertion {
+        id: "two-hundred-and-fifty-two-people-run-it",
+        statement: "Allen County's polling places went from 50 in 2008 to 33 now, and the people staffing them from 674 in 2016 to 252 in 2024. Of those 252, 182 were 61 or over and 15 were 40 or under.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-polling-places-2004-2024.yml", "**The polling places went with them and then kept going.** 50 in 2008 and 33 in 2022 and 2024, a fall of a third, against a precinct count that has not moved since 2012."),
+            support!("measure/allen-county-polling-places-2004-2024.yml", "In 2024, 182 of the 252 were 61 or over \u{2014} 72.2 per cent \u{2014} 55 were 41 to 60, and 15 were 40 or under."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "40 or under", value: 15.0, literal: "15" },
+            Figure { label: "41 to 60", value: 55.0, literal: "55" },
+            Figure { label: "61 and over", value: 182.0, literal: "182" },
+        ],
+    },
+    Assertion {
+        id: "a-quarter-of-the-provisional-ballots-were-rejected",
+        statement: "211 of Allen County's 898 provisional ballots were rejected in 2024 \u{2014} 23.5 per cent, the highest rate in the twenty-year record, against 18.6 in 2020 and 4.9 in 2014.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "Provisional ballots are the exception: 211 of 898 were rejected in 2024, 23.5 per cent, the highest rate in the record, against 18.6 in 2020 and 4.9 in 2014."),
+            support!("measure/allen-county-turnout-2004-2024.yml", "This corpus cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[
+            Figure { label: "2014", value: 4.9, literal: "4.9" },
+            Figure { label: "2020", value: 18.6, literal: "18.6" },
+            Figure { label: "2024", value: 23.5, literal: "23.5" },
+        ],
+    },
+    Assertion {
+        id: "a-third-of-the-schoolchildren-are-gone",
+        statement: "Allen County's twelve school districts held 22,760 pupils in 1988 and hold \
+                    15,850 — 30.4 per cent fewer, against a county population down 8.1 per cent \
+                    over the same span. Lima City Schools have lost half their children.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-enrolment-1988-2024.yml", "**Allen County has 6,910 fewer schoolchildren than it had in 1988 \u{2014} 30.4 per cent of them \u{2014} and\n  the high of the whole run is its first year.** [verified] \u{2014} the same files. The county's\n  population went from 109,755 in 1990 to 100,866 in 2024, a fall of 8.1 per cent, so the schools\n  emptied close to four times as fast as the county did. [inference] \u{2014} against\n  [1990](allen-county-population-1940-1990.yml) and\n  [2024](allen-county-population-2024.yml)."),
+            support!("measure/allen-county-school-enrolment-1988-2024.yml", "**Lima City Schools have lost half their children, and the city has not lost half its people.**\n  6,969 pupils in 1988 and 3,370 now, a fall of 51.6 per cent, against a city that went from 45,549\n  residents in 1990 to 34,690 in 2024 \u{2014} 23.8 per cent. The district emptied at more than twice the\n  rate of the city it serves. [inference] \u{2014} the same files against\n  [1990](lima-population-1970-1990.yml) and [2024](lima-population-2024.yml). Elida is the\n  next-steepest at \u{2212}38.8 per cent, and it borders the city on the north and west."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "county population", value: 8.1, literal: "8.1" },
+            Figure { label: "city of Lima", value: 23.8, literal: "23.8" },
+            Figure { label: "all schoolchildren", value: 30.4, literal: "30.4" },
+            Figure { label: "Lima's district", value: 51.6, literal: "51.6" },
+        ],
+    },
+    Assertion {
+        id: "lima-holds-fewer-of-the-black-pupils",
+        statement: "Lima City Schools held 82.3 per cent of Allen County's Black pupils in 1988 \
+                    and hold 66.4 per cent now. Elida went from 5.5 per cent of them to 14.4, and \
+                    Perry Local is the county's second most heavily Black district at 21.7.",
+        topic: "schools",
+        supports: &[support!("measure/allen-county-school-enrolment-by-race-1988-2024.yml", "**Black children are less concentrated in Lima than they were, and by a long way.** The city's\n  district held 82.3 per cent of the county's Black pupils in 1988, 79.2 in 2000, 69.6 in 2012 and\n  66.4 now. [verified] \u{2014} the same files, computed here. Over the same thirty-seven years Lima's\n  share of *all* the county's pupils fell from 30.6 per cent to 21.3, so the two shares moved the\n  same way and the Black share moved further. [inference]")],
+        answers: &["cannot say how much of that is the new category"],
+        figures: &[
+            Figure { label: "1988", value: 82.3, literal: "82.3" },
+            Figure { label: "2000", value: 79.2, literal: "79.2" },
+            Figure { label: "2012", value: 69.6, literal: "69.6" },
+            Figure { label: "2024", value: 66.4, literal: "66.4" },
+        ],
+    },
+    Assertion {
+        id: "the-share-that-held-because-both-halves-emptied",
+        statement: "Lima City Schools were 38.6 per cent Black in 1988 and are 38.8 per cent now, \
+                    across a district that lost half its children. The share held because both \
+                    halves emptied — Black enrolment 2,689 to 1,307, white-alone 4,155 to 1,067.",
+        topic: "schools",
+        supports: &[support!("measure/allen-county-school-enrolment-by-race-1988-2024.yml", "**The Black share of the district is the figure that did not move.** 38.6 per cent in 1988 and\n  38.8 now, across a district that lost half its children. [verified] \u{2014} same files. It is not a\n  share that held still through stability: Black enrolment fell from 2,689 to 1,307 and white-alone\n  enrolment from 4,155 to 1,067, and the ratio survived because both halves emptied. [inference]")],
+        answers: &["cannot say how much of that is the new category"],
+        figures: &[
+            Figure { label: "white-alone 1988", value: 4155.0, literal: "4,155" },
+            Figure { label: "white-alone 2024", value: 1067.0, literal: "1,067" },
+            Figure { label: "Black 1988", value: 2689.0, literal: "2,689" },
+            Figure { label: "Black 2024", value: 1307.0, literal: "1,307" },
+        ],
+    },
+    Assertion {
+        id: "the-children-went-missing-faster-than-the-classrooms",
+        statement: "Allen County's under-18 population fell 7.3 per cent between the July estimates \
+                    of 2010 and 2019, while enrolment in its twelve school districts fell 5.9 per \
+                    cent over the same two autumns.",
+        topic: "population",
+        supports: &[support!("measure/allen-county-children-2010-2024.yml", "**This is most of why the schools emptied, and it is not all of it.** Across the 2010s series the\n  county's under-18 population fell 7.3 per cent between the July estimates of 2010 and 2019 \u{2014}\n  25,377 to 23,527 \u{2014} while enrolment in the twelve districts fell 5.9 per cent over the same two\n  autumns, 17,830 to 16,774. [inference] \u{2014} against\n  [the enrolment series](allen-county-school-enrolment-1988-2024.yml). The children went missing\n  faster than the classrooms did, which is the reverse of what a story about children leaving these\n  districts for other schools would predict, and it is one decade of evidence rather than a rule.")],
+        answers: &[],
+        figures: &[
+            Figure { label: "under-18 population", value: 7.3, literal: "7.3" },
+            Figure { label: "district enrolment", value: 5.9, literal: "5.9" },
+        ],
+    },
+    Assertion {
+        id: "the-under-fives-are-the-births",
+        statement: "Births in Allen County fell from 1,318 in 2011 to 1,200 in 2024, and the \
+                    county's under-five population is those births and nothing else — it matches \
+                    the five preceding years of them to within 1.6 per cent in every year checked.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-children-2010-2024.yml", "**Births fell nine per cent across the run and the low is 2021.** 1,318 in 2011 against 1,200 in\n  2024, with the fewest in the record \u{2014} 1,171 \u{2014} in the first full year after the pandemic began.\n  [verified] \u{2014} [the components files](../../catalog/census-popest-2024.md). **2010 and 2020 are\n  missing from that table on purpose**: each vintage's first year covers only the three months from\n  the census date to 30 June, 339 births in 2010 and 293 in 2020, and putting a partial year in a\n  column of full ones is how a false trough gets published. [verified] \u{2014} the same files."),
+            support!("measure/allen-county-children-2010-2024.yml", "**The county's under-five population is its own births and nothing else.** For every year of the\n  2010s where all five preceding birth counts are published in full, the estimated under-five\n  population matches their sum to within 1.6 per cent: 6,372 against 6,403 in 2015, 6,357 against\n  6,347 in 2016, 6,367 against 6,353 in 2017, 6,362 against 6,314 in 2018 and 6,303 against 6,206 in\n  2019. [inference] \u{2014} computed here from the age and component files. Migration moves this county's\n  adults; it does not appear to move its babies. The same check cannot be run on the 2020s series\n  because the 2020 birth count in these files is a three-month stub."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2011", value: 1318.0, literal: "1,318" },
+            Figure { label: "2021", value: 1171.0, literal: "1,171" },
+            Figure { label: "2024", value: 1200.0, literal: "1,200" },
+        ],
+    },
+    Assertion {
+        id: "two-vintages-disagree-about-the-children",
+        statement: "Two vintages of the Census Bureau's county estimates reach 1 July 2020 and \
+                    disagree. They put Allen County 157 people apart and its children 811 apart — \
+                    a seventh of a per cent on the total and 3.5 per cent on the part.",
+        topic: "population",
+        supports: &[support!("measure/allen-county-children-2010-2024.yml", "**1 July 2020 appears twice because two series reach it and they disagree.** The rows above the\n  break are the Vintage 2020 estimates, carried forward from the 2010 census; the rows below are\n  Vintage 2024, carried forward from the 2020 one. At the shared date they put the county 157 people\n  apart \u{2014} a seventh of one per cent \u{2014} and its children **811 apart**, which is 3.5 per cent.\n  [verified] \u{2014} [the two age files](../../catalog/census-popest-2024.md). See\n  [an estimate is anchored to a census](../../decisions/an-estimate-is-anchored-to-a-census.yml).")],
+        answers: &[],
+        figures: &[
+            Figure { label: "people", value: 157.0, literal: "157" },
+            Figure { label: "children under 18", value: 811.0, literal: "811" },
         ],
     },
 ];

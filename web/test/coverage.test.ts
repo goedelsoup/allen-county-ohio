@@ -3,7 +3,13 @@ import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { ARTICLES, unresolvedDeclarations } from '../src/lib/articles'
 import { assertions, nodes } from '../src/lib/feeds'
-import { SECTIONS, SECTION_KEYS, TOPIC_SECTION } from '../src/lib/sections'
+import {
+  SECTIONS,
+  SECTION_KEYS,
+  TOPIC_SECTION,
+  assertionsForSection,
+  topicsForSection,
+} from '../src/lib/sections'
 
 const PAGES = join(import.meta.dirname, '../src/pages')
 
@@ -143,6 +149,36 @@ describe('the feed taxonomy maps onto the site arrangement', () => {
   })
 })
 
+describe('the mapping is rendered, not only declared', () => {
+  /**
+   * `assertionsFor(topic)` sat in `lib/feeds.ts` from the day the feed contract was written and
+   * was called by nothing, which is how ten of the seventeen assertions on the old `/land` came
+   * to carry the topic `geography` with nobody noticing. `TOPIC_SECTION` replaced it and spent
+   * one commit in exactly the same condition: declared, gated by this file, read by no page.
+   *
+   * So the mapping is rendered on `/sources`, whose subject is what this site rests on, and
+   * this is the tripwire on that — a mapping only a test reads is a mapping nobody checks
+   * against the world.
+   */
+  it('is read by a page and not only by this file', () => {
+    const consumers = pages.filter(
+      ({ file, source }) => file !== 'read/index.astro' && /assertionsForSection/.test(source),
+    )
+    expect(consumers.map((c) => c.file)).toContain('sources.astro')
+  })
+
+  it('places every assertion the feed publishes', () => {
+    const placed = SECTION_KEYS.reduce((n, key) => n + assertionsForSection(key).length, 0)
+    expect(placed).toBe(assertions.length)
+  })
+
+  it('gives every section at least one topic', () => {
+    for (const key of SECTION_KEYS) {
+      expect(topicsForSection(key).length, key).toBeGreaterThan(0)
+    }
+  })
+})
+
 describe('the reading pages point at each other', () => {
   it('gives every reading page outbound links', () => {
     // Before the restructure there were two editorial cross-links between twelve topic pages.
@@ -155,5 +191,33 @@ describe('the reading pages point at each other', () => {
         .filter((href) => href !== s.href)
       expect(new Set(outbound).size, file).toBeGreaterThanOrEqual(2)
     }
+  })
+})
+
+describe('nothing links at a page that was retired', () => {
+  /**
+   * The redirects in `astro.config.mjs` are for links somebody else kept — a bookmark, another
+   * site, a printout. They are not a licence for this site to go on pointing at its own retired
+   * pages: a redirect costs the reader a hop, and the link text goes stale in a way no redirect
+   * can fix. One survived the restructure reading *the same sorting <a href="/housing">the
+   * housing page</a> measures* — a page that no longer exists, named as though it did.
+   *
+   * The list is read out of the config rather than repeated here, so retiring the next page
+   * extends this check without anybody remembering to.
+   */
+  const config = readFileSync(join(import.meta.dirname, '../astro.config.mjs'), 'utf8')
+  const block = config.match(/redirects:\s*\{([\s\S]*?)\n\s*\}/)?.[1] ?? ''
+  const retired = [...block.matchAll(/'(\/[a-z-]+)':/g)].map((m) => m[1])
+
+  it('found the retired paths to check against', () => {
+    // A regex that stops matching turns this whole describe into a no-op.
+    expect(retired.length).toBeGreaterThan(0)
+  })
+
+  it.each(retired.map((path) => ({ path })))('nothing links to $path', ({ path }) => {
+    const offenders = pages
+      .filter(({ source }) => new RegExp(`href="${path}/?"`).test(source))
+      .map(({ file }) => file)
+    expect(offenders).toEqual([])
   })
 })

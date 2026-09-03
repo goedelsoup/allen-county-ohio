@@ -1,0 +1,73 @@
+id: a-frame-is-not-a-panel
+summary: >-
+  The Private School Universe Survey rebuilds its roster of schools every cycle, and a fifth of
+  Ohio's turn over between editions. Statewide the churn cancels and the total rises; in one
+  county it does not cancel and the total falls by half. A file that reconstructs its universe
+  each edition may be read as a level and may not be differenced at small grain.
+context: |
+  This corpus already distinguishes a sample from a count
+  ([a-survey-is-not-a-count](a-survey-is-not-a-count.yml)) and a register of the eligible from a
+  census of the present ([a-register-is-not-a-census](a-register-is-not-a-census.yml)). Neither
+  covers this one. The Private School Universe Survey is not a sample — it intends to be every
+  private school there is, and publishes no margins. Its instability is in its **frame**: the list
+  of institutions it goes looking for, assembled each cycle from state lists, religious-association
+  lists and an area search.
+
+  Five editions of Allen County, two years apart:
+
+      2013-14    9 schools   2,338 pupils
+      2015-16    9           1,713
+      2017-18    9           1,706
+      2019-20   13           2,086
+      2021-22   10           1,108
+
+  Read as a series that is a 53 per cent collapse with a spike in the middle. It is neither.
+
+  - The 2013–14 figure counts Delphos St John's twice, once as *St Johns Elementary and High
+    School* at 617 and once as *St John High School* at 596. One institution, two rows, 596 pupils
+    of double count.
+  - The 2019–20 and 2021–22 figures each carry *The Center for Autism and Dyslexia* twice.
+  - The fall from 2,086 to 1,108 is 978 pupils, and 939 of it — 96 per cent — is three schools
+    leaving the frame: Delphos St John's at 603, Temple Christian at 237 and Golden Bridge Academy
+    at 99. The seven schools present in both editions net 39.
+  - Over the same two editions Ohio's private enrolment **rises** 5.6 per cent, because statewide
+    the 185 schools that leave are offset by the 215 that arrive.
+decision: |
+  **A file that rebuilds its universe each edition is read as a level and is not differenced at a
+  grain where one institution matters.**
+
+  - Quote an edition for what it says about that edition, naming the year: *ten private schools,
+    1,108 pupils, 2021–22*. That claim is sound.
+  - Do not write a change between two editions of such a file as a change in the world without
+    first matching the rosters institution by institution and reporting what entered and left. If
+    the entries and exits are larger than the difference, there is no trend to report.
+  - A unit absent from an edition is absent from that edition's **frame**. That is not evidence it
+    closed, and the corpus does not write that it closed.
+  - Where a source publishes both a small-grain figure and a large-grain one, check the direction
+    of both. Opposite signs at two grains are the signature of this failure and are cheap to look
+    for.
+rationale: |
+  **The failure is invisible from inside the county.** Nothing in Allen County's ten 2021–22 rows
+  says that two schools are missing. The check that found it was to run the same subtraction on
+  Ohio and get the opposite sign, and then to match the rosters. Both steps are minutes of work and
+  neither is prompted by anything the file says about itself.
+
+  **This is the difference between a level and a difference, and only the difference is spoiled.**
+  The corpus can still say, and does, that ten private schools in this county enrolled 1,108
+  children in 2021–22 and that all ten are in Lima. What it cannot say is that private schooling in
+  Allen County halved, which is what the arithmetic offers and what a reader would take.
+
+  **The rule earns its keep beyond this file.** Any roster rebuilt per cycle has the same shape —
+  establishment files, provider directories, facility inventories. This corpus already holds
+  several, and
+  [the bridge inventory's 2024 edition](../catalog/national-bridge-inventory.md) produced exactly
+  this argument once before at one county's grain, where the county's poor-bridge count moved from
+  5 to 31 while the state moved 0.07 points and no neighbour moved at all. That was diagnosed
+  case by case; this states the rule.
+
+  **What this does not buy.** It does not tell anyone what happened to Delphos St John's or to
+  Temple Christian School. Both may be open, and the corpus's belief that they are is an inference
+  from the frame's churn rather than a fact it holds. Ohio's own nonpublic directory would settle
+  it in one request and is not held here.
+status: accepted
+date: "2026-09-02"

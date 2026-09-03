@@ -285,7 +285,7 @@ const spreadSpec = bar(
   </section>
 
   <section>
-    <h2>Not age, and not suburbanization</h2>
+    <h2>Lima is the young end of this county</h2>
     <AssertionCard assertion={young} open />
     <p>
       Two true things above compose into a story that is not. The county loses people partly to
@@ -300,7 +300,7 @@ const spreadSpec = bar(
       county has is not principally the city's.
     </p>
 
-    <h3>Nor is it suburbanization</h3>
+    <h3>The ring is shrinking too</h3>
     <AssertionCard assertion={breadth} />
   </section>
 
@@ -330,6 +330,11 @@ const spreadSpec = bar(
       against $95,900 in Lima — 2.2 times, on a combined margin of error of $17,965 for a gap of
       $114,300. Two townships have no published median rent at all: the survey returns its
       unavailable-value code, which is not a low figure.
+    </p>
+    <p>
+      Under those medians sit 2,251 homes whose rent the federal government pays part of: one
+      renter household in six here, one in four inside Lima.
+      <a href="/read/one-renter-in-four">One renter in four</a> follows them back twenty-one years.
     </p>
 
     <h3>How many houses are empty</h3>
@@ -382,8 +387,8 @@ const spreadSpec = bar(
     <AssertionCard assertion={schoolsEmpty} />
     <ChartFigure
       id="enrolment"
-      title="Enrolment in the twelve districts, 2010–2023"
-      caption="Fall enrolment from the Census Bureau's annual survey of school system finances, read for every year rather than sampled. Ten of the thirteen year-on-year steps are declines, and one dwarfs the rest: 650 pupils in 2021, where no other year moves by more than 226."
+      title="Enrolment in the twelve districts, 2009–2022"
+      caption="Fall enrolment from the Census Bureau's annual survey of school system finances, read for every year rather than sampled. Ten of the thirteen year-on-year steps are declines, and one dwarfs the rest: 650 pupils in 2020, where no other year moves by more than 226."
       columns={['Year', 'Pupils']}
       rows={schoolsEmpty.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
     />
@@ -539,6 +544,26 @@ const spreadSpec = bar(
       <h2>Where this goes on</h2>
       <ul>
         <li>
+          <a href="/read/the-ordinary-half">The ordinary half</a>
+          <span class="why">The county dies young and cancer is not why — except among its men, where it is.</span>
+        </li>
+        <li>
+          <a href="/read/fifth-worst-for-hearts">Fifth worst for hearts</a>
+          <span class="why">The heart disease rate climbed while Ohio's fell, and the gains that stopped in 2010 stopped only under 65.</span>
+        </li>
+        <li>
+          <a href="/read/how-many-children">How many children</a>
+          <span class="why">Through the 2010s the county's children went missing faster than its classrooms did.</span>
+        </li>
+        <li>
+          <a href="/read/a-third-of-the-children">A third of the children</a>
+          <span class="why">6,910 fewer schoolchildren than in 1988, and Black pupils far less concentrated in Lima than they were.</span>
+        </li>
+        <li>
+          <a href="/read/the-schools-that-are-not-districts">The schools that are not districts</a>
+          <span class="why">Ten private schools and two community schools account for a third of the county's missing children.</span>
+        </li>
+        <li>
           <a href="/read/the-county-in-1920">The county in 1920</a>
           <span class="why">The census counted what the county history had estimated, and in 2000 the category itself split.</span>
         </li>
@@ -549,6 +574,10 @@ const spreadSpec = bar(
         <li>
           <a href="/read/buying-and-borrowing">Buying, and borrowing against what you own</a>
           <span class="why">A denial gap that income does not account for.</span>
+        </li>
+        <li>
+          <a href="/read/one-renter-in-four">One renter in four</a>
+          <span class="why">One renter household in six here has a federal subsidy on the rent, and five in six of those are in Lima.</span>
         </li>
         <li>
           <a href="/read/who-is-not-in-a-house-at-all">Who is not in a house at all</a>

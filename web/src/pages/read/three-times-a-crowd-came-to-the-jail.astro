@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import DataTable from '../../components/DataTable.astro'
@@ -28,10 +29,13 @@ const jailCrowds = [
 <Article slug="three-times-a-crowd-came-to-the-jail">
   <AssertionCard assertion={jail} />
   <p>
-    This site has held the raid of October 1933 since its early phases — the night Sheriff Jess
-    Sarber was shot dead in the Allen County jail. It turns out to be the third such night, not
-    the first, and the 1921 county history had both of the others on facing pages.
-  </p>
+      The raid of October 1933 — the night Sheriff Jess Sarber was shot dead in the Allen County
+      jail — is the third such night, not the first. The 1921 county history has both of the
+      others on facing pages.
+    </p>
+    <Gloss>
+      That night has been held here since the early phases; the two before it had not been read.
+    </Gloss>
   <DataTable
     title="Sixty-one years, three crowds"
     caption="The 1921 history states the sheriff's duty in the same paragraph as its roster of holders: he 'is provided with a domicile in connection with the bastile, and it becomes his duty to prevent lynchings, riots and all violent disorders.'"
@@ -73,13 +77,14 @@ const jailCrowds = [
   <h2>What it changed about this county's government</h2>
   <AssertionCard assertion={succession} />
   <p>
-    The sheriff's roster on this site has shown the same two lines since the corpus first read
-    it: Jess L. Sarber, 1931–1933, and then Donald F. Sarber, 1933–1935. A two-year term ending
-    mid-decade, and the same surname straight after it. The roster gives no reason for either,
-    and for eleven phases this corpus declined to supply one, because a record saying
-    <em>died in office</em> and a guess saying <em>died in office</em> are indistinguishable once
-    written down.
-  </p>
+      The sheriff's roster shows two lines: Jess L. Sarber, 1931–1933, and then Donald F. Sarber,
+      1933–1935. A two-year term ending mid-decade, and the same surname straight after it. The
+      roster gives no reason for either.
+    </p>
+    <Gloss>
+      No reason was supplied here for eleven phases, because a record saying <em>died in office</em>
+      and a guess saying <em>died in office</em> are indistinguishable once written down.
+    </Gloss>
   <p>
     It took a newspaper to settle it, and not the one anyone would have looked for. No Lima paper
     is digitized in the national archive — the county seat's press is simply absent — so the

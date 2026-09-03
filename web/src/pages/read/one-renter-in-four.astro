@@ -1,0 +1,114 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const share = assertion('one-renter-household-in-six')
+const ring = assertion('more-subsidized-housing-than-the-five-around-it')
+const fewer = assertion('the-same-homes-hold-fewer-people')
+
+const spec = (a: typeof share, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const shareSpec = spec(share, 'Per cent of renter households')
+const ringSpec = spec(ring, 'Subsidized units per 1,000 residents')
+const fewerSpec = spec(fewer, 'Per cent fall, 2009 to 2025')
+---
+
+<Article slug="one-renter-in-four">
+  <p>
+    Two thousand two hundred and fifty-one homes in Allen County have a federal subsidy attached to
+    the rent. A thousand of those subsidies are vouchers a tenant carries to a private landlord;
+    nine hundred and seventy are contracts on particular apartment buildings; two hundred and
+    forty-three are houses a public authority owns. Together they hold four thousand two hundred
+    and sixty-six people, which is one resident of this county in twenty-four.
+  </p>
+  <AssertionCard assertion={share} open />
+  <ChartFigure
+    id="share"
+    title="Subsidized homes as a share of renter households"
+    caption="Subsidized units on 31 December 2025 against renter-occupied households in the 2023 five-year American Community Survey. The county's renter count carries a margin of ±619 and Lima's ±441, so these shares are good to about a point."
+    columns={['Geography', 'Share of renter households']}
+    rows={share.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+  <p>
+    Lima holds 1,938 of the 2,251 — eighty-six per cent of the county's subsidized housing in a city
+    that holds a third of its people. Bluffton has 43, Spencerville 38, Fort Shawnee 7, Elida 2. The
+    remaining 223 are scattered across unincorporated township ground.
+  </p>
+
+  <h2>The county number is about the city</h2>
+  <p>
+    Allen County holds more subsidized housing than Hancock, Hardin, Auglaize, Van Wert and Putnam
+    together — 2,251 units against 1,733 — on less than half their combined population. Read as a
+    fact about the county, that is a claim about its character. It is really a claim about its
+    geography: this is the county with the city in it, and those five are the ring of farms around
+    it.
+  </p>
+  <AssertionCard assertion={ring} />
+  <ChartFigure
+    id="ring"
+    title="Subsidized units per thousand residents"
+    caption="Population is the Census Bureau's Vintage 2024 estimate. Cuyahoga County, the highest in Ohio, is 31.4 on the same measure; the lowest, Paulding, is 0.91."
+    columns={['Geography', 'Units per 1,000']}
+    rows={ring.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="ring" set:html={JSON.stringify(ringSpec)} is:inline />
+  <p>
+    Ohio's eighty-eight counties run from 0.9 subsidized units per thousand residents to 31.4, a
+    span of thirty. Allen County's own two halves run from 4.7 to 55.9, a span of fifty-one. The
+    county is more various inside itself, on this measure, than the whole state is between its
+    counties, and the single number that averages the two — 22.3, eighteenth in Ohio — is true of
+    neither Lima nor the townships.
+  </p>
+  <Gloss>
+    That is now a rule here rather than an observation. Before a county rate gets ranked against
+    other counties, the same rate is computed for the largest subdivision and for the remainder; if
+    the range inside is wider than the range between, the split is published and the rank is not.
+    The housing pages had already said something like it in passing about owner-occupancy, and then
+    the next measure got ranked against Ohio anyway.
+  </Gloss>
+
+  <h2>The same homes, five hundred fewer people</h2>
+  <p>
+    The stock has hardly moved since 2009. It was 2,401 units then and it is 2,251 now, and in
+    seventeen years it has never left the band between 2,173 and 2,401. The number of people living
+    in it has not been so steady: 4,801 then, 4,266 now.
+  </p>
+  <AssertionCard assertion={fewer} />
+  <ChartFigure
+    id="fewer"
+    title="Subsidized units and their occupants, 2009 to 2025"
+    caption="Per cent fall over seventeen years. Average household size in subsidized housing went from 2.2 people to 2.0 over the same span."
+    columns={['Measure', 'Fall since 2009']}
+    rows={fewer.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="fewer" set:html={JSON.stringify(fewerSpec)} is:inline />
+  <p>
+    The households changed rather than the buildings. In 2016 twenty-one per cent of them were
+    headed by someone aged 62 or over; today thirty-two per cent are. In 2008 forty-seven per cent
+    were a woman with children; today thirty-six per cent are. An elderly household is smaller than
+    a family, and that is where the five hundred went.
+  </p>
+  <p>
+    Their money moved in two directions at once. Average household income among the county's
+    assisted households rose from $9,726 in 2009 to $14,640 in 2025 — half again in sixteen years.
+    Over exactly the same span, the share of them earning less than thirty per cent of the area's
+    median income rose from seventy-six per cent to eighty. Both sentences describe the same
+    households. Their incomes went up in dollars and down against the county they live in.
+  </p>
+  <p>
+    What none of this shows is the queue. The federal files publish an average waiting time, but it
+    is the average wait of the households who <em>moved in</em>, so an authority that admits almost
+    nobody reports a short one. How many families in Allen County are waiting for one of these 2,251
+    doors is not a number any of these files contains.
+  </p>
+</Article>

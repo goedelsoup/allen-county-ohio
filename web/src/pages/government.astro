@@ -106,6 +106,8 @@ const swing = assertion('democratic-ground-moved-fastest')
 const eleven = assertion('eleven-precincts')
 
 const rising = assertion('republican-share-rising')
+
+const halfRun = assertion('half-the-run-and-the-hole-is-one-block')
 const shareSpec = line(rising.figures.map((f) => f.label), [
     { name: 'Republican share of the top-of-ticket vote', y: rising.figures.map((f) => f.value) },
   ], {
@@ -278,6 +280,11 @@ const correlation = swing.figures[0]
       height={300}
     />
     <script type="application/json" data-chart-spec="republican-share" set:html={JSON.stringify(shareSpec)} is:inline />
+    <p>
+      Three elections is a window, and a wider one behaves differently. Across five contests for
+      governor the Republican share runs from 48.8 per cent to 73.4, and in 2006 the county elected
+      a Democrat to the office. <a href="/read/the-one-democrat">The one Democrat</a> has the run.
+    </p>
     <DataTable
       title="Votes cast at the top of the ticket"
       caption="A count of ballots, not a share — and not a chart, because a presidential and a gubernatorial electorate are not the same size and plotting them on one line would say they were."
@@ -350,6 +357,15 @@ const correlation = swing.figures[0]
       liabilities rose $36,758,891 between 2022 and 2023 and it borrowed nothing — the movement is a
       pension line revalued under an accounting standard. What it owes to lenders is $16,281,525.
     </p>
+    <p>
+      Where that $139 million comes from is the other half of the same account. Allen County's
+      taxable property is worth $2,451,331,690 in the newest audited report, so one mill raises
+      $2,451,332 and the county's own 11.40 mills raise about $28 million of it. Thirty-six
+      taxing districts levy on that base, six authorities to each, and school millage is between
+      half and three quarters of the full rate in every one of them.
+      <a href="/read/what-a-mill-is-worth">What a mill is worth</a> follows the rate down to the
+      district and finds one that stopped levying.
+    </p>
   </section>
 
   <section>
@@ -379,6 +395,16 @@ const correlation = swing.figures[0]
       That asymmetry is the reason this page exists at all: one office in extraordinary detail and
       eight missing entirely, which reads as a worked class and is not one.
     </p>
+
+    <h3>The presidential record is exactly half read, and the unread half is one block</h3>
+    <AssertionCard assertion={halfRun} />
+    <p>
+      That shape is the useful part. A record with holes scattered through it is a record you keep
+      chipping at; this one has a single wall in it, and the wall is the nineteen elections between
+      the county that voted for Bryan and the county that voted for Trump. Whatever turned Allen
+      County Republican happened behind it. Ohio's own election office would answer the question and
+      its website refuses every client that asks.
+    </p>
     <Gloss>
       For nine phases the office class held two members — the sheriff, with thirty-nine tenures back
       to 1831, and the mayor of Lima — and the depth of the first made the class look finished.
@@ -396,8 +422,20 @@ const correlation = swing.figures[0]
       <h2>Where this goes on</h2>
       <ul>
         <li>
+          <a href="/read/what-a-mill-is-worth">What a mill is worth</a>
+          <span class="why">One mill raises $2,451,332, no two of thirty-six districts charge the same, and one of them stopped being a village.</span>
+        </li>
+        <li>
+          <a href="/read/the-democratic-column">The Democratic column</a>
+          <span class="why">Five elections added to the modern run, and a third of one column gone in eight years while the other grew.</span>
+        </li>
+        <li>
           <a href="/read/the-government-below-the-county">The government below the county</a>
           <span class="why">Thirteen townships, nine villages and a city — and appointment is how two of them get filled.</span>
+        </li>
+        <li>
+          <a href="/read/the-one-democrat">The one Democrat</a>
+          <span class="why">In 2006 it voted Democratic for governor and Republican for the seven other offices on the same ballot.</span>
         </li>
         <li>
           <a href="/read/the-county-changed-sides">The county changed sides</a>

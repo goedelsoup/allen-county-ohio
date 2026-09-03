@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -27,13 +28,15 @@ const factories = [
 
 <Article slug="the-factories-left-lima">
   <p>
-    Between the 1929 census of manufactures and the federal employment series that opens in 1969
-    lay forty years this corpus could not see. It expected the county's industrial peak to be
-    somewhere inside them — the Depression at one end, the tank plant and the war in the middle.
-    Five volumes on a shelf nobody had walked hold six censuses of those years, and the peak is
-    not in them. The highest figure any of them returns is 16,400 in 1967, and the modern series
-    opens two years later at 17,623 and tops out at 18,400 in 1973.
-  </p>
+      Forty years lie between the 1929 census of manufactures and the federal employment series
+      that opens in 1969. Five volumes hold six censuses of those years, and the county's
+      industrial peak is not in them. The highest figure any of them returns is 16,400 in 1967,
+      and the modern series opens two years later at 17,623 and tops out at 18,400 in 1973.
+    </p>
+    <Gloss>
+      The peak was expected somewhere inside that gap — the Depression at one end, the tank plant
+      and the war in the middle. The five volumes were on a shelf nobody had walked.
+    </Gloss>
   <AssertionCard assertion={moved} />
   <ChartFigure
     id="moved"

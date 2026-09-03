@@ -1,0 +1,64 @@
+class: organization
+label: Allen Metropolitan Housing Authority
+description: |
+  The body that houses the poorest people in Allen County. It holds 1,301 subsidized homes under
+  contract with the federal government — 243 units of public housing it owns, and 1,058 housing
+  choice vouchers it pays to private landlords — and on 31 December 2025 1,104 of them were
+  occupied by 2,849 people. [verified] —
+  [A Picture of Subsidized Households](../../catalog/hud-picture-of-subsidized-households.md), 2025
+  housing authority file, participant `OH044`. Its office is at 600 South Main Street in
+  [Lima](../place/lima.yml) and its fiscal year ends on 30 June. [verified] —
+  [HUD's authority layer](../../catalog/hud-open-data-housing-layers.md), retrieved 2 September 2026.
+
+  **An Ohio metropolitan housing authority is created by a letter.** Not by a vote, not by a court
+  and not by the county commissioners: the director of the state department of development
+  determines that a housing authority is needed, and "a metropolitan housing authority shall be
+  declared to exist, and the territorial limits of the authority shall be defined, by a letter from
+  the director." What it then is, is "a body corporate and politic". [verified] —
+  [Ohio Revised Code §§3735.27 and 3735.31](../../catalog/ohio-revised-code.md).
+
+  **This corpus files it as an organization and the line is not obvious.** A body corporate and
+  politic with defined territorial limits sits close to the boundary this corpus draws between an
+  organization and a [jurisdiction](../jurisdiction.ont.yml) — whether it holds governmental
+  authority over territory. This one does not: it levies nothing, legislates nothing and polices
+  nobody, and its power runs to the property it owns and the contracts it signs. [inference] — the
+  reasoning is this corpus's, on the statute above.
+
+  [open] When it was created, by whose letter, and what its territorial limits are. The statute
+  contemplates limits "less than all the territory within the county", so whether this authority's
+  district is the county or some part of it is a fact with a document behind it that the corpus
+  does not hold.
+
+  **Its public housing is not a housing project.** The 243 units sit in 194 separate buildings: 186
+  of them hold a single dwelling, six hold two, one holds six and one holds forty. 185 of the 194
+  are coded single-family houses and seven are semi-detached. [verified] — the buildings layer,
+  retrieved 2 September 2026. HUD's own name for the development is `Scattered Site: Acquisition`.
+  The one forty-unit elevator building is the only structure in the county's public housing stock
+  that looks like the thing the phrase describes. [inference]
+
+  **173 of the 194 buildings are in Lima and 21 are in the townships.** [verified] — same layer,
+  by its current county-subdivision field. See
+  [where the subsidized housing is](../measure/allen-county-subsidized-housing-2005-2025.yml).
+
+  **HUD's physical-condition designation for it is `Substandard Physical`.** [verified] — the
+  authority layer. That layer carries no date of any kind, so the designation is recorded here as
+  what HUD published on the day it was read and not as a fact about a year; see
+  [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
+
+  **It subsidizes more households than live in this county.** 889 of its voucher households were
+  housed on 31 December 2025 against 845 voucher-subsidized units standing in Allen County — a net
+  44 households whose rent this authority pays somewhere else, vouchers being portable. [inference]
+  — computed here from the 2025 housing authority and county files, which count by paying authority
+  and by location of the unit respectively. The figure is a net: it is also reduced by any voucher
+  another authority pays for inside this county.
+properties:
+  org_type: agency
+  industry: subsidized housing
+  also_known_as: AMHA; HUD participant OH044
+links:
+  - target: ../place/lima.yml
+    relationship: seated-in
+    claim_tag: verified
+    source: ../../catalog/hud-open-data-housing-layers.md
+  - target: ../organization.ont.yml
+    relationship: instance-of

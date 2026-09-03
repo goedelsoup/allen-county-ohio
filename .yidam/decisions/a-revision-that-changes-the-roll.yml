@@ -1,0 +1,77 @@
+id: a-revision-that-changes-the-roll
+summary: >-
+  Allen County's reported toxic releases fall 86.5 per cent between 1987 and 2024. A fifth of that
+  fall is one chemical leaving the list of chemicals that must be reported. Where
+  [a-revision-that-moves-a-category](a-revision-that-moves-a-category.yml) found the aggregate
+  immune and the parts spoiled, a change to the roll of things counted spoils the aggregate first,
+  and this records how to tell the two apart.
+context: |
+  One phase ago this corpus wrote a rule about classification revisions: difference the aggregate
+  freely, because a reshuffle does not change how many were counted, and repair the parts from the
+  crosswalk before differencing them. The rule is right and it is the wrong rule here.
+
+  The Toxics Release Inventory does not count releases. It counts *reports*, and what must be
+  reported is a list — a roll of chemicals with a first reportable year and, for some, a last one.
+  The roll has been revised in both directions since 1987.
+
+  Read straight off the totals, Allen County looks like this:
+
+      1987   69,836,754 lb        2024    9,417,778 lb        −86.5%
+
+  Ammonium sulfate (solution) was on the roll from 1987 to 1993 and is not on it now. This county
+  reported 126 million pounds of it — 43,000,000 in 1987 alone, 61.6 per cent of that year's total,
+  all of it injected into a deep well by one plant. Nitrate compounds joined the roll in 1995 and
+  are 11.8 million pounds since. Restricted to the 85 chemicals reportable in every year from 1987
+  to 2024, the same comparison is:
+
+      1987   25,249,928 lb        2024    9,047,255 lb        −64.2%
+
+  The fall is real and it is two thirds of what it looked like. The difference is not a measurement
+  and not a behaviour; it is a legal list.
+
+  The trap has a second floor. Allen County stopped reporting ammonium sulfate after 1989, four
+  years before the delisting. So the collapse between 1989 and 1990 is not the roll changing at
+  all — and the file does not say whether the injection stopped, the estimate was revised, or the
+  threshold was missed. A corpus that blamed the delisting for the 1990 drop would have the right
+  caution attached to the wrong year.
+decision: |
+  **Where the roll of things counted changes between two readings, the aggregate is the first
+  figure spoiled and not the last.**
+
+  - Before differencing any total from a list-based file, get the list's own membership dates.
+    `tri_chem_info` carries `active_date` and `inactive_date`; a file that counts by category
+    usually carries the equivalent, and where it does not,
+    [a-category-has-a-birthday](a-category-has-a-birthday.yml) derives it from first appearance.
+  - Compute the comparison on the **intersection** of the rolls — the members reportable in both
+    endpoints — and print that beside the raw figure. Say how many members the intersection holds
+    against how many the file has ever held: here 85 of the 109 ever reported in this county.
+  - Removals and additions cut opposite ways and must both be applied. Dropping the removals alone
+    would have made this county's fall look larger than it is, not smaller.
+  - Check each **stream** separately before trusting the correction. The delisted chemicals here
+    were almost entirely injected underground, so the air series is unharmed: −69.8 per cent raw
+    against −69.9 per cent like-for-like. A roll change is rarely spread evenly, and the parts it
+    misses are the parts still worth quoting.
+  - **A member's disappearance from the data is not the same event as its removal from the roll.**
+    Date both. Where they differ, the file has not explained the gap and the node says so.
+rationale: |
+  **The pairing is the point.** A reshuffle keeps the same members and moves them between parents:
+  the total survives, the parts do not. A roll change adds and removes members: the parts may
+  survive within themselves and the total does not. Two revisions, opposite immunities, one phase
+  apart. A corpus holding only the earlier rule would have applied it here and published −86.5 per
+  cent with confidence, because that rule says the total is the safe figure.
+
+  **The correction is cheap and the check for whether it is needed is cheaper.** Membership dates
+  are one column of a dictionary table. Reading them costs one join and settles whether the
+  expensive version of this question needs asking at all.
+
+  **The like-for-like figure is not the true figure.** It is a comparison on a fixed basket, which
+  is a different and narrower claim than a fall in what the county released. Some of what left the
+  roll is still being released and is no longer counted anywhere; the roll's own coverage is not
+  something this file can measure. Both numbers are published here, with the basket named.
+
+  **What this does not buy.** It says nothing about a threshold change — the quantity above which a
+  facility must report at all — which moves members on and off the roll without touching the list
+  of chemicals. That would show up as a facility disappearing rather than a chemical, and this
+  corpus has not checked for it.
+status: accepted
+date: "2026-09-02"

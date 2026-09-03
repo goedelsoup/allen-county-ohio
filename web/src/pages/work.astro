@@ -10,6 +10,7 @@ import { bar, line } from '../lib/chart-spec'
 const pay = assertion('the-biggest-employer-is-not-the-biggest-payer')
 
 const commute = assertion('half-the-jobs-here-are-held-by-outsiders')
+const eleven = assertion('eleven-years-of-more-jobs-than-workers')
 
 const paySpec = bar(
   pay.figures.map((f) => f.label),
@@ -21,6 +22,12 @@ const commuteSpec = bar(
   commute.figures.map((f) => f.label),
   commute.figures.map((f) => f.value),
   { yTitle: 'People', labelValues: true },
+)
+
+const netSpec = bar(
+  eleven.figures.map((f) => f.label),
+  eleven.figures.map((f) => f.value),
+  { yTitle: 'Jobs less employed residents', labelValues: true },
 )
 
 const work = assertion('the-only-employment-figures')
@@ -115,6 +122,12 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
       Across all 49,690 covered jobs the average weekly wage is $1,131 — 89.3 per cent of Ohio's
       and 77.8 per cent of the country's. A worker here earns about four fifths of what a worker in
       the United States does.
+    </p>
+    <p>
+      Covered jobs are not all the jobs. A third federal programme counts 64,238 in this county
+      for 2022 against 49,136 covered, and the difference is mostly people working for themselves:
+      11,964 proprietors, nearly one job in five, the highest share in fifty-four years.
+      <a href="/read/nobodys-payroll">Nobody's payroll</a> follows that number back to 1969.
     </p>
     <p>
       Manufacturing is 17.9 per cent of the jobs and 28.0 per cent of the wages, the only sector in
@@ -359,14 +372,42 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
       it, above two counties that share a border. The 1,723 are spread thinly across many Columbus
       tracts. A block-to-block table of where people work cannot be published as collected, and this
       is what a disclosure-protected file looks like at small grain: the sums are sound and the
-      cells are not. The county totals are trusted here because an unrelated programme counted
-      49,690 jobs where this one counted 48,730.
+      cells are not. The county totals are trusted because two unrelated programmes reach the same
+      finding for eleven straight years.
+    </p>
+    <AssertionCard assertion={eleven} />
+    <ChartFigure
+      id="netjobs"
+      title="Jobs in the county, less its employed residents"
+      caption="The jobs column is QCEW, which counts what employers report to unemployment insurance. The residents column is the household estimate behind the county's unemployment rate, which counts a woman who works for herself where the insurance filing does not count the job she made. That is why this net is smaller than the one above it, and it is why the two are not corrected toward each other."
+      columns={['Year', 'More jobs than employed residents']}
+      rows={eleven.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+    />
+    <script type="application/json" data-chart-spec="netjobs" set:html={JSON.stringify(netSpec)} is:inline />
+    <p>
+      The net is small and the gross is enormous, and only the gross is a fact about commuting. A
+      county could post a surplus of four thousand jobs with a tenth of the 42,643 crossings this
+      one makes in a working day. What the eleven years add is that the surplus is structural: no
+      trend, no drift, the largest in 2018 and the smallest in 2021, and the series ends where it
+      began.
     </p>
   </section>
 
     <section class="onward">
       <h2>Where this goes on</h2>
       <ul>
+        <li>
+          <a href="/read/nobodys-payroll">Nobody’s payroll</a>
+          <span class="why">Nearly one job in five here belongs to somebody working for themselves, and every job lost since 2001 was a payroll job.</span>
+        </li>
+        <li>
+          <a href="/read/what-the-work-is">What the work is</a>
+          <span class="why">Production is still the largest occupation here and more concentrated than a decade ago.</span>
+        </li>
+        <li>
+          <a href="/read/the-rate-caught-up-with-ohio">The rate caught up with Ohio</a>
+          <span class="why">Twenty-four years above the state's unemployment rate, and a convergence made mostly of people leaving the labour force.</span>
+        </li>
         <li>
           <a href="/read/the-factories-left-lima">The factories left Lima</a>
           <span class="why">They did not leave the county: the city's share fell for forty years while the county's held.</span>

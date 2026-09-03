@@ -1,0 +1,120 @@
+class: measure
+label: What cancer does in Allen County, 2018–2023
+description: |
+  **Cancer kills about 220 people a year in Allen County, at 159.0 per 100,000 against Ohio's 160.3
+  and America's 145.4 — and the rate is falling.** [verified] —
+  [State Cancer Profiles](../../catalog/nci-state-cancer-profiles.md), all sites, both sexes,
+  age-adjusted deaths 2019–2023.
+
+      site                              Allen    Ohio      US   rank of 88   deaths a year
+      All sites                           159   160.3   145.4           62             220
+      Lung and bronchus                  41.7    38.7    31.5           45              59
+      Prostate (male)                    18.6    19.5    19.2           39              11
+      Breast (female)                    16.7    20.1    19.2           68              12
+      Pancreas                           13.7    12.2    11.3           16              19
+      Colon and rectum                   12.1    13.7    12.9           75              16
+      Leukemia                            5.8     6.4     5.8           57               8
+      Ovary (female)                      5.8     5.8     5.9           23               4
+      Oesophagus                          5.6     4.8     3.7           24               8
+      Non-Hodgkin lymphoma                5.4     5.4     4.9           40               7
+      Brain and other nervous system      4.9     4.5     4.4           24               7
+      Bladder                             4.5     4.8     4.1           43               6
+      Liver and bile duct                 4.2     6.3     6.6           60               6
+      Kidney                              3.7     3.8     3.4           28               6
+      Melanoma of the skin                2.1     2.4       2           27               3
+      Stomach                               —     2.3     2.7            —      3 or fewer
+      Cervix (female)                       —     2.3     2.2            —      3 or fewer
+      Uterus (female)                       —     5.7     5.3            —      3 or fewer
+      Thyroid                               —     0.5     0.5            —      3 or fewer
+
+  Rates are age-adjusted deaths per 100,000 for 2019–2023, and **rank of 88** counts from the worst.
+  Four sites are suppressed because the county has three or fewer deaths a year from each.
+  [verified] — same source.
+
+  **This is not what the county dies of unusually.** Its all-sites cancer death rate is within a
+  point of Ohio's and it ranks 62nd of the state's 88 counties — the lower middle. Set against the
+  same corpus's finding that this county is fifth of 88 for heart disease at 1.35 times the state
+  rate, cancer is the ordinary half of its mortality. [inference] — computed here against
+  [heart disease and stroke](allen-county-heart-disease-and-stroke-1999-2024.yml).
+
+  **The rank carries an interval and it is wide.** 62nd of 88 has a 95 per cent interval of 29th to
+  80th; the pancreas rank of 16th has an interval of 2nd to 73rd. On nineteen deaths a year a rank
+  is barely a statement. [verified] — same source, the `CI*Rank` columns. See
+  [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml).
+
+  **The burden is a men's burden.** Allen County men die of cancer at 201.9 per 100,000 against
+  Ohio's 192.3 and America's 171.5 — 18 per cent above the national rate, and 43rd of 88. Its women
+  die at 129.6 against Ohio's 137.4 and America's 126.3, below the state and 74th of 88. [verified]
+  — same source, sex-specific all-sites rates. 124 of the county's 220 annual cancer deaths are
+  men's.
+
+  **The sites the county exceeds the nation on are few and they are alike.** Lung and bronchus at
+  41.7 against 31.5, oesophagus at 5.6 against 3.7, pancreas at 13.7 against 11.3 — the three
+  largest excesses over the national rate. It is *below* the nation on colon and rectum, breast,
+  liver and leukemia, and below Ohio on nine of the fifteen sites it has a published rate for.
+  [inference] — computed here from the table above.
+
+  **The corpus holds one fact that bears on that pattern and does not join it to this one.** CDC
+  estimates 17.0 per cent of the county's adults and 22.8 per cent of Lima's smoke.
+  [verified] — [CDC PLACES](../../catalog/cdc-places.md); see
+  [the health estimates](allen-county-health-2023.yml). Lung, oesophagus and pancreas are the sites
+  a tobacco explanation would predict and the corpus has no county-level exposure history, no
+  latency model and no counterfactual, so it does not assert one. [inference]
+
+  **There is less cancer here than in Ohio, and about as much dying of it.** Incidence for all sites
+  is 459.1 per 100,000 against Ohio's 472.9, on 615 new cases a year; the county is below the state
+  on colorectal and breast incidence too. [verified] — same source, incidence 2018–2022. The two
+  windows are different years, so this corpus does not compute a survival or case-fatality figure
+  from them.
+
+  **Cancer is not where this county's racial mortality gap lives.** Its Black residents die of
+  cancer at 169.1 per 100,000 and its white residents at 160.8, a gap of 8.3 points; in Ohio the
+  same gap is 11.6 and nationally 15.3. Both of this county's figures are below Ohio's for the same
+  group. [verified] — same source, non-Hispanic race categories. The corpus separately holds a
+  life-expectancy gap of 6.91 years here against 5.48 in Ohio and 5.08 nationally — the widest of
+  the three — so whatever makes that gap unusually wide, it is not this. [inference] — against
+  [what the county dies of early](allen-county-early-deaths-by-cause-2020-2022.yml).
+
+  **Every published trend points down or sideways.** All-sites mortality is falling at 1.1 per cent
+  a year, and of the fifteen sites with a rate, four are falling and eleven are stable; none is
+  rising. Incidence is stable. [verified] — same source, the recent-trend columns.
+
+  **In figures, the four sites the county loses most people to each year: lung and bronchus 59,
+  pancreas 19, colon and rectum 16 and breast 12.** [verified] — read from the table above, same
+  source.
+
+  [open] What the county dies of that is still unmeasured here. Diabetes and chronic lower
+  respiratory disease have no county-level mortality source this corpus has found, and the agency
+  holding the death certificates
+  [serves the nation to a machine and refuses the county](../../decisions/the-api-serves-the-nation-and-refuses-the-county.yml).
+properties:
+  parameter: cancer death rate, all sites, age-adjusted
+  value: "159.0"
+  unit: deaths per 100,000
+  as_of: "2023"
+  method: |
+    The value above is the all-sites age-adjusted death rate for the five years 2019–2023, dated
+    here by the last year of that window as this corpus dates its other multi-year mortality
+    measures. State Cancer Profiles' CSV output — `output=1` — for Ohio counties, one request per site and
+    per stratum, nineteen sites for mortality and four for incidence. A site code with no dataset
+    behind it returns an HTML page under HTTP 200, so every response is checked against its first
+    line before parsing; twenty-eight codes were tried and nineteen are real. Rates are the file's
+    own age-adjusted figures and ranks are the file's own `CI*Rank`, not computed here. Mortality
+    covers 2019–2023 and incidence 2018–2022, and no figure combines the two. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nci-state-cancer-profiles.md
+  - target: allen-county-heart-disease-and-stroke-1999-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-early-deaths-by-cause-2020-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-health-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cdc-places.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

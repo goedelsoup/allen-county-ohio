@@ -24,6 +24,7 @@ location:
 used-by:
   - ../corpus/measure/allen-county-manufacturing-employment-1986-2022.yml
   - ../corpus/measure/allen-county-wages-2024.yml
+  - ../corpus/measure/allen-county-commuting-2022.yml
 ---
 
 **It corroborates the recent figures and cannot reach the old ones.** Its annual county files are

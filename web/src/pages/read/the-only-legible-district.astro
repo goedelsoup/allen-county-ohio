@@ -1,0 +1,150 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const lima = assertion('lima-reads-at-forty-two-per-cent')
+const fell = assertion('twelve-districts-fell-in-the-same-two-years')
+const passed = assertion('the-county-passed-the-state-without-improving')
+const legible = assertion('the-only-district-published-as-a-number')
+const bounds = assertion('the-county-graduation-rate-fell-and-the-states-rose')
+const race = assertion('no-racial-gap-in-limas-graduation-rate')
+const series = assertion('limas-graduation-rate-has-not-moved')
+
+const spec = (a: typeof lima, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const limaSpec = spec(lima, 'Per cent proficient in reading, 2018')
+const fellSpec = spec(fell, 'Points lost in reading, 2013 to 2015')
+const passedSpec = spec(passed, 'Points above Ohio')
+const legibleSpec = spec(legible, 'District-years of graduation data')
+const boundsSpec = spec(bounds, 'Graduation rate, per cent')
+const seriesSpec = spec(series, 'Lima City graduation rate, per cent')
+---
+
+<Article slug="the-only-legible-district">
+  <p>
+    Allen County's twelve school districts have been in this corpus for a while: how many children
+    are in them, how many teachers, how poor the children are, what each district spends and where
+    the money comes from. What was missing was the thing a parent asks first. Districts report their
+    results to the state, states report to the federal government, and the federal government
+    publishes by district — ten years of graduation rates and ten of test scores.
+  </p>
+  <AssertionCard assertion={lima} open />
+  <ChartFigure
+    id="lima"
+    title="Reading proficiency, 2018"
+    caption="Share of tested pupils scoring proficient, all grades together. Every figure rests on between 250 and 1,904 tests, so none of the ordering is a small-numbers artefact."
+    columns={['District', 'Proficient']}
+    rows={lima.figures.map((f) => [f.label, `${f.value.toFixed(0)}%`])}
+  />
+  <script type="application/json" data-chart-spec="lima" set:html={JSON.stringify(limaSpec)} is:inline />
+  <p>
+    Lima City is the county's largest district, its poorest, and its highest spender per pupil. It is
+    also twenty points below the second-lowest district and forty-one below the highest, in both
+    subjects. The corpus records that spending, poverty and results move together here and declines
+    to put them in an order.
+  </p>
+
+  <h2>A fall that arrived everywhere at once</h2>
+  <AssertionCard assertion={fell} />
+  <ChartFigure
+    id="fell"
+    title="Reading proficiency lost between 2013 and 2015"
+    caption="Four of the twelve. Every district in the county fell, by between 18 and 40 points, and the Ohio average fell 28.7 over the same two years."
+    columns={['District', 'Points lost']}
+    rows={fell.figures.map((f) => [f.label, `${f.value.toFixed(0)}`])}
+  />
+  <script type="application/json" data-chart-spec="fell" set:html={JSON.stringify(fellSpec)} is:inline />
+  <p>
+    Twelve independently governed districts, with different boards, different budgets and different
+    children, do not lose a fifth to two fifths of their proficiency in the same two years unless
+    something outside all of them changed. That something is the test. Which test replaced which,
+    and on whose authority, is not in this collection, and the corpus has opened it rather than
+    guessed.
+  </p>
+  <AssertionCard assertion={passed} />
+  <ChartFigure
+    id="passed"
+    title="Allen County against Ohio"
+    caption="Points of proficiency above the state average, weighting each district by the tests it gave. In 2009 the county was 0.8 points below Ohio in reading; it is now above."
+    columns={['Subject', 'Above Ohio']}
+    rows={passed.figures.map((f) => [f.label, `${f.value.toFixed(1)}`])}
+  />
+  <script type="application/json" data-chart-spec="passed" set:html={JSON.stringify(passedSpec)} is:inline />
+
+  <h2>What the file will not show you</h2>
+  <p>
+    Graduation rates are a different matter, and the difference is arithmetic. A district gives about
+    nine thousand tests a year and graduates about thirteen hundred pupils, and a federal disclosure
+    rule that leaves the first alone bites hard on the second.
+  </p>
+  <AssertionCard assertion={legible} />
+  <ChartFigure
+    id="legible"
+    title="How a graduation rate is published"
+    caption="The county's twelve districts over ten years. A banded rate reads 90-94, or 95-100, or 50-100; an exact rate reads 63."
+    columns={['Form', 'District-years']}
+    rows={legible.figures.map((f) => [f.label, `${f.value.toFixed(0)}`])}
+  />
+  <script type="application/json" data-chart-spec="legible" set:html={JSON.stringify(legibleSpec)} is:inline />
+  <p>
+    Across Ohio, no district with a graduating cohort under 150 has ever had an exact rate published,
+    and the smallest exact cohort in ten years is 201. So the districts a reader can read are the
+    large ones — and in this county the large district is the city district, the poor one, and the
+    one with the worst rate. The single number among eleven bands is 63 per cent, and it belongs to
+    Lima.
+  </p>
+  <AssertionCard assertion={series} />
+  <ChartFigure
+    id="series"
+    title="Lima City's graduation rate"
+    caption="Six of the ten years. It is the only rate in Allen County published as a number in every year of the run, and the only one that can be tracked at all."
+    columns={['Year', 'Rate']}
+    rows={series.figures.map((f) => [f.label, `${f.value.toFixed(0)}%`])}
+  />
+  <script type="application/json" data-chart-spec="series" set:html={JSON.stringify(seriesSpec)} is:inline />
+  <p>
+    Tracked across the decade it barely moves: nine of the ten years fall between 63 and 70 per cent,
+    and the exception is 2011. Everywhere else in the county a band four or five points wide would
+    hide a change of that size completely.
+  </p>
+  <Gloss>
+    That is worth naming as a rule, because it is not the rule for a survey margin. A sampling margin
+    is symmetric and probabilistic; a disclosure band contains the truth with certainty and has no
+    shape inside it, and its width is set by the size of the unit rather than the size of a sample.
+    So: print the band, never the midpoint column — 173 of this county's graduation rows read 50 to
+    100 and every one carries a midpoint of 75 — weight bounds into an interval, and assert a
+    difference only where two intervals fail to touch.
+  </Gloss>
+  <AssertionCard assertion={bounds} />
+  <ChartFigure
+    id="bounds"
+    title="The county's graduation rate, bounded"
+    caption="Each district's published band weighted by its own cohort. The 2011 and 2019 intervals do not overlap, so the fall is established without any assumption about where inside a band a district sits."
+    columns={['Bound', 'Per cent']}
+    rows={bounds.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="bounds" set:html={JSON.stringify(boundsSpec)} is:inline />
+  <p>
+    Against 2010 rather than 2011 the same two intervals overlap by seven tenths of a point, and
+    nothing is established at all. The county's advantage over the state has gone the same way: clear
+    of Ohio in every year to 2015, overlapping it since 2016, with the state's band the higher of the
+    two in 2019.
+  </p>
+  <AssertionCard assertion={race} />
+  <p>
+    One last thing the bands permit. Lima's cohorts are large enough to be published by race, and
+    across ten years the white and Black graduation bands are disjoint seven times, with white higher
+    in three and Black higher in four. On housing cost and on mortgage lending this county shows a
+    gap that survives every test put to it. On finishing high school in its largest district, there
+    is no gap to find.
+  </p>
+</Article>

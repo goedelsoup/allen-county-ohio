@@ -1,0 +1,77 @@
+id: a-suppressed-range-is-not-a-margin
+summary: >-
+  The federal graduation file publishes 109 of this county's 120 district-years as a band —
+  `90-94`, `50-100` — and 11 as a number. The width of the band is set by the size of the cohort
+  and by nothing else, so the one district a reader can read exactly is the largest, which is also
+  the poorest and the lowest-performing. A disclosure band is not a sampling margin, its midpoint
+  is not a measurement, and the units reported precisely are a non-random subset of the units.
+context: |
+  Two rules were already written for figures that arrive with an interval attached, and neither one
+  fits this. Across Ohio's 7,440 all-student district-years of graduation data:
+
+      graduating cohort     rows    published exactly
+      under 30               503                    0
+      30 to 59             1,053                    0
+      60 to 99             1,700                    0
+      100 to 149           1,414                    0
+      150 to 299           1,708                  791
+      300 or more          1,062                1,051
+
+  Nothing about the schooling varies down that column. The smallest cohort ever published exactly is
+  201. Below 150 it has not happened once in ten years.
+
+  In Allen County that leaves Lima — 270 in its 2019 cohort — as the only district with a graduation
+  rate stated as a number, and Lima's rate is 63 per cent against bands of `80-84` to `95-100`
+  everywhere else. The reader who wants to know which district is failing is handed exactly one
+  legible answer, and the rule that chose it chose on size.
+
+  The midpoint column makes it worse rather than better. 173 of this county's 1,231 graduation rows
+  read `50` to `100`; all 173 carry a midpoint of 75. A pipeline that takes the midpoint gets a
+  number that looks like a rate and is a restatement of *no information*.
+
+  And the same collection, for the same twelve districts, publishes reading and mathematics
+  proficiency with no suppression at all — 240 cells of 240 exact — because a district tests about
+  9,300 pupils a year and graduates about 1,300. One source, two measures, and the difference in
+  what may be known is arithmetic.
+decision: |
+  **Where a source bounds a value for disclosure rather than for sampling, the band is the datum.
+  The node prints the band as published, never the midpoint, and any aggregate is an interval.**
+
+  - **The midpoint column is not read.** Not as a value, not as an input to a weighted mean, not as
+    a fallback. Where a row is exact the source says so by setting the bounds equal.
+  - **Aggregate by weighting the bounds.** Each unit's lower bound and upper bound enter separately,
+    weighted by its own denominator; the result is an interval, and the interval is what is
+    published.
+  - **A difference is asserted only where the two intervals are disjoint**, and the node states the
+    minimum difference the bounds imply. Overlapping intervals are reported as both intervals and
+    the comparison is declined, in the same voice as any other refusal here.
+  - **Say which units are legible.** Where precision varies with the size of a unit, the node names
+    the units published exactly and the reason, because a reader who sees one number among eleven
+    bands will read the number as the finding.
+  - **Never rank a mixture of exact values and bands.** An ordering built from `63`, `80-84` and
+    `95-100` is an ordering of three different kinds of object.
+rationale: |
+  **This is not the survey rule.** [a survey is not a count](a-survey-is-not-a-count.yml) governs a
+  sampling margin: symmetric, probabilistic, and a property of how many people were asked. A
+  disclosure band is none of those. The true value is inside it with certainty and with no density
+  across it, so root-sum-of-squares is meaningless here and the honest arithmetic is interval
+  arithmetic. The two rules can meet in one node and must not be confused in one sentence.
+
+  **Nor is it the small-count rule.** [a count of tens is a draw](a-count-of-tens-is-a-draw.yml)
+  says a small count moves on its own. Here the count is not noisy — a cohort of 33 graduated
+  whatever share of itself it graduated — it is *hidden*, deliberately, and the hiding is a policy
+  with a threshold that can be measured. It was measured: 150.
+
+  **The selection is the part worth carrying forward.** A rule that suppresses small cells makes
+  large units legible and small ones opaque, and largeness is never independent of the subject. In
+  this county the large district is the city district, the poor one and the low-performing one. Any
+  claim of the form *the worst district is X* drawn from such a file is partly a claim about which
+  districts the disclosure rule permitted to be seen; see also
+  [a source is also a filter](a-source-is-also-a-filter.yml), which is the same shape one level up.
+
+  **What this does not license.** Declining to publish. The bound is often decisive on its own: this
+  county's graduation rate is 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019, two intervals
+  that do not touch, so the fall is established without an assumption about anything inside them.
+  Against 2010 the intervals overlap by 0.71 points and the same corpus says nothing.
+status: accepted
+date: "2026-09-03"

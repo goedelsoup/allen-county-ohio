@@ -1,0 +1,150 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const tenure = assertion('renters-carry-what-owners-do-not')
+const bottom = assertion('the-burden-is-all-at-the-bottom')
+const race = assertion('a-black-renter-pays-more-of-less')
+const country = assertion('the-county-moved-and-the-country-did-not')
+const supply = assertion('thirty-nine-homes-for-a-hundred-households')
+
+const share = (a: typeof tenure, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const tenureSpec = share(tenure, 'Per cent of households')
+const bottomSpec = share(bottom, 'Per cent paying more than half of income')
+const raceSpec = share(race, 'Per cent of renter households')
+const windows = ['2006–2010', '2011–2015', '2015–2019', '2018–2022']
+const countrySpec = line(windows, [
+  { name: 'Allen County', y: country.figures.slice(0, 4).map((f) => f.value) },
+  { name: 'United States', y: country.figures.slice(4).map((f) => f.value) },
+], { yTitle: 'Per cent of renters paying more than 30% of income' })
+const supplySpec = share(supply, 'Households and homes')
+---
+
+<Article slug="what-the-rent-takes">
+  <p>
+    Two thousand two hundred and fifty-one homes in Allen County have a federal subsidy attached to
+    the rent. Five renter households in six do not, and what those pay is a different question with
+    a different answer. HUD publishes both — an administrative count of every assisted unit, and a
+    set of custom tabulations of the American Community Survey built to show what housing costs the
+    households living in it.
+  </p>
+  <AssertionCard assertion={tenure} open />
+  <ChartFigure
+    id="tenure"
+    title="Who pays more than they can afford"
+    caption="Allen County, 2018–2022. Thirty per cent of income is the federal threshold for cost burden and fifty per cent for severe cost burden; both are of gross household income, and for a renter the cost is rent plus tenant-paid utilities."
+    columns={['Households', 'Per cent']}
+    rows={tenure.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="tenure" set:html={JSON.stringify(tenureSpec)} is:inline />
+  <p>
+    Owning a house here is close to the cheapest thing a household can do. The county's median
+    owner-occupied home is worth $158,400 and more than two thirds of its owners are above the area
+    median income; fewer than one in seven of them pays more than thirty per cent for shelter, and
+    one in nineteen pays more than half. The renters are a different county.
+  </p>
+
+  <h2>It is an income problem, not a housing problem</h2>
+  <p>
+    Cheap housing and affordable housing are not the same thing, and few places separate the two as
+    cleanly as this one. Sorted by income against the area median, almost the entire burden sits in
+    the lowest band and almost none of it anywhere else.
+  </p>
+  <AssertionCard assertion={bottom} />
+  <ChartFigure
+    id="bottom"
+    title="Severe cost burden by income band"
+    caption="Households below 30 per cent of HUD area median family income, by tenure, paying more than half of that income for housing. Above 80 per cent of the area median, 680 households of 23,700 pay more than thirty per cent — 2.9 per cent of them."
+    columns={['Households', 'Per cent paying over half']}
+    rows={bottom.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="bottom" set:html={JSON.stringify(bottomSpec)} is:inline />
+  <p>
+    Four thousand and sixty households in this county live on less than thirty per cent of the area
+    median income, and 2,515 of them hand more than half of it to a landlord or a lender. Owners in
+    that band are barely better off than renters — 60.2 per cent against 63.0 — which is what a
+    county of cheap old houses and low incomes looks like from underneath.
+  </p>
+
+  <h2>Who carries it</h2>
+  <AssertionCard assertion={race} />
+  <ChartFigure
+    id="race"
+    title="Renter cost burden by race and ethnicity"
+    caption="White alone non-Hispanic against Black alone non-Hispanic renter households, Allen County, 2018–2022. The two groups are 9,310 and 2,435 households of the county's 13,240."
+    columns={['Households', 'Per cent']}
+    rows={race.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="race" set:html={JSON.stringify(raceSpec)} is:inline />
+  <p>
+    Geography is the surprise. Lima holds 7,355 of the county's renter households and 1,665 of its
+    poorest, and its renter burden rate is 39.2 per cent against 31.3 outside the city — a gap of
+    eight points on a combined margin of twelve, which is to say a gap that cannot be told from
+    none. On subsidized housing the same two halves are fifty-one points apart. On what the rent
+    takes, they are the same county.
+  </p>
+
+  <h2>The county moved and the country did not</h2>
+  <AssertionCard assertion={country} />
+  <ChartFigure
+    id="country"
+    title="Renters paying more than thirty per cent of income"
+    caption="Four American Community Survey windows, Allen County against the United States. The windows overlap — 2015–2019 and 2018–2022 share two years of sample — so adjacent readings are not independent."
+    columns={['Window', 'Allen County', 'United States']}
+    rows={windows.map((w, i) => [
+      w,
+      `${country.figures[i].value.toFixed(1)}%`,
+      `${country.figures[i + 4].value.toFixed(1)}%`,
+    ])}
+  />
+  <script type="application/json" data-chart-spec="country" set:html={JSON.stringify(countrySpec)} is:inline />
+  <p>
+    Two pandemic years sit inside the newest window, and the obvious suspicion is that emergency
+    unemployment payments raised measured incomes and lowered measured burden. They did not do the
+    work. The 2015–2019 window ends before any of it and already stands 5.4 points below 2011–2015;
+    the further fall after that is inside its own margin. A shrinking county's rental market
+    loosens, and this one has been shrinking for fifty years.
+  </p>
+
+  <h2>Eighty-one homes, and thirty-nine of them free</h2>
+  <AssertionCard assertion={supply} />
+  <ChartFigure
+    id="supply"
+    title="Homes a household at 30 per cent of area median could rent"
+    caption="Occupied units renting at or below that level plus vacant units offered at it, against the households at that income. The ratios are 80.7 ± 6.2 affordable and 38.8 ± 8.4 available per hundred; the national figure computed the same way is 31.5, which is inside this county's margin."
+    columns={['Measure', 'Units or households']}
+    rows={supply.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="supply" set:html={JSON.stringify(supplySpec)} is:inline />
+  <p>
+    A shortage at the bottom survives a loose market. There are 2,050 rental homes in the county a
+    household at thirty per cent of the area median could afford, against 2,540 such households —
+    and 1,065 of those homes are lived in by somebody who earns more, because nothing reserves a
+    cheap flat for a poor tenant. Take those out and thirty-nine homes remain for every hundred
+    households that need one.
+  </p>
+  <Gloss>
+    One caution runs under every figure above. The survey behind them asks a household what it pays
+    and never asks whether anyone helps it pay, so the county's assisted households are inside both
+    the numerator and the denominator, unlabelled. HUD's own programme file counts about 1,640 of
+    them below thirty per cent of the area median; the survey finds only 745 renter households in
+    that band paying an affordable share of income. The two do not fit, in three separate five-year
+    windows, by more than the survey's margins.
+  </Gloss>
+  <p>
+    Which way that cuts is not settled. Either the cost burden of this county's poorest renters is
+    overstated because a subsidised tenant reports the rent on the door rather than the share they
+    hand over, or several hundred households are being helped and are paying more than half their
+    income anyway. Both readings are worth someone's attention, and they point opposite ways.
+  </p>
+</Article>

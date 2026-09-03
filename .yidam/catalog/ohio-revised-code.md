@@ -48,6 +48,17 @@ location:
     description: >-
       Board membership in city school districts — three to five members elected at large below
       50,000 population, which is why Lima's board seats five
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3735.27
+    description: >-
+      Creating a metropolitan housing authority — the authority is declared to exist, and its
+      territorial limits defined, by a letter from the state director of development
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3735.31
+    description: >-
+      Metropolitan housing authority powers and duties — "a body corporate and politic", which is
+      the sentence that put this corpus's only housing authority on the organization side of the
+      line it draws against jurisdiction
 used-by:
   - ../corpus/jurisdiction/allen-county-educational-service-center.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
@@ -61,6 +72,7 @@ used-by:
   - ../corpus/office/allen-county-recorder.yml
   - ../corpus/office/allen-county-treasurer.yml
   - ../corpus/office/judge-of-the-lima-municipal-court.yml
+  - ../corpus/organization/allen-metropolitan-housing-authority.yml
   - ../corpus/person/brion-e-rhodes.yml
   - ../corpus/person/john-thomas-meyer.yml
   - ../corpus/tenure/auditor-2023-rachael-s-gilroy.yml

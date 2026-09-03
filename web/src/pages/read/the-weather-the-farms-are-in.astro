@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import DataTable from '../../components/DataTable.astro'
@@ -78,11 +79,13 @@ const climateDecades = [
 
 <Article slug="the-weather-the-farms-are-in">
   <p>
-    Everything above is about ground. This site has never said anything about the sky over it, and
-    it now has a hundred and thirty-one complete years of it — every month from January 1895,
-    county by county, from NOAA's gridded climate record. Allen County is 2.03&nbsp;°F warmer than
-    it was. Where that warmth went is the finding.
-  </p>
+      Everything above is about ground. A hundred and thirty-one complete years of the sky over it
+      — every month from January 1895, county by county, from NOAA's gridded climate record — make
+      Allen County 2.03&nbsp;°F warmer than it was. Where that warmth went is the finding.
+    </p>
+    <Gloss>
+      Nothing had been said here about the weather before this.
+    </Gloss>
   <AssertionCard assertion={winters} />
   <ChartFigure
     id="winter-against-summer"
@@ -123,8 +126,7 @@ const climateDecades = [
   <p class="note">
     Two instruments that share no data agree about which years were wet here. The wettest month in
     the record is June 2015 at 13.48 inches and the second is August 2007 at 10.54 — and August
-    2007 falls inside the ten-year hole in the Lima river gauge, one of three federal flood
-    declarations this site could previously say nothing about. The gauge's own highest peak, 5,700
+    2007 falls inside the ten-year hole in the Lima river gauge, one of three federal flood declarations the gauge is silent on. The gauge's own highest peak, 5,700
     cubic feet a second on 28 February 2011, sits in the fourth wettest February of the record and
     the wettest calendar year of it. The rainfall record cannot say what was in the river; it can
     say what fell on the ground, and it is not silent where the gauge is.
@@ -132,11 +134,13 @@ const climateDecades = [
 
   <h2>Three more weeks between the frosts</h2>
   <p>
-    Every weather record this site held until now was monthly, divisional or storm-driven. One
-    station in Lima has kept a daily maximum, minimum, rainfall, snowfall and snow depth since 1
-    April 1901 — 45,601 days — and it answers a question a monthly mean cannot: how long the
-    ground here goes without freezing.
-  </p>
+      One station in Lima has kept a daily maximum, minimum, rainfall, snowfall and snow depth
+      since 1 April 1901 — 45,601 days — and it answers a question a monthly mean cannot: how long
+      the ground here goes without freezing.
+    </p>
+    <Gloss>
+      Every other weather record read here is monthly, divisional or storm-driven.
+    </Gloss>
   <AssertionCard assertion={frost} />
   <ChartFigure
     id="frost"

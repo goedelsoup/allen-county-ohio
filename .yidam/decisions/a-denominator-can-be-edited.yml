@@ -1,0 +1,75 @@
+id: a-denominator-can-be-edited
+summary: >-
+  Turnout is ballots over registered voters, and one office reports both on one form. Allen County's
+  2020 turnout is 71.8 per cent on its own roll and 69.7 on the roll it had two years earlier — a
+  gap larger than the one between 2020 and any other presidential year here. Where a rate's
+  denominator is a register its own reporter maintains, the register's churn is published beside
+  the rate, and no year-to-year difference smaller than that churn is called a change.
+context: |
+  The county board of elections answers one federal questionnaire. On it, `F1a` is the ballots it
+  counted and `A1a` is the roll it counted them against. The first is a certified return; the second
+  is a working file the same office edits continuously, and the survey's own Section A records the
+  editing.
+
+      Allen County                          2018      2020      2024
+      ballots                             36,660    48,353    46,845
+      the roll                            69,338    67,374    66,201
+      removed since the last election      1,560     9,770         —
+      turnout on its own roll              52.9%     71.8%     70.8%
+      turnout on the 2018 roll             52.9%     69.7%     67.6%
+
+  9,770 names came off between the 2018 and 2020 elections and 1,560 came off in the two years
+  before that. The difference that makes is 2.03 points on 2020's rate — larger than 2020's gap to
+  2024 (1.01) and to 2012 (1.71), which are the comparisons a reader would actually make.
+
+  The state makes the point at a glance. In 2024 Ohio's 88 counties ran one election under one
+  statute on one day and reported turnouts from 62.99 per cent (Lawrence) to 98.56 (Tuscarawas), a
+  spread of 35.6 points; eight counties were above 80 per cent. Nationally four jurisdictions
+  reported more ballots than registrants. Nothing that varies like that across a single state on a
+  single day is measuring how many people voted.
+
+  And the register cannot be audited from its own returns. In every year of this county's record the
+  reported roll, the reported additions and the reported removals fail to reconcile — by 9,831 names
+  between 2010 and 2012, by between 499 and 6,830 in every other year. The stock and the flows are
+  separate answers to separate questions and the survey never crosses them.
+decision: |
+  **Where a rate's denominator is a register maintained by the body that reports its numerator, the
+  register's own churn is published beside the rate, and a difference between two years is not
+  called a change unless it survives holding the denominator fixed.**
+
+  - **State the churn.** A turnout figure carries, in the same node or one link away, how many names
+    came off the roll since the last reading. A rate whose denominator moved by fifteen per cent
+    between readings is a different quantity from one whose denominator did not.
+  - **Re-compute on a fixed denominator before comparing two years.** Take the earlier year's
+    register, apply both years' numerators, and see whether the sign and the ordering survive. If
+    they do not, report both years and say the comparison is not available.
+  - **Distrust the tails hardest.** A jurisdiction at the top of a distribution of administered
+    rates is usually the one whose register is smallest, not the one whose people turned out most.
+    Ranking on such a rate is ranking on the maintenance.
+  - **Prefer a denominator the reporter does not control — and only where it is defensible.** This
+    corpus does not adopt voting-age population here: it holds no citizen count, and 1,513 of this
+    county's residents were counted in correctional facilities in 2020, where a felony sentence bars
+    the vote. An indefensible denominator is not an improvement on an edited one.
+rationale: |
+  **This is not the survey rule.** [a survey is not a count](a-survey-is-not-a-count.yml) governs
+  figures that arrive with a published interval, and the fix there is to read the margin. A register
+  has no margin. Every name on this roll is a real registration and every removal is a real
+  administrative act; the file is exact and the quantity is still not stable, because exactness is
+  about the counting and not about what was counted.
+
+  **Nor is it the programme rule.**
+  [a programme is invisible inside a survey](a-programme-is-invisible-inside-a-survey.yml) is about
+  two sources that cannot see each other. Here there is one source, one office and one form, and
+  the numerator and the denominator on it are different kinds of object.
+
+  **What made it worth a rule is that the corpus had already published the rate.** The 2020 turnout
+  node stood for several phases saying 71.8 per cent and asking, in an open block, whether that was
+  high or low. The answer turns out to be *neither*, and part of the reason it looked high is that
+  the roll had lost 9,770 names in the two years before it. The open question could not have been
+  answered without the removals, and nothing in the node said so.
+
+  **What this does not license.** Refusing to publish turnout. It is the figure every reader wants
+  and the one the county itself uses. The rule governs what may be said about the difference between
+  two of them.
+status: accepted
+date: "2026-09-03"

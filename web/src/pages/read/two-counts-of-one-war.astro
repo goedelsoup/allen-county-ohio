@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -16,10 +17,13 @@ const warListSpec = bar(
 
 <Article slug="two-counts-of-one-war">
   <p>
-    The same chapter of the same book that gave this site the Civil War gives the First World
-    War, and this site had never read it. Chapter XLIV of the 1921 county history, "Allen County
-    in the Wars", runs fifty pages and ends in two rosters.
-  </p>
+      The same chapter of the same book that gives the Civil War gives the First World War.
+      Chapter XLIV of the 1921 county history, “Allen County in the Wars”, runs fifty pages and
+      ends in two rosters.
+    </p>
+    <Gloss>
+      The second half of that chapter had never been read here.
+    </Gloss>
   <AssertionCard assertion={warLists} />
   <ChartFigure
     id="warlists"

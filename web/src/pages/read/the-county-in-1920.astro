@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import DataTable from '../../components/DataTable.astro'
@@ -124,18 +125,24 @@ const composition1920 = [
   />
   <script type="application/json" data-chart-spec="born-1920" set:html={JSON.stringify(bornSpec)} is:inline />
   <p>
-    One more thing fell out of reading the volume: the county's 1920 population is 68,223, not the
-    68,203 this site has been printing. That number came from the county history too, and it is
-    twenty low — exactly as the same book's figure for Lima, 41,306, is twenty low against the
-    census's 41,326. The corpus had already caught the second and never checked the first.
-  </p>
+      The county's 1920 population is 68,223. The figure of 68,203 came from the county history,
+      and it is twenty low — exactly as the same book's figure for Lima, 41,306, is twenty low
+      against the census's 41,326.
+    </p>
+    <Gloss>
+      68,203 was printed here until the census volume was read. The Lima error had already been
+      caught; the county one was never checked against it.
+    </Gloss>
   <AssertionCard assertion={forties} />
   <p>
-    That 1920 count sat alone for a century, with the next figure this site could give being the
-    2023 estimates. The four censuses in between are in the Ohio population volume of each, and
-    three of the four have no text layer at all — every number below was read off a rendered page
-    image and added up before it was written down.
-  </p>
+      The four censuses between 1920 and the present are in the Ohio population volume of each,
+      and three of the four have no text layer at all — every number below was read off a rendered
+      page image and added up before it was written down.
+    </p>
+    <Gloss>
+      That 1920 count stood alone for a century here, the next available figure being the 2023
+      estimates.
+    </Gloss>
   <ChartFigure
     id="black-population-1920-1960"
     title="Allen County's Black population, 1920 to 1960"
@@ -161,17 +168,19 @@ const composition1920 = [
     Two of the 1920 columns have no 1950 successor at all. Switzerland, whose 171 stood for
     Bluffton, has no column of its own in the later table, and Wales, whose 120 stood for Gomer,
     is folded into England. That is not a fall to nothing; it is a column that stopped being
-    printed — which is the reason this phase also wrote down a rule about differencing figures
-    that come from two different books.
+    printed — which is the reason there is a rule here about differencing figures that come from two different books.
   </p>
 
   <h2>The category that split in 2000</h2>
   <p>
-    The 1920-to-1960 series above stopped where it did because five censuses had never been read
-    here. They have been now — the general-characteristics volume of each, and for 2020 the
-    redistricting file — and the county's Black population has a count at every decennial census
-    from 1920 to 2020 with no gap in it.
-  </p>
+      The county's Black population has a count at every decennial census from 1920 to 2020 with
+      no gap in it — the general-characteristics volume of each, and for 2020 the redistricting
+      file.
+    </p>
+    <Gloss>
+      The 1920-to-1960 series above stopped where it did because five of those volumes had not been
+      read.
+    </Gloss>
   <AssertionCard assertion={split} />
   <ChartFigure
     id="black-population-1970-2020"
@@ -195,14 +204,17 @@ const composition1920 = [
     rows={laterRace}
   />
   <p>
-    This site has been saying that Lima's share of the county's Black residents fell in every
-    decade it could be measured, and that the 76.7 per cent the survey reports now is the end of a
-    long slide. It is not. The share fell from 89.7 per cent in 1920 to 74.7 in 1950 and then went
-    back up — 86.7, 88.1, 88.9 — until in 1990 it stood exactly where it had in 1920. The fall
-    this site reads in the present begins after that, and it is thirty years old rather than a
-    hundred. Part of the reversal is people and part of it is the city line, which Lima moved
-    outward from 1944 onward; how much of it is which is not established here.
-  </p>
+      Lima's share of the county's Black residents is easy to read as the end of a long slide,
+      ending at the 76.7 per cent the survey reports now. It is not. The share fell from 89.7 per
+      cent in 1920 to 74.7 in 1950 and then went back up — 86.7, 88.1, 88.9 — until in 1990 it
+      stood exactly where it had in 1920. The fall visible in the present begins after that, and
+      it is thirty years old rather than a hundred. Part of the reversal is people and part of it
+      is the city line, which Lima moved outward from 1944 onward; how much of it is which is not
+      established here.
+    </p>
+    <Gloss>
+      The long slide was asserted here until the five missing censuses were read.
+    </Gloss>
   <DataTable
     title="Where the county's Black residents lived in 2020"
     caption="The thirteen subdivisions sum to the county exactly in all three columns, which is how these were checked. Six of the twelve townships have fewer than twenty-five Black residents."

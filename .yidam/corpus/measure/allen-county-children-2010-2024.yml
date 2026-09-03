@@ -1,0 +1,106 @@
+class: measure
+label: Allen County's children, 2010–2024
+description: |
+  How many people under eighteen live in Allen County, annually, and how many are born here.
+  [verified] — [Census Population Estimates](../../catalog/census-popest-2024.md), county age-sex
+  files for the 2010s and 2020s vintages and the components-of-change files beside them.
+
+      date            population   under 5   age 5–13   age 14–17   under 18   share
+      2010 census        106,331     6,761     12,804       5,880     25,445   23.9%
+      7/1/2010           106,342     6,751     12,782       5,844     25,377   23.9%
+      7/1/2011           105,981     6,694     12,783       5,709     25,186   23.8%
+      7/1/2012           105,251     6,540     12,607       5,599     24,746   23.5%
+      7/1/2013           105,071     6,474     12,547       5,641     24,662   23.5%
+      7/1/2014           104,886     6,483     12,382       5,688     24,553   23.4%
+      7/1/2015           104,141     6,372     12,215       5,755     24,342   23.4%
+      7/1/2016           103,691     6,357     12,158       5,698     24,213   23.4%
+      7/1/2017           103,173     6,367     11,890       5,642     23,899   23.2%
+      7/1/2018           102,747     6,362     11,865       5,493     23,720   23.1%
+      7/1/2019           102,450     6,303     11,751       5,473     23,527   23.0%
+      **7/1/2020**       101,980     6,224     11,675       5,553     23,452   23.0%
+      **7/1/2020**       102,137     6,315     12,158       5,790     24,263   23.8%
+      7/1/2021           101,800     6,156     12,103       5,804     24,063   23.6%
+      7/1/2022           101,086     6,135     11,873       5,800     23,808   23.6%
+      7/1/2023           100,851     6,082     11,834       5,679     23,595   23.4%
+      7/1/2024           100,866     6,055     11,762       5,614     23,431   23.2%
+
+  **1 July 2020 appears twice because two series reach it and they disagree.** The rows above the
+  break are the Vintage 2020 estimates, carried forward from the 2010 census; the rows below are
+  Vintage 2024, carried forward from the 2020 one. At the shared date they put the county 157 people
+  apart — a seventh of one per cent — and its children **811 apart**, which is 3.5 per cent.
+  [verified] — [the two age files](../../catalog/census-popest-2024.md). See
+  [an estimate is anchored to a census](../../decisions/an-estimate-is-anchored-to-a-census.yml).
+
+  **So the fall is reported twice and not spliced.** Within the 2010s series the county's under-18
+  population fell 7.8 per cent in ten years, from 25,445 to 23,452. Within the 2020s series it fell
+  3.4 per cent in four, from 24,263 to 23,431. Differencing across the break gives 7.9 per cent and
+  is no source's answer. [inference] — arithmetic this corpus's.
+
+  **Children under five, which is the leading edge of all of it, fell in twelve of the fourteen
+  year-on-year steps.** 6,751 at the first July estimate and 6,055 at the last; the two exceptions
+  are 2014 over 2013, by nine, and 2017 over 2016, by ten, and neither reaches the year before it.
+  [verified] — the same files.
+
+      births, county of residence
+      2011  1,318     2015  1,251     2019  1,214     2023  1,202
+      2012  1,223     2016  1,262     2021  1,171     2024  1,200
+      2013  1,289     2017  1,229     2022  1,190
+      2014  1,322     2018  1,250
+
+  **Births fell nine per cent across the run and the low is 2021.** 1,318 in 2011 against 1,200 in
+  2024, with the fewest in the record — 1,171 — in the first full year after the pandemic began.
+  [verified] — [the components files](../../catalog/census-popest-2024.md). **2010 and 2020 are
+  missing from that table on purpose**: each vintage's first year covers only the three months from
+  the census date to 30 June, 339 births in 2010 and 293 in 2020, and putting a partial year in a
+  column of full ones is how a false trough gets published. [verified] — the same files.
+
+  **The county's under-five population is its own births and nothing else.** For every year of the
+  2010s where all five preceding birth counts are published in full, the estimated under-five
+  population matches their sum to within 1.6 per cent: 6,372 against 6,403 in 2015, 6,357 against
+  6,347 in 2016, 6,367 against 6,353 in 2017, 6,362 against 6,314 in 2018 and 6,303 against 6,206 in
+  2019. [inference] — computed here from the age and component files. Migration moves this county's
+  adults; it does not appear to move its babies. The same check cannot be run on the 2020s series
+  because the 2020 birth count in these files is a three-month stub.
+
+  **This is most of why the schools emptied, and it is not all of it.** Across the 2010s series the
+  county's under-18 population fell 7.3 per cent between the July estimates of 2010 and 2019 —
+  25,377 to 23,527 — while enrolment in the twelve districts fell 5.9 per cent over the same two
+  autumns, 17,830 to 16,774. [inference] — against
+  [the enrolment series](allen-county-school-enrolment-1988-2024.yml). The children went missing
+  faster than the classrooms did, which is the reverse of what a story about children leaving these
+  districts for other schools would predict, and it is one decade of evidence rather than a rule.
+
+  [open] How many children this county had before 2010. Nothing here reaches the 1988 start of the
+  enrolment series, so the thirty-seven-year fall in the schools has fourteen years of demographic
+  explanation under it and twenty-three years of none.
+properties:
+  parameter: population under 18
+  value: "23431"
+  unit: people
+  as_of: "2024"
+  method: |
+    County age-sex estimate files `CC-EST2020-AGESEX-39.csv` and `cc-est2024-agesex-39.csv`, Allen
+    County, columns `UNDER5_TOT`, `AGE513_TOT` and `AGE1417_TOT`, summed here for the under-18
+    figure, which the files do not publish directly. The `YEAR` column is a code, not a year: in the
+    2010s file 1 is the 2010 census, 2 the estimates base, 3 to 12 the July estimates for 2010
+    through 2019, 13 the 1 April 2020 estimate and 14 the 1 July 2020 estimate; in the 2020s file 1
+    is the 2020 base and 2 to 6 the July estimates for 2020 through 2024. [verified] — the Bureau's
+    own file layout. Births are `BIRTHS{year}` from `co-est2019-alldata.csv` and
+    `co-est2024-alldata.csv`. The two series are never differenced across 1 July 2020.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: allen-county-natural-change-2021-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: allen-county-school-enrolment-1988-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-age-structure-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -34,7 +34,7 @@ const { assertion, open = false } = Astro.props
   {
     assertion.caveats.length > 0 && (
       <div class="caveats">
-        <h4>What this does not establish</h4>
+        <p class="caveat-label">What this does not establish</p>
         {assertion.caveats.map((c) => (
           <p set:html={inline(c)} />
         ))}
@@ -95,8 +95,15 @@ const { assertion, open = false } = Astro.props
     border-left: 3px solid var(--tier-inference);
     border-radius: 0 var(--radius) var(--radius) 0;
   }
-  .caveats h4 {
+  /*
+   * A label on a block inside a figure, not a section heading. As an h4 under the page's
+   * h2 it skipped a rank on twenty-seven pages, and the card it sits in leads with a
+   * paragraph rather than a heading, so there was never an h3 for it to sit under.
+   */
+  .caveats .caveat-label {
     margin: 0 0 0.375rem;
+    font-family: var(--font-serif);
+    font-weight: var(--weight-semibold);
     font-size: 0.75rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;

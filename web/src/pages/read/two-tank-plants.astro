@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -35,10 +36,12 @@ const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) =
     Its workforce came in from thirteen counties.
   </p>
   <p>
-    For two phases this site declined to say whether either of them stands where the tank plant
-    stands today. Two government-owned, contractor-operated tank installations in one small Ohio
-    city are very plausibly one place, and there was no source that said so.
-  </p>
+      Two government-owned, contractor-operated tank installations in one small Ohio city are very
+      plausibly one place, and for a long time no source said so.
+    </p>
+    <Gloss>
+      Whether either stands where the tank plant stands today was declined here for two phases.
+    </Gloss>
   <p>
     There is one now, and it says they are not. The Recorder's abstract for the ground the plant
     occupies shows it in private hands through the whole of the Second World War — mortgaged in
@@ -49,10 +52,11 @@ const booksSpec = bar(books.figures.map((f) => f.label), books.figures.map((f) =
     when it was.
   </p>
   <p>
-    So the county's tank plant is not a wartime installation at all, on this evidence. It is a
-    Korean War one, bought six years after the war everyone tells the story about. The refusal
-    held for two phases and was right to.
+    So the county's tank plant is not a wartime installation at all, on this evidence. It is a Korean War one, bought six years after the war everyone tells the story about.
   </p>
+    <Gloss>
+      The refusal above held for two phases and was right to.
+    </Gloss>
 
   <h2>What the war did to a locomotive builder's books</h2>
   <AssertionCard assertion={books} />

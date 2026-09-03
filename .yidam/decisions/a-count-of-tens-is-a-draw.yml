@@ -1,0 +1,69 @@
+id: a-count-of-tens-is-a-draw
+summary: >-
+  Twenty-five people died on Allen County's roads in 2021 against ten the year before, and eleven a
+  year in the decade around it. One of those two facts is an event and the other is arithmetic, and
+  nothing in this corpus's rules said how to tell. A county-scale annual count is a draw from a
+  distribution; before a jump in one is published as a change, the node states how often chance
+  alone produces one that large.
+context: |
+  This corpus is full of counts in the tens. Fatal crashes, homicides, tornadoes, overdose deaths,
+  bank branches, farm foreclosures, fatal crossing crashes, births in a village. Every one of them
+  moves twenty or thirty per cent from year to year without anything having happened, because a
+  count of twelve has a standard deviation near three and a half.
+
+  Two claims from one phase, of opposite sign, made the gap plain:
+
+  - **2021, upward.** 23 fatal crashes and 25 deaths, the most since 1978, against a decade mean of
+    10.8. Ohio rose 10.1 per cent that year and the nation 10.8; this county rose 150.
+  - **2006–2024, downward.** No fatal crash at a railway crossing in nineteen years, in a county
+    that had 25 of them in the preceding twenty-six.
+
+  Both look like events. Only a null says whether they are. Against a Poisson draw with the local
+  mean, the first arrives once in 6,800 years and the second once in eighty million — so both are
+  events, and the first only barely, once the fifty chances a fifty-year record offers are counted.
+
+  Written without that test, the same two sentences would have been indistinguishable from the ones
+  a reader should not believe: "overdose deaths fell by a third last year", "the county had twice as
+  many tornadoes as usual". Those are what a count of tens does when nothing happens.
+decision: |
+  **A single year's movement in a count below about fifty is not published as a change until a null
+  has been stated and beaten.**
+
+  - The null is a Poisson draw at the local mean — the surrounding years, not the whole series, so
+    that a slow trend is not mistaken for the noise it sits on. State the mean and the window it
+    came from.
+  - **Multiply by the number of chances.** A fifty-year record offers fifty opportunities for its
+    largest year; a one-in-500 year in a fifty-year series is a one-in-ten finding. Report the
+    corrected figure, because that is the one a reader needs.
+  - **An absence is a count too.** A run of zero years is tested the same way and is often the
+    stronger result, because a long silence at a known rate is very unlikely.
+  - Where the test is passed, the node says what the count is *not*: not one catastrophe, not a
+    reporting change, not a boundary change. Here it is 23 separate crashes rather than one, which
+    is the first thing to check and the cheapest.
+  - Where the test is failed, the year is still reported. It is reported as a year, without a verb
+    of change attached to it.
+rationale: |
+  **This is not the rank rule and it is not the margin rule.**
+  [a rank is an estimate](a-rank-is-an-estimate.yml) governs sorting many noisy quantities;
+  [a survey is not a count](a-survey-is-not-a-count.yml) governs figures that arrive with a
+  published interval. A crash census has no sampling margin at all — every death in it is a real
+  death, correctly counted — and that is exactly what makes it dangerous. The number is exact and
+  the process behind it is random, and nothing in the file says so.
+
+  **The correction for multiple chances is the part that would have been skipped.** The 2021 figure
+  is a one-in-6,800 draw and a one-in-140 finding, and only the second number is honest about how it
+  was found: by looking at fifty years and picking the year that stood out. A corpus that tests only
+  the years it already noticed will find a significant result about once every twenty phases whether
+  or not anything happened.
+
+  **Fifty is a soft edge and deliberately so.** Above a few hundred the Poisson spread is small
+  enough that ordinary reading is safe; below fifty it is not. The rule is stated as a habit rather
+  than a threshold because the counts this corpus holds cluster far below the boundary — the
+  county's fatal crashes, its tornadoes, its homicides and its crossing deaths are all in single or
+  low double figures every year.
+
+  **What this does not license.** Refusing to report a year because it is small. The county's worst
+  road year in four decades is a fact about the county and belongs on the page; what the rule
+  governs is whether the sentence beside it may say *changed*.
+status: accepted
+date: "2026-09-03"

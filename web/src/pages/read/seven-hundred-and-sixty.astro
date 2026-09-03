@@ -1,0 +1,133 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const series = assertion('seven-hundred-and-sixty-on-the-roads')
+const shape = assertion('the-roads-followed-ohio-not-the-country')
+const year = assertion('the-worst-road-year-since-1978')
+const drink = assertion('the-drink-share-never-moved')
+const rail = assertion('the-crossings-stopped-killing-people')
+
+const spec = (a: typeof series, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const seriesSpec = spec(series, 'Deaths per 100,000 people')
+const shapeSpec = spec(shape, 'Deaths, indexed to 1975–1984 = 100')
+const yearSpec = spec(year, 'Per cent rise in road deaths, 2020 to 2021')
+const drinkSpec = spec(drink, 'Per cent of fatal crashes')
+const railSpec = spec(rail, 'Deaths, 1980–2005')
+---
+
+<Article slug="seven-hundred-and-sixty">
+  <p>
+    Allen County's bridges are inspected and counted, its railway crossings are inventoried one by
+    one, and its commuters are surveyed. What none of that says is how many people the roads kill.
+    The federal crash census answers it directly and reaches back fifty years: every crash on a
+    public road anywhere in the United States in which somebody died within thirty days, one record
+    apiece, with the county it happened in.
+  </p>
+  <AssertionCard assertion={series} open />
+  <ChartFigure
+    id="series"
+    title="Deaths on Allen County roads, by decade"
+    caption="Rates use the decennial census count nearest each decade's middle, so the county's own shrinking population is in the denominator. Counts by decade: 194, 181, 155, 108, 122."
+    columns={['Decade', 'Per 100,000']}
+    rows={series.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="series" set:html={JSON.stringify(seriesSpec)} is:inline />
+  <p>
+    Four decades of improvement and then a reversal. The safest ten years this county has had were
+    2005 to 2014, when 108 people died; the ten years since have killed 122. Nothing about the
+    county grew in between — there are four thousand fewer people here than there were.
+  </p>
+
+  <h2>Ohio's shape, not the country's</h2>
+  <AssertionCard assertion={shape} />
+  <ChartFigure
+    id="shape"
+    title="Road deaths indexed to the 1975–1984 decade"
+    caption="Each series divided by its own first decade. State and national figures are sums over every county row of the same federal files."
+    columns={['Place', 'Index']}
+    rows={shape.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="shape" set:html={JSON.stringify(shapeSpec)} is:inline />
+  <p>
+    American roads got a fifth safer over fifty years. Ohio's got more than a third safer, and this
+    county tracked the state almost exactly. Where the county diverges is in what kind of road does
+    the killing: state highways take a third of the dead and county roads a quarter, while
+    Interstate 75, which runs the length of the county and carries most of its traffic, takes one
+    death in eight.
+  </p>
+
+  <h2>One year outside the record</h2>
+  <AssertionCard assertion={year} />
+  <ChartFigure
+    id="year"
+    title="How much road deaths rose in 2021"
+    caption="Allen County went from 10 deaths in 2020 to 25 in 2021, in 23 separate crashes of which none killed more than two people. Seven of the 23 were in November."
+    columns={['Place', 'Rise']}
+    rows={year.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="year" set:html={JSON.stringify(yearSpec)} is:inline />
+  <p>
+    2021 was a bad year on American roads and a far worse one here. The first thing to rule out is
+    arithmetic: a county that averages eleven road deaths a year will produce a sixteen and a seven
+    without anything having happened. Twenty-five is different. Against a random draw at the
+    decade's own average it arrives about once in 6,800 years, and about once in 140 even after
+    allowing for the fifty chances a fifty-year record gives you to find a striking year. It is a
+    real excursion, and the file says nothing whatever about why.
+  </p>
+
+  <h2>The thing that did not move</h2>
+  <AssertionCard assertion={drink} />
+  <ChartFigure
+    id="drink"
+    title="Fatal crashes with a drinking driver"
+    caption="The share of Allen County fatal crashes in which at least one driver had been drinking. The field leaves the crash file after 2020, so the last bar covers six years rather than ten."
+    columns={['Decade', 'Share']}
+    rows={drink.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="drink" set:html={JSON.stringify(drinkSpec)} is:inline />
+  <p>
+    Seat belts, airbags, crumple zones, better ambulances and better trauma care took a third of the
+    deaths out of this county's roads. The proportion of those roads' fatal crashes with drink in
+    them is exactly where it was in 1975. Whatever has been working here, it has not been that.
+  </p>
+
+  <h2>The crossings went quiet</h2>
+  <AssertionCard assertion={rail} />
+  <ChartFigure
+    id="rail"
+    title="Where a road meets a railway"
+    caption="Twenty-five crashes at twenty crossings between 1980 and 2005. Nineteen of the twenty can be named, because the crash file records the same seven-character crossing number the federal grade crossing inventory uses."
+    columns={['Deaths', 'Count']}
+    rows={rail.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="rail" set:html={JSON.stringify(railSpec)} is:inline />
+  <p>
+    North Baxter Street in Lima killed three people in three separate crashes between 1986 and 2001.
+    Amherst Road killed twice in one year. Eleven of the nineteen named crossings sit on a single
+    short line, the former Pennsylvania main across the county. Three of them have since been
+    closed, and all sixteen that remain open have gate arms — against 94 of the county's 163 open
+    public crossings. Every crossing here known to have killed somebody is now shut or gated.
+  </p>
+  <Gloss>
+    That is not proof the gates did it. Busy crossings attract both traffic and protection, so the
+    two run together at the source, and the inventory records no date for when a gate went in. What
+    can be said is that the silence is not luck: at the rate of the twenty-six years before it,
+    nineteen years without a death at a crossing turns up about once in eighty million.
+  </Gloss>
+  <p>
+    Twenty-eight deaths is a small share of seven hundred and sixty. It is also the one part of this
+    record where something clearly changed and stayed changed, which is more than can be said of the
+    drink, the state highways, or the year 2021.
+  </p>
+</Article>

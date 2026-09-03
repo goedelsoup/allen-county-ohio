@@ -1,0 +1,102 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion } from '../../lib/feeds'
+import { line } from '../../lib/chart-spec'
+
+const column = assertion('the-democratic-column-lost-a-third-of-itself')
+
+const shareSpec = line(
+  column.figures.map((f) => f.label),
+  [{ name: 'Republican share', y: column.figures.map((f) => f.value) }],
+  { yTitle: 'Republican share', tickSuffix: '%', labelLast: true },
+)
+---
+
+<Article slug="the-democratic-column">
+  <p>
+    Five presidential elections were added to this county's record from two compilations of Ohio's
+    certified canvass, and they arrive with a shape nobody had asked about. The county is
+    Republican throughout — it has not been otherwise since before the First World War — but the
+    line is not a slope.
+  </p>
+  <AssertionCard assertion={column} open />
+  <ChartFigure
+    id="share"
+    title="Republican share of the presidential vote, 2000 to 2020"
+    caption="Share of all presidential votes cast in Allen County, not the two-party share. 2000 through 2016 are read from the MIT Election Data and Science Lab's compilation and, for 2000, 2008 and 2012, checked against OpenElections; 2020 is a sum over the county's 88 precincts."
+    columns={['Year', 'Republican share']}
+    rows={column.figures.map((f) => [f.label, `${f.value}%`])}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+
+  <h2>2008 is a peak, not a floor</h2>
+  <p>
+    It is easy to read the trough as the county's most Democratic moment and stop there. It is
+    more than that: 2008 is the largest total vote in the modern run at 50,263, and the largest
+    Democratic vote at 19,522. More people voted in Allen County that November than in any
+    presidential election before or since in this record, and the extra voters were not
+    Republicans — the Republican vote in 2008 is <em>lower</em> than in 2004.
+  </p>
+  <DataTable
+    title="The six modern elections"
+    caption="The 2008 Democratic figure is OpenElections'; the lab's compilation gives 19,521 and the two also differ by one on McCain, so both files agree on the total of 50,263. Nothing held here settles which is right. The 2012 row is the Ohio Secretary of State's own final-results workbook."
+    columns={['Year', 'Republican', 'Democrat', 'Others', 'Total', 'Margin']}
+    rows={[
+      ['2000', 'Bush 28,647', 'Gore 13,996', '1,152', '43,795', 'R+14,651'],
+      ['2004', 'Bush 32,585', 'Kerry 16,483', '206', '49,274', 'R+16,102'],
+      ['2008', 'McCain 29,940', 'Obama 19,522', '801', '50,263', 'R+10,418'],
+      ['2012', 'Romney 29,502', 'Obama 17,914', '820', '48,236', 'R+11,588'],
+      ['2016', 'Trump 30,487', 'Clinton 13,294', '2,034', '45,815', 'R+17,193'],
+      ['2020', 'Trump 33,116', 'Biden 14,149', '728', '47,993', 'R+18,967'],
+    ]}
+  />
+
+  <h2>What left was one column, not the electorate</h2>
+  <p>
+    Between 2008 and 2016 the county cast 4,448 fewer presidential votes. Over the same eight
+    years the Democratic vote fell by 6,228 and the Republican vote rose by 547. The arithmetic
+    only closes one way: the decline in turnout does not account for the Democratic loss, because
+    the Democratic loss is larger than the decline. Something moved as well as staying home, and a
+    county-level table cannot say which voters did which.
+  </p>
+  <p>
+    By 2020 the Republican margin reached 18,967 votes, the largest in this site's entire record of
+    this county in either direction. The largest the other way is 1,354, when Bryan carried Allen
+    County in 1908. The same county gave Bryan 55.2 per cent in 1896 and Biden 29.5 per cent in
+    2020.
+  </p>
+
+  <h2>One of these five rests on a single witness</h2>
+  <p>
+    The table above is not uniformly sourced, and the differences are worth a paragraph. Three of
+    the five years were read twice, from two compilations that never consult each other — a
+    university lab working from state canvasses and a volunteer project transcribing the same
+    official files. For 2000 the two agree on every candidate and on the total. For 2008 and 2012
+    they disagree by exactly one vote, and in 2008 the two errors cancel so neatly that both files
+    report the same total and nothing inside either could ever find it.
+  </p>
+  <p>
+    2004 has no second reading at all: the volunteer project holds no Ohio general-election file
+    for that year, only a March primary. So one row of six sits on one witness, which is a
+    different claim from the rows either side of it even though the table prints them the same way.
+    The 2012 row is the strongest of the six — it is the Secretary of State's own final-results
+    workbook, which one compiler shipped alongside its transcription without anybody noticing it
+    was the arbiter.
+  </p>
+
+  <h2>Between those two counties there is a wall</h2>
+  <p>
+    With these five elections the record is exactly half read: 21 of the 42 presidential elections
+    from 1856 to 2020. The unread 21 are 1912, 1916, and then every election from 1924 to 1996
+    without a break — with 1920, the year the county first appears Republican, sitting inside that
+    block as the only year anybody has read.
+  </p>
+  <p>
+    So the turn has a location and not a date. It is behind the wall. Ohio's Secretary of State
+    holds what would answer it and his website returns 403 to every client that has asked, three
+    times now, under three different names.
+  </p>
+</Article>

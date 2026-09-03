@@ -1,5 +1,6 @@
 ---
 import Article from '../../layouts/Article.astro'
+import Gloss from '../../components/Gloss.astro'
 import AssertionCard from '../../components/AssertionCard.astro'
 import ChartFigure from '../../components/ChartFigure.astro'
 import { assertion } from '../../lib/feeds'
@@ -51,14 +52,17 @@ const outsideSpec = bars(outside, 'People')
   </p>
   <AssertionCard assertion={fence} />
   <p>
-    For two phases this site could say that one Lima block held 1,360 people and no housing units
-    and could not say what it was. The county's address file put a single point inside it, an
-    auto wrecking yard, and put the three institutional addresses it carries half a mile west.
-    The join that worked was between two files the Census Bureau draws from the same polygon: the
-    block and the landmark carry the same land area to the square metre and the same internal
-    point to seven decimal places, for Allen Correctional Institution and again for Oakwood. One
-    of the three names in the county's file is a prison that closed in 2004.
-  </p>
+      One Lima block holds 1,360 people and no housing units. The county's address file puts a
+      single point inside it, an auto wrecking yard, and puts the three institutional addresses it
+      carries half a mile west. The join that worked was between two files the Census Bureau draws
+      from the same polygon: the block and the landmark carry the same land area to the square
+      metre and the same internal point to seven decimal places, for Allen Correctional
+      Institution and again for Oakwood. One of the three names in the county's file is a prison
+      that closed in 2004.
+    </p>
+    <Gloss>
+      What that block was could not be said here for two phases.
+    </Gloss>
   <p>
     That also explains a puzzle on the elections side of this corpus. The precinct containing
     both institutions has the lowest voter-registration ratio of the county's eighty-eight, at

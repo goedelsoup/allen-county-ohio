@@ -1,0 +1,80 @@
+class: measure
+label: Removals from the Allen County voter roll, 2006–2022
+description: |
+  61,662 registrations were taken off this county's voter roll across the nine federal elections
+  from 2006 to 2022. The roll at the end of that run held 66,650 names. [verified] —
+  [the Election Administration and Voting Survey](../../catalog/eac-election-administration-voting-survey.md),
+  Section A, `A9a` summed over the nine reporting years against `A1a` for 2022.
+
+      why, 2008–2022                 removals    share
+      no response to a notice          24,086    43.6%
+      moved away                       16,607    30.1%
+      died                              8,316    15.1%
+      other                             3,421     6.2%
+      a felony conviction               1,446     2.6%
+      the voter asked                   1,299     2.4%
+      adjudged incompetent                  1     0.0%
+      unattributed                         67     0.1%
+
+  **The largest single reason a name comes off this roll is that a letter went unanswered.** Over
+  the eight elections from 2008 the board removed 55,243 registrations and 24,086 of them — 43.6 per
+  cent — were removed for failing to respond to a confirmation notice. [verified] — the same file;
+  2006 is left out of the table because that year's total of 6,419 carries no breakdown. Dying and
+  moving away, the two reasons a reader would expect to dominate, are 15.1 and 30.1 per cent.
+
+  **One election in the nine is unlike the others.** In 2018 the board removed 1,560 registrations,
+  a fifth of the run's average, and seven of them for failing to respond — against 7,237 in 2012 and
+  5,418 in 2020. [verified] — the same file.
+
+  [open] Why the removals for failing to respond fell to seven in 2018 and returned to thousands in
+  2020. This corpus holds no source describing what the board was doing between the 2016 and 2018
+  elections, and a survey return records a count and not a policy.
+
+  **The notices go out in tens of thousands and most of them are never answered either way.** 20,012
+  confirmation notices were sent before the 2016 election and 12,863 of them ended with the status
+  unknown — neither confirmed, nor invalidated, nor returned undeliverable; before 2022 it was
+  10,177 sent and 7,897 unknown. [verified] — the same file, `A8a` and `A8e`.
+
+  **The roll's stock and its flows do not reconcile, in any year.** Between the 2010 and 2012
+  elections the board reports 13,550 removals and 3,313 new valid registrations, which would shrink
+  the roll by 10,237; the roll fell by 406. The gap is 9,831 in that year and is between 499 and
+  6,830 in every other. [verified] — the same file, `A1a`, `A3b` and `A9a`, differenced here.
+  Nothing in the survey reconciles them, so the register cannot be audited from its own returns.
+  [inference]
+
+  **This county had same-day registration and it was used 354 times.** 117 people registered and
+  voted in one visit in 2008, 172 in 2010 and 65 in 2012; from 2014 the question is answered *not
+  applicable*. [verified] — the same file, `A2a`.
+
+  A removal is not a permanent thing — a voter taken off can register again, and the additions here
+  run from 3,313 to 9,674 a year — so 61,662 is a count of removals and not of people. [inference]
+  What it measures is how much editing the denominator of a turnout rate receives between two
+  elections; see [a denominator can be edited](../../decisions/a-denominator-can-be-edited.yml) and
+  [the turnout it moves](allen-county-turnout-2004-2024.yml).
+properties:
+  parameter: registrations removed from the voter roll
+  value: "61662"
+  unit: registrations
+  as_of: "2022"
+  method: |
+    `A9a` for `FIPSCode` 3900300000 summed over the nine survey years 2006 to 2022, from the
+    harmonised retrospective panel. [verified] The 2024 survey reports every removal field as
+    unavailable for this county, so the run stops at 2022. Each year's figure covers the period
+    since the close of registration for the previous general election, so the nine years tile the
+    whole of 2004–2022 without overlap. The reason table starts at 2008 because 2006 reports a total
+    with almost no breakdown; within 2008–2022 the reasons fall 67 short of the totals. Shares are
+    computed here against the 2008–2022 total of 55,243.
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-turnout-2004-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-turnout-2020.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
