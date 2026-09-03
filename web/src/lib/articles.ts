@@ -341,6 +341,24 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'one-in-fifteen',
+    title: 'One in fifteen',
+    dek: 'An eviction case is filed against about one Allen County renter household in fifteen every year, and the number has not moved in seventeen years.',
+    section: 'people',
+    era: [2002, 2018],
+    assertions: [
+      'one-renter-household-in-fifteen-is-sued',
+      'the-eviction-count-does-not-move',
+      'busy-eviction-years-with-no-direction',
+      'below-the-state-and-high-on-its-list',
+      'a-filing-is-not-a-household',
+    ],
+    entries: [
+      'measure/allen-county-evictions-2001-2018.yml',
+      'measure/allen-county-housing-cost-burden-2006-2022.yml',
+    ],
+  },
+  {
     slug: 'the-wells-that-are-still-there',
     title: 'The wells that are still there',
     dek: 'The 1885 oil strike is the best-dated event in this county\u2019s history. Nobody had counted what it left behind: 4,849 holes, and no paper closing most of them.',

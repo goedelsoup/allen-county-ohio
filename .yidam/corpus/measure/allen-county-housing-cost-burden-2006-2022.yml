@@ -97,6 +97,15 @@ description: |
   [inference] Every rate on this page is a rate over a population that includes those households,
   and [a programme is invisible inside a survey](../../decisions/a-programme-is-invisible-inside-a-survey.yml)
   is the rule this corpus wrote for that.
+  **The other end of it is a courthouse, and this node could not reach one.** Eviction cases are
+  filed against about one renter household in fifteen in this county every year — 865 filings a
+  year on average across 2002 to 2018, against 11,590 renter households at the start of that run
+  and 14,412 at the end. [verified] —
+  [the Eviction Lab](../../catalog/eviction-lab-county-data.md); see
+  [the filings](allen-county-evictions-2001-2018.yml). The two series do not overlap cleanly — one
+  ends in 2018 and the burden windows run to 2022 — and nothing here links a burdened household to
+  a filed case. [inference]
+
 properties:
   parameter: households paying more than 30 per cent of income for housing
   value: "8630"
@@ -115,6 +124,10 @@ properties:
     measured. `value` is the county's owner and renter burdened households added, 3,905 and 4,725,
     for the 2018–2022 window only.
 links:
+  - target: allen-county-evictions-2001-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eviction-lab-county-data.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified

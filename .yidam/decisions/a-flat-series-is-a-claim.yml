@@ -1,0 +1,67 @@
+id: a-flat-series-is-a-claim
+summary: >-
+  Eviction filings in this county run 766 to 982 across seventeen years, mean 865, through a
+  foreclosure crisis and a quarter more renters. Writing *the number does not move* is as strong a
+  statement as writing that it doubled, and the corpus had a rule for the second and none for the
+  first. Before a series is published as flat, the node states the smallest sustained change those
+  readings could have detected.
+context: |
+  [a count of tens is a draw](a-count-of-tens-is-a-draw.yml) governs the direction this corpus had
+  been getting wrong: a jump in a small count published as a change. It says nothing about the
+  opposite move, and the opposite move is just as available and much easier to write, because a flat
+  series looks like the absence of a finding rather than a finding.
+
+  Allen County's eviction filings:
+
+      readings                17 annual points, 2002 to 2018
+      range                   766 to 982
+      mean                    865
+      standard deviation      56
+      Poisson at that mean    29
+
+  Two claims are tempting and only one survives. *The count does not move* is fair — the spread is
+  wide but has no direction. *The rate does not move* is not: fitted against the year, the filing
+  rate falls 0.058 points annually on a standard error of 0.024, which is 0.92 points across the run
+  against a mean of 6.79. A t of 2.4 on seventeen points is weak and it is not nothing.
+
+  The number that makes the difference is the standard error, and it is the number a flat claim
+  never quotes. Two standard errors here is 0.048 points a year, or 0.77 points across the run. So
+  these seventeen readings could have found a drift of about eight tenths of a point and no smaller,
+  and the drift they found is 0.92. Written without that sentence, *eviction in this county has not
+  changed in seventeen years* would have been indistinguishable from a series with a real fall in it
+  that nobody looked for.
+decision: |
+  **A series is published as flat only alongside the smallest sustained change it could have
+  detected. State the detectable size, in the units of the series, before saying nothing happened.**
+
+  - **Fit the trend even when the answer is expected to be zero.** The coefficient and its standard
+    error take one line to compute and are what turns *it looks flat* into a claim. Report both.
+  - **Two standard errors on the trend, times the length of the run, is the detection floor.** Say
+    it in the node's own units — *a fall of eight tenths of a point would have shown* — because a
+    reader cannot get there from a p-value.
+  - **Distinguish the count from the rate.** A flat count against a growing denominator is a falling
+    rate, and the node that says *unchanged* has to say which of the two it means. Here the count is
+    flat, the renters grew a quarter, and the rate drifts down.
+  - **Dispersion is a separate question from trend.** A series can move far more than chance and go
+    nowhere; report the observed spread against the null's, and do not read the first as evidence
+    for the second.
+rationale: |
+  **This is the missing half of an existing rule.**
+  [a count of tens is a draw](a-count-of-tens-is-a-draw.yml) asks whether a movement is real.
+  This asks whether a stillness is real, and the two need opposite tests: the first needs a null to
+  beat and the second needs power to claim. A corpus that only tests movement will publish every
+  flat series it meets without checking whether it could have seen a change.
+
+  **It bites hardest where the finding is welcome.** *Nothing changed* is a comfortable sentence
+  about a bad number — evictions, overdose deaths, a lending gap — and it is the sentence a reader
+  is least likely to interrogate. That is the reason to make it carry its own arithmetic.
+
+  **What this does not license.** Refusing to report a stable series. Stability is often the finding:
+  a county whose eviction filings sit at 865 a year while its renter households rise a quarter is
+  telling you something, and the rule governs the sentence beside the number rather than the number.
+
+  **Nor does it license the reverse error.** A trend that fails the test is not evidence of
+  flatness; it is an absence of evidence either way, and where the detection floor is wide the honest
+  node says the series could hide a change of that size and does not claim one.
+status: accepted
+date: "2026-09-03"
