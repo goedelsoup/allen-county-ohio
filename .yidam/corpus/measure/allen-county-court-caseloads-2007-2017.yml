@@ -1,0 +1,77 @@
+class: measure
+label: Allen County court caseloads, 2007–2017
+description: |
+  New cases filed in every court that sits in this county, for the eleven years the state's detailed
+  report covers. [verified] —
+  [the Ohio Courts Statistical Report](../../catalog/ohio-courts-statistical-report.md), 2007
+  through 2017.
+
+      year   general  domestic  probate  juvenile  common pleas   Lima municipal
+      2007     1,906     1,651      953     4,655         9,165           22,346
+      2008     2,395     1,628      913     4,212         9,148           20,733
+      2009     1,951     1,540      886     3,627         8,004           19,692
+      2010     1,982     1,531      863     3,405         7,781           20,742
+      2011     1,626     1,470      893     3,457         7,446           20,350
+      2012     1,475     1,446      844     3,430         7,195           18,159
+      2013     1,453     1,347      798     3,396         6,994           21,884
+      2014     1,422     1,229      833     3,067         6,551           23,311
+      2015     1,334     1,084      762     2,917         6,097           21,027
+      2016     1,290     1,115      755     3,099         6,259           24,978
+      2017     1,176     1,113      780     2,680         5,749           25,021
+
+  **The county's serious court shrank by more than a third while its everyday court grew.** Common
+  pleas filings fell from 9,165 to 5,749, down **37.3 per cent**; the Lima Municipal Court's rose
+  from 22,346 to 25,021, up 12.0. [verified] — the same reports, summed here.
+
+  **Every common pleas division fell and the juvenile division fell furthest.** Juvenile filings
+  went from 4,655 to 2,680, down 42.4 per cent — 43 per thousand residents to 25. General division
+  down 38.3, domestic relations 32.6, probate 18.2. [verified] — the same reports.
+
+  **Crime is the part that did not move.** The general division's criminal filings run 400 to 537
+  across the eleven years and end where they began, 416 in 2007 and 415 in 2017; its civil filings
+  fell from 1,391 to 702. [verified] — the same reports. So the fall in this county's most serious
+  court is entirely a fall in civil business. [inference]
+
+  **Seven judges hear all of it.** Two in the general division and one each in domestic relations,
+  probate and juvenile, plus two on the municipal bench; the count does not change in any of the
+  eleven years. Each general division judge took 588 new cases in 2017 against 953 in 2007.
+  [verified] — the same reports, judge column.
+
+  **The Lima Municipal Court serves the whole county, and it is the court most people meet.** Its
+  population column is the county's census count, and its filings run 171 to 235 per thousand
+  residents against 11 to 18 for the general division. [verified] — the same reports. Twenty-one
+  cases arrive there for every one that reaches the county's civil trial court. [inference]
+
+  **The municipal court's dip and recovery is not the county's.** Filings fall to 18,159 in 2012 and
+  reach 25,021 in 2017, a swing of 38 per cent in five years, in a county whose population moved by
+  less than one. What a court's docket counts is cases brought, and a change in charging or
+  collection practice moves it without anything moving outside. [inference]
+
+  This corpus cannot say what has happened in these courts since 2017. The Supreme Court's releases
+  for 2018, 2019 and 2020 are summaries with no county tables in them, and no detailed report has
+  appeared since. [open]
+properties:
+  parameter: new cases filed, all courts of record sitting in the county
+  value: "30770"
+  unit: cases
+  as_of: "2017"
+  method: |
+    Rows read from the `Overall Caseloads` table of each division and of the municipal courts, in
+    each annual report, by matching the county name `Allen` and the court name `Lima`. The common
+    pleas total is the sum of the four divisions and is computed here; the report publishes no such
+    total. The 2017 value above is that sum plus the municipal court. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-courts-statistical-report.md
+  - target: allen-county-foreclosures-and-evictions-2007-2017.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-courts-statistical-report.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-courts-statistical-report.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
