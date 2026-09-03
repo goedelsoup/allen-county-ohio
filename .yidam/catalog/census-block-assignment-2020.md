@@ -53,6 +53,7 @@ used-by:
   - ../corpus/place/sugar-creek-township.yml
   - ../corpus/place/westminster.yml
   - ../corpus/question/allen-county-current-congressional-district.yml
+  - ../corpus/measure/allen-county-house-prices-by-tract-1986-2025.yml
 ---
 
 Pipe-delimited files, one row per census block, mapping a 15-digit block GEOID to a district

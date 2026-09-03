@@ -25,6 +25,8 @@ used-by:
   - ../corpus/measure/allen-county-private-employers-1986-2023.yml
   - ../corpus/measure/allen-county-manufactures-1939-1967.yml
   - ../corpus/measure/allen-county-building-permits-1990-2025.yml
+  - ../corpus/measure/allen-county-house-prices-1975-2025.yml
+  - ../corpus/measure/allen-county-house-prices-by-tract-1986-2025.yml
 ---
 
 **A request without a user agent gets HTTP 403.** BLS asks that automated requests identify the
