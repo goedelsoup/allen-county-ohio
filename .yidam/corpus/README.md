@@ -215,6 +215,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 3 | 5v / 3i / 0o | 65 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
+| [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 6 | 11v / 6i / 2o | 169 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
@@ -293,6 +294,7 @@ Sorted by: kind, then alphabetically.
 | [member-of-the-ohio-senate-for-district-12.yml](office/member-of-the-ohio-senate-for-district-12.yml) | office | Member of the Ohio Senate, 12th District | 2 | 3v / 3i / 1o | 38 |
 | [president-of-lima-city-council.yml](office/president-of-lima-city-council.yml) | office | President of Lima City Council | 2 | 2v / 0i / 1o | 27 |
 | [representative-in-congress-for-ohios-4th-district.yml](office/representative-in-congress-for-ohios-4th-district.yml) | office | Representative in Congress, Ohio's 4th District | 2 | 5v / 1i / 2o | 49 |
+| [allen-metropolitan-housing-authority.yml](organization/allen-metropolitan-housing-authority.yml) | organization | Allen Metropolitan Housing Authority | 2 | 6v / 3i / 1o | 64 |
 | [apollo-career-center.yml](organization/apollo-career-center.yml) | organization | Apollo Career Center | 2 | 4v / 3i / 1o | 44 |
 | [bluffton-hospital.yml](organization/bluffton-hospital.yml) | organization | Bluffton Hospital | 2 | 6v / 0i / 2o | 56 |
 | [bluffton-public-library.yml](organization/bluffton-public-library.yml) | organization | Bluffton Public Library | 2 | 5v / 2i / 1o | 42 |
