@@ -1,0 +1,70 @@
+id: an-extreme-in-a-surface-has-an-address
+summary: >-
+  The lowest elevation in Allen County is 474.7 feet, 258.8 feet below any natural ground in it, and
+  it is the floor of a working limestone quarry whose operator, location and employment this corpus
+  already held. The figure is correct, the surface is correct, and "Allen County's lowest point is
+  474.7 feet" would have been false in every sense a reader cares about.
+context: |
+  The county's elevation surface was exported, clipped, and reduced to min, max, mean and standard
+  deviation — the four numbers anybody computes first.
+
+      minimum          474.7 ft
+      1st percentile   764.7 ft
+      median           842.3 ft
+      maximum        1,071.2 ft
+
+  Three hundred feet between the minimum and the first percentile is the whole finding, and nothing
+  in the four numbers says so. Flood-filling from the minimum returns a contiguous 47.7-acre
+  depression, 365.3 feet below the median of the cells that ring it. The corpus already held a
+  coordinate inside that extent: 40.750833, −84.086111, the National Lime & Stone quarry, from the
+  federal mine register, two phases ago.
+
+  The comparison that settles it: the pit is 365.3 feet deep and the county's entire natural relief
+  — highest natural ground to lowest — is 337.7 feet. **The hole is deeper than the county.**
+decision: |
+  **Before a maximum or a minimum taken from a continuous surface is published, locate it, name what
+  is there, and say whether the extreme is the thing the reader is being told about. Where it is
+  not, report the surface with that feature excluded by name and extent, and report the feature
+  separately.**
+
+  The three steps:
+
+  *Look at the tail, not the extreme.* One number cannot tell you whether an extreme is the end of a
+  distribution or a separate object. The distance from the extreme to the first percentile can:
+  three hundred feet, here, on a county whose middle 98 per cent spans three hundred.
+
+  *Give the extreme an address.* A raster minimum is a cell, a cell is a place, and a place can be
+  checked against everything else the corpus holds about that ground. It took one coordinate already
+  in the catalog.
+
+  *Exclude by name.* "Allen County runs 733.5 to 1,071.2 feet, excluding a 47.7-acre quarry pit
+  whose floor is 474.7" is a sentence a reader can audit. A trimmed percentile is not — it hides
+  which object was removed and how big it was.
+rationale: |
+  **Why the ordinary rules do not catch this.**
+  [an impossible value is not an outlier](an-impossible-value-is-not-an-outlier.yml) governs figures
+  that cannot be true — two billion years of work in a year — and is answered by a physical bound.
+  Nothing here fails a bound: 474.7 feet is a perfectly possible elevation in Ohio, it is the real
+  height of real ground, and the surface is not in error. The defect is entirely in the question the
+  number is taken to answer.
+  [a count of tens is a draw](a-count-of-tens-is-a-draw.yml) governs noise, and this is not noise;
+  the pit is measured to the foot and would appear identically in any re-run.
+
+  **What locating it bought.** A defect became two findings. The county's natural relief is 337.7
+  feet, which is the figure a geography reference wants. And the quarry has a depth — 365.3 feet
+  below the ground it was cut into — which is the first physical dimension this corpus has ever had
+  for a working face it has otherwise described only by employment, injuries and ownership.
+
+  **What it did not buy, and the line.** A pit with an area and a depth is not a production figure.
+  It is net of backfill, dated to whenever the surface was flown, and silent about material taken
+  above the original grade. The corpus's refusal to say how much stone has come out of this county
+  stands, and the temptation to convert a volume into tons is exactly the move this rule exists to
+  slow down.
+
+  **What it generalises to.** Any continuous surface reduced to extremes: a temperature grid whose
+  maximum is an airport apron, a population density raster whose peak is a prison, a slope model
+  whose steepest cell is a highwall, a depth-to-water surface whose minimum is a well. In each the
+  extreme is a built thing sitting inside a natural distribution, and in each the fix is the same —
+  find out where it is.
+status: accepted
+date: "2026-09-03"
