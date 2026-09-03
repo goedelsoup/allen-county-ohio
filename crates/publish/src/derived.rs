@@ -4960,6 +4960,105 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-serious-court-shrank-and-the-everyday-one-grew",
+        statement: "Filings in Allen County's court of common pleas fell 37.3 per cent between 2007 and 2017, from 9,165 to 5,749, while the Lima Municipal Court's rose 12.0 per cent to 25,021.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-court-caseloads-2007-2017.yml", "**The county's serious court shrank by more than a third while its everyday court grew.** Common pleas filings fell from 9,165 to 5,749, down **37.3 per cent**; the Lima Municipal Court's rose from 22,346 to 25,021, up 12.0."),
+        ],
+        answers: &["cannot say what has happened in these courts since 2017"],
+        figures: &[
+            Figure { label: "common pleas, 2007", value: 9165.0, literal: "9,165" },
+            Figure { label: "common pleas, 2017", value: 5749.0, literal: "5,749" },
+            Figure { label: "municipal, 2007", value: 22346.0, literal: "22,346" },
+            Figure { label: "municipal, 2017", value: 25021.0, literal: "25,021" },
+        ],
+    },
+    Assertion {
+        id: "juvenile-filings-fell-by-two-fifths",
+        statement: "Juvenile filings in Allen County fell from 4,655 in 2007 to 2,680 in 2017 \u{2014} 42.4 per cent, or 43 cases per thousand residents down to 25. Every common pleas division fell and this one fell furthest.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-court-caseloads-2007-2017.yml", "**Every common pleas division fell and the juvenile division fell furthest.** Juvenile filings went from 4,655 to 2,680, down 42.4 per cent \u{2014} 43 per thousand residents to 25. General division down 38.3, domestic relations 32.6, probate 18.2."),
+        ],
+        answers: &["cannot say what has happened in these courts since 2017"],
+        figures: &[
+            Figure { label: "2007", value: 4655.0, literal: "4,655" },
+            Figure { label: "2017", value: 2680.0, literal: "2,680" },
+        ],
+    },
+    Assertion {
+        id: "crime-is-the-part-that-did-not-move",
+        statement: "Criminal filings in Allen County's general division ran 400 to 537 across eleven years and ended where they began, 416 in 2007 and 415 in 2017, while the same court's civil filings fell from 1,391 to 702.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-court-caseloads-2007-2017.yml", "**Crime is the part that did not move.** The general division's criminal filings run 400 to 537 across the eleven years and end where they began, 416 in 2007 and 415 in 2017; its civil filings fell from 1,391 to 702."),
+        ],
+        answers: &["cannot say what has happened in these courts since 2017"],
+        figures: &[
+            Figure { label: "criminal, 2007", value: 416.0, literal: "416" },
+            Figure { label: "criminal, 2017", value: 415.0, literal: "415" },
+            Figure { label: "civil, 2007", value: 1391.0, literal: "1,391" },
+            Figure { label: "civil, 2017", value: 702.0, literal: "702" },
+        ],
+    },
+    Assertion {
+        id: "seven-judges-hear-all-of-it",
+        statement: "Seven judges hear every case of record in Allen County \u{2014} two in the general division, one each in domestic relations, probate and juvenile, and two on the municipal bench \u{2014} and the count did not change in eleven years. Each general division judge took 588 new cases in 2017 against 953 in 2007.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-court-caseloads-2007-2017.yml", "**Seven judges hear all of it.** Two in the general division and one each in domestic relations, probate and juvenile, plus two on the municipal bench; the count does not change in any of the eleven years. Each general division judge took 588 new cases in 2017 against 953 in 2007."),
+        ],
+        answers: &["cannot say what has happened in these courts since 2017"],
+        figures: &[
+            Figure { label: "per general division judge, 2007", value: 953.0, literal: "953" },
+            Figure { label: "per general division judge, 2017", value: 588.0, literal: "588" },
+        ],
+    },
+    Assertion {
+        id: "one-collapsed-and-the-other-did-not-move",
+        statement: "Foreclosure filings in Allen County peaked at 996 in 2008 and fell to 264 by 2017, down 73.5 per cent. Eviction filings over the same eleven years ran 798 to 982, averaging 874.7 with a standard deviation of 55.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-foreclosures-and-evictions-2007-2017.yml", "**One of these collapsed and the other did not move.** Foreclosure filings peaked at 996 in 2008 and stand at 264, down **73.5 per cent**; eviction filings run 798 to 982 across the same eleven years with a mean of 874.7 and a standard deviation of 55."),
+        ],
+        answers: &["cannot say how many of these filings ended with somebody leaving"],
+        figures: &[
+            Figure { label: "foreclosures, 2008", value: 996.0, literal: "996" },
+            Figure { label: "foreclosures, 2017", value: 264.0, literal: "264" },
+            Figure { label: "evictions, mean", value: 874.7, literal: "874.7" },
+        ],
+    },
+    Assertion {
+        id: "three-renters-for-every-owner",
+        statement: "In 2008 Allen County's courts took 996 foreclosure filings against 982 eviction filings. By 2016 the figures were 279 and 913 \u{2014} three renters losing their home for every owner.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-foreclosures-and-evictions-2007-2017.yml", "**In 2008 the county lost about as many owners as renters, and by 2016 it lost three renters for every owner.** 996 against 982 in the first year; 279 against 913 in the last full swing."),
+        ],
+        answers: &["cannot say how many of these filings ended with somebody leaving"],
+        figures: &[
+            Figure { label: "foreclosures, 2008", value: 996.0, literal: "996" },
+            Figure { label: "evictions, 2008", value: 982.0, literal: "982" },
+            Figure { label: "foreclosures, 2016", value: 279.0, literal: "279" },
+            Figure { label: "evictions, 2016", value: 913.0, literal: "913" },
+        ],
+    },
+    Assertion {
+        id: "the-same-numbers-from-two-covers",
+        statement: "The Supreme Court of Ohio and the Eviction Lab publish the same eviction counts for Allen County \u{2014} 982 in 2008, 922 in 2011 and 863 in 2014, to the unit \u{2014} and differ by four in 2017, 802 against 806.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-foreclosures-and-evictions-2007-2017.yml", "**The court's own eviction counts and the Eviction Lab's are the same numbers.** 982 in 2008, 922 in 2011 and 863 in 2014 appear in both to the unit; 2017 differs by four, 802 here against 806 there."),
+        ],
+        answers: &["cannot say how many of these filings ended with somebody leaving"],
+        figures: &[
+            Figure { label: "2008", value: 982.0, literal: "982" },
+            Figure { label: "2011", value: 922.0, literal: "922" },
+            Figure { label: "2014", value: 863.0, literal: "863" },
+        ],
+    },
+    Assertion {
         id: "the-eviction-count-does-not-move",
         statement: "Allen County's eviction filings run 766 to 982 across seventeen years \u{2014} mean 865 \u{2014} through a foreclosure crisis, a recession and a quarter more renter households. The rate drifts down 0.92 points over the run, which is about the smallest movement seventeen readings could have found.",
         topic: "housing",

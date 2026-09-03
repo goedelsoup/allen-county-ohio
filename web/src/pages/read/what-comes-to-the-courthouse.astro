@@ -1,0 +1,127 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const shrank = assertion('the-serious-court-shrank-and-the-everyday-one-grew')
+const crime = assertion('crime-is-the-part-that-did-not-move')
+const juv = assertion('juvenile-filings-fell-by-two-fifths')
+const judges = assertion('seven-judges-hear-all-of-it')
+const coll = assertion('one-collapsed-and-the-other-did-not-move')
+const three = assertion('three-renters-for-every-owner')
+const match = assertion('the-same-numbers-from-two-covers')
+
+const spec = (a: typeof shrank, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const shrankSpec = spec(shrank, 'New cases filed in a year')
+const crimeSpec = spec(crime, 'New cases filed in a year')
+const collSpec = spec(coll, 'Filings in a year')
+const threeSpec = spec(three, 'Filings in a year')
+---
+
+<Article slug="what-comes-to-the-courthouse">
+  <p>
+    Ohio's courts report themselves to Columbus every year, case type by case type, and until 2017
+    the Supreme Court published the whole thing county by county in a document of nearly three
+    hundred pages. Eleven of those reports cover Allen County, which means eleven years of what
+    actually arrived at its courthouses rather than what anybody remembers arriving.
+  </p>
+  <AssertionCard assertion={shrank} open />
+  <ChartFigure
+    id="shrank"
+    title="Two courts, eleven years apart"
+    caption="New filings in the county's court of common pleas, all four divisions, against the Lima Municipal Court's."
+    columns={['Court and year', 'Filings']}
+    rows={shrank.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="shrank" set:html={JSON.stringify(shrankSpec)} is:inline />
+  <p>
+    The municipal court is the one most people meet. It serves the whole county rather than the
+    city — its population column is the county's census count — and twenty-one cases arrive there
+    for every one that reaches the county's civil trial court. Its own filings swing thirty-eight
+    per cent in five years, which is what a docket does when charging or collection practice changes
+    and nothing outside the courthouse changes at all.
+  </p>
+  <AssertionCard assertion={crime} />
+  <ChartFigure
+    id="crime"
+    title="Criminal and civil, at the two ends of the run"
+    caption="General division of the court of common pleas. The criminal count runs 400 to 537 across the eleven years without a trend in it."
+    columns={['Series and year', 'Filings']}
+    rows={crime.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="crime" set:html={JSON.stringify(crimeSpec)} is:inline />
+  <p>
+    So the fall in this county's most serious court is entirely a fall in civil business. Felonies
+    kept arriving at the same rate for eleven years; the lawsuits stopped.
+  </p>
+  <AssertionCard assertion={juv} />
+  <AssertionCard assertion={judges} />
+  <p>
+    The bench did not shrink with the docket. Seven judges heard everything in 2007 and seven heard
+    everything in 2017, so the fall shows up as work per judge rather than as fewer judges: 953 new
+    cases each in the general division at the start of the run and 588 at the end. Juvenile is the
+    division that emptied fastest, and a county with fewer children in it is the first thing to
+    suspect — though a filing is a decision by a prosecutor or an agency before it is a fact about a
+    child, and the report cannot separate the two.
+  </p>
+
+  <h2>The two ways a home is lost</h2>
+  <p>
+    Both of them run through this county's courts, and they run through different ones. A
+    foreclosure is a civil action in the general division of the common pleas court; an eviction is a
+    forcible entry and detainer complaint at the municipal court. Between 2007 and 2017 the county
+    saw 5,534 of the first and 9,622 of the second.
+  </p>
+  <AssertionCard assertion={coll} />
+  <ChartFigure
+    id="coll"
+    title="One series moves and one does not"
+    caption="Foreclosure filings at their 2008 peak and in 2017, against the eleven-year average for evictions. The eviction series has a standard deviation of 55 around that mean."
+    columns={['Measure', 'Filings']}
+    rows={coll.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="coll" set:html={JSON.stringify(collSpec)} is:inline />
+  <AssertionCard assertion={three} />
+  <ChartFigure
+    id="three"
+    title="Owners and renters, 2008 and 2016"
+    caption="Foreclosure and eviction filings in the county's two courts. The composition changes entirely and the total does not."
+    columns={['Series and year', 'Filings']}
+    rows={three.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="three" set:html={JSON.stringify(threeSpec)} is:inline />
+  <p>
+    The housing crisis is enormous in one of these series and invisible in the other. Whatever kept
+    eight or nine hundred Allen County households a year in front of a judge over rent was not
+    working through the same machinery that put owners there, and it did not stop when that
+    machinery did. The 2008 pairing is the one worth sitting with: in that year this county's courts
+    took 996 foreclosure filings and 982 eviction filings, almost exactly one apiece, and by 2016
+    the same courts took 279 and 913.
+  </p>
+
+  <h2>The same numbers from two covers</h2>
+  <AssertionCard assertion={match} />
+  <Gloss>
+    Which looks like corroboration and is not. A research lab in New Jersey and the judicial branch
+    of a state government agreeing to the unit on a count near a thousand would be very strong
+    evidence, if they were counting separately. They are not: both chains begin at the Lima
+    Municipal Court's own docket, reported to Columbus under one rule and obtained from the court by
+    the lab under another. The exactness is the tell — two independent counts of a real quantity
+    nearly always differ a little, because they draw their boundaries in slightly different places.
+    What the agreement establishes is that neither pipeline dropped or misaligned anything between
+    the registry and the page, which is worth knowing and is not the same thing.
+  </Gloss>
+  <p>
+    The four-case gap in 2017 is the informative part. It shows the two are not literally the same
+    file, and it is the only available measurement of how far apart these pipelines can drift.
+  </p>
+</Article>
