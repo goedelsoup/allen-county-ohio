@@ -1,0 +1,89 @@
+class: measure
+label: Deaths at Allen County railway crossings, 1980–2005
+description: |
+  Twenty-eight people died in 25 crashes where an Allen County road meets a railway, between 1980
+  and 2005, and none has died at one since. [verified] —
+  [the crash census](../../catalog/nhtsa-fars.md), whose `RAIL` field carries the seven-character
+  federal crossing number when a railway was involved.
+
+  **Nineteen of the twenty crossings can be named**, because that number is the same key
+  [the federal crossing inventory](../../catalog/fra-crossing-inventory.md) files each crossing
+  under. The twentieth, in 2005, is recorded as `53278X` — six characters where the key is seven —
+  and matches nothing. [verified] — the join, run here.
+
+      crossing   deaths   years                street                    railroad
+      532715R         3   1986, 1997, 2001     North Baxter St, Lima     Chicago, Ft. Wayne & E.
+      476899P         2   1981, 1997           Flander St, Lima          Norfolk Southern
+      258622T         2   1984, 1984           Amherst Rd                Indiana & Ohio
+      532699J         2   1996, 2003           Thayer Rd, Lafayette      Chicago, Ft. Wayne & E.
+      476869X         2   1982                 County Line Rd, Bluffton  Norfolk Southern
+      532738X         2   1984                 Defiance Trail, Delphos   Chicago, Ft. Wayne & E.
+      155697F         2   1987                 State Rd, Cairo           CSX
+      thirteen more   1 each                                             various
+
+  **One crossing killed three people in three separate crashes fifteen years apart.** North Baxter
+  Street in Lima, on the Chicago, Fort Wayne & Eastern, in 1986, 1997 and 2001. Amherst Road killed
+  twice in the same year, 1984. [verified] — the same files.
+
+  **Eleven of the nineteen are on one short line.** The Chicago, Fort Wayne & Eastern — the former
+  Pennsylvania Railroad main line across the county — carries eleven; Norfolk Southern four, CSX
+  three and the Indiana & Ohio one. [verified] — the same file. See
+  [the railroads](allen-county-railroads-2026.yml).
+
+  **Three of the nineteen have since been closed and all sixteen that remain open have gate arms**,
+  against 94 of the county's 163 open public crossings, or 57.7 per cent. [verified] —
+  [the crossing inventory](../../catalog/fra-crossing-inventory.md), `crossingclosed` and
+  `countroadwaygatearms`. Every crossing in this county that is
+  known to have killed someone is now either shut or gated.
+
+  That is a striking pattern and it is not by itself a demonstration that gates ended the deaths.
+  Busier crossings get both more traffic and more protection, so the two are confounded at the
+  source, and the inventory carries no date for when a gate was installed. This corpus cannot say
+  whether the gates came before these deaths or after them. [inference]
+
+  **The silence since 2005 is longer than chance explains.** At the 1980–2005 rate of 0.96 fatal
+  crossing crashes a year, nineteen years with none arrives about once in eighty million.
+  [inference] — computed here; see
+  [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml). Something changed:
+  closures, gates, fewer trains, fewer trains at speed, or all of them.
+
+  **The record cannot reach before 1979.** The `RAIL` field is filled with asterisks on every one of
+  the county's 84 fatal crashes from 1975 to 1978, so whether any of them was at a crossing is not
+  recoverable from this file. [verified] — the same crash census, 1975 through 1978.
+
+  Those 28 deaths are 6.6 per cent of the 423 who died on this county's roads between 1980 and
+  2005. [inference] — arithmetic on
+  [the road series](allen-county-road-deaths-1975-2024.yml).
+properties:
+  parameter: deaths in crashes at highway-rail grade crossings
+  value: "28"
+  unit: deaths
+  as_of: "2005"
+  method: |
+    Crashes in the NHTSA accident file for Ohio county 3 whose `RAIL` value is neither `0000000`
+    nor the `*******` fill of 1975–1978, joined to the FRA grade crossing inventory on
+    `crossingid`. [verified] The join is case-insensitive because one record spells a crossing
+    `532715r` and another `532715R`. The inventory is a current snapshot retrieved in 2026, so its
+    closures and gate arms describe the crossings now and not at the date of any crash; `cityname`
+    in it is the nearest named place and two of those, Cridersville and Columbus Grove, lie outside
+    the county even though the crossings do not. The Poisson figure treats the 1980–2005 crashes as
+    a constant-rate process, which is the null being rejected and not a description of the world.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nhtsa-fars.md
+  - target: allen-county-railroads-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fra-crossing-inventory.md
+  - target: allen-county-road-deaths-1975-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nhtsa-fars.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fra-crossing-inventory.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

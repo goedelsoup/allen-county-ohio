@@ -4484,6 +4484,116 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "seven-hundred-and-sixty-on-the-roads",
+        statement: "Seven hundred and sixty people died in 666 crashes on Allen County's roads \
+                    between 1975 and 2024. The rate fell by two fifths across four decades and \
+                    then rose again.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "Seven hundred and sixty people died in 666 crashes on this county's roads in the fifty years from 1975 to 2024."
+            ),
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "The five decades run 17.3, 16.5, 14.3, 10.2 and 11.9 deaths per 100,000 people: the county's worst decade is its first and its best is 2005\u{2013}2014, and the decade just ended is worse than that one by fourteen deaths."
+            ),
+        ],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "1975\u{2013}1984", value: 17.3, literal: "17.3" },
+            Figure { label: "1985\u{2013}1994", value: 16.5, literal: "16.5" },
+            Figure { label: "1995\u{2013}2004", value: 14.3, literal: "14.3" },
+            Figure { label: "2005\u{2013}2014", value: 10.2, literal: "10.2" },
+            Figure { label: "2015\u{2013}2024", value: 11.9, literal: "11.9" },
+        ],
+    },
+    Assertion {
+        id: "the-roads-followed-ohio-not-the-country",
+        statement: "Allen County's road deaths fell with Ohio's and not with the nation's. \
+                    Indexed to 1975\u{2013}1984, the last decade stands at 62.9 here, 64.4 in Ohio \
+                    and 82.7 in the United States.",
+        topic: "health",
+        supports: &[support!(
+            "measure/allen-county-road-deaths-1975-2024.yml",
+            "**It is Ohio's shape and not the country's.** Indexed to 1975\u{2013}1984, the last decade stands at 62.9 here, 64.4 in Ohio and 82.7 in the United States."
+        )],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "Allen County", value: 62.9, literal: "62.9" },
+            Figure { label: "Ohio", value: 64.4, literal: "64.4" },
+            Figure { label: "United States", value: 82.7, literal: "82.7" },
+        ],
+    },
+    Assertion {
+        id: "the-worst-road-year-since-1978",
+        statement: "Twenty-five people died on this county's roads in 2021, the most since 1978, \
+                    in a decade averaging under eleven. Ohio rose ten per cent that year and the \
+                    nation eleven; Allen County rose a hundred and fifty.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "**One year in the fifty stands outside the rest of the record.** In 2021 there were 23 fatal crashes and 25 deaths, the most since 1978, in a county whose other nine years of that decade average 10.8."
+            ),
+            support!(
+                "measure/allen-county-road-deaths-1975-2024.yml",
+                "Ohio rose 10.1 per cent that year and the United States 10.8; Allen County rose 150. None of the 23 crashes killed more than two people, so it is not one catastrophe but twenty-three separate ones, seven of them in November."
+            ),
+        ],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "Allen County", value: 150.0, literal: "150" },
+            Figure { label: "Ohio", value: 10.1, literal: "10.1" },
+            Figure { label: "United States", value: 10.8, literal: "10.8" },
+        ],
+    },
+    Assertion {
+        id: "the-drink-share-never-moved",
+        statement: "A third of this county's fatal crashes involved a drinking driver in the \
+                    1970s and a third of them still did in 2020, while the number of fatal crashes \
+                    fell by a third.",
+        topic: "health",
+        supports: &[support!(
+            "measure/allen-county-road-deaths-1975-2024.yml",
+            "**A third of the fatal crashes involve a drinking driver and that share has not moved in forty-six years.** By decade it runs 33.3, 36.7, 29.6, 35.4 and 38.6 per cent \u{2014} 221 drinking drivers across 611 crashes."
+        )],
+        answers: &["cannot say what happened in 2021"],
+        figures: &[
+            Figure { label: "1975\u{2013}1984", value: 33.3, literal: "33.3" },
+            Figure { label: "1985\u{2013}1994", value: 36.7, literal: "36.7" },
+            Figure { label: "1995\u{2013}2004", value: 29.6, literal: "29.6" },
+            Figure { label: "2005\u{2013}2014", value: 35.4, literal: "35.4" },
+            Figure { label: "2015\u{2013}2020", value: 38.6, literal: "38.6" },
+        ],
+    },
+    Assertion {
+        id: "the-crossings-stopped-killing-people",
+        statement: "Twenty-eight people died at Allen County railway crossings between 1980 and \
+                    2005 \u{2014} one road death in fifteen \u{2014} and none has died at one since. \
+                    Every crossing here known to have killed someone is now shut or gated.",
+        topic: "health",
+        supports: &[
+            support!(
+                "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+                "Twenty-eight people died in 25 crashes where an Allen County road meets a railway, between 1980 and 2005, and none has died at one since."
+            ),
+            support!(
+                "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+                "**Three of the nineteen have since been closed and all sixteen that remain open have gate arms**, against 94 of the county's 163 open public crossings, or 57.7 per cent."
+            ),
+            support!(
+                "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+                "Those 28 deaths are 6.6 per cent of the 423 who died on this county's roads between 1980 and 2005."
+            ),
+        ],
+        answers: &["cannot say whether the gates came before these deaths or after them"],
+        figures: &[
+            Figure { label: "died at a crossing, 1980\u{2013}2005", value: 28.0, literal: "28" },
+            Figure { label: "died on the county's roads, same years", value: 423.0, literal: "423" },
+        ],
+    },
+    Assertion {
         id: "the-one-election-it-gave-a-democrat",
         statement: "Allen County voted for Ted Strickland, a Democrat, for governor in 2006 — \
                     18,000 to 17,184. It is the only election in this corpus's modern record, five \

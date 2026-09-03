@@ -26,7 +26,22 @@ description: |
   **A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an
   American and 0.9 fewer than an Ohioan.** [verified] — same dataset. The county is worse than the
   state on seven of the eleven measures in the table and worse than the nation on ten of them; the
-  one it beats the nation on is motor vehicle crash deaths. [inference] — counted here.
+  one it beats the nation on, in this dataset's figures, is motor vehicle crash deaths. [inference]
+  — counted here, and see the two paragraphs below, which are about that row.
+
+  **The one row it beats the nation on does not survive a second file.** The 12.1 above is 87 deaths
+  over 2016–2022 from the death certificates; the federal crash census counts **94** deaths on this
+  county's roads in the same seven years, a rate of 13.1, which is above the national 12.3 rather
+  than below it. [verified] —
+  [the crash census](allen-county-road-deaths-1975-2024.yml) against the table above. Neither number
+  is wrong: a death certificate is filed where the dead person lived and a crash record is filed
+  where the crash happened, and this county sits on an interstate. The margin that put it under the
+  nation was 0.2 and the disagreement between the two files is 1.0. [inference]
+
+  **And the window holds the county's worst road year in four decades.** 2021 alone contributes 25
+  of those 94 deaths, against a decade average near eleven. [verified] — the same crash census. A
+  seven-year rate containing it is not this county's ordinary rate, and the same measure computed
+  over 2015–2019 would be a different figure. [inference]
 
   **It is not the opioid county the state's reputation would predict.** Allen County's overdose rate
   of 38.1 is **15 per cent below Ohio's** 44.7, and it is one of only four rows where the county
@@ -77,5 +92,9 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/county-health-rankings.md
+  - target: allen-county-road-deaths-1975-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nhtsa-fars.md
   - target: ../measure.ont.yml
     relationship: instance-of

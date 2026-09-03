@@ -19,6 +19,7 @@ location:
       calls it.
 used-by:
   - ../corpus/measure/allen-county-railroads-2026.yml
+  - ../corpus/measure/allen-county-rail-crossing-deaths-1980-2005.yml
 ---
 
 **Six railroads report open crossings in Allen County and two of them are Class I.** CSX and
@@ -41,8 +42,18 @@ towns its crossings sit in and the timetable station each names. That is enough 
 north-south road from an east-west one in this county and it is not enough to trace either beyond
 the county line.
 
-**What is in it and unread.** Warning-device counts, gate arms, advance signs, annual average
-daily road traffic, roadway surface, and the incident file that joins to it on `crossingid` —
-which is the accident history of every one of these crossings and is a separate dataset. The
-historical Form 71 file (`8uv2-y4is`) holds superseded revisions of each row and would date the
-closures more precisely than the revision year does.
+**The gate arms are now read, and a different file supplied the accidents.** Ninety-four of the
+201 open crossings carry roadway gate arms, and 94 of the 163 open *public* ones do — 57.7 per cent.
+[verified] — `countroadwaygatearms`, the same 305 rows. The twenty crossings where somebody died
+between 1980 and 2005 were named not by the FRA's own incident file but by
+[NHTSA's crash census](nhtsa-fars.md), whose `RAIL` field is this file's `crossingid`; nineteen of
+the twenty join. See
+[the crossings](../corpus/measure/allen-county-rail-crossing-deaths-1980-2005.yml).
+
+**What is in it and still unread.** Advance signs, annual average daily road traffic, roadway
+surface, and the FRA's own incident file on `crossingid` — which is the accident history of every
+one of these crossings, is a separate dataset, and would carry the injuries and the property damage
+that a fatality census by definition leaves out. The historical Form 71 file (`8uv2-y4is`) holds
+superseded revisions of each row and would date the closures — and the gates — more precisely than
+the revision year does, which is what a claim about whether gates came before or after a death
+would need.
