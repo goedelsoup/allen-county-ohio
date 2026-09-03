@@ -20,6 +20,7 @@ used-by:
   - ../corpus/measure/allen-county-total-employment-1969-2022.yml
   - ../corpus/measure/allen-county-manufacturing-employment-1969-2022.yml
   - ../corpus/measure/allen-county-proprietors-1969-2022.yml
+  - ../corpus/measure/allen-county-personal-income-1969-2024.yml
 ---
 
 **It closes the gap the last phase named and falsifies the sentence that named it.** That phase
