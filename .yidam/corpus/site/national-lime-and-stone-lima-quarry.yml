@@ -1,0 +1,60 @@
+class: site
+label: National Lime & Stone, Lima Plant
+description: |
+  A working limestone quarry on the west side of Lima, registered with the federal mine regulator as
+  mine 3300120 and operated by The National Lime & Stone Company. [verified] —
+  [the MSHA mine master](../../catalog/msha-mine-data.md).
+
+  **It is in Bath Township and in no incorporated place**, at 40.750833, -84.086111. The register's
+  own directions read *SR-81 west of I-75 (exit 127B) at Lima, 1.5 miles, mine on left*. [verified] —
+  the same source's coordinates, against [TIGERweb](../../catalog/tigerweb-census2020.md)
+  point-in-polygon on the 2020 county-subdivision and incorporated-place layers.
+
+  That makes it the fourth large industrial installation this corpus has placed outside every
+  municipality, after [the refinery](lima-refinery.yml), [the tank plant](lima-army-tank-plant.yml)
+  and [the engine plant](ford-lima-engine-plant.yml). [inference] The quarry was asked in advance of
+  the claim rather than after it, which is the shape
+  [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml)
+  asks for.
+
+  **It stands 1.62 miles south of the Ford engine plant, in the same township.** [verified] — the
+  two coordinates, distance computed here. Its operator is the company that bought the plant's
+  ground from the National Quarries Company in January 1944 and conveyed it on in 1955. [verified] —
+  [the plant's tract record](ford-lima-engine-plant.yml). A quarry firm assembled and sold the land
+  that became this township's factory, and a mile and a half away it is still taking out stone.
+  [inference]
+
+  **Ten people work here and it runs one shift.** Five days a week, eight hours a shift, one
+  production shift a day; the operator has filed for it every quarter since 2000, working 881,242
+  hours in that time. [verified] — [the mine data](../../catalog/msha-mine-data.md) and
+  [the county's quarries](../measure/allen-county-quarries-2000-2025.yml).
+
+  **Sixteen reportable injuries since 2000 and no death.** A rate of 3.63 per 200,000 hours, with
+  the longest single absence 160 days after a fall in November 2019. One accident, on 16 December
+  2011, is recorded as a permanent total or partial disability. [verified] — the same source.
+  Nothing here names the person, and the file does not either.
+
+  [open] How long stone has been taken here. The register says National Lime & Stone has controlled
+  this mine since 1 January 1950, which is the file's floor rather than a date, and the status date
+  of 15 September 1986 is when the present registration began rather than when digging did. The
+  Recorder's tract books, which dated the engine plant's ground, would answer it.
+properties:
+  site_type: quarry
+  status: in operation
+  address: SR-81 west of I-75, Bath Township — the register gives directions and no street address.
+  coordinates: "40.750833, -84.086111"
+links:
+  - target: ../place/bath-township.yml
+    relationship: located-in
+    claim_tag: verified
+    source: ../../catalog/tigerweb-census2020.md
+  - target: ../measure/allen-county-quarries-2000-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/msha-mine-data.md
+  - target: ford-lima-engine-plant.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-recorder-section-ground.md
+  - target: ../site.ont.yml
+    relationship: instance-of

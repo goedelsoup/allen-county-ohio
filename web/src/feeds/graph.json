@@ -8629,6 +8629,53 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-quarries-2000-2025.yml",
+      "class": "measure",
+      "label": "Allen County's quarries, 2000–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "Mines with `STATE` = OH and `FIPS_CNTY_NM` beginning ALLEN, six in all. Employment is the mean of the four quarterly `AVG_EMPLOYEE_CNT` values; hours are their sum. 2026 is excluded from every total because only two quarters are filed. Injuries exclude the two records whose degree is `ACCIDENT ONLY` and the one with none. [verified]",
+        "parameter": "hours worked, active limestone quarries",
+        "unit": "hours",
+        "value": "1748718"
+      },
+      "blocks": [
+        {
+          "text": "Every mine the federal regulator has ever registered in this county, and the labour and the injuries at the two still working. [verified] — [the MSHA open data sets](../../catalog/msha-mine-data.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Six registrations, two working faces, and about thirty people.** Employment across the two active quarries averaged 44.2 in 2006 and 24.0 in 2018 and stands at 31.8; they worked **1,748,718 hours between 2000 and 2025**. [verified] — the same source, quarterly rows summed here. Against the 44,251 people the county's private employers hold, that is one worker in fourteen hundred. [inference] — [the business register](allen-county-private-employers-1986-2023.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Both are surface limestone quarries and both stand where the corpus can put them.** The National Lime & Stone plant is at 40.750833, -84.086111 — in [Bath Township](../place/bath-township.yml) and in no incorporated place. Bluffton Stone is at 40.889167, -83.890278, in [Richland Township](../place/richland-township.yml) and **inside the village of Bluffton**. [verified] — the same source's coordinates, against [TIGERweb](../../catalog/tigerweb-census2020.md) point-in-polygon on the 2020 county-subdivision and incorporated-place layers.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The quarry and the engine plant are 1.62 miles apart in one township.** The company still working the first sold the ground under the second: National Lime & Stone took the Ford site from the National Quarries Company in January 1944 and conveyed it on in 1955. [verified] — [the plant's tract record](../site/ford-lima-engine-plant.yml) and the distance computed here. So the ground that grew Bath Township's factory came off a quarry company's books, and the quarry company is still in the township. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Thirty-four reportable injuries in twenty-six years and no death.** A rate of **3.89 per 200,000 hours** — 3.63 at the Lima plant and 4.44 at Bluffton — with 622 days lost and 275 restricted, and one permanent disability, on 16 December 2011. [verified] — the same source. Handling materials accounts for eleven of them and a slip or fall for eight.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That is an ordinary rate for this county and not a low one.** It sits beside 3.69 for the county's OSHA-reporting establishments as a whole, 2.87 for its manufacturing, 8.38 for its nursing homes and 0.73 for the refinery. [inference] — [the injury record](allen-county-workplace-injuries-2016-2024.yml). The two agencies define a reportable injury separately and the arithmetic is the same, so the comparison is of two rules about what must be written down as much as of two kinds of work.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The register's oldest date is not a date.** National Lime & Stone's control of the Lima plant is recorded as beginning 1 January 1950, which is the same day 41,309 of the file's 169,890 controller records begin and earlier than none of them. [verified] — the same source; see [a value shared by unrelated records is a default](../../decisions/a-value-shared-by-unrelated-records-is-a-default.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say how much stone has come out of this county."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-race-2023.yml",
       "class": "measure",
       "label": "Allen County population by race, 2023",
@@ -19165,6 +19212,10 @@
           "tier": "inference"
         },
         {
+          "text": "**The company that sold this ground is still quarrying a mile and a half away.** The National Lime & Stone Company, which took the site from the National Quarries Company in January 1944 and conveyed it to DTI in 1955, operates a working limestone quarry at 40.750833, -84.086111 — **1.62 miles south of this plant and in the same township**. [verified] — [the quarry](national-lime-and-stone-lima-quarry.yml), out of [the MSHA mine master](../../catalog/msha-mine-data.md). The ground was a quarry before it was a factory, and the quarry company never left Bath Township. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**One person died here in 2021.** The plant's summary for that year records a single work-related death, one of three in the county across the nine years. [verified] — the same summaries. Neither the file nor this corpus says anything further about it, and nothing here names the person.",
           "tier": "verified"
         }
@@ -19692,6 +19743,46 @@
         },
         {
           "text": "**Delphos is verified as a canal town after all**, on the same source that halves nothing: it sits \"on the Miami and Erie Canal, above the confluence of that waterway with the Wabash and Erie Canal system\", and the canal opened there in 1845. [verified] — same source. Its `located-in` edge is no longer an inference.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "site/national-lime-and-stone-lima-quarry.yml",
+      "class": "site",
+      "label": "National Lime & Stone, Lima Plant",
+      "tier": "inference",
+      "properties": {
+        "address": "SR-81 west of I-75, Bath Township — the register gives directions and no street address.",
+        "coordinates": "40.750833, -84.086111",
+        "site_type": "quarry",
+        "status": "in operation"
+      },
+      "blocks": [
+        {
+          "text": "A working limestone quarry on the west side of Lima, registered with the federal mine regulator as mine 3300120 and operated by The National Lime & Stone Company. [verified] — [the MSHA mine master](../../catalog/msha-mine-data.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is in Bath Township and in no incorporated place**, at 40.750833, -84.086111. The register's own directions read *SR-81 west of I-75 (exit 127B) at Lima, 1.5 miles, mine on left*. [verified] — the same source's coordinates, against [TIGERweb](../../catalog/tigerweb-census2020.md) point-in-polygon on the 2020 county-subdivision and incorporated-place layers.",
+          "tier": "verified"
+        },
+        {
+          "text": "That makes it the fourth large industrial installation this corpus has placed outside every municipality, after [the refinery](lima-refinery.yml), [the tank plant](lima-army-tank-plant.yml) and [the engine plant](ford-lima-engine-plant.yml). [inference] The quarry was asked in advance of the claim rather than after it, which is the shape [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml) asks for.",
+          "tier": "inference"
+        },
+        {
+          "text": "**It stands 1.62 miles south of the Ford engine plant, in the same township.** [verified] — the two coordinates, distance computed here. Its operator is the company that bought the plant's ground from the National Quarries Company in January 1944 and conveyed it on in 1955. [verified] — [the plant's tract record](ford-lima-engine-plant.yml). A quarry firm assembled and sold the land that became this township's factory, and a mile and a half away it is still taking out stone. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Ten people work here and it runs one shift.** Five days a week, eight hours a shift, one production shift a day; the operator has filed for it every quarter since 2000, working 881,242 hours in that time. [verified] — [the mine data](../../catalog/msha-mine-data.md) and [the county's quarries](../measure/allen-county-quarries-2000-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Sixteen reportable injuries since 2000 and no death.** A rate of 3.63 per 200,000 hours, with the longest single absence 160 days after a fall in November 2019. One accident, on 16 December 2011, is recorded as a permanent total or partial disability. [verified] — the same source. Nothing here names the person, and the file does not either.",
           "tier": "verified"
         }
       ],
@@ -24362,6 +24453,27 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-quarries-2000-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/msha-mine-data.md"
+    },
+    {
+      "from": "measure/allen-county-quarries-2000-2025.yml",
+      "to": "site/national-lime-and-stone-lima-quarry.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/msha-mine-data.md"
+    },
+    {
+      "from": "measure/allen-county-quarries-2000-2025.yml",
+      "to": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-race-2023.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -27120,6 +27232,13 @@
       "source": "catalog/osha-injury-tracking-application.md"
     },
     {
+      "from": "site/ford-lima-engine-plant.yml",
+      "to": "site/national-lime-and-stone-lima-quarry.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/msha-mine-data.md"
+    },
+    {
       "from": "site/fort-amanda.yml",
       "to": "place/allen-county.yml",
       "relationship": "formerly-in",
@@ -27230,6 +27349,27 @@
       "relationship": "located-in",
       "tier": "verified",
       "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "site/national-lime-and-stone-lima-quarry.yml",
+      "to": "place/bath-township.yml",
+      "relationship": "located-in",
+      "tier": "verified",
+      "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "site/national-lime-and-stone-lima-quarry.yml",
+      "to": "measure/allen-county-quarries-2000-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/msha-mine-data.md"
+    },
+    {
+      "from": "site/national-lime-and-stone-lima-quarry.yml",
+      "to": "site/ford-lima-engine-plant.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/allen-county-recorder-section-ground.md"
     },
     {
       "from": "site/oakwood-correctional-facility.yml",

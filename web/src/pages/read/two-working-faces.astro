@@ -1,0 +1,98 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const six = assertion('six-registrations-two-working-faces')
+const place = assertion('a-quarry-inside-a-village')
+const ford = assertion('the-quarry-and-the-engine-plant')
+const inj = assertion('thirty-four-injuries-and-no-death')
+const date = assertion('the-registers-oldest-date-is-not-a-date')
+
+const spec = (a: typeof six, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const sixSpec = spec(six, 'Average employees, both quarries')
+const injSpec = spec(inj, 'Reportable injuries per 200,000 hours')
+---
+
+<Article slug="two-working-faces">
+  <p>
+    Under the glacial till that carries this county's corn there is limestone, close enough to the
+    surface in two places that it is worth taking out. The federal mine regulator keeps a register
+    of everywhere it supervises that work, with coordinates, quarterly hours and every injury, and
+    Allen County has six entries in it.
+  </p>
+  <AssertionCard assertion={six} open />
+  <ChartFigure
+    id="six"
+    title="Thirty people, give or take ten"
+    caption="Average employment across the county's two working quarries. The peak is 2006 and the trough is 2018."
+    columns={['Year', 'Employees']}
+    rows={six.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="six" set:html={JSON.stringify(sixSpec)} is:inline />
+  <p>
+    Four of the six are marked abandoned — two Western Ohio Stone quarries in 1984, a Ward Materials
+    sand and gravel pit in 1987, and a second on Mayberry Road in 2009. That is a register of
+    permits rather than a map of holes: an operation leaves the file when somebody stops filing for
+    it, and whatever is at those four places is at them still.
+  </p>
+  <AssertionCard assertion={place} />
+  <p>
+    The Bluffton one is the surprise. A working limestone quarry sits inside a village's corporate
+    limits, which is a fact about zoning and about what a village of four thousand people has been
+    willing to live next to for a very long time.
+  </p>
+
+  <h2>The ground under the factory</h2>
+  <AssertionCard assertion={ford} />
+  <p>
+    This corpus already had the other end of that chain. The Recorder's tract book for the north-west
+    quarter of section 17 shows DTI Enterprises conveying to Ford Motor Company on 24 August 1955,
+    and DTI buying it from the National Lime &amp; Stone Company the June before; National Lime &amp;
+    Stone had it from the National Quarries Company in January 1944, and National Quarries from 1917.
+    The land that became Bath Township's engine plant came off a quarry company's books — and a mile
+    and a half south, the same company is still taking out stone.
+  </p>
+  <AssertionCard assertion={inj} />
+  <ChartFigure
+    id="inj"
+    title="How dangerous the stone is"
+    caption="Reportable injuries per 200,000 hours worked, 2000 to 2025. The county's OSHA-reporting establishments run 3.69 on the same arithmetic, its nursing homes 8.38 and its refinery 0.73."
+    columns={['Quarry', 'Rate']}
+    rows={inj.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="inj" set:html={JSON.stringify(injSpec)} is:inline />
+  <p>
+    Thirty-four injuries across twenty-six years and about thirty people is an ordinary rate for this
+    county rather than a low one — quarrying here is about as dangerous as the average of everything
+    else measured, twice as dangerous as the refinery, and less than half as dangerous as a nursing
+    home. Eleven of the thirty-four came from handling materials and eight from a slip or a fall.
+  </p>
+
+  <h2>The date that is not a date</h2>
+  <AssertionCard assertion={date} />
+  <Gloss>
+    Which is why the corpus counts before it cites. One January morning cannot be when a quarter of
+    American mining changed hands, and no single row says whether it is that row's real date or the
+    file's floor — the value is plausible, well formed, and passes every bounds, type and null check
+    there is. It fails only a frequency check, and a frequency check is not something anybody runs on
+    a field they are reading one row of. The second and third commonest values tell the same story:
+    1 January 1979, and 9 March 1978, which is the day the Act that created this register took
+    effect. So a defaulted field is recorded as missing rather than as early.
+  </Gloss>
+  <p>
+    The corpus's own evidence settles it here. The Recorder has National Lime &amp; Stone buying
+    ground in this county in January 1944, six years before the register says the company existed in
+    it. How long stone has actually been taken at the Lima face is a question for the tract books,
+    and it stays open.
+  </p>
+</Article>

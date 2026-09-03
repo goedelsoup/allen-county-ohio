@@ -37,11 +37,15 @@ fn every_coordinate_in_the_corpus_parses_and_lands_in_ohio() {
     // County: 40.6830556, -84.27, which is in Ohio and 990 feet into Auglaize County. This test
     // asks for Ohio and not for this county, and the distinction was theoretical until now.
     //
-    // The last two are Memorial Hall and the Pennsylvania depot, and their coordinates come from
+    // Two more are Memorial Hall and the Pennsylvania depot, and their coordinates come from
     // the National Register, whose Allen County points are all typed `Arbitrary point`. The one
     // listing checkable against a surveyed coordinate — the courthouse — is 31.9 m off, so these
     // two are good for a township and a survey section and are not used for anything finer.
-    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 11);
+    //
+    // The twelfth is the National Lime & Stone quarry, whose coordinate is the federal mine
+    // register's own and is the fourth industrial installation here to land outside every
+    // municipality.
+    assert_eq!(ps.iter().filter(|p| p.class == "site").count(), 12);
     for p in &ps {
         assert!((38.3..=42.4).contains(&p.lat), "{}: {}", p.node, p.lat);
         assert!((-85.0..=-80.4).contains(&p.lon), "{}: {}", p.node, p.lon);

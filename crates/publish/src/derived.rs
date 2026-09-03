@@ -5059,6 +5059,70 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "six-registrations-two-working-faces",
+        statement: "The federal mine regulator has registered six mines in Allen County and two are still worked. Employment across the pair averaged 44.2 in 2006 and 24.0 in 2018 and stands at 31.8, on 1,748,718 hours between 2000 and 2025.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-quarries-2000-2025.yml", "**Six registrations, two working faces, and about thirty people.** Employment across the two active quarries averaged 44.2 in 2006 and 24.0 in 2018 and stands at 31.8; they worked **1,748,718 hours between 2000 and 2025**."),
+        ],
+        answers: &["cannot say how much stone has come out of this county"],
+        figures: &[
+            Figure { label: "2006", value: 44.2, literal: "44.2" },
+            Figure { label: "2018", value: 24.0, literal: "24.0" },
+            Figure { label: "2025", value: 31.8, literal: "31.8" },
+        ],
+    },
+    Assertion {
+        id: "a-quarry-inside-a-village",
+        statement: "Both of Allen County's working quarries are surface limestone. The National Lime & Stone plant is in Bath Township and in no incorporated place; Bluffton Stone is in Richland Township and inside the village of Bluffton.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-quarries-2000-2025.yml", "**Both are surface limestone quarries and both stand where the corpus can put them.** The National Lime & Stone plant is at 40.750833, -84.086111 \u{2014} in [Bath Township](../place/bath-township.yml) and in no incorporated place. Bluffton Stone is at 40.889167, -83.890278, in [Richland Township](../place/richland-township.yml) and **inside the village of Bluffton**."),
+        ],
+        answers: &["cannot say how much stone has come out of this county"],
+        figures: &[
+        ],
+    },
+    Assertion {
+        id: "the-quarry-and-the-engine-plant",
+        statement: "The National Lime & Stone quarry stands 1.62 miles from Ford's Lima engine plant, in the same township, and its operator is the company that took the plant's ground from the National Quarries Company in January 1944 and conveyed it on in 1955.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-quarries-2000-2025.yml", "**The quarry and the engine plant are 1.62 miles apart in one township.** The company still working the first sold the ground under the second: National Lime & Stone took the Ford site from the National Quarries Company in January 1944 and conveyed it on in 1955."),
+        ],
+        answers: &["cannot say how much stone has come out of this county"],
+        figures: &[
+            Figure { label: "miles apart", value: 1.62, literal: "1.62" },
+        ],
+    },
+    Assertion {
+        id: "thirty-four-injuries-and-no-death",
+        statement: "Allen County's quarries recorded 34 reportable injuries in twenty-six years and no death \u{2014} 3.89 per 200,000 hours, 3.63 at the Lima plant and 4.44 at Bluffton, with 622 days lost and one permanent disability in December 2011.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-quarries-2000-2025.yml", "**Thirty-four reportable injuries in twenty-six years and no death.** A rate of **3.89 per 200,000 hours** \u{2014} 3.63 at the Lima plant and 4.44 at Bluffton \u{2014} with 622 days lost and 275 restricted, and one permanent disability, on 16 December 2011."),
+        ],
+        answers: &["cannot say how much stone has come out of this county"],
+        figures: &[
+            Figure { label: "Lima plant", value: 3.63, literal: "3.63" },
+            Figure { label: "both quarries", value: 3.89, literal: "3.89" },
+            Figure { label: "Bluffton Stone", value: 4.44, literal: "4.44" },
+        ],
+    },
+    Assertion {
+        id: "the-registers-oldest-date-is-not-a-date",
+        statement: "The mine register dates National Lime & Stone's control of its Lima quarry to 1 January 1950 \u{2014} the same day 41,309 of the file's 169,890 controller records begin, and earlier than none of them.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-quarries-2000-2025.yml", "**The register's oldest date is not a date.** National Lime & Stone's control of the Lima plant is recorded as beginning 1 January 1950, which is the same day 41,309 of the file's 169,890 controller records begin and earlier than none of them."),
+        ],
+        answers: &["cannot say how much stone has come out of this county"],
+        figures: &[
+            Figure { label: "records beginning that day", value: 41309.0, literal: "41,309" },
+            Figure { label: "records in the file", value: 169890.0, literal: "169,890" },
+        ],
+    },
+    Assertion {
         id: "the-eviction-count-does-not-move",
         statement: "Allen County's eviction filings run 766 to 982 across seventeen years \u{2014} mean 865 \u{2014} through a foreclosure crisis, a recession and a quarter more renter households. The rate drifts down 0.92 points over the run, which is about the smallest movement seventeen readings could have found.",
         topic: "housing",

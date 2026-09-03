@@ -1482,6 +1482,26 @@
       ]
     },
     {
+      "id": "place-allen-county::hours-worked,-active-limestone-quarries",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "hours worked, active limestone quarries",
+      "unit": "hours",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-quarries-2000-2025.yml",
+          "label": "Allen County's quarries, 2000–2025",
+          "as_of": "2025",
+          "value": 1748718.0,
+          "published": "1748718",
+          "tier": "verified",
+          "source": "catalog/msha-mine-data.md",
+          "method": "Mines with `STATE` = OH and `FIPS_CNTY_NM` beginning ALLEN, six in all. Employment is the mean of the four quarterly `AVG_EMPLOYEE_CNT` values; hours are their sum. 2026 is excluded from every total because only two quarters are filed. Injuries exclude the two records whose degree is `ACCIDENT ONLY` and the one with none. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::households-paying-more-than-30-per-cent-of-income-for-housing",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -13662,6 +13682,158 @@
           "label": "2014",
           "value": 863.0,
           "literal": "863"
+        }
+      ]
+    },
+    {
+      "id": "six-registrations-two-working-faces",
+      "statement": "The federal mine regulator has registered six mines in Allen County and two are still worked. Employment across the pair averaged 44.2 in 2006 and 24.0 in 2018 and stands at 31.8, on 1,748,718 hours between 2000 and 2025.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-quarries-2000-2025.yml",
+          "node_label": "Allen County's quarries, 2000–2025",
+          "span": "**Six registrations, two working faces, and about thirty people.** Employment across the two active quarries averaged 44.2 in 2006 and 24.0 in 2018 and stands at 31.8; they worked **1,748,718 hours between 2000 and 2025**.",
+          "tier": "inference",
+          "sources": [
+            "catalog/msha-mine-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how much stone has come out of this county."
+      ],
+      "figures": [
+        {
+          "label": "2006",
+          "value": 44.2,
+          "literal": "44.2"
+        },
+        {
+          "label": "2018",
+          "value": 24.0,
+          "literal": "24.0"
+        },
+        {
+          "label": "2025",
+          "value": 31.8,
+          "literal": "31.8"
+        }
+      ]
+    },
+    {
+      "id": "a-quarry-inside-a-village",
+      "statement": "Both of Allen County's working quarries are surface limestone. The National Lime & Stone plant is in Bath Township and in no incorporated place; Bluffton Stone is in Richland Township and inside the village of Bluffton.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-quarries-2000-2025.yml",
+          "node_label": "Allen County's quarries, 2000–2025",
+          "span": "**Both are surface limestone quarries and both stand where the corpus can put them.** The National Lime & Stone plant is at 40.750833, -84.086111 — in [Bath Township](../place/bath-township.yml) and in no incorporated place. Bluffton Stone is at 40.889167, -83.890278, in [Richland Township](../place/richland-township.yml) and **inside the village of Bluffton**.",
+          "tier": "verified",
+          "sources": [
+            "catalog/tigerweb-census2020.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how much stone has come out of this county."
+      ],
+      "figures": []
+    },
+    {
+      "id": "the-quarry-and-the-engine-plant",
+      "statement": "The National Lime & Stone quarry stands 1.62 miles from Ford's Lima engine plant, in the same township, and its operator is the company that took the plant's ground from the National Quarries Company in January 1944 and conveyed it on in 1955.",
+      "topic": "land",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-quarries-2000-2025.yml",
+          "node_label": "Allen County's quarries, 2000–2025",
+          "span": "**The quarry and the engine plant are 1.62 miles apart in one township.** The company still working the first sold the ground under the second: National Lime & Stone took the Ford site from the National Quarries Company in January 1944 and conveyed it on in 1955.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how much stone has come out of this county."
+      ],
+      "figures": [
+        {
+          "label": "miles apart",
+          "value": 1.62,
+          "literal": "1.62"
+        }
+      ]
+    },
+    {
+      "id": "thirty-four-injuries-and-no-death",
+      "statement": "Allen County's quarries recorded 34 reportable injuries in twenty-six years and no death — 3.89 per 200,000 hours, 3.63 at the Lima plant and 4.44 at Bluffton, with 622 days lost and one permanent disability in December 2011.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-quarries-2000-2025.yml",
+          "node_label": "Allen County's quarries, 2000–2025",
+          "span": "**Thirty-four reportable injuries in twenty-six years and no death.** A rate of **3.89 per 200,000 hours** — 3.63 at the Lima plant and 4.44 at Bluffton — with 622 days lost and 275 restricted, and one permanent disability, on 16 December 2011.",
+          "tier": "verified",
+          "sources": [
+            "catalog/tigerweb-census2020.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how much stone has come out of this county."
+      ],
+      "figures": [
+        {
+          "label": "Lima plant",
+          "value": 3.63,
+          "literal": "3.63"
+        },
+        {
+          "label": "both quarries",
+          "value": 3.89,
+          "literal": "3.89"
+        },
+        {
+          "label": "Bluffton Stone",
+          "value": 4.44,
+          "literal": "4.44"
+        }
+      ]
+    },
+    {
+      "id": "the-registers-oldest-date-is-not-a-date",
+      "statement": "The mine register dates National Lime & Stone's control of its Lima quarry to 1 January 1950 — the same day 41,309 of the file's 169,890 controller records begin, and earlier than none of them.",
+      "topic": "land",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-quarries-2000-2025.yml",
+          "node_label": "Allen County's quarries, 2000–2025",
+          "span": "**The register's oldest date is not a date.** National Lime & Stone's control of the Lima plant is recorded as beginning 1 January 1950, which is the same day 41,309 of the file's 169,890 controller records begin and earlier than none of them.",
+          "tier": "verified",
+          "sources": [
+            "catalog/tigerweb-census2020.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how much stone has come out of this county."
+      ],
+      "figures": [
+        {
+          "label": "records beginning that day",
+          "value": 41309.0,
+          "literal": "41,309"
+        },
+        {
+          "label": "records in the file",
+          "value": 169890.0,
+          "literal": "169,890"
         }
       ]
     },
