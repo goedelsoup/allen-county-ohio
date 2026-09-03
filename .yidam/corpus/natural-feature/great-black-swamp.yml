@@ -21,13 +21,45 @@ description: |
   does not have one. [inference] So this node keeps no identifier, and the absence is a fact
   about how gazetteers work rather than a gap in the retrieval.
 
-  [open] How much of Allen County lay within the swamp, and which townships, has not been
-  established against a source.
+  **The county's hydric soils are 35.3 per cent of it, and that is the nearest thing to an answer
+  the corpus can hold.** 91,953 acres of 260,340 are rated hydric — ground that formed under
+  standing water — and 74.7 per cent of the county is poorly drained or worse. [verified] —
+  [the soil survey](../../catalog/usda-ssurgo-soil-survey.md); see
+  [the soils](../measure/allen-county-soils-2026.yml).
+
+      hydric soil, per cent of each township
+      Marion            58.0     Amanda            34.1     Shawnee           26.2
+      Sugar Creek       48.0     Richland          33.8     Jackson           23.4
+      Spencer           45.2     Auglaize          32.0     Bath              21.1
+      Monroe            44.3     American          30.0     — Lima            13.4
+      Perry             34.9
+
+  **The direction this node guessed at is right and the compass point is not.** The four townships
+  whose centres lie north of 40.80° — Marion, Sugar Creek, Monroe and Richland — average 46.0 per
+  cent hydric against 30.9 for the other eight, but Spencer in the far south-west is 45.2 and
+  Richland in the north-east is 33.8. [verified] — the same survey, clipped to
+  [TIGERweb](../../catalog/tigerweb-census2020.md) township polygons. The wet ground runs north and
+  west; the sentence above said north. [inference]
+
+  **The driest ground in the county is the ground the county seat is on.** Lima is 13.4 per cent
+  hydric and 33.2 per cent poorly drained or worse, against 74.7 for the county. [verified] — the
+  same computation. Bath, the township the city grew into, is the driest of the twelve at 21.1.
+
+  [open] Where the swamp's boundary actually ran. Hydric soil is a proxy and not a map: it records
+  where water stood long enough to make the soil, which is a wider thing than the wooded wetland the
+  name refers to and a narrower thing than the poorly drained county. Closing this needs a mapped
+  historic extent — Kaatz's 1955 historical geography or a state original-vegetation layer — and
+  neither has been obtained. See
+  [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml).
 properties:
   feature_type: wetland
 links:
   - target: ../place/allen-county.yml
     relationship: traverses
     claim_tag: inference
+  - target: ../measure/allen-county-soils-2026.yml
+    relationship: evidenced-by
+    claim_tag: verified
+    source: ../../catalog/usda-ssurgo-soil-survey.md
   - target: ../natural-feature.ont.yml
     relationship: instance-of
