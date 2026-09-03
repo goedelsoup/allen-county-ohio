@@ -4261,7 +4261,15 @@
           "tier": "inference"
         },
         {
-          "text": "**A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an American and 0.9 fewer than an Ohioan.** [verified] — same dataset. The county is worse than the state on seven of the eleven measures in the table and worse than the nation on ten of them; the one it beats the nation on is motor vehicle crash deaths. [inference] — counted here.",
+          "text": "**A person born in Allen County in these years could expect 74.3 years, which is 2.8 fewer than an American and 0.9 fewer than an Ohioan.** [verified] — same dataset. The county is worse than the state on seven of the eleven measures in the table and worse than the nation on ten of them; the one it beats the nation on, in this dataset's figures, is motor vehicle crash deaths. [inference] — counted here, and see the two paragraphs below, which are about that row.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The one row it beats the nation on does not survive a second file.** The 12.1 above is 87 deaths over 2016–2022 from the death certificates; the federal crash census counts **94** deaths on this county's roads in the same seven years, a rate of 13.1, which is above the national 12.3 rather than below it. [verified] — [the crash census](allen-county-road-deaths-1975-2024.yml) against the table above. Neither number is wrong: a death certificate is filed where the dead person lived and a crash record is filed where the crash happened, and this county sits on an interstate. The margin that put it under the nation was 0.2 and the disagreement between the two files is 1.0. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And the window holds the county's worst road year in four decades.** 2021 alone contributes 25 of those 94 deaths, against a decade average near eleven. [verified] — the same crash census. A seven-year rate containing it is not this county's ordinary rate, and the same measure computed over 2015–2019 would be a different figure. [inference]",
           "tier": "inference"
         },
         {
@@ -8109,6 +8117,61 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+      "class": "measure",
+      "label": "Deaths at Allen County railway crossings, 1980–2005",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2005",
+        "method": "Crashes in the NHTSA accident file for Ohio county 3 whose `RAIL` value is neither `0000000` nor the `*******` fill of 1975–1978, joined to the FRA grade crossing inventory on `crossingid`. [verified] The join is case-insensitive because one record spells a crossing `532715r` and another `532715R`. The inventory is a current snapshot retrieved in 2026, so its closures and gate arms describe the crossings now and not at the date of any crash; `cityname` in it is the nearest named place and two of those, Cridersville and Columbus Grove, lie outside the county even though the crossings do not. The Poisson figure treats the 1980–2005 crashes as a constant-rate process, which is the null being rejected and not a description of the world.",
+        "parameter": "deaths in crashes at highway-rail grade crossings",
+        "unit": "deaths",
+        "value": "28"
+      },
+      "blocks": [
+        {
+          "text": "Twenty-eight people died in 25 crashes where an Allen County road meets a railway, between 1980 and 2005, and none has died at one since. [verified] — [the crash census](../../catalog/nhtsa-fars.md), whose `RAIL` field carries the seven-character federal crossing number when a railway was involved.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nineteen of the twenty crossings can be named**, because that number is the same key [the federal crossing inventory](../../catalog/fra-crossing-inventory.md) files each crossing under. The twentieth, in 2005, is recorded as `53278X` — six characters where the key is seven — and matches nothing. [verified] — the join, run here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One crossing killed three people in three separate crashes fifteen years apart.** North Baxter Street in Lima, on the Chicago, Fort Wayne & Eastern, in 1986, 1997 and 2001. Amherst Road killed twice in the same year, 1984. [verified] — the same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eleven of the nineteen are on one short line.** The Chicago, Fort Wayne & Eastern — the former Pennsylvania Railroad main line across the county — carries eleven; Norfolk Southern four, CSX three and the Indiana & Ohio one. [verified] — the same file. See [the railroads](allen-county-railroads-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three of the nineteen have since been closed and all sixteen that remain open have gate arms**, against 94 of the county's 163 open public crossings, or 57.7 per cent. [verified] — [the crossing inventory](../../catalog/fra-crossing-inventory.md), `crossingclosed` and `countroadwaygatearms`. Every crossing in this county that is known to have killed someone is now either shut or gated.",
+          "tier": "verified"
+        },
+        {
+          "text": "That is a striking pattern and it is not by itself a demonstration that gates ended the deaths. Busier crossings get both more traffic and more protection, so the two are confounded at the source, and the inventory carries no date for when a gate was installed. This corpus cannot say whether the gates came before these deaths or after them. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The silence since 2005 is longer than chance explains.** At the 1980–2005 rate of 0.96 fatal crossing crashes a year, nineteen years with none arrives about once in eighty million. [inference] — computed here; see [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml). Something changed: closures, gates, fewer trains, fewer trains at speed, or all of them.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The record cannot reach before 1979.** The `RAIL` field is filled with asterisks on every one of the county's 84 fatal crashes from 1975 to 1978, so whether any of them was at a crossing is not recoverable from this file. [verified] — the same crash census, 1975 through 1978.",
+          "tier": "verified"
+        },
+        {
+          "text": "Those 28 deaths are 6.6 per cent of the 423 who died on this county's roads between 1980 and 2005. [inference] — arithmetic on [the road series](allen-county-road-deaths-1975-2024.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say whether the gates came before these deaths or after them."
+      ],
+      "withheld": 1
+    },
+    {
       "id": "measure/allen-county-railroads-1883-1921.yml",
       "class": "measure",
       "label": "Allen County's railroads, 1872–1921",
@@ -8219,6 +8282,73 @@
       ],
       "refusals": [
         "The inventory counts crossings and not track, so nothing here is comparable to the 102 miles of main track the county had in 1883, and this corpus cannot say whether the network shrank, moved or merely changed hands."
+      ],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-road-deaths-1975-2024.yml",
+      "class": "measure",
+      "label": "Deaths on Allen County roads, 1975–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "NHTSA's national accident file for each year 1975 to 2024, filtered to `STATE` 39 and `COUNTY` 3, decoded as `utf-8-sig` because two of the fifty files carry a byte-order mark. [verified] Deaths are the sum of `FATALS`, which counts everyone who died within thirty days of the crash, including people not in a vehicle. Rates per 100,000 use the decennial census count nearest each decade's middle — 112,241 for 1975–1984, then 109,755, 108,464, 106,331 and 102,217 — so a decade's rate is a ten-year average against one population and not a mean of ten annual rates. The state and national figures are this corpus's own sums over every county row of the same files. The road-class table begins in 1987 because `ROUTE` does; the alcohol series ends in 2020 because `DRUNK_DR` leaves the file.",
+        "parameter": "deaths in motor vehicle crashes",
+        "unit": "deaths",
+        "value": "760"
+      },
+      "blocks": [
+        {
+          "text": "Seven hundred and sixty people died in 666 crashes on this county's roads in the fifty years from 1975 to 2024. [verified] — [the Fatality Analysis Reporting System](../../catalog/nhtsa-fars.md), national crash files for every year of the run, Ohio state code 39, county code 3.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The roads take about a third fewer than they did, and the fall stopped.** The five decades run 17.3, 16.5, 14.3, 10.2 and 11.9 deaths per 100,000 people: the county's worst decade is its first and its best is 2005–2014, and the decade just ended is worse than that one by fourteen deaths. [verified] — the same files. Rates use the census count nearest each decade's middle, so they carry the county's own decline in the denominator as well as the roads' in the numerator.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is Ohio's shape and not the country's.** Indexed to 1975–1984, the last decade stands at 62.9 here, 64.4 in Ohio and 82.7 in the United States. [verified] — the same files summed over every county row in them. The county and the state fell by more than a third across fifty years and the nation by less than a fifth.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One year in the fifty stands outside the rest of the record.** In 2021 there were 23 fatal crashes and 25 deaths, the most since 1978, in a county whose other nine years of that decade average 10.8. [verified] — the same files. Ohio rose 10.1 per cent that year and the United States 10.8; Allen County rose 150. None of the 23 crashes killed more than two people, so it is not one catastrophe but twenty-three separate ones, seven of them in November.",
+          "tier": "verified"
+        },
+        {
+          "text": "A count that small moves on its own, and this one does not. Against a Poisson draw with the decade's own mean, 25 or more arrives once in 6,800 years; even allowing for the fifty chances a fifty-year record gives, the odds are about one in 140. [inference] — computed here, and see [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "This corpus cannot say what happened in 2021. [inference] — a crash file carries the road, the hour and the weather and no reason.",
+          "tier": "inference"
+        },
+        {
+          "text": "**A third of the fatal crashes involve a drinking driver and that share has not moved in forty-six years.** By decade it runs 33.3, 36.7, 29.6, 35.4 and 38.6 per cent — 221 drinking drivers across 611 crashes. [verified] — the same files, `DRUNK_DR`, which the accident file carries from 1975 to 2020 and not after. The count of fatal crashes fell by a third over those years and the share of them with drink in them did not fall at all. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**State and county highways kill more people here than the interstate does.** Interstate 75 runs the length of the county and accounts for one death in eight; the two-lane state and county roads outside Lima account for three in five. [verified] — the same files, `ROUTE`, 533 deaths on rows that carry it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A quarter of them died between midnight and six in the morning.** 180 deaths of 758 with an hour recorded fall in those six hours, against 113 in the six from six to noon. [verified] — the same files. August is the worst month with 86 and December the best with 45.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Pedestrians and cyclists are a larger part of it than they were.** Twelve were involved in fatal crashes here in 1991–2000, eleven in 2001–2010 and 22 in 2011–2024. [verified] — the same files, `PEDS`, which the accident file gains in 1991. Eight of the 22 are in 2021 alone.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Most fatal crashes kill one person and 73 of the 666 killed more.** The worst in the fifty years killed six on 27 March 1979; a crash on 9 October 1996 killed five on Interstate 75 and one on 10 February 1998 killed four on the same road. [verified] — the same files. The record carries no names and no narrative, which is why none of these is an event node here.",
+          "tier": "verified"
+        },
+        {
+          "text": "Twenty-eight of the deaths happened where a road crosses a railway, and none since 2005. See [the crossings](allen-county-rail-crossing-deaths-1980-2005.yml). [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say what happened in 2021."
       ],
       "withheld": 2
     },
@@ -21996,6 +22126,13 @@
       "source": "catalog/county-health-rankings.md"
     },
     {
+      "from": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+      "to": "measure/allen-county-road-deaths-1975-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/nhtsa-fars.md"
+    },
+    {
       "from": "measure/allen-county-elected-seats-2026.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -23018,6 +23155,34 @@
       "source": "catalog/census-acs-summary-file.md"
     },
     {
+      "from": "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nhtsa-fars.md"
+    },
+    {
+      "from": "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+      "to": "measure/allen-county-railroads-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fra-crossing-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+      "to": "measure/allen-county-road-deaths-1975-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/nhtsa-fars.md"
+    },
+    {
+      "from": "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fra-crossing-inventory.md"
+    },
+    {
       "from": "measure/allen-county-railroads-1883-1921.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -23030,6 +23195,34 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/fra-crossing-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-road-deaths-1975-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/nhtsa-fars.md"
+    },
+    {
+      "from": "measure/allen-county-road-deaths-1975-2024.yml",
+      "to": "measure/allen-county-rail-crossing-deaths-1980-2005.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/nhtsa-fars.md"
+    },
+    {
+      "from": "measure/allen-county-road-deaths-1975-2024.yml",
+      "to": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-road-deaths-1975-2024.yml",
+      "to": "measure/allen-county-bridges-2025.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-school-boards-2026.yml",

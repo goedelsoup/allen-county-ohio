@@ -323,6 +323,24 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'seven-hundred-and-sixty',
+    title: 'Seven hundred and sixty',
+    dek: 'Fifty years of fatal crashes on this county\u2019s roads: a third fewer than there were, a year that stands outside the record, and a share with drink in it that has never moved.',
+    section: 'people',
+    era: [1975, 2024],
+    assertions: [
+      'seven-hundred-and-sixty-on-the-roads',
+      'the-roads-followed-ohio-not-the-country',
+      'the-worst-road-year-since-1978',
+      'the-drink-share-never-moved',
+      'the-crossings-stopped-killing-people',
+    ],
+    entries: [
+      'measure/allen-county-road-deaths-1975-2024.yml',
+      'measure/allen-county-rail-crossing-deaths-1980-2005.yml',
+    ],
+  },
+  {
     slug: 'buying-and-borrowing',
     title: 'Buying, and borrowing against what you own',
     dek: 'Seven years of mortgage applications, and a denial gap that income does not account for.',
