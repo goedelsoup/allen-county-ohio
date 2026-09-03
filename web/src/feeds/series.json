@@ -2102,6 +2102,26 @@
       ]
     },
     {
+      "id": "place-allen-county::population-under-18",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "population under 18",
+      "unit": "people",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-children-2010-2024.yml",
+          "label": "Allen County's children, 2010–2024",
+          "as_of": "2024",
+          "value": 23431.0,
+          "published": "23431",
+          "tier": "verified",
+          "source": "catalog/census-popest-2024.md",
+          "method": "County age-sex estimate files `CC-EST2020-AGESEX-39.csv` and `cc-est2024-agesex-39.csv`, Allen County, columns `UNDER5_TOT`, `AGE513_TOT` and `AGE1417_TOT`, summed here for the under-18 figure, which the files do not publish directly. The `YEAR` column is a code, not a year: in the 2010s file 1 is the 2010 census, 2 the estimates base, 3 to 12 the July estimates for 2010 through 2019, 13 the 1 April 2020 estimate and 14 the 1 July 2020 estimate; in the 2020s file 1 is the 2020 base and 2 to 6 the July estimates for 2020 through 2024. [verified] — the Bureau's own file layout. Births are `BIRTHS{year}` from `co-est2019-alldata.csv` and `co-est2024-alldata.csv`. The two series are never differenced across 1 July 2020."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::post-secondary-students-enrolled,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -11753,6 +11773,106 @@
           "label": "Black 2024",
           "value": 1307.0,
           "literal": "1,307"
+        }
+      ]
+    },
+    {
+      "id": "the-children-went-missing-faster-than-the-classrooms",
+      "statement": "Allen County's under-18 population fell 7.3 per cent between the July estimates of 2010 and 2019, while enrolment in its twelve school districts fell 5.9 per cent over the same two autumns.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-children-2010-2024.yml",
+          "node_label": "Allen County's children, 2010–2024",
+          "span": "**This is most of why the schools emptied, and it is not all of it.** Across the 2010s series the county's under-18 population fell 7.3 per cent between the July estimates of 2010 and 2019 — 25,377 to 23,527 — while enrolment in the twelve districts fell 5.9 per cent over the same two autumns, 17,830 to 16,774. [inference] — against [the enrolment series](allen-county-school-enrolment-1988-2024.yml). The children went missing faster than the classrooms did, which is the reverse of what a story about children leaving these districts for other schools would predict, and it is one decade of evidence rather than a rule.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "under-18 population",
+          "value": 7.3,
+          "literal": "7.3"
+        },
+        {
+          "label": "district enrolment",
+          "value": 5.9,
+          "literal": "5.9"
+        }
+      ]
+    },
+    {
+      "id": "the-under-fives-are-the-births",
+      "statement": "Births in Allen County fell from 1,318 in 2011 to 1,200 in 2024, and the county's under-five population is those births and nothing else — it matches the five preceding years of them to within 1.6 per cent in every year checked.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-children-2010-2024.yml",
+          "node_label": "Allen County's children, 2010–2024",
+          "span": "**Births fell nine per cent across the run and the low is 2021.** 1,318 in 2011 against 1,200 in 2024, with the fewest in the record — 1,171 — in the first full year after the pandemic began. [verified] — [the components files](../../catalog/census-popest-2024.md). **2010 and 2020 are missing from that table on purpose**: each vintage's first year covers only the three months from the census date to 30 June, 339 births in 2010 and 293 in 2020, and putting a partial year in a column of full ones is how a false trough gets published. [verified] — the same files.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-children-2010-2024.yml",
+          "node_label": "Allen County's children, 2010–2024",
+          "span": "**The county's under-five population is its own births and nothing else.** For every year of the 2010s where all five preceding birth counts are published in full, the estimated under-five population matches their sum to within 1.6 per cent: 6,372 against 6,403 in 2015, 6,357 against 6,347 in 2016, 6,367 against 6,353 in 2017, 6,362 against 6,314 in 2018 and 6,303 against 6,206 in 2019. [inference] — computed here from the age and component files. Migration moves this county's adults; it does not appear to move its babies. The same check cannot be run on the 2020s series because the 2020 birth count in these files is a three-month stub.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2011",
+          "value": 1318.0,
+          "literal": "1,318"
+        },
+        {
+          "label": "2021",
+          "value": 1171.0,
+          "literal": "1,171"
+        },
+        {
+          "label": "2024",
+          "value": 1200.0,
+          "literal": "1,200"
+        }
+      ]
+    },
+    {
+      "id": "two-vintages-disagree-about-the-children",
+      "statement": "Two vintages of the Census Bureau's county estimates reach 1 July 2020 and disagree. They put Allen County 157 people apart and its children 811 apart — a seventh of a per cent on the total and 3.5 per cent on the part.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-children-2010-2024.yml",
+          "node_label": "Allen County's children, 2010–2024",
+          "span": "**1 July 2020 appears twice because two series reach it and they disagree.** The rows above the break are the Vintage 2020 estimates, carried forward from the 2010 census; the rows below are Vintage 2024, carried forward from the 2020 one. At the shared date they put the county 157 people apart — a seventh of one per cent — and its children **811 apart**, which is 3.5 per cent. [verified] — [the two age files](../../catalog/census-popest-2024.md). See [an estimate is anchored to a census](../../decisions/an-estimate-is-anchored-to-a-census.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "people",
+          "value": 157.0,
+          "literal": "157"
+        },
+        {
+          "label": "children under 18",
+          "value": 811.0,
+          "literal": "811"
         }
       ]
     }

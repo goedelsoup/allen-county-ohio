@@ -1,0 +1,103 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const faster = assertion('the-children-went-missing-faster-than-the-classrooms')
+const births = assertion('the-under-fives-are-the-births')
+const seam = assertion('two-vintages-disagree-about-the-children')
+
+const spec = (a: typeof faster, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const fasterSpec = spec(faster, 'Per cent fall, 2010 to 2019')
+const birthsSpec = spec(births, 'Births in Allen County')
+const seamSpec = spec(seam, 'Difference at 1 July 2020')
+---
+
+<Article slug="how-many-children">
+  <p>
+    Allen County's twelve school districts have lost a third of their pupils since 1988. The obvious
+    explanation is that the county has fewer children to send, and it is worth checking rather than
+    assuming, because the county's total population fell only eight per cent over the same years.
+    The Census Bureau counts children separately from everyone else, and for fourteen years it can
+    be checked.
+  </p>
+  <AssertionCard assertion={faster} open />
+  <ChartFigure
+    id="faster"
+    title="What fell faster, 2010 to 2019"
+    caption="County population under 18 against enrolment in the twelve districts, both between the same two autumns. The districts extend into four neighbouring counties, so these are rates of change over different ground and not two counts of one thing."
+    columns={['Measure', 'Fall']}
+    rows={faster.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="faster" set:html={JSON.stringify(fasterSpec)} is:inline />
+  <p>
+    So the answer is yes, and more than yes: through the 2010s the county's children disappeared
+    faster than its classrooms did. A story in which children were leaving these districts for
+    private schools, community schools or the county next door would predict the opposite. One
+    decade is one decade, and before 2010 there is no county child count here to extend it with.
+  </p>
+
+  <h2>The under-fives are the births</h2>
+  <p>
+    At the young end the arithmetic closes almost exactly. A county's under-five population ought to
+    be the last five years of its births, plus or minus whatever moving in and out does to families
+    with babies. Here it is the births, full stop.
+  </p>
+  <AssertionCard assertion={births} />
+  <ChartFigure
+    id="births"
+    title="Births to Allen County residents"
+    caption="Three of the fourteen years. 2010 and 2020 are absent from the series entirely: each estimate vintage's first year covers only the three months from the census date to 30 June, 339 births and 293, which in a column of full years reads as a collapse that did not happen."
+    columns={['Year', 'Births']}
+    rows={births.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="births" set:html={JSON.stringify(birthsSpec)} is:inline />
+  <p>
+    In five separate years the estimated under-five population lands within 1.6 per cent of the five
+    preceding birth counts — 6,372 against 6,403, 6,357 against 6,347, and so on. Migration moves
+    this county's adults. It does not appear to move its babies, which means the birth series is not
+    one input among several here: it is the whole of what the county will have to enrol in five
+    years' time.
+  </p>
+
+  <h2>A seam worth naming</h2>
+  <p>
+    One date in this series is in it twice, and the reason is worth more than the inconvenience.
+  </p>
+  <AssertionCard assertion={seam} />
+  <ChartFigure
+    id="seam"
+    title="How far apart two federal estimates are on one date"
+    caption="Vintage 2020 against Vintage 2024, both from the Census Bureau, both for 1 July 2020, same county, same column names. 101,980 people against 102,137; 23,452 under eighteen against 24,263."
+    columns={['Measure', 'Difference']}
+    rows={seam.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="seam" set:html={JSON.stringify(seamSpec)} is:inline />
+  <p>
+    An estimate is a census carried forward — the last enumeration, plus births, minus deaths, plus
+    net migration. The 2010s series was built, as its own documentation says, without consideration
+    of the 2020 census, because that census had not happened yet. When it did and put the county
+    higher than the old series had reached, the Bureau did not revise the old years. It started
+    again from the new anchor.
+  </p>
+  <Gloss>
+    That produced a rule here. Two vintages of an estimate are two series: report a trend inside one
+    of them, or report both and put the seam in the table. And test the seam on the figure you are
+    about to use, not on the headline — the county's total agrees to a seventh of a per cent across
+    this break, so a check run on population passes cleanly and lets 811 children through.
+  </Gloss>
+  <p>
+    Read within each series rather than across the break, the fall is 7.8 per cent over the ten years
+    of the 2010s and 3.4 per cent over the four of the 2020s. Spliced, it is 7.9 per cent, and that
+    is nobody's number.
+  </p>
+</Article>
