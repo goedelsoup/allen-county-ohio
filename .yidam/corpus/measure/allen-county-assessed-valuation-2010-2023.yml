@@ -60,6 +60,22 @@ description: |
   in 2015, $2,153.9 million in 2021 and $2,451.3 million in 2023.** [verified] — read from the table
   above, same source.
 
+  **The base runs at half the market's pace, and it should run faster.** Residential value rose
+  33.7 per cent between the 2014 and 2023 reports. Those reports rest on January values of 2013 and
+  2022, across which the repeat-transaction index for this county's houses rose 59.6 per cent.
+  [inference] — computed here from [the price index](allen-county-house-prices-1975-2025.yml) and
+  the table above. The comparison is not like for like in the direction that makes the gap larger:
+  the base gains every house built in those nine years and the index measures only houses that
+  changed hands twice, so an assessment that tracked the market would have outrun 59.6 rather than
+  reached 33.7.
+
+  **What a step function does to a curve.** The base moves at reappraisal and the market moves
+  every year, so the two only meet at the steps: 9.6 per cent between the 2018 and 2019 reports,
+  17.0 between the 2021 and 2022, and between one and two per cent in most other years. [inference]
+  — computed here from the table above. A levy voted on one side of a step raises a different sum
+  from one voted on the other; see
+  [the tax rates](allen-county-property-tax-rates-2012-2025.yml).
+
   [open] What the base was before 2010 and what it is now. The audited reports posted go back to the
   2010 report and no further, and the two newest years are scans.
 properties:
@@ -76,6 +92,9 @@ properties:
     agrees exactly. The 2010–2013 reports print only real property and public utility property and
     are entered as totals with the classes blank. [verified]
 links:
+  - target: allen-county-house-prices-1975-2025.yml
+    relationship: relates-to
+    claim_tag: inference
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified
