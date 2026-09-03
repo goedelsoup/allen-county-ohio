@@ -1,0 +1,93 @@
+class: measure
+label: Reading and mathematics proficiency in Allen County's schools, 2009–2018
+description: |
+  The share of tested pupils scoring proficient, all grades together, in each of the county's twelve
+  school districts. [verified] —
+  [EDFacts district outcomes](../../catalog/edfacts-outcomes.md), assessment results at `grade-99`.
+  Every one of the 240 cells is published as an exact figure and none is suppressed.
+
+      2018                 reading    maths    tests
+      Lima                      42       42    1,904
+      Perry                     62       57      425
+      Waynesfield-Goshen        65       79      250
+      Elida                     66       70    1,360
+      Allen East                75       73      583
+      Bath                      77       78    1,012
+      Columbus Grove            78       76      450
+      Pandora-Gilboa            78       78      285
+      Shawnee                   81       80    1,385
+      Spencerville              82       80      530
+      Bluffton                  83       87      636
+      Delphos                   83       85      488
+
+  **The largest district in the county is twenty points below the second-lowest and forty-one below
+  the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and
+  Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87. [verified] — the same
+  file. Every figure in that table rests on between 250 and 1,904 tests, so none of the ordering is
+  a small-numbers artefact.
+
+      county reading         2009    2013    2015    2018
+      Allen County           80.6    84.7    57.4    68.8
+      Ohio                   81.4    83.9    55.2    64.3
+
+  **All twelve districts fell together in the same two years, which is what an instrument does and
+  not what children do.** Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19
+  in Spencerville, 22 in Shawnee, and on up to 40 in Perry — every district in the county, no
+  exceptions, and the state fell 28.7 points over the same two years. [verified] — the same file,
+  district by district, with the state summed over every Ohio district. A change arriving in twelve
+  independently governed districts within two years is a change in the test. [inference]
+
+  [open] Which test, and on what authority it was substituted. Nothing in this collection names an
+  instrument, and this corpus holds no source that does.
+
+  **Measured against the state, this county now does better than it used to.** Its reading
+  proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics
+  it was 0.3 above and is 7.2 above. [verified] — the same file, the county's twelve districts
+  against every Ohio district reporting — 888 of them in 2009 and 931 in 2018 — weighted
+  by tests taken. The county did not improve; the state
+  fell further. [inference]
+
+  **The eleven districts other than Lima are 34 points above it and were 22 points above it.** The
+  gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6.
+  [verified] — the same file, weighted by tests. This corpus cannot say whether that gap widened.
+  [inference] — before 2014 the eleven averaged near 90 per cent proficient, which is close enough
+  to the top of the scale that a harder test would open a gap without anything having changed
+  underneath it, and the corpus holds nothing that separates the two.
+
+  **The 2020 file is empty and the emptiness is real.** Every district returns a row for 2020 with
+  no scores in it, and 2019 has no assessment file at all. [verified] — the same collection. The
+  tests were not given; see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml).
+properties:
+  parameter: pupils proficient in reading, all grades
+  value: "68.8"
+  unit: per cent
+  as_of: "2018"
+  method: |
+    One request per year to the EDFacts assessment endpoint for Ohio at `grade-99`, 2009 to 2018
+    and 2020, filtered here to the twelve districts by NCES identifier and to the all-students rows.
+    [verified] District figures are as published; every one has `low` equal to `high`. County and
+    state figures are computed here, weighting each district by its own count of valid tests —
+    9,308 for the county in 2018 and 905,315 for the state — and rows carrying the negative missing
+    codes are excluded rather than read as zero. `value` is the county's own weighted reading figure
+    for 2018, which is a derived number and not one the source prints.
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-graduation-rates-2010-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-school-district-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-school-finance-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

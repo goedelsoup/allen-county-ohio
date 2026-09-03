@@ -438,6 +438,106 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-only-district-published-as-a-number",
+        statement: "Eleven of the 120 district-years of graduation data for Allen County carry an exact rate; ten of them are Lima City, the district with the worst rate. Every other district is published as a band, and the width of the band is set by the size of the cohort.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**One district in twelve is published as a number and it is the district with the worst rate.** 11 of this county's 120 district-years carry an exact graduation rate and 109 are published as a band; ten of the 11 are Lima and the eleventh is Shawnee in 2017."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "exact", value: 11.0, literal: "11" },
+            Figure { label: "banded", value: 109.0, literal: "109" },
+        ],
+    },
+    Assertion {
+        id: "limas-graduation-rate-has-not-moved",
+        statement: "Lima City's four-year graduation rate was 70 per cent in 2010 and 63 in 2019, and nine of the ten years sit between 63 and 70. It is the only rate in the county published as a number every year.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**Lima's rate is the one figure in the table that can be tracked, and it has not moved much.** 70 per cent in 2010, 78 in 2011, then 70, 66, 63, 69, 63, 65, 67 and 63."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "2010", value: 70.0, literal: "70" },
+            Figure { label: "2011", value: 78.0, literal: "78" },
+            Figure { label: "2013", value: 66.0, literal: "66" },
+            Figure { label: "2015", value: 69.0, literal: "69" },
+            Figure { label: "2017", value: 65.0, literal: "65" },
+            Figure { label: "2019", value: 63.0, literal: "63" },
+        ],
+    },
+    Assertion {
+        id: "the-county-graduation-rate-fell-and-the-states-rose",
+        statement: "Allen County's graduation rate can only be bounded, and the bounds are enough: 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019, two intervals that do not touch. The county stood clear of Ohio every year to 2015 and has overlapped it since 2016.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "Weighting each district's band by its cohort gives 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019 \u{2014} two intervals that do not touch, so the rate fell by at least 0.6 points and the fall does not depend on any assumption about where inside a band a district sits."),
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**The county was clear of the state for six years and has not been since.** Its lower bound stood above Ohio's upper bound in every year from 2010 to 2015; from 2016 the two intervals overlap, and in 2019 Ohio's band sits higher than the county's within the overlap."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "2011 lower", value: 87.0, literal: "87.0" },
+            Figure { label: "2011 upper", value: 90.9, literal: "90.9" },
+            Figure { label: "2019 lower", value: 82.5, literal: "82.5" },
+            Figure { label: "2019 upper", value: 86.4, literal: "86.4" },
+        ],
+    },
+    Assertion {
+        id: "no-racial-gap-in-limas-graduation-rate",
+        statement: "In Lima City, the only district here whose cohorts are large enough to publish by race, the white and Black graduation bands are disjoint in seven years of ten \u{2014} and the higher one is white in three and Black in four.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**In the county's only legible district the graduation rate does not differ by race.** Lima's white and Black bands are disjoint in seven of the ten years, and the higher one is white in three of those and Black in four; in the other three years the two bands are identical."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[],
+    },
+    Assertion {
+        id: "lima-reads-at-forty-two-per-cent",
+        statement: "Lima City reads 42 per cent proficient in 2018 against 62 in Perry and 83 in Bluffton, and 42 per cent in mathematics against 57 and 87. The figures rest on between 250 and 1,904 tests apiece.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**The largest district in the county is twenty points below the second-lowest and forty-one below the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "Lima", value: 42.0, literal: "42" },
+            Figure { label: "Perry", value: 62.0, literal: "62" },
+            Figure { label: "Bluffton", value: 83.0, literal: "83" },
+        ],
+    },
+    Assertion {
+        id: "twelve-districts-fell-in-the-same-two-years",
+        statement: "Reading proficiency fell in every one of Allen County's twelve districts between 2013 and 2015 \u{2014} by 18 points in Bluffton and 40 in Perry \u{2014} and the state fell 28.7. Twelve independently governed districts do not move together in two years unless the test does.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19 in Spencerville, 22 in Shawnee, and on up to 40 in Perry \u{2014} every district in the county, no exceptions, and the state fell 28.7 points over the same two years."),
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "Bluffton", value: 18.0, literal: "18" },
+            Figure { label: "Spencerville", value: 19.0, literal: "19" },
+            Figure { label: "Shawnee", value: 22.0, literal: "22" },
+            Figure { label: "Perry", value: 40.0, literal: "40" },
+        ],
+    },
+    Assertion {
+        id: "the-county-passed-the-state-without-improving",
+        statement: "Allen County's reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 above it in 2018; in mathematics, 0.3 above and then 7.2. The county did not improve \u{2014} the state fell further.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
+            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**The eleven districts other than Lima are 34 points above it and were 22 points above it.** The gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "reading, 2018", value: 4.5, literal: "4.5" },
+            Figure { label: "mathematics, 2018", value: 7.2, literal: "7.2" },
+        ],
+    },
+    Assertion {
         id: "half-the-countys-poor-children-are-in-one-district",
         statement: "Lima City Schools holds a quarter of the twelve districts' school-age children \
                     and very nearly half of the poor ones — 1,626 of 3,368 — on a child poverty \

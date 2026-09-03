@@ -341,6 +341,26 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'the-only-legible-district',
+    title: 'The only legible district',
+    dek: 'Ten years of graduation rates and test scores for twelve districts \u2014 and a disclosure rule that makes exactly one of them readable.',
+    section: 'people',
+    era: [2009, 2019],
+    assertions: [
+      'lima-reads-at-forty-two-per-cent',
+      'twelve-districts-fell-in-the-same-two-years',
+      'the-county-passed-the-state-without-improving',
+      'the-only-district-published-as-a-number',
+      'limas-graduation-rate-has-not-moved',
+      'the-county-graduation-rate-fell-and-the-states-rose',
+      'no-racial-gap-in-limas-graduation-rate',
+    ],
+    entries: [
+      'measure/allen-county-graduation-rates-2010-2019.yml',
+      'measure/allen-county-test-proficiency-2009-2018.yml',
+    ],
+  },
+  {
     slug: 'the-roll-and-the-room',
     title: 'The roll and the room',
     dek: 'Eleven elections of machinery rather than result: what a turnout rate is divided by, and who is left to run the count.',
