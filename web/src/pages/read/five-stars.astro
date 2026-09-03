@@ -1,0 +1,126 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const beds = assertion('twelve-homes-and-eight-hundred-and-eleven-beds')
+const chains = assertion('two-thirds-of-the-beds-are-run-from-elsewhere')
+const bench = assertion('better-rated-and-no-better-staffed')
+const defs = assertion('two-hundred-and-eighty-seven-deficiencies')
+const star = assertion('a-five-star-home-is-the-most-dangerous-workplace')
+const days = assertion('the-homes-are-a-seventh-smaller-than-in-2013')
+const mcd = assertion('medicaid-pays-for-three-days-in-five')
+
+const spec = (a: typeof beds, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const bedsSpec = spec(beds, 'Occupancy, per cent of certified beds')
+const benchSpec = spec(bench, 'Mean overall five-star rating')
+const starSpec = spec(star, 'Recordable injuries per 100 full-time workers')
+const daysSpec = spec(days, 'Resident days in a year')
+---
+
+<Article slug="five-stars">
+  <p>
+    On any night about seven hundred Allen County residents sleep in a nursing home. Where they are,
+    who runs the building, how it is staffed and what an inspector found there the last time are all
+    public, and the county's own record of them has been empty. Two federal files close that: a
+    register of every certified home in the country, and thirteen years of the financial reports
+    each one files.
+  </p>
+  <AssertionCard assertion={beds} open />
+  <ChartFigure
+    id="beds"
+    title="How full the beds are"
+    caption="Residents per day against certified beds, August 2026. Allen County's homes run fuller than the state's and considerably fuller than the country's."
+    columns={['Place', 'Occupancy']}
+    rows={beds.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="beds" set:html={JSON.stringify(bedsSpec)} is:inline />
+  <p>
+    Twelve, not eleven. CMS's own county column finds only eleven of them, because it takes the
+    county from the provider's enrollment record rather than from where the building stands, and it
+    puts The Meadows of Delphos across the line in Van Wert. The Census Bureau's address ranges
+    return an exact match in Allen County, and CMS's cost report for the same certification says
+    Allen in every year it has filed from that address.
+  </p>
+  <AssertionCard assertion={chains} />
+  <p>
+    Three of the twelve belong to Trilogy Health Services, which runs a hundred and twenty-three
+    homes; two to HCF Management, which runs twenty-two. The three that answer to nobody outside the
+    county are the Lima Convalescent Home and the two Mennonite houses at Bluffton, and between them
+    they hold a fifth of the beds.
+  </p>
+
+  <h2>What the inspectors found</h2>
+  <AssertionCard assertion={defs} />
+  <p>
+    A citation is graded on a grid from A to L for how many residents it touched and how badly. Most
+    of these — two hundred and one of the two hundred and eighty-seven — are at D, which means a
+    problem that harmed nobody. The two at the top of the scale are the ones a reader should hold
+    onto, and so are the seventeen citations, at seven different homes, for failures of the
+    residents' freedom from abuse and neglect.
+  </p>
+  <AssertionCard assertion={bench} />
+  <ChartFigure
+    id="bench"
+    title="Rated better than the state"
+    caption="Mean overall five-star rating. Turnover and staffing tell a flatter story: the county is at the state median on nursing hours and below it on churn."
+    columns={['Place', 'Mean rating']}
+    rows={bench.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="bench" set:html={JSON.stringify(benchSpec)} is:inline />
+
+  <h2>What the stars do not cover</h2>
+  <AssertionCard assertion={star} />
+  <ChartFigure
+    id="star"
+    title="One home against the county"
+    caption="Recordable injuries per 100 full-time workers, 2016 to 2024, from the annual summaries employers file with OSHA."
+    columns={['Workplace', 'Rate']}
+    rows={star.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="star" set:html={JSON.stringify(starSpec)} is:inline />
+  <p>
+    Both of those are true at once, and neither is a criticism of the rating. The five-star formula
+    combines an inspection record, a staffing figure and a set of clinical measures taken from
+    resident assessments. All three are about residents. None of them is about the people who lift
+    them, and nothing in a five-star badge says so.
+  </p>
+  <Gloss>
+    Which is a rule rather than an observation about one building. A composite index arrives with an
+    authority its inputs do not have — one digit, from a federal agency, on a five-point scale — and
+    its scope lives in a methodology document nobody following a link will read. So a rating is
+    published here only beside what it scores and at least one consequential thing at the same
+    address it cannot see. Resisting the next step matters too: across the twelve homes the rating
+    and the injury rate correlate −0.165 over nine years and −0.617 with the pandemic years removed,
+    and the second was the sixth thing tried. Twelve homes support a sentence about two named homes
+    and not a coefficient.
+  </Gloss>
+
+  <h2>A seventh smaller</h2>
+  <AssertionCard assertion={days} />
+  <ChartFigure
+    id="days"
+    title="Thirteen years of resident days"
+    caption="Total days billed by the county's certified nursing homes. The peak year is 2013 and the trough is 2022."
+    columns={['Year', 'Resident days']}
+    rows={days.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="days" set:html={JSON.stringify(daysSpec)} is:inline />
+  <AssertionCard assertion={mcd} />
+  <p>
+    Which makes the state the customer. Whatever else a nursing home in this county is, it is mostly
+    a business that sells days to Medicaid, and the long residence has held up better than the short
+    rehabilitation stay that Medicare buys. The staffing has fallen faster than either: the sector
+    employed 1,945 people here in 2011 and 1,419 in 2023, against a fall of under a tenth in the
+    days they cover.
+  </p>
+</Article>

@@ -1,0 +1,88 @@
+class: measure
+label: Allen County nursing home resident days, 2011–2023
+description: |
+  How much nursing-home care this county delivered each year, and who paid for it. [verified] —
+  [the skilled nursing facility cost reports](../../catalog/cms-snf-cost-reports.md), fiscal 2011
+  through 2023.
+
+      year  homes  resident days   Medicare   Medicaid    other   Medicaid %
+      2011     10        300,623     32,476    176,798   91,349         58.8
+      2012     11        312,044     32,821    183,619   95,604         58.8
+      2013     12        320,868     35,362    191,203   94,303         59.6
+      2014     11        306,785     34,978    192,976   78,831         62.9
+      2015     12        302,997     35,238    192,615   75,144         63.6
+      2016     12        308,394     34,943    190,154   83,297         61.7
+      2017     11        281,107     32,255    175,022   73,830         62.3
+      2018     12        288,063     26,183    187,803   74,077         65.2
+      2019     12        291,736     25,349    181,779   84,608         62.3
+      2020     12        270,773     30,093    158,558   82,122         58.6
+      2021     13        261,595     29,578    148,545   83,472         56.8
+      2022     12        256,683     27,298    143,572   85,813         55.9
+      2023     11        272,194     23,153    155,917   93,124         57.3
+
+  **The county's nursing homes peaked in 2013 and are a seventh smaller now.** 320,868 resident days
+  then, 256,683 at the bottom in 2022, 272,194 in 2023 — **15.2 per cent below the peak**. [verified]
+  — the same files, summed here.
+
+  **Medicaid pays for three days in five and always has.** Its share runs 55.9 to 65.2 per cent
+  across the thirteen years and stands at 57.3. [verified] — the same files. Medicare, which pays
+  for the short rehabilitation stay rather than the long residence, fell furthest: 32,476 days in
+  2011 to 23,153 in 2023, **down 28.7 per cent**, while everything else rose 1.9. [verified] —
+  the same files.
+
+  **The staffing fell three times as fast as the care.** The nursing and residential care subsector
+  employed 1,945 people in this county in 2011 and 1,419 in 2023, down 27.0 per cent against 9.5
+  per cent for these days — so each employee now covers 191.8 resident days a year against 154.6
+  in 2011. [inference] —
+  [the business register](allen-county-health-care-employment-2010-2022.yml) against the cost
+  reports. The two counts do not cover the same buildings: the employment figure includes assisted
+  living and residential care, which file no cost report, so the comparison is a direction rather
+  than a ratio.
+
+  **The county lost a home and kept a certification that moved.** Lima Manor at 750 Brower Road
+  filed its last report for 1 January to 2 September 2022 and does not appear again. Certification
+  365405 filed from 7400 Swaney Road in Bluffton through 2017 and from 800 Ambrose Drive in Delphos
+  from 2018 — twenty miles, one number, and both addresses inside this county. [verified] —
+  the same files.
+
+  **The days are the sound quantity here and the beds are not.** `Number of Beds` doubles for one
+  facility or another in six of the thirteen years while the bed-days for the same rows stay put,
+  and in 2017 both fields double for two homes at once. An occupancy series from the published
+  denominator would show a cliff in 2017 that no resident experienced. [verified] — the same files;
+  see [an impossible value is not an outlier](../../decisions/an-impossible-value-is-not-an-outlier.yml).
+
+  **A third count agrees with these two.** 270,773 days in 2020 is 742 residents a day; the census
+  that April counted 966 people in nursing and skilled-nursing group quarters here, and Care Compare
+  now reports 712.5. The census figure is the largest because it counts residents of homes that hold
+  no federal certification and file nothing. [verified] —
+  [the group quarters](allen-county-group-quarters-2020.yml) and
+  [Care Compare](../../catalog/cms-nursing-home-care-compare.md).
+
+  This corpus cannot say how many Allen County people are in a nursing home outside it, or how many
+  of these days were bought by somebody who lives somewhere else. A cost report counts days sold at
+  an address, not residents of a county. [open]
+properties:
+  parameter: total resident days, Medicare-certified skilled nursing facilities
+  value: "272194"
+  unit: resident days
+  as_of: "2023"
+  method: |
+    Rows with `State Code` OH and `County` ALLEN in each annual file, summed over `Total Days Total`
+    and its three payer splits. Facilities are counted by distinct certification number reporting a
+    non-zero day count, so a change of ownership that splits a year into two reports counts once and
+    a home filing a blank report counts not at all. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-snf-cost-reports.md
+  - target: allen-county-nursing-homes-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cms-nursing-home-care-compare.md
+  - target: allen-county-group-quarters-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cms-snf-cost-reports.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
