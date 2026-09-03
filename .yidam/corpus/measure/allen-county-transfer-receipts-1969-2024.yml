@@ -1,0 +1,100 @@
+class: measure
+label: Government transfers to Allen County, 1969–2024
+description: |
+  A quarter of everything the people of this county are paid is a government transfer, and
+  half of that is medical care. [verified] —
+  [BEA's transfer receipts tables](../../catalog/bea-county-personal-income.md), CAINC4 for the
+  totals and CAINC35 for what they are made of.
+
+      2022, thousands of dollars              share of transfers    per resident
+      personal current transfer receipts       1,373,641   100.0%       $13,589
+        medical benefits                         668,013    48.6%        $6,608
+          Medicare                               389,761    28.4%        $3,856
+          public assistance medical care         276,551    20.1%        $2,736
+        retirement and disability                427,903    31.2%        $4,233
+          Social Security                        417,594    30.4%        $4,131
+        income maintenance                       135,081     9.8%        $1,336
+          SNAP                                    39,156     2.9%          $387
+          supplemental security income            20,971     1.5%          $207
+        refundable tax credits                    69,032     5.0%          $683
+        veterans' benefits                        47,897     3.5%          $474
+        unemployment compensation                  4,818     0.4%           $48
+
+  **The composition inverted inside one lifetime.** In 1969 retirement and disability were 59.6 per
+  cent of this county's transfers and medical benefits were 12.3; in 2022 medical benefits are 48.6
+  and retirement and disability 31.2. [verified] — the same table, both years. The largest single
+  thing the government now does for the people of Allen County is buy them health care.
+
+  **Per person and in real terms this is 6.5 times what it was.** $269 a resident in 1969 against
+  $13,589 in 2022, or $2,299 against $15,000 once both are put in 2024 dollars. [verified] — the
+  same source and [the CPI](../../catalog/bls-cpi.md), deflated here.
+
+  **Two federal accounts of the same county in the same year differ by a factor of two and a half.**
+  USAspending records $626,459,645 of federal money in Allen County in federal year 2024, of which
+  $573,202,179 is direct payments to individuals. BEA records $1,513,000,000 of transfer receipts in
+  calendar 2024. [verified] — [USAspending](../../catalog/usaspending.md), place of performance,
+  and the same BEA file; see
+  [the federal money node](federal-money-in-allen-county-2008-2025.yml).
+
+  **The difference is medical care, and both sides of that can be checked.** In 2022 the gap between
+  BEA's transfers and USAspending's direct payments is $878,386,986, and BEA's medical benefits for
+  that year are $668,013,000 — 76.0 per cent of it. On the other side, USAspending's 99 assistance
+  listings for Allen County in federal year 2022 total $550,548,594 and **not one of them is
+  Medicare or Medicaid**; its five listings from the Department of Health and Human Services come to
+  $6,415,154, of which $5,825,306 is Head Start. [verified] — the same source and the same award
+  file, the assistance listing endpoint queried for that year. A Medicare payment goes to a hospital and is not an award
+  to anybody in this county; BEA books it to the patient's county all the same. See
+  [a receipt is not an award](../../decisions/a-receipt-is-not-an-award.yml).
+
+  **The ratio between the two accounts is not a constant and cannot be used as a correction.** It
+  runs 0.78 in 2008, 2.18 in 2015, 1.87 in 2020 and 2.42 in 2024, because the award side carries
+  contracts and disaster money that rise and fall on their own. [verified] — the same source and the same award file,
+  seventeen matched years. Two numbers that differ for a structural reason still differ by a
+  variable amount.
+
+  **Unemployment compensation is the smallest line and the one that moves.** $4,818,000 in 2022 is
+  $48 a resident; in 2020 it was ten times that. [verified] — the same table. The transfer
+  that responds to a recession is a rounding error in a normal year.
+
+  **This corpus cannot say how many people in Allen County receive any of this money.** BEA
+  publishes dollars imputed to a county of residence and no count of beneficiaries, no household,
+  and nothing below the county line. A figure per resident here is arithmetic over everybody,
+  including those receiving nothing.
+
+  [open] What the detail looks like after 2022. The table that separates Medicare from Medicaid from
+  Social Security was published in October 2023 and stops at 2022, while the totals run to 2024, so
+  the two most recent years have a size and no shape.
+properties:
+  parameter: personal current transfer receipts, and their composition
+  value: "1513000"
+  unit: thousands of dollars, 2024
+  as_of: "2024"
+  method: |
+    Totals and the 2024 figure come from CAINC4 line 47, January 2026 vintage; every share and
+    every component figure comes from CAINC35, October 2023 vintage, computed within that file
+    against its own total of $1,373,641,000 rather than against the newer one, which is 3.6 per cent
+    larger. [verified] The two are never mixed inside one ratio. The USAspending figures are the
+    place-of-performance scope summed across all five award-type groups for the federal year, which
+    is the same series
+    [the federal money node](federal-money-in-allen-county-2008-2025.yml) publishes; the assistance
+    listing count is that endpoint paged to exhaustion, 99 rows. [verified] A federal year ends 30
+    September and a BEA year is a calendar year, so the matched pairs are matched by label and not
+    by period. [verified]
+links:
+  - target: allen-county-personal-income-1969-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/bea-county-personal-income.md
+  - target: federal-money-in-allen-county-2008-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usaspending.md
+  - target: allen-county-nursing-home-days-2011-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/bea-county-personal-income.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
