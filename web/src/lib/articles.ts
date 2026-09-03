@@ -445,6 +445,25 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'two-working-faces',
+    title: 'Two working faces',
+    dek: 'Six mines have been registered in Allen County and two are still worked, by about thirty people between them — and one of them is the company that sold Ford the ground its engine plant stands on.',
+    section: 'ground',
+    era: [1944, 2025],
+    assertions: [
+      'six-registrations-two-working-faces',
+      'a-quarry-inside-a-village',
+      'the-quarry-and-the-engine-plant',
+      'thirty-four-injuries-and-no-death',
+      'the-registers-oldest-date-is-not-a-date',
+    ],
+    entries: [
+      'measure/allen-county-quarries-2000-2025.yml',
+      'site/national-lime-and-stone-lima-quarry.yml',
+      'site/ford-lima-engine-plant.yml',
+    ],
+  },
+  {
     slug: 'the-wells-that-are-still-there',
     title: 'The wells that are still there',
     dek: 'The 1885 oil strike is the best-dated event in this county\u2019s history. Nobody had counted what it left behind: 4,849 holes, and no paper closing most of them.',
