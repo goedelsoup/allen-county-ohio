@@ -1,0 +1,120 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const district = assertion('the-county-is-its-own-house-district')
+const four = assertion('four-contests-with-one-name-on-the-ballot')
+const roll = assertion('a-fifth-will-not-mark-an-unopposed-line')
+const one = assertion('one-seat-one-man-four-years-apart')
+const share = assertion('the-fourth-district-for-twenty-years')
+const jordan = assertion('one-name-on-this-ballot-for-twenty-years')
+const brown = assertion('sherrod-brown-came-closest')
+
+const spec = (a: typeof roll, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const rollSpec = spec(roll, 'Per cent of the top-of-ticket vote not cast')
+const oneSpec = spec(one, 'Per cent of voters skipping the race')
+const shareSpec = spec(share, 'Republican share of the vote for Congress')
+const brownSpec = spec(brown, 'Democratic share of the Senate vote')
+---
+
+<Article slug="one-name-on-the-ballot">
+  <p>
+    Ohio draws ninety-nine House districts across eighty-eight counties, so most of them cut a county
+    in half or gather three together. Allen County is one of the exceptions, and the coincidence is
+    exact: the district and the county are the same ground, which means one seat in Columbus is
+    elected by this county and by nobody else.
+  </p>
+  <AssertionCard assertion={district} open />
+  <p>
+    That is a fair amount of power for a county of a hundred thousand people to hold on its own, and
+    the returns say something uncomfortable about what it has done with it. Two men have held the
+    House seat and the county's share of the 12th senate district between them for most of the
+    century so far, and they have swapped chambers: Matt Huffman was the representative in 2006,
+    2008 and 2012 and the senator in 2016 and 2020, while Bob Cupp has been the representative since
+    2014. Ohio limits a member to eight consecutive years in a chamber, which is a reason a rotation
+    of this shape happens and not evidence that it is why this one did.
+  </p>
+  <AssertionCard assertion={four} />
+  <ChartFigure
+    id="roll"
+    title="What happens when nobody runs"
+    caption="Votes cast for the Ohio House seat as a shortfall against the highest-voted statewide race on the same ballot. The three tall bars are the years the ballot line carried one name."
+    columns={['Year', 'Shortfall']}
+    rows={roll.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="roll" set:html={JSON.stringify(rollSpec)} is:inline />
+  <AssertionCard assertion={roll} />
+  <p>
+    In 2016 Bob Cupp received every vote cast for the Ohio House in this county, which is a hundred
+    per cent of them and 34,564 of the 45,894 people who came to the polls. Eleven thousand three
+    hundred and thirty voters marked a ballot and left that line alone. The two largest votes any
+    candidate in these returns received — Huffman's 39,979 in 2008 and Cupp's 38,882 in 2020 — were
+    both cast against nobody, which is worth holding onto the next time a big number is read as a
+    mandate.
+  </p>
+  <Gloss>
+    So the corpus will not print the share. A vote share measures a preference only where a
+    preference could be expressed, and a series that admits an uncontested year reports it as the
+    most one-sided election in the run — when what it actually was is the election that stopped
+    being an election. Where the line carried one name, the node publishes the count, publishes the
+    roll-off, and says the line was uncontested. Establishing that takes the statewide file, not the
+    county's rows: a race with one candidate everywhere is uncontested, and a race with one candidate
+    in one county is a transcription that lost a line.
+  </Gloss>
+  <AssertionCard assertion={one} />
+  <ChartFigure
+    id="one"
+    title="The same seat, four years apart"
+    caption="Allen County voters skipping the 12th senate district race. The candidate is Matt Huffman in both years; the difference is whether anyone stood against him."
+    columns={['Year', 'Skipped']}
+    rows={one.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="one" set:html={JSON.stringify(oneSpec)} is:inline />
+  <p>
+    One office, one man, two elections. The only thing that changed between them is whether the
+    ballot offered an alternative, and a fifth of the county's voters changed their behaviour with
+    it. Whatever that fifth were expressing, it was not enthusiasm.
+  </p>
+
+  <h2>The federal races, which are always contested</h2>
+  <AssertionCard assertion={share} />
+  <ChartFigure
+    id="share"
+    title="Twenty years of voting for Congress"
+    caption="Republican share of every vote cast in the race, ten general elections. Allen County was in Ohio's 4th district throughout."
+    columns={['Year', 'Share']}
+    rows={share.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+  <AssertionCard assertion={jordan} />
+  <p>
+    The congressional race, unlike the legislative one, holds nearly everyone who turns up: its total
+    is within four per cent of the top of the ticket in every one of the ten years. A contest people
+    can lose is a contest people vote in.
+  </p>
+  <AssertionCard assertion={brown} />
+  <ChartFigure
+    id="brown"
+    title="The nearest a Democrat has come"
+    caption="Sherrod Brown's share of Allen County's Senate vote. 2006 is also the year the county gave its governor's vote to a Democrat, by 816."
+    columns={['Year', 'Share']}
+    rows={brown.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="brown" set:html={JSON.stringify(brownSpec)} is:inline />
+  <p>
+    Which places 2006 as this county's one modern opening, and it closed. In that November Allen gave
+    a Democrat the governorship, held its Senate Republican by eight points rather than the usual
+    twenty, and elected the congressman it has returned seven times since by the smallest margin he
+    has ever taken here.
+  </p>
+</Article>
