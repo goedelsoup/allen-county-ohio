@@ -2,9 +2,9 @@ class: measure
 label: School buildings in Allen County's twelve districts, 1986–2024
 description: |
   **Thirty-nine consecutive years, all twelve districts reporting in every one of them.** This is
-  the one column of the federal district directory with no hole in it: the staffing columns beside
-  it are empty before 1992, absent for 2014 and short two districts in 2022, and the count of
-  schools is complete from 1986. [verified] —
+  the one column of the federal district directory with no hole in it: the staffing columns
+  beside it are empty before 1992, absent for 2014 and short two districts in 2022, and the count
+  of schools is complete from 1986. [verified] —
   [the Common Core of Data](../../catalog/nces-common-core-of-data.md), the district directory.
 
       1986  51    1996  48    2006  46    2016  42
@@ -14,7 +14,9 @@ description: |
       1994  50    2004  47    2014  41    2024  43
 
   **Eight school buildings have closed in this county in thirty-nine years and Lima City closed
-  seven of them.** [verified] — the same directory, by district.
+  seven of them.** The county held 51 in 1986 and holds 43; Lima went from 16 to 9, Elida and
+  Spencerville lost one each, Bath gained one, and the remaining eight districts end where they
+  began. [verified] — the same source, its district directory, by district.
 
       district              1986   2024   change
       **Lima**                16      9     -7
@@ -32,36 +34,38 @@ description: |
       all twelve              51     43     -8
 
   **Five of the twelve have reported the same number every year since 1986.** Columbus Grove and
-  Pandora-Gilboa three, Shawnee four, Perry and Waynesfield-Goshen two — no change in thirty-nine
-  years. Six more move by exactly one building and back, and Lima's count runs from 16 down to 9.
-  [verified] — same source, computed here.
+  Pandora-Gilboa 3, Shawnee 4, Perry and Waynesfield-Goshen 2 — one distinct value each across
+  all 39 years. Six more move by exactly one building and back, and Lima's count runs from 16
+  down to 9. [verified] — same source, computed here.
 
-  **The two halves of the county lost nearly the same number of children and answered differently.**
-  Lima went from 6,969 pupils in 1988 to 3,370, a loss of 3,599, and closed seven buildings. The
-  other eleven districts lost 3,311 between them and closed one. [verified] — same file, against
-  [the enrolment series](allen-county-school-enrolment-1988-2024.yml).
+  **The two halves of the county lost nearly the same number of children and answered
+  differently.** Lima went from 6,969 pupils in 1988 to 3,370, a loss of 3,599, and closed seven
+  buildings. The other eleven districts lost 3,311 between them and closed one. [verified] — same
+  file, against [the enrolment series](allen-county-school-enrolment-1988-2024.yml).
 
-  **They arrive at the same building.** Lima held 435.6 pupils per school in 1988 and holds 374.4;
-  the other eleven held 464.4 and hold 367.1. Two opposite policies over thirty-six years converge
-  within eight pupils of each other. [verified] — the same two files, computed here. The corpus does
-  not read that as either district aiming at a number, because nothing in these files is a decision
-  and a school's capacity is fixed by the building rather than chosen each year. [inference]
+  **They arrive at the same building.** Lima held 435.6 pupils per school in 1988 and holds
+  374.4; the other eleven held 464.4 and hold 367.1. Two opposite policies over thirty-six years
+  converge within eight pupils of each other. [verified] — the same two files, computed here. The
+  corpus does not read that as either district aiming at a number, because nothing in these files
+  is a decision and a school's capacity is fixed by the building rather than chosen each year.
+  [inference]
 
-  **This is a count of schools a district reported open, not a record of construction.** Lima reads
-  14 in 2003, 12 in 2004, 10 in 2005 and 12 again in 2006, and a building count that rises cannot
-  be a demolition record; the years either side of a closure are where the count is least reliable.
-  The corpus therefore reads the ends of the run and not the steps in the middle. [verified] — the
-  same directory, and see
+  **This is a count of schools a district reported open, not a record of construction.** Lima
+  reads 14 in 2003, 12 in 2004, 10 in 2005 and 12 again in 2006, and a building count that rises
+  cannot be a demolition record; the years either side of a closure are where the count is least
+  reliable. The corpus therefore reads the ends of the run and not the steps in the middle.
+  [verified] — the same source, and see
   [a column can empty into its neighbour](../../decisions/a-column-can-empty-into-its-neighbour.yml).
 
   **This corpus cannot say which buildings closed.** The federal file counts schools and does not
-  name the one that stopped being counted, and it carries no address, no year built and no account
-  of what the ground became. Seven Lima schoolhouses left this series and the corpus does not know
-  where any of them stood. [verified] — the columns this directory has.
+  name the one that stopped being counted, and it carries no address, no year built and no
+  account of what the ground became. Seven Lima schoolhouses left this series and the corpus does
+  not know where any of them stood. [verified] — the columns this directory has.
 
-  [open] Which seven Lima buildings these were, and what is in them now. The school-level directory
-  in the same collection names every school in each year, so differencing two years would give the
-  names; that file has been read for one year and not as a series.
+  [open] Which seven Lima buildings these were, and what is in them now. The school-level
+  directory in the same collection names every school in each year, so differencing two years
+  would give the names; that file has been read for one year and not as a series.
+
 properties:
   parameter: school buildings in the county's twelve districts
   value: "43"
