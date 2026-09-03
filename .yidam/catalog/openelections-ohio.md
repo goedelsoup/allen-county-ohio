@@ -21,6 +21,32 @@ location:
   - kind: url
     value: https://api.github.com/repos/openelections/openelections-data-oh/contents/2020
     description: Directory listing; 2012, 2016 and 2018 are siblings, 2022 and 2024 have no precinct file
+  - kind: url
+    value: https://api.github.com/repos/openelections/openelections-data-oh/git/trees/master?recursive=1
+    description: >-
+      The whole repository in one response — 75 files across twelve years. It is how the five
+      general elections below were found; the per-directory listing above had been read once, for
+      2020, and the years before 2012 were never looked at.
+  - kind: url
+    value: https://raw.githubusercontent.com/openelections/openelections-data-oh/master/2006/gen06statewide.csv
+    description: >-
+      **The Secretary of State's own 2006 workbook**, 2.8 MB, one row per precinct with 40 columns:
+      registered voters, ballots cast, six statewide executive offices, US Senate, US House, both
+      chambers of the General Assembly, two Ohio Supreme Court seats and four state ballot issues.
+      Allen County is 139 rows. This is not a transcription — it is the office's own file, carried
+      in the volunteers' repository.
+  - kind: url
+    value: https://raw.githubusercontent.com/openelections/openelections-data-oh/master/2010/2010_general_precinct.txt
+    description: >-
+      The Secretary of State's 2010 file, 7.8 MB, tab-separated, with `REG_VOTERS` and
+      `TOTAL_VOTERS` and a column per candidate. **Its last Allen County row is `ZZZ / COUNTY
+      TOTALS`**, so a sum over the file's rows returns exactly twice the county.
+  - kind: url
+    value: https://raw.githubusercontent.com/openelections/openelections-data-oh/master/2002/20021105__oh__general.csv
+    description: >-
+      2002 general, county grain — governor and the five other statewide executive offices. 2008
+      and 2014 are the same shape at `2008/20081104__oh__general.csv` and
+      `2014/20141104__oh__general.csv`; 2006 and 2010 exist only at precinct grain and are summed.
 used-by:
   - ../corpus/measure/allen-county-presidential-vote-2000-2016.yml
   - ../corpus/division/voting-district-lima-1a-2020.yml
@@ -106,3 +132,41 @@ any modern county return: the compiler was checked against the compiled and did 
 State's is a compilation of eighty-eight county boards' certificates, none of which is held here.
 [inference] The site that would serve them
 [returns 403 to every client tried](allen-county-official-site.md).
+**Five general elections were in this repository and unread.** 2002, 2006, 2008, 2010 and 2014 all
+carry Allen County, and the entry above described the repository as holding 2012, 2016, 2018 and
+2020 because the directory listing had been read for one year only. [verified] — the recursive tree
+listing. The cost of that was a corpus with one gubernatorial election in it and an inference drawn
+from three consecutive ballots; see
+[a sample is not a series](../decisions/a-sample-is-not-a-series.yml), whose second case this is.
+
+**Vote counts are written as floating-point numbers in the 2006 and 2010 precinct files.** Allen
+County's rows give `133.0`, `256.0`, `18000.0`. Every value checked is integral, and a reader that
+casts to an integer without going through a float gets nothing: the parse fails, the row is skipped,
+and a county sums to zero rather than raising. It did here, twice, before the values were looked at.
+[verified] — the two files. The `district` column is a float too: a 2006 governor row carries
+district `4.0` for an office that has no district.
+
+**The 2010 precinct file has no party column at all.** Six offices, candidates given as
+`Kasich, John` and `Strickland, Ted`, and nothing that says which party either belongs to. Party for
+that year is carried in this corpus from the candidates and not from the file. [verified]
+
+**The 2014 county file ends in two rows that are not rows.** After Allen County's U.S. House
+figures — Garrett 7,603 and Jordan 19,660 — come two further Allen rows whose `office` column holds
+`7603` and `19660` and whose every other field is empty. They are the same two numbers escaping
+into the wrong column. [verified] A reader that groups by office silently gains two offices with no
+votes; a reader that sums votes is unaffected, because the votes column is where the values are
+missing.
+
+**The Secretary of State's own two files carry a control the transcriptions do not.**
+`REG_VOTERS` and `TOTAL_VOTERS` per precinct, in 2006 and 2010, are what let turnout be computed for
+a year other than 2020 — and in 2010 the file's own `COUNTY TOTALS` row is the check, since the 121
+precinct rows above it sum to it exactly: 69,931 registered and 33,867 cast. [verified] — the 2010
+file. See [the control is the figure that cannot move](../decisions/the-control-is-the-figure-that-cannot-move.yml).
+
+**Allen County's precinct count is in these files and it falls.** 139 precincts in 2006, 121 in 2010,
+88 in 2014 and 88 in both 2018 and 2020 — a 37 per cent consolidation over eight years. [verified] —
+the precinct grain of each file, counted by distinct code.
+
+**Four statewide ballot issues, which is a kind of return this corpus had not held.** The 2006
+workbook carries `STATE_ISSUE_2` through `STATE_ISSUE_5`, yes and no, per precinct. **It numbers them
+and does not name them**, and no other source here does either. [verified]
