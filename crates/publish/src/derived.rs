@@ -4315,6 +4315,74 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "2022", value: 802.0, literal: "802" },
         ],
     },
+    Assertion {
+        id: "one-renter-household-in-six",
+        statement: "One renter household in six in Allen County has a federal subsidy attached to \
+                    it — 2,251 subsidized units against 12,968 renter households. Inside Lima it is \
+                    one in four; outside Lima it is one in seventeen.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**One renter household in six in this county has a federal subsidy attached to it.** 2,251\n  subsidized units against 12,968 renter-occupied households \u{2014} 17.4 per cent. [inference] \u{2014}\n  computed here against table B25003 of the\n  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates,\n  which gives Allen County 40,928 occupied units of which 27,960 are owner-occupied."
+            ),
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**Inside Lima it is one renter household in four; outside Lima it is one in seventeen.** 1,938\n  subsidized units against Lima's 7,500 renter households is 25.8 per cent; 313 against the other\n  5,468 is 5.7 per cent. [inference] \u{2014} the place file against table B25003, which gives Lima 13,985\n  occupied units of which 6,485 are owner-occupied."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima", value: 25.8, literal: "25.8" },
+            Figure { label: "Allen County", value: 17.4, literal: "17.4" },
+            Figure { label: "outside Lima", value: 5.7, literal: "5.7" },
+        ],
+    },
+    Assertion {
+        id: "more-subsidized-housing-than-the-five-around-it",
+        statement: "Allen County holds more subsidized housing than Hancock, Hardin, Auglaize, Van \
+                    Wert and Putnam together — 2,251 units against 1,733 — and all of the excess is \
+                    Lima. Outside the city the county sits where its neighbours do.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**Allen County holds more subsidized housing than the five counties around it put together.**\n  2,251 units against 1,733, on less than half their people. [verified] \u{2014}\n  [the county file](../../catalog/hud-picture-of-subsidized-households.md), 2025 edition."
+            ),
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**And the comparison is about the city, not the county.** Allen's 22.3 per thousand is eighteenth\n  of Ohio's eighty-eight counties. Lima's own rate is 55.9 \u{2014} higher than any county in the state,\n  Cuyahoga's 31.4 included \u{2014} and the rest of Allen County's is 4.7, which would place it\n  seventy-eighth, between Union and Geauga and beside the rural neighbours it looks like.\n  [inference] \u{2014} computed here from the same two files. The range inside this one county, 51.1, is\n  larger than the range across the whole state, 30.5. See\n  [a county rate can describe nowhere](../../decisions/a-county-rate-can-describe-nowhere.yml)."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima", value: 55.9, literal: "55.9" },
+            Figure { label: "Allen County", value: 22.3, literal: "22.3" },
+            Figure { label: "outside Lima", value: 4.7, literal: "4.7" },
+        ],
+    },
+    Assertion {
+        id: "the-same-homes-hold-fewer-people",
+        statement: "Allen County's stock of subsidized homes has barely moved in seventeen years — \
+                    2,401 units in 2009 and 2,251 now — while the number of people living in them \
+                    fell from 4,801 to 4,266. The households got older and had fewer children.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "Units fell 6.2 per cent across the seventeen years and never left the band 2,173 to 2,401. People\n  fell 11.1 per cent, from 4,801 to 4,266. [inference] \u{2014} arithmetic this corpus's, on the table\n  above. **The same number of subsidized homes now hold five hundred and thirty-five fewer people.**"
+            ),
+            support!(
+                "measure/allen-county-subsidized-housing-2005-2025.yml",
+                "**The households in them are older and have fewer children.** The share aged 62 or over was 21 per\n  cent in 2016 and is 32 now; the share that is a woman with children fell from 47 per cent in 2008\n  to 36. [verified] \u{2014} the same files. That is where the missing five hundred are: an elderly\n  household is smaller than a family, and the stock did not shrink, its occupants changed."
+            ),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "subsidized units", value: 6.2, literal: "6.2" },
+            Figure { label: "people in them", value: 11.1, literal: "11.1" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -1082,6 +1082,26 @@
       ]
     },
     {
+      "id": "place-allen-county::federally-subsidized-housing-units",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "federally subsidized housing units",
+      "unit": "housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "label": "Federally subsidized housing in Allen County, 2005–2025",
+          "as_of": "2025",
+          "value": 2251.0,
+          "published": "2251",
+          "tier": "verified",
+          "source": "catalog/hud-picture-of-subsidized-households.md",
+          "method": "HUD's county, place and housing authority files, Allen County code 39003, Lima place code 3943554, authority OH044, `Summary of All HUD Programs` rows unless a programme is named. Every row is stamped `31DEC2025`. The five programme rows sum to 2,251 units exactly; their occupied counts sum to 2,000 against a published 1,999 and their people counts to 4,219 against a published 4,266, and the file explains neither residual. [verified] The 2005–2008 editions report `hh_income` in thousands and are converted here; their `total_units` is suppressed, which is why the unit series begins in 2009. Rates per thousand use the Vintage 2024 population estimate for every county and for Lima, so that no comparison mixes denominators. Figures taken from HUD's undated map layers are described as retrieved and are not carried into `value` or `as_of`."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::foreign-born-white-population",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -11277,6 +11297,127 @@
           "label": "2022",
           "value": 802.0,
           "literal": "802"
+        }
+      ]
+    },
+    {
+      "id": "one-renter-household-in-six",
+      "statement": "One renter household in six in Allen County has a federal subsidy attached to it — 2,251 subsidized units against 12,968 renter households. Inside Lima it is one in four; outside Lima it is one in seventeen.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "node_label": "Federally subsidized housing in Allen County, 2005–2025",
+          "span": "**One renter household in six in this county has a federal subsidy attached to it.** 2,251 subsidized units against 12,968 renter-occupied households — 17.4 per cent. [inference] — computed here against table B25003 of the [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates, which gives Allen County 40,928 occupied units of which 27,960 are owner-occupied.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "node_label": "Federally subsidized housing in Allen County, 2005–2025",
+          "span": "**Inside Lima it is one renter household in four; outside Lima it is one in seventeen.** 1,938 subsidized units against Lima's 7,500 renter households is 25.8 per cent; 313 against the other 5,468 is 5.7 per cent. [inference] — the place file against table B25003, which gives Lima 13,985 occupied units of which 6,485 are owner-occupied.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 25.8,
+          "literal": "25.8"
+        },
+        {
+          "label": "Allen County",
+          "value": 17.4,
+          "literal": "17.4"
+        },
+        {
+          "label": "outside Lima",
+          "value": 5.7,
+          "literal": "5.7"
+        }
+      ]
+    },
+    {
+      "id": "more-subsidized-housing-than-the-five-around-it",
+      "statement": "Allen County holds more subsidized housing than Hancock, Hardin, Auglaize, Van Wert and Putnam together — 2,251 units against 1,733 — and all of the excess is Lima. Outside the city the county sits where its neighbours do.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "node_label": "Federally subsidized housing in Allen County, 2005–2025",
+          "span": "**Allen County holds more subsidized housing than the five counties around it put together.** 2,251 units against 1,733, on less than half their people. [verified] — [the county file](../../catalog/hud-picture-of-subsidized-households.md), 2025 edition.",
+          "tier": "verified",
+          "sources": [
+            "catalog/hud-picture-of-subsidized-households.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "node_label": "Federally subsidized housing in Allen County, 2005–2025",
+          "span": "**And the comparison is about the city, not the county.** Allen's 22.3 per thousand is eighteenth of Ohio's eighty-eight counties. Lima's own rate is 55.9 — higher than any county in the state, Cuyahoga's 31.4 included — and the rest of Allen County's is 4.7, which would place it seventy-eighth, between Union and Geauga and beside the rural neighbours it looks like. [inference] — computed here from the same two files. The range inside this one county, 51.1, is larger than the range across the whole state, 30.5. See [a county rate can describe nowhere](../../decisions/a-county-rate-can-describe-nowhere.yml).",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 55.9,
+          "literal": "55.9"
+        },
+        {
+          "label": "Allen County",
+          "value": 22.3,
+          "literal": "22.3"
+        },
+        {
+          "label": "outside Lima",
+          "value": 4.7,
+          "literal": "4.7"
+        }
+      ]
+    },
+    {
+      "id": "the-same-homes-hold-fewer-people",
+      "statement": "Allen County's stock of subsidized homes has barely moved in seventeen years — 2,401 units in 2009 and 2,251 now — while the number of people living in them fell from 4,801 to 4,266. The households got older and had fewer children.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "node_label": "Federally subsidized housing in Allen County, 2005–2025",
+          "span": "Units fell 6.2 per cent across the seventeen years and never left the band 2,173 to 2,401. People fell 11.1 per cent, from 4,801 to 4,266. [inference] — arithmetic this corpus's, on the table above. **The same number of subsidized homes now hold five hundred and thirty-five fewer people.**",
+          "tier": "inference",
+          "sources": []
+        },
+        {
+          "node": "measure/allen-county-subsidized-housing-2005-2025.yml",
+          "node_label": "Federally subsidized housing in Allen County, 2005–2025",
+          "span": "**The households in them are older and have fewer children.** The share aged 62 or over was 21 per cent in 2016 and is 32 now; the share that is a woman with children fell from 47 per cent in 2008 to 36. [verified] — the same files. That is where the missing five hundred are: an elderly household is smaller than a family, and the stock did not shrink, its occupants changed.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "subsidized units",
+          "value": 6.2,
+          "literal": "6.2"
+        },
+        {
+          "label": "people in them",
+          "value": 11.1,
+          "literal": "11.1"
         }
       ]
     }

@@ -257,6 +257,22 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'one-renter-in-four',
+    title: 'One renter in four',
+    dek: 'Two thousand two hundred and fifty-one homes here have a federal subsidy on the rent, and eighty-six per cent of them are in Lima.',
+    section: 'people',
+    era: [2005, 2025],
+    assertions: [
+      'one-renter-household-in-six',
+      'more-subsidized-housing-than-the-five-around-it',
+      'the-same-homes-hold-fewer-people',
+    ],
+    entries: [
+      'measure/allen-county-subsidized-housing-2005-2025.yml',
+      'organization/allen-metropolitan-housing-authority.yml',
+    ],
+  },
+  {
     slug: 'buying-and-borrowing',
     title: 'Buying, and borrowing against what you own',
     dek: 'Seven years of mortgage applications, and a denial gap that income does not account for.',
