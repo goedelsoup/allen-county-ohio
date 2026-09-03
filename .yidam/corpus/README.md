@@ -266,6 +266,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-world-war-ii-dead-1941-1946.yml](measure/allen-county-world-war-ii-dead-1941-1946.yml) | measure | Allen County's Army dead and missing, 1941–1946 | 2 | 9v / 5i / 1o | 87 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
+| [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
+| [federal-money-in-allen-county-2008-2025.yml](measure/federal-money-in-allen-county-2008-2025.yml) | measure | Federal money in Allen County, 2008–2025 | 5 | 9v / 3i / 1o | 104 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
@@ -511,11 +513,11 @@ Sorted by: kind, then alphabetically.
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 5 | 15v / 7i / 1o | 135 |
 | [fort-amanda.yml](site/fort-amanda.yml) | site | Fort Amanda | 2 | 15v / 2i / 0o | 98 |
 | [hay-road-bridge.yml](site/hay-road-bridge.yml) | site | The Hay Road bridge over the Auglaize River | 2 | 7v / 5i / 1o | 65 |
-| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 2 | 13v / 7i / 3o | 133 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 3 | 16v / 9i / 3o | 160 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 2v / 4i / 2o | 51 |
 | [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 6v / 4i / 0o | 57 |
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
-| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 6 | 10v / 4i / 2o | 115 |
+| [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 7 | 11v / 5i / 2o | 130 |
 | [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 3 | 14v / 7i / 2o | 108 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 87 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 12v / 4i / 1o | 99 |
