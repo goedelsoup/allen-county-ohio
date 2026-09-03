@@ -5642,6 +5642,177 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "a-house-worth-less-than-in-1975",
+        statement: "A house in Allen County is worth 14.5 per cent less than it was fifty years ago. \
+                    The price index stands at 511.78 against a 1975 base of 100 and the consumer \
+                    price level stands 5.98 times as high, so 5.12 times the money buys less of a \
+                    house than it did.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**Nominally a house here is worth 5.12 times its 1975 level and the price level is 5.98 times its 1975 level, so in real terms it is worth 14.5 per cent less than it was fifty years ago.** The index reads 511.78 against 100 and the consumer price index 321.943 against 53.8. [verified] \u{2014} the same source and [the CPI](../../catalog/bls-cpi.md), deflated here as [a deflator is a choice](../../decisions/a-deflator-is-a-choice.yml) requires."),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "index, 1975 = 100", value: 511.78, literal: "511.78" },
+            Figure { label: "real fall since 1975, per cent", value: 14.5, literal: "14.5" },
+        ],
+    },
+    Assertion {
+        id: "the-peak-was-1979",
+        statement: "The most a house in Allen County has ever been worth was in 1979. In 1975 \
+                    dollars the index reached 103.4 that year, fell 30.8 per cent in the three years \
+                    to 1982, and has climbed back to 85.5 \u{2014} still 17.3 per cent below the \
+                    reading of forty-six years ago.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**The peak was 1979.** In 1975 dollars the index reaches 103.4 that year and has never been there since. It fell 30.8 per cent in the three years to 1982, to 71.6, and the forty-three years after that are a long trough and a recent climb that has reached 85.5 \u{2014} still 17.3 per cent below the 1979 reading. [verified] \u{2014} the same file, deflated as above. Nothing in this series is a recovery to a previous level, because there has not been one."),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "1979 peak, 1975 = 100", value: 103.4, literal: "103.4" },
+            Figure { label: "real fall to 1982, per cent", value: 30.8, literal: "30.8" },
+        ],
+    },
+    Assertion {
+        id: "the-floor-was-2014",
+        statement: "Read in dollars this county barely had a housing bust \u{2014} 9.6 per cent from \
+                    294.66 in 2006 to 266.33 in 2013. Read in what those dollars bought it had a \
+                    thirty-five-year one: the real index fell in 20 of the 35 years from 1980 and \
+                    bottomed at 60.8 in 2014, 41.3 per cent below the 1979 peak.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**The floor is 2014, not 2011.** The real index falls in 20 of the 35 years from 1980, bottoms at 60.8 in 2014 \u{2014} 41.3 per cent below the 1979 peak \u{2014} and has risen in all 11 years since. Nominally the fall is far smaller and later: 294.66 in 2006 to 266.33 in 2013, 9.6 per cent. [verified] \u{2014} the same file. Read in dollars this county barely had a housing bust; read in what those dollars bought, it had a thirty-five-year one."),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "real trough, 1975 = 100", value: 60.8, literal: "60.8" },
+            Figure { label: "nominal fall 2006-2013, per cent", value: 9.6, literal: "9.6" },
+        ],
+    },
+    Assertion {
+        id: "forty-four-counties-below-1975",
+        statement: "Forty-four counties in America are worth less in real terms than they were in \
+                    1975, and eight of them are in Ohio \u{2014} more than any other state. Of the \
+                    419 counties with an index in both years the median stands at 146.6 and Allen \
+                    County ranks fifteenth from the bottom at 85.5.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**Forty-four counties in America are worth less in real terms than in 1975, and eight of them are in Ohio.** 419 counties have an index in both 1975 and 2025; their median stands at 146.6 in 1975 dollars, Allen County ranks 15th from the bottom of them at 85.5, and no state contributes more of the 44 than Ohio. Within Ohio's 29 measured counties only Marion at 69.6 and Lucas at 75.1 are lower. [verified] \u{2014} the same file, ranked here. A county entering the file later is not in this comparison at all, so the denominator is stated: 419 of 2,795. [inference]"),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "counties measured in both years", value: 419.0, literal: "419" },
+            Figure { label: "counties below their 1975 level", value: 44.0, literal: "44" },
+        ],
+    },
+    Assertion {
+        id: "the-nation-gained-what-this-county-lost",
+        statement: "The country's houses are worth 91.1 per cent more in real terms than they were \
+                    in 1975 and Allen County's are worth 14.5 per cent less. On the same estimator \
+                    and the same base the United States index reads 191.1 in 1975 dollars against \
+                    this county's 85.5, a ratio of 2.23.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**The nation's houses gained what this county's lost.** On the same estimator and the same base year, the United States index stands at 191.1 in 1975 dollars in 2025 against Allen County's 85.5 \u{2014} a ratio of 2.23. The country's houses are worth 91.1 per cent more in real terms than in 1975 and this county's are worth 14.5 per cent less. [verified] \u{2014} the same source, its national quarterly series, averaged over its four quarters and deflated here."),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "United States, 1975 = 100", value: 191.1, literal: "191.1" },
+            Figure { label: "Allen County, 1975 = 100", value: 85.5, literal: "85.5" },
+        ],
+    },
+    Assertion {
+        id: "the-jobs-came-back-the-prices-did-not",
+        statement: "The three years house prices collapsed here are the three years the factories \
+                    emptied \u{2014} manufacturing employment 18,389 in 1979 and 14,349 in 1982, a \
+                    fall of 4,040 jobs and 22.0 per cent, against a real price fall of 30.8 per \
+                    cent. Then the jobs came back and the prices did not: manufacturing recovered \
+                    19.6 per cent by 1986 while the index moved 2.9.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**The three years the price collapsed are the three years the factories emptied.** Manufacturing employment in this county was 18,389 in 1979 and 14,349 in 1982 \u{2014} 4,040 jobs, 22.0 per cent \u{2014} and the real index fell 30.8 per cent across the same three years. [verified] \u{2014} [the employment series](allen-county-manufacturing-employment-1969-2022.yml) and [the index](../../catalog/fhfa-house-price-index.md) above."),
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**Then the jobs came back and the prices did not.** Manufacturing recovered to 17,163 by 1986, 19.6 per cent above its 1982 floor, while the real index moved from 71.6 to 73.7 \u{2014} 2.9 per cent. Over the twenty-three years after that manufacturing lost 55 per cent of what was left and the real index moved 2.5 per cent, downward. [inference] \u{2014} computed here from the same two series. The market repriced once, at the first shock, and the larger losses that followed moved it hardly at all."),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "manufacturing jobs lost 1979-1982", value: 4040.0, literal: "4,040" },
+            Figure { label: "manufacturing recovery to 1986, per cent", value: 19.6, literal: "19.6" },
+        ],
+    },
+    Assertion {
+        id: "seven-lima-tracts-with-no-price",
+        statement: "The federal price index holds 28 of Allen County's 35 census tracts, and all \
+                    seven it omits are in Lima. Nineteen of nineteen tracts outside the city have an \
+                    index and nine of the city's sixteen do, leaving 5,698 housing units and 11,543 \
+                    people \u{2014} 35.6 per cent of Lima's housing stock and none of anybody else's \
+                    \u{2014} with no house price index at all.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-by-tract-1986-2025.yml", "**The file holds 28 of the county's 35 census tracts, and all seven it omits are in Lima.** Nineteen of nineteen tracts outside the city have an index. Nine of the city's sixteen do. [verified] \u{2014} the same file, against [the block assignment](../../catalog/census-block-assignment-2020.md) that decides which tracts are majority-Lima. Five of the seven lie entirely inside the city, one is 95.3 per cent inside and one 71.3."),
+            support!("measure/allen-county-house-prices-by-tract-1986-2025.yml", "**That is 5,698 housing units and 11,543 people with no house price index at all**, 35.6 per cent of Lima's housing stock and none of anybody else's. [verified] \u{2014} the same file and the block assignment, computed here."),
+        ],
+        answers: &["cannot say what happened to house prices in the seven Lima tracts the index does not reach"],
+        figures: &[
+            Figure { label: "Lima housing units with no index", value: 5698.0, literal: "5,698" },
+            Figure { label: "people in those tracts", value: 11543.0, literal: "11,543" },
+        ],
+    },
+    Assertion {
+        id: "the-index-stops-where-the-lending-stops",
+        statement: "The seven tracts with no price index are exactly the seven where the fewest \
+                    mortgages in the county are written \u{2014} ranks 1 through 7 of 35 on \
+                    originations per thousand housing units and ranks 1 through 7 again on the loans \
+                    Fannie Mae and Freddie Mac went on to buy, with no overlap at the boundary. \
+                    Under any seven of thirty-five the chance of that is one in 6,724,520.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-by-tract-1986-2025.yml", "**The seven are exactly the seven tracts where the fewest mortgages are written.** Ranked by loans originated per thousand housing units across 2018\u{2013}2024, they are ranks 1 through 7 of 35; ranked by loans that Fannie Mae or Freddie Mac went on to buy, they are ranks 1 through 7 of 35 again. The two lists are the same seven tracts in a different order, and the groups do not overlap at the boundary: the highest unindexed tract writes 38.7 enterprise-purchased loans per thousand units and the lowest indexed tract writes 41.0. [verified] \u{2014} [the lending register](../../catalog/hmda-loan-application-register.md) and the tract file, computed here."),
+            support!("measure/allen-county-house-prices-by-tract-1986-2025.yml", "**Two federal agencies draw the same line through one city and neither of them draws it.** The Federal Housing Finance Agency publishes a price index and says only that it withholds one where the sample is small; the Consumer Financial Protection Bureau publishes a register of applications and says nothing about indexes. If the seven omitted tracts were any seven of thirty-five, the chance of their being precisely the seven with the least lending is one in 6,724,520. [inference] \u{2014} computed here. What the index cannot measure is what the enterprises did not buy, and this is the measurement of it; see [a gap in an index maps its instrument](../../decisions/a-gap-in-an-index-maps-its-instrument.yml)."),
+        ],
+        answers: &["cannot say what happened to house prices in the seven Lima tracts the index does not reach"],
+        figures: &[
+            Figure { label: "highest unindexed tract, GSE loans per 1,000 units", value: 38.7, literal: "38.7" },
+            Figure { label: "lowest indexed tract", value: 41.0, literal: "41.0" },
+        ],
+    },
+    Assertion {
+        id: "where-the-index-sees-lima",
+        statement: "Where the index reaches inside Lima the city moved with the county: a median \
+                    real change of 108.7 against 111.1 outside across 2000 to 2025, with the \
+                    county's highest and lowest tracts both inside the city. That covers nine of \
+                    Lima's sixteen tracts and 10,324 of its 16,022 homes, and those nine are the \
+                    nine that rank highest on the one variable deciding whether a tract appears in \
+                    the file at all.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-by-tract-1986-2025.yml", "**Where the index can see Lima, Lima moves with the county.** Across 2000 to 2025 the median tract change in 1975-style real terms is 108.7 for the five Lima tracts with both endpoints and 111.1 for the eighteen outside \u{2014} 2.4 points apart over twenty-five years \u{2014} and the county's highest and lowest tracts are both inside the city, at 131.4 and 87.9. [verified] \u{2014} the same file and [the CPI](../../catalog/bls-cpi.md), computed here."),
+            support!("measure/allen-county-house-prices-by-tract-1986-2025.yml", "**The nine indexed Lima tracts are not a sample of Lima.** They are the nine of sixteen that rank highest on the one variable that decides whether a tract appears in the file at all. So the finding above is a statement about 10,324 of the city's 16,022 homes and cannot be widened to the other 5,698 by any argument from the nine. [inference] See [what a tract page may be quoted for](../../decisions/what-a-tract-page-may-be-quoted-for.yml)."),
+        ],
+        answers: &["cannot say what happened to house prices in the seven Lima tracts the index does not reach"],
+        figures: &[
+            Figure { label: "Lima tracts, median real change", value: 108.7, literal: "108.7" },
+            Figure { label: "tracts outside the city", value: 111.1, literal: "111.1" },
+        ],
+    },
+    Assertion {
+        id: "a-tax-base-at-half-the-market-pace",
+        statement: "Allen County's residential tax base rose 33.7 per cent between the 2014 and 2023 \
+                    audited reports while the market for the same houses rose 59.6 per cent across \
+                    the January values those reports rest on. The base gains every house built in \
+                    those nine years and the index measures only houses that changed hands twice, so \
+                    an assessment tracking the market would have outrun 59.6 rather than reached \
+                    33.7.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-house-prices-1975-2025.yml", "**The tax base trails the market, and the gap is large enough to matter to a levy.** Residential assessed valuation in the county's audited reports rose 33.7 per cent between the 2014 and 2023 reports, from $1,149.3 million to $1,537.1 million. Those reports rest on January values of 2013 and 2022, across which the index rose 59.6 per cent. [inference] \u{2014} computed here from [the audited reports](allen-county-assessed-valuation-2010-2023.yml) and the index above. The base moves in steps at reappraisal and includes new houses the index excludes, so it should outrun the market and instead runs at half its pace."),
+        ],
+        answers: &["cannot say what a house in Allen County sold for in 1975"],
+        figures: &[
+            Figure { label: "assessed residential, per cent", value: 33.7, literal: "33.7" },
+            Figure { label: "price index, per cent", value: 59.6, literal: "59.6" },
+        ],
+    },
+    Assertion {
         id: "seven-hundred-and-sixty-on-the-roads",
         statement: "Seven hundred and sixty people died in 666 crashes on Allen County's roads \
                     between 1975 and 2024. The rate fell by two fifths across four decades and \

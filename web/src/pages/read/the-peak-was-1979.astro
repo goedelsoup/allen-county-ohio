@@ -1,0 +1,136 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const worth = assertion('a-house-worth-less-than-in-1975')
+const peak = assertion('the-peak-was-1979')
+const floor = assertion('the-floor-was-2014')
+const nation = assertion('the-nation-gained-what-this-county-lost')
+const rank = assertion('forty-four-counties-below-1975')
+const jobs = assertion('the-jobs-came-back-the-prices-did-not')
+const seven = assertion('seven-lima-tracts-with-no-price')
+const stops = assertion('the-index-stops-where-the-lending-stops')
+const sees = assertion('where-the-index-sees-lima')
+const base = assertion('a-tax-base-at-half-the-market-pace')
+
+const years = [
+  1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990,
+  1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006,
+  2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
+  2023, 2024, 2025,
+]
+const allenReal = [
+  100.0, 89.6, 91.1, 101.3, 103.4, 93.5, 89.8, 71.6, 77.5, 74.0, 73.4, 73.7, 74.7, 75.3, 74.1, 72.5,
+  71.4, 70.4, 69.9, 70.5, 71.4, 72.8, 73.4, 75.3, 76.2, 77.9, 79.1, 79.3, 78.4, 79.6, 80.6, 78.6,
+  76.1, 73.0, 71.8, 68.0, 64.4, 63.4, 61.5, 60.8, 63.0, 63.9, 64.5, 65.6, 67.1, 69.7, 74.9, 78.2,
+  80.5, 81.5, 85.5,
+]
+const usReal = [
+  100.0, 101.4, 106.6, 112.9, 115.3, 109.6, 103.7, 98.7, 102.6, 102.7, 104.3, 109.4, 112.3, 113.7,
+  114.2, 111.7, 109.2, 109.0, 108.3, 108.3, 108.5, 109.0, 110.1, 114.0, 117.0, 120.4, 125.9, 131.7,
+  136.8, 145.8, 157.0, 163.0, 160.2, 146.4, 138.7, 130.9, 122.0, 119.2, 121.9, 125.9, 132.2, 137.3,
+  141.7, 146.0, 150.0, 155.9, 169.3, 182.5, 184.4, 188.9, 191.1,
+]
+
+const tractLabels = [
+  '014100', '013800', '013400', '012700', '013600', '013700', '013300', '011301', '010802',
+  '010801', '011302', '012400', '012900', '012600', '011000', '012300', '012200', '011600',
+  '013000', '011200', '013200', '013900', '010900', '011500', '010600', '011900', '010200',
+  '014000', '010300', '013100', '011400', '011800', '012100', '010100', '012000',
+]
+const tractGse = [
+  9.5, 15.0, 16.1, 16.2, 19.4, 23.7, 38.7, 41.0, 43.9, 47.4, 48.4, 50.6, 62.4, 66.9, 86.8, 96.1,
+  97.0, 97.4, 97.5, 105.3, 127.4, 137.9, 145.9, 146.1, 147.8, 149.5, 160.9, 171.9, 178.5, 182.5,
+  187.4, 191.8, 251.9, 261.8, 287.7,
+]
+const indexed = tractGse.map((v) => v >= 41.0)
+
+const realSpec = line(
+  years,
+  [
+    { name: 'Allen County', y: allenReal },
+    { name: 'United States', y: usReal },
+  ],
+  { yTitle: 'Index, 1975 = 100, in 1975 dollars', labelLast: true },
+)
+
+const tractSpec = bar(tractLabels, tractGse, {
+  yTitle: 'Loans per 1,000 housing units, 2018–2024',
+})
+---
+
+<Article slug="the-peak-was-1979">
+  <p>
+    A county reference can tell you how many houses there are, how old they are, who owns them, who
+    is turned down for a mortgage on them and who is put out of them by a court. Until now it could
+    not tell you what one is worth, except in a single year of a single survey. The Federal Housing
+    Finance Agency has been keeping a running index of this county's house prices since 1975.
+  </p>
+  <AssertionCard assertion={worth} open />
+  <AssertionCard assertion={peak} />
+  <ChartFigure
+    id="real"
+    title="Fifty-one years, in 1975 dollars"
+    caption="The FHFA all-transactions house price index for Allen County and for the United States, each set to 100 in 1975 and deflated by the national consumer price index. The county's line peaks in 1979 and has not returned to it."
+    columns={['Year', 'Allen County', 'United States']}
+    rows={years.map((y, i) => [y, allenReal[i], usReal[i]])}
+    height={380}
+  />
+  <script type="application/json" data-chart-spec="real" set:html={JSON.stringify(realSpec)} is:inline />
+  <AssertionCard assertion={floor} />
+  <p>
+    Which is the difference between a bust and a subsidence. A bust is a fall and a recovery, and
+    the country had one: down a quarter in real terms between 2006 and 2011, then up past every
+    level it had ever reached. What happened here is that prices fell once, hard, in three years
+    around 1980, and then spent thirty-two years drifting downward in real terms while nobody
+    called it anything.
+  </p>
+  <AssertionCard assertion={nation} />
+  <AssertionCard assertion={rank} />
+
+  <h2>What 1979 was</h2>
+  <AssertionCard assertion={jobs} />
+  <Gloss>
+    Two series, kept by two agencies for unrelated reasons, peak in the same year and bottom in the
+    same year. What happens next is the part worth sitting with. Manufacturing employment recovered
+    almost a fifth by 1986 and house prices moved three per cent. Then manufacturing lost 55 per
+    cent of what was left across twenty-three years and house prices moved two and a half per cent,
+    downward. The housing market repriced this county once, at the first shock, and the far larger
+    losses that followed hardly touched it — which is either a market that read the future
+    correctly in 1982 or a market that stopped listening. Nothing here settles which.
+  </Gloss>
+  <AssertionCard assertion={base} />
+
+  <h2>Seven tracts with no price</h2>
+  <AssertionCard assertion={seven} />
+  <AssertionCard assertion={stops} />
+  <ChartFigure
+    id="tracts"
+    title="Where the index stops"
+    caption="Mortgages originated in each of Allen County's 35 census tracts between 2018 and 2024 that Fannie Mae or Freddie Mac went on to buy, per 1,000 housing units, sorted. The seven lowest bars are the seven tracts with no house price index, and all seven are in Lima."
+    columns={['Tract', 'GSE-purchased loans per 1,000 units', 'Has a price index']}
+    rows={tractLabels.map((t, i) => [t, tractGse[i], indexed[i] ? 'yes' : 'no'])}
+    height={380}
+  />
+  <script type="application/json" data-chart-spec="tracts" set:html={JSON.stringify(tractSpec)} is:inline />
+  <Gloss>
+    The agency that publishes the index says only that it withholds one where the sample is small.
+    The bureau that publishes the lending register says nothing about indexes at all. Neither of
+    them draws a line through Lima, and between them they draw the same one: the price index exists
+    exactly where conforming mortgage credit reaches, and stops exactly where it stops. That is not
+    a hole in the data to be worked around. It is a measurement of the instrument, and the only
+    reason it could be made is that a second file counts the instrument's input by another route.
+  </Gloss>
+  <AssertionCard assertion={sees} />
+  <p>
+    So the honest version of the cheerful finding is bounded. Where the index can see Lima, Lima has
+    moved with the county for twenty-five years. It can see nine of the city's sixteen tracts, and
+    those nine are the nine with the most mortgage lending in it. The other seven hold 5,698 homes
+    and 11,543 people, and what a house in them is worth over time is not recorded anywhere this
+    reference has reached.
+  </p>
+</Article>
