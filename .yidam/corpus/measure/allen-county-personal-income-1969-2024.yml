@@ -1,0 +1,121 @@
+class: measure
+label: Personal income in Allen County, 1969–2024
+description: |
+  Fifty-six years of how much money reaches the people of this county and where it comes from.
+  [verified] — [BEA's county personal income tables](../../catalog/bea-county-personal-income.md),
+  CAINC4 and CAINC30, 1969 through 2024.
+
+      per person, in 2024 dollars
+      year    total    net earnings    dividends etc    transfers
+      1969   32,164        25,565           4,299          2,299
+      1979   37,033        27,696           5,107          4,230
+      1982   33,956        22,140           6,492          5,325
+      1990   39,664        26,360           7,258          6,046
+      2000   44,977        29,474           8,010          7,494
+      2010   47,428        29,279           6,351         11,798
+      2019   52,904        32,074           7,718         13,113
+      2021   58,233        32,763           7,553         17,918
+      2024   56,066        32,471           8,595         15,000
+
+  **Income per person here is 74.3 per cent higher in real terms than it was in 1969 and the money
+  people are paid for working is 27.0 per cent higher.** $32,164 to $56,066 against $25,565 to
+  $32,471, both in 2024 dollars. [verified] — the same source, deflated by
+  [the CPI](../../catalog/bls-cpi.md) as
+  [a deflator is a choice](../../decisions/a-deflator-is-a-choice.yml) requires. Over fifty-five
+  years that is 0.44 per cent a year on the earnings line.
+
+  **Real earnings per person fell 20.1 per cent in the three years to 1982 and took until 1999 to
+  get back.** $27,696 in 1979, $22,140 in 1982, and no year above the 1979 figure until 1999's
+  $28,746. [verified] — the same file. Twenty years is the length of that hole and it is the same
+  three years in which [house prices](allen-county-house-prices-1975-2025.yml) fell 30.8 per cent
+  in real terms and never recovered at all.
+
+  **A job here pays about what a job here paid in 1969.** Earnings by place of work divided by
+  total jobs gives $62,412 in 1969, $65,825 in 1979, $59,047 in 1982 and $65,065 in 2022, all in
+  2024 dollars — 4.3 per cent above the first figure after fifty-three years and 1.2 per cent below
+  the second. [inference] — computed here from the same file and
+  [the employment series](allen-county-total-employment-1969-2022.yml).
+
+  **Transfer receipts went from 7.2 per cent of this county's income to 26.8.** Per person and in
+  2024 dollars they are 6.52 times what they were — $2,299 in 1969 against $15,000 in 2024, having
+  peaked at $17,918 in 2021. [verified] — the same source. What they consist of is
+  [its own question](allen-county-transfer-receipts-1969-2024.yml).
+
+  **More than half of fifty-five years of income growth is transfer payments.** Of the $23,902 that
+  real income per person gained between 1969 and 2024, transfers are $12,701 — 53.1 per cent —
+  against 28.9 per cent from net earnings and 18.0 from dividends, interest and rent. [inference] —
+  computed here from the table above.
+
+  **Real income per person peaked in 2021 and is 3.7 per cent below it.** $58,233 against $56,066,
+  and the fall is the ending of the pandemic transfer programmes rather than anything in the
+  earnings line, which rose across the same three years. [verified] — the same file. [inference]
+
+  **The county is ordinary for Ohio and Ohio is not its own median.** Allen County ranks 41st of
+  Ohio's 88 counties on transfer share at 26.8 per cent against a county median of 26.0, and 39th
+  on income per person at $56,066 against a county median of $55,326. The state aggregate is 21.1
+  per cent and $64,464, because four large counties hold enough of Ohio's income to move its total
+  and not its middle. [verified] — the same file, all 88 Ohio rows, ranked here. A county compared
+  against a state total is being compared against its four richest neighbours.
+
+  **Against the nation the gap is real and it is in the growth rate.** Real income per person rose
+  74.3 per cent here, 90.6 in Ohio and 117.9 in the United States between 1969 and 2024, and the
+  transfer share in 2024 is 26.8 per cent here against 18.3 nationally. [verified] — the same file,
+  the Ohio and United States rows.
+
+  **The county pays out more in earnings than its residents take home, and has in every one of the
+  fifty-six years.** The adjustment for residence is −$516,666,000 in 2024, 12.0 per cent of the
+  $4,310,695,000 earned inside the county line; it was −13.3 per cent in 1969 and reached −16.0 in
+  1990. [verified] — the same file. Against that,
+  [the commuting file](allen-county-commuting-2022.yml) counts 48,730 jobs located here and 42,835
+  held by residents, 13.8 per cent more jobs than resident job-holders. Two agencies, two methods
+  and 1.8 points apart; BEA estimates its adjustment from journey-to-work data, so this is a close
+  agreement between measurements that share an ancestor rather than two independent ones.
+  [inference] See [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml).
+
+  **This corpus cannot say what a person in Allen County is paid.** Every figure above is a county
+  aggregate divided by a county population, which is not a typical person's income and is not the
+  same measurement as the survey's median household income of $62,001; a county where a few
+  households hold much of the income and one where none does produce the same per-capita figure.
+
+  [open] What happened to poverty across these years. The survey gives 13.1 per cent in 2023 and
+  nothing before it, and the federal small-area estimates that would give a series back to 1989 are
+  not held here.
+properties:
+  parameter: per capita personal income, and its earnings, property and transfer components
+  value: "56066"
+  unit: dollars per person, 2024
+  as_of: "2024"
+  method: |
+    CAINC4 for totals and the residence adjustment, CAINC30 for per-capita components, both from
+    the January 2026 vintage; the older CAINC35 is used only in
+    [the transfer node](allen-county-transfer-receipts-1969-2024.yml) and never mixed with these.
+    [verified] Real figures divide by the ratio of the national CPI-U annual average for the year to
+    its 2024 average of 313.689, and are labelled *in 2024 dollars*. [verified] Earnings per job
+    divides BEA earnings by place of work by BEA total employment for the same year, which counts
+    part-time and proprietors' jobs as whole jobs, so it is an average over jobs and not a wage.
+    [verified] The employment series ends in 2022 and the earnings-per-job line ends with it.
+    [verified]
+links:
+  - target: allen-county-transfer-receipts-1969-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/bea-county-personal-income.md
+  - target: allen-county-house-prices-1975-2025.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-commuting-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-total-employment-1969-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/bea-county-employment.md
+  - target: allen-county-income-and-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/bea-county-personal-income.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
