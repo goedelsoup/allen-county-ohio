@@ -5272,6 +5272,10 @@
         {
           "text": "**Nursing and residential care is where that concentrates.** The subsector this table shows falling from 1,959 employees to 1,419 records a rate of 8.38, the highest of any industry in the county and eleven times the refinery's. [verified] — the same record. So the sector shed a quarter of its jobs over the decade while the most dangerous work in it kept happening. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**The subsector that fell furthest now has twelve buildings in it and 811 beds.** Nursing and residential care employed 1,959 people in 2010 and 1,419 in 2023; the county's certified nursing homes held 712.5 residents a day in 2026 and delivered 9.5 per cent fewer resident days in 2023 than in 2011, against the 27.0 per cent by which this column fell. [verified] — [the homes](allen-county-nursing-homes-2026.yml) and [the days](allen-county-nursing-home-days-2011-2023.yml). The staffing fell three times as fast as the care, on two counts that do not cover the same buildings. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -6884,6 +6888,100 @@
         }
       ],
       "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-nursing-home-days-2011-2023.yml",
+      "class": "measure",
+      "label": "Allen County nursing home resident days, 2011–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Rows with `State Code` OH and `County` ALLEN in each annual file, summed over `Total Days Total` and its three payer splits. Facilities are counted by distinct certification number reporting a non-zero day count, so a change of ownership that splits a year into two reports counts once and a home filing a blank report counts not at all. [verified]",
+        "parameter": "total resident days, Medicare-certified skilled nursing facilities",
+        "unit": "resident days",
+        "value": "272194"
+      },
+      "blocks": [
+        {
+          "text": "How much nursing-home care this county delivered each year, and who paid for it. [verified] — [the skilled nursing facility cost reports](../../catalog/cms-snf-cost-reports.md), fiscal 2011 through 2023.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's nursing homes peaked in 2013 and are a seventh smaller now.** 320,868 resident days then, 256,683 at the bottom in 2022, 272,194 in 2023 — **15.2 per cent below the peak**. [verified] — the same files, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Medicaid pays for three days in five and always has.** Its share runs 55.9 to 65.2 per cent across the thirteen years and stands at 57.3. [verified] — the same files. Medicare, which pays for the short rehabilitation stay rather than the long residence, fell furthest: 32,476 days in 2011 to 23,153 in 2023, **down 28.7 per cent**, while everything else rose 1.9. [verified] — the same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The staffing fell three times as fast as the care.** The nursing and residential care subsector employed 1,945 people in this county in 2011 and 1,419 in 2023, down 27.0 per cent against 9.5 per cent for these days — so each employee now covers 191.8 resident days a year against 154.6 in 2011. [inference] — [the business register](allen-county-health-care-employment-2010-2022.yml) against the cost reports. The two counts do not cover the same buildings: the employment figure includes assisted living and residential care, which file no cost report, so the comparison is a direction rather than a ratio.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county lost a home and kept a certification that moved.** Lima Manor at 750 Brower Road filed its last report for 1 January to 2 September 2022 and does not appear again. Certification 365405 filed from 7400 Swaney Road in Bluffton through 2017 and from 800 Ambrose Drive in Delphos from 2018 — twenty miles, one number, and both addresses inside this county. [verified] — the same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The days are the sound quantity here and the beds are not.** `Number of Beds` doubles for one facility or another in six of the thirteen years while the bed-days for the same rows stay put, and in 2017 both fields double for two homes at once. An occupancy series from the published denominator would show a cliff in 2017 that no resident experienced. [verified] — the same files; see [an impossible value is not an outlier](../../decisions/an-impossible-value-is-not-an-outlier.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A third count agrees with these two.** 270,773 days in 2020 is 742 residents a day; the census that April counted 966 people in nursing and skilled-nursing group quarters here, and Care Compare now reports 712.5. The census figure is the largest because it counts residents of homes that hold no federal certification and file nothing. [verified] — [the group quarters](allen-county-group-quarters-2020.yml) and [Care Compare](../../catalog/cms-nursing-home-care-compare.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say how many Allen County people are in a nursing home outside it, or how many of these days were bought by somebody who lives somewhere else."
+      ],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-nursing-homes-2026.yml",
+      "class": "measure",
+      "label": "Allen County nursing homes, 2026",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2026-08-01",
+        "method": "All 922 Ohio rows pulled from the Care Compare provider file; county membership settled by Census address ranges on each provider's street address rather than by the file's own county column, and cross-checked against point-in-polygon on the published coordinates. Deficiency counts are every row in the health-deficiency file for the twelve certification numbers. [verified]",
+        "parameter": "certified nursing homes, beds and average residents per day",
+        "unit": "certified beds",
+        "value": "811"
+      },
+      "blocks": [
+        {
+          "text": "Every Medicare- or Medicaid-certified nursing home in Allen County, with its beds, its residents, its owner, its staffing and its inspection record. [verified] — [CMS Care Compare](../../catalog/cms-nursing-home-care-compare.md), the August 2026 file.",
+          "tier": "verified"
+        },
+        {
+          "text": "`staff` is total nurse staffing hours per resident per day, `turn` annual nursing-staff turnover. **Twelve homes, 811 certified beds, 712.5 residents a day — 87.9 per cent occupancy against 83.6 for Ohio's 922 homes and 80.3 for the country's 14,690.** [verified] — the same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**There are twelve and CMS's county column finds eleven.** It puts The Meadows of Delphos in Van Wert; the Census Bureau's address ranges return an exact match for 800 Ambrose Drive in **Allen County**, and CMS's own cost report reads ALLEN in each of that certification's six Delphos years. [verified] — [the Census geocoder](../../catalog/tigerweb-census2020.md) and [the cost reports](../../catalog/cms-snf-cost-reports.md); a fourth instance of [a postal address is not a municipality](../../decisions/a-postal-address-is-not-a-municipality.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two thirds of the county's beds are run from somewhere else.** 545 of the 811 belong to four chains — Trilogy Health Services (123 homes, three of these), HCF Management (22, two), Vancrest (13, one) and CareCore Health (10, one). Nine of the twelve are for profit; the three that are not hold 152 beds. [verified] — the same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's homes are fuller, better rated and less churned than the state's, and no better staffed.** Mean overall rating 3.75 against Ohio's 3.15 and the country's 2.98; nursing-staff turnover 39.5 per cent at the median against 48.5 and 44.9; total nurse staffing 3.57 hours per resident per day against 3.57 and 3.68. The spread inside the county is wider than any of those gaps: staffing runs 3.11 to 5.30, turnover 30.6 to 62.7, and one home sits at every rating from one star to five. [verified] — the same file, all 14,690 rows.",
+          "tier": "verified"
+        },
+        {
+          "text": "**287 deficiencies in seven years, and 11 of them for harm actually done.** Inspectors cited the twelve homes 287 times between 21 February 2019 and 20 May 2026. Nine citations reached scope-and-severity G — actual harm to a resident — and **two more reached immediate jeopardy**: Springview Manor on 10 January 2024 for accident hazards, Liberty Retirement Community on 19 March 2026 for respiratory care. The commonest are infection control (16), care not given as ordered (14), accident hazards (13) and pressure-ulcer care (12), and seventeen are failures of the residents' freedom from abuse, neglect and exploitation, at seven of the twelve homes. **$130,230 in fines stands against four.** [verified] — [the deficiency file](../../catalog/cms-nursing-home-care-compare.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A five-star home can be the most dangerous workplace in the county.** The Springs of Lima carries five stars overall, five on health inspection, no deficiency in its latest cycle and no fine — and its workers recorded 89 injuries on 883,063 hours, a rate of 20.16 against 3.69 for the county. [verified] — [Care Compare](../../catalog/cms-nursing-home-care-compare.md) and [the injury summaries](../../catalog/osha-injury-tracking-application.md), by way of [the injury record](allen-county-workplace-injuries-2016-2024.yml); see [a rating rates one thing](../../decisions/a-rating-rates-one-thing.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say how well anybody here is cared for."
+      ],
       "withheld": 2
     },
     {
@@ -10032,7 +10130,7 @@
           "tier": "inference"
         },
         {
-          "text": "**The pandemic is legible in the logbooks.** 216 respiratory illnesses were recorded in 2020 against two in 2016 and none in 2018, and **211 of the 216 are in health care**. [verified] — the same files.",
+          "text": "**The pandemic is legible in the logbooks, and it is most of the nursing homes' figure.** 216 respiratory illnesses were recorded in 2020 against two in 2016 and none in 2018, **211 of the 216 in health care**. Across [the county's twelve certified nursing homes](allen-county-nursing-homes-2026.yml) the nine-year rate is 8.51 on 12,146,600 hours; with 2020 and 2021 removed it is **5.07**, still above every other sector here. [verified] — the same files.",
           "tier": "verified"
         },
         {
@@ -22934,6 +23032,13 @@
       "source": "catalog/census-2020-redistricting-file.md"
     },
     {
+      "from": "measure/allen-county-group-quarters-2020.yml",
+      "to": "measure/allen-county-nursing-home-days-2011-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/cms-snf-cost-reports.md"
+    },
+    {
       "from": "measure/allen-county-hazard-mitigation-2003-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -22974,6 +23079,13 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "to": "measure/allen-county-nursing-homes-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/cms-nursing-home-care-compare.md"
     },
     {
       "from": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
@@ -23464,6 +23576,55 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/us-newspaper-directory.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-home-days-2011-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-snf-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-home-days-2011-2023.yml",
+      "to": "measure/allen-county-nursing-homes-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/cms-nursing-home-care-compare.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-home-days-2011-2023.yml",
+      "to": "measure/allen-county-group-quarters-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/cms-snf-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-homes-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cms-nursing-home-care-compare.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-homes-2026.yml",
+      "to": "measure/allen-county-nursing-home-days-2011-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/cms-snf-cost-reports.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-homes-2026.yml",
+      "to": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-nursing-homes-2026.yml",
+      "to": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/cms-nursing-home-care-compare.md"
     },
     {
       "from": "measure/allen-county-occupancy-2020.yml",
@@ -24507,6 +24668,13 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/census-county-business-patterns.md"
+    },
+    {
+      "from": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "to": "measure/allen-county-nursing-homes-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
     },
     {
       "from": "measure/allen-county-world-war-dead.yml",

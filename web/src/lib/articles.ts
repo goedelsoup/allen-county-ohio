@@ -382,6 +382,27 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'five-stars',
+    title: 'Five stars',
+    dek: "Twelve nursing homes hold 712.5 Allen County residents on any given night. CMS rates them well, and the rating was never asked what happens to the people who do the lifting.",
+    section: 'people',
+    era: [2011, 2026],
+    assertions: [
+      'twelve-homes-and-eight-hundred-and-eleven-beds',
+      'two-thirds-of-the-beds-are-run-from-elsewhere',
+      'better-rated-and-no-better-staffed',
+      'two-hundred-and-eighty-seven-deficiencies',
+      'a-five-star-home-is-the-most-dangerous-workplace',
+      'the-homes-are-a-seventh-smaller-than-in-2013',
+      'medicaid-pays-for-three-days-in-five',
+    ],
+    entries: [
+      'measure/allen-county-nursing-homes-2026.yml',
+      'measure/allen-county-nursing-home-days-2011-2023.yml',
+      'measure/allen-county-group-quarters-2020.yml',
+    ],
+  },
+  {
     slug: 'the-wells-that-are-still-there',
     title: 'The wells that are still there',
     dek: 'The 1885 oil strike is the best-dated event in this county\u2019s history. Nobody had counted what it left behind: 4,849 holes, and no paper closing most of them.',
