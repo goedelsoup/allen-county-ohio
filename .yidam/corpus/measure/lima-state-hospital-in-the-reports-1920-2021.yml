@@ -1,0 +1,86 @@
+class: measure
+label: Lima State Hospital in the published reports, 1920–2021
+description: |
+  **One hundred and eighty-seven published opinions name this institution, from 21 December 1920 to
+  1 November 2021.** [verified] —
+  [CourtListener](../../catalog/courtlistener.md), a phrase search over published opinions.
+
+      1920s   8      1970s  46
+      1930s  10      1980s  22
+      1940s  15      1990s   8
+      1950s  28      2000s  10
+      1960s  39      2020s   1
+
+  **The peak is the 1970s and it is a fact about the law, not about the hospital.** 46 opinions in
+  the decade of [the class action](../event/davis-v-watkins.yml), against 8 in the 1990s. The right
+  to treatment was recognised, litigated and largely settled inside that decade, and a count of
+  opinions rises when a doctrine is unsettled and falls when it is not. This series measures how
+  much law was in dispute. [inference] — the reasoning is this corpus's.
+
+  **Ohio's own courts wrote 138 of them and the federal courts 22.** The court of appeals 101, the
+  Ohio Supreme Court 37, the Sixth Circuit 13, the Northern District of Ohio 6, the Southern
+  District 3, three courts of common pleas 6, two probate courts 2, and one each from Oklahoma and
+  Mississippi. [verified] — same source, counted here.
+
+  **8 of the 101 appellate opinions carry Allen County's own docket form.** Ohio's Third District
+  numbers a case with a county code first and this county's is 1; the remaining 93 open with
+  Hamilton County's `C-`, Franklin's `06AP-`, Mahoning's `07 MA`, or a bare sequence number. The
+  institution stood here and was litigated about somewhere else, which is what a maximum-security
+  hospital serving a whole state looks like from inside one county. [verified] — the same source,
+  its docket numbers, parsed here; the reading is this corpus's. [inference]
+
+  **The names arrive in the reports in a sequence and every date is a floor.** [verified] — same
+  source, five phrase searches.
+
+      name                                first published appearance   opinions
+      Lima State Hospital                 21 December 1920                 187
+      Lima Correctional Institution       22 February 1988                  38
+      Oakwood Forensic Center             9 August 1989                      2
+      Allen Correctional Institution      3 March 1992                      88
+      Oakwood Correctional Facility       25 February 2002                  20
+
+  **A first appearance in the reports is not a founding date.** Litigation reaches publication years
+  after the events it concerns, so each of these bounds a name's existence from one side only: the
+  institution called Lima Correctional Institution existed no later than February 1988, and nothing
+  here bounds it from the other side. [inference] — the reasoning is this corpus's.
+
+  **What the sequence does establish is an order.** The hospital's name is the only one in the
+  reports for sixty-eight years; three correctional names appear within five years of one another
+  at the end of the 1980s and the start of the 1990s; and the two Oakwood names bracket them. That
+  is the shape of one institution being divided rather than of five institutions being built.
+  [inference] — the same table.
+
+  **This corpus cannot say when Lima State Hospital stopped being Lima State Hospital.** The reports
+  give a first appearance for each successor name and no source held here gives a renaming, a
+  conveyance or a statute. [verified] — the searches above, and
+  [the site](../site/lima-state-hospital.yml).
+
+  [open] The Ohio act or administrative order that renamed the hospital and created the two prisons
+  on its ground. Ohio's Revised Code is online and current; the session laws that would carry a
+  1980s renaming are not in anything this corpus has reached.
+properties:
+  parameter: published opinions naming Lima State Hospital
+  value: "187"
+  unit: opinions
+  as_of: "2026-09-03"
+  method: |
+    A phrase search of CourtListener's published-opinion index for "Lima State Hospital", ordered by
+    filing date and paged to exhaustion, then counted here by decade, by court and by docket form.
+    Four further phrase searches give the first appearance and the opinion count for each successor
+    name. The counts are of *published* opinions and therefore of a selected fraction of the
+    disputes: most cases produce no published opinion, and whether one is published is a decision
+    made by a court. [verified] Nothing here is a count of patients, admissions or complaints; see
+    [a source is also a filter](../../decisions/a-source-is-also-a-filter.yml).
+links:
+  - target: ../site/lima-state-hospital.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/courtlistener.md
+  - target: ../site/oakwood-correctional-facility.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../site/allen-correctional-institution.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

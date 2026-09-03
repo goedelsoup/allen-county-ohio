@@ -1,0 +1,96 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const casea = assertion('three-opinions-one-docket-one-judge')
+const copied = assertion('a-remedy-copied-from-alabama')
+const pop = assertion('a-thousand-two-hundred-and-ninety-five-to-four-hundred')
+const space = assertion('fifty-four-square-feet-against-an-ordered-eighty')
+const race = assertion('forty-four-point-eight-per-cent')
+const count = assertion('one-hundred-and-eighty-seven-opinions')
+const peak = assertion('the-nineteen-seventies-peak-is-the-law')
+const where = assertion('litigated-in-other-peoples-counties')
+
+const spec = (a: typeof pop, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const popSpec = spec(pop, 'Patients at Lima State Hospital')
+const countSpec = spec(count, 'Published opinions')
+---
+
+<Article slug="fifty-four-square-feet">
+  <p>
+    The largest institution ever built in Allen County opened north of Lima in 1915 on 576 acres the
+    state bought for $63,622, ground a county history called the poorest in the county. The record of it here ran to 1920
+    and stopped. What fills the gap is a lawsuit: a federal class
+    action brought on behalf of everyone confined there, which ran for seven years and left three
+    published opinions.
+  </p>
+  <AssertionCard assertion={casea} open />
+  <AssertionCard assertion={copied} />
+  <Gloss>
+    Which is the trap this piece is built around. A remedial order is the most quotable document in
+    American public life — specific, terrible, and drafted to be enforced against a future
+    superintendent rather than to describe a present one. The 1974 order here forbids requiring
+    patients to shine employees' shoes. Read as evidence that would be a fact about this county; it
+    is a fact about Bryce Hospital in Tuscaloosa, because the court said plainly that many of its
+    paragraphs were excerpted verbatim from the Alabama case it was following. What a court orders
+    is a remedy. What it finds is a finding. Only the second is evidence about the ground.
+  </Gloss>
+
+  <h2>What the court found</h2>
+  <AssertionCard assertion={pop} />
+  <ChartFigure
+    id="pop"
+    title="A population falling before the order"
+    caption="Patients at Lima State Hospital as the 1978 and 1980 opinions record them. The suit was filed in 1973; the fall from 1,295 had already happened."
+    columns={['When', 'Patients']}
+    rows={pop.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="pop" set:html={JSON.stringify(popSpec)} is:inline />
+  <AssertionCard assertion={space} />
+  <p>
+    Six by nine is fifty-four square feet. The order six years earlier had required eighty, and the
+    plaintiffs asked for a hundred. The court gave neither, and the distance between the number it
+    ordered and the number it found is the only measurement here that either document supports.
+  </p>
+  <AssertionCard assertion={race} />
+  <p>
+    That last figure lands on a conclusion reasoned to here decades before it could be shown. Reading the
+    1940 census, it noticed that Bath Township's 260 Black residents ran 204 men to 56 women, and
+    wrote that those ratios describe a committed population rather than a settled one. Forty years
+    later the parties to this case stipulated the number. Neither observation is evidence for the
+    other. They are two views of one arrangement.
+  </p>
+
+  <h2>Counted in the reports</h2>
+  <AssertionCard assertion={count} />
+  <ChartFigure
+    id="count"
+    title="Which courts wrote them"
+    caption="Published opinions naming Lima State Hospital, by court. Ohio's own courts account for 138 of the 187."
+    columns={['Court', 'Opinions']}
+    rows={count.figures.map((f) => [f.label, String(f.value)])}
+  />
+  <script type="application/json" data-chart-spec="count" set:html={JSON.stringify(countSpec)} is:inline />
+  <AssertionCard assertion={peak} />
+  <AssertionCard assertion={where} />
+  <p>
+    So the institution stood on this county's ground and generated its record almost entirely
+    somewhere else, which is what a maximum-security hospital serving a whole state looks like from
+    inside one county. The successors show up in the same reports and only from one side: Lima
+    Correctional Institution no later than February 1988, Oakwood Forensic Center no later than
+    August 1989, Allen Correctional Institution no later than March 1992. One name for sixty-eight
+    years and then three in five, which is the shape of an institution being divided rather than of
+    institutions being built. When it stopped being Lima State Hospital is not in any source
+    reached here.
+  </p>
+</Article>

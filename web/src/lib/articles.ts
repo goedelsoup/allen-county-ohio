@@ -467,6 +467,28 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'fifty-four-square-feet',
+    title: 'Fifty-four square feet',
+    dek: "A federal court spent seven years on the state hospital north of Lima. Its first order was copied from Alabama; its findings, six years later, are the best record this county has of the largest institution ever built in it.",
+    section: 'history',
+    era: [1915, 2021],
+    assertions: [
+      'three-opinions-one-docket-one-judge',
+      'a-remedy-copied-from-alabama',
+      'a-thousand-two-hundred-and-ninety-five-to-four-hundred',
+      'fifty-four-square-feet-against-an-ordered-eighty',
+      'forty-four-point-eight-per-cent',
+      'one-hundred-and-eighty-seven-opinions',
+      'the-nineteen-seventies-peak-is-the-law',
+      'litigated-in-other-peoples-counties',
+    ],
+    entries: [
+      'event/davis-v-watkins.yml',
+      'measure/lima-state-hospital-in-the-reports-1920-2021.yml',
+      'site/lima-state-hospital.yml',
+    ],
+  },
+  {
     slug: 'one-mile-in-six',
     title: 'One mile in six',
     dek: "Allen County has 2,225.6 miles of road and one federal file names the owner of 359.2 of them. The rest belong to nine municipalities, twelve townships and a county engineer, and no source says which.",
