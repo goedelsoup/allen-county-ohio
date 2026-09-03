@@ -7,7 +7,7 @@ description: >-
   many children are in them.
 type: dataset
 obtained: true
-retrieved: 2026-09-02
+retrieved: 2026-09-03
 ttl_days: 365
 location:
   - kind: url
@@ -29,6 +29,9 @@ location:
       The district directory, 1,069 Ohio rows with 70 columns — teachers, counsellors,
       psychologists, librarians and administrators as full-time equivalents, plus special-education
       and English-learner counts and the number of schools. None of it is in the finance survey.
+      **Now taken as a series**, one request per year from 1986 to 2024: 39 files, 797 Ohio rows in
+      the first and 1,073 in the last, unpaginated. The staffing columns are empty before 1992 and
+      the count of schools is populated from 1986.
   - kind: url
     value: https://educationdata.urban.org/api/v1/api-endpoints/
     description: >-
@@ -37,6 +40,8 @@ location:
       all**, which is why that one was taken from
       [NCES directly](nces-private-school-universe.md).
 used-by:
+  - ../corpus/measure/allen-county-school-staffing-1992-2024.yml
+  - ../corpus/measure/allen-county-school-buildings-1986-2024.yml
   - ../corpus/measure/allen-county-private-schools-2013-2021.yml
   - ../corpus/measure/allen-county-school-enrolment-1988-2024.yml
   - ../corpus/measure/allen-county-school-enrolment-by-race-1988-2024.yml
@@ -78,14 +83,44 @@ the annual files. Every race share differenced across that boundary is differenc
 in the roll; see [a category has a birthday](../decisions/a-category-has-a-birthday.yml) and
 [a revision that changes the roll](../decisions/a-revision-that-changes-the-roll.yml).
 
-**It reaches back to 1986 and had been read for one year.** The endpoint index was consulted once,
-to establish which schools were community schools, and the district enrolment series beside it —
-thirty-nine years of it, by race, by grade and by sex — went unread. [verified] — the same index
-this entry already cites.
+**It reaches back to 1986 and has now been read as a series twice.** The endpoint index was
+consulted once, to establish which schools were community schools; then the district enrolment
+series was taken year by year; and the directory beside it — the same thirty-nine files, carrying
+teachers, aides, counsellors, librarians and administrators — was taken after that. [verified] —
+the same index this entry already cites. Two readings of one file, a day apart, for two
+questions that were both in it the first time; see
+[a source is not exhausted by one question](../decisions/a-source-is-not-exhausted-by-one-question.yml).
+
+**Its staffing has one whole year missing and one year missing two districts.** Every staffing
+column reads `-1` for all twelve of Allen County's districts in 2014 — a sentinel and not a zero,
+with the enrolment and school counts either side of it intact. In 2022 Bath and Lima report no
+staff at all, so a county total for that year covers 68.44 per cent of the county's children and
+reads like a collapse. [verified] — the annual directory files, filtered here. See
+[a zero is not a blank](../decisions/a-zero-is-not-a-blank.yml).
+
+**Its counsellor components are zeroed and its counsellor total is not.** Every Allen County
+district reports `0` elementary and `0` secondary guidance counsellors in 2024 and a total of 43
+between them. The total is the figure that can be used and the split cannot. [verified] — the 2024
+directory.
+
+**Its largest staffing column has no name.** `support_staff_other_fte` holds 1,114 of the 2,938
+full-time equivalents the twelve districts report in 2024 — 37.92 per cent, more than teachers,
+aides, counsellors, librarians and administrators of every grade combined. The file itemises the
+professions it has an interest in and puts the rest of the payroll in one cell. [verified] — the
+same directory. The total column itself begins in 2015, so the file cannot be asked how many people
+worked in these schools before then. [verified] — the annual files.
 
 **Staffing is a full-time-equivalent count and some of its zeros are real.** Nine of the county's
 twelve districts report `0.0` school psychologists in 2023 and three report a positive number; the
 column is populated for every district, so these are reported zeros rather than missing cells.
-[verified] — the 2023 directory. Whether a district with no psychologist of its own buys the
-service from the [educational service center](../corpus/jurisdiction/allen-county-educational-service-center.yml)
-is not in this file. [open]
+[verified] — the 2023 directory. The column itself opens in 2019 and is empty in every year before
+it, so a district reporting no psychologist before 2019 is reporting nothing at all. [verified] —
+the annual files.
+
+**And the answer to where the psychologists are was in this file the whole time.** The
+[educational service center](../corpus/jurisdiction/allen-county-educational-service-center.yml)
+has its own row in the same directory, and in 2023 it reports 14.45 school psychologists against an
+enrolment of zero — twice what all twelve districts report between them. That is what an
+educational service center is: a payroll the districts share. [verified] — the 2023 directory, the
+service center's row. Which district buys which hours is still not in the file, and does not need
+to be for the reported zeros to stop looking like an absence. [inference]

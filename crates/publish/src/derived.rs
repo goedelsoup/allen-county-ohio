@@ -5637,6 +5637,148 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "the-class-got-smaller-as-the-county-emptied",
+        statement: "Allen County's twelve school districts lost 28.40 per cent of their children \
+                    between 1992 and 2024 and 19.11 per cent of their teachers, so the class got \
+                    smaller: 17.85 pupils to a teacher then and 15.80 now.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**The children fell by 28.40 per cent and the teachers by 19.11.** 22,137 pupils and 1,240 teachers in 1992 against 15,850 and 1,003 now, so the class got smaller: 17.85 pupils to a teacher then and 15.80 now. [verified] \u{2014} the same file, computed here, against [the enrolment series](allen-county-school-enrolment-1988-2024.yml)."),
+        ],
+        answers: &["cannot say who teaches in Allen County"],
+        figures: &[
+            Figure { label: "pupils lost", value: 28.4, literal: "28.40" },
+            Figure { label: "teachers lost", value: 19.11, literal: "19.11" },
+            Figure { label: "pupils per teacher 1992", value: 17.85, literal: "17.85" },
+            Figure { label: "pupils per teacher 2024", value: 15.8, literal: "15.80" },
+        ],
+    },
+    Assertion {
+        id: "every-adult-but-the-librarian",
+        statement: "Every kind of adult these schools employ is more common per child than it was in \
+                    1992 except one. Teachers and aides go from 58.36 full-time equivalents per \
+                    thousand pupils to 73.06 and administration from 12.51 to 18.30, while library \
+                    staff go from 1.63 to 0.95.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**Every other kind of adult in these buildings is more common per child than it was, and one is very much less.** Teachers and aides go from 58.36 full-time equivalents per thousand pupils to 73.06, administration from 12.51 to 18.30 and guidance counsellors from 1.99 to 2.71, while library staff go from 1.63 to 0.95. [verified] \u{2014} the same source, its district directory, computed here."),
+        ],
+        answers: &["cannot say who teaches in Allen County"],
+        figures: &[
+            Figure { label: "library staff 2024", value: 0.95, literal: "0.95" },
+            Figure { label: "library staff 1992", value: 1.63, literal: "1.63" },
+            Figure { label: "administration 1992", value: 12.51, literal: "12.51" },
+            Figure { label: "administration 2024", value: 18.3, literal: "18.30" },
+            Figure { label: "instruction 1992", value: 58.36, literal: "58.36" },
+            Figure { label: "instruction 2024", value: 73.06, literal: "73.06" },
+        ],
+    },
+    Assertion {
+        id: "eleven-districts-with-no-librarian",
+        statement: "Eleven of Allen County's twelve school districts employ no certified school \
+                    librarian. There were 24 of them here in 1992 and 4 now, all four in Lima, and \
+                    the library support column beside them did not take them in \u{2014} it reads 12 \
+                    in 1992 and 11 in 2024.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**Eleven of the twelve districts employ no certified school librarian.** There were 24 of them here in 1992, at least one in every district and five in Lima. The whole county reported 2 in 2020, one in Lima and one in Perry, and the 4 it reports in 2024 are all in Lima \u{2014} a fall of 83.33 per cent in thirty-two years. [verified] \u{2014} the same source, its district directory, by district."),
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**That fall is a fall and not a reclassification, and the check is on the same form.** The column next to it holds library support staff, which is where a certified librarian's work would land if a district replaced the post with an assistant: it reads 12 in 1992 and 11 in 2024, and the two columns together fall from 36 to 15. In 1992 this county had two certified librarians for every library assistant and it now has one for every three. [verified] \u{2014} same source, both columns."),
+        ],
+        answers: &["cannot say who teaches in Allen County"],
+        figures: &[
+            Figure { label: "certified librarians 2024", value: 4.0, literal: "4" },
+            Figure { label: "library support 2024", value: 11.0, literal: "11" },
+            Figure { label: "library support 1992", value: 12.0, literal: "12" },
+            Figure { label: "certified librarians 1992", value: 24.0, literal: "24" },
+        ],
+    },
+    Assertion {
+        id: "the-administrators-that-did-not-leave",
+        statement: "Allen County's districts appear to have shed two administrators in three in \
+                    2006, when the district-officer column fell from 76 full-time equivalents to 25. \
+                    All four administrative columns together fell 10.87 per cent, and administration \
+                    now stands higher per pupil than in any year before 2001.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**The administrators are the same test run the other way, and it comes out the other way.** District officers fall from 76 full-time equivalents in 2005 to 25 in 2006, a drop of 67.11 per cent in one year, and eleven of the twelve districts land on two or fewer and stay there. Building principals rise from 42 to 55 in the same year. Read as four columns the county sacked two administrators in three; read as the group the form defines, administration went from 15.91 per thousand pupils to 14.18, a fall of 10.87 per cent, and it is higher now than in any year before 2001. [verified] \u{2014} the same source, its district directory, computed here. See [a column can empty into its neighbour](../../decisions/a-column-can-empty-into-its-neighbour.yml)."),
+        ],
+        answers: &["cannot say who teaches in Allen County"],
+        figures: &[
+            Figure { label: "district officers 2006", value: 25.0, literal: "25" },
+            Figure { label: "all four columns", value: 10.87, literal: "10.87" },
+            Figure { label: "district officers 2005", value: 76.0, literal: "76" },
+        ],
+    },
+    Assertion {
+        id: "one-aide-for-every-hundred-children",
+        statement: "Allen County's schools employed 52 instructional aides in 1992 and employ 155 \
+                    \u{2014} one for every 425.7 children then and one for every 102.3 now, against \
+                    23.85 teachers to an aide then and 6.47 now.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**Instructional aides went from 52 to 155.** One aide for every 425.7 children in 1992 and one for every 102.3 now; there were 23.85 teachers to an aide and there are 6.47. [verified] \u{2014} the same file. The corpus does not read that as a change in what teaching is, because the same period carries a federal special-education mandate and a change in what a district must count as an aide, and this file separates neither. [inference]"),
+        ],
+        answers: &["cannot say who teaches in Allen County"],
+        figures: &[
+            Figure { label: "aides 1992", value: 52.0, literal: "52" },
+            Figure { label: "teachers per aide 2024", value: 6.47, literal: "6.47" },
+            Figure { label: "teachers per aide 1992", value: 23.85, literal: "23.85" },
+            Figure { label: "aides 2024", value: 155.0, literal: "155" },
+        ],
+    },
+    Assertion {
+        id: "the-psychologists-belong-to-the-service-center",
+        statement: "Nine of Allen County's twelve school districts report no school psychologist and \
+                    the twelve report 7.0 full-time equivalents between them. The county's \
+                    educational service center reports 14.45 against an enrolment of zero \u{2014} \
+                    twice the districts put together.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-staffing-1992-2024.yml", "**The county's school psychologists work for the service center, not the districts.** The column opens in 2019 and the twelve districts report 7.0 full-time equivalents between them in 2023, nine of them reporting none. In the same file and the same year the [Allen County Educational Service Center](../jurisdiction/allen-county-educational-service-center.yml) reports 14.45 \u{2014} twice the twelve districts put together, against an enrolment of zero. [verified] \u{2014} the same source, its district directory, the service center's own row."),
+        ],
+        answers: &["cannot say who teaches in Allen County"],
+        figures: &[
+            Figure { label: "the twelve districts", value: 7.0, literal: "7.0" },
+            Figure { label: "the service center", value: 14.45, literal: "14.45" },
+        ],
+    },
+    Assertion {
+        id: "eight-buildings-and-seven-were-limas",
+        statement: "Allen County's twelve school districts held 51 school buildings in 1986 and hold \
+                    43. Lima City accounts for seven of the eight-building difference, and five \
+                    districts have reported the same number every year for 39 years.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**This county reports eight fewer school buildings than it did in 1986, and seven of the difference is Lima City.** The county held 51 in 1986 and holds 43; Lima went from 16 to 9, Elida and Spencerville lost one each, Bath gained one, and the remaining eight districts end where they began \u{2014} so nine buildings left the count and one entered it. [verified] \u{2014} the same source, its district directory, by district."),
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**Five of the twelve have reported the same number every year since 1986.** Columbus Grove and Pandora-Gilboa 3, Shawnee 4, Perry and Waynesfield-Goshen 2 \u{2014} one distinct value each across all 39 years. Six more move by exactly one building and back, and Lima's count runs from 16 down to 9. [verified] \u{2014} same source, computed here."),
+        ],
+        answers: &["cannot say which buildings closed"],
+        figures: &[
+            Figure { label: "buildings 2024", value: 43.0, literal: "43" },
+            Figure { label: "Lima 2024", value: 9.0, literal: "9" },
+            Figure { label: "Lima 1986", value: 16.0, literal: "16" },
+            Figure { label: "buildings 1986", value: 51.0, literal: "51" },
+        ],
+    },
+    Assertion {
+        id: "two-answers-that-arrive-at-the-same-building",
+        statement: "Lima lost 3,599 pupils and closed seven schools; Allen County's other eleven \
+                    districts lost 3,311 between them and closed one. They arrive at the same \
+                    building \u{2014} 374.4 pupils per school in Lima and 367.1 in the other eleven.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**The two halves of the county lost nearly the same number of children and answered differently.** Lima went from 6,969 pupils in 1988 to 3,370, a loss of 3,599, and closed seven buildings. The other eleven districts lost 3,311 between them and closed one. [verified] \u{2014} same file, against [the enrolment series](allen-county-school-enrolment-1988-2024.yml)."),
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**They arrive at the same building.** Lima held 435.6 pupils per school in 1988 and holds 374.4; the other eleven held 464.4 and hold 367.1. Two opposite policies over thirty-six years converge within eight pupils of each other. [verified] \u{2014} the same two files, computed here. The corpus does not read that as either district aiming at a number, because nothing in these files is a decision and a school's capacity is fixed by the building rather than chosen each year. [inference]"),
+        ],
+        answers: &["cannot say which buildings closed"],
+        figures: &[
+            Figure { label: "Lima per school", value: 374.4, literal: "374.4" },
+            Figure { label: "the other eleven per school", value: 367.1, literal: "367.1" },
+            Figure { label: "Lima per school 1988", value: 435.6, literal: "435.6" },
+            Figure { label: "the other eleven 1988", value: 464.4, literal: "464.4" },
+        ],
+    },
+    Assertion {
         id: "the-children-went-missing-faster-than-the-classrooms",
         statement: "Allen County's under-18 population fell 7.3 per cent between the July estimates \
                     of 2010 and 2019, while enrolment in its twelve school districts fell 5.9 per \

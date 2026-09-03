@@ -228,11 +228,13 @@ Sorted by: kind, then alphabetically.
 | [allen-county-railroads-2026.yml](measure/allen-county-railroads-2026.yml) | measure | Allen County's railroads, 2026 | 2 | 7v / 1i / 1o | 66 |
 | [allen-county-road-deaths-1975-2024.yml](measure/allen-county-road-deaths-1975-2024.yml) | measure | Deaths on Allen County roads, 1975–2024 | 5 | 10v / 4i / 0o | 108 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
+| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 4 | 8v / 1i / 1o | 96 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
-| [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 7 | 9v / 3i / 1o | 136 |
+| [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 9 | 9v / 3i / 1o | 151 |
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2009-2022 | 4 | 8v / 1i / 1o | 82 |
 | [allen-county-school-enrolment-by-race-1988-2024.yml](measure/allen-county-school-enrolment-by-race-1988-2024.yml) | measure | Who the children in Allen County's schools are, 1988–2024 | 5 | 9v / 3i / 1o | 100 |
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 4 | 6v / 4i / 0o | 79 |
+| [allen-county-school-staffing-1992-2024.yml](measure/allen-county-school-staffing-1992-2024.yml) | measure | What Allen County's twelve school districts employ, 1992–2024 | 5 | 14v / 1i / 1o | 177 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
 | [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 5 | 8v / 2i / 0o | 91 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |

@@ -1,0 +1,103 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const fall = assertion('the-class-got-smaller-as-the-county-emptied')
+const per = assertion('every-adult-but-the-librarian')
+const lib = assertion('eleven-districts-with-no-librarian')
+const adm = assertion('the-administrators-that-did-not-leave')
+const aides = assertion('one-aide-for-every-hundred-children')
+const psych = assertion('the-psychologists-belong-to-the-service-center')
+const bldg = assertion('eight-buildings-and-seven-were-limas')
+const conv = assertion('two-answers-that-arrive-at-the-same-building')
+
+const spec = (a: typeof fall, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const perSpec = spec(per, 'Full-time equivalents per 1,000 pupils')
+const libSpec = spec(lib, 'Full-time equivalents, all twelve districts')
+const bldgSpec = spec(bldg, 'School buildings')
+---
+
+<Article slug="the-adults-in-the-building">
+  <p>
+    This county's record of its schools has been a record of children and money: how many were
+    enrolled, how they scored, what a district spent on each of them and where the money came from.
+    The people the money buys were missing. They are in the same federal file as the enrolment, one
+    column over, for every year since 1992 — teachers, aides, counsellors, librarians,
+    administrators, and a count of the buildings going back to 1986.
+  </p>
+  <AssertionCard assertion={fall} open />
+  <p>
+    Which is the first surprise. A district losing a third of its children over thirty-two years
+    might be expected to shed teachers at the same rate, and Allen County's shed them at two thirds
+    of it. The class is smaller than it was, in every district and in the county as a whole.
+  </p>
+  <AssertionCard assertion={per} />
+  <ChartFigure
+    id="per"
+    title="Adults per thousand children"
+    caption="Full-time equivalents per 1,000 pupils across the twelve districts holding ground in Allen County, 1992 against 2024. Four categories rose against a falling denominator and one fell against it."
+    columns={['Category', 'Per 1,000 pupils']}
+    rows={per.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="per" set:html={JSON.stringify(perSpec)} is:inline />
+
+  <h2>The room stayed open</h2>
+  <AssertionCard assertion={lib} />
+  <ChartFigure
+    id="lib"
+    title="The library and the librarian"
+    caption="Certified library specialists and library support staff, all twelve districts. The certified post went and the assistant stayed, which is why this is a loss rather than a relabelling."
+    columns={['Column', 'Full-time equivalents']}
+    rows={lib.figures.map((f) => [f.label, String(f.value)])}
+  />
+  <script type="application/json" data-chart-spec="lib" set:html={JSON.stringify(libSpec)} is:inline />
+  <p>
+    Twenty-four certified librarians served twelve districts in 1992, at least one in every one of
+    them. The whole county now reports four, all four of them in Lima. Nothing else these schools
+    employ moved like that.
+  </p>
+  <Gloss>
+    A steep fall in a single column of an administrative file is the most publishable thing in it
+    and the least reliable. The check is on the form: sum the column with the ones the agency printed
+    beside it, because that is where a reclassified job goes. Library support staff read 12 in 1992
+    and 11 now, so the librarians are gone. Run the same test on the administrators, whose lead
+    column falls by two thirds in a single year, and the four columns together barely move. Nothing
+    was cut there. A line on a form was.
+  </Gloss>
+  <AssertionCard assertion={adm} />
+  <AssertionCard assertion={aides} />
+  <p>
+    An aide is not a cheaper teacher and the file will not say what any of them does. What it does
+    say is that the adult a child in this county is most likely to have met who was not a teacher in
+    1992 was an administrator, and is now an aide.
+  </p>
+  <AssertionCard assertion={psych} />
+
+  <h2>Eight buildings</h2>
+  <AssertionCard assertion={bldg} />
+  <ChartFigure
+    id="bldg"
+    title="Fifty-one schoolhouses, and forty-three"
+    caption="School buildings reported by the twelve districts. Lima City accounts for seven of the eight-building difference; five districts have reported the same number every year since 1986."
+    columns={['Count', 'Buildings']}
+    rows={bldg.figures.map((f) => [f.label, String(f.value)])}
+  />
+  <script type="application/json" data-chart-spec="bldg" set:html={JSON.stringify(bldgSpec)} is:inline />
+  <AssertionCard assertion={conv} />
+  <p>
+    Two districts facing the same arithmetic answered it in opposite ways and ended in the same
+    place. Lima closed schools until the ones left were full; the rest of the county kept its
+    buildings and let them empty. Both now hold about 370 children to a building, which is the sort
+    of agreement that looks like a plan and is not one.
+  </p>
+</Article>

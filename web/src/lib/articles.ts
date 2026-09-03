@@ -445,6 +445,28 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'the-adults-in-the-building',
+    title: 'The adults in the building',
+    dek: "Allen County's schools have a third fewer children than in 1992 and more of every kind of adult per child than they had \u2014 except the one who ran the library.",
+    section: 'people',
+    era: [1986, 2024],
+    assertions: [
+      'the-class-got-smaller-as-the-county-emptied',
+      'every-adult-but-the-librarian',
+      'eleven-districts-with-no-librarian',
+      'the-administrators-that-did-not-leave',
+      'one-aide-for-every-hundred-children',
+      'the-psychologists-belong-to-the-service-center',
+      'eight-buildings-and-seven-were-limas',
+      'two-answers-that-arrive-at-the-same-building',
+    ],
+    entries: [
+      'measure/allen-county-school-staffing-1992-2024.yml',
+      'measure/allen-county-school-buildings-1986-2024.yml',
+      'measure/allen-county-school-enrolment-1988-2024.yml',
+    ],
+  },
+  {
     slug: 'two-working-faces',
     title: 'Two working faces',
     dek: 'Six mines have been registered in Allen County and two are still worked, by about thirty people between them — and one of them is the company that sold Ford the ground its engine plant stands on.',

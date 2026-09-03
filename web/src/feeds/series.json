@@ -972,6 +972,26 @@
       ]
     },
     {
+      "id": "place-allen-county::certified-school-librarians-in-the-county's-twelve-districts",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "certified school librarians in the county's twelve districts",
+      "unit": "full-time equivalents",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "label": "What Allen County's twelve school districts employ, 1992–2024",
+          "as_of": "2024",
+          "value": 4.0,
+          "published": "4",
+          "tier": "verified",
+          "source": "catalog/nces-common-core-of-data.md",
+          "method": "One request per year to the Common Core of Data district directory for Ohio, 1986 to 2024, filtered here to the same twelve NCES agency identifiers the enrolment series uses. Values of `-1` and `-2` are treated as missing and never summed; a year is marked complete only when all twelve districts report the column, and the pupils-per-teacher ratio is left blank in any year they do not. Staffing columns are empty before 1992 and the series therefore starts there, seven years after the enrolment it is read against. The `year` is the autumn the count was taken, so 2024 is the 2024–25 school year. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::children-in-private-schools,-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -2728,6 +2748,26 @@
           "tier": "verified",
           "source": "catalog/us-religion-census-2020.md",
           "method": "The county summary sheet and the group-by-county sheet of the 2020 U.S. Religion Census, filtered to FIPS 39003. The 49 group rows sum to the summary sheet's 160 congregations and 58,696 adherents exactly, which is the check that the read is complete. Adherents are as each religious body reported them and the bodies do not share a definition; nine congregations report no adherent figure and are counted as congregations only. Neighbouring counties are read from the same sheet. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::school-buildings-in-the-county's-twelve-districts",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "school buildings in the county's twelve districts",
+      "unit": "schools",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "as_of": "2024",
+          "value": 43.0,
+          "published": "43",
+          "tier": "verified",
+          "source": "catalog/nces-common-core-of-data.md",
+          "method": "The `number_of_schools` column of the Common Core of Data district directory for Ohio, one request per year from 1986 to 2024, filtered here to the same twelve NCES agency identifiers the enrolment and staffing series use. All twelve districts report the column in all thirty-nine years and no value is imputed. Pupils per building is this file's own enrolment over its own school count in the same year, and 1988 is used rather than 1986 because enrolment is absent in 1986. [verified]"
         }
       ]
     },
@@ -15105,6 +15145,362 @@
           "label": "Black 2024",
           "value": 1307.0,
           "literal": "1,307"
+        }
+      ]
+    },
+    {
+      "id": "the-class-got-smaller-as-the-county-emptied",
+      "statement": "Allen County's twelve school districts lost 28.40 per cent of their children between 1992 and 2024 and 19.11 per cent of their teachers, so the class got smaller: 17.85 pupils to a teacher then and 15.80 now.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**The children fell by 28.40 per cent and the teachers by 19.11.** 22,137 pupils and 1,240 teachers in 1992 against 15,850 and 1,003 now, so the class got smaller: 17.85 pupils to a teacher then and 15.80 now. [verified] — the same file, computed here, against [the enrolment series](allen-county-school-enrolment-1988-2024.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who teaches in Allen County.** A full-time equivalent is a position and not a person: a district reporting 56 teachers may employ fifty-six of them or sixty, and this file does not know which."
+      ],
+      "figures": [
+        {
+          "label": "pupils lost",
+          "value": 28.4,
+          "literal": "28.40"
+        },
+        {
+          "label": "teachers lost",
+          "value": 19.11,
+          "literal": "19.11"
+        },
+        {
+          "label": "pupils per teacher 1992",
+          "value": 17.85,
+          "literal": "17.85"
+        },
+        {
+          "label": "pupils per teacher 2024",
+          "value": 15.8,
+          "literal": "15.80"
+        }
+      ]
+    },
+    {
+      "id": "every-adult-but-the-librarian",
+      "statement": "Every kind of adult these schools employ is more common per child than it was in 1992 except one. Teachers and aides go from 58.36 full-time equivalents per thousand pupils to 73.06 and administration from 12.51 to 18.30, while library staff go from 1.63 to 0.95.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**Every other kind of adult in these buildings is more common per child than it was, and one is very much less.** Teachers and aides go from 58.36 full-time equivalents per thousand pupils to 73.06, administration from 12.51 to 18.30 and guidance counsellors from 1.99 to 2.71, while library staff go from 1.63 to 0.95. [verified] — the same source, its district directory, computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who teaches in Allen County.** A full-time equivalent is a position and not a person: a district reporting 56 teachers may employ fifty-six of them or sixty, and this file does not know which."
+      ],
+      "figures": [
+        {
+          "label": "library staff 2024",
+          "value": 0.95,
+          "literal": "0.95"
+        },
+        {
+          "label": "library staff 1992",
+          "value": 1.63,
+          "literal": "1.63"
+        },
+        {
+          "label": "administration 1992",
+          "value": 12.51,
+          "literal": "12.51"
+        },
+        {
+          "label": "administration 2024",
+          "value": 18.3,
+          "literal": "18.30"
+        },
+        {
+          "label": "instruction 1992",
+          "value": 58.36,
+          "literal": "58.36"
+        },
+        {
+          "label": "instruction 2024",
+          "value": 73.06,
+          "literal": "73.06"
+        }
+      ]
+    },
+    {
+      "id": "eleven-districts-with-no-librarian",
+      "statement": "Eleven of Allen County's twelve school districts employ no certified school librarian. There were 24 of them here in 1992 and 4 now, all four in Lima, and the library support column beside them did not take them in — it reads 12 in 1992 and 11 in 2024.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**Eleven of the twelve districts employ no certified school librarian.** There were 24 of them here in 1992, at least one in every district and five in Lima. The whole county reported 2 in 2020, one in Lima and one in Perry, and the 4 it reports in 2024 are all in Lima — a fall of 83.33 per cent in thirty-two years. [verified] — the same source, its district directory, by district.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**That fall is a fall and not a reclassification, and the check is on the same form.** The column next to it holds library support staff, which is where a certified librarian's work would land if a district replaced the post with an assistant: it reads 12 in 1992 and 11 in 2024, and the two columns together fall from 36 to 15. In 1992 this county had two certified librarians for every library assistant and it now has one for every three. [verified] — same source, both columns.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who teaches in Allen County.** A full-time equivalent is a position and not a person: a district reporting 56 teachers may employ fifty-six of them or sixty, and this file does not know which."
+      ],
+      "figures": [
+        {
+          "label": "certified librarians 2024",
+          "value": 4.0,
+          "literal": "4"
+        },
+        {
+          "label": "library support 2024",
+          "value": 11.0,
+          "literal": "11"
+        },
+        {
+          "label": "library support 1992",
+          "value": 12.0,
+          "literal": "12"
+        },
+        {
+          "label": "certified librarians 1992",
+          "value": 24.0,
+          "literal": "24"
+        }
+      ]
+    },
+    {
+      "id": "the-administrators-that-did-not-leave",
+      "statement": "Allen County's districts appear to have shed two administrators in three in 2006, when the district-officer column fell from 76 full-time equivalents to 25. All four administrative columns together fell 10.87 per cent, and administration now stands higher per pupil than in any year before 2001.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**The administrators are the same test run the other way, and it comes out the other way.** District officers fall from 76 full-time equivalents in 2005 to 25 in 2006, a drop of 67.11 per cent in one year, and eleven of the twelve districts land on two or fewer and stay there. Building principals rise from 42 to 55 in the same year. Read as four columns the county sacked two administrators in three; read as the group the form defines, administration went from 15.91 per thousand pupils to 14.18, a fall of 10.87 per cent, and it is higher now than in any year before 2001. [verified] — the same source, its district directory, computed here. See [a column can empty into its neighbour](../../decisions/a-column-can-empty-into-its-neighbour.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who teaches in Allen County.** A full-time equivalent is a position and not a person: a district reporting 56 teachers may employ fifty-six of them or sixty, and this file does not know which."
+      ],
+      "figures": [
+        {
+          "label": "district officers 2006",
+          "value": 25.0,
+          "literal": "25"
+        },
+        {
+          "label": "all four columns",
+          "value": 10.87,
+          "literal": "10.87"
+        },
+        {
+          "label": "district officers 2005",
+          "value": 76.0,
+          "literal": "76"
+        }
+      ]
+    },
+    {
+      "id": "one-aide-for-every-hundred-children",
+      "statement": "Allen County's schools employed 52 instructional aides in 1992 and employ 155 — one for every 425.7 children then and one for every 102.3 now, against 23.85 teachers to an aide then and 6.47 now.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**Instructional aides went from 52 to 155.** One aide for every 425.7 children in 1992 and one for every 102.3 now; there were 23.85 teachers to an aide and there are 6.47. [verified] — the same file. The corpus does not read that as a change in what teaching is, because the same period carries a federal special-education mandate and a change in what a district must count as an aide, and this file separates neither. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who teaches in Allen County.** A full-time equivalent is a position and not a person: a district reporting 56 teachers may employ fifty-six of them or sixty, and this file does not know which."
+      ],
+      "figures": [
+        {
+          "label": "aides 1992",
+          "value": 52.0,
+          "literal": "52"
+        },
+        {
+          "label": "teachers per aide 2024",
+          "value": 6.47,
+          "literal": "6.47"
+        },
+        {
+          "label": "teachers per aide 1992",
+          "value": 23.85,
+          "literal": "23.85"
+        },
+        {
+          "label": "aides 2024",
+          "value": 155.0,
+          "literal": "155"
+        }
+      ]
+    },
+    {
+      "id": "the-psychologists-belong-to-the-service-center",
+      "statement": "Nine of Allen County's twelve school districts report no school psychologist and the twelve report 7.0 full-time equivalents between them. The county's educational service center reports 14.45 against an enrolment of zero — twice the districts put together.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-staffing-1992-2024.yml",
+          "node_label": "What Allen County's twelve school districts employ, 1992–2024",
+          "span": "**The county's school psychologists work for the service center, not the districts.** The column opens in 2019 and the twelve districts report 7.0 full-time equivalents between them in 2023, nine of them reporting none. In the same file and the same year the [Allen County Educational Service Center](../jurisdiction/allen-county-educational-service-center.yml) reports 14.45 — twice the twelve districts put together, against an enrolment of zero. [verified] — the same source, its district directory, the service center's own row.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who teaches in Allen County.** A full-time equivalent is a position and not a person: a district reporting 56 teachers may employ fifty-six of them or sixty, and this file does not know which."
+      ],
+      "figures": [
+        {
+          "label": "the twelve districts",
+          "value": 7.0,
+          "literal": "7.0"
+        },
+        {
+          "label": "the service center",
+          "value": 14.45,
+          "literal": "14.45"
+        }
+      ]
+    },
+    {
+      "id": "eight-buildings-and-seven-were-limas",
+      "statement": "Allen County's twelve school districts held 51 school buildings in 1986 and hold 43. Lima City accounts for seven of the eight-building difference, and five districts have reported the same number every year for 39 years.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**This county reports eight fewer school buildings than it did in 1986, and seven of the difference is Lima City.** The county held 51 in 1986 and holds 43; Lima went from 16 to 9, Elida and Spencerville lost one each, Bath gained one, and the remaining eight districts end where they began — so nine buildings left the count and one entered it. [verified] — the same source, its district directory, by district.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**Five of the twelve have reported the same number every year since 1986.** Columbus Grove and Pandora-Gilboa 3, Shawnee 4, Perry and Waynesfield-Goshen 2 — one distinct value each across all 39 years. Six more move by exactly one building and back, and Lima's count runs from 16 down to 9. [verified] — same source, computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say which buildings closed.** The federal file counts schools and does not name the one that stopped being counted, and it carries no address, no year built and no account of what the ground became."
+      ],
+      "figures": [
+        {
+          "label": "buildings 2024",
+          "value": 43.0,
+          "literal": "43"
+        },
+        {
+          "label": "Lima 2024",
+          "value": 9.0,
+          "literal": "9"
+        },
+        {
+          "label": "Lima 1986",
+          "value": 16.0,
+          "literal": "16"
+        },
+        {
+          "label": "buildings 1986",
+          "value": 51.0,
+          "literal": "51"
+        }
+      ]
+    },
+    {
+      "id": "two-answers-that-arrive-at-the-same-building",
+      "statement": "Lima lost 3,599 pupils and closed seven schools; Allen County's other eleven districts lost 3,311 between them and closed one. They arrive at the same building — 374.4 pupils per school in Lima and 367.1 in the other eleven.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**The two halves of the county lost nearly the same number of children and answered differently.** Lima went from 6,969 pupils in 1988 to 3,370, a loss of 3,599, and closed seven buildings. The other eleven districts lost 3,311 between them and closed one. [verified] — same file, against [the enrolment series](allen-county-school-enrolment-1988-2024.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**They arrive at the same building.** Lima held 435.6 pupils per school in 1988 and holds 374.4; the other eleven held 464.4 and hold 367.1. Two opposite policies over thirty-six years converge within eight pupils of each other. [verified] — the same two files, computed here. The corpus does not read that as either district aiming at a number, because nothing in these files is a decision and a school's capacity is fixed by the building rather than chosen each year. [inference]",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say which buildings closed.** The federal file counts schools and does not name the one that stopped being counted, and it carries no address, no year built and no account of what the ground became."
+      ],
+      "figures": [
+        {
+          "label": "Lima per school",
+          "value": 374.4,
+          "literal": "374.4"
+        },
+        {
+          "label": "the other eleven per school",
+          "value": 367.1,
+          "literal": "367.1"
+        },
+        {
+          "label": "Lima per school 1988",
+          "value": 435.6,
+          "literal": "435.6"
+        },
+        {
+          "label": "the other eleven 1988",
+          "value": 464.4,
+          "literal": "464.4"
         }
       ]
     },
