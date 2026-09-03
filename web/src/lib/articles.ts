@@ -467,6 +467,28 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'two-addresses-for-one-dollar',
+    title: 'Two addresses for one dollar',
+    dek: "The United States spends $668 million a year in Allen County. Ninety-three per cent of it is cheques to individuals, and almost all of the rest is bought by the Department of Defense from companies with addresses somewhere else.",
+    section: 'government',
+    era: [2008, 2025],
+    assertions: [
+      'six-thousand-six-hundred-a-head',
+      'four-social-security-programmes',
+      'the-biggest-federal-grant-here-is-roads',
+      'one-billion-and-one-hundred-and-fifty-five-million',
+      'ninety-seven-per-cent-defence',
+      'four-firms-and-one-is-from-here',
+      'forty-two-tanks-for-saudi-arabia',
+      'the-forge-and-the-refinery',
+    ],
+    entries: [
+      'measure/federal-money-in-allen-county-2008-2025.yml',
+      'measure/federal-contracts-in-allen-county-2008-2025.yml',
+      'site/lima-army-tank-plant.yml',
+    ],
+  },
+  {
     slug: 'fifty-four-square-feet',
     title: 'Fifty-four square feet',
     dek: "A federal court spent seven years on the state hospital north of Lima. Its first order was copied from Alabama; its findings, six years later, are the best record this county has of the largest institution ever built in it.",
