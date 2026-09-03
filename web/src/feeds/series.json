@@ -2102,6 +2102,46 @@
       ]
     },
     {
+      "id": "place-allen-county::new-cases-filed,-all-courts-of-record-sitting-in-the-county",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "new cases filed, all courts of record sitting in the county",
+      "unit": "cases",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-court-caseloads-2007-2017.yml",
+          "label": "Allen County court caseloads, 2007–2017",
+          "as_of": "2017",
+          "value": 30770.0,
+          "published": "30770",
+          "tier": "verified",
+          "source": "catalog/ohio-courts-statistical-report.md",
+          "method": "Rows read from the `Overall Caseloads` table of each division and of the municipal courts, in each annual report, by matching the county name `Allen` and the court name `Lima`. The common pleas total is the sum of the four divisions and is computed here; the report publishes no such total. The 2017 value above is that sum plus the municipal court. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::new-forcible-entry-and-detainer-filings,-Lima-Municipal-Court",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "new forcible entry and detainer filings, Lima Municipal Court",
+      "unit": "cases",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
+          "label": "Allen County foreclosures and evictions, 2007–2017",
+          "as_of": "2017",
+          "value": 802.0,
+          "published": "802",
+          "tier": "verified",
+          "source": "catalog/ohio-courts-statistical-report.md",
+          "method": "Foreclosures from the `Foreclosures Overall Caseloads` table of the general division, evictions from the `Forcible Entry and Detainer Overall Caseloads` table of the municipal courts, in each annual report. New filings is the second numeric column in both; the first is cases pending on 1 January, which chains to the previous year's closing balance in all ten transitions. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::newspaper-titles-recorded-as-published-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -13362,6 +13402,270 @@
       ]
     },
     {
+      "id": "the-serious-court-shrank-and-the-everyday-one-grew",
+      "statement": "Filings in Allen County's court of common pleas fell 37.3 per cent between 2007 and 2017, from 9,165 to 5,749, while the Lima Municipal Court's rose 12.0 per cent to 25,021.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-court-caseloads-2007-2017.yml",
+          "node_label": "Allen County court caseloads, 2007–2017",
+          "span": "**The county's serious court shrank by more than a third while its everyday court grew.** Common pleas filings fell from 9,165 to 5,749, down **37.3 per cent**; the Lima Municipal Court's rose from 22,346 to 25,021, up 12.0.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what has happened in these courts since 2017."
+      ],
+      "figures": [
+        {
+          "label": "common pleas, 2007",
+          "value": 9165.0,
+          "literal": "9,165"
+        },
+        {
+          "label": "common pleas, 2017",
+          "value": 5749.0,
+          "literal": "5,749"
+        },
+        {
+          "label": "municipal, 2007",
+          "value": 22346.0,
+          "literal": "22,346"
+        },
+        {
+          "label": "municipal, 2017",
+          "value": 25021.0,
+          "literal": "25,021"
+        }
+      ]
+    },
+    {
+      "id": "juvenile-filings-fell-by-two-fifths",
+      "statement": "Juvenile filings in Allen County fell from 4,655 in 2007 to 2,680 in 2017 — 42.4 per cent, or 43 cases per thousand residents down to 25. Every common pleas division fell and this one fell furthest.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-court-caseloads-2007-2017.yml",
+          "node_label": "Allen County court caseloads, 2007–2017",
+          "span": "**Every common pleas division fell and the juvenile division fell furthest.** Juvenile filings went from 4,655 to 2,680, down 42.4 per cent — 43 per thousand residents to 25. General division down 38.3, domestic relations 32.6, probate 18.2.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what has happened in these courts since 2017."
+      ],
+      "figures": [
+        {
+          "label": "2007",
+          "value": 4655.0,
+          "literal": "4,655"
+        },
+        {
+          "label": "2017",
+          "value": 2680.0,
+          "literal": "2,680"
+        }
+      ]
+    },
+    {
+      "id": "crime-is-the-part-that-did-not-move",
+      "statement": "Criminal filings in Allen County's general division ran 400 to 537 across eleven years and ended where they began, 416 in 2007 and 415 in 2017, while the same court's civil filings fell from 1,391 to 702.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-court-caseloads-2007-2017.yml",
+          "node_label": "Allen County court caseloads, 2007–2017",
+          "span": "**Crime is the part that did not move.** The general division's criminal filings run 400 to 537 across the eleven years and end where they began, 416 in 2007 and 415 in 2017; its civil filings fell from 1,391 to 702.",
+          "tier": "inference",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what has happened in these courts since 2017."
+      ],
+      "figures": [
+        {
+          "label": "criminal, 2007",
+          "value": 416.0,
+          "literal": "416"
+        },
+        {
+          "label": "criminal, 2017",
+          "value": 415.0,
+          "literal": "415"
+        },
+        {
+          "label": "civil, 2007",
+          "value": 1391.0,
+          "literal": "1,391"
+        },
+        {
+          "label": "civil, 2017",
+          "value": 702.0,
+          "literal": "702"
+        }
+      ]
+    },
+    {
+      "id": "seven-judges-hear-all-of-it",
+      "statement": "Seven judges hear every case of record in Allen County — two in the general division, one each in domestic relations, probate and juvenile, and two on the municipal bench — and the count did not change in eleven years. Each general division judge took 588 new cases in 2017 against 953 in 2007.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-court-caseloads-2007-2017.yml",
+          "node_label": "Allen County court caseloads, 2007–2017",
+          "span": "**Seven judges hear all of it.** Two in the general division and one each in domestic relations, probate and juvenile, plus two on the municipal bench; the count does not change in any of the eleven years. Each general division judge took 588 new cases in 2017 against 953 in 2007.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what has happened in these courts since 2017."
+      ],
+      "figures": [
+        {
+          "label": "per general division judge, 2007",
+          "value": 953.0,
+          "literal": "953"
+        },
+        {
+          "label": "per general division judge, 2017",
+          "value": 588.0,
+          "literal": "588"
+        }
+      ]
+    },
+    {
+      "id": "one-collapsed-and-the-other-did-not-move",
+      "statement": "Foreclosure filings in Allen County peaked at 996 in 2008 and fell to 264 by 2017, down 73.5 per cent. Eviction filings over the same eleven years ran 798 to 982, averaging 874.7 with a standard deviation of 55.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
+          "node_label": "Allen County foreclosures and evictions, 2007–2017",
+          "span": "**One of these collapsed and the other did not move.** Foreclosure filings peaked at 996 in 2008 and stand at 264, down **73.5 per cent**; eviction filings run 798 to 982 across the same eleven years with a mean of 874.7 and a standard deviation of 55.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many of these filings ended with somebody leaving."
+      ],
+      "figures": [
+        {
+          "label": "foreclosures, 2008",
+          "value": 996.0,
+          "literal": "996"
+        },
+        {
+          "label": "foreclosures, 2017",
+          "value": 264.0,
+          "literal": "264"
+        },
+        {
+          "label": "evictions, mean",
+          "value": 874.7,
+          "literal": "874.7"
+        }
+      ]
+    },
+    {
+      "id": "three-renters-for-every-owner",
+      "statement": "In 2008 Allen County's courts took 996 foreclosure filings against 982 eviction filings. By 2016 the figures were 279 and 913 — three renters losing their home for every owner.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
+          "node_label": "Allen County foreclosures and evictions, 2007–2017",
+          "span": "**In 2008 the county lost about as many owners as renters, and by 2016 it lost three renters for every owner.** 996 against 982 in the first year; 279 against 913 in the last full swing.",
+          "tier": "inference",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many of these filings ended with somebody leaving."
+      ],
+      "figures": [
+        {
+          "label": "foreclosures, 2008",
+          "value": 996.0,
+          "literal": "996"
+        },
+        {
+          "label": "evictions, 2008",
+          "value": 982.0,
+          "literal": "982"
+        },
+        {
+          "label": "foreclosures, 2016",
+          "value": 279.0,
+          "literal": "279"
+        },
+        {
+          "label": "evictions, 2016",
+          "value": 913.0,
+          "literal": "913"
+        }
+      ]
+    },
+    {
+      "id": "the-same-numbers-from-two-covers",
+      "statement": "The Supreme Court of Ohio and the Eviction Lab publish the same eviction counts for Allen County — 982 in 2008, 922 in 2011 and 863 in 2014, to the unit — and differ by four in 2017, 802 against 806.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
+          "node_label": "Allen County foreclosures and evictions, 2007–2017",
+          "span": "**The court's own eviction counts and the Eviction Lab's are the same numbers.** 982 in 2008, 922 in 2011 and 863 in 2014 appear in both to the unit; 2017 differs by four, 802 here against 806 there.",
+          "tier": "verified",
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many of these filings ended with somebody leaving."
+      ],
+      "figures": [
+        {
+          "label": "2008",
+          "value": 982.0,
+          "literal": "982"
+        },
+        {
+          "label": "2011",
+          "value": 922.0,
+          "literal": "922"
+        },
+        {
+          "label": "2014",
+          "value": 863.0,
+          "literal": "863"
+        }
+      ]
+    },
+    {
       "id": "the-eviction-count-does-not-move",
       "statement": "Allen County's eviction filings run 766 to 982 across seventeen years — mean 865 — through a foreclosure crisis, a recession and a quarter more renter households. The rate drifts down 0.92 points over the run, which is about the smallest movement seventeen readings could have found.",
       "topic": "housing",
@@ -13469,7 +13773,9 @@
           "node_label": "Eviction filings in Allen County, 2002–2018",
           "span": "This corpus cannot say how many people were put out of their homes.",
           "tier": "inference",
-          "sources": []
+          "sources": [
+            "catalog/ohio-courts-statistical-report.md"
+          ]
         }
       ],
       "caveats": [
