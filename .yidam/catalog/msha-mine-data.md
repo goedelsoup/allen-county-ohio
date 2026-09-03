@@ -34,6 +34,8 @@ location:
 used-by:
   - ../corpus/measure/allen-county-quarries-2000-2025.yml
   - ../corpus/site/national-lime-and-stone-lima-quarry.yml
+  - ../corpus/measure/allen-county-elevation-2026.yml
+  - ../corpus/site/ford-lima-engine-plant.yml
 ---
 
 **It is a register of regulated operations, not a map of excavation.** A mine leaves this file when

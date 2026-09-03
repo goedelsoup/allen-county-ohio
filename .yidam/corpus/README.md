@@ -131,6 +131,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-drug-overdose-deaths-2020-2025.yml](measure/allen-county-drug-overdose-deaths-2020-2025.yml) | measure | Drug overdose deaths in Allen County, 2020–2025 | 2 | 6v / 3i / 1o | 71 |
 | [allen-county-early-deaths-by-cause-2020-2022.yml](measure/allen-county-early-deaths-by-cause-2020-2022.yml) | measure | What Allen County dies of early, 2016–2022 | 3 | 10v / 6i / 1o | 100 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 9v / 1i / 0o | 70 |
+| [allen-county-elevation-2026.yml](measure/allen-county-elevation-2026.yml) | measure | How high Allen County is, 2026 | 5 | 11v / 1i / 1o | 96 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
 | [allen-county-evictions-2001-2018.yml](measure/allen-county-evictions-2001-2018.yml) | measure | Eviction filings in Allen County, 2002–2018 | 6 | 8v / 5i / 0o | 109 |
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
@@ -199,6 +200,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-occupations-2014-2024.yml](measure/allen-county-occupations-2014-2024.yml) | measure | Allen County occupations and wages, 2014 and 2024 | 5 | 12v / 6i / 2o | 116 |
 | [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 17v / 5i / 2o | 155 |
 | [allen-county-oil-and-gas-wells-2026.yml](measure/allen-county-oil-and-gas-wells-2026.yml) | measure | Oil and gas wells in Allen County | 5 | 7v / 2i / 0o | 102 |
+| [allen-county-original-vegetation.yml](measure/allen-county-original-vegetation.yml) | measure | What grew in Allen County before the surveys, mapped | 5 | 8v / 3i / 1o | 96 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 6v / 13i / 0o | 132 |
 | [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 12v / 4i / 1o | 121 |
 | [allen-county-polling-places-2004-2024.yml](measure/allen-county-polling-places-2004-2024.yml) | measure | Allen County polling places and poll workers, 2004–2024 | 5 | 8v / 1i / 0o | 92 |
@@ -299,14 +301,14 @@ Sorted by: kind, then alphabetically.
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 9v / 5i / 1o | 90 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 9v / 6i / 0o | 75 |
-| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 3 | 4v / 4i / 1o | 66 |
+| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 4 | 6v / 4i / 1o | 88 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 3v / 1i / 0o | 39 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 2v / 0i / 1o | 34 |
 | [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 2 | 1v / 2i / 1o | 29 |
 | [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 3v / 0i / 0o | 42 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 1v / 1i / 0o | 29 |
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 8v / 5i / 0o | 70 |
-| [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 2 | 4v / 1i / 1o | 45 |
+| [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 3 | 7v / 1i / 0o | 63 |
 | [sugar-creek.yml](natural-feature/sugar-creek.yml) | natural-feature | Sugar Creek | 2 | 1v / 1i / 2o | 34 |
 | [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 39 |
 | [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 9v / 0i / 2o | 66 |

@@ -1,0 +1,96 @@
+class: measure
+label: How high Allen County is, 2026
+description: |
+  The first elevations this corpus has held for any ground in this county. [verified] —
+  [USGS 3DEP](../../catalog/usgs-3dep-elevation.md), the seamless elevation surface exported over
+  the county and clipped to its boundary, 1,024,301 cells of about 30 metres.
+
+  **The county runs from 733.5 feet to 1,071.2 feet and that is 337.7 feet of relief across 402
+  square miles.** Its mean is 859.1 feet and its median 842.3. [verified] — the same source,
+  computed here, with the quarry described below excluded.
+
+  **Its highest ground is where the continental divide enters it.** The high point is at
+  40.644716, −83.900309, in the county's south-east corner in
+  [Auglaize Township](../place/auglaize-township.yml), 200 metres from the point where the boundary
+  between the Great Lakes and Ohio hydrologic regions crosses the county's southern line.
+  [verified] — the same surface and
+  [the watershed boundary](../../catalog/usgs-watershed-boundary.md), computed here. The lowest
+  natural ground is at 40.883216, −83.891034, at the opposite corner.
+
+  **The divide runs 9.196 miles inside Allen County and every foot of it is in Auglaize Township.**
+  It enters at the county's southern line at 40.644643, −83.902735 and leaves at the eastern line at
+  40.721021, −83.879880, cutting off the county's south-east corner. [verified] —
+  [the WBDLine layer](../../catalog/usgs-watershed-boundary.md) at `hudigit` 2, clipped to
+  [TIGER's county polygon](../../catalog/census-tiger-roads.md) and measured in EPSG:6549.
+
+  **It is one of the flattest pieces of continental divide there is.** Ninety-eight samples spaced
+  500 feet along it run from 991.3 to 1,065.9 feet — 74.6 feet of rise and fall over nine miles, on
+  a mean of 1,022.9 and a standard deviation of 20.2, with 55 of the 98 within 20 feet of the
+  median. [verified] — [the elevation point service](../../catalog/usgs-3dep-elevation.md), 98
+  queries. A person walking east across it would cross from the St. Lawrence watershed to the Gulf
+  of Mexico without noticing a hill.
+
+  **The ground on the far side is 2,303.0 acres.** The Ohio Region occupies 3.5984 square miles of
+  Allen County, 0.885 per cent of it, all in Auglaize Township, against the 0.10 per cent of the
+  county's population who live there. [verified] — [the same source's](../../catalog/usgs-watershed-boundary.md)
+  region polygons, clipped to the county; see [the Scioto basin](../natural-feature/scioto-river-basin.yml). Nine times as much of this
+  county drains to the Gulf as lives there, because the corner is farmland.
+
+  **The lowest elevation anywhere in this county is 474.7 feet and it is a hole somebody dug.** A
+  contiguous depression of 47.7 acres between 40.74906 and 40.75237 north falls 365.3 feet below the
+  median of the cells that ring it, and the coordinate this corpus already held for
+  [the National Lime & Stone quarry](allen-county-quarries-2000-2025.yml) — 40.750833, −84.086111 —
+  lies inside it. [verified] — the same surface, flood-filled from its minimum, against
+  [the mine register](../../catalog/msha-mine-data.md).
+
+  **The hole is deeper than the county.** 365.3 feet from rim to floor against 337.7 feet between
+  the county's highest and lowest natural ground, and the floor sits 258.8 feet below any ground in
+  Allen County that nobody excavated. [inference] — computed here from the figures above. That
+  comparison is why the county's minimum cannot be published as a fact about its terrain; see
+  [an extreme in a surface has an address](../../decisions/an-extreme-in-a-surface-has-an-address.yml).
+
+  **This corpus cannot say how much stone has come out of that hole.** A pit's present volume is not
+  a production figure: it is net of everything backfilled, it is dated to whenever the surface was
+  flown, and it says nothing about the material removed above the original grade. The register's
+  production column for limestone is still empty and this file does not fill it.
+
+  [open] When the surface was measured. 3DEP is a mosaic of lidar and older photogrammetry
+  republished as one seamless product, and the service reports a range of acquisition dates for the
+  tile covering this county rather than a date. Every figure above is the ground as of some year in
+  that range.
+properties:
+  parameter: elevation of the land surface, and the length of the continental divide within it
+  value: "337.7"
+  unit: feet of natural relief
+  as_of: "2026"
+  method: |
+    The elevation surface was exported over a bounding box of the county at 1,600 × 880 cells and
+    clipped to [TIGER's 2024 county polygon](../../catalog/census-tiger-roads.md) with a cutline.
+    [verified] The image service returns metres and the point service returns whatever it is asked
+    for; every figure here is stated in feet and the conversion is 3.280839895. [verified] Natural
+    relief excludes one contiguous component: the cells reachable from the county minimum without
+    rising above 800 feet, which is 188 cells and 47.7 acres. The rim used for the pit's depth is
+    the median of the 78 cells that touch that component from outside, not an annulus, so it is the
+    ground the pit was cut into. [verified] The divide is `WBDLine` features carrying `hudigit` 2 —
+    the boundary between two-digit hydrologic regions — intersected with the county polygon and
+    measured in EPSG:6549, Ohio North in US survey feet; the projection was checked first by
+    projecting the county polygon and comparing its area to the published one, agreeing to 0.010 per
+    cent. [verified] Samples along the divide are every 500 feet of its projected length.
+links:
+  - target: ../natural-feature/scioto-river-basin.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-watershed-boundary.md
+  - target: allen-county-quarries-2000-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/msha-mine-data.md
+  - target: allen-county-original-vegetation.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-3dep-elevation.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

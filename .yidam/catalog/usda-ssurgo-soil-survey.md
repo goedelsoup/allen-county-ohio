@@ -32,6 +32,8 @@ location:
 used-by:
   - ../corpus/measure/allen-county-soils-2026.yml
   - ../corpus/natural-feature/great-black-swamp.yml
+  - ../corpus/measure/allen-county-original-vegetation.yml
+  - ../corpus/place/allen-county.yml
 ---
 
 **A query without a county filter times out and a query with one does not.** The unfiltered
