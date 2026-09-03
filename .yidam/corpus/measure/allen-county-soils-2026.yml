@@ -1,0 +1,84 @@
+class: measure
+label: The soils of Allen County
+description: |
+  What the county is made of, by drainage, by wetness and by what it is good for. 260,340 acres in
+  80 map units and 436 soil components. [verified] —
+  [the SSURGO soil survey](../../catalog/usda-ssurgo-soil-survey.md), `areasymbol` OH003, acres
+  weighted by each component's share of its map unit.
+
+      drainage class                    acres    share
+      somewhat poorly drained         104,376    40.1%
+      very poorly drained              89,880    34.5%
+      moderately well drained          45,600    17.5%
+      water, pits and made land        13,936     5.4%
+      well drained                      6,160     2.4%
+      poorly drained                      388     0.1%
+
+  **Three quarters of this county drains badly and one fortieth of it drains well.** 74.7 per cent
+  is poorly drained or worse and 2.4 per cent is well drained. [verified] — the same file. That is
+  the physical fact under the county's canal, its ditches and its tile, and it is the first time
+  this corpus has held a number for it rather than an adjective.
+
+      prime farmland class                                    acres    share
+      prime farmland if drained                             191,298    73.5%
+      all areas are prime farmland                           38,749    14.9%
+      not prime farmland                                     22,560     8.7%
+      prime if drained and protected from flooding            7,450     2.9%
+      prime if protected from flooding                          283     0.1%
+
+  **Five acres in six of this county's prime farmland are prime only because they were drained.**
+  76.3 per cent of the county is classed prime *if drained* and 14.9 per cent is prime as it lies,
+  so of the 91.3 per cent that can be prime farmland, 83.6 per cent of it needs the water taken off
+  first. [verified] — the same file; the shares are computed here. The single most common phrase in
+  the survey's own farmland column is a conditional.
+
+  **Three soil series are three quarters of the county.** Blount is 37.7 per cent of it, Pewamo
+  25.3 and Glynwood 12.0 — 75.0 between them — and all three formed in the same clayey glacial
+  till. [verified] — the same file. Blount is somewhat poorly drained, Pewamo very poorly drained
+  and Glynwood moderately well drained, so the county's wetness is largely one soil association
+  read at three positions on a very slight slope. [inference]
+
+  **The Black Swamp here is clay and not peat.** Histosols — the organic soils a person picturing a
+  swamp would expect — cover 14 acres of 260,340. The county is 58.7 per cent Alfisols and 32.9 per
+  cent Mollisols. [verified] — the same file. Water stood on this ground because the till beneath it
+  would not let water through, not because the ground was made of what rotted in it. [inference]
+
+  **35.3 per cent of the county is hydric soil, which is ground that formed under standing water.**
+  91,953 acres. [verified] — the same file, `hydricrating`. Read against the drainage column it is
+  almost exactly the very-poorly-drained share, 34.5 per cent, which is what the two ratings ought
+  to do and is worth checking rather than assuming.
+
+  This corpus does not assert that the hydric acres are the Great Black Swamp. They are the best
+  proxy it holds and a proxy is not a boundary; see
+  [the swamp](../natural-feature/great-black-swamp.yml) for what the figure does and does not
+  settle, and [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml)
+  for the rule that let it be used at all.
+properties:
+  parameter: land poorly drained or worse
+  value: "74.7"
+  unit: per cent
+  as_of: "2025"
+  method: |
+    One Soil Data Access query joining `legend`, `mapunit` and `component` on `areasymbol = 'OH003'`,
+    returning 436 rows. [verified] Every share is acres weighted by component share of map unit —
+    `muacres` times `comppct_r` over 100 — because a map unit is a mixture and its rating is not a
+    single value. The alternatives are recorded in the catalogue and are not used. `as_of` is the
+    survey's own restoration date of 27 August 2025; its field lineage runs from 1965. Drainage,
+    hydric and taxonomic shares come from the component table and the prime-farmland share from the
+    map-unit table, which is why the second is a share of map-unit acres rather than of components.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usda-ssurgo-soil-survey.md
+  - target: ../natural-feature/great-black-swamp.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-farmland-1910-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-land-cover-2008-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
