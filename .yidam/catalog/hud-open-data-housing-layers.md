@@ -79,6 +79,20 @@ authority; per-property REAC inspection scores and inspection dates; operating a
 amounts and their prior-year values; and, in the buildings layer, a type and status code per
 structure. Nothing in the dated series describes condition at all.
 
+**The inspection score is a string and one of Allen County's is `97  b`.** `REAC_LAST_INSPECTION_SCORE`
+is typed as text and carries a letter suffix where the inspection found exigent health-and-safety
+items; nineteen of the county's twenty-one properties have a plain number and one has a number with
+a trailing `b`. [verified] — the multifamily layer. A numeric cast over the column drops or breaks
+on that row. The two properties with no score at all are the two newest, which have never been
+inspected.
+
+**The scores are dated per row, and the dates span four years.** Allen County's twenty-one
+properties were last inspected between 10 March 2022 and 31 March 2026, so no single date describes
+the set and the score column is not a snapshot of anything. [verified] — the same layer. This is the
+one place in these layers where a figure travels with its own date, which is what
+[a file has more than one date](../decisions/a-file-has-more-than-one-date.yml) asks for and the
+reason the scores can be published here while the fund amounts beside them cannot.
+
 **Names and addresses were retrieved and are not recorded here.** The authority and multifamily
 layers carry executive-director and managing-agent names, direct phone numbers, fax numbers and
 e-mail addresses; the buildings layer carries 194 street addresses, each one a place where somebody
