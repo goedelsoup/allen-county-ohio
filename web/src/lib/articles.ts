@@ -257,6 +257,22 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'a-third-of-the-children',
+    title: 'A third of the children',
+    dek: 'The county has 6,910 fewer schoolchildren than in 1988, and its Black pupils are far less concentrated in Lima than they were.',
+    section: 'people',
+    era: [1988, 2024],
+    assertions: [
+      'a-third-of-the-schoolchildren-are-gone',
+      'lima-holds-fewer-of-the-black-pupils',
+      'the-share-that-held-because-both-halves-emptied',
+    ],
+    entries: [
+      'measure/allen-county-school-enrolment-1988-2024.yml',
+      'measure/allen-county-school-enrolment-by-race-1988-2024.yml',
+    ],
+  },
+  {
     slug: 'one-renter-in-four',
     title: 'One renter in four',
     dek: 'Two thousand two hundred and fifty-one homes here have a federal subsidy on the rent, and eighty-six per cent of them are in Lima.',
