@@ -1,0 +1,117 @@
+class: measure
+label: House prices in Allen County's census tracts, 1986–2025
+description: |
+  The same federal index at tract grain, and the first thing it says is where it does not go.
+  [verified] — [the FHFA tract file](../../catalog/fhfa-house-price-index.md), 1,016 rows for
+  Allen County covering 1986 through 2025.
+
+  **The file holds 28 of the county's 35 census tracts, and all seven it omits are in Lima.**
+  Nineteen of nineteen tracts outside the city have an index. Nine of the city's sixteen do.
+  [verified] — the same file, against
+  [the block assignment](../../catalog/census-block-assignment-2020.md) that decides which tracts
+  are majority-Lima. Five of the seven lie entirely inside the city, one is 95.3 per cent inside
+  and one 71.3.
+
+  **That is 5,698 housing units and 11,543 people with no house price index at all**, 35.6 per
+  cent of Lima's housing stock and none of anybody else's. [verified] — the same two files,
+  computed here.
+
+  **The seven are exactly the seven tracts where the fewest mortgages are written.** Ranked by
+  loans originated per thousand housing units across 2018–2024, they are ranks 1 through 7 of 35;
+  ranked by loans that Fannie Mae or Freddie Mac went on to buy, they are ranks 1 through 7 of 35
+  again. The two lists are the same seven tracts in a different order, and the groups do not
+  overlap at the boundary: the highest unindexed tract writes 38.7 enterprise-purchased loans per
+  thousand units and the lowest indexed tract writes 41.0. [verified] —
+  [the lending register](../../catalog/hmda-loan-application-register.md) and the tract file,
+  computed here.
+
+      tract          housing units   originations/1,000   GSE-purchased/1,000   indexed
+      39003014100            1,048                 66.8                   9.5     no
+      39003013800            1,265                 94.9                  15.0     no
+      39003013400            1,117                 77.9                  16.1     no
+      39003012700              677                128.5                  16.2     no
+      39003013600              515                112.6                  19.4     no
+      39003013700              507                 90.7                  23.7     no
+      39003013300              569                168.7                  38.7     no
+      39003011301            2,051                174.5                  41.0    yes
+      ... twenty-six further indexed tracts, to
+      39003012000            1,074                833.3                 287.7    yes
+
+  **Two federal agencies draw the same line through one city and neither of them draws it.** The
+  Federal Housing Finance Agency publishes a price index and says only that it withholds one where
+  the sample is small; the Consumer Financial Protection Bureau publishes a register of
+  applications and says nothing about indexes. If the seven omitted tracts were any seven of
+  thirty-five, the chance of their being precisely the seven with the least lending is one in
+  6,724,520. [inference] — computed here. What the index cannot measure is what the enterprises
+  did not buy, and this is the measurement of it; see
+  [a gap in an index maps its instrument](../../decisions/a-gap-in-an-index-maps-its-instrument.yml).
+
+  **The thinness continues inside the tracts that do have an index.** Four of Lima's nine indexed
+  tracts carry all forty years and eleven of the nineteen outside do, but the interior holes are
+  almost all on one side: 16 missing years inside gaps in the Lima tracts against 1 outside, and
+  tract `39003012900` has ten readings across a twenty-two-year span. [verified] — the same tract
+  file, counted here.
+
+  **Where the index can see Lima, Lima moves with the county.** Across 2000 to 2025 the median
+  tract change in 1975-style real terms is 108.7 for the five Lima tracts with both endpoints and
+  111.1 for the eighteen outside — 2.4 points apart over twenty-five years — and the county's
+  highest and lowest tracts are both inside the city, at 131.4 and 87.9. [verified] — the same
+  file and [the CPI](../../catalog/bls-cpi.md), computed here.
+
+  **The bust hit the city harder and the boom has favoured it.** Over 2005 to 2014 the real median
+  is 71.0 for the eight Lima tracts against 76.8 for the nineteen outside; over 2019 to 2025 it is
+  138.7 against 128.4. [verified] — the same two files, computed here. Both differences are
+  medians of small groups and neither is separated from the other by more than the spread within
+  either group. [inference]
+
+  **The nine indexed Lima tracts are not a sample of Lima.** They are the nine of sixteen that rank
+  highest on the one variable that decides whether a tract appears in the file at all. So the
+  finding above is a statement about 10,324 of the city's 16,022 homes and cannot be widened to
+  the other 5,698 by any argument from the nine; see
+  [what a tract page may be quoted for](../../decisions/what-a-tract-page-may-be-quoted-for.yml).
+
+  **This corpus cannot say what happened to house prices in the seven Lima tracts the index does
+  not reach.** No source it holds prices a house below county grain over time. The survey gives
+  a level for the city as a whole — $95,900 against $210,200 in Shawnee Township — and one level
+  in one year is not a series.
+
+  [open] Whether the seven were ever in the file. The tract series begins in 1986 for the oldest
+  tracts and 1998 for most, and the 2020 tract geography this file uses did not exist before that
+  redraw, so the corpus has no way from this source to ask whether the ground under those seven
+  tracts had an index under an earlier numbering.
+properties:
+  parameter: census tracts with a house price index, and the lending that decides which
+  value: "28"
+  unit: of the county's 35 tracts
+  as_of: "2025"
+  method: |
+    Tracts are the 2020 vintage, and Lima membership is the majority of a tract's 2020 block
+    population lying inside the city — the same test
+    [the life expectancy node](allen-county-life-expectancy-2010-2015.yml) uses, and it returns the
+    same sixteen. [verified] Lending counts are originations only, action taken 1, over the seven
+    registers 2018 through 2024; enterprise purchase is `purchaser_type` 1 or 3, which understates
+    the enterprises' eventual holdings because a loan bought in a later year is recorded against
+    that year's file. [verified] The understatement cannot reverse the ranking, because the two
+    orderings agree and the plain origination count is not subject to it. [inference] Real tract
+    changes deflate by the national CPI-U annual average, as the county series does. [verified]
+links:
+  - target: allen-county-house-prices-1975-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fhfa-house-price-index.md
+  - target: allen-county-home-lending-2018-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: allen-county-life-expectancy-2010-2015.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-housing-stock-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fhfa-house-price-index.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
