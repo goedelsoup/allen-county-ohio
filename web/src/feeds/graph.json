@@ -4730,6 +4730,65 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-federal-aid-highways-2018.yml",
+      "class": "measure",
+      "label": "The federal-aid highways of Allen County, 2018",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2018",
+        "method": "The Ohio 2018 HPMS public release feature layer, queried on `county_code=3` and paged at 2,000 rows. Section length is `end_point` minus `begin_point`, which the file states in miles along the route; the sections were checked for overlap by taking the union of the intervals per route before any mileage was summed. Vehicle-miles are `aadt` times section length, summed. Route class is characters five and six of `route_id`. These are route miles and not centerline miles: the same interstate is 46.31 miles in the Census Bureau's linework, and the difference is the subject of [a centerline is not a road](../../decisions/a-centerline-is-not-a-road.yml). [verified]",
+        "parameter": "federal-aid highway centerline in Allen County",
+        "unit": "miles",
+        "value": "359.2"
+      },
+      "blocks": [
+        {
+          "text": "**One file names the owner of a road in this county, and it covers a sixth of the network.** 359.2 miles of the county's 2,225.6, in 87 routes and 2,035 sections. [verified] — [the HPMS public release](../../catalog/fhwa-hpms-public-release.md), against [the county's road linework](allen-county-roads-2010-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Half of it belongs to the state and the state carries seventy-two per cent of the traffic.** The state highway agency owns 182.1 of the 359.2 miles, the county 117.0, the municipalities 39.3 and the townships 20.8; the state's share of the daily vehicle-miles is 72.0 per cent against the county's 16.7, the municipalities' 8.3 and the townships' 3.0. [verified] — the same source, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Interstate 75 is 1.04 per cent of the county's road and a third of the traffic on everything this file measures.** 23.12 miles carrying 835,274 vehicle-miles a day — 32.6 per cent of the federal-aid total — with a daily count that runs from 29,733 at the county line to 43,120 through Lima. [verified] — same source, by route.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two federal routes cross this county and there are no others.** I-75 and US 30, 47.2 miles between them; fourteen state routes add 134.9, fifty-one county roads add 150.0 and sixteen township roads add 25.8. [verified] — same source, by route identifier.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The longest road in Allen County is a state route and it is not a federal one.** State Route 81 runs 28.98 miles across the county, half a mile longer than State Route 117 and nearly six longer than the interstate. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**23 of the 87 routes change owner along their length, and every change is into a municipality.** 19 county roads become city or municipal and 4 township roads do; not one route in the county changes between state and county, or between county and township. The only ownership boundary this file records is a corporation line. [verified] — same source, by route.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two hundred and seventy of these miles are two lanes wide.** 270.3 miles of two-lane against 87.9 of four, for 895.9 lane-miles over 359.2 centerline miles — an average of 2.49 lanes. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its pavement rating is a rating of state pavement.** Roughness is reported on 109.5 of the 359.2 miles, and of those 57.2 per cent are good, 30.1 fair and 12.7 poor at a median index of 88. But the state's share of its own mileage that is rated is 46.7 per cent against 14.9 for the county, 13.1 for the townships and 10.9 for the municipalities, so a county-wide condition figure computed from this file is mostly a figure about roads the state owns. [verified] — same source, by owner; see [a source is also a filter](../../decisions/a-source-is-also-a-filter.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its sections tile its routes exactly.** The sum of 2,035 section lengths and the union of the intervals they cover are both 359.2 miles: no overlap and no gap. [verified] — the same source, computed here; see [arithmetic that closes is about the compiler](../../decisions/arithmetic-that-closes-is-about-the-compiler.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say who is responsible for the other 1,866 miles.** The federal-aid system is the part of the network the federal government helps pay for, and it is defined by function rather than by ownership: a township road carrying enough traffic is in it and a city street carrying little is not. What this file leaves out is not a class of owner but the low end of every owner's holdings. [verified] — the coverage rule the publisher states, and the ownership table above.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say who is responsible for the other 1,866 miles.** The federal-aid system is the part of the network the federal government helps pay for, and it is defined by function rather than by ownership: a township road carrying enough traffic is in it and a city street carrying little is not."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
       "class": "measure",
       "label": "Allen County foreclosures and evictions, 2007–2017",
@@ -8957,6 +9016,73 @@
         "This corpus cannot say what happened in 2021."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-roads-2010-2024.yml",
+      "class": "measure",
+      "label": "Roads in Allen County, 2010–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "The 2024 TIGER/Line road file for county 39003, projected to EPSG:6549 — Ohio North, US survey feet — and summed by feature class. Driveable is the six classes a car can use: primary, secondary, local, vehicular trail, ramp and service drive. Alleys, private service roads, parking-lot roads and the Bureau's internal class are excluded and stated separately. Municipal and township figures are the length of each segment's intersection with the 2024 place and county-subdivision polygons, so a road on a township line is counted in both and the parts sum to more than the whole. The projection was checked before any length was computed, by projecting the county polygon and comparing its area to the published one: agreement to 0.01 per cent. [verified] Every figure is centerline and not route mileage. [verified]",
+        "parameter": "driveable road centerline in Allen County",
+        "unit": "miles",
+        "value": "2225.6"
+      },
+      "blocks": [
+        {
+          "text": "**This corpus held 364 bridges and no roads under them.** It knew the county's bridges by owner and condition back to 1992, its road deaths back to 1975 and its railroads back to 1883, and had never counted a mile of highway. [verified] — [the bridges](allen-county-bridges-2025.yml) and [the road deaths](allen-county-road-deaths-1975-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County has 2,225.6 miles of driveable road, 5.53 miles for every square mile of it.** [verified] — [the Census Bureau's road linework](../../catalog/census-tiger-roads.md), 2024 edition, computed here against [the county's land area](allen-county-land-area-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The four primary-road segments are two roads drawn twice.** Interstate 75 appears as two lines of 23.167 and 23.139 miles and US 30 as two of 1.952 and 1.737, because the file draws one line per carriageway of a divided highway. The federal highway file measures the same interstate once, at 23.12 route miles, and the same US 30 at 24.06 against this file's 48.098 — ratios of 2.0030 and 1.9991. [verified] — the same source against [the federal-aid file](../../catalog/fhwa-hpms-public-release.md). Every figure in this node is therefore centerline miles and not route miles; see [a centerline is not a road](../../decisions/a-centerline-is-not-a-road.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**One mile in eight is inside Lima, on a thirtieth of the ground.** [verified] — the same linework, clipped to the municipal boundaries here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima is 3.38 per cent of the county's land and 12.61 per cent of its road.** The city carries 20.61 miles of street to the square mile against 5.00 for everywhere else. [verified] — the same file, computed here against [Lima's land area](lima-land-area-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Turned round, the ratio reverses and it is the more consequential figure.** A person living outside Lima has 29.4 miles of road per thousand residents to a Lima resident's 8.1 — **3.63 times as much** — and no municipality is responsible for most of it. [inference] — the same linework against [Lima's population](lima-population-2024.yml) and [the county's](allen-county-population-2024.yml). The corpus does not read that as a claim about cost, because this file carries no surface, no width and no condition and a mile of township gravel is not a mile of city street. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Road density sorts the townships the way settlement does.** [verified] — the same source, by county subdivision.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Those thirteen sum to 2,314.1 miles and the county has 2,225.6.** The excess of 88.5 miles is road running along a township line, which lies inside both townships; 49 segments and 76.3 miles of it are counted at more than one and a half times their own length. A part that sums to more than its whole is not an error in the file — it is what a boundary drawn down the middle of a road does to any arithmetic over it. [verified] — the same linework, computed here; see [a centerline is not a road](../../decisions/a-centerline-is-not-a-road.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The file's last three editions are identical and its earlier moves are the cartographer.** The county's driveable mileage reads 2,358.5 in 2010, 2,299.1 in 2013, 2,304.2 in 2016, 2,226.7 in 2019, 2,225.6 in 2022 and 2,225.6 in 2024. [verified] — the same source, six editions of it, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nothing in this county was built or removed to make those numbers.** Between the 2016 and 2019 editions US 30's mileage is 48.098 in both, to a thousandth, while 3.689 miles of it move from secondary road to primary and the county's secondary total falls by 3.743. Between 2016 and 2019 the file also loses 1,273 segments and 77.5 driveable miles, in three years during which seven municipalities were annexing ground and the county was authorising new houses. [verified] — the same source, two editions of it, against [the annexations](allen-county-annexations-1990-2024.yml). Read as a series this file measures the Bureau's map maintenance; see [a column can empty into its neighbour](../../decisions/a-column-can-empty-into-its-neighbour.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**One bridge for every 6.11 miles of it.** The 364 highway bridges in this county's inventory stand on 2,225.6 miles of road. [verified] — [the bridges](allen-county-bridges-2025.yml) and the linework, computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say how many miles of road Allen County maintains.** This file has no ownership column and the one federal file that does covers a sixth of the network. Nine municipalities, twelve townships and [the county engineer](../office/allen-county-engineer.yml) divide the rest between them, and no source this corpus has reached says how. [verified] — the schema of the linework, and [the federal-aid file](../../catalog/fhwa-hpms-public-release.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how many miles of road Allen County maintains.** This file has no ownership column and the one federal file that does covers a sixth of the network."
+      ],
+      "withheld": 5
     },
     {
       "id": "measure/allen-county-school-boards-2026.yml",
@@ -18713,6 +18839,14 @@
         {
           "text": "**The tax set outliving the levy is the sharper detail.** A village that had merely stopped levying would keep a lower township rate, because a village's residents are outside some township levies; L36's township rate rises to the full 15.600 in the same move. The set that survives into 2014 and 2015 is a label on rows identical to the township's, which is what an administrative record looks like after the thing it names has gone. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**A third federal file draws the same change in the same year, and it is not a third witness.** The Census Bureau's TIGER/Line place file carries Fort Shawnee in 2011 and 2012 with legal code 47, class C1 and feature class G4110 — an incorporated place — and in 2013 and 2014 with code 57, class U1 and G4210, a census designated place. Its land area goes from 18,530,879 square metres to 24,626,518 across that boundary. [verified] — [the Census Bureau's TIGER/Line files](../../catalog/census-tiger-roads.md), Ohio place, 2011 to 2014.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Those are the gazetteer's own figures to three decimals, which is what says the two are one witness.** 18,530,879 square metres is 7.155 square miles and 24,626,518 is 9.508 — the two numbers the gazetteer already gave this node, exactly. A boundary file and a gazetteer published by one bureau off one geography are not independent, and the agreement between them is evidence about the pipeline rather than about Fort Shawnee. [inference] — see [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml). What it does establish is that the change was made once, in the geography, and propagated: the same act reaches a map, a gazetteer and an area table without drift.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -23314,6 +23448,27 @@
       "source": "catalog/usda-census-of-agriculture.md"
     },
     {
+      "from": "measure/allen-county-federal-aid-highways-2018.yml",
+      "to": "measure/allen-county-roads-2010-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fhwa-hpms-public-release.md"
+    },
+    {
+      "from": "measure/allen-county-federal-aid-highways-2018.yml",
+      "to": "measure/allen-county-bridges-2025.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-federal-aid-highways-2018.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fhwa-hpms-public-release.md"
+    },
+    {
       "from": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -24670,6 +24825,34 @@
       "relationship": "relates-to",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "measure/allen-county-roads-2010-2024.yml",
+      "to": "measure/allen-county-federal-aid-highways-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fhwa-hpms-public-release.md"
+    },
+    {
+      "from": "measure/allen-county-roads-2010-2024.yml",
+      "to": "measure/allen-county-bridges-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-tiger-roads.md"
+    },
+    {
+      "from": "measure/allen-county-roads-2010-2024.yml",
+      "to": "measure/allen-county-road-deaths-1975-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-roads-2010-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-tiger-roads.md"
     },
     {
       "from": "measure/allen-county-school-boards-2026.yml",
