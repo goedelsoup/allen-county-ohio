@@ -1,0 +1,108 @@
+class: measure
+label: Deaths on Allen County roads, 1975–2024
+description: |
+  Seven hundred and sixty people died in 666 crashes on this county's roads in the fifty years from
+  1975 to 2024. [verified] —
+  [the Fatality Analysis Reporting System](../../catalog/nhtsa-fars.md), national crash files for
+  every year of the run, Ohio state code 39, county code 3.
+
+      decade        crashes   deaths   deaths a year   per 100,000
+      1975–1984         162      194            19.4          17.3
+      1985–1994         158      181            18.1          16.5
+      1995–2004         135      155            15.5          14.3
+      2005–2014          99      108            10.8          10.2
+      2015–2024         112      122            12.2          11.9
+
+  **The roads take about a third fewer than they did, and the fall stopped.** The county's worst
+  decade is its first and its best is 2005–2014; the decade just ended is worse than that one by
+  fourteen deaths. [verified] — the same files. Rates use the census count nearest each decade's
+  middle, so they carry the county's own decline in the denominator as well as the roads' in the
+  numerator.
+
+  **It is Ohio's shape and not the country's.** Indexed to 1975–1984, the last decade stands at 62.9
+  here, 64.4 in Ohio and 82.7 in the United States. [verified] — the same files summed over every
+  county row in them. The county and the state fell by more than a third across fifty years and the
+  nation by less than a fifth.
+
+  **One year in the fifty stands outside the rest of the record.** In 2021 there were 23 fatal
+  crashes and 25 deaths, the most since 1978, in a county whose other nine years of that decade
+  average 10.8. [verified] — the same files. Ohio rose 10.1 per cent that year and the United States
+  10.8; Allen County rose 150. None of the 23 crashes killed more than two people, so it is not one
+  catastrophe but twenty-three separate ones, seven of them in November.
+
+  A count that small moves on its own, and this one does not. Against a Poisson draw with the
+  decade's own mean, 25 or more arrives once in 6,800 years; even allowing for the fifty chances a
+  fifty-year record gives, the odds are about one in 140. [inference] — computed here, and see
+  [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml).
+
+  This corpus cannot say what happened in 2021. [inference] — a crash file carries the road, the
+  hour and the weather and no reason.
+
+  **A third of the fatal crashes involve a drinking driver and that share has not moved in
+  forty-six years.** By decade it runs 33.3, 36.7, 29.6, 35.4 and 38.6 per cent — 221 drinking
+  drivers across 611 crashes. [verified] — the same files, `DRUNK_DR`, which the accident file
+  carries from 1975 to 2020 and not after. The count of fatal crashes fell by a third over those
+  years and the share of them with drink in them did not fall at all. [inference]
+
+  **State and county highways kill more people here than the interstate does.**
+
+      road class, 1987–2024              deaths    share
+      state highway                         176    33.0%
+      county road                           140    26.3%
+      local street, municipality             69    12.9%
+      interstate                             68    12.8%
+      U.S. highway                           31     5.8%
+      local street, township                 31     5.8%
+      other or unknown                       18     3.4%
+
+  Interstate 75 runs the length of the county and accounts for one death in eight; the two-lane
+  state and county roads outside Lima account for three in five. [verified] — the same files,
+  `ROUTE`, 533 deaths on rows that carry it.
+
+  **A quarter of them died between midnight and six in the morning.** 180 deaths of 758 with an hour
+  recorded fall in those six hours, against 113 in the six from six to noon. [verified] — the same
+  files. August is the worst month with 86 and December the best with 45.
+
+  **Pedestrians and cyclists are a larger part of it than they were.** Twelve were involved in fatal
+  crashes here in 1991–2000, eleven in 2001–2010 and 22 in 2011–2024. [verified] — the same files,
+  `PEDS`, which the accident file gains in 1991. Eight of the 22 are in 2021 alone.
+
+  **Most fatal crashes kill one person and 73 of the 666 killed more.** The worst in the fifty years
+  killed six on 27 March 1979; a crash on 9 October 1996 killed five on Interstate 75 and one on 10
+  February 1998 killed four on the same road. [verified] — the same files. The record carries no
+  names and no narrative, which is why none of these is an event node here.
+
+  Twenty-eight of the deaths happened where a road crosses a railway, and none since 2005. See
+  [the crossings](allen-county-rail-crossing-deaths-1980-2005.yml). [inference]
+properties:
+  parameter: deaths in motor vehicle crashes
+  value: "760"
+  unit: deaths
+  as_of: "2024"
+  method: |
+    NHTSA's national accident file for each year 1975 to 2024, filtered to `STATE` 39 and `COUNTY`
+    3, decoded as `utf-8-sig` because two of the fifty files carry a byte-order mark. [verified]
+    Deaths are the sum of `FATALS`, which counts everyone who died within thirty days of the crash,
+    including people not in a vehicle. Rates per 100,000 use the decennial census count nearest each
+    decade's middle — 112,241 for 1975–1984, then 109,755, 108,464, 106,331 and 102,217 — so a
+    decade's rate is a ten-year average against one population and not a mean of ten annual rates.
+    The state and national figures are this corpus's own sums over every county row of the same
+    files. The road-class table begins in 1987 because `ROUTE` does; the alcohol series ends in 2020
+    because `DRUNK_DR` leaves the file.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nhtsa-fars.md
+  - target: allen-county-rail-crossing-deaths-1980-2005.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nhtsa-fars.md
+  - target: allen-county-early-deaths-by-cause-2020-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-bridges-2025.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
