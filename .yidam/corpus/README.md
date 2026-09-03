@@ -143,6 +143,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-general-fund-2025.yml](measure/allen-county-general-fund-2025.yml) | measure | Allen County's General Fund, 2025 | 2 | 9v / 4i / 2o | 102 |
 | [allen-county-governor-vote-2002-2018.yml](measure/allen-county-governor-vote-2002-2018.yml) | measure | Allen County vote for governor, 2002–2018 | 5 | 4v / 3i / 0o | 72 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
+| [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 6 | 8v / 3i / 0o | 99 |
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 2 | 6v / 5i / 2o | 111 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 2 | 6v / 4i / 1o | 60 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
@@ -219,16 +220,17 @@ Sorted by: kind, then alphabetically.
 | [allen-county-road-deaths-1975-2024.yml](measure/allen-county-road-deaths-1975-2024.yml) | measure | Deaths on Allen County roads, 1975–2024 | 5 | 10v / 4i / 0o | 108 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
-| [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 5 | 8v / 3i / 1o | 119 |
+| [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 7 | 9v / 3i / 1o | 136 |
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2009-2022 | 4 | 8v / 1i / 1o | 82 |
 | [allen-county-school-enrolment-by-race-1988-2024.yml](measure/allen-county-school-enrolment-by-race-1988-2024.yml) | measure | Who the children in Allen County's schools are, 1988–2024 | 5 | 9v / 3i / 1o | 100 |
-| [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 3 | 5v / 3i / 0o | 65 |
+| [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 4 | 6v / 4i / 0o | 79 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
+| [allen-county-test-proficiency-2009-2018.yml](measure/allen-county-test-proficiency-2009-2018.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2018 | 6 | 7v / 3i / 1o | 93 |
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
