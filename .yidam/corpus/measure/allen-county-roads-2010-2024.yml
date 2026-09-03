@@ -1,0 +1,151 @@
+class: measure
+label: Roads in Allen County, 2010–2024
+description: |
+  **This corpus held 364 bridges and no roads under them.** It knew the county's bridges by owner
+  and condition back to 1992, its road deaths back to 1975 and its railroads back to 1883, and had
+  never counted a mile of highway. [verified] — [the bridges](allen-county-bridges-2025.yml) and
+  [the road deaths](allen-county-road-deaths-1975-2024.yml).
+
+  **Allen County has 2,225.6 miles of driveable road, 5.53 miles for every square mile of it.**
+  [verified] — [the Census Bureau's road linework](../../catalog/census-tiger-roads.md), 2024
+  edition, computed here against [the county's land area](allen-county-land-area-2020.yml).
+
+      class                                    segments     miles
+      local road, rural road or city street        8,099   1,814.9
+      secondary road                                 154     343.9
+      primary road                                     4      50.0
+      ramp                                            42      16.0
+      service drive                                   14       0.8
+      driveable total                              8,313   2,225.6
+      alleys, private and parking-lot roads           46       6.7
+      everything in the file                       8,360   2,232.3
+
+  **The four primary-road segments are two roads drawn twice.** Interstate 75 appears as two lines
+  of 23.167 and 23.139 miles and US 30 as two of 1.952 and 1.737, because the file draws one line
+  per carriageway of a divided highway. The federal highway file measures the same interstate once,
+  at 23.12 route miles, and the same US 30 at 24.06 against this file's 48.098 — ratios of 2.0030
+  and 1.9991. [verified] — the same source against
+  [the federal-aid file](../../catalog/fhwa-hpms-public-release.md). Every figure in this node is
+  therefore centerline miles and not route miles; see
+  [a centerline is not a road](../../decisions/a-centerline-is-not-a-road.yml).
+
+  **One mile in eight is inside Lima, on a thirtieth of the ground.** [verified] — the same linework,
+  clipped to the municipal boundaries here.
+
+      where                    miles    per cent
+      Lima                     280.7      12.6%
+      Bluffton                  44.7       2.0%
+      Delphos                   41.4       1.9%
+      Elida                     18.9       0.8%
+      Spencerville              17.9       0.8%
+      Beaverdam                  9.0       0.4%
+      Cairo                      6.2       0.3%
+      Harrod                     5.7       0.3%
+      Lafayette                  4.2       0.2%
+      the nine corporations    428.7      19.3%
+      unincorporated         1,797.0      80.7%
+
+  **Lima is 3.38 per cent of the county's land and 12.61 per cent of its road.** The city carries
+  20.61 miles of street to the square mile against 5.00 for everywhere else. [verified] — the same
+  file, computed here against [Lima's land area](lima-land-area-2020.yml).
+
+  **Turned round, the ratio reverses and it is the more consequential figure.** A person living
+  outside Lima has 29.4 miles of road per thousand residents to a Lima resident's 8.1 — **3.63
+  times as much** — and no municipality is responsible for most of it. [inference] — the same
+  linework against [Lima's population](lima-population-2024.yml) and
+  [the county's](allen-county-population-2024.yml). The corpus does not read that as a claim about
+  cost, because this file carries no surface, no width and no condition and a mile of township
+  gravel is not a mile of city street. [inference]
+
+  **Road density sorts the townships the way settlement does.** [verified] — the same source, by
+  county subdivision.
+
+      subdivision      miles   sq mi   per sq mi
+      Lima             280.7   13.62      20.61
+      American         177.2   24.02       7.38
+      Shawnee          206.3   28.97       7.12
+      Bath             205.9   30.70       6.71
+      Richland         250.4   41.65       6.01
+      Spencer          124.8   23.31       5.35
+      Marion           221.9   42.37       5.24
+      Perry            154.2   32.70       4.72
+      Jackson          158.6   35.72       4.44
+      Auglaize         159.0   35.99       4.42
+      Monroe           157.2   36.09       4.36
+      Amanda           128.9   33.31       3.87
+      Sugar Creek       89.0   24.09       3.69
+
+  **Those thirteen sum to 2,314.1 miles and the county has 2,225.6.** The excess of 88.5 miles is
+  road running along a township line, which lies inside both townships; 49 segments and 76.3 miles
+  of it are counted at more than one and a half times their own length. A part that sums to more
+  than its whole is not an error in the file — it is what a boundary drawn down the middle of a
+  road does to any arithmetic over it. [verified] — the same linework, computed here; see
+  [a centerline is not a road](../../decisions/a-centerline-is-not-a-road.yml).
+
+  **The file's last three editions are identical and its earlier moves are the cartographer.**
+  [verified] — the six editions, computed here.
+
+      edition   segments   driveable miles
+      2010         9,845           2,358.5
+      2013         9,621           2,299.1
+      2016         9,665           2,304.2
+      2019         8,392           2,226.7
+      2022         8,359           2,225.6
+      2024         8,360           2,225.6
+
+  **Nothing in this county was built or removed to make those numbers.** Between the 2016 and 2019
+  editions US 30's mileage is 48.098 in both, to a thousandth, while 3.689 miles of it move from
+  secondary road to primary and the county's secondary total falls by 3.743. Between 2016 and 2019
+  the file also loses 1,273 segments and 77.5 driveable miles, in three years during which seven
+  municipalities were annexing ground and the county was authorising new houses. [verified] — the
+  same editions against [the annexations](allen-county-annexations-1990-2024.yml). Read as a series
+  this file measures the Bureau's map maintenance; see
+  [a column can empty into its neighbour](../../decisions/a-column-can-empty-into-its-neighbour.yml).
+
+  **One bridge for every 6.11 miles of it.** The 364 highway bridges in this county's inventory
+  stand on 2,225.6 miles of road. [verified] — [the bridges](allen-county-bridges-2025.yml) and the
+  linework, computed here.
+
+  **This corpus cannot say how many miles of road Allen County maintains.** This file has no
+  ownership column and the one federal file that does covers a sixth of the network. Nine
+  municipalities, twelve townships and [the county engineer](../office/allen-county-engineer.yml)
+  divide the rest between them, and no source this corpus has reached says how. [verified] — the
+  schema of the linework, and [the federal-aid file](../../catalog/fhwa-hpms-public-release.md).
+
+  [open] What the county engineer's own certified mileage says. Ohio requires an annual mileage
+  certification from every county, and the department that compiles it serves this client a 404 at
+  every path tried, including its own root. That is a working publication this corpus has not
+  reached rather than one it has ruled out.
+properties:
+  parameter: driveable road centerline in Allen County
+  value: "2225.6"
+  unit: miles
+  as_of: "2024"
+  method: |
+    The 2024 TIGER/Line road file for county 39003, projected to EPSG:6549 — Ohio North, US survey
+    feet — and summed by feature class. Driveable is the six classes a car can use: primary,
+    secondary, local, vehicular trail, ramp and service drive. Alleys, private service roads,
+    parking-lot roads and the Bureau's internal class are excluded and stated separately. Municipal
+    and township figures are the length of each segment's intersection with the 2024 place and
+    county-subdivision polygons, so a road on a township line is counted in both and the parts sum
+    to more than the whole. The projection was checked before any length was computed, by
+    projecting the county polygon and comparing its area to the published one: agreement to 0.01
+    per cent. [verified] Every figure is centerline and not route mileage. [verified]
+links:
+  - target: allen-county-federal-aid-highways-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fhwa-hpms-public-release.md
+  - target: allen-county-bridges-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-tiger-roads.md
+  - target: allen-county-road-deaths-1975-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-tiger-roads.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
