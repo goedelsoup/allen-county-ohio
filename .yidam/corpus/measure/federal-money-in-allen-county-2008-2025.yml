@@ -1,0 +1,104 @@
+class: measure
+label: Federal money in Allen County, 2008–2025
+description: |
+  **The corpus knew the county's own books and not the largest set of books over them.** It held a
+  county government running on $374,841,547, a library system, a tax base and eleven elected
+  offices, and had never asked what the United States spends here. [verified] —
+  [the county's books](allen-county-funds-2025.yml).
+
+  **The answer is $668,254,916 in federal year 2025 — $6,625 for every resident — and 93.5 per cent
+  of it is payments to individuals.** [verified] —
+  [USAspending](../../catalog/usaspending.md), place of performance, against
+  [the county's population](allen-county-population-2024.yml).
+
+      federal year 2025, work and payments performed in Allen County
+      direct payments to individuals    624,822,215
+      grants                             31,324,339
+      contracts                          10,326,721
+      loans                                 388,424
+      other                               1,393,217
+      all                               668,254,916
+
+  **Four Social Security programmes are four fifths of the whole year.** Retirement insurance
+  $402,802,985, disability $64,160,105, survivors $44,657,548 and supplemental security income
+  $24,765,623 — $536,386,261 between them, $5,318 a head across everybody in the county. Veterans'
+  compensation for service-connected disability adds $40,574,698. [verified] — same source, by
+  assistance listing. What a federal budget does in a county like this one is mostly send cheques to
+  old people. [inference]
+
+  **The largest grant programme over eighteen years is roads.** Highway planning and construction
+  has brought $255,335,761 since 2008, against Head Start's $69,991,874, the education
+  stabilization fund's $38,535,550 and the health centre programme's $49,416,292 across two
+  listings. [verified] — same source. Spread across the 359.2 miles of federal-aid highway this
+  county has, that is $710,846 a mile in eighteen years. [inference] — computed here against
+  [the federal-aid system](allen-county-federal-aid-highways-2018.yml).
+
+  **The same file answers this question twice and the two answers differ by a factor of seven on
+  contracts.** The ratio of the place-of-performance total to the recipient-location total is 7.03
+  on contracts and 1.97 across all award types. [verified] — the same source, both scopes, summed
+  here.
+
+      federal years 2008-2025          place of performance    recipient location   ratio
+      contracts                           1,088,368,417           154,761,289        7.03
+      all award types                    11,102,210,910         5,634,911,850        1.97
+
+  **Neither is wrong.** One counts where the work was done and the other where the payee's address
+  is, and the gap is what it means for a county's largest installations to be owned and operated
+  from elsewhere. [inference] — see
+  [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml) and
+  [the contracts](federal-contracts-in-allen-county-2008-2025.yml).
+
+  **The recipient-location series has a break at 2017 and the other scope is the control.**
+  [verified] — the same source, both scopes.
+
+      federal year   recipient location    place of performance
+      2016              51,043,397            476,140,899
+      2017             365,279,284            464,299,438
+      2018             475,829,981            520,037,772
+
+  **Nothing about this county changed in those two years.** The performance series does not move
+  across them; the recipient series multiplies by nine and then by another third, because payments
+  to individuals began being attributed to a county in that view. The recipient series is unusable
+  before 2018 and this node states no figure from it earlier than that. [verified] — the same
+  source; see
+  [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).
+
+  **This corpus cannot say what share of this money stays here.** A dollar of Social Security is
+  spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a
+  dividend in unknown proportions, and no source held here divides any of them. [verified] — the
+  fields this source has.
+
+  [open] What the county, the townships and the municipalities receive as governments rather than
+  as places. The grant listings above name programmes and not the bodies that drew them, and a
+  recipient-level query on assistance would give it for the years after the 2017 break only.
+properties:
+  parameter: federal money for work and payments performed in Allen County
+  value: "668254916"
+  unit: dollars
+  as_of: "2025"
+  method: |
+    USAspending's geography endpoint for county 39003, one request per federal year from 2008 to
+    2025 and per award-type group — contracts, grants, direct payments, loans and other — run twice,
+    once with `scope: place_of_performance` and once with `scope: recipient_location`. A federal
+    year runs 1 October to 30 September and is named for the year it ends in. Every figure in this
+    node is place of performance unless the sentence says otherwise, and the two totals are never
+    added together. Assistance listings and agencies come from the category endpoint with the same
+    county filter. The service serves nothing earlier than 1 October 2007, so 2008 is the first
+    complete year. [verified]
+links:
+  - target: federal-contracts-in-allen-county-2008-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usaspending.md
+  - target: allen-county-federal-aid-highways-2018.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-funds-2025.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usaspending.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

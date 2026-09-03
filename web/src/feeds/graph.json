@@ -10903,6 +10903,116 @@
       "withheld": 2
     },
     {
+      "id": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "class": "measure",
+      "label": "Federal contracts performed in Allen County, 2008–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "USAspending's geography, category and award endpoints for county 39003 with award-type codes A, B, C and D, filtered on `place_of_performance_locations` for every figure here except where the sentence says recipient location. Federal years 2008 to 2025, each running 1 October to 30 September and named for the year it ends in. Award amounts are obligations recorded against the award, not disbursements, and an award's dollars sit in the year it was signed. Every recipient named here is a corporation. [verified]",
+        "parameter": "federal contract dollars performed in Allen County",
+        "unit": "dollars",
+        "value": "1088368417"
+      },
+      "blocks": [
+        {
+          "text": "**$1,088,368,417 of federal contract work has been performed in Allen County since 2008, and 97.4 per cent of it was bought by the Department of Defense.** Veterans Affairs is the next largest at $16,594,375 and the General Services Administration at $11,081,336; the whole of the rest of the federal government comes to $134,589. [verified] — [USAspending](../../catalog/usaspending.md), place of performance, by awarding agency.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four firms are 92.2 per cent of it and only one of them is from here.** General Dynamics Land Systems $453,692,926, Husky Marketing and Supply $328,850,129, Siemens Government Technologies $119,408,473 and Superior Forge & Steel $101,917,494. [verified] — same source, by recipient.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three of those four vanish when the same file is asked who was paid.** $901,951,528 of work done on this county's ground is recorded, in the recipient view, against corporate addresses elsewhere; Superior Forge & Steel is a Lima firm and appears in both. [verified] — same source, both scopes. See [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The largest single award names the customer and it is not the United States.** $71,709,279 to General Dynamics Land Systems, 30 December 2010 to 2 July 2012, for \"(42) MATERIAL SETS FOR THE CONVERSION OF M1A2 TANKS TO M1A2S CONFIGURATION FOR THE KINGDOM OF SAUDI ARABIA\". [verified] — same source, the award endpoint. The plant is [the Army's](../site/lima-army-tank-plant.yml), the work is a foreign military sale, and the money is an Army contract. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The refinery sells the military jet fuel.** Three awards to Husky Marketing and Supply from the Defense Logistics Agency for `TURBINE FUEL, JP8` — $178,794,000 running from March 2009, $84,717,360 from April 2010 and $64,361,472 from April 2008. [verified] — same source. Husky is the name [the Lima refinery](../site/lima-refinery.yml) was operated under from 2010, and JP8 is a kerosene the refinery's own product slate would carry. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The tank plant's utilities are a twenty-two-year contract.** $127,157,950 to Siemens Government Technologies for \"ENERGY CONSERVATION MEASURES AT JSMC LIMA, OH\", 30 December 2016 to 31 May 2038. [verified] — same source. It is the longest period of performance in the county's contract record and it is about a boiler house. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A Lima forge makes the casings for the largest conventional bomb the Air Force has.** Superior Forge & Steel Corp holds five Air Force awards worth $94,389,046 between 2018 and 2025 for \"BLU-137/B PENETRATOR WARHEAD PRODUCTION\" and \"MASSIVE ORDNANCE PENETRATOR WARHEAD CASES\". [verified] — same source, by award. This is the county's own firm in the county's largest industry, and the corpus had it in no other file. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The war and the county's payroll are the same series.** Contract dollars performed here run $336,002,168 in 2008 and $187,216,406 in 2009, fall to $4,193,943 by 2015, and rise again to $83,924,189 in 2020 and $83,167,145 in 2021. [verified] — the same source, by federal year. The corpus does not read that as a measure of employment at any plant, because a contract's dollars are obligated in the year it is signed and the work runs for years afterwards. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**This corpus cannot say how many people in Allen County are paid out of these contracts.** An award records an obligation to a company, not a payroll, and the file carries no employment figure at all. [verified] — the fields this source has; against [the county's private employers](allen-county-private-employers-1986-2023.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how many people in Allen County are paid out of these contracts.** An award records an obligation to a company, not a payroll, and the file carries no employment figure at all."
+      ],
+      "withheld": 3
+    },
+    {
+      "id": "measure/federal-money-in-allen-county-2008-2025.yml",
+      "class": "measure",
+      "label": "Federal money in Allen County, 2008–2025",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025",
+        "method": "USAspending's geography endpoint for county 39003, one request per federal year from 2008 to 2025 and per award-type group — contracts, grants, direct payments, loans and other — run twice, once with `scope: place_of_performance` and once with `scope: recipient_location`. A federal year runs 1 October to 30 September and is named for the year it ends in. Every figure in this node is place of performance unless the sentence says otherwise, and the two totals are never added together. Assistance listings and agencies come from the category endpoint with the same county filter. The service serves nothing earlier than 1 October 2007, so 2008 is the first complete year. [verified]",
+        "parameter": "federal money for work and payments performed in Allen County",
+        "unit": "dollars",
+        "value": "668254916"
+      },
+      "blocks": [
+        {
+          "text": "**The corpus knew the county's own books and not the largest set of books over them.** It held a county government running on $374,841,547, a library system, a tax base and eleven elected offices, and had never asked what the United States spends here. [verified] — [the county's books](allen-county-funds-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The answer is $668,254,916 in federal year 2025 — $6,625 for every resident — and 93.5 per cent of it is payments to individuals.** [verified] — [USAspending](../../catalog/usaspending.md), place of performance, against [the county's population](allen-county-population-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four Social Security programmes are four fifths of the whole year.** Retirement insurance $402,802,985, disability $64,160,105, survivors $44,657,548 and supplemental security income $24,765,623 — $536,386,261 between them, $5,318 a head across everybody in the county. Veterans' compensation for service-connected disability adds $40,574,698. [verified] — same source, by assistance listing. What a federal budget does in a county like this one is mostly send cheques to old people. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The largest grant programme over eighteen years is roads.** Highway planning and construction has brought $255,335,761 since 2008, against Head Start's $69,991,874, the education stabilization fund's $38,535,550 and the health centre programme's $49,416,292 across two listings. [verified] — same source. Spread across the 359.2 miles of federal-aid highway this county has, that is $710,846 a mile in eighteen years. [inference] — computed here against [the federal-aid system](allen-county-federal-aid-highways-2018.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The same file answers this question twice and the two answers differ by a factor of seven on contracts.** The ratio of the place-of-performance total to the recipient-location total is 7.03 on contracts and 1.97 across all award types. [verified] — the same source, both scopes, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Neither is wrong.** One counts where the work was done and the other where the payee's address is, and the gap is what it means for a county's largest installations to be owned and operated from elsewhere. [inference] — see [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml) and [the contracts](federal-contracts-in-allen-county-2008-2025.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The recipient-location series has a break at 2017 and the other scope is the control.** [verified] — the same source, both scopes.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nothing about this county changed in those two years.** The performance series does not move across them; the recipient series multiplies by nine and then by another third, because payments to individuals began being attributed to a county in that view. The recipient series is unusable before 2018 and this node states no figure from it earlier than that. [verified] — the same source; see [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say what share of this money stays here.** A dollar of Social Security is spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a dividend in unknown proportions, and no source held here divides any of them. [verified] — the fields this source has.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say what share of this money stays here.** A dollar of Social Security is spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a dividend in unknown proportions, and no source held here divides any of them."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/fort-amanda-graves-and-boats.yml",
       "class": "measure",
       "label": "Fort Amanda's two seventy-fives",
@@ -19731,6 +19841,18 @@
           "tier": "verified"
         },
         {
+          "text": "**The contract awards are now here, and they name the same company across eighteen years.** General Dynamics Land Systems Inc. holds **$453,692,926** of federal contract work whose place of performance is Allen County between federal years 2008 and 2025 — the largest of any performer in the county, and 41.7 per cent of all federal contract dollars performed on this county's ground. [verified] — [USAspending](../../catalog/usaspending.md), place of performance, by recipient; see [the contracts](../measure/federal-contracts-in-allen-county-2008-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**One award says what the plant makes and for whom.** $71,709,279, 30 December 2010 to 2 July 2012, Department of the Army, for \"(42) MATERIAL SETS FOR THE CONVERSION OF M1A2 TANKS TO M1A2S CONFIGURATION FOR THE KINGDOM OF SAUDI ARABIA\". [verified] — same source, the award endpoint. The Toxics Release Inventory had the company at this address from 1987 to 1993 and the corpus could not say whether it was still here; a contract performed here in 2012 says it was. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**And a second company's contract says the plant is still a plant.** Siemens Government Technologies holds $127,157,950 for \"ENERGY CONSERVATION MEASURES AT JSMC LIMA, OH\", running 30 December 2016 to 31 May 2038 — a twenty-two-year period of performance on this installation's utilities, and the longest in the county's contract record. [verified] — same source. A government buying two decades of boiler-house work is not closing the building. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**The county's tank work began at the Locomotive Works, and it began in 1941.** Medium tank production was scheduled to start \"this fall\" at the Lima Locomotive Works, which had joined Chrysler, American Locomotive, Baldwin, Pullman Standard and Pressed Steel Car in the medium tank programme. [verified] — [Chronicling America](../../catalog/chronicling-america.md), *Evening Star*, 24 August 1941, page 4, and *Automotive News*, 14 April 1941, page 10. That is a private company retooling its own plant, and it is not this installation.",
           "tier": "verified"
         },
@@ -19779,7 +19901,7 @@
         "Whether the operator changed with it, this corpus does not know, and the reporting entity at a government-owned plant is a compliance arrangement rather than a contract award.",
         "So the wartime half of this node's open question is answered twice over and the plant's own half is not answered at all: the corpus now knows of two tank installations at Lima in the war and cannot say whether either of them stands on this ground."
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "site/lima-locomotive-works-plant.yml",
@@ -19935,6 +20057,10 @@
         {
           "text": "The refinery is missing from 2021 alone, when no filing at 1150 South Metcalf carries the refining code; the contractors filed and the operator did not. [verified] — the same summaries.",
           "tier": "verified"
+        },
+        {
+          "text": "**It sold the military jet fuel, and the awards are in the federal record.** Three contracts from the Defense Logistics Agency to Husky Marketing and Supply Company for `TURBINE FUEL, JP8`, with Allen County as the place of performance: $178,794,000 running from 24 March 2009, $84,717,360 from 27 April 2010 and $64,361,472 from 7 April 2008. Across federal years 2008 to 2025 the company's work performed in this county comes to $328,850,129, second only to the tank plant's contractor. [verified] — [USAspending](../../catalog/usaspending.md), place of performance, by recipient and by award. Husky is the name this works was operated under from 2010, and the corpus reads the marketing company as its arm rather than as a separate installation because no other refinery in this county could load that quantity of kerosene. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -25600,6 +25726,62 @@
       "source": "catalog/chronicling-america.md"
     },
     {
+      "from": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "to": "measure/federal-money-in-allen-county-2008-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
+    },
+    {
+      "from": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "to": "site/lima-army-tank-plant.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
+    },
+    {
+      "from": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "to": "site/lima-refinery.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
+    },
+    {
+      "from": "measure/federal-money-in-allen-county-2008-2025.yml",
+      "to": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
+    },
+    {
+      "from": "measure/federal-money-in-allen-county-2008-2025.yml",
+      "to": "measure/allen-county-federal-aid-highways-2018.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/federal-money-in-allen-county-2008-2025.yml",
+      "to": "measure/allen-county-funds-2025.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/federal-money-in-allen-county-2008-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
+    },
+    {
       "from": "measure/fort-amanda-graves-and-boats.yml",
       "to": "site/fort-amanda.yml",
       "relationship": "describes",
@@ -27764,6 +27946,13 @@
     },
     {
       "from": "site/lima-army-tank-plant.yml",
+      "to": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
+    },
+    {
+      "from": "site/lima-army-tank-plant.yml",
       "to": "place/shawnee-township.yml",
       "relationship": "located-in",
       "tier": "verified",
@@ -27796,6 +27985,13 @@
       "relationship": "located-in",
       "tier": "verified",
       "source": "catalog/nrhp-national-register.md"
+    },
+    {
+      "from": "site/lima-refinery.yml",
+      "to": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usaspending.md"
     },
     {
       "from": "site/lima-refinery.yml",

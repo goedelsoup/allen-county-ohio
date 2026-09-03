@@ -44,8 +44,31 @@ description: |
 
   What changed in 1994 is who filed. Whether the operator changed with it, this corpus does not
   know, and the reporting entity at a government-owned plant is a compliance arrangement rather than
-  a contract award. [open] So the `operated-by` edge to a contractor is still absent, and now it is
-  absent for a stated reason rather than for want of any name at all.
+  a contract award. So the `operated-by` edge to a contractor is absent for a stated reason rather
+  than for want of any name at all.
+
+  **The contract awards are now here, and they name the same company across eighteen years.**
+  General Dynamics Land Systems Inc. holds **$453,692,926** of federal contract work whose place of
+  performance is Allen County between federal years 2008 and 2025 — the largest of any performer in
+  the county, and 41.7 per cent of all federal contract dollars performed on this county's ground.
+  [verified] — [USAspending](../../catalog/usaspending.md), place of performance, by recipient; see
+  [the contracts](../measure/federal-contracts-in-allen-county-2008-2025.yml).
+
+  **One award says what the plant makes and for whom.** $71,709,279, 30 December 2010 to 2 July
+  2012, Department of the Army, for "(42) MATERIAL SETS FOR THE CONVERSION OF M1A2 TANKS TO M1A2S
+  CONFIGURATION FOR THE KINGDOM OF SAUDI ARABIA". [verified] — same source, the award endpoint. The
+  Toxics Release Inventory had the company at this address from 1987 to 1993 and the corpus could
+  not say whether it was still here; a contract performed here in 2012 says it was. [inference]
+
+  **And a second company's contract says the plant is still a plant.** Siemens Government
+  Technologies holds $127,157,950 for "ENERGY CONSERVATION MEASURES AT JSMC LIMA, OH", running
+  30 December 2016 to 31 May 2038 — a twenty-two-year period of performance on this installation's
+  utilities, and the longest in the county's contract record. [verified] — same source. A government
+  buying two decades of boiler-house work is not closing the building. [inference]
+
+  [open] Whether General Dynamics Land Systems operates this plant or contracts with it. Eighteen
+  years of awards put the company's work on this ground and a contract is not an operating
+  agreement; the `operated-by` edge waits on a document that says so.
 
   **The county's tank work began at the Locomotive Works, and it began in 1941.** Medium tank
   production was scheduled to start "this fall" at the Lima Locomotive Works, which had joined
@@ -125,6 +148,10 @@ properties:
   address: 1151 Buckeye Road, Lima OH 45804 — a postal address, not a municipality.
   coordinates: "40.6994478, -84.137903"
 links:
+  - target: ../measure/federal-contracts-in-allen-county-2008-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usaspending.md
   - target: ../place/shawnee-township.yml
     relationship: located-in
     claim_tag: verified
