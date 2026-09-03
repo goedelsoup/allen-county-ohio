@@ -132,6 +132,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-government::four-year-adjusted-cohort-graduation-rate",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "four-year adjusted cohort graduation rate",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-graduation-rates-2010-2019.yml",
+          "label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+          "as_of": "2019",
+          "value": 63.0,
+          "published": "63",
+          "tier": "verified",
+          "source": "catalog/edfacts-outcomes.md",
+          "method": "One request per year, 2010 to 2019, to the EDFacts graduation-rate endpoint for Ohio, filtered here to the twelve districts by NCES identifier and to the all-students rows — the six subgroup dimensions all reading 99. [verified] County bounds weight each district's published lower and upper bound by its own `cohort_num`; an exact rate enters both sums at the same value. The midpoint column is not used anywhere on this page. State bounds are the same computation over every Ohio district with a positive cohort, 731 to 765 of them a year. `value` is Lima's 2019 rate, which is the only 2019 figure in the county published as a number."
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::municipal-corporations-in-Allen-County-with-a-recorded-founding-date",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -148,6 +168,26 @@
           "tier": "verified",
           "source": "catalog/leeson-allen-county-1885.md",
           "method": "Read from the full text of three county histories on archive.org, the 1885 book in two independent scans, and checked against the county's own cities-and-villages page. `as_of` is the latest founding date the corpus can state and not the query date, because the count is of corporations founded by then. Where two dates exist the table prints both and the `erected` property on each corporation carries the authorising one. Dates given only as a year are printed as a year; nothing here is promoted to a day. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-allen-county-government::pupils-proficient-in-reading,-all-grades",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "pupils proficient in reading, all grades",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-test-proficiency-2009-2018.yml",
+          "label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+          "as_of": "2018",
+          "value": 68.8,
+          "published": "68.8",
+          "tier": "verified",
+          "source": "catalog/edfacts-outcomes.md",
+          "method": "One request per year to the EDFacts assessment endpoint for Ohio at `grade-99`, 2009 to 2018 and 2020, filtered here to the twelve districts by NCES identifier and to the all-students rows. [verified] District figures are as published; every one has `low` equal to `high`. County and state figures are computed here, weighting each district by its own count of valid tests — 9,308 for the county in 2018 and 905,315 for the state — and rows carrying the negative missing codes are excluded rather than read as zero. `value` is the county's own weighted reading figure for 2018, which is a derived number and not one the source prints."
         }
       ]
     },
@@ -3987,6 +4027,291 @@
           "label": "Federal",
           "value": 22.4,
           "literal": "22.4"
+        }
+      ]
+    },
+    {
+      "id": "the-only-district-published-as-a-number",
+      "statement": "Eleven of the 120 district-years of graduation data for Allen County carry an exact rate; ten of them are Lima City, the district with the worst rate. Every other district is published as a band, and the width of the band is set by the size of the cohort.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-graduation-rates-2010-2019.yml",
+          "node_label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+          "span": "**One district in twelve is published as a number and it is the district with the worst rate.** 11 of this county's 120 district-years carry an exact graduation rate and 109 are published as a band; ten of the 11 are Lima and the eleventh is Shawnee in 2017.",
+          "tier": "verified",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what any other district's graduation rate for poor children is."
+      ],
+      "figures": [
+        {
+          "label": "exact",
+          "value": 11.0,
+          "literal": "11"
+        },
+        {
+          "label": "banded",
+          "value": 109.0,
+          "literal": "109"
+        }
+      ]
+    },
+    {
+      "id": "limas-graduation-rate-has-not-moved",
+      "statement": "Lima City's four-year graduation rate was 70 per cent in 2010 and 63 in 2019, and nine of the ten years sit between 63 and 70. It is the only rate in the county published as a number every year.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-graduation-rates-2010-2019.yml",
+          "node_label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+          "span": "**Lima's rate is the one figure in the table that can be tracked, and it has not moved much.** 70 per cent in 2010, 78 in 2011, then 70, 66, 63, 69, 63, 65, 67 and 63.",
+          "tier": "verified",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what any other district's graduation rate for poor children is."
+      ],
+      "figures": [
+        {
+          "label": "2010",
+          "value": 70.0,
+          "literal": "70"
+        },
+        {
+          "label": "2011",
+          "value": 78.0,
+          "literal": "78"
+        },
+        {
+          "label": "2013",
+          "value": 66.0,
+          "literal": "66"
+        },
+        {
+          "label": "2015",
+          "value": 69.0,
+          "literal": "69"
+        },
+        {
+          "label": "2017",
+          "value": 65.0,
+          "literal": "65"
+        },
+        {
+          "label": "2019",
+          "value": 63.0,
+          "literal": "63"
+        }
+      ]
+    },
+    {
+      "id": "the-county-graduation-rate-fell-and-the-states-rose",
+      "statement": "Allen County's graduation rate can only be bounded, and the bounds are enough: 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019, two intervals that do not touch. The county stood clear of Ohio every year to 2015 and has overlapped it since 2016.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-graduation-rates-2010-2019.yml",
+          "node_label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+          "span": "Weighting each district's band by its cohort gives 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019 — two intervals that do not touch, so the rate fell by at least 0.6 points and the fall does not depend on any assumption about where inside a band a district sits.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-graduation-rates-2010-2019.yml",
+          "node_label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+          "span": "**The county was clear of the state for six years and has not been since.** Its lower bound stood above Ohio's upper bound in every year from 2010 to 2015; from 2016 the two intervals overlap, and in 2019 Ohio's band sits higher than the county's within the overlap.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what any other district's graduation rate for poor children is."
+      ],
+      "figures": [
+        {
+          "label": "2011 lower",
+          "value": 87.0,
+          "literal": "87.0"
+        },
+        {
+          "label": "2011 upper",
+          "value": 90.9,
+          "literal": "90.9"
+        },
+        {
+          "label": "2019 lower",
+          "value": 82.5,
+          "literal": "82.5"
+        },
+        {
+          "label": "2019 upper",
+          "value": 86.4,
+          "literal": "86.4"
+        }
+      ]
+    },
+    {
+      "id": "no-racial-gap-in-limas-graduation-rate",
+      "statement": "In Lima City, the only district here whose cohorts are large enough to publish by race, the white and Black graduation bands are disjoint in seven years of ten — and the higher one is white in three and Black in four.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-graduation-rates-2010-2019.yml",
+          "node_label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+          "span": "**In the county's only legible district the graduation rate does not differ by race.** Lima's white and Black bands are disjoint in seven of the ten years, and the higher one is white in three of those and Black in four; in the other three years the two bands are identical.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say what any other district's graduation rate for poor children is."
+      ],
+      "figures": []
+    },
+    {
+      "id": "lima-reads-at-forty-two-per-cent",
+      "statement": "Lima City reads 42 per cent proficient in 2018 against 62 in Perry and 83 in Bluffton, and 42 per cent in mathematics against 57 and 87. The figures rest on between 250 and 1,904 tests apiece.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-test-proficiency-2009-2018.yml",
+          "node_label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+          "span": "**The largest district in the county is twenty points below the second-lowest and forty-one below the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87.",
+          "tier": "verified",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say whether that gap widened."
+      ],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 42.0,
+          "literal": "42"
+        },
+        {
+          "label": "Perry",
+          "value": 62.0,
+          "literal": "62"
+        },
+        {
+          "label": "Bluffton",
+          "value": 83.0,
+          "literal": "83"
+        }
+      ]
+    },
+    {
+      "id": "twelve-districts-fell-in-the-same-two-years",
+      "statement": "Reading proficiency fell in every one of Allen County's twelve districts between 2013 and 2015 — by 18 points in Bluffton and 40 in Perry — and the state fell 28.7. Twelve independently governed districts do not move together in two years unless the test does.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-test-proficiency-2009-2018.yml",
+          "node_label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+          "span": "Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19 in Spencerville, 22 in Shawnee, and on up to 40 in Perry — every district in the county, no exceptions, and the state fell 28.7 points over the same two years.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-test-proficiency-2009-2018.yml",
+          "node_label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+          "span": "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say whether that gap widened."
+      ],
+      "figures": [
+        {
+          "label": "Bluffton",
+          "value": 18.0,
+          "literal": "18"
+        },
+        {
+          "label": "Spencerville",
+          "value": 19.0,
+          "literal": "19"
+        },
+        {
+          "label": "Shawnee",
+          "value": 22.0,
+          "literal": "22"
+        },
+        {
+          "label": "Perry",
+          "value": 40.0,
+          "literal": "40"
+        }
+      ]
+    },
+    {
+      "id": "the-county-passed-the-state-without-improving",
+      "statement": "Allen County's reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 above it in 2018; in mathematics, 0.3 above and then 7.2. The county did not improve — the state fell further.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-test-proficiency-2009-2018.yml",
+          "node_label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+          "span": "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-test-proficiency-2009-2018.yml",
+          "node_label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+          "span": "**The eleven districts other than Lima are 34 points above it and were 22 points above it.** The gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6.",
+          "tier": "inference",
+          "sources": [
+            "catalog/edfacts-outcomes.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say whether that gap widened."
+      ],
+      "figures": [
+        {
+          "label": "reading, 2018",
+          "value": 4.5,
+          "literal": "4.5"
+        },
+        {
+          "label": "mathematics, 2018",
+          "value": 7.2,
+          "literal": "7.2"
         }
       ]
     },

@@ -5008,6 +5008,53 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "class": "measure",
+      "label": "Graduation rates in Allen County's twelve school districts, 2010–2019",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2019",
+        "method": "One request per year, 2010 to 2019, to the EDFacts graduation-rate endpoint for Ohio, filtered here to the twelve districts by NCES identifier and to the all-students rows — the six subgroup dimensions all reading 99. [verified] County bounds weight each district's published lower and upper bound by its own `cohort_num`; an exact rate enters both sums at the same value. The midpoint column is not used anywhere on this page. State bounds are the same computation over every Ohio district with a positive cohort, 731 to 765 of them a year. `value` is Lima's 2019 rate, which is the only 2019 figure in the county published as a number.",
+        "parameter": "four-year adjusted cohort graduation rate",
+        "unit": "per cent",
+        "value": "63"
+      },
+      "blocks": [
+        {
+          "text": "The share of each district's ninth-grade cohort that graduated in four years, for the ten years the federal collection covers. [verified] — [EDFacts district outcomes](../../catalog/edfacts-outcomes.md), adjusted cohort graduation rate, the twelve districts by NCES identifier.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One district in twelve is published as a number and it is the district with the worst rate.** 11 of this county's 120 district-years carry an exact graduation rate and 109 are published as a band; ten of the 11 are Lima and the eleventh is Shawnee in 2017. [verified] — the same files, counted here. Exactness is a function of cohort size and nothing else, so the only district a reader can read is the largest, and the largest is the poorest. See [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima's rate is the one figure in the table that can be tracked, and it has not moved much.** 70 per cent in 2010, 78 in 2011, then 70, 66, 63, 69, 63, 65, 67 and 63. [verified] — the same files. Nine of the ten years sit between 63 and 70, and the tenth is the second year of the run.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's graduation rate cannot be stated and it can be bounded, and the bound is enough to establish a fall.** Weighting each district's band by its cohort gives 87.0 to 90.9 per cent in 2011 and 82.5 to 86.4 in 2019 — two intervals that do not touch, so the rate fell by at least 0.6 points and the fall does not depend on any assumption about where inside a band a district sits. [verified] — the same files, weighted here. Against 2010 rather than 2011 the intervals overlap by 0.71 points and nothing is established. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county was clear of the state for six years and has not been since.** Its lower bound stood above Ohio's upper bound in every year from 2010 to 2015; from 2016 the two intervals overlap, and in 2019 Ohio's band sits higher than the county's within the overlap. [verified] — the same files summed over every Ohio district. Ohio rose across the decade and this county did not. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**In the county's only legible district the graduation rate does not differ by race.** Lima's white and Black bands are disjoint in seven of the ten years, and the higher one is white in three of those and Black in four; in the other three years the two bands are identical. [verified] — the same files, race codes 1 and 2. That is the opposite of what this corpus found on [housing cost](allen-county-housing-cost-burden-2006-2022.yml) and on [lending](../question/why-allen-countys-lending-outcomes-differ.yml), and the reason it can be said here at all is that Lima's cohorts are 86 and 125 rather than nine and eleven. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "This corpus cannot say what any other district's graduation rate for poor children is. Outside Lima the economically disadvantaged cohorts run from 3 to 50 pupils and their rates are published as `50–100` in almost every district and year. [verified] — the same files.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say what any other district's graduation rate for poor children is."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-group-quarters-2020.yml",
       "class": "measure",
       "label": "Allen County group quarters, 2020",
@@ -8713,12 +8760,16 @@
         {
           "text": "**High spending per pupil has two different causes here and only one of them is poverty.** The three smallest districts — Waynesfield-Goshen at 472 pupils, Pandora-Gilboa at 521 and Columbus Grove at 756 — are the second, third and fourth highest spenders in the county, on child poverty rates between 6.6 and 10.2 per cent against Lima's 31.7. [verified] — [the poverty file](allen-county-school-district-poverty-2023.yml). A school has costs that do not divide, and a district of five hundred divides them by five hundred. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "This does not establish that any district is spending well or badly. The survey counts dollars and pupils and nothing about what a pupil learns, and the attainment figures this corpus now holds are a different collection for a different year with no district-level accounting between them. **The highest spender is also the lowest performer, and this node will not join the two.** Lima spends $19,321 a pupil, 8.0 per cent more than the county's next-highest and 78.3 per cent more than its lowest, and reads 42 per cent proficient in reading against a range of 62 to 83 across the other eleven. [verified] — the same source against [the assessment results](allen-county-test-proficiency-2009-2018.yml). Spending per pupil is highest where the state and federal shares are highest, which is where the poverty is, so the three quantities move together and nothing here orders them. [inference] The finance survey and the outcome file are one year apart and describe the same twelve districts, which is enough for a comparison and not enough for a mechanism.",
+          "tier": "inference"
         }
       ],
       "refusals": [
         "This does not establish that any district is spending well or badly."
       ],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "measure/allen-county-sheriff-offenses-2015-2024.yml",
@@ -9063,6 +9114,49 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "class": "measure",
+      "label": "Reading and mathematics proficiency in Allen County's schools, 2009–2018",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2018",
+        "method": "One request per year to the EDFacts assessment endpoint for Ohio at `grade-99`, 2009 to 2018 and 2020, filtered here to the twelve districts by NCES identifier and to the all-students rows. [verified] District figures are as published; every one has `low` equal to `high`. County and state figures are computed here, weighting each district by its own count of valid tests — 9,308 for the county in 2018 and 905,315 for the state — and rows carrying the negative missing codes are excluded rather than read as zero. `value` is the county's own weighted reading figure for 2018, which is a derived number and not one the source prints.",
+        "parameter": "pupils proficient in reading, all grades",
+        "unit": "per cent",
+        "value": "68.8"
+      },
+      "blocks": [
+        {
+          "text": "The share of tested pupils scoring proficient, all grades together, in each of the county's twelve school districts. [verified] — [EDFacts district outcomes](../../catalog/edfacts-outcomes.md), assessment results at `grade-99`. Every one of the 240 cells is published as an exact figure and none is suppressed.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The largest district in the county is twenty points below the second-lowest and forty-one below the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87. [verified] — the same file. Every figure in that table rests on between 250 and 1,904 tests, so none of the ordering is a small-numbers artefact.",
+          "tier": "verified"
+        },
+        {
+          "text": "**All twelve districts fell together in the same two years, which is what an instrument does and not what children do.** Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19 in Spencerville, 22 in Shawnee, and on up to 40 in Perry — every district in the county, no exceptions, and the state fell 28.7 points over the same two years. [verified] — the same file, district by district, with the state summed over every Ohio district. A change arriving in twelve independently governed districts within two years is a change in the test. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above. [verified] — the same file, the county's twelve districts against every Ohio district reporting — 888 of them in 2009 and 931 in 2018 — weighted by tests taken. The county did not improve; the state fell further. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The eleven districts other than Lima are 34 points above it and were 22 points above it.** The gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6. [verified] — the same file, weighted by tests. This corpus cannot say whether that gap widened. [inference] — before 2014 the eleven averaged near 90 per cent proficient, which is close enough to the top of the scale that a harder test would open a gap without anything having changed underneath it, and the corpus holds nothing that separates the two.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 2020 file is empty and the emptiness is real.** Every district returns a row for 2020 with no scores in it, and 2019 has no assessment file at all. [verified] — the same collection. The tests were not given; see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say whether that gap widened."
+      ],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-tornadoes-1950-2026.yml",
@@ -22522,6 +22616,41 @@
       "source": "catalog/openelections-ohio.md"
     },
     {
+      "from": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "to": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "to": "measure/allen-county-school-enrolment-1988-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "to": "measure/allen-county-school-district-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-group-quarters-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -23559,6 +23688,20 @@
     },
     {
       "from": "measure/allen-county-school-enrolment-1988-2024.yml",
+      "to": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-school-enrolment-1988-2024.yml",
+      "to": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-school-enrolment-1988-2024.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
       "tier": "verified",
@@ -23633,6 +23776,13 @@
       "relationship": "relates-to",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "measure/allen-county-school-finance-2023.yml",
+      "to": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
     },
     {
       "from": "measure/allen-county-school-finance-2023.yml",
@@ -23736,6 +23886,41 @@
       "from": "measure/allen-county-temperature-extremes-1901-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "to": "measure/allen-county-graduation-rates-2010-2019.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/edfacts-outcomes.md"
+    },
+    {
+      "from": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "to": "measure/allen-county-school-district-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-test-proficiency-2009-2018.yml",
+      "to": "measure/allen-county-school-finance-2023.yml",
+      "relationship": "relates-to",
       "tier": "inference",
       "source": null
     },
