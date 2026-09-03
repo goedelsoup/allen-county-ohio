@@ -1,0 +1,99 @@
+class: measure
+label: Graduation rates in Allen County's twelve school districts, 2010–2019
+description: |
+  The share of each district's ninth-grade cohort that graduated in four years, for the ten years
+  the federal collection covers. [verified] —
+  [EDFacts district outcomes](../../catalog/edfacts-outcomes.md), adjusted cohort graduation rate,
+  the twelve districts by NCES identifier.
+
+      2019, as published        rate    cohort    midpoint column
+      Lima                        63       270                 63
+      Elida                    80–84       193                 82
+      Perry                    80–89        48                 84
+      Bath                     85–89       108                 87
+      Delphos                  85–89        90                 87
+      Shawnee                  90–94       199                 92
+      Allen East               90–94        85                 92
+      Columbus Grove           90–94        79                 92
+      Pandora-Gilboa          90–100        33                 95
+      Waynesfield-Goshen      90–100        40                 95
+      Bluffton                95–100        79                 97
+      Spencerville            95–100        94                 97
+
+  **One district in twelve is published as a number and it is the district with the worst rate.**
+  Eleven of this county's 120 district-years carry an exact graduation rate; ten of the eleven are
+  Lima and the eleventh is Shawnee in 2017. [verified] — the same files, counted here. Exactness is
+  a function of cohort size and nothing else, so the only district a reader can read is the largest,
+  and the largest is the poorest. See
+  [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml).
+
+  **Lima's rate is the one figure in the table that can be tracked, and it has not moved much.** 70
+  per cent in 2010, 78 in 2011, then 70, 66, 63, 69, 63, 65, 67 and 63. [verified] — the same files.
+  Nine of the ten years sit between 63 and 70, and the tenth is the second year of the run.
+
+      the county as a whole      cohort    lower   upper       Ohio
+      2010                        1,390     85.7    89.6   79.3–81.1
+      2011                        1,305     87.0    90.9   80.7–82.7
+      2013                        1,251     85.9    89.8   81.1–83.1
+      2015                        1,297     85.8    90.1   82.7–84.7
+      2017                        1,401     83.4    86.6   81.8–83.7
+      2019                        1,318     82.5    86.4   84.4–86.3
+
+  **The county's graduation rate cannot be stated and it can be bounded, and the bound is enough to
+  establish a fall.** Weighting each district's band by its cohort gives 87.0 to 90.9 per cent in
+  2011 and 82.5 to 86.4 in 2019 — two intervals that do not touch, so the rate fell by at least 0.6
+  points and the fall does not depend on any assumption about where inside a band a district sits.
+  [verified] — the same files, weighted here. Against 2010 rather than 2011 the intervals overlap by
+  0.71 points and nothing is established. [inference]
+
+  **The county was clear of the state for six years and has not been since.** Its lower bound stood
+  above Ohio's upper bound in every year from 2010 to 2015; from 2016 the two intervals overlap, and
+  in 2019 Ohio's band sits higher than the county's within the overlap. [verified] — the same files
+  summed over every Ohio district. Ohio rose across the decade and this county did not. [inference]
+
+  **In the county's only legible district the graduation rate does not differ by race.** Lima's
+  white and Black bands are disjoint in seven of the ten years, and the higher one is white in three
+  of those and Black in four; in the other three years the two bands are identical. [verified] —
+  the same files, race codes 1 and 2. That is the opposite of what this corpus found on
+  [housing cost](allen-county-housing-cost-burden-2006-2022.yml) and on
+  [lending](../question/why-allen-countys-lending-outcomes-differ.yml), and the reason it can be
+  said here at all is that Lima's cohorts are 86 and 125 rather than nine and eleven. [inference]
+
+  This corpus cannot say what any other district's graduation rate for poor children is. Outside
+  Lima the economically disadvantaged cohorts run from 3 to 50 pupils and their rates are published
+  as `50–100` in almost every district and year. [verified] — the same files.
+properties:
+  parameter: four-year adjusted cohort graduation rate
+  value: "63"
+  unit: per cent
+  as_of: "2019"
+  method: |
+    One request per year, 2010 to 2019, to the EDFacts graduation-rate endpoint for Ohio, filtered
+    here to the twelve districts by NCES identifier and to the all-students rows — the six subgroup
+    dimensions all reading 99. [verified] County bounds weight each district's published lower and
+    upper bound by its own `cohort_num`; an exact rate enters both sums at the same value. The
+    midpoint column is not used anywhere on this page. State bounds are the same computation over
+    every Ohio district with a positive cohort, 731 to 765 of them a year. `value` is Lima's 2019
+    rate, which is the only 2019 figure in the county published as a number.
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-test-proficiency-2009-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-school-enrolment-1988-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-school-district-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
