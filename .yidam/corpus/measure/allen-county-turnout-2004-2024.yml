@@ -1,0 +1,102 @@
+class: measure
+label: Allen County turnout, 2004–2024
+description: |
+  Ballots cast against registered voters at each of the eleven federal general elections from 2004
+  to 2024, as the county board of elections reported them to the federal government. [verified] —
+  [the Election Administration and Voting Survey](../../catalog/eac-election-administration-voting-survey.md),
+  Sections A and F, `FIPSCode` 3900300000.
+
+      year   ballots   registered   turnout    Ohio
+      2004    49,944       68,109     73.3%    70.4%
+      2006    37,605       66,460     56.6%    54.6%
+      2008    50,943       70,626     72.1%    69.9%
+      2010    33,867       69,931     48.4%    49.0%
+      2012    48,708       69,525     70.1%    70.5%
+      2014    27,635       66,563     41.5%    40.7%
+      2016    46,735       68,054     68.7%    71.3%
+      2018    36,660       69,338     52.9%    56.0%
+      2020    48,353       67,374     71.8%    74.0%
+      2022    33,031       66,650     49.6%    52.3%
+      2024    46,845       66,201     70.8%    72.5%
+
+  **2020 was an ordinary presidential election here.** Its 71.8 per cent is the third of six, below
+  2004's 73.3 and 2008's 72.1 and above 2024's 70.8, 2012's 70.1 and 2016's 68.7. Twenty years of
+  presidential turnout in this county fit inside 4.7 points. [verified] — the same file; the shares
+  are computed here. That closes a question this corpus carried on
+  [the 2020 election](allen-county-turnout-2020.yml), which had one presidential year to judge and
+  two midterms to judge it against.
+
+  **The midterms are where the county moves.** They run 56.6, 48.4, 41.5, 52.9 and 49.6 per cent —
+  a range of 15.1 points, more than three times the presidential range, with the low in 2014 and
+  the high in 2006. [verified] — the same file.
+
+  **This county used to vote more than Ohio does and now it votes less.** It stood 2.9, 2.0 and 2.2
+  points above the state in 2004, 2006 and 2008, and 2.7, 3.1, 2.2, 2.8 and 1.7 points below it in
+  2016, 2018, 2020, 2022 and 2024. [verified] — the same file summed over Ohio's other 87 county
+  boards. The two elections between, 2010 and 2012, sit within half a point of the state either
+  way. A five-point swing relative to the state is not a fact about any one election. [inference]
+
+      how the ballots arrived      2008     2012     2016     2020     2024
+      in person on election day  38,978   33,540   32,887   22,818   27,429
+      in person, early                —    5,566    5,627   11,748   13,090
+      by mail                    10,367    7,523    7,129   12,589    5,510
+      provisional                 1,406    1,951      960    1,078      687
+      from overseas                 192      128      132      120       92
+
+  **Election day is not how most of this county votes any more, and 2020 was not the turning
+  point.** The election-day share was 85.6 per cent in 2006 and 76.5 in 2008; it fell to 68.9 in
+  2012 and has not been above 73 since. [verified] — the same file. In 2020 it was 47.2 per cent —
+  fewer than half the county's ballots were cast on the day — and in 2024 it was 58.6.
+
+  **The pandemic's mail voting went away and its early voting did not.** Between 2020 and 2024 mail
+  ballots fell by 7,079 and in-person early ballots rose by 1,342 to 13,090, the most in the record;
+  election-day ballots rose by 4,611. [verified] — the same file. Early in-person voting is legally
+  absentee voting in Ohio, so the two are one category before 2010 and the 2008 split cannot be
+  read. [inference]
+
+  **The ballots that were not counted are a small and mostly falling number, except for one.**
+  Rejected mail ballots ran 1.72 per cent of those returned in 2008 and 0.43 in 2020, the year the
+  most were sent; in 2024 it was 0.63, or 35 ballots. Provisional ballots are the exception: 211 of
+  898 were rejected in 2024, 23.5 per cent, the highest rate in the record, against 18.6 in 2020
+  and 4.9 in 2014. [verified] — the same file, Sections C and E. Ohio's counties together rejected
+  24.7 per cent of provisional ballots in 2024 and 9.7 per cent in 2022, so whatever moved this is
+  not local. [inference]
+
+  [open] Why nearly a quarter of this county's provisional ballots were rejected in 2024. The
+  survey records the reasons — 114 not registered, 63 without acceptable identification, nine in
+  the wrong jurisdiction — and 63 is against 22 in 2020, but a reason code is not a cause.
+properties:
+  parameter: ballots cast, general election
+  value: "46845"
+  unit: ballots
+  as_of: 2024-11-05
+  method: |
+    `F1a` against `A1a` for `FIPSCode` 3900300000 in each survey year, taking the 2004–2022 figures
+    from the harmonised retrospective panel and 2024 from the separate 2024 release. [verified]
+    `A1a` is the whole roll, active and inactive together; the active and inactive columns are not
+    reported consistently across the eleven years and are not used. State figures are this corpus's
+    own sums over all 88 Ohio county boards in the same files. Ballots by method sum exactly to the
+    reported total in every year but 2024, where they fall 37 short. The mode table omits 2004 and
+    2006 because the survey did not separate early in-person voting from mail until 2010.
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-turnout-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-voter-roll-removals-2006-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-polling-places-2004-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+  - target: allen-county-ballot-2006.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
