@@ -3158,6 +3158,53 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-ballot-2006.yml",
+      "class": "measure",
+      "label": "Allen County's ballot, 7 November 2006",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2006-11-07",
+        "method": "Summed over the county's 139 precincts from `gen06statewide.csv`, the Secretary of State's own workbook, which has no county-total row; the volunteer transcription of the same election in the same repository agrees with it on every figure to the vote, and the two are one witness rather than two — the repository carries a parser named for converting one into the other. [inference] Vote counts are floating-point in that file and are converted here; every value is integral. Shares are of the two major-party candidates only, computed here.",
+        "parameter": "ballots cast, general election",
+        "unit": "ballots",
+        "value": "37605"
+      },
+      "blocks": [
+        {
+          "text": "Every statewide contest on one Allen County ballot, from the Secretary of State's own precinct workbook. **68,797 registered voters, 37,605 ballots cast — 54.7 per cent.** [verified] — [the 2006 workbook](../../catalog/openelections-ohio.md), summed over the county's 139 precincts.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One Democrat carried this county and seven did not, on the same piece of paper.** Ted Strickland took 51.2 per cent of the two-party vote for governor; the next-best Democrat on the ballot, Sherrod Brown, took 45.9 and lost the county by 2,924 while winning Ohio; the worst, Richard Siferd for Congress, took 40.2. The spread between the best and worst Democratic showings is eleven points. [verified] — the workbook; shares computed here. Split-ticket voting on that scale is a fact about the ballot and not about any candidate, and this return cannot say which of the eight races was the unusual one. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The largest share any candidate took here was a judge's, and he is from Lima.** In the nonpartisan Supreme Court races, Robert Cupp took 25,564 against Ben Espy's 9,127 — 73.7 per cent, a wider margin than any partisan candidate managed. Terrence O'Donnell took 60.2 per cent against William O'Neill in the other seat. [verified] — same workbook. This corpus already holds Cupp on its 2020 ballot, [running unopposed for the state House](allen-county-presidential-vote-2020.yml) with 38,882 votes.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four statewide ballot issues, and the county said yes to one.** [verified] — same workbook.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The workbook numbers the issues and does not name them**, and no source in this catalog does either. What can be said from the law is that two initiated measures took effect in the weeks after this election: the statewide smoking prohibition now at [Revised Code §3794.02](../../catalog/ohio-revised-code.md), effective 7 December 2006 and recorded in the statute itself as \"Enacted by Initiative\", and the minimum wage now at [Article II §34a of the Ohio Constitution](../../catalog/ohio-revised-code.md), effective 8 December 2006. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "**More people voted on the issues than for governor.** 36,898 ballots carried a vote on Issue 5 against 36,221 for governor, and the 37,605 ballots cast leave 1,384 with no vote for governor at all — 3.7 per cent. [inference] — arithmetic this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**139 precincts.** The county ran 139 polling divisions that November, 121 in 2010, and 88 from 2014 onward — a 37 per cent consolidation in eight years, over a period in which its registered voters fell by 1,423. [verified] — the 2006, 2010 and 2020 files; see [the 2020 districts](allen-county-voting-districts-2020.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "Split-ticket voting on that scale is a fact about the ballot and not about any candidate, and this return cannot say which of the eight races was the unusual one."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-black-community-1916-1921.yml",
       "class": "measure",
       "label": "Allen County's Black community, 1916–1921",
@@ -4834,6 +4881,43 @@
       "withheld": 4
     },
     {
+      "id": "measure/allen-county-governor-vote-2002-2018.yml",
+      "class": "measure",
+      "label": "Allen County vote for governor, 2002–2018",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2018",
+        "method": "2002, 2014 and 2018 are county-grain files. 2006 and 2010 are summed over the county's 139 and 121 precincts respectively, from the Secretary of State's own workbooks; the 2010 file's `COUNTY TOTALS` row is excluded from the sum and used to check it. Vote counts in the 2006 and 2010 files are written as floating-point numbers and are converted here; every value is integral. [verified] Shares are of the two major-party candidates only, computed here. The 2010 file carries no party column and party for that year is this corpus's, from the candidates. [inference]",
+        "parameter": "Republican share of the two-party vote for governor",
+        "unit": "per cent",
+        "value": "69.09"
+      },
+      "blocks": [
+        {
+          "text": "Five consecutive elections for governor. [verified] — [OpenElections](../../catalog/openelections-ohio.md); 2002, 2014 and 2018 from county files, 2006 and 2010 summed from the Secretary of State's own precinct files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In 2006 Allen County voted for a Democrat, by 816 votes.** It is the only election in this corpus's modern record — five for governor and six for president, from 2000 forward — that this county has given to a Democratic candidate. [verified] — the same files and [the presidential series](allen-county-presidential-vote-2000-2016.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**In figures: the Republican share of the two-party vote was 69.1 per cent in 2002, 48.8 in 2006, 59.8 in 2010, 73.4 in 2014 and 69.1 in 2018.** The balance moves 24.6 points in the eight years between 2006 and 2014, and the two ends of the run sit a twentieth of a point apart. [inference] — arithmetic this corpus's, on the table above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The turnout observation survives the correction and gets sharper.** Votes for governor run from 27,259 in 2014 to 36,221 in 2006 — a third more people voting in the year the county went Democratic than in the year it was most Republican. Whether that is the same people changing their minds or different people arriving is not something a return can answer. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Nothing here reaches 2022.** OpenElections has no Ohio file for that year at any grain, so the most recent election for governor this corpus holds is seven years old. [verified] — the repository's own tree.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-governor-vote-2018.yml",
       "class": "measure",
       "label": "Allen County vote for governor, 2018",
@@ -4855,8 +4939,12 @@
           "tier": "verified"
         },
         {
-          "text": "Who turns out changes far more here than how they vote. [inference] — from three elections, which is enough to see the pattern and not enough to date it.",
+          "text": "**That was published as \"who turns out changes far more here than how they vote\", and it is wrong.** It was drawn from three consecutive elections — 2016, 2018 and 2020 — and five earlier ones were sitting in the same repository. Across the five elections for governor this corpus now holds, the Republican share of the two-party vote runs from 48.8 per cent to 73.4, and in 2006 this county voted for the Democrat. [verified] — [the series](allen-county-governor-vote-2002-2018.yml). What survives is the narrower claim the three elections actually support: between 2016 and 2018 the balance moved little and the electorate shrank by a fifth. [inference] — see [a sample is not a series](../../decisions/a-sample-is-not-a-series.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**Turnout for this election cannot be computed and for the two midterms before it can.** The 2018 file has no ballots-cast column; the Secretary of State's own 2006 and 2010 files do, and put this county at 54.7 and 48.4 per cent against 71.8 in 2020. [verified] — [the 2006 ballot](allen-county-ballot-2006.yml) and [turnout](allen-county-turnout-2020.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -8790,7 +8878,7 @@
       "id": "measure/allen-county-turnout-2020.yml",
       "class": "measure",
       "label": "Allen County turnout, 2020 general election",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2020-11-03",
         "method": "Sum of the `ballots_cast` field over the 88 Allen County precincts, from a volunteer transcription of the certified returns. Registered voters summed the same way: 67,374. [verified]",
@@ -8810,6 +8898,14 @@
         {
           "text": "Registration itself varies as much and is the more interesting number. Across the 88 precincts registered voters run from 0.28 to 0.84 per resident, and the low end of that range is where the county's [group quarters](../question/who-lives-in-the-county-without-housing.yml) are. [verified] — same source against [TIGERweb](../../catalog/tigerweb-census2020.md) block population.",
           "tier": "verified"
+        },
+        {
+          "text": "**71.8 per cent is high for this county, and the comparison is with midterms rather than with other presidential years.** The Secretary of State's own precinct files put Allen County at **54.7 per cent in 2006** — 37,605 ballots against 68,797 registered — and at **48.4 per cent in 2010**, 33,867 against 69,931. [verified] — [the 2006 ballot](allen-county-ballot-2006.yml) and [OpenElections](../../catalog/openelections-ohio.md), 2010 file. Twenty-three points separate this election from the lower of the two, and both of those are midterms, so what the three years establish is the size of the presidential premium and not a trend. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The registration roll shrank at almost exactly the rate the county did.** 69,931 registered in 2010 and 67,374 here, a fall of 2,557 or 3.66 per cent, against a population that went from 106,331 to 102,206 — 3.88 per cent. [inference] — the two election files against [2010](allen-county-population-2010.yml) and [the 2020 census](allen-county-population-2020-census.yml). The 2006 roll was 68,797, lower than 2010's, so the decade's high is in the middle of it.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -21372,6 +21468,34 @@
       "source": "catalog/ohio-attorney-directory.md"
     },
     {
+      "from": "measure/allen-county-ballot-2006.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-ballot-2006.yml",
+      "to": "measure/allen-county-governor-vote-2002-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-ballot-2006.yml",
+      "to": "measure/allen-county-turnout-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-ballot-2006.yml",
+      "to": "measure/allen-county-voting-districts-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
       "from": "measure/allen-county-black-community-1916-1921.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -21706,6 +21830,34 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/allen-county-auditor-financials.md"
+    },
+    {
+      "from": "measure/allen-county-governor-vote-2002-2018.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-governor-vote-2002-2018.yml",
+      "to": "measure/allen-county-governor-vote-2018.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-governor-vote-2002-2018.yml",
+      "to": "measure/allen-county-ballot-2006.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-governor-vote-2002-2018.yml",
+      "to": "measure/allen-county-presidential-vote-2000-2016.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-governor-vote-2018.yml",
