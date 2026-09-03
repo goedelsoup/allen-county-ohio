@@ -36,6 +36,7 @@ location:
 used-by:
   - ../corpus/measure/allen-county-subsidized-housing-2005-2025.yml
   - ../corpus/organization/allen-metropolitan-housing-authority.yml
+  - ../corpus/question/why-hud-and-the-survey-count-different-assisted-renters.yml
 ---
 
 **The site answers a scripted request with a success and an empty body.** `curl` without a browser
@@ -99,7 +100,16 @@ totals. [verified] — the 2025 place file; the straddle is the one this corpus 
 [a county column is a filing decision](../decisions/a-county-column-is-a-filing-decision.yml).
 Lima, Bluffton, Spencerville, Elida and Fort Shawnee CDP are wholly within the county and can be.
 
+**Two editions put the county code inside the county name.** In the 2014 and 2015 files Allen
+County's `name` reads `003 Allen County`; in every other year it reads `Allen County`. [verified] —
+the 2013, 2014, 2015 and 2016 county files. A script that matches on the name silently loses two
+years out of twenty-two and reports a series with a hole in it; matching on `code` — here 39003 —
+is the only stable key, and is what the nodes built from this source use.
+
 **What it does not carry.** No waiting-list length — `months_waiting` is the average wait of
-households who moved in, so a programme that admits nobody reports a short one. No rent burden and
-no comparison with unsubsidized renters. No addresses and no names; the smallest geography published
-is the census tract, and cells below a threshold are suppressed rather than rounded.
+households who moved in, so a programme that admits nobody reports a short one. No addresses and no
+names; the smallest geography published is the census tract, and cells below a threshold are
+suppressed rather than rounded. It carries no rent burden and no comparison with unsubsidized
+renters, and the file that does is [CHAS](hud-chas.md) — against which this one's count of assisted
+households below 30 per cent of area median does not reconcile. See
+[why HUD and the survey count different assisted renters](../corpus/question/why-hud-and-the-survey-count-different-assisted-renters.yml).
