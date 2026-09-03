@@ -6203,6 +6203,209 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
+        id: "more-children-per-woman-than-ohio",
+        statement: "Allen County has more children per woman than Ohio in every one of the \
+                    twenty-two years measured \u{2014} a total fertility rate of 2,360.7 per 1,000 \
+                    women against the state's 2,020.4 in 2000, and 1,954.2 against 1,712.4 in 2020. \
+                    The lead runs between 6.6 and 19.0 per cent and never closes.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-birth-outcomes-2000-2021.yml", "**This county has more children per woman than Ohio, in every one of the twenty-two years.** Its total fertility rate is 2,360.7 per 1,000 women in 2000 against the state's 2,020.4, and 1,954.2 against 1,712.4 in 2020 \u{2014} a lead of between 6.6 and 19.0 per cent that never closes and never reverses. [verified] \u{2014} the same source, both geographies. Both fell by about the same proportion: 17.2 per cent here and 15.2 in Ohio."),
+        ],
+        answers: &["cannot say whether these outcomes differ by race in Allen County"],
+        figures: &[
+            Figure { label: "Allen County, 2000", value: 2360.7, literal: "2,360.7" },
+            Figure { label: "Ohio, 2000", value: 2020.4, literal: "2,020.4" },
+            Figure { label: "Allen County, 2020", value: 1954.2, literal: "1,954.2" },
+            Figure { label: "Ohio, 2020", value: 1712.4, literal: "1,712.4" },
+        ],
+    },
+    Assertion {
+        id: "below-replacement-eleven-years-after-ohio",
+        statement: "Allen County's fertility crossed below the replacement level in 2010, eleven \
+                    years after Ohio was already there. It last stood above about 2,100 births per \
+                    1,000 women in 2009.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-birth-outcomes-2000-2021.yml", "**It crossed below replacement in 2010 and Ohio was already there in 2000.** A rate of about 2,100 per 1,000 women is the level at which a population replaces itself without migration; this county last stood above it in 2009. [inference] \u{2014} computed here from the same series. That is eleven years later than the state and it is the demographic form of a fact [the children node](allen-county-children-2010-2024.yml) have carried as a falling birth count."),
+        ],
+        answers: &["cannot say whether these outcomes differ by race in Allen County"],
+        figures: &[],
+    },
+    Assertion {
+        id: "prematurity-fell-and-birthweight-did-not",
+        statement: "Preterm births in Allen County fell by a quarter, from 11.5 per cent in 2000 to \
+                    8.0 in 2019, while low birthweight did not move \u{2014} 8.5 per cent at the \
+                    start and 7.7 at the end of the pre-2021 record. The county is above Ohio on low \
+                    birthweight in 14 of 21 comparable years and on prematurity in 13.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-birth-outcomes-2000-2021.yml", "**Prematurity fell by a quarter and low birthweight did not move.** Preterm births run 11.5 per cent in 2000 and 8.0 in 2019, while low birthweight begins at 8.5 and ends the pre-2021 record at 7.7. [verified] \u{2014} the same source. Allen County is above Ohio on low birthweight in 14 of the 21 comparable years and above it on prematurity in 13."),
+        ],
+        answers: &["cannot say whether these outcomes differ by race in Allen County"],
+        figures: &[
+            Figure { label: "preterm, 2000", value: 11.5, literal: "11.5" },
+            Figure { label: "preterm, 2019", value: 8.0, literal: "8.0" },
+            Figure { label: "low birthweight, 2000", value: 8.5, literal: "8.5" },
+        ],
+    },
+    Assertion {
+        id: "infant-mortality-halved-then-stopped",
+        statement: "Infant mortality in Allen County nearly halved and then stopped falling: 10.33 \
+                    deaths per 1,000 live births in the five years to 2005, 6.37 in the five to \
+                    2013, and 6.95 in the five to 2020, against Ohio's 7.81, 7.42 and 7.03. The \
+                    county was well above the state for a decade and is at it now.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-birth-outcomes-2000-2021.yml", "**Infant mortality nearly halved and then stopped falling.** The five-year rate runs 10.33 deaths per 1,000 live births in the window ending 2005, 6.37 in the window ending 2013, and 6.95 in the window ending 2020, against Ohio's 7.81, 7.42 and 7.03. [verified] \u{2014} the same source. This county was well above the state for the first decade and is at it for the second."),
+        ],
+        answers: &["cannot say whether these outcomes differ by race in Allen County"],
+        figures: &[
+            Figure { label: "Allen County, to 2005", value: 10.33, literal: "10.33" },
+            Figure { label: "to 2013", value: 6.37, literal: "6.37" },
+            Figure { label: "to 2020", value: 6.95, literal: "6.95" },
+        ],
+    },
+    Assertion {
+        id: "twenty-twenty-one-is-the-worst-year",
+        statement: "2021 is the worst year in Allen County's birth record on both measures \u{2014} \
+                    10.2 per cent low birthweight and 10.8 per cent preterm, against 7.7 and 8.6 the \
+                    year before \u{2014} while Ohio moved 6.9 to 7.1 and 8.6 to 8.9. The \
+                    low-birthweight count went from 88 to 120, which is about 2.2 times the square \
+                    root of the counts: a reading rather than a finding.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-birth-outcomes-2000-2021.yml", "**2021 is the worst year in the file on both birth measures and one year is not a trend.** Low birthweight reads 10.2 per cent and prematurity 10.8, against 7.7 and 8.6 the year before, while Ohio moved 6.9 to 7.1 and 8.6 to 8.9. [verified] \u{2014} the same source. The low-birthweight count went from 88 to 120: 32 babies on a base of 88, which is about 2.2 times the square root of the counts and is a reading rather than a finding. See [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml). The state not moving is what makes it worth recording at all."),
+        ],
+        answers: &["cannot say whether these outcomes differ by race in Allen County"],
+        figures: &[
+            Figure { label: "Allen County low birthweight, 2021", value: 10.2, literal: "10.2" },
+            Figure { label: "Ohio", value: 7.1, literal: "7.1" },
+            Figure { label: "Allen County preterm, 2021", value: 10.8, literal: "10.8" },
+        ],
+    },
+    Assertion {
+        id: "the-overlap-says-it-is-the-denominator",
+        statement: "CDC publishes three of Allen County's birth measures twice, split at 2018, and \
+                    the three shared years say what changed. Low birthweight, prematurity and their \
+                    counts are identical to the digit across the break; the fertility rate differs \
+                    in all three years \u{2014} 2,063.7 against 2,064.8 in 2018 and 1,954.2 against \
+                    1,965.8 in 2020. The quantity with a population denominator moved and the \
+                    quantities counted off birth certificates did not.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-birth-outcomes-2000-2021.yml", "**The publisher splits three of these measures at 2018 and the overlap says what changed.** Low birthweight, prematurity and their counts are identical to the digit in all three overlapping years across the two measures; the fertility rate differs in all three \u{2014} 2,063.7 against 2,064.8 in 2018 and 1,954.2 against 1,965.8 in 2020. [verified] \u{2014} [the same source](../../catalog/cdc-tracking-network.md), the two measures of each pair. The quantity with a population denominator moved and the quantities counted off birth certificates did not, and the same holds at state grain. See [an overlap names what changed](../../decisions/an-overlap-names-what-changed.yml)."),
+        ],
+        answers: &["cannot say whether these outcomes differ by race in Allen County"],
+        figures: &[
+            Figure { label: "fertility rate, old variant 2020", value: 1954.2, literal: "1,954.2" },
+            Figure { label: "new variant 2020", value: 1965.8, literal: "1,965.8" },
+        ],
+    },
+    Assertion {
+        id: "fewer-patients-about-as-long",
+        statement: "Allen County's hospitals are treating fewer people, not the same people for less \
+                    time. Discharges fell 15.1 per cent between 2011 and 2023, from 26,924 to \
+                    22,858, while the average stay rose from 4.37 days to 4.49.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-hospital-activity-2011-2023.yml", "**They are treating fewer people, not the same people for less time.** Discharges fell 15.1 per cent between 2011 and 2023, from 26,924 to 22,858, while the average stay went from 4.37 days to 4.49 \u{2014} up, not down. [verified] \u{2014} the same source, computed here. That answers the question [the bed node](allen-county-hospital-beds-2011-2023.yml) left open when it could see beds falling and staff rising and could not tell which of the two explanations held."),
+        ],
+        answers: &["cannot say what any of this was paid for"],
+        figures: &[
+            Figure { label: "discharges, 2011", value: 26924.0, literal: "26,924" },
+            Figure { label: "2023", value: 22858.0, literal: "22,858" },
+            Figure { label: "average stay 2011, days", value: 4.37, literal: "4.37" },
+            Figure { label: "2023", value: 4.49, literal: "4.49" },
+        ],
+    },
+    Assertion {
+        id: "the-work-went-outpatient",
+        statement: "Outpatient work passed half of what Allen County's hospitals charge for. \
+                    Outpatient charges were 46.9 per cent of the total in 2011 and 55.3 in 2023, \
+                    rising from $785,241,733 to $2,149,902,419 against inpatient's $888,010,922 to \
+                    $1,741,256,842.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-hospital-activity-2011-2023.yml", "**The work went outpatient, and it can be counted.** Outpatient charges were 46.9 per cent of the county's hospital charges in 2011 and 55.3 in 2023, having risen from $785,241,733 to $2,149,902,419 while inpatient charges went from $888,010,922 to $1,741,256,842. [verified] \u{2014} the same source. Charges are list prices and not receipts, and neither figure is deflated; the share is the finding and the levels are context."),
+        ],
+        answers: &["cannot say what any of this was paid for"],
+        figures: &[
+            Figure { label: "outpatient share, 2011", value: 46.9, literal: "46.9" },
+            Figure { label: "2023", value: 55.3, literal: "55.3" },
+        ],
+    },
+    Assertion {
+        id: "occupancy-did-not-move-because-the-beds-came-out",
+        statement: "Occupancy in Allen County's hospitals was 55.6 per cent in 2011 and 56.0 in \
+                    2023, on a bed count that fell from 580 to 502 and patient days that fell 12.9 \
+                    per cent. A system that closes beds as fast as it loses admissions looks \
+                    unchanged on the number a reader is most likely to ask for.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-hospital-activity-2011-2023.yml", "**Occupancy did not move, because the beds came out with the patients.** 55.6 per cent in 2011 and 56.0 in 2023, across a bed count that fell from 580 to 502 and patient days that fell 12.9 per cent. [verified] \u{2014} the same source. A hospital system that closes beds as fast as it loses admissions looks unchanged on the one number a reader is most likely to ask for."),
+        ],
+        answers: &["cannot say what any of this was paid for"],
+        figures: &[
+            Figure { label: "occupancy 2011", value: 55.6, literal: "55.6" },
+            Figure { label: "2023", value: 56.0, literal: "56.0" },
+            Figure { label: "beds 2011", value: 580.0, literal: "580" },
+            Figure { label: "beds 2023", value: 502.0, literal: "502" },
+        ],
+    },
+    Assertion {
+        id: "bluffton-has-stopped-taking-inpatients",
+        statement: "Bluffton Hospital has stopped taking inpatients in any ordinary sense: 389 \
+                    discharges in 2011 and 120 in 2023, on twenty-five beds it has reported in all \
+                    thirteen years. In 2021 it took 96 and ran at 2.7 per cent occupancy \u{2014} \
+                    246 patient days out of 9,125 available.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-hospital-activity-2011-2023.yml", "**Bluffton Hospital has stopped taking inpatients in any ordinary sense.** Its discharges went from 389 in 2011 to 120 in 2023 \u{2014} 96 in 2021 \u{2014} and its occupancy from 15.4 per cent to 8.8, on twenty-five beds it has reported in all thirteen years. [verified] \u{2014} the same source. In 2021 it ran at 2.7 per cent: 246 patient days on 9,125 available."),
+        ],
+        answers: &["cannot say what any of this was paid for"],
+        figures: &[
+            Figure { label: "discharges 2011", value: 389.0, literal: "389" },
+            Figure { label: "2023", value: 120.0, literal: "120" },
+            Figure { label: "2021 occupancy", value: 2.7, literal: "2.7" },
+        ],
+    },
+    Assertion {
+        id: "the-long-term-hospital-emptied-too",
+        statement: "Kindred Hospital Lima, the county's long-term acute care hospital and the only \
+                    one of the five whose stays are measured in weeks, went from 96.6 per cent \
+                    occupancy in 2011 to 60.1 in 2023 on the same twenty-six beds, with its average \
+                    stay falling from 27.5 days to 23.7.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-hospital-activity-2011-2023.yml", "**The long-term hospital emptied too.** Kindred's occupancy ran 96.6 per cent in 2011 and 60.1 in 2023 on the same twenty-six beds, with its average stay falling from 27.5 days to 23.7. [verified] \u{2014} the same source. It is the only one of the five whose stays are measured in weeks."),
+        ],
+        answers: &["cannot say what any of this was paid for"],
+        figures: &[
+            Figure { label: "occupancy 2011", value: 96.6, literal: "96.6" },
+            Figure { label: "2023", value: 60.1, literal: "60.1" },
+            Figure { label: "average stay 2011, days", value: 27.5, literal: "27.5" },
+        ],
+    },
+    Assertion {
+        id: "the-two-big-hospitals-fell-in-proportion",
+        statement: "St. Rita's and Lima Memorial account for Allen County's inpatient medicine and \
+                    both lost about the same share of it: St. Rita's took 18,335 discharges in 2011 \
+                    and 15,892 in 2023, Lima Memorial 7,192 and 6,023, so St. Rita's share of the \
+                    two moved only from 71.8 per cent to 72.5.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-hospital-activity-2011-2023.yml", "**Two of the five account for the county's inpatient medicine and the split between them moved.** St. Rita's took 18,335 discharges in 2011 and 15,892 in 2023; Lima Memorial 7,192 and 6,023. [verified] \u{2014} the same source. St. Rita's share of the two is 71.8 per cent at the start and 72.5 at the end, so the fall was shared almost exactly in proportion. [inference] \u{2014} computed here."),
+        ],
+        answers: &["cannot say what any of this was paid for"],
+        figures: &[
+            Figure { label: "St. Rita's 2011", value: 18335.0, literal: "18,335" },
+            Figure { label: "2023", value: 15892.0, literal: "15,892" },
+            Figure { label: "Lima Memorial 2011", value: 7192.0, literal: "7,192" },
+            Figure { label: "2023", value: 6023.0, literal: "6,023" },
+        ],
+    },
+    Assertion {
         id: "seven-hundred-and-sixty-on-the-roads",
         statement: "Seven hundred and sixty people died in 666 crashes on Allen County's roads \
                     between 1975 and 2024. The rate fell by two fifths across four decades and \
