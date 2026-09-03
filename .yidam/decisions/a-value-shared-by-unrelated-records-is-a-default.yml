@@ -1,0 +1,68 @@
+id: a-value-shared-by-unrelated-records-is-a-default
+summary: >-
+  The federal mine register says The National Lime & Stone Company has controlled its Lima quarry
+  since 1 January 1950. So does it say of Wolfe Industries, of Maurice Fett, and of 41,306 other
+  controllers — a quarter of the file, on one New Year's morning, and no record in it begins
+  earlier. A value that repeats identically across records sharing nothing else is a default, and
+  the test for it is uniformity rather than implausibility.
+context: |
+  This corpus already knows that a stored value can be a placeholder.
+  [a zero is not a blank](a-zero-is-not-a-blank.yml) was written about a weather station that
+  stopped measuring snow and kept writing zeros: the sentinel wore the clothes of a measurement and
+  every completeness check passed.
+
+  That rule caught its case by reading two columns against each other — snowfall against
+  temperature. The trap here does not yield to that, because a date is plausible on its face and
+  has nothing to be read against. What gives it away is how many other records carry it.
+
+      MSHA controller history, 169,890 rows
+        01/01/1950                  41,309    24.32%   and no row is earlier
+        01/01/1979                   1,702     1.00%
+        03/09/1978                     916     0.54%   the 1977 Mine Act took effect
+        01/01/1974                     697     0.41%
+
+  Read as dates, the top four rows say that a quarter of American mining changed hands on one
+  morning in 1950 and another thousand operators on one morning in 1979. Read correctly, the first
+  is the file's floor and the third is the day the law that created the file took effect.
+
+  The corpus's own evidence agrees. The Recorder's tract books put National Lime & Stone buying
+  ground in this county in January 1944 — six years before the date the register gives for the
+  company's existence in it.
+decision: |
+  **Before a value is cited from an administrative file, count how many other records carry it.
+  Where one value is held by a large share of unrelated records, treat it as a default and say so
+  rather than reporting it.**
+
+  - **Uniformity is the test, not plausibility.** 1 January 1950 is a perfectly possible date for
+    one mine. It is not a possible date for 41,309, and nothing about any single row says which
+    kind of row it is.
+  - **Look for the administrative event behind the second-commonest values too.** A register's
+    dates cluster on the day it opened, the day its statute took effect, and the day a predecessor
+    system was migrated. Those are facts about the file and are worth recording as such.
+  - **A defaulted field is missing, not early.** Where the value is a floor, the node says the
+    quantity is unknown and names what would answer it, rather than publishing the floor with a
+    caveat attached.
+  - **The rule reaches every field, not only dates.** A repeated coordinate, a repeated ZIP, a
+    repeated employment count of zero and a repeated "unknown" spelled as a real category all fail
+    the same way.
+rationale: |
+  **The failure is invisible to the checks this corpus already runs.** A defaulted date passes a
+  bounds check, a type check, a null check and a range check. It fails only a frequency check, and
+  a frequency check is not something anybody runs on a field they are reading one row of.
+
+  **It is the mirror of the corpus's disagreement rules.**
+  [three witnesses and three dates](three-witnesses-and-three-dates.yml) and
+  [an exact match is a question](an-exact-match-is-a-question.yml) are both about what agreement
+  between sources means. This is about agreement *within* one source, and it points the same way:
+  identical values are evidence of a shared cause, and the cause is usually the file.
+
+  **It bites hardest on the oldest and most interesting claims.** The defaults sit at the beginning
+  of a register's range, which is exactly where a corpus looking for the earliest attestation of
+  anything will reach. A rule that made the corpus more eager for early dates would make it more
+  wrong.
+
+  **What this does not license.** Discarding a value because it is common. Ohio has thousands of
+  mines whose controller genuinely changed on 1 January of some year, because that is when
+  agreements start; the rule asks for the share and the floor, not for suspicion of round numbers.
+status: accepted
+date: "2026-09-03"
