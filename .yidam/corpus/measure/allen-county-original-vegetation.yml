@@ -1,0 +1,96 @@
+class: measure
+label: What grew in Allen County before the surveys, mapped
+description: |
+  The county's original vegetation, digitized from the map Robert B. Gordon drew in 1966 out of the
+  earliest land survey records. [verified] —
+  [ODNR's Original Natural Vegetation of Ohio](../../catalog/odnr-original-vegetation.md), clipped
+  to [TIGER's county polygon](../../catalog/census-tiger-roads.md).
+
+      vegetation type            acres      share
+      Beech Forests            237,924.9    91.4%
+      Elm-Ash Swamp Forests     22,433.9     8.6%
+      -----------------------------------------
+      all                      260,358.7   100.0%
+
+  **Allen County was nine parts beech forest and less than one part swamp.** Two of Gordon's
+  thirteen types occur here at all, and the swamp forest that gives
+  [the Great Black Swamp](../natural-feature/great-black-swamp.yml) its name is 22,433.9 acres of
+  260,358.7 — 8.6 per cent. [verified] — the same source. The two polygons' areas sum to the
+  county's own area exactly, which is the check that the whole county is accounted for.
+
+  **It is not one swamp. It is nineteen.** The swamp forest inside this county falls into 19
+  separate bodies, the largest 5,007.9 acres and eleven of them lying wholly inside the county line.
+  The biggest polygon that reaches in from outside, 14,414.4 acres, extends **west** into Van Wert
+  County rather than north. [verified] — the same file, by polygon.
+
+      Elm-Ash Swamp Forest by township
+      Spencer         27.1%      Monroe          9.2%      Perry        0.0%
+      Marion          20.2%      American        7.9%      Bath         0.0%
+      Amanda          17.6%      Richland        4.5%      — Lima       0.0%
+      Sugar Creek     15.6%      Auglaize        0.1%
+      Shawnee         10.8%      Jackson         0.0%
+
+  **The hydric-soil proxy overstated the swamp by a factor of 4.1.** This corpus has carried 91,953
+  acres of hydric soil, 35.3 per cent of the county, as "the nearest thing to an answer" for where
+  the swamp was. The mapped swamp forest is 22,433.9 acres, 24.4 per cent of the hydric acreage.
+  [verified] — this file against [the soil survey](../../catalog/usda-ssurgo-soil-survey.md); see
+  [the soils](allen-county-soils-2026.yml) and
+  [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml).
+
+  **The proxy got the order roughly and the places wrongly.** Ranked across the twelve townships the
+  two measures agree at a Spearman correlation of 0.685, and the disagreements are not small: Perry
+  Township is fifth on hydric soil at 34.9 per cent and has no swamp forest at all, while Shawnee is
+  tenth on hydric at 26.2 and fifth on swamp at 10.8. [inference] — computed here from the two
+  files. Four townships with a third of their ground rated hydric — Perry, Jackson, Bath and the
+  city — carried no swamp forest whatever.
+
+  **The direction the corpus guessed is right and much weaker than it looked.** On the corpus's own
+  grouping, the four townships whose centres lie north of 40.80° average 12.4 per cent swamp forest
+  against 7.9 for the other eight, where on hydric soil the same two groups read 46.0 against 30.9.
+  [inference] — the same two files. The northern lead survives and it is one township wide: take
+  Marion out and it is gone.
+
+  **The wet ground and the swamp are different facts and the county is mostly the first.**
+  Three quarters of this county's hydric acres carried beech forest rather than swamp forest, which
+  is what a lake plain that drains badly and still grows trees looks like. [inference] — computed
+  from the two files above.
+
+  **This corpus cannot say when any of this was cleared.** Gordon's map is one surface at one moment
+  — the moment of the earliest surveys — and nothing in it is a date. The county's farmland series
+  begins in 1910, eighty years after the surveys, with the clearing already done.
+
+  [open] Whether the nineteen bodies were connected before the ditching. Gordon mapped forest types
+  and not hydrology, and a swamp can be one wetland under two forest covers. Closing this needs the
+  original survey field notes rather than the map drawn from them.
+properties:
+  parameter: original vegetation cover by type
+  value: "22433.9"
+  unit: acres of elm-ash swamp forest, of 260,358.7
+  as_of: "1966"
+  method: |
+    The statewide shapefile filtered by a spatial filter on the county polygon, each polygon
+    intersected with it, and the intersections projected to EPSG:6549 for area. [verified] The
+    thirteen vegetation names come from the enumerated domain in the file's own FGDC metadata and
+    not from any re-hosted copy with the names already joined. [verified] Township shares divide the
+    swamp area inside each 2024 county subdivision by that subdivision's own projected area, so Lima
+    is listed as the separate unit the boundary file makes it. [verified] The hydric figures are the
+    corpus's own, from the soil survey, and the two sources compute county area 18.7 acres apart —
+    260,340 against 260,358.7 — which is 0.007 per cent and is not reconciled here. [verified]
+links:
+  - target: ../natural-feature/great-black-swamp.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/odnr-original-vegetation.md
+  - target: allen-county-soils-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usda-ssurgo-soil-survey.md
+  - target: allen-county-farmland-1910-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/odnr-original-vegetation.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
