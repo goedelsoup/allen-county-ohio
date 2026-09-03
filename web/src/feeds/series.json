@@ -1392,6 +1392,26 @@
       ]
     },
     {
+      "id": "place-allen-county::federal-money-for-work-and-payments-performed-in-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "federal money for work and payments performed in Allen County",
+      "unit": "dollars",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/federal-money-in-allen-county-2008-2025.yml",
+          "label": "Federal money in Allen County, 2008–2025",
+          "as_of": "2025",
+          "value": 668254916.0,
+          "published": "668254916",
+          "tier": "verified",
+          "source": "catalog/usaspending.md",
+          "method": "USAspending's geography endpoint for county 39003, one request per federal year from 2008 to 2025 and per award-type group — contracts, grants, direct payments, loans and other — run twice, once with `scope: place_of_performance` and once with `scope: recipient_location`. A federal year runs 1 October to 30 September and is named for the year it ends in. Every figure in this node is place of performance unless the sentence says otherwise, and the two totals are never added together. Assistance listings and agencies come from the category endpoint with the same county filter. The service serves nothing earlier than 1 October 2007, so 2008 is the first complete year. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::federal-share-obligated-for-public-assistance-projects-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -3608,6 +3628,26 @@
           "tier": "verified",
           "source": "catalog/leeson-allen-county-1885.md",
           "method": "Counted on the ground by the compiler of the 1885 county history as seventy-five mounds, repeated as \"some 75\" in 1906 by a book that reprints the 1885 text, and reported in 1915 as an estimate against about forty surviving markers. No register exists: the garrison's records were destroyed. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "site-lima-army-tank-plant::federal-contract-dollars-performed-in-Allen-County",
+      "subject": "site/lima-army-tank-plant.yml",
+      "subject_label": "Joint Systems Manufacturing Center (Lima Army Tank Plant)",
+      "parameter": "federal contract dollars performed in Allen County",
+      "unit": "dollars",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "label": "Federal contracts performed in Allen County, 2008–2025",
+          "as_of": "2025",
+          "value": 1088368417.0,
+          "published": "1088368417",
+          "tier": "verified",
+          "source": "catalog/usaspending.md",
+          "method": "USAspending's geography, category and award endpoints for county 39003 with award-type codes A, B, C and D, filtered on `place_of_performance_locations` for every figure here except where the sentence says recipient location. Federal years 2008 to 2025, each running 1 October to 30 September and named for the year it ends in. Award amounts are obligations recorded against the award, not disbursements, and an award's dollars sit in the year it was signed. Every recipient named here is a corporation. [verified]"
         }
       ]
     },
@@ -14227,6 +14267,302 @@
           "label": "per general division judge, 2017",
           "value": 588.0,
           "literal": "588"
+        }
+      ]
+    },
+    {
+      "id": "six-thousand-six-hundred-a-head",
+      "statement": "The federal government spent $668,254,916 in Allen County in federal year 2025 — $6,625 for every resident — and 93.5 per cent of it was payments to individuals rather than grants or contracts.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/federal-money-in-allen-county-2008-2025.yml",
+          "node_label": "Federal money in Allen County, 2008–2025",
+          "span": "**The answer is $668,254,916 in federal year 2025 — $6,625 for every resident — and 93.5 per cent of it is payments to individuals.** [verified] — [USAspending](../../catalog/usaspending.md), place of performance, against [the county's population](allen-county-population-2024.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of this money stays here.** A dollar of Social Security is spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a dividend in unknown proportions, and no source held here divides any of them."
+      ],
+      "figures": [
+        {
+          "label": "per resident",
+          "value": 6625.0,
+          "literal": "6,625"
+        }
+      ]
+    },
+    {
+      "id": "four-social-security-programmes",
+      "statement": "Four Social Security programmes paid $536,386,261 into Allen County in 2025 — retirement $402,802,985, disability $64,160,105, survivors $44,657,548 and supplemental security income $24,765,623 — which is $5,318 for every resident of the county.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/federal-money-in-allen-county-2008-2025.yml",
+          "node_label": "Federal money in Allen County, 2008–2025",
+          "span": "**Four Social Security programmes are four fifths of the whole year.** Retirement insurance $402,802,985, disability $64,160,105, survivors $44,657,548 and supplemental security income $24,765,623 — $536,386,261 between them, $5,318 a head across everybody in the county. Veterans' compensation for service-connected disability adds $40,574,698. [verified] — same source, by assistance listing. What a federal budget does in a county like this one is mostly send cheques to old people. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of this money stays here.** A dollar of Social Security is spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a dividend in unknown proportions, and no source held here divides any of them."
+      ],
+      "figures": [
+        {
+          "label": "supplemental security income",
+          "value": 24765623.0,
+          "literal": "24,765,623"
+        },
+        {
+          "label": "survivors",
+          "value": 44657548.0,
+          "literal": "44,657,548"
+        },
+        {
+          "label": "disability",
+          "value": 64160105.0,
+          "literal": "64,160,105"
+        },
+        {
+          "label": "retirement",
+          "value": 402802985.0,
+          "literal": "402,802,985"
+        }
+      ]
+    },
+    {
+      "id": "the-biggest-federal-grant-here-is-roads",
+      "statement": "Highway planning and construction has brought Allen County $255,335,761 since 2008, more than three times Head Start's $69,991,874 and the largest federal grant programme in the county. Across its 359.2 miles of federal-aid highway that is $710,846 a mile.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/federal-money-in-allen-county-2008-2025.yml",
+          "node_label": "Federal money in Allen County, 2008–2025",
+          "span": "**The largest grant programme over eighteen years is roads.** Highway planning and construction has brought $255,335,761 since 2008, against Head Start's $69,991,874, the education stabilization fund's $38,535,550 and the health centre programme's $49,416,292 across two listings. [verified] — same source. Spread across the 359.2 miles of federal-aid highway this county has, that is $710,846 a mile in eighteen years. [inference] — computed here against [the federal-aid system](allen-county-federal-aid-highways-2018.yml).",
+          "tier": "inference",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of this money stays here.** A dollar of Social Security is spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a dividend in unknown proportions, and no source held here divides any of them."
+      ],
+      "figures": [
+        {
+          "label": "Head Start",
+          "value": 69991874.0,
+          "literal": "69,991,874"
+        },
+        {
+          "label": "highways",
+          "value": 255335761.0,
+          "literal": "255,335,761"
+        }
+      ]
+    },
+    {
+      "id": "one-billion-and-one-hundred-and-fifty-five-million",
+      "statement": "Federal contract dollars whose place of performance is Allen County come to $1,088,368,417 since 2008; contract dollars whose recipient is located in Allen County come to $154,761,289. Neither is wrong — one counts where the work was done and the other where the payee's address is.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/federal-money-in-allen-county-2008-2025.yml",
+          "node_label": "Federal money in Allen County, 2008–2025",
+          "span": "**The same file answers this question twice and the two answers differ by a factor of seven on contracts.** The ratio of the place-of-performance total to the recipient-location total is 7.03 on contracts and 1.97 across all award types. [verified] — the same source, both scopes, summed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        },
+        {
+          "node": "measure/federal-money-in-allen-county-2008-2025.yml",
+          "node_label": "Federal money in Allen County, 2008–2025",
+          "span": "**Neither is wrong.** One counts where the work was done and the other where the payee's address is, and the gap is what it means for a county's largest installations to be owned and operated from elsewhere. [inference] — see [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml) and [the contracts](federal-contracts-in-allen-county-2008-2025.yml).",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of this money stays here.** A dollar of Social Security is spent in a grocery and a dollar of a defence contract is a wage, a supplier's invoice and a dividend in unknown proportions, and no source held here divides any of them."
+      ],
+      "figures": [
+        {
+          "label": "ratio on all award types",
+          "value": 1.97,
+          "literal": "1.97"
+        },
+        {
+          "label": "ratio on contracts",
+          "value": 7.03,
+          "literal": "7.03"
+        }
+      ]
+    },
+    {
+      "id": "ninety-seven-per-cent-defence",
+      "statement": "The Department of Defense bought $1,060,110,812 of the $1,088,368,417 of federal contract work performed in Allen County since 2008 — 97.4 per cent. Veterans Affairs is the next largest at $16,594,375 and the whole of the rest of the federal government is $134,589.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "node_label": "Federal contracts performed in Allen County, 2008–2025",
+          "span": "**$1,088,368,417 of federal contract work has been performed in Allen County since 2008, and 97.4 per cent of it was bought by the Department of Defense.** Veterans Affairs is the next largest at $16,594,375 and the General Services Administration at $11,081,336; the whole of the rest of the federal government comes to $134,589. [verified] — [USAspending](../../catalog/usaspending.md), place of performance, by awarding agency.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many people in Allen County are paid out of these contracts.** An award records an obligation to a company, not a payroll, and the file carries no employment figure at all."
+      ],
+      "figures": [
+        {
+          "label": "everything else",
+          "value": 134589.0,
+          "literal": "134,589"
+        },
+        {
+          "label": "General Services Administration",
+          "value": 11081336.0,
+          "literal": "11,081,336"
+        },
+        {
+          "label": "Veterans Affairs",
+          "value": 16594375.0,
+          "literal": "16,594,375"
+        }
+      ]
+    },
+    {
+      "id": "four-firms-and-one-is-from-here",
+      "statement": "Four firms account for 92.2 per cent of the federal contract work performed in Allen County — tanks, jet fuel, the tank plant's utilities and warhead casings. Three of them vanish when the same file is asked who was paid: $901,951,528 of work done here is recorded against corporate addresses elsewhere.",
+      "topic": "government",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "node_label": "Federal contracts performed in Allen County, 2008–2025",
+          "span": "**Four firms are 92.2 per cent of it and only one of them is from here.** General Dynamics Land Systems $453,692,926, Husky Marketing and Supply $328,850,129, Siemens Government Technologies $119,408,473 and Superior Forge & Steel $101,917,494. [verified] — same source, by recipient.",
+          "tier": "verified",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        },
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "node_label": "Federal contracts performed in Allen County, 2008–2025",
+          "span": "**Three of those four vanish when the same file is asked who was paid.** $901,951,528 of work done on this county's ground is recorded, in the recipient view, against corporate addresses elsewhere; Superior Forge & Steel is a Lima firm and appears in both. [verified] — same source, both scopes. See [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many people in Allen County are paid out of these contracts.** An award records an obligation to a company, not a payroll, and the file carries no employment figure at all."
+      ],
+      "figures": [
+        {
+          "label": "Superior Forge & Steel",
+          "value": 101917494.0,
+          "literal": "101,917,494"
+        },
+        {
+          "label": "Siemens",
+          "value": 119408473.0,
+          "literal": "119,408,473"
+        },
+        {
+          "label": "Husky Marketing and Supply",
+          "value": 328850129.0,
+          "literal": "328,850,129"
+        },
+        {
+          "label": "General Dynamics Land Systems",
+          "value": 453692926.0,
+          "literal": "453,692,926"
+        }
+      ]
+    },
+    {
+      "id": "forty-two-tanks-for-saudi-arabia",
+      "statement": "The largest single federal award performed in Allen County is $71,709,279 to General Dynamics Land Systems, December 2010 to July 2012, for forty-two material sets converting M1A2 tanks to the M1A2S configuration for the Kingdom of Saudi Arabia.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "node_label": "Federal contracts performed in Allen County, 2008–2025",
+          "span": "**The largest single award names the customer and it is not the United States.** $71,709,279 to General Dynamics Land Systems, 30 December 2010 to 2 July 2012, for \"(42) MATERIAL SETS FOR THE CONVERSION OF M1A2 TANKS TO M1A2S CONFIGURATION FOR THE KINGDOM OF SAUDI ARABIA\". [verified] — same source, the award endpoint. The plant is [the Army's](../site/lima-army-tank-plant.yml), the work is a foreign military sale, and the money is an Army contract. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many people in Allen County are paid out of these contracts.** An award records an obligation to a company, not a payroll, and the file carries no employment figure at all."
+      ],
+      "figures": [
+        {
+          "label": "the Saudi award",
+          "value": 71709279.0,
+          "literal": "71,709,279"
+        }
+      ]
+    },
+    {
+      "id": "the-forge-and-the-refinery",
+      "statement": "The Lima refinery sold the Defense Logistics Agency $327,872,832 of JP8 turbine fuel in three contracts, and a Lima forge holds $94,389,046 of Air Force awards for penetrator warhead production and massive ordnance penetrator warhead cases.",
+      "topic": "government",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "node_label": "Federal contracts performed in Allen County, 2008–2025",
+          "span": "**The refinery sells the military jet fuel.** Three awards to Husky Marketing and Supply from the Defense Logistics Agency for `TURBINE FUEL, JP8` — $178,794,000 running from March 2009, $84,717,360 from April 2010 and $64,361,472 from April 2008. [verified] — same source. Husky is the name [the Lima refinery](../site/lima-refinery.yml) was operated under from 2010, and JP8 is a kerosene the refinery's own product slate would carry. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        },
+        {
+          "node": "measure/federal-contracts-in-allen-county-2008-2025.yml",
+          "node_label": "Federal contracts performed in Allen County, 2008–2025",
+          "span": "**A Lima forge makes the casings for the largest conventional bomb the Air Force has.** Superior Forge & Steel Corp holds five Air Force awards worth $94,389,046 between 2018 and 2025 for \"BLU-137/B PENETRATOR WARHEAD PRODUCTION\" and \"MASSIVE ORDNANCE PENETRATOR WARHEAD CASES\". [verified] — same source, by award. This is the county's own firm in the county's largest industry, and the corpus had it in no other file. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/usaspending.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many people in Allen County are paid out of these contracts.** An award records an obligation to a company, not a payroll, and the file carries no employment figure at all."
+      ],
+      "figures": [
+        {
+          "label": "the forge's warhead awards",
+          "value": 94389046.0,
+          "literal": "94,389,046"
+        },
+        {
+          "label": "one JP8 contract",
+          "value": 178794000.0,
+          "literal": "178,794,000"
         }
       ]
     },

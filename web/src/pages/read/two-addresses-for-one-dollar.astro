@@ -1,0 +1,85 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const head = assertion('six-thousand-six-hundred-a-head')
+const ss = assertion('four-social-security-programmes')
+const roads = assertion('the-biggest-federal-grant-here-is-roads')
+const two = assertion('one-billion-and-one-hundred-and-fifty-five-million')
+const dod = assertion('ninety-seven-per-cent-defence')
+const four = assertion('four-firms-and-one-is-from-here')
+const saudi = assertion('forty-two-tanks-for-saudi-arabia')
+const forge = assertion('the-forge-and-the-refinery')
+
+const spec = (a: typeof ss, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const ssSpec = spec(ss, 'Dollars paid into Allen County, FY2025')
+const fourSpec = spec(four, 'Contract dollars performed here, 2008–2025')
+---
+
+<Article slug="two-addresses-for-one-dollar">
+  <p>
+    Allen County's own government runs on $374,841,547 a year, and its books are already here. The
+    larger set of books over them was not. The United States publishes every dollar it awards, and
+    it can be asked by county.
+  </p>
+  <AssertionCard assertion={head} open />
+  <AssertionCard assertion={ss} />
+  <ChartFigure
+    id="ss"
+    title="What a federal budget mostly does here"
+    caption="Four Social Security programmes, federal year 2025, for work and payments performed in Allen County. Together they are four fifths of the federal year and $5,318 for every resident."
+    columns={['Programme', 'Dollars']}
+    rows={ss.figures.map((f) => [f.label, `$${f.value.toLocaleString('en-US')}`])}
+  />
+  <script type="application/json" data-chart-spec="ss" set:html={JSON.stringify(ssSpec)} is:inline />
+  <p>
+    So the single largest thing the federal government does in this county is send cheques to old
+    people, and it does it at a scale a county budget cannot approach. Veterans' compensation for
+    service-connected disability adds another $40,574,698 on top.
+  </p>
+  <AssertionCard assertion={roads} />
+
+  <h2>The same question, twice</h2>
+  <AssertionCard assertion={two} />
+  <Gloss>
+    A geography field in a query looks like a formality. It is the whole answer. Set the scope to
+    where the work was done and this county's federal contract economy is $1.09 billion; set it to
+    where the payee's address is and it is $155 million. Neither is an error, and the file prefers
+    neither. "How much does the federal government spend in Allen County" is two questions — how
+    much work does it buy here, and how much money do people and firms here receive — and the
+    ratio between them, 7.03 on contracts, is itself the measurement: it is how much of this
+    county's federal economy is worked here and banked elsewhere.
+  </Gloss>
+  <AssertionCard assertion={dod} />
+  <AssertionCard assertion={four} />
+  <ChartFigure
+    id="four"
+    title="Four firms, ninety-two per cent"
+    caption="Federal contract dollars performed in Allen County, 2008–2025, by performer. Only Superior Forge & Steel appears when the same file is asked who was paid."
+    columns={['Performer', 'Dollars performed here']}
+    rows={four.figures.map((f) => [f.label, `$${f.value.toLocaleString('en-US')}`])}
+  />
+  <script type="application/json" data-chart-spec="four" set:html={JSON.stringify(fourSpec)} is:inline />
+
+  <h2>What the contracts are for</h2>
+  <AssertionCard assertion={saudi} />
+  <AssertionCard assertion={forge} />
+  <p>
+    Which is the county described by its own invoices: a government arsenal building tanks for a
+    foreign buyer, a refinery selling kerosene to the Defense Logistics Agency, a forge turning out
+    the casings for the largest conventional bomb in the American arsenal, and a twenty-two-year
+    contract to run the arsenal's boiler house until 2038. Three of those four are paid to addresses
+    in other states. The fourth is a Lima company, and it is the only one of them this county's
+    other records would have found on their own.
+  </p>
+</Article>

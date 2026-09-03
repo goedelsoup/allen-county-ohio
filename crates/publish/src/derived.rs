@@ -5269,6 +5269,139 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "six-thousand-six-hundred-a-head",
+        statement: "The federal government spent $668,254,916 in Allen County in federal year 2025 \
+                    \u{2014} $6,625 for every resident \u{2014} and 93.5 per cent of it was payments \
+                    to individuals rather than grants or contracts.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-money-in-allen-county-2008-2025.yml", "**The answer is $668,254,916 in federal year 2025 \u{2014} $6,625 for every resident \u{2014} and 93.5 per cent of it is payments to individuals.** [verified] \u{2014} [USAspending](../../catalog/usaspending.md), place of performance, against [the county's population](allen-county-population-2024.yml)."),
+        ],
+        answers: &["cannot say what share of this money stays here"],
+        figures: &[
+            Figure { label: "per resident", value: 6625.0, literal: "6,625" },
+        ],
+    },
+    Assertion {
+        id: "four-social-security-programmes",
+        statement: "Four Social Security programmes paid $536,386,261 into Allen County in 2025 \
+                    \u{2014} retirement $402,802,985, disability $64,160,105, survivors $44,657,548 \
+                    and supplemental security income $24,765,623 \u{2014} which is $5,318 for every \
+                    resident of the county.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-money-in-allen-county-2008-2025.yml", "**Four Social Security programmes are four fifths of the whole year.** Retirement insurance $402,802,985, disability $64,160,105, survivors $44,657,548 and supplemental security income $24,765,623 \u{2014} $536,386,261 between them, $5,318 a head across everybody in the county. Veterans' compensation for service-connected disability adds $40,574,698. [verified] \u{2014} same source, by assistance listing. What a federal budget does in a county like this one is mostly send cheques to old people. [inference]"),
+        ],
+        answers: &["cannot say what share of this money stays here"],
+        figures: &[
+            Figure { label: "supplemental security income", value: 24765623.0, literal: "24,765,623" },
+            Figure { label: "survivors", value: 44657548.0, literal: "44,657,548" },
+            Figure { label: "disability", value: 64160105.0, literal: "64,160,105" },
+            Figure { label: "retirement", value: 402802985.0, literal: "402,802,985" },
+        ],
+    },
+    Assertion {
+        id: "the-biggest-federal-grant-here-is-roads",
+        statement: "Highway planning and construction has brought Allen County $255,335,761 since \
+                    2008, more than three times Head Start's $69,991,874 and the largest federal \
+                    grant programme in the county. Across its 359.2 miles of federal-aid highway \
+                    that is $710,846 a mile.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-money-in-allen-county-2008-2025.yml", "**The largest grant programme over eighteen years is roads.** Highway planning and construction has brought $255,335,761 since 2008, against Head Start's $69,991,874, the education stabilization fund's $38,535,550 and the health centre programme's $49,416,292 across two listings. [verified] \u{2014} same source. Spread across the 359.2 miles of federal-aid highway this county has, that is $710,846 a mile in eighteen years. [inference] \u{2014} computed here against [the federal-aid system](allen-county-federal-aid-highways-2018.yml)."),
+        ],
+        answers: &["cannot say what share of this money stays here"],
+        figures: &[
+            Figure { label: "Head Start", value: 69991874.0, literal: "69,991,874" },
+            Figure { label: "highways", value: 255335761.0, literal: "255,335,761" },
+        ],
+    },
+    Assertion {
+        id: "one-billion-and-one-hundred-and-fifty-five-million",
+        statement: "Federal contract dollars whose place of performance is Allen County come to \
+                    $1,088,368,417 since 2008; contract dollars whose recipient is located in Allen \
+                    County come to $154,761,289. Neither is wrong \u{2014} one counts where the work \
+                    was done and the other where the payee's address is.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-money-in-allen-county-2008-2025.yml", "**The same file answers this question twice and the two answers differ by a factor of seven on contracts.** The ratio of the place-of-performance total to the recipient-location total is 7.03 on contracts and 1.97 across all award types. [verified] \u{2014} the same source, both scopes, summed here."),
+            support!("measure/federal-money-in-allen-county-2008-2025.yml", "**Neither is wrong.** One counts where the work was done and the other where the payee's address is, and the gap is what it means for a county's largest installations to be owned and operated from elsewhere. [inference] \u{2014} see [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml) and [the contracts](federal-contracts-in-allen-county-2008-2025.yml)."),
+        ],
+        answers: &["cannot say what share of this money stays here"],
+        figures: &[
+            Figure { label: "ratio on all award types", value: 1.97, literal: "1.97" },
+            Figure { label: "ratio on contracts", value: 7.03, literal: "7.03" },
+        ],
+    },
+    Assertion {
+        id: "ninety-seven-per-cent-defence",
+        statement: "The Department of Defense bought $1,060,110,812 of the $1,088,368,417 of federal \
+                    contract work performed in Allen County since 2008 \u{2014} 97.4 per cent. \
+                    Veterans Affairs is the next largest at $16,594,375 and the whole of the rest of \
+                    the federal government is $134,589.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-contracts-in-allen-county-2008-2025.yml", "**$1,088,368,417 of federal contract work has been performed in Allen County since 2008, and 97.4 per cent of it was bought by the Department of Defense.** Veterans Affairs is the next largest at $16,594,375 and the General Services Administration at $11,081,336; the whole of the rest of the federal government comes to $134,589. [verified] \u{2014} [USAspending](../../catalog/usaspending.md), place of performance, by awarding agency."),
+        ],
+        answers: &["cannot say how many people in Allen County are paid out of these contracts"],
+        figures: &[
+            Figure { label: "everything else", value: 134589.0, literal: "134,589" },
+            Figure { label: "General Services Administration", value: 11081336.0, literal: "11,081,336" },
+            Figure { label: "Veterans Affairs", value: 16594375.0, literal: "16,594,375" },
+        ],
+    },
+    Assertion {
+        id: "four-firms-and-one-is-from-here",
+        statement: "Four firms account for 92.2 per cent of the federal contract work performed in \
+                    Allen County \u{2014} tanks, jet fuel, the tank plant's utilities and warhead \
+                    casings. Three of them vanish when the same file is asked who was paid: \
+                    $901,951,528 of work done here is recorded against corporate addresses \
+                    elsewhere.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-contracts-in-allen-county-2008-2025.yml", "**Four firms are 92.2 per cent of it and only one of them is from here.** General Dynamics Land Systems $453,692,926, Husky Marketing and Supply $328,850,129, Siemens Government Technologies $119,408,473 and Superior Forge & Steel $101,917,494. [verified] \u{2014} same source, by recipient."),
+            support!("measure/federal-contracts-in-allen-county-2008-2025.yml", "**Three of those four vanish when the same file is asked who was paid.** $901,951,528 of work done on this county's ground is recorded, in the recipient view, against corporate addresses elsewhere; Superior Forge & Steel is a Lima firm and appears in both. [verified] \u{2014} same source, both scopes. See [a dollar has two addresses](../../decisions/a-dollar-has-two-addresses.yml)."),
+        ],
+        answers: &["cannot say how many people in Allen County are paid out of these contracts"],
+        figures: &[
+            Figure { label: "Superior Forge & Steel", value: 101917494.0, literal: "101,917,494" },
+            Figure { label: "Siemens", value: 119408473.0, literal: "119,408,473" },
+            Figure { label: "Husky Marketing and Supply", value: 328850129.0, literal: "328,850,129" },
+            Figure { label: "General Dynamics Land Systems", value: 453692926.0, literal: "453,692,926" },
+        ],
+    },
+    Assertion {
+        id: "forty-two-tanks-for-saudi-arabia",
+        statement: "The largest single federal award performed in Allen County is $71,709,279 to \
+                    General Dynamics Land Systems, December 2010 to July 2012, for forty-two \
+                    material sets converting M1A2 tanks to the M1A2S configuration for the Kingdom \
+                    of Saudi Arabia.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-contracts-in-allen-county-2008-2025.yml", "**The largest single award names the customer and it is not the United States.** $71,709,279 to General Dynamics Land Systems, 30 December 2010 to 2 July 2012, for \"(42) MATERIAL SETS FOR THE CONVERSION OF M1A2 TANKS TO M1A2S CONFIGURATION FOR THE KINGDOM OF SAUDI ARABIA\". [verified] \u{2014} same source, the award endpoint. The plant is [the Army's](../site/lima-army-tank-plant.yml), the work is a foreign military sale, and the money is an Army contract. [inference]"),
+        ],
+        answers: &["cannot say how many people in Allen County are paid out of these contracts"],
+        figures: &[
+            Figure { label: "the Saudi award", value: 71709279.0, literal: "71,709,279" },
+        ],
+    },
+    Assertion {
+        id: "the-forge-and-the-refinery",
+        statement: "The Lima refinery sold the Defense Logistics Agency $327,872,832 of JP8 turbine \
+                    fuel in three contracts, and a Lima forge holds $94,389,046 of Air Force awards \
+                    for penetrator warhead production and massive ordnance penetrator warhead cases.",
+        topic: "government",
+        supports: &[
+            support!("measure/federal-contracts-in-allen-county-2008-2025.yml", "**The refinery sells the military jet fuel.** Three awards to Husky Marketing and Supply from the Defense Logistics Agency for `TURBINE FUEL, JP8` \u{2014} $178,794,000 running from March 2009, $84,717,360 from April 2010 and $64,361,472 from April 2008. [verified] \u{2014} same source. Husky is the name [the Lima refinery](../site/lima-refinery.yml) was operated under from 2010, and JP8 is a kerosene the refinery's own product slate would carry. [inference]"),
+            support!("measure/federal-contracts-in-allen-county-2008-2025.yml", "**A Lima forge makes the casings for the largest conventional bomb the Air Force has.** Superior Forge & Steel Corp holds five Air Force awards worth $94,389,046 between 2018 and 2025 for \"BLU-137/B PENETRATOR WARHEAD PRODUCTION\" and \"MASSIVE ORDNANCE PENETRATOR WARHEAD CASES\". [verified] \u{2014} same source, by award. This is the county's own firm in the county's largest industry, and the corpus had it in no other file. [inference]"),
+        ],
+        answers: &["cannot say how many people in Allen County are paid out of these contracts"],
+        figures: &[
+            Figure { label: "the forge's warhead awards", value: 94389046.0, literal: "94,389,046" },
+            Figure { label: "one JP8 contract", value: 178794000.0, literal: "178,794,000" },
+        ],
+    },
+    Assertion {
         id: "one-collapsed-and-the-other-did-not-move",
         statement: "Foreclosure filings in Allen County peaked at 996 in 2008 and fell to 264 by 2017, down 73.5 per cent. Eviction filings over the same eleven years ran 798 to 982, averaging 874.7 with a standard deviation of 55.",
         topic: "housing",
