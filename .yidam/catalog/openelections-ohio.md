@@ -47,7 +47,16 @@ location:
       2002 general, county grain — governor and the five other statewide executive offices. 2008
       and 2014 are the same shape at `2008/20081104__oh__general.csv` and
       `2014/20141104__oh__general.csv`; 2006 and 2010 exist only at precinct grain and are summed.
+  - kind: url
+    value: https://raw.githubusercontent.com/openelections/openelections-data-oh/master/2000/20001107__oh__general__house.csv
+    description: >-
+      County-grain U.S. House returns for 2000, with siblings for president, U.S. Senate and the
+      state senate. 2002, 2008, 2014 and 2016 carry every office in one file; 2012 splits them the
+      way 2000 does; 2020 has `20201103__oh__general__county.csv`. **2004 has no general-election
+      file at any grain**, and 2006, 2010 and 2018 have only precinct files.
 used-by:
+  - ../corpus/measure/allen-county-in-congress-2000-2020.yml
+  - ../corpus/measure/allen-county-in-the-general-assembly-2000-2020.yml
   - ../corpus/measure/allen-county-presidential-vote-2000-2016.yml
   - ../corpus/division/voting-district-lima-1a-2020.yml
   - ../corpus/measure/allen-county-elected-seats-2026.yml
@@ -170,3 +179,17 @@ the precinct grain of each file, counted by distinct code.
 **Four statewide ballot issues, which is a kind of return this corpus had not held.** The 2006
 workbook carries `STATE_ISSUE_2` through `STATE_ISSUE_5`, yes and no, per precinct. **It numbers them
 and does not name them**, and no other source here does either. [verified]
+
+## What was in the file all along
+
+Five of these general-election files carry the U.S. House, the U.S. Senate and both chambers of the
+General Assembly beside the president and governor this corpus first came for. The 2006 workbook's
+own description above lists them. They went unread for nine phases, which is a second instance of
+[a source is not exhausted by one question](../decisions/a-source-is-not-exhausted-by-one-question.yml).
+[verified] — the repository's tree, and this corpus's own use of it.
+
+**One file has an office column with vote counts in it.** In `20141104__oh__general.csv` two Allen
+County rows carry `19660` and `7603` where the office should be — the U.S. House race's own totals,
+shifted a column. Reading the file by office name silently invents two offices; reading it by
+candidate does not. [verified] — the 2014 file.
+

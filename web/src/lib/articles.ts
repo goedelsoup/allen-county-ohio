@@ -403,6 +403,27 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'one-name-on-the-ballot',
+    title: 'One name on the ballot',
+    dek: "Allen County is its own seat in the Ohio House, and three times in eight elections nobody has run for it. A fifth of the county's voters leave the line blank when that happens.",
+    section: 'government',
+    era: [2000, 2020],
+    assertions: [
+      'the-county-is-its-own-house-district',
+      'four-contests-with-one-name-on-the-ballot',
+      'a-fifth-will-not-mark-an-unopposed-line',
+      'one-seat-one-man-four-years-apart',
+      'the-fourth-district-for-twenty-years',
+      'one-name-on-this-ballot-for-twenty-years',
+      'sherrod-brown-came-closest',
+    ],
+    entries: [
+      'measure/allen-county-in-the-general-assembly-2000-2020.yml',
+      'measure/allen-county-in-congress-2000-2020.yml',
+      'measure/allen-county-governor-vote-2002-2018.yml',
+    ],
+  },
+  {
     slug: 'the-wells-that-are-still-there',
     title: 'The wells that are still there',
     dek: 'The 1885 oil strike is the best-dated event in this county\u2019s history. Nobody had counted what it left behind: 4,849 holes, and no paper closing most of them.',
