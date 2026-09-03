@@ -341,6 +341,24 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'fewer-doors',
+    title: 'Fewer doors',
+    dek: 'A fifth of this county\u2019s workplaces are gone and almost all of its jobs are not. What went was the shops with under ten people in them.',
+    section: 'work',
+    era: [1986, 2023],
+    assertions: [
+      'a-fifth-of-the-workplaces-are-gone',
+      'the-small-workplaces-are-what-went',
+      'pay-that-has-not-moved-in-thirty-seven-years',
+      'retail-lost-more-than-manufacturing',
+      'the-two-largest-sectors-are-level-again',
+    ],
+    entries: [
+      'measure/allen-county-private-employers-1986-2023.yml',
+      'measure/allen-county-manufacturing-employment-1986-2022.yml',
+    ],
+  },
+  {
     slug: 'buying-and-borrowing',
     title: 'Buying, and borrowing against what you own',
     dek: 'Seven years of mortgage applications, and a denial gap that income does not account for.',

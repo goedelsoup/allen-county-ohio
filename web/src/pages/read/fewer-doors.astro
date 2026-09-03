@@ -1,0 +1,133 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const doors = assertion('a-fifth-of-the-workplaces-are-gone')
+const small = assertion('the-small-workplaces-are-what-went')
+const pay = assertion('pay-that-has-not-moved-in-thirty-seven-years')
+const retail = assertion('retail-lost-more-than-manufacturing')
+const level = assertion('the-two-largest-sectors-are-level-again')
+
+const spec = (a: typeof doors, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const doorsSpec = spec(doors, 'Private establishments')
+const smallSpec = spec(small, 'Establishments, 1986 to 2023')
+const paySpec = spec(pay, 'Payroll per employee, 2023 dollars')
+const retailSpec = spec(retail, 'Employees')
+const levelSpec = spec(level, 'Employees')
+---
+
+<Article slug="fewer-doors">
+  <p>
+    The federal business register counts every private employer in the country once a year, and has
+    done since 1986. For Allen County that is thirty-eight readings of how many places of work there
+    are, how many people are in them and what those people are paid. Read every fifth year it tells
+    one story about this county. Read every year it tells a slightly different one, and the
+    difference is where the interesting parts live: a turning point three years later than the
+    sampled version showed, and a sector nobody was watching that lost more work than the ones
+    everybody was.
+  </p>
+  <AssertionCard assertion={doors} open />
+  <ChartFigure
+    id="doors"
+    title="Private workplaces in Allen County"
+    caption="Establishments on the federal business register. Government, the self-employed, farms and railroads are outside these counts, so this is not the whole of the county's work."
+    columns={['Year', 'Establishments']}
+    rows={doors.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="doors" set:html={JSON.stringify(doorsSpec)} is:inline />
+  <p>
+    Five hundred and twenty-four fewer places to work, and almost the same number of jobs. The
+    average workplace here went from sixteen and a half people to nearly twenty. That is not a
+    county emptying out at work; it is a county consolidating. Employment did fall, and it fell in a
+    shape the establishment count does not show: a peak of 52,699 in 2005, a floor of 42,814 in
+    2022, and a rise of 1,437 in 2023 that is the fifth-largest one-year gain in the whole
+    thirty-eight.
+  </p>
+
+  <h2>Where the loss is</h2>
+  <AssertionCard assertion={small} />
+  <ChartFigure
+    id="small"
+    title="Change in workplaces by size, 1986 to 2023"
+    caption="The nine size classes sum to the establishment total exactly in both years, so nothing here is suppression. Under 5 employees: 1,455 down to 933. Five to nine: 601 down to 502."
+    columns={['Size', 'Change']}
+    rows={small.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="small" set:html={JSON.stringify(smallSpec)} is:inline />
+  <p>
+    The whole net loss is the small shops. Every class from ten employees upward is larger than it
+    was, and the four classes above a hundred employees hold precisely the counts they held in 1986
+    — fifty-one, ten, four and four. The big employers of this county are as numerous as they were
+    thirty-seven years ago. The small ones are two-thirds as numerous.
+  </p>
+
+  <h2>What the pay is worth</h2>
+  <AssertionCard assertion={pay} />
+  <ChartFigure
+    id="pay"
+    title="Payroll per private employee, in 2023 dollars"
+    caption="The middle bar is 2023's actual figure. The outer two are 1986's figure carried forward on two different consumer price indices — the national one and the Midwest one."
+    columns={['Measure', 'Amount']}
+    rows={pay.figures.map((f) => [f.label, `$${f.value.toLocaleString('en-US')}`])}
+  />
+  <script type="application/json" data-chart-spec="pay" set:html={JSON.stringify(paySpec)} is:inline />
+  <Gloss>
+    Deflating is a second source entering the sentence, and it usually goes unnamed. Two Bureau of
+    Labor Statistics indices cover 1986 to 2023: the national all-items index rises 2.78 times and
+    the Midwest one 2.62. Six per cent apart over thirty-seven years, against a real change of about
+    three — so the index decides the sign. The national one is used by default here, because it
+    reaches back to 1913 and the Midwest series begins in December 1966.
+  </Gloss>
+  <p>
+    Payroll per employee rose from $19,658 to $52,858 in the money of the day — a rise of 169 per
+    cent that means almost nothing on its own. In constant dollars the honest sentence is that this
+    county's private workers are paid about what they were paid in 1986, and no index in hand can
+    say which side of level. One caution rides under it: the employment figure is a March headcount
+    that counts a part-time worker as one person, so a shift toward part-time work would flatten
+    this line without anyone's wage moving.
+  </p>
+
+  <h2>Not the sector you would guess</h2>
+  <AssertionCard assertion={retail} />
+  <ChartFigure
+    id="retail"
+    title="Retail and manufacturing employees"
+    caption="1998 is the first year of the NAICS classification, which is why the comparison starts there rather than in 1986. Retail also lost 167 of its 535 establishments over the same years."
+    columns={['Sector and year', 'Employees']}
+    rows={retail.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="retail" set:html={JSON.stringify(retailSpec)} is:inline />
+  <p>
+    Lima's histories are histories of factories, and the county's decline is told as a factory
+    story. Since 1998 the shops have lost three times as many jobs as the factories have. Wholesale
+    trade lost another 1,359, construction 515 and information 464. Manufacturing's own low point
+    was 2013, and it has added two thousand jobs since.
+  </p>
+
+  <h2>The two largest are level</h2>
+  <AssertionCard assertion={level} />
+  <ChartFigure
+    id="level"
+    title="Health care against manufacturing"
+    caption="Health care employment in Allen County peaked in 2013 and has fallen in eight of the ten years since. Hospitals account for most of the fall."
+    columns={['Measure', 'Employees']}
+    rows={level.figures.map((f) => [f.label, f.value.toLocaleString('en-US')])}
+  />
+  <script type="application/json" data-chart-spec="level" set:html={JSON.stringify(levelSpec)} is:inline />
+  <p>
+    For twenty-one years the largest private employer in Allen County was medicine. In 2023 the
+    factories drew level again — not because the factories grew back to what they were, but because
+    the hospitals shed a quarter of their people in a decade. Two sectors of nine thousand each, in
+    a county whose private payroll holds forty-four thousand.
+  </p>
+</Article>

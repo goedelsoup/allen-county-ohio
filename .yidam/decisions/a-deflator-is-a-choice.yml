@@ -1,0 +1,72 @@
+id: a-deflator-is-a-choice
+summary: >-
+  Payroll per private employee in Allen County was $19,658 in 1986 and $52,858 in 2023. Deflated by
+  the national consumer price index that is a fall of 3.3 per cent; deflated by the Midwest index it
+  is a rise of 2.7. Same two figures, same programme, opposite signs. A deflated dollar carries the
+  name of the index that deflated it, and where the answer is near zero the node reports both.
+context: |
+  This corpus went eighty-odd phases without a price index and said so. Three nodes carried the
+  admission in the open — "the corpus offers no real-terms comparison because it holds no deflator",
+  "this corpus holds no price index for any of these years and cannot deflate a dollar it prints" —
+  and the second of those was an open question.
+
+  Acquiring one closed the question and opened a smaller, sharper one. There is more than one index,
+  they do not agree, and the disagreement is the size of the findings.
+
+      1986 to 2023, price level      national CPI-U   Midwest CPI-U
+      index 1986                              109.6           108.0
+      index 2023                            304.702          282.76
+      factor                                   2.78            2.62
+
+  Six per cent apart over thirty-seven years. Against a real change of three per cent that is not a
+  refinement; it is the whole result. The county's real pay per employee is either slightly below
+  where it started or slightly above it, and the file cannot say which.
+
+  The choice is not arbitrary, either. The Midwest series begins in December 1966, so it cannot
+  reach the 1929, 1939, 1947, 1954, 1958 or 1963 figures this corpus holds; the national series
+  begins in 1913 and reaches all of them but one. A corpus that used the regional index where it
+  existed and the national one elsewhere would have a deflator that changes definition in 1967,
+  which is the shape of failure
+  [two volumes are not one series](two-volumes-are-not-one-series.yml) already records.
+decision: |
+  **A figure this corpus deflates names the index that deflated it, in the sentence, not in the
+  method block.**
+
+  - The default is `CUUR0000SA0`, the national all-items index, chosen because it is the only one
+    that reaches every dollar figure the corpus holds. The reason is stated once in
+    [the catalog entry](../catalog/bls-cpi.md) and not re-argued in each node.
+  - **Where the real change is smaller than the spread between candidate indices, report both and
+    say the sign is not established.** Do not pick the one that makes a sentence.
+  - Say *in the dollars of year X*, never *what it would cost today*. The first is arithmetic on a
+    published index; the second is a claim about a basket this county actually buys, which no
+    national index supports.
+  - A consumer price index deflates incomes and expenditures. It is the wrong instrument for
+    construction cost, for value added and for asset prices, and a node that uses it on those says
+    so and treats the result as an order of magnitude.
+  - Deflating does not make two figures comparable in any other respect. A 1954 payroll and a 2023
+    payroll remain two different programmes counting two different populations, and the deflator
+    fixes none of that.
+rationale: |
+  **The near-miss is the whole argument.** The draft sentence was "real pay per private worker in
+  this county is lower than it was in 1986" — clean, memorable, and an artefact of picking the first
+  index that came to hand. The regional index was fetched only to check, and it reversed the sign.
+  Nothing in the gate would have caught it: one deflated figure looks exactly like another.
+
+  **This is not the same as the dollar-labelling rule.**
+  [a dollar is labelled by whoever is holding it](a-dollar-is-labelled-by-whoever-is-holding-it.yml)
+  is about whose books a payment appears in. This is about the second, invisible source that enters
+  a node the moment two years' dollars are compared, and which most writing leaves unnamed
+  altogether.
+
+  **What it buys immediately.** Three nodes said they could not do this and now can. A new house in
+  this county cost $91,359 in 1990 and $321,268 in 2025 — three and a half times, which reads as a
+  crisis, and 43 per cent in real terms, which is a different sentence. The 1947-to-1967 tripling of
+  the county's manufacturing value added is 2.23 times once the price level is taken out. Both were
+  publishable before and neither was true in the form the corpus would have published.
+
+  **What it does not license.** Deflating everything. Most of the corpus's dollar figures are
+  single-year facts that gain nothing from a second index and lose the reader's ability to check
+  them against the source. Deflation is for comparisons across years, and it is reported beside the
+  nominal figures rather than instead of them.
+status: accepted
+date: "2026-09-03"

@@ -13,9 +13,13 @@ location:
   - kind: url
     value: https://www2.census.gov/programs-surveys/cbp/datasets/
     description: >-
-      County files by year as zipped CSV — cbp86co.zip through cbp22co.zip. Allen County is
-      fipstate 39, fipscty 003. Nine years were taken: 1986, 1990, 1995, 2000, 2005, 2010, 2015,
-      2020 and 2022.
+      County files by year as zipped CSV — `<year>/cbp<yy>co.zip`. Allen County is fipstate 39,
+      fipscty 003. **All thirty-eight years from 1986 to 2023 are now taken**, replacing the nine
+      that were sampled from them.
+used-by:
+  - ../corpus/measure/allen-county-private-employers-1986-2023.yml
+  - ../corpus/measure/allen-county-manufacturing-employment-1986-2022.yml
+  - ../corpus/measure/allen-county-health-care-employment-2010-2022.yml
 ---
 
 **It measures what this corpus named a period after and could not see.**
@@ -50,3 +54,26 @@ programme with a different frame. [verified]
 **What else is in it, unread.** Establishment size distributions for every sector and year, payroll,
 and industry detail below the sector — this corpus has taken the total and one sector from nine
 years of a file that runs from 1986 to the present annually.
+
+**The header changes case, the archive changes name, and one column changes name.** Files through
+2014 have lower-case column names and files from 2015 have upper-case ones; the member inside the
+2007 and 2008 archives is `Cbp07co.txt` and `Cbp08co.txt` with a capital C where every other year is
+lower case; and the smallest establishment-size column is `n1_4` through 2016 and `n<5` from 2017.
+[verified] — the thirty-eight archives. Each of the three returns nothing and raises nothing: a
+reader written against one era of the file silently loses the other.
+
+**The column count runs 23, then 26 from 2007.** The three added are `emp_nf`, `qp1_nf` and `ap_nf`,
+noise flags on the three figures beside them. [verified] — the same archives.
+
+**The published industry detail halves in 2017.** Allen County has 1,120 industry rows in 2016 and
+669 in 2017, falling to 634 by 2022. [verified] — the same archives. That is a change in what the
+Bureau discloses and not a change in the county's economy, and it is why an industry series at
+detailed NAICS cannot be carried across that year.
+
+**The size columns close against the establishment total.** In 1986 and in 2023 the nine size classes
+sum to `est` exactly — 2,763 and 2,239. [verified] — the same archives. That closure is what makes
+the size distribution usable where the employment columns are suppressed.
+
+**Payroll is here and is in the dollars of its year.** `ap` is annual payroll in thousands and `qp1`
+is first-quarter payroll; neither is adjusted for anything. The deflator this corpus now holds is
+[the consumer price index](bls-cpi.md).
