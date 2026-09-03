@@ -1,0 +1,91 @@
+class: measure
+label: Allen County's ballot, 7 November 2006
+description: |
+  Every statewide contest on one Allen County ballot, from the Secretary of State's own precinct
+  workbook. **68,797 registered voters, 37,605 ballots cast — 54.7 per cent.** [verified] —
+  [the 2006 workbook](../../catalog/openelections-ohio.md), summed over the county's 139 precincts.
+
+      office                Democrat                    Republican                D share   margin
+      **Governor**          **Strickland    18,000**    Blackwell      17,184      51.2%      +816
+      U.S. Senate           Brown           16,597      DeWine         19,521      45.9%    -2,924
+      Treasurer of State    Cordray         15,653      O'Brien        19,650      44.3%    -3,997
+      Secretary of State    Brunner         14,934      Hartman        18,906      44.1%    -3,972
+      Attorney General      Dann            15,522      Montgomery     20,887      42.6%    -5,365
+      State Representative  Shreefer        15,371      Huffman        21,422      41.8%    -6,051
+      Auditor of State      Sykes           14,556      Taylor         20,476      41.6%    -5,920
+      U.S. Representative   Siferd          14,780      Jordan         22,032      40.2%    -7,252
+
+  **One Democrat carried this county and seven did not, on the same piece of paper.** Ted
+  Strickland took 51.2 per cent of the two-party vote for governor; the next-best Democrat on the
+  ballot, Sherrod Brown, took 45.9 and lost the county by 2,924 while winning Ohio. The spread
+  between the best and worst Democratic showings is eleven points. [verified] — the workbook;
+  shares computed here. Split-ticket voting on that scale is a fact about the ballot and not about
+  any candidate, and this return cannot say which of the eight races was the unusual one.
+  [inference]
+
+  **The largest share any candidate took here was a judge's, and he is from Lima.** In the
+  nonpartisan Supreme Court races, Robert Cupp took 25,564 against Ben Espy's 9,127 — 73.7 per cent,
+  a wider margin than any partisan candidate managed. Terrence O'Donnell took 60.2 per cent against
+  William O'Neill in the other seat. [verified] — same workbook. This corpus already holds Cupp on
+  its 2020 ballot, [running unopposed for the state House](allen-county-presidential-vote-2020.yml)
+  with 38,882 votes.
+
+  **Four statewide ballot issues, and the county said yes to one.** [verified] — same workbook.
+
+      issue      yes       no      yes share    votes
+      Issue 2   16,790   19,214      46.6%     36,004
+      Issue 3   15,909   20,669      43.5%     36,578
+      Issue 4   12,851   23,983      34.9%     36,834
+      Issue 5   20,138   16,760      54.6%     36,898
+
+  **The workbook numbers the issues and does not name them**, and no source in this catalog does
+  either. What can be said from the law is that two initiated measures took effect in the weeks
+  after this election: the statewide smoking prohibition now at
+  [Revised Code §3794.02](../../catalog/ohio-revised-code.md), effective 7 December 2006 and
+  recorded in the statute itself as "Enacted by Initiative", and the minimum wage now at
+  [Article II §34a of the Ohio Constitution](../../catalog/ohio-revised-code.md), effective
+  8 December 2006. [verified]
+
+  [open] Which numbered issue is which. Two of these four became law and two did not, and nothing
+  held here maps a number to a subject. The temptation is to match the county's one yes to the one
+  statute and call it done, and that would be a guess dressed as a finding.
+
+  **More people voted on the issues than for governor.** 36,898 ballots carried a vote on Issue 5
+  against 36,221 for governor, and the 37,605 ballots cast leave 1,384 with no vote for governor at
+  all — 3.7 per cent. [inference] — arithmetic this corpus's.
+
+  **139 precincts.** The county ran 139 polling divisions that November, 121 in 2010, and 88 from
+  2014 onward — a 37 per cent consolidation in eight years, over a period in which its registered
+  voters fell by 1,423. [verified] — the 2006, 2010 and 2020 files; see
+  [the 2020 districts](allen-county-voting-districts-2020.yml).
+properties:
+  parameter: ballots cast, general election
+  value: "37605"
+  unit: ballots
+  as_of: 2006-11-07
+  method: |
+    Summed over the county's 139 precincts from `gen06statewide.csv`, the Secretary of State's own
+    workbook, which has no county-total row; the volunteer transcription of the same election in the
+    same repository agrees with it on every figure to the vote, and the two are one witness rather
+    than two — the repository carries a parser named for converting one into the other. [inference]
+    Vote counts are floating-point in that file and are converted here; every value is integral.
+    Shares are of the two major-party candidates only, computed here.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-governor-vote-2002-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-turnout-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-voting-districts-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
