@@ -1246,6 +1246,77 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "two-thousand-eight-hundred-wells-with-no-plugging-on-file",
+        statement: "Ohio's register holds 4,849 oil and gas wells in Allen County. 2,851 of them are recorded as having produced and not one carries a date of plugging; of the 1,715 recorded as plugged, 84 carry the date it happened.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "Every well the state of Ohio holds a record of in this county: 4,849 of them, all vertical."),
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "**Three wells in five are recorded as having produced and are not recorded as having been plugged.** 2,851 of the 4,834 in the feature service carry the status *historical production well*, and not one of them carries a date of plugging. [verified] \u{2014} the same source, the feature service. 1,715 are recorded as plugged and abandoned, and 84 of those 1,715 carry the date it happened."),
+        ],
+        answers: &["cannot say how many wells the boom drilled"],
+        figures: &[
+            Figure { label: "produced, no plugging on file", value: 2851.0, literal: "2,851" },
+            Figure { label: "plugged and abandoned", value: 1715.0, literal: "1,715" },
+            Figure { label: "with a plugging date", value: 84.0, literal: "84" },
+        ],
+    },
+    Assertion {
+        id: "a-hundred-and-eight-orphan-wells",
+        statement: "A hundred and eight of Allen County's wells are in Ohio's orphan-well programme: 52 referred, 35 scheduled, 11 plugged under it, 7 under the federal programme, 2 permitted and 1 plugged as an emergency.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "**A hundred and eight of them are in the state's orphan-well programme.** 52 referred, 35 scheduled under the traditional programme, 11 already plugged under it, 7 scheduled under the federal programme, 2 permitted and 1 plugged as an emergency."),
+        ],
+        answers: &["cannot say how many wells the boom drilled"],
+        figures: &[
+            Figure { label: "referred", value: 52.0, literal: "52" },
+            Figure { label: "scheduled", value: 35.0, literal: "35" },
+            Figure { label: "plugged under it", value: 11.0, literal: "11" },
+            Figure { label: "federal programme", value: 7.0, literal: "7" },
+        ],
+    },
+    Assertion {
+        id: "the-oil-field-is-a-shape-east-of-the-city",
+        statement: "Bath and Perry townships, which wrap Lima on the north and east, hold 1,615 wells across 63.4 square miles. Auglaize and Monroe, at the county's far edges, hold 42 across 72.1 \u{2014} a 116-fold range in density inside one county.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "**The field is a shape and its centre is just east of the city.** Bath and Perry, which wrap Lima on the north and east, hold 1,615 wells between 63.4 square miles; Auglaize and Monroe, at the county's south-east and north edges, hold 42 between 72.1. That is 25.51 wells to the square mile in Bath and 25.44 in Perry against 0.94 in Monroe and 0.22 in Auglaize \u{2014} the densest township has 116 times the wells per square mile of the thinnest."),
+        ],
+        answers: &["cannot say how many wells the boom drilled"],
+        figures: &[
+            Figure { label: "Bath", value: 25.51, literal: "25.51" },
+            Figure { label: "Perry", value: 25.44, literal: "25.44" },
+            Figure { label: "Monroe", value: 0.94, literal: "0.94" },
+            Figure { label: "Auglaize", value: 0.22, literal: "0.22" },
+        ],
+    },
+    Assertion {
+        id: "one-formation-at-one-depth",
+        statement: "39 of the 43 Allen County wells that name a producing formation name the Trenton Limestone, and 230 of the 290 recording a total depth fall between 1,200 and 1,399 feet. The county's oil is one bed at one depth.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "**They are one formation at one depth.** 39 of the 43 wells in the county that name a producing formation name the Trenton Limestone; of the 290 that record a total depth, the median is 1,332 feet and 230 fall between 1,200 and 1,399."),
+            support!("period/lima-oil-boom.yml", "**The field left 4,849 holes in the ground and this node had never counted them.** The state's register holds that many wells in Allen County, all vertical, 39 of the 43 that name a producing formation naming the Trenton Limestone, and a median total depth of 1,332 feet across the 290 that record one."),
+        ],
+        answers: &["cannot say how many wells the boom drilled"],
+        figures: &[
+            Figure { label: "median depth, feet", value: 1332.0, literal: "1,332" },
+            Figure { label: "wells recording a depth", value: 290.0, literal: "290" },
+            Figure { label: "of those, 1,200 to 1,399 ft", value: 230.0, literal: "230" },
+        ],
+    },
+    Assertion {
+        id: "the-register-begins-after-the-field-does",
+        statement: "The earliest completion date Ohio's well register holds for Allen County is 1890, five years after the strike, and thirty of its wells carry a completion date before 1920. The boom's holes are countable and its drilling is not.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "**The register begins five years after the field does.** Its earliest completion date for this county is 1890 and [the strike](../event/lima-oil-strike.yml) was 9 May 1885; thirty wells here carry a completion date before 1920."),
+            support!("measure/allen-county-oil-and-gas-wells-2026.yml", "This corpus cannot say how many wells the boom drilled."),
+        ],
+        answers: &["cannot say how many wells the boom drilled"],
+        figures: &[],
+    },
+    Assertion {
         id: "the-hogs-multiplied-as-the-keepers-halved",
         statement: "Allen County kept 31,741 hogs on 59 places in 2002 and 235,800 on 28 in \
                     2022. The herd multiplied more than sevenfold while the places keeping it \
