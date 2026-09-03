@@ -508,6 +508,22 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'the-one-democrat',
+    title: 'The one Democrat',
+    dek: 'In 2006 the county voted for a Democrat for governor — and for a Republican in every other race on the same ballot.',
+    section: 'government',
+    era: [2002, 2020],
+    assertions: [
+      'the-one-election-it-gave-a-democrat',
+      'one-democrat-carried-it-and-seven-did-not',
+      'the-presidential-premium-is-twenty-three-points',
+    ],
+    entries: [
+      'measure/allen-county-governor-vote-2002-2018.yml',
+      'measure/allen-county-ballot-2006.yml',
+    ],
+  },
+  {
     slug: 'the-county-changed-sides',
     title: 'The county changed sides',
     dek: 'It was Democratic ground for thirty years, and it did not turn with 1896 — it turned before.',

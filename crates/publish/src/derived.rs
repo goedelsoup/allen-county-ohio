@@ -4383,6 +4383,53 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "people in them", value: 11.1, literal: "11.1" },
         ],
     },
+    Assertion {
+        id: "the-one-election-it-gave-a-democrat",
+        statement: "Allen County voted for Ted Strickland, a Democrat, for governor in 2006 — \
+                    18,000 to 17,184. It is the only election in this corpus's modern record, five \
+                    for governor and six for president, that the county has given to a Democrat.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-governor-vote-2002-2018.yml", "**In 2006 Allen County voted for a Democrat, by 816 votes.** It is the only election in this\n  corpus's modern record \u{2014} five for governor and six for president, from 2000 forward \u{2014} that this\n  county has given to a Democratic candidate. [verified] \u{2014} the same files and\n  [the presidential series](allen-county-presidential-vote-2000-2016.yml)."),
+            support!("measure/allen-county-governor-vote-2002-2018.yml", "**In figures: the Republican share of the two-party vote was 69.1 per cent in 2002, 48.8 in 2006,\n  59.8 in 2010, 73.4 in 2014 and 69.1 in 2018.** The balance moves 24.6 points in the eight years\n  between 2006 and 2014, and the two ends of the run sit a twentieth of a point apart. [inference] \u{2014}\n  arithmetic this corpus's, on the table above."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "2002", value: 69.1, literal: "69.1" },
+            Figure { label: "2006", value: 48.8, literal: "48.8" },
+            Figure { label: "2010", value: 59.8, literal: "59.8" },
+            Figure { label: "2014", value: 73.4, literal: "73.4" },
+            Figure { label: "2018", value: 69.1, literal: "69.1" },
+        ],
+    },
+    Assertion {
+        id: "one-democrat-carried-it-and-seven-did-not",
+        statement: "On the same 2006 ballot the county gave Strickland 51.2 per cent of the \
+                    two-party vote and every other Democrat less — down to 40.2 per cent for \
+                    Congress. Sherrod Brown lost this county by 2,924 votes on a night he won Ohio.",
+        topic: "elections",
+        supports: &[support!("measure/allen-county-ballot-2006.yml", "**One Democrat carried this county and seven did not, on the same piece of paper.** Ted\n  Strickland took 51.2 per cent of the two-party vote for governor; the next-best Democrat on the\n  ballot, Sherrod Brown, took 45.9 and lost the county by 2,924 while winning Ohio; the worst,\n  Richard Siferd for Congress, took 40.2. The spread between the best and worst Democratic showings\n  is eleven points. [verified] \u{2014} the workbook; shares computed here. Split-ticket voting on that\n  scale is a fact about the ballot and not about any candidate, and this return cannot say which of\n  the eight races was the unusual one. [inference]")],
+        answers: &["cannot say which of the eight races was the unusual one"],
+        figures: &[
+            Figure { label: "Governor", value: 51.2, literal: "51.2" },
+            Figure { label: "U.S. Senate", value: 45.9, literal: "45.9" },
+            Figure { label: "U.S. House", value: 40.2, literal: "40.2" },
+        ],
+    },
+    Assertion {
+        id: "the-presidential-premium-is-twenty-three-points",
+        statement: "Allen County turned out 71.8 per cent of its registered voters in 2020 against \
+                    54.7 per cent in 2006 and 48.4 in 2010. The two low years are midterms, so what \
+                    the three establish is the size of the presidential premium.",
+        topic: "elections",
+        supports: &[support!("measure/allen-county-turnout-2020.yml", "**71.8 per cent is high for this county, and the comparison is with midterms rather than with\n  other presidential years.** The Secretary of State's own precinct files put Allen County at\n  **54.7 per cent in 2006** \u{2014} 37,605 ballots against 68,797 registered \u{2014} and at **48.4 per cent in\n  2010**, 33,867 against 69,931. [verified] \u{2014}\n  [the 2006 ballot](allen-county-ballot-2006.yml) and\n  [OpenElections](../../catalog/openelections-ohio.md), 2010 file. Twenty-three points separate this\n  election from the lower of the two, and both of those are midterms, so what the three years\n  establish is the size of the presidential premium and not a trend. [inference]")],
+        answers: &[],
+        figures: &[
+            Figure { label: "2006 midterm", value: 54.7, literal: "54.7" },
+            Figure { label: "2010 midterm", value: 48.4, literal: "48.4" },
+            Figure { label: "2020 presidential", value: 71.8, literal: "71.8" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

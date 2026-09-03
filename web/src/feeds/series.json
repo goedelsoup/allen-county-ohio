@@ -622,6 +622,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Republican-share-of-the-two-party-vote-for-governor",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Republican share of the two-party vote for governor",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-governor-vote-2002-2018.yml",
+          "label": "Allen County vote for governor, 2002–2018",
+          "as_of": "2018",
+          "value": 69.09,
+          "published": "69.09",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "2002, 2014 and 2018 are county-grain files. 2006 and 2010 are summed over the county's 139 and 121 precincts respectively, from the Secretary of State's own workbooks; the 2010 file's `COUNTY TOTALS` row is excluded from the sum and used to check it. Vote counts in the 2006 and 2010 files are written as floating-point numbers and are converted here; every value is integral. [verified] Shares are of the two major-party candidates only, computed here. The 2010 file carries no party column and party for that year is this corpus's, from the candidates. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::USGS-water-monitoring-sites-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -738,6 +758,26 @@
           "tier": "verified",
           "source": "catalog/bls-qcew.md",
           "method": "QCEW annual averages, aggregation level 74 for the sector table and 70 for the county total, read from the BLS open CSV API. Sector figures are summed across ownership codes, so a sector's row includes its government establishments; average annual pay per sector is total annual wages divided by average annual employment, which is this corpus's arithmetic over the source's two published fields. The eighteen sectors sum to 49,113 jobs against the county total of 49,690; the residual is employment the file places at aggregation levels this table does not read. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::ballots-cast,-general-election",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "ballots cast, general election",
+      "unit": "ballots",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-ballot-2006.yml",
+          "label": "Allen County's ballot, 7 November 2006",
+          "as_of": "2006-11-07",
+          "value": 37605.0,
+          "published": "37605",
+          "tier": "verified",
+          "source": "catalog/openelections-ohio.md",
+          "method": "Summed over the county's 139 precincts from `gen06statewide.csv`, the Secretary of State's own workbook, which has no county-total row; the volunteer transcription of the same election in the same repository agrees with it on every figure to the vote, and the two are one witness rather than two — the repository carries a parser named for converting one into the other. [inference] Vote counts are floating-point in that file and are converted here; every value is integral. Shares are of the two major-party candidates only, computed here."
         }
       ]
     },
@@ -11418,6 +11458,128 @@
           "label": "people in them",
           "value": 11.1,
           "literal": "11.1"
+        }
+      ]
+    },
+    {
+      "id": "the-one-election-it-gave-a-democrat",
+      "statement": "Allen County voted for Ted Strickland, a Democrat, for governor in 2006 — 18,000 to 17,184. It is the only election in this corpus's modern record, five for governor and six for president, that the county has given to a Democrat.",
+      "topic": "elections",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-governor-vote-2002-2018.yml",
+          "node_label": "Allen County vote for governor, 2002–2018",
+          "span": "**In 2006 Allen County voted for a Democrat, by 816 votes.** It is the only election in this corpus's modern record — five for governor and six for president, from 2000 forward — that this county has given to a Democratic candidate. [verified] — the same files and [the presidential series](allen-county-presidential-vote-2000-2016.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-governor-vote-2002-2018.yml",
+          "node_label": "Allen County vote for governor, 2002–2018",
+          "span": "**In figures: the Republican share of the two-party vote was 69.1 per cent in 2002, 48.8 in 2006, 59.8 in 2010, 73.4 in 2014 and 69.1 in 2018.** The balance moves 24.6 points in the eight years between 2006 and 2014, and the two ends of the run sit a twentieth of a point apart. [inference] — arithmetic this corpus's, on the table above.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2002",
+          "value": 69.1,
+          "literal": "69.1"
+        },
+        {
+          "label": "2006",
+          "value": 48.8,
+          "literal": "48.8"
+        },
+        {
+          "label": "2010",
+          "value": 59.8,
+          "literal": "59.8"
+        },
+        {
+          "label": "2014",
+          "value": 73.4,
+          "literal": "73.4"
+        },
+        {
+          "label": "2018",
+          "value": 69.1,
+          "literal": "69.1"
+        }
+      ]
+    },
+    {
+      "id": "one-democrat-carried-it-and-seven-did-not",
+      "statement": "On the same 2006 ballot the county gave Strickland 51.2 per cent of the two-party vote and every other Democrat less — down to 40.2 per cent for Congress. Sherrod Brown lost this county by 2,924 votes on a night he won Ohio.",
+      "topic": "elections",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-ballot-2006.yml",
+          "node_label": "Allen County's ballot, 7 November 2006",
+          "span": "**One Democrat carried this county and seven did not, on the same piece of paper.** Ted Strickland took 51.2 per cent of the two-party vote for governor; the next-best Democrat on the ballot, Sherrod Brown, took 45.9 and lost the county by 2,924 while winning Ohio; the worst, Richard Siferd for Congress, took 40.2. The spread between the best and worst Democratic showings is eleven points. [verified] — the workbook; shares computed here. Split-ticket voting on that scale is a fact about the ballot and not about any candidate, and this return cannot say which of the eight races was the unusual one. [inference]",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "Split-ticket voting on that scale is a fact about the ballot and not about any candidate, and this return cannot say which of the eight races was the unusual one."
+      ],
+      "figures": [
+        {
+          "label": "Governor",
+          "value": 51.2,
+          "literal": "51.2"
+        },
+        {
+          "label": "U.S. Senate",
+          "value": 45.9,
+          "literal": "45.9"
+        },
+        {
+          "label": "U.S. House",
+          "value": 40.2,
+          "literal": "40.2"
+        }
+      ]
+    },
+    {
+      "id": "the-presidential-premium-is-twenty-three-points",
+      "statement": "Allen County turned out 71.8 per cent of its registered voters in 2020 against 54.7 per cent in 2006 and 48.4 in 2010. The two low years are midterms, so what the three establish is the size of the presidential premium.",
+      "topic": "elections",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-turnout-2020.yml",
+          "node_label": "Allen County turnout, 2020 general election",
+          "span": "**71.8 per cent is high for this county, and the comparison is with midterms rather than with other presidential years.** The Secretary of State's own precinct files put Allen County at **54.7 per cent in 2006** — 37,605 ballots against 68,797 registered — and at **48.4 per cent in 2010**, 33,867 against 69,931. [verified] — [the 2006 ballot](allen-county-ballot-2006.yml) and [OpenElections](../../catalog/openelections-ohio.md), 2010 file. Twenty-three points separate this election from the lower of the two, and both of those are midterms, so what the three years establish is the size of the presidential premium and not a trend. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/openelections-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2006 midterm",
+          "value": 54.7,
+          "literal": "54.7"
+        },
+        {
+          "label": "2010 midterm",
+          "value": 48.4,
+          "literal": "48.4"
+        },
+        {
+          "label": "2020 presidential",
+          "value": 71.8,
+          "literal": "71.8"
         }
       ]
     }

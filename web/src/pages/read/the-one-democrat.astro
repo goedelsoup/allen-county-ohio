@@ -1,0 +1,107 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const one = assertion('the-one-election-it-gave-a-democrat')
+const split = assertion('one-democrat-carried-it-and-seven-did-not')
+const turnout = assertion('the-presidential-premium-is-twenty-three-points')
+
+const spec = (a: typeof one, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const oneSpec = spec(one, 'Republican share of the two-party vote')
+const splitSpec = spec(split, 'Democratic share of the two-party vote')
+const turnoutSpec = spec(turnout, 'Per cent of registered voters')
+---
+
+<Article slug="the-one-democrat">
+  <p>
+    On 7 November 2006, 37,605 people in Allen County went to one of its 139 polling divisions and
+    filled in a ballot with eight partisan offices on it, two seats on the Ohio Supreme Court and
+    four statewide questions. At the top of it they voted for Ted Strickland, a Democrat, 18,000 to
+    J. Kenneth Blackwell's 17,184.
+  </p>
+  <AssertionCard assertion={one} open />
+  <ChartFigure
+    id="gov"
+    title="Allen County's vote for governor, 2002 to 2018"
+    caption="Republican share of the two major-party candidates. 2002, 2014 and 2018 from county-grain files; 2006 and 2010 summed from the Ohio Secretary of State's own precinct workbooks. No file exists for 2022."
+    columns={['Year', 'Republican share']}
+    rows={one.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="gov" set:html={JSON.stringify(oneSpec)} is:inline />
+  <Gloss>
+    Five of these elections were sitting in a repository this corpus already cites, in a directory
+    listing that had been read for one year out of twelve. The cost shows: the 2018 page here said
+    the county's partisan balance barely moves and that who turns out matters more than how they
+    vote. That was drawn from three consecutive ballots. Across five it moves twenty-five points.
+  </Gloss>
+
+  <h2>One ballot, eight answers</h2>
+  <p>
+    What makes 2006 strange is not that the county went Democratic once. It is that it went
+    Democratic once <em>on a ballot where it went Republican seven times</em>. Sherrod Brown lost
+    Allen County by 2,924 votes the same night he won Ohio by twelve points. Marc Dann lost it by
+    5,365. Jim Jordan carried it by 7,252.
+  </p>
+  <AssertionCard assertion={split} />
+  <ChartFigure
+    id="split"
+    title="Democratic share by office, Allen County, 2006"
+    caption="Share of the two major-party candidates in each race. The eight offices, in order: governor 51.2, U.S. Senate 45.9, treasurer 44.3, secretary of state 44.1, attorney general 42.6, state representative 41.8, auditor 41.6, U.S. representative 40.2."
+    columns={['Office', 'Democratic share']}
+    rows={split.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="split" set:html={JSON.stringify(splitSpec)} is:inline />
+  <p>
+    The widest margin on the whole ballot went to neither party. Robert Cupp, running for the Ohio
+    Supreme Court on the nonpartisan section of the ticket, took 25,564 votes here against Ben
+    Espy's 9,127 — 73.7 per cent, better than any partisan candidate in the county. Cupp is from
+    Lima. Fourteen years later he would appear on the same county's ballot again, running unopposed
+    for its seat in the state House.
+  </p>
+  <p>
+    Below the offices sat four statewide questions, and the county said yes to exactly one of them —
+    54.6 per cent for the fifth, against 46.6, 43.5 and 34.9 for the others. Two of the four became
+    law that December: a statewide smoking prohibition, which the Revised Code still records as
+    <em>enacted by initiative</em>, and a minimum wage written into the Ohio Constitution. Which
+    numbered question was which, the workbook does not say and nothing else here does either. The
+    obvious move is to match the county's one yes to the one statute, and that would be a guess
+    wearing a citation.
+  </p>
+
+  <h2>Who shows up</h2>
+  <p>
+    The same workbooks carry something the later files drop: how many people were registered and how
+    many actually voted. Three elections can now be measured that way, and two of them are midterms.
+  </p>
+  <AssertionCard assertion={turnout} />
+  <ChartFigure
+    id="turnout"
+    title="Turnout in Allen County"
+    caption="Ballots cast as a share of registered voters. 2006: 37,605 of 68,797. 2010: 33,867 of 69,931, checked against the file's own county-totals row. 2020: 48,353 of 67,374."
+    columns={['Election', 'Turnout']}
+    rows={turnout.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="turnout" set:html={JSON.stringify(turnoutSpec)} is:inline />
+  <p>
+    The registration roll behaved like the county. It stood at 69,931 in 2010 and 67,374 in 2020, a
+    fall of 3.66 per cent, against a population that fell 3.88 per cent over the same decade. What
+    did not hold steady was the number of places to vote: 139 precincts in 2006, 121 in 2010, and 88
+    from 2014 on. The county cut better than a third of its polling divisions in eight years while
+    losing four per cent of its voters.
+  </p>
+  <p>
+    None of this reaches 2022 or 2024. The volunteer repository has no Ohio file for either year at
+    any grain, and the office that certified the returns answers an automated request with a
+    maintenance page. The most recent contest for governor readable here is seven years old.
+  </p>
+</Article>
