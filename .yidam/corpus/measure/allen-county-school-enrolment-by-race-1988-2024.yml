@@ -1,0 +1,100 @@
+class: measure
+label: Who the children in Allen County's schools are, 1988–2024
+description: |
+  Enrolment by race in the county's twelve school districts, annually for thirty-seven years.
+  [verified] — [the Common Core of Data](../../catalog/nces-common-core-of-data.md).
+
+  **One category in this table was born in 2010 and holds 1,514 of the county's children.** "Two or
+  more races" is absent from every district row before that year and populated in every row after
+  it. So no share below can be differenced across 2010 without the difference carrying a change in
+  the roll as well as a change in the world. [verified] — the annual files; see
+  [a category has a birthday](../../decisions/a-category-has-a-birthday.yml).
+
+      district              pupils   white   Black   Hisp   two+   Black %
+      **1988**
+      Lima                   6,969   4,155   2,689     86      —    38.6%
+      Elida                  3,293   2,990     182     77      —     5.5%
+      Shawnee                2,793   2,511     181     14      —     6.5%
+      Perry                    814     665     142      7      —    17.4%
+      Bath                   2,255   2,159      58     25      —     2.6%
+      the other seven        6,636   6,470      16    139      —     0.2%
+      all twelve            22,760  18,950   3,268    348      —    14.4%
+      **2024**
+      Lima                   3,370   1,067   1,307    267    711    38.8%
+      Elida                  2,016   1,290     284    156    266    14.1%
+      Perry                    704     405     153     30    114    21.7%
+      Shawnee                2,239   1,801     119    102    171     5.3%
+      Bath                   1,588   1,353      44     69     81     2.8%
+      the other seven        5,933   5,380      62    278    171     1.0%
+      all twelve            15,850  11,296   1,969    902  1,514    12.4%
+
+  **Black children are less concentrated in Lima than they were, and by a long way.** The city's
+  district held 82.3 per cent of the county's Black pupils in 1988, 79.2 in 2000, 69.6 in 2012 and
+  66.4 now. [verified] — the same files, computed here. Over the same thirty-seven years Lima's
+  share of *all* the county's pupils fell from 30.6 per cent to 21.3, so the two shares moved the
+  same way and the Black share moved further. [inference]
+
+  **The two districts that took them are the two that touch the city.** Elida held 5.5 per cent of
+  the county's Black pupils in 1988 and holds 14.4 now; Perry held 4.3 and holds 7.8. Perry Local,
+  with 704 children, is the most heavily Black district in the county after Lima at 21.7 per cent.
+  [verified] — same files.
+
+  **Seven of the twelve districts had sixteen Black children between them in 1988. They have 62
+  now.** [verified] — same files. Bluffton, Spencerville, Delphos, Allen East, Columbus Grove,
+  Pandora-Gilboa and Waynesfield-Goshen hold 5,933 of the county's 15,850 schoolchildren — more
+  than a third — and 62 of its 1,969 Black ones.
+
+  **Hispanic enrolment is two and a half times what it was, and it did not rise steadily.** 348 in
+  1988, 249 in 1998, 309 in 2008, 682 in 2018 and 902 now — a fall through the nineties and a rise
+  since, so the low of the run is a decade into it. [verified] —
+  same files. In 1988 the county's most Hispanic district was **Pandora-Gilboa at 10.1 per cent**,
+  a rural district of 673 children in Putnam County; today it is Columbus Grove at 8.7 per cent and
+  Lima at 7.9. [verified] — same files.
+
+  **Lima City Schools were 59.6 per cent white in 1988 and are 31.7 per cent white now, and the
+  file cannot say how much of that is the new category.** 711 of the district's 3,370 children are
+  in "two or more races". If every one of them would have been counted white in 1988 the comparable
+  figure is 52.8 per cent; if none would have, it is 31.7. The true value is inside that interval
+  and nothing here narrows it. [inference] — the reasoning is this corpus's; see
+  [a revision that changes the roll](../../decisions/a-revision-that-changes-the-roll.yml).
+
+  **The Black share of the district is the figure that did not move.** 38.6 per cent in 1988 and
+  38.8 now, across a district that lost half its children. [verified] — same files. It is not a
+  share that held still through stability: Black enrolment fell from 2,689 to 1,307 and white-alone
+  enrolment from 4,155 to 1,067, and the ratio survived because both halves emptied. [inference]
+
+  [open] Where the children who left Lima's district went. This file counts pupils by the district
+  that enrols them and says nothing about movement; the county's population fell, its private
+  schools shrank, and two community schools opened inside the city, and this corpus can measure
+  all three without attributing any of the 3,599 to them. See
+  [why one child in five is not in these districts](../question/why-one-child-in-five-is-not-in-these-districts.yml).
+properties:
+  parameter: Black share of enrolment in the county's twelve school districts
+  value: "12.4"
+  unit: per cent
+  as_of: "2024"
+  method: |
+    One request per year to the district enrolment endpoint for Ohio, `grade-99`, all race codes,
+    filtered here to the twelve districts by NCES identifier. Race codes are 1 white, 2 Black,
+    3 Hispanic, 4 Asian, 5 American Indian or Alaska Native, 6 Native Hawaiian or Pacific Islander,
+    7 two or more, 9 unknown and 99 total; codes 4 to 6 and 9 are held and not printed above, and
+    the county's Asian enrolment is 185 in 1988 and 121 now. Every share is computed here from
+    counts. [verified] Category 7 is absent before 2010 and is shown as an em dash rather than a
+    zero for that reason; see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml).
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/nces-common-core-of-data.md
+  - target: allen-county-school-enrolment-1988-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nces-common-core-of-data.md
+  - target: allen-county-race-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-school-district-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
