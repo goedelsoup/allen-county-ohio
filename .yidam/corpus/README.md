@@ -110,7 +110,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-bridge-condition-1992-2025.yml](measure/allen-county-bridge-condition-1992-2025.yml) | measure | Allen County bridge condition by owner, 1992–2025 | 3 | 11v / 5i / 1o | 97 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 9v / 3i / 1o | 94 |
-| [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 7v / 4i / 1o | 64 |
+| [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 8v / 4i / 1o | 70 |
 | [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 120 |
 | [allen-county-children-2010-2024.yml](measure/allen-county-children-2010-2024.yml) | measure | Allen County's children, 2010–2024 | 5 | 6v / 3i / 1o | 106 |
 | [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
@@ -146,7 +146,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 2 | 6v / 5i / 2o | 111 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 2 | 6v / 4i / 1o | 60 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
-| [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2022 | 2 | 3v / 0i / 1o | 42 |
+| [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 3 | 4v / 0i / 1o | 54 |
 | [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 4i / 2o | 105 |
 | [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 2 | 9v / 5i / 2o | 114 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
@@ -171,9 +171,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 6v / 5i / 1o | 77 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
-| [allen-county-manufactures-1939-1967.yml](measure/allen-county-manufactures-1939-1967.yml) | measure | Allen County manufactures, 1939–1967 | 2 | 11v / 7i / 2o | 111 |
+| [allen-county-manufactures-1939-1967.yml](measure/allen-county-manufactures-1939-1967.yml) | measure | Allen County manufactures, 1939–1967 | 2 | 12v / 8i / 1o | 121 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 6v / 2i / 1o | 69 |
-| [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2022 | 2 | 6v / 4i / 0o | 66 |
+| [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2023 | 3 | 6v / 4i / 0o | 81 |
 | [allen-county-manufacturing-outside-lima-1929-1967.yml](measure/allen-county-manufacturing-outside-lima-1929-1967.yml) | measure | Allen County manufacturing outside Lima, 1929–1967 | 3 | 4v / 8i / 1o | 85 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
@@ -207,6 +207,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 5 | 6v / 7i / 2o | 113 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
+| [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 7 | 11v / 3i / 0o | 117 |
 | [allen-county-private-schools-2013-2021.yml](measure/allen-county-private-schools-2013-2021.yml) | measure | Allen County's private and community schools, 2013–2021 | 4 | 10v / 5i / 1o | 103 |
 | [allen-county-property-tax-rates-2012-2025.yml](measure/allen-county-property-tax-rates-2012-2025.yml) | measure | Property tax rates in Allen County by taxing district, 2012–2025 | 5 | 11v / 1i / 1o | 144 |
 | [allen-county-proprietors-1969-2022.yml](measure/allen-county-proprietors-1969-2022.yml) | measure | Allen County proprietors and payroll employment, 1969–2022 | 5 | 7v / 6i / 2o | 155 |
