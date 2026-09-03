@@ -21,9 +21,22 @@ description: |
   [full-time equivalents](allen-county-hospital-employment-2011-2023.yml) across the same thirteen
   years. [verified] — same source.
 
-  That is the shape of hospital work moving out of the inpatient ward, and this corpus has measured
-  the shape and not the cause. Nothing here distinguishes a hospital treating more people in fewer
-  days from one treating fewer people. [open]
+  **That question is now answered, and the answer is fewer people.** County discharges fell 15.1 per
+  cent across the same thirteen years, from 26,924 to 22,858, while the average stay rose from 4.37
+  days to 4.49. [verified] —
+  [the same source](../../catalog/cms-hospital-cost-reports.md), columns this node did not read; see
+  [what the hospitals did](allen-county-hospital-activity-2011-2023.yml). The shape is hospital work
+  moving out of the inpatient ward — outpatient charges went from 46.9 per cent of the county's
+  hospital charges to 55.3 — and not a ward turning over faster.
+
+  **And the bed count reads as unchanged on the number most readers ask for.** Occupancy was 55.6
+  per cent in 2011 and 56.0 in 2023, because the 78 beds that came out of the county's total came
+  out at about the rate the patients did. [inference] — computed here from the same source. A bed
+  count falling 13 per cent is a fact about capacity and says nothing on its own about use.
+
+  [open] Whether the outpatient shift is care moving or coding moving. A procedure billed as an
+  observation stay rather than an admission leaves the inpatient column and enters the outpatient
+  one with nobody's treatment changing, and this file does not distinguish the two.
 properties:
   parameter: Number of Beds
   value: "502"
@@ -34,6 +47,10 @@ properties:
     hospital per year, which in FY2014 means Kindred's first row only — it filed twice that year
     across a change of fiscal year. [verified]
 links:
+  - target: allen-county-hospital-activity-2011-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified

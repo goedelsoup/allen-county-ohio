@@ -1,0 +1,73 @@
+id: an-overlap-names-what-changed
+summary: >-
+  CDC publishes Allen County's low birthweight, prematurity and fertility twice — once through 2020
+  and once from 2018 — and the three years the pairs share are a free experiment. Four of the five
+  quantities are identical to the digit across the break and the fifth, the only one with a
+  population in its denominator, differs in every overlapping year. The break is in the denominator
+  and the publisher never says so.
+context: |
+  The Tracking Network's measure catalogue carries pairs like *Percent of Low Birthweight Live
+  Singleton Births* (measure 36, through 2020) and *…(2018 Onward)* (measure 1416, from 2018). The
+  obvious reading is that something changed in 2018 and the two halves are not one series.
+
+  That reading is right and useless on its own, because it does not say what changed. The overlap
+  does:
+
+      Allen County, the three years both variants cover
+      percent low birthweight      7.3 / 7.2 / 7.7   identical in both variants
+      count low birthweight         88 /  87 /  88   identical
+      percent preterm              9.7 / 8.0 / 8.6   identical
+      count preterm                116 /  97 /  99   identical
+      total fertility rate      2,063.7 / 2,083.5 / 1,954.2   old
+                                2,064.8 / 2,084.3 / 1,965.8   new
+
+  Everything counted off a birth certificate is unchanged. The one quantity that divides births by a
+  count of women moved, in all three years, by a growing amount — 0.05 per cent in 2018 and 0.59 in
+  2020. Ohio's rows do the same thing, so it is a property of the measure and not of this county.
+decision: |
+  **When a publisher splits a series into two overlapping measures, compute the difference for every
+  quantity in the overlap before reading either half. The quantities that move name what changed;
+  the quantities that do not name what did not. Publish both lists.**
+
+  Three consequences for how the halves are then used:
+
+  *Where nothing moved, the break is bibliographic.* The two variants of a birth-certificate
+  percentage are one series with two catalogue numbers, and this corpus splices them and says it
+  did — because refusing to splice would throw away eighteen years to honour a change that did not
+  reach the figure.
+
+  *Where something moved, the break is real and the halves are reported separately*, as
+  [a reporting change has a date and a control](a-reporting-change-has-a-date-and-a-control.yml)
+  requires. The fertility rate here is two series.
+
+  *The overlap is also a size.* 0.05 per cent in the first shared year and 0.59 in the last is not
+  a step, it is a drift — which is what a revised population estimate looks like as it moves away
+  from the census it was anchored to. A single overlapping year would have shown a step and said
+  nothing about that.
+rationale: |
+  **Why this is not the rule beside it.**
+  [a reporting change has a date and a control](a-reporting-change-has-a-date-and-a-control.yml) is
+  for a break the publisher does *not* mark: the FBI's sheriff counts run smoothly across a change
+  of reporting regime and the date is in a different endpoint. It says to hunt for the date and then
+  build a control out of a second measure. Here the publisher marks the break loudly, by issuing a
+  second measure — and hands over the control for free, because it publishes both variants for the
+  same years. The work is not finding the break. It is reading it.
+
+  **What it bought here.** Without the overlap this corpus would have had a twenty-two-year birth
+  series it could not join, and would have published either 2000–2020 or 2018–2021. With it, four of
+  the five quantities are one series across the whole span and the fifth is honestly two, and the
+  corpus can say which is which and why.
+
+  **What would falsify the reading.** If the population-denominated measure had been identical too,
+  the split would be documentation and nothing else. If the birth-certificate counts had moved, the
+  break would be in the vital statistics and the fertility rate's movement would be
+  unattributable. The overlap distinguishes those cases and no amount of care with one half of the
+  series does.
+
+  **What it generalises to.** Any publisher that reissues a measure under a new identifier while
+  keeping the old one alive: census tables renumbered across a redesign, an economic series rebased,
+  a survey question reworded and both forms fielded, a classification revised with a crosswalk year.
+  The overlap is the only place the two definitions are applied to the same reality, and it is
+  usually thrown away as a duplicate.
+status: accepted
+date: "2026-09-03"

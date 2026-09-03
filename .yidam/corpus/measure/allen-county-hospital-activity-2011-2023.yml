@@ -1,0 +1,95 @@
+class: measure
+label: What Allen County's hospitals did, 2011–2023
+description: |
+  Discharges, patient days and charges for all five of the county's hospitals, thirteen fiscal
+  years. [verified] — [CMS hospital cost reports](../../catalog/cms-hospital-cost-reports.md), the
+  same file [the bed counts](allen-county-hospital-beds-2011-2023.yml) were read from and columns
+  that node did not use.
+
+      FY    discharges   patient days   beds   av. stay   occupancy   outpatient share of charges
+      2011      26,924        117,783    580     4.37 d      55.6%              46.9%
+      2014      25,048        101,824    558     4.07        50.8               50.1
+      2017      25,293        104,140    531     4.12        55.0               50.3
+      2020      22,077         99,789    493     4.52        55.7               50.2
+      2023      22,858        102,572    502     4.49        56.0               55.3
+
+  **They are treating fewer people, not the same people for less time.** Discharges fell 15.1 per
+  cent between 2011 and 2023, from 26,924 to 22,858, while the average stay went from 4.37 days to
+  4.49 — up, not down. [verified] — the same source, computed here. That answers the question
+  [the bed node](allen-county-hospital-beds-2011-2023.yml) left open when it could see beds falling
+  and staff rising and could not tell which of the two explanations held.
+
+  **The work went outpatient, and it can be counted.** Outpatient charges were 46.9 per cent of the
+  county's hospital charges in 2011 and 55.3 in 2023, having risen from $785,241,733 to
+  $2,149,902,419 while inpatient charges went from $888,010,922 to $1,741,256,842. [verified] — the
+  same source. Charges are list prices and not receipts, and neither figure is deflated; the share
+  is the finding and the levels are context.
+
+  **Occupancy did not move, because the beds came out with the patients.** 55.6 per cent in 2011 and
+  56.0 in 2023, across a bed count that fell from 580 to 502 and patient days that fell 12.9 per
+  cent. [verified] — the same source. A hospital system that closes beds as fast as it loses
+  admissions looks unchanged on the one number a reader is most likely to ask for.
+
+  **Bluffton Hospital has stopped taking inpatients in any ordinary sense.** Its discharges went
+  from 389 in 2011 to 120 in 2023 — 96 in 2021 — and its occupancy from 15.4 per cent to 8.8, on
+  twenty-five beds it has reported in all thirteen years. [verified] — the same source. In 2021 it
+  ran at 2.7 per cent: 246 patient days on 9,125 available.
+
+  **The long-term hospital emptied too.** Kindred's occupancy ran 96.6 per cent in 2011 and 60.1 in
+  2023 on the same twenty-six beds, with its average stay falling from 27.5 days to 23.7. [verified]
+  — the same source. It is the only one of the five whose stays are measured in weeks.
+
+  **Two of the five account for the county's inpatient medicine and the split between them moved.**
+  St. Rita's took 18,335 discharges in 2011 and 15,892 in 2023; Lima Memorial 7,192 and 6,023.
+  [verified] — the same source. St. Rita's share of the two is 71.8 per cent at the start and 72.5
+  at the end, so the fall was shared almost exactly in proportion. [inference] — computed here.
+
+  **This corpus cannot say what any of this was paid for.** The file's charity care, bad debt and
+  uncompensated care columns will not carry a series for this county: one hospital reports
+  −$1,874,670 of charity care in 2011 and $20,261,400 in 2013 against $2,912,756 in 2014, and
+  another reports $35,000 of bad debt in 2011 and $14,288,142 in 2012. A negative cost is not a
+  small number and the swings are larger than the quantities they describe. See
+  [an impossible value is not an outlier](../../decisions/an-impossible-value-is-not-an-outlier.yml).
+
+  [open] Whether the outpatient shift is care moving or coding moving. The same procedure billed as
+  an observation stay rather than an admission leaves the inpatient column and enters the outpatient
+  one without anybody's treatment changing, and nothing in this file distinguishes the two.
+properties:
+  parameter: inpatient discharges, patient days and the outpatient share of charges
+  value: "22858"
+  unit: discharges, all five hospitals, FY2023
+  as_of: "2023"
+  method: |
+    One row per hospital per fiscal year for CCNs 360009, 360066, 360263, 361322 and 362020, from
+    the thirteen final cost report files FY2011 through FY2023; where a hospital filed twice in a
+    year the first row is taken, as in
+    [the bed node](allen-county-hospital-beds-2011-2023.yml). [verified] Discharges and days are the
+    `V + XVIII + XIX + Unknown` totals, which is every payer and not Medicare alone. [verified]
+    Average stay is patient days over discharges and occupancy is patient days over total bed days
+    available, both computed on county totals rather than averaged across hospitals. [verified] The
+    outpatient share is outpatient charges over the sum of inpatient and outpatient charges in the
+    same year, which makes it a ratio of two list-price columns and immune to the inflation in
+    either. [verified]
+links:
+  - target: allen-county-hospital-beds-2011-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: allen-county-hospital-employment-2011-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/mercy-health-st-ritas-medical-center.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../organization/lima-memorial-health-system.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/cms-hospital-cost-reports.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
