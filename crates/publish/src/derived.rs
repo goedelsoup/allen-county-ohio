@@ -4712,15 +4712,108 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "the-presidential-premium-is-twenty-three-points",
         statement: "Allen County turned out 71.8 per cent of its registered voters in 2020 against \
-                    54.7 per cent in 2006 and 48.4 in 2010. The two low years are midterms, so what \
-                    the three establish is the size of the presidential premium.",
+                    54.7 per cent in 2006 and 48.4 in 2010. The two low years are midterms, so the \
+                    twenty-three points between them are the presidential premium and not a trend.",
         topic: "elections",
-        supports: &[support!("measure/allen-county-turnout-2020.yml", "**71.8 per cent is high for this county, and the comparison is with midterms rather than with\n  other presidential years.** The Secretary of State's own precinct files put Allen County at\n  **54.7 per cent in 2006** \u{2014} 37,605 ballots against 68,797 registered \u{2014} and at **48.4 per cent in\n  2010**, 33,867 against 69,931. [verified] \u{2014}\n  [the 2006 ballot](allen-county-ballot-2006.yml) and\n  [OpenElections](../../catalog/openelections-ohio.md), 2010 file. Twenty-three points separate this\n  election from the lower of the two, and both of those are midterms, so what the three years\n  establish is the size of the presidential premium and not a trend. [inference]")],
+        supports: &[
+            support!("measure/allen-county-turnout-2020.yml", "**71.8 per cent is the third of six presidential elections here, and an ordinary one.**"),
+            support!("measure/allen-county-turnout-2020.yml", "**The midterms are the county's other shape.** The Secretary of State's own precinct files put Allen County at **54.7 per cent in 2006** \u{2014} 37,605 ballots against 68,797 registered \u{2014} and at **48.4 per cent in 2010**, 33,867 against 69,931."),
+        ],
         answers: &[],
         figures: &[
             Figure { label: "2006 midterm", value: 54.7, literal: "54.7" },
             Figure { label: "2010 midterm", value: 48.4, literal: "48.4" },
             Figure { label: "2020 presidential", value: 71.8, literal: "71.8" },
+        ],
+    },
+    Assertion {
+        id: "two-thousand-and-twenty-was-an-ordinary-year",
+        statement: "Allen County turned out 71.8 per cent of its registered voters in 2020 \u{2014} the third of six presidential elections here, behind 2004 and 2008 and ahead of 2024, 2012 and 2016. Twenty years of presidential turnout fit inside 4.7 points.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "**2020 was an ordinary presidential election here.** Its 71.8 per cent is the third of six, below 2004's 73.3 and 2008's 72.1 and above 2024's 70.8, 2012's 70.1 and 2016's 68.7. Twenty years of presidential turnout in this county fit inside 4.7 points."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[
+            Figure { label: "2004", value: 73.3, literal: "73.3" },
+            Figure { label: "2008", value: 72.1, literal: "72.1" },
+            Figure { label: "2020", value: 71.8, literal: "71.8" },
+            Figure { label: "2024", value: 70.8, literal: "70.8" },
+            Figure { label: "2012", value: 70.1, literal: "70.1" },
+            Figure { label: "2016", value: 68.7, literal: "68.7" },
+        ],
+    },
+    Assertion {
+        id: "the-county-used-to-out-vote-ohio",
+        statement: "This county turned out two to three points above the Ohio average in 2004, 2006 and 2008 and one to three points below it in every election since 2016. The swing is about five points relative to the state.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "**This county used to vote more than Ohio does and now it votes less.** It stood 2.9, 2.0 and 2.2 points above the state in 2004, 2006 and 2008, and 2.7, 3.1, 2.2, 2.8 and 1.7 points below it in 2016, 2018, 2020, 2022 and 2024."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[],
+    },
+    Assertion {
+        id: "election-day-stopped-being-the-day",
+        statement: "Election day carried 85.6 per cent of Allen County's ballots in 2006, 68.9 in 2012 and 47.2 in 2020. The pandemic's mail voting has since gone away and its early in-person voting has not: 13,090 early ballots in 2024, the most in the record.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "The election-day share was 85.6 per cent in 2006 and 76.5 in 2008; it fell to 68.9 in 2012 and has not been above 73 since."),
+            support!("measure/allen-county-turnout-2004-2024.yml", "In 2020 it was 47.2 per cent \u{2014} fewer than half the county's ballots were cast on the day \u{2014} and in 2024 it was 58.6."),
+            support!("measure/allen-county-turnout-2004-2024.yml", "Between 2020 and 2024 mail ballots fell by 7,079 and in-person early ballots rose by 1,342 to 13,090, the most in the record; election-day ballots rose by 4,611."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[
+            Figure { label: "2006", value: 85.6, literal: "85.6" },
+            Figure { label: "2008", value: 76.5, literal: "76.5" },
+            Figure { label: "2012", value: 68.9, literal: "68.9" },
+            Figure { label: "2020", value: 47.2, literal: "47.2" },
+            Figure { label: "2024", value: 58.6, literal: "58.6" },
+        ],
+    },
+    Assertion {
+        id: "sixty-one-thousand-names-off-a-sixty-six-thousand-roll",
+        statement: "The county board took 61,662 registrations off its voter roll across nine federal elections, against a roll that ends the run holding 66,650 names. The commonest reason is not death or moving away \u{2014} it is that a confirmation letter went unanswered.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-voter-roll-removals-2006-2022.yml", "61,662 registrations were taken off this county's voter roll across the nine federal elections from 2006 to 2022. The roll at the end of that run held 66,650 names."),
+            support!("measure/allen-county-voter-roll-removals-2006-2022.yml", "**The largest single reason a name comes off this roll is that a letter went unanswered.** Over the eight elections from 2008 the board removed 55,243 registrations and 24,086 of them \u{2014} 43.6 per cent \u{2014} were removed for failing to respond to a confirmation notice. [verified] \u{2014} the same file; 2006 is left out of the table because that year's total of 6,419 carries no breakdown. Dying and moving away, the two reasons a reader would expect to dominate, are 15.1 and 30.1 per cent."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "no response to a notice", value: 43.6, literal: "43.6" },
+            Figure { label: "moved away", value: 30.1, literal: "30.1" },
+            Figure { label: "died", value: 15.1, literal: "15.1" },
+        ],
+    },
+    Assertion {
+        id: "two-hundred-and-fifty-two-people-run-it",
+        statement: "Allen County's polling places went from 50 in 2008 to 33 now, and the people staffing them from 674 in 2016 to 252 in 2024. Of those 252, 182 were 61 or over and 15 were 40 or under.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-polling-places-2004-2024.yml", "**The polling places went with them and then kept going.** 50 in 2008 and 33 in 2022 and 2024, a fall of a third, against a precinct count that has not moved since 2012."),
+            support!("measure/allen-county-polling-places-2004-2024.yml", "In 2024, 182 of the 252 were 61 or over \u{2014} 72.2 per cent \u{2014} 55 were 41 to 60, and 15 were 40 or under."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "40 or under", value: 15.0, literal: "15" },
+            Figure { label: "41 to 60", value: 55.0, literal: "55" },
+            Figure { label: "61 and over", value: 182.0, literal: "182" },
+        ],
+    },
+    Assertion {
+        id: "a-quarter-of-the-provisional-ballots-were-rejected",
+        statement: "211 of Allen County's 898 provisional ballots were rejected in 2024 \u{2014} 23.5 per cent, the highest rate in the twenty-year record, against 18.6 in 2020 and 4.9 in 2014.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-turnout-2004-2024.yml", "Provisional ballots are the exception: 211 of 898 were rejected in 2024, 23.5 per cent, the highest rate in the record, against 18.6 in 2020 and 4.9 in 2014."),
+            support!("measure/allen-county-turnout-2004-2024.yml", "This corpus cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024."),
+        ],
+        answers: &["cannot say why nearly a quarter of this county's provisional ballots were rejected in 2024"],
+        figures: &[
+            Figure { label: "2014", value: 4.9, literal: "4.9" },
+            Figure { label: "2020", value: 18.6, literal: "18.6" },
+            Figure { label: "2024", value: 23.5, literal: "23.5" },
         ],
     },
     Assertion {
