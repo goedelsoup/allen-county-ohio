@@ -34,6 +34,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-declared-for-covid-19-2020.yml](event/allen-county-declared-for-covid-19-2020.yml) | event | Allen County is declared for COVID-19, March 2020 | 3 | 7v / 3i / 2o | 68 |
 | [allen-county-declared-for-hurricane-katrina-2005.yml](event/allen-county-declared-for-hurricane-katrina-2005.yml) | event | Allen County is declared for Hurricane Katrina, September 2005 | 3 | 4v / 1i / 1o | 40 |
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 13v / 1i / 3o | 128 |
+| [davis-v-watkins.yml](event/davis-v-watkins.yml) | event | Davis v. Watkins, 1973–1980 | 3 | 10v / 2i / 1o | 100 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 6v / 0i / 2o | 60 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
 | [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 7v / 3i / 2o | 63 |
@@ -286,6 +287,7 @@ Sorted by: kind, then alphabetically.
 | [lima-railroad-traffic-1905.yml](measure/lima-railroad-traffic-1905.yml) | measure | Lima's railroad traffic, 1905 | 2 | 8v / 6i / 0o | 66 |
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
 | [lima-snowfall-1901-2025.yml](measure/lima-snowfall-1901-2025.yml) | measure | Lima snowfall, 1901–2025 | 2 | 10v / 4i / 1o | 78 |
+| [lima-state-hospital-in-the-reports-1920-2021.yml](measure/lima-state-hospital-in-the-reports-1920-2021.yml) | measure | Lima State Hospital in the published reports, 1920–2021 | 4 | 6v / 4i / 1o | 86 |
 | [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
@@ -514,7 +516,7 @@ Sorted by: kind, then alphabetically.
 | [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 6v / 4i / 0o | 57 |
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 6 | 10v / 4i / 2o | 115 |
-| [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 2 | 10v / 5i / 2o | 80 |
+| [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 3 | 14v / 7i / 2o | 108 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 87 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 12v / 4i / 1o | 99 |
 | [national-lime-and-stone-lima-quarry.yml](site/national-lime-and-stone-lima-quarry.yml) | site | National Lime & Stone, Lima Plant | 4 | 6v / 2i / 1o | 60 |

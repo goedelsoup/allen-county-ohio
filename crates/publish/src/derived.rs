@@ -3134,6 +3134,130 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "one-hundred-and-eighty-seven-opinions",
+        statement: "One hundred and eighty-seven published opinions name Lima State Hospital, from \
+                    21 December 1920 to 1 November 2021. Ohio's own courts wrote 138 of them, the \
+                    federal courts 22.",
+        topic: "history",
+        supports: &[
+            support!("measure/lima-state-hospital-in-the-reports-1920-2021.yml", "**One hundred and eighty-seven published opinions name this institution, from 21 December 1920 to 1 November 2021.** [verified] \u{2014} [CourtListener](../../catalog/courtlistener.md), a phrase search over published opinions."),
+            support!("measure/lima-state-hospital-in-the-reports-1920-2021.yml", "**Ohio's own courts wrote 138 of them and the federal courts 22.** The court of appeals 101, the Ohio Supreme Court 37, the Sixth Circuit 13, the Northern District of Ohio 6, the Southern District 3, three courts of common pleas 6, two probate courts 2, and one each from Oklahoma and Mississippi. [verified] \u{2014} same source, counted here."),
+        ],
+        answers: &["cannot say when Lima State Hospital stopped being Lima State Hospital"],
+        figures: &[
+            Figure { label: "Sixth Circuit", value: 13.0, literal: "13" },
+            Figure { label: "Ohio Supreme Court", value: 37.0, literal: "37" },
+            Figure { label: "Ohio court of appeals", value: 101.0, literal: "101" },
+        ],
+    },
+    Assertion {
+        id: "the-nineteen-seventies-peak-is-the-law",
+        statement: "Forty-six of the opinions naming Lima State Hospital fall in the 1970s and eight \
+                    in the 1990s. The right to treatment was recognised, litigated and largely \
+                    settled inside that decade, so the series measures how much law was in dispute.",
+        topic: "history",
+        supports: &[
+            support!("measure/lima-state-hospital-in-the-reports-1920-2021.yml", "**The peak is the 1970s and it is a fact about the law, not about the hospital.** 46 opinions in the decade of [the class action](../event/davis-v-watkins.yml), against 8 in the 1990s. The right to treatment was recognised, litigated and largely settled inside that decade, and a count of opinions rises when a doctrine is unsettled and falls when it is not. This series measures how much law was in dispute. [inference] \u{2014} the reasoning is this corpus's."),
+        ],
+        answers: &["cannot say when Lima State Hospital stopped being Lima State Hospital"],
+        figures: &[
+            Figure { label: "1970s", value: 46.0, literal: "46" },
+            Figure { label: "1990s", value: 8.0, literal: "8" },
+        ],
+    },
+    Assertion {
+        id: "litigated-in-other-peoples-counties",
+        statement: "8 of the 101 appellate opinions naming Lima State Hospital carry Allen County's \
+                    own docket form; the other ninety-three open with Hamilton County's C-, \
+                    Franklin's 06AP-, Mahoning's 07 MA, or a bare sequence number.",
+        topic: "history",
+        supports: &[
+            support!("measure/lima-state-hospital-in-the-reports-1920-2021.yml", "**8 of the 101 appellate opinions carry Allen County's own docket form.** Ohio's Third District numbers a case with a county code first and this county's is 1; the remaining 93 open with Hamilton County's `C-`, Franklin's `06AP-`, Mahoning's `07 MA`, or a bare sequence number. The institution stood here and was litigated about somewhere else, which is what a maximum-security hospital serving a whole state looks like from inside one county. [verified] \u{2014} the same source, its docket numbers, parsed here; the reading is this corpus's. [inference]"),
+        ],
+        answers: &["cannot say when Lima State Hospital stopped being Lima State Hospital"],
+        figures: &[
+            Figure { label: "this county's docket form", value: 8.0, literal: "8" },
+            Figure { label: "all appellate opinions", value: 101.0, literal: "101" },
+        ],
+    },
+    Assertion {
+        id: "three-opinions-one-docket-one-judge",
+        statement: "A federal class action for everyone confined in Allen County's state hospital \
+                    ran from 1973 to 1980 on one docket before one judge and produced three \
+                    published opinions. The Civil Rights Division of the United States Department of \
+                    Justice appeared in it.",
+        topic: "history",
+        supports: &[
+            support!("event/davis-v-watkins.yml", "**A federal class action on behalf of everyone confined in Allen County's state hospital, brought in 1973 and decided in three published opinions over six years.** All three are the United States District Court for the Northern District of Ohio on docket C 73-205 before Judge Walinski, and the defendant's name changes each time because the superintendent did: *Davis v. Watkins*, 384 F. Supp. 1196 (9 September 1974); *Davis v. Balson*, 461 F. Supp. 842 (28 September 1978); *Davis v. Hubbard*, 506 F. Supp. 915 (16 September 1980). [verified] \u{2014} [the Caselaw Access Project](../../catalog/caselaw-access-project.md), the three opinions."),
+            support!("event/davis-v-watkins.yml", "**The Civil Rights Division of the United States Department of Justice appeared in it.** The reported counsel are attorneys from Toledo and from A.B.L.E. for the plaintiffs, the Ohio Attorney General for the defendants, and the Assistant Attorney General and two attorneys of the Civil Rights Division for the United States. [verified] \u{2014} [CourtListener](../../catalog/courtlistener.md), the reported appearances."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-remedy-copied-from-alabama",
+        statement: "The 1974 order requiring eighty square feet per patient, one toilet for every \
+                    six and one shower for every eight states in its own second paragraph that many \
+                    of its paragraphs were excerpted verbatim from Wyatt v. Stickney \u{2014} an \
+                    Alabama case about Alabama institutions.",
+        topic: "history",
+        supports: &[
+            support!("event/davis-v-watkins.yml", "**The first opinion is a remedy and it says whose.** It states that the court \"agrees almost totally with the reasoning\" of *Wyatt v. Stickney* and that \"many of these paragraphs have been excerpted verbatim from that opinion\" \u{2014} an Alabama case about Alabama institutions. Its requirements are therefore a standard and not a description of this place. [verified] \u{2014} same source, 384 F. Supp. 1196; see [a remedy is not a finding](../../decisions/a-remedy-is-not-a-finding.yml)."),
+            support!("event/davis-v-watkins.yml", "**What it required.** Eighty square feet per patient in a shared room, one toilet for every six patients and one shower for every eight, forty square feet of dayroom and ten of dining room per patient, linen changed at least every seven days, a physician on call at all times, no censorship of books or newspapers, unmonitored telephone calls, and a prohibition on \"repetitive, nonfunctional, degrading, and unnecessary tasks (so-called 'make work') such as buffing a waxed floor that has already been sufficiently buffed, polishing brass, or shining employees' shoes.\" [verified] \u{2014} the same source. Every patient then held was to be evaluated by a three-person team beginning 15 September 1974, and released, transferred or retained on the team's finding. [verified] \u{2014} same source."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-thousand-two-hundred-and-ninety-five-to-four-hundred",
+        statement: "Lima State Hospital held 1,295 patients in March 1971, 783 on 31 August 1973 and \
+                    slightly over 400 in 1980, in two buildings of 24 and 4 wards behind a \
+                    thirteen-foot fence with seven guard towers manned round the clock.",
+        topic: "history",
+        supports: &[
+            support!("event/davis-v-watkins.yml", "**What the later opinions found, which is the part that is about this county.** The hospital held 1,295 patients in March 1971, 783 on 31 August 1973 and 761 that November, and slightly over 400 by 1980; 73 per cent of them were on a psychotropic drug and 85 per cent were able to decide rationally whether to consent to one. [verified] \u{2014} the same source, 461 F. Supp. 842 and 506 F. Supp. 915."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "March 1971", value: 1295.0, literal: "1,295" },
+            Figure { label: "August 1973", value: 783.0, literal: "783" },
+            Figure { label: "November 1973", value: 761.0, literal: "761" },
+        ],
+    },
+    Assertion {
+        id: "fifty-four-square-feet-against-an-ordered-eighty",
+        statement: "The rooms in Lima State Hospital's old building were six feet by nine \u{2014} \
+                    fifty-four square feet \u{2014} against an order six years earlier requiring \
+                    eighty. The court refused to order a hundred, finding no judicial precedent for \
+                    it, and held that patients had a constitutional right to refuse psychotropic \
+                    medication.",
+        topic: "history",
+        supports: &[
+            support!("event/davis-v-watkins.yml", "**A room of six feet by nine is fifty-four square feet, and the order six years earlier had required eighty.** The corpus states both because neither alone is the measurement. [inference] \u{2014} computed here; see [a remedy is not a finding](../../decisions/a-remedy-is-not-a-finding.yml)."),
+            support!("event/davis-v-watkins.yml", "**The court declined the plaintiffs' central demand on space and granted the one on medication.** It found no judicial precedent for a hundred square feet as a constitutional minimum and refused to order new construction, noting the reduced population; and it held that patients had a constitutional right to refuse psychotropic medication. [verified] \u{2014} same source, 506 F. Supp. 915."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "forty-four-point-eight-per-cent",
+        statement: "The parties in the 1980 litigation stipulated that Lima State Hospital's patient \
+                    population was 44.8 per cent Black, and that 73 per cent of patients were on a \
+                    psychotropic drug while 85 per cent were able to decide for themselves whether \
+                    to take one.",
+        topic: "history",
+        supports: &[
+            support!("event/davis-v-watkins.yml", "**The composition finding lands on something this corpus had already inferred and could not show.** The Lima State Hospital node read the 1940 census's race and sex ratios in Bath Township \u{2014} 260 Black residents running 204 men to 56 \u{2014} as describing a committed population rather than a settled one. A stipulated fact from 1980 puts the institution at 44.8 per cent Black in a county that was nothing like it. [verified] \u{2014} the same source, against [the county by race](../measure/allen-county-population-by-race-1930-1960.yml). Forty years separate the two and neither is evidence for the other; they are two observations of the same arrangement. [inference]"),
+            support!("event/davis-v-watkins.yml", "**What the later opinions found, which is the part that is about this county.** The hospital held 1,295 patients in March 1971, 783 on 31 August 1973 and 761 that November, and slightly over 400 by 1980; 73 per cent of them were on a psychotropic drug and 85 per cent were able to decide rationally whether to consent to one. [verified] \u{2014} the same source, 461 F. Supp. 842 and 506 F. Supp. 915."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Black", value: 44.8, literal: "44.8" },
+            Figure { label: "on a psychotropic drug", value: 73.0, literal: "73" },
+            Figure { label: "able to decide", value: 85.0, literal: "85" },
+        ],
+    },
+    Assertion {
         id: "the-category-split-in-2000",
         statement: "Allen County's Black population grew at every census from 1920 to 2000 \
                     including the twenty years after the county's own peak, and then appears to \
