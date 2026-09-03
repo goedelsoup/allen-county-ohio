@@ -1,0 +1,80 @@
+class: measure
+label: Allen County's quarries, 2000–2025
+description: |
+  Every mine the federal regulator has ever registered in this county, and the labour and the
+  injuries at the two still working. [verified] —
+  [the MSHA open data sets](../../catalog/msha-mine-data.md).
+
+      mine                              status      since   operator                        material
+      National Lime & Stone, Lima       Active       1986   The National Lime & Stone Co.   limestone
+      Bluffton Stone Company            Active       2007   Bluffton Stone Company          limestone
+      Mayberry Road                     Abandoned    2009   Ward Materials Inc              sand, gravel
+      Ward Material's Incorporated      Abandoned    1987   Ward Materials Inc              sand, gravel
+      Western Ohio Stone, Quarry #1     Abandoned    1984   Western Ohio Stone Company      limestone
+      Western Ohio Stone, Quarry #2     Abandoned    1984   Western Ohio Stone Company      limestone
+
+  **Six registrations, two working faces, and about thirty people.** Employment across the two
+  active quarries averaged 44.2 in 2006 and 24.0 in 2018 and stands at 31.8; they worked
+  **1,748,718 hours between 2000 and 2025**. [verified] — the same source, quarterly rows summed
+  here. Against the 44,251 people the county's private employers hold, that is one worker in
+  fourteen hundred. [inference] — [the business register](allen-county-private-employers-1986-2023.yml).
+
+  **Both are surface limestone quarries and both stand where the corpus can put them.** The
+  National Lime & Stone plant is at 40.750833, -84.086111 — in [Bath Township](../place/bath-township.yml)
+  and in no incorporated place. Bluffton Stone is at 40.889167, -83.890278, in
+  [Richland Township](../place/richland-township.yml) and **inside the village of Bluffton**.
+  [verified] — the same source's coordinates, against
+  [TIGERweb](../../catalog/tigerweb-census2020.md) point-in-polygon on the 2020 county-subdivision
+  and incorporated-place layers.
+
+  **The quarry and the engine plant are 1.62 miles apart in one township.** The company still
+  working the first sold the ground under the second: National Lime & Stone took the Ford site from
+  the National Quarries Company in January 1944 and conveyed it on in 1955.
+  [verified] — [the plant's tract record](../site/ford-lima-engine-plant.yml) and the distance
+  computed here. So the ground that grew Bath Township's factory came off a quarry company's books,
+  and the quarry company is still in the township. [inference]
+
+  **Thirty-four reportable injuries in twenty-six years and no death.** A rate of **3.89 per 200,000
+  hours** — 3.63 at the Lima plant and 4.44 at Bluffton — with 622 days lost and 275 restricted, and
+  one permanent disability, on 16 December 2011. [verified] — the same source. Handling materials
+  accounts for eleven of them and a slip or fall for eight.
+
+  **That is an ordinary rate for this county and not a low one.** It sits beside 3.69 for the
+  county's OSHA-reporting establishments as a whole, 2.87 for its manufacturing, 8.38 for its
+  nursing homes and 0.73 for the refinery. [inference] —
+  [the injury record](allen-county-workplace-injuries-2016-2024.yml). The two agencies define a
+  reportable injury separately and the arithmetic is the same, so the comparison is of two rules
+  about what must be written down as much as of two kinds of work.
+
+  **The register's oldest date is not a date.** National Lime & Stone's control of the Lima plant is
+  recorded as beginning 1 January 1950, which is the same day 41,309 of the file's 169,890
+  controller records begin and earlier than none of them. [verified] — the same source; see
+  [a value shared by unrelated records is a default](../../decisions/a-value-shared-by-unrelated-records-is-a-default.yml).
+
+  This corpus cannot say how much stone has come out of this county. MSHA's production column is
+  empty for limestone, the register holds no acreage, and none of the four abandoned entries says
+  what is at the place now. [open]
+properties:
+  parameter: hours worked, active limestone quarries
+  value: "1748718"
+  unit: hours
+  as_of: "2025"
+  method: |
+    Mines with `STATE` = OH and `FIPS_CNTY_NM` beginning ALLEN, six in all. Employment is the mean
+    of the four quarterly `AVG_EMPLOYEE_CNT` values; hours are their sum. 2026 is excluded from
+    every total because only two quarters are filed. Injuries exclude the two records whose degree
+    is `ACCIDENT ONLY` and the one with none. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/msha-mine-data.md
+  - target: ../site/national-lime-and-stone-lima-quarry.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/msha-mine-data.md
+  - target: allen-county-workplace-injuries-2016-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
