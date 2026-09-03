@@ -4712,7 +4712,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         statement: "216 respiratory illnesses were recorded in this county's workplaces in 2020 against two in 2016 and none in 2018, and 211 of the 216 are in health care.",
         topic: "work",
         supports: &[
-            support!("measure/allen-county-workplace-injuries-2016-2024.yml", "**The pandemic is legible in the logbooks.** 216 respiratory illnesses were recorded in 2020 against two in 2016 and none in 2018, and **211 of the 216 are in health care**."),
+            support!("measure/allen-county-workplace-injuries-2016-2024.yml", "**The pandemic is legible in the logbooks, and it is most of the nursing homes' figure.** 216 respiratory illnesses were recorded in 2020 against two in 2016 and none in 2018, **211 of the 216 in health care**."),
         ],
         answers: &["cannot say how many people were hurt at work in Allen County"],
         figures: &[
@@ -4771,6 +4771,102 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[
             Figure { label: "establishments filing", value: 222.0, literal: "222" },
             Figure { label: "private establishments", value: 2239.0, literal: "2,239" },
+        ],
+    },
+    Assertion {
+        id: "twelve-homes-and-eight-hundred-and-eleven-beds",
+        statement: "Allen County has twelve certified nursing homes holding 811 beds and 712.5 residents a day. They are 87.9 per cent full, against 83.6 per cent for Ohio's 922 homes and 80.3 for the country's 14,690.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-homes-2026.yml", "`staff` is total nurse staffing hours per resident per day, `turn` annual nursing-staff turnover. **Twelve homes, 811 certified beds, 712.5 residents a day \u{2014} 87.9 per cent occupancy against 83.6 for Ohio's 922 homes and 80.3 for the country's 14,690.** [verified] \u{2014} the same file."),
+        ],
+        answers: &["cannot say how well anybody here is cared for"],
+        figures: &[
+            Figure { label: "Allen County", value: 87.9, literal: "87.9" },
+            Figure { label: "Ohio", value: 83.6, literal: "83.6" },
+            Figure { label: "United States", value: 80.3, literal: "80.3" },
+        ],
+    },
+    Assertion {
+        id: "two-thirds-of-the-beds-are-run-from-elsewhere",
+        statement: "Four chains run 545 of the county's 811 nursing-home beds \u{2014} Trilogy Health Services, HCF Management, Vancrest and CareCore Health, none of them local. Nine of the twelve homes are for profit; the three that are not hold 152 beds.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-homes-2026.yml", "**Two thirds of the county's beds are run from somewhere else.** 545 of the 811 belong to four chains \u{2014} Trilogy Health Services (123 homes, three of these), HCF Management (22, two), Vancrest (13, one) and CareCore Health (10, one). Nine of the twelve are for profit; the three that are not hold 152 beds."),
+        ],
+        answers: &["cannot say how well anybody here is cared for"],
+        figures: &[
+            Figure { label: "chain-run beds", value: 545.0, literal: "545" },
+            Figure { label: "all certified beds", value: 811.0, literal: "811" },
+            Figure { label: "non-profit beds", value: 152.0, literal: "152" },
+        ],
+    },
+    Assertion {
+        id: "better-rated-and-no-better-staffed",
+        statement: "Allen County's nursing homes are rated well above the state's and staffed no better. Mean overall rating 3.75 against Ohio's 3.15 and the country's 2.98, nursing-staff turnover 39.5 per cent at the median against 48.5 and 44.9, and total nurse staffing 3.57 hours per resident per day against 3.57 and 3.68.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-homes-2026.yml", "**The county's homes are fuller, better rated and less churned than the state's, and no better staffed.** Mean overall rating 3.75 against Ohio's 3.15 and the country's 2.98; nursing-staff turnover 39.5 per cent at the median against 48.5 and 44.9; total nurse staffing 3.57 hours per resident per day against 3.57 and 3.68."),
+        ],
+        answers: &["cannot say how well anybody here is cared for"],
+        figures: &[
+            Figure { label: "Allen County rating", value: 3.75, literal: "3.75" },
+            Figure { label: "Ohio", value: 3.15, literal: "3.15" },
+            Figure { label: "United States", value: 2.98, literal: "2.98" },
+        ],
+    },
+    Assertion {
+        id: "two-hundred-and-eighty-seven-deficiencies",
+        statement: "Inspectors cited Allen County's twelve nursing homes 287 times between February 2019 and May 2026. Nine citations were for harm actually done to a resident and two reached immediate jeopardy \u{2014} Springview Manor for accident hazards in January 2024 and Liberty Retirement Community for respiratory care in March 2026.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-homes-2026.yml", "**287 deficiencies in seven years, and 11 of them for harm actually done.** Inspectors cited the twelve homes 287 times between 21 February 2019 and 20 May 2026. Nine citations reached scope-and-severity G \u{2014} actual harm to a resident \u{2014} and **two more reached immediate jeopardy**: Springview Manor on 10 January 2024 for accident hazards, Liberty Retirement Community on 19 March 2026 for respiratory care."),
+        ],
+        answers: &["cannot say how well anybody here is cared for"],
+        figures: &[
+            Figure { label: "all citations", value: 287.0, literal: "287" },
+            Figure { label: "citations for harm done", value: 11.0, literal: "11" },
+        ],
+    },
+    Assertion {
+        id: "a-five-star-home-is-the-most-dangerous-workplace",
+        statement: "The Springs of Lima carries five stars overall and five on health inspection, with no deficiency in its latest cycle and no fine \u{2014} and its workers recorded 89 injuries on 883,063 hours, a rate of 20.16 per 100 full-time workers against 3.69 for the county.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-homes-2026.yml", "**A five-star home can be the most dangerous workplace in the county.** The Springs of Lima carries five stars overall, five on health inspection, no deficiency in its latest cycle and no fine \u{2014} and its workers recorded 89 injuries on 883,063 hours, a rate of 20.16 against 3.69 for the county."),
+        ],
+        answers: &["cannot say how well anybody here is cared for"],
+        figures: &[
+            Figure { label: "The Springs of Lima", value: 20.16, literal: "20.16" },
+            Figure { label: "all reporting workplaces in the county", value: 3.69, literal: "3.69" },
+        ],
+    },
+    Assertion {
+        id: "the-homes-are-a-seventh-smaller-than-in-2013",
+        statement: "Allen County's nursing homes delivered 320,868 resident days in 2013 and 272,194 in 2023, 15.2 per cent below the peak, with the bottom at 256,683 in 2022.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-home-days-2011-2023.yml", "**The county's nursing homes peaked in 2013 and are a seventh smaller now.** 320,868 resident days then, 256,683 at the bottom in 2022, 272,194 in 2023 \u{2014} **15.2 per cent below the peak**."),
+        ],
+        answers: &["cannot say how many Allen County people are in a nursing home outside it"],
+        figures: &[
+            Figure { label: "2013", value: 320868.0, literal: "320,868" },
+            Figure { label: "2022", value: 256683.0, literal: "256,683" },
+            Figure { label: "2023", value: 272194.0, literal: "272,194" },
+        ],
+    },
+    Assertion {
+        id: "medicaid-pays-for-three-days-in-five",
+        statement: "Medicaid pays for between 55.9 and 65.2 per cent of Allen County's nursing-home days across thirteen years and 57.3 per cent now. Medicare days, which buy the short rehabilitation stay, fell 28.7 per cent over the same run.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-nursing-home-days-2011-2023.yml", "**Medicaid pays for three days in five and always has.** Its share runs 55.9 to 65.2 per cent across the thirteen years and stands at 57.3. [verified] \u{2014} the same files. Medicare, which pays for the short rehabilitation stay rather than the long residence, fell furthest: 32,476 days in 2011 to 23,153 in 2023, **down 28.7 per cent**, while everything else rose 1.9."),
+        ],
+        answers: &["cannot say how many Allen County people are in a nursing home outside it"],
+        figures: &[
+            Figure { label: "lowest Medicaid share", value: 55.9, literal: "55.9" },
+            Figure { label: "2023", value: 57.3, literal: "57.3" },
+            Figure { label: "highest", value: 65.2, literal: "65.2" },
         ],
     },
     Assertion {

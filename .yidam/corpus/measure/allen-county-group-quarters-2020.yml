@@ -80,6 +80,14 @@ description: |
   correctional residents is in the two state blocks, which leaves nothing at
   [the Allen County Justice Center](../site/allen-county-justice-center.yml) — and the census
   records that block's total population as zero.
+  **The 966 in nursing facilities can now be set beside a second count and a third.** The county's
+  Medicare-certified nursing homes billed 270,773 resident days in 2020, which is 742 a day, and
+  Care Compare puts them at 712.5 residents in 2026. The census figure is the largest of the three
+  because it counts every nursing and skilled-nursing group quarters, certified or not, and it found
+  them in **15 blocks** where the certified homes number twelve. [verified] —
+  [the resident days](allen-county-nursing-home-days-2011-2023.yml) and
+  [the homes](allen-county-nursing-homes-2026.yml).
+
 properties:
   parameter: population in group quarters, Allen County
   value: "3522"
@@ -107,5 +115,9 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/census-2020-redistricting-file.md
+  - target: allen-county-nursing-home-days-2011-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/cms-snf-cost-reports.md
   - target: ../measure.ont.yml
     relationship: instance-of
