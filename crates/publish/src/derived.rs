@@ -5745,11 +5745,11 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "eight-buildings-and-seven-were-limas",
         statement: "Allen County's twelve school districts held 51 school buildings in 1986 and hold \
-                    43. Lima City closed seven of the eight, and five districts have reported the \
-                    same number every year for 39 years.",
+                    43. Lima City accounts for seven of the eight-building difference, and five \
+                    districts have reported the same number every year for 39 years.",
         topic: "schools",
         supports: &[
-            support!("measure/allen-county-school-buildings-1986-2024.yml", "**Eight school buildings have closed in this county in thirty-nine years and Lima City closed seven of them.** The county held 51 in 1986 and holds 43; Lima went from 16 to 9, Elida and Spencerville lost one each, Bath gained one, and the remaining eight districts end where they began. [verified] \u{2014} the same source, its district directory, by district."),
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**This county reports eight fewer school buildings than it did in 1986, and seven of the difference is Lima City.** The county held 51 in 1986 and holds 43; Lima went from 16 to 9, Elida and Spencerville lost one each, Bath gained one, and the remaining eight districts end where they began \u{2014} so nine buildings left the count and one entered it. [verified] \u{2014} the same source, its district directory, by district."),
             support!("measure/allen-county-school-buildings-1986-2024.yml", "**Five of the twelve have reported the same number every year since 1986.** Columbus Grove and Pandora-Gilboa 3, Shawnee 4, Perry and Waynesfield-Goshen 2 \u{2014} one distinct value each across all 39 years. Six more move by exactly one building and back, and Lima's count runs from 16 down to 9. [verified] \u{2014} same source, computed here."),
         ],
         answers: &["cannot say which buildings closed"],
