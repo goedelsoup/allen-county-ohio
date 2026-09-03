@@ -1,0 +1,98 @@
+class: measure
+label: Allen County workplace injuries and illnesses, 2016–2024
+description: |
+  Every Allen County establishment that owed OSHA an annual injury summary, nine years, with the
+  hours its people worked and what happened to them. [verified] —
+  [the Injury Tracking Application](../../catalog/osha-injury-tracking-application.md).
+
+      year  establishments  employees        hours  recordable   rate   Ohio   nation
+      2016             152     16,380   31,205,302         603   3.86   3.61     3.92
+      2017             143     16,438   30,504,120         547   3.59   3.53     4.00
+      2018             161     19,621   33,857,882         685   4.05   3.59     4.07
+      2019             173     19,275   34,279,243         693   4.04   3.48     4.02
+      2020             179     20,020   34,199,054         860   5.03   4.23     4.50
+      2021             178     19,633   34,658,164         616   3.55   3.72     4.09
+      2022             189     19,045   33,925,949         586   3.45   3.83     4.60
+      2023             222     22,622   39,085,508         588   3.01   3.61     3.15
+      2024             200     21,617   37,819,515         534   2.82   3.03     3.64
+
+  Rates are recordable cases per 100 full-time workers, and the Ohio and national columns are
+  computed from the same nine files, so no column compares one publisher's arithmetic with
+  another's. **5,712 recordable injuries and illnesses on 309,534,737 hours, three deaths, and
+  106,208 days away from work or on restricted duty.** [verified] — the same files.
+
+  **The most dangerous work in this county is care, and it is not close.** Health care and social
+  assistance record 2,201 cases on 78,692,114 hours, a rate of 5.59; manufacturing records 1,841 on
+  128,109,489 hours, a rate of 2.87. Health care stands above manufacturing in **every one of the
+  nine years**, from 5.10 against 4.11 in 2016 to 4.10 against 2.34 in 2024. [verified] — the same
+  files, by NAICS sector.
+
+  **The refinery is the safest large workplace here and the nursing homes are the most dangerous.**
+  [The Lima refinery](../site/lima-refinery.yml) records 35 cases on 9,574,775 hours, a rate of
+  **0.73**; the county's nursing and residential care homes record 559 on 13,338,203, a rate of
+  **8.38**, eleven times higher. [verified] — the same files. That is a difference in how often and
+  not in how badly, and a rate of frequency cannot see a hazard that is rare and catastrophic.
+  [inference]
+
+  **The pandemic is legible in the logbooks.** 216 respiratory illnesses were recorded in 2020
+  against two in 2016 and none in 2018, and **211 of the 216 are in health care**. [verified] — the
+  same files.
+
+  **The county crossed the state in 2021 and has stayed below since**, standing above Ohio's rate
+  in each of 2016 through 2020 and below it in each of 2021 through 2024. [verified] — same files.
+
+  **The fall is real and the trend is not established.** A straight line through the nine rates
+  falls 0.126 a year on a standard error of 0.076 — 1.01 across the run, where two standard errors
+  is 1.21 — so the line does not clear its own noise. The level does: at 2019's rate, 2024's hours
+  would have produced 765 cases and 534 were recorded, which is 8.3 Poisson standard deviations
+  below. [verified] — the same files, the arithmetic here; and see
+  [a flat series is a claim](../../decisions/a-flat-series-is-a-claim.yml).
+
+  **Three deaths in nine years, and that is an ordinary number.** One in 2016 at International Tank
+  Service, one in 2019 at Colonial Surface Solutions, one in 2021 at
+  [Ford's Lima Engine plant](../site/ford-lima-engine-plant.yml). At the national rate in these same
+  files the county's hours would have produced 3.94, and three or more arrives three times in four.
+  [verified] — the same files; and see
+  [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml).
+
+  **The rate is made by a minority of workplaces**: 96 of the 152 establishments reported no injury
+  at all in 2016, 63.2 per cent, falling to 47.7 per cent in 2023. [verified] — the same files.
+
+  This corpus cannot say how many people were hurt at work in Allen County. The file holds only the
+  establishments the reporting rule reaches — one workplace in ten — and a case is a case rather
+  than a person. [open]
+properties:
+  parameter: recordable work-related injuries and illnesses, Form 300A summaries
+  value: "5712"
+  unit: cases
+  as_of: "2024"
+  method: |
+    Ohio rows pulled from nine annual releases and assigned to counties by address: the Census
+    batch geocoder first, then [the county's own address points](../../catalog/allen-county-gis-downloads.md)
+    for what it could not match, then TIGERweb point-in-polygon on a coordinate for the residue.
+    Rows reporting more hours per employee than a year contains — 13 of 1,597 — are dropped; see
+    [an impossible value is not an outlier](../../decisions/an-impossible-value-is-not-an-outlier.yml).
+    Fifteen rows in Lima, Elida and Delphos could not be placed and are excluded. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/osha-injury-tracking-application.md
+  - target: ../site/lima-refinery.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/osha-injury-tracking-application.md
+  - target: ../site/ford-lima-engine-plant.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/osha-injury-tracking-application.md
+  - target: allen-county-health-care-employment-2010-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/osha-injury-tracking-application.md
+  - target: allen-county-private-employers-1986-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-county-business-patterns.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
