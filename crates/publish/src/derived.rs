@@ -5813,6 +5813,207 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "income-rose-and-earnings-barely-did",
+        statement: "Income per person in Allen County is 74.3 per cent higher in real terms than it \
+                    was in 1969 and the money people are paid for working is 27.0 per cent higher \
+                    \u{2014} $25,565 to $32,471 in 2024 dollars, which is 0.44 per cent a year \
+                    across fifty-five years.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**Income per person here is 74.3 per cent higher in real terms than it was in 1969 and the money people are paid for working is 27.0 per cent higher.** $32,164 to $56,066 against $25,565 to $32,471, both in 2024 dollars. [verified] \u{2014} the same source, deflated by [the CPI](../../catalog/bls-cpi.md) as [a deflator is a choice](../../decisions/a-deflator-is-a-choice.yml) requires. Over fifty-five years that is 0.44 per cent a year on the earnings line."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "real income per person, 1969", value: 32164.0, literal: "32,164" },
+            Figure { label: "2024", value: 56066.0, literal: "56,066" },
+        ],
+    },
+    Assertion {
+        id: "twenty-years-to-get-back-to-1979",
+        statement: "Real earnings per person in Allen County fell 20.1 per cent in the three years \
+                    to 1982 and no year stood above the 1979 figure until 1999. Those are the same \
+                    three years in which the county's house prices fell 30.8 per cent in real terms \
+                    and never recovered at all.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**Real earnings per person fell 20.1 per cent in the three years to 1982 and took until 1999 to get back.** $27,696 in 1979, $22,140 in 1982, and no year above the 1979 figure until 1999's $28,746. [verified] \u{2014} the same file. Twenty years is the length of that hole and it is the same three years in which [house prices](allen-county-house-prices-1975-2025.yml) fell 30.8 per cent in real terms and never recovered at all."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "real earnings per person, 1979", value: 27696.0, literal: "27,696" },
+            Figure { label: "1982", value: 22140.0, literal: "22,140" },
+        ],
+    },
+    Assertion {
+        id: "a-job-here-pays-what-it-paid-in-1969",
+        statement: "A job in Allen County pays about what a job in Allen County paid in 1969. \
+                    Earnings by place of work divided by total jobs gives $62,412 in 1969 and \
+                    $65,065 in 2022 in the same dollars \u{2014} 4.3 per cent higher after \
+                    fifty-three years, and 1.2 per cent below the 1979 figure of $65,825.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**A job here pays about what a job here paid in 1969.** Earnings by place of work divided by total jobs gives $62,412 in 1969, $65,825 in 1979, $59,047 in 1982 and $65,065 in 2022, all in 2024 dollars \u{2014} 4.3 per cent above the first figure after fifty-three years and 1.2 per cent below the second. [inference] \u{2014} computed here from the same file and [the employment series](allen-county-total-employment-1969-2022.yml)."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "1969", value: 62412.0, literal: "62,412" },
+            Figure { label: "1979", value: 65825.0, literal: "65,825" },
+            Figure { label: "1982", value: 59047.0, literal: "59,047" },
+            Figure { label: "2022", value: 65065.0, literal: "65,065" },
+        ],
+    },
+    Assertion {
+        id: "half-the-growth-is-transfers",
+        statement: "More than half of fifty-five years of income growth in Allen County is \
+                    government transfers. Of the $23,902 that real income per person gained between \
+                    1969 and 2024, transfers are $12,701 \u{2014} 53.1 per cent \u{2014} against \
+                    28.9 per cent from net earnings and 18.0 from dividends, interest and rent.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**More than half of fifty-five years of income growth is transfer payments.** Of the $23,902 that real income per person gained between 1969 and 2024, transfers are $12,701 \u{2014} 53.1 per cent \u{2014} against 28.9 per cent from net earnings and 18.0 from dividends, interest and rent. [inference] \u{2014} computed here from the table above."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "transfers, share of growth", value: 53.1, literal: "53.1" },
+            Figure { label: "net earnings", value: 28.9, literal: "28.9" },
+            Figure { label: "dividends, interest and rent", value: 18.0, literal: "18.0" },
+        ],
+    },
+    Assertion {
+        id: "a-quarter-of-the-income-is-a-transfer",
+        statement: "Government transfers went from 7.2 per cent of Allen County's income in 1969 to \
+                    26.8 per cent in 2024. Per person and in 2024 dollars they are 6.52 times what \
+                    they were \u{2014} $2,299 against $15,000, having peaked at $17,918 in 2021.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**Transfer receipts went from 7.2 per cent of this county's income to 26.8.** Per person and in 2024 dollars they are 6.52 times what they were \u{2014} $2,299 in 1969 against $15,000 in 2024, having peaked at $17,918 in 2021. [verified] \u{2014} the same source. What they consist of is [its own question](allen-county-transfer-receipts-1969-2024.yml)."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "transfers per person, 1969", value: 2299.0, literal: "2,299" },
+            Figure { label: "2021", value: 17918.0, literal: "17,918" },
+            Figure { label: "2024", value: 15000.0, literal: "15,000" },
+        ],
+    },
+    Assertion {
+        id: "ordinary-for-ohio-and-ohio-is-not-its-median",
+        statement: "Allen County ranks 41st of Ohio's 88 counties on transfer share and 39th on \
+                    income per person \u{2014} ordinary on both \u{2014} while the state aggregate \
+                    sits at 21.1 per cent and $64,464, because four large counties hold enough of \
+                    Ohio's income to move its total and not its middle.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**The county is ordinary for Ohio and Ohio is not its own median.** Allen County ranks 41st of Ohio's 88 counties on transfer share at 26.8 per cent against a county median of 26.0, and 39th on income per person at $56,066 against a county median of $55,326. The state aggregate is 21.1 per cent and $64,464, because four large counties hold enough of Ohio's income to move its total and not its middle. [verified] \u{2014} the same file, all 88 Ohio rows, ranked here. A county compared against a state total is being compared against its four richest neighbours."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "Allen County, transfer share", value: 26.8, literal: "26.8" },
+            Figure { label: "Ohio county median", value: 26.0, literal: "26.0" },
+            Figure { label: "Ohio aggregate", value: 21.1, literal: "21.1" },
+        ],
+    },
+    Assertion {
+        id: "the-gap-with-the-nation-is-in-the-growth-rate",
+        statement: "Real income per person rose 74.3 per cent in Allen County between 1969 and 2024, \
+                    90.6 per cent in Ohio and 117.9 per cent in the United States. The transfer \
+                    share in 2024 is 26.8 per cent here against 18.3 nationally.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**Against the nation the gap is real and it is in the growth rate.** Real income per person rose 74.3 per cent here, 90.6 in Ohio and 117.9 in the United States between 1969 and 2024, and the transfer share in 2024 is 26.8 per cent here against 18.3 nationally. [verified] \u{2014} the same file, the Ohio and United States rows."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "Allen County", value: 74.3, literal: "74.3" },
+            Figure { label: "Ohio", value: 90.6, literal: "90.6" },
+            Figure { label: "United States", value: 117.9, literal: "117.9" },
+        ],
+    },
+    Assertion {
+        id: "half-a-billion-in-earnings-goes-home-elsewhere",
+        statement: "Allen County pays out more in earnings than its residents take home, and has in \
+                    every one of the fifty-six years measured. The adjustment for residence is \
+                    \u{2212}$516,666,000 in 2024, 12.0 per cent of the $4,310,695,000 earned inside \
+                    the county line, against a commuting file that counts 13.8 per cent more jobs \
+                    here than resident job-holders.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-personal-income-1969-2024.yml", "**The county pays out more in earnings than its residents take home, and has in every one of the fifty-six years.** The adjustment for residence is \u{2212}$516,666,000 in 2024, 12.0 per cent of the $4,310,695,000 earned inside the county line; it was \u{2212}13.3 per cent in 1969 and reached \u{2212}16.0 in 1990. [verified] \u{2014} the same file. Against that, [the commuting file](allen-county-commuting-2022.yml) counts 48,730 jobs located here and 42,835 held by residents, 13.8 per cent more jobs than resident job-holders. Two agencies, two methods and 1.8 points apart; BEA estimates its adjustment from journey-to-work data, so this is a close agreement between measurements that share an ancestor rather than two independent ones. [inference] See [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml)."),
+        ],
+        answers: &["cannot say what a person in Allen County is paid"],
+        figures: &[
+            Figure { label: "earnings by place of work, $000", value: 4310695.0, literal: "4,310,695" },
+            Figure { label: "earnings paid out to non-residents, $000", value: 516666.0, literal: "516,666" },
+        ],
+    },
+    Assertion {
+        id: "half-the-transfers-are-medical",
+        statement: "A quarter of everything the people of Allen County are paid is a government \
+                    transfer, and half of that is medical care: $668,013,000 in 2022, or $6,608 a \
+                    resident, of which Medicare is $389,761,000 and public assistance medical care \
+                    $276,551,000. Social Security is $4,131 a resident.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-transfer-receipts-1969-2024.yml", "A quarter of everything the people of this county are paid is a government transfer, and half of that is medical care: **$668,013,000 of medical benefits in 2022, or $6,608 a resident**, of which Medicare is $389,761,000 and public assistance medical care $276,551,000, against $4,131 a resident of Social Security. [verified] \u{2014} [BEA's transfer receipts tables](../../catalog/bea-county-personal-income.md), CAINC4 for the totals and CAINC35 for what they are made of."),
+        ],
+        answers: &["cannot say how many people in Allen County receive any of this money"],
+        figures: &[
+            Figure { label: "Medicare, $000", value: 389761.0, literal: "389,761" },
+            Figure { label: "public assistance medical care, $000", value: 276551.0, literal: "276,551" },
+        ],
+    },
+    Assertion {
+        id: "the-composition-inverted",
+        statement: "In 1969 retirement and disability benefits were 59.6 per cent of Allen County's \
+                    government transfers and medical benefits were 12.3. In 2022 medical benefits \
+                    are 48.6 per cent and retirement and disability 31.2. The largest single thing \
+                    the government now does for the people here is buy them health care.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-transfer-receipts-1969-2024.yml", "**The composition inverted inside one lifetime.** In 1969 retirement and disability were 59.6 per cent of this county's transfers and medical benefits were 12.3; in 2022 medical benefits are 48.6 and retirement and disability 31.2. [verified] \u{2014} the same table, both years. The largest single thing the government now does for the people of Allen County is buy them health care."),
+        ],
+        answers: &["cannot say how many people in Allen County receive any of this money"],
+        figures: &[
+            Figure { label: "medical, 1969", value: 12.3, literal: "12.3" },
+            Figure { label: "medical, 2022", value: 48.6, literal: "48.6" },
+            Figure { label: "retirement, 1969", value: 59.6, literal: "59.6" },
+            Figure { label: "retirement, 2022", value: 31.2, literal: "31.2" },
+        ],
+    },
+    Assertion {
+        id: "two-federal-accounts-of-one-county",
+        statement: "Two federal accounts of Allen County differ by a factor of two and a half. \
+                    USAspending records $626,459,645 of federal money here in federal year 2024; the \
+                    Bureau of Economic Analysis records $1,513,000,000 of transfer receipts in \
+                    calendar 2024. One counts awards obligated to a place and the other counts \
+                    income received by the people who live in it.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-transfer-receipts-1969-2024.yml", "**Two federal accounts of the same county in the same year differ by a factor of two and a half.** USAspending records $626,459,645 of federal money in Allen County in federal year 2024, of which $573,202,179 is direct payments to individuals. BEA records $1,513,000,000 of transfer receipts in calendar 2024. [verified] \u{2014} [USAspending](../../catalog/usaspending.md), place of performance, and the same BEA file; see [the federal money node](federal-money-in-allen-county-2008-2025.yml)."),
+        ],
+        answers: &["cannot say how many people in Allen County receive any of this money"],
+        figures: &[
+            Figure { label: "USAspending, all award types", value: 626459645.0, literal: "626,459,645" },
+            Figure { label: "BEA transfer receipts", value: 1513000000.0, literal: "1,513,000,000" },
+        ],
+    },
+    Assertion {
+        id: "the-difference-is-medicare-and-medicaid",
+        statement: "The gap between the two federal accounts is medical care, and both sides of it \
+                    can be checked. In 2022 the difference is $878,386,986 and BEA's medical \
+                    benefits for that year are $668,013,000 \u{2014} 76.0 per cent of it. All 99 of \
+                    USAspending's assistance listings for the county that year total $550,548,594 \
+                    and not one of them is Medicare or Medicaid.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-transfer-receipts-1969-2024.yml", "**The difference is medical care, and both sides of that can be checked.** In 2022 the gap between BEA's transfers and USAspending's direct payments is $878,386,986, and BEA's medical benefits for that year are $668,013,000 \u{2014} 76.0 per cent of it. On the other side, USAspending's 99 assistance listings for Allen County in federal year 2022 total $550,548,594 and **not one of them is Medicare or Medicaid**; its five listings from the Department of Health and Human Services come to $6,415,154, of which $5,825,306 is Head Start. [verified] \u{2014} the same source and the same award file, the assistance listing endpoint queried for that year. A Medicare payment goes to a hospital and is not an award to anybody in this county; BEA books it to the patient's county all the same. See [a receipt is not an award](../../decisions/a-receipt-is-not-an-award.yml)."),
+        ],
+        answers: &["cannot say how many people in Allen County receive any of this money"],
+        figures: &[
+            Figure { label: "the gap", value: 878386986.0, literal: "878,386,986" },
+            Figure { label: "BEA medical benefits", value: 668013000.0, literal: "668,013,000" },
+        ],
+    },
+    Assertion {
         id: "seven-hundred-and-sixty-on-the-roads",
         statement: "Seven hundred and sixty people died in 666 crashes on Allen County's roads \
                     between 1975 and 2024. The rate fell by two fifths across four decades and \
