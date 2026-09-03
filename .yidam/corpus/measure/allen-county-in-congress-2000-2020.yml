@@ -1,0 +1,83 @@
+class: measure
+label: Allen County's vote for Congress, 2000–2020
+description: |
+  Every general election for the United States House and Senate that this county's returns reach,
+  ten of the first and five of the second. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md); 2000, 2002, 2008, 2012, 2014, 2016 and 2020
+  from county files, 2006, 2010 and 2018 summed from the precinct files.
+
+      year   member returned          R votes   D votes   other   R share   all votes
+      2000   Michael Oxley             30,155    11,409   1,295    70.4%      42,859
+      2002   Michael Oxley             19,872     9,956       0    66.6%      29,828
+      2006   Jim Jordan                22,032    14,780       0    59.9%      36,812
+      2008   Jim Jordan                33,196    15,841       0    67.7%      49,037
+      2010   Jim Jordan                24,086     8,299     995    72.2%      33,380
+      2012   Jim Jordan                31,072    14,233   1,594    66.3%      46,899
+      2014   Jim Jordan                19,660     7,603       0    72.1%      27,263
+      2016   Jim Jordan                31,752    12,439       0    71.9%      44,191
+      2018   Jim Jordan                24,551    11,609       0    67.9%      36,160
+      2020   Jim Jordan                33,201    13,080   1,164    70.0%      47,445
+
+  All ten are Ohio's **4th district**, and in 2018 every one of the county's 88 precincts is in it.
+  [verified] — the same files. `R share` is of all votes cast in the race.
+
+  **The county has not given a Democrat as much as two votes in five for Congress in twenty years.**
+  The Republican share runs 59.9 to 72.2 per cent and averages 68.5. Its lowest year is 2006, which
+  is the year the seat changed hands. [verified] — the table above, computed here.
+
+  **One name has been on this ballot for twenty years.** A candidate named Jim Jordan won the 4th
+  district here at six consecutive general elections from 2006, and a candidate of that name won the
+  county's 12th state senate district in 2000. [verified] — the same files and
+  [the General Assembly returns](allen-county-in-the-general-assembly-2000-2020.yml). That both are
+  [the member the county's roster now names](../person/james-d-jordan.yml) is an inference from an
+  unbroken succession in one party and one district, and not from anything in a return. [inference]
+
+  **The Senate is where a Democrat has come closest.** Sherrod Brown took 46.0 per cent here in 2006
+  and 40.2 in 2018; no Democrat in the House column reached 40 in any year. [verified] — the same
+  files.
+
+      year   Republican                D                        R share   all votes
+      2000   DeWine        27,926      Celeste      11,134       68.9%      40,559
+      2006   DeWine        19,521      **Brown      16,597**     54.0%      36,118
+      2012   Mandel        28,817      Brown        17,456       60.3%      47,808
+      2016   Portman       32,085      Strickland   10,900       71.2%      45,047
+      2018   Renacci       21,492      Brown        14,429       59.8%      35,921
+
+  **2006 is the county's one modern opening and it closed.** In the year Allen gave its governor's
+  vote to a Democrat by 816, it also gave DeWine only 54.0 per cent and Jordan only 59.9 — both the
+  weakest Republican showings in these two runs. [verified] — the same files and
+  [the vote for governor](allen-county-governor-vote-2002-2018.yml).
+
+  **The House race is the one nobody skips.** Votes cast for Congress differ from the top of the
+  ticket by between −1.6 and +3.7 per cent in all ten years, so a contested federal race holds
+  essentially everyone who came. [verified] — the same files; the contrast is in
+  [the General Assembly returns](allen-county-in-the-general-assembly-2000-2020.yml).
+
+  This corpus cannot say who this county has sent to Congress since 2020. OpenElections holds no
+  Ohio file for 2022 or 2024 at any grain, and the Secretary of State's site serves a maintenance
+  page to every client. [open]
+properties:
+  parameter: Republican share of all votes cast for U.S. Representative
+  value: "70.0"
+  unit: per cent
+  as_of: "2020"
+  method: |
+    County-grain files where they exist; 2006, 2010 and 2018 summed over the county's precincts.
+    2004 has no Ohio general-election file in the repository at any grain, so it is absent rather
+    than zero. Shares are of every vote recorded in the race, including minor candidates, rather
+    than of the two-party vote. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-in-the-general-assembly-2000-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-governor-vote-2002-2018.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
