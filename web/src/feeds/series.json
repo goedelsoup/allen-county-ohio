@@ -2552,6 +2552,26 @@
       ]
     },
     {
+      "id": "place-allen-county::recordable-work-related-injuries-and-illnesses,-Form-300A-summaries",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "recordable work-related injuries and illnesses, Form 300A summaries",
+      "unit": "cases",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "as_of": "2024",
+          "value": 5712.0,
+          "published": "5712",
+          "tier": "verified",
+          "source": "catalog/osha-injury-tracking-application.md",
+          "method": "Ohio rows pulled from nine annual releases and assigned to counties by address: the Census batch geocoder first, then [the county's own address points](../../catalog/allen-county-gis-downloads.md) for what it could not match, then TIGERweb point-in-polygon on a coordinate for the residue. Rows reporting more hours per employee than a year contains — 13 of 1,597 — are dropped; see [an impossible value is not an outlier](../../decisions/an-impossible-value-is-not-an-outlier.yml). Fifteen rows in Lima, Elida and Delphos could not be placed and are excluded. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::recorded-drinking-water-violations-in-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -12532,6 +12552,267 @@
       ]
     },
     {
+      "id": "the-most-dangerous-work-here-is-care",
+      "statement": "Health care injures the people who do it more often than manufacturing does, in every one of nine years. The sector records 2,201 recordable cases at a rate of 5.59 per 100 full-time workers; manufacturing records 1,841 at 2.87, on sixty per cent more hours.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "node_label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "span": "**The most dangerous work in this county is care, and it is not close.** Health care and social assistance record 2,201 cases on 78,692,114 hours, a rate of 5.59; manufacturing records 1,841 on 128,109,489 hours, a rate of 2.87. Health care stands above manufacturing in **every one of the nine years**, from 5.10 against 4.11 in 2016 to 4.10 against 2.34 in 2024.",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
+      "figures": [
+        {
+          "label": "health care, cases per 100 workers",
+          "value": 5.59,
+          "literal": "5.59"
+        },
+        {
+          "label": "manufacturing",
+          "value": 2.87,
+          "literal": "2.87"
+        }
+      ]
+    },
+    {
+      "id": "the-refinery-is-safer-than-the-nursing-home",
+      "statement": "The Lima refinery is the safest large workplace in Allen County at 0.73 recordable cases per 100 full-time workers, and the county's nursing and residential care homes are the most dangerous at 8.38 — eleven times higher.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "node_label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "span": "**The refinery is the safest large workplace here and the nursing homes are the most dangerous.** [The Lima refinery](../site/lima-refinery.yml) records 35 cases on 9,574,775 hours, a rate of **0.73**; the county's nursing and residential care homes record 559 on 13,338,203, a rate of **8.38**, eleven times higher.",
+          "tier": "inference",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
+      "figures": [
+        {
+          "label": "Lima refinery",
+          "value": 0.73,
+          "literal": "0.73"
+        },
+        {
+          "label": "nursing and residential care",
+          "value": 8.38,
+          "literal": "8.38"
+        }
+      ]
+    },
+    {
+      "id": "five-thousand-seven-hundred-recordable-injuries",
+      "statement": "The establishments that owe OSHA an injury summary in Allen County recorded 5,712 injuries and illnesses on 309,534,737 hours between 2016 and 2024, with three deaths and 106,208 days away from work or on restricted duty.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "node_label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "span": "**5,712 recordable injuries and illnesses on 309,534,737 hours, three deaths, and 106,208 days away from work or on restricted duty.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
+      "figures": [
+        {
+          "label": "recordable cases",
+          "value": 5712.0,
+          "literal": "5,712"
+        },
+        {
+          "label": "days away or restricted",
+          "value": 106208.0,
+          "literal": "106,208"
+        }
+      ]
+    },
+    {
+      "id": "the-pandemic-is-in-the-injury-logs",
+      "statement": "216 respiratory illnesses were recorded in this county's workplaces in 2020 against two in 2016 and none in 2018, and 211 of the 216 are in health care.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "node_label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "span": "**The pandemic is legible in the logbooks.** 216 respiratory illnesses were recorded in 2020 against two in 2016 and none in 2018, and **211 of the 216 are in health care**.",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
+      "figures": [
+        {
+          "label": "respiratory illnesses, 2020",
+          "value": 216.0,
+          "literal": "216"
+        },
+        {
+          "label": "of which in health care",
+          "value": 211.0,
+          "literal": "211"
+        }
+      ]
+    },
+    {
+      "id": "the-fall-is-real-and-the-trend-is-not",
+      "statement": "Allen County's workplace injury rate fell from 5.03 in 2020 to 2.82 in 2024, and the nine-year trend does not clear its own noise: 0.126 a year on a standard error of 0.076. The level does — 2019's rate would have produced 765 cases in 2024 and 534 were recorded.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "node_label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "span": "**The fall is real and the trend is not established.** A straight line through the nine rates falls 0.126 a year on a standard error of 0.076 — 1.01 across the run, where two standard errors is 1.21 — so the line does not clear its own noise. The level does: at 2019's rate, 2024's hours would have produced 765 cases and 534 were recorded, which is 8.3 Poisson standard deviations below.",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
+      "figures": [
+        {
+          "label": "expected at the 2019 rate",
+          "value": 765.0,
+          "literal": "765"
+        },
+        {
+          "label": "recorded",
+          "value": 534.0,
+          "literal": "534"
+        }
+      ]
+    },
+    {
+      "id": "three-workplace-deaths-and-that-is-ordinary",
+      "statement": "Three people died at work in this county's reporting establishments in nine years — at International Tank Service in 2016, Colonial Surface Solutions in 2019 and Ford's Lima Engine plant in 2021. At the national rate in the same files the county's hours would have produced 3.94.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-workplace-injuries-2016-2024.yml",
+          "node_label": "Allen County workplace injuries and illnesses, 2016–2024",
+          "span": "**Three deaths in nine years, and that is an ordinary number.** One in 2016 at International Tank Service, one in 2019 at Colonial Surface Solutions, one in 2021 at [Ford's Lima Engine plant](../site/ford-lima-engine-plant.yml). At the national rate in these same files the county's hours would have produced 3.94, and three or more arrives three times in four.",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
+      "figures": [
+        {
+          "label": "expected at the national rate",
+          "value": 3.94,
+          "literal": "3.94"
+        }
+      ]
+    },
+    {
+      "id": "a-plant-headcount-arrived-in-a-safety-filing",
+      "statement": "The Ford engine plant's employment, a question this corpus had carried open since genesis, is answered by its injury summaries: 1,365 in 2016 rising to 1,550 in 2022. Its people worked 22,432,575 hours across the nine years and 429 were hurt badly enough to record, a rate of 3.82.",
+      "topic": "work",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "site/ford-lima-engine-plant.yml",
+          "node_label": "Ford Lima Engine Plant",
+          "span": "**What it makes and how many people work in it.** The plant files an annual injury summary with OSHA under NAICS **333618** and describes its own industry as *engine manufacture*. Its annual average employment runs **1,365 in 2016**, 1,442, 1,413, 1,386, 1,497, 1,460, **1,550 in 2022** — the highest of the nine — and 1,500 in each of 2023 and 2024.",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        },
+        {
+          "node": "site/ford-lima-engine-plant.yml",
+          "node_label": "Ford Lima Engine Plant",
+          "span": "**Its people worked 22,432,575 hours in those nine years and 429 of them were hurt badly enough to record** — a rate of 3.82 per 100 full-time workers, against 3.69 for the county's reporting establishments as a whole and 2.87 for its manufacturing.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "2016",
+          "value": 1365.0,
+          "literal": "1,365"
+        },
+        {
+          "label": "2022",
+          "value": 1550.0,
+          "literal": "1,550"
+        },
+        {
+          "label": "cases per 100 workers",
+          "value": 3.82,
+          "literal": "3.82"
+        }
+      ]
+    },
+    {
+      "id": "one-workplace-in-ten-owes-a-safety-filing",
+      "statement": "One Allen County workplace in ten owes the federal government an annual injury summary, and between them they hold half the county's employees: 222 establishments of 2,239 in 2023, covering 22,622 employees of 44,251.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-private-employers-1986-2023.yml",
+          "node_label": "Allen County's private employers, 1986–2023",
+          "span": "**One of these workplaces in ten owes the federal government an injury summary, and between them they hold half the county's employees.** 222 Allen County establishments filed a Form 300A for 2023 against the 2,239 counted here, and the 22,622 employees they cover are 51.1 per cent of the 44,251.",
+          "tier": "verified",
+          "sources": [
+            "catalog/osha-injury-tracking-application.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This corpus cannot say whether that flatness is wages standing still or hours doing so."
+      ],
+      "figures": [
+        {
+          "label": "establishments filing",
+          "value": 222.0,
+          "literal": "222"
+        },
+        {
+          "label": "private establishments",
+          "value": 2239.0,
+          "literal": "2,239"
+        }
+      ]
+    },
+    {
       "id": "the-eviction-count-does-not-move",
       "statement": "Allen County's eviction filings run 766 to 982 across seventeen years — mean 865 — through a foreclosure crisis, a recession and a quarter more renter households. The rate drifts down 0.92 points over the run, which is about the smallest movement seventeen readings could have found.",
       "topic": "housing",
@@ -13199,7 +13480,7 @@
           "span": "**Retail lost more jobs than manufacturing did.** Between 1998 and 2023 retail trade fell from 7,806 employees to 5,442 and from 535 establishments to 368; manufacturing fell from 9,886 to 9,133.",
           "tier": "inference",
           "sources": [
-            "catalog/bls-cpi.md"
+            "catalog/osha-injury-tracking-application.md"
           ]
         }
       ],
@@ -13241,7 +13522,7 @@
           "span": "**And the two largest sectors are now the same size.** Manufacturing 9,133 and health care 9,150 in 2023, seventeen apart, after twenty-one years in which health care led — it passed manufacturing in 2002 and peaked at 12,431 in 2013.",
           "tier": "verified",
           "sources": [
-            "catalog/bls-cpi.md"
+            "catalog/osha-injury-tracking-application.md"
           ]
         }
       ],

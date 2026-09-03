@@ -83,8 +83,24 @@ description: |
   Everything above is the NW quarter's record. The SW quarter has its own sheets and they have not
   been read. [open]
 
-  [open] What it makes and how many people work in it. The date it was built is answered; the
-  plant is not.
+  **What it makes and how many people work in it.** The plant files an annual injury summary with
+  OSHA under NAICS **333618** and describes its own industry as *engine manufacture*. Its annual
+  average employment runs **1,365 in 2016**, 1,442, 1,413, 1,386, 1,497, 1,460, **1,550 in 2022** —
+  the highest of the nine — and 1,500 in each of 2023 and 2024. [verified] —
+  [the injury summaries](../../catalog/osha-injury-tracking-application.md), calendar 2016 through
+  2024. The question this node has carried since genesis is closed by a safety filing, which is not
+  where anyone would look for a headcount.
+
+  **Its people worked 22,432,575 hours in those nine years and 429 of them were hurt badly enough to
+  record** — a rate of 3.82 per 100 full-time workers, against 3.69 for the county's reporting
+  establishments as a whole and 2.87 for its manufacturing. [verified] —
+  [the county's injury record](../measure/allen-county-workplace-injuries-2016-2024.yml). The
+  plant's own year-to-year rate runs 2.53 in 2018 to 5.17 in 2023, which is the ordinary spread of a
+  count near fifty and not a trend. [inference]
+
+  **One person died here in 2021.** The plant's summary for that year records a single work-related
+  death, one of three in the county across the nine years. [verified] — the same summaries. Neither
+  the file nor this corpus says anything further about it, and nothing here names the person.
 properties:
   site_type: factory
   status: in operation
@@ -99,5 +115,9 @@ links:
     relationship: operated-by
     claim_tag: verified
     source: ../../catalog/epa-tri.md
+  - target: ../measure/allen-county-workplace-injuries-2016-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/osha-injury-tracking-application.md
   - target: ../site.ont.yml
     relationship: instance-of

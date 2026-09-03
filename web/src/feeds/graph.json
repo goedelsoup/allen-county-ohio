@@ -5244,7 +5244,7 @@
       "id": "measure/allen-county-health-care-employment-2010-2022.yml",
       "class": "measure",
       "label": "Allen County health care employment by subsector, 2010–2023",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2023",
         "method": "County files, fipstate 39 fipscty 003. The four subsectors sum to the sector total exactly in all fourteen years, so no line is suppressed. [verified]",
@@ -5264,6 +5264,14 @@
         {
           "text": "**The fall has stopped and the sector has lost its lead.** 2023 is 9,150, one employee below 2022 and 3,281 below the 2013 peak — a fall of 26.4 per cent in ten years. In the same year manufacturing stands at 9,133, seventeen employees behind, which ends twenty-one years in which health care was this county's largest private sector; it took the lead in 2002. [verified] — the same source, sectors 62 and 31. See [the private employers](allen-county-private-employers-1986-2023.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**The sector that took the county's employment lead also hurts the people in it more often than the factories do.** Health care and social assistance record 2,201 recordable injuries and illnesses on 78,692,114 hours across 2016 to 2024 — a rate of 5.59 per 100 full-time workers — against 1,841 on 128,109,489 hours for manufacturing, a rate of 2.87. Health care stands higher in every one of the nine years. [verified] — [the county's injury record](allen-county-workplace-injuries-2016-2024.yml), out of [the injury summaries](../../catalog/osha-injury-tracking-application.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nursing and residential care is where that concentrates.** The subsector this table shows falling from 1,959 employees to 1,419 records a rate of 8.38, the highest of any industry in the county and eleven times the refinery's. [verified] — the same record. So the sector shed a quarter of its jobs over the decade while the most dangerous work in it kept happening. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -8126,6 +8134,10 @@
           "tier": "verified"
         },
         {
+          "text": "**One of these workplaces in ten owes the federal government an injury summary, and between them they hold half the county's employees.** 222 Allen County establishments filed a Form 300A for 2023 against the 2,239 counted here, and the 22,622 employees they cover are 51.1 per cent of the 44,251. [verified] — [the county's injury record](allen-county-workplace-injuries-2016-2024.yml), out of [the injury summaries](../../catalog/osha-injury-tracking-application.md). Two of the 222 are Postal Service facilities and this register counts private employers only.",
+          "tier": "verified"
+        },
+        {
           "text": "This corpus cannot say whether that flatness is wages standing still or hours doing so. The employment column is a headcount for the pay period including March 12 and counts a part-time worker as one employee, so a shift toward part-time work lowers payroll per employee without lowering anybody's wage. [inference]",
           "tier": "inference"
         },
@@ -9988,6 +10000,61 @@
         }
       ],
       "refusals": [],
+      "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "class": "measure",
+      "label": "Allen County workplace injuries and illnesses, 2016–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Ohio rows pulled from nine annual releases and assigned to counties by address: the Census batch geocoder first, then [the county's own address points](../../catalog/allen-county-gis-downloads.md) for what it could not match, then TIGERweb point-in-polygon on a coordinate for the residue. Rows reporting more hours per employee than a year contains — 13 of 1,597 — are dropped; see [an impossible value is not an outlier](../../decisions/an-impossible-value-is-not-an-outlier.yml). Fifteen rows in Lima, Elida and Delphos could not be placed and are excluded. [verified]",
+        "parameter": "recordable work-related injuries and illnesses, Form 300A summaries",
+        "unit": "cases",
+        "value": "5712"
+      },
+      "blocks": [
+        {
+          "text": "Every Allen County establishment that owed OSHA an annual injury summary, nine years, with the hours its people worked and what happened to them. [verified] — [the Injury Tracking Application](../../catalog/osha-injury-tracking-application.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "Rates are recordable cases per 100 full-time workers, and the Ohio and national columns are computed from the same nine files, so no column compares one publisher's arithmetic with another's. **5,712 recordable injuries and illnesses on 309,534,737 hours, three deaths, and 106,208 days away from work or on restricted duty.** [verified] — the same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The most dangerous work in this county is care, and it is not close.** Health care and social assistance record 2,201 cases on 78,692,114 hours, a rate of 5.59; manufacturing records 1,841 on 128,109,489 hours, a rate of 2.87. Health care stands above manufacturing in **every one of the nine years**, from 5.10 against 4.11 in 2016 to 4.10 against 2.34 in 2024. [verified] — the same files, by NAICS sector.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The refinery is the safest large workplace here and the nursing homes are the most dangerous.** [The Lima refinery](../site/lima-refinery.yml) records 35 cases on 9,574,775 hours, a rate of **0.73**; the county's nursing and residential care homes record 559 on 13,338,203, a rate of **8.38**, eleven times higher. [verified] — the same files. That is a difference in how often and not in how badly, and a rate of frequency cannot see a hazard that is rare and catastrophic. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The pandemic is legible in the logbooks.** 216 respiratory illnesses were recorded in 2020 against two in 2016 and none in 2018, and **211 of the 216 are in health care**. [verified] — the same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county crossed the state in 2021 and has stayed below since**, standing above Ohio's rate in each of 2016 through 2020 and below it in each of 2021 through 2024. [verified] — same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The fall is real and the trend is not established.** A straight line through the nine rates falls 0.126 a year on a standard error of 0.076 — 1.01 across the run, where two standard errors is 1.21 — so the line does not clear its own noise. The level does: at 2019's rate, 2024's hours would have produced 765 cases and 534 were recorded, which is 8.3 Poisson standard deviations below. [verified] — the same files, the arithmetic here; and see [a flat series is a claim](../../decisions/a-flat-series-is-a-claim.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three deaths in nine years, and that is an ordinary number.** One in 2016 at International Tank Service, one in 2019 at Colonial Surface Solutions, one in 2021 at [Ford's Lima Engine plant](../site/ford-lima-engine-plant.yml). At the national rate in these same files the county's hours would have produced 3.94, and three or more arrives three times in four. [verified] — the same files; and see [a count of tens is a draw](../../decisions/a-count-of-tens-is-a-draw.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The rate is made by a minority of workplaces**: 96 of the 152 establishments reported no injury at all in 2016, 63.2 per cent, falling to 47.7 per cent in 2023. [verified] — the same files.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "This corpus cannot say how many people were hurt at work in Allen County."
+      ],
       "withheld": 2
     },
     {
@@ -18794,10 +18861,22 @@
         {
           "text": "**This is one quarter of the plant's ground and not all of it.** The plant's parcel runs the entire west half of section 17 and crosses the line between the NW and SW quarters, so a tract index organized by quarter cuts through it. [verified] — [the survey sections](../measure/allen-county-survey-sections.yml) and county parcel geometry.",
           "tier": "verified"
+        },
+        {
+          "text": "**What it makes and how many people work in it.** The plant files an annual injury summary with OSHA under NAICS **333618** and describes its own industry as *engine manufacture*. Its annual average employment runs **1,365 in 2016**, 1,442, 1,413, 1,386, 1,497, 1,460, **1,550 in 2022** — the highest of the nine — and 1,500 in each of 2023 and 2024. [verified] — [the injury summaries](../../catalog/osha-injury-tracking-application.md), calendar 2016 through 2024. The question this node has carried since genesis is closed by a safety filing, which is not where anyone would look for a headcount.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its people worked 22,432,575 hours in those nine years and 429 of them were hurt badly enough to record** — a rate of 3.82 per 100 full-time workers, against 3.69 for the county's reporting establishments as a whole and 2.87 for its manufacturing. [verified] — [the county's injury record](../measure/allen-county-workplace-injuries-2016-2024.yml). The plant's own year-to-year rate runs 2.53 in 2018 to 5.17 in 2023, which is the ordinary spread of a count near fifty and not a trend. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**One person died here in 2021.** The plant's summary for that year records a single work-related death, one of three in the county across the nine years. [verified] — the same summaries. Neither the file nor this corpus says anything further about it, and nothing here names the person.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 3
+      "withheld": 2
     },
     {
       "id": "site/fort-amanda.yml",
@@ -19151,6 +19230,14 @@
         },
         {
           "text": "**Two witnesses to the fact that a name outlives its owner.** The county's own address file still labels this site `VALERO LIMA REFINERY`, and the federal census never prints the word Valero in any year of any report. [verified] — [Allen County GIS](../../catalog/allen-county-gis-downloads.md) and the same EIA source. One of the two is naming somebody who is no longer here; both cannot be current. See [a register is not a census](../../decisions/a-register-is-not-a-census.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the safest large workplace in the county, and the contractors on its ground are as safe as its own crews.** The refinery's own injury summaries record **35 recordable cases on 9,574,775 hours** across 2016 to 2024 — a rate of **0.73** per 100 full-time workers, against 3.69 for the county's reporting establishments and 8.38 for its nursing homes. Nine contractor firms filing from the same address over the same years — BrandSafway, GEM Industrial, Worley, CAM Industrial, Clean Harbors and Smith-Boughan among them — record 9 cases on 2,324,430 hours, a rate of 0.77. [verified] — [the county's injury record](../measure/allen-county-workplace-injuries-2016-2024.yml), out of [the injury summaries](../../catalog/osha-injury-tracking-application.md). The low rate is therefore not an artefact of contracting the dangerous work out, which is the first thing it would be reasonable to suspect. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "The refinery is missing from 2021 alone, when no filing at 1150 South Metcalf carries the refining code; the contractors filed and the operator did not. [verified] — the same summaries.",
           "tier": "verified"
         }
       ],
@@ -22882,6 +22969,13 @@
       "source": "catalog/census-county-business-patterns.md"
     },
     {
+      "from": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "to": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
       "from": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -23750,6 +23844,13 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-private-employers-1986-2023.yml",
+      "to": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
       "from": "measure/allen-county-private-schools-2013-2021.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -24371,6 +24472,41 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/epa-sdwis.md"
+    },
+    {
+      "from": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "to": "site/lima-refinery.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "to": "site/ford-lima-engine-plant.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "to": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "to": "measure/allen-county-private-employers-1986-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-county-business-patterns.md"
     },
     {
       "from": "measure/allen-county-world-war-dead.yml",
@@ -26501,6 +26637,13 @@
       "source": "catalog/epa-tri.md"
     },
     {
+      "from": "site/ford-lima-engine-plant.yml",
+      "to": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
       "from": "site/fort-amanda.yml",
       "to": "place/allen-county.yml",
       "relationship": "formerly-in",
@@ -26576,6 +26719,13 @@
       "relationship": "operated-by",
       "tier": "verified",
       "source": "catalog/eia-refinery-capacity.md"
+    },
+    {
+      "from": "site/lima-refinery.yml",
+      "to": "measure/allen-county-workplace-injuries-2016-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/osha-injury-tracking-application.md"
     },
     {
       "from": "site/lima-state-hospital.yml",
