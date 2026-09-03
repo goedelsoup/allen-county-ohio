@@ -1,0 +1,69 @@
+id: a-dollar-has-two-addresses
+summary: >-
+  The federal government spent $1,088,368,417 on contracts in Allen County between 2008 and 2025,
+  and it spent $154,761,289. Both figures come from one file on one afternoon. One counts where the
+  work was done and the other counts where the payee's address is, and a corpus that publishes
+  either without saying which has published a number nobody can check.
+context: |
+  USAspending.gov's geography endpoint takes a `scope` field. Set it to `place_of_performance` and
+  Allen County's federal contract dollars for federal years 2008 to 2025 come to $1.09 billion. Set
+  it to `recipient_location` and they come to $155 million. Nothing else in the query changes.
+
+  The three largest performers explain almost all of it, and all three disappear from the second
+  view:
+
+      performer, place of performance in Allen County      2008-2025
+      General Dynamics Land Systems Inc.                 $453,692,926   tanks
+      Husky Marketing and Supply Company                 $328,850,129   jet fuel
+      Siemens Government Technologies Inc                $119,408,473   the tank plant's utilities
+      Superior Forge & Steel Corp                        $101,917,494   warhead casings
+
+  Superior Forge is a Lima firm and appears in both views. The other three are corporations whose
+  registered address is in another county or another state, so the money they are paid is recorded
+  against Michigan, Texas and Virginia even though every hour of the work was worked here.
+
+  Neither number is wrong and the file does not prefer one. **"How much does the federal government
+  spend in Allen County" is two questions**: how much work does it buy here, and how much money do
+  people and firms here receive. The first is a fact about the county's economy; the second is a
+  fact about who banks the cheque. They answer differently by a factor of seven because the largest
+  employer on this ground is a plant the United States owns and a contractor from elsewhere runs.
+decision: |
+  **Where a source offers more than one geography for the same money, name the one used in the same
+  sentence as the figure, and compute the other before publishing.**
+
+  - **Compute both. The ratio is the finding.** A factor of 7.03 on contracts and 1.97 on all award
+    types is not noise to be resolved; it is the measurement of how much of the county's federal
+    economy is worked here and banked elsewhere.
+  - **Say which question the figure answers, not which field was queried.** "Federal contract
+    dollars for work performed in Allen County" is a sentence a reader can check. "Federal spending
+    in Allen County" is not.
+  - **Expect the two series to have different defects.** The recipient view here breaks at 2017,
+    when assistance to individuals began being attributed to counties; the performance view does not
+    move across the same years and is what shows the break. Two geographies are also two controls.
+  - **The rule reaches beyond money.** Employment counted at an establishment against employment
+    counted at a residence, a school's pupils against a district's children, a hospital's patients
+    against a county's sick: any measure with a payer and a payee, or a worker and a workplace, has
+    two geographies and usually publishes both.
+rationale: |
+  **The failure is silent and the wrong answer is plausible.** $155 million over eighteen years is a
+  perfectly believable figure for a county of a hundred thousand people. Nothing about it looks like
+  an error, and a corpus that took the default scope and moved on would have understated the federal
+  contract economy of this county by $933 million and never known.
+
+  **It is the money form of a distinction this corpus already draws about people.**
+  [an address of record is not a residence](an-address-of-record-is-not-a-residence.yml) was written
+  about an attorney register that gives a business address; this is the same gap measured in
+  dollars, and it is larger because a corporation's registered address is further from its work than
+  a lawyer's office is from their house.
+
+  **It bites hardest on exactly the counties this corpus is about.** A place whose largest
+  industrial installations are owned or contracted from elsewhere — a government arsenal, a refinery
+  belonging to a Canadian company, a plant owned in Michigan — will show a small recipient total and
+  a large performance total. The scope that undercounts is the scope that undercounts branch-plant
+  counties specifically.
+
+  **What this does not license.** Choosing the larger figure. Where the question is what residents
+  and local firms received, the recipient view is the right one and the performance view overstates;
+  the rule is to name the question, not to prefer the number.
+status: accepted
+date: "2026-09-03"
