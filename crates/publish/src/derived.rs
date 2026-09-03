@@ -6014,6 +6014,195 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "three-hundred-and-thirty-seven-feet",
+        statement: "Allen County runs from 733.5 feet to 1,071.2 feet above sea level \u{2014} 337.7 \
+                    feet of natural relief across 402 square miles, on a mean of 859.1 and a median \
+                    of 842.3. These are the first elevations this corpus has held for any ground in \
+                    the county.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**The county runs from 733.5 feet to 1,071.2 feet and that is 337.7 feet of relief across 402 square miles.** Its mean is 859.1 feet and its median 842.3. [verified] \u{2014} the same source, computed here, with the quarry described below excluded."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[
+            Figure { label: "lowest natural ground, feet", value: 733.5, literal: "733.5" },
+            Figure { label: "highest, feet", value: 1071.2, literal: "1,071.2" },
+        ],
+    },
+    Assertion {
+        id: "the-high-point-is-on-the-divide",
+        statement: "The highest ground in Allen County is where the continental divide enters it \
+                    \u{2014} 200 metres from the point at which the boundary between the Great Lakes \
+                    and Ohio hydrologic regions crosses the county's southern line. The lowest \
+                    natural ground is at the opposite corner.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**Its highest ground is where the continental divide enters it.** The high point is at 40.644716, \u{2212}83.900309, in the county's south-east corner in [Auglaize Township](../place/auglaize-township.yml), 200 metres from the point where the boundary between the Great Lakes and Ohio hydrologic regions crosses the county's southern line. [verified] \u{2014} the same surface and [the watershed boundary](../../catalog/usgs-watershed-boundary.md), computed here. The lowest natural ground is at 40.883216, \u{2212}83.891034, at the opposite corner."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[],
+    },
+    Assertion {
+        id: "nine-miles-of-continental-divide",
+        statement: "The boundary between the Great Lakes and Ohio hydrologic regions runs 9.196 \
+                    miles inside Allen County, and every foot of it is in Auglaize Township. It \
+                    enters at the county's southern line and leaves at the eastern one, cutting off \
+                    the south-east corner.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**The divide runs 9.196 miles inside Allen County and every foot of it is in Auglaize Township.** It enters at the county's southern line at 40.644643, \u{2212}83.902735 and leaves at the eastern line at 40.721021, \u{2212}83.879880, cutting off the county's south-east corner. [verified] \u{2014} [the WBDLine layer](../../catalog/usgs-watershed-boundary.md) at `hudigit` 2, clipped to [TIGER's county polygon](../../catalog/census-tiger-roads.md) and measured in EPSG:6549."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[
+            Figure { label: "miles of divide inside the county", value: 9.196, literal: "9.196" },
+        ],
+    },
+    Assertion {
+        id: "a-divide-nine-miles-long-and-seventy-four-feet-tall",
+        statement: "Ninety-eight elevations spaced 500 feet along Allen County's continental divide \
+                    run from 991.3 to 1,065.9 feet \u{2014} 74.6 feet of rise and fall over nine \
+                    miles, on a standard deviation of 20.2, with 55 of the 98 within twenty feet of \
+                    the median. A person walking east across it would pass from the St. Lawrence \
+                    watershed to the Gulf of Mexico without noticing a hill.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**It is one of the flattest pieces of continental divide there is.** Ninety-eight samples spaced 500 feet along it run from 991.3 to 1,065.9 feet \u{2014} 74.6 feet of rise and fall over nine miles, on a mean of 1,022.9 and a standard deviation of 20.2, with 55 of the 98 within 20 feet of the median. [verified] \u{2014} [the elevation point service](../../catalog/usgs-3dep-elevation.md), 98 queries. A person walking east across it would cross from the St. Lawrence watershed to the Gulf of Mexico without noticing a hill."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[
+            Figure { label: "lowest sample, feet", value: 991.3, literal: "991.3" },
+            Figure { label: "highest, feet", value: 1065.9, literal: "1,065.9" },
+            Figure { label: "standard deviation, feet", value: 20.2, literal: "20.2" },
+        ],
+    },
+    Assertion {
+        id: "two-thousand-three-hundred-acres-drain-to-the-gulf",
+        statement: "2,303.0 acres of Allen County drain to the Gulf of Mexico \u{2014} 3.5984 square \
+                    miles and 0.885 per cent of it, all in Auglaize Township, against the 0.10 per \
+                    cent of its population who live there. Nine times as much of this county's \
+                    ground is on the far side of the divide as of its people, because the corner is \
+                    farmland.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**The ground on the far side is 2,303.0 acres.** The Ohio Region occupies 3.5984 square miles of Allen County, 0.885 per cent of it, all in Auglaize Township, against the 0.10 per cent of the county's population who live there. [verified] \u{2014} [the same source's](../../catalog/usgs-watershed-boundary.md) region polygons, clipped to the county; see [the Scioto basin](../natural-feature/scioto-river-basin.yml). Nine times as much of this county drains to the Gulf as lives there, because the corner is farmland."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[
+            Figure { label: "acres on the Ohio River side", value: 2303.0, literal: "2,303.0" },
+            Figure { label: "per cent of the county", value: 0.885, literal: "0.885" },
+        ],
+    },
+    Assertion {
+        id: "the-lowest-point-is-a-hole-somebody-dug",
+        statement: "The lowest elevation anywhere in Allen County is 474.7 feet, and it is a \
+                    contiguous 47.7-acre depression whose extent contains the coordinate this corpus \
+                    already held for the National Lime & Stone quarry. Its floor lies 365.3 feet \
+                    below the median of the cells that ring it.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**The lowest elevation anywhere in this county is 474.7 feet and it is a hole somebody dug.** A contiguous depression of 47.7 acres between 40.74906 and 40.75237 north falls 365.3 feet below the median of the cells that ring it, and the coordinate this corpus already held for [the National Lime & Stone quarry](allen-county-quarries-2000-2025.yml) \u{2014} 40.750833, \u{2212}84.086111 \u{2014} lies inside it. [verified] \u{2014} the same surface, flood-filled from its minimum, against [the mine register](../../catalog/msha-mine-data.md)."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[
+            Figure { label: "floor, feet", value: 474.7, literal: "474.7" },
+            Figure { label: "acres", value: 47.7, literal: "47.7" },
+            Figure { label: "depth below the rim, feet", value: 365.3, literal: "365.3" },
+        ],
+    },
+    Assertion {
+        id: "the-hole-is-deeper-than-the-county",
+        statement: "The quarry pit in Bath Township is deeper than Allen County is tall: 365.3 feet \
+                    from rim to floor against 337.7 feet between the county's highest and lowest \
+                    natural ground, with the floor 258.8 feet below any ground in the county that \
+                    nobody excavated.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-elevation-2026.yml", "**The hole is deeper than the county.** 365.3 feet from rim to floor against 337.7 feet between the county's highest and lowest natural ground, and the floor sits 258.8 feet below any ground in Allen County that nobody excavated. [inference] \u{2014} computed here from the figures above. That comparison is why the county's minimum cannot be published as a fact about its terrain; see [an extreme in a surface has an address](../../decisions/an-extreme-in-a-surface-has-an-address.yml)."),
+        ],
+        answers: &["cannot say how much stone has come out of that hole"],
+        figures: &[
+            Figure { label: "pit depth, feet", value: 365.3, literal: "365.3" },
+            Figure { label: "county natural relief, feet", value: 337.7, literal: "337.7" },
+        ],
+    },
+    Assertion {
+        id: "nine-parts-beech",
+        statement: "Allen County was nine parts beech forest and less than one part swamp. Two of \
+                    the thirteen vegetation types Gordon mapped from the earliest land surveys occur \
+                    here at all: 237,924.9 acres of beech forest and 22,433.9 acres of elm-ash swamp \
+                    forest, which is 8.6 per cent of the county.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-original-vegetation.yml", "**Allen County was nine parts beech forest and less than one part swamp.** Two of Gordon's thirteen types occur here at all: **237,924.9 acres of beech forest**, and the swamp forest that gives [the Great Black Swamp](../natural-feature/great-black-swamp.yml) its name at **22,433.9 acres** of 260,358.7 \u{2014} 8.6 per cent. [verified] \u{2014} the same source. The two polygons' areas sum to the county's own area exactly, which is the check that the whole county is accounted for."),
+        ],
+        answers: &["cannot say when any of this was cleared"],
+        figures: &[
+            Figure { label: "beech forest, acres", value: 237924.9, literal: "237,924.9" },
+            Figure { label: "elm-ash swamp forest, acres", value: 22433.9, literal: "22,433.9" },
+        ],
+    },
+    Assertion {
+        id: "it-is-not-one-swamp-it-is-nineteen",
+        statement: "The Great Black Swamp inside Allen County is not one swamp. It is nineteen \
+                    separate bodies, the largest 5,007.9 acres and eleven of them lying wholly \
+                    inside the county line, and the biggest polygon that reaches in from outside \
+                    extends west into Van Wert County rather than north.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-original-vegetation.yml", "**It is not one swamp. It is nineteen.** The swamp forest inside this county falls into 19 separate bodies, the largest 5,007.9 acres and eleven of them lying wholly inside the county line. The biggest polygon that reaches in from outside, 14,414.4 acres, extends **west** into Van Wert County rather than north. [verified] \u{2014} the same file, by polygon."),
+        ],
+        answers: &["cannot say when any of this was cleared"],
+        figures: &[
+            Figure { label: "separate bodies", value: 19.0, literal: "19" },
+            Figure { label: "largest, acres", value: 5007.9, literal: "5,007.9" },
+        ],
+    },
+    Assertion {
+        id: "the-hydric-proxy-was-four-times-too-big",
+        statement: "The hydric-soil proxy this corpus had been using for the Great Black Swamp \
+                    overstated it by a factor of 4.1. Against 91,953 acres of hydric soil and 35.3 \
+                    per cent of the county, the mapped swamp forest is 22,433.9 acres \u{2014} 24.4 \
+                    per cent of the hydric acreage.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-original-vegetation.yml", "**The hydric-soil proxy overstated the swamp by a factor of 4.1.** This corpus has carried 91,953 acres of hydric soil, 35.3 per cent of the county, as \"the nearest thing to an answer\" for where the swamp was. The mapped swamp forest is 22,433.9 acres, 24.4 per cent of the hydric acreage. [verified] \u{2014} this file against [the soil survey](../../catalog/usda-ssurgo-soil-survey.md); see [the soils](allen-county-soils-2026.yml) and [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml)."),
+        ],
+        answers: &["cannot say when any of this was cleared"],
+        figures: &[
+            Figure { label: "hydric soil, acres", value: 91953.0, literal: "91,953" },
+            Figure { label: "mapped swamp forest, acres", value: 22433.9, literal: "22,433.9" },
+        ],
+    },
+    Assertion {
+        id: "the-proxy-got-the-order-and-not-the-places",
+        statement: "Across Allen County's twelve townships the hydric-soil proxy and the mapped \
+                    swamp forest correlate at a Spearman 0.685 \u{2014} and Perry Township, fifth of \
+                    twelve on hydric soil at 34.9 per cent, carries no swamp forest at all, as do \
+                    Jackson, Bath and the city.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-original-vegetation.yml", "**The proxy got the order roughly and the places wrongly.** Ranked across the twelve townships the two measures agree at a Spearman correlation of 0.685, and the disagreements are not small: Perry Township is fifth on hydric soil at 34.9 per cent and has no swamp forest at all, while Shawnee is tenth on hydric at 26.2 and fifth on swamp at 10.8. [inference] \u{2014} computed here from the two files. Four townships with a third of their ground rated hydric \u{2014} Perry, Jackson, Bath and the city \u{2014} carried no swamp forest whatever."),
+        ],
+        answers: &["cannot say when any of this was cleared"],
+        figures: &[
+            Figure { label: "Spearman correlation", value: 0.685, literal: "0.685" },
+            Figure { label: "Perry Township, per cent hydric", value: 34.9, literal: "34.9" },
+        ],
+    },
+    Assertion {
+        id: "three-quarters-of-the-wet-ground-was-beech",
+        statement: "Three quarters of Allen County's hydric acres carried beech forest rather than \
+                    swamp forest, which is what a lake plain that drains badly and still grows trees \
+                    looks like. The wet ground and the swamp are different facts and this county is \
+                    mostly the first.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-original-vegetation.yml", "**The wet ground and the swamp are different facts and the county is mostly the first.** Three quarters of this county's hydric acres carried beech forest rather than swamp forest, which is what a lake plain that drains badly and still grows trees looks like. [inference] \u{2014} computed from the two files above."),
+        ],
+        answers: &["cannot say when any of this was cleared"],
+        figures: &[],
+    },
+    Assertion {
         id: "seven-hundred-and-sixty-on-the-roads",
         statement: "Seven hundred and sixty people died in 666 crashes on Allen County's roads \
                     between 1975 and 2024. The rate fell by two fifths across four decades and \

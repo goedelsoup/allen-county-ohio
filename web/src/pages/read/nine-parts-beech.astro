@@ -1,0 +1,131 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const relief = assertion('three-hundred-and-thirty-seven-feet')
+const high = assertion('the-high-point-is-on-the-divide')
+const nine = assertion('nine-miles-of-continental-divide')
+const flat = assertion('a-divide-nine-miles-long-and-seventy-four-feet-tall')
+const corner = assertion('two-thousand-three-hundred-acres-drain-to-the-gulf')
+const beech = assertion('nine-parts-beech')
+const bodies = assertion('it-is-not-one-swamp-it-is-nineteen')
+const proxy = assertion('the-hydric-proxy-was-four-times-too-big')
+const order = assertion('the-proxy-got-the-order-and-not-the-places')
+const wet = assertion('three-quarters-of-the-wet-ground-was-beech')
+const hole = assertion('the-lowest-point-is-a-hole-somebody-dug')
+const deeper = assertion('the-hole-is-deeper-than-the-county')
+
+const divMiles = [
+  0.0, 0.09, 0.19, 0.28, 0.38, 0.47, 0.57, 0.66, 0.76, 0.85, 0.95, 1.04, 1.14, 1.23, 1.33, 1.42,
+  1.52, 1.61, 1.7, 1.8, 1.89, 1.99, 2.08, 2.18, 2.27, 2.37, 2.46, 2.56, 2.65, 2.75, 2.84, 2.94,
+  3.03, 3.12, 3.22, 3.31, 3.41, 3.5, 3.6, 3.69, 3.79, 3.88, 3.98, 4.07, 4.17, 4.26, 4.36, 4.45,
+  4.55, 4.64, 4.73, 4.83, 4.92, 5.02, 5.11, 5.21, 5.3, 5.4, 5.49, 5.59, 5.68, 5.78, 5.87, 5.97,
+  6.06, 6.16, 6.25, 6.34, 6.44, 6.53, 6.63, 6.72, 6.82, 6.91, 7.01, 7.1, 7.2, 7.29, 7.39, 7.48,
+  7.58, 7.67, 7.77, 7.86, 7.95, 8.05, 8.14, 8.24, 8.33, 8.43, 8.52, 8.62, 8.71, 8.81, 8.9, 9.0,
+  9.09, 9.19,
+]
+const divFeet = [
+  1065.9, 1055.6, 1053.5, 1053.4, 1050.6, 1057.9, 1057.6, 1052.9, 1050.1, 1046.0, 1050.4, 1043.2,
+  1040.6, 1041.0, 1040.5, 1043.1, 1041.0, 1044.1, 1038.8, 1041.4, 1037.4, 1031.6, 1033.5, 1021.0,
+  1032.4, 1031.6, 1025.1, 1032.1, 1020.0, 1023.1, 1022.9, 1016.2, 1014.0, 1017.0, 1017.2, 1012.1,
+  1010.1, 1004.0, 1005.7, 1004.8, 1004.2, 995.9, 997.4, 1001.3, 1000.4, 1003.3, 1001.4, 1005.6,
+  1006.7, 1003.3, 1005.7, 1004.3, 1006.2, 1005.9, 1006.6, 1004.7, 1002.3, 1003.0, 1003.2, 1001.5,
+  1000.1, 999.2, 1000.9, 998.3, 996.5, 997.6, 997.2, 996.6, 994.9, 992.9, 991.3, 998.2, 999.7,
+  999.7, 1004.1, 1011.8, 1017.1, 1018.9, 1023.6, 1026.4, 1030.4, 1036.7, 1041.4, 1041.8, 1043.1,
+  1043.5, 1041.7, 1042.4, 1040.1, 1042.7, 1037.3, 1040.0, 1040.0, 1042.4, 1043.5, 1044.2, 1045.4,
+  1044.2,
+]
+
+const townships = [
+  'Spencer', 'Marion', 'Amanda', 'Sugar Creek', 'Shawnee', 'Monroe', 'American', 'Richland',
+  'Auglaize', 'Jackson', 'Perry', 'Bath', 'Lima',
+]
+const swampPct = [27.1, 20.2, 17.6, 15.6, 10.8, 9.2, 7.9, 4.5, 0.1, 0.0, 0.0, 0.0, 0.0]
+const hydricPct = [45.2, 58.0, 34.1, 48.0, 26.2, 44.3, 30.0, 33.8, 32.0, 23.4, 34.9, 21.1, 13.4]
+
+const divSpec = line(divMiles, [{ name: 'Elevation', y: divFeet }], {
+  yTitle: 'Feet above sea level',
+  xTitle: 'Miles along the divide, from the county line south to the county line east',
+})
+const swampSpec = bar(townships, swampPct, {
+  yTitle: 'Per cent of the township',
+  tickSuffix: '%',
+  labelValues: true,
+})
+---
+
+<Article slug="nine-parts-beech">
+  <p>
+    Two things a county reference is expected to know about the ground are how high it is and what
+    grew on it. This one has held neither. It has described rivers, watersheds, a quarry and a
+    continental divide without a single elevation attached to any of them, and it has stood in for
+    the Great Black Swamp with the wet soil the swamp left behind.
+  </p>
+  <AssertionCard assertion={relief} open />
+  <AssertionCard assertion={high} />
+
+  <h2>Nine miles of continental divide</h2>
+  <AssertionCard assertion={nine} />
+  <AssertionCard assertion={flat} />
+  <ChartFigure
+    id="div"
+    title="From the St. Lawrence to the Gulf, without a hill"
+    caption="Elevation every 500 feet along the boundary between the Great Lakes and Ohio hydrologic regions where it crosses Allen County, entering at the southern county line and leaving at the eastern one. Seventy-four feet of rise and fall in nine miles."
+    columns={['Mile', 'Feet above sea level']}
+    rows={divMiles.map((m, i) => [m, divFeet[i]])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="div" set:html={JSON.stringify(divSpec)} is:inline />
+  <AssertionCard assertion={corner} />
+  <Gloss>
+    The Scioto basin entry has said for a week that block internal points establish which side of
+    the divide each block is on and say nothing about the line between them, and that the watershed
+    dataset's own line layer would. It did. Both of the questions closed here named the exact layer
+    that would close them and then waited; the instrument was keyless and one query away in each
+    case. Writing down what would answer a question is worth doing and is not the same as answering
+    it.
+  </Gloss>
+
+  <h2>What grew here</h2>
+  <AssertionCard assertion={beech} />
+  <AssertionCard assertion={bodies} />
+  <ChartFigure
+    id="swamp"
+    title="Elm-ash swamp forest, by township"
+    caption="Share of each township that Robert B. Gordon's 1966 map of Ohio's vegetation at the time of the earliest land surveys shows as elm-ash swamp forest, beside the share rated hydric by the modern soil survey. Four of the thirteen units carried no swamp forest at all."
+    columns={['Township', 'Swamp forest', 'Hydric soil']}
+    rows={townships.map((t, i) => [t, `${swampPct[i]}%`, `${hydricPct[i]}%`])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="swamp" set:html={JSON.stringify(swampSpec)} is:inline />
+  <AssertionCard assertion={proxy} />
+  <AssertionCard assertion={order} />
+  <AssertionCard assertion={wet} />
+  <p>
+    So the sentence carried since this reference began — that Allen County lies at the swamp's
+    southern margin and its northern townships were within it — survives in its first half and not
+    its second. What the name refers to here is nineteen scattered bodies, the largest under eight
+    square miles, and the biggest one reaching in from outside comes from the west. The county was
+    beech forest on badly drained ground, which is a different thing from a swamp and is why the
+    ditching worked.
+  </p>
+
+  <h2>The lowest point</h2>
+  <AssertionCard assertion={hole} />
+  <AssertionCard assertion={deeper} />
+  <Gloss>
+    Four numbers come out of an elevation surface before anyone thinks: minimum, maximum, mean,
+    standard deviation. Three hundred feet separate this county's minimum from its first percentile,
+    on a county whose middle ninety-eight per cent spans three hundred, and none of the four numbers
+    says so. The minimum is a cell, a cell is a place, and the place turned out to be one this
+    reference already had a coordinate for. Locating it cost one lookup and converted a wrong
+    sentence into two right ones — the county's natural relief, and the first physical dimension
+    anybody here has had for a working quarry face. What it does not buy is tonnage: a pit is net of
+    whatever was put back, dated to whenever the surface was flown, and silent about everything
+    taken above the original grade.
+  </Gloss>
+</Article>
