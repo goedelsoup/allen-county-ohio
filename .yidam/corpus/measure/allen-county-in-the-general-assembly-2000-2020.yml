@@ -1,0 +1,79 @@
+class: measure
+label: Allen County in the Ohio General Assembly, 2000–2020
+description: |
+  The county's own seat in the Ohio House, and its share of the 12th senate district, at every
+  general election its returns reach. [verified] —
+  [OpenElections](../../catalog/openelections-ohio.md), county files where they exist and precinct
+  files summed for 2006 and 2018.
+
+      year  Ohio House 4              votes   opponent?   Ohio Senate 12            votes   opponent?
+      2000  —                             —           —   Jim Jordan (R)           30,344         yes
+      2006  Matt Huffman (R)         21,422         yes   —                             —           —
+      2008  Matt Huffman (R)         39,979          NO   Keith Faber (R)          31,183         yes
+      2012  Matt Huffman (R)         31,075         yes   Keith Faber (R)          31,917         yes
+      2014  Bob Cupp (R)             20,009         yes   —                             —           —
+      2016  Bob Cupp (R)             34,564          NO   Matt Huffman (R)         35,535          NO
+      2018  Bob Cupp (R)             26,096         yes   —                             —           —
+      2020  Bob Cupp (R)             38,882          NO   Matt Huffman (R)         34,303         yes
+
+  **Ohio House district 4 is Allen County and nothing else.** All 176 of the county's State
+  Representative precinct rows in 2018 carry district 4, and every one of the 88 precincts recorded
+  in that district anywhere in Ohio is an Allen County precinct. No other county appears under the
+  district in any of the five county-grain files that hold it. [verified] — the same files. The
+  senate district is seven counties: Allen, Auglaize, Champaign, Darke, Logan, Mercer and Shelby.
+
+  **Four of these thirteen contests had one name on the ballot.** The Ohio House seat in 2008, 2016
+  and 2020, and the senate seat in 2016; no second candidate appears for those districts in any
+  county of the statewide file. [verified] — the same files.
+
+  **A fifth of the county's voters will not mark an unopposed ballot line.** Against the top of the
+  ticket, the Ohio House race loses 20.5 per cent of the votes cast in 2008, **24.7 per cent** in
+  2016 and 19.6 in 2020 — and 3.3 per cent in 2012, 0.6 in 2014 and 0.3 in 2018, when somebody was
+  running against the winner. In 2006 it drew 572 votes **more** than the race for governor.
+  [verified] — the same files, against
+  [the vote for governor](allen-county-governor-vote-2002-2018.yml) and
+  [the presidential returns](allen-county-presidential-vote-2000-2016.yml); the 2020 comparison is
+  against the 48,353 ballots cast, since that year's county file carries no presidential row.
+
+  **The cleanest reading is one seat, one man, four years apart.** Matt Huffman's senate district
+  loses **22.6 per cent** of the county's voters in 2016, when nobody opposed him, and **2.9 per
+  cent** in 2020, when somebody did. [verified] — the same files. See
+  [an unopposed race is not a landslide](../../decisions/an-unopposed-race-is-not-a-landslide.yml).
+
+  **Two men have held these two seats between them for most of the run, and they swapped.** Matt
+  Huffman is the county's representative in 2006, 2008 and 2012 and its senator in 2016 and 2020;
+  Bob Cupp is its representative in 2014, 2016, 2018 and 2020; Jim Jordan is its senator in 2000
+  before [the congressional seat](allen-county-in-congress-2000-2020.yml). [verified] — the same
+  files. Ohio limits a member to eight consecutive years in a chamber, which is a reason a rotation
+  of this shape would happen and not evidence that it is why this one did. [inference]
+
+  **The two largest votes on this table were both cast against nobody.** Matt Huffman's 39,979 in
+  2008 and Bob Cupp's 38,882 in 2020 are the biggest totals any candidate here received, and neither
+  had an opponent; Huffman's 31,075 in 2012, which did, came with 15,552 votes for the other side.
+  [verified] — the same files.
+
+  This corpus cannot say who has represented this county in Columbus since 2020, or under what
+  district lines. Ohio redrew both chambers after the 2020 census and OpenElections holds no Ohio
+  file for 2022 or 2024. [open]
+properties:
+  parameter: votes for the winner, Ohio House district 4
+  value: "38882"
+  unit: votes
+  as_of: "2020"
+  method: |
+    County-grain files for 2000, 2008, 2012, 2014, 2016 and 2020; 2006 and 2018 summed over the
+    county's precincts. A contest is called unopposed where the statewide file records exactly one
+    candidate for the district in every county it covers. Roll-off is the shortfall against the
+    highest-voted statewide race on the same ballot, or against ballots cast where none is
+    published. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: allen-county-in-congress-2000-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openelections-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
