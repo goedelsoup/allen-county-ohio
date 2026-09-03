@@ -107,6 +107,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-ballot-2006.yml](measure/allen-county-ballot-2006.yml) | measure | Allen County's ballot, 7 November 2006 | 6 | 7v / 3i / 2o | 107 |
+| [allen-county-birth-outcomes-2000-2021.yml](measure/allen-county-birth-outcomes-2000-2021.yml) | measure | Birth outcomes in Allen County, 2000–2021 | 5 | 10v / 1i / 1o | 96 |
 | [allen-county-black-community-1916-1921.yml](measure/allen-county-black-community-1916-1921.yml) | measure | Allen County's Black community, 1916–1921 | 3 | 16v / 5i / 3o | 104 |
 | [allen-county-bridge-condition-1992-2025.yml](measure/allen-county-bridge-condition-1992-2025.yml) | measure | Allen County bridge condition by owner, 1992–2025 | 3 | 11v / 5i / 1o | 97 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
@@ -158,7 +159,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 2 | 9v / 5i / 2o | 114 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
-| [allen-county-hospital-beds-2011-2023.yml](measure/allen-county-hospital-beds-2011-2023.yml) | measure | Allen County hospital beds, 2011–2023 | 2 | 4v / 0i / 1o | 42 |
+| [allen-county-hospital-activity-2011-2023.yml](measure/allen-county-hospital-activity-2011-2023.yml) | measure | What Allen County's hospitals did, 2011–2023 | 6 | 11v / 1i / 1o | 95 |
+| [allen-county-hospital-beds-2011-2023.yml](measure/allen-county-hospital-beds-2011-2023.yml) | measure | Allen County hospital beds, 2011–2023 | 3 | 5v / 1i / 1o | 59 |
 | [allen-county-hospital-employment-2011-2023.yml](measure/allen-county-hospital-employment-2011-2023.yml) | measure | Allen County hospital employment, 2011–2023 | 7 | 4v / 1i / 0o | 61 |
 | [allen-county-house-prices-1975-2025.yml](measure/allen-county-house-prices-1975-2025.yml) | measure | House prices in Allen County, 1975–2025 | 7 | 14v / 4i / 1o | 128 |
 | [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
