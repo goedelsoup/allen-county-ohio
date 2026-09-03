@@ -1,0 +1,74 @@
+id: a-programme-is-invisible-inside-a-survey
+summary: >-
+  This corpus holds HUD's count of every subsidized home in Allen County and, from the same agency,
+  a survey tabulation of what the county's renters pay. The survey does not ask whether anyone helps
+  a household pay its rent, so the 2,251 assisted households are inside its denominator and inside
+  its numerator and are not labelled in either. Crossing the two before publishing the rate is what
+  turned a clean number into a finding.
+context: |
+  The phase set out to publish one figure: 35.7 per cent of Allen County's renter households pay
+  more than thirty per cent of their income for housing. It is well sourced, it carries a margin, it
+  passes every check this corpus has.
+
+  It is also a rate over a population that includes about two thousand households whose rent is set
+  by statute at roughly thirty per cent of income. Read as a measure of unmet need it double-counts
+  the part of the need that is already met; read as a measure of the market it includes households
+  who are not in the market.
+
+  Crossing the two sources made the problem concrete rather than theoretical. HUD's programme file
+  says about 1,640 assisted households in this county live on less than 30 per cent of area median
+  income. The survey finds 2,540 renter households at that income level and only 745 of them paying
+  an affordable share. There is not room in the survey's tables for the programme's households, and
+  the shortfall survives the survey's own margins in three separate five-year windows.
+
+  Neither source is wrong on its face. Neither mentions the other.
+decision: |
+  **Where a programme file and a survey describe the same households, cross them before publishing
+  either as a rate.**
+
+  - Name the overlap in the node. A cost-burden rate whose numerator may contain subsidized
+    households is still worth publishing; a cost-burden rate published as though it measured unmet
+    need is not.
+  - Compute what the two counts force about their intersection, and compute it from the side with
+    the fewest survey quantities in it. An identity with three estimates in it inherits three
+    margins and usually says nothing.
+  - Test the crossing at more than one cut of the data. Where a disagreement holds at one income
+    band and dissolves at the next, the difference between the bands is the diagnosis, not a
+    robustness failure to be hidden.
+  - Test it in every window both sources cover. One window is an anecdote about a sample; three
+    windows moving together is a property of the two instruments.
+  - An administrative count has no sampling margin and is not therefore exact. It has a reference
+    date, a reporting rate, and definitions that are the programme's rather than the survey's, and
+    those are what a node states in place of a margin.
+rationale: |
+  **The first version of the arithmetic was wrong in the safe direction and would have published.**
+  The draft said at least seven hundred households in this county are both subsidized and paying
+  more than half their income — assisted households below 30 per cent of area median, plus severely
+  burdened renters in that band, minus the band's total. Three estimates, three margins: at their
+  edges the bound falls to about forty, which is no finding at all. Approaching the same
+  intersection from the unburdened side uses one survey quantity instead of two and leaves a bound
+  of several hundred standing in all three windows. Same data, same claim, and only one of the two
+  routes survives.
+
+  **This is a third shape of two-source failure and the first two do not cover it.**
+  [the intersection not the union](the-intersection-not-the-union.yml) is about the span two records
+  share in *time*. [a survey is not a count](a-survey-is-not-a-count.yml) is about margins on
+  comparisons made inside one source. This one is about two sources counting the same *households*,
+  where one of them cannot see the other's, and it is invisible in either file: the programme file
+  is a complete administrative census and the survey is honest about its intervals.
+
+  **A rule that passes is also a result.**
+  [a county rate can describe nowhere](a-county-rate-can-describe-nowhere.yml) was written two
+  phases ago because Allen County's subsidized-housing rate described neither Lima nor the rest of
+  the county. Run on cost burden it comes out the other way: Lima's renter burden is 39.2 per cent
+  and the remainder's 31.3, a gap smaller than the combined margin. The county figure stands, and
+  the node says the test was run. A rule whose every recorded application is a firing looks like a
+  rule that always fires.
+
+  **What this does not license.** Refusing to publish a rate because a programme touches its
+  population. Almost every rate this corpus holds is like that — unemployment includes people on
+  benefits, school enrolment includes children whose districts are state-funded, the poverty rate
+  is measured before most transfers. The rule is to cross the two where the corpus holds both
+  files, say what the crossing shows, and publish the rate with that beside it.
+status: accepted
+date: "2026-09-02"

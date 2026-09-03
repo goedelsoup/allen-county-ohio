@@ -1,0 +1,77 @@
+class: question
+label: Why do HUD's programme file and HUD's survey tables disagree about the county's assisted renters?
+description: |
+  The same agency publishes both. One is an administrative census of every subsidized unit in the
+  country, reported by the housing authorities and owners that operate them. The other is a set of
+  custom tabulations of the American Community Survey, which asks households what they pay and does
+  not ask whether anyone helps them pay it. Laid against each other for Allen County they do not
+  reconcile.
+
+      five-year window          assisted households    renter households   of those, paying
+                                 under 30% of area      under 30% of area   30% of income or
+                                        median income            median      less, or unmeasured
+      2011–2015                              1,580          3,620 ± 350           925 ± 199
+      2015–2019                              1,553          3,755 ± 364           880 ± 203
+      2018–2022                              1,641          2,540 ± 359           745 ± 220
+
+  **A subsidy sets the tenant's rent at about thirty per cent of income, so an assisted household
+  should be in the last column.** In every window there are roughly twice as many assisted
+  households at that income level as there are renter households at that income level paying an
+  affordable share. [verified] —
+  [A Picture of Subsidized Households](../../catalog/hud-picture-of-subsidized-households.md),
+  county files 2011 to 2022, `number_reported` times `pct_lt30_median`, averaged over each window,
+  and [HUD's affordability tables](../../catalog/hud-chas.md), Table 8, columns `T8_est69`,
+  `T8_est70` and `T8_est79`.
+
+  **The gap survives the survey's own margins in all three windows.** Taking the survey's count at
+  the top of its interval and the programme file at its lowest year still leaves 456, 470 and 676
+  assisted households recorded as paying more than thirty per cent of their income. [inference] —
+  the arithmetic is this corpus's and follows
+  [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml): a difference is only
+  asserted when it is larger than the combined margin.
+
+  **Widening the band weakens it, which is itself evidence.** At fifty per cent of area median the
+  same comparison gives gaps of 579, 141 and 595, and the middle one is inside its margin. So part
+  of the disagreement is two income definitions sorting the same households into different bands —
+  and only part, because two windows of three still fail. [inference] — the same two sources.
+
+  Five explanations fit the shape and this corpus has evidence for none of them. The survey asks the
+  household what its rent is, and a tenant of a project-based property may answer with the rent on
+  the door rather than the share they pay. A voucher household renting above the payment standard
+  pays the excess itself. HUD's income is annual income at the last recertification, adjusted for
+  dependants, age, disability and medical costs; the survey's is unadjusted income over the past
+  twelve months. The survey's gross rent adds tenant-paid utilities, which a utility allowance
+  covers on HUD's side of the arithmetic and not on the survey's. And the programme file is a
+  thirty-first of December snapshot while the survey is a five-year average of a rolling sample.
+  [inference]
+
+  **What is not in doubt is that the county's assisted housing is real and is counted.** 2,251 units
+  on 31 December 2025, in
+  [twenty-one project-based properties and a public housing authority](../measure/allen-county-subsidized-housing-2005-2025.yml).
+  The question is not whether the subsidy exists but whether the survey can see it, and a corpus
+  that reports a cost-burden rate for this county's renters is reporting a rate whose numerator may
+  contain households whose rent the government is already paying.
+
+  [open] Whether the disagreement is a measurement artefact or a description of households the
+  subsidy is failing. Nothing here decides it, and the two readings point in opposite directions:
+  one says this county's renter cost burden is overstated at the bottom, the other says several
+  hundred assisted households are paying more than half their income anyway.
+properties:
+  claim_tag: open
+  opened: "2026-09-02"
+  would_close_this: |
+    The CHAS methodology document, or the American Community Survey's own instructions to renters in
+    assisted units, either of which would say whether the reported rent is the household's payment
+    or the unit's contract rent. Failing that, the Allen Metropolitan Housing Authority's Form 50058
+    tenant data in aggregate, which reports tenant payment against income for its own households and
+    would settle the question for at least the public housing and voucher programmes. HUD's own
+    linked tenant-and-survey files would settle it outright and are not public.
+links:
+  - target: ../measure/allen-county-housing-cost-burden-2006-2022.yml
+    relationship: concerns
+  - target: ../measure/allen-county-subsidized-housing-2005-2025.yml
+    relationship: concerns
+  - target: ../organization/allen-metropolitan-housing-authority.yml
+    relationship: concerns
+  - target: ../question.ont.yml
+    relationship: instance-of

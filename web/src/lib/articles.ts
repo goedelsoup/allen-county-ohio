@@ -305,6 +305,24 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    slug: 'what-the-rent-takes',
+    title: 'What the rent takes',
+    dek: 'A renter here is two and a half times as likely as an owner to be paying more than they can afford, and almost the whole of it sits in the lowest income band.',
+    section: 'people',
+    era: [2006, 2022],
+    assertions: [
+      'renters-carry-what-owners-do-not',
+      'the-burden-is-all-at-the-bottom',
+      'a-black-renter-pays-more-of-less',
+      'the-county-moved-and-the-country-did-not',
+      'thirty-nine-homes-for-a-hundred-households',
+    ],
+    entries: [
+      'measure/allen-county-housing-cost-burden-2006-2022.yml',
+      'question/why-hud-and-the-survey-count-different-assisted-renters.yml',
+    ],
+  },
+  {
     slug: 'buying-and-borrowing',
     title: 'Buying, and borrowing against what you own',
     dek: 'Seven years of mortgage applications, and a denial gap that income does not account for.',

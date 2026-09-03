@@ -4384,6 +4384,106 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "renters-carry-what-owners-do-not",
+        statement: "In Allen County a renter is two and a half times as likely as an owner to be \
+                    paying more than thirty per cent of income for housing, and more than three \
+                    times as likely to be paying more than half.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**A renter in this county is two and a half times as likely as an owner to be paying more than thirty per cent of income for housing**, 35.7 per cent against 14.2, and more than three times as likely to be paying more than half, 17.4 per cent against 5.3."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "renters over 30%", value: 35.7, literal: "35.7" },
+            Figure { label: "owners over 30%", value: 14.2, literal: "14.2" },
+            Figure { label: "renters over 50%", value: 17.4, literal: "17.4" },
+            Figure { label: "owners over 50%", value: 5.3, literal: "5.3" },
+        ],
+    },
+    Assertion {
+        id: "the-burden-is-all-at-the-bottom",
+        statement: "This county's housing cost problem is almost entirely a problem of its poorest \
+                    households. Of those living on less than 30 per cent of area median income, \
+                    61.9 per cent pay more than half of it for housing; above 80 per cent of area \
+                    median the burden is close to absent.",
+        topic: "housing",
+        supports: &[
+            support!(
+                "measure/allen-county-housing-cost-burden-2006-2022.yml",
+                "**The burden is almost entirely at the bottom of the income scale**, and above the area median it is close to absent. Of the 4,060 households living on less than 30 per cent of area median income, 2,515 pay more than half of it for housing \u{2014} 61.9 per cent. Of the 23,700 households above 80 per cent of the area median, 680 pay more than 30 per cent of income, which is 2.9 per cent of them."
+            ),
+            support!(
+                "measure/allen-county-housing-cost-burden-2006-2022.yml",
+                "1,600 of the county's 2,540 renter households below 30 per cent of area median income pay more than half of that income for shelter, which is 63.0 per cent of them; among owners in the same income band it is 915 of 1,520, or 60.2."
+            ),
+        ],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "all households under 30% of area median", value: 61.9, literal: "61.9" },
+            Figure { label: "renters under 30%", value: 63.0, literal: "63.0" },
+            Figure { label: "owners under 30%", value: 60.2, literal: "60.2" },
+        ],
+    },
+    Assertion {
+        id: "the-county-moved-and-the-country-did-not",
+        statement: "Allen County's renters were as likely to be cost-burdened as the nation's \
+                    through two five-year windows. By 2018\u{2013}2022 they were 8.7 points less \
+                    likely, on a margin of 3.7 points.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**Against the country, this county has moved and the country has not.** The county's four windows read 44.2, 45.9, 40.5 and 35.7 per cent and the nation's read 45.0, 45.8, 43.9 and 44.4. In the two earliest windows Allen County's renters were as likely to be cost-burdened as the nation's; in the most recent they are 8.7 points less likely, and the county's own margin on that rate is 3.7 points."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "Allen 2006\u{2013}2010", value: 44.2, literal: "44.2" },
+            Figure { label: "Allen 2011\u{2013}2015", value: 45.9, literal: "45.9" },
+            Figure { label: "Allen 2015\u{2013}2019", value: 40.5, literal: "40.5" },
+            Figure { label: "Allen 2018\u{2013}2022", value: 35.7, literal: "35.7" },
+            Figure { label: "US 2006\u{2013}2010", value: 45.0, literal: "45.0" },
+            Figure { label: "US 2011\u{2013}2015", value: 45.8, literal: "45.8" },
+            Figure { label: "US 2015\u{2013}2019", value: 43.9, literal: "43.9" },
+            Figure { label: "US 2018\u{2013}2022", value: 44.4, literal: "44.4" },
+        ],
+    },
+    Assertion {
+        id: "thirty-nine-homes-for-a-hundred-households",
+        statement: "For a hundred of Allen County's poorest renter households there are eighty-one \
+                    homes cheap enough for them and thirty-nine they could actually move into. The \
+                    rest of the cheap stock is lived in by someone who earns more.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**For a hundred of the county's poorest renter households there are eighty-one homes they could afford and thirty-nine they could move into.** 2,050 rental units in the county rent at or below what a household at 30 per cent of area median could pay \u{2014} 1,945 occupied and 105 standing empty and for rent \u{2014} against 2,540 such households; but 1,065 of the occupied ones house a household with a higher income, leaving 985."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "households needing one", value: 2540.0, literal: "2,540" },
+            Figure { label: "homes they could afford", value: 2050.0, literal: "2,050" },
+            Figure { label: "of those, occupied by a higher income", value: 1065.0, literal: "1,065" },
+            Figure { label: "available to them", value: 985.0, literal: "985" },
+        ],
+    },
+    Assertion {
+        id: "a-black-renter-pays-more-of-less",
+        statement: "A Black renter household in Allen County is 1.7 times as likely as a white one \
+                    to be paying more than half its income for housing \u{2014} 26.5 per cent \
+                    against 15.6.",
+        topic: "housing",
+        supports: &[support!(
+            "measure/allen-county-housing-cost-burden-2006-2022.yml",
+            "**A Black renter household is 1.7 times as likely to be paying more than half its income.** Of 9,310 white non-Hispanic renter households 1,450 do, 15.6 per cent; of 2,435 Black non-Hispanic renter households 645 do, 26.5. On the 30 per cent threshold the gap is 32.5 per cent against 43.5."
+        )],
+        answers: &["cannot say whether Lima's renters are more often cost-burdened"],
+        figures: &[
+            Figure { label: "white renters over 50%", value: 15.6, literal: "15.6" },
+            Figure { label: "Black renters over 50%", value: 26.5, literal: "26.5" },
+            Figure { label: "white renters over 30%", value: 32.5, literal: "32.5" },
+            Figure { label: "Black renters over 30%", value: 43.5, literal: "43.5" },
+        ],
+    },
+    Assertion {
         id: "the-one-election-it-gave-a-democrat",
         statement: "Allen County voted for Ted Strickland, a Democrat, for governor in 2006 — \
                     18,000 to 17,184. It is the only election in this corpus's modern record, five \

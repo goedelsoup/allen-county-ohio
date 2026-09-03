@@ -122,9 +122,26 @@ description: |
   **Public housing here is 243 units in 194 buildings**, 186 of which hold a single dwelling. See
   [the authority that owns them](../organization/allen-metropolitan-housing-authority.yml).
 
+  **What the other five renter households in six pay is now in the corpus, and it does not fit
+  beside this.** 35.7 per cent of the county's renters pay more than thirty per cent of their
+  income and 17.4 per cent pay more than half; see
+  [housing cost burden](allen-county-housing-cost-burden-2006-2022.yml). Those rates are computed
+  over a population that includes the households counted here, and the survey behind them does not
+  ask whether a household has a subsidy — which is why HUD's own count of assisted households below
+  30 per cent of area median has no room in the survey's tables. See
+  [why HUD and the survey count different assisted renters](../question/why-hud-and-the-survey-count-different-assisted-renters.yml)
+  and [a programme is invisible inside a survey](../../decisions/a-programme-is-invisible-inside-a-survey.yml).
+  [inference]
+
+  **The average wait of the households who did get in more than doubled.** `months_waiting` runs 10
+  in 2018, 13, 20, 20, 25, 18 and 29 in 2024. [verified] — the same files. Seven readings on a
+  measure this noisy are a direction and not a trend, and the measure is still not the length of
+  the list.
+
   [open] What the waiting list is. The files publish `months_waiting`, which is the average wait of
   households who *moved in*, so an authority that admits almost nobody reports a short one. Nothing
-  here counts the households waiting.
+  here counts the households waiting, and a rising average wait is consistent both with a longer
+  queue and with an authority that has begun admitting from further down an unchanged one.
 
   [open] Why occupancy fell to 89 per cent in 2025, the lowest in the seventeen-year record against
   a band of 92 to 98 in every other year. The count of occupied units is published for the first
@@ -160,6 +177,12 @@ links:
     claim_tag: verified
     source: ../../catalog/census-acs-summary-file.md
   - target: allen-county-income-and-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-housing-cost-burden-2006-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../question/why-hud-and-the-survey-count-different-assisted-renters.yml
     relationship: relates-to
     claim_tag: inference
   - target: allen-county-outside-lima-1890-2020.yml
