@@ -4594,6 +4594,89 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
+        id: "a-fifth-of-the-workplaces-are-gone",
+        statement: "Allen County has 2,239 private workplaces where it had 2,763 in 1986 \u{2014} a \
+                    fifth fewer \u{2014} while the number of jobs in them fell by a twenty-fifth. The \
+                    average workplace went from 16.6 employees to 19.8.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**The county lost a fifth of its workplaces and a twenty-fifth of its jobs.** Establishments fell from 2,763 to 2,239, or 19.0 per cent, while employment fell from 45,917 to 44,251, or 3.6. Average establishment size rose from 16.6 employees to 19.8."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "workplaces, 1986", value: 2763.0, literal: "2,763" },
+            Figure { label: "workplaces, 2023", value: 2239.0, literal: "2,239" },
+        ],
+    },
+    Assertion {
+        id: "the-small-workplaces-are-what-went",
+        statement: "The county's whole net loss of workplaces is at the bottom of the size scale: \
+                    621 fewer with under ten employees, 97 more with ten or more, and exactly as \
+                    many with a hundred or more as in 1986.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**Almost the whole loss is in the smallest workplaces.** The two smallest classes lost 621 establishments between them and every class of ten or more gained 97."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "workplaces under 10 employees, lost", value: 621.0, literal: "621" },
+            Figure { label: "workplaces of 10 or more, gained", value: 97.0, literal: "97" },
+        ],
+    },
+    Assertion {
+        id: "pay-that-has-not-moved-in-thirty-seven-years",
+        statement: "Payroll per private employee in this county is worth about what it was worth in \
+                    1986. Whether it is slightly less or slightly more depends on which price index \
+                    does the deflating.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "$19,658 in 1986 and $52,858 in 2023 is a rise of 169 per cent in the money of each year. Deflated by the national consumer price index the 1986 figure is $54,651 in 2023 dollars, so real pay per employee is **3.3 per cent lower** than it was; deflated by the Midwest index it is $51,467, so real pay is **2.7 per cent higher**."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "1986 pay, national index", value: 54651.0, literal: "54,651" },
+            Figure { label: "1986 pay, Midwest index", value: 51467.0, literal: "51,467" },
+            Figure { label: "2023 pay", value: 52858.0, literal: "52,858" },
+        ],
+    },
+    Assertion {
+        id: "retail-lost-more-than-manufacturing",
+        statement: "Retail trade has shed more of this county's jobs since 1998 than manufacturing \
+                    has \u{2014} 2,364 against 753 \u{2014} along with 167 of its stores.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**Retail lost more jobs than manufacturing did.** Between 1998 and 2023 retail trade fell from 7,806 employees to 5,442 and from 535 establishments to 368; manufacturing fell from 9,886 to 9,133."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "retail, 1998", value: 7806.0, literal: "7,806" },
+            Figure { label: "retail, 2023", value: 5442.0, literal: "5,442" },
+            Figure { label: "manufacturing, 1998", value: 9886.0, literal: "9,886" },
+            Figure { label: "manufacturing, 2023", value: 9133.0, literal: "9,133" },
+        ],
+    },
+    Assertion {
+        id: "the-two-largest-sectors-are-level-again",
+        statement: "Health care overtook manufacturing as this county's largest private sector in \
+                    2002 and led for twenty-one years. In 2023 the two are seventeen employees \
+                    apart, health care having fallen a quarter from its 2013 peak.",
+        topic: "work",
+        supports: &[support!(
+            "measure/allen-county-private-employers-1986-2023.yml",
+            "**And the two largest sectors are now the same size.** Manufacturing 9,133 and health care 9,150 in 2023, seventeen apart, after twenty-one years in which health care led \u{2014} it passed manufacturing in 2002 and peaked at 12,431 in 2013."
+        )],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "health care, 2013 peak", value: 12431.0, literal: "12,431" },
+            Figure { label: "health care, 2023", value: 9150.0, literal: "9,150" },
+            Figure { label: "manufacturing, 2023", value: 9133.0, literal: "9,133" },
+        ],
+    },
+    Assertion {
         id: "the-one-election-it-gave-a-democrat",
         statement: "Allen County voted for Ted Strickland, a Democrat, for governor in 2006 — \
                     18,000 to 17,184. It is the only election in this corpus's modern record, five \
