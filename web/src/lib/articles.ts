@@ -1268,6 +1268,37 @@ export const ARTICLES: Article[] = [
       'event/the-windstorm-of-22-june-2006.yml',
     ],
   },
+  {
+    slug: 'what-the-county-dug',
+    title: 'What the county dug',
+    dek: "Allen County's only National Historic Landmark is a canal cut south of Spencerville. Its water is level to 1.8 inches over 7,375 feet, it is 45.8 feet deep rather than 52, and 37 per cent of it is in the next county.",
+    section: 'history',
+    era: [1845, 2026],
+    assertions: [
+      'the-water-in-the-cut-does-not-move',
+      'fifty-two-feet-and-forty-five-point-eight',
+      'five-feet-of-water-closes-the-gap',
+      'eighteen-feet-of-the-depth-came-out-of-the-hole',
+      'the-water-is-as-wide-as-the-canals-floor',
+      'the-landmark-is-thirty-seven-per-cent-in-another-county',
+      'the-registers-boundary-is-a-box-over-half-of-it',
+      'one-nomination-in-twenty-nine-is-readable',
+      'deep-cut-was-a-place-before-it-was-a-landmark',
+      'one-canal-three-features-two-spellings',
+      'what-carries-the-name-falls-six-feet-to-the-mile',
+      'a-field-ditch-in-the-canals-line',
+      'the-canal-got-its-name-four-years-after-the-boats',
+      'the-first-boat-through-delphos-was-the-marshall',
+      'six-point-nine-nine-miles-and-five-more-nobody-draws',
+      'how-much-earth-was-moved-is-a-choice-of-datum',
+    ],
+    entries: [
+      'measure/miami-and-erie-canal-deep-cut-2026.yml',
+      'measure/miami-and-erie-canal-in-allen-county-2026.yml',
+      'site/miami-and-erie-canal.yml',
+      'measure/allen-county-national-register.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */

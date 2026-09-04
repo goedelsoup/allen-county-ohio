@@ -67,6 +67,23 @@ description: |
   It is also the county's oldest listing by eight years and the only one that is not a building or
   a district. See [the canal](../site/miami-and-erie-canal.yml).
 
+  **Twenty-eight of the twenty-nine nominations have never been scanned, and the one that has is
+  the Landmark.** Every reference number returns a PDF from the Park Service's gallery; for
+  twenty-eight of them it is a one-page placeholder, byte-identical across listings, reading "The
+  PDF file for this National Register record has not yet been digitized" — served with HTTP 200.
+  [verified] — [the nomination documents](../../catalog/nrhp-nomination-documents.md), all
+  twenty-nine requested and hashed. So the words behind this county's list are readable for one
+  listing in twenty-nine, and it is the one that already had the most attached to it.
+
+  **The Landmark's centroid is in this county and its extent is not.** The Deep Cut's level channel
+  crosses into Salem Township, Auglaize County, and 37 per cent of it lies on the far side; the
+  Register's own polygon straddles the line as well. [verified] —
+  [the elevation surface](../../catalog/usgs-3dep-elevation.md) against
+  [the county-subdivision file](../../catalog/census-tiger-hydrography.md); see
+  [the Deep Cut measured](miami-and-erie-canal-deep-cut-2026.yml). The line above that puts all
+  twenty-nine inside the county is a statement about twenty-nine coordinates, which is what the
+  method here computes, and a centroid is not an extent. [inference]
+
   ## What is not on it
 
   **No industry.** Not the [locomotive works](../site/lima-locomotive-works-plant.yml), which built
@@ -105,6 +122,10 @@ properties:
     County GIS township and section layers. Certification dates are the file's two-digit years read
     as 19xx above 30 and 20xx below. [verified]
 links:
+  - target: miami-and-erie-canal-deep-cut-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nrhp-nomination-documents.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified

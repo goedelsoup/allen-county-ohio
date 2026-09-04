@@ -4661,6 +4661,10 @@
         {
           "text": "**The hole is deeper than the county.** 365.3 feet from rim to floor against 337.7 feet between the county's highest and lowest natural ground, and the floor sits 258.8 feet below any ground in Allen County that nobody excavated. [inference] — computed here from the figures above. That comparison is why the county's minimum cannot be published as a fact about its terrain; see [an extreme in a surface has an address](../../decisions/an-extreme-in-a-surface-has-an-address.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**The same service, asked at one metre, resolves a canal.** Thirty-metre cells give the county its relief; a one-metre export over four square kilometres in the south-west gives a channel 36 feet wide whose water is level to 1.8 inches over 7,375 feet. [verified] — [the image service](../../catalog/usgs-3dep-elevation.md), the same product at a thirtieth of the cell size; see [the Deep Cut](miami-and-erie-canal-deep-cut-2026.yml). The instrument's answer is a function of what it was asked, which is worth recording beside a node whose headline figures are all county-wide. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -7544,6 +7548,14 @@
         {
           "text": "**Allen County has a single National Historic Landmark and it is the Deep Cut**, a canal excavation two miles south of Spencerville, listed 15 October 1966 — the day the National Register began, when the existing Landmarks were entered into it as a body. [verified] — [the NPS dataset](../../catalog/nrhp-national-register.md), `Is_NHL` set on one of twenty-nine. It is also the county's oldest listing by eight years and the only one that is not a building or a district. See [the canal](../site/miami-and-erie-canal.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Twenty-eight of the twenty-nine nominations have never been scanned, and the one that has is the Landmark.** Every reference number returns a PDF from the Park Service's gallery; for twenty-eight of them it is a one-page placeholder, byte-identical across listings, reading \"The PDF file for this National Register record has not yet been digitized\" — served with HTTP 200. [verified] — [the nomination documents](../../catalog/nrhp-nomination-documents.md), all twenty-nine requested and hashed. So the words behind this county's list are readable for one listing in twenty-nine, and it is the one that already had the most attached to it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Landmark's centroid is in this county and its extent is not.** The Deep Cut's level channel crosses into Salem Township, Auglaize County, and 37 per cent of it lies on the far side; the Register's own polygon straddles the line as well. [verified] — [the elevation surface](../../catalog/usgs-3dep-elevation.md) against [the county-subdivision file](../../catalog/census-tiger-hydrography.md); see [the Deep Cut measured](miami-and-erie-canal-deep-cut-2026.yml). The line above that puts all twenty-nine inside the county is a statement about twenty-nine coordinates, which is what the method here computes, and a centroid is not an extent. [inference]",
+          "tier": "inference"
         },
         {
           "text": "**No industry.** Not the [locomotive works](../site/lima-locomotive-works-plant.yml), which built Shays and Berkshires and gave the county its name in the trade; not [the refinery](../site/lima-refinery.yml), running since 1886; not [the tank plant](../site/lima-army-tank-plant.yml) or [the Ford engine plant](../site/ford-lima-engine-plant.yml). [verified] — the county's whole list above. A county whose nineteenth and twentieth centuries were made of iron, oil and rolling stock has twenty-six commercial and domestic buildings and a stadium on the federal register, and nothing it made anything in. [inference] — observed here; see [a register records nominations](../../decisions/a-register-records-nominations.yml).",
@@ -12804,6 +12816,124 @@
       "withheld": 3
     },
     {
+      "id": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "class": "measure",
+      "label": "The Deep Cut, measured, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "The elevation image service was exported over the cut at one metre in EPSG:26916 and the channel bottom traced row by row as the minimum within thirty metres of the previous row. The pound is the longest run of rows whose bottom lies within 0.25 metres of the median of the run; it ends 168 rows short of the raster's north edge and 188 short of its south, so it is bounded by the ground and not by the request. [verified] Depths are measured in each row's cross-section from the traced bottom: the crest is the highest cell within 100 metres either side, the fields are the median of the cells 150 to 250 metres out on each side, averaged. [verified] The volume is the area between the surface and a straight line joining the fields at a stated half-width, integrated over the pound, and is reported as the range it takes over half-widths of 80 to 170 metres. [inference] Every figure is in feet at 3.280839895 to the metre.",
+        "parameter": "level water surface in the Deep Cut, and its length",
+        "unit": "feet above sea level, over 7,375 feet of channel",
+        "value": "835.29"
+      },
+      "blocks": [
+        {
+          "text": "**The county's only National Historic Landmark has been in this corpus since the Register was first read here, and never with a dimension attached to it.** It was held as a reference number, a listing date, a resource type and a boundary that is a box drawn round two coordinate pairs. [verified] — [the National Register](../../catalog/nrhp-national-register.md); see [the canal](../site/miami-and-erie-canal.yml). What follows is the first measurement of it made here, from the elevation surface at one metre rather than the thirty used for [the county](allen-county-elevation-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The water in the cut stands at 835.29 feet and it does not move.** Over 7,375 feet — 1.397 miles — the surface reads 835.29 feet above sea level with a standard deviation of 1.8 inches and a full range of 18. [verified] — [USGS 3DEP](../../catalog/usgs-3dep-elevation.md), a 1,614 × 2,605 export at one metre, traced along the channel bottom row by row. That flatness is the measurement: it is what a canal pound is, and no silted ditch or natural channel produces it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The nomination says the cut runs to 52 feet deep, and the ground gives three answers.** [verified] — [the nomination](../../catalog/nrhp-nomination-documents.md), whose description section reads *\"As shallow as five feet, the Deep Cut section of the Canal ranges at places to 52 feet in depth\"* and *\"The Deep Cut extends over a mile.\"*",
+          "tier": "verified"
+        },
+        {
+          "text": "**The third line is the nomination's, and it is reached by adding five feet of water.** The model returns the topmost surface, so a depth taken from it stops at whatever floats on the thing; [Miller's history](../../catalog/miller-allen-county-1906.md) gives the Miami extension five feet of water, 36 feet of width at the bottom and 50 at the top. 45.8 and 5 make 50.8 against a claim of 52. [inference] — computed here; see [a depth needs both of its ends named](../../decisions/a-depth-needs-both-of-its-ends-named.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Eighteen feet of the deepest reading is earth that came out of the hole.** At the section where the cut measures 45.8 feet from its bank crest it measures 27.8 feet from the fields, because the spoil was cast into banks standing 18.0 feet above the ground it was thrown onto. Averaged over the pound the banks stand 5.0 feet proud. [verified] — the same source, in cross-section every metre.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The water is 36.1 feet wide, which is the width of the canal's floor and not of its top.** [verified] — the same source, measured as the run of surface within five inches of the pound level; the tenth and ninetieth percentiles are 16.4 and 45.9 feet. Against Miller's 36 at the bottom and 50 at the top, a canal holding water to its floor width is a canal well below its working level. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Allen County's only Landmark is 37 per cent in Auglaize County.** The pound crosses the county line at 40.685033, −84.365726: 4,617 feet of it lie in Spencer Township and 2,759 in Salem Township, Auglaize. [verified] — [the county-subdivision file](../../catalog/census-tiger-hydrography.md), point in polygon along the traced channel. The listing is filed under Allen alone, and Auglaize's twenty-five listings include no canal and no Landmark. [verified] — [the National Register](../../catalog/nrhp-national-register.md), both counties queried.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The deepest point measured from the fields is on the Auglaize side by 323 feet.** 31.8 feet there against 30.4 at the deepest point in Allen. [inference] — computed here. The deepest reading from a bank crest, 45.8 feet, is in Allen.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The Register's own polygon is a box, and it covers half the pound.** It runs 3,871 feet against the level channel's 7,375, it carries `BND_TYPE` \"Circumscribed polygon\" derived from bounding coordinates at 1:24,000 with ±12 metres claimed, and it straddles the county line as well. [verified] — the same dataset, its boundary fields.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Deep Cut was a settlement before it was a Landmark.** J. H. Dunathan, an ex-commissioner of Auglaize County, moved his general store \"from Deep Cut on the canal\" into Spencerville in August 1881. [verified] — [Miller, 1906](../../catalog/miller-allen-county-1906.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say how much earth was moved to dig it.** The excavation still open below the surrounding grade measures 449,450 cubic yards if the original ground is taken 80 metres out and 706,339 if it is taken 170 metres out, and there is no third source to choose between them. [verified] — [the elevation surface](../../catalog/usgs-3dep-elevation.md), integrated four ways. What has silted into the trench, and what was carted off to build embankment elsewhere, are in neither figure.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how much earth was moved to dig it.** The excavation still open below the surrounding grade measures 449,450 cubic yards if the original ground is taken 80 metres out and 706,339 if it is taken 170 metres out, and there is no third source to choose between them."
+      ],
+      "withheld": 2
+    },
+    {
+      "id": "measure/miami-and-erie-canal-in-allen-county-2026.yml",
+      "class": "measure",
+      "label": "The Miami and Erie Canal in Allen County, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "The 2024 TIGER/Line linear hydrography file for county 39003, filtered to features whose `FULLNAME` carries both \"Erie\" and \"Cnl\", projected to EPSG:26916 and summed; the same lengths in EPSG:6549 agree to 0.03 per cent. [verified] The channel profile is the minimum cell within forty metres of the mapped line, taken every ten metres from a two-metre export of the elevation service, and the gradient is a least-squares fit over the mapped segments only, with the 1.084-mile gap excluded rather than interpolated. [verified] Depth below the fields is the median of the cells 80 to 150 metres out on each side, less the channel bottom. [verified] The 2.9 miles north of the last mapped vertex is measured due north from it to the county boundary and is an approximation of a course this corpus has not traced. [inference]",
+        "parameter": "canal linework named for the Miami and Erie Canal in Allen County",
+        "unit": "miles",
+        "value": "6.1157"
+      },
+      "blocks": [
+        {
+          "text": "**The corpus has held this canal as a site since genesis and never once as a length.** It knew who located it, when it opened, which towns it made and that it is a thing of the past, and had no figure for any part of it. [verified] — [the canal](../site/miami-and-erie-canal.yml) and [the canal era](../period/canal-era.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's water file names it three times, under two spellings, and none of the three is the Landmark.** `Miami & Erie Cnl` carries two features and `Miami-Erie Cnl` a third; together they run 32,290.7 feet — 6.1157 miles — and all of them lie north of the Deep Cut. [verified] — [TIGER/Line hydrography](../../catalog/census-tiger-hydrography.md), projected to EPSG:26916.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A canal is level between its locks, and what carries the name here falls the whole way.** Along the 6.1157 miles the file draws, the channel bottom descends 41.9 feet at 5.94 feet to the mile, and a straight line fits it with an R² of 0.976. [verified] — [the elevation surface](../../catalog/usgs-3dep-elevation.md) sampled every ten metres along the mapped line. The longest stretch of it level to within ten inches is 2,297 feet.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A mile south of the first of them, the same instrument reads 7,375 feet level to 1.8 inches.** [verified] — the same source; see [the Deep Cut](miami-and-erie-canal-deep-cut-2026.yml). The contrast is the finding: one instrument, one afternoon, two reaches of one canal, and only one of them still has a canal's profile. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**What is in the canal's line north of Spencerville is a field ditch.** It is 26.2 feet across a metre above its bottom and lies 5.9 feet below the fields, with a berm surviving along one side; the Deep Cut holds 36.1 feet of standing water and lies 17.1 feet below its fields. [verified] — the same source, in cross-section every ten metres. Whether the ditch was cut in the canal's own prism or beside it is a question this file has no field for. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**As built it was 5 feet deep, 36 feet wide at the bottom and 50 at the top.** The Miami extension was completed in 1845 and ran 114 miles. [verified] — [Miller, 1906](../../catalog/miller-allen-county-1906.md). The name is younger than the work: by an act of 14 March 1849 the Miami Canal, the Miami Extension Canal and the Wabash and Erie became one Miami and Erie Canal. [verified] — the same book.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The first boat through Delphos was the *Marshall*, on 4 July 1845.** The first passenger packet came in 1846 carrying Governor-elect William Bebb, and the businessmen of Delphos met it \"at a lock a mile away\" and put in fresh horses. [verified] — [Rusler, 1921](../../catalog/rusler-allen-county-1921.md), which is the only mention of a lock in this county the corpus has found in any of its three histories.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What it was for, in one price.** Coal could be bought at 90 cents a ton in Cincinnati and delivered to Spencerville and Delphos for a dollar of freight. [verified] — the same book, reporting it in 1921 as a rate worth having back.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say how many miles of the canal lie in Allen County.** It has measured 6.99 — the 6.1157 the water file draws plus the 4,617 feet of the Deep Cut that fall on the Allen side — and it has located at least 5.1 miles more that no file it holds draws at all: 1.160 miles between the cut and the first mapped segment, through Spencerville; 1.084 miles between the second mapped segment and the third; and about 2.9 miles from the last mapped vertex north to the Putnam County line, which passes through [Delphos](../place/delphos.yml). [verified] — the same files, measured and differenced here.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how many miles of the canal lie in Allen County.** It has measured 6.99 — the 6.1157 the water file draws plus the 4,617 feet of the Deep Cut that fall on the Allen side — and it has located at least 5.1 miles more that no file it holds draws at all: 1.160 miles between the cut and the first mapped segment, through Spencerville; 1.084 miles between the second mapped segment and the third; and about 2.9 miles from the last mapped vertex north to the Putnam County line, which passes through [Delphos](../place/delphos.yml)."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/ohio-counties-of-1820-and-their-names.yml",
       "class": "measure",
       "label": "The Ohio counties of 1820 and the names Howe gives them",
@@ -15295,6 +15425,14 @@
         },
         {
           "text": "**The closing bound now has an argument, and it moves.** The railways reached this county while the canal was still young: the Ohio & Indiana opened Crestline to Fort Wayne in 1854 and was consolidated into the Pennsylvania system in 1856; the Dayton & Michigan was chartered in 1856-57 and **completed through Allen County in 1858**. [verified] — same source. A canal whose parallel railway is finished thirteen years after it opens did not organize the county's west until 1900. [inference] The end bound is left at 1900 for now because \"displaced\" and \"abandoned\" are different dates and this corpus has argued neither.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The name this period is called by is younger than the period.** An act of 14 March 1849 folded the Miami Canal, the Miami Extension Canal and the Wabash and Erie into one Miami and Erie Canal, four years after boats were running through this county and twenty-four after the state resolved to dig. [verified] — [Miller, 1906](../../catalog/miller-allen-county-1906.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the water was for, in one price.** Coal at 90 cents a ton in Cincinnati, delivered to Spencerville and Delphos for a dollar of freight. [verified] — [Rusler, 1921](../../catalog/rusler-allen-county-1921.md), reporting it in 1921 as a rate worth having back — which is the clearest statement any source here makes of what the county lost when the canal stopped. [inference]",
           "tier": "inference"
         }
       ],
@@ -21095,6 +21233,18 @@
         {
           "text": "**Delphos is verified as a canal town after all**, on the same source that halves nothing: it sits \"on the Miami and Erie Canal, above the confluence of that waterway with the Wabash and Erie Canal system\", and the canal opened there in 1845. [verified] — same source. Its `located-in` edge is no longer an inference.",
           "tier": "verified"
+        },
+        {
+          "text": "**It has dimensions now, and two of them come from a book.** As built the Miami extension ran 114 miles, 5 feet deep, 36 feet wide at the bottom and 50 at the top. [verified] — [Miller, 1906](../../catalog/miller-allen-county-1906.md). The name is younger than the work: an act of 14 March 1849 folded the Miami Canal, the Miami Extension Canal and the Wabash and Erie into one Miami and Erie Canal, four years after boats were running through this county. [verified] — the same book.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The other two come from the ground.** The water standing in the Deep Cut is level at 835.29 feet over 7,375 feet of channel, to a standard deviation of 1.8 inches, and the cut is 45.8 feet deep from the crest of its spoil bank. North of it the channel that carries this canal's name in the county's water file falls 5.94 feet to the mile for 6.1157 miles, which is not a profile a canal has. [verified] — [USGS 3DEP](../../catalog/usgs-3dep-elevation.md); see [the Deep Cut](../measure/miami-and-erie-canal-deep-cut-2026.yml) and [the canal in this county](../measure/miami-and-erie-canal-in-allen-county-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Landmark is not wholly in Allen County.** The level pound crosses into Salem Township, Auglaize County, 4,617 feet from its north end, and 2,759 feet of it — 37 per cent — lie on the far side. [verified] — [the county-subdivision file](../../catalog/census-tiger-hydrography.md), point in polygon along the traced channel. The listing is filed under Allen alone. This node's statement that the Deep Cut lies in [Spencer Township](../place/spencer-township.yml) is true of the point the Register publishes and of most of the structure, and it is not true of all of it.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -24580,6 +24730,13 @@
     },
     {
       "from": "measure/allen-county-elevation-2026.yml",
+      "to": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usgs-3dep-elevation.md"
+    },
+    {
+      "from": "measure/allen-county-elevation-2026.yml",
       "to": "natural-feature/scioto-river-basin.yml",
       "relationship": "describes",
       "tier": "verified",
@@ -25592,6 +25749,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/gnis-domestic-names-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-national-register.yml",
+      "to": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/nrhp-nomination-documents.md"
     },
     {
       "from": "measure/allen-county-national-register.yml",
@@ -27426,6 +27590,62 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "to": "site/miami-and-erie-canal.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-3dep-elevation.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "to": "place/spencerville.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/nrhp-national-register.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "to": "measure/allen-county-national-register.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/nrhp-nomination-documents.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "to": "measure/allen-county-elevation-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usgs-3dep-elevation.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-in-allen-county-2026.yml",
+      "to": "site/miami-and-erie-canal.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-tiger-hydrography.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-in-allen-county-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-tiger-hydrography.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-in-allen-county-2026.yml",
+      "to": "measure/miami-and-erie-canal-deep-cut-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usgs-3dep-elevation.md"
+    },
+    {
+      "from": "measure/miami-and-erie-canal-in-allen-county-2026.yml",
+      "to": "measure/allen-county-roads-2010-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/ohio-counties-of-1820-and-their-names.yml",

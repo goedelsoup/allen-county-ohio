@@ -7669,6 +7669,245 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["cannot say where any of these buildings stood"],
         figures: &[],
     },
+    Assertion {
+        id: "the-water-in-the-cut-does-not-move",
+        statement: "The water standing in the Miami and Erie Canal's Deep Cut is level at 835.29 \
+                    feet above sea level over 7,375 feet of channel, to a standard deviation of 1.8 \
+                    inches. That flatness is what distinguishes a canal pound from a ditch.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**The water in the cut stands at 835.29 feet and it does not move.** Over 7,375 feet \u{2014} 1.397 miles \u{2014} the surface reads 835.29 feet above sea level with a standard deviation of 1.8 inches and a full range of 18. [verified] \u{2014} [USGS 3DEP](../../catalog/usgs-3dep-elevation.md), a 1,614 \u{d7} 2,605 export at one metre, traced along the channel bottom row by row. That flatness is the measurement: it is what a canal pound is, and no silted ditch or natural channel produces it."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "water surface, feet above sea level", value: 835.29, literal: "835.29" },
+            Figure { label: "length of the level pound, feet", value: 7375.0, literal: "7,375" },
+        ],
+    },
+    Assertion {
+        id: "fifty-two-feet-and-forty-five-point-eight",
+        statement: "The National Park Service says the Deep Cut \u{201c}ranges at places to 52 feet \
+                    in depth\u{201d}. The elevation surface gives 45.8 feet from the crest of the \
+                    spoil bank to the water and 27.8 feet from the fields at the same section. All \
+                    three are right, and they differ because they run between different pairs of \
+                    surfaces.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**The nomination says the cut runs to 52 feet deep, and the ground gives three answers.** [verified] \u{2014} [the nomination](../../catalog/nrhp-nomination-documents.md), whose description section reads *\"As shallow as five feet, the Deep Cut section of the Canal ranges at places to 52 feet in depth\"* and *\"The Deep Cut extends over a mile.\"*"),
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**Eighteen feet of the deepest reading is earth that came out of the hole.** At the section where the cut measures 45.8 feet from its bank crest it measures 27.8 feet from the fields, because the spoil was cast into banks standing 18.0 feet above the ground it was thrown onto. Averaged over the pound the banks stand 5.0 feet proud. [verified] \u{2014} the same source, in cross-section every metre."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "the nomination's depth, feet", value: 52.0, literal: "52" },
+            Figure { label: "spoil crest to water, feet", value: 45.8, literal: "45.8" },
+            Figure { label: "fields to water, feet", value: 27.8, literal: "27.8" },
+        ],
+    },
+    Assertion {
+        id: "five-feet-of-water-closes-the-gap",
+        statement: "The elevation model stops at the water, and Miller's 1906 history gives the \
+                    Miami extension five feet of it. 45.8 and 5 make 50.8 against the nomination's \
+                    52, so a disagreement that looked like six feet is one.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**The third line is the nomination's, and it is reached by adding five feet of water.** The model returns the topmost surface, so a depth taken from it stops at whatever floats on the thing; [Miller's history](../../catalog/miller-allen-county-1906.md) gives the Miami extension five feet of water, 36 feet of width at the bottom and 50 at the top. 45.8 and 5 make 50.8 against a claim of 52. [inference] \u{2014} computed here; see [a depth needs both of its ends named](../../decisions/a-depth-needs-both-of-its-ends-named.yml)."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "crest to canal bottom, feet", value: 50.8, literal: "50.8" },
+        ],
+    },
+    Assertion {
+        id: "eighteen-feet-of-the-depth-came-out-of-the-hole",
+        statement: "Where the Deep Cut measures 45.8 feet from the crest of its bank it measures \
+                    27.8 feet from the fields, because the spoil was cast into banks standing 18.0 \
+                    feet above the ground it was thrown onto. Over the whole pound the banks stand \
+                    5.0 feet proud.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**Eighteen feet of the deepest reading is earth that came out of the hole.** At the section where the cut measures 45.8 feet from its bank crest it measures 27.8 feet from the fields, because the spoil was cast into banks standing 18.0 feet above the ground it was thrown onto. Averaged over the pound the banks stand 5.0 feet proud. [verified] \u{2014} the same source, in cross-section every metre."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "spoil above the fields at the deepest section, feet", value: 18.0, literal: "18.0" },
+            Figure { label: "spoil above the fields, mean, feet", value: 5.0, literal: "5.0" },
+        ],
+    },
+    Assertion {
+        id: "the-landmark-is-thirty-seven-per-cent-in-another-county",
+        statement: "Allen County's only National Historic Landmark crosses the county line. 4,617 \
+                    feet of the Deep Cut's level pound lie in Spencer Township and 2,759 in Salem \
+                    Township, Auglaize County, and the listing is filed under Allen alone.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**Allen County's only Landmark is 37 per cent in Auglaize County.** The pound crosses the county line at 40.685033, \u{2212}84.365726: 4,617 feet of it lie in Spencer Township and 2,759 in Salem Township, Auglaize. [verified] \u{2014} [the county-subdivision file](../../catalog/census-tiger-hydrography.md), point in polygon along the traced channel. The listing is filed under Allen alone, and Auglaize's twenty-five listings include no canal and no Landmark. [verified] \u{2014} [the National Register](../../catalog/nrhp-national-register.md), both counties queried."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "in Allen County, feet", value: 4617.0, literal: "4,617" },
+            Figure { label: "in Auglaize County, feet", value: 2759.0, literal: "2,759" },
+        ],
+    },
+    Assertion {
+        id: "the-registers-boundary-is-a-box-over-half-of-it",
+        statement: "The National Register's polygon for the Deep Cut is a box drawn round bounding \
+                    coordinates at 1:24,000. It runs 3,871 feet against the 7,375 feet of level \
+                    channel, and it straddles the county line too.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**The Register's own polygon is a box, and it covers half the pound.** It runs 3,871 feet against the level channel's 7,375, it carries `BND_TYPE` \"Circumscribed polygon\" derived from bounding coordinates at 1:24,000 with \u{b1}12 metres claimed, and it straddles the county line as well. [verified] \u{2014} the same dataset, its boundary fields."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "the Register's box, feet", value: 3871.0, literal: "3,871" },
+            Figure { label: "the level channel, feet", value: 7375.0, literal: "7,375" },
+        ],
+    },
+    Assertion {
+        id: "the-water-is-as-wide-as-the-canals-floor",
+        statement: "The water in the Deep Cut is 36.1 feet wide. Miller's history gives the canal 36 \
+                    feet at the bottom and 50 at the top, so what stands in it is a canal well below \
+                    its working level.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**The water is 36.1 feet wide, which is the width of the canal's floor and not of its top.** [verified] \u{2014} the same source, measured as the run of surface within five inches of the pound level; the tenth and ninetieth percentiles are 16.4 and 45.9 feet. Against Miller's 36 at the bottom and 50 at the top, a canal holding water to its floor width is a canal well below its working level. [inference]"),
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**As built it was 5 feet deep, 36 feet wide at the bottom and 50 at the top.** The Miami extension was completed in 1845 and ran 114 miles. [verified] \u{2014} [Miller, 1906](../../catalog/miller-allen-county-1906.md). The name is younger than the work: by an act of 14 March 1849 the Miami Canal, the Miami Extension Canal and the Wabash and Erie became one Miami and Erie Canal. [verified] \u{2014} the same book."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it", "cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "width of the standing water, feet", value: 36.1, literal: "36.1" },
+        ],
+    },
+    Assertion {
+        id: "deep-cut-was-a-place-before-it-was-a-landmark",
+        statement: "Deep Cut was a settlement on the canal before it was a Landmark on it. J. H. \
+                    Dunathan, an ex-commissioner of Auglaize County, moved his general store from \
+                    Deep Cut into Spencerville in August 1881.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**Deep Cut was a settlement before it was a Landmark.** J. H. Dunathan, an ex-commissioner of Auglaize County, moved his general store \"from Deep Cut on the canal\" into Spencerville in August 1881. [verified] \u{2014} [Miller, 1906](../../catalog/miller-allen-county-1906.md)."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[],
+    },
+    Assertion {
+        id: "how-much-earth-was-moved-is-a-choice-of-datum",
+        statement: "The excavation still open below the surrounding grade at the Deep Cut measures \
+                    449,450 cubic yards if the original ground is taken 80 metres out and 706,339 if \
+                    it is taken 170 metres out. There is no third source to choose between them, so \
+                    the corpus publishes the range.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-deep-cut-2026.yml", "**This corpus cannot say how much earth was moved to dig it.** The excavation still open below the surrounding grade measures 449,450 cubic yards if the original ground is taken 80 metres out and 706,339 if it is taken 170 metres out, and there is no third source to choose between them. [verified] \u{2014} [the elevation surface](../../catalog/usgs-3dep-elevation.md), integrated four ways. What has silted into the trench, and what was carted off to build embankment elsewhere, are in neither figure."),
+        ],
+        answers: &["cannot say how much earth was moved to dig it"],
+        figures: &[
+            Figure { label: "void, grade taken 80 m out, cubic yards", value: 449450.0, literal: "449,450" },
+            Figure { label: "void, grade taken 170 m out, cubic yards", value: 706339.0, literal: "706,339" },
+        ],
+    },
+    Assertion {
+        id: "one-canal-three-features-two-spellings",
+        statement: "Allen County's water file names the Miami and Erie Canal three times under two \
+                    spellings, running 6.1157 miles in three pieces, and none of the three is the \
+                    stretch that is a National Historic Landmark.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**The county's water file names it three times, under two spellings, and none of the three is the Landmark.** `Miami & Erie Cnl` carries two features and `Miami-Erie Cnl` a third; together they run 32,290.7 feet \u{2014} 6.1157 miles \u{2014} and all of them lie north of the Deep Cut. [verified] \u{2014} [TIGER/Line hydrography](../../catalog/census-tiger-hydrography.md), projected to EPSG:26916."),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "canal linework named for it, miles", value: 6.1157, literal: "6.1157" },
+        ],
+    },
+    Assertion {
+        id: "what-carries-the-name-falls-six-feet-to-the-mile",
+        statement: "Along the 6.1157 miles the water file draws, the channel bottom descends 41.9 \
+                    feet at 5.94 feet to the mile and fits a straight line with an R\u{b2} of 0.976. \
+                    A canal is level between its locks; the longest stretch of this one level to ten \
+                    inches is 2,297 feet.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**A canal is level between its locks, and what carries the name here falls the whole way.** Along the 6.1157 miles the file draws, the channel bottom descends 41.9 feet at 5.94 feet to the mile, and a straight line fits it with an R\u{b2} of 0.976. [verified] \u{2014} [the elevation surface](../../catalog/usgs-3dep-elevation.md) sampled every ten metres along the mapped line. The longest stretch of it level to within ten inches is 2,297 feet."),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "fall over the mapped canal, feet", value: 41.9, literal: "41.9" },
+            Figure { label: "gradient, feet per mile", value: 5.94, literal: "5.94" },
+        ],
+    },
+    Assertion {
+        id: "a-field-ditch-in-the-canals-line",
+        statement: "What lies in the canal's line north of the Deep Cut is a field ditch 26.2 feet \
+                    across a metre above its bottom and 5.9 feet below the fields, with one berm \
+                    surviving. The Deep Cut holds 36.1 feet of standing water and lies 17.1 feet \
+                    below its fields.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**What is in the canal's line north of Spencerville is a field ditch.** It is 26.2 feet across a metre above its bottom and lies 5.9 feet below the fields, with a berm surviving along one side; the Deep Cut holds 36.1 feet of standing water and lies 17.1 feet below its fields. [verified] \u{2014} the same source, in cross-section every ten metres. Whether the ditch was cut in the canal's own prism or beside it is a question this file has no field for. [inference]"),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "width of the ditch, feet", value: 26.2, literal: "26.2" },
+            Figure { label: "depth below the fields, feet", value: 5.9, literal: "5.9" },
+        ],
+    },
+    Assertion {
+        id: "the-canal-got-its-name-four-years-after-the-boats",
+        statement: "As built the Miami extension ran 114 miles, 5 feet deep, 36 feet wide at the \
+                    bottom and 50 at the top. The name the corpus calls it by is younger than the \
+                    work: an act of 14 March 1849 folded three canals into one Miami and Erie, four \
+                    years after boats were running through Allen County.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**As built it was 5 feet deep, 36 feet wide at the bottom and 50 at the top.** The Miami extension was completed in 1845 and ran 114 miles. [verified] \u{2014} [Miller, 1906](../../catalog/miller-allen-county-1906.md). The name is younger than the work: by an act of 14 March 1849 the Miami Canal, the Miami Extension Canal and the Wabash and Erie became one Miami and Erie Canal. [verified] \u{2014} the same book."),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "length of the Miami extension, miles", value: 114.0, literal: "114" },
+        ],
+    },
+    Assertion {
+        id: "the-first-boat-through-delphos-was-the-marshall",
+        statement: "The first canalboat through Delphos was the Marshall, on 4 July 1845, and the \
+                    first passenger packet came in 1846 carrying Governor-elect William Bebb, met by \
+                    the town's businessmen at a lock a mile away with fresh horses. It is the only \
+                    mention of a lock in this county in any of the three county histories.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**The first boat through Delphos was the *Marshall*, on 4 July 1845.** The first passenger packet came in 1846 carrying Governor-elect William Bebb, and the businessmen of Delphos met it \"at a lock a mile away\" and put in fresh horses. [verified] \u{2014} [Rusler, 1921](../../catalog/rusler-allen-county-1921.md), which is the only mention of a lock in this county the corpus has found in any of its three histories."),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[],
+    },
+    Assertion {
+        id: "six-point-nine-nine-miles-and-five-more-nobody-draws",
+        statement: "Six and 99 hundredths of a mile of this canal have been measured in Allen \
+                    County, and at least 5.1 miles more are drawn by no file the corpus holds \
+                    \u{2014} through Spencerville, between two mapped segments, and north from the \
+                    last mapped vertex to the Putnam County line.",
+        topic: "history",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**This corpus cannot say how many miles of the canal lie in Allen County.** It has measured 6.99 \u{2014} the 6.1157 the water file draws plus the 4,617 feet of the Deep Cut that fall on the Allen side \u{2014} and it has located at least 5.1 miles more that no file it holds draws at all: 1.160 miles between the cut and the first mapped segment, through Spencerville; 1.084 miles between the second mapped segment and the third; and about 2.9 miles from the last mapped vertex north to the Putnam County line, which passes through [Delphos](../place/delphos.yml). [verified] \u{2014} the same files, measured and differenced here."),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "measured in Allen County, miles", value: 6.99, literal: "6.99" },
+        ],
+    },
+    Assertion {
+        id: "one-nomination-in-twenty-nine-is-readable",
+        statement: "Twenty-eight of Allen County's twenty-nine National Register nominations have \
+                    never been scanned. Every reference number returns a PDF and twenty-eight of \
+                    them are a placeholder served with HTTP 200; the one real document is the \
+                    Landmark's.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-national-register.yml", "**Twenty-eight of the twenty-nine nominations have never been scanned, and the one that has is the Landmark.** Every reference number returns a PDF from the Park Service's gallery; for twenty-eight of them it is a one-page placeholder, byte-identical across listings, reading \"The PDF file for this National Register record has not yet been digitized\" \u{2014} served with HTTP 200. [verified] \u{2014} [the nomination documents](../../catalog/nrhp-nomination-documents.md), all twenty-nine requested and hashed. So the words behind this county's list are readable for one listing in twenty-nine, and it is the one that already had the most attached to it."),
+        ],
+        answers: &["The dataset carries `STATUS: Listed` on all twenty-nine and would simply omit a delisted property, so it cannot answer its own question"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
