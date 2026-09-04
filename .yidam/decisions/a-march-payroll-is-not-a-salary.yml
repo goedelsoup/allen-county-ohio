@@ -1,0 +1,74 @@
+id: a-march-payroll-is-not-a-salary
+summary: >-
+  The Census Bureau publishes what each of Allen County's forty-five governments paid its full-time
+  employees in March 2022, standardised to 31 days. Multiplying it by twelve gives a number that
+  looks exactly like an annual salary and is not one, because March is not a typical month for a
+  school district, a highway department or a park. The same file flags every cell as reported or
+  imputed, and seven of the county's governments — including the second largest — did not report.
+context: |
+  [The public employment files](../catalog/census-public-employment-and-payroll.md) give this county
+  its first count of who works for a township. They give three columns that each mean something
+  narrower than they look:
+
+  - **Payroll is March.** The documentation says "all payroll in the data file are 31-day monthly
+    equivalent values for the month of March". Twelve times the county government's March full-time
+    payroll is $49.7 million and twelve times Perry Township's is $734,040 across eight people. The
+    second of those is not a salary of $91,755; it is what eight people were paid in one March.
+  - **Every figure carries a flag.** Of the 45 governments, 28 reported full-time employment
+    directly, 8 reported it with an analyst correction, 2 reported a unit total that the Bureau
+    pro-rated across functions, and 7 did not report at all. Their numbers are the previous year's,
+    grown by a rate borrowed from units of similar size and type that did respond. **Lima City
+    School District, the second-largest local government employer in the county at 657 full-time
+    employees, is one of the seven.**
+  - **A census year and a survey year share a file name.** 2022 enumerates all 45 units; 2024 sampled
+    two of them.
+
+  There is a second source for pay and it is built for the question. The Quarterly Census of
+  Employment and Wages publishes `avg_annual_pay` by county and ownership from actual annual wage
+  totals: local government in Allen County was $50,882 in 2023 and $53,722 in 2024.
+decision: |
+  **Four rules.**
+
+  1. **Take headcount from the government file and pay from the wage file.** The employment files
+     say how many people each named government employs, which nothing else here does. The QCEW says
+     what a job in that ownership pays over a year, which the employment files cannot. Neither
+     substitutes for the other and no figure in this corpus mixes them.
+
+  2. **Never annualise a March payroll.** Where a monthly figure is published, publish it monthly and
+     say the month. Where an annual pay figure is wanted, it comes from the wage file with its own
+     universe stated.
+
+  3. **State the flag distribution beside any total that mixes reported and imputed cells.** Not per
+     cell — that is unreadable — but as a count, and by name where an imputed unit is large enough
+     to move the total. A reader who is told 3,806 full-time local government employees is owed the
+     fact that 657 of them are a growth rate applied to 2021.
+
+  4. **Say whether the year is a census or a sample, in the same sentence as the count.** "Forty-five
+     governments in 2022" and "the two governments the 2024 survey reached" are both true and only
+     one of them is a county.
+rationale: |
+  **This is the corpus's first source with an imputation flag on every cell, and the flag changes a
+  headline.** Elsewhere the corpus has met suppression
+  ([a suppressed range is not a margin](a-suppressed-range-is-not-a-margin.yml)) and modelling
+  ([a modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml)).
+  Imputation is neither: the number is about this unit, derived from this unit's own prior year,
+  and it is not an observation of 2022. A file that tells you which is which and is ignored is
+  worse than one that never said.
+
+  **The March problem is not hypothetical and the shape of the error is knowable.** A school
+  district in March is fully staffed; a county highway department in March has not begun its
+  season; a park district in March is closed. Annualising all three by the same factor moves them in
+  three different directions, and the corpus has no way to say by how much. That is why rule 2 is a
+  prohibition rather than a correction factor.
+
+  **What it costs.** The most quotable table available from this source: forty-five governments with
+  an average salary beside each. What is published instead is a headcount beside a March payroll,
+  and one annual pay figure for the whole ownership.
+
+  **What it buys.** Two figures for local government employment in Allen County in 2022 that were
+  built by different agencies under different rules — 4,790 from the government file and 4,534 from
+  the wage file — and a reason to believe both. Five per cent apart is what two honest instruments
+  looking at the same payroll from opposite ends should differ by; had the corpus annualised March
+  and compared it with annual wages, the disagreement would have been about arithmetic instead.
+status: accepted
+date: "2026-09-04"
