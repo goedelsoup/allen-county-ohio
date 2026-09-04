@@ -23,7 +23,6 @@ location:
       possible. Streamed and filtered to twenty ZCTAs rather than stored.
 used-by:
   - ../corpus/measure/allen-county-zip-codes-2020.yml
-  - ../corpus/measure/allen-county-federal-contributions-1980-2024.yml
 ---
 
 **It publishes land and not people.** Every relationship file carries `AREALAND_PART` — the area of
