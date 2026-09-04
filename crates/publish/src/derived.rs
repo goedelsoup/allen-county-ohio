@@ -10522,6 +10522,252 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Landeck pupils, 2018", value: 84.0, literal: "84" },
         ],
     },
+    Assertion {
+        id: "the-plant-was-begun-in-may-1942",
+        statement: "The Army's installation south of Lima was begun in May 1942, on 170 acres of \
+                    farmland, by the Ohio Steel Foundry Company, to make centrifugally cast gun \
+                    tubes.",
+        topic: "history",
+        supports: &[
+            support!("event/the-army-builds-at-lima-1942.yml", "**In May 1942 the Ohio Steel Foundry Company began building a government-owned, contractor-operated plant about five miles south of the centre of Lima, on open land previously used for agriculture, to produce centrifugally cast gun tubes.** [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md), *World War II to 1950*. The site covered 170 acres."),
+        ],
+        answers: &["cannot say who owned the 170 acres before the Army did"],
+        figures: &[
+            Figure { label: "acres at the start", value: 170.0, literal: "170" },
+        ],
+    },
+    Assertion {
+        id: "the-mission-was-cancelled-before-the-plant-was-finished",
+        statement: "The plant's mission was cancelled inside the year and before the building was \
+                    finished: a new way of piercing seamless steel tubing made a gun-tube casting \
+                    plant unnecessary, and the Ordnance Corps turned the site into a depot for \
+                    modifying combat vehicles instead.",
+        topic: "history",
+        supports: &[
+            support!("event/the-army-builds-at-lima-1942.yml", "**The mission it was built for was cancelled before it was finished.** A new process for piercing seamless steel tubing to form light artillery pieces made the casting plant unnecessary, and only a few months after construction began the Ordnance Corps decided to use the facility as a depot for modifying and processing tanks and other combat vehicles instead. [verified] \u{2014} the same source. The installation that stands here was therefore never built for the thing it has done for eighty years, nor for the thing it was begun for."),
+        ],
+        answers: &["cannot say who owned the 170 acres before the Army did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-hundred-thousand-vehicles-passed-through-lima",
+        statement: "More than a hundred thousand combat vehicles passed through the Lima \
+                    installation before the war ended \u{2014} which corroborates a headline of \
+                    August 1944 this corpus had read as 75,000 through damaged scanning and declined \
+                    to write down.",
+        topic: "history",
+        supports: &[
+            support!("event/the-army-builds-at-lima-1942.yml", "**More than a hundred thousand combat vehicles passed through before the war was over.** [verified] \u{2014} the same source. That corroborates the figure this corpus refused to write down: a headline of August 1944 gave `75,01)0` through damaged scanning, and seventy-five thousand by that August is what a hundred thousand by 1945 implies. [inference] See [two scans of one book](../../decisions/two-scans-of-one-book.yml)."),
+        ],
+        answers: &["cannot say who owned the 170 acres before the Army did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "building-147-is-the-war-still-standing",
+        statement: "Building 147, the plant's primary factory building, opened in 1943 with 582,000 \
+                    square feet of floor space behind curtain walls glazed from ground line to roof \
+                    in single-pane glass. About fifty numbered buildings stood at Lima during the \
+                    war and eight of them still form the core of the plant.",
+        topic: "history",
+        supports: &[
+            support!("event/the-army-builds-at-lima-1942.yml", "**Building 147 is the war still standing.** The primary factory building, irregular in plan, originally provided 582,000 square feet of floor space \u{2014} a steel-frame, high-bay structure whose curtain walls were glazed from near ground line to roof line with single-pane glass in steel sash. About fifty numbered buildings or structures stood at Lima during the war, and Building 147 and seven others named in the report still form the core of the plant. [verified] \u{2014} the same source. The Detroit architectural engineering firm of Shreve, Anderson and Walker planned and designed the installation from March to September 1942, and the work was completed by another Detroit firm headed by William Edward Lapp."),
+        ],
+        answers: &["cannot say who owned the 170 acres before the Army did"],
+        figures: &[
+            Figure { label: "square feet, 1943", value: 582000.0, literal: "582,000" },
+        ],
+    },
+    Assertion {
+        id: "the-ground-stayed-at-163-acres",
+        statement: "A seven-acre sale in 1943 took the installation from 170 acres to 163, and it \
+                    stayed that size for eight years.",
+        topic: "history",
+        supports: &[
+            support!("event/the-army-builds-at-lima-1942.yml", "**The ground stayed at 163 acres for eight years.** A seven-acre sale in 1943 reduced the installation from 170 acres to 163 contiguous ones, and it remained that size until 1951. [verified] \u{2014} the same source; see [the 1951 purchase](the-united-states-buys-the-tank-plant-ground-1951.yml), which is an expansion of this and not a founding."),
+        ],
+        answers: &["cannot say who owned the 170 acres before the Army did"],
+        figures: &[
+            Figure { label: "acres, 1943 to 1951", value: 163.0, literal: "163" },
+        ],
+    },
+    Assertion {
+        id: "the-deed-was-an-expansion-not-a-founding",
+        statement: "The five warranty deeds of June 1951 bought 295 contiguous acres south-east of a \
+                    base built in 1942, taking the installation from 163 acres to 458 and making \
+                    room for a tank test track. It is an expansion, and this site had recorded it as \
+                    a founding.",
+        topic: "history",
+        supports: &[
+            support!("event/the-united-states-buys-the-tank-plant-ground-1951.yml", "**It is an expansion and this node called it a founding.** The Army bought 295 contiguous acres just south-east of a base built in May 1942, taking the installation from 163 acres to 458, to lay out a tank test track and hold room for later building. [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md), *Korean War to 1975*. The quarter section abstracted here is the south-eastern end of a nine-year-old installation."),
+        ],
+        answers: &["does not establish when anything was built on the ground it describes"],
+        figures: &[
+            Figure { label: "acres bought", value: 295.0, literal: "295" },
+            Figure { label: "acres after", value: 458.0, literal: "458" },
+        ],
+    },
+    Assertion {
+        id: "four-farmhouses-are-numbered-buildings",
+        statement: "Four privately-owned houses came with the 1951 land and were still numbered \
+                    buildings on the installation in 1984, one of them built between about 1900 and \
+                    1925. A farm bought whole leaves its house standing.",
+        topic: "history",
+        supports: &[
+            support!("event/the-united-states-buys-the-tank-plant-ground-1951.yml", "**The dwellings came with the land.** The Army's report lists four privately-owned houses acquired in this purchase and still numbered as buildings on the installation in 1984, one of them built between about 1900 and 1925. [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md). A farm bought whole leaves its house standing, and four of them are on this ground."),
+        ],
+        answers: &["does not establish when anything was built on the ground it describes"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-coordinate-sits-on-the-1951-land",
+        statement: "No building stands within a hundred and fifty metres of the tank plant's \
+                    coordinate of record and the nearest large footprint is 632 metres off \u{2014} \
+                    which is what a coordinate on land bought for a test track looks like when the \
+                    works stand on ground bought nine years earlier.",
+        topic: "history",
+        supports: &[
+            support!("event/the-united-states-buys-the-tank-plant-ground-1951.yml", "**And the corpus's own coordinate finding was pointing at this all along.** No building stands within a hundred and fifty metres of the installation's coordinate of record, and the nearest large footprint is 632 metres away. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md); see [the buildings](../measure/allen-county-buildings-2019.yml). That is what a coordinate on land bought for a test track looks like when the works stand on the ground bought nine years earlier. [inference] See [a parcel is not an installation](../../decisions/a-parcel-is-not-an-installation.yml)."),
+        ],
+        answers: &["does not establish when anything was built on the ground it describes"],
+        figures: &[
+            Figure { label: "metres to the nearest large footprint", value: 632.0, literal: "632" },
+        ],
+    },
+    Assertion {
+        id: "the-depot-is-the-plant-under-its-first-name",
+        statement: "The wartime Lima Tank Depot and the tank plant standing south of Lima today are \
+                    one installation. Construction began in May 1942, United Motors Service took it \
+                    over that November, and more than a hundred thousand vehicles passed through \
+                    before the war ended.",
+        topic: "history",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**This installation is the other one, and it is the Lima Tank Depot.** Construction began here in May 1942; the Ordnance Corps turned it from a gun-tube plant into a depot for modifying and processing combat vehicles before it was finished; United Motors Service, a General Motors subsidiary, took it over under contract in November 1942; and more than a hundred thousand vehicles passed through before the war ended. [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md), *World War II to 1950*; see [the Army's first shovel](../event/the-army-builds-at-lima-1942.yml). Every one of those facts was already in this corpus, attached to a node the corpus had argued was somewhere else."),
+        ],
+        answers: &["cannot say what the plant has been since 1984"],
+        figures: &[],
+    },
+    Assertion {
+        id: "four-names-for-one-installation",
+        statement: "One set of buildings has carried four names: Lima Tank Depot through the war, \
+                    Lima Ordnance Depot from late 1945, Lima Army Modification Center through the \
+                    1970s, and Lima Army Tank Plant on the M-1 award. A sewer easement of 1972 found \
+                    in the Recorder's books uses the third.",
+        topic: "history",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**The names are a chronology.** Lima Tank Depot through the war; Lima Ordnance Depot from late 1945, holding mothballed vehicles; Lima Army Modification Center through the 1970s, when it received and processed 12,400 new M880 trucks; and Lima Army Tank Plant on the M-1 award. [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md). The 1972 sewer easement running from \"(Lima Army Modification Center) Sec'y of the Army\" that this corpus found in the Recorder's books is the third of those names in use, and it is the same place. [inference]"),
+        ],
+        answers: &["cannot say what the plant has been since 1984"],
+        figures: &[
+            Figure { label: "M880 trucks processed", value: 12400.0, literal: "12,400" },
+        ],
+    },
+    Assertion {
+        id: "general-dynamics-has-operated-it-since-1982",
+        statement: "General Dynamics has been the plant's contractor-operator since March 1982, when \
+                    Chrysler sold Chrysler Defense to it for $348.5 million. Chrysler had begun M-1 \
+                    production at Lima in May 1979 and delivered the first two production tanks in \
+                    February 1980.",
+        topic: "history",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**It operates it, and the document that says so is the Army's.** General Dynamics took over M-1 production at Lima and at Detroit in March 1982 as contractor-operator, succeeding the Chrysler Corporation and then Chrysler Defense, which had begun production of M-1s at Lima in May 1979 and delivered the first two production tanks in February 1980. [verified] \u{2014} the same source. The question this node carried for eighteen years of contract awards is answered by a forty-two-year-old report on its buildings."),
+            support!("site/lima-army-tank-plant.yml", "What changed in 1994 is who filed and not who operated. General Dynamics has been the contractor-operator of this installation continuously since March 1982, when Chrysler sold Chrysler Defense to it for $348.5 million. [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md), *M-1 Tank Era*. The reporting entity at a government-owned plant is a compliance arrangement rather than a contract award, and the two moved independently."),
+        ],
+        answers: &["cannot say what the plant has been since 1984"],
+        figures: &[
+            Figure { label: "million dollars", value: 348.5, literal: "348.5" },
+        ],
+    },
+    Assertion {
+        id: "the-plant-was-nearly-idle-through-vietnam",
+        statement: "The installation was nearly idle from 1954 to 1975, through the whole of the \
+                    Vietnam War, with parts of it leased out for commercial use; it shrank from 458 \
+                    acres to 373 when land went to an Army Reserve training centre and to Johnny \
+                    Appleseed Park.",
+        topic: "history",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**The installation's size is a chronology of its use.** 170 acres in May 1942; 163 after a seven-acre sale in 1943 and unchanged for eight years; 458 by June 1951, when the Army added 295 contiguous acres to the south-east for a tank test track; and 373 by the mid-1970s, after land was released to an Army Reserve training centre and to Johnny Appleseed Park. [verified] \u{2014} [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md). It was nearly idle from 1954 to 1975, through the whole of the Vietnam War, and parts of it were leased out for commercial use."),
+        ],
+        answers: &["cannot say what the plant has been since 1984"],
+        figures: &[
+            Figure { label: "acres by the mid-1970s", value: 373.0, literal: "373" },
+        ],
+    },
+    Assertion {
+        id: "no-archeologist-has-looked-at-this-ground",
+        statement: "No archeological investigation has ever been conducted on the tank plant's land, \
+                    and the Army's own overview says so while reporting that no site is known there. \
+                    An absence of sites in a file that records no survey is an absence of looking.",
+        topic: "history",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**No archeologist has ever looked at this ground.** The Army's companion overview reports the lack of any known archeological site on the installation and states that no archeological investigation has ever been conducted on its land, recommending a reconnaissance survey of a 53-acre parcel then scheduled for construction. [verified] \u{2014} [the archeological overview](../../catalog/dtic-lima-army-tank-plant-reports.md); see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml). An absence of sites in a file that records no survey is an absence of looking. [inference]"),
+        ],
+        answers: &["cannot say what the plant has been since 1984"],
+        figures: &[
+            Figure { label: "acre parcel recommended for survey", value: 53.0, literal: "53" },
+        ],
+    },
+    Assertion {
+        id: "limas-mayor-came-back-in-1933",
+        statement: "Lima changed its city government from the manager-commission form back to mayor \
+                    and council in 1933, eleven years after the commission charter took effect and \
+                    six years before the next mayor this site could find.",
+        topic: "history",
+        supports: &[
+            support!("event/lima-returns-to-mayor-and-council-1933.yml", "**\"In 1933 Lima changed its city government from the Manager-Commission form to Mayor-Council.\"** [verified] \u{2014} [History of Lima, Ohio](../../catalog/hackman-history-of-lima-1951.md), the booklet's chronology of the 1930s."),
+        ],
+        answers: &["cannot say how the change was made"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-commission-form-lasted-eleven-years",
+        statement: "The seventeen years the commission charter node could say nothing about are now \
+                    eleven and six, with a dated change between them: the charter took effect on 1 \
+                    January 1922 and the office of mayor returned in 1933.",
+        topic: "history",
+        supports: &[
+            support!("event/lima-adopts-commission-government-1922.yml", "**The office returned in 1933, and the commission form lasted eleven years.** [verified] \u{2014} [History of Lima, Ohio](../../catalog/hackman-history-of-lima-1951.md); see [the return](lima-returns-to-mayor-and-council-1933.yml). The mayor the corpus found cutting twelve men from the street department in November 1939 was serving under a form of government six years old, and the seventeen years this node could say nothing about are now eleven and six with a dated change between them."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-buses-began-in-1938",
+        statement: "Motor buses began replacing Lima's electric street cars in 1938, cars that had \
+                    served the city for over fifty years. It is the end of a street railway this \
+                    site could follow under four company names from June 1878 to 1921 and no \
+                    further.",
+        topic: "history",
+        supports: &[
+            support!("event/the-buses-replace-the-streetcars-1938.yml", "**\"It was in 1938 that motor busses began replacing the electric street cars that had served the city for over fifty years.\"** [verified] \u{2014} [History of Lima, Ohio](../../catalog/hackman-history-of-lima-1951.md), the booklet's chronology of the 1930s."),
+        ],
+        answers: &["cannot say when the last electric car ran in Lima"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-histories-and-one-fourth-of-july",
+        statement: "Two Lima histories a generation apart put the first electric car on the Fourth \
+                    of July and differ by a year: the 1921 county history has 1886, and a booklet of \
+                    1952 has the street railway converted on July 4th, 1887.",
+        topic: "history",
+        supports: &[
+            support!("event/the-first-electric-car-in-lima-1886.yml", "**A second local historian puts it on the same day of a different year.** \"In 1887 an electric generating plant was built and on July 4th, the street railway was converted to an electric line, among the first of its kind\". [verified] \u{2014} [History of Lima, Ohio](../../catalog/hackman-history-of-lima-1951.md). Two Lima histories a generation apart agree on the Fourth of July and differ by one year, and neither cites anything. The `occurred` date stays at 1886 because the earlier book is nearer the event, and the disagreement is recorded rather than resolved. [inference] See [three witnesses and three dates](../../decisions/three-witnesses-and-three-dates.yml)."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-locomotive-works-ended-as-baldwin-lima-hamilton",
+        statement: "The Lima Locomotive Works was \"now known as the Baldwin-Lima-Hamilton Corp.\" \
+                    by 1951, and descends from Carnes, Harper & Co., organized in 1869 to make \
+                    sawmill machinery. Both ends of the chronology are one sentence each and neither \
+                    transition is dated.",
+        topic: "history",
+        supports: &[
+            support!("organization/lima-locomotive-works.yml", "**The end of the name is dated to within a year and the beginning to within one company.** By 1951 the Lima Locomotive Works was \"now known as the Baldwin-Lima-Hamilton Corp.\", and the works descend from Carnes, Harper & Co., organized in 1869 for the manufacture of sawmill machinery. [verified] \u{2014} [History of Lima, Ohio](../../catalog/hackman-history-of-lima-1951.md). That is a merger history in two words and an origin in one sentence, from a chamber of commerce booklet that names no date for either transition."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
