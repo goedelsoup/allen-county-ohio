@@ -45,10 +45,21 @@ description: |
   every subdivision. [inference] — see
   [the housing units](allen-county-housing-units-2020.yml), whose open block this closes.
 
-  [open] Why the units are empty. Occupancy status in this file is a binary; the vacancy-status
-  table that distinguishes for-rent, for-sale, seasonal, and other vacant is not in the
-  redistricting file and is in the Demographic and Housing Characteristics file, which the API will
-  not serve without a key and which this corpus has not fetched as a flat file.
+  **Why the units are empty, from the file this node said it had not fetched.** 1,312 of the 3,628
+  are in neither market — not for sale and not for rent — against 1,265 for rent and 402 for sale.
+  [verified] — [the characteristics file](../../catalog/census-2020-dhc.md), table H5; see
+  [the vacancy status](allen-county-vacancy-status-2010-2020.yml). The open question this node
+  carried is closed, and the answer changes what the 8.14 per cent means: a third of it is not a
+  market at all.
+
+  **The units column above is a count and the two beside it are not.** 44,563 is carried unchanged
+  from every block, because the number of housing units in a block is one of the three quantities
+  the 2020 census held invariant; 40,935 and 3,628 are the output of the algorithm that protected
+  everything else, and so is every occupancy figure in the subdivision table. [verified] —
+  [the technical documentation](../../catalog/census-2020-dhc.md), chapter 4; see
+  [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml).
+  Nothing above is withdrawn on that account. The claims made from it are about the county and its
+  thirteen subdivisions, which is the scale the algorithm is built to preserve.
 properties:
   parameter: occupied housing units, Allen County
   value: "40935"
@@ -67,10 +78,18 @@ properties:
 
     Both closures were checked: the thirteen subdivision populations sum to the county's 102,206
     and their units to 44,563, with no residual.
+
+    The same table was later read from the Demographic and Housing Characteristics file and agrees
+    on all 3,552 blocks. [verified] That is not corroboration — the two files are one answer
+    released twice — and it is recorded so that no later reader takes it for one.
 links:
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified
     source: ../../catalog/census-2020-redistricting-file.md
+  - target: allen-county-vacancy-status-2010-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
   - target: ../measure.ont.yml
     relationship: instance-of

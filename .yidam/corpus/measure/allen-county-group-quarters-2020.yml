@@ -135,9 +135,17 @@ properties:
     landmark only where the two carry the same land area and the same internal point. Two do.
     [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml).
 
-    The 2020 census applied disclosure avoidance to every published block figure, so a single
-    small cell is noisy; the county totals are not, and the two large correctional cells are
-    corroborated by the geometry they sit on.
+    The 2020 census applied disclosure avoidance to every published figure in this table, at every
+    geography. The sentence that stood here — that the county totals are not noisy — was wrong: the
+    census holds three quantities invariant and a county's group-quarters population is not among
+    them. What is invariant is the number and major type of each occupied group-quarters facility
+    in each block, which is a different fact and is not published as a number. [verified] — the
+    technical documentation of
+    [the characteristics file](../../catalog/census-2020-dhc.md), chapter 4; see
+    [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml).
+    Nothing in this node is withdrawn: the two large correctional cells are corroborated by the
+    geometry they sit on, and that corroboration is what carries them, not an invariance they never
+    had.
 links:
   - target: ../place/allen-county.yml
     relationship: describes
