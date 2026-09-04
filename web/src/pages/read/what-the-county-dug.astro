@@ -1,0 +1,119 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const level = assertion('the-water-in-the-cut-does-not-move')
+const three = assertion('fifty-two-feet-and-forty-five-point-eight')
+const five = assertion('five-feet-of-water-closes-the-gap')
+const spoil = assertion('eighteen-feet-of-the-depth-came-out-of-the-hole')
+const width = assertion('the-water-is-as-wide-as-the-canals-floor')
+const county = assertion('the-landmark-is-thirty-seven-per-cent-in-another-county')
+const box = assertion('the-registers-boundary-is-a-box-over-half-of-it')
+const scan = assertion('one-nomination-in-twenty-nine-is-readable')
+const place = assertion('deep-cut-was-a-place-before-it-was-a-landmark')
+const three2 = assertion('one-canal-three-features-two-spellings')
+const falls = assertion('what-carries-the-name-falls-six-feet-to-the-mile')
+const ditch = assertion('a-field-ditch-in-the-canals-line')
+const built = assertion('the-canal-got-its-name-four-years-after-the-boats')
+const boat = assertion('the-first-boat-through-delphos-was-the-marshall')
+const miles = assertion('six-point-nine-nine-miles-and-five-more-nobody-draws')
+const dug = assertion('how-much-earth-was-moved-is-a-choice-of-datum')
+
+const px = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 9.1, 9.2, 9.3, 9.4, 9.5]
+const pcut = [834.7, 835.1, 835.3, 835.4, 835.4, 835.3, 835.3, 835.4, 835.3, 835.3, 835.5, 835.7, 835.4, 835.2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+const pditch = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 815.7, 811.8, 814.5, 813.6, 813.2, 814.7, 813.9, 813.8, 814.1, 813.2, 812.9, 812.1, 811.7, 811.3, 810.4, 809.7, 809.8, 808.7, 808.2, 807.7, 806.6, 806.7, 805.7, 804.1, 806.1, 806.2, 805.7, 805.8, 805.4, 805.1, 804.7, 804.0, 803.6, 803.2, 804.1, null, null, null, null, null, null, null, null, null, null, 793.5, 791.1, 790.7, 790.3, 788.8, 788.9, 788.1, 787.7, 786.9, 786.2, 786.0, 785.5, 783.8, 783.4, 782.1, 781.7, 780.9, 780.6, 780.2, 779.2, 778.6, 778.2, 777.9, 777.7, 777.4]
+
+const profileSpec = line(
+  px,
+  [
+    { name: 'the Deep Cut', y: pcut },
+    { name: 'what carries the name north of it', y: pditch },
+  ],
+  {
+    xTitle: 'Miles north along the canal, from the south end of the Deep Cut',
+    yTitle: 'Channel bottom, feet above sea level',
+    labelLast: true,
+  },
+)
+
+const depthSpec = bar(
+  ['the fields to the water', 'the bank crest to the water', 'the bank crest to the bottom', "the nomination's claim"],
+  [27.8, 45.8, 50.8, 52],
+  { yTitle: 'Feet', labelValues: true },
+)
+---
+
+<Article slug="what-the-county-dug">
+  <p>
+    Allen County has one National Historic Landmark and it is a hole in the ground. The Deep Cut of
+    the Miami and Erie Canal was entered on the National Register on 15 October 1966, the day the
+    Register began, and the corpus has carried it ever since as a reference number, a date and an
+    arbitrary point. The elevation surface it already holds turns out to measure it.
+  </p>
+  <AssertionCard assertion={level} open />
+  <ChartFigure
+    id="profile"
+    title="A canal is level between its locks, and only one of these two is"
+    caption="The channel bottom along the canal, sampled every tenth of a mile from the south end of the Deep Cut. The first mile and two fifths is water standing at one height. Everything north of it is a channel that descends the whole way. The blanks are the stretches no file draws and this reading has not traced."
+    columns={['Miles north', 'the Deep Cut', 'north of it']}
+    rows={px.filter((_, i) => i % 8 === 0).map((v, j) => {
+      const i = j * 8
+      return [v, pcut[i] === null ? '—' : `${pcut[i]} ft`, pditch[i] === null ? '—' : `${pditch[i]} ft`]
+    })}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="profile" set:html={JSON.stringify(profileSpec)} is:inline />
+
+  <h2>How deep is deep</h2>
+  <AssertionCard assertion={three} />
+  <ChartFigure
+    id="depth"
+    title="Four numbers about one trench, and no two of them run between the same surfaces"
+    caption="The depth of the Deep Cut at its deepest section, measured four ways. The first three are read from the elevation surface; the fourth is what the National Park Service wrote in 1966. The gap between the second and the fourth is the water the model cannot see through."
+    columns={['Measured from', 'Feet']}
+    rows={[
+      ['the fields to the water', '27.8'],
+      ['the bank crest to the water', '45.8'],
+      ["the bank crest to the canal's bottom", '50.8'],
+      ["the nomination's claim", '52'],
+    ]}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="depth" set:html={JSON.stringify(depthSpec)} is:inline />
+  <AssertionCard assertion={five} />
+  <AssertionCard assertion={spoil} />
+  <Gloss>
+    An elevation model returns whatever is on top. Over water it returns the water, which is why the
+    reading is level to 1.8 inches over 7,375 feet — no silted bed is that flat — and why it stops
+    five feet above the canal's floor. Add the five feet Miller's 1906 history gives the Miami
+    extension and the federal claim and the modern measurement land a foot apart. The rule the
+    afternoon produced is that a depth is a difference between two surfaces and needs both of them
+    named.
+  </Gloss>
+  <AssertionCard assertion={width} />
+  <AssertionCard assertion={dug} />
+
+  <h2>The Landmark is not all here</h2>
+  <AssertionCard assertion={county} />
+  <AssertionCard assertion={box} />
+  <AssertionCard assertion={scan} />
+  <AssertionCard assertion={place} />
+
+  <h2>The rest of the canal</h2>
+  <AssertionCard assertion={three2} />
+  <AssertionCard assertion={falls} />
+  <AssertionCard assertion={ditch} />
+  <p>
+    A canal is level between its locks; that is the whole of what a lock is for. The channel that
+    carries this canal's name in the county's water file falls 41.9 feet in 6.1157 miles, at a rate
+    steady enough to fit a straight line, and it is 26.2 feet across where the cut is 36.1. What is
+    up there is drainage in the shape a canal left behind.
+  </p>
+  <AssertionCard assertion={built} />
+  <AssertionCard assertion={boat} />
+  <AssertionCard assertion={miles} />
+</Article>
