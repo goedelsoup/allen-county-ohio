@@ -1,0 +1,183 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const gives = assertion('what-the-county-gives')
+const five = assertion('five-times-the-real-giving')
+const med = assertion('the-median-gift-fell-a-hundredfold')
+const tails = assertion('both-tails-grew-at-once')
+const work = assertion('no-factory-worker-in-thirty-three-years')
+const jordan = assertion('the-congressman-is-the-largest-recipient')
+const morerep = assertion('the-money-is-more-republican-than-the-vote')
+const noparty = assertion('half-the-money-has-no-party')
+const y1984 = assertion('the-1984-row-is-the-file')
+const twice = assertion('reading-the-archive-twice')
+const zrule = assertion('the-zip-rule-is-worth-a-factor-of-two')
+const twenty = assertion('twenty-postal-areas-touch-the-county')
+const closes = assertion('the-join-closes-on-the-county')
+const landw = assertion('land-is-the-wrong-weight-for-people')
+const towns = assertion('three-towns-a-land-weight-misplaces')
+
+const cycles = [1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020, 2024]
+const perHead = [1.21, 0.08, 0.82, 1.28, 1.82, 1.66, 2.26, 4.24, 4.13, 4.62, 7.46, 6.06]
+const donors = [61, 6, 45, 135, 200, 239, 357, 433, 424, 809, 1279, 1331]
+const given = [
+  35606, 2884, 34128, 62625, 99056, 98562, 146027, 310452, 320455, 366332, 629417, 611489,
+]
+const medGift = [860, 500, 500, 500, 300, 300, 300, 500, 500, 35, 25, 24]
+const voteYears = [2000, 2004, 2008, 2012, 2016, 2020]
+const moneyR = [75.5, 85.2, 89.0, 84.5, 84.0, 77.0]
+const voteR = [67.2, 66.4, 60.5, 62.2, 69.6, 70.1]
+const labelled = [98.9, 86.7, 91.6, 78.7, 83.3, 75.4, 78.4, 86.8, 79.9, 65.0, 67.6, 52.1]
+
+const zipCodes = ['45817', '45887', '45850', '45833', '45806', '45830', '45810']
+const zipLand = [49.7, 55.2, 80.7, 45.9, 78.0, 32.8, 8.0]
+const zipPop = [81.3, 82.3, 91.8, 55.3, 76.6, 21.2, 2.9]
+const zipGap = zipPop.map((p, i) => Number((p - zipLand[i]).toFixed(1)))
+
+const headSpec = line(cycles, [{ name: 'Per resident, 2024 dollars', y: perHead }], {
+  yTitle: 'Dollars per resident, 2024 prices',
+  labelLast: true,
+})
+const medSpec = line(
+  cycles,
+  [
+    { name: 'Median gift', y: medGift },
+    { name: 'Donors', y: donors },
+  ],
+  { yTitle: 'Dollars, and people', labelLast: true },
+)
+const vSpec = line(
+  voteYears,
+  [
+    { name: 'Republican share of money', y: moneyR },
+    { name: 'Republican share of the two-party vote', y: voteR },
+  ],
+  { yTitle: 'Per cent', tickSuffix: '%', labelLast: true },
+)
+const lblSpec = line(cycles, [{ name: 'Share the files can label', y: labelled }], {
+  yTitle: 'Per cent of the money assignable to a party',
+  tickSuffix: '%',
+  labelLast: true,
+})
+const zSpec = bar(zipCodes, zipGap, {
+  yTitle: 'Population share minus land share, points',
+  labelValues: true,
+})
+---
+
+<Article slug="what-the-county-gives">
+  <p>
+    A county reference can hold presidential returns to 1856, turnout, precincts, poll workers,
+    registration and ballot issues, and still not say what any of it costs. The Federal Election
+    Commission has published every itemized contribution since 1979 in files that need no key. The
+    difficulty is not getting them. It is that they record a mailing address and no county, and that
+    a careless reading of the 2024 file gives an answer two and a half times too large.
+  </p>
+  <AssertionCard assertion={gives} open />
+  <AssertionCard assertion={five} />
+  <ChartFigure
+    id="head"
+    title="Five times the giving, on a county eleven thousand people smaller"
+    caption="Itemized federal contributions from Allen County residents per head, in 2024 prices, by presidential cycle. The 1984 point is the record and not the county."
+    columns={['Cycle', 'Donors', 'Given', 'Per resident, 2024 $']}
+    rows={cycles.map((y, i) => [
+      y,
+      donors[i].toLocaleString('en-US'),
+      `$${given[i].toLocaleString('en-US')}`,
+      `$${perHead[i].toFixed(2)}`,
+    ])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="head" set:html={JSON.stringify(headSpec)} is:inline />
+  <AssertionCard assertion={y1984} />
+  <AssertionCard assertion={med} />
+  <AssertionCard assertion={tails} />
+  <ChartFigure
+    id="med"
+    title="The typical gift fell as the number of givers rose"
+    caption="Median itemized contribution in nominal dollars, against the number of distinct donors. The two lines cross in 2016, when conduits began aggregating small gifts to the point where they had to be written down."
+    columns={['Cycle', 'Median gift', 'Donors']}
+    rows={cycles.map((y, i) => [y, `$${medGift[i]}`, donors[i].toLocaleString('en-US')])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="med" set:html={JSON.stringify(medSpec)} is:inline />
+  <AssertionCard assertion={work} />
+  <Gloss>
+    Which is a fact about the record before it is a fact about the county. A contribution has to be
+    itemized once it passes $200 to one committee, and money routed through ActBlue or WinRed
+    aggregates at the conduit rather than at the recipient — a threshold far easier to cross. People
+    who gave twenty dollars in 1996 were invisible; people who give twenty dollars now are not. What
+    can be said is that the file's picture of who pays for politics here used to be doctors,
+    company presidents and the retired, and now includes 939 contributions from people who describe
+    their work as factory work.
+  </Gloss>
+
+  <h2>Where it goes</h2>
+  <AssertionCard assertion={jordan} />
+  <AssertionCard assertion={morerep} />
+  <ChartFigure
+    id="rvote"
+    title="More Republican than the vote, and less so every cycle"
+    caption="Republican share of Allen County's labelled federal contributions against the Republican share of its two-party presidential vote. The gap is widest in 2008, the year the Republicans polled worst here."
+    columns={['Year', 'Money', 'Vote', 'Gap']}
+    rows={voteYears.map((y, i) => [
+      y,
+      `${moneyR[i]}%`,
+      `${voteR[i]}%`,
+      `+${(moneyR[i] - voteR[i]).toFixed(1)}`,
+    ])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="rvote" set:html={JSON.stringify(vSpec)} is:inline />
+  <AssertionCard assertion={noparty} />
+  <ChartFigure
+    id="lbl"
+    title="Half the money now goes somewhere the files cannot label"
+    caption="Share of Allen County's federal contributions going to a committee the Commission's own masters assign to a party, directly or through its candidate. Joint fundraising committees and conduits carry neither."
+    columns={['Cycle', 'Labelled']}
+    rows={cycles.map((y, i) => [y, `${labelled[i]}%`])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="lbl" set:html={JSON.stringify(lblSpec)} is:inline />
+  <p>
+    So the obvious sentence — that Allen County's political money has become less Republican — is one
+    this reference declines to write. The labelled Republican share falls from 89 per cent to 56 over
+    the same sixteen years in which the labelled share of the money falls from 87 to 52, and the
+    unlabelled half is joint fundraising committees named for candidates on both sides. Two
+    movements, one file, no way to separate them here.
+  </p>
+
+  <h2>Reading it at all</h2>
+  <AssertionCard assertion={twice} />
+  <AssertionCard assertion={zrule} />
+  <AssertionCard assertion={twenty} />
+  <AssertionCard assertion={closes} />
+  <AssertionCard assertion={landw} />
+  <ChartFigure
+    id="zips"
+    title="Where land gets the county wrong"
+    caption="For each ZIP code that straddles the county line, the share of its people in Allen County minus the share of its land. Positive means a village on the Allen County side of a line the farmland ignores; negative means the opposite."
+    columns={['ZIP', 'Land in Allen', 'People in Allen', 'Difference']}
+    rows={zipCodes.map((z, i) => [
+      z,
+      `${zipLand[i]}%`,
+      `${zipPop[i]}%`,
+      `${zipGap[i] > 0 ? '+' : ''}${zipGap[i]}`,
+    ])}
+    height={310}
+  />
+  <script type="application/json" data-chart-spec="zips" set:html={JSON.stringify(zSpec)} is:inline />
+  <AssertionCard assertion={towns} />
+  <p>
+    The weights were built by joining the Census Bureau's ZIP-to-block file to the block populations
+    of the 2020 census, and the Allen County parts of the twenty areas sum to 102,206 — the county's
+    census count, to the person. Nothing was scaled to make that happen. It is the check that says
+    the assignment is right, and it is the reason every dollar above is a weighted dollar rather than
+    a dollar from a postal area someone decided to call the county.
+  </p>
+</Article>

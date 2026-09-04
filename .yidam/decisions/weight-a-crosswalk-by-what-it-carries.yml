@@ -1,0 +1,78 @@
+id: weight-a-crosswalk-by-what-it-carries
+summary: >-
+  Twenty ZIP-code areas touch Allen County and eight lie wholly inside it. Assigning a ZIP-coded
+  record to the county needs a rule, and the rule changes the answer by a factor of two. Bluffton's
+  ZIP is 49.7 per cent of Allen County by land and 81.3 per cent by population, which is the whole
+  argument: a crosswalk built to move people must be weighted by people.
+context: |
+  Every federal contribution record carries a mailing ZIP and no county. The Census Bureau publishes
+  a ZCTA-to-county relationship file, and what it publishes is land:
+
+      ZCTA    what it is        land in Allen    people in Allen
+      45817   Bluffton                 49.7%              81.3%
+      45887   Spencerville             55.2%              82.3%
+      45850   Harrod                   80.7%              91.8%
+      45833   Delphos                  45.9%              55.3%
+      45806   south of Lima            78.0%              76.6%
+      45830   Elida rural              32.8%              21.2%
+      45810   Ada                       8.0%               2.9%
+
+  The two columns disagree in both directions and by up to thirty-two points. They disagree because
+  a village sits on one side of a county line while the farmland around it spreads across the other,
+  and because the line was drawn in 1831 and the ZIP in the 1960s and neither consulted the other.
+
+  Three rules were available and each is defensible:
+
+      keep only the eight wholly-inside ZIPs        71.8% of the county's people, no outsiders
+      keep the thirteen majority-Allen ZIPs         98.2% of the county's people, 9,744 outsiders
+      weight every ZIP by its Allen population      100% of the county, in expectation
+
+  Applied to the same 2024 contributions they give $454,593, $650,446 and $611,489. The widest
+  reading — every ZIP that touches the county at all — gives $959,382, which is 2.11 times the
+  narrowest.
+decision: |
+  **When records are coded to one geography and wanted in another, build the crosswalk out of the
+  quantity being counted, not out of area. Where the quantity itself is unavailable, use the
+  nearest census of the population that produces it, and say which. Then compute the answer under
+  the alternatives and publish the spread.**
+
+  Three consequences:
+
+  *Land is the weight of last resort.* It is what relationship files publish, and it is wrong
+  wherever settlement is uneven — which is everywhere a village exists. Population weights were
+  built here by joining the ZCTA-to-block file to the block populations of the 2020 census, and the
+  join closes on 102,206, the county's count to the person.
+
+  *The rule is stated with the figure, not in a footnote.* Every dollar in this corpus's
+  contribution series is a population-weighted dollar, and the sentence that says so travels with
+  it.
+
+  *The spread is published even when it is small.* Between the two serious rules the 2024 total
+  differs by 6.4 per cent, and against the loosest rule by a factor of two. A reader who takes a
+  figure from one source and a figure from another has no way to know they used different rules
+  unless both are printed.
+rationale: |
+  **Why this is not [a grant file counts offices, not ground](a-grant-file-counts-offices-not-ground.yml).**
+  That rule is about a file naming the wrong geography — a federal award filed under the county of
+  the office that administers it rather than the county the money reaches. It says to read the
+  administrative unit for what it is. This rule is about a file naming a *real* geography that does
+  not nest in the one wanted, and the work is arithmetic rather than interpretation.
+
+  **What it bought here.** A defensible county figure from a national file with no county column,
+  and a measure of what the choice costs: 2.11 times between the loosest and tightest rule, 6.4 per
+  cent between the two that survive scrutiny. It also identified a claim this corpus had already
+  published that rests on a ZIP half outside the county.
+
+  **What would falsify the reading.** If land and population shares had agreed to within a point or
+  two across the twenty areas, the weight would not matter and the rule would be pedantry. They
+  differ by 31.6 points at Bluffton and 27.1 at Spencerville, in the direction that matters most:
+  the codes that carry the county's second and third towns are the ones land treats worst.
+
+  **What it generalises to.** Any file coded to a postal geography, a service area, a school
+  attendance zone, a hospital referral region, a labour-market area or a watershed, and wanted by
+  county: business patterns by ZIP, tax returns by ZIP, mortgage applications by tract, utility
+  customers by service territory. The weight should be establishments, returns, loans or customers
+  where those are published, and population where they are not — never area, unless area is the
+  thing being counted.
+status: accepted
+date: "2026-09-04"

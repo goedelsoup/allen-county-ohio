@@ -45,6 +45,15 @@ description: |
   classification produced by a programme with no inspection rather than a fact about tenure.
   [inference] — [the housing stock](allen-county-housing-stock-2023.yml). The corpus reports the
   split and reads nothing into it.
+
+  **The Bluffton figure above is a postal area and this corpus now knows how much of it is the
+  county.** ZIP 45817 is 49.7 per cent of Allen County by land and 81.3 per cent by the people who
+  live in it, and it reaches into Hancock and Putnam counties as well. [verified] —
+  [the ZIP codes](allen-county-zip-codes-2020.yml). These rows were filtered to Allen County by the
+  agency before the ZIP was ever read, so nothing here is over-counted; what the ZIP cannot do is
+  say that the damage was in the village, since 45817 covers a good deal of township either side of
+  a line the flood did not observe. [inference] See
+  [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml).
 properties:
   parameter: federal individual and household assistance approved in Allen County
   value: "4237572"
@@ -59,6 +68,10 @@ properties:
     endpoints carry different fields — owners have an inspected-damage dollar figure and renters
     have damage bands — so no damage total is computed across both. [inference]
 links:
+  - target: allen-county-zip-codes-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-zcta-relationship-files.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified
