@@ -1,0 +1,178 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const miles = assertion('seven-hundred-and-thirty-five-miles-of-channel')
+const nameless = assertion('two-thirds-of-this-county-water-has-no-name')
+const naming = assertion('a-name-is-what-runs-all-year')
+const headwater = assertion('the-county-is-headwater-country')
+const goes = assertion('where-all-of-it-goes')
+const lima = assertion('lima-has-the-road-and-not-the-water')
+const meet = assertion('the-river-is-where-they-meet')
+const joins = assertion('the-auglaize-joins-the-maumee-and-it-is-no-longer-assumed')
+const indiana = assertion('the-main-stem-is-named-for-a-river-in-indiana')
+const three = assertion('three-questions-that-named-one-field')
+const between = assertion('the-little-ottawa-joins-between-the-two-gauges')
+const shawnee = assertion('fort-shawnee-has-more-water-than-lima')
+const field = assertion('the-far-side-of-a-field')
+const gulf = assertion('the-water-ends-in-the-gulf-of-saint-lawrence')
+const ditches = assertion('the-ditches-on-the-other-side-have-no-name')
+const sink = assertion('one-reach-reaches-nothing')
+const swamp = assertion('forty-two-acres-of-the-great-black-swamp')
+const ponds = assertion('most-of-the-standing-water-is-a-farm-pond')
+const darke = assertion('a-creek-filed-in-a-county-it-never-touches')
+const canal = assertion('the-canal-is-the-county-line')
+const gauges = assertion('two-files-two-gauges-one-square-mile')
+
+const spec = (a: typeof miles, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const classesSpec = spec(miles, 'Miles inside the county')
+const orderSpec = spec(headwater, 'Miles inside the county')
+const goesSpec = spec(goes, 'Miles inside the county')
+const fieldSpec = spec(field, 'Miles of channel to the sea')
+---
+
+<Article slug="the-far-side-of-a-field">
+  <p>
+    The county's rivers have been in the corpus since the first day of it, and until now almost
+    nothing about them had been read from a file that draws the water. Names came from a gazetteer,
+    which gives a stream two coordinates and no course. Basins came from the watershed boundaries,
+    which give a drainage area and never say which stream a stream joins first. Three separate
+    entries said outright which field would settle them — the identifier of the reach immediately
+    downstream — and named it years before there was any way to read it.
+  </p>
+  <p>
+    There was a way all along. The federal flow network publishes that field, and every other
+    attribute it computes, on a service with no key and no registration. Two requests return every
+    channel in Allen County.
+  </p>
+
+  <h2>What is in the county</h2>
+  <AssertionCard assertion={miles} open />
+  <ChartFigure
+    id="classes"
+    title="Allen County's channel, by what the file calls it"
+    caption="Clipped to the county boundary. Artificial paths are lines drawn through standing water so the network joins up; the canal-or-ditch miles are one feature, and it is the Miami and Erie."
+    columns={['Class', 'Miles']}
+    rows={miles.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="classes" set:html={JSON.stringify(classesSpec)} is:inline />
+  <p>
+    Seven hundred and thirty-five miles of watercourse and two thousand two hundred and twenty-six
+    miles of road: three miles of road for every mile of water, in a county whose ground would not
+    drain on its own. Two thirds of the water is dry for part of the year.
+  </p>
+  <AssertionCard assertion={nameless} />
+  <AssertionCard assertion={naming} />
+  <p>
+    Those two figures are the same fact from either end. Somebody named the water that was there in
+    August and left the rest alone, and the file that classes a channel as intermittent and the
+    people who declined to name it were not consulting each other.
+  </p>
+  <AssertionCard assertion={headwater} />
+  <ChartFigure
+    id="order"
+    title="Miles by Strahler stream order"
+    caption="Order 1 is a channel with nothing flowing into it. Order 5 is the highest in the county, and it belongs to the Ottawa River."
+    columns={['Order', 'Miles']}
+    rows={headwater.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="order" set:html={JSON.stringify(orderSpec)} is:inline />
+  <p>
+    Nothing large rises here because nothing large can. Four hundred square miles at the top of two
+    basins produces first-order streams and very little else, and the largest river in the county
+    is largest by a hundred miles of somebody else's drainage.
+  </p>
+  <AssertionCard assertion={lima} />
+
+  <h2>Where it goes</h2>
+  <AssertionCard assertion={goes} open />
+  <ChartFigure
+    id="trunks"
+    title="The first named river each mile of Allen County reaches"
+    caption="Traced downstream from every reach to the first level path named for a trunk. A further 0.73 miles reaches nothing at all."
+    columns={['River', 'Miles']}
+    rows={goes.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="trunks" set:html={JSON.stringify(goesSpec)} is:inline />
+  <AssertionCard assertion={meet} />
+  <p>
+    The gazetteer had put one coordinate at the end of two creeks and the head of a river, which is
+    what a confluence looks like in a names file and is also what two creeks joining a few yards
+    apart would look like. The network gives both creeks the same reach below them. They arrive
+    together, and the reach they arrive at is the Ottawa River's first.
+  </p>
+  <AssertionCard assertion={three} />
+  <AssertionCard assertion={joins} />
+  <AssertionCard assertion={indiana} />
+  <p>
+    That last one is the trap in this source and it is worth stating plainly. The network offers a
+    main stem as well as a reach, and the main stem is traced by drainage area rather than by name,
+    so it walks up the largest tributary at every fork and keeps going under whatever the largest
+    tributary is called. Rank the names on the path the Auglaize joins and the answer is a river in
+    Indiana — a real river, in the right basin, that this water really does reach. The rule the
+    corpus took from it is that an edge is read from the reach below and never from the path.
+  </p>
+  <AssertionCard assertion={between} />
+  <AssertionCard assertion={shawnee} />
+
+  <h2>The far side of a field</h2>
+  <AssertionCard assertion={field} open />
+  <ChartFigure
+    id="divide"
+    title="Two headwaters, 858 metres apart"
+    caption="Channel distance from each reach to the end of the network it belongs to. One ends in the Gulf of Saint Lawrence, the other in the Gulf of Mexico."
+    columns={['Direction', 'Miles of channel']}
+    rows={field.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="divide" set:html={JSON.stringify(fieldSpec)} is:inline />
+  <p>
+    The continental divide crosses nine miles of one township in the south-east of this county and
+    rises seventy-five feet across its whole length. Nothing on the ground marks it. What is on
+    either side of it is a field, and the two furrows nearest the line are half a mile apart and
+    seven hundred and fifty-two miles apart.
+  </p>
+  <AssertionCard assertion={gulf} />
+  <AssertionCard assertion={ditches} />
+  <p>
+    The named thing on the Ohio River side is the watershed. The water in it is three ditches, all
+    intermittent, all first order, all anonymous — and each of them begins inside Allen County and
+    leaves it.
+  </p>
+  <AssertionCard assertion={sink} />
+
+  <h2>Standing water</h2>
+  <AssertionCard assertion={ponds} />
+  <AssertionCard assertion={swamp} />
+  <p>
+    Four federal files describe wetness on this ground and they return 91,953 acres, 22,434, 704 and
+    42. They are measuring four different things — what is wet, what was wet, what grew, and what a
+    hydrographer chose to draw — and the smallest of them is a fair account of what a person walking
+    the county would find standing in it.
+  </p>
+
+  <h2>Three things the files got wrong, or nearly</h2>
+  <AssertionCard assertion={darke} />
+  <AssertionCard assertion={canal} />
+  <p>
+    The canal is drawn twice by two arms of the same government, at 6.12 miles and 8.87, on lines
+    that agree to about four metres. Most of the difference is a stretch north of Delphos where the
+    canal and the county boundary are the same line to within a metre and a half — so the drawn
+    canal crosses in and out of Allen County, and the answer to how much of it is here depends on
+    which draughtsman you ask.
+  </p>
+  <AssertionCard assertion={gauges} />
+  <p>
+    The last one is not a defect at all. Two files built for different purposes, decades apart, put
+    the same two instruments on the same two drainages within a square mile — which is what it looks
+    like when a source can be trusted, and worth recording as carefully as the failures.
+  </p>
+</Article>

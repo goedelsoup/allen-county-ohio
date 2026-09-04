@@ -1,0 +1,53 @@
+class: natural-feature
+label: Riley Creek
+description: |
+  The creek [Bluffton](../place/bluffton.yml) stands on. It rises at 40.8314418, −83.7591014 in
+  Hancock County and discharges at 41.011441, −83.9982772 in Putnam County. [verified] —
+  [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1072244.
+
+  **The gazetteer files it in Darke County and it never comes within seventy-eight kilometres of
+  Darke County.** Its mouth is 81.8 kilometres from the nearest point of that county and its source
+  78.0. [verified] — the same file's `county_name` against
+  [the 2024 county boundaries](../../catalog/census-tiger-roads.md), measured here. The corpus's
+  catalog entry for this file already warns that `county_name` will get you the wrong Allen County;
+  this is the same defect pointing at a county a hundred kilometres away, and the corpus cannot say
+  how it got there. See [the named features](../measure/allen-county-named-features-2026.yml).
+
+  **It flows into [the Blanchard River](blanchard-river.yml).** Its main stem is 36 reaches and
+  46.5 kilometres, ending on 221.9 square kilometres of drainage and an estimated 70.2 cubic feet
+  a second; the reach below it is `04100008000018`, named Blanchard River. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md).
+
+  **8.62 miles of it are in Allen County and 2.42 of those are inside Bluffton.** Little Riley
+  Creek adds 12.72 miles to the county and 0.79 to the village, and Marsh Run 3.82 and 0.40. Three
+  named streams and 2.07 miles of unnamed channel run through 3.652 square miles of village.
+  [verified] — [the stream network](../measure/allen-county-stream-network-2026.yml), clipped to
+  the 2024 place polygons inside the county line. Cranberry Run joins Riley Creek too, at 220.1
+  square kilometres. [verified] — the same source.
+
+  **It is the only stream in Allen County outside the Ottawa with a drainage area on record.** The
+  USGS site *Riley Creek near Bluffton* drains 64.4 square miles, against 160 for the Ottawa at
+  Allentown. [verified] — [the monitoring sites](../measure/allen-county-water-gauges-2026.yml).
+  The flow network puts 85.7 square miles above the creek's mouth, which is two counties
+  downstream of the gauge and not a disagreement with it. [inference]
+properties:
+  feature_type: creek
+  gnis_id: "1072244"
+  huc_code: "04100008 Blanchard (subbasin)"
+  mouth: 41.011441, -83.9982772, in Putnam County. Joins the Blanchard River. [verified]
+  source: 40.8314418, -83.7591014 — in Hancock County.
+links:
+  - target: blanchard-river.yml
+    relationship: flows-into
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../place/allen-county.yml
+    relationship: traverses
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../place/bluffton.yml
+    relationship: traverses
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of

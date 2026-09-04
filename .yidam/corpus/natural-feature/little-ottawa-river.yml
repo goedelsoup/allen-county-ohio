@@ -13,14 +13,39 @@ description: |
   feature, and this mouth is eighteen kilometres south-west of the point where
   [Hog Creek](hog-creek.yml) and [Little Hog Creek](little-hog-creek.yml) join to become
   [the Ottawa River](ottawa-river.yml). [inference] — computed here. So the name is evidence about
-  the relationship and the coordinates are not, and this corpus writes no `flows-into` edge on the
-  strength of a name. [open] What it flows into, and where it meets it.
+  the relationship and the coordinates are not, and this corpus wrote no `flows-into` edge on the
+  strength of a name, and waited for a file that draws the network.
+
+  **It flows into the Ottawa River, and it joins between the county's two gauges.** Its lowest
+  reach ends at 40.70595, −84.15394 — thirty-nine metres from the mouth GNIS gives — carrying 42.51
+  square kilometres of drainage, and the reach below it is `04100007001465`, named Ottawa River,
+  with 395.40. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The Ottawa above
+  the junction carries 348.10 and below it 395.40, and the difference is this river.
+
+  **That junction is the southernmost point of the Ottawa's course.** The river runs west through
+  [Lima](../place/lima.yml), turns south-south-west below the city to meet this one, and turns back
+  north-north-west for Allentown. [verified] — the same source, the reach sequence. The Lima gauge
+  stands on 335.11 square kilometres and the Allentown gauge on 414.82, so this river joins between
+  the only two gauges in the county with an annual peak record. [inference] — the same
+  source against [the monitoring sites](../measure/allen-county-water-gauges-2026.yml).
+
+  **Five and a half of its eight miles are inside Fort Shawnee.** 5.49 of the 8.01 miles the county
+  holds run inside the place that was a village until its electors ended it, and that place holds
+  16.54 miles of mapped channel against Lima's 14.67 — more water than the county seat. [verified]
+  — [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md) and
+  [the stream network](../measure/allen-county-stream-network-2026.yml); see
+  [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml).
 properties:
   feature_type: stream
   gnis_id: "1042678"
-  mouth: 40.7056059, -84.1538377
+  mouth: 40.7056059, -84.1538377 — joins the Ottawa River. [verified]
   source: 40.6600501, -84.0952244
 links:
+  - target: ottawa-river.yml
+    relationship: flows-into
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
   - target: ../place/allen-county.yml
     relationship: traverses
     claim_tag: verified

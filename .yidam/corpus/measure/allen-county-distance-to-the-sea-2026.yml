@@ -1,0 +1,81 @@
+class: measure
+label: How far Allen County's water is from the sea, 2026
+description: |
+  **Everything that falls on Allen County is between 1,001.9 and 1,071.9 miles from salt water,
+  except for 3.66 miles of channel that are 1,819.** [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), the `PathLength`
+  field, which gives the channel distance from a reach to the end of the network it belongs to.
+
+  **The county's water ends in the Gulf of Saint Lawrence.** 1,146 of the 1,150 reaches here
+  terminate on one level path — 398 reaches and 1,059.5 kilometres, named Saint Lawrence River on
+  163 of them and Niagara River on 44 — which ends at reach `04290008005819` with 774,375 square
+  kilometres of drainage above it. [verified] — same source. The county's water crosses Lake Erie,
+  goes over Niagara, crosses Lake Ontario and leaves North America at Quebec.
+
+  **Four main stems carry it.** [verified] — same source.
+
+      Ottawa River and Hog Creek       93 reaches     112.7 km
+      Auglaize River                  188            181.6
+      Maumee River                  1,008          1,244.4
+      Niagara and Saint Lawrence      398          1,059.5
+
+  **Three unnamed ditches in [Auglaize Township](../place/auglaize-township.yml) go the other
+  way.** 4.490, 8.381 and 2.963 kilometres of order-1 intermittent channel, 3.66 miles of it inside
+  the county, terminate on a level path named Mississippi River at path lengths of 2,927.4, 2,930.4
+  and 2,932.0 kilometres — 1,819.0 to 1,821.9 miles. [verified] — same source. Each of the three
+  rises in Allen County and leaves it; the subwatershed they lie in is named Cottonwood Ditch and
+  not one of the three channels carries a name. [verified] — the same source and
+  [GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1061000, filed in Hardin County.
+
+  **The divide, measured as a journey: 858 metres of ground and 752 miles of water.** The
+  uppermost reach of [the Auglaize River](../natural-feature/auglaize-river.yml) begins at
+  40.66875, −83.89299 and is 1,069.1 miles from the sea. The nearest Gulf-bound channel begins at
+  40.66121, −83.89517, **858 metres away**, and is 1,820.9. [verified] — the same source, the two
+  reaches' `PathLength`, measured between their upstream ends in EPSG:26916. Two furrows in one
+  township, and the water in them will not meet again on this continent. [inference]
+
+  **This is the same divide the corpus has already walked, from the third direction.** The
+  boundary between the two regions crosses 9.196 miles of Auglaize Township and rises 74.6 feet
+  across its length; four census blocks and ninety-nine people are on the far side of it.
+  [verified] — [the Scioto basin](../natural-feature/scioto-river-basin.yml). The polygons said
+  which basin, the elevations said where the ridge is, and the flow network says how far the two
+  sides are from the ocean.
+
+  **One reach in the county reaches no ocean at all.** 0.73 miles of intermittent channel in
+  American Township ends at a mapped sink at 40.77031, −84.15389, with a path length of zero and no
+  reach below it. [verified] — the same source, `NHDPlusSink`. Four more sinks lie just outside the
+  county line.
+
+  **The file cannot say that any water completes these journeys.** A path length is a sum of
+  channel segments on a map. Two thirds of Allen County's channel is intermittent, the network
+  crosses two of the Great Lakes as lines drawn through standing water, and nothing here is a
+  measurement of travel. [inference]
+properties:
+  parameter: channel distance from Allen County to the end of the network
+  value: "1001.9"
+  unit: miles, shortest
+  as_of: "2026"
+  method: |
+    `PathLength` on every NetworkNHDFlowline reach with length inside the 2024 TIGER county
+    polygon, converted at 1.609344 km to the mile. The field measures from the downstream end of
+    the reach, so the shortest figure belongs to the last reach of the Auglaize before it leaves
+    the county and the longest to a headwater. [verified] The 858 metres is between the upstream
+    endpoints of the two reaches in EPSG:26916 and is a straight line, not a walk. [verified]
+    Terminal identity is read from `TerminalPa` and the terminating reach's own name, not from the
+    most common name on its level path. [verified] — see
+    [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml).
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../place/auglaize-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../natural-feature/scioto-river-basin.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

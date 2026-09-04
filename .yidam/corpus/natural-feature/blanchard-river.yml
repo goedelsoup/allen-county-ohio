@@ -1,0 +1,49 @@
+class: natural-feature
+label: Blanchard River
+description: |
+  The river the north-east tenth of Allen County drains to, and it never enters the county. It
+  rises at 40.6572761, −83.602707 in Hardin County and discharges at 41.0414389, −84.2993915 in
+  Putnam County. [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md), feature
+  1065925.
+
+  **It joins the Auglaize, and the flow network says so rather than the name file.** Its main stem
+  is 160 reaches and 166.6 kilometres; the last of them carries 2,003.9 square kilometres of
+  drainage and an estimated 558.4 cubic feet a second, and the reach below it is `04100007000164`,
+  named Auglaize River, with 3,875.9. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). So this river
+  reaches Lake Erie by the same channel Allen County's other water does, two counties downstream of
+  where the county's own water joins it. [inference]
+
+  **78.39 miles of Allen County's channel reach the Blanchard first** — 10.7 per cent of the
+  county's 735.22, all of it in the north-east, and 31.83 of those miles are unnamed. [verified] —
+  [the stream network](../measure/allen-county-stream-network-2026.yml). The named ones are
+  [Riley Creek](riley-creek.yml) and its Little Riley, Cranberry Creek and its Little Cranberry,
+  Cranberry Run, Marsh Run, Dutch Run and May Ditch.
+
+  **The corpus has had the number and not the river.** Its subbasin `04100008` holds 348 of Allen
+  County's 3,552 census blocks, and fourteen of the county's 184 water monitoring sites are in it.
+  [verified] — [the Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md) and
+  [the monitoring sites](../measure/allen-county-water-gauges-2026.yml). Both were written before
+  this node existed, which is what it looks like when a corpus refers to a thing by its code.
+
+  **This node does not assert that the Blanchard touches Allen County.** No reach named for it lies
+  inside the county line; what lies inside is the water that reaches it. A river can be part of a
+  county's geography without being in it, which is the same relation
+  [the Maumee](maumee-river.yml) has here. [inference]
+properties:
+  feature_type: river
+  gnis_id: "1065925"
+  huc_code: "04100008 Blanchard (subbasin)"
+  mouth: 41.0414389, -84.2993915, in Putnam County. Joins the Auglaize River. [verified]
+  source: 40.6572761, -83.602707 — in Hardin County.
+links:
+  - target: auglaize-river.yml
+    relationship: flows-into
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: maumee-river-basin.yml
+    relationship: within
+    claim_tag: verified
+    source: ../../catalog/usgs-watershed-boundary.md
+  - target: ../natural-feature.ont.yml
+    relationship: instance-of
