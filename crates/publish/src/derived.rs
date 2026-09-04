@@ -8144,6 +8144,256 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "claims per 100 policy terms, inside", value: 2.76, literal: "2.76" },
         ],
     },
+    Assertion {
+        id: "the-jail-rate-more-than-tripled",
+        statement: "Allen County held 80 people in its jail in 1970 and 284 in 2019, on a \
+                    working-age population that fell over the same years. The rate went from 120 to \
+                    443 for every 100,000 residents aged 15 to 64.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**The county held 80 people in its jail in 1970 and 284 in 2019, on a working-age population that fell from 66,664 to 64,117.** [verified] \u{2014} [Vera's Incarceration Trends](../../catalog/vera-incarceration-trends.md), county 39003. The rate went from 120 to 443 for every 100,000 residents aged 15 to 64, and stood at 300 in 2023; see [the Justice Center](../site/allen-county-justice-center.yml)."),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "jail population, 1970", value: 80.0, literal: "80" },
+            Figure { label: "jail population, 2019", value: 284.0, literal: "284" },
+            Figure { label: "rate per 100,000 aged 15-64, 2019", value: 443.0, literal: "443" },
+        ],
+    },
+    Assertion {
+        id: "twenty-one-years-over-capacity",
+        statement: "Allen County's jail has been over its rated capacity in 21 of the 29 years that \
+                    carry both figures, and it was 139 per cent full in 2019.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**The jail has been over its rated capacity in 21 of the 29 years that carry both figures**, and it was 139 per cent full in 2019, its worst year. [verified] \u{2014} the same source, computed here. It was under capacity in the four sampled years to 1988 and in the four since 2020, and over it in every year between that carries a figure."),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "years over capacity", value: 21.0, literal: "21" },
+            Figure { label: "years carrying both figures", value: 29.0, literal: "29" },
+            Figure { label: "occupancy in 2019, per cent", value: 139.0, literal: "139" },
+        ],
+    },
+    Assertion {
+        id: "three-quarters-of-the-jail-is-pretrial",
+        statement: "Three quarters of the people in Allen County's jail have not been convicted of \
+                    anything. The unsentenced share was 46.2 per cent in 1970 and 40.2 in 2010; it \
+                    is 76.9 in 2023.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**Three quarters of the people in it have not been convicted of anything.** The unsentenced share was 46.2 per cent in 1970 and 40.2 in 2010; it is 52.8 in 2019, 68.3 in 2022 and 76.9 in 2023. [verified] \u{2014} the same source. The pretrial and sentenced counts in this file are apportioned to sum to the average daily population rather than measured beside it, so the share is a share of one number and not a ratio of two; see [the codebook's own warning](../../catalog/vera-incarceration-trends.md)."),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "unsentenced share, 1970", value: 46.2, literal: "46.2" },
+            Figure { label: "unsentenced share, 2023", value: 76.9, literal: "76.9" },
+        ],
+    },
+    Assertion {
+        id: "this-county-jails-above-the-state",
+        statement: "Allen County jails at about 1.6 times Ohio's rate \u{2014} 443 against 276 in \
+                    2019 and 300 against 219 in 2023 \u{2014} and the gap has been open since at \
+                    least 1993.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**This county jails at 1.6 times the state's rate.** 443 against Ohio's 276 in 2019, 300 against 219 in 2023, and 316 against 164 in 1993. [verified] \u{2014} the same dataset's state file. The gap has been open since at least 1993 and has never closed. [inference]"),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "Allen County, 2019", value: 443.0, literal: "443" },
+            Figure { label: "Ohio, 2019", value: 276.0, literal: "276" },
+        ],
+    },
+    Assertion {
+        id: "an-eighth-of-the-county-and-a-third-of-the-jail",
+        statement: "Black residents are 12.3 per cent of Allen County and 36.6 per cent of its jail. \
+                    Per 100,000 aged 15 to 64 the Black rate was 1,190 in 2019 and the white rate \
+                    268.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**Black residents are an eighth of the county and between a third and a half of its jail.** 36.6 per cent of the jail in 2019 and 37.6 in 2023, against 12.3 per cent of the county's people in 2020. [verified] \u{2014} the same source against [the county by race](allen-county-population-by-race-1970-2020.yml). Per 100,000 aged 15 to 64 the Black rate was 1,190 in 2019 and the white rate 268 \u{2014} 4.4 times \u{2014} and the ratio was 7.4 in 1999 and 6.6 in 1993. [verified] \u{2014} the same source. It has narrowed while both rates rose. [inference]"),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "Black share of the county, per cent", value: 12.3, literal: "12.3" },
+            Figure { label: "Black share of the jail, per cent", value: 36.6, literal: "36.6" },
+            Figure { label: "Black jail rate per 100,000", value: 1190.0, literal: "1,190" },
+        ],
+    },
+    Assertion {
+        id: "the-jail-series-is-a-sample",
+        statement: "Allen County's jail figures exist for 1970, 1978, 1983, 1988 and 1993 and then \
+                    for every year from 1999, because the federal Census of Jails runs every five to \
+                    eight years and the annual survey between them reaches about a third of jails. \
+                    The blank years are years nobody asked.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**The series is a sample and its gaps are the survey's.** Figures exist for 1970, 1978, 1983, 1988 and 1993 and then for every year from 1999, because the federal Census of Jails runs every five to eight years and the annual survey between them reaches about a third of jails. [verified] \u{2014} the same source's codebook. The blank years are years nobody asked, not years without a jail."),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-rows-that-pass-every-range-check",
+        statement: "Two of Allen County's jail rows are unusable and neither is marked: the year \
+                    2000 records 23 people, none of them men, between 224 in 1999 and 229 in 2001, \
+                    and 2020 records 3,614 admissions against 1,268 the year before in the twelve \
+                    months the population fell by half.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**Two rows are unusable and neither is marked.** The year 2000 records 23 people, 0 of them men and 23 women, between 224 in 1999 and 229 in 2001; the year 2020 records 3,614 admissions against 1,268 the year before and 585 the year after, in the twelve months the population fell by half. Both are excluded from every figure above. [verified] \u{2014} the same source, read against its neighbours."),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "jail population recorded for 2000", value: 23.0, literal: "23" },
+            Figure { label: "admissions recorded for 2020", value: 3614.0, literal: "3,614" },
+        ],
+    },
+    Assertion {
+        id: "where-was-the-jail-counted",
+        statement: "The 2020 census put 1,513 people in adult correctional facilities in Allen \
+                    County and all 1,513 are the two blocks that are the two state prisons. The \
+                    county jail's average daily population that year was 144, and the corpus \
+                    declines to say where they were counted.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-jail-1970-2023.yml", "**This corpus cannot say where the county's jail population was counted in the 2020 census.** That census put 1,513 people in adult correctional facilities in Allen County, and all 1,513 are accounted for by the two blocks that are the two state prisons; the jail's average daily population that year was 144. [verified] \u{2014} [the group quarters](allen-county-group-quarters-2020.yml) against the same source."),
+        ],
+        answers: &["cannot say where the county's jail population was counted in the 2020 census"],
+        figures: &[
+            Figure { label: "people in adult correctional facilities, 2020 census", value: 1513.0, literal: "1,513" },
+            Figure { label: "jail average daily population, 2020", value: 144.0, literal: "144" },
+        ],
+    },
+    Assertion {
+        id: "from-two-hundred-and-twenty-four-to-nine-hundred-and-seventy-eight",
+        statement: "Allen County's courts had 156 people in Ohio's prisons in 1983 and 627 in 2019 \
+                    \u{2014} a rate rising from 224 to 978 per 100,000 residents aged 15 to 64, on a \
+                    working-age population that fell by 5,579 over the same years.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-state-prison-1983-2019.yml", "**The county's courts had 156 people in Ohio's prisons in 1983 and 627 in 2019.** [verified] \u{2014} [Vera's Incarceration Trends](../../catalog/vera-incarceration-trends.md), county 39003, counted by county of commitment and not by where anyone is held. The rate went from 224 to 978 for every 100,000 residents aged 15 to 64, on a working-age population that fell by 5,579 over the same years."),
+        ],
+        answers: &["cannot say how long anyone sentenced from this county spends in prison"],
+        figures: &[
+            Figure { label: "in prison from the county, 1983", value: 156.0, literal: "156" },
+            Figure { label: "in prison from the county, 2019", value: 627.0, literal: "627" },
+            Figure { label: "rate, 2019", value: 978.0, literal: "978" },
+        ],
+    },
+    Assertion {
+        id: "ohio-stopped-and-this-county-did-not",
+        statement: "Allen County was below Ohio's imprisonment rate when the series opens, crossed \
+                    it in 1988 and has been above it every year since. Ohio's rate has sat between \
+                    590 and 682 in every year since 1995; this county's went from 737 to 978.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-state-prison-1983-2019.yml", "**It was below the state's rate when the series opens and half again above it when it closes.** Allen County crossed Ohio's rate in 1988 and has been above it every year since. [verified] \u{2014} the same dataset's state file. Ohio's rate has moved between 590 and 682 in every year since 1995 and was 662 in 2019; this county's went from 737 to 978 over the same twenty-five years. [inference] \u{2014} computed here. Whatever stopped the state's growth did not stop this county's."),
+        ],
+        answers: &["cannot say how long anyone sentenced from this county spends in prison"],
+        figures: &[
+            Figure { label: "Allen County, 2019", value: 978.0, literal: "978" },
+            Figure { label: "Ohio, 2019", value: 662.0, literal: "662" },
+        ],
+    },
+    Assertion {
+        id: "fewer-sent-and-more-inside",
+        statement: "Allen County's admissions to state prison peaked at 282 in 1992 and were 171 in \
+                    2019, down 39.4 per cent, while the number of its people in prison rose 47.9 per \
+                    cent. Fewer entering and more present is possible only if people are staying \
+                    longer.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-state-prison-1983-2019.yml", "**Fewer people are being sent and more are inside.** Admissions peaked at 282 in 1992 and were 171 in 2019 \u{2014} down 39.4 per cent \u{2014} while the population sentenced from here rose 47.9 per cent. [verified] \u{2014} the same source. Fewer entering and more present is possible only if people are staying longer, which follows from conservation and needs no model. [inference]"),
+        ],
+        answers: &["cannot say how long anyone sentenced from this county spends in prison"],
+        figures: &[
+            Figure { label: "prison admissions, 1992", value: 282.0, literal: "282" },
+            Figure { label: "prison admissions, 2019", value: 171.0, literal: "171" },
+            Figure { label: "fall in admissions, per cent", value: 39.4, literal: "39.4" },
+        ],
+    },
+    Assertion {
+        id: "the-ratio-is-not-a-length-of-stay",
+        statement: "Allen County's prison population divided by that year's admissions is 1.50 in \
+                    1992 and 3.67 in 2019. The corpus publishes that as a ratio of a stock to a flow \
+                    and not as an average length of stay, because the reading holds only where the \
+                    population is stationary and this one grew by half.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-state-prison-1983-2019.yml", "**The ratio of the two, and what it is not.** 424 over 282 is 1.50 and 627 over 171 is 3.67. [inference] \u{2014} the same source, divided here. Those are ratios of a population to a year's admissions and this corpus publishes them as that and not as an average length of stay, because that reading holds only where the population is stationary and this one grew by half; see [a stock divided by a flow is not a length of stay](../../decisions/a-stock-divided-by-a-flow-is-not-a-length-of-stay.yml)."),
+        ],
+        answers: &["cannot say how long anyone sentenced from this county spends in prison"],
+        figures: &[
+            Figure { label: "population over admissions, 1992", value: 1.5, literal: "1.50" },
+            Figure { label: "population over admissions, 2019", value: 3.67, literal: "3.67" },
+        ],
+    },
+    Assertion {
+        id: "eight-times-as-likely",
+        statement: "A Black resident of Allen County was eight times as likely to be in an Ohio \
+                    prison as a white one in 2019 \u{2014} 4,028 per 100,000 aged 15 to 64 against \
+                    486 \u{2014} and eleven times as likely in 2009. Black people are 12.3 per cent \
+                    of the county and 56.1 per cent of the people it sends to prison.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-state-prison-1983-2019.yml", "**A Black resident of this county was eight times as likely to be in prison as a white one.** 4,028 per 100,000 aged 15 to 64 against 486 in 2019, and 3,758 against 332 \u{2014} 11.3 times \u{2014} in 2009. [verified] \u{2014} the same source. **Black people are 12.3 per cent of Allen County and 56.1 per cent of the people it has sent to prison.** [verified] \u{2014} the same source against [the county by race](allen-county-population-by-race-1970-2020.yml). The ratio has narrowed because the white rate rose by 46 per cent over the decade while the Black rate rose by 7. [inference] \u{2014} computed here."),
+        ],
+        answers: &["cannot say how long anyone sentenced from this county spends in prison"],
+        figures: &[
+            Figure { label: "Black rate per 100,000", value: 4028.0, literal: "4,028" },
+            Figure { label: "white rate per 100,000", value: 486.0, literal: "486" },
+            Figure { label: "Black share of the county's prison population, per cent", value: 56.1, literal: "56.1" },
+        ],
+    },
+    Assertion {
+        id: "sent-from-here-and-held-here",
+        statement: "627 people were in prison from Allen County in 2019 and 1,513 were held in adult \
+                    correctional facilities inside it in 2020. A county that sends six hundred and \
+                    holds fifteen hundred is doing two different things, and only one of them is a \
+                    fact about its courts.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-state-prison-1983-2019.yml", "**This number and the county's prisons are about different people.** 627 people were in prison from Allen County in 2019; 1,513 people were held in adult correctional facilities inside Allen County in the 2020 census, and every one of them was in the two blocks that are the two state prisons. [verified] \u{2014} [the group quarters](allen-county-group-quarters-2020.yml) against the same source. A county that sends six hundred and holds fifteen hundred is doing two different things, and only one of them is a fact about its courts; see [located here is not of here](../../decisions/located-here-is-not-of-here.yml)."),
+        ],
+        answers: &["cannot say how long anyone sentenced from this county spends in prison"],
+        figures: &[
+            Figure { label: "sent from the county", value: 627.0, literal: "627" },
+            Figure { label: "held inside the county", value: 1513.0, literal: "1,513" },
+        ],
+    },
+    Assertion {
+        id: "the-criminal-caseload-did-not-move",
+        statement: "Allen County's general division filed 416 criminal cases in 2007 and 415 in \
+                    2017; the county sent 188 people to state prison in the first year and 173 in \
+                    the second; and it had 533 of its people in prison at the start and 627 by 2019.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-court-caseloads-2007-2017.yml", "**The flat criminal caseload rules out the obvious explanation for a rising prison population.** The general division's criminal filings were 416 in 2007 and 415 in 2017; the county's admissions to state prison were 188 and 173 over the same two years, and the number of its people in prison went from 533 to 566 and then to 627 by 2019. [verified] \u{2014} [Vera's Incarceration Trends](../../catalog/vera-incarceration-trends.md) against this table; see [the prison figures](allen-county-in-state-prison-1983-2019.yml). A court filing the same number of criminal cases and sending the same share of them away, with more of its people inside at the end, is a county where people are staying longer and not one where more is happening. [inference]"),
+        ],
+        answers: &["cannot say what has happened in these courts since 2017"],
+        figures: &[
+            Figure { label: "criminal filings, 2007", value: 416.0, literal: "416" },
+            Figure { label: "criminal filings, 2017", value: 415.0, literal: "415" },
+            Figure { label: "prison admissions, 2017", value: 173.0, literal: "173" },
+        ],
+    },
+    Assertion {
+        id: "the-census-lost-a-hundred-and-forty-people",
+        statement: "Allen County's Justice Center has a rated capacity of 216 and averaged 144 \
+                    people a day in 2020 \u{2014} the year the census recorded nobody in the \
+                    building at all.",
+        topic: "government",
+        supports: &[
+            support!("site/allen-county-justice-center.yml", "**It has a size now, and somebody was in it.** Its rated capacity is 216 and has been 204 or more since 1999; its average daily population in 2020 \u{2014} the year of that census \u{2014} was 144, and it has run between 176 and 284 in every other year since 1999. [verified] \u{2014} [Vera's Incarceration Trends](../../catalog/vera-incarceration-trends.md); see [the jail](../measure/allen-county-jail-1970-2023.yml). So the census's zero is not a building standing empty, and the open question below narrows to how the enumeration lost about a hundred and forty people. [inference]"),
+        ],
+        answers: &["The corpus does not know whether the census missed them, whether disclosure avoidance moved them, or whether the landmark and the working jail are no longer the same building"],
+        figures: &[
+            Figure { label: "rated capacity", value: 216.0, literal: "216" },
+            Figure { label: "average daily population, 2020", value: 144.0, literal: "144" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

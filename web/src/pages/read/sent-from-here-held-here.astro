@@ -1,0 +1,166 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const rate = assertion('from-two-hundred-and-twenty-four-to-nine-hundred-and-seventy-eight')
+const stopped = assertion('ohio-stopped-and-this-county-did-not')
+const fewer = assertion('fewer-sent-and-more-inside')
+const ratio = assertion('the-ratio-is-not-a-length-of-stay')
+const caseload = assertion('the-criminal-caseload-did-not-move')
+const eight = assertion('eight-times-as-likely')
+const sent = assertion('sent-from-here-and-held-here')
+const jrate = assertion('the-jail-rate-more-than-tripled')
+const cap = assertion('twenty-one-years-over-capacity')
+const pretrial = assertion('three-quarters-of-the-jail-is-pretrial')
+const above = assertion('this-county-jails-above-the-state')
+const eighth = assertion('an-eighth-of-the-county-and-a-third-of-the-jail')
+const sample = assertion('the-jail-series-is-a-sample')
+const rows = assertion('two-rows-that-pass-every-range-check')
+const where = assertion('where-was-the-jail-counted')
+const lost = assertion('the-census-lost-a-hundred-and-forty-people')
+
+const py = [1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
+const pAllen = [224, 274, 320, 321, 330, 373, 450, 475, 535, 606, 618, 697, 737, 743, 742, 703, 719, 719, 724, 725, 738, 746, 752, 757, 763, 768, 771, 788, 815, 802, 818, 812, 833, 833, 866, 894, 978]
+const pOhio = [254, 263, 295, 317, 341, 372, 431, 447, 500, 534, 562, 577, 611, 628, 651, 654, 631, 614, 604, 606, 592, 590, 602, 643, 662, 675, 673, 674, 662, 664, 675, 672, 682, 682, 674, 661, 662]
+const pPop = [156, 192, 225, 226, 233, 264, 316, 333, 374, 424, 433, 488, 517, 521, 519, 490, 500, 504, 508, 512, 516, 520, 525, 529, 533, 537, 538, 549, 565, 549, 556, 549, 557, 551, 566, 579, 627]
+const pAdm = [null, 105, 109, 117, 97, 133, 236, 213, 242, 282, 241, 240, 224, 134, 150, 161, 152, 156, 161, 166, 170, 174, 179, 184, 188, 192, 195, 184, 182, 136, 156, 170, 179, 162, 173, 171, 171]
+
+const jy = [1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+const jPop = [80, null, null, null, null, null, null, null, 77, null, null, null, null, 96, null, null, null, null, 107, null, null, null, null, 221, null, null, null, null, null, 224, null, 229, 231, 217, 250, 247, 276, 249, 220, 221, 209, 211, 236, 233, 226, 244, 281, 247, 281, 284, 144, 176, 204, 186]
+const jCap = [162, null, null, null, null, null, null, null, 153, null, null, null, null, 156, null, null, null, null, 116, null, null, null, null, 201, null, null, null, null, null, 217, null, 213, 210, 208, 206, 204, 217, 204, 210, 204, 204, 204, 204, 204, 204, 204, 204, 204, 204, 204, 204, 204, 216, 216]
+
+const rateSpec = line(
+  py,
+  [
+    { name: 'Allen County', y: pAllen },
+    { name: 'Ohio', y: pOhio },
+  ],
+  { yTitle: 'In prison per 100,000 residents aged 15–64', labelLast: true, zeroBased: true },
+)
+
+const scissorSpec = line(
+  py,
+  [
+    { name: 'in prison from the county', y: pPop },
+    { name: 'sent to prison that year', y: pAdm },
+  ],
+  { yTitle: 'People', labelLast: true, zeroBased: true },
+)
+
+const jailSpec = line(
+  jy,
+  [
+    { name: 'in the jail', y: jPop },
+    { name: 'rated capacity', y: jCap },
+  ],
+  { yTitle: 'People', labelLast: true, zeroBased: true },
+)
+
+const raceSpec = bar(
+  ['Black, prison', 'white, prison', 'Black, jail', 'white, jail'],
+  [4028, 486, 1190, 268],
+  { yTitle: 'Per 100,000 residents aged 15–64, 2019', labelValues: true },
+)
+---
+
+<Article slug="sent-from-here-held-here">
+  <p>
+    Two numbers in this county are called the prison population and they are about different people.
+    One counts everyone an Allen County court has sent to an Ohio prison, wherever they are held.
+    The other counts everyone held in the two state prisons north of Lima, wherever they are from.
+    The first is 627 and the second is 1,513, and the county line means the opposite thing in each.
+  </p>
+  <AssertionCard assertion={sent} open />
+  <AssertionCard assertion={rate} />
+  <ChartFigure
+    id="rate"
+    title="Below the state, then half again above it"
+    caption="People in Ohio prisons per 100,000 residents aged 15 to 64, counted by the county that sent them. Allen County crosses the state line in 1988. Ohio's rate has sat between 590 and 682 in every year since 1995; this county's kept climbing to 978."
+    columns={['Year', 'Allen County', 'Ohio']}
+    rows={py.filter((_, i) => i % 3 === 0 || py[i] === 2019).map((y) => {
+      const i = py.indexOf(y)
+      return [y, pAllen[i], pOhio[i]]
+    })}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="rate" set:html={JSON.stringify(rateSpec)} is:inline />
+  <AssertionCard assertion={stopped} />
+
+  <h2>Fewer go and more are there</h2>
+  <AssertionCard assertion={fewer} />
+  <ChartFigure
+    id="scissor"
+    title="The two lines cross and never meet again"
+    caption="People in prison from Allen County against the number it sent that year. Admissions peak at 282 in 1992 and run near 170 through the 2010s; the population sentenced from here rises the whole way."
+    columns={['Year', 'In prison', 'Sent that year']}
+    rows={py.filter((_, i) => i % 3 === 0 || py[i] === 2019).map((y) => {
+      const i = py.indexOf(y)
+      return [y, pPop[i], pAdm[i] === null ? '—' : pAdm[i]]
+    })}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="scissor" set:html={JSON.stringify(scissorSpec)} is:inline />
+  <AssertionCard assertion={caseload} />
+  <AssertionCard assertion={ratio} />
+  <Gloss>
+    Dividing the population by the year's admissions gives 1.50 in 1992 and 3.67 in 2019, and the
+    units come out in years, and it is not an average length of stay. That reading is Little's law
+    read backwards and it holds only in a system at rest: arrivals equal departures, the population
+    flat. This one grew by half while arrivals fell by two fifths, so the stock is accumulating and
+    is made of people admitted under older sentences. What survives the objection is the direction,
+    and the direction needs no model at all — fewer entering and more present is only possible if
+    people are staying longer.
+  </Gloss>
+  <AssertionCard assertion={eight} />
+  <ChartFigure
+    id="race"
+    title="Eight times in the prisons, four times in the jail"
+    caption="Rates per 100,000 residents aged 15 to 64 in 2019. The prison disparity was 11.3 in 2009 and has narrowed only because the white rate rose 46 per cent over the decade while the Black rate rose 7."
+    columns={['Group', 'Per 100,000']}
+    rows={[
+      ['Black, in prison from the county', '4,028'],
+      ['white, in prison from the county', '486'],
+      ['Black, in the county jail', '1,190'],
+      ['white, in the county jail', '268'],
+    ]}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="race" set:html={JSON.stringify(raceSpec)} is:inline />
+
+  <h2>The jail</h2>
+  <AssertionCard assertion={jrate} />
+  <AssertionCard assertion={cap} />
+  <ChartFigure
+    id="jail"
+    title="Over the line for twenty-one of twenty-nine years"
+    caption="Average daily population of the Allen County jail against its rated capacity. The gaps to 1998 are years the federal survey did not reach this county. The year 2000 is dropped: it records 23 people, none of them men, between 224 and 229."
+    columns={['Year', 'In the jail', 'Capacity']}
+    rows={jy.filter((_, i) => jPop[i] !== null).map((y) => {
+      const i = jy.indexOf(y)
+      return [y, jPop[i], jCap[i]]
+    })}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="jail" set:html={JSON.stringify(jailSpec)} is:inline />
+  <AssertionCard assertion={pretrial} />
+  <AssertionCard assertion={above} />
+  <AssertionCard assertion={eighth} />
+
+  <h2>What the files will not say</h2>
+  <AssertionCard assertion={sample} />
+  <AssertionCard assertion={rows} />
+  <AssertionCard assertion={where} />
+  <AssertionCard assertion={lost} />
+  <Gloss>
+    The Justice Center stands seventy-five metres from the courthouse and the 2020 census recorded
+    nobody in it — a downtown block with a published population of zero, while every one of the
+    county's 1,513 people in adult correctional facilities sits in the two blocks north of the city.
+    The building averaged 144 people a day that year. So the census did not find an empty jail; it
+    lost about a hundred and forty people, and where they went is a question the published tables
+    cannot be asked.
+  </Gloss>
+</Article>
