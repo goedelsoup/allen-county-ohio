@@ -1,0 +1,185 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const largest = assertion('the-largest-kind-of-empty-is-neither')
+const forsale = assertion('four-hundred-and-two-houses-for-sale')
+const omit = assertion('the-vacancy-rates-omit-the-largest-class')
+const fell = assertion('every-kind-of-empty-fell-but-the-transactions')
+const fewerHouses = assertion('the-county-ended-the-decade-with-fewer-houses')
+const built = assertion('it-built-less-than-it-lost')
+const pulled = assertion('something-was-pulled-down')
+const limaLoss = assertion('three-quarters-of-the-loss-is-limas')
+const limaDown = assertion('limas-houses-came-down')
+const mortgaged = assertion('the-mortgaged-owners-left')
+const owe = assertion('two-in-five-owners-here-owe-nothing')
+const rank = assertion('seventy-third-of-eighty-eight-on-owning')
+const limaOwners = assertion('lima-stopped-being-a-city-of-owners')
+const urbanRural = assertion('owning-not-owing-divides-the-county')
+const twice = assertion('twice-as-likely-to-own')
+const paradox = assertion('the-county-gap-is-wider-than-either-half')
+const blackOwners = assertion('black-households-grew-and-black-owners-did-not')
+const ordinary = assertion('the-county-is-ordinary-and-its-interior-is-not')
+const invariant = assertion('the-total-is-counted-and-the-split-is-not')
+const blocks = assertion('a-hundred-and-thirty-eight-empty-blocks')
+
+const vacancySpec = bar(
+  ['other vacant', 'for rent', 'for sale only', 'seasonal', 'sold, not occupied', 'rented, not occupied'],
+  [1312, 1265, 402, 256, 217, 176],
+  { yTitle: 'Vacant housing units, 1 April 2020', labelValues: true },
+)
+
+const tenureSpec = bar(
+  ['owned with a mortgage', 'owned free and clear', 'rented'],
+  [-1342, 616, 1042],
+  { yTitle: 'Change in households, 2010 to 2020', labelValues: true },
+)
+
+const subdivisionSpec = bar(
+  ['Lima', 'Bath', 'Monroe', 'Sugar Creek', 'Richland', 'Perry', 'Spencer', 'Amanda', 'Auglaize', 'Jackson', 'Marion', 'Shawnee', 'American'],
+  [-756, -30, -21, -20, -16, -15, 5, 13, 27, 45, 46, 106, 180],
+  { yTitle: 'Change in housing units, 2010 to 2020', labelValues: true },
+)
+
+const gapSpec = bar(
+  ['White, in Lima', 'Black, in Lima', 'White, outside Lima', 'Black, outside Lima', 'White, county', 'Black, county'],
+  [52.9, 32.6, 80.0, 50.2, 72.5, 36.4],
+  { yTitle: 'Households owning their home, per cent, 2020', tickSuffix: '%', labelValues: true },
+)
+---
+
+<Article slug="not-for-sale-and-not-for-rent">
+  <p>
+    A census counts an empty house and then asks what it is empty for. There are seven answers and a
+    remainder: for rent, rented but not moved into, for sale, sold but not moved into, kept for a
+    season, kept for migrant workers, and — when none of those fit — <em>other vacant</em>. Allen
+    County had 3,628 empty houses on 1 April 2020, and the biggest of the eight groups is the
+    remainder.
+  </p>
+  <AssertionCard assertion={largest} open />
+  <ChartFigure
+    id="vacancy"
+    title="The remainder is the largest class"
+    caption="Allen County's 3,628 vacant housing units by the reason the census recorded. No unit in the county was held for migrant workers, so that row is not drawn."
+    columns={['Why it is empty', 'Units', 'Share of vacant']}
+    rows={[
+      ['Other vacant', '1,312', '36.2%'],
+      ['For rent', '1,265', '34.9%'],
+      ['For sale only', '402', '11.1%'],
+      ['Seasonal, recreational or occasional', '256', '7.1%'],
+      ['Sold, not occupied', '217', '6.0%'],
+      ['Rented, not occupied', '176', '4.9%'],
+      ['For migrant workers', '0', '0.0%'],
+    ]}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="vacancy" set:html={JSON.stringify(vacancySpec)} is:inline />
+  <AssertionCard assertion={forsale} />
+  <AssertionCard assertion={omit} />
+  <Gloss>
+    The two vacancy rates in every housing report are narrower than they look. The homeowner rate
+    divides the houses for sale by the houses owned plus the houses for sale plus the houses just
+    sold. The rental rate does the same with tenants. Neither has a place for a house that is
+    seasonal, or held for a caretaker, or being repaired, or simply shut — those units appear in no
+    numerator and no denominator of either. In this county that is 1,568 dwellings, one in
+    twenty-eight of everything standing, and both published rates fell over the decade while the
+    thing they cannot see fell faster.
+  </Gloss>
+
+  <h2>The stock itself moved</h2>
+  <AssertionCard assertion={fewerHouses} />
+  <AssertionCard assertion={fell} />
+  <AssertionCard assertion={built} />
+  <AssertionCard assertion={pulled} />
+  <ChartFigure
+    id="subdivisions"
+    title="One subdivision lost houses and the rest did not"
+    caption="Change in housing units between the 2010 and 2020 censuses, for the thirteen subdivisions that partition Allen County. Lima's fall of 756 is larger than the other twelve put together are large, and the twelve add to a gain of 320."
+    columns={['Subdivision', '2010', '2020', 'Change']}
+    rows={[
+      ['Lima', '16,784', '16,028', '−756'],
+      ['American', '6,468', '6,648', '+180'],
+      ['Shawnee', '5,194', '5,300', '+106'],
+      ['Bath', '4,111', '4,081', '−30'],
+      ['Marion', '2,791', '2,837', '+46'],
+      ['Richland', '2,303', '2,287', '−16'],
+      ['Perry', '1,561', '1,546', '−15'],
+      ['Jackson', '1,241', '1,286', '+45'],
+      ['Spencer', '1,230', '1,235', '+5'],
+      ['Auglaize', '1,109', '1,136', '+27'],
+      ['Monroe', '883', '862', '−21'],
+      ['Amanda', '789', '802', '+13'],
+      ['Sugar Creek', '535', '515', '−20'],
+    ]}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="subdivisions" set:html={JSON.stringify(subdivisionSpec)} is:inline />
+  <AssertionCard assertion={limaLoss} />
+  <AssertionCard assertion={limaDown} />
+
+  <h2>Who owns what is left</h2>
+  <AssertionCard assertion={mortgaged} />
+  <ChartFigure
+    id="tenure"
+    title="The mortgaged left and the outright arrived"
+    caption="Change in Allen County households by tenure between the two censuses. The count of owners fell by 726, which is the sum of the first two bars, and hides both of them."
+    columns={['Tenure', '2010', '2020', 'Change']}
+    rows={[
+      ['Owned with a mortgage or loan', '18,356', '17,014', '−1,342'],
+      ['Owned free and clear', '9,743', '10,359', '+616'],
+      ['Renter occupied', '12,520', '13,562', '+1,042'],
+      ['All occupied units', '40,619', '40,935', '+316'],
+    ]}
+    height={280}
+  />
+  <script type="application/json" data-chart-spec="tenure" set:html={JSON.stringify(tenureSpec)} is:inline />
+  <AssertionCard assertion={owe} />
+  <AssertionCard assertion={rank} />
+  <AssertionCard assertion={limaOwners} />
+  <AssertionCard assertion={urbanRural} />
+
+  <h2>The gap and the two halves it is made of</h2>
+  <AssertionCard assertion={twice} />
+  <AssertionCard assertion={paradox} />
+  <ChartFigure
+    id="gap"
+    title="The county's gap is wider than the gap in either part of the county"
+    caption="Households owning their home, by the race of the householder, in 2020. Inside Lima the difference is 20.3 points and outside it 29.8, but the county's own figure is 36.1 — because 78.6 per cent of the county's Black households are in the city and 27.7 per cent of its White households are."
+    columns={['Where', 'White alone', 'Black alone', 'Difference']}
+    rows={[
+      ['In Lima', '52.9%', '32.6%', '20.3 pt'],
+      ['Outside Lima', '80.0%', '50.2%', '29.8 pt'],
+      ['Allen County', '72.5%', '36.4%', '36.1 pt'],
+    ]}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="gap" set:html={JSON.stringify(gapSpec)} is:inline />
+  <Gloss>
+    An average taken over a county can sit outside the range of every part of it, and so can a
+    difference. Black households here are four fifths Lima's and White households a quarter, and
+    Lima is the only subdivision in the county where most households rent. Mix two populations
+    unevenly across two places with different ownership rates, and the county-wide gap picks up the
+    difference between the places as well as the difference between the populations. Both component
+    gaps are real, and neither of them is 36 points.
+  </Gloss>
+  <AssertionCard assertion={blackOwners} />
+  <AssertionCard assertion={ordinary} />
+
+  <h2>What the file will and will not answer</h2>
+  <AssertionCard assertion={invariant} />
+  <AssertionCard assertion={blocks} />
+  <Gloss>
+    The 2020 census holds three things invariant — a state's total population, the number of housing
+    units on each block, and the existence and type of each occupied group quarters. Everything else
+    it publishes went through an algorithm that adds noise on purpose, and no interval is printed
+    beside any of it. So the count of houses on a block is exact and whether anybody is in them is
+    not, and a survey with error bars is, at that grain, the more legible instrument. It also means
+    the obvious check does not work: the redistricting file and the characteristics file agree on
+    every one of this county's 3,552 blocks, and the agreement carries no information, because it is
+    one answer released twice.
+  </Gloss>
+</Article>

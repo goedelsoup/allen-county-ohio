@@ -2457,7 +2457,7 @@
           "published": "40935",
           "tier": "verified",
           "source": "catalog/census-2020-redistricting-file.md",
-          "method": "Table H1, Occupancy Status, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171), file segment 02, the last three fields of each record. Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO and grouped by the header's county-subdivision code. [verified] Household size is population less group-quarters population, over occupied units, computed here for each subdivision. [inference] It is the definition the Census Bureau uses for average household size, and it is stated here rather than taken from a published table because no published table at this geography is held. Both closures were checked: the thirteen subdivision populations sum to the county's 102,206 and their units to 44,563, with no residual."
+          "method": "Table H1, Occupancy Status, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171), file segment 02, the last three fields of each record. Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO and grouped by the header's county-subdivision code. [verified] Household size is population less group-quarters population, over occupied units, computed here for each subdivision. [inference] It is the definition the Census Bureau uses for average household size, and it is stated here rather than taken from a published table because no published table at this geography is held. Both closures were checked: the thirteen subdivision populations sum to the county's 102,206 and their units to 44,563, with no residual. The same table was later read from the Demographic and Housing Characteristics file and agrees on all 3,552 blocks. [verified] That is not corroboration — the two files are one answer released twice — and it is recorded so that no later reader takes it for one."
         }
       ]
     },
@@ -2498,6 +2498,26 @@
           "tier": "verified",
           "source": "catalog/fra-crossing-inventory.md",
           "method": "Current Form 71 inventory as of retrieval, filtered to FIPS 39003, counting rows whose `crossingclosed` field is `No`. 95 of the 201 open rows were last revised in 2025 and 92 in 2026; twelve carry revisions from 2014 to 2024 and are stale to that degree. A crossing is a place a road meets a track, so a railroad with many crossings is not necessarily a railroad with much track or much traffic — the train counts are recorded separately and are used here for that. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::owner-occupied-housing-units,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "owner-occupied housing units, Allen County",
+      "unit": "owner-occupied housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "label": "Who owns Allen County's houses, 2010 and 2020",
+          "as_of": "2020-04-01",
+          "value": 27373.0,
+          "published": "27373",
+          "tier": "verified",
+          "source": "catalog/census-2020-dhc.md",
+          "method": "Table H4 of the 2020 Demographic and Housing Characteristics File, segment 1, data fields 9 to 12, and table H10 at fields 143 to 159; table H4 of 2010 Summary File 1, segment 44, fields 4 to 7, and table H14 at fields 79 to 95. Both joined to their geographic headers on LOGRECNO. [verified] The denominator of every ownership rate here is occupied units, not housing units. [verified] Outside-Lima figures are the county record minus the Lima place record, which is exact because Lima lies wholly inside the county and the two files agree with the thirteen subdivisions' sums. [verified] The 88-county rankings are computed over every county record in the Ohio file. [inference] Occupancy and tenure in the 2020 file are protected figures rather than enumerated ones, and no interval is published for them; the housing-unit totals they sit inside are invariant. [verified] — see [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml). No claim here rests on a block or on a difference of less than a point."
         }
       ]
     },
@@ -2747,7 +2767,7 @@
           "published": "3522",
           "tier": "verified",
           "source": "catalog/census-2020-redistricting-file.md",
-          "method": "Table P5, Group Quarters Population by Major Group Quarters Type, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171). Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO. The block sums close on the file's own county record exactly, in every one of the ten cells. [verified] The Census Bureau's API serves the same table from the Demographic and Housing Characteristics file and refuses the request without a key, which is why the flat file was taken instead — the same reason this corpus reads the ACS from its summary file rather than its API. Institution identification is by geometry, not by address: a block is identified with a landmark only where the two carry the same land area and the same internal point. Two do. [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml). The 2020 census applied disclosure avoidance to every published block figure, so a single small cell is noisy; the county totals are not, and the two large correctional cells are corroborated by the geometry they sit on."
+          "method": "Table P5, Group Quarters Population by Major Group Quarters Type, from the Ohio file of the 2020 Census Redistricting Data Summary File (P.L. 94-171). Summed from the 3,552 block records for county 39003, joined to the geographic header on LOGRECNO. The block sums close on the file's own county record exactly, in every one of the ten cells. [verified] The Census Bureau's API serves the same table from the Demographic and Housing Characteristics file and refuses the request without a key, which is why the flat file was taken instead — the same reason this corpus reads the ACS from its summary file rather than its API. Institution identification is by geometry, not by address: a block is identified with a landmark only where the two carry the same land area and the same internal point. Two do. [inference] — see [a block can be a fence](../../decisions/a-block-can-be-a-fence.yml). The 2020 census applied disclosure avoidance to every published figure in this table, at every geography. The sentence that stood here — that the county totals are not noisy — was wrong: the census holds three quantities invariant and a county's group-quarters population is not among them. What is invariant is the number and major type of each occupied group-quarters facility in each block, which is a different fact and is not published as a number. [verified] — the technical documentation of [the characteristics file](../../catalog/census-2020-dhc.md), chapter 4; see [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml). Nothing in this node is withdrawn: the two large correctional cells are corroborated by the geometry they sit on, and that corroboration is what carries them, not an invariance they never had."
         }
       ]
     },
@@ -3538,6 +3558,26 @@
           "tier": "verified",
           "source": "catalog/bls-laus.md",
           "method": "Allen County's four series were extracted from the 336 MB national county file and the file deleted; Ohio's from the states file; the national rate from the Current Population Survey's `LNU04000000` through the public API, because this programme does not publish a national figure of its own. Period `M13` is the agency's annual average and is quoted as published rather than recomputed, except for the national column, which has no `M13` here and is the mean of the year's months. County estimates are modelled and controlled to a state total; a tenth of a point between two counties in one month is not a finding, and nothing here rests on one. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::vacant-housing-units,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "vacant housing units, Allen County",
+      "unit": "vacant housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "label": "Why Allen County's housing was empty, 2010 and 2020",
+          "as_of": "2020-04-01",
+          "value": 3628.0,
+          "published": "3628",
+          "tier": "verified",
+          "source": "catalog/census-2020-dhc.md",
+          "method": "Table H5 of the 2020 Demographic and Housing Characteristics File, Ohio state file, segment 1, data fields 101 to 108, joined to the geographic header on LOGRECNO and read at summary levels 040 state, 050 county, 060 county subdivision, 140 tract and 100 block. The 2010 figures are table H5 of Summary File 1, segment 44, data fields 8 to 15, from a fixed-width geographic header. [verified] The thirteen subdivisions sum to the county exactly in every column read, and the county's 3,552 block records sum to its own row. [verified] The three vacancy rates are the Bureau's own formulas from the definitions appendix and not ratios of this corpus's choosing; \"units outside all three\" is the count of seasonal, migrant-worker and other-vacant units, which appear in no numerator and no denominator of any of them. [inference] Permit figures are the sum of the 1-unit, 2-unit, 3-4-unit and 5-or-more-unit columns of the annual county file for 1990 onward, taken here for 2010 through 2019, and cross-checked against the sum of the twenty-two Allen County rows of the Midwest place file for the same years: 1,025 both ways. [verified] The census is taken on 1 April and the permit years are calendar years, so the two windows differ by a quarter at each end. [inference]"
         }
       ]
     },
@@ -21463,6 +21503,698 @@
           "label": "average daily population, 2020",
           "value": 144.0,
           "literal": "144"
+        }
+      ]
+    },
+    {
+      "id": "the-largest-kind-of-empty-is-neither",
+      "statement": "The largest class of empty house in Allen County is the one that is neither for sale nor for rent. 1,312 of the county's 3,628 vacant units are in it, against 1,265 offered to a tenant and 402 offered to a buyer.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**The largest kind of empty house in this county is the kind that is not for sale and not for rent.** 1,312 units, more than the 1,265 offered to a tenant and more than three times the 402 offered to a buyer. [verified] — the same table; the shares are computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "other vacant",
+          "value": 1312.0,
+          "literal": "1,312"
+        },
+        {
+          "label": "for rent",
+          "value": 1265.0,
+          "literal": "1,265"
+        },
+        {
+          "label": "for sale only",
+          "value": 402.0,
+          "literal": "402"
+        }
+      ]
+    },
+    {
+      "id": "four-hundred-and-two-houses-for-sale",
+      "statement": "On census day 402 houses in Allen County were for sale - nine tenths of one per cent of its 44,563 housing units.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**On any given day 402 houses in Allen County were for sale.** Nine tenths of one per cent of the county's 44,563 units, against 1,265 for rent. [verified] — the same table, against [the housing units](allen-county-housing-units-2020.yml). A market that thin is what the price series has been describing from the other end. [inference] — see [the price index](allen-county-house-prices-1975-2025.yml).",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "houses for sale",
+          "value": 402.0,
+          "literal": "402"
+        },
+        {
+          "label": "housing units",
+          "value": 44563.0,
+          "literal": "44,563"
+        }
+      ]
+    },
+    {
+      "id": "the-vacancy-rates-omit-the-largest-class",
+      "statement": "The two vacancy rates the census publishes exclude seasonal, migrant-worker and other-vacant units from both their numerators and their denominators, so 1,568 empty housing units in Allen County - 3.5 per cent of the stock - appear in no published vacancy rate at all.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**The two vacancy rates the Bureau publishes leave the largest class out of both of them.** The homeowner rate is for-sale-only over owner-occupied plus for-sale plus sold-not-occupied; the rental rate is for-rent over renter-occupied plus for-rent plus rented-not-occupied. Seasonal units, migrant-worker units and other-vacant units appear on neither side of either line. [verified] — [the same appendix](../../catalog/census-2020-dhc.md), B-21.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**So 1,568 of the county's housing units — 3.5 per cent of the stock — are empty and invisible to every vacancy rate the census publishes.** [inference] — the Bureau's own three formulas, applied here to its own eight rows. Both rates fell over the decade and the residual fell faster, which is a fact about the county the rates do not carry.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "units outside every rate",
+          "value": 1568.0,
+          "literal": "1,568"
+        },
+        {
+          "label": "share of the stock, per cent",
+          "value": 3.5,
+          "literal": "3.5"
+        }
+      ]
+    },
+    {
+      "id": "the-county-ended-the-decade-with-fewer-houses",
+      "statement": "Allen County had 44,999 housing units in 2010 and 44,563 in 2020, a fall of 436, while its occupied units rose from 40,619 to 40,935 and its empty ones fell by 752.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**The county ended the decade with 752 fewer empty houses and 436 fewer houses.** 44,999 units in 2010 and 44,563 in 2020, while occupied units rose from 40,619 to 40,935. [verified] — the same file and its 2010 predecessor, table H3 in each. The stock did not merely stop growing; it fell, and the fall is larger than the rise in occupancy.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "housing units, 2010",
+          "value": 44999.0,
+          "literal": "44,999"
+        },
+        {
+          "label": "housing units, 2020",
+          "value": 44563.0,
+          "literal": "44,563"
+        },
+        {
+          "label": "fewer empty houses",
+          "value": 752.0,
+          "literal": "752"
+        }
+      ]
+    },
+    {
+      "id": "it-built-less-than-it-lost",
+      "statement": "1,025 dwellings were authorised in Allen County between the two censuses and the county finished with 436 fewer housing units, which puts the decade's removals at about fifteen hundred - some 146 a year.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**1,025 dwellings were authorised in the same ten years, so something took away about fifteen hundred.** 587 of them houses and 252 of them in buildings of five units or more. [verified] — [the Building Permits Survey](../../catalog/census-building-permits.md), 2010 through 2019 county files, which sum to the same 1,025 at place grain. If every permit became a unit — an upper bound, since a permit is not a house and some are never built — then 1,461 units left this county's housing stock in a decade, about 146 a year. [inference] — computed here; see [the permits](allen-county-building-permits-1990-2025.yml), whose own caution this uses rather than sets aside.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-building-permits.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "dwellings authorised",
+          "value": 1025.0,
+          "literal": "1,025"
+        },
+        {
+          "label": "units removed, upper bound",
+          "value": 1461.0,
+          "literal": "1,461"
+        }
+      ]
+    },
+    {
+      "id": "three-quarters-of-the-loss-is-limas",
+      "statement": "Lima held 16,784 housing units in 2010 and 16,028 in 2020 - a fall of 756 against a gain of 320 in the twelve townships - and it annexed once in the decade, so the fall is not a boundary.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**Three quarters of the loss is Lima's and it is not a boundary.** The city held 16,784 units in 2010 and 16,028 in 2020, a fall of 756, while the other twelve subdivisions gained 320 between them. Lima annexed once in the decade, in June 2017. [verified] — [the 2020 file](../../catalog/census-2020-dhc.md) and [the 2010 file](../../catalog/census-2010-sf1.md) at subdivision grain, against [the annexation record](allen-county-annexations-1990-2024.yml). The city was authorised 338 dwellings over the same years, 23 of them houses, so its own removals are of the order of eleven hundred. [inference] — the place files of the same survey, computed here.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "Lima units, 2010",
+          "value": 16784.0,
+          "literal": "16,784"
+        },
+        {
+          "label": "Lima units, 2020",
+          "value": 16028.0,
+          "literal": "16,028"
+        },
+        {
+          "label": "units lost",
+          "value": 756.0,
+          "literal": "756"
+        }
+      ]
+    },
+    {
+      "id": "every-kind-of-empty-fell-but-the-transactions",
+      "statement": "Between 2010 and 2020 every category of empty house in Allen County fell except the three that mean a sale or a letting is in progress. Other vacant fell 27.8 per cent, for-sale 38.2 and for-rent 11.3, while rented-not-occupied rose 131.6.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**Every category of empty fell except the three that mean a transaction is in progress.** [verified] — the same table against [the 2010 summary file](../../catalog/census-2010-sf1.md), table H5.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": []
+    },
+    {
+      "id": "a-hundred-and-thirty-eight-empty-blocks",
+      "statement": "138 census blocks in Allen County hold housing units and report nobody living in any of them, 530 units in all. The corpus states the figure once and builds nothing on it, because a block's housing-unit count is enumerated and its occupancy is not.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**138 blocks in this county hold housing units and report nobody in any of them.** 530 units, the largest such block holding 22, four holding ten or more. [verified] — the same file, block records. That figure is stated once and not built on: the housing-unit count on a block is enumerated and the occupancy of it is not, so the corpus can say exactly how many units stand there and not that they are empty. See [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "blocks",
+          "value": 138.0,
+          "literal": "138"
+        },
+        {
+          "label": "units",
+          "value": 530.0,
+          "literal": "530"
+        }
+      ]
+    },
+    {
+      "id": "the-county-is-ordinary-and-its-interior-is-not",
+      "statement": "Allen County's 8.14 per cent vacancy rate is 46th of Ohio's 88 counties and its share of other-vacant housing 48th, in a state whose range runs from Ottawa County's 37.94 per cent to Warren County's 4.49. Inside the county Lima is 11.2 per cent vacant and Amanda Township 4.5.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2010-2020.yml",
+          "node_label": "Why Allen County's housing was empty, 2010 and 2020",
+          "span": "**Against Ohio's other eighty-seven counties this one is exactly ordinary.** Its 8.14 per cent vacancy rate is 46th of 88, its other-vacant share of stock 48th. Ottawa County on Lake Erie is 37.94 per cent vacant and Warren County outside Cincinnati is 4.49. [verified] — the same file, all 88 county records read here. The middle of the state's range is where the county sits and its own interior does not: Lima is 11.2 per cent vacant and Amanda Township 4.5.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why any particular house in Allen County is empty.** The census asked an enumerator to classify a vacant unit and published seven reasons and a remainder; the remainder is the largest of the eight, and nothing in this file or any other this corpus holds distinguishes a house being renovated from a house nobody wants."
+      ],
+      "figures": [
+        {
+          "label": "vacancy rate, per cent",
+          "value": 8.14,
+          "literal": "8.14"
+        },
+        {
+          "label": "Ottawa County, per cent",
+          "value": 37.94,
+          "literal": "37.94"
+        },
+        {
+          "label": "Warren County, per cent",
+          "value": 4.49,
+          "literal": "4.49"
+        }
+      ]
+    },
+    {
+      "id": "the-mortgaged-owners-left",
+      "statement": "Allen County lost 1,342 households owning with a mortgage between 2010 and 2020 and gained 616 owning outright and 1,042 renting. The count of owners fell by 726 - little more than half as far as the mortgaged did.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "The county's owner-occupancy rate is the one figure of this kind the corpus already had, from a survey. [verified] — [the housing stock](allen-county-housing-stock-2023.yml). Counted instead of estimated, and split three ways rather than two, it is a different story: **the county lost 1,342 households that own with a mortgage and gained 616 that own outright and 1,042 that rent.** [verified] — [the 2020 characteristics file](../../catalog/census-2020-dhc.md) and [the 2010 summary file](../../catalog/census-2010-sf1.md), table H4 in both.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**The survey does not publish the middle two rows and they are where the decade happened.** Owner occupancy fell 2.3 points and the count of owners fell by 726, but the mortgaged fell by 1,342 — nearly twice as far — because 616 households moved the other way and finished paying. [inference] — the same two tables, differenced here. A count of owners is two populations that behave differently and this corpus had been reading them as one.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "mortgaged owners lost",
+          "value": 1342.0,
+          "literal": "1,342"
+        },
+        {
+          "label": "outright owners gained",
+          "value": 616.0,
+          "literal": "616"
+        },
+        {
+          "label": "renter households gained",
+          "value": 1042.0,
+          "literal": "1,042"
+        }
+      ]
+    },
+    {
+      "id": "two-in-five-owners-here-owe-nothing",
+      "statement": "37.8 per cent of Allen County's owner households hold no mortgage, against 33.9 per cent for Ohio. The state's mortgaged owners fell 4.4 per cent over the decade and this county's fell 7.3.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**Ohio did the same thing and this county did it harder.** The state's mortgaged owners fell 4.4 per cent over the decade and Allen County's fell 7.3; the state's outright owners rose 14.0 per cent and this county's 6.3. [verified] — the same file and its 2010 predecessor, state rows. So the direction is the state's and the size is not, and the county ends the decade with 37.8 per cent of its owners holding no mortgage against Ohio's 33.9.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "free and clear, per cent of owners",
+          "value": 37.8,
+          "literal": "37.8"
+        },
+        {
+          "label": "Ohio, per cent",
+          "value": 33.9,
+          "literal": "33.9"
+        }
+      ]
+    },
+    {
+      "id": "seventy-third-of-eighty-eight-on-owning",
+      "statement": "Allen County is 73rd of Ohio's 88 counties on home ownership at 66.9 per cent, between Geauga County's 86.6 and Franklin County's 51.3, while Putnam County next door is second in the state at 83.8.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**On the ownership rate itself it is 73rd of 88, and that is not the middle.** 66.9 per cent against Geauga County's 86.6 and Franklin County's 51.3; Putnam County, next door, is second in the state at 83.8. [verified] — the same file, all 88 county rows.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "ownership rate, per cent",
+          "value": 66.9,
+          "literal": "66.9"
+        },
+        {
+          "label": "Geauga County, per cent",
+          "value": 86.6,
+          "literal": "86.6"
+        },
+        {
+          "label": "Franklin County, per cent",
+          "value": 51.3,
+          "literal": "51.3"
+        }
+      ]
+    },
+    {
+      "id": "lima-stopped-being-a-city-of-owners",
+      "statement": "Lima was 50.6 per cent owner-occupied in 2010 and 45.9 per cent in 2020, on a number of occupied units that barely moved: 663 owner households became 679 renter households.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**The county seat stopped being a city of owners between the two censuses.** Lima was 50.6 per cent owner-occupied in 2010 and 45.9 in 2020, and it did it with the number of occupied units almost unchanged — 14,221 and 14,237. 663 owner households became 679 renter households. [verified] — the same file and its 2010 predecessor, at place grain; the arithmetic is computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "owner-occupied, 2010, per cent",
+          "value": 50.6,
+          "literal": "50.6"
+        },
+        {
+          "label": "owner-occupied, 2020, per cent",
+          "value": 45.9,
+          "literal": "45.9"
+        }
+      ]
+    },
+    {
+      "id": "owning-not-owing-divides-the-county",
+      "statement": "Urban Allen County is 59.7 per cent owner-occupied and rural Allen County 84.4, and of those owners 37.8 and 37.9 per cent respectively hold no mortgage. What separates the two halves is whether a household owns at all, not whether it has finished paying.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**Urban and rural Allen County are 24.7 points apart on ownership and identical on mortgages.** The county's urban part is 59.7 per cent owner-occupied and its rural part 84.4; of those owners, 37.8 per cent and 37.9 per cent respectively own free and clear. [verified] — the same file, geographic components 01 and 43 of the county record. The thing that separates the two halves of this county is whether a household owns at all, not whether it has finished paying. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "urban ownership, per cent",
+          "value": 59.7,
+          "literal": "59.7"
+        },
+        {
+          "label": "rural ownership, per cent",
+          "value": 84.4,
+          "literal": "84.4"
+        }
+      ]
+    },
+    {
+      "id": "twice-as-likely-to-own",
+      "statement": "A White householder in Allen County is twice as likely to own their home as a Black one: 72.5 per cent of 33,629 White-alone households against 36.4 per cent of 4,908 Black-alone households, a gap of 36.1 points.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**A White householder in this county is twice as likely to own as a Black one.** 72.5 per cent against 36.4 — a gap of 36.1 points on 33,629 and 4,908 households. [verified] — the same file, table H10, tenure by race of householder.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "White ownership, per cent",
+          "value": 72.5,
+          "literal": "72.5"
+        },
+        {
+          "label": "Black ownership, per cent",
+          "value": 36.4,
+          "literal": "36.4"
+        }
+      ]
+    },
+    {
+      "id": "the-county-gap-is-wider-than-either-half",
+      "statement": "Allen County's 36.1-point ownership gap by race is wider than the gap in either half of the county - 20.3 points inside Lima and 29.8 outside it - because Black households are 78.6 per cent Lima's and White households 27.7 per cent.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**The county-wide gap is wider than the gap in either half of the county, and both halves are real.** Inside Lima it is 20.3 points, 52.9 per cent against 32.6. Outside Lima it is 29.8, 80.0 per cent against 50.2. The county figure of 36.1 exceeds both because Black households are 78.6 per cent Lima's and White households 27.7 per cent, and Lima is the only subdivision in the county where a majority of households rent. [verified] — the same table, county and place records, with the outside-Lima figures the difference between them. See [a county rate can describe nowhere](../../decisions/a-county-rate-can-describe-nowhere.yml), which this sharpens: a county *difference* can be larger than the difference in every part of the county.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md",
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "county gap, points",
+          "value": 36.1,
+          "literal": "36.1"
+        },
+        {
+          "label": "gap inside Lima, points",
+          "value": 20.3,
+          "literal": "20.3"
+        },
+        {
+          "label": "gap outside Lima, points",
+          "value": 29.8,
+          "literal": "29.8"
+        }
+      ]
+    },
+    {
+      "id": "black-households-grew-and-black-owners-did-not",
+      "statement": "The number of Black-alone households in Allen County rose by 379 between 2010 and 2020 and the number owning their home fell by 71, from 1,856 to 1,785, while Black renter households rose from 2,673 to 3,123.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-tenure-2010-2020.yml",
+          "node_label": "Who owns Allen County's houses, 2010 and 2020",
+          "span": "**Over the decade the number of Black households in this county rose by 379 and the number that own fell by 71.** 4,529 to 4,908 households, 1,856 to 1,785 owners, 2,673 to 3,123 renters. [inference] — [the 2010 file](../../catalog/census-2010-sf1.md) against the 2020 one. This is the one comparison here that the change in race coding can reach: the corpus has established that the 2020 write-in coding moved households between the White-alone and multiple-race rows, and this county's multiple-race households went from 517 to 1,567 on it. [verified] — see [the race series](allen-county-population-by-race-1970-2020.yml). What limits the damage is that the Black-alone *population* of the county barely moved across the same two censuses, 12,639 to 12,573.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-2010-sf1.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.** The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an address; separating what remains would need income, age, length of residence and the order in which a household arrived at its tenure, and this file carries a householder's race and nothing else about them."
+      ],
+      "figures": [
+        {
+          "label": "owner households, 2010",
+          "value": 1856.0,
+          "literal": "1,856"
+        },
+        {
+          "label": "owner households, 2020",
+          "value": 1785.0,
+          "literal": "1,785"
+        }
+      ]
+    },
+    {
+      "id": "the-total-is-counted-and-the-split-is-not",
+      "statement": "Allen County's 44,563 housing units are an enumeration carried unchanged from every one of its blocks, because the 2020 census held block housing-unit counts invariant. The 40,935 occupied and 3,628 vacant beside them are the output of the algorithm that protected everything else.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-occupancy-2020.yml",
+          "node_label": "Allen County housing occupancy and household size, 2020",
+          "span": "**The units column above is a count and the two beside it are not.** 44,563 is carried unchanged from every block, because the number of housing units in a block is one of the three quantities the 2020 census held invariant; 40,935 and 3,628 are the output of the algorithm that protected everything else, and so is every occupancy figure in the subdivision table. [verified] — [the technical documentation](../../catalog/census-2020-dhc.md), chapter 4; see [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml). Nothing above is withdrawn on that account. The claims made from it are about the county and its thirteen subdivisions, which is the scale the algorithm is built to preserve.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "housing units",
+          "value": 44563.0,
+          "literal": "44,563"
+        },
+        {
+          "label": "occupied",
+          "value": 40935.0,
+          "literal": "40,935"
+        },
+        {
+          "label": "vacant",
+          "value": 3628.0,
+          "literal": "3,628"
+        }
+      ]
+    },
+    {
+      "id": "something-was-pulled-down",
+      "statement": "The permit record and the census now say together what neither said alone: 1,025 dwellings were authorized in Allen County over the decade between the censuses and the county ended it with 436 fewer housing units. It built less than it lost.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-building-permits-1990-2025.yml",
+          "node_label": "Allen County's residential building permits, 1990–2025",
+          "span": "**And something was pulled down.** 1,025 dwellings were authorized in the ten years between the two censuses and the county's housing stock fell by 436 units over the same span, 44,999 to 44,563. [verified] — same source, 2010 through 2019, against [the two censuses](allen-county-vacancy-status-2010-2020.yml). Taken as an upper bound the other way round, that puts the decade's removals at about fifteen hundred units, and three quarters of the net fall is Lima's. [inference] The paragraph above still holds — nothing here says which permit became a house — but the direction is no longer open. This county built less than it lost.",
+          "tier": "inference",
+          "sources": [
+            "catalog/bls-cpi.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "dwellings authorized",
+          "value": 1025.0,
+          "literal": "1,025"
+        },
+        {
+          "label": "net units lost",
+          "value": 436.0,
+          "literal": "436"
+        }
+      ]
+    },
+    {
+      "id": "limas-houses-came-down",
+      "statement": "756 of Lima's housing units are gone between the two censuses - 16,784 to 16,028 - over a decade in which the city was authorized 338 dwellings and annexed once. Its vacancy rate fell from 15.3 per cent to 11.2 over the same years.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "place/lima.yml",
+          "node_label": "Lima",
+          "span": "**And 756 of its housing units are gone.** 16,784 in 2010 against 16,028 in 2020, over a decade in which the city was authorized 338 dwellings and annexed once. [verified] — [the two censuses](../../catalog/census-2020-dhc.md), read in [the vacancy record](../measure/allen-county-vacancy-status-2010-2020.yml), against [the annexations](../measure/allen-county-annexations-1990-2024.yml). Its vacancy rate fell across the same ten years, 15.3 per cent to 11.2, and 501 of the 772 fewer empty units were in the class that is neither for sale nor for rent. [inference] — the same two censuses. A city can empty and tighten at once if the empty houses come down.",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "This does not establish that Lima is the poorest subdivision in the county."
+      ],
+      "figures": [
+        {
+          "label": "units lost",
+          "value": 756.0,
+          "literal": "756"
+        },
+        {
+          "label": "vacancy rate, 2010, per cent",
+          "value": 15.3,
+          "literal": "15.3"
+        },
+        {
+          "label": "vacancy rate, 2020, per cent",
+          "value": 11.2,
+          "literal": "11.2"
         }
       ]
     }
