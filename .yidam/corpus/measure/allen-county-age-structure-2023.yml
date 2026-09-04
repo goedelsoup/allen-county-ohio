@@ -41,6 +41,19 @@ description: |
 
   Sugar Creek Township's median age of 29.9 in 1,398 people is the shape a college makes in a small
   denominator, and this node does not read it as a finding about that township. [inference]
+
+  **The county has 50,817 men to 50,868 women, and between 18 and 64 it has 29,885 men to 28,819
+  women.** That is 103.7 men to 100 where Ohio has 100.0 and the nation 100.5. [verified] —
+  [the same table](../../catalog/census-acs-summary-file.md), B01001, summed here. Lima is further
+  out still, at 107.0.
+
+  **The excess is an institution and not a population.** Taken over the civilian noninstitutionalized
+  population the same ratio is 28,649 to 28,718, or 99.8 to 100, and the 1,236 men who make the
+  difference are in the county's two state prisons. Every figure in the table above is over the
+  total population and therefore counts them; the survey's disability, insurance and poverty tables
+  are not and do not. [verified] —
+  [what the survey leaves out](allen-county-institutional-population-2023.yml); see
+  [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml).
 properties:
   parameter: median age (B01002) and population by age (B01001)
   value: "39.7"
@@ -56,6 +69,10 @@ links:
     source: ../../catalog/census-acs-summary-file.md
   - target: ../place/lima.yml
     relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-institutional-population-2023.yml
+    relationship: relates-to
     claim_tag: verified
     source: ../../catalog/census-acs-summary-file.md
   - target: ../measure.ont.yml

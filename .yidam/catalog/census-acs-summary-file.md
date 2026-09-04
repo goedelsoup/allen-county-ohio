@@ -70,7 +70,20 @@ between them is mostly the two years that changed places. [inference] The corpus
 now because its income, race, age and housing tables are all that vintage and they close against
 each other. Moving means moving all of them.
 
-**What else is in it, unread.** Educational attainment, commuting time, language, disability,
-veteran status, health insurance, housing cost burden, mortgage status, and the year-by-year
-five-year files back to 2009 — the earlier ones in a different format, since the table-based
-summary file exists only from 2021. This corpus has taken twelve tables from one year.
+**Six more tables were taken for the county's people.** B15002 and B15003 educational attainment,
+B18101 disability by sex and age, B21001 veteran status by sex and age, and B01001 and B17001 read
+again for their universes rather than their contents. Eighteen tables from one year now. [verified]
+
+**Its tables do not all describe the same population, and the file never says so in the data.** The
+universe is printed in the table shells and nowhere else: B15003 is taken over the population 25
+years and over, B21001 over the civilian population 18 years and over, B18101 over the civilian
+noninstitutionalized population, and B17001 over the population for whom poverty status is
+determined. In this county those four universes differ by as much as 3,899 people. [verified] — the
+shells file against the data; see
+[the gap between two universes is a measurement](../decisions/the-gap-between-two-universes-is-a-measurement.yml).
+
+**What else is in it, unread.** Commuting time, language, health insurance, housing cost burden,
+mortgage status, place of birth, and the year-by-year five-year files between 2010 and 2022 — those
+before 2021 in a different format, since the table-based summary file exists only from then. The
+first of them, 2005–2009, has now been taken and is
+[catalogued separately](census-acs-summary-file-2009.md).

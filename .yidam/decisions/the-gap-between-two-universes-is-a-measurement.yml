@@ -1,0 +1,86 @@
+id: the-gap-between-two-universes-is-a-measurement
+summary: >-
+  Four tables in one American Community Survey file describe four different populations of Allen
+  County, and the file says so only in its shells. Subtracting one universe from another is not
+  bookkeeping: total population less civilian noninstitutionalized population gives 2,249 people by
+  sex and age, which is the county's institutional population measured by a survey that never
+  tabulates it.
+context: |
+  The 2019–2023 five-year file publishes, for county 39003:
+
+      B01001  sex by age                     total population                            101,685
+      B15003  educational attainment         population 25 years and over                 68,410
+      B21001  veteran status                 civilian population 18 years and over        77,628
+      B18101  disability by sex and age      civilian noninstitutionalized population     99,436
+      B17001  poverty status                 population for whom poverty is determined    97,786
+
+  Three of those are not the county. A reader who takes 15.9 per cent disabled and 13.1 per cent
+  below poverty as shares of Allen County is wrong by 2,249 people in the first case and 3,899 in
+  the second, and the people left out are not a random 2 or 4 per cent — they are in the two state
+  prisons and the twelve nursing homes.
+
+  The naive response is a footnote. The better response is arithmetic. B01001 and B18101 are
+  published on the same six age brackets by sex, so they can be differenced cell by cell:
+
+      Allen County, total population less civilian noninstitutionalized, 2019–2023
+                       male    female
+      under 5             0         0
+      5 to 17             8         7
+      18 to 34          353        19
+      35 to 64          883        82
+      65 to 74          253       142
+      75 and over       175       327
+      total           1,672       577
+
+  That is a demographic profile of an institutional population, from a survey that publishes no
+  table of institutional population at all. And it is checkable: the same subtraction on the United
+  States returns 4,962,262, and on the 18-and-over rows against B21001 returns 1,286,167 — which is
+  where the armed forces are, since the veteran table's universe is civilian and the disability
+  table's is civilian *and* noninstitutionalized. In Allen County that second subtraction returns
+  64.
+decision: |
+  **Before reporting any rate from a multi-table survey, read the universe of every table it touches
+  and write it down beside the number. Where two tables share a geography and a breakdown but differ
+  in universe, difference them: the gap is a population, it usually has a name, and it is often a
+  quantity the survey publishes nowhere else.**
+
+  Three consequences for how such a rate is then stated:
+
+  *A rate is reported over its own universe and the universe is named.* This corpus says fifteen
+  point nine per cent of the county's civilian noninstitutionalized population, not fifteen point
+  nine per cent of the county.
+
+  *Where the excluded population is known and the rate over it is not, the whole-population figure
+  is published as an interval and not as a point.* Allen County's disability rate over everybody
+  lies between 15.55 and 17.76 per cent, and the corpus prints both ends.
+
+  *Where the gap can be identified, it is identified, and against a second instrument.* The 2,249
+  here are 2,185 after the military are taken out, against 2,479 institutionalized residents in the
+  2020 census — two instruments eleven per cent apart on a quantity neither was built to report.
+rationale: |
+  **Why this is not [a survey is not a count](a-survey-is-not-a-count.yml).** That rule is about
+  sampling error: it says a figure with a margin around it is an interval and comparisons must clear
+  the combined margin. This one is about the denominator, which has no margin at all. The county's
+  disability rate could be measured with a census and still not be the county's disability rate,
+  because the universe would still exclude the nursing homes. Margin and universe are independent
+  defects and the first is the one that gets attention.
+
+  **What it bought here.** An age-and-sex profile of 2,249 institutional residents, which the 2020
+  census's group-quarters table cannot give — it publishes type and not age. Read together the two
+  say that 1,236 working-age men and 897 people over 65 are outside the survey's civilian
+  noninstitutionalized universe, which is a prison and a set of nursing homes described without
+  either being named in the file. It also corrected a figure this corpus had already published: the
+  county's poverty rate of 13.1 per cent is a share of 97,786 people, not of 101,685.
+
+  **What would falsify it.** If the differenced cells had been noise — negative in places, scattered
+  across ages, unrelated in shape to any known institution — the subtraction would be measuring
+  survey error rather than a population. They are not: the profile is monotone in the right places,
+  zero under five, and its two lumps sit where the county's two kinds of institution are.
+
+  **What it generalises to.** Any survey that publishes multiple universes and does not print them
+  in the data: the Current Population Survey's civilian noninstitutional population, hospital
+  discharge files restricted to residents, employment series restricted to the covered workforce,
+  school enrolment restricted to public schools. The rule is the same in each — name the universe,
+  and where two of them differ, the difference is worth measuring rather than apologising for.
+status: accepted
+date: "2026-09-04"

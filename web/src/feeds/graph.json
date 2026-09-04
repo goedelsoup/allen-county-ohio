@@ -2954,6 +2954,14 @@
         {
           "text": "Sugar Creek Township's median age of 29.9 in 1,398 people is the shape a college makes in a small denominator, and this node does not read it as a finding about that township. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**The county has 50,817 men to 50,868 women, and between 18 and 64 it has 29,885 men to 28,819 women.** That is 103.7 men to 100 where Ohio has 100.0 and the nation 100.5. [verified] — [the same table](../../catalog/census-acs-summary-file.md), B01001, summed here. Lima is further out still, at 107.0.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The excess is an institution and not a population.** Taken over the civilian noninstitutionalized population the same ratio is 28,649 to 28,718, or 99.8 to 100, and the 1,236 men who make the difference are in the county's two state prisons. Every figure in the table above is over the total population and therefore counts them; the survey's disability, insurance and poverty tables are not and do not. [verified] — [what the survey leaves out](allen-county-institutional-population-2023.yml); see [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -4465,6 +4473,65 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-educational-attainment-2009-2023.yml",
+      "class": "measure",
+      "label": "Educational attainment in Allen County, 2005–2009 and 2019–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Table B15002, *Sex by Educational Attainment for the Population 25 Years and Over*, from the 2019–2023 and 2005–2009 five-year American Community Survey summary files. The two vintages carry the same thirty-five lines in the same order, so male and female cells are summed pairwise and grouped identically in both. [verified] The 2023 file is table-based and self-describing. The 2009 file is sequence-based: table B15002 is thirty-five cells beginning at position 90 of sequence 40, the geography is joined on a seven-character logical record number at column 14 of a separate fixed-width file, and neither file names a variable. [verified] Shares are ratio estimates and their margins are computed as the Census Bureau directs, with the denominator's variance subtracted where the result stays positive and added where it does not. A difference is called only where it exceeds the root sum of squares of the two margins, at the 90 per cent level the Bureau publishes. [verified] The national row is 2023 only; the 2009 state file holds Ohio and its subdivisions and nothing above them. [verified] B15003, which the modern file also carries, splits the grades below ninth more finely and has no 2009 counterpart. It was read and agrees with B15002 on every figure quoted here. [verified]",
+        "parameter": "population 25 and over with a bachelor's degree or more, Allen County",
+        "unit": "per cent",
+        "value": "19.9"
+      },
+      "blocks": [
+        {
+          "text": "**This corpus has counted the county's schools for four phases and never once counted what its adults finished.** It holds enrolment, buildings, districts, report cards, six post-secondary institutions and their degrees conferred, and had no figure for how far the people who live here actually got. [verified] — [the enrolment](allen-county-school-enrolment-by-race-1988-2024.yml) and [higher education](allen-county-higher-education-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**19.9 per cent of Allen County's adults hold a bachelor's degree or more, against 30.9 per cent of Ohio's and 35.0 of the nation's.** [verified] — [the American Community Survey](../../catalog/census-acs-summary-file.md), table B15002, 2019–2023 five-year estimates. The county is 11.0 points below the state and 15.1 below the nation, and both gaps clear their combined margins several times over.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The deficit is not in the schooling. It is entirely at the far end.** 40.7 per cent of the county's adults hold a high school diploma and nothing further, against 32.3 per cent for Ohio and 26.2 for the nation — 8.4 points above the state on a combined margin of 1.3. Below the diploma the county is unremarkable or better: 1.7 per cent never reached ninth grade where Ohio has 2.6 and the nation 4.7. [verified] — the same table. What is rare here is not finishing school. It is carrying on afterwards.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say whether Allen County's adults finish high school at a different rate from Ohio's.** The county reads 92.4 per cent with a diploma or more and the state 91.6, a difference of 0.8 against a combined margin of 2.2 — an interval that contains zero comfortably. The county is above the national 89.4 by 3.0 points against a margin of 2.2, which is a finding and a narrow one. [verified] — the same table; see [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Inside the county the range is four to one.** [verified] — the same table, by county subdivision.",
+          "tier": "verified"
+        },
+        {
+          "text": "Richland Township at 39.2 per cent is above the national rate and the only part of this county that is; it is also where [Bluffton University](../organization/bluffton-university.yml) stands, and the university's own students are mostly under 25 and outside this table's universe, so what is being counted there is the people who work at it and live near it. [inference] — the same source against [the age structure](allen-county-age-structure-2023.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Fourteen years apart, with no year in common, the county gained and the state gained faster.** The 2005–2009 five-year file and the 2019–2023 file share no sample year at all. Between them Allen County's bachelor's-or-more share rose 4.1 points and Ohio's rose 7.4, so a gap of 7.8 points became one of 11.0. [verified] — [the 2009 summary file](../../catalog/census-acs-summary-file-2009.md) against [the 2023 one](../../catalog/census-acs-summary-file.md), table B15002 in both; see [an overlap names what changed](../../decisions/an-overlap-names-what-changed.yml) for why those two vintages and not the ones between.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county did not fall behind by standing still.** Its population aged 25 and over was 68,304 in the earlier window and 68,410 in the later, a change of 106 people, while Ohio's grew 5.9 per cent — so the widening gap is not newcomers arriving somewhere else and diluting a share. [verified] — the same file in two vintages. The county's adults are the same number of people, better educated than they were, and further behind the state than they were.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four townships moved and the city did not.** Bath, Marion, Richland and Shawnee each gained more than their own margin; Lima gained 1.9 points against a margin of 2.1 and is the one subdivision large enough for the test to mean much. [verified] — the same file in two vintages.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima has not measurably moved at either end.** Its bachelor's-or-more share went 9.9 to 11.8 on a margin of 2.1, and the share whose schooling ended at a diploma went 44.6 to 45.4 on a margin of 3.3. Two tests fourteen years apart on 23,000 adults, and neither clears. [verified] — the same file in two vintages. The county's own diploma-only share fell 42.2 to 40.7 on a margin of 1.7 and does not clear either.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say whether Allen County's adults finish high school at a different rate from Ohio's.** The county reads 92.4 per cent with a diploma or more and the state 91.6, a difference of 0.8 against a combined margin of 2.2 — an interval that contains zero comfortably."
+      ],
+      "withheld": 5
+    },
+    {
       "id": "measure/allen-county-elected-seats-2026.yml",
       "class": "measure",
       "label": "Allen County elective seats and how their holders arrived, 2026",
@@ -5464,10 +5531,18 @@
         {
           "text": "**The county's student housing does not sit where its students are.** Only two of the six post-secondary institutions in Allen County provide institutionally controlled housing, and they reported 2,228 beds between them in 2020 — Bluffton University 692 and the University of Northwestern Ohio 1,536. Against that the census counted 788 people in college student housing, 35 per cent of the beds. [verified] — [IPEDS](../../catalog/ipeds.md), institutional characteristics, against the redistricting file. Census day 2020 fell some weeks after American campuses sent their students home, and this corpus cannot separate that from ordinary vacancy. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**A fourth count arrives from a survey that publishes no such table, and it brings the age and sex this one lacks.** Subtracting the American Community Survey's civilian noninstitutionalized population from its total population, cell by cell across six age brackets, leaves 2,249 people in Allen County for 2019–2023; take out the 64 active-duty military and 2,185 stand against the 2,479 institutionalized here, eleven per cent apart. [verified] — [what the survey leaves out](allen-county-institutional-population-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "This table's two categories and that one's two lumps are the same two institutions counted by instruments that share no method. **What the survey adds is that the correctional population is overwhelmingly male and of working age and the nursing population is neither**, which is beyond the reach of this table: P5 publishes type and not age or sex. [inference] — the same two sources. What this table adds in return is that the survey's second lump is nursing homes at all, since the survey names no institution.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 4
+      "withheld": 5
     },
     {
       "id": "measure/allen-county-hazard-mitigation-2003-2026.yml",
@@ -6404,10 +6479,10 @@
       "id": "measure/allen-county-income-and-poverty-2023.yml",
       "class": "measure",
       "label": "Allen County household income and poverty, 2023",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2023",
-        "method": "2023 five-year estimates from the table-based summary file. The twelve townships and Lima are county-subdivision and place summary levels and partition the county: they sum to 101,685 people and 12,815 below poverty, both equal to the county row. Margins are as published, at 90 per cent; combined margins are the root of the sum of squares. [verified]",
+        "method": "2023 five-year estimates from the table-based summary file. The twelve townships and Lima are county-subdivision and place summary levels and partition the county: they sum to 101,685 people and 12,815 below poverty, both equal to the county row. The two totals come from different tables with different universes — B01001 counts everybody and B17001 counts the 97,786 for whom poverty status is determined — and a share of one taken over the other is what this node originally published. Margins are as published, at 90 per cent; combined margins are the root of the sum of squares. [verified]",
         "parameter": "median household income (B19013) and poverty status (B17001)",
         "unit": "2023 dollars, county median household income",
         "value": "62001"
@@ -6428,12 +6503,83 @@
         {
           "text": "This does not establish that Lima has the lowest household income in the county. Perry Township's $53,272 is higher by $9,902 against a combined margin of $11,142, so the two cannot be ordered here. [verified] Nor is the county distinguishable from the state on poverty: 13.1 per cent against 13.2, against a combined margin of 1.2 points. [verified]",
           "tier": "verified"
+        },
+        {
+          "text": "**The 13.1 per cent is a share of 97,786 people and not of the county.** Poverty status is determined for everyone except people in institutional group quarters, people in military quarters, unrelated individuals under 15 and college students in dormitories, so the rate this node published rests on a base 3,899 smaller than the county's population. Over everybody the 12,815 are 12.6 per cent. [verified] — [the same source](../../catalog/census-acs-summary-file.md), table B17001, its universe read from the table shells. Lima's base is 33,076 against a population of 35,304, so its 24.8 per cent is 23.3 over the whole city. [verified] — the same table.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Neither figure is wrong and the choice between them is not free.** The Census Bureau's rate is the one every other county's is, and this corpus keeps it as published and states its universe beside it; the whole-population figure is offered only because the excluded 3,899 are two prisons, twelve nursing homes and a set of dormitories rather than a scatter. [inference] — see [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml) and [what the survey leaves out](allen-county-institutional-population-2023.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [
         "This does not establish that Lima has the lowest household income in the county."
       ],
       "withheld": 1
+    },
+    {
+      "id": "measure/allen-county-institutional-population-2023.yml",
+      "class": "measure",
+      "label": "Allen County's institutional population, 2019–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Tables B01001 and B18101 from the 2019–2023 five-year American Community Survey summary file, differenced cell by cell. B18101's six age brackets by sex — under 5, 5 to 17, 18 to 34, 35 to 64, 65 to 74, 75 and over — are matched by summing B01001's twenty-three brackets per sex into the same six. The two tables' totals for each sex close on their own published totals. [verified] The difference is institutionalized civilians plus all active-duty military, since \"civilian noninstitutionalized\" excludes both. The military part is isolated by a second subtraction: B01001's population 18 and over less B21001's civilian population 18 and over, which is 64 in this county and 1,286,167 nationally. [verified] No one under 18 is in either force, and the 5-to-17 difference of 15 is small enough to be sampling noise in a five-year estimate. [inference] Universes are read from the table shells published with the file, which are the only place they appear; the data files carry no universe field. [verified] Rate margins are ratio-estimate margins at the 90 per cent level, computed as the Census Bureau directs. The bounds on the county-wide disability share are arithmetic, not statistical: they assume nothing about the excluded population beyond its size. [verified]",
+        "parameter": "population outside the civilian noninstitutionalized universe, Allen County",
+        "unit": "people",
+        "value": "2249"
+      },
+      "blocks": [
+        {
+          "text": "**The county's disability rate is 15.9 per cent and it is not a rate over the county.** It is a rate over 99,436 people where the county has 101,685, and the 2,249 left out are in the two state prisons and the twelve nursing homes. [verified] — [the American Community Survey](../../catalog/census-acs-summary-file.md), tables B01001 and B18101, 2019–2023 five-year estimates; see [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Five tables from one file describe five different populations of this county, and the data files never say so.** The universe is printed in the table shells and nowhere else. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**B01001 and B18101 are published on the same six age brackets by sex, so the difference between them can be taken cell by cell — and it is a census of an institutional population that the survey tabulates nowhere.** 1,672 men and 577 women. [verified] — the same tables, differenced here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The same subtraction, run on the United States, returns the armed forces.** The veteran table's universe is civilian and the disability table's is civilian *and* noninstitutionalized, so the difference between total population 18 and over and civilian population 18 and over is the active-duty force: 1,286,167 nationally. In Allen County it is 64. [verified] — the same file, the national and county rows. This corpus holds no Defense Department strength report to check the national figure against, and records the agreement in order of magnitude rather than as a test. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**So 2,185 of the 2,249 are institutionalized, against 2,479 the census counted in 2020.** Two instruments built for different purposes, neither of them a count of institutions, eleven per cent apart. [verified] — the same file, differenced as above, against [the group quarters](allen-county-group-quarters-2020.yml). The survey figure is the lower of the two and it averages five years to the census's one day, four of them after April 2020; Ohio's prison population fell in that period. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The profile names which institution without the file naming either.** 1,236 of the excluded are men aged 18 to 64, against 1,513 people the census counted in adult correctional facilities; 897 are 65 or over, against 966 in nursing facilities. Under five the difference is zero in both sexes, as it must be. [verified] — the same sources. The two lumps sit where the county's two kinds of institution are, and the residual is 116 people.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County has more working-age men than working-age women, and it does not.** Counted over everybody there are 29,885 men aged 18 to 64 to 28,819 women, 103.7 to 100. Counted over the civilian noninstitutionalized population there are 28,649 to 28,718, which is 99.8 to 100. [verified] — the same tables. The county's excess of working-age men is 1,236 people and it is a prison. See [the age structure](allen-county-age-structure-2023.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**In Lima the same pair of numbers crosses over.** The city reads 107.0 working-age men to 100 women over its total population and 96.3 over its civilian noninstitutionalized population, a swing of 10.7 — from the most male working-age population in the county to one with fewer men than Ohio's. [verified] — the same tables. Ohio reads 100.0 and 98.3, the nation 100.5 and 98.1; the gap between the two ratios is 2.4 points nationally and 10.7 in this city. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say what share of Allen County's people have a disability.** The survey measures 15,808 of the 99,436 it asks about and asks nobody in an institution, so the share over the whole county lies between 15.55 per cent, if none of the 2,249 is disabled, and 17.76 per cent, if all of them are. Neither end is credible and no table narrows it. [verified] — the same source. Over the 65-and-over population the interval is 33.5 to 36.6 per cent, on 897 excluded people of whom 966 were in nursing homes on census day. [verified] — the same sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima carries twice the county's share of it.** 1,576 of the city's 35,304 residents are outside the civilian noninstitutionalized universe, 4.5 per cent against the county's 2.2, and 1,390 of them are men. [verified] — the same tables. Both prisons stand inside the city limits, which is why every rate this survey publishes for Lima is taken over a population 4.5 per cent smaller than the city. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The veteran table is the one that keeps them.** Its universe is the civilian population 18 and over, institutions included, so Allen County's 5,948 veterans are a share of 77,628 rather than of 75,443 — 7.7 per cent against Ohio's 6.8 and the nation's 6.4, a difference that clears its margin. [verified] — the same file, table B21001. Among men the rate is 14.0 per cent and it is a history of conscription: 40.8 per cent of the county's men aged 75 and over are veterans, 26.6 per cent of those 65 to 74, and 3.6 per cent of those 18 to 34. [verified] — the same table.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say what share of Allen County's people have a disability.** The survey measures 15,808 of the 99,436 it asks about and asks nobody in an institution, so the share over the whole county lies between 15.55 per cent, if none of the 2,249 is disabled, and 17.76 per cent, if all of them are."
+      ],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-interurban-1901-1921.yml",
@@ -23717,6 +23863,13 @@
       "source": "catalog/census-acs-summary-file.md"
     },
     {
+      "from": "measure/allen-county-age-structure-2023.yml",
+      "to": "measure/allen-county-institutional-population-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
       "from": "measure/allen-county-air-quality-1980-2024.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -24137,6 +24290,34 @@
       "source": "catalog/nhtsa-fars.md"
     },
     {
+      "from": "measure/allen-county-educational-attainment-2009-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-educational-attainment-2009-2023.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-educational-attainment-2009-2023.yml",
+      "to": "measure/allen-county-higher-education-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-educational-attainment-2009-2023.yml",
+      "to": "measure/allen-county-age-structure-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
       "from": "measure/allen-county-elected-seats-2026.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -24452,6 +24633,13 @@
       "source": "catalog/cms-snf-cost-reports.md"
     },
     {
+      "from": "measure/allen-county-group-quarters-2020.yml",
+      "to": "measure/allen-county-institutional-population-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
       "from": "measure/allen-county-hazard-mitigation-2003-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -24513,6 +24701,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/ipeds.md"
+    },
+    {
+      "from": "measure/allen-county-higher-education-2023.yml",
+      "to": "measure/allen-county-educational-attainment-2009-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-home-lending-2018-2024.yml",
@@ -24859,10 +25054,52 @@
     },
     {
       "from": "measure/allen-county-income-and-poverty-2023.yml",
+      "to": "measure/allen-county-institutional-population-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-income-and-poverty-2023.yml",
       "to": "place/lima.yml",
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-institutional-population-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-institutional-population-2023.yml",
+      "to": "measure/allen-county-group-quarters-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
+      "from": "measure/allen-county-institutional-population-2023.yml",
+      "to": "measure/allen-county-age-structure-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-institutional-population-2023.yml",
+      "to": "measure/allen-county-income-and-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-institutional-population-2023.yml",
+      "to": "site/allen-correctional-institution.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-interurban-1901-1921.yml",

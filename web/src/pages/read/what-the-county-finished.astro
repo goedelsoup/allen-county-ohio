@@ -1,0 +1,175 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const deg = assertion('one-adult-in-five-holds-a-degree')
+const far = assertion('the-deficit-is-all-at-the-far-end')
+const twp = assertion('one-township-above-the-national-rate')
+const gap = assertion('the-county-gained-and-the-state-gained-faster')
+const same = assertion('the-same-adults-better-educated')
+const lima = assertion('lima-did-not-move-at-either-end')
+const dis = assertion('the-disability-rate-is-not-a-county-rate')
+const five = assertion('five-tables-five-populations')
+const sub = assertion('subtracting-two-universes-counts-an-institution')
+const prof = assertion('the-profile-names-the-institution')
+const two = assertion('two-instruments-eleven-per-cent-apart')
+const arm = assertion('the-same-subtraction-finds-the-armed-forces')
+const sex = assertion('the-working-age-sex-ratio-is-a-prison')
+const cross = assertion('in-lima-the-ratio-crosses-over')
+const pov = assertion('the-poverty-rate-is-over-ninety-seven-thousand')
+const vet = assertion('a-history-of-conscription')
+
+const ladderCats = [
+  'Under 9th grade',
+  '9th–12th, no diploma',
+  'Diploma only',
+  'Some college',
+  "Associate's",
+  "Bachelor's",
+  'Graduate degree',
+]
+const ladderDiff = [-0.9, 0.2, 8.4, 1.9, 1.5, -6.6, -4.4]
+const ladderAllen = [1.7, 5.9, 40.7, 21.3, 10.5, 12.4, 7.5]
+const ladderOhio = [2.6, 5.7, 32.3, 19.4, 9.0, 19.0, 11.9]
+
+const subCats = [
+  'Richland',
+  'Shawnee',
+  'Marion',
+  'Sugar Creek',
+  'Amanda',
+  'Bath',
+  'American',
+  'Perry',
+  'Jackson',
+  'Monroe',
+  'Spencer',
+  'Auglaize',
+  'Lima',
+]
+const subVals = [39.2, 33.7, 25.2, 22.7, 22.6, 22.5, 20.5, 16.0, 14.3, 13.0, 12.9, 12.5, 11.8]
+const subAdults = [3835, 8847, 4511, 833, 1268, 6059, 10148, 2383, 2005, 1497, 1973, 2021, 23030]
+
+const gqCats = [
+  'Men 18–34',
+  'Men 35–64',
+  'Men 65–74',
+  'Men 75+',
+  'Women 18–34',
+  'Women 35–64',
+  'Women 65–74',
+  'Women 75+',
+]
+const gqVals = [353, 883, 253, 175, 19, 82, 142, 327]
+
+const ladderSpec = bar(ladderCats, ladderDiff, {
+  yTitle: 'Allen County less Ohio, percentage points',
+  labelValues: true,
+})
+const subSpec = bar(subCats, subVals, {
+  yTitle: "Bachelor's degree or more, per cent of adults 25+",
+  tickSuffix: '%',
+  labelValues: true,
+})
+const gqSpec = bar(gqCats, gqVals, { yTitle: 'People outside the survey universe', labelValues: true })
+---
+
+<Article slug="what-the-county-finished">
+  <p>
+    A county reference can hold enrolment, buildings, districts, report cards and six colleges with
+    their degrees conferred, and still not answer the plainest question about the people who live
+    there: how far did they get. Two tables of the American Community Survey answer it, and a third
+    turns out to be describing a slightly different county than the first two.
+  </p>
+  <AssertionCard assertion={deg} open />
+  <AssertionCard assertion={far} />
+  <ChartFigure
+    id="ladder"
+    title="The whole difference is at the top of the ladder"
+    caption="Allen County's share of adults at each level of schooling, minus Ohio's, in percentage points. Below the diploma the county is level with the state or better. The eight points it holds in surplus are all people whose schooling ended at high school, and the eleven it gives back are all degrees."
+    columns={['Level', 'Allen County', 'Ohio', 'Difference']}
+    rows={ladderCats.map((c, i) => [
+      c,
+      `${ladderAllen[i]}%`,
+      `${ladderOhio[i]}%`,
+      `${ladderDiff[i] > 0 ? '+' : ''}${ladderDiff[i]}`,
+    ])}
+    height={330}
+  />
+  <script
+    type="application/json"
+    data-chart-spec="ladder"
+    set:html={JSON.stringify(ladderSpec)}
+    is:inline
+  />
+  <AssertionCard assertion={twp} />
+  <ChartFigure
+    id="subs"
+    title="Four to one across thirteen subdivisions"
+    caption="Adults with a bachelor's degree or more, by county subdivision. Ohio reads 30.9 per cent and the nation 35.0, so only Richland Township clears the national rate and only two clear the state's. The margins on the smallest townships are wide — Sugar Creek has 833 adults in it — and the four largest are the four to read."
+    columns={['Subdivision', 'Adults 25+', "Bachelor's or more"]}
+    rows={subCats.map((c, i) => [c, subAdults[i].toLocaleString('en-US'), `${subVals[i]}%`])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="subs" set:html={JSON.stringify(subSpec)} is:inline />
+  <AssertionCard assertion={gap} />
+  <AssertionCard assertion={same} />
+  <AssertionCard assertion={lima} />
+  <Gloss>
+    Two five-year windows fourteen years apart share no sample year, which is the only reason a
+    difference between them is a difference in the county. Adjacent vintages of this survey overlap
+    by four years out of five, so almost everything that looks like a change between them is the
+    same interviews counted twice. The comparison here is 2005–2009 against 2019–2023 and nothing in
+    between.
+  </Gloss>
+
+  <h2>The people the survey does not ask about</h2>
+  <p>
+    Then the third table. The same file, the same county, the same year — and a population 2,249
+    people smaller than the one two tables up, with no note in the data to say so.
+  </p>
+  <AssertionCard assertion={dis} />
+  <AssertionCard assertion={five} />
+  <AssertionCard assertion={sub} />
+  <ChartFigure
+    id="gq"
+    title="Two lumps, and each of them is a building"
+    caption="Total population minus civilian noninstitutionalized population, by age and sex. Under 5 the difference is zero in both sexes and between 5 and 17 it is fifteen people. Everything else is in two piles: working-age men, and the old."
+    columns={['Age and sex', 'People outside the universe']}
+    rows={gqCats.map((c, i) => [c, gqVals[i]])}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="gq" set:html={JSON.stringify(gqSpec)} is:inline />
+  <AssertionCard assertion={prof} />
+  <AssertionCard assertion={two} />
+  <AssertionCard assertion={arm} />
+  <Gloss>
+    The check on a method like this is whether it returns something already known when pointed
+    somewhere it can be checked. Pointed at the nation, the subtraction of the civilian population
+    from the whole one returns 1,286,167 people aged 18 and over who are counted and not civilian,
+    which is the right order of magnitude for the American armed forces and is not a number anybody
+    was trying to publish here. Pointed at Allen County it returns 64.
+  </Gloss>
+
+  <h2>What it changes</h2>
+  <AssertionCard assertion={sex} />
+  <AssertionCard assertion={cross} />
+  <p>
+    Which is the sharpest form of the problem. Lima looks like the most male working-age population
+    in the county and, among the people any survey of households can reach, it has fewer men per
+    woman than Ohio does. Both readings come out of the same file. Only one of them is about the
+    city.
+  </p>
+  <AssertionCard assertion={pov} />
+  <AssertionCard assertion={vet} />
+  <p>
+    The veteran table is the one that keeps them, because its universe is civilian and not
+    noninstitutionalized, so the 7.7 per cent is a share of a larger county than the 15.9 per cent
+    is. Four rates from one file, four denominators, and the file says which is which only in a
+    documentation download that most readers never open.
+  </p>
+</Article>
