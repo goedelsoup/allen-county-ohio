@@ -6902,7 +6902,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             support!("measure/allen-county-school-buildings-1986-2024.yml", "**This county reports eight fewer school buildings than it did in 1986, and seven of the difference is Lima City.** The county held 51 in 1986 and holds 43; Lima went from 16 to 9, Elida and Spencerville lost one each, Bath gained one, and the remaining eight districts end where they began \u{2014} so nine buildings left the count and one entered it. [verified] \u{2014} the same source, its district directory, by district."),
             support!("measure/allen-county-school-buildings-1986-2024.yml", "**Five of the twelve have reported the same number every year since 1986.** Columbus Grove and Pandora-Gilboa 3, Shawnee 4, Perry and Waynesfield-Goshen 2 \u{2014} one distinct value each across all 39 years. Six more move by exactly one building and back, and Lima's count runs from 16 down to 9. [verified] \u{2014} same source, computed here."),
         ],
-        answers: &["cannot say which buildings closed"],
+        answers: &["cannot say where any of these buildings stood"],
         figures: &[
             Figure { label: "buildings 2024", value: 43.0, literal: "43" },
             Figure { label: "Lima 2024", value: 9.0, literal: "9" },
@@ -6920,7 +6920,7 @@ pub const ASSERTIONS: &[Assertion] = &[
             support!("measure/allen-county-school-buildings-1986-2024.yml", "**The two halves of the county lost nearly the same number of children and answered differently.** Lima went from 6,969 pupils in 1988 to 3,370, a loss of 3,599, and closed seven buildings. The other eleven districts lost 3,311 between them and closed one. [verified] \u{2014} same file, against [the enrolment series](allen-county-school-enrolment-1988-2024.yml)."),
             support!("measure/allen-county-school-buildings-1986-2024.yml", "**They arrive at the same building.** Lima held 435.6 pupils per school in 1988 and holds 374.4; the other eleven held 464.4 and hold 367.1. Two opposite policies over thirty-six years converge within eight pupils of each other. [verified] \u{2014} the same two files, computed here. The corpus does not read that as either district aiming at a number, because nothing in these files is a decision and a school's capacity is fixed by the building rather than chosen each year. [inference]"),
         ],
-        answers: &["cannot say which buildings closed"],
+        answers: &["cannot say where any of these buildings stood"],
         figures: &[
             Figure { label: "Lima per school", value: 374.4, literal: "374.4" },
             Figure { label: "the other eleven per school", value: 367.1, literal: "367.1" },
@@ -7459,6 +7459,215 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[
             Figure { label: "Spencerville's ZIP, per cent of Allen by people", value: 82.3, literal: "82.3" },
         ],
+    },
+    Assertion {
+        id: "one-black-child-in-three-suspended",
+        statement: "In the 2013\u{2014}14 school year 30.6 per cent of Allen County's Black \
+                    schoolchildren were suspended out of school and 8.1 per cent of its white ones. \
+                    Nearly one Black child in three.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-discipline-2011-2021.yml", "**In the 2013\u{2013}14 school year 30.6 per cent of Allen County's Black schoolchildren were suspended out of school, and 8.1 per cent of its white ones.** Nearly one Black child in three. [verified] \u{2014} [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), the county's twelve districts, its own enrolment as the denominator."),
+        ],
+        answers: &["cannot say how many children were expelled from an Allen County school in 2013"],
+        figures: &[
+            Figure { label: "Black pupils suspended out of school, per cent, 2013\u{2013}14", value: 30.6, literal: "30.6" },
+            Figure { label: "white pupils", value: 8.1, literal: "8.1" },
+        ],
+    },
+    Assertion {
+        id: "the-county-suspends-more-of-everybody",
+        statement: "Allen County's racial disparity in suspension is smaller than Ohio's and its \
+                    rate is higher for everybody. The Black-to-white ratio runs 3.2 to 4.1 here \
+                    against 3.4 to 4.8 statewide, and to 2015 both of the county's rates run above \
+                    both of the state's \u{2014} 8.1 against 4.9 for white children and 30.6 against \
+                    19.2 for Black ones.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-discipline-2011-2021.yml", "**The county's racial disparity is smaller than Ohio's and its rate is higher for everybody.** The ratio between the Black and white rates is 3.2 to 4.1 here against 3.4 to 4.8 statewide, and in every year to 2015 both of this county's rates run above both of the state's \u{2014} 8.1 against 4.9 for white children in 2013 and 30.6 against 19.2 for Black ones. [verified] \u{2014} the same source. What is unusual about Allen County is not that it suspends Black children at several times the rate of white ones, which Ohio does too; it is that it suspends more of both. [inference]"),
+        ],
+        answers: &["cannot say how many children were expelled from an Allen County school in 2013"],
+        figures: &[
+            Figure { label: "Ohio white pupils suspended, per cent, 2013\u{2013}14", value: 4.9, literal: "4.9" },
+            Figure { label: "Ohio Black pupils", value: 19.2, literal: "19.2" },
+        ],
+    },
+    Assertion {
+        id: "suspension-halved-in-two-years",
+        statement: "Out-of-school suspension in Allen County halved between 2015 and 2017, from 11.7 \
+                    per cent of pupils to 6.0, while Ohio's rate went from 7.2 to 6.7. Nothing \
+                    retrieved names a policy, a superintendent or a board resolution.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-discipline-2011-2021.yml", "**Suspension halved between 2015 and 2017 and Ohio's barely moved.** The county went from 11.7 per cent to 6.0 while the state went from 7.2 to 6.7. [verified] \u{2014} the same source. Nothing retrieved here names a policy, a superintendent or a board resolution, and the corpus records the size and the date of the fall without a cause. [inference]"),
+        ],
+        answers: &["cannot say how many children were expelled from an Allen County school in 2013"],
+        figures: &[
+            Figure { label: "county suspension rate, per cent, 2015\u{2013}16", value: 11.7, literal: "11.7" },
+            Figure { label: "2017\u{2013}18", value: 6.0, literal: "6.0" },
+        ],
+    },
+    Assertion {
+        id: "ohio-stopped-suspending-and-this-county-did-not",
+        statement: "In the pandemic year Ohio nearly stopped suspending children, its rate falling \
+                    by more than two thirds from 6.7 per cent to 2.1. Allen County's fell from 6.0 \
+                    to 5.5, and the county suspended at 2.6 times the state rate \u{2014} the widest \
+                    gap in the series.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-discipline-2011-2021.yml", "**In the pandemic year Ohio nearly stopped suspending children and this county did not.** The state's rate fell from 6.7 per cent to 2.1 \u{2014} a fall of more than two thirds \u{2014} while Allen County's fell from 6.0 to 5.5. The county suspended at 2.6 times the state rate that year, the widest gap in the series. [verified] \u{2014} the same source. Both figures cover 2020\u{2013}21, a year in which children were in a building for part of it and at home for the rest, in proportions this file does not give. [inference]"),
+        ],
+        answers: &["cannot say how many children were expelled from an Allen County school in 2013"],
+        figures: &[
+            Figure { label: "Ohio suspension rate, per cent, 2020\u{2013}21", value: 2.1, literal: "2.1" },
+            Figure { label: "Allen County", value: 5.5, literal: "5.5" },
+        ],
+    },
+    Assertion {
+        id: "a-third-of-suspensions-a-seventh-of-the-roll",
+        statement: "Black children are between 13.9 and 15.7 per cent of Allen County's school roll \
+                    and between 30.5 and 39.6 per cent of its out-of-school suspensions, in every \
+                    one of the six years the collection covers. The share of suspensions rose while \
+                    the share of the roll did not.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-discipline-2011-2021.yml", "**Black children are between 13.9 and 15.7 per cent of the county's roll and between 30.5 and 39.6 per cent of its out-of-school suspensions in every one of the six years.** [verified] \u{2014} the same source, computed here. The share of suspensions rose while the share of the roll did not."),
+        ],
+        answers: &["cannot say how many children were expelled from an Allen County school in 2013"],
+        figures: &[
+            Figure { label: "Black share of the roll, highest year, per cent", value: 15.7, literal: "15.7" },
+            Figure { label: "Black share of suspensions, highest year", value: 39.6, literal: "39.6" },
+        ],
+    },
+    Assertion {
+        id: "no-expulsion-figure-for-2013",
+        statement: "Allen County's schools report 836 expulsions in 2013 against 97 in 2011 and 83 \
+                    in 2015, and the figure is an artefact: six of them enter the same number in \
+                    both of two mutually exclusive columns. Across Ohio, 438 of the 570 schools \
+                    reporting both columns that year report them equal.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-discipline-2011-2021.yml", "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns \u{2014} 110 and 110, 71 and 71, 67 and 67. Across Ohio, 438 of the 570 schools reporting both columns in 2013 report them equal, against 23 to 48 per cent of schools in every other year. [verified] \u{2014} the same file, counted here. Halving the duplicates still leaves 442, which is four times any neighbouring year, so the column is not repairable and no expulsion figure is published for 2013."),
+        ],
+        answers: &["cannot say how many children were expelled from an Allen County school in 2013"],
+        figures: &[
+            Figure { label: "expulsions reported, 2013", value: 836.0, literal: "836" },
+            Figure { label: "Ohio schools reporting the two columns equal", value: 438.0, literal: "438" },
+        ],
+    },
+    Assertion {
+        id: "absenteeism-doubled",
+        statement: "Chronic absenteeism in Allen County's schools doubled between 2013 and 2021, \
+                    from 14.9 per cent of pupils to 30.0. A chronically absent child is one who \
+                    misses fifteen school days or more in a year.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-chronic-absenteeism-2013-2022.yml", "**Chronic absenteeism in Allen County's schools doubled between 2013 and 2021, from 14.9 per cent of pupils to 30.0.** A chronically absent child is one who misses fifteen school days or more in a year. [verified] \u{2014} [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), the county's twelve districts, its own enrolment as the denominator."),
+        ],
+        answers: &["cannot say what share of Allen County's children were chronically absent in 2022"],
+        figures: &[
+            Figure { label: "chronically absent, per cent, 2013\u{2013}14", value: 14.9, literal: "14.9" },
+            Figure { label: "2021\u{2013}22", value: 30.0, literal: "30.0" },
+        ],
+    },
+    Assertion {
+        id: "half-the-black-children-absent",
+        statement: "Nearly half of Allen County's Black schoolchildren were chronically absent in \
+                    2021\u{2014}22 \u{2014} 44.5 per cent, against 25.0 per cent of white children \
+                    and 18.9 per cent of Black children eight years earlier. The gap between the two \
+                    rates opened from 5.7 points to 19.5.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-chronic-absenteeism-2013-2022.yml", "**Nearly half of the county's Black schoolchildren were chronically absent in 2021\u{2013}22.** 44.5 per cent, against 25.0 for white children and 18.9 for Black children eight years earlier. [verified] \u{2014} the same source. The gap between the two rates opened from 5.7 points in 2013 to 19.5 in 2021."),
+        ],
+        answers: &["cannot say what share of Allen County's children were chronically absent in 2022"],
+        figures: &[
+            Figure { label: "Black pupils chronically absent, per cent, 2021\u{2013}22", value: 44.5, literal: "44.5" },
+            Figure { label: "white pupils", value: 25.0, literal: "25.0" },
+        ],
+    },
+    Assertion {
+        id: "better-on-absence-worse-on-suspension",
+        statement: "On absence Allen County is close to Ohio and better than it for Black children \
+                    in every year, by 6.4 points in 2013 and 11.2 in 2021. On suspension it runs \
+                    above the state on every rate. Absence and suspension are not one thing measured \
+                    twice.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-chronic-absenteeism-2013-2022.yml", "**On this measure the county is close to Ohio and better than it for Black children.** Its overall rate runs within a point or two of the state's in four of the five years and 3.5 points below it in 2021; its Black rate is below the state's in every year, 18.9 against 25.3 in 2013 and 44.5 against 55.7 in 2021. [verified] \u{2014} the same source. That is the opposite of what [the discipline record](allen-county-school-discipline-2011-2021.yml) says, where this county runs above Ohio on every rate. Absence and suspension are not the same thing measured twice. [inference]"),
+        ],
+        answers: &["cannot say what share of Allen County's children were chronically absent in 2022"],
+        figures: &[
+            Figure { label: "county Black absence rate, per cent, 2021\u{2013}22", value: 44.5, literal: "44.5" },
+            Figure { label: "Ohio", value: 55.7, literal: "55.7" },
+        ],
+    },
+    Assertion {
+        id: "two-collections-disagree-about-the-children",
+        statement: "Two federal collections count Allen County's schoolchildren in the same years \
+                    and disagree by 0.6 to 8.0 per cent \u{2014} 15,461 against 16,127 in 2021, \
+                    14,839 against 16,124 in the pandemic year. A rate built from one collection's \
+                    numerator over the other's denominator is wrong before any measuring starts.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-chronic-absenteeism-2013-2022.yml", "**The two collections disagree about how many children are in this county, and by enough to matter.** 15,461 against 16,127 in 2021, and 14,839 against 16,124 in the pandemic year. [verified] \u{2014} the same source against [the Common Core of Data](../../catalog/nces-common-core-of-data.md)."),
+        ],
+        answers: &["cannot say what share of Allen County's children were chronically absent in 2022"],
+        figures: &[
+            Figure { label: "civil-rights collection, 2021", value: 15461.0, literal: "15,461" },
+            Figure { label: "district files", value: 16127.0, literal: "16,127" },
+        ],
+    },
+    Assertion {
+        id: "the-net-of-seven-is-a-turnover-of-nineteen",
+        statement: "Lima reports seven fewer school buildings than it did in 1986, and the seven are \
+                    a turnover of nineteen: thirteen buildings left the count and six entered it. \
+                    Only three identifiers run the whole way \u{2014} North, South and West junior \
+                    highs.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**The net of seven is a turnover of nineteen.** The school-level directory, read at fourteen dates between 1986 and 2024, shows thirteen of Lima's sixteen buildings leaving the count and six entering it. Only three identifiers run the whole way: North, South and West junior highs, now North Middle, South Science-Technology Magnet K-8 and West Middle. [verified] \u{2014} [the same collection](../../catalog/nces-common-core-of-data.md), its school directory, differenced here."),
+        ],
+        answers: &["cannot say where any of these buildings stood"],
+        figures: &[],
+    },
+    Assertion {
+        id: "ten-buildings-in-four-years",
+        statement: "Between 2002 and 2005 Lima closed nine elementary schools and its high school \
+                    and opened five elementary schools. A district that reported sixteen buildings \
+                    in 1986 and seventeen in 2002 reported twelve in 2005: what the count shows as a \
+                    slow decline was a rebuild compressed into four years.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**Ten of the thirteen left in four years.** Between 2002 and 2005 Lima closed nine elementary schools and its high school and opened five elementary schools, so a district that had reported sixteen buildings in 1986 and seventeen in 2002 reported twelve in 2005. [verified] \u{2014} the same file. What the count of buildings shows as a slow decline was, on the ground, a rebuild compressed into four years."),
+        ],
+        answers: &["cannot say where any of these buildings stood"],
+        figures: &[],
+    },
+    Assertion {
+        id: "named-for-people-named-for-ideas",
+        statement: "The Lima schools that closed are named for people and the schools that replaced \
+                    them are named for ideas. Edison, Emerson, Faurot, Horace Mann, Irving, \
+                    Jefferson, Lincoln, Lowell, Roosevelt, Washington McKinley, Westwood and \
+                    Whittier gave way to Freedom, Heritage, Independence, Liberty and Unity.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**The schools that closed are named for people and the schools that replaced them are named for ideas.** Edison, Emerson, Faurot, Horace Mann, Irving, Jefferson, Lincoln, Lowell, Roosevelt, Washington McKinley, Westwood and Whittier gave way to Freedom, Heritage, Independence, Liberty and Unity. [verified] \u{2014} the same file. Nothing retrieved here says who chose the names."),
+        ],
+        answers: &["cannot say where any of these buildings stood"],
+        figures: &[],
+    },
+    Assertion {
+        id: "one-identifier-two-schools",
+        statement: "One record number in the federal school directory is Lincoln Elementary in 1986 \
+                    and Lima Alternative by 1995, and it runs to 2013. A reader tracking that number \
+                    across the series is tracking two schools.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**One identifier changed schools underneath the count.** The record numbered `390442201155` is Lincoln Elementary in 1986 and Lima Alternative by 1995, and it runs to 2013 \u{2014} so a reader tracking that number across the series is tracking two schools. [verified] \u{2014} the same file; see [a total is checked against one it did not come from](../../decisions/a-total-is-checked-against-one-it-did-not-come-from.yml)."),
+        ],
+        answers: &["cannot say where any of these buildings stood"],
+        figures: &[],
     },
 ];
 

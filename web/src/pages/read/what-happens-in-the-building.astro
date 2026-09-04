@@ -1,0 +1,142 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { line } from '../../lib/chart-spec'
+
+const third = assertion('one-black-child-in-three-suspended')
+const more = assertion('the-county-suspends-more-of-everybody')
+const halved = assertion('suspension-halved-in-two-years')
+const pand = assertion('ohio-stopped-suspending-and-this-county-did-not')
+const share = assertion('a-third-of-suspensions-a-seventh-of-the-roll')
+const expul = assertion('no-expulsion-figure-for-2013')
+const dbl = assertion('absenteeism-doubled')
+const half = assertion('half-the-black-children-absent')
+const contra = assertion('better-on-absence-worse-on-suspension')
+const two = assertion('two-collections-disagree-about-the-children')
+const turn = assertion('the-net-of-seven-is-a-turnover-of-nineteen')
+const ten = assertion('ten-buildings-in-four-years')
+const names = assertion('named-for-people-named-for-ideas')
+const oneid = assertion('one-identifier-two-schools')
+
+const years = [2011, 2013, 2015, 2017, 2020, 2021]
+const cW = [5.8, 8.1, 7.4, 3.8, 3.7, 5.0]
+const cB = [21.6, 30.6, 29.1, 15.7, 11.8, 16.2]
+const oW = [4.6, 4.9, 4.1, 4.1, 2.0, 4.4]
+const oB = [19.0, 19.2, 20.0, 17.8, 2.6, 15.1]
+const cAll = [8.9, 12.7, 11.7, 6.0, 5.5, 7.4]
+const oAll = [7.3, 7.5, 7.2, 6.7, 2.1, 6.5]
+
+const aYears = [2013, 2015, 2017, 2020, 2021]
+const aAll = [14.9, 21.2, 17.8, 26.7, 30.0]
+const aW = [13.2, 19.7, 14.7, 21.2, 25.0]
+const aB = [18.9, 26.5, 27.9, 43.8, 44.5]
+const aOB = [25.3, 28.5, 34.2, 49.6, 55.7]
+
+const suspSpec = line(
+  years,
+  [
+    { name: 'Allen County, Black pupils', y: cB },
+    { name: 'Ohio, Black pupils', y: oB },
+    { name: 'Allen County, white pupils', y: cW },
+    { name: 'Ohio, white pupils', y: oW },
+  ],
+  { yTitle: 'Per cent suspended out of school at least once', tickSuffix: '%', labelLast: true },
+)
+const allSpec = line(
+  years,
+  [
+    { name: 'Allen County', y: cAll },
+    { name: 'Ohio', y: oAll },
+  ],
+  { yTitle: 'Per cent of all pupils', tickSuffix: '%', labelLast: true },
+)
+const absSpec = line(
+  aYears,
+  [
+    { name: 'Allen County, Black pupils', y: aB },
+    { name: 'Ohio, Black pupils', y: aOB },
+    { name: 'Allen County, all pupils', y: aAll },
+    { name: 'Allen County, white pupils', y: aW },
+  ],
+  { yTitle: 'Per cent absent fifteen days or more', tickSuffix: '%', labelLast: true },
+)
+---
+
+<Article slug="what-happens-in-the-building">
+  <p>
+    Thirty-seven years of counting this county's schoolchildren — by district, by race, by building,
+    by dollar — and not one figure for what was done to them once they were inside. The federal
+    civil-rights collection has asked every school in the country since 2011 who was suspended, who
+    was expelled, who was handed to the police and who stopped coming.
+  </p>
+  <AssertionCard assertion={third} open />
+  <ChartFigure
+    id="susp"
+    title="Above the state on both rates, and by more for white children than the ratio suggests"
+    caption="Pupils suspended out of school at least once, as a share of enrolment, for Allen County and for Ohio. The county's Black rate peaks at 30.6 per cent in 2013–14. Its white rate that year, 8.1, is above Ohio's Black-to-white ratio would predict and above Ohio's white rate of 4.9."
+    columns={['Year', 'Allen Black', 'Ohio Black', 'Allen white', 'Ohio white']}
+    rows={years.map((y, i) => [y, `${cB[i]}%`, `${oB[i]}%`, `${cW[i]}%`, `${oW[i]}%`])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="susp" set:html={JSON.stringify(suspSpec)} is:inline />
+  <AssertionCard assertion={more} />
+  <AssertionCard assertion={share} />
+  <AssertionCard assertion={halved} />
+  <AssertionCard assertion={pand} />
+  <ChartFigure
+    id="all"
+    title="Ohio nearly stopped in the pandemic year and this county did not"
+    caption="All pupils suspended out of school at least once. The state's rate falls by more than two thirds in 2020–21; the county's falls by half a point, and suspends at 2.6 times the state rate."
+    columns={['Year', 'Allen County', 'Ohio']}
+    rows={years.map((y, i) => [y, `${cAll[i]}%`, `${oAll[i]}%`])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="all" set:html={JSON.stringify(allSpec)} is:inline />
+  <AssertionCard assertion={expul} />
+  <Gloss>
+    Which is the ordinary condition of a self-reported federal collection: the districts fill in the
+    form. Six schools here entered the same number in both of two mutually exclusive expulsion
+    columns, and across Ohio 438 of the 570 schools reporting both did the same in that one year
+    against a quarter to a half in the others. Halving the duplicate still leaves four times any
+    neighbouring year, so there is no figure to publish and the corpus says so rather than printing
+    a number it would have to defend.
+  </Gloss>
+
+  <h2>Who stopped coming</h2>
+  <AssertionCard assertion={dbl} />
+  <AssertionCard assertion={half} />
+  <ChartFigure
+    id="abs"
+    title="Chronic absence doubled, and the racial gap tripled"
+    caption="Pupils missing fifteen school days or more. The gap between the county's Black and white rates opens from 5.7 points in 2013 to 19.5 in 2021. The last two points are the pandemic years, and the collection does not mark them."
+    columns={['Year', 'Allen Black', 'Ohio Black', 'Allen all', 'Allen white']}
+    rows={aYears.map((y, i) => [y, `${aB[i]}%`, `${aOB[i]}%`, `${aAll[i]}%`, `${aW[i]}%`])}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="abs" set:html={JSON.stringify(absSpec)} is:inline />
+  <AssertionCard assertion={contra} />
+  <AssertionCard assertion={two} />
+  <p>
+    The second of those is not a footnote. Two federal collections count the same districts in the
+    same years and differ by up to eight per cent, so a suspension rate with a numerator from one and
+    a denominator from the other is wrong before any measuring starts. Every rate above uses the
+    collection its counts came from, and the other number is printed beside it.
+  </p>
+
+  <h2>The buildings, named at last</h2>
+  <AssertionCard assertion={turn} />
+  <AssertionCard assertion={ten} />
+  <AssertionCard assertion={names} />
+  <AssertionCard assertion={oneid} />
+  <Gloss>
+    The count of buildings had been read for four decades and the list of buildings for one year.
+    Reading the list at fourteen dates turns a net loss of seven into a turnover of nineteen and puts
+    ten of the thirteen departures inside four years. It also produces the sentence the count could
+    never have produced: the schools that closed are named for Edison, Emerson, Horace Mann, Irving,
+    Jefferson, Lincoln, Lowell, Roosevelt, Washington and Whittier, and the schools that replaced
+    them are named Freedom, Heritage, Independence, Liberty and Unity.
+  </Gloss>
+</Article>

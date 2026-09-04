@@ -2932,6 +2932,46 @@
       ]
     },
     {
+      "id": "place-allen-county::pupils-chronically-absent,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "pupils chronically absent, Allen County",
+      "unit": "pupils",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-chronic-absenteeism-2013-2022.yml",
+          "label": "Chronic absenteeism in Allen County, 2013–2022",
+          "as_of": "2021",
+          "value": 4640.0,
+          "published": "4640",
+          "tier": "verified",
+          "source": "catalog/crdc-civil-rights-data-collection.md",
+          "method": "The Civil Rights Data Collection's chronic-absenteeism tables for 2013, 2015, 2017, 2020, 2021 and 2022, read through the Urban Institute's mirror, filtered to the sex total and summed over the race dimension excluding its own all-pupils code. [verified] Schools are identified by `ncessch`; the 2020 vintage publishes a blank district identifier and a query filtered on that field returns nothing for this county. [verified] Rates use this collection's enrolment for the same year and the same schools. For 2022 there is no such enrolment and no rate is computed. [verified] Chronic absenteeism is the collection's own definition — absent fifteen or more school days in the year, for any reason, excused or not — and is not the state's ten-per-cent definition. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::pupils-suspended-out-of-school-at-least-once,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "pupils suspended out of school at least once, Allen County",
+      "unit": "pupils",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "label": "School discipline in Allen County, 2011–2021",
+          "as_of": "2021",
+          "value": 1140.0,
+          "published": "1140",
+          "tier": "verified",
+          "source": "catalog/crdc-civil-rights-data-collection.md",
+          "method": "The Civil Rights Data Collection for 2011, 2013, 2015, 2017, 2020 and 2021, read through the Urban Institute's mirror of the federal files, filtered to the disability and sex totals and summed over the race dimension excluding its own all-pupils code. [verified] Schools are identified by `ncessch` and not by district, because the 2020 vintage publishes a blank district identifier on every row; and rows with a blank school identifier are dropped, because the 2011 vintage carries some and they hold 6,208 pupils that belong to no school. [verified] — see [a total is checked against one it did not come from](../../decisions/a-total-is-checked-against-one-it-did-not-come-from.yml). Out-of-school suspension is the sum of the single-suspension and multiple-suspension columns, which count pupils and are mutually exclusive. Rates use this collection's own enrolment and never the Common Core's, which is 0.6 to 8.0 per cent larger in the same years. [verified] The county is its twelve districts as the district directory reports them, including Apollo Career Center and two community schools, and including the Delphos City schools that stand in Van Wert County. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::railroad-main-track-in-the-county",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -18199,7 +18239,7 @@
         }
       ],
       "caveats": [
-        "**This corpus cannot say which buildings closed.** The federal file counts schools and does not name the one that stopped being counted, and it carries no address, no year built and no account of what the ground became."
+        "**This corpus cannot say where any of these buildings stood.** The federal file carries no address, no year built and no account of what the ground became; what it does carry is a name against a record number in every year, which is enough to say which schools stopped being counted and not enough to say where they were."
       ],
       "figures": [
         {
@@ -18248,7 +18288,7 @@
         }
       ],
       "caveats": [
-        "**This corpus cannot say which buildings closed.** The federal file counts schools and does not name the one that stopped being counted, and it carries no address, no year built and no account of what the ground became."
+        "**This corpus cannot say where any of these buildings stood.** The federal file carries no address, no year built and no account of what the ground became; what it does carry is a name against a record number in every year, which is enough to say which schools stopped being counted and not enough to say where they were."
       ],
       "figures": [
         {
@@ -19379,6 +19419,410 @@
           "literal": "82.3"
         }
       ]
+    },
+    {
+      "id": "one-black-child-in-three-suspended",
+      "statement": "In the 2013—14 school year 30.6 per cent of Allen County's Black schoolchildren were suspended out of school and 8.1 per cent of its white ones. Nearly one Black child in three.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "node_label": "School discipline in Allen County, 2011–2021",
+          "span": "**In the 2013–14 school year 30.6 per cent of Allen County's Black schoolchildren were suspended out of school, and 8.1 per cent of its white ones.** Nearly one Black child in three. [verified] — [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), the county's twelve districts, its own enrolment as the denominator.",
+          "tier": "verified",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67."
+      ],
+      "figures": [
+        {
+          "label": "Black pupils suspended out of school, per cent, 2013–14",
+          "value": 30.6,
+          "literal": "30.6"
+        },
+        {
+          "label": "white pupils",
+          "value": 8.1,
+          "literal": "8.1"
+        }
+      ]
+    },
+    {
+      "id": "the-county-suspends-more-of-everybody",
+      "statement": "Allen County's racial disparity in suspension is smaller than Ohio's and its rate is higher for everybody. The Black-to-white ratio runs 3.2 to 4.1 here against 3.4 to 4.8 statewide, and to 2015 both of the county's rates run above both of the state's — 8.1 against 4.9 for white children and 30.6 against 19.2 for Black ones.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "node_label": "School discipline in Allen County, 2011–2021",
+          "span": "**The county's racial disparity is smaller than Ohio's and its rate is higher for everybody.** The ratio between the Black and white rates is 3.2 to 4.1 here against 3.4 to 4.8 statewide, and in every year to 2015 both of this county's rates run above both of the state's — 8.1 against 4.9 for white children in 2013 and 30.6 against 19.2 for Black ones. [verified] — the same source. What is unusual about Allen County is not that it suspends Black children at several times the rate of white ones, which Ohio does too; it is that it suspends more of both. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67."
+      ],
+      "figures": [
+        {
+          "label": "Ohio white pupils suspended, per cent, 2013–14",
+          "value": 4.9,
+          "literal": "4.9"
+        },
+        {
+          "label": "Ohio Black pupils",
+          "value": 19.2,
+          "literal": "19.2"
+        }
+      ]
+    },
+    {
+      "id": "suspension-halved-in-two-years",
+      "statement": "Out-of-school suspension in Allen County halved between 2015 and 2017, from 11.7 per cent of pupils to 6.0, while Ohio's rate went from 7.2 to 6.7. Nothing retrieved names a policy, a superintendent or a board resolution.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "node_label": "School discipline in Allen County, 2011–2021",
+          "span": "**Suspension halved between 2015 and 2017 and Ohio's barely moved.** The county went from 11.7 per cent to 6.0 while the state went from 7.2 to 6.7. [verified] — the same source. Nothing retrieved here names a policy, a superintendent or a board resolution, and the corpus records the size and the date of the fall without a cause. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67."
+      ],
+      "figures": [
+        {
+          "label": "county suspension rate, per cent, 2015–16",
+          "value": 11.7,
+          "literal": "11.7"
+        },
+        {
+          "label": "2017–18",
+          "value": 6.0,
+          "literal": "6.0"
+        }
+      ]
+    },
+    {
+      "id": "ohio-stopped-suspending-and-this-county-did-not",
+      "statement": "In the pandemic year Ohio nearly stopped suspending children, its rate falling by more than two thirds from 6.7 per cent to 2.1. Allen County's fell from 6.0 to 5.5, and the county suspended at 2.6 times the state rate — the widest gap in the series.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "node_label": "School discipline in Allen County, 2011–2021",
+          "span": "**In the pandemic year Ohio nearly stopped suspending children and this county did not.** The state's rate fell from 6.7 per cent to 2.1 — a fall of more than two thirds — while Allen County's fell from 6.0 to 5.5. The county suspended at 2.6 times the state rate that year, the widest gap in the series. [verified] — the same source. Both figures cover 2020–21, a year in which children were in a building for part of it and at home for the rest, in proportions this file does not give. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67."
+      ],
+      "figures": [
+        {
+          "label": "Ohio suspension rate, per cent, 2020–21",
+          "value": 2.1,
+          "literal": "2.1"
+        },
+        {
+          "label": "Allen County",
+          "value": 5.5,
+          "literal": "5.5"
+        }
+      ]
+    },
+    {
+      "id": "a-third-of-suspensions-a-seventh-of-the-roll",
+      "statement": "Black children are between 13.9 and 15.7 per cent of Allen County's school roll and between 30.5 and 39.6 per cent of its out-of-school suspensions, in every one of the six years the collection covers. The share of suspensions rose while the share of the roll did not.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "node_label": "School discipline in Allen County, 2011–2021",
+          "span": "**Black children are between 13.9 and 15.7 per cent of the county's roll and between 30.5 and 39.6 per cent of its out-of-school suspensions in every one of the six years.** [verified] — the same source, computed here. The share of suspensions rose while the share of the roll did not.",
+          "tier": "verified",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67."
+      ],
+      "figures": [
+        {
+          "label": "Black share of the roll, highest year, per cent",
+          "value": 15.7,
+          "literal": "15.7"
+        },
+        {
+          "label": "Black share of suspensions, highest year",
+          "value": 39.6,
+          "literal": "39.6"
+        }
+      ]
+    },
+    {
+      "id": "no-expulsion-figure-for-2013",
+      "statement": "Allen County's schools report 836 expulsions in 2013 against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns. Across Ohio, 438 of the 570 schools reporting both columns that year report them equal.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-discipline-2011-2021.yml",
+          "node_label": "School discipline in Allen County, 2011–2021",
+          "span": "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67. Across Ohio, 438 of the 570 schools reporting both columns in 2013 report them equal, against 23 to 48 per cent of schools in every other year. [verified] — the same file, counted here. Halving the duplicates still leaves 442, which is four times any neighbouring year, so the column is not repairable and no expulsion figure is published for 2013.",
+          "tier": "verified",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say how many children were expelled from an Allen County school in 2013.** The county's schools report 836 expulsions that year against 97 in 2011 and 83 in 2015, and the figure is an artefact: six of them enter the same number in both of two mutually exclusive columns — 110 and 110, 71 and 71, 67 and 67."
+      ],
+      "figures": [
+        {
+          "label": "expulsions reported, 2013",
+          "value": 836.0,
+          "literal": "836"
+        },
+        {
+          "label": "Ohio schools reporting the two columns equal",
+          "value": 438.0,
+          "literal": "438"
+        }
+      ]
+    },
+    {
+      "id": "absenteeism-doubled",
+      "statement": "Chronic absenteeism in Allen County's schools doubled between 2013 and 2021, from 14.9 per cent of pupils to 30.0. A chronically absent child is one who misses fifteen school days or more in a year.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-chronic-absenteeism-2013-2022.yml",
+          "node_label": "Chronic absenteeism in Allen County, 2013–2022",
+          "span": "**Chronic absenteeism in Allen County's schools doubled between 2013 and 2021, from 14.9 per cent of pupils to 30.0.** A chronically absent child is one who misses fifteen school days or more in a year. [verified] — [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), the county's twelve districts, its own enrolment as the denominator.",
+          "tier": "verified",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of Allen County's children were chronically absent in 2022–23.** The collection counts 4,157 of them and publishes no enrolment for that year at all: absence runs one collection further than the enrolment beside it."
+      ],
+      "figures": [
+        {
+          "label": "chronically absent, per cent, 2013–14",
+          "value": 14.9,
+          "literal": "14.9"
+        },
+        {
+          "label": "2021–22",
+          "value": 30.0,
+          "literal": "30.0"
+        }
+      ]
+    },
+    {
+      "id": "half-the-black-children-absent",
+      "statement": "Nearly half of Allen County's Black schoolchildren were chronically absent in 2021—22 — 44.5 per cent, against 25.0 per cent of white children and 18.9 per cent of Black children eight years earlier. The gap between the two rates opened from 5.7 points to 19.5.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-chronic-absenteeism-2013-2022.yml",
+          "node_label": "Chronic absenteeism in Allen County, 2013–2022",
+          "span": "**Nearly half of the county's Black schoolchildren were chronically absent in 2021–22.** 44.5 per cent, against 25.0 for white children and 18.9 for Black children eight years earlier. [verified] — the same source. The gap between the two rates opened from 5.7 points in 2013 to 19.5 in 2021.",
+          "tier": "verified",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of Allen County's children were chronically absent in 2022–23.** The collection counts 4,157 of them and publishes no enrolment for that year at all: absence runs one collection further than the enrolment beside it."
+      ],
+      "figures": [
+        {
+          "label": "Black pupils chronically absent, per cent, 2021–22",
+          "value": 44.5,
+          "literal": "44.5"
+        },
+        {
+          "label": "white pupils",
+          "value": 25.0,
+          "literal": "25.0"
+        }
+      ]
+    },
+    {
+      "id": "better-on-absence-worse-on-suspension",
+      "statement": "On absence Allen County is close to Ohio and better than it for Black children in every year, by 6.4 points in 2013 and 11.2 in 2021. On suspension it runs above the state on every rate. Absence and suspension are not one thing measured twice.",
+      "topic": "schools",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-chronic-absenteeism-2013-2022.yml",
+          "node_label": "Chronic absenteeism in Allen County, 2013–2022",
+          "span": "**On this measure the county is close to Ohio and better than it for Black children.** Its overall rate runs within a point or two of the state's in four of the five years and 3.5 points below it in 2021; its Black rate is below the state's in every year, 18.9 against 25.3 in 2013 and 44.5 against 55.7 in 2021. [verified] — the same source. That is the opposite of what [the discipline record](allen-county-school-discipline-2011-2021.yml) says, where this county runs above Ohio on every rate. Absence and suspension are not the same thing measured twice. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/crdc-civil-rights-data-collection.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of Allen County's children were chronically absent in 2022–23.** The collection counts 4,157 of them and publishes no enrolment for that year at all: absence runs one collection further than the enrolment beside it."
+      ],
+      "figures": [
+        {
+          "label": "county Black absence rate, per cent, 2021–22",
+          "value": 44.5,
+          "literal": "44.5"
+        },
+        {
+          "label": "Ohio",
+          "value": 55.7,
+          "literal": "55.7"
+        }
+      ]
+    },
+    {
+      "id": "two-collections-disagree-about-the-children",
+      "statement": "Two federal collections count Allen County's schoolchildren in the same years and disagree by 0.6 to 8.0 per cent — 15,461 against 16,127 in 2021, 14,839 against 16,124 in the pandemic year. A rate built from one collection's numerator over the other's denominator is wrong before any measuring starts.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-chronic-absenteeism-2013-2022.yml",
+          "node_label": "Chronic absenteeism in Allen County, 2013–2022",
+          "span": "**The two collections disagree about how many children are in this county, and by enough to matter.** 15,461 against 16,127 in 2021, and 14,839 against 16,124 in the pandemic year. [verified] — the same source against [the Common Core of Data](../../catalog/nces-common-core-of-data.md).",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what share of Allen County's children were chronically absent in 2022–23.** The collection counts 4,157 of them and publishes no enrolment for that year at all: absence runs one collection further than the enrolment beside it."
+      ],
+      "figures": [
+        {
+          "label": "civil-rights collection, 2021",
+          "value": 15461.0,
+          "literal": "15,461"
+        },
+        {
+          "label": "district files",
+          "value": 16127.0,
+          "literal": "16,127"
+        }
+      ]
+    },
+    {
+      "id": "the-net-of-seven-is-a-turnover-of-nineteen",
+      "statement": "Lima reports seven fewer school buildings than it did in 1986, and the seven are a turnover of nineteen: thirteen buildings left the count and six entered it. Only three identifiers run the whole way — North, South and West junior highs.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**The net of seven is a turnover of nineteen.** The school-level directory, read at fourteen dates between 1986 and 2024, shows thirteen of Lima's sixteen buildings leaving the count and six entering it. Only three identifiers run the whole way: North, South and West junior highs, now North Middle, South Science-Technology Magnet K-8 and West Middle. [verified] — [the same collection](../../catalog/nces-common-core-of-data.md), its school directory, differenced here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say where any of these buildings stood.** The federal file carries no address, no year built and no account of what the ground became; what it does carry is a name against a record number in every year, which is enough to say which schools stopped being counted and not enough to say where they were."
+      ],
+      "figures": []
+    },
+    {
+      "id": "ten-buildings-in-four-years",
+      "statement": "Between 2002 and 2005 Lima closed nine elementary schools and its high school and opened five elementary schools. A district that reported sixteen buildings in 1986 and seventeen in 2002 reported twelve in 2005: what the count shows as a slow decline was a rebuild compressed into four years.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**Ten of the thirteen left in four years.** Between 2002 and 2005 Lima closed nine elementary schools and its high school and opened five elementary schools, so a district that had reported sixteen buildings in 1986 and seventeen in 2002 reported twelve in 2005. [verified] — the same file. What the count of buildings shows as a slow decline was, on the ground, a rebuild compressed into four years.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say where any of these buildings stood.** The federal file carries no address, no year built and no account of what the ground became; what it does carry is a name against a record number in every year, which is enough to say which schools stopped being counted and not enough to say where they were."
+      ],
+      "figures": []
+    },
+    {
+      "id": "named-for-people-named-for-ideas",
+      "statement": "The Lima schools that closed are named for people and the schools that replaced them are named for ideas. Edison, Emerson, Faurot, Horace Mann, Irving, Jefferson, Lincoln, Lowell, Roosevelt, Washington McKinley, Westwood and Whittier gave way to Freedom, Heritage, Independence, Liberty and Unity.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**The schools that closed are named for people and the schools that replaced them are named for ideas.** Edison, Emerson, Faurot, Horace Mann, Irving, Jefferson, Lincoln, Lowell, Roosevelt, Washington McKinley, Westwood and Whittier gave way to Freedom, Heritage, Independence, Liberty and Unity. [verified] — the same file. Nothing retrieved here says who chose the names.",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say where any of these buildings stood.** The federal file carries no address, no year built and no account of what the ground became; what it does carry is a name against a record number in every year, which is enough to say which schools stopped being counted and not enough to say where they were."
+      ],
+      "figures": []
+    },
+    {
+      "id": "one-identifier-two-schools",
+      "statement": "One record number in the federal school directory is Lincoln Elementary in 1986 and Lima Alternative by 1995, and it runs to 2013. A reader tracking that number across the series is tracking two schools.",
+      "topic": "schools",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-school-buildings-1986-2024.yml",
+          "node_label": "School buildings in Allen County's twelve districts, 1986–2024",
+          "span": "**One identifier changed schools underneath the count.** The record numbered `390442201155` is Lincoln Elementary in 1986 and Lima Alternative by 1995, and it runs to 2013 — so a reader tracking that number across the series is tracking two schools. [verified] — the same file; see [a total is checked against one it did not come from](../../decisions/a-total-is-checked-against-one-it-did-not-come-from.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/nces-common-core-of-data.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say where any of these buildings stood.** The federal file carries no address, no year built and no account of what the ground became; what it does carry is a name against a record number in every year, which is enough to say which schools stopped being counted and not enough to say where they were."
+      ],
+      "figures": []
     }
   ]
 }
