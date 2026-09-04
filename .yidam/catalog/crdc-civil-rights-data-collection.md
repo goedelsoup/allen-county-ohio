@@ -42,7 +42,7 @@ used-by:
 error and no warning. The school's own identifier, `ncessch`, is populated in every year, and
 filtering on it recovers 36 schools and 14,839 pupils for 2020. [verified] — the 2017, 2020 and
 2021 enrolment files. See
-[a zero must be checked against the level above it](../decisions/a-zero-must-be-checked-against-the-level-above-it.yml).
+[a total is checked against one it did not come from](../decisions/a-total-is-checked-against-one-it-did-not-come-from.yml).
 
 **Its enrolment is not the Common Core's enrolment, and the gap is four to five per cent.** For
 Allen County the collection counts 16,786 pupils in 2013 where the district files count 17,634,
