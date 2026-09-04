@@ -8,18 +8,35 @@ description: |
   Its mouth coordinate is byte-identical to [Hog Creek](hog-creek.yml)'s mouth and to
   [the Ottawa River](ottawa-river.yml)'s source. [verified] — same source.
 
-  [open] Whether this creek joins Hog Creek just above the confluence or meets it at the same
-  point cannot be told from GNIS, which records one coordinate for both mouths and so cannot
-  distinguish the two arrangements. The `flows-into` edge here therefore names the Ottawa
-  River rather than Hog Creek: that the water ends up in the Ottawa is what the coordinates
-  establish, and which channel it takes to get there is not. Settling it needs the flow
-  network — the [nhd](../../../crates/nhd/) connector's `downstream_comid`, which is exactly
-  the field for this question.
+  Whether this creek joined Hog Creek just above the confluence or met it at the same point could
+  not be told from GNIS, which records one coordinate for both mouths and so cannot distinguish
+  the two arrangements. The `flows-into` edge here therefore named the Ottawa River rather than
+  Hog Creek: that the water ends up in the Ottawa is what the coordinates establish, and which
+  channel it takes to get there is not. Settling it needed the flow network — the
+  [nhd](../../../crates/nhd/) connector's `downstream_comid`, which is exactly the field for this
+  question.
+
+  **It is the same point, and that field is what says so.** Both creeks' lowest reaches carry the
+  same `dnhydroseq`: the reach `04100007000241`, named Ottawa River, with 233.83 square kilometres
+  of drainage above it. Hog Creek brings 174.63 of that and this creek 57.54, and both reaches end
+  at 40.77099, −83.95570. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The two creeks do
+  not meet and then enter the river. The river is where they meet.
+
+  **The network makes Hog Creek the main stem and this creek the tributary.** The Ottawa's first
+  reach names Hog Creek's lowest reach as its upstream main path, and the level path running down
+  the Ottawa carries ninety-three reaches — sixty-one named Ottawa River, twenty-six Hog Creek,
+  none named for this creek. [verified] — the same source. That is a computed main stem and not a
+  judgment about which creek is the true head; see
+  [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml). The edge below
+  stays on the Ottawa, and now for a reason a file gives rather than for want of one.
 properties:
   feature_type: creek
   huc_code: "041000070303 Little Hog Creek"
   gnis_id: "1042627"
-  mouth: 40.7708852, -83.9557761 — the head of the Ottawa River, shared with Hog Creek.
+  mouth: |
+    40.7708852, -83.9557761 — the head of the Ottawa River, shared with Hog Creek and confirmed
+    by the flow network at 40.77099, -83.95570. [verified]
   source: 40.722274, -83.8979957
 links:
   - target: ../natural-feature/ottawa-river.yml
