@@ -1,0 +1,93 @@
+class: measure
+label: Allen County's jail, 1970–2023
+description: |
+  **The county held 80 people in its jail in 1970 and 284 in 2019, on a working-age population that
+  fell from 66,664 to 64,117.** [verified] —
+  [Vera's Incarceration Trends](../../catalog/vera-incarceration-trends.md), county 39003. The rate
+  went from 120 to 443 for every 100,000 residents aged 15 to 64, and stood at 300 in 2023; see
+  [the Justice Center](../site/allen-county-justice-center.yml).
+
+      year   jail   capacity   pretrial   rate      Ohio rate
+      1970     80        162        37     120            ·
+      1988    107        116        53     151          128
+      1993    221        201        97     316          164
+      1999    224        217       100     322          223
+      2010    209        204        84     300          230
+      2019    284        204       150     443          276
+      2023    186        216       143     300          219
+
+  **The jail has been over its rated capacity in 21 of the 29 years that carry both figures**, and
+  it was 139 per cent full in 2019, its worst year. [verified] — the same source, computed here. It
+  was under capacity in the four sampled years to 1988 and in the four since 2020, and over it in
+  every year between that carries a figure.
+
+  **Three quarters of the people in it have not been convicted of anything.** The unsentenced share
+  was 46.2 per cent in 1970 and 40.2 in 2010; it is 52.8 in 2019, 68.3 in 2022 and 76.9 in 2023.
+  [verified] — the same source. The pretrial and sentenced counts in this file are apportioned to
+  sum to the average daily population rather than measured beside it, so the share is a share of one
+  number and not a ratio of two; see
+  [the codebook's own warning](../../catalog/vera-incarceration-trends.md).
+
+  **This county jails at 1.6 times the state's rate.** 443 against Ohio's 276 in 2019, 300 against
+  219 in 2023, and 316 against 164 in 1993. [verified] — the same dataset's state file. The gap has
+  been open since at least 1993 and has never closed. [inference]
+
+  **Black residents are an eighth of the county and between a third and a half of its jail.**
+  36.6 per cent of the jail in 2019 and 37.6 in 2023, against 12.3 per cent of the county's people
+  in 2020. [verified] — the same source against
+  [the county by race](allen-county-population-by-race-1970-2020.yml). Per 100,000 aged 15 to 64
+  the Black rate was 1,190 in 2019 and the white rate 268 — 4.4 times — and the ratio was 7.4 in
+  1999 and 6.6 in 1993. [verified] — the same source. It has narrowed while both rates rose.
+  [inference]
+
+  **The series is a sample and its gaps are the survey's.** Figures exist for 1970, 1978, 1983,
+  1988 and 1993 and then for every year from 1999, because the federal Census of Jails runs every
+  five to eight years and the annual survey between them reaches about a third of jails. [verified]
+  — the same source's codebook. The blank years are years nobody asked, not years without a jail.
+
+  **Two rows are unusable and neither is marked.** The year 2000 records 23 people, 0 of them men
+  and 23 women, between 224 in 1999 and 229 in 2001; the year 2020 records 3,614 admissions against
+  1,268 the year before and 585 the year after, in the twelve months the population fell by half.
+  Both are excluded from every figure above. [verified] — the same source, read against its
+  neighbours.
+
+  **This corpus cannot say where the county's jail population was counted in the 2020 census.**
+  That census put 1,513 people in adult correctional facilities in Allen County, and all 1,513 are
+  accounted for by the two blocks that are the two state prisons; the jail's average daily
+  population that year was 144. [verified] —
+  [the group quarters](allen-county-group-quarters-2020.yml) against the same source.
+
+  [open] What the jail costs and who is in it for what. The county's own budget carries a sheriff's
+  line and no jail line, and no charge or offence appears in this file at all.
+properties:
+  parameter: average daily population of the Allen County jail
+  value: "186"
+  unit: persons
+  as_of: "2023"
+  method: |
+    `incarceration_trends_county.csv` filtered on `county_fips = 39003`, 43 rows, against the state
+    file for Ohio. Rates are the file's own, per 100,000 residents aged 15 to 64, and are not
+    comparable with any rate this corpus computes over a whole population. [verified] The jail
+    population is BJS's average daily population; capacity is the rated capacity reported with it.
+    [verified] The 2000 row and the 2020 admissions figure are excluded by hand and the exclusion is
+    stated rather than silent. [inference] Occupancy is population over rated capacity in the 29
+    years carrying both, 2000 excluded.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/vera-incarceration-trends.md
+  - target: ../site/allen-county-justice-center.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/vera-incarceration-trends.md
+  - target: allen-county-in-state-prison-1983-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/vera-incarceration-trends.md
+  - target: allen-county-group-quarters-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
