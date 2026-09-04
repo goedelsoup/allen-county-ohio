@@ -4324,6 +4324,53 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-coverage-types-2023.yml",
+      "class": "measure",
+      "label": "What Allen County's health insurance is made of, 2019–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Table B27001 read as 57 cells — total, then each sex by nine age bands with total, with coverage and without — and B27010 as 66, from the 2019–2023 five-year table-based summary file, geography `0500000US39003` for the county and `1600000US3943554` for Lima. [verified] The universe of both tables is the civilian noninstitutionalised population, so the county's prisons and its nursing home residents are outside it. [verified] Aggregate margins are the square root of the sum of the squared component margins, which is the Bureau's own rule for summed cells. [inference] Coverage counts by kind are not additive with the uninsured: a person holding two kinds appears once, in the combination rows, and the residual rows named \"other coverage combinations\" are not decomposable. Every figure here that counts a kind of coverage is a floor. [verified]",
+        "parameter": "people without health insurance, Allen County",
+        "unit": "people",
+        "value": "6261"
+      },
+      "blocks": [
+        {
+          "text": "A survey count rather than a model, of who holds which kind of coverage. [verified] — [the American Community Survey](../../catalog/census-acs-summary-file.md), tables B27001 and B27010, five-year file for 2019 to 2023.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A third of the county's children are on Medicaid alone, and in Lima it is three in five.** 8,595 of 25,250 under 19 across the county; 5,336 of 8,990 in the city. [verified] — the same table, at county and place grain. Employer coverage runs the other way: 47.5 per cent of the county's children and 26.5 per cent of Lima's.",
+          "tier": "verified"
+        },
+        {
+          "text": "**At least 19,767 people in this county — one in five — hold means-tested public coverage.** 17,685 have it and nothing else and 2,082 hold it with Medicare; the residual combination rows will contain more. [verified] — the same table, lines 7, 23, 39, 13, 29, 46 and 62, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nobody over 65 is uninsured.** 41 people of 18,091, which is 0.2 per cent, against 4.0 per cent of the county's under-65 residents. [verified] — the same source. Only 5,660 of those 18,091 hold Medicare and nothing else; 11,968 hold two kinds or more. At least 16,836 people in the county hold Medicare in some form, and 2,380 of them are under 65. [verified] — the same table, the Medicare-only and Medicare-combination lines of all four age groups, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima's uninsured rate is not distinguishable from its county's, and its poverty rate is roughly double.** 7.0 ± 1.2 per cent against 6.3 ± 0.7, a difference of 0.7 points against a combined margin of 1.4. [verified] — the same tables, aggregated here with the margins combined in quadrature. The city holds 33.9 per cent of the people in these tables and 64.1 per cent of the county's poor. [verified] — [the poverty tables](allen-county-income-and-poverty-2023.yml). What covers the poor is why. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's uninsured are men in their working middle years.** 14.7 per cent of men aged 26 to 34 and 13.2 per cent of men aged 35 to 44, against 6.7 and 6.1 per cent of women the same ages. [verified] — the same source, table B27001. In Lima the figure for men aged 35 to 44 is 23.8 per cent — 413 people of 1,733, on a margin of 191 — against 3.5 per cent of the city's women that age.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two tables are one survey and they close on each other exactly.** Summed over the seven age bands under 65, B27001 gives 6,220 uninsured; summed over three age groups, B27010 gives 6,220. [verified] — the same file. That is an internal check on the reading and not a second witness; see [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say what any of this coverage pays for.** A survey asks whether a person has Medicaid, not whether they saw anyone, and the county's shortage designations say the two are not the same question; see [the designations](allen-county-shortage-designations-1985-2026.yml) and [who is here to see them](allen-county-health-workforce-2023.yml)."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-crops-2022.yml",
       "class": "measure",
       "label": "Allen County crops, 2022, against 1909",
@@ -5994,8 +6041,8 @@
           "tier": "inference"
         },
         {
-          "text": "**The file closes on the corpus's own count.** The thirty-five tract populations sum to 102,206, which is the county's 2020 census total and the closure this corpus has used since its block composition phase. [verified] — same source and [the 2020 count](allen-county-population-2020-census.yml).",
-          "tier": "verified"
+          "text": "**The file closes on the corpus's own count.** The thirty-five tract populations sum to 102,206, which is the county's 2020 census total and the closure this corpus has used since its block composition phase. [verified] — same source and [the 2020 count](allen-county-population-2020-census.yml). **Two of these forty measures now have a counted neighbour.** The model estimates that 20.7 per cent of the county's adults rate their own health fair or poor and 27.5 per cent of Lima's; the survey counts 6,261 people in the county without health insurance and 2,375 in the city, and the register of federal shortage designations names the county's low-income population as short of primary care, dental care and mental health care. [verified] — [the coverage](allen-county-coverage-types-2023.yml) and [the designations](allen-county-shortage-designations-1985-2026.yml). Neither is a health outcome, and both are observations rather than predictions, which is the difference this node was written about. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -6043,6 +6090,108 @@
         "This does not establish why any of it fell."
       ],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-health-insurance-2008-2024.yml",
+      "class": "measure",
+      "label": "Who in Allen County has no health insurance, 2008–2024",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2024",
+        "method": "The Bureau's model estimate, geography category 50, age category 0, race category 0, sex category 0, income category 0, from each year's own file. [verified] County rows carry only race category 0; the seven race categories exist at state level alone. [verified] The denominator is the poverty universe, which excludes people in institutions, in military group quarters and in college dormitories. It is not the survey's universe: the American Community Survey's coverage tables count the civilian noninstitutionalised population, about 2,000 more people under 65 in this county, so the two counts are close and not identical. [inference] The 2013 estimate is the May 2016 revision, the only version in the file taken. [verified] Cells published in 2024 that do not exist in 2008 — age categories 3, 5 and 6 and income category 5 — are not used in any comparison across the whole span. [verified]",
+        "parameter": "people under 65 without health insurance, Allen County",
+        "unit": "people",
+        "value": "5613"
+      },
+      "blocks": [
+        {
+          "text": "Seventeen years of a modelled county estimate, and the county's uninsured population fell by more than half in three of them. [verified] — [the Small Area Health Insurance Estimates](../../catalog/census-sahie.md), under 65, all incomes, both sexes.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What fell was the adults.** The rate for people aged 18 to 64 went from 16.1 per cent in 2013 to 8.6 in 2016; the rate for people under 19 went from 5.2 to 4.0 and has never been above 7.4 in any year of the series. [verified] — the same source, age categories 1 and 4. Of the 4,904 fewer uninsured people between 2013 and 2016, 4,628 are the fall in the 18-to-64 count alone.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The income gradient did not narrow so much as close.** In 2013 the county's residents at or below 138 per cent of the poverty line were 21.1 per cent uninsured against 12.7 per cent for those between 138 and 400. By 2019 it was 9.7 against 9.0, and the poorest band was better covered than the band at or below 200 per cent. [verified] — the same file, income categories 3 and 5. Ohio expanded Medicaid to 138 per cent of poverty on 1 January 2014.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That coincidence is as far as this file may be taken.** Medicaid enrolment by age and sex is one of the model's own inputs. [verified] — the model input data page cited in [the source entry](../../catalog/census-sahie.md). See [a model fitted to a survey is not a second witness](../../decisions/a-model-fitted-to-a-survey-is-not-a-second-witness.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Men in this county are less insured than women in every one of the seventeen years.** The gap runs from 1.2 points to 3.4 and never closes or reverses: 14.5 against 11.1 in 2013, 7.8 against 6.5 in 2024. [verified] — the same source, sex categories 1 and 2.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The survey the model is fitted to can be read on its own, and in 2024 it does not agree.** The American Community Survey's one-year estimate puts 4,410 ± 1,084 county residents under 65 without coverage in 2024, a rate of 5.6 ± 1.4 per cent, against the model's 5,613 and 7.1 ± 0.8. In 2021, 2022 and 2023 the two run within a quarter of a point of each other. [verified] — [the survey's table B27001](../../catalog/census-acs-summary-file.md), one-year files for 2021 to 2024, summed here over the seven age bands under 65. The gap of 1,203 people is a property of the model.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's rank among Ohio's 88 is worth less than its rate.** Allen was 17th in 2011, 63rd in 2017 and 22nd in 2024, and between 2017 and 2018 it moved 27 places on a change of 0.3 points — well inside its own margin. [verified] — the same source, all 88 county rows read for each year. See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**There is an older series and it is not the beginning of this one.** The same programme published county estimates for 2005 to 2007 from the Current Population Survey: Allen County at 12.2 ± 2.0 per cent in 2006 and 12.5 ± 1.7 in 2007, on intervals roughly twice as wide as anything after. [verified] — [the same source](../../catalog/census-sahie.md), the CPS-based directory. The 2007 interval overlaps 2008's, and an overlap across a change of method is not a join. See [a before and after needs a before](../../decisions/a-before-and-after-needs-a-before.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how many people in Allen County are enrolled in Medicaid.** The figure that would answer it is one of this model's inputs and is not published in its output, and the state's own caseload reports are not held here."
+      ],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-health-workforce-2023.yml",
+      "class": "measure",
+      "label": "Who practises medicine in Allen County, 2022–2024",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2023",
+        "method": "County row `39003` of the 2024–2025 release, health professions and health facilities modules, variables carrying the `_23` and `_24` suffixes. [verified] Rates per 100,000 use the file's own `popn_est_23` of 100,838 for the county and the sum of all 88 Ohio county estimates, 11,785,935, for the state, so numerator and denominator come from one file. [inference] Physician counts are non-federal and exclude those aged 75 and over where the variable says so; the primary care count excluding residents also excludes them. [verified] Nurse practitioner, physician assistant and identifier-based dentist counts are registrations with CMS and are flagged in the documentation as needing the user guide; they are not comparable with the masterfile counts and are not summed with them here. [verified] Every variable in this file carries two years and no more. Nothing here is a trend. [verified]",
+        "parameter": "physicians in patient care, Allen County",
+        "unit": "physicians",
+        "value": "304"
+      },
+      "blocks": [
+        {
+          "text": "The corpus's first count of the people, as against the buildings. [verified] — [the Area Health Resources File](../../catalog/hrsa-area-health-resources-file.md), whose physicians are the American Medical Association's masterfile, dentists the American Dental Association's, and nurse practitioners and physician assistants the CMS identifier file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This county trains primary care doctors at Cleveland's rate.** Its 38 residents are 37.7 per 100,000 residents, fourth of Ohio's 88 counties behind Hamilton, Cuyahoga and Lucas and ahead of Summit; forty of the 88 train none. [verified] — the same file, all 88 Ohio county rows read here against the file's own 2023 population estimate of 100,838.",
+          "tier": "verified"
+        },
+        {
+          "text": "**On the primary care doctors who are not in training it is eighteenth, and below the state.** 67 of them, 66.4 per 100,000 against Ohio's 76.7. [verified] — the same source. A resident is a doctor seeing patients and is also a doctor who will leave.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county has six psychiatrists and no child psychiatrist.** Six is 6.0 per 100,000 against the state's 11.4; three of the six are 65 or older and one is over 75. The single child psychiatrist on the 2022 file, aged between 55 and 64, is not on the 2023 file. [verified] — the same source, by specialty and age band. Twenty-eight Ohio counties have no psychiatrist at all and fifty-eight have no child psychiatrist, so the county is not unusual; it is ordinary.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Six of the county's eight obstetrician-gynaecologists are 55 or older.** One is aged 35 to 44, one 45 to 54, four 55 to 64 and two 65 to 74; two further doctors of osteopathy practise the specialty and the file does not break out their ages. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nearly a third of the doctors seeing patients here trained abroad.** 97 of 304 are graduates of institutions outside the United States and Canada, against 207 who trained in the United States. [verified] — the same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**There are more nurse practitioners and physician assistants than physicians.** 221 and 127 against 304 in patient care, and on nurse practitioners the county is seventh of Ohio's 88 at 219.2 per 100,000 against the state's 158.7. [verified] — the same source. These are counts of registrations with Medicare at an address in the county and not of the same universe as the masterfiles, which is why the ADA finds 40 dentists in private practice here and the identifier file finds 63. See [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The buildings, from the same file and other publishers.** Five hospitals with 498 beds and 24,648 admissions in 2023, three of them short-term general, one a critical access hospital and two rural referral centres; eleven skilled nursing facilities with 762 beds; five federally qualified health centres; nine National Health Service Corps sites staffed by 12.86 full-time equivalents in 2024, of which 8.6 are mental health. [verified] — the same file, from the American Hospital Association's annual survey, the CMS provider-of-services file and HRSA's own corps records. The county's bed count from the hospitals' cost reports is 502; see [the beds](allen-county-hospital-beds-2011-2023.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say whether any of these doctors saw a patient from Allen County.** A masterfile records a professional address and an activity, not a panel; the county contains two hospital systems that draw from eight counties and a prison whose clinicians serve nobody outside it."
+      ],
+      "withheld": 3
     },
     {
       "id": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
@@ -10710,6 +10859,57 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "class": "measure",
+      "label": "Allen County's health professional shortage designations, 1985–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2025-09-22",
+        "method": "The three discipline files filtered on `State and County Federal Information Processing Standard Code` equal to `39003`, deduplicated by `HPSA ID`, which is one row per designation rather than one per component geography. [verified] The three-digit `County or County Equivalent` field is not the county key and matches every third county in the country. [verified] Populations, ratios, full-time equivalents and shortages are the register's own fields as of each row's last update date, which is later than its designation date for every live row here. A figure in a withdrawn row is the figure that stood when it was withdrawn. [verified] The count of fifteen is distinct `HPSA ID` values across the three files: five in primary care, four in dental, six in mental health. Two mental health designations for the same institution, made in March 2021 and March 2022 for different populations, are both live and are counted separately. [verified]",
+        "parameter": "full-time-equivalent psychiatrists serving the low-income population, Catchment Area 62",
+        "unit": "full-time equivalents",
+        "value": "0.5386"
+      },
+      "blocks": [
+        {
+          "text": "Fifteen federal designations of shortage in this county, ten live and five withdrawn, and not one of them is the county. [verified] — [the HRSA designation register](../../catalog/hrsa-shortage-designations.md), primary care, dental health and mental health files, county code `39003`.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's designation is its poor, and it is not drawn on a map.** `LI- Allen County` covers the 32,355 residents at or below the low-income threshold wherever in the county they live, of whom 14,781 are recorded as underserved for primary care and 19,346 for dental. [verified] — the same register. Saying \"Allen County is a shortage area\" describes a third of it; see [a designation is not a county](../../decisions/a-designation-is-not-a-county.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The mental health ratio is enormous because the provider count is a fraction.** 96,587 to one is 0.5386 full-time-equivalent psychiatrists against 52,022 low-income people in Mental Health Catchment Area 62, and the goal it is measured against is 20,000 to one. [verified] — the same source. The county has six psychiatrists in all; see [the workforce](allen-county-health-workforce-2023.yml). The catchment area is not the county.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The map that stood for forty-one years came down on 1 July 2026.** `South Side Lima` was a geographic designation over census tracts 136, 137 and 138, made on 4 April 1985. Its dental half was withdrawn on 2 October 1995, covering 10,234 people of whom 32.0 per cent were below the poverty line; its primary care half was withdrawn on **1 July 2026**, covering 4,593 people of whom 29.5 per cent were. [verified] — the same register, withdrawn rows retained with their dates. For most of the period this corpus covers, the federal record of shortage here was three tracts of a city. It is now a list of the poor of a county. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The mental health designation changed shape on one day in 2011.** A geographic designation over the whole of Catchment Area 62 — 177,277 people, 3.6 full-time equivalents, 49,244 to one — was withdrawn on 15 December 2011, which is the day the low-income designation that replaced it was made. [verified] — the same source, both rows. The population covered fell by 125,255 and the psychiatrist count fell from 3.6 to 0.54.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The prison is designated on its own, in all three disciplines.** Allen Oakwood Correctional Institution at 2338 North West Street carries a dental designation from 22 September 2011 at 0.6075 full-time equivalents for 1,663 people, a mental health designation from 14 March 2022 at 0.675, and a primary care designation from 15 November 2018 that records **0.0000 full-time equivalents for 1,500 people**. [verified] — the same register. A zero in that column is what the file holds and may be an absence of reporting rather than an absence of clinicians. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The register carries a name for the two prisons that nothing else in this corpus does.** Allen Correctional Institution has its own primary care designation, made 29 December 2010 and withdrawn 25 June 2014, at the same street address as every Allen Oakwood row. [verified] — the same source. The corpus holds [the two institutions](../site/allen-correctional-institution.yml) as separate sites because [the state's own list](../../catalog/odrc-facilities.md) is served by script and could not be read. A row's name is the name as of its last update and not as of its designation date, so this dates nothing. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Score is what the National Health Service Corps places by, and this county scores highest on teeth.** 26 of a possible 26 for dental health at the federally qualified health centre, 22 of 26 for mental health, 19 of 25 for primary care. [verified] — the same register. Nine corps sites in the county are staffed by 12.86 full-time equivalents, 8.6 of them mental health. [verified] — [the resources file](../../catalog/hrsa-area-health-resources-file.md).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say whether anyone went without care.** A designation is a finding about a ratio of providers to a population, computed by a formula, and a shortage of 4.92 physicians is not a count of appointments that did not happen."
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-soils-2026.yml",
       "class": "measure",
       "label": "The soils of Allen County",
@@ -11428,7 +11628,7 @@
       "id": "measure/allen-county-transfer-receipts-1969-2024.yml",
       "class": "measure",
       "label": "Government transfers to Allen County, 1969–2024",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "as_of": "2024",
         "method": "Totals and the 2024 figure come from CAINC4 line 47, January 2026 vintage; every share and every component figure comes from CAINC35, October 2023 vintage, computed within that file against its own total of $1,373,641,000 rather than against the newer one, which is 3.6 per cent larger. [verified] The two are never mixed inside one ratio. The USAspending figures are the place-of-performance scope summed across all five award-type groups for the federal year, which is the same series [the federal money node](federal-money-in-allen-county-2008-2025.yml) publishes; the assistance listing count is that endpoint paged to exhaustion, 99 rows. [verified] A federal year ends 30 September and a BEA year is a calendar year, so the matched pairs are matched by label and not by period. [verified]",
@@ -11464,6 +11664,10 @@
         {
           "text": "**Unemployment compensation is the smallest line and the one that moves.** $4,818,000 in 2022 is $48 a resident; in 2020 it was ten times that. [verified] — the same table. The transfer that responds to a recession is a rounding error in a normal year.",
           "tier": "verified"
+        },
+        {
+          "text": "**A different instrument now counts the covered, and a coverage count is not a payment count.** At least 19,767 people in this county hold Medicaid or other means-tested public coverage and about 16,800 hold Medicare in some form, from a household survey that asks. [verified] — [what the coverage is made of](allen-county-coverage-types-2023.yml). Those are people who say they are enrolled, not people to whom a dollar in the table above was paid, and the two counts answer different questions about the same programmes. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -21052,6 +21256,10 @@
         {
           "text": "**One of the three names in that address file belongs to a prison that no longer exists.** Ohio's Department of Rehabilitation and Correction lists Lima Correctional Institution among facilities that \"have since closed\", closed 2004. [verified] — [the department's facilities page](../../catalog/odrc-facilities.md). The county's file has carried it for twenty-two years.",
           "tier": "verified"
+        },
+        {
+          "text": "**A federal shortage register names it, and names it twice.** Allen Correctional Institution has a primary care health professional shortage designation of its own, made 29 December 2010 for a provider count of 0.6 full-time equivalents and withdrawn 25 June 2014. At the same street address — 2338 North West Street — the register carries three live designations under the name **Allen Oakwood Correctional Institution**, in primary care, dental health and mental health. [verified] — [the designations](../measure/allen-county-shortage-designations-1985-2026.yml). This is the first federal record in this corpus to write the two institutions north of Lima as one name; a row's name is the name at its last update, so it dates nothing on its own. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -21921,6 +22129,10 @@
         },
         {
           "text": "**The ratio of ground to people is the thing to notice.** At 342 acres for 153 residents it holds one person for every 2.2 acres, where the institution to its south holds fifteen people to the acre. [inference] — computed here. That is the shape of a hospital farm rather than a prison, and [the Lima State Hospital](lima-state-hospital.yml) that stood north of Lima from 1915 had 576 acres and worked them with its patients.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Something else now carries both names at one address.** The federal health shortage register designates *Allen Oakwood Correctional Institution* at 2338 North West Street — the address of the institution half a mile south — in primary care, dental health and mental health. [verified] — [the designations](../measure/allen-county-shortage-designations-1985-2026.yml). That is a hyphen of two names in a federal file and not a conveyance, and it does not touch the question below. [inference]",
           "tier": "inference"
         }
       ],
@@ -25293,6 +25505,41 @@
       "source": "catalog/ohio-courts-statistical-report.md"
     },
     {
+      "from": "measure/allen-county-coverage-types-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-coverage-types-2023.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-coverage-types-2023.yml",
+      "to": "measure/allen-county-health-insurance-2008-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-sahie.md"
+    },
+    {
+      "from": "measure/allen-county-coverage-types-2023.yml",
+      "to": "measure/allen-county-income-and-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-coverage-types-2023.yml",
+      "to": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-crops-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -25832,6 +26079,20 @@
       "source": "catalog/cdc-places.md"
     },
     {
+      "from": "measure/allen-county-health-2023.yml",
+      "to": "measure/allen-county-coverage-types-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-health-2023.yml",
+      "to": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/hrsa-shortage-designations.md"
+    },
+    {
       "from": "measure/allen-county-health-care-employment-2010-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -25858,6 +26119,76 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/cms-nursing-home-care-compare.md"
+    },
+    {
+      "from": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "to": "measure/allen-county-health-workforce-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/hrsa-area-health-resources-file.md"
+    },
+    {
+      "from": "measure/allen-county-health-insurance-2008-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-sahie.md"
+    },
+    {
+      "from": "measure/allen-county-health-insurance-2008-2024.yml",
+      "to": "measure/allen-county-coverage-types-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
+    },
+    {
+      "from": "measure/allen-county-health-insurance-2008-2024.yml",
+      "to": "measure/allen-county-income-and-poverty-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-health-insurance-2008-2024.yml",
+      "to": "measure/allen-county-transfer-receipts-1969-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-health-workforce-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hrsa-area-health-resources-file.md"
+    },
+    {
+      "from": "measure/allen-county-health-workforce-2023.yml",
+      "to": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/hrsa-shortage-designations.md"
+    },
+    {
+      "from": "measure/allen-county-health-workforce-2023.yml",
+      "to": "measure/allen-county-hospital-beds-2011-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/hrsa-area-health-resources-file.md"
+    },
+    {
+      "from": "measure/allen-county-health-workforce-2023.yml",
+      "to": "measure/allen-county-health-care-employment-2010-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-health-workforce-2023.yml",
+      "to": "measure/allen-county-nursing-homes-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-heart-disease-and-stroke-1999-2024.yml",
@@ -27603,6 +27934,41 @@
       "source": "catalog/fbi-crime-data-explorer.md"
     },
     {
+      "from": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hrsa-shortage-designations.md"
+    },
+    {
+      "from": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hrsa-shortage-designations.md"
+    },
+    {
+      "from": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "to": "site/allen-correctional-institution.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/hrsa-shortage-designations.md"
+    },
+    {
+      "from": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "to": "measure/allen-county-health-workforce-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/hrsa-area-health-resources-file.md"
+    },
+    {
+      "from": "measure/allen-county-shortage-designations-1985-2026.yml",
+      "to": "measure/allen-county-coverage-types-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-soils-2026.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -27881,6 +28247,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/bea-county-personal-income.md"
+    },
+    {
+      "from": "measure/allen-county-transfer-receipts-1969-2024.yml",
+      "to": "measure/allen-county-coverage-types-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-acs-summary-file.md"
     },
     {
       "from": "measure/allen-county-tri-reporters-1987-2024.yml",

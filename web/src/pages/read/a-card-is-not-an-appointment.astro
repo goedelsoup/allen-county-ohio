@@ -1,0 +1,187 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const half = assertion('the-uninsured-fell-by-half-in-three-years')
+const children = assertion('the-children-were-already-covered')
+const gradient = assertion('the-income-gradient-closed')
+const told = assertion('the-model-was-told-about-the-programme')
+const men = assertion('men-are-less-insured-in-every-year')
+const part = assertion('the-model-and-its-own-survey-part')
+const rank = assertion('a-rank-that-moved-twenty-seven-places')
+const older = assertion('an-older-series-that-does-not-join')
+
+const medicaid = assertion('a-third-of-the-children-are-on-medicaid')
+const fifth = assertion('one-resident-in-five-holds-public-coverage')
+const overSixtyFive = assertion('forty-one-uninsured-people-over-sixty-five')
+const lima = assertion('limas-coverage-is-not-its-poverty-rate')
+const thirties = assertion('the-uninsured-are-men-in-their-thirties')
+
+const abroad = assertion('ninety-seven-of-three-hundred-and-four-trained-abroad')
+const residents = assertion('fourth-in-ohio-for-primary-care-residents')
+const stay = assertion('below-the-state-on-the-doctors-who-stay')
+const psych = assertion('six-psychiatrists-and-no-child-psychiatrist')
+const obgyn = assertion('six-of-eight-obstetricians-are-fifty-five-or-older')
+const practitioners = assertion('more-practitioners-than-physicians')
+
+const poor = assertion('the-designation-is-the-countys-poor')
+const fraction = assertion('half-a-psychiatrist-for-fifty-thousand-people')
+const map = assertion('the-map-came-down-after-forty-one-years')
+const prison = assertion('the-prison-is-designated-on-its-own')
+
+const cy = [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+const cAllen = [13.9, 14.7, 14.1, 13.0, 13.6, 12.8, 10.0, 7.4, 7.2, 7.7, 7.4, 7.6, 8.4, 8.2, 6.8, 6.8, 7.1]
+const cOhio = [13.1, 14.0, 14.3, 13.9, 13.5, 13.0, 9.9, 7.7, 6.7, 7.1, 7.7, 7.9, 8.1, 7.8, 7.1, 7.4, 8.1]
+
+const iy = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+const iLow = [22.5, 21.1, 15.7, 10.9, 10.6, 11.4, 10.4, 9.7, 12.3, 11.7, 9.5, 9.7, 10.5]
+const iMid = [13.6, 12.7, 10.5, 8.0, 8.1, 8.6, 8.5, 9.0, 9.6, 9.4, 7.7, 7.7, 8.1]
+const iAll = [13.6, 12.8, 10.0, 7.4, 7.2, 7.7, 7.4, 7.6, 8.4, 8.2, 6.8, 6.8, 7.1]
+
+const whoCats = ['Men 19–25', 'Men 26–34', 'Men 35–44', 'Men 45–54', 'Men 55–64', 'Women 19–25', 'Women 26–34', 'Women 35–44', 'Women 45–54', 'Women 55–64']
+const whoVals = [10.6, 14.7, 13.2, 8.0, 9.6, 5.9, 6.7, 6.1, 7.8, 9.1]
+
+const supplyCats = ['Primary care residents', 'Nurse practitioners', 'Physicians in patient care', 'Primary care, not residents', 'Dentists', 'Obstetrician-gynaecologists', 'Psychiatrists']
+const supplyVals = [197.4, 138.1, 94.4, 86.7, 85.5, 73.2, 52.2]
+
+const coverageSpec = line(
+  cy,
+  [
+    { name: 'Allen County', y: cAllen },
+    { name: 'Ohio', y: cOhio },
+  ],
+  { yTitle: 'Per cent of residents under 65 with no coverage', labelLast: true, zeroBased: true },
+)
+
+const incomeSpec = line(
+  iy,
+  [
+    { name: 'at or below 138% of poverty', y: iLow },
+    { name: 'between 138% and 400%', y: iMid },
+    { name: 'everyone under 65', y: iAll },
+  ],
+  { yTitle: 'Per cent with no coverage', labelLast: true, zeroBased: true },
+)
+
+const whoSpec = bar(whoCats, whoVals, {
+  yTitle: 'Per cent with no coverage, 2019–2023',
+  labelValues: true,
+})
+
+const supplySpec = bar(supplyCats, supplyVals, {
+  yTitle: "Allen County's rate as a percentage of Ohio's",
+  labelValues: true,
+})
+---
+
+<Article slug="a-card-is-not-an-appointment">
+  <p>
+    Between 2013 and 2016 the number of people in Allen County under 65 with no health insurance
+    fell from about eleven thousand to under six thousand. In the same county, in the same decade, a
+    federal register found half of one psychiatrist serving fifty-two thousand low-income people,
+    and it withdrew the shortage designation it had drawn over three census tracts of south Lima in
+    1985 — not because the shortage ended there, but because the designation moved onto the county's
+    poor wherever they live. Both of those are true and they are answers to different questions.
+  </p>
+
+  <h2>The card</h2>
+  <AssertionCard assertion={half} open />
+  <ChartFigure
+    id="coverage"
+    title="One in seven, then one in fourteen"
+    caption="Per cent of residents under 65 with no health insurance. The county and its state move together the whole way; the fall runs over three years and not one, and 2024 is the first year in a decade that Ohio is above Allen County."
+    columns={['Year', 'Allen County', 'Ohio']}
+    rows={cy.filter((_, i) => i % 2 === 0 || cy[i] === 2024).map((y) => {
+      const i = cy.indexOf(y)
+      return [y, cAllen[i], cOhio[i]]
+    })}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="coverage" set:html={JSON.stringify(coverageSpec)} is:inline />
+  <AssertionCard assertion={children} />
+  <AssertionCard assertion={gradient} />
+  <ChartFigure
+    id="income"
+    title="The poorest line comes down to meet the others"
+    caption="Per cent with no coverage by income, against the county's whole under-65 population. In 2013 the band at or below 138 per cent of the poverty line was eight points worse than the band above it; by 2019 the two were within a point of each other."
+    columns={['Year', '≤138% of poverty', '138–400%', 'everyone under 65']}
+    rows={iy.filter((_, i) => i % 2 === 0 || iy[i] === 2024).map((y) => {
+      const i = iy.indexOf(y)
+      return [y, iLow[i], iMid[i], iAll[i]]
+    })}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="income" set:html={JSON.stringify(incomeSpec)} is:inline />
+  <AssertionCard assertion={told} />
+  <Gloss>
+    Ohio expanded Medicaid to 138 per cent of the poverty line on 1 January 2014, and the sentence
+    that wants writing here writes itself. It cannot be written from this file. The estimate is a
+    model, and the Bureau publishes the list of what the model is told: tax returns, food-stamp
+    counts, business patterns, the decennial census — and the count of individuals enrolled in
+    Medicaid, by age and sex. An explanation whose evidence is one of the model's own inputs is the
+    input read back out of the output. What survives is the shape of the fall, its dates, and the
+    fact that it happened to adults and not to children.
+  </Gloss>
+  <AssertionCard assertion={men} />
+  <AssertionCard assertion={part} />
+  <AssertionCard assertion={rank} />
+  <AssertionCard assertion={older} />
+
+  <h2>What the coverage is made of</h2>
+  <AssertionCard assertion={medicaid} />
+  <AssertionCard assertion={fifth} />
+  <AssertionCard assertion={overSixtyFive} />
+  <AssertionCard assertion={lima} />
+  <Gloss>
+    Lima has roughly double its county's poverty rate and holds 64.1 per cent of everyone in the
+    county below the poverty line, and its uninsured rate is 7.0 per cent against the county's 6.3 —
+    a difference too small to separate from noise. The reason is in the composition rather than in
+    the rate: three of every five children in the city are on Medicaid alone, against one in three
+    across the county. Where poverty is highest, the programme that covers the poor is doing the
+    most work, and the coverage rate comes out flat.
+  </Gloss>
+  <AssertionCard assertion={thirties} />
+  <ChartFigure
+    id="who"
+    title="The uninsured are men between twenty-six and forty-four"
+    caption="Per cent with no health insurance, Allen County, 2019–2023. Every male band from 19 to 64 is above its female counterpart except the oldest two, and the peak is men aged 26 to 34."
+    columns={['Group', 'Per cent uninsured']}
+    rows={whoCats.map((c, i) => [c, whoVals[i]])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="who" set:html={JSON.stringify(whoSpec)} is:inline />
+
+  <h2>Who is here to see them</h2>
+  <AssertionCard assertion={abroad} />
+  <AssertionCard assertion={residents} />
+  <AssertionCard assertion={stay} />
+  <ChartFigure
+    id="supply"
+    title="Well supplied with trainees, short of specialists"
+    caption="Allen County's providers per head as a percentage of Ohio's. Above 100 the county has more than its state's share; below it, fewer. Residents in training and nurse practitioners are what it has; psychiatry is what it does not."
+    columns={['Provider', "Per cent of Ohio's rate"]}
+    rows={supplyCats.map((c, i) => [c, supplyVals[i]])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="supply" set:html={JSON.stringify(supplySpec)} is:inline />
+  <AssertionCard assertion={psych} />
+  <AssertionCard assertion={obgyn} />
+  <AssertionCard assertion={practitioners} />
+
+  <h2>The designation</h2>
+  <AssertionCard assertion={poor} />
+  <AssertionCard assertion={fraction} />
+  <AssertionCard assertion={map} />
+  <Gloss>
+    A county-level file records Allen County as a shortage area, part county, in primary care and
+    dental health and mental health, and has done for years. The register underneath that code holds
+    fifteen separate designations with four kinds of boundary — a class of people, a multi-county
+    catchment, a clinic's service area, a prison — and it keeps the ones it has withdrawn, with
+    their dates. The code never moved. Everything it stands for did.
+  </Gloss>
+  <AssertionCard assertion={prison} />
+</Article>
