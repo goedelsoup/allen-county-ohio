@@ -51,12 +51,12 @@ the private dwellings that came with that land are still numbered buildings on i
 **The contractor-operators are named in sequence.** Ohio Steel Foundry from May 1942; United Motors
 Service, a General Motors subsidiary, from November 1942; the Chrysler Corporation, later Chrysler
 Defense, from the M-1 award; and General Dynamics from March 1982, when Chrysler sold Chrysler
-Defense to it for $348.5 million. [verified] — the same report. That is the corporate chain this
+Defense to it for $348.5 million. [verified] — the same source. That is the corporate chain this
 corpus had one end of.
 
 **The names of the installation are a chronology in themselves.** Lima Tank Depot in the war; Lima
 Ordnance Depot from late 1945; Lima Army Modification Center through the 1970s; Lima Army Tank
-Plant on the M-1 award. [verified] — the same report.
+Plant on the M-1 award. [verified] — the same source.
 
 **The archeological report is a report about nothing having been looked for.** It "documents the
 lack of any known archeological sites on the facility" and states that no archeological
