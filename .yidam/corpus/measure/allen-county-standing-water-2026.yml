@@ -1,0 +1,75 @@
+class: measure
+label: Allen County's standing water, 2026
+description: |
+  **Allen County holds 2,026.8 acres of standing water — eight tenths of one per cent of it.**
+  757 waterbody polygons of the federal hydrography file have area inside the county. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), waterbody layer,
+  clipped to the county in EPSG:26916.
+
+      lake or pond      660 features    1,345.9 acres
+      reservoir          40               638.9
+      swamp or marsh     57                42.0
+
+  [verified] — the same source, by the class labels the service publishes on its own renderer.
+
+  **Most of it is a farm pond.** The median waterbody is 0.42 acres and 575 of the 757 are under an
+  acre. [verified] — same source. Ten carry a name, and those ten hold 1,137.4 acres — 56.1 per
+  cent of the county's standing water in ten of its 757 pieces. [inference] — computed here.
+
+      Bresler Upground Reservoir   571.4      Twin Lake Reservoir     10.1
+      Ferguson Reservoir           307.2      Long Pool               10.1
+      Lost Creek Reservoir         126.8      McClintock Lake          9.7
+      Lima Reservoir                85.0      Bluffton College Lake    7.4
+                                              Refinery Reservoir       6.4
+                                              Buckeye Lake             3.3
+
+  [verified] — same source. Four of the five largest are
+  [Lima's water supply](allen-county-water-systems-2026.yml), and the largest water in Allen County
+  is a reservoir the city pumped full.
+
+  **Fifty-seven features are swamp or marsh and they come to forty-two acres.** [verified] — same
+  source. The earliest land surveys of this county mapped 22,433.9 acres of elm-ash swamp forest;
+  the hydrography file now draws standing wetland on one acre in 534 of it. [inference] — computed
+  against [the original vegetation](allen-county-original-vegetation.yml); see
+  [the Great Black Swamp](../natural-feature/great-black-swamp.yml).
+
+  **That is the fourth federal number for the same ground and the smallest.** The National Wetlands
+  Inventory finds 704 acres of wetland here, the soil survey rates 91,953 acres hydric, the
+  vegetation map draws 22,433.9 acres of swamp forest, and this file draws 42.0 acres of marsh.
+  [verified] — the four sources, and see [the soils](allen-county-soils-2026.yml). They are
+  measuring four different things — what is wet, what was wet, what grew, and what a hydrographer
+  drew — and the corpus has said so before about the first two.
+
+  **The file does not establish that any of these is natural.** Its waterbody classes are lake or
+  pond, reservoir, swamp or marsh, and none of them records who dug the hole. The corpus's claim
+  that Allen County has no natural lakes rests on the water systems and not on this. [inference] —
+  see [the water systems](allen-county-water-systems-2026.yml).
+
+  [open] What the 660 ponds are for. A county with 575 waterbodies under an acre has either a
+  drainage practice or a livestock practice or both, and nothing here says which.
+properties:
+  parameter: standing water in Allen County
+  value: "2026.8"
+  unit: acres
+  as_of: "2026"
+  method: |
+    NHDWaterbody features intersecting the envelope −84.42,40.62 to −83.86,40.94, clipped to the
+    2024 TIGER county polygon in EPSG:26916; 952 polygons intersect the envelope and 757 have more
+    than a square metre inside the county. [verified] Areas are clipped areas, so a reservoir on a
+    county line contributes only its Allen County part. [verified] The named list is every polygon
+    carrying a `GNIS_Name`, whatever its class; the other 747 are unnamed in this file and may be
+    named elsewhere. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../natural-feature/great-black-swamp.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-water-systems-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
