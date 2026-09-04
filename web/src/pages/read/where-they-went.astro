@@ -1,0 +1,147 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const nineteen = assertion('nineteen-years-nineteen-losses')
+const money = assertion('three-hundred-and-fifty-five-million-left')
+const outearned = assertion('the-leavers-out-earned-the-arrivers')
+const closing = assertion('the-income-gap-is-closing')
+const south = assertion('more-than-half-who-leave-ohio-go-south')
+const filedays = assertion('two-years-that-are-the-file')
+const smaller = assertion('the-tax-file-finds-a-smaller-loss')
+const foreign = assertion('foreign-migration-stops-being-published')
+
+const named = assertion('forty-five-counties-and-six-hundred-and-ninety-seven-flows')
+const churn = assertion('seventeen-thousand-crossings-of-one-county-line')
+const border = assertion('the-border-comes-to-eighty-two')
+const cities = assertion('the-loss-is-to-the-cities')
+const columbus = assertion('columbus-is-a-fifth-of-everything')
+const delaware = assertion('the-richest-leavers-go-to-delaware-county')
+const fortwayne = assertion('two-allen-counties-and-the-ohio-one-loses')
+const rural = assertion('five-rural-counties-give-more-than-they-take')
+const missing = assertion('where-the-missing-people-went')
+
+const yrs = ['2004–05', '2005–06', '2006–07', '2007–08', '2008–09', '2009–10', '2010–11', '2011–12', '2012–13', '2013–14', '2014–15', '2015–16', '2016–17', '2017–18', '2018–19', '2019–20', '2020–21', '2021–22', '2022–23']
+const out = [3775, 3789, 3557, 3843, 3771, 3466, 3506, 3863, 3736, 3799, 2661, 3875, 5097, 3904, 3633, 4017, 3735, 3621, 3676]
+const inn = [3206, 3043, 3048, 3303, 2999, 2768, 2918, 3226, 3616, 3225, 2483, 3261, 4385, 3365, 3328, 3633, 3540, 3335, 3471]
+const outpe = [18626, 21244, 20297, 20311, 18909, 21278, 18072, 18425, 21539, 21156, 22601, 24079, 26924, 25652, 26014, 27937, 28359, 34206, 31862]
+const inpe = [16469, 17184, 17885, 18784, 17275, 16853, 17393, 18760, 21650, 20003, 18509, 22883, 22296, 23182, 24271, 23371, 25921, 29373, 30149]
+
+const netCats = ['Hardin', 'Putnam', 'Shelby', 'Mercer', 'Defiance', 'Van Wert', 'Auglaize', 'Lucas', 'Cuyahoga', 'Hancock', 'Montgomery', 'Wood', 'Butler', 'Allen, Ind.', 'Delaware', 'Hamilton', 'Franklin']
+const netVals = [175, 145, 132, 101, 50, -12, -121, -161, -175, -269, -288, -308, -316, -326, -432, -443, -2036]
+
+const classCats = ['Five counties on the border', 'Nine metropolitan counties', 'Thirty-one other named', 'Too small to name']
+const classVals = [-82, -3981, -1266, -3842]
+
+const flowSpec = line(
+  yrs,
+  [
+    { name: 'left', y: out },
+    { name: 'arrived', y: inn },
+  ],
+  { yTitle: 'Exemptions on tax returns that moved', labelLast: true, zeroBased: true },
+)
+
+const incomeSpec = line(
+  yrs,
+  [
+    { name: 'those who left', y: outpe },
+    { name: 'those who arrived', y: inpe },
+  ],
+  { yTitle: 'Adjusted gross income per exemption, dollars', labelLast: true, zeroBased: true },
+)
+
+const netSpec = bar(netCats, netVals, {
+  yTitle: 'Net exemptions gained or lost, 2004–05 to 2022–23',
+  labelValues: true,
+})
+
+const classSpec = bar(classCats, classVals, {
+  yTitle: 'Net exemptions, nineteen years',
+  labelValues: true,
+})
+---
+
+<Article slug="where-they-went">
+  <p>
+    Every year the Internal Revenue Service matches the address on a tax return against the address
+    on the same filer's return the year before, and publishes the result county by county with the
+    money attached. Nineteen years of it exist. In all nineteen, more people left Allen County than
+    arrived — 71,324 against 62,153 — and the largest single share of the difference went to one
+    place.
+  </p>
+
+  <h2>Nineteen years of leaving</h2>
+  <AssertionCard assertion={nineteen} open />
+  <ChartFigure
+    id="flows"
+    title="The two lines never cross"
+    caption="Exemptions on tax returns moving into and out of Allen County. The dip in 2014–15 and the spike in 2016–17 are the file rather than the county: Auglaize and Hancock counties do the same thing in the same two years."
+    columns={['Years', 'Left', 'Arrived', 'Net']}
+    rows={yrs.filter((_, i) => i % 3 === 0 || i === yrs.length - 1).map((y) => {
+      const i = yrs.indexOf(y)
+      return [y, out[i], inn[i], inn[i] - out[i]]
+    })}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="flows" set:html={JSON.stringify(flowSpec)} is:inline />
+  <AssertionCard assertion={money} />
+  <AssertionCard assertion={outearned} />
+  <ChartFigure
+    id="income"
+    title="The people leaving have always earned more than the people arriving"
+    caption="Adjusted gross income per exemption on the returns that moved. The two lines run apart for most of the record and have converged since 2018; both are nominal and neither is deflated."
+    columns={['Years', 'Those who left', 'Those who arrived']}
+    rows={yrs.filter((_, i) => i % 3 === 0 || i === yrs.length - 1).map((y) => {
+      const i = yrs.indexOf(y)
+      return [y, outpe[i], inpe[i]]
+    })}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="income" set:html={JSON.stringify(incomeSpec)} is:inline />
+  <AssertionCard assertion={closing} />
+  <AssertionCard assertion={south} />
+  <AssertionCard assertion={filedays} />
+  <Gloss>
+    Read alone, this county lost a third fewer people than usual in 2014–15 and half again as many
+    as usual two years later, and a reader would want an explanation. Read beside Auglaize and
+    Hancock, which move the same way in the same two years, there is nothing to explain: one year's
+    matched returns arrived late and were counted in the next. Nothing in the file says so. The
+    control had to come from the counties next door.
+  </Gloss>
+  <AssertionCard assertion={smaller} />
+  <AssertionCard assertion={foreign} />
+
+  <h2>Where they went</h2>
+  <AssertionCard assertion={named} />
+  <AssertionCard assertion={churn} />
+  <ChartFigure
+    id="net"
+    title="Five counties give, and every city takes"
+    caption="Net exemptions exchanged with each named county over nineteen years. The counties on the left are rural; the counties on the right hold or border a city of a hundred thousand people."
+    columns={['County', 'Net exemptions']}
+    rows={netCats.map((c, i) => [c, netVals[i]])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="net" set:html={JSON.stringify(netSpec)} is:inline />
+  <AssertionCard assertion={border} />
+  <AssertionCard assertion={cities} />
+  <ChartFigure
+    id="classes"
+    title="The border is even and the distance is not"
+    caption="Allen County's net migration loss of 9,171 exemptions, split by where it went. Flows smaller than ten returns a year are suppressed into a regional residue, which is why 3,842 of the loss has a region and no county."
+    columns={['Where', 'Net exemptions']}
+    rows={classCats.map((c, i) => [c, classVals[i]])}
+    height={290}
+  />
+  <script type="application/json" data-chart-spec="classes" set:html={JSON.stringify(classSpec)} is:inline />
+  <AssertionCard assertion={columbus} />
+  <AssertionCard assertion={delaware} />
+  <AssertionCard assertion={fortwayne} />
+  <AssertionCard assertion={rural} />
+  <AssertionCard assertion={missing} />
+</Article>
