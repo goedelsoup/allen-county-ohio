@@ -101,7 +101,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 6v / 0i / 0o | 51 |
-| [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 3 | 4v / 1i / 0o | 62 |
+| [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 9v / 4i / 1o | 132 |
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
@@ -131,6 +131,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
 | [allen-county-drug-overdose-deaths-2020-2025.yml](measure/allen-county-drug-overdose-deaths-2020-2025.yml) | measure | Drug overdose deaths in Allen County, 2020–2025 | 2 | 6v / 3i / 1o | 71 |
 | [allen-county-early-deaths-by-cause-2020-2022.yml](measure/allen-county-early-deaths-by-cause-2020-2022.yml) | measure | What Allen County dies of early, 2016–2022 | 3 | 10v / 6i / 1o | 100 |
+| [allen-county-educational-attainment-2009-2023.yml](measure/allen-county-educational-attainment-2009-2023.yml) | measure | Educational attainment in Allen County, 2005–2009 and 2019–2023 | 5 | 14v / 1i / 1o | 150 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 9v / 1i / 0o | 70 |
 | [allen-county-elevation-2026.yml](measure/allen-county-elevation-2026.yml) | measure | How high Allen County is, 2026 | 5 | 11v / 1i / 1o | 96 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
@@ -151,12 +152,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-governor-vote-2002-2018.yml](measure/allen-county-governor-vote-2002-2018.yml) | measure | Allen County vote for governor, 2002–2018 | 5 | 4v / 3i / 0o | 72 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 6 | 8v / 3i / 0o | 99 |
-| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 3 | 7v / 5i / 2o | 123 |
+| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 8v / 6i / 2o | 146 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 2 | 6v / 4i / 1o | 60 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 5 | 7v / 2i / 1o | 83 |
 | [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 4i / 2o | 105 |
-| [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 2 | 9v / 5i / 2o | 114 |
+| [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 3 | 9v / 6i / 2o | 122 |
 | [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
 | [allen-county-hospital-activity-2011-2023.yml](measure/allen-county-hospital-activity-2011-2023.yml) | measure | What Allen County's hospitals did, 2011–2023 | 6 | 11v / 1i / 1o | 95 |
@@ -172,7 +173,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
 | [allen-county-in-the-general-assembly-2000-2020.yml](measure/allen-county-in-the-general-assembly-2000-2020.yml) | measure | Allen County in the Ohio General Assembly, 2000–2020 | 3 | 8v / 1i / 1o | 79 |
-| [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 3 | 7v / 0i / 0o | 60 |
+| [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 4 | 9v / 1i / 0o | 82 |
+| [allen-county-institutional-population-2023.yml](measure/allen-county-institutional-population-2023.yml) | measure | Allen County's institutional population, 2019–2023 | 6 | 18v / 4i / 1o | 141 |
 | [allen-county-interurban-1901-1921.yml](measure/allen-county-interurban-1901-1921.yml) | measure | Allen County's interurban railways, 1901–1921 | 2 | 7v / 2i / 1o | 67 |
 | [allen-county-jewish-community-1850-1921.yml](measure/allen-county-jewish-community-1850-1921.yml) | measure | Allen County's Jewish community, 1850–1921 | 3 | 8v / 2i / 1o | 63 |
 | [allen-county-land-area-2000-2024.yml](measure/allen-county-land-area-2000-2024.yml) | measure | Allen County land area by subdivision, 2000–2024 | 3 | 10v / 3i / 0o | 108 |
