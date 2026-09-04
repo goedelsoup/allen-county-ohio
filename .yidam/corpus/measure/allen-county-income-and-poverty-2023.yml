@@ -37,6 +37,21 @@ description: |
   $53,272 is higher by $9,902 against a combined margin of $11,142, so the two cannot be ordered
   here. [verified] Nor is the county distinguishable from the state on poverty: 13.1 per cent
   against 13.2, against a combined margin of 1.2 points. [verified]
+
+  **The 13.1 per cent is a share of 97,786 people and not of the county.** Poverty status is
+  determined for everyone except people in institutional group quarters, people in military
+  quarters, unrelated individuals under 15 and college students in dormitories, so the rate this
+  node published rests on a base 3,899 smaller than the county's population. Over everybody the
+  12,815 are 12.6 per cent. [verified] — [the same source](../../catalog/census-acs-summary-file.md),
+  table B17001, its universe read from the table shells. Lima's base is 33,076 against a population
+  of 35,304, so its 24.8 per cent is 23.3 over the whole city. [verified] — the same table.
+
+  **Neither figure is wrong and the choice between them is not free.** The Census Bureau's rate is
+  the one every other county's is, and this corpus keeps it as published and states its universe
+  beside it; the whole-population figure is offered only because the excluded 3,899 are two prisons,
+  twelve nursing homes and a set of dormitories rather than a scatter. [inference] — see
+  [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml)
+  and [what the survey leaves out](allen-county-institutional-population-2023.yml).
 properties:
   parameter: median household income (B19013) and poverty status (B17001)
   value: "62001"
@@ -45,11 +60,18 @@ properties:
   method: |
     2023 five-year estimates from the table-based summary file. The twelve townships and Lima are
     county-subdivision and place summary levels and partition the county: they sum to 101,685 people
-    and 12,815 below poverty, both equal to the county row. Margins are as published, at 90 per
+    and 12,815 below poverty, both equal to the county row. The two totals come from different
+    tables with different universes — B01001 counts everybody and B17001 counts the 97,786 for whom
+    poverty status is determined — and a share of one taken over the other is what this node
+    originally published. Margins are as published, at 90 per
     cent; combined margins are the root of the sum of squares. [verified]
 links:
   - target: ../place/allen-county.yml
     relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-institutional-population-2023.yml
+    relationship: relates-to
     claim_tag: verified
     source: ../../catalog/census-acs-summary-file.md
   - target: ../place/lima.yml
