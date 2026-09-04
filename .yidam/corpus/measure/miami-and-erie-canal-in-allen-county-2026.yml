@@ -1,0 +1,95 @@
+class: measure
+label: The Miami and Erie Canal in Allen County, 2026
+description: |
+  **The corpus has held this canal as a site since genesis and never once as a length.** It knew
+  who located it, when it opened, which towns it made and that it is a thing of the past, and had
+  no figure for any part of it. [verified] — [the canal](../site/miami-and-erie-canal.yml) and
+  [the canal era](../period/canal-era.yml).
+
+  **The county's water file names it three times, under two spellings, and none of the three is the
+  Landmark.** `Miami & Erie Cnl` carries two features and `Miami-Erie Cnl` a third; together they
+  run 32,290.7 feet — 6.1157 miles — and all of them lie north of the Deep Cut. [verified] —
+  [TIGER/Line hydrography](../../catalog/census-tiger-hydrography.md), projected to EPSG:26916.
+
+      LINEARID       name                miles     from        to
+      110457129607   Miami-Erie Cnl      1.6680    40.71419    40.73600
+      110457129743   Miami & Erie Cnl    1.9319    40.73600    40.76398
+      110457129744   Miami & Erie Cnl    2.5158    40.77969    40.81614
+
+  **A canal is level between its locks, and what carries the name here falls the whole way.** Along
+  the 6.1157 miles the file draws, the channel bottom descends 41.9 feet at 5.94 feet to the mile,
+  and a straight line fits it with an R² of 0.976. [verified] —
+  [the elevation surface](../../catalog/usgs-3dep-elevation.md) sampled every ten metres along the
+  mapped line. The longest stretch of it level to within ten inches is 2,297 feet.
+
+  **A mile south of the first of them, the same instrument reads 7,375 feet level to 1.8 inches.**
+  [verified] — the same source; see [the Deep Cut](miami-and-erie-canal-deep-cut-2026.yml). The contrast is the
+  finding: one instrument, one afternoon, two reaches of one canal, and only one of them still has
+  a canal's profile. [inference]
+
+  **What is in the canal's line north of Spencerville is a field ditch.** It is 26.2 feet across a
+  metre above its bottom and lies 5.9 feet below the fields, with a berm surviving along one side;
+  the Deep Cut holds 36.1 feet of standing water and lies 17.1 feet below its fields. [verified] —
+  the same source, in cross-section every ten metres. Whether the ditch was cut in the canal's own
+  prism or beside it is a question this file has no field for. [inference]
+
+  **As built it was 5 feet deep, 36 feet wide at the bottom and 50 at the top.** The Miami
+  extension was completed in 1845 and ran 114 miles. [verified] —
+  [Miller, 1906](../../catalog/miller-allen-county-1906.md). The name is younger than the work: by
+  an act of 14 March 1849 the Miami Canal, the Miami Extension Canal and the Wabash and Erie became
+  one Miami and Erie Canal. [verified] — the same book.
+
+  **The first boat through Delphos was the *Marshall*, on 4 July 1845.** The first passenger packet
+  came in 1846 carrying Governor-elect William Bebb, and the businessmen of Delphos met it "at a
+  lock a mile away" and put in fresh horses. [verified] —
+  [Rusler, 1921](../../catalog/rusler-allen-county-1921.md), which is the only mention of a lock in
+  this county the corpus has found in any of its three histories.
+
+  **What it was for, in one price.** Coal could be bought at 90 cents a ton in Cincinnati and
+  delivered to Spencerville and Delphos for a dollar of freight. [verified] — the same book,
+  reporting it in 1921 as a rate worth having back.
+
+  **This corpus cannot say how many miles of the canal lie in Allen County.** It has measured 6.99
+  — the 6.1157 the water file draws plus the 4,617 feet of the Deep Cut that fall on the Allen side
+  — and it has located at least 5.1 miles more that no file it holds draws at all: 1.160 miles
+  between the cut and the first mapped segment, through Spencerville; 1.084 miles between the
+  second mapped segment and the third; and about 2.9 miles from the last mapped vertex north to the
+  Putnam County line, which passes through [Delphos](../place/delphos.yml). [verified] — the same
+  files, measured and differenced here.
+
+  [open] When it stopped carrying boats. Three county histories describe the lease and the end of
+  commercial use without dating either, and the question stands where
+  [the canal era](../period/canal-era.yml) left it.
+properties:
+  parameter: canal linework named for the Miami and Erie Canal in Allen County
+  value: "6.1157"
+  unit: miles
+  as_of: "2024"
+  method: |
+    The 2024 TIGER/Line linear hydrography file for county 39003, filtered to features whose
+    `FULLNAME` carries both "Erie" and "Cnl", projected to EPSG:26916 and summed; the same lengths
+    in EPSG:6549 agree to 0.03 per cent. [verified] The channel profile is the minimum cell within
+    forty metres of the mapped line, taken every ten metres from a two-metre export of the
+    elevation service, and the gradient is a least-squares fit over the mapped segments only, with
+    the 1.084-mile gap excluded rather than interpolated. [verified] Depth below the fields is the
+    median of the cells 80 to 150 metres out on each side, less the channel bottom. [verified] The
+    2.9 miles north of the last mapped vertex is measured due north from it to the county boundary
+    and is an approximation of a course this corpus has not traced. [inference]
+links:
+  - target: ../site/miami-and-erie-canal.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-tiger-hydrography.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-tiger-hydrography.md
+  - target: miami-and-erie-canal-deep-cut-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-3dep-elevation.md
+  - target: allen-county-roads-2010-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
