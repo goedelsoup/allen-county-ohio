@@ -1,0 +1,90 @@
+class: measure
+label: People sent to state prison from Allen County, 1983–2019
+description: |
+  **The county's courts had 156 people in Ohio's prisons in 1983 and 627 in 2019.** [verified] —
+  [Vera's Incarceration Trends](../../catalog/vera-incarceration-trends.md), county 39003, counted
+  by county of commitment and not by where anyone is held. The rate went from 224 to 978 for every
+  100,000 residents aged 15 to 64, on a working-age population that fell by 5,579 over the same
+  years.
+
+      year   in prison   rate   Ohio rate   admissions
+      1983         156    224         254            ·
+      1988         264    373         372          133
+      1992         424    606         534          282
+      1999         500    719         631          152
+      2010         549    788         674          184
+      2019         627    978         662          171
+
+  **It was below the state's rate when the series opens and half again above it when it closes.**
+  Allen County crossed Ohio's rate in 1988 and has been above it every year since. [verified] — the
+  same dataset's state file. Ohio's rate has moved between 590 and 682 in every year since 1995 and
+  was 662 in 2019; this county's went from 737 to 978 over the same twenty-five years. [inference]
+  — computed here. Whatever stopped the state's growth did not stop this county's.
+
+  **Fewer people are being sent and more are inside.** Admissions peaked at 282 in 1992 and were
+  171 in 2019 — down 39.4 per cent — while the population sentenced from here rose 47.9 per cent.
+  [verified] — the same source. Fewer entering and more present is possible only if people are
+  staying longer, which follows from conservation and needs no model. [inference]
+
+  **The ratio of the two, and what it is not.** 424 over 282 is 1.50 and 627 over 171 is 3.67.
+  [inference] — the same source, divided here. Those are ratios of a population to a year's
+  admissions and this corpus publishes them as that and not as an average length of stay, because
+  that reading holds only where the population is stationary and this one grew by half; see
+  [a stock divided by a flow is not a length of stay](../../decisions/a-stock-divided-by-a-flow-is-not-a-length-of-stay.yml).
+
+  **A Black resident of this county was eight times as likely to be in prison as a white one.**
+  4,028 per 100,000 aged 15 to 64 against 486 in 2019, and 3,758 against 332 — 11.3 times — in
+  2009. [verified] — the same source. **Black people are 12.3 per cent of Allen County and 56.1 per
+  cent of the people it has sent to prison.** [verified] — the same source against
+  [the county by race](allen-county-population-by-race-1970-2020.yml). The ratio has narrowed
+  because the white rate rose by 46 per cent over the decade while the Black rate rose by 7.
+  [inference] — computed here.
+
+  **This number and the county's prisons are about different people.** 627 people were in prison
+  from Allen County in 2019; 1,513 people were held in adult correctional facilities inside Allen
+  County in the 2020 census, and every one of them was in the two blocks that are the two state
+  prisons. [verified] — [the group quarters](allen-county-group-quarters-2020.yml) against the same
+  source. A county that sends six hundred and holds fifteen hundred is doing two different things,
+  and only one of them is a fact about its courts; see
+  [located here is not of here](../../decisions/located-here-is-not-of-here.yml).
+
+  **This corpus cannot say how long anyone sentenced from this county spends in prison.** The
+  underlying collection records admissions and releases and Vera publishes the counts rather than
+  the durations, so no time served appears in anything held here. [verified] — the same source's
+  codebook.
+
+  [open] What happened after 2019. The county-level prison series stops there; the state series
+  runs to 2022 and shows Ohio's population falling by 10 per cent over the pandemic, which this
+  county may or may not share.
+properties:
+  parameter: people in Ohio state prison committed from Allen County
+  value: "627"
+  unit: persons
+  as_of: "2019"
+  method: |
+    `incarceration_trends_county.csv` filtered on `county_fips = 39003`, against the state file for
+    Ohio. Prison figures derive from the National Corrections Reporting Program and are counted by
+    county of commitment on 31 December; they say nothing about where a person is held. [verified]
+    Rates are the file's own, per 100,000 residents aged 15 to 64. [verified] The ratio of
+    population to admissions is reported as that and not as a duration. [inference] Racial shares
+    are computed against the 2020 census count of the county's Black residents alone, 12,573 of
+    102,206; the alone-or-in-combination count of 15,636 would put the share at 15.3 per cent and
+    the disparity lower. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/vera-incarceration-trends.md
+  - target: allen-county-jail-1970-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/vera-incarceration-trends.md
+  - target: allen-county-group-quarters-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: allen-county-court-caseloads-2007-2017.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

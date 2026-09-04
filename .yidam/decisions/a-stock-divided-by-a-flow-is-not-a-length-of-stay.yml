@@ -1,0 +1,65 @@
+id: a-stock-divided-by-a-flow-is-not-a-length-of-stay
+summary: >-
+  Allen County sent 282 people to state prison in 1992 and 171 in 2019, and had 424 of its people
+  in prison in the first year and 627 in the second. Dividing gives 1.50 years and 3.67, and the
+  sentence "the average stay more than doubled" is not available from those four numbers, because
+  the quotient is a mean duration only when the population it divides is not changing. This one
+  grew by half over the same span.
+context: |
+  The four numbers, and the two arithmetics that can be done with them.
+
+      year   sent to prison   in prison   stock ÷ flow
+      1992              282         424         1.50
+      2019              171         627         3.67
+
+  The quotient is Little's law read backwards. In a system at rest — arrivals equal departures, the
+  population flat — the average time a person spends inside is exactly the population divided by
+  the annual arrivals, and the units work out to years. Neither condition holds here. The
+  population rose 48 per cent while arrivals fell 39, so departures were below arrivals throughout
+  and the stock was accumulating. A stock that is accumulating is made of people admitted under
+  older rules and older sentences, and dividing it by this year's admissions mixes two cohorts.
+
+  The direction of the error is not obvious either. In a growing population the ratio can overstate
+  the expected stay of the people arriving now — they have not finished — and understate the
+  realised stay of the people leaving, who entered when the flow was larger. Which dominates
+  depends on the sentence distribution, and this corpus holds no sentence lengths for this county.
+decision: |
+  **A population divided by an annual flow is published as what it is — a ratio of a stock to a
+  flow — and never as an average length of stay, unless the stock is stationary over the window and
+  that is shown rather than assumed.**
+
+  What may still be said, and it is most of what was wanted:
+
+  *The direction.* Fewer people entering and more people present is only possible if people are
+  staying longer, and that follows from conservation alone with no distributional assumption at
+  all. The corpus states the two counts and the direction, and stops.
+
+  *The ratio, labelled.* 1.50 in 1992 and 3.67 in 2019, called the ratio of the prison population
+  to that year's admissions, is a legitimate published quantity. It is a description of the system,
+  not a measurement of a person's sentence.
+
+  *The gap that closes it.* A length of stay is measured from release records — time served on
+  exit, by cohort. The National Corrections Reporting Program holds them and this corpus holds only
+  Vera's aggregation of it, which does not.
+rationale: |
+  **Why the ordinary rules do not catch this.**
+  [a flat series is a claim](a-flat-series-is-a-claim.yml) governs a series that fails to move and
+  asks whether the instrument is stuck; both series here move, and move in opposite directions,
+  which is exactly what makes the quotient look informative.
+  [a total is checked against one it did not come from](a-total-is-checked-against-one-it-did-not-come-from.yml)
+  governs a numerator and a denominator from different collections. These come from the same
+  collection and the same rows, and the defect survives that check untouched.
+
+  **What refusing bought.** The pair of counts is a better sentence than the quotient. "Allen
+  County sent 39 per cent fewer people to prison in 2019 than in 1992 and had 48 per cent more of
+  its people in prison" carries the whole finding, is exact, and needs no model. The quotient adds
+  a number and subtracts the certainty.
+
+  **What it generalises to.** Any duration inferred by dividing a level by a rate: hospital beds
+  occupied over annual admissions as a length of stay, unemployed people over monthly inflows as a
+  spell length, houses on the market over monthly sales as months of supply, cases pending over
+  filings as time to disposition, students enrolled over entrants as time to a degree. In each the
+  arithmetic is trivial, the units come out right, and the answer is a duration only in a system
+  that is not moving.
+status: accepted
+date: "2026-09-04"
