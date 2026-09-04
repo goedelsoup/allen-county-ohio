@@ -115,6 +115,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 8v / 4i / 1o | 70 |
 | [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 120 |
 | [allen-county-children-2010-2024.yml](measure/allen-county-children-2010-2024.yml) | measure | Allen County's children, 2010–2024 | 5 | 6v / 3i / 1o | 106 |
+| [allen-county-chronic-absenteeism-2013-2022.yml](measure/allen-county-chronic-absenteeism-2013-2022.yml) | measure | Chronic absenteeism in Allen County, 2013–2022 | 3 | 9v / 3i / 1o | 96 |
 | [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
 | [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
@@ -241,11 +242,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-road-deaths-1975-2024.yml](measure/allen-county-road-deaths-1975-2024.yml) | measure | Deaths on Allen County roads, 1975–2024 | 5 | 10v / 4i / 0o | 108 |
 | [allen-county-roads-2010-2024.yml](measure/allen-county-roads-2010-2024.yml) | measure | Roads in Allen County, 2010–2024 | 5 | 13v / 2i / 1o | 155 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
-| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 4 | 8v / 1i / 1o | 96 |
+| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 4 | 13v / 1i / 1o | 141 |
+| [allen-county-school-discipline-2011-2021.yml](measure/allen-county-school-discipline-2011-2021.yml) | measure | School discipline in Allen County, 2011–2021 | 4 | 11v / 4i / 1o | 107 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
 | [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 9 | 9v / 3i / 1o | 151 |
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2009-2022 | 4 | 8v / 1i / 1o | 82 |
-| [allen-county-school-enrolment-by-race-1988-2024.yml](measure/allen-county-school-enrolment-by-race-1988-2024.yml) | measure | Who the children in Allen County's schools are, 1988–2024 | 5 | 9v / 3i / 1o | 100 |
+| [allen-county-school-enrolment-by-race-1988-2024.yml](measure/allen-county-school-enrolment-by-race-1988-2024.yml) | measure | Who the children in Allen County's schools are, 1988–2024 | 6 | 10v / 3i / 1o | 109 |
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 4 | 6v / 4i / 0o | 79 |
 | [allen-county-school-staffing-1992-2024.yml](measure/allen-county-school-staffing-1992-2024.yml) | measure | What Allen County's twelve school districts employ, 1992–2024 | 5 | 14v / 1i / 1o | 177 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
