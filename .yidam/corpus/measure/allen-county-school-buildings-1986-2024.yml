@@ -109,9 +109,17 @@ description: |
   School, a Progressive Academy and Lima Alternative; by 2015 there is one Lima Senior High School
   again, carrying the identifier the first of those four was given. [verified] — the same file.
 
+  **Something now says where school buildings stand, and it is not a roster.** An automated read of
+  aerial photography finds 217 buildings in this county whose roofs it classes *Pre-K – 12 Schools*,
+  each with a coordinate. [verified] —
+  [USA Structures](../../catalog/fema-usa-structures.md); see
+  [the buildings](allen-county-buildings-2019.yml). It names none of them, it attaches none of them to a
+  district, and it counts a gymnasium and a bus garage beside the schoolhouse they stand by, so 217
+  is not five times the 43 the districts report. The refusal above stands, and what is
+  new is that the county's school roofs now have coordinates at all. [inference]
+
   [open] What is in the twelve closed buildings now, and whether any of them still stands. The
   directory says when a school stopped reporting and nothing about the fabric.
-
 properties:
   parameter: school buildings in the county's twelve districts
   value: "43"
@@ -137,5 +145,9 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/nces-common-core-of-data.md
+  - target: allen-county-buildings-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
   - target: ../measure.ont.yml
     relationship: instance-of

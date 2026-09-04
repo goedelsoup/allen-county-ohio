@@ -1,0 +1,145 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const total = assertion('fifty-nine-thousand-four-hundred-and-thirty-three-buildings')
+const industry = assertion('industry-is-a-fortieth-and-a-seventh')
+const units = assertion('a-structure-is-not-a-housing-unit')
+const cells = assertion('thirty-four-cellblocks-filed-as-houses')
+const partition = assertion('thirteen-subdivisions-partition-the-roofs')
+const largest = assertion('the-largest-roof-in-the-county')
+const coords = assertion('eight-of-ten-coordinates-hit-no-building')
+const addresses = assertion('more-buildings-than-addresses')
+const religious = assertion('two-hundred-and-fifty-eight-religious-roofs')
+const tank = assertion('no-building-stands-where-the-tank-plant-is-mapped')
+
+const inZone = assertion('nine-hundred-and-six-buildings-in-the-floodplain')
+const away = assertion('the-county-built-away-from-its-water')
+const metals = assertion('thirty-eight-of-a-hundred-metals-buildings')
+const manufactured = assertion('a-manufactured-home-is-twice-as-likely')
+const people = assertion('thirteen-hundred-and-seventy-six-people')
+const leftover = assertion('the-crosswalk-leaves-a-hundred-and-eight-blocks')
+const elida = assertion('elida-and-delphos-run-the-other-way')
+const villages = assertion('five-villages-with-none')
+const claims = assertion('one-claim-for-every-nine-buildings-inside')
+
+const classCats = ['Residential', 'Agriculture', 'Commercial', 'Industrial', 'Government', 'Unclassified', 'Education', 'Assembly', 'Utility and Misc']
+const classVals = [48477, 4550, 2455, 1591, 849, 736, 477, 258, 40]
+
+const subCats = ['Lima', 'American', 'Shawnee', 'Bath', 'Marion', 'Richland', 'Perry', 'Spencer', 'Jackson', 'Auglaize', 'Monroe', 'Amanda', 'Sugar Creek']
+const subVals = [1141, 306, 247, 178, 103, 91, 90, 87, 74, 68, 55, 53, 48]
+const subCount = [15766, 7402, 7242, 5692, 4386, 3829, 2961, 2042, 2672, 2469, 1989, 1831, 1152]
+
+const fzCats = ['Unclassified', 'Education', 'Industrial', 'Government', 'Commercial', 'Residential', 'Agriculture']
+const fzVals = [3.67, 3.35, 3.27, 3.18, 2.53, 1.43, 0.66]
+
+const gapCats = ['Delphos', 'Fort Shawnee', 'Lima', 'Lafayette', 'Westminster', 'Bluffton', 'Elida', 'Gomer']
+const gapVals = [4.63, -3.46, -3.58, -5.19, -6.16, -11.87, -13.31, -19.27]
+
+const classSpec = bar(classCats, classVals, { yTitle: 'Buildings', labelValues: true })
+const subSpec = bar(subCats, subVals, { yTitle: 'Buildings per square mile', labelValues: true })
+const fzSpec = bar(fzCats, fzVals, {
+  yTitle: 'Per cent of the class inside the flood hazard area',
+  labelValues: true,
+})
+const gapSpec = bar(gapCats, gapVals, {
+  yTitle: 'Share of buildings minus share of land, points',
+  labelValues: true,
+})
+---
+
+<Article slug="where-the-buildings-are">
+  <p>
+    A machine read five aerial photographs of Allen County and drew a polygon around every roof
+    bigger than a two-car garage. There are 59,433 of them. Together they cover four thousand two
+    hundred acres — one and two thirds per cent of the county — and where they stand settles a
+    question the flood map on its own could not: how many people here live on ground that is mapped
+    for flooding. The answer is about 1,376, and the last estimate was three times that.
+  </p>
+
+  <h2>Fifty-nine thousand roofs</h2>
+  <AssertionCard assertion={total} open />
+  <ChartFigure
+    id="classes"
+    title="Four buildings in five are somebody's home"
+    caption="Allen County's buildings by the occupancy class an automated classifier assigned. Agriculture is the second largest class and Industrial the fourth, and 736 buildings defeated the classifier entirely."
+    columns={['Class', 'Buildings']}
+    rows={classCats.map((c, i) => [c, classVals[i].toLocaleString()])}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="classes" set:html={JSON.stringify(classSpec)} is:inline />
+  <AssertionCard assertion={industry} />
+  <AssertionCard assertion={units} />
+  <Gloss>
+    A structure is not a housing unit in either direction. One multi-family roof holds many units,
+    and a flat over a shop is filed under Commercial. That the two totals — 48,336 dwelling
+    structures and 44,563 housing units — come out within four thousand of each other is two
+    opposite errors of roughly the same size, and it should not be read as either file confirming
+    the other.
+  </Gloss>
+  <AssertionCard assertion={cells} />
+  <AssertionCard assertion={partition} />
+  <ChartFigure
+    id="subdivisions"
+    title="A quarter of the county's buildings on a thirtieth of its ground"
+    caption="Buildings per square mile by county subdivision. Lima is denser than the next township by a factor of nearly four, and the twelve townships and the city account for all 59,433 buildings with nothing left over."
+    columns={['Subdivision', 'Buildings', 'Per square mile']}
+    rows={subCats.map((c, i) => [c, subCount[i].toLocaleString(), subVals[i]])}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="subdivisions" set:html={JSON.stringify(subSpec)} is:inline />
+  <AssertionCard assertion={largest} />
+  <AssertionCard assertion={tank} />
+  <AssertionCard assertion={coords} />
+  <AssertionCard assertion={addresses} />
+  <AssertionCard assertion={religious} />
+
+  <h2>Nine hundred and six on the floodplain</h2>
+  <AssertionCard assertion={inZone} />
+  <AssertionCard assertion={away} />
+  <ChartFigure
+    id="floodclass"
+    title="Industry, government and schools are on it at twice the rate houses are"
+    caption="Per cent of each occupancy class standing inside the special flood hazard area. Farm buildings are the least likely to be on it and the classifier's own residue the most."
+    columns={['Class', 'Per cent in the hazard area']}
+    rows={fzCats.map((c, i) => [c, fzVals[i]])}
+    height={310}
+  />
+  <script type="application/json" data-chart-spec="floodclass" set:html={JSON.stringify(fzSpec)} is:inline />
+  <AssertionCard assertion={metals} />
+  <AssertionCard assertion={manufactured} />
+  <AssertionCard assertion={people} />
+  <AssertionCard assertion={leftover} />
+  <Gloss>
+    The old figure was 4,448 and it was made by weighting each census block by the fraction of its
+    acres inside the hazard boundary. That treats a block's people as spread evenly over its ground,
+    which is exactly what settlement is not. Weighting instead by the block's own residential
+    buildings — which is where people actually are — gives 1,376. The difference is a factor of
+    three and it is not a correction to the flood map; it is a correction to an assumption about
+    where houses sit inside a block.
+  </Gloss>
+  <AssertionCard assertion={elida} />
+  <ChartFigure
+    id="placegap"
+    title="Every place but one has fewer buildings on the floodplain than ground"
+    caption="Share of a place's buildings inside the hazard area minus the share of its land, in percentage points. Gomer has almost a third of its ground on the floodplain and an eighth of its buildings; Delphos is the only place in the county where the order reverses."
+    columns={['Place', 'Difference, points']}
+    rows={gapCats.map((c, i) => [c, gapVals[i]])}
+    height={310}
+  />
+  <script type="application/json" data-chart-spec="placegap" set:html={JSON.stringify(gapSpec)} is:inline />
+  <AssertionCard assertion={villages} />
+  <AssertionCard assertion={claims} />
+  <Gloss>
+    Among the county's policyholders, the ones rated outside the floodplain produced more claims per
+    policy than the ones rated inside — which reads as an argument that the map is drawn in the
+    wrong place. Among buildings it reverses: one paid claim for every 8.7 structures inside the
+    boundary and one for every 552 outside. Cover is compulsory inside and voluntary outside, so the
+    two denominators were recruited by different rules, and the whole distance between those two
+    sentences is who chose to buy a policy.
+  </Gloss>
+</Article>

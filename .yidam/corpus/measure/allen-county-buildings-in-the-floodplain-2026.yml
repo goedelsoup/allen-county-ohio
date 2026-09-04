@@ -1,0 +1,128 @@
+class: measure
+label: Allen County's buildings inside the mapped floodplain, 2026
+description: |
+  **Nine hundred and six of the county's 59,433 buildings stand inside the special flood hazard
+  area — one and a half per cent of them, on six per cent of the ground.** [verified] —
+  [USA Structures](../../catalog/fema-usa-structures.md) against
+  [the mapped floodplain](allen-county-flood-hazard-2026.yml), every building centroid tested
+  against the dissolved hazard area in EPSG:26916. Their footprints come to 1,948,457 square feet,
+  1.05 per cent of the county's enclosed area.
+
+  **This county built away from its water, and the ratio is three to one.** 6.06 per cent of the
+  land is mapped floodplain and 1.52 per cent of the buildings are on it. [inference] — the same
+  two sources.
+
+  **What is on it is not what is off it.** Industry, government and schools sit in the floodplain at
+  more than twice the rate houses do.
+
+      occupancy class      in the SFHA   county-wide   share
+      Unclassified                  27           736   3.67%
+      Education                     16           477   3.35%
+      Industrial                    52         1,591   3.27%
+      Government                    27           849   3.18%
+      Commercial                    62         2,455   2.53%
+      Residential                  691        48,477   1.43%
+      Agriculture                   30         4,550   0.66%
+
+  **Thirty-eight of the county's hundred metals and minerals processing buildings are in the
+  floodplain.** [verified] — the same source, by primary occupancy. Heavy processing needs water and
+  went to it, and 38 per cent is the highest share of any occupancy in the county by a factor of
+  seven.
+
+  **A manufactured home here is more than twice as likely to be in the floodplain as a house.** 62
+  of 1,979 against 594 of 43,753 — 3.13 per cent against 1.36. [verified] — the same source.
+
+  **Weighted by buildings instead of by ground, 1,376 people live in the floodplain.** That is 1.35
+  per cent of the county, against 4,448 and 4.35 per cent when each block is weighted by the share
+  of its area inside — and it falls inside the bracket of 235 to 23,721 this corpus published and
+  near the bottom of it. Housing behaves the same way: 628 units against an area-weighted 1,945.
+  [verified] — [the 2020 blocks](../../catalog/census-tiger-roads.md), each block's population
+  apportioned by the share of its residential buildings inside the hazard area. See
+  [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml),
+  whose second case this is: the weight should be the thing being counted, and people live in
+  buildings rather than in acres.
+
+  **The crosswalk closes on the county and leaves 108 blocks behind.** All 59,433 buildings fall
+  inside one of the county's 3,552 blocks; 2,804 blocks hold at least one residential building, and
+  108 blocks hold 1,881 people between them and no residential building at all. Those people are
+  unweightable and are outside the 1,376. [verified] — the same file.
+
+  **A share of a village's ground is not a share of its buildings, and the two do not even run in
+  the same order.** Elida has 13.70 per cent of its land in the floodplain and 0.4 per cent of its
+  buildings; Delphos has 13.10 per cent of its land and 17.7 per cent of its buildings, the only
+  place in the county where the building share is the higher of the two. [verified] — the same
+  source against [the mapped floodplain](allen-county-flood-hazard-2026.yml)'s own land shares.
+
+      place            of its land   of its buildings   buildings in the SFHA
+      Delphos               13.10%             17.73%                    335
+      Gomer                 30.53%             11.26%                     33
+      Bluffton              17.43%              5.56%                     99
+      Fort Shawnee           4.97%              1.51%                     51
+      Lima                   4.27%              0.69%                    109
+      Westminster            6.77%              0.61%                      2
+      Elida                 13.70%              0.39%                      4
+      Lafayette              5.19%              0.00%                      0
+
+  **Five of the county's villages have no building in the floodplain at all.** Spencerville, Cairo,
+  Beaverdam, Harrod and Lafayette. [verified] — the same source. Among the townships the range runs
+  from Marion at 8.0 per cent and Sugar Creek at 7.7 down to Spencer at none.
+
+  **The claim record turns into a rate per building, which is what it never was.** One paid flood
+  insurance claim for every 8.7 buildings inside the mapped floodplain, against one for every 552
+  outside it. [inference] — [the claims](allen-county-flood-insurance-1978-2023.yml), 104 rated
+  inside and 106 rated outside, against the counts here. Among policyholders the outside-rated
+  produced more claims than the inside-rated; among buildings the floodplain is sixty-three times
+  the risk, and the difference between those two sentences is who bought a policy. See
+  [a compulsory denominator is not a voluntary one](../../decisions/a-compulsory-denominator-is-not-a-voluntary-one.yml).
+
+  **This corpus cannot say which of these buildings would take water.** The file's two
+  adjacent-grade elevation columns are empty for every row in this county, so a building inside the
+  zone may stand a foot above the base flood elevation or a foot below it and nothing here
+  distinguishes them; the flood map itself leaves one acre in seven of the floodplain with no base
+  flood elevation determined.
+
+  [open] Whether any of the 906 has been bought out or raised. The county's mitigation record has one
+  completed buyout and one refused, and neither carries a coordinate that could be matched to a
+  footprint; see [the mitigation record](allen-county-hazard-mitigation-2003-2026.yml).
+properties:
+  parameter: buildings inside the special flood hazard area, Allen County
+  value: "906"
+  unit: buildings
+  as_of: "2026"
+  method: |
+    The hazard area is the union of every National Flood Hazard Layer polygon flagged `SFHA_TF='T'`
+    for `DFIRM_ID='39003C'`, clipped to the 2024 TIGER county polygon, as computed for
+    [the mapped floodplain](allen-county-flood-hazard-2026.yml). [verified] A building is inside if
+    its centroid is; no footprint was intersected, so a large building on the edge of a zone counts
+    once and on one side. [inference]
+
+    Block weights are residential buildings only: for each 2020 block, the count inside the hazard
+    area divided by the count in the block, applied to `POP20` and `HOUSING20`. Blocks with no
+    residential building contribute nothing and are reported separately rather than distributed.
+    [verified]
+
+    Place shares are computed against each place clipped to this county, so Bluffton and Delphos are
+    counted only for their Allen County parts, the same convention the flood-hazard node uses.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
+  - target: ../place/delphos.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
+  - target: allen-county-flood-hazard-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-nfhl.md
+  - target: allen-county-flood-insurance-1978-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-buildings-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

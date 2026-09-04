@@ -115,6 +115,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 9v / 3i / 1o | 94 |
 | [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 3 | 9v / 5i / 1o | 82 |
+| [allen-county-buildings-2019.yml](measure/allen-county-buildings-2019.yml) | measure | The buildings of Allen County, 2019 | 7 | 12v / 4i / 1o | 133 |
+| [allen-county-buildings-in-the-floodplain-2026.yml](measure/allen-county-buildings-in-the-floodplain-2026.yml) | measure | Allen County's buildings inside the mapped floodplain, 2026 | 6 | 10v / 3i / 1o | 128 |
 | [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 120 |
 | [allen-county-children-2010-2024.yml](measure/allen-county-children-2010-2024.yml) | measure | Allen County's children, 2010–2024 | 5 | 6v / 3i / 1o | 106 |
 | [allen-county-chronic-absenteeism-2013-2022.yml](measure/allen-county-chronic-absenteeism-2013-2022.yml) | measure | Chronic absenteeism in Allen County, 2013–2022 | 3 | 9v / 3i / 1o | 96 |
@@ -147,8 +149,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
 | [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
-| [allen-county-flood-hazard-2026.yml](measure/allen-county-flood-hazard-2026.yml) | measure | The mapped floodplain of Allen County, 2026 | 5 | 8v / 3i / 1o | 110 |
-| [allen-county-flood-insurance-1978-2023.yml](measure/allen-county-flood-insurance-1978-2023.yml) | measure | Flood insurance claims in Allen County, 1978–2023 | 6 | 12v / 5i / 1o | 107 |
+| [allen-county-flood-hazard-2026.yml](measure/allen-county-flood-hazard-2026.yml) | measure | The mapped floodplain of Allen County, 2026 | 6 | 9v / 4i / 0o | 119 |
+| [allen-county-flood-insurance-1978-2023.yml](measure/allen-county-flood-insurance-1978-2023.yml) | measure | Flood insurance claims in Allen County, 1978–2023 | 7 | 13v / 6i / 0o | 117 |
 | [allen-county-foreclosures-and-evictions-2007-2017.yml](measure/allen-county-foreclosures-and-evictions-2007-2017.yml) | measure | Allen County foreclosures and evictions, 2007–2017 | 5 | 8v / 2i / 1o | 84 |
 | [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 7v / 4i / 1o | 77 |
 | [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 3 | 9v / 4i / 1o | 93 |
@@ -161,8 +163,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 6 | 8v / 3i / 0o | 99 |
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 10v / 7i / 2o | 163 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 7v / 5i / 1o | 72 |
-| [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 5 | 10v / 2i / 1o | 113 |
-| [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 6 | 8v / 3i / 1o | 94 |
+| [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 5 | 10v / 2i / 1o | 114 |
+| [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 6 | 8v / 3i / 1o | 95 |
 | [allen-county-health-insurance-2008-2024.yml](measure/allen-county-health-insurance-2008-2024.yml) | measure | Who in Allen County has no health insurance, 2008–2024 | 5 | 12v / 1i / 1o | 103 |
 | [allen-county-health-workforce-2023.yml](measure/allen-county-health-workforce-2023.yml) | measure | Who practises medicine in Allen County, 2022–2024 | 6 | 12v / 1i / 1o | 106 |
 | [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 4i / 2o | 105 |
@@ -252,7 +254,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-road-deaths-1975-2024.yml](measure/allen-county-road-deaths-1975-2024.yml) | measure | Deaths on Allen County roads, 1975–2024 | 5 | 10v / 4i / 0o | 108 |
 | [allen-county-roads-2010-2024.yml](measure/allen-county-roads-2010-2024.yml) | measure | Roads in Allen County, 2010–2024 | 5 | 13v / 2i / 1o | 155 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
-| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 4 | 13v / 1i / 1o | 141 |
+| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 5 | 14v / 2i / 1o | 153 |
 | [allen-county-school-discipline-2011-2021.yml](measure/allen-county-school-discipline-2011-2021.yml) | measure | School discipline in Allen County, 2011–2021 | 4 | 11v / 4i / 1o | 107 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
 | [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 9 | 9v / 3i / 1o | 151 |
@@ -535,14 +537,14 @@ Sorted by: kind, then alphabetically.
 | [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 5 | 5v / 2i / 2o | 66 |
 | [why-hud-and-the-survey-count-different-assisted-renters.yml](question/why-hud-and-the-survey-count-different-assisted-renters.yml) | question | Why do HUD's programme file and HUD's survey tables disagree about the county's assisted renters? | 4 | 1v / 3i / 1o | 77 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 2v / 4i / 3o | 83 |
-| [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 6v / 3i / 1o | 60 |
+| [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 7v / 4i / 1o | 67 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 12v / 4i / 1o | 110 |
 | [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 4v / 5i / 2o | 67 |
 | [camp-lima.yml](site/camp-lima.yml) | site | Camp Lima | 2 | 7v / 3i / 3o | 65 |
-| [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 5 | 15v / 7i / 1o | 135 |
+| [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 5 | 16v / 8i / 1o | 144 |
 | [fort-amanda.yml](site/fort-amanda.yml) | site | Fort Amanda | 2 | 15v / 2i / 0o | 98 |
 | [hay-road-bridge.yml](site/hay-road-bridge.yml) | site | The Hay Road bridge over the Auglaize River | 2 | 7v / 5i / 1o | 65 |
-| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 3 | 16v / 9i / 3o | 160 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 3 | 17v / 9i / 3o | 169 |
 | [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 2v / 4i / 2o | 51 |
 | [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 6v / 4i / 0o | 57 |
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |

@@ -1,0 +1,71 @@
+id: a-photograph-is-not-a-register
+summary: >-
+  59,433 buildings in Allen County, machine-drawn from five aerial flights and machine-classified
+  with no human ever looking. Three quarters of them are one photograph, taken on 29 March 2017.
+  The file is excellent for where things are and worthless for when they were built, and the
+  difference decides every sentence written from it.
+context: |
+  [USA Structures](../catalog/fema-usa-structures.md) gives this county a polygon for every building
+  over about 450 square feet, with a class, an occupancy and a footprint area. It closes a question
+  this corpus opened and could not answer — where the buildings are — and it does so at a grain
+  nothing else here reaches.
+
+  What it is, though, is an automated read of photographs on five dates. `VAL_METHOD` is *Automated*
+  for all 59,433 rows and `SOURCE` is Oak Ridge National Laboratory for all of them. The imagery is
+  dated 29 March 2017 for 45,890, 2 December 2018 for 9,532, 7 April 2017 for 2,903, 25 August 2013
+  for 880 and 27 November 2017 for 228.
+
+  Three consequences showed up immediately, and each one would have produced a false sentence:
+
+  - **A class is a guess about a roof.** The 35 institutional dormitories in this county are
+    classified *Residential*, and 34 of them are cellblocks at the two state prisons north of Lima.
+    A count of "residential structures" that is read as a count of homes has 1,360 prisoners inside
+    it.
+  - **A coordinate this corpus already held did not land in a building.** Of the ten site nodes here
+    that carry coordinates, eight fall inside no footprint at all — the county courthouse's among
+    them — and one of the two that do lands in a building the file calls Commercial.
+  - **The largest thing in the county is unnamed.** The file's biggest footprint is 1,865,159 square
+    feet and it carries no address, no owner and the occupancy *Industrial / Light*.
+decision: |
+  **Four rules.**
+
+  1. **Never date anything from this file.** It says a building was visible on a photograph and
+     carries no construction date, no permit and no demolition. A structure absent here was not
+     visible on those flights, which is a fact about 2017 and not about the ground. Building age in
+     this corpus comes from the survey and from permits, and it will keep coming from there.
+
+  2. **Quote the class as the file's, and check it wherever the count matters.** "The file
+     classifies 48,477 structures as residential" is publishable; "the county has 48,477 homes" is
+     not. Where a class carries a claim, test it against something the corpus already holds — a
+     census of housing units, a congregation count, a district's roster of school buildings.
+
+  3. **Use it for position, extent and adjacency, which is what it is good at.** Which polygon a
+     building falls in, how much ground the county's roofs cover, how many structures stand inside
+     a hazard boundary: these are the questions a footprint answers directly, and the corpus's
+     confidence in them is the confidence it has in the photograph, which is high.
+
+  4. **A point near a building is not that building.** Where a corpus coordinate and a footprint are
+     matched, say the distance and say what else stands within reach of the point. Two hundred
+     metres in open country is an identification; two hundred metres downtown is eighteen buildings.
+rationale: |
+  **The corpus has a rule for models and this is not one.**
+  [A modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml) is about
+  a number predicted for a place nobody sampled. This file *did* observe Allen County — from
+  fourteen thousand feet, on five mornings — and what is modelled is only the interpretation. The
+  observation is strong and the interpretation is weak, and the two travel in one row.
+
+  **Its nearest relative here is the flood map.** The National Flood Hazard Layer is also an
+  authoritative federal drawing of ground, also carrying effective dates that are not the dates the
+  ground changed, and the corpus already writes its panels' dates beside its acres. This is the same
+  discipline applied to a source with five dates instead of three.
+
+  **What it costs.** Any sentence about how the county was built — when the subdivisions went up,
+  what the ring around Lima did in the 1990s, whether the farm buildings are going. Those need a
+  second vintage of imagery and there is not one here.
+
+  **What it buys.** The answer to a question this corpus wrote down against itself and could not
+  close: where the buildings are. With it, the share of this county's people living in the mapped
+  floodplain falls from an area-weighted 4,448 to a building-weighted 1,376, and the bracket the
+  corpus had published — 235 to 23,721 — becomes a figure.
+status: accepted
+date: "2026-09-04"
