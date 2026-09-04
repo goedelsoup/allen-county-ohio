@@ -31,7 +31,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-senate-district-12-2023.yml](division/ohio-senate-district-12-2023.yml) | division | Ohio Senate District 12 (2023 map) | 2 | 1v / 2i / 1o | 31 |
 | [voting-district-lima-1a-2020.yml](division/voting-district-lima-1a-2020.yml) | division | Lima 1A voting district (2020 geography) | 3 | 5v / 1i / 0o | 55 |
 | [voting-district-sugar-creek-2020.yml](division/voting-district-sugar-creek-2020.yml) | division | Sugar Creek voting district (2020 geography) | 3 | 2v / 0i / 1o | 40 |
-| [allen-county-declared-for-covid-19-2020.yml](event/allen-county-declared-for-covid-19-2020.yml) | event | Allen County is declared for COVID-19, March 2020 | 3 | 7v / 3i / 2o | 68 |
+| [allen-county-declared-for-covid-19-2020.yml](event/allen-county-declared-for-covid-19-2020.yml) | event | Allen County is declared for COVID-19, March 2020 | 3 | 7v / 3i / 2o | 69 |
 | [allen-county-declared-for-hurricane-katrina-2005.yml](event/allen-county-declared-for-hurricane-katrina-2005.yml) | event | Allen County is declared for Hurricane Katrina, September 2005 | 3 | 4v / 1i / 1o | 40 |
 | [allen-county-jail-raid-1933.yml](event/allen-county-jail-raid-1933.yml) | event | The raid on the Allen County jail | 6 | 13v / 1i / 3o | 128 |
 | [davis-v-watkins.yml](event/davis-v-watkins.yml) | event | Davis v. Watkins, 1973–1980 | 3 | 10v / 2i / 1o | 100 |
@@ -122,7 +122,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-chronic-absenteeism-2013-2022.yml](measure/allen-county-chronic-absenteeism-2013-2022.yml) | measure | Chronic absenteeism in Allen County, 2013–2022 | 3 | 9v / 3i / 1o | 96 |
 | [allen-county-churches-1906-1921.yml](measure/allen-county-churches-1906-1921.yml) | measure | Allen County's churches, 1906 and 1921 | 3 | 7v / 3i / 1o | 87 |
 | [allen-county-civil-war-dead.yml](measure/allen-county-civil-war-dead.yml) | measure | Allen County's Civil War dead, counted from the roster | 2 | 2v / 8i / 2o | 90 |
-| [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 113 |
+| [allen-county-civil-war-service.yml](measure/allen-county-civil-war-service.yml) | measure | Allen County in United States service, 1861-1865 | 2 | 8v / 8i / 2o | 114 |
 | [allen-county-college-enrollment-2010-2023.yml](measure/allen-county-college-enrollment-2010-2023.yml) | measure | Allen County college enrolment, 2010-2023 | 2 | 3v / 6i / 2o | 75 |
 | [allen-county-commissioners-1831-1920.yml](measure/allen-county-commissioners-1831-1920.yml) | measure | The Allen County board of commissioners, 1831–1920 | 3 | 14v / 2i / 2o | 112 |
 | [allen-county-common-pleas-bench-1833-1920.yml](measure/allen-county-common-pleas-bench-1833-1920.yml) | measure | The Allen County common pleas bench, 1833–1920 | 3 | 13v / 2i / 2o | 109 |
@@ -162,8 +162,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-governments-and-their-employees-2022.yml](measure/allen-county-governments-and-their-employees-2022.yml) | measure | Allen County's forty-five governments and who works for them, 2022 | 6 | 11v / 2i / 1o | 118 |
 | [allen-county-governor-vote-2002-2018.yml](measure/allen-county-governor-vote-2002-2018.yml) | measure | Allen County vote for governor, 2002–2018 | 5 | 4v / 3i / 0o | 72 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
-| [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 6 | 8v / 3i / 0o | 99 |
-| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 10v / 7i / 2o | 163 |
+| [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 7 | 10v / 4i / 0o | 119 |
+| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 10v / 7i / 2o | 164 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 7v / 5i / 1o | 72 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 5 | 10v / 2i / 1o | 114 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 6 | 8v / 3i / 1o | 95 |
@@ -248,6 +248,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 9 | 13v / 4i / 0o | 139 |
 | [allen-county-private-schools-2013-2021.yml](measure/allen-county-private-schools-2013-2021.yml) | measure | Allen County's private and community schools, 2013–2021 | 4 | 10v / 5i / 1o | 103 |
+| [allen-county-proficiency-by-school-2018-2020.yml](measure/allen-county-proficiency-by-school-2018-2020.yml) | measure | Reading and mathematics proficiency by school in Allen County, 2018 and 2020 | 5 | 11v / 0i / 1o | 108 |
+| [allen-county-proficiency-by-subgroup-2013-2020.yml](measure/allen-county-proficiency-by-subgroup-2013-2020.yml) | measure | Reading and mathematics proficiency by race and by kind of child, Allen County, 2013–2020 | 7 | 13v / 4i / 1o | 108 |
 | [allen-county-property-tax-rates-2012-2025.yml](measure/allen-county-property-tax-rates-2012-2025.yml) | measure | Property tax rates in Allen County by taxing district, 2012–2025 | 5 | 12v / 2i / 1o | 156 |
 | [allen-county-proprietors-1969-2022.yml](measure/allen-county-proprietors-1969-2022.yml) | measure | Allen County proprietors and payroll employment, 1969–2022 | 5 | 7v / 6i / 2o | 155 |
 | [allen-county-quarries-2000-2025.yml](measure/allen-county-quarries-2000-2025.yml) | measure | Allen County's quarries, 2000–2025 | 4 | 7v / 3i / 1o | 80 |
@@ -258,12 +260,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-road-deaths-1975-2024.yml](measure/allen-county-road-deaths-1975-2024.yml) | measure | Deaths on Allen County roads, 1975–2024 | 5 | 10v / 4i / 0o | 108 |
 | [allen-county-roads-2010-2024.yml](measure/allen-county-roads-2010-2024.yml) | measure | Roads in Allen County, 2010–2024 | 5 | 13v / 2i / 1o | 155 |
 | [allen-county-school-boards-2026.yml](measure/allen-county-school-boards-2026.yml) | measure | The school boards of Allen County's twelve districts, 2026 | 2 | 6v / 2i / 2o | 82 |
-| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 5 | 14v / 2i / 1o | 153 |
+| [allen-county-school-buildings-1986-2024.yml](measure/allen-county-school-buildings-1986-2024.yml) | measure | School buildings in Allen County's twelve districts, 1986–2024 | 6 | 15v / 2i / 1o | 167 |
 | [allen-county-school-discipline-2011-2021.yml](measure/allen-county-school-discipline-2011-2021.yml) | measure | School discipline in Allen County, 2011–2021 | 4 | 11v / 4i / 1o | 107 |
 | [allen-county-school-district-poverty-2023.yml](measure/allen-county-school-district-poverty-2023.yml) | measure | Children in poverty in Allen County's school districts, 2023 | 2 | 6v / 2i / 0o | 64 |
 | [allen-county-school-enrolment-1988-2024.yml](measure/allen-county-school-enrolment-1988-2024.yml) | measure | Enrolment in Allen County's twelve school districts, 1988–2024 | 9 | 9v / 3i / 1o | 151 |
 | [allen-county-school-enrolment-2010-2023.yml](measure/allen-county-school-enrolment-2010-2023.yml) | measure | Enrolment in Allen County's twelve school districts, 2009-2022 | 4 | 8v / 1i / 1o | 82 |
-| [allen-county-school-enrolment-by-race-1988-2024.yml](measure/allen-county-school-enrolment-by-race-1988-2024.yml) | measure | Who the children in Allen County's schools are, 1988–2024 | 6 | 10v / 3i / 1o | 109 |
+| [allen-county-school-enrolment-by-race-1988-2024.yml](measure/allen-county-school-enrolment-by-race-1988-2024.yml) | measure | Who the children in Allen County's schools are, 1988–2024 | 7 | 11v / 4i / 1o | 122 |
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 4 | 6v / 4i / 0o | 79 |
 | [allen-county-school-staffing-1992-2024.yml](measure/allen-county-school-staffing-1992-2024.yml) | measure | What Allen County's twelve school districts employ, 1992–2024 | 5 | 14v / 1i / 1o | 177 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
@@ -275,7 +277,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
 | [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 7 | 16v / 4i / 1o | 154 |
-| [allen-county-test-proficiency-2009-2020.yml](measure/allen-county-test-proficiency-2009-2020.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2018 | 6 | 7v / 3i / 1o | 93 |
+| [allen-county-test-proficiency-2009-2020.yml](measure/allen-county-test-proficiency-2009-2020.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2020 | 8 | 11v / 5i / 1o | 129 |
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
@@ -291,7 +293,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 3 | 5v / 0i / 0o | 53 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
 | [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 2 | 5v / 4i / 1o | 65 |
-| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 7v / 4i / 1o | 75 |
+| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 7v / 4i / 1o | 76 |
 | [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
 | [allen-county-workplace-injuries-2016-2024.yml](measure/allen-county-workplace-injuries-2016-2024.yml) | measure | Allen County workplace injuries and illnesses, 2016–2024 | 7 | 10v / 1i / 1o | 104 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
@@ -309,7 +311,7 @@ Sorted by: kind, then alphabetically.
 | [lima-manufactures-1914-1929.yml](measure/lima-manufactures-1914-1929.yml) | measure | Lima manufactures, 1914–1929 | 3 | 11v / 4i / 0o | 98 |
 | [lima-manufactures-1939-1967.yml](measure/lima-manufactures-1939-1967.yml) | measure | Lima manufactures, 1939–1967 | 3 | 9v / 3i / 1o | 79 |
 | [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 8v / 9i / 2o | 136 |
-| [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 7v / 3i / 2o | 83 |
+| [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 7v / 3i / 2o | 84 |
 | [lima-mayors-1939-1956.yml](measure/lima-mayors-1939-1956.yml) | measure | Mayors of Lima named inside the gap, 1939–1956 | 2 | 8v / 2i / 1o | 91 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
@@ -339,13 +341,13 @@ Sorted by: kind, then alphabetically.
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 8v / 5i / 0o | 70 |
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 3 | 7v / 1i / 0o | 63 |
 | [sugar-creek.yml](natural-feature/sugar-creek.yml) | natural-feature | Sugar Creek | 2 | 1v / 1i / 2o | 34 |
-| [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 39 |
-| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 9v / 0i / 2o | 66 |
-| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 7v / 2i / 1o | 50 |
+| [allen-county-auditor.yml](office/allen-county-auditor.yml) | office | Auditor of Allen County | 2 | 4v / 1i / 1o | 40 |
+| [allen-county-board-of-commissioners.yml](office/allen-county-board-of-commissioners.yml) | office | Board of Allen County Commissioners | 2 | 9v / 0i / 2o | 67 |
+| [allen-county-clerk-of-courts.yml](office/allen-county-clerk-of-courts.yml) | office | Clerk of Courts of Allen County | 2 | 7v / 2i / 1o | 51 |
 | [allen-county-coroner.yml](office/allen-county-coroner.yml) | office | Coroner of Allen County | 2 | 5v / 1i / 2o | 43 |
 | [allen-county-engineer.yml](office/allen-county-engineer.yml) | office | Engineer of Allen County | 2 | 10v / 5i / 1o | 72 |
 | [allen-county-prosecuting-attorney.yml](office/allen-county-prosecuting-attorney.yml) | office | Prosecuting Attorney of Allen County | 2 | 4v / 1i / 1o | 43 |
-| [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 4v / 1i / 1o | 38 |
+| [allen-county-recorder.yml](office/allen-county-recorder.yml) | office | Recorder of Allen County | 2 | 4v / 1i / 1o | 39 |
 | [allen-county-sheriff.yml](office/allen-county-sheriff.yml) | office | Sheriff of Allen County | 2 | 8v / 4i / 1o | 79 |
 | [allen-county-treasurer.yml](office/allen-county-treasurer.yml) | office | Treasurer of Allen County | 2 | 6v / 2i / 2o | 48 |
 | [clerk-of-the-lima-municipal-court.yml](office/clerk-of-the-lima-municipal-court.yml) | office | Clerk of the Lima Municipal Court | 2 | 2v / 0i / 1o | 28 |
@@ -353,7 +355,7 @@ Sorted by: kind, then alphabetically.
 | [judge-of-the-common-pleas-general-division.yml](office/judge-of-the-common-pleas-general-division.yml) | office | Judge of the Court of Common Pleas, General Division | 2 | 4v / 3i / 1o | 46 |
 | [judge-of-the-common-pleas-probate-division.yml](office/judge-of-the-common-pleas-probate-division.yml) | office | Judge of the Court of Common Pleas, Probate Division | 2 | 3v / 2i / 0o | 31 |
 | [judge-of-the-lima-municipal-court.yml](office/judge-of-the-lima-municipal-court.yml) | office | Judge of the Lima Municipal Court | 2 | 2v / 2i / 1o | 38 |
-| [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 3v / 3i / 1o | 41 |
+| [judge-of-the-third-district-court-of-appeals.yml](office/judge-of-the-third-district-court-of-appeals.yml) | office | Judge of the Third District Court of Appeals | 2 | 3v / 3i / 1o | 42 |
 | [lima-city-auditor.yml](office/lima-city-auditor.yml) | office | Auditor of the City of Lima | 2 | 2v / 1i / 0o | 23 |
 | [lima-director-of-law.yml](office/lima-director-of-law.yml) | office | Director of Law of the City of Lima | 2 | 2v / 1i / 1o | 27 |
 | [mayor-of-lima.yml](office/mayor-of-lima.yml) | office | Mayor of Lima | 2 | 14v / 3i / 2o | 123 |
@@ -542,7 +544,7 @@ Sorted by: kind, then alphabetically.
 | [why-hud-and-the-survey-count-different-assisted-renters.yml](question/why-hud-and-the-survey-count-different-assisted-renters.yml) | question | Why do HUD's programme file and HUD's survey tables disagree about the county's assisted renters? | 4 | 1v / 3i / 1o | 77 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 2v / 4i / 3o | 83 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 8v / 5i / 1o | 75 |
-| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 12v / 4i / 1o | 110 |
+| [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 12v / 4i / 1o | 111 |
 | [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 4v / 5i / 2o | 67 |
 | [camp-lima.yml](site/camp-lima.yml) | site | Camp Lima | 2 | 7v / 3i / 3o | 65 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 5 | 16v / 8i / 1o | 144 |
