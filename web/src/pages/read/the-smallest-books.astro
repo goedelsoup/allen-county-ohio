@@ -1,0 +1,100 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const all = assertion('twelve-hundred-and-sixty-audits')
+const routine = assertion('ninety-seven-per-cent-is-routine')
+const companies = assertion('a-quarter-of-the-audited-are-private')
+const counts = assertion('forty-five-governments-and-a-hundred-and-eighteen-bodies')
+const overlap = assertion('the-lists-agree-where-they-overlap')
+
+const sixty = assertion('sixty-two-findings-for-recovery')
+const fivetimes = assertion('a-township-audit-is-five-times-as-likely')
+const nine = assertion('nine-of-twelve-townships-and-seven-of-eight-villages')
+const cities = assertion('the-county-and-both-cities-are-in-the-list')
+const court = assertion('ninety-three-thousand-and-three-hundred-thousand')
+const found = assertion('the-court-found-it-in-its-own-books')
+
+const asked = assertion('fort-shawnee-asked-for-the-analysis')
+const three = assertion('three-of-six-conditions-and-fifty-thousand-dollars')
+const promised = assertion('more-promised-than-banked')
+const ballot = assertion('twenty-five-months-to-the-ballot')
+const lastday = assertion('the-last-day-of-record-is-june-2013')
+
+const rateCats = ['Village', 'Township', 'Everything else', 'School district']
+const rateVals = [14.7, 12.7, 2.5, 2.8]
+
+const fundCats = ['Street Construction', 'General', 'Water Contract', 'State Reparations', 'Street Improvement Levy', 'Contract Police', 'Permissive Motor Vehicle']
+const fundVals = [214273, 31692, 19948, 16616, -11636, -54657, -81468]
+
+const rateSpec = bar(rateCats, rateVals, {
+  yTitle: 'Audit reports carrying a finding for recovery, per cent',
+  tickSuffix: '%',
+  labelValues: true,
+})
+
+const fundSpec = bar(fundCats, fundVals, {
+  yTitle: 'Fund balance, 31 May 2010, dollars',
+  labelValues: true,
+})
+---
+
+<Article slug="the-smallest-books">
+  <p>
+    Every public body in Ohio that handles public money is audited by the state, and the reports go
+    into one search. Filtered to Allen County it returns twelve hundred and sixty of them, going
+    back to 1999, on everything from the county itself to a cemetery association and a village that
+    no longer exists. It is the only account here of how this county's governments keep their books
+    rather than what they spend them on.
+  </p>
+
+  <h2>What the state audits here</h2>
+  <AssertionCard assertion={all} open />
+  <AssertionCard assertion={routine} />
+  <AssertionCard assertion={companies} />
+  <AssertionCard assertion={counts} />
+  <AssertionCard assertion={overlap} />
+  <Gloss>
+    Two state counts of the same county's public bodies, forty-five and a hundred and eighteen, and
+    neither is wrong. One counts units with a levy and a governing board in a single year. The other
+    counts twenty-seven years of everything the state has had cause to audit, which includes private
+    companies taking Medicaid money and a village its own electors abolished in 2012.
+  </Gloss>
+
+  <h2>Sixty-two findings</h2>
+  <AssertionCard assertion={sixty} open />
+  <AssertionCard assertion={fivetimes} />
+  <ChartFigure
+    id="classes"
+    title="The rate runs with the size of the office, not the size of the budget"
+    caption="Share of audit reports carrying a finding for recovery, by class of body, 1999 to 2026. A finding for recovery is an order that named money be repaid; the file does not carry the amount."
+    columns={['Class', 'Reports with a finding, per cent']}
+    rows={rateCats.map((c, i) => [c, rateVals[i]])}
+    height={290}
+  />
+  <script type="application/json" data-chart-spec="classes" set:html={JSON.stringify(rateSpec)} is:inline />
+  <AssertionCard assertion={nine} />
+  <AssertionCard assertion={cities} />
+  <AssertionCard assertion={court} />
+  <AssertionCard assertion={found} />
+
+  <h2>A village that asked</h2>
+  <AssertionCard assertion={asked} open />
+  <AssertionCard assertion={three} />
+  <ChartFigure
+    id="funds"
+    title="Three funds in the red and one holding more than the whole treasury"
+    caption="The Village of Fort Shawnee's fund balances at 31 May 2010, as the Auditor of State found them. The village had no debt outstanding and had missed no payroll; its treasury held $164,982 against $315,419 promised to these funds."
+    columns={['Fund', 'Balance']}
+    rows={fundCats.map((c, i) => [c, fundVals[i]])}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="funds" set:html={JSON.stringify(fundSpec)} is:inline />
+  <AssertionCard assertion={promised} />
+  <AssertionCard assertion={ballot} />
+  <AssertionCard assertion={lastday} />
+</Article>
