@@ -1,0 +1,82 @@
+class: measure
+label: Findings for recovery against Allen County public bodies, 1999–2026
+description: |
+  **Sixty-two of this county's 1,260 audit reports carry a finding for recovery, across 36 of its
+  118 audited bodies.** [verified] —
+  [the Auditor of State's audit search](../../catalog/ohio-auditor-of-state-audit-search.md), the
+  asterisk in the result table, counted here. A finding for recovery is an order that named money be
+  repaid to a public treasury.
+
+      class                    reports   with a finding   bodies with one
+      School district              284                8                 6
+      Township                     166               21                 9
+      Village                      102               15                 7
+      everything else              708               18                14
+
+  **A township or village audit is five times more likely to carry a finding than a school audit.**
+  12.7 per cent of township reports and 14.7 per cent of village reports against 2.8 per cent of
+  school reports. [verified] — the same source, computed here.
+
+  **Nine of this county's twelve townships have had one and seven of its eight villages.** American
+  Township five times, Shawnee Township four, Perry and Amanda three each, Monroe twice, and Marion,
+  Spencer, Bath and Sugar Creek once; Spencerville and Cairo three times each, Elida, Harrod,
+  Beaverdam and Fort Shawnee twice, Lafayette once. Bluffton is the one village here with none.
+  [verified] — the same source, by body.
+
+  **The county, both cities and the largest special districts are in the list too.** Allen County
+  itself twice, in 2004 and 2024; the City of Delphos in 2024; the City of Lima once, in the special
+  audit of its municipal court; the Regional Transit Authority in three consecutive years, 2020,
+  2021 and 2022; the Metropolitan Housing Authority in 2021; the Law Library Association twice.
+  [verified] — the same source.
+
+  **The largest single finding this corpus has read is at the Lima Municipal Court and it is not the
+  restitution.** The Auditor's special audit of the court's civil division, covering 2009 to 2012
+  and released in June 2020, identified just over $93,000 of misappropriated revenue and issued a
+  finding for recovery for it; the restitution a former chief deputy clerk later agreed and a judge
+  ordered was $331,706, on the auditor's work and the court's own internal audit together.
+  [verified] — [the same source](../../catalog/ohio-auditor-of-state-audit-search.md), the special
+  audit report itself. A finding for recovery is what one investigation could document, and a
+  restitution order is what a court accepted. [inference]
+
+  **The scheme was found by the office it was run against, and eleven years after it began.** The
+  clerk of court took office in January 2013 and was told of an unexplained $78,469 on the bank
+  reconciliation; the court spent 2013 to 2016 rebuilding receipt records from its case-management
+  system and its bank's deposit slips, and a check-substitution scheme emerged at the end of 2016.
+  The Auditor's special audit task force declared the audit in May 2017, a grand jury indicted in
+  April 2018, and a sentence of 36 months followed in October 2019. [verified] — the same source.
+
+  **This corpus cannot say how much money any of these findings is for.** The search carries the
+  flag and not the sum, and the sums are inside 62 PDFs of which three have been read; see
+  [a declaration is a ratio not a sum](../../decisions/a-declaration-is-a-ratio-not-a-sum.yml) for
+  why a count of findings must not be read as a quantity of money.
+
+  [open] Whether the townships and villages differ from the school districts in what is found or
+  only in how often. A finding for recovery covers an unsupported expense, an overpayment and a
+  theft alike, and nothing in this file separates the three.
+properties:
+  parameter: audit reports carrying a finding for recovery
+  value: "62"
+  unit: reports
+  as_of: "2026"
+  method: |
+    The asterisk prefix on the entity name in the result table, which the table's own footnote
+    defines as "Denotes Findings for Recovery". [verified] The search form's
+    `cbxFindingsForRecovery` checkbox returns no rows at all when sent and is not used. [verified]
+    Bodies are counted after the same normalisation the audit roster uses. Rates are reports with a
+    finding over reports of that class, not bodies over bodies, because a body audited annually has
+    more chances to carry one than a body audited every second year. [verified]
+links:
+  - target: allen-county-audits-1999-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../jurisdiction/lima-municipal-court.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

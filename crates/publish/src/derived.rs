@@ -10768,6 +10768,233 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &[],
         figures: &[],
     },
+    Assertion {
+        id: "twelve-hundred-and-sixty-audits",
+        statement: "The Auditor of State has released 1,260 audit reports on 118 distinct public \
+                    bodies in Allen County since 1999, between 38 and 67 a year with no gap in the \
+                    record.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-audits-1999-2026.yml", "**The state has released 1,260 audit reports on 118 distinct public bodies in this county since 1999.** [verified] \u{2014} [the Auditor of State's audit search](../../catalog/ohio-auditor-of-state-audit-search.md), filtered to Allen County and normalised here. The oldest release date is 1999 and the newest is 2026, and the count runs between 38 and 67 reports a year with no gap."),
+        ],
+        answers: &["cannot say whether any of these bodies passed its audit"],
+        figures: &[
+            Figure { label: "reports", value: 1260.0, literal: "1,260" },
+            Figure { label: "bodies", value: 118.0, literal: "118" },
+        ],
+    },
+    Assertion {
+        id: "ninety-seven-per-cent-is-routine",
+        statement: "1,216 of the county's 1,260 audit reports are a financial audit, an \
+                    agreed-upon-procedures engagement or a basic audit. Everything unusual the \
+                    county's governments have done is in the eight reports of other kinds.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-audits-1999-2026.yml", "**Ninety-seven per cent of what the state does here is a routine financial audit or the cheaper procedure that stands in for one.** 1,216 of the 1,260 reports are a Financial Audit, an Agreed Upon Procedures engagement or a Basic Audit, and the remaining 44 are the pension funds checking payroll census data and eight reports of other kinds. [verified] \u{2014} the same source, counted here. Everything unusual this county's governments have done is in those eight."),
+        ],
+        answers: &["cannot say whether any of these bodies passed its audit"],
+        figures: &[
+            Figure { label: "routine reports", value: 1216.0, literal: "1,216" },
+        ],
+    },
+    Assertion {
+        id: "a-quarter-of-the-audited-are-private",
+        statement: "Twenty-five of the 118 bodies the state audits in Allen County are Medicaid \
+                    providers - private companies audited because they take public money. Three more \
+                    are Medicaid programmes, and the list also holds two political parties, a \
+                    college foundation, a cemetery association and a placement agency.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-audits-1999-2026.yml", "**A quarter of the bodies the state audits in this county are private companies.** 25 of the 118 are Medicaid providers, audited because they take public money and not because they are government; three more are Medicaid programmes and the list also holds two political parties, a college foundation, a cemetery association and a placement agency. [verified] \u{2014} the same source, by entity type."),
+        ],
+        answers: &["cannot say whether any of these bodies passed its audit"],
+        figures: &[
+            Figure { label: "Medicaid providers", value: 25.0, literal: "25" },
+        ],
+    },
+    Assertion {
+        id: "forty-five-governments-and-a-hundred-and-eighteen-bodies",
+        statement: "Allen County has forty-five governments and a hundred and eighteen audited \
+                    public bodies, and both figures are right: one counts units with a levy and a \
+                    board in a single year, the other twenty-seven years of everything the state has \
+                    had cause to audit.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-audits-1999-2026.yml", "**This county has forty-five governments and a hundred and eighteen audited bodies, and both numbers are right.** The Census of Governments counts units with a levy and a governing board in one year; the auditor's list is twenty-seven years of everything the state has audited, whether or not it is a government and whether or not it still exists. [verified] \u{2014} the same source against [the governments](allen-county-governments-and-their-employees-2022.yml). Its eight villages include Fort Shawnee, abolished by its own electors in 2012, and its three colleges include Lima Technical College, which is Rhodes State under an earlier name. [inference]"),
+        ],
+        answers: &["cannot say whether any of these bodies passed its audit"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-lists-agree-where-they-overlap",
+        statement: "Where the census's roll of governments and the auditor's roll of audited bodies \
+                    overlap they agree exactly: twelve townships, one county, two cities and the \
+                    seven villages still standing are in both.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**Where the two lists overlap they agree exactly.** Twelve townships, one county, two cities and the seven villages still standing are in both. [verified] \u{2014} the same source against this one. The hundred and eighteen is not a claim that this county has more government than the forty-five says; it is a claim about how much of a county's money passes through bodies that are not governments. [inference]"),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[],
+    },
+    Assertion {
+        id: "sixty-two-findings-for-recovery",
+        statement: "Sixty-two of Allen County's 1,260 audit reports carry a finding for recovery - \
+                    an order that named money be repaid to a public treasury - across 36 of its 118 \
+                    audited bodies.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-findings-for-recovery-1999-2026.yml", "**Sixty-two of this county's 1,260 audit reports carry a finding for recovery, across 36 of its 118 audited bodies.** [verified] \u{2014} [the Auditor of State's audit search](../../catalog/ohio-auditor-of-state-audit-search.md), the asterisk in the result table, counted here. A finding for recovery is an order that named money be repaid to a public treasury."),
+        ],
+        answers: &["cannot say how much money any of these findings is for"],
+        figures: &[
+            Figure { label: "bodies with a finding", value: 36.0, literal: "36" },
+            Figure { label: "bodies audited", value: 118.0, literal: "118" },
+        ],
+    },
+    Assertion {
+        id: "a-township-audit-is-five-times-as-likely",
+        statement: "12.7 per cent of township audit reports in Allen County carry a finding for \
+                    recovery and 14.7 per cent of village reports, against 2.8 per cent of school \
+                    district reports.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-findings-for-recovery-1999-2026.yml", "**A township or village audit is five times more likely to carry a finding than a school audit.** 12.7 per cent of township reports and 14.7 per cent of village reports against 2.8 per cent of school reports. [verified] \u{2014} the same source, computed here."),
+        ],
+        answers: &["cannot say how much money any of these findings is for"],
+        figures: &[
+            Figure { label: "townships, per cent", value: 12.7, literal: "12.7" },
+            Figure { label: "villages, per cent", value: 14.7, literal: "14.7" },
+            Figure { label: "schools, per cent", value: 2.8, literal: "2.8" },
+        ],
+    },
+    Assertion {
+        id: "nine-of-twelve-townships-and-seven-of-eight-villages",
+        statement: "Nine of Allen County's twelve townships have had a finding for recovery and \
+                    seven of its eight audited villages. American Township has five, Shawnee \
+                    Township four, Spencerville and Cairo three each. Bluffton is the one village \
+                    with none.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-findings-for-recovery-1999-2026.yml", "**Nine of this county's twelve townships have had one and seven of its eight villages.** American Township five times, Shawnee Township four, Perry and Amanda three each, Monroe twice, and Marion, Spencer, Bath and Sugar Creek once; Spencerville and Cairo three times each, Elida, Harrod, Beaverdam and Fort Shawnee twice, Lafayette once. Bluffton is the one village here with none. [verified] \u{2014} the same source, by body."),
+        ],
+        answers: &["cannot say how much money any of these findings is for"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-and-both-cities-are-in-the-list",
+        statement: "Allen County itself has two findings for recovery, in 2004 and 2024; the City of \
+                    Delphos one, in 2024; the City of Lima one, in the special audit of its \
+                    municipal court; and the Regional Transit Authority one in each of three \
+                    consecutive years.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-findings-for-recovery-1999-2026.yml", "**The county, both cities and the largest special districts are in the list too.** Allen County itself twice, in 2004 and 2024; the City of Delphos in 2024; the City of Lima once, in the special audit of its municipal court; the Regional Transit Authority in three consecutive years, 2020, 2021 and 2022; the Metropolitan Housing Authority in 2021; the Law Library Association twice. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say how much money any of these findings is for"],
+        figures: &[],
+    },
+    Assertion {
+        id: "ninety-three-thousand-and-three-hundred-thousand",
+        statement: "The state's special audit of the Lima Municipal Court's civil division \
+                    documented just over $93,000 of misappropriated revenue; the restitution a court \
+                    later ordered, on that work and the court's own internal audit together, was \
+                    $331,706.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-findings-for-recovery-1999-2026.yml", "**The largest single finding this corpus has read is at the Lima Municipal Court and it is not the restitution.** The Auditor's special audit of the court's civil division, covering 2009 to 2012 and released in June 2020, identified just over $93,000 of misappropriated revenue and issued a finding for recovery for it; the restitution a former chief deputy clerk later agreed and a judge ordered was $331,706, on the auditor's work and the court's own internal audit together. [verified] \u{2014} [the same source](../../catalog/ohio-auditor-of-state-audit-search.md), the special audit report itself. A finding for recovery is what one investigation could document, and a restitution order is what a court accepted. [inference]"),
+        ],
+        answers: &["cannot say how much money any of these findings is for"],
+        figures: &[
+            Figure { label: "restitution ordered", value: 331706.0, literal: "331,706" },
+        ],
+    },
+    Assertion {
+        id: "the-court-found-it-in-its-own-books",
+        statement: "The Lima Municipal Court's clerk took office in January 2013, was told of an \
+                    unexplained $78,469 on the bank reconciliation, and spent four years rebuilding \
+                    receipt records from the case-management system and the bank's deposit slips \
+                    before a check-substitution scheme emerged. The state's audit began in May 2017 \
+                    on the court's own complaint.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-findings-for-recovery-1999-2026.yml", "**The scheme was found by the office it was run against, and eleven years after it began.** The clerk of court took office in January 2013 and was told of an unexplained $78,469 on the bank reconciliation; the court spent 2013 to 2016 rebuilding receipt records from its case-management system and its bank's deposit slips, and a check-substitution scheme emerged at the end of 2016. The Auditor's special audit task force declared the audit in May 2017, a grand jury indicted in April 2018, and a sentence of 36 months followed in October 2019. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say how much money any of these findings is for"],
+        figures: &[
+            Figure { label: "unexplained on the reconciliation", value: 78469.0, literal: "78,469" },
+        ],
+    },
+    Assertion {
+        id: "fort-shawnee-asked-for-the-analysis",
+        statement: "The fiscal emergency declared at the Village of Fort Shawnee in September 2010 \
+                    was the answer to a question the village put: the analysis was performed at the \
+                    mayor's own request under Sections 118.021 and 118.04(A) of the Revised Code.",
+        topic: "government",
+        supports: &[
+            support!("event/fort-shawnee-declared-in-fiscal-emergency-2010.yml", "**The village asked for it.** The analysis was performed at the request of Mayor Dennis Shaffer under Sections 118.021 and 118.04(A) of the Revised Code, to determine whether the village's condition justified a declaration of fiscal watch or of fiscal emergency. [verified] \u{2014} the same source. It is not something that happened to the village; it is the answer to a question the village put."),
+        ],
+        answers: &["cannot say whether the emergency caused the surrender"],
+        figures: &[],
+    },
+    Assertion {
+        id: "three-of-six-conditions-and-fifty-thousand-dollars",
+        statement: "Three of the six statutory conditions were met at Fort Shawnee. The unprovided \
+                    portion of its aggregate deficit was $50,761 at 31 May 2010 and its treasury was \
+                    $18,211 short; one-sixth of its general fund budget, which is what every test is \
+                    measured against, was $53,372.",
+        topic: "government",
+        supports: &[
+            support!("event/fort-shawnee-declared-in-fiscal-emergency-2010.yml", "**Three of the six statutory conditions were met, and the sums are small.** The unprovided portion of the aggregate deficit was $70,778 at 31 December 2009 and $50,761 at 31 May 2010; the treasury was short of its own funds by $5,075 and then $18,211; the general fund's accounts payable more than thirty days past due came to $761. [verified] \u{2014} the same source, Schedules I to VI. One-sixth of the general fund budget, which is the threshold every test is measured against, was $53,372."),
+        ],
+        answers: &["cannot say whether the emergency caused the surrender"],
+        figures: &[
+            Figure { label: "unprovided deficit", value: 50761.0, literal: "50,761" },
+            Figure { label: "treasury deficiency", value: 18211.0, literal: "18,211" },
+        ],
+    },
+    Assertion {
+        id: "more-promised-than-banked",
+        statement: "The Village of Fort Shawnee had $164,982 in the bank and $315,419 promised to \
+                    its own funds. It had no debt outstanding and had missed no payroll; the \
+                    treasury simply held less than the balances it was carrying.",
+        topic: "government",
+        supports: &[
+            support!("event/fort-shawnee-declared-in-fiscal-emergency-2010.yml", "**The village had $164,982 in the bank and had promised $315,419 to its own funds.** That is the whole of the condition: no debt was outstanding, no payroll had been missed, and the treasury simply held less than the positive balances it was carrying. [verified] \u{2014} the same source, Schedule VI. See [a declaration is a ratio not a sum](../../decisions/a-declaration-is-a-ratio-not-a-sum.yml)."),
+        ],
+        answers: &["cannot say whether the emergency caused the surrender"],
+        figures: &[
+            Figure { label: "in the bank", value: 164982.0, literal: "164,982" },
+            Figure { label: "owed to its funds", value: 315419.0, literal: "315,419" },
+        ],
+    },
+    Assertion {
+        id: "twenty-five-months-to-the-ballot",
+        statement: "Twenty-five months after the fiscal emergency was declared, on 6 November 2012, \
+                    the electors of Fort Shawnee voted 1,058 to 858 to give up the village's \
+                    corporate powers.",
+        topic: "government",
+        supports: &[
+            support!("event/fort-shawnee-declared-in-fiscal-emergency-2010.yml", "**Twenty-five months later its electors surrendered the corporation.** On 6 November 2012 Fort Shawnee voted 1,058 to 858 to give up its corporate powers. [verified] \u{2014} [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md); see [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml)."),
+        ],
+        answers: &["cannot say whether the emergency caused the surrender"],
+        figures: &[
+            Figure { label: "for surrender", value: 1058.0, literal: "1,058" },
+            Figure { label: "against", value: 858.0, literal: "858" },
+        ],
+    },
+    Assertion {
+        id: "the-last-day-of-record-is-june-2013",
+        statement: "The Village of Fort Shawnee's last day of record is 15 June 2013: the final \
+                    report the state released on it is a closing engagement covering to that date, \
+                    seven months after the electors voted.",
+        topic: "government",
+        supports: &[
+            support!("jurisdiction/village-of-fort-shawnee.yml", "**The corporation's last day of record is 15 June 2013.** The final report on this village is an agreed-upon-procedures engagement covering 1 January 2012 to 15 June 2013, released on 3 December 2013 \u{2014} a closing audit, seven months after the electors voted. [verified] \u{2014} the same source. The `abolished` date above is the day the electors decided; this is the day the state stopped auditing. [inference]"),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

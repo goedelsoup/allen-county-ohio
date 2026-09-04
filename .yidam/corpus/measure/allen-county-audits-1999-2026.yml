@@ -1,0 +1,100 @@
+class: measure
+label: Every audit released on an Allen County public body, 1999–2026
+description: |
+  **The state has released 1,260 audit reports on 118 distinct public bodies in this county since
+  1999.** [verified] —
+  [the Auditor of State's audit search](../../catalog/ohio-auditor-of-state-audit-search.md),
+  filtered to Allen County and normalised here. The oldest release date is 1999 and the newest is
+  2026, and the count runs between 38 and 67 reports a year with no gap.
+
+      report type                              reports
+      Financial Audit                              966
+      Agreed Upon Procedures                       199
+      Basic Audit                                   51
+      Pension census-data examinations               36
+      Performance Audit                              2
+      Special Audit                                  2
+      Compliance Examination                         2
+      Public Interest Report                         1
+      Fiscal Emergency Analysis — Declaration        1
+
+  **Ninety-seven per cent of what the state does here is a routine financial audit or the cheaper
+  procedure that stands in for one.** 1,216 of the 1,260 reports are a Financial Audit, an Agreed
+  Upon Procedures engagement or a Basic Audit, and the remaining 44 are the pension funds checking
+  payroll census data and eight reports of other kinds. [verified] — the same source, counted here.
+  Everything unusual this county's governments have done is in those eight.
+
+      body class                          bodies
+      Medicaid provider                       25
+      Township                                12
+      School district                         10
+      Village                                  8
+      Library                                  6
+      Community improvement / land bank        5
+      Community school                         5
+      Special improvement district             5
+      Park district                            4
+      College                                  3
+      Medicaid program                         3
+      seven classes with two each             14
+      eighteen classes with one each          18
+
+  **A quarter of the bodies the state audits in this county are private companies.** 25 of the 118
+  are Medicaid providers, audited because they take public money and not because they are
+  government; three more are Medicaid programmes and the list also holds two political parties, a
+  college foundation, a cemetery association and a placement agency. [verified] — the same source,
+  by entity type.
+
+  **This county has forty-five governments and a hundred and eighteen audited bodies, and both
+  numbers are right.** The Census of Governments counts units with a levy and a governing board in
+  one year; the auditor's list is twenty-seven years of everything the state has audited, whether or
+  not it is a government and whether or not it still exists. [verified] — the same source against
+  [the governments](allen-county-governments-and-their-employees-2022.yml). Its eight villages
+  include Fort Shawnee, abolished by its own electors in 2012, and its three colleges include Lima
+  Technical College, which is Rhodes State under an earlier name. [inference]
+
+  **The bodies audited most are the ones audited every year.** Bluffton, Elida and Shawnee school
+  districts and the City of Lima carry 28 reports each; Allen County itself carries 25. [verified] —
+  the same source. Ohio audits a large body annually and a small one biennially, so a report count
+  is a measure of size and reporting regime before it is a measure of anything else. [inference]
+
+  **This corpus cannot say whether any of these bodies passed its audit.** The search returns that a
+  report exists, what kind it is, what it covered and when it was released, and it carries the
+  auditor's opinion in exactly one bit: whether a finding for recovery was issued. Everything else
+  is inside the PDF.
+
+  [open] What the eight unusual reports say. Two performance audits, two special audits, two
+  compliance examinations, a public interest report and a fiscal emergency declaration; three have
+  been read here and five have not.
+properties:
+  parameter: audit reports released on Allen County public bodies
+  value: "1260"
+  unit: reports
+  as_of: "2026"
+  method: |
+    One POST to the Auditor of State's audit search with `ddlCounty=Allen` and every other filter
+    at its "all" option, returning all 1,260 rows unpaginated. [verified] Distinct bodies are
+    counted after normalisation: a trailing report type in quotation marks is stripped from the
+    entity name, `Inc.`, `LLC` and `dba` are dropped, and punctuation and case are ignored. That
+    takes 1,260 strings to 141 spellings and 118 bodies; the raw distinct count is 174 and is not
+    used. [verified] Years are release years, not audited periods, and the two can be eight years
+    apart. [verified]
+links:
+  - target: allen-county-governments-and-their-employees-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: allen-county-findings-for-recovery-1999-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

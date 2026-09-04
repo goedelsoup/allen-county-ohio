@@ -1658,6 +1658,36 @@ export const ARTICLES: Article[] = [
       'event/the-buses-replace-the-streetcars-1938.yml',
     ],
   },
+  {
+    slug: 'the-smallest-books',
+    title: 'The smallest books',
+    dek: 'Twelve hundred and sixty state audits of this county\u2019s public bodies. A township audit carries a finding for recovery five times as often as a school audit, and one village asked to be declared in emergency.',
+    section: 'government',
+    era: [1999, 2026],
+    assertions: [
+      'twelve-hundred-and-sixty-audits',
+      'ninety-seven-per-cent-is-routine',
+      'a-quarter-of-the-audited-are-private',
+      'forty-five-governments-and-a-hundred-and-eighteen-bodies',
+      'the-lists-agree-where-they-overlap',
+      'sixty-two-findings-for-recovery',
+      'a-township-audit-is-five-times-as-likely',
+      'nine-of-twelve-townships-and-seven-of-eight-villages',
+      'the-county-and-both-cities-are-in-the-list',
+      'ninety-three-thousand-and-three-hundred-thousand',
+      'the-court-found-it-in-its-own-books',
+      'fort-shawnee-asked-for-the-analysis',
+      'three-of-six-conditions-and-fifty-thousand-dollars',
+      'more-promised-than-banked',
+      'twenty-five-months-to-the-ballot',
+      'the-last-day-of-record-is-june-2013',
+    ],
+    entries: [
+      'measure/allen-county-audits-1999-2026.yml',
+      'measure/allen-county-findings-for-recovery-1999-2026.yml',
+      'event/fort-shawnee-declared-in-fiscal-emergency-2010.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */
