@@ -6,15 +6,21 @@ description: |
   [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), waterbody layer,
   clipped to the county in EPSG:26916.
 
+  **660 of them are ponds holding 1,345.9 acres, 40 are reservoirs holding 638.9, and 57 are swamp
+  or marsh holding 42.0.** [verified] — the same source, by the class labels the service publishes
+  on its own renderer.
+
       lake or pond      660 features    1,345.9 acres
       reservoir          40               638.9
       swamp or marsh     57                42.0
 
-  [verified] — the same source, by the class labels the service publishes on its own renderer.
-
   **Most of it is a farm pond.** The median waterbody is 0.42 acres and 575 of the 757 are under an
   acre. [verified] — same source. Ten carry a name, and those ten hold 1,137.4 acres — 56.1 per
   cent of the county's standing water in ten of its 757 pieces. [inference] — computed here.
+
+  **Bresler Upground Reservoir is the largest water in Allen County at 571.4 acres, and four of the
+  five largest are [Lima's water supply](allen-county-water-systems-2026.yml).** [verified] — same
+  source. The largest water in this county is a reservoir the city pumped full.
 
       Bresler Upground Reservoir   571.4      Twin Lake Reservoir     10.1
       Ferguson Reservoir           307.2      Long Pool               10.1
@@ -23,20 +29,20 @@ description: |
                                               Refinery Reservoir       6.4
                                               Buckeye Lake             3.3
 
-  [verified] — same source. Four of the five largest are
-  [Lima's water supply](allen-county-water-systems-2026.yml), and the largest water in Allen County
-  is a reservoir the city pumped full.
-
   **Fifty-seven features are swamp or marsh and they come to forty-two acres.** [verified] — same
   source. The earliest land surveys of this county mapped 22,433.9 acres of elm-ash swamp forest;
   the hydrography file now draws standing wetland on one acre in 534 of it. [inference] — computed
   against [the original vegetation](allen-county-original-vegetation.yml); see
   [the Great Black Swamp](../natural-feature/great-black-swamp.yml).
 
-  **That is the fourth federal number for the same ground and the smallest.** The National Wetlands
-  Inventory finds 704 acres of wetland here, the soil survey rates 91,953 acres hydric, the
+  **That is the fourth federal number for the same ground and the smallest.** The Cropland Data
+  Layer finds 704 acres of wetland here, the soil survey rates 91,953 acres hydric, the
   vegetation map draws 22,433.9 acres of swamp forest, and this file draws 42.0 acres of marsh.
-  [verified] — the four sources, and see [the soils](allen-county-soils-2026.yml). They are
+  [verified] — [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md),
+  [the soil survey](../../catalog/usda-ssurgo-soil-survey.md),
+  [the original vegetation map](../../catalog/odnr-original-vegetation.md) and
+  [the flow network](../../catalog/usgs-nhdplus-high-resolution.md); see
+  [the soils](allen-county-soils-2026.yml). They are
   measuring four different things — what is wet, what was wet, what grew, and what a hydrographer
   drew — and the corpus has said so before about the first two.
 
