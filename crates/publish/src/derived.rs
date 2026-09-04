@@ -9363,6 +9363,306 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "people covered", value: 1500.0, literal: "1,500" },
         ],
     },
+    Assertion {
+        id: "fifty-nine-thousand-four-hundred-and-thirty-three-buildings",
+        statement: "Allen County holds 59,433 buildings and their footprints cover 185,800,263 \
+                    square feet \u{2014} 4,265 acres, one and two thirds per cent of the county's \
+                    402.545 square miles. That is one building for every 1.72 residents.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**Fifty-nine thousand four hundred and thirty-three buildings stand in Allen County, and together they cover one and two thirds per cent of it.** 185,800,263 square feet of footprint is 4,265 acres against the county's 402.545 square miles. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md) against [the land area](allen-county-land-area-2020.yml). That is one building for every 1.72 residents."),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "square feet of footprint", value: 185800263.0, literal: "185,800,263" },
+            Figure { label: "acres", value: 4265.0, literal: "4,265" },
+            Figure { label: "residents per building", value: 1.72, literal: "1.72" },
+        ],
+    },
+    Assertion {
+        id: "industry-is-a-fortieth-and-a-seventh",
+        statement: "Allen County's 1,591 industrial buildings average 16,546 square feet against \
+                    2,276 for a residential one, so 2.68 per cent of its buildings hold 14.17 per \
+                    cent of its enclosed area.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**Industry is a fortieth of the buildings and a seventh of the floor.** 1,591 industrial structures average 16,546 square feet against 2,276 for a residential one, so 2.68 per cent of the county's buildings hold 14.17 per cent of its enclosed area. [verified] \u{2014} the same source, summed here."),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "industrial buildings", value: 1591.0, literal: "1,591" },
+            Figure { label: "mean industrial sq ft", value: 16546.0, literal: "16,546" },
+            Figure { label: "share of floor area, per cent", value: 14.17, literal: "14.17" },
+        ],
+    },
+    Assertion {
+        id: "a-structure-is-not-a-housing-unit",
+        statement: "An aerial survey finds 48,336 dwelling structures in Allen County where the 2020 \
+                    census counted 44,563 housing units: 43,753 single family dwellings at a median \
+                    2,000 square feet, 2,604 multi-family and 1,979 manufactured homes.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**The file finds 48,336 dwelling structures where the census counted 44,563 housing units.** 43,753 single family dwellings at a median 2,000 square feet, 2,604 multi-family at a median 2,813, and 1,979 manufactured homes at a median 1,706. [verified] \u{2014} the same source, against [the 2020 housing units](allen-county-housing-units-2020.yml). A structure is not a unit in either direction \u{2014} one multi-family roof holds many units, and a unit above a shop is filed under Commercial \u{2014} so the near-agreement of the two totals is a coincidence of opposite errors. [inference]"),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "dwelling structures", value: 48336.0, literal: "48,336" },
+            Figure { label: "housing units, 2020", value: 44563.0, literal: "44,563" },
+            Figure { label: "single family dwellings", value: 43753.0, literal: "43,753" },
+        ],
+    },
+    Assertion {
+        id: "thirty-four-cellblocks-filed-as-houses",
+        statement: "Thirty-four of Allen County's thirty-five buildings classed Residential / \
+                    Institutional Dormitory are cellblocks at the two state prisons north of Lima. \
+                    The largest is 63,770 square feet.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**Thirty-four of the county's thirty-five institutional dormitories are cellblocks.** They stand in the two census blocks north of Lima that hold [Allen Correctional](../site/allen-correctional-institution.yml) and [Oakwood](../site/oakwood-correctional-facility.yml), and the file classes every one of them *Residential*. [verified] \u{2014} the same source, by primary occupancy and coordinate. The thirty-fifth stands in Lima."),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[],
+    },
+    Assertion {
+        id: "thirteen-subdivisions-partition-the-roofs",
+        statement: "Lima and the twelve townships hold 59,433 buildings between them with nothing \
+                    left over. Lima has 15,766 of them \u{2014} 26.5 per cent of the county's \
+                    buildings on 3.4 per cent of its ground, at 1,141 to the square mile against \
+                    Amanda Township's 53.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**The thirteen subdivisions partition the county's buildings exactly.** Lima and the twelve townships sum to 59,433 with nothing left over, and Lima holds 15,766 of them \u{2014} 26.5 per cent of the buildings on 3.4 per cent of the ground, at 1,141 to the square mile against American Township's 306 and Amanda's 53. [verified] \u{2014} the same source against [the county subdivision file](../../catalog/census-tiger-roads.md), each centroid tested for containment."),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "Lima's buildings", value: 15766.0, literal: "15,766" },
+            Figure { label: "share of the county's buildings, per cent", value: 26.5, literal: "26.5" },
+            Figure { label: "per square mile in Lima", value: 1141.0, literal: "1,141" },
+        ],
+    },
+    Assertion {
+        id: "the-largest-roof-in-the-county",
+        statement: "The largest building in Allen County covers 1,865,159 square feet \u{2014} 42.8 \
+                    acres under one roof \u{2014} and the file that draws it gives it no name. The \
+                    corpus's coordinate for the Ford Lima Engine Plant lies 104 metres from it and \
+                    nothing else within 150 metres of that point is bigger than 2,129 square feet.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**The largest building in Allen County covers 42.8 acres and the file does not name it.** 1,865,159 square feet, classed *Industrial / Light*, with no address in the columns taken. The corpus's coordinate for [the Ford Lima Engine Plant](../site/ford-lima-engine-plant.yml) lies 104 metres from it, and the only other buildings within 150 metres of that point are 2,129 and 609 square feet. [verified] \u{2014} the same source, queried by point. On that evidence the county's largest building is the engine plant. [inference]"),
+            support!("site/ford-lima-engine-plant.yml", "**It is almost certainly the largest building in Allen County.** The county's biggest footprint is 1,865,159 square feet \u{2014} 42.8 acres under one roof \u{2014} classed *Industrial / Light* and carrying no name. This node's coordinate lies 104 metres from it, and the only other buildings within 150 metres of that point are 2,129 and 609 square feet. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md); see [the buildings](../measure/allen-county-buildings-2019.yml). Nothing else of any size stands near the point, so the identification is the corpus's rather than the file's. [inference]"),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "square feet", value: 1865159.0, literal: "1,865,159" },
+            Figure { label: "acres", value: 42.8, literal: "42.8" },
+            Figure { label: "metres from the plant's coordinate", value: 104.0, literal: "104" },
+        ],
+    },
+    Assertion {
+        id: "eight-of-ten-coordinates-hit-no-building",
+        statement: "Eight of the ten site coordinates this corpus already held fall inside no \
+                    building at all \u{2014} the courthouse, both prisons, the tank plant, the \
+                    refinery, the engine plant, the depot and the quarry. Memorial Hall's lands in a \
+                    17,560-square-foot building the file calls Commercial.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**Eight of the ten coordinates this corpus already held fall inside no building.** The courthouse, both prisons, the tank plant, the refinery, the engine plant, the depot and the quarry all miss; [the Justice Center](../site/allen-county-justice-center.yml) lands in a 27,927-square-foot building the file calls Government, and [Memorial Hall](../site/lima-memorial-hall.yml) lands in a 17,560-square-foot one it calls Commercial. [verified] \u{2014} the same source, ten point queries. A coordinate of record is a label on a place, not a position on a roof; see [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml)."),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "square feet at Memorial Hall's point", value: 17560.0, literal: "17,560" },
+        ],
+    },
+    Assertion {
+        id: "more-buildings-than-addresses",
+        statement: "There are 8,723 more buildings in Allen County than there are address points: \
+                    59,433 against the 50,710 the county publishes. Barns, machine sheds and \
+                    detached garages have a roof and no street number.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**There are 8,723 more buildings here than there are addresses.** 59,433 against the 50,710 address points the county publishes. [verified] \u{2014} the same source against [the county's address file](../../catalog/allen-county-gis-downloads.md). Barns, machine sheds and detached garages over 450 square feet have a roof and no street number. [inference]"),
+        ],
+        answers: &["cannot say when any of these buildings went up"],
+        figures: &[
+            Figure { label: "more buildings than addresses", value: 8723.0, literal: "8,723" },
+            Figure { label: "address points", value: 50710.0, literal: "50,710" },
+        ],
+    },
+    Assertion {
+        id: "two-hundred-and-fifty-eight-religious-roofs",
+        statement: "An aerial survey finds 258 religious buildings in Allen County against 160 \
+                    congregations, and 217 school buildings against a district roster that has never \
+                    said where a building stood. A congregation can own a hall and a manse, and a \
+                    church that closed still has a church-shaped roof.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-2019.yml", "**Two counts the corpus already held come out higher here, and both should.** The file finds 258 religious buildings against 160 congregations, and 217 Pre-K\u{2013}12 school buildings against a district roster that has never named where a building stood. [verified] \u{2014} the same source against [the congregations](allen-county-congregations-2020.yml) and [the school buildings](allen-county-school-buildings-1986-2024.yml). A congregation can own a hall and a manse, and a church that closed still has a church-shaped roof."),
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**Something now says where school buildings stand, and it is not a roster.** An automated read of aerial photography finds 217 buildings in this county whose roofs it classes *Pre-K \u{2013} 12 Schools*, each with a coordinate. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md); see [the buildings](allen-county-buildings-2019.yml). It names none of them, it attaches none of them to a district, and it counts a gymnasium and a bus garage beside the schoolhouse they stand by, so 217 is not five times the 43 the districts report. The refusal above stands, and what is new is that the county's school roofs now have coordinates at all. [inference]"),
+        ],
+        answers: &["cannot say when any of these buildings went up", "cannot say where any of these buildings stood"],
+        figures: &[
+            Figure { label: "religious buildings", value: 258.0, literal: "258" },
+            Figure { label: "congregations", value: 160.0, literal: "160" },
+            Figure { label: "school buildings on the imagery", value: 217.0, literal: "217" },
+        ],
+    },
+    Assertion {
+        id: "nine-hundred-and-six-buildings-in-the-floodplain",
+        statement: "906 of Allen County's 59,433 buildings stand inside the special flood hazard \
+                    area \u{2014} one and a half per cent of them \u{2014} and their footprints are \
+                    1,948,457 square feet, 1.05 per cent of the county's enclosed area.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**Nine hundred and six of the county's 59,433 buildings stand inside the special flood hazard area \u{2014} one and a half per cent of them, on six per cent of the ground.** [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md) against [the mapped floodplain](allen-county-flood-hazard-2026.yml), every building centroid tested against the dissolved hazard area in EPSG:26916. Their footprints come to 1,948,457 square feet, 1.05 per cent of the county's enclosed area."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[
+            Figure { label: "square feet of footprint in the hazard area", value: 1948457.0, literal: "1,948,457" },
+            Figure { label: "share of enclosed area, per cent", value: 1.05, literal: "1.05" },
+        ],
+    },
+    Assertion {
+        id: "the-county-built-away-from-its-water",
+        statement: "6.06 per cent of Allen County's land is mapped floodplain and 1.52 per cent of \
+                    its buildings are on it \u{2014} a ratio of three to one.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**This county built away from its water, and the ratio is three to one.** 6.06 per cent of the land is mapped floodplain and 1.52 per cent of the buildings are on it. [inference] \u{2014} the same two sources."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[
+            Figure { label: "share of land, per cent", value: 6.06, literal: "6.06" },
+            Figure { label: "share of buildings, per cent", value: 1.52, literal: "1.52" },
+        ],
+    },
+    Assertion {
+        id: "thirty-eight-of-a-hundred-metals-buildings",
+        statement: "Thirty-eight of Allen County's hundred metals and minerals processing buildings \
+                    stand in the floodplain \u{2014} the highest share of any occupancy in the \
+                    county by a factor of seven.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**Thirty-eight of the county's hundred metals and minerals processing buildings are in the floodplain.** [verified] \u{2014} the same source, by primary occupancy. Heavy processing needs water and went to it, and 38 per cent is the highest share of any occupancy in the county by a factor of seven."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-manufactured-home-is-twice-as-likely",
+        statement: "62 of Allen County's 1,979 manufactured homes are in the floodplain against 594 \
+                    of its 43,753 single family dwellings \u{2014} 3.13 per cent against 1.36.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**A manufactured home here is more than twice as likely to be in the floodplain as a house.** 62 of 1,979 against 594 of 43,753 \u{2014} 3.13 per cent against 1.36. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[
+            Figure { label: "manufactured homes in the floodplain", value: 62.0, literal: "62" },
+            Figure { label: "per cent of manufactured homes", value: 3.13, literal: "3.13" },
+            Figure { label: "per cent of single family dwellings", value: 1.36, literal: "1.36" },
+        ],
+    },
+    Assertion {
+        id: "thirteen-hundred-and-seventy-six-people",
+        statement: "Weighting each census block by the share of its residential buildings inside the \
+                    hazard area puts 1,376 people and 628 housing units in Allen County's \
+                    floodplain, against the 4,448 and 1,945 an area weight gave.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**Weighted by buildings instead of by ground, 1,376 people live in the floodplain.** That is 1.35 per cent of the county, against 4,448 and 4.35 per cent when each block is weighted by the share of its area inside \u{2014} and it falls inside the bracket of 235 to 23,721 this corpus published and near the bottom of it. Housing behaves the same way: 628 units against an area-weighted 1,945. [verified] \u{2014} [the 2020 blocks](../../catalog/census-tiger-roads.md), each block's population apportioned by the share of its residential buildings inside the hazard area. See [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml), whose second case this is: the weight should be the thing being counted, and people live in buildings rather than in acres."),
+            support!("measure/allen-county-flood-hazard-2026.yml", "**The bracket is now a figure, and it is near the bottom of it.** Weighting each block by the share of its residential buildings inside the hazard area rather than by the share of its acres gives **1,376 people and 628 housing units**, against the 4,448 and 1,945 an area weight gave. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md); see [the buildings in the floodplain](allen-county-buildings-in-the-floodplain-2026.yml), which counts 906 of the county's 59,433 buildings inside this boundary. The refusal above stands: a crosswalk weighted by buildings is a better estimate and is still not a count of people. [inference]"),
+        ],
+        answers: &["cannot say which of these buildings would take water", "cannot say how many people live in the floodplain"],
+        figures: &[
+            Figure { label: "people, building-weighted", value: 1376.0, literal: "1,376" },
+            Figure { label: "housing units, building-weighted", value: 628.0, literal: "628" },
+            Figure { label: "people, area-weighted", value: 4448.0, literal: "4,448" },
+        ],
+    },
+    Assertion {
+        id: "the-crosswalk-leaves-a-hundred-and-eight-blocks",
+        statement: "All 59,433 of Allen County's buildings fall inside one of its 3,552 census \
+                    blocks. 2,804 blocks hold at least one residential building; 108 hold 1,881 \
+                    people between them and no residential building at all, and those people cannot \
+                    be weighted.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**The crosswalk closes on the county and leaves 108 blocks behind.** All 59,433 buildings fall inside one of the county's 3,552 blocks; 2,804 blocks hold at least one residential building, and 108 blocks hold 1,881 people between them and no residential building at all. Those people are unweightable and are outside the 1,376. [verified] \u{2014} the same file."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[
+            Figure { label: "blocks with no residential building", value: 108.0, literal: "108" },
+            Figure { label: "people in them", value: 1881.0, literal: "1,881" },
+            Figure { label: "blocks with at least one", value: 2804.0, literal: "2,804" },
+        ],
+    },
+    Assertion {
+        id: "elida-and-delphos-run-the-other-way",
+        statement: "Elida has 13.70 per cent of its land in the floodplain and 0.4 per cent of its \
+                    buildings. Delphos has 13.10 per cent of its land and 17.7 per cent of its \
+                    buildings \u{2014} the only place in Allen County where the building share is \
+                    the higher of the two.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**A share of a village's ground is not a share of its buildings, and the two do not even run in the same order.** Elida has 13.70 per cent of its land in the floodplain and 0.4 per cent of its buildings; Delphos has 13.10 per cent of its land and 17.7 per cent of its buildings, the only place in the county where the building share is the higher of the two. [verified] \u{2014} the same source against [the mapped floodplain](allen-county-flood-hazard-2026.yml)'s own land shares."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[
+            Figure { label: "Elida's land, per cent", value: 13.7, literal: "13.70" },
+            Figure { label: "Delphos's land, per cent", value: 13.1, literal: "13.10" },
+            Figure { label: "Delphos's buildings, per cent", value: 17.7, literal: "17.7" },
+        ],
+    },
+    Assertion {
+        id: "five-villages-with-none",
+        statement: "Spencerville, Cairo, Beaverdam, Harrod and Lafayette have no building in the \
+                    mapped floodplain at all. Among the townships the range runs from Marion at 8.0 \
+                    per cent and Sugar Creek at 7.7 down to Spencer at none.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**Five of the county's villages have no building in the floodplain at all.** Spencerville, Cairo, Beaverdam, Harrod and Lafayette. [verified] \u{2014} the same source. Among the townships the range runs from Marion at 8.0 per cent and Sugar Creek at 7.7 down to Spencer at none."),
+        ],
+        answers: &["cannot say which of these buildings would take water"],
+        figures: &[
+            Figure { label: "Marion Township, per cent", value: 8.0, literal: "8.0" },
+            Figure { label: "Sugar Creek, per cent", value: 7.7, literal: "7.7" },
+        ],
+    },
+    Assertion {
+        id: "one-claim-for-every-nine-buildings-inside",
+        statement: "One paid flood insurance claim for every 8.7 buildings inside Allen County's \
+                    mapped floodplain, against one for every 552 outside it. Among policyholders the \
+                    outside-rated claimed more; among buildings the floodplain is sixty-three times \
+                    the risk.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-buildings-in-the-floodplain-2026.yml", "**The claim record turns into a rate per building, which is what it never was.** One paid flood insurance claim for every 8.7 buildings inside the mapped floodplain, against one for every 552 outside it. [inference] \u{2014} [the claims](allen-county-flood-insurance-1978-2023.yml), 104 rated inside and 106 rated outside, against the counts here. Among policyholders the outside-rated produced more claims than the inside-rated; among buildings the floodplain is sixty-three times the risk, and the difference between those two sentences is who bought a policy. See [a compulsory denominator is not a voluntary one](../../decisions/a-compulsory-denominator-is-not-a-voluntary-one.yml)."),
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**That count now exists, and among buildings the map is in the right place.** 58,527 of Allen County's 59,433 buildings stand outside the special flood hazard area and 906 stand inside it, so the 104 claims rated inside are one for every 8.7 buildings and the 106 rated outside are one for every 552. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md); see [the buildings in the floodplain](allen-county-buildings-in-the-floodplain-2026.yml). Per policyholder the outside-rated claimed more; per building the floodplain is sixty-three times the risk. Both are true, and the recruitment rule above is the whole distance between them. [inference]"),
+        ],
+        answers: &["cannot say which of these buildings would take water", "cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "buildings per claim inside", value: 8.7, literal: "8.7" },
+            Figure { label: "buildings per claim outside", value: 552.0, literal: "552" },
+            Figure { label: "buildings outside the hazard area", value: 58527.0, literal: "58,527" },
+        ],
+    },
+    Assertion {
+        id: "no-building-stands-where-the-tank-plant-is-mapped",
+        statement: "No building at all stands within a hundred and fifty metres of the coordinate \
+                    this corpus holds for the Lima Army Tank Plant. The nearest large footprint is \
+                    993,868 square feet \u{2014} 22.8 acres, the third largest in the county \
+                    \u{2014} and it lies 632 metres away.",
+        topic: "land",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**No building stands within a hundred and fifty metres of this node's coordinate.** The nearest large footprint is 993,868 square feet \u{2014} 22.8 acres, classed *Government / Non-Civilian Structures*, the third largest in the county \u{2014} and it lies 632 metres away. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md), queried by point; see [the buildings](../measure/allen-county-buildings-2019.yml). A coordinate of record for a plant of this size names the installation and not a roof on it; see [a photograph is not a register](../../decisions/a-photograph-is-not-a-register.yml)."),
+        ],
+        answers: &["this corpus does not know", "cannot say whether either of them stands on this ground"],
+        figures: &[
+            Figure { label: "square feet", value: 993868.0, literal: "993,868" },
+            Figure { label: "acres", value: 22.8, literal: "22.8" },
+            Figure { label: "metres away", value: 632.0, literal: "632" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
