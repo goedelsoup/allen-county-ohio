@@ -1,0 +1,111 @@
+class: measure
+label: The Deep Cut, measured, 2026
+description: |
+  **The county's only National Historic Landmark has been in this corpus since the Register was
+  first read here, and never with a dimension attached to it.** It was held as a reference number,
+  a listing date, a resource type and a boundary that is a box drawn round two coordinate pairs.
+  [verified] — [the National Register](../../catalog/nrhp-national-register.md); see
+  [the canal](../site/miami-and-erie-canal.yml). What follows is the first measurement of it made
+  here, from the elevation surface at one metre rather than the thirty used for
+  [the county](allen-county-elevation-2026.yml).
+
+  **The water in the cut stands at 835.29 feet and it does not move.** Over 7,375 feet — 1.397
+  miles — the surface reads 835.29 feet above sea level with a standard deviation of 1.8 inches and
+  a full range of 18. [verified] —
+  [USGS 3DEP](../../catalog/usgs-3dep-elevation.md), a 1,614 × 2,605 export at one metre, traced
+  along the channel bottom row by row. That flatness is the measurement: it is what a canal pound
+  is, and no silted ditch or natural channel produces it.
+
+  **The nomination says the cut runs to 52 feet deep, and the ground gives three answers.**
+  [verified] — [the nomination](../../catalog/nrhp-nomination-documents.md), whose description
+  section reads *"As shallow as five feet, the Deep Cut section of the Canal ranges at places to 52
+  feet in depth"* and *"The Deep Cut extends over a mile."*
+
+      from                                       to        greatest    mean
+      top of the spoil bank                   water         45.8 ft  22.1 ft
+      the surrounding fields                  water         31.8 ft  17.1 ft
+      top of the spoil bank                  bottom      about 51 ft       —
+
+  **The third line is the nomination's, and it is reached by adding five feet of water.** The model
+  returns the topmost surface, so a depth taken from it stops at whatever floats on the thing;
+  [Miller's history](../../catalog/miller-allen-county-1906.md) gives the Miami extension five feet
+  of water, 36 feet of width at the bottom and 50 at the top. 45.8 and 5 make 50.8 against a claim
+  of 52. [inference] — computed here; see
+  [a depth needs both of its ends named](../../decisions/a-depth-needs-both-of-its-ends-named.yml).
+
+  **Eighteen feet of the deepest reading is earth that came out of the hole.** At the section where
+  the cut measures 45.8 feet from its bank crest it measures 27.8 feet from the fields, because the
+  spoil was cast into banks standing 18.0 feet above the ground it was thrown onto. Averaged over
+  the pound the banks stand 5.0 feet proud. [verified] — the same source, in cross-section every
+  metre.
+
+  **The water is 36.1 feet wide, which is the width of the canal's floor and not of its top.**
+  [verified] — the same source, measured as the run of surface within five inches of the pound
+  level; the tenth and ninetieth percentiles are 16.4 and 45.9 feet. Against Miller's 36 at the
+  bottom and 50 at the top, a canal holding water to its floor width is a canal well below its
+  working level. [inference]
+
+  **Allen County's only Landmark is 37 per cent in Auglaize County.** The pound crosses the county
+  line at 40.685033, −84.365726: 4,617 feet of it lie in Spencer Township and 2,759 in Salem
+  Township, Auglaize. [verified] — [the county-subdivision file](../../catalog/census-tiger-hydrography.md),
+  point in polygon along the traced channel. The listing is filed under Allen alone, and Auglaize's
+  twenty-five listings include no canal and no Landmark. [verified] —
+  [the National Register](../../catalog/nrhp-national-register.md), both counties queried.
+
+  **The deepest point measured from the fields is on the Auglaize side by 323 feet.** 31.8 feet
+  there against 30.4 at the deepest point in Allen. [inference] — computed here. The deepest reading
+  from a bank crest, 45.8 feet, is in Allen.
+
+  **The Register's own polygon is a box, and it covers half the pound.** It runs 3,871 feet against
+  the level channel's 7,375, it carries `BND_TYPE` "Circumscribed polygon" derived from bounding
+  coordinates at 1:24,000 with ±12 metres claimed, and it straddles the county line as well.
+  [verified] — the same dataset, its boundary fields.
+
+  **Deep Cut was a settlement before it was a Landmark.** J. H. Dunathan, an ex-commissioner of
+  Auglaize County, moved his general store "from Deep Cut on the canal" into Spencerville in August
+  1881. [verified] — [Miller, 1906](../../catalog/miller-allen-county-1906.md).
+
+  **This corpus cannot say how much earth was moved to dig it.** The excavation still open below
+  the surrounding grade measures 449,450 cubic yards if the original ground is taken 80 metres out
+  and 706,339 if it is taken 170 metres out, and there is no third source to choose between them.
+  [verified] — [the elevation surface](../../catalog/usgs-3dep-elevation.md), integrated four ways.
+  What has silted into the trench, and what was carted off to build embankment elsewhere, are in
+  neither figure.
+
+  [open] When the surface was flown. Every figure here inherits the mosaic date problem recorded
+  for [the county's elevations](allen-county-elevation-2026.yml).
+properties:
+  parameter: level water surface in the Deep Cut, and its length
+  value: "835.29"
+  unit: feet above sea level, over 7,375 feet of channel
+  as_of: "2026"
+  method: |
+    The elevation image service was exported over the cut at one metre in EPSG:26916 and the
+    channel bottom traced row by row as the minimum within thirty metres of the previous row. The
+    pound is the longest run of rows whose bottom lies within 0.25 metres of the median of the run;
+    it ends 168 rows short of the raster's north edge and 188 short of its south, so it is bounded
+    by the ground and not by the request. [verified] Depths are measured in each row's cross-section
+    from the traced bottom: the crest is the highest cell within 100 metres either side, the fields
+    are the median of the cells 150 to 250 metres out on each side, averaged. [verified] The volume
+    is the area between the surface and a straight line joining the fields at a stated half-width,
+    integrated over the pound, and is reported as the range it takes over half-widths of 80 to 170
+    metres. [inference] Every figure is in feet at 3.280839895 to the metre.
+links:
+  - target: ../site/miami-and-erie-canal.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-3dep-elevation.md
+  - target: ../place/spencerville.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nrhp-national-register.md
+  - target: allen-county-national-register.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nrhp-nomination-documents.md
+  - target: allen-county-elevation-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-3dep-elevation.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
