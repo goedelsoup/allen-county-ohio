@@ -30,7 +30,22 @@ description: |
 
   What settled it was the Watershed Boundary Dataset rather than the National Hydrography
   Dataset this node proposed. The WBD gives drainage areas, which is what a basin question needs;
-  NHD gives the flow network, which is what the `flows-into` edges still partly need.
+  NHD gives the flow network, which is what the `flows-into` edges still partly needed.
+
+  **The other half has since been read, and the trace no longer stops in mid-air.** Every
+  `flows-into` edge on the county's watercourses is now taken from the reach immediately
+  downstream: Hog Creek and Little Hog Creek into the Ottawa at one shared reach, Sugar Creek and
+  the Little Ottawa River into the Ottawa, the Ottawa into the Auglaize, Riley Creek into the
+  Blanchard, the Blanchard into the Auglaize, and the Auglaize into the Maumee. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The chain runs
+  from a ditch in a field to the Gulf of Saint Lawrence without a gap; see
+  [how far the water is from the sea](../measure/allen-county-distance-to-the-sea-2026.yml).
+
+  **The basin's share of the county can now be given in channel as well as in blocks.** 730.82 of
+  Allen County's 735.22 miles of mapped channel are on this side of the divide — 99.4 per cent —
+  against the 99.9 per cent of its people the block composition gives. [verified] —
+  [the stream network](../measure/allen-county-stream-network-2026.yml). The corner that drains
+  the other way holds a hundredth of the county's people and a two-hundredth of its water.
 properties:
   feature_type: watershed
 links:

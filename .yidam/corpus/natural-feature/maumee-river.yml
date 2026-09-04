@@ -16,6 +16,24 @@ description: |
   Allen County's water leaves the county by the Auglaize, and the river the Auglaize joins
   ends at Toledo on Lake Erie rather than anywhere on the Ohio. [inference] — the coordinate is
   verified; that the Auglaize joins *this* river at Defiance is not established by a names file.
+
+  **The Auglaize does join this river at Defiance, and the flow network says so.** The Auglaize's
+  last reach carries 6,359.42 square kilometres and the reach below it is `04100009001411`, named
+  Maumee River, with 14,119.40. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The paragraph above
+  says a names file cannot establish that. A flow network can, and `dnhydroseq` is the field.
+
+  **The main stem this river lies on is mostly named for another river.** Of its 1,008 reaches,
+  323 are named Saint Joseph River and 300 Maumee River, because the network traces the larger
+  tributary upstream at every fork. [verified] — the same source. Reading that ranking instead of
+  the receiving reach would have had Allen County's water joining a river in Indiana; see
+  [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml).
+
+  **And the county's water does not stop at Toledo.** Every Allen County reach on this side of the
+  divide terminates on one level path — 398 reaches named Saint Lawrence River and Niagara River —
+  ending on 774,375 square kilometres of drainage in the Gulf of Saint Lawrence. [verified] — the
+  same source; see [how far the water is from the sea](../measure/allen-county-distance-to-the-sea-2026.yml).
+
 properties:
   feature_type: river
   gnis_id: "1084017"

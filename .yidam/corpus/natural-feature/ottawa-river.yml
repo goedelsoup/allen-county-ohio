@@ -47,6 +47,26 @@ description: |
   1989 over 128. Seven water years separate them and nothing gauged the river in between.
   [verified] — [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).
 
+  **Its mouth is on the Auglaize, and that is no longer an inference.** The Ottawa's main stem ends
+  on 939.27 square kilometres of drainage and an estimated 312.9 cubic feet a second, and the reach
+  below it is `04100007002293`, named Auglaize River, with 1,817.08. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The `mouth`
+  property below has carried "Joins the Auglaize River" as an inference since genesis; it is now a
+  reading of the reach the river discharges into.
+
+  **Three streams join it inside Allen County and the file gives each junction a coordinate.**
+  Lost Creek at 40.74975, −84.06051, where the
+  drainage goes 268.33 to 313.49; [the Little Ottawa River](little-ottawa-river.yml) at 40.70595,
+  −84.15394, 348.10 to 395.40; and Pike Run at 40.85151, −84.19437, 519.36 to 558.94. [verified] —
+  the same source. It leaves the county on 558.94 square kilometres and an estimated 190.6 cubic
+  feet a second.
+
+  **The river and Hog Creek are one main stem in the file.** Ninety-three reaches and 112.7
+  kilometres share a level path, sixty-one of them named Ottawa River and twenty-six Hog Creek.
+  [verified] — the same source. That is the file agreeing with what the histories say about the
+  older name, and it is a computed main stem rather than a statement about naming; see
+  [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml).
+
   **The largest flow ever measured here is 7,740 cubic feet a second, on 22 January 1959**, more
   than twice the median annual peak and nineteen per cent above the next largest. [verified] — same
   source; see [the flood of 1959](../event/the-ottawa-river-flood-of-1959.yml). The largest in the
@@ -56,13 +76,13 @@ properties:
   feature_type: river
   gnis_id: "1070882"
   huc_code: "0410000703 Upper Ottawa River, 0410000705 Lower Ottawa River"
-  mouth: 40.9950509, -84.2413355, in Putnam County. Joins the Auglaize River. [inference]
+  mouth: 40.9950509, -84.2413355, in Putnam County. Joins the Auglaize River. [verified]
   source: 40.7708852, -83.9557761 — the Hog Creek / Little Hog Creek confluence.
 links:
   - target: ../natural-feature/auglaize-river.yml
     relationship: flows-into
     claim_tag: verified
-    source: ../../catalog/usgs-watershed-boundary.md
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
   - target: ../place/lima.yml
     relationship: traverses
     claim_tag: inference
