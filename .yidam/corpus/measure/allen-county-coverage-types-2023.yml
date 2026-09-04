@@ -1,0 +1,96 @@
+class: measure
+label: What Allen County's health insurance is made of, 2019–2023
+description: |
+  A survey count rather than a model, of who holds which kind of coverage. [verified] —
+  [the American Community Survey](../../catalog/census-acs-summary-file.md), tables B27001 and
+  B27010, five-year file for 2019 to 2023.
+
+      Allen County, by age              under 19   19–34   35–64    65+
+      people                              25,250  19,971  36,124  18,091
+      employer coverage only              12,001  11,198  20,782     365
+      Medicaid or means-tested only        8,595   3,897   5,193       —
+      direct purchase only                   756   1,312   1,928      57
+      Medicare only                            6      16     834   5,660
+      two or more kinds                    2,756   1,546   3,825  11,968
+      no coverage                          1,046   1,930   3,244      41
+
+  **A third of the county's children are on Medicaid alone, and in Lima it is three in five.** 8,595
+  of 25,250 under 19 across the county; 5,336 of 8,990 in the city. [verified] — the same table, at
+  county and place grain. Employer coverage runs the other way: 47.5 per cent of the county's
+  children and 26.5 per cent of Lima's.
+
+  **At least 19,767 people in this county — one in five — hold means-tested public coverage.**
+  17,685 have it and nothing else and 2,082 hold it with Medicare; the residual combination rows
+  will contain more. [verified] — the same table, lines 7, 23, 39, 13, 29, 46 and 62, summed here.
+
+  **Nobody over 65 is uninsured.** 41 people of 18,091, which is 0.2 per cent, against 4.0 per cent
+  of the county's under-65 residents. [verified] — the same source. Only 5,660 of those 18,091 hold
+  Medicare and nothing else; 11,968 hold two kinds or more. At least 16,836 people in the county
+  hold Medicare in some form, and 2,380 of them are under 65. [verified] — the same table, the
+  Medicare-only and Medicare-combination lines of all four age groups, summed here.
+
+  **Lima's uninsured rate is not distinguishable from its county's, and its poverty rate is roughly
+  double.** 7.0 ± 1.2 per cent against 6.3 ± 0.7, a difference of 0.7 points against a combined
+  margin of 1.4. [verified] — the same tables, aggregated here with the margins combined in
+  quadrature. The city holds 33.9 per cent of the people in these tables and 64.1 per cent of the
+  county's poor. [verified] — [the poverty tables](allen-county-income-and-poverty-2023.yml). What
+  covers the poor is why. [inference]
+
+  **The county's uninsured are men in their working middle years.** 14.7 per cent of men aged 26 to
+  34 and 13.2 per cent of men aged 35 to 44, against 6.7 and 6.1 per cent of women the same ages.
+  [verified] — the same source, table B27001. In Lima the figure for men aged 35 to 44 is 23.8 per
+  cent — 413 people of 1,733, on a margin of 191 — against 3.5 per cent of the city's women that
+  age.
+
+  **The two tables are one survey and they close on each other exactly.** Summed over the seven age
+  bands under 65, B27001 gives 6,220 uninsured; summed over three age groups, B27010 gives 6,220.
+  [verified] — the same file. That is an internal check on the reading and not a second witness; see
+  [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml).
+
+  **This corpus cannot say what any of this coverage pays for.** A survey asks whether a person has
+  Medicaid, not whether they saw anyone, and the county's shortage designations say the two are not
+  the same question; see [the designations](allen-county-shortage-designations-1985-2026.yml) and
+  [who is here to see them](allen-county-health-workforce-2023.yml).
+
+  [open] Whether the men are uninsured because of the work they do. The county's employment is held
+  by sector and the coverage by age and sex, and no file here crosses them.
+properties:
+  parameter: people without health insurance, Allen County
+  value: "6261"
+  unit: people
+  as_of: "2023"
+  method: |
+    Table B27001 read as 57 cells — total, then each sex by nine age bands with total, with coverage
+    and without — and B27010 as 66, from the 2019–2023 five-year table-based summary file, geography
+    `0500000US39003` for the county and `1600000US3943554` for Lima. [verified]
+
+    The universe of both tables is the civilian noninstitutionalised population, so the county's
+    prisons and its nursing home residents are outside it. [verified] Aggregate margins are the
+    square root of the sum of the squared component margins, which is the Bureau's own rule for
+    summed cells. [inference]
+
+    Coverage counts by kind are not additive with the uninsured: a person holding two kinds appears
+    once, in the combination rows, and the residual rows named "other coverage combinations" are not
+    decomposable. Every figure here that counts a kind of coverage is a floor. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-health-insurance-2008-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-sahie.md
+  - target: allen-county-income-and-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-shortage-designations-1985-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

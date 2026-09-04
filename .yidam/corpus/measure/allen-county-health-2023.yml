@@ -70,6 +70,16 @@ description: |
   which is the county's 2020 census total and the closure this corpus has used since its block
   composition phase. [verified] — same source and
   [the 2020 count](allen-county-population-2020-census.yml).
+  **Two of these forty measures now have a counted neighbour.** The model estimates that 20.7 per
+  cent of the county's adults rate their own health fair or poor and 27.5 per cent of Lima's; the
+  survey counts 6,261 people in the county without health insurance and 2,375 in the city, and the
+  register of federal shortage designations names the county's low-income population as short of
+  primary care, dental care and mental health care. [verified] —
+  [the coverage](allen-county-coverage-types-2023.yml) and
+  [the designations](allen-county-shortage-designations-1985-2026.yml). Neither is a health outcome,
+  and both are observations rather than predictions, which is the difference this node was written
+  about. [inference]
+
 properties:
   parameter: modelled prevalence of health measures, county and city
   value: "25.9"
@@ -91,5 +101,13 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/cdc-places.md
+  - target: allen-county-coverage-types-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-shortage-designations-1985-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hrsa-shortage-designations.md
   - target: ../measure.ont.yml
     relationship: instance-of

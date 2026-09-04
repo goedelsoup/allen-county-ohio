@@ -1,0 +1,71 @@
+id: a-designation-is-not-a-county
+summary: >-
+  The county file says Allen County is a health professional shortage area, part county, in primary
+  care and dental health and mental health. Behind that one code sit ten live designations with four
+  different kinds of boundary — a class of people, a multi-county catchment, a clinic's service area,
+  a prison — and five withdrawn ones, including a geographic designation over three census tracts in
+  south Lima that stood for forty-one years. A county-level shortage code says a designation exists.
+  It does not say who is short of what, or where.
+context: |
+  [The Area Health Resources File](../catalog/hrsa-area-health-resources-file.md) carries three
+  shortage columns per county, each taking the value 1 for a whole-county designation and 2 for a
+  partial one. Allen County is 2 in all three, and has been for as long as the corpus has looked.
+  Read alone, that is a county with some shortage somewhere inside it.
+
+  [The designation register](../catalog/hrsa-shortage-designations.md) says what the code stands
+  for, and the boundaries are not versions of one another:
+
+  - **A class of people, county-wide.** `LI-Allen County` is the county's low-income population,
+    32,355 people wherever they live, designated for dental health on 14 September 2001 and for
+    primary care on 16 June 2025.
+  - **A catchment that is not this county.** `LI-MHCA 62` is the low-income population of Mental
+    Health Catchment Area 62, 52,022 people, which is a service region and not a county line.
+  - **A clinic's service area.** Health Partners of Western Ohio is designated in all three
+    disciplines, and the population attached to the designation is 216,423 — twice the county.
+  - **A building.** Allen Oakwood Correctional Institution is designated separately in all three,
+    for a population of one to two thousand people who are counted in this county and cannot leave
+    it.
+
+  And a fifth shape that has now gone. `South Side Lima` was a geographic designation over census
+  tracts 136, 137 and 138, made on 4 April 1985, withdrawn for dental health on 2 October 1995 and
+  for primary care on 1 July 2026. For most of the period this corpus covers, the federal record of
+  shortage in Allen County was a map of three tracts. It is now a list of the poor.
+decision: |
+  **Three rules.**
+
+  1. **Never publish a county shortage code as a fact about the county.** Write the designation:
+     its type, its population, its boundary and its dates. "Allen County is a primary care shortage
+     area" is false in the way that matters — the designation covers 32,355 low-income residents,
+     not 100,838 people — and the true sentence is no longer.
+
+  2. **A designation's population is not a count of the underserved and its ratio is not a supply.**
+     The file publishes both the provider hours it found and the goal it was measured against, and
+     the two together are the finding. A mental health ratio of 96,587 to one is a fraction of a
+     psychiatrist against fifty thousand people; a primary care ratio of 5,523 to one is 5.86
+     full-time equivalents against thirty-two thousand. Quoting a ratio without the FTE hides which
+     of its two terms is doing the work.
+
+  3. **Read the withdrawals.** The register keeps what it has revoked, with dates, and a designation
+     withdrawn is as much a fact about a place as a designation made. The corpus states when south
+     Lima stopped being a shortage area on the map, and states that the county's poor were
+     designated instead, and does not let a code that never changed stand for either event.
+rationale: |
+  **This is the same shape as a rule the corpus already has, arriving from the other direction.**
+  [A county rate can describe nowhere](a-county-rate-can-describe-nowhere.yml) is about an average
+  over unlike parts. This is about a *flag* over unlike parts: the aggregation is not arithmetic but
+  categorical, and the information lost is not a distribution but a boundary. A rate at least tells
+  you it is an average. A code of 2 tells you nothing about what it is a code for.
+
+  **The county file is not wrong and the correction is not to stop using it.** For sorting three
+  thousand counties, a code is the right object, and the AHRF's own documentation names its source
+  and its two values honestly. The failure is entirely on the reading side, and it is the reading
+  this corpus does: one county, in detail, for a long time.
+
+  **What it costs.** A clean, comparable, three-column fact about every county in Ohio. What the
+  corpus writes instead is a fifteen-row register that does not compare to anything.
+
+  **What it buys.** The only datable event in the county's shortage record — 4 April 1985 to
+  1 July 2026 — and the fact that the prison is designated on its own, which is a claim about the
+  county's health care that no rate over its residents can contain.
+status: accepted
+date: "2026-09-04"
