@@ -1210,7 +1210,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'two-tank-plants',
     title: 'Two tank plants',
-    dek: 'Two tank installations, two years and a category apart — and what the war did to a locomotive builder’s books.',
+    dek: 'Two tank installations, a year and a category apart — and the one that turned out to be the plant standing there now.',
     section: 'history',
     era: [1939, 1947],
     assertions: [
@@ -1219,9 +1219,9 @@ export const ARTICLES: Article[] = [
     ],
     entries: [
       'site/lima-army-tank-plant.yml',
-      'site/lima-tank-depot.yml',
       'organization/lima-locomotive-works.yml',
       'event/the-united-states-buys-the-tank-plant-ground-1951.yml',
+      'event/the-army-builds-at-lima-1942.yml',
     ],
   },
   {

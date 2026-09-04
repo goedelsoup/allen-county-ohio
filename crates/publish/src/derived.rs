@@ -899,10 +899,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         // refusal to that node about which wartime installation stands on this ground, and this
         // assertion — which is about which township the ground is in — failed the build until it
         // carried it. Propagation working, on an assertion nobody was editing.
-        answers: &[
-            "this corpus does not know",
-            "cannot say whether either of them stands on this ground",
-        ],
+        answers: &["cannot say what the plant has been since 1984"],
         figures: &[],
     },
     Assertion {
@@ -1121,10 +1118,10 @@ pub const ASSERTIONS: &[Assertion] = &[
     },
     Assertion {
         id: "the-county-had-two-tank-installations",
-        statement: "Allen County had two tank installations in the Second World War, two years and \
-                    a category apart: the Lima Locomotive Works, which built medium tanks from \
-                    1941, and the Lima Tank Depot, which finished and forwarded vehicles built \
-                    elsewhere.",
+        statement: "Allen County had two tank installations in the Second World War, a year and a \
+                    category apart: the Lima Locomotive Works, which built medium tanks from 1941, \
+                    and the Army's own plant south of the city, begun in May 1942, which finished \
+                    and forwarded vehicles built elsewhere and stands there still.",
         topic: "history",
         supports: &[
             support!(
@@ -1132,14 +1129,11 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "In February 1941 the works had \"under construction a new $290,000 factory building\", which the local press read as confirmation that it was switching part of its activity to defense production; by that August medium tank production was scheduled to begin \"this fall\"."
             ),
             support!(
-                "site/lima-tank-depot.yml",
-                "Vehicles arrived \"in a 'raw' state of completion to Lima from the tank arsenals throughout the United States\", and it was at the Depot that the modifications for a particular theatre of operations were installed, the vehicle given a final run on the Depot's proving ground, sealed, and put on a road train for a shipping port."
+                "site/lima-army-tank-plant.yml",
+                "**This installation is the other one, and it is the Lima Tank Depot.** Construction began here in May 1942; the Ordnance Corps turned it from a gun-tube plant into a depot for modifying and processing combat vehicles before it was finished; United Motors Service, a General Motors subsidiary, took it over under contract in November 1942; and more than a hundred thousand vehicles passed through before the war ended."
             ),
         ],
-        answers: &[
-            "does not establish where the Depot stood",
-            "does not establish whether this is the ground the",
-        ],
+        answers: &["cannot say what the plant has been since 1984"],
         figures: &[],
     },
     Assertion {
@@ -9656,7 +9650,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         supports: &[
             support!("site/lima-army-tank-plant.yml", "**No building stands within a hundred and fifty metres of this node's coordinate.** The nearest large footprint is 993,868 square feet \u{2014} 22.8 acres, classed *Government / Non-Civilian Structures*, the third largest in the county \u{2014} and it lies 632 metres away. [verified] \u{2014} [USA Structures](../../catalog/fema-usa-structures.md), queried by point; see [the buildings](../measure/allen-county-buildings-2019.yml). A coordinate of record for a plant of this size names the installation and not a roof on it; see [a photograph is not a register](../../decisions/a-photograph-is-not-a-register.yml)."),
         ],
-        answers: &["this corpus does not know", "cannot say whether either of them stands on this ground"],
+        answers: &["cannot say what the plant has been since 1984"],
         figures: &[
             Figure { label: "square feet", value: 993868.0, literal: "993,868" },
             Figure { label: "acres", value: 22.8, literal: "22.8" },
@@ -9851,7 +9845,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         supports: &[
             support!("site/lima-army-tank-plant.yml", "**Seventy people here are on the federal payroll.** Allen County has one federal establishment classified under national security, employing 70 at $87,612 a year in 2023. [verified] \u{2014} [the wage file](../../catalog/bls-qcew.md), NAICS 928110; see [the government payroll](../measure/allen-county-government-employment-2014-2024.yml). This is the plant's federal cadre and not its workforce: a government-owned, contractor-operated plant pays the people who build vehicles through the operating contractor, and they are private employment counted under manufacturing. [inference]"),
         ],
-        answers: &["this corpus does not know", "cannot say whether either of them stands on this ground"],
+        answers: &["cannot say what the plant has been since 1984"],
         figures: &[
             Figure { label: "federal employees", value: 70.0, literal: "70" },
         ],
