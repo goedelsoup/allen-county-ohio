@@ -37,6 +37,7 @@ Sorted by: kind, then alphabetically.
 | [davis-v-watkins.yml](event/davis-v-watkins.yml) | event | Davis v. Watkins, 1973–1980 | 3 | 10v / 2i / 1o | 100 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 6v / 0i / 2o | 60 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
+| [fort-shawnee-declared-in-fiscal-emergency-2010.yml](event/fort-shawnee-declared-in-fiscal-emergency-2010.yml) | event | Fort Shawnee declared in fiscal emergency, 16 September 2010 | 3 | 5v / 0i / 1o | 69 |
 | [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 8v / 3i / 2o | 70 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
 | [lima-returns-to-mayor-and-council-1933.yml](event/lima-returns-to-mayor-and-council-1933.yml) | event | Lima returns to mayor and council, 1933 | 3 | 3v / 1i / 1o | 43 |
@@ -83,7 +84,7 @@ Sorted by: kind, then alphabetically.
 | [elida-local-school-district.yml](jurisdiction/elida-local-school-district.yml) | jurisdiction | Elida Local School District | 8 | 4v / 0i / 0o | 67 |
 | [jackson-township.yml](jurisdiction/jackson-township.yml) | jurisdiction | Jackson Township (government) | 2 | 8v / 0i / 1o | 50 |
 | [lima-city-school-district.yml](jurisdiction/lima-city-school-district.yml) | jurisdiction | Lima City School District | 4 | 6v / 2i / 0o | 65 |
-| [lima-municipal-court.yml](jurisdiction/lima-municipal-court.yml) | jurisdiction | Lima Municipal Court | 2 | 5v / 1i / 1o | 41 |
+| [lima-municipal-court.yml](jurisdiction/lima-municipal-court.yml) | jurisdiction | Lima Municipal Court | 2 | 7v / 2i / 1o | 57 |
 | [marion-township.yml](jurisdiction/marion-township.yml) | jurisdiction | Marion Township (government) | 2 | 8v / 0i / 0o | 51 |
 | [monroe-township.yml](jurisdiction/monroe-township.yml) | jurisdiction | Monroe Township (government) | 2 | 8v / 1i / 0o | 53 |
 | [pandora-gilboa-local-school-district.yml](jurisdiction/pandora-gilboa-local-school-district.yml) | jurisdiction | Pandora-Gilboa Local School District | 3 | 5v / 1i / 1o | 46 |
@@ -100,7 +101,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 5v / 1i / 0o | 48 |
 | [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 7v / 1i / 1o | 50 |
 | [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 6v / 1i / 2o | 46 |
-| [village-of-fort-shawnee.yml](jurisdiction/village-of-fort-shawnee.yml) | jurisdiction | Village of Fort Shawnee | 2 | 6v / 2i / 1o | 64 |
+| [village-of-fort-shawnee.yml](jurisdiction/village-of-fort-shawnee.yml) | jurisdiction | Village of Fort Shawnee | 2 | 9v / 3i / 1o | 84 |
 | [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 5v / 1i / 2o | 53 |
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
@@ -110,6 +111,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 10v / 5i / 1o | 140 |
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
+| [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
 | [allen-county-ballot-2006.yml](measure/allen-county-ballot-2006.yml) | measure | Allen County's ballot, 7 November 2006 | 6 | 7v / 3i / 2o | 107 |
 | [allen-county-ballot-questions-2003-2012.yml](measure/allen-county-ballot-questions-2003-2012.yml) | measure | What Allen County was asked on the ballot, 2003–2012 | 5 | 17v / 5i / 1o | 158 |
 | [allen-county-birth-outcomes-2000-2021.yml](measure/allen-county-birth-outcomes-2000-2021.yml) | measure | Birth outcomes in Allen County, 2000–2021 | 5 | 10v / 1i / 1o | 96 |
@@ -152,6 +154,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
 | [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
+| [allen-county-findings-for-recovery-1999-2026.yml](measure/allen-county-findings-for-recovery-1999-2026.yml) | measure | Findings for recovery against Allen County public bodies, 1999–2026 | 4 | 9v / 1i / 1o | 82 |
 | [allen-county-flood-hazard-2026.yml](measure/allen-county-flood-hazard-2026.yml) | measure | The mapped floodplain of Allen County, 2026 | 6 | 9v / 4i / 0o | 119 |
 | [allen-county-flood-insurance-1978-2023.yml](measure/allen-county-flood-insurance-1978-2023.yml) | measure | Flood insurance claims in Allen County, 1978–2023 | 7 | 13v / 6i / 0o | 117 |
 | [allen-county-foreclosures-and-evictions-2007-2017.yml](measure/allen-county-foreclosures-and-evictions-2007-2017.yml) | measure | Allen County foreclosures and evictions, 2007–2017 | 5 | 8v / 2i / 1o | 84 |
@@ -162,7 +165,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-general-assembly-1833-1906.yml](measure/allen-county-general-assembly-1833-1906.yml) | measure | Allen County in the Ohio General Assembly, 1833–1906 | 4 | 10v / 2i / 2o | 90 |
 | [allen-county-general-fund-2025.yml](measure/allen-county-general-fund-2025.yml) | measure | Allen County's General Fund, 2025 | 2 | 9v / 4i / 2o | 102 |
 | [allen-county-government-employment-2014-2024.yml](measure/allen-county-government-employment-2014-2024.yml) | measure | Who works for a government in Allen County, 2014–2024 | 6 | 14v / 6i / 1o | 112 |
-| [allen-county-governments-and-their-employees-2022.yml](measure/allen-county-governments-and-their-employees-2022.yml) | measure | Allen County's forty-five governments and who works for them, 2022 | 6 | 11v / 2i / 1o | 118 |
+| [allen-county-governments-and-their-employees-2022.yml](measure/allen-county-governments-and-their-employees-2022.yml) | measure | Allen County's forty-five governments and who works for them, 2022 | 6 | 13v / 4i / 1o | 133 |
 | [allen-county-governor-vote-2002-2018.yml](measure/allen-county-governor-vote-2002-2018.yml) | measure | Allen County vote for governor, 2002–2018 | 5 | 4v / 3i / 0o | 72 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 7 | 10v / 4i / 0o | 119 |
@@ -536,7 +539,7 @@ Sorted by: kind, then alphabetically.
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 1o | 56 |
 | [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 11v / 6i / 1o | 118 |
-| [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 5 | 7v / 7i / 1o | 150 |
+| [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 5 | 8v / 7i / 2o | 163 |
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-limas-first-congregation-was-organized.yml](question/when-limas-first-congregation-was-organized.yml) | question | When Lima's first congregation was organized | 4 | 3v / 1i / 0o | 49 |
 | [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 7 | 8v / 6i / 2o | 136 |
