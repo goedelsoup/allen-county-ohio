@@ -142,6 +142,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-1949-1987.yml](measure/allen-county-farms-1949-1987.yml) | measure | Allen County farms, 1949–1987 | 2 | 11v / 6i / 2o | 106 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
+| [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
 | [allen-county-foreclosures-and-evictions-2007-2017.yml](measure/allen-county-foreclosures-and-evictions-2007-2017.yml) | measure | Allen County foreclosures and evictions, 2007–2017 | 5 | 8v / 2i / 1o | 84 |
 | [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 7v / 4i / 1o | 77 |
 | [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 3 | 9v / 4i / 1o | 93 |
@@ -165,7 +166,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-hospital-employment-2011-2023.yml](measure/allen-county-hospital-employment-2011-2023.yml) | measure | Allen County hospital employment, 2011–2023 | 7 | 4v / 1i / 0o | 61 |
 | [allen-county-house-prices-1975-2025.yml](measure/allen-county-house-prices-1975-2025.yml) | measure | House prices in Allen County, 1975–2025 | 7 | 14v / 4i / 1o | 128 |
 | [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
-| [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 2 | 5v / 3i / 1o | 67 |
+| [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 3 | 6v / 4i / 1o | 80 |
 | [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 2 | 7v / 2i / 0o | 60 |
 | [allen-county-housing-cost-burden-2006-2022.yml](measure/allen-county-housing-cost-burden-2006-2022.yml) | measure | Housing cost burden in Allen County, 2006–2022 | 8 | 11v / 4i / 0o | 153 |
 | [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 4 | 10v / 0i / 0o | 83 |
@@ -225,7 +226,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
 | [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 2 | 9v / 4i / 1o | 90 |
 | [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 2 | 8v / 1i / 2o | 76 |
-| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 5 | 6v / 7i / 2o | 113 |
+| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 6 | 7v / 8i / 2o | 125 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 8 | 12v / 3i / 0o | 128 |
@@ -275,6 +276,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
 | [allen-county-world-war-ii-dead-1941-1946.yml](measure/allen-county-world-war-ii-dead-1941-1946.yml) | measure | Allen County's Army dead and missing, 1941–1946 | 2 | 9v / 5i / 1o | 87 |
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
+| [allen-county-zip-codes-2020.yml](measure/allen-county-zip-codes-2020.yml) | measure | Allen County's ZIP codes, 2020 | 6 | 12v / 0i / 1o | 119 |
 | [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
 | [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
 | [federal-money-in-allen-county-2008-2025.yml](measure/federal-money-in-allen-county-2008-2025.yml) | measure | Federal money in Allen County, 2008–2025 | 6 | 11v / 5i / 1o | 127 |
