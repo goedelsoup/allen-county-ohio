@@ -1,0 +1,164 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const all = assertion('a-hundred-and-twelve-questions')
+const renews = assertion('the-county-renews-and-does-not-add')
+const notOne = assertion('the-renewal-that-failed-was-not-one')
+const replacement = assertion('a-replacement-passes-like-a-renewal')
+const bonds = assertion('new-borrowing-is-the-hardest-ask')
+const beaverdam = assertion('beaverdam-refused-three-times')
+const notMoney = assertion('everything-not-about-money-passed')
+const busiest = assertion('the-busiest-ballot-was-an-odd-year')
+const surrender = assertion('the-village-surrendered-its-corporate-power')
+const refused = assertion('fort-shawnee-refused-to-pay-then-dissolved')
+const witnesses = assertion('two-instruments-put-the-end-in-the-same-year')
+const survey = assertion('the-survey-misses-what-a-government-gives-up')
+const liquor = assertion('thirty-liquor-questions-precinct-by-precinct')
+const restaurants = assertion('an-olive-garden-and-a-red-lobster')
+const twoVotes = assertion('carried-by-two-votes')
+const twoAnswers = assertion('one-precinct-two-answers')
+const forms = assertion('no-report-says-what-the-forms-ask')
+const elsewhere = assertion('thirteen-questions-filed-elsewhere')
+const attribution = assertion('a-return-under-a-county-is-not-its-vote')
+const elida = assertion('the-elida-return-cannot-be-right')
+
+const levySpec = bar(
+  ['renewal', 'replacement', 'additional'],
+  [97.8, 100.0, 35.3],
+  { yTitle: 'Questions passed, per cent', tickSuffix: '%', labelValues: true },
+)
+
+const typeSpec = bar(
+  ['tax levy', 'electric aggregation', 'school income tax', 'bond issue', 'municipal income tax'],
+  [88.7, 87.5, 58.3, 37.5, 20.0],
+  { yTitle: 'Questions passed, per cent', tickSuffix: '%', labelValues: true },
+)
+
+const days = ['2003-05', '2004-03', '2004-08', '2004-11', '2005-05', '2005-08', '2005-11', '2006-11', '2007-05', '2007-08', '2007-11', '2009-05', '2010-11', '2011-05', '2011-11', '2012-11']
+const asked = [5, 9, 1, 2, 4, 1, 4, 16, 8, 1, 10, 8, 7, 5, 19, 12]
+const passed = [5, 6, 0, 2, 4, 0, 3, 12, 5, 0, 8, 7, 6, 4, 18, 8]
+
+const daySpec = line(
+  days,
+  [
+    { name: 'questions put', y: asked },
+    { name: 'questions passed', y: passed },
+  ],
+  { yTitle: 'Ballot questions', labelLast: true, zeroBased: true },
+)
+---
+
+<Article slug="the-back-of-the-ballot">
+  <p>
+    Under the candidates on an Ohio ballot there is a second election nobody campaigns across the
+    state about. It renews a fire levy, borrows for a school roof, raises an income tax by four
+    tenths of a point, decides whether a filling station may sell beer, and occasionally asks a
+    village whether it would like to go on being one. The Secretary of State compiled the returns
+    election by election, category by category, and then stopped serving them; ninety of the reports
+    survive in the Internet Archive, and they cover sixteen election days in this county.
+  </p>
+  <AssertionCard assertion={all} open />
+
+  <h2>Renew, replace, but do not add</h2>
+  <AssertionCard assertion={renews} />
+  <ChartFigure
+    id="levies"
+    title="Sixty-two points between the same money and more of it"
+    caption="Share of Allen County's tax and bond questions that passed, by the word the ballot uses for what it is asking. Forty-five renewals, thirteen replacements and seventeen additional levies, 2003 to 2012."
+    columns={['What it asks', 'Put', 'Passed', 'Mean yes share']}
+    rows={[
+      ['renewal', '45', '44', '64.9%'],
+      ['replacement', '13', '13', '64.3%'],
+      ['additional', '17', '6', '47.0%'],
+      ['not stated in those words', '5', '3', '49.4%'],
+    ]}
+    height={280}
+  />
+  <script type="application/json" data-chart-spec="levies" set:html={JSON.stringify(levySpec)} is:inline />
+  <AssertionCard assertion={notOne} />
+  <AssertionCard assertion={replacement} />
+  <Gloss>
+    A renewal re-levies the same millage against the valuation the tax reduction factors froze it
+    at, so it collects about what it collected. A replacement re-levies the same millage against
+    current valuation, so it collects more. The ballot prints both words and this electorate treated
+    them the same — thirteen replacements, thirteen passed, at a mean yes share within six tenths of
+    a point of the renewals'. The word that moved votes was <em>additional</em>, and what it names
+    is not a larger tax than a replacement so much as a more legible one.
+  </Gloss>
+  <AssertionCard assertion={bonds} />
+  <AssertionCard assertion={beaverdam} />
+  <ChartFigure
+    id="types"
+    title="What the county says yes to"
+    caption="Share passed by kind of question, Allen County, 2003 to 2012. Charter amendments, a zoning referendum and two ordinances by petition are not drawn: all six of them passed."
+    columns={['Question', 'Put', 'Passed']}
+    rows={[
+      ['tax levy', '71', '63'],
+      ['school income tax', '12', '7'],
+      ['bond issue', '8', '3'],
+      ['electric aggregation', '8', '7'],
+      ['municipal income tax', '5', '1'],
+      ['charter amendment', '3', '3'],
+      ['ordinance or referendum', '2', '2'],
+      ['zoning referendum', '1', '1'],
+      ['disincorporation', '1', '1'],
+      ['combined bond and levy', '1', '0'],
+    ]}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="types" set:html={JSON.stringify(typeSpec)} is:inline />
+  <AssertionCard assertion={notMoney} />
+  <AssertionCard assertion={busiest} />
+  <ChartFigure
+    id="elections"
+    title="Sixteen ballots"
+    caption="Local questions put and passed at each election in the record. The two August specials carried one question each and both failed; the nineteen of November 2011 are the most this county has decided at once."
+    columns={['Election', 'Put', 'Passed']}
+    rows={days.map((d, i) => [d, asked[i], passed[i]])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="elections" set:html={JSON.stringify(daySpec)} is:inline />
+
+  <h2>A village stops</h2>
+  <AssertionCard assertion={refused} />
+  <AssertionCard assertion={surrender} open />
+  <Gloss>
+    This one had been an open question here since the first week of the corpus. The Census Bureau
+    listed Fort Shawnee as a village in 2010 and as a census designated place in 2020, and a village
+    is a government while a CDP is a shape on a map. Four records narrowed it: a roster of
+    governments that carried the village in 2012 and not in 2017, a gazetteer that redrew it between
+    the 2012 and 2013 vintages, a county Auditor's tax set that levied village millage in tax year
+    2012 and none in 2013, and a boundary file that turned out to be the gazetteer again rather than
+    a fourth witness. Between them they said the corporation ended in some twelve months and could
+    not say how. It ended on a Tuesday in November, on a petition, by 200 votes.
+  </Gloss>
+  <AssertionCard assertion={witnesses} />
+  <AssertionCard assertion={survey} />
+
+  <h2>Liquor, by the precinct</h2>
+  <AssertionCard assertion={liquor} />
+  <AssertionCard assertion={restaurants} />
+  <AssertionCard assertion={twoVotes} />
+  <AssertionCard assertion={twoAnswers} />
+  <AssertionCard assertion={forms} />
+
+  <h2>What the file will not answer</h2>
+  <AssertionCard assertion={attribution} />
+  <AssertionCard assertion={elsewhere} />
+  <Gloss>
+    The convention is one line at the head of every page: an asterisk denotes the most populous
+    county. A school district that crosses a county line is listed once, under whichever county
+    holds most of it, with the whole district's vote. So a question filed under this county's
+    heading in November 2012 carries 48,543 votes, and the county cast 48,708 ballots that day on
+    every office and question together — the number belongs to six counties. It runs the other way
+    too: thirteen questions Allen County's voters answered are printed under Putnam or Auglaize,
+    because Allen is the smaller partner there. A yes share survives the convention. A vote count
+    does not.
+  </Gloss>
+  <AssertionCard assertion={elida} />
+</Article>

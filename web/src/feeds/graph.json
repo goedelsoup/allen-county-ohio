@@ -2785,6 +2785,50 @@
       "withheld": 2
     },
     {
+      "id": "jurisdiction/village-of-fort-shawnee.yml",
+      "class": "jurisdiction",
+      "label": "Village of Fort Shawnee",
+      "tier": "inference",
+      "properties": {
+        "abolished": "2012-11-06",
+        "fips_code": "3927944",
+        "jurisdiction_type": "municipal corporation",
+        "seat": "Fort Shawnee"
+      },
+      "blocks": [
+        {
+          "text": "The municipal corporation that governed [Fort Shawnee](../place/fort-shawnee.yml), on the southern edge of Lima inside [Shawnee Township](../place/shawnee-township.yml), until its own electors ended it. It was the largest village in Allen County by population — 3,866 people in 2000 and 3,726 in 2010 — and it is the only municipal corporation this corpus knows of that this county has lost. [verified] — [Census intercensal estimates](../../catalog/census-intercensal-2000-2010.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It was ended by a vote, on a petition, on 6 November 2012.** The question was \"Shall the Village known as Fort Shawnee surrender its corporate power?\" and the answer was **1,058 to 858** — 55.2 per cent, on 1,916 votes. [verified] — [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md) for that election, under ALLEN COUNTY. This node exists because that return closes [a question this corpus had carried open since its first week](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The ballot's words name the instrument.** Ohio ends a village two ways, by surrender of its corporate powers under Chapter 703 and by merger with a township under Chapter 709, and the question put here is the first. [inference] — the ballot language as printed in [the same report](../../catalog/ohio-sos-local-issue-reports.md), against the two routes the open question named. The corpus does not hold the certification that followed, so the date above is the date the electors decided and not a date of record for the corporation's end.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two instruments with nothing in common put that end inside the next twelve months.** The county Auditor's tax set L36, *Fort Shawnee Corp.*, levies 2.150 mills of village tax in tax year 2012 and none in 2013; the Census Bureau's gazetteer carries the place with legal code 47, village, in the 2012 vintage and code 57, census designated place, in the 2013. [verified] — [the Auditor's tax rate summaries](../../catalog/allen-county-auditor-tax-rates.md) and [the gazetteer](../../catalog/census-gazetteer-2020.md). The vote falls between them, five weeks before the first tax year in which nothing was levied.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A roster of governments carried it into the year it was voted out.** The 2012 Census of Governments lists `VILLAGE OF FORT SHAWNEE`, census identifier 36200250100000, presiding officer *Mayor*, at 2050 W Breese Rd; the 2017 and 2022 lists do not. [verified] — [the government unit lists](../../catalog/census-of-governments-unit-lists.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It refused to tax itself twice in the fourteen months before it dissolved.** An additional four-mill levy lost 435 to 796 in November 2011, and a 3.25-mill levy lost 592 to 1,323 on the same ballot as the dissolution — 30.9 per cent, the lowest yes share on any question put anywhere in this county in ten years. [verified] — [the ballot record](../measure/allen-county-ballot-questions-2003-2012.yml). A village that will not fund itself and then votes to stop being one is a sequence, and this corpus states the order and not a cause. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It never moved its own line.** No annexation, detachment or merger for Fort Shawnee appears in thirty-five years of Ohio's boundary survey. [verified] — [the annexation record](../measure/allen-county-annexations-1990-2024.yml). The survey did not record the dissolution either, which is the same silence read twice.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "jurisdiction/village-of-harrod.yml",
       "class": "jurisdiction",
       "label": "Village of Harrod",
@@ -3050,6 +3094,10 @@
           "tier": "inference"
         },
         {
+          "text": "**The one boundary change of consequence in this window is not in the file either, and it is not an annexation.** Fort Shawnee's electors ended the village on 6 November 2012 and the survey has no row for it. [verified] — [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md); see [the Village of Fort Shawnee](../jurisdiction/village-of-fort-shawnee.yml). That sharpens the reading above rather than replacing it: the survey misses what a government gives up, and the largest thing a government can give up is itself. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**Four villages that annexed nothing.** Beaverdam, Lafayette, Fort Shawnee and Westminster have no record in the series at all. For [Fort Shawnee](../place/fort-shawnee.yml) that is a fact worth having beside the rest: the largest of the county's villages by population never once moved its own line. [verified] — same files, searched on all ten Allen County place codes.",
           "tier": "verified"
         },
@@ -3269,6 +3317,73 @@
       ],
       "refusals": [
         "Split-ticket voting on that scale is a fact about the ballot and not about any candidate, and this return cannot say which of the eight races was the unusual one."
+      ],
+      "withheld": 4
+    },
+    {
+      "id": "measure/allen-county-ballot-questions-2003-2012.yml",
+      "class": "measure",
+      "label": "What Allen County was asked on the ballot, 2003–2012",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2012",
+        "method": "Ninety category reports — tax, bond, misc, combined, school issues, income tax — for sixteen election days, parsed here. Two layouts: through 2004 the millage and purpose come first with the votes on the first line and the subdivision named after; from 2005 the subdivision comes first with the votes beside it. Both are handled and the boundary was found by inspection. [verified] Questions are de-duplicated on election date and vote totals, because a ballot question that combines a bond and a levy is printed in both category reports with identical figures; the Secretary's own summary tables count those as two or three issues and this node counts the question. [verified] Everything filed under any of the other eighty-seven counties whose subdivision names Allen in its parenthetical is included. [verified] Levy type is the word the ballot uses — renewal, replacement, additional — taken from the description, and is absent for five questions whose wording gives no such word. [inference] Passage is a simple majority of the votes reported, which is the rule the reports print at the head of every page; the 57-to-57 return is counted as a failure on that rule. [inference] Every figure here is a count of questions or a share of votes within one question. No vote totals are summed across questions or attributed to this county. [verified]",
+        "parameter": "local ballot questions put to Allen County voters",
+        "unit": "ballot questions",
+        "value": "112"
+      },
+      "blocks": [
+        {
+          "text": "**A hundred and twelve questions on sixteen election days, and this county said yes to eighty-eight of them.** [verified] — [the Secretary of State's issue reports](../../catalog/ohio-sos-local-issue-reports.md), ninety of them, read here. Everything below the candidates: levies, bonds, income taxes, a charter, a zoning referendum, an electric contract and the surrender of a village.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county renews and it does not add.** Of the eighty tax and bond questions, 45 asked to renew a levy and 44 passed; 13 asked to replace one and 13 passed; 17 asked for an additional levy and 6 passed. That is 57 of 58 against 6 of 17 — a gap of 62 points between asking for the same money again and asking for more. [verified] — the same source, classified here on the word the ballot itself uses.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The one renewal that failed was not a renewal.** Bath Local School District, 2 March 2004: \"9.56 mills (renewal), and increase of 1.74 mills\". It lost 1,369 to 1,894 — 42.0 per cent, the worst result any renewal got in ten years and eight points below the worst additional levy that passed. [verified] — the same source. A renewal with an increase attached is read by this electorate as an increase. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A replacement is not a renewal either, and this county treats it as one.** Thirteen replacement levies were put and thirteen passed, at a mean yes share of 64.3 per cent against the renewals' 64.9 — the two are indistinguishable in this record. [verified] — the same source; the shares are computed here. What separates the words is what the tax collects; see [the rates](allen-county-property-tax-rates-2012-2025.yml). [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**New borrowing is the hardest thing to ask for.** Three of eight bond issues passed. Elida Local School District was refused twice, in May 2007 at 42.9 per cent and in November 2006 at 41.0; Columbus Grove twice; Bath Local School District once, in May 2011 at 45.5 per cent, six months before the same district renewed a levy at 62.3. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And a municipal income tax is refused four times in five.** Lima put a rise from 1.5 to 1.9 per cent on 2 March 2004 and lost 2,335 to 4,447 — 34.4 per cent, the lowest yes share of any question in the decade that was not a village dissolving. Beaverdam asked three times for one per cent, in 2006, 2007 and 2009, and was refused each time; the 2007 return is **57 yes and 57 no**, and a question that does not carry a majority does not pass. [verified] — the same source. Bluffton's quarter-per-cent levy for a village building, on an initiative petition in 2005, is the one that carried. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "**Everything that was not about money passed.** Three Lima charter amendments, a Bath Township zoning referendum at 78.8 per cent, two ordinances by petition, and seven of eight electric aggregations. [verified] — the same source. The single aggregation that failed is [Elida's](../place/elida.yml), and its published figure cannot be right.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Fort Shawnee refused to tax itself twice and then abolished itself.** An additional four-mill levy lost 435 to 796 in November 2011 and a 3.25-mill levy lost 592 to 1,323 in November 2012 — 30.9 per cent, the lowest of the decade. On the same 2012 ballot the village's electors were asked whether it should surrender its corporate power and answered 1,058 to 858. [verified] — the same source; see [the village](../jurisdiction/village-of-fort-shawnee.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Lima's schools were told no twice and then yes.** A bond passed at 61.0 per cent in May 2003 and a renewal at 55.0 in March 2004; additional levies failed in August 2005 at 47.9 per cent and in November 2007 at 39.0; an additional 5.99-mill levy carried in November 2012 at 55.4. [verified] — the same source; see [the school buildings](allen-county-school-buildings-1986-2024.yml), whose rebuilt schools the 2003 bond paid the local share of. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The busiest ballot in the decade was an odd-numbered year.** Nineteen questions on 8 November 2011 and eighteen of them passed; sixteen on 7 November 2006 and twelve passed. The two presidential years carried nine and twelve. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Thirteen of the hundred and twelve are not printed under this county at all.** Columbus Grove's bonds and income tax are filed under Putnam, Waynesfield-Goshen's levies and Pandora-Gilboa's income tax under Putnam or Auglaize, because Allen is the smaller partner in each district. [verified] — the same source, read across all eighty-eight counties. Thirty-seven of the hundred and twelve are multi-county in one direction or the other.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say how Allen County voted on any question that crossed its own line.** The reports give one figure per question and it is the whole subdivision's; a district straddling two counties has one number and no split. [verified] — [the reports' own convention](../../catalog/ohio-sos-local-issue-reports.md), `* denotes most populous county`; see [a return filed under a county is not that county's vote](../../decisions/a-return-filed-under-a-county-is-not-that-countys-vote.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how Allen County voted on any question that crossed its own line.** The reports give one figure per question and it is the whole subdivision's; a district straddling two counties has one number and no split."
       ],
       "withheld": 4
     },
@@ -7392,6 +7507,65 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-local-option-elections-2003-2012.yml",
+      "class": "measure",
+      "label": "Local option liquor elections in Allen County, 2003–2012",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2012",
+        "method": "Sixteen local option reports, 2003 through 2012, parsed here. Their layout is not the layout of the other issue reports: a county name on the first row of its block and blank thereafter, then the precinct or establishment, then the form code, then the yes and no columns. Rows are attributed to Allen County by carrying the last county name seen. [verified] Thirty questions carry returns and two do not; the two are November 2003, whose report is a list of certified questions rather than a result. [verified] The March 2004 report's own title names the wrong election and its contents are confirmed against the Secretary's summary table for that date. [verified] Establishments are named because the source names them and they are businesses and veterans' posts rather than people. [inference] Passage is a simple majority of the votes reported. [inference]",
+        "parameter": "local option liquor questions decided in Allen County",
+        "unit": "ballot questions",
+        "value": "30"
+      },
+      "blocks": [
+        {
+          "text": "**Thirty liquor questions in eight elections, precinct by precinct, and this county passed twenty-five of them.** [verified] — [the Secretary of State's local option reports](../../catalog/ohio-sos-local-issue-reports.md), sixteen of them read here. 5,528 votes yes and 3,599 no across ten years: the smallest electorate and the most particular question on any ballot in Ohio.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A local option is put in one precinct and often about one business, and the report names it.** Twelve of the thirty carry the establishment: a Kroger and a Wine Sellers in American Township, a Duke & Duchess BP on the Harding Highway in Bath, a Pony Keg in Shawnee, Killbilly's in Spencerville, an Iguana Grill and a Loyalty Club in Lima, a D & G Mini Mart in Auglaize Township, Luke's Bar & Grill in Bluffton, an Olive Garden and a Red Lobster in Perry Township. [verified] — the same source. The other eighteen give the precinct alone.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two restaurants in one precinct were refused on one day, by six votes and by five.** Perry Township precinct N, 8 November 2005: the Olive Garden 119 to 125 and the Red Lobster 119 to 124. The same precinct refused a third question in November 2010, 139 to 151, and has passed none in this record. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The narrowest thing this county has ever approved is a filling station.** The Duke & Duchess BP on the Harding Highway in Bath Township precinct D carried 136 to 134 on 2 November 2004 — a two-vote margin out of 270. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One precinct answered two questions oppositely on the same day.** Spencerville precinct B, 8 November 2005: form 5-R1 carried 104 to 71 and form 5-R2 lost 81 to 96. Whatever separates the two forms, this electorate distinguished them by 32 points in one visit to the booth. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the separation holds across the county.** Eight questions on form 5-R1 were put in these ten years and eight passed, at a mean yes share of 65.3 per cent; twenty-two were put on form 5-R2 and seventeen passed, at 58.0. All five refusals are R2. [verified] — the same source; the shares are computed here. **No copy of any report this corpus holds says what R1 and R2 are.** The 2004 reports print the lettered question texts — off-premise sale, on-premise sale, spirituous liquor by the glass, Sunday sale — and the columns that carry the returns are labelled by form and number instead, with no key. [verified] — the same source, all sixteen of them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Bluffton is not dry and this record is where the corpus finds it out.** Four questions in Bluffton's precincts A, D and E between 2006 and 2011, all four carried, the largest at 130 to 41. [verified] — the same source; see [the village](../place/bluffton.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two questions in the record have no answer in it.** Spencerville precincts B and C were certified to the ballot of 4 November 2003 for the Bowersock Brother Post 6772 and American Legion Post 191, and that year's report is the list of questions and not the return. [verified] — the November 2003 local option report, which carries no vote column at all.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One of the reports is filed under another election's name.** The local option report in the March 2004 primary directory is titled for the general election of 7 November 2000, and its two Allen County rows — the Kroger and the Iguana Grill — are the two the Secretary's own summary table counts for 2 March 2004. [verified] — [the report and that election's total table](../../catalog/ohio-sos-local-issue-reports.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say whether any of these questions changed what a shop sold.** A local option authorises a permit class in a precinct; whether the permit was then issued, and to whom, is in the Division of Liquor Control's records and not in an election return. [inference] — the reports carry a question, a precinct and two numbers, and nothing after the election.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say whether any of these questions changed what a shop sold.** A local option authorises a permit class in a precinct; whether the permit was then issued, and to whom, is in the Division of Liquor Control's records and not in an election return."
+      ],
+      "withheld": 2
+    },
+    {
       "id": "measure/allen-county-manufactures-1929.yml",
       "class": "measure",
       "label": "Allen County manufactures, 1929",
@@ -9588,8 +9762,12 @@
           "tier": "verified"
         },
         {
-          "text": "**The Village of Fort Shawnee has a tax set here and stops levying inside it.** Set L36, *Fort Shawnee Corp.*, carries 2.150 mills of village tax in tax year 2012 and a township rate of 10.200 against the 15.600 its neighbours pay. It is absent from the 2013 file altogether. It returns in 2014 and 2015 with no village millage and a township rate of 15.600 — identical to the township's own set in every column — and is gone from 2016. [verified] — same source, tax sets L35 and L36. See [the village](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
+          "text": "**The Village of Fort Shawnee has a tax set here and stops levying inside it.** Set L36, *Fort Shawnee Corp.*, carries 2.150 mills of village tax in tax year 2012 and a township rate of 10.200 against the 15.600 its neighbours pay. It is absent from the 2013 file altogether. It returns in 2014 and 2015 with no village millage and a township rate of 15.600 — identical to the township's own set in every column — and is gone from 2016. [verified] — same source, tax sets L35 and L36. See [the village](../jurisdiction/village-of-fort-shawnee.yml), whose electors ended it five weeks before that first tax year, and [the question that closes on it](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**The millage in these tables is what was voted, and the corpus can now see it being voted.** Eighty tax and bond questions were put in this county between 2003 and 2012, and the words the ballot uses — renewal, replacement, additional — decide the result far more sharply than the amount does: 57 of 58 renewals and replacements carried and 6 of 17 additional levies did. [verified] — [the ballot record](allen-county-ballot-questions-2003-2012.yml). A replacement re-levies the same millage against current valuations rather than the frozen base the reduction factors hold a renewal to, so it collects more money than a renewal of the same size — and this electorate passed the two at indistinguishable rates. [inference] — the reduction factors above, against the same record.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -19368,6 +19546,10 @@
           "tier": "verified"
         },
         {
+          "text": "**A published election return gives this village nine thousand votes.** *Proposed Electric Aggregation — Elida Village*, 6 November 2012: 3,622 yes and 5,454 no, 9,076 in all, in a place whose entire population is about nineteen hundred. [verified] — [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md) against the estimates above. Nothing in the file flags it and no correction is archived; the figure is 4.8 times the village's people and cannot be its vote. [inference] — see [the ballot record](../measure/allen-county-ballot-questions-2003-2012.yml), which counts the question and refuses the number.",
+          "tier": "inference"
+        },
+        {
           "text": "**It has reported more annexation than it is.** Five annexations between May 1990 and May 2021 totalling 912.9 acres, against a village that occupied 703.6 acres in the 2012 geography and 745.6 in the 2024 one. [verified] — [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md) against [the gazetteer](../../catalog/census-gazetteer-2020.md), Ohio place files. One of the five, ordinance 622-92 of 11 March 1992, claims 640.0 acres — exactly one square mile, which is the size of a survey section and not of a parcel. What the excess is, this corpus does not know: reported acreage is what a village put on a form, and a form is not a survey. [inference] — see [the annexation record](../measure/allen-county-annexations-1990-2024.yml).",
           "tier": "inference"
         },
@@ -19424,12 +19606,20 @@
           "tier": "verified"
         },
         {
+          "text": "**What instrument ended it and on what day is now answered.** Its electors were asked on 6 November 2012 whether the village should surrender its corporate power and answered 1,058 to 858. [verified] — [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md); see [the Village of Fort Shawnee](../jurisdiction/village-of-fort-shawnee.yml) and [the question this closes](../question/what-happened-to-the-village-of-fort-shawnee.yml). The place is the ground and the name and it is still here; the corporation was ended by the people who lived on it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It had refused to pay for itself twice in the fourteen months before.** An additional four-mill levy lost 435 to 796 in November 2011 and a 3.25-mill levy lost 592 to 1,323 on the same ballot as the dissolution — the lowest yes share on any question put anywhere in this county between 2003 and 2012. [verified] — [the ballot record](../measure/allen-county-ballot-questions-2003-2012.yml).",
+          "tier": "verified"
+        },
+        {
           "text": "It lies within [Shawnee Township](shawnee-township.yml): all 120 of its census blocks do, and its 6,263 people at the 2020 census are half the township's 12,482. [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md) crossed with [TIGERweb](../../catalog/tigerweb-census2020.md) block geography. That 6,263 is **not** to be read against the 3,726 the village recorded in 2010: the CDP outline is drawn by the Census Bureau and the village boundary was drawn by annexation, so the two figures count different ground. [inference] The size of that difference is now measured: the village held 7.21 square miles of land at both the 2000 and 2010 censuses and the CDP drawn in its place holds 9.51, so the outline gained 1,506 acres in the step that ended the corporation. [verified] — [the 2000 volume](../../catalog/census-phc-3-37-ohio.md), the [2010 volume](../../catalog/census-cph-2-37-ohio-2010.md) and [the gazetteer](../../catalog/census-gazetteer-2020.md). As a CDP it is a statistical outline and not a boundary anyone is governed by, and it does not reach the tank plant a mile and a half north of its internal point — the plant is in Shawnee Township and in no place at all. [verified] — [TIGERweb](../../catalog/tigerweb-census2020.md), point-in-polygon against the 2020 CDP layer.",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 0
     },
     {
       "id": "place/gomer.yml",
@@ -20410,8 +20600,10 @@
       "label": "What happened to the Village of Fort Shawnee?",
       "tier": "inference",
       "properties": {
-        "claim_tag": "open",
+        "claim_tag": "verified",
+        "closed": "2026-09-04",
         "opened": "2026-08-28",
+        "resolution": "The Village of Fort Shawnee was ended by its own electors on 6 November 2012, on a petition, by 1,058 votes to 858 — a surrender of corporate powers under Chapter 703 rather than a merger with Shawnee Township under Chapter 709. The Ohio Secretary of State's report of miscellaneous questions for that election carries the ballot language and the return under ALLEN COUNTY. The two records that had narrowed the change to twelve months, the county Auditor's tax sets and the Census Bureau's gazetteer, both fall on the far side of that date. What remains unheld is the certification that followed, so the corpus dates the decision and not the corporation's last day of record.",
         "would_close_this": "Allen County commissioners' journal or the Ohio Secretary of State's record for 2012 or 2013, either of which would carry the petition and the certification. The Census Bureau's Boundary and Annexation Survey was named here as the likely answer and is not: Ohio's files hold fifty-seven Allen County records between 1990 and 2024 and every one of them is an annexation, with no row for Fort Shawnee at any date. The county Auditor's tax rate summaries have since narrowed the window and cannot close it: they record that the village stopped levying, not the instrument that stopped it."
       },
       "blocks": [
@@ -20458,10 +20650,18 @@
         {
           "text": "**Those are the gazetteer's own figures to three decimals, which is what says the two are one witness.** 18,530,879 square metres is 7.155 square miles and 24,626,518 is 9.508 — the two numbers the gazetteer already gave this node, exactly. A boundary file and a gazetteer published by one bureau off one geography are not independent, and the agreement between them is evidence about the pipeline rather than about Fort Shawnee. [inference] — see [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml). What it does establish is that the change was made once, in the geography, and propagated: the same act reaches a map, a gazetteer and an area table without drift.",
           "tier": "inference"
+        },
+        {
+          "text": "**The instrument, the date and the vote.** On 6 November 2012 the electors of Fort Shawnee were asked \"Shall the Village known as Fort Shawnee surrender its corporate power?\" and answered **1,058 to 858**. [verified] — [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md) for that election, under ALLEN COUNTY. That is the source this node named as the one that would close it, and it closes it: the instrument is a surrender of corporate powers on a petition rather than a merger with the township, the day is the general election of 2012, and the vote is the village's own by 55.2 per cent.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It falls where the two witnesses already pointed, five weeks before the first of them.** The Auditor's tax set L36 levies village millage in tax year 2012 and none in 2013; the gazetteer draws a village in the 2012 vintage and a census designated place in the 2013. The ballot sits between them. [inference] — the same two records this node already carried, against the return.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 4
+      "withheld": 5
     },
     {
       "id": "question/when-allen-county-was-organized.yml",
@@ -24610,6 +24810,13 @@
       "source": "catalog/census-block-assignment-2020.md"
     },
     {
+      "from": "jurisdiction/village-of-fort-shawnee.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "territory-within",
+      "tier": "verified",
+      "source": "catalog/census-of-governments-unit-lists.md"
+    },
+    {
       "from": "jurisdiction/village-of-harrod.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "territory-within",
@@ -24776,6 +24983,34 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/openelections-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-ballot-questions-2003-2012.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-sos-local-issue-reports.md"
+    },
+    {
+      "from": "measure/allen-county-ballot-questions-2003-2012.yml",
+      "to": "measure/allen-county-property-tax-rates-2012-2025.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-ballot-questions-2003-2012.yml",
+      "to": "measure/allen-county-school-buildings-1986-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-ballot-questions-2003-2012.yml",
+      "to": "measure/allen-county-local-option-elections-2003-2012.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-sos-local-issue-reports.md"
     },
     {
       "from": "measure/allen-county-birth-outcomes-2000-2021.yml",
@@ -26239,6 +26474,27 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/usda-census-of-agriculture.md"
+    },
+    {
+      "from": "measure/allen-county-local-option-elections-2003-2012.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-sos-local-issue-reports.md"
+    },
+    {
+      "from": "measure/allen-county-local-option-elections-2003-2012.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-sos-local-issue-reports.md"
+    },
+    {
+      "from": "measure/allen-county-local-option-elections-2003-2012.yml",
+      "to": "measure/allen-county-ballot-questions-2003-2012.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-sos-local-issue-reports.md"
     },
     {
       "from": "measure/allen-county-manufactures-1929.yml",
