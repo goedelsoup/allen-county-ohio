@@ -2522,6 +2522,46 @@
       ]
     },
     {
+      "id": "place-allen-county::net-migration-exemptions,-Allen-County,-2004–05-to-2022–23",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "net migration exemptions, Allen County, 2004–05 to 2022–23",
+      "unit": "exemptions",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "label": "Who moved into and out of Allen County, 2004–2023",
+          "as_of": "2023",
+          "value": -9171.0,
+          "published": "-9171",
+          "tier": "verified",
+          "source": "catalog/irs-county-migration.md",
+          "method": "Rows where the Allen County side of the pair is FIPS 39/003, taken from `countyoutflow` for departures and `countyinflow` for arrivals. The two files order their FIPS pairs oppositely and the Allen County side is columns one and two in both. [verified] Totals are the rows coded 97/000, *Total Migration-US*; the same-state and different-state splits are 97/001 and 97/003 and the regional residues 59/001 to 59/007. [verified] Non-migrant rows, where origin and destination are both 39/003, are excluded from every figure here. [verified] An exemption is a proxy for a person and a return for a household. Aggregate AGI is in thousands of dollars, nominal, and is the income reported on the returns that moved rather than the income those people had after moving. [verified] No figure here is deflated. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::net-migration-exemptions-to-Franklin-County,-2004–05-to-2022–23",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "net migration exemptions to Franklin County, 2004–05 to 2022–23",
+      "unit": "exemptions",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "label": "Where Allen County's movers went and came from, 2004–2023",
+          "as_of": "2023",
+          "value": -2036.0,
+          "published": "-2036",
+          "tier": "verified",
+          "source": "catalog/irs-county-migration.md",
+          "method": "Named flows only: rows whose other side is a real FIPS county code, excluding the summary codes 96, 97, 98, 57, 58 and 59 and excluding the non-migrant row where both sides are 39/003. [verified] Each county's figures are summed across every year in which its flow was published, so a county named in fourteen years and a county named in nineteen are not directly comparable and the year count is stated where it matters. [verified] The nine metropolitan counties are Franklin, Cuyahoga, Hamilton, Montgomery, Lucas, Summit, Delaware, Butler and Warren — every Ohio county holding or bordering a city of over a hundred thousand that appears in this record. The grouping is this corpus's and not the file's. [inference] The two anomalous file years, 2014–15 and 2016–17, are included in these nineteen-year sums because the anomaly is a shift of returns between adjacent years and cancels across the pair. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::new-cases-filed,-all-courts-of-record-sitting-in-the-county",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -25152,6 +25192,596 @@
           "label": "private employees on the register",
           "value": 44251.0,
           "literal": "44,251"
+        }
+      ]
+    },
+    {
+      "id": "nineteen-years-nineteen-losses",
+      "statement": "71,324 exemptions left Allen County on tax returns between 2004–05 and 2022–23 and 62,153 arrived — a net loss of 9,171 people, with no year of gain in nineteen.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**Nineteen years of tax returns changing address, and Allen County lost people in all nineteen.** 71,324 exemptions left and 62,153 arrived — a net loss of 9,171. [verified] — [the IRS migration files](../../catalog/irs-county-migration.md), outflow and inflow totals for county 39003, summed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "exemptions out",
+          "value": 71324.0,
+          "literal": "71,324"
+        },
+        {
+          "label": "exemptions in",
+          "value": 62153.0,
+          "literal": "62,153"
+        },
+        {
+          "label": "net loss",
+          "value": 9171.0,
+          "literal": "9,171"
+        }
+      ]
+    },
+    {
+      "id": "three-hundred-and-fifty-five-million-left",
+      "statement": "$1,685,961,000 of adjusted gross income left Allen County with the people who moved away between 2004–05 and 2022–23, and $1,330,573,000 arrived with the people who moved in — a net outflow of $355 million.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**They took $355 million more out than the arrivals brought in.** $1,685,961,000 of adjusted gross income left with the leavers over nineteen years and $1,330,573,000 arrived with the newcomers. [verified] — the same files, aggregate AGI summed across all nineteen pairs.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "AGI out, dollars",
+          "value": 1685961000.0,
+          "literal": "1,685,961,000"
+        },
+        {
+          "label": "AGI in, dollars",
+          "value": 1330573000.0,
+          "literal": "1,330,573,000"
+        }
+      ]
+    },
+    {
+      "id": "the-leavers-out-earned-the-arrivers",
+      "statement": "The people who left Allen County out-earned the people who arrived in seventeen of nineteen years: $23,638 of adjusted gross income per exemption on the way out against $21,408 on the way in, a gap of 10.4 per cent.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**The people who left out-earned the people who arrived in seventeen of the nineteen years.** $23,638 of adjusted gross income per exemption on the way out against $21,408 on the way in — a gap of 10.4 per cent over the whole span. Only 2012–13 and 2011–12 run the other way. [verified] — the same source; the per-exemption figures are computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "per exemption out, dollars",
+          "value": 23638.0,
+          "literal": "23,638"
+        },
+        {
+          "label": "per exemption in, dollars",
+          "value": 21408.0,
+          "literal": "21,408"
+        },
+        {
+          "label": "gap, per cent",
+          "value": 10.4,
+          "literal": "10.4"
+        }
+      ]
+    },
+    {
+      "id": "the-income-gap-is-closing",
+      "statement": "In 2004–05 someone leaving Allen County carried $18,626 and someone arriving $16,469, 13.1 per cent apart. In 2022–23 it was $31,862 against $30,149, 5.7 per cent apart.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**The gap has been closing.** In 2004–05 a leaver carried $18,626 and an arriver $16,469, 13.1 per cent apart; in 2022–23 it was $31,862 against $30,149, 5.7 per cent apart. [verified] — the same files. Both figures are nominal and neither is deflated.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "out, 2004-05",
+          "value": 18626.0,
+          "literal": "18,626"
+        },
+        {
+          "label": "in, 2004-05",
+          "value": 16469.0,
+          "literal": "16,469"
+        },
+        {
+          "label": "out, 2022-23",
+          "value": 31862.0,
+          "literal": "31,862"
+        },
+        {
+          "label": "in, 2022-23",
+          "value": 30149.0,
+          "literal": "30,149"
+        }
+      ]
+    },
+    {
+      "id": "more-than-half-who-leave-ohio-go-south",
+      "statement": "Of the 1,221 exemptions that left Allen County for another state in 2022–23 without a county large enough to name, 630 went to the South, 327 to the Midwest, 159 to the West and 105 to the Northeast.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**More than half of everyone who leaves Ohio from this county goes South.** Of the 1,221 exemptions in the different-state residue in 2022–23, 630 went to the South, 327 to the Midwest, 159 to the West and 105 to the Northeast. [verified] — the same file, rows coded 59.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "to the South",
+          "value": 630.0,
+          "literal": "630"
+        },
+        {
+          "label": "to the Midwest",
+          "value": 327.0,
+          "literal": "327"
+        },
+        {
+          "label": "to the West",
+          "value": 159.0,
+          "literal": "159"
+        }
+      ]
+    },
+    {
+      "id": "two-years-that-are-the-file",
+      "statement": "Migration out of Allen County is a third below its median in 2014–15 and a third above it in 2016–17, and Auglaize and Hancock counties move the same way in the same two years. The movement is in the instrument.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**Two of the nineteen years are the file and not the county.** 2014–15 is a third below the county's median and 2016–17 a third above it, and Auglaize and Hancock counties move the same way in the same two years. [verified] — the same files read for three counties; see [the control can be the county next door](../../decisions/the-control-can-be-the-county-next-door.yml). No rate here is computed across those two years alone.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": []
+    },
+    {
+      "id": "the-tax-file-finds-a-smaller-loss",
+      "statement": "Over the three years both cover, the tax files give Allen County a net domestic migration loss of 686 people and the census population estimates give 1,060. The difference is people who do not file a return.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**A second instrument finds a bigger loss, and the difference is people who do not file.** Over the three years both cover, the tax files give a net domestic loss of 686 and the population estimates give 1,060. [verified] — [the population estimates](../../catalog/census-popest-2024.md); see [the net migration](allen-county-net-migration-2021-2024.yml). A tax file sees filers, and the very poor, much of the old and anyone who moved without filing are outside it. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-net-migration-2021-2024.yml",
+          "node_label": "Allen County net migration, 2021–2024",
+          "span": "**The domestic half now has an address.** Nineteen years of tax returns changing address name the counties: Franklin County took a net 2,036 people from Allen County between 2004–05 and 2022–23, nine metropolitan counties took 3,981 between them, and the five counties that touch this one came to a net of eighty-two. [verified] — [the IRS migration files](../../catalog/irs-county-migration.md); see [where they went](allen-county-migration-by-county-2004-2023.yml). Over the three years the two sources both cover, the tax file finds a domestic net loss of 686 against these estimates' 1,060, and the difference is people who do not file. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "tax file loss",
+          "value": 686.0,
+          "literal": "686"
+        },
+        {
+          "label": "estimates loss",
+          "value": 1060.0,
+          "literal": "1,060"
+        }
+      ]
+    },
+    {
+      "id": "foreign-migration-stops-being-published",
+      "statement": "The IRS migration file publishes Allen County's foreign migration for six years — 13, 23, 30, 12, 18 and 23 exemptions out — and suppresses it in every year since 2009–10, while the census estimates put international migration at 424 over 2021 to 2024.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-flows-2004-2023.yml",
+          "node_label": "Who moved into and out of Allen County, 2004–2023",
+          "span": "**Foreign migration disappears from this file after 2009–10.** The rows coded 98 carry figures through the first six years — 13, 23, 30, 12, 18 and 23 exemptions out — and `-1` in every year since. [verified] — the same files. The population estimates put international migration at 424 over 2021–24, so the quantity exists and the tax file has stopped saying it.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-popest-2024.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say why anybody moved.** The file records that an address changed between two returns and carries no reason, no age, no occupation and no household beyond the exemptions claimed on a form."
+      ],
+      "figures": [
+        {
+          "label": "2006-07 exemptions out",
+          "value": 30.0,
+          "literal": "30"
+        },
+        {
+          "label": "international migration, 2021-24",
+          "value": 424.0,
+          "literal": "424"
+        }
+      ]
+    },
+    {
+      "id": "forty-five-counties-and-six-hundred-and-ninety-seven-flows",
+      "statement": "Forty-five counties are named in nineteen years of Allen County's migration record, in 697 published flows. Everything smaller than ten returns a year is suppressed, so the named counties account for 5,329 of a net loss of 9,171 and the other 3,842 have a region and no county.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**Forty-five counties are named in nineteen years of Allen County's migration record, in 697 published flows.** Everything smaller than ten returns a year is suppressed into a regional residue, so the named counties account for 5,329 of the county's net loss of 9,171 exemptions and the other 3,842 have a region and no county. [verified] — [the IRS migration files](../../catalog/irs-county-migration.md), all nineteen pairs.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "published flows",
+          "value": 697.0,
+          "literal": "697"
+        },
+        {
+          "label": "net loss to named counties",
+          "value": 5329.0,
+          "literal": "5,329"
+        },
+        {
+          "label": "net loss with no county",
+          "value": 3842.0,
+          "literal": "3,842"
+        }
+      ]
+    },
+    {
+      "id": "seventeen-thousand-crossings-of-one-county-line",
+      "statement": "8,987 exemptions left Allen County for Auglaize County over nineteen years and 8,866 arrived from it — a churn of 17,853 people across one county line for a net of 121.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**The largest exchange is with the county next door and it is very nearly even.** 8,987 exemptions left for Auglaize County over the nineteen years and 8,866 arrived from it — a churn of 17,853 people across one county line for a net of 121. [verified] — the same files.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "out",
+          "value": 8987.0,
+          "literal": "8,987"
+        },
+        {
+          "label": "in",
+          "value": 8866.0,
+          "literal": "8,866"
+        },
+        {
+          "label": "churn",
+          "value": 17853.0,
+          "literal": "17,853"
+        }
+      ]
+    },
+    {
+      "id": "the-border-comes-to-eighty-two",
+      "statement": "Auglaize, Van Wert, Putnam, Hardin and Hancock — the five counties that touch Allen County — come to a net of eighty-two people and a net gain of $3,581,000 across nineteen years.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**The five counties that touch Allen County take as many people as they give.** Auglaize, Van Wert, Putnam, Hardin and Hancock come to a net of 82 people and a net gain of $3,581,000 across nineteen years. [verified] — the same files, the five contiguous counties summed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "net AGI gain, dollars",
+          "value": 3581000.0,
+          "literal": "3,581,000"
+        }
+      ]
+    },
+    {
+      "id": "the-loss-is-to-the-cities",
+      "statement": "Franklin, Cuyahoga, Hamilton, Montgomery, Lucas, Summit, Delaware, Butler and Warren counties take a net 3,981 people and $113,815,000 out of Allen County over nineteen years — three quarters of the named part of its migration loss.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**The loss is to the cities, and three quarters of the named part of it is nine counties.** Franklin, Cuyahoga, Hamilton, Montgomery, Lucas, Summit, Delaware, Butler and Warren take a net 3,981 people and $113,815,000 out of this county over nineteen years. [verified] — the same files, those nine counties summed here. Allen County draws from the countryside and loses to the metropolis. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "net people",
+          "value": 3981.0,
+          "literal": "3,981"
+        },
+        {
+          "label": "net AGI, dollars",
+          "value": 113815000.0,
+          "literal": "113,815,000"
+        }
+      ]
+    },
+    {
+      "id": "columbus-is-a-fifth-of-everything",
+      "statement": "Franklin County took 4,907 exemptions from Allen County over nineteen years and sent back 2,871 — a net 2,036 people and $48,411,000, which is 22.2 per cent of the county's whole net migration loss.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**Columbus alone is a fifth of everything.** Franklin County took 4,907 exemptions and sent back 2,871 — a net 2,036 people, 22.2 per cent of the county's whole net migration loss, and $48,411,000. [verified] — the same files. No other county is within a quarter of it.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "out",
+          "value": 4907.0,
+          "literal": "4,907"
+        },
+        {
+          "label": "in",
+          "value": 2871.0,
+          "literal": "2,871"
+        },
+        {
+          "label": "net",
+          "value": 2036.0,
+          "literal": "2,036"
+        },
+        {
+          "label": "share of the loss, per cent",
+          "value": 22.2,
+          "literal": "22.2"
+        }
+      ]
+    },
+    {
+      "id": "the-richest-leavers-go-to-delaware-county",
+      "statement": "The people who leave Allen County for Delaware County — Columbus's northern suburb and the highest-income county in Ohio — carry $38,579 of adjusted gross income per exemption, against $23,638 for the average departure.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**The people who leave for Delaware County are the richest leavers in the record.** $38,579 of adjusted gross income per exemption, against $23,638 for the average departure from this county. [verified] — the same files, the fourteen years in which that flow was large enough to publish. Delaware County is Columbus's northern suburb and is the highest-income county in Ohio.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "per exemption, dollars",
+          "value": 38579.0,
+          "literal": "38,579"
+        },
+        {
+          "label": "county average, dollars",
+          "value": 23638.0,
+          "literal": "23,638"
+        }
+      ]
+    },
+    {
+      "id": "two-allen-counties-and-the-ohio-one-loses",
+      "statement": "961 exemptions left Allen County, Ohio for Allen County, Indiana over nineteen years and 635 came back — a net 326 people and $6,414,000 to Fort Wayne.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**Two Allen Counties, and the Ohio one loses.** 961 exemptions left for Allen County, Indiana — Fort Wayne — and 635 came back, a net 326 people and $6,414,000. [verified] — the same files.",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "out",
+          "value": 961.0,
+          "literal": "961"
+        },
+        {
+          "label": "in",
+          "value": 635.0,
+          "literal": "635"
+        },
+        {
+          "label": "net",
+          "value": 326.0,
+          "literal": "326"
+        }
+      ]
+    },
+    {
+      "id": "five-rural-counties-give-more-than-they-take",
+      "statement": "Five counties give Allen County more people than they take, and all five are rural: Hardin +175, Putnam +145, Shelby +132, Mercer +101 and Defiance +50.",
+      "topic": "population",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-migration-by-county-2004-2023.yml",
+          "node_label": "Where Allen County's movers went and came from, 2004–2023",
+          "span": "**Five counties give this one more than they take, and all five are rural.** Hardin +175, Putnam +145, Shelby +132, Mercer +101 and Defiance +50. [verified] — the same files. Every county with a city of a hundred thousand people in it runs the other way. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say who any of these people are.** The file names counties and counts exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the 3,842 net movers whose flows were too small to publish."
+      ],
+      "figures": [
+        {
+          "label": "Hardin",
+          "value": 175.0,
+          "literal": "175"
+        },
+        {
+          "label": "Putnam",
+          "value": 145.0,
+          "literal": "145"
+        },
+        {
+          "label": "Shelby",
+          "value": 132.0,
+          "literal": "132"
+        }
+      ]
+    },
+    {
+      "id": "where-the-missing-people-went",
+      "statement": "Allen County's population estimate fell 1,351 between 2020 and 2024. Over nineteen years its net migration loss on tax returns was 9,171 exemptions, and the counties that took them are named.",
+      "topic": "population",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-population-2024.yml",
+          "node_label": "Allen County population, July 2024 estimate",
+          "span": "**Where the missing people went is now partly answerable.** Between 2004–05 and 2022–23 the county had a net migration loss of 9,171 exemptions on tax returns, and the counties that took them are named: Franklin County a net 2,036, nine metropolitan counties 3,981 between them, and the five counties on this one's own border a net eighty-two across nineteen years. [verified] — [the IRS migration files](../../catalog/irs-county-migration.md); see [where they went](allen-county-migration-by-county-2004-2023.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/irs-county-migration.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": [
+        {
+          "label": "net migration loss",
+          "value": 9171.0,
+          "literal": "9,171"
+        },
+        {
+          "label": "net to Franklin County",
+          "value": 2036.0,
+          "literal": "2,036"
         }
       ]
     }
