@@ -1,0 +1,85 @@
+id: the-total-is-enumerated-and-the-split-is-not
+summary: >-
+  Allen County has 44,563 housing units. 40,935 of them were lived in on 1 April 2020 and 3,628 were
+  empty. The first number was counted and used exactly as counted; the second and third are the
+  output of an algorithm that adds noise on purpose, and nothing in the file distinguishes them.
+  Only the technical documentation does, in one paragraph.
+context: |
+  The Bureau's own sentence, from chapter 4 of the characteristics file's documentation:
+
+      The total population for each state is held invariant—used exactly as enumerated and with
+      no noise added. Similarly, the total number of housing units in each census block and the
+      number and major type of each occupied group quarters facility in each census block are
+      also held invariant.
+
+  Three things are invariant and everything else in a 3.7 GB file is protected. The county's 44,563
+  units are a sum of 3,552 block figures each of which is exact. The 40,935 and the 3,628 are not,
+  and neither is any row of the vacancy-status table, any tenure figure, any household size, any
+  count of people in a group quarters — the number of *facilities* is invariant, not the number of
+  people in them.
+
+  **The file publishes no interval.** The American Community Survey states how wrong it might be in
+  the column beside every figure, and this corpus has a rule for that already. A protected census
+  states nothing. So on the axis that matters here — how much a small-area figure can be trusted —
+  the count is *less* legible than the survey, and it looks more authoritative.
+
+  **The obvious check does not work.** The redistricting file of 2021 and the characteristics file
+  of 2023 both publish occupancy status at block level, twenty months apart. Across all 3,552 blocks
+  of this county they differ on nothing at all. That is not two instruments agreeing; it is one
+  answer released twice, and a reader who treats the second as corroboration of the first has
+  learned nothing.
+
+  **Where it bites, in this county.** 138 blocks hold housing units and report nobody living in any
+  of them — 530 units, the largest such block holding 22. At that grain the protection is at its
+  strongest by design, so the corpus cannot say that any one of those blocks is empty. It can say
+  exactly how many housing units stand on each of them, because that is the invariant.
+decision: |
+  **A figure from a protected census is published with the protection named, and the corpus states
+  which of its numbers were enumerated and which were computed, in the node, every time both appear
+  in the same table.**
+
+  Three rules follow, and they are narrow:
+
+  *An invariant is a count.* Housing units by block, and the sums of them, are stated as counts with
+  no hedge. So is a state's total population. Nothing else from 2020 is.
+
+  *A protected cell at block grain supports no claim about that block.* It may be summed — the sums
+  are what the algorithm is built to preserve — but a sentence about one block, or an ordering of
+  two small ones, is not available and is not softened to `[inference]`. It is refused.
+
+  *Two products of one census are one witness.* The redistricting file and the characteristics file
+  do not corroborate each other, and the corpus does not cite both for a figure as though they were
+  independent.
+
+  This does not retract anything the corpus has published from these files. It changes what is said
+  beside them, and it corrects one sentence: the method note on
+  [the group quarters](../corpus/measure/allen-county-group-quarters-2020.yml) said the county
+  totals are not noisy. They are. What is not noisy is the housing-unit count and the existence of
+  each occupied facility.
+rationale: |
+  **This is the mirror of the rule the corpus already has.**
+  [a survey is not a count](a-survey-is-not-a-count.yml) was written because a sample publishes its
+  own uncertainty and the first claim built from it ignored the column. The lesson was: read the
+  interval. Here there is no interval to read, and the temptation runs the other way — a census is
+  a count, so the number is the number. Both rules are the same rule seen from opposite sides: what
+  an instrument can and cannot resolve is a property of the instrument, and it has to be looked up.
+
+  **Why not simply distrust the whole file.** Because the algorithm is built to be accurate where
+  the corpus mostly reads. The county's thirteen subdivisions sum to the county exactly in every
+  column taken here, and the county sums to the state; the error is concentrated at the bottom of
+  the hierarchy, which is where a corpus about a county has the least business making claims
+  anyway. The rule is not "the census is unreliable". It is "the census is reliable at a scale the
+  documentation names, and the file does not name it for you".
+
+  **Why the identical-files finding is worth keeping.** It is the single most likely error a careful
+  reader would make with these two sources — the corpus already holds one of them and has now taken
+  the other, and the natural next move is to check one against the other and report agreement. The
+  check runs, returns a perfect result, and means nothing. A rule that only says "name the
+  protection" would not have caught it.
+
+  **What this does not cover.** It says nothing about how large the perturbation is, because the
+  Bureau has not published a privacy-loss budget for these tables and this corpus holds no accuracy
+  metrics. The rules above are structural for that reason: they turn on which quantity is invariant
+  and at what grain a claim is made, not on a magnitude nobody here can supply.
+status: accepted
+date: "2026-09-04"
