@@ -17,6 +17,7 @@ location:
 used-by:
   - ../corpus/site/allen-correctional-institution.yml
   - ../corpus/question/who-lives-in-the-county-without-housing.yml
+  - ../corpus/measure/allen-county-shortage-designations-1985-2026.yml
 ---
 
 **What it gave, in one line.** The page carries a list headed "The following previously served as
