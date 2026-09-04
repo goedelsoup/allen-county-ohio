@@ -134,7 +134,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-early-deaths-by-cause-2020-2022.yml](measure/allen-county-early-deaths-by-cause-2020-2022.yml) | measure | What Allen County dies of early, 2016–2022 | 3 | 10v / 6i / 1o | 100 |
 | [allen-county-educational-attainment-2009-2023.yml](measure/allen-county-educational-attainment-2009-2023.yml) | measure | Educational attainment in Allen County, 2005–2009 and 2019–2023 | 5 | 14v / 1i / 1o | 150 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 9v / 1i / 0o | 70 |
-| [allen-county-elevation-2026.yml](measure/allen-county-elevation-2026.yml) | measure | How high Allen County is, 2026 | 5 | 11v / 1i / 1o | 96 |
+| [allen-county-elevation-2026.yml](measure/allen-county-elevation-2026.yml) | measure | How high Allen County is, 2026 | 6 | 12v / 2i / 1o | 108 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
 | [allen-county-evictions-2001-2018.yml](measure/allen-county-evictions-2001-2018.yml) | measure | Eviction filings in Allen County, 2002–2018 | 6 | 8v / 5i / 0o | 109 |
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
@@ -194,7 +194,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-manufacturing-outside-lima-1929-1967.yml](measure/allen-county-manufacturing-outside-lima-1929-1967.yml) | measure | Allen County manufacturing outside Lima, 1929–1967 | 3 | 4v / 8i / 1o | 85 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
-| [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 3 | 10v / 3i / 1o | 117 |
+| [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 4 | 12v / 4i / 1o | 138 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 3 | 4v / 1i / 0o | 41 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
@@ -305,6 +305,8 @@ Sorted by: kind, then alphabetically.
 | [lima-snowfall-1901-2025.yml](measure/lima-snowfall-1901-2025.yml) | measure | Lima snowfall, 1901–2025 | 2 | 10v / 4i / 1o | 78 |
 | [lima-state-hospital-in-the-reports-1920-2021.yml](measure/lima-state-hospital-in-the-reports-1920-2021.yml) | measure | Lima State Hospital in the published reports, 1920–2021 | 4 | 6v / 4i / 1o | 86 |
 | [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
+| [miami-and-erie-canal-deep-cut-2026.yml](measure/miami-and-erie-canal-deep-cut-2026.yml) | measure | The Deep Cut, measured, 2026 | 5 | 12v / 4i / 1o | 111 |
+| [miami-and-erie-canal-in-allen-county-2026.yml](measure/miami-and-erie-canal-in-allen-county-2026.yml) | measure | The Miami and Erie Canal in Allen County, 2026 | 5 | 13v / 3i / 1o | 95 |
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 9v / 5i / 1o | 90 |
@@ -375,7 +377,7 @@ Sorted by: kind, then alphabetically.
 | [trinity-methodist-episcopal-church.yml](organization/trinity-methodist-episcopal-church.yml) | organization | Trinity Methodist Episcopal Church | 2 | 4v / 2i / 1o | 48 |
 | [university-of-northwestern-ohio.yml](organization/university-of-northwestern-ohio.yml) | organization | University of Northwestern Ohio | 2 | 8v / 1i / 1o | 64 |
 | [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
-| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 4v / 4i / 2o | 50 |
+| [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 6v / 5i / 2o | 61 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 8 | 13v / 12i / 2o | 144 |
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 20v / 14i / 2o | 240 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 5 | 9v / 9i / 2o | 103 |
@@ -534,7 +536,7 @@ Sorted by: kind, then alphabetically.
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 7 | 11v / 5i / 2o | 130 |
 | [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 3 | 14v / 7i / 2o | 108 |
 | [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 87 |
-| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 12v / 4i / 1o | 99 |
+| [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 16v / 4i / 1o | 121 |
 | [national-lime-and-stone-lima-quarry.yml](site/national-lime-and-stone-lima-quarry.yml) | site | National Lime & Stone, Lima Plant | 4 | 6v / 2i / 1o | 60 |
 | [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 3v / 2i / 1o | 41 |
 | [auditor-2023-rachael-s-gilroy.yml](tenure/auditor-2023-rachael-s-gilroy.yml) | tenure | Rachael S. Gilroy, Auditor of Allen County, term of 2023–2027 | 3 | 2v / 2i / 0o | 32 |
