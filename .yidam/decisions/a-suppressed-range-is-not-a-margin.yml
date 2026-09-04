@@ -1,9 +1,10 @@
 id: a-suppressed-range-is-not-a-margin
 summary: >-
   The federal graduation file publishes 109 of this county's 120 district-years as a band —
-  `90-94`, `50-100` — and 11 as a number. The width of the band is set by the size of the cohort
-  and by nothing else, so the one district a reader can read exactly is the largest, which is also
-  the poorest and the lowest-performing. A disclosure band is not a sampling margin, its midpoint
+  `90-94`, `50-100` — and 11 as a number. The width of the band is set by how many children are in
+  the cell and by whether the cell is a whole unit or a kind of child inside one, so the one
+  district a reader can read exactly is the largest, which is also the poorest and the
+  lowest-performing. A disclosure band is not a sampling margin, its midpoint
   is not a measurement, and the units reported precisely are a non-random subset of the units.
 context: |
   Two rules were already written for figures that arrive with an interval attached, and neither one
@@ -18,7 +19,14 @@ context: |
       300 or more          1,062                1,051
 
   Nothing about the schooling varies down that column. The smallest cohort ever published exactly is
-  201. Below 150 it has not happened once in ten years.
+  201 and the largest ever published as a band is 200; the threshold is not approximate.
+
+  A second term was found afterwards and it is not size. A row naming a subgroup — a race, a
+  disability, economic disadvantage — is published as a number at 301 and as a band at 300, exactly
+  one hundred higher than the same threshold for a whole cohort. Across 37,632 graduation rows and
+  64,235 assessment cells there is no exception to either boundary. The same 250 children are a
+  number when they are the district and a range when they are the district's Black children, and
+  being counted as a kind costs a hundred children of legibility.
 
   In Allen County that leaves Lima — 270 in its 2019 cohort — as the only district with a graduation
   rate stated as a number, and Lima's rate is 63 per cent against bands of `80-84` to `95-100`
@@ -32,7 +40,9 @@ context: |
   And the same collection, for the same twelve districts, publishes reading and mathematics
   proficiency with no suppression at all — 240 cells of 240 exact — because a district tests about
   9,300 pupils a year and graduates about 1,300. One source, two measures, and the difference in
-  what may be known is arithmetic.
+  what may be known is arithmetic. Asked for the same measure by school rather than by district it
+  returns 71 numbers and 91 bands out of 166, so the legibility is a property of the geography the
+  question is asked at and not of the measure.
 decision: |
   **Where a source bounds a value for disclosure rather than for sampling, the band is the datum.
   The node prints the band as published, never the midpoint, and any aggregate is an interval.**
@@ -48,6 +58,9 @@ decision: |
   - **Say which units are legible.** Where precision varies with the size of a unit, the node names
     the units published exactly and the reason, because a reader who sees one number among eleven
     bands will read the number as the finding.
+  - **Say whether a cell is a whole unit or a kind within one.** A subgroup's threshold is a
+    hundred higher than its unit's, so a band on a subgroup row and a band on a total row do not say
+    the same thing about how many children stand behind them.
   - **Never rank a mixture of exact values and bands.** An ordering built from `63`, `80-84` and
     `95-100` is an ordering of three different kinds of object.
 rationale: |
@@ -60,11 +73,14 @@ rationale: |
   **Nor is it the small-count rule.** [a count of tens is a draw](a-count-of-tens-is-a-draw.yml)
   says a small count moves on its own. Here the count is not noisy — a cohort of 33 graduated
   whatever share of itself it graduated — it is *hidden*, deliberately, and the hiding is a policy
-  with a threshold that can be measured. It was measured: 150.
+  with thresholds that can be measured. They were measured: 201 for a whole cohort and 301 for a
+  kind of child inside one.
 
   **The selection is the part worth carrying forward.** A rule that suppresses small cells makes
   large units legible and small ones opaque, and largeness is never independent of the subject. In
-  this county the large district is the city district, the poor one and the low-performing one. Any
+  this county the large district is the city district, the poor one and the low-performing one. The
+  second threshold sharpens that rather than softening it: the categories a disclosure rule exists
+  to protect are exactly the categories it makes hardest to see. Any
   claim of the form *the worst district is X* drawn from such a file is partly a claim about which
   districts the disclosure rule permitted to be seen; see also
   [a source is also a filter](a-source-is-also-a-filter.yml), which is the same shape one level up.

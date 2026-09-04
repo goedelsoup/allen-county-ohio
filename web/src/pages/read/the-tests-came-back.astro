@@ -1,0 +1,178 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const empty = assertion('the-year-this-site-called-empty')
+const cancelled = assertion('the-missing-year-is-the-cancelled-one')
+const eleven = assertion('eleven-of-the-twelve-districts-fell')
+const limamath = assertion('limas-mathematics-fell-to-twenty-nine')
+const ohio = assertion('the-county-pulled-further-from-ohio')
+
+const banded = assertion('exact-by-district-and-banded-by-school')
+const lowest = assertion('the-four-lowest-schools-are-in-lima')
+const seventeen = assertion('one-school-tests-mathematics-at-seventeen')
+const highschool = assertion('one-high-school-a-reader-may-read')
+const rose = assertion('two-lima-schools-read-higher-in-2020')
+const closed = assertion('a-school-closed-and-the-count-held')
+
+const hundred = assertion('a-subgroup-costs-a-hundred-children')
+const white = assertion('nine-of-eleven-legible-rows-are-white')
+const onlylima = assertion('only-lima-publishes-its-black-children')
+const gap = assertion('the-gap-inside-lima-outlived-the-test')
+const limawhite = assertion('limas-white-children-are-lowest-too')
+const poor = assertion('held-to-poor-children-the-spread-holds')
+const wholedistrict = assertion('in-two-districts-the-poor-are-the-district')
+const disability = assertion('disability-is-legible-in-one-district')
+const learners = assertion('english-learners-are-never-published')
+
+const yrs = ['2009–10', '2010–11', '2011–12', '2012–13', '2013–14', '2014–15', '2015–16', '2016–17', '2017–18', '2018–19', '2019–20', '2020–21']
+const cread = [80.6, 83.0, 82.5, 83.9, 84.7, 73.1, 57.4, 65.6, 67.2, 68.8, null, 63.1]
+const cmath = [75.9, 78.5, 79.3, 78.4, 78.1, 70.6, 66.8, 71.0, 68.5, 69.6, null, 60.2]
+
+const schoolCats = ['Bluffton El.', 'Maplewood El.', 'Jefferson Mid.', 'Spencerville Mid.', 'Columbus Grove Mid.', 'Bath El.', 'Shawnee Mid.', 'Bluffton Mid.', 'Allen East El.', 'Bath Mid.', 'Allen East Mid.', 'Elida Mid.', 'Elida El.', 'Perry El.', 'Liberty Arts (Lima)', 'Lima Senior', 'Lima North Mid.', 'Lima West Mid.']
+const schoolVals = [87, 84, 81, 80, 80, 79, 79, 79, 78, 76, 72, 65, 62, 62, 56, 39, 31, 31]
+
+const raceYrs = ['2013–14', '2018–19', '2020–21']
+const wr = [73, 48, 42]
+const br = [58, 34, 28]
+const wm = [63, 53, 37]
+const bm = [42, 31, 19]
+
+const poorCats = ['Bath', 'Shawnee', 'Perry', 'Elida', 'Lima']
+const poorAll = [77, 81, 62, 66, 42]
+const poorEd = [71, 68, 62, 58, 42]
+
+const yearsSpec = line(
+  yrs,
+  [
+    { name: 'reading', y: cread },
+    { name: 'mathematics', y: cmath },
+  ],
+  { yTitle: 'Allen County pupils proficient, per cent', labelLast: true, zeroBased: true },
+)
+
+const schoolsSpec = bar(schoolCats, schoolVals, {
+  yTitle: 'Reading proficiency, per cent, 2018–19',
+  labelValues: true,
+})
+
+const raceSpec = line(
+  raceYrs,
+  [
+    { name: 'white, reading', y: wr },
+    { name: 'Black, reading', y: br },
+    { name: 'white, mathematics', y: wm },
+    { name: 'Black, mathematics', y: bm },
+  ],
+  { yTitle: 'Lima City pupils proficient, per cent', labelLast: true, zeroBased: true },
+)
+
+const poorSpec = line(
+  poorCats,
+  [
+    { name: 'all pupils', y: poorAll },
+    { name: 'economically disadvantaged', y: poorEd },
+  ],
+  { yTitle: 'Reading proficiency, per cent, 2018–19', labelLast: true, zeroBased: true },
+)
+---
+
+<Article slug="the-tests-came-back">
+  <p>
+    A page here said that the federal assessment file returns a row for every Allen County district
+    in 2020 with no scores in it, and that the tests were not given. The rows are there and so are
+    the scores. What is actually missing from the collection is 2019 — and because the file's year
+    is the fall of a school year, 2019 is the spring that was cancelled and 2020 is the spring
+    after it. The pandemic year was on the disk the whole time.
+  </p>
+
+  <h2>The year that was not empty</h2>
+  <AssertionCard assertion={empty} open />
+  <AssertionCard assertion={cancelled} />
+  <Gloss>
+    The mistake was a filter. Through 2018 the file states proficiency as a low bound and a high
+    bound, equal to each other where the group is large enough to publish exactly. In 2020 it
+    states the figure alone and leaves both bounds null. A reader that asked for the bounds got
+    nothing back and wrote down that there was nothing there.
+  </Gloss>
+  <AssertionCard assertion={eleven} />
+  <ChartFigure
+    id="years"
+    title="Two collapses, and only one of them is about children"
+    caption="Allen County's twelve districts weighted by tests taken. The fall between 2013–14 and 2015–16 is Ohio replacing its assessment, and 849 of the state's 858 districts fall with it. The gap at 2019–20 is the spring that was cancelled; the drop after it is not."
+    columns={['School year', 'Reading', 'Mathematics']}
+    rows={yrs.map((y, i) => [y, cread[i] ?? '—', cmath[i] ?? '—'])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="years" set:html={JSON.stringify(yearsSpec)} is:inline />
+  <AssertionCard assertion={limamath} />
+  <AssertionCard assertion={ohio} />
+
+  <h2>Forty-two buildings</h2>
+  <p>
+    The same file answers by school as well as by district, and a county school is a building with
+    a name on it. Asking one level down costs most of the answer: more than half of what the
+    collection says about these forty-two buildings is a range rather than a number, for no reason
+    except that a school holds fewer children than a district.
+  </p>
+  <AssertionCard assertion={banded} open />
+  <AssertionCard assertion={lowest} />
+  <ChartFigure
+    id="schools"
+    title="Eighteen schools the file will state exactly"
+    caption="Reading proficiency in 2018–19 at the county schools whose figures are published as numbers. Twenty-four more schools tested that year and were published as bands; every high school but one is among them."
+    columns={['School', 'Reading, per cent']}
+    rows={schoolCats.map((c, i) => [c, schoolVals[i]])}
+    height={380}
+  />
+  <script type="application/json" data-chart-spec="schools" set:html={JSON.stringify(schoolsSpec)} is:inline />
+  <AssertionCard assertion={seventeen} />
+  <AssertionCard assertion={highschool} />
+  <AssertionCard assertion={rose} />
+  <AssertionCard assertion={closed} />
+
+  <h2>A hundred children of legibility</h2>
+  <p>
+    A disclosure rule decides what may be printed, and the rule here has two thresholds rather than
+    one. A whole cohort becomes a number at 201 children. The same children, named as a kind — Black,
+    poor, disabled, learning English — become a number at 301. Neither boundary is approximate:
+    across a hundred thousand rows of two federal files there is no exception to either.
+  </p>
+  <AssertionCard assertion={hundred} open />
+  <AssertionCard assertion={white} />
+  <AssertionCard assertion={onlylima} />
+  <ChartFigure
+    id="race"
+    title="Fourteen points, through everything"
+    caption="Lima City, the only district in Allen County that tests more than three hundred Black pupils. The change of test in 2015 moved both lines about thirty points and left the distance between them where it was."
+    columns={['School year', 'White, reading', 'Black, reading', 'White, maths', 'Black, maths']}
+    rows={raceYrs.map((y, i) => [y, wr[i], br[i], wm[i], bm[i]])}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="race" set:html={JSON.stringify(raceSpec)} is:inline />
+  <AssertionCard assertion={gap} />
+  <AssertionCard assertion={limawhite} />
+  <AssertionCard assertion={poor} />
+  <ChartFigure
+    id="poor"
+    title="Where the two lines meet, the breakout is the district"
+    caption="Reading proficiency in 2018–19 for all pupils and for economically disadvantaged pupils, in the five districts whose disadvantaged group is large enough to publish. Perry and Lima classify their whole intake as disadvantaged, so the two figures are the same figure twice."
+    columns={['District', 'All pupils', 'Economically disadvantaged']}
+    rows={poorCats.map((c, i) => [c, poorAll[i], poorEd[i]])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="poor" set:html={JSON.stringify(poorSpec)} is:inline />
+  <AssertionCard assertion={wholedistrict} />
+  <AssertionCard assertion={disability} />
+  <AssertionCard assertion={learners} />
+  <Gloss>
+    The threshold exists to keep a small group of children from being identified, which is a good
+    reason. Its effect is that the categories it was written to protect are the categories hardest
+    to see: eleven legible rows a year in this county, nine of them white children, and not one
+    English learner in three years of asking.
+  </Gloss>
+</Article>
