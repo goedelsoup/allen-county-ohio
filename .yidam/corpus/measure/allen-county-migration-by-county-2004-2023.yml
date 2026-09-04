@@ -1,0 +1,93 @@
+class: measure
+label: Where Allen County's movers went and came from, 2004–2023
+description: |
+  **Forty-five counties are named in nineteen years of Allen County's migration record, in 697
+  published flows.** Everything smaller than ten returns a year is suppressed into a regional
+  residue, so the named counties account for 5,329 of the county's net loss of 9,171 exemptions and
+  the other 3,842 have a region and no county. [verified] —
+  [the IRS migration files](../../catalog/irs-county-migration.md), all nineteen pairs.
+
+  **The largest exchange is with the county next door and it is very nearly even.** 8,987 exemptions
+  left for Auglaize County over the nineteen years and 8,866 arrived from it — a churn of 17,853
+  people across one county line for a net of 121. [verified] — the same files.
+
+      county, 2004–23        out      in      net      net AGI $k
+      Auglaize             8,987   8,866     −121          −7,070
+      Franklin             4,907   2,871   −2,036         −48,411
+      Van Wert             4,236   4,224      −12            +606
+      Putnam               3,882   4,027     +145         +14,467
+      Hardin               3,421   3,596     +175          +8,241
+      Hancock              3,269   3,000     −269         −12,663
+      Delaware               487      55     −432         −17,258
+      Allen County, Ind.     961     635     −326          −6,414
+
+  **The five counties that touch Allen County take as many people as they give.** Auglaize, Van
+  Wert, Putnam, Hardin and Hancock come to a net of 82 people and a net gain of $3,581,000 across
+  nineteen years. [verified] — the same files, the five contiguous counties summed here.
+
+  **The loss is to the cities, and three quarters of the named part of it is nine counties.**
+  Franklin, Cuyahoga, Hamilton, Montgomery, Lucas, Summit, Delaware, Butler and Warren take a net
+  3,981 people and $113,815,000 out of this county over nineteen years. [verified] — the same files,
+  those nine counties summed here. Allen County draws from the countryside and loses to the
+  metropolis. [inference]
+
+  **Columbus alone is a fifth of everything.** Franklin County took 4,907 exemptions and sent back
+  2,871 — a net 2,036 people, 22.2 per cent of the county's whole net migration loss, and
+  $48,411,000. [verified] — the same files. No other county is within a quarter of it.
+
+  **The people who leave for Delaware County are the richest leavers in the record.** $38,579 of
+  adjusted gross income per exemption, against $23,638 for the average departure from this county.
+  [verified] — the same files, the fourteen years in which that flow was large enough to publish.
+  Delaware County is Columbus's northern suburb and is the highest-income county in Ohio.
+
+  **Two Allen Counties, and the Ohio one loses.** 961 exemptions left for Allen County, Indiana —
+  Fort Wayne — and 635 came back, a net 326 people and $6,414,000. [verified] — the same files.
+
+  **Five counties give this one more than they take, and all five are rural.** Hardin +175, Putnam
+  +145, Shelby +132, Mercer +101 and Defiance +50. [verified] — the same files. Every county with a
+  city of a hundred thousand people in it runs the other way. [inference]
+
+  **This corpus cannot say who any of these people are.** The file names counties and counts
+  exemptions on returns; it carries no age, no race, no occupation, no reason and nothing about the
+  3,842 net movers whose flows were too small to publish.
+
+  [open] Which of the leavers were students. Ohio State's Columbus campus and the county's own
+  colleges would put a large and reversible flow inside the Franklin County number, and no file here
+  separates a four-year absence from a move.
+properties:
+  parameter: net migration exemptions to Franklin County, 2004–05 to 2022–23
+  value: "-2036"
+  unit: exemptions
+  as_of: "2023"
+  method: |
+    Named flows only: rows whose other side is a real FIPS county code, excluding the summary codes
+    96, 97, 98, 57, 58 and 59 and excluding the non-migrant row where both sides are 39/003.
+    [verified] Each county's figures are summed across every year in which its flow was published,
+    so a county named in fourteen years and a county named in nineteen are not directly comparable
+    and the year count is stated where it matters. [verified]
+
+    The nine metropolitan counties are Franklin, Cuyahoga, Hamilton, Montgomery, Lucas, Summit,
+    Delaware, Butler and Warren — every Ohio county holding or bordering a city of over a hundred
+    thousand that appears in this record. The grouping is this corpus's and not the file's.
+    [inference]
+
+    The two anomalous file years, 2014–15 and 2016–17, are included in these nineteen-year sums
+    because the anomaly is a shift of returns between adjacent years and cancels across the pair.
+    [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/irs-county-migration.md
+  - target: allen-county-migration-flows-2004-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/irs-county-migration.md
+  - target: allen-county-population-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-college-enrollment-2010-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
