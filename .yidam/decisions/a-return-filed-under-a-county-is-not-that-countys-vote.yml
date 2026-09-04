@@ -1,0 +1,74 @@
+id: a-return-filed-under-a-county-is-not-that-countys-vote
+summary: >-
+  Under the heading ALLEN COUNTY, in the Secretary of State's report for 6 November 2012, stands a
+  question with 48,543 votes beside it. Allen County cast 48,708 ballots that day, on every office
+  and question together. The number is not this county's; it is six counties', and the report says
+  so in a footnote that is one line long.
+context: |
+  The convention is printed at the top of every page: `* denotes most populous county`. A political
+  subdivision that crosses a county line — a school district, a joint vocational district, a mental
+  health board, a city split by a boundary — is listed once, under whichever county holds most of
+  it, with the whole subdivision's vote beside it.
+
+  Two errors follow and they point in opposite directions.
+
+      Apollo Career Center Joint Vocational School District, 6 November 2012
+      (Allen*, Auglaize, Hancock, Hardin, Putnam & Van Wert)      21,642 yes   26,901 no
+      Allen County ballots cast, the same day                              48,708
+
+  The first error is the one above. 48,543 votes stand under this county's heading and 99.7 per
+  cent of every ballot cast in the county would have to have been one of them. Six counties voted;
+  the report attributes the total to one.
+
+  The second is invisible unless it is looked for. Where Allen is *not* the largest partner the
+  question is filed elsewhere, and reading only this county's section misses it. Ten questions the
+  county's voters were asked in these ten years are printed under PUTNAM COUNTY and three under
+  AUGLAIZE — Columbus Grove's bonds, Pandora-Gilboa's income tax, Waynesfield-Goshen's levy. That
+  is thirteen of a hundred and twelve, and none of them is anywhere near this county's heading.
+
+  Across the decade **thirty-seven of the hundred and twelve questions are multi-county**, a third
+  of them, and the figure is a floor: it counts only the subdivisions whose names carry the
+  parenthetical, and a mental health district named for three counties in prose carries none.
+decision: |
+  **A vote reported under a county heading is published as the subdivision's vote, never as the
+  county's, wherever the subdivision crosses a county line — and a search for what a county's
+  voters were asked reads every county's section, not that county's.**
+
+  Three things follow:
+
+  *The unit is the subdivision.* "Shawnee Local School District renewed its levy with 63.3 per cent"
+  is available. "Allen County voted 3,991 to 2,314" is not, and no arithmetic in this corpus turns
+  the first into the second.
+
+  *A share is safer than a count.* The yes share of a district-wide vote is a property of that
+  district and survives the convention intact; the vote totals do not aggregate to anything. Every
+  county-level statement in this corpus's ballot nodes is therefore a count of *questions* and a
+  rate of passage, never a sum of votes.
+
+  *Completeness costs a full scan.* The Allen County heading is not the county's ballot. Finding
+  the rest means parsing all eighty-eight counties and matching on the parenthetical, which is what
+  was done, and the thirteen it recovered are eleven per cent of the total.
+rationale: |
+  **The tell was arithmetic, not documentation.** The footnote explaining the convention is one
+  line among six on a page header and was read past. What could not be read past was 48,543 votes
+  in a county that cast 48,708 ballots — a figure this corpus could refute only because it already
+  held [the turnout series](../corpus/measure/allen-county-turnout-2004-2024.yml). A source with a
+  convention that quietly changes what a number counts is caught by a second source or not at all.
+
+  **It is the same defect as a rate over the wrong denominator, one level down.**
+  [a county rate can describe nowhere](a-county-rate-can-describe-nowhere.yml) governs a figure that
+  is genuinely the county's and describes none of its parts. This governs a figure that is not the
+  county's at all and is filed as though it were. The first is a fact about variance; this is a fact
+  about attribution, and no margin or interval would have caught it.
+
+  **Why the share survives and the count does not.** The convention moves the *boundary* of the
+  electorate, not the counting of it. Every voter in the Apollo district had one vote and the yes
+  share is the district's own answer; it is only the attempt to say which county cast them that
+  fails. A corpus about one county can still publish what its school districts decided, which is
+  most of what was wanted, provided it never says the county decided it.
+
+  **What this does not cover.** It says nothing about turnout on a multi-county question, because
+  the report gives no registration and no denominator. A district's yes share is available and its
+  participation rate is not.
+status: accepted
+date: "2026-09-04"
