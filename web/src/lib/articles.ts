@@ -1331,6 +1331,38 @@ export const ARTICLES: Article[] = [
       'place/gomer.yml',
     ],
   },
+  {
+    slug: 'sent-from-here-held-here',
+    title: 'Sent from here, held here',
+    dek: "Allen County had 627 of its people in Ohio's prisons in 2019 and 1,513 people in prisons inside it. Its imprisonment rate was below the state's in 1983 and half again above it in 2019, and its jail has been over capacity in twenty-one of twenty-nine years.",
+    section: 'government',
+    era: [1970, 2023],
+    assertions: [
+      'sent-from-here-and-held-here',
+      'from-two-hundred-and-twenty-four-to-nine-hundred-and-seventy-eight',
+      'ohio-stopped-and-this-county-did-not',
+      'fewer-sent-and-more-inside',
+      'the-criminal-caseload-did-not-move',
+      'the-ratio-is-not-a-length-of-stay',
+      'eight-times-as-likely',
+      'the-jail-rate-more-than-tripled',
+      'twenty-one-years-over-capacity',
+      'three-quarters-of-the-jail-is-pretrial',
+      'this-county-jails-above-the-state',
+      'an-eighth-of-the-county-and-a-third-of-the-jail',
+      'the-jail-series-is-a-sample',
+      'two-rows-that-pass-every-range-check',
+      'where-was-the-jail-counted',
+      'the-census-lost-a-hundred-and-forty-people',
+    ],
+    entries: [
+      'measure/allen-county-jail-1970-2023.yml',
+      'measure/allen-county-in-state-prison-1983-2019.yml',
+      'site/allen-county-justice-center.yml',
+      'measure/allen-county-court-caseloads-2007-2017.yml',
+      'measure/allen-county-group-quarters-2020.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */
