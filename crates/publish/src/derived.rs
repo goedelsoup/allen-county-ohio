@@ -9009,6 +9009,360 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["cannot say how Allen County voted on any question that crossed its own line"],
         figures: &[],
     },
+    Assertion {
+        id: "the-uninsured-fell-by-half-in-three-years",
+        statement: "Allen County had 4,904 fewer people under 65 without health insurance in 2016 \
+                    than in 2013, a fall of more than half, and 4,628 of it is people aged 18 to 64.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "Seventeen years of a modelled county estimate, and the county's uninsured population fell by more than half in three of them. [verified] \u{2014} [the Small Area Health Insurance Estimates](../../catalog/census-sahie.md), under 65, all incomes, both sexes."),
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**What fell was the adults.** The rate for people aged 18 to 64 went from 16.1 per cent in 2013 to 8.6 in 2016; the rate for people under 19 went from 5.2 to 4.0 and has never been above 7.4 in any year of the series. [verified] \u{2014} the same source, age categories 1 and 4. Of the 4,904 fewer uninsured people between 2013 and 2016, 4,628 are the fall in the 18-to-64 count alone."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "fewer uninsured, 2013 to 2016", value: 4904.0, literal: "4,904" },
+            Figure { label: "of that fall aged 18 to 64", value: 4628.0, literal: "4,628" },
+        ],
+    },
+    Assertion {
+        id: "the-children-were-already-covered",
+        statement: "The uninsured rate for Allen County residents aged 18 to 64 went from 16.1 per \
+                    cent in 2013 to 8.6 in 2016. The rate for those under 19 went from 5.2 to 4.0, \
+                    and it has never been above 7.4 in seventeen years.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**What fell was the adults.** The rate for people aged 18 to 64 went from 16.1 per cent in 2013 to 8.6 in 2016; the rate for people under 19 went from 5.2 to 4.0 and has never been above 7.4 in any year of the series. [verified] \u{2014} the same source, age categories 1 and 4. Of the 4,904 fewer uninsured people between 2013 and 2016, 4,628 are the fall in the 18-to-64 count alone."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "uninsured, 18\u{2013}64, 2013, per cent", value: 16.1, literal: "16.1" },
+            Figure { label: "uninsured, 18\u{2013}64, 2016, per cent", value: 8.6, literal: "8.6" },
+            Figure { label: "uninsured, under 19, 2016, per cent", value: 4.0, literal: "4.0" },
+        ],
+    },
+    Assertion {
+        id: "the-income-gradient-closed",
+        statement: "In 2013 Allen County residents at or below 138 per cent of the poverty line were \
+                    21.1 per cent uninsured against 12.7 per cent of those between 138 and 400 per \
+                    cent. By 2019 it was 9.7 against 9.0.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**The income gradient did not narrow so much as close.** In 2013 the county's residents at or below 138 per cent of the poverty line were 21.1 per cent uninsured against 12.7 per cent for those between 138 and 400. By 2019 it was 9.7 against 9.0, and the poorest band was better covered than the band at or below 200 per cent. [verified] \u{2014} the same file, income categories 3 and 5. Ohio expanded Medicaid to 138 per cent of poverty on 1 January 2014."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "uninsured at or below 138% of poverty, 2013", value: 21.1, literal: "21.1" },
+            Figure { label: "uninsured 138\u{2013}400% of poverty, 2013", value: 12.7, literal: "12.7" },
+            Figure { label: "uninsured at or below 138% of poverty, 2019", value: 9.7, literal: "9.7" },
+        ],
+    },
+    Assertion {
+        id: "the-model-was-told-about-the-programme",
+        statement: "Medicaid enrolment by age and sex is one of the inputs to the model that \
+                    produces this county's uninsured rate, so the file cannot be used to show that \
+                    expanding Medicaid is what cut it.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**That coincidence is as far as this file may be taken.** Medicaid enrolment by age and sex is one of the model's own inputs. [verified] \u{2014} the model input data page cited in [the source entry](../../catalog/census-sahie.md). See [a model fitted to a survey is not a second witness](../../decisions/a-model-fitted-to-a-survey-is-not-a-second-witness.yml)."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[],
+    },
+    Assertion {
+        id: "men-are-less-insured-in-every-year",
+        statement: "Men in Allen County have been less insured than women in every one of the \
+                    seventeen years the series covers, by between 1.2 and 3.4 points \u{2014} 14.5 \
+                    per cent against 11.1 in 2013, 7.8 against 6.5 in 2024.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**Men in this county are less insured than women in every one of the seventeen years.** The gap runs from 1.2 points to 3.4 and never closes or reverses: 14.5 against 11.1 in 2013, 7.8 against 6.5 in 2024. [verified] \u{2014} the same source, sex categories 1 and 2."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "narrowest gap, points", value: 1.2, literal: "1.2" },
+            Figure { label: "widest gap, points", value: 3.4, literal: "3.4" },
+            Figure { label: "men uninsured, 2013, per cent", value: 14.5, literal: "14.5" },
+            Figure { label: "women uninsured, 2013, per cent", value: 11.1, literal: "11.1" },
+        ],
+    },
+    Assertion {
+        id: "the-model-and-its-own-survey-part",
+        statement: "The survey this model is fitted to counts 4,410 county residents under 65 \
+                    without coverage in 2024, on a margin of 1,084; the model estimates 5,613. The \
+                    gap of 1,203 people is a property of the model.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**The survey the model is fitted to can be read on its own, and in 2024 it does not agree.** The American Community Survey's one-year estimate puts 4,410 \u{b1} 1,084 county residents under 65 without coverage in 2024, a rate of 5.6 \u{b1} 1.4 per cent, against the model's 5,613 and 7.1 \u{b1} 0.8. In 2021, 2022 and 2023 the two run within a quarter of a point of each other. [verified] \u{2014} [the survey's table B27001](../../catalog/census-acs-summary-file.md), one-year files for 2021 to 2024, summed here over the seven age bands under 65. The gap of 1,203 people is a property of the model."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "ACS one-year uninsured under 65, 2024", value: 4410.0, literal: "4,410" },
+            Figure { label: "SAHIE uninsured under 65, 2024", value: 5613.0, literal: "5,613" },
+            Figure { label: "gap, people", value: 1203.0, literal: "1,203" },
+        ],
+    },
+    Assertion {
+        id: "a-rank-that-moved-twenty-seven-places",
+        statement: "Allen County's rank among Ohio's 88 counties on its uninsured rate was 17th in \
+                    2011, 63rd in 2017 and 22nd in 2024, and it moved 27 places between 2017 and \
+                    2018 on a change of 0.3 points \u{2014} well inside its own margin.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**The county's rank among Ohio's 88 is worth less than its rate.** Allen was 17th in 2011, 63rd in 2017 and 22nd in 2024, and between 2017 and 2018 it moved 27 places on a change of 0.3 points \u{2014} well inside its own margin. [verified] \u{2014} the same source, all 88 county rows read for each year. See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml)."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "places moved, 2017 to 2018", value: 27.0, literal: "27" },
+            Figure { label: "change in rate, points", value: 0.3, literal: "0.3" },
+        ],
+    },
+    Assertion {
+        id: "an-older-series-that-does-not-join",
+        statement: "The same programme published county estimates for 2005 to 2007 from a different \
+                    survey: Allen County at 12.2 per cent in 2006 on a margin of 2.0, and 12.5 in \
+                    2007 on 1.7 \u{2014} intervals roughly twice as wide as anything after.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-insurance-2008-2024.yml", "**There is an older series and it is not the beginning of this one.** The same programme published county estimates for 2005 to 2007 from the Current Population Survey: Allen County at 12.2 \u{b1} 2.0 per cent in 2006 and 12.5 \u{b1} 1.7 in 2007, on intervals roughly twice as wide as anything after. [verified] \u{2014} [the same source](../../catalog/census-sahie.md), the CPS-based directory. The 2007 interval overlaps 2008's, and an overlap across a change of method is not a join. See [a before and after needs a before](../../decisions/a-before-and-after-needs-a-before.yml)."),
+        ],
+        answers: &["cannot say how many people in Allen County are enrolled in Medicaid"],
+        figures: &[
+            Figure { label: "uninsured, 2006, per cent", value: 12.2, literal: "12.2" },
+            Figure { label: "margin, 2006, points", value: 2.0, literal: "2.0" },
+            Figure { label: "uninsured, 2007, per cent", value: 12.5, literal: "12.5" },
+        ],
+    },
+    Assertion {
+        id: "a-third-of-the-children-are-on-medicaid",
+        statement: "8,595 of Allen County's 25,250 residents under 19 hold Medicaid and nothing \
+                    else. In Lima it is 5,336 of 8,990 \u{2014} three children in five.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-coverage-types-2023.yml", "**A third of the county's children are on Medicaid alone, and in Lima it is three in five.** 8,595 of 25,250 under 19 across the county; 5,336 of 8,990 in the city. [verified] \u{2014} the same table, at county and place grain. Employer coverage runs the other way: 47.5 per cent of the county's children and 26.5 per cent of Lima's."),
+        ],
+        answers: &["cannot say what any of this coverage pays for"],
+        figures: &[
+            Figure { label: "children on Medicaid only, county", value: 8595.0, literal: "8,595" },
+            Figure { label: "children under 19, county", value: 25250.0, literal: "25,250" },
+            Figure { label: "children on Medicaid only, Lima", value: 5336.0, literal: "5,336" },
+            Figure { label: "children under 19, Lima", value: 8990.0, literal: "8,990" },
+        ],
+    },
+    Assertion {
+        id: "one-resident-in-five-holds-public-coverage",
+        statement: "At least 19,767 people in Allen County \u{2014} one in five \u{2014} hold \
+                    Medicaid or other means-tested public coverage; 17,685 have it and nothing else \
+                    and 2,082 hold it with Medicare.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-coverage-types-2023.yml", "**At least 19,767 people in this county \u{2014} one in five \u{2014} hold means-tested public coverage.** 17,685 have it and nothing else and 2,082 hold it with Medicare; the residual combination rows will contain more. [verified] \u{2014} the same table, lines 7, 23, 39, 13, 29, 46 and 62, summed here."),
+        ],
+        answers: &["cannot say what any of this coverage pays for"],
+        figures: &[
+            Figure { label: "on means-tested public coverage", value: 19767.0, literal: "19,767" },
+            Figure { label: "on it and nothing else", value: 17685.0, literal: "17,685" },
+            Figure { label: "with Medicare as well", value: 2082.0, literal: "2,082" },
+        ],
+    },
+    Assertion {
+        id: "forty-one-uninsured-people-over-sixty-five",
+        statement: "41 of Allen County's 18,091 residents aged 65 and over have no health insurance. \
+                    At least 16,836 people in the county hold Medicare in some form, and 2,380 of \
+                    them are under 65.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-coverage-types-2023.yml", "**Nobody over 65 is uninsured.** 41 people of 18,091, which is 0.2 per cent, against 4.0 per cent of the county's under-65 residents. [verified] \u{2014} the same source. Only 5,660 of those 18,091 hold Medicare and nothing else; 11,968 hold two kinds or more. At least 16,836 people in the county hold Medicare in some form, and 2,380 of them are under 65. [verified] \u{2014} the same table, the Medicare-only and Medicare-combination lines of all four age groups, summed here."),
+        ],
+        answers: &["cannot say what any of this coverage pays for"],
+        figures: &[
+            Figure { label: "uninsured aged 65 and over", value: 41.0, literal: "41" },
+            Figure { label: "residents aged 65 and over", value: 18091.0, literal: "18,091" },
+            Figure { label: "holding Medicare in some form", value: 16836.0, literal: "16,836" },
+            Figure { label: "of them under 65", value: 2380.0, literal: "2,380" },
+        ],
+    },
+    Assertion {
+        id: "limas-coverage-is-not-its-poverty-rate",
+        statement: "Lima's uninsured rate is 7.0 per cent against its county's 6.3, a difference of \
+                    0.7 points against a combined margin of 1.4. The city holds 33.9 per cent of the \
+                    people in these tables and 64.1 per cent of the county's poor.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-coverage-types-2023.yml", "**Lima's uninsured rate is not distinguishable from its county's, and its poverty rate is roughly double.** 7.0 \u{b1} 1.2 per cent against 6.3 \u{b1} 0.7, a difference of 0.7 points against a combined margin of 1.4. [verified] \u{2014} the same tables, aggregated here with the margins combined in quadrature. The city holds 33.9 per cent of the people in these tables and 64.1 per cent of the county's poor. [verified] \u{2014} [the poverty tables](allen-county-income-and-poverty-2023.yml). What covers the poor is why. [inference]"),
+        ],
+        answers: &["cannot say what any of this coverage pays for"],
+        figures: &[
+            Figure { label: "Lima uninsured, per cent", value: 7.0, literal: "7.0" },
+            Figure { label: "county uninsured, per cent", value: 6.3, literal: "6.3" },
+            Figure { label: "Lima's share of the county's poor, per cent", value: 64.1, literal: "64.1" },
+        ],
+    },
+    Assertion {
+        id: "the-uninsured-are-men-in-their-thirties",
+        statement: "14.7 per cent of Allen County men aged 26 to 34 and 13.2 per cent of those aged \
+                    35 to 44 have no coverage, against 6.7 and 6.1 per cent of women the same ages. \
+                    In Lima the figure for men aged 35 to 44 is 23.8 per cent.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-coverage-types-2023.yml", "**The county's uninsured are men in their working middle years.** 14.7 per cent of men aged 26 to 34 and 13.2 per cent of men aged 35 to 44, against 6.7 and 6.1 per cent of women the same ages. [verified] \u{2014} the same source, table B27001. In Lima the figure for men aged 35 to 44 is 23.8 per cent \u{2014} 413 people of 1,733, on a margin of 191 \u{2014} against 3.5 per cent of the city's women that age."),
+        ],
+        answers: &["cannot say what any of this coverage pays for"],
+        figures: &[
+            Figure { label: "men 26\u{2013}34 uninsured, per cent", value: 14.7, literal: "14.7" },
+            Figure { label: "men 35\u{2013}44 uninsured, per cent", value: 13.2, literal: "13.2" },
+            Figure { label: "Lima men 35\u{2013}44 uninsured, per cent", value: 23.8, literal: "23.8" },
+        ],
+    },
+    Assertion {
+        id: "ninety-seven-of-three-hundred-and-four-trained-abroad",
+        statement: "Allen County has 304 physicians in patient care and 97 of them are graduates of \
+                    institutions outside the United States and Canada, against 207 who trained in \
+                    the United States.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-workforce-2023.yml", "**Nearly a third of the doctors seeing patients here trained abroad.** 97 of 304 are graduates of institutions outside the United States and Canada, against 207 who trained in the United States. [verified] \u{2014} the same file."),
+        ],
+        answers: &["cannot say whether any of these doctors saw a patient from Allen County"],
+        figures: &[
+            Figure { label: "graduates of institutions outside the US and Canada", value: 97.0, literal: "97" },
+            Figure { label: "physicians in patient care", value: 304.0, literal: "304" },
+            Figure { label: "US graduates", value: 207.0, literal: "207" },
+        ],
+    },
+    Assertion {
+        id: "fourth-in-ohio-for-primary-care-residents",
+        statement: "Allen County's 38 primary care residents are 37.7 per 100,000 residents, fourth \
+                    of Ohio's 88 counties behind Hamilton, Cuyahoga and Lucas and ahead of Summit. \
+                    Forty of the 88 train none.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-workforce-2023.yml", "**This county trains primary care doctors at Cleveland's rate.** Its 38 residents are 37.7 per 100,000 residents, fourth of Ohio's 88 counties behind Hamilton, Cuyahoga and Lucas and ahead of Summit; forty of the 88 train none. [verified] \u{2014} the same file, all 88 Ohio county rows read here against the file's own 2023 population estimate of 100,838."),
+        ],
+        answers: &["cannot say whether any of these doctors saw a patient from Allen County"],
+        figures: &[
+            Figure { label: "primary care residents", value: 38.0, literal: "38" },
+            Figure { label: "per 100,000 residents", value: 37.7, literal: "37.7" },
+        ],
+    },
+    Assertion {
+        id: "below-the-state-on-the-doctors-who-stay",
+        statement: "On primary care physicians who are not in training Allen County is eighteenth of \
+                    88 and below its state: 67 of them, 66.4 per 100,000 against Ohio's 76.7.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-workforce-2023.yml", "**On the primary care doctors who are not in training it is eighteenth, and below the state.** 67 of them, 66.4 per 100,000 against Ohio's 76.7. [verified] \u{2014} the same source. A resident is a doctor seeing patients and is also a doctor who will leave."),
+        ],
+        answers: &["cannot say whether any of these doctors saw a patient from Allen County"],
+        figures: &[
+            Figure { label: "primary care physicians, excluding residents", value: 67.0, literal: "67" },
+            Figure { label: "per 100,000", value: 66.4, literal: "66.4" },
+            Figure { label: "Ohio per 100,000", value: 76.7, literal: "76.7" },
+        ],
+    },
+    Assertion {
+        id: "six-psychiatrists-and-no-child-psychiatrist",
+        statement: "Allen County has six psychiatrists \u{2014} 6.0 per 100,000 against Ohio's 11.4 \
+                    \u{2014} of whom three are 65 or older, and it has no child psychiatrist. \
+                    Twenty-eight Ohio counties have no psychiatrist at all.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-workforce-2023.yml", "**The county has six psychiatrists and no child psychiatrist.** Six is 6.0 per 100,000 against the state's 11.4; three of the six are 65 or older and one is over 75. The single child psychiatrist on the 2022 file, aged between 55 and 64, is not on the 2023 file. [verified] \u{2014} the same source, by specialty and age band. Twenty-eight Ohio counties have no psychiatrist at all and fifty-eight have no child psychiatrist, so the county is not unusual; it is ordinary."),
+        ],
+        answers: &["cannot say whether any of these doctors saw a patient from Allen County"],
+        figures: &[
+            Figure { label: "psychiatrists per 100,000", value: 6.0, literal: "6.0" },
+            Figure { label: "Ohio psychiatrists per 100,000", value: 11.4, literal: "11.4" },
+        ],
+    },
+    Assertion {
+        id: "six-of-eight-obstetricians-are-fifty-five-or-older",
+        statement: "Of Allen County's eight obstetrician-gynaecologists, one is aged 35 to 44, one \
+                    45 to 54, four 55 to 64 and two 65 to 74.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-workforce-2023.yml", "**Six of the county's eight obstetrician-gynaecologists are 55 or older.** One is aged 35 to 44, one 45 to 54, four 55 to 64 and two 65 to 74; two further doctors of osteopathy practise the specialty and the file does not break out their ages. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say whether any of these doctors saw a patient from Allen County"],
+        figures: &[],
+    },
+    Assertion {
+        id: "more-practitioners-than-physicians",
+        statement: "Allen County has 221 nurse practitioners and 127 physician assistants against \
+                    304 physicians in patient care, and on nurse practitioners it is seventh of \
+                    Ohio's 88 counties at 219.2 per 100,000 against the state's 158.7.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-health-workforce-2023.yml", "**There are more nurse practitioners and physician assistants than physicians.** 221 and 127 against 304 in patient care, and on nurse practitioners the county is seventh of Ohio's 88 at 219.2 per 100,000 against the state's 158.7. [verified] \u{2014} the same source. These are counts of registrations with Medicare at an address in the county and not of the same universe as the masterfiles, which is why the ADA finds 40 dentists in private practice here and the identifier file finds 63. See [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml)."),
+        ],
+        answers: &["cannot say whether any of these doctors saw a patient from Allen County"],
+        figures: &[
+            Figure { label: "nurse practitioners", value: 221.0, literal: "221" },
+            Figure { label: "physician assistants", value: 127.0, literal: "127" },
+            Figure { label: "nurse practitioners per 100,000", value: 219.2, literal: "219.2" },
+        ],
+    },
+    Assertion {
+        id: "the-designation-is-the-countys-poor",
+        statement: "The federal primary care shortage designation covering Allen County is drawn on \
+                    its 32,355 low-income residents wherever in the county they live, of whom 14,781 \
+                    are recorded as underserved for primary care and 19,346 for dental.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-shortage-designations-1985-2026.yml", "**The county's designation is its poor, and it is not drawn on a map.** `LI- Allen County` covers the 32,355 residents at or below the low-income threshold wherever in the county they live, of whom 14,781 are recorded as underserved for primary care and 19,346 for dental. [verified] \u{2014} the same register. Saying \"Allen County is a shortage area\" describes a third of it; see [a designation is not a county](../../decisions/a-designation-is-not-a-county.yml)."),
+        ],
+        answers: &["cannot say whether anyone went without care"],
+        figures: &[
+            Figure { label: "low-income residents covered", value: 32355.0, literal: "32,355" },
+            Figure { label: "underserved, primary care", value: 14781.0, literal: "14,781" },
+            Figure { label: "underserved, dental", value: 19346.0, literal: "19,346" },
+        ],
+    },
+    Assertion {
+        id: "half-a-psychiatrist-for-fifty-thousand-people",
+        statement: "The county's mental health shortage designation records 0.5386 \
+                    full-time-equivalent psychiatrists against 52,022 low-income people \u{2014} a \
+                    ratio of 96,587 to one, measured against a goal of 20,000 to one.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-shortage-designations-1985-2026.yml", "**The mental health ratio is enormous because the provider count is a fraction.** 96,587 to one is 0.5386 full-time-equivalent psychiatrists against 52,022 low-income people in Mental Health Catchment Area 62, and the goal it is measured against is 20,000 to one. [verified] \u{2014} the same source. The county has six psychiatrists in all; see [the workforce](allen-county-health-workforce-2023.yml). The catchment area is not the county."),
+        ],
+        answers: &["cannot say whether anyone went without care"],
+        figures: &[
+            Figure { label: "full-time-equivalent psychiatrists", value: 0.5386, literal: "0.5386" },
+            Figure { label: "low-income people covered", value: 52022.0, literal: "52,022" },
+            Figure { label: "people per psychiatrist", value: 96587.0, literal: "96,587" },
+        ],
+    },
+    Assertion {
+        id: "the-map-came-down-after-forty-one-years",
+        statement: "South Side Lima \u{2014} census tracts 136, 137 and 138 \u{2014} was a shortage \
+                    area on the map from 4 April 1985. Its dental designation was withdrawn on 2 \
+                    October 1995 covering 10,234 people, and its primary care designation on 1 July \
+                    2026 covering 4,593.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-shortage-designations-1985-2026.yml", "**The map that stood for forty-one years came down on 1 July 2026.** `South Side Lima` was a geographic designation over census tracts 136, 137 and 138, made on 4 April 1985. Its dental half was withdrawn on 2 October 1995, covering 10,234 people of whom 32.0 per cent were below the poverty line; its primary care half was withdrawn on **1 July 2026**, covering 4,593 people of whom 29.5 per cent were. [verified] \u{2014} the same register, withdrawn rows retained with their dates. For most of the period this corpus covers, the federal record of shortage here was three tracts of a city. It is now a list of the poor of a county. [inference]"),
+        ],
+        answers: &["cannot say whether anyone went without care"],
+        figures: &[
+            Figure { label: "people covered, dental, at withdrawal", value: 10234.0, literal: "10,234" },
+            Figure { label: "people covered, primary care, at withdrawal", value: 4593.0, literal: "4,593" },
+        ],
+    },
+    Assertion {
+        id: "the-prison-is-designated-on-its-own",
+        statement: "Allen Oakwood Correctional Institution carries shortage designations of its own \
+                    in all three disciplines, and the primary care one records 0.0000 full-time \
+                    equivalents for 1,500 people.",
+        topic: "health",
+        supports: &[
+            support!("measure/allen-county-shortage-designations-1985-2026.yml", "**The prison is designated on its own, in all three disciplines.** Allen Oakwood Correctional Institution at 2338 North West Street carries a dental designation from 22 September 2011 at 0.6075 full-time equivalents for 1,663 people, a mental health designation from 14 March 2022 at 0.675, and a primary care designation from 15 November 2018 that records **0.0000 full-time equivalents for 1,500 people**. [verified] \u{2014} the same register. A zero in that column is what the file holds and may be an absence of reporting rather than an absence of clinicians. [inference]"),
+        ],
+        answers: &["cannot say whether anyone went without care"],
+        figures: &[
+            Figure { label: "people covered", value: 1500.0, literal: "1,500" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
