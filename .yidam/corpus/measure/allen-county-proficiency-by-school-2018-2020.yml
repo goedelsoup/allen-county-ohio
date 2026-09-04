@@ -1,0 +1,108 @@
+class: measure
+label: Reading and mathematics proficiency by school in Allen County, 2018 and 2020
+description: |
+  The same federal assessment file the corpus reads by district, asked instead by school: 42 named
+  buildings in the fall of 2018 and 41 in the fall of 2020, across the county's twelve districts.
+  [verified] — [EDFacts district outcomes](../../catalog/edfacts-outcomes.md), the school endpoint at
+  `grade-99`; see [the districts](allen-county-test-proficiency-2009-2020.yml).
+
+  **The measure that has no suppression at district level is more than half suppressed at school
+  level.** All 264 district cells in this collection are numbers. The same measure over the same
+  children by building gives 71 numbers, 91 bands and 4 cells withheld outright, out of 166.
+  [verified] — the same collection at both levels, counted here. Nothing about the schooling changed
+  between the two questions; the denominator did.
+
+      2018, as published                             reading    tests
+      Bluffton Elementary                                 87      270
+      Maplewood Elementary (Shawnee)                      84      380
+      Jefferson Middle (Delphos)                          81      234
+      Spencerville Middle                                 80      321
+      Columbus Grove Middle                               80      254
+      Bath Elementary                                     79      422
+      Shawnee Middle                                      79      816
+      Bluffton Middle                                     79      276
+      Allen East Elementary                               78      244
+      Bath Middle                                         76      453
+      Allen East Middle                                   72      249
+      Elida Middle                                        65      790
+      Elida Elementary                                    62      383
+      Perry Elementary                                    62      239
+      **Liberty Arts Magnet K-8 (Lima)**                  56      275
+      **Lima Senior High School**                         39      267
+      **Lima North Middle**                               31      388
+      **Lima West Middle**                                31      418
+
+  **The four lowest legible schools in the county are all in Lima and the gap to the fifth is six
+  points.** Lima West and Lima North read 31 per cent proficient, Lima Senior 39 and Liberty Arts
+  56, against Perry Elementary's 62 and a top of 87 at Bluffton. [verified] — the same file, sorted
+  here. Every one of those eighteen figures rests on between 234 and 816 tests.
+
+  **One school in the county tests mathematics at seventeen per cent.** Lima Senior High School,
+  249 tests in 2018 and 251 in 2020, published as 17 and then 16 — against 39 and 42 in reading in
+  the same two years. [verified] — the same file. Reading and mathematics part company at this one
+  building in a way they do at no other in the county.
+
+  **It is also the only high school here a reader may read.** Of the 48 high-school cells across the
+  two years and two subjects, five are numbers and four of the five are Lima Senior's; the fifth is
+  Elida High School's 2020 mathematics, on 224 tests. Every other high-school figure in the county is
+  a band, because Ohio tests one or two grades at that level and a county high school has between 38
+  and 199 of them. [verified] — the same file; see
+  [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml).
+
+  **Two of Lima's nine schools read higher in 2020 than in 2018 and the rest fell.** Lima Senior went
+  from 39 to 42 and the South Science-Technology Magnet K-8 from a band of `65-69` to one of `70-74`;
+  Unity Elementary went from `35-39` to `11-19`, Independence from `50-54` to `25-29`, and Lima North
+  Middle's mathematics from 22 per cent to 13. [verified] — the same file, both years. The two that
+  held are a high school and a magnet school.
+
+  **A school closed in Delphos and the district's count did not move.** Landeck Elementary reports 84
+  pupils and an open status in the fall of 2018, a closed status and no enrolment in 2019, and is
+  absent from the directory in 2020; Delphos falls from four schools to three and returns to four in
+  2021 with a preschool in the fourth place. [verified] —
+  [the Common Core of Data](../../catalog/nces-common-core-of-data.md), its school directory, 2018 to
+  2024; see [the buildings](allen-county-school-buildings-1986-2024.yml).
+
+  **One school in the county is withheld in every cell.** Elmwood Elementary in Shawnee Local tests
+  three pupils and returns the missing code in both subjects in both years — the only building here
+  with no published result at all. [verified] — the same file.
+
+  **This corpus cannot say what any of these schools does differently.** The file carries a name, a
+  count of tests and a proficiency figure, and nothing about a curriculum, a teacher, an intake or a
+  catchment; two buildings twenty points apart are twenty points apart in this file and for no stated
+  reason.
+
+  [open] Which children go to which building. The district assigns them and this collection does not
+  say how, so a school's figure cannot be read against the neighbourhood around it.
+properties:
+  parameter: schools with a published proficiency figure, Allen County
+  value: "42"
+  unit: schools
+  as_of: "2018"
+  method: |
+    One request per year to the EDFacts assessment endpoint for Ohio at the school level and
+    `grade-99`, 2018 and 2020, filtered here to schools whose `leaid` is one of the twelve districts
+    holding ground in Allen County. [verified] 3,259 Ohio school rows in 2018 and 3,187 in 2020, of
+    which 42 and 41 are this county's. A cell is counted as a number where `low` equals `high` or
+    where both bands are null with a figure beside them, as a band where they differ, and as
+    withheld where the figure carries a negative missing code. [verified] School names and the
+    closure of Landeck Elementary come from the Common Core of Data school directory for the same
+    years, which is a different collection from the same publisher. [verified]
+links:
+  - target: allen-county-test-proficiency-2009-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-school-buildings-1986-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nces-common-core-of-data.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
