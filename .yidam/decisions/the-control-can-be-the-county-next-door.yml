@@ -1,0 +1,69 @@
+id: the-control-can-be-the-county-next-door
+summary: >-
+  Allen County's out-migration falls 29 per cent in 2014–15 and rises 36 per cent in 2016–17, and no
+  documentation anywhere says why. Auglaize and Hancock counties do the same thing in the same two
+  years. Where a series break has no metadata, the control is not another measure of the same place
+  — it is the same measure of the places around it.
+context: |
+  The corpus already has two rules for a suspicious figure.
+  [The control is the figure that cannot move](the-control-is-the-figure-that-cannot-move.yml)
+  tests a number against a second number that could not have changed for the same reason.
+  [A reporting change has a date and a control](a-reporting-change-has-a-date-and-a-control.yml)
+  says to fetch the metadata that dates a reporting regime, cut the series at the documented break,
+  and run a within-agency control across it.
+
+  Neither is available here. [The migration file](../catalog/irs-county-migration.md) publishes no
+  agency record, no regime start date and no revision note; the two anomalous years sit in the
+  middle of a smooth nineteen-year series with nothing to mark them:
+
+      migrating exemptions out of a county
+      years    Allen    Auglaize    Hancock
+      1314     3,799       1,896      3,207
+      1415     2,661       1,372      2,301
+      1516     3,875       1,888      3,434
+      1617     5,097       2,546      4,453
+      1718     3,904       1,872      3,360
+
+  Read alone, Allen County lost a third fewer people than usual in one year and half again as many
+  as usual two years later. Read beside its neighbours, nothing happened in Allen County at all: one
+  year's matched returns arrived late and were counted in the next.
+decision: |
+  **Where a break in an administrative series has no documentation, take the control from geography
+  before concluding anything about the place.**
+
+  1. **Run the same measure, from the same file, for the units next to this one.** Neighbours share
+     an instrument and share almost nothing else — no county government, no employer, no school
+     district. A movement common to three adjacent counties in the same year is the file; a
+     movement in one is the county.
+
+  2. **Two neighbours, not one.** One neighbour that moves together may be moving with this county
+     for a real reason — a plant on the line, a road closed, a flood. Three counties moving together
+     in the same two years, in a series where they otherwise do not, is an instrument.
+
+  3. **Do not repair the years. Name them and exclude them from any rate.** The corpus publishes
+     nineteen years and says which two are the file's. Interpolating them would put a number in the
+     series that no agency ever produced.
+
+  4. **A geographic control fails the same way the others do.** If the neighbours are flat and this
+     county moves, that is not proof the movement is real — it only fails to prove it is the
+     instrument. The test is one-sided, as it was for the sheriff's offenses.
+rationale: |
+  **This is the third shape of control and the first that does not need the publisher's cooperation.**
+  A figure that cannot move needs a second variable. A documented regime change needs the
+  publisher to have written the date down somewhere. A geographic control needs only that the file
+  covers more than one place, which almost every federal county file does — and this corpus holds a
+  dozen of them.
+
+  **It is cheap and it should be routine.** Reading two neighbouring counties out of a file already
+  on disk costs one more pass. Against that, the finding it prevents here would have been
+  publishable and wrong: *migration out of Allen County collapsed in 2015 and nearly doubled by
+  2017*, with a chart, from a federal source, at the exact moment a reader would want an explanation
+  for a shrinking county.
+
+  **What it does not license.** Discarding a county's own history because its neighbours differ.
+  Allen County really does lose people to migration in all nineteen years and its neighbours do not
+  all do that; the rule fires on *coincident* movement in an anomalous direction, not on any
+  divergence from a regional average. A county that is different from its neighbours is the ordinary
+  case and the reason to write about one.
+status: accepted
+date: "2026-09-04"
