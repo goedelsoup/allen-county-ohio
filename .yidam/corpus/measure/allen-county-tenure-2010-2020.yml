@@ -1,0 +1,153 @@
+class: measure
+label: Who owns Allen County's houses, 2010 and 2020
+description: |
+  The county's owner-occupancy rate is the one figure of this kind the corpus already had, from a
+  survey. [verified] — [the housing stock](allen-county-housing-stock-2023.yml). Counted instead of
+  estimated, and split three ways rather than two, it is a different story: **the county lost 1,342
+  households that own with a mortgage and gained 616 that own outright and 1,042 that rent.**
+  [verified] — [the 2020 characteristics file](../../catalog/census-2020-dhc.md) and
+  [the 2010 summary file](../../catalog/census-2010-sf1.md), table H4 in both.
+
+      Allen County                     2010     2020    change
+      occupied housing units         40,619   40,935      +316
+      owner occupied                 28,099   27,373      -726
+        with a mortgage or loan      18,356   17,014    -1,342
+        owned free and clear          9,743   10,359      +616
+      renter occupied                12,520   13,562    +1,042
+      owner-occupancy rate            69.2%    66.9%     -2.3pt
+
+  **The survey does not publish the middle two rows and they are where the decade happened.** Owner
+  occupancy fell 2.3 points and the count of owners fell by 726, but the mortgaged fell by 1,342 —
+  nearly twice as far — because 616 households moved the other way and finished paying. [inference]
+  — the same two tables, differenced here. A count of owners is two populations that behave
+  differently and this corpus had been reading them as one.
+
+  **Ohio did the same thing and this county did it harder.** The state's mortgaged owners fell 4.4
+  per cent over the decade and Allen County's fell 7.3; the state's outright owners rose 14.0 per
+  cent and this county's 6.3. [verified] — the same two files, state rows. So the direction is the
+  state's and the size is not, and the county ends the decade with 37.8 per cent of its owners
+  holding no mortgage against Ohio's 33.9.
+
+  **On that measure the county is 51st of Ohio's 88.** Monroe County on the Ohio River is 60.1 per
+  cent free and clear and Delaware County north of Columbus is 22.1. [verified] — the same file, all
+  88 county rows read here. Owning a house outright is what happens where houses are cheap and
+  people stay, and this county is in the middle of both.
+
+  **On the ownership rate itself it is 73rd of 88, and that is not the middle.** 66.9 per cent
+  against Geauga County's 86.6 and Franklin County's 51.3; Putnam County, next door, is second in
+  the state at 83.8. [verified] — the same 88 rows.
+
+  **The county seat stopped being a city of owners between the two censuses.** Lima was 50.6 per
+  cent owner-occupied in 2010 and 45.9 in 2020, and it did it with the number of occupied units
+  almost unchanged — 14,221 and 14,237. 663 owner households became 679 renter households.
+  [verified] — the same two files, at place grain; the arithmetic is computed here.
+
+      Lima                             2010     2020    change
+      occupied housing units         14,221   14,237       +16
+      owner occupied                  7,191    6,528      -663
+        with a mortgage or loan       4,786    4,069      -717
+        owned free and clear          2,405    2,459       +54
+      renter occupied                 7,030    7,709      +679
+
+  **Urban and rural Allen County are 24.7 points apart on ownership and identical on
+  mortgages.** The county's urban part is 59.7 per cent owner-occupied and its rural part 84.4; of
+  those owners, 37.8 per cent and 37.9 per cent respectively own free and clear. [verified] — the
+  same file, geographic components 01 and 43 of the county record. The thing that separates the two
+  halves of this county is whether a household owns at all, not whether it has finished paying.
+  [inference]
+
+  **A White householder in this county is twice as likely to own as a Black one.** 72.5 per cent
+  against 36.4 — a gap of 36.1 points on 33,629 and 4,908 households. [verified] — the same file,
+  table H10, tenure by race of householder.
+
+      2020, householder's race            households    owning    share
+      White alone                             33,629    24,386    72.5%
+      Black or African American alone          4,908     1,785    36.4%
+      Asian alone                                302       200    66.2%
+      Two or more races                        1,567       793    50.6%
+      Some other race alone                      397       160    40.3%
+      American Indian and Alaska Native          123        47    38.2%
+
+  **The county-wide gap is wider than the gap in either half of the county, and both halves are
+  real.** Inside Lima it is 20.3 points, 52.9 per cent against 32.6. Outside Lima it is 29.8, 80.0
+  per cent against 50.2. The county figure of 36.1 exceeds both because Black households are 78.6
+  per cent Lima's and White households 27.7 per cent, and Lima is the only subdivision in the county
+  where a majority of households rent. [verified] — the same table, county and place records, with
+  the outside-Lima figures the difference between them. See
+  [a county rate can describe nowhere](../../decisions/a-county-rate-can-describe-nowhere.yml),
+  which this sharpens: a county *difference* can be larger than the difference in every part of the
+  county.
+
+  **Over the decade the number of Black households in this county rose by 379 and the number that
+  own fell by 71.** 4,529 to 4,908 households, 1,856 to 1,785 owners, 2,673 to 3,123 renters.
+  [inference] — [the 2010 file](../../catalog/census-2010-sf1.md) against the 2020 one. This is the
+  one comparison here that the change in race coding can reach: the corpus has established that the
+  2020 write-in coding moved households between the White-alone and multiple-race rows, and this
+  county's multiple-race households went from 517 to 1,567 on it. [verified] — see
+  [the race series](allen-county-population-by-race-1970-2020.yml). What limits the damage is that
+  the Black-alone *population* of the county barely moved across the same two censuses, 12,639 to
+  12,573.
+
+  **Renters here live alone and owners do not.** 40.8 per cent of the county's renter households are
+  one person against 25.0 per cent of owner households; in Lima the owner figure is 33.5.
+  [verified] — the same file, table H12.
+
+  **This corpus cannot say how much of the county's thirty-six-point ownership gap is the city.**
+  The gap survives inside Lima at twenty points and outside it at thirty, so it is not only an
+  address; separating what remains would need income, age, length of residence and the order in
+  which a household arrived at its tenure, and this file carries a householder's race and nothing
+  else about them. [verified] — the table's own shells in
+  [the table matrix](../../catalog/census-2020-dhc.md).
+
+  [open] Whether the mortgages that ended were paid off or foreclosed. The corpus holds the county's
+  foreclosure filings only for 2007–2017 and its lending record only from 2018, so the two ends of
+  the decade are covered and the middle of it is not. See
+  [the foreclosures](allen-county-foreclosures-and-evictions-2007-2017.yml) and
+  [the lending](allen-county-home-lending-2018-2024.yml).
+properties:
+  parameter: owner-occupied housing units, Allen County
+  value: "27373"
+  unit: owner-occupied housing units
+  as_of: 2020-04-01
+  method: |
+    Table H4 of the 2020 Demographic and Housing Characteristics File, segment 1, data fields 9 to
+    12, and table H10 at fields 143 to 159; table H4 of 2010 Summary File 1, segment 44, fields 4 to
+    7, and table H14 at fields 79 to 95. Both joined to their geographic headers on LOGRECNO.
+    [verified] The denominator of every ownership rate here is occupied units, not housing units.
+    [verified]
+
+    Outside-Lima figures are the county record minus the Lima place record, which is exact because
+    Lima lies wholly inside the county and the two files agree with the thirteen subdivisions'
+    sums. [verified] The 88-county rankings are computed over every county record in the Ohio file.
+    [inference]
+
+    Occupancy and tenure in the 2020 file are protected figures rather than enumerated ones, and no
+    interval is published for them; the housing-unit totals they sit inside are invariant. [verified]
+    — see
+    [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml).
+    No claim here rests on a block or on a difference of less than a point.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: allen-county-vacancy-status-2010-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: allen-county-housing-stock-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-lending-denial-gap-2018-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-population-by-race-1970-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2010-sf1.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
