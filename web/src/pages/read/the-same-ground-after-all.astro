@@ -1,0 +1,77 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const begun = assertion('the-plant-was-begun-in-may-1942')
+const cancelled = assertion('the-mission-was-cancelled-before-the-plant-was-finished')
+const hundred = assertion('a-hundred-thousand-vehicles-passed-through-lima')
+const b147 = assertion('building-147-is-the-war-still-standing')
+const held = assertion('the-ground-stayed-at-163-acres')
+
+const expansion = assertion('the-deed-was-an-expansion-not-a-founding')
+const houses = assertion('four-farmhouses-are-numbered-buildings')
+const coord = assertion('the-coordinate-sits-on-the-1951-land')
+const same = assertion('the-depot-is-the-plant-under-its-first-name')
+
+const names = assertion('four-names-for-one-installation')
+const gd = assertion('general-dynamics-has-operated-it-since-1982')
+const idle = assertion('the-plant-was-nearly-idle-through-vietnam')
+const dig = assertion('no-archeologist-has-looked-at-this-ground')
+
+const acreCats = ['May 1942', '1943', 'June 1951', 'mid-1970s']
+const acreVals = [170, 163, 458, 373]
+
+const acreSpec = bar(acreCats, acreVals, {
+  yTitle: 'Acres in the installation',
+  labelValues: true,
+})
+---
+
+<Article slug="the-same-ground-after-all">
+  <p>
+    The Recorder's tract books abstract Allen County's ground by piece rather than by owner, and
+    reading the sheet for the north-west quarter of section 14 gave five warranty deeds of June
+    1951 conveying it to the United States from five private owners. Before them the quarter was a
+    mortgaged farm, leased to a fishing and game club, crossed by pipeline easements. All of that
+    is true and none of it is about when the tank plant was built.
+  </p>
+
+  <h2>May 1942</h2>
+  <AssertionCard assertion={begun} open />
+  <AssertionCard assertion={cancelled} />
+  <AssertionCard assertion={b147} />
+  <AssertionCard assertion={hundred} />
+  <AssertionCard assertion={held} />
+  <ChartFigure
+    id="acres"
+    title="Sixty acres of an installation, read as the whole of it"
+    caption="The Lima installation's size at four dates. The 1951 purchase added 295 acres south-east of a base that had stood at 163 acres for eight years; the quarter section this county's deed record describes is part of that addition."
+    columns={['When', 'Acres']}
+    rows={acreCats.map((c, i) => [c, acreVals[i]])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="acres" set:html={JSON.stringify(acreSpec)} is:inline />
+
+  <h2>What the deeds were actually evidence of</h2>
+  <AssertionCard assertion={expansion} open />
+  <AssertionCard assertion={houses} />
+  <AssertionCard assertion={coord} />
+  <Gloss>
+    The mistake was one of size, not of reading. A conveyance describes a parcel and says nothing
+    beyond its metes, and sixty acres of a four-hundred-and-fifty-eight-acre installation cannot
+    date the installation. The caveat was even written down — <em>it covers one quarter section;
+    the installation may hold ground in others</em> — on the very node the wrong conclusion was
+    drawn from.
+  </Gloss>
+  <AssertionCard assertion={same} />
+
+  <h2>One place, four names</h2>
+  <AssertionCard assertion={names} open />
+  <AssertionCard assertion={gd} />
+  <AssertionCard assertion={idle} />
+  <AssertionCard assertion={dig} />
+</Article>

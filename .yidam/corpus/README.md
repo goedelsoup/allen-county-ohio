@@ -37,17 +37,20 @@ Sorted by: kind, then alphabetically.
 | [davis-v-watkins.yml](event/davis-v-watkins.yml) | event | Davis v. Watkins, 1973–1980 | 3 | 10v / 2i / 1o | 100 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 6v / 0i / 2o | 60 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
-| [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 7v / 3i / 2o | 63 |
+| [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 8v / 3i / 2o | 70 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
+| [lima-returns-to-mayor-and-council-1933.yml](event/lima-returns-to-mayor-and-council-1933.yml) | event | Lima returns to mayor and council, 1933 | 3 | 3v / 1i / 1o | 43 |
 | [organization-of-the-town-of-lima-1842.yml](event/organization-of-the-town-of-lima-1842.yml) | event | The organization of the town of Lima | 3 | 6v / 0i / 1o | 53 |
 | [ottawa-removal.yml](event/ottawa-removal.yml) | event | Removal of the Ottawa from the Auglaize and Ottawa river reserves | 2 | 0v / 1i / 1o | 25 |
 | [renaming-of-german-township-1918.yml](event/renaming-of-german-township-1918.yml) | event | The renaming of German Township | 4 | 5v / 1i / 2o | 57 |
 | [reorganization-of-1848.yml](event/reorganization-of-1848.yml) | event | The reorganization of February 28, 1848 | 3 | 8v / 2i / 1o | 75 |
 | [settlers-occupy-fort-amanda-1817.yml](event/settlers-occupy-fort-amanda-1817.yml) | event | Settlers occupy the blockhouses at Fort Amanda, 1817 | 3 | 7v / 1i / 0o | 53 |
+| [the-army-builds-at-lima-1942.yml](event/the-army-builds-at-lima-1942.yml) | event | The Army begins building south of Lima, May 1942 | 4 | 6v / 1i / 1o | 72 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
+| [the-buses-replace-the-streetcars-1938.yml](event/the-buses-replace-the-streetcars-1938.yml) | event | Motor buses begin replacing Lima's street cars, 1938 | 2 | 3v / 0i / 1o | 34 |
 | [the-contested-commissioner-election-of-1920.yml](event/the-contested-commissioner-election-of-1920.yml) | event | The contested commissioner election of 1920 | 2 | 4v / 1i / 1o | 40 |
 | [the-execution-of-andrew-brentlinger-1872.yml](event/the-execution-of-andrew-brentlinger-1872.yml) | event | The execution of Andrew Brentlinger, 1872 | 4 | 7v / 2i / 2o | 62 |
-| [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 4v / 2i / 1o | 52 |
+| [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 6v / 4i / 1o | 66 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 3 | 5v / 1i / 1o | 48 |
@@ -59,7 +62,7 @@ Sorted by: kind, then alphabetically.
 | [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 4v / 3i / 1o | 60 |
 | [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 3v / 3i / 1o | 47 |
 | [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 6v / 4i / 1o | 55 |
-| [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States buys the tank plant's ground | 3 | 3v / 2i / 3o | 56 |
+| [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States expands the tank plant, June 1951 | 3 | 7v / 3i / 3o | 79 |
 | [the-windstorm-of-22-june-2006.yml](event/the-windstorm-of-22-june-2006.yml) | event | The windstorm of 22 June 2006 | 3 | 7v / 3i / 1o | 62 |
 | [the-winter-storms-of-2004-2005.yml](event/the-winter-storms-of-2004-2005.yml) | event | The winter storms of December 2004 and January 2005 | 2 | 6v / 1i / 1o | 51 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
@@ -325,7 +328,7 @@ Sorted by: kind, then alphabetically.
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
 | [lima-snowfall-1901-2025.yml](measure/lima-snowfall-1901-2025.yml) | measure | Lima snowfall, 1901–2025 | 2 | 10v / 4i / 1o | 78 |
 | [lima-state-hospital-in-the-reports-1920-2021.yml](measure/lima-state-hospital-in-the-reports-1920-2021.yml) | measure | Lima State Hospital in the published reports, 1920–2021 | 4 | 6v / 4i / 1o | 86 |
-| [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 7v / 2i / 1o | 63 |
+| [lima-street-railway-1878-1921.yml](measure/lima-street-railway-1878-1921.yml) | measure | Lima's street railway under four names, 1878–1921 | 2 | 9v / 4i / 1o | 76 |
 | [miami-and-erie-canal-deep-cut-2026.yml](measure/miami-and-erie-canal-deep-cut-2026.yml) | measure | The Deep Cut, measured, 2026 | 5 | 12v / 4i / 1o | 111 |
 | [miami-and-erie-canal-in-allen-county-2026.yml](measure/miami-and-erie-canal-in-allen-county-2026.yml) | measure | The Miami and Erie Canal in Allen County, 2026 | 5 | 13v / 3i / 1o | 95 |
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
@@ -377,7 +380,7 @@ Sorted by: kind, then alphabetically.
 | [institute-for-orthopaedic-surgery.yml](organization/institute-for-orthopaedic-surgery.yml) | organization | Institute for Orthopaedic Surgery | 2 | 6v / 1i / 0o | 55 |
 | [james-a-rhodes-state-college.yml](organization/james-a-rhodes-state-college.yml) | organization | James A. Rhodes State College | 2 | 6v / 1i / 2o | 50 |
 | [kindred-hospital-lima.yml](organization/kindred-hospital-lima.yml) | organization | Kindred Hospital Lima | 2 | 6v / 1i / 1o | 52 |
-| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 2v / 3i / 1o | 41 |
+| [lima-locomotive-works.yml](organization/lima-locomotive-works.yml) | organization | Lima Locomotive Works | 2 | 3v / 3i / 1o | 48 |
 | [lima-memorial-health-system.yml](organization/lima-memorial-health-system.yml) | organization | Lima Memorial Health System | 2 | 8v / 2i / 1o | 68 |
 | [lima-public-library.yml](organization/lima-public-library.yml) | organization | Lima Public Library | 2 | 7v / 1i / 1o | 50 |
 | [lima-refining-company.yml](organization/lima-refining-company.yml) | organization | Lima Refining Company | 2 | 6v / 0i / 1o | 39 |
@@ -403,7 +406,7 @@ Sorted by: kind, then alphabetically.
 | [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 20v / 14i / 2o | 240 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 5 | 9v / 9i / 2o | 103 |
 | [the-civil-war-in-allen-county.yml](period/the-civil-war-in-allen-county.yml) | period | The Civil War in Allen County | 4 | 3v / 5i / 3o | 82 |
-| [the-second-world-war-in-allen-county.yml](period/the-second-world-war-in-allen-county.yml) | period | The Second World War in Allen County | 2 | 8v / 4i / 3o | 71 |
+| [the-second-world-war-in-allen-county.yml](period/the-second-world-war-in-allen-county.yml) | period | The Second World War in Allen County | 2 | 9v / 4i / 3o | 78 |
 | [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 4 | 8v / 2i / 2o | 71 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
@@ -550,13 +553,12 @@ Sorted by: kind, then alphabetically.
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 5 | 16v / 8i / 1o | 144 |
 | [fort-amanda.yml](site/fort-amanda.yml) | site | Fort Amanda | 2 | 15v / 2i / 0o | 98 |
 | [hay-road-bridge.yml](site/hay-road-bridge.yml) | site | The Hay Road bridge over the Auglaize River | 2 | 7v / 5i / 1o | 65 |
-| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 3 | 18v / 10i / 3o | 176 |
-| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 2v / 4i / 2o | 51 |
+| [lima-army-tank-plant.yml](site/lima-army-tank-plant.yml) | site | Joint Systems Manufacturing Center (Lima Army Tank Plant) | 3 | 26v / 12i / 1o | 231 |
+| [lima-locomotive-works-plant.yml](site/lima-locomotive-works-plant.yml) | site | Lima Locomotive Works (plant) | 3 | 3v / 4i / 2o | 53 |
 | [lima-memorial-hall.yml](site/lima-memorial-hall.yml) | site | Allen County Memorial Hall | 2 | 6v / 4i / 0o | 57 |
 | [lima-pennsylvania-railroad-depot.yml](site/lima-pennsylvania-railroad-depot.yml) | site | Lima Pennsylvania Railroad Passenger Depot | 2 | 6v / 1i / 1o | 42 |
 | [lima-refinery.yml](site/lima-refinery.yml) | site | Lima Refinery | 7 | 11v / 5i / 2o | 130 |
 | [lima-state-hospital.yml](site/lima-state-hospital.yml) | site | Lima State Hospital | 3 | 14v / 7i / 2o | 108 |
-| [lima-tank-depot.yml](site/lima-tank-depot.yml) | site | Lima Tank Depot | 2 | 8v / 4i / 4o | 87 |
 | [miami-and-erie-canal.yml](site/miami-and-erie-canal.yml) | site | Miami and Erie Canal | 3 | 16v / 4i / 1o | 121 |
 | [national-lime-and-stone-lima-quarry.yml](site/national-lime-and-stone-lima-quarry.yml) | site | National Lime & Stone, Lima Plant | 4 | 6v / 2i / 1o | 60 |
 | [oakwood-correctional-facility.yml](site/oakwood-correctional-facility.yml) | site | Oakwood Correctional Facility | 2 | 4v / 3i / 1o | 48 |

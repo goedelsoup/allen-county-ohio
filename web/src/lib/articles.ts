@@ -1210,7 +1210,7 @@ export const ARTICLES: Article[] = [
   {
     slug: 'two-tank-plants',
     title: 'Two tank plants',
-    dek: 'Two tank installations, two years and a category apart — and what the war did to a locomotive builder’s books.',
+    dek: 'Two tank installations, a year and a category apart — and the one that turned out to be the plant standing there now.',
     section: 'history',
     era: [1939, 1947],
     assertions: [
@@ -1219,9 +1219,9 @@ export const ARTICLES: Article[] = [
     ],
     entries: [
       'site/lima-army-tank-plant.yml',
-      'site/lima-tank-depot.yml',
       'organization/lima-locomotive-works.yml',
       'event/the-united-states-buys-the-tank-plant-ground-1951.yml',
+      'event/the-army-builds-at-lima-1942.yml',
     ],
   },
   {
@@ -1612,6 +1612,50 @@ export const ARTICLES: Article[] = [
     entries: [
       'measure/allen-county-proficiency-by-school-2018-2020.yml',
       'measure/allen-county-proficiency-by-subgroup-2013-2020.yml',
+    ],
+  },
+  {
+    slug: 'the-same-ground-after-all',
+    title: 'The same ground after all',
+    dek: 'Five deeds said the tank plant was bought in 1951 and this site believed them past their edges. The Army\u2019s own report dates the installation to May 1942.',
+    section: 'history',
+    era: [1942, 1984],
+    assertions: [
+      'the-plant-was-begun-in-may-1942',
+      'the-mission-was-cancelled-before-the-plant-was-finished',
+      'a-hundred-thousand-vehicles-passed-through-lima',
+      'building-147-is-the-war-still-standing',
+      'the-ground-stayed-at-163-acres',
+      'the-deed-was-an-expansion-not-a-founding',
+      'four-farmhouses-are-numbered-buildings',
+      'the-coordinate-sits-on-the-1951-land',
+      'the-depot-is-the-plant-under-its-first-name',
+      'four-names-for-one-installation',
+      'general-dynamics-has-operated-it-since-1982',
+      'the-plant-was-nearly-idle-through-vietnam',
+      'no-archeologist-has-looked-at-this-ground',
+    ],
+    entries: [
+      'event/the-army-builds-at-lima-1942.yml',
+      'site/lima-army-tank-plant.yml',
+    ],
+  },
+  {
+    slug: 'thirty-years-past-the-last-history',
+    title: 'Thirty years past the last history',
+    dek: 'A chamber of commerce booklet of 1952 is the newest narrative account of this county on the shelf, and four things it says are dates nothing else here could give.',
+    section: 'history',
+    era: [1886, 1951],
+    assertions: [
+      'limas-mayor-came-back-in-1933',
+      'the-commission-form-lasted-eleven-years',
+      'the-buses-began-in-1938',
+      'two-histories-and-one-fourth-of-july',
+      'the-locomotive-works-ended-as-baldwin-lima-hamilton',
+    ],
+    entries: [
+      'event/lima-returns-to-mayor-and-council-1933.yml',
+      'event/the-buses-replace-the-streetcars-1938.yml',
     ],
   },
 ]

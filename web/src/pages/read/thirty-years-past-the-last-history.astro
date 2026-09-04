@@ -1,0 +1,39 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+
+const mayor = assertion('limas-mayor-came-back-in-1933')
+const eleven = assertion('the-commission-form-lasted-eleven-years')
+const buses = assertion('the-buses-began-in-1938')
+const july = assertion('two-histories-and-one-fourth-of-july')
+const baldwin = assertion('the-locomotive-works-ended-as-baldwin-lima-hamilton')
+---
+
+<Article slug="thirty-years-past-the-last-history">
+  <p>
+    Allen County was written up three times — in 1885, in 1906 and in 1921 — and then not again in
+    any book on this shelf. Ninety-seven entries here rest on the last of the three, and every
+    question they leave open about the twentieth century runs into the same wall: the book was
+    printed before the thing happened. A forty-six page booklet by Frank M. Hackman, published by
+    the Lima Association of Commerce in February 1952, moves the wall thirty years.
+  </p>
+
+  <h2>The mayor</h2>
+  <AssertionCard assertion={mayor} open />
+  <AssertionCard assertion={eleven} />
+
+  <h2>The street cars</h2>
+  <AssertionCard assertion={buses} />
+  <AssertionCard assertion={july} />
+  <Gloss>
+    The booklet was written to win an argument. Its second half is a petition asking a state
+    committee to route the Anthony Wayne Parkway through Allen County, and its industrial passages
+    read the way a chamber of commerce writes. Dates and institution names are taken from it here.
+    Rankings and superlatives are not.
+  </Gloss>
+
+  <h2>The locomotive works</h2>
+  <AssertionCard assertion={baldwin} />
+</Article>
