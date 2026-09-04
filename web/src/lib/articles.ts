@@ -1549,6 +1549,38 @@ export const ARTICLES: Article[] = [
       'jurisdiction/allen-county-government.yml',
     ],
   },
+  {
+    slug: 'where-they-went',
+    title: 'Where they went',
+    dek: "Nineteen years of tax returns changing address, and Allen County lost people in every one of them. The border with its neighbours comes to a net of eighty-two people; Columbus alone took two thousand.",
+    section: 'people',
+    era: [2004, 2023],
+    assertions: [
+      'nineteen-years-nineteen-losses',
+      'three-hundred-and-fifty-five-million-left',
+      'the-leavers-out-earned-the-arrivers',
+      'the-income-gap-is-closing',
+      'more-than-half-who-leave-ohio-go-south',
+      'two-years-that-are-the-file',
+      'the-tax-file-finds-a-smaller-loss',
+      'foreign-migration-stops-being-published',
+      'forty-five-counties-and-six-hundred-and-ninety-seven-flows',
+      'seventeen-thousand-crossings-of-one-county-line',
+      'the-border-comes-to-eighty-two',
+      'the-loss-is-to-the-cities',
+      'columbus-is-a-fifth-of-everything',
+      'the-richest-leavers-go-to-delaware-county',
+      'two-allen-counties-and-the-ohio-one-loses',
+      'five-rural-counties-give-more-than-they-take',
+      'where-the-missing-people-went',
+    ],
+    entries: [
+      'measure/allen-county-migration-flows-2004-2023.yml',
+      'measure/allen-county-migration-by-county-2004-2023.yml',
+      'measure/allen-county-net-migration-2021-2024.yml',
+      'measure/allen-county-population-2024.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */

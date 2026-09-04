@@ -1,0 +1,98 @@
+class: measure
+label: Who moved into and out of Allen County, 2004–2023
+description: |
+  **Nineteen years of tax returns changing address, and Allen County lost people in all nineteen.**
+  71,324 exemptions left and 62,153 arrived — a net loss of 9,171. [verified] —
+  [the IRS migration files](../../catalog/irs-county-migration.md), outflow and inflow totals for
+  county 39003, summed here.
+
+      years    out exm   in exm   net   out AGI $k   in AGI $k    net AGI $k
+      0405       3,775    3,206  −569       70,315      52,801       −17,514
+      0809       3,771    2,999  −772       71,304      51,807       −19,497
+      1213       3,736    3,616  −120       80,469      78,285        −2,184
+      1617       5,097    4,385  −712      137,231      97,770       −39,461
+      1920       4,017    3,633  −384      112,223      84,906       −27,317
+      2223       3,676    3,471  −205      117,123     104,646       −12,477
+
+  **They took $355 million more out than the arrivals brought in.** $1,685,961,000 of adjusted gross
+  income left with the leavers over nineteen years and $1,330,573,000 arrived with the newcomers.
+  [verified] — the same files, aggregate AGI summed across all nineteen pairs.
+
+  **The people who left out-earned the people who arrived in seventeen of the nineteen years.**
+  $23,638 of adjusted gross income per exemption on the way out against $21,408 on the way in — a
+  gap of 10.4 per cent over the whole span. Only 2012–13 and 2011–12 run the other way. [verified] —
+  the same source; the per-exemption figures are computed here.
+
+  **The gap has been closing.** In 2004–05 a leaver carried $18,626 and an arriver $16,469, 13.1 per
+  cent apart; in 2022–23 it was $31,862 against $30,149, 5.7 per cent apart. [verified] — the same
+  files. Both figures are nominal and neither is deflated.
+
+  **The loss is on both sides of the state line.** In 2022–23, 2,412 exemptions left for somewhere
+  else in Ohio and 1,264 for another state, against 2,212 and 1,259 arriving. [verified] — the same
+  files, rows coded 97/001 and 97/003. Across the series the same-state exchange runs close to even
+  and the different-state one does not.
+
+  **More than half of everyone who leaves Ohio from this county goes South.** Of the 1,221
+  exemptions in the different-state residue in 2022–23, 630 went to the South, 327 to the Midwest,
+  159 to the West and 105 to the Northeast. [verified] — the same file, rows coded 59.
+
+  **Two of the nineteen years are the file and not the county.** 2014–15 is a third below the
+  county's median and 2016–17 a third above it, and Auglaize and Hancock counties move the same way
+  in the same two years. [verified] — the same files read for three counties; see
+  [the control can be the county next door](../../decisions/the-control-can-be-the-county-next-door.yml).
+  No rate here is computed across those two years alone.
+
+  **A second instrument finds a bigger loss, and the difference is people who do not file.** Over
+  the three years both cover, the tax files give a net domestic loss of 686 and the population
+  estimates give 1,060. [verified] — [the population estimates](../../catalog/census-popest-2024.md);
+  see [the net migration](allen-county-net-migration-2021-2024.yml). A tax file sees filers,
+  and the very poor, much of the old and anyone who moved without filing are outside it. [inference]
+
+  **Foreign migration disappears from this file after 2009–10.** The rows coded 98 carry figures
+  through the first six years — 13, 23, 30, 12, 18 and 23 exemptions out — and `-1` in every year
+  since. [verified] — the same files. The population estimates put international migration at 424
+  over 2021–24, so the quantity exists and the tax file has stopped saying it.
+
+  **This corpus cannot say why anybody moved.** The file records that an address changed between two
+  returns and carries no reason, no age, no occupation and no household beyond the exemptions
+  claimed on a form.
+
+  [open] What migration did before 2004. The series begins with the 2004–05 pair and the county's
+  population had already been falling for thirty years by then, so the corpus can watch the loss and
+  not its beginning.
+properties:
+  parameter: net migration exemptions, Allen County, 2004–05 to 2022–23
+  value: "-9171"
+  unit: exemptions
+  as_of: "2023"
+  method: |
+    Rows where the Allen County side of the pair is FIPS 39/003, taken from `countyoutflow` for
+    departures and `countyinflow` for arrivals. The two files order their FIPS pairs oppositely and
+    the Allen County side is columns one and two in both. [verified]
+
+    Totals are the rows coded 97/000, *Total Migration-US*; the same-state and different-state
+    splits are 97/001 and 97/003 and the regional residues 59/001 to 59/007. [verified] Non-migrant
+    rows, where origin and destination are both 39/003, are excluded from every figure here.
+    [verified]
+
+    An exemption is a proxy for a person and a return for a household. Aggregate AGI is in thousands
+    of dollars, nominal, and is the income reported on the returns that moved rather than the income
+    those people had after moving. [verified] No figure here is deflated. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/irs-county-migration.md
+  - target: allen-county-migration-by-county-2004-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/irs-county-migration.md
+  - target: allen-county-net-migration-2021-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+  - target: allen-county-income-and-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

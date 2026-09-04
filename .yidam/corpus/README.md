@@ -206,11 +206,13 @@ Sorted by: kind, then alphabetically.
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 6v / 2i / 1o | 69 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2023 | 3 | 6v / 4i / 0o | 81 |
 | [allen-county-manufacturing-outside-lima-1929-1967.yml](measure/allen-county-manufacturing-outside-lima-1929-1967.yml) | measure | Allen County manufacturing outside Lima, 1929–1967 | 3 | 4v / 8i / 1o | 85 |
+| [allen-county-migration-by-county-2004-2023.yml](measure/allen-county-migration-by-county-2004-2023.yml) | measure | Where Allen County's movers went and came from, 2004–2023 | 5 | 10v / 4i / 1o | 93 |
+| [allen-county-migration-flows-2004-2023.yml](measure/allen-county-migration-flows-2004-2023.yml) | measure | Who moved into and out of Allen County, 2004–2023 | 5 | 14v / 1i / 1o | 98 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 4 | 12v / 4i / 1o | 138 |
 | [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 3 | 4v / 1i / 0o | 41 |
-| [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 2 | 4v / 0i / 0o | 35 |
+| [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 3 | 5v / 1i / 0o | 49 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
 | [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
 | [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 10v / 2i / 1o | 93 |
@@ -231,7 +233,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
 | [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 4v / 1i / 0o | 40 |
 | [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
-| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 2 | 2v / 1i / 0o | 26 |
+| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 3 | 3v / 1i / 0o | 38 |
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
 | [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 15v / 6i / 0o | 129 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
