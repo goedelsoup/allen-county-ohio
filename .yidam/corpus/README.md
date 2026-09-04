@@ -128,7 +128,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 7v / 3i / 1o | 71 |
 | [allen-county-disaster-aid-applicants-2005-2025.yml](measure/allen-county-disaster-aid-applicants-2005-2025.yml) | measure | Who was paid federal disaster aid in Allen County, 2005–2025 | 2 | 4v / 3i / 2o | 86 |
 | [allen-county-disaster-assistance-2005-2025.yml](measure/allen-county-disaster-assistance-2005-2025.yml) | measure | Federal disaster assistance to Allen County, 2005–2025 | 2 | 5v / 4i / 1o | 67 |
-| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 2 | 10v / 4i / 1o | 108 |
+| [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 3 | 11v / 5i / 1o | 122 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
 | [allen-county-drug-overdose-deaths-2020-2025.yml](measure/allen-county-drug-overdose-deaths-2020-2025.yml) | measure | Drug overdose deaths in Allen County, 2020–2025 | 2 | 6v / 3i / 1o | 71 |
 | [allen-county-early-deaths-by-cause-2020-2022.yml](measure/allen-county-early-deaths-by-cause-2020-2022.yml) | measure | What Allen County dies of early, 2016–2022 | 3 | 10v / 6i / 1o | 100 |
@@ -144,6 +144,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
 | [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
+| [allen-county-flood-hazard-2026.yml](measure/allen-county-flood-hazard-2026.yml) | measure | The mapped floodplain of Allen County, 2026 | 5 | 8v / 3i / 1o | 110 |
+| [allen-county-flood-insurance-1978-2023.yml](measure/allen-county-flood-insurance-1978-2023.yml) | measure | Flood insurance claims in Allen County, 1978–2023 | 6 | 12v / 5i / 1o | 107 |
 | [allen-county-foreclosures-and-evictions-2007-2017.yml](measure/allen-county-foreclosures-and-evictions-2007-2017.yml) | measure | Allen County foreclosures and evictions, 2007–2017 | 5 | 8v / 2i / 1o | 84 |
 | [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 7v / 4i / 1o | 77 |
 | [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 3 | 9v / 4i / 1o | 93 |
@@ -155,7 +157,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 6 | 8v / 3i / 0o | 99 |
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 8v / 6i / 2o | 146 |
-| [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 2 | 6v / 4i / 1o | 60 |
+| [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 7v / 5i / 1o | 72 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 5 | 7v / 2i / 1o | 83 |
 | [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 4i / 2o | 105 |
@@ -251,7 +253,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-school-finance-2023.yml](measure/allen-county-school-finance-2023.yml) | measure | What Allen County's school districts spend and where it comes from, 2023 | 4 | 6v / 4i / 0o | 79 |
 | [allen-county-school-staffing-1992-2024.yml](measure/allen-county-school-staffing-1992-2024.yml) | measure | What Allen County's twelve school districts employ, 1992–2024 | 5 | 14v / 1i / 1o | 177 |
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
-| [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 5 | 8v / 2i / 0o | 91 |
+| [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 6 | 8v / 3i / 0o | 102 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
@@ -493,7 +495,7 @@ Sorted by: kind, then alphabetically.
 | [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 10v / 4i / 1o | 95 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 11v / 2i / 2o | 84 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 9v / 2i / 0o | 66 |
-| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 7v / 1i / 1o | 73 |
+| [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 8v / 1i / 1o | 81 |
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 9v / 0i / 2o | 64 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 8v / 1i / 1o | 66 |
