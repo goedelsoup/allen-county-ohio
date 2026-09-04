@@ -1,0 +1,115 @@
+class: measure
+label: Allen County's ZIP codes, 2020
+description: |
+  **Twenty ZIP-code areas touch Allen County and eight lie wholly inside it.** Between them the
+  eight hold 73,421 of the county's 102,206 people — 71.8 per cent — and the other 28,785 live
+  under a postal address they share with one, two or three other counties. [verified] —
+  [the Census Bureau's ZCTA relationship files](../../catalog/census-zcta-relationship-files.md)
+  joined to [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md),
+  computed here.
+
+      ZIP    post office      people   in Allen    pop.    land   also in
+      45801  Lima             22,819     22,819  100.0%  100.0%
+      45804  Lima             14,573     14,573  100.0%  100.0%
+      45805  Lima             22,740     22,740  100.0%  100.0%
+      45806  Lima             11,238      8,604   76.6%   78.0%  Auglaize
+      45807  Elida            11,856     11,856  100.0%  100.0%
+      45808  Beaverdam           282        282  100.0%  100.0%
+      45809  Gomer               173        173  100.0%  100.0%
+      45810  Ada               7,840        227    2.9%    8.0%  Hardin, Hancock
+      45812  Alger             1,835         15    0.8%    2.0%  Hardin
+      45817  Bluffton          6,420      5,217   81.3%   49.7%  Hancock, Putnam
+      45820  Cairo               517        517  100.0%  100.0%
+      45830  Columbus Grove    5,797      1,227   21.2%   32.8%  Putnam
+      45833  Delphos          10,682      5,903   55.3%   45.9%  Van Wert, Putnam
+      45844  Fort Jennings     3,251        111    3.4%    4.7%  Putnam, Van Wert
+      45850  Harrod            3,617      3,321   91.8%   80.7%  Hardin, Auglaize
+      45854  Lafayette           461        461  100.0%  100.0%
+      45877  Pandora           2,239        105    4.7%    8.9%  Putnam, Hancock
+      45887  Spencerville      4,688      3,856   82.3%   55.2%  Auglaize, Van Wert, Mercer
+      45895  Wapakoneta       17,974         18    0.1%    0.1%  Auglaize, Logan
+      45896  Waynesfield       1,990        181    9.1%    6.1%  Auglaize, Hardin
+
+  **The Allen County parts sum to 102,206, which is the county.** Twenty postal areas built to
+  deliver mail and a block file built to apportion legislatures agree to the person on a county
+  neither of them names. [verified] — the same join. Nothing here was scaled or reconciled; the
+  closure is the check that the block assignment is right.
+
+  **Land and population disagree by up to thirty-two points, and in both directions.** Bluffton's
+  45817 is 49.7 per cent of Allen County by land and 81.3 per cent by people; Spencerville's 45887
+  is 55.2 against 82.3; Harrod's 45850 is 80.7 against 91.8. Going the other way, the rural 45830
+  is 32.8 per cent Allen by land and 21.2 by people, and Ada's 45810 is 8.0 against 2.9.
+  [verified] — the same two files. A village sits on one side of a county line and the farmland
+  around it does not, so the weight that is easy to publish is the weight that is wrong. See
+  [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml).
+
+  **Three of the county's nine municipal corporations sit on a ZIP that is mostly outside the county
+  by land and mostly inside it by people.** [Delphos](../place/delphos.yml),
+  [Bluffton](../place/bluffton.yml) and [Spencerville](../place/spencerville.yml) — 45833 at 45.9
+  per cent of land and 55.3 of people, 45817 at 49.7 and 81.3, 45887 at 55.2 and 82.3. [verified] —
+  the same source, against [the nine corporations](allen-county-roads-2010-2024.yml). Delphos is the
+  hardest of the three: the city itself straddles the Allen–Van Wert line, so neither its ZIP nor
+  its corporation lies in one county. [verified] — [the city](../place/delphos.yml).
+
+  **The eight wholly-inside codes are Lima and its ring, and they are 71.8 per cent of the county.**
+  Three Lima codes hold 60,132 people between them; Elida's holds 11,856; Beaverdam, Gomer, Cairo
+  and Lafayette hold 1,433 between the four of them. [verified] — the same source. A rule that
+  keeps only these loses every town on the county's edge.
+
+  **A rule that takes every code with a majority of its people here captures 98.2 per cent of the
+  county and admits 9,744 outsiders.** Thirteen codes, 100,322 Allen residents and 9,744 residents
+  of Auglaize, Hancock, Putnam, Van Wert, Hardin and Mercer counties in the same net. [verified] —
+  the same source, computed here. The 1,884 Allen County residents it misses live on the codes of
+  Ada, Alger, Columbus Grove, Fort Jennings, Pandora, Wapakoneta and Waynesfield.
+
+  **This corpus cannot say which county a person with a Delphos address lives in.** The postal code
+  covers both sides of a line that runs through the city itself, the record that carries the code
+  carries nothing else geographic, and a weight is a statement about a population and not about a
+  person. [verified] — the same files. Every ZIP-coded figure in this corpus is a weighted estimate
+  of a county total and none of it is a statement about anybody.
+
+  [open] Whether the Postal Service's own delivery areas would give different weights. A ZIP code is
+  a set of carrier routes and not an area; a ZCTA is the Census Bureau's approximation of one, built
+  out of blocks. The Postal Service publishes no boundary, and the crosswalk that does — the
+  Department of Housing and Urban Development's, built from address counts rather than from
+  population — is behind a registration this corpus has not made.
+properties:
+  parameter: ZIP Code Tabulation Areas overlapping Allen County
+  value: "20"
+  unit: areas
+  as_of: 2020-04-01
+  method: |
+    `tab20_zcta520_tabblock20_natl.txt`, the 2020 ZCTA-to-block relationship file, streamed and
+    filtered to the twenty tabulation areas that touch county 39003, joined on the fifteen-digit
+    block identifier to block populations from the Ohio P.L. 94-171 file. A block's county is the
+    first five characters of its identifier, so the county split needs no second lookup. [verified]
+
+    Population shares are the sum of block populations in each county part over the area's total.
+    Land shares are `AREALAND_PART` over the area's total land, which is what the county-level
+    relationship file publishes and the only figure available without the block join. [verified]
+
+    Post-office names are the modal `CITY` value on the contribution records carrying each code in
+    the four cycles from 2012, not a postal directory. [verified] —
+    [the contributions](allen-county-federal-contributions-1980-2024.yml). The relationship files
+    carry no name for a ZCTA beyond its number.
+
+    Blocks appearing more than once against the same area — the file lists a row per overlap — are
+    counted once. The county parts sum to 102,206 against a published county population of 102,206.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-zcta-relationship-files.md
+  - target: allen-county-population-2020-census.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: ../place/delphos.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../place/bluffton.yml
+    relationship: describes
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
