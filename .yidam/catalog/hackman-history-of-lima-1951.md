@@ -36,8 +36,8 @@ above reasons that we believe that it is imperative that Allen County be include
 Wayne Parkway" — addressed to a state committee then deciding which counties a memorial highway
 would run through. [verified] — the same text. The history is the case, and the case wants the
 county to look consequential; see
-[a parcel is not an installation](../decisions/a-parcel-is-not-an-installation.yml) for the rule
-this corpus applies to a document with an interest.
+[a source is also a filter](../decisions/a-source-is-also-a-filter.yml) for the rule this corpus
+applies to a document with an interest in its own subject.
 
 **Its publisher is a chamber of commerce, and its industrial passages read like one.** "Lima now
 ranks ninth in the state in volume of business transacted"; the city is "a city of homes, of
