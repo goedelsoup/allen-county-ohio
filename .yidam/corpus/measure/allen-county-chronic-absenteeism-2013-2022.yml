@@ -1,0 +1,96 @@
+class: measure
+label: Chronic absenteeism in Allen County, 2013–2022
+description: |
+  **Chronic absenteeism in Allen County's schools doubled between 2013 and 2021, from 14.9 per cent
+  of pupils to 30.0.** A chronically absent child is one who misses fifteen school days or more in a
+  year. [verified] —
+  [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), the
+  county's twelve districts, its own enrolment as the denominator.
+
+      per cent of pupils absent fifteen days or more
+              Allen County                    Ohio
+      year   enrolled  absent   all  white  Black    all  white  Black
+      2013     16,786   2,494  14.9   13.2   18.9   15.0   12.4   25.3
+      2015     16,802   3,568  21.2   19.7   26.5   18.9   16.5   28.5
+      2017     16,474   2,926  17.8   14.7   27.9   18.6   14.8   34.2
+      2020     14,839   3,959  26.7   21.2   43.8   25.8   19.0   49.6
+      2021     15,461   4,640  30.0   25.0   44.5   33.5   26.7   55.7
+
+  **Nearly half of the county's Black schoolchildren were chronically absent in 2021–22.** 44.5 per
+  cent, against 25.0 for white children and 18.9 for Black children eight years earlier. [verified] —
+  the same source. The gap between the two rates opened from 5.7 points in 2013 to 19.5 in 2021.
+
+  **On this measure the county is close to Ohio and better than it for Black children.** Its overall
+  rate runs within a point or two of the state's in four of the five years and 3.5 points below it in
+  2021; its Black rate is below the state's in every year, 18.9 against 25.3 in 2013 and 44.5
+  against 55.7 in 2021.
+  [verified] — the same source. That is the opposite of what
+  [the discipline record](allen-county-school-discipline-2011-2021.yml) says, where this county runs
+  above Ohio on every rate. Absence and suspension are not the same thing measured twice.
+  [inference]
+
+  **The pandemic is in these rows and the file does not mark it.** The 2020 vintage is the 2020–21
+  school year and the 2021 vintage is 2021–22. Fifteen days of absence from a school that is remote
+  for part of the year is not fifteen days of absence from a school that is open, and each district
+  decided for itself what attendance meant while the building was shut. [inference] The rise from
+  17.8 per cent to 26.7 across that boundary is therefore the smallest thing in this table that can
+  be read as a change in children's behaviour, and this corpus does not read it as one.
+
+  **This corpus cannot say what share of Allen County's children were chronically absent in
+  2022–23.** The collection counts 4,157 of them and publishes no enrolment for that year at all:
+  absence runs one collection further than the enrolment beside it. [verified] — the same source.
+  Dividing by the Common Core's 16,113 would give 25.8 per cent, and that is a number from two
+  collections whose counts of this county differ by up to eight per cent, so it is not published
+  here as a rate.
+
+  **The two collections disagree about how many children are in this county, and by enough to
+  matter.** 15,461 against 16,127 in 2021, and 14,839 against 16,124 in the pandemic year.
+  [verified] — the same source against
+  [the Common Core of Data](../../catalog/nces-common-core-of-data.md).
+
+      year   this collection   the district files   difference
+      2011            17,656               17,766        -0.6%
+      2013            16,786               17,634        -4.8%
+      2015            16,802               17,518        -4.1%
+      2017            16,474               17,107        -3.7%
+      2020            14,839               16,124        -8.0%
+      2021            15,461               16,127        -4.1%
+
+  A rate built from this collection's numerator over the district files' denominator would be four
+  to eight per cent too small, which on the 2021 figure is more than a point. Every rate in this node
+  and in the discipline node beside it uses this collection's own count. [inference]
+
+  [open] Why the two counts differ. Both are the same districts in the same years and neither is a
+  sample. The gap is smallest in 2011, largest in the pandemic year, and never zero; a reference
+  date a few weeks apart would explain part of it and nothing retrieved here says what either date
+  is.
+properties:
+  parameter: pupils chronically absent, Allen County
+  value: "4640"
+  unit: pupils
+  as_of: "2021"
+  method: |
+    The Civil Rights Data Collection's chronic-absenteeism tables for 2013, 2015, 2017, 2020, 2021
+    and 2022, read through the Urban Institute's mirror, filtered to the sex total and summed over
+    the race dimension excluding its own all-pupils code. [verified]
+
+    Schools are identified by `ncessch`; the 2020 vintage publishes a blank district identifier and
+    a query filtered on that field returns nothing for this county. [verified]
+
+    Rates use this collection's enrolment for the same year and the same schools. For 2022 there is
+    no such enrolment and no rate is computed. [verified]
+
+    Chronic absenteeism is the collection's own definition — absent fifteen or more school days in
+    the year, for any reason, excused or not — and is not the state's ten-per-cent definition.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/crdc-civil-rights-data-collection.md
+  - target: allen-county-school-enrolment-1988-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nces-common-core-of-data.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
