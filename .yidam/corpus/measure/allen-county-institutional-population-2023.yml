@@ -1,0 +1,134 @@
+class: measure
+label: Allen County's institutional population, 2019–2023
+description: |
+  **The county's disability rate is 15.9 per cent and it is not a rate over the county.** It is a
+  rate over 99,436 people where the county has 101,685, and the 2,249 left out are in the two state
+  prisons and the twelve nursing homes. [verified] —
+  [the American Community Survey](../../catalog/census-acs-summary-file.md), tables B01001 and
+  B18101, 2019–2023 five-year estimates; see
+  [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml).
+
+  **Five tables from one file describe five different populations of this county, and the data files
+  never say so.** The universe is printed in the table shells and nowhere else. [verified] — the
+  same source.
+
+      table    what it publishes                universe                                   Allen County
+      B01001   sex by age                       total population                                101,685
+      B18101   disability by sex and age        civilian noninstitutionalized population          99,436
+      B17001   poverty status                   population for whom poverty is determined         97,786
+      B21001   veteran status                   civilian population 18 years and over             77,628
+      B15003   educational attainment           population 25 years and over                      68,410
+
+  **B01001 and B18101 are published on the same six age brackets by sex, so the difference between
+  them can be taken cell by cell — and it is a census of an institutional population that the survey
+  tabulates nowhere.** 1,672 men and 577 women. [verified] — the same two tables, differenced here.
+
+      total population less civilian noninstitutionalized, Allen County, 2019–2023
+                          male              female
+                       total    c.n.i.   diff    total    c.n.i.   diff
+      under 5          3,197    3,197       0    2,974    2,974       0
+      5 to 17          9,198    9,190       8    8,624    8,617       7
+      18 to 34        11,395   11,042     353   10,220   10,201      19
+      35 to 64        18,490   17,607     883   18,599   18,517      82
+      65 to 74         5,490    5,237     253    5,798    5,656     142
+      75 and over      3,047    2,872     175    4,653    4,326     327
+      total                              1,672                       577
+
+  **The same subtraction, run on the United States, returns the armed forces.** The veteran table's
+  universe is civilian and the disability table's is civilian *and* noninstitutionalized, so the
+  difference between total population 18 and over and civilian population 18 and over is the
+  active-duty force: 1,286,167 nationally. In Allen County it is 64. [verified] — the same file, the
+  national and county rows. This corpus holds no Defense Department strength report to check the
+  national figure against, and records the agreement in order of magnitude rather than as a test.
+  [inference]
+
+  **So 2,185 of the 2,249 are institutionalized, against 2,479 the census counted in 2020.** Two
+  instruments built for different purposes, neither of them a count of institutions, eleven per cent
+  apart. [verified] — the same subtraction against
+  [the group quarters](allen-county-group-quarters-2020.yml). The survey figure is the lower of the
+  two and it averages five years to the census's one day, four of them after April 2020; Ohio's
+  prison population fell in that period. [inference]
+
+  **The profile names which institution without the file naming either.** 1,236 of the excluded are
+  men aged 18 to 64, against 1,513 people the census counted in adult correctional facilities; 897
+  are 65 or over, against 966 in nursing facilities. Under five the difference is zero in both
+  sexes, as it must be. [verified] — the same two sources. The two lumps sit where the county's two
+  kinds of institution are, and the residual is 116 people.
+
+  **Allen County has more working-age men than working-age women, and it does not.** Counted over
+  everybody there are 29,885 men aged 18 to 64 to 28,819 women, 103.7 to 100. Counted over the
+  civilian noninstitutionalized population there are 28,649 to 28,718, which is 99.8 to 100.
+  [verified] — the same two tables. The county's excess of working-age men is 1,236 people and it is
+  a prison. See [the age structure](allen-county-age-structure-2023.yml).
+
+  **This corpus cannot say what share of Allen County's people have a disability.** The survey
+  measures 15,808 of the 99,436 it asks about and asks nobody in an institution, so the share over
+  the whole county lies between 15.55 per cent, if none of the 2,249 is disabled, and 17.76 per
+  cent, if all of them are. Neither end is credible and no table narrows it. [verified] — the same
+  source. Over the 65-and-over population the interval is 33.5 to 36.6 per cent, on 897 excluded
+  people of whom 966 were in nursing homes on census day. [verified] — the same two sources.
+
+  **Lima carries twice the county's share of it.** 1,576 of the city's 35,304 residents are outside
+  the civilian noninstitutionalized universe, 4.5 per cent against the county's 2.2, and 1,390 of
+  them are men. [verified] — the same two tables. Both prisons stand inside the city limits, which
+  is why every rate this survey publishes for Lima is taken over a population 4.5 per cent smaller
+  than the city. [inference]
+
+  **The veteran table is the one that keeps them.** Its universe is the civilian population 18 and
+  over, institutions included, so Allen County's 5,948 veterans are a share of 77,628 rather than of
+  75,443 — 7.7 per cent against Ohio's 6.8 and the nation's 6.4, a difference that clears its
+  margin. [verified] — the same file, table B21001. Among men the rate is 14.0 per cent and it is a
+  history of conscription: 40.8 per cent of the county's men aged 75 and over are veterans, 26.6 per
+  cent of those 65 to 74, and 3.6 per cent of those 18 to 34. [verified] — the same table.
+
+  [open] What the residual 116 are. After the 1,236 working-age men and the 897 people over 65 there
+  are 116 excluded left — 15 children, 19 women aged 18 to 34 and 82 women aged 35 to 64 — and the
+  census's institutional table has no category for them beyond nursing and correctional. A hundred
+  or so nursing residents under 65 would account for the women, and the redistricting file publishes
+  nursing residents by neither age nor sex.
+properties:
+  parameter: population outside the civilian noninstitutionalized universe, Allen County
+  value: "2249"
+  unit: people
+  as_of: "2023"
+  method: |
+    Tables B01001 and B18101 from the 2019–2023 five-year American Community Survey summary file,
+    differenced cell by cell. B18101's six age brackets by sex — under 5, 5 to 17, 18 to 34, 35 to
+    64, 65 to 74, 75 and over — are matched by summing B01001's twenty-three brackets per sex into
+    the same six. The two tables' totals for each sex close on their own published totals. [verified]
+
+    The difference is institutionalized civilians plus all active-duty military, since "civilian
+    noninstitutionalized" excludes both. The military part is isolated by a second subtraction:
+    B01001's population 18 and over less B21001's civilian population 18 and over, which is 64 in
+    this county and 1,286,167 nationally. [verified] No one under 18 is in either force, and the
+    5-to-17 difference of 15 is small enough to be sampling noise in a five-year estimate.
+    [inference]
+
+    Universes are read from the table shells published with the file, which are the only place they
+    appear; the data files carry no universe field. [verified]
+
+    Rate margins are ratio-estimate margins at the 90 per cent level, computed as the Census Bureau
+    directs. The bounds on the county-wide disability share are arithmetic, not statistical: they
+    assume nothing about the excluded population beyond its size. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-group-quarters-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-redistricting-file.md
+  - target: allen-county-age-structure-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-income-and-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../site/allen-correctional-institution.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
