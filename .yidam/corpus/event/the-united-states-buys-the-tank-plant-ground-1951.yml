@@ -1,5 +1,5 @@
 class: event
-label: The United States buys the tank plant's ground
+label: The United States expands the tank plant, June 1951
 description: |
   Between 20 and 28 June 1951 the United States of America took the north-west quarter of section
   14, township 4 south, range 6 east, from five private owners in five warranty deeds — 60.24
@@ -8,21 +8,37 @@ description: |
   [Section Ground book list](../../catalog/allen-county-recorder-section-ground.md), volume 0034A
   pages 89–92, at volumes 320 pages 573, 574 and 577 and 321 pages 245 and 246.
 
-  It is the ground the
-  [Joint Systems Manufacturing Center](../site/lima-army-tank-plant.yml) stands on, and this is the
-  corpus's answer to a question that node has carried since genesis. [verified] — same pages and
-  [the survey sections](../measure/allen-county-survey-sections.yml).
+  It is part of the ground the
+  [Joint Systems Manufacturing Center](../site/lima-army-tank-plant.yml) stands on. [verified] —
+  same pages and [the survey sections](../measure/allen-county-survey-sections.yml).
 
-  **The date is the finding.** The received account of tank building at Lima is a wartime one, and
-  this corpus had assembled its own version of it: the Lima Locomotive Works taking a medium tank
-  contract in 1941, [the Lima Tank Depot](../site/lima-tank-depot.yml) under construction in
-  January 1943. None of that is this ground. Through the whole of that war it was a mortgaged farm
-  — borrowed against in 1940, 1941 and 1944, leased to a fishing and game club in April 1940, and
-  crossed by pipeline rights of way its private owners granted in 1939, 1940 and 1949. [verified] —
-  same pages.
+  **It is an expansion and this node called it a founding.** The Army bought 295 contiguous acres
+  just south-east of a base built in May 1942, taking the installation from 163 acres to 458, to lay
+  out a tank test track and hold room for later building. [verified] —
+  [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md), *Korean War
+  to 1975*. The quarter section abstracted here is the south-eastern end of a nine-year-old
+  installation.
 
-  The Army arrived here six years after that war ended, in the second year of the Korean one.
-  [inference]
+  **Everything the deeds say is still true and none of it was about the plant's age.** Through the
+  whole of the Second World War this quarter section was a mortgaged farm — borrowed against in
+  1940, 1941 and 1944, leased to a fishing and game club in April 1940, and crossed by pipeline
+  rights of way its private owners granted in 1939, 1940 and 1949. [verified] — same pages. The
+  Army was a mile or so to the north-west the whole time. [inference]
+
+  **The dwellings came with the land.** The Army's report lists four privately-owned houses acquired
+  in this purchase and still numbered as buildings on the installation in 1984, one of them built
+  between about 1900 and 1925. [verified] —
+  [the historic properties report](../../catalog/dtic-lima-army-tank-plant-reports.md). A farm
+  bought whole leaves its house standing, and four of them are on this ground.
+
+  **And the corpus's own coordinate finding was pointing at this all along.** No building stands
+  within a hundred and fifty metres of the installation's coordinate of record, and the nearest
+  large footprint is 632 metres away. [verified] —
+  [USA Structures](../../catalog/fema-usa-structures.md); see
+  [the buildings](../measure/allen-county-buildings-2019.yml). That is what a coordinate on land
+  bought for a test track looks like when the works stand on the ground bought nine years earlier.
+  [inference] See
+  [a parcel is not an installation](../../decisions/a-parcel-is-not-an-installation.yml).
 
   **Nine days, five sellers, same-day recording.** That is what a government buying to a deadline
   looks like rather than a farm changing hands, and it is the only thing the record says about how
@@ -34,12 +50,19 @@ description: |
   This node does not establish when anything was built on the ground it describes. A deed dates a
   purchase. [open]
 
-  It covers one quarter section. The installation may hold ground in others, whose sheets have not
+  **The caveat below was written here in the same phase that reasoned past it.** It said, correctly,
+  that the abstract covers one quarter section and that the installation may hold ground in others
+  whose sheets have not been read; two site nodes then took the abstract as evidence about the whole
+  installation. [verified] — the same source, and this node's own text at the commit that created
+  it. The limit was known and unapplied, which is why it is now a rule; see
+  [a parcel is not an installation](../../decisions/a-parcel-is-not-an-installation.yml).
+
+  It covers one quarter section. The installation holds ground in others, whose sheets have not
   been read. [open]
 properties:
   occurred: 1951-06-20
   occurred_through: 1951-06-28
-  event_type: acquisition
+  event_type: expansion
   location_description: >-
     The north-west quarter of section 14, township 4 south, range 6 east — Shawnee Township,
     about 2.8 miles south of Lima's internal point.
@@ -51,6 +74,6 @@ links:
   - target: ../site/lima-army-tank-plant.yml
     relationship: occurred-at
     claim_tag: verified
-    source: ../../catalog/allen-county-recorder-section-ground.md
+    source: ../../catalog/dtic-lima-army-tank-plant-reports.md
   - target: ../event.ont.yml
     relationship: instance-of
