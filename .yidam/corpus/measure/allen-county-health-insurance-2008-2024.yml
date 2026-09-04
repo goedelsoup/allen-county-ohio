@@ -1,0 +1,103 @@
+class: measure
+label: Who in Allen County has no health insurance, 2008–2024
+description: |
+  Seventeen years of a modelled county estimate, and the county's uninsured population fell by more
+  than half in three of them. [verified] —
+  [the Small Area Health Insurance Estimates](../../catalog/census-sahie.md), under 65, all incomes,
+  both sexes.
+
+      year   in the group   uninsured   rate   ±     Ohio
+      2008         86,022      11,956   13.9  1.1    13.1
+      2011         85,429      11,144   13.0  1.1    13.9
+      2013         83,950      10,772   12.8  1.1    13.0
+      2014         83,251       8,343   10.0  1.0     9.9
+      2015         82,316       6,108    7.4  0.8     7.7
+      2016         81,205       5,868    7.2  0.9     6.7
+      2019         78,774       5,966    7.6  0.8     7.9
+      2022         79,576       5,424    6.8  0.9     7.1
+      2024         78,618       5,613    7.1  0.8     8.1
+
+  **What fell was the adults.** The rate for people aged 18 to 64 went from 16.1 per cent in 2013 to
+  8.6 in 2016; the rate for people under 19 went from 5.2 to 4.0 and has never been above 7.4 in any
+  year of the series. [verified] — the same source, age categories 1 and 4. Of the 4,904 fewer
+  uninsured people between 2013 and 2016, 4,628 are the fall in the 18-to-64 count alone.
+
+  **The income gradient did not narrow so much as close.** In 2013 the county's residents at or
+  below 138 per cent of the poverty line were 21.1 per cent uninsured against 12.7 per cent for
+  those between 138 and 400. By 2019 it was 9.7 against 9.0, and the poorest band was better covered
+  than the band at or below 200 per cent. [verified] — the same file, income categories 3 and 5.
+  Ohio expanded Medicaid to 138 per cent of poverty on 1 January 2014.
+
+  **That coincidence is as far as this file may be taken.** Medicaid enrolment by age and sex is one
+  of the model's own inputs. [verified] — the model input data page cited in
+  [the source entry](../../catalog/census-sahie.md). See
+  [a model fitted to a survey is not a second witness](../../decisions/a-model-fitted-to-a-survey-is-not-a-second-witness.yml).
+
+  **Men in this county are less insured than women in every one of the seventeen years.** The gap
+  runs from 1.2 points to 3.4 and never closes or reverses: 14.5 against 11.1 in 2013, 7.8 against
+  6.5 in 2024. [verified] — the same source, sex categories 1 and 2.
+
+  **The survey the model is fitted to can be read on its own, and in 2024 it does not agree.** The
+  American Community Survey's one-year estimate puts 4,410 ± 1,084 county residents under 65 without
+  coverage in 2024, a rate of 5.6 ± 1.4 per cent, against the model's 5,613 and 7.1 ± 0.8. In 2021,
+  2022 and 2023 the two run within a quarter of a point of each other. [verified] —
+  [the survey's table B27001](../../catalog/census-acs-summary-file.md), one-year files for 2021 to
+  2024, summed here over the seven age bands under 65. The gap of 1,203 people is a property of the
+  model.
+
+  **The county's rank among Ohio's 88 is worth less than its rate.** Allen was 17th in 2011, 63rd in
+  2017 and 22nd in 2024, and between 2017 and 2018 it moved 27 places on a change of 0.3 points —
+  well inside its own margin. [verified] — the same source, all 88 county rows read for each year.
+  See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml).
+
+  **There is an older series and it is not the beginning of this one.** The same programme published
+  county estimates for 2005 to 2007 from the Current Population Survey: Allen County at 12.2 ± 2.0
+  per cent in 2006 and 12.5 ± 1.7 in 2007, on intervals roughly twice as wide as anything after.
+  [verified] — [the same source](../../catalog/census-sahie.md), the CPS-based directory. The 2007
+  interval overlaps 2008's, and an overlap across a change of method is not a join. See
+  [a before and after needs a before](../../decisions/a-before-and-after-needs-a-before.yml).
+
+  **This corpus cannot say how many people in Allen County are enrolled in Medicaid.** The figure
+  that would answer it is one of this model's inputs and is not published in its output, and the
+  state's own caseload reports are not held here. What the corpus has instead is a survey count of
+  people who say they have it, which is a different quantity; see
+  [what the coverage is made of](allen-county-coverage-types-2023.yml).
+
+  [open] What happened between 2007 and 2008. The method changed, the county's rate rose from 12.5
+  to 13.9, and no published bridge estimate covers both.
+properties:
+  parameter: people under 65 without health insurance, Allen County
+  value: "5613"
+  unit: people
+  as_of: "2024"
+  method: |
+    The Bureau's model estimate, geography category 50, age category 0, race category 0, sex
+    category 0, income category 0, from each year's own file. [verified] County rows carry only race
+    category 0; the seven race categories exist at state level alone. [verified]
+
+    The denominator is the poverty universe, which excludes people in institutions, in military
+    group quarters and in college dormitories. It is not the survey's universe: the American
+    Community Survey's coverage tables count the civilian noninstitutionalised population, about
+    2,000 more people under 65 in this county, so the two counts are close and not identical.
+    [inference]
+
+    The 2013 estimate is the May 2016 revision, the only version in the file taken. [verified]
+    Cells published in 2024 that do not exist in 2008 — age categories 3, 5 and 6 and income
+    category 5 — are not used in any comparison across the whole span. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-sahie.md
+  - target: allen-county-coverage-types-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-income-and-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-transfer-receipts-1969-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

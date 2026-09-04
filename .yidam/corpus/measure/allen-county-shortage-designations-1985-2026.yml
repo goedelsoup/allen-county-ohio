@@ -1,0 +1,116 @@
+class: measure
+label: Allen County's health professional shortage designations, 1985–2026
+description: |
+  Fifteen federal designations of shortage in this county, ten live and five withdrawn, and not one
+  of them is the county. [verified] —
+  [the HRSA designation register](../../catalog/hrsa-shortage-designations.md), primary care, dental
+  health and mental health files, county code `39003`.
+
+      live designation             discipline      people   FTE     ratio      goal  designated
+      LI- Allen County             primary care    32,355  5.86    5,523:1  3,000:1  16 Jun 2025
+      LI-Allen County              dental          32,355  3.25    9,948:1  4,000:1  14 Sep 2001
+      LI-MHCA 62                   mental health   52,022  0.54   96,587:1 20,000:1  15 Dec 2011
+      Health Partners of W. Ohio   primary care   216,423     —          —        —  30 Sep 2004
+      Health Partners of W. Ohio   dental         216,423     —          —        —  30 Sep 2004
+      Health Partners of W. Ohio   mental health  216,423     —          —        —   1 Dec 2004
+      Allen Oakwood Corr. Instn    primary care     1,500  0.00          —        —  15 Nov 2018
+      Allen Oakwood Corr. Instn    dental           1,663  0.61          —  1,500:1  22 Sep 2011
+      Allen Oakwood Corr. Instn    mental health    1,663  0.68          —  2,000:1  14 Mar 2022
+      Allen Oakwood Corr. Instn    mental health    2,081  0.68          —  2,000:1   5 Mar 2021
+
+  **The county's designation is its poor, and it is not drawn on a map.** `LI- Allen County` covers
+  the 32,355 residents at or below the low-income threshold wherever in the county they live, of
+  whom 14,781 are recorded as underserved for primary care and 19,346 for dental. [verified] — the
+  same register. Saying "Allen County is a shortage area" describes a third of it; see
+  [a designation is not a county](../../decisions/a-designation-is-not-a-county.yml).
+
+  **The mental health ratio is enormous because the provider count is a fraction.** 96,587 to one is
+  0.5386 full-time-equivalent psychiatrists against 52,022 low-income people in Mental Health
+  Catchment Area 62, and the goal it is measured against is 20,000 to one. [verified] — the same
+  source. The county has six psychiatrists in all; see
+  [the workforce](allen-county-health-workforce-2023.yml). The catchment area is not the county.
+
+  **The map that stood for forty-one years came down two months ago.** `South Side Lima` was a
+  geographic designation over census tracts 136, 137 and 138, made on 4 April 1985. Its dental half
+  was withdrawn on 2 October 1995, covering 10,234 people of whom 32.0 per cent were below the
+  poverty line; its primary care half was withdrawn on **1 July 2026**, covering 4,593 people of
+  whom 29.5 per cent were. [verified] — the same register, withdrawn rows retained with their dates.
+  For most of the period this corpus covers, the federal record of shortage here was three tracts of
+  a city. It is now a list of the poor of a county. [inference]
+
+  **The mental health designation changed shape on one day in 2011.** A geographic designation over
+  the whole of Catchment Area 62 — 177,277 people, 3.6 full-time equivalents, 49,244 to one — was
+  withdrawn on 15 December 2011, which is the day the low-income designation that replaced it was
+  made. [verified] — the same source, both rows. The population covered fell by 125,255 and the
+  psychiatrist count fell from 3.6 to 0.54.
+
+  **The prison is designated on its own, in all three disciplines.** Allen Oakwood Correctional
+  Institution at 2338 North West Street carries a dental designation from 22 September 2011 at
+  0.6075 full-time equivalents for 1,663 people, a mental health designation from 14 March 2022 at
+  0.675, and a primary care designation from 15 November 2018 that records **0.0000 full-time
+  equivalents for 1,500 people**. [verified] — the same register. A zero in that column is what the
+  file holds and may be an absence of reporting rather than an absence of clinicians. [inference]
+
+  **The register carries a name for the two prisons that nothing else in this corpus does.** Allen
+  Correctional Institution has its own primary care designation, made 29 December 2010 and withdrawn
+  25 June 2014, at the same street address as every Allen Oakwood row. [verified] — the same source.
+  The corpus holds
+  [the two institutions](../site/allen-correctional-institution.yml) as separate sites because
+  [the state's own list](../../catalog/odrc-facilities.md) is served by script and could not be read.
+  A row's name is the name as of its last update and not as of its designation date, so this dates
+  nothing. [inference]
+
+  **Score is what the National Health Service Corps places by, and this county scores highest on
+  teeth.** 26 of a possible 26 for dental health at the federally qualified health centre, 22 of 26
+  for mental health, 19 of 25 for primary care. [verified] — the same register. Nine corps sites in
+  the county are staffed by 12.86 full-time equivalents, 8.6 of them mental health. [verified] —
+  [the resources file](../../catalog/hrsa-area-health-resources-file.md).
+
+  **This corpus cannot say whether anyone went without care.** A designation is a finding about a
+  ratio of providers to a population, computed by a formula, and a shortage of 4.92 physicians is
+  not a count of appointments that did not happen.
+
+  [open] Why primary care was designated for the county's poor in June 2025 and dental in September
+  2001. Twenty-four years separate two designations over the same 32,355 people, and the register
+  gives dates without applications.
+properties:
+  parameter: full-time-equivalent psychiatrists serving the low-income population, Catchment Area 62
+  value: "0.5386"
+  unit: full-time equivalents
+  as_of: "2025-09-22"
+  method: |
+    The three discipline files filtered on `State and County Federal Information Processing Standard
+    Code` equal to `39003`, deduplicated by `HPSA ID`, which is one row per designation rather than
+    one per component geography. [verified] The three-digit `County or County Equivalent` field is
+    not the county key and matches every third county in the country. [verified]
+
+    Populations, ratios, full-time equivalents and shortages are the register's own fields as of
+    each row's last update date, which is later than its designation date for every live row here.
+    A figure in a withdrawn row is the figure that stood when it was withdrawn. [verified]
+
+    The count of fifteen is distinct `HPSA ID` values across the three files: five in primary care,
+    four in dental, six in mental health. Two mental health designations for the same institution,
+    made in March 2021 and March 2022 for different populations, are both live and are counted
+    separately. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hrsa-shortage-designations.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hrsa-shortage-designations.md
+  - target: ../site/allen-correctional-institution.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hrsa-shortage-designations.md
+  - target: allen-county-health-workforce-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hrsa-area-health-resources-file.md
+  - target: allen-county-coverage-types-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

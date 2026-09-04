@@ -1,0 +1,106 @@
+class: measure
+label: Who practises medicine in Allen County, 2022–2024
+description: |
+  The corpus's first count of the people, as against the buildings. [verified] —
+  [the Area Health Resources File](../../catalog/hrsa-area-health-resources-file.md), whose
+  physicians are the American Medical Association's masterfile, dentists the American Dental
+  Association's, and nurse practitioners and physician assistants the CMS identifier file.
+
+      Allen County, 2023                              count   per 100,000    Ohio
+      physicians in patient care                        304         301.5   319.3
+        graduates of institutions outside the US         97
+      primary care, excluding residents                  67          66.4    76.7
+      primary care residents in training                 38          37.7    19.1
+      psychiatrists                                       6           6.0    11.4
+      obstetrician-gynaecologists                        10           9.9    13.6
+      dentists in private practice                       40          39.7    46.4
+      nurse practitioners with an identifier            221         219.2   158.7
+      physician assistants with an identifier           127         126.0        
+
+  **This county trains primary care doctors at Cleveland's rate.** Its 38 residents are 37.7 per
+  100,000 residents, fourth of Ohio's 88 counties behind Hamilton, Cuyahoga and Lucas and ahead of
+  Summit; forty of the 88 train none. [verified] — the same file, all 88 Ohio county rows read here
+  against the file's own 2023 population estimate of 100,838.
+
+  **On the primary care doctors who are not in training it is eighteenth, and below the state.**
+  67 of them, 66.4 per 100,000 against Ohio's 76.7. [verified] — the same source. A resident is a
+  doctor seeing patients and is also a doctor who will leave.
+
+  **The county has six psychiatrists and no child psychiatrist.** Six is 6.0 per 100,000 against the
+  state's 11.4; three of the six are 65 or older and one is over 75. The single child psychiatrist
+  on the 2022 file, aged between 55 and 64, is not on the 2023 file. [verified] — the same source,
+  by specialty and age band. Twenty-eight Ohio counties have no psychiatrist at all and fifty-eight
+  have no child psychiatrist, so the county is not unusual; it is ordinary.
+
+  **Six of the county's eight obstetrician-gynaecologists are 55 or older.** One is aged 35 to 44,
+  one 45 to 54, four 55 to 64 and two 65 to 74; two further doctors of osteopathy practise the
+  specialty and the file does not break out their ages. [verified] — the same source.
+
+  **Nearly a third of the doctors seeing patients here trained abroad.** 97 of 304 are graduates of
+  institutions outside the United States and Canada, against 207 who trained in the United States.
+  [verified] — the same file.
+
+  **There are more nurse practitioners and physician assistants than physicians.** 221 and 127
+  against 304 in patient care, and on nurse practitioners the county is seventh of Ohio's 88 at
+  219.2 per 100,000 against the state's 158.7. [verified] — the same source. These are counts of
+  registrations with Medicare at an address in the county and not of the same universe as the
+  masterfiles, which is why the ADA finds 40 dentists in private practice here and the identifier
+  file finds 63. See
+  [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).
+
+  **The buildings, from the same file and other publishers.** Five hospitals with 498 beds and
+  24,648 admissions in 2023, three of them short-term general, one a critical access hospital and
+  two rural referral centres; eleven skilled nursing facilities with 762 beds; five federally
+  qualified health centres; nine National Health Service Corps sites staffed by 12.86 full-time
+  equivalents in 2024, of which 8.6 are mental health. [verified] — the same file, from the American
+  Hospital Association's annual survey, the CMS provider-of-services file and HRSA's own corps
+  records. The county's bed count from the hospitals' cost reports is 502; see
+  [the beds](allen-county-hospital-beds-2011-2023.yml).
+
+  **This corpus cannot say whether any of these doctors saw a patient from Allen County.** A
+  masterfile records a professional address and an activity, not a panel; the county contains two
+  hospital systems that draw from eight counties and a prison whose clinicians serve nobody outside
+  it. See [located here is not of here](../../decisions/located-here-is-not-of-here.yml).
+
+  [open] Whether the community health centre count tripled or the definition did. The file records
+  seven grantee sites in 2024 and twenty in 2025, with no note, and twenty new clinics in one year
+  in a county of a hundred thousand is the less likely reading.
+properties:
+  parameter: physicians in patient care, Allen County
+  value: "304"
+  unit: physicians
+  as_of: "2023"
+  method: |
+    County row `39003` of the 2024–2025 release, health professions and health facilities modules,
+    variables carrying the `_23` and `_24` suffixes. [verified] Rates per 100,000 use the file's own
+    `popn_est_23` of 100,838 for the county and the sum of all 88 Ohio county estimates,
+    11,785,935, for the state, so numerator and denominator come from one file. [inference]
+
+    Physician counts are non-federal and exclude those aged 75 and over where the variable says so;
+    the primary care count excluding residents also excludes them. [verified] Nurse practitioner,
+    physician assistant and identifier-based dentist counts are registrations with CMS and are
+    flagged in the documentation as needing the user guide; they are not comparable with the
+    masterfile counts and are not summed with them here. [verified]
+
+    Every variable in this file carries two years and no more. Nothing here is a trend. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hrsa-area-health-resources-file.md
+  - target: allen-county-shortage-designations-1985-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hrsa-shortage-designations.md
+  - target: allen-county-hospital-beds-2011-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hrsa-area-health-resources-file.md
+  - target: allen-county-health-care-employment-2010-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-nursing-homes-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
