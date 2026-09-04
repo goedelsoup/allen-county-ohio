@@ -8707,6 +8707,308 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "vacancy rate, 2020, per cent", value: 11.2, literal: "11.2" },
         ],
     },
+    Assertion {
+        id: "a-hundred-and-twelve-questions",
+        statement: "Allen County's voters decided 112 local ballot questions on sixteen election \
+                    days between May 2003 and November 2012, and passed 88 of them.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**A hundred and twelve questions on sixteen election days, and this county said yes to eighty-eight of them.** [verified] \u{2014} [the Secretary of State's issue reports](../../catalog/ohio-sos-local-issue-reports.md), ninety of them, read here. Everything below the candidates: levies, bonds, income taxes, a charter, a zoning referendum, an electric contract and the surrender of a village."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-renews-and-does-not-add",
+        statement: "Of the eighty tax and bond questions Allen County decided in these ten years, 45 \
+                    asked to renew a levy and 44 passed, 13 asked to replace one and 13 passed, and \
+                    17 asked for an additional levy and 6 passed. Fifty-seven of fifty-eight against \
+                    six of seventeen.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**The county renews and it does not add.** Of the eighty tax and bond questions, 45 asked to renew a levy and 44 passed; 13 asked to replace one and 13 passed; 17 asked for an additional levy and 6 passed. That is 57 of 58 against 6 of 17 \u{2014} a gap of 62 points between asking for the same money again and asking for more. [verified] \u{2014} the same source, classified here on the word the ballot itself uses."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "renewals passed", value: 44.0, literal: "44" },
+            Figure { label: "renewals asked", value: 45.0, literal: "45" },
+            Figure { label: "additional passed", value: 6.0, literal: "6" },
+            Figure { label: "additional asked", value: 17.0, literal: "17" },
+        ],
+    },
+    Assertion {
+        id: "the-renewal-that-failed-was-not-one",
+        statement: "The only renewal Allen County refused in ten years had an increase attached to \
+                    it. Bath Local School District's 9.56-mill renewal with a 1.74-mill increase \
+                    lost 1,369 to 1,894 in March 2004 - 42.0 per cent, worse than any additional \
+                    levy that passed.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**The one renewal that failed was not a renewal.** Bath Local School District, 2 March 2004: \"9.56 mills (renewal), and increase of 1.74 mills\". It lost 1,369 to 1,894 \u{2014} 42.0 per cent, the worst result any renewal got in ten years and eight points below the worst additional levy that passed. [verified] \u{2014} the same source. A renewal with an increase attached is read by this electorate as an increase. [inference]"),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "yes", value: 1369.0, literal: "1,369" },
+            Figure { label: "no", value: 1894.0, literal: "1,894" },
+            Figure { label: "yes share, per cent", value: 42.0, literal: "42.0" },
+        ],
+    },
+    Assertion {
+        id: "a-replacement-passes-like-a-renewal",
+        statement: "Thirteen replacement levies were put to Allen County voters between 2003 and \
+                    2012 and thirteen passed, at a mean yes share of 64.3 per cent against the \
+                    renewals' 64.9. The two are indistinguishable in this record even though a \
+                    replacement collects more.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**A replacement is not a renewal either, and this county treats it as one.** Thirteen replacement levies were put and thirteen passed, at a mean yes share of 64.3 per cent against the renewals' 64.9 \u{2014} the two are indistinguishable in this record. [verified] \u{2014} the same source; the shares are computed here. What separates the words is what the tax collects; see [the rates](allen-county-property-tax-rates-2012-2025.yml). [inference]"),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "replacement mean yes, per cent", value: 64.3, literal: "64.3" },
+            Figure { label: "renewal mean yes, per cent", value: 64.9, literal: "64.9" },
+        ],
+    },
+    Assertion {
+        id: "new-borrowing-is-the-hardest-ask",
+        statement: "Three of the eight bond issues put to Allen County voters between 2003 and 2012 \
+                    passed. Elida Local School District was refused twice and Bath Local School \
+                    District once, six months before the same district renewed a levy at 62.3 per \
+                    cent.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**New borrowing is the hardest thing to ask for.** Three of eight bond issues passed. Elida Local School District was refused twice, in May 2007 at 42.9 per cent and in November 2006 at 41.0; Columbus Grove twice; Bath Local School District once, in May 2011 at 45.5 per cent, six months before the same district renewed a levy at 62.3. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "Bath renewal yes share, per cent", value: 62.3, literal: "62.3" },
+        ],
+    },
+    Assertion {
+        id: "beaverdam-refused-three-times",
+        statement: "A municipal income tax was refused four times in five in this county. Lima's \
+                    rise from 1.5 to 1.9 per cent lost 2,335 to 4,447 in March 2004, and Beaverdam \
+                    asked three times for one per cent and was refused three times - once on a \
+                    return of 57 yes and 57 no.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**And a municipal income tax is refused four times in five.** Lima put a rise from 1.5 to 1.9 per cent on 2 March 2004 and lost 2,335 to 4,447 \u{2014} 34.4 per cent, the lowest yes share of any question in the decade that was not a village dissolving. Beaverdam asked three times for one per cent, in 2006, 2007 and 2009, and was refused each time; the 2007 return is **57 yes and 57 no**, and a question that does not carry a majority does not pass. [verified] \u{2014} the same source. Bluffton's quarter-per-cent levy for a village building, on an initiative petition in 2005, is the one that carried. [verified]"),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "Lima yes", value: 2335.0, literal: "2,335" },
+            Figure { label: "Lima no", value: 4447.0, literal: "4,447" },
+            Figure { label: "Beaverdam yes, 2007", value: 57.0, literal: "57" },
+        ],
+    },
+    Assertion {
+        id: "everything-not-about-money-passed",
+        statement: "Every question in Allen County between 2003 and 2012 that was not about money \
+                    passed: three Lima charter amendments, a Bath Township zoning referendum at 78.8 \
+                    per cent, two ordinances by petition, and seven of eight electric aggregations.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**Everything that was not about money passed.** Three Lima charter amendments, a Bath Township zoning referendum at 78.8 per cent, two ordinances by petition, and seven of eight electric aggregations. [verified] \u{2014} the same source. The single aggregation that failed is [Elida's](../place/elida.yml), and its published figure cannot be right."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "zoning referendum yes, per cent", value: 78.8, literal: "78.8" },
+        ],
+    },
+    Assertion {
+        id: "the-busiest-ballot-was-an-odd-year",
+        statement: "The most local questions Allen County ever decided at once in this record was \
+                    nineteen, on 8 November 2011, and eighteen of them passed. The two presidential \
+                    ballots in the same decade carried nine and twelve.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**The busiest ballot in the decade was an odd-numbered year.** Nineteen questions on 8 November 2011 and eighteen of them passed; sixteen on 7 November 2006 and twelve passed. The two presidential years carried nine and twelve. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[],
+    },
+    Assertion {
+        id: "thirteen-questions-filed-elsewhere",
+        statement: "Thirteen of the 112 questions Allen County's voters were asked between 2003 and \
+                    2012 are not printed under this county at all - Columbus Grove's bonds under \
+                    Putnam, Waynesfield-Goshen's levies under Auglaize - because Allen is the \
+                    smaller partner in those districts.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**Thirteen of the hundred and twelve are not printed under this county at all.** Columbus Grove's bonds and income tax are filed under Putnam, Waynesfield-Goshen's levies and Pandora-Gilboa's income tax under Putnam or Auglaize, because Allen is the smaller partner in each district. [verified] \u{2014} the same source, read across all eighty-eight counties. Thirty-seven of the hundred and twelve are multi-county in one direction or the other."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-village-surrendered-its-corporate-power",
+        statement: "The Village of Fort Shawnee was ended by its own electors on 6 November 2012. \
+                    Asked \"Shall the Village known as Fort Shawnee surrender its corporate \
+                    power?\", they answered 1,058 to 858.",
+        topic: "elections",
+        supports: &[
+            support!("jurisdiction/village-of-fort-shawnee.yml", "**It was ended by a vote, on a petition, on 6 November 2012.** The question was \"Shall the Village known as Fort Shawnee surrender its corporate power?\" and the answer was **1,058 to 858** \u{2014} 55.2 per cent, on 1,916 votes. [verified] \u{2014} [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md) for that election, under ALLEN COUNTY. This node exists because that return closes [a question this corpus had carried open since its first week](../question/what-happened-to-the-village-of-fort-shawnee.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "yes", value: 1058.0, literal: "1,058" },
+            Figure { label: "no", value: 858.0, literal: "858" },
+            Figure { label: "yes share, per cent", value: 55.2, literal: "55.2" },
+        ],
+    },
+    Assertion {
+        id: "fort-shawnee-refused-to-pay-then-dissolved",
+        statement: "Fort Shawnee refused an additional four-mill levy 435 to 796 in November 2011, \
+                    refused a 3.25-mill levy 592 to 1,323 on the ballot that dissolved it, and voted \
+                    to surrender its corporate power on that same day. The second levy's 30.9 per \
+                    cent is the lowest yes share on any question put anywhere in the county in ten \
+                    years.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**Fort Shawnee refused to tax itself twice and then abolished itself.** An additional four-mill levy lost 435 to 796 in November 2011 and a 3.25-mill levy lost 592 to 1,323 in November 2012 \u{2014} 30.9 per cent, the lowest of the decade. On the same 2012 ballot the village's electors were asked whether it should surrender its corporate power and answered 1,058 to 858. [verified] \u{2014} the same source; see [the village](../jurisdiction/village-of-fort-shawnee.yml)."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[
+            Figure { label: "2012 levy yes", value: 592.0, literal: "592" },
+            Figure { label: "2012 levy no", value: 1323.0, literal: "1,323" },
+            Figure { label: "dissolution yes", value: 1058.0, literal: "1,058" },
+        ],
+    },
+    Assertion {
+        id: "two-instruments-put-the-end-in-the-same-year",
+        statement: "The county Auditor's tax set for Fort Shawnee levies 2.150 mills of village tax \
+                    in tax year 2012 and none in 2013, and the Census Bureau's gazetteer draws a \
+                    village in the 2012 vintage and a census designated place in the 2013. The vote \
+                    that ended the corporation falls between them.",
+        topic: "elections",
+        supports: &[
+            support!("jurisdiction/village-of-fort-shawnee.yml", "**Two instruments with nothing in common put that end inside the next twelve months.** The county Auditor's tax set L36, *Fort Shawnee Corp.*, levies 2.150 mills of village tax in tax year 2012 and none in 2013; the Census Bureau's gazetteer carries the place with legal code 47, village, in the 2012 vintage and code 57, census designated place, in the 2013. [verified] \u{2014} [the Auditor's tax rate summaries](../../catalog/allen-county-auditor-tax-rates.md) and [the gazetteer](../../catalog/census-gazetteer-2020.md). The vote falls between them, five weeks before the first tax year in which nothing was levied."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "village millage, tax year 2012", value: 2.15, literal: "2.150" },
+        ],
+    },
+    Assertion {
+        id: "the-survey-misses-what-a-government-gives-up",
+        statement: "Ohio's boundary and annexation survey holds fifty-seven records for Allen County \
+                    between 1990 and 2024 and every one is an annexation. The county's one \
+                    dissolution in that window is not in the file: the survey misses what a \
+                    government gives up, and the largest thing it can give up is itself.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-annexations-1990-2024.yml", "**The one boundary change of consequence in this window is not in the file either, and it is not an annexation.** Fort Shawnee's electors ended the village on 6 November 2012 and the survey has no row for it. [verified] \u{2014} [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md); see [the Village of Fort Shawnee](../jurisdiction/village-of-fort-shawnee.yml). That sharpens the reading above rather than replacing it: the survey misses what a government gives up, and the largest thing a government can give up is itself. [inference]"),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "thirty-liquor-questions-precinct-by-precinct",
+        statement: "Allen County decided thirty local option liquor questions in eight elections \
+                    between 2004 and 2012, precinct by precinct, and passed twenty-five. 5,528 votes \
+                    yes and 3,599 no in ten years.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-local-option-elections-2003-2012.yml", "**Thirty liquor questions in eight elections, precinct by precinct, and this county passed twenty-five of them.** [verified] \u{2014} [the Secretary of State's local option reports](../../catalog/ohio-sos-local-issue-reports.md), sixteen of them read here. 5,528 votes yes and 3,599 no across ten years: the smallest electorate and the most particular question on any ballot in Ohio."),
+        ],
+        answers: &["cannot say whether any of these questions changed what a shop sold"],
+        figures: &[
+            Figure { label: "yes votes", value: 5528.0, literal: "5,528" },
+            Figure { label: "no votes", value: 3599.0, literal: "3,599" },
+        ],
+    },
+    Assertion {
+        id: "an-olive-garden-and-a-red-lobster",
+        statement: "Perry Township precinct N refused an Olive Garden 119 to 125 and a Red Lobster \
+                    119 to 124 on the same day in November 2005, refused a third question 139 to 151 \
+                    in 2010, and has passed none in this record.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-local-option-elections-2003-2012.yml", "**Two restaurants in one precinct were refused on one day, by six votes and by five.** Perry Township precinct N, 8 November 2005: the Olive Garden 119 to 125 and the Red Lobster 119 to 124. The same precinct refused a third question in November 2010, 139 to 151, and has passed none in this record. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say whether any of these questions changed what a shop sold"],
+        figures: &[
+            Figure { label: "Olive Garden yes", value: 119.0, literal: "119" },
+            Figure { label: "Olive Garden no", value: 125.0, literal: "125" },
+            Figure { label: "Red Lobster no", value: 124.0, literal: "124" },
+        ],
+    },
+    Assertion {
+        id: "carried-by-two-votes",
+        statement: "The narrowest thing Allen County has approved in this record is a filling \
+                    station: the Duke & Duchess BP on the Harding Highway in Bath Township precinct \
+                    D carried 136 to 134 on 2 November 2004, out of 270 votes.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-local-option-elections-2003-2012.yml", "**The narrowest thing this county has ever approved is a filling station.** The Duke & Duchess BP on the Harding Highway in Bath Township precinct D carried 136 to 134 on 2 November 2004 \u{2014} a two-vote margin out of 270. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say whether any of these questions changed what a shop sold"],
+        figures: &[
+            Figure { label: "yes", value: 136.0, literal: "136" },
+            Figure { label: "no", value: 134.0, literal: "134" },
+        ],
+    },
+    Assertion {
+        id: "one-precinct-two-answers",
+        statement: "Spencerville precinct B answered two liquor questions oppositely on one visit to \
+                    the booth on 8 November 2005: form 5-R1 carried 104 to 71 and form 5-R2 lost 81 \
+                    to 96, a difference of 32 points.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-local-option-elections-2003-2012.yml", "**One precinct answered two questions oppositely on the same day.** Spencerville precinct B, 8 November 2005: form 5-R1 carried 104 to 71 and form 5-R2 lost 81 to 96. Whatever separates the two forms, this electorate distinguished them by 32 points in one visit to the booth. [verified] \u{2014} the same source."),
+        ],
+        answers: &["cannot say whether any of these questions changed what a shop sold"],
+        figures: &[
+            Figure { label: "R1 yes", value: 104.0, literal: "104" },
+            Figure { label: "R2 yes", value: 81.0, literal: "81" },
+            Figure { label: "R2 no", value: 96.0, literal: "96" },
+        ],
+    },
+    Assertion {
+        id: "no-report-says-what-the-forms-ask",
+        statement: "All eight local option questions Allen County decided on form 5-R1 passed and \
+                    seventeen of twenty-two on form 5-R2 did, with every refusal an R2 - and no copy \
+                    of any report this corpus holds says what the two forms ask.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-local-option-elections-2003-2012.yml", "**And the separation holds across the county.** Eight questions on form 5-R1 were put in these ten years and eight passed, at a mean yes share of 65.3 per cent; twenty-two were put on form 5-R2 and seventeen passed, at 58.0. All five refusals are R2. [verified] \u{2014} the same source; the shares are computed here. **No copy of any report this corpus holds says what R1 and R2 are.** The 2004 reports print the lettered question texts \u{2014} off-premise sale, on-premise sale, spirituous liquor by the glass, Sunday sale \u{2014} and the columns that carry the returns are labelled by form and number instead, with no key. [verified] \u{2014} the same source, all sixteen of them."),
+        ],
+        answers: &["cannot say whether any of these questions changed what a shop sold"],
+        figures: &[
+            Figure { label: "R1 mean yes, per cent", value: 65.3, literal: "65.3" },
+            Figure { label: "R2 mean yes, per cent", value: 58.0, literal: "58.0" },
+        ],
+    },
+    Assertion {
+        id: "the-elida-return-cannot-be-right",
+        statement: "The Secretary of State's report gives Elida Village 3,622 yes and 5,454 no on an \
+                    electric aggregation question in November 2012 - 9,076 votes in a village of \
+                    about nineteen hundred people. Nothing in the file flags it and no correction is \
+                    archived.",
+        topic: "elections",
+        supports: &[
+            support!("place/elida.yml", "**A published election return gives this village nine thousand votes.** *Proposed Electric Aggregation \u{2014} Elida Village*, 6 November 2012: 3,622 yes and 5,454 no, 9,076 in all, in a place whose entire population is about nineteen hundred. [verified] \u{2014} [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md) against the estimates above. Nothing in the file flags it and no correction is archived; the figure is 4.8 times the village's people and cannot be its vote. [inference] \u{2014} see [the ballot record](../measure/allen-county-ballot-questions-2003-2012.yml), which counts the question and refuses the number."),
+        ],
+        answers: &["What the excess is, this corpus does not know"],
+        figures: &[
+            Figure { label: "yes", value: 3622.0, literal: "3,622" },
+            Figure { label: "no", value: 5454.0, literal: "5,454" },
+            Figure { label: "total votes", value: 9076.0, literal: "9,076" },
+        ],
+    },
+    Assertion {
+        id: "a-return-under-a-county-is-not-its-vote",
+        statement: "One question under the ALLEN COUNTY heading in November 2012 carries 48,543 \
+                    votes, and the county cast 48,708 ballots that day on everything together. The \
+                    report files a district that crosses a county line under whichever county holds \
+                    most of it, with the whole district's vote.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-questions-2003-2012.yml", "**This corpus cannot say how Allen County voted on any question that crossed its own line.** The reports give one figure per question and it is the whole subdivision's; a district straddling two counties has one number and no split. [verified] \u{2014} [the reports' own convention](../../catalog/ohio-sos-local-issue-reports.md), `* denotes most populous county`; see [a return filed under a county is not that county's vote](../../decisions/a-return-filed-under-a-county-is-not-that-countys-vote.yml)."),
+        ],
+        answers: &["cannot say how Allen County voted on any question that crossed its own line"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
