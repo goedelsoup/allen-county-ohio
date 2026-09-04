@@ -1,0 +1,133 @@
+class: measure
+label: The buildings of Allen County, 2019
+description: |
+  **Fifty-nine thousand four hundred and thirty-three buildings stand in Allen County, and together
+  they cover one and two thirds per cent of it.** 185,800,263 square feet of footprint is 4,265
+  acres against the county's 402.545 square miles. [verified] —
+  [USA Structures](../../catalog/fema-usa-structures.md) against
+  [the land area](allen-county-land-area-2020.yml). That is one building for every 1.72 residents.
+
+      occupancy class     buildings    square feet   mean    of floor area
+      Residential            48,477    110,342,253  2,276        59.39%
+      Industrial              1,591     26,324,717 16,546        14.17%
+      Commercial              2,455     18,277,139  7,445         9.84%
+      Agriculture             4,550     14,366,878  3,158         7.73%
+      Education                 477      6,284,473 13,175         3.38%
+      Government                849      5,756,968  6,781         3.10%
+      Unclassified              736      2,464,510  3,349         1.33%
+      Assembly                  258      1,701,495  6,595         0.92%
+      Utility and Misc           40        281,829  7,046         0.15%
+
+  **Industry is a fortieth of the buildings and a seventh of the floor.** 1,591 industrial
+  structures average 16,546 square feet against 2,276 for a residential one, so 2.68 per cent of
+  the county's buildings hold 14.17 per cent of its enclosed area. [verified] — the same source,
+  summed here.
+
+  **The file finds 48,336 dwelling structures where the census counted 44,563 housing units.**
+  43,753 single family dwellings at a median 2,000 square feet, 2,604 multi-family at a median
+  2,813, and 1,979 manufactured homes at a median 1,706. [verified] — the same source, against
+  [the 2020 housing units](allen-county-housing-units-2020.yml). A structure is not a unit in either
+  direction — one multi-family roof holds many units, and a unit above a shop is filed under
+  Commercial — so the near-agreement of the two totals is a coincidence of opposite errors.
+  [inference]
+
+  **Thirty-four of the county's thirty-five institutional dormitories are cellblocks.** They stand
+  in the two census blocks north of Lima that hold
+  [Allen Correctional](../site/allen-correctional-institution.yml) and
+  [Oakwood](../site/oakwood-correctional-facility.yml), and the file classes every one of them
+  *Residential*. [verified] — the same source, by primary occupancy and coordinate. The
+  thirty-fifth stands in Lima.
+
+  **The thirteen subdivisions partition the county's buildings exactly.** Lima and the twelve
+  townships sum to 59,433 with nothing left over, and Lima holds 15,766 of them — 26.5 per cent of
+  the buildings on 3.4 per cent of the ground, at 1,141 to the square mile against American
+  Township's 306 and Amanda's 53. [verified] — the same source against
+  [the county subdivision file](../../catalog/census-tiger-roads.md), each centroid tested for
+  containment.
+
+      subdivision   buildings  per sq mi     subdivision   buildings  per sq mi
+      Lima             15,766      1,141     Jackson           2,672         74
+      American          7,402        306     Auglaize          2,469         68
+      Shawnee           7,242        247     Spencer           2,042         87
+      Bath              5,692        178     Monroe            1,989         55
+      Marion            4,386        103     Amanda            1,831         53
+      Richland          3,829         91     Sugar Creek       1,152         48
+      Perry             2,961         90
+
+  **The largest building in Allen County covers 42.8 acres and the file does not name it.**
+  1,865,159 square feet, classed *Industrial / Light*, with no address in the columns taken. The
+  corpus's coordinate for [the Ford Lima Engine Plant](../site/ford-lima-engine-plant.yml) lies 104
+  metres from it, and the only other buildings within 150 metres of that point are 2,129 and 609
+  square feet. [verified] — the same source, queried by point. On that evidence the county's
+  largest building is the engine plant. [inference]
+
+  **Eight of the ten coordinates this corpus already held fall inside no building.** The courthouse,
+  both prisons, the tank plant, the refinery, the engine plant, the depot and the quarry all miss;
+  [the Justice Center](../site/allen-county-justice-center.yml) lands in a 27,927-square-foot
+  building the file calls Government, and [Memorial Hall](../site/lima-memorial-hall.yml) lands in a
+  17,560-square-foot one it calls Commercial. [verified] — the same source, ten point queries. A
+  coordinate of record is a label on a place, not a position on a roof; see
+  [an address of record is not a residence](../../decisions/an-address-of-record-is-not-a-residence.yml).
+
+  **There are 8,723 more buildings here than there are addresses.** 59,433 against the 50,710
+  address points the county publishes. [verified] — the same source against
+  [the county's address file](../../catalog/allen-county-gis-downloads.md). Barns, machine sheds and
+  detached garages over 450 square feet have a roof and no street number. [inference]
+
+  **Two counts the corpus already held come out higher here, and both should.** The file finds 258
+  religious buildings against 160 congregations, and 217 Pre-K–12 school buildings against a
+  district roster that has never named where a building stood. [verified] — the same source against
+  [the congregations](allen-county-congregations-2020.yml) and
+  [the school buildings](allen-county-school-buildings-1986-2024.yml). A congregation can own a hall
+  and a manse, and a church that closed still has a church-shaped roof.
+
+  **This corpus cannot say when any of these buildings went up.** The file carries a production date
+  and an imagery date and no construction date at all, and three quarters of these buildings are one
+  photograph taken on 29 March 2017; see
+  [a photograph is not a register](../../decisions/a-photograph-is-not-a-register.yml).
+
+  [open] What is under 450 square feet. The dataset's smallest footprint here is 450.08 square feet
+  and nothing below that exists in it, so every shed and single garage in the county is missing and
+  the corpus has no way to count them.
+properties:
+  parameter: buildings in Allen County
+  value: "59433"
+  unit: buildings
+  as_of: "2019-12-26"
+  method: |
+    All rows with `FIPS='39003'`, taken in thirty pages of 2,000 ordered by `OBJECTID`, without
+    geometry; the file's own `LONGITUDE` and `LATITUDE` were projected from NAD83 to EPSG:26916 and
+    written to a GeoPackage, and every containment test below is that centroid inside the polygon.
+    [verified] A centroid rule assigns a building that straddles a line to one side of it, and 129
+    buildings in this county sit within ten metres of a subdivision boundary. [inference]
+
+    Footprint areas are the file's `SQFEET`, summed. Subdivision and place polygons are the 2024
+    TIGER files clipped to the county, which is why Bluffton and Delphos are counted only for the
+    part of them inside Allen County. [verified]
+
+    Individual buildings were fetched with geometry one query at a time, and the ten site tests are
+    point-in-polygon against the service rather than against a centroid. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
+  - target: ../site/ford-lima-engine-plant.yml
+    relationship: describes
+    claim_tag: inference
+  - target: allen-county-buildings-in-the-floodplain-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-usa-structures.md
+  - target: allen-county-housing-units-2020.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-land-cover-2008-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
