@@ -29,6 +29,7 @@ used-by:
   - ../corpus/measure/allen-county-house-prices-by-tract-1986-2025.yml
   - ../corpus/measure/allen-county-personal-income-1969-2024.yml
   - ../corpus/measure/allen-county-transfer-receipts-1969-2024.yml
+  - ../corpus/measure/allen-county-federal-contributions-1980-2024.yml
 ---
 
 **A request without a user agent gets HTTP 403.** BLS asks that automated requests identify the

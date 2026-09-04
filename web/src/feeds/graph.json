@@ -5022,6 +5022,77 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "class": "measure",
+      "label": "Federal campaign contributions from Allen County, 1980–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "The Commission's `indiv` bulk file for each of twelve presidential cycles, streamed and filtered on the fly to records whose state is OH and whose ZIP begins 458, then reduced to Allen County three ways. [verified] *Deduplicated.* From 2012 the archive holds `itcont.txt` and a `by_date/` partition of the same records, so every `SUB_ID` appears exactly twice; and a conduit files the money it passes on as a `24T` while the committee that receives it files the same contributor, date and amount as a `15E`, a `15` or a `10`. Reading the 2024 archive without either step gives $1,528,070 against $611,489 — two and a half times the figure. A `24T` is kept only where no other row carries the same contributor, date and amount. [verified] *Netted.* Refunds to contributors, transaction type `22Y`, carry positive amounts in this file and are subtracted. [verified] *Weighted.* Each record is multiplied by the share of its ZIP code tabulation area's population that lives in Allen County, from [the crosswalk](allen-county-zip-codes-2020.yml). Under the three alternative rules the 2024 total is $454,593 for the eight wholly-inside codes, $650,446 for the thirteen majority-Allen codes and $959,382 for every code that touches the county at all. [verified] A conduit's pass-through is attributed to the committee named in `OTHER_ID` rather than to the conduit, because WinRed writes no memo text where ActBlue writes a parseable one and both populate that field. Party comes from the committee master where it is filled and from the candidate master through the committee's candidate where it is not; committees with neither are reported as unlabelled rather than guessed at. [verified] Donors are distinct contributor names within a ZIP within a cycle, which merges two people of the same name at the same post office and separates one person who moved. [inference] No individual contributor is named anywhere in this corpus; employers and occupations are recorded because they are properties of firms and of work.",
+        "parameter": "itemized federal contributions from Allen County residents, 2023–24 cycle",
+        "unit": "US dollars, nominal",
+        "value": "611489"
+      },
+      "blocks": [
+        {
+          "text": "**This corpus has counted how Allen County votes for eleven phases and never counted what its politics costs.** Presidential returns to 1856, turnout, precincts, registration, poll workers and ballot issues, and not one dollar. [verified] — [the presidential vote](allen-county-presidential-vote-2000-2016.yml) and [the turnout](allen-county-turnout-2004-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**In the 2023–24 cycle 1,331 people with an Allen County address gave $611,489 to federal campaigns, parties and political committees.** Twelve presidential cycles, in dollars weighted to the county's share of each ZIP code's population. [verified] — [the Commission's bulk files](../../catalog/fec-bulk-individual-contributions.md), deduplicated and netted of refunds here; see [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Real giving per resident is five times what it was in 1980 and the number of givers is twenty-two times.** $1.21 a head to $6.06, with a peak of $7.46 in 2020; 61 people to 1,331. [verified] — the same file, deflated by [the consumer price index](../../catalog/bls-cpi.md). The county lost 11,375 residents over the same forty-four years. [verified] — [the population](allen-county-population-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The median itemized gift fell from $860 to $24.** In 2024 dollars the 1980 median is $3,274 and the 2024 median is $24, a fall of a hundred and thirty-six times, while the largest single contribution rose from $1,000 — the legal maximum then — to $50,000. [verified] — the same source, deflated the same way. Both tails grew at once: the top ten givers were 20.4 per cent of the county's money in 2012 and 37.0 in 2020.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1984 row is the file and not the county.** Six donors and $2,884, against sixty-one and $35,606 four years earlier — and the Commission's 1983–84 archive is smaller than its 1979–80 one, nationally, at 6.8 megabytes against 8.1. [verified] — the same file, its archive size and its rows. Nothing is read from that row.",
+          "tier": "verified"
+        },
+        {
+          "text": "**In thirty-three years of these records the county's itemized donors included no factory worker and one welder. In the three cycles since 2016 there are 939 contributions from factory workers and 353 from welders.** The distinct occupations recorded rose from 336 to 739. [verified] — the same file, occupation strings as filed. Whether working people in Allen County began giving or merely began being written down is not something this file can separate: a contribution is itemized once it aggregates above $200 at one committee, and money routed through a conduit aggregates at the conduit, which is far easier to cross. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Who receives it has changed twice.** [verified] — the same file, weighted, by committee.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's own congressman is the largest single recipient of its money in the middle era.** $167,879 to Jim Jordan for Congress across 2000 to 2012, more than twice the next committee. [verified] — the same source. In the most recent three cycles the two largest are a national party committee and a super PAC that received one contribution of $50,000, the largest gift any Allen County resident has made in this record. [verified] — the same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The share of this money that the Commission's own files can assign to a party has fallen from 98.9 per cent to 52.1.** Joint fundraising committees and conduits carry no party in the committee master and no candidate to borrow one from, and they went from nothing to half the money. [verified] — the same source against [the committee and candidate masters](../../catalog/fec-bulk-individual-contributions.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Where both can be measured, the money is more Republican than the vote, and the gap has closed from twenty-eight points to seven.** In 2008 the county gave McCain 60.5 per cent of its two-party vote and Republican committees 89.0 per cent of its labelled money; in 2020 it gave Trump 70.1 per cent and Republican committees 77.0. [verified] — the same source against [the presidential vote](allen-county-presidential-vote-2000-2016.yml) and [the 2020 return](allen-county-presidential-vote-2020.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say whether Allen County's political money has become less Republican.** The labelled Republican share falls from 89.0 per cent in 2008 to 56.0 in 2024, and over the same years the labelled share of the money falls from 86.8 per cent to 52.1 — and the unlabelled half is joint fundraising committees named for candidates of both parties, among them the largest Republican ones. The two movements cannot be separated inside this file. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Read without care the 2024 file says this county gave $1,528,070.** Every record is in the archive twice from 2012 on, because the zip holds `itcont.txt` and a `by_date/` partition of the same rows; and a contribution made through a conduit is filed again by the committee that banks it. Deduplicating on the record identifier halves the figure and deduplicating the conduits takes another fifth off it. The naive reading is two and a half times the $611,489 above. [verified] — the same file, read three ways.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The rule for turning a ZIP code into a county is worth a factor of two.** The 2024 total is $454,593 under the eight postal codes that lie wholly in Allen County, $650,446 under the thirteen with a majority of their people here, and $959,382 under every code that touches the county at all. This node publishes $611,489, weighted by population, and prints the others because a reader comparing it with a figure from elsewhere has no other way to know the rules differed. [verified] — the same file against [the crosswalk](allen-county-zip-codes-2020.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say whether Allen County's political money has become less Republican.** The labelled Republican share falls from 89.0 per cent in 2008 to 56.0 in 2024, and over the same years the labelled share of the money falls from 86.8 per cent to 52.1 — and the unlabelled half is joint fundraising committees named for candidates of both parties, among them the largest Republican ones."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
       "class": "measure",
       "label": "Allen County foreclosures and evictions, 2007–2017",
@@ -6131,6 +6202,10 @@
         },
         {
           "text": "**Five hundred and forty-five of the 568 pandemic registrations are classed as renters.** In a county where 27,960 of 40,928 occupied units are owner-occupied — over two-thirds — that is a classification produced by a programme with no inspection rather than a fact about tenure. [inference] — [the housing stock](allen-county-housing-stock-2023.yml). The corpus reports the split and reads nothing into it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The Bluffton figure above is a postal area and this corpus now knows how much of it is the county.** ZIP 45817 is 49.7 per cent of Allen County by land and 81.3 per cent by the people who live in it, and it reaches into Hancock and Putnam counties as well. [verified] — [the ZIP codes](allen-county-zip-codes-2020.yml). These rows were filtered to Allen County by the agency before the ZIP was ever read, so nothing here is over-counted; what the ZIP cannot do is say that the damage was in the village, since 45817 covers a good deal of township either side of a line the flood did not observe. [inference] See [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml).",
           "tier": "inference"
         }
       ],
@@ -11426,6 +11501,53 @@
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-zip-codes-2020.yml",
+      "class": "measure",
+      "label": "Allen County's ZIP codes, 2020",
+      "tier": "verified",
+      "properties": {
+        "as_of": "2020-04-01",
+        "method": "`tab20_zcta520_tabblock20_natl.txt`, the 2020 ZCTA-to-block relationship file, streamed and filtered to the twenty tabulation areas that touch county 39003, joined on the fifteen-digit block identifier to block populations from the Ohio P.L. 94-171 file. A block's county is the first five characters of its identifier, so the county split needs no second lookup. [verified] Population shares are the sum of block populations in each county part over the area's total. Land shares are `AREALAND_PART` over the area's total land, which is what the county-level relationship file publishes and the only figure available without the block join. [verified] Post-office names are the modal `CITY` value on the contribution records carrying each code in the four cycles from 2012, not a postal directory. [verified] — [the contributions](allen-county-federal-contributions-1980-2024.yml). The relationship files carry no name for a ZCTA beyond its number. Blocks appearing more than once against the same area — the file lists a row per overlap — are counted once. The county parts sum to 102,206 against a published county population of 102,206. [verified]",
+        "parameter": "ZIP Code Tabulation Areas overlapping Allen County",
+        "unit": "areas",
+        "value": "20"
+      },
+      "blocks": [
+        {
+          "text": "**Twenty ZIP-code areas touch Allen County and eight lie wholly inside it.** Between them the eight hold 73,421 of the county's 102,206 people — 71.8 per cent — and the other 28,785 live under a postal address they share with one, two or three other counties. [verified] — [the Census Bureau's ZCTA relationship files](../../catalog/census-zcta-relationship-files.md) joined to [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The Allen County parts sum to 102,206, which is the county.** Twenty postal areas built to deliver mail and a block file built to apportion legislatures agree to the person on a county neither of them names. [verified] — the same sources, joined. Nothing here was scaled or reconciled; the closure is the check that the block assignment is right.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Land and population disagree by up to thirty-two points, and in both directions.** Bluffton's 45817 is 49.7 per cent of Allen County by land and 81.3 per cent by people; Spencerville's 45887 is 55.2 against 82.3; Harrod's 45850 is 80.7 against 91.8. Going the other way, the rural 45830 is 32.8 per cent Allen by land and 21.2 by people, and Ada's 45810 is 8.0 against 2.9. [verified] — the same files. A village sits on one side of a county line and the farmland around it does not, so the weight that is easy to publish is the weight that is wrong. See [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three of the county's nine municipal corporations sit on a ZIP that is mostly outside the county by land and mostly inside it by people.** [Delphos](../place/delphos.yml), [Bluffton](../place/bluffton.yml) and [Spencerville](../place/spencerville.yml) — 45833 at 45.9 per cent of land and 55.3 of people, 45817 at 49.7 and 81.3, 45887 at 55.2 and 82.3. [verified] — the same source, against [the nine corporations](allen-county-roads-2010-2024.yml). Delphos is the hardest of the three: the city itself straddles the Allen–Van Wert line, so neither its ZIP nor its corporation lies in one county. [verified] — [the city](../place/delphos.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The eight wholly-inside codes are Lima and its ring, and they are 71.8 per cent of the county.** Three Lima codes hold 60,132 people between them; Elida's holds 11,856; Beaverdam, Gomer, Cairo and Lafayette hold 1,433 between the four of them. [verified] — the same source. A rule that keeps only these loses every town on the county's edge.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A rule that takes every code with a majority of its people here captures 98.2 per cent of the county and admits 9,744 outsiders.** Thirteen codes, 100,322 Allen residents and 9,744 residents of Auglaize, Hancock, Putnam, Van Wert, Hardin and Mercer counties in the same net. [verified] — the same source, computed here. The 1,884 Allen County residents it misses live on the codes of Ada, Alger, Columbus Grove, Fort Jennings, Pandora, Wapakoneta and Waynesfield.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This corpus cannot say which county a person with a Delphos address lives in.** The postal code covers both sides of a line that runs through the city itself, the record that carries the code carries nothing else geographic, and a weight is a statement about a population and not about a person. [verified] — the same files. Every ZIP-coded figure in this corpus is a weighted estimate of a county total and none of it is a statement about anybody.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say which county a person with a Delphos address lives in.** The postal code covers both sides of a line that runs through the city itself, the record that carries the code carries nothing else geographic, and a weight is a statement about a population and not about a person."
+      ],
+      "withheld": 2
     },
     {
       "id": "measure/bluffton-and-beaverdam-elections-1939-1959.yml",
@@ -24451,6 +24573,34 @@
       "source": "catalog/fhwa-hpms-public-release.md"
     },
     {
+      "from": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/fec-bulk-individual-contributions.md"
+    },
+    {
+      "from": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "to": "measure/allen-county-zip-codes-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-zcta-relationship-files.md"
+    },
+    {
+      "from": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "to": "measure/allen-county-presidential-vote-2000-2016.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fec-bulk-individual-contributions.md"
+    },
+    {
+      "from": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "to": "measure/allen-county-presidential-vote-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fec-bulk-individual-contributions.md"
+    },
+    {
       "from": "measure/allen-county-foreclosures-and-evictions-2007-2017.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -24904,6 +25054,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/fhfa-house-price-index.md"
+    },
+    {
+      "from": "measure/allen-county-household-disaster-aid-2007-2020.yml",
+      "to": "measure/allen-county-zip-codes-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-zcta-relationship-files.md"
     },
     {
       "from": "measure/allen-county-household-disaster-aid-2007-2020.yml",
@@ -25831,6 +25988,13 @@
     },
     {
       "from": "measure/allen-county-presidential-vote-2000-2016.yml",
+      "to": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fec-bulk-individual-contributions.md"
+    },
+    {
+      "from": "measure/allen-county-presidential-vote-2000-2016.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
       "tier": "verified",
@@ -26724,6 +26888,41 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "measure/allen-county-zip-codes-2020.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-zcta-relationship-files.md"
+    },
+    {
+      "from": "measure/allen-county-zip-codes-2020.yml",
+      "to": "measure/allen-county-population-2020-census.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-2020-redistricting-file.md"
+    },
+    {
+      "from": "measure/allen-county-zip-codes-2020.yml",
+      "to": "measure/allen-county-federal-contributions-1980-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/fec-bulk-individual-contributions.md"
+    },
+    {
+      "from": "measure/allen-county-zip-codes-2020.yml",
+      "to": "place/delphos.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-zip-codes-2020.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/bluffton-and-beaverdam-elections-1939-1959.yml",
