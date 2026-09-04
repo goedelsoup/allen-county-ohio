@@ -9663,6 +9663,312 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "metres away", value: 632.0, literal: "632" },
         ],
     },
+    Assertion {
+        id: "forty-five-governments",
+        statement: "Forty-five governments operate in Allen County. They employ 3,806 people full \
+                    time and 984 part time, and their full-time payroll for March 2022 was \
+                    $17,986,357.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**Forty-five governments operate in Allen County and they employ 3,806 people full time and 984 part time.** Their full-time payroll for March 2022 was $17,986,357 and their part-time payroll $921,759. [verified] \u{2014} [the 2022 Census of Governments employment file](../../catalog/census-public-employment-and-payroll.md), every unit with FIPS county 39003."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "full-time employees", value: 3806.0, literal: "3,806" },
+            Figure { label: "part-time employees", value: 984.0, literal: "984" },
+            Figure { label: "March full-time payroll, dollars", value: 17986357.0, literal: "17,986,357" },
+        ],
+    },
+    Assertion {
+        id: "three-governments-are-half-the-payroll",
+        statement: "Allen County government employs 969 people full time, Lima City School District \
+                    657 and the City of Lima 402 \u{2014} 2,028 of the county's 3,806 full-time \
+                    local government employees, or 53.3 per cent.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**Three governments are more than half of it.** Allen County itself employs 969 full time, Lima City School District 657 and the City of Lima 402 \u{2014} 2,028 of the 3,806, or 53.3 per cent. [verified] \u{2014} the same file. The county government alone is a quarter of every full-time local government job in the county."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "Allen County government", value: 969.0, literal: "969" },
+            Figure { label: "Lima City Schools", value: 657.0, literal: "657" },
+            Figure { label: "City of Lima", value: 402.0, literal: "402" },
+            Figure { label: "share, per cent", value: 53.3, literal: "53.3" },
+        ],
+    },
+    Assertion {
+        id: "the-townships-are-mostly-part-time",
+        statement: "Allen County's twelve townships employ 117 people full time and 123 part time \
+                    \u{2014} the only class of government in the county with more part-time \
+                    employees than full-time. Seven of the twelve employ two people or fewer full \
+                    time.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**The twelve townships are the only class of government here with more part-time employees than full-time.** 117 against 123. [verified] \u{2014} the same file. Seven of the twelve employ two people or fewer full time and Jackson Township employs none at all."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "full-time", value: 117.0, literal: "117" },
+            Figure { label: "part-time", value: 123.0, literal: "123" },
+        ],
+    },
+    Assertion {
+        id: "four-governments-with-no-employees",
+        statement: "Eight of Allen County's forty-five governments have no full-time employee and \
+                    four have no employee at all: the Jackson Township Park District, the Allen \
+                    County Schools Health Benefit Plan, the Auglaize Township Park District and the \
+                    Allen County Transportation Improvement District.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**Eight of the forty-five have no full-time employee and four have nobody at all.** Cairo, Lafayette, Jackson Township, the Jackson Township Park District, the Allen Water District, the Allen County Schools Health Benefit Plan, the Auglaize Township Park District and the Allen County Transportation Improvement District; the last four report no part-time employee either. [verified] \u{2014} the same file. A government is a legal body with a levy and a board, and four of this county's have no payroll to run."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eleven-special-districts",
+        statement: "Eleven special districts operate in Allen County. The largest is the Allen \
+                    County Regional Transit Authority at 30 full-time employees, then the \
+                    Metropolitan Housing Authority at 20 and the Johnny Appleseed Metropolitan Park \
+                    District at 19.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**Eleven special districts operate here and the corpus had named none of them.** The Allen County Regional Transit Authority is the largest at 30 full time, then the Allen County Metropolitan Housing Authority at 20 and the Johnny Appleseed Metropolitan Park District at 19; the others are the Allen Soil and Water Conservation District, the Allen Water District, the Allen County Regional Airport Authority, the North Central Ohio Solid Waste Management District, the Allen County Schools Health Benefit Plan, the Allen County Transportation Improvement District and two township park districts. [verified] \u{2014} the same file, unit type 4."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "transit authority", value: 30.0, literal: "30" },
+            Figure { label: "housing authority", value: 20.0, literal: "20" },
+            Figure { label: "park district", value: 19.0, literal: "19" },
+        ],
+    },
+    Assertion {
+        id: "what-the-county-government-does",
+        statement: "Allen County government's largest named function is judicial and legal at 125 \
+                    full-time employees, then health at 124, public welfare at 118, corrections at \
+                    111 and sworn police at 86. The City of Lima's largest are sworn police at 73 \
+                    and firefighters at 65.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**What the county government does with 969 people.** The largest named function is judicial and legal at 125, then health at 124, public welfare at 118, corrections at 111 and sworn police at 86; 170 sit in the file's residual category. [verified] \u{2014} the same file, by item code. The City of Lima's largest are sworn police at 73 and firefighters at 65."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "judicial and legal", value: 125.0, literal: "125" },
+            Figure { label: "health", value: 124.0, literal: "124" },
+            Figure { label: "corrections", value: 111.0, literal: "111" },
+            Figure { label: "Lima police, sworn", value: 73.0, literal: "73" },
+        ],
+    },
+    Assertion {
+        id: "one-jailer-for-every-one-and-a-half-held",
+        statement: "Allen County's local governments employ 123 people in corrections \u{2014} 111 \
+                    for the county and 12 for the City of Lima \u{2014} against an average daily \
+                    jail population of 186.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**The county's local governments employ 123 people in corrections and hold 186.** 111 of the 123 work for the county and 12 for the City of Lima, against an average daily jail population of 186 \u{2014} one worker for every one and a half people held. [inference] \u{2014} the same file against [the jail](allen-county-jail-1970-2023.yml). The two state prisons north of Lima are not in this file at all; see [the government payroll](allen-county-government-employment-2014-2024.yml)."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "corrections employees", value: 123.0, literal: "123" },
+            Figure { label: "average daily jail population", value: 186.0, literal: "186" },
+        ],
+    },
+    Assertion {
+        id: "seven-governments-did-not-report",
+        statement: "Twenty-eight of Allen County's forty-five governments reported their full-time \
+                    employment directly for 2022, eight reported it with an analyst correction, two \
+                    had a unit total pro-rated, and seven did not report at all \u{2014} among them \
+                    Lima City School District, whose 657 employees are the previous year's figure \
+                    grown by a rate.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-governments-and-their-employees-2022.yml", "**Seven of the forty-five did not report, and one of the seven is the second largest.** Twenty-eight governments reported their full-time employment directly, eight reported it with an analyst correction, two reported a unit total the Bureau pro-rated across functions, and seven \u{2014} Elida, Jackson Township, Richland Township, the Metropolitan Housing Authority, the Auglaize Township Park District, **Lima City School District** and Apollo Career Center \u{2014} carry the previous year's figure grown by a rate. [verified] \u{2014} the same file, the data flag at position 32. 789 of the 3,806 full-time employees are in those seven units, and 657 of the 789 are the one school district."),
+        ],
+        answers: &["cannot say what any of these people are paid"],
+        figures: &[
+            Figure { label: "did not report", value: 7.0, literal: "7" },
+            Figure { label: "full-time employees in those seven", value: 789.0, literal: "789" },
+        ],
+    },
+    Assertion {
+        id: "one-job-in-nine-is-a-government-job",
+        statement: "One job in nine in Allen County is a government job and has been for eleven \
+                    years. Over those eleven years the county's total covered employment fell by 124 \
+                    and its private employment rose by 85.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**One job in nine in Allen County is a government job, and it has been for eleven years.** [verified] \u{2014} [the Quarterly Census of Employment and Wages](../../catalog/bls-qcew.md), county files 2014 to 2024, aggregation level 71, ownership codes 1 federal, 2 state, 3 local and 5 private."),
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**The federal payroll here has not moved at all.** 321 people in 2014 and 321 in 2024, and in no year of the eleven fewer than 302 or more than 331. [verified] \u{2014} the same source. Over the same years the county's total covered employment fell by 124 and its private employment rose by 85."),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "fall in covered employment", value: 124.0, literal: "124" },
+            Figure { label: "rise in private employment", value: 85.0, literal: "85" },
+        ],
+    },
+    Assertion {
+        id: "three-hundred-and-twenty-one-federal-jobs-twice",
+        statement: "Allen County had 321 federal jobs in 2014 and 321 in 2024, and in no year of the \
+                    eleven fewer than 302 or more than 331.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**The federal payroll here has not moved at all.** 321 people in 2014 and 321 in 2024, and in no year of the eleven fewer than 302 or more than 331. [verified] \u{2014} the same source. Over the same years the county's total covered employment fell by 124 and its private employment rose by 85."),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "federal jobs", value: 321.0, literal: "321" },
+            Figure { label: "lowest year", value: 302.0, literal: "302" },
+            Figure { label: "highest year", value: 331.0, literal: "331" },
+        ],
+    },
+    Assertion {
+        id: "the-post-office-is-the-federal-government-here",
+        statement: "The largest federal presence in Allen County is the postal service: 155 \
+                    employees across seven establishments at $74,566 a year. After it come 70 in \
+                    national security at one establishment, 38 in offices of physicians at one, and \
+                    eight in public finance.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**The largest federal presence in this county is the post office.** 155 employees across seven establishments in 2023, at $74,566 a year. [verified] \u{2014} the same file at NAICS 491110. After it: 70 people in national security at one establishment, 38 in offices of physicians at one, and eight in public finance. [verified] \u{2014} the same file, NAICS 928110, 621111 and 921130. The national security establishment is the federal cadre at [the tank plant](../site/lima-army-tank-plant.yml), which is government-owned and contractor-operated, so the people who build vehicles there are private employment counted under manufacturing. [inference]"),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "postal employees", value: 155.0, literal: "155" },
+            Figure { label: "national security", value: 70.0, literal: "70" },
+            Figure { label: "offices of physicians", value: 38.0, literal: "38" },
+        ],
+    },
+    Assertion {
+        id: "seventy-people-on-the-federal-payroll-at-the-plant",
+        statement: "Allen County has one federal establishment classified under national security, \
+                    employing 70 people at $87,612 a year. It is the tank plant's federal cadre and \
+                    not its workforce: the plant is government-owned and contractor-operated, and \
+                    the people who build vehicles there are private employment counted under \
+                    manufacturing.",
+        topic: "work",
+        supports: &[
+            support!("site/lima-army-tank-plant.yml", "**Seventy people here are on the federal payroll.** Allen County has one federal establishment classified under national security, employing 70 at $87,612 a year in 2023. [verified] \u{2014} [the wage file](../../catalog/bls-qcew.md), NAICS 928110; see [the government payroll](../measure/allen-county-government-employment-2014-2024.yml). This is the plant's federal cadre and not its workforce: a government-owned, contractor-operated plant pays the people who build vehicles through the operating contractor, and they are private employment counted under manufacturing. [inference]"),
+        ],
+        answers: &["this corpus does not know", "cannot say whether either of them stands on this ground"],
+        figures: &[
+            Figure { label: "federal employees", value: 70.0, literal: "70" },
+        ],
+    },
+    Assertion {
+        id: "four-hundred-and-fifty-eight-in-the-prisons",
+        statement: "Four hundred and fifty-eight people work in Allen County's two state \
+                    correctional institutions, at $82,817 a year \u{2014} half of all state \
+                    government employment in the county. The census counted 1,513 people held in \
+                    them.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**Four hundred and fifty-eight people work in the county's two state correctional institutions**, at $82,817 a year \u{2014} half of all state government employment here. [verified] \u{2014} the same file, NAICS 922140, two establishments. The census counted 1,513 people in adult correctional facilities in this county, so the two prisons hold about three and a third people for each person they employ. [inference] \u{2014} see [the group quarters](allen-county-group-quarters-2020.yml)."),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "average annual pay, dollars", value: 82817.0, literal: "82,817" },
+            Figure { label: "people held", value: 1513.0, literal: "1,513" },
+        ],
+    },
+    Assertion {
+        id: "a-road-office-a-college-and-a-courthouse",
+        statement: "The rest of the state's presence in Allen County is 156 people in transportation \
+                    administration at one establishment, 130 in colleges and universities at one, 98 \
+                    in human resource programme administration, 24 in courts at $107,506 and 20 in \
+                    state police at $97,879.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**The rest of the state's presence is a road office, a college and a courthouse.** 156 in transportation administration at one establishment, 130 in colleges and universities at one, 98 in human resource programme administration, 24 in courts at $107,506 and 20 in state police at $97,879. [verified] \u{2014} the same file, NAICS 926120, 611310, 923130, 922110 and 922120."),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "transportation administration", value: 156.0, literal: "156" },
+            Figure { label: "colleges", value: 130.0, literal: "130" },
+            Figure { label: "courts", value: 24.0, literal: "24" },
+        ],
+    },
+    Assertion {
+        id: "local-government-pay-fell-behind",
+        statement: "A local government job in Allen County paid $39,535 in 2014 against $40,528 for \
+                    all covered employment \u{2014} 2.4 per cent below. In 2024 it paid $53,722 \
+                    against $58,790, or 8.6 per cent below. Local government pay rose 35.9 per cent \
+                    over the eleven years and private pay rose 45.9.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**A local government job in this county has been falling behind the county's own average pay for eleven years.** In 2014 it paid $39,535 against $40,528 for all covered employment \u{2014} 2.4 per cent below. In 2024 it paid $53,722 against $58,790 \u{2014} 8.6 per cent below. Local government pay rose 35.9 per cent over the eleven years and private pay rose 45.9. [verified] \u{2014} the same source, `avg_annual_pay`; the shares are computed here."),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "local pay, 2014", value: 39535.0, literal: "39,535" },
+            Figure { label: "local pay, 2024", value: 53722.0, literal: "53,722" },
+            Figure { label: "local growth, per cent", value: 35.9, literal: "35.9" },
+            Figure { label: "private growth, per cent", value: 45.9, literal: "45.9" },
+        ],
+    },
+    Assertion {
+        id: "state-pay-overtook-federal",
+        statement: "State government pay in Allen County overtook federal pay in 2024 for the first \
+                    time in the series \u{2014} $84,761 against $83,773. Federal pay here went from \
+                    154 per cent of the county average to 142; state went from 135 to 144.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**State government pay overtook federal in 2024 for the first time in the series.** $84,761 against $83,773. [verified] \u{2014} the same source. Federal pay in this county went from 154 per cent of the county average to 142; state went from 135 to 144."),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "state pay", value: 84761.0, literal: "84,761" },
+            Figure { label: "federal pay", value: 83773.0, literal: "83,773" },
+        ],
+    },
+    Assertion {
+        id: "government-takes-a-ninth-of-the-wages",
+        statement: "Government took 11.56 per cent of Allen County's jobs and 11.84 per cent of its \
+                    wages in 2024 \u{2014} $345,876,208 of $2,921,271,371, across 136 establishments \
+                    of 2,586. In 2014 it was 12.74 per cent of the wages.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**Government takes 11.56 per cent of the jobs and 11.84 per cent of the wages.** $345,876,208 of $2,921,271,371 in 2024, across 136 establishments of 2,586. [verified] \u{2014} the same file, `total_annual_wages`. In 2014 it was 12.74 per cent of the wages, and the fall is local government pay rather than local government headcount. [inference]"),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "government wages, dollars", value: 345876208.0, literal: "345,876,208" },
+            Figure { label: "share of wages, per cent", value: 11.84, literal: "11.84" },
+            Figure { label: "establishments", value: 136.0, literal: "136" },
+        ],
+    },
+    Assertion {
+        id: "two-agencies-within-five-per-cent",
+        statement: "Two federal agencies counted Allen County's local government payroll in 2022 \
+                    from opposite ends and came within five per cent of each other: 4,534 jobs \
+                    covered by unemployment insurance, and 3,806 full-time plus 984 part-time \
+                    employees of forty-five named governments.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-government-employment-2014-2024.yml", "**Two agencies counted the same local payroll in 2022 and came within five per cent.** This file gives 4,534 local government jobs; the Census Bureau's enumeration of all forty-five governments gives 3,806 full-time and 984 part-time employees, or 4,790. [verified] \u{2014} [the government employment file](../../catalog/census-public-employment-and-payroll.md); see [the forty-five governments](allen-county-governments-and-their-employees-2022.yml). One counts jobs covered by unemployment insurance at an establishment and the other counts the employees of a named government in March, so elected officials, casual part-timers and some elected boards fall on different sides of the two rules. [inference]"),
+        ],
+        answers: &["cannot say how many people who work for a government here also live here"],
+        figures: &[
+            Figure { label: "jobs covered by insurance", value: 4534.0, literal: "4,534" },
+            Figure { label: "employees of named governments", value: 4790.0, literal: "4,790" },
+        ],
+    },
+    Assertion {
+        id: "what-a-business-register-leaves-out",
+        statement: "Government employed 5,780 people in Allen County in 2023 against the 44,251 \
+                    private employees on the federal business register, so what a register of \
+                    businesses leaves out of this county's employment is about one job in nine.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-private-employers-1986-2023.yml", "**The register's complement now has a size.** Government employed 5,780 people in this county in 2023 against the 44,251 private employees in the table above, so what a business register leaves out here is about one job in nine. [verified] \u{2014} [the wage file](../../catalog/bls-qcew.md); see [the government payroll](allen-county-government-employment-2014-2024.yml). The private series above is a private series and was never the county's employment. [inference]"),
+        ],
+        answers: &["cannot say whether that flatness is wages standing still or hours doing so"],
+        figures: &[
+            Figure { label: "government employees", value: 5780.0, literal: "5,780" },
+            Figure { label: "private employees on the register", value: 44251.0, literal: "44,251" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

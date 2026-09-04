@@ -5895,6 +5895,112 @@
       "withheld": 4
     },
     {
+      "id": "measure/allen-county-government-employment-2014-2024.yml",
+      "class": "measure",
+      "label": "Who works for a government in Allen County, 2014–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024",
+        "method": "Annual-average county files for 39003, 2014 through 2024. Aggregation level 70 is the county total across all ownerships and 71 the county by ownership; 73 is ownership by supersector and 74 to 78 by NAICS sector down to six digits. [verified] Government is ownership codes 1, 2 and 3 summed; the file publishes no such total and every government figure here is computed. [inference] Employment is an annual average of monthly counts of jobs covered by unemployment insurance, so a person with two jobs is counted twice and a job not covered is not counted at all. [verified] `avg_annual_pay` is total annual wages divided by annual average employment, which is a wage per job and not a salary. [verified] Named NAICS figures are for 2023 unless stated; the 2024 file agrees with them to within a few employees in every case. [verified] No establishment is named by this file, and the two attributions made above are the corpus's own. [inference]",
+        "parameter": "government jobs in Allen County, all ownerships",
+        "unit": "jobs",
+        "value": "5745"
+      },
+      "blocks": [
+        {
+          "text": "**One job in nine in Allen County is a government job, and it has been for eleven years.** [verified] — [the Quarterly Census of Employment and Wages](../../catalog/bls-qcew.md), county files 2014 to 2024, aggregation level 71, ownership codes 1 federal, 2 state, 3 local and 5 private.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The federal payroll here has not moved at all.** 321 people in 2014 and 321 in 2024, and in no year of the eleven fewer than 302 or more than 331. [verified] — the same source. Over the same years the county's total covered employment fell by 124 and its private employment rose by 85.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The largest federal presence in this county is the post office.** 155 employees across seven establishments in 2023, at $74,566 a year. [verified] — the same file at NAICS 491110. After it: 70 people in national security at one establishment, 38 in offices of physicians at one, and eight in public finance. [verified] — the same file, NAICS 928110, 621111 and 921130. The national security establishment is the federal cadre at [the tank plant](../site/lima-army-tank-plant.yml), which is government-owned and contractor-operated, so the people who build vehicles there are private employment counted under manufacturing. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Four hundred and fifty-eight people work in the county's two state correctional institutions**, at $82,817 a year — half of all state government employment here. [verified] — the same file, NAICS 922140, two establishments. The census counted 1,513 people in adult correctional facilities in this county, so the two prisons hold about three and a third people for each person they employ. [inference] — see [the group quarters](allen-county-group-quarters-2020.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The rest of the state's presence is a road office, a college and a courthouse.** 156 in transportation administration at one establishment, 130 in colleges and universities at one, 98 in human resource programme administration, 24 in courts at $107,506 and 20 in state police at $97,879. [verified] — the same file, NAICS 926120, 611310, 923130, 922110 and 922120.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A local government job in this county has been falling behind the county's own average pay for eleven years.** In 2014 it paid $39,535 against $40,528 for all covered employment — 2.4 per cent below. In 2024 it paid $53,722 against $58,790 — 8.6 per cent below. Local government pay rose 35.9 per cent over the eleven years and private pay rose 45.9. [verified] — the same source, `avg_annual_pay`; the shares are computed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**State government pay overtook federal in 2024 for the first time in the series.** $84,761 against $83,773. [verified] — the same source. Federal pay in this county went from 154 per cent of the county average to 142; state went from 135 to 144.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Government takes 11.56 per cent of the jobs and 11.84 per cent of the wages.** $345,876,208 of $2,921,271,371 in 2024, across 136 establishments of 2,586. [verified] — the same file, `total_annual_wages`. In 2014 it was 12.74 per cent of the wages, and the fall is local government pay rather than local government headcount. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Two agencies counted the same local payroll in 2022 and came within five per cent.** This file gives 4,534 local government jobs; the Census Bureau's enumeration of all forty-five governments gives 3,806 full-time and 984 part-time employees, or 4,790. [verified] — [the government employment file](../../catalog/census-public-employment-and-payroll.md); see [the forty-five governments](allen-county-governments-and-their-employees-2022.yml). One counts jobs covered by unemployment insurance at an establishment and the other counts the employees of a named government in March, so elected officials, casual part-timers and some elected boards fall on different sides of the two rules. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say how many people who work for a government here also live here.** These are jobs located in Allen County, and half the jobs located in this county are held by people who commute into it; see [the commuting](allen-county-commuting-2022.yml)."
+      ],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "class": "measure",
+      "label": "Allen County's forty-five governments and who works for them, 2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022-03-31",
+        "method": "`22empid.txt` filtered on FIPS state 39 and FIPS county 003, giving 45 units, joined to `22empst.txt` on the fourteen-character legacy identifier. [verified] Item code 000 is the unit total and the rest are functions; the unit totals are used for every count above and the function table sums item codes across all 45 units. [verified] A unit is assigned to the county it is geographically located in or administered from, which for a district crossing a county line is one county and not both. Delphos City Schools and Bluffton Exempted Village Schools serve ground in Van Wert and Hancock counties and are counted here whole. [inference] Employment is a March count and payroll a 31-day March equivalent; neither is annualised here. [verified] Seven units carry imputation flag G on their full-time employment and two carry T; those figures are named above rather than removed. [verified]",
+        "parameter": "full-time employees of Allen County's local governments",
+        "unit": "employees",
+        "value": "3806"
+      },
+      "blocks": [
+        {
+          "text": "**Forty-five governments operate in Allen County and they employ 3,806 people full time and 984 part time.** Their full-time payroll for March 2022 was $17,986,357 and their part-time payroll $921,759. [verified] — [the 2022 Census of Governments employment file](../../catalog/census-public-employment-and-payroll.md), every unit with FIPS county 39003.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three governments are more than half of it.** Allen County itself employs 969 full time, Lima City School District 657 and the City of Lima 402 — 2,028 of the 3,806, or 53.3 per cent. [verified] — the same file. The county government alone is a quarter of every full-time local government job in the county.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The twelve townships are the only class of government here with more part-time employees than full-time.** 117 against 123. [verified] — the same file. Seven of the twelve employ two people or fewer full time and Jackson Township employs none at all.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eight of the forty-five have no full-time employee and four have nobody at all.** Cairo, Lafayette, Jackson Township, the Jackson Township Park District, the Allen Water District, the Allen County Schools Health Benefit Plan, the Auglaize Township Park District and the Allen County Transportation Improvement District; the last four report no part-time employee either. [verified] — the same file. A government is a legal body with a levy and a board, and four of this county's have no payroll to run.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eleven special districts operate here and the corpus had named none of them.** The Allen County Regional Transit Authority is the largest at 30 full time, then the Allen County Metropolitan Housing Authority at 20 and the Johnny Appleseed Metropolitan Park District at 19; the others are the Allen Soil and Water Conservation District, the Allen Water District, the Allen County Regional Airport Authority, the North Central Ohio Solid Waste Management District, the Allen County Schools Health Benefit Plan, the Allen County Transportation Improvement District and two township park districts. [verified] — the same file, unit type 4.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What the county government does with 969 people.** The largest named function is judicial and legal at 125, then health at 124, public welfare at 118, corrections at 111 and sworn police at 86; 170 sit in the file's residual category. [verified] — the same file, by item code. The City of Lima's largest are sworn police at 73 and firefighters at 65.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's local governments employ 123 people in corrections and hold 186.** 111 of the 123 work for the county and 12 for the City of Lima, against an average daily jail population of 186 — one worker for every one and a half people held. [inference] — the same file against [the jail](allen-county-jail-1970-2023.yml). The two state prisons north of Lima are not in this file at all; see [the government payroll](allen-county-government-employment-2014-2024.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Seven of the forty-five did not report, and one of the seven is the second largest.** Twenty-eight governments reported their full-time employment directly, eight reported it with an analyst correction, two reported a unit total the Bureau pro-rated across functions, and seven — Elida, Jackson Township, Richland Township, the Metropolitan Housing Authority, the Auglaize Township Park District, **Lima City School District** and Apollo Career Center — carry the previous year's figure grown by a rate. [verified] — the same file, the data flag at position 32. 789 of the 3,806 full-time employees are in those seven units, and 657 of the 789 are the one school district.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This corpus cannot say what any of these people are paid.** The payroll above is March standardised to 31 days and twelve times it is not a salary; see [a March payroll is not a salary](../../decisions/a-march-payroll-is-not-a-salary.yml)."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-governor-vote-2002-2018.yml",
       "class": "measure",
       "label": "Allen County vote for governor, 2002–2018",
@@ -9919,6 +10025,10 @@
         {
           "text": "**What is not in any of this.** County Business Patterns counts private employers on the business register: no government, no self-employed, no farms and no railroads. The county's own government, its schools, its two state prisons and its [nine thousand proprietors](allen-county-proprietors-1969-2022.yml) are all outside these figures. [verified] — the same files' own scope.",
           "tier": "verified"
+        },
+        {
+          "text": "**The register's complement now has a size.** Government employed 5,780 people in this county in 2023 against the 44,251 private employees in the table above, so what a business register leaves out here is about one job in nine. [verified] — [the wage file](../../catalog/bls-qcew.md); see [the government payroll](allen-county-government-employment-2014-2024.yml). The private series above is a private series and was never the county's employment. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -21394,6 +21504,10 @@
         {
           "text": "**Its cellblocks are filed as houses.** Of the county's thirty-five buildings classed *Residential / Institutional Dormitory*, thirty-four stand in this block and the one across the fence at [Oakwood](oakwood-correctional-facility.yml); the largest here is 63,770 square feet. [verified] — [the buildings](../measure/allen-county-buildings-2019.yml). A count of residential structures in Allen County contains the county's prisoners, which is the same mistake in a different file as the block that had no housing units and 1,360 people. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**Four hundred and fifty-eight people work in the two institutions.** Allen County has two state establishments classified as correctional institutions, employing 458 between them at $82,817 a year in 2023. [verified] — [the wage file](../../catalog/bls-qcew.md), NAICS 922140; see [the government payroll](../measure/allen-county-government-employment-2014-2024.yml). The file does not split them, and the census counted 1,513 people held in the two. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -21851,6 +21965,10 @@
         {
           "text": "**No building stands within a hundred and fifty metres of this node's coordinate.** The nearest large footprint is 993,868 square feet — 22.8 acres, classed *Government / Non-Civilian Structures*, the third largest in the county — and it lies 632 metres away. [verified] — [USA Structures](../../catalog/fema-usa-structures.md), queried by point; see [the buildings](../measure/allen-county-buildings-2019.yml). A coordinate of record for a plant of this size names the installation and not a roof on it; see [a photograph is not a register](../../decisions/a-photograph-is-not-a-register.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**Seventy people here are on the federal payroll.** Allen County has one federal establishment classified under national security, employing 70 at $87,612 a year in 2023. [verified] — [the wage file](../../catalog/bls-qcew.md), NAICS 928110; see [the government payroll](../measure/allen-county-government-employment-2014-2024.yml). This is the plant's federal cadre and not its workforce: a government-owned, contractor-operated plant pays the people who build vehicles through the operating contractor, and they are private employment counted under manufacturing. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -26193,6 +26311,76 @@
       "source": "catalog/allen-county-auditor-financials.md"
     },
     {
+      "from": "measure/allen-county-government-employment-2014-2024.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/bls-qcew.md"
+    },
+    {
+      "from": "measure/allen-county-government-employment-2014-2024.yml",
+      "to": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-public-employment-and-payroll.md"
+    },
+    {
+      "from": "measure/allen-county-government-employment-2014-2024.yml",
+      "to": "measure/allen-county-private-employers-1986-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-government-employment-2014-2024.yml",
+      "to": "measure/allen-county-wages-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/bls-qcew.md"
+    },
+    {
+      "from": "measure/allen-county-government-employment-2014-2024.yml",
+      "to": "measure/allen-county-commuting-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-public-employment-and-payroll.md"
+    },
+    {
+      "from": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "to": "jurisdiction/allen-county-government.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-public-employment-and-payroll.md"
+    },
+    {
+      "from": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "to": "measure/allen-county-government-employment-2014-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/bls-qcew.md"
+    },
+    {
+      "from": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "to": "measure/allen-county-jail-1970-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-governments-and-their-employees-2022.yml",
+      "to": "measure/allen-county-elected-seats-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-governor-vote-2002-2018.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -27745,6 +27933,13 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/osha-injury-tracking-application.md"
+    },
+    {
+      "from": "measure/allen-county-private-employers-1986-2023.yml",
+      "to": "measure/allen-county-government-employment-2014-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/bls-qcew.md"
     },
     {
       "from": "measure/allen-county-private-schools-2013-2021.yml",

@@ -1,0 +1,118 @@
+class: measure
+label: Allen County's forty-five governments and who works for them, 2022
+description: |
+  **Forty-five governments operate in Allen County and they employ 3,806 people full time and 984
+  part time.** Their full-time payroll for March 2022 was $17,986,357 and their part-time payroll
+  $921,759. [verified] —
+  [the 2022 Census of Governments employment file](../../catalog/census-public-employment-and-payroll.md),
+  every unit with FIPS county 39003.
+
+      type                units      full-time   part-time   March full-time payroll
+      School district        12          2,149         648               $10,084,176
+      County                  1            969          10                $4,143,856
+      Municipality            9            489         172                $2,848,277
+      Township               12            117         123                  $547,258
+      Special district       11             82          31                  $362,790
+
+  **Three governments are more than half of it.** Allen County itself employs 969 full time, Lima
+  City School District 657 and the City of Lima 402 — 2,028 of the 3,806, or 53.3 per cent.
+  [verified] — the same file. The county government alone is a quarter of every full-time local
+  government job in the county.
+
+  **The twelve townships are the only class of government here with more part-time employees than
+  full-time.** 117 against 123. [verified] — the same file. Seven of the twelve employ two people or
+  fewer full time and Jackson Township employs none at all.
+
+  **Eight of the forty-five have no full-time employee and four have nobody at all.** Cairo,
+  Lafayette, Jackson Township, the Jackson Township Park District, the Allen Water District, the
+  Allen County Schools Health Benefit Plan, the Auglaize Township Park District and the Allen County
+  Transportation Improvement District; the last four report no part-time employee either. [verified]
+  — the same file. A government is a legal body with a levy and a board, and four of this county's
+  have no payroll to run.
+
+  **Eleven special districts operate here and the corpus had named none of them.** The Allen County
+  Regional Transit Authority is the largest at 30 full time, then the Allen County Metropolitan
+  Housing Authority at 20 and the Johnny Appleseed Metropolitan Park District at 19; the others are
+  the Allen Soil and Water Conservation District, the Allen Water District, the Allen County
+  Regional Airport Authority, the North Central Ohio Solid Waste Management District, the Allen
+  County Schools Health Benefit Plan, the Allen County Transportation Improvement District and two
+  township park districts. [verified] — the same file, unit type 4.
+
+  **What the county government does with 969 people.** The largest named function is judicial and
+  legal at 125, then health at 124, public welfare at 118, corrections at 111 and sworn police at
+  86; 170 sit in the file's residual category. [verified] — the same file, by item code. The City of
+  Lima's largest are sworn police at 73 and firefighters at 65.
+
+      function, all 45 units          full-time   part-time
+      Education, instructional            1,496         304
+      Education, other                      615         326
+      All other and unallocable             199           8
+      Police, sworn                         197          17
+      Judicial and legal                    154          14
+      Fire, firefighters                    129          84
+      Highways                              127           8
+      Health                                124          27
+      Corrections                           123           0
+
+  **The county's local governments employ 123 people in corrections and hold 186.** 111 of the 123
+  work for the county and 12 for the City of Lima, against an average daily jail population of 186 —
+  one worker for every one and a half people held. [inference] — the same file against
+  [the jail](allen-county-jail-1970-2023.yml). The two state prisons north of Lima are not in this
+  file at all; see [the government payroll](allen-county-government-employment-2014-2024.yml).
+
+  **Seven of the forty-five did not report, and one of the seven is the second largest.** Twenty-eight
+  governments reported their full-time employment directly, eight reported it with an analyst
+  correction, two reported a unit total the Bureau pro-rated across functions, and seven — Elida,
+  Jackson Township, Richland Township, the Metropolitan Housing Authority, the Auglaize Township
+  Park District, **Lima City School District** and Apollo Career Center — carry the previous year's
+  figure grown by a rate. [verified] — the same file, the data flag at position 32. 789 of the 3,806
+  full-time employees are in those seven units, and 657 of the 789 are the one school district.
+
+  **This corpus cannot say what any of these people are paid.** The payroll above is March
+  standardised to 31 days and twelve times it is not a salary; see
+  [a March payroll is not a salary](../../decisions/a-march-payroll-is-not-a-salary.yml). An annual
+  figure exists for the ownership as a whole and not for any unit in it.
+
+  [open] What these governments were before. The complete enumeration runs every five years and the
+  years between are a sample that reached two of these forty-five units in 2024, so the corpus holds
+  one photograph of the county's public payroll and no series of it.
+properties:
+  parameter: full-time employees of Allen County's local governments
+  value: "3806"
+  unit: employees
+  as_of: "2022-03-31"
+  method: |
+    `22empid.txt` filtered on FIPS state 39 and FIPS county 003, giving 45 units, joined to
+    `22empst.txt` on the fourteen-character legacy identifier. [verified] Item code 000 is the unit
+    total and the rest are functions; the unit totals are used for every count above and the
+    function table sums item codes across all 45 units. [verified]
+
+    A unit is assigned to the county it is geographically located in or administered from, which for
+    a district crossing a county line is one county and not both. Delphos City Schools and Bluffton
+    Exempted Village Schools serve ground in Van Wert and Hancock counties and are counted here
+    whole. [inference]
+
+    Employment is a March count and payroll a 31-day March equivalent; neither is annualised here.
+    [verified] Seven units carry imputation flag G on their full-time employment and two carry T;
+    those figures are named above rather than removed. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-public-employment-and-payroll.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-public-employment-and-payroll.md
+  - target: allen-county-government-employment-2014-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/bls-qcew.md
+  - target: allen-county-jail-1970-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-elected-seats-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
