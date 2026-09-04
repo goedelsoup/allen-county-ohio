@@ -1,0 +1,70 @@
+id: a-total-is-checked-against-one-it-did-not-come-from
+summary: >-
+  Three figures in one afternoon's work were wrong and none of them raised an error: 23,864 pupils
+  in a county of 17,766, zero schools in a county the state says has thirty-six, and 836 expulsions
+  in a year whose neighbours hold ninety-seven. Each was caught by comparing the computed total with
+  a total produced somewhere else — another collection, the level above, the same series a year
+  earlier — and by nothing else.
+context: |
+  The Civil Rights Data Collection is a school-level file with a district key, a school key, and
+  counts. Reading Allen County out of it produced three totals that a careful pipeline accepted:
+
+      what was computed                     what it should have been     what caught it
+      17,656 -> 23,864 pupils in 2011       17,766 by the district files a second collection
+      0 schools in Allen County in 2020     36                           the state's own row
+      836 expulsions in 2013                97, 83, 100 in other years   the series itself
+
+  Each has a mundane cause and none is visible from inside the calculation. The 2011 file carries
+  rows with an empty `ncessch`, and a filter that admits them adds 6,208 pupils belonging to no
+  school. The 2020 file carries an empty `leaid` on every row, so a filter on the district key
+  matches nothing and returns an empty set that looks exactly like a county with no schools. And in
+  2013, 438 of the 570 Ohio schools reporting both expulsion columns report the same number in both
+  — against 23 to 48 per cent in every other year — so summing two mutually exclusive columns
+  doubles a figure that was already too large.
+
+  A blank key does not raise. An empty result is a valid result. A doubled column is arithmetic.
+decision: |
+  **Every total this corpus computes is checked against a total it did not come from, before it is
+  written down. Three checks are available and at least one always is: the same quantity from a
+  different collection, the same quantity at the level above, and the same quantity in the adjacent
+  years of its own series. Where a check fails, the figure is not published until the failure is
+  explained.**
+
+  Three consequences:
+
+  *An empty answer is a claim and gets the same treatment as a full one.* Zero schools in a county is
+  a finding about the world if the state is also zero and a finding about the query if it is not.
+  Here the state had 3,508.
+
+  *Where two collections count the same thing and disagree, both numbers are printed and the rate
+  uses one of them throughout.* The two counts of this county's schoolchildren differ by 0.6 to 8.0
+  per cent, and a numerator from one over a denominator from the other is wrong before any measuring
+  starts.
+
+  *A figure that fails its neighbours and cannot be repaired is refused rather than adjusted.* The
+  2013 expulsion column is still four times its neighbours after the duplication is undone, so the
+  corpus publishes no expulsion figure for 2013 rather than a halved one.
+rationale: |
+  **Why this is not [a survey is not a count](a-survey-is-not-a-count.yml) or
+  [the gap between two universes is a measurement](the-gap-between-two-universes-is-a-measurement.yml).**
+  Those two are about figures that are right and mean less than they appear to: a margin around an
+  estimate, a denominator that excludes a named population. This one is about figures that are
+  simply wrong, produced by correct code over a file with a hole in it. No amount of care about
+  universes or margins would have caught a blank join key.
+
+  **What it bought here.** Three corrections in one phase, one of which — the empty district
+  identifier in the 2020 collection — would have removed a whole vintage from a six-point series and
+  left the remaining five looking continuous.
+
+  **What would falsify it.** Nothing, in the sense that a closure check cannot be wrong; but it can
+  be unavailable. Where no independent total exists — a quantity this corpus is the first to compute
+  at any level — the rule degrades to the third check alone, the series against itself, and the
+  corpus says so rather than pretending to a closure it does not have.
+
+  **What it generalises to.** Every join in this corpus and every filter: the ZIP crosswalk that
+  closes on 102,206, the township soil areas that close on the county, the block sums that close on
+  the redistricting file's own county record. Those closures were already being done. This rule
+  says they are not a nicety of good work but the only thing standing between a pipeline and a
+  number nobody will check again.
+status: accepted
+date: "2026-09-04"
