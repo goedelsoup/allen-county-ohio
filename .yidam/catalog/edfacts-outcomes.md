@@ -8,7 +8,7 @@ description: >-
   that describes school outcomes rather than school size or school money.
 type: dataset
 obtained: true
-retrieved: 2026-09-03
+retrieved: 2026-09-04
 ttl_days: 365
 location:
   - kind: url
@@ -24,6 +24,25 @@ location:
       The `{grade}` segment takes 3 to 8, 9 for high school, or 99 for all grades together, which is
       the only one that gives a district one comparable figure a year.
   - kind: url
+    value: https://educationdata.urban.org/api/v1/schools/edfacts/assessments/2020/grade-99/?fips=39
+    description: >-
+      The same measure one level down, by school rather than by district — 3,259 Ohio rows in 2018
+      and 3,187 in 2020, of which 42 and 41 belong to this county's twelve districts. It is the
+      level at which a county school is a single building with a name.
+  - kind: url
+    value: https://educationdata.urban.org/api/v1/school-districts/edfacts/assessments/2018/grade-99/race/?fips=39
+    description: >-
+      Proficiency by district and race, and beside it `/special-populations/` for economic
+      disadvantage, disability, English-learner status, homelessness, foster care, migrant status
+      and military connection. About 5,400 Ohio rows a year for race and 4,900 for the special
+      populations, each row a district crossed with one category.
+  - kind: url
+    value: https://educationdata.urban.org/api/v1/schools/edfacts/grad-rates/2018/?fips=39
+    description: >-
+      Graduation rates by school. This is the one endpoint in the collection that paginates —
+      10,512 Ohio rows in 2018 arriving 10,000 at a time — and the only one where a `next` link
+      must be followed.
+  - kind: url
     value: https://educationdata.urban.org/api/v1/api-endpoints/
     description: >-
       The endpoint index, which is where the year coverage of each collection is stated. Graduation
@@ -31,6 +50,8 @@ location:
 used-by:
   - ../corpus/measure/allen-county-graduation-rates-2010-2019.yml
   - ../corpus/measure/allen-county-test-proficiency-2009-2018.yml
+  - ../corpus/measure/allen-county-proficiency-by-school-2018-2020.yml
+  - ../corpus/measure/allen-county-proficiency-by-subgroup-2013-2020.yml
 ---
 
 **Almost every graduation rate in it is a range, and the range is a disclosure rule rather than an
