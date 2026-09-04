@@ -7221,6 +7221,245 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "below poverty", value: 12815.0, literal: "12,815" },
         ],
     },
+    Assertion {
+        id: "what-the-county-gives",
+        statement: "In the 2023\u{2014}24 cycle 1,331 people with an Allen County address gave \
+                    $611,489 to federal campaigns, parties and political committees. In the \
+                    1979\u{2014}80 cycle sixty-one people gave $35,606.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**In the 2023\u{2013}24 cycle 1,331 people with an Allen County address gave $611,489 to federal campaigns, parties and political committees.** Twelve presidential cycles, in dollars weighted to the county's share of each ZIP code's population. [verified] \u{2014} [the Commission's bulk files](../../catalog/fec-bulk-individual-contributions.md), deduplicated and netted of refunds here; see [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml)."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "itemized federal contributions, 2023\u{2013}24 cycle, dollars", value: 611489.0, literal: "611,489" },
+            Figure { label: "donors", value: 1331.0, literal: "1,331" },
+        ],
+    },
+    Assertion {
+        id: "five-times-the-real-giving",
+        statement: "Real federal giving per Allen County resident is five times what it was in 1980 \
+                    \u{2014} $1.21 a head then, $6.06 in 2024 and $7.46 at its 2020 peak \u{2014} \
+                    and the number of givers is twenty-two times. The county lost 11,375 residents \
+                    over the same forty-four years.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**Real giving per resident is five times what it was in 1980 and the number of givers is twenty-two times.** $1.21 a head to $6.06, with a peak of $7.46 in 2020; 61 people to 1,331. [verified] \u{2014} the same file, deflated by [the consumer price index](../../catalog/bls-cpi.md). The county lost 11,375 residents over the same forty-four years. [verified] \u{2014} [the population](allen-county-population-2024.yml)."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "per resident, 2024 dollars, 2024 cycle", value: 6.06, literal: "6.06" },
+            Figure { label: "1980 cycle", value: 1.21, literal: "1.21" },
+            Figure { label: "residents lost since 1980", value: 11375.0, literal: "11,375" },
+        ],
+    },
+    Assertion {
+        id: "the-median-gift-fell-a-hundredfold",
+        statement: "The median itemized contribution from Allen County fell from $860 in 1980 to $24 \
+                    in 2024 \u{2014} from $3,274 to $24 in the same dollars, a factor of a hundred \
+                    and thirty-six \u{2014} while the largest single gift rose from $1,000, the \
+                    legal maximum then, to $50,000.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**The median itemized gift fell from $860 to $24.** In 2024 dollars the 1980 median is $3,274 and the 2024 median is $24, a fall of a hundred and thirty-six times, while the largest single contribution rose from $1,000 \u{2014} the legal maximum then \u{2014} to $50,000. [verified] \u{2014} the same source, deflated the same way. Both tails grew at once: the top ten givers were 20.4 per cent of the county's money in 2012 and 37.0 in 2020."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "median gift, 2024, dollars", value: 24.0, literal: "24" },
+            Figure { label: "median gift 1980 in 2024 dollars", value: 3274.0, literal: "3,274" },
+            Figure { label: "largest single gift, 2024", value: 50000.0, literal: "50,000" },
+        ],
+    },
+    Assertion {
+        id: "both-tails-grew-at-once",
+        statement: "Allen County's political money got smaller and larger at the same time. The top \
+                    ten givers were 20.4 per cent of it in 2012 and 37.0 per cent in 2020, in the \
+                    same years the median gift fell below fifty dollars.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**The median itemized gift fell from $860 to $24.** In 2024 dollars the 1980 median is $3,274 and the 2024 median is $24, a fall of a hundred and thirty-six times, while the largest single contribution rose from $1,000 \u{2014} the legal maximum then \u{2014} to $50,000. [verified] \u{2014} the same source, deflated the same way. Both tails grew at once: the top ten givers were 20.4 per cent of the county's money in 2012 and 37.0 in 2020."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "top ten givers' share, 2020", value: 37.0, literal: "37.0" },
+            Figure { label: "2012", value: 20.4, literal: "20.4" },
+        ],
+    },
+    Assertion {
+        id: "no-factory-worker-in-thirty-three-years",
+        statement: "In thirty-three years of federal contribution records Allen County's itemized \
+                    donors included no factory worker and one welder. In the three cycles since 2016 \
+                    there are 939 contributions from factory workers and 353 from welders, and the \
+                    distinct occupations recorded rose from 336 to 739.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**In thirty-three years of these records the county's itemized donors included no factory worker and one welder. In the three cycles since 2016 there are 939 contributions from factory workers and 353 from welders.** The distinct occupations recorded rose from 336 to 739. [verified] \u{2014} the same file, occupation strings as filed. Whether working people in Allen County began giving or merely began being written down is not something this file can separate: a contribution is itemized once it aggregates above $200 at one committee, and money routed through a conduit aggregates at the conduit, which is far easier to cross. [inference]"),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "factory-worker contributions, 2016\u{2013}2024", value: 939.0, literal: "939" },
+            Figure { label: "welders", value: 353.0, literal: "353" },
+            Figure { label: "distinct occupations, 2016\u{2013}2024", value: 739.0, literal: "739" },
+        ],
+    },
+    Assertion {
+        id: "the-congressman-is-the-largest-recipient",
+        statement: "The largest single recipient of Allen County's federal money between 2000 and \
+                    2012 is the county's own congressman: $167,879 to Jim Jordan for Congress, more \
+                    than twice the next committee.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**The county's own congressman is the largest single recipient of its money in the middle era.** $167,879 to Jim Jordan for Congress across 2000 to 2012, more than twice the next committee. [verified] \u{2014} the same source. In the most recent three cycles the two largest are a national party committee and a super PAC that received one contribution of $50,000, the largest gift any Allen County resident has made in this record. [verified] \u{2014} the same file."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "to Jim Jordan for Congress, 2000\u{2013}2012", value: 167879.0, literal: "167,879" },
+        ],
+    },
+    Assertion {
+        id: "the-money-is-more-republican-than-the-vote",
+        statement: "Where both can be measured, Allen County's money is more Republican than its \
+                    vote and the gap has closed. In 2008 the county gave McCain 60.5 per cent of its \
+                    two-party vote and Republican committees 89.0 per cent of its labelled money; in \
+                    2020 it gave Trump 70.1 per cent and Republican committees 77.0.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**Where both can be measured, the money is more Republican than the vote, and the gap has closed from twenty-eight points to seven.** In 2008 the county gave McCain 60.5 per cent of its two-party vote and Republican committees 89.0 per cent of its labelled money; in 2020 it gave Trump 70.1 per cent and Republican committees 77.0. [verified] \u{2014} the same source against [the presidential vote](allen-county-presidential-vote-2000-2016.yml) and [the 2020 return](allen-county-presidential-vote-2020.yml)."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "Republican share of labelled money, 2008", value: 89.0, literal: "89.0" },
+            Figure { label: "Republican share of the two-party vote, 2008", value: 60.5, literal: "60.5" },
+        ],
+    },
+    Assertion {
+        id: "half-the-money-has-no-party",
+        statement: "The share of Allen County's federal political money that the Election \
+                    Commission's own files can assign to a party has fallen from 98.9 per cent to \
+                    52.1. Joint fundraising committees and conduits carry no party and no candidate \
+                    to borrow one from, and they went from nothing to half the money.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**The share of this money that the Commission's own files can assign to a party has fallen from 98.9 per cent to 52.1.** Joint fundraising committees and conduits carry no party in the committee master and no candidate to borrow one from, and they went from nothing to half the money. [verified] \u{2014} the same source against [the committee and candidate masters](../../catalog/fec-bulk-individual-contributions.md)."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "labelled share, 1980", value: 98.9, literal: "98.9" },
+            Figure { label: "2024", value: 52.1, literal: "52.1" },
+        ],
+    },
+    Assertion {
+        id: "the-1984-row-is-the-file",
+        statement: "Allen County's 1984 row shows six donors and $2,884, against sixty-one and \
+                    $35,606 four years earlier. The Commission's 1983\u{2014}84 archive is smaller \
+                    than its 1979\u{2014}80 one nationally, so the collapse is in the record and not \
+                    in the county.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**The 1984 row is the file and not the county.** Six donors and $2,884, against sixty-one and $35,606 four years earlier \u{2014} and the Commission's 1983\u{2013}84 archive is smaller than its 1979\u{2013}80 one, nationally, at 6.8 megabytes against 8.1. [verified] \u{2014} the same file, its archive size and its rows. Nothing is read from that row."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "given in the 1984 cycle, dollars", value: 2884.0, literal: "2,884" },
+            Figure { label: "given four years earlier", value: 35606.0, literal: "35,606" },
+        ],
+    },
+    Assertion {
+        id: "reading-the-archive-twice",
+        statement: "Read without care the 2024 file says Allen County gave $1,528,070. Every record \
+                    is in the archive twice from 2012 on, and a contribution made through a conduit \
+                    is filed again by the committee that banks it. The figure is $611,489 \u{2014} \
+                    the naive reading is two and a half times it.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**Read without care the 2024 file says this county gave $1,528,070.** Every record is in the archive twice from 2012 on, because the zip holds `itcont.txt` and a `by_date/` partition of the same rows; and a contribution made through a conduit is filed again by the committee that banks it. Deduplicating on the record identifier halves the figure and deduplicating the conduits takes another fifth off it. The naive reading is two and a half times the $611,489 above. [verified] \u{2014} the same file, read three ways."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "naive total, 2024", value: 1528070.0, literal: "1,528,070" },
+            Figure { label: "after deduplication", value: 611489.0, literal: "611,489" },
+        ],
+    },
+    Assertion {
+        id: "the-zip-rule-is-worth-a-factor-of-two",
+        statement: "Assigning a ZIP-coded contribution to Allen County needs a rule, and the rule is \
+                    worth a factor of two: $454,593 under the eight wholly-inside codes, $650,446 \
+                    under the thirteen with a majority of their people here, and $959,382 under \
+                    every code that touches the county at all. The corpus publishes $611,489, \
+                    weighted by population.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-federal-contributions-1980-2024.yml", "**The rule for turning a ZIP code into a county is worth a factor of two.** The 2024 total is $454,593 under the eight postal codes that lie wholly in Allen County, $650,446 under the thirteen with a majority of their people here, and $959,382 under every code that touches the county at all. This node publishes $611,489, weighted by population, and prints the others because a reader comparing it with a figure from elsewhere has no other way to know the rules differed. [verified] \u{2014} the same file against [the crosswalk](allen-county-zip-codes-2020.yml)."),
+        ],
+        answers: &["cannot say whether Allen County's political money has become less Republican"],
+        figures: &[
+            Figure { label: "eight wholly-inside codes", value: 454593.0, literal: "454,593" },
+            Figure { label: "every code that touches", value: 959382.0, literal: "959,382" },
+            Figure { label: "population-weighted", value: 611489.0, literal: "611,489" },
+        ],
+    },
+    Assertion {
+        id: "twenty-postal-areas-touch-the-county",
+        statement: "Twenty ZIP-code areas touch Allen County and eight lie wholly inside it. Those \
+                    eight hold 73,421 of the county's 102,206 people; the other 28,785 live under a \
+                    postal address they share with one, two or three other counties.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-zip-codes-2020.yml", "**Twenty ZIP-code areas touch Allen County and eight lie wholly inside it.** Between them the eight hold 73,421 of the county's 102,206 people \u{2014} 71.8 per cent \u{2014} and the other 28,785 live under a postal address they share with one, two or three other counties. [verified] \u{2014} [the Census Bureau's ZCTA relationship files](../../catalog/census-zcta-relationship-files.md) joined to [the 2020 redistricting file](../../catalog/census-2020-redistricting-file.md), computed here."),
+        ],
+        answers: &["cannot say which county a person with a Delphos address lives in"],
+        figures: &[
+            Figure { label: "people in the eight wholly-inside codes", value: 73421.0, literal: "73,421" },
+            Figure { label: "people under a shared postal address", value: 28785.0, literal: "28,785" },
+        ],
+    },
+    Assertion {
+        id: "the-join-closes-on-the-county",
+        statement: "The Allen County parts of twenty postal areas sum to 102,206 people, which is \
+                    the county's census population to the person. Twenty areas built to deliver mail \
+                    and a block file built to apportion legislatures agree exactly on a county \
+                    neither of them names.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-zip-codes-2020.yml", "**The Allen County parts sum to 102,206, which is the county.** Twenty postal areas built to deliver mail and a block file built to apportion legislatures agree to the person on a county neither of them names. [verified] \u{2014} the same sources, joined. Nothing here was scaled or reconciled; the closure is the check that the block assignment is right."),
+        ],
+        answers: &["cannot say which county a person with a Delphos address lives in"],
+        figures: &[
+            Figure { label: "people in the Allen County parts", value: 102206.0, literal: "102,206" },
+        ],
+    },
+    Assertion {
+        id: "land-is-the-wrong-weight-for-people",
+        statement: "Land and population disagree by up to thirty-two points about how much of a ZIP \
+                    code is in Allen County, and in both directions. Bluffton's is 49.7 per cent of \
+                    the county by land and 81.3 by people; the rural code north-west of Elida runs \
+                    the other way, 32.8 by land against 21.2 by people.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-zip-codes-2020.yml", "**Land and population disagree by up to thirty-two points, and in both directions.** Bluffton's 45817 is 49.7 per cent of Allen County by land and 81.3 per cent by people; Spencerville's 45887 is 55.2 against 82.3; Harrod's 45850 is 80.7 against 91.8. Going the other way, the rural 45830 is 32.8 per cent Allen by land and 21.2 by people, and Ada's 45810 is 8.0 against 2.9. [verified] \u{2014} the same files. A village sits on one side of a county line and the farmland around it does not, so the weight that is easy to publish is the weight that is wrong. See [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml)."),
+        ],
+        answers: &["cannot say which county a person with a Delphos address lives in"],
+        figures: &[
+            Figure { label: "Bluffton's ZIP, per cent of Allen by land", value: 49.7, literal: "49.7" },
+            Figure { label: "by people", value: 81.3, literal: "81.3" },
+        ],
+    },
+    Assertion {
+        id: "three-towns-a-land-weight-misplaces",
+        statement: "Three of Allen County's nine municipal corporations sit on a ZIP that is mostly \
+                    outside the county by land and mostly inside it by people \u{2014} Delphos at \
+                    45.9 per cent of land against 55.3 of people, Bluffton at 49.7 against 81.3, \
+                    Spencerville at 55.2 against 82.3. They are the three the county shares with a \
+                    neighbour.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-zip-codes-2020.yml", "**Three of the county's nine municipal corporations sit on a ZIP that is mostly outside the county by land and mostly inside it by people.** [Delphos](../place/delphos.yml), [Bluffton](../place/bluffton.yml) and [Spencerville](../place/spencerville.yml) \u{2014} 45833 at 45.9 per cent of land and 55.3 of people, 45817 at 49.7 and 81.3, 45887 at 55.2 and 82.3. [verified] \u{2014} the same source, against [the nine corporations](allen-county-roads-2010-2024.yml). Delphos is the hardest of the three: the city itself straddles the Allen\u{2013}Van Wert line, so neither its ZIP nor its corporation lies in one county. [verified] \u{2014} [the city](../place/delphos.yml)."),
+        ],
+        answers: &["cannot say which county a person with a Delphos address lives in"],
+        figures: &[
+            Figure { label: "Spencerville's ZIP, per cent of Allen by people", value: 82.3, literal: "82.3" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
