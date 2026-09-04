@@ -1,0 +1,107 @@
+class: measure
+label: Flood insurance claims in Allen County, 1978–2023
+description: |
+  **Two hundred and fifty-nine flood insurance claims in forty-six years, and $4,106,934 paid.**
+  203 of the 259 received a payment, at a mean of $20,231. [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003, losses dated 1978 to
+  2023.
+
+  **More of it comes from rain than from rivers.** The file codes the cause of every loss, and 109
+  are accumulation of rainfall or snowmelt against 103 from a stream, river or lake leaving its
+  channel. [verified] — the same file, its `causeOfDamage` field against
+  [the published code list](../../catalog/openfema-nfip.md). In a county three-quarters of which is
+  poorly drained, the water that gets into a building is as often water that had nowhere to go.
+  [inference] — see [the soils](allen-county-soils-2026.yml).
+
+  **Twenty-seven claims in this county are coded tidal water overflow.** Allen County is five
+  hundred miles from tidewater. Twenty-four of the twenty-seven are dated 1978 to 1986 and carry no
+  rated zone at all; they total $76,630. [verified] — the same file. It is a coding artefact of the
+  programme's first decade and not a fact about water. [inference]
+
+      community                    claims       paid
+      Allen County, unincorporated    119   $2,323,350
+      Bluffton, village of             70   $1,276,347
+      Delphos, city of                 37     $242,559
+      Lima, city of                    22     $128,403
+      Elida, village of                 6     $122,051
+
+  **A village of four thousand holds 27 per cent of the county's flood claims and 31 per cent of
+  its money.** Bluffton's 70 claims against Lima's 22, in a place a ninth of Lima's size, and the
+  largest single payment in the county's record — $394,032 in 2007 — was paid there. [verified] —
+  the same file, summed by community. The gap is historical rather than current: over 2009 to 2026,
+  per hundred policy terms, Bluffton's postal area produced 4.49 claims and Lima's three produced
+  3.99. [inference] — the same file against
+  [the policy file](../../catalog/openfema-nfip.md), cut to the years both cover.
+
+  **June 2015 was the costliest month in the record and no federal disaster was declared for it.**
+  Forty-five claims fell in that one month, 32 of them outside any municipality, and the year's
+  $1,243,724 is 30.3 per cent of everything ever paid here. [verified] — the same file against
+  [the declarations](allen-county-disaster-declarations-1965-2020.yml), which has no 2015 row.
+
+  **Of the ten years with the most claims, one was a declared disaster.** 2015, 2011, 2019, 1981,
+  2017, 1997, 2008, 1979 and 1992 were not; 2007 was. Going the other way, the declaration of
+  August 2012 produced no flood insurance claim in this county at all. [verified] — the same
+  sources. The two records are counting different things — a declaration is public damage from any
+  peril, a claim is insured flood damage to a building — and the disagreement is what that
+  difference looks like from inside one county. [inference]
+
+  **Twenty-seven buildings here have been paid on more than once, and twenty-six have not been
+  mitigated.** Twelve are in Lima, nine in Bluffton, four in Delphos, one in Elida and one in
+  Spencerville; three have four losses, three have five, one has seven and one has thirteen. Eleven
+  of the twenty-seven are in zone X. Twenty are no longer insured. [verified] —
+  [the repeat-loss file](../../catalog/openfema-nfip.md). Against them the county has one completed
+  buyout and one refused; see [the mitigation record](allen-county-hazard-mitigation-2003-2026.yml).
+
+  **Half the claims were rated outside the mapped floodplain.** Of the 210 that carry a rated zone,
+  104 are A, AE or AO and 106 are B, C, D or X. [verified] — the same file. Per hundred policy
+  terms over 2009 to 2026, in the eight postal areas wholly inside this county, a policy rated
+  outside produced 4.27 claims and one rated inside produced 2.76. [inference] — computed here.
+
+  **This corpus cannot say whether Allen County's flood map is drawn in the wrong place.** Cover is
+  compulsory inside the special flood hazard area for anyone with a federally backed mortgage and
+  voluntary outside it, so the two denominators above were recruited by different rules and the
+  ratio between the two rates is about the recruitment at least as much as the water. [verified] —
+  the programme's own purchase requirement; see
+  [a compulsory denominator is not a voluntary one](../../decisions/a-compulsory-denominator-is-not-a-voluntary-one.yml).
+
+  [open] How many buildings stand outside the mapped floodplain. Without that count the claim rate
+  outside it stays a rate among policyholders and never becomes a risk.
+properties:
+  parameter: paid flood insurance claims in Allen County
+  value: "259"
+  unit: claims
+  as_of: "2023"
+  method: |
+    `NfipClaims` filtered on `countyCode eq '39003'`, all 259 rows taken in one request. Amounts are
+    the sum of the building, contents and increased-cost-of-compliance payments, unadjusted for
+    inflation because the file's own dollars span forty-six years and no single deflator suits a
+    mixture of building and contents payments; see
+    [a deflator is a choice](../../decisions/a-deflator-is-a-choice.yml). [verified] Rates per
+    policy term use `NfipPolicies` filtered on `reportedZipCode`, which is the only county-shaped
+    filter that endpoint accepts, cut to the eight postal areas lying wholly inside this county and
+    to 2009–2026, the years the policy file covers. [verified] A policy term is one row and is not
+    one building. [verified] No coordinate, address or block group from either file is reproduced
+    here.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../place/bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: allen-county-flood-hazard-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-nfhl.md
+  - target: allen-county-disaster-declarations-1965-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: allen-county-hazard-mitigation-2003-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
