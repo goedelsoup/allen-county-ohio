@@ -1,0 +1,160 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const fortyfive = assertion('forty-five-governments')
+const three = assertion('three-governments-are-half-the-payroll')
+const townships = assertion('the-townships-are-mostly-part-time')
+const empty = assertion('four-governments-with-no-employees')
+const districts = assertion('eleven-special-districts')
+const functions = assertion('what-the-county-government-does')
+const jail = assertion('one-jailer-for-every-one-and-a-half-held')
+const unreported = assertion('seven-governments-did-not-report')
+
+const ninth = assertion('one-job-in-nine-is-a-government-job')
+const federal = assertion('three-hundred-and-twenty-one-federal-jobs-twice')
+const post = assertion('the-post-office-is-the-federal-government-here')
+const plant = assertion('seventy-people-on-the-federal-payroll-at-the-plant')
+const prisons = assertion('four-hundred-and-fifty-eight-in-the-prisons')
+const road = assertion('a-road-office-a-college-and-a-courthouse')
+const behind = assertion('local-government-pay-fell-behind')
+const overtook = assertion('state-pay-overtook-federal')
+const wages = assertion('government-takes-a-ninth-of-the-wages')
+const agencies = assertion('two-agencies-within-five-per-cent')
+const register = assertion('what-a-business-register-leaves-out')
+
+const yrs = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+const jobShare = [11.96, 11.86, 11.77, 11.57, 11.48, 11.68, 11.93, 11.64, 11.72, 11.66, 11.56]
+const wageShare = [12.74, 12.86, 12.57, 12.4, 12.18, 12.56, 12.88, 12.23, 12.17, 11.92, 11.84]
+const fed = [62377, 64011, 64038, 65713, 68210, 69881, 69993, 79207, 79767, 83340, 83773]
+const st = [54778, 56978, 59285, 62879, 62573, 65645, 70039, 70436, 76080, 79678, 84761]
+const loc = [39535, 40825, 40837, 41968, 43470, 44799, 47747, 48044, 49450, 50882, 53722]
+const pri = [40167, 40700, 41875, 43237, 44890, 45731, 48404, 50486, 52991, 55734, 58606]
+
+const typeCats = ['School districts', 'The county', 'Municipalities', 'Townships', 'Special districts']
+const typeVals = [2149, 969, 489, 117, 82]
+const typePt = [648, 10, 172, 123, 31]
+const typeUnits = [12, 1, 9, 12, 11]
+
+const unitCats = ['Allen County', 'Lima City Schools', 'City of Lima', 'Shawnee Local', 'Elida Local', 'Bath Local', 'Educational Service Center', 'Delphos City Schools', 'Bluffton Ex Vlg', 'Allen East Local', 'Spencerville Local', 'Apollo Career Center']
+const unitVals = [969, 657, 402, 280, 212, 171, 154, 138, 115, 114, 104, 102]
+
+const shareSpec = line(
+  yrs,
+  [
+    { name: 'share of jobs', y: jobShare },
+    { name: 'share of wages', y: wageShare },
+  ],
+  { yTitle: "Government's share of covered employment, per cent", labelLast: true },
+)
+
+const paySpec = line(
+  yrs,
+  [
+    { name: 'federal', y: fed },
+    { name: 'state', y: st },
+    { name: 'private', y: pri },
+    { name: 'local', y: loc },
+  ],
+  { yTitle: 'Average annual pay, dollars', labelLast: true, zeroBased: true },
+)
+
+const typeSpec = bar(typeCats, typeVals, { yTitle: 'Full-time employees, 2022', labelValues: true })
+const unitSpec = bar(unitCats, unitVals, { yTitle: 'Full-time employees, 2022', labelValues: true })
+---
+
+<Article slug="one-job-in-nine">
+  <p>
+    Allen County has forty-five governments. Nine of them are villages or a city, twelve are
+    townships, twelve are school districts, eleven are special districts drawn for a park or a bus
+    or a landfill, and one is the county. Between them they employ 3,806 people full time — and
+    four of them employ nobody at all.
+  </p>
+
+  <h2>Forty-five governments</h2>
+  <AssertionCard assertion={fortyfive} open />
+  <ChartFigure
+    id="types"
+    title="Schools are more than half of it"
+    caption="Full-time employees of Allen County's local governments in March 2022, by type of government. The twelve townships are the only class with more part-time employees than full-time."
+    columns={['Type', 'Units', 'Full-time', 'Part-time']}
+    rows={typeCats.map((c, i) => [c, typeUnits[i], typeVals[i], typePt[i]])}
+    height={310}
+  />
+  <script type="application/json" data-chart-spec="types" set:html={JSON.stringify(typeSpec)} is:inline />
+  <AssertionCard assertion={three} />
+  <ChartFigure
+    id="units"
+    title="Twelve governments with a hundred employees or more"
+    caption="The largest local governments in Allen County by full-time employment in March 2022. The other thirty-three units employ 388 people between them."
+    columns={['Government', 'Full-time employees']}
+    rows={unitCats.map((c, i) => [c, unitVals[i]])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="units" set:html={JSON.stringify(unitSpec)} is:inline />
+  <AssertionCard assertion={townships} />
+  <AssertionCard assertion={empty} />
+  <AssertionCard assertion={districts} />
+  <AssertionCard assertion={functions} />
+  <AssertionCard assertion={jail} />
+  <AssertionCard assertion={unreported} />
+  <Gloss>
+    Every number in this file carries a flag saying whether anybody reported it. Twenty-eight of the
+    forty-five governments answered directly, eight answered with a correction from an analyst, two
+    gave a total that was split across functions, and seven did not answer at all — their figures are
+    2021's, grown by a rate borrowed from units of similar size and type that did answer. One of the
+    seven is the county's second-largest public employer. The total is still worth publishing; it is
+    not worth publishing without this paragraph.
+  </Gloss>
+
+  <h2>One job in nine</h2>
+  <AssertionCard assertion={ninth} />
+  <ChartFigure
+    id="share"
+    title="A ninth of the jobs, and no longer an eighth of the wages"
+    caption="Government's share of Allen County's covered employment and covered wages. The job share has stayed inside half a point for eleven years; the wage share has fallen by nearly a point since 2020, because public pay grew more slowly than private."
+    columns={['Year', 'Share of jobs', 'Share of wages']}
+    rows={yrs.filter((_, i) => i % 2 === 0 || yrs[i] === 2024).map((y) => {
+      const i = yrs.indexOf(y)
+      return [y, jobShare[i], wageShare[i]]
+    })}
+    height={310}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+  <AssertionCard assertion={federal} />
+  <AssertionCard assertion={post} />
+  <AssertionCard assertion={plant} />
+  <AssertionCard assertion={prisons} />
+  <AssertionCard assertion={road} />
+
+  <h2>What it pays</h2>
+  <AssertionCard assertion={behind} />
+  <ChartFigure
+    id="pay"
+    title="Private pay crossed local government pay and kept going"
+    caption="Average annual pay per job in Allen County by ownership. Local government paid about what private employment paid in 2014 and pays five thousand dollars less now; state pay overtakes federal in the last year."
+    columns={['Year', 'Federal', 'State', 'Local', 'Private']}
+    rows={yrs.filter((_, i) => i % 2 === 0 || yrs[i] === 2024).map((y) => {
+      const i = yrs.indexOf(y)
+      return [y, fed[i], st[i], loc[i], pri[i]]
+    })}
+    height={330}
+  />
+  <script type="application/json" data-chart-spec="pay" set:html={JSON.stringify(paySpec)} is:inline />
+  <AssertionCard assertion={overtook} />
+  <AssertionCard assertion={wages} />
+  <AssertionCard assertion={agencies} />
+  <Gloss>
+    Two federal agencies counted the same payroll in 2022 and came within five per cent. One asks
+    every employer covered by unemployment insurance how many jobs it had each month; the other asks
+    each named government how many employees it had in March. Elected officials, casual part-timers
+    and some boards fall on different sides of the two rules, and neither file is trying to answer
+    the other's question. Five per cent apart is what agreement looks like between honest
+    instruments; it is not a discrepancy to be resolved by averaging them.
+  </Gloss>
+  <AssertionCard assertion={register} />
+</Article>
