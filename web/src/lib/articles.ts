@@ -1299,6 +1299,38 @@ export const ARTICLES: Article[] = [
       'measure/allen-county-national-register.yml',
     ],
   },
+  {
+    slug: 'the-map-is-of-the-river',
+    title: 'The map is of the river',
+    dek: "Six per cent of Allen County is in the federal floodplain, and it is not the county's wet ground: hydric soil and flood zone correlate at 0.099. More insured flood damage here comes from rain that had nowhere to go than from a river leaving its channel.",
+    section: 'ground',
+    era: [1978, 2026],
+    assertions: [
+      'six-per-cent-of-the-county-is-floodplain',
+      'the-five-hundred-year-band-is-a-sixteenth',
+      'one-acre-in-seven-has-no-elevation',
+      'the-flood-map-is-three-maps',
+      'wet-ground-and-flood-zone-are-not-the-same-ground',
+      'four-villages-have-no-floodplain-at-all',
+      'gomer-is-a-third-floodplain',
+      'how-many-people-live-in-the-floodplain',
+      'more-rain-than-river',
+      'tidal-water-five-hundred-miles-from-the-sea',
+      'a-village-of-four-thousand-holds-a-third-of-the-money',
+      'june-2015-and-nobody-declared-it',
+      'ten-claim-years-and-one-declaration',
+      'twenty-seven-buildings-and-one-buyout',
+      'half-the-claims-were-rated-outside-the-map',
+      'the-ratio-is-about-who-had-to-buy',
+    ],
+    entries: [
+      'measure/allen-county-flood-hazard-2026.yml',
+      'measure/allen-county-flood-insurance-1978-2023.yml',
+      'measure/allen-county-disaster-declarations-1965-2020.yml',
+      'measure/allen-county-hazard-mitigation-2003-2026.yml',
+      'place/gomer.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */

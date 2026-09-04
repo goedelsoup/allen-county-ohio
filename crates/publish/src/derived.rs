@@ -7908,6 +7908,242 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["The dataset carries `STATUS: Listed` on all twenty-nine and would simply omit a delisted property, so it cannot answer its own question"],
         figures: &[],
     },
+    Assertion {
+        id: "six-per-cent-of-the-county-is-floodplain",
+        statement: "Six per cent of Allen County is in the special flood hazard area \u{2014} 15,622 \
+                    acres, which is 6.06 per cent of its land.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**Six per cent of Allen County is in the special flood hazard area \u{2014} 15,622 acres.** That is 6.06 per cent of the county's 402.545 square miles of land, and 6.00 per cent of the polygon the map is drawn on, which includes its water. [verified] \u{2014} [the National Flood Hazard Layer](../../catalog/fema-nfhl.md), 1,625 polygons for `DFIRM_ID` 39003C, dissolved and clipped to [the county polygon](../../catalog/census-tiger-roads.md) in EPSG:26916, against [the land area](allen-county-land-area-2020.yml)."),
+        ],
+        answers: &["cannot say how many people live in the floodplain"],
+        figures: &[
+            Figure { label: "special flood hazard area, acres", value: 15622.0, literal: "15,622" },
+            Figure { label: "per cent of the county's land", value: 6.06, literal: "6.06" },
+        ],
+    },
+    Assertion {
+        id: "the-five-hundred-year-band-is-a-sixteenth",
+        statement: "The five-hundred-year flood band in Allen County is 943 acres against the \
+                    hundred-year zone's 15,622 \u{2014} a sixteenth of it, which is what a county \
+                    mapped without a second modelled flood beside the first looks like.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**The five-hundred-year band is a sixteenth of the hundred-year one.** 943 acres against 15,622. [verified] \u{2014} the same source, its `ZONE_SUBTY` field. A county whose 0.2 per cent zone is that thin has had most of its ground mapped without a second modelled flood beside the first. [inference]"),
+        ],
+        answers: &["cannot say how many people live in the floodplain"],
+        figures: &[
+            Figure { label: "0.2 per cent annual chance zone, acres", value: 943.0, literal: "943" },
+        ],
+    },
+    Assertion {
+        id: "one-acre-in-seven-has-no-elevation",
+        statement: "One acre in seven of Allen County's floodplain is zone A \u{2014} special flood \
+                    hazard with no base flood elevation determined. That is 2,293 of the 15,622 \
+                    acres, and zone A is what a stream gets when nobody has run a hydraulic study on \
+                    it.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**One acre in seven of the floodplain has no base flood elevation on the map.** Zone A \u{2014} special flood hazard with no elevation determined \u{2014} is 2,293 of the 15,622 acres, and the rest is AE or AO. [verified] \u{2014} the same source. Zone A is the approximate method, which is what a stream gets when nobody has run a hydraulic study on it."),
+        ],
+        answers: &["cannot say how many people live in the floodplain"],
+        figures: &[
+            Figure { label: "zone A, acres", value: 2293.0, literal: "2,293" },
+        ],
+    },
+    Assertion {
+        id: "the-flood-map-is-three-maps",
+        statement: "Allen County's flood map is three maps: of its 48 printed panels, 37 took effect \
+                    on 20 June 2024, ten on 2 May 2013 and one on 4 May 2015.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**The map is three maps.** Forty-eight printed panels cover this county: 37 took effect on 20 June 2024, ten on 2 May 2013 and one on 4 May 2015, and five of the 48 were never printed. [verified] \u{2014} the same source, layer 3."),
+        ],
+        answers: &["cannot say how many people live in the floodplain"],
+        figures: &[
+            Figure { label: "panels effective June 2024", value: 37.0, literal: "37" },
+            Figure { label: "printed panels", value: 48.0, literal: "48" },
+        ],
+    },
+    Assertion {
+        id: "wet-ground-and-flood-zone-are-not-the-same-ground",
+        statement: "Across Allen County's twelve townships and its city, the share of ground that is \
+                    hydric soil and the share inside the flood map's special hazard area correlate \
+                    at a Spearman 0.099. Marion is the wettest township in the county and is 5.73 \
+                    per cent floodplain.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**Wet ground and flood zone are close to unrelated here.** Across the twelve townships and the city, the share of ground that is hydric soil and the share that is mapped floodplain correlate at a Spearman 0.099. Marion is the wettest township in the county at 58.0 per cent hydric and is 5.73 per cent floodplain; Monroe is 44.3 and 3.34. [inference] \u{2014} computed here against [the soils](allen-county-soils-2026.yml). A flood map traces channels; a soil map records where water sits."),
+            support!("measure/allen-county-soils-2026.yml", "**35.3 per cent of the county is hydric soil, which is ground that formed under standing water.** 91,953 acres. [verified] \u{2014} the same file, `hydricrating`. Read against the drainage column it is almost exactly the very-poorly-drained share, 34.5 per cent, which is what the two ratings ought to do and is worth checking rather than assuming."),
+        ],
+        answers: &["cannot say how many people live in the floodplain", "does not assert that the hydric acres are the Great Black Swamp"],
+        figures: &[
+            Figure { label: "Spearman correlation, hydric against floodplain", value: 0.099, literal: "0.099" },
+            Figure { label: "Marion, per cent floodplain", value: 5.73, literal: "5.73" },
+        ],
+    },
+    Assertion {
+        id: "four-villages-have-no-floodplain-at-all",
+        statement: "Four of Allen County's nine incorporated places have no mapped floodplain at all \
+                    \u{2014} Beaverdam, Harrod, Spencerville and Cairo \u{2014} and the village with \
+                    the most of it is not the city on the biggest river.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**Four of the county's nine incorporated places have no mapped floodplain at all**, and the village with the most of it is not the city on the biggest river. [verified] \u{2014} the same source against [the place file](../../catalog/census-tiger-roads.md), each place clipped to this county first because Bluffton and Delphos are not wholly inside it. Gomer, Westminster and Fort Shawnee are census designated places and not corporations; the other nine are the county's villages and its city."),
+        ],
+        answers: &["cannot say how many people live in the floodplain"],
+        figures: &[],
+    },
+    Assertion {
+        id: "gomer-is-a-third-floodplain",
+        statement: "Nearly a third of Gomer is in the floodplain \u{2014} 448.4 of its 1,469 acres, \
+                    30.53 per cent \u{2014} which is more than any incorporated place in Allen \
+                    County, against 17.43 per cent for Bluffton and 4.27 for Lima.",
+        topic: "geography",
+        supports: &[
+            support!("place/gomer.yml", "**Nearly a third of it is in the floodplain, which is more than any incorporated place in the county.** 448.4 of its 1,469 acres \u{2014} 30.53 per cent \u{2014} lie in the special flood hazard area, against 17.43 per cent for Bluffton and 4.27 for Lima. [verified] \u{2014} [the National Flood Hazard Layer](../../catalog/fema-nfhl.md); see [the mapped floodplain](../measure/allen-county-flood-hazard-2026.yml). It sits in the county's most flood-mapped township, [Sugar Creek](sugar-creek-township.yml) at 17.04 per cent, and it is the only settlement in it."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Gomer, per cent floodplain", value: 30.53, literal: "30.53" },
+            Figure { label: "Bluffton, per cent floodplain", value: 17.43, literal: "17.43" },
+        ],
+    },
+    Assertion {
+        id: "how-many-people-live-in-the-floodplain",
+        statement: "Of Allen County's 3,552 census blocks, 849 touch the special flood hazard area \
+                    and 94 lie wholly inside it. Those 94 hold 235 people and the 849 hold 23,721, \
+                    so the corpus publishes a bracket rather than an estimate.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-hazard-2026.yml", "**This corpus cannot say how many people live in the floodplain.** Of the county's 3,552 census blocks, 849 touch the special flood hazard area and 94 lie wholly inside it. Those 94 hold 235 people; the 849 hold 23,721; weighting each block by the share of its area inside gives 4,448. [verified] \u{2014} [the 2020 block file](../../catalog/census-tiger-roads.md), `POP20` against the dissolved hazard area. A bracket from 0.23 per cent of the county to 23.21 per cent is not an estimate, and the area weight in the middle is the weight this corpus has already found wrong for people; see [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml). The housing figures behave identically: 96, 1,945 and 10,475 of 44,563."),
+        ],
+        answers: &["cannot say how many people live in the floodplain"],
+        figures: &[
+            Figure { label: "people in blocks wholly inside", value: 235.0, literal: "235" },
+            Figure { label: "people in blocks touching", value: 23721.0, literal: "23,721" },
+        ],
+    },
+    Assertion {
+        id: "more-rain-than-river",
+        statement: "More of Allen County's flood insurance claims are coded to accumulation of \
+                    rainfall or snowmelt than to a stream, river or lake leaving its channel \
+                    \u{2014} 109 against 103.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**More of it comes from rain than from rivers.** The file codes the cause of every loss, and 109 are accumulation of rainfall or snowmelt against 103 from a stream, river or lake leaving its channel. [verified] \u{2014} the same file, its `causeOfDamage` field against [the published code list](../../catalog/openfema-nfip.md). In a county three-quarters of which is poorly drained, the water that gets into a building is as often water that had nowhere to go. [inference] \u{2014} see [the soils](allen-county-soils-2026.yml)."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "rainfall or snowmelt", value: 109.0, literal: "109" },
+            Figure { label: "stream, river or lake overflow", value: 103.0, literal: "103" },
+        ],
+    },
+    Assertion {
+        id: "tidal-water-five-hundred-miles-from-the-sea",
+        statement: "Twenty-seven flood claims in Allen County are coded tidal water overflow, in a \
+                    county five hundred miles from tidewater. Twenty-four of them are dated 1978 to \
+                    1986 and carry no rated zone, and they total $76,630.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**Twenty-seven claims in this county are coded tidal water overflow.** Allen County is five hundred miles from tidewater. Twenty-four of the twenty-seven are dated 1978 to 1986 and carry no rated zone at all; they total $76,630. [verified] \u{2014} the same file. It is a coding artefact of the programme's first decade and not a fact about water. [inference]"),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "paid on the tidal-coded claims, dollars", value: 76630.0, literal: "76,630" },
+        ],
+    },
+    Assertion {
+        id: "a-village-of-four-thousand-holds-a-third-of-the-money",
+        statement: "Bluffton holds 27 per cent of Allen County's flood insurance claims and 31 per \
+                    cent of the money paid on them \u{2014} 70 claims against Lima's 22, in a place \
+                    a ninth of Lima's size \u{2014} and the largest single payment in the county's \
+                    record, $394,032 in 2007, was paid there.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**A village of four thousand holds 27 per cent of the county's flood claims and 31 per cent of its money.** Bluffton's 70 claims against Lima's 22, in a place a ninth of Lima's size, and the largest single payment in the county's record \u{2014} $394,032 in 2007 \u{2014} was paid there. [verified] \u{2014} the same file, summed by community. The gap is historical rather than current: over 2009 to 2026, per hundred policy terms, Bluffton's postal area produced 4.49 claims and Lima's three produced 3.99. [inference] \u{2014} the same file against [the policy file](../../catalog/openfema-nfip.md), cut to the years both cover."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "Bluffton claims", value: 70.0, literal: "70" },
+            Figure { label: "Lima claims", value: 22.0, literal: "22" },
+            Figure { label: "largest single payment, dollars", value: 394032.0, literal: "394,032" },
+        ],
+    },
+    Assertion {
+        id: "june-2015-and-nobody-declared-it",
+        statement: "June 2015 was the costliest month in Allen County's flood insurance record \
+                    \u{2014} 45 claims, 32 of them outside any municipality, and 30.3 per cent of \
+                    everything ever paid here \u{2014} and no federal disaster was declared for it.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**June 2015 was the costliest month in the record and no federal disaster was declared for it.** Forty-five claims fell in that one month, 32 of them outside any municipality, and the year's $1,243,724 is 30.3 per cent of everything ever paid here. [verified] \u{2014} the same file against [the declarations](allen-county-disaster-declarations-1965-2020.yml), which has no 2015 row."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "share of all money ever paid, per cent", value: 30.3, literal: "30.3" },
+            Figure { label: "claims outside any municipality", value: 32.0, literal: "32" },
+        ],
+    },
+    Assertion {
+        id: "ten-claim-years-and-one-declaration",
+        statement: "Of the ten years that produced the most flood insurance claims in Allen County, \
+                    one \u{2014} 2007 \u{2014} carries a federal disaster declaration. The \
+                    declaration of August 2012 produced no flood claim in the county at all.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**Of the ten years with the most claims, one was a declared disaster.** 2015, 2011, 2019, 1981, 2017, 1997, 2008, 1979 and 1992 were not; 2007 was. Going the other way, the declaration of August 2012 produced no flood insurance claim in this county at all. [verified] \u{2014} the same sources. The two records are counting different things \u{2014} a declaration is public damage from any peril, a claim is insured flood damage to a building \u{2014} and the disagreement is what that difference looks like from inside one county. [inference]"),
+            support!("measure/allen-county-disaster-declarations-1965-2020.yml", "**Ten declarations in fifty-five years, for eight distinct incidents.** [verified] \u{2014} [OpenFEMA](../../catalog/fema-disaster-declarations.md), disaster declarations summaries, Ohio county 003."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-seven-buildings-and-one-buyout",
+        statement: "Twenty-seven buildings in Allen County have been paid on more than once by the \
+                    flood insurance programme and twenty-six of them have not been mitigated; one \
+                    has been paid on thirteen times. Against them the county's whole federal buyout \
+                    record is one house bought and one refused.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**Twenty-seven buildings here have been paid on more than once, and twenty-six have not been mitigated.** Twelve are in Lima, nine in Bluffton, four in Delphos, one in Elida and one in Spencerville; three have four losses, three have five, one has seven and one has thirteen. Eleven of the twenty-seven are in zone X. Twenty are no longer insured. [verified] \u{2014} [the repeat-loss file](../../catalog/openfema-nfip.md). Against them the county has one completed buyout and one refused; see [the mitigation record](allen-county-hazard-mitigation-2003-2026.yml)."),
+            support!("measure/allen-county-hazard-mitigation-2003-2026.yml", "**So the county's whole federal flood-buyout record is two houses, one bought and one not.** [inference] \u{2014} computed here. Neither is located: `projectCounties` reads ALLEN and there is no coordinate, address or watershed in the file. [verified] \u{2014} same source."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[],
+    },
+    Assertion {
+        id: "half-the-claims-were-rated-outside-the-map",
+        statement: "Half of Allen County's flood insurance claims were rated outside the mapped \
+                    floodplain: of the 210 that carry a rated zone, 104 are in the special flood \
+                    hazard area and 106 are not.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**Half the claims were rated outside the mapped floodplain.** Of the 210 that carry a rated zone, 104 are A, AE or AO and 106 are B, C, D or X. [verified] \u{2014} the same file. Per hundred policy terms over 2009 to 2026, in the eight postal areas wholly inside this county, a policy rated outside produced 4.27 claims and one rated inside produced 2.76. [inference] \u{2014} computed here."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "rated inside the hazard area", value: 104.0, literal: "104" },
+            Figure { label: "rated outside it", value: 106.0, literal: "106" },
+        ],
+    },
+    Assertion {
+        id: "the-ratio-is-about-who-had-to-buy",
+        statement: "A flood policy rated outside Allen County's mapped floodplain produced 4.27 \
+                    claims per hundred policy terms and one rated inside produced 2.76 \u{2014} and \
+                    the corpus declines to read that as a statement about the map, because cover \
+                    inside is compulsory and outside it is not.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**This corpus cannot say whether Allen County's flood map is drawn in the wrong place.** Cover is compulsory inside the special flood hazard area for anyone with a federally backed mortgage and voluntary outside it, so the two denominators above were recruited by different rules and the ratio between the two rates is about the recruitment at least as much as the water. [verified] \u{2014} [the programme's own purchase requirement](../../catalog/openfema-nfip.md); see [a compulsory denominator is not a voluntary one](../../decisions/a-compulsory-denominator-is-not-a-voluntary-one.yml)."),
+            support!("measure/allen-county-flood-insurance-1978-2023.yml", "**Half the claims were rated outside the mapped floodplain.** Of the 210 that carry a rated zone, 104 are A, AE or AO and 106 are B, C, D or X. [verified] \u{2014} the same file. Per hundred policy terms over 2009 to 2026, in the eight postal areas wholly inside this county, a policy rated outside produced 4.27 claims and one rated inside produced 2.76. [inference] \u{2014} computed here."),
+        ],
+        answers: &["cannot say whether Allen County's flood map is drawn in the wrong place"],
+        figures: &[
+            Figure { label: "claims per 100 policy terms, outside", value: 4.27, literal: "4.27" },
+            Figure { label: "claims per 100 policy terms, inside", value: 2.76, literal: "2.76" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

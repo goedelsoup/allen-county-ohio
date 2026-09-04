@@ -1,0 +1,110 @@
+class: measure
+label: The mapped floodplain of Allen County, 2026
+description: |
+  **Six per cent of Allen County is in the special flood hazard area — 15,622 acres.** That is 6.06
+  per cent of the county's 402.545 square miles of land, and 6.00 per cent of the polygon the map
+  is drawn on, which includes its water. [verified] —
+  [the National Flood Hazard Layer](../../catalog/fema-nfhl.md), 1,625 polygons for `DFIRM_ID`
+  39003C, dissolved and clipped to [the county polygon](../../catalog/census-tiger-roads.md) in
+  EPSG:26916, against [the land area](allen-county-land-area-2020.yml).
+
+      zone      subtype                                acres   of polygon
+      X         area of minimal flood hazard        243,923.8     93.62%
+      AE        —                                     8,930.4      3.43%
+      AE        floodway                               4,391.4      1.69%
+      A         —                                      2,292.7      0.88%
+      X         0.2 per cent annual chance               942.8      0.36%
+      AO        —                                          7.5      0.00%
+
+  **The five-hundred-year band is a sixteenth of the hundred-year one.** 943 acres against 15,622.
+  [verified] — the same source, its `ZONE_SUBTY` field. A county whose 0.2 per cent zone is that
+  thin has had most of its ground mapped without a second modelled flood beside the first.
+  [inference]
+
+  **One acre in seven of the floodplain has no base flood elevation on the map.** Zone A — special
+  flood hazard with no elevation determined — is 2,293 of the 15,622 acres, and the rest is AE or
+  AO. [verified] — the same source. Zone A is the approximate method, which is what a stream gets
+  when nobody has run a hydraulic study on it.
+
+  **The map is three maps.** Forty-eight printed panels cover this county: 37 took effect on 20
+  June 2024, ten on 2 May 2013 and one on 4 May 2015, and five of the 48 were never printed.
+  [verified] — the same source, layer 3.
+
+  **Wet ground and flood zone are close to unrelated here.** Across the twelve townships and the
+  city, the share of ground that is hydric soil and the share that is mapped floodplain correlate at
+  a Spearman 0.099. Marion is the wettest township in the county at 58.0 per cent hydric and is
+  5.73 per cent floodplain; Monroe is 44.3 and 3.34. [inference] — computed here against
+  [the soils](allen-county-soils-2026.yml). A flood map traces channels; a soil map records where
+  water sits.
+
+      township        floodplain          township        floodplain
+      Sugar Creek        17.04%           Richland            4.92%
+      American            8.77%           Jackson             4.87%
+      Perry               7.52%           — Lima              4.27%
+      Amanda              7.35%           Monroe              3.34%
+      Bath                7.13%           Spencer             2.63%
+      Shawnee             6.51%           Auglaize            0.81%
+      Marion              5.73%
+
+  **Four of the county's nine incorporated places have no mapped floodplain at all**, and the
+  village with the most of it is not the city on the biggest river. [verified] — the same source
+  against [the place file](../../catalog/census-tiger-roads.md), each place clipped to this county
+  first because Bluffton and Delphos are not wholly inside it. Gomer, Westminster and Fort Shawnee
+  are census designated places and not corporations; the other nine are the county's villages and
+  its city.
+
+      place                per cent      place            per cent
+      Gomer CDP              30.53       Fort Shawnee CDP    4.97
+      Bluffton                17.43      Lima                4.27
+      Elida                   13.70      Beaverdam           0.00
+      Delphos                 13.10      Harrod              0.00
+      Westminster CDP          6.77      Spencerville        0.00
+      Lafayette                5.19      Cairo               0.00
+
+  **This corpus cannot say how many people live in the floodplain.** Of the county's 3,552 census
+  blocks, 849 touch the special flood hazard area and 94 lie wholly inside it. Those 94 hold 235
+  people; the 849 hold 23,721; weighting each block by the share of its area inside gives 4,448.
+  [verified] — [the 2020 block file](../../catalog/census-tiger-roads.md), `POP20` against the
+  dissolved hazard area. A bracket from 0.23 per cent of the county to 23.21 per cent is not an
+  estimate, and the area weight in the middle is the weight this corpus has already found wrong for
+  people; see
+  [weight a crosswalk by what it carries](../../decisions/weight-a-crosswalk-by-what-it-carries.yml).
+  The housing figures behave identically: 96, 1,945 and 10,475 of 44,563.
+
+  [open] Where the buildings are. The bracket above closes only with a building footprint or a
+  parcel layer carrying a structure, and the county's own parcel data is held here without owner
+  or structure attributes.
+properties:
+  parameter: land in the special flood hazard area
+  value: "15622"
+  unit: acres
+  as_of: "2026"
+  method: |
+    Layer 28 of the National Flood Hazard Layer, `DFIRM_ID='39003C'`, taken in seven pages of 250
+    with retries and projected to EPSG:26916 on the server. Polygons flagged `SFHA_TF = 'T'` were
+    unioned and the union intersected with the 2024 TIGER county polygon; the zone table is each
+    polygon intersected with the county and summed by `FLD_ZONE` and `ZONE_SUBTY`, and it accounts
+    for 99.97 per cent of the county's area, the remainder being ground the FIRM does not cover.
+    [verified] Township and place shares are the union intersected with each polygon, divided by
+    that polygon's own area inside this county. [verified] Population and housing are `POP20` and
+    `HOUSING20` on the 2020 blocks, reported as three figures — blocks wholly inside, blocks
+    weighted by area, and blocks touching — rather than as one. [inference] Acres are 4046.8564224
+    square metres.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-nfhl.md
+  - target: ../place/gomer.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-nfhl.md
+  - target: allen-county-soils-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-flood-insurance-1978-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
