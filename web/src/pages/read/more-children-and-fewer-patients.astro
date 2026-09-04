@@ -1,0 +1,155 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import Gloss from '../../components/Gloss.astro'
+import { assertion } from '../../lib/feeds'
+import { line } from '../../lib/chart-spec'
+
+const tfr = assertion('more-children-per-woman-than-ohio')
+const repl = assertion('below-replacement-eleven-years-after-ohio')
+const pre = assertion('prematurity-fell-and-birthweight-did-not')
+const im = assertion('infant-mortality-halved-then-stopped')
+const bad = assertion('twenty-twenty-one-is-the-worst-year')
+const ovl = assertion('the-overlap-says-it-is-the-denominator')
+const few = assertion('fewer-patients-about-as-long')
+const outp = assertion('the-work-went-outpatient')
+const occA = assertion('occupancy-did-not-move-because-the-beds-came-out')
+const blu = assertion('bluffton-has-stopped-taking-inpatients')
+const kin = assertion('the-long-term-hospital-emptied-too')
+const two = assertion('the-two-big-hospitals-fell-in-proportion')
+
+const tYears = [
+  2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015,
+  2016, 2017, 2018, 2019, 2020,
+]
+const tfAllen = [
+  2360.7, 2358.3, 2229.0, 2281.7, 2210.4, 2208.1, 2213.0, 2218.5, 2147.8, 2177.9, 2082.1, 2030.4,
+  2048.5, 2036.1, 2050.1, 2072.3, 2049.3, 2031.0, 2063.7, 2083.5, 1954.2,
+]
+const tfOhio = [
+  2020.4, 1982.3, 1955.6, 1974.7, 1975.4, 1978.8, 2021.1, 2034.1, 2013.9, 1967.3, 1897.1, 1879.4,
+  1884.5, 1879.9, 1878.0, 1869.1, 1846.0, 1821.0, 1793.6, 1780.1, 1712.4,
+]
+const iYears = [
+  2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+  2020,
+]
+const imAllen = [
+  9.75, 10.33, 10.14, 9.67, 8.72, 8.35, 7.17, 6.58, 7.34, 6.37, 6.62, 6.79, 7.74, 7.45, 8.11, 7.47,
+  6.95,
+]
+const imOhio = [
+  7.7, 7.81, 7.83, 7.79, 7.78, 7.82, 7.72, 7.76, 7.71, 7.64, 7.47, 7.36, 7.26, 7.2, 7.12, 7.13,
+  7.03,
+]
+const hYears = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+const disch = [
+  26924, 27662, 26369, 25048, 26149, 24652, 25293, 25127, 25089, 22077, 22582, 22019, 22858,
+]
+const outShare = [46.9, 48.5, 48.9, 50.1, 49.2, 50.4, 50.3, 51.0, 52.7, 50.2, 51.7, 53.9, 55.3]
+const occ = [55.6, 53.5, 51.9, 50.8, 55.6, 55.8, 55.0, 52.7, 58.3, 55.7, 59.8, 57.6, 56.0]
+
+const tfSpec = line(
+  tYears,
+  [
+    { name: 'Allen County', y: tfAllen },
+    { name: 'Ohio', y: tfOhio },
+  ],
+  { yTitle: 'Births per 1,000 women', labelLast: true },
+)
+const imSpec = line(
+  iYears,
+  [
+    { name: 'Allen County', y: imAllen },
+    { name: 'Ohio', y: imOhio },
+  ],
+  { yTitle: 'Infant deaths per 1,000 live births, five-year rate', labelLast: true },
+)
+const hSpec = line(hYears, [{ name: 'Discharges', y: disch }], {
+  yTitle: 'Inpatient discharges, all five hospitals',
+})
+const oSpec = line(
+  hYears,
+  [
+    { name: 'Outpatient share of charges', y: outShare },
+    { name: 'Occupancy', y: occ },
+  ],
+  { yTitle: 'Per cent', tickSuffix: '%', labelLast: true },
+)
+---
+
+<Article slug="more-children-and-fewer-patients">
+  <p>
+    Two questions a county reference should be able to answer are what happens when a child is born
+    here and what the hospitals do. Neither was answerable from this one: a birth count with no
+    outcome attached to it, and five hospitals known by their bed counts and their payrolls.
+  </p>
+  <AssertionCard assertion={tfr} open />
+  <ChartFigure
+    id="tfr"
+    title="More children per woman than the state, every year"
+    caption="Total fertility rate for Allen County and for Ohio, births per 1,000 women. The county's line is above the state's in all twenty-one comparable years, and both fall by about the same proportion."
+    columns={['Year', 'Allen County', 'Ohio']}
+    rows={tYears.map((y, i) => [y, tfAllen[i], tfOhio[i]])}
+    height={340}
+  />
+  <script type="application/json" data-chart-spec="tfr" set:html={JSON.stringify(tfSpec)} is:inline />
+  <AssertionCard assertion={repl} />
+  <AssertionCard assertion={pre} />
+  <AssertionCard assertion={im} />
+  <ChartFigure
+    id="im"
+    title="Infant mortality, halved and then flat"
+    caption="Five-year infant mortality rate, labelled by the last year of each window. The county ran well above Ohio for a decade, crossed below it around 2011, and has been at it since."
+    columns={['Window ending', 'Allen County', 'Ohio']}
+    rows={iYears.map((y, i) => [y, imAllen[i], imOhio[i]])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="im" set:html={JSON.stringify(imSpec)} is:inline />
+  <AssertionCard assertion={bad} />
+
+  <h2>A break the publisher marked</h2>
+  <AssertionCard assertion={ovl} />
+  <Gloss>
+    Three of these measures are published twice — once through 2020 and once from 2018 — and the
+    three years they share are given away free. Everything counted off a birth certificate is
+    identical to the digit across the break. The one quantity that divides births by a count of
+    women differs in all three years, by 0.05 per cent in the first and 0.59 in the last, and Ohio's
+    rows do the same thing. So the break is in the population estimate underneath the rate and not
+    in the vital statistics on top of it, the birth measures are one series across twenty-two years,
+    and the fertility rate is honestly two. None of that is written down anywhere; it is what the
+    overlap says, and the overlap is usually deleted as a duplicate.
+  </Gloss>
+
+  <h2>What the hospitals did</h2>
+  <AssertionCard assertion={few} />
+  <ChartFigure
+    id="disch"
+    title="Fifteen per cent fewer people admitted"
+    caption="Inpatient discharges from all five Allen County hospitals, every fiscal year from 2011. The average stay over the same period went from 4.37 days to 4.49 — up, not down."
+    columns={['Fiscal year', 'Discharges']}
+    rows={hYears.map((y, i) => [y, disch[i]])}
+    height={300}
+  />
+  <script type="application/json" data-chart-spec="disch" set:html={JSON.stringify(hSpec)} is:inline />
+  <AssertionCard assertion={outp} />
+  <AssertionCard assertion={occA} />
+  <ChartFigure
+    id="oshare"
+    title="The outpatient share moved and occupancy did not"
+    caption="Outpatient charges as a share of all hospital charges in Allen County, beside the occupancy of the county's hospital beds. Charges are list prices; the share is the finding."
+    columns={['Fiscal year', 'Outpatient share', 'Occupancy']}
+    rows={hYears.map((y, i) => [y, `${outShare[i]}%`, `${occ[i]}%`])}
+    height={320}
+  />
+  <script type="application/json" data-chart-spec="oshare" set:html={JSON.stringify(oSpec)} is:inline />
+  <p>
+    Which is why a bed count is a poor thing to read alone. The county lost 78 beds and 4,066
+    admissions across the same thirteen years, and the two fell at close enough to the same rate that
+    the share of beds occupied on an average night is where it was.
+  </p>
+  <AssertionCard assertion={blu} />
+  <AssertionCard assertion={kin} />
+  <AssertionCard assertion={two} />
+</Article>
