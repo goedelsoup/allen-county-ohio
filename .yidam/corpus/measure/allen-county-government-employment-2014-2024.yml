@@ -1,0 +1,111 @@
+class: measure
+label: Who works for a government in Allen County, 2014–2024
+description: |
+  **One job in nine in Allen County is a government job, and it has been for eleven years.**
+  [verified] — [the Quarterly Census of Employment and Wages](../../catalog/bls-qcew.md), county
+  files 2014 to 2024, aggregation level 71, ownership codes 1 federal, 2 state, 3 local and 5
+  private.
+
+      year   all jobs   federal   state   local   private   government   share
+      2014     49,814       321     949   4,686    43,859        5,956   11.96%
+      2016     50,406       321     973   4,640    44,472        5,934   11.77%
+      2018     50,828       321     979   4,534    44,994        5,834   11.48%
+      2020     47,761       331     971   4,395    42,064        5,697   11.93%
+      2022     49,136       307     918   4,534    43,378        5,759   11.72%
+      2024     49,690       321     888   4,536    43,944        5,745   11.56%
+
+  **The federal payroll here has not moved at all.** 321 people in 2014 and 321 in 2024, and in no
+  year of the eleven fewer than 302 or more than 331. [verified] — the same source. Over the same
+  years the county's total covered employment fell by 124 and its private employment rose by 85.
+
+  **The largest federal presence in this county is the post office.** 155 employees across seven
+  establishments in 2023, at $74,566 a year. [verified] — the same file at NAICS 491110. After it:
+  70 people in national security at one establishment, 38 in offices of physicians at one, and
+  eight in public finance. [verified] — the same file, NAICS 928110, 621111 and 921130. The national
+  security establishment is the federal cadre at
+  [the tank plant](../site/lima-army-tank-plant.yml), which is government-owned and
+  contractor-operated, so the people who build vehicles there are private employment counted under
+  manufacturing. [inference]
+
+  **Four hundred and fifty-eight people work in the county's two state correctional institutions**,
+  at $82,817 a year — half of all state government employment here. [verified] — the same file,
+  NAICS 922140, two establishments. The census counted 1,513 people in adult correctional facilities
+  in this county, so the two prisons hold about three and a third people for each person they
+  employ. [inference] — see [the group quarters](allen-county-group-quarters-2020.yml).
+
+  **The rest of the state's presence is a road office, a college and a courthouse.** 156 in
+  transportation administration at one establishment, 130 in colleges and universities at one, 98 in
+  human resource programme administration, 24 in courts at $107,506 and 20 in state police at
+  $97,879. [verified] — the same file, NAICS 926120, 611310, 923130, 922110 and 922120.
+
+  **A local government job in this county has been falling behind the county's own average pay for
+  eleven years.** In 2014 it paid $39,535 against $40,528 for all covered employment — 2.4 per cent
+  below. In 2024 it paid $53,722 against $58,790 — 8.6 per cent below. Local government pay rose
+  35.9 per cent over the eleven years and private pay rose 45.9. [verified] — the same source,
+  `avg_annual_pay`; the shares are computed here.
+
+  **State government pay overtook federal in 2024 for the first time in the series.** $84,761 against
+  $83,773. [verified] — the same source. Federal pay in this county went from 154 per cent of the
+  county average to 142; state went from 135 to 144.
+
+  **Government takes 11.56 per cent of the jobs and 11.84 per cent of the wages.** $345,876,208 of
+  $2,921,271,371 in 2024, across 136 establishments of 2,586. [verified] — the same file,
+  `total_annual_wages`. In 2014 it was 12.74 per cent of the wages, and the fall is local government
+  pay rather than local government headcount. [inference]
+
+  **Two agencies counted the same local payroll in 2022 and came within five per cent.** This file
+  gives 4,534 local government jobs; the Census Bureau's enumeration of all forty-five governments
+  gives 3,806 full-time and 984 part-time employees, or 4,790. [verified] —
+  [the forty-five governments](allen-county-governments-and-their-employees-2022.yml). One counts
+  jobs covered by unemployment insurance at an establishment and the other counts the employees of a
+  named government in March, so elected officials, casual part-timers and some elected boards fall
+  on different sides of the two rules. [inference]
+
+  **This corpus cannot say how many people who work for a government here also live here.** These
+  are jobs located in Allen County, and half the jobs located in this county are held by people who
+  commute into it; see [the commuting](allen-county-commuting-2022.yml).
+
+  [open] What government employment did before 2014. The county files this source serves begin
+  there, so the corpus holds eleven years of a payroll that has plainly been shrinking and cannot
+  see the shrinking start.
+properties:
+  parameter: government jobs in Allen County, all ownerships
+  value: "5745"
+  unit: jobs
+  as_of: "2024"
+  method: |
+    Annual-average county files for 39003, 2014 through 2024. Aggregation level 70 is the county
+    total across all ownerships and 71 the county by ownership; 73 is ownership by supersector and
+    74 to 78 by NAICS sector down to six digits. [verified] Government is ownership codes 1, 2 and 3
+    summed; the file publishes no such total and every government figure here is computed.
+    [inference]
+
+    Employment is an annual average of monthly counts of jobs covered by unemployment insurance, so
+    a person with two jobs is counted twice and a job not covered is not counted at all. [verified]
+    `avg_annual_pay` is total annual wages divided by annual average employment, which is a wage per
+    job and not a salary. [verified]
+
+    Named NAICS figures are for 2023 unless stated; the 2024 file agrees with them to within a few
+    employees in every case. [verified] No establishment is named by this file, and the two
+    attributions made above are the corpus's own. [inference]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/bls-qcew.md
+  - target: allen-county-governments-and-their-employees-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-public-employment-and-payroll.md
+  - target: allen-county-private-employers-1986-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-wages-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/bls-qcew.md
+  - target: allen-county-commuting-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
