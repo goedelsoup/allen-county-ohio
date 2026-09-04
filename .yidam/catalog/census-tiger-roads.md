@@ -27,6 +27,12 @@ location:
       metres against a stated land-plus-water area of 1,053,739,452 — agreement to 0.01 per cent,
       which is what established that the projection and its units were right.
   - kind: url
+    value: https://www2.census.gov/geo/tiger/TIGER2024/TABBLOCK20/tl_2024_39_tabblock20.zip
+    description: >-
+      The 2020 census blocks for the whole of Ohio, 161 MB, 3,552 of them in Allen County. It is the
+      only TIGER file that carries counts as well as geometry — `POP20` and `HOUSING20` — which is
+      what makes it the instrument for asking how many people stand on any piece of ground.
+  - kind: url
     value: https://www2.census.gov/geo/tiger/TIGER2013/PLACE/tl_2013_39_place.zip
     description: >-
       The Ohio place file, taken for 2011 to 2014 to date one boundary change. Carries `LSAD`,
@@ -36,6 +42,7 @@ used-by:
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
   - ../corpus/measure/allen-county-elevation-2026.yml
   - ../corpus/measure/allen-county-original-vegetation.yml
+  - ../corpus/measure/allen-county-flood-hazard-2026.yml
 ---
 
 **What it draws, and how much of it.** Nine feature classes appear in Allen County's 2024 file. Six
