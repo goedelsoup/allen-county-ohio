@@ -40,11 +40,13 @@ is exact: every `SUB_ID` appears exactly twice in 2012, 2016, 2020 and 2024 and 
 
 **A contribution made through a conduit is filed by two committees.** ActBlue and WinRed report the
 money they pass on as transaction type `24T`; the committee that receives it reports the same money,
-naming the same individual, as `15E`. In the 2019–20 cycle 1,046 of this county's 1,541 `24T` rows
-have a `15E` twin with the same contributor, date and amount. [verified] — the extracted rows.
-Keeping both overstates the county's 2020 giving by 14.5 per cent. The 495 that have no twin are
+naming the same individual, on a row of its own — usually `15E`, sometimes a plain `15`, and for a
+super PAC a `10`. In the 2019–20 cycle 2,081 of this county's 2,859 `24T` rows have such a twin with
+the same contributor, date and amount. [verified] — the extracted rows. Keeping both overstates the
+county's 2020 giving by 19.7 per cent and its 2024 giving by 24.9. The 778 that have no twin are
 real money the ultimate recipient did not itemize, so dropping the type wholesale is wrong in the
-other direction.
+other direction — and matching only against `15E`, which is the obvious rule, misses the largest
+single contribution this county has ever made, because a super PAC files its receipts as `10`.
 
 **`OTHER_ID` names the committee a conduit passed the money to, and the memo text does not always.**
 ActBlue writes *EARMARKED FOR BIDEN FOR PRESIDENT (C00703975)* into `MEMO_TEXT`; WinRed writes
