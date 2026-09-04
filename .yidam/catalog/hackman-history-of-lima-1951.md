@@ -24,11 +24,12 @@ used-by:
   - ../corpus/measure/lima-street-railway-1878-1921.yml
 ---
 
-**It is thirty years newer than the newest narrative source this corpus held.** Nine nodes here
-say some version of *the corpus's newest narrative source is the 1921 history*, and for the city of
-Lima that is no longer true. [verified] — the booklet's imprint, "Published by Lima Association of
-Commerce - February, 1952". The gap it closes is 1921 to 1951 and it closes it thinly: a paragraph
-a decade, with dates and without figures.
+**It is thirty years newer than the newest narrative source this corpus held.** Ninety-seven
+corpus nodes cite the 1921 county history and one of them says outright that it is the newest
+narrative source here; for the city of Lima that is no longer true. [verified] — the booklet's
+imprint, "Published by Lima Association of Commerce - February, 1952", and the corpus's own
+citations, counted here. The gap it closes is 1921 to 1951 and it closes it thinly: a paragraph a
+decade, with dates and without figures.
 
 **It was written to win an argument.** The booklet's second half is a petition — "It is for the
 above reasons that we believe that it is imperative that Allen County be included in the Anthony
