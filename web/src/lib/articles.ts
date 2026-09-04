@@ -796,7 +796,7 @@ export const ARTICLES: Article[] = [
     ],
     entries: [
       'measure/allen-county-graduation-rates-2010-2019.yml',
-      'measure/allen-county-test-proficiency-2009-2018.yml',
+      'measure/allen-county-test-proficiency-2009-2020.yml',
     ],
   },
   {
