@@ -112,7 +112,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-bridge-condition-1992-2025.yml](measure/allen-county-bridge-condition-1992-2025.yml) | measure | Allen County bridge condition by owner, 1992–2025 | 3 | 11v / 5i / 1o | 97 |
 | [allen-county-bridge-crossings-2025.yml](measure/allen-county-bridge-crossings-2025.yml) | measure | What Allen County's bridges cross, 2025 | 2 | 4v / 2i / 1o | 63 |
 | [allen-county-bridges-2025.yml](measure/allen-county-bridges-2025.yml) | measure | Allen County's bridges, 2025 | 3 | 9v / 3i / 1o | 94 |
-| [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 2 | 8v / 4i / 1o | 70 |
+| [allen-county-building-permits-1990-2025.yml](measure/allen-county-building-permits-1990-2025.yml) | measure | Allen County's residential building permits, 1990–2025 | 3 | 9v / 5i / 1o | 82 |
 | [allen-county-cancer-2018-2023.yml](measure/allen-county-cancer-2018-2023.yml) | measure | What cancer does in Allen County, 2018–2023 | 5 | 10v / 4i / 1o | 120 |
 | [allen-county-children-2010-2024.yml](measure/allen-county-children-2010-2024.yml) | measure | Allen County's children, 2010–2024 | 5 | 6v / 3i / 1o | 106 |
 | [allen-county-chronic-absenteeism-2013-2022.yml](measure/allen-county-chronic-absenteeism-2013-2022.yml) | measure | Chronic absenteeism in Allen County, 2013–2022 | 3 | 9v / 3i / 1o | 96 |
@@ -156,7 +156,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-governor-vote-2002-2018.yml](measure/allen-county-governor-vote-2002-2018.yml) | measure | Allen County vote for governor, 2002–2018 | 5 | 4v / 3i / 0o | 72 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 6 | 8v / 3i / 0o | 99 |
-| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 9v / 7i / 2o | 155 |
+| [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 10v / 7i / 2o | 163 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 7v / 5i / 1o | 72 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 3 | 9v / 1i / 1o | 95 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 5 | 7v / 2i / 1o | 83 |
@@ -172,7 +172,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 3 | 6v / 4i / 1o | 80 |
 | [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 2 | 7v / 2i / 0o | 60 |
 | [allen-county-housing-cost-burden-2006-2022.yml](measure/allen-county-housing-cost-burden-2006-2022.yml) | measure | Housing cost burden in Allen County, 2006–2022 | 8 | 11v / 4i / 0o | 153 |
-| [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 4 | 10v / 0i / 0o | 83 |
+| [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 5 | 11v / 1i / 0o | 96 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
@@ -206,7 +206,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 10v / 2i / 1o | 93 |
 | [allen-county-nursing-home-days-2011-2023.yml](measure/allen-county-nursing-home-days-2011-2023.yml) | measure | Allen County nursing home resident days, 2011–2023 | 4 | 8v / 1i / 1o | 88 |
 | [allen-county-nursing-homes-2026.yml](measure/allen-county-nursing-homes-2026.yml) | measure | Allen County nursing homes, 2026 | 5 | 8v / 0i / 1o | 95 |
-| [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 2 | 3v / 5i / 1o | 76 |
+| [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 3 | 6v / 5i / 0o | 95 |
 | [allen-county-occupations-2014-2024.yml](measure/allen-county-occupations-2014-2024.yml) | measure | Allen County occupations and wages, 2014 and 2024 | 5 | 12v / 6i / 2o | 116 |
 | [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 17v / 5i / 2o | 155 |
 | [allen-county-oil-and-gas-wells-2026.yml](measure/allen-county-oil-and-gas-wells-2026.yml) | measure | Oil and gas wells in Allen County | 5 | 7v / 2i / 0o | 102 |
@@ -261,6 +261,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
+| [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 7 | 16v / 4i / 1o | 154 |
 | [allen-county-test-proficiency-2009-2018.yml](measure/allen-county-test-proficiency-2009-2018.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2018 | 6 | 7v / 3i / 1o | 93 |
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
@@ -272,6 +273,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 6 | 8v / 4i / 0o | 103 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 4 | 8v / 2i / 0o | 78 |
 | [allen-county-unemployment-1990-2026.yml](measure/allen-county-unemployment-1990-2026.yml) | measure | Allen County unemployment, 1990–2026 | 4 | 7v / 7i / 2o | 130 |
+| [allen-county-vacancy-status-2010-2020.yml](measure/allen-county-vacancy-status-2010-2020.yml) | measure | Why Allen County's housing was empty, 2010 and 2020 | 7 | 17v / 7i / 1o | 189 |
 | [allen-county-voter-roll-removals-2006-2022.yml](measure/allen-county-voter-roll-removals-2006-2022.yml) | measure | Removals from the Allen County voter roll, 2006–2022 | 4 | 7v / 2i / 1o | 80 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 3 | 5v / 0i / 0o | 53 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
@@ -501,7 +503,7 @@ Sorted by: kind, then alphabetically.
 | [harrod.yml](place/harrod.yml) | place | Harrod | 4 | 7v / 0i / 1o | 57 |
 | [jackson-township.yml](place/jackson-township.yml) | place | Jackson Township | 3 | 9v / 0i / 2o | 64 |
 | [lafayette.yml](place/lafayette.yml) | place | Lafayette | 4 | 8v / 1i / 1o | 66 |
-| [lima.yml](place/lima.yml) | place | Lima | 3 | 44v / 10i / 1o | 292 |
+| [lima.yml](place/lima.yml) | place | Lima | 3 | 46v / 11i / 1o | 306 |
 | [marion-township.yml](place/marion-township.yml) | place | Marion Township | 3 | 9v / 1i / 1o | 65 |
 | [monroe-township.yml](place/monroe-township.yml) | place | Monroe Township | 3 | 8v / 2i / 1o | 59 |
 | [perry-township.yml](place/perry-township.yml) | place | Perry Township | 3 | 7v / 2i / 1o | 51 |
@@ -528,7 +530,7 @@ Sorted by: kind, then alphabetically.
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 2v / 4i / 3o | 83 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 5v / 2i / 1o | 51 |
 | [allen-county-courthouse.yml](site/allen-county-courthouse.yml) | site | Allen County Courthouse | 3 | 12v / 4i / 1o | 110 |
-| [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 3v / 4i / 2o | 56 |
+| [allen-county-justice-center.yml](site/allen-county-justice-center.yml) | site | Allen County Justice Center | 3 | 4v / 5i / 2o | 67 |
 | [camp-lima.yml](site/camp-lima.yml) | site | Camp Lima | 2 | 7v / 3i / 3o | 65 |
 | [ford-lima-engine-plant.yml](site/ford-lima-engine-plant.yml) | site | Ford Lima Engine Plant | 5 | 15v / 7i / 1o | 135 |
 | [fort-amanda.yml](site/fort-amanda.yml) | site | Fort Amanda | 2 | 15v / 2i / 0o | 98 |
