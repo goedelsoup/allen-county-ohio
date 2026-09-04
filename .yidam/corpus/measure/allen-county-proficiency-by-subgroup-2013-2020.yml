@@ -1,0 +1,108 @@
+class: measure
+label: Reading and mathematics proficiency by race and by kind of child, Allen County, 2013–2020
+description: |
+  The federal assessment file crossed with race and with seven special populations, for the county's
+  twelve districts, in the last year of the old test and the two published years of the new one.
+  [verified] — [EDFacts district outcomes](../../catalog/edfacts-outcomes.md), the `race` and
+  `special-populations` segments; see [the districts](allen-county-test-proficiency-2009-2020.yml).
+
+  **Eleven rows a year survive the disclosure threshold and nine of them are white children.** A
+  subgroup is published as a number at 301 tested and as a band at 300, so in 2018 the legible race
+  rows are the white children of eight districts, and Lima's white, Black and two-or-more children.
+  Perry, Pandora-Gilboa and Waynesfield-Goshen have no legible race row at all. [verified] — the same
+  files, all three years, counted here; see
+  [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml).
+
+  **Lima is the only district in this county where Black children's results are published as a
+  number, and it is the only one where they could be.** No other district tests more than three
+  hundred of them in any year. [verified] — the same files.
+
+      Lima City                 2013    2018    2020
+      white, reading              73      48      42
+      Black, reading              58      34      28
+      white, mathematics          63      53      37
+      Black, mathematics          42      31      19
+
+  **The reading gap inside Lima is fourteen or fifteen points in every year and the mathematics gap
+  is eighteen to twenty-two.** It survived the change of test that moved both figures thirty points,
+  and it survived the closed year. [verified] — the same files, differenced here.
+
+  **Lima's white children read below every other district's white children by twenty-four points.**
+  48 per cent proficient in 2018 against a range of 72 in Elida to 84 in Bluffton and Delphos across
+  the eight other legible districts. [verified] — the same file, 2018. Whatever separates this
+  district from the others is not carried by the race of the children in it. [inference]
+
+  **Held to poor children only, the county's spread widened from twenty points to thirty.** Five
+  districts test more than three hundred economically disadvantaged pupils and are published as
+  numbers: in 2013 Bath 86 per cent proficient in reading, Shawnee 84, Elida 82, Perry 79 and Lima
+  66; in 2018 Bath 71, Shawnee 68, Perry 62, Elida 58 and Lima 42; in 2020 Bath 66, Shawnee 63,
+  Perry 57, Elida 49 and Lima 36. [verified] — the same files, all three years. The three spreads —
+  20, 29 and 30 points — straddle a change of test that moved every level in the table, so the
+  widening is read here as a difference between districts and not as a measured trend. [inference]
+
+  **In two of those five the subgroup is the district.** Lima tests 1,895 economically disadvantaged
+  pupils of 1,904 in 2018 and 1,775 of 1,775 in 2020; Perry tests 425 of 425 and 415 of 415.
+  [verified] — the same files against the all-students rows. A breakout that returns the whole is a
+  breakout in name, and the figure it produces is the district's own figure a second time.
+  [inference] See [the district poverty](allen-county-school-district-poverty-2023.yml).
+
+  **Children with disabilities are legible in one district out of twelve, and the figure has fallen
+  from 39 per cent to 7.** Lima tests 357, 367 and 364 of them in the three years and reads 39, 12
+  and 7 per cent proficient; mathematics runs 30, 14 and 7. No other district in the county reaches
+  three hundred. [verified] — the same files.
+
+  **English learners are counted in this county and never published.** Six districts return a row in
+  2013, eight in 2018 and seven in 2020, and not one of those twenty-one rows carries a number in
+  either subject. [verified] — the same files. The kind of child the county has more districts
+  reporting in 2018 than in 2013 is the one kind whose results the threshold withholds entirely.
+  [inference]
+
+  **This corpus cannot say how many children are counted in more than one of these groups.** Each
+  row is a separate crossing of the district with one category, so a poor Black child with a
+  disability stands in three of them, and nothing in the file says how the three overlap or how much
+  of any gap is the same children counted again.
+
+  [open] What happened to the children with disabilities between 2018 and 2020. A fall from 12 per
+  cent to 7 is the largest proportional fall in any legible cell here, and the file offers a test
+  count that barely moved and no account of anything else.
+properties:
+  parameter: spread in reading proficiency among economically disadvantaged pupils, five legible districts
+  value: "30"
+  unit: percentage points
+  as_of: "2020"
+  method: |
+    One request per year to the EDFacts assessment endpoints for Ohio at `grade-99` with the `race`
+    and `special-populations` segments, 2013, 2018 and 2020, filtered here to the twelve districts by
+    NCES identifier. [verified] A special-population row is taken only where its own category reads
+    1 and the other six read 99, so the categories are not crossed with each other. [verified] A cell
+    is read as a number where `low` equals `high` or where both bands are null with a figure beside
+    them, and rows carrying negative missing codes are excluded rather than read as zero. [verified]
+    The 2013 figures come from the test Ohio replaced in 2015 and are not comparable with the two
+    later columns; the comparison drawn here is between districts within a year, never across the
+    break. [verified]
+links:
+  - target: allen-county-test-proficiency-2009-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-graduation-rates-2010-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-school-enrolment-by-race-1988-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/nces-common-core-of-data.md
+  - target: allen-county-school-district-poverty-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

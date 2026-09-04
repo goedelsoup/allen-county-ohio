@@ -62,6 +62,22 @@ description: |
   This corpus cannot say what any other district's graduation rate for poor children is. Outside
   Lima the economically disadvantaged cohorts run from 3 to 50 pupils and their rates are published
   as `50–100` in almost every district and year. [verified] — the same files.
+
+  **The sentence above about cohort size holds for the all-student rows and not for the file.** A
+  whole cohort is published as a number at 201 and a subgroup row at 301, a hundred higher, with no
+  exception in 37,632 graduation rows. [verified] —
+  [the same collection](../../catalog/edfacts-outcomes.md), Ohio-wide, counted here; see
+  [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml). The
+  rule that leaves this county one legible district leaves it fewer legible kinds of child than that.
+
+  **The other measure in the same collection answers what this one declines to.** Five of the twelve
+  districts test more than three hundred economically disadvantaged pupils and are published as
+  numbers on that count: Bath at 71 per cent proficient in reading in 2018, Shawnee 68, Perry 62,
+  Elida 58 and Lima 42. [verified] — [the same collection](../../catalog/edfacts-outcomes.md), its
+  assessment endpoint; see
+  [proficiency by subgroup](allen-county-proficiency-by-subgroup-2013-2020.yml). A district graduates
+  about a hundred poor children in a year and tests about four hundred of them, and the disclosure
+  threshold is written on the count rather than on the question. [inference]
 properties:
   parameter: four-year adjusted cohort graduation rate
   value: "63"
@@ -84,11 +100,15 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/edfacts-outcomes.md
-  - target: allen-county-test-proficiency-2009-2018.yml
+  - target: allen-county-test-proficiency-2009-2020.yml
     relationship: relates-to
     claim_tag: verified
     source: ../../catalog/edfacts-outcomes.md
   - target: allen-county-school-enrolment-1988-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/edfacts-outcomes.md
+  - target: allen-county-proficiency-by-subgroup-2013-2020.yml
     relationship: relates-to
     claim_tag: verified
     source: ../../catalog/edfacts-outcomes.md

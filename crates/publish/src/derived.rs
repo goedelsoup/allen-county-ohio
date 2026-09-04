@@ -498,7 +498,7 @@ pub const ASSERTIONS: &[Assertion] = &[
         statement: "Lima City reads 42 per cent proficient in 2018 against 62 in Perry and 83 in Bluffton, and 42 per cent in mathematics against 57 and 87. The figures rest on between 250 and 1,904 tests apiece.",
         topic: "schools",
         supports: &[
-            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**The largest district in the county is twenty points below the second-lowest and forty-one below the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87."),
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**The largest district in the county is twenty points below the second-lowest and forty-one below the highest.** Lima reads 42 per cent proficient in reading in 2018 against Perry's 62 and Bluffton's 83, and 42 in mathematics against Perry's 57 and Bluffton's 87."),
         ],
         answers: &["cannot say whether that gap widened"],
         figures: &[
@@ -512,8 +512,8 @@ pub const ASSERTIONS: &[Assertion] = &[
         statement: "Reading proficiency fell in every one of Allen County's twelve districts between 2013 and 2015 \u{2014} by 18 points in Bluffton and 40 in Perry \u{2014} and the state fell 28.7. Twelve independently governed districts do not move together in two years unless the test does.",
         topic: "schools",
         supports: &[
-            support!("measure/allen-county-test-proficiency-2009-2018.yml", "Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19 in Spencerville, 22 in Shawnee, and on up to 40 in Perry \u{2014} every district in the county, no exceptions, and the state fell 28.7 points over the same two years."),
-            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "Reading proficiency between 2013 and 2015 fell 18 points in Bluffton, 19 in Spencerville, 22 in Shawnee, and on up to 40 in Perry \u{2014} every district in the county, no exceptions, and the state fell 28.7 points over the same two years."),
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
         ],
         answers: &["cannot say whether that gap widened"],
         figures: &[
@@ -528,8 +528,8 @@ pub const ASSERTIONS: &[Assertion] = &[
         statement: "Allen County's reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 above it in 2018; in mathematics, 0.3 above and then 7.2. The county did not improve \u{2014} the state fell further.",
         topic: "schools",
         supports: &[
-            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
-            support!("measure/allen-county-test-proficiency-2009-2018.yml", "**The eleven districts other than Lima are 34 points above it and were 22 points above it.** The gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6."),
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**Measured against the state, this county now does better than it used to.** Its reading proficiency was 0.8 points below Ohio's in 2009 and 4.5 points above it in 2018; in mathematics it was 0.3 above and is 7.2 above."),
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**The eleven districts other than Lima are 34 points above it and were 22 points above it.** The gap in reading was 22.3 points in 2009 and 33.7 in 2018, and in mathematics 25.2 and 34.6."),
         ],
         answers: &["cannot say whether that gap widened"],
         figures: &[
@@ -10231,6 +10231,301 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[
             Figure { label: "net migration loss", value: 9171.0, literal: "9,171" },
             Figure { label: "net to Franklin County", value: 2036.0, literal: "2,036" },
+        ],
+    },
+    Assertion {
+        id: "the-year-this-site-called-empty",
+        statement: "The 2020 assessment file is not empty. It carries a proficiency figure for every \
+                    one of Allen County's twelve districts with the two band columns beside it left \
+                    null, and 909 of Ohio's 924 district rows have one.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**The 2020 file is not empty, and this node said it was.** It carries a proficiency figure for every one of the twelve districts with the two band columns beside it left null, and the earlier reading here took the null bands for missing data and reported the year as blank. 923 of Ohio's 924 district rows have a positive count of valid tests and 909 have a reading figure. [verified] \u{2014} [the same file](../../catalog/edfacts-outcomes.md), re-read on 4 September 2026; see [a zero is not a blank](../../decisions/a-zero-is-not-a-blank.yml)."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "Ohio rows with a figure", value: 909.0, literal: "909" },
+            Figure { label: "Ohio district rows", value: 924.0, literal: "924" },
+        ],
+    },
+    Assertion {
+        id: "the-missing-year-is-the-cancelled-one",
+        statement: "The file's year is the fall of the school year, so the 2019 that is missing is \
+                    the 2019\u{2013}20 year whose spring tests were cancelled and the 2020 that is \
+                    present is 2020\u{2013}21. The graduation file, counting a cohort rather than a \
+                    test day, runs through 2019 with no gap.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**The `year` field is the fall of the school year, and that is why 2019 is the year that is absent.** 2019 is the 2019\u{2013}20 school year, whose spring tests were not given; 2020 is 2020\u{2013}21, whose spring tests were. The graduation file, which counts a cohort rather than a test day, runs through 2019 with no gap in it. [inference] \u{2014} the collection's own coverage, read against the convention its publisher uses for the school directory beside it."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eleven-of-the-twelve-districts-fell",
+        statement: "Reading fell in eleven of Allen County's twelve districts between 2018 and 2020 \
+                    and mathematics in eleven. The county's weighted reading went from 68.8 per cent \
+                    proficient to 63.1 and its mathematics from 69.6 to 60.2.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**Reading fell in eleven of the twelve districts between 2018 and 2020 and mathematics in eleven.** Pandora-Gilboa is the one district whose reading rose, by a point, and Columbus Grove the one whose mathematics held. The county's weighted reading figure went from 68.8 per cent to 63.1 and its mathematics from 69.6 to 60.2. [verified] \u{2014} the same file, weighted here by tests taken."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "reading, 2018", value: 68.8, literal: "68.8" },
+            Figure { label: "reading, 2020", value: 63.1, literal: "63.1" },
+            Figure { label: "mathematics, 2020", value: 60.2, literal: "60.2" },
+        ],
+    },
+    Assertion {
+        id: "limas-mathematics-fell-to-twenty-nine",
+        statement: "Lima City went from 42 per cent proficient in mathematics to 29 between 2018 and \
+                    2020, against 18 points lost in Waynesfield-Goshen and 15 in Perry. It is the \
+                    county's lowest reading district in all eleven years of the collection.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**Mathematics fell furthest where it was already lowest.** Lima went from 42 per cent proficient in mathematics to 29 \u{2014} thirteen points off a figure that had been the lowest in the county for eleven straight years \u{2014} against 18 points in Waynesfield-Goshen and 15 in Perry. [verified] \u{2014} the same file. In eleven years of this collection Lima is the county's lowest reading district in every one."),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "Lima, 2018", value: 42.0, literal: "42" },
+            Figure { label: "Lima, 2020", value: 29.0, literal: "29" },
+        ],
+    },
+    Assertion {
+        id: "the-county-pulled-further-from-ohio",
+        statement: "Ohio's weighted reading proficiency fell from 64.4 per cent to 57.2 and its \
+                    mathematics from 62.5 to 49.7, so a county 4.4 points clear of the state in \
+                    reading and 7.1 in mathematics was 5.9 and 10.5 clear of it in 2020.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-test-proficiency-2009-2020.yml", "**The state fell further than the county, again.** Ohio's weighted reading went from 64.4 per cent to 57.2 and its mathematics from 62.5 to 49.7, so a county 4.4 points clear of the state in reading and 7.1 in mathematics was 5.9 and 10.5 clear of it in 2020. [verified] \u{2014} the same file over every reporting Ohio district, 909 of them in reading and 904 in mathematics. Two crises, one instrument change and one closure, and after each the county's distance from Ohio grew. [inference]"),
+        ],
+        answers: &["cannot say whether that gap widened"],
+        figures: &[
+            Figure { label: "reading gap, 2020", value: 5.9, literal: "5.9" },
+            Figure { label: "mathematics gap, 2020", value: 10.5, literal: "10.5" },
+        ],
+    },
+    Assertion {
+        id: "exact-by-district-and-banded-by-school",
+        statement: "All 264 district cells in this collection are numbers. The same measure over the \
+                    same children asked by building gives 71 numbers, 91 bands and 4 cells withheld \
+                    outright, out of 166.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-school-2018-2020.yml", "**The measure that has no suppression at district level is more than half suppressed at school level.** All 264 district cells in this collection are numbers. The same measure over the same children by building gives 71 numbers, 91 bands and 4 cells withheld outright, out of 166. [verified] \u{2014} the same file at both levels, counted here. Nothing about the schooling changed between the two questions; the denominator did."),
+        ],
+        answers: &["cannot say what any of these schools does differently"],
+        figures: &[
+            Figure { label: "numbers", value: 71.0, literal: "71" },
+            Figure { label: "bands", value: 91.0, literal: "91" },
+        ],
+    },
+    Assertion {
+        id: "the-four-lowest-schools-are-in-lima",
+        statement: "The four lowest legible schools in Allen County are all in Lima \u{2014} West \
+                    and North Middle at 31 per cent proficient in reading, Lima Senior at 39 and \
+                    Liberty Arts Magnet at 56 \u{2014} against Perry Elementary's 62 and a county \
+                    top of 87 at Bluffton.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-school-2018-2020.yml", "**The four lowest legible schools in the county are all in Lima and the gap to the fifth is six points.** Lima West and Lima North read 31 per cent proficient, Lima Senior 39 and Liberty Arts 56, against Perry Elementary's 62 and a top of 87 at Bluffton. [verified] \u{2014} the same file, sorted here. Every one of those eighteen figures rests on between 234 and 816 tests."),
+        ],
+        answers: &["cannot say what any of these schools does differently"],
+        figures: &[
+            Figure { label: "Lima West and North", value: 31.0, literal: "31" },
+            Figure { label: "Lima Senior", value: 39.0, literal: "39" },
+            Figure { label: "Bluffton Elementary", value: 87.0, literal: "87" },
+        ],
+    },
+    Assertion {
+        id: "one-school-tests-mathematics-at-seventeen",
+        statement: "Lima Senior High School is published at 17 per cent proficient in mathematics in \
+                    2018 and 16 in 2020, against 39 and 42 in reading. Reading and mathematics part \
+                    company at that one building in a way they do at no other in the county.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-school-2018-2020.yml", "**One school in the county tests mathematics at seventeen per cent.** Lima Senior High School, 249 tests in 2018 and 251 in 2020, published as 17 and then 16 \u{2014} against 39 and 42 in reading in the same two years. [verified] \u{2014} the same file. Reading and mathematics part company at this one building in a way they do at no other in the county."),
+        ],
+        answers: &["cannot say what any of these schools does differently"],
+        figures: &[
+            Figure { label: "mathematics, 2018", value: 17.0, literal: "17" },
+            Figure { label: "mathematics, 2020", value: 16.0, literal: "16" },
+        ],
+    },
+    Assertion {
+        id: "one-high-school-a-reader-may-read",
+        statement: "Of the 48 high-school cells across two years and two subjects, five are numbers \
+                    and four of the five are Lima Senior's. Every other high-school figure in the \
+                    county is a band, because Ohio tests one or two grades at that level and a \
+                    county high school has between 38 and 199 of them.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-school-2018-2020.yml", "**It is also the only high school here a reader may read.** Of the 48 high-school cells across the two years and two subjects, five are numbers and four of the five are Lima Senior's; the fifth is Elida High School's 2020 mathematics, on 224 tests. Every other high-school figure in the county is a band, because Ohio tests one or two grades at that level and a county high school has between 38 and 199 of them. [verified] \u{2014} the same file; see [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml)."),
+        ],
+        answers: &["cannot say what any of these schools does differently"],
+        figures: &[
+            Figure { label: "high-school cells", value: 48.0, literal: "48" },
+            Figure { label: "largest tested high school", value: 199.0, literal: "199" },
+        ],
+    },
+    Assertion {
+        id: "two-lima-schools-read-higher-in-2020",
+        statement: "Two of Lima's nine schools read higher in 2020 than in 2018 \u{2014} Lima \
+                    Senior, from 39 to 42, and the South Science-Technology Magnet K-8, from a band \
+                    of 65-69 to one of 70-74. Unity Elementary went from 35-39 to 11-19.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-school-2018-2020.yml", "**Two of Lima's nine schools read higher in 2020 than in 2018 and the rest fell.** Lima Senior went from 39 to 42 and the South Science-Technology Magnet K-8 from a band of `65-69` to one of `70-74`; Unity Elementary went from `35-39` to `11-19`, Independence from `50-54` to `25-29`, and Lima North Middle's mathematics from 22 per cent to 13. [verified] \u{2014} the same file, both years. The two that held are a high school and a magnet school."),
+        ],
+        answers: &["cannot say what any of these schools does differently"],
+        figures: &[
+            Figure { label: "Lima Senior, 2018", value: 39.0, literal: "39" },
+            Figure { label: "Lima Senior, 2020", value: 42.0, literal: "42" },
+        ],
+    },
+    Assertion {
+        id: "nine-of-eleven-legible-rows-are-white",
+        statement: "Eleven race rows a year clear the disclosure threshold across Allen County's \
+                    twelve districts, and nine of them are white children. Perry, Pandora-Gilboa and \
+                    Waynesfield-Goshen have no legible race row at all.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**Eleven rows a year survive the disclosure threshold and nine of them are white children.** A subgroup is published as a number at 301 tested and as a band at 300, so in 2018 the legible race rows are the white children of eight districts, and Lima's white, Black and two-or-more children. Perry, Pandora-Gilboa and Waynesfield-Goshen have no legible race row at all. [verified] \u{2014} the same files, all three years, counted here; see [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml)."),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[
+            Figure { label: "number at", value: 301.0, literal: "301" },
+            Figure { label: "band at", value: 300.0, literal: "300" },
+        ],
+    },
+    Assertion {
+        id: "only-lima-publishes-its-black-children",
+        statement: "Lima City is the only district in Allen County where Black children's results \
+                    are published as a number, and the only one where they could be: no other \
+                    district tests more than three hundred of them in any year.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**Lima is the only district in this county where Black children's results are published as a number, and it is the only one where they could be.** No other district tests more than three hundred of them in any year. [verified] \u{2014} the same files."),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-gap-inside-lima-outlived-the-test",
+        statement: "Inside Lima the reading gap between white and Black pupils is fourteen or \
+                    fifteen points in every year and the mathematics gap eighteen to twenty-two. It \
+                    survived the change of test that moved both figures thirty points, and it \
+                    survived the closed year.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**The reading gap inside Lima is fourteen or fifteen points in every year and the mathematics gap is eighteen to twenty-two.** It survived the change of test that moved both figures thirty points, and it survived the closed year. [verified] \u{2014} the same files, differenced here."),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[],
+    },
+    Assertion {
+        id: "limas-white-children-are-lowest-too",
+        statement: "Lima's white children read at 48 per cent proficient in 2018, against a range of \
+                    72 in Elida to 84 in Bluffton and Delphos across the eight other legible \
+                    districts \u{2014} twenty-four points below the lowest of them.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**Lima's white children read below every other district's white children by twenty-four points.** 48 per cent proficient in 2018 against a range of 72 in Elida to 84 in Bluffton and Delphos across the eight other legible districts. [verified] \u{2014} the same file, 2018. Whatever separates this district from the others is not carried by the race of the children in it. [inference]"),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[
+            Figure { label: "Lima", value: 48.0, literal: "48" },
+            Figure { label: "Elida", value: 72.0, literal: "72" },
+            Figure { label: "Bluffton and Delphos", value: 84.0, literal: "84" },
+        ],
+    },
+    Assertion {
+        id: "held-to-poor-children-the-spread-holds",
+        statement: "Five districts test more than three hundred economically disadvantaged pupils \
+                    and are published as numbers. In 2018 they read Bath 71 per cent proficient, \
+                    Shawnee 68, Perry 62, Elida 58 and Lima 42; in 2020, 66, 63, 57, 49 and 36.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**Held to poor children only, the county's spread widened from twenty points to thirty.** Five districts test more than three hundred economically disadvantaged pupils and are published as numbers: in 2013 Bath 86 per cent proficient in reading, Shawnee 84, Elida 82, Perry 79 and Lima 66; in 2018 Bath 71, Shawnee 68, Perry 62, Elida 58 and Lima 42; in 2020 Bath 66, Shawnee 63, Perry 57, Elida 49 and Lima 36. [verified] \u{2014} the same files, all three years. The three spreads \u{2014} 20, 29 and 30 points \u{2014} straddle a change of test that moved every level in the table, so the widening is read here as a difference between districts and not as a measured trend. [inference]"),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[
+            Figure { label: "Bath, 2018", value: 71.0, literal: "71" },
+            Figure { label: "Lima, 2018", value: 42.0, literal: "42" },
+        ],
+    },
+    Assertion {
+        id: "in-two-districts-the-poor-are-the-district",
+        statement: "Lima tests 1,895 economically disadvantaged pupils of 1,904 in 2018 and 1,775 of \
+                    1,775 in 2020; Perry tests 425 of 425 and 415 of 415. A breakout that returns \
+                    the whole is a breakout in name.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**In two of those five the subgroup is the district.** Lima tests 1,895 economically disadvantaged pupils of 1,904 in 2018 and 1,775 of 1,775 in 2020; Perry tests 425 of 425 and 415 of 415. [verified] \u{2014} the same files against the all-students rows. A breakout that returns the whole is a breakout in name, and the figure it produces is the district's own figure a second time. [inference] See [the district poverty](allen-county-school-district-poverty-2023.yml)."),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[
+            Figure { label: "Lima, disadvantaged", value: 1895.0, literal: "1,895" },
+            Figure { label: "Perry, disadvantaged", value: 425.0, literal: "425" },
+        ],
+    },
+    Assertion {
+        id: "disability-is-legible-in-one-district",
+        statement: "Children with disabilities are published as a number in one of Allen County's \
+                    twelve districts. Lima tests 357, 367 and 364 of them across the three years and \
+                    reads 39, 12 and 7 per cent proficient.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**Children with disabilities are legible in one district out of twelve, and the figure has fallen from 39 per cent to 7.** Lima tests 357, 367 and 364 of them in the three years and reads 39, 12 and 7 per cent proficient; mathematics runs 30, 14 and 7. No other district in the county reaches three hundred. [verified] \u{2014} the same files."),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[
+            Figure { label: "Lima, 2013", value: 39.0, literal: "39" },
+            Figure { label: "Lima, 2020", value: 7.0, literal: "7" },
+        ],
+    },
+    Assertion {
+        id: "english-learners-are-never-published",
+        statement: "Six of Allen County's districts return an English-learner row in 2013, eight in \
+                    2018 and seven in 2020, and not one of those twenty-one rows carries a number in \
+                    either subject.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-proficiency-by-subgroup-2013-2020.yml", "**English learners are counted in this county and never published.** Six districts return a row in 2013, eight in 2018 and seven in 2020, and not one of those twenty-one rows carries a number in either subject. [verified] \u{2014} the same files. The kind of child the county has more districts reporting in 2018 than in 2013 is the one kind whose results the threshold withholds entirely. [inference]"),
+        ],
+        answers: &["cannot say how many children are counted in more than one of these groups"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-subgroup-costs-a-hundred-children",
+        statement: "A whole cohort is published as a number at 201 and a subgroup row at 301, a \
+                    hundred higher, with no exception in 37,632 graduation rows. Being counted as a \
+                    kind of child costs a hundred children of legibility.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-graduation-rates-2010-2019.yml", "**The sentence above about cohort size holds for the all-student rows and not for the file.** A whole cohort is published as a number at 201 and a subgroup row at 301, a hundred higher, with no exception in 37,632 graduation rows. [verified] \u{2014} [the same collection](../../catalog/edfacts-outcomes.md), Ohio-wide, counted here; see [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml). The rule that leaves this county one legible district leaves it fewer legible kinds of child than that."),
+        ],
+        answers: &["cannot say what any other district's graduation rate for poor children is"],
+        figures: &[
+            Figure { label: "whole cohort", value: 201.0, literal: "201" },
+            Figure { label: "subgroup row", value: 301.0, literal: "301" },
+        ],
+    },
+    Assertion {
+        id: "a-school-closed-and-the-count-held",
+        statement: "Landeck Elementary in Delphos reports 84 pupils and an open status in the fall \
+                    of 2018, a closed status in 2019, and is gone from the directory in 2020. \
+                    Delphos falls from four schools to three and returns to four in 2021 with a \
+                    preschool in the fourth place.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-school-buildings-1986-2024.yml", "**A building left the count in Delphos and the count did not move.** Landeck Elementary reports 84 pupils and an open status in the fall of 2018, a closed status and no enrolment in 2019, and is absent from the directory in 2020; the district falls from four schools to three and returns to four in 2021 with a preschool standing in the fourth place. [verified] \u{2014} [the same collection](../../catalog/nces-common-core-of-data.md), its school directory, 2018 to 2024; see [proficiency by school](allen-county-proficiency-by-school-2018-2020.yml). The table above gives Delphos 4 in 1986, 4 in 2024 and a change of zero, which is what a count of open schools reports when one closes and another opens."),
+        ],
+        answers: &["cannot say where any of these buildings stood"],
+        figures: &[
+            Figure { label: "Landeck pupils, 2018", value: 84.0, literal: "84" },
         ],
     },
 ];

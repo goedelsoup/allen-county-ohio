@@ -275,7 +275,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
 | [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 7 | 16v / 4i / 1o | 154 |
-| [allen-county-test-proficiency-2009-2018.yml](measure/allen-county-test-proficiency-2009-2018.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2018 | 6 | 7v / 3i / 1o | 93 |
+| [allen-county-test-proficiency-2009-2020.yml](measure/allen-county-test-proficiency-2009-2020.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2018 | 6 | 7v / 3i / 1o | 93 |
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
