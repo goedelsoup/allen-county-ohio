@@ -60,6 +60,14 @@ description: |
   [the swamp](../natural-feature/great-black-swamp.yml) for what the figure does and does not
   settle, and [a proxy must outlast what it proxies](../../decisions/a-proxy-must-outlast-what-it-proxies.yml)
   for the rule that let it be used at all.
+  **Poorly drained is not the same ground as floodplain.** Across the twelve townships and the city
+  the share of ground that is hydric soil and the share inside the special flood hazard area
+  correlate at a Spearman 0.099. Marion is the county's wettest township at 58.0 per cent hydric and
+  is 5.73 per cent floodplain; Sugar Creek is 48.0 and 17.04; Monroe is 44.3 and 3.34. [inference] —
+  computed here against [the flood map](allen-county-flood-hazard-2026.yml). A flood map traces
+  channels and this survey records where water sits, and in a county drained by ditch those are
+  different questions.
+
 properties:
   parameter: land poorly drained or worse
   value: "74.7"
@@ -79,6 +87,9 @@ links:
     claim_tag: verified
     source: ../../catalog/usda-ssurgo-soil-survey.md
   - target: ../natural-feature/great-black-swamp.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-flood-hazard-2026.yml
     relationship: relates-to
     claim_tag: inference
   - target: allen-county-farmland-1910-2022.yml

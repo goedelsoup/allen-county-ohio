@@ -87,6 +87,16 @@ description: |
   [the peak flows](ottawa-river-peak-flows-1924-2025.yml); see
   [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).
 
+  **The insurance record names different years.** Two hundred and fifty-nine flood insurance claims
+  have been paid in this county since 1978, and of the ten years that produced the most of them only
+  2007 carries a declaration; the costliest month on record, June 2015 at $1,243,724, carries none.
+  Going the other way, the declaration of August 2012 produced no flood claim here at all.
+  [verified] — [the claims file](allen-county-flood-insurance-1978-2023.yml) against this one.
+
+  A declaration is public damage from any peril and a claim is insured flood damage to a building,
+  so the two lists were never going to agree; what the comparison establishes is how far apart they
+  sit in one county over forty-six years. [inference]
+
 properties:
   parameter: federal disaster and emergency declarations naming Allen County
   value: "10"
@@ -100,6 +110,10 @@ properties:
     and 2005. Incident dates before 2004 are not usable — the 1965 and 1978 rows give an incident
     beginning and ending on the day the declaration was signed. [inference]
 links:
+  - target: allen-county-flood-insurance-1978-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified
