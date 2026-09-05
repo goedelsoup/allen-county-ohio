@@ -4,7 +4,8 @@ summary: >-
   `yidam crates-index` found while writing the first crate — both closed by template v0.3.0 —
   two gaps in the corpus format found while tagging every edge in the graph, one in what
   genesis installs, found the first time CI ran on a remote, and one in what a vendored crate
-  does to this repository's own formatting gate. Still none reported upstream.
+  does to this repository's own formatting gate. The four still open were filed upstream on
+  2026-09-04 as goedelsoup/yidam#587, #588, #589 and #590.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
   repository builds from `.yidam.toml`, and the newest the origin then had. Finding 5 was found
@@ -79,6 +80,7 @@ decision: |
   visible trace this finding ever had.
 
   **Finding 3 — an edge cannot carry a claim tag, and the conventions say it is a claim.**
+  Filed as goedelsoup/yidam#587.
 
   `CLAUDE.md`, generated from the prelude, states that "an edge is a claim". Prose claims are
   governed hard: they must carry `[verified]`, `[inference]` or `[open]`, untagged inference is
@@ -112,7 +114,8 @@ decision: |
   rule — `claim-tag-malformed`, `dangling-edge`, `edge-target-class`, `unlicensed-edge` and
   `verified-unsourced` are the same five as before. `crates/provenance` keeps its job.
 
-  **Finding 4 — `node-too-long` charges a node for being auditable.**
+  **Finding 4 — `node-too-long` charges a node for being auditable.** Filed as
+  goedelsoup/yidam#588.
 
   `max_lines` counts whole files. Adding a `claim_tag` and a `source` to each link costs about a
   line and a half per edge, so three nodes went over a limit that had been set to stop
@@ -150,7 +153,7 @@ decision: |
   implements a class and gates when declared — so the shape this finding asks for is one upstream
   is willing to add. It was added for a different question.
 
-  **Finding 5 — genesis replaces one workflow and leaves six.**
+  **Finding 5 — genesis replaces one workflow and leaves six.** Filed as goedelsoup/yidam#589.
 
   `.github/workflows/ci.yml` is installed at genesis and its own header explains the reasoning:
   yidam's CI builds paths that "do not survive the `vendor:` step, so inheriting that workflow
@@ -186,7 +189,7 @@ decision: |
   from here.
 
   **Finding 6 — a vendored crate a derived repo must depend on is not rustfmt-clean, and its own
-  formatting gate reaches it.**
+  formatting gate reaches it.** Filed as goedelsoup/yidam#590.
 
   `crates/proximity` depends on the vendored geodesics crate by path, because
   `.yidam/.vendor/prelude/domains/geodesics/rust` is where the prelude puts it and finding 3's
@@ -254,12 +257,31 @@ rationale: |
 
   What an upstream report should carry, per the conventions: the pins — 1162287 for findings 1
   through 5, 7b0cef2 for finding 6 and for the confirmation that 1 and 2 are closed — what it
-  cost here (one bisection of a manifest, one workaround comment since removed, 205 hand-tagged
-  edges and a crate to keep them tagged, six deleted workflow files, and a formatting gate
-  narrowed in three places), and where each surviving workaround is so it can be removed. Filing
-  the issue is an outward-facing action and has not been taken without the elector's say-so.
+  cost here (one bisection of a manifest, one workaround comment since removed, 1,270 tagged
+  empirical edges and a crate to keep them tagged, six deleted workflow files, and a formatting
+  gate narrowed in three places), and where each surviving workaround is so it can be removed.
 
-  That last sentence has now been true across two pins. The cost of not filing is no longer
-  hypothetical either: findings 1 and 2 were fixed upstream between 27 August and 2 September by
-  somebody who reached them independently, which is six days this repository spent maintaining a
-  workaround comment for a defect that no longer existed.
+  **Filed on 2026-09-04**, on the elector's instruction, as goedelsoup/yidam#587 through #590 —
+  one issue per open finding rather than one report, because each has a different fix and a
+  different scope label, and a single issue would have been closed when the easiest of the four
+  was done. Findings 1 and 2 were not filed: a defect already fixed upstream is a re-vendor and
+  not an issue, which the conventions say in as many words.
+
+  Each was re-verified against origin HEAD (090a683) before filing rather than against the pin
+  this repository sits on, because the pin is three days behind and an issue against something
+  already fixed wastes the reader rather than informing them. Two of the four sharpened in the
+  checking. Finding 4 was written when a quarter of one class exceeded its declared limit; it is
+  now 207 of 238, and `node-too-long` reports 212 findings that gate nothing. Finding 5 gained a
+  second half: `sadhana/github/workflows/index.yml` now ships and `bootstrap.md` never installs
+  it, so the scaffold carries three workflows and delivers two.
+
+  The cost of the delay is not hypothetical. Findings 1 and 2 were fixed upstream between 27
+  August and 2 September by somebody who reached them independently, which is six days this
+  repository spent maintaining a workaround comment for a defect that no longer existed — and
+  the conventions' own example of this failure, two repositories reasoning correctly from
+  evidence neither could see, is exactly the shape it took.
+
+  The return path now has traffic in both directions, and one immediate confirmation that it
+  was needed: #584, filed hours earlier from a different derived repository, measures the
+  40-line node cap across seventeen corpora and reaches this repository's finding 4 from the
+  population end. Neither report knew about the other. A comment on #588 now links them.
