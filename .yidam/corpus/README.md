@@ -106,6 +106,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 6v / 0i / 0o | 51 |
+| [allen-county-against-ohio-1980-2008.yml](measure/allen-county-against-ohio-1980-2008.yml) | measure | Allen County's Republican share against Ohio's and the nation's, 1980–2008 | 5 | 4v / 5i / 0o | 78 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 10v / 5i / 1o | 140 |
@@ -252,8 +253,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 9v / 4i / 2o | 97 |
 | [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
 | [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 2 | 9v / 4i / 1o | 90 |
-| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 2 | 8v / 1i / 2o | 76 |
-| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 6 | 7v / 8i / 2o | 125 |
+| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 3 | 8v / 2i / 2o | 88 |
+| [allen-county-presidential-vote-1960-1964.yml](measure/allen-county-presidential-vote-1960-1964.yml) | measure | Allen County presidential vote, 1960 and 1964 | 5 | 6v / 5i / 0o | 97 |
+| [allen-county-presidential-vote-1980-1996.yml](measure/allen-county-presidential-vote-1980-1996.yml) | measure | Allen County presidential vote, 1980–1996 | 6 | 5v / 5i / 0o | 81 |
+| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 8 | 10v / 9i / 2o | 160 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
 | [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 9 | 13v / 4i / 0o | 139 |

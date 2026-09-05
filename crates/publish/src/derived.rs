@@ -3982,10 +3982,6 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "measure/allen-county-presidential-vote-2000-2016.yml",
                 "**In figures, the Republican share: 65.4 per cent in 2000, 66.1 in 2004, 59.6 in 2008, 61.2 in\n  2012, 66.5 in 2016 and 69.0 in 2020.**"
             ),
-            support!(
-                "measure/allen-county-presidential-vote-2000-2016.yml",
-                "**The margin in 2020 is the largest in this corpus's whole record of this county, and the\n  largest the other way is 1,354.** R+18,967 in 2020 against Bryan's D+1,354 in 1908. Allen County\n  gave Bryan 55.2 per cent in 1896 and Biden 29.5 per cent in 2020."
-            ),
         ],
         answers: &[],
         figures: &[
@@ -4017,10 +4013,6 @@ pub const ASSERTIONS: &[Assertion] = &[
             support!(
                 "measure/allen-county-presidential-vote-2000-2016.yml",
                 "**The residue is where the two compilations really part.** For 2016 both give Trump 30,487 and\n  Clinton 13,294 and then differ by 79 on everything else, 2,034 against 2,113. That is a\n  disagreement about which write-ins count rather than a transcription error, and it is not read\n  here as one side being wrong."
-            ),
-            support!(
-                "measure/allen-county-presidential-vote-2000-2016.yml",
-                "**2004 rests on one witness and the others on two.** OpenElections has no Ohio general-election\n  file for 2004 at all, so that row has no second reading."
             ),
         ],
         answers: &[],
@@ -11611,6 +11603,359 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
         answers: &["cannot say what became of the units Lima lost"],
         figures: &[],
+    },
+    Assertion {
+        id: "the-state-and-the-county-chose-different-parties",
+        statement: "In 1964 the party that led Ohio and the party that led Allen County were \
+                    different parties: Johnson carried the state with 62.9 per cent and Goldwater \
+                    carried this county with 51.2.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "Two elections from a federal reference volume, in the shape that volume prints them: which party led, and with what share of the whole vote. **Allen County's leading party was Republican in both, with 65.5 per cent in 1960 and 51.2 in 1964, on a 1964 turnout of 38,887 votes.** [verified] \u{2014} [the County and City Data Book for 1967](../../catalog/census-county-and-city-data-book-1967.md), items 13 to 15."),
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**The same volume puts Ohio's 1964 leading party on the other side, at 62.9 per cent Democratic.** Johnson carried the state on 3,969,196 votes cast; Goldwater carried this county. In 1960 the state's leading party was Republican with 53.3 per cent, so the county ran 12.2 points ahead of it. [verified] \u{2014} same volume, Table 1, Ohio."),
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "That is the finding and it does not need a subtraction: in 1964 the party that led Ohio and the party that led Allen County were different parties. [inference] \u{2014} the two rows, compared here."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[
+            Figure { label: "Ohio's Democratic share, 1964", value: 62.9, literal: "62.9" },
+            Figure { label: "Allen County's Republican share, 1964", value: 51.2, literal: "51.2" },
+        ],
+    },
+    Assertion {
+        id: "nixon-ran-twelve-points-ahead-of-his-state-here",
+        statement: "Allen County's leading party was Republican with 65.5 per cent in 1960, twelve \
+                    points ahead of the 53.3 per cent that led Ohio the same night.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "Two elections from a federal reference volume, in the shape that volume prints them: which party led, and with what share of the whole vote. **Allen County's leading party was Republican in both, with 65.5 per cent in 1960 and 51.2 in 1964, on a 1964 turnout of 38,887 votes.** [verified] \u{2014} [the County and City Data Book for 1967](../../catalog/census-county-and-city-data-book-1967.md), items 13 to 15."),
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**The same volume puts Ohio's 1964 leading party on the other side, at 62.9 per cent Democratic.** Johnson carried the state on 3,969,196 votes cast; Goldwater carried this county. In 1960 the state's leading party was Republican with 53.3 per cent, so the county ran 12.2 points ahead of it. [verified] \u{2014} same volume, Table 1, Ohio."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[
+            Figure { label: "Allen County's Republican share, 1960", value: 65.5, literal: "65.5" },
+            Figure { label: "Ohio's Republican share, 1960", value: 53.3, literal: "53.3" },
+        ],
+    },
+    Assertion {
+        id: "the-volume-prints-no-loser",
+        statement: "The federal volume that supplies this county's 1960 and 1964 elections prints a \
+                    party letter and one percentage for each and no second column, so no margin and \
+                    no two-party share can be got from it.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**This node cannot say what the losing candidate got in either year.** The volume prints a party letter and one percentage for each election and no second column, so there is no Democratic figure to subtract from, no margin, and no two-party share. Where the county's other returns give a Republican share out of a total that includes third parties, these two give the leading party's share of the same denominator \u{2014} which is the same quantity only because the Republican led both times. [verified] \u{2014} [the volume's note to items 13\u{2013}15](../../catalog/census-county-and-city-data-book-1967.md)."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[],
+    },
+    Assertion {
+        id: "nineteen-sixty-and-nineteen-eighty-are-three-tenths-apart",
+        statement: "Nixon's share of this county in 1960 and Reagan's in 1980 are three tenths of a \
+                    point apart, 65.5 per cent against 65.8, twenty years and five elections later.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**Nixon's share here in 1960 and Reagan's in 1980 are three tenths of a point apart.** 65.5 per cent against 65.8, twenty years and five elections apart, with the county's turnout up by 5,267 votes across the same span. [inference] \u{2014} computed against [the 1980\u{2013}1996 returns](allen-county-presidential-vote-1980-1996.yml)."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[
+            Figure { label: "1960", value: 65.5, literal: "65.5" },
+            Figure { label: "1980", value: 65.8, literal: "65.8" },
+        ],
+    },
+    Assertion {
+        id: "the-county-was-read-from-the-metropolitan-table",
+        statement: "Allen County's 1960 and 1964 figures were taken from the volume's \
+                    metropolitan-area table, because the OCR of its county table shifts the last \
+                    three columns down a row and prints this county's vote under Ashland's name.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**The figures were confirmed in a second table before they were published.** The volume's OCR shifts the last three columns of the county table down by one row, so Allen County's numbers appear under Ashland's name. They were taken instead from Table 3, which carries `Lima, Ohio` with a 1960 population of 103,691 \u{2014} the county's own figure, because in 1960 the Lima metropolitan area was Allen County and nothing else \u{2014} and which does not shift. [verified] \u{2014} same volume, Tables 2 and 3."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-eight-of-forty-two-elections",
+        statement: "The corpus now holds twenty-eight of the forty-two presidential elections this \
+                    county has voted in since 1856, and the fourteen it does not hold are 1912, \
+                    1916, 1924 through 1956 without a break, and 1968, 1972 and 1976.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**The corpus now holds twenty-eight of the forty-two presidential elections from 1856 to 2020.** Fourteen are unread: 1912 and 1916, then 1924 through 1956 without a break except the 1920 the corpus already had, and then 1968, 1972 and 1976. [inference] \u{2014} counted here against [1856\u{2013}1884](allen-county-presidential-vote-1856-1884.yml), [1888\u{2013}1908](allen-county-presidential-vote-1888-1908.yml), [1920](allen-county-presidential-vote-1920.yml), [1980\u{2013}1996](allen-county-presidential-vote-1980-1996.yml) and [2000\u{2013}2016](allen-county-presidential-vote-2000-2016.yml)."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-nineteen-sixty-seven-volume-named-its-vendor",
+        statement: "The 1967 County and City Data Book bought the presidential vote it prints: its \
+                    note to items 13 to 15 credits America at the Polls, Governmental Affairs \
+                    Institute, University of Pittsburgh Press, and marks it \
+                    \u{201c}(Copyright.)\u{201d}",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**This volume bought the vote as well, and said so in one line.** Its note to items 13 to 15 reads \"Source: Governmental Affairs Institute, *America at the Polls*, University of Pittsburgh Press, 1965. (Copyright.)\" \u{2014} forty-four years before the Bureau's last county compendium licensed the same table from a different publisher and stamped every item of it. [verified] \u{2014} [the volume's note](../../catalog/census-county-and-city-data-book-1967.md); see [a federal cover is not a federal source](../../decisions/a-federal-cover-is-not-a-federal-source.yml)."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[],
+    },
+    Assertion {
+        id: "reagan-took-seventy-three-per-cent-of-this-county",
+        statement: "Reagan's 73.0 per cent here in 1984 is the largest Republican share in this \
+                    corpus's record of the county, and his 21,330-vote margin is the largest margin \
+                    \u{2014} larger than the 18,967 of 2020, which the corpus had been calling its \
+                    record.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**1984 is the largest Republican share and the largest margin in this corpus's record of this county.** 73.0 per cent, and Reagan over Mondale by 21,330 votes \u{2014} more than the 18,967 of 2020, which this corpus had been calling its record. [inference] \u{2014} computed from the table above against [the modern series](allen-county-presidential-vote-2000-2016.yml) and [the 2020 return](allen-county-presidential-vote-2020.yml). Its Democratic share of 26.5 per cent is the lowest in that record too."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[
+            Figure { label: "Republican share, 1984", value: 73.0, literal: "73.0" },
+            Figure { label: "Republican margin, 1984", value: 21330.0, literal: "21,330" },
+        ],
+    },
+    Assertion {
+        id: "perot-took-one-vote-in-six-and-the-republican-still-won-a-majority",
+        statement: "Ross Perot took 8,131 votes in Allen County in 1992, 17.2 per cent of them, and \
+                    George Bush still cleared an outright majority here with 53.5 per cent in a year \
+                    he took 37.4 per cent of the nation's vote.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**In 1992 Ross Perot took 8,131 votes here, 17.2 per cent, and the Republican still won an outright majority.** Bush's 53.5 per cent is a majority of the whole vote in a three-way year in which he took 37.4 per cent of the nation's. [verified] \u{2014} same source, the named third-party items. Only 370 of the country's 3,146 counties gave him a majority that year, and eight of Ohio's eighty-eight; this county was third of the eighty-eight, behind Holmes and Putnam. [inference] \u{2014} computed here from the file's county counts."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[
+            Figure { label: "Perot's vote", value: 8131.0, literal: "8,131" },
+            Figure { label: "Perot's share", value: 17.2, literal: "17.2" },
+            Figure { label: "Bush's share here", value: 53.5, literal: "53.5" },
+        ],
+    },
+    Assertion {
+        id: "one-of-three-hundred-and-seventy-counties",
+        statement: "Only 370 of the country's 3,146 counties gave George Bush an outright majority \
+                    in 1992, and eight of Ohio's eighty-eight; Allen County was third of the \
+                    eighty-eight, behind Holmes and Putnam.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**In 1992 Ross Perot took 8,131 votes here, 17.2 per cent, and the Republican still won an outright majority.** Bush's 53.5 per cent is a majority of the whole vote in a three-way year in which he took 37.4 per cent of the nation's. [verified] \u{2014} same source, the named third-party items. Only 370 of the country's 3,146 counties gave him a majority that year, and eight of Ohio's eighty-eight; this county was third of the eighty-eight, behind Holmes and Putnam. [inference] \u{2014} computed here from the file's county counts."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[
+            Figure { label: "counties with a Republican majority, 1992", value: 370.0, literal: "370" },
+            Figure { label: "of counties in the country", value: 3146.0, literal: "3,146" },
+        ],
+    },
+    Assertion {
+        id: "perots-collapse-did-not-go-to-the-democrat",
+        statement: "Between 1992 and 1996 Perot's vote in Allen County fell from 8,131 to 3,799 \
+                    while the Democratic vote rose by 1,752 and the Republican vote fell by 997, on \
+                    a turnout 3,402 lower.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**Perot's collapse did not go to the Democrat.** From 1992 to 1996 his vote here fell from 8,131 to 3,799 while the Democratic vote rose 1,752 and the Republican fell 997, on a turnout 3,402 lower. [inference] \u{2014} computed from the table above and the named third-party items."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[
+            Figure { label: "Perot, 1996", value: 3799.0, literal: "3,799" },
+            Figure { label: "Democratic gain", value: 1752.0, literal: "1,752" },
+        ],
+    },
+    Assertion {
+        id: "the-turnout-did-not-move-for-sixteen-years",
+        statement: "This county's presidential turnout stayed inside a band 3,402 votes wide across \
+                    five elections from 1980 to 1996 while its population fell by 2,486, and its \
+                    highest year was 1992.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**The county's turnout ran within 3,402 votes of itself for sixteen years while its population fell by 2,486.** 44,154, 45,911, 44,975, 47,350, 43,948 \u{2014} a range of 3,402 votes across five elections whose highest is 1992, the Perot year, against a county that went from 112,241 residents in 1980 to 109,755 in 1990. [inference] \u{2014} computed from the table above and [the county's own series](allen-county-population-1940-1990.yml)."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[
+            Figure { label: "width of the turnout band", value: 3402.0, literal: "3,402" },
+            Figure { label: "fall in population", value: 2486.0, literal: "2,486" },
+        ],
+    },
+    Assertion {
+        id: "eighty-four-items-in-six-thousand-six-hundred",
+        statement: "Eighty-four of the 6,659 items in the Census Bureau's last county compendium \
+                    carry a copyright notice, and every one of them is an election item.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**Eighty-four of the compendium's 6,659 items carry a copyright notice, and every one of them is an election item.** Their source field reads CQ Press, which the file's own source table expands to SAGE Publications; thirty of its thirty-two sources are federal agencies and this is not one of them. [verified] \u{2014} [the compendium's data dictionary](../../catalog/census-usa-counties.md)."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[
+            Figure { label: "items in the file", value: 6659.0, literal: "6,659" },
+        ],
+    },
+    Assertion {
+        id: "thirty-of-thirty-two-sources-are-federal",
+        statement: "The presidential vote in the federal county compendium is sourced to CQ Press, \
+                    expanded in the file's own table as SAGE Publications; thirty of its thirty-two \
+                    sources are federal agencies and this is not one of them.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1980-1996.yml", "**Eighty-four of the compendium's 6,659 items carry a copyright notice, and every one of them is an election item.** Their source field reads CQ Press, which the file's own source table expands to SAGE Publications; thirty of its thirty-two sources are federal agencies and this is not one of them. [verified] \u{2014} [the compendium's data dictionary](../../catalog/census-usa-counties.md)."),
+        ],
+        answers: &["does not assert that it did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-same-fourteen-points-every-time",
+        statement: "Allen County's Republican share ran between 12.7 and 15.4 points above Ohio's at \
+                    every presidential election from 1980 to 2008 \u{2014} a band 2.7 points wide, \
+                    on a share of its own that moved 19.5 points.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "One file gives the presidential vote of this county, this state and this country for eight consecutive elections, which makes a comparison possible that no single return supports. **Allen County's Republican share ran between 12.7 and 15.4 points above Ohio's at every one of the eight, on a share of its own that moved 19.5 points.** [verified] \u{2014} [USA Counties](../../catalog/census-usa-counties.md), the county, state and national rows of table ELE."),
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "**The level swings seven times as far as the offset.** The county's Republican share runs from 53.5 per cent in 1992 to 73.0 in 1984, a range of 19.5 points; the distance from Ohio's runs from 12.7 to 15.4, a range of 2.7. Its mean is 14.4. [inference] \u{2014} computed from the table above."),
+        ],
+        answers: &["cannot say why the distance is constant"],
+        figures: &[
+            Figure { label: "narrowest gap", value: 12.7, literal: "12.7" },
+            Figure { label: "widest gap", value: 15.4, literal: "15.4" },
+            Figure { label: "width of the county's own swing", value: 19.5, literal: "19.5" },
+        ],
+    },
+    Assertion {
+        id: "the-county-takes-the-national-swing-and-adds-a-constant",
+        statement: "A county whose Republican share moves twenty points while its distance from its \
+                    state moves under three is not deciding these elections on anything local; the \
+                    mean of that distance across eight elections is 14.4 points.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "**The level swings seven times as far as the offset.** The county's Republican share runs from 53.5 per cent in 1992 to 73.0 in 1984, a range of 19.5 points; the distance from Ohio's runs from 12.7 to 15.4, a range of 2.7. Its mean is 14.4. [inference] \u{2014} computed from the table above."),
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "A county whose share moves twenty points while its distance from the state moves under three is not deciding these elections on anything local. It is taking the national swing and adding a constant. [inference] \u{2014} the reasoning is this corpus's; the file supports the arithmetic and not the explanation."),
+        ],
+        answers: &["cannot say why the distance is constant"],
+        figures: &[
+            Figure { label: "mean gap, eight elections", value: 14.4, literal: "14.4" },
+        ],
+    },
+    Assertion {
+        id: "ohio-changed-its-mind-three-times-and-this-county-none",
+        statement: "Ohio's leading party was Democratic in 1992, 1996 and 2008 and Republican in the \
+                    other five elections of that span; Allen County's was Republican in all eight.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "**Ohio changed its mind three times in the eight and this county did not change its mind at all.** The state's leading party was Democratic in 1992, 1996 and 2008 and Republican in the other five; Allen County's was Republican in all eight. [verified] \u{2014} same source, the leading-party code for each row. Forty-seven of Ohio's eighty-eight counties voted Republican at all eight, and 1,202 of the country's 3,146. [inference] \u{2014} counted here from the same file."),
+        ],
+        answers: &["cannot say why the distance is constant"],
+        figures: &[],
+    },
+    Assertion {
+        id: "forty-seven-of-eighty-eight-counties-never-moved",
+        statement: "Forty-seven of Ohio's eighty-eight counties voted Republican at all eight \
+                    presidential elections from 1980 to 2008, and 1,202 of the country's 3,146.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "**Ohio changed its mind three times in the eight and this county did not change its mind at all.** The state's leading party was Democratic in 1992, 1996 and 2008 and Republican in the other five; Allen County's was Republican in all eight. [verified] \u{2014} same source, the leading-party code for each row. Forty-seven of Ohio's eighty-eight counties voted Republican at all eight, and 1,202 of the country's 3,146. [inference] \u{2014} counted here from the same file."),
+        ],
+        answers: &["cannot say why the distance is constant"],
+        figures: &[
+            Figure { label: "counties in the country", value: 1202.0, literal: "1,202" },
+        ],
+    },
+    Assertion {
+        id: "the-rank-moves-and-the-gap-does-not",
+        statement: "Among Ohio's eighty-eight counties Allen stands third on Republican share in \
+                    1992 and twenty-sixth in 2008, and nationally 199th of 3,146 at its highest and \
+                    1,353rd at its lowest \u{2014} twenty-three places of movement while the gap \
+                    moved under three points.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "**The rank moves twenty-three places while the gap moves under three points.** Among Ohio's eighty-eight counties this one stands 5th on Republican share in 1980, 24th in 1984, 18th in 1988, 3rd in 1992, 7th in 1996, 11th in 2000, 14th in 2004 and 26th in 2008 \u{2014} and nationally 199th of 3,146 at its highest standing and 1,353rd at its lowest. [inference] \u{2014} computed here from the file's vote counts. The rank is a fact about how the other counties bunched, not about how this one voted."),
+        ],
+        answers: &["cannot say why the distance is constant"],
+        figures: &[],
+    },
+    Assertion {
+        id: "putnam-is-above-it-every-time",
+        statement: "Putnam County was more Republican than Allen at all eight elections from 1980 to \
+                    2008 and Hancock at seven of them, while Hardin was less Republican at all \
+                    eight: this county sits inside a Republican block and is not the hardest part of \
+                    it.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-against-ohio-1980-2008.yml", "**Its neighbours sit above it more often than below.** Putnam County is more Republican than Allen at all eight elections and Hancock at seven of the eight; Hardin is less Republican at all eight; Auglaize and Van Wert cross it in both directions. [inference] \u{2014} computed here from the same file. This county is inside a Republican block and is not the hardest part of it."),
+        ],
+        answers: &["cannot say why the distance is constant"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-year-with-one-witness-now-has-two-that-disagree",
+        statement: "The 2004 election in Allen County had one compilation behind it and now has two \
+                    that disagree: the Census Bureau's compendium gives Bush 32,580 and Kerry 16,470 \
+                    against the lab's 32,585 and 16,483, eighteen votes apart with each file adding \
+                    up.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-2000-2016.yml", "**2004 rested on one witness and now rests on two that disagree.** OpenElections has no Ohio general-election file for 2004 at all. [verified] \u{2014} [the repository's own listing](../../catalog/openelections-ohio.md). The Census Bureau's county compendium, which carries a commercial compilation of the vote for 1980 through 2008, gives Allen County Bush 32,580 and Kerry 16,470 against the lab's 32,585 and 16,483 \u{2014} eighteen votes apart on a total of about forty-nine thousand, with each file adding up. [verified] \u{2014} [USA Counties](../../catalog/census-usa-counties.md). The table above keeps the lab's figures and the disagreement is published rather than averaged; see [a compiler is not the canvass](../../decisions/a-compiler-is-not-the-canvass.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "the compendium's Bush", value: 32580.0, literal: "32,580" },
+            Figure { label: "the lab's Bush", value: 32585.0, literal: "32,585" },
+        ],
+    },
+    Assertion {
+        id: "two-of-three-is-a-tally-and-not-a-canvass",
+        statement: "A third compilation now gives Allen County's 2008 vote as McCain 29,940 and \
+                    Obama 19,522, agreeing with OpenElections to the vote and leaving the lab one \
+                    out in each column \u{2014} and the question stays open, because a tally of \
+                    compilers is not a canvass.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-2000-2016.yml", "**On 2008 a third compilation now agrees with OpenElections to the vote, and the question stays open.** The Census Bureau's compendium gives McCain 29,940 and Obama 19,522, which is the figure this node already published and leaves the lab one vote out in each column. [verified] \u{2014} [USA Counties](../../catalog/census-usa-counties.md). Two of three is a tally, and a tally of compilers is not a canvass: no county board's certificate is held here for 2008 and none of the three compilers is the publisher of record. The block above stays open for that reason and not for want of evidence. [inference] \u{2014} the reasoning is this corpus's; see [the same decision](../../decisions/a-compiler-is-not-the-canvass.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "McCain", value: 29940.0, literal: "29,940" },
+            Figure { label: "Obama", value: 19522.0, literal: "19,522" },
+        ],
+    },
+    Assertion {
+        id: "three-compilations-agree-on-2000",
+        statement: "Three compilations from unrelated lineages give Allen County's 2000 vote as Bush \
+                    28,647, Gore 13,996, others 1,152 and a total of 43,795, without a digit between \
+                    them.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-2000-2016.yml", "**On 2000 all three agree to the vote.** Bush 28,647, Gore 13,996, others 1,152, total 43,795 \u{2014} three compilations from three unrelated lineages, and not a digit between them. [verified] \u{2014} [the compendium](../../catalog/census-usa-counties.md) against the two files already read. That is what the 2004 and 2008 rows are being measured against: the same three sources can agree perfectly, so where two of them differ the difference is somebody's error and not the format's."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Bush", value: 28647.0, literal: "28,647" },
+            Figure { label: "Gore", value: 13996.0, literal: "13,996" },
+        ],
+    },
+    Assertion {
+        id: "the-window-narrowed-from-nineteen-elections-to-eleven",
+        statement: "The question of when Allen County turned Republican has gone from nineteen \
+                    candidate elections to eleven: nothing after 1956 can be the turn, and 1920 sits \
+                    inside the remaining span already Republican, so the near end cannot be cut \
+                    either.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1960-1964.yml", "**These two elections cut an open question's window by eight.** The corpus has been asking when this county turned Republican and putting the turn somewhere in the nineteen elections from 1924 to 1996. Nothing after 1956 can be it: the leading party here is Republican with 65.5 per cent in 1960 and 65.8 in 1980, and Republican at every election the corpus holds since. Eleven candidate elections remain \u{2014} 1912, 1916, 1924, 1928, 1932, 1936, 1940, 1944, 1948, 1952 and 1956 \u{2014} and the near end cannot be cut, because the 1920 return sits inside that span and is Republican already, and a county can turn and turn back. [inference] \u{2014} computed against [the question as it stood](allen-county-presidential-vote-2000-2016.yml) and [1980\u{2013}1996](allen-county-presidential-vote-1980-1996.yml)."),
+        ],
+        answers: &["cannot say what the losing candidate got"],
+        figures: &[],
+    },
+    Assertion {
+        id: "harding-is-low-for-this-county",
+        statement: "Harding took 53.6 per cent of Allen County in 1920; of the thirteen elections \
+                    the corpus now holds after it, only two are lower and the median is 65.5.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1920.yml", "**This return is no longer an island, and the county it points forward to is a good deal more Republican than it is.** Harding took 53.6 per cent here; of the thirteen elections the corpus now holds after this one, only two are lower \u{2014} Goldwater's 51.2 in 1964 and Bush's 53.5 in the three-cornered 1992 \u{2014} and the median is 65.5. [inference] \u{2014} computed from this node's table against [1960 and 1964](allen-county-presidential-vote-1960-1964.yml), [1980\u{2013}1996](allen-county-presidential-vote-1980-1996.yml), [2000\u{2013}2016](allen-county-presidential-vote-2000-2016.yml) and [2020](allen-county-presidential-vote-2020.yml). Whether 1920 is the turn or a stop on the way to it is what the eleven unread elections around it would settle."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Harding's share", value: 53.6, literal: "53.6" },
+            Figure { label: "median of the thirteen after", value: 65.5, literal: "65.5" },
+        ],
     },
 ];
 
