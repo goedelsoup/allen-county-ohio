@@ -5,9 +5,10 @@
  * letterpress face for titles, a warm garalde for prose, a humanist sans for
  * interface text, small caps for labels, mono for data.
  *
- * The families are Google Fonts substitutions — no binaries were supplied with
- * the brief. The webfont link lives in Base.astro; swap both for self-hosted
- * files when real faces arrive and nothing else changes.
+ * The families are substitutions — no binaries were supplied with the brief.
+ * They are self-hosted in `public/fonts/` and declared in `tokens/fonts.css`,
+ * which `mise run fonts` writes. When real faces arrive, this file and that
+ * script's audit are what change, and nothing else does.
  *
  * Floors: never below 13.5px for controls, never below 12px for labels.
  */

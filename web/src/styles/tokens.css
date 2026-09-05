@@ -1,24 +1,52 @@
 /*
  * The one sheet the site links.
  *
- * Import order matters: colours before the roles that reference them, and the
- * bridge last so its aliases resolve against a fully-populated palette.
+ * Import order matters: the faces before the roles that name them, colours
+ * before the roles that reference them, and the unported sheets after the
+ * ported ones, since they resolve against tokens the design system defines.
  *
- * The webfonts these families name are linked from Base.astro. They are Google
- * Fonts substitutions — the brief supplied no binaries — and swapping them for
- * self-hosted files touches that link and tokens/typography.css, nothing else.
+ * Six of these are the Atlas design system's own files, ported. `fonts.css`,
+ * `dataviz.css` and `site.css` are not — see `design/departures.md` for what
+ * each one adds and why the system does not have it. The port itself is gated:
+ * `web/test/port.test.ts` holds every ported sheet to `design/upstream/` plus
+ * the declared departures.
+ *
+ * The faces are self-hosted from `public/fonts/`, written by `mise run fonts`.
+ * Nothing here reaches the network at build time or at read time, and
+ * `register.test.ts` is what keeps that true.
+ *
+ * `bridge.css` used to sit last in this list. It aliased the site's original
+ * token names onto the system's so that introducing the palette did not also
+ * mean rewriting twelve pages in the same commit. Its own header said it was
+ * meant to shrink; it is gone, and the pages reference the system directly.
  */
 
+@import './tokens/fonts.css';
 @import './tokens/colors.css';
 @import './tokens/typography.css';
 @import './tokens/spacing.css';
 @import './tokens/surfaces.css';
 @import './tokens/motion.css';
 @import './tokens/base.css';
-@import './bridge.css';
+@import './tokens/dataviz.css';
+@import './tokens/site.css';
+@import './tokens/dark.css';
 @import './reading.css';
 
 :root {
-  /* The parchment system is composed for paper. There is no dark palette. */
-  color-scheme: light;
+  /*
+   * The parchment system is composed for paper and specifies no dark palette.
+   * `tokens/dark.css` derives one from the same two ramps — ink as the stock,
+   * parchment as what is printed on it — because dropping night mode was a
+   * functional regression for anyone reading on a dark OS, and inventing a
+   * scheme the system never composed would have been this repository designing
+   * rather than implementing. Reaching further down ramps it already ships is
+   * neither.
+   *
+   * `light dark` and nothing else: the site follows the OS and honours an
+   * explicit `data-theme`, and ships no control of its own. A theme toggle is a
+   * piece of chrome on every page in service of a preference the reader has
+   * already expressed to their operating system.
+   */
+  color-scheme: light dark;
 }

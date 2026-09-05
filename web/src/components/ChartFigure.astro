@@ -53,9 +53,9 @@ const { id, title, caption, columns, rows, height = 340 } = Astro.props
   .chart {
     margin: 0 0 2.5rem;
     padding: 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius);
+    background: var(--surface-card);
+    border: 1px solid var(--rule-hairline);
+    border-radius: var(--radius-md);
   }
   /*
    * A figcaption already labels its figure, so the title inside one is not a section
@@ -70,22 +70,22 @@ const { id, title, caption, columns, rows, height = 340 } = Astro.props
   }
   figcaption p {
     margin: 0;
-    color: var(--ink-secondary);
+    color: var(--text-body);
     font-size: 0.9375rem;
-    max-width: var(--measure);
+    max-width: var(--measure-prose);
   }
   .plot {
     margin-top: 1.25rem;
   }
   details {
     margin-top: 1rem;
-    border-top: 1px solid var(--rule);
+    border-top: 1px solid var(--rule-hairline);
     padding-top: 0.75rem;
   }
   summary {
     cursor: pointer;
     font-size: 0.875rem;
-    color: var(--ink-secondary);
+    color: var(--text-body);
   }
   table {
     border-collapse: collapse;
@@ -98,11 +98,11 @@ const { id, title, caption, columns, rows, height = 340 } = Astro.props
   td {
     text-align: right;
     padding: 0.4rem 0.875rem 0.4rem 0;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-hairline);
     white-space: nowrap;
   }
   thead th {
-    color: var(--ink-muted);
+    color: var(--text-muted);
     font-weight: 500;
     font-size: 0.75rem;
     text-transform: uppercase;

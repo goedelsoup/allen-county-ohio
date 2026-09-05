@@ -37,9 +37,9 @@ const { title, caption, columns, rows } = Astro.props
   .table-figure {
     margin: 0 0 2.5rem;
     padding: 1.5rem;
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius);
+    background: var(--surface-card);
+    border: 1px solid var(--rule-hairline);
+    border-radius: var(--radius-md);
   }
   /* Not a heading, for the reason given in `ChartFigure.astro`. */
   figcaption .fig-title {
@@ -49,9 +49,9 @@ const { title, caption, columns, rows } = Astro.props
   }
   figcaption p {
     margin: 0 0 1rem;
-    color: var(--ink-secondary);
+    color: var(--text-body);
     font-size: 0.9375rem;
-    max-width: var(--measure);
+    max-width: var(--measure-prose);
   }
   table {
     border-collapse: collapse;
@@ -63,11 +63,11 @@ const { title, caption, columns, rows } = Astro.props
   td {
     text-align: right;
     padding: 0.45rem 0.875rem 0.45rem 0;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule-hairline);
     white-space: nowrap;
   }
   thead th {
-    color: var(--ink-muted);
+    color: var(--text-muted);
     font-weight: 500;
     font-size: 0.75rem;
     text-transform: uppercase;

@@ -70,7 +70,7 @@ a:hover {
 }
 
 a:active {
-  color: var(--rubric-700);
+  color: var(--text-link-active);
 }
 
 a:focus-visible,
@@ -110,4 +110,26 @@ hr {
   font: var(--type-data);
   letter-spacing: var(--tracking-mono);
   color: var(--text-muted);
+}
+
+/*
+ * ---- Two rules that are not the design system's ----
+ *
+ * NOT PORTED. Both came here from `bridge.css` when it was deleted, because
+ * neither is a token and neither had anywhere else to go. They are declared in
+ * `design/departures.md` with the rest of what this file adds.
+ */
+
+/* Anything that can overflow scrolls inside itself; the page never scrolls sideways. */
+.scroll-x {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--surface-sunken);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
 }

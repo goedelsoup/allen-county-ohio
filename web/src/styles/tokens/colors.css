@@ -25,11 +25,19 @@
  *
  * Every value below is now checked rather than composed: `web/test/contrast.test.ts`
  * reads this file, resolves the aliases, and fails the build on any text role
- * under 4.5:1 on any of the four surfaces. Two changes departed from the ported
- * values, both marked ▲ where they appear:
+ * under 4.5:1 on any of the four surfaces. **Five declarations departed from the
+ * ported values**, each marked ▲ where it appears:
  *
- *   --ochre-700   #8a6417 → #5c420f
- *   --text-muted  --ink-500 → --ink-600
+ *   --ochre-700        #8a6417   → #5c420f
+ *   --text-muted       --ink-500 → --ink-600
+ *   --text-faint       --ink-400 → --ink-500
+ *   --text-link-hover  --rubric-500 → --rubric-700
+ *   --text-annotation  --rubric-500 → --rubric-700
+ *
+ * The header said "two" for five days, and named the two that happened to carry
+ * a ▲. The other three were argued further down this file and nowhere a machine
+ * could read — which is what `design/departures.md` and `web/test/port.test.ts`
+ * now exist to prevent, and what the first pull against the real upstream found.
  *
  * Yellow at a given HSL lightness carries far more luminance than red or green
  * at the same lightness, so the ported --ochre-700 reached only 4.25:1 on the
@@ -86,7 +94,7 @@
   --text-strong: var(--ink-900);
   --text-body: var(--ink-700);
   --text-muted: var(--ink-600); /* ▲ was --ink-500 — see the contrast pass above */
-  --text-faint: var(--ink-500);
+  --text-faint: var(--ink-500); /* ▲ was --ink-400 — see the contrast pass above */
   --text-inverse: var(--parchment-100);
   --text-link: var(--indigo-500);
 
@@ -97,8 +105,26 @@
    * only 4.36:1 on the sunken ground, and a role has to be safe on every
    * surface it might travel to.
    */
-  --text-link-hover: var(--rubric-700);
-  --text-annotation: var(--rubric-700);
+  --text-link-hover: var(--rubric-700); /* ▲ was --rubric-500 — see the contrast pass above */
+  --text-annotation: var(--rubric-700); /* ▲ was --rubric-500 — see the contrast pass above */
+
+  /*
+   * ---- Two roles the system does not name ----
+   *
+   * NOT PORTED, and here rather than in an unmirrored sheet because they are text roles and
+   * this is where text roles live. Both existed as raw ramp inks reached for at the point of
+   * use, which is exactly the habit a semantic layer exists to stop — and the night palette is
+   * what made the cost visible: a role gets a dark value, a literal does not.
+   *
+   * `--text-link-active` is the pressed state, which `base.css` set to --rubric-700 directly.
+   * Rest and hover both route through roles; active did not, so every prose link went to
+   * 1.66:1 the moment the ground turned to ink.
+   *
+   * `--text-drop-cap` is the 66px rubric capital an entry opens with. It is large text and
+   * held to the 3:1 bar rather than 4.5:1, and it only ever lands on --surface-page.
+   */
+  --text-link-active: var(--rubric-700);
+  --text-drop-cap: var(--rubric-500);
 
   /* ---- Semantic: surfaces ---- */
   --surface-page: var(--parchment-200);

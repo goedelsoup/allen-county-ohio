@@ -24,11 +24,11 @@ function theme(): Theme {
   const s = getComputedStyle(document.documentElement)
   const v = (name: string) => s.getPropertyValue(name).trim()
   return {
-    surface: v('--surface'),
-    ink: v('--ink'),
-    secondary: v('--ink-secondary'),
-    muted: v('--ink-muted'),
-    grid: v('--rule'),
+    surface: v('--surface-card'),
+    ink: v('--text-strong'),
+    secondary: v('--text-body'),
+    muted: v('--text-muted'),
+    grid: v('--rule-hairline'),
     axis: v('--rule-strong'),
     // Fixed order, never cycled. Two series is the most any chart here carries.
     series: [v('--series-1'), v('--series-2')],
