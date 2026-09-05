@@ -47,9 +47,12 @@ decision: |
   that closes rather than one that stops.
 
   **The article is the third content type.** A short standalone piece at `/read/<slug>`: one
-  claim, 400–900 words, its own URL, its own place in an index. It is what the site was
-  missing, and its absence is the whole of the problem above — a phase with something to say
-  had nowhere to say it but the end of a page.
+  claim, its own URL, its own declaration of what it rests on, its own place in an index. It is
+  what the site was missing, and its absence is the whole of the problem above — a phase with
+  something to say had nowhere to say it but the end of a page.
+
+  **This definition carried a word range, 400–900, and it has been struck rather than moved.**
+  See *What a length could not define* below.
 
   An article **declares** the assertions and entries it rests on, and the declaration is gated:
   an id that does not resolve in the feed fails the build. This is the same shape as the
@@ -107,5 +110,69 @@ rationale: |
   researcher arriving with one is served by `/entry` and by the articles' own index, and if
   that becomes the majority audience the budget is the first thing to reconsider — the number
   lives in a test file so that arguing with it is cheap.
+
+  ---
+
+  **What a length could not define.** *Recorded 2026-09-05; the definition above is edited, and
+  this says why rather than leaving the edit silent.*
+
+  The article was defined here as *one claim, 400–900 words, its own URL, its own place in an
+  index*. The 1,800-word budget for a reading page went into `shape.test.ts` with its argument
+  beside it, on the stated ground that **the number lives in a test file so that arguing with it
+  is cheap**. The 400–900 went nowhere. Measured against the same `proseWords` the reading pages
+  are measured with, twice, three days apart:
+
+      at 38 articles    mean 456   median 430    under 400: 18   in range: 19   over 900: 1
+      at 99 articles    mean 394   median 418    under 400: 46   in range: 52   over 900: 1
+
+  **The second row is the argument.** The corpus of articles more than doubled in three days and
+  the distribution did not move toward the range — it moved further from it, the mean falling
+  sixty words while the share below the floor held at just under half. A range that half the
+  artifacts miss on the low side at 38 pieces and still miss at 99 is not a constraint being
+  violated. It is a constraint that was never applied, and every new piece is written by
+  somebody who has never read it.
+
+  The reason is in the restructure itself: this decision lifted 53 sections into 37 pieces, and
+  the sections were the length they were. A floor of 400 describes the pieces that were written
+  for the form, not the ones that were moved into it — and then described nothing at all as the
+  form filled up.
+
+  Three readings, and the third wins.
+
+  *The articles are too short* would now make forty-six pieces into editorial work. It is the
+  reading the range exists for — a piece too thin to hold a claim is the accretion habit in a new
+  container — and it is not what the measurement shows. `who-governs-the-districts` is 131 words
+  and declares an assertion that resolves. It is not thin; it is short.
+
+  *The range is wrong* would put an honest 50–1,200 into `shape.test.ts` beside the reading-page
+  budget. Rejected, and the widening between the two measurements is why: a range fitted to the
+  artifacts is refitted every time the artifacts move, which is a description wearing a
+  constraint's clothes. The floor would have had to fall from 400 to 150 to 50 in three days to
+  keep clearing the shortest piece. A budget that every artifact already satisfies constrains
+  nothing, and the reading-page budget is only honest because it **fails** — a page that grows
+  past 1,800 words turns the build red.
+
+  *The floor is not where the constraint belongs*, which is the one adopted. An article is
+  defined by carrying one claim, having its own URL, and declaring what it rests on — and
+  `coverage.test.ts` already enforces every part of that: an id that does not resolve in the
+  feed fails the build, every registry entry has a file and every file an entry, every article
+  is filed under a section that exists, and every entry it names is a corpus node. Length is the
+  one property of an article that nothing checks, and now the one property nothing claims.
+
+  So the figure comes out of this record rather than moving into a test. **A figure in a
+  decision that nothing reads and half the artifacts contradict is worse than no figure**, and
+  the honest repair is to say what the type actually is. Nothing is rewritten and no article
+  changes. `one-job-in-nine` stays at 56 words and `the-overdose-epidemic-ending` at 89, and the
+  fair question the measurement raised — whether two paragraphs around a card is an article or a
+  caption that acquired a URL — is a question about those pieces, to be answered by reading
+  them, not by a threshold that would have caught forty-four others with them.
+
+  **What would change the answer.** Evidence that shortness is doing harm — a reader who cannot
+  tell what an article claims, an index row that reads as an error, a piece whose declaration is
+  broader than its prose. That is a defect in a piece and it wants a check that finds *that*, not
+  a word count standing in for it. If such a check is ever written, it belongs in
+  `coverage.test.ts` with the rest of what makes an article an article.
+
+  Recorded from issue #16, which did the measuring at 38 articles.
 status: accepted
 date: "2026-09-02"
