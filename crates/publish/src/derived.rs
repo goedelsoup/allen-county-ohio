@@ -12553,6 +12553,408 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["does not establish that the county's ground was stable"],
         figures: &[],
     },
+    Assertion {
+        id: "the-county-gained-households-and-lost-people",
+        statement: "Allen County counted 33,966 households at the 1970 census and 40,935 at the 2020 \
+                    census \u{2014} a rise of 6,969 \u{2014} over the same fifty years in which it \
+                    lost 8,938 people.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "**Allen County gained 6,969 households between 1970 and 2020 and lost 8,938 people.** The county counted 33,966 households at the 1970 census and 40,935 at the 2020 census, a rise of 20.5 per cent, over the same fifty years in which its population fell from 111,144 to 102,206 and the people living in those households fell from 108,679 to 98,684."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[
+            Figure { label: "Households, 1970", value: 33966.0, literal: "33,966" },
+            Figure { label: "Households, 2020", value: 40935.0, literal: "40,935" },
+        ],
+    },
+    Assertion {
+        id: "ten-thousand-dwellings-nobody-arrived-for",
+        statement: "The 98,684 people living in Allen County households in 2020, arranged as \
+                    households were arranged in 1970, would have filled 30,842 of them. The county \
+                    has 40,935 and a stock of 44,563 units.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "**Ten thousand of this county's occupied houses exist because household size fell.** The 98,684 people who lived in Allen County households in 2020, arranged as households were arranged in 1970, would have filled **30,842** of them; the county has 40,935 and a housing stock of 44,563 units."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[
+            Figure { label: "At 1970 household size", value: 30842.0, literal: "30,842" },
+            Figure { label: "Actual households, 2020", value: 40935.0, literal: "40,935" },
+            Figure { label: "Housing units, 2020", value: 44563.0, literal: "44,563" },
+        ],
+    },
+    Assertion {
+        id: "household-size-fell-a-quarter-with-no-reversal",
+        statement: "Persons per household in Allen County fell from 3.20 in 1970 to 2.41 in 2020 \
+                    \u{2014} a quarter \u{2014} and fell at every census in between.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "Persons per household fell from 3.20 to 2.41, a quarter, monotonically at every census, and the fall is larger than the population change it would be used to interpret."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[],
+    },
+    Assertion {
+        id: "almost-all-the-household-growth-is-one-decade",
+        statement: "Allen County added 5,202 households in the 1970s and 1,767 across the four \
+                    decades after \u{2014} 15.3 per cent and then 4.5.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "**Almost all of the growth is one decade.** The county added 5,202 households in the 1970s, 240 in the 1980s, 1,238 in the 1990s, *lost* 27 in the 2000s and added 316 in the 2010s \u{2014} 15.3 per cent in the first of those decades and 4.5 per cent across the four that followed."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[
+            Figure { label: "1970s", value: 5202.0, literal: "5,202" },
+            Figure { label: "1980s", value: 240.0, literal: "240" },
+            Figure { label: "1990s", value: 1238.0, literal: "1,238" },
+            Figure { label: "2010s", value: 316.0, literal: "316" },
+        ],
+    },
+    Assertion {
+        id: "married-couple-households-peaked-in-1980",
+        statement: "Married-couple households in Allen County peaked at 25,067 in 1980 and have \
+                    fallen at every census since, to 17,911 in 2020 \u{2014} down 28.5 per cent on a \
+                    household total that rose 4.5.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "**Married-couple households peaked in 1980 and have fallen at every census since.** 24,720 in 1970, 25,067 in 1980, then 23,226, 21,562, 19,494 and 17,911 in 2020 \u{2014} down 28.5 per cent from the peak, on a county whose household total rose 4.5 per cent over the same forty years."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[
+            Figure { label: "1970", value: 24720.0, literal: "24,720" },
+            Figure { label: "1980", value: 25067.0, literal: "25,067" },
+            Figure { label: "1990", value: 23226.0, literal: "23,226" },
+            Figure { label: "2000", value: 21562.0, literal: "21,562" },
+            Figure { label: "2010", value: 19494.0, literal: "19,494" },
+            Figure { label: "2020", value: 17911.0, literal: "17,911" },
+        ],
+    },
+    Assertion {
+        id: "one-person-households-more-than-doubled",
+        statement: "One-person households in Allen County rose from 5,802 in 1970 to 12,373 in 2020, \
+                    from 17.1 per cent of all households to 30.2.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "**One-person households more than doubled.** 5,802 in 1970 against 12,373 in 2020, a rise of 113.3 per cent, from 17.1 per cent of all households to 30.2."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[
+            Figure { label: "1970", value: 5802.0, literal: "5,802" },
+            Figure { label: "2020", value: 12373.0, literal: "12,373" },
+        ],
+    },
+    Assertion {
+        id: "four-and-a-quarter-to-one-became-one-and-a-half",
+        statement: "Allen County held 4.26 married-couple households for every one-person household \
+                    in 1970 and 1.45 in 2020.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "In 1970 Allen County held 4.26 married-couple households for every household of one person; in 2020 it held 1.45."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[],
+    },
+    Assertion {
+        id: "one-cell-of-that-table-is-in-thousands",
+        statement: "The compendium publishes Allen County's 1970 family households as 27.5, meaning \
+                    27,500, and every other cell in the table as a count.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "Allen County's 1970 family households read `27.5` and mean 27,500, rounded to the hundred; the item's unit code is `THO` where the rest of the table is `ABS`."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[],
+    },
+    Assertion {
+        id: "three-printed-volumes-check-the-compendium",
+        statement: "Allen County's 2000 households, family households, married-couple families and \
+                    one-person households \u{2014} 40,646, 28,213, 21,562 and 10,696 \u{2014} are \
+                    the four printed in the 2000 Ohio volume, digit for digit, and the 2010 set \
+                    matches the 2010 volume.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "Allen County's 2000 households, family households, married-couple families and one-person households \u{2014} 40,646, 28,213, 21,562 and 10,696 \u{2014} are the four printed in Table 7 of the 2000 Ohio general characteristics volume, digit for digit, and the 2010 set matches Table 7 of the 2010 volume; the 1990 volume prints shares and they agree to the tenth."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-household-and-an-occupied-unit-are-one-number",
+        statement: "The 2020 census puts 40,935 households in Allen County, which is exactly the \
+                    occupied housing units it publishes in a different table of the same file, and \
+                    the thirteen county subdivisions sum to it with no residual.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "P16's 40,935 is exactly H1's occupied units, from two tables of the same file, and the thirteen county subdivisions sum to it with no residual."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-survey-and-the-census-part-company-by-a-ninth",
+        statement: "The 2019\u{2013}2023 survey finds 1,436 more one-person households in Allen \
+                    County than the 2020 census did fifteen months earlier, against a margin of 741. \
+                    Around 2010 the same two instruments were 73 apart.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-1970-2023.yml", "The 2019\u{2013}2023 American Community Survey puts Allen County at 40,928 households, 17,101 of them married couples and 13,809 of them one person \u{2014} 1,436 more people living alone than the census found fifteen months earlier, against a survey margin of \u{b1}741 on that cell."),
+            support!("measure/allen-county-households-1970-2023.yml", "Around 2010 the two instruments were within 0.65 per cent of each other on the same quantity: the 2005\u{2013}2009 survey put one-person households at 11,356 and the 2010 census at 11,283."),
+        ],
+        answers: &["does not establish that the county needed the houses it built"],
+        figures: &[
+            Figure { label: "Census 2010", value: 11283.0, literal: "11,283" },
+            Figure { label: "Survey 2005\u{2013}2009", value: 11356.0, literal: "11,356" },
+            Figure { label: "Survey 2019\u{2013}2023", value: 13809.0, literal: "13,809" },
+        ],
+    },
+    Assertion {
+        id: "a-third-of-this-countys-households-are-one-person",
+        statement: "13,809 of Allen County's 40,928 households are one person \u{2014} 33.7 per \
+                    cent, against 28.5 for the United States, on a survey margin of 1.8 points.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "**A third of Allen County's households are one person.** 13,809 of 40,928, or 33.7 per cent, against 28.5 per cent for the United States \u{2014} a gap of 5.2 points on a survey margin of 1.8."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[
+            Figure { label: "Allen County", value: 33.7, literal: "33.7" },
+            Figure { label: "United States", value: 28.5, literal: "28.5" },
+        ],
+    },
+    Assertion {
+        id: "seventh-of-eighty-eight-and-eighty-first",
+        statement: "On the point estimates Allen County is seventh of Ohio's eighty-eight counties \
+                    for households of one person and eighty-first for married couples, below every \
+                    county that touches it.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "**On the point estimates the county is seventh of Ohio's eighty-eight for living alone and eighty-first for married couples.** Its 41.8 per cent married-couple share sits below every county that touches it and near the two that hold Cleveland and Toledo."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[],
+    },
+    Assertion {
+        id: "putnam-is-lowest-in-ohio-and-allen-is-fourteenth",
+        statement: "Putnam County, which touches Allen on the north-west, has the lowest share of \
+                    female-headed families in Ohio at 5.2 per cent; Allen has the fourteenth highest \
+                    at 13.1.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "**Putnam County, which touches Allen on the north-west, has the lowest share of female-headed families in Ohio and Allen has the fourteenth highest.** 5.2 per cent against 13.1, on two counties that share a line."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[
+            Figure { label: "Putnam", value: 5.2, literal: "5.2" },
+            Figure { label: "Allen", value: 13.1, literal: "13.1" },
+        ],
+    },
+    Assertion {
+        id: "the-city-does-not-account-for-all-of-it",
+        statement: "Take Lima out and 31.5 per cent of the remaining 26,943 Allen County households \
+                    are still one person \u{2014} more than in any whole county next door.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "Taking Lima out leaves 26,943 households in the rest of the county, of which 49.9 per cent are married couples and 31.5 per cent are one person."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[],
+    },
+    Assertion {
+        id: "in-lima-a-rented-house-holds-more-people",
+        statement: "Lima's average household size is 2.20 in owner-occupied homes and 2.52 in rented \
+                    ones, which is the reverse of Ohio's 2.51 and 2.12 and the nation's 2.65 and \
+                    2.34.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "Lima's average household size is 2.20 in owner-occupied units and 2.52 in rented ones; nationally it is 2.65 and 2.34, and in Ohio 2.51 and 2.12."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[
+            Figure { label: "Lima, owned", value: 2.2, literal: "2.20" },
+            Figure { label: "Lima, rented", value: 2.52, literal: "2.52" },
+            Figure { label: "Ohio, owned", value: 2.51, literal: "2.51" },
+            Figure { label: "Ohio, rented", value: 2.12, literal: "2.12" },
+            Figure { label: "US, owned", value: 2.65, literal: "2.65" },
+            Figure { label: "US, rented", value: 2.34, literal: "2.34" },
+        ],
+    },
+    Assertion {
+        id: "lone-parents-outnumber-married-couples-in-lima",
+        statement: "2,725 of the 4,237 Lima households containing anybody under eighteen are a lone \
+                    parent with no spouse present, against 1,378 married couples.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "2,725 of the city's 4,237 households containing anybody under eighteen are families with one parent and no spouse present, against 1,378 married-couple families; the difference is 1,347 on a combined margin of 375."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[
+            Figure { label: "Lone parent", value: 2725.0, literal: "2,725" },
+            Figure { label: "Married couple", value: 1378.0, literal: "1,378" },
+        ],
+    },
+    Assertion {
+        id: "six-times-as-likely-to-be-poor",
+        statement: "35.4 per cent of Allen County's female-headed families with children are below \
+                    the poverty line against 5.8 per cent of its married-couple families with \
+                    children.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "1,355 of the county's 3,828 female-headed families with related children under eighteen are below the poverty line \u{2014} 35.4 per cent \u{2014} against 370 of 6,412 married-couple families with children, which is 5.8."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[
+            Figure { label: "Female-headed, with children", value: 35.4, literal: "35.4" },
+            Figure { label: "Married couple, with children", value: 5.8, literal: "5.8" },
+        ],
+    },
+    Assertion {
+        id: "two-thirds-of-poor-families-and-a-fifth-of-families",
+        statement: "1,506 of Allen County's 2,405 families below the poverty line are headed by a \
+                    woman with no spouse present, and 5,368 of its 24,580 families are.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "1,506 of the 2,405 families below poverty against 5,368 of the 24,580 families."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[],
+    },
+    Assertion {
+        id: "grandparents-raising-grandchildren",
+        statement: "1,834 grandparents in Allen County live with their own grandchildren and 830 are \
+                    responsible for them; 426 of those are the householder or spouse with no parent \
+                    of the grandchildren present.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-household-composition-2023.yml", "**1,834 grandparents in this county live in a household with their own grandchildren, and 830 of them are responsible for those grandchildren.** 426 of the 830 are the householder or the householder's spouse with no parent of the grandchildren present, which is the nearest this survey comes to counting a grandparent raising a child alone."),
+        ],
+        answers: &["does not establish why the county's households are arranged as they are"],
+        figures: &[
+            Figure { label: "Living with grandchildren", value: 1834.0, literal: "1,834" },
+            Figure { label: "Responsible for them", value: 830.0, literal: "830" },
+            Figure { label: "No parent present", value: 426.0, literal: "426" },
+        ],
+    },
+    Assertion {
+        id: "from-seventy-per-cent-to-twenty-six",
+        statement: "Married couples are 69.8 per cent of households in Amanda Township and 26.1 per \
+                    cent in Lima \u{2014} the whole range inside one county.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-by-place-2020.yml", "**Married couples run from 69.8 per cent of households in Amanda Township to 26.1 per cent in Lima, and the thirteen units of this county are the whole range in one county.** Amanda's 535 married-couple households of 766 against Lima's 3,713 of 14,237."),
+        ],
+        answers: &["does not establish any figure in it except the county's total housing units"],
+        figures: &[
+            Figure { label: "Amanda Township", value: 69.8, literal: "69.8" },
+            Figure { label: "Lima", value: 26.1, literal: "26.1" },
+        ],
+    },
+    Assertion {
+        id: "seven-columns-thirteen-rows-no-residual",
+        statement: "Seven columns of the 2020 census's household tables \u{2014} households, married \
+                    couples, one-person, female-headed, multigenerational, same-sex couple and \
+                    cohabiting-couple households \u{2014} each sum from Allen County's thirteen \
+                    subdivisions to its county total exactly.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-by-place-2020.yml", "**Every column of that table sums to the county with no residual.** Households, married couples, one-person households, female-headed families, multigenerational households, same-sex couple households and cohabiting-couple households: seven totals, thirteen rows each, seven exact closures."),
+        ],
+        answers: &["does not establish any figure in it except the county's total housing units"],
+        figures: &[],
+    },
+    Assertion {
+        id: "thirteen-hundred-households-of-three-generations",
+        statement: "1,302 of Allen County's households hold three or more generations \u{2014} 3.18 \
+                    per cent against Ohio's 3.24 \u{2014} and the survey publishes this for the \
+                    nation and the states and not for this county.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-by-place-2020.yml", "**1,302 of Allen County's households hold three or more generations.** That is 3.18 per cent, against 3.24 for Ohio, and it is the highest in Lima at 3.95 per cent and the lowest in Amanda Township at 1.57."),
+            support!("measure/allen-county-households-by-place-2020.yml", "B11017 of the American Community Survey asks the same question and is published for the United States and the fifty-two state-level geographies and for nothing smaller \u{2014} 53 rows, no county, no suppression marker."),
+        ],
+        answers: &["does not establish any figure in it except the county's total housing units"],
+        figures: &[
+            Figure { label: "Allen County", value: 3.18, literal: "3.18" },
+            Figure { label: "Ohio", value: 3.24, literal: "3.24" },
+            Figure { label: "Lima", value: 3.95, literal: "3.95" },
+            Figure { label: "Amanda Township", value: 1.57, literal: "1.57" },
+        ],
+    },
+    Assertion {
+        id: "the-first-count-of-same-sex-couples",
+        statement: "242 households in Allen County are a same-sex couple \u{2014} 106 married and \
+                    136 unmarried partners \u{2014} and this is the first count of them in this \
+                    corpus.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-households-by-place-2020.yml", "**242 households in Allen County are a same-sex couple, and this is the first count of them in this corpus.** 106 married and 136 unmarried partners; of the married, 33 are two men and 73 are two women."),
+        ],
+        answers: &["does not establish any figure in it except the county's total housing units"],
+        figures: &[
+            Figure { label: "Married", value: 106.0, literal: "106" },
+            Figure { label: "Unmarried partners", value: 136.0, literal: "136" },
+        ],
+    },
+    Assertion {
+        id: "fewer-than-half-the-countys-adults-are-married",
+        statement: "Of Allen County's 82,015 people aged fifteen and over, 37,973 are married, \
+                    26,562 have never married, 11,434 are divorced and 6,046 are widowed.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-marital-status-2023.yml", "**Fewer than half of Allen County's adults are married.** Of 82,015 people aged fifteen and over, 37,973 are married \u{2014} 46.3 per cent \u{2014} while 26,562 have never married, 11,434 are divorced and 6,046 are widowed."),
+        ],
+        answers: &["does not know why this county's adults marry less than the nation's"],
+        figures: &[
+            Figure { label: "Now married", value: 37973.0, literal: "37,973" },
+            Figure { label: "Never married", value: 26562.0, literal: "26,562" },
+            Figure { label: "Divorced", value: 11434.0, literal: "11,434" },
+            Figure { label: "Widowed", value: 6046.0, literal: "6,046" },
+        ],
+    },
+    Assertion {
+        id: "more-divorced-than-the-state-and-the-nation",
+        statement: "12.3 per cent of Allen County's men and 15.5 per cent of its women are divorced, \
+                    against 9.3 and 12.1 for the United States.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-marital-status-2023.yml", "**The county is more divorced than the state and the nation, for both sexes.** 12.3 per cent of its men and 15.5 per cent of its women are divorced, against 9.3 and 12.1 for the United States and 10.7 and 13.1 for Ohio."),
+        ],
+        answers: &["does not know why this county's adults marry less than the nation's"],
+        figures: &[
+            Figure { label: "Allen men", value: 12.3, literal: "12.3" },
+            Figure { label: "Allen women", value: 15.5, literal: "15.5" },
+            Figure { label: "US men", value: 9.3, literal: "9.3" },
+            Figure { label: "US women", value: 12.1, literal: "12.1" },
+        ],
+    },
+    Assertion {
+        id: "half-the-men-in-lima-have-never-married",
+        statement: "7,217 of Lima's 14,366 men aged fifteen and over have never married and 4,640 \
+                    are married; for its women the figures are 5,675 and 4,391.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-marital-status-2023.yml", "7,217 of the city's 14,366 men aged fifteen and over have never married and 4,640 are married \u{2014} a difference of 2,577 on a combined margin of 663 \u{2014} and the same holds for its women, 5,675 against 4,391."),
+        ],
+        answers: &["does not know why this county's adults marry less than the nation's"],
+        figures: &[
+            Figure { label: "Men, never married", value: 7217.0, literal: "7,217" },
+            Figure { label: "Men, married", value: 4640.0, literal: "4,640" },
+            Figure { label: "Women, never married", value: 5675.0, literal: "5,675" },
+            Figure { label: "Women, married", value: 4391.0, literal: "4,391" },
+        ],
+    },
+    Assertion {
+        id: "more-married-men-than-married-women",
+        statement: "The survey records 62,542,935 American men and 60,678,061 American women as \
+                    married with a spouse present, which no set of couples can be. In Allen County \
+                    the same subtraction returns 611 against a combined margin of 909.",
+        topic: "population",
+        supports: &[
+            support!("measure/allen-county-marital-status-2023.yml", "Across the United States 62,542,935 men and 60,678,061 women are recorded as married with a spouse present \u{2014} 1,864,874 apart, on a combined margin of about 326,000 \u{2014} which is not a possible property of a set of couples. In Allen County the same subtraction returns 611 against a combined margin of 909."),
+        ],
+        answers: &["does not know why this county's adults marry less than the nation's"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
