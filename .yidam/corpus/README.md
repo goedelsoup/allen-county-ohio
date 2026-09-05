@@ -190,7 +190,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-health-workforce-2023.yml](measure/allen-county-health-workforce-2023.yml) | measure | Who practises medicine in Allen County, 2022–2024 | 6 | 12v / 1i / 1o | 106 |
 | [allen-county-heart-disease-and-stroke-1999-2024.yml](measure/allen-county-heart-disease-and-stroke-1999-2024.yml) | measure | Allen County heart disease and stroke mortality, 1999–2024 | 4 | 12v / 4i / 2o | 105 |
 | [allen-county-higher-education-2023.yml](measure/allen-county-higher-education-2023.yml) | measure | Higher education in Allen County, 2023 | 3 | 9v / 6i / 2o | 122 |
-| [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 6v / 1i / 0o | 69 |
+| [allen-county-home-lending-2018-2024.yml](measure/allen-county-home-lending-2018-2024.yml) | measure | Allen County mortgage lending, 2018-2024 | 3 | 8v / 1i / 0o | 79 |
 | [allen-county-home-lending-2023.yml](measure/allen-county-home-lending-2023.yml) | measure | Allen County mortgage applications and denials, 2023 | 3 | 11v / 0i / 0o | 73 |
 | [allen-county-hospital-activity-2011-2023.yml](measure/allen-county-hospital-activity-2011-2023.yml) | measure | What Allen County's hospitals did, 2011–2023 | 6 | 11v / 1i / 1o | 95 |
 | [allen-county-hospital-beds-2011-2023.yml](measure/allen-county-hospital-beds-2011-2023.yml) | measure | Allen County hospital beds, 2011–2023 | 3 | 5v / 1i / 1o | 59 |
@@ -206,7 +206,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-housing-cost-burden-2006-2022.yml](measure/allen-county-housing-cost-burden-2006-2022.yml) | measure | Housing cost burden in Allen County, 2006–2022 | 8 | 11v / 4i / 0o | 153 |
 | [allen-county-housing-facilities-2023.yml](measure/allen-county-housing-facilities-2023.yml) | measure | What is in Allen County's houses, 2023 | 4 | 10v / 4i / 0o | 83 |
 | [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 5 | 12v / 1i / 0o | 103 |
-| [allen-county-housing-structure-2023.yml](measure/allen-county-housing-structure-2023.yml) | measure | What Allen County's houses are, 2023 | 4 | 9v / 4i / 0o | 80 |
+| [allen-county-housing-structure-2023.yml](measure/allen-county-housing-structure-2023.yml) | measure | What Allen County's houses are, 2023 | 4 | 10v / 4i / 0o | 86 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
@@ -233,6 +233,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 6 | 8v / 2i / 1o | 91 |
 | [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 7 | 10v / 1i / 1o | 118 |
 | [allen-county-local-option-elections-2003-2012.yml](measure/allen-county-local-option-elections-2003-2012.yml) | measure | Local option liquor elections in Allen County, 2003–2012 | 4 | 13v / 3i / 1o | 107 |
+| [allen-county-manufactured-home-lending-2018-2024.yml](measure/allen-county-manufactured-home-lending-2018-2024.yml) | measure | Lending on Allen County's manufactured homes, 2018-2024 | 4 | 12v / 0i / 1o | 77 |
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
 | [allen-county-manufactures-1939-1967.yml](measure/allen-county-manufactures-1939-1967.yml) | measure | Allen County manufactures, 1939–1967 | 2 | 12v / 8i / 1o | 121 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 6v / 2i / 1o | 69 |
@@ -241,6 +242,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-marital-status-2023.yml](measure/allen-county-marital-status-2023.yml) | measure | Marital status in Allen County, 2019–2023 | 5 | 8v / 1i / 1o | 82 |
 | [allen-county-migration-by-county-2004-2023.yml](measure/allen-county-migration-by-county-2004-2023.yml) | measure | Where Allen County's movers went and came from, 2004–2023 | 5 | 10v / 4i / 1o | 93 |
 | [allen-county-migration-flows-2004-2023.yml](measure/allen-county-migration-flows-2004-2023.yml) | measure | Who moved into and out of Allen County, 2004–2023 | 5 | 14v / 1i / 1o | 98 |
+| [allen-county-mortgage-access-by-tract-2018-2024.yml](measure/allen-county-mortgage-access-by-tract-2018-2024.yml) | measure | Where Allen County's mortgages went, and what they cost there, 2018-2024 | 5 | 10v / 0i / 1o | 93 |
+| [allen-county-mortgage-prices-2018-2024.yml](measure/allen-county-mortgage-prices-2018-2024.yml) | measure | What a mortgage costs in Allen County, 2018-2024 | 3 | 16v / 0i / 1o | 99 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 4 | 12v / 4i / 1o | 138 |
@@ -431,7 +434,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-state-university-at-lima.yml](organization/ohio-state-university-at-lima.yml) | organization | Ohio State University-Lima Campus | 2 | 6v / 1i / 1o | 45 |
 | [solar-refining-company.yml](organization/solar-refining-company.yml) | organization | Solar Refining Company | 2 | 7v / 0i / 1o | 55 |
 | [standard-oil.yml](organization/standard-oil.yml) | organization | Standard Oil | 2 | 6v / 3i / 1o | 58 |
-| [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 5v / 1i / 3o | 48 |
+| [superior-credit-union.yml](organization/superior-credit-union.yml) | organization | Superior Credit Union, Inc. | 2 | 7v / 1i / 3o | 61 |
 | [temple-beth-israel.yml](organization/temple-beth-israel.yml) | organization | Temple Beth Israel | 2 | 4v / 1i / 2o | 44 |
 | [the-bluffton-news.yml](organization/the-bluffton-news.yml) | organization | The Bluffton News | 2 | 4v / 1i / 1o | 44 |
 | [the-lima-argus.yml](organization/the-lima-argus.yml) | organization | The Lima Argus | 2 | 2v / 1i / 1o | 40 |
