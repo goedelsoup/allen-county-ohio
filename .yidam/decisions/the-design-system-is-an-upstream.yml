@@ -1,0 +1,342 @@
+id: the-design-system-is-an-upstream
+summary: >-
+  The site's token layer is a hand port of a design system this repository does not own, and for
+  five days it had no pin, no mirror and no return path. Five findings are recorded here — two
+  corrections already made locally, three gaps the system leaves that this repository filled by
+  deriving. `design/` is the return address; `design-push` is the act, and it waits on the
+  elector.
+context: |
+  The Allen County Atlas design system is a project at claude.ai/design, id
+  `4f74bdb5-feb9-4d1f-98b5-7f752049cb53`. It is not a git repository, has no commit and no
+  version, and is edited through a web application.
+
+  On 2026-08-31 its six token files were ported into `web/src/styles/tokens/` by hand
+  (`a2ef5ab`), and the same day the palette they carried was measured rather than trusted
+  (`2737dd7`, closing issue #8). Both commits recorded departures from the source in their
+  messages and in comments beside the values. Neither could record what upstream *said*,
+  because nothing here held a copy of it.
+
+  That is the same wall [`upstream-findings`](upstream-findings.yml) describes against the
+  yidam template, met a second time against a different upstream, and the cost is already
+  documented there: two of six findings were fixed upstream by an author who had never read
+  this repository's record of them, and six days were spent maintaining a workaround for a
+  defect that no longer existed. The lesson that record draws is not *write less down* — it is
+  that the fixes were recognisable at all **only because the findings were written down**.
+
+  Two things make this upstream harder than yidam, and both shape what is possible below.
+
+  **There is no pin to point at.** yidam pins a commit in `.yidam.toml`; a resolvable,
+  orderable thing that CI can check out. A design project has none. So `design/pin.toml` pins
+  the *bytes*: a sha256 per mirrored file, and drift detected by re-hashing.
+
+  **There is no issue tracker.** The yidam findings went up as
+  goedelsoup/yidam#587 through #590 — four issues, one per finding, on the reasoning that a
+  single report gets closed when the easiest quarter of it is done. There is no equivalent
+  surface here. A finding travels as a file written into the project, or it does not travel.
+decision: |
+  **`design/` is a new top-level directory, and the port is a derivation with a gate.**
+
+  Three parts, and the third is the one that does the work:
+
+  - `design/upstream/` — a verbatim mirror, declared `imported` in
+    [`.yidam/authorship.yml`](../authorship.yml). Read-only in the same sense `.yidam/.vendor/`
+    is, and for the same reason: an edit there is discarded by the next pull and invisible
+    until then. `port.test.ts` re-hashes it against the pin, so "never edited" is checked
+    rather than remembered.
+  - `design/departures.md` — every declaration where this repository differs, and why.
+  - `web/test/port.test.ts` — fails on a difference that is not declared, **and on a
+    declaration that no longer describes a difference.** The second half is the half that
+    survives contact with time. It is the argument [the lint baseline](../lint-baseline.yml)
+    and the publication gate's `answers` list both rest on: a list of exceptions permitted to
+    be wrong drifts, and one that over-lists silently re-permits whatever a later edit puts in
+    its place.
+
+  It compares declarations rather than bytes, because the port rewrote every file header and a
+  byte diff would be nothing but those comments. It also normalises spelling before comparing —
+  case, quotes, whitespace, a zero written with a unit, and the two colour-function syntaxes —
+  because the port modernised `rgba(30,25,19,.55)` to `rgb(30 25 19 / 55%)` across about twenty
+  tokens, and twenty entries saying *we wrote it differently* would have made the departures file
+  unreadable. What is normalised is only ever spelling. No number, token name or keyword is
+  touched.
+
+  ---
+
+  **What the first pull found, 2026-09-05.**
+
+  Seven token sheets came down. The port had taken six of them; `tokens/fonts.css` was the one it
+  declined, and finding 5 says why.
+
+  **Three departures nobody had written down.** `--text-faint` (`--ink-400` → `--ink-500`),
+  `--text-link-hover` and `--text-annotation` (both `--rubric-500` → `--rubric-700`). All three
+  were made deliberately in the contrast pass, all three are argued at length in `colors.css`'s
+  own header, and all three were absent from every list a machine could read. The commit that
+  made them names seven roles in its table; two got a ▲ mark in the file and none got an entry
+  anywhere else, because there was nowhere to put one.
+
+  That is the case for this whole apparatus, delivered by its first run. **A departure explained
+  in a comment is not a departure that has been declared** — the comment tells a reader who is
+  already looking at that line why it says what it says; it cannot tell a re-sync to leave it
+  alone, and it cannot tell anybody that upstream still disagrees. For five days three
+  measured, argued corrections were one careless re-paste from being silently reverted, and
+  nothing in the repository could have reported it.
+
+  **Nothing had been fixed upstream.** Findings 1 through 5 were all still open at the pull —
+  which is the less interesting outcome and worth recording precisely because the yidam
+  experience predicts the other one. There is no traffic on this return path yet in either
+  direction.
+
+  ---
+
+  **Finding 1 — `--type-eyebrow` references a token that does not exist.** Issue #10.
+
+  `tokens/typography.css` defines the weights as `--weight-regular` through `--weight-bold`,
+  and then composes:
+
+      --type-eyebrow: var(--weight-500) var(--size-label)/1.2 var(--font-smallcaps);
+
+  `--weight-500` is not among them. In the CSS `font` shorthand an unresolved `var()` makes the
+  **whole declaration** invalid at computed-value time, so `--type-eyebrow` resolves to nothing
+  and any element set with it silently falls back to inherited type — losing the family, the
+  size and the line height together.
+
+  Severity is in how quiet it is. The eyebrow is small-caps metadata, so the failure reads as
+  slightly-off styling rather than as a broken rule, and nothing errors. The fix is one
+  character class: `var(--weight-medium)`.
+
+  **Worked around** in `web/src/styles/tokens/typography.css`, corrected during the port and
+  noted there. Recorded in `design/departures.md`, which is where it comes out from when the
+  fix lands and the declaration can be re-synced verbatim.
+
+  **Finding 2 — the contrast caveat understated the result, and status wants two roles rather
+  than one.**
+
+  The system ships with a caveat of its own: *"colour contrast was composed by eye against the
+  parchment surfaces; a formal WCAG pass has not been run."* It was right to flag it. Measured
+  against all four parchment grounds, **six** text roles fell under 4.5:1, the worst at 2.20:1 on
+  text set at eleven pixels. A seventh is in the table below because it moved, not because it
+  failed: `--text-muted` cleared the bar at 4.60:1 and came down a step anyway, so that
+  `--text-faint` could take `--ink-500` — the floor — without the two collapsing into one
+  colour. That is a hierarchy repair, and `contrast.test.ts` encodes it as one rather than as a
+  ratio. Worth stating precisely in the outbound report, because upstream can recompute it in a
+  minute: only three of the six exist upstream at all. The three `--status-*-text` roles were
+  composed here.
+
+      --text-faint            3.06 → 4.60
+      --text-muted            4.60 → 6.36
+      --text-link-hover       4.36 → 6.44
+      --text-annotation       4.36 → 6.44
+      --status-verified-text  3.98 → 6.84
+      --status-disputed-text  2.20 → 6.60
+      --status-open-text      4.36 → 6.44
+
+  The grounds are the reason and not a defect in the design: parchment is a light warm ramp,
+  and its darkest surface sits where the ink ramp cannot go lighter than `--ink-500` and still
+  be read. That is a fixed budget every text role has to be spent inside. Nothing in the pass
+  lightened a surface or cooled a hue to buy room.
+
+  Two ramp values changed and both are departures today:
+
+  - `--ochre-700` `#8a6417` → `#5c420f`. It reached 4.25:1 on the page ground where rubric,
+    verdigris and indigo reached 7.25, 7.70 and 10.15. **Yellow at a given lightness carries
+    far more luminance than red or green at the same lightness** — precisely the error an eye
+    makes and a meter does not, which is what a caveat about composing by eye predicts. It is
+    the odd step in the ramp rather than a missing one, so it is corrected in place rather than
+    worked around with an `--ochre-800`.
+  - `--text-muted` `--ink-500` → `--ink-600`, so that `--text-faint` can take `--ink-500` — the
+    floor — without the two roles collapsing into a single colour.
+
+  And one structural proposal, which is the part worth more than the numbers: **a status ink
+  and a status word want different things from the same hue.** The `-500` inks are composed as
+  marks — a dot, a chip, a dashed edge — and ochre at 2.47:1 against the page is right for a
+  mark and unreadable as a word. So the marks keep the colours the design composed, and the
+  words take the same hues at the step that can be read. `--status-verified-text`,
+  `--status-disputed-text` and `--status-open-text` are that second role, added here and not
+  present upstream.
+
+  The marks are deliberately *not* held to the 3:1 bar for graphical objects. That bar is for
+  objects required to understand content, and every badge, relation and status row in this site
+  prints its tier as a word beside the ink.
+
+  **Not worked around — measured.** `web/test/contrast.test.ts` reads the token file, resolves
+  the aliases, and fails the build on any text role under 4.5:1 on any ground. The ratios are a
+  fact about the colours and apply to every consumer of the system, which is what makes them
+  worth sending rather than keeping.
+
+  **Finding 3 — the system specifies no dark palette, and dropping night mode was a
+  regression.** Issue #5.
+
+  The design is emphatic about being composed for paper — warm parchment, warm near-black ink,
+  never grey and never true black — and every board sets a light ground. Implementing it
+  faithfully meant dropping the site's dark mode, which `a2ef5ab` did.
+
+  That is a functional regression for anyone reading on a dark OS, and the system supplies the
+  pieces to repair it without inventing anything: `--surface-ink`, `--text-inverse`, and the
+  full ink ramp. A night mode built as **ink ground with parchment text** is in keeping rather
+  than an inversion.
+
+  Derived here in `web/src/styles/tokens/dark.css`. It goes upstream as a **proposal and not a
+  correction** — a system that specifies no dark palette has a gap, not a defect, and a
+  downstream consumer sending a preference as a correction is how it starts designing the
+  upstream.
+
+  **Every value in it is a step the system already ships**, taken from the other end of the same
+  two ramps. Two exceptions are marked ▲ in the file and both are in the choropleth, where five
+  monotonic steps are needed and the system ships four — the same interpolation the daylight
+  ramp already makes, in the same two places.
+
+  Measured on the four night grounds, worst case per role, and held there by
+  `contrast.test.ts`:
+
+      --text-strong           8.44      --text-link             6.60
+      --text-body             7.82      --text-link-hover       6.52
+      --text-muted            6.36      --text-annotation       6.52
+      --text-faint            5.42      --status-verified-text  7.06
+                                        --status-disputed-text  7.17
+                                        --status-open-text      6.52
+
+  The binding ground is `--surface-raised`, which at night is the shallowest ink rather than the
+  lightest parchment, and it is why the accents come from the -100 end of each ramp: at -300 the
+  ochre word reached 4.74:1 there and the rubric one did not reach the bar at all (2.77:1).
+
+  What the derivation found, which upstream would meet too, and which is the part of this
+  finding worth the most:
+
+  - **The washes do not survive the change of ground.** `--wash-foxing` and `--paper-grain` are
+    age on light stock — brown blotches and a dark hatching — and carried onto ink they read as
+    dirt, which is the one thing a night mode must not look like. The grain has to invert to
+    light hairlines and the foxing has to drop to about a quarter strength and become a bloom.
+  - **The shadows are worse.** They are warm-black ink bleed and are simply invisible against an
+    ink ground. The depth cue has to become the highlight on the top edge — what paper does
+    under a lamp — with the spread kept as a much darker halo.
+  - **`--focus-ring` opens with a parchment gap** that becomes a bright halo on ink, so the gap
+    has to take the ground rather than a fixed colour.
+  - **`--surface-ink` and `--text-inverse` swap ends.** They are the one pair defined by being
+    the opposite of the page, so at night the inverted surface is the light one. An inversion
+    filter gets this exactly backwards, which is a reason to write a palette rather than
+    generate one.
+
+  **And one cost, accepted rather than solved.** At the -100 step the accents lose most of their
+  hue. `--status-verified-text` is a pale verdigris and `--status-disputed-text` a pale ochre,
+  and at label size on ink both read as near-white with a tint. In daylight the same two roles
+  are richly separated, because -700 on parchment has room to be a colour.
+
+  It could be bought back. At -300 the hues are unmistakable — and `--status-verified-text`
+  reaches 3.46:1 on `--surface-raised`, well under the bar, so buying it means darkening the
+  grounds, and the ink ramp bottoms out at `--ink-900`. A fourth night ground below it would
+  have to be invented, and inventing an `--ink-950` to make a status word greener is designing
+  the system rather than deriving from it.
+
+  So the -100 step stands, on the rule this site already holds itself to and states in three
+  places: **the tag is always carried in words, never by colour alone.** A palette whose hues
+  wash out at 11px is a real loss and not a fatal one, precisely because nothing here was ever
+  allowed to depend on them. That is the argument, and it is worth sending upstream with the
+  palette — a system that specified a dark ramp of its own could put the accents somewhere this
+  derivation cannot reach.
+
+  **Finding 4 — the system specifies no data-visualization palette.** Issue #9.
+
+  The site draws charts and a choropleth and needs one. It derives it from the system's accent
+  inks rather than importing a chart palette composed against a cool ground — indigo leads
+  because the system assigns it to chrome and water, rubric follows because the system reserves
+  it for the one emphatic element in a view. The map's five-step ramp is single-hue indigo with
+  two interpolated stops, monotonic in lightness so the ordering survives greyscale and
+  colour-blind readers.
+
+  Now in `web/src/styles/tokens/dataviz.css` with its argument, moved out of the migration
+  bridge that used to hold it. Upstream this is a question rather than a report: either these
+  become a real addition to the system, or they stay a documented local derivation. Sending it
+  is how the question gets asked rather than settled by default.
+
+  **Finding 5 — the faces are substitutions, and `tokens/fonts.css` cannot be shipped as it
+  stands.** Issue #6.
+
+  The system's own NOTE says it: no font binaries were supplied with the brief, these are Google
+  Fonts substitutions chosen for a letterpress character, *swap the srcs for self-hosted
+  binaries when real files arrive.* Honest, and the file is still not shippable — which the pull
+  made concrete in a way the port's guess had not.
+
+  Read at the pull, `tokens/fonts.css` reaches the network **twice**: an `@import url(…)` to
+  `fonts.googleapis.com` at the top, and then five `@font-face` rules whose `src` points at
+  `fonts.gstatic.com`. So a consumer who takes the file gets a CDN dependency in two forms, and
+  a public site takes on telling a third party about every reader on every page load.
+
+  It is also thinner than it looks. One weight per family — 400 — except EB Garamond, which
+  arrives as a `400 700` variable face; no italics anywhere; and no `unicode-range`, so each
+  family is one undifferentiated file. That is why the port used a `<link>` instead and wrote
+  that it "covered more weights": measured against what this site actually renders, the file
+  supplies five of the twenty-four cuts needed.
+
+  **Not worked around — replaced.** `web/scripts/fetch-fonts.mjs` vendors 24 woff2 files across
+  latin and latin-ext, audited against the weights and styles the site can actually produce
+  (including the 700 that `<strong>` resolves to, which is in no token), and
+  `register.test.ts` fails the build if a request to anywhere comes back.
+
+  What upstream would need: the `@import` deleted, since it duplicates the `@font-face` block
+  below it; the remaining weights and italics declared; and the NOTE promoted from a comment to
+  something a consumer meets before wiring a CDN link around the file rather than after.
+rationale: |
+  **Why a directory rather than a note in a commit message.**
+
+  Everything in findings 1 and 2 was already written down on 2026-08-31 — in two commit
+  messages and in comments beside the values. That was not enough, and the shape of why is the
+  useful part: a comment says *this value was changed*, and cannot say *upstream still says the
+  other thing*. Only a mirror can say the second, and only the second decays into a fact when
+  upstream moves. Without it, the correct response to an upstream fix is indistinguishable from
+  the correct response to an upstream regression.
+
+  **Why the gate fails on a stale declaration, and not only on an undeclared difference.**
+
+  Because the failure mode this record is built against is not divergence; it is *silence about
+  divergence*. A departures list that only has to be a superset of the real departures decays
+  into a list of everything anyone ever thought about changing, and the day upstream adopts one
+  of the corrections, nothing says so. The entry sits there permanently excusing a difference
+  that no longer exists — and permanently excusing whatever a later edit puts on that token
+  instead.
+
+  This is the same reasoning already committed to twice in this repository, which is why it is
+  not argued at length again: the lint baseline fails when a baselined violation is repaired,
+  and the publication gate fails on an `answers` entry that matches no refusal.
+
+  **Why the push halts, when the pull does not.**
+
+  The asymmetry is not caution about writing to a network. It is the rule in
+  [what-may-leave-the-repository](what-may-leave-the-repository.yml), and `2737dd7` already
+  applied it to exactly this material — the contrast measurements were held back on the stated
+  ground that *reporting them is an outward-facing act and waits on the elector*. That sentence
+  has been sitting in the log for five days doing nothing, because there was no procedure it
+  could be the gate on. Now there is one.
+
+  The `DesignSync` tool's own plan boundary is used as the gate rather than worked around:
+  `finalize_plan` shows the elector the exact paths and the source directory, independent of
+  anything the skill narrates about them.
+
+  **Settled by pulling, and recorded because the alternative was tempting.**
+
+  The mirror was reconstructible in principle — `a2ef5ab` says the files were taken whole and
+  names where it departed, so a plausible `design/upstream/` could have been inferred from the
+  commit log without ever asking the design system anything. It was not, on the ground that
+  `imported` asserts these are upstream's bytes and bytes nobody read are not that; the gate
+  no-opped loudly instead, and `pin.toml` recorded `pulled = "never"` so the two could not
+  disagree.
+
+  That restraint paid immediately. The real pull found three departures the commit log does not
+  record as departures at all — a reconstruction from `a2ef5ab` would have produced a mirror
+  agreeing with the port on exactly the three values the port had silently changed, and the gate
+  would have gone green over them for as long as anyone cared to look.
+
+  **What is not settled here.**
+
+  *The night palette reaches text and nothing else.* Roles that carry words all have dark values
+  and are measured. Borders, backgrounds and decoration inks are still reached for in the base
+  ramp in about two dozen places — hairlines and fills that lose contrast against an ink ground
+  and read as absent rather than as unreadable. `register.test.ts` gates the `color:` case and
+  deliberately not the rest, because giving each of those a night value means re-judging it in
+  both palettes, which is a piece of design work and not a rename.
+
+  *What a second consumer would change.* Everything above describes one repository porting one
+  system by hand. If the design system ever ships its tokens as a package, the mirror and the
+  departures file become the wrong instrument — a fork with a changelog rather than a
+  dependency with a version — and this record is where somebody should come to find out what
+  the departures were before deciding whether to keep them.
+status: accepted
+date: "2026-09-05"
