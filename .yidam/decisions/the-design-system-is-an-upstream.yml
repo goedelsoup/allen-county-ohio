@@ -1,10 +1,10 @@
 id: the-design-system-is-an-upstream
 summary: >-
   The site's token layer is a hand port of a design system this repository does not own, and for
-  five days it had no pin, no mirror and no return path. Five findings are recorded here — two
+  five days it had no pin, no mirror and no return path. Six findings are recorded here — two
   corrections already made locally, three gaps the system leaves that this repository filled by
-  deriving. `design/` is the return address; `design-push` is the act, and it waits on the
-  elector.
+  deriving, and one palette that measures as neither of the two things its own heading offers.
+  `design/` is the return address; `design-push` is the act, and it waits on the elector.
 context: |
   The Allen County Atlas design system is a project at claude.ai/design, id
   `4f74bdb5-feb9-4d1f-98b5-7f752049cb53`. It is not a git repository, has no commit and no
@@ -274,6 +274,38 @@ decision: |
   What upstream would need: the `@import` deleted, since it duplicates the `@font-face` block
   below it; the remaining weights and italics declared; and the NOTE promoted from a comment to
   something a consumer meets before wiring a CDN link around the file rather than after.
+
+  **Finding 6 — the era ramp is not a ramp, and has no night values.** Not yet filed.
+
+  `colors.css` ships six inks under the heading *Era ramp (period coding, oldest to newest)*.
+  They sat unused from the port until the map gained a time axis, and putting them to work meant
+  measuring them for the first time. They are neither of the two things the word *ramp* offers a
+  consumer.
+
+  As a **categorical** palette they fail on every check but contrast: the worst adjacent pair
+  reaches ΔE 1.9 under protanopia in daylight and 1.8 under deuteranopia at night, and 6.7 for a
+  reader with full colour vision. `--era-1940` and `--era-1980` are indistinguishable to a
+  protanope, and `--era-pre1820` and `--era-1820` are hard for anyone. As a **sequential** scale
+  they fail too: OKLab lightness runs 0.48, 0.53, 0.51, 0.51, 0.37, 0.42, which is monotonic in
+  neither direction, so two steps cannot be ordered by looking at them.
+
+  What they *are* is six nineteenth-century map inks, and as that they are good — they are why
+  the travelling map reads as a printed county plate rather than as a dashboard. So this site
+  uses them the way they work: **one tint at a time on the map, and a bar under a tile that
+  prints its own name and years.** Six side by side, asked to be told apart by hue, is a chart
+  nobody can read. It is the same rule the status marks already live under here, and
+  `contrast.test.ts` now fails if the ramp is ever made monotonic — which would mean it had
+  become a scale and could be used as one.
+
+  They also had no dark values, and are the one set in the palette that could not be given one
+  by walking further down a ramp: they are standalone literals, so there is no other end to
+  take. Each is relit at OKLab L 0.74 in `dark.css`, clearing 3:1 on all four night grounds and
+  4.5:1 on three. Without them the axis would have kept its daylight inks on an ink ground —
+  the defect the locator plate shipped with, at six times the size.
+
+  What upstream would need: the heading changed from *ramp* to what these are, a stated rule that
+  they are never a discrimination task, and six night values or an explicit statement that a
+  consumer must derive their own.
 rationale: |
   **Why a directory rather than a note in a commit message.**
 
