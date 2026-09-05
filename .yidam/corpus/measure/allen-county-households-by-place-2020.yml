@@ -1,0 +1,110 @@
+class: measure
+label: Allen County households by township and city, 2020
+description: |
+  **Married couples run from 69.8 per cent of households in Amanda Township to 26.1 per cent in
+  Lima, and the thirteen units of this county are the whole range in one county.** Amanda's 535
+  married-couple households of 766 against Lima's 3,713 of 14,237. [verified] —
+  [the 2020 characteristics file](../../catalog/census-2020-dhc.md), table P16, by county
+  subdivision.
+
+      2020                     households   married   alone   multigenerational
+      Amanda township                 766     69.8%   16.1%               1.57%
+      Auglaize township             1,048     62.4%   21.0%               2.58%
+      Jackson township              1,210     61.3%   20.4%               3.31%
+      Sugar Creek township            473     61.1%   19.9%               2.96%
+      Monroe township                 807     60.2%   23.0%               2.35%
+      Richland township             2,135     57.8%   27.4%               2.06%
+      Shawnee township              4,961     57.6%   23.3%               2.64%
+      Marion township               2,649     54.5%   27.6%               1.62%
+      Bath township                 3,823     49.5%   28.4%               3.45%
+      Spencer township              1,167     48.1%   26.0%               3.00%
+      American township             6,242     45.9%   31.5%               3.11%
+      Perry township                1,417     45.0%   31.7%               3.39%
+      Lima city                    14,237     26.1%   36.7%               3.95%
+      Allen County                 40,935     43.8%   30.2%               3.18%
+
+  **Every column of that table sums to the county with no residual.** Households, married couples,
+  one-person households, female-headed families, multigenerational households, same-sex couple
+  households and cohabiting-couple households: seven totals, thirteen rows each, seven exact
+  closures. [verified] — the same file, the thirteen subdivision records added here. The 2020
+  census protects most of what it publishes by adding noise, and whatever it did to these cells it
+  did without breaking the hierarchy at this grain.
+
+  **1,302 of Allen County's households hold three or more generations.** That is 3.18 per cent,
+  against 3.24 for Ohio, and it is the highest in Lima at 3.95 per cent and the lowest in Amanda
+  Township at 1.57. [verified] — the same file, table PCT14. The county's urban part is at 3.42 per
+  cent and its rural part at 2.60.
+
+  **The survey that describes everything else about this county does not publish this.** B11017 of
+  the American Community Survey asks the same question and is published for the United States and
+  the fifty-two state-level geographies and for nothing smaller — 53 rows, no county, no
+  suppression marker. [verified] —
+  [the survey](../../catalog/census-acs-summary-file.md), its own geography column counted; see
+  [a table can stop short of its file](../../decisions/a-table-can-stop-short-of-its-file.yml).
+
+  **242 households in Allen County are a same-sex couple, and this is the first count of them in
+  this corpus.** 106 married and 136 unmarried partners; of the married, 33 are two men and 73 are
+  two women. [verified] — the same file, table PCT15. Ohio's figure is 35,640 of 4,808,773, so the
+  county's 0.59 per cent sits below the state's 0.74. Lima holds 104 of the county's 242.
+
+  **3,141 households are an unmarried couple, and 1,203 of them are raising children.** [verified] —
+  the same file, tables PCT15 and P20. Against 17,911 married-couple households and 5,887
+  married-couple households with own children under eighteen, that is one cohabiting couple for
+  every 5.7 married ones and one cohabiting household with children for every 4.9.
+
+  **The county's women who live alone are older than its men who do.** 6,489 women and 5,884 men
+  live alone; 3,517 of the women are sixty-five or over against 1,821 of the men, so among people
+  living alone past sixty-five women outnumber men 1.93 to one, and under sixty-five men outnumber
+  women 4,063 to 2,972. [verified] — the same file, table PCT16.
+
+  **The small cells here are protected and the small places are where the protection bites.**
+  [inference] The county's 242 same-sex couple households is a figure worth quoting and Monroe
+  Township's three is not: at that size the noise the Bureau adds is the same order as the count,
+  and the file publishes no interval to say so. The township column of the same-sex and
+  multigenerational tables is reproduced above because it sums, not because any one of its cells is
+  a count. See
+  [the total is enumerated and the split is not](../../decisions/the-total-is-enumerated-and-the-split-is-not.yml).
+
+  This file **does not establish** any figure in it except the county's total housing units.
+
+  [open] Whether Lima's multigenerational share is high because the city is poor, because it is
+  young, or because it is where the county's Black households are. PCT14 has a race-of-householder
+  series and it was not read; the crossing with income does not exist in this file at all.
+
+properties:
+  parameter: household type, multigenerational and coupled households by county subdivision
+  value: "1302"
+  unit: multigenerational households, of 40,935
+  as_of: "2020"
+  method: |
+    Records are selected from the state file's geographic header by summary level and geographic
+    component: 050 with component 00 for the county, 060 with component 00 for each of the thirteen
+    subdivisions, 01 and 43 for the county's urban and rural parts. [verified] A subdivision record
+    and a place record for Lima carry identical household figures and only the subdivision record is
+    used, so the city is counted once. [verified] Cell positions come from the file's own table
+    matrix: a segment's fields are its matrix rows in matrix order, offset by the five that repeat
+    the file identification and the logical record number. [verified] Household type is segment 13,
+    the presence and children tables segment 15, multigenerational households segment 38, coupled
+    and nonfamily households segment 39. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: allen-county-households-1970-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: allen-county-household-composition-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-vacancy-status-2010-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
