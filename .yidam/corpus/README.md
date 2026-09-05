@@ -134,6 +134,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-commissioners-1831-1920.yml](measure/allen-county-commissioners-1831-1920.yml) | measure | The Allen County board of commissioners, 1831–1920 | 3 | 14v / 2i / 2o | 112 |
 | [allen-county-common-pleas-bench-1833-1920.yml](measure/allen-county-common-pleas-bench-1833-1920.yml) | measure | The Allen County common pleas bench, 1833–1920 | 3 | 13v / 2i / 2o | 109 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 4 | 7v / 9i / 0o | 131 |
+| [allen-county-conduit-debt-2010-2023.yml](measure/allen-county-conduit-debt-2010-2023.yml) | measure | Conduit debt issued in Allen County's name, 2010–2023 | 6 | 12v / 1i / 1o | 111 |
 | [allen-county-congregations-2020.yml](measure/allen-county-congregations-2020.yml) | measure | Allen County's congregations, 2020 | 2 | 6v / 4i / 1o | 79 |
 | [allen-county-course-offerings-2013-2021.yml](measure/allen-county-course-offerings-2013-2021.yml) | measure | What Allen County's high schools offer, 2013–2021 | 6 | 14v / 3i / 1o | 134 |
 | [allen-county-court-caseloads-2007-2017.yml](measure/allen-county-court-caseloads-2007-2017.yml) | measure | Allen County court caseloads, 2007–2017 | 5 | 8v / 4i / 1o | 92 |
@@ -209,6 +210,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
 | [allen-county-in-state-prison-1983-2019.yml](measure/allen-county-in-state-prison-1983-2019.yml) | measure | People sent to state prison from Allen County, 1983–2019 | 5 | 9v / 6i / 1o | 90 |
+| [allen-county-in-the-federal-finance-file-2022.yml](measure/allen-county-in-the-federal-finance-file-2022.yml) | measure | What the federal finance survey knows about Allen County, 2022 | 6 | 10v / 4i / 1o | 108 |
 | [allen-county-in-the-general-assembly-2000-2020.yml](measure/allen-county-in-the-general-assembly-2000-2020.yml) | measure | Allen County in the Ohio General Assembly, 2000–2020 | 3 | 8v / 1i / 1o | 79 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 4 | 9v / 1i / 0o | 82 |
 | [allen-county-institutional-population-2023.yml](measure/allen-county-institutional-population-2023.yml) | measure | Allen County's institutional population, 2019–2023 | 6 | 18v / 4i / 1o | 141 |
@@ -226,6 +228,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-libraries-2024.yml](measure/allen-county-libraries-2024.yml) | measure | Allen County's public libraries, 2024 | 5 | 7v / 3i / 1o | 88 |
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 6v / 5i / 1o | 77 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
+| [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 6 | 8v / 2i / 1o | 91 |
+| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 7 | 10v / 1i / 1o | 118 |
 | [allen-county-local-option-elections-2003-2012.yml](measure/allen-county-local-option-elections-2003-2012.yml) | measure | Local option liquor elections in Allen County, 2003–2012 | 4 | 13v / 3i / 1o | 107 |
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
 | [allen-county-manufactures-1939-1967.yml](measure/allen-county-manufactures-1939-1967.yml) | measure | Allen County manufactures, 1939–1967 | 2 | 12v / 8i / 1o | 121 |
