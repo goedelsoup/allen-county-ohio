@@ -1,0 +1,62 @@
+class: measure
+label: How long before the layoff Ohio received the notice, Allen County, 1996–2017
+description: |
+  The WARN Act requires sixty days' notice of a plant closing or mass layoff. **In twelve of this
+  county's twenty-three notices, covering 1,220 of the 2,624 workers, the day Ohio recorded
+  receiving the notice is less than sixty days before the layoff date printed beside it.**
+  [verified] — [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md); the
+  differences are computed here.
+
+      days between receipt and layoff        notices   workers
+      0 to 29                                      4       411
+      30 to 59                                     8       809
+      60 to 89                                     8     1,132
+      90 or more                                   3       272
+
+  **The shortest is nought.** Superior Forge & Steel of Lima, fifty-five workers: 7 February 2001
+  in the received column and 7 February 2001 in the layoff column. [verified] — same register. The
+  next three are twelve days at McDonald's Industrial Products of Spencerville with 140 workers,
+  eighteen at Tower Automotive of Bluffton with 210, and twenty-five at Experience Works in Lima
+  with six.
+
+  **Only three readings clear ninety days.** Continental Plastic Containers of Lima at 107, Kmart's
+  Lima store at 104, and Toledo Molding and Die of Delphos at 94 — 272 workers between them, a
+  tenth of the total. [inference] — computed from the register's two date columns.
+
+  **This node cannot say whether anybody gave late notice.** The Act requires notice to the
+  workers, to any representative of theirs, and to the state, and this register dates only the
+  third. A short interval here is equally consistent with a late notice to the floor, with a
+  timely notice filed late, with a letter logged slowly in Columbus, and with a layoff date that
+  moved after the notice went in. Two of those would be violations and two would not. See
+  [a receipt date is not a notice date](../../decisions/a-receipt-date-is-not-a-notice-date.yml).
+
+  **What the interval does establish is about the state's own position.** Rapid Response exists to
+  reach a workforce before it disperses, and on twelve of these twenty-three occasions the office
+  charged with that had under sixty days' warning, four times under thirty, once none at all.
+  [inference] — the reasoning is this corpus's, from the register's own dates.
+
+  **Five of the twenty-three look like filings timed to the statute and eighteen do not.** Two rows
+  sit exactly on sixty — H & C Milcor in 2005 and Reser's Fine Foods in 2013 — and three more at
+  sixty-one or sixty-two. The other eighteen are spread from nought to a hundred and seven with no
+  second cluster anywhere in the range. [inference] — computed from the register.
+properties:
+  parameter: notices received under sixty days before the layoff, Allen County
+  value: "12"
+  unit: notices of 23
+  as_of: "2017"
+  method: |
+    Both columns are the register's own: `Date Rcvd` and `Layoff Date`. Where a row gives a range
+    of layoff dates the first date in the range is used, which is the reading most favourable to a
+    long interval; the four rows affected are Lipari Foods in 2012, whose layoff column reads
+    "Beginning 7/1/2012", and three whose ranges begin on the date used here. One row, Lipari
+    Foods, carries no plain layoff date at all and its interval is measured to the beginning of the
+    stated range. No row was excluded. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-warn-notices-1996-2017.md
+  - target: allen-county-layoff-notices-1996-2017.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of

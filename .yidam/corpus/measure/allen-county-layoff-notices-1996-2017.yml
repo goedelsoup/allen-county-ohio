@@ -1,0 +1,109 @@
+class: measure
+label: Allen County layoff and closing notices, 1996–2017
+description: |
+  Every plant closing and mass layoff in this county that an employer notified the State of Ohio
+  about across twenty-two years. **Twenty-three notices, 2,624 workers.** [verified] —
+  [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md), read year by year.
+
+      received     company                                       town          affected  union
+      1996-12-09   Delphos Ohio Axle Plant                       Delphos            76   UPIU
+      1999-03-15   Continental Plastic Containers                Lima              100   —
+      1999-05-24   Harvard Industries                            Spencerville      104   UAW
+      2001-02-07   Superior Forge & Steel Corporation            Lima               55   USWA
+      2001-04-30   Grob Systems, Inc.                            Bluffton          120   —
+      2001-09-18   Spicer Driveshaft Manufacturing               Lima               75   UAW
+      2001-09-19   Holland Binkley Company, Axle Products        Delphos            98   PACE
+      2005-11-08   H & C Milcor, Inc.                            Lima              246   Iron Workers
+      2006-04-25   Tower Automotive, Inc.                        Bluffton          210   UAW
+      2006-05-25   Engineered Plastic Products, Inc.             Lima              179   UAW
+      2006-08-02   McDonald's Industrial Products                Spencerville      140   —
+      2006-10-12   Spencerville Metal Systems, LLC               Spencerville      213   UAW
+      2007-04-24   Marathon Electric Manufacturing Corporation   Lima              109   AFL-CIO
+      2007-06-29   Toledo Molding and Die, Inc.                  Delphos           115   UAW
+      2007-09-19   Mid Bus, Inc.                                 Bluffton           89   —
+      2007-10-24   INEOS Nitriles                                Lima              104   USWA
+      2008-06-04   Home Depot                                    Lima               80   —
+      2009-09-15   The Andersons                                 Lima              134   —
+      2009-10-15   Kmart Store #4301                             Lima               57   —
+      2011-03-14   International Brake Industries, Inc.          Lima              153   UAW Local 975
+      2012-05-11   Lipari Foods (I&K Distributors/Countryside)   Delphos            57   —
+      2013-07-15   Reser's Fine Foods                            Delphos           104   —
+      2016-06-06   Experience Works (Green Thumb)                Lima                6   —
+
+  [verified] — same registers; the dates are the day Ohio recorded receiving each notice and the
+  counts are the number of workers each employer said would be affected.
+
+  **Twelve of the twenty-three are in Lima and account for 1,298 of the workers.** Delphos has
+  five and 450, Spencerville three and 457, Bluffton three and 419 — so the eleven notices outside
+  Lima cover 1,326 workers against the city's 1,298, and Spencerville's three account for more
+  workers than Delphos's five. [inference] — counted from the table above, against
+  [Spencerville](../place/spencerville.yml) and [Delphos](../place/delphos.yml).
+
+  **Ten of the twenty-two years have no notice at all**, and they are not the years a reader would
+  guess: 1997, 1998, 2000, 2002, 2003, 2004, **2010**, 2014, 2015 and 2017. [inference] — same
+  table. 2010 is the year Allen County manufacturing employment reached what this corpus once
+  called its floor.
+
+  **Two years carry forty-four per cent of the whole record.** 2006 and 2007 have eight notices and
+  1,159 workers between them, against fifteen notices and 1,465 workers in the other twenty years.
+  [inference] — computed from the table above. Four of those eight are plants making things out of
+  metal or plastic for somebody else's assembly line.
+
+  **The largest single notice is not a factory closing.** H & C Milcor of Lima, 246 workers, filed
+  in November 2005 — larger than Spencerville Metal Systems at 213, Tower Automotive at 210 and
+  Engineered Plastic Products at 179. [inference] — same table.
+
+  **One plant is in this register twice, seven years and two owners apart, and the register does
+  not say so.** Harvard Industries of Spencerville filed for 104 workers in 1999 and Spencerville
+  Metal Systems, LLC filed for 213 in 2006, and both rows give the contact number
+  (419) 647-4101. The file has no identifier for a place of work; the phone column is the only
+  thing that joins them. [verified] — the two rows; see
+  [the register](../../catalog/ohio-warn-notices-1996-2017.md).
+
+  **The recession produced three notices here and every one of them was a shop.** Home Depot in
+  2008, The Andersons and Kmart in 2009, 271 workers between them, and nothing from any factory in
+  2008, 2009 or 2010. [inference] — same table. That is the opposite of the shape the county's
+  employment series has for those years, and it is what a threshold looks like from underneath:
+  manufacturing here shed 1,246 jobs between 2008 and 2010 without one of the losses being large
+  enough, or sudden enough, to be a WARN event. [inference] — against
+  [the manufacturing series](allen-county-manufacturing-employment-1986-2022.yml).
+
+  **Nine of the twenty-three notices give a contact number outside Ohio** — Missouri, Michigan
+  twice, Kansas, Illinois, Michigan again, Oregon, Virginia and Georgia. Thirteen give a 419
+  number and one a Cincinnati number. [inference] — read from the registers' phone column, which
+  is the employer's contact for the notice and not necessarily where the decision was taken.
+
+  **This node cannot say how many people actually lost work.** The count in each row is the number
+  an employer stated in advance, and the register records no outcome: no revision, no recall, no
+  final separation figure. Two of these employers filed and the plant is still working.
+properties:
+  parameter: workers named in WARN notices, Allen County
+  value: "2624"
+  unit: workers
+  as_of: "2017"
+  method: |
+    Twenty-two annual files read from the Internet Archive, the agency's own paths having gone to
+    404. Rows were matched on this county's place names and every match was read whole: the
+    machine pass matches `Montgomery` on `Gomer`, `North Lima` on `Lima` and `Challenge
+    Industries` on `Allen`, and three company names had to be recovered from the line above their
+    own row. Eight of the twenty-three name a town that straddles a county line — Delphos in Allen
+    and Van Wert, Bluffton in Allen and Hancock — and only two of those eight carry the state's own
+    `(Allen)` marking; the rest are attributed to this county by the town's name alone. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-warn-notices-1996-2017.md
+  - target: ../place/lima.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-warn-notices-1996-2017.md
+  - target: allen-county-manufacturing-employment-1986-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-layoff-notice-intervals-1996-2017.yml
+    relationship: concerns
+  - target: allen-county-unions-in-layoff-notices-1996-2017.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of
