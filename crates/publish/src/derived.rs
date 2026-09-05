@@ -14455,6 +14455,209 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &[],
         figures: &[],
     },
+    Assertion {
+        id: "eighty-seven-wells-have-a-record",
+        statement: "Allen County has ninety groundwater wells on the federal register and \
+                    eighty-seven of them have a water level on record \u{2014} 904 readings between \
+                    October 1962 and July 2026. The register had been in this catalog for four days \
+                    before anybody asked what was in them.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**Eighty-seven of the county's ninety groundwater wells have a water level on record, and the record is 904 readings across sixty-four years.**"),
+        ],
+        answers: &["does not assert that the county's water table is falling"],
+        figures: &[
+            Figure { label: "readings", value: 904.0, literal: "904" },
+        ],
+    },
+    Assertion {
+        id: "eight-hundred-of-them-are-one-year",
+        statement: "Eight hundred and three of the county's 904 groundwater readings were taken in \
+                    1998. Thirty cover the thirty-six years before it. Sixty-eight wells were read \
+                    five times across five days that October, which is the shape of an aquifer test \
+                    rather than a monitoring network.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**Eight hundred and three of the 904 are from 1998.** Thirty readings cover the thirty-six years from October 1962 to April 1997. Then one year holds seventy-five wells and forty days of work \u{2014} 383 readings at 68 wells across five days in October alone, and 258 at 28 wells across four days in December. Then nothing until 2010."),
+        ],
+        answers: &["does not assert that the county's water table is falling"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eighty-nine-wells-and-one-instrument",
+        statement: "Every groundwater reading taken in Allen County since 1998 comes from a single \
+                    well. All seventy-one of them, between July 2010 and July 2026, are from AL-5 in \
+                    Shawnee Township, which the state reads four or five times a year. Eighty-nine \
+                    wells and one instrument.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**Every reading taken in this county since 1998 is from one well.** All seventy-one of them, between 23 July 2010 and 16 July 2026, are from AL-5, a well in"),
+        ],
+        answers: &["does not assert that the county's water table is falling"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eleven-and-a-half-feet",
+        statement: "The water in that well has fallen eleven and a half feet. Its mean depth to \
+                    water was 21.61 feet below the surface across its first three years and 33.30 \
+                    across its last three \u{2014} a fall of 11.70 feet, at a fitted 0.849 feet a \
+                    year, with an R\u{b2} of 0.81.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**The water in it has fallen eleven and a half feet.** Its mean depth to water was 21.61 feet below land surface across its first three years and 33.30 across its last three, a drop of 11.70 feet, at a fitted 0.849 feet a year with an R\u{b2} of 0.81."),
+        ],
+        answers: &["does not assert that the county's water table is falling"],
+        figures: &[
+            Figure { label: "2010\u{2013}2012 mean", value: 21.61, literal: "21.61" },
+            Figure { label: "2024\u{2013}2026 mean", value: 33.3, literal: "33.30" },
+        ],
+    },
+    Assertion {
+        id: "three-times-faster-than-any-neighbour",
+        statement: "The same state agency reads one or two wells in each of the six counties around \
+                    this one, in the same aquifer, at the same cadence, published in the same file. \
+                    They run from a fall of 0.283 feet a year to a rise of 0.125. Allen County's \
+                    falls at 0.849 \u{2014} three times the fastest of the eight \u{2014} and is the \
+                    only one of the nine whose decline is a line rather than a scatter.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**It falls three times as fast as any well around it and it is the only one that falls in a line.** The same agency reads one or two wells in each of the six adjoining counties, in the same national aquifer, at the same cadence, published in the same file."),
+            support!("measure/allen-county-groundwater-1962-2026.yml", "In figures: the eight neighbour wells run from a fall of 0.283 feet a year at Auglaize's AU-4 to a rise of 0.125 at Hardin's HN-1, with Mercer's MR-2 at 0.254 and Van Wert's VW-1 at 0.175, against 0.849 here; their median R\u{b2} is 0.15 against 0.81."),
+        ],
+        answers: &["does not assert that the county's water table is falling"],
+        figures: &[
+            Figure { label: "Allen AL-5", value: 0.849, literal: "0.849" },
+            Figure { label: "Auglaize AU-4", value: 0.283, literal: "0.283" },
+            Figure { label: "Mercer MR-2", value: 0.254, literal: "0.254" },
+            Figure { label: "Van Wert VW-1", value: 0.175, literal: "0.175" },
+        ],
+    },
+    Assertion {
+        id: "forty-three-wells-in-one-township",
+        statement: "The county's groundwater instruments are not spread across it. Thirty-six of the \
+                    eighty-seven measured wells stand within two kilometres of one point near \
+                    Southworth and carry 571 of the 904 readings; forty-three of the ninety are in \
+                    Amanda Township alone. Bath, Perry and Sugar Creek townships and the city of \
+                    Lima have none.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**The 1998 campaign is concentrated on one point and the file does not say what is there.** Thirty-six of the eighty-seven measured wells stand within two kilometres of 40.755\u{b0}N, 84.331\u{b0}W \u{2014} near Southworth, on the Marion\u{2013}Spencer\u{2013}Amanda township corner \u{2014} and carry 571 of the 904 readings, 562 of them in 1998. Forty-three of the county's ninety wells are in"),
+            support!("measure/allen-county-groundwater-1962-2026.yml", "**Three townships and the city have no well at all.**"),
+        ],
+        answers: &["does not assert that the county's water table is falling"],
+        figures: &[
+            Figure { label: "their readings", value: 571.0, literal: "571" },
+        ],
+    },
+    Assertion {
+        id: "seven-thousand-acres-of-wetland",
+        statement: "The federal wetlands inventory maps 7,361 acres of wetland in Allen County \
+                    \u{2014} eleven and a half square miles, 2.83 per cent of the county \u{2014} in \
+                    4,539 polygons. It is the fifth federal file to measure wetland on this ground.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-wetlands-2026.yml", "**The federal wetlands inventory maps 7,361 acres of wetland in Allen County \u{2014} 11.50 square miles, 2.83 per cent of it \u{2014} in 4,539 polygons.**"),
+        ],
+        answers: &["does not establish when any of this was mapped"],
+        figures: &[
+            Figure { label: "acres of wetland", value: 7361.0, literal: "7,361" },
+            Figure { label: "polygons", value: 4539.0, literal: "4,539" },
+        ],
+    },
+    Assertion {
+        id: "two-fifths-of-it-is-dug-or-dammed",
+        statement: "Two fifths of that wetland is an earthwork. 2,231.8 acres are coded excavated, \
+                    722.5 diked or impounded, 66.6 partly drained or ditched \u{2014} 2,954 acres of \
+                    7,361 \u{2014} and the single largest code in the county is dug pond, at 1,288.8 \
+                    acres. The layer's plain-English rollup calls every one of them a Pond or a \
+                    Lake.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-wetlands-2026.yml", "**Two fifths of it is dug or dammed.** 2,231.8 acres carry the Cowardin modifier `x`, excavated; 722.5 carry `h`, diked or impounded; 66.6 carry `d`, partly drained or ditched. That is 2,954.3 acres of 7,361, and the single largest code in the county is `PUBGx` at 1,288.8 acres \u{2014} dug ponds."),
+        ],
+        answers: &["does not establish when any of this was mapped"],
+        figures: &[
+            Figure { label: "excavated", value: 2231.8, literal: "2,231.8" },
+            Figure { label: "diked or impounded", value: 722.5, literal: "722.5" },
+            Figure { label: "drained or ditched", value: 66.6, literal: "66.6" },
+        ],
+    },
+    Assertion {
+        id: "the-marsh-is-four-hundred-acres",
+        statement: "The class that means standing herbaceous marsh \u{2014} the thing the word swamp \
+                    is reaching for \u{2014} comes to 425.9 acres in Allen County, sixteen \
+                    hundredths of one per cent of it. The earliest land surveys of the same ground \
+                    mapped 22,433.9 acres of elm-ash swamp forest.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-wetlands-2026.yml", "**The marsh is four hundred and twenty-six acres.** Freshwater Emergent Wetland \u{2014} the class that means standing herbaceous wetland, the thing the word swamp is reaching for \u{2014} is 425.9 acres, **0.16 per cent of the county**. [verified] \u{2014} the same source. The earliest land surveys of this ground mapped 22,433.9 acres of elm-ash swamp forest."),
+        ],
+        answers: &["does not establish when any of this was mapped"],
+        figures: &[
+            Figure { label: "emergent marsh now", value: 425.9, literal: "425.9" },
+            Figure { label: "swamp forest at survey", value: 22433.9, literal: "22,433.9" },
+        ],
+    },
+    Assertion {
+        id: "five-files-and-a-factor-of-two-thousand",
+        statement: "Five federal files measure wetland on this ground and no two agree. The soil \
+                    survey rates 91,953 acres hydric; the original-vegetation map draws 22,433.9 \
+                    acres of swamp forest; the wetlands inventory maps 7,361 acres of wetland and \
+                    425.9 of marsh; the Cropland Data Layer finds 704 acres; the hydrography file \
+                    draws 42. Each is right about its own question.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-wetlands-2026.yml", "**This is the fifth federal file to measure wetland on this ground, and the five span a factor of two thousand one hundred and eighty-nine.** [verified] \u{2014} the same source against"),
+        ],
+        answers: &["does not establish when any of this was mapped"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-hydrography-files-ten-times-apart",
+        statement: "Two federal polygon maps of water on the same ground disagree by a factor of ten \
+                    on the same class. The hydrography file draws 42.0 acres of swamp or marsh in \
+                    Allen County; the wetlands inventory draws 425.9 acres of emergent wetland. \
+                    Neither is a subset of the other, and what separates them is purpose: one maps \
+                    water bodies for a flow network and the other maps habitat.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-wetlands-2026.yml", "**The two hydrography products disagree by a factor of ten on the same class.** The National Hydrography Dataset draws 42.0 acres of swamp or marsh here; this file draws 425.9 acres of emergent wetland. Both are federal, both are polygon maps of water on the same ground, and neither is a subset of the other."),
+        ],
+        answers: &["does not establish when any of this was mapped"],
+        figures: &[
+            Figure { label: "hydrography file", value: 42.0, literal: "42.0" },
+            Figure { label: "wetlands inventory", value: 425.9, literal: "425.9" },
+        ],
+    },
+    Assertion {
+        id: "nine-polygons-are-the-citys-water",
+        statement: "Nine polygons hold eighteen per cent of the county's mapped wetland. The Lake \
+                    class has nine features and 1,366.2 acres, of which 900.9 are coded excavated \
+                    and 465.3 impounded. They are Lima's reservoirs, and the largest water in this \
+                    county is one the city pumped full.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-wetlands-2026.yml", "**Nine polygons hold eighteen per cent of it, and they are the city's water.** The Lake class has nine features and 1,366.2 acres, of which 900.9 are `L1UBHx` \u{2014} excavated \u{2014} and 465.3 `L1UBHh`, impounded."),
+        ],
+        answers: &["does not establish when any of this was mapped"],
+        figures: &[
+            Figure { label: "excavated lake acres", value: 900.9, literal: "900.9" },
+            Figure { label: "impounded lake acres", value: 465.3, literal: "465.3" },
+        ],
+    },
+    Assertion {
+        id: "what-is-left-of-the-swamp",
+        statement: "Allen County lies on the southern margin of the Great Black Swamp. What is left \
+                    of it on the federal wetland map is 425.9 acres of marsh \u{2014} one acre in \
+                    fifty-three of the elm-ash swamp forest the first surveyors walked \u{2014} and \
+                    two fifths of the rest of the county's wetland was dug or dammed by somebody.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/great-black-swamp.yml", "**What is left of it, on the federal wetland map, is four hundred and twenty-six acres.** The National Wetlands Inventory draws 7,361 acres of wetland in this county \u{2014} 2.83 per cent of it \u{2014} of which 425.9 acres, 0.16 per cent, are emergent wetland, the class that means standing herbaceous marsh. Two fifths of the rest is excavated, diked or ditched."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

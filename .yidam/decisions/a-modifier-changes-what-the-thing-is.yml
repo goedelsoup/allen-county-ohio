@@ -1,0 +1,71 @@
+id: a-modifier-changes-what-the-thing-is
+summary: >-
+  Two fifths of the wetland the federal inventory maps in Allen County — 2,954 acres of 7,361 — is
+  excavated or impounded. The layer's plain-English rollup calls a farm pond a Freshwater Pond and
+  a city reservoir a Lake, and a total built from that rollup is a statement about earthworks in a
+  county that was swamp. Where a classification carries a suffix that changes the kind of the
+  object, the suffix is part of the class.
+context: |
+  The National Wetlands Inventory writes each polygon a Cowardin code, and the code is built in
+  order: system, subsystem, class, water regime, then modifiers. The modifiers are single lowercase
+  letters at the end and they are not adjectives:
+
+      PEM1C     palustrine emergent persistent, seasonally flooded          a marsh
+      PUBGx     palustrine unconsolidated bottom, intermittently exposed,   a dug pond
+                EXCAVATED
+      L1UBHh    lacustrine limnetic unconsolidated bottom, permanently
+                flooded, DIKED OR IMPOUNDED                                 a reservoir
+      PFO1Ad    palustrine forested broad-leaved deciduous, temporarily
+                flooded, PARTLY DRAINED OR DITCHED                          drained wet woods
+
+  The layer also publishes a five-value rollup, `WETLAND_TYPE`, which is what a reader sees on the
+  map. `PUBGx` and `PUBG` are both **Freshwater Pond**. `L1UBHx` and `L1UBH` are both **Lake**. The
+  rollup drops the modifier, and the modifier is the difference between a wetland and a hole.
+
+  In this county the difference is most of the map:
+
+      x  excavated                       2,231.8 acres   30.3%
+      h  diked or impounded                722.5          9.8%
+      d  partly drained or ditched          66.6          0.9%
+      no modifier                        4,337.3         58.9%
+
+  The single largest code here is `PUBGx` at 1,288.8 acres — dug ponds — and the second-largest
+  lacustrine code is `L1UBHx` at 900.9, which is [Lima's water supply](../corpus/measure/allen-county-water-systems-2026.yml)
+  and was pumped full out of a borrow pit.
+decision: |
+  **Read the modifier before the class, and publish the split.**
+
+  1. **Never total a rollup column when the source publishes a code the rollup collapses.** The
+    figure this corpus publishes for wetland in Allen County is 7,361 acres *and* the statement
+    that 2,954 of them are excavated or impounded. Either number alone misdescribes the ground.
+  2. **Say which modifier.** Excavated, diked and drained are three different histories: a dug
+    pond was never wetland, an impounded one was flooded on purpose, a ditched one was wetland
+    and was worked on. They are not one category called "artificial".
+  3. **A modifier is not a data-quality flag.** [A flag column is part of the
+    figure](a-flag-column-is-part-of-the-figure.yml) governs a column that says how well a value is
+    known. This governs a column that says what the value is *of*. The remedy is the same shape and
+    the failure is not: there the aggregate hides an unreliable cell, here the aggregate hides a
+    different object.
+  4. **Where a rollup exists and the corpus uses it anyway, say why.** The five-class rollup is
+    what makes the county's wetland comparable to the hydrography file's classes, and this corpus
+    publishes both — the rollup for the comparison and the codes for the description.
+rationale: |
+  **Why it matters here specifically.** Allen County lies on the southern margin of the Great Black
+  Swamp, and the question a reader brings to a wetland map of it is *how much of the swamp is left*.
+  The rollup answers 7,361 acres, 2.83 per cent of the county. The codes answer that 425.9 acres —
+  0.16 per cent — are emergent marsh, and that more of the mapped wetland is dug than is anything
+  else. Those are answers to different questions and only one of them was asked.
+
+  **The failure generalises past wetlands.** A classification suffix that changes the kind of the
+  object is common in federal files and is usually the last field anyone reads: the census's
+  functional-status code, which separates a government that operates from one that exists on paper;
+  a land-cover class's "developed, open space", which is lawns; a mine's status field, which
+  separates a working face from a hole in the ground with a permit. In each the rollup is the number
+  people quote.
+
+  **The cost of the rule.** It makes every wetland figure two figures, and a table with two numbers
+  in every cell is harder to read than one. The corpus takes that cost because the one-number
+  version of this particular table would say that a drained county is three per cent wetland, which
+  is true of the map and false about the ground.
+status: accepted
+date: "2026-09-05"
