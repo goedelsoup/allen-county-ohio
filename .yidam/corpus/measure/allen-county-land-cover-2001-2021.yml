@@ -1,0 +1,103 @@
+class: measure
+label: Allen County land cover, 2001–2021
+description: |
+  Nine classifications of every thirty-metre pixel in the county, twenty years apart end to end.
+  **97.53 per cent of Allen County carried the same land cover class in 2021 as in 2001**, and the
+  6,339 acres that changed are 2.43 per cent of the ground. [verified] —
+  [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), 2001 and 2021, clipped
+  to the county boundary and counted here.
+
+      class                          2001 acres   2021 acres   change
+      Cultivated crops                  178,076      176,619   -1,457
+      Developed, open space              20,503       19,578     -925
+      Deciduous forest                   20,888       20,862      -26
+      Developed, low intensity           15,798       16,141     +343
+      Developed, medium intensity         7,175        8,923   +1,748
+      Pasture/hay                         8,226        7,315     -911
+      Developed, high intensity           3,310        4,052     +742
+      Open water                          2,206        2,607     +401
+      Grassland/herbaceous                2,016        1,934      -82
+      Woody wetlands                        969          973       +4
+      Emergent herbaceous wetlands          732          758      +26
+      Barren land                           132          201      +69
+      Mixed and evergreen forest            346          365      +19
+      Shrub/scrub                             5           55      +50
+      all classes                       260,382      260,382        0
+
+  [verified] — same source; the class names are the database's own legend and the acreages are
+  computed here at 900 square metres a pixel.
+
+  **The county is 70.6 per cent farmed, 18.7 per cent developed and 8.2 per cent wooded.** 183,934
+  acres of crops and pasture, 48,694 developed, 21,226 forest, 2,607 open water and 1,731 wetland.
+  [inference] — computed from the table above.
+
+  **Nothing here moves fast and one thing does not move at all.** The county's forest stood at
+  21,234 acres in 2001 and 21,226 in 2021 — a net change of eight acres in twenty years, on a class
+  that gained 434 acres and lost 442 across the eight epoch steps. [verified] — same source,
+  differenced epoch by epoch. It is not a still photograph; it is a class in equilibrium.
+
+  **Pasture is the class that actually fell.** 8,226 acres to 7,315, down 11.1 per cent, against
+  0.8 per cent off cultivated crops — and 802 acres of it went straight to cultivated crops rather
+  than to anything built. [verified] — same source, 2001 against 2021. Livestock ground became row
+  crop; see [the livestock](allen-county-livestock-2002-2022.yml).
+
+  **The wetland left in this county is 1,731 acres, and 973 of them are wooded.** Against 22,433.9
+  acres of swamp forest mapped at settlement, the woody wetland that survives is 4.3 per cent.
+  [inference] — computed against
+  [the original vegetation](allen-county-original-vegetation.yml). The drainage of the Great Black
+  Swamp is the largest single fact about this county's ground and this is the number that says how
+  complete it was.
+
+  **Two instruments disagree about marsh by a factor of eighteen.** This file puts 758 acres of
+  emergent herbaceous wetland in the county; the national hydrography puts 42.0 acres of mapped
+  marsh. [inference] — computed against
+  [the standing water](allen-county-standing-water-2026.yml). One is a classification of what a
+  satellite sees growing and the other is a feature somebody drew, and the corpus holds both
+  without averaging them.
+
+  **One epoch boundary in this series is a mapping change and it can be seen.** 183 acres go from
+  cultivated crops to open water between 2011 and 2013, against eight acres across the whole of
+  2001 to 2011 and none at all after 2013. [verified] — same source, differenced step by step. A
+  change confined to one boundary of a nine-epoch series is a property of the boundary, which is
+  why the open-water rise of 401 acres over the twenty years is not read here as 401 acres of new
+  water.
+
+  **This node does not establish that the county's ground was stable.** A land cover class is a
+  category, and a field that grew corn in 2001 and soybeans in 2021 is unchanged in this file and
+  changed in every way a farmer would count. What 97.53 per cent measures is the persistence of the
+  categories, not of the land use inside them.
+properties:
+  parameter: share of Allen County in the same land cover class in 2021 as in 2001
+  value: "97.53"
+  unit: per cent
+  as_of: "2021"
+  method: |
+    Nine coverages fetched from the MRLC coverage service, each clipped to a rectangle around the
+    county in NAD83 Conus Albers and then masked to the Census Bureau's own county polygon,
+    rasterised onto the coverage's grid. The mask burns 1,170,809 pixels, which at 900 square
+    metres is 260,382 acres — the Bureau's land-plus-water figure for this county to the acre, and
+    the control on whether the clip and the reprojection are right. Persistence is measured pixel
+    by pixel between the 2001 and 2021 grids; the change-count product supplied by the database
+    agrees, at 253,954 acres never changing. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-2008-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usda-cropscape-cdl.md
+  - target: allen-county-original-vegetation.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-standing-water-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-livestock-2002-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-developed-land-2001-2021.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of
