@@ -1,0 +1,80 @@
+class: measure
+label: What Allen County's houses are, 2023
+description: |
+  **Four houses in five here are a single detached building.** 34,491 of 44,697 units are one
+  unit detached and 1,211 more are one unit attached — 79.9 per cent against Ohio's 73.7 and the
+  nation's 67.5. [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates,
+  table B25024.
+
+      units in structure            Allen        Lima         Ohio           US
+      1, detached                  34,491      11,374    69.0%          61.4%
+      1, attached                   1,211         291     4.8            6.1
+      2                             1,599         854     3.7            3.4
+      3 or 4                        1,874       1,089     4.3            4.3
+      5 to 9                          961         656     4.6            4.6
+      10 to 19                        659         290     3.9            4.3
+      20 to 49                      1,155         452     2.2            3.7
+      50 or more                      847         563     4.1            6.4
+      mobile home                   1,900         233     3.5            5.7
+      boat, RV, van                     0           0      0.0            0.1
+
+  **The county has more mobile homes than it has flats in large buildings.** 1,900 against 847 in
+  buildings of fifty or more. [verified] — same source. That is 4.25 per cent of the stock, which
+  is above Ohio's 3.48 and below the nation's 5.69, and 55th of Ohio's 88 counties — this is not a
+  mobile-home county by the standards of the state that contains it. [inference]
+
+  **They are concentrated in four townships and absent from one.** Bath holds 664, 16.5 per cent of
+  its housing; Spencer 193 at 14.8, Perry 191 at 11.2, Shawnee 333 at 6.2. Amanda Township has
+  none. [verified] — the same source by county subdivision.
+
+  **1,332 of them are owned and 251 rented, so 317 stand empty** — a 16.7 per cent vacancy rate
+  against the county's 8.4. [verified] — the same source, B25032 against B25024, computed here.
+
+  **Renting in Allen County mostly means renting a house.** 6,270 of the county's 12,968 renter
+  households are in a single detached building — 48.4 per cent, against 30.9 for Ohio and 25.5 for
+  the nation, and 21st of Ohio's 88 counties. Inside Lima it is 51.2 per cent. [verified] — the same
+  source, B25032. The corpus's picture of a renter here has been a subsidised flat; half of them
+  are in a house with a yard. [inference] — see
+  [the subsidised housing](allen-county-subsidized-housing-2005-2025.yml).
+
+  **And owning almost never means owning a flat.** 129 owner households in the whole county are in
+  a building of five units or more. [verified] — the same source. There is effectively no
+  condominium market here, which is the other half of what
+  [the price index](allen-county-house-prices-1975-2025.yml) has been describing.
+
+  **The houses are big and the city's are smaller.** The median Allen County unit has 6.0 rooms
+  against Ohio's 5.9 and the nation's 5.5; Lima's has 5.6. 21,106 units — 47.2 per cent — have
+  three bedrooms, against 41.7 per cent for Ohio and 38.8 for the nation. [verified] — the same
+  source, B25018 and B25041.
+
+  **This file does not establish when any of these buildings arrived.** Units in structure is a
+  description of what stands, and a mobile home placed in 1972 and one placed last year are one
+  row. [inference] — see [when the housing was built](allen-county-housing-age-2023.yml), which is
+  the table that dates them and does not distinguish them.
+properties:
+  parameter: single-unit detached and attached housing, share of Allen County's stock
+  value: "79.9"
+  unit: per cent
+  as_of: "2023"
+  method: |
+    Table-based summary file, 2019–2023 five-year estimates, table B25024 over all housing units and
+    B25032 over occupied ones, with B25018 and B25041 for size. [verified] The empty mobile homes
+    are B25024 less B25032 cell by cell, a figure the survey does not publish. [inference] County
+    ranks are over all 88 Ohio county records in the same file. [verified] Shares in the table above
+    are of each geography's own total; the Allen and Lima columns are printed as counts because the
+    thirteen subdivisions close against the county row and the reader may want to add them.
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-housing-age-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-housing-stock-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

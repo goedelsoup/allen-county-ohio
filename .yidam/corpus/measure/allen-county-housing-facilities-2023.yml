@@ -1,0 +1,82 @@
+class: measure
+label: What is in Allen County's houses, 2023
+description: |
+  **1,326 of Allen County's 44,697 housing units lack complete plumbing facilities, and 101 of them
+  are lived in.** [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates,
+  tables B25047 over all housing units and B25049 over occupied ones. The margins are ±265 and ±53.
+
+  **So 1,225 of the county's 3,769 empty houses have no working plumbing — 32.5 per cent.** The
+  survey publishes that number nowhere; it is the difference between two universes. [inference] —
+  computed here; see
+  [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml),
+  which is the rule this follows.
+
+  **The kitchens say the same thing and are a separate question.** 1,682 units lack complete kitchen
+  facilities and 318 of those are occupied, so **1,364 empty houses — 36.2 per cent of them — have
+  no kitchen**. [verified] — the same source, B25051 against B25053. Two independent amenities agree
+  that about a third of this county's vacant housing is not habitable as it stands.
+
+  **In Lima it is a third and a bit more.** 662 of the city's 15,802 units lack plumbing and 40 are
+  occupied, so 622 of its 1,817 empty houses have none — 34.2 per cent; on kitchens 714, or 39.3.
+  [verified] — same source, same subtraction.
+
+  **What a renter is short of, and an owner is not.** 285 renter households in Allen County lack a
+  complete kitchen against 33 owner households — 2.20 per cent against 0.12, and the gap clears both
+  margins. [verified] — same source, B25053. Ohio's renters are at 1.78 per cent and the nation's at
+  1.60.
+
+  **Bottled gas is a map of the gas main.**
+
+      house heating fuel, occupied units    Allen    Lima   outside Lima
+      utility gas                          63.6%   72.5%          59.0%
+      electricity                          23.3    25.3           22.2
+      bottled, tank or LP gas               9.4     0.9           13.8
+      wood                                  1.7     0.3            2.5
+      fuel oil or kerosene                  0.9     0.2            1.2
+      coal or coke                            0       0              0
+
+  [verified] — the same source, B25040. **One home in seven outside the city burns gas somebody
+  delivered in a tank**, and 122 inside it. By township it runs from Sugar Creek's 56.0 per cent
+  and Jackson's 45.2 down to American's 2.6. [verified] — same source. Coal, which heated this
+  county through the era its histories describe, is zero to within a margin of thirty units.
+
+  **Three thousand one hundred and eighty-five households here have no car**, 7.8 per cent — 3.3
+  per cent of owners and 17.4 per cent of renters. Inside Lima it is 13.9 per cent of households
+  and **21.4 per cent of the city's renters**. [verified] — the same source, B25044. The county
+  ranks 19th of Ohio's 88 on it, and it has held no public transit node since genesis. [inference]
+
+  **Crowding is rare here and it is a renter's condition.** 779 occupied units hold more than one
+  person to the room, 1.90 per cent — 0.80 per cent of owner households against 4.29 of renter
+  ones. [verified] — the same source, B25014. Ohio is at 1.45 per cent and the nation at 3.40, so
+  this county is crowded for Ohio and uncrowded for America; it is 14th of 88.
+
+  **This file does not establish why any of these houses lacks a kitchen.** A house gutted for
+  renovation, a house whose fixtures were stripped, and a house never finished are one figure here.
+  [inference]
+properties:
+  parameter: housing units in Allen County lacking complete plumbing facilities
+  value: "1326"
+  unit: housing units
+  as_of: "2023"
+  method: |
+    Table-based summary file, 2019–2023 five-year estimates, tables B25047 and B25051 over all
+    housing units and B25049, B25053, B25040, B25044 and B25014 over occupied ones. [verified] The
+    vacant-unit figures are the all-units table less the occupied-units table cell by cell, which
+    the survey does not publish; their margins are the two margins in quadrature. [inference] Shares
+    outside Lima are the county row less the Lima city subdivision row, and the thirteen
+    subdivisions close against the county in every table used here. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-vacancy-status-2010-2020.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
