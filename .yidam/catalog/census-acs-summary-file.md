@@ -57,6 +57,20 @@ subdivisions close against the county row again — units 44,697, occupied 40,92
 owner-occupied 27,960, and every one of the eleven year-built bands — so the housing tables
 partition this county fifteen more times over. [verified]
 
+**And fourteen more, for what the buildings are.** B25004 vacancy status, B25014 crowding, B25017
+and B25018 rooms, B25024 and B25032 units in structure, B25038 year the householder moved in, B25040
+heating fuel, B25041 bedrooms, B25044 vehicles, and B25047, B25049, B25051 and B25053 for plumbing
+and kitchens. [verified] Four of those come in pairs that differ only in universe — all housing
+units against occupied ones — and the pairs are what let this corpus measure a vacant house's
+condition; see
+[the gap between two universes is a measurement](../decisions/the-gap-between-two-universes-is-a-measurement.yml)
+and [the facilities](../corpus/measure/allen-county-housing-facilities-2023.yml).
+
+**The labels come from the file's own documentation and not from elsewhere.**
+`documentation/ACS20235YR_Table_Shells.txt` gives every cell an indent, a label, a table title and a
+universe, and `documentation/Geos20235YR.txt` gives every `GEO_ID` its name. Both are pipe-delimited,
+neither needs a key, and the universe column is the one that matters. [verified]
+
 **Two of its sentinels turn up in the housing tables where they had not before.** Median gross rent
 returns `-666666666` for Amanda and Perry townships — the value is unavailable, not zero — and the
 margin column beside it reads `-222222222`. [verified] No figure in this corpus is taken from a

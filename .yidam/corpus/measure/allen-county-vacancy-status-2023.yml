@@ -1,0 +1,83 @@
+class: measure
+label: Why Allen County's housing was empty, 2019–2023
+description: |
+  The same seven categories [the census published for 1 April 2020](allen-county-vacancy-status-2010-2020.yml),
+  asked again by a survey across sixty months. [verified] —
+  [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates,
+  table B25004.
+
+      vacancy status                    2020 census      ACS 2019-2023      margin
+      all vacant units                        3,628              3,769       +/-413
+      other vacant                            1,312              2,837       +/-397
+      for rent                                1,265                378       +/-177
+      for sale only                             402                143        +/-81
+      sold, not occupied                        217                144
+      for seasonal or occasional use            256                169       +/-100
+      rented, not occupied                      176                 98
+      for migrant workers                         0                  0
+
+  **The two agree about how many houses are empty — 3,628 against 3,769 — and disagree by a factor
+  of three about what they are empty for: other vacant 1,312 against 2,837, and for rent 1,265
+  against 378.** The totals are 141 apart on a base of 3,700, inside the survey's own margin. The
+  residual class is 1,525 apart, nearly four times it. [verified] —
+  [the survey](../../catalog/census-acs-summary-file.md) against
+  [the 2020 characteristics file](../../catalog/census-2020-dhc.md), differenced here; see
+  [a vacancy reason is an observation](../../decisions/a-vacancy-reason-is-an-observation.yml),
+  which is the rule this corpus took from it.
+
+  **Under the survey the not-on-the-market class is three quarters of the county's empty housing.**
+  2,837 of 3,769, or 75.3 per cent, against 36.2 per cent in the census. That is **fourth of Ohio's
+  eighty-eight counties** and 246th of the 3,203 in the country. [verified] — the same file, all 88
+  Ohio county records and 3,203 national ones read here.
+
+  **On the same measure the census made this county ordinary.** Its other-vacant share of the whole
+  housing stock was 48th of 88 in 2020 and is 28th of 88 in the survey — 2.94 per cent against 6.35.
+  [verified] — [the survey](../../catalog/census-acs-summary-file.md) against
+  [the 2020 characteristics file](../../catalog/census-2020-dhc.md). A county's position in its
+  state depends on which federal instrument
+  is asked, and the corpus has published the census reading and now publishes this one beside it
+  rather than instead of it. [inference]
+
+  **Lima holds 1,475 of the 2,837 and 81.2 per cent of its own vacancy is in the class.** The
+  townships run from Sugar Creek's 93.9 per cent and Marion's and Perry's 89.3 down to Richland's
+  19.4 and Amanda's nil. [verified] — the same source by county subdivision. [inference] The four
+  lowest are the four with the least vacancy of any kind, so the share is unstable where the base is
+  small and the corpus states the counts beside it.
+
+  **What can be said about the same houses without an interviewer's judgment.** 1,225 of them have
+  no complete plumbing and 1,364 no complete kitchen — about a third either way. [verified] —
+  [the facilities](allen-county-housing-facilities-2023.yml). That is a condition of a building
+  rather than a reason assigned to it, and it is the nearest thing this corpus holds to a count of
+  houses nobody is going to live in.
+
+  **This node does not establish that abandonment rose between 2020 and 2023.** A count taken on one
+  day and an average over five years are not two points on a line, and the whole of the difference
+  here is in the class defined by exclusion. [inference]
+properties:
+  parameter: Allen County vacant housing units classed other vacant
+  value: "2837"
+  unit: housing units
+  as_of: "2023"
+  method: |
+    Table-based summary file, 2019–2023 five-year estimates, table B25004, whose universe is vacant
+    housing units. [verified] The 2020 column is table H5 of
+    [the census characteristics file](../../catalog/census-2020-dhc.md) as already published on
+    [the census node](allen-county-vacancy-status-2010-2020.yml), reprinted here for the comparison
+    and not recomputed. [verified] County ranks are over all 88 Ohio and 3,203 national county
+    records in the survey file; sixteen of the country's 3,219 counties are left out of the national
+    rank because their vacant-unit base is under a hundred. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-vacancy-status-2010-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-housing-facilities-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
