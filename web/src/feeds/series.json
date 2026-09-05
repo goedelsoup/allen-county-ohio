@@ -632,6 +632,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Allen-County-housing-units",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County housing units",
+      "unit": "housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-housing-1990.yml",
+          "label": "Allen County's housing in 1990",
+          "as_of": "1990",
+          "value": 42758.0,
+          "published": "42758",
+          "tier": "verified",
+          "source": "catalog/census-1990-housing-characteristics-ohio.md",
+          "method": "CH-1-37 and CH-2-37, Table 1, county summary rows, read from `pdftotext -layout` output. [verified] The volumes print shares against a base they also print, so counts recovered from a share carry the rounding of one decimal place — about twenty-one units on a base of forty-two thousand — and every such conversion here says \"about\". [inference] The 1990 owner-occupancy and room figures are from the complete count; plumbing, kitchen, telephone, vehicles and year built are from the sample and carry sampling error the volume does not print. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Allen-County-men-in-United-States-service,-Civil-War",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -708,6 +728,26 @@
           "tier": "verified",
           "source": "catalog/rusler-allen-county-1921.md",
           "method": "Every line of the printed honour roll matching `Surname, Given`, counted from the single digitization of the 1921 history. Two rejected lines were identified as wrapped continuations of accepted names and are not additional men. Overlap with the service roster computed on normalised surname plus first initial. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::Allen-County-vacant-housing-units-classed-other-vacant",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County vacant housing units classed other vacant",
+      "unit": "housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-vacancy-status-2023.yml",
+          "label": "Why Allen County's housing was empty, 2019–2023",
+          "as_of": "2023",
+          "value": 2837.0,
+          "published": "2837",
+          "tier": "verified",
+          "source": "catalog/census-acs-summary-file.md",
+          "method": "Table-based summary file, 2019–2023 five-year estimates, table B25004, whose universe is vacant housing units. [verified] The 2020 column is table H5 of [the census characteristics file](../../catalog/census-2020-dhc.md) as already published on [the census node](allen-county-vacancy-status-2010-2020.yml), reprinted here for the comparison and not recomputed. [verified] County ranks are over all 88 Ohio and 3,203 national county records in the survey file; sixteen of the country's 3,219 counties are left out of the national rank because their vacant-unit base is under a hundred. [verified]"
         }
       ]
     },
@@ -1918,6 +1958,26 @@
           "tier": "verified",
           "source": "catalog/census-acs-summary-file.md",
           "method": "Shares are computed here from published counts; the medians are published. [verified] The bands describe *surviving* housing, so a low count for an early decade is demolition and construction together and cannot be read as construction alone. [inference]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::housing-units-in-Allen-County-lacking-complete-plumbing-facilities",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "housing units in Allen County lacking complete plumbing facilities",
+      "unit": "housing units",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "label": "What is in Allen County's houses, 2023",
+          "as_of": "2023",
+          "value": 1326.0,
+          "published": "1326",
+          "tier": "verified",
+          "source": "catalog/census-acs-summary-file.md",
+          "method": "Table-based summary file, 2019–2023 five-year estimates, tables B25047 and B25051 over all housing units and B25049, B25053, B25040, B25044 and B25014 over occupied ones. [verified] The vacant-unit figures are the all-units table less the occupied-units table cell by cell, which the survey does not publish; their margins are the two margins in quadrature. [inference] Shares outside Lima are the county row less the Lima city subdivision row, and the thirteen subdivisions close against the county in every table used here. [verified]"
         }
       ]
     },
@@ -3608,6 +3668,26 @@
           "tier": "verified",
           "source": "catalog/census-building-permits.md",
           "method": "Thirty-six annual county files parsed on the row with state FIPS 39 and county FIPS 003. Units and value are summed across the four structure-size groups the survey publishes — 1-unit, 2-unit, 3-4 unit and 5+ unit — and the four sum to the file's own totals in every year, which is the check. Value is as reported, in the dollars of each year, and is never deflated or averaged across years. Decade averages are of the annual counts, not of a monthly series. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::single-unit-detached-and-attached-housing,-share-of-Allen-County's-stock",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "single-unit detached and attached housing, share of Allen County's stock",
+      "unit": "per cent",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "label": "What Allen County's houses are, 2023",
+          "as_of": "2023",
+          "value": 79.9,
+          "published": "79.9",
+          "tier": "verified",
+          "source": "catalog/census-acs-summary-file.md",
+          "method": "Table-based summary file, 2019–2023 five-year estimates, table B25024 over all housing units and B25032 over occupied ones, with B25018 and B25041 for size. [verified] The empty mobile homes are B25024 less B25032 cell by cell, a figure the survey does not publish. [inference] County ranks are over all 88 Ohio county records in the same file. [verified] Shares in the table above are of each geography's own total; the Allen and Lima columns are printed as counts because the thirteen subdivisions close against the county row and the reader may want to add them."
         }
       ]
     },
@@ -28159,6 +28239,768 @@
         }
       ],
       "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "four-houses-in-five-are-one-building",
+      "statement": "Four houses in five in Allen County are a single detached or attached building, against two in three nationally.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "node_label": "What Allen County's houses are, 2023",
+          "span": "**Four houses in five here are a single detached building.** 34,491 of 44,697 units are one unit detached and 1,211 more are one unit attached — 79.9 per cent against Ohio's 73.7 and the nation's 67.5. [verified] — [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates, table B25024.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish when any of these buildings arrived.** Units in structure is a description of what stands, and a mobile home placed in 1972 and one placed last year are one row."
+      ],
+      "figures": [
+        {
+          "label": "Allen County",
+          "value": 79.9,
+          "literal": "79.9"
+        },
+        {
+          "label": "Ohio",
+          "value": 73.7,
+          "literal": "73.7"
+        },
+        {
+          "label": "United States",
+          "value": 67.5,
+          "literal": "67.5"
+        }
+      ]
+    },
+    {
+      "id": "more-mobile-homes-than-flats-in-large-buildings",
+      "statement": "Allen County has 1,900 mobile homes and 847 flats in buildings of fifty units or more, and by the standards of its own state it is not a mobile-home county.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "node_label": "What Allen County's houses are, 2023",
+          "span": "**The county has more mobile homes than it has flats in large buildings.** 1,900 against 847 in buildings of fifty or more. [verified] — same source. That is 4.25 per cent of the stock, which is above Ohio's 3.48 and below the nation's 5.69, and 55th of Ohio's 88 counties — this is not a mobile-home county by the standards of the state that contains it. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish when any of these buildings arrived.** Units in structure is a description of what stands, and a mobile home placed in 1972 and one placed last year are one row."
+      ],
+      "figures": [
+        {
+          "label": "Mobile homes",
+          "value": 1900.0,
+          "literal": "1,900"
+        },
+        {
+          "label": "Flats in buildings of 50+",
+          "value": 847.0,
+          "literal": "847"
+        }
+      ]
+    },
+    {
+      "id": "where-the-mobile-homes-are",
+      "statement": "One house in six in Bath Township is a mobile home, and Amanda Township has none.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "node_label": "What Allen County's houses are, 2023",
+          "span": "**They are concentrated in four townships and absent from one.** Bath holds 664, 16.5 per cent of its housing; Spencer 193 at 14.8, Perry 191 at 11.2, Shawnee 333 at 6.2. Amanda Township has none. [verified] — the same source by county subdivision.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish when any of these buildings arrived.** Units in structure is a description of what stands, and a mobile home placed in 1972 and one placed last year are one row."
+      ],
+      "figures": [
+        {
+          "label": "Bath",
+          "value": 16.5,
+          "literal": "16.5"
+        },
+        {
+          "label": "Spencer",
+          "value": 14.8,
+          "literal": "14.8"
+        },
+        {
+          "label": "Perry",
+          "value": 11.2,
+          "literal": "11.2"
+        },
+        {
+          "label": "Shawnee",
+          "value": 6.2,
+          "literal": "6.2"
+        }
+      ]
+    },
+    {
+      "id": "one-mobile-home-in-six-stands-empty",
+      "statement": "317 of Allen County's 1,900 mobile homes stand empty — twice the vacancy rate of the county's housing as a whole.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "node_label": "What Allen County's houses are, 2023",
+          "span": "**1,332 of them are owned and 251 rented, so 317 stand empty** — a 16.7 per cent vacancy rate against the county's 8.4. [verified] — the same source, B25032 against B25024, computed here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish when any of these buildings arrived.** Units in structure is a description of what stands, and a mobile home placed in 1972 and one placed last year are one row."
+      ],
+      "figures": [
+        {
+          "label": "Mobile homes",
+          "value": 16.7,
+          "literal": "16.7"
+        },
+        {
+          "label": "All housing",
+          "value": 8.4,
+          "literal": "8.4"
+        }
+      ]
+    },
+    {
+      "id": "renting-here-means-renting-a-house",
+      "statement": "Half of Allen County's renter households live in a single detached house, against a quarter of the nation's.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "node_label": "What Allen County's houses are, 2023",
+          "span": "**Renting in Allen County mostly means renting a house.** 6,270 of the county's 12,968 renter households are in a single detached building — 48.4 per cent, against 30.9 for Ohio and 25.5 for the nation, and 21st of Ohio's 88 counties. Inside Lima it is 51.2 per cent. [verified] — the same source, B25032. The corpus's picture of a renter here has been a subsidised flat; half of them are in a house with a yard. [inference] — see [the subsidised housing](allen-county-subsidized-housing-2005-2025.yml).",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish when any of these buildings arrived.** Units in structure is a description of what stands, and a mobile home placed in 1972 and one placed last year are one row."
+      ],
+      "figures": [
+        {
+          "label": "Lima",
+          "value": 51.2,
+          "literal": "51.2"
+        },
+        {
+          "label": "Allen County",
+          "value": 48.4,
+          "literal": "48.4"
+        },
+        {
+          "label": "Ohio",
+          "value": 30.9,
+          "literal": "30.9"
+        },
+        {
+          "label": "United States",
+          "value": 25.5,
+          "literal": "25.5"
+        }
+      ]
+    },
+    {
+      "id": "there-is-no-condominium-market-here",
+      "statement": "129 owner households in the whole of Allen County are in a building of five units or more.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-structure-2023.yml",
+          "node_label": "What Allen County's houses are, 2023",
+          "span": "**And owning almost never means owning a flat.** 129 owner households in the whole county are in a building of five units or more. [verified] — the same source. There is effectively no condominium market here, which is the other half of what [the price index](allen-county-house-prices-1975-2025.yml) has been describing.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish when any of these buildings arrived.** Units in structure is a description of what stands, and a mobile home placed in 1972 and one placed last year are one row."
+      ],
+      "figures": []
+    },
+    {
+      "id": "a-third-of-the-empty-ones-have-no-plumbing",
+      "statement": "1,326 housing units in Allen County lack complete plumbing facilities and 101 of them are lived in, so 1,225 empty houses have none — a third of the county's vacant stock.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**1,326 of Allen County's 44,697 housing units lack complete plumbing facilities, and 101 of them are lived in.** [verified] — [American Community Survey](../../catalog/census-acs-summary-file.md), 2023 five-year estimates, tables B25047 over all housing units and B25049 over occupied ones. The margins are ±265 and ±53.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**So 1,225 of the county's 3,769 empty houses have no working plumbing — 32.5 per cent.** The survey publishes that number nowhere; it is the difference between two universes. [inference] — computed here; see [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml), which is the rule this follows.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": [
+        {
+          "label": "All units lacking",
+          "value": 1326.0,
+          "literal": "1,326"
+        },
+        {
+          "label": "Of those, occupied",
+          "value": 101.0,
+          "literal": "101"
+        },
+        {
+          "label": "Of those, empty",
+          "value": 1225.0,
+          "literal": "1,225"
+        }
+      ]
+    },
+    {
+      "id": "the-kitchens-say-the-same-thing",
+      "statement": "A second amenity, measured the same way, agrees: 1,364 of Allen County's empty houses have no complete kitchen.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**The kitchens say the same thing and are a separate question.** 1,682 units lack complete kitchen facilities and 318 of those are occupied, so **1,364 empty houses — 36.2 per cent of them — have no kitchen**. [verified] — the same source, B25051 against B25053. Two independent amenities agree that about a third of this county's vacant housing is not habitable as it stands.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**So 1,225 of the county's 3,769 empty houses have no working plumbing — 32.5 per cent.** The survey publishes that number nowhere; it is the difference between two universes. [inference] — computed here; see [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml), which is the rule this follows.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": [
+        {
+          "label": "No plumbing",
+          "value": 32.5,
+          "literal": "32.5"
+        },
+        {
+          "label": "No kitchen",
+          "value": 36.2,
+          "literal": "36.2"
+        }
+      ]
+    },
+    {
+      "id": "in-lima-a-third-and-a-bit-more",
+      "statement": "622 of Lima's 1,817 empty houses have no plumbing and 714 have no kitchen.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**In Lima it is a third and a bit more.** 662 of the city's 15,802 units lack plumbing and 40 are occupied, so 622 of its 1,817 empty houses have none — 34.2 per cent; on kitchens 714, or 39.3. [verified] — same source, same subtraction.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": []
+    },
+    {
+      "id": "a-renter-here-lacks-a-kitchen",
+      "statement": "285 renter households in Allen County have no complete kitchen against 33 owner households, and the county's renters are worse off on this than the state's or the nation's.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**What a renter is short of, and an owner is not.** 285 renter households in Allen County lack a complete kitchen against 33 owner households — 2.20 per cent against 0.12, and the gap clears both margins. [verified] — same source, B25053. Ohio's renters are at 1.78 per cent and the nation's at 1.60.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": [
+        {
+          "label": "Allen renters",
+          "value": 2.2,
+          "literal": "2.20"
+        },
+        {
+          "label": "Ohio renters",
+          "value": 1.78,
+          "literal": "1.78"
+        },
+        {
+          "label": "US renters",
+          "value": 1.6,
+          "literal": "1.60"
+        },
+        {
+          "label": "Allen owners",
+          "value": 0.12,
+          "literal": "0.12"
+        }
+      ]
+    },
+    {
+      "id": "bottled-gas-is-the-map-of-the-gas-main",
+      "statement": "One home in seven outside Lima is heated with gas somebody delivered in a tank, and 122 inside it. Coal is zero.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**Bottled gas is a map of the gas main: 13.8 per cent of homes outside Lima burn it against 0.9 per cent inside, and the county's 9.4 sits between them.** [verified] — the same source, B25040.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        },
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**One home in seven outside the city burns gas somebody delivered in a tank**, and 122 inside it. By township it runs from Sugar Creek's 56.0 per cent and Jackson's 45.2 down to American's 2.6. [verified] — same source. Coal, which heated this county through the era its histories describe, is zero to within a margin of thirty units.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": [
+        {
+          "label": "Outside Lima",
+          "value": 13.8,
+          "literal": "13.8"
+        },
+        {
+          "label": "Allen County",
+          "value": 9.4,
+          "literal": "9.4"
+        },
+        {
+          "label": "Lima",
+          "value": 0.9,
+          "literal": "0.9"
+        }
+      ]
+    },
+    {
+      "id": "three-thousand-households-with-no-car",
+      "statement": "3,185 households in Allen County have no car, and 21.4 per cent of Lima's renter households.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**Three thousand one hundred and eighty-five households here have no car**, 7.8 per cent — 3.3 per cent of owners and 17.4 per cent of renters. Inside Lima it is 13.9 per cent of households and **21.4 per cent of the city's renters**. [verified] — the same source, B25044. The county ranks 19th of Ohio's 88 on it, and it has held no public transit node since genesis. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": [
+        {
+          "label": "Lima renters",
+          "value": 21.4,
+          "literal": "21.4"
+        },
+        {
+          "label": "All renters",
+          "value": 17.4,
+          "literal": "17.4"
+        },
+        {
+          "label": "Lima",
+          "value": 13.9,
+          "literal": "13.9"
+        },
+        {
+          "label": "County",
+          "value": 7.8,
+          "literal": "7.8"
+        },
+        {
+          "label": "Owners",
+          "value": 3.3,
+          "literal": "3.3"
+        }
+      ]
+    },
+    {
+      "id": "crowded-for-ohio-and-uncrowded-for-america",
+      "statement": "779 households in Allen County live at more than one person to the room — above Ohio's rate and half the nation's, and almost all of it is renters.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-facilities-2023.yml",
+          "node_label": "What is in Allen County's houses, 2023",
+          "span": "**Crowding is rare here and it is a renter's condition.** 779 occupied units hold more than one person to the room, 1.90 per cent — 0.80 per cent of owner households against 4.29 of renter ones. [verified] — the same source, B25014. Ohio is at 1.45 per cent and the nation at 3.40, so this county is crowded for Ohio and uncrowded for America; it is 14th of 88.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This file does not establish why any of these houses lacks a kitchen.** A house gutted for renovation, a house whose fixtures were stripped, and a house never finished are one figure here."
+      ],
+      "figures": [
+        {
+          "label": "United States",
+          "value": 3.4,
+          "literal": "3.40"
+        },
+        {
+          "label": "Allen County",
+          "value": 1.9,
+          "literal": "1.90"
+        },
+        {
+          "label": "Ohio",
+          "value": 1.45,
+          "literal": "1.45"
+        }
+      ]
+    },
+    {
+      "id": "the-same-seven-questions-and-two-answers",
+      "statement": "The census and the survey agree about how many houses in Allen County are empty and disagree by a factor of three about what they are empty for.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2023.yml",
+          "node_label": "Why Allen County's housing was empty, 2019–2023",
+          "span": "**The two agree about how many houses are empty — 3,628 against 3,769 — and disagree by a factor of three about what they are empty for: other vacant 1,312 against 2,837, and for rent 1,265 against 378.** The totals are 141 apart on a base of 3,700, inside the survey's own margin. The residual class is 1,525 apart, nearly four times it. [verified] — [the survey](../../catalog/census-acs-summary-file.md) against [the 2020 characteristics file](../../catalog/census-2020-dhc.md), differenced here; see [a vacancy reason is an observation](../../decisions/a-vacancy-reason-is-an-observation.yml), which is the rule this corpus took from it.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md",
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that abandonment rose between 2020 and 2023.** A count taken on one day and an average over five years are not two points on a line, and the whole of the difference here is in the class defined by exclusion."
+      ],
+      "figures": [
+        {
+          "label": "Other vacant, census",
+          "value": 1312.0,
+          "literal": "1,312"
+        },
+        {
+          "label": "Other vacant, survey",
+          "value": 2837.0,
+          "literal": "2,837"
+        },
+        {
+          "label": "For rent, census",
+          "value": 1265.0,
+          "literal": "1,265"
+        },
+        {
+          "label": "For rent, survey",
+          "value": 378.0,
+          "literal": "378"
+        }
+      ]
+    },
+    {
+      "id": "three-quarters-of-the-empty-ones-are-on-no-market",
+      "statement": "Under the survey, three quarters of Allen County's empty housing is neither for sale, nor for rent, nor seasonal — fourth of Ohio's eighty-eight counties.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2023.yml",
+          "node_label": "Why Allen County's housing was empty, 2019–2023",
+          "span": "**Under the survey the not-on-the-market class is three quarters of the county's empty housing.** 2,837 of 3,769, or 75.3 per cent, against 36.2 per cent in the census. That is **fourth of Ohio's eighty-eight counties** and 246th of the 3,203 in the country. [verified] — the same file, all 88 Ohio county records and 3,203 national ones read here.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md",
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that abandonment rose between 2020 and 2023.** A count taken on one day and an average over five years are not two points on a line, and the whole of the difference here is in the class defined by exclusion."
+      ],
+      "figures": []
+    },
+    {
+      "id": "ordinary-by-one-instrument-and-not-by-the-other",
+      "statement": "On one measure of abandonment Allen County is 48th of Ohio's 88 counties and on the same measure taken from a different federal file it is 28th.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-vacancy-status-2023.yml",
+          "node_label": "Why Allen County's housing was empty, 2019–2023",
+          "span": "**On the same measure the census made this county ordinary.** Its other-vacant share of the whole housing stock was 48th of 88 in 2020 and is 28th of 88 in the survey — 2.94 per cent against 6.35. [verified] — [the survey](../../catalog/census-acs-summary-file.md) against [the 2020 characteristics file](../../catalog/census-2020-dhc.md). A county's position in its state depends on which federal instrument is asked, and the corpus has published the census reading and now publishes this one beside it rather than instead of it. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-acs-summary-file.md",
+            "catalog/census-2020-dhc.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that abandonment rose between 2020 and 2023.** A count taken on one day and an average over five years are not two points on a line, and the whole of the difference here is in the class defined by exclusion."
+      ],
+      "figures": [
+        {
+          "label": "Census, 2020",
+          "value": 2.94,
+          "literal": "2.94"
+        },
+        {
+          "label": "Survey, 2019-2023",
+          "value": 6.35,
+          "literal": "6.35"
+        }
+      ]
+    },
+    {
+      "id": "lima-has-lost-one-housing-unit-in-seven",
+      "statement": "Lima held 18,666 housing units in 1990 and holds 15,802 now, while the county as a whole gained.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-1990.yml",
+          "node_label": "Allen County's housing in 1990",
+          "span": "**Lima has lost 2,864 housing units since — 15.3 per cent of what it had.** 18,666 in 1990, 16,784 in 2010, 16,028 in 2020 and 15,802 in the current survey. [verified] — [the 1990 volumes](../../catalog/census-1990-housing-characteristics-ohio.md) and [the survey](../../catalog/census-acs-summary-file.md), against [the vacancy series](allen-county-vacancy-status-2010-2020.yml) and [the housing stock](allen-county-housing-stock-2023.yml). The county's own total moved from 42,758 to 44,697 across the same thirty-three years, so the city's loss is the ring's gain and a little more. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-1990-housing-characteristics-ohio.md",
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what became of the units Lima lost.** A count in 1990 and a count in 2023 bound the loss and say nothing about demolition, conversion, merger or fire, and the question [the vacancy node](allen-county-vacancy-status-2010-2020.yml) left open is left open."
+      ],
+      "figures": [
+        {
+          "label": "1990",
+          "value": 18666.0,
+          "literal": "18,666"
+        },
+        {
+          "label": "2010",
+          "value": 16784.0,
+          "literal": "16,784"
+        },
+        {
+          "label": "2020",
+          "value": 16028.0,
+          "literal": "16,028"
+        },
+        {
+          "label": "2023",
+          "value": 15802.0,
+          "literal": "15,802"
+        }
+      ]
+    },
+    {
+      "id": "the-city-was-still-a-city-of-owners-in-1990",
+      "statement": "Lima was 59.1 per cent owner-occupied in 1990, so two thirds of its fall happened before the earlier of the two censuses the corpus had been reading.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-1990.yml",
+          "node_label": "Allen County's housing in 1990",
+          "span": "**The city was still a county of owners in 1990.** 59.1 per cent owner-occupied against 50.6 in 2010, 45.9 in 2020 and 46.4 in the survey. [verified] — [the 1990 volumes](../../catalog/census-1990-housing-characteristics-ohio.md) and [the survey](../../catalog/census-acs-summary-file.md), against [the tenure series](allen-county-tenure-2010-2020.yml). That extends a series this corpus began at 2010 by two decades, and it puts the whole of the fall before the census that first recorded it. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-1990-housing-characteristics-ohio.md",
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what became of the units Lima lost.** A count in 1990 and a count in 2023 bound the loss and say nothing about demolition, conversion, merger or fire, and the question [the vacancy node](allen-county-vacancy-status-2010-2020.yml) left open is left open."
+      ],
+      "figures": [
+        {
+          "label": "1990",
+          "value": 59.1,
+          "literal": "59.1"
+        },
+        {
+          "label": "2010",
+          "value": 50.6,
+          "literal": "50.6"
+        },
+        {
+          "label": "2020",
+          "value": 45.9,
+          "literal": "45.9"
+        },
+        {
+          "label": "2023",
+          "value": 46.4,
+          "literal": "46.4"
+        }
+      ]
+    },
+    {
+      "id": "almost-nothing-lacked-plumbing-in-1990",
+      "statement": "Four tenths of one per cent of Allen County's housing lacked complete plumbing in 1990. It is 2.97 per cent now, on a stock that has barely grown.",
+      "topic": "housing",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-1990.yml",
+          "node_label": "Allen County's housing in 1990",
+          "span": "**Almost nothing lacked plumbing then: 0.4 per cent of the county's units and 0.4 of Lima's, about 171 and 75 buildings, against 2.97 per cent and 4.19 today.** [verified] — [the 1990 volumes](../../catalog/census-1990-housing-characteristics-ohio.md) against [the survey](../../catalog/census-acs-summary-file.md); see [the facilities](allen-county-housing-facilities-2023.yml). The count has risen roughly sevenfold in the county and ninefold in the city, on a stock that has barely grown. [inference]",
+          "tier": "inference",
+          "sources": [
+            "catalog/census-1990-housing-characteristics-ohio.md",
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what became of the units Lima lost.** A count in 1990 and a count in 2023 bound the loss and say nothing about demolition, conversion, merger or fire, and the question [the vacancy node](allen-county-vacancy-status-2010-2020.yml) left open is left open."
+      ],
+      "figures": [
+        {
+          "label": "County, 1990",
+          "value": 0.4,
+          "literal": "0.4"
+        },
+        {
+          "label": "County, 2023",
+          "value": 2.97,
+          "literal": "2.97"
+        },
+        {
+          "label": "Lima, 2023",
+          "value": 4.19,
+          "literal": "4.19"
+        }
+      ]
+    },
+    {
+      "id": "five-thousand-six-hundred-households-have-not-moved-since-1989",
+      "statement": "5,622 households in Allen County have been in the same house since before the 1990 census counted it, a larger share than Ohio's or the nation's.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-1990.yml",
+          "node_label": "Allen County's housing in 1990",
+          "span": "**5,622 households in this county have been in the same house since before that census was taken.** Owner-occupied units whose householder moved in during 1989 or earlier: 13.7 per cent of all households here, against 11.9 for Ohio and 9.5 for the nation. [verified] — [American Community Survey](../../catalog/census-acs-summary-file.md), table B25038. Renter households in that band number 248. [verified] — same source.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-acs-summary-file.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what became of the units Lima lost.** A count in 1990 and a count in 2023 bound the loss and say nothing about demolition, conversion, merger or fire, and the question [the vacancy node](allen-county-vacancy-status-2010-2020.yml) left open is left open."
+      ],
+      "figures": [
+        {
+          "label": "Allen County",
+          "value": 13.7,
+          "literal": "13.7"
+        },
+        {
+          "label": "Ohio",
+          "value": 11.9,
+          "literal": "11.9"
+        },
+        {
+          "label": "United States",
+          "value": 9.5,
+          "literal": "9.5"
+        }
+      ]
+    },
+    {
+      "id": "a-quarter-of-the-1990-answers-were-allocated",
+      "statement": "A quarter of Allen County's 1990 year-built answers were imputed rather than reported, and the volume says so on its own page. The survey that replaced it does not.",
+      "topic": "housing",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-housing-1990.yml",
+          "node_label": "Allen County's housing in 1990",
+          "span": "**A quarter of the 1990 year-built answers were allocated rather than reported.** 25.2 per cent for Allen County against 24.1 for the state; plumbing was allocated for 1.0 per cent and vehicles for 1.2. [verified] — [the 1990 volumes](../../catalog/census-1990-housing-characteristics-ohio.md), CH-2 Table 102. The volume publishes its own imputation rate, which the survey that replaced it does not.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-1990-housing-characteristics-ohio.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This corpus cannot say what became of the units Lima lost.** A count in 1990 and a count in 2023 bound the loss and say nothing about demolition, conversion, merger or fire, and the question [the vacancy node](allen-county-vacancy-status-2010-2020.yml) left open is left open."
+      ],
       "figures": []
     }
   ]
