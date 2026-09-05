@@ -1,21 +1,30 @@
 id: upstream-findings
 summary: >-
-  Five findings against the pinned yidam. Two defects in `yidam crates-index` found while
-  writing the first crate, two gaps in the corpus format found while tagging every edge in
-  the graph, and one in what genesis installs, found the first time CI ran on a remote. None
-  reported upstream yet.
+  Six findings against the pinned yidam, of which two are now fixed upstream. Two defects in
+  `yidam crates-index` found while writing the first crate — both closed by template v0.3.0 —
+  two gaps in the corpus format found while tagging every edge in the graph, one in what
+  genesis installs, found the first time CI ran on a remote, and one in what a vendored crate
+  does to this repository's own formatting gate. Still none reported upstream.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
-  repository builds from `.yidam.toml`, and the newest the origin has. Finding 5 was found on
-  2026-08-31 against the same pin, by a different route: the repository acquired a remote and
+  repository builds from `.yidam.toml`, and the newest the origin then had. Finding 5 was found
+  on 2026-08-31 against the same pin, by a different route: the repository acquired a remote and
   CI ran somewhere other than a developer's machine for the first time.
+
+  Revisited on 2026-09-04, when the repository re-vendored to template v0.3.0 at commit 7b0cef2.
+  Two of the five were fixed upstream in the interval, by an author who had not read this file —
+  which is the case for keeping it, not against it: the fixes are recognisable here only because
+  the findings were written down, and the workaround one of them licensed could be removed only
+  because this record said where it was. Finding 6 was found the same day, by the re-vendor
+  itself.
 
   The directory conventions say a defect in the prelude, CI, CLI or conventions should go
   upstream rather than being worked around locally, because a local workaround is invisible to
   every other derived repository and is discarded at the next re-vendor. This record exists so
-  that both findings and the one workaround are recoverable when that report is made.
+  that both findings and the workarounds are recoverable when that report is made.
 decision: |
-  **Finding 1 — `crates-index` misses `description` when the key is aligned.**
+  **Finding 1 — `crates-index` misses `description` when the key is aligned. FIXED upstream in
+  template v0.3.0.**
 
   A `[package]` table written as
 
@@ -40,7 +49,15 @@ decision: |
   comment says the spacing is load-bearing and why. Remove that comment and reformat freely
   once the CLI parses TOML.
 
-  **Finding 2 — `crates-index` lists a virtual workspace manifest as a crate.**
+  **Closed.** `cmd/build.rs` was rewritten between cli/v0.5.0 and cli/v0.8.0 to parse the
+  manifest with the `toml` crate rather than line-wise — `parse_cargo_manifest`, which also
+  resolves `description.workspace = true` against the workspace table. The whitespace no longer
+  signifies. The workaround comment in `crates/succession/Cargo.toml` was removed on adopting
+  v0.3.0; the diagnosis above is kept because the shape of the defect is the useful part, not
+  its lifetime.
+
+  **Finding 2 — `crates-index` lists a virtual workspace manifest as a crate. FIXED upstream in
+  template v0.3.0.**
 
   `crates/Cargo.toml` is a virtual manifest: `[workspace]` with members, no `[package]`. The
   index renders a row for it with an em dash for both name and description — a table cell whose
@@ -55,6 +72,11 @@ decision: |
   workspace needs that file, and the conventions' own layout — `crates/` holding several
   crates — makes a workspace the normal arrangement. Any derived repository with more than one
   crate will hit it.
+
+  **Closed** by the same rewrite. `parse_cargo_manifest` returns nothing for a file with no
+  `[package]` table, so the row is not emitted at all rather than emitted empty. The phantom row
+  left `crates/README.md` in the `regen:` commit that followed the re-vendor, which is the only
+  visible trace this finding ever had.
 
   **Finding 3 — an edge cannot carry a claim tag, and the conventions say it is a claim.**
 
@@ -84,6 +106,11 @@ decision: |
   What upstream would need: the two keys in the link schema, `structural` relationships exempt
   (`instance-of`, `concerns`, `subject-of`), and two lint rules mirroring the prose ones —
   untagged empirical edge, and verified edge without a source.
+
+  **Still open at template v0.3.0.** Checked directly rather than assumed: the lint check set
+  grew from 43 ids to 49 between the pins, and none of the six additions is an edge-provenance
+  rule — `claim-tag-malformed`, `dangling-edge`, `edge-target-class`, `unlicensed-edge` and
+  `verified-unsourced` are the same five as before. `crates/provenance` keeps its job.
 
   **Finding 4 — `node-too-long` charges a node for being auditable.**
 
@@ -118,6 +145,11 @@ decision: |
   something nobody is willing to act on, and the value of raising the number is only that the
   declared figure stops being fiction.
 
+  **Still open at template v0.3.0.** `max_lines` still counts whole files. The class contract did
+  grow a field in the interval — `implemented_by`, which names the type in `crates/` that
+  implements a class and gates when declared — so the shape this finding asks for is one upstream
+  is willing to add. It was added for a different question.
+
   **Finding 5 — genesis replaces one workflow and leaves six.**
 
   `.github/workflows/ci.yml` is installed at genesis and its own header explains the reasoning:
@@ -147,6 +179,44 @@ decision: |
   re-vendor: if genesis is fixed they will not arrive again, and if it is not, they will and
   should be deleted again.
 
+  **Confirmed at template v0.3.0**, in the sense that mattered: the re-vendor did not bring them
+  back. `yidam-vendor-update` writes only `.yidam/.vendor/prelude/`, `.yidam.toml`,
+  `mise.yidam.toml` and a marked region of `mise.toml`, so `.github/workflows/` was untouched and
+  still holds one file. Whether genesis has been fixed for the *next* repository is not visible
+  from here.
+
+  **Finding 6 — a vendored crate a derived repo must depend on is not rustfmt-clean, and its own
+  formatting gate reaches it.**
+
+  `crates/proximity` depends on the vendored geodesics crate by path, because
+  `.yidam/.vendor/prelude/domains/geodesics/rust` is where the prelude puts it and finding 3's
+  sibling argument — a call, not an affinity — is why it is kept. `cargo fmt --all` is documented
+  as "Format all packages, **and also their local path-based dependencies**", so the derived
+  repository's formatting gate formats a directory the conventions forbid it to edit.
+
+  It is latent, not constant, which is what makes it worth writing down. Upstream does not run
+  rustfmt over `prelude/domains/`, so whether the vendored copy is clean is an accident of the
+  pin. At 1162287 it was, and this repository ran `cargo fmt --all` green for its whole life. At
+  7b0cef2 it is not — a wrapped arithmetic expression that fits on one line, and an unsorted
+  `use` — and `mise run ci` failed at its formatting step on the commit that adopted the pin,
+  the first time this repository had ever seen that gate fail.
+
+  There is no legal repair downstream. `cargo fmt` over it is an edit under `.vendor/`, discarded
+  at the next re-vendor and invisible until then.
+
+  **Worked around** by naming the six members instead of `--all`, in `mise.toml`'s `fmt` and `ci`
+  tasks and in the crates job of `.github/workflows/ci.yml`. The workaround has its own cost,
+  stated in the commit that made it: the list now appears in three places, nothing checks that a
+  seventh crate was added to each, and a crate left off is not reported — it is silently never
+  formatted.
+
+  What upstream would need, in rough order of value: run rustfmt over `prelude/domains/` in its
+  own gate, so that what a derived repository vendors is clean by construction. Failing that, say
+  in the directory conventions that `--all` reaches `.vendor/` and that a derived repo should
+  name its members — the conventions already discuss `crates/` layout and are where somebody
+  would look. A `rustfmt.toml` carrying `ignore` would be the obvious third answer and is not
+  one: `ignore` is nightly-only, and this repository pins stable 1.88.
+
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
 
@@ -175,8 +245,21 @@ rationale: |
   that has not yet acquired one is carrying it undetected — and will meet it at the least
   convenient moment, when `main` goes red on the commit that published the repository.
 
-  What an upstream report should carry, per the conventions: the pin (1162287), what it cost
-  here (one bisection of a manifest, one workaround comment, 205 hand-tagged edges and a crate
-  to keep them tagged, and six deleted workflow files), and where each workaround is so it can
-  be removed. Filing the issue is an outward-facing action and has not been taken without the
-  elector's say-so.
+  Finding 6 is the second of that last kind and arrived by the same route as finding 5 — a gate
+  failing somewhere the reasoning had not reached. It is also the first evidence here about what
+  re-vendoring itself costs, which the conventions describe as a decision worth its own commit
+  and say nothing else about. The answer, measured once: a corpus that had never seen its own
+  formatting gate fail saw it fail, on code it is forbidden to touch, because an upstream author
+  hand-edited two lines in a directory nobody formats.
+
+  What an upstream report should carry, per the conventions: the pins — 1162287 for findings 1
+  through 5, 7b0cef2 for finding 6 and for the confirmation that 1 and 2 are closed — what it
+  cost here (one bisection of a manifest, one workaround comment since removed, 205 hand-tagged
+  edges and a crate to keep them tagged, six deleted workflow files, and a formatting gate
+  narrowed in three places), and where each surviving workaround is so it can be removed. Filing
+  the issue is an outward-facing action and has not been taken without the elector's say-so.
+
+  That last sentence has now been true across two pins. The cost of not filing is no longer
+  hypothetical either: findings 1 and 2 were fixed upstream between 27 August and 2 September by
+  somebody who reached them independently, which is six days this repository spent maintaining a
+  workaround comment for a defect that no longer existed.
