@@ -1,0 +1,93 @@
+class: measure
+label: What the county histories record of the people in them
+description: |
+  **Between them, the two subscription county histories carry 1,932 sentences that begin a life,
+  and this corpus had read neither for one.** The 1885 history's Part IV, *Biographical Sketches*,
+  has 783; the 1906 history's *and Representative Citizens* half has 1,149. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) and
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), counted over the
+  cleaner scan of each. The count is of the phrase "was born" and is a floor on the number of
+  sketches rather than a census of them, because a sketch names parents and children too.
+  [inference]
+
+  **The 1885 half is arranged by township, not alphabetically.** Thirteen sections beginning at page
+  561 — Amanda, Auglaize, Bath, German, Jackson, Marion, Monroe, Ottawa, Perry, Richland, Shawnee,
+  Spencer, Sugar Creek — with the running head appearing 131 times, and 270 of its sketches heading
+  with a post office rather than an address. [verified] — the same source, its table of contents
+  and its running heads.
+
+  **Exactly one of them is headed by a woman.** `MRS. MARGARET HALL, widow of Jesse Hall, P. O.
+  Lima, was born December 29, 1827, in Jackson County, Ohio`. [verified] — the same source, both
+  scans, searched for every `MRS.` and `MISS` heading in Part IV. Every other woman in four hundred
+  pages is somebody's wife, mother or daughter, named in brackets.
+
+  **The 1906 half marks eight of its own sketches as unchecked.** Its publishers sent every sketch
+  to its subject for correction; the eight that did not come back are printed on the last pages with
+  an asterisk after the name — Simpson, Dyer, Dean, Jones, Landis, McCauley, Drake, Losee — under a
+  note saying "we cannot vouch for their accuracy". [verified] — the same source, its publishers'
+  note and its last pages. See
+  [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).
+
+  **Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and
+  twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's
+  roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and
+  the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to
+  his father. [verified] — the two books searched for every person node's name, and the matches
+  tested against the corpus's own rosters; see
+  [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).
+
+      the person class before this phase and after it
+      property        before   after      the class has 99 instances
+      occupation          95      97      after was 98 before
+      born                 6      20
+      birthplace           3      17
+      also_known_as        6      13
+      died                 5      11
+
+  **They give births and not deaths, and the reason is in the arrangement.** A subscriber is alive
+  and supplies his birthday; a death date appears only where the subject was already dead when the
+  page was sold. Of the twenty sketches taken here, four carry a death — Faurot, Pillars, Metheany
+  and Akerman — and each of the four was dead before his page was written; a fifth heads its subject
+  `(deceased)` and gives no year. [verified] — the two books, the twenty sketches read. The rest give
+  a birth and stop.
+
+  **What finishes them is a different kind of source.** Three of the deaths this corpus now holds
+  came from newspapers: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896,
+  Samuel S. Yoder on 11 May 1921. [verified] —
+  [Chronicling America](../../catalog/chronicling-america.md). A paper records a death because a
+  death is news and records a birth only in an obituary; a subscription book records a birth because
+  the subscriber gave it and a death only when somebody else did. The two sources are complementary
+  in the exact place the `person` class needed them to be. [inference]
+
+  **This node does not assert that the people with sketches are representative of the county.**
+
+  [open] The other 1,912 lives. This corpus has read twenty of the sketches and counted the rest.
+  Of the twenty-seven pre-1922 people it names who failed the attachment test, several could be
+  settled by a source that dates an office — a county roster with months rather than years, or a
+  newspaper of the year the man took office — and none of those has been searched.
+properties:
+  parameter: sentences beginning a life in the two subscription county histories
+  value: "1932"
+  unit: occurrences of the phrase "was born"
+  as_of: "1906"
+  method: |
+    The phrase is counted over the whitespace-normalised OCR of the cleaner scan of each book — scan
+    B of 1885 and scan B of 1906 — after joining words broken across line ends. [verified] Scan A of
+    the 1906 book is not counted because it stops at 52 per cent of scan B and holds 266 of the
+    1,149. [verified] The 1885 figure is not compared across its two scans, because that scan's OCR
+    renders "born" as several other words and a count would be measuring the OCR. [verified] The
+    corpus-side figures are counted over `.yidam/corpus/person/` before and after this phase.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/leeson-allen-county-1885.md
+  - target: allen-county-officers-1831-1906.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../person/samuel-a-baxter.yml
+    relationship: subject-of
+  - target: ../measure.ont.yml
+    relationship: instance-of
