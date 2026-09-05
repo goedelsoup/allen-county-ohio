@@ -1,0 +1,77 @@
+id: a-flag-column-is-part-of-the-figure
+summary: >-
+  The federal government finance survey publishes $46,722,000 of interest on debt for Allen County
+  in fiscal 2022, on $18,072,000 of debt. The county's audited statements say $206,079. The county
+  never answered the questionnaire, and the thirty-second character of the record says so — a
+  single letter, `I`, absent from every summary table and from the description of the column it
+  qualifies. A cell and its flag are one figure, and a corpus that quotes the first without the
+  second has quoted half of it.
+context: |
+  This corpus already refuses a model that stands in for a measurement:
+  [a modelled estimate is not an observation](a-modelled-estimate-is-not-an-observation.yml) governs
+  CDC PLACES, where **every** value is a prediction and the dataset says so in its own description.
+  That is the honest case. The rule below is for the other one, where reported and modelled values
+  sit in the same column, look identical, and are told apart only by a flag.
+
+      Allen County, 2022, in the federal survey        cells   imputed
+      the county government                              27        27
+      the nine municipalities                           244        97
+      the twelve townships                              191        66
+      the twelve special districts                       76        28
+      the twelve school entities                        189         3
+      all forty-six governments                         727       221
+
+  Fifteen of the forty-six have no reported figure at all. The pattern is not random: Ohio's school
+  districts file through a state channel that the Bureau accepts, so 98.4 per cent of their cells
+  are reported, while the villages and townships that answer a paper form are a third modelled.
+
+  **The failure this produced is at the cell and not in the aggregate.** The imputation for this
+  county lands within 1.1 per cent of the audit on total revenue and within 9 per cent on the
+  permissive sales tax. On one small line it is out by a factor of 227. A corpus that graded the
+  model by its totals would have passed it.
+decision: |
+  **Before any figure from a file that imputes is published, read its flag; report the imputed share
+  of the county's cells; and test each imputed cell against a ratio the reported units establish.**
+
+  - **The flag travels with the figure.** An imputed cell may be published — it is often the only
+    figure that exists — and it is published as an imputation, in the sentence, not in a note.
+  - **The reported units are the control.** They are the same kind of government, in the same
+    county, in the same year, answering the same form. Seventeen governments here report both
+    interest and debt and every one of them falls between 1.5 and 8.6 per cent; a modelled 258 per
+    cent is outside the range of the thing being modelled.
+  - **State the imputed share once per source, per county.** Thirty per cent is a different file
+    from three per cent, and the reader cannot see the difference from any table the agency
+    publishes.
+  - **Where a local record exists, the imputed cell is checked against it and the local record
+    wins.** The county's audited statements are a measurement of the county by the county's own
+    auditor; the federal cell is a estimate of the county by a bureau that did not ask it.
+rationale: |
+  **The flag is one character in thirty-two and it is the most informative one.** Nothing else in
+  the record distinguishes a figure a treasurer typed from a figure a regression produced. It is not
+  in the summary tables, not in the state-by-level file, and not in any of the Bureau's published
+  county tables — so every derived use of this data that this corpus has ever seen elsewhere is
+  quoting both kinds as though they were one kind.
+
+  **Aggregates hide it and that is why the test is at the cell.** Imputation is fitted to make the
+  totals right, which is a reasonable thing for a statistical agency to do and a trap for anyone
+  reading a line. The larger the aggregate, the better the model looks and the less the reader
+  learns about the county.
+
+  **This is not the OSHA case and it is next door to it.**
+  [an impossible value is not an outlier](an-impossible-value-is-not-an-outlier.yml) is about a
+  respondent typing sixteen trillion hours into a web form, where no step between the form and the
+  file could say no. Here the respondent said nothing at all and the *agency* produced the value.
+  The bound that catches it is not physical — 258 per cent interest is possible, on a penalty or a
+  balloon — but distributional, and the distribution is the county's own other governments.
+
+  **What this does not license.** Discarding an imputed figure because it is imputed. Fifteen of
+  this county's forty-six governments would vanish from the corpus, and the corpus would be
+  publishing a county with no townships in it. The rule is that the figure carries its flag, not
+  that the flag disqualifies the figure.
+
+  **Where this reaches next.** Every administrative file with a status or edit column: the survey
+  of public employment and payroll, which is the same programme with the same flag; the FBI's
+  monthly crime counts and their estimation status; the building permit series, which imputes for
+  non-reporting jurisdictions; and the school finance survey, which is this same file's sibling.
+status: accepted
+date: "2026-09-05"
