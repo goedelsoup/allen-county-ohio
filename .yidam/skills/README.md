@@ -18,6 +18,19 @@ succession has a hole in it or whether two figures describe the same ground.
 - **watershed-trace** — follows `flows-into` from any `natural-feature` to its outlet and
   lists the `place` nodes traversed
 
+**Two are of a different kind and are grouped here so the difference is visible.**
+`design-pull` and `design-push` read no corpus node and compute nothing about Allen County.
+They exist because [`design/`](../../design/) has an outside — the Atlas design system is a
+project on somebody else's server, and a token layer ported by hand needs a way to be refreshed
+from it and a way to send a correction back. They are skills rather than `mise` tasks for a
+plain reason: the `DesignSync` tool has no CLI to wrap.
+
+- **design-pull** — refreshes the mirror, rewrites the pin, reports what has drifted. Reads
+  the design system and writes nothing to it.
+- **design-push** — carries a finding back, and **halts** at the plan boundary. A push is an
+  outward-facing act and waits on the elector, per
+  [what-may-leave-the-repository](../decisions/what-may-leave-the-repository.yml).
+
 Add skills when a repeatable procedure emerges from inquiry — not preemptively.
 
 ## Registry
@@ -29,6 +42,8 @@ Fields per skill: filename, name, description, agents that invoke it.
 | Skill | Description |
 |---|---|
 | [boundary-comparability](boundary-comparability.md) | Decide whether two measures describe the same ground, given the annexations between them |
+| [design-pull](design-pull.md) | Refresh the design system mirror, rewrite the pin, and report what has drifted |
+| [design-push](design-push.md) | Carry a finding back to the design system, halting at the plan boundary for the elector |
 | [edge-audit](edge-audit.md) | Check that every edge in the corpus says what kind of claim it is |
 | [ground-at](ground-at.md) | The survey section a point stands on, and the Recorder volume that abstracts it |
 | [jurisdiction-at](jurisdiction-at.md) | Return every jurisdiction and division covering a place on a given date |
