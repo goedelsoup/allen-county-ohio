@@ -15,8 +15,18 @@ description: |
   deaths ran 1,384, 1,449, 1,243 and 1,193, peaking in 2022 and falling by 256 over the following
   two years. So the natural decrease of these four years is a deaths story,
   and the shape of it — a spike in 2021–2022 subsiding by 2024 — is the shape the pandemic left
-  in county death counts across the United States. [inference] The corpus holds no cause-of-death
-  data and cannot attribute it.
+  in county death counts across the United States. [inference]
+
+  **It was the pandemic, and the arithmetic is now here rather than inferred.** Ohio's own file
+  puts 211 COVID-19 deaths of Allen County residents in the estimate year 2021 and 236 in 2022 —
+  15.2 and 16.3 per cent of the county's deaths in those years — against 37 in 2023. [verified] —
+  [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), summed over 1 July to
+  30 June to match this file's estimate year; see
+  [the deaths](allen-county-covid-deaths-2020-2023.yml). **The county's deaths fell 206 between the
+  estimate years 2022 and 2023 and its COVID-19 deaths fell 199, which is 97 per cent of the
+  fall.** [inference] Across the three estimate years the state file covers, 484 of the county's
+  4,076 deaths were of COVID-19, and this node's refusal to attribute the spike is retired. The
+  estimate year 2024 is not covered: Ohio's file ends on 24 August 2023, two months into it.
 
   This is half of what makes the county smaller. The other half is
   [migration](allen-county-net-migration-2021-2024.yml), and it is the larger half.
@@ -33,6 +43,10 @@ links:
     relationship: relates-to
     claim_tag: verified
     source: ../../catalog/census-popest-2024.md
+  - target: allen-county-covid-deaths-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified

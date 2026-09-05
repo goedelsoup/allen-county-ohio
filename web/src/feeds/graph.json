@@ -4755,6 +4755,225 @@
       "withheld": 3
     },
     {
+      "id": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "class": "measure",
+      "label": "COVID-19 cases by ZIP code in and around Allen County, 2020–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Rates are the file's own, computed by Ohio on its own population column, and are reproduced rather than recomputed so that they remain comparable with each other. [verified] The county estimate weights each code's cumulative cases by the share of that code's 2020 census population living in Allen County, from the corpus's own ZCTA join, which sums to 102,206 — the county exactly. [verified] Only codes with a majority of their people in the county are tabulated above; the other nine of the twenty contribute to the weighted estimate and not to the ordering. [verified] The file's last-30-day and last-14-day columns read `N/A` throughout and are not used. [verified]",
+        "parameter": "cumulative COVID-19 cases per 100,000 by ZIP code",
+        "unit": "cases per 100,000, ZIP 45805, against 22,475 in 45817",
+        "value": "35190"
+      },
+      "blocks": [
+        {
+          "text": "**Lima's postal codes ran half as much infection again as Bluffton's.** Ohio's ZIP-code file puts 45805 at 35,190 cases for every hundred thousand people and 45817 at 22,475 — Bluffton's rate is 64 per cent of the highest Lima code's. [verified] — [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the ZIP summary of 7 August 2023.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The four Lima codes are four of the top five, and Bluffton's is the lowest of the ten.** The Lima codes run from 33,374 to 35,190 per hundred thousand and hold 24,757 cases between them; Spencerville's 33,737 is the one that breaks the run. [verified] — the same file. Four smaller codes lie wholly inside the county and are too small to rank — Cairo at 34,016 on 517 people, Lafayette at 27,233 on 461, Beaverdam at 22,590 on 282 and Gomer at 21,472 on 173.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The ZIP file and the county file agree to within three per cent, which is the check that the postal geography is being read right.** Weighting each of the twenty codes that touch Allen County by the share of its people who live in the county gives 33,743 cases against the county file's 34,724 — 97.2 per cent. [verified] — the same file weighted by [the ZIP codes](allen-county-zip-codes-2020.yml). The missing 2.8 per cent is cases whose postal code the state could not assign, and it is not concentrated anywhere this file can show.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The state's ZIP populations are not the census's and its rates are on its own.** Ohio gives 45804 a population of 15,665 where the 2020 census counts 14,573 people in the same tabulation area — seven and a half per cent apart — so the rates above are the file's own and are not comparable with any rate computed here. [verified] — the same file against [the ZIP codes](allen-county-zip-codes-2020.yml). Read as an ordering they are sound; read as levels they carry an unstated denominator.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A ZIP code is a delivery route and six of these ten cross the county line.** [inference] 45833 is 55 per cent Allen County by population and the rest of it is Van Wert and Putnam; 45817 is 81 per cent Allen and the rest is Hancock and Putnam; 45887 is 82 per cent, 45850 is 92 and 45806 is 77. So a rate quoted for Delphos is a rate for a city that lies in two counties, and this node's ordering is an ordering of postal areas rather than of places.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This node does not establish that anybody in Bluffton was less likely to catch it than anybody in Lima.**"
+      ],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-covid-cases-2020-2023.yml",
+      "class": "measure",
+      "label": "COVID-19 cases and hospitalisations in Allen County, 2020–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Cases are dated to onset and hospitalisations to admission, and both are counted on the row where they appear rather than on the row's other dates. [verified] Rates per hundred thousand use the 2020 census counts of 102,206 and 11,799,448; the ranking across the eighty-eight counties uses CDC's own population column for all of them, so that no county is advantaged by its denominator. [verified] The 292 admissions without a date are included in every county total here and excluded from every yearly one, and the yearly columns therefore sum to 1,944 rather than to 2,236. [verified]",
+        "parameter": "COVID-19 cases and hospitalisations of county residents",
+        "unit": "cases, with 2,236 hospitalisations",
+        "value": "34724"
+      },
+      "blocks": [
+        {
+          "text": "**Thirty-four thousand seven hundred and twenty-four Allen County residents were recorded as cases, and 2,236 of them went to hospital.** [verified] — [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the county-of-residence file, summed here. That is a third of the county's people carrying a recorded infection, and one resident in forty-six admitted.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The hospitalisation rate is what stands out, not the case rate.** Allen County had 2,188 hospitalisations for every hundred thousand residents against Ohio's 1,204, and 33,975 cases per hundred thousand against Ohio's 29,547. [verified] — the same file against the 2020 census counts. **On hospitalisations the county is fifth of Ohio's eighty-eight; on cases it is thirteenth and on deaths sixteenth.** [verified] — the same file, all eighty-eight county rows ranked on CDC's population column.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One case in fifteen here went to hospital, against one in twenty-five statewide.** 6.44 per cent of Allen County's cases were hospitalised against 4.07 per cent of Ohio's. [verified] — the same file. That difference is larger than the difference in deaths, which is the shape a reporting effect takes as readily as a severity one.",
+          "tier": "verified"
+        },
+        {
+          "text": "**January 2022 is the largest month in the record and it is not the worst one.** 5,571 cases began in that month, nearly twice the next-largest, and it killed 54; December 2020 had 2,622 cases and killed 55. [verified] — the same file, by onset date and date of death; see [the deaths](allen-county-covid-deaths-2020-2023.yml). The two waves are not the same event measured twice.",
+          "tier": "verified"
+        },
+        {
+          "text": "**292 admissions carry no admission date.** They are counted in the county total and cannot be placed in a year, which is 13.1 per cent of the county's hospitalisations. [verified] — the same file. Cases and deaths have no such gap.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The case count is a count of tests that found their way into a state system, and it stopped meaning the same thing partway through.** [inference] Home testing arrived between the two waves this file records, and a positive result read in a kitchen never reached it. So the 2022 case figures are a smaller share of 2022's infections than the 2020 figures are of 2020's, by an amount nothing here can measure, and the hospitalisation and death columns are the ones that survive the change.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This node does not establish that Allen County was sicker than Ohio.**"
+      ],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "class": "measure",
+      "label": "COVID-19 deaths of Allen County residents, 2020–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Rows are selected on the county name after stripping, because the file names Allen County twice — once plainly and once padded to a fixed width — and the padded block is the deaths that occurred outside Ohio. Two of this county's 517 are in it. [verified] Deaths are dated to the date of death, cases to the date of onset and hospitalisations to the date of admission, so the three counts on one row are independent and no row contributes to more than one of them. [verified] The rate per hundred thousand divides by the 2020 census counts — 102,206 for the county and 11,799,448 for the state — and the ranking across Ohio's counties uses one consistent denominator instead, CDC's county population column, for all eighty-eight. [verified] The last weeks of the record are provisional in the ordinary way of a death file and are not adjusted here. [verified]",
+        "parameter": "COVID-19 deaths of county residents",
+        "unit": "deaths, March 2020 to August 2023",
+        "value": "517"
+      },
+      "blocks": [
+        {
+          "text": "**Five hundred and seventeen Allen County residents died of COVID-19.** The state's file runs from the first death in March 2020 to the last it records on 24 August 2023, and the county's toll by year is 175, 219, 113 and 10. [verified] — [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the county-of-residence file of 3 September 2023, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That is 506 deaths for every hundred thousand people, against 360 for Ohio, and it puts this county sixteenth of the state's eighty-eight.** [verified] — the same file against [the CDC county series](../../catalog/cdc-covid-19-county-data.md) for population. The worst county in Ohio is Monroe at 623 and the least-hit is Delaware at 149.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The second winter killed more of this county than the first.** The six months from September 2021 to February 2022 took 218 lives here; the three months from November 2020 to January 2021 took 136; the whole of the first spring and summer, March to August 2020, took 51. [verified] — the same file, by date of death. Only 42 deaths follow February 2022 in a record that runs eighteen months past it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eighty-three per cent of the dead were sixty or over, and they were a quarter of the cases.** 431 of the 517 deaths were of people aged 60 or more, against 24.9 per cent of the county's cases in the same three age bands. [verified] — the same file, by age range. The share of the infected who died runs 0.02 per cent under twenty, 0.15 in the thirties, 0.41 in the forties, 1.22 in the fifties, 2.45 in the sixties, 5.00 in the seventies and 10.06 at eighty and over. [verified] — the same file.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A person over eighty who caught it here died one time in ten; a person under twenty, one time in five thousand.** 202 deaths on 2,008 cases against 1 on 5,534. [verified] — the same file. No resident of this county between twenty and thirty died of it at all.",
+          "tier": "verified"
+        },
+        {
+          "text": "**More women caught it and more men died of it.** 19,079 of the county's sexed cases were women and 15,156 men, and the deaths run 282 men to 235 women — so a man who caught it here was half again as likely to die as a woman, 1.86 per cent against 1.23. [verified] — the same file, by sex.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The federal weekly file does not carry this and Ohio's does.** The National Center for Health Statistics suppresses every county-week holding one to nine deaths, which is 96 of this county's 170 weeks. [verified] — [the CDC county files](../../catalog/cdc-covid-19-county-data.md); see [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**A death by date of death is not a death by date of report, and neither is a case.** [inference] Ohio's file dates each death to the day it happened rather than the day it was counted, which is why the curve above has no weekend and no backlog in it and why its last weeks are thinner than they will finally be. The same file gives a case an onset date, which is the day the person fell ill and not the day a test came back.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This file does not establish how many of these people died of something else with the virus in them.**"
+      ],
+      "withheld": 5
+    },
+    {
+      "id": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "class": "measure",
+      "label": "Where Allen County's COVID-19 deaths happened, 2020–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "The two figures come from two files captured on the same day, ninety-eight seconds apart, and not from the residence file's own later capture: a residence count from September against a death count from May would put four months of revision into a ratio. [verified] County names are stripped before grouping, because the residence file names each county twice and the padded block is the deaths that occurred outside Ohio — 1,336 rows and 1,344 deaths, concentrated in the border counties, and two of them Allen County's. A reader who groups on the raw string reports Gallia's ratio as 1.92 rather than 1.54. [verified] The ranking is restricted to the eighty-two counties with a hundred or more resident deaths, because a ratio on a denominator of thirty is not a comparable quantity. [verified]",
+        "parameter": "COVID-19 deaths by county of death against county of residence",
+        "unit": "deaths in the county, against 513 of its residents",
+        "value": "815"
+      },
+      "blocks": [
+        {
+          "text": "**Eight hundred and fifteen people died of COVID-19 in Allen County and five hundred and thirteen of them lived here.** Ohio published its pandemic deaths twice — once by the decedent's county of residence and once by the county the death occurred in — and on the pair captured ninety-eight seconds apart on 3 May 2023 this county's two numbers are 513 and 815. [verified] — [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the matched pair, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Of Ohio's eighty-two counties with a hundred or more resident deaths, Allen County has the largest ratio between the two.** 1.589, ahead of Gallia at 1.538, Franklin at 1.525, Lucas at 1.506 and Hamilton at 1.460 — which is to say ahead of the counties holding Columbus, Toledo and Cincinnati. [verified] — the same source, the matched pair, every county computed.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four of the county's five land neighbours are on the other side of the same transaction.** Hardin recorded 32 deaths and lost 167 residents, Putnam 70 against 169, Auglaize 99 against 204, Van Wert 106 against 163; the fifth, Hancock, runs a surplus of its own at 367 against 296. [verified] — the same source, the matched pair. The four together lost 703 residents and recorded 307 deaths.",
+          "tier": "verified"
+        },
+        {
+          "text": "**At the state line the two counts almost agree, so all of this movement is internal.** Ohio recorded 42,168 deaths of its own residents and 42,051 deaths inside its borders on the same day. [verified] — the same source, the matched pair. 1,211 of the deaths in Ohio were of people who lived in another state — 268 West Virginians, 238 Michiganders, 194 Kentuckians, 168 Indianans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The same gap is in this county's all-cause deaths and it is about a third.** The federal weekly file counts 5,669 deaths from every cause in Allen County across 170 weeks — about 1,740 a year — where the Census Bureau's components of change put the county's residents' deaths near 1,300. [verified] — [the CDC county files](../../catalog/cdc-covid-19-county-data.md) against [the natural change](allen-county-natural-change-2021-2024.yml). So the county carries roughly a third more dying than its own people do, in an ordinary year and in a pandemic one, and for COVID-19 the excess is nearer three fifths.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Both figures are wanted and they answer different questions.** [inference] 815 is the load this county's hospitals, its coroner and its funeral homes carried; 513 is the loss its households took. A figure that mixes them is a statement about neither. See [located here is not of here](../../decisions/located-here-is-not-of-here.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This node does not establish which hospital any of the 815 died in.**"
+      ],
+      "withheld": 3
+    },
+    {
+      "id": "measure/allen-county-covid-vaccination-2020-2023.yml",
+      "class": "measure",
+      "label": "COVID-19 vaccination in Allen County, 2020–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023",
+        "method": "Figures are the last row of the county's daily series, 10 May 2023, when federal county reporting ended. [verified] The shares are the file's own, computed by CDC on its own population denominators rather than recomputed here, so they are comparable across counties and are not comparable with a rate this corpus computes on the census count. [verified] The county's `completeness_pct` is 98.6, which is the share of doses administered in Ohio for which a county of residence was recorded; doses given to Allen County residents in another state are not in it. [verified] The booster share is booster doses over completed courses, which is the file's own `booster_doses_vax_pct` and is a share of the vaccinated rather than of the county. [verified]",
+        "parameter": "share of residents completing a primary COVID-19 vaccination course",
+        "unit": "per cent of the resident population, 10 May 2023",
+        "value": "45.5"
+      },
+      "blocks": [
+        {
+          "text": "**Forty-five and a half per cent of Allen County completed a primary vaccination course, and the county is sixty-sixth of Ohio's eighty-eight.** 46,579 people — 45.5 per cent — against a state median of 50.5 per cent, on the last day the federal series was published — 10 May 2023, the end of the public health emergency. [verified] — [the CDC county files](../../catalog/cdc-covid-19-county-data.md), the county vaccination series. 49,815 residents, 48.7 per cent, had at least one dose.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The old were vaccinated and the young were not.** 81.7 per cent of the county's residents aged 65 and over completed a course against 15.8 per cent of its children aged 5 to 17, and 55.5 per cent of everybody 18 and over. [verified] — the same series. The gap between the two ends of the county is 66 points.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Of those who finished a course, just over half went back for a booster.** 24,782 booster doses against 46,579 completed courses — 53.2 per cent. [verified] — the same series.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This county sits in the low half of a state whose own spread is enormous.** Ohio's counties run from Delaware's 78.6 per cent to Holmes's 18.6, and Allen's neighbours run from Hancock at 52.5 down to Hardin at 39.7. [verified] — the same series, all eighty-eight counties.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The series stops and nothing continues it at this grain.** [inference] Federal county vaccination reporting ended with the emergency declaration, so 45.5 per cent is not the county's vaccination rate now; it is the rate on the last day anyone published one. Whatever has been given here since is unrecorded in any source this corpus can reach.",
+          "tier": "inference"
+        },
+        {
+          "text": "**A share of the county is not a share of the eligible.** [inference] The denominator is the whole resident population including children under five, who were eligible only from June 2022 and were never going to be vaccinated in the years this series covers. The 81.7 and the 15.8 above are the figures to read for what people did; the 45.5 is the figure to read for how much of the county was covered.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This node does not know why this county vaccinated less than the state.**"
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-crops-2022.yml",
       "class": "measure",
       "label": "Allen County crops, 2022, against 1909",
@@ -9479,7 +9698,11 @@
           "tier": "verified"
         },
         {
-          "text": "**Deaths moved and births did not — over these four years.** Births ran 1,171, 1,190, 1,202 and 1,200 — flat within three per cent. Over a longer window they did move: the same component files put births at 1,318 in 2011, so the flatness here is the floor of a fall and not a steady state. [verified] — [the longer series](allen-county-children-2010-2024.yml). Within these four years, deaths ran 1,384, 1,449, 1,243 and 1,193, peaking in 2022 and falling by 256 over the following two years. So the natural decrease of these four years is a deaths story, and the shape of it — a spike in 2021–2022 subsiding by 2024 — is the shape the pandemic left in county death counts across the United States. [inference] The corpus holds no cause-of-death data and cannot attribute it.",
+          "text": "**Deaths moved and births did not — over these four years.** Births ran 1,171, 1,190, 1,202 and 1,200 — flat within three per cent. Over a longer window they did move: the same component files put births at 1,318 in 2011, so the flatness here is the floor of a fall and not a steady state. [verified] — [the longer series](allen-county-children-2010-2024.yml). Within these four years, deaths ran 1,384, 1,449, 1,243 and 1,193, peaking in 2022 and falling by 256 over the following two years. So the natural decrease of these four years is a deaths story, and the shape of it — a spike in 2021–2022 subsiding by 2024 — is the shape the pandemic left in county death counts across the United States. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It was the pandemic, and the arithmetic is now here rather than inferred.** Ohio's own file puts 211 COVID-19 deaths of Allen County residents in the estimate year 2021 and 236 in 2022 — 15.2 and 16.3 per cent of the county's deaths in those years — against 37 in 2023. [verified] — [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), summed over 1 July to 30 June to match this file's estimate year; see [the deaths](allen-county-covid-deaths-2020-2023.yml). **The county's deaths fell 206 between the estimate years 2022 and 2023 and its COVID-19 deaths fell 199, which is 97 per cent of the fall.** [inference] Across the three estimate years the state file covers, 484 of the county's 4,076 deaths were of COVID-19, and this node's refusal to attribute the spike is retired. The estimate year 2024 is not covered: Ohio's file ends on 24 August 2023, two months into it.",
           "tier": "inference"
         }
       ],
@@ -27784,6 +28007,160 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "to": "measure/allen-county-zip-codes-2020.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-zcta-relationship-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "to": "measure/allen-county-covid-cases-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-cases-2020-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-cases-2020-2023.yml",
+      "to": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-cases-2020-2023.yml",
+      "to": "measure/allen-county-covid-by-zip-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-cases-2020-2023.yml",
+      "to": "measure/allen-county-hospital-activity-2011-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "to": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "to": "measure/allen-county-covid-cases-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "to": "measure/allen-county-natural-change-2021-2024.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "to": "measure/allen-county-early-deaths-by-cause-2020-2022.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "to": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
+    },
+    {
+      "from": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "to": "organization/mercy-health-st-ritas-medical-center.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "to": "organization/lima-memorial-health-system.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-place-of-death-2020-2023.yml",
+      "to": "measure/allen-county-hospital-activity-2011-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-vaccination-2020-2023.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/cdc-covid-19-county-data.md"
+    },
+    {
+      "from": "measure/allen-county-covid-vaccination-2020-2023.yml",
+      "to": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-covid-vaccination-2020-2023.yml",
+      "to": "measure/allen-county-age-structure-2023.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-crops-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -29658,6 +30035,13 @@
       "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/census-popest-2024.md"
+    },
+    {
+      "from": "measure/allen-county-natural-change-2021-2024.yml",
+      "to": "measure/allen-county-covid-deaths-2020-2023.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/ohio-covid-19-dashboard-files.md"
     },
     {
       "from": "measure/allen-county-natural-change-2021-2024.yml",
