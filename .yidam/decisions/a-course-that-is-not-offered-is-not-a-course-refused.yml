@@ -1,0 +1,70 @@
+id: a-course-that-is-not-offered-is-not-a-course-refused
+summary: >-
+  In the Civil Rights Data Collection, eight of Allen County's ten high schools have the reserved
+  value `-2` in the Advanced Placement enrolment column. It is not missing data and it is not zero:
+  it is the school answering *no* to whether it offers the course, and the questionnaire skipping
+  the rest. A rate built over those rows invents ten schools that offer a course and enrol nobody;
+  a rate that drops them as missing loses the finding. Where a file gates one question on another,
+  the gate's answer is recorded as a fact about the respondent, and the two questions are reported
+  as two measures.
+context: |
+  This corpus has a rule for a zero that means nobody looked —
+  [a zero is not a blank](a-zero-is-not-a-blank.yml) — and none for the opposite case, where the
+  file is careful, distinguishes three kinds of absence, and the analyst flattens them.
+
+  The collection's coursework tables carry three reserved values and they mean different things:
+
+      -1   asked, not answered — the district left the cell empty
+      -2   not asked — the school answered no to the gate question above it
+      -3   suppressed
+
+  Allen County's ten high schools in 2021–22, on the Advanced Placement questions:
+
+      offers an AP course        2 schools    Elida, Shawnee
+      enrolment column is -2     8 schools    the other eight
+      enrolment column is 0      0 schools
+
+  The eight `-2` rows are the more informative half of the county's answer. Two schools offer the
+  course and 132 pupils take it; eight schools offer it to nobody, and one of those eight is the
+  largest high school in the county. A reader who filters the reserved codes out is left with a
+  county whose Advanced Placement participation is 132 of 1,251 — 10.6 per cent, close to Ohio's
+  10.5 — and has thrown away the whole finding, which is that 3,585 of this county's high-school
+  pupils attend a school where the number is not 10.6 per cent but nothing.
+decision: |
+  **When a file gates one question on the answer to another, report the gate and the gated
+  question as two measures, and state the denominator each is over.**
+
+  - **The gate is a fact about the institution.** How many schools offer the course is a finding in
+    its own right, published as a count of schools, not as a footnote to a participation rate.
+  - **The gated measure gets the denominator it was collected over.** Pupils in an AP course, over
+    the pupils in schools that offer one — and the corpus says which of the two denominators it
+    used, every time, because the two differ by a factor of four here.
+  - **Neither reserved code becomes a number.** A `-2` is not a zero, and a `-2` is not a missing
+    value to be imputed or dropped in silence. It is excluded from both parts of a ratio and it is
+    counted in the sentence above it.
+  - **The county-wide rate is still published, and it is published as the product of the two.** Two
+    schools in ten and 10.6 per cent inside them is 2.7 per cent of the county — and the reader is
+    shown all three numbers rather than the last one.
+rationale: |
+  **The mistake this prevents is a rate that measures the wrong thing and looks right.** 10.6 per
+  cent against Ohio's 10.5 is a comfortable finding, defensible from the file, and false about the
+  county. It is false in the specific way that a survivorship rate is false: the denominator has
+  been quietly restricted to the cases where the outcome was possible.
+
+  **The gate carries the decision and the gated question does not.** Whether a child takes calculus
+  is partly the child's; whether the school runs calculus is entirely the district's. Reporting only
+  the second as a rate over pupils attributes an institutional choice to the pupils who were never
+  offered it, which is the same error as
+  [located here is not of here](located-here-is-not-of-here.yml) at a different grain.
+
+  **What this does not license.** Reading a `-2` as a refusal. The file records that a school did
+  not offer a course; it records nothing about any pupil asking for one, being counselled away from
+  one, or being turned down. The corpus states the offer and the take-up and refuses the sentence
+  that joins them.
+
+  **Where else this reaches.** Every gated questionnaire this corpus holds or will hold: the
+  gifted-programme question, the dual-enrolment question and the single-sex-class question in this
+  same file; the assisted-housing questions that ask about a programme before asking about its
+  tenants; and any administrative form whose skip logic is invisible in the extract.
+status: accepted
+date: "2026-09-05"
