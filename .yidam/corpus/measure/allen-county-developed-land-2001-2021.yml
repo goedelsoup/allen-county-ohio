@@ -8,7 +8,8 @@ description: |
   acres to 48,694, from 17.97 per cent of the county to 18.70.
 
   **The county did not spread so much as thicken.** Its lightest developed class *fell* by 925
-  acres over the twenty years while medium intensity rose 1,748 and high rose 742:
+  acres over the twenty years while medium intensity rose 1,748 and high intensity rose 742.
+  [verified] — same source.
 
       developed class            2001      2021    change
       open space               20,503    19,578      -925
@@ -17,7 +18,7 @@ description: |
       high intensity            3,310     4,052      +742
       all developed            46,785    48,694    +1,909
 
-  [verified] — same source. The single largest land cover transition anywhere in this county over
+  The single largest land cover transition anywhere in this county over
   the twenty years is not farm to town: it is 1,020 acres of developed open space becoming
   developed medium intensity. [verified] — same source, the 2001-to-2021 transition table.
 
@@ -49,9 +50,12 @@ description: |
   measures the recode and the re-registration; see
   [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml).
 
-  **This node cannot say where a single building went up.** A thirty-metre pixel that changes class
-  says a tenth of a hectare became more built between two epochs three years apart, and nothing
-  about what was built, when within the interval, or for whom.
+  **A pixel is not a building.** A thirty-metre cell that changes class says a tenth of a hectare
+  became more built between two epochs three years apart, and nothing about what was built, when
+  within the interval, or for whom. [inference] — the reasoning is this corpus's, against
+  [the building footprints](allen-county-buildings-2019.yml), which are drawn one at a time.
+
+  **This node cannot say where a single building went up.**
 properties:
   parameter: acres entering the developed land cover classes, Allen County
   value: "1909"
@@ -77,6 +81,9 @@ links:
     claim_tag: verified
     source: ../../catalog/usda-cropscape-cdl.md
   - target: allen-county-population-1940-1990.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-buildings-2019.yml
     relationship: relates-to
     claim_tag: inference
   - target: ../measure.ont.yml
