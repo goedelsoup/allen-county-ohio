@@ -176,7 +176,6 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 -->
 | Crate | Description |
 |---|---|
-| [—](crates/) | — |
 | [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
 | [ground](ground/) | The survey section a point stands on, and the Recorder book that holds its title |
 | [provenance](provenance/) | Whether every edge in the corpus says what kind of claim it is |
