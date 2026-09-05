@@ -10,24 +10,45 @@
 // 4.5:1 on every surface it might travel to. It is over the tokens and not over the rendered
 // pages, because a role is a promise made once and spent in seventeen components: the place
 // to keep the promise is where it is made.
+//
+// It runs twice, over two palettes. The parchment one is a port and inherits a caveat. The
+// night one is a derivation this repository composed, and it has no caveat to inherit and
+// nobody upstream to report a defect to — which is an argument for measuring it harder rather
+// than for trusting it more.
 
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
+import { resolve as follow, scope } from './tokens'
 
-const css = readFileSync(new URL('../src/styles/tokens/colors.css', import.meta.url), 'utf8')
+const sheet = (name: string): string =>
+  readFileSync(new URL(`../src/styles/tokens/${name}.css`, import.meta.url), 'utf8')
 
-/** Every custom property in the sheet, unresolved. */
-const declared = new Map(
-  [...css.matchAll(/(--[a-z0-9-]+):\s*([^;]+);/g)].map(([, name, value]) => [name, value]),
-)
+const css = sheet('colors')
+const night = sheet('dark')
+
+/**
+ * The palette a page gets before any preference applies.
+ *
+ * Read by scope rather than by a flat sweep of the files, and it has to be. `dark.css`
+ * redeclares two dozen of these names under its own selectors; a regex over both files keeps
+ * whichever came last, which would quietly turn every ratio below into a measurement of the
+ * night palette against the day grounds — and pass.
+ */
+const declared = scope(css)
+
+/**
+ * And the palette a page gets on a dark OS.
+ *
+ * The ramps come from `colors.css` and only the semantic roles move, so the night map is the
+ * day map with the dark block laid over it. That is the same resolution order the browser
+ * performs, and doing it any other way here would check a palette no reader ever sees.
+ */
+const DARK_SELECTOR = ":root[data-theme='dark']"
+const declaredDark = new Map([...declared, ...scope(night, DARK_SELECTOR)])
 
 /** A token's literal colour, following `var()` aliases to the ramp underneath. */
-function resolve(token: string, depth = 0): string {
-  const value = (declared.get(token) ?? '').split('/*')[0].trim()
-  const alias = /^var\((--[a-z0-9-]+)\)$/.exec(value)
-  if (alias && depth < 10) return resolve(alias[1], depth + 1)
-  return value
-}
+const resolve = (token: string): string => follow(token, declared)
+const resolveDark = (token: string): string => follow(token, declaredDark)
 
 /** WCAG 2.1 relative luminance. */
 function luminance(hex: string): number {
@@ -40,6 +61,16 @@ function contrast(a: string, b: string): number {
   const [x, y] = [luminance(a), luminance(b)]
   return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05)
 }
+
+/**
+ * A declaration set, comparable across two blocks written at different indents.
+ *
+ * The night palette's at-rule block sits one level deeper than its attribute twin, so every
+ * multi-line gradient differs by two spaces per line and by nothing else. Indentation is not a
+ * value.
+ */
+const collapsed = (declarations: Map<string, string>): [string, string][] =>
+  [...declarations].map(([name, value]): [string, string] => [name, value.replace(/\s+/g, ' ')]).toSorted()
 
 /** The AA bar for normal text. Everything here is set at 11–20px, so it is the bar. */
 const AA = 4.5
@@ -61,6 +92,7 @@ const TEXT_ROLES = [
   '--text-faint',
   '--text-link',
   '--text-link-hover',
+  '--text-link-active',
   '--text-annotation',
   '--status-verified-text',
   '--status-disputed-text',
@@ -70,12 +102,13 @@ const TEXT_ROLES = [
 /**
  * Roles that are marks: a dot, a chip, a dashed edge, an absent value.
  *
- * Measured on the page ground these run 2.14:1 (`--status-missing`) to 4.48:1
- * (`--status-verified`), and they are deliberately not held to the 3:1 bar for graphical
+ * Measured across the four grounds these run 2.14:1 (`--status-missing` on `--surface-sunken`,
+ * 2.41:1 on the page) to 4.48:1 (`--status-verified`), and they are deliberately not held to
+ * the 3:1 bar for graphical
  * objects. That bar is for objects "required to understand content", and none of these is:
  * every badge, relation and status row in this site prints its tier as a word beside the ink.
- * The rule is stated in `Badge.astro`, `RelationsList.astro` and `bridge.css`, and it is what
- * lets the marks stay the colours the design composed.
+ * The rule is stated in `Badge.astro` and `RelationsList.astro`, checked in `register.test.ts`,
+ * and it is what lets the marks stay the colours the design composed.
  *
  * What is checked is that they stay marks — that nothing quietly points a text role at one.
  */
@@ -137,5 +170,109 @@ describe('the accent ramp', () => {
     for (const role of TEXT_ROLES) {
       expect(marks.has(resolve(role)), `${role} resolves to a mark ink`).toBe(false)
     }
+  })
+})
+
+describe('text on ink', () => {
+  /**
+   * The same pass, on the night palette.
+   *
+   * The design system ships no dark palette; `tokens/dark.css` derives one from the ink and
+   * parchment ramps it does ship. A derivation gets *more* scrutiny than a port, not less —
+   * upstream cannot have measured what upstream never composed, so there is no caveat to
+   * inherit and no author to report to. Whatever these numbers are, this repository chose them.
+   *
+   * The binding ground is `--surface-raised`, which at night is the shallowest ink rather than
+   * the lightest parchment. It is the reason the accents come from the -100 end of each ramp:
+   * at -300 the ochre word reached 4.74:1 there and the rubric one did not reach the bar at all
+   * (2.77:1).
+   */
+  it.each(TEXT_ROLES)('%s reads on every night ground', (role) => {
+    const ink = resolveDark(role)
+    expect(ink, `${role} does not resolve to a literal colour in the dark scope`).toMatch(
+      /^#[0-9a-f]{6}$/,
+    )
+
+    for (const ground of GROUNDS) {
+      const ratio = contrast(ink, resolveDark(ground))
+      expect(
+        Number(ratio.toFixed(2)),
+        `${role} (${ink}) on ${ground} (${resolveDark(ground)}) is ${ratio.toFixed(2)}:1 at night`,
+      ).toBeGreaterThanOrEqual(AA)
+    }
+  })
+
+  it('keeps three distinguishable weights below the strong ink at night too', () => {
+    const [body, muted, faint] = ['--text-body', '--text-muted', '--text-faint'].map(resolveDark)
+    expect(new Set([body, muted, faint]).size).toBe(3)
+
+    const ground = resolveDark('--surface-page')
+    expect(contrast(body, ground)).toBeGreaterThan(contrast(muted, ground))
+    expect(contrast(muted, ground)).toBeGreaterThan(contrast(faint, ground))
+  })
+
+  it('keeps the status marks separate from the status words at night too', () => {
+    const marks = new Set(MARK_ROLES.map(resolveDark))
+    for (const role of TEXT_ROLES) {
+      expect(marks.has(resolveDark(role)), `${role} resolves to a mark ink at night`).toBe(false)
+    }
+  })
+
+  it('reads inverted on the inverted ground, which has swapped ends', () => {
+    // In daylight `--surface-ink` is the darkest ink and `--text-inverse` is parchment. At
+    // night both turn over: the inverted surface is the one that is *light*. The pair has to
+    // keep working through the swap, which is the sort of thing an inversion gets wrong.
+    expect(
+      contrast(resolveDark('--text-inverse'), resolveDark('--surface-ink')),
+    ).toBeGreaterThanOrEqual(AA)
+  })
+
+  it('leaves no role undefined in the dark scope', () => {
+    // A role the night block forgets silently keeps its daylight value, which on an ink ground
+    // is the failure this whole file exists to catch — and it would pass every ratio above if
+    // the forgotten role happened to be a light one.
+    const dark = scope(night, DARK_SELECTOR)
+    const missing = [...TEXT_ROLES, ...MARK_ROLES, ...GROUNDS].filter((role) => !dark.has(role))
+    expect(missing).toEqual([])
+  })
+
+  it('says the same thing to the OS and to the attribute', () => {
+    // Plain CSS cannot write one set of values into both an at-rule and a top-level selector,
+    // so the two blocks are duplicated. Duplication that nothing checks is duplication that
+    // drifts — and the drift here would be a reader whose OS is dark seeing a different site
+    // from a reader who asked for dark, with no error anywhere.
+    const byPreference = scope(
+      night,
+      ":root:where(:not([data-theme='light']))",
+      '@media (prefers-color-scheme: dark)',
+    )
+    const byAttribute = scope(night, DARK_SELECTOR)
+
+    expect(byPreference.size).toBeGreaterThan(0)
+    expect(collapsed(byPreference)).toEqual(collapsed(byAttribute))
+  })
+})
+
+describe('large text is held to the large-text bar, on both grounds', () => {
+  /**
+   * `--text-drop-cap` is the 66px rubric capital an entry opens with, and WCAG's bar for text
+   * that size is 3:1 rather than 4.5:1. It is checked separately for exactly that reason: put it
+   * in `TEXT_ROLES` and it fails at night for being a colour rather than for being unreadable;
+   * leave it out entirely and it goes back to being what it was — a raw `--rubric-500` at 2.44:1
+   * on ink, which is under even this bar.
+   *
+   * Only `--surface-page` — the drop cap sits in `.claim`, which sets no ground of its own.
+   */
+  const LARGE = 3
+
+  it.each([
+    ['day', resolve],
+    ['night', resolveDark],
+  ])('%s: the drop cap reads on the page', (_when, read) => {
+    const ratio = contrast(read('--text-drop-cap'), read('--surface-page'))
+    expect(
+      Number(ratio.toFixed(2)),
+      `--text-drop-cap (${read('--text-drop-cap')}) on ${read('--surface-page')} is ${ratio.toFixed(2)}:1`,
+    ).toBeGreaterThanOrEqual(LARGE)
   })
 })

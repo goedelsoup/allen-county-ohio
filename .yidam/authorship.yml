@@ -1,0 +1,21 @@
+# What in this repository is not authored here.
+#
+# Checks that read prose walk directories, and a walk cannot tell authored material from
+# material that merely landed there. A finding inside an import is real, but it is somebody
+# else's — and a finding that says whose is worth more than one that says nothing.
+#
+# See .yidam/.vendor/prelude/guidelines/directories.md, `.yidam/authorship.yml`.
+
+imported:
+  # A verbatim copy of the design system's own token files, refreshed by the `design-pull`
+  # skill and never edited here. A defect inside it is reported against the design system and
+  # recorded in .yidam/decisions/the-design-system-is-an-upstream.yml — not baselined, and not
+  # repaired in place. Repairing it in place would falsify the record the mirror exists to
+  # keep, and would be discarded by the next pull besides.
+  #
+  # Seven token sheets, pulled 2026-09-05, hashed in design/pin.toml. `port.test.ts` re-hashes
+  # them on every run, so "not modified here" is checked rather than promised.
+  - path: design/upstream/
+    from: >-
+      the Allen County Atlas design system, claude.ai/design project
+      4f74bdb5-feb9-4d1f-98b5-7f752049cb53

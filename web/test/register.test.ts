@@ -75,6 +75,17 @@ function componentFiles(dir = COMPONENTS, prefix = ''): { file: string; source: 
   )
 }
 
+/** Every file under `dir` with `extension`, walked to any depth. */
+function walk(dir: string, extension: string, prefix = ''): { file: string; source: string }[] {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory()
+      ? walk(join(dir, e.name), extension, `${prefix}${e.name}/`)
+      : e.name.endsWith(extension)
+        ? [{ file: prefix + e.name, source: readFileSync(join(dir, e.name), 'utf8') }]
+        : [],
+  )
+}
+
 const readingPages = readdirSync(PAGES)
   .filter((f) => f.endsWith('.astro') && !EXEMPT.has(f))
   .map((file) => ({ file, source: readFileSync(join(PAGES, file), 'utf8') }))
@@ -156,5 +167,140 @@ describe('an article heads its movements at the rank the layout styles', () => {
     const body = parts.length > 2 ? parts.slice(2).join('---') : source
     const ranks = [...body.matchAll(/<h([1-6])[\s>]/g)].map((m) => m[1])
     expect([...new Set(ranks)].toSorted()).toEqual(ranks.length > 0 ? ['2'] : [])
+  })
+})
+
+describe('a claim tag is carried in words', () => {
+  /**
+   * The one rule the badge has never been allowed to break, now checked rather than commented.
+   *
+   * Tier is a status distinction and a reader who cannot separate verdigris from ochre has to
+   * be able to read the tier anyway. It is also what licenses the rest of the palette: the
+   * status *marks* are deliberately exempt from the 3:1 contrast bar for graphical objects, on
+   * the argument that the bar is for objects required to understand content and none of these
+   * is — because the word is always there. `contrast.test.ts` holds the ink to its ratios and
+   * relies on that argument; this is the half of it that lives in the markup.
+   *
+   * There were two badge components until the idiom was consolidated, and both followed the
+   * rule by habit. A third would have had nothing to read.
+   */
+  it('renders the tier as text on every path through the badge', () => {
+    const badge = readFileSync(join(COMPONENTS, 'entry/Badge.astro'), 'utf8')
+    const body = badge.split('---').slice(2).join('---').replace(/<style>[\s\S]*<\/style>/, '')
+
+    // The word is unconditional: `{label ?? badge.label}`, never inside a `&&` or a ternary
+    // that can render nothing.
+    expect(body).toMatch(/\{\s*label\s*\?\?\s*badge\.label\s*\}/)
+    expect(body).not.toMatch(/\{[^}]*&&[^}]*label[^}]*\}/)
+  })
+
+  it('is the only badge in the tree', () => {
+    const badges = componentFiles().filter(({ file }) => /badge/i.test(file))
+    expect(badges.map((b) => b.file)).toEqual(['entry/Badge.astro'])
+  })
+})
+
+describe('nothing on this page reaches the network', () => {
+  /**
+   * `web/README.md` states it plainly — *"Nothing here reaches the network at build time or at
+   * read time"* — and for the life of the design port it was false. `Base.astro` carried a
+   * Google Fonts stylesheet and two `preconnect`s, so every reader's browser announced itself
+   * to a third party on every page load of a public civic reference.
+   *
+   * It was not a lie anyone told. The feeds are committed, the geometry is vendored, the build
+   * is static, and the sentence was true of everything its author was thinking about. The
+   * fonts arrived as a `<link>` because that is how fonts arrive, and nothing was in a
+   * position to notice that the claim had stopped holding.
+   *
+   * So it is checked. The faces are in `public/fonts/`, written by `mise run fonts`.
+   */
+  /**
+   * Everything a page can carry a URL in: components, layouts, **pages** and **stylesheets**.
+   *
+   * The first draft read components and layouts only, which is 29 files out of 143 — every one
+   * of the 110 pages and every stylesheet went unchecked, and since only `.astro` was ever fed
+   * to them, the `@import url(…)` and `url(…woff2)` patterns below were unreachable code
+   * pretending to be a rule. Both holes were live: a Google Fonts `<link>` in a page, or an
+   * `@import` at the top of `tokens.css`, restored the exact dependency this check was written
+   * to remove and left the suite green.
+   */
+  const sources = [
+    ...walk(COMPONENTS, '.astro'),
+    ...walk(join(COMPONENTS, '../layouts'), '.astro'),
+    ...walk(PAGES, '.astro'),
+    ...walk(join(COMPONENTS, '../styles'), '.css'),
+  ]
+
+  it('reads the whole site, not a corner of it', () => {
+    // A walk that silently stops covering a directory is the failure this check itself had.
+    expect(sources.length).toBeGreaterThan(140)
+    expect(sources.some(({ file }) => file.endsWith('.css'))).toBe(true)
+    expect(sources.some(({ file }) => file === 'index.astro')).toBe(true)
+  })
+
+  it.each(sources)('$file fetches nothing from anywhere', ({ source }) => {
+    // A stylesheet, a script, a preconnect, a `@import url(…)`, an <img> or a font from a host.
+    // `preload` is exempt only for a same-origin path — `/fonts/…`, never `//` or `https://`.
+    const reaches = [
+      /<link[^>]+href=["']https?:\/\//i,
+      /<link[^>]+href=["']\/\//i,
+      /<script[^>]+src=["']https?:\/\//i,
+      /rel=["'](?:dns-)?preconnect["']/i,
+      /@import\s+url\(\s*["']?https?:/i,
+      /url\(\s*["']?https?:\/\/[^)]*\.(?:woff2?|ttf|otf)/i,
+    ].filter((pattern) => pattern.test(source))
+
+    expect(reaches.map(String)).toEqual([])
+  })
+
+  it('serves every face it declares from its own directory', () => {
+    const sheet = readFileSync(join(COMPONENTS, '../styles/tokens/fonts.css'), 'utf8')
+    const urls = [...sheet.matchAll(/src:\s*url\(['"]?([^'")]+)/g)].map((m) => m[1])
+    expect(urls.length).toBeGreaterThan(0)
+    expect(urls.filter((url) => !url.startsWith('/fonts/'))).toEqual([])
+
+    const shipped = new Set(readdirSync(join(COMPONENTS, '../../public/fonts')))
+    expect(urls.filter((url) => !shipped.has(url.replace('/fonts/', '')))).toEqual([])
+  })
+})
+
+describe('text colour goes through a role, never into the ramp', () => {
+  /**
+   * The night palette gives values to *roles*. A component that reaches past them into the base
+   * ramp gets a literal, and a literal has no dark value — so it keeps its daylight ink on an
+   * ink ground, silently, on every page that renders it.
+   *
+   * Three shipped that way and were found by measuring rather than by looking:
+   *
+   *   .date-chip           --parchment-50 on a ground that inverts to parchment   1.18:1
+   *   .claim p.drop        --rubric-500 on --surface-page                          2.44:1
+   *   a:active             --rubric-700 on --surface-page                          1.66:1
+   *
+   * `contrast.test.ts` could not see any of them: it sweeps role names, which is its stated
+   * scope and the right one. This is the other half — the rule that everything carrying text
+   * colour is a role in the first place.
+   *
+   * **Scoped to `color:` deliberately.** Borders, backgrounds and decoration inks still reach
+   * into the ramp in about two dozen places. Those are hairlines and fills rather than text:
+   * on an ink ground they lose contrast against it and read as absent, which is a cosmetic
+   * regression and not a legibility one. Widening this check to them means giving each a night
+   * value and re-judging it in both palettes, which is its own piece of work — see
+   * `.yidam/decisions/the-design-system-is-an-upstream.yml`.
+   */
+  const RAMP = /(^|[\s:])color:\s*var\(--(?:parchment|ink|rubric|verdigris|indigo|ochre|foxing)-/
+
+  const styled = [
+    ...walk(COMPONENTS, '.astro'),
+    ...walk(join(COMPONENTS, '../layouts'), '.astro'),
+    ...walk(PAGES, '.astro'),
+    ...walk(join(COMPONENTS, '../styles'), '.css'),
+  ].filter(({ file }) => !file.startsWith('tokens/'))
+
+  it.each(styled)('$file sets text colour from a role', ({ source }) => {
+    const raw = source
+      .split('\n')
+      .filter((line) => RAMP.test(line))
+      .map((line) => line.trim())
+    expect(raw).toEqual([])
   })
 })

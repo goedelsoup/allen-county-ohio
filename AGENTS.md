@@ -113,6 +113,23 @@ The site's own gate is `mise run site-test`, also inside `ci`. Its subject is th
 performed under `web/`: joining a corpus GEOID to the census geometry vendored in
 `web/public/geo/`, which neither of the crates above can see.
 
+**The port gate.** [`web/test/port.test.ts`](web/test/port.test.ts), inside `site-test`. The
+site's token layer is a hand port of a design system this repository does not own, and
+[`design/`](design/) is the return address it lacked for its first five days: a verbatim mirror
+under `design/upstream/`, the bytes pinned in `design/pin.toml`, and every local difference
+declared in `design/departures.md` with its argument. The gate fails on a difference that is not
+declared **and on a declaration that no longer describes one** — the same discipline as the lint
+baseline and the publication gate's `answers` list, for the same reason.
+
+`design/upstream/` is read-only in the sense `.yidam/.vendor/` is, and is declared `imported` in
+[`.yidam/authorship.yml`](.yidam/authorship.yml). A defect inside it is reported upstream, never
+repaired in place. The two directions are agent skills rather than `mise` tasks, because the
+tool that reaches the design system has no CLI: [`design-pull`](.yidam/skills/design-pull.md)
+refreshes the mirror and reports drift, and [`design-push`](.yidam/skills/design-push.md) carries
+a finding back and **halts** at the plan boundary — a push is an outward-facing act and waits on
+the elector. The findings themselves live in
+[the-design-system-is-an-upstream](.yidam/decisions/the-design-system-is-an-upstream.yml).
+
 A **succession check** over `tenure` nodes is still the gate this corpus is most likely to want
 next: an office whose holders leave a gap, or whose intervals overlap, is a defect no graph check
 can see, because each node is individually well-formed and each edge resolves. `crates/succession`

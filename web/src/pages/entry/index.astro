@@ -7,7 +7,7 @@
 
 import Base from '../../layouts/Base.astro'
 import Icon from '../../components/entry/Icon.astro'
-import TierBadge from '../../components/TierBadge.astro'
+import Badge from '../../components/entry/Badge.astro'
 import { nodes } from '../../lib/feeds'
 import { CLASS_PRESENTATION, entryPath, glyphFor, nodesOfClass, pluralFor } from '../../lib/entry'
 
@@ -45,7 +45,7 @@ const classes = Object.keys(CLASS_PRESENTATION)
           {items.map((n) => (
             <li>
               <a href={entryPath(n.id)}>{n.label}</a>
-              <TierBadge tier={n.tier} />
+              <Badge tier={n.tier} scale="inline" />
             </li>
           ))}
         </ul>

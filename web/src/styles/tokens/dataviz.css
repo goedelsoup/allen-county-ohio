@@ -1,0 +1,53 @@
+/*
+ * Charts and the map.
+ *
+ * NOT PORTED. The Atlas design system specifies no data-visualization palette,
+ * so this file is a derivation from its accent inks rather than a copy of
+ * anything upstream — which is why it is declared in `design/departures.md` and
+ * recorded as finding 4 in `.yidam/decisions/the-design-system-is-an-upstream.yml`.
+ * Either these become a real addition to the system or they stay here as a
+ * documented local derivation; the point of writing them down is that the
+ * question gets asked rather than settled by default.
+ *
+ * It lived in `bridge.css` while that file existed, which was the wrong home:
+ * the bridge was a migration seam that was meant to shrink to nothing, and
+ * these are not migration debt. Nothing about them is temporary.
+ *
+ * The rule they are composed under: a chart sits ON the parchment rather than
+ * on top of it. The palette this site started with was a blue and an orange
+ * composed against a cool near-white ground, and against warm stock it read as
+ * imported software chrome.
+ */
+
+:root {
+  /*
+   * Indigo leads because the system assigns it to chrome and water. Rubric is
+   * the second series because the system reserves it for the one emphatic
+   * element in a view — which, in a two-series chart, is the series being
+   * argued about.
+   */
+  --series-1: var(--indigo-500);
+  --series-2: var(--rubric-500);
+  --series-1-soft: var(--indigo-100);
+
+  /*
+   * Sequential ramp for magnitude on the map: a single-hue indigo ramp, the way
+   * a printed county atlas shaded a plate. Steps 250 and 550 are interpolated —
+   * the system ships four indigo stops and a choropleth needs five, monotonic
+   * in lightness so the ordering survives greyscale and colour-blind readers.
+   */
+  --seq-100: var(--indigo-100);
+  --seq-250: #a7b4c4;
+  --seq-400: var(--indigo-300);
+  --seq-550: #4e6480;
+  --seq-700: var(--indigo-700);
+
+  /*
+   * The locator plate: a marker, its edge, and the one orienting river line. These were ramp
+   * inks reached for inside `Locator.astro`, which meant the plate's ground inverted at night
+   * and the two marks drawn on it did not — a literal has no dark value.
+   */
+  --map-marker: var(--rubric-500);
+  --map-marker-edge: var(--rubric-700);
+  --map-water: var(--indigo-500);
+}

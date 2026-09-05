@@ -1,0 +1,34 @@
+# Provenance of the design system this repository's token layer was ported from.
+#
+# Written and updated by the `design-pull` skill. Read by `web/test/port.test.ts`,
+# which holds `web/src/styles/tokens/` to `upstream/` plus the declared departures.
+#
+# The shape follows .yidam.toml deliberately: a pin is a pin, and that file already
+# teaches a reader how to read one. The difference is what a pin can be. yidam pins a
+# git commit, which is resolvable and orderable. A claude.ai design project has no
+# commit and no version — so `files` below is the pin: the sha256 of every mirrored
+# file at the moment it was pulled. Drift is detected by re-hashing, not by comparing
+# revisions.
+#
+# `pulled` is when the mirror was last refreshed. It says how stale `upstream/` is, and
+# nothing more — the project may have moved the same afternoon.
+
+[design_system]
+name    = "Allen County Atlas Design System"
+project = "4f74bdb5-feb9-4d1f-98b5-7f752049cb53"
+url     = "https://claude.ai/design/p/4f74bdb5-feb9-4d1f-98b5-7f752049cb53"
+pulled  = "2026-09-05"
+
+# ── the mirror ────────────────────────────────────────────────────────────
+#
+# One entry per file under upstream/, path relative to that directory, with the
+# sha256 of the bytes as pulled.
+#
+[files]
+"tokens/base.css" = "68a3a0318131302bec89b72e2a13f8a1eff09745cfd193bb4841791d6bb4e1e5"
+"tokens/colors.css" = "c03d2074f532df3e673c5d84ad316691fbdb6e6cc3de8dc5b3754e7080028e05"
+"tokens/fonts.css" = "dd536603ee94ab60914132dbf24beb6fbd4ad76e178a32727ed5258e7786c01c"
+"tokens/motion.css" = "1007a605e415e1fe307bf703bc07f09cc2dbb21c00c84e4950f174699cd7a98e"
+"tokens/spacing.css" = "dd1ca6d520ffbec05a8fbcd06b4110a6ff3538ddf50fd15998278a87bed8afae"
+"tokens/surfaces.css" = "ad6898669257bbd072936ffc8413fc644e25c9929a943a88a677c144d7278e83"
+"tokens/typography.css" = "d3ee37076c10603a2e80c73aa0f9261962c056ad7e65a7f3132e421612dc0442"

@@ -1,0 +1,25 @@
+/*
+ * What this site adds to the system, and nothing else.
+ *
+ * NOT PORTED, and deliberately small. A token here is one the design system
+ * does not have a name for; a token that merely differs in value from one the
+ * system does name belongs in the ported file with a departure recorded
+ * against it, so that `design-pull` can see the disagreement.
+ *
+ * Which is also the rule this file must not break: it never redeclares a token
+ * a ported sheet declares. An override here would change the value every
+ * component resolves while the ported file still agreed with upstream — a
+ * departure the port gate is structurally unable to see. `port.test.ts` checks
+ * for exactly that shadowing.
+ */
+
+:root {
+  /*
+   * The system's page gutter is a fixed 36px, which is right at reading width
+   * and too much on a phone. The site's was fluid, and its narrow-screen
+   * behaviour is worth keeping — so the system's value becomes the ceiling
+   * rather than the constant, and is referenced rather than copied so it
+   * cannot fall out of step with `--gutter-page`.
+   */
+  --gutter-fluid: clamp(18px, 4vw, var(--gutter-page));
+}

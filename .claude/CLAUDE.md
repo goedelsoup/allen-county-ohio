@@ -27,6 +27,10 @@ that govern conduct here and the gate that CI runs.
   commits (a pipeline ran) are written in visibly different styles and never mixed.
 - **`.yidam/.vendor/` is read-only.** Fix prelude defects by re-vendoring
   (`mise run yidam-vendor-update`), never by editing in place.
+- **`design/upstream/` is read-only for the same reason.** It mirrors a design system this
+  repository does not own. Every local difference is declared in `design/departures.md` and
+  `web/test/port.test.ts` gates it both ways. Sending a finding back is
+  [`design-push`](../.yidam/skills/design-push.md), and it halts for the elector.
 
 ## Before committing
 

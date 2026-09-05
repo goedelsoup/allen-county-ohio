@@ -1,0 +1,344 @@
+/*
+ * Night: the same system, printed the other way round.
+ *
+ * NOT PORTED. The Atlas system is composed for paper — "warm parchment", "warm near-black ink
+ * (never grey, never true black)" — and every board sets a light ground. It ships no dark
+ * palette, and implementing it faithfully meant dropping the site's dark mode, which the port
+ * commit did. See `design/departures.md` and finding 3 in
+ * `.yidam/decisions/the-design-system-is-an-upstream.yml`; it goes upstream as a proposal
+ * rather than a correction, because a system with no dark palette has a gap and not a defect.
+ *
+ * ---- The rule this file is composed under ----
+ *
+ * Ink ground, parchment text. **Not an inversion**: nothing here is a light value pushed
+ * through a filter. Every colour below is a step the design system already ships, taken from
+ * the other end of the same two ramps — the ink ramp becomes the stock and the parchment ramp
+ * becomes what is printed on it. A reader who knows the day palette should recognise the night
+ * one as the same inks, not as a second scheme.
+ *
+ * Three values could not be reached by going further down a ramp, and each is marked ▲ where
+ * it appears. Two are in the choropleth, where five monotonic steps are needed and the system
+ * ships four. The third is `rgb(12 10 7)` — one step below `--ink-900`, because a shadow and a
+ * modal scrim have to be darker than the deepest surface they fall on, and `--ink-900` *is* that
+ * surface here. It is deliberately not `rgb(0 0 0)`: `colors.css` says there is no grey and no
+ * pure black anywhere in this system, and a night mode is not a licence to add one.
+ *
+ * ---- Which surfaces are which ----
+ *
+ * The ordering is preserved rather than mirrored. In daylight `--surface-sunken` is the darkest
+ * parchment and `--surface-raised` the lightest; at night sunken is the deepest ink and raised
+ * the shallowest. A card still lifts off the page and a well still sinks into it. What changes
+ * is which direction lifting means.
+ *
+ * ---- What the washes cost ----
+ *
+ * `--wash-foxing` and `--paper-grain` are age on light stock: brown blotches and a dark
+ * hatching. Carried onto ink they read as dirt, which is the one thing a night mode must not
+ * look like. So the grain inverts — light hairlines, not dark — and the foxing drops to a
+ * quarter of its daylight strength and becomes a bloom rather than a stain.
+ *
+ * The shadows have the same problem more sharply: they are warm-black ink bleed and are
+ * simply invisible against an ink ground. At night the depth cue is the highlight on the top
+ * edge, which is what paper does under a lamp, with the spread kept as a much darker halo.
+ *
+ * ---- The duplication is deliberate and checked ----
+ *
+ * The two blocks below are identical and have to be: one follows the OS, the other honours an
+ * explicit `data-theme`, and plain CSS has no way to write one set of values into both an
+ * at-rule and a top-level selector. `contrast.test.ts` asserts they have not drifted apart,
+ * which is the failure this shape invites and the only one it invites.
+ */
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) {
+    color-scheme: dark;
+
+    /* ---- Surfaces: the ink ramp is the stock ---- */
+    --surface-page: var(--ink-800);
+    --surface-card: var(--ink-700);
+    --surface-raised: var(--ink-600);
+    --surface-sunken: var(--ink-900);
+    --surface-map: var(--ink-900);
+
+    /* The one surface that swaps ends: `--surface-ink` is the inverted ground by definition. */
+    --surface-ink: var(--parchment-200);
+
+    --surface-overlay: rgb(12 10 7 / 66%); /* ▲ one step below --ink-900 */
+    --surface-scrim: rgb(30 25 19 / 88%);
+
+    /* ---- Text: the parchment ramp is the ink ---- */
+    --text-strong: var(--parchment-50);
+    --text-body: var(--parchment-100);
+    --text-muted: var(--parchment-300);
+    --text-faint: var(--parchment-400);
+    --text-inverse: var(--ink-900);
+
+    /*
+     * The accents come from the -100 end rather than the -500 or -700. At -500 the system's
+     * inks are composed to sit on parchment and are darker than the ground here — an indigo
+     * link on ink-800 is 1.4:1, which is not a link, it is a smudge.
+     */
+    --text-link: var(--indigo-100);
+    --text-link-hover: var(--rubric-100);
+    --text-annotation: var(--rubric-100);
+    --text-link-active: var(--rubric-100);
+
+    /*
+     * The drop cap keeps its hue rather than going pale: it is 66px, held to the 3:1 large-text
+     * bar, and it only ever lands on --surface-page, where -300 reaches 4.65:1.
+     */
+    --text-drop-cap: var(--rubric-300);
+
+    /* ---- Lines ---- */
+    --rule-hairline: var(--ink-600);
+    --rule-strong: var(--ink-400);
+    --rule-faint: var(--ink-700);
+    --rule-focus: var(--rubric-300);
+
+    /*
+     * ---- Status ----
+     *
+     * The two-roles argument is unchanged and is the reason this section exists twice: a mark
+     * and a word want different things from one hue. The marks move up to -300 so they read as
+     * marks on ink; the words move up to -100 so they can be read as words on any of the four
+     * night grounds. Neither carries meaning alone — every badge still prints its tier.
+     */
+    --status-verified: var(--verdigris-300);
+    --status-disputed: var(--ochre-300);
+    --status-missing: var(--ink-400);
+    --status-error: var(--rubric-300);
+
+    --status-verified-text: var(--verdigris-100);
+    --status-disputed-text: var(--ochre-100);
+    --status-open-text: var(--rubric-100);
+
+    /* ---- Paper, at night ---- */
+    --wash-foxing:
+      radial-gradient(120% 90% at 12% 8%, rgb(201 169 126 / 8%) 0%, rgb(201 169 126 / 0%) 55%),
+      radial-gradient(90% 70% at 88% 92%, rgb(185 138 46 / 6%) 0%, rgb(185 138 46 / 0%) 60%);
+    --paper-grain:
+      repeating-linear-gradient(
+        0deg,
+        rgb(220 205 178 / 2%) 0,
+        rgb(220 205 178 / 2%) 1px,
+        rgb(255 255 255 / 0%) 1px,
+        rgb(255 255 255 / 0%) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgb(220 205 178 / 1.4%) 0,
+        rgb(220 205 178 / 1.4%) 1px,
+        rgb(255 255 255 / 0%) 1px,
+        rgb(255 255 255 / 0%) 4px
+      );
+    --wash-edge:
+      linear-gradient(
+        to bottom,
+        rgb(220 205 178 / 7%),
+        rgb(220 205 178 / 0%) 12%,
+        rgb(220 205 178 / 0%) 88%,
+        rgb(220 205 178 / 7%)
+      );
+    --protection-scrim:
+      linear-gradient(to top, rgb(30 25 19 / 96%), rgb(30 25 19 / 74%) 55%, rgb(30 25 19 / 0%));
+    --map-graticule:
+      repeating-linear-gradient(
+        0deg,
+        rgb(124 141 161 / 14%) 0,
+        rgb(124 141 161 / 14%) 1px,
+        transparent 1px,
+        transparent 48px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgb(124 141 161 / 14%) 0,
+        rgb(124 141 161 / 14%) 1px,
+        transparent 1px,
+        transparent 48px
+      );
+
+    /* Depth is a lit top edge now, not a bled shadow. The halo is ▲ rgb(12 10 7). */
+    --shadow-press: inset 0 1px 0 rgb(12 10 7 / 40%);
+    --shadow-card: inset 0 1px 0 rgb(220 205 178 / 10%), 0 2px 10px -6px rgb(12 10 7 / 55%);
+    --shadow-lift: inset 0 1px 0 rgb(220 205 178 / 14%), 0 10px 26px -14px rgb(12 10 7 / 70%);
+    --shadow-panel: 0 0 0 1px var(--rule-hairline), 0 18px 44px -22px rgb(12 10 7 / 80%);
+    --shadow-inset-page: inset 0 0 40px rgb(12 10 7 / 26%);
+
+    /* The gap in the ring is the ground, which is no longer parchment. */
+    --focus-ring: 0 0 0 2px var(--ink-900), 0 0 0 3.5px var(--rubric-300);
+
+    /*
+     * ---- Charts and the map ----
+     *
+     * Same argument as `dataviz.css`, one ramp further up. Indigo still leads and rubric is
+     * still the emphatic second.
+     *
+     * The choropleth inverts, and that is the point rather than an oversight: magnitude reads
+     * as *more light* on a dark ground exactly as it reads as *more ink* on a light one. The
+     * ramp still runs low to high from `--seq-100` to `--seq-700`, so nothing that consumes it
+     * changes; what changes is which end is bright. Steps 250 and 550 are interpolated ▲, the
+     * system shipping four indigo stops where five monotonic ones are needed — the same two
+     * interpolations the daylight ramp makes, in the same places, for the same reason.
+     */
+    --series-1: var(--indigo-300);
+    --series-2: var(--rubric-300);
+    --series-1-soft: var(--indigo-700);
+
+    /* The locator plate's ground inverts, so the two marks drawn on it have to move with it. */
+    --map-marker: var(--rubric-300);
+    --map-marker-edge: var(--rubric-100);
+    --map-water: var(--indigo-300);
+
+    --seq-100: var(--indigo-500);
+    --seq-250: #46596f; /* ▲ interpolated */
+    --seq-400: var(--indigo-300);
+    --seq-550: #a9b5c3; /* ▲ interpolated */
+    --seq-700: var(--indigo-100);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* ---- Surfaces: the ink ramp is the stock ---- */
+  --surface-page: var(--ink-800);
+  --surface-card: var(--ink-700);
+  --surface-raised: var(--ink-600);
+  --surface-sunken: var(--ink-900);
+  --surface-map: var(--ink-900);
+
+  /* The one surface that swaps ends: `--surface-ink` is the inverted ground by definition. */
+  --surface-ink: var(--parchment-200);
+
+  --surface-overlay: rgb(12 10 7 / 66%); /* ▲ one step below --ink-900 */
+  --surface-scrim: rgb(30 25 19 / 88%);
+
+  /* ---- Text: the parchment ramp is the ink ---- */
+  --text-strong: var(--parchment-50);
+  --text-body: var(--parchment-100);
+  --text-muted: var(--parchment-300);
+  --text-faint: var(--parchment-400);
+  --text-inverse: var(--ink-900);
+
+  /*
+   * The accents come from the -100 end rather than the -500 or -700. At -500 the system's
+   * inks are composed to sit on parchment and are darker than the ground here — an indigo
+   * link on ink-800 is 1.4:1, which is not a link, it is a smudge.
+   */
+  --text-link: var(--indigo-100);
+  --text-link-hover: var(--rubric-100);
+  --text-annotation: var(--rubric-100);
+  --text-link-active: var(--rubric-100);
+
+  /*
+   * The drop cap keeps its hue rather than going pale: it is 66px, held to the 3:1 large-text
+   * bar, and it only ever lands on --surface-page, where -300 reaches 4.65:1.
+   */
+  --text-drop-cap: var(--rubric-300);
+
+  /* ---- Lines ---- */
+  --rule-hairline: var(--ink-600);
+  --rule-strong: var(--ink-400);
+  --rule-faint: var(--ink-700);
+  --rule-focus: var(--rubric-300);
+
+  /*
+   * ---- Status ----
+   *
+   * The two-roles argument is unchanged and is the reason this section exists twice: a mark
+   * and a word want different things from one hue. The marks move up to -300 so they read as
+   * marks on ink; the words move up to -100 so they can be read as words on any of the four
+   * night grounds. Neither carries meaning alone — every badge still prints its tier.
+   */
+  --status-verified: var(--verdigris-300);
+  --status-disputed: var(--ochre-300);
+  --status-missing: var(--ink-400);
+  --status-error: var(--rubric-300);
+
+  --status-verified-text: var(--verdigris-100);
+  --status-disputed-text: var(--ochre-100);
+  --status-open-text: var(--rubric-100);
+
+  /* ---- Paper, at night ---- */
+  --wash-foxing:
+    radial-gradient(120% 90% at 12% 8%, rgb(201 169 126 / 8%) 0%, rgb(201 169 126 / 0%) 55%),
+    radial-gradient(90% 70% at 88% 92%, rgb(185 138 46 / 6%) 0%, rgb(185 138 46 / 0%) 60%);
+  --paper-grain:
+    repeating-linear-gradient(
+      0deg,
+      rgb(220 205 178 / 2%) 0,
+      rgb(220 205 178 / 2%) 1px,
+      rgb(255 255 255 / 0%) 1px,
+      rgb(255 255 255 / 0%) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(220 205 178 / 1.4%) 0,
+      rgb(220 205 178 / 1.4%) 1px,
+      rgb(255 255 255 / 0%) 1px,
+      rgb(255 255 255 / 0%) 4px
+    );
+  --wash-edge:
+    linear-gradient(
+      to bottom,
+      rgb(220 205 178 / 7%),
+      rgb(220 205 178 / 0%) 12%,
+      rgb(220 205 178 / 0%) 88%,
+      rgb(220 205 178 / 7%)
+    );
+  --protection-scrim:
+    linear-gradient(to top, rgb(30 25 19 / 96%), rgb(30 25 19 / 74%) 55%, rgb(30 25 19 / 0%));
+  --map-graticule:
+    repeating-linear-gradient(
+      0deg,
+      rgb(124 141 161 / 14%) 0,
+      rgb(124 141 161 / 14%) 1px,
+      transparent 1px,
+      transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(124 141 161 / 14%) 0,
+      rgb(124 141 161 / 14%) 1px,
+      transparent 1px,
+      transparent 48px
+    );
+
+  /* Depth is a lit top edge now, not a bled shadow. The halo is ▲ rgb(12 10 7). */
+  --shadow-press: inset 0 1px 0 rgb(12 10 7 / 40%);
+  --shadow-card: inset 0 1px 0 rgb(220 205 178 / 10%), 0 2px 10px -6px rgb(12 10 7 / 55%);
+  --shadow-lift: inset 0 1px 0 rgb(220 205 178 / 14%), 0 10px 26px -14px rgb(12 10 7 / 70%);
+  --shadow-panel: 0 0 0 1px var(--rule-hairline), 0 18px 44px -22px rgb(12 10 7 / 80%);
+  --shadow-inset-page: inset 0 0 40px rgb(12 10 7 / 26%);
+
+  /* The gap in the ring is the ground, which is no longer parchment. */
+  --focus-ring: 0 0 0 2px var(--ink-900), 0 0 0 3.5px var(--rubric-300);
+
+  /*
+   * ---- Charts and the map ----
+   *
+   * Same argument as `dataviz.css`, one ramp further up. Indigo still leads and rubric is
+   * still the emphatic second.
+   *
+   * The choropleth inverts, and that is the point rather than an oversight: magnitude reads
+   * as *more light* on a dark ground exactly as it reads as *more ink* on a light one. The
+   * ramp still runs low to high from `--seq-100` to `--seq-700`, so nothing that consumes it
+   * changes; what changes is which end is bright. Steps 250 and 550 are interpolated ▲, the
+   * system shipping four indigo stops where five monotonic ones are needed — the same two
+   * interpolations the daylight ramp makes, in the same places, for the same reason.
+   */
+  --series-1: var(--indigo-300);
+  --series-2: var(--rubric-300);
+  --series-1-soft: var(--indigo-700);
+
+  /* The locator plate's ground inverts, so the two marks drawn on it have to move with it. */
+  --map-marker: var(--rubric-300);
+  --map-marker-edge: var(--rubric-100);
+  --map-water: var(--indigo-300);
+
+  --seq-100: var(--indigo-500);
+  --seq-250: #46596f; /* ▲ interpolated */
+  --seq-400: var(--indigo-300);
+  --seq-550: #a9b5c3; /* ▲ interpolated */
+  --seq-700: var(--indigo-100);
+}

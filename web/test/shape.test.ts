@@ -101,6 +101,24 @@ describe('the nav cannot grow back', () => {
     }
   })
 
+  it('makes the same cut in the accessibility tree', () => {
+    // The check above holds the two groups apart in the data. For a while that was the only
+    // place it held: the layout put `aria-label="Instruments"` on a bare <ul>, and an
+    // accessible name on a list is neither a landmark nor announced on entry — so Map, Entries
+    // and Sources were read out inside the landmark named Sections, on every built page — 583 of
+    // them when it was found, 773 by the time it was fixed.
+    //
+    // A separation made in the data, in the styling and not in the accessibility tree is a
+    // separation made for everybody except the readers who most need the nav to be legible.
+    const layout = readFileSync(join(PAGES, '../layouts/Base.astro'), 'utf8')
+    const landmarks = [...layout.matchAll(/<nav[^>]*aria-label="([^"]+)"/g)].map((m) => m[1])
+    expect(landmarks).toEqual(['Sections', 'Instruments'])
+
+    // And the name never goes back onto a list. `<ul aria-label>` is the exact shape of the
+    // defect, and it is not obviously wrong on the page — which is why it lasted.
+    expect(/<ul[^>]*aria-label/.test(layout)).toBe(false)
+  })
+
   it('names a page that exists for every tab', () => {
     const pages = new Set(readdirSync(PAGES))
     for (const item of [...SECTIONS, ...INSTRUMENTS]) {

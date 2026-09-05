@@ -165,11 +165,29 @@ export function nodesOfClass(cls: string): Node[] {
   return nodes.filter((n) => n.class === cls).toSorted((a, b) => a.label.localeCompare(b.label))
 }
 
-/** The badge a tier earns: its word, its tone and its glyph. */
-export function tierBadge(tier: Tier): { label: string; glyph: string } {
-  if (tier === 'verified') return { label: 'Verified', glyph: 'circle-check' }
-  if (tier === 'inference') return { label: 'Inference', glyph: 'info' }
-  return { label: 'Open', glyph: 'triangle-alert' }
+/**
+ * The badge a tier earns: its word, its glyph, and what the word means.
+ *
+ * `explain` is the definition a reader gets on hover, and it is the reason this vocabulary is
+ * usable by somebody who has never read the corpus's conventions. It came from the badge this
+ * one replaced and is the one thing that component had which this one did not — a site whose
+ * whole argument is that a claim carries its standing has to be willing to say what the
+ * standings are.
+ */
+export function tierBadge(tier: Tier): { label: string; glyph: string; explain: string } {
+  if (tier === 'verified')
+    return {
+      label: 'Verified',
+      glyph: 'circle-check',
+      explain: 'A catalog source supports this claim.',
+    }
+  if (tier === 'inference')
+    return {
+      label: 'Inference',
+      glyph: 'info',
+      explain: 'Drawn by this corpus from what it holds. Attributed, not sourced.',
+    }
+  return { label: 'Open', glyph: 'triangle-alert', explain: 'Unresolved — and never published.' }
 }
 
 /**

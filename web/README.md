@@ -10,7 +10,12 @@ See [web conventions](../.yidam/.vendor/prelude/guidelines/directories.md#web) f
 Six reading pages, thirty-seven shorter articles and three instruments, built by
 [Astro](https://astro.build) into `dist/` with no server behind them. [deck.gl](https://deck.gl)
 draws the county; [Plotly](https://plotly.com/javascript/) draws its measures. Nothing here
-reaches the network at build time or at read time.
+reaches the network at build time or at read time — and that sentence is now checked rather
+than asserted. It was false for the life of the design port, which carried the five Atlas faces
+in as a Google Fonts `<link>`: a public civic reference telling a third party about every
+reader on every page load, and the one thing the site still had to fetch from elsewhere to
+render as designed. The faces are self-hosted in `public/fonts/`, written by `mise run fonts`,
+and `test/register.test.ts` fails the build on a link to anywhere.
 
 **A reading page is an argument**: one question, movements that turn the answer, and an ending.
 It holds at most 1,800 words of prose and eight movements, and `test/shape.test.ts` is what

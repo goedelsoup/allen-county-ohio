@@ -62,12 +62,12 @@ function palette() {
   const s = getComputedStyle(document.documentElement)
   const v = (name: string) => s.getPropertyValue(name).trim()
   return {
-    ink: v('--ink'),
-    muted: v('--ink-muted'),
-    rule: v('--rule'),
+    ink: v('--text-strong'),
+    muted: v('--text-muted'),
+    rule: v('--rule-hairline'),
     ruleStrong: v('--rule-strong'),
     accent: v('--series-2'),
-    surface: v('--surface'),
+    surface: v('--surface-card'),
     // One hue, light to dark. Five steps, because past about seven bins adjacent classes blur.
     ramp: [v('--seq-100'), v('--seq-250'), v('--seq-400'), v('--seq-550'), v('--seq-700')],
   }

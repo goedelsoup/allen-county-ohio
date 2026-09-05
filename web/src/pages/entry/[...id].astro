@@ -21,7 +21,6 @@ import Refusals from '../../components/entry/Refusals.astro'
 import RelationsList from '../../components/entry/RelationsList.astro'
 import SchemaCard from '../../components/entry/SchemaCard.astro'
 import SourcesList from '../../components/entry/SourcesList.astro'
-import TierBadge from '../../components/TierBadge.astro'
 import EventBlock from '../../components/entry/class/EventBlock.astro'
 import MeasureBlock from '../../components/entry/class/MeasureBlock.astro'
 import OfficeBlock from '../../components/entry/class/OfficeBlock.astro'
@@ -142,7 +141,7 @@ const crumbs = [
             {body.map((block, i) => (
               <div class="claim">
                 <p class:list={[i === 0 && 'drop']} set:html={inline(block.text, resolveCorpusLink)} />
-                <TierBadge tier={block.tier} />
+                <Badge tier={block.tier} scale="inline" />
               </div>
             ))}
           </div>
@@ -316,7 +315,7 @@ const crumbs = [
     flex: 0 0 auto;
     padding: 3px var(--space-3);
     background: var(--surface-ink);
-    color: var(--parchment-50);
+    color: var(--text-inverse);
     font: var(--type-data);
     font-size: var(--size-label);
   }
@@ -359,7 +358,7 @@ const crumbs = [
     font-family: var(--font-display);
     font-size: 66px;
     line-height: 0.78;
-    color: var(--rubric-500);
+    color: var(--text-drop-cap);
   }
 
   .section {

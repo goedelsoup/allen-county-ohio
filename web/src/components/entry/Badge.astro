@@ -2,7 +2,25 @@
 // Sourcing status as content, not metadata.
 //
 // The badge always carries its word. Tier is a status role and a reader must never have to
-// tell `verified` from `inference` by hue alone.
+// tell `verified` from `inference` by hue alone — which is also why the status *marks* are
+// exempt from the 3:1 contrast bar for graphical objects: nothing here is understood only by
+// seeing them.
+//
+// ---- One idiom, two scales ----
+//
+// There were two components doing this job. This one — the design system's hairline chip in
+// small caps with a Lucide glyph — appeared once per entry in the dateline. A second drew a
+// coloured dot and the word, and appeared on every paragraph of an entry and across the browse
+// index. Both said the same thing about the same vocabulary, and an entry page showed a reader
+// two ways of writing `verified` within one screen with nothing to explain the difference.
+//
+// The chip is the survivor because the design system specifies it. What the dot form was right
+// about is density: a bordered chip repeated down every paragraph of a long entry fences the
+// prose it is annotating. So the border and the padding are what `scale` varies, and the
+// vocabulary — glyph, word, status ink — does not vary at all.
+//
+//   chip     the dateline. Once per entry, and it should look like a stamp.
+//   inline   beside a claim, a stat, a row of the index. As quiet as the dot was.
 
 import Icon from './Icon.astro'
 import { tierBadge } from '../../lib/entry'
@@ -11,13 +29,16 @@ import type { Tier } from '../../lib/feeds'
 interface Props {
   tier: Tier
   label?: string
+  scale?: 'chip' | 'inline'
+  /** Overrides the definition shown on hover. Rarely wanted — the tier's own is usually right. */
+  title?: string
 }
 
-const { tier, label } = Astro.props
+const { tier, label, scale = 'chip', title } = Astro.props
 const badge = tierBadge(tier)
 ---
 
-<span class:list={['badge', tier]}>
+<span class:list={['badge', tier, scale]} title={title ?? badge.explain}>
   <Icon name={badge.glyph} size={13} />
   {label ?? badge.label}
 </span>
@@ -27,15 +48,28 @@ const badge = tierBadge(tier)
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    padding: 2px var(--space-3);
-    border: 1px solid currentcolor;
-    border-radius: var(--radius-sm);
     font-family: var(--font-smallcaps);
     font-size: var(--size-micro);
     letter-spacing: var(--tracking-label);
     text-transform: uppercase;
     white-space: nowrap;
   }
+
+  /* The dateline stamp. */
+  .chip {
+    padding: 2px var(--space-3);
+    border: 1px solid currentcolor;
+    border-radius: var(--radius-sm);
+  }
+
+  /*
+   * Beside a claim. No border and no ground: at this scale the ink and the word are the whole
+   * badge, and a rule around every paragraph's tier is a fence around the prose.
+   */
+  .inline {
+    vertical-align: middle;
+  }
+
   .verified {
     color: var(--status-verified-text);
   }
