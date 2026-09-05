@@ -1,0 +1,91 @@
+class: measure
+label: Where Allen County's COVID-19 deaths happened, 2020–2023
+description: |
+  **Eight hundred and fifteen people died of COVID-19 in Allen County and five hundred and thirteen
+  of them lived here.** Ohio published its pandemic deaths twice — once by the decedent's county of
+  residence and once by the county the death occurred in — and on the pair captured ninety-eight
+  seconds apart on 3 May 2023 this county's two numbers are 513 and 815. [verified] —
+  [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the matched pair,
+  summed here.
+
+  **Of Ohio's eighty-two counties with a hundred or more resident deaths, Allen County has the
+  largest ratio between the two.** 1.589, ahead of Gallia at 1.538, Franklin at 1.525, Lucas at
+  1.506 and Hamilton at 1.460 — which is to say ahead of the counties holding Columbus, Toledo and
+  Cincinnati. [verified] — the same pair, every county computed.
+
+      county            resident deaths   deaths here   ratio      net
+      Allen                        513           815    1.589     +302
+      Gallia                       145           223    1.538      +78
+      Franklin                   2,851         4,347    1.525   +1,496
+      Lucas                      1,533         2,308    1.506     +775
+      Hamilton                   2,261         3,301    1.460   +1,040
+      ...
+      Hardin                       167            32    0.192     -135
+      Preble                       212            35    0.165     -177
+      Lawrence                     291            39    0.134     -252
+
+  **Four of the county's five land neighbours are on the other side of the same transaction.**
+  Hardin recorded 32 deaths and lost 167 residents, Putnam 70 against 169, Auglaize 99 against 204,
+  Van Wert 106 against 163; the fifth, Hancock, runs a surplus of its own at 367 against 296.
+  [verified] — the same pair. The four together lost 703 residents and recorded 307 deaths.
+
+  **At the state line the two counts almost agree, so all of this movement is internal.** Ohio
+  recorded 42,168 deaths of its own residents and 42,051 deaths inside its borders on the same day.
+  [verified] — the same pair. 1,211 of the deaths in Ohio were of people who lived in another state
+  — 268 West Virginians, 238 Michiganders, 194 Kentuckians, 168 Indianans.
+
+  **The same gap is in this county's all-cause deaths and it is about a third.** The federal weekly
+  file counts 5,669 deaths from every cause in Allen County across 170 weeks — about 1,740 a year —
+  where the Census Bureau's components of change put the county's residents' deaths near 1,300.
+  [verified] — [the CDC county files](../../catalog/cdc-covid-19-county-data.md) against
+  [the natural change](allen-county-natural-change-2021-2024.yml). So the county carries roughly a
+  third more dying than its own people do, in an ordinary year and in a pandemic one, and for
+  COVID-19 the excess is nearer three fifths.
+
+  **Both figures are wanted and they answer different questions.** [inference] 815 is the load this
+  county's hospitals, its coroner and its funeral homes carried; 513 is the loss its households
+  took. A figure that mixes them is a statement about neither. See
+  [located here is not of here](../../decisions/located-here-is-not-of-here.yml).
+
+  **This node does not establish which hospital any of the 815 died in.**
+
+  [open] How many of the 302 came from each neighbouring county. The county-of-death file carries
+  the decedent's state of residence and not the county, so the surplus can be shown to exist and
+  cannot be sourced. The mirror-image deficits next door are consistent with it and are not the
+  same evidence.
+
+properties:
+  parameter: COVID-19 deaths by county of death against county of residence
+  value: "815"
+  unit: deaths in the county, against 513 of its residents
+  as_of: "2023"
+  method: |
+    The two figures come from two files captured on the same day, ninety-eight seconds apart, and
+    not from the residence file's own later capture: a residence count from September against a
+    death count from May would put four months of revision into a ratio. [verified] County names
+    are stripped before grouping, because the residence file names each county twice and the padded
+    block is the deaths that occurred outside Ohio — 1,336 rows and 1,344 deaths, concentrated in
+    the border counties, and two of them Allen County's. A reader who groups on the raw string
+    reports Gallia's ratio as 1.92 rather than 1.54. [verified] The ranking is restricted to the
+    eighty-two counties with a hundred or more resident deaths, because a ratio on a denominator of
+    thirty is not a comparable quantity. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-covid-deaths-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: ../organization/mercy-health-st-ritas-medical-center.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../organization/lima-memorial-health-system.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-hospital-activity-2011-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

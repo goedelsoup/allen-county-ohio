@@ -1,0 +1,84 @@
+class: measure
+label: COVID-19 cases and hospitalisations in Allen County, 2020–2023
+description: |
+  **Thirty-four thousand seven hundred and twenty-four Allen County residents were recorded as
+  cases, and 2,236 of them went to hospital.** [verified] —
+  [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the county-of-residence
+  file, summed here. That is a third of the county's people carrying a recorded infection, and one
+  resident in forty-six admitted.
+
+  **The hospitalisation rate is what stands out, not the case rate.** Allen County had 2,188
+  hospitalisations for every hundred thousand residents against Ohio's 1,204, and 33,975 cases per
+  hundred thousand against Ohio's 29,547. [verified] — the same file against the 2020 census
+  counts. **On hospitalisations the county is fifth of Ohio's eighty-eight; on cases it is
+  thirteenth and on deaths sixteenth.** [verified] — the same file, all eighty-eight county rows
+  ranked on CDC's population column.
+
+  **One case in fifteen here went to hospital, against one in twenty-five statewide.** 6.44 per
+  cent of Allen County's cases were hospitalised against 4.07 per cent of Ohio's. [verified] — the
+  same file. That difference is larger than the difference in deaths, which is the shape a
+  reporting effect takes as readily as a severity one.
+
+      cases by year          hospital admissions by year
+      2020     8,668         2020      489
+      2021    12,620         2021      710
+      2022    11,779         2022      625
+      2023     1,657         2023      120
+                             no date   292
+
+  **January 2022 is the largest month in the record and it is not the worst one.** 5,571 cases
+  began in that month, nearly twice the next-largest, and it killed 54; December 2020 had 2,622
+  cases and killed 55. [verified] — the same file, by onset date and date of death; see
+  [the deaths](allen-county-covid-deaths-2020-2023.yml). The two waves are not the same event
+  measured twice.
+
+  **292 admissions carry no admission date.** They are counted in the county total and cannot be
+  placed in a year, which is 13.1 per cent of the county's hospitalisations. [verified] — the same
+  file. Cases and deaths have no such gap.
+
+  **The case count is a count of tests that found their way into a state system, and it stopped
+  meaning the same thing partway through.** [inference] Home testing arrived between the two waves
+  this file records, and a positive result read in a kitchen never reached it. So the 2022 case
+  figures are a smaller share of 2022's infections than the 2020 figures are of 2020's, by an
+  amount nothing here can measure, and the hospitalisation and death columns are the ones that
+  survive the change.
+
+  **This node does not establish that Allen County was sicker than Ohio.**
+
+  [open] Whether the county's hospitalisation rate is severity or ascertainment. A county whose
+  admissions run through two hospitals in one city may report them more completely than a county
+  whose residents scatter to four systems in three counties, and the state's file carries nothing
+  that separates the two. Closing this needs the facility-level federal capacity series, which
+  answers 404.
+
+properties:
+  parameter: COVID-19 cases and hospitalisations of county residents
+  value: "34724"
+  unit: cases, with 2,236 hospitalisations
+  as_of: "2023"
+  method: |
+    Cases are dated to onset and hospitalisations to admission, and both are counted on the row
+    where they appear rather than on the row's other dates. [verified] Rates per hundred thousand
+    use the 2020 census counts of 102,206 and 11,799,448; the ranking across the eighty-eight
+    counties uses CDC's own population column for all of them, so that no county is advantaged by
+    its denominator. [verified] The 292 admissions without a date are included in every county
+    total here and excluded from every yearly one, and the yearly columns therefore sum to 1,944
+    rather than to 2,236. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-covid-deaths-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-covid-by-zip-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-hospital-activity-2011-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -1,0 +1,92 @@
+class: measure
+label: COVID-19 cases by ZIP code in and around Allen County, 2020–2023
+description: |
+  **Lima's postal codes ran half as much infection again as Bluffton's.** Ohio's ZIP-code file puts
+  45805 at 35,190 cases for every hundred thousand people and 45817 at 22,475 — Bluffton's rate is
+  64 per cent of the highest Lima code's. [verified] —
+  [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the ZIP summary of
+  7 August 2023.
+
+      the ten codes with more than a thousand of their people in Allen County
+      ZIP    post office        cases   per 100,000   share of it in Allen
+      45805  Lima               8,194        35,190          100%
+      45806  Lima               3,703        34,908           77%
+      45804  Lima               5,288        33,757          100%
+      45887  Spencerville       1,450        33,737           82%
+      45801  Lima               7,572        33,374          100%
+      45833  Delphos            3,374        31,815           55%
+      45850  Harrod             1,018        29,775           92%
+      45807  Elida              3,682        29,677          100%
+      45830  Columbus Grove     1,551        26,760           21%
+      45817  Bluffton           1,549        22,475           81%
+
+  **The four Lima codes are four of the top five, and Bluffton's is the lowest of the ten.**
+  The Lima codes run from 33,374 to 35,190 per hundred thousand and hold 24,757 cases between them;
+  Spencerville's 33,737 is the one that breaks the run. [verified] — the same file. Four smaller
+  codes lie wholly inside the county and are too small to rank — Cairo at 34,016 on 517 people,
+  Lafayette at 27,233 on 461, Beaverdam at 22,590 on 282 and Gomer at 21,472 on 173.
+
+  **The ZIP file and the county file agree to within three per cent, which is the check that the
+  postal geography is being read right.** Weighting each of the twenty codes that touch Allen
+  County by the share of its people who live in the county gives 33,743 cases against the county
+  file's 34,724 — 97.2 per cent. [verified] — the same file weighted by
+  [the ZIP codes](allen-county-zip-codes-2020.yml). The missing 2.8 per cent is cases whose
+  postal code the state could not assign, and it is not concentrated anywhere this file can show.
+
+  **The state's ZIP populations are not the census's and its rates are on its own.** Ohio gives
+  45804 a population of 15,665 where the 2020 census counts 14,573 people in the same tabulation
+  area — seven and a half per cent apart — so the rates above are the file's own and are not
+  comparable with any rate computed here. [verified] — the same file against
+  [the ZIP codes](allen-county-zip-codes-2020.yml). Read as an ordering they are sound; read as
+  levels they carry an unstated denominator.
+
+  **A ZIP code is a delivery route and six of these ten cross the county line.** [inference]
+  45833 is 55 per cent Allen County by population and the rest of it is Van Wert and Putnam;
+  45817 is 81 per cent Allen and the rest is Hancock and Putnam; 45887 is 82 per cent, 45850 is 92
+  and 45806 is 77. So a rate quoted for Delphos is a rate for a city that lies in two counties, and this node's
+  ordering is an ordering of postal areas rather than of places.
+
+  **This node does not establish that anybody in Bluffton was less likely to catch it than anybody
+  in Lima.**
+
+  [open] Whether the county's rate gradient is its towns or its households. The state published
+  cases by ZIP and nothing else by ZIP — no deaths, no hospitalisations, no age — so the one
+  sub-county measure available is the one least able to carry a claim about severity.
+
+properties:
+  parameter: cumulative COVID-19 cases per 100,000 by ZIP code
+  value: "35190"
+  unit: cases per 100,000, ZIP 45805, against 22,475 in 45817
+  as_of: "2023"
+  method: |
+    Rates are the file's own, computed by Ohio on its own population column, and are reproduced
+    rather than recomputed so that they remain comparable with each other. [verified] The county
+    estimate weights each code's cumulative cases by the share of that code's 2020 census
+    population living in Allen County, from the corpus's own ZCTA join, which sums to 102,206 —
+    the county exactly. [verified] Only codes with a majority of their people in the county are
+    tabulated above; the other nine of the twenty contribute to the weighted estimate and not to
+    the ordering. [verified] The file's last-30-day and last-14-day columns read `N/A` throughout
+    and are not used. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-zip-codes-2020.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-zcta-relationship-files.md
+  - target: allen-county-covid-cases-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: ../place/bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
