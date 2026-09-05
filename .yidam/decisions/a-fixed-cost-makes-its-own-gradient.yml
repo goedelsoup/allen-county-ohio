@@ -1,0 +1,66 @@
+id: a-fixed-cost-makes-its-own-gradient
+summary: >-
+  When the corpus divides a cost by the thing the cost is charged on, the ratio has a slope in it
+  before any behaviour does, because part of the numerator does not move. The rule is to compute
+  the slope a wholly fixed charge would have produced, print it beside the observed one, and
+  publish only the difference as a finding about anybody's conduct.
+context: |
+  The price half of the mortgage register gives the corpus two ways to say a small loan is dear.
+
+      loan band     n     median loan   median closing costs   as a share
+      under $50k      569       $35,000                $1,571        4.09%
+      $50-100k      2,734        75,000                 2,406        3.14
+      $100-150k     3,560       125,000                 2,935        2.40
+      $150-200k     2,306       175,000                 3,383        1.97
+      $200-300k     1,898       235,000                 3,392        1.42
+      $300k and up    710       355,000                 3,843        1.03
+
+  The right-hand column is a clean monotone gradient and it is nearly worthless on its own. Between
+  the top band and the bottom the loan grows by a factor of 10.14 and the fee by a factor of 2.45,
+  so the share must fall whatever anyone charges. A title search, a flood determination, a credit
+  pull and a recording fee cost what they cost.
+
+  The same table's other column behaves differently. The share of loans priced above the federal
+  higher-priced threshold runs 23.3, 11.3, 7.0, 5.9, 3.5 and 2.4 per cent down the same bands. A
+  rate spread is a rate — the loan's annual percentage rate less the market's for a comparable
+  transaction — and dividing it by nothing makes it fall. Nothing arithmetic requires a small loan
+  to be priced further above prime than a large one.
+decision: |
+  **Print the arithmetic counterfactual in the same table as the ratio, and publish as a finding
+  only what the counterfactual does not already explain.**
+
+  For this case the counterfactual is a wholly fixed fee at the county's median, $2,898. It would
+  be 8.28 per cent of the median loan in the bottom band and 0.82 in the top — a factor of 10.14,
+  against the 3.97 actually observed. So **fees do rise with loan size, at about a quarter of the
+  rate the loan does**, and the honest sentence is that one, not "small borrowers pay four times
+  the share", which is true and mostly a statement about division.
+
+  A ratio whose numerator is partly fixed is reported with three numbers, never one: the numerator,
+  the denominator, and what the ratio would have been had the numerator not moved at all.
+
+  The rule does not apply to a quantity that is already a rate. The higher-priced share, the rate
+  spread and the denial rate carry no denominator drawn from the size of the loan, and a gradient
+  in them is a fact about pricing from the first digit.
+rationale: |
+  The corpus has a family of rules about aggregates that hide their own composition —
+  [a modifier changes what the thing is](a-modifier-changes-what-the-thing-is.yml) about a rollup
+  that calls a dug pond a pond, [a flag column is part of the figure](a-flag-column-is-part-of-the-figure.yml)
+  about a total that hides an unreliable cell. This is the arithmetic member of that family, and it
+  is the one most likely to produce a publishable-looking finding out of nothing at all. The others
+  need a bad source; this one needs only a division.
+
+  It is worth naming what the rule costs. Applied strictly it deletes the most quotable sentence in
+  the phase — a borrower of $35,000 in this county pays four times the share in closing costs that
+  a borrower of $355,000 pays — and replaces it with a slower one about a quarter of a rate. The
+  slower sentence is the true one and it is still a finding: a fee schedule that scaled with the
+  loan would not do this, and a wholly fixed one would do far more of it, so what the county's
+  closing costs actually are is a schedule that is mostly flat with a small proportional part on
+  top. That is a description of how the market prices, arrived at by subtraction.
+
+  **What this does not license is the reverse move.** Having shown that most of the fee gradient is
+  arithmetic, it would be easy to reach for the same explanation when the rate gradient turns up in
+  the next column and wave it away too. The rate gradient is not a ratio of anything to loan size.
+  It survives inside a single year, it survives inside a single lender, and it holds across all
+  eighty-eight counties of Ohio. Explaining one column away is not a licence over its neighbour.
+status: accepted
+date: "2026-09-05"
