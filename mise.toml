@@ -137,13 +137,25 @@ cargo run --quiet --manifest-path crates/Cargo.toml -p publish --bin publish-fee
 
 [tasks.boundaries]
 description = "Re-vendor the county's census geography from TIGERweb. Reaches the network."
-# The only task in this repository that is not hermetic, and it is run by hand.
-# Its output is committed, so no build and no CI run ever needs the Census
-# Bureau to be reachable.
+# Not hermetic, and run by hand. Its output is committed, so no build and no CI
+# run ever needs the Census Bureau to be reachable.
 run = """
 if [ ! -d web/node_modules ]; then echo "run 'npm ci' in web/ first"; exit 1; fi
 node web/scripts/fetch-boundaries.mjs
 """
+
+[tasks.fonts]
+description = "Re-vendor the Atlas webfonts into web/public/fonts/. Reaches the network."
+# The second task that is not hermetic, on the same contract as `boundaries`
+# above: run by hand, output committed, and nothing in the build or in CI ever
+# needs fonts.gstatic.com to answer.
+#
+# That contract is the whole reason it exists. The faces used to arrive through a
+# Google Fonts <link> in Base.astro, which made a public civic reference tell a
+# third party about every reader on every page load — and left the site with one
+# runtime dependency the rest of it had shed. `web/test/register.test.ts` fails
+# the build if a link to anywhere comes back.
+run = "node web/scripts/fetch-fonts.mjs"
 
 # ── the ground key (crates/ground) ────────────────────────────────────────
 # Reaches the network, like `boundaries` above and for the same reason: its
@@ -188,17 +200,52 @@ if [ ! -d web/node_modules ]; then echo "web/node_modules absent — skipping bu
 cd web && npm run --silent build
 """
 
+# The one check that reads the built site rather than its source.
+#
+# Its subject is the document outline — one h1 per page, no skipped rank — which
+# is a property of the rendered page and of nothing smaller. The two source-level
+# heading checks in `test/register.test.ts` are a list of the two ways the outline
+# was actually broken, not a rule; a `<h4>` under an `<h2>` on a reading page
+# passes all 506 of them.
+#
+# It runs after `site-build` because it needs `web/dist/`, which is also why it is
+# not inside `vitest run`.
+
+[tasks.site-outline]
+description = "Walk the built site: heading ranks and landmark names."
+# `depends` and not a sibling in `[tasks.site]`: mise runs a task's dependencies
+# in parallel, so listing this beside `site-build` had it reading web/dist/ while
+# the build was clearing and rewriting it — grading the previous build, or an
+# empty directory, and passing either way.
+depends = ["site-build"]
+# Skips rather than fails when there is nothing built, on the contract stated at
+# the head of this section: a web task no-ops with a loud line rather than
+# failing a fresh clone. `site-build` itself skips when node_modules is absent,
+# so on a clean checkout web/dist never appears and `exit 1` here took the whole
+# of `mise run ci` down with it — the command a new contributor is told to run
+# first.
+run = """
+if [ ! -d web/dist ]; then echo "web/dist absent — skipping outline (mise run site-build)"; exit 0; fi
+node web/scripts/check-outline.mjs
+"""
+
 [tasks.site]
-description = "Lint, test and build the web layer."
-depends = ["site-lint", "site-test", "site-build"]
+description = "Lint, test, build and check the outline of the web layer."
+depends = ["site-lint", "site-test", "site-outline"]
 
 # ── ci ────────────────────────────────────────────────────────────────────
-# The local equivalent of what .github/workflows/ci.yml runs, and "equivalent"
-# is checked rather than intended: `the_local_gate_runs_what_ci_gates_on` reads
-# both files and holds them together. It ran `graph-check` alone for a while
-# and CI's corpus job ran three gates, so a repository could pass the gate its
-# own README tells it to run first and fail the build on the next push — with
-# `regen --check`, on generated content nobody had written.
+# The local equivalent of what .github/workflows/ci.yml runs. It ran `graph-check`
+# alone for a while and CI's corpus job ran three gates, so a repository could pass
+# the gate its own README tells it to run first and fail the build on the next push
+# — with `regen --check`, on generated content nobody had written.
+#
+# How far "equivalent" is checked, precisely, because the distinction has teeth:
+# `the_local_gate_runs_what_ci_gates_on` lives upstream in the yidam template and
+# holds the SCAFFOLD's steps together — the ones this file inherits. It cannot see
+# the steps this repository added beneath them (the cargo list, site-lint/test/
+# build/outline), because it does not know they exist. Those are mirrored by hand,
+# and a step added to one file and not the other is caught by nothing. Verified by
+# deleting `npm run outline` from ci.yml: `mise run ci` stays green.
 #
 # These come from mise.yidam.toml and work from the genesis commit onward,
 # before any crate exists.
@@ -235,4 +282,5 @@ fi
 mise run site-lint
 mise run site-test
 mise run site-build
+mise run site-outline
 """

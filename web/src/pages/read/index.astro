@@ -24,7 +24,7 @@ const span = ARTICLES.reduce(
   title="The reading room"
   lede={`${ARTICLES.length} shorter pieces, each resting on passages the corpus can cite — ${span[0]} to ${span[1]}. The six reading pages carry the county's argument; these carry the things that would have buried it.`}
 >
-  <nav class="jump" aria-label="Sections">
+  <nav class="jump" aria-label="Article groups">
     {
       groups.map(({ key, items }) => (
         <a href={`#${key}`}>
@@ -133,7 +133,7 @@ const span = ARTICLES.reduce(
     }
     .body {
       display: block;
-      max-width: var(--measure);
+      max-width: var(--measure-prose);
     }
     .ttl {
       display: block;

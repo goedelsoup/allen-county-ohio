@@ -3,7 +3,7 @@
 //
 // The commonest way a chart misses its point is being a chart at all when the story is one
 // number. Proportional figures, not tabular: equal-width digits read loose at this size.
-import TierBadge from './TierBadge.astro'
+import Badge from './entry/Badge.astro'
 import type { Tier } from '../lib/feeds'
 
 interface Props {
@@ -20,14 +20,14 @@ const { value, label, note, tier } = Astro.props
   <div class="value">{value}</div>
   <div class="label">{label}</div>
   {note && <p class="note">{note}</p>}
-  {tier && <TierBadge tier={tier} />}
+  {tier && <Badge tier={tier} scale="inline" />}
 </div>
 
 <style>
   .tile {
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-radius: var(--radius);
+    background: var(--surface-card);
+    border: 1px solid var(--rule-hairline);
+    border-radius: var(--radius-md);
     padding: 1.25rem 1.25rem 1rem;
     display: flex;
     flex-direction: column;
@@ -41,11 +41,11 @@ const { value, label, note, tier } = Astro.props
     letter-spacing: -0.02em;
   }
   .label {
-    color: var(--ink-secondary);
+    color: var(--text-body);
     font-size: 0.9375rem;
   }
   .note {
-    color: var(--ink-muted);
+    color: var(--text-muted);
     font-size: 0.8125rem;
     margin: 0.25rem 0 0.5rem;
   }

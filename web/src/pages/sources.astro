@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro'
 import DataTable from '../components/DataTable.astro'
 import StatTile from '../components/StatTile.astro'
-import TierBadge from '../components/TierBadge.astro'
+import Badge from '../components/entry/Badge.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import { assertion, assertions, manifest, nodes } from '../lib/feeds'
 import { articlesIn } from '../lib/articles'
@@ -78,11 +78,11 @@ const verifiedShare = Math.round(
     <p class="prose">{manifest.policy.rationale}</p>
     <div class="tiers">
       <div>
-        <TierBadge tier="verified" />
+        <Badge tier="verified" scale="inline" />
         <p>A catalog source supports the claim. It may travel anywhere.</p>
       </div>
       <div>
-        <TierBadge tier="inference" />
+        <Badge tier="inference" scale="inline" />
         <p>
           The corpus drew it from what it holds. It travels only where it is attributed — so on
           this site it never appears without its tag, the passage it came from, and the source
@@ -90,7 +90,7 @@ const verifiedShare = Math.round(
         </p>
       </div>
       <div>
-        <TierBadge tier="open" />
+        <Badge tier="open" scale="inline" />
         <p>
           Unresolved. It does not leave the repository, and there is no setting on this site
           that would show it to you.
@@ -244,12 +244,12 @@ const verifiedShare = Math.round(
       margin-bottom: 3rem;
     }
     .prose {
-      max-width: var(--measure);
-      color: var(--ink-secondary);
+      max-width: var(--measure-prose);
+      color: var(--text-body);
     }
     .fine {
       font-size: 0.9375rem;
-      color: var(--ink-muted);
+      color: var(--text-muted);
     }
     .arrangement th[scope='row'] {
       white-space: nowrap;
@@ -272,18 +272,18 @@ const verifiedShare = Math.round(
     .tiers {
       display: grid;
       gap: 1rem;
-      max-width: var(--measure);
+      max-width: var(--measure-prose);
       margin: 1.5rem 0;
     }
     .tiers > div {
-      background: var(--surface);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
+      background: var(--surface-card);
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-md);
       padding: 0.875rem 1rem;
     }
     .tiers p {
       margin: 0.375rem 0 0;
-      color: var(--ink-secondary);
+      color: var(--text-body);
       font-size: 0.9375rem;
     }
     .refusals {
@@ -292,22 +292,22 @@ const verifiedShare = Math.round(
       margin: 1.5rem 0 0;
       display: grid;
       gap: 1rem;
-      max-width: var(--measure);
+      max-width: var(--measure-prose);
     }
     .refusals li {
-      border-left: 3px solid var(--tier-inference);
-      background: var(--surface);
+      border-left: 3px solid var(--status-disputed);
+      background: var(--surface-card);
       padding: 0.875rem 1rem;
-      border-radius: 0 var(--radius) var(--radius) 0;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
     }
     .refusals p {
       margin: 0 0 0.375rem;
-      color: var(--ink-secondary);
+      color: var(--text-body);
       font-size: 0.9375rem;
     }
     .src {
       font-size: 0.75rem;
-      color: var(--ink-muted);
+      color: var(--text-muted);
     }
     .withheld {
       border-collapse: collapse;
@@ -317,7 +317,7 @@ const verifiedShare = Math.round(
     .withheld th,
     .withheld td {
       padding: 0.5rem 1rem 0.5rem 0;
-      border-bottom: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule-hairline);
       text-align: left;
       vertical-align: top;
     }
@@ -331,7 +331,7 @@ const verifiedShare = Math.round(
       padding-right: 1.5rem;
     }
     .withheld .note {
-      color: var(--ink-muted);
+      color: var(--text-muted);
       font-size: 0.875rem;
       max-width: 34rem;
     }

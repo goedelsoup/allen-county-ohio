@@ -491,3 +491,11 @@ jobs:
       - run: npm run lint
       - run: npm test --if-present
       - run: npm run build --if-present
+      # Bare, not `--if-present`: the two steps above are guarded because the scaffold writes
+      # this job before any web layer exists. This repository added this one, and has the script.
+      # Reads dist/, so it follows the build rather than sitting in `npm test`.
+      # Keep this in step with `mise run ci` — the local gate and this file are
+      # meant to run the same set, and a check added to one and not the other is
+      # how a repository comes to pass the gate its own README tells it to run
+      # and fail the build on the next push.
+      - run: npm run outline

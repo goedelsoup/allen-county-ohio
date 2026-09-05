@@ -1,6 +1,6 @@
 ---
 // One paragraph of a corpus node, with the tag it travels on.
-import TierBadge from './TierBadge.astro'
+import Badge from './entry/Badge.astro'
 import { inline } from '../lib/prose'
 import type { Block } from '../lib/feeds'
 
@@ -14,7 +14,7 @@ const html = inline(block.text)
 
 <div class="claim">
   <p set:html={html} />
-  <TierBadge tier={block.tier} />
+  <Badge tier={block.tier} scale="inline" />
 </div>
 
 <style>
@@ -26,7 +26,7 @@ const html = inline(block.text)
   }
   .claim p {
     margin: 0;
-    max-width: var(--measure);
+    max-width: var(--measure-prose);
   }
   .claim :global(code) {
     font-size: 0.85em;

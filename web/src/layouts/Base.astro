@@ -26,12 +26,21 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
     <title>{documentTitle}</title>
     <meta name="description" content={lede ?? 'A civic reference for Allen County, Ohio.'} />
     <link rel="icon" href="data:," />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-    />
+    {/*
+      No <link> to a font CDN, and no preconnect to one.
+
+      There were three, and they were the only thing on this site that reached anywhere at read
+      time — the feeds are committed, the geometry is vendored, the build is static. So a
+      public civic reference made every reader's browser announce itself to a third party on
+      every page load, which is a small thing to fix and an awkward one to explain, and
+      `web/README.md` claimed the opposite in as many words.
+
+      The faces are in `public/fonts/`, written by `mise run fonts`, and declared in
+      `tokens/fonts.css`. `register.test.ts` fails the build if a request to anywhere comes
+      back.
+    */}
+    <link rel="preload" href="/fonts/eb-garamond-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/im-fell-english-400-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -50,40 +59,54 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
         </a>
       </div>
       <div class="navbar">
-        <nav class="nav-inner" aria-label="Sections">
-          <ul class="reading-tabs">
-            {
-              SECTIONS.map((item) => (
-                <li>
-                  <a
-                    href={item.href}
-                    title={item.question}
-                    aria-current={here === item.href ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+        {/*
+          Two landmarks, not one landmark and a labelled list.
+
+          The reading row and the instruments are different things — a reader reads the first
+          and reaches for the second — and that cut is made in `sections.ts`, in the styling,
+          and now in the accessibility tree. It was not: the instruments sat in a <ul> carrying
+          `aria-label="Instruments"`, and an accessible name on a list is not a landmark and is
+          not announced on entry the way a <nav>'s is. Map, Entries and Sources were read out
+          inside the landmark named Sections, on every page, because this is the layout.
+        */}
+        <div class="nav-inner">
+          <nav aria-label="Sections">
+            <ul>
+              {
+                SECTIONS.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      title={item.question}
+                      aria-current={here === item.href ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
           <span class="nav-spacer"></span>
-          <ul class="instrument-tabs" aria-label="Instruments">
-            {
-              INSTRUMENTS.map((item) => (
-                <li>
-                  <a
-                    href={item.href}
-                    title={item.question}
-                    aria-current={here.startsWith(item.href) ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+          <nav class="instrument-tabs" aria-label="Instruments">
+            <ul>
+              {
+                INSTRUMENTS.map((item) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      title={item.question}
+                      aria-current={here.startsWith(item.href) ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
           <span class="nav-meta data">Feed v{manifest.feed_version}</span>
-        </nav>
+        </div>
       </div>
     </header>
 
@@ -142,7 +165,7 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
       .masthead-inner {
         max-width: var(--width-content);
         margin: 0 auto;
-        padding: var(--space-8) var(--gutter) var(--space-7);
+        padding: var(--space-8) var(--gutter-fluid) var(--space-7);
       }
       .wordmark {
         color: var(--text-strong);
@@ -172,7 +195,7 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
       .nav-inner {
         max-width: var(--width-content);
         margin: 0 auto;
-        padding: 0 var(--gutter);
+        padding: 0 var(--gutter-fluid);
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -213,12 +236,18 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
        * reaches for; separating them is what stopped the map competing with the
        * history page for the same eye.
        *
-       * Scoped under .nav-inner rather than marked !important: `.nav-inner ul`
-       * is a class plus a type and would otherwise win the padding.
+       * The rule now hangs on the <nav> that names them rather than on the list
+       * inside it, which is the same separation the accessibility tree needed.
+       * The reading row carries no class at all: it had one, `reading-tabs`,
+       * that no rule anywhere selected — the list was styled by `.nav-inner ul`
+       * and this block overrode it. A hook nothing uses reads as a hook
+       * something uses.
        */
       .nav-inner .instrument-tabs {
         border-left: 1px solid var(--rule-hairline);
         padding-left: var(--space-7);
+      }
+      .nav-inner .instrument-tabs ul {
         gap: 0 var(--space-6);
       }
       .nav-inner .instrument-tabs a {
@@ -254,7 +283,8 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
         .nav-inner::-webkit-scrollbar {
           display: none;
         }
-        .nav-inner ul {
+        /* The flex items are the two landmarks now, not the lists inside them. */
+        .nav-inner > nav {
           flex: 0 0 auto;
         }
         .nav-inner a {
@@ -274,10 +304,10 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
       main {
         max-width: var(--width-content);
         margin: 0 auto;
-        padding: var(--space-9) var(--gutter) var(--space-13);
+        padding: var(--space-9) var(--gutter-fluid) var(--space-13);
       }
       .page-head {
-        max-width: var(--measure);
+        max-width: var(--measure-prose);
         margin-bottom: var(--space-10);
       }
       .lede {
@@ -294,12 +324,12 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
       .footer-inner {
         max-width: var(--width-content);
         margin: 0 auto;
-        padding: var(--space-10) var(--gutter) var(--space-12);
+        padding: var(--space-10) var(--gutter-fluid) var(--space-12);
         color: var(--text-muted);
         font: var(--weight-regular) var(--size-body-s) / 1.55 var(--font-serif);
       }
       .footer-inner p {
-        max-width: var(--measure);
+        max-width: var(--measure-prose);
       }
       .fine {
         margin: 0;
