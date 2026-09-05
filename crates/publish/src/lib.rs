@@ -88,6 +88,7 @@ pub fn build(
     let (graph, mut counts) = feed::graph(nodes, CEILING);
     let series = feed::series(nodes, CEILING);
     let points = feed::map(nodes, CEILING);
+    let atlas = feed::atlas(nodes, CEILING);
     let (assertions, defects) = derived::resolve(derived::ASSERTIONS, nodes, CEILING);
     counts.assertions = assertions.len();
 
@@ -118,6 +119,13 @@ pub fn build(
                 &feed::MapFeed {
                     feed_version: FEED_VERSION,
                     points,
+                },
+            )?,
+            file(
+                "atlas.json",
+                &feed::AtlasFeed {
+                    feed_version: FEED_VERSION,
+                    records: atlas,
                 },
             )?,
         ],

@@ -5,6 +5,7 @@
 // and a change to the ontology stay separable — which is the coupling `web/README.md` asked
 // to be settled before any page existed.
 
+import atlasFeed from '../feeds/atlas.json'
 import graphFeed from '../feeds/graph.json'
 import manifestFeed from '../feeds/manifest.json'
 import mapFeed from '../feeds/map.json'
@@ -95,6 +96,81 @@ export interface MapPoint {
   area_sq_mi: string | null
 }
 
+/** How much of a date the source gave. */
+export type Precision = 'year' | 'month' | 'day'
+
+/**
+ * What an absent end date means for a node's class.
+ *
+ * Four readings, because the corpus has four kinds of silence — see
+ * `.yidam/decisions/an-absent-end-date-means-four-things.yml`. Absent on a record whose span
+ * is bounded at both ends, and on one that has no span at all.
+ */
+export type OpenEnd = 'instantaneous' | 'running' | 'unvouched' | 'unknown'
+
+/**
+ * What the map should do with a node.
+ *
+ * `count` is drawn on its subject at whatever grain that subject is; `register` is a node the
+ * corpus places no finer than the county, which is listed beside the map rather than pinned in
+ * a field. See `.yidam/decisions/a-derived-placement-is-a-claim.yml`.
+ */
+export type Treatment = 'mark' | 'polygon' | 'count' | 'register' | 'unplaced' | 'not-spatial'
+
+/** One edge followed to reach ground. */
+export interface AtlasStep {
+  relationship: string
+  to: string
+  /** `null` on a structural edge, which carries no tag by rule. */
+  tier: Tier | null
+}
+
+/** One position a node reached, and the route that reached it. */
+export interface AtlasAnchor {
+  node: string
+  lat: number | null
+  lon: number | null
+  /** A Census key where the anchor is a shape. Joined to `public/geo/` by the site. */
+  geoid: string | null
+  /** Empty where the node states its own position. */
+  via: AtlasStep[]
+}
+
+/**
+ * A node reduced to when it was and where it lands.
+ *
+ * Every node appears, including the undated and the unplaced: the shape of what this corpus
+ * cannot date or cannot place is a subject in its own right, and a feed that dropped those
+ * rows would make it undiscoverable.
+ */
+export interface AtlasRecord {
+  node: string
+  class: string
+  label: string
+  tier: Tier
+  /** First year the corpus places it in. */
+  from: number | null
+  /**
+   * Last year, where there is one. **Null on every open end**, including the ones read as
+   * running to the present — "now" is not a date any source recorded.
+   */
+  to: number | null
+  precision: Precision | null
+  open_end: OpenEnd | null
+  /** Why the node carries no span, where it carries none. */
+  undated: string | null
+  treatment: Treatment
+  /** Edges followed to reach ground. `0` is a stated position. */
+  hops: number | null
+  /** The weakest tag on the placement route. */
+  route_tier: Tier | null
+  /**
+   * Every anchor reached at `hops`. More than one is not a defect: a district serving five
+   * townships is at all five, and averaging them would invent a centroid.
+   */
+  anchors: AtlasAnchor[]
+}
+
 /**
  * What a class declares itself to be.
  *
@@ -144,6 +220,7 @@ export const edges = graphFeed.edges as Edge[]
 export const series = seriesFeed.series as Series[]
 export const assertions = seriesFeed.assertions as Assertion[]
 export const mapPoints = mapFeed.points as MapPoint[]
+export const atlas = atlasFeed.records as AtlasRecord[]
 
 /** The feed contract every page here was written against. */
 export const FEED_VERSION = manifest.feed_version
@@ -174,6 +251,32 @@ export function seriesById(id: string): Series {
 /** What one class declares itself to be, or undefined if the corpus does not declare it. */
 export function classSchema(cls: string): ClassSchema | undefined {
   return classes[cls]
+}
+
+/** One atlas record by `class/name.yml`. */
+export function atlasRecord(id: string): AtlasRecord | undefined {
+  return atlas.find((r) => r.node === id)
+}
+
+/**
+ * Every record the corpus places in `year`.
+ *
+ * `vouched` is the strict reading: a record whose span admits the year but whose class
+ * declines to carry it forward is excluded. Passing `false` gives the generous one. The two
+ * are separate questions and separate lists — a division effective from 2020 admits 2024 and
+ * vouches for nothing there — and merging them invents a fact.
+ */
+export function atlasAt(year: number, vouched = true): AtlasRecord[] {
+  return atlas.filter((r) => {
+    if (r.from === null) return false
+    if (year < r.from) return false
+    if (r.to !== null) return year <= r.to
+    // Open-ended. `running` carries forward; the other two readings support their start year
+    // and nothing after it.
+    if (r.open_end === 'running') return true
+    if (r.open_end === 'instantaneous') return false
+    return vouched ? year === r.from : true
+  })
 }
 
 /** One node by `class/name.yml`. */

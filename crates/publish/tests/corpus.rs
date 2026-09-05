@@ -447,3 +447,87 @@ fn the_ontology_reaches_the_feed_as_the_corpus_declares_it() {
         "person gained a required property, which changes what its card accents"
     );
 }
+
+#[test]
+fn the_atlas_and_the_map_agree_where_they_overlap() {
+    // Two feeds now carry positions and they are derived by different code. `map.json` reads a
+    // node's own coordinate; `atlas.json` resolves through edges and happens to agree at zero
+    // hops. If they ever disagree about a node that states its own centroid, one of them is
+    // drawing a place the other does not.
+    let nodes = nodes();
+    let points = publish::feed::map(&nodes, CEILING);
+    let atlas = publish::feed::atlas(&nodes, CEILING);
+
+    for p in &points {
+        let record = atlas
+            .iter()
+            .find(|r| r.node == p.id)
+            .unwrap_or_else(|| panic!("{} is on the map and not in the atlas", p.id));
+        assert_eq!(record.hops, Some(0), "{}: states a position", p.id);
+        let anchor = record
+            .anchors
+            .first()
+            .unwrap_or_else(|| panic!("{}: placed with no anchor", p.id));
+        assert_eq!(anchor.node, p.id, "{}: anchored on something else", p.id);
+        assert_eq!(anchor.lat, Some(p.lat), "{}", p.id);
+        assert_eq!(anchor.lon, Some(p.lon), "{}", p.id);
+    }
+}
+
+#[test]
+fn the_atlas_carries_every_node_the_graph_feed_does() {
+    // The two feeds are filtered by the same rule — a node with no publishable prose appears in
+    // neither — so a difference means one of them grew a second rule by accident.
+    let nodes = nodes();
+    let (graph, _) = publish::feed::graph(&nodes, CEILING);
+    let atlas = publish::feed::atlas(&nodes, CEILING);
+    let in_graph: std::collections::BTreeSet<&str> =
+        graph.nodes.iter().map(|n| n.id.as_str()).collect();
+    let in_atlas: std::collections::BTreeSet<&str> =
+        atlas.iter().map(|r| r.node.as_str()).collect();
+    assert_eq!(
+        in_graph, in_atlas,
+        "the two feeds disagree about what is published"
+    );
+}
+
+#[test]
+fn no_atlas_record_closes_a_span_the_corpus_left_open() {
+    // Checked over the feed rather than over `chronology`'s structs, because the question is
+    // what the committed file says. A `to` on an open end would let a caller draw a bar ending
+    // at a year no source recorded.
+    for r in publish::feed::atlas(&nodes(), CEILING) {
+        if matches!(r.open_end, Some("running" | "unvouched" | "unknown")) {
+            assert_eq!(
+                r.to, None,
+                "{}: {:?} carries a closing year",
+                r.node, r.open_end
+            );
+        }
+    }
+}
+
+#[test]
+fn every_atlas_anchor_resolves_to_a_published_node() {
+    // A route ending at a node the site cannot open is a warrant a reader cannot check.
+    let nodes = nodes();
+    let atlas = publish::feed::atlas(&nodes, CEILING);
+    let published: std::collections::BTreeSet<&str> =
+        atlas.iter().map(|r| r.node.as_str()).collect();
+    for r in &atlas {
+        for a in &r.anchors {
+            assert!(
+                published.contains(a.node.as_str()),
+                "{}: anchored on {}, which is not published",
+                r.node,
+                a.node
+            );
+            assert!(
+                a.lat.is_some() || a.geoid.is_some(),
+                "{}: anchor {} carries neither a point nor a key",
+                r.node,
+                a.node
+            );
+        }
+    }
+}
