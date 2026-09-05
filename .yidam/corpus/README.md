@@ -207,6 +207,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
 | [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 5 | 10v / 3i / 2o | 130 |
 | [allen-county-law-enforcement-agencies-2026.yml](measure/allen-county-law-enforcement-agencies-2026.yml) | measure | Allen County's reporting police agencies, 2026 | 2 | 5v / 2i / 1o | 58 |
+| [allen-county-layoff-notice-intervals-1996-2017.yml](measure/allen-county-layoff-notice-intervals-1996-2017.yml) | measure | How long before the layoff Ohio received the notice, Allen County, 1996–2017 | 3 | 3v / 4i / 0o | 66 |
+| [allen-county-layoff-notices-1996-2017.yml](measure/allen-county-layoff-notices-1996-2017.yml) | measure | Allen County layoff and closing notices, 1996–2017 | 6 | 4v / 7i / 0o | 109 |
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
 | [allen-county-libraries-2024.yml](measure/allen-county-libraries-2024.yml) | measure | Allen County's public libraries, 2024 | 5 | 7v / 3i / 1o | 88 |
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 6v / 5i / 1o | 77 |
@@ -215,7 +217,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
 | [allen-county-manufactures-1939-1967.yml](measure/allen-county-manufactures-1939-1967.yml) | measure | Allen County manufactures, 1939–1967 | 2 | 12v / 8i / 1o | 121 |
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 6v / 2i / 1o | 69 |
-| [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2023 | 3 | 6v / 4i / 0o | 81 |
+| [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2023 | 4 | 6v / 6i / 0o | 101 |
 | [allen-county-manufacturing-outside-lima-1929-1967.yml](measure/allen-county-manufacturing-outside-lima-1929-1967.yml) | measure | Allen County manufacturing outside Lima, 1929–1967 | 3 | 4v / 8i / 1o | 85 |
 | [allen-county-migration-by-county-2004-2023.yml](measure/allen-county-migration-by-county-2004-2023.yml) | measure | Where Allen County's movers went and came from, 2004–2023 | 5 | 10v / 4i / 1o | 93 |
 | [allen-county-migration-flows-2004-2023.yml](measure/allen-county-migration-flows-2004-2023.yml) | measure | Who moved into and out of Allen County, 2004–2023 | 5 | 14v / 1i / 1o | 98 |
@@ -303,6 +305,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 6 | 8v / 4i / 0o | 103 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 4 | 8v / 2i / 0o | 78 |
 | [allen-county-unemployment-1990-2026.yml](measure/allen-county-unemployment-1990-2026.yml) | measure | Allen County unemployment, 1990–2026 | 4 | 7v / 7i / 2o | 130 |
+| [allen-county-unions-in-layoff-notices-1996-2017.yml](measure/allen-county-unions-in-layoff-notices-1996-2017.yml) | measure | Unions named in Allen County layoff notices, 1996–2017 | 3 | 5v / 3i / 0o | 66 |
 | [allen-county-vacancy-status-2010-2020.yml](measure/allen-county-vacancy-status-2010-2020.yml) | measure | Why Allen County's housing was empty, 2010 and 2020 | 8 | 19v / 8i / 1o | 209 |
 | [allen-county-vacancy-status-2023.yml](measure/allen-county-vacancy-status-2023.yml) | measure | Why Allen County's housing was empty, 2019–2023 | 4 | 9v / 3i / 0o | 83 |
 | [allen-county-voter-roll-removals-2006-2022.yml](measure/allen-county-voter-roll-removals-2006-2022.yml) | measure | Removals from the Allen County voter roll, 2006–2022 | 4 | 7v / 2i / 1o | 80 |
@@ -529,7 +532,7 @@ Sorted by: kind, then alphabetically.
 | [beaverdam.yml](place/beaverdam.yml) | place | Beaverdam | 4 | 12v / 1i / 2o | 93 |
 | [bluffton.yml](place/bluffton.yml) | place | Bluffton | 4 | 17v / 4i / 3o | 122 |
 | [cairo.yml](place/cairo.yml) | place | Cairo | 4 | 11v / 1i / 1o | 77 |
-| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 10v / 4i / 1o | 95 |
+| [delphos.yml](place/delphos.yml) | place | Delphos | 4 | 11v / 5i / 1o | 104 |
 | [elida.yml](place/elida.yml) | place | Elida | 4 | 12v / 3i / 2o | 93 |
 | [fort-shawnee.yml](place/fort-shawnee.yml) | place | Fort Shawnee | 2 | 11v / 2i / 0o | 75 |
 | [gomer.yml](place/gomer.yml) | place | Gomer | 3 | 8v / 1i / 1o | 81 |

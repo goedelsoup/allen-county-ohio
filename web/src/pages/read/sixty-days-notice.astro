@@ -1,0 +1,200 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const total = assertion('twenty-three-closings-in-twenty-two-years')
+const villages = assertion('the-villages-outweigh-the-city')
+const empty = assertion('ten-of-twenty-two-years-are-empty')
+const cluster = assertion('two-years-carry-forty-four-per-cent')
+const largest = assertion('the-largest-notice-is-not-a-factory-closing')
+
+const twice = assertion('one-plant-appears-twice-under-two-owners')
+const outside = assertion('nine-notices-gave-a-number-outside-ohio')
+
+const shops = assertion('the-recession-produced-three-notices-and-all-were-shops')
+const threshold = assertion('a-threshold-from-underneath')
+const coincidence = assertion('two-thousand-six-hundred-and-twenty-four-against-two-thousand-six-hundred-and-twenty-eight')
+const delphos = assertion('a-register-that-changes-its-mind-about-a-county')
+
+const twelve = assertion('twelve-of-twenty-three-arrived-inside-sixty-days')
+const zero = assertion('one-notice-arrived-on-the-day')
+const ninety = assertion('only-three-notices-clear-ninety-days')
+const timed = assertion('five-filings-timed-to-the-statute-and-eighteen-not')
+const readings = assertion('the-file-dates-the-state-and-not-the-floor')
+const rapid = assertion('rapid-response-had-under-sixty-days-half-the-time')
+
+const named = assertion('thirteen-of-twenty-three-name-a-union')
+const uaw = assertion('the-car-workers-union-in-a-county-with-no-car-plant')
+const nobody = assertion('ten-notices-name-nobody-and-half-are-factories')
+const column = assertion('the-union-column-takes-what-the-employer-wrote')
+const after2011 = assertion('nothing-after-2011-names-a-union')
+
+const years = Array.from({ length: 22 }, (_, i) => 1996 + i)
+const workersByYear: Record<number, number> = {
+  1996: 76, 1999: 204, 2001: 348, 2005: 246, 2006: 742, 2007: 417,
+  2008: 80, 2009: 191, 2011: 153, 2012: 57, 2013: 104, 2016: 6,
+}
+const yearValues = years.map((y) => workersByYear[y] ?? 0)
+
+const gaps: [string, number][] = [
+  ['Superior Forge & Steel', 0],
+  ["McDonald's Industrial Products", 12],
+  ['Tower Automotive', 18],
+  ['Experience Works', 25],
+  ['Delphos Ohio Axle Plant', 35],
+  ['Engineered Plastic Products', 37],
+  ['Harvard Industries', 39],
+  ['Spicer Driveshaft', 48],
+  ['Lipari Foods', 51],
+  ['Marathon Electric', 52],
+  ['Grob Systems', 57],
+  ['Mid Bus', 57],
+  ['H & C Milcor', 60],
+  ["Reser's Fine Foods", 60],
+  ['Holland Binkley', 61],
+  ['Spencerville Metal Systems', 61],
+  ['Home Depot', 62],
+  ['INEOS Nitriles', 68],
+  ['The Andersons', 70],
+  ['International Brake Industries', 81],
+  ['Toledo Molding and Die', 94],
+  ['Kmart Store #4301', 104],
+  ['Continental Plastic Containers', 107],
+]
+
+const unions: [string, number][] = [
+  ['UAW', 1049],
+  ['no union named', 887],
+  ['Iron Workers', 246],
+  ['Steelworkers', 159],
+  ['AFL-CIO', 109],
+  ['PACE', 98],
+  ['UPIU', 76],
+]
+
+const yearsSpec = bar(
+  years.map(String),
+  yearValues,
+  { yTitle: 'Workers named in notices', labelValues: true },
+)
+const gapsSpec = bar(
+  gaps.map(([n]) => n),
+  gaps.map(([, d]) => d),
+  { yTitle: 'Days from receipt to layoff', labelValues: true },
+)
+const unionsSpec = bar(
+  unions.map(([n]) => n),
+  unions.map(([, w]) => w),
+  { yTitle: 'Workers named in notices', labelValues: true },
+)
+---
+
+<Article slug="sixty-days-notice">
+  <p>
+    Allen County's industrial decline is well measured here and entirely anonymous. Manufacturing
+    employment fell fifty-five per cent between 1986 and 2010; a fifth of the county's workplaces
+    are gone; every job lost since 2001 was on somebody's payroll. Not one of those sentences names
+    a plant, a date, or a person.
+  </p>
+  <p>
+    There is a file that does. The Worker Adjustment and Retraining Notification Act obliges most
+    employers of a hundred or more to give sixty days' notice of a plant closing or mass layoff, and
+    Ohio published what it received, year by year, from 1996 to 2017. The state's own paths for it
+    now answer 404 and its successor agency's hostname does not resolve; every file read here came
+    out of the Internet Archive.
+  </p>
+
+  <h2>Twenty-three letters</h2>
+  <AssertionCard assertion={total} open />
+  <ChartFigure
+    id="years"
+    title="Workers named in Allen County layoff notices, by year"
+    caption="Ten of the twenty-two years are empty. Two of them carry forty-four per cent of the record."
+    columns={['Year', 'Workers']}
+    rows={years.map((y, i) => [String(y), yearValues[i].toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="years" set:html={JSON.stringify(yearsSpec)} is:inline />
+  <AssertionCard assertion={villages} />
+  <AssertionCard assertion={empty} />
+  <AssertionCard assertion={cluster} />
+  <p>
+    2006 and 2007 are the two years the county lost its parts industry in public. Tower Automotive
+    at Bluffton, Engineered Plastic Products and Marathon Electric at Lima, Spencerville Metal
+    Systems, Toledo Molding and Die at Delphos — five plants making metal or plastic for somebody
+    else's assembly line, inside twenty months.
+  </p>
+  <AssertionCard assertion={largest} />
+
+  <h2>One plant, twice</h2>
+  <AssertionCard assertion={twice} open />
+  <p>
+    The register has no identifier for a place of work: no address, no facility number, nothing that
+    would let two notices seven years apart be recognised as the same building. What joins them is
+    the telephone number, which nobody put in the file for that purpose. The plant that let a
+    hundred and four people go in 1999 let two hundred and thirteen go in 2006 under a different
+    company's name.
+  </p>
+  <AssertionCard assertion={outside} />
+
+  <h2>What the register cannot see</h2>
+  <AssertionCard assertion={shops} open />
+  <AssertionCard assertion={threshold} />
+  <p>
+    That is the most useful thing this file does, and it does it by being empty. The Act has
+    thresholds — a hundred employees, fifty affected at one site, sixty days — and a decline made of
+    twenty people here and thirty there passes under all of them without leaving a line. The
+    steepest fall in the modern part of the county's manufacturing series happened with nobody
+    required to announce anything.
+  </p>
+  <AssertionCard assertion={coincidence} />
+  <AssertionCard assertion={delphos} />
+
+  <h2>Sixty days</h2>
+  <AssertionCard assertion={twelve} open />
+  <ChartFigure
+    id="intervals"
+    title="Days between the state's receipt of the notice and the layoff"
+    caption="Twelve of the twenty-three fall short of the sixty the Act names. Two sit exactly on it and three more within two days; the rest are scattered."
+    columns={['Employer', 'Days']}
+    rows={gaps.map(([n, d]) => [n, d])}
+  />
+  <script type="application/json" data-chart-spec="intervals" set:html={JSON.stringify(gapsSpec)} is:inline />
+  <AssertionCard assertion={zero} />
+  <AssertionCard assertion={ninety} />
+  <AssertionCard assertion={timed} />
+  <AssertionCard assertion={readings} />
+  <p>
+    So the number is published and the conclusion is not. The Act's sixty days run to the workers,
+    to any representative of theirs, and to the state; the register dates the third of those and
+    nothing else. A row at nought days is a documented fact about what Columbus knew and when, and
+    it is not proof that anybody on the floor was surprised.
+  </p>
+  <AssertionCard assertion={rapid} />
+
+  <h2>Who was in the room</h2>
+  <p>
+    The register carries a column headed <em>Union</em>, which makes it the only source assembled
+    here that says whether a particular workplace in this county was organised.
+  </p>
+  <AssertionCard assertion={named} open />
+  <ChartFigure
+    id="unions"
+    title="Workers by the union named on the notice"
+    caption="Thirteen notices name a union and ten name nobody. The federation row, AFL-CIO, identifies no bargaining unit at all."
+    columns={['Named', 'Workers']}
+    rows={unions.map(([n, w]) => [n, w.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="unions" set:html={JSON.stringify(unionsSpec)} is:inline />
+  <AssertionCard assertion={uaw} />
+  <AssertionCard assertion={nobody} />
+  <AssertionCard assertion={column} />
+  <AssertionCard assertion={after2011} />
+  <p>
+    The last union in the county's closing register is UAW Local 975, at International Brake
+    Industries in Lima, in March 2011. After it: a food distributor, a food plant and a federal
+    employment programme for older workers, and in the union column of all three, nothing.
+  </p>
+</Article>

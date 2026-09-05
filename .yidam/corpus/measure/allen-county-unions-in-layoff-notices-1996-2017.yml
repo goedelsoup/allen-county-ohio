@@ -1,0 +1,66 @@
+class: measure
+label: Unions named in Allen County layoff notices, 1996–2017
+description: |
+  Ohio's layoff register carries a union column, which makes it the only source in this corpus that
+  says whether a particular workplace here was organised. **Thirteen of the county's twenty-three
+  notices name a union, and those thirteen cover 1,737 of the 2,624 workers — two thirds.**
+  [verified] — [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md); counted
+  here.
+
+      union named                                       notices   workers
+      UAW                                                     7     1,049
+      USWA / United Steelworkers                              2       159
+      UPIU (paper)                                            1        76
+      PACE                                                    1        98
+      Iron Workers                                            1       246
+      AFL-CIO, unspecified                                    1       109
+      none named                                             10       887
+
+  **The United Auto Workers is at seven of the thirteen and 1,049 of the 1,737.** Harvard
+  Industries and Spencerville Metal Systems at Spencerville, Spicer Driveshaft and Engineered
+  Plastic Products at Lima, Tower Automotive at Bluffton, Toledo Molding and Die at Delphos, and
+  International Brake Industries at Lima — a county with no car plant, organised by the car
+  workers' union at every place in this register that made a part for one. [verified] — same
+  register; the reading is this corpus's.
+
+  **No notice filed here after March 2011 names a union.** International Brake Industries, 153
+  workers, UAW Local 975, is the last; the three that follow it — a food distributor at Delphos in
+  2012, a food plant at Delphos in 2013, a federal employment programme in Lima in 2016 — name
+  none. [verified] — same register.
+
+  **Ten notices name nobody, and half of them are factories.** Continental Plastic Containers, Grob
+  Systems, McDonald's Industrial Products, Mid Bus and Reser's Fine Foods make things; Home Depot,
+  Kmart and The Andersons are shops; Lipari Foods distributes; Experience Works is a federal
+  programme. Between them 887 workers, an average of 89 a notice against 134 at the thirteen that
+  name a union. [inference] — computed from the table above.
+
+  **One row names a federation instead of a union and one names a local.** Marathon Electric
+  Manufacturing of Lima, 109 workers in 2007, is entered as `AFL-CIO`, which identifies no
+  bargaining unit at all; International Brake Industries in 2011 is entered as `UAW Local 975`, the
+  only row in this county's twenty-three that goes down to a local number. [verified] — same
+  register. The column takes whatever the employer wrote in it. [inference]
+
+  **This node cannot say whether any of these workplaces is organised today.** A union column in a
+  closing notice records who represented the workers being let go, at that plant, on that date. It
+  is not a membership figure, not a certification record, and not evidence about any workplace that
+  never filed. [inference] — the reasoning is this corpus's.
+properties:
+  parameter: layoff notices naming a union, Allen County
+  value: "13"
+  unit: notices of 23
+  as_of: "2017"
+  method: |
+    The register's `Union` column, read as printed. Blank, `None`, `N/A` and `n/a` are all treated
+    as naming no union and are not distinguished, because the files use them interchangeably across
+    years and no key explains the difference. `USWA` and `United Steelworkers` are counted as one.
+    `AFL-CIO` is counted as a naming, though it identifies a federation and not a bargaining unit.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-warn-notices-1996-2017.md
+  - target: allen-county-layoff-notices-1996-2017.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of
