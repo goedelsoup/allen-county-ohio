@@ -11957,6 +11957,309 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "median of the thirteen after", value: 65.5, literal: "65.5" },
         ],
     },
+    Assertion {
+        id: "twenty-three-closings-in-twenty-two-years",
+        statement: "Twenty-three plant closings and mass layoffs in Allen County were notified to \
+                    the State of Ohio between 1996 and 2017, covering 2,624 workers.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "Every plant closing and mass layoff in this county that an employer notified the State of Ohio about across twenty-two years. **Twenty-three notices, 2,624 workers.** [verified] \u{2014} [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md), read year by year."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "workers named", value: 2624.0, literal: "2,624" },
+        ],
+    },
+    Assertion {
+        id: "the-villages-outweigh-the-city",
+        statement: "Twelve of the county's twenty-three closing notices are in Lima and eleven are \
+                    outside it, and the eleven outside cover more workers than the twelve inside \
+                    \u{2014} 1,326 against 1,298.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**Twelve of the twenty-three are in Lima and account for 1,298 of the workers.** Delphos has five and 450, Spencerville three and 457, Bluffton three and 419 \u{2014} so the eleven notices outside Lima cover 1,326 workers against the city's 1,298, and Spencerville's three account for more workers than Delphos's five. [inference] \u{2014} counted from the table above, against [Spencerville](../place/spencerville.yml) and [Delphos](../place/delphos.yml)."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "outside Lima", value: 1326.0, literal: "1,326" },
+            Figure { label: "Lima", value: 1298.0, literal: "1,298" },
+        ],
+    },
+    Assertion {
+        id: "ten-of-twenty-two-years-are-empty",
+        statement: "Ten of the twenty-two years in the county's layoff register carry no notice at \
+                    all, and one of them is 2010 \u{2014} the year this corpus once called the floor \
+                    of its manufacturing decline.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**Ten of the twenty-two years have no notice at all**, and they are not the years a reader would guess: 1997, 1998, 2000, 2002, 2003, 2004, **2010**, 2014, 2015 and 2017. [inference] \u{2014} same table. 2010 is the year Allen County manufacturing employment reached what this corpus once called its floor."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-years-carry-forty-four-per-cent",
+        statement: "2006 and 2007 account for eight of Allen County's twenty-three closing notices \
+                    and 1,159 of the 2,624 workers \u{2014} forty-four per cent of a twenty-two-year \
+                    record in two years.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**Two years carry forty-four per cent of the whole record.** 2006 and 2007 have eight notices and 1,159 workers between them, against fifteen notices and 1,465 workers in the other twenty years. [inference] \u{2014} computed from the table above. Four of those eight are plants making things out of metal or plastic for somebody else's assembly line."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "2006 and 2007", value: 1159.0, literal: "1,159" },
+            Figure { label: "the other twenty years", value: 1465.0, literal: "1,465" },
+        ],
+    },
+    Assertion {
+        id: "the-largest-notice-is-not-a-factory-closing",
+        statement: "The largest single layoff notice in Allen County's record is H & C Milcor of \
+                    Lima at 246 workers in November 2005, ahead of Spencerville Metal Systems at 213 \
+                    and Tower Automotive of Bluffton at 210.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**The largest single notice is not a factory closing.** H & C Milcor of Lima, 246 workers, filed in November 2005 \u{2014} larger than Spencerville Metal Systems at 213, Tower Automotive at 210 and Engineered Plastic Products at 179. [inference] \u{2014} same table."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "H & C Milcor", value: 246.0, literal: "246" },
+            Figure { label: "Spencerville Metal Systems", value: 213.0, literal: "213" },
+            Figure { label: "Tower Automotive", value: 210.0, literal: "210" },
+        ],
+    },
+    Assertion {
+        id: "one-plant-appears-twice-under-two-owners",
+        statement: "One Spencerville plant is in the layoff register twice, seven years and two \
+                    owners apart \u{2014} Harvard Industries with 104 workers in 1999 and \
+                    Spencerville Metal Systems with 213 in 2006 \u{2014} and the only thing that \
+                    joins the two rows is a shared telephone number.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**One plant is in this register twice, seven years and two owners apart, and the register does not say so.** Harvard Industries of Spencerville filed for 104 workers in 1999 and Spencerville Metal Systems, LLC filed for 213 in 2006, and both rows give the contact number (419) 647-4101. The file has no identifier for a place of work; the phone column is the only thing that joins them. [verified] \u{2014} the two rows; see [the register](../../catalog/ohio-warn-notices-1996-2017.md)."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "1999", value: 104.0, literal: "104" },
+            Figure { label: "2006", value: 213.0, literal: "213" },
+        ],
+    },
+    Assertion {
+        id: "the-recession-produced-three-notices-and-all-were-shops",
+        statement: "The recession produced three layoff notices in Allen County and every one of \
+                    them was a shop \u{2014} Home Depot in 2008, The Andersons and Kmart in 2009, \
+                    271 workers \u{2014} while no factory here filed at all in 2008, 2009 or 2010.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**The recession produced three notices here and every one of them was a shop.** Home Depot in 2008, The Andersons and Kmart in 2009, 271 workers between them, and nothing from any factory in 2008, 2009 or 2010. [inference] \u{2014} same table. That is the opposite of the shape the county's employment series has for those years, and it is what a threshold looks like from underneath: manufacturing here shed 1,246 jobs between 2008 and 2010 without one of the losses being large enough, or sudden enough, to be a WARN event. [inference] \u{2014} against [the manufacturing series](allen-county-manufacturing-employment-1986-2022.yml)."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "workers in the three notices", value: 271.0, literal: "271" },
+        ],
+    },
+    Assertion {
+        id: "a-threshold-from-underneath",
+        statement: "Manufacturing employment in Allen County fell 1,246 between 2008 and 2010 \
+                    without one closing large enough or sudden enough to require a notice, which is \
+                    what a statutory threshold looks like from underneath.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**The recession produced three notices here and every one of them was a shop.** Home Depot in 2008, The Andersons and Kmart in 2009, 271 workers between them, and nothing from any factory in 2008, 2009 or 2010. [inference] \u{2014} same table. That is the opposite of the shape the county's employment series has for those years, and it is what a threshold looks like from underneath: manufacturing here shed 1,246 jobs between 2008 and 2010 without one of the losses being large enough, or sudden enough, to be a WARN event. [inference] \u{2014} against [the manufacturing series](allen-county-manufacturing-employment-1986-2022.yml)."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[
+            Figure { label: "jobs lost", value: 1246.0, literal: "1,246" },
+        ],
+    },
+    Assertion {
+        id: "nine-notices-gave-a-number-outside-ohio",
+        statement: "Nine of Allen County's twenty-three layoff notices give a contact number outside \
+                    Ohio \u{2014} Missouri, Michigan, Kansas, Illinois, Oregon, Virginia and Georgia \
+                    \u{2014} against thirteen with a 419 number.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notices-1996-2017.yml", "**Nine of the twenty-three notices give a contact number outside Ohio** \u{2014} Missouri, Michigan twice, Kansas, Illinois, Michigan again, Oregon, Virginia and Georgia. Thirteen give a 419 number and one a Cincinnati number. [inference] \u{2014} read from the registers' phone column, which is the employer's contact for the notice and not necessarily where the decision was taken."),
+        ],
+        answers: &["cannot say how many people actually lost work"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twelve-of-twenty-three-arrived-inside-sixty-days",
+        statement: "In twelve of Allen County's twenty-three layoff notices, covering 1,220 of the \
+                    2,624 workers, the day Ohio recorded receiving the notice is less than sixty \
+                    days before the layoff date printed beside it.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notice-intervals-1996-2017.yml", "The WARN Act requires sixty days' notice of a plant closing or mass layoff. **In twelve of this county's twenty-three notices, covering 1,220 of the 2,624 workers, the day Ohio recorded receiving the notice is less than sixty days before the layoff date printed beside it.** [verified] \u{2014} [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md); the differences are computed here."),
+        ],
+        answers: &["cannot say whether anybody gave late notice"],
+        figures: &[
+            Figure { label: "workers", value: 1220.0, literal: "1,220" },
+        ],
+    },
+    Assertion {
+        id: "one-notice-arrived-on-the-day",
+        statement: "The shortest interval in the county's layoff register is nought days: Superior \
+                    Forge & Steel of Lima, fifty-five workers, entered as received on 7 February \
+                    2001 and laid off on 7 February 2001.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notice-intervals-1996-2017.yml", "**The shortest is nought.** Superior Forge & Steel of Lima, fifty-five workers: 7 February 2001 in the received column and 7 February 2001 in the layoff column. [verified] \u{2014} same register. The next three are twelve days at McDonald's Industrial Products of Spencerville with 140 workers, eighteen at Tower Automotive of Bluffton with 210, and twenty-five at Experience Works in Lima with six."),
+        ],
+        answers: &["cannot say whether anybody gave late notice"],
+        figures: &[],
+    },
+    Assertion {
+        id: "only-three-notices-clear-ninety-days",
+        statement: "Only three of Allen County's twenty-three layoff notices reached the state more \
+                    than ninety days before the layoff, and between them they cover 272 workers \
+                    \u{2014} a tenth of the total.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notice-intervals-1996-2017.yml", "**Only three readings clear ninety days.** Continental Plastic Containers of Lima at 107, Kmart's Lima store at 104, and Toledo Molding and Die of Delphos at 94 \u{2014} 272 workers between them, a tenth of the total. [inference] \u{2014} computed from the register's two date columns."),
+        ],
+        answers: &["cannot say whether anybody gave late notice"],
+        figures: &[
+            Figure { label: "workers", value: 272.0, literal: "272" },
+        ],
+    },
+    Assertion {
+        id: "five-filings-timed-to-the-statute-and-eighteen-not",
+        statement: "Five of Allen County's twenty-three layoff notices sit at sixty, sixty-one or \
+                    sixty-two days before the layoff, and the other eighteen are spread from nought \
+                    to a hundred and seven with no second cluster anywhere.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notice-intervals-1996-2017.yml", "**Five of the twenty-three look like filings timed to the statute and eighteen do not.** Two rows sit exactly on sixty \u{2014} H & C Milcor in 2005 and Reser's Fine Foods in 2013 \u{2014} and three more at sixty-one or sixty-two. The other eighteen are spread from nought to a hundred and seven with no second cluster anywhere in the range. [inference] \u{2014} computed from the register."),
+        ],
+        answers: &["cannot say whether anybody gave late notice"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-file-dates-the-state-and-not-the-floor",
+        statement: "A short interval in Ohio's layoff register is equally consistent with a late \
+                    notice to the workers, a timely notice filed late, a letter logged slowly in \
+                    Columbus, and a layoff date that moved after the filing \u{2014} two of which \
+                    would break the Act and two of which would not.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notice-intervals-1996-2017.yml", "**A short interval here admits four readings and the register distinguishes none of them.** It is equally consistent with a late notice to the workers, with a timely notice filed late with the state, with a letter logged slowly in Columbus, and with a layoff date that moved after the filing went in. Two of those would break the Act and two would not. [inference] \u{2014} the reasoning is this corpus's; see [a receipt date is not a notice date](../../decisions/a-receipt-date-is-not-a-notice-date.yml)."),
+        ],
+        answers: &["cannot say whether anybody gave late notice"],
+        figures: &[],
+    },
+    Assertion {
+        id: "rapid-response-had-under-sixty-days-half-the-time",
+        statement: "The state office whose job is to reach a workforce before it disperses had under \
+                    sixty days' warning on twelve of these twenty-three occasions, under thirty on \
+                    four of them, and none at all once.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-layoff-notice-intervals-1996-2017.yml", "**What the interval does establish is about the state's own position.** Rapid Response exists to reach a workforce before it disperses, and on twelve of these twenty-three occasions the office charged with that had under sixty days' warning, four times under thirty, once none at all. [inference] \u{2014} the reasoning is this corpus's, from the register's own dates."),
+        ],
+        answers: &["cannot say whether anybody gave late notice"],
+        figures: &[],
+    },
+    Assertion {
+        id: "thirteen-of-twenty-three-name-a-union",
+        statement: "Thirteen of Allen County's twenty-three layoff notices name a union, and those \
+                    thirteen cover 1,737 of the 2,624 workers \u{2014} two thirds of everybody in \
+                    the register.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-unions-in-layoff-notices-1996-2017.yml", "Ohio's layoff register carries a union column, which makes it the only source in this corpus that says whether a particular workplace here was organised. **Thirteen of the county's twenty-three notices name a union, and those thirteen cover 1,737 of the 2,624 workers \u{2014} two thirds.** [verified] \u{2014} [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md); counted here."),
+        ],
+        answers: &["cannot say whether any of these workplaces is organised today"],
+        figures: &[
+            Figure { label: "workers at organised workplaces", value: 1737.0, literal: "1,737" },
+            Figure { label: "workers in all", value: 2624.0, literal: "2,624" },
+        ],
+    },
+    Assertion {
+        id: "the-car-workers-union-in-a-county-with-no-car-plant",
+        statement: "The United Auto Workers is named at seven of the thirteen organised workplaces \
+                    in Allen County's layoff register and 1,049 of the workers \u{2014} a county \
+                    with no car plant, organised by the car workers' union at every place in the \
+                    register that made a part for one.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-unions-in-layoff-notices-1996-2017.yml", "**The United Auto Workers is at seven of the thirteen and 1,049 of the 1,737.** Harvard Industries and Spencerville Metal Systems at Spencerville, Spicer Driveshaft and Engineered Plastic Products at Lima, Tower Automotive at Bluffton, Toledo Molding and Die at Delphos, and International Brake Industries at Lima \u{2014} a county with no car plant, organised by the car workers' union at every place in this register that made a part for one. [verified] \u{2014} same register; the reading is this corpus's."),
+        ],
+        answers: &["cannot say whether any of these workplaces is organised today"],
+        figures: &[
+            Figure { label: "workers", value: 1049.0, literal: "1,049" },
+        ],
+    },
+    Assertion {
+        id: "nothing-after-2011-names-a-union",
+        statement: "No layoff notice filed in Allen County after March 2011 names a union: \
+                    International Brake Industries and its UAW Local 975 is the last, and the food \
+                    distributor, food plant and federal employment programme that follow it name \
+                    nobody.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-unions-in-layoff-notices-1996-2017.yml", "**No notice filed here after March 2011 names a union.** International Brake Industries, 153 workers, UAW Local 975, is the last; the three that follow it \u{2014} a food distributor at Delphos in 2012, a food plant at Delphos in 2013, a federal employment programme in Lima in 2016 \u{2014} name none. [verified] \u{2014} same register."),
+        ],
+        answers: &["cannot say whether any of these workplaces is organised today"],
+        figures: &[],
+    },
+    Assertion {
+        id: "ten-notices-name-nobody-and-half-are-factories",
+        statement: "Ten of the county's layoff notices name no union at all and five of those ten \
+                    are factories, averaging 89 workers a notice against 134 at the thirteen that \
+                    name one.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-unions-in-layoff-notices-1996-2017.yml", "**Ten notices name nobody, and half of them are factories.** Continental Plastic Containers, Grob Systems, McDonald's Industrial Products, Mid Bus and Reser's Fine Foods make things; Home Depot, Kmart and The Andersons are shops; Lipari Foods distributes; Experience Works is a federal programme. Between them 887 workers, an average of 89 a notice against 134 at the thirteen that name a union. [inference] \u{2014} computed from the table above."),
+        ],
+        answers: &["cannot say whether any of these workplaces is organised today"],
+        figures: &[
+            Figure { label: "average, unorganised", value: 89.0, literal: "89" },
+            Figure { label: "average, organised", value: 134.0, literal: "134" },
+        ],
+    },
+    Assertion {
+        id: "the-union-column-takes-what-the-employer-wrote",
+        statement: "One row of Allen County's layoff register names a federation and no bargaining \
+                    unit \u{2014} Marathon Electric's `AFL-CIO` \u{2014} and one names a local by \
+                    number, UAW Local 975 at International Brake Industries: the column takes \
+                    whatever the employer wrote in it.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-unions-in-layoff-notices-1996-2017.yml", "**One row names a federation instead of a union and one names a local.** Marathon Electric Manufacturing of Lima, 109 workers in 2007, is entered as `AFL-CIO`, which identifies no bargaining unit at all; International Brake Industries in 2011 is entered as `UAW Local 975`, the only row in this county's twenty-three that goes down to a local number. [verified] \u{2014} same register. The column takes whatever the employer wrote in it. [inference]"),
+        ],
+        answers: &["cannot say whether any of these workplaces is organised today"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-thousand-six-hundred-and-twenty-four-against-two-thousand-six-hundred-and-twenty-eight",
+        statement: "Allen County's layoff notices cover 2,624 workers between 1996 and 2017 and its \
+                    manufacturing employment fell 2,628 between 1996 and its 2013 trough \u{2014} \
+                    two numbers four apart that measure nothing in common, one a gross count across \
+                    every industry and the other a net change in one.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-manufacturing-employment-1986-2022.yml", "**The county's layoff notices now put names on part of this line, and they account for less of it than a coincidence suggests.** Every plant closing and mass layoff an employer notified the state about here between 1996 and 2017 covers 2,624 workers, and manufacturing employment fell 2,628 between 1996 and its 2013 trough. The two numbers are four apart and measure nothing in common: the first is a gross count of announced separations across every industry, the second a net change in one. [inference] \u{2014} computed against [the notices](allen-county-layoff-notices-1996-2017.yml); see [an exact match is a question](../../decisions/an-exact-match-is-a-question.yml), which asks what a near-identity is evidence of, and here the answer is nothing."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "the notices", value: 2624.0, literal: "2,624" },
+            Figure { label: "the employment fall", value: 2628.0, literal: "2,628" },
+        ],
+    },
+    Assertion {
+        id: "a-register-that-changes-its-mind-about-a-county",
+        statement: "Ohio's layoff register carries five notices from Delphos and names no county at \
+                    all until 2008, so three of them are attributed to Allen County by the city's \
+                    name alone while the last two are marked `(Allen)` by the state.",
+        topic: "work",
+        supports: &[
+            support!("place/delphos.yml", "**A fourth file makes the choice in the middle of its own run.** Ohio's register of plant closings carries five notices from this city \u{2014} 1996, 2001, 2007, 2012 and 2013 \u{2014} and names no county at all until 2008, so the first three are attributed to Allen County by the city's name and nothing else, while the last two are marked `(Allen)` by the state. [verified] \u{2014} [the Ohio WARN registers](../../catalog/ohio-warn-notices-1996-2017.md); see [the notices](../measure/allen-county-layoff-notices-1996-2017.yml). Three of this county's twenty-three closing notices therefore rest on a place name that is true of two counties, and the corpus says so rather than dropping them. [inference]"),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
