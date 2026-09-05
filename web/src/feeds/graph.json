@@ -6997,6 +6997,69 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-groundwater-1962-2026.yml",
+      "class": "measure",
+      "label": "Water levels in Allen County's wells, 1962–2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Readings are parameter `72019`, depth to water below land surface, one row per visit; the same visit is also published as `62610` and `62611` and a count of raw rows triples it. [verified] The change is the mean of the first three calendar years of a well's record against the mean of its last three, which is robust to the four-or-five-readings-a-year cadence in a way a first-and-last difference is not. [verified] The slope is ordinary least squares on time in years, and the R² beside it is what separates a trend from a scatter. [verified] The neighbour wells are every site in the six adjoining counties with at least ten readings since 2010, which is all of them. [verified] Township attribution is point-in-polygon against the 2024 TIGER county-subdivision layer. [verified]",
+        "parameter": "fall in water level at Allen County's one continuously read well",
+        "unit": "feet below land surface, mean of 2010–2012 against mean of 2024–2026",
+        "value": "11.70"
+      },
+      "blocks": [
+        {
+          "text": "**Eighty-seven of the county's ninety groundwater wells have a water level on record, and the record is 904 readings across sixty-four years.** [verified] — [USGS NWIS](../../catalog/usgs-nwis.md), the field-measurements collection, county 39003, site type `GW`, parameter `72019`. The county has 185 water monitoring sites and this is the half of them the corpus had never read; see [the gauges](allen-county-water-gauges-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eight hundred and three of the 904 are from 1998.** Thirty readings cover the thirty-six years from October 1962 to April 1997. Then one year holds seventy-five wells and forty days of work — 383 readings at 68 wells across five days in October alone, and 258 at 28 wells across four days in December. Then nothing until 2010. [verified] — the same source, its field-measurements collection, counted by date.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every reading taken in this county since 1998 is from one well.** All seventy-one of them, between 23 July 2010 and 16 July 2026, are from AL-5, a well in [Shawnee Township](../place/shawnee-township.yml) read four or five times a year by the Ohio Department of Natural Resources. Eighty-nine wells and one instrument. [verified] — the same source, grouped by site.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The water in it has fallen eleven and a half feet.** Its mean depth to water was 21.61 feet below land surface across its first three years and 33.30 across its last three, a drop of 11.70 feet, at a fitted 0.849 feet a year with an R² of 0.81. [verified] — the same source, its seventy-one readings; the fit computed here. The well is 203 feet deep, stands at 829 feet, was constructed on 20 September 2005, and takes water from the Silurian aquifer under confinement. [verified] — the same source's monitoring-locations collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It falls three times as fast as any well around it and it is the only one that falls in a line.** The same agency reads one or two wells in each of the six adjoining counties, in the same national aquifer, at the same cadence, published in the same file. [verified] — the same source, queried for counties 39011, 39137, 39161, 39063, 39065 and 39107.",
+          "tier": "verified"
+        },
+        {
+          "text": "In figures: the eight neighbour wells run from a fall of 0.283 feet a year at Auglaize's AU-4 to a rise of 0.125 at Hardin's HN-1, with Mercer's MR-2 at 0.254 and Van Wert's VW-1 at 0.175, against 0.849 here; their median R² is 0.15 against 0.81. [verified] — the same source, the nine series fitted here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1998 campaign is concentrated on one point and the file does not say what is there.** Thirty-six of the eighty-seven measured wells stand within two kilometres of 40.755°N, 84.331°W — near Southworth, on the Marion–Spencer–Amanda township corner — and carry 571 of the 904 readings, 562 of them in 1998. Forty-three of the county's ninety wells are in [Amanda Township](../place/amanda-township.yml) alone. [verified] — the same source's coordinates, against [the TIGER county-subdivision layer](../../catalog/census-tiger-hydrography.md), point-in-polygon here. Sixty-eight wells read five times over five days in one October is the shape of an aquifer test rather than a survey. [inference] — the reading is this corpus's; the file carries an observing procedure and a measuring agency and no project.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Three townships and the city have no well at all.** [Bath](../place/bath-township.yml), [Perry](../place/perry-township.yml) and [Sugar Creek](../place/sugar-creek-township.yml) townships and [Lima](../place/lima.yml) hold none of the ninety. [verified] — the same source's coordinates, the same point-in-polygon.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Where the water stood in October 1998, at the one moment the county was measured across.** Depth to water ran from 10.2 to 66.5 feet below the surface with a median of 20.0, and the water-level elevation from 739.9 to 797.8 feet above NAVD88, a range of 57.9 feet across 68 wells. [verified] — the same source, parameters `72019` and `62611`.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Half the wells are not assigned to an aquifer and the ones that are, are mostly one.** Thirty-six of the ninety are coded to the Silurian-Devonian aquifers and ten to the glacial sand and gravel; forty-four carry no national aquifer code. Of the twenty-nine that state a type, twenty-eight are confined. [verified] — the same source's monitoring-locations collection.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four of the ninety are not water wells in any ordinary sense.** They are 444, 1,996, 2,030 and 3,133 feet deep, in Shawnee, Richland, Auglaize and Shawnee townships, against a median of 82 feet across the seventy that state a depth. [verified] — the same source. A three-thousand-foot hole four miles from the Lima oil field is more likely a test hole that was later read for water than a well drilled for it. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This node does not assert that the county's water table is falling.** One well is not a water table, and a confined well measures pressure rather than a surface."
+      ],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-group-quarters-2020.yml",
       "class": "measure",
       "label": "Allen County group quarters, 2020",
@@ -13233,6 +13296,14 @@
           "tier": "verified"
         },
         {
+          "text": "**A fifth file draws ten times as much marsh as this one and it is also a hydrography product.** The National Wetlands Inventory maps 425.9 acres of emergent wetland in this county and 7,361 acres of wetland in all. [verified] — [the wetlands inventory](allen-county-wetlands-2026.yml). Neither file is a subset of the other: this one maps water bodies for a flow network and that one maps habitat, and a seasonally-flooded marsh is habitat without being a water body. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It also says what the 660 ponds are, if not what they are for.** The wetlands inventory's largest single code in this county is `PUBGx` — palustrine unconsolidated bottom, excavated — at 1,288.8 acres, and 2,954.3 of its 7,361 acres carry a modifier meaning dug, diked or ditched. [verified] — [the wetlands inventory](../../catalog/usfws-national-wetlands-inventory.md). The ponds this node found are earthworks, which is half of the question this node left open. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**The file does not establish that any of these is natural.** Its waterbody classes are lake or pond, reservoir, swamp or marsh, and none of them records who dug the hole. The corpus's claim that Allen County has no natural lakes rests on the water systems and not on this. [inference] — see [the water systems](allen-county-water-systems-2026.yml).",
           "tier": "inference"
         }
@@ -14572,12 +14643,24 @@
           "tier": "verified"
         },
         {
+          "text": "**Eighty-seven of the ninety groundwater wells do have a water-level record, and it is the opposite shape to the stream record above.** 904 readings, 1962 to 2026 — but 803 of them are from 1998 and every one taken since is from a single well. Where the stream sites are many instruments and two long series, the wells are many instruments and one campaign. [verified] — [USGS NWIS](../../catalog/usgs-nwis.md), its field-measurements collection; see [the water levels](allen-county-groundwater-1962-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The endpoint that would have answered it had been dead for seven months when this node opened the question.** The `gwlevels` service was frozen on 1 November 2025 and has redirected to a blog post since 1 February 2026; the two services this node does use both answered, so nothing here noticed. [verified] — the same source's own decommissioning notice; see [a live url is not a live file](../../decisions/a-live-url-is-not-a-live-file.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The site count in this node is now one short.** The replacement service gives 185 sites where the legacy one gave 184, in the same seven classes. [verified] — the same source, both services. Neither figure is wrong and the file gained a site.",
+          "tier": "verified"
+        },
+        {
           "text": "**The thirty-one lake and reservoir stations are the drinking water.** Allen County has no natural lakes; Lima's water system owns six named reservoirs, each with an intake, and Delphos a seventh. [verified] — [the water systems](allen-county-water-systems-2026.yml). A monitoring network concentrated on standing water in a county with none of it is a network watching a city's supply. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 3
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-water-systems-2026.yml",
@@ -14615,6 +14698,10 @@
         {
           "text": "**About one person in six is on none of them.** The eight report 84,476 against the county's 100,866 in 2024 — 84 per cent. The residual is not a count of private wells: these are self-reported service populations, and Bluffton and Delphos both straddle county lines. [inference] — computed against [the 2024 estimate](allen-county-population-2024.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**The ninety groundwater sites have now been read and they answer the depth and not the where.** At the one moment the county was measured across — October 1998 — water stood between 10.2 and 66.5 feet below the surface, with a median of 20.0. [verified] — [USGS NWIS](../../catalog/usgs-nwis.md); see [the water levels](allen-county-groundwater-1962-2026.yml). Those are observation wells and not supply wells, so the figure describes the water a private well would have to reach and not the wells that reach it.",
+          "tier": "verified"
         },
         {
           "text": "**A second authority names this county's still waters and agrees with the city about four of the six.** The federal gazetteer carries fourteen — thirteen reservoirs and one lake — including Ferguson, Metzger, Twin Lake and Lost Creek, and it has no Bresler anywhere in Ohio and no Williams here. It adds eight the city does not name, among them Lima Reservoir and Refinery Reservoir. [verified] — [USGS GNIS](../../catalog/gnis-domestic-names-ohio.md); see [the named features](allen-county-named-features-2026.yml). Neither list is wrong: one is a name authority and the other an operator's inventory, and a reader who takes either for a count of the county's reservoirs will get a different number. [inference]",
@@ -14664,6 +14751,53 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "measure/allen-county-wetlands-2026.yml",
+      "class": "measure",
+      "label": "What the wetland map draws in Allen County",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Every polygon intersecting an envelope around the county was fetched — 5,383 of them, at a thousand a page — and each was clipped to the union of the county's thirteen 2024 TIGER county subdivisions; 4,539 have area inside. [verified] Areas are computed in EPSG:5070 Albers rather than taken from the layer's own `ACRES` field, which is the whole polygon's area and overstates for anything on the county line. [verified] Nine polygons self-intersect and are repaired with `MakeValid` before the clip; none is dropped. [verified] The modifier split is over the `ATTRIBUTE` code's trailing lowercase letters, not the five-class rollup. [verified]",
+        "parameter": "wetland mapped in Allen County by the National Wetlands Inventory",
+        "unit": "acres, clipped to the county boundary",
+        "value": "7361.0"
+      },
+      "blocks": [
+        {
+          "text": "**The federal wetlands inventory maps 7,361 acres of wetland in Allen County — 11.50 square miles, 2.83 per cent of it — in 4,539 polygons.** [verified] — [the National Wetlands Inventory](../../catalog/usfws-national-wetlands-inventory.md), every polygon intersecting the county clipped to its boundary and measured in EPSG:5070.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Two fifths of it is dug or dammed.** 2,231.8 acres carry the Cowardin modifier `x`, excavated; 722.5 carry `h`, diked or impounded; 66.6 carry `d`, partly drained or ditched. That is 2,954.3 acres of 7,361, and the single largest code in the county is `PUBGx` at 1,288.8 acres — dug ponds. [verified] — the same source, summed by code. The five-class rollup above calls every one of them a Pond or a Lake; see [a modifier changes what the thing is](../../decisions/a-modifier-changes-what-the-thing-is.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nine polygons hold eighteen per cent of it, and they are the city's water.** The Lake class has nine features and 1,366.2 acres, of which 900.9 are `L1UBHx` — excavated — and 465.3 `L1UBHh`, impounded. [verified] — the same source. Those are [Lima's reservoirs](allen-county-water-systems-2026.yml), which the corpus already knew were pumped full. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The marsh is four hundred and twenty-six acres.** Freshwater Emergent Wetland — the class that means standing herbaceous wetland, the thing the word swamp is reaching for — is 425.9 acres, **0.16 per cent of the county**. [verified] — the same source. The earliest land surveys of this ground mapped 22,433.9 acres of elm-ash swamp forest. [verified] — [the original vegetation](allen-county-original-vegetation.yml); see [the Great Black Swamp](../natural-feature/great-black-swamp.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the fifth federal file to measure wetland on this ground, and the five span a factor of two thousand one hundred and eighty-nine.** [verified] — the same source against [the soil survey](../../catalog/usda-ssurgo-soil-survey.md), [the original vegetation map](../../catalog/odnr-original-vegetation.md), [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md) and [the flow network](../../catalog/usgs-nhdplus-high-resolution.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two hydrography products disagree by a factor of ten on the same class.** The National Hydrography Dataset draws 42.0 acres of swamp or marsh here; this file draws 425.9 acres of emergent wetland. Both are federal, both are polygon maps of water on the same ground, and neither is a subset of the other. [verified] — the two sources. What separates them is purpose: one maps water bodies for a flow network and the other maps habitat, and a seasonally-flooded marsh is habitat and is not a water body. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is spread across the county rather than pooled in the north.** Amanda leads at 1,394.9 acres and Bath follows at 1,287.1; Spencer, which holds the second-largest share of the county's groundwater wells, has the least at 200.4. [verified] — the same source, clipped to the 2024 county subdivisions.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [
+        "**This node does not establish when any of this was mapped.** The layer carries no image date on the polygon, so 7,361 acres is as of a compilation the file does not name."
+      ],
+      "withheld": 6
     },
     {
       "id": "measure/allen-county-workplace-injuries-2016-2024.yml",
@@ -16447,6 +16581,14 @@
         {
           "text": "**A fourth federal file draws the swamp today and it draws forty-two acres.** The hydrography file maps 57 swamp-or-marsh polygons in Allen County totalling 42.0 acres — one acre for every 534 of the 22,433.9 the vegetation map puts here at the earliest land surveys. [verified] — [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md); see [the standing water](../measure/allen-county-standing-water-2026.yml). The county holds 2,026.8 acres of standing water of every kind, eight tenths of one per cent of itself, and most of it is farm ponds under an acre.",
           "tier": "verified"
+        },
+        {
+          "text": "**What is left of it, on the federal wetland map, is four hundred and twenty-six acres.** The National Wetlands Inventory draws 7,361 acres of wetland in this county — 2.83 per cent of it — of which 425.9 acres, 0.16 per cent, are emergent wetland, the class that means standing herbaceous marsh. Two fifths of the rest is excavated, diked or ditched. [verified] — [the wetlands inventory](../measure/allen-county-wetlands-2026.yml). Against the 22,433.9 acres of elm-ash swamp forest the first surveyors walked, the marsh is one acre in fifty-three. [inference] — computed from the two figures.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The water it left is under the ground and one well measures it.** Allen County's ninety groundwater wells hold 904 readings, all but seventy-one of them from before 1999; the well that is still read has fallen eleven and a half feet since 2010, faster than any well in the six counties around it. [verified] — [the water levels](../measure/allen-county-groundwater-1962-2026.yml). Whether the drainage that ended the swamp has anything to do with that is not a question this corpus can reach: the fall begins in 2010 and the ditching was finished by 1900. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -29733,6 +29875,41 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-groundwater-1962-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
+      "from": "measure/allen-county-groundwater-1962-2026.yml",
+      "to": "measure/allen-county-water-gauges-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
+      "from": "measure/allen-county-groundwater-1962-2026.yml",
+      "to": "measure/allen-county-water-systems-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-groundwater-1962-2026.yml",
+      "to": "place/shawnee-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
+      "from": "measure/allen-county-groundwater-1962-2026.yml",
+      "to": "place/amanda-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
       "from": "measure/allen-county-group-quarters-2020.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -32846,6 +33023,34 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/epa-sdwis.md"
+    },
+    {
+      "from": "measure/allen-county-wetlands-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usfws-national-wetlands-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-wetlands-2026.yml",
+      "to": "natural-feature/great-black-swamp.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usfws-national-wetlands-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-wetlands-2026.yml",
+      "to": "measure/allen-county-standing-water-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usfws-national-wetlands-inventory.md"
+    },
+    {
+      "from": "measure/allen-county-wetlands-2026.yml",
+      "to": "measure/allen-county-original-vegetation.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/odnr-original-vegetation.md"
     },
     {
       "from": "measure/allen-county-workplace-injuries-2016-2024.yml",

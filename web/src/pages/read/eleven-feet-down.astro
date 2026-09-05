@@ -1,0 +1,126 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const wells = assertion('eighty-seven-wells-have-a-record')
+const oneYear = assertion('eight-hundred-of-them-are-one-year')
+const oneWell = assertion('eighty-nine-wells-and-one-instrument')
+const fell = assertion('eleven-and-a-half-feet')
+const faster = assertion('three-times-faster-than-any-neighbour')
+const township = assertion('forty-three-wells-in-one-township')
+
+const acres = assertion('seven-thousand-acres-of-wetland')
+const dug = assertion('two-fifths-of-it-is-dug-or-dammed')
+const marsh = assertion('the-marsh-is-four-hundred-acres')
+const five = assertion('five-files-and-a-factor-of-two-thousand')
+const ten = assertion('two-hydrography-files-ten-times-apart')
+const lakes = assertion('nine-polygons-are-the-citys-water')
+const left = assertion('what-is-left-of-the-swamp')
+
+const fellSpec = bar(
+  fell.figures.map((f) => f.label),
+  fell.figures.map((f) => f.value),
+  { yTitle: 'Feet below land surface', labelValues: true },
+)
+const fasterSpec = bar(
+  faster.figures.map((f) => f.label),
+  faster.figures.map((f) => f.value),
+  { yTitle: 'Feet per year the water falls', labelValues: true },
+)
+const dugSpec = bar(
+  dug.figures.map((f) => f.label),
+  dug.figures.map((f) => f.value),
+  { yTitle: 'Acres carrying the modifier', labelValues: true },
+)
+const marshSpec = bar(
+  marsh.figures.map((f) => f.label),
+  marsh.figures.map((f) => f.value),
+  { yTitle: 'Acres', labelValues: true },
+)
+---
+
+<Article slug="eleven-feet-down">
+  <p>
+    Allen County lies on the southern margin of the Great Black Swamp. It was ditched and tiled in
+    the second half of the nineteenth century and the water went somewhere. Two federal files say
+    where — one for what is under the ground and one for what is left on top of it — and neither
+    had been read here.
+  </p>
+
+  <h2>Ninety wells and one instrument</h2>
+  <AssertionCard assertion={wells} open />
+  <AssertionCard assertion={oneYear} />
+  <AssertionCard assertion={township} />
+  <p>
+    Sixty-eight wells read five times across five days in one October is not a monitoring network.
+    It is the shape of somebody pumping a well and watching what the water does in the wells around
+    it. The file records the tape they used and the agency that held it and no reason at all.
+  </p>
+  <AssertionCard assertion={oneWell} open />
+
+  <h2>Eleven and a half feet</h2>
+  <AssertionCard assertion={fell} open />
+  <ChartFigure
+    id="fell"
+    title="Depth to water at AL-5, Shawnee Township"
+    caption="Mean of the first three calendar years of the record against the mean of the last three. Deeper is drier: the water is further below the surface."
+    columns={['Period', 'Feet below surface']}
+    rows={fell.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="fell" set:html={JSON.stringify(fellSpec)} is:inline />
+  <AssertionCard assertion={faster} open />
+  <ChartFigure
+    id="faster"
+    title="How fast the water falls, by county"
+    caption="The same agency, the same aquifer, the same four-or-five readings a year. Allen County against the three fastest-falling of the eight wells around it."
+    columns={['Well', 'Feet a year']}
+    rows={faster.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="faster" set:html={JSON.stringify(fasterSpec)} is:inline />
+  <p>
+    One well is not a water table, and a well sealed under rock measures pressure rather than a
+    surface. What the eight neighbours buy is narrower than it looks and worth saying exactly:
+    whatever is lowering the water here is not lowering it in the six counties around this one, so
+    the movement is not the instrument. That is the strongest thing a control taken from geography
+    can ever say, and it leaves the reason open. Nobody publishes how much water is pumped out of
+    Allen County.
+  </p>
+
+  <h2>What is left on top</h2>
+  <AssertionCard assertion={acres} open />
+  <AssertionCard assertion={dug} open />
+  <ChartFigure
+    id="dug"
+    title="Mapped wetland by what was done to it"
+    caption="Cowardin modifiers on the county's 7,361 acres. The layer's plain-English rollup drops all three and calls the result a Pond or a Lake."
+    columns={['Modifier', 'Acres']}
+    rows={dug.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="dug" set:html={JSON.stringify(dugSpec)} is:inline />
+  <AssertionCard assertion={lakes} />
+  <AssertionCard assertion={marsh} open />
+  <ChartFigure
+    id="marsh"
+    title="Marsh now against swamp forest at the first surveys"
+    caption="Emergent wetland on the federal map today, against the elm-ash swamp forest the earliest land surveys of this county recorded."
+    columns={['Measure', 'Acres']}
+    rows={marsh.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="marsh" set:html={JSON.stringify(marshSpec)} is:inline />
+  <AssertionCard assertion={left} />
+
+  <h2>Five files, one piece of ground</h2>
+  <AssertionCard assertion={five} open />
+  <AssertionCard assertion={ten} />
+  <p>
+    None of the five is wrong and none is the others' answer. Hydric soil is ground that formed
+    under standing water and stays hydric after it is drained. Swamp forest is what a surveyor
+    walking a section line in the 1820s wrote down. Wetland on a habitat map and a water body on a
+    flow network are two different objects, which is why two federal polygon maps of the same
+    county differ by a factor of ten on the same word. The useful question is never how much
+    wetland there is. It is which file, and what it was built to answer.
+  </p>
+</Article>
