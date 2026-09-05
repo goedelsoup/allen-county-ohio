@@ -16,16 +16,32 @@ description: |
   Creek, or for something else. The instrument is the township's erection record, which this corpus
   does not hold.
 
-  **Its outflow is not established here.** GNIS records a mouth coordinate and no downstream
-  feature, and the corpus does not infer a receiving stream from proximity — the discipline
-  [Little Hog Creek](little-hog-creek.yml) already states for exactly this reason. [open] What it
-  flows into. The instrument is the flow network's `downstream_comid`.
+  **Its outflow was not established from the gazetteer.** GNIS records a mouth coordinate and no
+  downstream feature, and the corpus does not infer a receiving stream from proximity — the
+  discipline [Little Hog Creek](little-hog-creek.yml) already states for exactly this reason. The
+  instrument named here was the flow network's `downstream_comid`, and it was the right one.
+
+  **It flows into the Ottawa River.** Its main stem is 61 reaches ending on 164.69 square
+  kilometres of drainage and an estimated 53.4 cubic feet a second; the reach below it is
+  `04100007000216`, named Ottawa River, with 784.91. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). So the creek that
+  may or may not have named a township joins the river the county seat stands on, downstream of
+  the county and inside Putnam. [inference]
+
+  **21.36 miles of it are in Allen County and half a mile of that is inside Lima.** [verified] —
+  [the stream network](../measure/allen-county-stream-network-2026.yml). It is the third longest
+  named watercourse in the county after the Auglaize and the Ottawa, which is not what a corpus
+  that could not say where it went would have guessed.
 properties:
   feature_type: creek
   gnis_id: "1046795"
-  mouth: 40.9592178, -84.1821688 — in Putnam County
+  mouth: 40.9592178, -84.1821688 — in Putnam County. Joins the Ottawa River. [verified]
   source: 40.7983854, -83.9157744 — in Allen County
 links:
+  - target: ottawa-river.yml
+    relationship: flows-into
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
   - target: ../place/allen-county.yml
     relationship: traverses
     claim_tag: verified

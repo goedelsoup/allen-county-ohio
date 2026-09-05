@@ -10995,6 +10995,314 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &[],
         figures: &[],
     },
+    Assertion {
+        id: "seven-hundred-and-thirty-five-miles-of-channel",
+        statement: "Allen County holds 735.22 miles of mapped watercourse against 2,225.6 miles of \
+                    driveable road, and two miles in three of it are dry part of the year.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-stream-network-2026.yml", "**Allen County holds 735.22 miles of mapped channel.** 1,150 flowlines of the federal flow network touch the county; clipped to its boundary they run 735.22 miles, against 2,225.6 miles of driveable road. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), clipped in EPSG:26916, and [the roads](allen-county-roads-2010-2024.yml). Three miles of road to a mile of water, and 1.83 miles of channel to the square mile of land."),
+            support!("measure/allen-county-stream-network-2026.yml", "**Two miles in three of it are dry part of the year: 468.57 miles are intermittent stream against 174.17 perennial, with 79.90 miles of artificial path and 9.82 of canal or ditch.** [verified] \u{2014} the same source, by the `FCode` labels the service publishes on its own renderer."),
+        ],
+        answers: &["cannot say which of these channels somebody dug"],
+        figures: &[
+            Figure { label: "Intermittent", value: 468.57, literal: "468.57" },
+            Figure { label: "Perennial", value: 174.17, literal: "174.17" },
+            Figure { label: "Artificial path", value: 79.9, literal: "79.90" },
+            Figure { label: "Canal or ditch", value: 9.82, literal: "9.82" },
+        ],
+    },
+    Assertion {
+        id: "two-thirds-of-this-county-water-has-no-name",
+        statement: "461.80 of Allen County's 735.22 miles of channel carry no name at all, and \
+                    thirty-six named streams account for the rest.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-stream-network-2026.yml", "**461.80 miles of it carry no name at all \u{2014} 62.8 per cent.** Thirty-six named streams account for the other 273.42. [verified] \u{2014} same source."),
+        ],
+        answers: &["cannot say which of these channels somebody dug"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-name-is-what-runs-all-year",
+        statement: "In Allen County a channel that runs all year has a name and a channel that runs \
+                    after rain does not: 86.9 per cent of the intermittent miles are unnamed and \
+                    80.7 per cent of the perennial miles are named.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-stream-network-2026.yml", "**Naming tracks permanence and nothing else.** Of the 468.57 intermittent miles, 407.27 are unnamed \u{2014} 86.9 per cent. Of the 174.17 perennial miles, 140.58 are named \u{2014} 80.7 per cent. [verified] \u{2014} same source. A channel that runs all year got a name and a channel that runs after rain did not, which is a fact about the people who named them."),
+        ],
+        answers: &["cannot say which of these channels somebody dug"],
+        figures: &[
+            Figure { label: "Intermittent, unnamed", value: 86.9, literal: "86.9" },
+            Figure { label: "Perennial, named", value: 80.7, literal: "80.7" },
+        ],
+    },
+    Assertion {
+        id: "the-county-is-headwater-country",
+        statement: "Four hundred and twelve of Allen County's 735 miles of channel are first-order \
+                    streams, and 356.35 miles of it are flagged as headwater.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-stream-network-2026.yml", "**The county is headwater country.** Miles by Strahler order: 412.50 at order 1, 159.75 at 2, 67.99 at 3, 61.87 at 4 and 33.11 at 5, which is the highest here. 367 reaches are flagged as headwaters and they carry 356.35 miles, 48.5 per cent of the network. [verified] \u{2014} same source. Nothing large rises here because nothing large can: the county is 407 square miles at the top of two basins."),
+        ],
+        answers: &["cannot say which of these channels somebody dug"],
+        figures: &[
+            Figure { label: "Order 1", value: 412.5, literal: "412.50" },
+            Figure { label: "Order 2", value: 159.75, literal: "159.75" },
+            Figure { label: "Order 3", value: 67.99, literal: "67.99" },
+            Figure { label: "Order 4", value: 61.87, literal: "61.87" },
+            Figure { label: "Order 5", value: 33.11, literal: "33.11" },
+        ],
+    },
+    Assertion {
+        id: "where-all-of-it-goes",
+        statement: "Half of Allen County's channel reaches the Ottawa River first, a third goes \
+                    straight to the Auglaize, a tenth reaches the Blanchard, and 3.66 miles reach \
+                    the Mississippi.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-stream-network-2026.yml", "**Where it all goes, in four answers.** 383.06 miles reach [the Ottawa River](../natural-feature/ottawa-river.yml) first, 269.37 reach [the Auglaize](../natural-feature/auglaize-river.yml) without passing through it, 78.39 reach [the Blanchard](../natural-feature/blanchard-river.yml), and 3.66 miles in [Auglaize Township](../place/auglaize-township.yml) reach the Mississippi. [verified] \u{2014} same source, by walking each reach's main stem downstream to the first named trunk. One reach of 0.73 miles in American Township reaches nothing: it ends at a mapped sink."),
+        ],
+        answers: &["cannot say which of these channels somebody dug"],
+        figures: &[
+            Figure { label: "Ottawa", value: 383.06, literal: "383.06" },
+            Figure { label: "Auglaize", value: 269.37, literal: "269.37" },
+            Figure { label: "Blanchard", value: 78.39, literal: "78.39" },
+            Figure { label: "Mississippi", value: 3.66, literal: "3.66" },
+        ],
+    },
+    Assertion {
+        id: "lima-has-the-road-and-not-the-water",
+        statement: "Lima holds 3.38 per cent of Allen County's land, 12.61 per cent of its road and \
+                    2.00 per cent of its water.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-stream-network-2026.yml", "**By township, from Amanda's 80.82 miles to Lima's 14.67 \u{2014} and Lima holds 3.38 per cent of the county's land, 12.61 per cent of its road and 2.00 per cent of its water.** [verified] \u{2014} same source, clipped to the 2024 county subdivisions, against [the roads](allen-county-roads-2010-2024.yml)."),
+        ],
+        answers: &["cannot say which of these channels somebody dug"],
+        figures: &[
+            Figure { label: "Land", value: 3.38, literal: "3.38" },
+            Figure { label: "Road", value: 12.61, literal: "12.61" },
+            Figure { label: "Water", value: 2.0, literal: "2.00" },
+        ],
+    },
+    Assertion {
+        id: "the-river-is-where-they-meet",
+        statement: "Hog Creek and Little Hog Creek do not meet and then enter the Ottawa River. Both \
+                    creeks' lowest reaches name the same reach as the one below them, and that reach \
+                    is the river.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/little-hog-creek.yml", "**It is the same point, and that field is what says so.** Both creeks' lowest reaches carry the same `dnhydroseq`: the reach `04100007000241`, named Ottawa River, with 233.83 square kilometres of drainage above it. Hog Creek brings 174.63 of that and this creek 57.54, and both reaches end at 40.77099, \u{2212}83.95570. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The two creeks do not meet and then enter the river. The river is where they meet."),
+            support!("natural-feature/hog-creek.yml", "**The flow network confirms the confluence and adds which creek is the main stem.** This creek's lowest reach and Little Hog Creek's carry the same `dnhydroseq` \u{2014} the reach `04100007000241`, named Ottawa River \u{2014} and both end at 40.77099, \u{2212}83.95570. This creek brings 174.63 square kilometres to that point and Little Hog Creek 57.54, and the Ottawa's first reach names this one as its upstream main path. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md)."),
+        ],
+        answers: &["does not establish it"],
+        figures: &[
+            Figure { label: "Hog Creek", value: 174.63, literal: "174.63" },
+            Figure { label: "Little Hog Creek", value: 57.54, literal: "57.54" },
+            Figure { label: "Ottawa, first reach", value: 233.83, literal: "233.83" },
+        ],
+    },
+    Assertion {
+        id: "the-auglaize-joins-the-maumee-and-it-is-no-longer-assumed",
+        statement: "That the Auglaize River joins the Maumee at Defiance has been an inference in \
+                    this corpus since genesis, because a names file cannot establish it. A flow \
+                    network can.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/auglaize-river.yml", "**It joins the Maumee, and the corpus no longer has to assume it.** The Auglaize's main stem is 188 reaches and 181.6 kilometres, ending on 6,359.42 square kilometres of drainage and an estimated 2,087 cubic feet a second; the reach below it is `04100009001411`, named Maumee River, with 14,119.40. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The `flows-into` edge below has been `[inference]` since genesis and the mouth property said \"Joins the Maumee River. [inference]\"; both are now read from the receiving reach. See [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml), which is the rule that stopped this being answered *Saint Joseph River*."),
+            support!("natural-feature/maumee-river.yml", "**The Auglaize does join this river at Defiance, and the flow network says so.** The Auglaize's last reach carries 6,359.42 square kilometres and the reach below it is `04100009001411`, named Maumee River, with 14,119.40. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The paragraph above says a names file cannot establish that. A flow network can, and `dnhydroseq` is the field."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-main-stem-is-named-for-a-river-in-indiana",
+        statement: "The main stem the Auglaize discharges into carries 323 reaches named Saint \
+                    Joseph River and 300 named Maumee River, so reading the path instead of the \
+                    reach would have moved Allen County's water to Indiana.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/maumee-river.yml", "**The main stem this river lies on is mostly named for another river.** Of its 1,008 reaches, 323 are named Saint Joseph River and 300 Maumee River, because the network traces the larger tributary upstream at every fork. [verified] \u{2014} the same source. Reading that ranking instead of the receiving reach would have had Allen County's water joining a river in Indiana; see [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Saint Joseph River", value: 323.0, literal: "323" },
+            Figure { label: "Maumee River", value: 300.0, literal: "300" },
+        ],
+    },
+    Assertion {
+        id: "three-questions-that-named-one-field",
+        statement: "Three nodes of this corpus said in so many words which field would settle them, \
+                    and the field settled all three: Sugar Creek flows into the Ottawa, so does the \
+                    Little Ottawa River, and Little Hog Creek meets Hog Creek at the same point \
+                    rather than above it.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/sugar-creek.yml", "**It flows into the Ottawa River.** Its main stem is 61 reaches ending on 164.69 square kilometres of drainage and an estimated 53.4 cubic feet a second; the reach below it is `04100007000216`, named Ottawa River, with 784.91. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). So the creek that may or may not have named a township joins the river the county seat stands on, downstream of the county and inside Putnam. [inference]"),
+            support!("natural-feature/little-ottawa-river.yml", "**It flows into the Ottawa River, and it joins between the county's two gauges.** Its lowest reach ends at 40.70595, \u{2212}84.15394 \u{2014} thirty-nine metres from the mouth GNIS gives \u{2014} carrying 42.51 square kilometres of drainage, and the reach below it is `04100007001465`, named Ottawa River, with 395.40. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The Ottawa above the junction carries 348.10 and below it 395.40, and the difference is this river."),
+            support!("natural-feature/maumee-river-basin.yml", "**The other half has since been read, and the trace no longer stops in mid-air.** Every `flows-into` edge on the county's watercourses is now taken from the reach immediately downstream: Hog Creek and Little Hog Creek into the Ottawa at one shared reach, Sugar Creek and the Little Ottawa River into the Ottawa, the Ottawa into the Auglaize, Riley Creek into the Blanchard, the Blanchard into the Auglaize, and the Auglaize into the Maumee. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The chain runs from a ditch in a field to the Gulf of Saint Lawrence without a gap; see [how far the water is from the sea](../measure/allen-county-distance-to-the-sea-2026.yml)."),
+        ],
+        answers: &["does not infer a receiving stream from proximity", "cannot say where its water goes"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-little-ottawa-joins-between-the-two-gauges",
+        statement: "The Little Ottawa River joins the Ottawa at the southernmost point of its \
+                    course, between the only two gauges in Allen County with a peak record.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/little-ottawa-river.yml", "**It flows into the Ottawa River, and it joins between the county's two gauges.** Its lowest reach ends at 40.70595, \u{2212}84.15394 \u{2014} thirty-nine metres from the mouth GNIS gives \u{2014} carrying 42.51 square kilometres of drainage, and the reach below it is `04100007001465`, named Ottawa River, with 395.40. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The Ottawa above the junction carries 348.10 and below it 395.40, and the difference is this river."),
+            support!("natural-feature/little-ottawa-river.yml", "**That junction is the southernmost point of the Ottawa's course.** The river runs west through [Lima](../place/lima.yml), turns south-south-west below the city to meet this one, and turns back north-north-west for Allentown. [verified] \u{2014} the same source, the reach sequence. The Lima gauge stands on 335.11 square kilometres and the Allentown gauge on 414.82, so this river joins between the only two gauges in the county with an annual peak record. [inference] \u{2014} the same source against [the monitoring sites](../measure/allen-county-water-gauges-2026.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Lima gauge", value: 335.11, literal: "335.11" },
+            Figure { label: "Above the junction", value: 348.1, literal: "348.10" },
+            Figure { label: "Below it", value: 395.4, literal: "395.40" },
+            Figure { label: "Allentown gauge", value: 414.82, literal: "414.82" },
+        ],
+    },
+    Assertion {
+        id: "fort-shawnee-has-more-water-than-lima",
+        statement: "The place that stopped being a village in 2012 holds 16.54 miles of mapped \
+                    channel and the county seat holds 14.67.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/little-ottawa-river.yml", "**Five and a half of its eight miles are inside Fort Shawnee.** 5.49 of the 8.01 miles the county holds run inside the place that was a village until its electors ended it, and that place holds 16.54 miles of mapped channel against Lima's 14.67 \u{2014} more water than the county seat. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md) and [the stream network](../measure/allen-county-stream-network-2026.yml); see [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Fort Shawnee", value: 16.54, literal: "16.54" },
+            Figure { label: "Lima", value: 14.67, literal: "14.67" },
+        ],
+    },
+    Assertion {
+        id: "the-far-side-of-a-field",
+        statement: "Two headwaters 858 metres apart in one Allen County township are 1,069.1 and \
+                    1,820.9 miles of channel from the sea.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-distance-to-the-sea-2026.yml", "**The divide, measured as a journey: 858 metres of ground and 752 miles of water.** The uppermost reach of [the Auglaize River](../natural-feature/auglaize-river.yml) begins at 40.66875, \u{2212}83.89299 and is 1,069.1 miles from the sea. The nearest Gulf-bound channel begins at 40.66121, \u{2212}83.89517, **858 metres away**, and is 1,820.9. [verified] \u{2014} the same source, the two reaches' `PathLength`, measured between their upstream ends in EPSG:26916. Two furrows in one township, and the water in them will not meet again on this continent. [inference]"),
+        ],
+        answers: &["cannot say that any water completes these journeys"],
+        figures: &[
+            Figure { label: "To the Gulf of St Lawrence", value: 1069.1, literal: "1,069.1" },
+            Figure { label: "To the Gulf of Mexico", value: 1820.9, literal: "1,820.9" },
+        ],
+    },
+    Assertion {
+        id: "the-water-ends-in-the-gulf-of-saint-lawrence",
+        statement: "1,146 of Allen County's 1,150 stream reaches end on one terminal reach with \
+                    774,375 square kilometres of drainage above it, and every mile of the county is \
+                    a thousand miles of channel from salt water.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-distance-to-the-sea-2026.yml", "**The county's water ends in the Gulf of Saint Lawrence.** 1,146 of the 1,150 reaches here terminate on one level path \u{2014} 398 reaches and 1,059.5 kilometres, named Saint Lawrence River on 163 of them and Niagara River on 44 \u{2014} which ends at reach `04290008005819` with 774,375 square kilometres of drainage above it. [verified] \u{2014} same source. The county's water crosses Lake Erie, goes over Niagara, crosses Lake Ontario and leaves North America at Quebec."),
+            support!("measure/allen-county-distance-to-the-sea-2026.yml", "**Everything that falls on Allen County is between 1,001.9 and 1,071.9 miles from salt water, except for 3.66 miles of channel that are 1,819.** [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), the `PathLength` field, which gives the channel distance from a reach to the end of the network it belongs to."),
+        ],
+        answers: &["cannot say that any water completes these journeys"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-ditches-on-the-other-side-have-no-name",
+        statement: "The 3.66 miles of Allen County that drain to the Gulf of Mexico are three \
+                    unnamed intermittent ditches, in a subwatershed the federal file does name.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-distance-to-the-sea-2026.yml", "**Three unnamed ditches in [Auglaize Township](../place/auglaize-township.yml) go the other way.** 4.490, 8.381 and 2.963 kilometres of order-1 intermittent channel, 3.66 miles of it inside the county, terminate on a level path named Mississippi River at path lengths of 2,927.4, 2,930.4 and 2,932.0 kilometres \u{2014} 1,819.0 to 1,821.9 miles. [verified] \u{2014} same source. Each of the three rises in Allen County and leaves it; the subwatershed they lie in is named Cottonwood Ditch and not one of the three channels carries a name. [verified] \u{2014} the same source and [GNIS](../../catalog/gnis-domestic-names-ohio.md), feature 1061000, filed in Hardin County."),
+            support!("natural-feature/scioto-river-basin.yml", "**In channel miles the far side is 3.66 of the county's 735.22 \u{2014} half of one per cent.** Three unnamed order-1 intermittent reaches, 4.490, 8.381 and 2.963 kilometres long, each rising inside Allen County and leaving it eastward. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md); see [the stream network](../measure/allen-county-stream-network-2026.yml). The subwatershed is named Cottonwood Ditch and not one of the three channels in it carries a name."),
+        ],
+        answers: &["cannot say that any water completes these journeys"],
+        figures: &[],
+    },
+    Assertion {
+        id: "one-reach-reaches-nothing",
+        statement: "Three quarters of a mile of channel in American Township ends at a mapped sink, \
+                    with no reach below it and a path length of zero.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-distance-to-the-sea-2026.yml", "**One reach in the county reaches no ocean at all.** 0.73 miles of intermittent channel in American Township ends at a mapped sink at 40.77031, \u{2212}84.15389, with a path length of zero and no reach below it. [verified] \u{2014} the same source, `NHDPlusSink`. Four more sinks lie just outside the county line."),
+        ],
+        answers: &["cannot say that any water completes these journeys"],
+        figures: &[],
+    },
+    Assertion {
+        id: "forty-two-acres-of-the-great-black-swamp",
+        statement: "The earliest land surveys mapped 22,433.9 acres of swamp forest in Allen County. \
+                    The federal hydrography file now draws 42.0 acres of marsh.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-standing-water-2026.yml", "**Fifty-seven features are swamp or marsh and they come to forty-two acres.** [verified] \u{2014} same source. The earliest land surveys of this county mapped 22,433.9 acres of elm-ash swamp forest; the hydrography file now draws standing wetland on one acre in 534 of it. [inference] \u{2014} computed against [the original vegetation](allen-county-original-vegetation.yml); see [the Great Black Swamp](../natural-feature/great-black-swamp.yml)."),
+            support!("measure/allen-county-standing-water-2026.yml", "**That is the fourth federal number for the same ground and the smallest.** The Cropland Data Layer finds 704 acres of wetland here, the soil survey rates 91,953 acres hydric, the vegetation map draws 22,433.9 acres of swamp forest, and this file draws 42.0 acres of marsh. [verified] \u{2014} [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), [the soil survey](../../catalog/usda-ssurgo-soil-survey.md), [the original vegetation map](../../catalog/odnr-original-vegetation.md) and [the flow network](../../catalog/usgs-nhdplus-high-resolution.md); see [the soils](allen-county-soils-2026.yml). They are measuring four different things \u{2014} what is wet, what was wet, what grew, and what a hydrographer drew \u{2014} and the corpus has said so before about the first two."),
+        ],
+        answers: &["does not establish that any of these is natural"],
+        figures: &[
+            Figure { label: "Hydric soil", value: 91953.0, literal: "91,953" },
+            Figure { label: "Swamp forest, first surveys", value: 22433.9, literal: "22,433.9" },
+            Figure { label: "Wetland inventory", value: 704.0, literal: "704" },
+            Figure { label: "Marsh, mapped now", value: 42.0, literal: "42.0" },
+        ],
+    },
+    Assertion {
+        id: "most-of-the-standing-water-is-a-farm-pond",
+        statement: "Allen County holds 2,026.8 acres of standing water, eight tenths of one per cent \
+                    of itself, and 575 of its 757 waterbodies are under an acre.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-standing-water-2026.yml", "**Allen County holds 2,026.8 acres of standing water \u{2014} eight tenths of one per cent of it.** 757 waterbody polygons of the federal hydrography file have area inside the county. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), waterbody layer, clipped to the county in EPSG:26916."),
+            support!("measure/allen-county-standing-water-2026.yml", "**660 of them are ponds holding 1,345.9 acres, 40 are reservoirs holding 638.9, and 57 are swamp or marsh holding 42.0.** [verified] \u{2014} the same source, by the class labels the service publishes on its own renderer."),
+            support!("measure/allen-county-standing-water-2026.yml", "**Most of it is a farm pond.** The median waterbody is 0.42 acres and 575 of the 757 are under an acre. [verified] \u{2014} same source. Ten carry a name, and those ten hold 1,137.4 acres \u{2014} 56.1 per cent of the county's standing water in ten of its 757 pieces. [inference] \u{2014} computed here."),
+        ],
+        answers: &["does not establish that any of these is natural"],
+        figures: &[
+            Figure { label: "Lake or pond", value: 1345.9, literal: "1,345.9" },
+            Figure { label: "Reservoir", value: 638.9, literal: "638.9" },
+            Figure { label: "Swamp or marsh", value: 42.0, literal: "42.0" },
+        ],
+    },
+    Assertion {
+        id: "a-creek-filed-in-a-county-it-never-touches",
+        statement: "The federal gazetteer files Riley Creek in Darke County, and neither end of the \
+                    creek comes within seventy-eight kilometres of it.",
+        topic: "geography",
+        supports: &[
+            support!("natural-feature/riley-creek.yml", "**The gazetteer files it in Darke County and it never comes within seventy-eight kilometres of Darke County.** Its mouth is 81.8 kilometres from the nearest point of that county and its source 78.0. [verified] \u{2014} the same file's `county_name` against [the 2024 county boundaries](../../catalog/census-tiger-roads.md), measured here. The corpus's catalog entry for this file already warns that `county_name` will get you the wrong Allen County; this is the same defect pointing at a county a hundred kilometres away, and the corpus cannot say how it got there. See [the named features](../measure/allen-county-named-features-2026.yml)."),
+        ],
+        answers: &["cannot say how it got there"],
+        figures: &[
+            Figure { label: "Mouth to Darke", value: 81.8, literal: "81.8" },
+            Figure { label: "Source to Darke", value: 78.0, literal: "78.0" },
+        ],
+    },
+    Assertion {
+        id: "the-canal-is-the-county-line",
+        statement: "North of Delphos thirteen vertices of the drawn canal lie a median 1.6 metres \
+                    from the Allen County boundary, which is one reason two federal files disagree \
+                    about how much canal is in the county.",
+        topic: "geography",
+        supports: &[
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**A second federal file draws it, and draws more of it.** The hydrography network carries the canal as eight contiguous reaches of class *canal or ditch*, running from 40.71167, \u{2212}84.35257 in [Spencerville](../place/spencerville.yml) north past [Delphos](../place/delphos.yml) to the Putnam County line and beyond \u{2014} **8.87 miles inside Allen County** against the water file's 6.12. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), clipped the same way. The two are the same line: fifty-two vertices of the water file's canal lie a median 4.1 metres from the network's, and at most 29.1. [verified] \u{2014} measured here."),
+            support!("measure/miami-and-erie-canal-in-allen-county-2026.yml", "**North of Delphos the canal and the county line are the same line, and none of it is named.** The 2.9 miles this node measured due north is drawn as a course, of which 1.49 fall inside the county \u{2014} because thirteen vertices of that stretch lie a median **1.6 metres** from the Allen County boundary, the nearest 0.2 and the furthest 70.8, so the drawn canal crosses in and out. [verified] \u{2014} the same source against [the 2024 county boundary](../../catalog/census-tiger-roads.md), measured in EPSG:26916. Not one of the eight reaches carries a name: the water file spells the canal two ways and the flow network does not spell it at all."),
+        ],
+        answers: &["cannot say how many miles of the canal lie in Allen County"],
+        figures: &[
+            Figure { label: "Hydrography file", value: 8.87, literal: "8.87" },
+            Figure { label: "Water file", value: 6.12, literal: "6.12" },
+        ],
+    },
+    Assertion {
+        id: "two-files-two-gauges-one-square-mile",
+        statement: "Two federal files built for different purposes put Allen County's two gauges on \
+                    the same two drainages within a square mile.",
+        topic: "geography",
+        supports: &[
+            support!("measure/allen-county-water-gauges-2026.yml", "**A second federal file names two of these gauges on the reaches they stand on, and agrees.** The flow network attaches site 04187100 to an Ottawa River reach carrying 335.11 square kilometres \u{2014} 129.4 square miles \u{2014} and site 04187500 to one carrying 414.82, or 160.2. [verified] \u{2014} [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). This node has 128 and 160 from the site service. Two files built for different purposes put the same two instruments on the same two drainages within a square mile. [inference]"),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

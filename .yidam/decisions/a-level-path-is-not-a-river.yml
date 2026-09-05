@@ -1,0 +1,62 @@
+id: a-level-path-is-not-a-river
+summary: >-
+  The flow network offers two ways to say what a stream joins: the reach immediately below it, and
+  the main stem that reach belongs to. They disagree. Reading the main stem would have had the
+  Auglaize River discharging into the Saint Joseph. The rule adopted is that a `flows-into` edge is
+  read from the receiving reach and never from the level path.
+context: |
+  NHDPlus assigns every flowline a `levelpathi` — an identifier for the main stem it lies on. The
+  main stem is traced upstream from an outlet by drainage area, so a level path runs from a mouth
+  to the furthest headwater of the largest tributary at every fork, crossing name changes without
+  noticing them.
+
+  In Allen County that produces two useful facts and one trap.
+
+  The useful ones: [the Ottawa River](../corpus/natural-feature/ottawa-river.yml) and
+  [Hog Creek](../corpus/natural-feature/hog-creek.yml) share one level path of ninety-three
+  reaches, sixty-one named Ottawa River and twenty-six Hog Creek, which is the file agreeing that
+  they are one watercourse under two names. And the Ottawa's level path ends where the Auglaize's
+  begins, which is a confluence.
+
+  The trap: the level path the [Auglaize](../corpus/natural-feature/auglaize-river.yml) discharges
+  into carries 1,008 reaches, of which 323 are named Saint Joseph River and 300 Maumee River. Its
+  most common name is not the Maumee. At Fort Wayne the network follows the St. Joseph rather than
+  the St. Marys, and at Defiance it follows the St. Joseph arm rather than the Auglaize, so the
+  path that reaches Lake Erie is named for a river in Indiana. Ranking the names on that path and
+  taking the top one gives the wrong answer to the question this corpus had held as `[inference]`
+  since genesis.
+decision: |
+  **Read the receiving reach. Never the receiving path.**
+
+  1. A `flows-into` edge is verified from `dnhydroseq` — the single flowline immediately below the
+     subject's most downstream reach — and from that reach's own `gnis_name`.
+  2. Where the receiving reach is unnamed, walk the receiving level path downstream and upstream to
+     the nearest named reach and record both. If they disagree, the edge is not established.
+  3. A level path may be cited for what it is — a main stem, and evidence that two names belong to
+     one watercourse. It may not be cited for what a stream discharges into.
+  4. `qema` and its siblings are modelled flow. They are never set beside a gauge record.
+
+  Applied here, every edge written this phase names a reach: the Auglaize into reach
+  `04100009001411`, named Maumee River; the Ottawa into `04100007002293`, named Auglaize River;
+  Sugar Creek and the Little Ottawa River into reaches named Ottawa River; Riley Creek into
+  `04100008000018`, named Blanchard River.
+rationale: |
+  **The generalisable form: a derived grouping is not the thing it groups.** The corpus has met
+  this before under other names. A hydrologic unit is a drainage area and not a river, which is why
+  [the Maumee basin node](../corpus/natural-feature/maumee-river-basin.yml) carries no `huc_code`.
+  A census designated place is a tabulation and not a corporation, which is what
+  [Fort Shawnee](../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml) turned on. A
+  level path is the third instance, and the pattern is that the derived object is easier to query
+  than the thing, so it gets queried.
+
+  **What makes this one worth a rule rather than a note.** The wrong answer would have looked
+  right. Saint Joseph River is a real river that really does reach Lake Erie by the Maumee, so an
+  edge saying the Auglaize flows into it would have failed no check in this corpus: the target
+  would exist, the water would arrive, and the mistake would have been in the word *into*. A rule
+  that only catches obviously wrong answers is not needed.
+
+  **It cost nothing to get right.** The receiving reach is one field away from the receiving path,
+  and the corpus's own [nhd stub](../../crates/nhd/README.md) had named that field —
+  `downstream_comid` — at genesis, and it went unread until this phase.
+status: accepted
+date: "2026-09-04"

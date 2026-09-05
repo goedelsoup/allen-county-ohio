@@ -35,6 +35,19 @@ description: |
   [silence from a source that would have spoken](../../decisions/silence-from-a-source-that-would-have-spoken.yml),
   which this is not an instance of.
 
+  **A second federal file names two of these gauges on the reaches they stand on, and agrees.**
+  The flow network attaches site 04187100 to an Ottawa River reach carrying 335.11 square
+  kilometres — 129.4 square miles — and site 04187500 to one carrying 414.82, or 160.2. [verified]
+  — [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). This node has
+  128 and 160 from the site service. Two files built for different purposes put the same two
+  instruments on the same two drainages within a square mile. [inference]
+
+  **It also puts an estimate of mean annual flow on 1,150 reaches in a county with two peak
+  records.** The Ottawa leaves Allen County at an estimated 190.6 cubic feet a second and the
+  Auglaize at 213.9. [verified] — the same source. Those are modelled from runoff and are not
+  measurements; the corpus keeps them out of any table with a gauge in it. See
+  [the catalog entry](../../catalog/usgs-nhdplus-high-resolution.md).
+
   [open] Whether any of the ninety groundwater wells has a water-level record, and what it says.
   Allen County sits over the aquifer the whole region draws on, and this corpus holds nothing about
   it at all.
@@ -57,6 +70,10 @@ properties:
     count is of sites the service lists for this county whatever their status or period of record,
     and is not a count of instruments now running. [verified]
 links:
+  - target: ../natural-feature/riley-creek.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified

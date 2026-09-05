@@ -51,6 +51,27 @@ description: |
   smaller river runs through the city. [inference]
 
 
+  **It joins the Maumee, and the corpus no longer has to assume it.** The Auglaize's main stem is
+  188 reaches and 181.6 kilometres, ending on 6,359.42 square kilometres of drainage and an
+  estimated 2,087 cubic feet a second; the reach below it is `04100009001411`, named Maumee River,
+  with 14,119.40. [verified] —
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md). The `flows-into`
+  edge below has been `[inference]` since genesis and the mouth property said "Joins the Maumee
+  River. [inference]"; both are now read from the receiving reach. See
+  [a level path is not a river](../../decisions/a-level-path-is-not-a-river.yml), which is the rule
+  that stopped this being answered *Saint Joseph River*.
+
+  **It takes 269.37 miles of Allen County's channel directly and 461.45 by way of two other
+  rivers.** [The Ottawa](ottawa-river.yml) delivers 383.06 miles of it and
+  [the Blanchard](blanchard-river.yml) 78.39, and 3.66 miles of the county never reach this river
+  at all. [verified] — [the stream network](../measure/allen-county-stream-network-2026.yml).
+
+  **It rises in Allen County in the flow network too, and within 220 metres of where GNIS puts
+  it.** The uppermost reach the file names Auglaize River begins at 40.66875, −83.89299, carrying
+  3.61 square kilometres; the gazetteer's source coordinate is 40.6669957, −83.8938286. [verified]
+  — the same source against [GNIS](../../catalog/gnis-domestic-names-ohio.md). It leaves the county
+  on 636.04 square kilometres and an estimated 213.9 cubic feet a second.
+
   **Lima drinks from it, and it is the river with no flow record.** Two of the city's ten surface
   intakes are on the Auglaize. [verified] —
   [the water systems](../measure/allen-county-water-systems-2026.yml). So the county's largest water
@@ -61,12 +82,13 @@ properties:
   feature_type: river
   gnis_id: "1065901"
   huc_code: "04100007 Auglaize (subbasin)"
-  mouth: 41.2875489, -84.3557802, in Defiance County. Joins the Maumee River. [inference]
+  mouth: 41.2875489, -84.3557802, in Defiance County. Joins the Maumee River. [verified]
   source: 40.6669957, -83.8938286
 links:
   - target: ../natural-feature/maumee-river.yml
     relationship: flows-into
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
   - target: ../place/allen-county.yml
     relationship: traverses
     claim_tag: verified
