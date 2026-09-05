@@ -1,0 +1,81 @@
+class: measure
+label: Allen County presidential vote, 1980–1996
+description: |
+  Five elections from the Census Bureau's last county compendium, which carries every county's
+  presidential vote for 1980 through 2008 as counts and shares. **The Republican carried Allen
+  County all five times: 29,070 votes in 1980, 33,506 in 1984, 31,021 in 1988, 25,322 in 1992 and
+  24,325 in 1996.** [verified] — [USA Counties](../../catalog/census-usa-counties.md), table ELE.
+
+      year  Republican          Democrat            others   total    R%     D%
+      1980  Reagan    29,070   Carter    13,140    1,944   44,154   65.8   29.8
+      1984  Reagan    33,506   Mondale   12,176      229   45,911   73.0   26.5
+      1988  Bush      31,021   Dukakis   13,727      227   44,975   69.0   30.5
+      1992  Bush      25,322   Clinton   13,777    8,251   47,350   53.5   29.1
+      1996  Dole      24,325   Clinton   15,529    4,094   43,948   55.3   35.3
+
+  Every row's three vote columns add to its total, and the shares are the file's own to one
+  decimal. [inference] — checked here. The candidate names are not in the file, which publishes
+  parties and not people. [verified] —
+  [the compendium's item list](../../catalog/census-usa-counties.md).
+
+  **Eighty-four of the compendium's 6,659 items carry a copyright notice, and every one of them is
+  an election item.** Their source field reads CQ Press, which the file's own source table expands
+  to SAGE Publications; thirty of its thirty-two sources are federal agencies and this is not one
+  of them. [verified] —
+  [the compendium's data dictionary](../../catalog/census-usa-counties.md).
+
+  **The Census Bureau did not count these votes and this node does not assert that it did.** The
+  agency published them and bought them; see
+  [a federal cover is not a federal source](../../decisions/a-federal-cover-is-not-a-federal-source.yml).
+
+  **1984 is the largest Republican share and the largest margin in this corpus's record of this
+  county.** 73.0 per cent, and Reagan over Mondale by 21,330 votes — more than the 18,967 of 2020,
+  which this corpus had been calling its record. [inference] — computed from the table above
+  against [the modern series](allen-county-presidential-vote-2000-2016.yml) and
+  [the 2020 return](allen-county-presidential-vote-2020.yml). Its Democratic share of 26.5 per cent
+  is the lowest in that record too.
+
+  **In 1992 Ross Perot took 8,131 votes here, 17.2 per cent, and the Republican still won an
+  outright majority.** Bush's 53.5 per cent is a majority of the whole vote in a three-way year in
+  which he took 37.4 per cent of the nation's. [verified] — same source, the named third-party
+  items. Only 370 of the country's 3,146 counties gave him a majority that year, and eight of
+  Ohio's eighty-eight; this county was third of the eighty-eight, behind Holmes and Putnam.
+  [inference] — computed here from the file's county counts.
+
+  **Perot's collapse did not go to the Democrat.** From 1992 to 1996 his vote here fell from 8,131
+  to 3,799 while the Democratic vote rose 1,752 and the Republican fell 997, on a turnout 3,402
+  lower. [inference] — computed from the table above and the named third-party items.
+
+  **The county's turnout ran within 3,402 votes of itself for sixteen years while its population
+  fell by 2,486.** 44,154, 45,911, 44,975, 47,350, 43,948 — a range of 3,402 votes across five
+  elections whose highest is 1992, the Perot year, against a county that went from 112,241
+  residents in 1980 to 109,755 in 1990. [inference] — computed from the table above and
+  [the county's own series](allen-county-population-1940-1990.yml).
+properties:
+  parameter: presidential votes cast, Allen County
+  value: "43948"
+  unit: votes
+  as_of: 1996-11-05
+  method: |
+    `ELE.zip` from the 2011 compendium, unzipped to a single spreadsheet with **nine worksheets**;
+    a converter that reads only the first returns ten of the eighty-four items and looks complete.
+    The item codes carry the year less 1800, so 1980 is `180` and 2000 is `200`, which puts two
+    elections of the same measure under prefixes that look like different measures. Candidate names
+    are this corpus's, from the party column and the year; the file names no person. Ranks and
+    majority counts were computed from the file's own vote counts rather than from its rounded
+    percentages, because a county at 50.04 per cent prints as 50.0. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-usa-counties.md
+  - target: allen-county-presidential-vote-1960-1964.yml
+    relationship: concerns
+  - target: allen-county-presidential-vote-2000-2016.yml
+    relationship: concerns
+  - target: allen-county-against-ohio-1980-2008.yml
+    relationship: concerns
+  - target: allen-county-population-1940-1990.yml
+    relationship: concerns
+  - target: ../measure.ont.yml
+    relationship: instance-of
