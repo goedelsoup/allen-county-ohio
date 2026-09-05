@@ -136,6 +136,11 @@ Sorted by: kind, then alphabetically.
 | [allen-county-congregations-2020.yml](measure/allen-county-congregations-2020.yml) | measure | Allen County's congregations, 2020 | 2 | 6v / 4i / 1o | 79 |
 | [allen-county-court-caseloads-2007-2017.yml](measure/allen-county-court-caseloads-2007-2017.yml) | measure | Allen County court caseloads, 2007–2017 | 5 | 8v / 4i / 1o | 92 |
 | [allen-county-coverage-types-2023.yml](measure/allen-county-coverage-types-2023.yml) | measure | What Allen County's health insurance is made of, 2019–2023 | 6 | 12v / 2i / 1o | 96 |
+| [allen-county-covid-by-zip-2020-2023.yml](measure/allen-county-covid-by-zip-2020-2023.yml) | measure | COVID-19 cases by ZIP code in and around Allen County, 2020–2023 | 6 | 8v / 1i / 1o | 92 |
+| [allen-county-covid-cases-2020-2023.yml](measure/allen-county-covid-cases-2020-2023.yml) | measure | COVID-19 cases and hospitalisations in Allen County, 2020–2023 | 5 | 9v / 1i / 1o | 84 |
+| [allen-county-covid-deaths-2020-2023.yml](measure/allen-county-covid-deaths-2020-2023.yml) | measure | COVID-19 deaths of Allen County residents, 2020–2023 | 6 | 12v / 1i / 1o | 109 |
+| [allen-county-covid-place-of-death-2020-2023.yml](measure/allen-county-covid-place-of-death-2020-2023.yml) | measure | Where Allen County's COVID-19 deaths happened, 2020–2023 | 6 | 8v / 1i / 1o | 91 |
+| [allen-county-covid-vaccination-2020-2023.yml](measure/allen-county-covid-vaccination-2020-2023.yml) | measure | COVID-19 vaccination in Allen County, 2020–2023 | 4 | 8v / 2i / 1o | 72 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 7v / 3i / 1o | 71 |
 | [allen-county-developed-land-2001-2021.yml](measure/allen-county-developed-land-2001-2021.yml) | measure | Allen County developed land and impervious surface, 2001–2021 | 6 | 8v / 2i / 0o | 90 |
 | [allen-county-disaster-aid-applicants-2005-2025.yml](measure/allen-county-disaster-aid-applicants-2005-2025.yml) | measure | Who was paid federal disaster aid in Allen County, 2005–2025 | 2 | 4v / 3i / 2o | 86 |
@@ -230,7 +235,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |
 | [allen-county-national-register.yml](measure/allen-county-national-register.yml) | measure | Allen County on the National Register, 1966–2004 | 4 | 12v / 4i / 1o | 138 |
-| [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 3 | 4v / 1i / 0o | 41 |
+| [allen-county-natural-change-2021-2024.yml](measure/allen-county-natural-change-2021-2024.yml) | measure | Allen County natural change, 2021–2024 | 4 | 5v / 2i / 0o | 55 |
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 3 | 5v / 1i / 0o | 49 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
 | [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
