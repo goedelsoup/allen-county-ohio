@@ -125,7 +125,27 @@ the volume itself carries no author on its title page.
 
 That commercial origin is the standard reason to distrust these books, and it should be applied
 where it bites: **the biographical half is paid content.** A sketch says what a subscriber wanted
-said about himself. Nothing in this corpus should rest on one.
+said about himself.
+
+**For four hundred pages of this book that sentence was a prohibition, and it has been replaced by
+a rule.** Part IV, pages 561 to 830, is *Biographical Sketches*, arranged in thirteen township
+sections — Amanda at 561, Auglaize 570, Bath 574, German 590, Jackson 601, Marion 618, Monroe 662,
+Ottawa 677, Perry 734, Richland 751, Shawnee 784, Spencer 799, Sugar Creek 817. Its running head
+appears 131 times and 783 of its sentences say "was born". Every sketch has the same skeleton: name
+in capitals, trade, post office, birth date and birthplace, the parents with the mother's maiden
+name in brackets, when the family came to the county, the marriage, the children with their dates,
+the church, and the politics. A subscriber wanting to be flattered had no reason to move his own
+birthday and every means of knowing it. What he had reason to shape is the part around it — that he
+was *prominent*, *substantial*, *enterprising*, *respected and honored by all who know him* — and
+none of that is a fact this corpus takes. See
+[what a paid sketch may be quoted for](../decisions/what-a-paid-sketch-may-be-quoted-for.yml).
+
+**The head of the sketch is the man who bought it, and everyone else in it is there by relation.**
+The longest-serving county commissioner of the county's first seventy-five years has no sketch of
+his own. William Akerman's birth, his parents, his 120 acres of wild land, his 254 acres at his
+death and his four terms on the board are all inside a sketch headed `JOHN AKERMAN, farmer, P. O.
+Herring` — his son's. That is why the book gives dead men death dates and living men none: a
+subscriber writes about himself while alive, and about his father in the past tense.
 
 **What it is good for, which is a different half of the book.** Chapters VI and XVI–XXVIII are
 not biography. They are a *resume of the county commissioners' transactions* — dated meetings,
@@ -153,6 +173,14 @@ agree, or where one is impossible on the book's own facts — a township organiz
 commissioners of Putnam County cannot have been organized in 1885, because the same paragraph
 says the territory left Putnam in 1848. See
 [two-scans-of-one-book](../decisions/two-scans-of-one-book.yml).
+
+**The same substitution runs through the biographical half, where the dates are birthdays.** Scan A
+gives Isaiah Pillars a birth of March 17, **1838**, where scan B gives 1833; it gives George M.
+Baxter December **8**, 1834 where scan B gives December 3; it marries William Akerman in May
+**1838** where scan B marries him in 1833. The first of the three is caught the way the township
+dates were caught, by the sketch contradicting itself: a man born in 1838 was not admitted to the
+bar "when not quite twenty-one" and practising at Lima in 1855. The other two are caught by nothing
+except the second scan.
 
 **Its language about Native people is hostile, and that is a fact about the source.** The Shawnee
 Township chapter introduces the people the township is named for as "sanguinary savages" and

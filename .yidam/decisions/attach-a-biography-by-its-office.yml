@@ -1,0 +1,83 @@
+id: attach-a-biography-by-its-office
+summary: >-
+  A sheriff's roster gives a name and two years. A county history gives four hundred pages of
+  biography. Joining them is a string match on a nineteenth-century surname in a county where
+  three men called Samuel A. Baxter held office. This records the test a sketch has to pass
+  before its birthday goes on a person node: the sketch must name the office the roster names.
+context: |
+  The corpus's `person` class had ninety-eight instances and thirty-eight of them were sheriffs
+  from one published roster that gives a name and a year range and nothing else. Filling their
+  declared-but-empty `born`, `died` and `birthplace` meant finding each man in the 1885 or 1906
+  county history, and the histories are indexed by nobody.
+
+  Searching by name returns matches for forty-six of the ninety-eight, and the matches are not the
+  people:
+
+      William Miller     roster: sheriff 1873-1877.  The 1885 sketch of WILLIAM MILLER,
+                         butcher, Lima, ends "in 1873 was elected sheriff, which office
+                         he filled four years."                                    ACCEPT
+      Mathias Ridenour   roster: sheriff 1853-1855.  The 1885 sketch of M. RIDENOUR is
+                         George M. Ridenour, a farmer who died in 1873 and held no
+                         office in it.                                             REJECT
+      Benjamin S. Miller roster: sheriff 1929-1931.  The 1885 sketch of B. MILLER is
+                         John B. Miller of Bath Township, born 1818; the 1906 sketch is
+                         L. B. Miller of the Harrod Creamery. Neither book was printed
+                         in his lifetime as sheriff.                                REJECT
+      Lawrence O'Neill   roster: sheriff 1889-1893.  The 1885 sketch of Lawrence O'Neill,
+                         blacksmith, born 14 November 1848, has him elected city marshal
+                         of Lima in 1882 and says nothing about the county.        INFERENCE
+
+  The failure the rejections would have caused is not a wrong date. It is a **fabricated person**:
+  a node called Mathias Ridenour carrying George Ridenour's birthday, parents, wife and death,
+  published as a verified claim, and indistinguishable afterwards from a correct one.
+decision: |
+  **A sketch attaches to a person node only when the sketch itself names the office the roster
+  names, and the years agree.**
+
+  - **Accept** where the sketch states the office and its dates match the roster's within the
+    difference between an election and an inauguration. William Miller elected sheriff in 1873 for
+    four years against a roster line of 1873–1877; Eugene Barr "serving his second term as sheriff
+    of Allen County", elected first in 1901, against a roster line of 1902–1906.
+  - **Reject** where the sketch names no office, or names a different one, however well the name
+    and the county fit. A name and a county are not an identification in a book of four hundred
+    pages of one county's families, where a surname repeats down three generations and initials
+    stand in for given names.
+  - **Where the sketch names an office that is plausibly the same career but not the same post**,
+    take it as `[inference]`, say what the sketch actually says, and let the reader see the join.
+    Lawrence O'Neill the city marshal of 1882 is very probably Lawrence O'Neill the county sheriff
+    of 1889, and the 1885 book cannot say so because it was printed four years early.
+  - **A book printed before or after the tenure cannot corroborate it.** Half the corpus's sheriffs
+    held office after 1921, which is the last of the three histories. For them the answer is that
+    these sources have nothing, and the node says so.
+rationale: |
+  **The case that shows what is at stake is not a sheriff.** The corpus had one node named Samuel A.
+  Baxter carrying, as one man, the mayor of 1851, the surgeon of the 18th Ohio, and the co-author of
+  the 1906 county history — with an `[open]` block saying a birth year for either would settle it.
+  The 1885 book's biographical half gives the birth year and settles it against the corpus: `SAMUEL
+  A. BAXTER (deceased), was born in Washington County, Md., September 26, 1807`, a hatter and
+  furrier turned lawyer, and then, in the next sentence of the same sketch, `S. A. Baxter, the third
+  son`, who went into the army as a surgeon of the Eighteenth Ohio in 1863 and was afterwards
+  president of the First National Bank. Two men, a father and a son, one node — and one of the
+  corpus's published claims, the war service, was on the wrong one of them.
+
+  **Why the office and not the date.** Birth years would be the natural key and the sources do not
+  carry them; that is the whole reason for this phase. What both the roster and the sketch always
+  carry is the office, because the office is why the man is in either document. Joining on the
+  thing both sources exist to record is the same move as
+  [the administrative key is not the thing](the-administrative-key-is-not-the-thing.yml) in
+  reverse: there the key was doing less work than it looked like, here the name is.
+
+  **It is deliberately lossy.** Twenty of the forty-seven people this corpus names from before 1922
+  pass the test. Some of the twenty-seven rejections are certainly the same man — a county of
+  twenty thousand people in 1885 did not hold two Hiram Stotts — and the corpus would rather carry
+  a thin node than a confident wrong one. Where a rejection is close, the node says what was found
+  and why it was not taken, so the next phase does not search the same pages again. See
+  [naming a gap is not leaving it empty](naming-a-gap-is-not-leaving-it-empty.yml).
+
+  **What it does not govern.** Two printings of one roster — that is
+  [where a list loses a name](where-a-list-loses-a-name.yml). Two digitizations of one printing —
+  [two scans of one book](two-scans-of-one-book.yml). One printing read once —
+  [a single witness read once](a-single-witness-read-once.yml). This is the fourth case in that
+  family and the only one where the two documents are not versions of each other at all.
+status: accepted
+date: "2026-09-05"

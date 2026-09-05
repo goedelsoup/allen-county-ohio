@@ -119,6 +119,45 @@ and the two deaths that ended the case. See
 whenever it becomes national. Between them they are the reason the archive reaches Lima at all,
 given that no Lima paper is in it.
 
+**The search response carries the page, and the three-call route is only needed when it does not.**
+Each result in the `fo=json` search carries a `description` field holding the OCR of the whole page
+it matched, so an obituary can often be read straight out of the search. It is not reliable — the
+same field comes back as a short snippet on some results, and a page whose only mention of the name
+is in column six may return a snippet from column one — so the manifest-and-ALTO route above is
+still the way to be certain, and it is what found three of the four deaths below. Recorded because
+one call is cheaper than three and it is worth trying first.
+
+**It gives death dates to men whose books gave only births.** The county histories are subscription
+biography and record a birthday because the subscriber was alive to supply one; the papers record a
+death because that is what a paper reports. Between them:
+
+    Calvin S. Brice     died 8:15 p.m., 15 December 1898, New York City, of pneumonia
+                        — Audubon Republican (Iowa), 22 Dec 1898, from a New York dispatch of
+                        the 16th: "Former United States Senator Calvin S Brice died at 815 p m
+                        yesterday at his residence in this city of pneumonia"
+    Charles N. Lamison  died 25 April 1896 — New-York Tribune, 26 Apr 1896: "DEATH OF
+                        EX-CONGRESSMAN LAMISON. Lima, Ohio, April 25.—A telegram from Topeka
+                        announces the death of ex-Congressman [Lamison]"
+    Samuel S. Yoder     died the morning of 11 May 1921 at his home on Maryland Avenue N.E.,
+                        Washington — Evening Star, 11 May 1921
+    Benjamin C. Faurot  died the evening of 7 September 1904 at Sandusky, of a stroke of
+                        paralysis, "about seventy-four years old" and poor — Bellefontaine
+                        Republican, 9 Sep 1904, from a Sandusky dispatch of the 7th
+
+The last two also check the books. The *Evening Star* prints Yoder's birth as "August 16, 1841, in
+Berlin, Holmes county, Ohio", which is the 1885 county history's sketch of him to the day, thirty-six
+years later and six hundred kilometres away. Faurot's "about seventy-four" is exactly the age of a
+man born on 13 October 1829, which is the birthday the 1906 history gives him. Neither paper had the
+book and neither book had the paper. See
+[what a paid sketch may be quoted for](../decisions/what-a-paid-sketch-may-be-quoted-for.yml).
+
+**One thing the papers say that the books do not.** The 1906 history gives Faurot's death as a date.
+The papers give it as an end: "Lima's one time millionaire, died here tonight as a result of a
+stroke of paralysis"; "Successful For Years But Mr. Faurot Died a Poor Man"; and a fortnight later,
+the Ohio Supreme Court deciding against "the one-time millionaire railway organizer, who died nearly
+penniless". The book he is a subscriber to was printed in the town he built, two years after, and
+records the date.
+
 **What it carries that these phases did not take.** The Bluffton News in full — 952 issues, and two
 phases have read perhaps a dozen. Also, for whoever comes next: the archive's `location_county` facet matches on the *name*, so `allen` returns Allen
 County, Kansas and Allen County, Kentucky alongside Ohio's, and a search filtered that way will

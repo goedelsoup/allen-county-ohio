@@ -227,6 +227,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
 | [allen-county-libraries-2024.yml](measure/allen-county-libraries-2024.yml) | measure | Allen County's public libraries, 2024 | 5 | 7v / 3i / 1o | 88 |
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 6v / 5i / 1o | 77 |
+| [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 11v / 3i / 1o | 97 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 6 | 8v / 2i / 1o | 91 |
 | [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 7 | 10v / 1i / 1o | 118 |
@@ -410,6 +411,7 @@ Sorted by: kind, then alphabetically.
 | [bluffton-university.yml](organization/bluffton-university.yml) | organization | Bluffton University | 2 | 6v / 3i / 1o | 64 |
 | [delphos-public-library.yml](organization/delphos-public-library.yml) | organization | Delphos Public Library | 2 | 5v / 1i / 1o | 42 |
 | [der-lima-courier.yml](organization/der-lima-courier.yml) | organization | Der Lima Courier | 2 | 4v / 1i / 1o | 35 |
+| [first-national-bank-of-lima.yml](organization/first-national-bank-of-lima.yml) | organization | First National Bank of Lima | 2 | 7v / 1i / 1o | 53 |
 | [ford-motor-company.yml](organization/ford-motor-company.yml) | organization | Ford Motor Company | 1 | 1v / 2i / 1o | 29 |
 | [fort-wayne-van-wert-and-lima-traction-company.yml](organization/fort-wayne-van-wert-and-lima-traction-company.yml) | organization | The Fort Wayne, Van Wert & Lima Traction Company | 3 | 4v / 1i / 1o | 60 |
 | [gramm-bernstein-motor-truck-company.yml](organization/gramm-bernstein-motor-truck-company.yml) | organization | Gramm-Bernstein Motor Truck Company | 2 | 7v / 0i / 2o | 50 |
@@ -446,19 +448,19 @@ Sorted by: kind, then alphabetically.
 | [the-world-war-in-allen-county.yml](period/the-world-war-in-allen-county.yml) | period | The World War in Allen County | 4 | 8v / 2i / 2o | 71 |
 | [aaron-fisher.yml](person/aaron-fisher.yml) | person | Aaron Fisher | 2 | 1v / 1i / 0o | 18 |
 | [alexander-beatty.yml](person/alexander-beatty.yml) | person | Alexander Beatty | 2 | 1v / 1i / 0o | 18 |
-| [alexander-shenk.yml](person/alexander-shenk.yml) | person | Alexander Shenk | 2 | 3v / 2i / 1o | 37 |
+| [alexander-shenk.yml](person/alexander-shenk.yml) | person | Alexander Shenk | 3 | 6v / 3i / 1o | 61 |
 | [allen-l-metheany.yml](person/allen-l-metheany.yml) | person | Allen L. Metheany | 2 | 3v / 1i / 2o | 34 |
 | [anthony-c-wilkerson.yml](person/anthony-c-wilkerson.yml) | person | Anthony C. Wilkerson | 2 | 2v / 1i / 1o | 21 |
 | [anthony-layton-geiger.yml](person/anthony-layton-geiger.yml) | person | Anthony Layton Geiger | 2 | 2v / 2i / 1o | 27 |
 | [benjamin-f-welty.yml](person/benjamin-f-welty.yml) | person | Benjamin F. Welty | 2 | 7v / 1i / 1o | 58 |
-| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 10v / 5i / 2o | 96 |
-| [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 1v / 1i / 0o | 18 |
+| [benjamin-faurot.yml](person/benjamin-faurot.yml) | person | Benjamin C. Faurot | 2 | 14v / 6i / 2o | 120 |
+| [benjamin-s-miller.yml](person/benjamin-s-miller.yml) | person | Benjamin S. Miller | 2 | 2v / 1i / 0o | 29 |
 | [beth-a-seibert.yml](person/beth-a-seibert.yml) | person | Beth A. Seibert | 2 | 1v / 1i / 0o | 21 |
 | [brian-winegardner.yml](person/brian-winegardner.yml) | person | Brian Winegardner | 2 | 1v / 1i / 0o | 18 |
 | [brion-e-rhodes.yml](person/brion-e-rhodes.yml) | person | Brion E. Rhodes | 2 | 3v / 1i / 0o | 23 |
-| [calvin-s-brice.yml](person/calvin-s-brice.yml) | person | Calvin S. Brice | 2 | 8v / 0i / 1o | 55 |
+| [calvin-s-brice.yml](person/calvin-s-brice.yml) | person | Calvin S. Brice | 3 | 12v / 1i / 1o | 85 |
 | [charles-h-williams.yml](person/charles-h-williams.yml) | person | Charles H. Williams | 2 | 1v / 1i / 0o | 18 |
-| [charles-n-lamison.yml](person/charles-n-lamison.yml) | person | Charles N. Lamison | 2 | 7v / 2i / 1o | 49 |
+| [charles-n-lamison.yml](person/charles-n-lamison.yml) | person | Charles N. Lamison | 2 | 13v / 3i / 1o | 79 |
 | [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 18 |
 | [christopher-wood.yml](person/christopher-wood.yml) | person | Christopher Wood | 2 | 5v / 0i / 1o | 45 |
@@ -468,25 +470,26 @@ Sorted by: kind, then alphabetically.
 | [derry-l-glenn.yml](person/derry-l-glenn.yml) | person | Derry L. Glenn | 2 | 2v / 1i / 1o | 21 |
 | [destiny-rae-caldwell.yml](person/destiny-rae-caldwell.yml) | person | Destiny Rae Caldwell | 2 | 2v / 2i / 0o | 28 |
 | [donald-f-sarber.yml](person/donald-f-sarber.yml) | person | Donald F. Sarber | 2 | 2v / 1i / 1o | 26 |
+| [dr-samuel-a-baxter.yml](person/dr-samuel-a-baxter.yml) | person | Dr. Samuel A. Baxter | 4 | 6v / 4i / 2o | 72 |
 | [edward-l-fair.yml](person/edward-l-fair.yml) | person | Edward L. Fair | 2 | 1v / 1i / 0o | 18 |
 | [elias-a-bogart.yml](person/elias-a-bogart.yml) | person | Elias A. Bogart | 2 | 1v / 1i / 0o | 18 |
 | [ephraim-shay.yml](person/ephraim-shay.yml) | person | Ephraim Shay | 2 | 0v / 2i / 1o | 22 |
-| [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 1v / 1i / 0o | 18 |
+| [eugene-barr.yml](person/eugene-barr.yml) | person | Eugene Barr | 2 | 6v / 2i / 0o | 41 |
 | [f-m-watt.yml](person/f-m-watt.yml) | person | F. M. Watt | 2 | 1v / 1i / 0o | 18 |
 | [frank-a-burkhardt.yml](person/frank-a-burkhardt.yml) | person | Frank A. Burkhardt | 2 | 2v / 1i / 1o | 35 |
 | [frank-e-mcclain.yml](person/frank-e-mcclain.yml) | person | Frank E. McClain | 2 | 6v / 0i / 2o | 42 |
 | [george-w-overmyer.yml](person/george-w-overmyer.yml) | person | George W. Overmyer | 2 | 5v / 1i / 1o | 40 |
-| [h-s-prophet.yml](person/h-s-prophet.yml) | person | H. S. Prophet | 2 | 5v / 2i / 1o | 49 |
+| [h-s-prophet.yml](person/h-s-prophet.yml) | person | H. S. Prophet | 2 | 10v / 2i / 1o | 75 |
 | [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
-| [henry-d-v-williams.yml](person/henry-d-v-williams.yml) | person | Henry D. V. Williams | 2 | 3v / 1i / 1o | 36 |
+| [henry-d-v-williams.yml](person/henry-d-v-williams.yml) | person | Henry D. V. Williams | 2 | 8v / 2i / 1o | 60 |
 | [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 20 |
 | [henry-van-gunter.yml](person/henry-van-gunter.yml) | person | Henry Van Gunter | 2 | 1v / 1i / 0o | 18 |
 | [hiram-stotts.yml](person/hiram-stotts.yml) | person | Hiram Stotts | 2 | 1v / 1i / 0o | 18 |
 | [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 18 |
-| [isaiah-pillars.yml](person/isaiah-pillars.yml) | person | Isaiah S. Pillars | 2 | 8v / 1i / 1o | 54 |
+| [isaiah-pillars.yml](person/isaiah-pillars.yml) | person | Isaiah S. Pillars | 2 | 11v / 3i / 2o | 82 |
 | [james-a-colbath.yml](person/james-a-colbath.yml) | person | James A. Colbath | 2 | 1v / 1i / 0o | 18 |
-| [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 2 | 2v / 1i / 1o | 50 |
-| [james-b-townsend.yml](person/james-b-townsend.yml) | person | James B. Townsend | 2 | 5v / 2i / 1o | 52 |
+| [james-a-hover.yml](person/james-a-hover.yml) | person | James A. Hover | 3 | 5v / 2i / 1o | 69 |
+| [james-b-townsend.yml](person/james-b-townsend.yml) | person | James B. Townsend | 2 | 9v / 2i / 1o | 73 |
 | [james-d-jordan.yml](person/james-d-jordan.yml) | person | James D. Jordan | 2 | 5v / 2i / 1o | 46 |
 | [james-g-link.yml](person/james-g-link.yml) | person | James G. Link | 2 | 2v / 1i / 1o | 22 |
 | [james-k-everett.yml](person/james-k-everett.yml) | person | James K. Everett | 2 | 2v / 1i / 1o | 20 |
@@ -506,10 +509,10 @@ Sorted by: kind, then alphabetically.
 | [jonathan-m-neeper.yml](person/jonathan-m-neeper.yml) | person | Jonathan M. Neeper | 2 | 2v / 1i / 1o | 21 |
 | [juergen-a-waldick.yml](person/juergen-a-waldick.yml) | person | Juergen A. Waldick | 1 | 4v / 3i / 1o | 40 |
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
-| [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 1v / 1i / 0o | 18 |
+| [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 2v / 2i / 0o | 33 |
 | [mark-c-miller.yml](person/mark-c-miller.yml) | person | Mark C. Miller | 1 | 4v / 3i / 1o | 40 |
 | [mathias-h-nichols.yml](person/mathias-h-nichols.yml) | person | Mathias H. Nichols | 2 | 9v / 1i / 1o | 56 |
-| [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 1v / 1i / 0o | 18 |
+| [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 2v / 1i / 0o | 28 |
 | [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 3v / 2i / 0o | 31 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |
 | [matthew-c-huffman.yml](person/matthew-c-huffman.yml) | person | Matthew C. Huffman | 2 | 5v / 3i / 1o | 44 |
@@ -519,13 +522,13 @@ Sorted by: kind, then alphabetically.
 | [rachael-s-gilroy.yml](person/rachael-s-gilroy.yml) | person | Rachael S. Gilroy | 2 | 1v / 1i / 0o | 18 |
 | [ralph-s-marshall.yml](person/ralph-s-marshall.yml) | person | Ralph S. Marshall | 2 | 1v / 1i / 0o | 18 |
 | [randall-s-bartels.yml](person/randall-s-bartels.yml) | person | Randall S. Bartels | 2 | 2v / 1i / 1o | 21 |
-| [richard-metheany.yml](person/richard-metheany.yml) | person | Richard Metheany | 2 | 4v / 2i / 1o | 45 |
-| [samuel-a-baxter.yml](person/samuel-a-baxter.yml) | person | Samuel A. Baxter | 2 | 5v / 5i / 1o | 65 |
+| [richard-metheany.yml](person/richard-metheany.yml) | person | Richard Metheany | 2 | 7v / 4i / 1o | 68 |
+| [samuel-a-baxter.yml](person/samuel-a-baxter.yml) | person | Samuel A. Baxter | 3 | 10v / 4i / 1o | 84 |
 | [samuel-a-crish.yml](person/samuel-a-crish.yml) | person | Samuel A. Crish | 2 | 1v / 1i / 0o | 18 |
 | [samuel-buckmaster.yml](person/samuel-buckmaster.yml) | person | Samuel Buckmaster | 2 | 1v / 1i / 0o | 18 |
-| [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 1v / 1i / 0o | 18 |
+| [samuel-collins.yml](person/samuel-collins.yml) | person | Samuel Collins | 2 | 5v / 1i / 0o | 41 |
 | [samuel-forrer.yml](person/samuel-forrer.yml) | person | Samuel Forrer | 3 | 4v / 0i / 1o | 40 |
-| [samuel-s-yoder.yml](person/samuel-s-yoder.yml) | person | Samuel S. Yoder | 2 | 6v / 1i / 1o | 48 |
+| [samuel-s-yoder.yml](person/samuel-s-yoder.yml) | person | Samuel S. Yoder | 2 | 11v / 2i / 1o | 78 |
 | [sharetta-t-smith.yml](person/sharetta-t-smith.yml) | person | Sharetta T. Smith | 2 | 2v / 1i / 1o | 22 |
 | [sherman-e-eley.yml](person/sherman-e-eley.yml) | person | Sherman E. Eley | 2 | 2v / 1i / 0o | 26 |
 | [susan-manchester.yml](person/susan-manchester.yml) | person | Susan Manchester | 1 | 4v / 1i / 1o | 34 |
@@ -534,10 +537,10 @@ Sorted by: kind, then alphabetically.
 | [thomas-michael-wa-jones.yml](person/thomas-michael-wa-jones.yml) | person | Thomas Michael Wa Jones | 2 | 1v / 2i / 1o | 22 |
 | [todd-e-kohlrieser.yml](person/todd-e-kohlrieser.yml) | person | Todd E. Kohlrieser | 2 | 3v / 2i / 0o | 31 |
 | [todd-gordon.yml](person/todd-gordon.yml) | person | Todd Gordon | 2 | 2v / 1i / 1o | 21 |
-| [william-akerman.yml](person/william-akerman.yml) | person | William Akerman | 2 | 2v / 2i / 1o | 38 |
-| [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 1v / 1i / 0o | 18 |
+| [william-akerman.yml](person/william-akerman.yml) | person | William Akerman | 2 | 7v / 4i / 1o | 68 |
+| [william-h-harter.yml](person/william-h-harter.yml) | person | William H. Harter | 2 | 5v / 2i / 0o | 36 |
 | [william-l-ferguson.yml](person/william-l-ferguson.yml) | person | William L. Ferguson | 2 | 4v / 0i / 3o | 39 |
-| [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 1v / 1i / 0o | 18 |
+| [william-miller.yml](person/william-miller.yml) | person | William Miller | 2 | 4v / 2i / 0o | 37 |
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 4v / 3i / 1o | 40 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |

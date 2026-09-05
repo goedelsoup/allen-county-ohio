@@ -14165,6 +14165,296 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["does not establish why the county did not answer"],
         figures: &[],
     },
+    Assertion {
+        id: "the-books-are-half-biography",
+        statement: "Two of the three county histories this corpus reads are subscription books, and \
+                    biography is not an appendix to them \u{2014} it is half of what they are. \
+                    Between them they carry 1,932 sentences that begin a life, 783 in the 1885 \
+                    volume and 1,149 in the 1906 one, and this corpus had read neither of them for a \
+                    single birthday.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**Between them, the two subscription county histories carry 1,932 sentences that begin a life, and this corpus had read neither for one.** The 1885 history's Part IV, *Biographical Sketches*, has 783; the 1906 history's *and Representative Citizens* half has 1,149."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[
+            Figure { label: "1885, Biographical Sketches", value: 783.0, literal: "783" },
+            Figure { label: "1906, and Representative Citizens", value: 1149.0, literal: "1,149" },
+        ],
+    },
+    Assertion {
+        id: "one-sketch-in-four-hundred-pages-is-a-womans",
+        statement: "The 1885 history's biographical half runs four hundred pages in thirteen \
+                    township sections, and exactly one of its sketches is headed by a woman: Mrs. \
+                    Margaret Hall, widow of Jesse Hall, born 29 December 1827. Every other woman in \
+                    it appears in brackets, as somebody's wife or mother or daughter. That is not a \
+                    fact about the county. It is a fact about who bought a page.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**Exactly one of them is headed by a woman.** `MRS. MARGARET HALL, widow of Jesse Hall, P. O. Lima, was born December 29, 1827, in Jackson County, Ohio`."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eight-sketches-the-publisher-would-not-vouch-for",
+        statement: "The 1906 book's publishers sent every biographical sketch to its subject for \
+                    correction, kept the ones that came back, and marked the eight that did not with \
+                    an asterisk on the last pages under a note saying they could not vouch for them. \
+                    A Chicago subscription publisher in 1906 separated its checked records from its \
+                    unchecked ones in its own text, and said where to find the difference.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**The 1906 half marks eight of its own sketches as unchecked.** Its publishers sent every sketch to its subject for correction; the eight that did not come back are printed on the last pages with an asterisk after the name \u{2014} Simpson, Dyer, Dean, Jones, Landis, McCauley, Drake, Losee \u{2014} under a note saying \"we cannot vouch for their accuracy\"."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-of-forty-eight",
+        statement: "This corpus names ninety-nine people. Forty-eight of them lived in the era the \
+                    two books cover, and twenty are attached to a sketch \u{2014} meaning the sketch \
+                    names the office the corpus's own roster names. Twenty-seven fail that test and \
+                    stay thin, some of them certainly the same man.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to his father."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-class-that-declared-five-fields-and-used-one",
+        statement: "The person class declares born, died, birthplace, occupation and also_known_as. \
+                    Across ninety-eight people it held occupation ninety-five times and birthplace \
+                    three. It now holds twenty births, seventeen birthplaces and eleven deaths, and \
+                    nothing was retrieved to do it: the answers were in books this catalog had held \
+                    for a year.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17, died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[
+            Figure { label: "born", value: 20.0, literal: "20" },
+            Figure { label: "birthplace", value: 17.0, literal: "17" },
+            Figure { label: "died", value: 11.0, literal: "11" },
+            Figure { label: "also_known_as", value: 13.0, literal: "13" },
+        ],
+    },
+    Assertion {
+        id: "born-in-the-book-died-in-the-paper",
+        statement: "These books give births and withhold deaths, and the reason is the arrangement \
+                    rather than the editing. A subscriber is alive and supplies his own birthday; a \
+                    death date turns up only where the subject was already dead when the page was \
+                    sold. Of the twenty sketches read here, four carry a death, and each of the four \
+                    was dead before his page was written.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**They give births and not deaths, and the reason is in the arrangement.** A subscriber is alive and supplies his birthday; a death date appears only where the subject was already dead when the page was sold. Of the twenty sketches taken here, four carry a death \u{2014} Faurot, Pillars, Metheany and Akerman \u{2014} and each of the four was dead before his page was written; a fifth heads its subject `(deceased)` and gives no year."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[],
+    },
+    Assertion {
+        id: "what-finishes-a-life-is-a-newspaper",
+        statement: "What a subscription book cannot end, a newspaper can. Three of this county's \
+                    people are now dated at both ends because a paper reported a death: Calvin S. \
+                    Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder \
+                    on 11 May 1921. A paper records a death because a death is news; a book records \
+                    a birth because the subscriber gave it.",
+        topic: "history",
+        supports: &[
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**What finishes them is a different kind of source.** Three of the deaths this corpus now holds came from newspapers: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder on 11 May 1921."),
+        ],
+        answers: &["does not assert that the people with sketches are representative of the county"],
+        figures: &[],
+    },
+    Assertion {
+        id: "one-node-held-two-men",
+        statement: "For most of this corpus's life, one node called Samuel A. Baxter carried a mayor \
+                    of 1851, a surgeon of 1863 and the co-author of the 1906 county history as one \
+                    man, with an open block saying a birth year for either would settle it. The 1885 \
+                    book gave the father's \u{2014} 26 September 1807 \u{2014} and a man dead before \
+                    1885 did not write reminiscent chapters for a book of 1906.",
+        topic: "history",
+        supports: &[
+            support!("person/samuel-a-baxter.yml", "**A man dead before 1885 did not write reminiscent chapters for a book of 1906.** The identification this corpus once held as probable and then downgraded to unresolved is now resolved against it: the co-author of the 1906 history is the son. What made the difference was a date of birth, which is what that node's own unanswered block said it would take."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-war-service-was-on-the-wrong-man",
+        statement: "The county's Civil War roster has one line for a surgeon named S. A. Baxter, \
+                    18th Ohio, March 1863 to November 1865, and this corpus had it on the father. \
+                    The 1885 sketch runs straight from the father into his third son, who read \
+                    medicine at Lima and Columbus and began practising it in the army in 1863 in \
+                    that regiment. The line is the son's.",
+        topic: "history",
+        supports: &[
+            support!("person/samuel-a-baxter.yml", "**The surgeon of the 18th Ohio was his son, and this corpus had it on the wrong man.** The 1885 sketch runs straight on from the father into \"S. A. Baxter, the third son\", who read medicine under Dr. William H. Harper of Lima, finished with Dr. J. Dawson at Columbus, graduated at Cincinnati College, and \"began the practice of his profession in the army, in 1863, in the Eighteenth Ohio Volunteer Infantry, where he remained until the close of the war\"."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "brice-and-baxter-on-one-board",
+        statement: "In 1885 the First National Bank of Lima had six directors, and two of them are \
+                    among the longest-running names in this corpus: S. A. Baxter as president, who \
+                    would co-write the county's 1906 history, and C. S. Brice as vice-president, who \
+                    would be a United States senator. The 1906 book calls Brice the leading spirit \
+                    in the bank's organisation and says he stayed a director until he died.",
+        topic: "history",
+        supports: &[
+            support!("organization/first-national-bank-of-lima.yml", "**Its board in 1885 was Brice, Baxter and four others.** \"Directors, C. S. Brice, J. W. King, S. A. Baxter, L. Reichelderfer, J. M. Coe and W. L. Porter. President, S. A. Baxter; Vice-President, C. S. Brice; Cashier, C. M. Hughes, Jr.\""),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "lamison-dated-at-both-ends",
+        statement: "Charles N. Lamison sat for Ohio's Fifth District under Grant, and the federal \
+                    file that carries every member of Congress has no birthday for him and no death \
+                    date for anyone. He was born in Columbia County, Pennsylvania, in 1826 \u{2014} \
+                    the 1906 county history \u{2014} and died at Topeka on 25 April 1896 \u{2014} \
+                    the New-York Tribune the next morning, on a telegram from Lima.",
+        topic: "history",
+        supports: &[
+            support!("person/charles-n-lamison.yml", "**He was born in Columbia County, Pennsylvania, in 1826, and the book that says so had been in this catalog for a year.** \"Charles Nelson Lamison was born in Columbia County, Pennsylvania, in 1826."),
+            support!("person/charles-n-lamison.yml", "**He died on 25 April 1896, at Topeka in Kansas.** \"DEATH OF EX-CONGRESSMAN LAMISON. Lima, Ohio, April 25.\u{2014}A telegram from Topeka announces the death of ex-Congressman [Lamison].\""),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "faurot-died-poor",
+        statement: "The 1906 county history opens Benjamin C. Faurot's sketch with two dates and \
+                    nothing else: born 13 October 1829, died 7 September 1904. The newspapers of the \
+                    week add what the book does not. He died at Sandusky of a stroke, on a trip to \
+                    organise an oil company, and the headline over the dispatch read \
+                    \u{201c}Successful For Years But Mr. Faurot Died a Poor Man\u{201d}.",
+        topic: "history",
+        supports: &[
+            support!("person/benjamin-faurot.yml", "**The newspapers say what the book does not: he died broke.** A Sandusky dispatch of 7 September \u{2014} \"Benjamin C Faurot, Lima's one time million aire, died here tonight as a result of a stroke of paralysis which he suffered several days ago while waiting for cab\" \u{2014} ran under the headline \"Successful For Years But Mr. Faurot Died a Poor Man\""),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-rounded-age-checks-a-birthday",
+        statement: "The Sandusky dispatch calls Faurot \u{201c}about seventy-four years old\u{201d}. \
+                    A man born on 13 October 1829 was seventy-four on 7 September 1904, five weeks \
+                    short of his seventy-fifth birthday. Neither the reporter nor the book had the \
+                    other, and the loosest thing a newspaper prints checks the most precise thing a \
+                    subscription sketch does.",
+        topic: "history",
+        supports: &[
+            support!("person/benjamin-faurot.yml", "**The paper's rounded age checks the book's birthday.** It calls him \"about seventy-four years old\", which is the age of a man born on 13 October 1829 five weeks before his seventy-fifth birthday."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-sources-agree-to-the-day",
+        statement: "The 1885 county history's sketch of Samuel S. Yoder gives his birth as 16 August \
+                    1841 at Berlin in Holmes County. The Evening Star of Washington gives it again, \
+                    to the day and the town, in his obituary of 11 May 1921 \u{2014} thirty-six \
+                    years later, six hundred kilometres away, from a paper that had never seen the \
+                    book.",
+        topic: "history",
+        supports: &[
+            support!("person/samuel-s-yoder.yml", "**He was born at Berlin in Holmes County on 16 August 1841, and two sources thirty-six years and six hundred kilometres apart say so to the day.**"),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-head-of-a-sketch-is-the-man-who-bought-it",
+        statement: "The longest-serving county commissioner of Allen County's first seventy-five \
+                    years has no sketch of his own. William Akerman's birth, his parents, his \
+                    hundred and twenty acres of wild land, his two hundred and fifty-four at his \
+                    death and his four terms on the board are all inside a page headed with his \
+                    son's name. He is on it because of the relation, and he has a death date because \
+                    he was dead.",
+        topic: "history",
+        supports: &[
+            support!("person/william-akerman.yml", "**He is the corpus's clearest case of the subscription book's shape.** He is dead, so the sketch gives him a death date; he is dead, so the sketch is not his. The living son bought the page and the father is on it because of the relation."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-scan-moved-a-birthday-five-years",
+        statement: "One of the two digitisations of the 1885 history reads Isaiah Pillars' birth as \
+                    17 March 1838 and the other as 1833, in a typeface that turns 1835 into 1885 \
+                    elsewhere in the same book. The sketch settles it against itself: a man born in \
+                    1838 was not admitted to the bar not quite twenty-one and practising at Lima in \
+                    1855.",
+        topic: "history",
+        supports: &[
+            support!("person/isaiah-pillars.yml", "**The 1885 book has a fuller sketch of him, and one of its two scans moves his birth five years.** Scan B gives \"born in Jefferson County, Ohio, March 17, 1833\"; scan A gives 1838. The sketch settles it against itself: he began teaching at sixteen, was \"admitted to the bar when not quite twenty-one years old\", and was practising at Lima in 1855, none of which a man born in 1838 could do."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-scans-agreeing-is-not-truth",
+        statement: "Both digitisations of the 1906 history say Henry DeVilliers Williams came to \
+                    Ohio in 1834, reached Lima the next year, and that \u{201c}in 1826 he was joined \
+                    by his family\u{201d}. Two physical copies through two pipelines agree to the \
+                    digit and the sentence is impossible. A second scan buys the reading, never the \
+                    fact, and this corpus takes the birthday from that paragraph and not the \
+                    arrival.",
+        topic: "history",
+        supports: &[
+            support!("person/henry-d-v-williams.yml", "**The 1906 book dates his family's arrival to a year he was not in Ohio, and both scans agree on it.** \"In 1826 he was joined by his family, which consisted of his wife and daughter, Henrietta C., who came to Toledo by boat and from there to Lima by wagon, through the Black Swamp.\" He married in 1825 and reached Ohio in 1834."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-name-match-that-was-refused",
+        statement: "The 1885 history has a sketch of an M. Ridenour who was born in Fairfield County \
+                    in 1826 and died in 1873, and the county's roster has a sheriff called Mathias \
+                    Ridenour. Two later passages in the same book name the man in the sketch in \
+                    full: George M. Ridenour, a farmer who held no office. Taking it would not have \
+                    mis-dated a person. It would have invented one.",
+        topic: "history",
+        supports: &[
+            support!("person/mathias-ridenour.yml", "**A sketch of an M. Ridenour was found and rejected.** The 1885 history's Sugar Creek section carries `M. RIDENOUR (deceased) was born in Fairfield County, Ohio, March 6, 1826`, a farmer who married Eleanor P. Lipsett on 31 December 1848 and died on 13 December 1873. Two later passages in the same book name him in full: George M. Ridenour. He held no office in the sketch and was eighteen years old when this man's term of 1853 began under a different given name."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-sketches-of-one-man-disagree",
+        statement: "Samuel Collins bought a biographical sketch in 1885 and another in 1906. Both \
+                    give his birth in Belmont County in March 1824 and both name his four years as \
+                    sheriff. They contradict each other about his parents: one has them dying in \
+                    Belmont County, the other has them leaving it in 1834 for Logan County. Both \
+                    were sent to him for correction and he let both stand.",
+        topic: "history",
+        supports: &[
+            support!("person/samuel-collins.yml", "**They contradict each other about his parents, and nobody had a motive to lie.** The 1885 sketch has John and Rachel Collins settling in Belmont County \"where they passed the remainder of their days\"; the 1906 sketch has them leaving Belmont County in 1834 for Logan County, \"where they lived the remainder of their lives\"."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-doctor-a-bottler-and-a-sheriff",
+        statement: "Eugene Barr practised medicine in Auglaize, Champaign and Allen counties for \
+                    fifteen years, left it in 1895 for oil and timber, and was elected sheriff in \
+                    1901. The book that says so prints, in the same paragraph as his second term, \
+                    that he was managing a soft-drink works in Lima and holding office in a hardwood \
+                    lumber company while he held the office.",
+        topic: "history",
+        supports: &[
+            support!("person/eugene-barr.yml", "**The book has him managing a soft-drink works while holding the office.** In the same paragraph as his second term it gives him the management of the Consolidated Bottling Company of Lima, manufacturers of soft drinks, and an office in the Ohio Hardwood Lumber Company."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

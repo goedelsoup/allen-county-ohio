@@ -9276,6 +9276,57 @@
       "withheld": 1
     },
     {
+      "id": "measure/allen-county-lives-in-the-county-histories.yml",
+      "class": "measure",
+      "label": "What the county histories record of the people in them",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1906",
+        "method": "The phrase is counted over the whitespace-normalised OCR of the cleaner scan of each book — scan B of 1885 and scan B of 1906 — after joining words broken across line ends. [verified] Scan A of the 1906 book is not counted because it stops at 52 per cent of scan B and holds 266 of the 1,149. [verified] The 1885 figure is not compared across its two scans, because that scan's OCR renders \"born\" as several other words and a count would be measuring the OCR. [verified] The corpus-side figures are counted over `.yidam/corpus/person/` before and after this phase. [verified]",
+        "parameter": "sentences beginning a life in the two subscription county histories",
+        "unit": "occurrences of the phrase \"was born\"",
+        "value": "1932"
+      },
+      "blocks": [
+        {
+          "text": "**Between them, the two subscription county histories carry 1,932 sentences that begin a life, and this corpus had read neither for one.** The 1885 history's Part IV, *Biographical Sketches*, has 783; the 1906 history's *and Representative Citizens* half has 1,149. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) and [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), counted over the cleaner scan of each. The count is of the phrase \"was born\" and is a floor on the number of sketches rather than a census of them, because a sketch names parents and children too. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The 1885 half is arranged by township, not alphabetically.** Thirteen sections beginning at page 561 — Amanda, Auglaize, Bath, German, Jackson, Marion, Monroe, Ottawa, Perry, Richland, Shawnee, Spencer, Sugar Creek — with the running head appearing 131 times, and 270 of its sketches heading with a post office rather than an address. [verified] — the same source, its table of contents and its running heads.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Exactly one of them is headed by a woman.** `MRS. MARGARET HALL, widow of Jesse Hall, P. O. Lima, was born December 29, 1827, in Jackson County, Ohio`. [verified] — the same source, both scans, searched for every `MRS.` and `MISS` heading in Part IV. Every other woman in four hundred pages is somebody's wife, mother or daughter, named in brackets.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1906 half marks eight of its own sketches as unchecked.** Its publishers sent every sketch to its subject for correction; the eight that did not come back are printed on the last pages with an asterisk after the name — Simpson, Dyer, Dean, Jones, Landis, McCauley, Drake, Losee — under a note saying \"we cannot vouch for their accuracy\". [verified] — the same source, its publishers' note and its last pages. See [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to his father. [verified] — the same source pair, each searched for every person node's name, and the matches tested against the corpus's own rosters; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17, died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97. [inference] — counted over `.yidam/corpus/person/` before this phase and after it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**They give births and not deaths, and the reason is in the arrangement.** A subscriber is alive and supplies his birthday; a death date appears only where the subject was already dead when the page was sold. Of the twenty sketches taken here, four carry a death — Faurot, Pillars, Metheany and Akerman — and each of the four was dead before his page was written; a fifth heads its subject `(deceased)` and gives no year. [verified] — the same source pair, the twenty sketches read. The rest give a birth and stop.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What finishes them is a different kind of source.** Three of the deaths this corpus now holds came from newspapers: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder on 11 May 1921. [verified] — [Chronicling America](../../catalog/chronicling-america.md). A paper records a death because a death is news and records a birth only in an obituary; a subscription book records a birth because the subscriber gave it and a death only when somebody else did. The two sources are complementary in the exact place the `person` class needed them to be. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-livestock-2002-2022.yml",
       "class": "measure",
       "label": "Allen County livestock, 2002–2022",
@@ -17830,6 +17881,38 @@
       "withheld": 1
     },
     {
+      "id": "organization/first-national-bank-of-lima.yml",
+      "class": "organization",
+      "label": "First National Bank of Lima",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "The Citizens Bank of Lima, before 1872. [verified]",
+        "founded": "1872",
+        "industry": "banking",
+        "org_type": "company"
+      },
+      "blocks": [
+        {
+          "text": "**It became the First National Bank in 1872, out of the Citizens Bank of Lima.** \"The Citizens Bank of Lima was opened for business in the corner room of the Lima House with Shelby Taylor as cashier. In 1872 it was changed to the First National Bank, which is to-day the oldest financial institution in the city.\" [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md). The 1885 history gives the same year and no predecessor: \"First National Bank was founded in 1872.\" [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its board in 1885 was Brice, Baxter and four others.** \"Directors, C. S. Brice, J. W. King, S. A. Baxter, L. Reichelderfer, J. M. Coe and W. L. Porter. President, S. A. Baxter; Vice-President, C. S. Brice; Cashier, C. M. Hughes, Jr.\" [verified] — the same source, its list of Lima banks, in both scans. That is [Dr. Samuel A. Baxter](../person/dr-samuel-a-baxter.yml), the surgeon of the 18th Ohio and later mayor, and [Calvin S. Brice](../person/calvin-s-brice.yml), later a United States senator, in the same room. The 1906 history calls Brice \"the leading spirit in its organization\", says he \"remained an officer and director until his death\", and puts the capital stock at $100,000. [verified] — the 1906 history.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The presidency changed hands at least three times in the corpus's own sources.** R. Mehaffey \"was elected president of the First National Bank, of Lima\" in January 1875 and left three years later; S. A. Baxter is president in the 1885 list and \"was for many years president\"; by 1906 the book is describing him as the founder of a different bank. [verified] — the 1885 and 1906 histories. The corpus does not order these into a succession, because two of the three are undated at one end. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**A different First National Bank in the same county is a different bank.** Delphos had one, founded on 16 February 1863 by L. G. Roebuck, F. J. Lye and nine others with $100,000 of capital, and reorganised on 26 February 1883 as the Delphos National Bank. [verified] — the 1885 history, both scans. It shares nothing with this one but the commonest bank name in the United States, and is recorded here so the two are not joined by it. See [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
+    },
+    {
       "id": "organization/ford-motor-company.yml",
       "class": "organization",
       "label": "Ford Motor Company",
@@ -19254,7 +19337,9 @@
       "tier": "inference",
       "properties": {
         "also_known_as": "Albert Shenk, in the 1921 history. [verified]",
-        "occupation": "county commissioner"
+        "birthplace": "Heckingen, Hohenzollern, Prussia. [verified]",
+        "born": "1842-07-19",
+        "occupation": "druggist and flour miller, county commissioner"
       },
       "blocks": [
         {
@@ -19263,6 +19348,18 @@
         },
         {
           "text": "**His name is second in that row and it should not be.** In every other year with a new commissioner the new man is written first, fifty times out of fifty-two; the two exceptions are this row and the row after the book's missing year. He was not elected that autumn, so the column that names the year's incoming commissioner had nobody to name. [inference] — [the board of 1831–1920](../measure/allen-county-commissioners-1831-1920.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**He was born in Prussia and came to Delphos at eleven.** Born at Heckingen in Hohenzollern, Prussia, on 19 July 1842; his father Martin Shenk, a merchant tailor there, brought the family to this country in 1852 and settled at Delphos on 8 October 1853. He went into the drug business with J. W. Hunt, bought a drug business of his own at nineteen, and left it for flour milling. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names this office, which is how it comes to be on this node.** It heads him `ALEXANDER SHENK, commissioner of Allen County, Delphos` and lists the rest — member of the city council, treasurer and clerk of Marion Township — in the same sentence. [verified] — the same source. See [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is dated 1885 and gives him the county office, which the 1906 roster puts at 1884 to 1886.** The sketch was written while he held it. [inference] — the two sources compared.",
           "tier": "inference"
         },
         {
@@ -19400,6 +19497,9 @@
       "label": "Benjamin C. Faurot",
       "tier": "inference",
       "properties": {
+        "birthplace": "New York State. [verified]",
+        "born": "1829-10-13",
+        "died": "1904-09-07",
         "occupation": "businessman"
       },
       "blocks": [
@@ -19438,6 +19538,18 @@
         {
           "text": "**He owned the street railway too, and it is on the list of what he lost.** He \"acquired the ownership of the city's first street railway — then a horse-car line\", and among the wealth that slipped through his fingers the 1906 history names \"the Lima street railway system, the Lima Electric Light Company, the Faurot Block and the land about the city\". [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md); see [the street railway under four names](../measure/lima-street-railway-1878-1921.yml). His 1883 electric light plant beside the opera house and the horse cars he bought met in [the first electric car](../event/the-first-electric-car-in-lima-1886.yml), three years later.",
           "tier": "verified"
+        },
+        {
+          "text": "**He was born in New York State on 13 October 1829 and died at Sandusky on the evening of 7 September 1904.** The 1906 county history opens his sketch with both dates and says nothing about either place. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The newspapers say what the book does not: he died broke.** A Sandusky dispatch of 7 September — \"Benjamin C Faurot, Lima's one time million aire, died here tonight as a result of a stroke of paralysis which he suffered several days ago while waiting for cab\" — ran under the headline \"Successful For Years But Mr. Faurot Died a Poor Man\"; five weeks later the Ohio Supreme Court decided a railroad accounting case against \"the one-time millionaire railway organiser, who died nearly penniless\". [verified] — [Chronicling America](../../catalog/chronicling-america.md), the *Bellefontaine Republican* of 9 September and 14 October 1904. He had gone to Sandusky to organise an oil company. [verified] — the same paper, the same dispatch.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The paper's rounded age checks the book's birthday.** It calls him \"about seventy-four years old\", which is the age of a man born on 13 October 1829 five weeks before his seventy-fifth birthday. [inference] — computed from the two dates. The book he was a subscriber to was printed in the town he built, two years after he died in another one, and gives the date without the end. See [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -19457,12 +19569,16 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**Neither county history can reach him and both were searched anyway.** He took office in 1929, eight years after the last of the three narrative histories in this corpus. The 1885 book's `B. MILLER` is John B. Miller, a Bath Township farmer born in Rockingham County, Virginia, in 1818; the 1906 book's is L. B. Miller of the Harrod Creamery, born in York County, Pennsylvania, in 1864. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) and [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), both scans of each. Neither is this man and neither could be; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 0
+      "withheld": 1
     },
     {
       "id": "person/beth-a-seibert.yml",
@@ -19535,10 +19651,12 @@
       "id": "person/calvin-s-brice.yml",
       "class": "person",
       "label": "Calvin S. Brice",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
+        "also_known_as": "Calvin Stewart Brice, in the 1906 history. [verified]",
         "birthplace": "Denmark, Ohio; the family removed to Columbus Grove in Putnam County in 1848. [verified]",
         "born": "1845-09-17",
+        "died": "1898-12-15",
         "occupation": "railroad promoter, lawyer, United States Senator"
       },
       "blocks": [
@@ -19560,6 +19678,18 @@
         },
         {
           "text": "**The federal building in Lima is his.** The post office completed in 1895 at a cost of $40,000 \"was secured for Lima at the expense of the national government through the efforts of Senator Calvin S. Brice\". [verified] — the 1906 history. It is the only act of his in Congress either book attributes to him.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He died at a quarter past eight on the evening of 15 December 1898, at his house in New York City, of pneumonia.** He had taken a bad cold a week before, gone to bed on the Friday, and been diagnosed on the Monday morning. [verified] — [Chronicling America](../../catalog/chronicling-america.md), a New York dispatch of 16 December 1898 carried in the *Audubon Republican* of Iowa on the 22nd: \"Former United States Senator Calvin S Brice died at 815 p m yesterday at his residence in this city of pneumonia.\"",
+          "tier": "verified"
+        },
+        {
+          "text": "**No federal file this corpus holds gives a death date for any of the county's six members of Congress, and the newspapers give three.** The `congress-legislators` file has no `deathday` field at all. [verified] — [the congress-legislators file](../../catalog/congress-legislators.md); see [the county in Congress](../measure/allen-county-in-congress-1831-1933.yml). He was fifty-three. [inference] — computed from his birth and death.",
+          "tier": "inference"
+        },
+        {
+          "text": "**He was vice-president of a Lima bank whose president was the county history's co-author.** The 1885 board of the First National Bank is \"C. S. Brice, J. W. King, S. A. Baxter, L. Reichelderfer, J. M. Coe and W. L. Porter\", with Baxter as president and Brice as vice-president; the 1906 history calls him \"the leading spirit in its organization\" and says he stayed an officer and director until he died. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans, and [the 1906 history](../../catalog/miller-allen-county-1906.md); see [the bank](../organization/first-national-bank-of-lima.yml).",
           "tier": "verified"
         }
       ],
@@ -19592,7 +19722,13 @@
       "class": "person",
       "label": "Charles N. Lamison",
       "tier": "inference",
-      "properties": {},
+      "properties": {
+        "also_known_as": "Charles Nelson Lamison, in the 1906 history. [verified]",
+        "birthplace": "Columbia County, Pennsylvania. [verified]",
+        "born": "1826",
+        "died": "1896-04-25",
+        "occupation": "lawyer, prosecuting attorney, member of Congress"
+      },
       "blocks": [
         {
           "text": "**He was elected prosecuting attorney in 1852 to fill the seat Mathias H. Nichols resigned, and again in 1857.** [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), \"Roster of County Officials\"; see [the tenure](../tenure/prosecutor-1852-charles-n-lamison.yml).",
@@ -19612,6 +19748,18 @@
         },
         {
           "text": "**The two terms were the 42nd and 43rd Congresses, 4 March 1871 to 3 March 1875, for Ohio's Fifth District, as a Democrat in both.** [verified] — [the congress-legislators file](../../catalog/congress-legislators.md); the 1906 history has him in the same place, \"Charles N. Lamison, of Allen County, 1871-74\". [verified] — the 1906 history, \"Congressmen\". The 1921 book's \"away back in the '70s, when U. S. Grant was President\" is right in every particular: Grant's second term began in the middle of Lamison's. [inference] — see [the county in Congress](../measure/allen-county-in-congress-1831-1933.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**He was born in Columbia County, Pennsylvania, in 1826, and the book that says so had been in this catalog for a year.** \"Charles Nelson Lamison was born in Columbia County, Pennsylvania, in 1826. His remote ancestors were of French and Welsh nationality; his immediate ancestors were Dutch and Scotch. When 10 years of age he came with his father to Dalton, Wayne County, Ohio.\" He read law from seventeen, was admitted at Wooster in 1848, partnered a congressman at Dalton, married Elizabeth Moyer of Wooster in 1850 and left for the California gold fields within the year, and came back in 1852 meaning to settle at Logansport in Indiana — he passed through Lima on the way and stayed. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its biographical half, read in both scans. He is the one member of the county's six for whom the federal record has no birthday, and this is not a federal source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He died on 25 April 1896, at Topeka in Kansas.** \"DEATH OF EX-CONGRESSMAN LAMISON. Lima, Ohio, April 25.—A telegram from Topeka announces the death of ex-Congressman [Lamison].\" [verified] — [Chronicling America](../../catalog/chronicling-america.md), the *New-York Tribune* of 26 April 1896. Nine months before he died he was at Willard's Hotel in Washington telling a reporter whom the Ohio Democracy should run for governor. [verified] — the same archive, the *Evening Star* of 12 July 1895.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The same book disagrees with its own roster about when he was first elected prosecutor.** Its biographical half has him elected in 1853, defeated in 1855 and elected again in 1857; its \"Roster of County Officials\" has him elected in 1852 to fill the seat Mathias H. Nichols resigned, and again in 1857. [verified] — the same source, its two halves; see [the tenure](../tenure/prosecutor-1852-charles-n-lamison.yml). The corpus keeps the roster's reading, which is the dated list, and records that the book contradicts it. [inference]",
           "tier": "inference"
         }
       ],
@@ -19832,6 +19980,40 @@
       "withheld": 1
     },
     {
+      "id": "person/dr-samuel-a-baxter.yml",
+      "class": "person",
+      "label": "Dr. Samuel A. Baxter",
+      "tier": "inference",
+      "properties": {
+        "also_known_as": "S. A. Baxter, in the 1885 history and in the county's Civil War roster. [verified]",
+        "occupation": "physician, banker, mayor of Lima, historian"
+      },
+      "blocks": [
+        {
+          "text": "**The 1885 history describes him inside his father's sketch, which is how these books work.** \"S. A. Baxter, the third son, began the study of medicine under Dr. William H. Harper, of Lima, which he completed with Dr. J. Dawson of Columbus, Ohio. He graduated at Cincinnati College, and began the practice of his profession in the army, in 1863, in the Eighteenth Ohio Volunteer Infantry, where he remained until the close of the war. He then returned to Lima and after practicing for five years, retired from the profession to become the president of the First National Bank, a position he still fills.\" [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans. His father's sketch is headed and his is not, because his father was dead and he was the subscriber. [inference] — see [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county's war roster line is his.** \"Baxter, S. A. Surgeon 18th O. V. I., March 13, 1863, Nov. 11, 1865\" — two years and eight months, and one of four surgeons the roster of field officers names. [verified] — the same source, its military chapter; see [what the county sent](../measure/allen-county-civil-war-service.yml). The 1885 sketch's \"in 1863\" and the roster's 13 March 1863 are the same enlistment. [inference] — the two passages compared.",
+          "tier": "inference"
+        },
+        {
+          "text": "**He was mayor of Lima from April 1896 to April 1898.** [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its list of mayors, which prints him as \"Dr. Samuel A. Baxter\" and his father forty-five years earlier as \"Samuel A. Baxter, Sr.\"; see [the line of mayors](../measure/lima-mayors-1886-1922.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**He is a co-author of one of this corpus's three county histories.** The 1906 title page gives Charles C. Miller and Dr. Samuel A. Baxter, \"both of Lima\", and the 1921 history says Baxter \"contributed a number of reminiscent chapters\". [verified] — the 1906 history and [the 1921 history](../../catalog/rusler-allen-county-1921.md). The consequence the corpus has leaned on holds and now stands on a date: **the geology chapter's technical account of the first oil well was written by men who were in the town when it was drilled**, and this one was a practising physician in it from about 1870 and its mayor eleven years after the well. [inference] — computed from the dates above; see [the oil strike](../event/lima-oil-strike.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**He also organised Lima's police force.** The 1906 book, describing the department, credits \"Dr. Samuel A. Baxter, who first organized and systematized the force\". [verified] — the same source.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "person/edward-l-fair.yml",
       "class": "person",
       "label": "Edward L. Fair",
@@ -19896,7 +20078,10 @@
       "label": "Eugene Barr",
       "tier": "inference",
       "properties": {
-        "occupation": "sheriff"
+        "also_known_as": "Eugene Jacob Barr, in the 1906 history. [verified]",
+        "birthplace": "Auglaize County, Ohio. [verified]",
+        "born": "1857-09-21",
+        "occupation": "physician, then sheriff"
       },
       "blocks": [
         {
@@ -19904,7 +20089,19 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**He was a physician for fifteen years before he was sheriff, and a bottler and a lumberman while he was.** Born in Auglaize County, Ohio, on 21 September 1857, son of Dr. Tobias and Margaret (Weaver) Barr; schooled in Clark County and at Lebanon; a schoolteacher through Clark and Champaign counties; graduated from the Medical College of Ohio at Cincinnati on 3 March 1880; settled in Allen County in 1885 and practised until 1895, when he went into oil and timber. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names the office, which is why it is on this node.** It has him \"efficiently serving his second term as sheriff of Allen County\", elected to the first in 1901 against William McComb and re-elected in 1903 — a year earlier at each end than the roster's 1902 to 1906, which is the distance between a November election and a term beginning in January. [verified] — the same source. See [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The book has him managing a soft-drink works while holding the office.** In the same paragraph as his second term it gives him the management of the Consolidated Bottling Company of Lima, manufacturers of soft drinks, and an office in the Ohio Hardwood Lumber Company. [verified] — the same source, the same sketch. Nothing held here says whether that was remarked on at the time. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
@@ -20031,8 +20228,10 @@
       "label": "H. S. Prophet",
       "tier": "inference",
       "properties": {
-        "also_known_as": "Hinchman Prophet, H. S. Prophett",
-        "occupation": "soldier and mayor"
+        "also_known_as": "Hinchman S. Prophet in the 1885 book's scan B and in the 1906 book; Henchman S. Prophet in the 1885 book's scan A. Also Hinchman Prophet, H. S. Prophett. [verified]",
+        "birthplace": "Evesham, Burlington County, New Jersey. [verified]",
+        "born": "1836-01-26",
+        "occupation": "lawyer, soldier and mayor"
       },
       "blocks": [
         {
@@ -20058,6 +20257,18 @@
         {
           "text": "**A third list confirms the 1921 book's prose about him exactly.** That book says he \"served as city solicitor for four years\"; the 1906 history's separate list of city solicitors gives \"H. S. Prophet, April, 1874, to April, 1878\" — four years, from a table the 1921 book was not reading. [verified] — the 1906 and 1921 histories. It is a small check and it is the only one in this line that two independent lineages both pass. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**He was born at Evesham in Burlington County, New Jersey, on 26 January 1836, to English parents.** John and Catherine (Roberts) Prophet came to America about 1829 and settled at Philadelphia, then New York, then Evesham, then Columbiana County in Ohio about 1838 and finally Morrow County; he was the only one of their eight children to live in Allen County. He was educated at Cardington, read law under Ross Burns and Judge J. A. Beebe, and was admitted by the Supreme Court of Ohio on 2 February 1860. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He enlisted twice in 1861 because the first quota was full.** Elected second lieutenant in a company that could not be taken, he re-enlisted as a private in Company C of the 15th Ohio, served three months, was mustered out, and then helped organise Company B of the 43rd Ohio, in which he was second lieutenant, first lieutenant and captain. He was wounded at the second battle of Corinth in 1862 and resigned in the summer of 1863 in poor health. [verified] — the same source; see [what the county sent](../measure/allen-county-civil-war-service.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two scans disagree about his given name and the corpus takes neither as a fact.** Scan B of the 1885 book heads the sketch `HINCHMAN S. PROPHET` and scan A `HENCHMAN S. PROPHET`; the 1906 book prints `HINCHMAN`. [verified] — the three readings; see [two scans of one book](../../decisions/two-scans-of-one-book.yml). Two of three is not the rule this corpus uses on a name, so both forms are recorded.",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -20092,7 +20303,10 @@
       "label": "Henry D. V. Williams",
       "tier": "inference",
       "properties": {
-        "occupation": "mayor"
+        "also_known_as": "Henry DeVilliers Williams, in the 1906 history. [verified]",
+        "birthplace": "Pompey, New York. [verified]",
+        "born": "1804-09-13",
+        "occupation": "land officer, county auditor, first mayor of Lima"
       },
       "blocks": [
         {
@@ -20109,6 +20323,18 @@
         },
         {
           "text": "Ohio requires an elected municipal officer to be an elector of the municipality, so a `resided-in` edge to Lima is a legal inference rather than a fact either source states. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**He was born at Pompey in New York on 13 September 1804 and graduated from Williams College with first honours.** He married Cornelia Estelle Hill of Hillsdale, New York, on 12 October 1825, came to Ohio in 1834, joined General Blackburn in the United States Land Office at Wapakoneta the next year, and came to Lima in June of that year when the office moved here. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He was county auditor before he was mayor, and a colonel of militia.** Elected auditor in 1838 and serving to 1841; at one time a justice of the peace; commissioned colonel of the first militia regiment. [verified] — the same source. The 1885 book has him elected the town's first mayor on 29 March 1842; see [the line of mayors](../measure/lima-mayors-1842-1886.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1906 book dates his family's arrival to a year he was not in Ohio, and both scans agree on it.** \"In 1826 he was joined by his family, which consisted of his wife and daughter, Henrietta C., who came to Toledo by boat and from there to Lima by wagon, through the Black Swamp.\" He married in 1825 and reached Ohio in 1834. [verified] — the same source, both scans. Two scans agreeing means the print says it, which is all a second scan was ever meant to buy; the corpus takes the birthday from this paragraph and not the arrival. [inference] — see [two scans of one book](../../decisions/two-scans-of-one-book.yml).",
           "tier": "inference"
         }
       ],
@@ -20220,7 +20446,7 @@
           "tier": "verified"
         },
         {
-          "text": "**In 1861 Governor Tod appointed him commander of Camp Lima with the rank of colonel**, \"and under him the 99th, 118th and 81st regiments were organized\". [verified] — same source; see [Camp Lima](../site/camp-lima.yml). The 81st is the regiment [Charles N. Lamison](charles-n-lamison.yml) went out with as a captain.",
+          "text": "**Governor Tod appointed him commander of Camp Lima with the rank of colonel**, \"and under him the 99th, 118th and 81st regiments were organized\". [verified] — same source; see [Camp Lima](../site/camp-lima.yml). The 81st is the regiment [Charles N. Lamison](charles-n-lamison.yml) went out with as a captain.",
           "tier": "verified"
         },
         {
@@ -20238,10 +20464,22 @@
         {
           "text": "**The book contradicts itself about when he was prosecutor by a year.** Its \"Roster of County Officials\" gives \"Isaiah S. Pillars, 1865\"; its biography of him says \"In 1866 Mr. Pillars was elected prosecuting attorney\". [verified] — the 1906 history, both passages; see [the officers of 1831–1906](../measure/allen-county-officers-1831-1906.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**The 1885 book has a fuller sketch of him, and one of its two scans moves his birth five years.** Scan B gives \"born in Jefferson County, Ohio, March 17, 1833\"; scan A gives 1838. The sketch settles it against itself: he began teaching at sixteen, was \"admitted to the bar when not quite twenty-one years old\", and was practising at Lima in 1855, none of which a man born in 1838 could do. The 1906 book, a different printing entirely, gives 1833. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans, and [the 1906 history](../../catalog/miller-allen-county-1906.md); see [two scans of one book](../../decisions/two-scans-of-one-book.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**His father was a carpenter and his mother died when he was eight.** Samuel Pillars, of Pennsylvania and German extraction, \"never rich in this world's goods\", and Charlotte (Potts) of Virginia, who died at the village of Risden — now part of Fostoria — leaving a boy of eight whose life from then on \"was that of a poor boy thrown among comparative strangers\". He read law in his brother James's office. [verified] — the 1885 history, the same sketch. It is unusual among these sketches in saying so: the form is written to flatter, and this one opens by saying its subject had nothing. [inference] — see [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two books put his appointment to Camp Lima in different years, and the earlier paragraph above no longer names one.** The 1885 sketch says 1862 and the 1906 chapter says 1861. [verified] — the two sources. The catalog entry for the 1906 book already records that its 1861 is impossible on the passage it has just quoted, which makes 1862 the better reading and neither a settled one. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 3
     },
     {
       "id": "person/james-a-colbath.yml",
@@ -20271,6 +20509,8 @@
       "tier": "inference",
       "properties": {
         "also_known_as": "Rendered \"Hoover\" as well as \"Hover\" within a single page of the 1921 history.",
+        "birthplace": "near Warren, Trumbull County, Ohio. [verified]",
+        "born": "1828-04-01",
         "occupation": "farmer"
       },
       "blocks": [
@@ -20285,6 +20525,14 @@
         {
           "text": "**He is in the corpus because of what he explains.** This corpus established by coordinate, two phases before it had any history, that [the refinery](../site/lima-refinery.yml) stands on unincorporated ground in [Shawnee Township](../place/shawnee-township.yml) with a Lima postal address — and recorded that as a fact about tax base and authority without being able to say why. This is why: it was a farm, chosen in 1886 for its position between two railroads, and nothing has annexed it since. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**He was born near Warren in Trumbull County on 1 April 1828 and came to Shawnee Township at five.** Son of Joseph and Caroline (Adgate) Hover, married in 1809, natives of Pennsylvania; Joseph settled in Trumbull County in 1802 and came here in 1833, to the farm his son was still on in 1885. His grandfather Manuel Hover was a captain in the Revolution. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He went to California in 1849 and mined for two years.** Apart from that and two years milling at Lima, he lived on the same farm from 1833. [verified] — the same source. That makes him the only person this corpus names who was in the gold rush. [inference] — computed against the ninety-eight people the class holds.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -20296,8 +20544,9 @@
       "label": "James B. Townsend",
       "tier": "inference",
       "properties": {
+        "birthplace": "Allen County, Ohio. [verified]",
         "born": "1851",
-        "occupation": "attorney"
+        "occupation": "attorney, mayor of Lima, prosecuting attorney"
       },
       "blocks": [
         {
@@ -20319,6 +20568,18 @@
         {
           "text": "**What the office was for, in his telling.** \"It was during his administration and through his personal diligence that the fair city was purged of the tramp nuisance, and other evils.\" [verified] — same source. Lima in those four years was a town of about seven thousand with three railroads crossing it, which is what produces a tramp nuisance and what a mayor of that decade was expected to answer for. [inference] — see [the railroads](../measure/allen-county-railroads-1883-1921.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**He was born in Allen County in 1851 and read law on the road, selling his father's medicines.** Son of Charles M. and Catherine (Barry) Townsend, of New York and Ireland; his father was the proprietor of \"the celebrated Townsend medicines, which are so extensively advertised throughout the world\". From 1868 to 1874 he travelled the country with a company of vocalists, giving concerts and lecturing in the medicines' interest and studying law as he went, and was admitted by the Supreme Court at Columbus in 1874. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names three offices and one of them is why this node exists.** Justice of the peace for three years, mayor of Lima for five, and prosecuting attorney from 1881 — \"an office he still holds\", printed in 1885. [verified] — the same source; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**He laid out a village while he was prosecutor.** He is given as proprietor of \"the newly (1883) laid out village of Harrod on this railroad, which bids fair to become a lively town\", and as a director of the Lima & Columbus Railroad it stood on. [verified] — the same source; see [Harrod](../place/harrod.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -20853,7 +21114,8 @@
       "label": "Lawrence O’Neill",
       "tier": "inference",
       "properties": {
-        "occupation": "sheriff"
+        "born": "1848-11-14",
+        "occupation": "blacksmith, city marshal, then sheriff"
       },
       "blocks": [
         {
@@ -20861,7 +21123,15 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**A sketch fits him and does not prove he is the man.** The 1885 history carries a Lawrence O'Neill of Lima born 14 November 1848, son of an Irish immigrant who married Bridget Nolan in 1845 and came to America four years later; educated at Lima; married in July 1874 to Laura, daughter of William Mumaugh, \"an old settler of the county\"; a blacksmith who learned the trade in the Dayton & Michigan Railroad shops; and elected marshal of the city in 1882, \"which office he still holds\". [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What it does not do is name this office**, because the book was printed four years before the county elected him. A city marshal of Lima who becomes sheriff of the county seven years later is an ordinary career and not a demonstrated identity, so the birth date on this node is an inference from a name, a town and a decade, not a fact the sketch attaches to the sheriff. [inference] — see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
@@ -20962,12 +21232,16 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**A sketch of an M. Ridenour was found and rejected.** The 1885 history's Sugar Creek section carries `M. RIDENOUR (deceased) was born in Fairfield County, Ohio, March 6, 1826`, a farmer who married Eleanor P. Lipsett on 31 December 1848 and died on 13 December 1873. Two later passages in the same book name him in full: George M. Ridenour. He held no office in the sketch and was eighteen years old when this man's term of 1853 began under a different given name. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), both scans. Nothing from it is on this node; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 0
+      "withheld": 1
     },
     {
       "id": "person/matt-c-staley.yml",
@@ -21196,7 +21470,10 @@
       "label": "Richard Metheany",
       "tier": "inference",
       "properties": {
-        "occupation": "municipal officer"
+        "also_known_as": "Matheany, in the 1906 history's own account of his funeral. [verified]",
+        "born": "1805-06-16",
+        "died": "1879-06-22",
+        "occupation": "clerk of courts, railroad officer, mayor of Lima"
       },
       "blocks": [
         {
@@ -21218,6 +21495,18 @@
         {
           "text": "**A third Metheany was mayor of the same town seventy years later.** [Allen L. Metheany](allen-l-metheany.yml) held this office in 1944 and died in it. [verified] — [The Bluffton News](../../catalog/chronicling-america.md). That makes three Metheanys in Lima's government across ninety-six years, and the corpus has a relation established between none of them. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**He was born on 16 June 1805 and died on 22 June 1879, and what the 1906 history knows about him it takes from the address at his funeral.** The book prints T. E. Cunningham's tribute, delivered on Wednesday 25 June 1879, nearly whole. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He came to Lima in March 1844 from a farm three miles north of Wapakoneta, which was then inside this county.** He was appointed clerk of the courts in place of John Alexander, who had just died, and held the office until 1852, \"when his office was terminated by the operation of the new constitution of the State\" — and then went to the Ohio & Indiana Railroad as Judge Hanna of Fort Wayne's right-hand man. [verified] — the same source, the same tribute. He was less than forty when he was made clerk, which puts the appointment before his thirty-ninth birthday. [inference] — computed from the birth date above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**A funeral address is not a subscription sketch and this is why it has a death date.** The men in these books who have both dates are the men who were already dead; the living ones bought a birthday. [inference] — see [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -21229,45 +21518,43 @@
       "label": "Samuel A. Baxter",
       "tier": "inference",
       "properties": {
-        "also_known_as": "Dr. S. A. Baxter",
-        "occupation": "physician"
+        "also_known_as": "Samuel A. Baxter, Sr., in the 1906 history's list of mayors. [verified]",
+        "birthplace": "Washington County, Maryland. [verified]",
+        "born": "1807-09-26",
+        "occupation": "hatter and furrier, lawyer, mayor of Lima"
       },
       "blocks": [
         {
-          "text": "Mayor of Lima in 1851 and 1854, a surgeon in the war, and — on a reading this corpus has since had to weaken — the physician who wrote part of the county's 1906 history. [inference]",
-          "tier": "inference"
-        },
-        {
-          "text": "**He was elected mayor in 1851 and again in 1854, and appointed to the office in between.** In January 1854 the council appointed him in place of Thomas Milligan, who had resigned; later that year he was elected in his own right, and re-elected in 1855. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md); see [the line of mayors](../measure/lima-mayors-1842-1886.yml). He is one of three men in that line who served two separate terms — the others are Thomas Delzell and Thomas Milligan — and with four years in the office he is among its longest-serving. [inference] — computed here.",
-          "tier": "inference"
-        },
-        {
-          "text": "**He went to the war as a surgeon.** \"Baxter, S. A. Surgeon 18th O. V. I., March 13, 1863, Nov. 11, 1865\" — two years and eight months, and he is one of four surgeons the county's roster of field officers names. [verified] — same source, both digitizations; see [what the county sent](../measure/allen-county-civil-war-service.yml).",
+          "text": "**The book that settled it is the one it had already read four times.** The 1885 history's biographical half heads a sketch `SAMUEL A. BAXTER (deceased), was born in Washington County, Md., September 26, 1807; son of Samuel A. Baxter, of English descent`. He was a hatter and furrier by trade, was offered charge of a hat store at Lancaster, Ohio, by a man who met him East buying goods, and set out with another young man and one horse which they rode alternately. He ran that business and eventually bought it; read law at Lancaster under ex-Governor William Medill; removed to Lima in 1838 and opened a hat store; spent a winter at the law school in Cincinnati and was admitted to the bar in 1847. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans. The 1906 history prints the same birthday and calls him \"the late Samuel A. Baxter\". [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md), its biographical half.",
           "tier": "verified"
         },
         {
-          "text": "**He may be the Dr. Samuel A. Baxter of the 1906 county history, and that book's own list argues against it.** That book is by Charles C. Miller and Dr. Samuel A. Baxter, \"both of Lima\", and the 1921 history says Baxter \"contributed a number of reminiscent chapters\". [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md) and [the 1921 history](../../catalog/rusler-allen-county-1921.md).",
-          "tier": "verified"
-        },
-        {
-          "text": "A physician who was mayor in 1851 would have been born around 1825 and been past eighty in 1906, which is old but not impossible, and reminiscent chapters are exactly what a man of that age contributes. [inference] That was the whole of the argument, and it is an argument from age against a printed \"Sr.\" — see below. The county carried more than one Baxter in any case: Capt. George M. Baxter raised a company for the 32nd Ohio in 1861, and the city treasurer in 1906 was Clem S. Baxter. [verified] — the 1885 and 1906 histories.",
+          "text": "**He was elected mayor in 1851 and again in 1854, and appointed to the office in between.** In January 1854 the council appointed him in place of Thomas Milligan, who had resigned; later that year he was elected in his own right, and re-elected in 1855. [verified] — the 1885 history; see [the line of mayors](../measure/lima-mayors-1842-1886.yml). He is one of three men in that line who served two separate terms — the others are Thomas Delzell and Thomas Milligan — and with four years in the office he is among its longest-serving. [inference] — computed here. He was forty-three at the first election. [inference] — computed from the birth date.",
           "tier": "inference"
         },
         {
-          "text": "**The book he helped write drops one of his terms and calls the first mayor \"Senior\".** The 1906 history's list of mayors gives \"Samuel A. Baxter, Sr., April, 1851, to April, 1853\" and, forty-five years later, \"Dr. Samuel A. Baxter, April, 1896, to April, 1898\" — and it has no Baxter at all in 1854, where the 1885 book puts him. [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md).",
+          "text": "**The surgeon of the 18th Ohio was his son, and this corpus had it on the wrong man.** The 1885 sketch runs straight on from the father into \"S. A. Baxter, the third son\", who read medicine under Dr. William H. Harper of Lima, finished with Dr. J. Dawson at Columbus, graduated at Cincinnati College, and \"began the practice of his profession in the army, in 1863, in the Eighteenth Ohio Volunteer Infantry, where he remained until the close of the war\". [verified] — the same sketch, both scans. The county's roster of field officers has \"Baxter, S. A. Surgeon 18th O. V. I., March 13, 1863, Nov. 11, 1865\", and it is the son's line. [verified] — the same source, its military chapter; see [what the county sent](../measure/allen-county-civil-war-service.yml) and [Dr. Samuel A. Baxter](dr-samuel-a-baxter.yml).",
           "tier": "verified"
         },
         {
-          "text": "**The missing 1854 term is a defect in that list and not a correction of this one.** Deleting it makes the two names after it slide two years earlier and leaves April 1857 to April 1858 with no mayor at all. [inference] — see [where a list loses a name](../../decisions/where-a-list-loses-a-name.yml).",
+          "text": "**A man dead before 1885 did not write reminiscent chapters for a book of 1906.** The identification this corpus once held as probable and then downgraded to unresolved is now resolved against it: the co-author of the 1906 history is the son. What made the difference was a date of birth, which is what that node's own unanswered block said it would take. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half; see [an unused property is an unasked question](../../decisions/an-unused-property-is-an-unasked-question.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The 1906 book calls him \"Sr.\" in its list of mayors and that was the corpus's clue.** \"Samuel A. Baxter, Sr., April, 1851, to April, 1853\" and, forty-five years later, \"Dr. Samuel A. Baxter, April, 1896, to April, 1898\". [verified] — [the 1906 history](../../catalog/miller-allen-county-1906.md). A list that calls a man Senior is distinguishing him from someone; the someone is on the same page.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The missing 1854 term is still a defect in that list and not a correction of this one.** Deleting it makes the two names after it slide two years earlier and leaves April 1857 to April 1858 with no mayor at all. [inference] — see [where a list loses a name](../../decisions/where-a-list-loses-a-name.yml).",
           "tier": "inference"
         },
         {
-          "text": "**The \"Sr.\" is a different matter and it weakens the identification above.** A list that calls the 1851 mayor Senior is distinguishing him from someone, and the someone it then prints is a doctor of the same name serving in 1896. Two men — a father in 1851 and 1854, a son in 1896 who was still writing in 1906 — fit the printed evidence better than one man of eighty-one, and this corpus had reached the opposite reading from age alone. [inference] The identification is downgraded from probable to unresolved, and the mayor of 1896 is not asserted here to be this man.",
+          "text": "**There is a third Baxter of this family and he is not a node here.** George M. Baxter, born at Lancaster in Fairfield County on 3 December 1834 and dead before 1885, son of Samuel A. and Nancy M. (Mason) Baxter, raised a company for the 32nd Ohio in 1861. [verified] — the 1885 history, the sketch after this one; scan A dates his birth 8 December and scan B the 3rd, in the typeface that confuses those two digits throughout the book. He answers no question this corpus is asking, and is recorded here so that the next phase to meet the name knows there were three. [inference] — see [node worthiness is a property of the member](../../decisions/node-worthiness-is-a-property-of-the-member.yml).",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 1
+      "withheld": 2
     },
     {
       "id": "person/samuel-a-crish.yml",
@@ -21317,7 +21604,9 @@
       "label": "Samuel Collins",
       "tier": "inference",
       "properties": {
-        "occupation": "sheriff"
+        "birthplace": "Belmont County, Ohio. [verified]",
+        "born": "1824-03-06",
+        "occupation": "grocer, then sheriff"
       },
       "blocks": [
         {
@@ -21325,7 +21614,19 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**He bought a sketch in 1885 and another in 1906, and the two are the corpus's clearest case of what a paid sketch is and is not.** Both give him a birth in Belmont County, Ohio, in March 1824 — the later one adds the day, the 6th — parents John and Rachel (Cunningham) Collins, a move to Lima in 1852, a grocery on the ground where he built the Collins Block in 1874, a marriage in 1847 to Mary Brinser, and three children. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md) and [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), the biographical half of each, read in both scans of both.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Both name the office, and they agree with the roster to the year.** \"In 1861 he was elected sheriff, and served until 1865\" in the first; \"In 1861 he was elected sheriff of Allen County and served with great efficiency until 1865\" in the second. [verified] — the same two sources. See [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**They contradict each other about his parents, and nobody had a motive to lie.** The 1885 sketch has John and Rachel Collins settling in Belmont County \"where they passed the remainder of their days\"; the 1906 sketch has them leaving Belmont County in 1834 for Logan County, \"where they lived the remainder of their lives\". [verified] — the same source pair, its two sketches of one man. Both were, by the publishers' own account, sent to their subject for correction before printing. Twenty-one years apart, the same man let both stand. See [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
@@ -21366,9 +21667,11 @@
       "id": "person/samuel-s-yoder.yml",
       "class": "person",
       "label": "Samuel S. Yoder",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
+        "birthplace": "Berlin, Holmes County, Ohio. [verified]",
         "born": "1841-08-16",
+        "died": "1921-05-11",
         "occupation": "physician, probate judge, member of Congress"
       },
       "blocks": [
@@ -21391,6 +21694,22 @@
         {
           "text": "**He is the third of the county's three congressmen the 1906 book could name**, after [Mathias H. Nichols](mathias-h-nichols.yml) and [Charles N. Lamison](charles-n-lamison.yml), and the third of the three to hold a county office before a federal one. [verified] — [the county in Congress](../measure/allen-county-in-congress-1831-1933.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**He was born at Berlin in Holmes County on 16 August 1841, and two sources thirty-six years and six hundred kilometres apart say so to the day.** The 1885 county history's sketch of him as probate judge gives the date and the town; the *Evening Star* of Washington gives it again in his obituary of 11 May 1921. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half read in both scans, and [Chronicling America](../../catalog/chronicling-america.md). Neither had the other. See [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**He died on the morning of 11 May 1921 at his house on Maryland Avenue north-east in Washington**, having been in poor health for several years, \"prominently identified with various fraternal organizations and a member of the Association of Oldest Inhabitants of the District of Columbia\". [verified] — the same paper, the same page. He had left Congress thirty years earlier and did not come home.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four of his brothers went to the war and he was the fourth of them to go.** Noah W. helped organise Company G of the 51st Ohio, took seven wounds and lost a leg at Stone River, and was drowned afterwards on his way to a patient; Moses F. was mortally wounded at Kenesaw Mountain; Jacob T. died at Milliken's Bend on the Red River expedition. Samuel S. Yoder served in Company G of Hoffman's Independent Battalion, which became part of the 128th Ohio, and was commissioned second lieutenant. [verified] — the 1885 history, the same sketch.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The two sources disagree about his father's name.** The 1885 sketch makes him a son of Yost and Nancy (Hostetter) Yoder; the 1921 obituary makes him a son of \"the late Jocelyn and Nancy Yoder\", and the 1885 sketch's own list of children includes a brother Joslyn. [verified] — the same two sources. Nothing here chooses. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -21620,7 +21939,11 @@
       "label": "William Akerman",
       "tier": "inference",
       "properties": {
-        "occupation": "county commissioner"
+        "also_known_as": "Ackerman, in the 1921 history. [verified]",
+        "birthplace": "Cumberland County, Pennsylvania. [verified]",
+        "born": "1810-04-17",
+        "died": "1878-10-09",
+        "occupation": "farmer, county commissioner"
       },
       "blocks": [
         {
@@ -21638,6 +21961,22 @@
         {
           "text": "**A John Akerman is on the same board forty years later**, in 1887, 1888 and 1890 to 1892, and the 1921 history spells both men Ackerman. [verified] — [A Standard History of Allen County, 1921](../../catalog/rusler-allen-county-1921.md). The corpus holds no relation between them.",
           "tier": "verified"
+        },
+        {
+          "text": "**He was born in Cumberland County, Pennsylvania, on 17 April 1810, and he has no sketch of his own.** His life is inside one headed `JOHN AKERMAN, farmer, P. O. Herring` — his son's. He came to Perry County, Ohio, with his parents at five, moved on to Morgan County at his majority, came to this county in 1834 and entered 120 acres of wild land, added to it, and owned 254 acres when he died on 9 October 1878. He married Kezia Carroll on 9 May 1833 and they had thirteen children. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names the office and counts it the way this corpus counts it.** \"He held several offices of trust in the township and filled the office of county commissioner four full terms.\" [verified] — the same source. Four terms of three years is twelve of the seventy-five printed boards, which is what the 1906 roster gives him. [inference] — the two sources compared; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**He is the corpus's clearest case of the subscription book's shape.** He is dead, so the sketch gives him a death date; he is dead, so the sketch is not his. The living son bought the page and the father is on it because of the relation. [inference] — see [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The two scans put his marriage five years apart and neither reading changes anything else.** Scan B marries him in May 1833 and scan A in May 1838, in the same typeface that turns 1835 into 1885 elsewhere in the book. [verified] — the two scans. The corpus records neither, because the marriage answers no question it is asking.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -21649,6 +21988,8 @@
       "label": "William H. Harter",
       "tier": "inference",
       "properties": {
+        "birthplace": "Spencerville, Allen County, Ohio. [verified]",
+        "born": "1848-08-19",
         "occupation": "sheriff"
       },
       "blocks": [
@@ -21657,7 +21998,19 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**He was born in Spencerville, went to sea in the war, and came home to be marshal, constable, councilman and then sheriff.** Born 19 August 1848 at Spencerville in this county, son of Bennett D. Harter, a dry goods merchant, and Sarah J. (Jones) Harter, natives of Pennsylvania and Kentucky; educated in the county schools; married Marretta Morton in September 1871. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He served two years in the navy in the Civil War**, under Capt. Howard. [verified] — the same source. He is the only holder of this office the corpus knows to have served at sea, and the county's own Civil War roster is an army roster. [inference] — see [what the county sent](../measure/allen-county-civil-war-service.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**The sketch names the office and dates it.** \"In 1881 was elected sheriff of the county, and is now occupying his office in the new court house\" — printed in 1885, against a roster line beginning in 1881, from a man who was in the building. [verified] — the same source. See [the courthouse](../site/allen-county-courthouse.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
@@ -21697,7 +22050,9 @@
       "label": "William Miller",
       "tier": "inference",
       "properties": {
-        "occupation": "sheriff"
+        "birthplace": "Germany. [verified]",
+        "born": "1831-03-27",
+        "occupation": "butcher, then sheriff"
       },
       "blocks": [
         {
@@ -21705,7 +22060,19 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
+          "text": "**He came from Germany at fifteen, learned to butcher in Cincinnati, and was elected sheriff from behind the counter of his own shop.** Born 27 March 1831 in Germany, son of Charles G. and Mary E. (Hofferbert) Miller; one of six of their eleven children to reach America; came with his brothers Michael and Jacob at fifteen; reached Lima in 1848, went to Cincinnati for the trade, and returned to Lima in 1860. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md), its biographical half, read in both scans.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names the office and the roster's years.** \"He was elected councilman, serving three terms, and in 1873 was elected sheriff, which office he filled four years\" — against a roster line of 1873 to 1877. [verified] — the same source. In a county history full of Millers that sentence is the whole of the identification; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**He is the only holder of this office the corpus can place outside the United States.** [inference] — computed against the three other sheriffs whose birthplaces are recorded here, born in Auglaize County, in Belmont County and at Spencerville. Thirty-four of the thirty-eight are unplaced, so this is one sheriff and not a pattern.",
+          "tier": "inference"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
           "tier": "inference"
         }
       ],
@@ -30409,6 +30776,20 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-lives-in-the-county-histories.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "measure/allen-county-lives-in-the-county-histories.yml",
+      "to": "measure/allen-county-officers-1831-1906.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
       "from": "measure/allen-county-livestock-2002-2022.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -33370,6 +33751,13 @@
       "source": "catalog/us-newspaper-directory.md"
     },
     {
+      "from": "organization/first-national-bank-of-lima.yml",
+      "to": "place/lima.yml",
+      "relationship": "seated-in",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
       "from": "organization/fort-wayne-van-wert-and-lima-traction-company.yml",
       "to": "place/lima.yml",
       "relationship": "seated-in",
@@ -33804,6 +34192,13 @@
       "source": null
     },
     {
+      "from": "person/alexander-shenk.yml",
+      "to": "place/delphos.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
       "from": "person/allen-l-metheany.yml",
       "to": "place/lima.yml",
       "relationship": "resided-in",
@@ -33872,6 +34267,13 @@
       "relationship": "resided-in",
       "tier": "verified",
       "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "person/calvin-s-brice.yml",
+      "to": "organization/first-national-bank-of-lima.yml",
+      "relationship": "affiliated-with",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
     },
     {
       "from": "person/charles-h-williams.yml",
@@ -33949,6 +34351,27 @@
       "relationship": "resided-in",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "person/dr-samuel-a-baxter.yml",
+      "to": "place/lima.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "person/dr-samuel-a-baxter.yml",
+      "to": "person/samuel-a-baxter.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "person/dr-samuel-a-baxter.yml",
+      "to": "organization/first-national-bank-of-lima.yml",
+      "relationship": "affiliated-with",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
     },
     {
       "from": "person/edward-l-fair.yml",
@@ -34075,6 +34498,13 @@
       "relationship": "resided-in",
       "tier": "verified",
       "source": "catalog/rusler-allen-county-1921.md"
+    },
+    {
+      "from": "person/james-a-hover.yml",
+      "to": "place/shawnee-township.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
     },
     {
       "from": "person/james-b-townsend.yml",
@@ -34290,6 +34720,13 @@
       "from": "person/samuel-a-baxter.yml",
       "to": "place/lima.yml",
       "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "person/samuel-a-baxter.yml",
+      "to": "person/dr-samuel-a-baxter.yml",
+      "relationship": "relates-to",
       "tier": "verified",
       "source": "catalog/leeson-allen-county-1885.md"
     },
