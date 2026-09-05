@@ -1,0 +1,65 @@
+id: a-table-can-stop-short-of-its-file
+summary: >-
+  The American Community Survey's table-based summary file covers every geography in the country,
+  and B11017 covers fifty-three of them. Multigenerational households are published for the United
+  States and the fifty-two state-level rows and for nothing smaller — no county, no place, no
+  county subdivision, no suppression marker, no sentinel. The file's coverage is a property of each
+  table in it.
+context: |
+  This corpus's entry for that file opens by saying it publishes each table "covering every
+  geography in the country", and for the twenty-eight other tables taken from it that is true: each
+  one carries Allen County, Lima and all thirteen county subdivisions, and four separate families of
+  them partition the county exactly.
+
+  B11017 is 53 rows. `0100000US` and the fifty-two `0400000US` rows are all of it. Allen County is
+  not absent because its estimate was suppressed for reliability — a suppressed cell in this file
+  carries a negative sentinel and the row is still there. The row is not there. [verified] — the
+  `GEO_ID` column of `acsdt5y2023-b11017.dat`, counted.
+
+  The quantity itself is not unknowable at county grain. The 2020 census publishes it for every
+  block in the country as PCT14, and Allen County's figure is 1,302 households of 40,935. So the
+  gap is a publication decision about one table in one file, and the answer was a segment away in
+  a file this corpus already held.
+decision: |
+  **Before recording that a source does not carry a quantity for a place, check whether the table
+  carries the place — not whether the file does. A file's geographic reach is asserted of the file
+  and is true only of the tables in it that have it.**
+
+  Two operational rules:
+
+  *An absent row and a suppressed row are different findings and are written down differently.* A
+  suppressed cell says the publisher measured this and will not stand behind it here. An absent row
+  says the publisher did not publish this here at all. The first is a statement about reliability;
+  the second is a statement about the publication.
+
+  *When a table stops short, look for the same quantity in an instrument with a different
+  publication rule before recording it as unavailable.* A survey and a census answer to different
+  disclosure regimes, and the one that is coarser in time is often finer in geography.
+rationale: |
+  **Why this is not
+  [the api serves the nation and refuses the county](the-api-serves-the-nation-and-refuses-the-county.yml).**
+  That rule is about a publisher who holds the county figure and withholds it from a machine while
+  serving it to a person; the remedy there is a compiler and a control. Here nobody is refused
+  anything: the bulk file is public, keyless and complete, and the table simply has fifty-three rows.
+  There is no interface to work around and no compiler to check. The error the rule prevents is
+  the corpus's own — reading a property of a file onto every table in it.
+
+  **What it cost to find.** Nothing, and that is the problem. The extraction script that reads this
+  file by geography returned the nation and the state and no county, which looks exactly like a
+  script with a bug. It took counting the file's own rows to establish that the county was never
+  there. A rule that says *check the table* is worth having precisely because the failure looks like
+  a mistake in the reader.
+
+  **What would falsify it.** If every table in a bulk file shared the file's geography, the check
+  would be waste. Twenty-eight of twenty-nine tables taken here do share it, so the check fails
+  ninety-seven per cent of the time and pays for itself on the twenty-ninth. That ratio is the
+  argument, not against it: the cost is one line of counting and the alternative is publishing that
+  a federal survey does not measure something it measures.
+
+  **What it generalises to.** Any product published as a set of tables under one description: the
+  decennial file whose detailed race tables stop at a population threshold, the economic census
+  whose industry detail thins as the geography narrows, an agency's open-data portal whose county
+  layer is a subset of its state layer. The description is written once, for the product; the
+  coverage is decided table by table.
+status: accepted
+date: "2026-09-05"

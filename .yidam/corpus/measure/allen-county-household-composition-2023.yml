@@ -1,0 +1,117 @@
+class: measure
+label: Who lives with whom in Allen County, 2019–2023
+description: |
+  **A third of Allen County's households are one person.** 13,809 of 40,928, or 33.7 per cent,
+  against 28.5 per cent for the United States — a gap of 5.2 points on a survey margin of 1.8.
+  [verified] — [the American Community Survey](../../catalog/census-acs-summary-file.md), table
+  B11001, 2019–2023. Ohio's share is 31.7 per cent, which this county exceeds by rather less than
+  it exceeds the nation.
+
+  **On the point estimates the county is seventh of Ohio's eighty-eight for living alone and
+  eighty-first for married couples.** Its 41.8 per cent married-couple share sits below every county
+  that touches it and near the two that hold Cleveland and Toledo. [verified] — the same table, all
+  eighty-eight county rows read together. A rank from a survey is an estimate of a rank; see
+  [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml).
+
+      share of all households, 2019–2023
+                     households   married   alone   female-headed family
+      Holmes             13,326     71.0%   17.5%                   6.1%
+      Putnam             13,173     63.3%   24.5%                   5.2%
+      Auglaize           18,951     54.0%   28.5%                   7.0%
+      Van Wert           11,651     52.9%   27.6%                  10.1%
+      Hardin             11,711     50.7%   29.0%                   8.6%
+      Hancock            31,618     47.4%   31.6%                   8.5%
+      Allen              40,928     41.8%   33.7%                  13.1%
+      Lucas             182,146     37.3%   35.1%                  15.6%
+      Cuyahoga          554,173     34.5%   39.5%                  14.6%
+
+  **Putnam County, which touches Allen on the north-west, has the lowest share of female-headed
+  families in Ohio and Allen has the fourteenth highest.** 5.2 per cent against 13.1, on two
+  counties that share a line. [verified] — the same table, all eighty-eight rows.
+
+  **The city does not account for all of it.** Taking Lima out leaves 26,943 households in the rest
+  of the county, of which 49.9 per cent are married couples and 31.5 per cent are one person.
+  [inference] — the county row less the Lima row, from the same table. That is still more people
+  living alone than in any whole county next door, Hancock included.
+
+  **A third of the households that hold somebody over sixty-five hold nobody else.** 13,383
+  households in the county contain at least one person aged 65 or over, and 6,322 of those are that
+  person alone. [verified] — the same source, table B11007. The other 7,487 people who live alone
+  in this county are under sixty-five.
+
+  **In Lima a rented home holds more people than an owned one, which is the reverse of the state
+  and the nation.** Lima's average household size is 2.20 in owner-occupied units and 2.52 in rented
+  ones; nationally it is 2.65 and 2.34, and in Ohio 2.51 and 2.12. [verified] — the same source,
+  table B25010. The gap in Lima is 0.32 against a combined margin of 0.16.
+
+  **Lone parents outnumber married couples among Lima's households with children, nearly two to
+  one.** 2,725 of the city's 4,237 households containing anybody under eighteen are families with
+  one parent and no spouse present, against 1,378 married-couple families; the difference is 1,347
+  on a combined margin of 375. [verified] — the same source, table B11005. Across the whole county
+  the married couples still lead, 6,512 to 5,076.
+
+  **1,834 grandparents in this county live in a household with their own grandchildren, and 830 of
+  them are responsible for those grandchildren.** 426 of the 830 are the householder or the
+  householder's spouse with no parent of the grandchildren present, which is the nearest this
+  survey comes to counting a grandparent raising a child alone. [verified] — the same source, table
+  B10051.
+
+  **A lone mother with children here is six times as likely to be poor as a married couple with
+  children.** 1,355 of the county's 3,828 female-headed families with related children under
+  eighteen are below the poverty line — 35.4 per cent — against 370 of 6,412 married-couple
+  families with children, which is 5.8. [verified] — the same source, table B17010.
+
+  **Two thirds of this county's poor families are headed by a woman with no spouse present, and a
+  fifth of its families are.** 1,506 of the 2,405 families below poverty against 5,368 of the 24,580
+  families. [verified] — the same table. The county's family poverty rate is 9.8 per cent.
+
+  **A household type is a description of an address on one night and not of a relationship.**
+  [inference] Everything above is the householder's relationship to the other people sleeping in the
+  dwelling when the survey called, which is why a married person whose spouse is in a nursing home
+  is a household of one here and why two people recorded as a married-couple family may be the
+  remainder of a household of six.
+
+  **This table does not establish why the county's households are arranged as they are.**
+
+  [open] Whether the county's share of people living alone is high because it is old, because it is
+  poor, or because Lima is what it is. The three are not separable in a table that crosses household
+  type with neither age of householder nor income; the survey publishes both crossings and neither
+  was taken here.
+
+properties:
+  parameter: household type, size, marital arrangement and family poverty
+  value: "13809"
+  unit: one-person households, of 40,928
+  as_of: "2023"
+  method: |
+    Every figure is the 2019–2023 five-year estimate for summary level 050, geography
+    `0500000US39003`, except the Lima rows, which are the place record `1600000US3943554` — a
+    figure identical in this file to the county-subdivision record for Lima city. [verified] Shares
+    of a total are computed from the two estimates and their margin from the Bureau's formula for a
+    proportion, which subtracts the numerator's share of the denominator's variance rather than
+    adding the two margins in quadrature. [verified] The county-less-Lima figures are differences of
+    two estimates from the same table and carry no margin here; they are marked as inference for
+    that reason. [verified] The rank across Ohio's counties is a rank of point estimates and no
+    margin was propagated through it. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-households-1970-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-age-structure-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-housing-facilities-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

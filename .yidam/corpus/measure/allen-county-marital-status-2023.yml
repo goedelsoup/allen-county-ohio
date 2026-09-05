@@ -1,0 +1,82 @@
+class: measure
+label: Marital status in Allen County, 2019–2023
+description: |
+  **Fewer than half of Allen County's adults are married.** Of 82,015 people aged fifteen and over,
+  37,973 are married — 46.3 per cent — while 26,562 have never married, 11,434 are divorced and
+  6,046 are widowed. [verified] —
+  [the American Community Survey](../../catalog/census-acs-summary-file.md), table B12001, 2019–2023.
+
+      Allen County, population 15 and over          male    female     both
+      never married                               14,919    11,643   26,562
+      now married                                 19,254    18,719   37,973
+        of them, spouse present                   17,776    17,165   34,941
+      widowed                                      1,420     4,626    6,046
+      divorced                                     5,010     6,424   11,434
+      all                                         40,603    41,412   82,015
+
+  **The county is more divorced than the state and the nation, for both sexes.** 12.3 per cent of
+  its men and 15.5 per cent of its women are divorced, against 9.3 and 12.1 for the United States
+  and 10.7 and 13.1 for Ohio. [verified] — the same table, the county row against the state and
+  national rows. The gap for men is three points on a margin of 1.3.
+
+  **And more widowed.** 11.2 per cent of the county's women are widows against 8.4 per cent
+  nationally, which is what an old county looks like from the other end of a marriage. [verified] —
+  the same table. Widowed women outnumber widowed men here 3.26 to one.
+
+  **In Lima more men have never married than are married.** 7,217 of the city's 14,366 men aged
+  fifteen and over have never married and 4,640 are married — a difference of 2,577 on a combined
+  margin of 663 — and the same holds for its women, 5,675 against 4,391. [verified] — the same
+  table, the Lima place row. Half the adult men in this city have never been married.
+
+  **The survey reports more married men than married women, nationally, and this county's sample
+  cannot see it.** Across the United States 62,542,935 men and 60,678,061 women are recorded as
+  married with a spouse present — 1,864,874 apart, on a combined margin of about 326,000 — which
+  is not a possible property of a set of couples. In Allen County the same subtraction returns 611
+  against a combined margin of 909. [verified] — the same table, the national and county rows.
+  Whatever produces the national figure is a property of the instrument rather than of Allen County,
+  and it is invisible at county grain; see
+  [a survey is not a count](../../decisions/a-survey-is-not-a-count.yml).
+
+  **A marital status is a person's answer and a household type is an address's.** [inference] The
+  34,941 people here married with a spouse present should correspond to about 17,470 married-couple
+  households and
+  [the household table](allen-county-household-composition-2023.yml) reports 17,101, some 370 short of
+  half — inside the margins of both, and a reminder that the two tables are counting
+  different objects rather than checking each other.
+
+  **This table does not know why this county's adults marry less than the nation's.**
+
+  [open] Whether the county's divorce share is high because of its age structure, its income, or
+  the two state prisons inside it. B12002 crosses marital status with age and sex and was not taken;
+  the prison population is inside this table's universe, which is the total population fifteen and
+  over rather than the household population.
+
+properties:
+  parameter: marital status of the population 15 years and over, by sex
+  value: "37973"
+  unit: people now married, of 82,015 aged 15 and over
+  as_of: "2023"
+  method: |
+    The universe of B12001 is the total population fifteen and over, which includes people in group
+    quarters — the two state prisons in this county among them — and so is not the same universe as
+    the household tables beside it. [verified] Shares are computed over the sex-specific totals the
+    table publishes rather than over the county's population. [verified] The margin on a difference
+    of two estimates is the root of the sum of their squares, which the Bureau's own guidance gives
+    and which is conservative where the two are drawn from the same sample. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
+  - target: allen-county-household-composition-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-institutional-population-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

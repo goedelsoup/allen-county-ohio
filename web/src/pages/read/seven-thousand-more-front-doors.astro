@@ -1,0 +1,185 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const gained = assertion('the-county-gained-households-and-lost-people')
+const size = assertion('household-size-fell-a-quarter-with-no-reversal')
+const doors = assertion('ten-thousand-dwellings-nobody-arrived-for')
+const decades = assertion('almost-all-the-household-growth-is-one-decade')
+const married = assertion('married-couple-households-peaked-in-1980')
+const alone = assertion('one-person-households-more-than-doubled')
+const ratio = assertion('four-and-a-quarter-to-one-became-one-and-a-half')
+const occupied = assertion('a-household-and-an-occupied-unit-are-one-number')
+const volumes = assertion('three-printed-volumes-check-the-compendium')
+const thousands = assertion('one-cell-of-that-table-is-in-thousands')
+const part = assertion('the-survey-and-the-census-part-company-by-a-ninth')
+const third = assertion('a-third-of-this-countys-households-are-one-person')
+const rank = assertion('seventh-of-eighty-eight-and-eighty-first')
+const putnam = assertion('putnam-is-lowest-in-ohio-and-allen-is-fourteenth')
+const outside = assertion('the-city-does-not-account-for-all-of-it')
+const range = assertion('from-seventy-per-cent-to-twenty-six')
+const closes = assertion('seven-columns-thirteen-rows-no-residual')
+const tenure = assertion('in-lima-a-rented-house-holds-more-people')
+const lone = assertion('lone-parents-outnumber-married-couples-in-lima')
+const poor = assertion('six-times-as-likely-to-be-poor')
+const poorFamilies = assertion('two-thirds-of-poor-families-and-a-fifth-of-families')
+const grandparents = assertion('grandparents-raising-grandchildren')
+const generations = assertion('thirteen-hundred-households-of-three-generations')
+const samesex = assertion('the-first-count-of-same-sex-couples')
+const marital = assertion('fewer-than-half-the-countys-adults-are-married')
+const divorced = assertion('more-divorced-than-the-state-and-the-nation')
+const never = assertion('half-the-men-in-lima-have-never-married')
+const asymmetry = assertion('more-married-men-than-married-women')
+
+const marriedSpec = line(
+  married.figures.map((f) => f.label),
+  [{ name: 'Married-couple households', y: married.figures.map((f) => f.value) }],
+  { yTitle: 'Households', xTitle: 'Census', labelLast: true },
+)
+const doorsSpec = bar(
+  doors.figures.map((f) => f.label),
+  doors.figures.map((f) => f.value),
+  { yTitle: 'Dwellings', labelValues: true },
+)
+const tenureSpec = bar(
+  tenure.figures.map((f) => f.label),
+  tenure.figures.map((f) => f.value),
+  { yTitle: 'People per household', labelValues: true },
+)
+const poorSpec = bar(
+  poor.figures.map((f) => f.label),
+  poor.figures.map((f) => f.value),
+  { yTitle: 'Per cent below the poverty line', tickSuffix: '%', labelValues: true },
+)
+---
+
+<Article slug="seven-thousand-more-front-doors">
+  <p>
+    The population of Allen County is the best-documented thing about it. There is a count for every
+    decade from 1830, an estimate for every year since 1970, a period named for the decline and two
+    files that say how much of the decline is people dying and how much is people leaving. What none
+    of that says is how many places there are to live in, or how many people are in each of them —
+    and those two numbers do not move the way the population does. One of them moves the other way.
+  </p>
+
+  <h2>Seven thousand more front doors</h2>
+  <AssertionCard assertion={gained} open />
+  <AssertionCard assertion={size} />
+  <ChartFigure
+    id="doors"
+    title="What household size did to the housing demand"
+    caption="The middle bar is the county's actual household count in 2020. The first is what the same people would have needed at the household size of 1970."
+    columns={['Measure', 'Dwellings']}
+    rows={doors.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="doors" set:html={JSON.stringify(doorsSpec)} is:inline />
+  <AssertionCard assertion={doors} />
+  <p>
+    That is the whole arithmetic of a shrinking county with a growing housing stock, and it needs no
+    explanation beyond itself. Fewer people in more, smaller households need more dwellings. The
+    building permits this site already counts are the record of those dwellings being built, and they
+    were not built for newcomers.
+  </p>
+  <AssertionCard assertion={decades} />
+
+  <h2>What the households became</h2>
+  <AssertionCard assertion={married} open />
+  <ChartFigure
+    id="married"
+    title="Married-couple households in Allen County"
+    caption="Six censuses. The county's household total rose 4.5 per cent between the first of these peaks and the last point on this line."
+    columns={['Census', 'Households']}
+    rows={married.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="married" set:html={JSON.stringify(marriedSpec)} is:inline />
+  <AssertionCard assertion={alone} />
+  <AssertionCard assertion={ratio} />
+  <p>
+    A county of 34,000 households in 1970 was a county of married couples, seven in ten of them; a
+    county of 41,000 in 2020 is a county in which nearly a third of the doors open on one person.
+    Nothing in the population series shows that, because the population series has one number a
+    decade and this has six.
+  </p>
+
+  <h2>How the figures were checked</h2>
+  <AssertionCard assertion={occupied} />
+  <AssertionCard assertion={volumes} />
+  <AssertionCard assertion={thousands} />
+  <p>
+    One cell in one federal compendium is printed in thousands with a decimal point, in a table where
+    every other cell is a count, and the only thing that says so is a reference file in a different
+    workbook. Read straight, it makes a county of twenty-eight family households.
+  </p>
+  <AssertionCard assertion={part} />
+
+  <h2>A third of the doors</h2>
+  <AssertionCard assertion={third} open />
+  <AssertionCard assertion={rank} />
+  <AssertionCard assertion={putnam} />
+  <p>
+    Putnam County begins at Allen County's north-western line. On the share of households headed by a
+    woman with no spouse present it is last of Ohio's eighty-eight and Allen is fourteenth from the
+    top. Two counties, one boundary, and a difference of eight points.
+  </p>
+  <AssertionCard assertion={outside} />
+  <AssertionCard assertion={range} />
+  <AssertionCard assertion={closes} />
+
+  <h2>Inside the houses</h2>
+  <AssertionCard assertion={tenure} open />
+  <ChartFigure
+    id="tenure"
+    title="Average household size by tenure"
+    caption="Owned homes hold more people than rented ones everywhere except Lima, where the order is reversed by a third of a person."
+    columns={['Geography and tenure', 'People']}
+    rows={tenure.figures.map((f) => [f.label, f.value.toFixed(2)])}
+  />
+  <script type="application/json" data-chart-spec="tenure" set:html={JSON.stringify(tenureSpec)} is:inline />
+  <p>
+    The site already knows that renting in Allen County mostly means renting a house rather than a
+    flat. This is the other half of it: the houses being rented in Lima are family-sized, and the
+    ones being owned are increasingly held by one or two people who have been in them a long time.
+  </p>
+  <AssertionCard assertion={lone} />
+  <AssertionCard assertion={poor} />
+  <ChartFigure
+    id="poor"
+    title="Families with children below the poverty line"
+    caption="1,355 of 3,828 female-headed families with children, against 370 of 6,412 married-couple families with children."
+    columns={['Family type', 'Per cent poor']}
+    rows={poor.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="poor" set:html={JSON.stringify(poorSpec)} is:inline />
+  <AssertionCard assertion={poorFamilies} />
+  <AssertionCard assertion={grandparents} />
+
+  <h2>Two things the census counts and the survey does not</h2>
+  <AssertionCard assertion={generations} />
+  <AssertionCard assertion={samesex} />
+  <p>
+    Both of those come from the 2020 census rather than from the survey, and for opposite reasons.
+    The survey asks about three-generation households and publishes the answer for the nation and the
+    states only; it does not ask about the sex of a householder's spouse in a way that yields this
+    table at all. A file's reach is a property of each table in it.
+  </p>
+
+  <h2>Who is married</h2>
+  <AssertionCard assertion={marital} open />
+  <AssertionCard assertion={divorced} />
+  <AssertionCard assertion={never} />
+  <p>
+    Half the adult men in Lima have never been married. That is a fact about a city whose household
+    structure sits closer to Cleveland's than to the townships that surround it, and it is the same fact as the married-couple share of its
+    households, seen from the person's end rather than the address's.
+  </p>
+  <AssertionCard assertion={asymmetry} />
+  <p>
+    The last of those is a fact about the instrument. A set of couples has as many spouses on one
+    side as the other, and the survey reports nearly two million more married men than married women
+    in the United States. In a county this size the same subtraction disappears into the margin — the
+    error is real, national, and invisible from here.
+  </p>
+</Article>

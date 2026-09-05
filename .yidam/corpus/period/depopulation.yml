@@ -182,6 +182,24 @@ description: |
   [the employment series](../measure/allen-county-manufacturing-employment-1969-2022.yml). A
   population series cannot establish a cause however many other series sit beside it, and that was
   true before this corpus had the other series. [inference]
+  **This period lost people and gained households, and until now it had counted only the first.**
+  Allen County held 33,966 households in 1970 and 40,935 in 2020 — a rise of 6,969, or 20.5 per
+  cent, across the fifty years in which it lost 8,938 people. [verified] —
+  [the households series](../measure/allen-county-households-1970-2023.yml), from
+  [USA Counties](../../catalog/census-usa-counties.md) and
+  [the 2020 characteristics file](../../catalog/census-2020-dhc.md). Persons per household fell from
+  3.20 to 2.41 at every census without one reversal, which is the whole of the difference: the
+  county's 98,684 people in households in 2020, living as households lived in 1970, would have
+  filled 30,842 dwellings rather than 40,935. [inference]
+
+  **So a period named for depopulation describes a county that needed more houses the whole way
+  through.** [inference] Nothing here contradicts the population series; it says what the population
+  series cannot, which is that the demand a place makes on its housing is not its head count. The
+  stock's own numbers agree — 44,563 units in 2020 against 39,168 households in 1980 — and the
+  building-permit series this node already cites is a record of that gap being met.
+  See [a head count is not a door count](../../decisions/a-head-count-is-not-a-door-count.yml).
+
+
 properties:
   began: "1970"
   character: |
@@ -236,5 +254,9 @@ links:
   - target: ../measure/allen-county-outside-lima-1890-2020.yml
     relationship: evidenced-by
     claim_tag: inference
+  - target: ../measure/allen-county-households-1970-2023.yml
+    relationship: evidenced-by
+    claim_tag: verified
+    source: ../../catalog/census-usa-counties.md
   - target: ../period.ont.yml
     relationship: instance-of
