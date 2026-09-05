@@ -181,6 +181,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-governor-vote-2002-2018.yml](measure/allen-county-governor-vote-2002-2018.yml) | measure | Allen County vote for governor, 2002–2018 | 5 | 4v / 3i / 0o | 72 |
 | [allen-county-governor-vote-2018.yml](measure/allen-county-governor-vote-2018.yml) | measure | Allen County vote for governor, 2018 | 2 | 5v / 1i / 1o | 47 |
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 7 | 10v / 4i / 0o | 119 |
+| [allen-county-groundwater-1962-2026.yml](measure/allen-county-groundwater-1962-2026.yml) | measure | Water levels in Allen County's wells, 1962–2026 | 6 | 17v / 2i / 2o | 130 |
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 10v / 7i / 2o | 164 |
 | [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 7v / 5i / 1o | 72 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 5 | 10v / 2i / 1o | 114 |
@@ -305,7 +306,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-sheriff-offenses-2015-2024.yml](measure/allen-county-sheriff-offenses-2015-2024.yml) | measure | Offenses reported by the Allen County Sheriff, 2015–2024 | 2 | 5v / 2i / 1o | 56 |
 | [allen-county-shortage-designations-1985-2026.yml](measure/allen-county-shortage-designations-1985-2026.yml) | measure | Allen County's health professional shortage designations, 1985–2026 | 6 | 13v / 3i / 1o | 116 |
 | [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 6 | 8v / 3i / 0o | 102 |
-| [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 9v / 3i / 1o | 81 |
+| [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
 | [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
@@ -330,9 +331,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-voter-roll-removals-2006-2022.yml](measure/allen-county-voter-roll-removals-2006-2022.yml) | measure | Removals from the Allen County voter roll, 2006–2022 | 4 | 7v / 2i / 1o | 80 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 3 | 5v / 0i / 0o | 53 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
-| [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 3 | 7v / 5i / 1o | 82 |
-| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 7v / 4i / 1o | 76 |
+| [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 3 | 10v / 5i / 0o | 95 |
+| [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 8v / 4i / 1o | 85 |
 | [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
+| [allen-county-wetlands-2026.yml](measure/allen-county-wetlands-2026.yml) | measure | What the wetland map draws in Allen County | 5 | 12v / 2i / 1o | 109 |
 | [allen-county-workplace-injuries-2016-2024.yml](measure/allen-county-workplace-injuries-2016-2024.yml) | measure | Allen County workplace injuries and illnesses, 2016–2024 | 7 | 10v / 1i / 1o | 104 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
 | [allen-county-world-war-ii-dead-1941-1946.yml](measure/allen-county-world-war-ii-dead-1941-1946.yml) | measure | Allen County's Army dead and missing, 1941–1946 | 2 | 9v / 5i / 1o | 87 |
@@ -371,7 +373,7 @@ Sorted by: kind, then alphabetically.
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 9v / 5i / 1o | 90 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
-| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 7v / 4i / 1o | 100 |
+| [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 5v / 1i / 0o | 52 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 5v / 0i / 0o | 51 |
 | [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 3 | 5v / 3i / 0o | 54 |

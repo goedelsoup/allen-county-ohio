@@ -2077,6 +2077,34 @@ export const ARTICLES: Article[] = [
       'organization/first-national-bank-of-lima.yml',
     ],
   },
+  {
+    slug: 'eleven-feet-down',
+    title: 'Eleven feet down',
+    dek: "The one groundwater well anybody still reads in Allen County has fallen eleven and a half feet since 2010, three times faster than any well in the six counties around it.",
+    section: 'ground',
+    era: [1962, 2026],
+    assertions: [
+      'eighty-seven-wells-have-a-record',
+      'eight-hundred-of-them-are-one-year',
+      'forty-three-wells-in-one-township',
+      'eighty-nine-wells-and-one-instrument',
+      'eleven-and-a-half-feet',
+      'three-times-faster-than-any-neighbour',
+      'seven-thousand-acres-of-wetland',
+      'two-fifths-of-it-is-dug-or-dammed',
+      'nine-polygons-are-the-citys-water',
+      'the-marsh-is-four-hundred-acres',
+      'what-is-left-of-the-swamp',
+      'five-files-and-a-factor-of-two-thousand',
+      'two-hydrography-files-ten-times-apart',
+    ],
+    entries: [
+      'measure/allen-county-groundwater-1962-2026.yml',
+      'measure/allen-county-wetlands-2026.yml',
+      'measure/allen-county-standing-water-2026.yml',
+      'natural-feature/great-black-swamp.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */

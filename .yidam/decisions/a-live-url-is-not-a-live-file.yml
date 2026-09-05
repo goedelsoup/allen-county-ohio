@@ -71,5 +71,25 @@ rationale: |
   agency's "current" CSV, a dashboard export, a GIS layer served from a portal, an archived capture
   of any of them. The check is the same in each — the data's own last date, next to the date it was
   fetched, in the catalog entry.
+  **A second case, where the source announced its own death and the catalog recorded the URL
+  anyway.** The USGS `gwlevels` service returned discrete measurements of water level in a well.
+  Its operator published a schedule: data frozen 1 November 2025, a 301 to an explanatory blog post
+  from 1 February 2026, errors from 1 June 2026. This corpus catalogued the National Water
+  Information System on **1 September 2026** — seven months after the redirect began — and wrote a
+  node that opened a question the dead endpoint was the obvious way to answer: *whether any of the
+  ninety groundwater wells has a water-level record, and what it says.*
+
+  Nothing caught it, because the two services the corpus actually called — `site` and `peak` — both
+  answered, and a source is catalogued once for all of its endpoints. The question stood open for
+  four days against an API that had been decommissioned for seven months, and the answer was
+  available the whole time on a different host, in one call, with no site list needed first.
+
+  **So the rule gains a second half, and it is about the catalog rather than the file.** A source
+  entry names several endpoints and is checked by whichever one the phase happened to call. Before
+  an `[open]` block asserts that a source has not been read, the *specific endpoint that would
+  answer it* is requested, and its response — including a 3xx to a human-readable page — is
+  recorded in the entry. A redirect to prose is the strongest signal a machine-readable source ever
+  sends, and it is invisible to a client that follows redirects and to a phase that never asks.
+
 status: accepted
 date: "2026-09-05"
