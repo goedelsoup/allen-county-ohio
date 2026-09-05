@@ -49,6 +49,22 @@ description: |
       2023     64,974     87,126   10,348        19,946        1      183,822      47,499   24,860
       2024     65,583     90,067    8,821        16,675      315      183,047      46,307   27,037
 
+  **The producer says the last two columns are somebody else's, and names the file to use instead.**
+  NASS's own page for this product reads: "The accuracy of the CDL non-agricultural land cover
+  classes are entirely dependent upon the NLCD. Thus, the USDA NASS recommends that users consider
+  the NLCD for studies involving non-agricultural land cover." [verified] —
+  [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), its frequently-asked-questions
+  page. So this node's developed, forest, water and wetland figures were never a reading of this
+  county by this instrument; they are the National Land Cover Database recoded and re-registered
+  once a year by a product built to classify crops.
+
+  **The corpus now holds that database, and the four columns move apart under it.** Developed
+  ground is 46,307 acres here for 2024 and 48,694 there for 2021; forest is 27,037 against 21,226,
+  a gap of 5,811 acres. [verified] —
+  [the land cover series](allen-county-land-cover-2001-2021.yml). That difference measures the
+  recode and not the ground, which is what the paragraph below was already saying by another route.
+  See [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml).
+
   **The crop columns of that table may be differenced and the last two may not.** Developed ground
   ranges over 3,226 acres across the seventeen years — 6.9 per cent of the class — and its fitted
   slope is **minus 35 acres a year**, in a county that recorded fifty-seven annexations between 1990
@@ -126,5 +142,9 @@ links:
   - target: allen-county-crops-2022.yml
     relationship: relates-to
     claim_tag: inference
+  - target: allen-county-land-cover-2001-2021.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
   - target: ../measure.ont.yml
     relationship: instance-of
