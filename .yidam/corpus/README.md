@@ -137,6 +137,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-court-caseloads-2007-2017.yml](measure/allen-county-court-caseloads-2007-2017.yml) | measure | Allen County court caseloads, 2007–2017 | 5 | 8v / 4i / 1o | 92 |
 | [allen-county-coverage-types-2023.yml](measure/allen-county-coverage-types-2023.yml) | measure | What Allen County's health insurance is made of, 2019–2023 | 6 | 12v / 2i / 1o | 96 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 7v / 3i / 1o | 71 |
+| [allen-county-developed-land-2001-2021.yml](measure/allen-county-developed-land-2001-2021.yml) | measure | Allen County developed land and impervious surface, 2001–2021 | 6 | 8v / 2i / 0o | 90 |
 | [allen-county-disaster-aid-applicants-2005-2025.yml](measure/allen-county-disaster-aid-applicants-2005-2025.yml) | measure | Who was paid federal disaster aid in Allen County, 2005–2025 | 2 | 4v / 3i / 2o | 86 |
 | [allen-county-disaster-assistance-2005-2025.yml](measure/allen-county-disaster-assistance-2005-2025.yml) | measure | Federal disaster assistance to Allen County, 2005–2025 | 2 | 5v / 4i / 1o | 67 |
 | [allen-county-disaster-declarations-1965-2020.yml](measure/allen-county-disaster-declarations-1965-2020.yml) | measure | Allen County's federal disaster declarations, 1965–2020 | 3 | 11v / 5i / 1o | 122 |
@@ -205,7 +206,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-jewish-community-1850-1921.yml](measure/allen-county-jewish-community-1850-1921.yml) | measure | Allen County's Jewish community, 1850–1921 | 3 | 8v / 2i / 1o | 63 |
 | [allen-county-land-area-2000-2024.yml](measure/allen-county-land-area-2000-2024.yml) | measure | Allen County land area by subdivision, 2000–2024 | 3 | 10v / 3i / 0o | 108 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
-| [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 5 | 10v / 3i / 2o | 130 |
+| [allen-county-land-cover-2001-2021.yml](measure/allen-county-land-cover-2001-2021.yml) | measure | Allen County land cover, 2001–2021 | 7 | 6v / 4i / 0o | 107 |
+| [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 6 | 12v / 3i / 2o | 151 |
 | [allen-county-law-enforcement-agencies-2026.yml](measure/allen-county-law-enforcement-agencies-2026.yml) | measure | Allen County's reporting police agencies, 2026 | 2 | 5v / 2i / 1o | 58 |
 | [allen-county-layoff-notice-intervals-1996-2017.yml](measure/allen-county-layoff-notice-intervals-1996-2017.yml) | measure | How long before the layoff Ohio received the notice, Allen County, 1996–2017 | 3 | 3v / 4i / 0o | 66 |
 | [allen-county-layoff-notices-1996-2017.yml](measure/allen-county-layoff-notices-1996-2017.yml) | measure | Allen County layoff and closing notices, 1996–2017 | 6 | 4v / 7i / 0o | 109 |
@@ -235,7 +237,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-occupations-2014-2024.yml](measure/allen-county-occupations-2014-2024.yml) | measure | Allen County occupations and wages, 2014 and 2024 | 5 | 12v / 6i / 2o | 116 |
 | [allen-county-officers-1831-1906.yml](measure/allen-county-officers-1831-1906.yml) | measure | Allen County's officers, 1831–1906 | 10 | 17v / 5i / 2o | 155 |
 | [allen-county-oil-and-gas-wells-2026.yml](measure/allen-county-oil-and-gas-wells-2026.yml) | measure | Oil and gas wells in Allen County | 5 | 7v / 2i / 0o | 102 |
-| [allen-county-original-vegetation.yml](measure/allen-county-original-vegetation.yml) | measure | What grew in Allen County before the surveys, mapped | 5 | 8v / 3i / 1o | 96 |
+| [allen-county-original-vegetation.yml](measure/allen-county-original-vegetation.yml) | measure | What grew in Allen County before the surveys, mapped | 6 | 9v / 4i / 1o | 111 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 6v / 13i / 0o | 132 |
 | [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 12v / 4i / 1o | 121 |
 | [allen-county-polling-places-2004-2024.yml](measure/allen-county-polling-places-2004-2024.yml) | measure | Allen County polling places and poll workers, 2004–2024 | 5 | 8v / 1i / 0o | 92 |
