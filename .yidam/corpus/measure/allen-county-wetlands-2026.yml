@@ -1,0 +1,105 @@
+class: measure
+label: What the wetland map draws in Allen County
+description: |
+  **The federal wetlands inventory maps 7,361 acres of wetland in Allen County — 11.50 square miles,
+  2.83 per cent of it — in 4,539 polygons.** [verified] —
+  [the National Wetlands Inventory](../../catalog/usfws-national-wetlands-inventory.md), every
+  polygon intersecting the county clipped to its boundary and measured in EPSG:5070.
+
+      by the layer's own five classes
+      Riverine                            2,443.5 ac   736 polygons   33.2%
+      Freshwater Pond                     1,578.7     1,942           21.4%
+      Freshwater Forested/Shrub Wetland   1,546.6     1,144           21.0%
+      Lake                                1,366.2         9           18.6%
+      Freshwater Emergent Wetland           425.9       708            5.8%
+
+  **Two fifths of it is dug or dammed.** 2,231.8 acres carry the Cowardin modifier `x`, excavated;
+  722.5 carry `h`, diked or impounded; 66.6 carry `d`, partly drained or ditched. That is 2,954.3
+  acres of 7,361, and the single largest code in the county is `PUBGx` at 1,288.8 acres — dug ponds.
+  [verified] — the same source, summed by code. The five-class rollup above calls every one of them
+  a Pond or a Lake; see
+  [a modifier changes what the thing is](../../decisions/a-modifier-changes-what-the-thing-is.yml).
+
+  **Nine polygons hold eighteen per cent of it, and they are the city's water.** The Lake class has
+  nine features and 1,366.2 acres, of which 900.9 are `L1UBHx` — excavated — and 465.3 `L1UBHh`,
+  impounded. [verified] — the same source. Those are
+  [Lima's reservoirs](allen-county-water-systems-2026.yml), which the corpus already knew were
+  pumped full. [inference]
+
+  **The marsh is four hundred and twenty-six acres.** Freshwater Emergent Wetland — the class that
+  means standing herbaceous wetland, the thing the word swamp is reaching for — is 425.9 acres,
+  **0.16 per cent of the county**. [verified] — the same source. The earliest land surveys of this
+  ground mapped 22,433.9 acres of elm-ash swamp forest. [verified] —
+  [the original vegetation](allen-county-original-vegetation.yml); see
+  [the Great Black Swamp](../natural-feature/great-black-swamp.yml).
+
+  **This is the fifth federal file to measure wetland on this ground, and the five span a factor of
+  two thousand one hundred and eighty-nine.** [verified] — the five sources, compared here.
+
+      soil survey, hydric soils           91,953 acres    ground that formed under water
+      original vegetation, swamp forest   22,433.9        what the first surveyors walked
+      this file, all wetland               7,361.0        what is mapped as wetland now
+      Cropland Data Layer, wetland           704           what the satellite calls wetland
+      this file, emergent only               425.9        marsh
+      hydrography file, swamp or marsh        42.0        what the water map draws
+
+  Each is right about its own question and none of them is the others' answer. See
+  [the gap between two universes is a measurement](../../decisions/the-gap-between-two-universes-is-a-measurement.yml)
+  and [the standing water](allen-county-standing-water-2026.yml).
+
+  **The two hydrography products disagree by a factor of ten on the same class.** The National
+  Hydrography Dataset draws 42.0 acres of swamp or marsh here; this file draws 425.9 acres of
+  emergent wetland. Both are federal, both are polygon maps of water on the same ground, and
+  neither is a subset of the other. [verified] — the two sources. What separates them is purpose:
+  one maps water bodies for a flow network and the other maps habitat, and a seasonally-flooded
+  marsh is habitat and is not a water body. [inference]
+
+  **It is spread across the county rather than pooled in the north.** Amanda leads at 1,394.9 acres
+  and Bath follows at 1,287.1; Spencer, which holds the second-largest share of the county's
+  groundwater wells, has the least at 200.4. [verified] — the same source, clipped to the 2024
+  county subdivisions.
+
+      Amanda        1,394.9    Auglaize        501.9    American      328.8
+      Bath          1,287.1    Marion          490.7    Sugar Creek   262.8
+      Jackson         660.1    Perry           419.2    Lima          252.1
+      Shawnee         605.7    Monroe          358.9    Spencer       200.4
+      Richland        598.3
+
+  **This node does not establish when any of this was mapped.** The layer carries no image date on
+  the polygon, so 7,361 acres is as of a compilation the file does not name.
+
+  [open] What the emergent wetland is. Four hundred and twenty-six acres in 708 pieces averages
+  six tenths of an acre, which is a ditch margin or a wet corner rather than a marsh, and nothing
+  retrieved here says whether any single body of it is large enough to walk into.
+properties:
+  parameter: wetland mapped in Allen County by the National Wetlands Inventory
+  value: "7361.0"
+  unit: acres, clipped to the county boundary
+  as_of: "2026"
+  method: |
+    Every polygon intersecting an envelope around the county was fetched — 5,383 of them, at a
+    thousand a page — and each was clipped to the union of the county's thirteen 2024 TIGER county
+    subdivisions; 4,539 have area inside. [verified] Areas are computed in EPSG:5070 Albers rather
+    than taken from the layer's own `ACRES` field, which is the whole polygon's area and overstates
+    for anything on the county line. [verified] Nine polygons self-intersect and are repaired with
+    `MakeValid` before the clip; none is dropped. [verified] The modifier split is over the
+    `ATTRIBUTE` code's trailing lowercase letters, not the five-class rollup. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usfws-national-wetlands-inventory.md
+  - target: ../natural-feature/great-black-swamp.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usfws-national-wetlands-inventory.md
+  - target: allen-county-standing-water-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usfws-national-wetlands-inventory.md
+  - target: allen-county-original-vegetation.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/odnr-original-vegetation.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
