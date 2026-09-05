@@ -1,0 +1,80 @@
+id: a-federal-cover-is-not-a-federal-source
+summary: >-
+  The Census Bureau's county compendium carries the presidential vote of eight elections. It did
+  not collect it. Eighty-four of its 6,659 items are stamped as copyrighted and licensed from a
+  commercial publisher, and all eighty-four are the vote — so a figure that arrives from
+  census.gov, in a federal file, under a federal imprint, is a private compilation with a
+  government cover.
+context: |
+  Two Census Bureau compendia forty-four years apart were read this phase, and both do the same
+  thing in the same place.
+
+  [USA Counties, 2011](../catalog/census-usa-counties.md) publishes 6,659 items for every county in
+  the country. Its dictionary gives each item a source code, expanded in a second table. Thirty of
+  the thirty-two codes are federal agencies. Two are not: the American Medical Association, which
+  supplies twenty-one items about physicians, and `CQ Press`, expanded as *SAGE Publications*,
+  which supplies eighty-four. The eighty-four are the whole ELE table — every count, share,
+  leading-party code and named third-party line for 1980 through 2008 — and every one of them
+  carries `***Subject to copyright***` written into its description. Nothing else in the file does.
+
+  [The County and City Data Book for 1967](../catalog/census-county-and-city-data-book-1967.md)
+  says it in prose under the heading PRESIDENTIAL VOTE: "Source: Governmental Affairs Institute,
+  *America at the Polls*, University of Pittsburgh Press, 1965. (Copyright.)" The 1983 edition of
+  the same series names a different vendor, the Elections Research Center's *America Votes*, and
+  adds a sentence that says where the federal record actually is and why it was not used: the
+  figures "may differ somewhat from the official figures issued by the Clerk of the House of
+  Representatives in *Statistics of the Presidential and Congressional Elections*".
+
+  That last sentence is the whole matter. There **is** a federal publication of the presidential
+  vote. It is at the grain of the state and the congressional district. Counties canvass the vote
+  and no federal body collects what they canvass, so a federal volume that wants a county column
+  has to buy one.
+decision: |
+  **Before treating a figure as a government measurement, read the compendium's own source column.
+  A government publisher is not a government source, and the imprint on the cover says nothing
+  about who counted.**
+
+  - Where the compendium names an outside compiler, cite the figure as that compiler's, carried by
+    the compendium, and rank it with other compilations rather than above them. It is a witness in
+    the sense of [a compiler is not the canvass](a-compiler-is-not-the-canvass.yml) and gets no
+    extra standing for the cover it arrived under.
+  - A copyright notice inside a federal data dictionary is a provenance signal and is recorded when
+    found. It is the cheapest one there is: it marks the rows the agency did not produce.
+  - Where a compendium names the federal publication it *departs* from, follow that pointer and say
+    what it costs — usually a grain. The reason the government bought the data is the reason a
+    reader wants it.
+  - This does not license discounting the figure. Bought data is not bad data; it is data whose
+    lineage runs somewhere other than where the file suggests, and the difference matters when two
+    sources disagree and somebody has to decide which is nearer the count.
+rationale: |
+  **What it changed here.** The corpus took eight elections of Allen County's presidential vote
+  from census.gov this phase. Without the dictionary it would have written that the Census Bureau
+  reports the county's 2008 vote as McCain 29,940 and Obama 19,522, and that would have been a
+  false claim about a federal agency and a misleading one about the figure's weight — because that
+  figure then had to be weighed against
+  [two other compilations that disagree with it and each other](a-compiler-is-not-the-canvass.yml),
+  and a Bureau's imprint would have settled the argument for the wrong reason.
+
+  **The stamp is doing real work and it is doing it silently.** Eighty-four items in 6,659 is 1.3
+  per cent of the file, and the notice lives in a separate zip archive from the data. A reader who
+  downloads `ELE.zip`, which is the file that has the vote in it, gets column headings like
+  `ELE010208D` and no notice of any kind. The provenance is one archive away from the number, and
+  the number is perfectly usable without it.
+
+  **Why the vote and not the rest.** Every other item in that file exists because a federal agency
+  is *required* to produce it — a census, a survey, a tax return, a benefit roll, a crime report.
+  The vote is produced by eighty-eight county boards in Ohio and some three thousand of them
+  nationally, certified to fifty secretaries of state, and then to nobody. The gap the compendium
+  fills by purchase is a gap in the federal structure, not in the Bureau's diligence.
+
+  **What would falsify it.** If the copyright stamps turned out to be boilerplate applied across
+  the file, or if the source column named CQ Press for items the Bureau demonstrably collects, the
+  signal would be noise. Both were checked: the stamp appears on 84 items and no others, and CQ
+  Press is named for those 84 and no others.
+
+  **What it generalises to.** Any compendium, any government. The Statistical Abstract, the
+  Congressional Research Service's tables, a state almanac, a bureau's "quick facts" page — each
+  assembles what somebody else measured, and each has a place where it says so. The rule is to
+  find that place before quoting the cover.
+status: accepted
+date: "2026-09-04"
