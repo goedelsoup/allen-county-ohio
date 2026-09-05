@@ -6,7 +6,7 @@ description: >-
   day, and what a holder must be.
 type: reference
 obtained: true
-retrieved: 2026-08-30
+retrieved: 2026-09-05
 ttl_days: 365
 location:
   - kind: url
@@ -59,8 +59,22 @@ location:
       Metropolitan housing authority powers and duties — "a body corporate and politic", which is
       the sentence that put this corpus's only housing authority on the organization side of the
       line it draws against jurisdiction
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3365.01
+    description: >-
+      Chapter 3365 is the College Credit Plus Program, and this is its definitions section. The
+      chapter is what the Civil Rights Data Collection's "dual enrollment" column counts in Ohio.
+      Effective 3 October 2023.
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3365.07
+    description: >-
+      Who pays. For a participant at a public college, "the participant's secondary school shall pay
+      for textbooks, and the college shall waive payment of all other fees related to participation
+      in the program" — so a family pays nothing to enrol its child in a college course under the
+      chapter.
 used-by:
   - ../corpus/jurisdiction/allen-county-educational-service-center.yml
+  - ../corpus/measure/allen-county-dual-enrollment-2017-2021.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
   - ../corpus/jurisdiction/lima-municipal-court.yml
   - ../corpus/measure/allen-county-bridges-2025.yml
