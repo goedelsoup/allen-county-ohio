@@ -8,7 +8,7 @@ description: >-
   first local financial source of any kind.
 type: dataset
 obtained: true
-retrieved: 2026-09-01
+retrieved: 2026-09-05
 ttl_days: 120
 location:
   - kind: url
@@ -41,6 +41,8 @@ location:
       at 35 per cent of market value, the abstract of values, reduction factors, the ten per cent
       rollback of 1971 and the non-voted ten mills.
 used-by:
+  - ../corpus/measure/allen-county-conduit-debt-2010-2023.yml
+  - ../corpus/measure/allen-county-in-the-federal-finance-file-2022.yml
   - ../corpus/measure/allen-county-funds-2025.yml
   - ../corpus/measure/allen-county-general-fund-2025.yml
   - ../corpus/measure/allen-county-assessed-valuation-2010-2023.yml
@@ -113,3 +115,36 @@ corpus runs before quoting any of them. [verified] — same source, computed her
 through 2024 are Konica Minolta scans with no text layer, so the county's own budgeted valuations
 are unread. [verified] — [the tax budget page](https://allencountyohauditor.com/tax-budget/), the
 2024 file.
+
+**Note 19 of every audit carries a number larger than the county and it is not the county's.**
+*Conduit Debt* records revenue bonds the county issues so that a private borrower may raise money
+at a public issuer's tax exemption. The note ends the same way every year: "The County is not
+obligated in any way to pay the debt and related charges on these revenue bonds from any of its
+funds. Accordingly, the bonds are not reported as liabilities in the accompanying financial
+statements." [verified] — the reports for the years ended 31 December 2010 through 2023, Note 19.
+The 2023 report puts the aggregate at $2,204,995,000, which is twenty-eight times the county's own
+audited annual expenses.
+
+**The note itemises through 2021 and stops.** Each report to 2021 lists every issue by year, amount
+and borrower and gives the balance still outstanding on each; the 2022 and 2023 reports give one
+aggregate and no borrower. [verified] — the same reports. The county adopted GASB Statement No. 91,
+*Conduit Debt Obligations*, in 2022, and the report says so in its summary of significant accounting
+policies. Anyone reading the balance as a series across that year is comparing two disclosures; see
+[a reporting change has a date and a control](../decisions/a-reporting-change-has-a-date-and-a-control.yml).
+
+**One of its own aggregates contradicts the paragraph above it.** The 2010 report describes bonds
+issued that year in the amount of $195,000,000 and then states that "as of December 31, 2010 the
+aggregate principal amount payable on these bonds is $22,460,000." [verified] — the 2010 report,
+Note 19. The 2013 report has the same shape: it describes issues of $195,000,000, $87,426,265 and
+$100,000,000 and gives an aggregate of $402,906,265 while omitting the $300,000,000 issue of 2008
+that every later report lists as still outstanding. This corpus therefore reads the note's itemised
+balances, which are internally consistent from 2015, and reports the 2010 and 2013 aggregates as
+the reports print them without using them in a series.
+
+**The statement of activities is the check the federal file needs.** Table 2 of the management
+discussion gives total revenues, total expenses and every program line for the report year and the
+one before, so a single page carries two years. For 2022 it reads $106,515,249 of revenue,
+$79,882,062 of expenses and $206,079 of interest and fiscal charges. [verified] — the 2022 report.
+Those three figures are what
+[the federal survey](census-government-finances.md) has to be read against, because the survey
+publishes its own for the same county and same year and did not ask the county for any of them.
