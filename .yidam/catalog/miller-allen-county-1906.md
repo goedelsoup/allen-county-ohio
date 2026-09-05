@@ -127,9 +127,42 @@ en route for Washington"), and dates Isaiah S. Pillars' appointment as commander
 1861, a year in which — by the dates in the passage it has just quoted — there was no Camp Lima to
 command.
 
-**What else is in it, still unread.** Its biographical volume is full of war service — Squirrel
-Hunters, the Sultana, deaths at Corinth and Shiloh — attached to named men, at a level of detail
-the 1885 roster's four fields cannot carry.
+**Its biographical half has now been read, and it is half the book.** "And Representative
+Citizens" is not a subtitle, it is a second volume bound in: after the narrative chapters come
+several hundred pages of sketches, one per subscriber, and 1,149 of the book's sentences say "was
+born". It is full of war service — Squirrel Hunters, the Sultana, deaths at Corinth and Shiloh —
+attached to named men, at a level of detail the 1885 roster's four fields cannot carry, and it is
+the only source this corpus holds that gives the people it names a date of birth.
+
+**The publishers printed a claim tag in 1906 and the corpus had not read it.** A note over the
+imprint of Richmond & Arnold, on the page after the preface:
+
+> All the biographical sketches published in this volume were submitted to their respective
+> subjects or to the subscribers, from whom the facts were primarily obtained, for their approval
+> or correction before going to press; and a reasonable time was allowed in each case for the
+> return of the typewritten copies. Most of them were returned to us within the time alloted, or
+> before the work was printed, after being corrected or revised; and these may therefore be
+> regarded as reasonably accurate. A few, however, were not returned to us; and, as we have no
+> means of knowing whether they contain errors or not, we cannot vouch for their accuracy. In
+> justice to our readers, and to render this work more valuable for reference purposes, we have
+> indicated these uncorrected sketches by a small asterisk (*), placed immediately after the name
+> of the subject. They will all be found on the last pages of the book.
+
+That is a provenance statement of a kind most twentieth-century administrative sources in this
+catalog do not make: it names where the facts came from, states the check that was run on them,
+distinguishes the records that passed from the records that did not, marks the failures in the
+text itself, and says where to find them. It is the corpus's own `[verified]` / `[open]`
+distinction, printed by a Chicago subscription publisher in March 1906. See
+[what a paid sketch may be quoted for](../decisions/what-a-paid-sketch-may-be-quoted-for.yml).
+
+**Scan A carries the warning and not the sketches it warns about.** Scan A's text ends in the
+middle of a brewer's sketch, at a sentence that stands 52 per cent of the way through scan B; it
+holds 266 "was born" sentences against scan B's 1,149. The eight asterisked names — Simpson, Dyer,
+Dean, Jones, Landis, McCauley, Drake, Losee — are in the last 18,426 characters of scan B, which is
+the "last pages of the book" the note points to and the part scan A does not reach. The two-scan
+rule was written to make one digitization check another's digits; here the second scan is not a
+check on the first, it is the other half of the volume. See
+[two scans of one book](../decisions/two-scans-of-one-book.yml).
 
 **One of its two authors was probably mayor of Lima in 1851.** The title page gives Charles C.
 Miller and Dr. Samuel A. Baxter, "both of Lima"; the 1885 history gives a Samuel A. Baxter elected
@@ -138,12 +171,23 @@ that year and re-elected in 1855, and serving as surgeon of the 18th Ohio from M
 November 1865. The 1921 history says Baxter "contributed a number of reminiscent chapters" to this
 volume.
 
-A physician who was mayor at twenty-six would have been past eighty when this book appeared, which
-is old and not impossible, and reminiscent chapters are what a man of that age contributes. The
-corpus records it as probable and not shown — no source held here gives either man a date of birth
-— and notes the consequence either way: **the geology chapter this corpus has leaned on hardest,
-the technical account of the first oil well, was written by men who were in the town when it was
-drilled**, and on this reading one of them had been its mayor thirty-four years earlier. See
-[Samuel A. Baxter](../corpus/person/samuel-a-baxter.yml) and
+**They were two men, and this book's own biographical half says so.** It prints a sketch of
+Samuel A. Baxter born in Washington County, Maryland, on 26 September 1807 — a hatter and furrier
+who came to Lima in 1838, read law under ex-Governor William Medill and was admitted to the bar in
+1847 — and calls him "the late Samuel A. Baxter". The 1885 history carries the same man under the
+head `SAMUEL A. BAXTER (deceased)`, with the same birthday, and continues into the next paragraph
+with his third son: `S. A. Baxter`, who studied medicine at Lima and Columbus, graduated at
+Cincinnati College, "began the practice of his profession in the army, in 1863, in the Eighteenth
+Ohio Volunteer Infantry", and was afterwards president of the First National Bank. The father is
+the mayor of 1851 and 1854 and the "Sr." of this book's own list; the son is the surgeon, the mayor
+of 1896 and the Dr. Samuel A. Baxter of this title page. A man dead before 1885 did not write
+reminiscent chapters for a book of 1906.
+
+The consequence for what this corpus leans on is unchanged and now stands on a date rather than on
+an estimate of somebody's age: **the geology chapter, the technical account of the first oil well,
+was written by men who were in the town when it was drilled** — and the one who was mayor was mayor
+eleven years after the drilling, not thirty-four years before the book. See
+[Samuel A. Baxter](../corpus/person/samuel-a-baxter.yml),
+[Dr. Samuel A. Baxter](../corpus/person/dr-samuel-a-baxter.yml) and
 [the line of mayors](../corpus/measure/lima-mayors-1842-1886.yml).
 

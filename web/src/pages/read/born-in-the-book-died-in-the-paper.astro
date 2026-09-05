@@ -1,0 +1,141 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const half = assertion('the-books-are-half-biography')
+const asterisk = assertion('eight-sketches-the-publisher-would-not-vouch-for')
+const head = assertion('the-head-of-a-sketch-is-the-man-who-bought-it')
+const woman = assertion('one-sketch-in-four-hundred-pages-is-a-womans')
+const disagree = assertion('two-sketches-of-one-man-disagree')
+
+const fields = assertion('a-class-that-declared-five-fields-and-used-one')
+const twenty = assertion('twenty-of-forty-eight')
+const asym = assertion('born-in-the-book-died-in-the-paper')
+const paper = assertion('what-finishes-a-life-is-a-newspaper')
+
+const lamison = assertion('lamison-dated-at-both-ends')
+const faurot = assertion('faurot-died-poor')
+const age = assertion('a-rounded-age-checks-a-birthday')
+const yoder = assertion('two-sources-agree-to-the-day')
+
+const twomen = assertion('one-node-held-two-men')
+const war = assertion('the-war-service-was-on-the-wrong-man')
+const board = assertion('brice-and-baxter-on-one-board')
+const barr = assertion('a-doctor-a-bottler-and-a-sheriff')
+
+const scan = assertion('a-scan-moved-a-birthday-five-years')
+const agree = assertion('two-scans-agreeing-is-not-truth')
+const refused = assertion('a-name-match-that-was-refused')
+
+const halfSpec = bar(
+  half.figures.map((f) => f.label),
+  half.figures.map((f) => f.value),
+  { yTitle: 'Sentences beginning a life', labelValues: true },
+)
+const fieldSpec = bar(
+  fields.figures.map((f) => f.label),
+  fields.figures.map((f) => f.value),
+  { yTitle: 'People carrying the field', labelValues: true },
+)
+---
+
+<Article slug="born-in-the-book-died-in-the-paper">
+  <p>
+    A county history is read for its dates. When each township was erected, when the first railroad
+    came, what the commissioners resolved in March 1846 — the narrative half is a report of records
+    that no longer exist, and it is why these books are worth keeping. The other half is four
+    hundred pages of people, and it was sold to them.
+  </p>
+
+  <h2>The half that was sold</h2>
+  <AssertionCard assertion={half} open />
+  <ChartFigure
+    id="half"
+    title="Sentences beginning a life, by volume"
+    caption="Occurrences of the phrase “was born” in each book's cleaner digitization. A floor on the number of sketches rather than a count of them: a sketch names parents and children too."
+    columns={['Volume', 'Sentences']}
+    rows={half.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="half" set:html={JSON.stringify(halfSpec)} is:inline />
+  <p>
+    A publisher's agent walked the county, sold a page, took down what the subject told him, and
+    bound the result to a history. Every sketch has the same skeleton — name, trade, post office,
+    birth date and birthplace, parents with the mother's maiden name in brackets, the arrival, the
+    marriage, the children, the church, the politics — and then, in the last sentence, the thing
+    that was bought: <em>prominent</em>, <em>substantial</em>, <em>respected and honored by all who
+    know him</em>.
+  </p>
+  <AssertionCard assertion={asterisk} open />
+  <p>
+    Read that note again. It names where the facts came from, states the check that was run on them,
+    separates the records that passed from the records that did not, marks the failures in the text,
+    and says where to find them. Most twentieth-century administrative sources do not do as much.
+  </p>
+  <AssertionCard assertion={head} />
+  <AssertionCard assertion={woman} />
+  <AssertionCard assertion={disagree} />
+
+  <h2>What a subscriber could not have improved</h2>
+  <p>
+    A man had every reason to shape how he was described and no reason at all to move his own
+    birthday, and the publisher sent the typescript back to him to check. So the skeleton is
+    usable and the adjectives are not, and the set of people who have a page is the subscription
+    list rather than the county.
+  </p>
+  <AssertionCard assertion={fields} open />
+  <ChartFigure
+    id="fields"
+    title="How many of the county's people carry each field"
+    caption="The person class declares five properties. Ninety-nine people are described here; occupation is on ninety-seven of them."
+    columns={['Field', 'People']}
+    rows={fields.figures.map((f) => [f.label, String(f.value)])}
+  />
+  <script type="application/json" data-chart-spec="fields" set:html={JSON.stringify(fieldSpec)} is:inline />
+  <AssertionCard assertion={twenty} />
+  <AssertionCard assertion={asym} open />
+  <AssertionCard assertion={paper} />
+
+  <h2>Three men, dated at both ends</h2>
+  <AssertionCard assertion={lamison} open />
+  <p>
+    He sat for Ohio's Fifth District under Grant, went to New Mexico in 1890 to settle a railroad's
+    litigation, and was at Willard's Hotel in July 1895 telling a Washington reporter that the Ohio
+    Democracy should run a man who had worked as a miner. Nine months later a telegram from Topeka
+    reached Lima.
+  </p>
+  <AssertionCard assertion={faurot} open />
+  <AssertionCard assertion={age} />
+  <AssertionCard assertion={yoder} />
+
+  <h2>One node, two men</h2>
+  <AssertionCard assertion={twomen} open />
+  <AssertionCard assertion={war} />
+  <p>
+    The father was a hatter and furrier who rode to Lancaster sharing a horse with another young
+    man, took over the hat store, read law behind the counter, and came to Lima in 1838. The son
+    read medicine, went to the war as a surgeon at twenty-something, came home, practised five
+    years, and gave it up to run a bank. One of them was mayor in 1851 and 1854; the other was mayor
+    in 1896 and put his name on the county's 1906 history.
+  </p>
+  <AssertionCard assertion={board} />
+  <AssertionCard assertion={barr} />
+
+  <h2>What a second scan buys</h2>
+  <AssertionCard assertion={scan} open />
+  <AssertionCard assertion={agree} />
+  <p>
+    Two digitizations agreeing is a statement about the print and never about the world. It catches
+    a typeface that reads 3 as 8; it cannot catch a compiler who wrote 1826 for 1836. The rule has
+    always said so, and here is the sentence that shows it.
+  </p>
+  <AssertionCard assertion={refused} open />
+  <p>
+    A roster gives a name and two years. A book gives four hundred pages of one county's families,
+    where a surname runs down three generations and initials stand in for given names. Joining them
+    on the name alone would not produce a wrong date. It would produce a man who never existed,
+    published as a verified claim and indistinguishable afterwards from a true one.
+  </p>
+</Article>
