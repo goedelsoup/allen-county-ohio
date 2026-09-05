@@ -12260,6 +12260,299 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &[],
         figures: &[],
     },
+    Assertion {
+        id: "ninety-seven-and-a-half-per-cent-did-not-change",
+        statement: "Ninety-seven and a half per cent of Allen County carried the same land cover \
+                    class in 2021 as in 2001, and the 6,339 acres that changed are 2.43 per cent of \
+                    the ground.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "Nine classifications of every thirty-metre pixel in the county, twenty years apart end to end. **97.53 per cent of Allen County carried the same land cover class in 2021 as in 2001**, and the 6,339 acres that changed are 2.43 per cent of the ground. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), 2001 and 2021, clipped to the county boundary and counted here."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "acres that changed", value: 6339.0, literal: "6,339" },
+            Figure { label: "per cent that changed", value: 2.43, literal: "2.43" },
+        ],
+    },
+    Assertion {
+        id: "seventy-per-cent-farmed-and-nineteen-developed",
+        statement: "Allen County is 70.6 per cent farmed, 18.7 per cent developed and 8.2 per cent \
+                    wooded: 183,934 acres of crops and pasture, 48,694 developed, 21,226 forest, \
+                    2,607 open water and 1,731 wetland.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**The county is 70.6 per cent farmed, 18.7 per cent developed and 8.2 per cent wooded.** 183,934 acres of crops and pasture, 48,694 developed, 21,226 forest, 2,607 open water and 1,731 wetland. [inference] \u{2014} computed from the table above."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "farmed", value: 183934.0, literal: "183,934" },
+            Figure { label: "developed", value: 48694.0, literal: "48,694" },
+            Figure { label: "forest", value: 21226.0, literal: "21,226" },
+        ],
+    },
+    Assertion {
+        id: "eight-acres-of-forest-in-twenty-years",
+        statement: "Allen County's forest stood at 21,234 acres in 2001 and 21,226 in 2021 \u{2014} \
+                    eight acres of net change across twenty years, on a class that gained 434 acres \
+                    and lost 442 over the eight steps between.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**Nothing here moves fast and one thing does not move at all.** The county's forest stood at 21,234 acres in 2001 and 21,226 in 2021 \u{2014} a net change of eight acres in twenty years, on a class that gained 434 acres and lost 442 across the eight epoch steps. [verified] \u{2014} same source, differenced epoch by epoch. It is not a still photograph; it is a class in equilibrium."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "gained", value: 434.0, literal: "434" },
+            Figure { label: "lost", value: 442.0, literal: "442" },
+        ],
+    },
+    Assertion {
+        id: "pasture-is-the-class-that-fell",
+        statement: "Pasture and hay in Allen County fell 11.1 per cent between 2001 and 2021, \
+                    against 0.8 per cent off cultivated crops, and 802 acres of it went straight to \
+                    row crop rather than to anything built.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**Pasture is the class that actually fell.** 8,226 acres to 7,315, down 11.1 per cent, against 0.8 per cent off cultivated crops \u{2014} and 802 acres of it went straight to cultivated crops rather than to anything built. [verified] \u{2014} same source, 2001 against 2021. Livestock ground became row crop; see [the livestock](allen-county-livestock-2002-2022.yml)."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "acres to row crop", value: 802.0, literal: "802" },
+            Figure { label: "per cent fall", value: 11.1, literal: "11.1" },
+        ],
+    },
+    Assertion {
+        id: "four-per-cent-of-the-swamp-is-still-wet",
+        statement: "The wetland left in Allen County is 1,731 acres and 973 of them are wooded \
+                    \u{2014} 4.3 per cent of the 22,433.9 acres of swamp forest mapped at \
+                    settlement.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**The wetland left in this county is 1,731 acres, and 973 of them are wooded.** Against 22,433.9 acres of swamp forest mapped at settlement, the woody wetland that survives is 4.3 per cent. [inference] \u{2014} computed against [the original vegetation](allen-county-original-vegetation.yml). The drainage of the Great Black Swamp is the largest single fact about this county's ground and this is the number that says how complete it was."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "wetland", value: 1731.0, literal: "1,731" },
+            Figure { label: "woody wetland", value: 973.0, literal: "973" },
+        ],
+    },
+    Assertion {
+        id: "two-instruments-disagree-about-marsh-by-eighteen",
+        statement: "One federal file puts 758 acres of emergent herbaceous wetland in Allen County \
+                    and another puts 42.0 acres of mapped marsh \u{2014} a classification of what a \
+                    satellite sees growing against a feature somebody drew, and the corpus holds \
+                    both without averaging them.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**Two instruments disagree about marsh by a factor of eighteen.** This file puts 758 acres of emergent herbaceous wetland in the county; the national hydrography puts 42.0 acres of mapped marsh. [inference] \u{2014} computed against [the standing water](allen-county-standing-water-2026.yml). One is a classification of what a satellite sees growing and the other is a feature somebody drew, and the corpus holds both without averaging them."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "the satellite", value: 758.0, literal: "758" },
+            Figure { label: "the map", value: 42.0, literal: "42.0" },
+        ],
+    },
+    Assertion {
+        id: "one-epoch-boundary-is-a-mapping-change",
+        statement: "183 acres of Allen County go from cultivated crops to open water between 2011 \
+                    and 2013, against eight acres across the whole of 2001 to 2011 and none at all \
+                    after 2013 \u{2014} which is why the twenty-year rise of 401 acres of open water \
+                    is not read as new water.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**One epoch boundary in this series is a mapping change and it can be seen.** 183 acres go from cultivated crops to open water between 2011 and 2013, against eight acres across the whole of 2001 to 2011 and none at all after 2013. [verified] \u{2014} same source, differenced step by step. A change confined to one boundary of a nine-epoch series is a property of the boundary, which is why the open-water rise of 401 acres over the twenty years is not read here as 401 acres of new water."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[
+            Figure { label: "at one boundary", value: 183.0, literal: "183" },
+        ],
+    },
+    Assertion {
+        id: "a-category-is-not-a-land-use",
+        statement: "A field that grew corn in 2001 and soybeans in 2021 is unchanged in the land \
+                    cover file and changed in every way a farmer would count: what ninety-seven and \
+                    a half per cent measures is the persistence of the categories, not of the use \
+                    inside them.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "**A category is not a land use.** A field that grew corn in 2001 and soybeans in 2021 is unchanged in this file and changed in every way a farmer would count, so what 97.53 per cent measures is the persistence of the categories and not of the use inside them. [inference] \u{2014} the reasoning is this corpus's, against [the annual crop classification](allen-county-land-cover-2008-2024.yml), which moves every year."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[],
+    },
+    Assertion {
+        id: "nineteen-hundred-acres-in-and-sixteen-hundred-off-farmland",
+        statement: "1,909 acres of Allen County entered the developed land cover classes between \
+                    2001 and 2021, and 1,616 of them came off farmland.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**1,909 acres of Allen County entered the developed classes between 2001 and 2021, and 1,616 of them came off farmland.** [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), 2001 against 2021, clipped to the county and differenced pixel by pixel here. Developed ground goes from 46,785 acres to 48,694, from 17.97 per cent of the county to 18.70."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "acres developed", value: 1909.0, literal: "1,909" },
+            Figure { label: "acres off farmland", value: 1616.0, literal: "1,616" },
+        ],
+    },
+    Assertion {
+        id: "the-county-thickened-rather-than-spread",
+        statement: "Allen County's lightest developed class fell by 925 acres between 2001 and 2021 \
+                    while medium intensity rose 1,748 and high intensity rose 742: the county did \
+                    not spread so much as thicken.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**The county did not spread so much as thicken.** Its lightest developed class *fell* by 925 acres over the twenty years while medium intensity rose 1,748 and high intensity rose 742. [verified] \u{2014} same source."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "medium intensity", value: 1748.0, literal: "1,748" },
+            Figure { label: "high intensity", value: 742.0, literal: "742" },
+        ],
+    },
+    Assertion {
+        id: "the-largest-transition-is-not-farm-to-town",
+        statement: "The single largest land cover transition anywhere in Allen County between 2001 \
+                    and 2021 is not farm to town: it is 1,020 acres of developed open space becoming \
+                    developed medium intensity.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "The single largest land cover transition anywhere in this county over the twenty years is not farm to town: it is 1,020 acres of developed open space becoming developed medium intensity. [verified] \u{2014} same source, the 2001-to-2021 transition table."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "acres", value: 1020.0, literal: "1,020" },
+        ],
+    },
+    Assertion {
+        id: "more-acres-got-denser-than-got-built",
+        statement: "Across eight epoch steps 2,260 acres of Allen County moved to a more intense \
+                    developed class and 1,909 acres entered the developed classes at all \u{2014} a \
+                    county that has been losing people since 1980 filling in what it already had.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**More acres got denser than got built.** Across the eight epoch steps, 2,260 acres moved to a more intense developed class and 1,909 acres entered the developed classes at all. [verified] \u{2014} same source, differenced step by step. This is a county that lost 2,486 residents between 1980 and 1990 and has lost more since, filling in what it already had."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "got denser", value: 2260.0, literal: "2,260" },
+            Figure { label: "got built", value: 1909.0, literal: "1,909" },
+        ],
+    },
+    Assertion {
+        id: "not-one-acre-moved-the-other-way",
+        statement: "Across eight epoch steps 0.7 acres of Allen County left the developed classes \
+                    and no acre at all moved to a less intense developed class, while forest gained \
+                    434 acres and lost 442 and cropland gained 968 and lost 2,425.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**Not one acre moved the other way.** Across the same eight steps 0.7 acres left the developed classes altogether and **no acre at all moved to a less intense developed class**, at any epoch boundary, while forest gained 434 acres and lost 442 and cropland gained 968 and lost 2,425. [verified] \u{2014} same source, every consecutive pair counted both ways. Whether that is the county or the product is not decidable from the file; see [a class that only moves one way](../../decisions/a-class-that-only-moves-one-way.yml), and read the 1,909 as a ceiling on the net change rather than as a gross figure."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "cropland gained", value: 968.0, literal: "968" },
+            Figure { label: "cropland lost", value: 2425.0, literal: "2,425" },
+        ],
+    },
+    Assertion {
+        id: "six-per-cent-of-the-county-is-paved",
+        statement: "Impervious surface in Allen County totals 15,994 acres in 2021 against 14,093 in \
+                    2001 \u{2014} 6.14 per cent of the county against 5.41.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**Six per cent of Allen County is paved.** Impervious surface totals 15,994 acres in 2021 against 14,093 in 2001 \u{2014} 6.14 per cent of the county against 5.41, a rise of 1,901 acres. [verified] \u{2014} same source, the impervious coverages for 2001, 2011 and 2021, summed as fractional cover. The 1,901 acres of new impervious surface almost equal the 1,909 acres of new developed ground, which means the thickening contributed about as much hard surface as the building did. [inference] \u{2014} computed here."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "2021", value: 15994.0, literal: "15,994" },
+            Figure { label: "2001", value: 14093.0, literal: "14,093" },
+        ],
+    },
+    Assertion {
+        id: "the-thickening-paved-as-much-as-the-building",
+        statement: "The 1,901 acres of impervious surface Allen County gained between 2001 and 2021 \
+                    almost equal the 1,909 acres of new developed ground, which means the thickening \
+                    of what was already built laid down about as much hard surface as the building \
+                    did.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**Six per cent of Allen County is paved.** Impervious surface totals 15,994 acres in 2021 against 14,093 in 2001 \u{2014} 6.14 per cent of the county against 5.41, a rise of 1,901 acres. [verified] \u{2014} same source, the impervious coverages for 2001, 2011 and 2021, summed as fractional cover. The 1,901 acres of new impervious surface almost equal the 1,909 acres of new developed ground, which means the thickening contributed about as much hard surface as the building did. [inference] \u{2014} computed here."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[
+            Figure { label: "new impervious", value: 1901.0, literal: "1,901" },
+            Figure { label: "new developed", value: 1909.0, literal: "1,909" },
+        ],
+    },
+    Assertion {
+        id: "a-pixel-is-not-a-building",
+        statement: "A thirty-metre pixel that changes class says a tenth of a hectare became more \
+                    built between two epochs three years apart, and nothing about what was built, \
+                    when within the interval, or for whom.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-developed-land-2001-2021.yml", "**A pixel is not a building.** A thirty-metre cell that changes class says a tenth of a hectare became more built between two epochs three years apart, and nothing about what was built, when within the interval, or for whom. [inference] \u{2014} the reasoning is this corpus's, against [the building footprints](allen-county-buildings-2019.yml), which are drawn one at a time."),
+        ],
+        answers: &["cannot say where a single building went up"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-producer-named-the-file-to-use-instead",
+        statement: "The Cropland Data Layer's own documentation says the accuracy of its \
+                    non-agricultural land cover classes is entirely dependent on the National Land \
+                    Cover Database, and recommends that users consider that database instead for \
+                    such work.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2008-2024.yml", "**The producer says the last two columns are somebody else's, and names the file to use instead.** NASS's own page for this product reads: \"The accuracy of the CDL non-agricultural land cover classes are entirely dependent upon the NLCD. Thus, the USDA NASS recommends that users consider the NLCD for studies involving non-agricultural land cover.\" [verified] \u{2014} [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md), its frequently-asked-questions page. So this node's developed, forest, water and wetland figures were never a reading of this county by this instrument; they are the National Land Cover Database recoded and re-registered once a year by a product built to classify crops."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "four-columns-that-were-never-a-second-opinion",
+        statement: "The developed, forest, water and wetland acreages this corpus took from the \
+                    Cropland Data Layer are the National Land Cover Database recoded and \
+                    re-registered once a year by a product built to classify crops, so the \
+                    5,811-acre gap between the two files on forest measures the recode and not the \
+                    ground.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2008-2024.yml", "**The corpus now holds that database, and the four columns move apart under it.** Developed ground is 46,307 acres here for 2024 and 48,694 there for 2021; forest is 27,037 against 21,226, a gap of 5,811 acres. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md); see [the series](allen-county-land-cover-2001-2021.yml). That difference measures the recode and not the ground, which is what the paragraph below was already saying by another route. See [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml)."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "the crop file", value: 27037.0, literal: "27,037" },
+            Figure { label: "the land cover file", value: 21226.0, literal: "21,226" },
+        ],
+    },
+    Assertion {
+        id: "the-drainage-was-ninety-six-per-cent-complete",
+        statement: "Against the 22,433.9 acres of swamp forest mapped in Allen County at settlement, \
+                    973 acres of woody wetland survive and 1,731 acres of wetland of any kind \
+                    \u{2014} 4.3 per cent and 7.7 per cent.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-original-vegetation.yml", "**What is left of it, measured on the same ground by a satellite.** The National Land Cover Database puts 973 acres of woody wetland in this county in 2021 and 758 of emergent herbaceous wetland, 1,731 acres in all. Against the 22,433.9 acres of swamp forest this node maps, the wooded part that survives is 4.3 per cent and the whole wetland class is 7.7 per cent. [verified] \u{2014} [the land cover database](../../catalog/mrlc-nlcd-land-cover.md); see [the series](allen-county-land-cover-2001-2021.yml). Neither figure is the same quantity as the other \u{2014} one is a nineteenth-century vegetation reconstruction and the other a thirty-metre classification of what grows now \u{2014} and the order of magnitude between them is the answer to how completely the swamp was drained. [inference]"),
+        ],
+        answers: &["cannot say when any of this was cleared"],
+        figures: &[
+            Figure { label: "woody wetland now", value: 973.0, literal: "973" },
+            Figure { label: "wetland of any kind", value: 1731.0, literal: "1,731" },
+        ],
+    },
+    Assertion {
+        id: "the-boundary-is-the-control",
+        statement: "The county boundary rasterised onto the land cover grid burns 1,170,809 pixels, \
+                    which at 900 square metres is 260,382 acres \u{2014} the Census Bureau's own \
+                    land-plus-water figure for Allen County to the acre, and the control on whether \
+                    the clip and the reprojection are right.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-2001-2021.yml", "Nine classifications of every thirty-metre pixel in the county, twenty years apart end to end. **97.53 per cent of Allen County carried the same land cover class in 2021 as in 2001**, and the 6,339 acres that changed are 2.43 per cent of the ground. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), 2001 and 2021, clipped to the county boundary and counted here."),
+        ],
+        answers: &["does not establish that the county's ground was stable"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

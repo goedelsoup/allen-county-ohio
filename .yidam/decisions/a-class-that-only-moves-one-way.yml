@@ -1,0 +1,78 @@
+id: a-class-that-only-moves-one-way
+summary: >-
+  Across eight epoch steps of the National Land Cover Database, 1,909 acres of Allen County entered
+  the developed classes and 0.7 acres left them; 2,260 acres moved to a denser developed class and
+  not one acre moved to a thinner one. Every other class in the same file moves in both directions.
+  A class that cannot go backwards is a property of the product until something outside it says
+  otherwise, and the number it produces is a ceiling rather than a measurement.
+context: |
+  [The National Land Cover Database](../catalog/mrlc-nlcd-land-cover.md) classifies every
+  thirty-metre pixel of the county nine times between 2001 and 2021. Differencing consecutive
+  epochs and counting pixels that cross a class boundary gives this, in acres:
+
+      class group     gained    lost
+      developed        1,909     0.7
+      forest             434     442
+      cropland           968   2,425
+      wetland             92      62
+
+  Three of those four move in both directions and one does not. Within the developed group the
+  asymmetry is total: 2,260 acres change to a more intense developed class across the eight steps
+  and nothing at all changes to a less intense one, at any boundary, in twenty years.
+
+  Two readings fit. Allen County genuinely built and never un-built — plausible in direction and
+  implausible in this degree, since a county with a demolished neighbourhood, a closed plant on a
+  reverting lot, or a quarry gone to grass ought to produce some pixels going the other way. Or the
+  product enforces it, as a change-detection process reasonably might, on the ground that
+  development is the one transition that is nearly always permanent and that reversals are usually
+  classification noise.
+
+  The file does not say which, and the difference matters: under the first reading 1,909 acres is
+  what happened, and under the second it is what the product will let itself see.
+decision: |
+  **Before publishing a change in a class, test whether the class can move in both directions in
+  the file, and say what the test found.**
+
+  - The test is internal and cheap: difference every consecutive pair and count the crossings each
+    way, for that class and for its neighbours. The neighbours are the control — a file where
+    everything is monotone is a file with one epoch, and a file where one class is monotone and the
+    rest are not is telling you about that class.
+  - Where a class moves one way only, publish the figure as **a ceiling on the net change and not
+    as the gross change**, and say in the node that the file admits no reversals.
+  - Do not resolve the ambiguity by argument from plausibility. "Development is usually permanent"
+    is true and is exactly what a product designer would have reasoned; it cannot distinguish the
+    two readings because it is the cause of both.
+  - Where an outside witness to reversal exists — a demolition record, an annexation reversed, a
+    parcel back in agricultural valuation — it settles the question and should be named as the
+    thing that would.
+rationale: |
+  **What it changes here.** This corpus can say that 1,909 acres of Allen County entered the
+  developed classes between 2001 and 2021 and that 1,616 of them came off farmland. It cannot say
+  that no developed acre in this county went back to anything, and without this rule it would have,
+  because the file says so nine times.
+
+  **It is the third instrument in a row to need a reliability statement about one of its columns.**
+  [One file, two reliabilities](one-file-two-reliabilities.yml) came from a class whose slope had
+  the wrong sign against a known control.
+  [A model fitted to a survey is not a second witness](a-model-fitted-to-a-survey-is-not-a-second-witness.yml)
+  came from a derived estimate wearing an observation's clothes. This one comes from a class whose
+  *variance* is wrong rather than its level or its slope: it has no noise in one direction at all,
+  which no measurement of a real surface has.
+
+  **Zero is the tell, and it is the only one here.** A count of 0.7 acres leaving the developed
+  classes across a county and two decades is not evidence of a rule; three stray pixels are what a
+  rule with an exception looks like. What is evidence is the flat zero on intensity: 2,260 acres of
+  movement, all of it one way, in a product that lets cropland and forest trade in both directions
+  at every boundary.
+
+  **What would falsify it.** A county in the same file with a documented reversal — a razed
+  subdivision, a decommissioned airfield — showing as developed-to-something in NLCD. That would
+  make the asymmetry a fact about Allen County, and this rule would still stand, because the test
+  would then have been run and answered.
+
+  **What it generalises to.** Any indicator with an absorbing state. A cumulative count that cannot
+  fall, a register that records openings and not closings, a land-use classification that ratchets,
+  a disease register with no recoveries: the series is real and the thing it is a series of is not
+  what its name says.
+status: accepted
+date: "2026-09-04"
