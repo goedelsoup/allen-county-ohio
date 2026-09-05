@@ -179,6 +179,7 @@ Fields per crate: name, capability type (connector/calculator/feature-engineerin
 | [chronology](chronology/) | One interval per node, and what this corpus means when it records no end |
 | [covering](covering/) | Every jurisdiction and division covering a place, and what the corpus dates |
 | [ground](ground/) | The survey section a point stands on, and the Recorder book that holds its title |
+| [placement](placement/) | Where a corpus node lands on the ground, by what route, and where it refuses to guess |
 | [provenance](provenance/) | Whether every edge in the corpus says what kind of claim it is |
 | [proximity](proximity/) | Corpus nodes within a radius of a point, ordered by distance |
 | [publish](publish/) | The public feed, and the rules a claim must pass to leave this repository |
