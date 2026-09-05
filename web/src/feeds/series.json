@@ -132,6 +132,26 @@
       ]
     },
     {
+      "id": "jurisdiction-allen-county-government::conduit-debt-outstanding,-issued-by-the-county-for-private-borrowers",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "conduit debt outstanding, issued by the county for private borrowers",
+      "unit": "dollars outstanding at 31 December 2023",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-conduit-debt-2010-2023.yml",
+          "label": "Conduit debt issued in Allen County's name, 2010–2023",
+          "as_of": "2023",
+          "value": 2204995000.0,
+          "published": "2204995000",
+          "tier": "verified",
+          "source": "catalog/allen-county-auditor-financials.md",
+          "method": "The 2010, 2013, 2022 and 2023 figures are the aggregates the reports themselves print; the 2015 through 2021 figures are the sum of the balances the note gives for each issue, which the reports do not total. [verified] The 2010 and 2013 aggregates are not used in any comparison here, because each contradicts its own paragraph: the 2010 note describes a $195,000,000 issue of that year and then gives an aggregate of $22,460,000, and the 2013 note omits the $300,000,000 issue of 2008 that every later report carries as outstanding. [verified] The per-resident figure divides by the 2022 population the finance survey attaches to the county government, 101,980. [verified] The ranking of Ohio counties on industrial revenue debt uses the survey's own population column for all fifty-two, which is one consistent denominator. [verified]"
+        }
+      ]
+    },
+    {
       "id": "jurisdiction-allen-county-government::election-day-polling-places",
       "subject": "jurisdiction/allen-county-government.yml",
       "subject_label": "Allen County (government)",
@@ -268,6 +288,26 @@
           "tier": "verified",
           "source": "catalog/ohio-boe-elected-officials-allen.md",
           "method": "Union of the eighty-eight precinct pages of the boards of elections roster, deduplicated on the office name and the page's own `hid_office` code. Vacancies are counted from its `N Vacant Seat(s)` rows and appointments from its `*Appointed*` marker; the class column is this corpus's grouping and the roster totals nothing. [verified] **It is a county's roster, so a ward seat of a city that crosses the county line does not appear.** Delphos contributes ten seats here and 3,182 of its people live in Van Wert County, so its council is undercounted by an unknown number of ward seats. [inference] No other government here is affected: Bluffton also crosses a line and elects its council at large."
+        }
+      ]
+    },
+    {
+      "id": "jurisdiction-allen-county-government::share-of-the-county's-federal-finance-cells-that-are-imputed",
+      "subject": "jurisdiction/allen-county-government.yml",
+      "subject_label": "Allen County (government)",
+      "parameter": "share of the county's federal finance cells that are imputed",
+      "unit": "per cent of 727 cells, fiscal 2022",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-in-the-federal-finance-file-2022.yml",
+          "label": "What the federal finance survey knows about Allen County, 2022",
+          "as_of": "2022",
+          "value": 30.4,
+          "published": "30.4",
+          "tier": "verified",
+          "source": "catalog/census-government-finances.md",
+          "method": "The flag is the thirty-second character of each 32-character record: `R` reported, `I` imputed, `A` analyst correction, `S` alternative source, `M` unknown, `N` not applicable. Only `R` and `I` appear for this county. [verified] The audited comparisons take the county's fiscal year ending 31 December 2022, which is the year the survey record names, and read the audit's own government-wide statement of activities rather than any fund statement. [verified] The property tax comparison sums the audit's five levy lines — general operations, developmental disabilities, children services, debt service and Marimor permanent improvement — because the survey carries one property tax code and the audit prints five. [verified] The 2017 interest rate uses that year's reported interest against that year's reported beginning debt for the same government. [verified]"
         }
       ]
     },
@@ -2542,6 +2582,26 @@
       ]
     },
     {
+      "id": "place-allen-county::long-term-debt-outstanding-of-all-local-governments-in-the-county",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "long-term debt outstanding of all local governments in the county",
+      "unit": "dollars, end of fiscal 2022",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-local-government-debt-2017-2022.yml",
+          "label": "What Allen County's governments owe, 2017 and 2022",
+          "as_of": "2022",
+          "value": 286926000.0,
+          "published": "286926000",
+          "tier": "verified",
+          "source": "catalog/census-government-finances.md",
+          "method": "Debt is item `49U`, long-term debt outstanding at the end of the fiscal year, which is the code every government in this county uses; the survey's own debt aggregate adds `44T`, and adding it is what makes the two releases incomparable. [verified] Amounts in the file are thousands of dollars and are written out here. [verified] The Ohio ranking repeats the identical computation for all eighty-eight counties against each county government's own population from the same directory file. [verified] Eight of this county's twenty debt cells are imputed rather than reported; see [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml)."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::low-birthweight,-prematurity,-fertility-and-infant-mortality",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -3868,6 +3928,26 @@
           "tier": "verified",
           "source": "catalog/us-religion-census-2020.md",
           "method": "The county summary sheet and the group-by-county sheet of the 2020 U.S. Religion Census, filtered to FIPS 39003. The 49 group rows sum to the summary sheet's 160 congregations and 58,696 adherents exactly, which is the check that the read is complete. Adherents are as each religious body reported them and the bodies do not share a definition; nine congregations report no adherent figure and are counted as congregations only. Neighbouring counties are read from the same sheet. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::revenue-of-all-local-governments-in-the-county",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "revenue of all local governments in the county",
+      "unit": "dollars, fiscal 2022, across forty-six governments",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-local-government-finance-2022.yml",
+          "label": "What Allen County's forty-six governments raise and spend, 2022",
+          "as_of": "2022",
+          "value": 545687000.0,
+          "published": "545687000",
+          "tier": "verified",
+          "source": "catalog/census-government-finances.md",
+          "method": "The forty-six units are every government the survey's directory file places in Allen County, Ohio, which is a Census county code and not the FIPS code the rest of this corpus uses. [verified] Revenue sums the `A`, `B`, `C`, `D`, `T` and `U` item codes and spending sums the survey's own expenditure line, because the workbook's published revenue aggregate is a state-level definition that omits everything a local government receives from its state. [verified] Amounts in the file are thousands of dollars and are written out here. [verified] Ohio comparisons repeat the identical computation for all eighty-eight counties, using each county government's own population from the same directory file as the denominator. [verified] Two hundred and twenty-one of this county's 727 cells are the Bureau's imputations and are included in these totals; see [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml)."
         }
       ]
     },

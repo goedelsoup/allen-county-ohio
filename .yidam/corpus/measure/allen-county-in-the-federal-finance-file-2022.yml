@@ -1,0 +1,108 @@
+class: measure
+label: What the federal finance survey knows about Allen County, 2022
+description: |
+  **Allen County did not answer the federal government finance survey, and the survey published
+  twenty-seven figures for it anyway.** Every one of the county government's cells in the 2022
+  individual unit file carries the flag `I` for imputed. [verified] —
+  [the government finance survey](../../catalog/census-government-finances.md), the 2022 file,
+  counted here. Fifteen of the county's forty-six governments are in the same state, and 221 of the
+  county's 727 cells — 30.4 per cent — are the Bureau's arithmetic rather than a treasurer's answer.
+
+      cells in the 2022 file          all   imputed    share
+      the county government            27        27   100.0%
+      nine municipalities             244        97    39.8%
+      twelve townships                191        66    34.6%
+      twelve special districts         76        28    36.8%
+      twelve school entities          189         3     1.6%
+      forty-six governments           727       221    30.4%
+
+  **The school districts answer and the villages do not.** 98.4 per cent of the school entities'
+  cells are reported against 60.2 per cent of the municipalities'; Lima answers all sixty-two of its
+  questions and Bluffton, Elida, Harrod, Lafayette and Beaverdam answer none of theirs. [verified] —
+  the same file, by unit. Ohio's school districts file their finances through a state channel and
+  its villages fill in a form. [inference]
+
+  **The model gives this county an interest rate of two hundred and fifty-eight per cent.**
+  $46,722,000 of interest on general debt, against $18,072,000 of long-term debt at the start of the
+  year and $13,605,000 at the end. [verified] — the same file, the county's own row. The seventeen
+  other governments in this county that report both figures run from 1.5 per cent at Lima to 8.6 at
+  Richland Township, and the county's own reported figure five years earlier was $1,038,000 on
+  $34,811,000, which is 3.0. [verified] — the same source, its 2017 and 2022 files.
+
+  **The county's own auditor puts the figure at $206,079.** The audited statement of activities for
+  the year ended 31 December 2022 gives interest and fiscal charges of $206,079 for governmental
+  activities and nothing for business-type. The published federal figure is 227 times it.
+  [verified] — [the county auditor](../../catalog/allen-county-auditor-financials.md), the 2022
+  report, Table 2; see
+  [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml).
+
+  **The same imputation is nearly right about everything large.** Total revenue $105,391,000 against
+  the audit's $106,515,249, 1.1 per cent low; the permissive sales tax $22,513,000 against
+  $20,678,894, 8.9 per cent high; property tax $14,959,000 against $13,200,749, 13.3 per cent high;
+  interest earned $734,000 against $667,203. [verified] — the same source pair. A model that lands
+  within a point on a hundred million dollars and two hundred times out on two hundred thousand is
+  a model that has to be checked at the line rather than at the total. [inference]
+
+      Allen County government, 2022         federal file        the county's audit
+      total revenue                        $105,391,000              $106,515,249
+      permissive sales tax                   22,513,000                20,678,894
+      property tax                           14,959,000                13,200,749
+      interest earned                           734,000                   667,203
+      interest paid on debt                  46,722,000                   206,079
+
+  **This corpus publishes the imputed figures and says they are imputed.** Dropping them would empty
+  fifteen governments out of the county — every municipality but Lima, Delphos, Cairo and
+  Spencerville, and four of the twelve townships — and publish a county with holes in it. [inference] The
+  rule is that the flag travels with the figure.
+
+  **An imputation is not a lie and this node does not say the Bureau got the county wrong.**
+  [inference] The Bureau publishes a complete file because a partial one is useless for the national
+  totals it exists to produce, and it flags every cell it filled. Everything above was read off the
+  file's own thirty-second character.
+
+  **This node does not establish why the county did not answer.**
+
+  [open] Whether the county answered in other years. Its 2017 cells are reported and its 2022 cells
+  are not, and the survey between those two census years is a sample in which this county may not
+  have been drawn at all. The annual files for 2018 through 2021 and 2023 through 2024 would settle
+  it and were not read here.
+
+properties:
+  parameter: share of the county's federal finance cells that are imputed
+  value: "30.4"
+  unit: per cent of 727 cells, fiscal 2022
+  as_of: "2022"
+  method: |
+    The flag is the thirty-second character of each 32-character record: `R` reported, `I` imputed,
+    `A` analyst correction, `S` alternative source, `M` unknown, `N` not applicable. Only `R` and `I`
+    appear for this county. [verified] The audited comparisons take the county's fiscal year ending
+    31 December 2022, which is the year the survey record names, and read the audit's own
+    government-wide statement of activities rather than any fund statement. [verified] The property
+    tax comparison sums the audit's five levy lines — general operations, developmental disabilities,
+    children services, debt service and Marimor permanent improvement — because the survey carries
+    one property tax code and the audit prints five. [verified] The 2017 interest rate uses that
+    year's reported interest against that year's reported beginning debt for the same government.
+    [verified]
+links:
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-local-government-finance-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-local-government-debt-2017-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-net-position-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-financials.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

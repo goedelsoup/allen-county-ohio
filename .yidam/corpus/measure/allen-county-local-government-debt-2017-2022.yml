@@ -1,0 +1,91 @@
+class: measure
+label: What Allen County's governments owe, 2017 and 2022
+description: |
+  **The forty-six governments holding ground in Allen County owed $286,926,000 of long-term debt at
+  the end of fiscal 2022, and more than half of it is the City of Lima's.** [verified] —
+  [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual
+  unit file, item `49U`, summed here. That is $2,814 for every resident, which puts this county
+  seventeenth of Ohio's eighty-eight against a median of $1,734.
+
+      long-term debt outstanding, end of fiscal 2022
+      Lima City                        146,750,000     Lima City School District      5,662,000
+      Elida Local School District       45,709,000     Allen East Local Schools       3,685,000
+      Delphos City                      23,359,000     Spencerville Local Schools     3,278,000
+      Bath Local School District        21,455,000     Allen Water District           3,082,000
+      Allen County                      13,605,000     Bluffton Village               2,232,000
+      Perry Local School District       11,010,000     the other thirty-five          7,099,000
+
+  **Nine of the forty-six carry ninety-six per cent of it.** Twenty-six of them carry no long-term
+  debt at all, including ten of the twelve townships, ten of the twelve special districts and four
+  of the twelve school entities. [verified] — the same file, by unit. The twelve townships together
+  owe $105,000, which is less than a thousandth of what the city owes.
+
+  **The county government owes the least of any large government here.** $13,605,000 against Lima's
+  $146,750,000 on a population three times Lima's, and the county's own audited statements put what
+  it owes to lenders at $16,281,525 a year later. [verified] — the same source against
+  [the audited net position](allen-county-net-position-2023.yml). The two figures are a year apart
+  and a fifth of a million dollars from agreeing on the same quantity.
+
+  **Read across the two federal releases, this county's local debt falls by eighty-four per cent and
+  none of it happened.** The 2017 file gives $1,837,294,000 and the 2022 file $286,926,000. The
+  whole of the difference is item `44T`, industrial revenue debt, which the Bureau published for
+  2,311 governments in 2017 and for none in 2022. [verified] — the same source, the two releases.
+  Set that one code aside and the comparison is ordinary: $314,154,000 in 2017 against $286,926,000
+  in 2022, a fall of 8.7 per cent. See
+  [a reporting change has a date and a control](../../decisions/a-reporting-change-has-a-date-and-a-control.yml).
+
+  **The retired code was this county's largest published number and it was not the county's money.**
+  $1,523,140,000 of it stood in Allen County's name for private borrowers; the county owes none of
+  it and never did. [verified] —
+  [the conduit debt](allen-county-conduit-debt-2010-2023.yml). What the county owes and what stands
+  in the county's name differ by a factor of a hundred and twelve. [inference] — computed from the
+  two figures above.
+
+  **Long-term debt is not everything a government owes.** [inference] Pensions, compensated absences
+  and lease obligations are liabilities and are not bonds, and this file counts bonds and loans. The
+  county's audited liabilities rose $36,758,891 in 2023 on a year in which it borrowed nothing,
+  because its long-term pension liability moved; a debt series and a liability series are two
+  different things and this node is the first.
+
+  **This node does not establish what any of this debt was borrowed for.**
+
+  [open] What the City of Lima's $146,750,000 built. The survey gives a total and no purpose, and
+  the city's own annual financial report, which would carry the schedule of bonds by issue, has not
+  been read here.
+
+properties:
+  parameter: long-term debt outstanding of all local governments in the county
+  value: "286926000"
+  unit: dollars, end of fiscal 2022
+  as_of: "2022"
+  method: |
+    Debt is item `49U`, long-term debt outstanding at the end of the fiscal year, which is the code
+    every government in this county uses; the survey's own debt aggregate adds `44T`, and adding it
+    is what makes the two releases incomparable. [verified] Amounts in the file are thousands of
+    dollars and are written out here. [verified] The Ohio ranking repeats the identical computation
+    for all eighty-eight counties against each county government's own population from the same
+    directory file. [verified] Eight of this county's twenty debt cells are imputed rather than
+    reported; see [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml).
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-conduit-debt-2010-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-local-government-finance-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-net-position-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-auditor-financials.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
