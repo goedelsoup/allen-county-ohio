@@ -436,7 +436,11 @@ jobs:
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: crates
-      - run: cargo fmt --all -- --check
+      # `-p` per member, not `--all`: `--all` also formats workspace members' local
+      # path dependencies, and crates/proximity has one under .yidam/.vendor/, which
+      # is read-only and is not rustfmt-clean at every pin. mise.toml's `fmt` and `ci`
+      # tasks carry the same list and the same reasoning at length.
+      - run: cargo fmt -p covering -p ground -p provenance -p proximity -p publish -p succession -- --check
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test --workspace
       # Doc links from a calculator to the corpus node that says what it is for
