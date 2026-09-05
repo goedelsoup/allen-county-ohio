@@ -186,9 +186,12 @@ Sorted by: kind, then alphabetically.
 | [allen-county-house-prices-1975-2025.yml](measure/allen-county-house-prices-1975-2025.yml) | measure | House prices in Allen County, 1975–2025 | 7 | 14v / 4i / 1o | 128 |
 | [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
 | [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 3 | 6v / 4i / 1o | 80 |
-| [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 2 | 7v / 2i / 0o | 60 |
+| [allen-county-housing-1990.yml](measure/allen-county-housing-1990.yml) | measure | Allen County's housing in 1990 | 4 | 9v / 5i / 0o | 92 |
+| [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 3 | 9v / 2i / 0o | 73 |
 | [allen-county-housing-cost-burden-2006-2022.yml](measure/allen-county-housing-cost-burden-2006-2022.yml) | measure | Housing cost burden in Allen County, 2006–2022 | 8 | 11v / 4i / 0o | 153 |
-| [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 5 | 11v / 1i / 0o | 96 |
+| [allen-county-housing-facilities-2023.yml](measure/allen-county-housing-facilities-2023.yml) | measure | What is in Allen County's houses, 2023 | 4 | 10v / 4i / 0o | 83 |
+| [allen-county-housing-stock-2023.yml](measure/allen-county-housing-stock-2023.yml) | measure | Allen County housing units, occupancy, tenure and value, 2023 | 5 | 12v / 1i / 0o | 103 |
+| [allen-county-housing-structure-2023.yml](measure/allen-county-housing-structure-2023.yml) | measure | What Allen County's houses are, 2023 | 4 | 9v / 4i / 0o | 80 |
 | [allen-county-housing-units-2020.yml](measure/allen-county-housing-units-2020.yml) | measure | Allen County housing units, 2020 census | 2 | 4v / 1i / 0o | 46 |
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
@@ -285,7 +288,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
-| [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 7 | 16v / 4i / 1o | 154 |
+| [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 8 | 17v / 5i / 1o | 165 |
 | [allen-county-test-proficiency-2009-2020.yml](measure/allen-county-test-proficiency-2009-2020.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2020 | 8 | 11v / 5i / 1o | 129 |
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
@@ -297,7 +300,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 6 | 8v / 4i / 0o | 103 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 4 | 8v / 2i / 0o | 78 |
 | [allen-county-unemployment-1990-2026.yml](measure/allen-county-unemployment-1990-2026.yml) | measure | Allen County unemployment, 1990–2026 | 4 | 7v / 7i / 2o | 130 |
-| [allen-county-vacancy-status-2010-2020.yml](measure/allen-county-vacancy-status-2010-2020.yml) | measure | Why Allen County's housing was empty, 2010 and 2020 | 7 | 17v / 7i / 1o | 189 |
+| [allen-county-vacancy-status-2010-2020.yml](measure/allen-county-vacancy-status-2010-2020.yml) | measure | Why Allen County's housing was empty, 2010 and 2020 | 8 | 19v / 8i / 1o | 209 |
+| [allen-county-vacancy-status-2023.yml](measure/allen-county-vacancy-status-2023.yml) | measure | Why Allen County's housing was empty, 2019–2023 | 4 | 9v / 3i / 0o | 83 |
 | [allen-county-voter-roll-removals-2006-2022.yml](measure/allen-county-voter-roll-removals-2006-2022.yml) | measure | Removals from the Allen County voter roll, 2006–2022 | 4 | 7v / 2i / 1o | 80 |
 | [allen-county-voting-districts-2020.yml](measure/allen-county-voting-districts-2020.yml) | measure | Allen County voting districts, 2020 | 3 | 5v / 0i / 0o | 53 |
 | [allen-county-wages-2024.yml](measure/allen-county-wages-2024.yml) | measure | What work pays in Allen County, 2024 | 2 | 6v / 3i / 1o | 72 |
