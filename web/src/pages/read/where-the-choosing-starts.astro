@@ -1,0 +1,191 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const two = assertion('two-of-ten-high-schools-offer-it')
+const ohioHalf = assertion('half-of-ohios-high-schools-and-a-fifth-of-this-countys')
+const rank = assertion('lima-senior-is-nineteenth-largest-of-the-schools-without-it')
+const series = assertion('six-four-four-five-two')
+const perry = assertion('perry-dropped-physics-and-calculus')
+const supplied = assertion('better-supplied-than-ohio-on-everything-but-one')
+const gifted = assertion('four-of-ten-report-a-gifted-programme')
+const certified = assertion('the-county-beat-ohio-on-certification-by-a-point')
+const allenEast = assertion('allen-east-taught-half-its-classes-uncertified')
+const retired = assertion('the-certification-question-was-retired-after-2017')
+
+const three = assertion('three-black-pupils-in-an-advanced-placement-course')
+const required = assertion('the-required-courses-are-taken-evenly')
+const elective = assertion('the-elective-courses-are-not')
+const building = assertion('most-of-the-black-pupils-are-in-the-school-with-no-ap')
+const standard = assertion('the-gap-survives-standardising-on-the-school')
+const split = assertion('between-schools-multiplies-by-one-point-six-and-inside-by-four-point-six')
+const lima = assertion('inside-lima-the-ratio-is-five-to-one')
+const science = assertion('the-county-takes-more-science-than-ohio')
+const quarter = assertion('a-quarter-of-ohios-advanced-placement')
+
+const ccp = assertion('four-hundred-and-ninety-two-sat-a-college-course')
+const pays = assertion('the-state-pays-for-one-and-the-family-for-the-other')
+const spencerville = assertion('nearly-half-of-spencerville-is-in-a-college-course')
+const least = assertion('the-largest-high-school-uses-it-least')
+const bath = assertion('bath-went-from-one-hundred-and-ninety-nine-to-none')
+const race = assertion('white-pupils-are-three-and-a-half-times-as-likely')
+
+const fell = assertion('advanced-placement-fell-by-half-and-by-nine-tenths')
+const ratio = assertion('the-ratio-went-from-one-point-four-to-seven-point-six')
+const lima2013 = assertion('lima-enrolled-sixty-seven-in-2013')
+const changed = assertion('the-four-that-changed-did-not-change-together')
+const stayed = assertion('the-pupils-did-not-leave')
+const substitution = assertion('the-substitution-replaced-a-quarter-of-the-seats')
+
+const requiredSpec = bar(
+  required.figures.map((f) => f.label),
+  required.figures.map((f) => f.value),
+  { yTitle: 'Per cent of the group enrolled', tickSuffix: '%', labelValues: true },
+)
+const electiveSpec = bar(
+  elective.figures.map((f) => f.label),
+  elective.figures.map((f) => f.value),
+  { yTitle: 'Per cent of the group enrolled', tickSuffix: '%', labelValues: true },
+)
+const ohioSpec = bar(
+  quarter.figures.map((f) => f.label),
+  quarter.figures.map((f) => f.value),
+  { yTitle: 'Per cent of high-school pupils', tickSuffix: '%', labelValues: true },
+)
+const standardSpec = bar(
+  standard.figures.map((f) => f.label),
+  standard.figures.map((f) => f.value),
+  { yTitle: 'Black pupils enrolled', labelValues: true },
+)
+---
+
+<Article slug="where-the-choosing-starts">
+  <p>
+    A county's schools can be measured two ways. One asks what its children score and how many of
+    them are suspended. The other asks what they were offered — whether the building holds a
+    calculus class at all, whether anyone teaches physics, whether a pupil who wants a college
+    credit can get one without leaving town. The second measure is a federal collection, school by
+    school and by race, and it is the half of the record that goes unread.
+  </p>
+
+  <h2>What is on offer</h2>
+  <AssertionCard assertion={two} open />
+  <AssertionCard assertion={ohioHalf} />
+  <AssertionCard assertion={rank} />
+  <p>
+    A high school of nine hundred and eighty-four pupils that offers no Advanced Placement course is
+    unusual in Ohio and not unheard of, and the company it keeps is instructive: online academies,
+    career centres, and the high schools of Lorain, Euclid, Dayton and Columbus. Every one of them
+    serves a city that has lost people and industry.
+  </p>
+  <AssertionCard assertion={series} />
+  <AssertionCard assertion={supplied} open />
+  <ChartFigure
+    id="ohio"
+    title="Advanced Placement and gifted programmes, Allen County against Ohio"
+    caption="Per cent of high-school pupils enrolled, 2021–22, over every Ohio school with a twelfth grade."
+    columns={['Measure', 'Per cent']}
+    rows={quarter.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="ohio" set:html={JSON.stringify(ohioSpec)} is:inline />
+  <AssertionCard assertion={quarter} />
+  <p>
+    The pattern is sharp enough to be worth stating plainly. On every course a district staffs out
+    of its own budget and examines itself, this county is at or above the state. On the one whose
+    credit is granted elsewhere, by an examination a family pays a fee to sit, it is at a quarter of
+    the state. That is a correlation and not a mechanism, and the file carries no reason.
+  </p>
+  <AssertionCard assertion={perry} />
+  <AssertionCard assertion={gifted} />
+
+  <h2>Who is teaching it</h2>
+  <AssertionCard assertion={certified} />
+  <AssertionCard assertion={allenEast} />
+  <p>
+    Six of the ten schools were at ninety-four per cent or above. One was at half, and the classes
+    it staffed with a teacher certified in something else include its only calculus class and five
+    of its seven algebra I classes.
+  </p>
+  <AssertionCard assertion={retired} />
+
+  <h2>Who takes them</h2>
+  <AssertionCard assertion={three} open />
+  <AssertionCard assertion={required} />
+  <ChartFigure
+    id="required"
+    title="The courses the state requires"
+    caption="Physics, geometry and algebra II, as a share of each group's high-school enrolment, 2021–22."
+    columns={['Course and group', 'Per cent']}
+    rows={required.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="required" set:html={JSON.stringify(requiredSpec)} is:inline />
+  <AssertionCard assertion={elective} open />
+  <ChartFigure
+    id="elective"
+    title="The courses a pupil elects"
+    caption="Chemistry and Advanced Placement, as a share of each group's high-school enrolment, 2021–22."
+    columns={['Course and group', 'Per cent']}
+    rows={elective.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="elective" set:html={JSON.stringify(electiveSpec)} is:inline />
+  <p>
+    Every course on which the two groups are level is one a pupil is carried into by the graduation
+    requirement. Every course on which they are not is one a pupil, a parent or a counsellor has to
+    ask for. The file records who ended up enrolled and nothing about who asked, so what follows is
+    a shape rather than a cause.
+  </p>
+  <AssertionCard assertion={science} />
+
+  <h2>Two gaps, not one</h2>
+  <AssertionCard assertion={building} />
+  <AssertionCard assertion={standard} open />
+  <ChartFigure
+    id="standardised"
+    title="Black pupils expected and enrolled, standardising on the school"
+    caption="Each school's own white rate applied to its own Black enrolment, against what the file records."
+    columns={['Measure', 'Pupils']}
+    rows={standard.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="standardised" set:html={JSON.stringify(standardSpec)} is:inline />
+  <AssertionCard assertion={split} />
+  <AssertionCard assertion={lima} />
+  <p>
+    The two halves point at different institutions. What happens inside a building is a district's
+    business — who is advised into a course, who is scheduled against it, who is asked for money.
+    Which building a child is in is a matter of district lines, open enrolment and where a family
+    can afford to live, and no counselling office reaches it. Both are true here and the larger of
+    the two is the first.
+  </p>
+
+  <h2>The county's other route</h2>
+  <AssertionCard assertion={ccp} open />
+  <AssertionCard assertion={pays} />
+  <AssertionCard assertion={spencerville} />
+  <AssertionCard assertion={least} />
+  <p>
+    Nearly half of Spencerville High School is enrolled in a college course and one pupil in twenty
+    at Lima Senior is. The programme is the same programme in both buildings, paid for the same way
+    by the same statute, and the two counts are 121 of 252 and 48 of 984.
+  </p>
+  <AssertionCard assertion={race} />
+  <AssertionCard assertion={bath} />
+
+  <h2>Where it went</h2>
+  <AssertionCard assertion={fell} open />
+  <AssertionCard assertion={ratio} />
+  <AssertionCard assertion={lima2013} />
+  <AssertionCard assertion={changed} />
+  <AssertionCard assertion={stayed} />
+  <AssertionCard assertion={substitution} />
+  <p>
+    Three explanations fit the file equally well and it separates none of them: the advanced pupils
+    moved to College Credit Plus, the certified teachers left, or too few pupils elected the courses
+    to fill a section. The substitution story is the strongest and it does not close the question,
+    because the county gained thirty-four college-course places against a hundred and thirty-eight
+    Advanced Placement ones lost, and at the school where most of the loss sits the college-course
+    count went from forty-nine to forty-eight.
+  </p>
+</Article>

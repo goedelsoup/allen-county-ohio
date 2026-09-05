@@ -13351,6 +13351,462 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "COVID-19 deaths", value: 199.0, literal: "199" },
         ],
     },
+    Assertion {
+        id: "two-of-ten-high-schools-offer-it",
+        statement: "Two of the ten high schools standing in Allen County offer an Advanced Placement \
+                    course. Elida and Shawnee do; the other eight, including the county's largest, \
+                    do not.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**Two of the ten high schools standing in Allen County offer an Advanced Placement course.** Elida and Shawnee do; Lima Senior, Apollo Career Center, Bath, Bluffton, Allen East, Perry, Spencerville and West Central Learning Academy do not. [verified] \u{2014} [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), the 2021 course-offering file, which is the 2021\u{2013}22 school year."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[],
+    },
+    Assertion {
+        id: "half-of-ohios-high-schools-and-a-fifth-of-this-countys",
+        statement: "Half of Ohio's high schools offer Advanced Placement. 498 of the state's 1,009 \
+                    report a course, and 322 of the 419 that hold five hundred pupils or more; Allen \
+                    County has four of that size and two of them offer it.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**Half of Ohio's high schools offer Advanced Placement and a fifth of this county's do.** 498 of the state's 1,009 high schools with a twelfth grade report an AP course, and among those holding five hundred pupils or more it is 322 of 419. Allen County has four of that size and two of them offer it. [verified] \u{2014} the same file, over every Ohio school with a twelfth grade."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[
+            Figure { label: "Ohio high schools offering AP", value: 498.0, literal: "498" },
+            Figure { label: "Ohio high schools with a twelfth grade", value: 1009.0, literal: "1,009" },
+        ],
+    },
+    Assertion {
+        id: "lima-senior-is-nineteenth-largest-of-the-schools-without-it",
+        statement: "Lima Senior High School is the nineteenth largest of the five hundred and three \
+                    Ohio high schools that offer no Advanced Placement course. The eighteen above it \
+                    are online academies, career centres and big-city high schools.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**Lima Senior High School is the nineteenth largest of the five hundred and three Ohio high schools that offer none.** The eighteen above it are online academies, career centres and the large-city high schools of Lorain, Euclid, Dayton and Columbus. [verified] \u{2014} the same file, ranked on the district files' enrolment."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[],
+    },
+    Assertion {
+        id: "six-four-four-five-two",
+        statement: "The number of Allen County high schools offering an Advanced Placement course \
+                    has been six, four, four, five and two across the five collections that asked. \
+                    Shawnee and Elida answered yes every time and four schools answered no every \
+                    time.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**The number of this county's high schools offering it has been six, four, four, five and two.** The collection asked in 2013, 2015, 2017, 2020 and 2021. Shawnee and Elida answered yes every time; Apollo, Bluffton, Perry and West Central answered no every time; Lima, Bath, Allen East and Spencerville each changed their answer at least once. [verified] \u{2014} the same source, its five collections that carry the question."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[],
+    },
+    Assertion {
+        id: "perry-dropped-physics-and-calculus",
+        statement: "Perry High School held six physics classes and a calculus class in 2017 and none \
+                    of either in 2021. It is the only high school in Allen County that offers no \
+                    physics, in a state where 807 of 1,009 do.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**Perry High School held six physics classes and a calculus class in 2017 and none of either in 2021.** It is the only high school in the county that offers no physics, in a state where 807 of 1,009 do. [verified] \u{2014} the same source's 2017 and 2021 files. Calculus is the thinner offer everywhere: 594 of Ohio's high schools have it and seven of this county's ten."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[
+            Figure { label: "Ohio high schools offering physics", value: 807.0, literal: "807" },
+            Figure { label: "Ohio high schools offering calculus", value: 594.0, literal: "594" },
+        ],
+    },
+    Assertion {
+        id: "better-supplied-than-ohio-on-everything-but-one",
+        statement: "Allen County's high schools are better supplied than Ohio's on every science and \
+                    mathematics course but one. Ten of ten offer chemistry against 82.2 per cent of \
+                    Ohio's, nine of ten physics against 80.0 and seven of ten calculus against 58.9 \
+                    \u{2014} and two of ten Advanced Placement against 49.4.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**The county is better supplied than Ohio on everything except the course with a fee attached.** Ten of ten offer chemistry against 82.2 per cent of Ohio's, ten of ten advanced mathematics against 85.4, nine of ten physics against 80.0, seven of ten calculus against 58.9 \u{2014} and two of ten Advanced Placement against 49.4. [verified] \u{2014} the same file for both."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[
+            Figure { label: "chemistry, Ohio", value: 82.2, literal: "82.2" },
+            Figure { label: "physics, Ohio", value: 80.0, literal: "80.0" },
+            Figure { label: "calculus, Ohio", value: 58.9, literal: "58.9" },
+            Figure { label: "Advanced Placement, Ohio", value: 49.4, literal: "49.4" },
+        ],
+    },
+    Assertion {
+        id: "four-of-ten-report-a-gifted-programme",
+        statement: "Four of Allen County's ten high schools report a gifted programme, and neither \
+                    of the two largest is one of them. Shawnee Local reports none at any of its four \
+                    buildings.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**Four of the ten report a gifted programme and none of them is one of the two largest.** Bluffton, Elida, Perry and Spencerville say yes; Lima Senior, Apollo, Shawnee, Bath, Allen East and West Central say no, and Shawnee Local reports none at any of its four buildings. [verified] \u{2014} the same file."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-beat-ohio-on-certification-by-a-point",
+        statement: "In 2017, 459 of the 528 mathematics and science classes held in Allen County's \
+                    high schools were taught by a teacher certified in the subject \u{2014} 86.9 per \
+                    cent against Ohio's 85.4.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**In 2017 this county taught its mathematics and science slightly better staffed than Ohio did.** 459 of the 528 classes its high schools held in the eight subjects the collection asks about were taught by a teacher certified in that subject, 86.9 per cent against the state's 85.4. [verified] \u{2014} the same source, its last collection to ask."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[
+            Figure { label: "Allen County", value: 86.9, literal: "86.9" },
+            Figure { label: "Ohio", value: 85.4, literal: "85.4" },
+        ],
+    },
+    Assertion {
+        id: "allen-east-taught-half-its-classes-uncertified",
+        statement: "Allen East High School taught 29 of its 58 mathematics and science classes in \
+                    2017 without a teacher certified in the subject, including its only calculus \
+                    class and five of its seven algebra I classes.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "Six of the ten schools were at 94 per cent or above and one was at half: Allen East taught 29 of 58, including its only calculus class and five of its seven algebra I classes, without a teacher certified in the subject. [verified] \u{2014} the same file."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[
+            Figure { label: "certified", value: 29.0, literal: "29" },
+            Figure { label: "classes held", value: 58.0, literal: "58" },
+        ],
+    },
+    Assertion {
+        id: "the-certification-question-was-retired-after-2017",
+        statement: "The federal question about who teaches mathematics and science was retired after \
+                    2017. The 2020 and 2021 collections return a reserved code in all eight columns \
+                    for every school in the country.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-course-offerings-2013-2021.yml", "**The question was retired after 2017 and there is no later answer.** The 2020 and 2021 collections return a reserved code in all eight columns for every school in the country, so whether Allen East still teaches calculus without a certified teacher is not in any federal file. [verified] \u{2014} the same source, the 2017 and 2021 files compared column by column."),
+        ],
+        answers: &["does not know what any child was taught", "does not assert that a school without Advanced Placement teaches less"],
+        figures: &[],
+    },
+    Assertion {
+        id: "three-black-pupils-in-an-advanced-placement-course",
+        statement: "One hundred and thirty-two of Allen County's 4,836 high-school pupils are \
+                    enrolled in an Advanced Placement course, and three of them are Black. Black \
+                    pupils are 713 of the roll and 2.3 per cent of the AP seats.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**One hundred and thirty-two of Allen County's 4,836 high-school pupils are enrolled in an Advanced Placement course, and three of them are Black.** [verified] \u{2014} [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), its 2021 Advanced Placement and enrolment files for the county's ten high schools. Black pupils are 713 of the roll, one in seven, and 2.3 per cent of the AP seats."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-required-courses-are-taken-evenly",
+        statement: "Black pupils in Allen County take physics at 20.9 per cent of their number \
+                    against white pupils' 17.5, geometry at 23.3 against 21.5 and algebra II at 19.9 \
+                    against 17.6 \u{2014} level or ahead in each of the courses the state requires.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**The courses the state requires are taken evenly and the ones a pupil elects are not.** Black pupils in this county take physics at 20.9 per cent of their number against white pupils' 17.5, geometry at 23.3 against 21.5 and algebra II at 19.9 against 17.6 \u{2014} level or ahead in each. They take chemistry at 9.5 per cent against 18.8, calculus at 1.8 against 3.2, College Credit Plus at 3.5 against 12.5 and Advanced Placement at 0.4 against 3.2. [verified] \u{2014} the same source, the 2021 coursework files divided by its own enrolment."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "physics, Black", value: 20.9, literal: "20.9" },
+            Figure { label: "physics, white", value: 17.5, literal: "17.5" },
+            Figure { label: "geometry, Black", value: 23.3, literal: "23.3" },
+            Figure { label: "geometry, white", value: 21.5, literal: "21.5" },
+        ],
+    },
+    Assertion {
+        id: "the-elective-courses-are-not",
+        statement: "In the courses a pupil elects, Allen County's Black pupils take chemistry at 9.5 \
+                    per cent against white pupils' 18.8, calculus at 1.8 against 3.2, College Credit \
+                    Plus at 3.5 against 12.5 and Advanced Placement at 0.4 against 3.2.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**The courses the state requires are taken evenly and the ones a pupil elects are not.** Black pupils in this county take physics at 20.9 per cent of their number against white pupils' 17.5, geometry at 23.3 against 21.5 and algebra II at 19.9 against 17.6 \u{2014} level or ahead in each. They take chemistry at 9.5 per cent against 18.8, calculus at 1.8 against 3.2, College Credit Plus at 3.5 against 12.5 and Advanced Placement at 0.4 against 3.2. [verified] \u{2014} the same source, the 2021 coursework files divided by its own enrolment."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "chemistry, Black", value: 9.5, literal: "9.5" },
+            Figure { label: "chemistry, white", value: 18.8, literal: "18.8" },
+            Figure { label: "Advanced Placement, Black", value: 0.4, literal: "0.4" },
+            Figure { label: "Advanced Placement, white", value: 3.2, literal: "3.2" },
+        ],
+    },
+    Assertion {
+        id: "most-of-the-black-pupils-are-in-the-school-with-no-ap",
+        statement: "424 of Allen County's 713 Black high-school pupils attend Lima Senior, which \
+                    offers no Advanced Placement course, so the two groups are not looking at the \
+                    same menu.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "424 of the county's 713 Black high-school pupils attend Lima Senior, which offers no AP course, so the two groups are not looking at the same menu."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "at Lima Senior", value: 424.0, literal: "424" },
+            Figure { label: "Black high-school pupils", value: 713.0, literal: "713" },
+        ],
+    },
+    Assertion {
+        id: "the-gap-survives-standardising-on-the-school",
+        statement: "Applying each Allen County high school's own white rate to its own Black \
+                    enrolment, the county would expect just under twelve Black pupils in an Advanced \
+                    Placement course and has three, 66.7 in College Credit Plus and has 25, and 88.9 \
+                    in chemistry and has 68.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "Apply each school's *own* white rate to its *own* Black enrolment, which removes the menu difference entirely, and the county would expect just under twelve Black pupils in an Advanced Placement course and has 3; 66.7 in College Credit Plus and has 25; 27.2 in calculus and has 13; and 88.9 in chemistry and has 68. [inference] \u{2014} computed here from the same files."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "College Credit Plus, expected", value: 66.7, literal: "66.7" },
+            Figure { label: "College Credit Plus, actual", value: 25.0, literal: "25" },
+            Figure { label: "chemistry, expected", value: 88.9, literal: "88.9" },
+            Figure { label: "chemistry, actual", value: 68.0, literal: "68" },
+        ],
+    },
+    Assertion {
+        id: "between-schools-multiplies-by-one-point-six-and-inside-by-four-point-six",
+        statement: "Restricting the Advanced Placement comparison to the two Allen County schools \
+                    that offer it leaves white pupils at 11.8 per cent and Black pupils at 2.5, a \
+                    ratio of 4.6 where the county-wide ratio is 7.6.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "Restricting the AP comparison to the two schools that offer it leaves white pupils at 11.8 per cent and Black pupils at 2.5, a ratio of 4.6 where the county-wide ratio is 7.6, so the part that is between schools multiplies the gap by about 1.6 and the part inside them by about 4.6."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "within the two schools", value: 4.6, literal: "4.6" },
+            Figure { label: "county-wide", value: 7.6, literal: "7.6" },
+        ],
+    },
+    Assertion {
+        id: "inside-lima-the-ratio-is-five-to-one",
+        statement: "Inside Lima Senior High School, 343 white pupils hold 33 of the school's 48 \
+                    College Credit Plus places and 424 Black pupils hold 8 \u{2014} 9.6 per cent \
+                    against 1.9.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**Inside Lima Senior the ratio is five to one.** Its 343 white pupils hold 33 of its 48 College Credit Plus places and its 424 Black pupils hold 8 \u{2014} 9.6 per cent against 1.9. In calculus it is 17 against 11 on the same two enrolments. [verified] \u{2014} the same source, that school's rows."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "white", value: 9.6, literal: "9.6" },
+            Figure { label: "Black", value: 1.9, literal: "1.9" },
+        ],
+    },
+    Assertion {
+        id: "advanced-placement-fell-by-half-and-by-nine-tenths",
+        statement: "Advanced Placement enrolment in Allen County fell from 270 pupils in 2013 to 132 \
+                    in 2021 on a high-school roll that moved from 4,917 to 4,836. The Black count \
+                    runs 29, 6, 4, 3.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**Advanced Placement in this county has fallen by half and among its Black pupils by nine tenths.** 270 pupils were enrolled in an AP course in 2013 and 132 in 2021, on a high-school roll that moved from 4,917 to 4,836; the Black count runs 29, 6, 4, 3. [verified] \u{2014} the same source, its 2013, 2015, 2017 and 2021 files. The white rate divided by the Black rate was 1.43 in 2013 and is 7.60 now."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "2013", value: 270.0, literal: "270" },
+            Figure { label: "2021", value: 132.0, literal: "132" },
+            Figure { label: "Black, 2013", value: 29.0, literal: "29" },
+        ],
+    },
+    Assertion {
+        id: "the-ratio-went-from-one-point-four-to-seven-point-six",
+        statement: "The white Advanced Placement rate in Allen County divided by the Black rate was \
+                    1.43 in 2013 and is 7.60 now.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "The white rate divided by the Black rate was 1.43 in 2013 and is 7.60 now."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "2013", value: 1.43, literal: "1.43" },
+            Figure { label: "2021", value: 7.6, literal: "7.60" },
+        ],
+    },
+    Assertion {
+        id: "lima-enrolled-sixty-seven-in-2013",
+        statement: "Lima Senior High School enrolled 67 pupils in Advanced Placement in 2013, \
+                    thirteen of them Black, and those thirteen were nearly half of every Black \
+                    Advanced Placement pupil in Allen County that year.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**Lima Senior enrolled 67 pupils in Advanced Placement in 2013, thirteen of them Black, and it is the school that stopped.** Those thirteen were nearly half of every Black AP pupil in the county that year. [verified] \u{2014} the same file, that school's 2013 rows."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "pupils", value: 67.0, literal: "67" },
+        ],
+    },
+    Assertion {
+        id: "the-county-takes-more-science-than-ohio",
+        statement: "Allen County's high schools run 18.8 per cent in physics against Ohio's 12.4, \
+                    17.1 in chemistry against 12.3, 20.0 in advanced mathematics against 13.9 and \
+                    29.8 in biology against 25.8.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "**The county takes more science than Ohio and a quarter of the Advanced Placement.** Against the state's high schools it runs 18.8 per cent in physics to Ohio's 12.4, 17.1 in chemistry to 12.3, 20.0 in advanced mathematics to 13.9 and 29.8 in biology to 25.8 \u{2014} and 2.7 per cent in Advanced Placement to Ohio's 10.5, 3.2 in a gifted programme to 9.9, and 2.9 in calculus to 3.8. [verified] \u{2014} the same source, over every Ohio school with a twelfth grade."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "physics, Allen", value: 18.8, literal: "18.8" },
+            Figure { label: "physics, Ohio", value: 12.4, literal: "12.4" },
+            Figure { label: "chemistry, Allen", value: 17.1, literal: "17.1" },
+            Figure { label: "chemistry, Ohio", value: 12.3, literal: "12.3" },
+        ],
+    },
+    Assertion {
+        id: "a-quarter-of-ohios-advanced-placement",
+        statement: "Allen County's high schools run 2.7 per cent in Advanced Placement against \
+                    Ohio's 10.5 and 3.2 per cent in a gifted programme against Ohio's 9.9.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-advanced-coursework-2021.yml", "and 2.7 per cent in Advanced Placement to Ohio's 10.5, 3.2 in a gifted programme to 9.9, and 2.9 in calculus to 3.8. [verified] \u{2014} the same source, over every Ohio school with a twelfth grade."),
+        ],
+        answers: &["does not establish that any child was refused a course"],
+        figures: &[
+            Figure { label: "Advanced Placement, Allen", value: 2.7, literal: "2.7" },
+            Figure { label: "Advanced Placement, Ohio", value: 10.5, literal: "10.5" },
+            Figure { label: "gifted, Allen", value: 3.2, literal: "3.2" },
+            Figure { label: "gifted, Ohio", value: 9.9, literal: "9.9" },
+        ],
+    },
+    Assertion {
+        id: "four-hundred-and-ninety-two-sat-a-college-course",
+        statement: "Four hundred and ninety-two of Allen County's high-school pupils sat a college \
+                    course in 2021\u{2013}22, against a hundred and thirty-two in an Advanced \
+                    Placement one. That is 10.2 per cent of the roll where Ohio's high schools run \
+                    9.6.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-dual-enrollment-2017-2021.yml", "**Four hundred and ninety-two of Allen County's high-school pupils sat a college course in 2021\u{2013}22, against a hundred and thirty-two in an Advanced Placement one.** [verified] \u{2014} [the Civil Rights Data Collection](../../catalog/crdc-civil-rights-data-collection.md), its 2021 dual-enrolment and Advanced Placement files for the county's ten high schools. That is 10.2 per cent of the roll where Ohio's high schools run 9.6, and it is the one advanced route on which this county is ahead of the state."),
+        ],
+        answers: &["does not assert that College Credit Plus is the better of the two routes"],
+        figures: &[
+            Figure { label: "Allen County", value: 10.2, literal: "10.2" },
+            Figure { label: "Ohio", value: 9.6, literal: "9.6" },
+        ],
+    },
+    Assertion {
+        id: "the-state-pays-for-one-and-the-family-for-the-other",
+        statement: "Chapter 3365 of the Ohio Revised Code makes a pupil's own school pay for the \
+                    textbooks of a College Credit Plus course and requires the college to waive \
+                    every other fee, so a family pays nothing; an Advanced Placement credit is \
+                    granted by an examination with a fee.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-dual-enrollment-2017-2021.yml", "**The two routes are not paid for by the same person.** Chapter 3365 of the Revised Code makes the pupil's own school pay for the textbooks and requires the college to waive every other fee, so a family pays nothing; the Advanced Placement credit is granted by an examination with a fee. [verified] \u{2014} [the Revised Code](../../catalog/ohio-revised-code.md), section 3365.07."),
+        ],
+        answers: &["does not assert that College Credit Plus is the better of the two routes"],
+        figures: &[],
+    },
+    Assertion {
+        id: "nearly-half-of-spencerville-is-in-a-college-course",
+        statement: "121 of Spencerville High School's 252 pupils are enrolled in a college course, \
+                    the highest share of any high school in Allen County and nearly ten times the \
+                    share at Lima Senior.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-dual-enrollment-2017-2021.yml", "**Nearly half of Spencerville High School is enrolled in a college course.** 121 of its 252 pupils, the highest share of any high school in this county and nearly ten times the share at Lima Senior. [verified] \u{2014} the same file. Allen East follows at 28.5 per cent; the other seven that offer it run between 4.9 and 8.9."),
+        ],
+        answers: &["does not assert that College Credit Plus is the better of the two routes"],
+        figures: &[
+            Figure { label: "enrolled", value: 121.0, literal: "121" },
+            Figure { label: "pupils", value: 252.0, literal: "252" },
+        ],
+    },
+    Assertion {
+        id: "the-largest-high-school-uses-it-least",
+        statement: "Lima Senior High School enrols 48 of its 984 pupils in a college course \u{2014} \
+                    4.9 per cent \u{2014} and none at all in an Advanced Placement one.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-dual-enrollment-2017-2021.yml", "**The county's largest high school uses it least.** Lima Senior enrols 48 of 984, and it is the one school here that offers neither this nor Advanced Placement at any scale: 4.9 per cent of its pupils are in a college course and none is in an AP one. [verified] \u{2014} the same source, its 2021 offerings and enrolment files."),
+        ],
+        answers: &["does not assert that College Credit Plus is the better of the two routes"],
+        figures: &[
+            Figure { label: "enrolled", value: 48.0, literal: "48" },
+            Figure { label: "pupils", value: 984.0, literal: "984" },
+        ],
+    },
+    Assertion {
+        id: "bath-went-from-one-hundred-and-ninety-nine-to-none",
+        statement: "Allen County's College Credit Plus enrolment moved from 458 in 2017 to 492 in \
+                    2021, and inside it Elida went from 5 to 51 and Shawnee from 18 to 51 while Bath \
+                    went from 199 to 0.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-dual-enrollment-2017-2021.yml", "**Where the county grew, it grew unevenly.** The county total moved from 458 in 2017 to 492 in 2021, a rise of 7.4 per cent, and inside it Elida went from 5 to 51 and Shawnee from 18 to 51 while Bath went from 199 to 0. [verified] \u{2014} the same source, its 2017 and 2021 files."),
+        ],
+        answers: &["does not assert that College Credit Plus is the better of the two routes"],
+        figures: &[
+            Figure { label: "2017", value: 458.0, literal: "458" },
+            Figure { label: "2021", value: 492.0, literal: "492" },
+        ],
+    },
+    Assertion {
+        id: "white-pupils-are-three-and-a-half-times-as-likely",
+        statement: "432 of Allen County's 3,469 white high-school pupils are enrolled in a college \
+                    course, 12.5 per cent, against 25 of 713 Black pupils, 3.5 per cent.",
+        topic: "schools",
+        supports: &[
+            support!("measure/allen-county-dual-enrollment-2017-2021.yml", "**White pupils here are three and a half times as likely to be in it as Black pupils.** 432 of the county's 3,469 white high-school pupils are enrolled, 12.5 per cent, against 25 of 713 Black pupils, 3.5 per cent. [verified] \u{2014} the same source, by race."),
+        ],
+        answers: &["does not assert that College Credit Plus is the better of the two routes"],
+        figures: &[
+            Figure { label: "white", value: 12.5, literal: "12.5" },
+            Figure { label: "Black", value: 3.5, literal: "3.5" },
+        ],
+    },
+    Assertion {
+        id: "the-pupils-did-not-leave",
+        statement: "Allen County's high-school roll fell by 81 of 4,917 between 2013 and 2021, 1.6 \
+                    per cent, against an Advanced Placement enrolment that fell 51.1 per cent and a \
+                    Black Advanced Placement enrolment that fell 89.7.",
+        topic: "schools",
+        supports: &[
+            support!("question/where-the-advanced-placement-went.yml", "**The one thing the file rules out is that the pupils left.** The county's high-school roll fell by 81 of 4,917 between 2013 and 2021, 1.6 per cent, against an Advanced Placement enrolment that fell by 51.1 per cent and a Black Advanced Placement enrolment that fell by 89.7. [verified] \u{2014} the same source's enrolment files for the two years."),
+        ],
+        answers: &["does not infer that any district decided against the courses"],
+        figures: &[
+            Figure { label: "roll", value: 1.6, literal: "1.6" },
+            Figure { label: "Advanced Placement", value: 51.1, literal: "51.1" },
+            Figure { label: "Black Advanced Placement", value: 89.7, literal: "89.7" },
+        ],
+    },
+    Assertion {
+        id: "the-substitution-replaced-a-quarter-of-the-seats",
+        statement: "Allen County's College Credit Plus enrolment rose from 458 to 492 while its \
+                    Advanced Placement enrolment fell 138, so the substitution, if that is what it \
+                    is, replaced fewer than a quarter of the lost seats; at Lima Senior College \
+                    Credit Plus went from 49 to 48.",
+        topic: "schools",
+        supports: &[
+            support!("question/where-the-advanced-placement-went.yml", "**The substitution story is the strongest of the three and it does not close the question.** The county's College Credit Plus enrolment rose from 458 to 492 while its AP enrolment fell 138 \u{2014} so the substitution, if that is what it is, replaced fewer than a quarter of the lost seats. And at Lima Senior, where most of the loss sits, College Credit Plus went from 49 to 48."),
+        ],
+        answers: &["does not infer that any district decided against the courses"],
+        figures: &[
+            Figure { label: "College Credit Plus, 2021", value: 492.0, literal: "492" },
+            Figure { label: "Advanced Placement seats lost", value: 138.0, literal: "138" },
+        ],
+    },
+    Assertion {
+        id: "the-four-that-changed-did-not-change-together",
+        statement: "Lima Senior answered yes to Advanced Placement in 2013, no in 2015 and 2017, yes \
+                    in 2020 and no in 2021; Spencerville answered yes once, in 2013; Bath and Allen \
+                    East answered yes four times and no in 2021.",
+        topic: "schools",
+        supports: &[
+            support!("question/where-the-advanced-placement-went.yml", "**The four that changed did not change together.** Lima Senior answered yes in 2013, no in 2015 and 2017, yes in 2020 and no in 2021. Spencerville answered yes once, in 2013. Bath and Allen East answered yes four times and no in 2021. Shawnee and Elida answered yes in all five collections; Apollo, Bluffton, Perry and West Central answered no in all five. [verified] \u{2014} the same source,"),
+        ],
+        answers: &["does not infer that any district decided against the courses"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

@@ -1,0 +1,75 @@
+id: a-gap-between-schools-is-not-a-gap-inside-one
+summary: >-
+  Black pupils in Allen County take an Advanced Placement course at a seventh of the white rate, and
+  424 of the county's 713 Black high-school pupils attend the one large high school that offers no
+  such course. Those are two different findings with two different remedies, and a single ratio
+  reports neither. Before this corpus publishes a disparity across a county, it separates the part
+  that is which institution people are in from the part that is what happens to them inside it, and
+  publishes both.
+context: |
+  The county's ten high schools in 2021–22, on four measures, as a county-wide white-to-Black rate
+  ratio and as the same ratio after each school's own white rate is applied to its own Black
+  enrolment:
+
+      measure                 county ratio   within-school   direction of the between-school part
+      Advanced Placement              7.60            4.63   widens the gap
+      College Credit Plus             3.55            2.67   widens the gap
+      chemistry                       1.97            1.31   widens the gap
+      calculus                        1.74            2.09   narrows the gap
+
+  The fourth row is the reason this rule is written down. Calculus is offered at seven of the ten
+  schools and the county's Black pupils are concentrated in one that offers it and teaches a good
+  deal of mathematics; the raw county ratio is therefore *smaller* than the gap inside the buildings,
+  and a corpus that published only the raw ratio would have understated it.
+
+  The corpus already separates a place from a population in
+  [located here is not of here](located-here-is-not-of-here.yml) and its converse
+  [of here is not located here](of-here-is-not-located-here.yml). Those are about where an event was
+  recorded. This is about which of two nested facts a ratio is measuring — and unlike those, both
+  halves here are true at once and both matter.
+decision: |
+  **A disparity computed over a county is published together with the same disparity computed
+  inside its units, and the corpus says which of the two carries the finding.**
+
+  - **Compute the within-unit version by direct standardisation on the unit.** Apply each school's
+    own rate for the reference group to that school's own count of the compared group, and sum. The
+    result answers *what would this county look like if the two groups were treated alike in every
+    building*, which is the question a school district can act on.
+  - **Report the between-unit part as a fact about sorting, not as a residual.** "424 of the county's
+    713 Black high-school pupils attend a school that offers no Advanced Placement course" is a
+    finding, and it is a finding about enrolment boundaries and district lines rather than about
+    counselling.
+  - **Name the direction.** The between-unit part can narrow a gap as easily as widen it, and a
+    corpus that assumes it always widens will publish the wrong sign somewhere.
+  - **Where the two disagree, publish both and refuse the single number.** A ratio of 7.60 and a
+    ratio of 4.63 are both true, and neither is *the* disparity.
+  - **The units are the ones the reader can act on.** For a school measure that is the school, not
+    the district and not the census tract, because a course is put on a timetable in a building.
+rationale: |
+  **The two halves point at different institutions.** The within-school gap is about who is advised
+  into a course, who is charged for it and who is scheduled against it — a district's business. The
+  between-school gap is about which children are in which building, which in Ohio is a matter of
+  district boundaries, open enrolment and where a family can afford to live, and no school's
+  counselling office reaches it. Reporting one number invites the reader to hand the whole thing to
+  whichever institution the number is attached to.
+
+  **The arithmetic is unstable in the direction people assume.** Three of the four measures above
+  behave as expected and the fourth does not, and there is nothing in the data to warn a reader
+  which is which. This corpus has already learned the general form of this in
+  [a rank is an estimate](a-rank-is-an-estimate.yml): a summary statistic across unequal units hides
+  its own composition.
+
+  **What this does not license.** Treating the between-school part as innocent. A county in which
+  the largest concentration of Black pupils attends the one high school that offers no Advanced
+  Placement course has a finding on its hands, and the fact that it is a sorting effect rather than
+  a counselling effect makes it larger rather than smaller.
+
+  **Nor does it license a causal reading of either half.** Standardising on the school removes the
+  difference in what was offered. It does not remove differences in what pupils arrived able to
+  take, and nothing in this corpus separates those.
+
+  **Where this applies next.** Every county-wide rate this corpus computes over a set of unequal
+  units and a divided population: suspension by school, mortgage denial by lender, mortality by
+  hospital, poverty by township.
+status: accepted
+date: "2026-09-05"

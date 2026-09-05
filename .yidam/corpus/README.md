@@ -106,6 +106,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
 | [waynesfield-goshen-local-school-district.yml](jurisdiction/waynesfield-goshen-local-school-district.yml) | jurisdiction | Waynesfield-Goshen Local School District | 3 | 6v / 0i / 0o | 51 |
+| [allen-county-advanced-coursework-2021.yml](measure/allen-county-advanced-coursework-2021.yml) | measure | Who takes the advanced courses in Allen County, 2021 | 7 | 12v / 4i / 1o | 133 |
 | [allen-county-against-ohio-1980-2008.yml](measure/allen-county-against-ohio-1980-2008.yml) | measure | Allen County's Republican share against Ohio's and the nation's, 1980–2008 | 5 | 4v / 5i / 0o | 78 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
@@ -134,6 +135,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-common-pleas-bench-1833-1920.yml](measure/allen-county-common-pleas-bench-1833-1920.yml) | measure | The Allen County common pleas bench, 1833–1920 | 3 | 13v / 2i / 2o | 109 |
 | [allen-county-commuting-2022.yml](measure/allen-county-commuting-2022.yml) | measure | Who comes and goes to work in Allen County, 2022 | 4 | 7v / 9i / 0o | 131 |
 | [allen-county-congregations-2020.yml](measure/allen-county-congregations-2020.yml) | measure | Allen County's congregations, 2020 | 2 | 6v / 4i / 1o | 79 |
+| [allen-county-course-offerings-2013-2021.yml](measure/allen-county-course-offerings-2013-2021.yml) | measure | What Allen County's high schools offer, 2013–2021 | 6 | 14v / 3i / 1o | 134 |
 | [allen-county-court-caseloads-2007-2017.yml](measure/allen-county-court-caseloads-2007-2017.yml) | measure | Allen County court caseloads, 2007–2017 | 5 | 8v / 4i / 1o | 92 |
 | [allen-county-coverage-types-2023.yml](measure/allen-county-coverage-types-2023.yml) | measure | What Allen County's health insurance is made of, 2019–2023 | 6 | 12v / 2i / 1o | 96 |
 | [allen-county-covid-by-zip-2020-2023.yml](measure/allen-county-covid-by-zip-2020-2023.yml) | measure | COVID-19 cases by ZIP code in and around Allen County, 2020–2023 | 6 | 8v / 1i / 1o | 92 |
@@ -149,6 +151,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-distance-to-the-sea-2026.yml](measure/allen-county-distance-to-the-sea-2026.yml) | measure | How far Allen County's water is from the sea, 2026 | 4 | 11v / 2i / 0o | 81 |
 | [allen-county-domestic-animals-1910.yml](measure/allen-county-domestic-animals-1910.yml) | measure | Allen County domestic animals, on farms and off, 1910 | 2 | 3v / 3i / 1o | 62 |
 | [allen-county-drug-overdose-deaths-2020-2025.yml](measure/allen-county-drug-overdose-deaths-2020-2025.yml) | measure | Drug overdose deaths in Allen County, 2020–2025 | 2 | 6v / 3i / 1o | 71 |
+| [allen-county-dual-enrollment-2017-2021.yml](measure/allen-county-dual-enrollment-2017-2021.yml) | measure | College Credit Plus in Allen County, 2017 and 2021 | 6 | 11v / 3i / 1o | 108 |
 | [allen-county-early-deaths-by-cause-2020-2022.yml](measure/allen-county-early-deaths-by-cause-2020-2022.yml) | measure | What Allen County dies of early, 2016–2022 | 3 | 10v / 6i / 1o | 100 |
 | [allen-county-educational-attainment-2009-2023.yml](measure/allen-county-educational-attainment-2009-2023.yml) | measure | Educational attainment in Allen County, 2005–2009 and 2019–2023 | 5 | 14v / 1i / 1o | 150 |
 | [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 9v / 1i / 0o | 70 |
@@ -569,6 +572,7 @@ Sorted by: kind, then alphabetically.
 | [when-allen-county-was-organized.yml](question/when-allen-county-was-organized.yml) | question | When was Allen County's government organized? | 3 | 7v / 1i / 0o | 71 |
 | [when-limas-first-congregation-was-organized.yml](question/when-limas-first-congregation-was-organized.yml) | question | When Lima's first congregation was organized | 4 | 3v / 1i / 0o | 49 |
 | [when-the-farmland-went.yml](question/when-the-farmland-went.yml) | question | When did Allen County stop being nine-tenths farmland? | 7 | 8v / 6i / 2o | 136 |
+| [where-the-advanced-placement-went.yml](question/where-the-advanced-placement-went.yml) | question | Why did Allen County's high schools stop offering Advanced Placement? | 5 | 5v / 2i / 2o | 85 |
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
