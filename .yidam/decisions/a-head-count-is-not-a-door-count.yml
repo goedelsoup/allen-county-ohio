@@ -1,0 +1,73 @@
+id: a-head-count-is-not-a-door-count
+summary: >-
+  Allen County held 111,144 people and 33,966 households in 1970, and 102,206 people and 40,935
+  households in 2020. It lost 8,938 of the first and gained 6,969 of the second. A corpus that had
+  measured this county's decline since genesis had never counted the units the decline happens in, and the two series do not merely differ in size — they differ in sign.
+context: |
+  This corpus has a population series running from 1830, a period node named for depopulation, a
+  housing stock, a vacancy count, a tenure split and a building-permit series. It had no count of
+  households at any date before this phase, and the number it would have guessed is wrong by ten
+  thousand.
+
+      Allen County, at each census
+      year    population   households   persons in households   persons per household
+      1970       111,144       33,966                 108,679                    3.20
+      1980       112,241       39,168                 109,901                    2.81
+      1990       109,755       39,408                 104,723                    2.66
+      2000       108,464       40,646                 102,360                    2.52
+      2010       106,331       40,619                 100,397                    2.47
+      2020       102,206       40,935                  98,684                    2.41
+
+  Persons per household is not a constant and it is not noise. It fell by a quarter in fifty years,
+  monotonically, and the fall is larger than the population change it is being used to interpret.
+
+  The arithmetic that follows is the point. 98,684 people at 1970's household size would fill
+  **30,842** households. The county has 40,935. Ten thousand of this county's occupied dwellings
+  exist because the way people live changed, not because anybody arrived — and the county's housing
+  stock, 44,563 units in 2020, was built for a population that never came.
+decision: |
+  **Where a corpus measures a population, it measures the households that population lives in, at
+  the same dates, from the same instrument where one exists. Neither series may be converted into
+  the other by a fixed ratio, and any claim about housing demand, dwelling need, utility
+  connections or per-household money is stated against the household series rather than the head
+  count.**
+
+  Three consequences:
+
+  *A per-capita figure and a per-household figure are different measures and are labelled as such.*
+  This corpus already publishes a median household income for Allen County and
+  [a personal income per capita](../corpus/measure/allen-county-personal-income-1969-2024.yml). Between 1970 and 2020 the denominators of those two moved 20.5 per cent apart. A
+  comparison over time that mixes them is measuring household size.
+
+  *A population decline is not by itself a fall in demand for housing.* Allen County's stock grew
+  through five decades of population loss and the household count grew with it. The question "does
+  this place need more houses" is not answered by the question "is this place shrinking", and the
+  corpus does not let the second stand in for the first.
+
+  *Where the household series is unavailable at a date, say so rather than interpolating.* Persons
+  per household moves fast enough that a straight line between two censuses is a claim, not a fill.
+rationale: |
+  **Why this is not [a survey is not a count](a-survey-is-not-a-count.yml) or
+  [the gap between two universes is a measurement](the-gap-between-two-universes-is-a-measurement.yml).**
+  Those two are about how a figure is wrong: sampling error in the first, a mismatched denominator
+  in the second. This one is about a quantity that is simply absent, whose absence is invisible
+  because a plausible substitute is present. Nothing about the population series looked incomplete.
+
+  **What it bought here.** A fifty-year series in which the county's married-couple households fell
+  28.5 per cent from their 1980 peak while its one-person households rose 113 per cent, and the two
+  crossed from a ratio of 4.26 to one down to 1.45 to one. That is a description of the same decline
+  the corpus has been narrating, in a register the population series cannot reach: the county did
+  not only get smaller, it got differently arranged, and the arrangement is what the housing stock
+  has to answer to.
+
+  **What would falsify it.** If persons per household were roughly constant, the two series would be
+  a scalar apart and the second would be redundant. It is not constant anywhere in the record: 3.20
+  to 2.41 here, 3.11 to 2.58 for the United States over the same span. The rule is worth its cost in
+  exactly the places where the ratio moves, and it moved everywhere.
+
+  **What it generalises to.** Any stock-and-users pair where the corpus holds one side: school
+  buildings and enrolment, farms and farm acres, hospital beds and admissions, water connections and
+  residents. The failure mode is the same each time — the users are counted, the stock is counted,
+  and the ratio between them is assumed rather than measured.
+status: accepted
+date: "2026-09-05"

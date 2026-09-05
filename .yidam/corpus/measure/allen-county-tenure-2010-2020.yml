@@ -112,6 +112,16 @@ description: |
   [the 1990 housing](allen-county-housing-1990.yml). Two thirds of the city's thirteen-point fall
   happened before the earlier of the two censuses this node reads. [inference]
 
+  **The 40,935 occupied units in that first row are the county's households, and the same file says
+  what kind they are.** Married-couple households in 2020 were 17,911 of them and one-person
+  households 12,373, on a county that held 24,720 married-couple households in 1970 and 5,802
+  one-person ones. [verified] —
+  [the 2020 characteristics file](../../catalog/census-2020-dhc.md), table P16, and
+  [the households series](allen-county-households-1970-2023.yml). The 316 more occupied units
+  between 2010 and 2020 are the visible end of a fifty-year rearrangement, not of any growth.
+  [inference]
+
+
 properties:
   parameter: owner-occupied housing units, Allen County
   value: "27373"
@@ -161,5 +171,9 @@ links:
     relationship: relates-to
     claim_tag: verified
     source: ../../catalog/census-2010-sf1.md
+  - target: allen-county-households-1970-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-2020-dhc.md
   - target: ../measure.ont.yml
     relationship: instance-of

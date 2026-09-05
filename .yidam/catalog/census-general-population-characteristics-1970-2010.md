@@ -43,6 +43,7 @@ location:
       2010**, whose Allen County row is extracted line 12955.
 used-by:
   - ../corpus/measure/allen-county-population-by-race-1970-2020.yml
+  - ../corpus/measure/allen-county-households-1970-2023.yml
 ---
 
 **What it is.** The general-characteristics volume is the second book of every decennial census —
@@ -99,3 +100,26 @@ fourth page into a single strip and reading the table titles off it, which is ch
 **What none of them carries.** No county figure before 1970 — that is the earlier entry's work —
 and no Black population for Lima at 1960, which is a gap in the 1960 volume's reading rather than
 in these books. It is the one gap left in the city's race series between 1920 and 2020.
+
+**Three of the five volumes carry a households table as well as a race table, and the corpus had
+read only the race table.** 1990 prints **Table 2, Summary of General Characteristics of Households
+and Families: 1990**, whose county panel is at extracted line 2155; 2000 prints **Table 7,
+Households and Families: 2000** beginning at line 25931; 2010 prints **Table 7, Households and
+Families: 2010**, whose Allen County row is line 31272. [verified] — `pdftotext -layout` over the
+three files. Each gives total households, family households, married-couple families, female
+householder with no husband present, nonfamily households, householders living alone, householders
+living alone aged 65 and over, and average household and family size — and 2000 and 2010 give all
+of it for every county subdivision and place as well.
+
+**The 1990 volume prints shares where the later two print counts.** Its columns after the household
+total are percentages of all households to one decimal: Allen County reads 73.5, 58.9, 11.7, 26.5,
+23.6, 11.3 and then 2.66 and 3.16 for the two average sizes. Multiplying them back out recovers the
+counts to within a household, and this corpus takes the counts from
+[USA Counties](census-usa-counties.md) instead and uses this volume as the check. [verified] — the
+two read against each other.
+
+**The 1980 volume's household columns were not taken and the reason is the scan.** Table 44 of
+PC80-1-B37 gives households for the county and all thirteen subdivisions, but the archive.org OCR
+of that page renders `112 241` as `112 24)` and drops a leading digit from at least one township
+row. The county's 1980 household count in this corpus comes from the compendium, which is born
+digital. [verified] — the extracted text, read here.
