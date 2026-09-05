@@ -1,11 +1,11 @@
 class: measure
 label: Allen County presidential vote, 2000–2016
 description: |
-  Five elections, from two compilations of the state's certified canvass rather than from the
-  canvass. [verified] —
-  [MIT Election Data and Science Lab](../../catalog/medsl-county-returns.md) for all five and
-  [OpenElections](../../catalog/openelections-ohio.md) for 2000, 2008 and 2012; where the two
-  differ the divergence is below rather than averaged away.
+  Five elections, from compilations of the state's certified canvass rather than from the canvass.
+  [verified] — [MIT Election Data and Science Lab](../../catalog/medsl-county-returns.md) for all
+  five, [OpenElections](../../catalog/openelections-ohio.md) for 2000, 2008 and 2012, and
+  [the Census Bureau's county compendium](../../catalog/census-usa-counties.md) for 2000, 2004 and
+  2008; where they differ the divergence is below rather than averaged away.
 
       year  Republican          Democrat            others   total    R%     D%    margin
       2000  Bush      28,647   Gore      13,996    1,152  43,795   65.4   32.0   R+14,651
@@ -34,10 +34,13 @@ description: |
   sixty-five, a two-election trough, and then a climb past where it began. [inference] — the table
   above with [2020](allen-county-presidential-vote-2020.yml).
 
-  **The margin in 2020 is the largest in this corpus's whole record of this county, and the
-  largest the other way is 1,354.** R+18,967 in 2020 against Bryan's D+1,354 in 1908. Allen County
-  gave Bryan 55.2 per cent in 1896 and Biden 29.5 per cent in 2020. [inference] — computed against
-  [the six elections to 1908](allen-county-presidential-vote-1888-1908.yml).
+  **The largest margin in this corpus's record of this county is 1984, not 2020, and the largest
+  the other way is 1,354.** R+21,330 under Reagan against R+18,967 under Trump, and Bryan's
+  D+1,354 in 1908 at the other end. Allen County gave Bryan 55.2 per cent in 1896 and Biden 29.5
+  per cent in 2020. [inference] — computed against
+  [the six elections to 1908](allen-county-presidential-vote-1888-1908.yml) and
+  [the five from 1980](allen-county-presidential-vote-1980-1996.yml). This paragraph said 2020 was
+  the record for as long as the corpus's returns stopped at 1920 and restarted at 2000.
 
   **In figures, the Republican share: 65.4 per cent in 2000, 66.1 in 2004, 59.6 in 2008, 61.2 in
   2012, 66.5 in 2016 and 69.0 in 2020.** [inference] — computed from the table above and the 2020
@@ -57,13 +60,35 @@ description: |
   workbook's figures for 2012 and OpenElections' for 2008; see
   [a compiler is not the canvass](../../decisions/a-compiler-is-not-the-canvass.yml).
 
+  **On 2008 a third compilation now agrees with OpenElections to the vote, and the question stays
+  open.** The Census Bureau's compendium gives McCain 29,940 and Obama 19,522, which is the figure
+  this node already published and leaves the lab one vote out in each column. [verified] —
+  [USA Counties](../../catalog/census-usa-counties.md). Two of three is a tally, and a tally of
+  compilers is not a canvass: no county board's certificate is held here for 2008 and none of the
+  three compilers is the publisher of record. The block above stays open for that reason and not
+  for want of evidence. [inference] — the reasoning is this corpus's; see
+  [the same decision](../../decisions/a-compiler-is-not-the-canvass.yml).
+
+  **On 2000 all three agree to the vote.** Bush 28,647, Gore 13,996, others 1,152, total 43,795 —
+  three compilations from three unrelated lineages, and not a digit between them. [verified] —
+  [the compendium](../../catalog/census-usa-counties.md) against the two files already read. That
+  is what the 2004 and 2008 rows are being measured against: the same three sources can agree
+  perfectly, so where two of them differ the difference is somebody's error and not the format's.
+
   [open] Which of the two 2008 figures is right. No certified return for that year is held here,
   the divergence is one vote in each major column and cancels in the total, and nothing inside
-  either file can decide it.
+  either file can decide it. A third compilation has since sided with one of them and did not close
+  it; the next paragraph says what it is and why two of three is not an answer.
 
-  **2004 rests on one witness and the others on two.** OpenElections has no Ohio general-election
-  file for 2004 at all, so that row has no second reading. [verified] —
-  [the repository's own listing](../../catalog/openelections-ohio.md).
+  **2004 rested on one witness and now rests on two that disagree.** OpenElections has no Ohio
+  general-election file for 2004 at all. [verified] —
+  [the repository's own listing](../../catalog/openelections-ohio.md). The Census Bureau's county
+  compendium, which carries a commercial compilation of the vote for 1980 through 2008, gives Allen
+  County Bush 32,580 and Kerry 16,470 against the lab's 32,585 and 16,483 — eighteen votes apart on
+  a total of about forty-nine thousand, with each file adding up. [verified] —
+  [USA Counties](../../catalog/census-usa-counties.md). The table above keeps the lab's figures and
+  the disagreement is published rather than averaged; see
+  [a compiler is not the canvass](../../decisions/a-compiler-is-not-the-canvass.yml).
 
   **The residue is where the two compilations really part.** For 2016 both give Trump 30,487 and
   Clinton 13,294 and then differ by 79 on everything else, 2,034 against 2,113. That is a
@@ -81,9 +106,15 @@ description: |
   [2020](allen-county-presidential-vote-2020.yml).
 
   [open] When this county turned Republican. It voted Democratic eleven times in twelve from 1856
-  to 1900, Republican by 2,320 in 1920, and Republican by never less than 10,418 from 2000. The
-  turn is somewhere in the nineteen elections from 1924 to 1996 and no source held here reaches
-  them.
+  to 1900, Republican by 2,320 in 1920, Republican with 65.5 per cent in 1960 and 65.8 in 1980, and
+  Republican by never less than 10,418 from 2000. **The window has narrowed from nineteen elections
+  to eleven**: nothing after 1956 can be the turn, so it lies in 1912, 1916, 1924, 1928, 1932,
+  1936, 1940, 1944, 1948, 1952 or 1956. The 1920 return sits inside that span and is Republican
+  already, which is why the span cannot be cut further from the near end — a county can turn and
+  turn back. See [1960 and 1964](allen-county-presidential-vote-1960-1964.yml). No source reachable
+  from here carries an Ohio county's presidential vote for any of the eleven: the Secretary of
+  State's own series is digitized to 1920 and no further, the federal compendia that carry the vote
+  begin at 1960, and the two editions that would hold 1968 and 1976 are not digitized at all.
 
   **The county's money is more Republican than its vote, and was much more so.** Against the shares
   in the table above, Republican committees took 75.5 per cent of the labelled federal contributions
@@ -120,6 +151,10 @@ links:
   - target: allen-county-presidential-vote-2020.yml
     relationship: concerns
   - target: allen-county-presidential-vote-1920.yml
+    relationship: concerns
+  - target: allen-county-presidential-vote-1980-1996.yml
+    relationship: concerns
+  - target: allen-county-against-ohio-1980-2008.yml
     relationship: concerns
   - target: ../measure.ont.yml
     relationship: instance-of
