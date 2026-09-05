@@ -43,6 +43,15 @@
 
 [yidam-build]
 description = "Install the yidam binary from the commit pinned in .yidam.toml."
+# No `tools` here, deliberately. Everything this task does itself downloads an
+# already-compiled binary; the compiler belongs to [yidam-build-source] below,
+# which step 4 hands off to, so it is provisioned only when compiling actually
+# happens. It used to sit unconditionally in the derived repository's `[tools]`,
+# where every machine paid for it whether or not anything was ever built.
+#
+# `tools` as a task FIELD is legal in this file; `[tools]` as a table is not —
+# mise reads that as a task NAMED tools and fails the whole include to parse.
+# See task_layer.rs.
 run = """
 set -eu
 if [ ! -f .yidam.toml ]; then
@@ -52,6 +61,13 @@ if [ ! -f .yidam.toml ]; then
 fi
 origin=$(sed -n 's/^ *origin *= *"\\(.*\\)"/\\1/p' .yidam.toml)
 commit=$(sed -n 's/^ *commit *= *"\\(.*\\)"/\\1/p' .yidam.toml)
+# Features this repository's binary must have, from `[build] features` in .yidam.toml.
+# One declaration, read by both channels: the source build passes it to cargo, and the
+# download below declines a release that was not built with it.
+#
+# A single-line array only. That is what the file's own writer emits, and a parser for the
+# multi-line form would be a TOML parser written in sed.
+required=$(sed -n 's/^ *features *= *\\[\\(.*\\)\\]/\\1/p' .yidam.toml | tr -d '" ' | tr ',' ' ')
 if [ -z "$commit" ] || [ "$commit" = "unknown" ]; then
   echo "ERROR: .yidam.toml records no resolvable commit." >&2
   echo "       repair it with 'mise run yidam-vendor-update'." >&2
@@ -132,7 +148,33 @@ if [ -n "$tag" ] && [ -n "$os" ] && [ -n "$arch" ]; then
       mkdir -p "$PWD/.yidam/bin"
       tar -xzf "$dl/$name.tar.gz" -C "$dl"
       install -m 0755 "$dl/$name/yidam" "$PWD/.yidam/bin/yidam"
-      installed="$tag"
+      # ── does this release do what this repository needs? ────────────────
+      #
+      # The release is built from the `default` feature set. A repository that
+      # needs more than that — `export-sqlite`, `index`, anything a future
+      # release does not carry — would otherwise have a working build silently
+      # replaced by a binary that answers `needs --features …`. The commands
+      # do not fail; they decline, and a test written to skip when a capability
+      # is absent goes on passing while asserting nothing. That is #532, and it
+      # was reported by a derived repository that spotted it before adopting.
+      #
+      # Asked of the binary rather than predicted from the tag: `--version`
+      # prints the feature list it was compiled with, so this is the one place
+      # the answer is a fact rather than an expectation.
+      short=""
+      if [ -n "$required" ]; then
+        have=" $("$PWD/.yidam/bin/yidam" --version 2>/dev/null | sed -n 's/.*\\[\\(.*\\)\\].*/\\1/p') "
+        for f in $required; do
+          case "$have" in *" $f "*) ;; *) short="$short $f" ;; esac
+        done
+      fi
+      if [ -n "$short" ]; then
+        echo "release $tag was built without:$short" >&2
+        echo "  .yidam.toml [build] features requires it — compiling instead." >&2
+        rm -f "$PWD/.yidam/bin/yidam"
+      else
+        installed="$tag"
+      fi
     else
       echo "checksum did not verify for $name — compiling instead" >&2
     fi
@@ -154,17 +196,64 @@ fi
 #
 # Not a fallback that will one day be removed. A repository is entitled to pin a
 # commit that was never released, and most commits are.
+#
+# Handed to [yidam-build-source] rather than done here, for one reason: that task
+# declares `tools = { rust = ... }` and mise provisions a task's tools when the
+# task runs. Everything above this line downloads a compiled binary and needs no
+# compiler, so a declaration on THIS task would provision a Rust toolchain on
+# every run and then not use it on the path most repositories take.
+#
+# The pin crosses the boundary in the environment. The sub-task refuses to guess
+# either value: a source build that quietly defaulted to origin/HEAD would
+# install a binary that is not this repository's pin, which is the failure
+# `.yidam/bin` exists to prevent.
 if [ -n "$tag" ]; then
   echo "release $tag exists for this pin but could not be used — building from source" >&2
 else
   echo "no release tagged at this pin — building from source" >&2
+fi
+YIDAM_SOURCE_ORIGIN="$origin" YIDAM_SOURCE_COMMIT="$commit" mise run yidam-build-source
+"""
+
+# The compiling half of `yidam-build`, and the only part of provisioning a derived
+# repository that needs a Rust toolchain.
+#
+# Separate from yidam-build so that `tools` below is reached only when a source
+# build actually happens. Verified: with rust declared on a task rather than in
+# `[tools]`, `mise install` answers "all tools are installed" and provisions
+# nothing; the toolchain arrives when the task runs, and a task that is never
+# invoked never installs it.
+#
+# Not meant to be run by hand — `mise run yidam-build` is the entry point, and it
+# is the one that decides whether compiling is necessary. This refuses rather than
+# guesses if invoked without a pin, because the whole point of .yidam/bin is that
+# the binary matches the commit .yidam.toml records.
+[yidam-build-source]
+description = "Compile the yidam binary from a pinned commit. Invoked by yidam-build; provisions Rust only here."
+tools = { rust = "1.88.0" }
+run = """
+set -eu
+origin="${YIDAM_SOURCE_ORIGIN:-}"
+commit="${YIDAM_SOURCE_COMMIT:-}"
+if [ -z "$origin" ] || [ -z "$commit" ]; then
+  echo "ERROR: yidam-build-source needs YIDAM_SOURCE_ORIGIN and YIDAM_SOURCE_COMMIT." >&2
+  echo "       Run 'mise run yidam-build', which reads them from .yidam.toml and" >&2
+  echo "       decides whether a source build is needed at all." >&2
+  exit 1
 fi
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 git clone --quiet --filter=blob:none "$origin" "$tmp/yidam"
 git -C "$tmp/yidam" checkout --quiet "$commit"
 # The light `reports` build: no protoc, no fastembed, no lancedb. Add
-# `--features full` if you need index-build/serve/sqlite/rdf/tonpa.
+# `--features full` if you need index-build or sqlite export. NOT tonpa,
+# vault-s3 or export-graph — each joined the `default` set (#203, #482, #532),
+# so the released binary carries them and so does this build.
+#
+# Anything else this repository needs, declare in `.yidam.toml`'s `[build]
+# features` rather than editing this line: that is the one place both channels
+# read, and it is what stops a re-vendor swapping this build for a release that
+# cannot do what it does. See the note on the `[tools]` block in mise.toml.
 #
 # --root: install here rather than into ~/.cargo/bin. `cargo install --root DIR`
 # writes DIR/bin/, so this lands at .yidam/bin/yidam.
@@ -174,7 +263,18 @@ git -C "$tmp/yidam" checkout --quiet "$commit"
 # beside it is not, so the two drift apart on any fresh clone or hand-copied
 # binary — and this task, whose whole job is to make the binary match the pin,
 # would fail rather than do it.
-cargo install --force --root "$PWD/.yidam" --path "$tmp/yidam/yidam/cli" --locked
+# `[build] features` from .yidam.toml, the same declaration the download path reads. A
+# repository that needs a non-default feature says so once, here, rather than editing this
+# task — which a re-vendor would replace.
+features=""
+if [ -f .yidam.toml ]; then
+  want=$(sed -n 's/^ *features *= *\\[\\(.*\\)\\]/\\1/p' .yidam.toml | tr -d '" ' | tr ',' ' ')
+  if [ -n "$want" ]; then
+    features="--features $(echo $want | tr ' ' ',')"
+    echo "building with $features (from .yidam.toml [build] features)"
+  fi
+fi
+cargo install --force --root "$PWD/.yidam" --path "$tmp/yidam/yidam/cli" --locked $features
 echo
 echo "installed .yidam/bin/yidam @ $commit"
 echo "Put .yidam/bin first on PATH — [env] _.path in mise.toml covers anything mise"
@@ -270,8 +370,13 @@ ref="${YIDAM_REF:-HEAD}"
 # The pin being replaced, captured before .yidam.toml is overwritten below. It is what
 # makes the vocabulary report at the end possible.
 previous=""
+# `[build] features` is the repository's, not yidam's, and this task overwrites .yidam.toml
+# wholesale. Read it out before that happens and write it back below, or a re-vendor would
+# silently delete the declaration that keeps the download path honest.
+required=""
 if [ -f .yidam.toml ]; then
   previous=$(sed -n 's/^ *commit *= *"\\(.*\\)"/\\1/p' .yidam.toml)
+  required=$(sed -n 's/^ *features *= *\\[\\(.*\\)\\]/\\1/p' .yidam.toml | tr -d '" ' | tr ',' ' ')
 fi
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -323,8 +428,120 @@ commit    = "$commit"
 template  = "$template"
 committed = "$committed"
 EOF
+# Yours, and preserved across every re-vendor. Both channels read it: the source build passes
+# it to cargo, and the download declines a release that was not built with it.
+if [ -n "$required" ]; then
+  quoted=$(echo $required | sed -e 's/ /", "/g')
+  cat >> .yidam.toml <<EOF
+
+[build]
+# Features this repository's yidam binary must have beyond the released default set.
+# \\`mise run yidam-build\\` compiles rather than downloading when a release lacks one.
+features = ["$quoted"]
+EOF
+fi
 echo
 echo "re-vendored to $commit ($template)"
+
+# ── the [tools] entry, derived from the same pin ──────────────────────
+#
+# mise installs a released `yidam` from the `github:` backend, so a repository
+# whose pin happens to be tagged does not need a Rust toolchain to obtain its
+# binary. The version that entry names is NOT a third pin a human keeps in step
+# — VERSIONING.md argues against exactly that — it is derived here, from the
+# commit .yidam.toml already records, by the one command that rewrites the
+# inherited layer. One pin, two spellings, one writer.
+#
+# `git tag --points-at` rather than yidam-build's `git ls-remote` awk: this task
+# has the origin cloned already, tags and all, so it can ask git directly and
+# git does the annotated-tag peeling that the resolver has to do by hand.
+#
+# ── it is written into mise.toml, and that file is yours ──────────────
+#
+# Every other thing this task rewrites it replaces wholesale. This one it cannot:
+# `[tools]` is not legal in THIS file. mise reads a task-config include's
+# `[tools]` as a task NAMED tools, then rejects its entries as unknown task
+# fields and fails the whole file to parse — orphaning all 35 inherited tasks,
+# which is the outage task_layer.rs was written for. Same shape as `[env]`.
+#
+# So the entry has to live in the consumer's own mise.toml, and only a marked
+# region of it is ours. Everything outside the markers is domain-owned and never
+# read here. The markers are also why this cannot append a second `[tools]`
+# table: TOML rejects a duplicate table outright, so the region is edited in
+# place inside the one that is already there.
+cli_tag=$(git -C "$tmp/yidam" tag --points-at HEAD --list 'cli/v*' 2>/dev/null | head -1)
+cli_version="${cli_tag#cli/v}"
+# ── and does that release do what this repository needs? ──────────────
+#
+# The `[tools]` entry is installed by `mise install`, which never runs yidam-build and so
+# never reaches its post-download check. If this wrote the entry regardless, a repository
+# declaring `[build] features` would get a binary without them from the one path that does
+# not look — and the symptom is tests that skip rather than tests that fail (#532).
+#
+# The released set is `[features] default`, read out of the tree just cloned at this exact
+# pin. Not restated here: a copy would be a second answer, and this task has the file.
+if [ -n "$cli_version" ] && [ -n "$required" ]; then
+  released=" $(sed -n 's/^default *= *\\[\\(.*\\)\\].*/\\1/p' "$tmp/yidam/yidam/cli/Cargo.toml" | tr -d '" ' | tr ',' ' ') "
+  short=""
+  for f in $required; do
+    case "$released" in *" $f "*) ;; *) short="$short $f" ;; esac
+  done
+  if [ -n "$short" ]; then
+    echo
+    echo "release $cli_tag is built without:$short"
+    echo "  .yidam.toml [build] features requires it, so the [tools] entry is NOT adopted"
+    echo "  and 'mise run yidam-build' will keep compiling. Nothing is lost; the fast path"
+    echo "  becomes available when upstream ships those features in its default set."
+    cli_version=""
+  fi
+fi
+# No backslashes anywhere in this program, deliberately: it is embedded in a TOML
+# multi-line string, read back out of it by a test, and run through sh — three
+# escaping layers to be wrong in. `index(s, t) == 1` is a prefix test that needs
+# no regex, and the entry itself arrives via -v rather than being quoted inline.
+tools_block='
+  { lines[NR] = $0 }
+  function emit() {
+    print "# <!-- YIDAM:TOOLS --> written by yidam-vendor-update from .yidam.toml — do not edit"
+    print body
+    print "# <!-- /YIDAM:TOOLS -->"
+  }
+  END {
+    n = 0
+    skipping = 0
+    for (i = 1; i <= NR; i++) {
+      l = lines[i]
+      if (index(l, "# <!-- YIDAM:TOOLS -->") == 1) { skipping = 1; continue }
+      if (index(l, "# <!-- /YIDAM:TOOLS -->") == 1) { skipping = 0; continue }
+      if (skipping) continue
+      out[++n] = l
+    }
+    done = 0
+    for (i = 1; i <= n; i++) {
+      print out[i]
+      if (!done && index(out[i], "[tools]") == 1) { emit(); done = 1 }
+    }
+    if (!done) { print ""; print "[tools]"; emit() }
+  }
+'
+if [ -f mise.toml ]; then
+  if [ -n "$cli_version" ]; then
+    body=$(printf '"github:goedelsoup/yidam" = { version = "%s", version_prefix = "cli/v" }' "$cli_version")
+  else
+    # The block is kept, empty, rather than removed. It is the anchor the next
+    # re-vendor edits, and its absence would be indistinguishable from a repo
+    # that predates this mechanism.
+    body='# no cli/v* release at this pin — `mise run yidam-build` compiles instead'
+  fi
+  if awk -v body="$body" "$tools_block" mise.toml > "$tmp/mise.toml.new"; then
+    mv "$tmp/mise.toml.new" mise.toml
+    if [ -n "$cli_version" ]; then
+      echo "mise.toml [tools]: yidam $cli_version (released at this pin)"
+    else
+      echo "mise.toml [tools]: no release at this pin — yidam-build will compile"
+    fi
+  fi
+fi
 # What moved in the CLOSED VOCABULARY, specifically. Everything else in the prelude is
 # a document you can read at leisure; the vocabulary is the part this repository has
 # already written history against, and history cannot be rewritten to match a verb.
@@ -368,8 +585,41 @@ if command -v yidam >/dev/null 2>&1; then
   yidam lint --init-baseline 2>/dev/null || true
 fi
 echo "review the diff, then commit it as its own event:"
-echo "  git add .yidam/.vendor/prelude .yidam.toml mise.yidam.toml .yidam/lint-baseline.yml"
+echo "  git add .yidam/.vendor/prelude .yidam.toml mise.yidam.toml mise.toml .yidam/lint-baseline.yml"
 echo "  git commit -m 'vendor: re-vendor prelude at $commit — <what changed>'"
+"""
+
+# ── corpora ───────────────────────────────────────────────────────────
+# `mise install` provisions toolchains. It does not fetch the corpora this
+# repository declares in `.yidam/tonpa.toml`, so a fresh clone ended with the
+# tools present, the binary present, and every command that reads a dependency's
+# corpus reading nothing. The third step existed; nothing ran it.
+#
+# The consumer's mise.toml runs this from `[hooks] postinstall`. That hook CANNOT
+# live in this file: mise reads `[hooks]` in a task-config include as a task
+# NAMED hooks — the same way it reads `[env]` and `[tools]` — and the whole
+# include then fails to parse, orphaning every task in it. `sadhana/root/mise.toml`
+# carries the hook for new repositories. See task_layer.rs.
+#
+# Re-running it is safe, and that is a property of the command rather than a
+# hope: `tonpa install` returns early when nothing is declared, skips path
+# dependencies, and for anything already unpacked verifies its hash against
+# tonpa.lock and continues without fetching. It reaches the network only for a
+# dependency that is missing, unlocked, or corrupt.
+[tonpa-install]
+description = "Fetch the corpora .yidam/tonpa.toml declares. Re-runnable: verifies hashes and writes nothing when already satisfied."
+run = """
+set -eu
+# Not an error, and deliberately not a failed `mise install`. A repository whose
+# pin carries no release has no binary until `mise run yidam-build` compiles one,
+# and provisioning toolchains must not fail because the step after it has not run
+# yet. This swallows only the binary's absence — a rotted dependency URL is
+# `tonpa install`'s own exit code and passes straight through.
+if ! command -v yidam >/dev/null 2>&1; then
+  echo "yidam is not on PATH yet — run 'mise run yidam-build', then 'mise run tonpa-install'." >&2
+  exit 0
+fi
+yidam tonpa install
 """
 
 # ── yidam CLI — REGEN tasks ───────────────────────────────────────────
@@ -397,6 +647,10 @@ run = "yidam catalog-audit"
 [phases]
 description = "List active inquiry phases (ma/* and rigpa/* branches) with owner, start date, and commit count."
 run = "yidam phases"
+
+[due]
+description = "What is due? Four clocks read together: index staleness, catalog TTL, unanswered questions, phases in flight. Read-only, exits zero — being owed is not being broken."
+run = "yidam due"
 
 [sangha]
 description = "Report the sangha: registered electors, their positions, and settled resolutions."
