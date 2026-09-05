@@ -1,0 +1,118 @@
+class: measure
+label: What Allen County's forty-six governments raise and spend, 2022
+description: |
+  **Forty-six governments hold ground in Allen County and together they raised $545,687,000 and
+  spent $549,408,000 in fiscal 2022.** That is $5,351 of revenue and $5,387 of spending for every
+  resident. [verified] —
+  [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual
+  unit file, summed here over the forty-six units the survey places in this county.
+
+      2022, by kind of government        units       revenue      share      spending
+      school districts and boards           12   259,134,000      47.5%   251,230,000
+      municipalities                         9   117,130,000      21.5%    95,762,000
+      the county                             1   105,391,000      19.3%   147,763,000
+      special districts                     12    47,120,000       8.6%    38,835,000
+      townships                             12    16,912,000       3.1%    15,818,000
+
+  **Half of what local government here costs is schools, and a thirtieth is townships.** Twelve
+  school districts, boards and consortia take 47.5 per cent of the money; the twelve townships that
+  cover every acre outside the cities and villages take 3.1. [verified] — the same file, by type of
+  government.
+
+  **Three governments are nearly half of it.** The county at $105,391,000, the City of Lima at
+  $88,081,000 and Lima City Schools at $68,052,000 are 47.9 per cent of everything the forty-six
+  raise. [verified] — the same file, by unit. Below them the drop is steep: the fourth largest is
+  Elida Local Schools at $34,834,000, and the smallest is Jackson Township Park District, which
+  raised eleven thousand dollars.
+
+      the ten largest, 2022                       revenue      spending
+      Allen County                            105,391,000   147,763,000
+      Lima City                                88,081,000    74,319,000
+      Lima City School District                68,052,000    66,018,000
+      Elida Local School District              34,834,000    37,880,000
+      Shawnee Local School District            29,188,000    28,340,000
+      Council of Allen Co Schools
+        Health Benefit Consortium              25,171,000    24,112,000
+      Apollo Joint Vocational School District  23,006,000    19,657,000
+      Bath Local School District               22,514,000    20,876,000
+      Allen East Local School District         14,477,000    12,777,000
+      Spencerville Local School District       14,476,000    12,622,000
+
+  **The county spends more than it raises and everything else is close to balanced.** The county's
+  spending exceeds its revenue by $42,372,000 in this file, where the other forty-five governments
+  together spend $38,651,000 less than they raise. [verified] — the same source, by unit. Every
+  figure in the county's row is the Bureau's imputation rather than the county's answer, and the
+  county's own audited statements for 2022 give $106,515,249 of revenue against $79,882,062 of
+  expenses; see
+  [what the federal file says about this county](allen-county-in-the-federal-finance-file-2022.yml).
+
+  **Against Ohio's eighty-eight counties this one is middling on what it raises and high on what it
+  spends.** Allen ranks 36th of 88 on local revenue per resident, at $5,351 against a median of
+  $5,088, and 21st on spending, at $5,387 against a median of $4,649. [verified] — the same file,
+  computed the same way for every Ohio county against the survey's own populations. The range runs
+  from Jefferson County at $11,570 to Holmes at $2,923.
+
+  **A special district here is whatever Ohio made into a government.** The twelve are three township
+  park districts, a metropolitan park district, a soil and water conservation district, an airport
+  authority, a transit authority, a port authority, a metropolitan housing authority, a water
+  district, a solid waste district and a school health-benefit consortium. [verified] — the same
+  source, its 2022 directory file. The consortium is the sixth largest government in the county by
+  revenue and buys insurance; the port authority raised thirty-six thousand dollars.
+
+  **A revenue total is not a budget and a spending total is not a service.** [inference] The survey
+  counts money moving through a government, so a school district's state aid, a county's federal
+  pass-through and a consortium's premium income are all revenue, and the same dollar can be counted
+  by two governments in this table if one sends it to the other. The corpus has already learned the
+  first half of this from
+  [the county's own funds](allen-county-funds-2025.yml); see
+  [a grand total is not a budget](../../decisions/a-grand-total-is-not-a-budget.yml).
+
+  **This node does not establish what any of this money bought.**
+
+  [open] What the twelve townships do with $16,912,000. The survey gives their spending by function
+  and this corpus has not read the county's township-by-township detail against it, so which
+  townships run fire departments, which contract for them, and which levy nothing at all is unread.
+
+properties:
+  parameter: revenue of all local governments in the county
+  value: "545687000"
+  unit: dollars, fiscal 2022, across forty-six governments
+  as_of: "2022"
+  method: |
+    The forty-six units are every government the survey's directory file places in Allen County,
+    Ohio, which is a Census county code and not the FIPS code the rest of this corpus uses.
+    [verified] Revenue sums the `A`, `B`, `C`, `D`, `T` and `U` item codes and spending sums the
+    survey's own expenditure line, because the workbook's published revenue aggregate is a
+    state-level definition that omits everything a local government receives from its state.
+    [verified] Amounts in the file are thousands of dollars and are written out here. [verified]
+    Ohio comparisons repeat the identical computation for all eighty-eight counties, using each
+    county government's own population from the same directory file as the denominator. [verified]
+    Two hundred and twenty-one of this county's 727 cells are the Bureau's imputations and are
+    included in these totals; see
+    [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml).
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/allen-county-government.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-local-government-debt-2017-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-in-the-federal-finance-file-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-governments-and-their-employees-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: allen-county-school-finance-2023.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

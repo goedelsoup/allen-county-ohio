@@ -13807,6 +13807,364 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["does not infer that any district decided against the courses"],
         figures: &[],
     },
+    Assertion {
+        id: "two-billion-in-the-countys-name",
+        statement: "Two billion two hundred and four million dollars of bonds stand issued in Allen \
+                    County's name and the county owes none of it \u{2014} $21,622 for every \
+                    resident, and 21.8 times what the county government spends in a year.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**Two billion two hundred and four million dollars of bonds stand issued in Allen County's name and the county owes none of it.** The audited statements for the year ended 31 December 2023 put the aggregate outstanding principal on the county's conduit debt at $2,204,995,000, and the note ends the way it ends every year: the county \"is not obligated in any way to pay the debt and related charges on these revenue bonds from any of its funds.\" [verified] \u{2014} [the county auditor](../../catalog/allen-county-auditor-financials.md), the report for 2023, Note 19. That is $21,622 for every person in the county, and 21.8 times the $101,209,924 of expenses the same report gives the county government for the same year."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[
+            Figure { label: "conduit debt outstanding, 2023", value: 2204995000.0, literal: "2,204,995,000" },
+            Figure { label: "the county government's expenses, 2023", value: 101209924.0, literal: "101,209,924" },
+        ],
+    },
+    Assertion {
+        id: "every-itemised-issue-was-one-hospital-system",
+        statement: "Every conduit bond Allen County's audits itemise was issued for one hospital \
+                    system. The nine outstanding at the end of 2021 \u{2014} $1,327,075,000 \u{2014} \
+                    are Catholic Healthcare Partners and its successor Mercy Health.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**Every issue the note itemises was for one hospital system.** Through the 2021 report the note lists each bond by year, amount and borrower, and the nine issues outstanding at 31 December 2021 \u{2014} $1,327,075,000 in all \u{2014} are Catholic Healthcare Partners and its successor Mercy Health, in issues of 2008, 2010, 2012 and 2015. [verified] \u{2014} the same source, the 2021 report, Note 19, summed here."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[],
+    },
+    Assertion {
+        id: "what-a-conduit-issue-is",
+        statement: "A county lends its name and its tax exemption to a private borrower, which \
+                    raises money more cheaply than it could alone; the bonds are payable only from \
+                    the borrower's payments, and nothing about them appears in the county's assets \
+                    or liabilities.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**What a conduit issue is.** A county lends its name and its tax exemption to a private borrower, which then raises money more cheaply than it could alone; the bonds are secured on the financed property and payable only from the borrower's payments, and on repayment the property belongs to the borrower. [verified] \u{2014} the same source, the 2010 and 2015 reports, which state the mechanism in full before the later reports compress it. Nothing about it appears in the county's own assets or liabilities, and no county tax secures a dollar of it. [verified] \u{2014} the same reports, Note 19."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[],
+    },
+    Assertion {
+        id: "first-in-ohio-on-industrial-revenue-debt",
+        statement: "The Census Bureau's 2017 file gives Allen County $1,523,140,000 of industrial \
+                    revenue debt outstanding \u{2014} $14,586 a resident, the highest of the \
+                    fifty-two Ohio counties carrying the item, ahead of Seneca at $11,396 and nearly \
+                    six times Franklin County's $2,516.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**The federal survey put this county first in Ohio on it.** In its 2017 file the Census Bureau gives Allen County $1,523,140,000 of long-term industrial revenue debt outstanding \u{2014} $14,586 for every resident, the highest of the fifty-two Ohio counties carrying the item, ahead of Seneca at $11,396 and nearly six times Franklin County's $2,516. [verified] \u{2014} [the government finance survey](../../catalog/census-government-finances.md), item `44T`, ranked here on the survey's own populations. Allen's figure is flagged as reported by the county; the figures for Franklin, Montgomery, Lucas and Butler are the Bureau's imputations."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[
+            Figure { label: "Allen", value: 14586.0, literal: "14,586" },
+            Figure { label: "Seneca", value: 11396.0, literal: "11,396" },
+            Figure { label: "Franklin", value: 2516.0, literal: "2,516" },
+        ],
+    },
+    Assertion {
+        id: "two-instruments-within-three-per-cent",
+        statement: "The federal file's $1,523,140,000 of industrial revenue debt for 31 December \
+                    2017 sits 2.7 per cent above the county audit's own itemised sum of \
+                    $1,483,250,000 for the same day, from two collections that share no method.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**Two instruments measuring the same date land within three per cent of each other.** The federal file's $1,523,140,000 for 31 December 2017 against the audit's own itemised sum of $1,483,250,000 for the same day \u{2014} a difference of 2.7 per cent, from two collections that share no method. [verified] \u{2014} the same source pair."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[
+            Figure { label: "federal file", value: 1523140000.0, literal: "1,523,140,000" },
+            Figure { label: "the county's audit", value: 1483250000.0, literal: "1,483,250,000" },
+        ],
+    },
+    Assertion {
+        id: "nine-hundred-million-in-the-year-the-rule-changed",
+        statement: "Allen County's conduit debt reads $1,327,075,000 at the end of 2021 and \
+                    $2,254,490,000 at the end of 2022 \u{2014} the year the county adopted GASB \
+                    Statement No. 91 and the note stopped itemising.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**The balance appears to grow by nine hundred million dollars in the year the disclosure rule changed.** $1,327,075,000 at the end of 2021 and $2,254,490,000 at the end of 2022, in the year the county adopted GASB Statement No. 91 and the note stopped itemising. [verified] \u{2014} the same source, its reports for 2021 and 2022, Note 19 and the summary of significant accounting policies."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[
+            Figure { label: "end of 2021", value: 1327075000.0, literal: "1,327,075,000" },
+            Figure { label: "end of 2022", value: 2254490000.0, literal: "2,254,490,000" },
+        ],
+    },
+    Assertion {
+        id: "the-federal-file-stopped-carrying-it",
+        statement: "The item the Census Bureau published Allen County's industrial revenue debt \
+                    under is gone from its 2022 release, along with every other government in the \
+                    country that had one. The county's own audits are the only source for it now.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-conduit-debt-2010-2023.yml", "**The corpus cannot follow it after 2017 in any federal file.** The item the Bureau published it under is gone from the 2022 release, along with every other government in the country that had one. [verified] \u{2014} [the survey](../../catalog/census-government-finances.md), the two releases searched for the code. The county's own audits are now the only source for it."),
+        ],
+        answers: &["does not assert that Allen County is at risk from any of this money"],
+        figures: &[],
+    },
+    Assertion {
+        id: "forty-six-governments-raised-five-hundred-and-forty-six-million",
+        statement: "Forty-six governments hold ground in Allen County and together they raised \
+                    $545,687,000 and spent $549,408,000 in fiscal 2022 \u{2014} $5,351 of revenue \
+                    and $5,387 of spending for every resident.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-finance-2022.yml", "**Forty-six governments hold ground in Allen County and together they raised $545,687,000 and spent $549,408,000 in fiscal 2022.** That is $5,351 of revenue and $5,387 of spending for every resident. [verified] \u{2014} [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual unit file, summed here over the forty-six units the survey places in this county."),
+        ],
+        answers: &["does not establish what any of this money bought"],
+        figures: &[
+            Figure { label: "revenue per resident", value: 5351.0, literal: "5,351" },
+            Figure { label: "spending per resident", value: 5387.0, literal: "5,387" },
+        ],
+    },
+    Assertion {
+        id: "half-is-schools-and-a-thirtieth-is-townships",
+        statement: "Twelve school districts, boards and consortia take 47.5 per cent of what local \
+                    government costs in Allen County; the twelve townships that cover every acre \
+                    outside the cities and villages take 3.1.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-finance-2022.yml", "**Half of what local government here costs is schools, and a thirtieth is townships.** Twelve school districts, boards and consortia take 47.5 per cent of the money; the twelve townships that cover every acre outside the cities and villages take 3.1. [verified] \u{2014} the same file, by type of government."),
+        ],
+        answers: &["does not establish what any of this money bought"],
+        figures: &[
+            Figure { label: "schools", value: 47.5, literal: "47.5" },
+            Figure { label: "townships", value: 3.1, literal: "3.1" },
+        ],
+    },
+    Assertion {
+        id: "three-governments-are-nearly-half",
+        statement: "Allen County at $105,391,000, the City of Lima at $88,081,000 and Lima City \
+                    Schools at $68,052,000 are 47.9 per cent of everything the county's forty-six \
+                    governments raise. The smallest raised eleven thousand dollars.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-finance-2022.yml", "**Three governments are nearly half of it.** The county at $105,391,000, the City of Lima at $88,081,000 and Lima City Schools at $68,052,000 are 47.9 per cent of everything the forty-six raise. [verified] \u{2014} the same file, by unit. Below them the drop is steep: the fourth largest is Elida Local Schools at $34,834,000, and the smallest is Jackson Township Park District, which raised eleven thousand dollars."),
+        ],
+        answers: &["does not establish what any of this money bought"],
+        figures: &[
+            Figure { label: "Allen County", value: 105391000.0, literal: "105,391,000" },
+            Figure { label: "Lima City", value: 88081000.0, literal: "88,081,000" },
+            Figure { label: "Lima City Schools", value: 68052000.0, literal: "68,052,000" },
+            Figure { label: "Elida Local Schools", value: 34834000.0, literal: "34,834,000" },
+        ],
+    },
+    Assertion {
+        id: "thirty-sixth-on-revenue-and-twenty-first-on-spending",
+        statement: "Allen County ranks 36th of Ohio's eighty-eight counties on local government \
+                    revenue per resident, at $5,351 against a median of $5,088, and 21st on \
+                    spending, at $5,387 against a median of $4,649.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-finance-2022.yml", "**Against Ohio's eighty-eight counties this one is middling on what it raises and high on what it spends.** Allen ranks 36th of 88 on local revenue per resident, at $5,351 against a median of $5,088, and 21st on spending, at $5,387 against a median of $4,649. [verified] \u{2014} the same file, computed the same way for every Ohio county against the survey's own populations. The range runs from Jefferson County at $11,570 to Holmes at $2,923."),
+        ],
+        answers: &["does not establish what any of this money bought"],
+        figures: &[
+            Figure { label: "Allen, revenue", value: 5351.0, literal: "5,351" },
+            Figure { label: "Ohio median, revenue", value: 5088.0, literal: "5,088" },
+            Figure { label: "Allen, spending", value: 5387.0, literal: "5,387" },
+            Figure { label: "Ohio median, spending", value: 4649.0, literal: "4,649" },
+        ],
+    },
+    Assertion {
+        id: "the-county-spends-more-than-it-raises",
+        statement: "In the federal file Allen County's spending exceeds its revenue by $42,372,000, \
+                    where the other forty-five governments together spend $38,651,000 less than they \
+                    raise \u{2014} and every figure in the county's row is imputed.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-finance-2022.yml", "**The county spends more than it raises and everything else is close to balanced.** The county's spending exceeds its revenue by $42,372,000 in this file, where the other forty-five governments together spend $38,651,000 less than they raise. [verified] \u{2014} the same source, by unit. Every figure in the county's row is the Bureau's imputation rather than the county's answer, and the county's own audited statements for 2022 give $106,515,249 of revenue against $79,882,062 of expenses; see [what the federal file says about this county](allen-county-in-the-federal-finance-file-2022.yml)."),
+        ],
+        answers: &["does not establish what any of this money bought"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-special-district-is-whatever-ohio-made-a-government",
+        statement: "Allen County's twelve special districts are three township park boards, a \
+                    metropolitan park district, a soil and water conservation district, an airport \
+                    authority, a transit authority, a port authority, a housing authority, a water \
+                    district, a solid waste district and a school health-benefit consortium.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-finance-2022.yml", "**A special district here is whatever Ohio made into a government.** The twelve are three township park districts, a metropolitan park district, a soil and water conservation district, an airport authority, a transit authority, a port authority, a metropolitan housing authority, a water district, a solid waste district and a school health-benefit consortium. [verified] \u{2014} the same source, its 2022 directory file. The consortium is the sixth largest government in the county by revenue and buys insurance; the port authority raised thirty-six thousand dollars."),
+        ],
+        answers: &["does not establish what any of this money bought"],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-hundred-and-eighty-seven-million-owed",
+        statement: "Allen County's forty-six governments owed $286,926,000 of long-term debt at the \
+                    end of fiscal 2022, more than half of it the City of Lima's. That is $2,814 a \
+                    resident, seventeenth of Ohio's eighty-eight against a median of $1,734.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-debt-2017-2022.yml", "**The forty-six governments holding ground in Allen County owed $286,926,000 of long-term debt at the end of fiscal 2022, and more than half of it is the City of Lima's.** [verified] \u{2014} [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual unit file, item `49U`, summed here. That is $2,814 for every resident, which puts this county seventeenth of Ohio's eighty-eight against a median of $1,734."),
+        ],
+        answers: &["does not establish what any of this debt was borrowed for"],
+        figures: &[
+            Figure { label: "Allen", value: 2814.0, literal: "2,814" },
+            Figure { label: "Ohio median", value: 1734.0, literal: "1,734" },
+        ],
+    },
+    Assertion {
+        id: "nine-carry-ninety-six-per-cent-of-the-debt",
+        statement: "Nine of Allen County's forty-six governments carry ninety-six per cent of its \
+                    local debt and twenty-six carry none at all. The twelve townships together owe \
+                    $105,000.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-debt-2017-2022.yml", "**Nine of the forty-six carry ninety-six per cent of it.** Twenty-six of them carry no long-term debt at all, including ten of the twelve townships, ten of the twelve special districts and four of the twelve school entities. [verified] \u{2014} the same file, by unit. The twelve townships together owe $105,000, which is less than a thousandth of what the city owes."),
+        ],
+        answers: &["does not establish what any of this debt was borrowed for"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-owes-least-of-the-large-ones",
+        statement: "Allen County owes $13,605,000 against the City of Lima's $146,750,000 on three \
+                    times Lima's population, and the county's own audited statements put what it \
+                    owes to lenders at $16,281,525 a year later.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-debt-2017-2022.yml", "**The county government owes the least of any large government here.** $13,605,000 against Lima's $146,750,000 on a population three times Lima's, and the county's own audited statements put what it owes to lenders at $16,281,525 a year later. [verified] \u{2014} the same source against [the audited net position](allen-county-net-position-2023.yml). The two figures are a year apart and a fifth of a million dollars from agreeing on the same quantity."),
+        ],
+        answers: &["does not establish what any of this debt was borrowed for"],
+        figures: &[
+            Figure { label: "the county", value: 13605000.0, literal: "13,605,000" },
+            Figure { label: "the City of Lima", value: 146750000.0, literal: "146,750,000" },
+        ],
+    },
+    Assertion {
+        id: "eighty-four-per-cent-that-did-not-happen",
+        statement: "Read across the two federal releases Allen County's local debt falls from \
+                    $1,837,294,000 to $286,926,000, and the whole of the difference is one item code \
+                    the Bureau retired. Set it aside and the fall is 8.7 per cent.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-debt-2017-2022.yml", "**Read across the two federal releases, this county's local debt falls by eighty-four per cent and none of it happened.** The 2017 file gives $1,837,294,000 and the 2022 file $286,926,000. The whole of the difference is item `44T`, industrial revenue debt, which the Bureau published for 2,311 governments in 2017 and for none in 2022. [verified] \u{2014} the same source, the two releases. Set that one code aside and the comparison is ordinary: $314,154,000 in 2017 against $286,926,000 in 2022, a fall of 8.7 per cent."),
+        ],
+        answers: &["does not establish what any of this debt was borrowed for"],
+        figures: &[
+            Figure { label: "2017, as published", value: 1837294000.0, literal: "1,837,294,000" },
+            Figure { label: "2017, on the 2022 definition", value: 314154000.0, literal: "314,154,000" },
+            Figure { label: "2022", value: 286926000.0, literal: "286,926,000" },
+        ],
+    },
+    Assertion {
+        id: "a-factor-of-a-hundred-and-twelve",
+        statement: "What Allen County owes and what stands in Allen County's name differ by a factor \
+                    of a hundred and twelve: $13,605,000 of its own long-term debt against \
+                    $1,523,140,000 issued for private borrowers.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-debt-2017-2022.yml", "**The retired code was this county's largest published number and it was not the county's money.** $1,523,140,000 of it stood in Allen County's name for private borrowers; the county owes none of it and never did. [verified] \u{2014} the same source's 2017 file, read against [the conduit debt](allen-county-conduit-debt-2010-2023.yml). What the county owes and what stands in the county's name differ by a factor of a hundred and twelve. [inference] \u{2014} computed from the two figures above."),
+        ],
+        answers: &["does not establish what any of this debt was borrowed for"],
+        figures: &[],
+    },
+    Assertion {
+        id: "long-term-debt-is-not-every-liability",
+        statement: "Allen County's audited liabilities rose $36,758,891 in 2023 in a year in which \
+                    it borrowed nothing, because its long-term pension liability moved. A debt \
+                    series and a liability series are two different things.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-local-government-debt-2017-2022.yml", "**Long-term debt is not everything a government owes.** [inference] Pensions, compensated absences and lease obligations are liabilities and are not bonds, and this file counts bonds and loans. The county's audited liabilities rose $36,758,891 in 2023 on a year in which it borrowed nothing, because its long-term pension liability moved; a debt series and a liability series are two different things and this node is the first."),
+        ],
+        answers: &["does not establish what any of this debt was borrowed for"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-did-not-answer",
+        statement: "Allen County did not answer the federal government finance survey and the survey \
+                    published twenty-seven figures for it anyway. Fifteen of the county's forty-six \
+                    governments are in the same state, and 221 of its 727 cells are the Bureau's \
+                    arithmetic.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-the-federal-finance-file-2022.yml", "**Allen County did not answer the federal government finance survey, and the survey published twenty-seven figures for it anyway.** Every one of the county government's cells in the 2022 individual unit file carries the flag `I` for imputed. [verified] \u{2014} [the government finance survey](../../catalog/census-government-finances.md), the 2022 file, counted here. Fifteen of the county's forty-six governments are in the same state, and 221 of the county's 727 cells \u{2014} 30.4 per cent \u{2014} are the Bureau's arithmetic rather than a treasurer's answer."),
+        ],
+        answers: &["does not establish why the county did not answer"],
+        figures: &[
+            Figure { label: "imputed cells", value: 221.0, literal: "221" },
+            Figure { label: "cells in all", value: 727.0, literal: "727" },
+        ],
+    },
+    Assertion {
+        id: "the-schools-answer-and-the-villages-do-not",
+        statement: "98.4 per cent of the school entities' cells in Allen County are reported against \
+                    60.2 per cent of the municipalities'. Lima answers all sixty-two of its \
+                    questions; Bluffton, Elida, Harrod, Lafayette and Beaverdam answer none of \
+                    theirs.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-the-federal-finance-file-2022.yml", "**The school districts answer and the villages do not.** 98.4 per cent of the school entities' cells are reported against 60.2 per cent of the municipalities'; Lima answers all sixty-two of its questions and Bluffton, Elida, Harrod, Lafayette and Beaverdam answer none of theirs. [verified] \u{2014} the same file, by unit."),
+        ],
+        answers: &["does not establish why the county did not answer"],
+        figures: &[
+            Figure { label: "school entities", value: 98.4, literal: "98.4" },
+            Figure { label: "municipalities", value: 60.2, literal: "60.2" },
+        ],
+    },
+    Assertion {
+        id: "an-interest-rate-of-two-hundred-and-fifty-eight-per-cent",
+        statement: "The federal model gives Allen County $46,722,000 of interest on general debt \
+                    against $18,072,000 of long-term debt \u{2014} 258 per cent \u{2014} where the \
+                    seventeen reported governments in the county run from 1.5 to 8.6 and the \
+                    county's own 2017 figure was 3.0.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-the-federal-finance-file-2022.yml", "**The model gives this county an interest rate of two hundred and fifty-eight per cent.** $46,722,000 of interest on general debt, against $18,072,000 of long-term debt at the start of the year and $13,605,000 at the end. [verified] \u{2014} the same file, the county's own row. The seventeen other governments in this county that report both figures run from 1.5 per cent at Lima to 8.6 at Richland Township, and the county's own reported figure five years earlier was $1,038,000 on $34,811,000, which is 3.0. [verified] \u{2014} the same source, its 2017 and 2022 files."),
+        ],
+        answers: &["does not establish why the county did not answer"],
+        figures: &[
+            Figure { label: "Lima", value: 1.5, literal: "1.5" },
+            Figure { label: "Richland Township", value: 8.6, literal: "8.6" },
+            Figure { label: "the county in 2017", value: 3.0, literal: "3.0" },
+        ],
+    },
+    Assertion {
+        id: "the-auditor-says-two-hundred-and-six-thousand",
+        statement: "Allen County's audited statement of activities gives interest and fiscal charges \
+                    of $206,079 for 2022. The published federal figure is 227 times it.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-the-federal-finance-file-2022.yml", "**The county's own auditor puts the figure at $206,079.** The audited statement of activities for the year ended 31 December 2022 gives interest and fiscal charges of $206,079 for governmental activities and nothing for business-type. The published federal figure is 227 times it. [verified] \u{2014} [the county auditor](../../catalog/allen-county-auditor-financials.md), the 2022 report, Table 2; see [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml)."),
+        ],
+        answers: &["does not establish why the county did not answer"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-same-model-is-nearly-right-about-everything-large",
+        statement: "The same imputation gives Allen County $105,391,000 of revenue against the \
+                    audit's $106,515,249, a permissive sales tax of $22,513,000 against $20,678,894 \
+                    and a property tax of $14,959,000 against $13,200,749.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-the-federal-finance-file-2022.yml", "**The same imputation is nearly right about everything large.** Total revenue $105,391,000 against the audit's $106,515,249, 1.1 per cent low; the permissive sales tax $22,513,000 against $20,678,894, 8.9 per cent high; property tax $14,959,000 against $13,200,749, 13.3 per cent high; interest earned $734,000 against $667,203. [verified] \u{2014} the same source pair. A model that lands within a point on a hundred million dollars and two hundred times out on two hundred thousand is a model that has to be checked at the line rather than at the total. [inference]"),
+        ],
+        answers: &["does not establish why the county did not answer"],
+        figures: &[
+            Figure { label: "revenue, error %", value: 1.1, literal: "1.1" },
+            Figure { label: "sales tax, error %", value: 8.9, literal: "8.9" },
+            Figure { label: "property tax, error %", value: 13.3, literal: "13.3" },
+        ],
+    },
+    Assertion {
+        id: "the-flag-travels-with-the-figure",
+        statement: "Dropping the imputed figures would empty fifteen governments out of Allen County \
+                    \u{2014} every municipality but Lima, Delphos, Cairo and Spencerville, and four \
+                    of the twelve townships. The corpus publishes them and says they are imputed.",
+        topic: "government",
+        supports: &[
+            support!("measure/allen-county-in-the-federal-finance-file-2022.yml", "**This corpus publishes the imputed figures and says they are imputed.** Dropping them would empty fifteen governments out of the county \u{2014} every municipality but Lima, Delphos, Cairo and Spencerville, and four of the twelve townships \u{2014} and publish a county with holes in it. [inference] The rule is that the flag travels with the figure."),
+        ],
+        answers: &["does not establish why the county did not answer"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

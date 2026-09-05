@@ -1,0 +1,156 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const two = assertion('two-billion-in-the-countys-name')
+const one = assertion('every-itemised-issue-was-one-hospital-system')
+const what = assertion('what-a-conduit-issue-is')
+const first = assertion('first-in-ohio-on-industrial-revenue-debt')
+const check = assertion('two-instruments-within-three-per-cent')
+const gasb = assertion('nine-hundred-million-in-the-year-the-rule-changed')
+const gone = assertion('the-federal-file-stopped-carrying-it')
+
+const all = assertion('forty-six-governments-raised-five-hundred-and-forty-six-million')
+const halves = assertion('half-is-schools-and-a-thirtieth-is-townships')
+const three = assertion('three-governments-are-nearly-half')
+const ranks = assertion('thirty-sixth-on-revenue-and-twenty-first-on-spending')
+const deficit = assertion('the-county-spends-more-than-it-raises')
+const districts = assertion('a-special-district-is-whatever-ohio-made-a-government')
+
+const owed = assertion('two-hundred-and-eighty-seven-million-owed')
+const nine = assertion('nine-carry-ninety-six-per-cent-of-the-debt')
+const least = assertion('the-county-owes-least-of-the-large-ones')
+const fall = assertion('eighty-four-per-cent-that-did-not-happen')
+const factor = assertion('a-factor-of-a-hundred-and-twelve')
+const liab = assertion('long-term-debt-is-not-every-liability')
+
+const noanswer = assertion('the-county-did-not-answer')
+const schools = assertion('the-schools-answer-and-the-villages-do-not')
+const rate = assertion('an-interest-rate-of-two-hundred-and-fifty-eight-per-cent')
+const auditor = assertion('the-auditor-says-two-hundred-and-six-thousand')
+const large = assertion('the-same-model-is-nearly-right-about-everything-large')
+const flag = assertion('the-flag-travels-with-the-figure')
+
+const ohioSpec = bar(
+  first.figures.map((f) => f.label),
+  first.figures.map((f) => f.value),
+  { yTitle: 'Industrial revenue debt per resident', labelValues: true },
+)
+const gasbSpec = bar(
+  gasb.figures.map((f) => f.label),
+  gasb.figures.map((f) => f.value),
+  { yTitle: 'Conduit debt outstanding', labelValues: true },
+)
+const fallSpec = bar(
+  fall.figures.map((f) => f.label),
+  fall.figures.map((f) => f.value),
+  { yTitle: 'Long-term debt of the governments here', labelValues: true },
+)
+const rankSpec = bar(
+  ranks.figures.map((f) => f.label),
+  ranks.figures.map((f) => f.value),
+  { yTitle: 'Dollars per resident', labelValues: true },
+)
+---
+
+<Article slug="in-the-countys-name">
+  <p>
+    A county's own books say what the county spends. They do not say what it costs to be governed
+    here, because a resident of Bath Township is governed by the county, the township, a school
+    district, a career centre, a park district, a soil and water district and a transit authority,
+    and each keeps its own accounts. One federal survey puts all of them on the same page in the
+    same units. It also puts a number on this county that is larger than anything else about it.
+  </p>
+
+  <h2>Two billion two hundred million</h2>
+  <AssertionCard assertion={two} open />
+  <AssertionCard assertion={what} />
+  <AssertionCard assertion={one} />
+  <p>
+    A hospital system borrows, and the borrowing is done in the county's name so that the lenders'
+    interest is tax-exempt. The bonds are secured on the hospitals; the county's taxes secure
+    nothing; on repayment the buildings belong to the borrower. Note 19 of every audit since 2010
+    says so in the same sentence, and that sentence is the reason the number is not a liability of
+    Allen County.
+  </p>
+  <AssertionCard assertion={first} open />
+  <ChartFigure
+    id="ohio"
+    title="Industrial revenue debt per resident, 2017"
+    caption="The three largest of the fifty-two Ohio counties carrying the item. Allen's figure is the county's own answer; Franklin's is the Bureau's estimate."
+    columns={['County', 'Per resident']}
+    rows={first.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="ohio" set:html={JSON.stringify(ohioSpec)} is:inline />
+  <AssertionCard assertion={check} />
+  <AssertionCard assertion={gasb} open />
+  <ChartFigure
+    id="gasb"
+    title="Conduit debt outstanding at 31 December"
+    caption="The year between the two is the year the county adopted GASB Statement No. 91 and the note stopped naming borrowers."
+    columns={['Date', 'Outstanding']}
+    rows={gasb.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="gasb" set:html={JSON.stringify(gasbSpec)} is:inline />
+  <AssertionCard assertion={gone} />
+
+  <h2>What it costs to be governed here</h2>
+  <AssertionCard assertion={all} open />
+  <AssertionCard assertion={halves} />
+  <AssertionCard assertion={three} />
+  <AssertionCard assertion={districts} />
+  <p>
+    The sixth largest government in the county buys health insurance for school employees and has
+    no territory, no electorate and no building. The port authority raised thirty-six thousand
+    dollars. Both are governments in the same sense the county is, because Ohio wrote them that way.
+  </p>
+  <AssertionCard assertion={ranks} open />
+  <ChartFigure
+    id="ranks"
+    title="Local government revenue and spending per resident, 2022"
+    caption="Allen County against the median of Ohio's eighty-eight, computed the same way for each."
+    columns={['Measure', 'Per resident']}
+    rows={ranks.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="ranks" set:html={JSON.stringify(rankSpec)} is:inline />
+  <AssertionCard assertion={deficit} />
+
+  <h2>What they owe</h2>
+  <AssertionCard assertion={owed} open />
+  <AssertionCard assertion={nine} />
+  <AssertionCard assertion={least} />
+  <AssertionCard assertion={fall} open />
+  <ChartFigure
+    id="fall"
+    title="Long-term debt of Allen County's governments"
+    caption="The 2017 figure twice: as the Bureau published it, and on the definition the 2022 file uses."
+    columns={['Basis', 'Amount']}
+    rows={fall.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="fall" set:html={JSON.stringify(fallSpec)} is:inline />
+  <AssertionCard assertion={factor} />
+  <AssertionCard assertion={liab} />
+
+  <h2>The county did not answer</h2>
+  <AssertionCard assertion={noanswer} open />
+  <AssertionCard assertion={schools} />
+  <AssertionCard assertion={rate} />
+  <AssertionCard assertion={auditor} />
+  <p>
+    The county's treasurer never typed that figure. Nobody did. A model produced it because the
+    county returned no questionnaire, and the only thing in the record that says so is the
+    thirty-second character of a thirty-two character line — a letter that appears in no summary
+    table and in no description of the column it qualifies.
+  </p>
+  <AssertionCard assertion={large} />
+  <AssertionCard assertion={flag} />
+  <p>
+    Discarding the estimates is not the remedy, because the county would then hold five villages and
+    four townships that raise nothing and spend nothing. What the estimates need is their flag,
+    carried in the sentence rather than in a footnote, and a check against the governments next door
+    that did answer.
+  </p>
+</Article>
