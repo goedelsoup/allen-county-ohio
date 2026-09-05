@@ -1,0 +1,90 @@
+class: measure
+label: Allen County developed land and impervious surface, 2001–2021
+description: |
+  **1,909 acres of Allen County entered the developed classes between 2001 and 2021, and 1,616 of
+  them came off farmland.** [verified] —
+  [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), 2001 against 2021,
+  clipped to the county and differenced pixel by pixel here. Developed ground goes from 46,785
+  acres to 48,694, from 17.97 per cent of the county to 18.70.
+
+  **The county did not spread so much as thicken.** Its lightest developed class *fell* by 925
+  acres over the twenty years while medium intensity rose 1,748 and high intensity rose 742.
+  [verified] — same source.
+
+      developed class            2001      2021    change
+      open space               20,503    19,578      -925
+      low intensity            15,798    16,141      +343
+      medium intensity          7,175     8,923    +1,748
+      high intensity            3,310     4,052      +742
+      all developed            46,785    48,694    +1,909
+
+  The single largest land cover transition anywhere in this county over
+  the twenty years is not farm to town: it is 1,020 acres of developed open space becoming
+  developed medium intensity. [verified] — same source, the 2001-to-2021 transition table.
+
+  **More acres got denser than got built.** Across the eight epoch steps, 2,260 acres moved to a
+  more intense developed class and 1,909 acres entered the developed classes at all. [verified] —
+  same source, differenced step by step. This is a county that lost 2,486 residents between 1980
+  and 1990 and has lost more since, filling in what it already had.
+
+  **Not one acre moved the other way.** Across the same eight steps 0.7 acres left the developed
+  classes altogether and **no acre at all moved to a less intense developed class**, at any epoch
+  boundary, while forest gained 434 acres and lost 442 and cropland gained 968 and lost 2,425.
+  [verified] — same source, every consecutive pair counted both ways. Whether that is the county or
+  the product is not decidable from the file; see
+  [a class that only moves one way](../../decisions/a-class-that-only-moves-one-way.yml), and read
+  the 1,909 as a ceiling on the net change rather than as a gross figure.
+
+  **Six per cent of Allen County is paved.** Impervious surface totals 15,994 acres in 2021 against
+  14,093 in 2001 — 6.14 per cent of the county against 5.41, a rise of 1,901 acres. [verified] —
+  same source, the impervious coverages for 2001, 2011 and 2021, summed as fractional cover. The
+  1,901 acres of new impervious surface almost equal the 1,909 acres of new developed ground, which
+  means the thickening contributed about as much hard surface as the building did. [inference] —
+  computed here.
+
+  **Developed ground is not the same quantity in the two files the corpus now holds.** This one
+  gives 48,694 acres for 2021; the Cropland Data Layer gives 46,307 for 2024, and its own
+  documentation says that class is this file recoded. [verified] —
+  [the Cropland Data Layer](../../catalog/usda-cropscape-cdl.md) and
+  [the database it comes from](../../catalog/mrlc-nlcd-land-cover.md). The 2,387-acre difference
+  measures the recode and the re-registration; see
+  [one file, two reliabilities](../../decisions/one-file-two-reliabilities.yml).
+
+  **A pixel is not a building.** A thirty-metre cell that changes class says a tenth of a hectare
+  became more built between two epochs three years apart, and nothing about what was built, when
+  within the interval, or for whom. [inference] — the reasoning is this corpus's, against
+  [the building footprints](allen-county-buildings-2019.yml), which are drawn one at a time.
+
+  **This node cannot say where a single building went up.**
+properties:
+  parameter: acres entering the developed land cover classes, Allen County
+  value: "1909"
+  unit: acres, 2001 to 2021
+  as_of: "2021"
+  method: |
+    Impervious surface is published as per-cent cover per pixel; the acreage here is the sum of
+    those percentages over the county divided by a hundred, which is the only reading that makes
+    the figure additive. Values above 100 are the product's own codes for roads outside the
+    developed classes and are excluded, which affects nothing at this county's scale. The
+    transition figures are counted between consecutive epochs rather than between the endpoints,
+    because a pixel that changes twice is one acre of change in the endpoint comparison and two in
+    the stepwise one, and the question here is how often the file permits a direction. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-2001-2021.yml
+    relationship: concerns
+  - target: allen-county-land-cover-2008-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usda-cropscape-cdl.md
+  - target: allen-county-population-1940-1990.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-buildings-2019.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

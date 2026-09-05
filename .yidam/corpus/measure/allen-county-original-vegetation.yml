@@ -55,6 +55,16 @@ description: |
   is what a lake plain that drains badly and still grows trees looks like. [inference] — computed
   from the two files above.
 
+  **What is left of it, measured on the same ground by a satellite.** The National Land Cover
+  Database puts 973 acres of woody wetland in this county in 2021 and 758 of emergent herbaceous
+  wetland, 1,731 acres in all. Against the 22,433.9 acres of swamp forest this node maps, the
+  wooded part that survives is 4.3 per cent and the whole wetland class is 7.7 per cent. [verified]
+  — [the land cover database](../../catalog/mrlc-nlcd-land-cover.md); see
+  [the series](allen-county-land-cover-2001-2021.yml). Neither figure is the same quantity as the
+  other — one is a nineteenth-century vegetation reconstruction and the other a thirty-metre
+  classification of what grows now — and the order of magnitude between them is the answer to how
+  completely the swamp was drained. [inference]
+
   **This corpus cannot say when any of this was cleared.** Gordon's map is one surface at one moment
   — the moment of the earliest surveys — and nothing in it is a date. The county's farmland series
   begins in 1910, eighty years after the surveys, with the clearing already done.
@@ -62,6 +72,7 @@ description: |
   [open] Whether the nineteen bodies were connected before the ditching. Gordon mapped forest types
   and not hydrology, and a swamp can be one wetland under two forest covers. Closing this needs the
   original survey field notes rather than the map drawn from them.
+
 properties:
   parameter: original vegetation cover by type
   value: "22433.9"
@@ -92,5 +103,9 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/odnr-original-vegetation.md
+  - target: allen-county-land-cover-2001-2021.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
   - target: ../measure.ont.yml
     relationship: instance-of
