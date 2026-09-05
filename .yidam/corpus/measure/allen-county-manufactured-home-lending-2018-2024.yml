@@ -1,0 +1,77 @@
+class: measure
+label: Lending on Allen County's manufactured homes, 2018-2024
+description: |
+  **The county holds 1,900 mobile homes and the register shows 267 loans made on manufactured
+  housing in seven years — and they are not priced like mortgages, because half of them are not
+  mortgages.** [verified] —
+  [the HMDA register](../../catalog/hmda-loan-application-register.md) for the loans, and
+  [the structure of the stock](allen-county-housing-structure-2023.yml) for the homes.
+
+  **The register splits them by what secures the debt, and that one column is the whole story.**
+
+      secured by            n   median rate   spread over prime   median loan   term   priced high
+      the home and land   116         4.44%              0.719       $110,000   360m         23.4%
+      the home only       142         8.85               5.794         35,000   240m         97.2
+
+  **In figures: a loan secured by the manufactured home alone carries a median rate of 8.85 per
+  cent and sits 5.794 points above the prime offer rate, against 0.390 points for an ordinary
+  first-lien loan on a site-built house in the same county and the same years.** [verified] — the
+  same source. 104 of the 107 such loans that publish a spread are above the federal higher-priced
+  threshold. A loan on the home and its land is a mortgage and is priced as one; a loan on the home
+  alone is a chattel loan on a vehicle title, and the price is the difference.
+
+  **A hundred and one of the 267 are on ground the borrower does not own.** The register's
+  land-property-interest column records a paid leasehold for that many, direct ownership for 153.
+  [verified] — the same source.
+
+  **Applications on manufactured housing are refused at three times the rate of applications on
+  houses.** 322 of 614 decisions were denials, 52.4 per cent, against 4,305 of 23,655 and 18.2 per
+  cent on site-built. [verified] — the same source, actions 1, 2 and 3.
+
+  **The lending is concentrated in three specialists, and two of them report the same owner.**
+  21st Mortgage Corporation made 109 of the 267 and every one of its priced loans is higher-priced;
+  Triad Financial Services made 23 and Vanderbilt Mortgage 10. [verified] — the same source, with
+  [GLEIF](../../catalog/hmda-loan-application-register.md) for the names. 21st Mortgage and
+  Vanderbilt both name Berkshire Hathaway Inc. as ultimate parent in the same register.
+  [verified] — the same registry's relationship records. Superior Credit Union made 32 and none of
+  them was higher-priced. [verified]
+
+  **This is a township business, not a city one.** 221 of the 267 loans are outside Lima's tracts,
+  which is where the homes are: Bath Township holds 664 mobile homes, Shawnee 333, Spencer 193 and
+  Perry 191, against 233 in the whole city. [verified] —
+  [the structure of the stock](allen-county-housing-structure-2023.yml).
+
+  **This node does not establish that these borrowers could have had a mortgage instead.** Whether
+  a home can be titled with its land is a question about the deed, the park and the state's
+  conversion procedure, and the register carries none of that. See
+  [a denial rate is not an underwriting file](../../decisions/a-denial-rate-is-not-an-underwriting-file.yml).
+
+  [open] How many of Allen County's mobile homes stand in a park on rented ground. The register
+  says 101 of seven years' borrowers were on a leasehold and says nothing about the 1,900 standing.
+properties:
+  parameter: manufactured-home loans secured by the home and not its land, priced above the federal higher-priced threshold
+  value: "97.2"
+  unit: per cent of the 107 such loans that publish a rate spread, 2018-2024
+  as_of: "2024"
+  method: |
+    Manufactured is `construction_method` 2, which is 267 of the county's 19,070 originations.
+    [verified] The split is `manufactured_home_secured_property_type`: 116 on home and land, 142 on
+    the home alone, and nine that are exempt or not applicable. [verified] The site-built
+    comparison is first-lien loans on principal residences, the same book
+    [the price node](allen-county-mortgage-prices-2018-2024.yml) uses. [verified] Denial rates use
+    actions 1, 2 and 3 and exclude withdrawn, purchased and incomplete files. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: allen-county-mortgage-prices-2018-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: allen-county-housing-structure-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

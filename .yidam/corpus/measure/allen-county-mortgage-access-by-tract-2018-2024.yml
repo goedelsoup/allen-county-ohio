@@ -1,0 +1,93 @@
+class: measure
+label: Where Allen County's mortgages went, and what they cost there, 2018-2024
+description: |
+  **The tracts where a mortgage is hardest to get are the tracts where it is dearest to have, and
+  the two rank almost together.** Across the county's 34 tracts with enough decisions to rate, the
+  correlation between a tract's denial rate and its share of higher-priced loans is 0.828.
+  [verified] — [the HMDA register](../../catalog/hmda-loan-application-register.md), seven years,
+  the denial rates of [the lending node](allen-county-home-lending-2018-2024.yml) against the
+  prices of [the price node](allen-county-mortgage-prices-2018-2024.yml). Denial runs from 9.5 to
+  52.0 per cent across those tracts and the higher-priced share from 4.8 to 42.5.
+
+  **Lending is not spread over this county's houses at anything like an even rate.** The sixteen
+  tracts that are majority Lima hold 14,913 one-to-four-family houses and took 2,958 first-lien
+  loans in seven years — 19.8 per 100 houses. The other nineteen tracts hold 26,595 houses and took
+  11,738 — 44.1 per 100. [verified] — the same source, and its own
+  `tract_one_to_four_family_homes` column.
+
+      tract       houses   loans   per 100   priced high   median loan
+      13700          522      28       5.4         46.4%       $35,000
+      13800        1,480      89       6.0         28.9         55,000
+      12700          691      42       6.1         42.5         45,000
+      13400          883      54       6.1         23.5         45,000
+      14100          561      34       6.1         21.2         55,000
+      13600          547      35       6.4         41.2         35,000
+      ...
+      12100        1,323     783      59.2          6.7        155,000
+      11301        2,128   1,246      58.6          8.1        135,000
+      12000          998     739      74.0          4.8        175,000
+      10801        1,894   1,577      83.3          6.0        155,000
+
+  **In figures: tract 39003013700 holds 522 houses and took 28 mortgages in seven years — one loan
+  for every nineteen houses — and 46.4 per cent of them were higher-priced.** At the other end of
+  the same county, tract 39003010801 holds 1,894 houses, took 1,577 loans, and 6.0 per cent were.
+  [verified] — the same source, by tract. The six thinnest tracts are all inside Lima and the four
+  thickest are all outside it.
+
+  **A borrower in the city pays more dollars to close a smaller loan.** The median first-lien loan
+  in Lima's tracts is $85,000 and costs $3,181 to close; outside them it is $135,000 and costs
+  $2,920. [verified] — the same source. As a share that is 3.65 per cent against 2.07.
+
+  **The city's price premium is real at every size but the largest, where it disappears.** Under
+  $50,000 the higher-priced share is 27.8 per cent inside Lima's tracts and 20.0 outside; from
+  $50,000 to $100,000, 13.9 against 9.9; to $150,000, 10.7 against 6.1; above $150,000, 4.2 against
+  4.5. [verified] — the same source. Whatever is being priced stops mattering at the top of this
+  county's market.
+
+  **The largest lender in the county prices the same way inside the city as the market does.**
+  Superior Credit Union made 27.0 per cent of the loans in Lima's tracts and 31.2 per cent of those
+  outside; its own higher-priced share is 15.7 per cent inside and 7.4 outside. [verified] — the
+  same source; see [the lender](../organization/superior-credit-union.yml). One institution and one
+  underwriting policy on both sides of the line.
+
+  **This node does not establish that these houses could not be borrowed against.** A loan count is
+  a count of loans made, and a tract with few of them may hold owners who did not ask, houses owned
+  outright, or landlords who borrow elsewhere. What it shows is where the county's mortgage credit
+  went, not what was available. See
+  [a denial rate is not an underwriting file](../../decisions/a-denial-rate-is-not-an-underwriting-file.yml).
+
+  [open] How many of the county's houses carry a mortgage at all. The register counts loans made in
+  a window and the survey counts owners with a mortgage; neither is the other, and the corpus has
+  not put them beside each other.
+properties:
+  parameter: first-lien home loans per 100 one-to-four-family houses, Lima tracts against the rest
+  value: "19.8"
+  unit: loans per 100 houses over 2018-2024, against 44.1 outside the city's tracts
+  as_of: "2024"
+  method: |
+    "Lima tracts" is the sixteen of the county's thirty-five whose 2020 population is majority
+    Lima, the same set the denial work used. [verified] The house counts are the register's own
+    `tract_one_to_four_family_homes`, taken from the 2022-2024 rows, so both sides of the ratio come
+    from one file. [verified] The tract identifiers change vintage in 2022; the two tracts that
+    split are carried on their first successor so that seven years land in one row. [verified] The
+    correlation is over the 34 tracts with at least thirty decisions and thirty priced
+    originations. [verified]
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: allen-county-mortgage-prices-2018-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../organization/superior-credit-union.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/hmda-loan-application-register.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
