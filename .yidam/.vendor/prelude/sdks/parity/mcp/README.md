@@ -20,6 +20,18 @@ Optional is not the same as absent. A server that cannot walk the graph declares
 through a tool-not-found error. The capability flag and the tool list must agree, and the
 harness checks that they do.
 
+**And an unbacked tool must refuse, not merely go unlisted (contract 0.11.1).** Omitting it
+from `tools/list` and dispatching it anyway re-opens that hole from the other side: this
+server did exactly that, answering `query` on a corpus it had just told the caller it has no
+ontology for — with `class-unpopulated`, the one diagnosis the contract names as a MUST NOT,
+from a tool it had said it does not serve. The refusal is an MCP tool error (`isError: true`)
+whose text begins **`capability-not-supported`**, and that token is frozen: `unknown tool` is
+a different repair, and a caller told it goes hunting for a spelling mistake in a name
+`tools.json` froze.
+
+The rule was unenforceable until a corpus existed on which some tier goes unbacked. Against
+`corpus/` this server backs every tier there is a tool for, so the check could not fail.
+
 ## The capability block
 
 `initialize` returns MCP's own `capabilities` object with a `yidam` block inside it:
@@ -28,9 +40,9 @@ harness checks that they do.
 "capabilities": {
   "tools": {}, "resources": {},
   "yidam": {
-    "contract": "0.11.0",
+    "contract": "0.12.0",
     "retrieve": { "vector": false, "reason": "no_index" },
-    "graph": true, "ontology": true,
+    "graph": true, "ontology": true, "dependencies": true,
     "phases": false, "sangha": false, "resources": true
   }
 }
@@ -88,6 +100,80 @@ declaring `informs` and no local class declaring it). Before that, no case here 
 server that backs `across` from one that accepts the flag and ignores it — and none could
 exercise a non-empty `absence.elsewhere` either, since there was no package to name.
 
+## Checking a citation before writing it (contract 0.12.0)
+
+`check_citation` — one tool, at the new `dependencies` tier.
+
+RFC-0019 made `cites:` a field of a node and #266 made a citation into a dependency
+**verifiable**, by four checks that all run at `lint` time — which is to say after the citation
+has been written into a file and committed to. An agent about to write one had no way to ask
+whether it would hold.
+
+**The surfaces that make a foreign node reachable are the ones that make a bad citation easy to
+write.** `retrieve` answers from a dependency, `get_node` reads a node out of one, and 0.11.0
+gave `query` the dependency set. An agent cites what it has just read, *confidently*, and none
+of those tools says whether the citation will stand: the package may be installed at a
+different pin than the one about to be written, and a `span:` is a claim about text that no
+read-tool checks.
+
+| Check | Severity | Answers |
+|---|---|---|
+| `external-citation-unresolved` | error | the package is not installed, or holds no such node |
+| `external-citation-span-drift` | error | the cited span is not in the node, or there is no span |
+| `external-citation-pin-moved` | warn | the pin cited is not the pin installed |
+| `external-citation-unpinned` | info | a path dependency carries no pin to cite |
+
+**A server MUST answer from the same predicate its gate uses.** The four checks and this tool
+are one rule read two ways; re-deriving them beside each other is how the two come to disagree
+about what a citation is, and the disagreement would be invisible until a corpus passed the tool
+and failed the gate. This is `query`'s argument for being a call into the CLI's own traversal
+rather than a second walk.
+
+**`holds` and `gates` are different questions.** `holds` is false when anything fired; `gates` is
+true only at error severity. A stale pin is a normal state — it is pinned deliberately, and
+escalating it would let a producer cutting a release turn a stranger's CI red without the
+stranger changing anything, the exact failure a pin exists to prevent. So a caller reading only
+`gates` writes a citation it was warned about, and one reading only `holds` treats a warning as
+a refusal.
+
+**`package` is required and `node` is not.** Without a package there is no question — nothing
+names a corpus to check against. Without a node there is still a question, and its answer is
+`external-citation-unresolved`, the same finding the gate gives, so it comes back as one rather
+than as a schema error. A server that made `node` required would have put a frozen check id out
+of reach of the surface that exists to report it.
+
+**The installed set travels with the verdict** — `package`, `pin`, `kind` — so a caller that got
+a name wrong corrects without a second call, which is `check_subject`'s `vocabulary` and the
+whole point of asking before the act. `pin` is reachable no other way here: it is the value a
+correct `commit:` must carry, and an agent left to guess it writes `external-citation-pin-moved`
+into the corpus on its first try.
+
+**Span verification reads the startup snapshot**, settled the way 0.9.1 settled `query --select
+body`: the same corpus `get_node` and `query --across` answer from. A verdict read through to
+the working tree would call a citation sound against text no other tool on that server can show
+you. Freshness is a restart.
+
+**No fixture corpus needs a `cites:` in it, and none has one.** The citation is an *input* to
+this tool, not something read out of a node — which is the whole point, since the citation
+being checked has not been written yet. A `cites:` added to `corpus/` would be a fixture no
+case asserts on, and would change the node text every `retrieve` case scores against.
+
+### Why it is a tier and not `core`
+
+A server that resolved no dependency can serve this tool and answer
+`external-citation-unresolved` to every citation put to it — correct every single time, and a
+statement about a dependency set it does not have. That is the shape 0.11.1 forbids one tier
+over, where a server with no `.ont.yml` must not report `class-unpopulated`.
+
+So `dependencies` is true **iff the server resolved at least one installed dependency**, exactly
+as `ontology` is true iff the corpus has class files. It is a fact about the corpus and not
+about the build: reading what a repository depends on needs none of the network the `tonpa`
+feature buys. A projected mirror carries no `.yidam/tonpa/` and declares false.
+
+`corpus/` has `upstream` installed, so it declares true. `corpus-unschematised/` installs
+nothing, so it is the corpus on which **both** optional tiers go unbacked — and the one where
+this tool's refusal is checkable against a server that really does decline it.
+
 ## Which kind of nothing (contract 0.10.0)
 
 `retrieve` gains `rejected` and `absence`. Both are always present and at most one is non-null.
@@ -114,6 +200,16 @@ report a typo as a fact about the corpus.
 | `index-empty` | vector | the index holds no rows and there was nothing to search |
 | `query-no-terms` | keyword | the query contains no searchable terms |
 | `no-term-match` | keyword | none of the nodes searched contains any word of the query |
+
+**Four of the six have cases, and the two that do not need a vector index.**
+`class-unpopulated`, `class-undeclared`, `query-no-terms` and `no-term-match` are each forced
+by a case that fails a server not implementing it — `class-undeclared` only since
+`corpus-unschematised/` shipped, and `query-no-terms` only since somebody counted. The
+remaining two, `class-unindexed` and `index-empty`, are reachable only on the vector path, and
+no fixture here has an index: that is the same condition `keyword-degraded.json` pins, so a
+corpus that made them reachable would break every case beside them. They are frozen and
+unforced, like `stale_contract` one section down, and for the same reason — a server that
+reaches the state will otherwise invent a string.
 
 **A smaller shape than `query`'s, deliberately.** `{code, message, instances}` — no `step`,
 because `retrieve` has no steps, and no `elsewhere`, because `retrieve` already searches every
@@ -350,6 +446,7 @@ capability, because a projected mirror can hold nodes and edges and hold no `.on
 | `claims` | core | the assertions a corpus makes, with the standing each is made at |
 | `check_subject` | core | is this commit subject in vocabulary, before the commit is written |
 | `claim_tags` | core | the three tags, their meanings, and how each may be written |
+| `check_citation` | dependencies | would this `cites:` into a dependency hold, before it is written (added at 0.12.0, above) |
 | `licensed_edges` | ontology | what a class declares it may link to |
 | `query` | ontology | a typed path over the graph (added at 0.6.0, above) |
 | `pack` | ontology | that path's answer, budgeted, with what did not fit (added at 0.7.0, above) |
@@ -413,12 +510,13 @@ never re-embeds, so it cannot reach that state. It is frozen anyway, because a s
 does reach it will otherwise invent a string, which is the drift this directory exists to
 stop.
 
-## The corpus
+## The corpora
 
-`corpus/` is the tree every case runs against — a four-node `concept` graph, small enough to
-read in one sitting and shaped so each case has exactly one thing it can fail on. Stage it as
-a repository: copy it to a scratch directory, `git init`, commit once. The Rust harness
-(`yidam/cli/tests/mcp_serve.rs`) does that in ten lines, and so should every other.
+`corpus/` is the tree a case runs against unless it names another — a four-node `concept`
+graph, small enough to read in one sitting and shaped so each case has exactly one thing it
+can fail on. Stage it as a repository: copy it to a scratch directory, `git init`, commit
+once. The Rust harness (`yidam/cli/tests/mcp_serve.rs`) does that in ten lines, and so should
+every other.
 
 It ships here because the counts in `cases/` describe it and nothing else. For a while it did
 not: the corpus was written as heredocs inside that Rust test, so a case asserting
@@ -444,11 +542,61 @@ arm of the open-question predicate reads nothing — which is exactly why the no
 is the arm a server can omit and never notice, because on a corpus that declares no such
 field a two-arm server returns the identical set.
 
+### A corpus with no ontology (contract 0.11.1)
+
+`corpus-unschematised/` holds two `gage` instances and no `.ont.yml`. It exists because
+`class-undeclared` was a frozen `retrieve` code that **no case over `corpus/` could force a
+server to implement.**
+
+That code is derivable only where nothing declares a class at all: a server with no `.ont.yml`
+backs `retrieve` — it is `core` — and can derive *neither* class answer. It cannot reject an
+unknown class, because none is declared, and it cannot call one unpopulated, because nothing
+declares it a class. `corpus/` declares `concept` and `note`, so its class set is never empty
+and that branch is unreachable from every case beside it. A conforming server could report
+`class-unpopulated` for an unschematised corpus — the precise thing this document forbids,
+because it asserts an ontology the server does not have — and pass the whole suite.
+
+The `capability` key could not close it. That gates cases by *server*, and the problem is the
+*corpus*: this repository's server declares `ontology: true` against `corpus/` because that
+fixture has class files, and one fixture meant every case ran against it.
+
+| Case | What only this corpus can express |
+|---|---|
+| `retrieve/an-unschematised-corpus-cannot-tell` | a class filter matching nothing is `class-undeclared`, and **not** `class-unpopulated` |
+| `retrieve/nothing-declares-a-class-so-nothing-calls-it-wrong` | a filter naming a class that *has* instances returns them with `rejected: null` — nothing declares a class, so nothing can call the name wrong |
+
+The second is what keeps the first honest: without it, a server that rejects every `class`
+filter on an unschematised corpus and reports `class-undeclared` on the way past passes.
+
+It is also the only corpus on which a tier goes unbacked — since 0.12.0, both of them, since it
+installs no dependency either — which is what made the refusal rule above testable, and it is
+where the `ontology` tier's own sentence — *its cases are skipped rather than passed* — is
+finally checkable against a server that really does declare false.
+
+**One consequence reads as a gap and is not.** `query`'s `unschematised` is always `false` on
+this surface, and no case asserts the `true` arm because none can: the only corpus that would
+produce it is one where `query` is not served. The field is reachable from a CLI, which has no
+capability gate, and unreachable from a conforming server.
+
+### `corpora.json`
+
+Which corpora ship, why each exists, and the part of the handshake each one **decides**. Not
+the whole block: `retrieve.vector` depends on the build and `phases`/`sangha` on whether the
+server reads a working git repository, and freezing those here would pin a fact about a binary
+onto a directory of YAML. What a corpus decides, it decides for every conforming server — so a
+harness asserts it right after `initialize`, which is where a server pointed at
+`corpus-unschematised/` and still claiming `ontology: true` is caught.
+
+A corpus that ships, one that is registered, and one a case names are one set, and the Rust
+harness discovers all three rather than listing any. A directory no case names is a fixture
+nothing runs; a registry entry with no directory stages nothing.
+
 ## Cases
 
-`cases/<tool>/<name>.json` is a call and the shape its response must have, over `corpus/`.
-They assert invariant fields — `degraded`, the node model, `direction` — and never embedding
-scores, which are a property of a model rather than of a contract.
+`cases/<tool>/<name>.json` is a call and the shape its response must have. `corpus` names the
+tree it runs against and defaults to `corpus`, so a second one was added without touching a
+single existing case. Cases assert invariant fields — `degraded`, the node model, `direction`
+— and never embedding scores, which are a property of a model rather than of a contract.
 
 A server declaring a capability MUST pass its cases. One declaring it absent MUST return a
 capability-not-supported error, and its cases are skipped rather than passed.

@@ -32,6 +32,9 @@ includes = ["mise.yidam.toml"]
 _.path = [".yidam/bin"]
 
 [tools]
+# <!-- YIDAM:TOOLS --> written by yidam-vendor-update from .yidam.toml — do not edit
+"github:goedelsoup/yidam" = { version = "0.8.0", version_prefix = "cli/v" }
+# <!-- /YIDAM:TOOLS -->
 # Rust — the domain computer in crates/.
 rust = { version = "1.88.0", components = "rustfmt,clippy" }
 # Rust is the only toolchain carried at genesis. crates/ and packages/ hold no
@@ -79,11 +82,30 @@ if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"
 cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
 """
 
+# `-p` per member and not `--all`, and the difference is not cosmetic. Cargo's own
+# help for the flag is "Format all packages, **and also their local path-based
+# dependencies**" — and crates/proximity has one: the vendored geodesics crate at
+# .yidam/.vendor/prelude/domains/geodesics/rust, which it depends on by path
+# because that is where the prelude puts it.
+#
+# That directory is read-only. Upstream does not run rustfmt over prelude/domains/,
+# so whether the copy this repository holds is rustfmt-clean is an accident of which
+# pin it is on — it was at 1162287e and is not at 7b0cef2e, where two hand edits left
+# a wrapped expression and an unsorted `use`. So `--all` made this repository's
+# formatting gate fail on code it is forbidden to format, with no legal fix: running
+# `cargo fmt` on it is an edit under .vendor/, discarded at the next re-vendor.
+#
+# Naming the members is the honest boundary — a repository formats what it writes.
+# The cost is that a new crate has to be added here and in the two other places this
+# list appears (`ci` below, and the crates job in .github/workflows/ci.yml), and
+# nothing checks that it was: a crate left off is simply never formatted, quietly.
+# Reported upstream in .yidam/decisions/upstream-findings.yml.
+
 [tasks.fmt]
 description = "Format domain computer Rust code. No-op until crates/ exists."
 run = """
 if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
-cargo fmt --all --manifest-path crates/Cargo.toml
+cargo fmt --manifest-path crates/Cargo.toml -p covering -p ground -p provenance -p proximity -p publish -p succession
 """
 
 # ── publication (crates/publish → web/src/feeds/) ─────────────────────────
@@ -194,7 +216,7 @@ if [ ! -f crates/Cargo.toml ]; then
   echo "corpus gate only, which is the whole gate on day one."
   exit 0
 fi
-cargo fmt --all --manifest-path crates/Cargo.toml -- --check
+cargo fmt --manifest-path crates/Cargo.toml -p covering -p ground -p provenance -p proximity -p publish -p succession -- --check
 cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
 cargo test --workspace --manifest-path crates/Cargo.toml
 RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --workspace --manifest-path crates/Cargo.toml
