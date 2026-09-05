@@ -1,0 +1,176 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const detached = assertion('four-houses-in-five-are-one-building')
+const mobile = assertion('more-mobile-homes-than-flats-in-large-buildings')
+const wheremobile = assertion('where-the-mobile-homes-are')
+const emptymobile = assertion('one-mobile-home-in-six-stands-empty')
+const rentinghouse = assertion('renting-here-means-renting-a-house')
+const condo = assertion('there-is-no-condominium-market-here')
+const plumbing = assertion('a-third-of-the-empty-ones-have-no-plumbing')
+const kitchens = assertion('the-kitchens-say-the-same-thing')
+const lima = assertion('in-lima-a-third-and-a-bit-more')
+const renterkitchen = assertion('a-renter-here-lacks-a-kitchen')
+const gas = assertion('bottled-gas-is-the-map-of-the-gas-main')
+const car = assertion('three-thousand-households-with-no-car')
+const crowding = assertion('crowded-for-ohio-and-uncrowded-for-america')
+const seven = assertion('the-same-seven-questions-and-two-answers')
+const nomarket = assertion('three-quarters-of-the-empty-ones-are-on-no-market')
+const ordinary = assertion('ordinary-by-one-instrument-and-not-by-the-other')
+const lost = assertion('lima-has-lost-one-housing-unit-in-seven')
+const owners = assertion('the-city-was-still-a-city-of-owners-in-1990')
+const then = assertion('almost-nothing-lacked-plumbing-in-1990')
+const stayed = assertion('five-thousand-six-hundred-households-have-not-moved-since-1989')
+const allocated = assertion('a-quarter-of-the-1990-answers-were-allocated')
+
+const spec = (a: typeof plumbing, yTitle: string) =>
+  bar(
+    a.figures.map((f) => f.label),
+    a.figures.map((f) => f.value),
+    { yTitle, labelValues: true },
+  )
+
+const plumbingSpec = spec(plumbing, 'Housing units')
+const sevenSpec = spec(seven, 'Vacant housing units')
+const gasSpec = spec(gas, 'Per cent of occupied homes')
+const carSpec = spec(car, 'Per cent of households')
+const lostSpec = spec(lost, 'Housing units in Lima')
+---
+
+<Article slug="a-third-of-the-empty-ones">
+  <p>
+    The site already knows a good deal about Allen County's housing: who owns it, what it costs, who
+    is refused a mortgage, who is evicted, and how many units stand empty. What none of that says is
+    what the buildings actually are — how many rooms, what heats them, whether the water works. The
+    American Community Survey publishes fourteen tables that answer exactly those questions, and the
+    1990 census published two volumes of them for a year in which nobody here had asked.
+  </p>
+
+  <h2>A third of the empty ones</h2>
+  <AssertionCard assertion={plumbing} open />
+  <ChartFigure
+    id="plumbing"
+    title="Housing units lacking complete plumbing facilities, Allen County"
+    caption="Two tables of one survey, differing only in universe. The survey publishes the first two bars and not the third; it is their difference."
+    columns={['Universe', 'Units']}
+    rows={plumbing.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="plumbing" set:html={JSON.stringify(plumbingSpec)} is:inline />
+  <p>
+    Complete plumbing means hot and cold piped water, a flush toilet and a bath or shower. A hundred
+    and one households in this county live without one of those, which is a small and serious
+    number. The other twelve hundred are in houses nobody lives in — and that is a different fact,
+    about a stock of buildings rather than about anybody's life.
+  </p>
+  <AssertionCard assertion={kitchens} />
+  <p>
+    Two amenities measured independently, agreeing to within four points, is the check that makes
+    the subtraction worth trusting. About a third of Allen County's empty housing is not habitable
+    as it stands.
+  </p>
+  <AssertionCard assertion={lima} />
+
+  <h2>What an interviewer wrote down</h2>
+  <p>
+    There is a second way to describe an empty house, which is to ask what it is empty for. Both the
+    census and the survey do it, with the same seven categories in the same order, and they do not
+    agree.
+  </p>
+  <AssertionCard assertion={seven} open />
+  <ChartFigure
+    id="seven"
+    title="Two federal instruments on the same empty houses"
+    caption="The census counted on one day, 1 April 2020. The survey interviewed across sixty months, 2019 to 2023. The totals are 3,628 and 3,769."
+    columns={['Category and source', 'Units']}
+    rows={seven.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="seven" set:html={JSON.stringify(sevenSpec)} is:inline />
+  <p>
+    Neither is wrong. A house with a sign in the yard on the first of April is <em>for rent</em>;
+    averaged over five years in a county with a thin rental market, the same house is mostly not
+    offered to anybody. The residual class absorbs the whole of the difference, which is what a
+    residual class does — and it is the class everyone wants, because it is the nearest either file
+    comes to counting abandoned houses.
+  </p>
+  <AssertionCard assertion={nomarket} />
+  <AssertionCard assertion={ordinary} />
+  <p>
+    A vacancy reason is an observation. A missing bathroom is not.
+  </p>
+
+  <h2>What the buildings are</h2>
+  <AssertionCard assertion={detached} />
+  <AssertionCard assertion={rentinghouse} />
+  <p>
+    That reverses the usual picture of a renter here. Half of them are not in a block of flats; they
+    are in a house with a yard, rented from whoever owns it. The other side of the same fact is that
+    almost nobody here owns anything but a house.
+  </p>
+  <AssertionCard assertion={condo} />
+  <AssertionCard assertion={mobile} />
+  <AssertionCard assertion={wheremobile} />
+  <AssertionCard assertion={emptymobile} />
+
+  <h2>What is in them</h2>
+  <AssertionCard assertion={gas} open />
+  <ChartFigure
+    id="gas"
+    title="Homes heated with bottled, tank or LP gas"
+    caption="A pipeline is a fixed asset with a service area. Every home outside it that wants gas buys it by the tank."
+    columns={['Geography', 'Per cent']}
+    rows={gas.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="gas" set:html={JSON.stringify(gasSpec)} is:inline />
+  <p>
+    Sugar Creek Township is at fifty-six per cent and Jackson at forty-five; American Township, which
+    wraps the city, is at two and a half. The gas main is a map, and this is it drawn from the
+    inside of people's houses. Coal, which every county history here treats as the fuel of the
+    place, is zero to within a margin of thirty homes.
+  </p>
+  <AssertionCard assertion={car} />
+  <ChartFigure
+    id="car"
+    title="Households with no vehicle available"
+    caption="Allen County ranks nineteenth of Ohio's eighty-eight counties on this. The county has 2,225.6 miles of road."
+    columns={['Group', 'Per cent']}
+    rows={car.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="car" set:html={JSON.stringify(carSpec)} is:inline />
+  <AssertionCard assertion={renterkitchen} />
+  <AssertionCard assertion={crowding} />
+
+  <h2>Nineteen ninety</h2>
+  <p>
+    The 1990 census printed two volumes about Ohio's houses rather than its households, and each
+    gives every county a single summary line. Allen County's two lines are twenty-eight numbers for
+    a year the record here held nothing but counts for.
+  </p>
+  <AssertionCard assertion={lost} open />
+  <ChartFigure
+    id="lost"
+    title="Housing units in Lima"
+    caption="Four counts: the 1990 census, the 2010 and 2020 censuses, and the 2019–2023 survey. The county's own total rose over the same span."
+    columns={['Year', 'Units']}
+    rows={lost.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="lost" set:html={JSON.stringify(lostSpec)} is:inline />
+  <AssertionCard assertion={owners} />
+  <AssertionCard assertion={then} />
+  <p>
+    That is the finding this piece began with, seen from the other end. The share of Allen County's
+    housing without working plumbing has risen roughly sevenfold in thirty-three years, on a stock
+    that barely grew, and almost none of the increase is in a house anybody lives in.
+  </p>
+  <AssertionCard assertion={stayed} />
+  <AssertionCard assertion={allocated} />
+  <p>
+    The older volume prints how much of its own data was imputed and the newer survey does not. It
+    is worth saying plainly: a quarter of the 1990 year-built column is an estimate the Bureau made
+    for a household that did not answer, and the only reason anybody knows is that the Bureau
+    published a table about it.
+  </p>
+</Article>

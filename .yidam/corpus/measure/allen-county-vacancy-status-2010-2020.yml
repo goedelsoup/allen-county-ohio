@@ -134,6 +134,22 @@ description: |
   house being renovated from a house nobody wants. [verified] — the definitions appendix of
   [the same documentation](../../catalog/census-2020-dhc.md).
 
+  **A survey asked the same seven questions and got a different answer to six of them.** The
+  2019–2023 American Community Survey finds 3,769 vacant units here — within a margin of the
+  census's 3,628 — and puts 2,837 of them in the other-vacant class against this file's 1,312, with
+  378 for rent against 1,265. [verified] —
+  [the survey's reading](allen-county-vacancy-status-2023.yml). The class that is the biggest here
+  is seven and a half times the for-rent count there, and the sentence above about it being "more
+  than the 1,265 offered to a tenant" is true of this file and understates what the other one says.
+  See [a vacancy reason is an observation](../../decisions/a-vacancy-reason-is-an-observation.yml).
+
+  **A third of the county's empty houses have no working plumbing, and that is not a judgment.**
+  1,326 of the county's housing units lack complete plumbing facilities and 101 of them are lived
+  in, so 1,225 empty ones have none; on kitchens the figures are 1,682, 318 and 1,364. [verified] —
+  [the facilities](allen-county-housing-facilities-2023.yml). Where a vacancy reason is what an
+  interviewer wrote down, a missing bathroom is a condition of the building, and it is the nearest
+  thing this corpus holds to the count of houses nobody will live in again. [inference]
+
   [open] Whether the county's removals are demolitions. The 436-unit fall and the 1,025 permits
   bound the removals from below and neither says what happened to a building. Lima runs a demolition
   programme and its orders are public records held at the city rather than in any federal file; the
@@ -162,6 +178,10 @@ properties:
     both ways. [verified] The census is taken on 1 April and the permit years are calendar years, so
     the two windows differ by a quarter at each end. [inference]
 links:
+  - target: allen-county-vacancy-status-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-acs-summary-file.md
   - target: ../place/allen-county.yml
     relationship: describes
     claim_tag: verified

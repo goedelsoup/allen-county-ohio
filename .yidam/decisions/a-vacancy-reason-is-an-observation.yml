@@ -1,0 +1,66 @@
+id: a-vacancy-reason-is-an-observation
+summary: >-
+  The 2020 census and the 2019–2023 American Community Survey agree to within four per cent about
+  how many houses stand empty in Allen County and disagree by a factor of three about what they are
+  empty for. Neither is wrong. A vacancy reason is what an interviewer wrote down about a house on
+  one day, and this corpus now treats it as an observation rather than a property of the building.
+context: |
+  Both instruments publish the same seven categories in the same order. For Allen County:
+
+      vacancy status                    2020 census      ACS 2019-2023
+      all vacant units                        3,628      3,769 +/- 413
+      other vacant                            1,312      2,837 +/-  397
+      for rent                                1,265        378 +/-  177
+      for sale only                             402        143 +/-   81
+      sold, not occupied                        217        144
+      for seasonal or occasional use            256        169 +/-  100
+      rented, not occupied                      176         98
+      for migrant workers                         0          0
+
+  The totals are 141 units apart on a base of 3,700, which is inside the survey's own margin. The
+  residual class is 1,525 units apart, which is nearly four times that margin. Two federal
+  instruments looking at the same forty-four thousand houses find the same number empty and cannot
+  agree on why.
+
+  Neither reading is available as the right one. The census sent an enumerator once, on 1 April
+  2020, and asked for a classification on the spot. The survey interviews across sixty months and
+  asks whether the unit is *currently* offered. A house with a sign in the yard in April is *for
+  rent*; the same house, averaged over five years in a county whose rental market the corpus has
+  already measured as thin, is mostly *not offered to anybody*.
+
+  This corpus had already published the census reading and built on it:
+  [why the housing was empty](../corpus/measure/allen-county-vacancy-status-2010-2020.yml) says the
+  other-vacant class at 1,312 is "more than the 1,265 offered to a tenant". Under the survey it is
+  seven and a half times the number offered to a tenant. The shape of the finding survives and its
+  size does not.
+decision: |
+  **A vacancy reason is reported with the instrument that assigned it and the date it was assigned,
+  and the two instruments are never joined.**
+
+  1. Every share of vacancy by reason names its source in the same sentence: *the census's
+     other-vacant class* or *the survey's*, never *the county's*.
+  2. The two are not put in one table, differenced, or trended. A 1,312 and a 2,837 four years
+     apart do not make a rise.
+  3. Where a claim rests on the *rank* of the categories rather than their sizes, it may be stated
+     across both, because both put the same class first. That is the only joint reading permitted.
+  4. The count of vacant units is a different matter and may be compared: it is a classification
+     both instruments make the same way, and here they agree.
+rationale: |
+  **What makes this a rule and not a footnote.** The residual class is the one that carries the
+  disagreement, and the residual class is the one everybody wants — it is the nearest thing either
+  file has to a count of abandoned houses. A category defined by exclusion inherits every difference
+  in how the other six were applied, so it is the least stable number in the table and the most
+  quoted.
+
+  **Why it is not [a survey is not a count](a-survey-is-not-a-count.yml).** That rule is about
+  sampling error, and the gap here is nine times the sampling error. It is not noise; it is two
+  different questions, asked of the same house, by two people, four years apart.
+
+  **What the corpus can say instead.** A physical fact about the same houses, from the same survey:
+  1,326 of Allen County's housing units lack complete plumbing facilities and only 101 of those are
+  lived in, so 1,225 empty houses have no working plumbing. See
+  [the facilities](../corpus/measure/allen-county-housing-facilities-2023.yml). That is not a reason
+  an interviewer assigned; it is a condition of the building, and it is a third of the county's
+  empty housing.
+status: accepted
+date: "2026-09-04"
