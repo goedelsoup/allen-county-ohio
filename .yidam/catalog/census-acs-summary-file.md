@@ -101,3 +101,25 @@ mortgage status, place of birth, and the year-by-year five-year files between 20
 before 2021 in a different format, since the table-based summary file exists only from then. The
 first of them, 2005–2009, has now been taken and is
 [catalogued separately](census-acs-summary-file-2009.md).
+
+**Eleven more tables, for who lives with whom.** B11001 household type, B11003 family type by
+presence and age of own children, B11005 households by presence of people under 18, B11007
+households by presence of people 65 and over, B11016 household type by household size, B10051
+grandparents living with grandchildren, B12001 sex by marital status, B17010 poverty by family
+type, B25010 average household size by tenure, and B11017 multigenerational households. Twenty-nine
+tables from one year now. [verified] The thirteen subdivisions close against the county row again
+on B11001 — 40,928 households, 24,580 family, 13,809 living alone — which is the fourth family of
+tables in this file to partition the county exactly.
+
+**One of them does not have this county in it.** B11017, multigenerational households, contains 53
+rows: the United States and the fifty-two state-level geographies. There is no county, no place, no
+county subdivision — not suppressed, not a negative sentinel, absent. Every other table taken here
+carries all thirteen of the county's subdivisions. [verified] — the file's own `GEO_ID` column,
+counted. The file's coverage is a property of each table and not of the file; see
+[a table can stop short of its file](../decisions/a-table-can-stop-short-of-its-file.yml).
+
+**And the census counts what the survey will not.** The 2020 Demographic and Housing Characteristics
+File publishes multigenerational households for every block in the country, so the quantity B11017
+withholds from Allen County is one this corpus can have anyway — from a different instrument, on a
+different date, with a different protection. [verified] —
+[the characteristics file](census-2020-dhc.md).

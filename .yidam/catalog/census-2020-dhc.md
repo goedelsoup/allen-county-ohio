@@ -42,6 +42,8 @@ location:
 used-by:
   - ../corpus/measure/allen-county-vacancy-status-2010-2020.yml
   - ../corpus/measure/allen-county-tenure-2010-2020.yml
+  - ../corpus/measure/allen-county-households-1970-2023.yml
+  - ../corpus/measure/allen-county-households-by-place-2020.yml
 ---
 
 **The Bureau says in writing which numbers in this file were counted and which were computed.**
@@ -80,3 +82,31 @@ remainder term, and in this county it is the largest single kind of empty house.
 **What it does not carry.** No value, no rent, no year built, no plumbing, no heating fuel, no
 income. Every dollar figure and every condition of a house in this corpus comes from the American
 Community Survey or from an administrative file, and none of it is in here.
+
+**Its person tables reach further into how people live than its housing tables do, and they are
+scattered across four more segments.** P16 household type is segment 13; P19 households by presence
+of people 65 and over, P20 households by type and presence of own children and P21 households by
+presence of people under 18 are segment 15, which is 100 fields wide; PCT14 multigenerational
+households is segment 38; PCT15 coupled households and PCT16 nonfamily households by sex and age of
+householder are segment 39. [verified] — the table matrix, read by reference name. A segment's
+fields are the matrix rows for that segment in matrix order, offset by the five that repeat the
+file identification and the record number.
+
+**P16 and H1 are the same number counted twice.** Allen County's household total in P16 is 40,935,
+which is exactly the occupied housing units this corpus already took from H1 — a household and an
+occupied unit are the same object in this file, and the two tables sit in different segments.
+[verified] — segment 13 against segment 1. The thirteen county subdivisions sum to 40,935 as well,
+with no residual, so the protection did not break the geographic hierarchy at this grain.
+
+**It counts same-sex couples, and this is the first source in this corpus that does.** PCT15 splits
+married-couple and unmarried-partner households by whether the couple is opposite-sex or same-sex
+and, within same-sex, by whether it is two men or two women. Allen County: 106 same-sex married
+couple households and 136 same-sex unmarried partner households, of 40,935. [verified] — segment
+39. Every one of those cells is protected rather than enumerated; see
+[the total is enumerated and the split is not](../decisions/the-total-is-enumerated-and-the-split-is-not.yml).
+
+**And it counts three-generation households, which the survey does not publish for this county.**
+PCT14 has three cells and one of them is the answer: 1,302 of Allen County's households hold three
+or more generations. The American Community Survey's B11017 asks the same question and publishes it
+for the nation and the fifty-two state-level geographies only. [verified] — segment 38 against the
+survey file; see [a table can stop short of its file](../decisions/a-table-can-stop-short-of-its-file.yml).
