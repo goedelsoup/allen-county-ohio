@@ -32,6 +32,7 @@ const layers: Record<string, Feature[]> = {
   'places.geojson': layer('places'),
   'census-designated-places.geojson': layer('census-designated-places'),
   'voting-districts.geojson': layer('voting-districts'),
+  'census-tracts.geojson': layer('census-tracts'),
 }
 
 const known = new Set(
@@ -52,6 +53,14 @@ describe('the vendored geography', () => {
     // The corpus states this count as a measure. If TIGER and the corpus ever disagree, the
     // map is drawing a different county than the pages describe.
     expect(layers['voting-districts.geojson']).toHaveLength(88)
+  })
+
+  it('holds the 35 tracts the lending record is reported at', () => {
+    // The corpus reports mortgage denial and pricing over 34 tracts; TIGER holds 35. The
+    // extra one takes no first-lien loans because it holds no one-to-four-family houses, so
+    // it appears in no such table. Pinned at TIGER's number, which is the ground: a table
+    // that covers 34 of 35 is a fact about the table.
+    expect(layers['census-tracts.geojson']).toHaveLength(35)
   })
 
   it('records what it holds in its provenance file', () => {

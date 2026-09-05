@@ -3,7 +3,7 @@
   "catalog": ".yidam/catalog/tigerweb-census2020.md",
   "service": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer",
   "vintage": "2020",
-  "fetched": "2026-08-29",
+  "fetched": "2026-09-05",
   "coordinate_precision": 5,
   "crs": "EPSG:4326",
   "layers": [
@@ -26,6 +26,13 @@
       "layer": 58,
       "name": "Voting Districts",
       "features": 88,
+      "filter": "STATE='39' AND COUNTY='003'"
+    },
+    {
+      "file": "census-tracts.geojson",
+      "layer": 6,
+      "name": "Census Tracts",
+      "features": 35,
       "filter": "STATE='39' AND COUNTY='003'"
     },
     {

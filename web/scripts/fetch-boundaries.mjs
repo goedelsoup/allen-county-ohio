@@ -57,6 +57,16 @@ const LAYERS = [
     fields: ['GEOID', 'NAME', 'BASENAME', 'VTD', 'POP100', 'HU100', 'AREALAND', 'CENTLAT', 'CENTLON'],
     expect: 88,
   },
+  {
+    id: 6,
+    file: 'census-tracts.geojson',
+    label: 'Census Tracts',
+    where: `STATE='${STATE}' AND COUNTY='${COUNTY}'`,
+    fields: ['GEOID', 'NAME', 'BASENAME', 'POP100', 'HU100', 'AREALAND', 'CENTLAT', 'CENTLON'],
+    // Thirty-five, which is one more than the thirty-four the lending record covers: a tract
+    // with no one-to-four-family houses in it takes no mortgages and appears in no such table.
+    expect: 35,
+  },
   // Places and CDPs are state-level layers — a place may cross a county line, which is why
   // two of this county's own municipalities do. Neither carries a COUNTY column, so both are
   // filtered by the county polygon rather than by attribute.
