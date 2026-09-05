@@ -14658,6 +14658,257 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &[],
         figures: &[],
     },
+    Assertion {
+        id: "the-price-runs-with-the-size-of-the-loan",
+        statement: "Twenty-three per cent of Allen County's home loans under $50,000 were priced \
+                    above the federal higher-priced threshold. Of the loans over $300,000, 2.4 per \
+                    cent were.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**In figures: 23.3 per cent of the county's home loans under $50,000 were priced above the federal threshold, against 11.3 per cent from $50,000 to $100,000, 7.0 to $150,000, 5.9 to $200,000, 3.5 to $300,000 and 2.4 above it.** [verified] \u{2014} the same source, its rate spreads by band of published loan amount."),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[
+            Figure { label: "Under $50k", value: 23.3, literal: "23.3" },
+            Figure { label: "$50-100k", value: 11.3, literal: "11.3" },
+            Figure { label: "$100-150k", value: 7.0, literal: "7.0" },
+            Figure { label: "$150-200k", value: 5.9, literal: "5.9" },
+            Figure { label: "$200-300k", value: 3.5, literal: "3.5" },
+            Figure { label: "$300k and up", value: 2.4, literal: "2.4" },
+        ],
+    },
+    Assertion {
+        id: "what-a-higher-priced-loan-is",
+        statement: "A loan is higher-priced when its rate runs more than 1.5 points above the \
+                    market's for a comparable transaction, which is a federal threshold with an \
+                    escrow and an appraisal attached to it. In this county 1,217 loans of 13,991 \
+                    crossed it in seven years.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**The last column is not a ratio and does not fall for arithmetic reasons.** A loan is higher-priced when its annual percentage rate is more than 1.5 points above the average prime offer rate for a comparable transaction \u{2014} a federal threshold that triggers an escrow and an appraisal requirement, not a description. 1,217 of this county's 13,991 priced originations cross it, 8.7 per cent. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-closing-fee-barely-moves",
+        statement: "The median borrower of $35,000 in Allen County pays $1,571 to close and the \
+                    median borrower of $355,000 pays $3,843. The loan is ten times larger and the \
+                    fee is two and a half.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**In figures: a borrower of $35,000 in this county pays a median $1,571 to close and a borrower of $355,000 pays $3,843 \u{2014} the loan is 10.14 times larger and the fee 2.45 times larger.** [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[
+            Figure { label: "$35,000 loan", value: 1571.0, literal: "1,571" },
+            Figure { label: "$355,000 loan", value: 3843.0, literal: "3,843" },
+        ],
+    },
+    Assertion {
+        id: "the-gradient-holds-inside-one-year",
+        statement: "Within 2023 alone the median rate spread fell from 0.984 points above prime on \
+                    the smallest loans to 0.462 on the largest, so the pattern is not the \
+                    interest-rate cycle showing through.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**The gradient is there inside a single year, so it is not the interest-rate cycle in disguise.** In 2023 the median spread ran 0.984, 0.695, 0.569 and 0.462 points down four size bands; in 2024, 0.710, 0.673, 0.480 and 0.330. [verified] \u{2014} the same source, by year."),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[
+            Figure { label: "Under $50k", value: 0.984, literal: "0.984" },
+            Figure { label: "$50-100k", value: 0.695, literal: "0.695" },
+            Figure { label: "$100-150k", value: 0.569, literal: "0.569" },
+            Figure { label: "$150k and up", value: 0.462, literal: "0.462" },
+        ],
+    },
+    Assertion {
+        id: "ohio-prices-loans-by-their-size",
+        statement: "Across all 88 Ohio counties in 2023 the higher-priced share falls as the median \
+                    loan rises, a correlation of -0.579. Delaware County lends a median $385,000 and \
+                    prices 3.2 per cent of it high; Meigs County lends $125,000 and prices 21.3 per \
+                    cent.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**It is not an Allen County phenomenon either. It is how Ohio prices.** Across the state's 88 counties in 2023, the correlation between the logarithm of a county's median loan and its higher-priced share is -0.579. Delaware County has the state's largest median loan at $385,000 and its lowest higher-priced share at 3.2 per cent; Meigs County is at $125,000 and 21.3."),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[
+            Figure { label: "Delaware", value: 3.2, literal: "3.2" },
+            Figure { label: "Meigs", value: 21.3, literal: "21.3" },
+        ],
+    },
+    Assertion {
+        id: "size-does-not-explain-the-race-gap",
+        statement: "Loans to Black borrowers in Allen County were higher-priced 15.9 per cent of the \
+                    time against 9.7 per cent for white borrowers, and the gap holds inside every \
+                    band of loan size.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**Where the price gap is not explained by size is by race.** 15.9 per cent of loans to Black borrowers here were higher-priced against 9.7 per cent of loans to white borrowers, and the gap holds inside every band: 38.8 against 21.9 under $50,000, 15.4 against 11.1 to $100,000, 8.4 against 6.4 to $150,000, and 6.6 against 4.3 above it. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[
+            Figure { label: "Black, under $50k", value: 38.8, literal: "38.8" },
+            Figure { label: "White, under $50k", value: 21.9, literal: "21.9" },
+            Figure { label: "Black, $50-100k", value: 15.4, literal: "15.4" },
+            Figure { label: "White, $50-100k", value: 11.1, literal: "11.1" },
+        ],
+    },
+    Assertion {
+        id: "six-hundred-loans-with-no-price",
+        statement: "Six hundred and seventy-six of the county's loans report no price at all, using \
+                    the partial exemption for small filers, and 474 of them are one bank's.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-prices-2018-2024.yml", "**Six hundred and seventy-six of the county's loans have no price in the file at all.** Their price columns read `Exempt`, which is the partial exemption open to small filers, and 474 of the 676 are one bank's. [verified] \u{2014} the same source"),
+        ],
+        answers: &["does not establish that anyone was treated differently"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-two-maps-are-nearly-one-map",
+        statement: "Across the county's 34 rateable census tracts, the correlation between how often \
+                    a tract's loan applications are refused and how often its loans are \
+                    higher-priced is 0.828.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-access-by-tract-2018-2024.yml", "**The tracts where a mortgage is hardest to get are the tracts where it is dearest to have, and the two rank almost together.** Across the county's 34 tracts with enough decisions to rate, the correlation between a tract's denial rate and its share of higher-priced loans is 0.828."),
+            support!("measure/allen-county-home-lending-2018-2024.yml", "**The same file also says what the loans cost, and the county's two maps are nearly one map.** Across the 34 tracts with enough of both to rate, the correlation between a tract's denial rate and its share of loans priced above the federal higher-priced threshold is 0.828. [verified] \u{2014} same source"),
+        ],
+        answers: &["does not establish that these houses could not be borrowed against", "does not establish why either gap is there"],
+        figures: &[],
+    },
+    Assertion {
+        id: "lending-is-not-spread-evenly-over-the-houses",
+        statement: "Lima's sixteen tracts took 19.8 first-lien home loans per 100 one-to-four-family \
+                    houses over seven years. The other nineteen tracts took 44.1.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-access-by-tract-2018-2024.yml", "**Lending is not spread over this county's houses at anything like an even rate.** The sixteen tracts that are majority Lima hold 14,913 one-to-four-family houses and took 2,958 first-lien loans in seven years \u{2014} 19.8 per 100 houses. The other nineteen tracts hold 26,595 houses and took 11,738 \u{2014} 44.1 per 100. [verified] \u{2014} the same source"),
+        ],
+        answers: &["does not establish that these houses could not be borrowed against"],
+        figures: &[
+            Figure { label: "Lima's tracts", value: 19.8, literal: "19.8" },
+            Figure { label: "The rest of the county", value: 44.1, literal: "44.1" },
+        ],
+    },
+    Assertion {
+        id: "one-loan-for-nineteen-houses",
+        statement: "One census tract in Lima holds 522 houses and took 28 mortgages in seven years, \
+                    and 46.4 per cent of them were higher-priced. A tract outside the city holds \
+                    1,894 houses, took 1,577 loans, and 6.0 per cent were.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-access-by-tract-2018-2024.yml", "**In figures: tract 39003013700 holds 522 houses and took 28 mortgages in seven years \u{2014} one loan for every nineteen houses \u{2014} and 46.4 per cent of them were higher-priced.** At the other end of the same county, tract 39003010801 holds 1,894 houses, took 1,577 loans, and 6.0 per cent were. [verified] \u{2014} the same source, by tract."),
+        ],
+        answers: &["does not establish that these houses could not be borrowed against"],
+        figures: &[
+            Figure { label: "Tract 13700", value: 46.4, literal: "46.4" },
+            Figure { label: "Tract 10801", value: 6.0, literal: "6.0" },
+        ],
+    },
+    Assertion {
+        id: "more-dollars-to-close-a-smaller-loan",
+        statement: "The median first-lien loan inside Lima's tracts is $85,000 and costs $3,181 to \
+                    close. Outside them it is $135,000 and costs $2,920.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-access-by-tract-2018-2024.yml", "**A borrower in the city pays more dollars to close a smaller loan.** The median first-lien loan in Lima's tracts is $85,000 and costs $3,181 to close; outside them it is $135,000 and costs $2,920. [verified] \u{2014} the same source. As a share that is 3.65 per cent against 2.07."),
+        ],
+        answers: &["does not establish that these houses could not be borrowed against"],
+        figures: &[
+            Figure { label: "Lima's tracts", value: 3181.0, literal: "3,181" },
+            Figure { label: "The rest of the county", value: 2920.0, literal: "2,920" },
+        ],
+    },
+    Assertion {
+        id: "the-city-premium-stops-at-the-top",
+        statement: "Inside Lima's tracts 27.8 per cent of loans under $50,000 are higher-priced \
+                    against 20.0 outside, and the gap narrows at every step up until it closes: \
+                    above $150,000 the figures are 4.2 and 4.5.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-access-by-tract-2018-2024.yml", "**The city's price premium is real at every size but the largest, where it disappears.** Under $50,000 the higher-priced share is 27.8 per cent inside Lima's tracts and 20.0 outside; from $50,000 to $100,000, 13.9 against 9.9; to $150,000, 10.7 against 6.1; above $150,000, 4.2 against 4.5. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that these houses could not be borrowed against"],
+        figures: &[
+            Figure { label: "Lima, under $50k", value: 27.8, literal: "27.8" },
+            Figure { label: "Elsewhere, under $50k", value: 20.0, literal: "20.0" },
+            Figure { label: "Lima, above $150k", value: 4.2, literal: "4.2" },
+            Figure { label: "Elsewhere, above $150k", value: 4.5, literal: "4.5" },
+        ],
+    },
+    Assertion {
+        id: "one-lender-two-geographies",
+        statement: "Superior Credit Union made about three loans in ten on both sides of the city \
+                    line, and 15.7 per cent of the ones inside Lima's tracts were higher-priced \
+                    against 7.4 per cent of the ones outside.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-mortgage-access-by-tract-2018-2024.yml", "**The largest lender in the county prices the same way inside the city as the market does.** Superior Credit Union made 27.0 per cent of the loans in Lima's tracts and 31.2 per cent of those outside; its own higher-priced share is 15.7 per cent inside and 7.4 outside. [verified] \u{2014} the same source"),
+        ],
+        answers: &["does not establish that these houses could not be borrowed against"],
+        figures: &[
+            Figure { label: "Inside Lima's tracts", value: 15.7, literal: "15.7" },
+            Figure { label: "Outside them", value: 7.4, literal: "7.4" },
+        ],
+    },
+    Assertion {
+        id: "the-chattel-loan-is-not-a-mortgage",
+        statement: "A loan on a manufactured home without the land under it runs a median 8.85 per \
+                    cent and sits 5.794 points above the prime offer rate, against 0.390 for an \
+                    ordinary first-lien loan on a site-built house in the same county and years.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-manufactured-home-lending-2018-2024.yml", "**In figures: a loan secured by the manufactured home alone carries a median rate of 8.85 per cent and sits 5.794 points above the prime offer rate, against 0.390 points for an ordinary first-lien loan on a site-built house in the same county and the same years.** [verified] \u{2014} the same source. 104 of the 107 such loans that publish a spread are above the federal higher-priced threshold."),
+        ],
+        answers: &["does not establish that these borrowers could have had a mortgage instead"],
+        figures: &[
+            Figure { label: "Manufactured home only", value: 5.794, literal: "5.794" },
+            Figure { label: "Site-built house", value: 0.39, literal: "0.390" },
+        ],
+    },
+    Assertion {
+        id: "half-the-manufactured-applications-are-refused",
+        statement: "Applications to borrow on manufactured housing in Allen County were denied 52.4 \
+                    per cent of the time over seven years. On site-built houses the figure is 18.2.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-manufactured-home-lending-2018-2024.yml", "**Applications on manufactured housing are refused at three times the rate of applications on houses.** 322 of 614 decisions were denials, 52.4 per cent, against 4,305 of 23,655 and 18.2 per cent on site-built. [verified] \u{2014} the same source, actions 1, 2 and 3."),
+        ],
+        answers: &["does not establish that these borrowers could have had a mortgage instead"],
+        figures: &[
+            Figure { label: "Manufactured", value: 52.4, literal: "52.4" },
+            Figure { label: "Site-built", value: 18.2, literal: "18.2" },
+        ],
+    },
+    Assertion {
+        id: "a-hundred-and-one-on-rented-ground",
+        statement: "A hundred and one of the county's 267 manufactured-home loans are on ground the \
+                    borrower leases rather than owns, against 153 where the borrower owns it.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-manufactured-home-lending-2018-2024.yml", "**A hundred and one of the 267 are on ground the borrower does not own.** The register's land-property-interest column records a paid leasehold for 101 of them and direct ownership for 153. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that these borrowers could have had a mortgage instead"],
+        figures: &[
+            Figure { label: "Paid leasehold", value: 101.0, literal: "101" },
+            Figure { label: "Direct ownership", value: 153.0, literal: "153" },
+        ],
+    },
+    Assertion {
+        id: "three-specialists-and-one-owner",
+        statement: "Three lenders make most of the manufactured-home loans in this county. 21st \
+                    Mortgage Corporation made 109 of the 267 and every priced loan it made was \
+                    higher-priced; two of the three name one ultimate parent.",
+        topic: "housing",
+        supports: &[
+            support!("measure/allen-county-manufactured-home-lending-2018-2024.yml", "**The lending is concentrated in three specialists, and two of them report the same owner.** 21st Mortgage Corporation made 109 of the 267 and every one of its priced loans is higher-priced; Triad Financial Services made 23 and Vanderbilt Mortgage 10. [verified] \u{2014} the same source, with [GLEIF](../../catalog/hmda-loan-application-register.md) for the names."),
+        ],
+        answers: &["does not establish that these borrowers could have had a mortgage instead"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

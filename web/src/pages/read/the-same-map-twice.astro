@@ -1,0 +1,195 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const bands = assertion('the-price-runs-with-the-size-of-the-loan')
+const threshold = assertion('what-a-higher-priced-loan-is')
+const fee = assertion('the-closing-fee-barely-moves')
+const oneYear = assertion('the-gradient-holds-inside-one-year')
+const ohio = assertion('ohio-prices-loans-by-their-size')
+const exempt = assertion('six-hundred-loans-with-no-price')
+
+const corr = assertion('the-two-maps-are-nearly-one-map')
+const even = assertion('lending-is-not-spread-evenly-over-the-houses')
+const tract = assertion('one-loan-for-nineteen-houses')
+const close = assertion('more-dollars-to-close-a-smaller-loan')
+const premium = assertion('the-city-premium-stops-at-the-top')
+
+const lender = assertion('one-lender-two-geographies')
+const race = assertion('size-does-not-explain-the-race-gap')
+
+const chattel = assertion('the-chattel-loan-is-not-a-mortgage')
+const refused = assertion('half-the-manufactured-applications-are-refused')
+const leased = assertion('a-hundred-and-one-on-rented-ground')
+const owner = assertion('three-specialists-and-one-owner')
+
+const bandsSpec = bar(
+  bands.figures.map((f) => f.label),
+  bands.figures.map((f) => f.value),
+  { yTitle: 'Per cent of loans priced above the threshold', labelValues: true },
+)
+const feeSpec = bar(
+  fee.figures.map((f) => f.label),
+  fee.figures.map((f) => f.value),
+  { yTitle: 'Median closing costs, dollars', labelValues: true },
+)
+const evenSpec = bar(
+  even.figures.map((f) => f.label),
+  even.figures.map((f) => f.value),
+  { yTitle: 'Loans per 100 one-to-four-family houses', labelValues: true },
+)
+const raceSpec = bar(
+  race.figures.map((f) => f.label),
+  race.figures.map((f) => f.value),
+  { yTitle: 'Per cent of loans priced above the threshold', labelValues: true },
+)
+const chattelSpec = bar(
+  chattel.figures.map((f) => f.label),
+  chattel.figures.map((f) => f.value),
+  { yTitle: 'Points above the prime offer rate', labelValues: true },
+)
+---
+
+<Article slug="the-same-map-twice">
+  <p>
+    Every mortgage application acted on in Allen County is filed with the federal government, one
+    row at a time, and about a third of the columns describe the decision — taken up, denied,
+    withdrawn, and on what grounds. Another third describe the price: the rate, the closing costs,
+    the term, and how far above the market the loan was written. Reading the second third produces
+    a map of the county, and it is very nearly the same map as the first.
+  </p>
+
+  <h2>What a loan costs here, and what makes it cost that</h2>
+  <AssertionCard assertion={bands} open />
+  <ChartFigure
+    id="bands"
+    title="Higher-priced share by size of loan"
+    caption="First-lien loans on site-built owner-occupied houses, 2018 to 2024. A loan is higher-priced when its rate runs more than 1.5 points above the market's for a comparable transaction."
+    columns={['Loan band', 'Per cent higher-priced']}
+    rows={bands.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="bands" set:html={JSON.stringify(bandsSpec)} is:inline />
+  <AssertionCard assertion={threshold} />
+  <p>
+    Two different things produce that slope and only one of them is interesting. Some of what a
+    borrower pays is a fee, and fees are mostly flat: a title search, a flood determination, a
+    credit pull and a recording fee cost what they cost whether the loan is thirty-five thousand
+    dollars or three hundred and fifty-five thousand. Divide a nearly fixed number by a number
+    that moves and the share falls on its own, before anybody decides anything.
+  </p>
+  <AssertionCard assertion={fee} open />
+  <ChartFigure
+    id="fee"
+    title="What it costs to close, by size of loan"
+    caption="Median total loan costs at the bottom and top bands. A wholly fixed fee would have been 8.28 per cent of the smaller loan and 0.82 of the larger; the observed spread is a quarter of that, so fees do scale — slowly."
+    columns={['Loan', 'Median closing costs']}
+    rows={fee.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="fee" set:html={JSON.stringify(feeSpec)} is:inline />
+  <p>
+    The rate is the other thing, and no arithmetic requires it to move. A rate spread is already a
+    comparison — the loan's own rate less the going rate for a loan like it on the day it was
+    written — so it is not a share of anything and it does not fall because a denominator grew. It
+    falls because small loans are priced above large ones.
+  </p>
+  <AssertionCard assertion={oneYear} />
+  <AssertionCard assertion={ohio} open />
+  <p>
+    So this is not a fact about Allen County. It is a fact about how mortgage credit is priced, and
+    Allen County meets it as a county whose median loan is a hundred and forty-five thousand
+    dollars in a state whose median is a hundred and eighty-five. The county sits thirty-seventh of
+    eighty-eight on the share of its loans priced high, which is roughly where its loan sizes put
+    it. The interesting variation is not between counties. It is inside this one.
+  </p>
+
+  <h2>The same map twice</h2>
+  <AssertionCard assertion={corr} open />
+  <p>
+    Refusal and price are separate columns filed by separate lenders about separate applications,
+    and across the county's census tracts they rank together almost perfectly. Where a loan is
+    hardest to get it is also dearest to have. The third column that moves with them is the one
+    nobody thinks to look at, which is how many loans there are at all.
+  </p>
+  <AssertionCard assertion={even} open />
+  <ChartFigure
+    id="even"
+    title="Home loans per 100 houses, 2018 to 2024"
+    caption="First-lien loans on site-built owner-occupied houses over seven years, against the one-to-four-family houses the register itself counts in each tract."
+    columns={['Where', 'Loans per 100 houses']}
+    rows={even.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="even" set:html={JSON.stringify(evenSpec)} is:inline />
+  <AssertionCard assertion={tract} open />
+  <p>
+    Twenty-eight loans, in seven years, for a tract of five hundred and twenty-two houses. That is
+    not a market anyone is competing in. A house there is bought with cash, inherited, rented out,
+    or not sold — and the few loans written against it are the ones that cost the most in the
+    county.
+  </p>
+  <AssertionCard assertion={close} open />
+  <AssertionCard assertion={premium} />
+  <p>
+    The city premium does not survive to the top of the market. Above a hundred and fifty thousand
+    dollars a loan inside Lima's tracts is priced like a loan outside them, to within three tenths
+    of a point. Whatever is being priced is a property of small loans on cheap houses, and the
+    houses that are neither are in the city too.
+  </p>
+
+  <h2>One lender, two geographies</h2>
+  <AssertionCard assertion={lender} open />
+  <p>
+    Superior Credit Union writes about three loans in ten on both sides of the city line, and its
+    own higher-priced share doubles when it crosses that line. One institution, one set of
+    policies, two neighbourhoods. That takes lender mix off the table as the explanation and puts
+    nothing in its place: the borrowers differ too, in ways this file does not record.
+  </p>
+  <AssertionCard assertion={race} open />
+  <ChartFigure
+    id="race"
+    title="Higher-priced share by race, inside two bands of loan size"
+    caption="Loan size is the strongest predictor of price in this file, so the comparison is made inside it. The gap holds in all four bands and the two smallest are shown."
+    columns={['Group', 'Per cent higher-priced']}
+    rows={race.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="race" set:html={JSON.stringify(raceSpec)} is:inline />
+  <p>
+    The register carries no credit score, no assets, no employment record and no appraisal, which
+    is to say it carries the outcome and not the file the outcome was reached from. A gap in prices
+    is a fact about a county. It is not, by itself, a fact about how anyone was treated, and the
+    difference between those two sentences is the whole of what a source like this can and cannot
+    settle.
+  </p>
+  <AssertionCard assertion={exempt} />
+
+  <h2>The loans that are not mortgages</h2>
+  <AssertionCard assertion={chattel} open />
+  <ChartFigure
+    id="chattel"
+    title="How far above the market a loan is written"
+    caption="Median rate spread on manufactured-home loans secured by the home alone, against ordinary first-lien loans on site-built houses in the same county and years."
+    columns={['Kind of loan', 'Points above prime']}
+    rows={chattel.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="chattel" set:html={JSON.stringify(chattelSpec)} is:inline />
+  <p>
+    A manufactured home financed with the ground under it is a mortgage and is priced as one, at
+    four and a half per cent over seven years. The same home financed without the ground is a
+    chattel loan against a title, like a car, and runs at nearly nine — five and three quarter
+    points above the market, on a median debt of thirty-five thousand dollars over twenty years.
+    Two products live in one column of this file and only one of them is a mortgage.
+  </p>
+  <AssertionCard assertion={refused} open />
+  <AssertionCard assertion={leased} />
+  <AssertionCard assertion={owner} />
+  <p>
+    Allen County has nineteen hundred mobile homes, more than it has flats in buildings of fifty
+    units or more, and they are a township matter rather than a city one: Bath Township alone holds
+    six hundred and sixty-four. Whether the family in one of them borrows at four per cent or at
+    nine turns on a question about the deed rather than about them — whether the home is titled
+    with the land it stands on. The register records which loan was made. It does not record
+    whether the other one was available.
+  </p>
+</Article>
