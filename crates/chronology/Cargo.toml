@@ -1,0 +1,19 @@
+[package]
+name = "chronology"
+version = "0.1.0"
+description = "One interval per node, and what this corpus means when it records no end"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+name = "chronology"
+path = "src/lib.rs"
+
+[[bin]]
+name = "when"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_yaml = { workspace = true }
