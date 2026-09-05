@@ -1,0 +1,187 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const shares = assertion('seventy-per-cent-farmed-and-nineteen-developed')
+const stable = assertion('ninety-seven-and-a-half-per-cent-did-not-change')
+const control = assertion('the-boundary-is-the-control')
+
+const pasture = assertion('pasture-is-the-class-that-fell')
+const forest = assertion('eight-acres-of-forest-in-twenty-years')
+const built = assertion('nineteen-hundred-acres-in-and-sixteen-hundred-off-farmland')
+const thicken = assertion('the-county-thickened-rather-than-spread')
+const largest = assertion('the-largest-transition-is-not-farm-to-town')
+const denser = assertion('more-acres-got-denser-than-got-built')
+const paved = assertion('six-per-cent-of-the-county-is-paved')
+const hard = assertion('the-thickening-paved-as-much-as-the-building')
+
+const oneway = assertion('not-one-acre-moved-the-other-way')
+const pixel = assertion('a-pixel-is-not-a-building')
+
+const swampLeft = assertion('four-per-cent-of-the-swamp-is-still-wet')
+const drainage = assertion('the-drainage-was-ninety-six-per-cent-complete')
+const marsh = assertion('two-instruments-disagree-about-marsh-by-eighteen')
+
+const producer = assertion('the-producer-named-the-file-to-use-instead')
+const recode = assertion('four-columns-that-were-never-a-second-opinion')
+const boundary = assertion('one-epoch-boundary-is-a-mapping-change')
+const category = assertion('a-category-is-not-a-land-use')
+
+const classes: [string, number][] = [
+  ['Cultivated crops', 176619],
+  ['Developed', 48694],
+  ['Forest', 21226],
+  ['Pasture and hay', 7315],
+  ['Open water', 2607],
+  ['Grassland', 1934],
+  ['Wetland', 1731],
+  ['Barren and shrub', 256],
+]
+
+const devChange: [string, number][] = [
+  ['Open space', -925],
+  ['Low intensity', 343],
+  ['Medium intensity', 1748],
+  ['High intensity', 742],
+]
+
+const moves: [string, number][] = [
+  ['Developed open space → medium', 1020],
+  ['Pasture → cultivated crops', 802],
+  ['Crops → developed open space', 480],
+  ['Crops → developed medium', 428],
+  ['Developed open space → low', 395],
+  ['Crops → open water', 393],
+  ['Crops → developed low', 333],
+  ['Crops → pasture', 265],
+  ['Developed low → medium', 262],
+  ['Crops → developed high', 248],
+  ['Developed low → high', 227],
+  ['Pasture → deciduous forest', 210],
+]
+
+const classesSpec = bar(
+  classes.map(([n]) => n),
+  classes.map(([, a]) => a),
+  { yTitle: 'Acres, 2021', labelValues: true },
+)
+const devSpec = bar(
+  devChange.map(([n]) => n),
+  devChange.map(([, a]) => a),
+  { yTitle: 'Change in acres, 2001 to 2021', labelValues: true },
+)
+const movesSpec = bar(
+  moves.map(([n]) => n),
+  moves.map(([, a]) => a),
+  { yTitle: 'Acres changing class, 2001 to 2021', labelValues: true },
+)
+---
+
+<Article slug="the-ground-that-did-not-move">
+  <p>
+    What Allen County's ground is has been described here from one file and one year — a crop
+    classification that also carries columns for developed land, forest, water and wetland, under a
+    standing rule saying those four columns may not be differenced from one year to the next. The
+    rule was arrived at by a control: the developed column falls thirty-five acres a year in a
+    county that has been building the whole time.
+  </p>
+  <p>
+    The producer of that file says the same thing on its own page, and names the remedy. Its
+    non-agricultural classes, it explains, are entirely dependent on the National Land Cover
+    Database, and users doing that sort of work should consider the database instead. So here is the
+    database: nine classifications of every thirty-metre pixel in the county, 2001 to 2021, clipped
+    and counted.
+  </p>
+
+  <h2>What the ground is</h2>
+  <AssertionCard assertion={shares} open />
+  <ChartFigure
+    id="classes"
+    title="Allen County by land cover class, 2021"
+    caption="Cultivated crops are two thirds of the county on their own. The last four classes together are under two and a half per cent."
+    columns={['Class', 'Acres']}
+    rows={classes.map(([n, a]) => [n, a.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="classes" set:html={JSON.stringify(classesSpec)} is:inline />
+  <AssertionCard assertion={stable} />
+  <p>
+    That is the finding a nine-epoch series exists to produce and a single year cannot. Two decades
+    of a county whose story is loss, and ninety-seven and a half per cent of its surface is filed
+    under the same word at the end as at the beginning.
+  </p>
+  <AssertionCard assertion={control} />
+
+  <h2>What did move</h2>
+  <AssertionCard assertion={pasture} open />
+  <AssertionCard assertion={forest} />
+  <p>
+    Eight acres in twenty years is not a photograph of a still county. Forest gained four hundred
+    and thirty-four acres and lost four hundred and forty-two across the eight steps between — trees
+    coming in on ground that stopped being grazed, going out under houses, and very nearly cancelling.
+  </p>
+  <AssertionCard assertion={built} />
+  <AssertionCard assertion={thicken} />
+  <ChartFigure
+    id="developed"
+    title="Change in Allen County's developed classes, 2001 to 2021"
+    caption="The lightest class shrank while the three denser ones grew. Total developed land rose 1,909 acres."
+    columns={['Developed class', 'Change in acres']}
+    rows={devChange.map(([n, a]) => [n, a > 0 ? `+${a.toLocaleString()}` : a.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="developed" set:html={JSON.stringify(devSpec)} is:inline />
+  <AssertionCard assertion={largest} />
+  <ChartFigure
+    id="transitions"
+    title="The largest land cover transitions, 2001 to 2021"
+    caption="Six of the twelve largest moves are within the developed classes or into them. The crops-to-open-water row is a mapping change, and is discussed below."
+    columns={['From → to', 'Acres']}
+    rows={moves.map(([n, a]) => [n, a.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="transitions" set:html={JSON.stringify(movesSpec)} is:inline />
+  <AssertionCard assertion={denser} />
+  <p>
+    A county that has been losing people since 1980 did not sprawl. It filled in what it had: lawns
+    and verges and thin edges became parking, roofs and road, and the actual frontier of building
+    moved less than the interior did.
+  </p>
+  <AssertionCard assertion={paved} />
+  <AssertionCard assertion={hard} />
+
+  <h2>A class that only moves one way</h2>
+  <AssertionCard assertion={oneway} open />
+  <p>
+    Two readings fit that and the file settles neither. The county built and never un-built, which
+    is plausible in direction and hard to believe in degree — a demolished block, a closed plant on
+    a reverting lot, a quarry gone to grass ought to leave some pixels going the other way. Or the
+    product enforces it, on the reasonable ground that reversals are usually classification noise.
+    Arguing from plausibility cannot separate them, because the plausible argument is exactly the one
+    a product designer would have made. So the 1,909 acres are published as a ceiling on the net
+    change and not as a gross figure.
+  </p>
+  <AssertionCard assertion={pixel} />
+
+  <h2>What the swamp came to</h2>
+  <AssertionCard assertion={swampLeft} open />
+  <AssertionCard assertion={drainage} />
+  <p>
+    The largest single fact about this county's ground is that it was drained. Robert Gordon's map
+    of the original vegetation puts 22,433.9 acres of elm-ash swamp forest inside the county line;
+    what a satellite finds on the same ground now is 973 acres of woody wetland. The two are not the
+    same measurement and the order of magnitude between them is the answer.
+  </p>
+  <AssertionCard assertion={marsh} />
+
+  <h2>The file the manual named</h2>
+  <AssertionCard assertion={producer} open />
+  <AssertionCard assertion={recode} />
+  <p>
+    Reading the two files against each other is not two instruments agreeing or disagreeing about
+    Allen County. It is one instrument and a copy of it on a different cycle — which is why the
+    5,811-acre gap on forest is a fact about the recode and not about any trees.
+  </p>
+  <AssertionCard assertion={boundary} />
+  <AssertionCard assertion={category} />
+</Article>
