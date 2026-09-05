@@ -1,0 +1,95 @@
+id: what-a-paid-sketch-may-be-quoted-for
+summary: >-
+  This corpus's catalog entry for the 1885 county history said of its four hundred pages of
+  subscription biography that "nothing in this corpus should rest on one", and then the corpus
+  declared five properties on the `person` class that only those pages could fill. A blanket
+  prohibition is not a rule. This replaces it with one: take from a sketch what the subscriber
+  had no reason to improve and every means to know, count the rest, and never treat the
+  subscribers as a population.
+context: |
+  Two of the corpus's three county histories are subscription books. A publisher's agent canvassed
+  the county, sold biographical sketches, and bound them to a narrative history. Leeson 1885 gives
+  the arrangement four hundred pages in thirteen township sections; Miller 1906 gives it more than
+  half the volume and puts it in the title — *and Representative Citizens*.
+
+  The standard objection is right and it is narrower than the sentence it produced here. A sketch
+  is an advertisement for its subject. What it is an advertisement *with* is a form:
+
+      SAMUEL S. YODER, probate judge, Lima, was born August 16, 1841, in Berlin, Holmes
+      County, Ohio; son of Yost and Nancy (Hostetter) Yoder, and grandson of Abraham Yoder,
+      natives of Lancaster County, Penn., and who came to Ohio in 1816.
+
+  Name, office, post office, birth date, birthplace, parents with the mother's maiden name,
+  grandparents, arrival. Then the marriage, the children with their dates, the church, the
+  politics — and, in the last sentence or two, the part that is being sold: *prominent*,
+  *substantial*, *enterprising*, *respected and honored by all who know him*.
+
+  **The 1906 publishers wrote down how they got the facts, and it is a stronger provenance
+  statement than most administrative sources in this catalog make.** Every sketch was submitted to
+  its subject or to the subscriber "from whom the facts were primarily obtained" for correction;
+  the ones returned corrected "may therefore be regarded as reasonably accurate"; of the rest, "we
+  have no means of knowing whether they contain errors or not, we cannot vouch for their accuracy",
+  and each is marked with an asterisk and printed on the last pages. That is a source distinguishing
+  its checked records from its unchecked ones in its own text, in 1906.
+
+  **The 1921 Washington obituary of Samuel S. Yoder gives his birth as "August 16, 1841, in Berlin,
+  Holmes county, Ohio."** Thirty-six years after the sketch, six hundred kilometres away, from a
+  paper that had never seen it, to the day.
+decision: |
+  **The question chooses what may be taken from a sketch, and the question is what the subscriber
+  could not have improved.**
+
+  1. **Take the skeleton.** Birth date, birthplace, parents' names, arrival year, offices held with
+     their years, war service with its regiment and dates. These are facts the subject knew better
+     than anyone and had no motive to move, and the 1906 publishers say in the book that they were
+     sent back to him to check.
+  2. **Do not take the last sentence.** *Prominent*, *substantial*, *one of the leading and most
+     enterprising citizens*, *did his full duty as a man and citizen* — this is what was bought.
+     No node in this corpus repeats it and no node contradicts it either; it is not a claim about
+     the county, it is a claim about the sale.
+  3. **Check for the asterisk before quoting from the 1906 book.** Eight sketches are marked and
+     they are on the last pages. A fact from a marked sketch is `[inference]`, not `[verified]`,
+     because the publisher said so.
+  4. **Never count over the sketches.** The set of people with a sketch is the subscription list.
+     "Most of this county's early settlers came from Pennsylvania" is not a finding that can be got
+     from these pages, and neither is anything else about who lived here — occupations, origins,
+     wealth, church, party. This corpus publishes counts *of the sketches* ("twenty of the
+     forty-seven people this corpus names from before 1922 have one") and no rate whose
+     denominator is the county.
+  5. **The head of the sketch is the subscriber; everyone else in it is there by relation.** A fact
+     about a man who is not the head of the sketch he appears in is still a fact from the source,
+     and the corpus says whose page it was on.
+rationale: |
+  **What the prohibition cost.** The `person` class declares `born`, `died`, `birthplace`,
+  `occupation` and `also_known_as`. Across ninety-eight people it had `occupation` ninety-five
+  times, `born` six, `died` five and `birthplace` three — and the corpus had written long, careful,
+  well-sourced prose biographies of men whose birthdays were printed in a book it had catalogued
+  a year earlier and read four times for other things. Forty-seven of those people lived in the
+  era the two books cover, and twenty of them have a sketch. See
+  [an unused property is an unasked question](an-unused-property-is-an-unasked-question.yml).
+
+  **Why rule four is the one that matters.** Rules one to three make the source usable. Rule four
+  is what keeps it from being abused, and the temptation is immediate: this phase came out of the
+  1885 book holding twenty birthplaces, of which several are Pennsylvania and several are Germany
+  and Prussia, and a paragraph about where this county came from would write itself. It would be
+  a paragraph about who paid a canvasser in 1884.
+
+  **The failure has a shape the corpus has met before.** In
+  [a source is also a filter](a-source-is-also-a-filter.yml) the place list came from a file that
+  tabulates governments, so places without governments were invisible. Here the biography list is
+  a subscription list, so people who did not subscribe are invisible. Across the four hundred pages
+  of the 1885 book's Part IV, exactly one sketch is headed by a woman — `MRS. MARGARET HALL, widow
+  of Jesse Hall, P. O. Lima, was born December 29, 1827` — and every other woman in those pages is
+  somebody's wife, mother or daughter, named in brackets.
+
+  **The counter-argument, and the case that makes it.** A subscriber who wanted to look older or
+  younger, or to be born somewhere better, could have moved his birthday, and nothing in rule one
+  would catch him. But the sharper problem is not lying, it is that two sketches of the same man
+  can disagree without anyone lying. Samuel Collins bought a sketch in 1885 and another in 1906.
+  The first says his parents settled in Belmont County "where they passed the remainder of their
+  days"; the second says they "left Belmont County in 1834 and moved to Logan County, where they
+  lived the remainder of their lives". Both were sent to him to check. What answers this is not
+  the rule but a second kind of source: where a newspaper obituary or a federal file gives the same
+  person a birth, the corpus prints both. It has done so twice here and they agree twice.
+status: accepted
+date: "2026-09-05"
