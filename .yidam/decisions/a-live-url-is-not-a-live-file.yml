@@ -1,0 +1,75 @@
+id: a-live-url-is-not-a-live-file
+summary: >-
+  Ohio served `COVIDSummaryData.csv` for at least two and a half years after it stopped writing to
+  it, and the Internet Archive captured the frozen file five times over two years. All five are
+  byte-identical and the latest onset date in every one is 1 March 2021. Nothing outside the data
+  says so. Before using a dated file, compute the maximum of its own date column.
+context: |
+  The file was found by the ordinary route: the state's dashboard path is gone, the archive has it,
+  the capture list runs from November 2020 to August 2025, and the sensible thing is to take the
+  latest capture that returns a 200. That capture is dated 27 August 2023.
+
+  Its contents end on 1 March 2021.
+
+      capture           bytes served   MD5 identical   latest onset date
+      2021-09-13         10,820,859        yes               2021-03-01
+      2022-02-09         10,820,859        yes               2021-03-01
+      2022-06-27         10,820,859        yes               2021-03-01
+      2022-10-31         10,820,859        yes               2021-03-01
+      2023-08-27         10,820,859        yes               2021-03-01
+
+  Five captures across two years, one MD5. The compressed record lengths in the archive's index
+  differ between them, which is a property of the gzip and not of the content, so even the index
+  offers no tell. Taken at its capture date the file describes a pandemic in which Ohio recorded
+  968,874 cases and then stopped — a third of what the state eventually recorded, and no deaths at
+  all after the first spring.
+
+  What makes it dangerous is that the file is not broken. It parses, its grand total closes against
+  its own rows, its county sums are right, and every figure in it is true of 1 March 2021.
+decision: |
+  **Before a dated file is used for anything, compute the maximum of its date column and state it
+  beside the retrieval date. Where the two differ by more than the file's own update cycle, the
+  file is frozen and the retrieval date is a false statement about the content.**
+
+  Three consequences:
+
+  *The retrieval date belongs to the request and the currency belongs to the data.* A catalog entry
+  records both. `retrieved` says when the bytes were fetched; the entry says what date the bytes
+  reach.
+
+  *An archived capture inherits this and does not fix it.* The Internet Archive dates the request,
+  not the content, and it captures a stale file as faithfully as a fresh one. A capture list that
+  runs to last year is evidence about the URL and no evidence at all about the series.
+
+  *Where two captures of one URL are byte-identical, that is a finding to record, not a
+  coincidence.* Compare hashes across captures before choosing one. It costs a download and it is
+  the only cheap way to see that a publisher stopped.
+rationale: |
+  **Why this is not [a file has more than one date](a-file-has-more-than-one-date.yml).** That rule
+  is about a file whose *fields* carry different dates — a 2025 bridge file with a 2015 traffic
+  count — and its remedy is to read the companion date column the publisher supplied. Here there is
+  no companion column and no discrepancy inside the file at all. Every row is consistent with every
+  other. The discrepancy is between the file and the URL that serves it, and the only instrument
+  that can see it is the maximum of the data's own dates.
+
+  **It is also not [a reprint is not a second witness](a-reprint-is-not-a-second-witness.yml).**
+  That one is about mistaking one source's second appearance for corroboration. Nothing here is
+  being corroborated; a single source is being mis-dated.
+
+  **What it cost to catch.** One `md5` over five downloads and one pass computing a maximum. What it
+  would have cost to miss: this corpus would have published Allen County's pandemic as 8,668 cases
+  and about fifty deaths — the record through February 2021 — under a 2023 retrieval date, with
+  every internal check passing and the county's two worst waves absent.
+
+  **What would falsify it.** If publishers reliably took down what they stopped updating, or dated
+  their files internally, the check would be waste. Ohio did neither: the path stayed up, the
+  filename stayed the same, and the state moved to a different file with a different name and told
+  nobody at the old address. The two other files at the same path were still being written, so even
+  a sibling file offers no signal.
+
+  **What it generalises to.** Any file taken from a URL rather than from a versioned release: an
+  agency's "current" CSV, a dashboard export, a GIS layer served from a portal, an archived capture
+  of any of them. The check is the same in each — the data's own last date, next to the date it was
+  fetched, in the catalog entry.
+status: accepted
+date: "2026-09-05"

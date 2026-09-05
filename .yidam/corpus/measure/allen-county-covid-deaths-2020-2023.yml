@@ -1,0 +1,109 @@
+class: measure
+label: COVID-19 deaths of Allen County residents, 2020–2023
+description: |
+  **Five hundred and seventeen Allen County residents died of COVID-19.** The state's file runs
+  from the first death in March 2020 to the last it records on 24 August 2023, and the county's
+  toll by year is 175, 219, 113 and 10. [verified] —
+  [Ohio's dashboard files](../../catalog/ohio-covid-19-dashboard-files.md), the county-of-residence
+  file of 3 September 2023, summed here.
+
+  **That is 506 deaths for every hundred thousand people, against 360 for Ohio, and it puts this
+  county sixteenth of the state's eighty-eight.** [verified] — the same file against
+  [the CDC county series](../../catalog/cdc-covid-19-county-data.md) for population. The worst
+  county in Ohio is Monroe at 623 and the least-hit is Delaware at 149.
+
+  **The second winter killed more of this county than the first.** The six months from September
+  2021 to February 2022 took 218 lives here; the three months from November 2020 to January 2021
+  took 136; the whole of the first spring and summer, March to August 2020, took 51. [verified] —
+  the same file, by date of death. Only 42 deaths follow February 2022 in a record that runs
+  eighteen months past it.
+
+      deaths of Allen County residents, worst months
+      2020-12   55        2021-10   42
+      2022-01   54        2021-01   37
+      2021-12   52        2021-11   26
+
+  **Eighty-three per cent of the dead were sixty or over, and they were a quarter of the cases.**
+  431 of the 517 deaths were of people aged 60 or more, against 24.9 per cent of the county's cases
+  in the same three age bands. [verified] — the same file, by age range. The share of the infected
+  who died runs 0.02 per cent under twenty, 0.15 in the thirties, 0.41 in the forties, 1.22 in the
+  fifties, 2.45 in the sixties, 5.00 in the seventies and 10.06 at eighty and over. [verified] —
+  the same file.
+
+      age band   cases   hospitalised   deaths   died, of those infected
+      0-19       5,534         80            1        0.02%
+      20-29      5,766         72            0        0.00%
+      30-39      5,180        111            8        0.15%
+      40-49      4,910        173           20        0.41%
+      50-59      4,671        293           57        1.22%
+      60-69      4,046        483           99        2.45%
+      70-79      2,602        517          130        5.00%
+      80+        2,008        507          202       10.06%
+
+  **A person over eighty who caught it here died one time in ten; a person under twenty, one time
+  in five thousand.** 202 deaths on 2,008 cases against 1 on 5,534. [verified] — the same file. No
+  resident of this county between twenty and thirty died of it at all.
+
+  **More women caught it and more men died of it.** 19,079 of the county's sexed cases were women
+  and 15,156 men, and the deaths run 282 men to 235 women — so a man who caught it here was half
+  again as likely to die as a woman, 1.86 per cent against 1.23. [verified] — the same file, by
+  sex.
+
+  **The federal weekly file does not carry this and Ohio's does.** The National Center for Health
+  Statistics suppresses every county-week holding one to nine deaths, which is 96 of this county's
+  170 weeks. [verified] — [the CDC county files](../../catalog/cdc-covid-19-county-data.md); see
+  [a suppressed range is not a margin](../../decisions/a-suppressed-range-is-not-a-margin.yml).
+
+  **A death by date of death is not a death by date of report, and neither is a case.** [inference]
+  Ohio's file dates each death to the day it happened rather than the day it was counted, which is
+  why the curve above has no weekend and no backlog in it and why its last weeks are thinner than
+  they will finally be. The same file gives a case an onset date, which is the day the person fell
+  ill and not the day a test came back.
+
+  **This node counts Allen County's residents wherever they died.**
+  [The place of death](allen-county-covid-place-of-death-2020-2023.yml) is a different count and a
+  larger one.
+
+  **This file does not establish how many of these people died of something else with the virus in
+  them.**
+
+  [open] How many of the 517 died in a nursing home. The county has twelve homes and 811 beds and
+  the state's file carries no facility, no setting and no residence type; the federal nursing-home
+  reporting that would answer it was not taken here.
+
+properties:
+  parameter: COVID-19 deaths of county residents
+  value: "517"
+  unit: deaths, March 2020 to August 2023
+  as_of: "2023"
+  method: |
+    Rows are selected on the county name after stripping, because the file names Allen County twice
+    — once plainly and once padded to a fixed width — and the padded block is the deaths that
+    occurred outside Ohio. Two of this county's 517 are in it. [verified] Deaths are dated to the
+    date of death, cases to the date of onset and hospitalisations to the date of admission, so the
+    three counts on one row are independent and no row contributes to more than one of them.
+    [verified] The rate per hundred thousand divides by the 2020 census counts — 102,206 for the
+    county and 11,799,448 for the state — and the ranking across Ohio's counties uses one
+    consistent denominator instead, CDC's county population column, for all eighty-eight. [verified] The last weeks of the record are provisional in the ordinary
+    way of a death file and are not adjusted here. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-covid-place-of-death-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-covid-cases-2020-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-covid-19-dashboard-files.md
+  - target: allen-county-natural-change-2021-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-early-deaths-by-cause-2020-2022.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

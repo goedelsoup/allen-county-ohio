@@ -1,0 +1,175 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const toll = assertion('five-hundred-and-seventeen-residents-died')
+const rank = assertion('sixteenth-of-eighty-eight-on-covid-deaths')
+const winter = assertion('the-second-winter-killed-more-than-the-first')
+const after = assertion('only-forty-two-deaths-after-february-2022')
+const share = assertion('covid-was-a-sixth-of-the-countys-deaths')
+const fall = assertion('the-fall-in-deaths-is-the-fall-in-covid')
+const old = assertion('eighty-three-per-cent-of-the-dead-were-sixty-or-over')
+const ladder = assertion('one-in-ten-over-eighty-and-one-in-five-thousand-under-twenty')
+const sexes = assertion('more-women-caught-it-and-more-men-died')
+const cases = assertion('thirty-four-thousand-cases-and-two-thousand-admissions')
+const hosp = assertion('fifth-of-eighty-eight-on-hospitalisations')
+const fifteen = assertion('one-case-in-fifteen-went-to-hospital')
+const biggest = assertion('the-biggest-month-was-not-the-worst')
+const undated = assertion('two-hundred-and-ninety-two-admissions-with-no-date')
+const here = assertion('eight-hundred-and-fifteen-died-here-five-hundred-and-thirteen-lived-here')
+const ratio = assertion('first-of-eighty-two-on-the-ratio')
+const neighbours = assertion('four-of-five-neighbours-run-the-other-way')
+const stateline = assertion('at-the-state-line-the-two-counts-agree')
+const allcause = assertion('the-county-carries-a-third-more-dying-than-its-people-do')
+const suppressed = assertion('ninety-six-of-a-hundred-and-seventy-weeks-suppressed')
+const vax = assertion('forty-five-per-cent-completed-a-course')
+const byage = assertion('eighty-two-per-cent-of-the-old-and-sixteen-of-the-young')
+const spread = assertion('ohios-counties-run-from-nineteen-to-seventy-nine')
+const booster = assertion('half-the-vaccinated-took-a-booster')
+const zips = assertion('limas-codes-ran-half-again-blufftons')
+const zipcheck = assertion('the-zip-file-and-the-county-file-agree')
+const zipdenom = assertion('the-states-zip-populations-are-not-the-censuss')
+
+const yearsSpec = bar(
+  toll.figures.map((f) => f.label),
+  toll.figures.map((f) => f.value),
+  { yTitle: 'Deaths of county residents', labelValues: true },
+)
+const ladderSpec = bar(
+  ladder.figures.map((f) => f.label),
+  ladder.figures.map((f) => f.value),
+  { yTitle: 'Per cent of the infected who died', tickSuffix: '%', labelValues: true },
+)
+const ratioSpec = bar(
+  ratio.figures.map((f) => f.label),
+  ratio.figures.map((f) => f.value),
+  { yTitle: 'Deaths here per death of a resident', labelValues: true },
+)
+const vaxSpec = bar(
+  byage.figures.map((f) => f.label),
+  byage.figures.map((f) => f.value),
+  { yTitle: 'Per cent completing a course', tickSuffix: '%', labelValues: true },
+)
+---
+
+<Article slug="whose-deaths-these-were">
+  <p>
+    Ohio published its pandemic as two files. One counts a death against the county the person
+    lived in; the other counts it against the county the death happened in. For most places the two
+    are nearly the same number. For Allen County they are 513 and 815, and the difference between
+    them is the largest of any county in the state.
+  </p>
+
+  <h2>Five hundred and seventeen</h2>
+  <AssertionCard assertion={toll} open />
+  <ChartFigure
+    id="years"
+    title="COVID-19 deaths of Allen County residents"
+    caption="From the first death in March 2020 to the last the state recorded, on 24 August 2023."
+    columns={['Year', 'Deaths']}
+    rows={toll.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="years" set:html={JSON.stringify(yearsSpec)} is:inline />
+  <AssertionCard assertion={rank} />
+  <AssertionCard assertion={winter} />
+  <p>
+    The county's worst month was December 2020 and its second worst was January 2022, thirteen
+    months later, and between them stands a summer in which four people died. A pandemic told as one
+    curve is two curves in this county, and the second is the taller.
+  </p>
+  <AssertionCard assertion={after} />
+  <AssertionCard assertion={share} />
+  <AssertionCard assertion={fall} />
+  <p>
+    The county's own death counts had already been read here as a spike that rose in 2021 and
+    subsided by 2024, with the cause unstated because nothing on hand carried one. The cause is
+    now on hand, and it accounts for almost the whole of the subsidence.
+  </p>
+
+  <h2>Who died</h2>
+  <AssertionCard assertion={old} />
+  <AssertionCard assertion={ladder} open />
+  <ChartFigure
+    id="ladder"
+    title="Share of infected Allen County residents who died, by age"
+    caption="Eight bands. Nobody in this county between twenty and thirty died of it."
+    columns={['Age band', 'Per cent']}
+    rows={ladder.figures.map((f) => [f.label, `${f.value.toFixed(2)}%`])}
+  />
+  <script type="application/json" data-chart-spec="ladder" set:html={JSON.stringify(ladderSpec)} is:inline />
+  <AssertionCard assertion={sexes} />
+  <p>
+    Women were the majority of the infected and the minority of the dead. That is the pattern
+    everywhere the disease was counted by sex, and it is here too, on a county of a hundred
+    thousand people.
+  </p>
+
+  <h2>Cases and admissions</h2>
+  <AssertionCard assertion={cases} />
+  <AssertionCard assertion={hosp} open />
+  <AssertionCard assertion={fifteen} />
+  <p>
+    Fifth of eighty-eight on hospitalisations and thirteenth on cases is a gap that wants an
+    explanation, and there are two available. One is that people here were sicker. The other is that
+    a county whose admissions run through two hospitals in one city reports them more completely
+    than a county whose residents scatter across three. Nothing in the state's file separates them,
+    and the node says so rather than choosing.
+  </p>
+  <AssertionCard assertion={biggest} />
+  <AssertionCard assertion={undated} />
+
+  <h2>Whose deaths these were</h2>
+  <AssertionCard assertion={here} open />
+  <ChartFigure
+    id="ratio"
+    title="Deaths occurring in the county per death of a resident"
+    caption="The five highest of Ohio's eighty-two counties with a hundred or more resident deaths. Three of the other four hold Columbus, Toledo and Cincinnati."
+    columns={['County', 'Ratio']}
+    rows={ratio.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="ratio" set:html={JSON.stringify(ratioSpec)} is:inline />
+  <AssertionCard assertion={ratio} />
+  <p>
+    A county of a hundred thousand people tops a list whose next four entries are the state's
+    medical centres. That is a measurement of a hospital's catchment, taken from death certificates
+    — and the other end of it is visible next door.
+  </p>
+  <AssertionCard assertion={neighbours} />
+  <AssertionCard assertion={stateline} />
+  <AssertionCard assertion={allcause} />
+  <p>
+    The same gap sits in the county's ordinary deaths, at about a third rather than three fifths.
+    Roughly 1,740 people a year die inside Allen County and roughly 1,300 of them are its own. Both
+    figures are wanted, and neither of them is the county's death toll without the word that says
+    which.
+  </p>
+  <AssertionCard assertion={suppressed} />
+
+  <h2>Vaccination</h2>
+  <AssertionCard assertion={vax} />
+  <AssertionCard assertion={byage} open />
+  <ChartFigure
+    id="vax"
+    title="Share completing a primary course in Allen County, by age"
+    caption="On 10 May 2023, the last day federal county reporting existed."
+    columns={['Group', 'Per cent']}
+    rows={byage.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="vax" set:html={JSON.stringify(vaxSpec)} is:inline />
+  <AssertionCard assertion={spread} />
+  <AssertionCard assertion={booster} />
+
+  <h2>The one map the state drew</h2>
+  <AssertionCard assertion={zips} />
+  <AssertionCard assertion={zipcheck} />
+  <AssertionCard assertion={zipdenom} />
+  <p>
+    Cases by postal code is the only sub-county measure Ohio published, and it comes with its own
+    population column that disagrees with the census by up to seven and a half per cent. Read as an
+    ordering it is sound; read as levels it carries a denominator nobody stated. Bluffton at the
+    bottom and Lima at the top is the ordering, and what separates them is not in the file.
+  </p>
+</Article>
