@@ -73,9 +73,9 @@ pair of 3 May 2023. See
 [located here is not of here](../decisions/located-here-is-not-of-here.yml).
 
 **`COVIDSummaryData.csv` is still served, still archived, and stopped being written in March 2021.**
-Six captures between 13 September 2021 and 27 August 2023 are byte-identical — the same MD5, the
+Five captures between 13 September 2021 and 27 August 2023 are byte-identical — the same MD5, the
 same 263,145 rows, the same Ohio grand total of 968,874 cases — and the latest onset date in every
-one of them is **1 March 2021**. [verified] — the six, downloaded and compared here. Nothing on the
+one of them is **1 March 2021**. [verified] — the five, downloaded and compared here. Nothing on the
 page, in the filename or in the archive says so; the only tell is the maximum of its own date
 column. See [a live url is not a live file](../decisions/a-live-url-is-not-a-live-file.yml).
 

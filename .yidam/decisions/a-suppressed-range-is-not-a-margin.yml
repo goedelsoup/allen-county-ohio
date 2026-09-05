@@ -63,6 +63,30 @@ decision: |
     the same thing about how many children stand behind them.
   - **Never rank a mixture of exact values and bands.** An ordering built from `63`, `80-84` and
     `95-100` is an ordering of three different kinds of object.
+
+  **A second case, and the first one where the suppression could be checked rather than reasoned
+  about.** The National Center for Health Statistics publishes COVID-19 deaths by county and week
+  and suppresses every cell holding one to nine. **96 of Allen County's 170 weeks are suppressed**
+  and the 74 that survive sum to 601, so the file states the county's total as somewhere between
+  697 and 1,465 — an interval more than twice as wide as the number it is trying to convey.
+  [verified] — [the CDC county files](../catalog/cdc-covid-19-county-data.md), counted here.
+
+  **Ohio published the same weeks and suppressed nothing, so the rule itself is testable.** In
+  every one of the 96 suppressed weeks the state's count for this county is between nought and
+  nine, and in none of them is it ten or more; across the 74 unsuppressed weeks the two files agree
+  exactly in 50 and within two in 71, the largest disagreement anywhere being three. [verified] —
+  the two files, matched on the week ending Saturday. So the suppression rule is exactly what the
+  footnote claims, verified on ninety-six cells, and the interval it leaves collapses to Ohio's 815
+  the moment a second instrument is admitted.
+
+  **What that adds to the rule.** The graduation case could only bound the bands and say the
+  precisely-reported units were a biased subset. This one shows the other half: where a second
+  publisher covers the same cells without suppressing them, the check is worth running in both
+  directions — the unsuppressed source resolves the interval, and the suppressed source's
+  behaviour on cells you can see tells you whether to trust its rule on cells you cannot. Neither
+  half is available without the second source, and the corpus does not treat a disclosure interval
+  as irreducible until it has looked for one.
+
 rationale: |
   **This is not the survey rule.** [a survey is not a count](a-survey-is-not-a-count.yml) governs a
   sampling margin: symmetric, probabilistic, and a property of how many people were asked. A
