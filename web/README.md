@@ -39,7 +39,7 @@ for them rather than reading them:
 
 | Instrument | What it is for |
 |---|---|
-| `/map` | The corpus's located nodes on the county's actual 2020 boundaries |
+| `/map` | The county carrying a year: what the corpus places on the ground, era by era |
 | `/entry` | Every node the corpus publishes, by class |
 | `/sources` | The audit: what is sourced, what is inferred, what was withheld |
 
@@ -131,6 +131,25 @@ Shawnee Township. A table of edges cannot show that. A dot outside a boundary ca
 The corollary is the one the corpus states about itself, and the map page states it too:
 nearness is not containment. A dot inside a shape is a dot inside a shape, and where a
 location claim is an inference its badge says so.
+
+**It now carries a year**, and the same rule governs the second axis. The six tiles are the
+design system's era ramp, which tiles the whole range; the corpus's seven `period` nodes ride on
+top as named overlays, because they overlap and leave holes and were never a partition. Time is
+deliberately not linear across the axis — half the record sits in one decade — and the density
+ribbon under it says so before a reader travels through a thin century and concludes the page is
+broken.
+
+Three things are kept apart at every year, because collapsing them would be a claim nobody made:
+what the corpus places *here*, what it places *elsewhen*, and what it cannot date at all. The
+last is a gap in the record rather than in the county, and it has its own toggle and its own ink.
+Every derived placement carries its route, and the *Placement* control shrinks the map to the 72
+positions somebody actually stated.
+
+The view is in the URL. `/map?year=1885&grain=year&at=place/lima.yml` is Lima in the year the oil
+came in, with the panel open on it — which is what a reading page links to.
+
+`src/lib/eras.ts` holds all of it as pure functions over `feeds/atlas.json`, testable without a
+canvas; `src/scripts/map.ts` is the deck.gl scene and nothing else.
 
 ## Bundle status
 

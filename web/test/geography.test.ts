@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { mapPoints } from '../src/lib/feeds'
+import { atlas, mapPoints } from '../src/lib/feeds'
+import { FRAME_KEYS, HELD_KEYS, unheldShapes } from '../src/lib/ground'
 
 // The map draws corpus nodes onto vendored Census geometry and joins the two by GEOID. That
 // join is the one derivation this site performs, so it is the one thing this site has to
@@ -105,5 +106,59 @@ describe('the corpus-to-geometry join', () => {
     const named = new Set(mapPoints.map((p) => p.geoid).filter(Boolean))
     const unnamed = layers['places.geojson'].filter((f) => !named.has(f.properties.GEOID))
     expect(unnamed.map((f) => f.properties.NAME)).toEqual(['Cridersville village'])
+  })
+})
+
+
+describe('the shapes the travelling map can draw', () => {
+  /**
+   * `/map` shades a corpus node's own Census key, and says on the page how many keys it cannot
+   * shade. Both halves have to be checked or the page keeps a number that used to be true.
+   *
+   * The unheld keys are the twelve school districts. TIGERweb serves Unified School Districts
+   * from a layer `fetch-boundaries.mjs` does not ask for, so the corpus knows where those
+   * districts are and this site does not hold their outlines. That is a gap worth stating rather
+   * than a defect worth hiding, and vendoring the layer is what closes it.
+   */
+  it('holds every key it says it holds', () => {
+    expect(HELD_KEYS.size).toBe(
+      layers['county.geojson'].length +
+        layers['county-subdivisions.geojson'].length +
+        layers['places.geojson'].length +
+        layers['census-designated-places.geojson'].length,
+    )
+  })
+
+  it('names the county as the frame rather than as a place on it', () => {
+    // Filling the frame tints every pixel inside it. The map strokes this key and never fills it.
+    expect([...FRAME_KEYS]).toEqual(layers['county.geojson'].map((f) => f.properties.GEOID))
+  })
+
+  it('cannot draw exactly the districts, and can draw everything else', () => {
+    const unheld = unheldShapes(atlas)
+    expect(unheld.length).toBeGreaterThan(0)
+    for (const r of unheld) expect(r.node).toMatch(/school-district/)
+
+    const drawable = atlas.filter(
+      (r) => r.treatment === 'polygon' && r.hops === 0 && !unheld.includes(r),
+    )
+    for (const r of drawable) {
+      for (const a of r.anchors) {
+        if (a.geoid === null) continue
+        expect(HELD_KEYS.has(a.geoid), `${r.node} keys ${a.geoid}`).toBe(true)
+      }
+    }
+  })
+
+  it('resolves every key the atlas states, or files it as unheld', () => {
+    // The anti-drift half: a key that is neither drawable nor counted as unheld is a shape the
+    // page silently drops, which is the failure the count on the page exists to prevent.
+    const unheld = new Set(unheldShapes(atlas).map((r) => r.node))
+    for (const r of atlas) {
+      if (r.treatment !== 'polygon' || r.hops !== 0) continue
+      const keys = r.anchors.map((a) => a.geoid).filter((g): g is string => g !== null)
+      if (keys.length === 0) continue
+      expect(keys.every((k) => HELD_KEYS.has(k)) || unheld.has(r.node), r.node).toBe(true)
+    }
   })
 })

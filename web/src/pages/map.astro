@@ -1,74 +1,263 @@
 ---
-import Base from '../layouts/Base.astro'
-import AssertionCard from '../components/AssertionCard.astro'
-import { mapPoints } from '../lib/feeds'
+// The map, carrying a year.
+//
+// The spine, the ribbon and the period names are rendered here at build time rather than by the
+// script, so the shape of the record is in the document before any JavaScript runs and is
+// readable to something that never runs it. The script attaches behaviour to markup that already
+// says what it means.
 
-const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
-  acc[p.class] = (acc[p.class] ?? 0) + 1
-  return acc
-}, {})
+import Base from '../layouts/Base.astro'
+import { atlas } from '../lib/feeds'
+import { extent, overlays, ribbon, spine } from '../lib/eras'
+import { unheldShapes } from '../lib/ground'
+
+const eras = spine(atlas)
+const bars = ribbon(eras, atlas)
+const periods = overlays(atlas)
+const range = extent(atlas)
+
+const tallest = Math.max(...bars.map((b) => b.count), 1)
+
+/**
+ * The opening tile's decades, which are the argument for the whole axis.
+ *
+ * Written out rather than described, because a caption saying *a handful* is a caption nobody
+ * can check and the numbers move whenever the corpus grows.
+ */
+const thin = bars.filter((b) => b.era === eras[0].key)
+const thinnest = Math.min(...thin.map((b) => b.count))
+const thickest = Math.max(...thin.map((b) => b.count))
+
+/** How many spans open in each tile. The tiles print it, so the axis is honest about itself. */
+const opening = (from: number, to: number) =>
+  atlas.filter((r) => r.from !== null && r.from >= from && r.from <= to).length
+
+const dated = atlas.filter((r) => r.from !== null).length
+const undated = atlas.length - dated
+const unplaced = atlas.filter((r) => r.treatment === 'unplaced').length
+const stated = atlas.filter((r) => r.hops === 0).length
+const derived = atlas.filter((r) => r.hops !== null && r.hops > 0).length
+
+/** Polygons whose key names a shape this site does not hold — every one a school district. */
+const unheld = unheldShapes(atlas).length
 ---
 
 <Base
   title="The map"
-  lede="The corpus's located nodes, drawn on the county's actual 2020 Census boundaries. This is the view that catches a location claim the prose cannot."
+  lede="The county, carrying a year. Move along the axis and the corpus moves with it — the townships as they are erected, the villages as they incorporate, and every figure the record places in the years you are standing in."
 >
-  <div class="map-shell" data-map>
-    <div class="canvas" data-map-canvas></div>
-    <div class="tooltip" data-map-tooltip hidden></div>
+  <div class="atlas" data-map>
+    <div class="map-shell">
+      <div class="canvas" data-map-canvas></div>
+      <div class="tooltip" data-map-tooltip hidden></div>
 
-    <div class="controls">
-      <fieldset>
-        <legend>Layers</legend>
-        <label><input type="checkbox" data-layer="districts" checked /> Voting districts</label>
-        <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
-        <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
-        <label><input type="checkbox" data-layer="corpus" checked /> Corpus nodes</label>
-      </fieldset>
+      <div class="controls">
+        <fieldset>
+          <legend>Ground</legend>
+          <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
+          <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
+          <label><input type="checkbox" data-layer="population" /> Population, 2020</label>
+        </fieldset>
 
-      <div class="scale">
-        <span class="scale-title">People per voting district</span>
-        <div class="ramp" data-map-legend></div>
+        <div class="scale" data-map-scale hidden>
+          <span class="scale-title">People per voting district</span>
+          <div class="ramp" data-map-legend></div>
+        </div>
       </div>
     </div>
+
+    <div class="axis">
+      <div class="spine" role="group" aria-label="Era">
+        {
+          eras.map((era) => (
+            <button
+              type="button"
+              data-era={era.key}
+              aria-pressed="false"
+              style={`--tile-ink: var(${era.ink})`}
+            >
+              <span class="tile-ink" aria-hidden="true"></span>
+              <span class="tile-name">{era.label}</span>
+              <span class="tile-years">
+                {era.from}–{era.to}
+              </span>
+              <span class="tile-count">{opening(era.from, era.to)} open here</span>
+            </button>
+          ))
+        }
+      </div>
+
+      <figure class="ribbon">
+        <div class="bars">
+          {
+            eras.map((era) => (
+              <div class="bar-group" style={`--tile-ink: var(${era.ink})`}>
+                {bars
+                  .filter((b) => b.era === era.key)
+                  .map((b) => (
+                    <span
+                      class="bar"
+                      data-bar-from={b.from}
+                      data-bar-to={b.to}
+                      style={`--h: ${Math.round((b.count / tallest) * 100)}%`}
+                      title={`${b.from}–${b.to}: ${b.count} records`}
+                    />
+                  ))}
+              </div>
+            ))
+          }
+        </div>
+        <figcaption>
+          How much record each decade holds, drawn in the axis's own spacing — so the tiles above
+          and the bars below line up. The {thin.length} decades before {eras[1].from} hold between
+          {thinnest} and {thickest} records each; the tallest bar holds {tallest}. That shape is
+          why the axis is six tiles rather than a slider: an evenly spaced control would give
+          almost all of its travel to almost none of the record.
+        </figcaption>
+      </figure>
+
+      <div class="scrub">
+        <label>
+          <span class="scrub-label">Year</span>
+          <input
+            type="range"
+            data-scrub
+            min={range.from}
+            max={range.to}
+            value={range.to}
+            step="1"
+          />
+        </label>
+        <output class="year" data-readout="year">{range.to}</output>
+      </div>
+
+      <div class="periods" role="group" aria-label="Periods the corpus names">
+        {
+          periods.map((p) => (
+            <button type="button" data-period-from={p.from}>
+              {p.label}
+              <em>
+                {p.from}–{p.to ?? ''}
+              </em>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="reading">
+      <div class="asks">
+        <fieldset class="grain">
+          <legend>Show</legend>
+          <label
+            ><input type="radio" name="grain" value="era" data-grain checked /> the whole era</label
+          >
+          <label><input type="radio" name="grain" value="year" data-grain /> that year alone</label>
+        </fieldset>
+
+        <label class="warrant">
+          <span>Placement</span>
+          <select data-warrant>
+            <option value="0">stated positions only</option>
+            <option value="1">within one edge</option>
+            <option value="2">within two edges</option>
+            <option value="3" selected>within three edges</option>
+          </select>
+        </label>
+
+        <fieldset class="also">
+          <legend>Also draw</legend>
+          <label
+            ><input type="checkbox" data-toggle="undated" /> the {undated} it cannot date</label
+          >
+          <label
+            ><input type="checkbox" data-toggle="generous" /> records past their vouched end</label
+          >
+        </fieldset>
+      </div>
+
+      <dl class="readout">
+        <div>
+          <dt>Standing</dt>
+          <dd data-readout="present">—</dd>
+        </div>
+        <div>
+          <dt>On</dt>
+          <dd><span data-readout="anchors">—</span> positions</dd>
+        </div>
+        <div>
+          <dt>Window</dt>
+          <dd data-readout="window">—</dd>
+        </div>
+        <div>
+          <dt>Era</dt>
+          <dd class="era-name" data-readout="era">—</dd>
+        </div>
+      </dl>
+
+      <p class="vintage">
+        Every boundary drawn here is 2020 Census geography, and it does not travel. You are
+        <span data-readout="vintage">—</span> years from the year it describes, which is why the ground
+        fades as you move away from it: Spencer Township was erected out of ground the map already
+        draws as Spencer's, and six of the villages had not been incorporated at all.
+      </p>
+    </div>
+
+    <aside class="panel" data-map-panel aria-live="polite"></aside>
   </div>
 
-  <section class="reading">
+  <section class="notes">
     <h2>How to read it</h2>
     <div class="two-up">
       <div>
-        <h3><span class="key ground"></span>The ground</h3>
+        <h3>The mark is a stack, not a pin</h3>
         <p>
-          County, townships, municipalities and all 88 voting districts, in neutrals and one
-          sequential blue. This is vendored 2020 Census geography, not corpus content — it is
-          here so the corpus has something true to be drawn against. Its provenance travels
-          with it in <code>public/geo/PROVENANCE.json</code>.
+          {stated} nodes state a position of their own. {derived} more reach one across an edge or
+          three — a figure that <em>describes</em> Lima, an event that <em>occurred in</em> a
+          township, a term of office that reaches ground through the office it is a term of. Drawn
+          individually those become a smear over Lima that no zoom separates, so each position
+          carries one mark whose area is how much is there, and selecting it lists what.
+        </p>
+        <p>
+          The pale rim of a mark is the part that was inferred and the solid core is the part that
+          was stated. Set <em>Placement</em> to <em>stated positions only</em> and the map loses
+          most of itself; that difference is the size of the claim being made on your behalf.
         </p>
       </div>
       <div>
-        <h3><span class="key corpus"></span>The corpus</h3>
+        <h3>An empty year is a silence, not a fault</h3>
         <p>
-          The {mapPoints.length} nodes this repository places on the ground:
-          {Object.entries(byClass)
-            .map(([c, n]) => `${n} ${c}`)
-            .join(', ')}. Each carries the claim tag its node was written with. Hover any of
-          them.
+          The ribbon under the axis is there to be read before you travel. Six decades before 1820
+          hold a handful of records between them, and a map showing almost nothing in 1800 is
+          showing the archive rather than the county.
+        </p>
+        <p>
+          {undated} records carry no date at all, and {unplaced} reach no ground by any route the
+          placement rules license — among them the Treaty of St. Marys, which made this county and
+          was signed in another one. Neither group is absent from Allen County. Both are absent
+          from the record, which is a different claim and gets a different mark.
         </p>
       </div>
     </div>
+
+    <p class="caveat">
+      {unheld} of the shapes are school districts whose Census key names a boundary layer this site
+      does not hold, so they appear as marks rather than as shapes. Three more — Bath Township, Fort
+      Shawnee and Harrod — are shapes with no date, and show only when the undated are drawn.
+    </p>
   </section>
 
   <p class="handoff">
-    What a map is for here — and the location claim it caught — is on
-    <a href="/ground">Ground</a>.
+    What a map is for here — and the location claim it caught — is on <a href="/ground">Ground</a>.
+    Every mark on it opens an <a href="/entry">entry</a>.
   </p>
 
-  <script type="application/json" data-map-points set:html={JSON.stringify(mapPoints)} is:inline />
+  <script type="application/json" data-atlas set:html={JSON.stringify(atlas)} is:inline />
   <script>
     import { renderMap } from '../scripts/map'
 
     const shell = document.querySelector<HTMLElement>('[data-map]')
-    const data = document.querySelector('[data-map-points]')
+    const data = document.querySelector('[data-atlas]')
 
     if (shell && data?.textContent) {
       renderMap(shell, JSON.parse(data.textContent)).catch((err: unknown) => {
@@ -81,14 +270,30 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
   </script>
 
   <style>
+    .atlas {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+      grid-template-areas: 'map panel' 'axis panel' 'reading panel';
+      gap: var(--space-5);
+      margin-bottom: var(--space-9);
+    }
+    @media (max-width: 60rem) {
+      .atlas {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 'map' 'axis' 'reading' 'panel';
+      }
+    }
+
+    /* ---- the canvas ---- */
+
     .map-shell {
+      grid-area: map;
       position: relative;
-      height: clamp(420px, 68vh, 760px);
+      height: clamp(360px, 52vh, 620px);
       border: 1px solid var(--rule-hairline);
       border-radius: var(--radius-md);
       background: var(--surface-card);
       overflow: hidden;
-      margin-bottom: 2.5rem;
     }
     .canvas {
       position: absolute;
@@ -110,8 +315,8 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
       gap: 0.625rem;
       pointer-events: none;
     }
-    fieldset,
-    .scale {
+    .controls fieldset,
+    .scale:not([hidden]) {
       pointer-events: auto;
       background: color-mix(in srgb, var(--surface-card) 92%, transparent);
       backdrop-filter: blur(6px);
@@ -122,14 +327,15 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
       font-size: 0.8125rem;
     }
     legend,
-    .scale-title {
+    .scale-title,
+    .scrub-label {
       font-size: 0.6875rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-muted);
       padding: 0;
     }
-    fieldset label {
+    .controls label {
       display: flex;
       align-items: center;
       gap: 0.4rem;
@@ -182,7 +388,7 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
       display: none;
     }
     .tooltip[data-kind='corpus'] {
-      border-left: 3px solid var(--series-2);
+      border-left: 3px solid var(--era-current, var(--rule-strong));
     }
     .tooltip :global(strong) {
       color: var(--text-strong);
@@ -198,16 +404,326 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
       font-style: normal;
     }
 
-    section {
-      margin-bottom: 3rem;
+    /* ---- the axis ---- */
+
+    .axis {
+      grid-area: axis;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    /* The line handing the map's argument to /ground, which now carries it. */
-    .handoff {
-      max-width: var(--measure-prose);
+    .spine {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      /* A 2px surface gap between tiles, so adjacent inks never touch. */
+      gap: 2px;
+    }
+    .spine button {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
+      padding: 0.5rem 0.55rem 0.55rem;
+      background: var(--surface-card);
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      color: var(--text-body);
+      font: inherit;
+      overflow: hidden;
+    }
+    .spine button:hover {
+      background: var(--surface-raised);
+    }
+    .spine button[aria-pressed='true'] {
+      background: var(--surface-raised);
+      border-color: var(--rule-strong);
+    }
+    .tile-ink {
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--tile-ink);
+      opacity: 0.45;
+      margin-bottom: 0.3rem;
+    }
+    .spine button[aria-pressed='true'] .tile-ink {
+      opacity: 1;
+    }
+    .tile-name {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: var(--text-strong);
+      white-space: nowrap;
+    }
+    .tile-years,
+    .tile-count {
+      font-size: 0.6875rem;
       color: var(--text-muted);
-      border-left: 2px solid var(--rule-hairline);
-      padding-left: var(--space-5);
-      margin: var(--space-9) 0 0;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .tile-count {
+      color: var(--text-faint);
+    }
+
+    .ribbon {
+      margin: 0.35rem 0 0;
+    }
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 2px;
+      height: 3.25rem;
+    }
+    .bar-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 1px;
+    }
+    .bar {
+      flex: 1;
+      height: var(--h);
+      min-height: 1px;
+      background: var(--tile-ink);
+      opacity: 0.3;
+      /* A 4px rounded data-end anchored to the baseline. */
+      border-radius: 2px 2px 0 0;
+    }
+    .bar[data-in-window] {
+      opacity: 1;
+    }
+    .ribbon figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      max-width: var(--measure-prose);
+    }
+
+    .scrub {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .scrub label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .scrub input {
+      flex: 1;
+      accent-color: var(--era-current, var(--text-strong));
+    }
+    .year {
+      font-variant-numeric: tabular-nums;
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      min-width: 3.5ch;
+      text-align: right;
+    }
+
+    .periods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .periods button {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid var(--rule-hairline);
+      border-radius: 999px;
+      background: var(--surface-card);
+      color: var(--text-body);
+      font: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .periods button:hover {
+      border-color: var(--rule-strong);
+      background: var(--surface-raised);
+    }
+    .periods em {
+      font-style: normal;
+      color: var(--text-faint);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---- what is being asked ---- */
+
+    .reading {
+      grid-area: reading;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .asks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      align-items: flex-start;
+    }
+    .asks fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .asks label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8125rem;
+      color: var(--text-body);
+      min-height: 1.5rem;
+      cursor: pointer;
+    }
+    .warrant {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+    }
+    .warrant span {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .warrant select {
+      font: inherit;
+      font-size: 0.8125rem;
+      padding: 0.2rem 0.4rem;
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-sm);
+      background: var(--surface-card);
+      color: var(--text-body);
+    }
+
+    .readout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.75rem;
+      margin: 0;
+      padding: 0.65rem 0.85rem;
+      background: var(--surface-sunken);
+      border-radius: var(--radius-md);
+    }
+    .readout div {
+      display: flex;
+      flex-direction: column;
+    }
+    .readout dt {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .readout dd {
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+      font-size: 1rem;
+      color: var(--text-strong);
+    }
+    /*
+     * The era's ink sits beside the word, never in it.
+     *
+     * Measured on the four grounds, two of the six reach 3.78:1 and 3.98:1 in daylight and all
+     * six fall to about 3.7 on the raised night ground. That is a mark's bar and not a word's,
+     * so the name takes the strong ink and the era gets a swatch — the same rule every tier
+     * badge on this site already follows, and the reason those marks are allowed to stay the
+     * colours the design composed.
+     */
+    .era-name {
+      color: var(--text-strong);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .era-name::before {
+      content: '';
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 2px;
+      background: var(--era-current, var(--rule-strong));
+      flex: none;
+    }
+
+    .vintage {
+      margin: 0;
+      max-width: var(--measure-prose);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* ---- the panel ---- */
+
+    .panel {
+      grid-area: panel;
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-md);
+      background: var(--surface-card);
+      padding: 0.85rem 1rem;
+      max-height: clamp(360px, 68vh, 760px);
+      overflow-y: auto;
+    }
+    .panel :global(h3) {
+      margin: 0 0 0.15rem;
+      font-size: 1rem;
+      color: var(--text-strong);
+    }
+    .panel :global(.count),
+    .panel :global(.empty) {
+      margin: 0 0 0.65rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .panel :global(ol) {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .panel :global(li) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--rule-hairline);
+      font-size: 0.8125rem;
+    }
+    .panel :global(li:last-child) {
+      border-bottom: 0;
+    }
+    .panel :global(.meta) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      color: var(--text-faint);
+      font-size: 0.75rem;
+    }
+    .panel :global(.meta em) {
+      font-style: normal;
+    }
+    .panel :global([data-hops='0']) {
+      color: var(--text-muted);
+    }
+
+    /* ---- the prose ---- */
+
+    .notes {
+      margin-bottom: var(--space-9);
     }
     .two-up {
       display: grid;
@@ -216,32 +732,22 @@ const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
     }
     .two-up p {
       color: var(--text-body);
-      margin: 0;
     }
-    .key {
-      display: inline-block;
-      width: 0.7rem;
-      height: 0.7rem;
-      border-radius: 2px;
-      margin-right: 0.45rem;
-    }
-    .key.ground {
-      background: var(--seq-400);
-    }
-    .key.corpus {
-      background: var(--series-2);
-      border-radius: 50%;
-    }
-    .lede-narrow,
-    .caution {
+    .caveat {
       max-width: var(--measure-prose);
-      color: var(--text-body);
-    }
-    .caution {
       background: var(--surface-sunken);
       padding: 1rem 1.15rem;
       border-radius: var(--radius-md);
       font-size: 0.9375rem;
+      color: var(--text-body);
+    }
+    /* The line handing the map's argument to /ground, which now carries it. */
+    .handoff {
+      max-width: var(--measure-prose);
+      color: var(--text-muted);
+      border-left: 2px solid var(--rule-hairline);
+      padding-left: var(--space-5);
+      margin: var(--space-9) 0 0;
     }
   </style>
 </Base>

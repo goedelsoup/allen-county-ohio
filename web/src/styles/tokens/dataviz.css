@@ -50,4 +50,53 @@
   --map-marker: var(--rubric-500);
   --map-marker-edge: var(--rubric-700);
   --map-water: var(--indigo-500);
+
+  /*
+   * ---- The travelling map ----
+   *
+   * The map carries a year, and three things had to be encoded on it that the
+   * system names no ink for: how far a mark is from a position anybody stated,
+   * how far the reader has travelled from the basemap's own vintage, and which
+   * mark they have selected.
+   *
+   * Only the third is a colour. The other two are deliberately not — the map
+   * already spends hue on the era, and a second hue encoding on the same marks
+   * would be the dual-axis mistake in another costume.
+   */
+
+  /*
+   * How far a placement is from a position somebody stated, as opacity.
+   *
+   * 72 nodes carry a coordinate or a Census key. 568 more reach one across one
+   * to three edges, and every one of those is an inference this map is making
+   * rather than a fact the corpus recorded. The gradient says so without
+   * spending a hue: a stated position is solid, and a three-edge derivation is
+   * a third of one.
+   *
+   * Not a ramp of inks. A second hue scale on marks that already carry the era
+   * would leave a reader deciding whether a pale mark is old or badly warranted,
+   * and the answer would be *look at the legend*, which is the answer a chart
+   * gives when its encoding has failed.
+   */
+  --warrant-0: 1;
+  --warrant-1: 0.74;
+  --warrant-2: 0.52;
+  --warrant-3: 0.34;
+
+  /*
+   * The one emphatic mark. The system reserves rubric for exactly this and the
+   * charts already spend it on the series being argued about; on the map it is
+   * the anchor the reader has opened, and never more than one at a time.
+   */
+  --map-selected: var(--rubric-500);
+
+  /*
+   * A record the corpus holds and cannot date.
+   *
+   * 183 of them, and three are shapes — a township and two villages that are
+   * holes in the county because they are holes in the record. It takes the
+   * missing-status ink rather than an era ink, because it belongs to no era:
+   * giving it one would be the map answering a question the corpus did not.
+   */
+  --map-undated: var(--status-missing);
 }

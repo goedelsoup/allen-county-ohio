@@ -276,3 +276,68 @@ describe('large text is held to the large-text bar, on both grounds', () => {
     ).toBeGreaterThanOrEqual(LARGE)
   })
 })
+
+describe('the era ramp', () => {
+  /**
+   * Six inks that the travelling map spends hue on, so all six need a night value.
+   *
+   * They are the one set in this palette that could not be given one by walking further down a
+   * ramp: they are standalone literals — nineteenth-century map inks — and there is no other end
+   * of them to take. So each is relit at OKLab L 0.74, and what is checked here is the promise
+   * that buys: every step separates from every night ground it is drawn on.
+   *
+   * Held to the 3:1 graphical-object bar rather than 4.5, for the reason the status marks are:
+   * an era is never carried by hue alone here. The tile prints its own name and years, the map
+   * shows one tint at a time, and the selection panel names the era in words.
+   */
+  const ERA = ['--era-pre1820', '--era-1820', '--era-1860', '--era-1900', '--era-1940', '--era-1980']
+  const MARK = 3
+
+  it('leaves no step of it without a night value', () => {
+    // The defect the locator plate shipped with, at six times the size: a literal has no dark
+    // value, so an era ink forgotten here keeps its daylight colour on an ink ground.
+    const dark = scope(night, DARK_SELECTOR)
+    expect(ERA.filter((token) => !dark.has(token))).toEqual([])
+  })
+
+  it.each(ERA)('%s reads as a mark on every ground, day and night', (token) => {
+    for (const [read, when] of [
+      [resolve, 'day'],
+      [resolveDark, 'night'],
+    ] as const) {
+      for (const ground of GROUNDS) {
+        const ratio = contrast(read(token), read(ground))
+        expect(
+          Number(ratio.toFixed(2)),
+          `${token} (${read(token)}) on ${ground} (${read(ground)}) is ${ratio.toFixed(2)}:1 by ${when}`,
+        ).toBeGreaterThanOrEqual(MARK)
+      }
+    }
+  })
+
+  it('is six distinct inks in both palettes', () => {
+    // A relighting that collapsed two steps would leave the axis with five tiles wearing four
+    // colours, and nothing else would say so.
+    expect(new Set(ERA.map(resolve)).size).toBe(ERA.length)
+    expect(new Set(ERA.map(resolveDark)).size).toBe(ERA.length)
+  })
+
+  it('is not a scale, and is not used as one', () => {
+    /**
+     * Stated as a check because the token file calls it a ramp and it is not one.
+     *
+     * Measured as a sequential scale its daylight lightness runs 0.48, 0.53, 0.51, 0.51, 0.37,
+     * 0.42 — not monotonic in either direction, so a reader cannot order two steps by looking
+     * at them. Measured as a categorical scale the worst adjacent pair reaches ΔE 1.9 under
+     * protanopia. It is six period inks, and everything on this site that uses them prints the
+     * era in words beside the colour.
+     *
+     * If a later edit makes it monotonic, this fails — and that is the right outcome: it would
+     * mean the ramp had become a scale and could be used as one.
+     */
+    const light = ERA.map((token) => luminance(resolve(token)))
+    const ascending = light.every((v, i) => i === 0 || v >= light[i - 1])
+    const descending = light.every((v, i) => i === 0 || v <= light[i - 1])
+    expect(ascending || descending).toBe(false)
+  })
+})

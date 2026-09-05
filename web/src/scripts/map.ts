@@ -1,31 +1,55 @@
-// The county, drawn.
+// The county, drawn, carrying a year.
 //
-// Two kinds of thing are on this map and they are coloured to stay apart. **The ground** —
-// county, townships, municipalities, voting districts — is vendored 2020 Census geography,
-// held in `public/geo/` with its provenance beside it; it is drawn in neutrals and a single
-// sequential blue. **The corpus** — the places, sites and features this repository actually
-// makes claims about — is drawn in one accent colour on top. A reader should never have to
-// wonder which of the two they are looking at.
+// Three kinds of thing are on this map and they are kept apart by what they are made of rather
+// than by hue, because hue is spent on the era.
+//
+//   **The ground** — county, townships, municipalities, voting districts, tracts — is vendored
+//   2020 Census geography, held in `public/geo/` with its provenance beside it, drawn in
+//   neutrals. It is not corpus content; it is what the corpus is drawn against. It fades as the
+//   reader travels away from 2020, because it is a 2020 statement and it does not travel.
+//
+//   **The corpus, placed** — every node `crates/placement` can put on ground, filtered to the
+//   window the reader is looking at. Marks take the ink of the era they are being viewed in, so
+//   travelling changes the colour of the map as well as its contents.
+//
+//   **The corpus, undated** — 183 nodes the corpus holds and cannot date, on their own toggle
+//   and in their own ink. They stand at no year, so folding them into one would be a lie of a
+//   kind this repository has a decision about.
 //
 // There is no basemap and no tile server. Everything is local, so the map works offline and
 // nothing about a visitor reaches a third party.
+//
+// ---- What is encoded, and in what ----
+//
+//   era            hue, one tint at a time. Never six at once — the ramp measures as neither a
+//                  categorical palette nor a monotonic scale, and `dark.css` records why.
+//   how much       radius. A stack of ninety figures about Lima is one mark, not ninety pins.
+//   warrant        opacity, in four concentric steps. The solid core is positions somebody
+//                  stated; the pale rim is three edges of inference. Nothing is hidden by it —
+//                  the reader can also shrink the map by refusing the derived placements.
+//   selection      rubric, the system's one emphatic ink, on one mark at a time.
+//   undated        the missing-status ink, which belongs to no era on purpose.
 
 import { Deck, WebMercatorViewport } from '@deck.gl/core'
 import { GeoJsonLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers'
+import {
+  anchored,
+  drawn,
+  eraAt,
+  groundFidelity,
+  shaded,
+  spine,
+  undrawn,
+  view,
+  type Anchored,
+  type Era,
+  type Grain,
+  type View,
+} from '../lib/eras'
+import { entryPath } from '../lib/entry'
+import type { AtlasRecord } from '../lib/feeds'
 
 type RGBA = [number, number, number, number]
-
-interface CorpusPoint {
-  id: string
-  class: string
-  label: string
-  tier: string
-  lat: number
-  lon: number
-  geoid: string | null
-  kind: string | null
-  area_sq_mi: string | null
-}
 
 interface FeatureProps {
   GEOID: string
@@ -61,13 +85,17 @@ function rgb(hex: string, alpha = 255): RGBA {
 function palette() {
   const s = getComputedStyle(document.documentElement)
   const v = (name: string) => s.getPropertyValue(name).trim()
+  const n = (name: string) => Number(v(name))
   return {
     ink: v('--text-strong'),
     muted: v('--text-muted'),
-    rule: v('--rule-hairline'),
-    ruleStrong: v('--rule-strong'),
-    accent: v('--series-2'),
+    faint: v('--text-faint'),
     surface: v('--surface-card'),
+    selected: v('--map-selected'),
+    undated: v('--map-undated'),
+    /** Opacity by hop depth. The index is the number of edges followed. */
+    warrant: [n('--warrant-0'), n('--warrant-1'), n('--warrant-2'), n('--warrant-3')],
+    era: (era: Era) => v(era.ink),
     // One hue, light to dark. Five steps, because past about seven bins adjacent classes blur.
     ramp: [v('--seq-100'), v('--seq-250'), v('--seq-400'), v('--seq-550'), v('--seq-700')],
   }
@@ -128,10 +156,32 @@ export function bounds(geometry: unknown): [number, number, number, number] {
   return [minLng, minLat, maxLng, maxLat]
 }
 
+/**
+ * The radius of a stack of `n` records, in metres.
+ *
+ * Area is proportional to the count, which is the only encoding of quantity by circle that a
+ * reader estimates correctly — radius-proportional circles overstate a large stack by the square
+ * of everything. The floor keeps a single record from vanishing at county zoom.
+ */
+export function stackRadius(n: number): number {
+  return 260 + Math.sqrt(Math.max(n, 0)) * 340
+}
+
 async function collection(url: string): Promise<Collection> {
   const res = await fetch(url)
   if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`)
   return (await res.json()) as Collection
+}
+
+/** What the reader has asked the map for. */
+interface State {
+  year: number
+  grain: Grain
+  generous: boolean
+  hops: number
+  undated: boolean
+  ground: Set<string>
+  selected: string | null
 }
 
 interface Hover {
@@ -142,10 +192,18 @@ interface Hover {
   kind: 'ground' | 'corpus'
 }
 
-export async function renderMap(container: HTMLElement, points: CorpusPoint[]): Promise<void> {
+const esc = (s: string): string =>
+  s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] as string)
+
+/** `place/lima.yml` → `Lima`, for a heading where the label is not to hand. */
+const stem = (id: string): string => id.split('/').pop()?.replace(/\.yml$/, '') ?? id
+
+export async function renderMap(container: HTMLElement, records: AtlasRecord[]): Promise<void> {
   const tooltip = container.querySelector<HTMLElement>('[data-map-tooltip]')
   const legend = container.querySelector<HTMLElement>('[data-map-legend]')
   const canvasHost = container.querySelector<HTMLElement>('[data-map-canvas]')
+  const panel = container.querySelector<HTMLElement>('[data-map-panel]')
+  const scrub = container.querySelector<HTMLInputElement>('[data-scrub]')
   if (!canvasHost) throw new Error('the map has no canvas host')
 
   const [county, subdivisions, places, cdps, districts] = await Promise.all([
@@ -156,13 +214,74 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
     collection(GEO.districts),
   ])
 
-  // The county's own node is excluded: its extent is the whole frame, so a label at its
-  // centroid names Lima's neighbourhood rather than the county, and collides with Lima doing it.
-  const labelled = points.filter((p) => p.class === 'place' && p.kind !== 'county')
+  const eras = spine(records)
+
+  /**
+   * Every Census shape the site holds, by key.
+   *
+   * A polygon whose key is not in here is not a defect in the corpus — it is a shape this
+   * repository has not vendored. The twelve school districts are all of them, and the panel says
+   * so rather than dropping them.
+   */
+  const shapes = new Map<string, { properties: FeatureProps }>()
+  for (const c of [county, subdivisions, places, cdps]) {
+    for (const f of c.features) shapes.set(f.properties.GEOID, f)
+  }
+  /**
+   * The county's own key. Its shape is the whole frame, so it is stroked and never filled —
+   * tinting every pixel of the county drowns the twelve townships and ten municipalities drawn
+   * inside it, and says nothing the outline was not already saying. Same argument the labels
+   * make about the county's centroid, one encoding along.
+   */
+  const frameKeys = new Set(county.features.map((f) => f.properties.GEOID))
+
+  const shapeSource = {
+    type: 'FeatureCollection',
+    features: [...county.features, ...subdivisions.features, ...places.features, ...cdps.features],
+  }
+
   const populations = districts.features.map((f) => number(f.properties.POP100))
   const breaks = quantileBreaks(populations, 5)
 
-  const shown = new Set(['districts', 'subdivisions', 'municipalities', 'corpus'])
+  /**
+   * The view is in the URL, so a year is a thing you can link to.
+   *
+   * `/map?year=1885&grain=year&at=place/lima.yml` is Lima in the year the oil came in, with the
+   * panel already open on it, and a reading page can point at exactly that. Without this the map
+   * is an instrument you can only arrive at from the start — which is the shape the whole site is
+   * trying to get out of.
+   */
+  const params = new URLSearchParams(globalThis.location.search)
+  const clamp = (n: number) =>
+    Math.min(Math.max(n, eras[0].from), eras[eras.length - 1].to)
+  const asked = Number(params.get('year'))
+
+  const state: State = {
+    year: Number.isFinite(asked) && asked !== 0 ? clamp(asked) : eras[eras.length - 1].to,
+    grain: params.get('grain') === 'year' ? 'year' : 'era',
+    generous: params.get('generous') === '1',
+    // `params.has` rather than a truthiness check: `Number(null)` is 0, which is a valid depth,
+    // so the obvious spelling silently shipped every reader the stated-positions-only view.
+    hops: params.has('hops') && [0, 1, 2, 3].includes(Number(params.get('hops')))
+      ? Number(params.get('hops'))
+      : 3,
+    undated: params.get('undated') === '1',
+    ground: new Set(['subdivisions', 'municipalities']),
+    selected: params.get('at'),
+  }
+
+  /** Write the view back, without adding a history entry per drag of the scrub. */
+  const address = () => {
+    const q = new URLSearchParams()
+    q.set('year', String(state.year))
+    if (state.grain !== 'era') q.set('grain', state.grain)
+    if (state.hops !== 3) q.set('hops', String(state.hops))
+    if (state.generous) q.set('generous', '1')
+    if (state.undated) q.set('undated', '1')
+    if (state.selected) q.set('at', state.selected)
+    globalThis.history.replaceState(null, '', `?${q}`)
+  }
+
   let hover: Hover | null = null
 
   const setTooltip = () => {
@@ -175,71 +294,108 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
     tooltip.style.left = `${hover.x}px`
     tooltip.style.top = `${hover.y}px`
     tooltip.dataset.kind = hover.kind
-    tooltip.innerHTML = `<strong>${hover.title}</strong>${hover.rows
-      .map(([k, v]) => `<span><em>${k}</em>${v}</span>`)
+    tooltip.innerHTML = `<strong>${esc(hover.title)}</strong>${hover.rows
+      .map(([k, v]) => `<span><em>${esc(k)}</em>${esc(v)}</span>`)
       .join('')}`
   }
 
+  const groundHover = (rows: (f: FeatureProps) => [string, string][]) =>
+    ({ object, x, y }: { object?: unknown; x: number; y: number }) => {
+      const f = object as { properties: FeatureProps } | undefined
+      hover = f ? { x, y, kind: 'ground', title: f.properties.NAME, rows: rows(f.properties) } : null
+      setTooltip()
+    }
+
+  // -------------------------------------------------------------------------
+  // The scene
+  // -------------------------------------------------------------------------
+
   const layers = () => {
     const p = palette()
-    const rampRgb = p.ramp.map((c) => rgb(c, 205))
+    const look = view(state.year, state.grain, eras, {
+      generous: state.generous,
+      hops: state.hops,
+    })
+    const era = eraAt(state.year, eras)
+    const ink = p.era(era)
+
+    // The ground is a 2020 statement, so it fades with the distance travelled from 2020.
+    const fidelity = groundFidelity(state.year)
+    const ghost = (alpha: number) => Math.round(alpha * fidelity)
+
+    const present = drawn(records, look)
+    const dateless = state.undated ? undrawn(records, look) : []
+    const stacks = anchored(present)
+    const keyed = shaded(present)
+    const keyedUndated = shaded(dateless)
+
+    // A shape may be claimed by more than one record; the map draws each shape once.
+    const litKeys = new Set(keyed.map((s) => s.geoid).filter((g) => shapes.has(g)))
+    const datelessKeys = new Set(
+      keyedUndated.map((s) => s.geoid).filter((g) => shapes.has(g) && !litKeys.has(g)),
+    )
+
+    // The county's own node is excluded from labelling: its extent is the whole frame, so a
+    // label at its centroid names Lima's neighbourhood rather than the county, and collides
+    // with Lima doing it.
+    // Places only, and only the largest stacks. `stacks` is already sorted by size, and past
+    // about nine names the Lima corner overprints into a smear no zoom separates — deck.gl's
+    // text layer does no collision avoidance, so the thinning has to happen here.
+    const labelled = stacks
+      .filter((s) => s.node.startsWith('place/') && s.node !== 'place/allen-county.yml')
+      .slice(0, 8)
+
+    /** One ring of a stack: everything reachable in `depth` edges or fewer. */
+    const ring = (depth: number) =>
+      new ScatterplotLayer<Anchored>({
+        id: `stack-${depth}`,
+        data: stacks.filter((s) => s.records.some((r) => (r.hops ?? 0) <= depth)),
+        getPosition: (d) => [d.lon, d.lat],
+        getRadius: (d) => stackRadius(d.records.filter((r) => (r.hops ?? 0) <= depth).length),
+        radiusMinPixels: 3,
+        radiusMaxPixels: 90,
+        getFillColor: rgb(ink, Math.round(255 * 0.3 * p.warrant[depth])),
+        stroked: false,
+        // Not pickable. The hit target is the anchor dot on top, which is also what a click
+        // selects — two overlapping pick targets for one mark is two answers to one gesture.
+        pickable: false,
+      })
 
     return [
-      shown.has('districts') &&
+      // ---- the ground -------------------------------------------------------
+      state.ground.has('population') &&
         new GeoJsonLayer({
           id: 'voting-districts',
           data: districts as unknown as object,
           filled: true,
           stroked: true,
           getFillColor: (f: { properties: FeatureProps }) =>
-            rampRgb[classOf(number(f.properties.POP100), breaks)],
-          getLineColor: rgb(p.surface, 150),
+            rgb(p.ramp[classOf(number(f.properties.POP100), breaks)], ghost(205)),
+          getLineColor: rgb(p.surface, ghost(150)),
           getLineWidth: 12,
           lineWidthMinPixels: 0.5,
           pickable: true,
-          onHover: ({ object, x, y }) => {
-            hover = object
-              ? {
-                  x,
-                  y,
-                  kind: 'ground',
-                  title: (object as { properties: FeatureProps }).properties.NAME,
-                  rows: [
-                    ['Population', number((object as { properties: FeatureProps }).properties.POP100).toLocaleString('en-US')],
-                    ['Housing units', number((object as { properties: FeatureProps }).properties.HU100).toLocaleString('en-US')],
-                    ['Voting district', '2020 Census geography'],
-                  ],
-                }
-              : null
-            setTooltip()
-          },
+          onHover: groundHover((f) => [
+            ['Population', number(f.POP100).toLocaleString('en-US')],
+            ['Housing units', number(f.HU100).toLocaleString('en-US')],
+            ['Voting district', '2020 Census geography'],
+          ]),
         }),
 
-      shown.has('subdivisions') &&
+      state.ground.has('subdivisions') &&
         new GeoJsonLayer({
           id: 'subdivisions',
           data: subdivisions as unknown as object,
           filled: false,
           stroked: true,
-          getLineColor: rgb(p.muted, 190),
+          getLineColor: rgb(p.muted, ghost(190)),
           getLineWidth: 30,
           lineWidthMinPixels: 1,
           pickable: true,
-          onHover: ({ object, x, y }) => {
-            hover = object
-              ? {
-                  x,
-                  y,
-                  kind: 'ground',
-                  title: (object as { properties: FeatureProps }).properties.NAME,
-                  rows: [['Civil subdivision', '2020 Census geography']],
-                }
-              : null
-            setTooltip()
-          },
+          onHover: groundHover(() => [['Civil subdivision', '2020 Census geography']]),
         }),
 
-      shown.has('municipalities') &&
+      state.ground.has('municipalities') &&
         new GeoJsonLayer({
           id: 'municipalities',
           data: {
@@ -248,23 +404,12 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
           } as unknown as object,
           filled: true,
           stroked: true,
-          getFillColor: rgb(p.ink, 26),
-          getLineColor: rgb(p.ink, 150),
+          getFillColor: rgb(p.ink, ghost(22)),
+          getLineColor: rgb(p.ink, ghost(140)),
           getLineWidth: 22,
           lineWidthMinPixels: 1,
           pickable: true,
-          onHover: ({ object, x, y }) => {
-            hover = object
-              ? {
-                  x,
-                  y,
-                  kind: 'ground',
-                  title: (object as { properties: FeatureProps }).properties.NAME,
-                  rows: [['Municipality or CDP', '2020 Census geography']],
-                }
-              : null
-            setTooltip()
-          },
+          onHover: groundHover(() => [['Municipality or CDP', '2020 Census geography']]),
         }),
 
       new GeoJsonLayer({
@@ -272,74 +417,244 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
         data: county as unknown as object,
         filled: false,
         stroked: true,
-        getLineColor: rgb(p.ink, 235),
+        getLineColor: rgb(p.ink, ghost(255)),
         getLineWidth: 60,
         lineWidthMinPixels: 1.75,
       }),
 
-      shown.has('corpus') &&
-        new ScatterplotLayer<CorpusPoint>({
-          id: 'corpus-points',
-          data: points,
+      // ---- the corpus, as shapes -------------------------------------------
+      //
+      // Only a node that states its own Census key. A tract reaching the county government in
+      // one edge would otherwise be shaded as the whole county, which is not where the tract is.
+      new GeoJsonLayer({
+        id: 'corpus-shapes',
+        data: shapeSource as unknown as object,
+        // deck.gl keeps one dataset and decides per feature, so a shape leaving the window is a
+        // colour change rather than a reload of the geometry.
+        getFillColor: (f: { properties: FeatureProps }) =>
+          frameKeys.has(f.properties.GEOID)
+            ? [0, 0, 0, 0]
+            : litKeys.has(f.properties.GEOID)
+              ? rgb(ink, 34)
+              : datelessKeys.has(f.properties.GEOID)
+                ? rgb(p.undated, 46)
+                : [0, 0, 0, 0],
+        getLineColor: (f: { properties: FeatureProps }) =>
+          litKeys.has(f.properties.GEOID)
+            ? rgb(ink, 240)
+            : datelessKeys.has(f.properties.GEOID)
+              ? rgb(p.undated, 190)
+              : [0, 0, 0, 0],
+        getLineWidth: 44,
+        lineWidthMinPixels: 1.25,
+        filled: true,
+        stroked: true,
+        pickable: true,
+        updateTriggers: {
+          getFillColor: [state.year, state.grain, state.generous, state.hops, state.undated],
+          getLineColor: [state.year, state.grain, state.generous, state.hops, state.undated],
+        },
+        onHover: groundHover((f) => [
+          ['In force', litKeys.has(f.GEOID) ? 'in this window' : 'the corpus gives no date'],
+          ['Boundary', '2020 Census geography'],
+        ]),
+      }),
+
+      // ---- the corpus, as stacks -------------------------------------------
+      ring(3),
+      ring(2),
+      ring(1),
+      ring(0),
+
+      new ScatterplotLayer<Anchored>({
+        id: 'anchors',
+        data: stacks,
+        getPosition: (d) => [d.lon, d.lat],
+        // The selected mark grows as well as changing ink. Rubric and the 1860 era ink are both
+        // reds, so on that one tile a hue change alone says nothing.
+        getRadius: (d) => (d.node === state.selected ? 360 : 190),
+        radiusMinPixels: 3.5,
+        radiusMaxPixels: 13,
+        // The strongest ink available, not the era's. The halo under it and the shapes around
+        // it already carry the era; a mark in the same hue as the wash it sits on is a mark
+        // nobody can find, which is what the first draft of this layer was.
+        getFillColor: (d) => (d.node === state.selected ? rgb(p.selected, 255) : rgb(p.ink, 250)),
+        // A 2px surface ring, not a border: overlapping marks stay separable.
+        stroked: true,
+        getLineColor: rgb(p.surface, 255),
+        getLineWidth: (d) => (d.node === state.selected ? 130 : 70),
+        lineWidthMinPixels: 2,
+        pickable: true,
+        updateTriggers: {
+          getFillColor: [state.selected, p.ink],
+          getRadius: [state.selected],
+          getLineWidth: [state.selected],
+        },
+        onHover: ({ object, x, y }) => {
+          const a = object as Anchored | undefined
+          hover = a
+            ? {
+                x,
+                y,
+                kind: 'corpus',
+                title: anchorLabel(a),
+                rows: [
+                  ['Records here', String(a.records.length)],
+                  ['Stated position', a.records.some((r) => r.hops === 0) ? 'yes' : 'all derived'],
+                  ['Click', 'to list them'],
+                ],
+              }
+            : null
+          setTooltip()
+        },
+        onClick: ({ object }) => {
+          const a = object as Anchored | undefined
+          state.selected = a && a.node !== state.selected ? a.node : null
+          refresh()
+          renderPanel()
+        },
+      }),
+
+      state.undated &&
+        new ScatterplotLayer<Anchored>({
+          id: 'undated-anchors',
+          data: anchored(dateless),
           getPosition: (d) => [d.lon, d.lat],
-          // Size separates a named place from a single site; hue is already carrying the
-          // corpus-versus-ground distinction and cannot carry a second thing as well.
-          getRadius: (d) => (d.class === 'place' ? 320 : 190),
-          radiusMinPixels: 4,
-          radiusMaxPixels: 11,
-          getFillColor: rgb(p.accent, 245),
-          // A 2px surface ring, not a border: overlapping points stay separable.
+          getRadius: (d) => stackRadius(d.records.length),
+          radiusMinPixels: 3,
+          radiusMaxPixels: 60,
+          getFillColor: rgb(p.undated, 44),
           stroked: true,
-          getLineColor: rgb(p.surface, 255),
-          lineWidthMinPixels: 2,
+          getLineColor: rgb(p.undated, 190),
+          lineWidthMinPixels: 1,
           pickable: true,
-          // The hit area is bigger than the mark, so a 10px dot is not a pinpoint target.
-          radiusScale: 1,
-          onHover: ({ object, x, y }) => {
-            hover = object
-              ? {
-                  x,
-                  y,
-                  kind: 'corpus',
-                  title: object.label,
-                  rows: [
-                    ['In the corpus as', object.class],
-                    ...(object.kind ? ([['Type', object.kind]] as [string, string][]) : []),
-                    ...(object.area_sq_mi
-                      ? ([['Area', object.area_sq_mi]] as [string, string][])
-                      : []),
-                    ['Claim tag', object.tier],
-                  ],
-                }
-              : null
-            setTooltip()
+          onClick: ({ object }) => {
+            const a = object as Anchored | undefined
+            state.selected = a && a.node !== state.selected ? a.node : null
+            refresh()
+            renderPanel()
           },
         }),
 
-      shown.has('corpus') &&
-        new TextLayer<CorpusPoint>({
-          id: 'corpus-labels',
-          // Places only. Five sites and the courthouse sit within two miles of each other in
-          // Lima, and labelling every node overprints that corner into an unreadable smear.
-          // The places name the ground, which is what a label is for; everything else is a
-          // mark with a tooltip, which is what a hit target is for.
-          data: labelled,
-          getPosition: (d) => [d.lon, d.lat],
-          getText: (d) => d.label,
-          getSize: 12,
-          sizeUnits: 'pixels',
-          getColor: rgb(p.ink, 235),
-          getPixelOffset: [0, -14],
-          fontFamily: 'system-ui, -apple-system, "Segoe UI", sans-serif',
-          fontWeight: 500,
-          outlineWidth: 3,
-          outlineColor: rgb(p.surface, 255),
-          fontSettings: { sdf: true },
-          getTextAnchor: 'middle',
-          getAlignmentBaseline: 'bottom',
-        }),
+      new TextLayer<Anchored>({
+        id: 'anchor-labels',
+        // Places only. Five sites and the courthouse sit within two miles of each other in
+        // Lima, and labelling every anchor overprints that corner into an unreadable smear.
+        data: labelled,
+        getPosition: (d) => [d.lon, d.lat],
+        getText: (d) => anchorLabel(d),
+        getSize: 12,
+        sizeUnits: 'pixels',
+        getColor: rgb(p.ink, 235),
+        getPixelOffset: [0, -18],
+        fontFamily: 'system-ui, -apple-system, "Segoe UI", sans-serif',
+        fontWeight: 500,
+        outlineWidth: 3,
+        outlineColor: rgb(p.surface, 255),
+        fontSettings: { sdf: true },
+        getTextAnchor: 'middle',
+        getAlignmentBaseline: 'bottom',
+      }),
     ].filter(Boolean)
   }
+
+  /** What the corpus calls an anchor, taken from its own record where it has one. */
+  const labels = new Map(records.map((r) => [r.node, r.label]))
+  const anchorLabel = (a: Anchored): string => labels.get(a.node) ?? stem(a.node)
+
+  // -------------------------------------------------------------------------
+  // The readouts
+  // -------------------------------------------------------------------------
+
+  const renderPanel = () => {
+    if (!panel) return
+    const look = view(state.year, state.grain, eras, {
+      generous: state.generous,
+      hops: state.hops,
+    })
+    const pool = [...drawn(records, look), ...(state.undated ? undrawn(records, look) : [])]
+    const here = anchored(pool).find((a) => a.node === state.selected)
+
+    if (!here) {
+      panel.innerHTML =
+        '<p class="empty">Select a mark to see what the corpus puts there, and by what route it got there.</p>'
+      return
+    }
+
+    const rows = here.records
+      .toSorted((a, b) => (a.hops ?? 0) - (b.hops ?? 0) || a.label.localeCompare(b.label))
+      .map((r) => {
+        const route = r.anchors
+          .find((an) => an.node === here.node)
+          ?.via.map((s) => s.relationship)
+          .join(' → ')
+        const when =
+          r.from === null
+            ? 'undated'
+            : r.to === null
+              ? `${r.from}–`
+              : r.from === r.to
+                ? String(r.from)
+                : `${r.from}–${r.to}`
+        return `<li>
+          <a href="${entryPath(r.node)}">${esc(r.label)}</a>
+          <span class="meta">
+            <em>${esc(r.class)}</em>
+            <em>${esc(when)}</em>
+            <em data-hops="${r.hops ?? ''}">${
+              r.hops === 0 ? 'stated here' : `${route ?? 'derived'}`
+            }</em>
+          </span>
+        </li>`
+      })
+
+    panel.innerHTML = `<h3>${esc(anchorLabel(here))}</h3>
+      <p class="count">${here.records.length} record${here.records.length === 1 ? '' : 's'} placed here${
+        state.grain === 'era' ? ` in ${esc(eraAt(state.year, eras).label)}` : ` in ${state.year}`
+      }. A route means the corpus did not state this position — it was reached across those edges.</p>
+      <ol>${rows.join('')}</ol>`
+  }
+
+  const readouts = () => {
+    const look = view(state.year, state.grain, eras, {
+      generous: state.generous,
+      hops: state.hops,
+    })
+    const era = eraAt(state.year, eras)
+    const present = drawn(records, look)
+
+    const write = (key: string, value: string) => {
+      for (const el of container.querySelectorAll<HTMLElement>(`[data-readout="${key}"]`)) {
+        el.textContent = value
+      }
+    }
+    write('year', String(state.year))
+    write('era', era.label)
+    write('window', state.grain === 'era' ? `${era.from}–${era.to}` : String(state.year))
+    write('present', present.length.toLocaleString('en-US'))
+    write('anchors', String(anchored(present).length))
+    write('vintage', String(Math.abs(state.year - 2020)))
+
+    // The era's own ink, so the readout is coloured by where the reader is standing.
+    container.style.setProperty('--era-current', `var(${era.ink})`)
+    for (const tile of container.querySelectorAll<HTMLElement>('[data-era]')) {
+      tile.setAttribute('aria-pressed', String(tile.dataset.era === era.key))
+    }
+    for (const bar of container.querySelectorAll<HTMLElement>('[data-bar-from]')) {
+      const from = Number(bar.dataset.barFrom)
+      const to = Number(bar.dataset.barTo)
+      bar.toggleAttribute('data-in-window', from <= look.to && look.from <= to)
+    }
+    if (scrub) {
+      scrub.min = String(era.from)
+      scrub.max = String(era.to)
+      scrub.value = String(state.year)
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Deck
+  // -------------------------------------------------------------------------
 
   // Fit the county rather than hard-coding a zoom: the frame is whatever shape the reader's
   // window is, and a fixed zoom leaves the county small on a wide screen and cropped on a
@@ -376,7 +691,21 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
 
   const refresh = () => deck.setProps({ layers: layers() })
 
-  // Legend for the sequential scale. A continuous colour encoding without one is unreadable.
+  const update = () => {
+    address()
+    showScale()
+    readouts()
+    refresh()
+    renderPanel()
+  }
+
+  // Legend for the 2020 population scale. A continuous colour encoding without one is
+  // unreadable — and a legend for a layer nobody has asked for is furniture, so it appears and
+  // disappears with the checkbox it explains.
+  const scale = container.querySelector<HTMLElement>('[data-map-scale]')
+  const showScale = () => {
+    if (scale) scale.hidden = !state.ground.has('population')
+  }
   if (legend) {
     const p = palette()
     const edges = [0, ...breaks, Math.max(...populations)]
@@ -390,14 +719,78 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
       .join('')
   }
 
+  // -------------------------------------------------------------------------
+  // The controls
+  //
+  // Every one of them is real markup rendered by the page, so the spine, the ribbon and the
+  // period names are in the document before this script runs and are readable without it.
+  // -------------------------------------------------------------------------
+
+  for (const tile of container.querySelectorAll<HTMLElement>('[data-era]')) {
+    tile.addEventListener('click', () => {
+      const era = eras.find((e) => e.key === tile.dataset.era)
+      if (!era) return
+      // Land at the tile's own end rather than its start: the closing year of an era is where
+      // the most of it is standing, and arriving at the first year of "Peak" shows 1940.
+      state.year = Math.min(era.to, eras[eras.length - 1].to)
+      update()
+    })
+  }
+
+  for (const chip of container.querySelectorAll<HTMLElement>('[data-period-from]')) {
+    chip.addEventListener('click', () => {
+      state.year = Number(chip.dataset.periodFrom)
+      update()
+    })
+  }
+
+  scrub?.addEventListener('input', () => {
+    state.year = Number(scrub.value)
+    update()
+  })
+
+  for (const input of container.querySelectorAll<HTMLInputElement>('[data-grain]')) {
+    input.addEventListener('change', () => {
+      if (input.checked) state.grain = input.value as Grain
+      update()
+    })
+  }
+
+  const warrant = container.querySelector<HTMLSelectElement>('[data-warrant]')
+  warrant?.addEventListener('change', () => {
+    state.hops = Number(warrant.value)
+    update()
+  })
+
+  for (const input of container.querySelectorAll<HTMLInputElement>('[data-toggle]')) {
+    input.addEventListener('change', () => {
+      if (input.dataset.toggle === 'generous') state.generous = input.checked
+      if (input.dataset.toggle === 'undated') state.undated = input.checked
+      update()
+    })
+  }
+
   for (const input of container.querySelectorAll<HTMLInputElement>('[data-layer]')) {
     input.addEventListener('change', () => {
       const key = input.dataset.layer
       if (!key) return
-      if (input.checked) shown.add(key)
-      else shown.delete(key)
+      if (input.checked) state.ground.add(key)
+      else state.ground.delete(key)
+      showScale()
       refresh()
     })
+  }
+
+  // The controls are rendered by the page with the defaults in them, so a view that arrived in
+  // the URL has to be written back onto them or the reader sees one thing and the widgets say
+  // another.
+  for (const input of container.querySelectorAll<HTMLInputElement>('[data-grain]')) {
+    input.checked = input.value === state.grain
+  }
+  if (warrant) warrant.value = String(state.hops)
+  for (const input of container.querySelectorAll<HTMLInputElement>('[data-toggle]')) {
+    if (input.dataset.toggle === 'generous') input.checked = state.generous
+    if (input.dataset.toggle === 'undated') input.checked = state.undated
   }
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', refresh)
@@ -405,4 +798,9 @@ export async function renderMap(container: HTMLElement, points: CorpusPoint[]): 
     attributes: true,
     attributeFilter: ['data-theme'],
   })
+
+  update()
 }
+
+/** Exported for the page, which prints the spine and the ribbon at build time. */
+export type { View }

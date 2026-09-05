@@ -194,6 +194,35 @@
     --seq-400: var(--indigo-300);
     --seq-550: #a9b5c3; /* ▲ interpolated */
     --seq-700: var(--indigo-100);
+
+    /*
+     * ---- The era ramp, at night ----
+     *
+     * Six ▲, and the only place in this file where a value could not be reached by walking
+     * further down a ramp the system ships. The era inks are standalone literals — six
+     * nineteenth-century map inks rather than steps of anything — so there is no other end of
+     * them to take. Each is its own hue and chroma held at OKLab L 0.74, which is where all six
+     * clear 3:1 on every night ground and five of six clear 4.5.
+     *
+     * They are here because the travelling map spends hue on the era, and a literal has no dark
+     * value. Without these the axis keeps its daylight inks on an ink ground — the exact defect
+     * the locator plate shipped with, at six times the size.
+     *
+     * **The ramp is never a discrimination task on this site, in either palette.** Measured as a
+     * categorical scale it fails: worst adjacent pair ΔE 1.8 under deuteranopia at night and 1.9
+     * under protanopia by day, and 6.7 for a reader with full colour vision. Measured as a
+     * sequential one it fails too — daylight lightness runs 0.48, 0.53, 0.51, 0.51, 0.37, 0.42,
+     * which is not monotonic in either direction. It is a set of period inks and it is used as
+     * one: a single tint on the map at a time, and a bar under a tile that prints its own name
+     * and years. Six of them side by side, asked to be told apart by hue, is a chart nobody can
+     * read. The finding goes upstream.
+     */
+    --era-pre1820: #bda789; /* ▲ relit */
+    --era-1820: #d1a24e; /* ▲ relit */
+    --era-1860: #ff8066; /* ▲ relit */
+    --era-1900: #8bb79c; /* ▲ relit */
+    --era-1940: #94adce; /* ▲ relit */
+    --era-1980: #d694b2; /* ▲ relit */
   }
 }
 
@@ -341,4 +370,33 @@
   --seq-400: var(--indigo-300);
   --seq-550: #a9b5c3; /* ▲ interpolated */
   --seq-700: var(--indigo-100);
+
+  /*
+   * ---- The era ramp, at night ----
+   *
+   * Six ▲, and the only place in this file where a value could not be reached by walking
+   * further down a ramp the system ships. The era inks are standalone literals — six
+   * nineteenth-century map inks rather than steps of anything — so there is no other end of
+   * them to take. Each is its own hue and chroma held at OKLab L 0.74, which is where all six
+   * clear 3:1 on every night ground and five of six clear 4.5.
+   *
+   * They are here because the travelling map spends hue on the era, and a literal has no dark
+   * value. Without these the axis keeps its daylight inks on an ink ground — the exact defect
+   * the locator plate shipped with, at six times the size.
+   *
+   * **The ramp is never a discrimination task on this site, in either palette.** Measured as a
+   * categorical scale it fails: worst adjacent pair ΔE 1.8 under deuteranopia at night and 1.9
+   * under protanopia by day, and 6.7 for a reader with full colour vision. Measured as a
+   * sequential one it fails too — daylight lightness runs 0.48, 0.53, 0.51, 0.51, 0.37, 0.42,
+   * which is not monotonic in either direction. It is a set of period inks and it is used as
+   * one: a single tint on the map at a time, and a bar under a tile that prints its own name
+   * and years. Six of them side by side, asked to be told apart by hue, is a chart nobody can
+   * read. The finding goes upstream.
+   */
+  --era-pre1820: #bda789; /* ▲ relit */
+  --era-1820: #d1a24e; /* ▲ relit */
+  --era-1860: #ff8066; /* ▲ relit */
+  --era-1900: #8bb79c; /* ▲ relit */
+  --era-1940: #94adce; /* ▲ relit */
+  --era-1980: #d694b2; /* ▲ relit */
 }
