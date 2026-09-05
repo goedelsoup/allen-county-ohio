@@ -3992,6 +3992,26 @@
       ]
     },
     {
+      "id": "place-allen-county::sentences-beginning-a-life-in-the-two-subscription-county-histories",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "sentences beginning a life in the two subscription county histories",
+      "unit": "occurrences of the phrase \"was born\"",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "label": "What the county histories record of the people in them",
+          "as_of": "1906",
+          "value": 1932.0,
+          "published": "1932",
+          "tier": "verified",
+          "source": "catalog/leeson-allen-county-1885.md",
+          "method": "The phrase is counted over the whitespace-normalised OCR of the cleaner scan of each book — scan B of 1885 and scan B of 1906 — after joining words broken across line ends. [verified] Scan A of the 1906 book is not counted because it stops at 52 per cent of scan B and holds 266 of the 1,149. [verified] The 1885 figure is not compared across its two scans, because that scan's OCR renders \"born\" as several other words and a count would be measuring the OCR. [verified] The corpus-side figures are counted over `.yidam/corpus/person/` before and after this phase. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::severe-weather-events-recorded-for-Allen-County",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -34804,6 +34824,445 @@
       "caveats": [
         "**This node does not establish why the county did not answer.**"
       ],
+      "figures": []
+    },
+    {
+      "id": "the-books-are-half-biography",
+      "statement": "Two of the three county histories this corpus reads are subscription books, and biography is not an appendix to them — it is half of what they are. Between them they carry 1,932 sentences that begin a life, 783 in the 1885 volume and 1,149 in the 1906 one, and this corpus had read neither of them for a single birthday.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**Between them, the two subscription county histories carry 1,932 sentences that begin a life, and this corpus had read neither for one.** The 1885 history's Part IV, *Biographical Sketches*, has 783; the 1906 history's *and Representative Citizens* half has 1,149.",
+          "tier": "inference",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": [
+        {
+          "label": "1885, Biographical Sketches",
+          "value": 783.0,
+          "literal": "783"
+        },
+        {
+          "label": "1906, and Representative Citizens",
+          "value": 1149.0,
+          "literal": "1,149"
+        }
+      ]
+    },
+    {
+      "id": "one-sketch-in-four-hundred-pages-is-a-womans",
+      "statement": "The 1885 history's biographical half runs four hundred pages in thirteen township sections, and exactly one of its sketches is headed by a woman: Mrs. Margaret Hall, widow of Jesse Hall, born 29 December 1827. Every other woman in it appears in brackets, as somebody's wife or mother or daughter. That is not a fact about the county. It is a fact about who bought a page.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**Exactly one of them is headed by a woman.** `MRS. MARGARET HALL, widow of Jesse Hall, P. O. Lima, was born December 29, 1827, in Jackson County, Ohio`.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": []
+    },
+    {
+      "id": "eight-sketches-the-publisher-would-not-vouch-for",
+      "statement": "The 1906 book's publishers sent every biographical sketch to its subject for correction, kept the ones that came back, and marked the eight that did not with an asterisk on the last pages under a note saying they could not vouch for them. A Chicago subscription publisher in 1906 separated its checked records from its unchecked ones in its own text, and said where to find the difference.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**The 1906 half marks eight of its own sketches as unchecked.** Its publishers sent every sketch to its subject for correction; the eight that did not come back are printed on the last pages with an asterisk after the name — Simpson, Dyer, Dean, Jones, Landis, McCauley, Drake, Losee — under a note saying \"we cannot vouch for their accuracy\".",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": []
+    },
+    {
+      "id": "twenty-of-forty-eight",
+      "statement": "This corpus names ninety-nine people. Forty-eight of them lived in the era the two books cover, and twenty are attached to a sketch — meaning the sketch names the office the corpus's own roster names. Twenty-seven fail that test and stay thin, some of them certainly the same man.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to his father.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": []
+    },
+    {
+      "id": "a-class-that-declared-five-fields-and-used-one",
+      "statement": "The person class declares born, died, birthplace, occupation and also_known_as. Across ninety-eight people it held occupation ninety-five times and birthplace three. It now holds twenty births, seventeen birthplaces and eleven deaths, and nothing was retrieved to do it: the answers were in books this catalog had held for a year.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17, died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": [
+        {
+          "label": "born",
+          "value": 20.0,
+          "literal": "20"
+        },
+        {
+          "label": "birthplace",
+          "value": 17.0,
+          "literal": "17"
+        },
+        {
+          "label": "died",
+          "value": 11.0,
+          "literal": "11"
+        },
+        {
+          "label": "also_known_as",
+          "value": 13.0,
+          "literal": "13"
+        }
+      ]
+    },
+    {
+      "id": "born-in-the-book-died-in-the-paper",
+      "statement": "These books give births and withhold deaths, and the reason is the arrangement rather than the editing. A subscriber is alive and supplies his own birthday; a death date turns up only where the subject was already dead when the page was sold. Of the twenty sketches read here, four carry a death, and each of the four was dead before his page was written.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**They give births and not deaths, and the reason is in the arrangement.** A subscriber is alive and supplies his birthday; a death date appears only where the subject was already dead when the page was sold. Of the twenty sketches taken here, four carry a death — Faurot, Pillars, Metheany and Akerman — and each of the four was dead before his page was written; a fifth heads its subject `(deceased)` and gives no year.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": []
+    },
+    {
+      "id": "what-finishes-a-life-is-a-newspaper",
+      "statement": "What a subscription book cannot end, a newspaper can. Three of this county's people are now dated at both ends because a paper reported a death: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder on 11 May 1921. A paper records a death because a death is news; a book records a birth because the subscriber gave it.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "measure/allen-county-lives-in-the-county-histories.yml",
+          "node_label": "What the county histories record of the people in them",
+          "span": "**What finishes them is a different kind of source.** Three of the deaths this corpus now holds came from newspapers: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder on 11 May 1921.",
+          "tier": "inference",
+          "sources": [
+            "catalog/chronicling-america.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not assert that the people with sketches are representative of the county.**"
+      ],
+      "figures": []
+    },
+    {
+      "id": "one-node-held-two-men",
+      "statement": "For most of this corpus's life, one node called Samuel A. Baxter carried a mayor of 1851, a surgeon of 1863 and the co-author of the 1906 county history as one man, with an open block saying a birth year for either would settle it. The 1885 book gave the father's — 26 September 1807 — and a man dead before 1885 did not write reminiscent chapters for a book of 1906.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/samuel-a-baxter.yml",
+          "node_label": "Samuel A. Baxter",
+          "span": "**A man dead before 1885 did not write reminiscent chapters for a book of 1906.** The identification this corpus once held as probable and then downgraded to unresolved is now resolved against it: the co-author of the 1906 history is the son. What made the difference was a date of birth, which is what that node's own unanswered block said it would take.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-war-service-was-on-the-wrong-man",
+      "statement": "The county's Civil War roster has one line for a surgeon named S. A. Baxter, 18th Ohio, March 1863 to November 1865, and this corpus had it on the father. The 1885 sketch runs straight from the father into his third son, who read medicine at Lima and Columbus and began practising it in the army in 1863 in that regiment. The line is the son's.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/samuel-a-baxter.yml",
+          "node_label": "Samuel A. Baxter",
+          "span": "**The surgeon of the 18th Ohio was his son, and this corpus had it on the wrong man.** The 1885 sketch runs straight on from the father into \"S. A. Baxter, the third son\", who read medicine under Dr. William H. Harper of Lima, finished with Dr. J. Dawson at Columbus, graduated at Cincinnati College, and \"began the practice of his profession in the army, in 1863, in the Eighteenth Ohio Volunteer Infantry, where he remained until the close of the war\".",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "brice-and-baxter-on-one-board",
+      "statement": "In 1885 the First National Bank of Lima had six directors, and two of them are among the longest-running names in this corpus: S. A. Baxter as president, who would co-write the county's 1906 history, and C. S. Brice as vice-president, who would be a United States senator. The 1906 book calls Brice the leading spirit in the bank's organisation and says he stayed a director until he died.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "organization/first-national-bank-of-lima.yml",
+          "node_label": "First National Bank of Lima",
+          "span": "**Its board in 1885 was Brice, Baxter and four others.** \"Directors, C. S. Brice, J. W. King, S. A. Baxter, L. Reichelderfer, J. M. Coe and W. L. Porter. President, S. A. Baxter; Vice-President, C. S. Brice; Cashier, C. M. Hughes, Jr.\"",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md",
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "lamison-dated-at-both-ends",
+      "statement": "Charles N. Lamison sat for Ohio's Fifth District under Grant, and the federal file that carries every member of Congress has no birthday for him and no death date for anyone. He was born in Columbia County, Pennsylvania, in 1826 — the 1906 county history — and died at Topeka on 25 April 1896 — the New-York Tribune the next morning, on a telegram from Lima.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/charles-n-lamison.yml",
+          "node_label": "Charles N. Lamison",
+          "span": "**He was born in Columbia County, Pennsylvania, in 1826, and the book that says so had been in this catalog for a year.** \"Charles Nelson Lamison was born in Columbia County, Pennsylvania, in 1826.",
+          "tier": "verified",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        },
+        {
+          "node": "person/charles-n-lamison.yml",
+          "node_label": "Charles N. Lamison",
+          "span": "**He died on 25 April 1896, at Topeka in Kansas.** \"DEATH OF EX-CONGRESSMAN LAMISON. Lima, Ohio, April 25.—A telegram from Topeka announces the death of ex-Congressman [Lamison].\"",
+          "tier": "verified",
+          "sources": [
+            "catalog/chronicling-america.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "faurot-died-poor",
+      "statement": "The 1906 county history opens Benjamin C. Faurot's sketch with two dates and nothing else: born 13 October 1829, died 7 September 1904. The newspapers of the week add what the book does not. He died at Sandusky of a stroke, on a trip to organise an oil company, and the headline over the dispatch read “Successful For Years But Mr. Faurot Died a Poor Man”.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/benjamin-faurot.yml",
+          "node_label": "Benjamin C. Faurot",
+          "span": "**The newspapers say what the book does not: he died broke.** A Sandusky dispatch of 7 September — \"Benjamin C Faurot, Lima's one time million aire, died here tonight as a result of a stroke of paralysis which he suffered several days ago while waiting for cab\" — ran under the headline \"Successful For Years But Mr. Faurot Died a Poor Man\"",
+          "tier": "verified",
+          "sources": [
+            "catalog/chronicling-america.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "a-rounded-age-checks-a-birthday",
+      "statement": "The Sandusky dispatch calls Faurot “about seventy-four years old”. A man born on 13 October 1829 was seventy-four on 7 September 1904, five weeks short of his seventy-fifth birthday. Neither the reporter nor the book had the other, and the loosest thing a newspaper prints checks the most precise thing a subscription sketch does.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "person/benjamin-faurot.yml",
+          "node_label": "Benjamin C. Faurot",
+          "span": "**The paper's rounded age checks the book's birthday.** It calls him \"about seventy-four years old\", which is the age of a man born on 13 October 1829 five weeks before his seventy-fifth birthday.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "two-sources-agree-to-the-day",
+      "statement": "The 1885 county history's sketch of Samuel S. Yoder gives his birth as 16 August 1841 at Berlin in Holmes County. The Evening Star of Washington gives it again, to the day and the town, in his obituary of 11 May 1921 — thirty-six years later, six hundred kilometres away, from a paper that had never seen the book.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/samuel-s-yoder.yml",
+          "node_label": "Samuel S. Yoder",
+          "span": "**He was born at Berlin in Holmes County on 16 August 1841, and two sources thirty-six years and six hundred kilometres apart say so to the day.**",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/chronicling-america.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "the-head-of-a-sketch-is-the-man-who-bought-it",
+      "statement": "The longest-serving county commissioner of Allen County's first seventy-five years has no sketch of his own. William Akerman's birth, his parents, his hundred and twenty acres of wild land, his two hundred and fifty-four at his death and his four terms on the board are all inside a page headed with his son's name. He is on it because of the relation, and he has a death date because he was dead.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "person/william-akerman.yml",
+          "node_label": "William Akerman",
+          "span": "**He is the corpus's clearest case of the subscription book's shape.** He is dead, so the sketch gives him a death date; he is dead, so the sketch is not his. The living son bought the page and the father is on it because of the relation.",
+          "tier": "inference",
+          "sources": []
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "a-scan-moved-a-birthday-five-years",
+      "statement": "One of the two digitisations of the 1885 history reads Isaiah Pillars' birth as 17 March 1838 and the other as 1833, in a typeface that turns 1835 into 1885 elsewhere in the same book. The sketch settles it against itself: a man born in 1838 was not admitted to the bar not quite twenty-one and practising at Lima in 1855.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/isaiah-pillars.yml",
+          "node_label": "Isaiah S. Pillars",
+          "span": "**The 1885 book has a fuller sketch of him, and one of its two scans moves his birth five years.** Scan B gives \"born in Jefferson County, Ohio, March 17, 1833\"; scan A gives 1838. The sketch settles it against itself: he began teaching at sixteen, was \"admitted to the bar when not quite twenty-one years old\", and was practising at Lima in 1855, none of which a man born in 1838 could do.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "two-scans-agreeing-is-not-truth",
+      "statement": "Both digitisations of the 1906 history say Henry DeVilliers Williams came to Ohio in 1834, reached Lima the next year, and that “in 1826 he was joined by his family”. Two physical copies through two pipelines agree to the digit and the sentence is impossible. A second scan buys the reading, never the fact, and this corpus takes the birthday from that paragraph and not the arrival.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "person/henry-d-v-williams.yml",
+          "node_label": "Henry D. V. Williams",
+          "span": "**The 1906 book dates his family's arrival to a year he was not in Ohio, and both scans agree on it.** \"In 1826 he was joined by his family, which consisted of his wife and daughter, Henrietta C., who came to Toledo by boat and from there to Lima by wagon, through the Black Swamp.\" He married in 1825 and reached Ohio in 1834.",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "a-name-match-that-was-refused",
+      "statement": "The 1885 history has a sketch of an M. Ridenour who was born in Fairfield County in 1826 and died in 1873, and the county's roster has a sheriff called Mathias Ridenour. Two later passages in the same book name the man in the sketch in full: George M. Ridenour, a farmer who held no office. Taking it would not have mis-dated a person. It would have invented one.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/mathias-ridenour.yml",
+          "node_label": "Mathias Ridenour",
+          "span": "**A sketch of an M. Ridenour was found and rejected.** The 1885 history's Sugar Creek section carries `M. RIDENOUR (deceased) was born in Fairfield County, Ohio, March 6, 1826`, a farmer who married Eleanor P. Lipsett on 31 December 1848 and died on 13 December 1873. Two later passages in the same book name him in full: George M. Ridenour. He held no office in the sketch and was eighteen years old when this man's term of 1853 began under a different given name.",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "two-sketches-of-one-man-disagree",
+      "statement": "Samuel Collins bought a biographical sketch in 1885 and another in 1906. Both give his birth in Belmont County in March 1824 and both name his four years as sheriff. They contradict each other about his parents: one has them dying in Belmont County, the other has them leaving it in 1834 for Logan County. Both were sent to him for correction and he let both stand.",
+      "topic": "history",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "person/samuel-collins.yml",
+          "node_label": "Samuel Collins",
+          "span": "**They contradict each other about his parents, and nobody had a motive to lie.** The 1885 sketch has John and Rachel Collins settling in Belmont County \"where they passed the remainder of their days\"; the 1906 sketch has them leaving Belmont County in 1834 for Logan County, \"where they lived the remainder of their lives\".",
+          "tier": "verified",
+          "sources": [
+            "catalog/leeson-allen-county-1885.md",
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [],
+      "figures": []
+    },
+    {
+      "id": "a-doctor-a-bottler-and-a-sheriff",
+      "statement": "Eugene Barr practised medicine in Auglaize, Champaign and Allen counties for fifteen years, left it in 1895 for oil and timber, and was elected sheriff in 1901. The book that says so prints, in the same paragraph as his second term, that he was managing a soft-drink works in Lima and holding office in a hardwood lumber company while he held the office.",
+      "topic": "history",
+      "tier": "inference",
+      "citations": [
+        {
+          "node": "person/eugene-barr.yml",
+          "node_label": "Eugene Barr",
+          "span": "**The book has him managing a soft-drink works while holding the office.** In the same paragraph as his second term it gives him the management of the Consolidated Bottling Company of Lima, manufacturers of soft drinks, and an office in the Ohio Hardwood Lumber Company.",
+          "tier": "inference",
+          "sources": [
+            "catalog/miller-allen-county-1906.md"
+          ]
+        }
+      ],
+      "caveats": [],
       "figures": []
     }
   ]
