@@ -187,7 +187,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-hospital-employment-2011-2023.yml](measure/allen-county-hospital-employment-2011-2023.yml) | measure | Allen County hospital employment, 2011–2023 | 7 | 4v / 1i / 0o | 61 |
 | [allen-county-house-prices-1975-2025.yml](measure/allen-county-house-prices-1975-2025.yml) | measure | House prices in Allen County, 1975–2025 | 7 | 14v / 4i / 1o | 128 |
 | [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
+| [allen-county-household-composition-2023.yml](measure/allen-county-household-composition-2023.yml) | measure | Who lives with whom in Allen County, 2019–2023 | 6 | 13v / 2i / 1o | 117 |
 | [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 3 | 6v / 4i / 1o | 80 |
+| [allen-county-households-1970-2023.yml](measure/allen-county-households-1970-2023.yml) | measure | Allen County households and household type, 1970–2023 | 6 | 13v / 4i / 1o | 144 |
+| [allen-county-households-by-place-2020.yml](measure/allen-county-households-by-place-2020.yml) | measure | Allen County households by township and city, 2020 | 6 | 11v / 1i / 1o | 110 |
 | [allen-county-housing-1990.yml](measure/allen-county-housing-1990.yml) | measure | Allen County's housing in 1990 | 4 | 9v / 5i / 0o | 92 |
 | [allen-county-housing-age-2023.yml](measure/allen-county-housing-age-2023.yml) | measure | When Allen County's housing was built, 2023 | 3 | 9v / 2i / 0o | 73 |
 | [allen-county-housing-cost-burden-2006-2022.yml](measure/allen-county-housing-cost-burden-2006-2022.yml) | measure | Housing cost burden in Allen County, 2006–2022 | 8 | 11v / 4i / 0o | 153 |
@@ -221,6 +224,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-manufacturing-employment-1969-2022.yml](measure/allen-county-manufacturing-employment-1969-2022.yml) | measure | Allen County manufacturing employment, 1969–2022 | 2 | 6v / 2i / 1o | 69 |
 | [allen-county-manufacturing-employment-1986-2022.yml](measure/allen-county-manufacturing-employment-1986-2022.yml) | measure | Allen County manufacturing employment, 1986–2023 | 4 | 6v / 6i / 0o | 101 |
 | [allen-county-manufacturing-outside-lima-1929-1967.yml](measure/allen-county-manufacturing-outside-lima-1929-1967.yml) | measure | Allen County manufacturing outside Lima, 1929–1967 | 3 | 4v / 8i / 1o | 85 |
+| [allen-county-marital-status-2023.yml](measure/allen-county-marital-status-2023.yml) | measure | Marital status in Allen County, 2019–2023 | 5 | 8v / 1i / 1o | 82 |
 | [allen-county-migration-by-county-2004-2023.yml](measure/allen-county-migration-by-county-2004-2023.yml) | measure | Where Allen County's movers went and came from, 2004–2023 | 5 | 10v / 4i / 1o | 93 |
 | [allen-county-migration-flows-2004-2023.yml](measure/allen-county-migration-flows-2004-2023.yml) | measure | Who moved into and out of Allen County, 2004–2023 | 5 | 14v / 1i / 1o | 98 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
@@ -295,7 +299,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
-| [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 8 | 17v / 5i / 1o | 165 |
+| [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 9 | 18v / 6i / 1o | 179 |
 | [allen-county-test-proficiency-2009-2020.yml](measure/allen-county-test-proficiency-2009-2020.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2020 | 8 | 11v / 5i / 1o | 129 |
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
@@ -423,7 +427,7 @@ Sorted by: kind, then alphabetically.
 | [western-ohio-railway.yml](organization/western-ohio-railway.yml) | organization | The Western Ohio Railway Company | 2 | 5v / 3i / 1o | 59 |
 | [canal-era.yml](period/canal-era.yml) | period | The canal era | 2 | 6v / 5i / 2o | 61 |
 | [deindustrialization.yml](period/deindustrialization.yml) | period | Deindustrialization in Allen County | 8 | 13v / 12i / 2o | 144 |
-| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 14 | 20v / 14i / 2o | 240 |
+| [depopulation.yml](period/depopulation.yml) | period | The depopulation of Lima and Allen County | 15 | 21v / 16i / 2o | 262 |
 | [lima-oil-boom.yml](period/lima-oil-boom.yml) | period | The Lima oil boom | 5 | 9v / 9i / 2o | 103 |
 | [the-civil-war-in-allen-county.yml](period/the-civil-war-in-allen-county.yml) | period | The Civil War in Allen County | 4 | 3v / 5i / 3o | 82 |
 | [the-second-world-war-in-allen-county.yml](period/the-second-world-war-in-allen-county.yml) | period | The Second World War in Allen County | 2 | 9v / 4i / 3o | 78 |
