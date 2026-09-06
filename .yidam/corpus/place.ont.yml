@@ -10,6 +10,11 @@ description: |
   every boundary drawn around it: Lima the place and the City of Lima the corporation have
   different birthdays, different extents, and different histories.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 25 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 100
 properties:
   - name: place_type
     type: string

@@ -1,0 +1,106 @@
+id: node-length-limits
+summary: >-
+  Every class's `max_lines` is now derived from that class's own description-length distribution
+  at p90, rounded up to the nearest five, measured 2026-09-06. Before this, three of thirteen
+  classes declared a limit and none of the three could do its job: `tenure` at 35 and `division`
+  at 45 sat above the longest node in their classes and were incapable of firing, and `measure`
+  at 60 sat exactly on its class's median and fired on half of it. Ten classes declared none at
+  all, including the two holding the longest nodes in the corpus.
+context: |
+  `max_lines` counted whole files until template v0.4.0 — frontmatter, properties and links
+  included — while the check it feeds is named for prose. A corpus that records a `claim_tag` and
+  a `source` on every edge pays about a line and a half per link out of a budget written to stop
+  descriptions sprawling, so the three limits this repository declared had all been raised to
+  compensate: `division` 30 → 38 → 45, `tenure` 25 → 35, `measure` 25 → 42 → 60. Each raise is
+  argued in a comment in its class file, and each argument is about file-counting.
+
+  goedelsoup/yidam#588 closed that on 2026-09-06 — `node-too-long` measures the `description`
+  block now. The compensation is therefore obsolete, and what it was hiding became visible in the
+  same moment from two directions: `node-too-long` reporting 139 findings, all of them `measure`,
+  and `yidam kuten check` reporting the corpus's median node at 64 lines against the `inquiry`
+  profile's declared 35–62.
+
+  Measured across all thirteen classes, description-block lines only:
+
+      class              n   median   p75   p90   p95   max   declared
+      division           8       18    21    30    36    36         45
+      event             38       40    50    58    80   129          —
+      jurisdiction      39       33    38    44    60   103          —
+      measure          282       60    75    95   113   153         60
+      natural-feature   12       34    60    92    92    93          —
+      office            23       25    34    56    63   108          —
+      organization      35       36    41    50    51    53          —
+      period             7       54    74    96   197   197          —
+      person            99       17    31    50    62   105          —
+      place             25       56    68    98   145   286          —
+      question          16       53    72   105   105   127          —
+      site              16       56    93   116   116   209          —
+      tenure            83       10    13    16    17    32         35
+
+  Two of the three declared limits are above their class's maximum. They have never fired, and
+  could not fire if every node in the class doubled. The third is its class's median.
+decision: |
+  **Every class declares `max_lines`, and every one is that class's p90 rounded up to the nearest
+  five**, measured on 2026-09-06 over the description block alone:
+
+      division          30      natural-feature   95      place            100
+      event             60      office            60      question         105
+      jurisdiction      45      organization      50      site             120
+      measure           95      period           100      tenure            20
+      person            50
+
+  Against the corpus as it stands this flags 58 nodes of 683 — 8.5%, concentrated as 28 in
+  `measure` and 10 in `person`, with nine classes flagging two or fewer.
+
+  **The estimator is the decision, not the numbers.** p90 rounded outward to the nearest five,
+  per class, over description lines. Any of the thirteen values may be recomputed from the corpus
+  at any time by re-running the estimator; none of them may be raised because a node exceeded it.
+  That is the failure this record exists to end — three limits, five raises between them, every
+  raise argued from the node that had just broken the limit.
+
+  A limit is not a target. p90 is chosen so that the check flags a tail and stays silent on the
+  typical node: every value above is above its class's median and below its class's maximum, so
+  each one is capable of firing and none of them fires on ordinary work.
+
+  **Nothing is decomposed by this change and nothing is blessed.** The 58 flagged nodes stay
+  flagged, at Warn, outside the baseline. `.yidam/lint-baseline.yml` remains `violations: {}` —
+  the whole point of a limit that can fire is that what it reports is real.
+rationale: |
+  Why an estimator rather than thirteen judgements.
+
+  **The old numbers were not wrong so much as unfalsifiable.** Every one of the five raises in
+  this corpus's history was argued from the structural floor of the node that had just broken the
+  limit: a six-edge measure needs 26 lines of links, a present-day tenure needs to say why `ended`
+  is absent. Each argument is correct and each produced a number that the next long node would
+  break, because the method was "make it fit". `measure` reached its own median that way. A rule
+  that can only move in one direction is not measuring the corpus; it is following it.
+
+  **p90 is a choice about what the check is for, and it is the modest one.** A limit at p90 says:
+  ten per cent of a class is longer than the class's own habit, and that is worth a look. It does
+  not say those nodes are defective — `node-too-long` is a Warn and never gates. p75 was
+  considered and would flag 143 of 683, which is more than the 139 this change starts from and
+  spread across all thirteen classes; that is a decomposition programme rather than a check, and
+  choosing it would have been choosing work rather than choosing a measurement.
+
+  **Rounding outward to five is a decision about precision, and it is borrowed.** The `inquiry`
+  kuten's own `measured.estimator` records that quoting a band at a precision it was not measured
+  at is itself a silent decision — A0 rounded inward and put two of its six members outside the
+  band their numbers had defined. The same hazard applies to a percentile over 8 nodes as much as
+  over 282. Rounding outward, to a coarse step, states that the number is an estimate of a
+  distribution rather than a property of a file.
+
+  **Ten classes gained a limit they did not have, and that is the larger half of this change.**
+  `place` holds a 286-line node and `site` a 209-line one, and neither class declared anything;
+  meanwhile `tenure`, whose longest node is 32 lines, carried a 35-line budget. The corpus was
+  measuring where it happened to have looked. Deriving every class from its own distribution is
+  what makes "why this number" answerable for all thirteen rather than for the three that had
+  once caused trouble.
+
+  **What this does not settle.** The kuten's `median-node-lines` band still diverges — 64 lines
+  against a declared 35–62 — and nothing here changes a single node, so it will keep diverging.
+  That is correct: this record fixes how the corpus measures itself, not how long its nodes are.
+  Whether 28 long measures should be decomposed is now a question that can be asked against a
+  limit that means something, which it could not be while the limit sat on the median.
+
+  Related: [[upstream-findings]] finding 4, which carried this question across three revisits, and
+  `.yidam/decisions/kuten.yml`, which reached it from the population end on the same day.

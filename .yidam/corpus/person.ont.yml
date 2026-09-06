@@ -8,6 +8,11 @@ description: |
   being one by leaving office or leaving the county — which is exactly why the offices they
   hold and the intervals they hold them for cannot be properties of this class.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 99 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 50
 properties:
   - name: born
     type: date

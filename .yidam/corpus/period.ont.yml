@@ -11,6 +11,11 @@ description: |
   whether the node is a happening or an interpretation of a span, and it is the corpus that
   authors the interpretation.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 7 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 100
 properties:
   - name: began
     type: date

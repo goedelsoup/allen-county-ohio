@@ -9,6 +9,11 @@ description: |
   participants and a date, and because the corpus's temporal spine is built from things
   that occurred rather than from dates attached to things that persist.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 38 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 60
 properties:
   - name: occurred
     type: date
