@@ -51,6 +51,15 @@ properties:
   - name: method
     type: text
     description: How it was arrived at, and any break in series that makes it non-comparable.
+  - name: table
+    type: text
+    description: >-
+      The measure's rows, where it has many and they are not a time series — a figure per tract,
+      per lender, per township. First line names the columns and the first column is the key;
+      cells are separated by whitespace and may not contain any. `NA` is the absent cell. It is
+      here rather than in the description because a table a reader can read and a machine cannot
+      is a table nothing can draw: `crates/publish` carries it into the feed, and the page renders
+      it under the prose that argues about it. A measure with one figure does not use it.
 edges:
   - relationship: describes
     target: place

@@ -1,0 +1,116 @@
+id: a-table-a-machine-cannot-read
+summary: >-
+  This corpus writes tables constantly — 564 of its nodes print one — and every one of them was
+  prose, readable and nothing else. That is fine for a table whose job is to be read and it is the
+  whole difficulty for one whose job is also to be checked or drawn: the mortgage-access node
+  stated a correlation of 0.828 across 34 tracts and printed ten of them, so the coefficient could
+  not be verified from what it published and neither of the two maps it describes could be drawn.
+  A measure may now declare a `table` property; `crates/publish` carries it across the feed
+  boundary unparsed, the page renders it, and the map joins it to the ground.
+context: |
+  The corpus's tables are set as indented fixed-width blocks inside a `description`. They read
+  well, they carry their own tags and sources, and they are the natural form for a figure meant to
+  be read in a sentence's company. Most of the 564 want nothing more than that.
+
+  [`allen-county-mortgage-access-by-tract-2018-2024`](../corpus/measure/allen-county-mortgage-access-by-tract-2018-2024.yml)
+  wanted more, and could not say so. It states, `[verified]`:
+
+  > Across the county's 34 tracts with enough decisions to rate, the correlation between a tract's
+  > denial rate and its share of higher-priced loans is 0.828.
+
+  and then printed six rows, an ellipsis and four more. **That is enough to show the shape and not
+  enough to check the coefficient.** A reader could not recompute 0.828 from what the corpus
+  published; nothing could draw either of the two maps the sentence is about; and the twenty-four
+  tracts in the middle existed only inside the number.
+
+  The rest of the pipeline was already in place and idle. `census-tracts.geojson` holds all 35
+  tracts with a `GEOID`, the map already draws them as ground, and the site already had a
+  validated five-step sequential ramp. The gap was not geometry and not rendering. **A correlation
+  is not its scatter**: r = 0.828 is a summary the corpus could state from a file it read, and the
+  thirty-four pairs behind it were computed and thrown away.
+decision: |
+  **A measure may declare its rows, and the description argues about them instead of repeating
+  them.**
+
+  - `measure.ont.yml` gains an optional `table` property. First line names the columns, the first
+    column is the key, cells are separated by whitespace and may not contain any, and `NA` is the
+    absent cell. It is the format the corpus already writes by hand.
+  - `crates/publish::tables` parses it and puts it on `series.json`. **Nothing computes.** Cells
+    cross as the strings the corpus published, in the order it published them; a consumer that
+    wants numbers does the parsing and owns that reading. Additive, so `FEED_VERSION` does not
+    move.
+  - `MeasureTable.astro` renders it under the prose. `map.ts` joins it to the tract layer and
+    draws the two choropleths the node describes.
+
+  **There is one copy.** The alternative — a machine table in a property beside a prose table in
+  the description — was rejected on the rule this repository has already committed to twice: a
+  second copy of a fact is a copy that will disagree with the first, and nothing will say when.
+
+  **A malformed table is refused whole rather than half-parsed.** A row with the wrong number of
+  cells shifts every column after it, and that is the one failure a consumer cannot detect — the
+  numbers are all real and all under the wrong heading. `parse_table` returns nothing for a ragged
+  table, a header with no rows, or a single column.
+
+  **The two maps keep separate quantile breaks and are shown one at a time.** They are different
+  quantities — a share of applications refused against a share of loans priced above a federal
+  threshold — so a shared ramp would assert they are one measure. Quantile classing is the right
+  encoding for the claim actually made, which is that the two *rank* almost together; the legend
+  prints each variable's own break values so the levels stay visible under the pattern. Switching
+  between them, and watching how little moves, is the finding.
+
+  **The measure's own floor is applied to the map.** A tract is rated where its denominator
+  reaches thirty. Tract 39003013700 has 71 decisions and 28 priced originations, so its denial
+  rate is drawn and its higher-priced share is not — a share of 28 loans is the darkest class on
+  the map and the thinnest evidence in the table, and drawing it would put the county's most
+  emphatic-looking tract on the least warrant it has.
+rationale: |
+  **Why a property and not a parser over the description.**
+
+  Because reading structure out of prose is how a corpus starts lying to itself. The indented
+  blocks are aligned for a human eye, they are interrupted by ellipses and bold runs and
+  footnotes, and a parser over them would work until the day somebody wrote a table that was
+  nearly the same shape. A declared property is a promise the author made on purpose; a parsed
+  description is a promise the parser invented on the author's behalf.
+
+  **Why the format has no quoting.**
+
+  Whitespace is the delimiter, so a cell may not contain a space. That is a real limit and it is
+  the point: a format with quoting is a format a person writes incorrectly inside a YAML block and
+  discovers three commits later. The corpus's tables are already whitespace-aligned, so the format
+  is the one already in use, and the parser refuses anything it cannot read cleanly.
+
+  **Why the gate recomputes the prose from the rows.**
+
+  `tables.test.ts` reads `0.828` **out of the published description** and recomputes it from the
+  published table. Neither number is typed into the test. Edit the rows and it fails; edit the
+  sentence and it fails; edit both consistently and it passes, which is the only edit that should.
+  That bind is the entire reason for publishing both halves rather than replacing one with the
+  other — the prose says what the table means, the table says whether the prose is true.
+
+  It generalises past this node. Any measure that states a summary of rows it also publishes can
+  be held to the same check, and the first one is worth the apparatus on its own: this corpus had
+  a `[verified]` coefficient that nothing in the repository could confirm.
+
+  **Why the map's own numbers come from the feed and not from the map.**
+
+  The five-step ramp, the breaks and the rated floor are all computed at run time from the table
+  the corpus published. Nothing in `map.ts` holds a tract figure. So the day the measure is
+  restated — a year added, a tract split, a method changed — the map restates with it, and the
+  page cannot keep a number the corpus has withdrawn.
+
+  **What is not settled.**
+
+  *The Lima split is still prose only.* The sixteen majority-Lima tracts are named nowhere
+  machine-readable; the node states the split's two halves and the table can check only their
+  total. Publishing the membership would let the map draw the city's line, and it needs the block
+  assignment work that produced it in the first place.
+
+  *One node uses this.* 564 print a table and one declares it. That is the honest state and not a
+  plan: a property is worth adding for the node that needs it, and the next one to need it will
+  find it already there.
+
+  *The format cannot express a hierarchy.* Several of the corpus's tables have grouped rows and
+  sub-totals, and this carries a flat list keyed on one column. A table that needs more than that
+  stays prose until something needs to draw it.
+status: accepted
+date: "2026-09-06"
