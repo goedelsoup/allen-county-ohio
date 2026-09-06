@@ -15456,6 +15456,169 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Daley", value: 14798.0, literal: "14,798" },
         ],
     },
+    Assertion {
+        id: "what-the-tornado-struck",
+        statement: "The tornado of 19 July 1950 levelled a barn a mile south-west of Beaverdam, \
+                    demolished two more, and took the trees out of a roadside park. The federal row \
+                    that recorded it carries no narrative at all.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**What it struck is now on the record, from the county's own newspaper.** Near [Beaverdam](../place/beaverdam.yml), at the far end of the track, it \"struck near the Dr. Foust farm, one mile southwest of Beaverdam on the Dixie highway, and levelled a barn on the Homer F. Weaver farm\", blew down trees at a roadside park by the Foust home, and completely demolished \"the Deeds barn south of Beaverdam and the Fett barn east of Beaverdam\". [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 27 July 1950."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-injuries-named-and-thirty-counted",
+        statement: "The county's own weekly names two injuries from the 1950 tornado \u{2014} a \
+                    farmer buried in his barn's debris who escaped with bruises, and his son's leg \
+                    broken by a flying barn door. The federal file counts thirty and names none.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**Two injuries are named where the federal file counts thirty.** Weaver was \"buried in the debris\" and \"escaped with bruises\"; his son Melvin, outside the barn, \"received a broken leg when he was struck by a flying barn door\". [verified] \u{2014} the same source. The paper is a Bluffton weekly writing about the end of the track and does not report Lima's casualties at all, so two named and thirty counted are not in conflict: they are different parts of one storm."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-paper-and-the-file-disagree-about-the-clock",
+        statement: "The federal storm file stamps the 1950 tornado 15:15 CST, which reads as 16:15 \
+                    on the local clock. The newspaper, writing eight days later, puts it at 16:50. \
+                    No reading of the timezone field closes the gap.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**The paper puts it at 4:50 in the afternoon and the file does not.** The federal row is stamped 15:15 CST, which this corpus read as 16:15 on the local clock; the newspaper, writing eight days after, says \"the Lima tornado occurred at 4:50\". [verified] \u{2014} the same source, against [the storm record](../measure/allen-county-storm-events-1950-2026.yml). On a twenty-four-hour clock the file's stamp read as Central is 16:15 and the paper's afternoon is 16:50 \u{2014} thirty-five minutes apart, and no reading of the timezone field closes the gap, because 15:15 Eastern is an hour and a half early and 15:15 Central is thirty-five minutes late."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-million-dollars-apart",
+        statement: "The county's weekly called the 1950 Lima tornado a one-and-a-half-million-dollar \
+                    storm. The federal compilation puts its property damage at $2,500,000.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**And it puts the damage at $1,500,000 where the file puts it at $2,500,000.** The paper calls it \"a one and one-half-million dollar tornado\". [verified] \u{2014} the same source. A contemporaneous local figure and a later national compilation, a million apart, and this node holds both; see [an instrument dates it and a witness describes it](../../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml)."),
+            support!("event/the-tornado-of-19-july-1950.yml", "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody and did an estimated $2.5 million of property damage. [verified] \u{2014} [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10086810."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "The paper, eight days after", value: 1500000.0, literal: "1,500,000" },
+            Figure { label: "The federal file", value: 2500000.0, literal: "2,500,000" },
+        ],
+    },
+    Assertion {
+        id: "a-second-storm-the-file-does-not-hold",
+        statement: "A second damaging wind crossed the county's northern edge on the evening of 19 \
+                    July 1950, about an hour after the Lima tornado, and no dataset this corpus \
+                    holds has a row for it.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**A second tornado crossed the county's northern edge about an hour after the one the federal record holds, and the federal record does not hold it.** \"The tornado ripping thru this area, however, was apparently a different one than that which ravaged Lima more than an hour earlier. It struck here shortly after 6 p. m., while the Lima tornado occurred at 4:50.\" [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 27 July 1950. See [the Lima tornado](the-tornado-of-19-july-1950.yml)."),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "five-miles-in-a-semicircle-around-bluffton",
+        statement: "The second storm headed north-east from a farm on the Allen\u{2013}Hancock \
+                    county line road and blew itself out five miles away on a farm on State Route \
+                    103, in a semicircle around Bluffton.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**It cut five miles and three hundred yards wide in a semicircle around Bluffton.** It headed north-east from a farm on the Allen\u{2013}Hancock county line road and \"finally blew itself out\" five miles away on a farm on State Route 103. [verified] \u{2014} the same source. The Lima tornado's stated track is 9.7 miles and the same 300 yards at its widest, which is why two storms of one evening are easy to read as one."),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-four-hours-to-open-the-roads",
+        statement: "Township trustees and farmers with tractors took nearly twenty-four hours to \
+                    reopen the roads in the second storm's path, in some places by shoving the \
+                    fallen trees to the side of the highway.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**Nobody was killed and the roads took a day.** \"It was nearly 24 hours after the storm struck before all roads in its path were re-opened\", by township trustees and farmers with tractors, and in some places by shoving fallen trees to the side of the highway \"where they will remain until there is time to remove them later\". [verified] \u{2014} the same source. The paper's Beaverdam correspondent wrote that \"although several families in the rural community here received heavy losses in last week's wind storm, we feel it is very fortunate that no lives were lost or anyone seriously injured\". [verified]"),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "what-a-gauge-cannot-record",
+        statement: "In the woodlots the 1950 storm twisted off trees more than two feet in diameter \
+                    and took the tops out of most of what stayed standing, and dead rabbits and \
+                    pheasants were found under them.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**The clearest thing it left was in the woodlots.** Trees \"more than two feet in diameter were twisted off and others uprooted\", and the tops were taken out of most of what stayed standing; in the heavily damaged woodlots \"a lot of dead rabbits and pheasants could be found, leading to conjecture that the storm had come up so quickly that the game birds and animals had no chance to find shelter\". [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "one-storm-two-basins",
+        statement: "The rain that produced the Ottawa River's largest measured flow put nearly four \
+                    feet of water in a Bluffton lumber yard twenty miles north, on Big Riley Creek \
+                    \u{2014} a different river, in a basin with no gauge in it.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**The rain that produced the Ottawa River's largest measured flow put four feet of water in a Bluffton lumber yard twenty miles north, on a different river.** [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 29 January 1959, its front-page account of \"the Wednesday flash flood of last week\"; see [the flood on the Ottawa](the-ottawa-river-flood-of-1959.yml). Big Riley Creek drains to the Blanchard and the Auglaize; the gauge that measured 7,740 cubic feet a second is on the Ottawa. One storm, two basins, and only one of them had an instrument in it."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "ice-broke-the-village-water-main",
+        statement: "Ice and logs coming down Big Riley Creek broke Bluffton's water main at the Main \
+                    street bridge, and a corroded valve meant the shut-off had to be made at the \
+                    village building. Part of the village had no water until Sunday noon and part \
+                    until Tuesday.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**Ice broke the village's water main.** \"Ice and heavy logs racing down the Big Riley broke a water main at the Main street bridge\", and a corroded valve near the bridge could not be turned, so the shut-off had to be made at the village building instead. Water was cut off from the hardware store north to the corporation line and east to Vance Street, and was not restored until noon on Sunday; north of the bridge, residents were still without water on Tuesday. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twelve-houses-pumped-out-in-near-zero-weather",
+        statement: "Bluffton's firemen and two village crews pumped out twelve houses on two streets \
+                    on the night of the flood so that furnace fires could be lit, and carried one \
+                    woman out of her house on a chair.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**Twelve houses were pumped out on two streets, in near-zero weather.** Bluffton firemen, the waterworks crew and the village service crew worked Wednesday night \"pumping out basements of 12 homes on Cherry and Railroad streets so that furnace fires could be started in the near zero weather that followed the flood\", and one woman was carried out of her Cherry Street house on a chair. [verified] \u{2014} the same source. A week later the village council agreed to make no charge for the pumping, waiving the $10 it ordinarily asked. [verified]"),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[
+            Figure { label: "Houses pumped out", value: 12.0, literal: "12" },
+            Figure { label: "The charge ordinarily made, dollars", value: 10.0, literal: "10" },
+        ],
+    },
+    Assertion {
+        id: "the-creek-and-the-quarry-at-one-level",
+        statement: "Bluffton's municipal swimming pool went under, the Buckeye quarry and Big Riley \
+                    Creek stood at one level, and the pool's filtration plant and the sewage \
+                    disposal plant came through undamaged.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**The businesses on the water are named and the public works came through.** Water covered the display room and offices of the lumber company and stood \"nearly four feet deep\" in its yard; a new builders' supply building on Vance Street was invaded and cement in bags damaged; a lunch room closed for several days for want of water and a restaurant hauled its own. The municipal swimming pool was under water and \"Buckeye quarry and Big Riley were at one level\", and officials reported no damage to the pool's filtration plant or to the sewage disposal plant. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-creek-rose-a-day-before-the-river",
+        statement: "The flood at Bluffton was on Wednesday 21 January 1959 and the Ottawa's peak at \
+                    Allentown is dated the 22nd. A small creek rises and falls inside a day and a \
+                    river gauged sixteen miles downstream does not.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**The date is the day before the gauge peaked.** The paper calls it a Wednesday flood and its issue is Thursday 29 January, which puts it on the 21st; the Ottawa's peak at Allentown is dated the 22nd, and the Lima station's two-day rainfall is 1.84 inches on the 21st and 1.20 on the 22nd. [verified] \u{2014} the same source against [the flood on the Ottawa](the-ottawa-river-flood-of-1959.yml). A small creek rises and falls inside a day and a river gauged sixteen miles downstream does not."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
