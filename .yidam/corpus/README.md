@@ -220,8 +220,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-jewish-community-1850-1921.yml](measure/allen-county-jewish-community-1850-1921.yml) | measure | Allen County's Jewish community, 1850–1921 | 3 | 8v / 2i / 1o | 63 |
 | [allen-county-land-area-2000-2024.yml](measure/allen-county-land-area-2000-2024.yml) | measure | Allen County land area by subdivision, 2000–2024 | 3 | 10v / 3i / 0o | 108 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
-| [allen-county-land-cover-2001-2021.yml](measure/allen-county-land-cover-2001-2021.yml) | measure | Allen County land cover, 2001–2021 | 7 | 6v / 4i / 0o | 107 |
-| [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 6 | 12v / 3i / 2o | 151 |
+| [allen-county-land-cover-2001-2021.yml](measure/allen-county-land-cover-2001-2021.yml) | measure | Allen County land cover, 2001–2021 | 7 | 8v / 4i / 0o | 116 |
+| [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 6 | 12v / 3i / 2o | 156 |
+| [allen-county-land-cover-change-1985-2023.yml](measure/allen-county-land-cover-change-1985-2023.yml) | measure | How often Allen County's land changed class, 1985–2023 | 4 | 9v / 0i / 1o | 85 |
+| [allen-county-land-cover-change-dates-2001-2021.yml](measure/allen-county-land-cover-change-dates-2001-2021.yml) | measure | When Allen County's land cover first changed, 2001–2021 | 4 | 8v / 2i / 1o | 86 |
 | [allen-county-law-enforcement-agencies-2026.yml](measure/allen-county-law-enforcement-agencies-2026.yml) | measure | Allen County's reporting police agencies, 2026 | 2 | 5v / 2i / 1o | 58 |
 | [allen-county-layoff-notice-intervals-1996-2017.yml](measure/allen-county-layoff-notice-intervals-1996-2017.yml) | measure | How long before the layoff Ohio received the notice, Allen County, 1996–2017 | 3 | 3v / 4i / 0o | 66 |
 | [allen-county-layoff-notices-1996-2017.yml](measure/allen-county-layoff-notices-1996-2017.yml) | measure | Allen County layoff and closing notices, 1996–2017 | 6 | 4v / 7i / 0o | 109 |
@@ -324,6 +326,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 3 | 8v / 4i / 1o | 121 |
 | [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 8 | 12v / 3i / 2o | 166 |
 | [allen-county-transfer-receipts-1969-2024.yml](measure/allen-county-transfer-receipts-1969-2024.yml) | measure | Government transfers to Allen County, 1969–2024 | 6 | 11v / 1i / 1o | 113 |
+| [allen-county-tree-canopy-2011-2021.yml](measure/allen-county-tree-canopy-2011-2021.yml) | measure | Allen County tree canopy, 2011–2021 | 4 | 9v / 0i / 1o | 83 |
 | [allen-county-tri-reporters-1987-2024.yml](measure/allen-county-tri-reporters-1987-2024.yml) | measure | Allen County facilities reporting to the Toxics Release Inventory, 1987–2024 | 2 | 7v / 0i / 0o | 60 |
 | [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 7 | 8v / 4i / 0o | 116 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 4 | 8v / 2i / 0o | 78 |
