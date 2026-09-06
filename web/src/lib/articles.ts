@@ -2139,6 +2139,36 @@ export const ARTICLES: Article[] = [
       'organization/superior-credit-union.yml',
     ],
   },
+  {
+    slug: 'a-field-that-changed-its-mind',
+    title: 'A field that changed its mind',
+    dek: "Eighty-eight per cent of Allen County has carried the same land cover class every year since 1985. The largest single kind of change in the rest of it is not a town growing — it is a field alternating between corn and hay.",
+    section: 'ground',
+    era: [1985, 2023],
+    assertions: [
+      'eighty-eight-per-cent-never-changed',
+      'most-of-what-changed-changed-once',
+      'the-largest-change-is-a-field-changing-its-mind',
+      'urban-and-agricultural-change-are-close',
+      'two-files-disagree-about-how-much-moves',
+      'the-rate-of-change-falls-five-to-one',
+      'the-peak-moves-when-you-divide',
+      'a-first-date-misses-a-tenth-of-the-changes',
+      'the-forest-in-equilibrium-was-cut',
+      'canopy-is-where-it-was-and-not-where-it-was',
+      'more-ground-lost-canopy-than-gained-it',
+      'the-thin-edge-of-the-canopy-is-going',
+      'the-canopy-is-consolidating',
+      'canopy-falls-where-the-land-urbanised',
+    ],
+    entries: [
+      'measure/allen-county-land-cover-change-1985-2023.yml',
+      'measure/allen-county-land-cover-change-dates-2001-2021.yml',
+      'measure/allen-county-tree-canopy-2011-2021.yml',
+      'measure/allen-county-land-cover-2001-2021.yml',
+      'measure/allen-county-developed-land-2001-2021.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */

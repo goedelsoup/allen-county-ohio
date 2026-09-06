@@ -14909,6 +14909,219 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["does not establish that these borrowers could have had a mortgage instead"],
         figures: &[],
     },
+    Assertion {
+        id: "eighty-eight-per-cent-never-changed",
+        statement: "Two hundred and thirty thousand acres of Allen County carried the same land \
+                    cover class in every one of thirty-nine years. Eleven per cent of the county \
+                    changed at least once.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**Eighty-eight and a half per cent of Allen County carried the same land cover class in every one of thirty-nine years.** 230,741.5 acres never changed at all; 29,640.3 acres \u{2014} 11.38 per cent \u{2014} changed at least once, and most of those changed exactly once. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), the annual product's change-count summary, clipped to the county and counted here."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Never changed", value: 230741.5, literal: "230,741.5" },
+            Figure { label: "Changed at least once", value: 29640.3, literal: "29,640.3" },
+        ],
+    },
+    Assertion {
+        id: "most-of-what-changed-changed-once",
+        statement: "Of the ground in Allen County that changed land cover class between 1985 and \
+                    2023, three quarters of it changed exactly once. A hundred and twelve acres \
+                    changed ten times or more.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**In figures: 21,964.6 acres changed once, 5,555.6 twice, 2,120.1 three times or more, and 111.6 acres changed ten times or more.** One pixel \u{2014} two tenths of an acre \u{2014} changed twenty-five times in thirty-nine years. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Once", value: 21964.6, literal: "21,964.6" },
+            Figure { label: "Twice", value: 5555.6, literal: "5,555.6" },
+            Figure { label: "Three or more", value: 2120.1, literal: "2,120.1" },
+            Figure { label: "Ten or more", value: 111.6, literal: "111.6" },
+        ],
+    },
+    Assertion {
+        id: "the-largest-change-is-a-field-changing-its-mind",
+        statement: "The largest single kind of land cover change in Allen County is agriculture \
+                    changing inside its own class \u{2014} 11,498 acres of field alternating between \
+                    row crop and hay, against 8,502 acres of urban change.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**The largest single kind of change in this county is a field changing its mind.** Agriculture changing *within* its own class covers 11,498.5 acres, more than any other category and more than the 8,502.4 acres of urban change. A pixel that alternates between row crop and hay is a pixel that changed land cover class, and it is not development. [verified] \u{2014} the same source's change index, whose labels are in the table below."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Agriculture within class", value: 11498.5, literal: "11,498.5" },
+            Figure { label: "Urban change", value: 8502.4, literal: "8,502.4" },
+        ],
+    },
+    Assertion {
+        id: "urban-and-agricultural-change-are-close",
+        statement: "Counted by family rather than by code, the urban categories of change cover \
+                    14,475 acres of Allen County and the agricultural ones 13,649.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**Counted by family rather than by code the two are close, and neither is what a reader expects.** Urban change and urban-within-class change together are 14,475.0 acres; the three agricultural codes together are 13,649.0. [verified] \u{2014} the same source. Water change is 1,251.9 acres, and every remaining code in the county together is under 250."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Urban, both codes", value: 14475.0, literal: "14,475.0" },
+            Figure { label: "Agricultural, three codes", value: 13649.0, literal: "13,649.0" },
+        ],
+    },
+    Assertion {
+        id: "two-files-disagree-about-how-much-moves",
+        statement: "The nine-epoch land cover database has 2.47 per cent of Allen County changing \
+                    class across twenty years. The annual product has 11.38 per cent across \
+                    thirty-nine \u{2014} more than four times the change for roughly twice the \
+                    window.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**The two files disagree about how much this county moves, by more than their windows explain.** The nine-epoch product has 2.47 per cent of the county changing class across twenty years; this one has 11.38 per cent across thirty-nine. [verified] \u{2014} the same source pair. Roughly twice the window and more than four times the change; the index above says where the excess is, which is in a category the older product does not express at all."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Nine epochs, 2001-2021", value: 2.47, literal: "2.47" },
+            Figure { label: "Annual, 1985-2023", value: 11.38, literal: "11.38" },
+        ],
+    },
+    Assertion {
+        id: "the-rate-of-change-falls-five-to-one",
+        statement: "Allen County's land cover changed at 565.9 acres a year in the middle of the \
+                    2000s and at 115.9 acres a year in 2019 to 2021.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**The county's land-cover change now has dates on it, and it is falling away.** 6,427.7 acres first changed class somewhere between 2001 and 2021, and the rate runs from 565.9 acres a year in 2004\u{2013}2006 to 115.9 in 2019\u{2013}2021 \u{2014} a fall of nearly five to one. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), its first-disturbance date raster, clipped to the county and counted here. The eight steps are in the table below."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[
+            Figure { label: "2004-2006", value: 565.9, literal: "565.9" },
+            Figure { label: "2019-2021", value: 115.9, literal: "115.9" },
+        ],
+    },
+    Assertion {
+        id: "the-peak-moves-when-you-divide",
+        statement: "The land cover database's eight steps are two and three years long. Ranked by \
+                    acres, Allen County changed fastest in 2008 to 2011; ranked by acres a year, it \
+                    changed fastest in 2004 to 2006, and the step that was fifth by acres is second \
+                    by rate.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**The eight steps are two and three years long, and which one was busiest depends on whether you divide.** By acres the peak is 2008\u{2013}2011 at 1,377.1; by acres a year it is 2004\u{2013}2006 at 565.9, and 2011\u{2013}2013 \u{2014} fifth by acres, at 979.9 \u{2014} is second at 489.9. [verified] \u{2014} the same source. The top three reorder and five of the eight rows move. See [an epoch is not a year](../../decisions/an-epoch-is-not-a-year.yml)."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-first-date-misses-a-tenth-of-the-changes",
+        statement: "A first-disturbance date records a pixel that changed twice only once, in the \
+                    earlier step. In Allen County that loses 3,527 of 32,429 changes \u{2014} a \
+                    tenth of them, all at the late end.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**It is a *first* disturbance date, so the late steps are short and the size of that is known.** A pixel that changed twice is dated once, in the earlier step. Against the same product's change count, 2,992 of the county's 28,902 changed pixels changed more than once, so this raster misses 3,527 of 32,429 changes \u{2014} 10.9 per cent \u{2014} and misses them at the late end. [verified] \u{2014} the same source's change count, differenced against the date raster. A fall of five to one survives a bias of that size."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-forest-in-equilibrium-was-cut",
+        statement: "Allen County's forest gained eight acres net between 2001 and 2021, and 431.9 \
+                    acres of it were disturbed between 1984 and 2020. The busiest year was 2007, at \
+                    52.9 acres.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**The county's forest is in equilibrium and 431.9 acres of it were cut.** The forest-disturbance raster dates a disturbance for that much ground between 1984 and 2020, against 22,444.8 acres it marks as forest with no disturbance at all. [verified] \u{2014} the same source, its 1984\u{2013}2021 forest disturbance date. The busiest years are 2007 at 52.9 acres, 2012 at 37.6, 2005 at 30.0, 2002 at 28.5 and 2019 at 27.6."),
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**A class the nine-epoch file shows moving eight acres in twenty years has had fifty times that cut inside it, one woodlot at a time.** [inference] \u{2014} read against [the land cover](allen-county-land-cover-2001-2021.yml), which gives forest 21,234 acres in 2001 and 21,226 in 2021. Equilibrium at the county scale is not stillness at the woodlot scale."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[
+            Figure { label: "2007", value: 52.9, literal: "52.9" },
+            Figure { label: "2012", value: 37.6, literal: "37.6" },
+            Figure { label: "2005", value: 30.0, literal: "30.0" },
+            Figure { label: "2002", value: 28.5, literal: "28.5" },
+            Figure { label: "2019", value: 27.6, literal: "27.6" },
+        ],
+    },
+    Assertion {
+        id: "canopy-is-where-it-was-and-not-where-it-was",
+        statement: "Allen County's tree canopy totalled 18,728 acres in 2011 and 18,923 in 2021. In \
+                    between, 11,412 acres of ground gained canopy and 13,155 acres lost it.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**The county's tree canopy is almost exactly where it was eleven years ago, and almost none of it is in the same place.** Canopy totalled 18,728.5 acres in 2011 and 18,923.0 in 2021, a net gain of 194.5 \u{2014} while 11,412 acres of ground gained canopy and 13,155 acres lost it. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), its eleven annual tree-canopy coverages, clipped to the county and differenced pixel by pixel here."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "Canopy 2011", value: 18728.5, literal: "18,728.5" },
+            Figure { label: "Canopy 2021", value: 18923.0, literal: "18,923.0" },
+        ],
+    },
+    Assertion {
+        id: "more-ground-lost-canopy-than-gained-it",
+        statement: "Fifty-one thousand pixels of Allen County gained tree canopy between 2011 and \
+                    2021 and fifty-nine thousand lost it, and the county still finished ahead \
+                    \u{2014} because the gains are larger where they happen.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**More ground lost canopy than gained it and the county still finished ahead**, because the gains are larger where they happen: 51,314 pixels gained and 59,150 lost, and the gains total 2,249.2 canopy-acres against 2,054.6 lost. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "Gained", value: 2249.2, literal: "2,249.2" },
+            Figure { label: "Lost", value: 2054.6, literal: "2,054.6" },
+        ],
+    },
+    Assertion {
+        id: "the-thin-edge-of-the-canopy-is-going",
+        statement: "Ground in Allen County carrying at least a tenth tree canopy fell in every year \
+                    from 43,582 acres to 39,243. Ground carrying at least half rose in almost every \
+                    year, from 17,704 to 19,924.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**The total is a V and the distribution is not.** Canopy falls every year from 2011 to a floor of 18,328.3 acres in 2017 and climbs back past its start by 2021. Underneath it, ground carrying at least a tenth canopy falls in every single year \u{2014} 43,582.3 acres to 39,242.5 \u{2014} and ground carrying at least half rises in almost every one, 17,704.0 to 19,923.9. [verified] \u{2014} the same source, the table below."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "At least a tenth, 2011", value: 43582.3, literal: "43,582.3" },
+            Figure { label: "At least a tenth, 2021", value: 39242.5, literal: "39,242.5" },
+            Figure { label: "At least a half, 2011", value: 17704.0, literal: "17,704.0" },
+            Figure { label: "At least a half, 2021", value: 19923.9, literal: "19,923.9" },
+        ],
+    },
+    Assertion {
+        id: "the-canopy-is-consolidating",
+        statement: "Ground that carried between a tenth and a quarter tree canopy in 2011 lost 2.370 \
+                    percentage points of it by 2021. Ground between a quarter and a half gained \
+                    2.372, and the densest ground thinned by 3.593.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**What is disappearing is the thin edge.** Ground that carried between a tenth and a quarter canopy in 2011 lost 2.370 percentage points on average over the eleven years, and ground between a quarter and a half gained 2.372. The densest ground thinned too, by 3.593 points. [verified] \u{2014} the same source, grouped by each pixel's own 2011 value. The county's canopy is consolidating out of its fringes and into its woodlots, and thinning at the very top of those."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "A tenth to a quarter", value: 2.37, literal: "2.370" },
+            Figure { label: "A quarter to a half", value: 2.372, literal: "2.372" },
+            Figure { label: "Three quarters and up", value: 3.593, literal: "3.593" },
+        ],
+    },
+    Assertion {
+        id: "canopy-falls-where-the-land-urbanised",
+        statement: "Where Allen County's land cover changed urban, tree canopy fell 0.567 percentage \
+                    points on average. Where it changed within the urban classes it fell 0.410. \
+                    Where it changed inside agriculture it rose 0.989.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**Canopy falls where the land cover urbanised and rises where it stayed farmed.** On the 38,231 pixels the annual change index calls urban change, canopy fell 0.567 points on average; on the 26,856 it calls urban within class, 0.410; on the 51,703 it calls agriculture within class it *rose* 0.989. [verified] \u{2014} the same source against [the change index](allen-county-land-cover-change-1985-2023.yml)."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "Urban change, fell", value: 0.567, literal: "0.567" },
+            Figure { label: "Urban within class, fell", value: 0.41, literal: "0.410" },
+            Figure { label: "Agriculture within class, rose", value: 0.989, literal: "0.989" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
