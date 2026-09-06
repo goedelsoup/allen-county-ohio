@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { atlas, type AtlasRecord } from '../src/lib/feeds'
 import {
   ERA_STEPS,
+  GROUND_VINTAGE,
+  WATER_VINTAGE,
   admits,
   anchored,
   census,
@@ -385,5 +387,20 @@ describe('the undated are drawn on their own toggle', () => {
   it('never appears in a year’s own list', () => {
     const years = new Set(drawn(atlas, at(2020)).map((r) => r.node))
     for (const r of undrawn(atlas, at(2020))) expect(years.has(r.node)).toBe(false)
+  })
+})
+
+describe('a layer fades from its own vintage', () => {
+  it('measures the water from the year it was fetched, not from 2020', () => {
+    // The boundaries are a 2020 statement and the water is not: TIGERweb serves hydrography from
+    // a service with no vintage, so `PROVENANCE.json` records it as current. Fading it from 2020
+    // would be a fade that lied about which year it is honest at.
+    expect(groundFidelity(GROUND_VINTAGE)).toBe(1)
+    expect(groundFidelity(WATER_VINTAGE, WATER_VINTAGE)).toBe(1)
+    expect(groundFidelity(WATER_VINTAGE)).toBeLessThan(1)
+  })
+
+  it('keeps the same floor whatever it is measured from', () => {
+    expect(groundFidelity(1769, WATER_VINTAGE)).toBe(groundFidelity(1763))
   })
 })

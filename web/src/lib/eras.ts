@@ -369,8 +369,18 @@ export function overlays(records: AtlasRecord[]): Overlay[] {
 // The ground, and how far the reader has travelled from it
 // ---------------------------------------------------------------------------
 
-/** The vintage of every boundary in `public/geo/`. There is only one, and this is it. */
+/** The vintage of the boundaries in `public/geo/`. */
 export const GROUND_VINTAGE = 2020
+
+/**
+ * The water's vintage, which is not the boundaries'.
+ *
+ * TIGERweb keeps hydrography out of the decennial services — one Hydro MapServer, republished
+ * with the rest of TIGER and carrying no vintage of its own. `PROVENANCE.json` records it as
+ * *current*, so the water is measured from the year it was fetched rather than from 2020. A layer
+ * fading away from a date nobody published it in would be a fade that lied.
+ */
+export const WATER_VINTAGE = 2026
 
 /**
  * Below this the county outline stops being an outline.
@@ -398,7 +408,7 @@ const FIDELITY_SPAN = 200
  * asking anyone to read a footnote. It floors rather than vanishing, because a county with no
  * outline is not an honest map either; it is an empty one.
  */
-export function groundFidelity(year: number): number {
-  const distance = Math.abs(year - GROUND_VINTAGE)
+export function groundFidelity(year: number, vintage: number = GROUND_VINTAGE): number {
+  const distance = Math.abs(year - vintage)
   return Math.max(FIDELITY_FLOOR, 1 - distance / FIDELITY_SPAN)
 }

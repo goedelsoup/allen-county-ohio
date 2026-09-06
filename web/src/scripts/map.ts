@@ -31,7 +31,7 @@
 //   undated        the missing-status ink, which belongs to no era on purpose.
 
 import { Deck, WebMercatorViewport } from '@deck.gl/core'
-import { GeoJsonLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers'
+import { ArcLayer, GeoJsonLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers'
 import {
   anchored,
   drawn,
@@ -41,11 +41,14 @@ import {
   spine,
   undrawn,
   view,
+  WATER_VINTAGE,
   type Anchored,
   type Era,
   type Grain,
   type View,
 } from '../lib/eras'
+import { lines, type Line } from '../lib/edges'
+import { courses, type Course, type End } from '../lib/water'
 import { entryPath } from '../lib/entry'
 import type { AtlasRecord } from '../lib/feeds'
 
@@ -68,6 +71,8 @@ const GEO = {
   places: '/geo/places.geojson',
   cdps: '/geo/census-designated-places.geojson',
   districts: '/geo/voting-districts.geojson',
+  tracts: '/geo/census-tracts.geojson',
+  water: '/geo/linear-water.geojson',
 } as const
 
 /** `#2a78d6` → `[42, 120, 214, alpha]`. */
@@ -93,6 +98,8 @@ function palette() {
     surface: v('--surface-card'),
     selected: v('--map-selected'),
     undated: v('--map-undated'),
+    water: v('--map-water'),
+    dug: v('--map-dug'),
     /** Opacity by hop depth. The index is the number of edges followed. */
     warrant: [n('--warrant-0'), n('--warrant-1'), n('--warrant-2'), n('--warrant-3')],
     era: (era: Era) => v(era.ink),
@@ -206,12 +213,14 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const scrub = container.querySelector<HTMLInputElement>('[data-scrub]')
   if (!canvasHost) throw new Error('the map has no canvas host')
 
-  const [county, subdivisions, places, cdps, districts] = await Promise.all([
+  const [county, subdivisions, places, cdps, districts, tracts, water] = await Promise.all([
     collection(GEO.county),
     collection(GEO.subdivisions),
     collection(GEO.places),
     collection(GEO.cdps),
     collection(GEO.districts),
+    collection(GEO.tracts),
+    collection(GEO.water),
   ])
 
   const eras = spine(records)
@@ -243,6 +252,39 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const populations = districts.features.map((f) => number(f.properties.POP100))
   const breaks = quantileBreaks(populations, 5)
 
+  // Tracts are their own choropleth, with their own breaks. Sharing the precincts' classing
+  // would put every tract in the top class — a tract holds about eight precincts' worth of
+  // people, and a scale built for one grain says nothing at the other.
+  const tractPopulations = tracts.features.map((f) => number(f.properties.POP100))
+  const tractBreaks = quantileBreaks(tractPopulations, 5)
+
+  /** The corpus's containment and location claims, both ends stated. Computed once. */
+  const claims = lines()
+
+  /**
+   * The nine watercourses, and the courses this site can draw for them.
+   *
+   * A river is not at its mouth — the ends are what the corpus states, not where the river is.
+   * See `.yidam/decisions/a-river-is-not-at-its-mouth.yml`.
+   */
+  const watercourses = courses()
+  const named = new Map<string, { properties: FeatureProps }[]>()
+  for (const f of water.features) {
+    const key = f.properties.NAME
+    if (!key) continue
+    named.set(key, [...(named.get(key) ?? []), f])
+  }
+  /** One end of a watercourse, as a mark with the note the corpus attached to it. */
+  interface CourseEnd extends End {
+    label: string
+    which: 'rises' | 'ends'
+  }
+  const courseEnds: CourseEnd[] = []
+  for (const c of watercourses as Course[]) {
+    if (c.source) courseEnds.push({ ...c.source, label: c.label, which: 'rises' })
+    if (c.mouth) courseEnds.push({ ...c.mouth, label: c.label, which: 'ends' })
+  }
+
   /**
    * The view is in the URL, so a year is a thing you can link to.
    *
@@ -266,7 +308,9 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       ? Number(params.get('hops'))
       : 3,
     undated: params.get('undated') === '1',
-    ground: new Set(['subdivisions', 'municipalities']),
+    ground: new Set(
+      (params.get('layers') ?? 'subdivisions,municipalities,water').split(',').filter(Boolean),
+    ),
     selected: params.get('at'),
   }
 
@@ -279,6 +323,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     if (state.generous) q.set('generous', '1')
     if (state.undated) q.set('undated', '1')
     if (state.selected) q.set('at', state.selected)
+    q.set('layers', [...state.ground].toSorted().join(','))
     globalThis.history.replaceState(null, '', `?${q}`)
   }
 
@@ -331,6 +376,12 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
     // A shape may be claimed by more than one record; the map draws each shape once.
     const litKeys = new Set(keyed.map((s) => s.geoid).filter((g) => shapes.has(g)))
+
+    // One fill encoding at a time. A choropleth already owns every pixel of the county, and the
+    // era tint laid over it is two magnitudes in one hue — worst of all at 1940, whose era ink and
+    // the sequential ramp are both blue. When a choropleth is drawn the corpus keeps the outline
+    // and gives up the fill.
+    const choropleth = state.ground.has('population') || state.ground.has('tracts')
     const datelessKeys = new Set(
       keyedUndated.map((s) => s.geoid).filter((g) => shapes.has(g) && !litKeys.has(g)),
     )
@@ -361,8 +412,31 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         pickable: false,
       })
 
+    // The water is not a 2020 statement, so it fades from the year it was fetched instead.
+    const waterGhost = (alpha: number) =>
+      Math.round(alpha * groundFidelity(state.year, WATER_VINTAGE))
+
     return [
       // ---- the ground -------------------------------------------------------
+      state.ground.has('tracts') &&
+        new GeoJsonLayer({
+          id: 'tracts',
+          data: tracts as unknown as object,
+          filled: true,
+          stroked: true,
+          getFillColor: (f: { properties: FeatureProps }) =>
+            rgb(p.ramp[classOf(number(f.properties.POP100), tractBreaks)], ghost(205)),
+          getLineColor: rgb(p.surface, ghost(150)),
+          getLineWidth: 14,
+          lineWidthMinPixels: 0.5,
+          pickable: true,
+          onHover: groundHover((f) => [
+            ['Population', number(f.POP100).toLocaleString('en-US')],
+            ['Housing units', number(f.HU100).toLocaleString('en-US')],
+            ['Census tract', '2020 Census geography'],
+          ]),
+        }),
+
       state.ground.has('population') &&
         new GeoJsonLayer({
           id: 'voting-districts',
@@ -412,6 +486,54 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           onHover: groundHover(() => [['Municipality or CDP', '2020 Census geography']]),
         }),
 
+      // ---- the water --------------------------------------------------------
+      //
+      // Two feature classes, drawn apart. H3010 is a stream or river; H3020 is a canal, ditch or
+      // aqueduct — and in this county that difference is the Great Black Swamp becoming cropland.
+      //
+      // **Only the dug lines fade.** Everything else on this map is a claim about a year and gets
+      // ghosted as the reader travels away from the year it was surveyed. A creek is not: the
+      // Ottawa ran where it runs before any boundary on this plate existed, and fading it at 1832
+      // would say the opposite. A ditch is a thing somebody dug, most of them after 1859, and
+      // drawing one at full strength in 1832 is an anachronism — so the ditches carry the ghost
+      // and the streams do not.
+      state.ground.has('water') &&
+        new GeoJsonLayer({
+          id: 'water',
+          data: water as unknown as object,
+          filled: false,
+          stroked: true,
+          getLineColor: (f: { properties: FeatureProps }) =>
+            f.properties.MTFCC === 'H3020'
+              ? rgb(p.dug, waterGhost(235))
+              : rgb(p.water, 190),
+          getLineWidth: (f: { properties: FeatureProps }) =>
+            f.properties.MTFCC === 'H3020' ? 16 : 26,
+          lineWidthMinPixels: 0.9,
+          lineWidthMaxPixels: 3.5,
+          updateTriggers: { getLineColor: [state.year] },
+          pickable: true,
+          onHover: ({ object, x, y }) => {
+            const f = object as { properties: FeatureProps } | undefined
+            hover = f
+              ? {
+                  x,
+                  y,
+                  kind: 'ground',
+                  title: f.properties.NAME ?? 'Unnamed watercourse',
+                  rows: [
+                    [
+                      f.properties.MTFCC === 'H3020' ? 'Dug' : 'Stream',
+                      f.properties.MTFCC === 'H3020' ? 'canal, ditch or aqueduct' : 'natural channel',
+                    ],
+                    ['TIGER hydrography', 'no vintage — current'],
+                  ],
+                }
+              : null
+            setTooltip()
+          },
+        }),
+
       new GeoJsonLayer({
         id: 'county',
         data: county as unknown as object,
@@ -432,7 +554,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         // deck.gl keeps one dataset and decides per feature, so a shape leaving the window is a
         // colour change rather than a reload of the geometry.
         getFillColor: (f: { properties: FeatureProps }) =>
-          frameKeys.has(f.properties.GEOID)
+          frameKeys.has(f.properties.GEOID) || choropleth
             ? [0, 0, 0, 0]
             : litKeys.has(f.properties.GEOID)
               ? rgb(ink, 34)
@@ -451,7 +573,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         stroked: true,
         pickable: true,
         updateTriggers: {
-          getFillColor: [state.year, state.grain, state.generous, state.hops, state.undated],
+          getFillColor: [state.year, state.grain, state.generous, state.hops, state.undated, choropleth],
           getLineColor: [state.year, state.grain, state.generous, state.hops, state.undated],
         },
         onHover: groundHover((f) => [
@@ -533,6 +655,84 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
             state.selected = a && a.node !== state.selected ? a.node : null
             refresh()
             renderPanel()
+          },
+        }),
+
+      // ---- the corpus's own claims, as lines ---------------------------------
+      //
+      // Twelve of them, and every one runs between two positions the corpus states rather than
+      // two it was routed to. A line between derived marks would draw a relationship between two
+      // guesses, and nothing on this map can say a line is three inferences long.
+      //
+      // This is the corpus-correctness case the map exists for. The Lima refinery's line does not
+      // end in Lima; it crosses into Shawnee Township, which is where the refinery is and is not
+      // what its address said for eleven phases.
+      state.ground.has('claims') &&
+        new ArcLayer<Line>({
+          id: 'claims',
+          data: claims,
+          getSourcePosition: (d) => [d.from.lon, d.from.lat],
+          getTargetPosition: (d) => [d.to.lon, d.to.lat],
+          getSourceColor: rgb(p.selected, 210),
+          getTargetColor: rgb(p.selected, 90),
+          getWidth: 1.6,
+          // Low, so it reads as a claim joining two marks rather than as a flight path.
+          getHeight: 0.22,
+          greatCircle: false,
+          pickable: true,
+          onHover: ({ object, x, y }) => {
+            const d = object as Line | undefined
+            hover = d
+              ? {
+                  x,
+                  y,
+                  kind: 'corpus',
+                  title: d.fromLabel,
+                  rows: [
+                    [d.relationship, d.toLabel],
+                    ['Claim tag', d.tier],
+                    ['Both ends', 'stated, not derived'],
+                  ],
+                }
+              : null
+            setTooltip()
+          },
+        }),
+
+      // ---- where the corpus says a watercourse begins and ends ---------------
+      //
+      // Not a placement. These are the ends of a line, and most of them are in another county —
+      // which is exactly why `crates/placement` does not read them and why the note travels with
+      // the mark.
+      state.ground.has('water') &&
+        new ScatterplotLayer<CourseEnd>({
+          id: 'course-ends',
+          data: courseEnds,
+          getPosition: (d) => [d.lon, d.lat],
+          getRadius: 170,
+          radiusMinPixels: 3,
+          radiusMaxPixels: 7,
+          filled: false,
+          stroked: true,
+          getLineColor: rgb(p.water, 235),
+          lineWidthMinPixels: 1.5,
+          pickable: true,
+          onHover: ({ object, x, y }) => {
+            const d = object as CourseEnd | undefined
+            hover = d
+              ? {
+                  x,
+                  y,
+                  kind: 'corpus',
+                  title: d.label,
+                  rows: [
+                    ['The corpus says it', d.which === 'rises' ? 'rises here' : 'ends here'],
+                    ...(d.note ? ([['', d.note]] as [string, string][]) : []),
+                    ['Claim tag', d.tier ?? 'untagged'],
+                  ],
+                }
+              : null
+            setTooltip()
           },
         }),
 
@@ -699,16 +899,31 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     renderPanel()
   }
 
-  // Legend for the 2020 population scale. A continuous colour encoding without one is
-  // unreadable — and a legend for a layer nobody has asked for is furniture, so it appears and
-  // disappears with the checkbox it explains.
+  /**
+   * The choropleth legend, for whichever grain is drawn.
+   *
+   * A continuous colour encoding without a legend is unreadable, and a legend for a layer nobody
+   * asked for is furniture — so it appears with the checkbox it explains and prints that
+   * checkbox's own breaks. The two grains carry separate breaks on purpose: a tract holds about
+   * eight precincts' worth of people, and a scale built for one grain puts every feature of the
+   * other in its top class.
+   */
   const scale = container.querySelector<HTMLElement>('[data-map-scale]')
+  const scaleTitle = container.querySelector<HTMLElement>('[data-map-scale-title]')
+
   const showScale = () => {
-    if (scale) scale.hidden = !state.ground.has('population')
-  }
-  if (legend) {
+    const grain = state.ground.has('tracts')
+      ? ({ label: 'People per census tract', breaks: tractBreaks, values: tractPopulations } as const)
+      : state.ground.has('population')
+        ? ({ label: 'People per voting district', breaks, values: populations } as const)
+        : null
+
+    if (scale) scale.hidden = grain === null
+    if (!grain || !legend) return
+    if (scaleTitle) scaleTitle.textContent = grain.label
+
     const p = palette()
-    const edges = [0, ...breaks, Math.max(...populations)]
+    const edges = [0, ...grain.breaks, Math.max(...grain.values)]
     legend.innerHTML = p.ramp
       .map(
         (c, i) =>
@@ -776,6 +991,18 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       if (!key) return
       if (input.checked) state.ground.add(key)
       else state.ground.delete(key)
+
+      // The two choropleths are the same variable at two grains, and stacking them draws one on
+      // top of the other for no gain. Showing them one at a time is what makes the pair a
+      // comparison rather than a smear.
+      const other = key === 'tracts' ? 'population' : key === 'population' ? 'tracts' : null
+      if (other && input.checked) {
+        state.ground.delete(other)
+        const twin = container.querySelector<HTMLInputElement>(`[data-layer="${other}"]`)
+        if (twin) twin.checked = false
+      }
+
+      address()
       showScale()
       refresh()
     })
@@ -788,6 +1015,9 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     input.checked = input.value === state.grain
   }
   if (warrant) warrant.value = String(state.hops)
+  for (const input of container.querySelectorAll<HTMLInputElement>('[data-layer]')) {
+    input.checked = state.ground.has(input.dataset.layer ?? '')
+  }
   for (const input of container.querySelectorAll<HTMLInputElement>('[data-toggle]')) {
     if (input.dataset.toggle === 'generous') input.checked = state.generous
     if (input.dataset.toggle === 'undated') input.checked = state.undated

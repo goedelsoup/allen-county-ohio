@@ -10,6 +10,8 @@ import Base from '../layouts/Base.astro'
 import { atlas } from '../lib/feeds'
 import { extent, overlays, ribbon, spine } from '../lib/eras'
 import { unheldShapes } from '../lib/ground'
+import { lines, tally } from '../lib/edges'
+import { UNDRAWN, courses } from '../lib/water'
 
 const eras = spine(atlas)
 const bars = ribbon(eras, atlas)
@@ -40,6 +42,12 @@ const derived = atlas.filter((r) => r.hops !== null && r.hops > 0).length
 
 /** Polygons whose key names a shape this site does not hold — every one a school district. */
 const unheld = unheldShapes(atlas).length
+
+/** What the corpus's own edges draw when the graph is put on the ground, and what they do not. */
+const edges = tally()
+const claims = lines()
+const watercourses = courses()
+const undrawn = Object.entries(UNDRAWN)
 ---
 
 <Base
@@ -56,11 +64,14 @@ const unheld = unheldShapes(atlas).length
           <legend>Ground</legend>
           <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
           <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
-          <label><input type="checkbox" data-layer="population" /> Population, 2020</label>
+          <label><input type="checkbox" data-layer="water" checked /> Water</label>
+          <label><input type="checkbox" data-layer="claims" /> The {claims.length} drawn claims</label>
+          <label><input type="checkbox" data-layer="population" /> People, by precinct</label>
+          <label><input type="checkbox" data-layer="tracts" /> People, by tract</label>
         </fieldset>
 
         <div class="scale" data-map-scale hidden>
-          <span class="scale-title">People per voting district</span>
+          <span class="scale-title" data-map-scale-title>People per voting district</span>
           <div class="ramp" data-map-legend></div>
         </div>
       </div>
@@ -199,7 +210,10 @@ const unheld = unheldShapes(atlas).length
         Every boundary drawn here is 2020 Census geography, and it does not travel. You are
         <span data-readout="vintage">—</span> years from the year it describes, which is why the ground
         fades as you move away from it: Spencer Township was erected out of ground the map already
-        draws as Spencer's, and six of the villages had not been incorporated at all.
+        draws as Spencer's, and six of the villages had not been incorporated at all. The streams
+        are the one thing that does not fade — the Ottawa ran where it runs before any of these
+        lines existed. The ditches fade with everything else, because a ditch is a thing somebody
+        dug.
       </p>
     </div>
 
@@ -244,6 +258,106 @@ const unheld = unheldShapes(atlas).length
       {unheld} of the shapes are school districts whose Census key names a boundary layer this site
       does not hold, so they appear as marks rather than as shapes. Three more — Bath Township, Fort
       Shawnee and Harrod — are shapes with no date, and show only when the undated are drawn.
+    </p>
+  </section>
+
+  <section class="notes">
+    <h2>The graph, on the ground</h2>
+
+    <p class="lede-narrow">
+      The corpus is a graph, and some of its edges are claims about where things are. Turning them
+      on draws the {claims.length} that can be drawn honestly. The interesting number is the other
+      one.
+    </p>
+
+    <table class="ledger">
+      <caption>
+        Every edge the feed publishes, by what it draws. An edge is only drawn between two
+        positions the corpus states — a line between two derived marks would join two guesses, and
+        nothing on a map can say that a line is three inferences long.
+      </caption>
+      <thead>
+        <tr><th scope="col">Drawn as</th><th scope="col">Edges</th><th scope="col">Drawn</th><th scope="col">What it is</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">A line</th>
+          <td>{edges.line.total}</td>
+          <td>{edges.line.drawable}</td>
+          <td>A site naming the ground it stands on, and the one boundary crossing.</td>
+        </tr>
+        <tr>
+          <th scope="row">Nesting</th>
+          <td>{edges.nesting.total}</td>
+          <td>{edges.nesting.drawable}</td>
+          <td>Containment, drawn by the shapes themselves and never by a line between centroids.</td>
+        </tr>
+        <tr>
+          <th scope="row">A course</th>
+          <td>{edges.course.total}</td>
+          <td>0</td>
+          <td>Drainage. The topology is the corpus's; the geometry is not.</td>
+        </tr>
+        <tr>
+          <th scope="row">Nothing</th>
+          <td>{edges.silent}</td>
+          <td>0</td>
+          <td>Not spatial, or already drawn by the mark itself.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two-up">
+      <div>
+        <h3>A line that ends in the wrong township</h3>
+        <p>
+          The {claims.length} drawn lines run from a site to the place its record names. Most land
+          where you would expect. Two do not: the <a href="/entry/site/lima-refinery">Lima refinery</a>
+          and the <a href="/entry/site/lima-army-tank-plant">tank plant</a> both carry Lima
+          addresses and both stand in Shawnee Township, so their lines cross a boundary. A table of
+          edges cannot show that. A line leaving a shape can.
+        </p>
+        <p>
+          Fort Amanda's line is the other kind. It is the corpus's only
+          <code>formerly-in</code> edge, and it exists because <code>located-in</code> carries no
+          date and would assert the present. The fort was in this county from the erection until
+          1848 and now stands a fifth of a mile outside it, so the line crosses the county's own
+          boundary — which is what the edge was coined to say.
+        </p>
+      </div>
+      <div>
+        <h3>A river is not at its mouth</h3>
+        <p>
+          {watercourses.length} watercourses state where they rise and where they end, at real
+          coordinates. Those are not positions: the Ottawa ends in Putnam County, the Auglaize in
+          Defiance County two counties away, and Riley Creek rises in Hancock. Reading a mouth as a
+          location would move three of this county's rivers off this county. They are the ends of a
+          line, and they are drawn as ends, with the note the corpus attached to each.
+        </p>
+        <p>
+          The courses themselves come from the federal water file, like every boundary here — and
+          it does not name all of them. {undrawn.length} of the {watercourses.length} have no course
+          this site can draw:
+        </p>
+        <ul class="undrawn">
+          {
+            undrawn.map(([name, why]) => (
+              <li>
+                <b>{name}</b> — {why}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <p class="caveat">
+      The two grains under <em>People</em> are the same count over the same ground, drawn one at a
+      time because stacking them draws one on top of the other for nothing. The county's own two
+      maps — where a mortgage is hardest to get, against where it is dearest to hold, correlated at
+      0.828 across 34 tracts — are not among them: the record states the correlation and prints ten
+      of the thirty-four rows behind it. That is a gap in tabulation rather than in geometry, and
+      the map waits on it.
     </p>
   </section>
 
@@ -741,6 +855,59 @@ const unheld = unheldShapes(atlas).length
       font-size: 0.9375rem;
       color: var(--text-body);
     }
+    .ledger {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 1.75rem;
+      font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger caption {
+      caption-side: bottom;
+      text-align: left;
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+      padding-top: 0.6rem;
+      max-width: var(--measure-prose);
+    }
+    .ledger th,
+    .ledger td {
+      text-align: left;
+      padding: 0.4rem 0.75rem 0.4rem 0;
+      border-bottom: 1px solid var(--rule-hairline);
+      vertical-align: baseline;
+    }
+    .ledger thead th {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .ledger tbody th {
+      color: var(--text-strong);
+      white-space: nowrap;
+    }
+    .ledger td {
+      color: var(--text-body);
+    }
+    .ledger td:nth-child(2),
+    .ledger td:nth-child(3) {
+      width: 5rem;
+    }
+    .undrawn {
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--text-body);
+      font-size: 0.9375rem;
+    }
+    .undrawn li {
+      margin-bottom: 0.35rem;
+    }
+    .undrawn b {
+      color: var(--text-strong);
+    }
+
     /* The line handing the map's argument to /ground, which now carries it. */
     .handoff {
       max-width: var(--measure-prose);

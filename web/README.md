@@ -160,6 +160,18 @@ came in, with the panel open on it — which is what a reading page links to.
 `src/lib/eras.ts` holds all of it as pure functions over `feeds/atlas.json`, testable without a
 canvas; `src/scripts/map.ts` is the deck.gl scene and nothing else.
 
+**It also carries the graph.** `src/lib/edges.ts` classifies every relationship the feed publishes
+by what it draws on the ground — a line, nesting, a course, or nothing — with the argument beside
+each and a gate on both halves of the table. Twelve edges are drawn as lines, and only between two
+positions the corpus *states*: a line between derived marks would join two guesses, and nothing on
+a map can say a line is three inferences long. Two of the twelve leave the shape they name, which
+is the corpus-correctness case this file predicted.
+
+The refusals are the bigger half and the page prints the ledger. Containment is drawn by the
+shapes themselves; drainage is not drawn at all, because the corpus holds the topology and TIGER
+holds the geometry — see
+[`a-river-is-not-at-its-mouth`](../.yidam/decisions/a-river-is-not-at-its-mouth.yml).
+
 ## Bundle status
 
 <!-- REGEN: yidam bundle-status
