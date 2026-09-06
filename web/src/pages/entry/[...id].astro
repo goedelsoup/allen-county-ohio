@@ -24,6 +24,7 @@ import RelationsList from '../../components/entry/RelationsList.astro'
 import SchemaCard from '../../components/entry/SchemaCard.astro'
 import SourcesList from '../../components/entry/SourcesList.astro'
 import EventBlock from '../../components/entry/class/EventBlock.astro'
+import JurisdictionBlock from '../../components/entry/class/JurisdictionBlock.astro'
 import MeasureBlock from '../../components/entry/class/MeasureBlock.astro'
 import OfficeBlock from '../../components/entry/class/OfficeBlock.astro'
 import PeriodBlock from '../../components/entry/class/PeriodBlock.astro'
@@ -137,6 +138,7 @@ const crumbs = [
       {node.class === 'person' && <PersonBlock node={node} />}
       {node.class === 'question' && <QuestionBlock node={node} concerns={relations.length} />}
       {node.class === 'event' && <EventBlock node={node} />}
+      {node.class === 'jurisdiction' && <JurisdictionBlock node={node} />}
       {node.class === 'period' && <PeriodBlock node={node} />}
 
       {

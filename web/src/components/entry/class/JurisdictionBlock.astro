@@ -1,0 +1,176 @@
+---
+// A jurisdiction is a relator: a government over ground, and the ground is not fixed.
+//
+// That is the whole of the place-versus-corporation distinction this class exists to make, and
+// nothing else on the entry says it. `erected`, `seat` and `fips_code` describe a government that
+// has always been where it is; a boundary history says the ground under it moved, on these dates,
+// by this much, and that a municipality's census figures are therefore about changing ground.
+//
+// **What lights this up is a table, and the join is a key rather than a name.** A measure that
+// `describes` this jurisdiction and keys its table on `place_fips` carries one row per
+// municipality — this one's is the row whose key is its own FIPS code. A measure that describes it
+// and keys on anything else is at the grain of the acts themselves, and both are rendered where
+// the corpus holds them: today that is ten summary rows for the county's ten municipal
+// corporations and eleven dated instruments for Lima, the only one extracted act by act.
+//
+// **Restricted to municipal corporations, and not for tidiness.** A seven-digit GEOID is unique
+// only within its summary level — `3904752` is Beaverdam village and also the Upper Scioto Valley
+// Local School District — so joining a bare code without knowing the level is how a village of 319
+// people gets drawn as a school district. See `censusKey` in `lib/feeds`. The table's key is a
+// place code; only a municipal corporation may be matched against it.
+//
+// **Reporting nothing is a finding and is rendered as one.** Three of the ten filed no boundary
+// change in thirty-five years, and a corporation that never moved its line is the sharpest version
+// of the distinction above — Fort Shawnee is the county's largest village and never once annexed.
+
+import { edges, tableFor, type MeasureTable, type Node } from '../../../lib/feeds'
+import { entryPath } from '../../../lib/entry'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+
+const municipal = node.properties.jurisdiction_type === 'municipal corporation'
+const fips = node.properties.fips_code
+
+// Every table on a measure that describes this jurisdiction. The edge is the claim that the
+// figures are about this government; nothing here reads a filename or a label.
+const described = municipal
+  ? edges
+      .filter((e) => e.to === node.id && e.relationship === 'describes')
+      .map((e) => ({ measure: e.from, table: tableFor(e.from) }))
+      .filter((t): t is { measure: string; table: MeasureTable } => Boolean(t.table))
+  : []
+
+const perPlace = described.find((d) => d.table.columns[0] === 'place_fips')
+const summary = perPlace?.table.rows.find((r) => r[0] === fips)
+const cell = (column: string) => {
+  const i = perPlace?.table.columns.indexOf(column) ?? -1
+  return i > 0 && summary ? summary[i] : undefined
+}
+const records = Number(cell('records') ?? NaN)
+
+// The acts themselves, where a second measure holds them. Any table that is not the per-place one
+// is at that grain, because a table on a measure describing this government is about it.
+const acts = described.find((d) => d !== perPlace)
+---
+
+{
+  summary && (
+    <section class="boundary">
+      <h2 class="section">Boundary, as annexation moved it</h2>
+      {records > 0 ? (
+        <p class="gloss-note">
+          {records}{' '}{records === 1 ? 'boundary change' : 'boundary changes'} reported between{' '}
+          {cell('first')} and {cell('last')}, totalling {cell('acres')} acres — as filed by this
+          government, in <a href={entryPath(perPlace!.measure)}>the county's annexation record</a>.
+          Five of the county's fifty-seven records state no acreage, so a total is a floor.
+        </p>
+      ) : (
+        <p class="gloss-note">
+          No boundary change reported in thirty-five years of the survey, from 1990 to 2024. The
+          corporation stands on the ground it stood on, which is a fact about this government and
+          not a gap in <a href={entryPath(perPlace!.measure)}>the record</a>.
+        </p>
+      )}
+
+      {acts && (
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr>
+                {acts.table.columns.map((c, i) => (
+                  <th scope="col" class:list={[i === acts.table.columns.length - 1 && 'num']}>
+                    {c}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {acts.table.rows.map((row) => (
+                <tr>
+                  {row.map((value, i) => (
+                    <td
+                      class:list={[
+                        i === acts.table.columns.length - 1 && 'num',
+                        value === 'NA' && 'absent',
+                      ]}
+                    >
+                      {value}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {acts && (
+        <p class="note">
+          Each row is one instrument, from <a href={entryPath(acts.measure)}>{acts.table.label}</a>.
+          The survey records what took effect and when, and never which township the acres came
+          from; that is in the census volumes' geographic change notes, at the grain of a decade.
+          An <span class="absent">NA</span> is an act the survey carries with no acreage on it, not
+          an annexation of nothing.
+        </p>
+      )}
+    </section>
+  )
+}
+
+<style>
+  /*
+   * The same furniture as the measure's own table, because it is the same kind of object: rows
+   * the corpus published, set in the data face, with nothing computed from them here.
+   */
+  .boundary {
+    margin: var(--space-9) 0 0;
+  }
+  .section {
+    margin: 0 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+  .gloss-note {
+    margin: 0 0 var(--space-4);
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+  .scroller {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font: var(--type-data);
+    font-size: var(--size-label);
+  }
+  th,
+  td {
+    padding: var(--space-2) var(--space-3) var(--space-2) 0;
+    text-align: left;
+    border-bottom: 1px solid var(--rule-faint);
+  }
+  th {
+    color: var(--text-faint);
+    font-weight: 400;
+  }
+  td {
+    color: var(--text);
+  }
+  .num {
+    text-align: right;
+  }
+  .absent {
+    color: var(--text-faint);
+  }
+  .note {
+    margin: var(--space-4) 0 0;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+</style>
