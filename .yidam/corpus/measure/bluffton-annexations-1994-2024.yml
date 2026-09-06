@@ -1,0 +1,67 @@
+class: measure
+label: Bluffton annexations, 1994–2024
+description: |
+  **Nine acts and 477.5 acres, and the last of them is in another county.** [verified] —
+  [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see
+  [the county's fifty-seven](allen-county-annexations-1990-2024.yml).
+
+  Written out: **Bluffton reported nine boundary changes between 14 October 1994 and 12 November
+  2024, totalling 477.5 acres on the eight that state one.** [verified] — same files. The largest
+  is 132.3 acres effective 25 August 2008, and 1996's 105.7 acres is the next.
+
+  **The last record is a Hancock County boundary change and the survey says so.** Ordinance
+  10-2024, effective 12 November 2024, is the only act in this county's whole record that the file
+  attributes to a county other than Allen — Bluffton is a village on the Allen–Hancock line — and
+  it carries no acreage, so it moves the village's *last* date in
+  [the county table](allen-county-annexations-1990-2024.yml) without adding an acre to its total.
+  [verified] — same files, county column. A reader of that row should know that its right-hand end
+  is ground outside this county. [inference]
+
+  **The county column is why that can be said at all, and it arrives in 2019.** No record in this
+  series before the 2019 survey year carries one, so the seven Bluffton acts of 1994 to 2012 are
+  unattributed: an unknown share of their 442.7 acres may be on the Hancock side. What the file
+  settles is 2018 (Allen) and 2024 (Hancock), and nothing before. [verified] — the two record
+  layouts.
+
+  **Three of the nine carry no instrument number at all**, which is why this table is keyed by
+  date: the 1994, 1995 and 1996 ordinances are reported with a date and an acreage and no number.
+  [verified] — same files.
+properties:
+  parameter: annexations reported by the village of Bluffton
+  value: "9"
+  unit: records
+  as_of: 2024-11-12
+  method: |
+    Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 07426, read from
+    the same sixteen files and two record layouts as
+    [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway
+    through the series abbreviates the instrument to `O` and `R`; both are expanded here to
+    `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the
+    readme's own account of the change. Everything else is the file's, unrounded: `acres` is the
+    survey's estimated area of the change and is absent where the file leaves it so. [verified]
+  table: |
+    date        instrument  kind        acres
+    1994-10-14  NA          Ordinance    20.6
+    1995-02-08  NA          Ordinance    46.2
+    1996-10-10  NA          Ordinance   105.7
+    1997-12-09  587-97      Resolution   50.8
+    2008-03-24  09-08       Ordinance    21.2
+    2008-08-25  20-08       Ordinance   132.3
+    2012-03-21  09-11       Ordinance    65.9
+    2018-10-09  03-19       Resolution   34.8
+    2024-11-12  10-2024     Ordinance      NA
+links:
+  - target: ../jurisdiction/village-of-bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../place/bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: allen-county-annexations-1990-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

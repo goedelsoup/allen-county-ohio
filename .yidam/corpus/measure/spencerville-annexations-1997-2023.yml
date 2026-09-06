@@ -1,0 +1,54 @@
+class: measure
+label: Spencerville annexations, 1997–2023
+description: |
+  **Four acts and 209.7 acres across twenty-six years, three quarters of it in the first one.**
+  [verified] —
+  [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see
+  [the county's fifty-seven](allen-county-annexations-1990-2024.yml).
+
+  Written out: **Spencerville reported four boundary changes between 21 January 1997 and 5 June
+  2023, of 160.0, 15.2, 29.6 and 4.9 acres.** [verified] — same files. Ordinance 97-2 is 76.3 per
+  cent of the whole record and the three acts since 2003 are 49.7 acres between them. [inference] —
+  computed here.
+
+  **Every record this village has is the whole of its recorded boundary history**, and it is the
+  only municipality in the county whose acts are few enough to read as a sentence: one large
+  annexation in 1997, a small one in 2003, and two resolutions in 2004 and 2023 that under the
+  two-instrument reading are the commissioners' half of acts the village completed elsewhere.
+  [inference] — the procedure is
+  [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md); the reading is this
+  corpus's.
+properties:
+  parameter: annexations reported by the village of Spencerville
+  value: "4"
+  unit: records
+  as_of: 2023-06-05
+  method: |
+    Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 74034, read from
+    the same sixteen files and two record layouts as
+    [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway
+    through the series abbreviates the instrument to `O` and `R`; both are expanded here to
+    `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the
+    readme's own account of the change. Everything else is the file's, unrounded: `acres` is the
+    survey's estimated area of the change and is absent where the file leaves it so. [verified]
+  table: |
+    date        instrument  kind        acres
+    1997-01-21  97-2        Ordinance   160.0
+    2003-09-02  03-23       Ordinance    15.2
+    2004-03-15  04-11       Resolution   29.6
+    2023-06-05  23-30       Resolution    4.9
+links:
+  - target: ../jurisdiction/village-of-spencerville.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../place/spencerville.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: allen-county-annexations-1990-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
