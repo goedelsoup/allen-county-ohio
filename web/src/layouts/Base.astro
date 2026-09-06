@@ -2,6 +2,7 @@
 import '../styles/tokens.css'
 import { manifest } from '../lib/feeds'
 import { INSTRUMENTS, MAP, SECTIONS } from '../lib/sections'
+import { plain } from '../lib/prose'
 
 interface Props {
   title: string
@@ -24,7 +25,15 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{documentTitle}</title>
-    <meta name="description" content={lede ?? 'A civic reference for Allen County, Ohio.'} />
+    {/*
+      `plain`, not the lede as written. A description is an attribute, so markup cannot go in it
+      and `inline` is the wrong tool — the words have to arrive as words. 192 pages offered a
+      search result a sentence with `**` in it before this.
+    */}
+    <meta
+      name="description"
+      content={lede ? plain(lede) : 'A civic reference for Allen County, Ohio.'}
+    />
     <link rel="icon" href="data:," />
     {/*
       No <link> to a font CDN, and no preconnect to one.

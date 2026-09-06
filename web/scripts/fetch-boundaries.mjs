@@ -30,6 +30,11 @@ const SERVICE =
  * column. So the water is fetched from here, filtered by the county polygon like the two
  * place layers, and `PROVENANCE.json` records that its vintage is *current* rather than 2020.
  * A layer whose date the site cannot state is a layer the site must not date.
+ *
+ * **Two of its layers, not one.** 0 is the water drawn as line and 1 is the water drawn as area,
+ * and neither is the county's hydrography by itself — a watercourse moves between them at the
+ * width where the Bureau starts drawing two banks instead of one thread. Reading only 0 loses
+ * every river wide enough to be worth the name.
  */
 const HYDRO =
   'https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Hydro/MapServer'
@@ -155,6 +160,43 @@ const LAYERS = [
     // would make this file a cartographer rather than a mirror.
     offset: 0.0002,
   },
+  // The same water, drawn as area rather than as line — and the layer this connector spent its
+  // first five days without.
+  //
+  // A river wide enough to have two banks on the plate is a polygon in TIGER and not a polyline,
+  // so it leaves the linear layer at the point where it becomes worth drawing. That is why the
+  // Ottawa River — the river Lima was built on — is named nowhere in `linear-water.geojson` and
+  // four times here. Layer 0 is not the county's hydrography; layer 0 and layer 1 are.
+  //
+  // The corpus's own catalogue of the shapefile edition said as much on the day it was written —
+  // *the named ones are the rivers, the reservoirs and eight lakes* — and this connector read the
+  // lines anyway. See `a-linear-file-is-not-the-hydrography`.
+  {
+    id: 1,
+    service: HYDRO,
+    file: 'areal-water.geojson',
+    label: 'Areal Hydrography',
+    // **Watercourses only.** The layer is 1,127 polygons in this county and 1,089 of them are a
+    // lake, a pond or a reservoir — mostly farm ponds under an acre. Standing water is a
+    // different subject with a different file behind it, already measured from NHD in
+    // `allen-county-standing-water-2026.yml`; vendoring it a second time here would put two
+    // federal counts of one ground on one map. What this file is for is the courses: H3010 the
+    // natural channel, H3020 the dug one, the same two classes the linear layer carries.
+    where: "MTFCC IN ('H3010','H3020')",
+    fields: ['OID', 'NAME', 'BASENAME', 'MTFCC'],
+    key: 'OID',
+    intersectsCounty: true,
+    // 41 stream or river polygons and one dug line. Twenty carry a name and there are five of
+    // them: the Auglaize six times, Riley Creek six, the Ottawa four, Hog Creek twice and Sugar
+    // Creek twice. Four of those twenty are the finding this layer was added for.
+    //
+    // **This count is filtered by the county polygon at full precision and not by the committed
+    // one.** `county.geojson` is rounded to PRECISION and returns 38 for the same query — four
+    // polygons graze the boundary and fall on the other side of a fifth decimal place. The
+    // number to trust is the one this script computes from the geometry it just fetched.
+    expect: 42,
+    offset: 0.0002,
+  },
 ]
 
 /** Round every coordinate to `PRECISION`, and drop nulls, which ArcGIS emits freely. */
@@ -259,7 +301,15 @@ async function main() {
       layer: layer.id,
       name: layer.label,
       features: features.length,
-      filter: layer.intersectsCounty ? 'intersects the county polygon' : layer.where,
+      // Both halves of the filter, where there are two. `areal-water.geojson` is clipped to
+      // the county *and* restricted to the watercourse classes, and a provenance line naming
+      // only the clip would describe a file that holds 1,127 features when it holds 38.
+      filter: [
+        layer.intersectsCounty ? 'intersects the county polygon' : null,
+        layer.where === '1=1' ? null : layer.where,
+      ]
+        .filter(Boolean)
+        .join(' AND '),
       // Stated per layer rather than once for the file: the water comes from a service with no
       // vintage, and letting it inherit the decennial one would date it to a year nobody
       // published it in.

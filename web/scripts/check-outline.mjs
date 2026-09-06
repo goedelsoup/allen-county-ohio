@@ -27,6 +27,7 @@
 //   1. Exactly one <h1> per page.
 //   2. No skipped rank, in document order.
 //   3. No two <nav> landmarks on a page share an accessible name.
+//   4. No corpus markdown printed instead of rendered, in text or in the description.
 //
 // All three are structural, not stylistic: a screen reader's heading list is the table of
 // contents for a page that has no other, a rank jumped is a level of that outline that does not
@@ -37,6 +38,20 @@
 // concrete: `shape.test.ts` asserts the layout emits exactly `Sections` and `Instruments`, and
 // that was true while `/read/` added a third `<nav aria-label="Sections">` of its own. A check
 // over one source file cannot see what a page composes.
+//
+// ---- The fourth, and why a source-level rule could not have it ----
+//
+// 231 built pages printed `**` and `*` where the corpus wrote emphasis: two components rendered
+// corpus prose without `inline`, `inline` implemented no italic, a bold run containing one
+// matched as neither, and the meta description carried the lede verbatim into an attribute. Four
+// separate causes, one symptom, and none of them visible from inside the source — the failure is
+// a component *not* calling a function, and there is no way to grep for the absence of a call
+// that does not also fire on every component with no prose to render.
+//
+// **It does not ban the asterisk.** Legitimate ones survive rendering and must: inside a
+// `<code>` span the corpus prints TIGER's `*******` fill, and `\*` is how it writes a footnote
+// marker. What is banned is markup that failed to render — a doubled star, a leaked backslash
+// escape, or a paired single star that should have been an `<em>` — and only outside `<code>`.
 
 import { existsSync } from 'node:fs'
 import { readFile, readdir } from 'node:fs/promises'
@@ -82,6 +97,33 @@ const headings = (html) => [...rendered(html).matchAll(/<h([1-6])[\s>]/gi)].map(
 const navNames = (html) =>
   [...rendered(html).matchAll(/<nav\b[^>]*\saria-label=["']([^"']+)["']/gi)].map((m) => m[1])
 
+/** Text a reader sees, with code spans dropped: an asterisk inside one is data, not markup. */
+const readable = (html) =>
+  rendered(html)
+    .replace(/<code\b[^>]*>[\s\S]*?<\/code>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;|&#\d+;/gi, ' ')
+
+/**
+ * Markdown that reached the page as characters.
+ *
+ * Held to markdown's own rule about what could have been emphasis, because the corpus prints
+ * literal asterisks on purpose and they have to survive: `\*` and `\*\*` are how it writes a
+ * first and second footnote marker, and both render as bare stars with a space after them. A
+ * doubled star that *failed* to render has a word hard against it on one side or the other,
+ * which is exactly the condition under which it would have been bold.
+ */
+function unrendered(text) {
+  const found = []
+  if (/\*\*\S/.test(text) || /\S\*\*/.test(text)) found.push('`**`')
+  if (/\\[*_`~$#[\]()!.+-]/.test(text)) found.push('a backslash escape')
+  // A paired single star with no space against the words — markdown's own emphasis rule, and
+  // therefore something that was meant to be an `<em>` and is not. A lone `*` used as a
+  // footnote symbol has a space on one side and is left alone.
+  if (/(?<!\*)\*(?!\*)\S[^*\n]*?\S\*(?!\*)/.test(text)) found.push('a `*…*` run')
+  return found
+}
+
 const findings = []
 let checked = 0
 
@@ -107,6 +149,20 @@ for await (const file of htmlFiles(DIST)) {
     const n = names.filter((other) => other === name).length
     if (n > 1) findings.push(`${page}: ${n} <nav> landmarks both named "${name}"`)
   }
+
+  for (const leak of unrendered(readable(html))) {
+    findings.push(`${page}: ${leak} printed rather than rendered`)
+  }
+
+  // The description is an attribute, so markup cannot go in it and `plain` is what belongs
+  // there. It is checked separately because it is invisible on the page and visible in a
+  // search result, which is the worst way round for something nobody looks at.
+  const description = /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i.exec(html)
+  if (description) {
+    for (const leak of unrendered(description[1])) {
+      findings.push(`${page}: ${leak} in the meta description`)
+    }
+  }
 }
 
 // A check that reports success over nothing is worse than no check: `dist/` is gitignored and
@@ -126,5 +182,6 @@ if (findings.length > 0) {
 }
 
 console.log(
-  `Document structure: ${checked} pages — one h1 each, no skipped rank, no duplicate landmark name.`,
+  `Document structure: ${checked} pages — one h1 each, no skipped rank, no duplicate landmark ` +
+    `name, no unrendered markdown.`,
 )

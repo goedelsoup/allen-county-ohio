@@ -382,7 +382,7 @@ Sorted by: kind, then alphabetically.
 | [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 3 | 5v / 3i / 0o | 54 |
 | [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 5v / 0i / 0o | 57 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 4v / 1i / 0o | 47 |
-| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 12v / 4i / 0o | 90 |
+| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 16v / 5i / 0o | 112 |
 | [riley-creek.yml](natural-feature/riley-creek.yml) | natural-feature | Riley Creek | 4 | 7v / 1i / 0o | 53 |
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 3 | 9v / 1i / 0o | 78 |
 | [sugar-creek.yml](natural-feature/sugar-creek.yml) | natural-feature | Sugar Creek | 3 | 4v / 2i / 1o | 50 |

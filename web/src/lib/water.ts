@@ -4,7 +4,9 @@
 //
 //   **The course** is a line on the ground, and it comes from TIGER's hydrography the way every
 //   boundary on this map comes from TIGER: vendored, provenanced, and never derived from the
-//   corpus.
+//   corpus. It comes from *two* of TIGER's layers, because a watercourse changes shape in that
+//   file at the width where the Bureau starts drawing two banks instead of one thread — see
+//   `UNDRAWN` below, which is where reading only one of them showed up.
 //
 //   **The topology** is the corpus's: which watercourse flows into which, where each rises and
 //   where it ends. Nine nodes state a `source` and a `mouth` as real coordinates, and eight
@@ -20,7 +22,7 @@
 // `affected` edge as where it happened, in a different property.
 //
 // So the nine watercourses stay in the register, placed no finer than the county, and get a
-// second thing instead: two stated endpoints, and a drawn course where the federal file names
+// second thing instead: two stated endpoints, and a drawn course where the federal files name
 // one.
 
 import { nodes, type Node, type Tier } from './feeds'
@@ -43,7 +45,7 @@ export interface Course {
   source: End | null
   /** Where it ends, which is generally in another county. */
   mouth: End | null
-  /** TIGER's spelling of the name, which is how the vendored file is joined. */
+  /** TIGER's spelling of the name, which is how the vendored files are joined. */
   tigerName: string
 }
 
@@ -110,24 +112,41 @@ export function courses(): Course[] {
 }
 
 /**
- * Watercourses the corpus names and the vendored file does not draw inside the county.
+ * Watercourses the corpus names and the vendored files do not draw inside the county.
  *
- * Two kinds, and only the first is unsurprising. The Blanchard and the Maumee are downstream
- * rivers this county's water reaches and never touches — the Blanchard is in Hancock and Putnam,
- * the Maumee runs to Toledo — so a file clipped to Allen County correctly holds neither.
+ * Both entries are now the unsurprising kind. The Blanchard and the Maumee are downstream rivers
+ * this county's water reaches and never touches — the Blanchard is in Hancock and Putnam, the
+ * Maumee runs to Toledo — so files clipped to Allen County correctly hold neither.
  *
- * **The Ottawa is the finding.** It is the river Lima was built on and the one the corpus has
- * most to say about, and TIGER's linear hydrography does not name it anywhere inside the county
- * line. Its named segments begin north of the boundary, in Putnam County, and every segment
- * carrying it through Lima and Allen County is unnamed. So the corpus can say where the Ottawa
- * rises and where it ends, and this site cannot draw a foot of it.
+ * ---- What used to be here, and why it was wrong ----
+ *
+ * **This list held the Ottawa River for five days, and the reason it gave was false.** It said
+ * TIGER names the Ottawa only downstream of the county line. TIGER does no such thing: it names
+ * the Ottawa four times inside Allen County, over 13.25 kilometres, in `areal-water.geojson` —
+ * layer 1 of the same Hydro service the linear file comes from, which this site had not vendored.
+ *
+ * The river was never missing. It was the wrong shape. A watercourse leaves TIGER's linear layer
+ * at the width where the Bureau begins drawing two banks instead of one thread, and the Ottawa
+ * through Lima is past that width — so the linear file carries its channel as unnamed connecting
+ * segments and the areal file carries it under its name. Reading one layer and concluding the
+ * county's principal river is unnamed was reading a file's shape as a fact about the ground.
+ *
+ * NHD says the same thing from the other side, and says it about this exact river: all 42
+ * flowlines it names `Ottawa River` inside the county are FType 558, Artificial Path — the
+ * synthetic centreline a flow network threads through a water *area* when there is a polygon
+ * rather than a channel to follow. Two federal hydrographies, independently, decline to draw this
+ * river as a line here.
+ *
+ * See `a-linear-file-is-not-the-hydrography`.
+ *
+ * ---- The gate ----
  *
  * `geography.test.ts` fails on a name that is here and now resolves, as well as on one that is
- * absent and not here. The second half is what stops this from becoming a list of excuses.
+ * absent and not here. The second half is what stops this from becoming a list of excuses — and
+ * the first half is what would have caught the Ottawa the moment layer 1 arrived, which is why
+ * the entry could not simply be deleted quietly.
  */
 export const UNDRAWN: Record<string, string> = {
-  'Ottawa Riv':
-    'TIGER names the Ottawa only downstream of the county line; every segment inside Allen County is unnamed',
   'Blanchard Riv': 'flows in Hancock and Putnam counties — Riley Creek reaches it, this county does not hold it',
   'Maumee Riv': 'the Auglaize joins it in Defiance County, outside this map',
 }

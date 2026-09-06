@@ -44,7 +44,7 @@ import {
   resolveCorpusLink,
   sourcesFor,
 } from '../../lib/entry'
-import { inline } from '../../lib/prose'
+import { inline, summary } from '../../lib/prose'
 import { articlesAbout } from '../../lib/articles'
 
 export function getStaticPaths() {
@@ -92,7 +92,7 @@ const crumbs = [
 ]
 ---
 
-<Base title={node.label} lede={lede ? lede.text.slice(0, 180) : undefined} bare>
+<Base title={node.label} lede={lede ? summary(lede.text, 180) : undefined} bare>
   <div class="entry-top">
     <Breadcrumb items={crumbs} />
     <a class="back" href={`/entry#${node.class}`}>

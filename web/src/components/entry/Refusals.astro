@@ -4,6 +4,13 @@
 // A refusal is the corpus answering a question with the fact that it cannot answer it. The
 // publication rules require it be carried rather than dropped, and the design already has
 // the right form for it: the framed callout a question uses for what would close it.
+//
+// It is corpus prose and it goes through `inline` like every other block on the page. It did not
+// for a while, and printed 214 raw `**` markers across the site — worst here of anywhere, since
+// this is the one block a reader is asked to take at face value.
+
+import { resolveCorpusLink } from '../../lib/entry'
+import { inline } from '../../lib/prose'
 
 interface Props {
   refusals: string[]
@@ -18,9 +25,9 @@ const { refusals, wouldClose } = Astro.props
     <aside class="refusal">
       <span class="refusal-label">{wouldClose ? 'What would close this' : 'What this entry does not say'}</span>
       {refusals.map((text) => (
-        <p class="refusal-text">{text}</p>
+        <p class="refusal-text" set:html={inline(text, resolveCorpusLink)} />
       ))}
-      {wouldClose && <p class="refusal-close">{wouldClose}</p>}
+      {wouldClose && <p class="refusal-close" set:html={inline(wouldClose, resolveCorpusLink)} />}
     </aside>
   )
 }
