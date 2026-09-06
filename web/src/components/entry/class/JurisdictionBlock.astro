@@ -52,9 +52,13 @@ const cell = (column: string) => {
 }
 const records = Number(cell('records') ?? NaN)
 
-// The acts themselves, where a second measure holds them. Any table that is not the per-place one
-// is at that grain, because a table on a measure describing this government is about it.
-const acts = described.find((d) => d !== perPlace)
+// The acts themselves, where a second measure holds them — recognised by the key rather than by
+// elimination. This read "any table that is not the per-place one" for exactly as long as those
+// were the only two kinds: the 1970 volume's annexed-area table then arrived, describing Lima and
+// Bluffton at neither grain, and would have been drawn under a heading promising one row per
+// instrument. An act list is keyed on the instrument or on its date and nothing else is.
+const ACT_KEYS = ['instrument', 'date']
+const acts = described.find((d) => d !== perPlace && ACT_KEYS.includes(d.table.columns[0]))
 ---
 
 {

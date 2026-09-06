@@ -167,11 +167,12 @@ describe('the join to the ground', () => {
 })
 
 /** The acts table a jurisdiction's entry draws, found the way `JurisdictionBlock` finds it. */
+const ACT_KEYS = ['instrument', 'date']
 function actsFor(id: string) {
   return edges
     .filter((e) => e.to === id && e.relationship === 'describes')
     .map((e) => tableFor(e.from))
-    .find((tb) => tb && tb.columns[0] !== 'place_fips')
+    .find((tb) => tb && ACT_KEYS.includes(tb.columns[0]))
 }
 
 describe('the boundary a jurisdiction entry draws', () => {
@@ -267,5 +268,24 @@ describe('the boundary a jurisdiction entry draws', () => {
     const prose = node(RECORD)?.blocks.map((b) => b.text).join(' ') ?? ''
     expect(prose).toContain('Three villages that annexed nothing')
     expect(prose).not.toMatch(/Four villages that annexed nothing/)
+  })
+
+  it('draws only instrument-grained tables under the acts heading', () => {
+    // The block used to take "any described table that is not the per-place one" as the act list,
+    // which held while those were the only two kinds. The 1970 volume's annexed-area table
+    // describes Lima and Bluffton at neither grain — one row per place, five census columns — and
+    // under the old rule it was eligible to be drawn beside "Each row is one instrument".
+    //
+    // The gate is the key, so a fourth kind of table lands here rather than on the page.
+    const ANNEXED = 'measure/allen-county-annexed-area-1960-1970.yml'
+    expect(tableFor(ANNEXED)?.columns[0]).toBe('place')
+    expect(edges.some((e) => e.from === ANNEXED && e.to === 'jurisdiction/city-of-lima.yml')).toBe(true)
+
+    for (const gov of municipal) {
+      const table = actsFor(gov.id)
+      if (table) expect(ACT_KEYS, `${gov.label} draws a ${table.columns[0]}-keyed table`).toContain(table.columns[0])
+    }
+    expect(actsFor('jurisdiction/city-of-lima.yml')?.rows.length).toBe(11)
+    expect(actsFor('jurisdiction/village-of-bluffton.yml')?.rows.length).toBe(9)
   })
 })

@@ -136,16 +136,22 @@ describe('the comparability tables', () => {
   it('does not claim a judgement where the corpus made none', () => {
     // Most measures have no table, and that is the honest state rather than a gap.
     //
-    // The pinned example has moved once. It was `allen-county-population-1970`, which was
-    // unjudged for want of anyone asking; it is now judged against 2000. The pin is deliberately
-    // a harder case: Lima's 1960 count is unjudged *after* a run of `boundary-comparability`,
-    // which found no boundary change between 1960 and 1970 and reported that this is not evidence
-    // that none occurred. Silence there is a finding rather than a backlog, and if this ever
-    // fails it should be because somebody retrieved the 1970 volume — not because a rule started
-    // filling gaps in.
+    // The pinned example has moved twice, and both moves are the point of it. It was
+    // `allen-county-population-1970`, unjudged for want of anyone asking, until it was judged
+    // against 2000. It became Lima's 1960 count — unjudged *after* a run of
+    // `boundary-comparability` that found no boundary change and reported that this is not
+    // evidence that none occurred — with the note that if it ever failed it should be because
+    // somebody retrieved the 1970 volume. Somebody did. The volume says parts of American and
+    // Perry townships were annexed by Lima city, and that pair is now judged apart.
+    //
+    // So the pin moves to the census the corpus reads *through* rather than around: 1880 through
+    // 1920 as three county histories printed it, which no federal series has been set against.
+    // Silence there is a finding rather than a backlog, and this failing should mean somebody
+    // argued the pair — not that a rule started filling gaps in.
     const measures = nodes.filter((n) => n.class === 'measure')
     expect(comparability.length).toBeLessThan(measures.length)
-    expect(comparabilityFor('measure/lima-population-1850-1960.yml')).toBeUndefined()
+    expect(comparabilityFor('measure/lima-population-1880-1920.yml')).toBeUndefined()
+    expect(judgedApart('measure/lima-population-1970-1990.yml', 'measure/lima-population-1850-1960.yml')).toBe(true)
   })
 })
 
