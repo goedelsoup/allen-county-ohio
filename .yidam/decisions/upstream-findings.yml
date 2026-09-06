@@ -275,12 +275,25 @@ decision: |
   was — but that a gate upstream now keeps it so, which is what the finding asked for and what
   turns an accident of the pin into a property of the template.
 
-  **The workaround is therefore removable and has NOT been removed.** `mise.toml`'s `fmt` and
-  `ci` tasks and the crates job in `.github/workflows/ci.yml` still name eight members instead of
-  `--all`, in the three places whose cost this finding recorded. Removing them is a change to the
-  gate, `crates/publish/tests/gate.rs` holds the member list, and a gate change does not belong
-  in a `vendor:` commit that is meant to be reviewable as one event. It is the next commit, not
-  this one.
+  **The workaround is removed.** `mise.toml`'s `fmt` and `ci` tasks and the crates job in
+  `.github/workflows/ci.yml` say `--all` again, and the three-place member list — whose cost this
+  finding recorded, and whose real failure mode was a ninth crate silently never formatted — is
+  gone. It was removed one commit after the re-vendor rather than inside it, because a gate change
+  does not belong in a commit meant to be reviewable as one event.
+
+  `crates/publish/tests/gate.rs` changed shape rather than losing a test.
+  `both_gates_format_check_every_workspace_member` compared two hand-written lists against the
+  workspace; `both_gates_format_check_the_whole_workspace` asserts instead that neither gate
+  narrows — both must say `--all`, and neither may name `-p`. That is a stronger guarantee, since
+  `--all` cannot check six of eight the way two lists could and a ninth member now needs no edit
+  anywhere. Both mutations were run and both went red.
+
+  **The reintroduction path is named rather than closed.** `--all` still reaches
+  `.vendor/prelude/domains/geodesics/rust`, and if a future re-vendor lands an unclean crate
+  there this gate fails again with no legal repair from inside this repository. What has changed
+  is only that upstream now guarantees cleanliness by gate rather than by accident. The response
+  if it recurs is an upstream report, not a second narrowing — the assertion against `-p` says so
+  at the point somebody would reach for it.
 
   **Finding 7 — a `--check`-gated REGEN block counts git refs, so it cannot be right in two
   checkouts at once.** Filed as goedelsoup/yidam#647.

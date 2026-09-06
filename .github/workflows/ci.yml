@@ -463,7 +463,7 @@ jobs:
       # is read-only and is not rustfmt-clean at every pin. mise.toml's `fmt` and `ci`
       # tasks carry the same list and the same reasoning at length, and `gate.rs` checks
       # that this list, that one, and the workspace's own members are the same eight names.
-      - run: cargo fmt -p chronology -p covering -p ground -p provenance -p placement -p proximity -p publish -p succession -- --check
+      - run: cargo fmt --all -- --check
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test --workspace
       # Doc links from a calculator to the corpus node that says what it is for
