@@ -1,0 +1,137 @@
+id: a-period-is-not-a-date-range
+summary: >-
+  Thirty of the corpus's thirty-six events carry no `situated-in` edge, and that looked like thirty
+  missing edges. It is two different silences. Twelve events fall inside a named period's span and
+  only two of them belong to one; the other eighteen fall in a hole in the period spine, where there
+  is no period to be situated in at all. Containment is neither necessary nor sufficient — the rule
+  is applied in both directions here, adding two edges the dates alone would not have suggested and
+  withdrawing one the dates could not have supported.
+context: |
+  Issue #4 named this as the easy third
+  of three corpus gaps: the event entry draws a tick inside the shaded span of the period it opens,
+  the render works, and "adding the edges is ordinary synthesis and would need no code change."
+
+  It is not ordinary synthesis, and the survey is why. Every event was judged against every period,
+  and the thirty split cleanly in two:
+
+      events                                    36
+        carrying a situated-in edge              6
+        without one                             30
+          a period's span contains the date     12
+          no period's span contains the date    18
+
+  The eighteen are not a backlog. The corpus names seven periods and they cover four spans:
+
+      1845-1910   canal era, and the oil boom overlapping it from 1885
+      1861-1865   the Civil War in Allen County
+      1917-1918   the World War in Allen County
+      1941-1946   the Second World War in Allen County
+      1970-       depopulation, with deindustrialization inside it 1979-2009
+
+  Everything else is a hole, and the events sit in the holes in groups: six before 1845 — the fort,
+  the treaty, the cession, the erection of the county, the removal, the organization of the town of
+  Lima; five between 1919 and 1940 — two changes of municipal government, the jail raid, the buses;
+  seven between 1947 and 1969 — two tornadoes, a flood, a newspaper strike, and the two purchases of
+  ground south of Lima. Not one of them is missing an edge. Each is missing a **target**.
+
+  The twelve that do fall inside a span are the interesting half, because on a containment rule
+  every one of them would get an edge. Five are weather and disaster — a windstorm, winter storms, a
+  hurricane declaration, a pandemic declaration — and four of the five fall inside `depopulation` and
+  `deindustrialization` at once. A tornado is not situated in a depopulation. It happened while one
+  was going on, which is a statement about the calendar.
+
+  And one of the twelve falls inside **two** periods simultaneously: the naming and incorporation of
+  Bluffton, 17 August 1861, is inside the canal era and inside the Civil War. Bluffton is not on the
+  canal and the ballot was not about the war. A containment rule would have to choose between two
+  bands, and there is nothing in the event to choose on.
+decision: |
+  **`situated-in` asserts that the period is what makes the happening legible. A date inside a span
+  is not evidence for it, and a date outside a span is not evidence against it.**
+
+  The test is the period's own stated character, not its bounds: does this event open the period,
+  close it, or is it the period's character producing a particular instrument, act or casualty? If
+  the answer needs the period's dates to be stated at all, there is no edge.
+
+  **Two edges added, both to the canal era, both `inference`.**
+
+  [The first railroad reaching the county](../corpus/event/the-first-railroad-reaches-allen-county.yml),
+  1854. The period's own `boundary_basis` already cites this event node as the argument for its end,
+  and the event already carries an `affected` edge to the canal itself. It is the happening the
+  period is bounded by, which is the same relation
+  [the oil strike](../corpus/event/lima-oil-strike.yml) has to the boom at the other end.
+
+  [The incorporation of Delphos](../corpus/event/the-incorporation-of-delphos-1851.yml), 1851. The
+  period's character is a geographic asymmetry — the canal made the county's west and did not touch
+  Lima — and this is a canal town taking a government six years after the water opened. Delphos is
+  verified as a canal town; that the canal is *why* it stands there is an inference this corpus has
+  been careful to keep as one, and this edge inherits that care rather than escaping it. See
+  [the canal](../corpus/site/miami-and-erie-canal.yml).
+
+  **Both are `inference` and neither can be `verified`, on a rule this makes explicit.** A period
+  named by the corpus cannot have an event verified into it, because no source names it: nothing in
+  Leeson, Miller or Rusler says "the canal era". A period that names an externally-known span can —
+  which is why the three `verified` edges the corpus holds all point at wars, and why every edge
+  pointing at `canal-era`, `lima-oil-boom`, `deindustrialization` and `depopulation` is and will
+  remain an inference. The tag is a fact about the period, not about the strength of the reading.
+
+  **One edge withdrawn.** [The mob at the Allen County jail](../corpus/event/the-mob-at-the-allen-county-jail-1916.yml),
+  30 August 1916, was situated in the World War in Allen County, which begins in April 1917. The
+  node argues the mob from the wet-and-dry quarrel and the sheriff's dry vote and never mentions the
+  war; the edge carried `claim_tag: inference` and no sentence anywhere supporting it. It is the
+  nearest band, not the period the event belongs to.
+
+  **The eighteen are one gap and are recorded as one**, in the manner of
+  [the boundary gap](the-boundary-gap.yml). What the corpus is short of is not edges but periods:
+  it has named the county's three wars, its canal, its oil and its decline, and nothing between 1919
+  and 1940 or between 1947 and 1969, which is most of the century in which the county was largest.
+  That is a synthesis target, and it is a real one — but a period is an argued interpretation of a
+  span, and four of them authored to give eighteen ticks a band each would be
+  the tail writing the dog.
+rationale: |
+  **Why the containment reading is tempting and wrong.** It is computable, it needs no judgement, and
+  it would have filled twelve of the thirty edges in an afternoon. It is also the exact shape of a
+  mistake this corpus has recorded twice already, under two other names.
+  [comparability is a judgement, not a join](comparability-is-a-judgement-not-a-join.yml) refused to
+  infer that two measures of one subject could be compared because their filenames lined up.
+  [a river is not at its mouth](a-river-is-not-at-its-mouth.yml) refused to place a river at a
+  coordinate it genuinely holds, because a stated endpoint is not a position. This is the third: a
+  stated date inside stated bounds is not a belonging.
+
+  **The evidence that the corpus already knew this is in the edge that is being withdrawn.** The
+  1916 mob was situated in a period beginning seven months after it — so whoever drew that edge was
+  not applying a containment rule either. They were reaching for the nearest band, which is the same
+  error with the arithmetic switched off. An unargued edge that happens to violate the rule it was
+  not following is the clearest possible demonstration that the rule needs writing down.
+
+  **What the withdrawal costs, stated plainly.** The corpus loses a rendered band on one entry and
+  keeps a claim it can defend. The event is not weakened: it holds a verified account, a named
+  sheriff, a named prisoner and a place in a sequence of three attacks on one building across
+  sixty-one years, which is more than the band was adding.
+
+  **Why the two additions are worth their thinness.** Two edges from thirty is a poor return on a
+  survey, and the return is not the edges. It is the eighteen — a count nobody had, of events the
+  corpus holds with dates it trusts, sitting in decades it has never interpreted. That number is
+  only visible once containment has been rejected, because under a containment rule the question
+  "which events have no period to belong to" cannot be asked: they would all have one as soon as
+  somebody wrote a period wide enough.
+
+  **Alternatives considered.**
+
+  *Draw the band from the containing period automatically, and drop the edge.* Rejected, and it is
+  the strongest alternative because it would make the entry render for twelve more events at no
+  authoring cost. It moves the claim from the graph into the template, where it carries no
+  `claim_tag`, no source and no argument — and Bluffton, inside two periods at once, has no answer
+  the template could compute.
+
+  *Author the missing periods.* Rejected in this phase and not in principle. The 1947–1969 hole in
+  particular has a shape already visible in the corpus — a tank depot expanded in 1951, Ford
+  assembling plant ground in 1955, manufacturing at a level the deindustrialization node measures
+  from 1969 and calls a plateau. That is the beginning of an argument for a period and it is not one
+  yet, and [one period was doing two jobs](one-period-was-doing-two-jobs.yml) is the record of what
+  it costs to name a span from one subject and apply it to another.
+
+  *Loosen `situated-in` to mean "during".* Rejected as the end of the class. `period` exists because
+  the ontology separates a happening from an interpretation of a span; a relation meaning "during"
+  is a date comparison, and the corpus can already do date comparison without an edge.
+status: accepted
+date: "2026-09-06"
