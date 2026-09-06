@@ -79,6 +79,23 @@ export const HELD_KEYS = new Set(FILES.flatMap(keys))
 export const FRAME_KEYS = new Set(keys('county'))
 
 /**
+ * The county's outline, as the positions TIGER draws it with.
+ *
+ * For a figure that needs the frame and not the map: an event's track means nothing without the
+ * shape it crossed, and loading deck.gl and nine GeoJSON files onto an entry page to draw one
+ * outline would be a map's cost for a diagram's job.
+ *
+ * **It is a 2020 outline like every other boundary here**, and a figure drawing 1965 on it owes
+ * the reader the same caveat `groundFidelity()` makes on the map. The county's own limits have
+ * not moved since 1848, which is why this particular anachronism is a small one — but it is the
+ * figure's job to say so, not this function's to pretend otherwise.
+ */
+export function countyRing(): { lat: number; lon: number }[] {
+  const feature = shape('county').features[0]
+  return feature.geometry.coordinates[0].map(([lon, lat]) => ({ lat, lon }))
+}
+
+/**
  * Records that state a Census key for a shape this site does not hold.
  *
  * Empty today, and kept because the day it stops being empty is the day a page needs to say so.
