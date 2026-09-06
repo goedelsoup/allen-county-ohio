@@ -5,11 +5,14 @@ import {
   assertions,
   comparability,
   comparabilityFor,
+  comparableWith,
   edges,
+  judgedApart,
   manifest,
   mapPoints,
   nodes,
   series,
+  seriesById,
 } from '../src/lib/feeds'
 
 // The feeds are written by `crates/publish`, which gates them. These tests are the other
@@ -216,5 +219,57 @@ describe('the series the charts read', () => {
     const county = series.find((s) => s.id === 'place-allen-county::total-resident-population')
     const in2020 = county?.points.filter((p) => p.as_of.startsWith('2020')) ?? []
     expect(in2020).toHaveLength(2)
+  })
+})
+
+describe('drawing a line through a series', () => {
+  const county = seriesById('place-allen-county::total-resident-population')
+  const lima = seriesById('place-lima::total-resident-population')
+
+  it('keeps the enumeration off the estimates line, because the corpus says so', () => {
+    // The pair the site had been separating by matching `-census` in a filename. The judgement
+    // it stands on is `allen-county-population-2020 --not-comparable-to-> the census count`.
+    const line = comparableWith(county.points, 'measure/allen-county-population-2024.yml')
+    expect(line.map((p) => p.node)).toEqual([
+      'measure/allen-county-population-1970.yml',
+      'measure/allen-county-population-2000.yml',
+      'measure/allen-county-population-2010.yml',
+      'measure/allen-county-population-2020.yml',
+      'measure/allen-county-population-2024.yml',
+    ])
+    expect(comparableWith(lima.points, 'measure/lima-population-2024.yml').map((p) => p.node)).toEqual([
+      'measure/lima-population-2000.yml',
+      'measure/lima-population-2010.yml',
+      'measure/lima-population-2020.yml',
+      'measure/lima-population-2024.yml',
+    ])
+  })
+
+  it('draws the other line when the other figure is the anchor', () => {
+    // The judgement says the two may not share a line. It does not say which one to keep, and
+    // this is not computed from the graph: a page that wants the enumeration asks for it and
+    // gets the estimates dropped instead.
+    const line = comparableWith(county.points, 'measure/allen-county-population-2020-census.yml')
+    expect(line.map((p) => p.node)).not.toContain('measure/allen-county-population-2020.yml')
+    expect(line.map((p) => p.node)).not.toContain('measure/allen-county-population-2024.yml')
+    expect(line.map((p) => p.node)).toContain('measure/allen-county-population-2010.yml')
+  })
+
+  it('keeps a figure the corpus has said nothing about', () => {
+    // Silence is not a judgement of not-comparable. 2000 and 2010 are unjudged against
+    // anything and stay on the line; if that ever becomes a judgement, this test is where the
+    // consequence shows up.
+    expect(judgedApart('measure/allen-county-population-2010.yml', 'measure/allen-county-population-2000.yml')).toBe(false)
+    expect(comparableWith(county.points, 'measure/allen-county-population-2024.yml').map((p) => p.as_of)).toContain('2010-04-01')
+  })
+
+  it('refuses an anchor that is not in the series', () => {
+    expect(() => comparableWith(county.points, 'measure/lima-population-2024.yml')).toThrow()
+  })
+
+  it('reads a judgement in either direction', () => {
+    const [a, b] = ['measure/lima-population-2020.yml', 'measure/lima-population-2020-census.yml']
+    expect(judgedApart(a, b)).toBe(true)
+    expect(judgedApart(b, a)).toBe(true)
   })
 })

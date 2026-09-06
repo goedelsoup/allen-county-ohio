@@ -64,6 +64,22 @@ describe('how pages are allowed to build one', () => {
     expect(offenders).toEqual([])
   })
 
+  it('no page decides which figures to plot by matching a node filename', () => {
+    // `people.astro` kept the 2020 enumeration off the estimates line with
+    // `!p.node.includes('-census')` — the right behaviour, reached by a route no gate could
+    // see. Rename a node, or hold a census figure whose name does not end in `-census`, and
+    // the chart starts mixing two instruments with everything still green. Which figures may
+    // share a line is a judgement the corpus records; `comparableWith` is how a page reads it.
+    const offenders = pageFiles()
+      .filter(({ source }) =>
+        /\.filter\((?:\([^)]*\)|\w+)\s*=>[^)]*\.node\.(includes|startsWith|endsWith|match)\(/.test(
+          source,
+        ),
+      )
+      .map(({ name }) => name)
+    expect(offenders).toEqual([])
+  })
+
   it('every page that plots imports the constructors from the module without Plotly in it', () => {
     // A value import from `scripts/charts` pulls Plotly into the server build, where it
     // throws on `self is not defined`. That is why the specs were type-imported, and why the
