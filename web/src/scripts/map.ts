@@ -56,6 +56,8 @@ type RGBA = [number, number, number, number]
 
 interface FeatureProps {
   GEOID: string
+  /** Stamped on at load from the file the feature came out of — see `LEVELS`. */
+  LEVEL: string
   NAME: string
   BASENAME?: string
   POP100?: string
@@ -65,6 +67,15 @@ interface FeatureProps {
 
 type Collection = { type: 'FeatureCollection'; features: { properties: FeatureProps }[] }
 
+/**
+ * How a vendored shape is addressed: its summary level, then its key.
+ *
+ * A GEOID is unique only inside its level, and this county proves it — `3904752` is Beaverdam
+ * village and the Upper Scioto Valley Local School District. Every index over `public/geo/` is
+ * keyed through here. See `a-geoid-is-not-an-address`.
+ */
+const shapeKey = (f: { properties: FeatureProps }) => `${f.properties.LEVEL}:${f.properties.GEOID}`
+
 const GEO = {
   county: '/geo/county.geojson',
   subdivisions: '/geo/county-subdivisions.geojson',
@@ -72,6 +83,7 @@ const GEO = {
   cdps: '/geo/census-designated-places.geojson',
   districts: '/geo/voting-districts.geojson',
   tracts: '/geo/census-tracts.geojson',
+  schools: '/geo/school-districts.geojson',
   water: '/geo/linear-water.geojson',
 } as const
 
@@ -213,13 +225,14 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const scrub = container.querySelector<HTMLInputElement>('[data-scrub]')
   if (!canvasHost) throw new Error('the map has no canvas host')
 
-  const [county, subdivisions, places, cdps, districts, tracts, water] = await Promise.all([
+  const [county, subdivisions, places, cdps, districts, tracts, schools, water] = await Promise.all([
     collection(GEO.county),
     collection(GEO.subdivisions),
     collection(GEO.places),
     collection(GEO.cdps),
     collection(GEO.districts),
     collection(GEO.tracts),
+    collection(GEO.schools),
     collection(GEO.water),
   ])
 
@@ -229,12 +242,30 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
    * Every Census shape the site holds, by key.
    *
    * A polygon whose key is not in here is not a defect in the corpus — it is a shape this
-   * repository has not vendored. The twelve school districts are all of them, and the panel says
-   * so rather than dropping them.
+   * repository has not vendored, and the panel says so rather than dropping it. There are none
+   * today; the school districts were the last twelve and arrived with layer 12.
    */
+  /**
+   * The summary level each file holds. Places and CDPs share one, because the Census gives them
+   * one code space; school districts have their own, which is what makes this table necessary
+   * rather than decorative — `3904752` is Beaverdam village *and* Upper Scioto Valley Local.
+   */
+  const LEVELS: [Collection, string][] = [
+    [county, 'county'],
+    [subdivisions, 'county-subdivision'],
+    [places, 'place'],
+    [cdps, 'place'],
+    [schools, 'school-district'],
+  ]
+
+  /** The level is stamped onto the feature once, here, so nothing downstream has to remember it. */
+  for (const [c, level] of LEVELS) {
+    for (const f of c.features) f.properties.LEVEL = level
+  }
+
   const shapes = new Map<string, { properties: FeatureProps }>()
-  for (const c of [county, subdivisions, places, cdps]) {
-    for (const f of c.features) shapes.set(f.properties.GEOID, f)
+  for (const [c] of LEVELS) {
+    for (const f of c.features) shapes.set(shapeKey(f), f)
   }
   /**
    * The county's own key. Its shape is the whole frame, so it is stroked and never filled —
@@ -242,11 +273,11 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
    * inside it, and says nothing the outline was not already saying. Same argument the labels
    * make about the county's centroid, one encoding along.
    */
-  const frameKeys = new Set(county.features.map((f) => f.properties.GEOID))
+  const frameKeys = new Set(county.features.map(shapeKey))
 
   const shapeSource = {
     type: 'FeatureCollection',
-    features: [...county.features, ...subdivisions.features, ...places.features, ...cdps.features],
+    features: LEVELS.flatMap(([c]) => c.features),
   }
 
   const populations = districts.features.map((f) => number(f.properties.POP100))
@@ -375,7 +406,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     const keyedUndated = shaded(dateless)
 
     // A shape may be claimed by more than one record; the map draws each shape once.
-    const litKeys = new Set(keyed.map((s) => s.geoid).filter((g) => shapes.has(g)))
+    const litKeys = new Set(keyed.map((s) => s.key).filter((k) => shapes.has(k)))
 
     // One fill encoding at a time. A choropleth already owns every pixel of the county, and the
     // era tint laid over it is two magnitudes in one hue — worst of all at 1940, whose era ink and
@@ -383,7 +414,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     // and gives up the fill.
     const choropleth = state.ground.has('population') || state.ground.has('tracts')
     const datelessKeys = new Set(
-      keyedUndated.map((s) => s.geoid).filter((g) => shapes.has(g) && !litKeys.has(g)),
+      keyedUndated.map((s) => s.key).filter((k) => shapes.has(k) && !litKeys.has(k)),
     )
 
     // The county's own node is excluded from labelling: its extent is the whole frame, so a
@@ -467,6 +498,32 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           lineWidthMinPixels: 1,
           pickable: true,
           onHover: groundHover(() => [['Civil subdivision', '2020 Census geography']]),
+        }),
+
+      // The school districts, drawn whole and allowed to leave the frame.
+      //
+      // Twelve of the seventeen have territory in another county, so a good part of this layer
+      // is outside the county outline — which is the point. A district clipped at the line would
+      // draw a shape that does not exist and let the reader believe the county contains it.
+      // Stroke only and no fill: they tile the county, so filling them is a second choropleth
+      // over whatever is already there. See `a-district-is-not-cut-at-the-county-line`.
+      state.ground.has('schools') &&
+        new GeoJsonLayer({
+          id: 'school-districts',
+          data: schools as unknown as object,
+          filled: false,
+          stroked: true,
+          // Lighter than the township lines and much lighter than the county outline, which is
+          // drawn after this and has to read first: a district running off the frame only means
+          // *past the county* if the reader can see where the county is.
+          getLineColor: rgb(p.faint, ghost(150)),
+          getLineWidth: 45,
+          lineWidthMinPixels: 1,
+          pickable: true,
+          onHover: groundHover((f) => [
+            ['Population', number(f.POP100).toLocaleString('en-US')],
+            ['Unified school district', '2020 Census geography'],
+          ]),
         }),
 
       state.ground.has('municipalities') &&
@@ -554,17 +611,17 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         // deck.gl keeps one dataset and decides per feature, so a shape leaving the window is a
         // colour change rather than a reload of the geometry.
         getFillColor: (f: { properties: FeatureProps }) =>
-          frameKeys.has(f.properties.GEOID) || choropleth
+          frameKeys.has(shapeKey(f)) || choropleth
             ? [0, 0, 0, 0]
-            : litKeys.has(f.properties.GEOID)
+            : litKeys.has(shapeKey(f))
               ? rgb(ink, 34)
-              : datelessKeys.has(f.properties.GEOID)
+              : datelessKeys.has(shapeKey(f))
                 ? rgb(p.undated, 46)
                 : [0, 0, 0, 0],
         getLineColor: (f: { properties: FeatureProps }) =>
-          litKeys.has(f.properties.GEOID)
+          litKeys.has(shapeKey(f))
             ? rgb(ink, 240)
-            : datelessKeys.has(f.properties.GEOID)
+            : datelessKeys.has(shapeKey(f))
               ? rgb(p.undated, 190)
               : [0, 0, 0, 0],
         getLineWidth: 44,
@@ -577,7 +634,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           getLineColor: [state.year, state.grain, state.generous, state.hops, state.undated],
         },
         onHover: groundHover((f) => [
-          ['In force', litKeys.has(f.GEOID) ? 'in this window' : 'the corpus gives no date'],
+          ['In force', litKeys.has(`${f.LEVEL}:${f.GEOID}`) ? 'in this window' : 'the corpus gives no date'],
           ['Boundary', '2020 Census geography'],
         ]),
       }),

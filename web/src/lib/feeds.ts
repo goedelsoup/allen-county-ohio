@@ -132,8 +132,25 @@ export interface AtlasAnchor {
   lon: number | null
   /** A Census key where the anchor is a shape. Joined to `public/geo/` by the site. */
   geoid: string | null
+  /** The summary level the key belongs to, without which it identifies nothing — see {@link censusKey}. */
+  level: string | null
   /** Empty where the node states its own position. */
   via: AtlasStep[]
+}
+
+/**
+ * How a Census shape is addressed on this site: the summary level, then the key.
+ *
+ * **A GEOID is unique only within its summary level.** This county holds the proof — `3904752`
+ * is Beaverdam village and also the Upper Scioto Valley Local School District, both seven
+ * digits, both vendored in `public/geo/`. Indexing shapes by bare GEOID draws a village of 319
+ * people as a school district spanning two counties, silently and with no error anywhere.
+ *
+ * So every index over vendored geometry is keyed through here, and a feature that cannot name
+ * its level is not addressable rather than addressable-by-luck.
+ */
+export function censusKey(level: string | null | undefined, geoid: string | null | undefined): string | null {
+  return level && geoid ? `${level}:${geoid}` : null
 }
 
 /**

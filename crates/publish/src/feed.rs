@@ -12,7 +12,7 @@ use crate::derived::Resolved;
 use crate::load::{Class, Node};
 use crate::tier::Tier;
 use serde::Serialize;
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, HashMap};
 
 /// The feed contract version.
 ///
@@ -470,6 +470,11 @@ pub struct AtlasAnchor {
     /// A Census key, where the anchor is a shape rather than a point. The site joins it to
     /// `public/geo/`; nothing on this side of the boundary knows where a polygon is.
     pub geoid: Option<String>,
+    /// The summary level `geoid` belongs to, without which the key does not identify anything:
+    /// `3904752` is Beaverdam village *and* the Upper Scioto Valley Local School District, and
+    /// a consumer indexing shapes by bare GEOID draws one as the other. `county`, `place`,
+    /// `county-subdivision` or `school-district`.
+    pub level: Option<&'static str>,
     /// The edges followed to reach it, in order. Empty where the node is its own anchor.
     pub via: Vec<AtlasStep>,
 }
@@ -595,6 +600,32 @@ fn placement_graph(nodes: &[Node], ceiling: Tier) -> placement::Graph {
     g
 }
 
+/// The Census summary level a key belongs to — and without which the key means nothing.
+///
+/// **A GEOID is unique only inside its summary level**, and this county holds a live collision
+/// to prove it: `3904752` is Beaverdam village *and* the Upper Scioto Valley Local School
+/// District. Both are seven digits, both are in `public/geo/`, and a site indexing shapes by
+/// bare GEOID draws a village of 319 people as a school district spanning two counties.
+///
+/// Length settles every other case, because the Census builds the key out of the levels above
+/// it: five digits is state and county, seven is state and place, ten is state, county and
+/// county subdivision. Only the seven-digit case is ambiguous, and the corpus already carries
+/// what resolves it — a school district node says so in `jurisdiction_type`.
+///
+/// `None` for a key of a length this corpus has not met. A caller that cannot name the level
+/// should refuse the join rather than guess it.
+fn geoid_level(key: &str, stated: Option<&Node>) -> Option<&'static str> {
+    if stated.and_then(|n| n.property("jurisdiction_type")) == Some("school district") {
+        return Some("school-district");
+    }
+    match key.len() {
+        5 => Some("county"),
+        7 => Some("place"),
+        10 => Some("county-subdivision"),
+        _ => None,
+    }
+}
+
 fn tier_word(raw: Option<&String>) -> Option<Tier> {
     match raw.map(String::as_str) {
         Some("verified") => Some(Tier::Verified),
@@ -621,6 +652,7 @@ fn tier_word(raw: Option<&String>) -> Option<Tier> {
 /// for whoever next touches it.
 pub fn atlas(nodes: &[Node], ceiling: Tier) -> Vec<AtlasRecord> {
     let graph = placement_graph(nodes, ceiling);
+    let by_id: HashMap<&str, &Node> = nodes.iter().map(|n| (n.id.as_str(), n)).collect();
     let mut records: Vec<AtlasRecord> = nodes
         .iter()
         .filter_map(|node| {
@@ -663,12 +695,15 @@ pub fn atlas(nodes: &[Node], ceiling: Tier) -> Vec<AtlasRecord> {
                     p.reached
                         .iter()
                         .map(|r| {
-                            let (lat, lon, geoid) = match &r.anchor {
+                            let (lat, lon, geoid, level) = match &r.anchor {
                                 placement::Anchor::Point { lat, lon } => {
-                                    (Some(*lat), Some(*lon), None)
+                                    (Some(*lat), Some(*lon), None, None)
                                 }
                                 placement::Anchor::Census { key } => {
-                                    (None, None, Some(key.clone()))
+                                    // The level is a fact about the *stating* node, which on a
+                                    // routed anchor is not the node being placed.
+                                    let stated = by_id.get(r.node.as_str()).copied();
+                                    (None, None, Some(key.clone()), geoid_level(key, stated))
                                 }
                             };
                             AtlasAnchor {
@@ -676,6 +711,7 @@ pub fn atlas(nodes: &[Node], ceiling: Tier) -> Vec<AtlasRecord> {
                                 lat,
                                 lon,
                                 geoid,
+                                level,
                                 via: r
                                     .via
                                     .iter()
