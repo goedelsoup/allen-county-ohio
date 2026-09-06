@@ -1,0 +1,112 @@
+class: measure
+label: Allen County's median household income, 1989–2024
+description: |
+  **The median household in Allen County earned ninety-seven cents on the national dollar in 1989
+  and eighty-three in 2024, and that fall is one of the few things in this series large enough to
+  clear its own interval.** [verified] —
+  [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), thirty-one
+  produced years. As a share of the national median the county's bounds are 89.3 to 104.2 per cent
+  in 1989 and 79.5 to 86.3 in 2024, and the two do not overlap.
+
+  **In figures: $27,967 in 1989 and $67,677 in 2024, which is $70,750 and $67,677 in the dollars of
+  2024.** [verified] — the same source, deflated here with
+  [the all-items consumer price index](../../catalog/bls-cpi.md). The national median went from
+  $73,125 to $81,604 in the same dollars, a rise of 11.6 per cent, while this county's fell 4.3.
+
+  **The fall in real income on its own does not separate, and the fall relative to the nation
+  does.** The county's 1989 bounds are $65,275 and $76,194 in 2024 dollars against $64,897 and
+  $70,457 for 2024, which overlap. Divided by a national median whose own interval is a few hundred
+  dollars wide, the same two years part company. [verified] — the same source, its published bounds
+  and the national row. That is what a ratio buys over a level, and it is the reason this node
+  leads with the share. See
+  [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml).
+
+  **The floor is 2012 and the county has not been back to where it started.** Real median household
+  income was $70,930 in 1998 and $57,620 in 2012, a fall of 18.8 per cent, and the 2024 figure of
+  $67,677 is below 1998, below 1989 and below the single highest year in the series, which is 2019
+  at $71,498. [verified] — the same source, deflated here. Two of the thirty-one years stand above
+  1989 — 1998 and 2019 — and twenty-eight stand below it.
+
+  **This node does not know why the share fell.** Median household income moves with what work pays,
+  with how many earners a household has, with who moves away and with who is left, and this file
+  separates none of them. See
+  [what money reaches this county](allen-county-personal-income-1969-2024.yml), which counts the
+  income and not the household.
+
+  **The survey puts the same figure lower and the two overlap.** The five-year American Community
+  Survey gives $62,001 ± $2,572 for 2023 and this file gives $65,665 with bounds of $60,301 and
+  $71,029. [verified] — [the survey](allen-county-income-and-poverty-2023.yml) and the same source.
+  They are not independent: the model reads the survey.
+
+  [open] Whether the 2019 and 2023 jumps are the county or the model. Real income rises $8,661 in
+  2019 and $2,878 in 2023 on a series whose year-to-year moves this file cannot resolve, and both
+  years sit beside a change in how the survey behind the model was collected.
+properties:
+  table: |
+    year  median     lo     hi  real2024  us_real2024  pct_of_us
+    1989   27967  25803  30119     70750        73125       96.8
+    1993   30415  28236  32583     66027        67820       97.4
+    1995   32890  29892  35871     67698        70140       96.5
+    1997   35411  32332  38474     69209        72324       95.7
+    1998   36857  33817  39881     70930        74833       94.8
+    1999   36534  34243  38979     68789        76626       89.8
+    2000   38345  35600  41302     69851        76491       91.3
+    2001   37506  35030  40157     66433        74796       88.8
+    2002   37621  35127  40291     65599        73948       88.7
+    2003   39069  36723  41565     66606        73850       90.2
+    2004   39134  36784  41634     64986        73621       88.3
+    2005   41270  38927  43613     66287        74273       89.2
+    2006   43156  40756  45555     67151        75390       89.1
+    2007   43840  41116  46564     66326        76765       86.4
+    2008   44360  40920  47800     64631        75804       85.3
+    2009   39318  36748  41888     57489        73432       78.3
+    2010   41196  39587  42805     59263        71995       82.3
+    2011   41453  39767  43139     57808        70428       82.1
+    2012   42173  39804  44542     57620        70187       82.1
+    2013   43274  40587  45961     58271        70357       82.8
+    2014   43602  40496  46708     57775        71099       81.3
+    2015   49297  46661  51933     65244        73818       88.4
+    2016   47924  44647  51201     62637        75305       83.2
+    2017   51325  48772  53878     65682        77214       85.1
+    2018   50301  46615  53987     62837        77373       81.2
+    2019   58271  54137  62405     71498        80628       88.7
+    2020   52558  47055  58061     63702        81619       78.0
+    2021   52518  49467  55569     60798        80708       75.3
+    2022   60384  56317  64451     64724        80128       80.8
+    2023   65665  60301  71029     67602        80011       84.5
+    2024   67677  64897  70457     67677        81604       82.9
+  parameter: Allen County's median household income as a share of the national median
+  value: "82.9"
+  unit: per cent of the national median in 2024, against 96.8 in 1989
+  as_of: "2024"
+  method: |
+    `median`, `lo` and `hi` are the file's own nominal figures and ninety per cent bounds.
+    `real2024` and `us_real2024` are deflated with the annual average all-items consumer price
+    index for all urban consumers, series `CUUR0000SA0`, on a 2024 base. [verified] `pct_of_us` is
+    computed on the nominal figures, where the deflator cancels, so it does not depend on the price
+    index at all. [verified] Separation is tested by whether two ninety per cent intervals overlap.
+    [verified] Every produced year was taken except 1996, whose every path answers HTTP 520.
+    [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-saipe-county.md
+  - target: allen-county-poverty-1989-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-saipe-county.md
+  - target: allen-county-income-and-poverty-2023.yml
+    relationship: comparable-to
+    claim_tag: verified
+    source: ../../catalog/census-saipe-county.md
+    because: >-
+      Both figures are the median income of a household in Allen County in the same year, and their
+      intervals overlap — $62,001 ± $2,572 against $65,665 with bounds of $60,301 and $71,029. They
+      may be set beside each other and they are not two witnesses: this model reads that survey as
+      an input, so agreement between them is one instrument agreeing with itself.
+  - target: allen-county-personal-income-1969-2024.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of

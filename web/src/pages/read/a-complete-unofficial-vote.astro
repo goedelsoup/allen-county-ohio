@@ -1,0 +1,163 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion, tableFor } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const returns = assertion('three-returns-out-of-the-forty-year-hole')
+const unofficial = assertion('every-canvass-calls-itself-unofficial')
+const share = assertion('the-republican-share-of-three-elections')
+const sentence = assertion('1952-is-a-sentence-not-a-count')
+const window = assertion('the-window-narrows-to-seven')
+const hole = assertion('the-1940-election-is-in-a-five-month-hole')
+
+const ballot = assertion('the-only-whole-county-ballot-before-1960')
+const spread = assertion('eighteen-points-down-one-ballot')
+const lausche = assertion('lausche-almost-carried-the-county')
+const coroner = assertion('the-coroner-outpolled-the-president')
+const questions = assertion('both-state-questions-passed')
+const sheriffs = assertion('two-sheriffs-one-ballot')
+
+const ballotTable = tableFor('measure/allen-county-ballot-1956.yml')
+
+const returnsSpec = bar(
+  returns.figures.map((f) => f.label),
+  returns.figures.map((f) => f.value),
+  { yTitle: 'Votes', labelValues: true },
+)
+const shareSpec = bar(
+  share.figures.map((f) => f.label),
+  share.figures.map((f) => f.value),
+  { yTitle: 'Republican share of the two-party vote', tickSuffix: '%', labelValues: true },
+)
+const spreadSpec = bar(
+  spread.figures.map((f) => f.label),
+  spread.figures.map((f) => f.value),
+  { yTitle: 'Republican share of the two-party vote', tickSuffix: '%', labelValues: true },
+)
+const coronerSpec = bar(
+  coroner.figures.map((f) => f.label),
+  coroner.figures.map((f) => f.value),
+  { yTitle: 'Votes', labelValues: true },
+)
+const sheriffsSpec = bar(
+  sheriffs.figures.map((f) => f.label),
+  sheriffs.figures.map((f) => f.value),
+  { yTitle: 'Votes for sheriff, November 1944', labelValues: true },
+)
+---
+
+<Article slug="a-complete-unofficial-vote">
+  <p>
+    Between the presidential election of 1920 and the one of 1960 there is a stretch of forty years
+    in which nobody has been able to say how Allen County voted. The state's own digitized returns
+    stop at 1920; the federal reference volumes that carry a county's vote begin at 1960; the two
+    compilations that would bridge them are not scanned. The answer for four of those elections
+    turns out to be in a village weekly, on the front page, the week after.
+  </p>
+
+  <h2>Three counts and a sentence</h2>
+  <AssertionCard assertion={returns} open />
+  <ChartFigure
+    id="returns"
+    title="Allen County's presidential vote, as the county's own paper counted it"
+    caption="From the Bluffton News of 9 November 1944, 4 November 1948 and 8 November 1956, each printing the Board of Elections' canvass office by office."
+    columns={['Candidate and year', 'Votes']}
+    rows={returns.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="returns" set:html={JSON.stringify(returnsSpec)} is:inline />
+  <AssertionCard assertion={share} open />
+  <ChartFigure
+    id="share"
+    title="The Republican share of the two-party presidential vote"
+    caption="Two-party, because the paper prints two names under For President and nothing under them. The three denominators are 111 precincts, 112 precincts, and a number the 1956 table does not give."
+    columns={['Year', 'Republican share']}
+    rows={share.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+  <AssertionCard assertion={unofficial} />
+  <p>
+    Every one of these tables tells you what it is. That is more than most of the certified-looking
+    figures in a reference work do, and it decides what may be done with them: a comparison inside
+    one table is safe, because every contest in it was counted by the same boards on the same night
+    out of the same precincts. A subtraction between two of them is not, because 111 precincts and
+    112 precincts are different denominators and the third table does not say what its denominator
+    was.
+  </p>
+  <AssertionCard assertion={sentence} open />
+  <p>
+    The 1952 canvass is on the page with its offices and candidates perfectly legible and no number
+    anywhere near them — not garbled, absent. A column that fails to scan does not announce itself
+    the way a column that scans badly does, so 1952 is held here as a direction and not as a count.
+  </p>
+
+  <h2>Seven elections left</h2>
+  <AssertionCard assertion={window} open />
+  <AssertionCard assertion={hole} open />
+  <p>
+    The remaining seven are 1912, 1916, 1924, 1928, 1932, 1936 and 1940 — and 1940 is the one this
+    paper would have settled. The archive holds it week by week through the eighth of August and
+    picks up again on the ninth of January, and the election falls in the middle of what is missing.
+    For the other six there is no Allen County newspaper in the national archive at all: the run
+    begins in 1939.
+  </p>
+
+  <h2>One night's whole ballot</h2>
+  <AssertionCard assertion={ballot} open />
+  <AssertionCard assertion={spread} open />
+  <ChartFigure
+    id="spread"
+    title="Three races on one ballot, November 1956"
+    caption="President, governor and United States senator, as the same voters marked them on the same night."
+    columns={['Office', 'Republican share']}
+    rows={spread.figures.map((f) => [f.label, `${f.value.toFixed(1)}%`])}
+  />
+  <script type="application/json" data-chart-spec="spread" set:html={JSON.stringify(spreadSpec)} is:inline />
+  <AssertionCard assertion={lausche} open />
+  <p>
+    An eighteen-point spread from the top of a ballot to the middle of it is the whole argument
+    against reading a county's presidential vote as its politics. The same electorate that gave
+    Eisenhower seven votes in ten came within sixteen hundred of sending a Democrat to the Senate,
+    and it was not confusion: Frank Lausche was a governor this county had already preferred to a
+    Taft four years earlier.
+  </p>
+  <AssertionCard assertion={coroner} open />
+  <ChartFigure
+    id="coroner"
+    title="The three largest vote totals on the ballot"
+    caption="An unopposed candidate on a partisan ballot draws from both columns, which is why the coroner and the state senator outpolled the president."
+    columns={['Office', 'Votes']}
+    rows={coroner.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="coroner" set:html={JSON.stringify(coronerSpec)} is:inline />
+  <AssertionCard assertion={questions} />
+  {
+    ballotTable && (
+      <DataTable
+        title="The whole county ballot, 6 November 1956"
+        caption="Twenty-seven contests as the Bluffton News printed them. NP marks the five judicial races, which Ohio elects without party labels; NA marks a ballot question or a candidate with no opponent printed."
+        columns={ballotTable.columns}
+        rows={ballotTable.rows}
+      />
+    )
+  }
+
+  <h2>Two sheriffs, one ballot</h2>
+  <AssertionCard assertion={sheriffs} open />
+  <ChartFigure
+    id="sheriffs"
+    title="Dailey against Daley"
+    caption="The Allen County canvass of November 1944, under For Sheriff. The roster of past sheriffs lists the two spellings as two men in adjacent terms; here they are, on one ballot, against each other."
+    columns={['Candidate', 'Votes']}
+    rows={sheriffs.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="sheriffs" set:html={JSON.stringify(sheriffsSpec)} is:inline />
+  <p>
+    The sheriff's roster gave two names one letter apart in consecutive terms, and there was no way
+    to know whether that was two men or one man and a typist. It is two men. The sitting sheriff
+    lost his office in November 1944 to a challenger whose name almost nobody could have said aloud
+    without ambiguity, by three thousand two hundred and forty votes.
+  </p>
+</Article>

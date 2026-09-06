@@ -1,0 +1,107 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const struck = assertion('what-the-tornado-struck')
+const injuries = assertion('two-injuries-named-and-thirty-counted')
+const clock = assertion('the-paper-and-the-file-disagree-about-the-clock')
+const money = assertion('a-million-dollars-apart')
+
+const second = assertion('a-second-storm-the-file-does-not-hold')
+const track = assertion('five-miles-in-a-semicircle-around-bluffton')
+const roads = assertion('twenty-four-hours-to-open-the-roads')
+const woodlots = assertion('what-a-gauge-cannot-record')
+
+const basins = assertion('one-storm-two-basins')
+const main = assertion('ice-broke-the-village-water-main')
+const pumped = assertion('twelve-houses-pumped-out-in-near-zero-weather')
+const quarry = assertion('the-creek-and-the-quarry-at-one-level')
+const day = assertion('the-creek-rose-a-day-before-the-river')
+
+const moneySpec = bar(
+  money.figures.map((f) => f.label),
+  money.figures.map((f) => f.value),
+  { yTitle: 'Property damage, dollars of 1950', labelValues: true },
+)
+---
+
+<Article slug="what-the-paper-saw">
+  <p>
+    Two of the events in this county's record were put there by machines. A row in a federal storm
+    file made a tornado; a river gauge reading of 7,740 cubic feet a second made a flood. Both
+    carried the same admission in different words — this is a number and it does not know what it
+    did. The county's own weekly newspaper answers both, and disagrees with the machines about the
+    clock, the cost, and how many storms there were.
+  </p>
+
+  <h2>What the tornado struck</h2>
+  <AssertionCard assertion={struck} open />
+  <AssertionCard assertion={injuries} open />
+  <p>
+    Two named injuries against thirty counted is not a contradiction. The paper is published in
+    Bluffton, at the far end of a track that started on the south-east side of Lima, and it reports
+    the end of the storm because that is where its subscribers were. Lima's casualties are in
+    nobody's account that survives here, because none of the city's sixty-six newspaper titles was
+    ever digitized.
+  </p>
+  <AssertionCard assertion={clock} open />
+  <AssertionCard assertion={money} open />
+  <ChartFigure
+    id="money"
+    title="What the same tornado cost, according to two sources"
+    caption="A village weekly writing eight days after the storm, against a national compilation assembled later. Both are in 1950 dollars and neither is stated here as the figure."
+    columns={['Source', 'Property damage']}
+    rows={money.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="money" set:html={JSON.stringify(moneySpec)} is:inline />
+
+  <h2>The storm that is in no file</h2>
+  <AssertionCard assertion={second} open />
+  <AssertionCard assertion={track} />
+  <p>
+    An hour of separation and a different bearing fit two storms, and they fit one storm touching
+    down twice. The paper's own word is "apparently". What is not in doubt is that a damaging wind
+    crossed the county's northern edge that evening and left barns down around Beaverdam, and that
+    the file which opens this county's weather record with a single tornado has no row for it.
+  </p>
+  <AssertionCard assertion={roads} open />
+  <AssertionCard assertion={woodlots} open />
+  <p>
+    That is the half of an event no instrument will ever hold: trees two feet through twisted off,
+    the tops taken out of everything left standing, and dead rabbits and pheasants underneath
+    because the storm came up too fast for anything to reach shelter. A file can tell you an F3
+    tornado ran 9.7 miles. It cannot tell you a woodlot will be a mass of debris for months.
+  </p>
+
+  <h2>One storm, two basins</h2>
+  <AssertionCard assertion={basins} open />
+  <p>
+    This is the trap. The account is in exactly the right week, it is vivid, it is local, and it is
+    about a different river. Bluffton sits on Big Riley Creek, which
+    drains north to the Blanchard; the gauge that recorded the largest flow ever measured on the
+    Ottawa is twenty miles south. Same rain, same two days, different water — and the basin with
+    the description had no instrument in it while the basin with the instrument left no
+    description.
+  </p>
+  <AssertionCard assertion={main} open />
+  <AssertionCard assertion={pumped} open />
+  <AssertionCard assertion={quarry} />
+  <p>
+    Ice six to eight inches thick came down the creek and hit the bridges, in the paper's phrase,
+    with the impact of trucks. It broke the water main at the Main street bridge, and the valve that
+    should have isolated it was corroded shut, so the village had to close a second valve much
+    further back and take a large part of Main street off the water with it. Then the temperature
+    dropped to near zero, and the crews spent the night pumping basements so that furnaces could be
+    lit.
+  </p>
+  <AssertionCard assertion={day} open />
+  <p>
+    The creek was a Wednesday and the river was a Thursday, which is what a small watershed and a
+    large one do with the same rain. Neither source knows about the other. Putting them beside each
+    other is the whole of what a corpus is for, and keeping them apart — not letting four feet of
+    water in a lumber yard become a description of the Ottawa — is the rest of it.
+  </p>
+</Article>
