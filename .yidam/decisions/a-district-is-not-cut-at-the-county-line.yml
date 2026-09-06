@@ -1,0 +1,99 @@
+id: a-district-is-not-cut-at-the-county-line
+summary: >-
+  Twelve of the corpus's jurisdictions are school districts, and until now the site held no
+  outline for any of them: TIGERweb serves Unified School Districts from a layer the connector did
+  not ask for, so twelve territories drew as dots. The layer is vendored now — and it is vendored
+  **whole**. Seventeen districts have territory in Allen County and only five are wholly this
+  county's, so most of this layer lies outside the county line and the map lets it. Clipping would
+  be cheaper to look at and false about the object.
+context: |
+  [The travelling map](a-derived-placement-is-a-claim.yml) shades a corpus node's own Census key,
+  and said on the page how many keys it could not shade. The number was twelve and every one was a
+  school district — the corpus knew where each district was and this repository held no outline
+  for it, so a district drew as a mark at whatever position it reached.
+
+  That was recorded rather than hidden, which was the right thing to do with it and not a reason
+  to leave it. A school district is a *territory*: it is drawn on the ground, it is what the
+  corpus's school nodes are inside of, and twelve of the county's jurisdictions were the only ones
+  on the map that never got a shape.
+
+  The layer is TIGERweb `tigerWMS_Census2020` layer 12, and it carries `GEOID` like every other.
+  It has no `COUNTY` column, which is the case the two place layers already handle by filtering on
+  the county polygon. So the fetch was one more entry in `LAYERS`.
+
+  What the fetch returned was not twelve.
+
+      seventeen districts have territory in Allen County
+      twelve of those seventeen also lie in another county
+      five are wholly this county's — Allen East, Bath, Elida, Lima City, Perry
+      five have no node in this corpus at all
+
+  Ohio draws a district to hold a population, not to fit a county. Ada, Cory-Rawson, Jennings,
+  Upper Scioto Valley and Wapakoneta reach in from Hardin, Hancock, Putnam and Auglaize, and the
+  corpus already knew one of them was here: the Bluffton node records that 92 of the village's
+  people are in the Cory-Rawson district, on the Hancock County side.
+decision: |
+  **The districts are vendored whole and drawn whole. The frame is not a claim about extent.**
+
+  Three ways were open and they are not equivalent:
+
+  | | what it draws | what it says |
+  |---|---|---|
+  | Whole | the district, running past the county outline | this is the district, and the county is a line across it |
+  | Clipped | the part inside Allen County | this is the district |
+  | Vendored whole, drawn clipped | the same picture | the same false thing, with more machinery |
+
+  The middle row is the one to refuse. **The part of Pandora-Gilboa inside Allen County is not a
+  school district; it is the corner of one.** A clipped shape is a new object that no source
+  published and no reader asked for, and it is indistinguishable on the page from a district that
+  really does end at the county line — of which there are five, and they are the interesting ones.
+
+  So: `fetch-boundaries.mjs` asks for every district intersecting the county polygon and stores
+  the geometry as it comes. `map.ts` draws them stroke-only, under an off checkbox, and the county
+  outline stays on top saying where the county is.
+
+  **The five are computed, never typed.** `ground.ts::containedInCounty` tests every vertex of
+  every district against the county ring, and the index page prints what it returns. The test is
+  *inside*, with a tolerance of about two metres: a district edge that follows the county line is
+  stored twice, once in each file, and `PRECISION` rounds the two independently — without the
+  tolerance Allen East and Elida read as leaving a county they do not leave.
+
+  **The gate is that not all of them are contained.** Clipped, every district would sit inside the
+  county and `containedInCounty` would return seventeen. `geography.test.ts` asserts it returns
+  fewer, then asserts it returns exactly the five and names them.
+rationale: |
+  **Why this is the same argument the map has already made once.**
+
+  The one line this map draws across the county boundary is Fort Amanda's `formerly-in`, and it
+  exists precisely to show a boundary moving: the fort was in this county until 1848 and is now
+  outside it. A map that cut the districts at the county line would be saying, in a second place,
+  that the frame is the world. It is not — it is where this repository is looking.
+
+  **Why the five without nodes are drawn anyway.**
+
+  Same rule the places layer already follows. Cridersville village crosses in from Auglaize County
+  and the corpus has no node for it, and `geography.test.ts` pins that: geometry the corpus does
+  not name is a fact about the county, not a defect. The five uncatalogued districts are pinned by
+  name the same way, so the day one of them is catalogued is a day somebody notices.
+
+  **What it cost, which is the part worth recording.**
+
+  The issue estimated one entry in `LAYERS` and no new mechanism. That was wrong. The seventeenth
+  district shares its key with a village, and the collision made a whole class of address unsound
+  — see [a geoid is not an address](a-geoid-is-not-an-address.yml). The layer could not be
+  vendored until the key was fixed, and the fix reached `crates/publish`, the atlas feed and both
+  shape indexes. An estimate made from the shape of the connector could not have seen it, and the
+  test that caught it was an arithmetic check written for a different reason.
+
+  **What is not settled.**
+
+  *The five uncatalogued districts have no nodes.* They serve people in this county and the corpus
+  says nothing about them. That is a gap in the corpus, not in the layer, and this record does not
+  close it.
+
+  *A district drawn whole has no encoding for "continues past the edge".* A reader who does not
+  know the county outline is the county outline can read a district running off the frame as a
+  district running off the map. The outline is drawn last and heaviest, which is the whole of the
+  answer today.
+status: accepted
+date: "2026-09-06"

@@ -22,7 +22,7 @@ import StatTile from '../components/StatTile.astro'
 import { assertion, atlas, manifest, node, seriesById } from '../lib/feeds'
 import { SECTIONS } from '../lib/sections'
 import { extent, overlays, ribbon, spine } from '../lib/eras'
-import { unheldShapes } from '../lib/ground'
+import { containedInCounty, layerSize, unheldShapes } from '../lib/ground'
 import { lines, tally } from '../lib/edges'
 import { UNDRAWN, courses } from '../lib/water'
 
@@ -53,8 +53,16 @@ const unplaced = atlas.filter((r) => r.treatment === 'unplaced').length
 const stated = atlas.filter((r) => r.hops === 0).length
 const derived = atlas.filter((r) => r.hops !== null && r.hops > 0).length
 
-/** Polygons whose key names a shape this site does not hold — every one a school district. */
+/**
+ * Polygons whose key names a shape this site does not hold. None today — the twelve school
+ * districts were the last of them — and the sentence that reports them is written to disappear
+ * rather than to print a zero.
+ */
 const unheld = unheldShapes(atlas).length
+
+/** The school districts, which are the one layer here that is not cut at the county line. */
+const districts = layerSize('school-districts')
+const districtsWithin = containedInCounty('school-districts').length
 
 // The county in four numbers, and the three claims it opens with.
 
@@ -94,6 +102,7 @@ const undrawn = Object.entries(UNDRAWN)
           <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
           <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
           <label><input type="checkbox" data-layer="water" checked /> Water</label>
+          <label><input type="checkbox" data-layer="schools" /> School districts</label>
           <label><input type="checkbox" data-layer="claims" /> The {claims.length} drawn claims</label>
           <label><input type="checkbox" data-layer="population" /> People, by precinct</label>
           <label><input type="checkbox" data-layer="tracts" /> People, by tract</label>
@@ -284,9 +293,19 @@ const undrawn = Object.entries(UNDRAWN)
     </div>
 
     <p class="caveat">
-      {unheld} of the shapes are school districts whose Census key names a boundary layer this site
-      does not hold, so they appear as marks rather than as shapes. Three more — Bath Township, Fort
-      Shawnee and Harrod — are shapes with no date, and show only when the undated are drawn.
+      {
+        unheld > 0 && (
+          <>
+            {unheld} of the shapes name a Census boundary layer this site does not hold, so they
+            appear as marks rather than as shapes.{' '}
+          </>
+        )
+      }
+      The school districts are drawn whole rather than cut at the county line, so much of that
+      layer lies outside the county outline: {districts} districts have territory here and {
+        districtsWithin
+      } of them are wholly this county's. Three shapes carry no date — Bath Township, Fort Shawnee
+      and Harrod — and show only when the undated are drawn.
     </p>
   </section>
 

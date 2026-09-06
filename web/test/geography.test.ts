@@ -1,8 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { atlas, mapPoints } from '../src/lib/feeds'
-import { FRAME_KEYS, HELD_KEYS, unheldShapes } from '../src/lib/ground'
+import { atlas, censusKey, mapPoints } from '../src/lib/feeds'
+import { FRAME_KEYS, HELD_KEYS, containedInCounty, unheldShapes } from '../src/lib/ground'
 import { UNDRAWN, courses, tigerName } from '../src/lib/water'
 
 // The map draws corpus nodes onto vendored Census geometry and joins the two by GEOID. That
@@ -35,6 +35,7 @@ const layers: Record<string, Feature[]> = {
   'census-designated-places.geojson': layer('census-designated-places'),
   'voting-districts.geojson': layer('voting-districts'),
   'census-tracts.geojson': layer('census-tracts'),
+  'school-districts.geojson': layer('school-districts'),
   'linear-water.geojson': layer('linear-water'),
 }
 
@@ -48,6 +49,21 @@ const layers: Record<string, Feature[]> = {
 const ENTITY = Object.keys(layers).filter((f) => f !== 'linear-water.geojson')
 
 const known = new Set(ENTITY.flatMap((f) => layers[f]).map((f) => f.properties.GEOID))
+
+/**
+ * The summary level each shape file holds — the site's own table, restated.
+ *
+ * Not shared with `ground.ts` on purpose: a check that imports the table it is checking cannot
+ * fail when the table is wrong. Places and CDPs share a level because the Census gives them one
+ * code space; school districts have their own, which is what makes a bare GEOID ambiguous here.
+ */
+const LEVELS: Record<string, string> = {
+  county: 'county',
+  'county-subdivisions': 'county-subdivision',
+  places: 'place',
+  'census-designated-places': 'place',
+  'school-districts': 'school-district',
+}
 
 describe('the vendored geography', () => {
   it('is the 2020 vintage the corpus cites', () => {
@@ -119,40 +135,44 @@ describe('the corpus-to-geometry join', () => {
 
 describe('the shapes the travelling map can draw', () => {
   /**
-   * `/map` shades a corpus node's own Census key, and says on the page how many keys it cannot
+   * The map shades a corpus node's own Census key, and says on the page how many keys it cannot
    * shade. Both halves have to be checked or the page keeps a number that used to be true.
    *
-   * The unheld keys are the twelve school districts. TIGERweb serves Unified School Districts
-   * from a layer `fetch-boundaries.mjs` does not ask for, so the corpus knows where those
-   * districts are and this site does not hold their outlines. That is a gap worth stating rather
-   * than a defect worth hiding, and vendoring the layer is what closes it.
+   * The unheld keys were the twelve school districts until layer 12 was vendored, and the
+   * count is zero now. That is the reason the checks below are written as *nothing is unheld*
+   * and *nothing is silently dropped* rather than as a list: a rule that names its exceptions
+   * has to be rewritten every time the exceptions change, and gets switched off instead.
    */
   it('holds every key it says it holds', () => {
     expect(HELD_KEYS.size).toBe(
       layers['county.geojson'].length +
         layers['county-subdivisions.geojson'].length +
         layers['places.geojson'].length +
-        layers['census-designated-places.geojson'].length,
+        layers['census-designated-places.geojson'].length +
+        layers['school-districts.geojson'].length,
     )
   })
 
   it('names the county as the frame rather than as a place on it', () => {
     // Filling the frame tints every pixel inside it. The map strokes this key and never fills it.
-    expect([...FRAME_KEYS]).toEqual(layers['county.geojson'].map((f) => f.properties.GEOID))
+    expect([...FRAME_KEYS]).toEqual(
+      layers['county.geojson'].map((f) => `county:${f.properties.GEOID}`),
+    )
   })
 
-  it('cannot draw exactly the districts, and can draw everything else', () => {
-    const unheld = unheldShapes(atlas)
-    expect(unheld.length).toBeGreaterThan(0)
-    for (const r of unheld) expect(r.node).toMatch(/school-district/)
+  it('can draw every shape the corpus keys', () => {
+    // Was twelve school districts; is nothing. The failure message carries the labels rather
+    // than a count, because the useful question on the day this breaks is *which*.
+    const unheld = unheldShapes(atlas).map((r) => `${r.label} (${r.node})`)
+    expect(unheld, 'corpus polygons with no vendored shape').toEqual([])
 
-    const drawable = atlas.filter(
-      (r) => r.treatment === 'polygon' && r.hops === 0 && !unheld.includes(r),
-    )
+    const drawable = atlas.filter((r) => r.treatment === 'polygon' && r.hops === 0)
     for (const r of drawable) {
       for (const a of r.anchors) {
         if (a.geoid === null) continue
-        expect(HELD_KEYS.has(a.geoid), `${r.node} keys ${a.geoid}`).toBe(true)
+        const key = censusKey(a.level, a.geoid)
+        expect(key, `${r.node} keys ${a.geoid} at no summary level`).not.toBeNull()
+        expect(HELD_KEYS.has(key as string), `${r.node} keys ${key}`).toBe(true)
       }
     }
   })
@@ -163,13 +183,87 @@ describe('the shapes the travelling map can draw', () => {
     const unheld = new Set(unheldShapes(atlas).map((r) => r.node))
     for (const r of atlas) {
       if (r.treatment !== 'polygon' || r.hops !== 0) continue
-      const keys = r.anchors.map((a) => a.geoid).filter((g): g is string => g !== null)
+      const keys = r.anchors
+        .map((a) => censusKey(a.level, a.geoid))
+        .filter((k): k is string => k !== null)
       if (keys.length === 0) continue
       expect(keys.every((k) => HELD_KEYS.has(k)) || unheld.has(r.node), r.node).toBe(true)
     }
   })
+
+  it('gives every key it draws a summary level, because a bare GEOID is not an address', () => {
+    // The defect vendoring the districts exposed: `3904752` is Beaverdam village and the Upper
+    // Scioto Valley Local School District, and an index over bare GEOIDs resolves the village to
+    // whichever layer loaded last. Both halves are checked — every key carries a level, and no
+    // two features share a levelled key.
+    const unlevelled = atlas
+      .filter((r) => r.treatment === 'polygon' && r.hops === 0)
+      .flatMap((r) => r.anchors.filter((a) => a.geoid !== null && a.level === null).map(() => r.node))
+    expect(unlevelled, 'atlas anchors with a key and no level').toEqual([])
+
+    expect(HELD_KEYS.size).toBe(
+      Object.keys(LEVELS).reduce((n, file) => n + layers[`${file}.geojson`].length, 0),
+    )
+  })
 })
 
+
+describe('the school districts, which are mostly not this county\'s', () => {
+  const districts = layers['school-districts.geojson']
+  const within = new Set(containedInCounty('school-districts'))
+  const catalogued = new Set(
+    atlas
+      .filter((r) => r.node.includes('school-district'))
+      .flatMap((r) => r.anchors.map((a) => a.geoid))
+      .filter((g): g is string => g !== null),
+  )
+
+  it('holds every district with territory in the county', () => {
+    expect(districts).toHaveLength(17)
+  })
+
+  it('draws them whole rather than cutting them at the county line', () => {
+    // The decision this layer carries, stated as the thing a clip would break. Clipped, every
+    // district would be contained by the county and this would read 17 — so the check is not
+    // that the number is five but that it is *not all of them*.
+    expect(within.size).toBeLessThan(districts.length)
+    expect(within.size).toBe(5)
+  })
+
+  it('names the five that do not leave the county', () => {
+    // Pinned, because the count above is only meaningful if it is the right five. Allen East
+    // and Elida are here on a tolerance: their northern edges are the county line, stated to
+    // five decimal places in two files that rounded it independently.
+    const names = districts
+      .filter((f) => within.has(f.properties.GEOID))
+      .map((f) => f.properties.NAME.replace(' School District', ''))
+      .toSorted()
+    expect(names).toEqual(['Allen East Local', 'Bath Local', 'Elida Local', 'Lima City', 'Perry Local'])
+  })
+
+  it('holds a shape for every district the corpus catalogues', () => {
+    const keys = new Set(districts.map((f) => f.properties.GEOID))
+    expect(catalogued.size).toBe(12)
+    expect([...catalogued].filter((k) => !keys.has(k)), 'catalogued with no shape').toEqual([])
+  })
+
+  it('holds five districts the corpus does not name, and does not pretend otherwise', () => {
+    // The other half of the Cridersville rule one describe up: geometry the corpus has no node
+    // for is a fact about the county, not a defect — and pinning the list is what makes the day
+    // one of them gets catalogued a day somebody notices.
+    const unnamed = districts
+      .filter((f) => !catalogued.has(f.properties.GEOID))
+      .map((f) => f.properties.NAME.replace(' School District', ''))
+      .toSorted()
+    expect(unnamed).toEqual([
+      'Ada Exempted Village',
+      'Cory-Rawson Local',
+      'Jennings Local',
+      'Upper Scioto Valley Local',
+      'Wapakoneta City',
+    ])
+  })
+})
 
 describe('the water', () => {
   const water = layers['linear-water.geojson'] as unknown as {

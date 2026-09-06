@@ -31,7 +31,7 @@
 // why that stretch is a unit. The reader gets an axis that is always somewhere and a set of names
 // that mean something, and neither has to pretend to be the other.
 
-import type { AtlasRecord } from './feeds'
+import { censusKey, type AtlasRecord } from './feeds'
 
 /**
  * One step of the design system's era ramp.
@@ -297,14 +297,20 @@ export function anchored(records: AtlasRecord[]): Anchored[] {
  * ground it actually reached, and says so.
  */
 export interface Shaded {
-  geoid: string
+  /** `level:geoid` — see {@link censusKey}. A bare GEOID does not identify a shape. */
+  key: string
   record: AtlasRecord
 }
 
 export function shaded(records: AtlasRecord[]): Shaded[] {
   return records
     .filter((r) => r.treatment === 'polygon' && r.hops === 0)
-    .flatMap((r) => r.anchors.filter((a) => a.geoid).map((a) => ({ geoid: a.geoid as string, record: r })))
+    .flatMap((r) =>
+      r.anchors
+        .map((a) => censusKey(a.level, a.geoid))
+        .filter((key): key is string => key !== null)
+        .map((key) => ({ key, record: r })),
+    )
 }
 
 // ---------------------------------------------------------------------------

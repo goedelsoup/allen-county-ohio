@@ -41,7 +41,7 @@ const record = (over: Partial<AtlasRecord> = {}): AtlasRecord => ({
   treatment: 'count',
   hops: 1,
   route_tier: 'verified',
-  anchors: [{ node: 'place/lima.yml', lat: 40.74, lon: -84.11, geoid: null, via: [] }],
+  anchors: [{ node: 'place/lima.yml', lat: 40.74, lon: -84.11, geoid: null, level: null, via: [] }],
   ...over,
 })
 
@@ -205,8 +205,8 @@ describe('where the drawn records go', () => {
     // no source stated, and `crates/proximity` already refuses that move in the distance case.
     const many = record({
       anchors: [
-        { node: 'place/a.yml', lat: 1, lon: 1, geoid: null, via: [] },
-        { node: 'place/b.yml', lat: 2, lon: 2, geoid: null, via: [] },
+        { node: 'place/a.yml', lat: 1, lon: 1, geoid: null, level: null, via: [] },
+        { node: 'place/b.yml', lat: 2, lon: 2, geoid: null, level: null, via: [] },
       ],
     })
     const placed = anchored([many])
@@ -222,7 +222,7 @@ describe('where the drawn records go', () => {
 
   it('skips an anchor that is a key rather than a point', () => {
     const keyed = record({
-      anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, geoid: '39003', via: [] }],
+      anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, geoid: '39003', level: 'county', via: [] }],
     })
     expect(anchored([keyed])).toEqual([])
   })
@@ -231,9 +231,21 @@ describe('where the drawn records go', () => {
     // The tract is the case. It carries no key of its own and reaches the county government in
     // one edge, so shading its anchor would draw the whole county and call it a tract — which is
     // not where the tract is, only how far the corpus could reach from it.
-    const stated = record({ treatment: 'polygon', hops: 0, anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, geoid: '3943554', via: [] }] })
-    const derived = record({ treatment: 'polygon', hops: 1, anchors: [{ node: 'jurisdiction/y.yml', lat: null, lon: null, geoid: '39003', via: [] }] })
-    expect(shaded([stated, derived]).map((s) => s.geoid)).toEqual(['3943554'])
+    const stated = record({ treatment: 'polygon', hops: 0, anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, geoid: '3943554', level: 'place', via: [] }] })
+    const derived = record({ treatment: 'polygon', hops: 1, anchors: [{ node: 'jurisdiction/y.yml', lat: null, lon: null, geoid: '39003', level: 'county', via: [] }] })
+    expect(shaded([stated, derived]).map((s) => s.key)).toEqual(['place:3943554'])
+  })
+
+  it('refuses a key whose summary level the feed could not name', () => {
+    // A bare GEOID identifies nothing — `3904752` is a village and a school district in this
+    // county — so an anchor with no level is not addressable and is dropped rather than
+    // resolved against whichever layer happens to hold that number.
+    const unlevelled = record({
+      treatment: 'polygon',
+      hops: 0,
+      anchors: [{ node: 'jurisdiction/z.yml', lat: null, lon: null, geoid: '3904752', level: null, via: [] }],
+    })
+    expect(shaded([unlevelled])).toEqual([])
   })
 
   it('shades a village only from the year it was incorporated', () => {

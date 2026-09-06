@@ -105,8 +105,9 @@ showing the tag, the span and the source under every claim.
 ## The geography is vendored, not fetched
 
 `public/geo/` holds Allen County's 2020 census geography — the county, its thirteen civil
-subdivisions, its municipalities and CDPs, and all 88 voting districts — as GeoJSON, with
-`PROVENANCE.json` recording the service, the query and the date beside it. It comes from
+subdivisions, its municipalities and CDPs, all 88 voting districts, its 35 tracts and the
+seventeen school districts that reach it — as GeoJSON, with `PROVENANCE.json` recording the
+service, the query and the date beside it. It comes from
 [TIGERweb](../.yidam/catalog/tigerweb-census2020.md), which the corpus already catalogues.
 
 ```
@@ -127,11 +128,25 @@ county is 1,400 pixels wide, and `maxAllowableOffset` asks for the resolution th
 generalizing is done server-side and the offset is recorded, so the vendored file stays a mirror
 rather than becoming a cartographer.
 
+**The school districts are the one layer not cut at the county line.** Ohio draws a district to
+hold a population, so twelve of the seventeen that reach Allen County also lie in another one and
+only five are wholly this county's. They are vendored and drawn whole — the part of Pandora-Gilboa
+inside Allen County is not a school district, it is the corner of one — and the county outline is
+drawn over the top saying where the county is. See
+[`a-district-is-not-cut-at-the-county-line`](../.yidam/decisions/a-district-is-not-cut-at-the-county-line.yml).
+
+**A shape is addressed by `level:geoid`, never by GEOID alone.** A Census key is unique only
+inside its summary level, and this county holds the proof: `3904752` is Beaverdam village *and*
+the Upper Scioto Valley Local School District. The atlas feed carries the level beside every key
+and `feeds.ts::censusKey` is where the pair is spelled. See
+[`a-geoid-is-not-an-address`](../.yidam/decisions/a-geoid-is-not-an-address.yml).
+
 **The join is the site's own gate.** `crates/publish` cannot see `public/geo/` and the
 connector cannot see the corpus, so the one derivation performed in this directory is matching
-a corpus GEOID to a vendored geometry — and `test/geography.test.ts` is what holds it. It also
-pins the fact that the county's geography contains one municipality the corpus does not name:
-Cridersville crosses in from Auglaize County, and the map shows it as ground.
+a corpus key to a vendored geometry — and `test/geography.test.ts` is what holds it. It also
+pins the fact that the county's geography contains entities the corpus does not name:
+Cridersville village crosses in from Auglaize County, and five school districts reach in from
+Hardin, Hancock, Putnam and Auglaize. The map shows all of them as ground.
 
 ## What the map is for
 

@@ -88,7 +88,7 @@ const LAYERS = [
     label: 'Incorporated Places',
     where: `STATE='${STATE}'`,
     fields: ['GEOID', 'NAME', 'BASENAME', 'LSADC', 'AREALAND', 'CENTLAT', 'CENTLON'],
-    clipToCounty: true,
+    intersectsCounty: true,
   },
   {
     id: 28,
@@ -96,7 +96,32 @@ const LAYERS = [
     label: 'Census Designated Places',
     where: `STATE='${STATE}'`,
     fields: ['GEOID', 'NAME', 'BASENAME', 'LSADC', 'AREALAND', 'CENTLAT', 'CENTLON'],
-    clipToCounty: true,
+    intersectsCounty: true,
+  },
+  // Unified school districts, and the one layer here that does not respect the county line.
+  //
+  // Ohio draws a district to hold a population, not to fit a county. Seventeen of them have
+  // territory in Allen County and **twelve of those seventeen also lie in another county.** Only
+  // five are wholly this county's — Allen East, Bath, Elida, Lima City and Perry — and
+  // `ground.ts::containedInCounty` computes that five from this file rather than asserting it.
+  //
+  // So they are vendored **whole**, and the map lets them leave the frame. Clipping at the county
+  // line would be cheap to look at and false about the object: the part of Pandora-Gilboa inside
+  // Allen County is not a school district, it is the corner of one. The county outline is drawn
+  // over the top and says where the county is; a shape running past it says something the outline
+  // cannot. See `.yidam/decisions/a-district-is-not-cut-at-the-county-line.yml`.
+  //
+  // No COUNTY column, like the two place layers, so the filter is the county polygon. Of the
+  // seventeen the corpus catalogues twelve; the other five reach in from a neighbouring county
+  // and have no node, which is a gap in the corpus and not in this file.
+  {
+    id: 12,
+    file: 'school-districts.geojson',
+    label: 'Unified School Districts',
+    where: `STATE='${STATE}'`,
+    fields: ['GEOID', 'NAME', 'BASENAME', 'POP100', 'HU100', 'AREALAND', 'CENTLAT', 'CENTLON'],
+    intersectsCounty: true,
+    expect: 17,
   },
   // The water. Not a boundary and not a 2020 statement — see HYDRO above.
   //
@@ -116,7 +141,7 @@ const LAYERS = [
     where: '1=1',
     fields: ['OID', 'NAME', 'BASENAME', 'MTFCC', 'ARTPATH'],
     key: 'OID',
-    clipToCounty: true,
+    intersectsCounty: true,
     // 297 streams and 16 dug lines. The dug ones are two segments of the Miami & Erie Canal
     // spelled two ways by TIGER, plus fourteen named and unnamed ditches.
     expect: 313,
@@ -234,7 +259,7 @@ async function main() {
       layer: layer.id,
       name: layer.label,
       features: features.length,
-      filter: layer.clipToCounty ? 'intersects the county polygon' : layer.where,
+      filter: layer.intersectsCounty ? 'intersects the county polygon' : layer.where,
       // Stated per layer rather than once for the file: the water comes from a service with no
       // vintage, and letting it inherit the decennial one would date it to a year nobody
       // published it in.
