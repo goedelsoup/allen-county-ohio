@@ -3111,6 +3111,10 @@
           "tier": "verified"
         },
         {
+          "text": "**It was erected between the 1960 and 1970 censuses, out of Shawnee township.** The Census Bureau's geographic change notes for Allen County say so — *Fort Shawnee village incorporated from part of Shawnee township* — and its row in that volume's subdivision table carries 3,436 people in 1970 against an absent cell for 1960, which is the table's way of saying the village did not exist to be counted. [verified] — [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md); see [the subdivisions](../measure/allen-county-subdivisions-1960-1970.yml). It arrived already the largest village in the county, which it stayed for the whole of its life.",
+          "tier": "verified"
+        },
+        {
           "text": "**It was in a state fiscal emergency for the last two years of its life.** The Auditor of State declared one on 16 September 2010, at the mayor's own request, on an unprovided aggregate deficit of $50,761 and a treasury $18,211 short of the funds it was holding. [verified] — [the Auditor of State's audit search](../../catalog/ohio-auditor-of-state-audit-search.md); see [the declaration](../event/fort-shawnee-declared-in-fiscal-emergency-2010.yml). The village had no debt outstanding and had missed no payroll; what it had was $164,982 in the bank against $315,419 promised to its own funds.",
           "tier": "verified"
         },
@@ -3511,8 +3515,12 @@
           "tier": "inference"
         },
         {
-          "text": "**Lima's eleven have moved to [their own node](lima-annexations-1990-2017.yml)**, one row per instrument, because that is the grain the city's own entry has to draw and this node's table is one row per municipality. They were printed here and are not printed twice; what stays here is what this node argues about them. [verified] — same files.",
+          "text": "**All fifty-seven are now held one instrument at a time, in five nodes**, because that is the grain a municipality's own entry has to draw and this node's table is one row per municipality: [Delphos's twenty-six](delphos-annexations-1990-2018.yml), [Lima's eleven](lima-annexations-1990-2017.yml), [Bluffton's nine](bluffton-annexations-1994-2024.yml), [Elida's five](elida-annexations-1990-2021.yml), [Spencerville's four](spencerville-annexations-1997-2023.yml), and Cairo's and Harrod's one each, which are their summary rows and want no node. [verified] — same files. What stays here is what this node argues across them.",
           "tier": "verified"
+        },
+        {
+          "text": "**Ten of the fifty-seven are resolutions and eight of those state an acreage.** That qualifies a reading this corpus made when it held only Lima's record, where the single resolution is also the single act with no acreage: the instrument type does not explain a missing figure, because most resolutions here carry one. Three of the five blank acreages are ordinances. [verified] — same files, counted here; see [Lima's eleven](lima-annexations-1990-2017.yml). What survives is the procedural reading itself — a resolution is the commissioners' half of an act the municipality completes by ordinance — which says a resolution reported alone may be an incomplete act and not that it must be. [inference]",
+          "tier": "inference"
         },
         {
           "text": "**The shape is a decade of nothing, then a burst, then nothing again.** Lima annexed 21.0 acres in 1990 and 1991, then reported no boundary change for ten and a half years; then took 601.0 acres in eight annexations between June 2002 and December 2009; then one more in June 2017 and nothing since. [verified] — same source. Twenty-nine of the county's fifty-seven records fall in the 2000s and only eleven in the fifteen years after.",
@@ -3548,7 +3556,53 @@
         }
       ],
       "refusals": [],
-      "withheld": 5
+      "withheld": 6
+    },
+    {
+      "id": "measure/allen-county-annexed-area-1960-1970.yml",
+      "class": "measure",
+      "label": "Population of ground annexed in Allen County, 1960–1970",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1970",
+        "method": "Read from Table 8 of a bitonal scan with no text layer, by rendering the page with `mise run read-scan` and reading the two Allen County rows off the image rather than trusting optical character recognition, which is the practice [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md) established after OCR misread its Table 5. Both of the table's arithmetic identities were checked on both rows, and the 1970 and 1960 city totals against two other volumes. The `value` above is the Lima row's annexed-area column, which is the bound the comparability judgement on this pair turns on. [verified]",
+        "parameter": "population in 1970 of ground annexed since 1960",
+        "table": "place total_1970 in_1960_area in_annexed_area pop_1960 change_in_1960_area Lima 53734 50225 3509 51037 -812 Bluffton 2935 2840 95 2591 249",
+        "unit": "persons",
+        "value": "3509"
+      },
+      "blocks": [
+        {
+          "text": "**The area Lima annexed between 1960 and 1970 held 3,509 people at the 1970 census, and within its 1960 boundary the city fell by 812.** [verified] — [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md), Table 8, *Population in 1970 of Areas Annexed Between 1960 and 1970*.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out, because the table's five columns are the whole of the finding: **Lima counted 53,734 people in 1970, of whom 50,225 lived on the ground the city held in 1960 and 3,509 on ground it did not; the 1960 count was 51,037; and the change between the two censuses inside the 1960 line was −812.** [verified] — same table. **Bluffton counted 2,935, of whom 95 were on annexed ground, against 2,591 in 1960, a rise of 249 inside the old line.** [verified] — same table.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the figure a comparability judgement almost never gets.** The usual case is that a boundary moved and nobody says by how many people, so the reader is left to bound the artifact from acreage or from nothing at all — which is the position [the annexation record](allen-county-annexations-1990-2024.yml) leaves every pair after 1990 in. Here the Census Bureau printed the counterfactual itself, having drawn both boundaries: the last column *is* the constant-boundary comparison, computed by the only party in a position to compute it. [inference] — the reasoning is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**And for Lima it reverses a sign.** The city's printed change across the decade is a gain of 2,697. The ground it annexed held 3,509 — more than the whole of the gain. So the rise is not a rise that annexation flattered; it is a fall that annexation concealed, and [the peak](lima-population-1970-1990.yml) at 1970 is a fact about the corporation rather than about the land under it. [inference] — computed from the row above; the −812 is the Bureau's own and is not this corpus's arithmetic.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The row checks itself twice, which is why one scan was enough.** The 1960 area plus the annexed area is the 1970 total — 50,225 + 3,509 = 53,734 — and the 1960 area less the 1960 count is the printed change — 50,225 − 51,037 = −812. Both hold for Lima and both hold for Bluffton. The two city totals are also carried by [the 1990 volume](../../catalog/census-cph-2-37-ohio.md) and [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md), independently, to the person. [verified] — those three sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Bluffton's answer is the other one, and it is worth writing down beside Lima's.** Ninety-five people came in on annexed ground against a printed rise of 344, so the village grew on its own land as well as by taking more. Same decade, same county, same table, opposite verdict — which is what [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) predicts should happen when the bound is small against the difference rather than larger than it. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Delphos should be in this table and is not.** The city held roughly seven thousand people in 1960, far above the table's threshold of 2,000, and the alphabetical run goes Defiance, Delaware, Delta with nothing between the last two. Bluffton also straddles a county line and is present, so that is not the rule that excluded it. [verified] — the absence is on the page.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-assessed-valuation-2010-2023.yml",
@@ -9667,11 +9721,11 @@
           "tier": "verified"
         },
         {
-          "text": "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to his father. [verified] — the same source pair, each searched for every person node's name, and the matches tested against the corpus's own rosters; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "text": "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty-one are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-six of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated out of a sketch attached to his father. [verified] — the same source pair, each searched for every person node's name, and the matches tested against the corpus's own rosters; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
           "tier": "verified"
         },
         {
-          "text": "**The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17, died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97. [inference] — counted over `.yidam/corpus/person/` before this phase and after it.",
+          "text": "**The class had 6 birth dates for 98 people and now has 22 for 99.** Birthplace went from 3 to 18, died from 5 to 11, also_known_as from 6 to 14 and occupation from 95 to 97. [inference] — counted over `.yidam/corpus/person/` before that phase and after this one. The last two births came a phase later and from different directions: one from a second pass over these books, described below, and one from [the federal file of congressmen](../../catalog/congress-legislators.md), which dates [Mathias H. Nichols](../person/mathias-h-nichols.yml) to 3 October 1824 where neither history does.",
           "tier": "inference"
         },
         {
@@ -9681,12 +9735,28 @@
         {
           "text": "**What finishes them is a different kind of source.** Three of the deaths this corpus now holds came from newspapers: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder on 11 May 1921. [verified] — [Chronicling America](../../catalog/chronicling-america.md). A paper records a death because a death is news and records a birth only in an obituary; a subscription book records a birth because the subscriber gave it and a death only when somebody else did. The two sources are complementary in the exact place the `person` class needed them to be. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**A second pass, searching the office rather than the name, found one more and no others.** Thirty-one officeholders whose terms all ended before 2000 still carried no birth date. The search this time was the acceptance rule itself: every passage in all five texts claiming the shrievalty — `elected sheriff`, `sheriff of Allen`, `appointed sheriff`, `office of sheriff` — and then the sketch each sits in. Sixteen passages qualify. Fourteen belong to men already placed or to men who are not the subject, among them a Mercer County sheriff and a candidate who never won. One is [Henry Van Gunter](../person/henry-van-gunter.yml), elected in November 1905 and born 29 July 1864. [verified] — the same source pair; the sketch is on page 587 of the 1906 book and was read off the page image, one witness, because scan A ends before it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A sweep for what that might have missed returned nothing.** Every capitalised sketch head in all five texts bearing any of the thirty-one surnames, office or no office: thirty-one heads, and not one of them is one of these men. They are other Fishers, Millers, Marshalls and Watts of the same county in the same decades. [verified] — the same source pair.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The nearest miss is the argument for the rule.** `JOHN VON GUNTEN, manufacturer of brick, Bluffton, was born in Richland Township, this county, November 16, 1856, son of John and Anna (Sn[itter])` is the sheriff's elder brother — same parents, same township, a third spelling of the surname, eight years wrong. [verified] — the 1885 history. A name match returns it, and a node carrying it would afterwards be indistinguishable from a correct one.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the books are close to exhausted for this corpus's officeholders, and the reason is structural.** Eleven of the thirty-one took office after 1921 and no volume held here was printed while they served; Rusler's biographical Volume II [is not held](../../catalog/rusler-allen-county-1921.md). Of the twenty who served early enough, these books carry one. A subscription history's biographical half is sold, not compiled, and holding an office did not put a man in it. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
         "**This node does not assert that the people with sketches are representative of the county.**"
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "measure/allen-county-livestock-2002-2022.yml",
@@ -13967,6 +14037,52 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-subdivisions-1960-1970.yml",
+      "class": "measure",
+      "label": "Allen County subdivisions, 1960 and 1970",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1970",
+        "method": "Read from Table 10 of a bitonal scan with no text layer, by rendering the page with `mise run read-scan` and reading the block off the image. Allen County is on the first page of the table because the counties run alphabetically. The key combines the township with the place inside it, because `Lima-city-part` appears four times and is not a key on its own; `boundary_change` records whether the row carries the footnote marker, and is not a figure from the table but a reading of its typography. Fort Shawnee's 1960 cells are absent in the source, printed as the three dots this volume uses for not-applicable. The `value` above is the county total. [verified]",
+        "parameter": "total resident population, decennial, by county subdivision",
+        "table": "subdivision pop_1970 pop_1960 percent_change boundary_change Amanda-township 1498 1217 23.1 no American-township 37590 32887 14.3 no American/Elida-village 1211 1215 -0.3 no American/Lima-city-part 27613 22488 22.8 yes Auglaize-township 2473 2303 7.4 no Auglaize/Harrod-village 533 563 -5.3 no Bath-township 23077 23947 -3.6 no Bath/Lima-city-part 13754 15640 -12.1 no Jackson-township 2247 1999 12.4 no Jackson/Lafayette-village 486 476 2.1 no Marion-township 6945 5938 17.0 no Marion/Delphos-city-part 4301 3716 15.7 no Monroe-township 2077 1952 6.4 no Monroe/Cairo-village 587 566 3.7 no Perry-township 14071 15045 -6.5 no Perry/Lima-city-part 10320 10626 -2.9 yes Richland-township 4975 4635 7.3 no Richland/Beaverdam-village 525 514 2.1 no Richland/Bluffton-village 2935 2591 13.3 yes Shawnee-township 11781 9658 22.0 no Shawnee/Fort-Shawnee-village 3436 NA NA yes Shawnee/Lima-city-part 2047 2283 -10.3 no Spencer-township 3201 2944 8.7 no Spencer/Spencerville-village 2241 2061 8.7 yes Sugar-Creek-township 1209 1166 3.7 no",
+        "unit": "persons",
+        "value": "111144"
+      },
+      "blocks": [
+        {
+          "text": "Every one of the county's twelve townships at two censuses, the villages and city parts inside them, and the Census Bureau's own note on which lines moved between the two. [verified] — [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md), Table 10, *Population of County Subdivisions: 1970 and 1960*.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county held 111,144 people in 1970 against 103,691 in 1960, a rise of 7.2 per cent.** [verified] — same table. The county figure is a third witness to a count this corpus already had twice, from [the 1990 volume](allen-county-population-1940-1990.yml) and from a set of intercensal estimates that share none of its machinery.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Where the county grew was American township, and most of that was Lima moving into it.** American rose 32,887 to 37,590, and the Lima part inside it rose 22,488 to 27,613 — five thousand of the county's seven and a half thousand. [verified] — same table. Bath fell, Perry fell, and the two Lima parts inside them fell with them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The geographic change notes, in full, because they are what this volume was retrieved for.** Footnote 2 to this table reads: *Parts of American and Perry townships annexed by Lima city. Part of Richland township annexed by Bluffton village. Fort Shawnee village incorporated from part of Shawnee township. Part of Spencer township annexed by Spencerville village.* [verified] — same source, footnotes at the end of Table 10, numbered by county in alphabetical order. The five rows carrying the marker are marked `yes` in the table below and no others carry it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It answers where, and Table 8 answers how many.** These notes name the townships and give no quantity; [the annexed-area table](allen-county-annexed-area-1960-1970.yml) gives the quantity and names no township. The two together are the only place in this corpus where a boundary change is both located and measured. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima's own decline shows here as something other than annexation.** The city's part of Bath township fell 15,640 to 13,754 and its part of Shawnee fell 2,283 to 2,047, and neither carries the footnote — so on two pieces of ground the corporation held throughout, it lost 2,122 people in the decade it is recorded as having grown. [inference] — computed from the rows below.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The table checks itself on every row and then twice more.** A percent change is printed beside each pair, and all twenty-four of them are consistent with the two counts they stand against. The twelve township figures sum to the printed county total in both columns — 111,144 and 103,691 — and Lima's four parts sum to 53,734 and 51,037, which are the city totals two other volumes give independently. A misread digit breaks its own row's percentage and one of the two column sums. [verified]",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-subsidized-housing-2005-2025.yml",
       "class": "measure",
       "label": "Federally subsidized housing in Allen County, 2005–2025",
@@ -15703,6 +15819,112 @@
       "withheld": 2
     },
     {
+      "id": "measure/bluffton-annexations-1994-2024.yml",
+      "class": "measure",
+      "label": "Bluffton annexations, 1994–2024",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024-11-12",
+        "method": "Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 07426, read from the same sixteen files and two record layouts as [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway through the series abbreviates the instrument to `O` and `R`; both are expanded here to `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the readme's own account of the change. Everything else is the file's, unrounded: `acres` is the survey's estimated area of the change and is absent where the file leaves it so. [verified]",
+        "parameter": "annexations reported by the village of Bluffton",
+        "table": "date instrument kind acres 1994-10-14 NA Ordinance 20.6 1995-02-08 NA Ordinance 46.2 1996-10-10 NA Ordinance 105.7 1997-12-09 587-97 Resolution 50.8 2008-03-24 09-08 Ordinance 21.2 2008-08-25 20-08 Ordinance 132.3 2012-03-21 09-11 Ordinance 65.9 2018-10-09 03-19 Resolution 34.8 2024-11-12 10-2024 Ordinance NA",
+        "unit": "records",
+        "value": "9"
+      },
+      "blocks": [
+        {
+          "text": "**Nine acts and 477.5 acres, and the last of them is in another county.** [verified] — [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see [the county's fifty-seven](allen-county-annexations-1990-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **Bluffton reported nine boundary changes between 14 October 1994 and 12 November 2024, totalling 477.5 acres on the eight that state one.** [verified] — same files. The largest is 132.3 acres effective 25 August 2008, and 1996's 105.7 acres is the next.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The last record is a Hancock County boundary change and the survey says so.** Ordinance 10-2024, effective 12 November 2024, is the only act in this county's whole record that the file attributes to a county other than Allen — Bluffton is a village on the Allen–Hancock line — and it carries no acreage, so it moves the village's *last* date in [the county table](allen-county-annexations-1990-2024.yml) without adding an acre to its total. [verified] — same files, county column. A reader of that row should know that its right-hand end is ground outside this county. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The county column is why that can be said at all, and it arrives in 2019.** No record in this series before the 2019 survey year carries one, so the seven Bluffton acts of 1994 to 2012 are unattributed: an unknown share of their 442.7 acres may be on the Hancock side. What the file settles is 2018 (Allen) and 2024 (Hancock), and nothing before. [verified] — the two record layouts.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three of the nine carry no instrument number at all**, which is why this table is keyed by date: the 1994, 1995 and 1996 ordinances are reported with a date and an acreage and no number. [verified] — same files.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
+    },
+    {
+      "id": "measure/delphos-annexations-1990-2018.yml",
+      "class": "measure",
+      "label": "Delphos annexations, 1990–2018",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2018-02-28",
+        "method": "Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 21602, read from the same sixteen files and two record layouts as [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway through the series abbreviates the instrument to `O` and `R`; both are expanded here to `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the readme's own account of the change. Everything else is the file's, unrounded: `acres` is the survey's estimated area of the change and is absent where the file leaves it so. [verified]",
+        "parameter": "annexations reported by the city of Delphos",
+        "table": "instrument date kind acres 1990-20 1990-05-22 Ordinance 44.8 1991-56A 1992-01-27 Ordinance 12.7 1992-3 1992-02-27 Ordinance 23.7 1992-38 1992-07-27 Ordinance 4.5 1993-12 1993-05-24 Ordinance 91.2 1996-51 1996-11-11 Ordinance 240.0 1998-43 1998-10-12 Ordinance 28.8 1999-2 1999-01-25 Ordinance 1.8 2000-02 2000-03-13 Ordinance 5 -2002-44 2002-11-12 Ordinance 3.4 2003-18 2003-04-08 Ordinance 5.3 2003-21 2003-04-08 Ordinance 3.1 2004-53 2004-08-10 Ordinance 2.3 2004-72 2004-12-14 Ordinance 25 2004-77 2004-12-28 Ordinance 35.3 2007-32 2007-07-24 Ordinance NA 2007-33 2007-07-24 Ordinance NA 2008-04 2008-02-26 Ordinance 99.4 2008-12 2008-04-08 Ordinance 14.6 2008-48 2008-08-26 Ordinance 11.7 2008-63 2008-12-22 Ordinance 1.4 2009-27 2009-04-14 Ordinance 116 2010-16 2010-04-13 Ordinance .3 2015-24 2015-06-01 Ordinance 1 2015-25 2015-07-13 Ordinance 10 2018-2 2018-02-28 Ordinance 3.1",
+        "unit": "records",
+        "value": "26"
+      },
+      "blocks": [
+        {
+          "text": "**Twenty-six acts and 784.4 acres — the largest annexation record in Allen County, and half as many acres again as [Lima's](lima-annexations-1990-2017.yml) on more than twice the number of acts.** [verified] — [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see [the county's fifty-seven](allen-county-annexations-1990-2024.yml), which counts these among them.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **Delphos reported twenty-six boundary changes between 22 May 1990 and 28 February 2018, totalling 784.4 acres on the twenty-four that state one.** [verified] — same files. The largest is ordinance 1996-51, 240.0 acres effective 11 November 1996; the smallest the file states is 2010-16 at three tenths of an acre.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every one of the twenty-six is an ordinance**, which is what distinguishes this record from the rest of the county's. Ten of the county's fifty-seven acts are resolutions and none of them is Delphos's. [verified] — the same files, counted here. [inference] — under the two-instrument reading an Ohio annexation begins with a resolution of the county commissioners and ends with an ordinance of the city, so this is a record of completed acts and not of started ones.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The table is keyed by instrument and not by date, because two pairs share a date.** Ordinances 2003-18 and 2003-21 both took effect on 8 April 2003, and 2007-32 and 2007-33 both on 24 July 2007 — and the 2007 pair are two of the five records in the whole county that state no acreage. [verified] — same files.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "measure/elida-annexations-1990-2021.yml",
+      "class": "measure",
+      "label": "Elida annexations, 1990–2021",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2021-05-11",
+        "method": "Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 24808, read from the same sixteen files and two record layouts as [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway through the series abbreviates the instrument to `O` and `R`; both are expanded here to `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the readme's own account of the change. Everything else is the file's, unrounded: `acres` is the survey's estimated area of the change and is absent where the file leaves it so. [verified]",
+        "parameter": "annexations reported by the village of Elida",
+        "table": "date instrument kind acres 1990-05-08 586-90 Ordinance 149.7 1992-03-11 622-92 Ordinance 640.0 2009-04-07 344-2009 Resolution 61.6 2009-08-07 348-2009 Resolution 61.6 2021-05-11 483-2021 Resolution NA",
+        "unit": "records",
+        "value": "5"
+      },
+      "blocks": [
+        {
+          "text": "**Five acts and 912.9 acres reported by a village that is smaller than that.** [verified] — [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see [the county's fifty-seven](allen-county-annexations-1990-2024.yml), where this record is the one whose arithmetic does not work.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **Elida reported five boundary changes between 8 May 1990 and 11 May 2021, totalling 912.9 acres on the four that state one** — against a village that occupied 703.6 acres in the 2012 geography and 745.6 in the 2024 one. [verified] — same files against [the gazetteer series](../../catalog/census-gazetteer-2020.md).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three of the five are the reasons it does not add up, and the table puts each on its own line.** Ordinance 622-92 of 11 March 1992 claims **640.0 acres** — one square mile, to the acre, which is the size of a survey section and not of a parcel. Resolutions 344-2009 and 348-2009 are **the same 61.6 acres four months apart**, 7 April and 7 August 2009. [verified] — same files.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Three of the five are resolutions**, the highest share of any municipality in the county's record, and two of them are the 2009 pair. [verified] — same files. Under the two-instrument reading a resolution is the commissioners' half of an act the village then completes by ordinance, so a record of resolutions may be a record of beginnings. [inference] — the procedure is [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "measure/federal-contracts-in-allen-county-2008-2025.yml",
       "class": "measure",
       "label": "Federal contracts performed in Allen County, 2008–2025",
@@ -15890,6 +16112,10 @@
         {
           "text": "**The last one is the odd one and the table shows it as `NA` rather than as zero.** Resolution 408-17 of 29 June 2017 is the only Lima record in thirty-five years authorised by resolution rather than by ordinance and the only one with no acreage: an Ohio annexation begins with a resolution of the county commissioners and ends with an ordinance of the city, so a resolution reported alone is the first half of the act. [inference] — the procedure is [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md) and the reading is this corpus's. An absent cell is not a nil annexation, and a total built over this column is a floor.",
           "tier": "inference"
+        },
+        {
+          "text": "**That reading is narrower than it looked when this node was the only act-level record held.** The county's other six municipalities have since been extracted the same way, and nine more resolutions came with them: ten in the county's fifty-seven, of which **eight state an acreage**. So being a resolution does not explain a blank — three of the five blanks are ordinances — and what 408-17 has that the others do not is only that both are true of it at once. [verified] — [the county's record](allen-county-annexations-1990-2024.yml) and the four nodes beside this one. The procedural reading stands; the inference that it accounts for this row does not.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -16348,7 +16574,11 @@
           "tier": "verified"
         },
         {
-          "text": "**The last decade before the peak is the flattest.** Lima gained 791 people in the 1950s, 1.6% — its smallest decennial gain in a hundred and ten years, and a tenth of the 1940s' rate. The city did not turn at 1970 so much as arrive there slowing. [inference] — computed from the series above. What happened between 1960 and 1970 to produce a further 2,697 is not established here.",
+          "text": "**The last decade before the peak is the flattest.** Lima gained 791 people in the 1950s, 1.6% — its smallest decennial gain in a hundred and ten years, and a tenth of the 1940s' rate. The city did not turn at 1970 so much as arrive there slowing. [inference] — computed from the series above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What produced the further 2,697 is now established, and it was not people.** This node asked the question and the 1970 volume answers it: parts of American and Perry townships were annexed by Lima city between the two censuses, and the ground taken in held 3,509 people in 1970 — more than the whole of the gain. On the land the city held when this table's last count was taken it went from 51,037 to 50,225. [verified] — [the 1970 volume](../../catalog/census-1970-number-of-inhabitants-ohio.md); see [the annexed area](allen-county-annexed-area-1960-1970.yml). So the 1950s were not a slowing before one more climb. They were the last decade Lima grew at all, and 51,037 is the largest count in this corpus for the ground under the city rather than for the city's changing line. [inference]",
           "tier": "inference"
         },
         {
@@ -16357,7 +16587,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "measure/lima-population-1880-1920.yml",
@@ -16426,6 +16656,10 @@
           "tier": "verified"
         },
         {
+          "text": "**It is the peak of the corporation, and the corporation is not the ground.** On the land Lima held in 1960 the city counted 50,225 in 1970 against 51,037 in 1960 — it was already falling before the census that records its maximum. [verified] — [the 1970 volume's annexed-area table](allen-county-annexed-area-1960-1970.yml). Both sentences are true and they are about different objects, which is the distinction [the place](../place/lima.yml) and [the corporation](../jurisdiction/city-of-lima.yml) exist to keep apart.",
+          "tier": "verified"
+        },
+        {
           "text": "So Lima's series, at the census years the corpus holds: 7,567 (1880) · 21,723 (1900) · 41,326 (1920) · 51,037 (1960) · **53,734 (1970)** · 47,827 (1980) · 45,549 (1990) · 40,307 (2000) · 35,579 (2020). Between 1970 and 2020 the city lost 18,155 people, **33.8 per cent of itself**, while [the county](allen-county-population-1940-1990.yml) lost 8,927, or 8.0 per cent. Lima's loss is twice the county's, which means the rest of Allen County **gained 9,228** over the same fifty years. [inference] — computed from the two series. That is a different story from the one the corpus has been telling from four years of recent data, where the ring shrinks too: over the long run the ring grew while the city emptied, and only lately have both been falling.",
           "tier": "inference"
         },
@@ -16434,20 +16668,28 @@
           "tier": "inference"
         },
         {
-          "text": "**Run against 1960, the comparability check returns the answer that is not an edge.** [boundary-comparability](../../skills/boundary-comparability.md) was asked whether 53,734 may be set beside [51,037 in 1960](lima-population-1850-1960.yml). It read the two measures, the [place](../place/lima.yml) and the [corporation](../jurisdiction/city-of-lima.yml), the [annexation record](allen-county-annexations-1990-2024.yml), and every boundary change the corpus holds for this city — and it found none between the two dates. The record it searched is not silent about Lima. Six boundary events are on it, four into the city and two out of it: 1902, 1903, 1905 and 1906 from [the 1910 supplement's footnote](../../catalog/census-1910-abstract-supplement-ohio.md), 1944 from [the 1950 volume](../../catalog/census-1950-number-of-inhabitants-ohio.md), and the annexations from American, Bath and Shawnee in the 1980s from the volume this node is read out of. [verified] — those three sources; see [the place](../place/lima.yml).",
+          "text": "**Run against 1960, the comparability check first returned the answer that is not an edge.** [boundary-comparability](../../skills/boundary-comparability.md) was asked whether 53,734 may be set beside [51,037 in 1960](lima-population-1850-1960.yml). It read the two measures, the [place](../place/lima.yml) and the [corporation](../jurisdiction/city-of-lima.yml), the [annexation record](allen-county-annexations-1990-2024.yml), and every boundary change the corpus holds for this city — and it found none between the two dates. The record it searched is not silent about Lima. Six boundary events are on it, four into the city and two out of it: 1902, 1903, 1905 and 1906 from [the 1910 supplement's footnote](../../catalog/census-1910-abstract-supplement-ohio.md), 1944 from [the 1950 volume](../../catalog/census-1950-number-of-inhabitants-ohio.md), and the annexations from American, Bath and Shawnee in the 1980s from the volume this node is read out of. [verified] — those three sources; see [the place](../place/lima.yml).",
           "tier": "verified"
         },
         {
-          "text": "**It is silent about the interval, and finding nothing there is not the same as there being nothing.** Every one of those notes is a census volume reporting its own decade; this corpus holds no volume for 1970; so nothing in it would have reported a change between 1945 and 1979 if there had been one, and the decades on either side of that gap each hold one. [inference] A `comparable-to` edge written on this pair would be [the claim the apparatus exists to make somebody stand behind](../../decisions/comparability-is-a-judgement-not-a-join.yml), manufactured out of a record nobody asked, so **no judgement is written here** — and the absence is the run's finding rather than a gap in it.",
+          "text": "**It was silent about the interval, and finding nothing there is not the same as there being nothing.** Every one of those notes is a census volume reporting its own decade; the corpus then held no volume for 1970; so nothing in it would have reported a change between 1945 and 1979 if there had been one, and the decades on either side of that gap each hold one. [inference] A `comparable-to` edge written on that record would have been [the claim the apparatus exists to make somebody stand behind](../../decisions/comparability-is-a-judgement-not-a-join.yml), manufactured out of a record nobody asked, so none was written and the absence was left as the run's finding.",
           "tier": "inference"
         },
         {
-          "text": "**What the risk is, if the line did move.** Annexation moves people into a city without anybody moving house, so the gain of 2,697 would be that much too large and the flatness of the 1950s that much sharper against it. The peak is not what is at risk: every count after 1970 stands on ground at least as large as 1970's, by the annexations this corpus does hold, and every one of them is smaller. What an unrecorded annexation would take is the shape of the approach to the peak. [inference]",
+          "text": "**The volume it named has now been read, and the line moved.** Parts of American and Perry townships were annexed by Lima city between the two censuses, and the ground taken in held **3,509 people** at the 1970 count. [verified] — [the 1970 volume](../../catalog/census-1970-number-of-inhabitants-ohio.md); see [the annexed area](allen-county-annexed-area-1960-1970.yml) and [the subdivisions](allen-county-subdivisions-1960-1970.yml). The refusal was the right call and not merely a cautious one: something was there, and no record the skill could reach would have shown it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the pair is judged, and it is judged apart.** The printed change is a gain of 2,697 and the annexed ground held more people than the whole of that gain, so annexation does not inflate this difference — it manufactures it. Inside the 1960 line the city went from 51,037 to 50,225, a fall of 812, and that figure is the Bureau's own rather than this corpus's subtraction. Under [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) the direction is known and the bound is stated and the finding does not survive it, which is that decision's definition of a break. The edge on this node says so. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**What that costs and what it does not.** The peak is not at risk: every count after 1970 stands on ground at least as large as 1970's, by the annexations this corpus does hold, and every one of them is smaller, so the corporation peaked in 1970 and has lost a third of itself since. What is gone is the shape of the approach to it. The city did not arrive at 1970 slowing; it arrived having already turned, and the flat 1950s were the last decade it grew on its own ground. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "measure/lima-population-2000.yml",
@@ -17075,6 +17317,36 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "measure/spencerville-annexations-1997-2023.yml",
+      "class": "measure",
+      "label": "Spencerville annexations, 1997–2023",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2023-06-05",
+        "method": "Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 74034, read from the same sixteen files and two record layouts as [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway through the series abbreviates the instrument to `O` and `R`; both are expanded here to `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the readme's own account of the change. Everything else is the file's, unrounded: `acres` is the survey's estimated area of the change and is absent where the file leaves it so. [verified]",
+        "parameter": "annexations reported by the village of Spencerville",
+        "table": "date instrument kind acres 1997-01-21 97-2 Ordinance 160.0 2003-09-02 03-23 Ordinance 15.2 2004-03-15 04-11 Resolution 29.6 2023-06-05 23-30 Resolution 4.9",
+        "unit": "records",
+        "value": "4"
+      },
+      "blocks": [
+        {
+          "text": "**Four acts and 209.7 acres across twenty-six years, three quarters of it in the first one.** [verified] — [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see [the county's fifty-seven](allen-county-annexations-1990-2024.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **Spencerville reported four boundary changes between 21 January 1997 and 5 June 2023, of 160.0, 15.2, 29.6 and 4.9 acres.** [verified] — same files. Ordinance 97-2 is 76.3 per cent of the whole record and the three acts since 2003 are 49.7 acres between them. [inference] — computed here.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Every record this village has is the whole of its recorded boundary history**, and it is the only municipality in the county whose acts are few enough to read as a sentence: one large annexation in 1997, a small one in 2003, and two resolutions in 2004 and 2023 that under the two-instrument reading are the commissioners' half of acts the village completed elsewhere. [inference] — the procedure is [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md); the reading is this corpus's.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
     },
     {
       "id": "natural-feature/auglaize-river.yml",
@@ -21167,9 +21439,12 @@
       "id": "person/henry-van-gunter.yml",
       "class": "person",
       "label": "Henry Van Gunter",
-      "tier": "inference",
+      "tier": "verified",
       "properties": {
-        "occupation": "sheriff"
+        "also_known_as": "Henry Van Gunten and VanGunten, both in the 1906 history; Van Sunten in the 1921 history's roster. [verified]",
+        "birthplace": "Richland Township, Allen County, Ohio. [verified]",
+        "born": "1864-07-29",
+        "occupation": "dealer in pianos and organs, sheriff"
       },
       "blocks": [
         {
@@ -21177,8 +21452,28 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
-          "tier": "inference"
+          "text": "**The 1906 history carries his sketch, and it is the only one of the county's undated officeholders that it does.** `HENRY VAN GUNTEN, who was elected sheriff of Allen County in November, 1905, is the proprietor of the large piano and organ house which is located at the southwest corner of the Public Square in Lima.` He **was born July 29, 1864, in Richland Township, Allen County**, son of John and Anna (Snitter) VanGunten, one of eight children on his father's farm; he learned harness-making, worked at it about four years, and came to Lima in 1889 to sell musical instruments. He married Amelia Beeler, daughter of the late David Beeler, and they had three sons, Avery L., Verrel D. and Leon F. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), page 587.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names the office and the year, which is what admits it.** Elected in November 1905 against a roster line beginning in 1906 is [the difference between an election and an inauguration](../../decisions/attach-a-biography-by-its-office.yml), and the book says it twice — once in the opening line and again at the close, where it adds that he was elected on the Democratic ticket. [verified] — same page.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The book spells him Van Gunten and this corpus does not.** The 1906 history heads the sketch `VAN GUNTEN` and runs `VanGunten` as one word in the body; the 1921 history's roster reads `Van Sunten`, which is that book's compositor or this scan's optical reader and not a third form. The corpus keeps the office's own spelling. [verified] — the two histories and the roster; see [an office's own roster of itself](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**His brother is the reason this identification was made by rule rather than by name.** The 1885 history carries `JOHN VON GUNTEN, manufacturer of brick, Bluffton, was born in Richland Township, this county, November 16, 1856, son of John and Anna (Sn[itter])` — the same parents and the same township, eight years earlier, under a third spelling of the surname. A search that matched on the name would have given this node its subject's brother's birthday and nothing would afterwards have shown the join was wrong. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). The two books agree on the parents, which is corroboration of the family and not of the date.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One witness, read off the page.** The sketch stands at 67 per cent of the way through scan B of the 1906 history, and scan A of that book ends around half way, so [the two-scan rule](../../decisions/two-scans-of-one-book.yml) has nothing to compare here. The birth sentence was therefore read from the page image rather than from optical character recognition, and the print agrees with the text layer to the digit. The reader had in fact dropped the sketch's opening `H`, which is a decorative initial in a box. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, and here the sketch states the residence outright, so that edge is no longer an inference. [verified]",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -21980,7 +22275,8 @@
       "label": "Mathias H. Nichols",
       "tier": "inference",
       "properties": {
-        "also_known_as": "Mathias H. Nicholas and M. N. Nichols, both in the 1921 history. [verified]"
+        "also_known_as": "Mathias H. Nicholas and M. N. Nichols, both in the 1921 history. [verified]",
+        "born": "1824-10-03"
       },
       "blocks": [
         {
@@ -29236,6 +29532,55 @@
       "source": "catalog/census-bas-boundary-changes-ohio.md"
     },
     {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "jurisdiction/village-of-bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "measure/allen-county-subdivisions-1960-1970.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "measure/lima-population-1970-1990.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "measure/lima-population-1850-1960.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
       "from": "measure/allen-county-assessed-valuation-2010-2023.yml",
       "to": "measure/allen-county-house-prices-1975-2025.yml",
       "relationship": "relates-to",
@@ -32624,9 +32969,23 @@
       "source": "catalog/census-intercensal-2000-2010.md"
     },
     {
+      "from": "measure/allen-county-population-2000.yml",
+      "to": "measure/allen-county-population-1970.yml",
+      "relationship": "comparable-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-population-2010.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-intercensal-2000-2010.md"
+    },
+    {
+      "from": "measure/allen-county-population-2010.yml",
+      "to": "measure/allen-county-population-2000.yml",
+      "relationship": "comparable-to",
       "tier": "verified",
       "source": "catalog/census-intercensal-2000-2010.md"
     },
@@ -32636,6 +32995,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "measure/allen-county-population-2020-census.yml",
+      "to": "measure/allen-county-population-2010.yml",
+      "relationship": "comparable-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/allen-county-population-2020.yml",
@@ -32648,6 +33014,13 @@
       "from": "measure/allen-county-population-2020.yml",
       "to": "measure/allen-county-population-2020-census.yml",
       "relationship": "not-comparable-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-population-2020.yml",
+      "to": "measure/allen-county-population-2010.yml",
+      "relationship": "comparable-to",
       "tier": "inference",
       "source": null
     },
@@ -33632,6 +34005,34 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "measure/allen-county-townships-1930-1950.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "measure/allen-county-annexed-area-1960-1970.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "measure/allen-county-population-1940-1990.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
       "from": "measure/allen-county-subsidized-housing-2005-2025.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -34304,6 +34705,69 @@
       "source": "catalog/chronicling-america.md"
     },
     {
+      "from": "measure/bluffton-annexations-1994-2024.yml",
+      "to": "jurisdiction/village-of-bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/bluffton-annexations-1994-2024.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/bluffton-annexations-1994-2024.yml",
+      "to": "measure/allen-county-annexations-1990-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/delphos-annexations-1990-2018.yml",
+      "to": "jurisdiction/city-of-delphos.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/delphos-annexations-1990-2018.yml",
+      "to": "place/delphos.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/delphos-annexations-1990-2018.yml",
+      "to": "measure/allen-county-annexations-1990-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/elida-annexations-1990-2021.yml",
+      "to": "jurisdiction/village-of-elida.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/elida-annexations-1990-2021.yml",
+      "to": "place/elida.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/elida-annexations-1990-2021.yml",
+      "to": "measure/allen-county-annexations-1990-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
       "from": "measure/federal-contracts-in-allen-county-2008-2025.yml",
       "to": "measure/federal-money-in-allen-county-2008-2025.yml",
       "relationship": "relates-to",
@@ -34515,6 +34979,20 @@
     },
     {
       "from": "measure/lima-population-1970-1990.yml",
+      "to": "measure/lima-population-1850-1960.yml",
+      "relationship": "not-comparable-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/lima-population-1970-1990.yml",
+      "to": "measure/allen-county-annexed-area-1960-1970.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/lima-population-1970-1990.yml",
       "to": "place/lima.yml",
       "relationship": "describes",
       "tier": "verified",
@@ -34556,6 +35034,13 @@
       "source": "catalog/census-intercensal-2000-2010.md"
     },
     {
+      "from": "measure/lima-population-2010.yml",
+      "to": "measure/lima-population-2000.yml",
+      "relationship": "comparable-to",
+      "tier": "verified",
+      "source": "catalog/census-intercensal-2000-2010.md"
+    },
+    {
       "from": "measure/lima-population-2020-census.yml",
       "to": "place/lima.yml",
       "relationship": "describes",
@@ -34568,6 +35053,13 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/tigerweb-census2020.md"
+    },
+    {
+      "from": "measure/lima-population-2020-census.yml",
+      "to": "measure/lima-population-2010.yml",
+      "relationship": "comparable-to",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "measure/lima-population-2020.yml",
@@ -34587,6 +35079,13 @@
       "from": "measure/lima-population-2020.yml",
       "to": "measure/lima-population-2020-census.yml",
       "relationship": "not-comparable-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/lima-population-2020.yml",
+      "to": "measure/lima-population-2010.yml",
+      "relationship": "comparable-to",
       "tier": "inference",
       "source": null
     },
@@ -34750,6 +35249,27 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/usgs-nwis.md"
+    },
+    {
+      "from": "measure/spencerville-annexations-1997-2023.yml",
+      "to": "jurisdiction/village-of-spencerville.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/spencerville-annexations-1997-2023.yml",
+      "to": "place/spencerville.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/spencerville-annexations-1997-2023.yml",
+      "to": "measure/allen-county-annexations-1990-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
     },
     {
       "from": "natural-feature/auglaize-river.yml",
@@ -35847,8 +36367,22 @@
       "from": "person/henry-van-gunter.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "person/henry-van-gunter.yml",
+      "to": "place/lima.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "person/henry-van-gunter.yml",
+      "to": "place/richland-township.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
     },
     {
       "from": "person/hiram-stotts.yml",

@@ -1,0 +1,89 @@
+class: measure
+label: Delphos annexations, 1990–2018
+description: |
+  **Twenty-six acts and 784.4 acres — the largest annexation record in Allen County, and half as
+  many acres again as [Lima's](lima-annexations-1990-2017.yml) on more than twice the number of
+  acts.** [verified] —
+  [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see
+  [the county's fifty-seven](allen-county-annexations-1990-2024.yml), which counts these among
+  them.
+
+  Written out: **Delphos reported twenty-six boundary changes between 22 May 1990 and 28 February
+  2018, totalling 784.4 acres on the twenty-four that state one.** [verified] — same files. The
+  largest is ordinance 1996-51, 240.0 acres effective 11 November 1996; the smallest the file
+  states is 2010-16 at three tenths of an acre.
+
+  **Every one of the twenty-six is an ordinance**, which is what distinguishes this record from
+  the rest of the county's. Ten of the county's fifty-seven acts are resolutions and none of them
+  is Delphos's. [verified] — the same files, counted here. [inference] — under the two-instrument
+  reading an Ohio annexation begins with a resolution of the county commissioners and ends with an
+  ordinance of the city, so this is a record of completed acts and not of started ones.
+
+  **The table is keyed by instrument and not by date, because two pairs share a date.** Ordinances
+  2003-18 and 2003-21 both took effect on 8 April 2003, and 2007-32 and 2007-33 both on 24 July
+  2007 — and the 2007 pair are two of the five records in the whole county that state no acreage.
+  [verified] — same files.
+
+  **How much of this ground is in Allen County is not knowable from the file.** Delphos is a city
+  on the Allen–Van Wert line, and no record in this series carries a county column before the 2019
+  survey year; the one Delphos record that falls after it does not either. So 784.4 acres is what
+  the city reported annexing, not what it added inside this county, and the corpus does not divide
+  it. [verified] — the record layout. The class already carries the caution in another form: a
+  `(pt.)` figure is a county portion, and Bluffton and Delphos are the two municipalities it is
+  written for. [open] The split.
+properties:
+  parameter: annexations reported by the city of Delphos
+  value: "26"
+  unit: records
+  as_of: 2018-02-28
+  method: |
+    Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 21602, read from
+    the same sixteen files and two record layouts as
+    [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway
+    through the series abbreviates the instrument to `O` and `R`; both are expanded here to
+    `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the
+    readme's own account of the change. Everything else is the file's, unrounded: `acres` is the
+    survey's estimated area of the change and is absent where the file leaves it so. [verified]
+  table: |
+    instrument  date        kind       acres
+    1990-20     1990-05-22  Ordinance   44.8
+    1991-56A    1992-01-27  Ordinance   12.7
+    1992-3      1992-02-27  Ordinance   23.7
+    1992-38     1992-07-27  Ordinance    4.5
+    1993-12     1993-05-24  Ordinance   91.2
+    1996-51     1996-11-11  Ordinance  240.0
+    1998-43     1998-10-12  Ordinance   28.8
+    1999-2      1999-01-25  Ordinance    1.8
+    2000-02     2000-03-13  Ordinance      5
+    -2002-44    2002-11-12  Ordinance    3.4
+    2003-18     2003-04-08  Ordinance    5.3
+    2003-21     2003-04-08  Ordinance    3.1
+    2004-53     2004-08-10  Ordinance    2.3
+    2004-72     2004-12-14  Ordinance     25
+    2004-77     2004-12-28  Ordinance   35.3
+    2007-32     2007-07-24  Ordinance     NA
+    2007-33     2007-07-24  Ordinance     NA
+    2008-04     2008-02-26  Ordinance   99.4
+    2008-12     2008-04-08  Ordinance   14.6
+    2008-48     2008-08-26  Ordinance   11.7
+    2008-63     2008-12-22  Ordinance    1.4
+    2009-27     2009-04-14  Ordinance    116
+    2010-16     2010-04-13  Ordinance     .3
+    2015-24     2015-06-01  Ordinance      1
+    2015-25     2015-07-13  Ordinance     10
+    2018-2      2018-02-28  Ordinance    3.1
+links:
+  - target: ../jurisdiction/city-of-delphos.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../place/delphos.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: allen-county-annexations-1990-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

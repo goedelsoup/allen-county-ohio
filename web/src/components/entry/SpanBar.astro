@@ -17,13 +17,30 @@ interface Props {
   end?: number | null
   /** A fainter interval behind the run — the period an event sits in. */
   band?: { start: number; end: number }
+  /**
+   * Shorter intervals drawn on top of the run — the terms a person served
+   * inside their life. A mark with no end is a term still being served, and it
+   * is drawn open for the same reason the run is.
+   */
+  marks?: { start: number; end?: number | null; label: string }[]
   leftLabel: string
   rightLabel: string
   openLabel?: string
   note?: string
 }
 
-const { min, max, start, end = null, band, leftLabel, rightLabel, openLabel, note } = Astro.props
+const {
+  min,
+  max,
+  start,
+  end = null,
+  band,
+  marks = [],
+  leftLabel,
+  rightLabel,
+  openLabel,
+  note,
+} = Astro.props
 
 const span = max - min
 const pct = (value: number) => (span > 0 ? ((value - min) / span) * 100 : 0)
@@ -47,6 +64,15 @@ const runWidth = Math.max(runRight - runLeft, 0.8)
       )
     }
     <span class:list={['run', end === null && 'run-open']} style={`left:${runLeft}%;width:${runWidth}%`} />
+    {
+      marks.map((m) => (
+        <span
+          class:list={['mark', (m.end ?? null) === null && 'mark-open']}
+          title={m.label}
+          style={`left:${pct(m.start)}%;width:${Math.max(pct(m.end ?? m.start) - pct(m.start), 0.6)}%`}
+        />
+      ))
+    }
     <span class="tick" style={`left:${runLeft}%`} />
     {end !== null && <span class="tick" style={`left:${runRight}%`} />}
     {end === null && <span class="unclosed" style={`left:${runRight}%`} />}
@@ -86,6 +112,25 @@ const runWidth = Math.max(runRight - runLeft, 0.8)
     top: 7px;
     height: 6px;
     background: var(--rubric-500);
+  }
+  /*
+   * A mark sits on the run and is darker than it, because the run is the life
+   * and the marks are the part of it this corpus has a record of. An open mark
+   * is a term still being served and is drawn hollow, on the same principle as
+   * the open run: "still going" and "ends here" must not look alike.
+   */
+  .mark {
+    position: absolute;
+    top: 3px;
+    height: 14px;
+    background: var(--text-strong);
+    opacity: 0.72;
+  }
+  .mark-open {
+    background: none;
+    border: 1.5px dashed var(--text-strong);
+    border-right: none;
+    opacity: 0.6;
   }
   .run-open {
     opacity: 0.35;

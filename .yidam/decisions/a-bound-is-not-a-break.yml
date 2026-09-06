@@ -1,0 +1,112 @@
+id: a-bound-is-not-a-break
+summary: >-
+  Seven pairs the public site draws a line through carried no judgement, and every one of them has
+  something moving underneath it — an annexation, a county line, a revised estimates base. None is
+  a break. The rule this records is what separates the two: a change breaks a pair when it can
+  reverse the difference or account for it, and is a caveat when the difference survives its worst
+  case. The `because` then has to state the direction and the bound, which is the work.
+context: |
+  [comparability is a judgement, not a join](comparability-is-a-judgement-not-a-join.yml) built the
+  edges and [issue #75](https://github.com/goedelsoup/allen-county-ohio/issues/75) taught the
+  charts to read them. What neither settled is the case in the middle, and it is the common one.
+
+  `/people` draws Allen County and Lima indexed to 2000. After the charts learned to read the
+  graph, every step of both lines was still unjudged, and each has a known disturbance under it:
+
+      county   1970 -> 2000   the county line moved once, from Putnam, between the 1990 and
+                              2000 censuses
+      county   2000 -> 2010   a revised estimates base at one end and a census count at the other
+      county   2010 -> 2020   the same, and a second 2020 figure eleven people away
+      Lima     2000 -> 2010   601 acres annexed in eight acts, and three federal figures for
+                              1 April 2000 that differ by fifteen hundred
+      Lima     2010 -> 2020   one more annexation, acreage not stated
+
+  Taken strictly, `comparable-to` says "ground that did not move between them" and none of these
+  qualifies. Taken loosely, everything qualifies and the edge means nothing. The corpus had already
+  decided several cases in both directions without naming what it was deciding on.
+decision: |
+  **A change between two figures breaks the pair when it can reverse the difference or account for
+  it. It is a caveat when the difference survives the change's worst case — and then the `because`
+  must say the direction of the error and how big it can be.**
+
+  Three questions, in order, and a pair fails on the first one it cannot answer:
+
+      1. Which way does the change push the difference?     unknown -> break
+      2. Can it be bounded?                                 unbounded -> break
+      3. Does the finding survive that bound?               no -> break
+
+  Applied to the seven, all seven are caveats and every one of them is written with its direction:
+
+  - **Annexation adds people to the later figure.** Lima lost 1,536 people between 2000 and 2010
+    on ground that grew 601 acres, so the printed fall is a **floor** on the loss inside the 2000
+    line. No reading of the annexation turns a fall into a rise.
+  - **The Putnam gain is bounded by an area that did not move.** The county's total area is 406.88,
+    406.85 and 406.851 square miles across twenty years *and* that boundary change — three
+    hundredths of a square mile, which at the county's density is single figures of people against
+    a fall of six thousand.
+  - **A base against a count is eleven people for the county and forty-eight for Lima**, measured
+    at the one date where both exist. That seam is the bound, and it is three orders of magnitude
+    below the differences it is being carried across.
+
+  **Where the same three questions produce a break**, and this is the check that the rule is not
+  merely permissive — every existing `not-comparable-to` in the corpus fails one of them:
+
+      farm counts, 1910 against 2022     "the direction of the bias is not even determinable"
+      the minor civil divisions, 1910    the artifact is the whole of the fall: Lima left the
+        against 1930                     table, and 56,580 to 27,132 is nothing else
+      a base against a count, one date   the two disagree in opposite directions for the county
+                                         and the city, which is what says a base is not a rounding
+      the vote across 1920 and 1972      direction known, magnitude unbounded: the franchise
+                                         could be the whole of the rise and no return separates
+                                         the new electors from the old
+
+  **A bound that is not stated is not a bound.** The `because` carries the figure — 601 acres,
+  three hundredths of a square mile, eleven people — because a reader who is told a difference is
+  "roughly right" has been told nothing they can check.
+rationale: |
+  **Why the strict reading was rejected.** "Ground that did not move" describes a pair nobody needs
+  a judgement about. Every long series in this corpus crosses something: a corporation annexes, a
+  bureau revises a base, a county takes nineteen acres from its neighbour. A rule that refuses all
+  of them refuses the corpus's own published findings — Lima has lost a third of itself since 1970
+  is a claim across five boundary changes — and it would do it while calling the refusal rigour.
+
+  **Why the loose reading was rejected.** If a stated caveat licenses any pair, then `because`
+  becomes a disclaimer and the edge stops carrying information. The three questions are what keep
+  it: two of them are about the world and can be answered wrongly, and the third is about the
+  specific finding rather than about the figures in general. A pair can be comparable for one
+  claim and not for another, and the corpus should say which.
+
+  **The asymmetry that makes this safe.** Every artifact named above pushes the same way — later
+  figures are inflated, so a decline is understated. A rule that permitted comparisons where the
+  error runs *toward* the corpus's own thesis would be the dangerous one;
+  [boundary-comparability](../skills/boundary-comparability.md) says exactly that about Lima, that
+  the direction of the error "flatters the decline narrative, which is the direction to be most
+  careful in". Here it runs against the thesis: the county and the city are both falling and the
+  artifacts make the printed falls smaller than the real ones. The finding is a floor, and a floor
+  is the safe side of this particular question.
+
+  **What this does not license.** It says nothing about a pair whose disturbance is unmeasured.
+  Lima's 1960 and 1970 counts were unjudged after
+  [a run of the skill](../corpus/measure/lima-population-1970-1990.yml) precisely because question
+  2 could not be answered there: the corpus held no volume that would report a boundary change in
+  that decade, so there was no bound to state. Silence stays the answer where a bound cannot be
+  had, and that is the same rule and not an exception to it.
+
+  **That example has since been settled, and it settled as a break — which is the first time these
+  three questions have been asked with a real bound and answered no.** The 1970 volume was
+  retrieved. It reports that parts of American and Perry townships were annexed by Lima city, and
+  it prints the population of the annexed ground: 3,509 in 1970, against a printed gain of 2,697.
+  Question 1 is answered, question 2 is answered by the Census Bureau itself, and question 3 fails
+  — the bound is larger than the difference and takes its sign with it. Inside the 1960 line the
+  city fell by 812. See
+  [the annexed area](../corpus/measure/allen-county-annexed-area-1960-1970.yml).
+
+  Two things follow that this decision should say out loud. The first is that the rule is not a
+  formality: every one of the seven pairs it was written to license passed, and the eighth pair it
+  was applied to failed, so the questions do discriminate. The second is a caution about the
+  direction argued above. The rationale leans on every artifact in this corpus pushing the same
+  way, making printed falls smaller than real ones — and here the artifact was large enough to
+  turn a real fall into a printed *rise*. The asymmetry that makes a caveat safe is a property of
+  the size of the disturbance, not of its sign, and this is the case that shows the difference.
+status: accepted
+date: "2026-09-06"

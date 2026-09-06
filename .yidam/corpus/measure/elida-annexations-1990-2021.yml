@@ -1,0 +1,62 @@
+class: measure
+label: Elida annexations, 1990–2021
+description: |
+  **Five acts and 912.9 acres reported by a village that is smaller than that.** [verified] —
+  [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md); see
+  [the county's fifty-seven](allen-county-annexations-1990-2024.yml), where this record is the one
+  whose arithmetic does not work.
+
+  Written out: **Elida reported five boundary changes between 8 May 1990 and 11 May 2021,
+  totalling 912.9 acres on the four that state one** — against a village that occupied 703.6 acres
+  in the 2012 geography and 745.6 in the 2024 one. [verified] — same files against
+  [the gazetteer series](../../catalog/census-gazetteer-2020.md).
+
+  **Three of the five are the reasons it does not add up, and the table puts each on its own
+  line.** Ordinance 622-92 of 11 March 1992 claims **640.0 acres** — one square mile, to the acre,
+  which is the size of a survey section and not of a parcel. Resolutions 344-2009 and 348-2009 are
+  **the same 61.6 acres four months apart**, 7 April and 7 August 2009. [verified] — same files.
+
+  [open] Whether that pair is one annexation reported twice or two of identical size. The corpus
+  does not treat it as 123.2 acres of ground either way, and having the two rows separately keyed
+  by date is what lets somebody argue about it rather than about a total.
+
+  **Three of the five are resolutions**, the highest share of any municipality in the county's
+  record, and two of them are the 2009 pair. [verified] — same files. Under the two-instrument
+  reading a resolution is the commissioners' half of an act the village then completes by
+  ordinance, so a record of resolutions may be a record of beginnings. [inference] — the procedure
+  is [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md).
+properties:
+  parameter: annexations reported by the village of Elida
+  value: "5"
+  unit: records
+  as_of: 2021-05-11
+  method: |
+    Every row of Ohio's BAS boundary-change files whose entity FIPS place code is 24808, read from
+    the same sixteen files and two record layouts as
+    [the county's record](allen-county-annexations-1990-2024.yml). The layout that arrives partway
+    through the series abbreviates the instrument to `O` and `R`; both are expanded here to
+    `Ordinance` and `Resolution`, which is the vocabulary the earlier layout spells out and the
+    readme's own account of the change. Everything else is the file's, unrounded: `acres` is the
+    survey's estimated area of the change and is absent where the file leaves it so. [verified]
+  table: |
+    date        instrument  kind        acres
+    1990-05-08  586-90      Ordinance   149.7
+    1992-03-11  622-92      Ordinance   640.0
+    2009-04-07  344-2009    Resolution   61.6
+    2009-08-07  348-2009    Resolution   61.6
+    2021-05-11  483-2021    Resolution     NA
+links:
+  - target: ../jurisdiction/village-of-elida.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../place/elida.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: allen-county-annexations-1990-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

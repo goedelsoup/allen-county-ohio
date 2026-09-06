@@ -1,0 +1,83 @@
+id: a-living-officeholder-is-not-a-research-subject
+summary: >-
+  Thirty-seven of the county's eighty-one officeholders are serving now, and one of them carries a
+  birth date. Filling the other thirty-six is possible — voter files, campaign filings, licence
+  records and social media would date most of them in an afternoon — and this corpus will not do
+  it. The county histories date the dead; nothing here goes looking for the living.
+context: |
+  [Issue #90](https://github.com/goedelsoup/allen-county-ohio/issues/90) set out to build a life
+  span for the `person` class: a bar from birth to death with a mark at each term in office. The
+  survey behind it split the holders in two, and the split is not incidental to the task.
+
+      tenured persons                                    81
+        all terms ended before 2000                      41   born 10   died  3
+        holding a term with no end                       37   born  1   died  0
+        neither                                           3   born  0   died  0
+
+  For the forty-one, the work is ordinary extraction: the three county histories are already in
+  the catalog, they are biographical volumes about exactly this class of person, and reading them
+  is what [attach a biography by its office](attach-a-biography-by-its-office.yml) governs. That
+  half was done and
+  [returned one date](../corpus/measure/allen-county-lives-in-the-county-histories.yml).
+
+  For the thirty-seven, no source in this catalog gives a birth date for any of them, and the
+  reason is that the sources in this catalog are the kind that date people once they are historical.
+  Getting a date for a serving sheriff or a sitting judge means going somewhere else: the Ohio voter
+  file, which carries a year of birth for every registrant; campaign finance filings; a professional
+  licence; a newspaper profile; the person's own accounts of themselves.
+
+  The corpus reached this fork with the bar unbuilt, which is the useful moment to decide: an empty
+  `born` on a serving officeholder looks exactly like an empty `born` on a sheriff of 1839, and a
+  later phase filling in "the gaps" would not see a line it was crossing.
+decision: |
+  **This corpus does not seek dates of birth, addresses, or family details for officeholders who
+  are currently serving. Their entries carry the holdings table and no life span, and the reason is
+  written here rather than left as an absence.**
+
+  - **What is recorded about a serving officeholder** is what the office publishes about the
+    office: the name as the county gives it, the term, how it began, the roster it comes from.
+    That is a public record of a public trust.
+  - **What is not sought** is the biographical apparatus this corpus applies to the dead — birth,
+    parentage, residence, family. Not because it is unavailable but because availability is not
+    the test.
+  - **A date that arrives inside an ordinary source is not refused.** If a county history, a census
+    volume or a newspaper the corpus already holds names a serving officeholder's birth year in the
+    course of saying something else, it is recorded like any other claim. The rule bars the
+    *search*, not the fact. One serving holder carries a `born` already on exactly that footing.
+  - **The line is the term and not the person's death.** A holder whose last term ended is a
+    historical subject on this rule, whatever their present condition — the corpus cannot know
+    whether they are living, and the test it can apply is whether they are in office.
+rationale: |
+  **Availability is not the test, and this is the whole of it.** Everything about the thirty-seven
+  is obtainable; that is precisely why a rule is needed. A corpus that collects whatever it can
+  reach ends up having decided nothing — the shape of what it holds becomes the shape of what
+  happened to be indexed, and a reader cannot tell the two apart.
+
+  **The asymmetry is the point and not an inconsistency.** It is fair to ask why a sheriff of 1839
+  gets a birthday and a sheriff of 2024 does not, when the office is the same. The answer is that
+  the subject is not the same. A man dead a hundred and fifty years is a historical figure and the
+  county history that dated him was written to make him one. A person serving now is a neighbour
+  who stood for election, and a civic reference that assembles a dossier on them has changed from
+  describing a government to profiling the people in it — using, in this county, sources those
+  people did not choose to put in a reference work.
+
+  **It costs the board something and the cost is worth naming.** The life-span bar will be blank
+  for thirty-seven of eighty-one entries, which is not a rendering bug and is not a backlog. The
+  block says so where a reader will see it, because an unexplained absence invites the filling-in
+  this decision exists to prevent.
+
+  **What this is not.** It is not a claim that the information is private — a voter file is public
+  by statute. It is not a rule against covering serving officials, who are covered here in the
+  ordinary way, by their office. And it is not permanent: when a holder's last term ends they
+  become a historical subject under the same rule that admits everyone else, and the corpus's
+  practice does not need revisiting to include them.
+
+  **The precedent it follows.** The corpus already refuses a join it could make when the join is
+  the wrong kind of claim rather than an unavailable one —
+  [comparability is a judgement, not a join](comparability-is-a-judgement-not-a-join.yml) declines
+  to write an edge out of a record nobody asked, and
+  [attach a biography by its office](attach-a-biography-by-its-office.yml) declines a birthday that
+  a name match would have supplied. This is the same move on a different axis: not *can it be
+  known* but *is this corpus the thing that should be doing the knowing*.
+status: accepted
+date: "2026-09-06"

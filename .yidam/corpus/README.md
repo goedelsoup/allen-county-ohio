@@ -103,7 +103,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 5v / 1i / 0o | 48 |
 | [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 7v / 1i / 1o | 50 |
 | [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 6v / 1i / 2o | 46 |
-| [village-of-fort-shawnee.yml](jurisdiction/village-of-fort-shawnee.yml) | jurisdiction | Village of Fort Shawnee | 2 | 9v / 3i / 1o | 84 |
+| [village-of-fort-shawnee.yml](jurisdiction/village-of-fort-shawnee.yml) | jurisdiction | Village of Fort Shawnee | 2 | 10v / 3i / 1o | 94 |
 | [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 5v / 1i / 2o | 53 |
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
@@ -112,7 +112,8 @@ Sorted by: kind, then alphabetically.
 | [allen-county-against-ohio-1980-2008.yml](measure/allen-county-against-ohio-1980-2008.yml) | measure | Allen County's Republican share against Ohio's and the nation's, 1980–2008 | 5 | 4v / 5i / 0o | 78 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
-| [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 13 | 12v / 6i / 1o | 188 |
+| [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 13 | 14v / 7i / 2o | 210 |
+| [allen-county-annexed-area-1960-1970.yml](measure/allen-county-annexed-area-1960-1970.yml) | measure | Population of ground annexed in Allen County, 1960–1970 | 8 | 6v / 3i / 2o | 105 |
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
@@ -234,7 +235,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-lending-denial-gap-2018-2024.yml](measure/allen-county-lending-denial-gap-2018-2024.yml) | measure | Allen County mortgage denial rates by applicant race, 2018-2024 | 2 | 6v / 1i / 0o | 70 |
 | [allen-county-libraries-2024.yml](measure/allen-county-libraries-2024.yml) | measure | Allen County's public libraries, 2024 | 5 | 7v / 3i / 1o | 88 |
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 6v / 5i / 1o | 77 |
-| [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 11v / 3i / 1o | 97 |
+| [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 14v / 4i / 2o | 133 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 6 | 8v / 2i / 1o | 91 |
 | [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 7 | 10v / 1i / 1o | 118 |
@@ -271,10 +272,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 3 | 7v / 2i / 0o | 84 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
-| [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
-| [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
-| [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 4v / 1i / 0o | 40 |
-| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 3 | 3v / 0i / 0o | 36 |
+| [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 3 | 3v / 0i / 0o | 37 |
+| [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 3 | 3v / 0i / 0o | 36 |
+| [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 3 | 4v / 1i / 0o | 51 |
+| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 4 | 3v / 0i / 0o | 46 |
 | [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 5 | 3v / 1i / 0o | 54 |
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
 | [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 5 | 15v / 6i / 0o | 138 |
@@ -320,6 +321,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 11v / 3i / 1o | 95 |
 | [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
+| [allen-county-subdivisions-1960-1970.yml](measure/allen-county-subdivisions-1960-1970.yml) | measure | Allen County subdivisions, 1960 and 1970 | 5 | 7v / 2i / 1o | 115 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
@@ -353,10 +355,13 @@ Sorted by: kind, then alphabetically.
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [allen-county-zip-codes-2020.yml](measure/allen-county-zip-codes-2020.yml) | measure | Allen County's ZIP codes, 2020 | 6 | 12v / 0i / 1o | 119 |
 | [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
+| [bluffton-annexations-1994-2024.yml](measure/bluffton-annexations-1994-2024.yml) | measure | Bluffton annexations, 1994–2024 | 4 | 6v / 1i / 0o | 67 |
+| [delphos-annexations-1990-2018.yml](measure/delphos-annexations-1990-2018.yml) | measure | Delphos annexations, 1990–2018 | 4 | 6v / 1i / 1o | 89 |
+| [elida-annexations-1990-2021.yml](measure/elida-annexations-1990-2021.yml) | measure | Elida annexations, 1990–2021 | 4 | 5v / 1i / 1o | 62 |
 | [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
 | [federal-money-in-allen-county-2008-2025.yml](measure/federal-money-in-allen-county-2008-2025.yml) | measure | Federal money in Allen County, 2008–2025 | 6 | 11v / 5i / 1o | 127 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
-| [lima-annexations-1990-2017.yml](measure/lima-annexations-1990-2017.yml) | measure | Lima annexations, 1990–2017 | 4 | 4v / 2i / 0o | 79 |
+| [lima-annexations-1990-2017.yml](measure/lima-annexations-1990-2017.yml) | measure | Lima annexations, 1990–2017 | 4 | 5v / 2i / 0o | 88 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
@@ -366,13 +371,13 @@ Sorted by: kind, then alphabetically.
 | [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 8v / 9i / 2o | 136 |
 | [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 7v / 3i / 2o | 84 |
 | [lima-mayors-1939-1956.yml](measure/lima-mayors-1939-1956.yml) | measure | Mayors of Lima named inside the gap, 1939–1956 | 2 | 8v / 2i / 1o | 91 |
-| [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
+| [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 6v / 2i / 1o | 93 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
-| [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 5v / 5i / 2o | 93 |
+| [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 5 | 7v / 6i / 1o | 128 |
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 5v / 3i / 0o | 53 |
-| [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
-| [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 3 | 2v / 1i / 0o | 34 |
-| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 4 | 4v / 2i / 0o | 50 |
+| [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 4 | 3v / 1i / 0o | 46 |
+| [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 4 | 2v / 1i / 0o | 45 |
+| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 5 | 4v / 2i / 0o | 63 |
 | [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 5 | 2v / 3i / 0o | 55 |
 | [lima-railroad-traffic-1905.yml](measure/lima-railroad-traffic-1905.yml) | measure | Lima's railroad traffic, 1905 | 2 | 8v / 6i / 0o | 66 |
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
@@ -384,6 +389,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 9v / 5i / 1o | 90 |
+| [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
@@ -498,7 +504,7 @@ Sorted by: kind, then alphabetically.
 | [harvey-b-crosson.yml](person/harvey-b-crosson.yml) | person | Harvey B. Crosson | 2 | 1v / 1i / 0o | 18 |
 | [henry-d-v-williams.yml](person/henry-d-v-williams.yml) | person | Henry D. V. Williams | 2 | 8v / 2i / 1o | 60 |
 | [henry-lippencott.yml](person/henry-lippencott.yml) | person | Henry Lippencott | 2 | 2v / 2i / 0o | 20 |
-| [henry-van-gunter.yml](person/henry-van-gunter.yml) | person | Henry Van Gunter | 2 | 1v / 1i / 0o | 18 |
+| [henry-van-gunter.yml](person/henry-van-gunter.yml) | person | Henry Van Gunter | 4 | 9v / 0i / 0o | 68 |
 | [hiram-stotts.yml](person/hiram-stotts.yml) | person | Hiram Stotts | 2 | 1v / 1i / 0o | 18 |
 | [isaac-bailey.yml](person/isaac-bailey.yml) | person | Isaac Bailey | 2 | 1v / 1i / 0o | 18 |
 | [isaiah-pillars.yml](person/isaiah-pillars.yml) | person | Isaiah S. Pillars | 2 | 11v / 3i / 2o | 82 |
@@ -526,7 +532,7 @@ Sorted by: kind, then alphabetically.
 | [krista-n-bohn.yml](person/krista-n-bohn.yml) | person | Krista N. Bohn | 2 | 2v / 1i / 0o | 21 |
 | [lawrence-oneill.yml](person/lawrence-oneill.yml) | person | Lawrence O’Neill | 2 | 2v / 2i / 0o | 33 |
 | [mark-c-miller.yml](person/mark-c-miller.yml) | person | Mark C. Miller | 1 | 4v / 3i / 1o | 40 |
-| [mathias-h-nichols.yml](person/mathias-h-nichols.yml) | person | Mathias H. Nichols | 2 | 9v / 1i / 1o | 56 |
+| [mathias-h-nichols.yml](person/mathias-h-nichols.yml) | person | Mathias H. Nichols | 2 | 9v / 1i / 1o | 57 |
 | [mathias-ridenour.yml](person/mathias-ridenour.yml) | person | Mathias Ridenour | 2 | 2v / 1i / 0o | 28 |
 | [matt-c-staley.yml](person/matt-c-staley.yml) | person | Matt C. Staley | 2 | 3v / 2i / 0o | 31 |
 | [matthew-b-treglia.yml](person/matthew-b-treglia.yml) | person | Matthew B. Treglia | 2 | 1v / 1i / 0o | 18 |

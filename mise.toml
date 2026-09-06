@@ -46,12 +46,18 @@ rust = { version = "1.98.1", components = "rustfmt,clippy" }
 # code yet, so every other toolchain here would be time on every CI run buying
 # nothing.
 #
-# Add python + uv when the first connector lands. The sources this domain draws
-# on — decennial census and ACS tables, Secretary of State election returns,
-# county parcel and GIS exports — are all better served by the Python tabular
-# and geospatial ecosystem than by Rust.
-# python = "3.12"
-# uv = "latest"
+# Python and uv were commented out here from genesis, against the day "the first
+# connector lands". The connector never landed; a *reader* did. Two of this
+# corpus's census volumes are 300-dpi bitonal scans with no text layer, and the
+# figures in them were read off rendered page images — see the `method` block on
+# `measure/lima-population-1850-1960.yml`, which says so, and
+# `.yidam/decisions/two-scans-of-one-book.yml`, which is the rule about trusting
+# a scan. `mise run read-scan` below is that reading, declared.
+#
+# They are also already load-bearing without being declared: `ground-fixture`
+# shells to a bare `python3`, which until now was whatever the machine had.
+python = "3.13"
+uv = "latest"
 #
 # Node — the web layer in web/, added the day it became an application rather
 # than a README: an Astro site over the exported feeds, deck.gl over the county's
@@ -171,6 +177,82 @@ run = "node web/scripts/fetch-fonts.mjs"
 [tasks.ground-fixture]
 description = "Rebuild crates/ground's section fixture from the county's live layer 55."
 run = "python3 crates/ground/fixtures/refresh.py"
+
+# ── reading a scan (.yidam/catalog/) ──────────────────────────────────────
+# Several sources this corpus cites are scans with no text layer: the 1960 and
+# 1970 Census "Number of Inhabitants" volumes for Ohio are 300-dpi bitonal page
+# images, and so are both digitizations of the county histories. Every figure
+# taken from them was read off a rendered page rather than out of OCR — which is
+# not fastidiousness. `measure/lima-population-1850-1960.yml` records that OCR
+# misread Table 5, and the false positive that stopped issue #90 was a proximity
+# match in an OCR dump attributing one man's birth date to another.
+#
+# So the rendering is a step in this repository's method, and a method that lives
+# only in an agent's shell history is not a method. This declares it.
+#
+# It reaches the network when given a URL and writes nothing but images under a
+# path you name, so it is not in `ci` and never will be: what CI gates is the
+# corpus node the reading produced, and the node cites the volume.
+#
+# pdfium and not poppler, and the difference is the whole reason this is a
+# one-liner: `pypdfium2` ships the renderer inside the wheel, so `mise install`
+# provisions it with no system package, no brew, and no PATH archaeology. mise's
+# registry has no poppler, pdftotext or mupdf — that was checked, and it is why
+# the obvious `pdftoppm` route is not the one taken here.
+
+[tasks.read-scan]
+description = "Render pages of a scanned source to images: read-scan <url-or-path> <pages> [outdir]"
+# `usage` and not `{{arg()}}`: mise deprecated Tera arg templating in run scripts
+# and warns on every invocation, with removal set for 2027.5.
+usage = '''
+arg "<source>" help="URL of the volume, or a path to one already fetched"
+arg "<pages>"  help="PDF page numbers: 29, 29-31, or 29,45-47"
+arg "[outdir]" help="Where to write the images and cache the download" default="scan"
+'''
+run = '''
+uv run --quiet --with pypdfium2 --with pillow python - \
+  "$usage_source" "$usage_pages" "$usage_outdir" <<'PY'
+import pathlib, sys, urllib.request
+
+import pypdfium2 as pdfium
+
+source, spec, outdir = sys.argv[1], sys.argv[2], pathlib.Path(sys.argv[3])
+outdir.mkdir(parents=True, exist_ok=True)
+
+# A URL is cached beside the images, so asking for a second page of the same
+# volume does not fetch it again. These volumes run to twelve megabytes.
+if source.startswith("http"):
+    cached = outdir / pathlib.PurePosixPath(source).name
+    if not cached.exists():
+        print(f"fetching {source}", file=sys.stderr)
+        urllib.request.urlretrieve(source, cached)
+    source = cached
+
+# "29", "29-31" and "29,45-47" all mean what they look like. These are the
+# PDF's own page numbers, which are not the printed page numbers — a scanned
+# volume drops leaves, and the 1970 Ohio part is missing printed 37-24 and
+# 37-25 between its PDF pages 29 and 30.
+pages: list[int] = []
+for part in spec.split(","):
+    if "-" in part:
+        lo, hi = (int(n) for n in part.split("-", 1))
+        pages.extend(range(lo, hi + 1))
+    else:
+        pages.append(int(part))
+
+doc = pdfium.PdfDocument(source)
+stem = pathlib.Path(source).stem
+for n in pages:
+    if not 1 <= n <= len(doc):
+        sys.exit(f"page {n} is outside {stem}, which has {len(doc)}")
+    # scale=4 is about 300 dpi against a 72-point page: the resolution these
+    # volumes were scanned at, and legible enough to read a five-digit count
+    # off a table rule. Grayscale because the source is bitonal.
+    path = outdir / f"{stem}-p{n:03d}.png"
+    doc[n - 1].render(scale=4, grayscale=True).to_pil().save(path)
+    print(path)
+PY
+'''
 
 # ── the site (web/) ───────────────────────────────────────────────────────
 # Each no-ops with a loud line when web/node_modules is absent rather than

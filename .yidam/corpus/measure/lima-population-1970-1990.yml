@@ -20,6 +20,14 @@ description: |
   see [the federal series](lima-population-1850-1960.yml). The caveat this node wrote against its own
   figure is answered by evidence rather than dropped.
 
+  **It is the peak of the corporation, and the corporation is not the ground.** On the land Lima
+  held in 1960 the city counted 50,225 in 1970 against 51,037 in 1960 — it was already falling
+  before the census that records its maximum. [verified] —
+  [the 1970 volume's annexed-area table](allen-county-annexed-area-1960-1970.yml). Both sentences
+  are true and they are about different objects, which is the distinction
+  [the place](../place/lima.yml) and [the corporation](../jurisdiction/city-of-lima.yml) exist to
+  keep apart.
+
   So Lima's series, at the census years the corpus holds: 7,567 (1880) · 21,723 (1900) · 41,326 (1920) ·
   51,037 (1960) · **53,734 (1970)** · 47,827 (1980) · 45,549 (1990) · 40,307 (2000) · 35,579 (2020). Between 1970 and 2020 the
   city lost 18,155 people, **33.8 per cent of itself**, while
@@ -36,7 +44,7 @@ description: |
   event this corpus has ever held, against a
   [comparability caveat](../../skills/boundary-comparability.md) it has carried since genesis.
 
-  **Run against 1960, the comparability check returns the answer that is not an edge.**
+  **Run against 1960, the comparability check first returned the answer that is not an edge.**
   [boundary-comparability](../../skills/boundary-comparability.md) was asked whether 53,734 may be
   set beside [51,037 in 1960](lima-population-1850-1960.yml). It read the two measures, the
   [place](../place/lima.yml) and the [corporation](../jurisdiction/city-of-lima.yml), the
@@ -49,28 +57,41 @@ description: |
   annexations from American, Bath and Shawnee in the 1980s from the volume this node is read out
   of. [verified] — those three sources; see [the place](../place/lima.yml).
 
-  **It is silent about the interval, and finding nothing there is not the same as there being
-  nothing.** Every one of those notes is a census volume reporting its own decade; this corpus
-  holds no volume for 1970; so nothing in it would have reported a change between 1945 and 1979 if
+  **It was silent about the interval, and finding nothing there is not the same as there being
+  nothing.** Every one of those notes is a census volume reporting its own decade; the corpus then
+  held no volume for 1970; so nothing in it would have reported a change between 1945 and 1979 if
   there had been one, and the decades on either side of that gap each hold one. [inference] A
-  `comparable-to` edge written on this pair would be
+  `comparable-to` edge written on that record would have been
   [the claim the apparatus exists to make somebody stand behind](../../decisions/comparability-is-a-judgement-not-a-join.yml),
-  manufactured out of a record nobody asked, so **no judgement is written here** — and the absence
-  is the run's finding rather than a gap in it.
+  manufactured out of a record nobody asked, so none was written and the absence was left as the
+  run's finding.
 
-  **What the risk is, if the line did move.** Annexation moves people into a city without anybody
-  moving house, so the gain of 2,697 would be that much too large and the flatness of the 1950s
-  that much sharper against it. The peak is not what is at risk: every count after 1970 stands on
-  ground at least as large as 1970's, by the annexations this corpus does hold, and every one of
-  them is smaller. What an unrecorded annexation would take is the shape of the approach to the
-  peak. [inference]
+  **The volume it named has now been read, and the line moved.** Parts of American and Perry
+  townships were annexed by Lima city between the two censuses, and the ground taken in held
+  **3,509 people** at the 1970 count. [verified] —
+  [the 1970 volume](../../catalog/census-1970-number-of-inhabitants-ohio.md); see
+  [the annexed area](allen-county-annexed-area-1960-1970.yml) and
+  [the subdivisions](allen-county-subdivisions-1960-1970.yml). The refusal was the right call and
+  not merely a cautious one: something was there, and no record the skill could reach would have
+  shown it.
 
-  [open] Whether Lima's corporation line moved between 1960 and 1970. The 1970 *Number of
-  Inhabitants* volume's geographic change notes for Ohio would settle it, and no source held here
-  can. It is one retrieval, and until it is made the two counts stay unjudged against each other.
+  **So the pair is judged, and it is judged apart.** The printed change is a gain of 2,697 and the
+  annexed ground held more people than the whole of that gain, so annexation does not inflate this
+  difference — it manufactures it. Inside the 1960 line the city went from 51,037 to 50,225, a fall
+  of 812, and that figure is the Bureau's own rather than this corpus's subtraction. Under
+  [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) the direction is known and
+  the bound is stated and the finding does not survive it, which is that decision's definition of a
+  break. The edge on this node says so. [inference]
+
+  **What that costs and what it does not.** The peak is not at risk: every count after 1970 stands
+  on ground at least as large as 1970's, by the annexations this corpus does hold, and every one of
+  them is smaller, so the corporation peaked in 1970 and has lost a third of itself since. What is
+  gone is the shape of the approach to it. The city did not arrive at 1970 slowing; it arrived
+  having already turned, and the flat 1950s were the last decade it grew on its own ground.
+  [inference]
 
   [open] Nothing about the peak. What remains unmeasured is the path between the census years, and
-  why the 1950s gained only 791 people before the 1960s gained 2,697.
+  why the 1950s gained only 791 people on ground that had begun to empty by the next count.
 properties:
   parameter: total resident population, decennial
   value: "53734"
@@ -81,6 +102,20 @@ properties:
     maximum and also its first term, which made it a lower bound on the city's peak until the
     1960 volume supplied the twelve counts before it. It is the peak. [verified]
 links:
+  - target: lima-population-1850-1960.yml
+    relationship: not-comparable-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+    because: >-
+      Parts of American and Perry townships were annexed by Lima city between the two censuses, and
+      the ground taken in held 3,509 people in 1970 against a printed gain of 2,697. The annexation
+      is larger than the difference it is being read across, so it does not bias this comparison —
+      it produces it. Inside the 1960 boundary the city fell from 51,037 to 50,225, which is the
+      Bureau's own figure and not a subtraction made here.
+  - target: allen-county-annexed-area-1960-1970.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
   - target: ../place/lima.yml
     relationship: describes
     claim_tag: verified

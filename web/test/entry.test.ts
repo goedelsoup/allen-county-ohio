@@ -185,6 +185,62 @@ describe('years', () => {
   })
 })
 
+describe('the life span a person entry draws', () => {
+  // `PersonBlock` draws a bar only where `born` is recorded, and reads an absent `died` as
+  // unknown rather than as living. Both halves are gated here because both fail silently: a
+  // missing bar looks like a rendering bug, and a bar running to the present looks like a fact.
+  const people = nodes.filter((n) => n.class === 'person')
+  const dated = people.filter((n) => n.properties.born)
+
+  it('has a scale, and it comes from the corpus rather than a round century', () => {
+    const bounds = dated
+      .flatMap((n) => [year(n.properties.born ?? ''), year(n.properties.died ?? '')])
+      .filter((y): y is number => y !== null)
+    expect(bounds.length).toBeGreaterThan(0)
+    expect(Math.max(...bounds)).toBeGreaterThan(Math.min(...bounds))
+  })
+
+  it('draws no bar for a serving officeholder, which is a decision and not a gap', () => {
+    // `a-living-officeholder-is-not-a-research-subject`. If this ever fails it should be
+    // because a source the corpus already holds named a date in passing — never because
+    // somebody went looking. One holder carries a `born` on exactly that footing.
+    const openTenure = new Set(
+      nodes
+        .filter((n) => n.class === 'tenure' && n.properties.began && !n.properties.ended)
+        .map((n) => n.id),
+    )
+    const serving = people.filter((p) =>
+      holdingsFor(p, 'offices').some((h) => openTenure.has(h.tenure.id)),
+    )
+    expect(serving.length).toBeGreaterThan(30)
+    expect(serving.filter((p) => p.properties.born).length).toBeLessThanOrEqual(1)
+  })
+
+  it('dates the one officeholder the county histories name, and by his office', () => {
+    // `attach-a-biography-by-its-office`: the 1906 sketch names the shrievalty and the year.
+    // The number is deliberately exact — a jump means a sketch was admitted, and the thing to
+    // check is whether it named the office or only matched a surname.
+    const vg = nodes.find((n) => n.id === 'person/henry-van-gunter.yml')
+    expect(vg?.properties.born).toBe('1864-07-29')
+    // The class-wide count the survey node publishes, which is the figure that moves if a
+    // sketch is admitted or withdrawn.
+    expect(dated.length).toBe(22)
+  })
+
+  it('keeps the rejected identifications out of the properties', () => {
+    // Three nodes carry a date in their prose that belongs to somebody else — the farmer
+    // George M. Ridenour, and the two Millers. Promoting prose to a property here would
+    // fabricate a person, which is the failure the rule exists to prevent.
+    for (const id of ['person/mathias-ridenour.yml', 'person/benjamin-s-miller.yml']) {
+      expect(nodes.find((n) => n.id === id)?.properties.born, id).toBeUndefined()
+    }
+    // Samuel A. Baxter is dated, and 1862 is his first wife's death and not his.
+    const baxter = nodes.find((n) => n.id === 'person/samuel-a-baxter.yml')
+    expect(baxter?.properties.born).toBe('1807-09-26')
+    expect(baxter?.properties.died).toBeUndefined()
+  })
+})
+
 describe('the schema card', () => {
   it('has a declaration for every class the site renders a page for', () => {
     // The card is the one piece of furniture common to all thirteen classes. A class with
