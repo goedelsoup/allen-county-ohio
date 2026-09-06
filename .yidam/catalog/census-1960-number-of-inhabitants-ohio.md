@@ -16,6 +16,8 @@ location:
       every page is a 300-dpi bitonal scan, and everything this corpus takes from it was read from
       rendered images. Table 5 begins on printed page 37-10; Lima is on 37-12.
 used-by:
+  - ../corpus/measure/allen-county-annexed-area-1960-1970.yml
+  - ../corpus/measure/allen-county-subdivisions-1960-1970.yml
   - ../corpus/measure/lima-population-1850-1960.yml
   - ../corpus/measure/lima-population-1880-1920.yml
   - ../corpus/measure/lima-population-1970-1990.yml

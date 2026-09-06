@@ -1,0 +1,115 @@
+class: measure
+label: Allen County subdivisions, 1960 and 1970
+description: |
+  Every one of the county's twelve townships at two censuses, the villages and city parts inside
+  them, and the Census Bureau's own note on which lines moved between the two. [verified] —
+  [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md),
+  Table 10, *Population of County Subdivisions: 1970 and 1960*.
+
+  **The county held 111,144 people in 1970 against 103,691 in 1960, a rise of 7.2 per cent.**
+  [verified] — same table. The county figure is a third witness to a count this corpus already had
+  twice, from [the 1990 volume](allen-county-population-1940-1990.yml) and from a set of
+  intercensal estimates that share none of its machinery.
+
+  **Where the county grew was American township, and most of that was Lima moving into it.**
+  American rose 32,887 to 37,590, and the Lima part inside it rose 22,488 to 27,613 — five thousand
+  of the county's seven and a half thousand. [verified] — same table. Bath fell, Perry fell, and
+  the two Lima parts inside them fell with them.
+
+  **The geographic change notes, in full, because they are what this volume was retrieved for.**
+  Footnote 2 to this table reads: *Parts of American and Perry townships annexed by Lima city. Part
+  of Richland township annexed by Bluffton village. Fort Shawnee village incorporated from part of
+  Shawnee township. Part of Spencer township annexed by Spencerville village.* [verified] — same
+  source, footnotes at the end of Table 10, numbered by county in alphabetical order. The five rows
+  carrying the marker are marked `yes` in the table below and no others carry it.
+
+  **It answers where, and Table 8 answers how many.** These notes name the townships and give no
+  quantity; [the annexed-area table](allen-county-annexed-area-1960-1970.yml) gives the quantity and
+  names no township. The two together are the only place in this corpus where a boundary change is
+  both located and measured. [inference]
+
+  **Lima's own decline shows here as something other than annexation.** The city's part of Bath
+  township fell 15,640 to 13,754 and its part of Shawnee fell 2,283 to 2,047, and neither carries
+  the footnote — so on two pieces of ground the corporation held throughout, it lost 2,122 people in
+  the decade it is recorded as having grown. [inference] — computed from the rows below.
+
+  **A note this corpus can date something by.** *Fort Shawnee village incorporated from part of
+  Shawnee township* puts the county's largest village into existence between the two censuses, which
+  is why its 1960 cell is absent rather than zero. [verified] — same footnote; see
+  [the village](../jurisdiction/village-of-fort-shawnee.yml), whose entry has carried an `[open]`
+  on its incorporation date since it was written.
+
+  **The table checks itself on every row and then twice more.** A percent change is printed beside
+  each pair, and all twenty-four of them are consistent with the two counts they stand against. The
+  twelve township figures sum to the printed county total in both columns — 111,144 and 103,691 —
+  and Lima's four parts sum to 53,734 and 51,037, which are the city totals two other volumes give
+  independently. A misread digit breaks its own row's percentage and one of the two column sums.
+  [verified]
+
+  **What it recovers.** [The 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md)
+  holds this county's townships at 1940, 1950 and 1960 in its Table 7, and that page is in this
+  corpus's hands and illegible — the thresholding closed the type and no re-rendering helps. This
+  table prints the 1960 column again, legibly. The 1940 and 1950 columns are still lost, so the gap
+  between [1930–1950](allen-county-townships-1930-1950.yml) and here narrows without closing.
+
+  [open] The county's 1930 township figures, and its own 1930 count. Neither volume reaches them.
+properties:
+  parameter: total resident population, decennial, by county subdivision
+  value: "111144"
+  unit: persons
+  as_of: "1970"
+  method: |
+    Read from Table 10 of a bitonal scan with no text layer, by rendering the page with
+    `mise run read-scan` and reading the block off the image. Allen County is on the first page of
+    the table because the counties run alphabetically. The key combines the township with the place
+    inside it, because `Lima-city-part` appears four times and is not a key on its own;
+    `boundary_change` records whether the row carries the footnote marker, and is not a figure from
+    the table but a reading of its typography. Fort Shawnee's 1960 cells are absent in the source,
+    printed as the three dots this volume uses for not-applicable. The `value` above is the county
+    total. [verified]
+  table: |
+    subdivision                   pop_1970  pop_1960  percent_change  boundary_change
+    Amanda-township                   1498      1217            23.1  no
+    American-township                37590     32887            14.3  no
+    American/Elida-village            1211      1215            -0.3  no
+    American/Lima-city-part          27613     22488            22.8  yes
+    Auglaize-township                 2473      2303             7.4  no
+    Auglaize/Harrod-village            533       563            -5.3  no
+    Bath-township                    23077     23947            -3.6  no
+    Bath/Lima-city-part              13754     15640           -12.1  no
+    Jackson-township                  2247      1999            12.4  no
+    Jackson/Lafayette-village          486       476             2.1  no
+    Marion-township                   6945      5938            17.0  no
+    Marion/Delphos-city-part          4301      3716            15.7  no
+    Monroe-township                   2077      1952             6.4  no
+    Monroe/Cairo-village               587       566             3.7  no
+    Perry-township                   14071     15045            -6.5  no
+    Perry/Lima-city-part             10320     10626            -2.9  yes
+    Richland-township                 4975      4635             7.3  no
+    Richland/Beaverdam-village         525       514             2.1  no
+    Richland/Bluffton-village         2935      2591            13.3  yes
+    Shawnee-township                 11781      9658            22.0  no
+    Shawnee/Fort-Shawnee-village      3436        NA              NA  yes
+    Shawnee/Lima-city-part            2047      2283           -10.3  no
+    Spencer-township                  3201      2944             8.7  no
+    Spencer/Spencerville-village      2241      2061             8.7  yes
+    Sugar-Creek-township              1209      1166             3.7  no
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: allen-county-townships-1930-1950.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: allen-county-annexed-area-1960-1970.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: allen-county-population-1940-1990.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

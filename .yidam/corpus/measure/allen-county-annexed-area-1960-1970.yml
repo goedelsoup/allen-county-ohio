@@ -1,0 +1,105 @@
+class: measure
+label: Population of ground annexed in Allen County, 1960–1970
+description: |
+  **The area Lima annexed between 1960 and 1970 held 3,509 people at the 1970 census, and within
+  its 1960 boundary the city fell by 812.** [verified] —
+  [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md),
+  Table 8, *Population in 1970 of Areas Annexed Between 1960 and 1970*.
+
+  Written out, because the table's five columns are the whole of the finding: **Lima counted 53,734
+  people in 1970, of whom 50,225 lived on the ground the city held in 1960 and 3,509 on ground it
+  did not; the 1960 count was 51,037; and the change between the two censuses inside the 1960 line
+  was −812.** [verified] — same table. **Bluffton counted 2,935, of whom 95 were on annexed
+  ground, against 2,591 in 1960, a rise of 249 inside the old line.** [verified] — same table.
+
+  **This is the figure a comparability judgement almost never gets.** The usual case is that a
+  boundary moved and nobody says by how many people, so the reader is left to bound the artifact
+  from acreage or from nothing at all — which is the position
+  [the annexation record](allen-county-annexations-1990-2024.yml) leaves every pair after 1990 in.
+  Here the Census Bureau printed the counterfactual itself, having drawn both boundaries: the last
+  column *is* the constant-boundary comparison, computed by the only party in a position to compute
+  it. [inference] — the reasoning is this corpus's.
+
+  **And for Lima it reverses a sign.** The city's printed change across the decade is a gain of
+  2,697. The ground it annexed held 3,509 — more than the whole of the gain. So the rise is not
+  a rise that annexation flattered; it is a fall that annexation concealed, and
+  [the peak](lima-population-1970-1990.yml) at 1970 is a fact about the corporation rather than
+  about the land under it. [inference] — computed from the row above; the −812 is the Bureau's own
+  and is not this corpus's arithmetic.
+
+  **The row checks itself twice, which is why one scan was enough.** The 1960 area plus the annexed
+  area is the 1970 total — 50,225 + 3,509 = 53,734 — and the 1960 area less the 1960 count is the
+  printed change — 50,225 − 51,037 = −812. Both hold for Lima and both hold for Bluffton. The two
+  city totals are also carried by
+  [the 1990 volume](../../catalog/census-cph-2-37-ohio.md) and
+  [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md), independently, to the
+  person. [verified] — those three sources.
+
+  **Bluffton's answer is the other one, and it is worth writing down beside Lima's.** Ninety-five
+  people came in on annexed ground against a printed rise of 344, so the village grew on its own
+  land as well as by taking more. Same decade, same county, same table, opposite verdict — which is
+  what [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) predicts should happen
+  when the bound is small against the difference rather than larger than it. [inference]
+
+  **Delphos should be in this table and is not.** The city held roughly seven thousand people in
+  1960, far above the table's threshold of 2,000, and the alphabetical run goes Defiance, Delaware,
+  Delta with nothing between the last two. Bluffton also straddles a county line and is present, so
+  that is not the rule that excluded it. [verified] — the absence is on the page.
+
+  [open] Why Delphos is absent from Table 8. The footnotes to that table are on printed page 37-24,
+  which is one of two leaves missing from the scan this corpus holds, so the explanation — if the
+  volume gives one — was not read. A second digitization would settle it.
+
+  [open] Whether "annexed area" in this table also covers ground *detached* between the censuses.
+  The column heading does not say and the footnote page is the one that is missing. It does not
+  disturb the Lima finding: a detachment would make the 1960-area population larger rather than
+  smaller, so −812 is at worst an understatement of the fall.
+properties:
+  parameter: population in 1970 of ground annexed since 1960
+  value: "3509"
+  unit: persons
+  as_of: "1970"
+  method: |
+    Read from Table 8 of a bitonal scan with no text layer, by rendering the page with
+    `mise run read-scan` and reading the two Allen County rows off the image rather than trusting
+    optical character recognition, which is the practice
+    [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md) established after OCR
+    misread its Table 5. Both of the table's arithmetic identities were checked on both rows, and
+    the 1970 and 1960 city totals against two other volumes. The `value` above is the Lima row's
+    annexed-area column, which is the bound the comparability judgement on this pair turns on.
+    [verified]
+  table: |
+    place     total_1970  in_1960_area  in_annexed_area  pop_1960  change_in_1960_area
+    Lima           53734         50225             3509     51037                 -812
+    Bluffton        2935          2840               95      2591                  249
+links:
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: ../place/bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: ../jurisdiction/village-of-bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: allen-county-subdivisions-1960-1970.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: lima-population-1970-1990.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: lima-population-1850-1960.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-1970-number-of-inhabitants-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
