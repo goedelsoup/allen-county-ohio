@@ -110,7 +110,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-against-ohio-1980-2008.yml](measure/allen-county-against-ohio-1980-2008.yml) | measure | Allen County's Republican share against Ohio's and the nation's, 1980–2008 | 5 | 4v / 5i / 0o | 78 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
-| [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 4 | 10v / 5i / 1o | 140 |
+| [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 13 | 12v / 6i / 1o | 188 |
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
@@ -347,6 +347,7 @@ Sorted by: kind, then alphabetically.
 | [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
 | [federal-money-in-allen-county-2008-2025.yml](measure/federal-money-in-allen-county-2008-2025.yml) | measure | Federal money in Allen County, 2008–2025 | 6 | 11v / 5i / 1o | 127 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
+| [lima-annexations-1990-2017.yml](measure/lima-annexations-1990-2017.yml) | measure | Lima annexations, 1990–2017 | 4 | 4v / 2i / 0o | 79 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
