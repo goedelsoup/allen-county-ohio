@@ -1,0 +1,95 @@
+class: measure
+label: Allen County presidential vote, 1944–1956
+description: |
+  **Three presidential returns for this county out of the forty years the corpus could not reach,
+  printed by the only Allen County newspaper in the national newspaper archive.** Dewey took 21,006
+  votes to Roosevelt's 12,504 in 1944, 17,381 to Truman's 13,161 in 1948, and Eisenhower took 28,386
+  to Stevenson's 12,035 in 1956. [verified] —
+  [The Bluffton News](../../catalog/chronicling-america.md), the issues of 9 November 1944,
+  4 November 1948 and 8 November 1956, each printing the county canvass.
+
+  **Every one of the three calls itself unofficial and says how much of the county it had.** 1944 is
+  "complete unofficial returns from Allen county's 111 precincts"; 1948 is "the complete unofficial
+  returns from all of Allen county's 112 precincts"; 1956 says "The complete unofficial vote" and
+  gives no precinct count. [verified] — the same three issues. The qualifier travels with the
+  figures and decides what may be computed from them; see
+  [a newspaper canvass is not a certified return](../../decisions/a-newspaper-canvass-is-not-a-certified-return.yml).
+
+  **In figures: the Republican share of the two-party presidential vote was 62.7 per cent in 1944,
+  56.9 in 1948 and 70.2 in 1956.** [verified] — computed here from the three tables. Those shares
+  are within-table quantities and the differences between them are not: the denominators are 111,
+  112 and an unstated number of precincts.
+
+  **1952 is here as a sentence and not as a count.** The paper reports that "Allen county,
+  traditionally Republican, again gave large majorities to all GOP candidates in the election
+  Tuesday with the exception of Charles Taft in his race against Governor Frank Lausche", on "an
+  unofficial tabulation of 115 precincts out of 119". [verified] — the issue of 6 November 1952.
+  The table's number column is absent from the scan, so the direction of that election is held and
+  no figure from it is.
+
+  **The county's window has narrowed from eleven elections to seven.** Nothing after 1956 can be
+  the turn and 1920 was already Republican, so the open question was 1912, 1916, 1924, 1928, 1932,
+  1936, 1940, 1944, 1948, 1952 or 1956. Four of those are now answered and all four are Republican,
+  leaving 1912, 1916, 1924, 1928, 1932, 1936 and 1940. [inference] — see
+  [the modern series](allen-county-presidential-vote-2000-2016.yml), which carries the question.
+
+  **1940 is the one of the seven that this paper would have answered and cannot.** The archive holds
+  the Bluffton News continuously through 8 August 1940 and again from 9 January 1941 and holds
+  nothing between — a five-month hole containing the election. [verified] —
+  [the archive](../../catalog/chronicling-america.md), searched in four date windows.
+
+  **This node does not establish that Allen County voted Republican for president in every election
+  from 1944 to 1956.** It establishes that it did in 1944, 1948 and 1956, and that a newspaper
+  reported that it did in 1952 without printing a number this corpus can read.
+
+  [open] What the third-party vote was in any of the three years. The paper prints two names under
+  "For President" and nothing under them, so a Republican share out of the whole vote — which is
+  the quantity [the 1960 and 1964 volume](allen-county-presidential-vote-1960-1964.yml) publishes —
+  cannot be computed from this source and the shares here are two-party.
+properties:
+  table: |
+    race            republican  rep_votes  democrat   dem_votes  rep_pct
+    president_1944  Dewey       21006      Roosevelt  12504      62.7
+    governor_1944   Stewart     19575      Lausche    13203      59.7
+    senator_1944    Taft        19254      Pickrel    13052      59.6
+    president_1948  Dewey       17381      Truman     13161      56.9
+    governor_1948   Herbert     15963      Lausche    15256      51.1
+    president_1956  Eisenhower  28386      Stevenson  12035      70.2
+    governor_1956   O_Neill     23907      DiSalle    15443      60.8
+    senator_1956    Bender      20491      Lausche    18838      52.1
+  parameter: Republican share of Allen County's two-party presidential vote
+  value: "70.2"
+  unit: per cent in 1956, against 62.7 in 1944 and 56.9 in 1948
+  as_of: "1956"
+  method: |
+    Each figure is the newspaper's own, taken from its printed canvass and not recomputed.
+    [verified] `rep_pct` is the Republican vote over the sum of the two named candidates, which is
+    a two-party share and not a share of all votes cast, because the paper prints no third-party
+    line and no total. [verified] The 1948 issue is dated 4 November, two days after the election;
+    1944 and 1956 are dated a week after theirs, because the paper's press day moved. [verified]
+    The text is read from the archive's ALTO OCR; every figure above was checked against the
+    surrounding words for a candidate's party letter, and where the letter itself is garbled the
+    party is taken from the office's other candidate. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: allen-county-presidential-vote-1960-1964.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: allen-county-presidential-vote-1920.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: allen-county-ballot-1956.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../organization/the-bluffton-news.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

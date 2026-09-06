@@ -1,0 +1,97 @@
+class: measure
+label: The whole Allen County ballot, November 1956
+description: |
+  **Twenty-seven contests from one election, which is the only complete county ballot this corpus
+  holds from any year before 1960.** President down to coroner, five judicial races and two state
+  questions, as the county's own weekly printed them the week after the vote. [verified] —
+  [The Bluffton News](../../catalog/chronicling-america.md), 8 November 1956, under the heading
+  "GOP Makes Clean Sweep Again Of County Offices".
+
+  **A Republican sweep, and an eighteen-point spread down one ballot.** Eisenhower took 70.2 per
+  cent of the two-party presidential vote in this county, O'Neill 60.8 for governor and Bender
+  52.1 for United States senator. [verified] — computed here from the table below. All three were
+  counted by the same boards on the same night from the same precincts, so the spread is a
+  within-table comparison and rests on nothing the canvass's own qualifier undermines.
+
+  **Frank Lausche came within 1,653 votes of carrying a county Eisenhower won by 16,351.** The
+  Democratic governor was running for the Senate; the paper notes that he "outpulled Taft in Allen
+  county for governor at the 1952 election" and "ran under Bender in the Senatorial race this
+  election". [verified] — the same source. His 18,838 votes are 2,513 more than any other Democrat
+  on the ballot received, and 6,803 more than the presidential nominee of his own party.
+
+  **The county coroner outpolled the president.** Biery, unopposed, took 31,907 votes against
+  Eisenhower's 28,386, and the state senator Pepple, also unopposed, took 29,598. [verified] — the
+  same source. An unopposed candidate on a partisan ballot collects from both columns, which is
+  why the two largest figures on this sheet are the two races nobody contested.
+
+  **Both state questions passed and one of them passed by nearly four to one.** A bonus for
+  veterans of the Korean conflict carried 28,005 to 7,687, and four-year terms for state senators
+  21,635 to 11,638. [verified] — the same source.
+
+  **This node does not know which two of the four commissioner candidates were elected.** The paper
+  prints four names under one heading for two seats and does not mark the winners; the two rows
+  below pair the higher Republican with the higher Democrat and the lower with the lower, which is
+  this corpus's arrangement of the figures and not the ballot's. See
+  [a newspaper canvass is not a certified return](../../decisions/a-newspaper-canvass-is-not-a-certified-return.yml).
+
+  [open] What the county's total ballots cast were. Every contest here has its own denominator and
+  none of them is the turnout: the presidential race drew 40,421 votes between two candidates and
+  the coroner drew 31,907 alone, and neither is the number of people who came to the polls.
+properties:
+  table: |
+    contest                 candidate_a  party_a  votes_a  candidate_b   party_b  votes_b
+    president               Eisenhower   R        28386    Stevenson     D        12035
+    governor                O_Neill      R        23907    DiSalle       D        15443
+    lieutenant_governor     Herbert      R        23954    Taylor        D        14298
+    secretary_of_state      Brown        R        24893    Lynch         D        13211
+    auditor_of_state        Rhodes       R        22446    Ferguson      D        16119
+    treasurer_of_state      Tracy        R        23048    Donahey       D        15047
+    attorney_general        Saxbe        R        21625    Young         D        15915
+    us_senator              Bender       R        20491    Lausche       D        18838
+    us_representative       McCoulloch   R        24674    Barr          D        13744
+    state_senator           Pepple       R        29598    none          NA       NA
+    state_representative    White        R        21723    Pickering     D        16325
+    commissioner_first      Roush        R        20879    Hilty         D        15875
+    commissioner_second     Mason        R        17841    Thomas        D        15384
+    prosecuting_attorney    Bowers       R        23176    Derryberry    D        15457
+    clerk_of_court          McClain      R        23577    Welker        D        14291
+    sheriff                 Cotterman    R        23737    Ford_Sr       D        14949
+    county_recorder         Davis        R        24637    Schmidt       D        13077
+    county_treasurer        Barnett      R        26160    Dershem       D        11991
+    county_engineer         Monahan      R        23151    Schoenlein    D        14562
+    county_coroner          Biery        R        31907    none          NA       NA
+    chief_justice           Weygandt     NP       18549    Campbell      NP       16581
+    supreme_court_seat_one  Matthias     NP       25200    Brothers      NP        9373
+    supreme_court_seat_two  Herbert      NP       24541    Ford          NP       10580
+    court_of_appeals        Quatman      NP       21478    Guernsey      NP       15991
+    common_pleas            Jenkins      NP       21616    Weadock_Jr    NP       15951
+    soldiers_bonus          Yes          NA       28005    No            NA        7687
+    four_year_senate_terms  Yes          NA       21635    No            NA       11638
+  parameter: contests on Allen County's November 1956 ballot, with the vote for each
+  value: "27"
+  unit: contests, from president to two state questions
+  as_of: "1956-11-06"
+  method: |
+    Every figure is the newspaper's own. [verified] `party_a` and `party_b` carry `R` and `D` as
+    the paper letters them, `NP` for the five judicial races, which Ohio elects without party
+    labels, and `NA` where the row is a ballot question or an unopposed candidate with no opponent
+    printed. [verified] `none` in a candidate column means the paper printed one name under that
+    heading. [verified] The two commissioner rows are this corpus's pairing of four names the
+    paper prints under one heading; the ballot elected two of the four and the source does not say
+    which. [inference] Spellings are the paper's, including `McCoulloch` for the congressman the
+    corpus elsewhere records as McCulloch. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: allen-county-presidential-vote-1944-1956.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../organization/the-bluffton-news.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
