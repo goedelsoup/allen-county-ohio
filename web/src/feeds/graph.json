@@ -1128,6 +1128,10 @@
         {
           "text": "**What it did to the county is the thing that is not in dispute.** Within a decade Lima stood at the crossing of the two roads and Delphos, the canal town, did not. [inference] — see [Lima](../place/lima.yml), [the canal](../site/miami-and-erie-canal.yml) and [the network the two roads became](../measure/allen-county-railroads-1883-1921.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**It is situated in the period it ends.** [The canal era](../period/canal-era.yml) argues its own closing bound from this event and names this node in its `boundary_basis`; the `affected` edge to the canal below is the same relation stated from the other side. That makes this road to the canal era what [the strike](lima-oil-strike.yml) is to the oil boom — the happening a period is bounded by — and the tick belongs inside that band rather than beside it. [inference] The edge is an inference and cannot be anything else: the canal era is this corpus's name for a span, and no source here names it. See [a period is not a date range](../../decisions/a-period-is-not-a-date-range.yml).",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -1162,6 +1166,10 @@
         },
         {
           "text": "**The corporation's date was in this book the whole time.** The corpus has cited the 1885 history in dozens of nodes and had never asked it this question; the field on [the city](../jurisdiction/city-of-delphos.yml) stood empty for sixty-eight phases. [inference] — see [a count of absences is not an agenda](../../decisions/a-count-of-absences-is-not-an-agenda.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**It is a canal town taking a government, six years after the water opened.** [The canal era](../period/canal-era.yml) is named for a geographic asymmetry rather than a countywide condition — the canal made the county's west and never touched Lima — and this corporation is that asymmetry producing an instrument. Delphos is verified to sit on the Miami and Erie, and the canal opened there in 1845. [verified] — [the canal](../site/miami-and-erie-canal.yml). That the canal is *why* the town stands where it does remains an inference on that node, and this edge inherits the same care rather than escaping it: the period is what makes the incorporation legible, not what caused it. [inference] See [a period is not a date range](../../decisions/a-period-is-not-a-date-range.yml).",
           "tier": "inference"
         }
       ],
@@ -1230,6 +1238,10 @@
         {
           "text": "**It is the second of three times a mob has come to this jail and the corpus held only the third.** Fifty armed men guarded it against a threatened mob the night before [Andrew Brentlinger's execution in 1872](the-execution-of-andrew-brentlinger-1872.yml), and [Sheriff Jess Sarber was shot dead in it in October 1933](allen-county-jail-raid-1933.yml). [verified] — the same book for the first two and [Chronicling America](../../catalog/chronicling-america.md) for the third. Three attacks in sixty-one years, and the office's own duty as the book states it is \"to prevent lynchings, riots and all violent disorders\".",
           "tier": "verified"
+        },
+        {
+          "text": "**This node used to say it belonged to the World War and never said why.** It carried a `situated-in` edge to [the World War in Allen County](../period/the-world-war-in-allen-county.yml), a period that opens in April 1917 — seven months after this mob — and nothing above argued it. The book gives the motive as the wet-and-dry quarrel and the sheriff's dry vote, and the war appears in neither the account nor the aftermath. The edge is withdrawn and nothing replaces it: **this county's corpus has named no period that holds 1916.** [inference] — see [a period is not a date range](../../decisions/a-period-is-not-a-date-range.yml), which counts eighteen further events in the same condition.",
+          "tier": "inference"
         }
       ],
       "refusals": [],
@@ -27755,6 +27767,13 @@
     },
     {
       "from": "event/the-first-railroad-reaches-allen-county.yml",
+      "to": "period/canal-era.yml",
+      "relationship": "situated-in",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "event/the-first-railroad-reaches-allen-county.yml",
       "to": "site/miami-and-erie-canal.yml",
       "relationship": "affected",
       "tier": "verified",
@@ -27773,6 +27792,13 @@
       "relationship": "occurred-in",
       "tier": "verified",
       "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "event/the-incorporation-of-delphos-1851.yml",
+      "to": "period/canal-era.yml",
+      "relationship": "situated-in",
+      "tier": "inference",
+      "source": null
     },
     {
       "from": "event/the-lima-news-strike-of-1957.yml",
@@ -27815,13 +27841,6 @@
       "relationship": "affected",
       "tier": "verified",
       "source": "catalog/rusler-allen-county-1921.md"
-    },
-    {
-      "from": "event/the-mob-at-the-allen-county-jail-1916.yml",
-      "to": "period/the-world-war-in-allen-county.yml",
-      "relationship": "situated-in",
-      "tier": "inference",
-      "source": null
     },
     {
       "from": "event/the-naming-and-incorporation-of-bluffton-1861.yml",
