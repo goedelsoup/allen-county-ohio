@@ -25,6 +25,7 @@ used-by:
   - ../corpus/measure/allen-county-population-1940-1990.yml
   - ../corpus/measure/allen-county-townships-1890-1910.yml
   - ../corpus/measure/lima-manufactures-1899-1909.yml
+  - ../corpus/measure/lima-population-1970-1990.yml
   - ../corpus/organization/standard-oil.yml
   - ../corpus/period/lima-oil-boom.yml
   - ../corpus/place/allen-county.yml
