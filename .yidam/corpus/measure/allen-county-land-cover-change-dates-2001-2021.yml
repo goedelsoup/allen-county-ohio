@@ -1,0 +1,84 @@
+class: measure
+label: When Allen County's land cover first changed, 2001–2021
+description: |
+  **The county's land-cover change now has dates on it, and it is falling away.** 6,427.7 acres
+  first changed class somewhere between 2001 and 2021, and the rate runs from 565.9 acres a year in
+  2004–2006 to 115.9 in 2019–2021 — a fall of nearly five to one. [verified] —
+  [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), its first-disturbance
+  date raster, clipped to the county and counted here. The eight steps are in the table below.
+
+  **The eight steps are two and three years long, and which one was busiest depends on whether you
+  divide.** By acres the peak is 2008–2011 at 1,377.1; by acres a year it is 2004–2006 at 565.9,
+  and 2011–2013 — fifth by acres, at 979.9 — is second at 489.9. [verified] — the same source. The
+  top three reorder and five of the eight rows move. See
+  [an epoch is not a year](../../decisions/an-epoch-is-not-a-year.yml).
+
+  **It is a *first* disturbance date, so the late steps are short and the size of that is known.**
+  A pixel that changed twice is dated once, in the earlier step. Against the same product's change
+  count, 2,992 of the county's 28,902 changed pixels changed more than once, so this raster misses
+  3,527 of 32,429 changes — 10.9 per cent — and misses them at the late end. [verified] — the same
+  source's change count, differenced against the date raster. A fall of five to one survives a bias
+  of that size.
+
+  **The county's forest is in equilibrium and 431.9 acres of it were cut.** The forest-disturbance
+  raster dates a disturbance for that much ground between 1984 and 2020, against 22,444.8 acres it
+  marks as forest with no disturbance at all. [verified] — the same source, its 1984–2021 forest
+  disturbance date. The busiest years are 2007 at 52.9 acres, 2012 at 37.6, 2005 at 30.0, 2002 at
+  28.5 and 2019 at 27.6. A class the nine-epoch file shows moving eight acres in twenty years has
+  had fifty times that cut inside it, one woodlot at a time. [inference] — read against
+  [the land cover](allen-county-land-cover-2001-2021.yml), which gives forest 21,234 acres in 2001
+  and 21,226 in 2021.
+
+  **This node does not know what happened on the ground in any of those years.** A first-disturbance
+  date says a thirty-metre cell was classified differently after some step than before it, and
+  names neither what it became nor who did it. See
+  [the nine epochs](allen-county-land-cover-2001-2021.yml) for what the classes are and
+  [a class that only moves one way](../../decisions/a-class-that-only-moves-one-way.yml) for what
+  the file will and will not let itself see.
+
+  [open] What the raster's third value is. 237,505.2 acres — ninety-one per cent of the county —
+  carry code 83, which the map service's style labels "1983", a year outside the product's own
+  stated 1984–2021 range. Read here as the fill for ground that was not forest, on the arithmetic:
+  the county is about nine per cent wooded and the remaining two codes account for the wood.
+  [inference] Nothing in the product's own documentation says so, because the product has no
+  documentation page.
+properties:
+  table: |
+    epoch      years    acres   acres_per_year   rank_by_acres   rank_by_rate
+    2001-2004      3    903.4            301.1               4              5
+    2004-2006      2   1131.8            565.9               2              1
+    2006-2008      2    795.3            397.6               5              4
+    2008-2011      3   1377.1            459.0               1              3
+    2011-2013      2    979.9            489.9               3              2
+    2013-2016      3    517.3            172.4               6              6
+    2016-2019      3    491.3            163.8               7              7
+    2019-2021      2    231.7            115.9               8              8
+  parameter: acres of Allen County first changing land cover class, per year
+  value: "115.9"
+  unit: acres a year in 2019-2021, against 565.9 in 2004-2006
+  as_of: "2021"
+  method: |
+    The date raster codes each changed pixel 2–9 for the epoch step in which it first differs, and
+    1 for no change; the codes are read from the map service's style endpoint because these
+    products have no legend page. [verified] Acreage is 900 square metres a pixel over the county
+    mask used by [the annual summary](allen-county-land-cover-change-1985-2023.yml), which is
+    1,170,809 pixels and 260,381.9 acres. [verified] Epoch lengths are the differences of the
+    labels' own years, and the acreages are rounded a row at a time, so the column sums to 6,427.8
+    against a total of 6,427.7 computed unrounded. [verified] The forest figures are a separate raster on the same grid with
+    its own forest mask, which does not equal the land-cover file's forest classes and is not
+    differenced against them. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-change-1985-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-2001-2021.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
