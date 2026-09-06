@@ -17,3 +17,10 @@
 - An event with a duration uses `occurred_through`. A period is not a long event — if the
   node is an interpretation of a span rather than a happening, it belongs in
   [period](../period/).
+- `situated-in` is not "during". It asserts that the period is what makes the happening
+  legible — the event opens it, closes it, or is its character producing a particular act or
+  casualty. A date inside the bounds is not evidence for the edge and a date outside them is
+  not evidence against it; four of this corpus's dated disasters sit inside two periods at
+  once and belong to neither. An event cannot be `verified` into a period the corpus itself
+  named, because no source names it. See
+  [a period is not a date range](../../decisions/a-period-is-not-a-date-range.yml).
