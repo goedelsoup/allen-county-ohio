@@ -166,6 +166,16 @@ jobs:
         with:
           fetch-depth: 0
 
+      # `fetch-depth: 0` is a depth, not a refspec. It fetches the whole history *of the ref
+      # being checked out* and creates no remote-tracking ref for any other branch — so a job
+      # that asks git what branches exist gets one answer here and a different one in any clone
+      # that has run `git fetch`. `yidam status` asks exactly that, and the `regen --check`
+      # below gates its answer, so without this step CI computes a phase count nobody else can
+      # reproduce and passes on a README that is wrong. See finding 7 in
+      # `.yidam/decisions/upstream-findings.yml`; `crates/publish/tests/gate.rs` keeps this step.
+      - name: Fetch the branches the status block counts
+        run: git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*'
+
       # Build the same yidam this repo was vendored from. `.yidam.toml` records the
       # commit (see VERSIONING.md, Layer 1); pinning to it means the gate cannot
       # drift from the prelude the corpus was written against. Re-pin with
@@ -408,10 +418,14 @@ jobs:
       # produce a diff the gate had never asked for. The set now lives in one place in the
       # CLI and both callers ask for it by name.
       #
-      # `yidam status` counts phase branches, which is why the checkout above fetches
-      # everything: with only the checked-out branch present, the count is whatever CI can
-      # see rather than what the repository holds. That was a live bug — the count read
-      # local branches only, so this job failed on every push in any repo with a sangha.
+      # `yidam status` counts phase branches, which is why this job fetches every branch head
+      # above: with only the checked-out ref present, the count is whatever CI can see rather
+      # than what the repository holds. That was a live bug — the count read local branches
+      # only, so this job failed on every push in any repo with a sangha. It came back in a
+      # quieter form, because `fetch-depth: 0` does not do what the comment here used to say it
+      # did, and CI passed a README understating the phase count while every local gate failed
+      # on it. The field is ref-derived and this only makes the two ends agree; the durable fix
+      # is upstream, and finding 7 says why.
       # `--check` rather than run-and-diff. The old form regenerated into the working
       # tree and asked git whether anything moved, which works in CI and cannot be run
       # locally with work in flight — the diff it reads is every diff, not just its own.
