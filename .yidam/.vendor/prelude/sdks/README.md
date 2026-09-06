@@ -165,13 +165,30 @@ SanghaEvolution
 ### Phase types
 
 ```
-Phase
-  name        : string           — short declarative label
-  kind        : PhaseKind        — Investigation | Extraction | Synthesis | Assessment
-  branch      : string           — the ma/* branch this phase lives on
-
-PhaseKind = Investigation | Extraction | Synthesis | Assessment
+PhaseRow
+  name        : string           — the phase name, humanized from the ref
+  state       : string           — active | settled | position
+  ref_name    : string           — the ref this row was derived from
+  owner       : string           — who last committed on it
+  started     : string           — the date of its first commit
+  commits     : integer          — commits ahead of the baseline
 ```
+
+This is what `yidam phases` emits, and no SDK implements it — the row is a CLI report shape,
+carried here because the report contract is shared. Three things it deliberately does **not**
+have:
+
+- **No `kind`.** A phase's *type* — Investigation, Extraction, Synthesis, Assessment — is
+  declared by the vendored kuten (`kuten/inquiry/kuten.yml`, `phases.types`) and described in
+  [PHASES.md](../PHASES.md). Nothing in any repository records a type against a phase: across
+  the eighteen corpora the layer was measured over there are 60 `phase/*` refs and 301
+  `phase:` subjects, and not one of either encodes a type. The validator that would read one
+  is filed and unbuilt.
+- **No `branch`.** `state` is a lifecycle word derived from the ref namespace, not a branch
+  name; `ref_name` carries the ref.
+- **Not `ma/*`.** A phase lives on `phase/<name>`. `ma/<elector>` is a standing elector
+  position, which never settles and is a different object — conflating the two is what had
+  `yidam status` reporting 26 active phases in a repository holding one.
 
 ### Samudaya types
 
@@ -216,8 +233,11 @@ ScoredNode
 
 ## The parity surface
 
-These eight functions form the **parity contract** — the operations all three SDKs must
-implement identically, as verified by the fixture harness.
+These functions form the **parity contract** — the operations all three SDKs must
+implement identically, as verified by the fixture harness. `parity-check`'s `functions` loop
+in `mise.toml` is the authoritative list; this section is the prose beside it, and it said
+"eight" while naming eight of ten for as long as `is_recognized_verb` and
+`compile_class_schema` were on the surface.
 
 ```
 parse_node(text: string) -> CorpusNode
@@ -250,10 +270,24 @@ update_regen(text: string, command: string, new_content: string) -> string
   Empty new_content clears the body with no blank line left between the markers.
 
 find_reachable(edges: GraphEdge[], node_path: string) -> string[]
-  All nodes reachable from node_path following directed edges (BFS), sorted.
+  All nodes reachable from node_path following directed edges (BFS).
+  The start node is not included. Sorted by code point, which is not what
+  JavaScript's default comparator does — see parity/README.md.
 
 find_citations(edges: GraphEdge[], node_path: string) -> string[]
-  All nodes with a directed edge pointing to node_path, sorted.
+  All nodes with a directed edge pointing to node_path, sorted by code point
+  and deduplicated.
+
+is_recognized_verb(verb: string) -> bool
+  Whether a leading commit verb is in the closed vocabulary — the epistemic and
+  operational verb sets together. classify_commit treats anything else as Epistemic;
+  this is the predicate that says whether it was recognised at all.
+
+compile_class_schema(class: OntologyClass) -> JsonSchema
+  Compile a parsed .ont.yml class definition into the JSON Schema its instances
+  validate against. An empty `required` is omitted rather than written as [].
+  Declared relationships are published as an x-yidam-edges annotation, not as a
+  constraint on links[].relationship — see ontology.rs for why.
 ```
 
 Every parity fixture is a TOML file pairing one of these functions with a representative
@@ -425,7 +459,7 @@ pub enum CommitKind { Epistemic, Operational }
 pub struct CommitEvent { pub hash, pub kind, pub verb, pub subject, pub context }
 pub fn classify_commit(message: &str) -> CommitEvent
 
-pub fn active_phases(repo: &Repository) -> Result<Vec<Phase>>   // reads ma/* refs
+pub fn active_phases(repo: &Repository) -> Result<Vec<PhaseRow>>  // would read phase/* refs
 pub fn resolved_evolutions(repo: &Repository) -> Result<Vec<SanghaEvolution>>  // rigpa/*
 
 // yidam_core::sangha
@@ -503,7 +537,7 @@ export function templateSections(text: string): TemplateMarker[]
 export interface AgentContext {
   nodes: ScoredNode[]                // semantically retrieved, not path-followed
   openQuestions: CorpusNode[]        // nodes with open claims — natural agent entry points
-  activePhases: Phase[]              // in-progress ma/* branches
+  activePhases: PhaseRow[]           // in-progress phase/* branches
   tokenEstimate: number              // approximate context consumption
 }
 

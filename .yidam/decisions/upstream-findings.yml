@@ -1,13 +1,14 @@
 id: upstream-findings
 summary: >-
-  Seven findings against the pinned yidam, of which two are now fixed upstream. Two defects in
-  `yidam crates-index` found while writing the first crate — both closed by template v0.3.0 —
-  two gaps in the corpus format found while tagging every edge in the graph, one in what
-  genesis installs, found the first time CI ran on a remote, and one in what a vendored crate
-  does to this repository's own formatting gate. The four then open were filed upstream on
-  2026-09-04 as goedelsoup/yidam#587, #588, #589 and #590. The seventh is newer and not yet
-  filed as goedelsoup/yidam#647: a REGEN block the CLI gates on `--check` reads git refs, so it
-  cannot be correct in two checkouts of one commit at the same time.
+  Seven findings against the pinned yidam, of which five are now fixed upstream and two remain
+  open. Two defects in `yidam crates-index` found while writing the first crate — both closed by
+  template v0.3.0 — two gaps in the corpus format found while tagging every edge in the graph,
+  one in what genesis installs, found the first time CI ran on a remote, and one in what a
+  vendored crate does to this repository's own formatting gate. Four were filed on 2026-09-04 as
+  goedelsoup/yidam#587 through #590 and three of those closed at template v0.4.0. What is still
+  open is #587, that an edge cannot carry a claim tag while the conventions call it a claim, and
+  #647, that a REGEN block the CLI gates on `--check` reads git refs and so cannot be correct in
+  two checkouts of one commit at the same time.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
   repository builds from `.yidam.toml`, and the newest the origin then had. Finding 5 was found
@@ -20,6 +21,19 @@ context: |
   the findings were written down, and the workaround one of them licensed could be removed only
   because this record said where it was. Finding 6 was found the same day, by the re-vendor
   itself.
+
+  Revisited again on 2026-09-06, at the re-vendor to template v0.4.0 (commit fc961757, cli
+  v0.10.0), 112 commits upstream. Three of the four filed issues closed in that interval —
+  #588 by 5a0249e, #589 by 4e75999, #590 by 59961bd — which is the return path working at the
+  speed the last revisit hoped for rather than the six days of maintaining a dead workaround it
+  recorded. Each closure was checked against the commit that made it and, where it licensed
+  removing something here, against this repository rather than against the changelog: finding 6
+  was confirmed by running the formatting gate the old way and watching it pass.
+
+  Two remain, and they are the two this record most wanted to keep. #587 has survived two
+  re-vendors and sixteen new lint checks without an edge-provenance rule among them; #647 is
+  untouched. Both still carry live workarounds in this repository, which is the case for the
+  file: neither is discoverable from the code that implements it.
 
   The directory conventions say a defect in the prelude, CI, CLI or conventions should go
   upstream rather than being worked around locally, because a local workaround is invisible to
@@ -111,10 +125,17 @@ decision: |
   (`instance-of`, `concerns`, `subject-of`), and two lint rules mirroring the prose ones —
   untagged empirical edge, and verified edge without a source.
 
-  **Still open at template v0.3.0.** Checked directly rather than assumed: the lint check set
-  grew from 43 ids to 49 between the pins, and none of the six additions is an edge-provenance
-  rule — `claim-tag-malformed`, `dangling-edge`, `edge-target-class`, `unlicensed-edge` and
-  `verified-unsourced` are the same five as before. `crates/provenance` keeps its job.
+  **Still open at template v0.4.0.** Re-checked directly at each pin rather than assumed. The
+  set of checks a plain `yidam lint` registers here grew from 36 ids to 52 across this
+  re-vendor, and not one of the sixteen additions is an edge-provenance rule: six read prose
+  citations, two read a class's foundational alignment, one counts tags in class prose, and
+  seven want a sangha. The edge rules are still `claim-tag-malformed`, `dangling-edge`,
+  `edge-target-class`, `unlicensed-edge` and `verified-unsourced` — the same five, across two
+  re-vendors. `crates/provenance` keeps its job.
+
+  (36 and 52 are registered-check counts, measured by diffing `lint --format json` from both
+  binaries against one tree. The 43 and 49 above were counted from source at the previous
+  revisit and are not the same measurement; the conclusion is unchanged either way.)
 
   **Finding 4 — `node-too-long` charges a node for being auditable.** Filed as
   goedelsoup/yidam#588.
@@ -150,10 +171,26 @@ decision: |
   something nobody is willing to act on, and the value of raising the number is only that the
   declared figure stops being fiction.
 
-  **Still open at template v0.3.0.** `max_lines` still counts whole files. The class contract did
-  grow a field in the interval — `implemented_by`, which names the type in `crates/` that
-  implements a class and gates when declared — so the shape this finding asks for is one upstream
-  is willing to add. It was added for a different question.
+  **FIXED upstream in template v0.4.0**, by 5a0249e, and fixed as asked: `node-too-long` now
+  measures the `description` block rather than the file, so a node stops paying for its
+  provenance out of a budget written against prose sprawl. goedelsoup/yidam#588 is closed.
+
+  Measured across this re-vendor, both binaries on one tree: 258 findings at cli/v0.8.0, 139 at
+  cli/v0.10.0. That 119-finding drop is the whole of the difference the upgrade made to `lint` —
+  every other check reports an identical count at both pins.
+
+  The upgrade notes say to re-bless afterwards, because a baseline holding the old counts still
+  passes while leaving room for regressions nothing reports. **That does not apply here.**
+  `.yidam/lint-baseline.yml` is `violations: {}` and has been since it was installed, so there is
+  nothing to loosen. It was left alone.
+
+  **Two of the three local raises are now unnecessary, and one is not.** `division` (45) and
+  `tenure` (35) report zero findings at the new measurement, so both could return to what they
+  were arguing against. `measure` (60) reports 139 of 282 — 49% of the class, up from the
+  quarter that made this finding sharpen last time. So the fix removed the distortion this
+  finding named and left the older question underneath it standing: a limit half a class exceeds
+  is still not a budget anybody is enforcing. Whether `measure` nodes are too long or the number
+  is fiction is a corpus question, not an upstream one, and it is now askable on its own terms.
 
   **Finding 5 — genesis replaces one workflow and leaves six.** Filed as goedelsoup/yidam#589.
 
@@ -190,6 +227,11 @@ decision: |
   still holds one file. Whether genesis has been fixed for the *next* repository is not visible
   from here.
 
+  **FIXED upstream in template v0.4.0**, by 4e75999 — "genesis left five of yidam's own workflows
+  behind" — which closes goedelsoup/yidam#589. The fix is for the next repository to be born, and
+  the sentence above is why nothing changes here: this repository already deleted them, and the
+  re-vendor again did not touch `.github/workflows/`. Nothing to restore, nothing to remove.
+
   **Finding 6 — a vendored crate a derived repo must depend on is not rustfmt-clean, and its own
   formatting gate reaches it.** Filed as goedelsoup/yidam#590.
 
@@ -221,6 +263,24 @@ decision: |
   name its members — the conventions already discuss `crates/` layout and are where somebody
   would look. A `rustfmt.toml` carrying `ignore` would be the obvious third answer and is not
   one: `ignore` is nightly-only, and this repository pins stable 1.88.
+
+  **FIXED upstream in template v0.4.0**, by 59961bd — a CI gate that glob-discovers the domain
+  crates and formats them, rather than naming a list that rots. It is the first repair this
+  finding asked for and closes goedelsoup/yidam#590. 9a9a891 formatted the fourteen crates
+  rustfmt had never been run against.
+
+  Verified here rather than inferred: at the new pin the vendored geodesics crate is
+  rustfmt-clean, and `cargo fmt --manifest-path crates/Cargo.toml --all --check` exits 0 for the
+  first time since 7b0cef2. What changed is not that this pin happens to be clean — 1162287 also
+  was — but that a gate upstream now keeps it so, which is what the finding asked for and what
+  turns an accident of the pin into a property of the template.
+
+  **The workaround is therefore removable and has NOT been removed.** `mise.toml`'s `fmt` and
+  `ci` tasks and the crates job in `.github/workflows/ci.yml` still name eight members instead of
+  `--all`, in the three places whose cost this finding recorded. Removing them is a change to the
+  gate, `crates/publish/tests/gate.rs` holds the member list, and a gate change does not belong
+  in a `vendor:` commit that is meant to be reviewable as one event. It is the next commit, not
+  this one.
 
   **Finding 7 — a `--check`-gated REGEN block counts git refs, so it cannot be right in two
   checkouts at once.** Filed as goedelsoup/yidam#647.
@@ -269,6 +329,11 @@ decision: |
   believed to do this already and does not — it is a depth, not a refspec — and the workflow
   comment that said so has been corrected. `crates/publish/tests/gate.rs` keeps the fetch step
   from being removed as redundant.
+
+  **Still open at template v0.4.0.** goedelsoup/yidam#647 is OPEN, checked against the tracker
+  rather than inferred from the changelog, and nothing in the 112 commits between the pins
+  touches where a gated REGEN field may read from. The workaround stands and so does the rule
+  this finding is really about.
 
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
@@ -335,3 +400,17 @@ rationale: |
   was needed: #584, filed hours earlier from a different derived repository, measures the
   40-line node cap across seventeen corpora and reaches this repository's finding 4 from the
   population end. Neither report knew about the other. A comment on #588 now links them.
+
+  **Two days later, three of the four were closed.** That is the return this record was written
+  to make possible, and it is worth saying what it actually bought, because "filed and fixed" is
+  the least interesting reading. Finding 4 licensed three local `max_lines` raises; the fix made
+  two of them unnecessary and left the third standing on a question the raise had been hiding,
+  which is a better outcome than either the workaround or a simple revert. Finding 6 licensed
+  narrowing the formatting gate in three places; the fix makes that removable, and the record is
+  what says where the three places are. Finding 5's fix changes nothing here at all and closing
+  it is still worth recording, because the next derived repository is the one it was for.
+
+  What that leaves is a rule about workarounds rather than about findings. Every one of the
+  three was removable only because the record said where it was — and one of the three has been
+  removed only in this file so far, deliberately: a gate change does not belong in a `vendor:`
+  commit. A workaround outlives the defect unless something is holding its address.

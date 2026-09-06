@@ -1,0 +1,44 @@
+# Repository configuration read by the yidam CLI.
+#
+# Every section defaults, and only what is written here departs from the default. This file
+# declares one thing.
+
+# ── The artifact register ─────────────────────────────────────────────────────
+#
+# This repository has two registers and yidam modelled one until cli/v0.10.0. `lint --commits`
+# read every commit against the closed corpus vocabulary in GRAPH.md, so `publish:` on a file
+# under web/ arrived at the vocabulary check indistinguishable from `publish:` on a corpus node
+# — and was reported as a corpus-vocabulary violation, which it is not.
+#
+# Naming the artifact's paths says which commits are not corpus work. A commit touching ONLY
+# these paths is not checked against the vocabulary. A commit spanning both registers is corpus
+# work and still is. A commit listing no paths — git prints none for a merge — is corpus work
+# too, because absence of evidence is not a declaration of jurisdiction.
+#
+# Measured over the 1,428 commits in this history at the time of writing: 288 touch only these
+# three directories, 903 touch a corpus path or both, and 237 list no paths at all.
+#
+# The three, and why each is the artifact rather than the corpus:
+#
+#   web/      the published site. Derived FROM .yidam/corpus/ — the feeds under web/src/feeds/
+#             are computed and committed — so a commit that changes both the derivation and its
+#             input spans the registers and stays corpus work, which is the behaviour wanted.
+#   crates/   the domain computer. The calculators read the corpus; a `compute:` run commits
+#             their output into .yidam/ and therefore spans both. What lands here alone is
+#             implementation.
+#   design/   the design system this repository does not own, its pin, and the departures
+#             register that gates against it. Two commits in the whole history touch it alone
+#             and both already use corpus verbs, so this entry changes nothing today; it is
+#             here because design/ is artifact in kind, and a register that omits it would be
+#             wrong the first time it mattered rather than visibly incomplete now.
+#
+# Deliberately NOT here: mise.toml, .github/, AGENTS.md, README.md. Those describe how the
+# repository operates or carry REGEN blocks derived from the corpus, and a commit to them is
+# corpus work. `.yidam/` is never a candidate — it IS the corpus.
+#
+# One asymmetry, upstream's and deliberate: `yidam vocabulary --check` runs in a commit-msg
+# hook, before the commit exists, so it cannot ask git for paths and still warns where `lint`
+# now stays quiet. Tracked as goedelsoup/yidam#652. It costs nothing here — this repository
+# installs no commit-msg hook.
+[object]
+paths = ["web/**", "crates/**", "design/**"]
