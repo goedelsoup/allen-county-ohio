@@ -22,4 +22,45 @@
    * cannot fall out of step with `--gutter-page`.
    */
   --gutter-fluid: clamp(18px, 4vw, var(--gutter-page));
+
+  /*
+   * How long the axis transport holds a year.
+   *
+   * The system has no name for these because it has no transport: its motion
+   * vocabulary is five durations for a control changing state, and the longest
+   * of them is 560ms for a page. A playback cadence is a different quantity —
+   * it is how long a reader is given to *read* a frame, not how long a widget
+   * takes to settle — so it is named here rather than departing from
+   * `--dur-page`, which would put a transport's pacing in a token every button
+   * on the site resolves.
+   *
+   * `--replay-step` is the floor, held by the emptiest year on the axis;
+   * `--replay-hold` is the ceiling, held by the fullest. Everything between is
+   * interpolated by `route()` from how much record stands in the year. That
+   * pacing is attention and never a claim: it changes how long the reader
+   * looks at a state, never which states exist. See
+   * `an-animation-asserts-continuity`.
+   */
+  --replay-step: 90ms;
+  --replay-hold: 420ms;
+}
+
+/*
+ * A reader who asked for no motion still gets the sequence.
+ *
+ * NOT the collapse `motion.css` applies to every other duration. Zero here
+ * does not degrade the transport, it deletes it — a play control that resolves
+ * to 0ms jumps to the last year and shows nothing. So the two ends meet at a
+ * single long hold: the variable dwell that reads as *movement* is dropped,
+ * and what is left is a slideshow of hard cuts, which is what this control
+ * should have been for that reader all along.
+ *
+ * `motion.ts` carries the same pair as `STILL` for the case where the script
+ * resolves the cadence before the sheet is applied.
+ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --replay-step: 900ms;
+    --replay-hold: 900ms;
+  }
 }

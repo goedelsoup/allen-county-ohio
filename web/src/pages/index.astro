@@ -168,6 +168,17 @@ const undrawn = Object.entries(UNDRAWN)
       </figure>
 
       <div class="scrub">
+        {/*
+          Hidden until the script claims it. The transport is the one control on this page
+          that does nothing at all without JavaScript — the spine, the ribbon, the scrub and
+          the period chips are all real markup a reader can use or at least read, and a dead
+          play button is neither. `map.ts` unhides it, so a reader who never runs the script
+          sees the axis exactly as it was before this control existed.
+        */}
+        <button type="button" class="transport" data-play aria-pressed="false" hidden>
+          <span class="glyph" aria-hidden="true"></span>
+          <span data-play-label>Play</span>
+        </button>
         <label>
           <span class="scrub-label">Year</span>
           <input
@@ -181,6 +192,12 @@ const undrawn = Object.entries(UNDRAWN)
         </label>
         <output class="year" data-readout="year">{range.to}</output>
       </div>
+
+      <p class="transport-note" data-play-note hidden>
+        What moves is the record arriving, not the county changing. Every frame is the map at
+        that year and nothing between them is drawn — and the ground underneath is 2020
+        geometry throughout, which is why it fades as the years run backwards.
+      </p>
 
       <div class="periods" role="group" aria-label="Periods the corpus names">
         {
@@ -769,6 +786,53 @@ const undrawn = Object.entries(UNDRAWN)
       color: var(--text-strong);
       min-width: 3.5ch;
       text-align: right;
+    }
+
+    .transport {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--rule-hairline);
+      border-radius: 999px;
+      background: var(--surface-card);
+      color: var(--text-body);
+      font: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition-control);
+    }
+    .transport:hover {
+      border-color: var(--rule-strong);
+      background: var(--surface-raised);
+    }
+    /* The one mark on this control that takes the era's ink, so a playing axis is visibly
+       the same object as the tile it is standing in. */
+    .transport[aria-pressed='true'] {
+      border-color: var(--era-current, var(--rule-strong));
+      color: var(--text-strong);
+    }
+    /* A triangle at rest, two bars while playing. Drawn in borders rather than shipped as a
+       glyph so it inherits the ink and needs no font. */
+    .transport .glyph {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0.3rem 0 0.3rem 0.5rem;
+      border-color: transparent transparent transparent currentcolor;
+    }
+    .transport[aria-pressed='true'] .glyph {
+      width: 0.45rem;
+      height: 0.6rem;
+      border-width: 0 0 0 0.45rem;
+      border-color: currentcolor;
+      border-left-style: double;
+    }
+    .transport-note {
+      margin: 0.5rem 0 0;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      max-width: var(--measure-prose);
     }
 
     .periods {
