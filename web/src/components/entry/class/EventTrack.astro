@@ -204,6 +204,14 @@ const line = marks.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)} ${p.y.
     if (marks.length < 2 || !button || !label) continue
 
     // `at` counts positions revealed: 1 is the origin alone, marks.length is the whole track.
+    //
+    // It holds only those two values, so with three points the middle one would be drawn and
+    // never reached. That is deliberate and it has been checked rather than assumed: the Storm
+    // Events locations file was read for the whole of its non-empty run and no Allen County
+    // tornado in it carries a third position, so there is no instance to step through and none
+    // in prospect from this catalog. See `.yidam/decisions/an-extent-is-not-a-track.yml`, which
+    // also says why the six flood extents in that file may not be poured into `track` to make
+    // one. Generalise this when the first three-point track arrives, in the same phase.
     let at = marks.length
 
     const draw = () => {

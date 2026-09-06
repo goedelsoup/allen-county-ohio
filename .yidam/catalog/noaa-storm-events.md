@@ -8,7 +8,7 @@ description: >-
   1996 — a narrative written by the forecast office.
 type: dataset
 obtained: true
-retrieved: 2026-09-01
+retrieved: 2026-09-06
 ttl_days: 180
 location:
   - kind: url
@@ -32,6 +32,13 @@ location:
       The companion fatality file, keyed on `EVENT_ID`, with an age, a sex and a location code per
       death. Fetched for 1965 and it does not carry Allen County's eleven: the year holds eighteen
       fatality rows and none of them belongs to this county's event.
+  - kind: url
+    value: https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_locations-ftp_v1.0_d2006_c20260707.csv.gz
+    description: >-
+      The companion locations file, one per year on the same naming scheme as the details, keyed on
+      `EVENT_ID` with a `LOCATION_INDEX`, a range and azimuth from a named place, and a latitude and
+      longitude. Fetched for 1972 and for every year 1996 through 2026 — the whole of its non-empty
+      run — and joined to this county's rows. What that found is below.
 used-by:
   - ../corpus/event/the-tornado-of-11-april-1965.yml
   - ../corpus/event/the-tornado-of-19-july-1950.yml
@@ -82,6 +89,24 @@ decades, and its tornado count — the one category counted throughout — goes 
 and does not. The 1978 blizzard that brought this county a federal emergency declaration is not in
 this file at all.
 
-**What else is in it, unread.** The locations file, which gives a tornado's intermediate track
-points; the fatality file for every year but 1965; the episode narratives for every event but the
-handful quoted here; and every other county in Ohio, already on the disk in the same download.
+**Its locations file gives this county nothing its detail rows do not already carry.** The
+companion `StormEvents_locations` file, keyed on `EVENT_ID` with one row per position and a
+`LOCATION_INDEX` to order them, is header-only for every year before 1996 — the sole exception is
+1972, whose two rows are a Florida event under the placeholder identifier 990000001 — so neither
+the 1950 tornado nor the 1965 one draws anything from it. From 1996 on it places 233 of this
+county's 315 rows, and **every tornado and every thunderstorm wind among them carries one position
+or two, never three.** Where it carries two, they are the begin and end the detail file already
+states. This entry said before 2026-09-06 that the file gives a tornado's intermediate track
+points; that is true of the file and not of this county, whose longest tornado in it ran 3.87 miles
+and got two.
+
+**Its only multi-point Allen rows are floods, and what they carry is an extent.** Six of them at
+four and five positions — flash floods of May 2011 (two), May 2014 and July 2020, floods of June
+2015 and April 2019 — and read as a path they are nonsense. Event 593454 runs from 1.25 miles WNW
+of Elida through Needmore, Scotts Crossing and Gomer to 0.51 miles E of Elida, back beside where it
+began; event 908785 is four positions inside four-tenths of a mile of Cairo. They outline where the
+water stood. See [an extent is not a track](../decisions/an-extent-is-not-a-track.yml).
+
+**What else is in it, unread.** The fatality file for every year but 1965; the episode narratives
+for every event but the handful quoted here; and every other county in Ohio, already on the disk in
+the same download.

@@ -1,0 +1,120 @@
+id: an-extent-is-not-a-track
+summary: >-
+  The Storm Events locations file was read for the whole of its non-empty run and joined to this
+  county's rows. It holds no third position for anything that moved here: every Allen tornado and
+  every thunderstorm wind in it carries one position or two, and its only multi-point rows are six
+  floods, whose four and five positions outline where the water stood and order nothing. So
+  `event.track` keeps two points, the replay's step control stays a binary toggle on purpose, and a
+  flood's positions may fill neither.
+context: |
+  [the replay](../../web/src/components/entry/class/EventTrack.astro) draws the ground a happening
+  crossed, and its step control reveals the origin alone and then the whole track — two states,
+  because both tracks in the corpus are two points. `lib/track.ts` parses N points and sums N-1
+  legs; the component draws N marks and labels the middle ones **Passed**; the control does not,
+  and with three points the middle position could be drawn and never reached.
+
+  That was left standing deliberately and filed as an issue, on the reasoning that a stepper is UI
+  and untested UI rots — the generalisation should land in the same phase as the first three-point
+  track, so the steps could be looked at. The issue named where such a track would come from: the
+  narratives from 1996 on, [the windstorm of 22 June 2006](../corpus/event/the-windstorm-of-22-june-2006.yml),
+  and — from [the catalog entry](../catalog/noaa-storm-events.md) itself — the locations file, "which
+  gives a tornado's intermediate track points", listed there among the things nobody had read.
+
+  So the question is not what the control should do. It is whether this corpus can reach a third
+  stated position at all, and it had never been asked of the one file most likely to answer.
+  [a-source-is-not-exhausted-by-one-question](a-source-is-not-exhausted-by-one-question.yml) is the
+  reason to go and look rather than to reason about the control in the abstract.
+decision: |
+  **The sweep, and what it caught.** `StormEvents_locations` was fetched for 1972 and for every
+  year 1996 through 2026 — the whole of its non-empty run; every other year is header-only — and
+  joined on `EVENT_ID` to the 315 Allen County detail rows in those years. It places 233 of them.
+
+  | Positions | Allen rows | Which |
+  |---|---|---|
+  | 1 | 216 | every type |
+  | 2 | 11 | 8 tornadoes, 3 thunderstorm winds |
+  | 4 | 4 | flash floods of May 2011 (two), July 2020; flood of April 2019 |
+  | 5 | 2 | flash flood of May 2014; flood of June 2015 |
+
+  **No Allen row that moved carries a third position.** Where a tornado carries two they are the
+  begin and end the detail file already states, and the corpus already holds both for the only two
+  events it draws. The county's longest tornado in the file ran 3.87 miles and got two.
+
+  **A flood's positions are an extent, and an extent may not be read as a track.** They are not in
+  passage order and are not claimed to be. Event 593454 runs from 1.25 miles WNW of Elida through
+  Needmore, Scotts Crossing and Gomer to 0.51 miles E of Elida — back beside where it began, which
+  no path does. Event 908785 is four positions inside four-tenths of a mile of Cairo. `track` says
+  "in the order it passed them"; filling it from these would assert an order the source does not
+  state, over ground it does not claim the water crossed.
+
+  **Three consequences, none of them code.**
+
+  1. `event.track` stays at two points for both tornadoes. Nothing in the corpus changes.
+  2. The step control stays binary. The issue's own condition — land the N-step stepper with its
+     first real instance — is not met and cannot be met from this catalog, so the generalisation
+     stays unwritten rather than shipped against fixtures. It is now the only piece of the figure
+     that is not general: `parseTrack` reads N, `straightMiles` sums N-1 legs, and
+     [`dashes`](hops-counts-edges-not-coordinates.yml) — landed on the map the same day this was
+     read — slices a connector of any length and keeps the recorded positions inside each piece.
+     Each of those cost nothing and refusing N would have been a rule. A stepper is the one that
+     costs something, and the thing it would cost is a state nobody can look at.
+  3. An extent wants its own property and its own figure, and neither is declared here. Six events
+     state one; a stepped path is the wrong drawing for all six. That is filed, not decided.
+
+  **What a third position would have to be.** A position a source states. Three narratives here
+  name an ordered sequence of ground — the 2021 tornado "tracked out of Van Wert county into Allen
+  county just north of Fruend Road, crossing Southworth Road just north of Zion Church Road", then
+  "traveled through several fields for an additional 0.3 miles before lifting" — and the locations
+  file gives that event two points. Geocoding the road crossing to make a third is the invented
+  position [a-derived-placement-is-a-claim](a-derived-placement-is-a-claim.yml) refuses, and it
+  would enter `track`, which carries no per-point tag and affords no tooltip.
+rationale: |
+  **Why the negative result is committed rather than dropped.** The catalog said the locations file
+  gives intermediate track points, and that sentence would have sent the next agent to fetch 340 MB
+  and find what this phase found. A sweep that finds nothing is the only durable record that the
+  coverage was checked — and this one also corrects a claim the entry had been carrying, which is
+  the more valuable half. The entry now says what the file holds for this county instead of what it
+  holds in general.
+
+  **Why the pre-1996 silence is a gap and not evidence.** The file is header-only for 1950 and 1965,
+  so it says nothing about whether those two tornadoes had intermediate points; it says the program
+  that records them did not exist. That is
+  [a-category-has-a-birthday](a-category-has-a-birthday.yml) applied to a field rather than to an
+  event type, and it fails the test in
+  [silence-from-a-source-that-would-have-spoken](silence-from-a-source-that-would-have-spoken.yml):
+  a source that would have spoken has to be a source that could.
+
+  **Why the flood extent is not quietly repurposed.** It is the available multi-point geometry and
+  it is the wrong one, which is exactly when a property gets filled because it is fillable. Four of
+  the six are flash floods whose positions cluster within half a mile; drawn as a stepped path they
+  would read as a thing crossing the county. The figure would be legible, wrong, and pass every gate
+  this repository has — the same failure mode
+  [an-animation-asserts-continuity](an-animation-asserts-continuity.yml) records about the tween,
+  arriving through the data rather than through the renderer.
+
+  **Alternatives considered.**
+
+  *Generalise the control anyway, against fixtures.* Rejected on the issue's own argument, now with
+  evidence behind it rather than a guess: there is no instance and no prospect of one from this
+  catalog, so the fixtures would be the only thing asserting the stepper worked, and they would go
+  on asserting it unread. The parse side was generalised because refusing a third point would have
+  been a rule; the control is not, because drawing one nobody can produce is furniture.
+
+  *Build a track for the 2006 windstorm from its nine rows.* Rejected on the rows. Delphos and
+  Spencerville are stamped the same minute nine miles apart, and Beaverdam at 14:18 comes before
+  Lima at 14:22 — so time order does not trace a path, because the episode is a line of wind
+  crossing the county rather than a point passing through positions. The node already reads it that
+  way and computes a ground speed across the county from the two ends, which is the honest use of
+  those rows.
+
+  *Widen `track` to mean "positions a source states, ordered or not".* Rejected. The order is the
+  whole of what distinguishes a track from a set of places, and a property that means both means
+  neither — the figure could no longer know whether its polyline was a path or an outline.
+
+  **What would change the answer.** A source stating three or more positions for one moving
+  happening: an NWS damage survey with waypoints, a georeferenced damage map for the 1965 F4, or a
+  narrative dense enough that its own ground is stated rather than inferred. On the day one arrives,
+  the control and its first instance land together — which is what the issue asked for and what this
+  phase could not supply.
+status: accepted
+date: "2026-09-06"
