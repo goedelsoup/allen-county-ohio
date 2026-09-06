@@ -15281,6 +15281,181 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Model", value: 14.1, literal: "14.1" },
         ],
     },
+    Assertion {
+        id: "three-returns-out-of-the-forty-year-hole",
+        statement: "Allen County's presidential vote for 1944, 1948 and 1956 is on the record for \
+                    the first time: Dewey 21,006 to Roosevelt's 12,504, Dewey 17,381 to Truman's \
+                    13,161, and Eisenhower 28,386 to Stevenson's 12,035.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**Three presidential returns for this county out of the forty years the corpus could not reach, printed by the only Allen County newspaper in the national newspaper archive.** Dewey took 21,006 votes to Roosevelt's 12,504 in 1944, 17,381 to Truman's 13,161 in 1948, and Eisenhower took 28,386 to Stevenson's 12,035 in 1956. [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), the issues of 9 November 1944, 4 November 1948 and 8 November 1956, each printing the county canvass."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[
+            Figure { label: "Dewey 1944", value: 21006.0, literal: "21,006" },
+            Figure { label: "Roosevelt 1944", value: 12504.0, literal: "12,504" },
+            Figure { label: "Dewey 1948", value: 17381.0, literal: "17,381" },
+            Figure { label: "Truman 1948", value: 13161.0, literal: "13,161" },
+            Figure { label: "Eisenhower 1956", value: 28386.0, literal: "28,386" },
+            Figure { label: "Stevenson 1956", value: 12035.0, literal: "12,035" },
+        ],
+    },
+    Assertion {
+        id: "every-canvass-calls-itself-unofficial",
+        statement: "Each of the three county canvasses says what it is: complete unofficial returns \
+                    from 111 precincts in 1944, from all 112 in 1948, and a complete unofficial vote \
+                    with no precinct count in 1956.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**Every one of the three calls itself unofficial and says how much of the county it had.** 1944 is \"complete unofficial returns from Allen county's 111 precincts\"; 1948 is \"the complete unofficial returns from all of Allen county's 112 precincts\"; 1956 says \"The complete unofficial vote\" and gives no precinct count. [verified] \u{2014} the same source, its three issues. The qualifier travels with the figures and decides what may be computed from them; see [a newspaper canvass is not a certified return](../../decisions/a-newspaper-canvass-is-not-a-certified-return.yml)."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-republican-share-of-three-elections",
+        statement: "The Republican share of Allen County's two-party presidential vote was 62.7 per \
+                    cent in 1944, 56.9 in 1948 and 70.2 in 1956.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**In figures: the Republican share of the two-party presidential vote was 62.7 per cent in 1944, 56.9 in 1948 and 70.2 in 1956.** [verified] \u{2014} the same source, its three tables, computed here. Those shares are within-table quantities and the differences between them are not: the denominators are 111, 112 and an unstated number of precincts."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[
+            Figure { label: "1944", value: 62.7, literal: "62.7" },
+            Figure { label: "1948", value: 56.9, literal: "56.9" },
+            Figure { label: "1956", value: 70.2, literal: "70.2" },
+        ],
+    },
+    Assertion {
+        id: "1952-is-a-sentence-not-a-count",
+        statement: "The 1952 county table survives with its offices and candidates legible and its \
+                    number column gone. Allen County gave large majorities to all Republican \
+                    candidates that year, on 115 precincts of 119, and this corpus holds no figure \
+                    from it.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**1952 is here as a sentence and not as a count.** The paper reports that \"Allen county, traditionally Republican, again gave large majorities to all GOP candidates in the election Tuesday with the exception of Charles Taft in his race against Governor Frank Lausche\", on \"an unofficial tabulation of 115 precincts out of 119\". [verified] \u{2014} the same source, its issue of 6 November 1952. The table's number column is absent from the scan, so the direction of that election is held and no figure from it is."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-window-narrows-to-seven",
+        statement: "The question of when Allen County turned Republican has narrowed from nineteen \
+                    presidential elections to seven. Four of the eleven that remained are now \
+                    answered and all four went Republican, leaving 1912, 1916, 1924, 1928, 1932, \
+                    1936 and 1940.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**The county's window has narrowed from eleven elections to seven.** Nothing after 1956 can be the turn and 1920 was already Republican, so the open question was 1912, 1916, 1924, 1928, 1932, 1936, 1940, 1944, 1948, 1952 or 1956. Four of those are now answered and all four are Republican, leaving 1912, 1916, 1924, 1928, 1932, 1936 and 1940. [inference] \u{2014} see [the modern series](allen-county-presidential-vote-2000-2016.yml), which carries the question."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-1940-election-is-in-a-five-month-hole",
+        statement: "The one remaining election this newspaper could have answered is 1940, and the \
+                    archive holds it through 8 August 1940 and again from 9 January 1941 and nothing \
+                    between.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**1940 is the one of the seven that this paper would have answered and cannot.** The archive holds the Bluffton News continuously through 8 August 1940 and again from 9 January 1941 and holds nothing between \u{2014} a five-month hole containing the election. [verified] \u{2014} [the archive](../../catalog/chronicling-america.md), searched in four date windows."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-only-whole-county-ballot-before-1960",
+        statement: "Twenty-seven contests from November 1956 \u{2014} president down to coroner, \
+                    five judicial races and two state questions \u{2014} are the only complete Allen \
+                    County ballot this corpus holds from any year before 1960.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**Twenty-seven contests from one election, which is the only complete county ballot this corpus holds from any year before 1960.** President down to coroner, five judicial races and two state questions, as the county's own weekly printed them the week after the vote. [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 8 November 1956, under the heading \"GOP Makes Clean Sweep Again Of County Offices\"."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eighteen-points-down-one-ballot",
+        statement: "In November 1956 Allen County gave Eisenhower 70.2 per cent of the two-party \
+                    presidential vote, O'Neill 60.8 for governor and Bender 52.1 for United States \
+                    senator \u{2014} counted by the same boards on the same night.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**A Republican sweep, and an eighteen-point spread down one ballot.** Eisenhower took 70.2 per cent of the two-party presidential vote in this county, O'Neill 60.8 for governor and Bender 52.1 for United States senator. [verified] \u{2014} the same source, its table below, computed here. All three were counted by the same boards on the same night from the same precincts, so the spread is a within-table comparison and rests on nothing the canvass's own qualifier undermines."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "President", value: 70.2, literal: "70.2" },
+            Figure { label: "Governor", value: 60.8, literal: "60.8" },
+            Figure { label: "Senator", value: 52.1, literal: "52.1" },
+        ],
+    },
+    Assertion {
+        id: "lausche-almost-carried-the-county",
+        statement: "Frank Lausche came within 1,653 votes of carrying a county Eisenhower won by \
+                    16,351. His 18,838 votes were 6,803 more than his own party's presidential \
+                    nominee took here.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**Frank Lausche came within 1,653 votes of carrying a county Eisenhower won by 16,351.** The Democratic governor was running for the Senate; the paper notes that he \"outpulled Taft in Allen county for governor at the 1952 election\" and \"ran under Bender in the Senatorial race this election\". [verified] \u{2014} the same source. His 18,838 votes are 2,513 more than any other Democrat on the ballot received, and 6,803 more than the presidential nominee of his own party."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "Lausche fell short by", value: 1653.0, literal: "1,653" },
+            Figure { label: "Eisenhower led by", value: 16351.0, literal: "16,351" },
+        ],
+    },
+    Assertion {
+        id: "the-coroner-outpolled-the-president",
+        statement: "The two largest figures on Allen County's 1956 ballot are the two races nobody \
+                    contested: the coroner took 31,907 votes and the state senator 29,598, against \
+                    28,386 for Eisenhower.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**The county coroner outpolled the president.** Biery, unopposed, took 31,907 votes against Eisenhower's 28,386, and the state senator Pepple, also unopposed, took 29,598. [verified] \u{2014} the same source. An unopposed candidate on a partisan ballot collects from both columns, which is why the two largest figures on this sheet are the two races nobody contested."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "Coroner", value: 31907.0, literal: "31,907" },
+            Figure { label: "State senator", value: 29598.0, literal: "29,598" },
+            Figure { label: "President", value: 28386.0, literal: "28,386" },
+        ],
+    },
+    Assertion {
+        id: "both-state-questions-passed",
+        statement: "Allen County carried a bonus for veterans of the Korean conflict 28,005 to 7,687 \
+                    and four-year terms for state senators 21,635 to 11,638.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**Both state questions passed and one of them passed by nearly four to one.** A bonus for veterans of the Korean conflict carried 28,005 to 7,687, and four-year terms for state senators 21,635 to 11,638. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "Bonus, yes", value: 28005.0, literal: "28,005" },
+            Figure { label: "Bonus, no", value: 7687.0, literal: "7,687" },
+            Figure { label: "Four-year terms, yes", value: 21635.0, literal: "21,635" },
+            Figure { label: "Four-year terms, no", value: 11638.0, literal: "11,638" },
+        ],
+    },
+    Assertion {
+        id: "two-sheriffs-one-ballot",
+        statement: "William V. Daley, sheriff of Allen County from 1937, and William R. Dailey, \
+                    sheriff from 1945, were recorded as possibly one man under two spellings. The \
+                    county's 1944 canvass prints them against each other: Dailey 18,038, Daley \
+                    14,798.",
+        topic: "elections",
+        supports: &[
+            support!("person/william-v-daley.yml", "**They are two men, and the county's own newspaper puts them on one ballot against each other.** The Allen County canvass of November 1944 prints, under For Sheriff, \"W. R. Dailey, R. 18,038\" and \"W. V. Daley, 14,798\". [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 9 November 1944; see [the ballot of those years](../measure/allen-county-presidential-vote-1944-1956.yml). A sitting sheriff was beaten by 3,240 votes by a man whose name differs from his by one letter, and the roster's two entries are two people. The question is closed."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Dailey", value: 18038.0, literal: "18,038" },
+            Figure { label: "Daley", value: 14798.0, literal: "14,798" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

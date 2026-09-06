@@ -2195,6 +2195,35 @@ export const ARTICLES: Article[] = [
       'measure/allen-county-personal-income-1969-2024.yml',
     ],
   },
+  {
+    slug: 'a-complete-unofficial-vote',
+    title: 'A complete unofficial vote',
+    dek: "Forty years of Allen County's presidential vote were unreachable. Four of those elections turn out to be on the front page of a village weekly, under a heading that says exactly how good the count is.",
+    section: 'government',
+    era: [1944, 1956],
+    assertions: [
+      'three-returns-out-of-the-forty-year-hole',
+      'every-canvass-calls-itself-unofficial',
+      'the-republican-share-of-three-elections',
+      '1952-is-a-sentence-not-a-count',
+      'the-window-narrows-to-seven',
+      'the-1940-election-is-in-a-five-month-hole',
+      'the-only-whole-county-ballot-before-1960',
+      'eighteen-points-down-one-ballot',
+      'lausche-almost-carried-the-county',
+      'the-coroner-outpolled-the-president',
+      'both-state-questions-passed',
+      'two-sheriffs-one-ballot',
+    ],
+    entries: [
+      'measure/allen-county-presidential-vote-1944-1956.yml',
+      'measure/allen-county-ballot-1956.yml',
+      'measure/allen-county-presidential-vote-1960-1964.yml',
+      'measure/allen-county-presidential-vote-2000-2016.yml',
+      'person/william-v-daley.yml',
+      'organization/the-bluffton-news.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */
