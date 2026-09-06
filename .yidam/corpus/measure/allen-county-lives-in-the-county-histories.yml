@@ -29,16 +29,21 @@ description: |
   [what a paid sketch may be quoted for](../../decisions/what-a-paid-sketch-may-be-quoted-for.yml).
 
   **Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and
-  twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's
-  roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and
-  the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to
-  his father. [verified] — the same source pair, each searched for every person node's name, and the
+  twenty-one are attached to a sketch.** Attachment means the sketch names the office the corpus's
+  roster names; twenty-six of the rest fail that test, some of them certainly the same man, and
+  the forty-eighth is Dr. Samuel A. Baxter, who was separated out of a sketch attached to his
+  father. [verified] — the same source pair, each searched for every person node's name, and the
   matches tested against the corpus's own rosters; see
   [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).
 
-  **The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17,
-  died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97. [inference] — counted
-  over `.yidam/corpus/person/` before this phase and after it.
+  **The class had 6 birth dates for 98 people and now has 22 for 99.** Birthplace went from 3 to 18,
+  died from 5 to 11, also_known_as from 6 to 14 and occupation from 95 to 97. [inference] — counted
+  over `.yidam/corpus/person/` before that phase and after this one. The last two births came a
+  phase later and from different directions: one from a second pass over these books, described
+  below, and one from
+  [the federal file of congressmen](../../catalog/congress-legislators.md), which dates
+  [Mathias H. Nichols](../person/mathias-h-nichols.yml) to 3 October 1824 where neither history
+  does.
 
       the person class before this phase and after it
       property        before   after      the class has 99 instances
@@ -65,10 +70,41 @@ description: |
 
   **This node does not assert that the people with sketches are representative of the county.**
 
-  [open] The other 1,912 lives. This corpus has read twenty of the sketches and counted the rest.
-  Of the twenty-seven pre-1922 people it names who failed the attachment test, several could be
-  settled by a source that dates an office — a county roster with months rather than years, or a
-  newspaper of the year the man took office — and none of those has been searched.
+  **A second pass, searching the office rather than the name, found one more and no others.**
+  Thirty-one officeholders whose terms all ended before 2000 still carried no birth date. The
+  search this time was the acceptance rule itself: every passage in all five texts claiming the
+  shrievalty — `elected sheriff`, `sheriff of Allen`, `appointed sheriff`, `office of sheriff` —
+  and then the sketch each sits in. Sixteen passages qualify. Fourteen belong to men already
+  placed or to men who are not the subject, among them a Mercer County sheriff and a candidate who
+  never won. One is [Henry Van Gunter](../person/henry-van-gunter.yml), elected in November 1905
+  and born 29 July 1864. [verified] — the same source pair; the sketch is on page 587 of the 1906
+  book and was read off the page image, one witness, because scan A ends before it.
+
+  **A sweep for what that might have missed returned nothing.** Every capitalised sketch head in
+  all five texts bearing any of the thirty-one surnames, office or no office: thirty-one heads,
+  and not one of them is one of these men. They are other Fishers, Millers, Marshalls and Watts of
+  the same county in the same decades. [verified] — the same source pair.
+
+  **The nearest miss is the argument for the rule.** `JOHN VON GUNTEN, manufacturer of brick,
+  Bluffton, was born in Richland Township, this county, November 16, 1856, son of John and Anna
+  (Sn[itter])` is the sheriff's elder brother — same parents, same township, a third spelling of
+  the surname, eight years wrong. [verified] — the 1885 history. A name match returns it, and a
+  node carrying it would afterwards be indistinguishable from a correct one.
+
+  **So the books are close to exhausted for this corpus's officeholders, and the reason is
+  structural.** Eleven of the thirty-one took office after 1921 and no volume held here was
+  printed while they served; Rusler's biographical Volume II
+  [is not held](../../catalog/rusler-allen-county-1921.md). Of the twenty who served early enough,
+  these books carry one. A subscription history's biographical half is sold, not compiled, and
+  holding an office did not put a man in it. [inference]
+
+  [open] The other 1,911 lives. This corpus has read twenty-one of the sketches and counted the
+  rest. Of the pre-1922 people it names who failed the attachment test, several could be settled
+  by a source that dates an office — a county roster with months rather than years, or a newspaper
+  of the year the man took office — and none of those has been searched.
+
+  [open] The eleven who took office after 1921. Ohio death certificates from 1908 and county
+  probate records would date most of them, and neither is in this catalog.
 properties:
   parameter: sentences beginning a life in the two subscription county histories
   value: "1932"

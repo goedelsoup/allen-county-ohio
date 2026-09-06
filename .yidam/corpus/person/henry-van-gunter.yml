@@ -4,15 +4,65 @@ description: |
   Sheriff of Allen County, 1906–1910. [verified] —
   [Allen County Sheriff's Office past-sheriffs roster](../../catalog/acso-past-sheriffs.md).
 
-  The roster gives a name and a year range and nothing else, so this node carries no dates
-  of birth or death and no biography. Ohio requires an elected county officer to be an
-  elector of the county, so a `resided-in` edge to Allen County is a legal inference rather
-  than a fact the roster states. [inference]
+  **The 1906 history carries his sketch, and it is the only one of the county's undated
+  officeholders that it does.** `HENRY VAN GUNTEN, who was elected sheriff of Allen County in
+  November, 1905, is the proprietor of the large piano and organ house which is located at the
+  southwest corner of the Public Square in Lima.` He **was born July 29, 1864, in Richland
+  Township, Allen County**, son of John and Anna (Snitter) VanGunten, one of eight children on
+  his father's farm; he learned harness-making, worked at it about four years, and came to Lima
+  in 1889 to sell musical instruments. He married Amelia Beeler, daughter of the late David
+  Beeler, and they had three sons, Avery L., Verrel D. and Leon F. [verified] —
+  [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), page 587.
+
+  **The sketch names the office and the year, which is what admits it.** Elected in November 1905
+  against a roster line beginning in 1906 is
+  [the difference between an election and an inauguration](../../decisions/attach-a-biography-by-its-office.yml),
+  and the book says it twice — once in the opening line and again at the close, where it adds
+  that he was elected on the Democratic ticket. [verified] — same page.
+
+  **The book spells him Van Gunten and this corpus does not.** The 1906 history heads the sketch
+  `VAN GUNTEN` and runs `VanGunten` as one word in the body; the 1921 history's roster reads
+  `Van Sunten`, which is that book's compositor or this scan's optical reader and not a third
+  form. The corpus keeps the office's own spelling. [verified] — the two histories and the
+  roster; see [an office's own roster of itself](../../decisions/attach-a-biography-by-its-office.yml).
+
+  **His brother is the reason this identification was made by rule rather than by name.** The
+  1885 history carries `JOHN VON GUNTEN, manufacturer of brick, Bluffton, was born in Richland
+  Township, this county, November 16, 1856, son of John and Anna (Sn[itter])` — the same parents
+  and the same township, eight years earlier, under a third spelling of the surname. A search
+  that matched on the name would have given this node its subject's brother's birthday and
+  nothing would afterwards have shown the join was wrong. [verified] —
+  [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). The two books
+  agree on the parents, which is corroboration of the family and not of the date.
+
+  **One witness, read off the page.** The sketch stands at 67 per cent of the way through scan B
+  of the 1906 history, and scan A of that book ends around half way, so
+  [the two-scan rule](../../decisions/two-scans-of-one-book.yml) has nothing to compare here. The
+  birth sentence was therefore read from the page image rather than from optical character
+  recognition, and the print agrees with the text layer to the digit. The reader had in fact
+  dropped the sketch's opening `H`, which is a decorative initial in a box. [verified]
+
+  Ohio requires an elected county officer to be an elector of the county, and here the sketch
+  states the residence outright, so that edge is no longer an inference. [verified]
 properties:
-  occupation: sheriff
+  born: "1864-07-29"
+  birthplace: Richland Township, Allen County, Ohio. [verified]
+  occupation: dealer in pianos and organs, sheriff
+  also_known_as: |
+    Henry Van Gunten and VanGunten, both in the 1906 history; Van Sunten in the 1921 history's
+    roster. [verified]
 links:
   - target: ../place/allen-county.yml
     relationship: resided-in
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../place/lima.yml
+    relationship: resided-in
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
+  - target: ../place/richland-township.yml
+    relationship: resided-in
+    claim_tag: verified
+    source: ../../catalog/miller-allen-county-1906.md
   - target: ../person.ont.yml
     relationship: instance-of

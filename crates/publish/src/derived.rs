@@ -14213,12 +14213,12 @@ pub const ASSERTIONS: &[Assertion] = &[
     Assertion {
         id: "twenty-of-forty-eight",
         statement: "This corpus names ninety-nine people. Forty-eight of them lived in the era the \
-                    two books cover, and twenty are attached to a sketch \u{2014} meaning the sketch \
-                    names the office the corpus's own roster names. Twenty-seven fail that test and \
-                    stay thin, some of them certainly the same man.",
+                    two books cover, and twenty-one are attached to a sketch \u{2014} meaning the \
+                    sketch names the office the corpus's own roster names. Twenty-six fail that \
+                    test and stay thin, some of them certainly the same man.",
         topic: "history",
         supports: &[
-            support!("measure/allen-county-lives-in-the-county-histories.yml", "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to his father."),
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty-one are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-six of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated out of a sketch attached to his father."),
         ],
         answers: &["does not assert that the people with sketches are representative of the county"],
         figures: &[],
@@ -14227,19 +14227,19 @@ pub const ASSERTIONS: &[Assertion] = &[
         id: "a-class-that-declared-five-fields-and-used-one",
         statement: "The person class declares born, died, birthplace, occupation and also_known_as. \
                     Across ninety-eight people it held occupation ninety-five times and birthplace \
-                    three. It now holds twenty births, seventeen birthplaces and eleven deaths, and \
-                    nothing was retrieved to do it: the answers were in books this catalog had held \
-                    for a year.",
+                    three. It now holds twenty-two births, eighteen birthplaces and eleven deaths, \
+                    and nothing was retrieved to do it: the answers were in books and files this \
+                    catalog had held all along.",
         topic: "history",
         supports: &[
-            support!("measure/allen-county-lives-in-the-county-histories.yml", "**The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17, died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97."),
+            support!("measure/allen-county-lives-in-the-county-histories.yml", "**The class had 6 birth dates for 98 people and now has 22 for 99.** Birthplace went from 3 to 18, died from 5 to 11, also_known_as from 6 to 14 and occupation from 95 to 97."),
         ],
         answers: &["does not assert that the people with sketches are representative of the county"],
         figures: &[
-            Figure { label: "born", value: 20.0, literal: "20" },
-            Figure { label: "birthplace", value: 17.0, literal: "17" },
+            Figure { label: "born", value: 22.0, literal: "22" },
+            Figure { label: "birthplace", value: 18.0, literal: "18" },
             Figure { label: "died", value: 11.0, literal: "11" },
-            Figure { label: "also_known_as", value: 13.0, literal: "13" },
+            Figure { label: "also_known_as", value: 14.0, literal: "14" },
         ],
     },
     Assertion {
