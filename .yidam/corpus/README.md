@@ -54,14 +54,16 @@ Sorted by: kind, then alphabetically.
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 6v / 4i / 1o | 66 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 5 | 6v / 4i / 1o | 76 |
+| [the-flash-flood-at-bluffton-1959.yml](event/the-flash-flood-at-bluffton-1959.yml) | event | The flash flood at Bluffton, 21 January 1959 | 5 | 9v / 0i / 1o | 79 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 4 | 6v / 2i / 1o | 61 |
 | [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
 | [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 4 | 6v / 2i / 1o | 65 |
 | [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
-| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 8v / 3i / 1o | 64 |
+| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 9v / 3i / 1o | 79 |
+| [the-storm-at-beaverdam-1950.yml](event/the-storm-at-beaverdam-1950.yml) | event | The storm at Beaverdam and Orange Township, 19 July 1950 | 5 | 7v / 1i / 1o | 79 |
 | [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 4v / 3i / 1o | 60 |
-| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 3v / 3i / 1o | 47 |
+| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 7v / 3i / 1o | 74 |
 | [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 6v / 4i / 1o | 55 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States expands the tank plant, June 1951 | 3 | 7v / 3i / 3o | 79 |
 | [the-windstorm-of-22-june-2006.yml](event/the-windstorm-of-22-june-2006.yml) | event | The windstorm of 22 June 2006 | 3 | 7v / 3i / 1o | 62 |
@@ -114,6 +116,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
+| [allen-county-ballot-1956.yml](measure/allen-county-ballot-1956.yml) | measure | The whole Allen County ballot, November 1956 | 4 | 9v / 1i / 1o | 97 |
 | [allen-county-ballot-2006.yml](measure/allen-county-ballot-2006.yml) | measure | Allen County's ballot, 7 November 2006 | 6 | 7v / 3i / 2o | 107 |
 | [allen-county-ballot-questions-2003-2012.yml](measure/allen-county-ballot-questions-2003-2012.yml) | measure | What Allen County was asked on the ballot, 2003–2012 | 5 | 17v / 5i / 1o | 158 |
 | [allen-county-birth-outcomes-2000-2021.yml](measure/allen-county-birth-outcomes-2000-2021.yml) | measure | Birth outcomes in Allen County, 2000–2021 | 5 | 10v / 1i / 1o | 96 |
@@ -199,6 +202,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
 | [allen-county-household-composition-2023.yml](measure/allen-county-household-composition-2023.yml) | measure | Who lives with whom in Allen County, 2019–2023 | 6 | 13v / 2i / 1o | 117 |
 | [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 3 | 6v / 4i / 1o | 80 |
+| [allen-county-household-income-1989-2024.yml](measure/allen-county-household-income-1989-2024.yml) | measure | Allen County's median household income, 1989–2024 | 5 | 9v / 0i / 1o | 112 |
 | [allen-county-households-1970-2023.yml](measure/allen-county-households-1970-2023.yml) | measure | Allen County households and household type, 1970–2023 | 6 | 13v / 4i / 1o | 144 |
 | [allen-county-households-by-place-2020.yml](measure/allen-county-households-by-place-2020.yml) | measure | Allen County households by township and city, 2020 | 6 | 11v / 1i / 1o | 110 |
 | [allen-county-housing-1990.yml](measure/allen-county-housing-1990.yml) | measure | Allen County's housing in 1990 | 4 | 9v / 5i / 0o | 92 |
@@ -220,8 +224,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-jewish-community-1850-1921.yml](measure/allen-county-jewish-community-1850-1921.yml) | measure | Allen County's Jewish community, 1850–1921 | 3 | 8v / 2i / 1o | 63 |
 | [allen-county-land-area-2000-2024.yml](measure/allen-county-land-area-2000-2024.yml) | measure | Allen County land area by subdivision, 2000–2024 | 3 | 10v / 3i / 0o | 108 |
 | [allen-county-land-area-2020.yml](measure/allen-county-land-area-2020.yml) | measure | Allen County land area, 2020 | 2 | 3v / 1i / 0o | 24 |
-| [allen-county-land-cover-2001-2021.yml](measure/allen-county-land-cover-2001-2021.yml) | measure | Allen County land cover, 2001–2021 | 7 | 6v / 4i / 0o | 107 |
-| [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 6 | 12v / 3i / 2o | 151 |
+| [allen-county-land-cover-2001-2021.yml](measure/allen-county-land-cover-2001-2021.yml) | measure | Allen County land cover, 2001–2021 | 7 | 8v / 4i / 0o | 116 |
+| [allen-county-land-cover-2008-2024.yml](measure/allen-county-land-cover-2008-2024.yml) | measure | What Allen County's ground is, 2008–2024 | 6 | 12v / 3i / 2o | 156 |
+| [allen-county-land-cover-change-1985-2023.yml](measure/allen-county-land-cover-change-1985-2023.yml) | measure | How often Allen County's land changed class, 1985–2023 | 4 | 9v / 0i / 1o | 85 |
+| [allen-county-land-cover-change-dates-2001-2021.yml](measure/allen-county-land-cover-change-dates-2001-2021.yml) | measure | When Allen County's land cover first changed, 2001–2021 | 4 | 8v / 2i / 1o | 86 |
 | [allen-county-law-enforcement-agencies-2026.yml](measure/allen-county-law-enforcement-agencies-2026.yml) | measure | Allen County's reporting police agencies, 2026 | 2 | 5v / 2i / 1o | 58 |
 | [allen-county-layoff-notice-intervals-1996-2017.yml](measure/allen-county-layoff-notice-intervals-1996-2017.yml) | measure | How long before the layoff Ohio received the notice, Allen County, 1996–2017 | 3 | 3v / 4i / 0o | 66 |
 | [allen-county-layoff-notices-1996-2017.yml](measure/allen-county-layoff-notices-1996-2017.yml) | measure | Allen County layoff and closing notices, 1996–2017 | 6 | 4v / 7i / 0o | 109 |
@@ -260,7 +266,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-oil-and-gas-wells-2026.yml](measure/allen-county-oil-and-gas-wells-2026.yml) | measure | Oil and gas wells in Allen County | 5 | 7v / 2i / 0o | 102 |
 | [allen-county-original-vegetation.yml](measure/allen-county-original-vegetation.yml) | measure | What grew in Allen County before the surveys, mapped | 6 | 9v / 4i / 1o | 111 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 6v / 13i / 0o | 132 |
-| [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 12v / 4i / 1o | 121 |
+| [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 13v / 4i / 0o | 124 |
 | [allen-county-polling-places-2004-2024.yml](measure/allen-county-polling-places-2004-2024.yml) | measure | Allen County polling places and poll workers, 2004–2024 | 5 | 8v / 1i / 0o | 92 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 3 | 7v / 2i / 0o | 84 |
@@ -273,15 +279,17 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
 | [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 5 | 15v / 6i / 0o | 138 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
+| [allen-county-poverty-1989-2024.yml](measure/allen-county-poverty-1989-2024.yml) | measure | Poverty in Allen County, 1989–2024 | 5 | 11v / 0i / 1o | 116 |
 | [allen-county-precipitation-1895-2025.yml](measure/allen-county-precipitation-1895-2025.yml) | measure | Allen County precipitation, 1895–2025 | 2 | 10v / 3i / 1o | 79 |
 | [allen-county-premature-death-1997-2022.yml](measure/allen-county-premature-death-1997-2022.yml) | measure | Premature death in Allen County, 1997–2022 | 2 | 7v / 5i / 1o | 98 |
 | [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 9v / 4i / 2o | 97 |
 | [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
 | [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 3 | 9v / 4i / 1o | 105 |
 | [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 4 | 8v / 2i / 2o | 103 |
+| [allen-county-presidential-vote-1944-1956.yml](measure/allen-county-presidential-vote-1944-1956.yml) | measure | Allen County presidential vote, 1944–1956 | 6 | 9v / 1i / 1o | 95 |
 | [allen-county-presidential-vote-1960-1964.yml](measure/allen-county-presidential-vote-1960-1964.yml) | measure | Allen County presidential vote, 1960 and 1964 | 6 | 6v / 5i / 0o | 110 |
 | [allen-county-presidential-vote-1980-1996.yml](measure/allen-county-presidential-vote-1980-1996.yml) | measure | Allen County presidential vote, 1980–1996 | 7 | 5v / 5i / 0o | 95 |
-| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 9 | 10v / 9i / 2o | 174 |
+| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 9 | 10v / 9i / 2o | 179 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 3 | 8v / 0i / 0o | 65 |
 | [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 9 | 13v / 4i / 0o | 139 |
@@ -310,7 +318,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-shortage-designations-1985-2026.yml](measure/allen-county-shortage-designations-1985-2026.yml) | measure | Allen County's health professional shortage designations, 1985–2026 | 6 | 13v / 3i / 1o | 116 |
 | [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 6 | 8v / 3i / 0o | 102 |
 | [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
-| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
+| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 11v / 3i / 1o | 95 |
 | [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
@@ -324,6 +332,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 3 | 8v / 4i / 1o | 121 |
 | [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 8 | 12v / 3i / 2o | 166 |
 | [allen-county-transfer-receipts-1969-2024.yml](measure/allen-county-transfer-receipts-1969-2024.yml) | measure | Government transfers to Allen County, 1969–2024 | 6 | 11v / 1i / 1o | 113 |
+| [allen-county-tree-canopy-2011-2021.yml](measure/allen-county-tree-canopy-2011-2021.yml) | measure | Allen County tree canopy, 2011–2021 | 4 | 9v / 0i / 1o | 83 |
 | [allen-county-tri-reporters-1987-2024.yml](measure/allen-county-tri-reporters-1987-2024.yml) | measure | Allen County facilities reporting to the Toxics Release Inventory, 1987–2024 | 2 | 7v / 0i / 0o | 60 |
 | [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 7 | 8v / 4i / 0o | 116 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 4 | 8v / 2i / 0o | 78 |
@@ -554,7 +563,7 @@ Sorted by: kind, then alphabetically.
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 4v / 3i / 1o | 40 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
-| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 3v / 1i / 2o | 31 |
+| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 4v / 1i / 1o | 39 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 4 | 17v / 7i / 2o | 170 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 4 | 10v / 3i / 1o | 82 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 13v / 4i / 0o | 107 |

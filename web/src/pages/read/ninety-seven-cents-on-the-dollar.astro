@@ -1,0 +1,157 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import { assertion, tableFor, column } from '../../lib/feeds'
+import { bar, line } from '../../lib/chart-spec'
+
+const cents = assertion('ninety-seven-cents-to-eighty-three')
+const fell = assertion('the-county-fell-while-the-nation-rose')
+const levelShare = assertion('the-level-does-not-separate-and-the-share-does')
+const floor = assertion('twenty-eight-years-below-1989')
+
+const series = assertion('thirty-one-years-of-poverty')
+const noYear = assertion('not-one-year-separates-from-the-last')
+const spans = assertion('spans-separate-and-the-ends-do-not')
+const nation = assertion('indistinguishable-from-the-nation-until-2008')
+const ratio = assertion('the-county-rate-against-the-national-rate')
+const children = assertion('child-poverty-reached-three-in-ten')
+const overlap = assertion('the-survey-and-the-model-overlap')
+
+const povTable = tableFor('measure/allen-county-poverty-1989-2024.yml')
+const years = povTable ? povTable.rows.map((r) => r[0]) : []
+const rate = column(povTable, 'rate')
+const lo = column(povTable, 'lo')
+const hi = column(povTable, 'hi')
+const usa = column(povTable, 'usa')
+
+const incTable = tableFor('measure/allen-county-household-income-1989-2024.yml')
+const incYears = incTable ? incTable.rows.map((r) => r[0]) : []
+const share = column(incTable, 'pct_of_us')
+
+const povSpec = line(
+  years,
+  [
+    { name: 'Allen County', y: years.map((y) => rate.get(y) ?? null) },
+    { name: 'Lower bound', y: years.map((y) => lo.get(y) ?? null) },
+    { name: 'Upper bound', y: years.map((y) => hi.get(y) ?? null) },
+    { name: 'United States', y: years.map((y) => usa.get(y) ?? null) },
+  ],
+  { yTitle: 'Per cent below the poverty line', tickSuffix: '%' },
+)
+const shareSpec = line(
+  incYears,
+  [{ name: 'Allen County', y: incYears.map((y) => share.get(y) ?? null) }],
+  { yTitle: 'Per cent of the national median household income', tickSuffix: '%', labelLast: true },
+)
+const fellSpec = bar(
+  fell.figures.map((f) => f.label),
+  fell.figures.map((f) => f.value),
+  { yTitle: 'Median household income, 2024 dollars', labelValues: true },
+)
+const ratioSpec = bar(
+  ratio.figures.map((f) => f.label),
+  ratio.figures.map((f) => f.value),
+  { yTitle: 'County rate ÷ national rate', labelValues: true },
+)
+---
+
+<Article slug="ninety-seven-cents-on-the-dollar">
+  <p>
+    The federal government has published an estimate of how many people in every county are poor,
+    and what the median household there earns, once a year since 1989. It publishes something else
+    beside each figure that most sources do not: a ninety per cent confidence interval. Reading
+    thirty-one years of it for Allen County turns out to be as much a lesson in what a number can
+    carry as in what happened here.
+  </p>
+
+  <h2>Ninety-seven cents, then eighty-three</h2>
+  <AssertionCard assertion={cents} open />
+  <ChartFigure
+    id="share"
+    title="What the county's median household earns, against the country's"
+    caption="Allen County's median household income as a percentage of the national median, 1989 to 2024. The ratio is computed on nominal dollars, where the price index cancels out."
+    columns={['Year', 'Per cent of the national median']}
+    rows={incTable ? incTable.rows.map((r) => [r[0], r[6]]) : []}
+  />
+  <script type="application/json" data-chart-spec="share" set:html={JSON.stringify(shareSpec)} is:inline />
+  <AssertionCard assertion={fell} open />
+  <ChartFigure
+    id="fell"
+    title="Median household income at each end of the record"
+    caption="In the dollars of 2024, deflated with the all-items consumer price index. The county lost 4.3 per cent and the country gained 11.6."
+    columns={['Geography and year', 'Median household income']}
+    rows={fell.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
+  />
+  <script type="application/json" data-chart-spec="fell" set:html={JSON.stringify(fellSpec)} is:inline />
+  <AssertionCard assertion={floor} />
+  <p>
+    A household at the middle of this county had less real income in 2024 than one at the middle in
+    1989, and the country's had eleven per cent more. Twenty-eight of the thirty-one years measured
+    stand below where the record starts. Only 1998 and 2019 stand above it, and 2019 is one of the
+    two years the file's own arithmetic warns about.
+  </p>
+
+  <h2>What the interval will and will not let you say</h2>
+  <AssertionCard assertion={levelShare} open />
+  <p>
+    This is the useful shape of the whole record. The county's real median income in 1989 and in
+    2024 cannot be told apart — the two intervals overlap by three thousand dollars. Divide both by
+    a national median that is measured on a sample forty thousand times larger, and its interval is
+    a rounding error; the ratio inherits only the county's uncertainty and the two years separate
+    cleanly. A comparison can be sharper than either of the numbers going into it.
+  </p>
+
+  <h2>Poverty, and thirty years of moves that are not moves</h2>
+  <AssertionCard assertion={series} open />
+  <ChartFigure
+    id="pov"
+    title="The share of Allen County below the poverty line"
+    caption="Thirty-one produced years with their ninety per cent bounds, against the national rate. The band is the point: the shape is real and no single step in it is."
+    columns={['Year', 'Rate', 'Lower', 'Upper', 'United States']}
+    rows={povTable ? povTable.rows.map((r) => [r[0], r[1], r[2], r[3], r[7]]) : []}
+  />
+  <script type="application/json" data-chart-spec="pov" set:html={JSON.stringify(povSpec)} is:inline />
+  <AssertionCard assertion={noYear} open />
+  <p>
+    Thirty adjacent pairs, and not one of them clears. The four-point jump into the recession year
+    of 2009 has intervals that touch at exactly 16.7 and do not part. The four-point fall in 2013 —
+    the largest single-year improvement in the record, the kind of number a press release is built
+    on — has intervals overlapping by two tenths of a point. Neither is a fact about this county
+    that the file can support.
+  </p>
+  <AssertionCard assertion={spans} open />
+  <p>
+    What the file resolves is two years and more. That is its own answer about its own resolution,
+    and it is a far more useful thing to know than a general warning that estimates are uncertain.
+    It also means the series cannot be read from its ends: 11.8 per cent in 1989 and 14.8 in 2024
+    are the same number as far as this instrument is concerned, even though everything between them
+    says otherwise.
+  </p>
+
+  <h2>Against the country</h2>
+  <AssertionCard assertion={nation} open />
+  <AssertionCard assertion={ratio} open />
+  <ChartFigure
+    id="ratio"
+    title="Allen County's poverty rate divided by the nation's"
+    caption="Below one, the county is less poor than the country; above it, poorer. The line is crossed once, in the middle of the 2000s, and not crossed back."
+    columns={['Year', 'County ÷ nation']}
+    rows={ratio.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="ratio" set:html={JSON.stringify(ratioSpec)} is:inline />
+  <p>
+    For two decades this was a county a little better off than the country. It is now a county
+    measurably worse off in seven separate years and never measurably better in any. The crossing
+    is not a moment — no single year in this file is a moment — but it happens somewhere in the
+    middle of the 2000s and it has not reversed in the eighteen years since.
+  </p>
+  <AssertionCard assertion={children} open />
+  <AssertionCard assertion={overlap} />
+  <p>
+    The five-year survey and the annual model disagree about 2023 by a point, and their intervals
+    overlap, so the two may be set beside each other. They are not two witnesses. The model reads
+    the survey as one of its inputs, and an instrument agreeing with something it was built out of
+    is not corroboration — it is the same reading twice, at different grain.
+  </p>
+</Article>

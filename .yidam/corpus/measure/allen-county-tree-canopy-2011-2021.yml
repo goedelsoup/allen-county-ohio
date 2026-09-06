@@ -1,0 +1,83 @@
+class: measure
+label: Allen County tree canopy, 2011–2021
+description: |
+  **The county's tree canopy is almost exactly where it was eleven years ago, and almost none of it
+  is in the same place.** Canopy totalled 18,728.5 acres in 2011 and 18,923.0 in 2021, a net gain of
+  194.5 — while 11,412 acres of ground gained canopy and 13,155 acres lost it. [verified] —
+  [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), its eleven annual
+  tree-canopy coverages, clipped to the county and differenced pixel by pixel here.
+
+  **More ground lost canopy than gained it and the county still finished ahead**, because the gains
+  are larger where they happen: 51,314 pixels gained and 59,150 lost, and the gains total 2,249.2
+  canopy-acres against 2,054.6 lost. [verified] — the same source.
+
+  **The total is a V and the distribution is not.** Canopy falls every year from 2011 to a floor of
+  18,328.3 acres in 2017 and climbs back past its start by 2021. Underneath it, ground carrying at
+  least a tenth canopy falls in every single year — 43,582.3 acres to 39,242.5 — and ground carrying
+  at least half rises in almost every one, 17,704.0 to 19,923.9. [verified] — the same source, the
+  table below.
+
+  **What is disappearing is the thin edge.** Ground that carried between a tenth and a quarter
+  canopy in 2011 lost 2.370 percentage points on average over the eleven years, and ground between
+  a quarter and a half gained 2.372. The densest ground thinned too, by 3.593 points. [verified] —
+  the same source, grouped by each pixel's own 2011 value. The county's canopy is consolidating out
+  of its fringes and into its woodlots, and thinning at the very top of those.
+
+  **Canopy falls where the land cover urbanised and rises where it stayed farmed.** On the 38,231
+  pixels the annual change index calls urban change, canopy fell 0.567 points on average; on the
+  26,856 it calls urban within class, 0.410; on the 51,703 it calls agriculture within class it
+  *rose* 0.989. [verified] — the same source against
+  [the change index](allen-county-land-cover-change-1985-2023.yml).
+
+  **This node does not assert that hedgerows are returning to Allen County's open fields.** The
+  largest single positive contribution in the county is 438.1 acres from the 969,258 pixels that
+  carried no canopy at all in 2011, and it is a mean rise of 0.203 percentage points spread over
+  five sixths of the ground. That is a fifth of one per cent per pixel in a modelled product, which
+  is smaller than anything this file's accuracy statement supports being read as an event.
+
+  [open] Whether the 2017 floor is the county or the model. All eleven years are one v2021-4
+  production run rather than eleven annual publications, which makes them comparable to each other
+  and means a bend in the middle of the series is as likely to be the fitting as the trees.
+properties:
+  table: |
+    year  mean_pct  canopy_acres  acres_ge10  acres_ge50
+    2011     7.193       18728.5     43582.3     17704.0
+    2012     7.158       18637.1     43435.9     17652.4
+    2013     7.132       18569.2     43204.4     17690.4
+    2014     7.111       18516.1     42923.3     17785.4
+    2015     7.058       18378.9     42222.8     17857.2
+    2016     7.058       18376.8     41462.8     18260.6
+    2017     7.039       18328.3     40890.4     18399.6
+    2018     7.052       18362.4     40273.3     18664.9
+    2019     7.091       18464.4     39830.7     18999.9
+    2020     7.181       18697.7     39620.1     19451.3
+    2021     7.267       18923.0     39242.5     19923.9
+  parameter: tree canopy cover, Allen County
+  value: "18923.0"
+  unit: acres of canopy in 2021, against 18,728.5 in 2011
+  as_of: "2021"
+  method: |
+    Canopy is published as per-cent cover per pixel; the acreage is the sum of those percentages
+    over the county divided by a hundred, which is the only reading that makes the figure additive
+    — the same convention this corpus uses for impervious surface. [verified] Values above 100 are
+    fill; one pixel of this county carries 254 in 2021 and none does in any other year, and it is
+    excluded from that year's mean and from the pixel-by-pixel difference. [verified] The county
+    mask is the 1,170,809 pixels used by
+    [the annual summary](allen-county-land-cover-change-1985-2023.yml). [verified] `acres_ge10` and
+    `acres_ge50` count ground, not canopy: they are the acreage of pixels at or above that per cent
+    cover. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-change-1985-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-2001-2021.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

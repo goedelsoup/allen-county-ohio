@@ -317,6 +317,15 @@ pub const ROUTES: &[Route] = &[
     },
     Route {
         class: "event",
+        relationship: "relates-to",
+        routing: Routing::Refused,
+        because: "Associative, and here associative between two happenings. Two storms of one \
+                  evening are joined by this edge and the whole question about them is whether \
+                  they were in the same place; placing one from the other would answer it by \
+                  assumption.",
+    },
+    Route {
+        class: "event",
         relationship: "situated-in",
         routing: Routing::Refused,
         because: "Points at a period. Temporal, and `chronology` owns it.",
