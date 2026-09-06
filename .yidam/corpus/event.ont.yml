@@ -23,6 +23,24 @@ properties:
   - name: location_description
     type: text
     description: Where it happened, as the record states it, when no place or site node captures it.
+  - name: track
+    type: string
+    description: |
+      The ground a moving happening covered, as "latitude, longitude" points in the order it
+      passed them, separated by semicolons: `40.80, -84.20; 40.87, -83.87`. Decimal degrees,
+      ASCII hyphen for a negative — the prose writes a Unicode minus and nothing can parse it.
+
+      Only where a source states the positions. Two points is a beginning and an end and not a
+      claim about the path between them; a source that gives more may write more.
+
+      **There is deliberately no `coordinates` here.** An event that happened at one spot already
+      reaches it through `occurred-at` or `occurred-in`, and a second copy on the event is a copy
+      that can disagree with the first. The two happenings in this corpus that state their own
+      geometry state a *track* — and the midpoint of a seventeen-mile tornado is the invented
+      centroid `a-derived-placement-is-a-claim` refuses, not a position anybody recorded.
+
+      Claim-tagged in the prose that states it, the way `place.centroid` and `site.coordinates`
+      are, so the value stays parseable.
 edges:
   - relationship: occurred-in
     target: place
