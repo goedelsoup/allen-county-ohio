@@ -16,6 +16,14 @@ or boundary-change [`event`](../corpus/event/) between their `as_of` dates.
 answer that matters as much as either: *no intervening changes found, which is not evidence
 that none occurred.*
 
+**Where the first two answers go.** Onto the graph, as a `comparable-to` or `not-comparable-to`
+edge on the later of the two measures, with the finding written into `because`. Until
+[that decision](../decisions/comparability-is-a-judgement-not-a-join.yml) this skill had nowhere
+to put its output but a sentence in a phase log. **The third answer stays here and never becomes
+an edge.** A run that found nothing is not a licence to write `comparable-to`; the whole reason
+the edge is hand-written is that a silent annexation record and a moved boundary look identical
+from inside this skill.
+
 **What changed, and what did not.** This was written as a stub because the corpus held no
 annexation events. It now holds the annexations — fifty-seven of them for the county between 1990
 and 2024, dated, with instrument numbers — but as **one measure and not as fifty-seven event
