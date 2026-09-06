@@ -206,3 +206,23 @@ twelve-page issue is a two-minute read and not a two-second one.
 **`fa=location_county:allen` is the facet that isolates this paper**, and it works where a title
 facet does not: `fa=partof:bluffton+news` returns nothing at all, and the title record `sn87076554`
 carries zero resources of its own because issues are separate items. [verified]
+
+## The press day, and what it costs
+
+**The paper went to press on Wednesday, so a Wednesday event misses that week entirely.** The
+tornado of 19 July 1950 struck on a Wednesday evening; the issue of Thursday 20 July does not
+mention it, and the account appears on the front page of 27 July as a clean-up story, opening
+"still are effecting repairs". [verified] — both issues, read page by page. That is a week's delay
+on the largest weather event of the paper's own decade, and it is a property of the press day
+rather than of the archive.
+
+**It is also why the account is worth having.** A week later the paper can say which roads were
+still blocked, which woodlots will be "a mass of debris for months", and that the township trustees
+and farmers with tractors opened the roads in about twenty-four hours. A same-day wire report
+carries none of that.
+
+**Weather is a vein in this paper and elections are another.** Searching the county facet for
+`tornado` in 1950 returns five pages and `flood` in 1959 returns forty; both post-event issues carry
+a front-page story continued on an inside page, and the inside pages carry the detail. [verified]
+The paper's own village and township are what it reports, so its weather coverage is the county's
+north and not Lima.
