@@ -21,5 +21,16 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/census-intercensal-2000-2010.md
+  - target: allen-county-population-2000.yml
+    relationship: comparable-to
+    claim_tag: verified
+    source: ../../catalog/census-intercensal-2000-2010.md
+    because: >-
+      The same file's two endpoints, for the county: `ESTIMATESBASE2000` and `CENSUS2010POP` are
+      the enumerations an intercensal series is fitted between, and this one publishes both. The
+      county's line did not move in that decade — its one recorded movement since 1848 is the gain
+      from Putnam, between the 1990 and 2000 censuses and therefore before the earlier figure here
+      — so the fall of 2,133 is a fall in the county and not in what the county is. See
+      [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).
   - target: ../measure.ont.yml
     relationship: instance-of
