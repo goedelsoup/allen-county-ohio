@@ -99,5 +99,18 @@ links:
   - target: allen-county-ballot-2006.yml
     relationship: relates-to
     claim_tag: inference
+  - target: allen-county-turnout-2020.yml
+    relationship: comparable-to
+    claim_tag: verified
+    source: ../../catalog/eac-election-administration-voting-survey.md
+    because: >-
+      Both figures are ballots cast at a general election in Allen County, and this file carries
+      both: 48,353 in 2020 and 46,845 in 2024 are two rows of one survey, returned by one county
+      board under one field. **The seam between the two pipelines is measured at zero where they
+      overlap** — the 2020 node summed 48,353 out of the precinct files and the board reported the
+      same number to the federal government, as it did for 2006 and 2010. What must not be carried
+      across is the denominator beside them: the roll is edited between elections, and 9,770 names
+      came off it in the two years before 2020 alone. These are counts of ballots and the rates
+      built on them are not the same claim.
   - target: ../measure.ont.yml
     relationship: instance-of

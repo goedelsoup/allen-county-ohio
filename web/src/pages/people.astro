@@ -5,7 +5,15 @@ import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import DataTable from '../components/DataTable.astro'
-import { assertion, node, nodes, series, seriesById } from '../lib/feeds'
+import {
+  assertion,
+  comparableWith,
+  judgedApart,
+  node,
+  nodes,
+  series,
+  seriesById,
+} from '../lib/feeds'
 import { bar, line } from '../lib/chart-spec'
 
 const concentration = assertion('decline-concentrated-in-lima')
@@ -27,14 +35,18 @@ const county = seriesById('place-allen-county::total-resident-population')
 
 const lima = seriesById('place-lima::total-resident-population')
 
-// One enumeration and one estimates base share the 2020 date in both series. The estimates
-// line is the one that is comparable across all four dates, so the census figures are left
-// to the table rather than mixed into a series with them.
-const estimates = (points: typeof county.points) => points.filter((p) => !p.node.includes('-census'))
+// One enumeration and one estimates base share the 2020 date in both series, and they may not
+// both be on one line. The corpus says so — `allen-county-population-2020 --not-comparable-to->
+// allen-county-population-2020-census`, and the same pair for Lima — so this reads the judgement
+// rather than the filename it used to match on. Each line is about its 2024 estimate, which is
+// the figure named here; every figure the corpus has not held apart from that one stays on it.
+const countyLine = 'measure/allen-county-population-2024.yml'
 
-const countyEst = estimates(county.points).filter((p) => p.as_of >= '2000')
+const limaLine = 'measure/lima-population-2024.yml'
 
-const limaEst = estimates(lima.points)
+const countyEst = comparableWith(county.points, countyLine).filter((p) => p.as_of >= '2000')
+
+const limaEst = comparableWith(lima.points, limaLine)
 
 const dates = countyEst.map((p) => p.as_of.slice(0, 4))
 
@@ -80,8 +92,18 @@ const concentrationSpec = bar(concentration2.figures.map((f) => f.label), concen
   labelValues: true,
 })
 
-const allPoints = [...county.points, ...lima.points].toSorted((a, b) =>
-  a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
+// Every figure both series hold, with the line it belongs to and the subject the feed names it
+// for — neither read off a filename. `plotted` is what the chart above is actually drawn
+// through, so a row can say which of the two reasons keeps it off: a judgement, or the window.
+const plotted = new Set([...countyEst, ...limaEst].map((p) => p.node))
+
+const allPoints = [
+  ...county.points.map((p) => ({ point: p, subject: county.subject_label, line: countyLine })),
+  ...lima.points.map((p) => ({ point: p, subject: lima.subject_label, line: limaLine })),
+].toSorted((a, b) =>
+  a.point.as_of === b.point.as_of
+    ? a.point.node.localeCompare(b.point.node)
+    : a.point.as_of.localeCompare(b.point.as_of),
 )
 
 const ring = assertion('the-ring-was-built-while-the-city-was-full')
@@ -232,13 +254,17 @@ const spreadSpec = bar(
     <ChartFigure
       id="indexed"
       title="City and county, indexed to 2000"
-      caption="Both series set to 100 at 2000, so two populations three times apart in size can share one axis. Estimates only — the decennial counts are in the table and are a different instrument. The indexing is arithmetic done on this page; every input is a Census figure from the corpus."
-      columns={['Date', 'Subject', 'Figure', 'Basis']}
-      rows={allPoints.map((p) => [
-        p.as_of,
-        p.node.startsWith('measure/lima') ? 'Lima' : 'Allen County',
-        p.value.toLocaleString('en-US'),
-        p.node.includes('-census') ? 'Decennial count' : 'Estimate',
+      caption="Both series set to 100 at 2000, so two populations three times apart in size can share one axis. The last column is the corpus's own judgement and not this page's: each line is about its 2024 estimate, and the enumeration of April 2020 is held off it because the corpus says the two may not be set beside each other. The indexing is arithmetic done on this page; every input is a Census figure from the corpus."
+      columns={['Date', 'Subject', 'Figure', 'On the line']}
+      rows={allPoints.map(({ point, subject, line }) => [
+        point.as_of,
+        subject,
+        point.value.toLocaleString('en-US'),
+        plotted.has(point.node)
+          ? 'Plotted'
+          : judgedApart(point.node, line)
+            ? 'Not comparable with it'
+            : 'Before it begins',
       ])}
     />
     <script type="application/json" data-chart-spec="indexed" set:html={JSON.stringify(indexSpec)} is:inline />

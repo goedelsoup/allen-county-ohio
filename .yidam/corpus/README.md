@@ -263,7 +263,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 12v / 4i / 1o | 121 |
 | [allen-county-polling-places-2004-2024.yml](measure/allen-county-polling-places-2004-2024.yml) | measure | Allen County polling places and poll workers, 2004–2024 | 5 | 8v / 1i / 0o | 92 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
-| [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 2 | 7v / 2i / 0o | 64 |
+| [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 3 | 7v / 2i / 0o | 84 |
 | [allen-county-population-1970.yml](measure/allen-county-population-1970.yml) | measure | Allen County population, 1970 census | 2 | 2v / 1i / 0o | 29 |
 | [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
 | [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
@@ -277,13 +277,13 @@ Sorted by: kind, then alphabetically.
 | [allen-county-premature-death-1997-2022.yml](measure/allen-county-premature-death-1997-2022.yml) | measure | Premature death in Allen County, 1997–2022 | 2 | 7v / 5i / 1o | 98 |
 | [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 9v / 4i / 2o | 97 |
 | [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
-| [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 2 | 9v / 4i / 1o | 90 |
-| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 3 | 8v / 2i / 2o | 88 |
-| [allen-county-presidential-vote-1960-1964.yml](measure/allen-county-presidential-vote-1960-1964.yml) | measure | Allen County presidential vote, 1960 and 1964 | 5 | 6v / 5i / 0o | 97 |
-| [allen-county-presidential-vote-1980-1996.yml](measure/allen-county-presidential-vote-1980-1996.yml) | measure | Allen County presidential vote, 1980–1996 | 6 | 5v / 5i / 0o | 81 |
-| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 8 | 10v / 9i / 2o | 160 |
+| [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 3 | 9v / 4i / 1o | 105 |
+| [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 4 | 8v / 2i / 2o | 103 |
+| [allen-county-presidential-vote-1960-1964.yml](measure/allen-county-presidential-vote-1960-1964.yml) | measure | Allen County presidential vote, 1960 and 1964 | 6 | 6v / 5i / 0o | 110 |
+| [allen-county-presidential-vote-1980-1996.yml](measure/allen-county-presidential-vote-1980-1996.yml) | measure | Allen County presidential vote, 1980–1996 | 7 | 5v / 5i / 0o | 95 |
+| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 9 | 10v / 9i / 2o | 174 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
-| [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 2 | 8v / 0i / 0o | 51 |
+| [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 3 | 8v / 0i / 0o | 65 |
 | [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 9 | 13v / 4i / 0o | 139 |
 | [allen-county-private-schools-2013-2021.yml](measure/allen-county-private-schools-2013-2021.yml) | measure | Allen County's private and community schools, 2013–2021 | 4 | 10v / 5i / 1o | 103 |
 | [allen-county-proficiency-by-school-2018-2020.yml](measure/allen-county-proficiency-by-school-2018-2020.yml) | measure | Reading and mathematics proficiency by school in Allen County, 2018 and 2020 | 5 | 11v / 0i / 1o | 108 |
@@ -325,7 +325,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 8 | 12v / 3i / 2o | 166 |
 | [allen-county-transfer-receipts-1969-2024.yml](measure/allen-county-transfer-receipts-1969-2024.yml) | measure | Government transfers to Allen County, 1969–2024 | 6 | 11v / 1i / 1o | 113 |
 | [allen-county-tri-reporters-1987-2024.yml](measure/allen-county-tri-reporters-1987-2024.yml) | measure | Allen County facilities reporting to the Toxics Release Inventory, 1987–2024 | 2 | 7v / 0i / 0o | 60 |
-| [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 6 | 8v / 4i / 0o | 103 |
+| [allen-county-turnout-2004-2024.yml](measure/allen-county-turnout-2004-2024.yml) | measure | Allen County turnout, 2004–2024 | 7 | 8v / 4i / 0o | 116 |
 | [allen-county-turnout-2020.yml](measure/allen-county-turnout-2020.yml) | measure | Allen County turnout, 2020 general election | 4 | 8v / 2i / 0o | 78 |
 | [allen-county-unemployment-1990-2026.yml](measure/allen-county-unemployment-1990-2026.yml) | measure | Allen County unemployment, 1990–2026 | 4 | 7v / 7i / 2o | 130 |
 | [allen-county-unions-in-layoff-notices-1996-2017.yml](measure/allen-county-unions-in-layoff-notices-1996-2017.yml) | measure | Unions named in Allen County layoff notices, 1996–2017 | 3 | 5v / 3i / 0o | 66 |
@@ -358,7 +358,7 @@ Sorted by: kind, then alphabetically.
 | [lima-mayors-1939-1956.yml](measure/lima-mayors-1939-1956.yml) | measure | Mayors of Lima named inside the gap, 1939–1956 | 2 | 8v / 2i / 1o | 91 |
 | [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
-| [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 4v / 3i / 1o | 60 |
+| [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 5v / 5i / 2o | 93 |
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 5v / 3i / 0o | 53 |
 | [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
 | [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 3 | 2v / 1i / 0o | 34 |

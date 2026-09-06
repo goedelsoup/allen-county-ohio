@@ -332,6 +332,51 @@ export function tableFor(id: string): MeasureTable | undefined {
 }
 
 /**
+ * Whether the corpus has judged these two figures un-lineable.
+ *
+ * Order does not matter: the corpus writes the judgement once, on the later figure, and
+ * `crates/publish` renders it at both ends.
+ */
+export function judgedApart(a: string, b: string): boolean {
+  return comparabilityFor(a)?.rows.some((r) => r.node === b && r.comparable === false) ?? false
+}
+
+/**
+ * The points of a series that may be drawn as one line with `anchor`.
+ *
+ * A series is a join on a `parameter` string and a subject, so its points are not a line — the
+ * corpus's own minor-civil-division series puts 56,580 beside 27,132 and the whole of that fall
+ * is Lima leaving the table. Where the corpus has judged two of a series' figures
+ * `not-comparable-to`, a page that draws through both is drawing the seam. This is how a chart
+ * reads that judgement instead of guessing at it: `people.astro` kept the enumeration out of the
+ * estimates line for six phases by matching `-census` in a filename, which is the right
+ * behaviour reached by a route that a rename would have broken silently.
+ *
+ * **The anchor is required and is not computed.** Dropping the point that resolves the most
+ * conflicts would be an optimization, and an optimization here is a claim nobody made: which of
+ * two irreconcilable figures a line is about is the page's own judgement, and it has to say so.
+ * Everything else is kept in date order unless the corpus has judged it against something
+ * already on the line.
+ *
+ * **Silence keeps a point.** An unjudged pair is the corpus declining to decide, which is not a
+ * decision that they may not be lined up — see
+ * `.yidam/decisions/comparability-is-a-judgement-not-a-join.yml`.
+ */
+export function comparableWith(points: Point[], anchor: string): Point[] {
+  const start = points.find((p) => p.node === anchor)
+  if (!start) throw new Error(`no point "${anchor}" in this series to draw the line about`)
+  const kept = [start]
+  for (const p of points) {
+    if (p.node === anchor) continue
+    if (kept.some((k) => judgedApart(k.node, p.node))) continue
+    kept.push(p)
+  }
+  return kept.toSorted((a, b) =>
+    a.as_of === b.as_of ? a.node.localeCompare(b.node) : a.as_of.localeCompare(b.as_of),
+  )
+}
+
+/**
  * One column of a table, keyed by the first column and parsed as a number.
  *
  * Cells the corpus wrote as `NA` are absent from the map rather than present as zero — a tract
