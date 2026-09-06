@@ -5406,8 +5406,143 @@
       ]
     },
     {
+      "node": "measure/allen-county-population-1970.yml",
+      "rows": [
+        {
+          "node": "measure/allen-county-population-1970.yml",
+          "label": "Allen County population, 1970 census",
+          "as_of": "1970",
+          "published": "111144",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/allen-county-population-2000.yml",
+          "label": "Allen County population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "published": "108464",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Thirty years, two publications, and one boundary change that can be bounded by a figure which did not move. Between the 1990 and 2000 censuses Allen County gained territory from Putnam, by way of Marion Township taking ground from Jennings — the only movement of the county line on record since 1848, and it falls inside this pair. Its size is readable off the county's own total area, which is 406.88 square miles in the 2000 volume, 406.85 in the 2010 one and 406.851 in the 2020 gazetteer: **three hundredths of a square mile across twenty years and that boundary change**, which at this county's density is single figures of people against a fall of 2,680. The gain also pushes the later figure up, so the fall is a floor. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) and [the control is the figure that cannot move](../../decisions/the-control-is-the-figure-that-cannot-move.yml).",
+          "tier": "inference",
+          "source": null
+        }
+      ]
+    },
+    {
+      "node": "measure/allen-county-population-2000.yml",
+      "rows": [
+        {
+          "node": "measure/allen-county-population-1970.yml",
+          "label": "Allen County population, 1970 census",
+          "as_of": "1970",
+          "published": "111144",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Thirty years, two publications, and one boundary change that can be bounded by a figure which did not move. Between the 1990 and 2000 censuses Allen County gained territory from Putnam, by way of Marion Township taking ground from Jennings — the only movement of the county line on record since 1848, and it falls inside this pair. Its size is readable off the county's own total area, which is 406.88 square miles in the 2000 volume, 406.85 in the 2010 one and 406.851 in the 2020 gazetteer: **three hundredths of a square mile across twenty years and that boundary change**, which at this county's density is single figures of people against a fall of 2,680. The gain also pushes the later figure up, so the fall is a floor. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) and [the control is the figure that cannot move](../../decisions/the-control-is-the-figure-that-cannot-move.yml).",
+          "tier": "inference",
+          "source": null
+        },
+        {
+          "node": "measure/allen-county-population-2000.yml",
+          "label": "Allen County population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "published": "108464",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/allen-county-population-2010.yml",
+          "label": "Allen County population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "106331",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "The same file's two endpoints, for the county: `ESTIMATESBASE2000` and `CENSUS2010POP` are the enumerations an intercensal series is fitted between, and this one publishes both. The county's line did not move in that decade — its one recorded movement since 1848 is the gain from Putnam, between the 1990 and 2000 censuses and therefore before the earlier figure here — so the fall of 2,133 is a fall in the county and not in what the county is. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md"
+        }
+      ]
+    },
+    {
+      "node": "measure/allen-county-population-2010.yml",
+      "rows": [
+        {
+          "node": "measure/allen-county-population-2000.yml",
+          "label": "Allen County population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "published": "108464",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "The same file's two endpoints, for the county: `ESTIMATESBASE2000` and `CENSUS2010POP` are the enumerations an intercensal series is fitted between, and this one publishes both. The county's line did not move in that decade — its one recorded movement since 1848 is the gain from Putnam, between the 1990 and 2000 censuses and therefore before the earlier figure here — so the fall of 2,133 is a fall in the county and not in what the county is. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md"
+        },
+        {
+          "node": "measure/allen-county-population-2010.yml",
+          "label": "Allen County population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "106331",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/allen-county-population-2020-census.yml",
+          "label": "Allen County population, 2020 census",
+          "as_of": "2020-04-01",
+          "published": "102206",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Two decennial enumerations on ground that did not move: the county has one recorded boundary change since 1848 and it falls before both. The seam is that they arrive by different routes — a census count carried in the intercensal file against a sum of 3,552 block records out of the redistricting file — and the second checks itself, since the Allen County portions of the twelve school districts sum to the same 102,206 from a different partition of the same blocks. A fall of 4,125 across a seam that closes exactly. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        },
+        {
+          "node": "measure/allen-county-population-2020.yml",
+          "label": "Allen County population, 2020 estimates base",
+          "as_of": "2020-04-01",
+          "published": "102217",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "A revised base against a census count, across ten years, on ground that did not move. The seam between the two instruments is measured at the one date where both exist: 102,206 enumerated and 102,217 as the Vintage 2024 base revised it, **eleven people**, against a fall of 4,114 here. Three orders of magnitude, and the same file's base and count for one date stay not comparable for the reason this pair is: there, eleven people is the entire difference. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        }
+      ]
+    },
+    {
       "node": "measure/allen-county-population-2020-census.yml",
       "rows": [
+        {
+          "node": "measure/allen-county-population-2010.yml",
+          "label": "Allen County population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "106331",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Two decennial enumerations on ground that did not move: the county has one recorded boundary change since 1848 and it falls before both. The seam is that they arrive by different routes — a census count carried in the intercensal file against a sum of 3,552 block records out of the redistricting file — and the second checks itself, since the Allen County portions of the twelve school districts sum to the same 102,206 from a different partition of the same blocks. A fall of 4,125 across a seam that closes exactly. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        },
         {
           "node": "measure/allen-county-population-2020-census.yml",
           "label": "Allen County population, 2020 census",
@@ -5449,6 +5584,18 @@
     {
       "node": "measure/allen-county-population-2020.yml",
       "rows": [
+        {
+          "node": "measure/allen-county-population-2010.yml",
+          "label": "Allen County population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "106331",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "A revised base against a census count, across ten years, on ground that did not move. The seam between the two instruments is measured at the one date where both exist: 102,206 enumerated and 102,217 as the Vintage 2024 base revised it, **eleven people**, against a fall of 4,114 here. Three orders of magnitude, and the same file's base and count for one date stay not comparable for the reason this pair is: there, eleven people is the entire difference. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        },
         {
           "node": "measure/allen-county-population-2020-census.yml",
           "label": "Allen County population, 2020 census",
@@ -5983,8 +6130,102 @@
       ]
     },
     {
+      "node": "measure/lima-population-2000.yml",
+      "rows": [
+        {
+          "node": "measure/lima-population-2000.yml",
+          "label": "Lima population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "published": "40307",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/lima-population-2010.yml",
+          "label": "Lima population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "38771",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "One file's own two endpoints. The intercensal series is fitted *between* two enumerations rather than projected from one, so 40,307 and 38,771 are the base and the count that the same sub-county file was built to run between — a publisher setting the two figures side by side, which is the strongest licence this corpus recognises. Two things move underneath and both push the same way. **Lima annexed 601 acres in eight acts between June 2002 and December 2009**, so the later figure counts ground the earlier one did not and the fall of 1,536 is a **floor** on the loss inside the 2000 line. And three federal figures exist for 1 April 2000 — 40,081 in the 2000 volume, 40,307 here, and 41,581 as the 2010 volume restates it after moving fifteen hundred people from American Township into the city. A difference taken against either of the other two is a different difference, and neither is the one this pair states. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md"
+        }
+      ]
+    },
+    {
+      "node": "measure/lima-population-2010.yml",
+      "rows": [
+        {
+          "node": "measure/lima-population-2000.yml",
+          "label": "Lima population, 2000 estimates base",
+          "as_of": "2000-04-01",
+          "published": "40307",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "One file's own two endpoints. The intercensal series is fitted *between* two enumerations rather than projected from one, so 40,307 and 38,771 are the base and the count that the same sub-county file was built to run between — a publisher setting the two figures side by side, which is the strongest licence this corpus recognises. Two things move underneath and both push the same way. **Lima annexed 601 acres in eight acts between June 2002 and December 2009**, so the later figure counts ground the earlier one did not and the fall of 1,536 is a **floor** on the loss inside the 2000 line. And three federal figures exist for 1 April 2000 — 40,081 in the 2000 volume, 40,307 here, and 41,581 as the 2010 volume restates it after moving fifteen hundred people from American Township into the city. A difference taken against either of the other two is a different difference, and neither is the one this pair states. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "verified",
+          "source": "catalog/census-intercensal-2000-2010.md"
+        },
+        {
+          "node": "measure/lima-population-2010.yml",
+          "label": "Lima population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "38771",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/lima-population-2020-census.yml",
+          "label": "Lima population, 2020 census",
+          "as_of": "2020-04-01",
+          "published": "35579",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Two decennial enumerations of the same corporation, ten years apart, each tabulated at the city's line of its own date. One boundary change falls between them — resolution 408-17 of 29 June 2017, the only Lima record in thirty-five years that states no acreage — so the ground grew by an amount the survey does not give. The direction is what makes the pair usable anyway: annexation adds people to the later figure, so the fall of 3,192 is a floor on the loss inside the 2010 line, and no size of annexation turns it into a rise. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        },
+        {
+          "node": "measure/lima-population-2020.yml",
+          "label": "Lima population, 2020 estimates base",
+          "as_of": "2020-04-01",
+          "published": "35531",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "A revised base against a census count, across ten years. The seam between those two instruments is measured at the one date where the corpus holds both: 35,579 enumerated and 35,531 as the Vintage 2024 base revised it, **forty-eight people**, against a fall of 3,240 here. That is the bound, and it is two orders of magnitude below the difference it is being carried across. The 2017 annexation sits between them as well and pushes the same way as every other one: the fall is a floor. What this does not license is the pair this node already refuses — the base and the count of the *same* date, where forty-eight people is the whole of the difference rather than a bound on it. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        }
+      ]
+    },
+    {
       "node": "measure/lima-population-2020-census.yml",
       "rows": [
+        {
+          "node": "measure/lima-population-2010.yml",
+          "label": "Lima population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "38771",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Two decennial enumerations of the same corporation, ten years apart, each tabulated at the city's line of its own date. One boundary change falls between them — resolution 408-17 of 29 June 2017, the only Lima record in thirty-five years that states no acreage — so the ground grew by an amount the survey does not give. The direction is what makes the pair usable anyway: annexation adds people to the later figure, so the fall of 3,192 is a floor on the loss inside the 2010 line, and no size of annexation turns it into a rise. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        },
         {
           "node": "measure/lima-population-2020-census.yml",
           "label": "Lima population, 2020 census",
@@ -6026,6 +6267,18 @@
     {
       "node": "measure/lima-population-2020.yml",
       "rows": [
+        {
+          "node": "measure/lima-population-2010.yml",
+          "label": "Lima population, 2010 census",
+          "as_of": "2010-04-01",
+          "published": "38771",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": true,
+          "because": "A revised base against a census count, across ten years. The seam between those two instruments is measured at the one date where the corpus holds both: 35,579 enumerated and 35,531 as the Vintage 2024 base revised it, **forty-eight people**, against a fall of 3,240 here. That is the bound, and it is two orders of magnitude below the difference it is being carried across. The 2017 annexation sits between them as well and pushes the same way as every other one: the fall is a floor. What this does not license is the pair this node already refuses — the base and the count of the *same* date, where forty-eight people is the whole of the difference rather than a bound on it. See [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml).",
+          "tier": "inference",
+          "source": null
+        },
         {
           "node": "measure/lima-population-2020-census.yml",
           "label": "Lima population, 2020 census",
