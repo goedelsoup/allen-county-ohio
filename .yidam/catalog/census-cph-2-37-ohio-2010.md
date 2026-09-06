@@ -20,6 +20,7 @@ used-by:
   - ../corpus/jurisdiction/city-of-lima.yml
   - ../corpus/measure/allen-county-annexations-1990-2024.yml
   - ../corpus/measure/allen-county-land-area-2000-2024.yml
+  - ../corpus/measure/lima-annexations-1990-2017.yml
   - ../corpus/measure/lima-population-2000.yml
   - ../corpus/place/bath-township.yml
   - ../corpus/place/fort-shawnee.yml

@@ -1,0 +1,79 @@
+class: measure
+label: Lima annexations, 1990–2017
+description: |
+  **Eleven acts, 622.0 acres, and the only municipality in this county whose whole boundary record
+  the corpus holds one instrument at a time.** [verified] —
+  [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md), Ohio
+  files for 1991–2000, 2001–2010 and each survey year from 2012 to 2025; see
+  [the county's fifty-seven](allen-county-annexations-1990-2024.yml), which counts these eleven
+  among them.
+
+  Written out: **Lima annexed 15.1 acres in April 1990 and 5.9 in July 1991, nothing for ten and a
+  half years, then 601.0 acres in eight acts between June 2002 and December 2009, and one more
+  instrument in June 2017 with no acreage on it.** [verified] — same files. The ten stated
+  acreages sum to 622.0, which is the figure the county record carries for this city.
+
+  **It exists as a node because the grain is the finding.** The county's record is fifty-seven
+  rows and the corpus holds seven of them by name; the rest are a count and a total per
+  municipality, which is [the county node's own table](allen-county-annexations-1990-2024.yml).
+  Lima's eleven are the exception, and a table keyed by instrument is what lets
+  [the corporation's entry](../jurisdiction/city-of-lima.yml) show what moved its line and when —
+  the distinction between [the place](../place/lima.yml) and the corporation, which is the thing
+  a municipal jurisdiction node exists to make. [inference] — the reasoning is this corpus's.
+
+  **What the table does not say is which ground came in.** The survey gives a date, an instrument
+  and an acreage and never the township the acres came from. That is in the census volumes'
+  geographic change notes, at the grain of a decade rather than an act: American, Bath and Shawnee
+  between 1980 and 1990; an exchange with American and gains from Perry and Shawnee in the 1990s;
+  American, Bath and Perry in the 2000s. [verified] —
+  [the 2000 volume](../../catalog/census-phc-3-37-ohio.md) and
+  [the 2010 volume](../../catalog/census-cph-2-37-ohio-2010.md); see
+  [the corporation](../jurisdiction/city-of-lima.yml). Eleven dated acts and three decades of
+  notes describe the same movement and cannot be joined into one row.
+
+  **The last one is the odd one and the table shows it as `NA` rather than as zero.** Resolution
+  408-17 of 29 June 2017 is the only Lima record in thirty-five years authorised by resolution
+  rather than by ordinance and the only one with no acreage: an Ohio annexation begins with a
+  resolution of the county commissioners and ends with an ordinance of the city, so a resolution
+  reported alone is the first half of the act. [inference] — the procedure is
+  [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md) and the reading is this
+  corpus's. An absent cell is not a nil annexation, and a total built over this column is a floor.
+properties:
+  parameter: annexations reported by the city of Lima
+  value: "11"
+  unit: records
+  as_of: 2017-06-29
+  method: |
+    The eleven rows of Ohio's BAS boundary-change files carrying place FIPS 43554, read out of
+    [the county's extraction](allen-county-annexations-1990-2024.yml) rather than from the files a
+    second time — the same sixteen files, the same two record layouts. `acres` is the survey's own
+    figure and is absent on one record; `kind` is the instrument type the file names, and the
+    number is the instrument's as the city assigned it. [verified]
+  table: |
+    date        instrument  kind        acres
+    1990-04-12  31-90       Ordinance    15.1
+    1991-07-08  144-91      Ordinance     5.9
+    2002-06-24  90-02       Ordinance   215.9
+    2004-11-24  199-04      Ordinance    28.2
+    2005-06-13  100-05      Ordinance   138.6
+    2006-02-22  23-06       Ordinance     5.6
+    2007-02-21  22-07       Ordinance     8.7
+    2008-05-21  78-08       Ordinance   196.5
+    2009-05-06  82-09       Ordinance     2.2
+    2009-12-23  269-09      Ordinance     5.3
+    2017-06-29  408-17      Resolution     NA
+links:
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: allen-county-annexations-1990-2024.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

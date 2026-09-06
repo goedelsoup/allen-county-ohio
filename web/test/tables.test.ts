@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { column, node, tableFor, tables } from '../src/lib/feeds'
+import { column, node, nodes, tableFor, tables } from '../src/lib/feeds'
 
 // A measure's declared rows, and the one thing worth gating about them.
 //
@@ -163,5 +163,76 @@ describe('the join to the ground', () => {
     const keyed = new Set((tableFor(ACCESS)?.rows ?? []).map((r) => r[0]))
     const uncovered = [...tractKeys].filter((k) => !keyed.has(k))
     expect(uncovered, 'vendored tracts with no row').toEqual([])
+  })
+})
+
+describe('the boundary a jurisdiction entry draws', () => {
+  // `JurisdictionBlock` joins a municipal corporation to its line in this table on the seven-digit
+  // place code, and renders the acts themselves where a second measure holds them. Both halves are
+  // gated here, because the failure mode is silence: a municipality whose code stops matching
+  // simply loses the section, and nothing else on the page would say so.
+  const RECORD = 'measure/allen-county-annexations-1990-2024.yml'
+  const LIMA = 'measure/lima-annexations-1990-2017.yml'
+
+  const perPlace = tableFor(RECORD)
+  const acts = tableFor(LIMA)
+  const municipal = nodes.filter(
+    (n) => n.class === 'jurisdiction' && n.properties.jurisdiction_type === 'municipal corporation',
+  )
+
+  it('carries a row for every municipal corporation and for nothing else', () => {
+    expect(perPlace?.columns[0]).toBe('place_fips')
+    const keyed = new Set((perPlace?.rows ?? []).map((r) => r[0]))
+    const codes = new Set(municipal.map((n) => n.properties.fips_code))
+    expect([...codes].filter((c) => !keyed.has(c)), 'corporations with no row').toEqual([])
+    expect([...keyed].filter((k) => !codes.has(k)), 'rows matching no corporation').toEqual([])
+    expect(keyed.size).toBe(10)
+  })
+
+  it('matches each code to exactly one government, at the level the code belongs to', () => {
+    // A seven-digit GEOID is unique only within its summary level — `3904752` is Beaverdam
+    // village and also a school district — so the block restricts the join to municipal
+    // corporations. This is that restriction being load-bearing rather than decorative.
+    for (const row of perPlace?.rows ?? []) {
+      const hits = nodes.filter((n) => n.properties.fips_code === row[0])
+      expect(hits.length, `${row[0]} matches ${hits.length} nodes`).toBeGreaterThanOrEqual(1)
+      const corporations = hits.filter(
+        (n) => n.properties.jurisdiction_type === 'municipal corporation',
+      )
+      expect(corporations, row[0]).toHaveLength(1)
+    }
+  })
+
+  it('adds up to the count the record publishes', () => {
+    const records = column(perPlace, 'records')
+    const total = [...records.values()].reduce((a, b) => a + b, 0)
+    expect(String(total)).toBe(node(RECORD)?.properties.value)
+  })
+
+  it('agrees with the acts, which are a second node', () => {
+    // The two grains, cross-checked. Lima's line says eleven records and 622.0 acres; the acts
+    // table is eleven rows whose stated acreages sum to the same figure, one of them absent.
+    const records = column(perPlace, 'records')
+    const acres = column(perPlace, 'acres')
+    const lima = municipal.find((n) => n.label.includes('Lima'))?.properties.fips_code as string
+    expect(acts?.rows).toHaveLength(records.get(lima) as number)
+    const stated = column(acts, 'acres')
+    expect(stated.size, 'one act carries no acreage').toBe((acts?.rows.length ?? 0) - 1)
+    expect([...stated.values()].reduce((a, b) => a + b, 0)).toBeCloseTo(acres.get(lima) as number, 5)
+  })
+
+  it('counts the corporations that reported nothing, and says so in its prose', () => {
+    // The finding the table made checkable: three of the ten filed no boundary change in
+    // thirty-five years. The node said four and named a place that has no corporation at all.
+    const at = (name: string) => perPlace!.columns.indexOf(name)
+    const silent = (perPlace?.rows ?? []).filter((r) => r[at('records')] === '0')
+    expect(silent.map((r) => r[at('place')]).toSorted()).toEqual([
+      'Beaverdam',
+      'Fort-Shawnee',
+      'Lafayette',
+    ])
+    const prose = node(RECORD)?.blocks.map((b) => b.text).join(' ') ?? ''
+    expect(prose).toContain('Three villages that annexed nothing')
+    expect(prose).not.toMatch(/Four villages that annexed nothing/)
   })
 })

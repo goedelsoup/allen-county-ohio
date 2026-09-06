@@ -3379,6 +3379,7 @@
         "as_of": "2024-11-12",
         "method": "Every row of Ohio's BAS boundary-change files whose entity FIPS place code is one of the ten Allen County places — Beaverdam 04752, Bluffton 07426, Cairo 10884, Delphos 21602, Elida 24808, Fort Shawnee 27944, Harrod 34118, Lafayette 41118, Lima 43554, Spencerville 74034. Sixteen tab-delimited files, two record layouts, joined on the fields the readme names. Delphos and Bluffton cross county lines and the pre-2018 layout carries no county column, so their totals include ground on the Van Wert and Hancock sides. [verified]",
         "parameter": "annexations reported to the Boundary and Annexation Survey",
+        "table": "place_fips place records acres first last 3904752 Beaverdam 0 NA NA NA 3907426 Bluffton 9 477.5 1994-10-14 2024-11-12 3910884 Cairo 1 10.4 2016-05-10 2016-05-10 3921602 Delphos 26 784.4 1990-05-22 2018-02-28 3924808 Elida 5 912.9 1990-05-08 2021-05-11 3927944 Fort-Shawnee 0 NA NA NA 3934118 Harrod 1 12.9 2008-02-07 2008-02-07 3941118 Lafayette 0 NA NA NA 3943554 Lima 11 622.0 1990-04-12 2017-06-29 3974034 Spencerville 4 209.7 1997-01-21 2023-06-05",
         "unit": "records",
         "value": "57"
       },
@@ -3400,7 +3401,15 @@
           "tier": "inference"
         },
         {
-          "text": "**Four villages that annexed nothing.** Beaverdam, Lafayette, Fort Shawnee and Westminster have no record in the series at all. For [Fort Shawnee](../place/fort-shawnee.yml) that is a fact worth having beside the rest: the largest of the county's villages by population never once moved its own line. [verified] — same files, searched on all ten Allen County place codes.",
+          "text": "**Three villages that annexed nothing.** Beaverdam, Lafayette and Fort Shawnee have no record in the series at all. For [Fort Shawnee](../place/fort-shawnee.yml) that is a fact worth having beside the rest: the largest of the county's villages by population never once moved its own line. [verified] — same files, searched on all ten Allen County place codes.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This paragraph said four and named [Westminster](../place/westminster.yml), and that was a category error rather than a miscount.** Westminster is a census designated place and has never been incorporated; it has no corporation and therefore no line for an annexation to move, so it is not among the ten place codes this node's method searched and could not have appeared in the file whatever it did. [verified] — [the place node](../place/westminster.yml), which had already written the distinction down: one of these places has \"a council and a corporate boundary that annexation can move\" and the other \"a statistical outline the Census Bureau draws\". Ten codes less seven with records is three, and the sentence that said four was reporting a silence that belongs to the Census Bureau's definition of a place rather than to any government's conduct. [inference] Found by writing the table below, which is the return on making a figure a machine can read: nine names in prose and ten codes in the method could disagree indefinitely, and a keyed table cannot.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima's eleven have moved to [their own node](lima-annexations-1990-2017.yml)**, one row per instrument, because that is the grain the city's own entry has to draw and this node's table is one row per municipality. They were printed here and are not printed twice; what stays here is what this node argues about them. [verified] — same files.",
           "tier": "verified"
         },
         {
@@ -3437,7 +3446,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 7
+      "withheld": 5
     },
     {
       "id": "measure/allen-county-assessed-valuation-2010-2023.yml",
@@ -15441,6 +15450,44 @@
       ],
       "refusals": [],
       "withheld": 3
+    },
+    {
+      "id": "measure/lima-annexations-1990-2017.yml",
+      "class": "measure",
+      "label": "Lima annexations, 1990–2017",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2017-06-29",
+        "method": "The eleven rows of Ohio's BAS boundary-change files carrying place FIPS 43554, read out of [the county's extraction](allen-county-annexations-1990-2024.yml) rather than from the files a second time — the same sixteen files, the same two record layouts. `acres` is the survey's own figure and is absent on one record; `kind` is the instrument type the file names, and the number is the instrument's as the city assigned it. [verified]",
+        "parameter": "annexations reported by the city of Lima",
+        "table": "date instrument kind acres 1990-04-12 31-90 Ordinance 15.1 1991-07-08 144-91 Ordinance 5.9 2002-06-24 90-02 Ordinance 215.9 2004-11-24 199-04 Ordinance 28.2 2005-06-13 100-05 Ordinance 138.6 2006-02-22 23-06 Ordinance 5.6 2007-02-21 22-07 Ordinance 8.7 2008-05-21 78-08 Ordinance 196.5 2009-05-06 82-09 Ordinance 2.2 2009-12-23 269-09 Ordinance 5.3 2017-06-29 408-17 Resolution NA",
+        "unit": "records",
+        "value": "11"
+      },
+      "blocks": [
+        {
+          "text": "**Eleven acts, 622.0 acres, and the only municipality in this county whose whole boundary record the corpus holds one instrument at a time.** [verified] — [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md), Ohio files for 1991–2000, 2001–2010 and each survey year from 2012 to 2025; see [the county's fifty-seven](allen-county-annexations-1990-2024.yml), which counts these eleven among them.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out: **Lima annexed 15.1 acres in April 1990 and 5.9 in July 1991, nothing for ten and a half years, then 601.0 acres in eight acts between June 2002 and December 2009, and one more instrument in June 2017 with no acreage on it.** [verified] — same files. The ten stated acreages sum to 622.0, which is the figure the county record carries for this city.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It exists as a node because the grain is the finding.** The county's record is fifty-seven rows and the corpus holds seven of them by name; the rest are a count and a total per municipality, which is [the county node's own table](allen-county-annexations-1990-2024.yml). Lima's eleven are the exception, and a table keyed by instrument is what lets [the corporation's entry](../jurisdiction/city-of-lima.yml) show what moved its line and when — the distinction between [the place](../place/lima.yml) and the corporation, which is the thing a municipal jurisdiction node exists to make. [inference] — the reasoning is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What the table does not say is which ground came in.** The survey gives a date, an instrument and an acreage and never the township the acres came from. That is in the census volumes' geographic change notes, at the grain of a decade rather than an act: American, Bath and Shawnee between 1980 and 1990; an exchange with American and gains from Perry and Shawnee in the 1990s; American, Bath and Perry in the 2000s. [verified] — [the 2000 volume](../../catalog/census-phc-3-37-ohio.md) and [the 2010 volume](../../catalog/census-cph-2-37-ohio-2010.md); see [the corporation](../jurisdiction/city-of-lima.yml). Eleven dated acts and three decades of notes describe the same movement and cannot be joined into one row.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The last one is the odd one and the table shows it as `NA` rather than as zero.** Resolution 408-17 of 29 June 2017 is the only Lima record in thirty-five years authorised by resolution rather than by ordinance and the only one with no acreage: an Ohio annexation begins with a resolution of the county commissioners and ends with an ordinance of the city, so a resolution reported alone is the first half of the act. [inference] — the procedure is [the survey readme's](../../catalog/census-bas-boundary-changes-ohio.md) and the reading is this corpus's. An absent cell is not a nil annexation, and a total built over this column is a floor.",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
     },
     {
       "id": "measure/lima-city-government-2026.yml",
@@ -28650,6 +28697,69 @@
     },
     {
       "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/city-of-delphos.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-beaverdam.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-cairo.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-elida.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-fort-shawnee.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-harrod.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-lafayette.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
+      "to": "jurisdiction/village-of-spencerville.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexations-1990-2024.yml",
       "to": "place/lima.yml",
       "relationship": "describes",
       "tier": "verified",
@@ -33617,6 +33727,27 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/leeson-allen-county-1885.md"
+    },
+    {
+      "from": "measure/lima-annexations-1990-2017.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/lima-annexations-1990-2017.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
+    },
+    {
+      "from": "measure/lima-annexations-1990-2017.yml",
+      "to": "measure/allen-county-annexations-1990-2024.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-bas-boundary-changes-ohio.md"
     },
     {
       "from": "measure/lima-city-government-2026.yml",

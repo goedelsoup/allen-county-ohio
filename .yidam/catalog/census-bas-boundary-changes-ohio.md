@@ -33,6 +33,7 @@ used-by:
   - ../corpus/measure/allen-county-annexations-1990-2024.yml
   - ../corpus/measure/allen-county-land-area-2000-2024.yml
   - ../corpus/measure/allen-county-outside-lima-1890-2020.yml
+  - ../corpus/measure/lima-annexations-1990-2017.yml
   - ../corpus/measure/lima-land-area-2020.yml
   - ../corpus/measure/lima-population-2000.yml
   - ../corpus/place/elida.yml
