@@ -144,6 +144,25 @@ fn both_gates_format_check_every_workspace_member() {
 }
 
 #[test]
+fn ci_fetches_the_branches_the_status_block_counts() {
+    // `README.md`'s status block is gated by `regen --check`, and one of its fields —
+    // `active phase(s)` — is read from git refs rather than from the tree. `fetch-depth: 0` is a
+    // *depth*, not a refspec: it fetches the whole history of the checked-out ref and creates no
+    // remote-tracking ref for any other branch. So CI counted phases it could not see, passed a
+    // README that understated them, and every clone that had run `git fetch` failed the same
+    // gate on the same commit.
+    //
+    // The explicit fetch is what makes the two ends agree. It is one line and easy to read as
+    // redundant beside `fetch-depth: 0`, which is exactly why it is pinned here.
+    let ci = read(".github/workflows/ci.yml");
+    assert!(
+        ci.contains("+refs/heads/*:refs/remotes/origin/*"),
+        "the corpus job must fetch every branch head, or `yidam status` counts only what the \
+         checkout happens to hold — see finding 7 in .yidam/decisions/upstream-findings.yml"
+    );
+}
+
+#[test]
 fn both_gates_run_the_same_cargo_steps() {
     // The list the promise in AGENTS.md is actually about. Checked as flags rather than as whole
     // command lines, because mise passes `--manifest-path crates/Cargo.toml` and the workflow
