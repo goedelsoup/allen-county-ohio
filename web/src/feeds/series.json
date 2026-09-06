@@ -692,6 +692,26 @@
       ]
     },
     {
+      "id": "place-allen-county::Allen-County's-median-household-income-as-a-share-of-the-national-median",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "Allen County's median household income as a share of the national median",
+      "unit": "per cent of the national median in 2024, against 96.8 in 1989",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "label": "Allen County's median household income, 1989–2024",
+          "as_of": "2024",
+          "value": 82.9,
+          "published": "82.9",
+          "tier": "verified",
+          "source": "catalog/census-saipe-county.md",
+          "method": "`median`, `lo` and `hi` are the file's own nominal figures and ninety per cent bounds. `real2024` and `us_real2024` are deflated with the annual average all-items consumer price index for all urban consumers, series `CUUR0000SA0`, on a 2024 base. [verified] `pct_of_us` is computed on the nominal figures, where the deflator cancels, so it does not depend on the price index at all. [verified] Separation is tested by whether two ninety per cent intervals overlap. [verified] Every produced year was taken except 1996, whose every path answers HTTP 520. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Allen-County-Republican-presidential-share-less-Ohio's,-1980–2008",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -4132,6 +4152,26 @@
       ]
     },
     {
+      "id": "place-allen-county::share-of-Allen-County's-population-below-the-poverty-line",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "share of Allen County's population below the poverty line",
+      "unit": "per cent in 2024, with ninety per cent bounds of 12.6 and 17.0",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "label": "Poverty in Allen County, 1989–2024",
+          "as_of": "2024",
+          "value": 14.8,
+          "published": "14.8",
+          "tier": "verified",
+          "source": "catalog/census-saipe-county.md",
+          "method": "Every produced year of the state-and-county file was taken: 1989, 1993, 1995, 1997, 1998 and then annually from 1999, which the programme's directory listing establishes as the whole set apart from 1996. [verified] 1996 exists and its every path answers HTTP 520; it is missing here for that reason and not because it was not produced. [verified] Separation is tested by whether two ninety per cent intervals overlap, which is conservative and needs nothing the file does not carry. [verified] `ohio` and `usa` are the same file's state and national rows, whose intervals are far narrower because their samples are far larger. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::share-of-Allen-County-in-the-same-land-cover-class-in-2021-as-in-2001",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -5404,6 +5444,64 @@
           "because": null,
           "tier": null,
           "source": null
+        }
+      ]
+    },
+    {
+      "node": "measure/allen-county-household-income-1989-2024.yml",
+      "rows": [
+        {
+          "node": "measure/allen-county-income-and-poverty-2023.yml",
+          "label": "Allen County household income and poverty, 2023",
+          "as_of": "2023",
+          "published": "62001",
+          "unit": "2023 dollars, county median household income",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Both figures are the median income of a household in Allen County in the same year, and their intervals overlap — $62,001 ± $2,572 against $65,665 with bounds of $60,301 and $71,029. They may be set beside each other and they are not two witnesses: this model reads that survey as an input, so agreement between them is one instrument agreeing with itself.",
+          "tier": "verified",
+          "source": "catalog/census-saipe-county.md"
+        },
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "label": "Allen County's median household income, 1989–2024",
+          "as_of": "2024",
+          "published": "82.9",
+          "unit": "per cent of the national median in 2024, against 96.8 in 1989",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        }
+      ]
+    },
+    {
+      "node": "measure/allen-county-income-and-poverty-2023.yml",
+      "rows": [
+        {
+          "node": "measure/allen-county-income-and-poverty-2023.yml",
+          "label": "Allen County household income and poverty, 2023",
+          "as_of": "2023",
+          "published": "62001",
+          "unit": "2023 dollars, county median household income",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "label": "Allen County's median household income, 1989–2024",
+          "as_of": "2024",
+          "published": "82.9",
+          "unit": "per cent of the national median in 2024, against 96.8 in 1989",
+          "this_figure": false,
+          "comparable": true,
+          "because": "Both figures are the median income of a household in Allen County in the same year, and their intervals overlap — $62,001 ± $2,572 against $65,665 with bounds of $60,301 and $71,029. They may be set beside each other and they are not two witnesses: this model reads that survey as an input, so agreement between them is one instrument agreeing with itself.",
+          "tier": "verified",
+          "source": "catalog/census-saipe-county.md"
         }
       ]
     },
@@ -37808,6 +37906,360 @@
           "literal": "0.989"
         }
       ]
+    },
+    {
+      "id": "ninety-seven-cents-to-eighty-three",
+      "statement": "The median household in Allen County earned ninety-seven cents on the national dollar in 1989 and eighty-three in 2024. It is one of the few movements in this series wide enough to clear its own confidence interval.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "node_label": "Allen County's median household income, 1989–2024",
+          "span": "**The median household in Allen County earned ninety-seven cents on the national dollar in 1989 and eighty-three in 2024, and that fall is one of the few things in this series large enough to clear its own interval.** [verified] — [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), thirty-one produced years. As a share of the national median the county's bounds are 89.3 to 104.2 per cent in 1989 and 79.5 to 86.3 in 2024, and the two do not overlap.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not know why the share fell.** Median household income moves with what work pays, with how many earners a household has, with who moves away and with who is left, and this file separates none of them."
+      ],
+      "figures": [
+        {
+          "label": "1989, lower bound",
+          "value": 89.3,
+          "literal": "89.3"
+        },
+        {
+          "label": "1989, upper bound",
+          "value": 104.2,
+          "literal": "104.2"
+        },
+        {
+          "label": "2024, lower bound",
+          "value": 79.5,
+          "literal": "79.5"
+        },
+        {
+          "label": "2024, upper bound",
+          "value": 86.3,
+          "literal": "86.3"
+        }
+      ]
+    },
+    {
+      "id": "the-county-fell-while-the-nation-rose",
+      "statement": "Allen County's median household income was $70,750 in 1989 and $67,677 in 2024, in the dollars of 2024. The national median went from $73,125 to $81,604 in the same dollars.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "node_label": "Allen County's median household income, 1989–2024",
+          "span": "**In figures: $27,967 in 1989 and $67,677 in 2024, which is $70,750 and $67,677 in the dollars of 2024.** [verified] — the same source, deflated here with [the all-items consumer price index](../../catalog/bls-cpi.md). The national median went from $73,125 to $81,604 in the same dollars, a rise of 11.6 per cent, while this county's fell 4.3.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-cpi.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not know why the share fell.** Median household income moves with what work pays, with how many earners a household has, with who moves away and with who is left, and this file separates none of them."
+      ],
+      "figures": [
+        {
+          "label": "Allen 1989",
+          "value": 70750.0,
+          "literal": "70,750"
+        },
+        {
+          "label": "Allen 2024",
+          "value": 67677.0,
+          "literal": "67,677"
+        },
+        {
+          "label": "United States 1989",
+          "value": 73125.0,
+          "literal": "73,125"
+        },
+        {
+          "label": "United States 2024",
+          "value": 81604.0,
+          "literal": "81,604"
+        }
+      ]
+    },
+    {
+      "id": "the-level-does-not-separate-and-the-share-does",
+      "statement": "Allen County's real median income in 1989 and in 2024 cannot be told apart by this file — the intervals overlap. Divided by the national median, the same two years part company.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "node_label": "Allen County's median household income, 1989–2024",
+          "span": "**The fall in real income on its own does not separate, and the fall relative to the nation does.** The county's 1989 bounds are $65,275 and $76,194 in 2024 dollars against $64,897 and $70,457 for 2024, which overlap. Divided by a national median whose own interval is a few hundred dollars wide, the same two years part company. [verified] — the same source, its published bounds and the national row. That is what a ratio buys over a level, and it is the reason this node leads with the share. See [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-cpi.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not know why the share fell.** Median household income moves with what work pays, with how many earners a household has, with who moves away and with who is left, and this file separates none of them."
+      ],
+      "figures": []
+    },
+    {
+      "id": "twenty-eight-years-below-1989",
+      "statement": "Twenty-eight of the thirty-one years in the series stand below 1989 in real terms. The floor is 2012, at $57,620 against $70,930 in 1998.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-household-income-1989-2024.yml",
+          "node_label": "Allen County's median household income, 1989–2024",
+          "span": "**The floor is 2012 and the county has not been back to where it started.** Real median household income was $70,930 in 1998 and $57,620 in 2012, a fall of 18.8 per cent, and the 2024 figure of $67,677 is below 1998, below 1989 and below the single highest year in the series, which is 2019 at $71,498. [verified] — the same source, deflated here. Two of the thirty-one years stand above 1989 — 1998 and 2019 — and twenty-eight stand below it.",
+          "tier": "verified",
+          "sources": [
+            "catalog/bls-cpi.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not know why the share fell.** Median household income moves with what work pays, with how many earners a household has, with who moves away and with who is left, and this file separates none of them."
+      ],
+      "figures": [
+        {
+          "label": "1998",
+          "value": 70930.0,
+          "literal": "70,930"
+        },
+        {
+          "label": "2012",
+          "value": 57620.0,
+          "literal": "57,620"
+        },
+        {
+          "label": "2019",
+          "value": 71498.0,
+          "literal": "71,498"
+        },
+        {
+          "label": "2024",
+          "value": 67677.0,
+          "literal": "67,677"
+        }
+      ]
+    },
+    {
+      "id": "thirty-one-years-of-poverty",
+      "statement": "Allen County's poverty rate runs from 10.6 per cent in 2000 to 20.1 in 2012, and stands at 14.8 per cent in 2024 — 14,364 people.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**Thirty-one years of how many people in this county are below the poverty line, and the first poverty series this corpus has held at all.** The rate runs from 10.6 per cent in 2000 to 20.1 in 2012 and stands at 14.8 in 2024, on 14,364 people. [verified] — [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), the state-and-county files for every produced year.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": [
+        {
+          "label": "2000",
+          "value": 10.6,
+          "literal": "10.6"
+        },
+        {
+          "label": "2012",
+          "value": 20.1,
+          "literal": "20.1"
+        },
+        {
+          "label": "2024",
+          "value": 14.8,
+          "literal": "14.8"
+        }
+      ]
+    },
+    {
+      "id": "not-one-year-separates-from-the-last",
+      "statement": "The poverty file publishes a ninety per cent interval on every figure, and across thirty adjacent pairs not one year in Allen County separates from the year before it. The four-point rise of 2009 has intervals touching exactly at 16.7.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**Not one year in the series separates from the year before it.** The file publishes a ninety per cent interval on every figure and the interval is about 4.4 points wide, against a range of 9.5 points across the whole series. Thirty adjacent pairs were tested and none of them clears: the four-point rise of 2009 has intervals touching exactly at 16.7, and the four-point fall of 2013 has intervals overlapping by two tenths. [verified] — the same source, its published bounds. See [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": []
+    },
+    {
+      "id": "spans-separate-and-the-ends-do-not",
+      "statement": "Of the 465 pairs of years in the series, 103 separate, the shortest gap being two years. The endpoints are not among them: 11.8 per cent in 1989 and 14.8 in 2024 cannot be told apart.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**What does separate is spans.** 103 of the 465 possible pairs clear, the shortest gap being two years — 2007 against 2009 — and the county's 2000s separate from its 2010s in every direction anyone would ask. [verified] — the same source. The endpoints do not: 11.8 per cent in 1989 and 14.8 in 2024 cannot be told apart by this file, though everything between them says the county got poorer and stayed poorer.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": [
+        {
+          "label": "Pairs that separate",
+          "value": 103.0,
+          "literal": "103"
+        },
+        {
+          "label": "Pairs tested",
+          "value": 465.0,
+          "literal": "465"
+        }
+      ]
+    },
+    {
+      "id": "indistinguishable-from-the-nation-until-2008",
+      "statement": "In no year from 1989 to 2008 does Allen County's poverty interval clear the nation's. In 2009, 2010, 2011, 2012, 2014, 2021 and 2024 it does.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**The county was indistinguishable from the nation until 2008 and distinguishably poorer seven times since.** In no year from 1989 to 2008 does Allen County's interval clear the national one. In 2009, 2010, 2011, 2012, 2014, 2021 and 2024 it does. [verified] — the same source, the county row against the national row. On the point estimates the county is below the nation in every year to 2004 and above it in every year from 2007.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": []
+    },
+    {
+      "id": "the-county-rate-against-the-national-rate",
+      "statement": "Allen County's poverty rate was 0.922 times the nation's in 1989, 1.264 in 2012 and 1.223 in 2024.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**In figures: the county's rate was 0.922 times the nation's in 1989, 1.264 in 2012 and 1.223 in 2024.** [verified] — the same source. The 1989 ratio and the 2012 ratio separate; the 1989 and 2024 ratios do not, which is the difference between a county that got poorer than the country and one that can be shown to have. See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml).",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": [
+        {
+          "label": "1989",
+          "value": 0.922,
+          "literal": "0.922"
+        },
+        {
+          "label": "2012",
+          "value": 1.264,
+          "literal": "1.264"
+        },
+        {
+          "label": "2024",
+          "value": 1.223,
+          "literal": "1.223"
+        }
+      ]
+    },
+    {
+      "id": "child-poverty-reached-three-in-ten",
+      "statement": "Child poverty in Allen County ran higher than the county's own rate in every one of the thirty-one years and reached 30.0 per cent in 2010.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**Child poverty ran higher than the county's rate in every one of the thirty-one years, and reached 30.0 per cent in 2010.** [verified] — the same source, its under-18 estimates. Nearly one child in three, in the year after the county's largest single-year rise.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": [
+        {
+          "label": "Children in poverty, 2010",
+          "value": 30.0,
+          "literal": "30.0"
+        }
+      ]
+    },
+    {
+      "id": "the-survey-and-the-model-overlap",
+      "statement": "The five-year survey puts Allen County's poverty rate at 13.1 per cent for 2023 and the federal model at 14.1. Their intervals overlap, and neither checks the other, because the model reads the survey.",
+      "topic": "work",
+      "tier": "verified",
+      "citations": [
+        {
+          "node": "measure/allen-county-poverty-1989-2024.yml",
+          "node_label": "Poverty in Allen County, 1989–2024",
+          "span": "**The survey and the model disagree by a point and their intervals overlap.** The five-year American Community Survey puts the county at 13.1 per cent for 2023 ± 1.2 and this file at 14.1 with bounds of 11.8 and 16.4. [verified] — [the survey](allen-county-income-and-poverty-2023.yml) and the same source. Neither is a check on the other, because the model reads the survey as one of its inputs.",
+          "tier": "verified",
+          "sources": [
+            "catalog/census-saipe-county.md"
+          ]
+        }
+      ],
+      "caveats": [
+        "**This node does not establish that poverty rose in Allen County between 1989 and 2024.** The first and last estimates overlap, and a series may not be read from its ends when the file says its ends are the same."
+      ],
+      "figures": [
+        {
+          "label": "Survey",
+          "value": 13.1,
+          "literal": "13.1"
+        },
+        {
+          "label": "Model",
+          "value": 14.1,
+          "literal": "14.1"
+        }
+      ]
     }
   ],
   "tables": [
@@ -37905,6 +38357,301 @@
         ]
       ],
       "tier": "inference"
+    },
+    {
+      "node": "measure/allen-county-household-income-1989-2024.yml",
+      "label": "Allen County's median household income, 1989–2024",
+      "columns": [
+        "year",
+        "median",
+        "lo",
+        "hi",
+        "real2024",
+        "us_real2024",
+        "pct_of_us"
+      ],
+      "rows": [
+        [
+          "1989",
+          "27967",
+          "25803",
+          "30119",
+          "70750",
+          "73125",
+          "96.8"
+        ],
+        [
+          "1993",
+          "30415",
+          "28236",
+          "32583",
+          "66027",
+          "67820",
+          "97.4"
+        ],
+        [
+          "1995",
+          "32890",
+          "29892",
+          "35871",
+          "67698",
+          "70140",
+          "96.5"
+        ],
+        [
+          "1997",
+          "35411",
+          "32332",
+          "38474",
+          "69209",
+          "72324",
+          "95.7"
+        ],
+        [
+          "1998",
+          "36857",
+          "33817",
+          "39881",
+          "70930",
+          "74833",
+          "94.8"
+        ],
+        [
+          "1999",
+          "36534",
+          "34243",
+          "38979",
+          "68789",
+          "76626",
+          "89.8"
+        ],
+        [
+          "2000",
+          "38345",
+          "35600",
+          "41302",
+          "69851",
+          "76491",
+          "91.3"
+        ],
+        [
+          "2001",
+          "37506",
+          "35030",
+          "40157",
+          "66433",
+          "74796",
+          "88.8"
+        ],
+        [
+          "2002",
+          "37621",
+          "35127",
+          "40291",
+          "65599",
+          "73948",
+          "88.7"
+        ],
+        [
+          "2003",
+          "39069",
+          "36723",
+          "41565",
+          "66606",
+          "73850",
+          "90.2"
+        ],
+        [
+          "2004",
+          "39134",
+          "36784",
+          "41634",
+          "64986",
+          "73621",
+          "88.3"
+        ],
+        [
+          "2005",
+          "41270",
+          "38927",
+          "43613",
+          "66287",
+          "74273",
+          "89.2"
+        ],
+        [
+          "2006",
+          "43156",
+          "40756",
+          "45555",
+          "67151",
+          "75390",
+          "89.1"
+        ],
+        [
+          "2007",
+          "43840",
+          "41116",
+          "46564",
+          "66326",
+          "76765",
+          "86.4"
+        ],
+        [
+          "2008",
+          "44360",
+          "40920",
+          "47800",
+          "64631",
+          "75804",
+          "85.3"
+        ],
+        [
+          "2009",
+          "39318",
+          "36748",
+          "41888",
+          "57489",
+          "73432",
+          "78.3"
+        ],
+        [
+          "2010",
+          "41196",
+          "39587",
+          "42805",
+          "59263",
+          "71995",
+          "82.3"
+        ],
+        [
+          "2011",
+          "41453",
+          "39767",
+          "43139",
+          "57808",
+          "70428",
+          "82.1"
+        ],
+        [
+          "2012",
+          "42173",
+          "39804",
+          "44542",
+          "57620",
+          "70187",
+          "82.1"
+        ],
+        [
+          "2013",
+          "43274",
+          "40587",
+          "45961",
+          "58271",
+          "70357",
+          "82.8"
+        ],
+        [
+          "2014",
+          "43602",
+          "40496",
+          "46708",
+          "57775",
+          "71099",
+          "81.3"
+        ],
+        [
+          "2015",
+          "49297",
+          "46661",
+          "51933",
+          "65244",
+          "73818",
+          "88.4"
+        ],
+        [
+          "2016",
+          "47924",
+          "44647",
+          "51201",
+          "62637",
+          "75305",
+          "83.2"
+        ],
+        [
+          "2017",
+          "51325",
+          "48772",
+          "53878",
+          "65682",
+          "77214",
+          "85.1"
+        ],
+        [
+          "2018",
+          "50301",
+          "46615",
+          "53987",
+          "62837",
+          "77373",
+          "81.2"
+        ],
+        [
+          "2019",
+          "58271",
+          "54137",
+          "62405",
+          "71498",
+          "80628",
+          "88.7"
+        ],
+        [
+          "2020",
+          "52558",
+          "47055",
+          "58061",
+          "63702",
+          "81619",
+          "78.0"
+        ],
+        [
+          "2021",
+          "52518",
+          "49467",
+          "55569",
+          "60798",
+          "80708",
+          "75.3"
+        ],
+        [
+          "2022",
+          "60384",
+          "56317",
+          "64451",
+          "64724",
+          "80128",
+          "80.8"
+        ],
+        [
+          "2023",
+          "65665",
+          "60301",
+          "71029",
+          "67602",
+          "80011",
+          "84.5"
+        ],
+        [
+          "2024",
+          "67677",
+          "64897",
+          "70457",
+          "67677",
+          "81604",
+          "82.9"
+        ]
+      ],
+      "tier": "verified"
     },
     {
       "node": "measure/allen-county-land-cover-change-1985-2023.yml",
@@ -38481,6 +39228,333 @@
           "33",
           "21.2",
           "55000"
+        ]
+      ],
+      "tier": "verified"
+    },
+    {
+      "node": "measure/allen-county-poverty-1989-2024.yml",
+      "label": "Poverty in Allen County, 1989–2024",
+      "columns": [
+        "year",
+        "rate",
+        "lo",
+        "hi",
+        "people",
+        "child_rate",
+        "ohio",
+        "usa"
+      ],
+      "rows": [
+        [
+          "1989",
+          "11.8",
+          "9.5",
+          "14.1",
+          "12529",
+          "15.6",
+          "12.1",
+          "12.8"
+        ],
+        [
+          "1993",
+          "13.7",
+          "11.1",
+          "16.4",
+          "14540",
+          "20.0",
+          "13.7",
+          "15.1"
+        ],
+        [
+          "1995",
+          "11.4",
+          "9.2",
+          "13.6",
+          "11940",
+          "17.3",
+          "11.3",
+          "13.8"
+        ],
+        [
+          "1997",
+          "11.4",
+          "9.0",
+          "13.8",
+          "11783",
+          "15.8",
+          "11.0",
+          "13.3"
+        ],
+        [
+          "1998",
+          "11.5",
+          "9.1",
+          "13.8",
+          "11800",
+          "17.0",
+          "10.7",
+          "12.7"
+        ],
+        [
+          "1999",
+          "11.9",
+          "9.2",
+          "14.6",
+          "12311",
+          "17.3",
+          "11.0",
+          "11.9"
+        ],
+        [
+          "2000",
+          "10.6",
+          "8.4",
+          "12.8",
+          "10896",
+          "15.3",
+          "9.8",
+          "11.3"
+        ],
+        [
+          "2001",
+          "11.1",
+          "8.7",
+          "13.5",
+          "11355",
+          "15.9",
+          "10.3",
+          "11.7"
+        ],
+        [
+          "2002",
+          "10.8",
+          "8.4",
+          "13.3",
+          "11156",
+          "13.4",
+          "10.2",
+          "12.1"
+        ],
+        [
+          "2003",
+          "11.3",
+          "8.8",
+          "13.9",
+          "11644",
+          "15.9",
+          "10.7",
+          "12.5"
+        ],
+        [
+          "2004",
+          "12.2",
+          "9.4",
+          "14.9",
+          "12505",
+          "17.3",
+          "11.7",
+          "12.7"
+        ],
+        [
+          "2005",
+          "13.4",
+          "11.5",
+          "15.4",
+          "13587",
+          "18.5",
+          "13.0",
+          "13.3"
+        ],
+        [
+          "2006",
+          "12.8",
+          "10.8",
+          "14.8",
+          "12963",
+          "18.6",
+          "13.2",
+          "13.3"
+        ],
+        [
+          "2007",
+          "14.5",
+          "12.5",
+          "16.4",
+          "14529",
+          "20.6",
+          "13.1",
+          "13.0"
+        ],
+        [
+          "2008",
+          "14.7",
+          "12.6",
+          "16.7",
+          "14749",
+          "20.9",
+          "13.3",
+          "13.2"
+        ],
+        [
+          "2009",
+          "18.8",
+          "16.7",
+          "20.9",
+          "18751",
+          "25.8",
+          "15.1",
+          "14.3"
+        ],
+        [
+          "2010",
+          "18.7",
+          "16.4",
+          "21.0",
+          "18766",
+          "30.0",
+          "15.8",
+          "15.3"
+        ],
+        [
+          "2011",
+          "19.2",
+          "17.1",
+          "21.3",
+          "19203",
+          "29.2",
+          "16.3",
+          "15.9"
+        ],
+        [
+          "2012",
+          "20.1",
+          "18.2",
+          "22.0",
+          "19903",
+          "28.2",
+          "16.2",
+          "15.9"
+        ],
+        [
+          "2013",
+          "16.1",
+          "13.8",
+          "18.4",
+          "15963",
+          "22.9",
+          "15.9",
+          "15.8"
+        ],
+        [
+          "2014",
+          "18.0",
+          "16.0",
+          "20.0",
+          "17839",
+          "24.9",
+          "15.8",
+          "15.5"
+        ],
+        [
+          "2015",
+          "15.5",
+          "13.1",
+          "17.9",
+          "15229",
+          "23.4",
+          "14.8",
+          "14.7"
+        ],
+        [
+          "2016",
+          "15.5",
+          "13.5",
+          "17.5",
+          "15101",
+          "21.9",
+          "14.5",
+          "14.0"
+        ],
+        [
+          "2017",
+          "15.2",
+          "13.3",
+          "17.1",
+          "14723",
+          "23.0",
+          "13.9",
+          "13.4"
+        ],
+        [
+          "2018",
+          "14.4",
+          "12.1",
+          "16.7",
+          "13901",
+          "18.7",
+          "13.8",
+          "13.1"
+        ],
+        [
+          "2019",
+          "12.9",
+          "10.5",
+          "15.3",
+          "12452",
+          "19.6",
+          "13.0",
+          "12.3"
+        ],
+        [
+          "2020",
+          "12.9",
+          "10.4",
+          "15.4",
+          "12387",
+          "17.9",
+          "12.6",
+          "11.9"
+        ],
+        [
+          "2021",
+          "15.3",
+          "13.1",
+          "17.5",
+          "14686",
+          "20.1",
+          "13.3",
+          "12.8"
+        ],
+        [
+          "2022",
+          "12.9",
+          "10.6",
+          "15.2",
+          "12570",
+          "17.0",
+          "13.4",
+          "12.6"
+        ],
+        [
+          "2023",
+          "14.1",
+          "11.8",
+          "16.4",
+          "13724",
+          "18.6",
+          "13.2",
+          "12.5"
+        ],
+        [
+          "2024",
+          "14.8",
+          "12.6",
+          "17.0",
+          "14364",
+          "18.2",
+          "12.6",
+          "12.1"
         ]
       ],
       "tier": "verified"
