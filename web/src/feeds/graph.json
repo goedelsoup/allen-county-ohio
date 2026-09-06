@@ -9455,11 +9455,11 @@
           "tier": "verified"
         },
         {
-          "text": "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-seven of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated this phase out of a sketch attached to his father. [verified] — the same source pair, each searched for every person node's name, and the matches tested against the corpus's own rosters; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
+          "text": "**Of the ninety-nine people this corpus names, forty-eight lived in the era the books cover and twenty-one are attached to a sketch.** Attachment means the sketch names the office the corpus's roster names; twenty-six of the rest fail that test, some of them certainly the same man, and the forty-eighth is Dr. Samuel A. Baxter, who was separated out of a sketch attached to his father. [verified] — the same source pair, each searched for every person node's name, and the matches tested against the corpus's own rosters; see [attach a biography by its office](../../decisions/attach-a-biography-by-its-office.yml).",
           "tier": "verified"
         },
         {
-          "text": "**The class had 6 birth dates for 98 people and now has 20 for 99.** Birthplace went from 3 to 17, died from 5 to 11, also_known_as from 6 to 13 and occupation from 95 to 97. [inference] — counted over `.yidam/corpus/person/` before this phase and after it.",
+          "text": "**The class had 6 birth dates for 98 people and now has 22 for 99.** Birthplace went from 3 to 18, died from 5 to 11, also_known_as from 6 to 14 and occupation from 95 to 97. [inference] — counted over `.yidam/corpus/person/` before that phase and after this one. The last two births came a phase later and from different directions: one from a second pass over these books, described below, and one from [the federal file of congressmen](../../catalog/congress-legislators.md), which dates [Mathias H. Nichols](../person/mathias-h-nichols.yml) to 3 October 1824 where neither history does.",
           "tier": "inference"
         },
         {
@@ -9469,12 +9469,28 @@
         {
           "text": "**What finishes them is a different kind of source.** Three of the deaths this corpus now holds came from newspapers: Calvin S. Brice on 15 December 1898, Charles N. Lamison on 25 April 1896, Samuel S. Yoder on 11 May 1921. [verified] — [Chronicling America](../../catalog/chronicling-america.md). A paper records a death because a death is news and records a birth only in an obituary; a subscription book records a birth because the subscriber gave it and a death only when somebody else did. The two sources are complementary in the exact place the `person` class needed them to be. [inference]",
           "tier": "inference"
+        },
+        {
+          "text": "**A second pass, searching the office rather than the name, found one more and no others.** Thirty-one officeholders whose terms all ended before 2000 still carried no birth date. The search this time was the acceptance rule itself: every passage in all five texts claiming the shrievalty — `elected sheriff`, `sheriff of Allen`, `appointed sheriff`, `office of sheriff` — and then the sketch each sits in. Sixteen passages qualify. Fourteen belong to men already placed or to men who are not the subject, among them a Mercer County sheriff and a candidate who never won. One is [Henry Van Gunter](../person/henry-van-gunter.yml), elected in November 1905 and born 29 July 1864. [verified] — the same source pair; the sketch is on page 587 of the 1906 book and was read off the page image, one witness, because scan A ends before it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A sweep for what that might have missed returned nothing.** Every capitalised sketch head in all five texts bearing any of the thirty-one surnames, office or no office: thirty-one heads, and not one of them is one of these men. They are other Fishers, Millers, Marshalls and Watts of the same county in the same decades. [verified] — the same source pair.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The nearest miss is the argument for the rule.** `JOHN VON GUNTEN, manufacturer of brick, Bluffton, was born in Richland Township, this county, November 16, 1856, son of John and Anna (Sn[itter])` is the sheriff's elder brother — same parents, same township, a third spelling of the surname, eight years wrong. [verified] — the 1885 history. A name match returns it, and a node carrying it would afterwards be indistinguishable from a correct one.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the books are close to exhausted for this corpus's officeholders, and the reason is structural.** Eleven of the thirty-one took office after 1921 and no volume held here was printed while they served; Rusler's biographical Volume II [is not held](../../catalog/rusler-allen-county-1921.md). Of the twenty who served early enough, these books carry one. A subscription history's biographical half is sold, not compiled, and holding an office did not put a man in it. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
         "**This node does not assert that the people with sketches are representative of the county.**"
       ],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "measure/allen-county-livestock-2002-2022.yml",
@@ -21017,9 +21033,12 @@
       "id": "person/henry-van-gunter.yml",
       "class": "person",
       "label": "Henry Van Gunter",
-      "tier": "inference",
+      "tier": "verified",
       "properties": {
-        "occupation": "sheriff"
+        "also_known_as": "Henry Van Gunten and VanGunten, both in the 1906 history; Van Sunten in the 1921 history's roster. [verified]",
+        "birthplace": "Richland Township, Allen County, Ohio. [verified]",
+        "born": "1864-07-29",
+        "occupation": "dealer in pianos and organs, sheriff"
       },
       "blocks": [
         {
@@ -21027,8 +21046,28 @@
           "tier": "verified"
         },
         {
-          "text": "The roster gives a name and a year range and nothing else, so this node carries no dates of birth or death and no biography. Ohio requires an elected county officer to be an elector of the county, so a `resided-in` edge to Allen County is a legal inference rather than a fact the roster states. [inference]",
-          "tier": "inference"
+          "text": "**The 1906 history carries his sketch, and it is the only one of the county's undated officeholders that it does.** `HENRY VAN GUNTEN, who was elected sheriff of Allen County in November, 1905, is the proprietor of the large piano and organ house which is located at the southwest corner of the Public Square in Lima.` He **was born July 29, 1864, in Richland Township, Allen County**, son of John and Anna (Snitter) VanGunten, one of eight children on his father's farm; he learned harness-making, worked at it about four years, and came to Lima in 1889 to sell musical instruments. He married Amelia Beeler, daughter of the late David Beeler, and they had three sons, Avery L., Verrel D. and Leon F. [verified] — [History of Allen County, 1906](../../catalog/miller-allen-county-1906.md), page 587.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The sketch names the office and the year, which is what admits it.** Elected in November 1905 against a roster line beginning in 1906 is [the difference between an election and an inauguration](../../decisions/attach-a-biography-by-its-office.yml), and the book says it twice — once in the opening line and again at the close, where it adds that he was elected on the Democratic ticket. [verified] — same page.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The book spells him Van Gunten and this corpus does not.** The 1906 history heads the sketch `VAN GUNTEN` and runs `VanGunten` as one word in the body; the 1921 history's roster reads `Van Sunten`, which is that book's compositor or this scan's optical reader and not a third form. The corpus keeps the office's own spelling. [verified] — the two histories and the roster; see [an office's own roster of itself](../../decisions/attach-a-biography-by-its-office.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**His brother is the reason this identification was made by rule rather than by name.** The 1885 history carries `JOHN VON GUNTEN, manufacturer of brick, Bluffton, was born in Richland Township, this county, November 16, 1856, son of John and Anna (Sn[itter])` — the same parents and the same township, eight years earlier, under a third spelling of the surname. A search that matched on the name would have given this node its subject's brother's birthday and nothing would afterwards have shown the join was wrong. [verified] — [History of Allen County, 1885](../../catalog/leeson-allen-county-1885.md). The two books agree on the parents, which is corroboration of the family and not of the date.",
+          "tier": "verified"
+        },
+        {
+          "text": "**One witness, read off the page.** The sketch stands at 67 per cent of the way through scan B of the 1906 history, and scan A of that book ends around half way, so [the two-scan rule](../../decisions/two-scans-of-one-book.yml) has nothing to compare here. The birth sentence was therefore read from the page image rather than from optical character recognition, and the print agrees with the text layer to the digit. The reader had in fact dropped the sketch's opening `H`, which is a decorative initial in a box. [verified]",
+          "tier": "verified"
+        },
+        {
+          "text": "Ohio requires an elected county officer to be an elector of the county, and here the sketch states the residence outright, so that edge is no longer an inference. [verified]",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -21830,7 +21869,8 @@
       "label": "Mathias H. Nichols",
       "tier": "inference",
       "properties": {
-        "also_known_as": "Mathias H. Nicholas and M. N. Nichols, both in the 1921 history. [verified]"
+        "also_known_as": "Mathias H. Nicholas and M. N. Nichols, both in the 1921 history. [verified]",
+        "born": "1824-10-03"
       },
       "blocks": [
         {
@@ -35682,8 +35722,22 @@
       "from": "person/henry-van-gunter.yml",
       "to": "place/allen-county.yml",
       "relationship": "resided-in",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "person/henry-van-gunter.yml",
+      "to": "place/lima.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "person/henry-van-gunter.yml",
+      "to": "place/richland-township.yml",
+      "relationship": "resided-in",
+      "tier": "verified",
+      "source": "catalog/miller-allen-county-1906.md"
     },
     {
       "from": "person/hiram-stotts.yml",
