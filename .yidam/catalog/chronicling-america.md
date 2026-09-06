@@ -162,3 +162,47 @@ records the date.
 phases have read perhaps a dozen. Also, for whoever comes next: the archive's `location_county` facet matches on the *name*, so `allen` returns Allen
 County, Kansas and Allen County, Kentucky alongside Ohio's, and a search filtered that way will
 quietly hand back the Iola Register.
+
+## The county canvass, which the weekly does print
+
+**The paper prints the whole county ballot in the issue after a presidential election.** Not the
+village's returns and not a wire summary: the complete unofficial vote of Allen County, office by
+office, from president down to coroner and the state issues, under the Board of Elections'
+tabulation. [verified] — the issues of 9 November 1944, 6 November 1952 and 8 November 1956, read
+page by page. This corpus's earlier reading of this paper concluded that it "never carries a report
+of who won a Lima election", which remains true and is about Lima; the county's own canvass is a
+different table and it is there.
+
+**It labels itself, every time.** 1944 gives "complete unofficial returns from Allen county's 111
+precincts as reported in Tuesday's election"; 1952 gives "an unofficial tabulation of 115 precincts
+out of 119 announced by the Board of Elections at press time"; 1956 gives "The complete unofficial
+vote". [verified] The qualifier is the paper's own and travels with every figure taken from it; see
+[a newspaper canvass is not a certified return](../decisions/a-newspaper-canvass-is-not-a-certified-return.yml).
+
+**The gap in this run is five months wide and the 1940 election is inside it.** A search of the
+county facet finds Bluffton News pages continuously through 8 August 1940 and again from 9 January
+1941, and nothing at all between; September to December 1940 returns zero pages. [verified] — the
+collection search, four date windows. The entry above already recorded that a run continuous by
+year is not continuous by week; this is what that costs, and it costs the corpus one presidential
+election out of five in the paper's span.
+
+**One table's figures did not survive OCR and its names did.** The 1952 county canvass on page one
+is legible as a list of offices and candidates — "For President — Eisenhower (R) Stevenson (D)" —
+with no numbers anywhere near it, and there are no five-figure numbers on the page at all.
+[verified] The 1944 and 1956 tables came through with their figures intact. A column that fails is
+not a column that warns, and the corpus takes 1952 from this paper as prose and not as a count.
+
+**The user-agent rule here is the opposite of the usual one.** Sending `User-Agent: Mozilla/5.0`
+to `www.loc.gov` returns a Cloudflare interstitial and HTTP 403; sending curl's own default agent
+returns the JSON. Python's `urllib` default — `Python-urllib/3.x` — is refused as well, so a client
+built on it has to set the header to something *less* browser-like than its default, which is not a
+sentence anyone expects to write. [verified] — both observed in the same minute.
+
+**And the host rate-limits a burst.** Eight issue manifests requested back to back returned 503 on
+the last five; the same requests spaced six to eight seconds apart all returned 200. [verified] A
+page of this paper costs two calls — the issue manifest for the ALTO URL, then the ALTO — so a
+twelve-page issue is a two-minute read and not a two-second one.
+
+**`fa=location_county:allen` is the facet that isolates this paper**, and it works where a title
+facet does not: `fa=partof:bluffton+news` returns nothing at all, and the title record `sn87076554`
+carries zero resources of its own because issues are separate items. [verified]
