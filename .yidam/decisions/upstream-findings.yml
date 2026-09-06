@@ -1,11 +1,13 @@
 id: upstream-findings
 summary: >-
-  Six findings against the pinned yidam, of which two are now fixed upstream. Two defects in
+  Seven findings against the pinned yidam, of which two are now fixed upstream. Two defects in
   `yidam crates-index` found while writing the first crate — both closed by template v0.3.0 —
   two gaps in the corpus format found while tagging every edge in the graph, one in what
   genesis installs, found the first time CI ran on a remote, and one in what a vendored crate
-  does to this repository's own formatting gate. The four still open were filed upstream on
-  2026-09-04 as goedelsoup/yidam#587, #588, #589 and #590.
+  does to this repository's own formatting gate. The four then open were filed upstream on
+  2026-09-04 as goedelsoup/yidam#587, #588, #589 and #590. The seventh is newer and not yet
+  filed: a REGEN block the CLI gates on `--check` reads git refs, so it cannot be correct in
+  two checkouts of one commit at the same time.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
   repository builds from `.yidam.toml`, and the newest the origin then had. Finding 5 was found
@@ -219,6 +221,42 @@ decision: |
   name its members — the conventions already discuss `crates/` layout and are where somebody
   would look. A `rustfmt.toml` carrying `ignore` would be the obvious third answer and is not
   one: `ignore` is nightly-only, and this repository pins stable 1.88.
+
+  **Finding 7 — a `--check`-gated REGEN block counts git refs, so it cannot be right in two
+  checkouts at once.** Not yet filed.
+
+  `yidam status` writes the block in `README.md`, and every field but one is read from
+  `.yidam/corpus/`: node count, open questions, sources, claim counts, genesis. **`active
+  phase(s)` is read from `refs/remotes/origin/phase/*`**, and refs are not in the tree.
+
+  `yidam regen --check` gates that block. So the same commit is green or red depending on which
+  branches the checkout happens to hold, and there is no committed value that satisfies both:
+
+      clone with the phase ref    computes 1    committed 0 fails
+      CI without it               computes 0    committed 1 fails
+
+  Verified rather than reasoned. With `origin/phase/a-period-is-not-a-date-range` present the
+  gate failed on `1d33ce5`; `git update-ref -d` on that one ref alone made `regen` produce no
+  diff; fetching it back made the gate fail again. Nothing else changed.
+
+  It is also unstable over time with no commit involved. Pushing or deleting a phase branch
+  changes what `--check` computes for a commit that did not change, so a repository can go red on
+  work nobody did — the failure mode `.yidam/lint-baseline.yml` and the publication gate's
+  `answers` list are both built to avoid.
+
+  The rule this rests on is worth stating in the CLI's own terms: **a REGEN block held by
+  `--check` must be a pure function of the committed tree**, because the tree is the only thing
+  every checkout of a commit has in common. `active phase(s)` is the one field that is not, and
+  `yidam phases` already reports it on demand, where being live is the point rather than a
+  hazard. Dropping it from `status` costs a reader of `README.md` nothing they cannot get.
+
+  **Worked around, not fixed.** The corpus job now fetches every branch head explicitly, so both
+  ends count the same refs and the committed block is the true one. That is the third option in
+  the local issue and the one it ranked last, because it makes the two agree without making the
+  field stable: the block still goes stale when somebody pushes a branch. `fetch-depth: 0` was
+  believed to do this already and does not — it is a depth, not a refspec — and the workflow
+  comment that said so has been corrected. `crates/publish/tests/gate.rs` keeps the fetch step
+  from being removed as redundant.
 
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
