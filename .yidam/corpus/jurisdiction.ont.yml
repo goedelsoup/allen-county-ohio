@@ -9,6 +9,11 @@ description: |
   it governs because it has a creation instrument, officers, a budget and a boundary that
   annexation moves, none of which are true of the ground or its name.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 39 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 45
 properties:
   - name: jurisdiction_type
     type: string

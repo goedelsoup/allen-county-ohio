@@ -9,6 +9,11 @@ description: |
   collective acts, is named, and persists across its members, and because it is separated
   from jurisdiction on one line only: whether it holds governmental authority over territory.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 35 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 50
 properties:
   - name: org_type
     type: string

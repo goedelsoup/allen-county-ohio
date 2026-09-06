@@ -9,6 +9,11 @@ description: |
   outlasts the organizations that operate it and is transferred between them, so its
   identity cannot be folded into either the place it stands in or the company that runs it.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 16 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 120
 properties:
   - name: site_type
     type: string

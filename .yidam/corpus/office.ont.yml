@@ -9,6 +9,11 @@ description: |
   strict sense: contingent and relational, played by a person for a time rather than
   constituting what that person is, which is why it is a class and not a property.
 edge_policy: characteristic
+# `max_lines` is this class's p90 description length, rounded up to five, measured
+# 2026-09-06 over all 23 instances. The estimator is the decision and is recorded in
+# `.yidam/decisions/node-length-limits.yml`; recompute it from the corpus, never raise it
+# because a node exceeded it.
+max_lines: 60
 properties:
   - name: office_type
     type: string
