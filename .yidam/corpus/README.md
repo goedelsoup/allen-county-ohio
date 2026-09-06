@@ -114,6 +114,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
+| [allen-county-ballot-1956.yml](measure/allen-county-ballot-1956.yml) | measure | The whole Allen County ballot, November 1956 | 4 | 9v / 1i / 1o | 97 |
 | [allen-county-ballot-2006.yml](measure/allen-county-ballot-2006.yml) | measure | Allen County's ballot, 7 November 2006 | 6 | 7v / 3i / 2o | 107 |
 | [allen-county-ballot-questions-2003-2012.yml](measure/allen-county-ballot-questions-2003-2012.yml) | measure | What Allen County was asked on the ballot, 2003–2012 | 5 | 17v / 5i / 1o | 158 |
 | [allen-county-birth-outcomes-2000-2021.yml](measure/allen-county-birth-outcomes-2000-2021.yml) | measure | Birth outcomes in Allen County, 2000–2021 | 5 | 10v / 1i / 1o | 96 |
@@ -283,9 +284,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-presidential-vote-1884-by-township.yml](measure/allen-county-presidential-vote-1884-by-township.yml) | measure | Allen County presidential vote by township and ward, 1884 | 3 | 7v / 4i / 1o | 81 |
 | [allen-county-presidential-vote-1888-1908.yml](measure/allen-county-presidential-vote-1888-1908.yml) | measure | Allen County presidential vote, 1888–1908 | 3 | 9v / 4i / 1o | 105 |
 | [allen-county-presidential-vote-1920.yml](measure/allen-county-presidential-vote-1920.yml) | measure | Allen County presidential vote, 1920 | 4 | 8v / 2i / 2o | 103 |
+| [allen-county-presidential-vote-1944-1956.yml](measure/allen-county-presidential-vote-1944-1956.yml) | measure | Allen County presidential vote, 1944–1956 | 6 | 9v / 1i / 1o | 95 |
 | [allen-county-presidential-vote-1960-1964.yml](measure/allen-county-presidential-vote-1960-1964.yml) | measure | Allen County presidential vote, 1960 and 1964 | 6 | 6v / 5i / 0o | 110 |
 | [allen-county-presidential-vote-1980-1996.yml](measure/allen-county-presidential-vote-1980-1996.yml) | measure | Allen County presidential vote, 1980–1996 | 7 | 5v / 5i / 0o | 95 |
-| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 9 | 10v / 9i / 2o | 174 |
+| [allen-county-presidential-vote-2000-2016.yml](measure/allen-county-presidential-vote-2000-2016.yml) | measure | Allen County presidential vote, 2000–2016 | 9 | 10v / 9i / 2o | 179 |
 | [allen-county-presidential-vote-2016.yml](measure/allen-county-presidential-vote-2016.yml) | measure | Allen County presidential vote, 2016 | 2 | 4v / 0i / 0o | 31 |
 | [allen-county-presidential-vote-2020.yml](measure/allen-county-presidential-vote-2020.yml) | measure | Allen County presidential vote, 2020 | 3 | 8v / 0i / 0o | 65 |
 | [allen-county-private-employers-1986-2023.yml](measure/allen-county-private-employers-1986-2023.yml) | measure | Allen County's private employers, 1986–2023 | 9 | 13v / 4i / 0o | 139 |
@@ -555,7 +557,7 @@ Sorted by: kind, then alphabetically.
 | [william-r-dailey.yml](person/william-r-dailey.yml) | person | William R. Dailey | 2 | 1v / 1i / 1o | 20 |
 | [william-r-zimmerman.yml](person/william-r-zimmerman.yml) | person | William R. Zimmerman | 1 | 4v / 3i / 1o | 40 |
 | [william-tingle.yml](person/william-tingle.yml) | person | William Tingle | 2 | 1v / 1i / 0o | 18 |
-| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 3v / 1i / 2o | 31 |
+| [william-v-daley.yml](person/william-v-daley.yml) | person | William V. Daley | 2 | 4v / 1i / 1o | 39 |
 | [allen-county.yml](place/allen-county.yml) | place | Allen County | 4 | 17v / 7i / 2o | 170 |
 | [amanda-township.yml](place/amanda-township.yml) | place | Amanda Township | 4 | 10v / 3i / 1o | 82 |
 | [american-township.yml](place/american-township.yml) | place | American Township | 3 | 13v / 4i / 0o | 107 |
