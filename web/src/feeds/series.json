@@ -4532,6 +4532,26 @@
       ]
     },
     {
+      "id": "place-allen-county::total-resident-population,-decennial,-by-county-subdivision",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "total resident population, decennial, by county subdivision",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-subdivisions-1960-1970.yml",
+          "label": "Allen County subdivisions, 1960 and 1970",
+          "as_of": "1970",
+          "value": 111144.0,
+          "published": "111144",
+          "tier": "verified",
+          "source": "catalog/census-1970-number-of-inhabitants-ohio.md",
+          "method": "Read from Table 10 of a bitonal scan with no text layer, by rendering the page with `mise run read-scan` and reading the block off the image. Allen County is on the first page of the table because the counties run alphabetically. The key combines the township with the place inside it, because `Lima-city-part` appears four times and is not a key on its own; `boundary_change` records whether the row carries the footnote marker, and is not a figure from the table but a reading of its typography. Fort Shawnee's 1960 cells are absent in the source, printed as the three dots this volume uses for not-applicable. The `value` above is the county total. [verified]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::total-resident-population-by-minor-civil-division,-decennial",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -4958,6 +4978,26 @@
           "tier": "verified",
           "source": "catalog/miller-allen-county-1906.md",
           "method": "Read from the transportation chapter of the 1906 county history, which dates itself to 1905 by saying the Western Ohio \"was completed four years ago, in the spring of 1901\". Every sum and product above was computed here from figures the book prints, and each is reported as closing or not closing rather than corrected. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-lima::population-in-1970-of-ground-annexed-since-1960",
+      "subject": "place/lima.yml",
+      "subject_label": "Lima",
+      "parameter": "population in 1970 of ground annexed since 1960",
+      "unit": "persons",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-annexed-area-1960-1970.yml",
+          "label": "Population of ground annexed in Allen County, 1960–1970",
+          "as_of": "1970",
+          "value": 3509.0,
+          "published": "3509",
+          "tier": "verified",
+          "source": "catalog/census-1970-number-of-inhabitants-ohio.md",
+          "method": "Read from Table 8 of a bitonal scan with no text layer, by rendering the page with `mise run read-scan` and reading the two Allen County rows off the image rather than trusting optical character recognition, which is the practice [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md) established after OCR misread its Table 5. Both of the table's arithmetic identities were checked on both rows, and the 1970 and 1960 city totals against two other volumes. The `value` above is the Lima row's annexed-area column, which is the bound the comparability judgement on this pair turns on. [verified]"
         }
       ]
     },
@@ -6206,6 +6246,64 @@
           "because": "Both figures are ballots cast at a general election in Allen County, and this file carries both: 48,353 in 2020 and 46,845 in 2024 are two rows of one survey, returned by one county board under one field. **The seam between the two pipelines is measured at zero where they overlap** — the 2020 node summed 48,353 out of the precinct files and the board reported the same number to the federal government, as it did for 2006 and 2010. What must not be carried across is the denominator beside them: the roll is edited between elections, and 9,770 names came off it in the two years before 2020 alone. These are counts of ballots and the rates built on them are not the same claim.",
           "tier": "verified",
           "source": "catalog/eac-election-administration-voting-survey.md"
+        }
+      ]
+    },
+    {
+      "node": "measure/lima-population-1850-1960.yml",
+      "rows": [
+        {
+          "node": "measure/lima-population-1850-1960.yml",
+          "label": "Lima population, 1850–1960",
+          "as_of": "1960",
+          "published": "51037",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
+        },
+        {
+          "node": "measure/lima-population-1970-1990.yml",
+          "label": "Lima population, 1970–1990",
+          "as_of": "1970",
+          "published": "53734",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": false,
+          "because": "Parts of American and Perry townships were annexed by Lima city between the two censuses, and the ground taken in held 3,509 people in 1970 against a printed gain of 2,697. The annexation is larger than the difference it is being read across, so it does not bias this comparison — it produces it. Inside the 1960 boundary the city fell from 51,037 to 50,225, which is the Bureau's own figure and not a subtraction made here.",
+          "tier": "verified",
+          "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+        }
+      ]
+    },
+    {
+      "node": "measure/lima-population-1970-1990.yml",
+      "rows": [
+        {
+          "node": "measure/lima-population-1850-1960.yml",
+          "label": "Lima population, 1850–1960",
+          "as_of": "1960",
+          "published": "51037",
+          "unit": "persons",
+          "this_figure": false,
+          "comparable": false,
+          "because": "Parts of American and Perry townships were annexed by Lima city between the two censuses, and the ground taken in held 3,509 people in 1970 against a printed gain of 2,697. The annexation is larger than the difference it is being read across, so it does not bias this comparison — it produces it. Inside the 1960 boundary the city fell from 51,037 to 50,225, which is the Bureau's own figure and not a subtraction made here.",
+          "tier": "verified",
+          "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+        },
+        {
+          "node": "measure/lima-population-1970-1990.yml",
+          "label": "Lima population, 1970–1990",
+          "as_of": "1970",
+          "published": "53734",
+          "unit": "persons",
+          "this_figure": true,
+          "comparable": null,
+          "because": null,
+          "tier": null,
+          "source": null
         }
       ]
     },
@@ -37702,6 +37800,37 @@
       "tier": "inference"
     },
     {
+      "node": "measure/allen-county-annexed-area-1960-1970.yml",
+      "label": "Population of ground annexed in Allen County, 1960–1970",
+      "columns": [
+        "place",
+        "total_1970",
+        "in_1960_area",
+        "in_annexed_area",
+        "pop_1960",
+        "change_in_1960_area"
+      ],
+      "rows": [
+        [
+          "Lima",
+          "53734",
+          "50225",
+          "3509",
+          "51037",
+          "-812"
+        ],
+        [
+          "Bluffton",
+          "2935",
+          "2840",
+          "95",
+          "2591",
+          "249"
+        ]
+      ],
+      "tier": "inference"
+    },
+    {
       "node": "measure/allen-county-mortgage-access-by-tract-2018-2024.yml",
       "label": "Where Allen County's mortgages went, and what they cost there, 2018-2024",
       "columns": [
@@ -38103,6 +38232,195 @@
         ]
       ],
       "tier": "verified"
+    },
+    {
+      "node": "measure/allen-county-subdivisions-1960-1970.yml",
+      "label": "Allen County subdivisions, 1960 and 1970",
+      "columns": [
+        "subdivision",
+        "pop_1970",
+        "pop_1960",
+        "percent_change",
+        "boundary_change"
+      ],
+      "rows": [
+        [
+          "Amanda-township",
+          "1498",
+          "1217",
+          "23.1",
+          "no"
+        ],
+        [
+          "American-township",
+          "37590",
+          "32887",
+          "14.3",
+          "no"
+        ],
+        [
+          "American/Elida-village",
+          "1211",
+          "1215",
+          "-0.3",
+          "no"
+        ],
+        [
+          "American/Lima-city-part",
+          "27613",
+          "22488",
+          "22.8",
+          "yes"
+        ],
+        [
+          "Auglaize-township",
+          "2473",
+          "2303",
+          "7.4",
+          "no"
+        ],
+        [
+          "Auglaize/Harrod-village",
+          "533",
+          "563",
+          "-5.3",
+          "no"
+        ],
+        [
+          "Bath-township",
+          "23077",
+          "23947",
+          "-3.6",
+          "no"
+        ],
+        [
+          "Bath/Lima-city-part",
+          "13754",
+          "15640",
+          "-12.1",
+          "no"
+        ],
+        [
+          "Jackson-township",
+          "2247",
+          "1999",
+          "12.4",
+          "no"
+        ],
+        [
+          "Jackson/Lafayette-village",
+          "486",
+          "476",
+          "2.1",
+          "no"
+        ],
+        [
+          "Marion-township",
+          "6945",
+          "5938",
+          "17.0",
+          "no"
+        ],
+        [
+          "Marion/Delphos-city-part",
+          "4301",
+          "3716",
+          "15.7",
+          "no"
+        ],
+        [
+          "Monroe-township",
+          "2077",
+          "1952",
+          "6.4",
+          "no"
+        ],
+        [
+          "Monroe/Cairo-village",
+          "587",
+          "566",
+          "3.7",
+          "no"
+        ],
+        [
+          "Perry-township",
+          "14071",
+          "15045",
+          "-6.5",
+          "no"
+        ],
+        [
+          "Perry/Lima-city-part",
+          "10320",
+          "10626",
+          "-2.9",
+          "yes"
+        ],
+        [
+          "Richland-township",
+          "4975",
+          "4635",
+          "7.3",
+          "no"
+        ],
+        [
+          "Richland/Beaverdam-village",
+          "525",
+          "514",
+          "2.1",
+          "no"
+        ],
+        [
+          "Richland/Bluffton-village",
+          "2935",
+          "2591",
+          "13.3",
+          "yes"
+        ],
+        [
+          "Shawnee-township",
+          "11781",
+          "9658",
+          "22.0",
+          "no"
+        ],
+        [
+          "Shawnee/Fort-Shawnee-village",
+          "3436",
+          "NA",
+          "NA",
+          "yes"
+        ],
+        [
+          "Shawnee/Lima-city-part",
+          "2047",
+          "2283",
+          "-10.3",
+          "no"
+        ],
+        [
+          "Spencer-township",
+          "3201",
+          "2944",
+          "8.7",
+          "no"
+        ],
+        [
+          "Spencer/Spencerville-village",
+          "2241",
+          "2061",
+          "8.7",
+          "yes"
+        ],
+        [
+          "Sugar-Creek-township",
+          "1209",
+          "1166",
+          "3.7",
+          "no"
+        ]
+      ],
+      "tier": "inference"
     },
     {
       "node": "measure/bluffton-annexations-1994-2024.yml",

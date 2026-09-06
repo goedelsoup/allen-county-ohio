@@ -3009,6 +3009,10 @@
           "tier": "verified"
         },
         {
+          "text": "**It was erected between the 1960 and 1970 censuses, out of Shawnee township.** The Census Bureau's geographic change notes for Allen County say so — *Fort Shawnee village incorporated from part of Shawnee township* — and its row in that volume's subdivision table carries 3,436 people in 1970 against an absent cell for 1960, which is the table's way of saying the village did not exist to be counted. [verified] — [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md); see [the subdivisions](../measure/allen-county-subdivisions-1960-1970.yml). It arrived already the largest village in the county, which it stayed for the whole of its life.",
+          "tier": "verified"
+        },
+        {
           "text": "**It was in a state fiscal emergency for the last two years of its life.** The Auditor of State declared one on 16 September 2010, at the mayor's own request, on an unprovided aggregate deficit of $50,761 and a treasury $18,211 short of the funds it was holding. [verified] — [the Auditor of State's audit search](../../catalog/ohio-auditor-of-state-audit-search.md); see [the declaration](../event/fort-shawnee-declared-in-fiscal-emergency-2010.yml). The village had no debt outstanding and had missed no payroll; what it had was $164,982 in the bank against $315,419 promised to its own funds.",
           "tier": "verified"
         },
@@ -3451,6 +3455,52 @@
       ],
       "refusals": [],
       "withheld": 6
+    },
+    {
+      "id": "measure/allen-county-annexed-area-1960-1970.yml",
+      "class": "measure",
+      "label": "Population of ground annexed in Allen County, 1960–1970",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1970",
+        "method": "Read from Table 8 of a bitonal scan with no text layer, by rendering the page with `mise run read-scan` and reading the two Allen County rows off the image rather than trusting optical character recognition, which is the practice [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md) established after OCR misread its Table 5. Both of the table's arithmetic identities were checked on both rows, and the 1970 and 1960 city totals against two other volumes. The `value` above is the Lima row's annexed-area column, which is the bound the comparability judgement on this pair turns on. [verified]",
+        "parameter": "population in 1970 of ground annexed since 1960",
+        "table": "place total_1970 in_1960_area in_annexed_area pop_1960 change_in_1960_area Lima 53734 50225 3509 51037 -812 Bluffton 2935 2840 95 2591 249",
+        "unit": "persons",
+        "value": "3509"
+      },
+      "blocks": [
+        {
+          "text": "**The area Lima annexed between 1960 and 1970 held 3,509 people at the 1970 census, and within its 1960 boundary the city fell by 812.** [verified] — [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md), Table 8, *Population in 1970 of Areas Annexed Between 1960 and 1970*.",
+          "tier": "verified"
+        },
+        {
+          "text": "Written out, because the table's five columns are the whole of the finding: **Lima counted 53,734 people in 1970, of whom 50,225 lived on the ground the city held in 1960 and 3,509 on ground it did not; the 1960 count was 51,037; and the change between the two censuses inside the 1960 line was −812.** [verified] — same table. **Bluffton counted 2,935, of whom 95 were on annexed ground, against 2,591 in 1960, a rise of 249 inside the old line.** [verified] — same table.",
+          "tier": "verified"
+        },
+        {
+          "text": "**This is the figure a comparability judgement almost never gets.** The usual case is that a boundary moved and nobody says by how many people, so the reader is left to bound the artifact from acreage or from nothing at all — which is the position [the annexation record](allen-county-annexations-1990-2024.yml) leaves every pair after 1990 in. Here the Census Bureau printed the counterfactual itself, having drawn both boundaries: the last column *is* the constant-boundary comparison, computed by the only party in a position to compute it. [inference] — the reasoning is this corpus's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**And for Lima it reverses a sign.** The city's printed change across the decade is a gain of 2,697. The ground it annexed held 3,509 — more than the whole of the gain. So the rise is not a rise that annexation flattered; it is a fall that annexation concealed, and [the peak](lima-population-1970-1990.yml) at 1970 is a fact about the corporation rather than about the land under it. [inference] — computed from the row above; the −812 is the Bureau's own and is not this corpus's arithmetic.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The row checks itself twice, which is why one scan was enough.** The 1960 area plus the annexed area is the 1970 total — 50,225 + 3,509 = 53,734 — and the 1960 area less the 1960 count is the printed change — 50,225 − 51,037 = −812. Both hold for Lima and both hold for Bluffton. The two city totals are also carried by [the 1990 volume](../../catalog/census-cph-2-37-ohio.md) and [the 1960 volume](../../catalog/census-1960-number-of-inhabitants-ohio.md), independently, to the person. [verified] — those three sources.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Bluffton's answer is the other one, and it is worth writing down beside Lima's.** Ninety-five people came in on annexed ground against a printed rise of 344, so the village grew on its own land as well as by taking more. Same decade, same county, same table, opposite verdict — which is what [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) predicts should happen when the bound is small against the difference rather than larger than it. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Delphos should be in this table and is not.** The city held roughly seven thousand people in 1960, far above the table's threshold of 2,000, and the alphabetical run goes Defiance, Delaware, Delta with nothing between the last two. Bluffton also straddles a county line and is present, so that is not the rule that excluded it. [verified] — the absence is on the page.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "measure/allen-county-assessed-valuation-2010-2023.yml",
@@ -13605,6 +13655,52 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-subdivisions-1960-1970.yml",
+      "class": "measure",
+      "label": "Allen County subdivisions, 1960 and 1970",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1970",
+        "method": "Read from Table 10 of a bitonal scan with no text layer, by rendering the page with `mise run read-scan` and reading the block off the image. Allen County is on the first page of the table because the counties run alphabetically. The key combines the township with the place inside it, because `Lima-city-part` appears four times and is not a key on its own; `boundary_change` records whether the row carries the footnote marker, and is not a figure from the table but a reading of its typography. Fort Shawnee's 1960 cells are absent in the source, printed as the three dots this volume uses for not-applicable. The `value` above is the county total. [verified]",
+        "parameter": "total resident population, decennial, by county subdivision",
+        "table": "subdivision pop_1970 pop_1960 percent_change boundary_change Amanda-township 1498 1217 23.1 no American-township 37590 32887 14.3 no American/Elida-village 1211 1215 -0.3 no American/Lima-city-part 27613 22488 22.8 yes Auglaize-township 2473 2303 7.4 no Auglaize/Harrod-village 533 563 -5.3 no Bath-township 23077 23947 -3.6 no Bath/Lima-city-part 13754 15640 -12.1 no Jackson-township 2247 1999 12.4 no Jackson/Lafayette-village 486 476 2.1 no Marion-township 6945 5938 17.0 no Marion/Delphos-city-part 4301 3716 15.7 no Monroe-township 2077 1952 6.4 no Monroe/Cairo-village 587 566 3.7 no Perry-township 14071 15045 -6.5 no Perry/Lima-city-part 10320 10626 -2.9 yes Richland-township 4975 4635 7.3 no Richland/Beaverdam-village 525 514 2.1 no Richland/Bluffton-village 2935 2591 13.3 yes Shawnee-township 11781 9658 22.0 no Shawnee/Fort-Shawnee-village 3436 NA NA yes Shawnee/Lima-city-part 2047 2283 -10.3 no Spencer-township 3201 2944 8.7 no Spencer/Spencerville-village 2241 2061 8.7 yes Sugar-Creek-township 1209 1166 3.7 no",
+        "unit": "persons",
+        "value": "111144"
+      },
+      "blocks": [
+        {
+          "text": "Every one of the county's twelve townships at two censuses, the villages and city parts inside them, and the Census Bureau's own note on which lines moved between the two. [verified] — [1970 Census, Number of Inhabitants, Ohio](../../catalog/census-1970-number-of-inhabitants-ohio.md), Table 10, *Population of County Subdivisions: 1970 and 1960*.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county held 111,144 people in 1970 against 103,691 in 1960, a rise of 7.2 per cent.** [verified] — same table. The county figure is a third witness to a count this corpus already had twice, from [the 1990 volume](allen-county-population-1940-1990.yml) and from a set of intercensal estimates that share none of its machinery.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Where the county grew was American township, and most of that was Lima moving into it.** American rose 32,887 to 37,590, and the Lima part inside it rose 22,488 to 27,613 — five thousand of the county's seven and a half thousand. [verified] — same table. Bath fell, Perry fell, and the two Lima parts inside them fell with them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The geographic change notes, in full, because they are what this volume was retrieved for.** Footnote 2 to this table reads: *Parts of American and Perry townships annexed by Lima city. Part of Richland township annexed by Bluffton village. Fort Shawnee village incorporated from part of Shawnee township. Part of Spencer township annexed by Spencerville village.* [verified] — same source, footnotes at the end of Table 10, numbered by county in alphabetical order. The five rows carrying the marker are marked `yes` in the table below and no others carry it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It answers where, and Table 8 answers how many.** These notes name the townships and give no quantity; [the annexed-area table](allen-county-annexed-area-1960-1970.yml) gives the quantity and names no township. The two together are the only place in this corpus where a boundary change is both located and measured. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Lima's own decline shows here as something other than annexation.** The city's part of Bath township fell 15,640 to 13,754 and its part of Shawnee fell 2,283 to 2,047, and neither carries the footnote — so on two pieces of ground the corporation held throughout, it lost 2,122 people in the decade it is recorded as having grown. [inference] — computed from the rows below.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The table checks itself on every row and then twice more.** A percent change is printed beside each pair, and all twenty-four of them are consistent with the two counts they stand against. The twelve township figures sum to the printed county total in both columns — 111,144 and 103,691 — and Lima's four parts sum to 53,734 and 51,037, which are the city totals two other volumes give independently. A misread digit breaks its own row's percentage and one of the two column sums. [verified]",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 3
+    },
+    {
       "id": "measure/allen-county-subsidized-housing-2005-2025.yml",
       "class": "measure",
       "label": "Federally subsidized housing in Allen County, 2005–2025",
@@ -16056,7 +16152,11 @@
           "tier": "verified"
         },
         {
-          "text": "**The last decade before the peak is the flattest.** Lima gained 791 people in the 1950s, 1.6% — its smallest decennial gain in a hundred and ten years, and a tenth of the 1940s' rate. The city did not turn at 1970 so much as arrive there slowing. [inference] — computed from the series above. What happened between 1960 and 1970 to produce a further 2,697 is not established here.",
+          "text": "**The last decade before the peak is the flattest.** Lima gained 791 people in the 1950s, 1.6% — its smallest decennial gain in a hundred and ten years, and a tenth of the 1940s' rate. The city did not turn at 1970 so much as arrive there slowing. [inference] — computed from the series above.",
+          "tier": "inference"
+        },
+        {
+          "text": "**What produced the further 2,697 is now established, and it was not people.** This node asked the question and the 1970 volume answers it: parts of American and Perry townships were annexed by Lima city between the two censuses, and the ground taken in held 3,509 people in 1970 — more than the whole of the gain. On the land the city held when this table's last count was taken it went from 51,037 to 50,225. [verified] — [the 1970 volume](../../catalog/census-1970-number-of-inhabitants-ohio.md); see [the annexed area](allen-county-annexed-area-1960-1970.yml). So the 1950s were not a slowing before one more climb. They were the last decade Lima grew at all, and 51,037 is the largest count in this corpus for the ground under the city rather than for the city's changing line. [inference]",
           "tier": "inference"
         },
         {
@@ -16065,7 +16165,7 @@
         }
       ],
       "refusals": [],
-      "withheld": 3
+      "withheld": 4
     },
     {
       "id": "measure/lima-population-1880-1920.yml",
@@ -16134,6 +16234,10 @@
           "tier": "verified"
         },
         {
+          "text": "**It is the peak of the corporation, and the corporation is not the ground.** On the land Lima held in 1960 the city counted 50,225 in 1970 against 51,037 in 1960 — it was already falling before the census that records its maximum. [verified] — [the 1970 volume's annexed-area table](allen-county-annexed-area-1960-1970.yml). Both sentences are true and they are about different objects, which is the distinction [the place](../place/lima.yml) and [the corporation](../jurisdiction/city-of-lima.yml) exist to keep apart.",
+          "tier": "verified"
+        },
+        {
           "text": "So Lima's series, at the census years the corpus holds: 7,567 (1880) · 21,723 (1900) · 41,326 (1920) · 51,037 (1960) · **53,734 (1970)** · 47,827 (1980) · 45,549 (1990) · 40,307 (2000) · 35,579 (2020). Between 1970 and 2020 the city lost 18,155 people, **33.8 per cent of itself**, while [the county](allen-county-population-1940-1990.yml) lost 8,927, or 8.0 per cent. Lima's loss is twice the county's, which means the rest of Allen County **gained 9,228** over the same fifty years. [inference] — computed from the two series. That is a different story from the one the corpus has been telling from four years of recent data, where the ring shrinks too: over the long run the ring grew while the city emptied, and only lately have both been falling.",
           "tier": "inference"
         },
@@ -16142,20 +16246,28 @@
           "tier": "inference"
         },
         {
-          "text": "**Run against 1960, the comparability check returns the answer that is not an edge.** [boundary-comparability](../../skills/boundary-comparability.md) was asked whether 53,734 may be set beside [51,037 in 1960](lima-population-1850-1960.yml). It read the two measures, the [place](../place/lima.yml) and the [corporation](../jurisdiction/city-of-lima.yml), the [annexation record](allen-county-annexations-1990-2024.yml), and every boundary change the corpus holds for this city — and it found none between the two dates. The record it searched is not silent about Lima. Six boundary events are on it, four into the city and two out of it: 1902, 1903, 1905 and 1906 from [the 1910 supplement's footnote](../../catalog/census-1910-abstract-supplement-ohio.md), 1944 from [the 1950 volume](../../catalog/census-1950-number-of-inhabitants-ohio.md), and the annexations from American, Bath and Shawnee in the 1980s from the volume this node is read out of. [verified] — those three sources; see [the place](../place/lima.yml).",
+          "text": "**Run against 1960, the comparability check first returned the answer that is not an edge.** [boundary-comparability](../../skills/boundary-comparability.md) was asked whether 53,734 may be set beside [51,037 in 1960](lima-population-1850-1960.yml). It read the two measures, the [place](../place/lima.yml) and the [corporation](../jurisdiction/city-of-lima.yml), the [annexation record](allen-county-annexations-1990-2024.yml), and every boundary change the corpus holds for this city — and it found none between the two dates. The record it searched is not silent about Lima. Six boundary events are on it, four into the city and two out of it: 1902, 1903, 1905 and 1906 from [the 1910 supplement's footnote](../../catalog/census-1910-abstract-supplement-ohio.md), 1944 from [the 1950 volume](../../catalog/census-1950-number-of-inhabitants-ohio.md), and the annexations from American, Bath and Shawnee in the 1980s from the volume this node is read out of. [verified] — those three sources; see [the place](../place/lima.yml).",
           "tier": "verified"
         },
         {
-          "text": "**It is silent about the interval, and finding nothing there is not the same as there being nothing.** Every one of those notes is a census volume reporting its own decade; this corpus holds no volume for 1970; so nothing in it would have reported a change between 1945 and 1979 if there had been one, and the decades on either side of that gap each hold one. [inference] A `comparable-to` edge written on this pair would be [the claim the apparatus exists to make somebody stand behind](../../decisions/comparability-is-a-judgement-not-a-join.yml), manufactured out of a record nobody asked, so **no judgement is written here** — and the absence is the run's finding rather than a gap in it.",
+          "text": "**It was silent about the interval, and finding nothing there is not the same as there being nothing.** Every one of those notes is a census volume reporting its own decade; the corpus then held no volume for 1970; so nothing in it would have reported a change between 1945 and 1979 if there had been one, and the decades on either side of that gap each hold one. [inference] A `comparable-to` edge written on that record would have been [the claim the apparatus exists to make somebody stand behind](../../decisions/comparability-is-a-judgement-not-a-join.yml), manufactured out of a record nobody asked, so none was written and the absence was left as the run's finding.",
           "tier": "inference"
         },
         {
-          "text": "**What the risk is, if the line did move.** Annexation moves people into a city without anybody moving house, so the gain of 2,697 would be that much too large and the flatness of the 1950s that much sharper against it. The peak is not what is at risk: every count after 1970 stands on ground at least as large as 1970's, by the annexations this corpus does hold, and every one of them is smaller. What an unrecorded annexation would take is the shape of the approach to the peak. [inference]",
+          "text": "**The volume it named has now been read, and the line moved.** Parts of American and Perry townships were annexed by Lima city between the two censuses, and the ground taken in held **3,509 people** at the 1970 count. [verified] — [the 1970 volume](../../catalog/census-1970-number-of-inhabitants-ohio.md); see [the annexed area](allen-county-annexed-area-1960-1970.yml) and [the subdivisions](allen-county-subdivisions-1960-1970.yml). The refusal was the right call and not merely a cautious one: something was there, and no record the skill could reach would have shown it.",
+          "tier": "verified"
+        },
+        {
+          "text": "**So the pair is judged, and it is judged apart.** The printed change is a gain of 2,697 and the annexed ground held more people than the whole of that gain, so annexation does not inflate this difference — it manufactures it. Inside the 1960 line the city went from 51,037 to 50,225, a fall of 812, and that figure is the Bureau's own rather than this corpus's subtraction. Under [a bound is not a break](../../decisions/a-bound-is-not-a-break.yml) the direction is known and the bound is stated and the finding does not survive it, which is that decision's definition of a break. The edge on this node says so. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**What that costs and what it does not.** The peak is not at risk: every count after 1970 stands on ground at least as large as 1970's, by the annexations this corpus does hold, and every one of them is smaller, so the corporation peaked in 1970 and has lost a third of itself since. What is gone is the shape of the approach to it. The city did not arrive at 1970 slowing; it arrived having already turned, and the flat 1950s were the last decade it grew on its own ground. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "measure/lima-population-2000.yml",
@@ -28910,6 +29022,55 @@
       "source": "catalog/census-bas-boundary-changes-ohio.md"
     },
     {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "place/lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "jurisdiction/city-of-lima.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "jurisdiction/village-of-bluffton.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "measure/allen-county-subdivisions-1960-1970.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "measure/lima-population-1970-1990.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-annexed-area-1960-1970.yml",
+      "to": "measure/lima-population-1850-1960.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
       "from": "measure/allen-county-assessed-valuation-2010-2023.yml",
       "to": "measure/allen-county-house-prices-1975-2025.yml",
       "relationship": "relates-to",
@@ -33180,6 +33341,34 @@
       "source": null
     },
     {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "measure/allen-county-townships-1930-1950.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "measure/allen-county-annexed-area-1960-1970.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-subdivisions-1960-1970.yml",
+      "to": "measure/allen-county-population-1940-1990.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
       "from": "measure/allen-county-subsidized-housing-2005-2025.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -34102,6 +34291,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/miller-allen-county-1906.md"
+    },
+    {
+      "from": "measure/lima-population-1970-1990.yml",
+      "to": "measure/lima-population-1850-1960.yml",
+      "relationship": "not-comparable-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/lima-population-1970-1990.yml",
+      "to": "measure/allen-county-annexed-area-1960-1970.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-1970-number-of-inhabitants-ohio.md"
     },
     {
       "from": "measure/lima-population-1970-1990.yml",

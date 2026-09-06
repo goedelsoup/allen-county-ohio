@@ -2577,6 +2577,78 @@
       ]
     },
     {
+      "node": "measure/allen-county-annexed-area-1960-1970.yml",
+      "class": "measure",
+      "label": "Population of ground annexed in Allen County, 1960–1970",
+      "tier": "inference",
+      "from": 1970,
+      "to": 1970,
+      "precision": "year",
+      "open_end": "instantaneous",
+      "undated": null,
+      "treatment": "count",
+      "hops": 1,
+      "route_tier": "verified",
+      "anchors": [
+        {
+          "node": "jurisdiction/city-of-lima.yml",
+          "lat": null,
+          "lon": null,
+          "geoid": "3943554",
+          "level": "place",
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "jurisdiction/city-of-lima.yml",
+              "tier": "verified"
+            }
+          ]
+        },
+        {
+          "node": "jurisdiction/village-of-bluffton.yml",
+          "lat": null,
+          "lon": null,
+          "geoid": "3907426",
+          "level": "place",
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "jurisdiction/village-of-bluffton.yml",
+              "tier": "verified"
+            }
+          ]
+        },
+        {
+          "node": "place/bluffton.yml",
+          "lat": 40.892048,
+          "lon": -83.887793,
+          "geoid": null,
+          "level": null,
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "place/bluffton.yml",
+              "tier": "verified"
+            }
+          ]
+        },
+        {
+          "node": "place/lima.yml",
+          "lat": 40.740679,
+          "lon": -84.112091,
+          "geoid": null,
+          "level": null,
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "place/lima.yml",
+              "tier": "verified"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "node": "measure/allen-county-assessed-valuation-2010-2023.yml",
       "class": "measure",
       "label": "Allen County's assessed valuation, reports of 2010–2023",
@@ -9522,6 +9594,36 @@
       "tier": "inference",
       "from": 2026,
       "to": 2026,
+      "precision": "year",
+      "open_end": "instantaneous",
+      "undated": null,
+      "treatment": "count",
+      "hops": 1,
+      "route_tier": "verified",
+      "anchors": [
+        {
+          "node": "place/allen-county.yml",
+          "lat": 40.771627,
+          "lon": -84.106103,
+          "geoid": null,
+          "level": null,
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "place/allen-county.yml",
+              "tier": "verified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "measure/allen-county-subdivisions-1960-1970.yml",
+      "class": "measure",
+      "label": "Allen County subdivisions, 1960 and 1970",
+      "tier": "inference",
+      "from": 1970,
+      "to": 1970,
       "precision": "year",
       "open_end": "instantaneous",
       "undated": null,
