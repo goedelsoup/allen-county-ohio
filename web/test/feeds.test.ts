@@ -3,6 +3,8 @@ import {
   FEED_VERSION,
   assertion,
   assertions,
+  comparability,
+  comparabilityFor,
   edges,
   manifest,
   mapPoints,
@@ -25,7 +27,14 @@ describe('the feed contract', () => {
   it('carries no open claim anywhere in it', () => {
     // The rule with no exception. Checked over the serialized feed, because the question is
     // what the file contains, not what a struct meant.
-    for (const [name, feed] of Object.entries({ nodes, edges, series, assertions, mapPoints })) {
+    for (const [name, feed] of Object.entries({
+      nodes,
+      edges,
+      series,
+      comparability,
+      assertions,
+      mapPoints,
+    })) {
       expect(JSON.stringify(feed), `${name} carries an open marker`).not.toContain('[open]')
     }
   })
@@ -44,6 +53,88 @@ describe('the feed contract', () => {
       expect(ids.has(edge.from), `${edge.from} is missing`).toBe(true)
       expect(ids.has(edge.to), `${edge.to} is missing`).toBe(true)
     }
+  })
+})
+
+const judgedTable = (id: string) => comparability.find((c) => c.node === id)
+
+describe('the comparability tables', () => {
+  it('is what the entry renders, and every row opens', () => {
+    const ids = new Set(nodes.map((n) => n.id))
+    for (const table of comparability) {
+      expect(ids.has(table.node), `${table.node} is not published`).toBe(true)
+      for (const row of table.rows) {
+        expect(ids.has(row.node), `${table.node} → ${row.node} is not published`).toBe(true)
+      }
+    }
+  })
+
+  it('says why, on every judged row', () => {
+    // The rule `edge-audit` gates in the corpus, asserted again on the shape the site is
+    // handed: a table can never print *Not comparable* and stop there.
+    for (const table of comparability) {
+      for (const row of table.rows.filter((r) => !r.this_figure)) {
+        expect(typeof row.comparable, `${table.node} → ${row.node}`).toBe('boolean')
+        expect(row.because?.trim(), `${table.node} → ${row.node}`).toBeTruthy()
+        expect(row.tier, `${table.node} → ${row.node}`).toBeTruthy()
+      }
+    }
+  })
+
+  it('gives each table exactly one row for its own figure, and at least one other', () => {
+    // A table of one row reads as a series of one, which is a claim about continuity nobody
+    // made. It is the state this feed is built to leave empty rather than to fill in.
+    for (const table of comparability) {
+      expect(table.rows.filter((r) => r.this_figure)).toHaveLength(1)
+      expect(table.rows.length).toBeGreaterThan(1)
+      const self = table.rows.find((r) => r.this_figure)!
+      expect(self.node).toBe(table.node)
+      expect(self.comparable).toBeNull()
+    }
+  })
+
+  it('is written once and reaches both ends, agreeing at each', () => {
+    // The corpus writes the judgement on the later figure only. The earlier node needs the
+    // warning more, being the one that cannot know its successor moved the definition.
+    for (const table of comparability) {
+      for (const row of table.rows.filter((r) => !r.this_figure)) {
+        const other = judgedTable(row.node)
+        expect(other, `${row.node} has no table but is judged from ${table.node}`).toBeTruthy()
+        const back = other!.rows.find((r) => r.node === table.node)
+        expect(back, `${row.node} does not carry ${table.node} back`).toBeTruthy()
+        expect(back!.comparable, `${table.node} and ${row.node} disagree`).toBe(row.comparable)
+      }
+    }
+  })
+
+  it('is ordered in time, so a break reads where it happened', () => {
+    for (const table of comparability) {
+      const dates = table.rows.map((r) => r.as_of)
+      expect(dates, table.node).toEqual(dates.toSorted())
+    }
+  })
+
+  it('is a judgement and not the parameter-string join a series is', () => {
+    // The whole reason this feed exists. `series` groups by matching `parameter` against a
+    // shared subject, which is mechanical; the corpus's own minor-civil-division series puts
+    // 56,580 in 1910 beside 27,132 in 1930, and the whole of that fall is Lima leaving the
+    // table. The grouping says nothing about it; the judgement does.
+    const grouped = series.find(
+      (s) => s.id === 'place-allen-county::total-resident-population-by-minor-civil-division,-decennial',
+    )
+    expect(grouped?.points.map((p) => p.published)).toEqual(['56580', '27132'])
+
+    const table = comparabilityFor('measure/allen-county-townships-1890-1910.yml')
+    const verdict = table?.rows.find((r) => !r.this_figure)
+    expect(verdict?.comparable).toBe(false)
+    expect(verdict?.because).toContain('Lima')
+  })
+
+  it('does not claim a judgement where the corpus made none', () => {
+    // Most measures have no table, and that is the honest state rather than a gap.
+    const measures = nodes.filter((n) => n.class === 'measure')
+    expect(comparability.length).toBeLessThan(measures.length)
+    expect(comparabilityFor('measure/allen-county-population-1970.yml')).toBeUndefined()
   })
 })
 

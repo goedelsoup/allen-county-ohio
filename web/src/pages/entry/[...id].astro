@@ -12,6 +12,7 @@ import Base from '../../layouts/Base.astro'
 import Badge from '../../components/entry/Badge.astro'
 import Breadcrumb from '../../components/entry/Breadcrumb.astro'
 import Card from '../../components/entry/Card.astro'
+import ComparabilityTable from '../../components/entry/ComparabilityTable.astro'
 import Icon from '../../components/entry/Icon.astro'
 import KeyList from '../../components/entry/KeyList.astro'
 import Locator from '../../components/entry/Locator.astro'
@@ -128,6 +129,7 @@ const crumbs = [
 
       <Refusals refusals={node.refusals} wouldClose={node.properties.would_close_this} />
 
+      {node.class === 'measure' && <ComparabilityTable node={node} />}
       {node.class === 'tenure' && <TenureBlock node={node} />}
       {node.class === 'office' && <OfficeBlock node={node} />}
       {node.class === 'person' && <PersonBlock node={node} />}

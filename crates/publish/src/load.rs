@@ -17,6 +17,8 @@ struct RawLink {
     claim_tag: Option<String>,
     #[serde(default)]
     source: Option<String>,
+    #[serde(default)]
+    because: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -71,6 +73,9 @@ pub struct Link {
     pub claim_tag: Option<Tier>,
     /// The catalog entry supporting this relationship, as `catalog/<name>.md`.
     pub source: Option<String>,
+    /// Why two figures may or may not be set beside each other. Only `comparable-to` and
+    /// `not-comparable-to` carry it, and `edge-audit` fails on one of those that does not.
+    pub because: Option<String>,
 }
 
 /// A corpus node, with its prose already cut into claims.
@@ -274,6 +279,7 @@ pub fn corpus(corpus_dir: &Path) -> Result<Vec<Node>, LoadError> {
                                 .trim_start_matches("../")
                                 .to_string()
                         }),
+                        because: l.because.as_deref().map(crate::claim::normalize),
                         target: l.target,
                         relationship: l.relationship,
                     })

@@ -240,6 +240,18 @@ export const DRAWINGS: readonly Drawing[] = [
     because:
       'Amanda Township is named for a fort that now stands in the next county. Drawing a line to a namesake would suggest the township goes there, which is exactly what the placement rules refuse.',
   },
+  {
+    relationship: 'comparable-to',
+    drawn: 'nothing',
+    because:
+      'Two figures that may be set beside each other. Both are usually about the same ground, so the line would run from a place to itself — and where they are not, the difference is a definition or a column heading rather than a distance. The claim is temporal and evidentiary, and the entry carries it as a table.',
+  },
+  {
+    relationship: 'not-comparable-to',
+    drawn: 'nothing',
+    because:
+      'A break in series. This is the one refusal here that is tempting to draw, because a break is often *caused* by ground moving — a corporation line that grew, a city entering a township table. But the edge names two figures, not the annexation between them, and a line from the county to the county would put the corpus’s sharpest warning on the map as a mark that says nothing.',
+  },
 ]
 
 const BY_RELATIONSHIP = new Map(DRAWINGS.map((d) => [d.relationship, d]))

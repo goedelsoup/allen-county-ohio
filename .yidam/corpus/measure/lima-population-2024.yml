@@ -36,5 +36,20 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/census-popest-2024.md
+  - target: lima-population-2020.yml
+    relationship: comparable-to
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+    because: >-
+      Both are rows of the Vintage 2024 sub-county file, which is one estimates series carried
+      forward from its own base, and both are tabulated at the corporate boundary of their own
+      date. The fall of 841 across four years is taken inside that file.
+  - target: lima-population-2020-census.yml
+    relationship: not-comparable-to
+    claim_tag: inference
+    because: >-
+      A model output against an enumeration, from two files. This estimate is carried forward
+      from the base of 35,531, not from the 35,579 summed off the census blocks, so 48 of any
+      difference taken against the count is the seam rather than the city.
   - target: ../measure.ont.yml
     relationship: instance-of
