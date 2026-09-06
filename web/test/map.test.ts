@@ -81,10 +81,7 @@ describe('the layer that may not be reached for', () => {
   const source = readFileSync(join(import.meta.dirname, '../src/scripts/map.ts'), 'utf8')
 
   it('is not a dependency', () => {
-    const declared = Object.keys({
-      ...(manifest.dependencies ?? {}),
-      ...(manifest.devDependencies ?? {}),
-    })
+    const declared = Object.keys({ ...manifest.dependencies, ...manifest.devDependencies })
     expect(declared).not.toContain('@deck.gl/geo-layers')
   })
 

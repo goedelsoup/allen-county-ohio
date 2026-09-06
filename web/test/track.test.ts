@@ -178,6 +178,9 @@ describe('bearing', () => {
   })
 })
 
+/** The straight-line length of one drawn piece, in miles. */
+const pieceMiles = (pieces: { lat: number; lon: number }[][]): number => straightMiles(pieces[0])
+
 describe('the connector is broken, and the break is the claim', () => {
   const storm = [
     { lat: 40.8, lon: -84.2 },
@@ -213,8 +216,7 @@ describe('the connector is broken, and the break is the claim', () => {
     // an eighteen-mile storm drawn at one rhythm can be told apart on the map.
     const short = dashes(storm)
     const long = dashes([storm[0], { lat: 40.94, lon: -83.54 }])
-    const piece = (pieces: { lat: number; lon: number }[][]) => straightMiles(pieces[0])
-    expect(piece(long)).toBeCloseTo(piece(short), 3)
+    expect(pieceMiles(long)).toBeCloseTo(pieceMiles(short), 3)
     expect(long.length).toBeGreaterThan(short.length)
   })
 
