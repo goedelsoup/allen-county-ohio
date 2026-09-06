@@ -1,0 +1,95 @@
+id: a-geoid-is-not-an-address
+summary: >-
+  Vendoring the school districts put two entities in this county under one key: `3904752` is
+  Beaverdam village and the Upper Scioto Valley Local School District. A Census GEOID is unique
+  only inside its **summary level**, and this site had been indexing five vendored layers into one
+  namespace — so the village would have drawn as a school district spanning two counties, silently
+  and with nothing to report it. The atlas feed now carries the level beside every key, derived
+  from what the corpus already said, and every index over vendored geometry is keyed on the pair.
+context: |
+  The map joins corpus nodes to vendored geometry by GEOID, and that join is the one derivation
+  this site performs. `crates/publish` cannot see `public/geo/`; `fetch-boundaries.mjs` cannot see
+  the corpus. The key is the whole of the contract between them.
+
+  Four layers held shapes and their keys did not collide, which read as a property of GEOIDs and
+  was a property of those four layers. County keys are five digits, county subdivisions ten,
+  places and CDPs seven — and places and CDPs share a code space by design, because a CDP's key
+  *is* a place key.
+
+  Adding [the school districts](a-district-is-not-cut-at-the-county-line.yml) added a fifth layer
+  whose keys are also seven digits, drawn from a different space. Seventeen districts came down.
+  Forty-four features went into an index that held forty-three:
+
+      3904752   Beaverdam village          places.geojson
+      3904752   Upper Scioto Valley Local  school-districts.geojson
+
+  Beaverdam is a village of 319 people. Upper Scioto Valley runs across two counties and is
+  mostly in Hardin. The corpus has a node for the first and none for the second, so the map would
+  have drawn the corpus's village as the district's outline — and `map.ts` builds its index with
+  the school districts last, so the district would have won.
+
+  Nothing would have reported it. The page would have rendered, the tests would have passed, and
+  a reader clicking Beaverdam would have been shown a shape thirty times too large.
+decision: |
+  **A vendored shape is addressed by `level:geoid`, and a key with no level is not addressable.**
+
+  Three parts.
+
+  - `AtlasAnchor` carries a `level` beside its `geoid`. It is derived in `crates/publish` from
+    what the corpus already states: a node whose `jurisdiction_type` is `school district` keys a
+    school district, and every other key is read off its own length — five digits a county, seven
+    a place, ten a county subdivision, which is how the Census builds a key out of the levels
+    above it.
+  - `feeds.ts::censusKey` is the one place the pair is spelled, and it returns `null` rather than
+    a half-key. `shaded()` drops an anchor it cannot address instead of resolving it against
+    whichever layer happens to hold that number.
+  - `ground.ts` and `map.ts` both key their indexes through it, and each keeps its own table of
+    which file holds which level — as does `geography.test.ts`, deliberately not importing the
+    table it checks.
+
+  This is additive to the feed and does not move `FEED_VERSION`, on the rule that version already
+  carries: a field added is not a field changed, and a version that moves for additions is a
+  version nobody reads.
+
+  **The gate is a count, not a list.** `HELD_KEYS.size` must equal the sum of the five layers'
+  feature counts. Under bare GEOIDs that sum was forty-three against forty-four features and no
+  test could see it, because nothing said what the number should have been. It says so now, and
+  the day a sixth layer collides with a fifth the arithmetic fails before the map draws.
+rationale: |
+  **Why the level comes from the corpus rather than from the key.**
+
+  Because the key cannot supply it. Seven digits is a place *and* a unified school district, and
+  no amount of looking at `3904752` decides which. The corpus already knows — a school district
+  node says so in `jurisdiction_type` — and the information only had to be carried across the
+  feed boundary rather than discovered.
+
+  It is worth naming what this is not. It is not a table of exceptions: nothing lists the one
+  colliding key, and nothing would have to be edited if a second collision appeared tomorrow.
+  The rule is total, and the collision that exposed it is only the case that made it visible.
+
+  **Why the count is the gate.**
+
+  A test that pinned *this* collision would pass on the next one. What is actually wrong with a
+  flat index is that it silently loses features, and losing features is arithmetic — so the check
+  is arithmetic. It failed on the real defect the first time it was run, which is the strongest
+  argument available for it.
+
+  **Why the site keeps its own level table rather than importing one.**
+
+  `ground.ts` reads the files at build time and `map.ts` fetches them at run time; the two cannot
+  share a module without putting `node:fs` in the browser bundle. So both name the levels, and
+  `geography.test.ts` names them a third time on purpose — a check that imports the table it is
+  checking agrees with itself and reports nothing. The three agreeing is the check.
+
+  **What is not settled.**
+
+  *The corpus calls this property `fips_code`, and it is not a FIPS code.* Beaverdam's
+  `fips_code: "3904752"` is a Census place code and the district's is a school district code;
+  neither is a FIPS code in the sense the name suggests, and the name is why the two looked
+  interchangeable. Renaming it across the corpus is a migration this decision does not take.
+
+  *A key whose level cannot be named is dropped, not reported.* `shaded()` returns nothing for
+  it and the map draws nothing. There are none today and `geography.test.ts` fails if one
+  appears, so the silence is gated — but the gate is the only thing that would say so.
+status: accepted
+date: "2026-09-06"
