@@ -37,16 +37,19 @@ const layers: Record<string, Feature[]> = {
   'census-tracts.geojson': layer('census-tracts'),
   'school-districts.geojson': layer('school-districts'),
   'linear-water.geojson': layer('linear-water'),
+  'areal-water.geojson': layer('areal-water'),
 }
 
 /**
  * The layers whose features are Census *entities*: a GEOID, a name, an area.
  *
- * The water is not one. It has no GEOID because a stream is not a geographic entity in the
- * Census's sense, and 224 of its 313 segments have no name at all — which is a fact about how
- * the federal file is built and not a defect in the fetch.
+ * Neither water layer is one. Water has no GEOID because a stream is not a geographic entity in
+ * the Census's sense, and most of both files has no name at all — 224 of the linear file's 313
+ * segments and 22 of the areal file's 42 polygons — which is a fact about how the federal files
+ * are built and not a defect in the fetch.
  */
-const ENTITY = Object.keys(layers).filter((f) => f !== 'linear-water.geojson')
+const WATER = ['linear-water.geojson', 'areal-water.geojson']
+const ENTITY = Object.keys(layers).filter((f) => !WATER.includes(f))
 
 const known = new Set(ENTITY.flatMap((f) => layers[f]).map((f) => f.properties.GEOID))
 
@@ -315,12 +318,75 @@ describe('the water', () => {
   })
 })
 
-describe('the corpus\u2019s watercourses against the file that draws them', () => {
-  const drawn = new Set(
-    (layers['linear-water.geojson'] as unknown as { properties: { NAME?: string } }[])
+describe('the water drawn as area', () => {
+  const areal = layers['areal-water.geojson'] as unknown as {
+    properties: { OID: string; NAME?: string; MTFCC: string }
+    geometry: { type: string; coordinates: unknown }
+  }[]
+
+  const entry = provenance.layers.find((l) => l.file === 'areal-water.geojson') as unknown as {
+    layer: number
+    vintage?: string
+    filter?: string
+    generalized_degrees?: number
+  }
+
+  it('comes from layer 1 of the same service as the linear file, and is dated the same way', () => {
+    // One Hydro MapServer, two layers, one vintage — which is *no* vintage. The areal file
+    // inherits the linear file's problem along with its service, and states it the same way.
+    expect(entry.layer).toBe(1)
+    expect(entry.vintage).toBe('current')
+    expect(entry.generalized_degrees).toBeGreaterThan(0)
+  })
+
+  it('says it is filtered by class as well as by the county', () => {
+    // The layer is 1,127 polygons here and this file is 42. A provenance line naming only the
+    // clip would describe a mirror of the layer, and this is a mirror of two classes of it.
+    expect(entry.filter).toContain('intersects the county polygon')
+    expect(entry.filter).toContain('MTFCC')
+  })
+
+  it('holds watercourses and no standing water', () => {
+    // H2030 lake or pond and H2040 reservoir are deliberately absent: the county's standing
+    // water is a different subject with a different file behind it, already measured from NHD
+    // in `allen-county-standing-water-2026.yml`. Two federal counts of one ground on one map
+    // would be the mistake this corpus keeps a decision about.
+    const classes = new Set(areal.map((f) => f.properties.MTFCC))
+    expect([...classes].toSorted()).toEqual(['H3010', 'H3020'])
+  })
+
+  it('draws every polygon, named or not', () => {
+    for (const f of areal) {
+      expect(f.geometry?.coordinates, f.properties.OID).toBeTruthy()
+      expect(f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon').toBe(true)
+      expect(f.properties.OID).toBeTruthy()
+    }
+  })
+
+  it('carries the five watercourses TIGER found wide enough to have banks', () => {
+    // Five names over twenty of the forty-two polygons. The other twenty-two are unnamed, the
+    // same way most of the linear file is, and are drawn anyway.
+    const named = areal.filter((f) => f.properties.NAME)
+    expect(named.length).toBe(20)
+    expect(new Set(named.map((f) => f.properties.NAME)).size).toBe(5)
+  })
+})
+
+describe('the corpus\u2019s watercourses against the files that draw them', () => {
+  /**
+   * Both hydrography layers, unioned — and the union is the point.
+   *
+   * A watercourse is in one file or the other depending on how wide TIGER found it, so asking
+   * either alone gives the wrong answer about the county's water. Asking the linear file alone
+   * is what put the Ottawa River on the undrawn list for five days.
+   */
+  const namesIn = (file: string) =>
+    (layers[file] as unknown as { properties: { NAME?: string } }[])
       .map((f) => f.properties.NAME)
-      .filter((n): n is string => Boolean(n)),
-  )
+      .filter((n): n is string => Boolean(n))
+
+  const drawn = new Set(WATER.flatMap(namesIn))
+  const linearOnly = new Set(namesIn('linear-water.geojson'))
 
   it('abbreviates a name the way TIGER does', () => {
     expect(tigerName('Little Ottawa River')).toBe('Little Ottawa Riv')
@@ -344,10 +410,21 @@ describe('the corpus\u2019s watercourses against the file that draws them', () =
     expect(resolved, 'declared undrawn and present in the file').toEqual([])
   })
 
-  it('cannot draw the river the city was built on', () => {
-    // Stated as its own check because it is the finding rather than a housekeeping detail.
-    expect(Object.keys(UNDRAWN)).toContain('Ottawa Riv')
-    expect(drawn.has('Ottawa Riv')).toBe(false)
+  it('draws the river the city was built on, from the layer that names it', () => {
+    // Stated as its own check because it is the finding rather than a housekeeping detail — and
+    // it is now the opposite finding to the one this file used to hold.
+    expect(drawn.has('Ottawa Riv')).toBe(true)
+    expect(Object.keys(UNDRAWN)).not.toContain('Ottawa Riv')
+
+    // **The half that names which file, because that is the whole lesson.** The Ottawa is absent
+    // from the linear layer and present in the areal one. A future fetch that quietly dropped
+    // layer 1 would still pass every other check here — `drawn` would shrink, `UNDRAWN` would not
+    // mention the river, and the site would go back to not drawing it with nothing saying so.
+    expect(linearOnly.has('Ottawa Riv')).toBe(false)
+    const areal = (layers['areal-water.geojson'] as unknown as { properties: { NAME?: string } }[])
+      .filter((f) => f.properties.NAME === 'Ottawa Riv')
+    expect(areal.length).toBe(4)
+
     // And the corpus does know where it runs — both ends, at real coordinates.
     const ottawa = courses().find((c) => c.label === 'Ottawa River')
     expect(ottawa?.source).not.toBeNull()

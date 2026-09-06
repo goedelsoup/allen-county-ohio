@@ -1,0 +1,136 @@
+id: a-linear-file-is-not-the-hydrography
+summary: >-
+  The site drew the county's water from TIGERweb Hydro layer 0 and concluded that the Ottawa
+  River — the county's principal watercourse, and the one the corpus has most to say about — is
+  named nowhere inside Allen County. Layer 1 of the same service names it four times. A
+  watercourse leaves TIGER's linear layer at the width where the Bureau starts drawing two banks
+  instead of one thread, so neither layer is the county's hydrography by itself. Both are now
+  vendored and the corpus's watercourses are joined against their union.
+context: |
+  `web/public/geo/linear-water.geojson` holds 313 polylines, 89 of them named, and `Ottawa Riv`
+  is not among the 89. `Little Ottawa Riv` is. The named segments of the Ottawa begin north of
+  the county line, in Putnam.
+
+  From that the site drew a conclusion and wrote it into `lib/water.ts` as a permanent entry:
+
+      'Ottawa Riv': 'TIGER names the Ottawa only downstream of the county line;
+                     every segment inside Allen County is unnamed'
+
+  It was published for five days, gated in both directions by `geography.test.ts`, and reported
+  as a finding — that the federal file could not draw the river Lima was built on, and that the
+  obvious repair was unavailable because the Hydro service carries `ARTPATH`, `BASENAME`,
+  `LNDMRKNS`, `LSADC`, `MTFCC`, `NAME`, `OBJECTID`, `OID`, `PRETYP`, `SUFTYP` and no hydrographic
+  identifier to join on instead of the name. Three ways forward were set out: take a second
+  source, chain the unnamed segments topologically, or leave it.
+
+  **All three answered a question whose premise was false.** The Census Bureau publishes water in
+  two shapes, and this connector fetched one of them. `TIGERweb/Hydro/MapServer` layer 0 is
+  Linear Hydrography and layer 1 is Areal Hydrography; layer 1 holds 1,127 polygons intersecting
+  this county and four of them are named `Ottawa Riv`. [verified] —
+  [TIGER/Line Hydrography](../catalog/census-tiger-hydrography.md), the service, clipped to the
+  county polygon.
+
+  **The corpus had already written this down and the connector did not read it.** The catalogue
+  entry for the shapefile edition of the same data describes `tl_2024_39003_areawater.zip` in its
+  own words — *1,125 features, 1,091 of them unnamed; the named ones are the rivers, the
+  reservoirs and eight lakes*. The rivers. It was retrieved on 4 September and the water was
+  vendored on 6 September from the layer that has the fewest of them.
+
+  **Why the river changes shape.** TIGER draws a watercourse as a polyline until it is wide
+  enough to be worth two banks and as a polygon after that, so a river does not appear in one
+  layer or the other by its importance but by its width. The Ottawa through this county is past
+  that width in four places. This is not a defect in the file and it is not the Bureau declining
+  to name the river; it is one dataset in two geometries, and reading either alone gives an
+  answer about the file rather than about the county.
+
+  **The flow network says the same thing independently, and says it about this exact river.** All
+  42 flowlines NHDPlus High Resolution names `Ottawa River` inside Allen County are FType 558,
+  FCode 55800 — Artificial Path — threaded through five distinct `wbarea_permanent_identifier`
+  polygons, on one level path, GNIS 01070882, stream order 5. [verified] —
+  [USGS NHDPlus High Resolution](../catalog/usgs-nhdplus-high-resolution.md). An artificial path
+  is the synthetic centreline a flow network draws through a water *area* when there is no
+  channel line to follow. Two federal hydrographies, built by different agencies for different
+  purposes, both decline to represent this river as a line here — which is a fact about the
+  Ottawa and not about either file.
+
+  **The river was never missing from the map.** 21 of the linear file's 224 unnamed segments lie
+  on the Ottawa's course — more than 60 per cent of each segment's vertices within 60 metres of
+  the NHD centreline, and no *named* segment does. [verified] — the two files, compared here. The
+  site has been drawing the Ottawa since the day the water layer landed. What it could not do was
+  say which line it was.
+decision: |
+  **Vendor both layers. The county's hydrography is their union, and neither half is it alone.**
+
+  1. `web/scripts/fetch-boundaries.mjs` fetches layer 1 as `areal-water.geojson`, restricted to
+     `MTFCC IN ('H3010','H3020')` — the natural channel and the dug one, the same two classes the
+     linear file carries. 42 features. The other 1,085 polygons in this county are lake, pond and
+     reservoir, and are deliberately not taken: standing water is a different subject with a
+     different file behind it, already measured at
+     [allen-county-standing-water-2026](../corpus/measure/allen-county-standing-water-2026.yml)
+     from NHD, and vendoring it a second time here would put two federal counts of one ground on
+     one map.
+  2. `PROVENANCE.json` records both halves of the filter — the clip *and* the class restriction.
+     A provenance line naming only the clip would describe a mirror of the layer, and this file
+     is a mirror of two classes of it.
+  3. `lib/water.ts` joins the corpus's watercourses against the union of the two files.
+     `UNDRAWN` keeps only the Blanchard and the Maumee, which are genuinely outside this county,
+     and the anti-drift half of `geography.test.ts` — *declares nothing undrawn that the file now
+     draws* — is what forced the entry to be removed rather than quietly left.
+  4. `geography.test.ts` asserts that the Ottawa is absent from the linear layer and present in
+     the areal one, by name and by count. A future fetch that dropped layer 1 would otherwise
+     pass every other check in the file while the site went back to not naming the river.
+
+  **What this does not settle, and it is half of what was reported.**
+
+  *The name is still not a key.* The Hydro service exposes no GNIS code, no ANSICODE and no
+  `LINEARID`; `OID` is a row identifier with no hydrographic meaning. The join is still on
+  `NAME`, and the file still demonstrates in its own contents that the name is not a key — it
+  spells one canal `Miami & Erie Cnl` twice and `Miami-Erie Cnl` once. Adding a second layer
+  widened what the join can find and changed nothing about what it joins on.
+
+  *TIGER names about a sixth of the Ottawa's course here, not all of it.* The four polygons come
+  to 13.25 kilometres by half their perimeter [inference] — computed here, an approximation of a
+  centreline from a polygon; and 726 of the 4,459 vertices of NHD's Ottawa inside this county,
+  16.3 per cent, fall within one of them [verified] — the two files, compared here. The rest of
+  the river is still on the map as unnamed line. The map now draws the Ottawa *as the Ottawa*
+  where the Bureau says so, which is what the corpus node needed and is less than the whole
+  river.
+rationale: |
+  **The generalisable form: absence from a representation is not absence from the thing.** The
+  file was asked *is the Ottawa here* and answered *not in this shape*, and the answer was read
+  as the first question. This corpus has met the shape before from the other side —
+  [a level path is not a river](a-level-path-is-not-a-river.yml) is a derived grouping mistaken
+  for the thing it groups, [a centerline is not a road](a-centerline-is-not-a-road.yml) is one
+  road drawn twice counted as two. This is the third face of it and the most ordinary: one thing
+  drawn two ways, looked for in one of them.
+
+  **What makes it worth a rule rather than a correction.** The wrong answer was productive. It
+  survived because it was *interesting* — the county's principal river missing from the federal
+  file is a better sentence than the river being a polygon, so it got written up as a finding,
+  gated in two directions, given three ways forward and an argument for each, and published. None
+  of that machinery could catch it, because every piece of it was built on top of the premise.
+  The check that eventually would have caught it was already present and pointing the right way:
+  *declares nothing undrawn that the file now draws* fails the moment the missing layer arrives.
+  It cannot fire against a layer nobody fetches.
+
+  **The cheap check that was not run.** Before concluding that a source is silent, list what the
+  source publishes. The service's own `?f=json` names three layers in one screen — Linear
+  Hydrography, Areal Hydrography, Glaciers — and this county has no glaciers. The corpus asks
+  this question of *records* routinely; see
+  [silence from a source that would have spoken](silence-from-a-source-that-would-have-spoken.yml),
+  which is the same discipline applied to an archive. A dataset's layer list is the same kind of
+  evidence and is one request away.
+
+  **On the catalogue, which was right.** The entry for the hydrography files described the areal
+  product and said its named features are the rivers. The corpus knew; the connector, which
+  deliberately knows nothing about the corpus, did not. That separation is correct and is not
+  being revisited — a connector that read node files would put half the derivation on the wrong
+  side of the line. But the person writing a connector may read the catalogue entry for the
+  source they are connecting, and on this occasion nobody did.
+
+  **What is not settled.** *Nothing rechecks the layer list.* This decision is a rule about how a
+  source is approached, and the only thing that enforces it is `expect: 42` failing when the
+  service republishes. If the Bureau adds a layer that carries water this county has, no check
+  here will notice; the corpus will find out the way it found out this time.
+status: accepted
+date: "2026-09-06"

@@ -432,9 +432,12 @@ const undrawn = Object.entries(UNDRAWN)
           line, and they are drawn as ends, with the note the corpus attached to each.
         </p>
         <p>
-          The courses themselves come from the federal water file, like every boundary here — and
-          it does not name all of them. {undrawn.length} of the {watercourses.length} have no course
-          this site can draw:
+          The courses themselves come from the federal water files, like every boundary here — two
+          of them, because TIGER draws a watercourse as a line until it is wide enough to have two
+          banks and as a polygon after that. Reading only the linear one had this site declaring
+          the Ottawa River undrawn for five days; it is named four times in the areal one.
+          {undrawn.length} of the {watercourses.length} still have no course this site can draw,
+          and both are rivers this county's water reaches without ever holding:
         </p>
         <ul class="undrawn">
           {

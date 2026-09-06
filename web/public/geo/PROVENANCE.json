@@ -40,21 +40,21 @@
       "layer": 26,
       "name": "Incorporated Places",
       "features": 10,
-      "filter": "intersects the county polygon"
+      "filter": "intersects the county polygon AND STATE='39'"
     },
     {
       "file": "census-designated-places.geojson",
       "layer": 28,
       "name": "Census Designated Places",
       "features": 3,
-      "filter": "intersects the county polygon"
+      "filter": "intersects the county polygon AND STATE='39'"
     },
     {
       "file": "school-districts.geojson",
       "layer": 12,
       "name": "Unified School Districts",
       "features": 17,
-      "filter": "intersects the county polygon"
+      "filter": "intersects the county polygon AND STATE='39'"
     },
     {
       "file": "linear-water.geojson",
@@ -62,6 +62,16 @@
       "name": "Linear Hydrography",
       "features": 313,
       "filter": "intersects the county polygon",
+      "service": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Hydro/MapServer",
+      "vintage": "current",
+      "generalized_degrees": 0.0002
+    },
+    {
+      "file": "areal-water.geojson",
+      "layer": 1,
+      "name": "Areal Hydrography",
+      "features": 42,
+      "filter": "intersects the county polygon AND MTFCC IN ('H3010','H3020')",
       "service": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Hydro/MapServer",
       "vintage": "current",
       "generalized_degrees": 0.0002
