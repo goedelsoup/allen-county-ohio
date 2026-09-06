@@ -688,6 +688,21 @@ pub struct AtlasAnchor {
     pub node: String,
     pub lat: Option<f64>,
     pub lon: Option<f64>,
+    /// The ground a moving happening covered, where the anchor is a track rather than a spot:
+    /// two or more positions in the order a source recorded them, and empty for every other
+    /// anchor.
+    ///
+    /// **The order is part of the claim and the line between the points is not.** Both tracks
+    /// here are a beginning and an end out of a federal storm file; nothing about the ground
+    /// between them was recorded, and a consumer joining them must draw the join as a reading
+    /// rather than as an observation.
+    ///
+    /// It rides on the anchor rather than on [`AtlasRecord`] because an anchor is a position
+    /// *and the route that reached it*, and a route can reach a track. Nothing in the corpus
+    /// does today — `event --relates-to->` is refused and it is the only edge pointing at
+    /// either storm — but putting the geometry on the record would say a node may only be drawn
+    /// on a track it states itself, which is a rule nobody decided.
+    pub points: Vec<AtlasPosition>,
     /// A Census key, where the anchor is a shape rather than a point. The site joins it to
     /// `public/geo/`; nothing on this side of the boundary knows where a polygon is.
     pub geoid: Option<String>,
@@ -698,6 +713,17 @@ pub struct AtlasAnchor {
     pub level: Option<&'static str>,
     /// The edges followed to reach it, in order. Empty where the node is its own anchor.
     pub via: Vec<AtlasStep>,
+}
+
+/// One position on a track.
+///
+/// Named fields rather than a `[lon, lat]` pair, which is deck.gl's order and the reverse of
+/// every other coordinate in this feed. The array is assembled at the point of use, where the
+/// mistake is one line away from its own correction.
+#[derive(Debug, Serialize)]
+pub struct AtlasPosition {
+    pub lat: f64,
+    pub lon: f64,
 }
 
 #[derive(Debug, Serialize)]
@@ -735,7 +761,7 @@ pub struct AtlasRecord {
     pub undated: Option<String>,
 
     // ── where ──
-    /// `mark`, `polygon`, `count`, `register`, `unplaced` or `not-spatial`.
+    /// `track`, `mark`, `polygon`, `count`, `register`, `unplaced` or `not-spatial`.
     pub treatment: &'static str,
     /// Edges followed to reach ground. `0` is a stated position.
     pub hops: Option<usize>,
@@ -771,6 +797,7 @@ fn open_end_name(o: chronology::OpenEnd) -> &'static str {
 
 fn treatment_name(t: placement::Treatment) -> &'static str {
     match t {
+        placement::Treatment::Track => "track",
         placement::Treatment::Mark => "mark",
         placement::Treatment::Polygon => "polygon",
         placement::Treatment::Count => "count",
@@ -786,7 +813,11 @@ fn treatment_name(t: placement::Treatment) -> &'static str {
 /// [`map`] already applies to its own points. Applying it by *removing the property* rather
 /// than by filtering afterwards means the resolver never sees it — so nothing else can reach
 /// that node's ground through it either.
-const LOCATION_PROPERTIES: [&str; 4] = ["centroid", "coordinates", "geoid", "fips_code"];
+/// `track` is here for the same reason and is the one that could have been missed: it is the
+/// only one of the five that is not a single position, and a track tagged below the ceiling
+/// would otherwise place a node the ceiling forbids — and place it more precisely than any of
+/// the other four could.
+const LOCATION_PROPERTIES: [&str; 5] = ["centroid", "coordinates", "geoid", "fips_code", "track"];
 
 /// The corpus as `placement` needs it, with everything the ceiling withholds already gone.
 fn placement_graph(nodes: &[Node], ceiling: Tier) -> placement::Graph {
@@ -916,21 +947,45 @@ pub fn atlas(nodes: &[Node], ceiling: Tier) -> Vec<AtlasRecord> {
                     p.reached
                         .iter()
                         .map(|r| {
-                            let (lat, lon, geoid, level) = match &r.anchor {
+                            let (lat, lon, geoid, level, points) = match &r.anchor {
                                 placement::Anchor::Point { lat, lon } => {
-                                    (Some(*lat), Some(*lon), None, None)
+                                    (Some(*lat), Some(*lon), None, None, Vec::new())
                                 }
+                                placement::Anchor::Track { points } => (
+                                    // No lat/lon, and deliberately none: a track states the
+                                    // ground a thing crossed and not a spot it stood at, and the
+                                    // midpoint of a seventeen-mile tornado is the invented
+                                    // centroid `a-derived-placement-is-a-claim` refuses.
+                                    None,
+                                    None,
+                                    None,
+                                    None,
+                                    points
+                                        .iter()
+                                        .map(|p| AtlasPosition {
+                                            lat: p.lat,
+                                            lon: p.lon,
+                                        })
+                                        .collect(),
+                                ),
                                 placement::Anchor::Census { key } => {
                                     // The level is a fact about the *stating* node, which on a
                                     // routed anchor is not the node being placed.
                                     let stated = by_id.get(r.node.as_str()).copied();
-                                    (None, None, Some(key.clone()), geoid_level(key, stated))
+                                    (
+                                        None,
+                                        None,
+                                        Some(key.clone()),
+                                        geoid_level(key, stated),
+                                        Vec::new(),
+                                    )
                                 }
                             };
                             AtlasAnchor {
                                 node: r.node.clone(),
                                 lat,
                                 lon,
+                                points,
                                 geoid,
                                 level,
                                 via: r
