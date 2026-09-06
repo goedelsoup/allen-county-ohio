@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest'
 import { nodes } from '../src/lib/feeds'
-import { bearing, frame, metres, parseTrack, project, straightMiles } from '../src/lib/track'
+import {
+  DASH_METRES,
+  GAP_METRES,
+  bearing,
+  dashes,
+  frame,
+  metres,
+  parseTrack,
+  project,
+  straightMiles,
+} from '../src/lib/track'
 
 // The track figure's arithmetic, away from the page.
 //
@@ -165,5 +175,80 @@ describe('the corpus', () => {
 describe('bearing', () => {
   it('reads as English rather than as a signed pair', () => {
     expect(bearing({ lat: 40.87, lon: -83.87 })).toBe('40.87° N, 83.87° W')
+  })
+})
+
+/** The straight-line length of one drawn piece, in miles. */
+const pieceMiles = (pieces: { lat: number; lon: number }[][]): number => straightMiles(pieces[0])
+
+describe('the connector is broken, and the break is the claim', () => {
+  const storm = [
+    { lat: 40.8, lon: -84.2 },
+    { lat: 40.87, lon: -83.87 },
+  ]
+
+  it('never returns the whole track as one unbroken piece', () => {
+    // The one thing the connector may not be. Nothing about the ground between two recorded
+    // positions is on the record, and a solid line would assert it in the one encoding that
+    // carries no tag and affords no tooltip.
+    for (const node of tracked) {
+      const pieces = dashes(parseTrack(node.properties.track))
+      expect(pieces.length, node.id).toBeGreaterThan(1)
+    }
+  })
+
+  it('begins at the first recorded position and ends at the last', () => {
+    const pieces = dashes(storm)
+    expect(pieces[0][0]).toEqual(storm[0])
+    const last = pieces[pieces.length - 1]
+    expect(last[last.length - 1]).toEqual(storm[1])
+  })
+
+  it('draws less than it leaves out, so the line reads as a reading', () => {
+    const pieces = dashes(storm)
+    const drawn = pieces.reduce((sum, piece) => sum + straightMiles(piece), 0)
+    expect(drawn).toBeLessThan(straightMiles(storm))
+    expect(drawn / straightMiles(storm)).toBeCloseTo(DASH_METRES / (DASH_METRES + GAP_METRES), 1)
+  })
+
+  it('dashes two tracks at one rhythm, so their lengths compare by eye', () => {
+    // The reason the lengths are metres and not a fraction of the track: a nine-mile storm and
+    // an eighteen-mile storm drawn at one rhythm can be told apart on the map.
+    const short = dashes(storm)
+    const long = dashes([storm[0], { lat: 40.94, lon: -83.54 }])
+    expect(pieceMiles(long)).toBeCloseTo(pieceMiles(short), 3)
+    expect(long.length).toBeGreaterThan(short.length)
+  })
+
+  it('keeps a recorded position that falls inside a drawn piece', () => {
+    // No track in the corpus has a middle. The ontology admits one, and a dash spanning a bend
+    // would cut the corner off a track that did.
+    const bent = [
+      { lat: 40.7, lon: -84.2 },
+      { lat: 40.7, lon: -84.0 },
+      { lat: 40.9, lon: -84.0 },
+    ]
+    const pieces = dashes(bent, 200_000, 1)
+    expect(pieces[0]).toContainEqual(bent[1])
+  })
+
+  it('draws nothing rather than a line it cannot vouch for', () => {
+    expect(dashes([])).toEqual([])
+    expect(dashes([{ lat: 40.8, lon: -84.2 }])).toEqual([])
+    expect(dashes([{ lat: 40.8, lon: -84.2 }, { lat: 40.8, lon: -84.2 }])).toEqual([])
+    expect(dashes(storm, 0, 100)).toEqual([])
+    expect(dashes(storm, 100, 0)).toEqual([])
+  })
+
+  it('scales the rhythm rather than drawing a short track solid', () => {
+    // A track shorter than two cycles would come back as one unbroken piece. Nothing in the
+    // corpus is near it — the shorter storm is 15km against a 750m cycle — and the guard is
+    // here because solid is the failure, not a degraded case.
+    const tiny = [
+      { lat: 40.8, lon: -84.2 },
+      { lat: 40.8005, lon: -84.2 },
+    ]
+    expect(metres(tiny[0], tiny[1])).toBeLessThan(DASH_METRES)
+    expect(dashes(tiny).length).toBeGreaterThan(1)
   })
 })

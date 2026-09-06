@@ -1,0 +1,149 @@
+id: hops-counts-edges-not-coordinates
+summary: >-
+  Two tornadoes state the ground they crossed and the map lists them beside itself as things
+  placed no finer than the county, because `Anchor` admits a point or a Census key and a track is
+  neither. A track is now a third anchor and a seventh treatment, and it places at **zero hops** —
+  not because it states a position, which it does not, but because `hops` counts edges followed
+  and following none is zero. The connector is drawn dashed and computed as data, and
+  `@deck.gl/geo-layers` stays out of `package.json` so the layer that would tween along it is not
+  within reach.
+context: |
+  `event.track` was coined by [the replay](an-animation-asserts-continuity.yml) and two nodes carry
+  it: the tornadoes of [11 April 1965](../corpus/event/the-tornado-of-11-april-1965.yml) and
+  [19 July 1950](../corpus/event/the-tornado-of-19-july-1950.yml). Each holds two surveyed
+  endpoints out of the same federal storm file — a beginning and an end, in the order the storm
+  passed them, and nothing about the ground between.
+
+  It reaches the entry page. `EventTrack.astro` draws the county, the two positions, and a dashed
+  connector, and says in its caption that the connector is a reading and not an observation.
+
+  **It does not reach the map.** Both storms resolve out through `occurred-in` to the county and
+  land where every undifferentiated thing lands:
+
+      the-tornado-of-11-april-1965   treatment register   hops 1   anchors [allen-county]
+      the-tornado-of-19-july-1950    treatment register   hops 1   anchors [allen-county]
+
+  `Register` reads *"a thing that was somewhere, and the corpus places it no finer than the
+  county."* [a-derived-placement-is-a-claim](a-derived-placement-is-a-claim.yml) wrote that
+  sentence when it was true of all seventy-four nodes it covered. It is now false of exactly two,
+  and false in the direction that matters: the corpus holds four surveyed coordinates and the map
+  draws a list.
+
+  The blockage is a shape. `placement::Anchor` admits `Point { lat, lon }` and `Census { key }`,
+  `AtlasRecord` carries anchors that are one position each, and there is nowhere to put an ordered
+  sequence. Nor is there a `Treatment` for a thing that is a line rather than a dot.
+
+  Underneath the mechanics sits the question this record exists to answer. **Is a node that states
+  a track placed at zero hops?** It states its own geometry, so the obvious answer is yes. But it
+  does not state a *position*, and four consumers read `hops === 0` as *the corpus said where this
+  is* in the sense of one coordinate: `shaded()`, `unheldShapes()`, the warrant control, and the
+  count the front page prints.
+decision: |
+  **A stated track is a placement at zero hops, and `hops` is why.**
+
+  The number counts edges followed. Nothing else. A tornado that states its own track is reached
+  without following anything, so the count is zero, and any other answer would make the field mean
+  something other than what it counts — *"reached through one edge"* asserted of a node no edge was
+  followed from. That is a smaller lie than most on this site and it is the same kind.
+
+  What the question was really asking is whether the four consumers survive the answer, and they
+  were checked one at a time rather than reasoned about:
+
+  - `shaded()` and `unheldShapes()` both test `treatment === 'polygon'` **before** `hops === 0`. A
+    track is carried by an event and an event is never a polygon, so neither can be reached.
+  - **The warrant control moves, and correctly.** At *stated positions only* the two storms are
+    now drawn, where before they were refused. That setting means *show me nothing the corpus did
+    not state*, and the corpus stated these.
+  - **The front page's count moves from 72 to 74, and correctly.** It is the number of nodes
+    stating their own geometry. Two more do.
+
+  **`Anchor` gains a third variant** — `Track { points }`, two or more positions in the order a
+  source recorded them — and `own_anchor` reads it ahead of a coordinate. Ahead, because a track
+  is the whole of what the source recorded about where the thing was, and `event.ont.yml` refuses
+  a `coordinates` beside it precisely so there is never a second copy to disagree with.
+
+  **`Treatment` gains a seventh member**, and the table is recomputed:
+
+  | Treatment | Nodes | Rule |
+  |---|---|---|
+  | Count on its subject | 404 | A figure about somewhere — measure, tenure, office, question |
+  | Mark | 131 | A thing that was somewhere, placed finer than the county |
+  | Register | 72 | A thing that was somewhere, placed no finer than the county — 55 people, 9 features, 7 events, 1 place |
+  | Polygon | 47 | Covers ground rather than sitting on it — jurisdiction, division |
+  | Unplaced | 20 | No licensed route — 9 events, 9 people, 2 organizations |
+  | Not spatial | 7 | `period`, which drives the time control instead |
+  | Track | 2 | The ground a moving thing crossed, stated in order — both tornadoes |
+
+  **The discrimination test does not reach a track.** A track is tested for neither: it is not
+  measured against the frame, because it is not a position that could be the frame's centre. It is
+  classified before the mark rule runs.
+
+  **The track rides on the anchor, not on the record.** `AtlasAnchor` gains `points`, alongside
+  `lat`/`lon` and `geoid`/`level`, because an anchor is *a position and the route that reached
+  it* — and a route can reach a track. Nothing does today; `event --relates-to->` is refused and
+  it is the only edge pointing at either storm. But putting the geometry on `AtlasRecord` would
+  say a node may only be drawn on a track it states itself, which is a rule nobody decided and
+  which the resolver would then have to be taught to break.
+
+  **No `FEED_VERSION` bump.** A field is added, nothing moves and nothing changes meaning, which
+  is the rule [`feed.rs`](../../crates/publish/src/feed.rs) states and the rule `atlas.json`
+  itself was added under.
+
+  **The connector is dashed, and the dash is data.** `PathLayer` is in `@deck.gl/layers` and is
+  already a dependency. Dashing is not: it lives in `@deck.gl/extensions`, which is not. So the
+  dash is computed in `web/src/lib/track.ts` as a pure function returning the drawn segments, fed
+  to the layer as several paths. That is a better answer than the extension and not merely a
+  cheaper one — the gap between the endpoints is a claim about the record, and computing it as
+  data puts it where `track.test.ts` can read it instead of inside a shader.
+
+  **`@deck.gl/geo-layers` stays out of `package.json`.** `TripsLayer` animates a position along a
+  path over time, which is exactly the tween
+  [an-animation-asserts-continuity](an-animation-asserts-continuity.yml) refuses, and it would draw
+  the storm at a position at a moment no source recorded. A dependency that makes the wrong thing
+  one import away is an invitation, and the refusal is worth more written down here than assumed.
+rationale: |
+  **Why a seventh treatment rather than filing a track as a mark.** `Treatment` answers one
+  question — *what should the map do with this?* — and the answers are instruments. A mark is a
+  dot and a track is a line, and a renderer switching on treatment would have to ask a second
+  question to tell them apart. It is also what makes the register honest again: the two storms
+  leave it because the sentence defining it stopped being true of them, and no other node's
+  classification moves.
+
+  **Why not two `Point` anchors at zero hops.** This was the cheapest option and it fails on the
+  meaning of `reached`. That field is a set — keyed by the node stating the position, so both
+  endpoints of one track would collapse into one entry — and its documented sense is *at all of
+  these*, the school district serving five townships. A track means *from this one to that one, in
+  this order*. Dropping the order and the connection drops the only two things that make it a
+  track, and would leave the entry page drawing a line the map could not.
+
+  **Why the shape of the distribution test survives.** `tests/corpus.rs` pins the ordering —
+  counts outnumber marks, marks outnumber the unplaced — and the partition sum, never the sizes.
+  A seventh treatment holding two nodes breaks neither, which is the property that decision
+  claimed for the gate and this is the first change to test it.
+
+  **What the register loses.** Seven events rather than nine, and the two that leave are the only
+  two in the corpus that ever stated where they were. The other seven reach the county through
+  `occurred-in` and state nothing, which is what the register is for.
+
+  **Alternatives considered.**
+
+  *Leave `hops` at 1 and carry the track beside the placement.* Smallest change: no treatment, no
+  anchor variant, no amendment. Rejected because it keeps `Register` false for these two nodes,
+  which is the defect, and because the map would then draw each storm twice — once as a line and
+  once as a member of the stack over the county centroid — with the weaker of the two claims
+  drawn in the encoding that reads as stronger.
+
+  *Bump `FEED_VERSION`.* Rejected on `feed.rs`'s own rule, and for the reason that file gives: a
+  version that moves for additions is a version nobody reads.
+
+  *Add `@deck.gl/extensions` for `PathStyleExtension`.* Rejected. It is a dependency for one
+  visual property, it puts the dash where no test can see it, and the package that would give the
+  dash also gives nothing else this map wants.
+
+  **What would change the answer.** A source stating intermediate positions. Both tracks here are
+  two points because the federal file gives two, and the connector is dashed because of it — a
+  survey giving the path itself would make the line an observation rather than a reading, and it
+  would be drawn solid. `event.ont.yml` already admits more than two points for that day. Nothing
+  about the zero-hop rule would change; what would change is what the drawing is allowed to claim.
+status: accepted
+date: "2026-09-06"

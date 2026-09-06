@@ -294,6 +294,13 @@ const undrawn = Object.entries(UNDRAWN)
           was stated. Set <em>Placement</em> to <em>stated positions only</em> and the map loses
           most of itself; that difference is the size of the claim being made on your behalf.
         </p>
+        <p>
+          Two storms are drawn as lines rather than marks. A federal file gives each a beginning
+          and an end, surveyed, in the order the storm passed them — and nothing at all about the
+          ground between. So the endpoints are drawn solid and the line joining them is broken,
+          and nothing travels along it: where the tornado was at any moment between those two
+          positions is not on the record, and a mark sliding along the connector would say it was.
+        </p>
       </div>
       <div>
         <h3>An empty year is a silence, not a fault</h3>
@@ -1026,6 +1033,17 @@ const undrawn = Object.entries(UNDRAWN)
     }
     .panel :global([data-hops='0']) {
       color: var(--text-muted);
+    }
+    /* A selected track reads out as the positions the source recorded, in its order. The same
+       two labels and the same two inks as `EventTrack.astro` uses on the entry page for these
+       two storms — a reader who has met one figure should not have to learn the other. */
+    .panel :global(.positions .role) {
+      font: var(--type-eyebrow);
+      color: var(--text-muted);
+    }
+    .panel :global(.positions .at) {
+      font: var(--type-data);
+      color: var(--text-body);
     }
 
     /* ---- the prose ---- */

@@ -523,11 +523,72 @@ fn every_atlas_anchor_resolves_to_a_published_node() {
                 a.node
             );
             assert!(
-                a.lat.is_some() || a.geoid.is_some(),
-                "{}: anchor {} carries neither a point nor a key",
+                a.lat.is_some() || a.geoid.is_some() || a.points.len() >= 2,
+                "{}: anchor {} carries neither a point, a key, nor a track",
+                r.node,
+                a.node
+            );
+            // An anchor is one of the three and never two. A track carrying a lat as well
+            // would be a midpoint nobody stated, which is the invented centroid
+            // `a-derived-placement-is-a-claim` refuses in the multiple-anchor case.
+            assert!(
+                a.points.is_empty() || (a.lat.is_none() && a.geoid.is_none()),
+                "{}: anchor {} is a track and something else",
+                r.node,
+                a.node
+            );
+            assert_ne!(
+                a.points.len(),
+                1,
+                "{}: anchor {} carries half a track",
                 r.node,
                 a.node
             );
         }
+    }
+}
+
+#[test]
+fn a_track_reaches_the_feed_in_the_order_the_source_recorded_it() {
+    // The two storms, end to end: the corpus states four coordinates and this is the boundary
+    // they cross to reach the map. Checked as *the same positions the corpus holds, in the same
+    // order*, because a reversed track is a storm running the wrong way and nothing downstream
+    // could tell.
+    let nodes = nodes();
+    let atlas = publish::feed::atlas(&nodes, CEILING);
+    let tracks: Vec<_> = atlas.iter().filter(|r| r.treatment == "track").collect();
+    assert!(
+        !tracks.is_empty(),
+        "no record reaches the feed as a track; the treatment is unpublished"
+    );
+    for r in &tracks {
+        assert_eq!(
+            r.hops,
+            Some(0),
+            "{}: a stated track places at zero hops",
+            r.node
+        );
+        assert_eq!(r.anchors.len(), 1, "{}", r.node);
+        let a = &r.anchors[0];
+        assert_eq!(
+            a.node, r.node,
+            "{}: a stated track anchors on itself",
+            r.node
+        );
+        assert!(a.via.is_empty(), "{}: zero hops and a route", r.node);
+
+        let stated = nodes
+            .iter()
+            .find(|n| n.id == r.node)
+            .and_then(|n| n.property("track"))
+            .unwrap_or_else(|| panic!("{}: published as a track and states none", r.node));
+        let want: Vec<(f64, f64)> = match placement::parse_track(stated) {
+            Some(placement::Anchor::Track { points }) => {
+                points.iter().map(|p| (p.lat, p.lon)).collect()
+            }
+            other => panic!("{}: {stated:?} parses as {other:?}", r.node),
+        };
+        let got: Vec<(f64, f64)> = a.points.iter().map(|p| (p.lat, p.lon)).collect();
+        assert_eq!(got, want, "{}", r.node);
     }
 }
