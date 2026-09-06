@@ -101,7 +101,7 @@ Sorted by: kind, then alphabetically.
 | [village-of-bluffton.yml](jurisdiction/village-of-bluffton.yml) | jurisdiction | Village of Bluffton | 2 | 5v / 1i / 0o | 48 |
 | [village-of-cairo.yml](jurisdiction/village-of-cairo.yml) | jurisdiction | Village of Cairo | 2 | 7v / 1i / 1o | 50 |
 | [village-of-elida.yml](jurisdiction/village-of-elida.yml) | jurisdiction | Village of Elida | 2 | 6v / 1i / 2o | 46 |
-| [village-of-fort-shawnee.yml](jurisdiction/village-of-fort-shawnee.yml) | jurisdiction | Village of Fort Shawnee | 2 | 9v / 3i / 1o | 84 |
+| [village-of-fort-shawnee.yml](jurisdiction/village-of-fort-shawnee.yml) | jurisdiction | Village of Fort Shawnee | 2 | 10v / 3i / 1o | 94 |
 | [village-of-harrod.yml](jurisdiction/village-of-harrod.yml) | jurisdiction | Village of Harrod | 2 | 5v / 1i / 2o | 53 |
 | [village-of-lafayette.yml](jurisdiction/village-of-lafayette.yml) | jurisdiction | Village of Lafayette | 2 | 6v / 0i / 1o | 45 |
 | [village-of-spencerville.yml](jurisdiction/village-of-spencerville.yml) | jurisdiction | Village of Spencerville | 2 | 6v / 0i / 2o | 52 |
@@ -111,6 +111,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
 | [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 13 | 14v / 7i / 2o | 210 |
+| [allen-county-annexed-area-1960-1970.yml](measure/allen-county-annexed-area-1960-1970.yml) | measure | Population of ground annexed in Allen County, 1960–1970 | 8 | 6v / 3i / 2o | 105 |
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
@@ -312,6 +313,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
 | [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
+| [allen-county-subdivisions-1960-1970.yml](measure/allen-county-subdivisions-1960-1970.yml) | measure | Allen County subdivisions, 1960 and 1970 | 5 | 7v / 2i / 1o | 115 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
 | [allen-county-temperature-1895-2025.yml](measure/allen-county-temperature-1895-2025.yml) | measure | Allen County temperature, 1895–2025 | 2 | 14v / 5i / 1o | 106 |
@@ -360,9 +362,9 @@ Sorted by: kind, then alphabetically.
 | [lima-mayors-1842-1886.yml](measure/lima-mayors-1842-1886.yml) | measure | The mayors of Lima, 1842-1886 | 2 | 8v / 9i / 2o | 136 |
 | [lima-mayors-1886-1922.yml](measure/lima-mayors-1886-1922.yml) | measure | The mayors of Lima, 1886–1922 | 2 | 7v / 3i / 2o | 84 |
 | [lima-mayors-1939-1956.yml](measure/lima-mayors-1939-1956.yml) | measure | Mayors of Lima named inside the gap, 1939–1956 | 2 | 8v / 2i / 1o | 91 |
-| [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 5v / 1i / 1o | 78 |
+| [lima-population-1850-1960.yml](measure/lima-population-1850-1960.yml) | measure | Lima population, 1850–1960 | 3 | 6v / 2i / 1o | 93 |
 | [lima-population-1880-1920.yml](measure/lima-population-1880-1920.yml) | measure | Lima population, 1880–1920 | 3 | 7v / 3i / 0o | 77 |
-| [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 3 | 5v / 5i / 2o | 93 |
+| [lima-population-1970-1990.yml](measure/lima-population-1970-1990.yml) | measure | Lima population, 1970–1990 | 5 | 7v / 6i / 1o | 128 |
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 5v / 3i / 0o | 53 |
 | [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 4 | 3v / 1i / 0o | 46 |
 | [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 4 | 2v / 1i / 0o | 45 |
