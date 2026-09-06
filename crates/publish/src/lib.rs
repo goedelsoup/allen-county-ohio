@@ -88,6 +88,7 @@ pub fn build(
     let (graph, mut counts) = feed::graph(nodes, CEILING);
     let series = feed::series(nodes, CEILING);
     let comparability = feed::comparability(nodes, CEILING);
+    let tables = feed::tables(nodes, CEILING);
     let points = feed::map(nodes, CEILING);
     let atlas = feed::atlas(nodes, CEILING);
     let (assertions, defects) = derived::resolve(derived::ASSERTIONS, nodes, CEILING);
@@ -114,6 +115,7 @@ pub fn build(
                     series,
                     comparability,
                     assertions,
+                    tables,
                 },
             )?,
             file(

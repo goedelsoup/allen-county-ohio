@@ -1,0 +1,18 @@
+# The compiler this workspace is built and linted with.
+#
+# **This file is the pin, and it exists because the two gates disagreed.** `mise run ci` ran
+# clippy 0.1.88 and `.github/workflows/ci.yml` ran whatever `stable` was that morning — ten
+# releases apart — and the divergence failed in the one direction a gate must never fail in: the
+# local gate passed work that CI rejected. See `.yidam/decisions/one-compiler-or-two-gates.yml`.
+#
+# rustup honours this file for every cargo invocation under `crates/`, so it decides the compiler
+# in CI, in a bare clone, and for anyone who has never run mise. mise sets `RUSTUP_TOOLCHAIN`,
+# which takes precedence locally — so `mise.toml` names the same version and
+# `publish/tests/gate.rs` fails the build if the two ever stop agreeing.
+#
+# `components` is declared here rather than only in the workflow because rustup installs the
+# toolchain from this file on first use, and a 1.98.1 without clippy would fail the gate step
+# rather than the install.
+[toolchain]
+channel = "1.98.1"
+components = ["rustfmt", "clippy"]

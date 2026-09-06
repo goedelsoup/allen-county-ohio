@@ -1,0 +1,110 @@
+id: one-compiler-or-two-gates
+summary: >-
+  `mise run ci` ran clippy 0.1.88 and the workflow ran whatever `stable` was that morning —
+  1.98.1, ten releases apart — so the local gate passed work CI rejected, which is the one
+  direction a gate must never fail in. The whole workspace turns out to be clean at 1.98.1, so
+  both gates are pinned there rather than one being held back or the other set floating.
+  `crates/rust-toolchain.toml` is the pin CI and a bare clone read, `mise.toml` is the one that
+  wins locally, and `publish/tests/gate.rs` fails the build when the two stop agreeing.
+context: |
+  Two files configured the same gate and neither knew about the other:
+
+      mise.toml                     rust = { version = "1.88.0", components = "rustfmt,clippy" }
+      .github/workflows/ci.yml      uses: dtolnay/rust-toolchain@stable
+
+  Locally that was `clippy 0.1.88 (6b00bc3880 2025-06-23)`. Stable on the day this was written
+  was `1.98.1 (48a229cea 2026-09-01)`. **Ten releases of lints the local gate structurally could
+  not see**, and the divergence surfaced the way these always do: a pull request went red on a
+  lint that no amount of running the gate locally could produce.
+
+  A second, smaller drift sat in the same pair of files. The `cargo fmt` member lists differed —
+  `chronology` and `placement` were format-checked locally and not in CI, because both crates
+  were added to the workspace and to `mise.toml` and the workflow's list was never touched. That
+  one failed green in the other direction, with CI the looser gate.
+
+  Both are the same shape: **a fact written in two files, with a comment asking a reader to keep
+  them in step.** This repository has said what it thinks of that arrangement three times — the
+  lint baseline, the publication gate's `answers` list, `design/departures.md` — and every time
+  the answer was a check that fails in both directions rather than a note asking for care.
+
+  `cargo doc` was checked and is *not* divergent: the workflow sets `RUSTDOCFLAGS: -D warnings`
+  and so does the task. Recorded because a report that over-claims is a report nobody re-reads.
+decision: |
+  **One compiler, pinned to an explicit version, named in two files that a test holds equal.**
+
+  The choice was real and the measurement settled it. Before deciding, the whole Rust gate was
+  run at 1.98.1 — the exact compiler CI had been using:
+
+      cargo clippy --workspace --all-targets -- -D warnings     0 findings
+      cargo fmt, all eight members                              clean
+      cargo test --workspace                                    231 passed
+      RUSTDOCFLAGS="-D warnings" cargo doc                      clean
+
+  **There was no lint debt to pay.** So the local gate moves up to CI's compiler rather than CI
+  being held back to a version from June 2025, and the repository gets ten releases of lints it
+  had been unable to see, at no cost.
+
+  - `crates/rust-toolchain.toml` pins `1.98.1` and declares `rustfmt` and `clippy`. rustup honours
+    it for every cargo invocation under `crates/`, so it decides the compiler in CI, in a bare
+    clone, and for anyone who has never run mise. Components are declared there because rustup
+    installs the toolchain from that file on first use, and a pin without clippy fails at the
+    gate step rather than at the install.
+  - `mise.toml` names the same version. mise exports `RUSTUP_TOOLCHAIN`, which takes precedence
+    over the pin file, so locally it is the one that decides — which is exactly how the two came
+    to disagree, and why it cannot simply be deleted.
+  - `crates/publish/tests/gate.rs` fails the build when the version in one stops matching the
+    channel in the other; when either format-check list stops matching the workspace's own
+    members; when `-D warnings` goes missing from either clippy or either doc step; or when the
+    pin becomes a channel name instead of a version.
+  - The workflow prints `cargo --version && cargo clippy --version` before it lints, so a green
+    run names its own compiler in the log rather than leaving it to be inferred from a pin file
+    nobody opens on a passing build.
+
+  **The `@stable` line in the workflow stays.** It provisions rustup and no longer decides
+  anything, and the comment beside it says so. The other `dtolnay/rust-toolchain@stable` in the
+  file — the fallback that compiles the yidam CLI when no prebuilt binary is available — is
+  deliberately left floating: it builds an upstream tool with its own MSRV, and pinning it to
+  this repository's compiler would be this repository deciding what yidam may require.
+rationale: |
+  **Why pinned rather than floating.**
+
+  `stable` on both sides would also have made the gates agree, and it was the cheaper change. It
+  buys agreement by giving up reproducibility: a green build becomes a function of the day it
+  ran. That is precisely the property `design/pin.toml` exists to deny for the design system and
+  `.yidam.toml` for the prelude, and a repository that pins its design tokens by sha256 and then
+  floats its compiler is not applying a principle, it is applying it where it is convenient.
+
+  The known cost of pinning is that a pin ages, and the local gate is the one people run, so
+  nobody notices. That cost is real and it is now visible rather than silent: the version is in
+  two named files that a test holds equal, the workflow prints the compiler on every run, and
+  `MSRV` in `crates/Cargo.toml` stays at 1.85 and is a separate promise about what the crates
+  require, not about what builds them.
+
+  **Why the test reads the files rather than the environment.**
+
+  A test that asked the running compiler its version would pass in CI and locally and prove
+  nothing about their agreement — each would confirm it was itself. The drift is a fact about two
+  files, so the check is a fact about two files, and it fails in a clone that has never installed
+  either toolchain.
+
+  **Why `gate.rs` lives in `publish`.**
+
+  It is not a fact about publishing. It is there because `publish` already reads the repository
+  around it — its corpus test derives the feeds from `.yidam/corpus/` and compares them to what is
+  committed — so a test reading `mise.toml` from the same crate is in keeping. The web suite was
+  the alternative and was rejected: `detect` treats the web layer as optional, and the Rust gate's
+  parity should not stop being checked the day `web/` does not exist.
+
+  **What is not settled.**
+
+  *Nothing bumps the pin.* Both files must be edited together by hand, and the test only says they
+  agree — not that they agree on something recent. A repository that pins a compiler acquires the
+  job of moving it, and this record does not create a mechanism for that; the honest version is
+  that the next red CI run on a new lint is the reminder, which is what happened this time.
+
+  *The parity check reads the workflow as text.* It looks for substrings in YAML rather than
+  parsing it, so a step restructured into a matrix or a composite action would slip past it while
+  still running the same commands. The check would then fail loudly on the missing substring
+  rather than pass silently, which is the right way round, but it will need rewriting on that day.
+status: accepted
+date: "2026-09-06"

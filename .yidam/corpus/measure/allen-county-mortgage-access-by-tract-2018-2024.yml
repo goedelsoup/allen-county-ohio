@@ -9,24 +9,16 @@ description: |
   prices of [the price node](allen-county-mortgage-prices-2018-2024.yml). Denial runs from 9.5 to
   52.0 per cent across those tracts and the higher-priced share from 4.8 to 42.5.
 
+  **All thirty-five tracts are in the `table` property, and the correlation is computed from
+  them rather than illustrated by a few.** It used to print six rows, an ellipsis and four more,
+  which is enough to show the shape and not enough to check the coefficient or to draw either
+  map. [verified] — the same source, row by row.
+
   **Lending is not spread over this county's houses at anything like an even rate.** The sixteen
   tracts that are majority Lima hold 14,913 one-to-four-family houses and took 2,958 first-lien
   loans in seven years — 19.8 per 100 houses. The other nineteen tracts hold 26,595 houses and took
   11,738 — 44.1 per 100. [verified] — the same source, and its own
   `tract_one_to_four_family_homes` column.
-
-      tract       houses   loans   per 100   priced high   median loan
-      13700          522      28       5.4         46.4%       $35,000
-      13800        1,480      89       6.0         28.9         55,000
-      12700          691      42       6.1         42.5         45,000
-      13400          883      54       6.1         23.5         45,000
-      14100          561      34       6.1         21.2         55,000
-      13600          547      35       6.4         41.2         35,000
-      ...
-      12100        1,323     783      59.2          6.7        155,000
-      11301        2,128   1,246      58.6          8.1        135,000
-      12000          998     739      74.0          4.8        175,000
-      10801        1,894   1,577      83.3          6.0        155,000
 
   **In figures: tract 39003013700 holds 522 houses and took 28 mortgages in seven years — one loan
   for every nineteen houses — and 46.4 per cent of them were higher-priced.** At the other end of
@@ -60,6 +52,43 @@ description: |
   a window and the survey counts owners with a mortgage; neither is the other, and the corpus has
   not put them beside each other.
 properties:
+  table: |
+    tract        houses  loans  per_100  decisions  denial_pct  priced  higher_priced_pct  median_loan
+    39003010100    1688    652     38.6        877         9.5     536                5.0       145000
+    39003010200    1598    526     32.9        814        17.1     477                6.9       135000
+    39003010300     624    289     46.3        458        15.9     271                4.8       125000
+    39003010600    2023    827     40.9       1414        20.2     804                9.5       125000
+    39003010801    1894   1577     83.3       2318        15.1    1535                6.0       155000
+    39003010802    1357    201     14.8        369        17.9     197                5.1       205000
+    39003010900    1833    751     41.0       1240        18.4     728                6.9       135000
+    39003011000    1955    601     30.7       1013        15.2     572               10.1       115000
+    39003011200     731    149     20.4        267        23.2     140                7.9       115000
+    39003011301    2128   1246     58.6       1955        16.7    1184                8.1       135000
+    39003011302     955    141     14.8        298        19.5     132                7.6       165000
+    39003011400    1150    560     48.7        901        17.6     494                7.9       145000
+    39003011500    1027    426     41.5        718        21.2     393                9.7       125000
+    39003011600    1024    336     32.8        656        24.2     316                7.0       135000
+    39003011800     896    503     56.1        758        16.4     492                6.1       145000
+    39003011900    1367    548     40.1        922        22.1     529                8.3       125000
+    39003012000     998    739     74.0       1046        12.2     708                4.8       175000
+    39003012100    1323    783     59.2       1157        13.5     750                6.7       155000
+    39003012200    1161    383     33.0        627        20.9     374               10.4        95000
+    39003012300    1962    452     23.0        820        24.3     433               16.4        75000
+    39003012400     896    144     16.1        312        27.9     138               23.2        65000
+    39003012600     717    128     17.9        264        23.9     121               16.5        65000
+    39003012700     691     42      6.1        136        36.0      40               42.5        45000
+    39003012900     717     99     13.8        209        21.5      99               24.2        65000
+    39003013000    1880    499     26.5        965        27.6     481               11.4        85000
+    39003013100    1007    497     49.4        757        15.7     485               10.7       105000
+    39003013200     695    258     37.1        448        20.3     254               10.2        95000
+    39003013300     463     67     14.5        141        27.0      65               13.8        85000
+    39003013400     883     54      6.1        142        37.3      51               23.5        45000
+    39003013600     547     35      6.4        111        45.9      34               41.2        35000
+    39003013700     522     28      5.4         71        31.0      28               46.4        35000
+    39003013800    1480     89      6.0        269        52.0      83               28.9        55000
+    39003013900    1434    481     33.5        786        18.7     470                5.5       115000
+    39003014000    1321    551     41.7        851        14.5     543                7.9       125000
+    39003014100     561     34      6.1        124        41.1      33               21.2        55000
   parameter: first-lien home loans per 100 one-to-four-family houses, Lima tracts against the rest
   value: "19.8"
   unit: loans per 100 houses over 2018-2024, against 44.1 outside the city's tracts
@@ -71,7 +100,18 @@ properties:
     from one file. [verified] The tract identifiers change vintage in 2022; the two tracts that
     split are carried on their first successor so that seven years land in one row. [verified] The
     correlation is over the 34 tracts with at least thirty decisions and thirty priced
-    originations. [verified]
+    originations — every tract but 39003013700, which has 71 decisions and 28 priced
+    originations and is in the table with the rest. [verified]
+
+    The table's columns come from two different books and the difference matters. `decisions` and
+    `denial_pct` are every application acted on, actions 1, 2 and 3, with no restriction on
+    product — the same reckoning [the lending node](allen-county-home-lending-2018-2024.yml) uses.
+    `loans`, `priced`, `higher_priced_pct` and `median_loan` are the comparable book
+    [the price node](allen-county-mortgage-prices-2018-2024.yml) defines: first liens originated
+    on site-built principal residences, 14,703 of them, of which 13,991 report a rate spread and
+    a loan is higher-priced above 1.5. [verified] A tract's `priced` is therefore smaller than its
+    `loans`, and both are smaller than its `decisions`; reading one column against another from a
+    different book is the error this note exists to prevent.
 links:
   - target: ../place/lima.yml
     relationship: describes
