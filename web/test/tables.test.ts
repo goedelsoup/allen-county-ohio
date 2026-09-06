@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { column, node, nodes, tableFor, tables } from '../src/lib/feeds'
+import { column, edges, node, nodes, tableFor, tables } from '../src/lib/feeds'
 
 // A measure's declared rows, and the one thing worth gating about them.
 //
@@ -166,16 +166,22 @@ describe('the join to the ground', () => {
   })
 })
 
+/** The acts table a jurisdiction's entry draws, found the way `JurisdictionBlock` finds it. */
+function actsFor(id: string) {
+  return edges
+    .filter((e) => e.to === id && e.relationship === 'describes')
+    .map((e) => tableFor(e.from))
+    .find((tb) => tb && tb.columns[0] !== 'place_fips')
+}
+
 describe('the boundary a jurisdiction entry draws', () => {
   // `JurisdictionBlock` joins a municipal corporation to its line in this table on the seven-digit
   // place code, and renders the acts themselves where a second measure holds them. Both halves are
   // gated here, because the failure mode is silence: a municipality whose code stops matching
   // simply loses the section, and nothing else on the page would say so.
   const RECORD = 'measure/allen-county-annexations-1990-2024.yml'
-  const LIMA = 'measure/lima-annexations-1990-2017.yml'
 
   const perPlace = tableFor(RECORD)
-  const acts = tableFor(LIMA)
   const municipal = nodes.filter(
     (n) => n.class === 'jurisdiction' && n.properties.jurisdiction_type === 'municipal corporation',
   )
@@ -209,16 +215,43 @@ describe('the boundary a jurisdiction entry draws', () => {
     expect(String(total)).toBe(node(RECORD)?.properties.value)
   })
 
-  it('agrees with the acts, which are a second node', () => {
-    // The two grains, cross-checked. Lima's line says eleven records and 622.0 acres; the acts
-    // table is eleven rows whose stated acreages sum to the same figure, one of them absent.
+  it('agrees with the acts, which are a node each', () => {
+    // The two grains, cross-checked for every municipality that has both. A summary line says how
+    // many acts and how many acres; the acts table has to be that many rows summing to that many
+    // acres, and the two are different nodes read from the same files years apart. This is the
+    // check that caught nothing and would have caught a mis-keyed row in any of the fifty-five.
     const records = column(perPlace, 'records')
     const acres = column(perPlace, 'acres')
-    const lima = municipal.find((n) => n.label.includes('Lima'))?.properties.fips_code as string
-    expect(acts?.rows).toHaveLength(records.get(lima) as number)
-    const stated = column(acts, 'acres')
-    expect(stated.size, 'one act carries no acreage').toBe((acts?.rows.length ?? 0) - 1)
-    expect([...stated.values()].reduce((a, b) => a + b, 0)).toBeCloseTo(acres.get(lima) as number, 5)
+    let covered = 0
+    for (const gov of municipal) {
+      const table = actsFor(gov.id)
+      const code = gov.properties.fips_code
+      if (!table) {
+        // Only a place with nothing to itemise may be missing one: a single act is its own
+        // summary line, and none of the four that reported nothing has anything to hold.
+        expect(records.get(code) ?? 0, `${gov.label} has acts and no table`).toBeLessThanOrEqual(1)
+        continue
+      }
+      covered += 1
+      expect(table.rows, gov.label).toHaveLength(records.get(code) as number)
+      const stated = column(table, 'acres')
+      expect([...stated.values()].reduce((a, b) => a + b, 0), gov.label).toBeCloseTo(
+        acres.get(code) as number,
+        5,
+      )
+    }
+    expect(covered, 'municipalities itemised act by act').toBe(5)
+  })
+
+  it('itemises fifty-five of the fifty-seven, and says which two it does not', () => {
+    // Cairo and Harrod reported one act each, which their summary line states in full. The other
+    // fifty-five are rows in five tables, and this is the arithmetic that says none went missing
+    // between the county's count and the nodes that itemise it.
+    const itemised = municipal.reduce((n, gov) => n + (actsFor(gov.id)?.rows.length ?? 0), 0)
+    const single = municipal.filter((gov) => !actsFor(gov.id) && column(perPlace, 'records').get(gov.properties.fips_code) === 1)
+    expect(itemised).toBe(55)
+    expect(single.map((g) => g.label).toSorted()).toEqual(['Village of Cairo', 'Village of Harrod'])
+    expect(itemised + single.length).toBe(Number(node(RECORD)?.properties.value))
   })
 
   it('counts the corporations that reported nothing, and says so in its prose', () => {

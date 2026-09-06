@@ -61,12 +61,18 @@ const acts = described.find((d) => d !== perPlace)
   summary && (
     <section class="boundary">
       <h2 class="section">Boundary, as annexation moved it</h2>
-      {records > 0 ? (
+      {records === 1 ? (
         <p class="gloss-note">
-          {records}{' '}{records === 1 ? 'boundary change' : 'boundary changes'} reported between{' '}
-          {cell('first')} and {cell('last')}, totalling {cell('acres')} acres — as filed by this
-          government, in <a href={entryPath(perPlace!.measure)}>the county's annexation record</a>.
-          Five of the county's fifty-seven records state no acreage, so a total is a floor.
+          One boundary change reported in thirty-five years of the survey, on {cell('first')}, of{' '}
+          {cell('acres')} acres — as filed by this government, in{' '}
+          <a href={entryPath(perPlace!.measure)}>the county's annexation record</a>.
+        </p>
+      ) : records > 0 ? (
+        <p class="gloss-note">
+          {records} boundary changes reported between {cell('first')} and {cell('last')}, totalling{' '}
+          {cell('acres')} acres — as filed by this government, in{' '}
+          <a href={entryPath(perPlace!.measure)}>the county's annexation record</a>. Five of the
+          county's fifty-seven records state no acreage, so a total is a floor.
         </p>
       ) : (
         <p class="gloss-note">
