@@ -54,14 +54,16 @@ Sorted by: kind, then alphabetically.
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 6v / 4i / 1o | 66 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 5 | 6v / 4i / 1o | 76 |
+| [the-flash-flood-at-bluffton-1959.yml](event/the-flash-flood-at-bluffton-1959.yml) | event | The flash flood at Bluffton, 21 January 1959 | 5 | 9v / 0i / 1o | 79 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 4 | 6v / 2i / 1o | 61 |
 | [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
 | [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 4 | 6v / 2i / 1o | 65 |
 | [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
-| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 8v / 3i / 1o | 64 |
+| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 9v / 3i / 1o | 79 |
+| [the-storm-at-beaverdam-1950.yml](event/the-storm-at-beaverdam-1950.yml) | event | The storm at Beaverdam and Orange Township, 19 July 1950 | 5 | 7v / 1i / 1o | 79 |
 | [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 4v / 3i / 1o | 60 |
-| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 3v / 3i / 1o | 47 |
+| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 7v / 3i / 1o | 74 |
 | [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 6v / 4i / 1o | 55 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States expands the tank plant, June 1951 | 3 | 7v / 3i / 3o | 79 |
 | [the-windstorm-of-22-june-2006.yml](event/the-windstorm-of-22-june-2006.yml) | event | The windstorm of 22 June 2006 | 3 | 7v / 3i / 1o | 62 |
@@ -316,7 +318,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-shortage-designations-1985-2026.yml](measure/allen-county-shortage-designations-1985-2026.yml) | measure | Allen County's health professional shortage designations, 1985–2026 | 6 | 13v / 3i / 1o | 116 |
 | [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 6 | 8v / 3i / 0o | 102 |
 | [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
-| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 9v / 3i / 1o | 85 |
+| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 11v / 3i / 1o | 95 |
 | [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
