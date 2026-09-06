@@ -430,17 +430,26 @@ jobs:
         working-directory: crates
     steps:
       - uses: actions/checkout@v4
+      # `@stable` provisions rustup; it does **not** decide what compiles this workspace.
+      # `crates/rust-toolchain.toml` does, and rustup honours it for every cargo command below.
+      # That file and mise.toml name the same version, and `publish/tests/gate.rs` fails the
+      # build when they stop — which is the check this job did not have when it and the local
+      # gate ran compilers ten releases apart.
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: crates
+      # Say which compiler answered, so a green run names its own compiler in the log rather
+      # than leaving it to be inferred from a pin file nobody reads on a passing build.
+      - run: cargo --version && cargo clippy --version
       # `-p` per member, not `--all`: `--all` also formats workspace members' local
       # path dependencies, and crates/proximity has one under .yidam/.vendor/, which
       # is read-only and is not rustfmt-clean at every pin. mise.toml's `fmt` and `ci`
-      # tasks carry the same list and the same reasoning at length.
-      - run: cargo fmt -p covering -p ground -p provenance -p proximity -p publish -p succession -- --check
+      # tasks carry the same list and the same reasoning at length, and `gate.rs` checks
+      # that this list, that one, and the workspace's own members are the same eight names.
+      - run: cargo fmt -p chronology -p covering -p ground -p provenance -p placement -p proximity -p publish -p succession -- --check
       - run: cargo clippy --all-targets -- -D warnings
       - run: cargo test --workspace
       # Doc links from a calculator to the corpus node that says what it is for

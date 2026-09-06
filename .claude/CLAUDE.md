@@ -39,6 +39,12 @@ mise run regen           # refresh REGEN blocks, then commit the result as `rege
 mise run ci              # graph-check, graph-lint, regen --check — the whole gate
 ```
 
-`mise run ci` is what CI runs, and the two are held together by a test upstream. Run it
-rather than its parts: `graph-check` reads the graph and says nothing about a stale REGEN
-block, which is a failing build all the same.
+`mise run ci` is what CI runs, and the two are held together by `crates/publish/tests/gate.rs`
+— which checks the compiler, the format-check member list and the cargo flags, because the two
+once agreed on every step and ran clippy ten releases apart. Run it rather than its parts:
+`graph-check` reads the graph and says nothing about a stale REGEN block, which is a failing
+build all the same.
+
+The Rust version is pinned in **two** files that must agree: `crates/rust-toolchain.toml` is what
+CI and a bare clone read, and `mise.toml` is what wins locally. Bump both together; `gate.rs`
+fails the build if you don't.
