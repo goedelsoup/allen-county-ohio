@@ -36,7 +36,12 @@ _.path = [".yidam/bin"]
 "github:goedelsoup/yidam" = { version = "0.8.0", version_prefix = "cli/v" }
 # <!-- /YIDAM:TOOLS -->
 # Rust — the domain computer in crates/.
-rust = { version = "1.88.0", components = "rustfmt,clippy" }
+#
+# Kept equal to `crates/rust-toolchain.toml`, which is the pin CI and a bare clone read. mise
+# exports RUSTUP_TOOLCHAIN and so wins over that file locally, which is exactly how the two gates
+# came to run compilers ten releases apart — so `publish/tests/gate.rs` fails the build when this
+# version and that channel stop matching. Bump both together.
+rust = { version = "1.98.1", components = "rustfmt,clippy" }
 # Rust is the only toolchain carried at genesis. crates/ and packages/ hold no
 # code yet, so every other toolchain here would be time on every CI run buying
 # nothing.

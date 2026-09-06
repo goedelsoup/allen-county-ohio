@@ -62,6 +62,12 @@ Run the composite rather than its parts. Each catches something the others do no
 generated content and is blind to a broken edge — and the set is held to CI's by a test
 upstream, so it stays right when a gate is added.
 
+That test holds the *list*. It cannot see the compiler underneath it, and for a while the two
+gates ran clippy ten releases apart — the local one passing work CI rejected.
+`crates/publish/tests/gate.rs` holds that half: the Rust version is pinned in
+`crates/rust-toolchain.toml` (what CI and a bare clone read) and in `mise.toml` (what wins
+locally), and the build fails when the two stop agreeing. Bump them together.
+
 `yidam lint` gates against `.yidam/lint-baseline.yml`, not against zero. It asks whether
 *this change* made the corpus less clean, because a gate that fails on inherited debt gets
 switched off and stays off. Two things fail it: an error-severity violation that is not in
