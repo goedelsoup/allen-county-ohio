@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
+import { body as markup } from './astro'
 
 const PAGES = join(import.meta.dirname, '../src/pages')
 const COMPONENTS = join(import.meta.dirname, '../src/components')
@@ -43,10 +44,9 @@ const BANNED: [RegExp, string][] = [
 const EXEMPT = new Set(['sources.astro'])
 
 function mainLine(source: string): string[] {
-  const parts = source.split('---')
-  let body = parts.length > 2 ? parts.slice(2).join('---') : source
-  body = body.replace(/<style>[\s\S]*?<\/style>/g, '')
-  body = body.replace(/<Gloss[\s\S]*?<\/Gloss>/g, '')
+  const body = markup(source)
+    .replace(/<style>[\s\S]*?<\/style>/g, '')
+    .replace(/<Gloss[\s\S]*?<\/Gloss>/g, '')
   return [...body.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)]
     .map((m) => m[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim())
     .filter(Boolean)
@@ -163,9 +163,7 @@ describe('an article heads its movements at the rank the layout styles', () => {
    * check. What it forbids is inheriting a rank from wherever the paragraphs used to live.
    */
   it.each(articles)('$file heads its movements at h2', ({ source }) => {
-    const parts = source.split('---')
-    const body = parts.length > 2 ? parts.slice(2).join('---') : source
-    const ranks = [...body.matchAll(/<h([1-6])[\s>]/g)].map((m) => m[1])
+    const ranks = [...markup(source).matchAll(/<h([1-6])[\s>]/g)].map((m) => m[1])
     expect([...new Set(ranks)].toSorted()).toEqual(ranks.length > 0 ? ['2'] : [])
   })
 })
@@ -186,7 +184,7 @@ describe('a claim tag is carried in words', () => {
    */
   it('renders the tier as text on every path through the badge', () => {
     const badge = readFileSync(join(COMPONENTS, 'entry/Badge.astro'), 'utf8')
-    const body = badge.split('---').slice(2).join('---').replace(/<style>[\s\S]*<\/style>/, '')
+    const body = markup(badge).replace(/<style>[\s\S]*<\/style>/, '')
 
     // The word is unconditional: `{label ?? badge.label}`, never inside a `&&` or a ternary
     // that can render nothing.
@@ -300,6 +298,39 @@ describe('text colour goes through a role, never into the ramp', () => {
     const raw = source
       .split('\n')
       .filter((line) => RAMP.test(line))
+      .map((line) => line.trim())
+    expect(raw).toEqual([])
+  })
+})
+
+describe('an era ink is a mark, and never carries a word', () => {
+  /**
+   * The six era inks are the travelling map's hue encoding, and they are composed as marks. On
+   * the four daylight grounds `--era-1820` reaches 3.78:1 and `--era-1900` reaches 3.98:1; at
+   * night all six sit near 3.7 on `--surface-raised`. That clears the 3:1 bar for a graphical
+   * object and misses the 4.5:1 bar for text, so `contrast.test.ts` holds them to the first —
+   * which is only defensible while nothing sets a word in one.
+   *
+   * The rule already governs the tier badges for the same reason, and it was nearly broken here
+   * the first time: the map's era readout set the era's name in the era's own ink, which is the
+   * most natural thing to write and is unreadable in two of six eras.
+   *
+   * `--era-current` is the alias the map's script writes the selected era's ink into, so it is
+   * banned by the same pattern.
+   */
+  const ERA_INK = /(^|[\s:])color:\s*var\(--era-/
+
+  const styled = [
+    ...walk(COMPONENTS, '.astro'),
+    ...walk(join(COMPONENTS, '../layouts'), '.astro'),
+    ...walk(PAGES, '.astro'),
+    ...walk(join(COMPONENTS, '../styles'), '.css'),
+  ]
+
+  it.each(styled)('$file sets no text in an era ink', ({ source }) => {
+    const raw = source
+      .split('\n')
+      .filter((line) => ERA_INK.test(line))
       .map((line) => line.trim())
     expect(raw).toEqual([])
   })

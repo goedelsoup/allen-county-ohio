@@ -24,18 +24,35 @@ export interface Section {
 }
 
 /**
+ * The way in.
+ *
+ * Not a tab. `/` is the map, and the map is reached from the wordmark — a masthead is where a
+ * reader looks for the front door, and a front door listed among five destinations is one of
+ * six things rather than the way in.
+ *
+ * It is kept out of `SECTIONS` deliberately and not as a technicality. The reading pages answer
+ * *what does it mean*; the map answers *what is here and when*. Putting the map in the reading
+ * row would restage the competition
+ * [`a-page-is-an-argument-not-an-inbox`](../../.yidam/decisions/a-page-is-an-argument-not-an-inbox.yml)
+ * diagnosed and this arrangement is careful not to repeat.
+ */
+export const MAP: Section = {
+  href: '/',
+  label: 'The map',
+  question: 'What is here, and when was it?',
+}
+
+/**
  * The reading pages, in the order the nav shows them.
  *
- * Six is the cap, and `nav.test.ts` enforces it. The number is not sacred; what it protects
+ * Six is the cap, and `shape.test.ts` enforces it. The number is not sacred; what it protects
  * is: a tab list that grew to thirteen did so one reasonable addition at a time, and nothing
  * in the codebase was in a position to object.
+ *
+ * Five now. The county's own page was the sixth, and its furniture moved onto the map rather
+ * than into a seventh place — the cap is relieved by one rather than breached.
  */
 export const SECTIONS: Section[] = [
-  {
-    href: '/',
-    label: 'The county',
-    question: 'What is this place, and what does this site claim to know about it?',
-  },
   {
     href: '/ground',
     label: 'Ground',
@@ -67,14 +84,53 @@ export const SECTIONS: Section[] = [
  * The instruments.
  *
  * A reader reaches for these; they do not read them front to back. Keeping them out of the
- * reading row is the cut this site most needed — for thirteen phases the map competed with
- * the history page for the same eye, and neither is what the other is for.
+ * reading row is the cut this site most needed — the map competed with the history page for the
+ * same eye, and neither is what the other is for.
+ *
+ * Two now. The map left this row upward rather than sideways: it is `MAP`, at `/`, reached from
+ * the wordmark. The finding that put it here was right and is not being overturned — what it
+ * diagnosed was two things both trying to be an argument, and the map is now the index instead.
  */
 export const INSTRUMENTS: Section[] = [
-  { href: '/map', label: 'Map', question: 'Where is any of this?' },
   { href: '/entry', label: 'Entries', question: 'What does the corpus hold, node by node?' },
   { href: '/sources', label: 'Sources', question: 'What is this site standing on?' },
 ]
+
+/**
+ * A view of the map, as a path.
+ *
+ * This is the link direction the site never had. Everything pointed *out* of the map — a mark
+ * opened an entry, the page handed off to `/ground` — and nothing pointed in, so the map was
+ * somewhere a reader arrived rather than somewhere the prose could send them. A sentence about
+ * Lima in 1885 can now put its reader on Lima in 1885.
+ *
+ * The parameter names are the map's own and are read by `scripts/map.ts`; `coverage.test.ts`
+ * holds every link built here to naming a node the feed publishes and a year the axis covers.
+ */
+export interface MapView {
+  /** The year to stand in. Omitted, the map opens at the end of the record. */
+  year?: number
+  /** `year` narrows to the year itself; `era` shows the tile containing it. */
+  grain?: 'year' | 'era'
+  /** A node to open the panel on, as `class/name.yml`. */
+  at?: string
+  /** Ground layers, replacing the default set. */
+  layers?: string[]
+}
+
+export function mapPath(view: MapView): string {
+  const q = new URLSearchParams()
+  if (view.year !== undefined) q.set('year', String(view.year))
+  if (view.grain) q.set('grain', view.grain)
+  if (view.at) q.set('at', view.at)
+  if (view.layers) q.set('layers', view.layers.join(','))
+  // `URLSearchParams` percent-encodes `/` and `,`, and neither needs it in a query value.
+  // These paths are quoted in prose, in the README and in the decision that put the map at `/`,
+  // and a reader who copies one should get back what they were shown — `at=place/lima.yml`
+  // rather than `at=place%2Flima.yml`. Both forms decode identically on the way in.
+  const query = q.toString().replaceAll('%2F', '/').replaceAll('%2C', ',')
+  return query ? `${MAP.href}?${query}` : MAP.href
+}
 
 /** Every section key an article may declare. `/` takes no articles: it is the way in. */
 export type SectionKey = 'ground' | 'people' | 'work' | 'government' | 'history'

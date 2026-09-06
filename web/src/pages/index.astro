@@ -1,35 +1,300 @@
 ---
+// The way in: the county, carrying a year.
+//
+// This page was `/map` for eighty-nine phases of work and an instrument for all of them. It is
+// now the index, and the change is one of position rather than of kind — it still answers *what
+// is here and when*, and the reading pages still answer *what does it mean*. See
+// `.yidam/decisions/the-map-is-the-index.yml`.
+//
+// The furniture the old homepage carried — four tiles, the county's own opening claim, three
+// assertions — sits under the map rather than on a page of its own. A reader who wants the
+// county in four numbers gets them without leaving the instrument.
+//
+// The spine, the ribbon and the period names are rendered here at build time rather than by the
+// script, so the shape of the record is in the document before any JavaScript runs and is
+// readable to something that never runs it. The script attaches behaviour to markup that already
+// says what it means.
+
 import Base from '../layouts/Base.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import Claim from '../components/Claim.astro'
 import StatTile from '../components/StatTile.astro'
-import { assertion, manifest, node, seriesById } from '../lib/feeds'
+import { assertion, atlas, manifest, node, seriesById } from '../lib/feeds'
+import { SECTIONS } from '../lib/sections'
+import { extent, overlays, ribbon, spine } from '../lib/eras'
+import { unheldShapes } from '../lib/ground'
+import { lines, tally } from '../lib/edges'
+import { UNDRAWN, courses } from '../lib/water'
+
+const eras = spine(atlas)
+const bars = ribbon(eras, atlas)
+const periods = overlays(atlas)
+const range = extent(atlas)
+
+const tallest = Math.max(...bars.map((b) => b.count), 1)
+
+/**
+ * The opening tile's decades, which are the argument for the whole axis.
+ *
+ * Written out rather than described, because a caption saying *a handful* is a caption nobody
+ * can check and the numbers move whenever the corpus grows.
+ */
+const thin = bars.filter((b) => b.era === eras[0].key)
+const thinnest = Math.min(...thin.map((b) => b.count))
+const thickest = Math.max(...thin.map((b) => b.count))
+
+/** How many spans open in each tile. The tiles print it, so the axis is honest about itself. */
+const opensIn = (from: number, to: number) =>
+  atlas.filter((r) => r.from !== null && r.from >= from && r.from <= to).length
+
+const dated = atlas.filter((r) => r.from !== null).length
+const undated = atlas.length - dated
+const unplaced = atlas.filter((r) => r.treatment === 'unplaced').length
+const stated = atlas.filter((r) => r.hops === 0).length
+const derived = atlas.filter((r) => r.hops !== null && r.hops > 0).length
+
+/** Polygons whose key names a shape this site does not hold — every one a school district. */
+const unheld = unheldShapes(atlas).length
+
+// The county in four numbers, and the three claims it opens with.
 
 const population = seriesById('place-allen-county::total-resident-population')
 const latest = population.points[population.points.length - 1]
-const first = population.points[0]
+const firstCount = population.points[0]
 
 const landArea = seriesById('place-allen-county::land-area').points[0]
 const precincts = seriesById('jurisdiction-allen-county-government::voting-districts').points[0]
 
 const county = node('place/allen-county.yml')
-const opening = county?.blocks[0]
+const groundClaim = county?.blocks[0]
 
 const three = assertion('three-places')
 const address = assertion('an-address-is-not-a-municipality')
 const decline = assertion('county-population-decline')
+
+/** What the corpus's own edges draw when the graph is put on the ground, and what they do not. */
+const edges = tally()
+const claims = lines()
+const watercourses = courses()
+const undrawn = Object.entries(UNDRAWN)
 ---
 
 <Base
   title="Allen County, Ohio"
-  lede="A county of about a hundred thousand people in the northwest quarter of the state, seated at Lima. This site publishes what a documentary corpus can establish about it — and marks the places where it cannot."
+  lede="A county of about a hundred thousand people in the northwest quarter of the state, seated at Lima — drawn on its own ground, carrying a year. Move along the axis and the record moves with it: the townships as they are erected, the villages as they incorporate, and every figure this corpus places in the years you are standing in."
 >
-  <div class="reading">
+  <div class="atlas" data-map>
+    <div class="map-shell">
+      <div class="canvas" data-map-canvas></div>
+      <div class="tooltip" data-map-tooltip hidden></div>
+
+      <div class="controls">
+        <fieldset>
+          <legend>Ground</legend>
+          <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
+          <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
+          <label><input type="checkbox" data-layer="water" checked /> Water</label>
+          <label><input type="checkbox" data-layer="claims" /> The {claims.length} drawn claims</label>
+          <label><input type="checkbox" data-layer="population" /> People, by precinct</label>
+          <label><input type="checkbox" data-layer="tracts" /> People, by tract</label>
+        </fieldset>
+
+        <div class="scale" data-map-scale hidden>
+          <span class="scale-title" data-map-scale-title>People per voting district</span>
+          <div class="ramp" data-map-legend></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="axis">
+      <div class="spine" role="group" aria-label="Era">
+        {
+          eras.map((era) => (
+            <button
+              type="button"
+              data-era={era.key}
+              aria-pressed="false"
+              style={`--tile-ink: var(${era.ink})`}
+            >
+              <span class="tile-ink" aria-hidden="true"></span>
+              <span class="tile-name">{era.label}</span>
+              <span class="tile-years">
+                {era.from}–{era.to}
+              </span>
+              <span class="tile-count">{opensIn(era.from, era.to)} open here</span>
+            </button>
+          ))
+        }
+      </div>
+
+      <figure class="ribbon">
+        <div class="bars">
+          {
+            eras.map((era) => (
+              <div class="bar-group" style={`--tile-ink: var(${era.ink})`}>
+                {bars
+                  .filter((b) => b.era === era.key)
+                  .map((b) => (
+                    <span
+                      class="bar"
+                      data-bar-from={b.from}
+                      data-bar-to={b.to}
+                      style={`--h: ${Math.round((b.count / tallest) * 100)}%`}
+                      title={`${b.from}–${b.to}: ${b.count} records`}
+                    />
+                  ))}
+              </div>
+            ))
+          }
+        </div>
+        <figcaption>
+          How much record each decade holds, drawn in the axis's own spacing — so the tiles above
+          and the bars below line up. The {thin.length} decades before {eras[1].from} hold between
+          {thinnest} and {thickest} records each; the tallest bar holds {tallest}. That shape is
+          why the axis is six tiles rather than a slider: an evenly spaced control would give
+          almost all of its travel to almost none of the record.
+        </figcaption>
+      </figure>
+
+      <div class="scrub">
+        <label>
+          <span class="scrub-label">Year</span>
+          <input
+            type="range"
+            data-scrub
+            min={range.from}
+            max={range.to}
+            value={range.to}
+            step="1"
+          />
+        </label>
+        <output class="year" data-readout="year">{range.to}</output>
+      </div>
+
+      <div class="periods" role="group" aria-label="Periods the corpus names">
+        {
+          periods.map((p) => (
+            <button type="button" data-period-from={p.from}>
+              {p.label}
+              <em>
+                {p.from}–{p.to ?? ''}
+              </em>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="reading">
+      <div class="asks">
+        <fieldset class="grain">
+          <legend>Show</legend>
+          <label
+            ><input type="radio" name="grain" value="era" data-grain checked /> the whole era</label
+          >
+          <label><input type="radio" name="grain" value="year" data-grain /> that year alone</label>
+        </fieldset>
+
+        <label class="warrant">
+          <span>Placement</span>
+          <select data-warrant>
+            <option value="0">stated positions only</option>
+            <option value="1">within one edge</option>
+            <option value="2">within two edges</option>
+            <option value="3" selected>within three edges</option>
+          </select>
+        </label>
+
+        <fieldset class="also">
+          <legend>Also draw</legend>
+          <label
+            ><input type="checkbox" data-toggle="undated" /> the {undated} it cannot date</label
+          >
+          <label
+            ><input type="checkbox" data-toggle="generous" /> records past their vouched end</label
+          >
+        </fieldset>
+      </div>
+
+      <dl class="readout">
+        <div>
+          <dt>Standing</dt>
+          <dd data-readout="present">—</dd>
+        </div>
+        <div>
+          <dt>On</dt>
+          <dd><span data-readout="anchors">—</span> positions</dd>
+        </div>
+        <div>
+          <dt>Window</dt>
+          <dd data-readout="window">—</dd>
+        </div>
+        <div>
+          <dt>Era</dt>
+          <dd class="era-name" data-readout="era">—</dd>
+        </div>
+      </dl>
+
+      <p class="vintage">
+        Every boundary drawn here is 2020 Census geography, and it does not travel. You are
+        <span data-readout="vintage">—</span> years from the year it describes, which is why the ground
+        fades as you move away from it: Spencer Township was erected out of ground the map already
+        draws as Spencer's, and six of the villages had not been incorporated at all. The streams
+        are the one thing that does not fade — the Ottawa ran where it runs before any of these
+        lines existed. The ditches fade with everything else, because a ditch is a thing somebody
+        dug.
+      </p>
+    </div>
+
+    <aside class="panel" data-map-panel aria-live="polite"></aside>
+  </div>
+
+  <section class="notes">
+    <h2>How to read it</h2>
+    <div class="two-up">
+      <div>
+        <h3>The mark is a stack, not a pin</h3>
+        <p>
+          {stated} nodes state a position of their own. {derived} more reach one across an edge or
+          three — a figure that <em>describes</em> Lima, an event that <em>occurred in</em> a
+          township, a term of office that reaches ground through the office it is a term of. Drawn
+          individually those become a smear over Lima that no zoom separates, so each position
+          carries one mark whose area is how much is there, and selecting it lists what.
+        </p>
+        <p>
+          The pale rim of a mark is the part that was inferred and the solid core is the part that
+          was stated. Set <em>Placement</em> to <em>stated positions only</em> and the map loses
+          most of itself; that difference is the size of the claim being made on your behalf.
+        </p>
+      </div>
+      <div>
+        <h3>An empty year is a silence, not a fault</h3>
+        <p>
+          The ribbon under the axis is there to be read before you travel. Six decades before 1820
+          hold a handful of records between them, and a map showing almost nothing in 1800 is
+          showing the archive rather than the county.
+        </p>
+        <p>
+          {undated} records carry no date at all, and {unplaced} reach no ground by any route the
+          placement rules license — among them the Treaty of St. Marys, which made this county and
+          was signed in another one. Neither group is absent from Allen County. Both are absent
+          from the record, which is a different claim and gets a different mark.
+        </p>
+      </div>
+    </div>
+
+    <p class="caveat">
+      {unheld} of the shapes are school districts whose Census key names a boundary layer this site
+      does not hold, so they appear as marks rather than as shapes. Three more — Bath Township, Fort
+      Shawnee and Harrod — are shapes with no date, and show only when the undated are drawn.
+    </p>
+  </section>
+
   <section class="tiles">
     <StatTile
       value={Number(latest.value).toLocaleString('en-US')}
       label="People, 2024 estimate"
-      note={`Down from ${Number(first.value).toLocaleString('en-US')} in ${first.as_of}.`}
+      note={`Down from ${Number(firstCount.value).toLocaleString('en-US')} in ${firstCount.as_of}.`}
       tier={latest.tier}
     />
     <StatTile
@@ -52,82 +317,151 @@ const decline = assertion('county-population-decline')
   </section>
 
   {
-    opening && (
+    groundClaim && (
       <section class="opening">
         <h2>The ground</h2>
-        <Claim block={opening} />
+        <Claim block={groundClaim} />
       </section>
     )
   }
 
-  <section>
+  <section class="notes">
     <h2>Three things worth knowing</h2>
     <p class="section-lede">
-      Each of these is an assertion this site makes. None of them is a sentence any single
-      corpus node contains, so each one shows the passage it was drawn from and the tag that
-      passage carries.
+      Each of these is an assertion this site makes. None of them is a sentence any single corpus
+      node contains, so each one shows the passage it was drawn from and the tag that passage
+      carries.
     </p>
     <AssertionCard assertion={three} />
     <AssertionCard assertion={decline} />
     <AssertionCard assertion={address} />
   </section>
 
+  <section class="notes">
+    <h2>The graph, on the ground</h2>
+
+    <p class="lede-narrow">
+      The corpus is a graph, and some of its edges are claims about where things are. Turning them
+      on draws the {claims.length} that can be drawn honestly. The interesting number is the other
+      one.
+    </p>
+
+    <table class="ledger">
+      <caption>
+        Every edge the feed publishes, by what it draws. An edge is only drawn between two
+        positions the corpus states — a line between two derived marks would join two guesses, and
+        nothing on a map can say that a line is three inferences long.
+      </caption>
+      <thead>
+        <tr><th scope="col">Drawn as</th><th scope="col">Edges</th><th scope="col">Drawn</th><th scope="col">What it is</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">A line</th>
+          <td>{edges.line.total}</td>
+          <td>{edges.line.drawable}</td>
+          <td>A site naming the ground it stands on, and the one boundary crossing.</td>
+        </tr>
+        <tr>
+          <th scope="row">Nesting</th>
+          <td>{edges.nesting.total}</td>
+          <td>{edges.nesting.drawable}</td>
+          <td>Containment, drawn by the shapes themselves and never by a line between centroids.</td>
+        </tr>
+        <tr>
+          <th scope="row">A course</th>
+          <td>{edges.course.total}</td>
+          <td>0</td>
+          <td>Drainage. The topology is the corpus's; the geometry is not.</td>
+        </tr>
+        <tr>
+          <th scope="row">Nothing</th>
+          <td>{edges.silent}</td>
+          <td>0</td>
+          <td>Not spatial, or already drawn by the mark itself.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two-up">
+      <div>
+        <h3>A line that ends in the wrong township</h3>
+        <p>
+          The {claims.length} drawn lines run from a site to the place its record names. Most land
+          where you would expect. Two do not: the <a href="/entry/site/lima-refinery">Lima refinery</a>
+          and the <a href="/entry/site/lima-army-tank-plant">tank plant</a> both carry Lima
+          addresses and both stand in Shawnee Township, so their lines cross a boundary. A table of
+          edges cannot show that. A line leaving a shape can.
+        </p>
+        <p>
+          Fort Amanda's line is the other kind. It is the corpus's only
+          <code>formerly-in</code> edge, and it exists because <code>located-in</code> carries no
+          date and would assert the present. The fort was in this county from the erection until
+          1848 and now stands a fifth of a mile outside it, so the line crosses the county's own
+          boundary — which is what the edge was coined to say.
+        </p>
+      </div>
+      <div>
+        <h3>A river is not at its mouth</h3>
+        <p>
+          {watercourses.length} watercourses state where they rise and where they end, at real
+          coordinates. Those are not positions: the Ottawa ends in Putnam County, the Auglaize in
+          Defiance County two counties away, and Riley Creek rises in Hancock. Reading a mouth as a
+          location would move three of this county's rivers off this county. They are the ends of a
+          line, and they are drawn as ends, with the note the corpus attached to each.
+        </p>
+        <p>
+          The courses themselves come from the federal water file, like every boundary here — and
+          it does not name all of them. {undrawn.length} of the {watercourses.length} have no course
+          this site can draw:
+        </p>
+        <ul class="undrawn">
+          {
+            undrawn.map(([name, why]) => (
+              <li>
+                <b>{name}</b> — {why}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <p class="caveat">
+      The two grains under <em>People</em> are the same count over the same ground, drawn one at a
+      time because stacking them draws one on top of the other for nothing. The county's own two
+      maps — where a mortgage is hardest to get, against where it is dearest to hold, correlated at
+      0.828 across 34 tracts — are not among them: the record states the correlation and prints ten
+      of the thirty-four rows behind it. That is a gap in tabulation rather than in geometry, and
+      the map waits on it.
+    </p>
+  </section>
+
   <section class="onward">
     <h2>Where to go</h2>
     <p class="section-lede">
-      Five sections, each answering one question and ending when it has. What would have
-      buried them is in the reading room: thirty-seven shorter pieces, each resting on
-      passages the corpus can cite.
+      Five sections, each answering one question and ending when it has. The map says what is here
+      and when; these say what it means.
     </p>
     <ul>
-      <li>
-        <a href="/ground">Ground</a>
-        <span class="why">
-          Two thirds of the county is farms, and the thing that changed on that ground since
-          1910 is not the crops.
-        </span>
-      </li>
-      <li>
-        <a href="/people">People</a>
-        <span class="why">
-          Five decades of decline, what the decline is made of, and the sorting underneath it
-          that a county total cannot show.
-        </span>
-      </li>
-      <li>
-        <a href="/work">Work</a>
-        <span class="why">
-          What happened to the factory county, what a job here pays, and the half of these
-          jobs held by people who live somewhere else.
-        </span>
-      </li>
-      <li>
-        <a href="/government">Government</a>
-        <span class="why">
-          Nine offices, who chooses them, what they cost — and a county containing precincts
-          ninety points apart.
-        </span>
-      </li>
-      <li>
-        <a href="/history">History</a>
-        <span class="why">
-          Everything this corpus can date, and the stretches between, which are the larger
-          part of the record.
-        </span>
-      </li>
+      {
+        SECTIONS.map((s) => (
+          <li>
+            <a href={s.href}>{s.label}</a>
+            <span class="why">{s.question}</span>
+          </li>
+        ))
+      }
       <li>
         <a href="/read">The reading room</a>
         <span class="why">
-          Thirty-seven shorter pieces — the fort across the line, ninety-nine papers, three
-          times a crowd came to the jail.
+          A hundred shorter pieces — the fort across the line, ninety-nine papers, three times a
+          crowd came to the jail.
         </span>
       </li>
       <li>
-        <a href="/map">The map</a>
-        <span class="why">
-          The corpus's places on the county's actual 2020 boundaries, which is the only way to
-          see a location claim that is wrong.
-        </span>
+        <a href="/entry">Entries</a>
+        <span class="why">Every node the corpus publishes, by class. Each mark above opens one.</span>
       </li>
       <li>
         <a href="/sources">Sources</a>
@@ -137,13 +471,554 @@ const decline = assertion('county-population-decline')
       </li>
     </ul>
   </section>
-  </div>
+
+  <script type="application/json" data-atlas set:html={JSON.stringify(atlas)} is:inline />
+  <script>
+    import { renderMap } from '../scripts/map'
+
+    const shell = document.querySelector<HTMLElement>('[data-map]')
+    const data = document.querySelector('[data-atlas]')
+
+    if (shell && data?.textContent) {
+      renderMap(shell, JSON.parse(data.textContent)).catch((err: unknown) => {
+        console.error(err)
+        const host = shell.querySelector('[data-map-canvas]')
+        // Say so on the page. A map that silently renders nothing reads as a slow map.
+        if (host) host.textContent = 'The boundary layers could not be loaded.'
+      })
+    }
+  </script>
 
   <style>
-    /* `.tiles`, `.section-lede` and `.onward` are in `styles/reading.css` now. */
+    .atlas {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+      grid-template-areas: 'map panel' 'axis panel' 'reading panel';
+      gap: var(--space-5);
+      margin-bottom: var(--space-9);
+    }
+    @media (max-width: 60rem) {
+      .atlas {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 'map' 'axis' 'reading' 'panel';
+      }
+    }
+
+    /* ---- the canvas ---- */
+
+    .map-shell {
+      grid-area: map;
+      position: relative;
+      height: clamp(360px, 52vh, 620px);
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-md);
+      background: var(--surface-card);
+      overflow: hidden;
+    }
+    .canvas {
+      position: absolute;
+      inset: 0;
+      color: var(--text-muted);
+      display: grid;
+      place-items: center;
+      font-size: 0.875rem;
+    }
+    .controls {
+      position: absolute;
+      left: 0.875rem;
+      bottom: 0.875rem;
+      display: flex;
+      flex-direction: column;
+      /* Each panel sizes to its own content; stretched, the narrow one takes the wide one's
+         width and covers a corner of the county for nothing. */
+      align-items: flex-start;
+      gap: 0.625rem;
+      pointer-events: none;
+    }
+    .controls fieldset,
+    .scale:not([hidden]) {
+      pointer-events: auto;
+      background: color-mix(in srgb, var(--surface-card) 92%, transparent);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-md);
+      padding: 0.625rem 0.75rem;
+      margin: 0;
+      font-size: 0.8125rem;
+    }
+    legend,
+    .scale-title,
+    .scrub-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0;
+    }
+    .controls label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-body);
+      /* A checkbox row is a hit target; give it the height of one. */
+      min-height: 1.5rem;
+      cursor: pointer;
+    }
+    .ramp {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-top: 0.375rem;
+      color: var(--text-body);
+      font-variant-numeric: tabular-nums;
+      font-size: 0.75rem;
+    }
+    .ramp :global(.swatch) {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .ramp :global(i) {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .tooltip {
+      position: absolute;
+      pointer-events: none;
+      transform: translate(12px, -50%);
+      background: var(--surface-card);
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--radius-md);
+      padding: 0.5rem 0.7rem;
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      max-width: 17rem;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      z-index: 3;
+    }
+    /* `display: flex` above beats the `hidden` attribute on its own, which leaves an empty
+       tooltip parked in the corner until the first hover. */
+    .tooltip[hidden] {
+      display: none;
+    }
+    .tooltip[data-kind='corpus'] {
+      border-left: 3px solid var(--era-current, var(--rule-strong));
+    }
+    .tooltip :global(strong) {
+      color: var(--text-strong);
+    }
+    .tooltip :global(span) {
+      color: var(--text-body);
+      display: flex;
+      gap: 0.5rem;
+      justify-content: space-between;
+    }
+    .tooltip :global(em) {
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* ---- the axis ---- */
+
+    .axis {
+      grid-area: axis;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .spine {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      /* A 2px surface gap between tiles, so adjacent inks never touch. */
+      gap: 2px;
+    }
+    .spine button {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
+      padding: 0.5rem 0.55rem 0.55rem;
+      background: var(--surface-card);
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      color: var(--text-body);
+      font: inherit;
+      overflow: hidden;
+    }
+    .spine button:hover {
+      background: var(--surface-raised);
+    }
+    .spine button[aria-pressed='true'] {
+      background: var(--surface-raised);
+      border-color: var(--rule-strong);
+    }
+    .tile-ink {
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--tile-ink);
+      opacity: 0.45;
+      margin-bottom: 0.3rem;
+    }
+    .spine button[aria-pressed='true'] .tile-ink {
+      opacity: 1;
+    }
+    .tile-name {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: var(--text-strong);
+      white-space: nowrap;
+    }
+    .tile-years,
+    .tile-count {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    .tile-count {
+      color: var(--text-faint);
+    }
+
+    .ribbon {
+      margin: 0.35rem 0 0;
+    }
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 2px;
+      height: 3.25rem;
+    }
+    .bar-group {
+      display: flex;
+      align-items: flex-end;
+      gap: 1px;
+    }
+    .bar {
+      flex: 1;
+      height: var(--h);
+      min-height: 1px;
+      background: var(--tile-ink);
+      opacity: 0.3;
+      /* A 4px rounded data-end anchored to the baseline. */
+      border-radius: 2px 2px 0 0;
+    }
+    .bar[data-in-window] {
+      opacity: 1;
+    }
+    .ribbon figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      max-width: var(--measure-prose);
+    }
+
+    .scrub {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .scrub label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .scrub input {
+      flex: 1;
+      accent-color: var(--era-current, var(--text-strong));
+    }
+    .year {
+      font-variant-numeric: tabular-nums;
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: var(--text-strong);
+      min-width: 3.5ch;
+      text-align: right;
+    }
+
+    .periods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .periods button {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid var(--rule-hairline);
+      border-radius: 999px;
+      background: var(--surface-card);
+      color: var(--text-body);
+      font: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .periods button:hover {
+      border-color: var(--rule-strong);
+      background: var(--surface-raised);
+    }
+    .periods em {
+      font-style: normal;
+      color: var(--text-faint);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---- what is being asked ---- */
+
+    .reading {
+      grid-area: reading;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .asks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      align-items: flex-start;
+    }
+    .asks fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .asks label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8125rem;
+      color: var(--text-body);
+      min-height: 1.5rem;
+      cursor: pointer;
+    }
+    .warrant {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.15rem;
+    }
+    .warrant span {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .warrant select {
+      font: inherit;
+      font-size: 0.8125rem;
+      padding: 0.2rem 0.4rem;
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-sm);
+      background: var(--surface-card);
+      color: var(--text-body);
+    }
+
+    .readout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.75rem;
+      margin: 0;
+      padding: 0.65rem 0.85rem;
+      background: var(--surface-sunken);
+      border-radius: var(--radius-md);
+    }
+    .readout div {
+      display: flex;
+      flex-direction: column;
+    }
+    .readout dt {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .readout dd {
+      margin: 0;
+      font-variant-numeric: tabular-nums;
+      font-size: 1rem;
+      color: var(--text-strong);
+    }
+    /*
+     * The era's ink sits beside the word, never in it.
+     *
+     * Measured on the four grounds, two of the six reach 3.78:1 and 3.98:1 in daylight and all
+     * six fall to about 3.7 on the raised night ground. That is a mark's bar and not a word's,
+     * so the name takes the strong ink and the era gets a swatch — the same rule every tier
+     * badge on this site already follows, and the reason those marks are allowed to stay the
+     * colours the design composed.
+     */
+    .era-name {
+      color: var(--text-strong);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .era-name::before {
+      content: '';
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 2px;
+      background: var(--era-current, var(--rule-strong));
+      flex: none;
+    }
+
+    .vintage {
+      margin: 0;
+      max-width: var(--measure-prose);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    /* ---- the panel ---- */
+
+    .panel {
+      grid-area: panel;
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-md);
+      background: var(--surface-card);
+      padding: 0.85rem 1rem;
+      max-height: clamp(360px, 68vh, 760px);
+      overflow-y: auto;
+    }
+    .panel :global(h3) {
+      margin: 0 0 0.15rem;
+      font-size: 1rem;
+      color: var(--text-strong);
+    }
+    .panel :global(.count),
+    .panel :global(.empty) {
+      margin: 0 0 0.65rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .panel :global(ol) {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .panel :global(li) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid var(--rule-hairline);
+      font-size: 0.8125rem;
+    }
+    .panel :global(li:last-child) {
+      border-bottom: 0;
+    }
+    .panel :global(.meta) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      color: var(--text-faint);
+      font-size: 0.75rem;
+    }
+    .panel :global(.meta em) {
+      font-style: normal;
+    }
+    .panel :global([data-hops='0']) {
+      color: var(--text-muted);
+    }
+
+    /* ---- the prose ---- */
+
+    .notes {
+      margin-bottom: var(--space-9);
+    }
+    .two-up {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+      gap: 1.5rem 2.5rem;
+    }
+    .two-up p {
+      color: var(--text-body);
+    }
+    .caveat {
+      max-width: var(--measure-prose);
+      background: var(--surface-sunken);
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      color: var(--text-body);
+    }
+    .ledger {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 0 1.75rem;
+      font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .ledger caption {
+      caption-side: bottom;
+      text-align: left;
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+      padding-top: 0.6rem;
+      max-width: var(--measure-prose);
+    }
+    .ledger th,
+    .ledger td {
+      text-align: left;
+      padding: 0.4rem 0.75rem 0.4rem 0;
+      border-bottom: 1px solid var(--rule-hairline);
+      vertical-align: baseline;
+    }
+    .ledger thead th {
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .ledger tbody th {
+      color: var(--text-strong);
+      white-space: nowrap;
+    }
+    .ledger td {
+      color: var(--text-body);
+    }
+    .ledger td:nth-child(2),
+    .ledger td:nth-child(3) {
+      width: 5rem;
+    }
+    .undrawn {
+      margin: 0.5rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--text-body);
+      font-size: 0.9375rem;
+    }
+    .undrawn li {
+      margin-bottom: 0.35rem;
+    }
+    .undrawn b {
+      color: var(--text-strong);
+    }
+
+    /* `.tiles`, `.section-lede` and `.onward` are in `styles/reading.css`. */
     .opening {
       font-size: var(--size-body-l);
-      margin-bottom: var(--space-12);
+      max-width: var(--measure-prose);
+      margin-bottom: var(--space-9);
     }
   </style>
 </Base>

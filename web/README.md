@@ -34,12 +34,16 @@ problem recorded in
 | `/history` | What can this corpus date, and what does the shape of the gaps mean? |
 | `/read` | The reading room: every shorter piece, by section and era |
 
-And the three instruments, set apart from the reading row in the nav because a reader reaches
+`/` is not in that list. **It is the map**, reached from the wordmark rather than from a tab — a
+front door listed among five destinations is one of six things rather than the way in. The county's
+own summary sits under it: four tiles, one opening claim, three assertions. See
+[`the-map-is-the-index`](../.yidam/decisions/the-map-is-the-index.yml).
+
+And the two instruments, set apart from the reading row in the nav because a reader reaches
 for them rather than reading them:
 
 | Instrument | What it is for |
 |---|---|
-| `/map` | The corpus's located nodes on the county's actual 2020 boundaries |
 | `/entry` | Every node the corpus publishes, by class |
 | `/sources` | The audit: what is sourced, what is inferred, what was withheld |
 
@@ -114,6 +118,15 @@ red. `scripts/fetch-boundaries.mjs` refuses to write a layer whose feature count
 because a silent recount is the failure this connector can actually have — the query still
 succeeds and the map quietly loses a township.
 
+**The water is the one layer that is not a 2020 statement.** TIGERweb keeps hydrography out of
+the decennial services entirely — one Hydro MapServer, no vintage, no STATE or COUNTY column —
+so `linear-water.geojson` records its own vintage as *current* in `PROVENANCE.json` rather than
+inheriting the file's. It is also the one layer the service generalizes on request: 313
+polylines arrive at 847 KB describing meanders a few metres across, in a frame where the whole
+county is 1,400 pixels wide, and `maxAllowableOffset` asks for the resolution the map has. The
+generalizing is done server-side and the offset is recorded, so the vendored file stays a mirror
+rather than becoming a cartographer.
+
 **The join is the site's own gate.** `crates/publish` cannot see `public/geo/` and the
 connector cannot see the corpus, so the one derivation performed in this directory is matching
 a corpus GEOID to a vendored geometry — and `test/geography.test.ts` is what holds it. It also
@@ -131,6 +144,44 @@ Shawnee Township. A table of edges cannot show that. A dot outside a boundary ca
 The corollary is the one the corpus states about itself, and the map page states it too:
 nearness is not containment. A dot inside a shape is a dot inside a shape, and where a
 location claim is an inference its badge says so.
+
+**It now carries a year**, and the same rule governs the second axis. The six tiles are the
+design system's era ramp, which tiles the whole range; the corpus's seven `period` nodes ride on
+top as named overlays, because they overlap and leave holes and were never a partition. Time is
+deliberately not linear across the axis — half the record sits in one decade — and the density
+ribbon under it says so before a reader travels through a thin century and concludes the page is
+broken.
+
+Three things are kept apart at every year, because collapsing them would be a claim nobody made:
+what the corpus places *here*, what it places *elsewhen*, and what it cannot date at all. The
+last is a gap in the record rather than in the county, and it has its own toggle and its own ink.
+Every derived placement carries its route, and the *Placement* control shrinks the map to the 72
+positions somebody actually stated.
+
+The view is in the URL. `/?year=1885&grain=year&at=place/lima.yml` is Lima in the year the oil came
+in, with the panel open on it — and that is what a reading page links to now, through
+`<OnTheMap>`. Every such link is held to naming a node the feed publishes, a year the axis covers,
+and a node that is actually standing in that year; and every reading page has to carry at least
+one, because a front door nobody is sent back to from inside the house is still only a front door.
+
+`/map` still works. It is a hand-written stub rather than an `astro.config` redirect, because that
+kind emits a fixed URL and drops the query — and dropping the query on this map means dropping the
+year.
+
+`src/lib/eras.ts` holds all of it as pure functions over `feeds/atlas.json`, testable without a
+canvas; `src/scripts/map.ts` is the deck.gl scene and nothing else.
+
+**It also carries the graph.** `src/lib/edges.ts` classifies every relationship the feed publishes
+by what it draws on the ground — a line, nesting, a course, or nothing — with the argument beside
+each and a gate on both halves of the table. Twelve edges are drawn as lines, and only between two
+positions the corpus *states*: a line between derived marks would join two guesses, and nothing on
+a map can say a line is three inferences long. Two of the twelve leave the shape they name, which
+is the corpus-correctness case this file predicted.
+
+The refusals are the bigger half and the page prints the ledger. Containment is drawn by the
+shapes themselves; drainage is not drawn at all, because the corpus holds the topology and TIGER
+holds the geometry — see
+[`a-river-is-not-at-its-mouth`](../.yidam/decisions/a-river-is-not-at-its-mouth.yml).
 
 ## Bundle status
 

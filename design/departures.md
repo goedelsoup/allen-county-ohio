@@ -181,6 +181,14 @@ own header for the argument. Finding 4 — either these become a real upstream a
 stay a documented local derivation, and the point of writing them down is that the question gets
 asked rather than settled by default.
 
+The travelling map added four roles to it, and three of them are deliberately not colours.
+`--warrant-0` through `--warrant-3` are **opacities**, one per hop depth, encoding how far a mark
+is from a position somebody actually stated. The map already spends hue on the era; a second hue
+scale over the same marks would leave a reader deciding whether a pale mark is old or badly
+warranted, and the honest answer would be *consult the legend*. `--map-selected` and
+`--map-undated` are roles pointed at inks the system already ships — rubric for the one emphatic
+mark, the missing-status ink for a record that belongs to no era.
+
 ### File: `tokens/fonts.css`
 
 The design system ships a `tokens/fonts.css` and this is **not** it. The port did not take that
@@ -208,8 +216,26 @@ system's own pieces — the ink ramp as ground, the parchment ramp as text — i
 than an inversion. Finding 3, and offered upstream as a proposal rather than a correction.
 
 Every value is a step the system already ships, except two interpolated stops in the choropleth
-marked ▲ in the file. Measured on the four night grounds by `contrast.test.ts`, the worst text
-role reaches 5.42:1 against a bar of 4.5.
+and the six era inks, all marked ▲ in the file. Measured on the four night grounds by
+`contrast.test.ts`, the worst text role reaches 5.42:1 against a bar of 4.5.
+
+**The era ramp is the one set that could not be given a night value by walking a ramp.** The six
+era inks are standalone literals — nineteenth-century map inks rather than steps of anything — so
+there is no other end of them to take, and each is relit at OKLab L 0.74 instead. They needed
+night values at all because the travelling map spends hue on the era, and a literal has no dark
+value: without these the axis keeps its daylight inks on an ink ground, which is the defect the
+locator plate shipped with at six times the size.
+
+Measuring them produced a finding for upstream rather than a correction here. `colors.css` calls
+the six a *ramp* and they are not one. As a categorical scale the worst adjacent pair reaches
+ΔE 1.9 under protanopia by day and 1.8 under deuteranopia at night, and 6.7 for a reader with
+full colour vision; as a sequential scale the daylight lightness runs 0.48, 0.53, 0.51, 0.51,
+0.37, 0.42, which is not monotonic in either direction. They are six period inks and they work as
+that. Everything on this site that uses them prints the era in words beside the colour — one tint
+at a time on the map, and a bar under a tile carrying its own name and years — and
+`contrast.test.ts` now fails if the ramp ever *becomes* a scale, because that would mean it could
+be used as one. The report upstream is that a consumer who reads "ramp" and paints six series
+with it gets a chart nobody can read.
 
 Two things about this file are load-bearing and easy to undo by accident:
 

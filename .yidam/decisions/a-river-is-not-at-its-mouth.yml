@@ -1,0 +1,128 @@
+id: a-river-is-not-at-its-mouth
+summary: >-
+  Nine of the corpus's watercourses state a `source` and a `mouth` as real coordinates, and
+  `crates/placement` reads neither. That looked like an omission and is the opposite: the Ottawa's
+  mouth is in Putnam County, the Auglaize's in Defiance, and Riley Creek rises in Hancock, so a
+  resolver that took a mouth for a position would place three of this county's rivers outside the
+  county. A watercourse gets a **course** instead — two stated ends, and a drawn line only where a
+  vendored file supplies one. Of thirty-two published relationships, four draw a line, six draw
+  nesting, two draw a course this corpus does not hold, and twenty draw nothing.
+context: |
+  [The travelling map](a-derived-placement-is-a-claim.yml) put the corpus's nodes on the ground.
+  The next thing asked of it was the corpus's *edges*: the graph drawn geographically, so that
+  containment, drainage and a boundary crossed in 1848 stop being caveats in prose and become
+  things a reader watches.
+
+  Drawing an edge needs two positions, and the survey found few. Of the 213 edges whose
+  relationship is spatial at all, **46 have a stated position at both ends**. The rest reach ground
+  only by derivation, and a line between two derived positions draws a relationship between two
+  guesses.
+
+  Then the rivers, which were the whole point of the exercise. Eight `flows-into` edges describe a
+  drainage network — Hog Creek and Little Hog Creek into the Ottawa, the Ottawa into the Auglaize,
+  the Auglaize into the Maumee — and every one of the twelve `natural-feature` nodes sits in the
+  register, placed no finer than the county. It looked as though the corpus held a topology with
+  no geometry under it.
+
+  It does not. Nine of them state coordinates:
+
+      Ottawa River     source 40.7708852, -83.9557761   mouth 40.9950509, -84.2413355 (Putnam)
+      Auglaize River   source 40.6669957, -83.8938286   mouth 41.2875489, -84.3557802 (Defiance)
+      Riley Creek      source 40.8314418, -83.7591014 (Hancock)   mouth 41.011441, -83.9982772
+
+  `crates/placement` does not see them, because `own_anchor` reads `centroid`, `coordinates`,
+  `geoid` and `fips_code` and nothing else. The question this decision answers is whether that is
+  a defect to fix.
+decision: |
+  **It is not a defect. A river is not at its mouth, and `own_anchor` stays as it is.**
+
+  Read `mouth` as a position and the Ottawa River is in Putnam County, the Auglaize is in Defiance
+  County two counties away, and the Maumee is at Toledo. Read `source` and Riley Creek is in
+  Hancock County. Three of the rivers this county is drained by would leave the map, and each
+  would leave it *silently*, with a coordinate and a claim tag behind it.
+
+  This is the failure `AGENTS.md` already records against events — *"`occurred-in` is where it
+  happened; `affected` is what it changed"* — met a second time in a property rather than an edge.
+  A river's extent is a line. Neither end of that line is where the river *is*, and a resolver
+  whose answer is a point has no honest answer to give about a thing whose extent is a course.
+
+  **So a watercourse gets a course, which is a different question from a placement.**
+
+  | | Placement | Course |
+  |---|---|---|
+  | asks | where is it | what line does it draw |
+  | for a river | no answer — it stays in the register | two stated ends, and a drawn line where one is held |
+  | source | `crates/placement` | `web/src/lib/water.ts` over the published feed |
+
+  The ends are the corpus's and are drawn as marks with their notes attached, so a mark outside
+  the frame reads as *the Ottawa ends in Putnam County* rather than as a stray dot. The line is
+  TIGER's, vendored like every other boundary on this map, and it is drawn only where the federal
+  file names the watercourse.
+
+  **`DRAWINGS` classifies all thirty-two published relationships**, in the manner of
+  [`ROUTES`](a-derived-placement-is-a-claim.yml), and `edges.test.ts` fails on a relationship the
+  feed uses and the table omits **and** on an entry naming a relationship the feed no longer
+  carries.
+
+  | Drawn as | Relationships | What it means |
+  |---|---|---|
+  | Line | `located-in`, `situated-in`, `occurred-at`, `formerly-in` | a point-like thing pointing at the ground it names |
+  | Nesting | `within`, `territory-within`, `partially-within`, `covers`, `partially-covers`, `nested-in` | one extent inside another, drawn by shape and never by a line between centroids |
+  | Course | `flows-into`, `traverses` | a line the corpus does not hold, and must not invent |
+  | Nothing | the other twenty | not spatial: `describes`, `held-by`, `precedes`, `evidenced-by` |
+
+  **`occurred-in`, `resided-in`, `seated-in` and `established-within` draw nothing**, and that is
+  the entry most worth arguing with. They are the placement routes: they are how a person, an
+  event or an organization reaches ground at all. Drawing them as lines as well would draw a line
+  from a mark to the mark it is already standing on.
+rationale: |
+  **Why `flows-into` is a course rather than a line.** Both endpoints are rivers, so the obvious
+  drawing is a line between their positions — and their positions are the county centroid, because
+  that is where the register puts them. Eight lines from the middle of the county to the middle of
+  the county is not a drainage map; it is a picture of the resolver's ignorance, drawn as though it
+  were hydrography. The alternative — a straight line from a river's source to its mouth — is
+  worse, because it looks like a course and no river runs straight.
+
+  **What the vendored water bought, and what it did not.** TIGER's linear hydrography supplies 313
+  segments inside the county, and six of the corpus's nine watercourses are named in it. The
+  seventh is the one that matters: **TIGER does not name the Ottawa River anywhere inside Allen
+  County.** Its named segments begin north of the county line; every segment carrying it through
+  Lima is unnamed. The corpus knows where the river Lima was built on rises and ends, and this
+  site cannot draw a foot of its course. That is recorded in `water.ts` with a gate on both halves,
+  so the refusal cannot outlive the fact if TIGER ever names it.
+
+  **Why the ends are drawn even when they leave the frame.** A mark at 41.29, -84.36 is off this
+  map. Dropping it would make the Auglaize look as though it ended at the county line, which is
+  the error the whole decision exists to avoid; drawing it without its note would be a dot in
+  another county with nothing to explain it. So the note travels with the mark, and the map says
+  *Joins the Maumee River, in Defiance County* at the edge of the frame.
+
+  **The other thing this phase asked for and could not have.** The corpus's own two maps — a
+  tract's denial rate against its share of higher-priced loans, correlated at 0.828 — cannot be
+  drawn as two choropleths. The measure states the correlation and prints ten of the thirty-four
+  rows behind it; the other twenty-four are summarised. That is right for a prose corpus and wrong
+  for a map, and it is a different gap from this one: not geometry the corpus lacks, but a table
+  it did not tabulate. The tract layer draws what the Census states about tracts, and the two maps
+  wait on the corpus.
+
+  **Alternatives considered.**
+
+  *Add `mouth` and `source` to `own_anchor`.* Rejected on the arithmetic above. It is not a
+  marginal case: it moves three rivers out of the county and gives each a warrant.
+
+  *Add a `course` property to the corpus, holding the polyline.* Rejected as a category error in
+  the other direction. A river's course is survey data with a federal custodian; copying it into
+  YAML would make this repository the custodian of geometry it did not measure and cannot maintain,
+  and `public/geo/` exists precisely so it does not have to be.
+
+  *Draw `flows-into` between the two rivers' stated mouths.* Attractive — a mouth **is** a
+  confluence, so the Ottawa's mouth is a real point on the Auglaize — and deferred rather than
+  refused. It draws a correct point and no line, which is honest, and it needs the receiving
+  river's course to be worth looking at. When the Ottawa's course can be drawn, this becomes the
+  natural way to show the join.
+
+  **What would change the answer.** A watercourse layer keyed by GNIS id rather than by name.
+  Every one of these nodes carries its `gnis_id`, and a join on that key would not care what TIGER
+  spelled the segment — which is the whole of why the Ottawa is undrawable today.
+status: accepted
+date: "2026-09-06"

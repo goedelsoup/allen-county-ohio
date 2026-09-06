@@ -1,0 +1,115 @@
+id: the-map-is-the-index
+summary: >-
+  `/map` was an instrument reached from a tab, and the site's front door was a page of stat tiles.
+  The map is now `/`, reached from the wordmark; the county's furniture sits under it; the reading
+  row falls from six tabs to five and the instrument row from three to two. This reverses the
+  *placement* of a decision this repository already took and not its finding — the map was moved
+  up rather than back into the reading row, and the check that guarded the old arrangement now
+  guards the new one.
+context: |
+  [`a-page-is-an-argument-not-an-inbox`](a-page-is-an-argument-not-an-inbox.yml) cut a thirteen-tab
+  nav to six reading pages and three instruments, and it put the map among the instruments on a
+  specific finding, which `sections.ts` still states: *"for thirteen phases the map competed with
+  the history page for the same eye, and neither is what the other is for."*
+
+  That finding was right. It is also the reason this decision has to be written rather than taken
+  quietly, because moving the map to `/` looks from the outside exactly like undoing it.
+
+  What changed in between is what the map is. It was 37 dots on 2020 boundaries — a correctness
+  instrument, and a good one, but not a way into anything. It now carries a year, draws 667 nodes
+  through six eras, holds the corpus's own edges, and puts its whole view in the URL. A reader can
+  be sent to Lima in 1885 with the panel open on the oil strike. That is a different kind of object
+  from the thing the earlier decision filed under *instruments*.
+
+  Meanwhile `/` was the county's summary: four stat tiles, one opening claim, three assertions and
+  a list of links. Useful, and it is the one page on the site that answered no question of its own
+  — it was a lobby.
+decision: |
+  **`/` is the map. The map is reached from the wordmark, not from a tab.**
+
+  A front door listed among five destinations is one of six things rather than the way in. So the
+  map is neither a section nor an instrument in the nav: it is `MAP` in `sections.ts`, at `/`, and
+  the masthead carries it. `aria-current` on the wordmark is what tells a screen reader the reader
+  is already standing on it, since there is no tab to highlight.
+
+  | | Before | After |
+  |---|---|---|
+  | Reading tabs | 6 | 5 |
+  | Instruments | 3 | 2 |
+  | The way in | `/` — a summary page | `/` — the map, from the wordmark |
+
+  **The county's furniture moved onto the map, not into a seventh page.** The four tiles, the
+  county's opening claim and the three assertions sit under the map on `/`. A reader who wants the
+  county in four numbers gets them without leaving the instrument, and the site does not grow a
+  page to hold what was already an opening state.
+
+  **The reading pages gained the link direction the site never had.** Everything pointed *out* of
+  the map — a mark opened an entry, the page handed off to `/ground` — and nothing pointed in.
+  `<OnTheMap>` puts a reader on a place and a year from inside a sentence, and `coverage.test.ts`
+  holds every such link to naming a node the feed publishes, a year the axis covers, and a node
+  that is actually standing in that year.
+
+  **`/history` kept its argument and handed over its enumeration.** It printed two tables — every
+  dated event, and every named period — and the axis now carries both at a grain a table cannot
+  reach. A period is a span, and a table gives it one row with a start column and an end column;
+  the ribbon draws it across the years it covers. What stays on the page is the argument about the
+  shape of the gaps, which is what the page was always for.
+
+  **`/entry` and `/sources` are untouched.** They were correctly placed and nothing here changes
+  what they are.
+rationale: |
+  **Why this is not a reversal.** The earlier finding diagnosed a competition between two things
+  both trying to be an argument. The map was losing that competition because it was trying to win
+  it — it sat in the reading row and asked for the same attention `/history` asked for. Promoting
+  it to the index removes it from that contest rather than re-entering it. The reading pages answer
+  *what does it mean*; the map answers *what is here and when*. Those are different questions and
+  the arrangement now says so in its shape.
+
+  The six-tab cap is not breached either. It is **relieved by one**: the county's page was the
+  sixth tab, and its contents went onto the map rather than into a replacement.
+
+  **Why the wordmark rather than a tab.** Tested by asking what a reader does when they want to get
+  back. On every site they have used, the wordmark is home; the change here is that home is now an
+  instrument. Adding a seventh tab labelled *Map* would put the map back into the row this
+  decision is taking it out of, and would restage the competition on purpose.
+
+  What the wordmark cannot do is announce itself as a map, and that is the real cost of this
+  choice. The mitigation is the link direction: five reading pages now point into the map at
+  specific places and years, so a reader meets it from inside the prose rather than only by
+  guessing that the masthead leads somewhere new.
+
+  **Why the redirect is hand-written.** `/map` has to keep working, and the obvious spelling —
+  an entry in `astro.config`'s `redirects` — emits a fixed `<meta http-equiv="refresh">` that drops
+  everything after the `?`. The map keeps its whole view in the query string, so a reader who kept
+  `/map?year=1885&at=site/lima-refinery.yml` would land on the present with no year, no selection
+  and nothing anywhere saying a link had been lost. The stub at `pages/map.astro` replaces the
+  location with the query intact and keeps the meta refresh behind it as the no-JS path.
+
+  **What the rearrangement caught.** Three checks split an Astro file with `source.split('---')`,
+  which is wrong on any frontmatter containing a `---` on any line — a comment rule, a markdown
+  table, a string. A section separator written as `// ---- the county in four numbers -------` in
+  the rearranged index took two assertions out of `coverage.test.ts`'s reckoning, and the only
+  reason it was noticed is that those two had nowhere else to be rendered. Anything with a second
+  home would have gone unmissed. `test/astro.ts` now splits on a fence that is the whole line, and
+  all three checks read it.
+
+  **Alternatives considered.**
+
+  *Keep `/` as the summary and leave the map at `/map`.* This is the status quo and it is defensible
+  — the map is an instrument and instruments are not front doors. Rejected because the request that
+  produced this whole sequence was for the map to be *how people discover*, and a discovery surface
+  nobody lands on discovers nothing.
+
+  *Put the map at `/` and keep a `Map` tab pointing at it.* Rejected: a tab and a wordmark pointing
+  at the same page is two affordances for one destination, and the tab is the one that puts it back
+  in the reading row.
+
+  *Move the county's summary to `/county`.* Rejected. It would restore the sixth tab under a new
+  name, and the summary is four numbers and three assertions — an opening state, not an argument.
+
+  **What would change the answer.** A reader study, or anything resembling one. Every judgement
+  here about what a reader expects from a wordmark is reasoning from convention, and this
+  repository has no way to check it. If the map turns out to be undiscoverable from the reading
+  pages, the fix is more link direction rather than a seventh tab.
+status: accepted
+date: "2026-09-06"

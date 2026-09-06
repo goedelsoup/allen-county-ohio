@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import OnTheMap from '../components/OnTheMap.astro'
 import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import { assertion, node, nodes } from '../lib/feeds'
@@ -12,9 +13,14 @@ const railTown = assertion('lima-was-a-railroad-town-before-an-oil-town')
 
 const declared = assertion('ten-declarations-eight-incidents')
 
-// The spine is read out of the graph, never typed here. A page that lists the county's dated
-// record by hand would keep saying "1885" long after a phase had added something later, and the
-// gap this page is largely about would be the first thing to go stale.
+// The spine is read out of the graph, never typed here. A page that named the county's dated
+// record by hand would keep saying "1885" long after something later was catalogued, and the gap
+// this page is largely about would be the first thing to go stale.
+//
+// The enumeration itself has gone to the map. This page used to print two tables — every dated
+// event, and every named period — and the axis under the map now carries both, at a grain a table
+// cannot reach: a period is a span and a table gives it one row. What stays here is the argument,
+// which is about the shape of the gaps rather than the contents of the list.
 const year = (s: string | undefined) => (s ? Number(s.slice(0, 4)) : Number.NaN)
 
 const events = nodes
@@ -40,7 +46,7 @@ const since = new Date().getUTCFullYear() - last
 
 <Base
   title="History"
-  lede="Everything this corpus can date, in order — and the stretches between. The gaps are the subject of this page as much as the entries are."
+  lede="What this corpus can date, and what the shape of the gaps means. The record itself is on the map's axis; this page is the argument about it."
 >
   <div class="reading">
   <section>
@@ -48,29 +54,22 @@ const since = new Date().getUTCFullYear() - last
     <p>
       A civic reference should be able to say when things happened. This one can say it {
         events.length
-      } times. The list below is not a history of Allen County; it is the subset of the county's history that carries a date drawn from a citable source, which is a much
-      smaller thing and is shown here at its real size.
+      } times. That is not a history of Allen County; it is the subset of the county's history that
+      carries a date drawn from a citable source, which is a much smaller thing and is worth seeing
+      at its real size.
     </p>
-    <table>
-      <caption>Dated events in the corpus, earliest first</caption>
-      <thead>
-        <tr><th scope="col">Date</th><th scope="col">Event</th><th scope="col">Kind</th></tr>
-      </thead>
-      <tbody>
-        {
-          events.map((e) => (
-            <tr>
-              <td>{e.on}</td>
-              <td>{e.node.label}</td>
-              <td>{e.node.properties.event_type ?? '—'}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
+    <p>
+      The list is on <OnTheMap>the map's axis</OnTheMap>, where it belongs: a density ribbon under
+      six era tiles, one bar per decade, drawn at the size the record actually is. The
+      {events.length} dated events are marks standing in the years they happened, and the
+      {periods.length} named periods ride above them as spans rather than as rows — which is what
+      they are, and what a table with a start column and an end column cannot show.
+    </p>
     <p>
       The gaps are the point. The widest run with nothing dated in it is {widest.to - widest.from}
-      years, from {widest.from} to {widest.to}; the longest of all is the {since} years since {last},
+      years, from <OnTheMap year={widest.from} grain="year">{widest.from}</OnTheMap> to
+      <OnTheMap year={widest.to} grain="year">{widest.to}</OnTheMap>; the longest of all is the
+      {since} years since {last},
       which is where this corpus stops being able to name a day at all. That is not because nothing
       happened. It is because most of the work here has been counting rather than dating, and a count has no date on it — it has a year and a table.
     </p>
@@ -99,24 +98,11 @@ const since = new Date().getUTCFullYear() - last
     </Gloss>
     <p>
       The named spans do reach across it, because a period is a claim about a stretch rather than
-      about a day:
+      about a day. They overlap and they leave holes — the canal era wholly contains both the
+      Civil War and the oil boom, and nothing at all covers 1918 to 1941 — which is why the map's
+      axis is built on six even tiles with the periods riding on top as named overlays. An
+      interpretation of a span is not a partition of one.
     </p>
-    <table>
-      <caption>Named periods in the corpus</caption>
-      <thead>
-        <tr><th scope="col">Span</th><th scope="col">Period</th></tr>
-      </thead>
-      <tbody>
-        {
-          periods.map((p) => (
-            <tr>
-              <td>{p.from}–{Number.isNaN(p.to) ? 'present' : p.to}</td>
-              <td>{p.node.label}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
   </section>
 
   <section>

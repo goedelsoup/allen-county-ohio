@@ -105,7 +105,7 @@ cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D w
 description = "Format domain computer Rust code. No-op until crates/ exists."
 run = """
 if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
-cargo fmt --manifest-path crates/Cargo.toml -p covering -p ground -p provenance -p proximity -p publish -p succession
+cargo fmt --manifest-path crates/Cargo.toml -p chronology -p covering -p ground -p provenance -p placement -p proximity -p publish -p succession
 """
 
 # ── publication (crates/publish → web/src/feeds/) ─────────────────────────
@@ -263,7 +263,7 @@ if [ ! -f crates/Cargo.toml ]; then
   echo "corpus gate only, which is the whole gate on day one."
   exit 0
 fi
-cargo fmt --manifest-path crates/Cargo.toml -p covering -p ground -p provenance -p proximity -p publish -p succession -- --check
+cargo fmt --manifest-path crates/Cargo.toml -p chronology -p covering -p ground -p provenance -p placement -p proximity -p publish -p succession -- --check
 cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
 cargo test --workspace --manifest-path crates/Cargo.toml
 RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --workspace --manifest-path crates/Cargo.toml

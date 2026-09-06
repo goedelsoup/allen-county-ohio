@@ -1,0 +1,19 @@
+[package]
+name = "placement"
+version = "0.1.0"
+description = "Where a corpus node lands on the ground, by what route, and where it refuses to guess"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lib]
+name = "placement"
+path = "src/lib.rs"
+
+[[bin]]
+name = "where-is"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+serde_yaml = { workspace = true }

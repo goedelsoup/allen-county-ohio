@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import OnTheMap from '../components/OnTheMap.astro'
 import Gloss from '../components/Gloss.astro'
 import ChartFigure from '../components/ChartFigure.astro'
 import StatTile from '../components/StatTile.astro'
@@ -302,7 +303,8 @@ const correlation = swing.figures[0]
       by a recorded decision, the county's 88 precincts are held as one measure rather than 88
       nodes, because every one of them has the same relationship to everything else. So this
       page can tell you the shape of the result and cannot draw you a precinct map of it. The
-      <a href="/map">map</a> shows the precincts as ground, with the population each holds.
+      <OnTheMap year={2020} grain="year" layers={['population', 'subdivisions']}>map</OnTheMap>
+      shows the precincts as ground, with the population each holds.
     </p>
   </section>
 

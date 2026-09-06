@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import OnTheMap from '../components/OnTheMap.astro'
 import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
@@ -175,7 +176,8 @@ const spreadSpec = bar(
     <p>
       The county has been counted every ten years since 1830, twenty-one times. It grew at every census for a hundred and fifty years, peaked in 1980, and
       has fallen at every census since — it is smaller today than it was in 1960. The first two
-      figures count different ground: the reorganization of 1848 moved 138 square miles.
+      figures count different ground: <OnTheMap year={1848} grain="year" at="place/allen-county.yml">the
+      reorganization of 1848</OnTheMap> moved 138 square miles.
     </p>
     <AssertionCard assertion={whole} />
 

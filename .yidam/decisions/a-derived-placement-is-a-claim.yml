@@ -1,0 +1,129 @@
+id: a-derived-placement-is-a-claim
+summary: >-
+  72 of 667 nodes carry a position; 647 reach one within three edges. Drawing the difference
+  means the map asserts hundreds of locations the corpus never stated, so every derived
+  placement now carries the route that produced it. Twenty-four of the corpus's forty-eight
+  class-and-relationship pairs are refused as placement routes, and the refusals are the half
+  worth reading — `event --affected->` leaves nine events unplaced, among them the county's
+  own founding.
+context: |
+  The corpus is already a spatiotemporal dataset and the map draws a twentieth of it. 72 nodes
+  state a position — 25 place centroids, 12 site coordinates, 35 jurisdiction FIPS keys — and
+  `web/src/feeds/map.json` publishes 37 points. Almost everything else sits within a few edges
+  of a node that does: a measure `describes` a place, an event `occurred-in` one, a person
+  `resided-in` one, a tenure reaches ground through its office.
+
+  Closing that gap is the whole of [the travelling map](../../README.md), and it cannot be done
+  by walking every edge that reaches ground. Two failures wait there, and this repository has
+  already paid for one of them.
+
+  **An edge that reaches ground is not an edge that places.** `AGENTS.md` states the case
+  outright, under `event`: *"`occurred-in` is where it happened; `affected` is what it changed.
+  The Treaty of St. Marys was signed in another county and made this one. Collapsing the two
+  would put the county's founding somewhere it did not happen."* A permissive walk does exactly
+  that, silently, on the best-documented event in the corpus.
+
+  **A placement onto the whole frame is not a placement.** 56 of the corpus's 99 people are
+  recorded as having resided in Allen County and nowhere finer. `map.ts` already refuses that
+  placement for labels — *"its extent is the whole frame, so a label at its centroid names
+  Lima's neighbourhood rather than the county"* — and the same refusal has to govern marks, or
+  the map grows a cluster of 56 pins in a field north of Lima.
+decision: |
+  **`crates/placement` resolves a node to ground, and the route travels with the answer.**
+
+  A placement is breadth-first over **licensed edges only**, stopping at the first depth that
+  reaches an anchor and returning **every** anchor found there. It carries the hop count, the
+  relationship chain, the claim tag of each step, and the weakest tag on the whole route.
+
+  **`ROUTES` classifies all 48 class-and-relationship pairs the corpus uses**, 24 placing and
+  24 refused, each with its argument. `tests/corpus.rs` fails on a pair the corpus uses and the
+  table omits, **and** on an entry naming a pair the corpus no longer uses.
+
+  The refusals that matter:
+
+  - `event --affected->` — what it changed, not where it was. Nine events are left unplaced,
+    among them the Treaty of St. Marys and the Erection of Allen County, which is correct: the
+    county's founding did not happen in the county.
+  - `site --formerly-in->` — the edge exists precisely because `located-in` carries no date and
+    would assert present containment. Routing through it would make the error the edge was
+    declared to prevent. Fort Amanda stays off the ground it left in 1848.
+  - `place --named-for->` — Amanda Township is named for that fort. Placing a thing at its
+    namesake would move the township into the next county.
+  - `measure --relates-to->` — the associative edge, not the subject edge. 364 of them would
+    drag every figure onto every subject it was ever compared with.
+  - `tenure --held-by->` — a term is not at its holder's residence. `of-office` reaches the
+    ground the office actually governs.
+  - `subject-of` — refused because **its direction is not consistent**. All three uses in the
+    corpus read differently: `person subject-of question` makes the person the subject, while
+    `question subject-of jurisdiction` and `measure subject-of person` make the target one. A
+    route needs a direction that holds. `concerns` carries the same claim unambiguously 89
+    times and is licensed.
+
+  **Two tests decide what a placed node becomes**, and the second applies to marks only.
+
+  | Treatment | Nodes | Rule |
+  |---|---|---|
+  | Count on its subject | 390 | A figure about somewhere — measure, tenure, office, question |
+  | Mark | 129 | A thing that was somewhere, placed finer than the county |
+  | Register | 74 | A thing that was somewhere, placed no finer than the county — 56 people, 9 features, 8 events, 1 place |
+  | Polygon | 47 | Covers ground rather than sitting on it — jurisdiction, division |
+  | Unplaced | 20 | No licensed route — 9 events, 9 people, 2 organizations |
+  | Not spatial | 7 | `period`, which drives the time control instead |
+
+  **Where a placement reaches several anchors at the same depth, all of them are returned.** A
+  school district serving five townships is at all five, and averaging them would invent a
+  centroid the corpus never stated — the error `proximity` was written to refuse in the
+  distance case.
+
+  **Three hops is the limit.** The longest real route is a tenure to its office to the
+  jurisdiction to a Census key. A chain nobody can check is not a warrant.
+rationale: |
+  **The route table found five edges the published feed does not carry.** `ROUTES` was drafted
+  against `web/src/feeds/graph.json`, which drops structural edges; the gate reads the corpus
+  and immediately named `measure --concerns->`, `question --concerns->` and the three
+  `subject-of` uses. Licensing `concerns` placed all 16 questions, which had otherwise been
+  written down as permanently unplaceable. **The corpus can say where its own open questions
+  are**, and the draft had concluded the opposite from an artifact of the feed.
+
+  **Why the discrimination test does not reach counts.** A county population figure resolves to
+  the county and does not discriminate, and it is not a failed placement — it is a fact about
+  the county, and the county is where it belongs. Applying the test to every class sent 344
+  nodes to the register, including most of the corpus's measures. Applying it to marks only
+  sends 74, which are the nodes that genuinely have no position finer than the frame.
+
+  **Why a mark and a count are different things.** The ontology already draws the line and the
+  arithmetic enforces it: 390 counts resolve onto a few dozen subjects, and drawn individually
+  they are a smear over Lima that no zoom separates. A stack of ninety figures should read as
+  *ninety figures about Lima in 1885*, not as ninety pins.
+
+  **Why the counts are not pinned.** Same as [the chronology
+  table](an-absent-end-date-means-four-things.yml): `tests/corpus.rs` asserts invariants and
+  the shape of the distribution — counts outnumber marks, marks outnumber the unplaced — and
+  never the sizes. A gate that fails on the next phase to add a site is a gate somebody
+  switches off.
+
+  **Alternatives considered.**
+
+  *Walk every edge.* Rejected on the Treaty. It is not a marginal case: it is the county's
+  founding, and the failure is silent.
+
+  *Place only at zero hops, as the map does today.* 37 points, and the whole opportunity
+  forgone. The inference is defensible when it is stated; refusing to make it at all is not
+  more honest, only emptier.
+
+  *Average multiple anchors to a centroid.* Rejected for the reason `proximity` records about
+  distance: the nearest internal point is the wrong answer, and a computed centre is a claim no
+  source made.
+
+  *Rank routes by strength and take the strongest rather than the shallowest.* Attractive, and
+  deferred. It needs an ordering over twenty-four licensed routes that can be defended pairwise,
+  and nothing yet needs it — the hop count is already a usable honesty gradient and is
+  computed rather than judged.
+
+  **What would change the answer.** A `located-in` edge carrying a date. Half the refusals here
+  exist because corpus edges are undated — `formerly-in` had to be coined precisely because
+  `located-in` asserts the present. If edges gained intervals, `formerly-in` would become a
+  route with a validity window rather than a refusal, and the map could show a work moving
+  across a county line instead of declining to place it.
+status: accepted
+date: "2026-09-05"

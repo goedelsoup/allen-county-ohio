@@ -22,6 +22,18 @@ const OUT = join(ROOT, 'public', 'geo')
 const SERVICE =
   'https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer'
 
+/**
+ * Hydrography is a separate service, and it is not a 2020 statement.
+ *
+ * TIGERweb keeps water out of the decennial services entirely: there is one Hydro MapServer,
+ * republished with the rest of TIGER, carrying no vintage of its own and no STATE or COUNTY
+ * column. So the water is fetched from here, filtered by the county polygon like the two
+ * place layers, and `PROVENANCE.json` records that its vintage is *current* rather than 2020.
+ * A layer whose date the site cannot state is a layer the site must not date.
+ */
+const HYDRO =
+  'https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Hydro/MapServer'
+
 const STATE = '39'
 const COUNTY = '003'
 
@@ -57,6 +69,16 @@ const LAYERS = [
     fields: ['GEOID', 'NAME', 'BASENAME', 'VTD', 'POP100', 'HU100', 'AREALAND', 'CENTLAT', 'CENTLON'],
     expect: 88,
   },
+  {
+    id: 6,
+    file: 'census-tracts.geojson',
+    label: 'Census Tracts',
+    where: `STATE='${STATE}' AND COUNTY='${COUNTY}'`,
+    fields: ['GEOID', 'NAME', 'BASENAME', 'POP100', 'HU100', 'AREALAND', 'CENTLAT', 'CENTLON'],
+    // Thirty-five, which is one more than the thirty-four the lending record covers: a tract
+    // with no one-to-four-family houses in it takes no mortgages and appears in no such table.
+    expect: 35,
+  },
   // Places and CDPs are state-level layers — a place may cross a county line, which is why
   // two of this county's own municipalities do. Neither carries a COUNTY column, so both are
   // filtered by the county polygon rather than by attribute.
@@ -75,6 +97,38 @@ const LAYERS = [
     where: `STATE='${STATE}'`,
     fields: ['GEOID', 'NAME', 'BASENAME', 'LSADC', 'AREALAND', 'CENTLAT', 'CENTLON'],
     clipToCounty: true,
+  },
+  // The water. Not a boundary and not a 2020 statement — see HYDRO above.
+  //
+  // Two feature classes come back and the difference between them is the county's own
+  // history: H3010 is a stream or river and H3020 is a canal, ditch or aqueduct. This county
+  // was drained to be farmed and dug to be reached, so the dug lines are not incidental
+  // hydrography — they are the Miami & Erie Canal and the field ditches that made the Great
+  // Black Swamp into cropland. The layer keeps MTFCC so the map can draw them apart.
+  //
+  // `OID` rather than `GEOID`: a water feature is not a geographic entity in the Census's
+  // sense and carries no GEOID. OID is TIGER's permanent id and is what sorts the file.
+  {
+    id: 0,
+    service: HYDRO,
+    file: 'linear-water.geojson',
+    label: 'Linear Hydrography',
+    where: '1=1',
+    fields: ['OID', 'NAME', 'BASENAME', 'MTFCC', 'ARTPATH'],
+    key: 'OID',
+    clipToCounty: true,
+    // 297 streams and 16 dug lines. The dug ones are two segments of the Miami & Erie Canal
+    // spelled two ways by TIGER, plus fourteen named and unnamed ditches.
+    expect: 313,
+    // Generalized by the service, not by this script.
+    //
+    // TIGER's water is surveyed at a resolution no county-scale map can draw: 313 polylines
+    // came back at 847 KB, about 130 vertices each, to describe meanders a few metres across
+    // in a frame where the whole county is 1,400 pixels wide. `maxAllowableOffset` asks the
+    // service for the resolution the map actually has. It is the same argument PRECISION makes
+    // one level up, and it is done server-side on purpose: generalizing the geometry here
+    // would make this file a cartographer rather than a mirror.
+    offset: 0.0002,
   },
 ]
 
@@ -100,6 +154,7 @@ async function query(layer, { geometry } = {}) {
     f: 'geojson',
     returnGeometry: 'true',
   })
+  if (layer.offset) body.set('maxAllowableOffset', String(layer.offset))
   if (geometry) {
     body.set('geometry', JSON.stringify(geometry))
     body.set('geometryType', 'esriGeometryPolygon')
@@ -107,7 +162,7 @@ async function query(layer, { geometry } = {}) {
     body.set('spatialRel', 'esriSpatialRelIntersects')
   }
 
-  const res = await fetch(`${SERVICE}/${layer.id}/query`, {
+  const res = await fetch(`${layer.service ?? SERVICE}/${layer.id}/query`, {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     body,
@@ -166,7 +221,11 @@ async function main() {
       type: 'FeatureCollection',
       features: features
         .map((f) => ({ type: 'Feature', properties: f.properties, geometry: f.geometry }))
-        .toSorted((a, b) => a.properties.GEOID.localeCompare(b.properties.GEOID)),
+        .toSorted((a, b) =>
+          String(a.properties[layer.key ?? 'GEOID']).localeCompare(
+            String(b.properties[layer.key ?? 'GEOID']),
+          ),
+        ),
     })
 
     await writeFile(join(OUT, layer.file), `${JSON.stringify(out)}\n`)
@@ -176,6 +235,11 @@ async function main() {
       name: layer.label,
       features: features.length,
       filter: layer.clipToCounty ? 'intersects the county polygon' : layer.where,
+      // Stated per layer rather than once for the file: the water comes from a service with no
+      // vintage, and letting it inherit the decennial one would date it to a year nobody
+      // published it in.
+      ...(layer.service ? { service: layer.service, vintage: 'current' } : {}),
+      ...(layer.offset ? { generalized_degrees: layer.offset } : {}),
     })
     console.log(`${layer.file.padEnd(34)} ${String(features.length).padStart(3)} feature(s)`)
   }

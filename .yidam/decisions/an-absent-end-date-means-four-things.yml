@@ -1,0 +1,127 @@
+id: an-absent-end-date-means-four-things
+summary: >-
+  Two calculators in this repository already read a missing end date in opposite ways, each
+  right about its own sources, and nothing named the disagreement. Normalizing every dated
+  class onto one interval forced it into the open and produced two more readings: an event
+  with no `occurred_through` is instantaneous, and an organization with no `dissolved` is
+  simply unknown. The reading is now a declared property of the class, in `crates/chronology`,
+  with a gate on both halves of the list.
+context: |
+  Twelve of this corpus's thirteen classes date themselves, in ten different property pairs —
+  `occurred`/`occurred_through`, `began`/`ended`, `as_of`, `erected`/`abolished`,
+  `built`/`ceased`, `founded`/`dissolved`, `born`/`died`, `effective_from`/`effective_to`,
+  `opened`/`closed`, `established`/`abolished`. 484 of 667 nodes carry a start. 136 of those
+  record no end.
+
+  Two crates already answer questions over those dates and **disagree about what the silence
+  means**:
+
+  - [`succession`](../../crates/succession/) reads a tenure with no `ended` as running to the
+    present, because the last entry in a sheriff's roster is the sitting sheriff.
+  - [`covering`](../../crates/covering/) reads a division with no `effective_to` as vouching
+    for nothing past its start, and says so in its module docs: the corpus's own
+    `division/ohio-congressional-district-4-2020.yml` states that `effective_to` is absent
+    because the supersession date is unknown, not because the map still stands. Ohio
+    redistricted after 2020.
+
+  Both are right about their own sources. Neither is written down anywhere a third caller
+  would find it, and a travelling map is the first thing to need all twelve classes at once —
+  a default picked in either direction empties the nineteenth century or fills the present-day
+  map with things that stopped existing.
+decision: |
+  **An absent end date means one of four things, the class says which, and the argument
+  travels with the rule.**
+
+  `chronology::POLICY` is the table. Each entry names a class, the property it dates itself by,
+  the property that ends it, the reading, and *why* — the last printed by `when --table`, so
+  the thing to disagree with is on a terminal rather than in a source file.
+
+  | Reading | Spans | Classes |
+  |---|---|---|
+  | **Instantaneous** — the end property exists to give duration, so its absence asserts none | 28 | event |
+  | **Runs to the present** — the source's last line is the current state | 68 | tenure 37, jurisdiction 20, question 9, office 1, period 1 |
+  | **Vouches for nothing past the start** — the corpus expects an end it cannot date | 8 | division |
+  | **Unknown** — the corpus has no record either way | 32 | organization 13, person 12, site 7 |
+
+  Two classes sit outside that table because they have no end property at all, and their
+  reading is structural rather than a response to an absence. `measure` is **instantaneous**:
+  a figure describes a date, and `as_of` opens nothing. `place` **runs to the present**: ground
+  does not stop being ground, so `established` opens a span that has never closed.
+
+  **The third and fourth readings are new, and the third is the one that matters.** An `event`
+  carries `occurred` and, when the happening had duration, `occurred_through`. The absence of
+  the second is not an unbounded end — it is a positive statement that the happening had no
+  duration. Under the two-reading model the raid on the county jail, 12 October 1933, would
+  have been drawn as still in progress in 1934 and in every year since. It governs 28 of the
+  136 open spans and neither existing crate has it.
+
+  The fourth separates *unknown* from *vouches for nothing*. They answer `admits` and `vouched`
+  identically and are still two entries, because they say different things to a reader: the
+  division is a boundary the corpus expects has been superseded and cannot date, and the
+  organization is one the corpus has no information about in either direction. One is drawn as
+  a caution and the other as a fading tail.
+
+  **`admits` and `vouched` are separate questions and separate lists.** This is `covering`'s
+  discipline carried onto the time axis: a division effective from 2020 *admits* 2024 and
+  vouches for nothing there. `Span::to_year()` returns `None` for every open end, including the
+  ones read as running — "now" is not a date any source recorded, and answering with the
+  build's clock would turn a machine's calendar into a claim about the world.
+
+  **Both halves of the list are gated.** `crates/chronology/tests/corpus.rs` fails when a class
+  carrying dates has no entry, **and** when an entry names a class that no longer carries any.
+rationale: |
+  **The gate found a class on its first run, and reviewing that class found an error in the
+  table.** `office` declares `established` and `abolished` and one instance uses them — the
+  sheriff's office, established 1831 — and the first draft of the table did not mention the
+  class at all. Reading the ontology to decide its entry showed that `place` had been written
+  down as *instantaneous* while the argument beside it said "ground does not stop being
+  ground", which is an argument for the opposite. Lima was laid out in 1831 and belongs on the
+  1900 map. Both were fixed before the table was committed, and neither was visible from
+  anything but the corpus itself.
+
+  **Why the readings are per class and not per node.** A node could carry its own statement of
+  what its silence means, and that would be more precise and completely unenforceable: 136
+  nodes would each need the field, nothing would fill it in, and the default would be back
+  under a different name. The class is the grain at which the *source* differs, which is the
+  grain the disagreement is actually at — a roster and a redistricting map are different kinds
+  of document before they are different nodes.
+
+  **Why the counts are not pinned.** `tests/corpus.rs` asserts invariants and not sizes. A test
+  reading `assert_eq!(dated, 484)` fails on the next phase that adds a measure, and a gate that
+  fails for the wrong reason is switched off — the argument [the lint
+  baseline](../lint-baseline.yml) rests on, and the one that struck a word range out of
+  [a-page-is-an-argument-not-an-inbox](a-page-is-an-argument-not-an-inbox.yml) rather than
+  widening it. The numbers in this record are dated evidence; the tests are the constraint.
+
+  **What the over-listing half is for.** An entry describing a class that no longer carries
+  dates fails the build, which reads as pedantry until it does not: a list of exceptions
+  permitted to be wrong drifts, and one that over-lists silently re-permits whatever a later
+  edit puts in its place. `design/departures.md` states the same rule for the same reason, and
+  `succession`'s own corpus test records what it cost to learn — a pinned empty office that got
+  filled, and an assertion inverted rather than repointed.
+
+  **Alternatives considered.**
+
+  *One reading for everything.* Rejected on arithmetic: 68 spans want carrying forward and 68
+  do not, and there is no default that is right for both halves. The corpus does not have one
+  kind of source.
+
+  *Read the absent end from `status` where the class has one.* `site` declares `status:
+  extant | demolished | ruin | repurposed | in operation`, which looks like it answers the
+  question. It does not: it says what is standing now and never says when that changed, so it
+  would supply a boolean where a date is needed and would read a demolished plant as having
+  been demolished at its construction date.
+
+  *Infer an end from the next source about the same subject.* The horizon idea — a span runs
+  forward to the next thing the corpus knows about its subject, then stops. Rejected because
+  the rule needs its own defence at every application and would make a node's extent depend on
+  what else happened to be extracted, which is a fact about this repository's reading schedule
+  and not about the county.
+
+  **What would change the answer.** A class whose sources genuinely mix — where some instances
+  of `site` come from a demolition register that dates every closure and others from a
+  gazetteer that dates none. The reading would then belong to the source rather than to the
+  class, and the table would need a per-node override with the catalog entry as its warrant.
+  Nothing in the corpus is in that state yet.
+status: accepted
+date: "2026-09-05"

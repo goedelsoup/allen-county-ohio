@@ -23,6 +23,13 @@ use std::collections::BTreeMap;
 /// four feeds reads exactly what it read before; the manifest simply carries one more key.
 /// Bumping for an addition would spend the signal that means *stop and read the diff*, and
 /// then it would mean nothing when a field's sense actually changes.
+///
+/// **`atlas.json` did not bump it either, and that is the harder case.** A whole new feed
+/// file looks like it should — it is the largest thing added to this contract since the
+/// contract existed. It is still strictly additive: no field moved, no meaning changed, and
+/// every page that read the four feeds reads exactly what it read before. The plan that
+/// produced it assumed a bump; the rule written here is older than the plan and says
+/// otherwise, and a version that moves for additions is a version nobody reads.
 pub const FEED_VERSION: u32 = 1;
 
 /// Relationships that describe the corpus rather than the world.
@@ -451,6 +458,260 @@ pub fn map(nodes: &[Node], ceiling: Tier) -> Vec<MapPoint> {
     points
 }
 
+// ── the atlas ────────────────────────────────────────────────────────────────
+
+/// One position, and the route that reached it.
+#[derive(Debug, Serialize)]
+pub struct AtlasAnchor {
+    /// The node that states this position.
+    pub node: String,
+    pub lat: Option<f64>,
+    pub lon: Option<f64>,
+    /// A Census key, where the anchor is a shape rather than a point. The site joins it to
+    /// `public/geo/`; nothing on this side of the boundary knows where a polygon is.
+    pub geoid: Option<String>,
+    /// The edges followed to reach it, in order. Empty where the node is its own anchor.
+    pub via: Vec<AtlasStep>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct AtlasStep {
+    pub relationship: String,
+    pub to: String,
+    /// The tag the edge carries, or `None` for a structural edge that carries none by rule.
+    pub tier: Option<Tier>,
+}
+
+/// A node reduced to when it was and where it lands.
+///
+/// The two halves come from `chronology` and `placement`, joined here because this is the
+/// only crate that knows the publication ceiling. Everything a caller needs to draw the node
+/// is present: the shape, the year bounds, and the warrant for both.
+#[derive(Debug, Serialize)]
+pub struct AtlasRecord {
+    pub node: String,
+    pub class: String,
+    pub label: String,
+    pub tier: Tier,
+
+    // ── when ──
+    /// First year the corpus places it in.
+    pub from: Option<i32>,
+    /// Last year, where there is one. **Absent on every open end**, including the ones read
+    /// as running to the present: "now" is not a date any source recorded.
+    pub to: Option<i32>,
+    /// `year`, `month` or `day` — how much of the date the source gave.
+    pub precision: Option<&'static str>,
+    /// What an absent end means for this class: `instantaneous`, `running`, `unvouched` or
+    /// `unknown`. Absent where both ends are recorded, or where the node is undated.
+    pub open_end: Option<&'static str>,
+    /// Why the node carries no span, where it carries none.
+    pub undated: Option<String>,
+
+    // ── where ──
+    /// `mark`, `polygon`, `count`, `register`, `unplaced` or `not-spatial`.
+    pub treatment: &'static str,
+    /// Edges followed to reach ground. `0` is a stated position.
+    pub hops: Option<usize>,
+    /// The weakest tag on the placement route.
+    pub route_tier: Option<Tier>,
+    /// Every anchor reached at `hops`. More than one is not a defect — a district serving
+    /// five townships is at all five, and averaging them would invent a centroid.
+    pub anchors: Vec<AtlasAnchor>,
+}
+
+#[derive(Debug, Serialize)]
+pub struct AtlasFeed {
+    pub feed_version: u32,
+    pub records: Vec<AtlasRecord>,
+}
+
+fn precision_name(p: chronology::Precision) -> &'static str {
+    match p {
+        chronology::Precision::Year => "year",
+        chronology::Precision::Month => "month",
+        chronology::Precision::Day => "day",
+    }
+}
+
+fn open_end_name(o: chronology::OpenEnd) -> &'static str {
+    match o {
+        chronology::OpenEnd::Instant => "instantaneous",
+        chronology::OpenEnd::Running => "running",
+        chronology::OpenEnd::Unvouched => "unvouched",
+        chronology::OpenEnd::Unknown => "unknown",
+    }
+}
+
+fn treatment_name(t: placement::Treatment) -> &'static str {
+    match t {
+        placement::Treatment::Mark => "mark",
+        placement::Treatment::Polygon => "polygon",
+        placement::Treatment::Count => "count",
+        placement::Treatment::Register => "register",
+        placement::Treatment::Unplaced => "unplaced",
+        placement::Treatment::NotSpatial => "not-spatial",
+    }
+}
+
+/// The properties a node states a position with.
+///
+/// A node whose position is tagged below the ceiling must not be placed, which is the rule
+/// [`map`] already applies to its own points. Applying it by *removing the property* rather
+/// than by filtering afterwards means the resolver never sees it — so nothing else can reach
+/// that node's ground through it either.
+const LOCATION_PROPERTIES: [&str; 4] = ["centroid", "coordinates", "geoid", "fips_code"];
+
+/// The corpus as `placement` needs it, with everything the ceiling withholds already gone.
+fn placement_graph(nodes: &[Node], ceiling: Tier) -> placement::Graph {
+    let mut g = placement::Graph::default();
+    for node in nodes {
+        let properties = node
+            .properties
+            .iter()
+            .filter(|(k, v)| {
+                !LOCATION_PROPERTIES.contains(&k.as_str())
+                    || crate::claim::publishable_property(v, ceiling)
+            })
+            .map(|(k, v)| (k.clone(), v.clone()))
+            .collect();
+        g.insert(placement::Node {
+            id: node.id.clone(),
+            class: node.class.clone(),
+            label: node.label.clone(),
+            properties,
+            links: node
+                .links
+                .iter()
+                .filter(|l| l.relationship != "instance-of")
+                .map(|l| placement::Link {
+                    target: l.resolved.clone(),
+                    relationship: l.relationship.clone(),
+                    claim_tag: l.claim_tag.map(|t| t.to_string()),
+                })
+                .collect(),
+        });
+    }
+    g
+}
+
+fn tier_word(raw: Option<&String>) -> Option<Tier> {
+    match raw.map(String::as_str) {
+        Some("verified") => Some(Tier::Verified),
+        Some("inference") => Some(Tier::Inference),
+        Some("open") => Some(Tier::Open),
+        _ => None,
+    }
+}
+
+/// When every node was, and where it lands.
+///
+/// The join `chronology` and `placement` were written for. Every node appears, including the
+/// undated and the unplaced: the shape of what this corpus cannot date or cannot place is the
+/// subject of a page, and a feed that dropped those rows would make it undiscoverable.
+///
+/// A node with no publishable prose is excluded, on the same rule [`map`] applies — a node
+/// that cannot say anything cannot be drawn saying it.
+///
+/// **One route step may cite an edge `graph.json` does not carry.** `concerns` is structural
+/// by `provenance`'s reckoning and is not published as an edge, but it is a subject claim and
+/// `placement` routes through it — it is what places all sixteen of the corpus's questions.
+/// The endpoints are both published nodes, so the route is followable; the edge itself is
+/// readable only in the corpus. Whether the graph feed should carry `concerns` is a question
+/// for whoever next touches it.
+pub fn atlas(nodes: &[Node], ceiling: Tier) -> Vec<AtlasRecord> {
+    let graph = placement_graph(nodes, ceiling);
+    let mut records: Vec<AtlasRecord> = nodes
+        .iter()
+        .filter_map(|node| {
+            let tier = Tier::weakest(
+                node.blocks
+                    .iter()
+                    .filter(|b| b.publishable(ceiling))
+                    .filter_map(|b| b.tier),
+            )?;
+
+            let span = chronology::normalize(&node.class, &node.properties);
+            let placed = placement::place(&graph, &node.id);
+            let treatment = placement::treatment(&node.class, placed.as_ref());
+
+            let (from, to, precision, open_end, undated) = match &span {
+                Ok(s) => {
+                    let open = match s {
+                        chronology::Span::OpenEnded { reading, .. } => {
+                            Some(open_end_name(*reading))
+                        }
+                        chronology::Span::Instant(_) => {
+                            Some(open_end_name(chronology::OpenEnd::Instant))
+                        }
+                        chronology::Span::Bounded { .. } => None,
+                    };
+                    (
+                        Some(s.from_year()),
+                        s.to_year(),
+                        Some(precision_name(s.precision())),
+                        open,
+                        None,
+                    )
+                }
+                Err(why) => (None, None, None, None, Some(why.to_string())),
+            };
+
+            let anchors = placed
+                .as_ref()
+                .map(|p| {
+                    p.reached
+                        .iter()
+                        .map(|r| {
+                            let (lat, lon, geoid) = match &r.anchor {
+                                placement::Anchor::Point { lat, lon } => {
+                                    (Some(*lat), Some(*lon), None)
+                                }
+                                placement::Anchor::Census { key } => {
+                                    (None, None, Some(key.clone()))
+                                }
+                            };
+                            AtlasAnchor {
+                                node: r.node.clone(),
+                                lat,
+                                lon,
+                                geoid,
+                                via: r
+                                    .via
+                                    .iter()
+                                    .map(|s| AtlasStep {
+                                        relationship: s.relationship.clone(),
+                                        to: s.to.clone(),
+                                        tier: tier_word(s.tag.as_ref()),
+                                    })
+                                    .collect(),
+                            }
+                        })
+                        .collect()
+                })
+                .unwrap_or_default();
+
+            Some(AtlasRecord {
+                node: node.id.clone(),
+                class: node.class.clone(),
+                label: node.label.clone(),
+                tier,
+                from,
+                to,
+                precision,
+                open_end,
+                undated,
+                treatment: treatment_name(treatment),
+                hops: placed.as_ref().map(|p| p.hops),
+                route_tier: placed.as_ref().and_then(|p| tier_word(p.tag.as_ref())),
+                anchors,
+            })
+        })
+        .collect();
+    records.sort_by(|a, b| a.node.cmp(&b.node));
+    records
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -629,6 +890,95 @@ mod tests {
         assert_eq!(counts.properties_withheld, 1);
         assert!(g.nodes[0].properties.contains_key("geoid"));
         assert!(!g.nodes[0].properties.contains_key("boundary_basis"));
+    }
+
+    #[test]
+    fn a_location_tagged_below_the_ceiling_places_nothing() {
+        // The one way this feed could leak a withheld claim. `map` already refuses to publish
+        // a point whose coordinate is tagged too weakly; the atlas has to refuse harder,
+        // because a coordinate reached through an edge would place *another* node too.
+        let mut lima = BTreeMap::new();
+        lima.insert("centroid".into(), "40.740679, -84.112091 [open]".into());
+        let place = Node {
+            id: "place/lima.yml".into(),
+            class: "place".into(),
+            name: "lima".into(),
+            label: "Lima".into(),
+            properties: lima,
+            blocks: blocks("The county seat. [verified]"),
+            links: Vec::new(),
+        };
+        let measure = Node {
+            id: "measure/x.yml".into(),
+            class: "measure".into(),
+            name: "x".into(),
+            label: "X".into(),
+            properties: BTreeMap::from([("as_of".to_string(), "2020".to_string())]),
+            blocks: blocks("A figure. [verified]"),
+            links: vec![crate::load::Link {
+                target: "../place/lima.yml".into(),
+                resolved: "place/lima.yml".into(),
+                relationship: "describes".into(),
+                claim_tag: Some(Tier::Verified),
+                source: None,
+            }],
+        };
+
+        let records = atlas(&[place, measure], Tier::Inference);
+        let by = |id: &str| {
+            records
+                .iter()
+                .find(|r| r.node == id)
+                .unwrap_or_else(|| panic!("{id} missing"))
+        };
+        assert_eq!(
+            by("place/lima.yml").treatment,
+            "unplaced",
+            "a withheld coordinate is not a position"
+        );
+        assert_eq!(
+            by("measure/x.yml").treatment,
+            "unplaced",
+            "and nothing may reach ground through it either"
+        );
+        assert!(records.iter().all(|r| r.anchors.is_empty()));
+    }
+
+    #[test]
+    fn an_open_end_never_serializes_a_closing_year() {
+        let node = Node {
+            id: "division/d.yml".into(),
+            class: "division".into(),
+            name: "d".into(),
+            label: "D".into(),
+            properties: BTreeMap::from([("effective_from".to_string(), "2020".to_string())]),
+            blocks: blocks("A district. [verified]"),
+            links: Vec::new(),
+        };
+        let records = atlas(&[node], Tier::Inference);
+        assert_eq!(records[0].from, Some(2020));
+        assert_eq!(records[0].to, None, "an open end has no recorded close");
+        assert_eq!(records[0].open_end, Some("unvouched"));
+    }
+
+    #[test]
+    fn a_node_that_cannot_be_dated_or_placed_still_gets_a_row() {
+        // The shape of what this corpus cannot date or cannot place is a subject in its own
+        // right. A feed that dropped those rows would make it undiscoverable.
+        let node = Node {
+            id: "natural-feature/creek.yml".into(),
+            class: "natural-feature".into(),
+            name: "creek".into(),
+            label: "A creek".into(),
+            properties: BTreeMap::new(),
+            blocks: blocks("Water. [verified]"),
+            links: Vec::new(),
+        };
+        let records = atlas(&[node], Tier::Inference);
+        assert_eq!(records.len(), 1);
+        assert_eq!(records[0].from, None);
+        assert!(records[0].undated.is_some());
+        assert_eq!(records[0].treatment, "unplaced");
     }
 
     #[test]

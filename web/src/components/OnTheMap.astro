@@ -1,0 +1,52 @@
+---
+// A sentence pointing into the map, at a place and a year.
+//
+// The reading pages answer *what does it mean* and the map answers *what is here and when*, and
+// until this component existed the second could not be reached from the first. A claim about
+// Lima in 1885 now puts its reader on Lima in 1885, with the panel open on the node the sentence
+// is about.
+//
+// It is deliberately a plain inline link with one mark on it rather than a button or a card. The
+// prose is the main line; this is an aside inside it, and a control set into a paragraph would
+// stop the paragraph being read.
+
+import { mapPath, type MapView } from '../lib/sections'
+
+interface Props extends MapView {
+  /** Overrides the link text. Otherwise the slot is the text. */
+  label?: string
+}
+
+const { year, grain, at, layers, label } = Astro.props
+---
+
+<a class="on-the-map" href={mapPath({ year, grain, at, layers })}>
+  <slot>{label}</slot>
+</a>
+
+<style>
+  /*
+   * A dotted underline rather than the solid one prose links carry, because this goes somewhere
+   * different in kind: not to another argument but to the instrument the argument was drawn
+   * from. The mark is the same rubric the site spends on its one emphatic element.
+   */
+  .on-the-map {
+    color: var(--text-link);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-link);
+    padding-bottom: 0.05em;
+    white-space: nowrap;
+  }
+  .on-the-map::after {
+    content: '⌖';
+    font-size: 0.85em;
+    margin-left: 0.22em;
+    color: var(--map-marker);
+    /* The glyph is decoration; the words carry the link. */
+    speak: never;
+  }
+  .on-the-map:hover {
+    color: var(--text-link-hover);
+    border-bottom-style: solid;
+  }
+</style>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { classOf, quantileBreaks } from '../src/scripts/map'
+import { classOf, quantileBreaks, stackRadius } from '../src/scripts/map'
 
 // The choropleth's classing, tested away from the canvas. Everything else in `map.ts` is
 // deck.gl configuration and is exercised by rendering the page.
@@ -37,5 +37,28 @@ describe('quantile classing', () => {
   it('survives an empty layer rather than throwing inside a render', () => {
     expect(quantileBreaks([], 5)).toEqual([])
     expect(classOf(5, [])).toBe(0)
+  })
+})
+
+describe('a stack is sized by area', () => {
+  /**
+   * Ninety figures about Lima is one mark, not ninety pins, and how big that mark is has to be
+   * something a reader can estimate. Area proportional to the count is the encoding they get
+   * right; radius proportional to the count overstates a big stack by the square of everything,
+   * which on this corpus means Lima swallowing the county.
+   */
+  it('quadruples the count when the radius doubles', () => {
+    const floor = stackRadius(0)
+    const one = stackRadius(1) - floor
+    const four = stackRadius(4) - floor
+    expect(four / one).toBeCloseTo(2, 5)
+  })
+
+  it('keeps a single record visible at county zoom', () => {
+    expect(stackRadius(1)).toBeGreaterThan(400)
+  })
+
+  it('does not go imaginary on a count it should never see', () => {
+    expect(Number.isFinite(stackRadius(-3))).toBe(true)
   })
 })

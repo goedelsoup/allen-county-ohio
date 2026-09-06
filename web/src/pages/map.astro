@@ -1,247 +1,38 @@
 ---
-import Base from '../layouts/Base.astro'
-import AssertionCard from '../components/AssertionCard.astro'
-import { mapPoints } from '../lib/feeds'
-
-const byClass = mapPoints.reduce<Record<string, number>>((acc, p) => {
-  acc[p.class] = (acc[p.class] ?? 0) + 1
-  return acc
-}, {})
+// `/map` moved to `/`, and its query string has to move with it.
+//
+// The map was an instrument at this path for the life of the site, and it is now the index.
+// Nothing about it was withdrawn — it changed position — so a link somebody kept should still
+// arrive where it pointed.
+//
+// **Which is why this is not an `astro.config` redirect.** Those emit a fixed
+// `<meta http-equiv="refresh" content="0;url=/">`, and a fixed URL drops everything after the
+// `?`. The map keeps its whole view in the query string, so a reader who kept
+// `/map?year=1885&at=site/lima-refinery.yml` would land on the present with no year, no
+// selection, and nothing anywhere saying a link had been lost.
+//
+// Two mechanisms, in the order they fire:
+//
+//   1. A script in `<head>` replaces the location with the query and hash intact. It runs before
+//      the body paints, so a reader with JavaScript never sees this page.
+//   2. The meta refresh behind it, which is the no-JS path. It cannot carry the query — that is
+//      the whole limitation above — so the fallback is the map's default view, and the link on
+//      the page says where it is going.
+//
+// `check-outline.mjs` exempts a redirect stub from the one-`h1` rule by looking for that meta
+// tag, and a page that stops being a redirect stops being exempt.
 ---
 
-<Base
-  title="The map"
-  lede="The corpus's located nodes, drawn on the county's actual 2020 Census boundaries. This is the view that catches a location claim the prose cannot."
->
-  <div class="map-shell" data-map>
-    <div class="canvas" data-map-canvas></div>
-    <div class="tooltip" data-map-tooltip hidden></div>
-
-    <div class="controls">
-      <fieldset>
-        <legend>Layers</legend>
-        <label><input type="checkbox" data-layer="districts" checked /> Voting districts</label>
-        <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
-        <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
-        <label><input type="checkbox" data-layer="corpus" checked /> Corpus nodes</label>
-      </fieldset>
-
-      <div class="scale">
-        <span class="scale-title">People per voting district</span>
-        <div class="ramp" data-map-legend></div>
-      </div>
-    </div>
-  </div>
-
-  <section class="reading">
-    <h2>How to read it</h2>
-    <div class="two-up">
-      <div>
-        <h3><span class="key ground"></span>The ground</h3>
-        <p>
-          County, townships, municipalities and all 88 voting districts, in neutrals and one
-          sequential blue. This is vendored 2020 Census geography, not corpus content — it is
-          here so the corpus has something true to be drawn against. Its provenance travels
-          with it in <code>public/geo/PROVENANCE.json</code>.
-        </p>
-      </div>
-      <div>
-        <h3><span class="key corpus"></span>The corpus</h3>
-        <p>
-          The {mapPoints.length} nodes this repository places on the ground:
-          {Object.entries(byClass)
-            .map(([c, n]) => `${n} ${c}`)
-            .join(', ')}. Each carries the claim tag its node was written with. Hover any of
-          them.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <p class="handoff">
-    What a map is for here — and the location claim it caught — is on
-    <a href="/ground">Ground</a>.
+<meta http-equiv="refresh" content="0;url=/" />
+<meta name="robots" content="noindex" />
+<title>Redirecting to the map</title>
+<script is:inline>
+  // `replace`, not `assign`: this page should not sit in the reader's history for the back
+  // button to land on and bounce off again.
+  location.replace('/' + location.search + location.hash)
+</script>
+<body>
+  <p>
+    The map is now at <a href="/">the front of the site</a>.
   </p>
-
-  <script type="application/json" data-map-points set:html={JSON.stringify(mapPoints)} is:inline />
-  <script>
-    import { renderMap } from '../scripts/map'
-
-    const shell = document.querySelector<HTMLElement>('[data-map]')
-    const data = document.querySelector('[data-map-points]')
-
-    if (shell && data?.textContent) {
-      renderMap(shell, JSON.parse(data.textContent)).catch((err: unknown) => {
-        console.error(err)
-        const host = shell.querySelector('[data-map-canvas]')
-        // Say so on the page. A map that silently renders nothing reads as a slow map.
-        if (host) host.textContent = 'The boundary layers could not be loaded.'
-      })
-    }
-  </script>
-
-  <style>
-    .map-shell {
-      position: relative;
-      height: clamp(420px, 68vh, 760px);
-      border: 1px solid var(--rule-hairline);
-      border-radius: var(--radius-md);
-      background: var(--surface-card);
-      overflow: hidden;
-      margin-bottom: 2.5rem;
-    }
-    .canvas {
-      position: absolute;
-      inset: 0;
-      color: var(--text-muted);
-      display: grid;
-      place-items: center;
-      font-size: 0.875rem;
-    }
-    .controls {
-      position: absolute;
-      left: 0.875rem;
-      bottom: 0.875rem;
-      display: flex;
-      flex-direction: column;
-      /* Each panel sizes to its own content; stretched, the narrow one takes the wide one's
-         width and covers a corner of the county for nothing. */
-      align-items: flex-start;
-      gap: 0.625rem;
-      pointer-events: none;
-    }
-    fieldset,
-    .scale {
-      pointer-events: auto;
-      background: color-mix(in srgb, var(--surface-card) 92%, transparent);
-      backdrop-filter: blur(6px);
-      border: 1px solid var(--rule-hairline);
-      border-radius: var(--radius-md);
-      padding: 0.625rem 0.75rem;
-      margin: 0;
-      font-size: 0.8125rem;
-    }
-    legend,
-    .scale-title {
-      font-size: 0.6875rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      padding: 0;
-    }
-    fieldset label {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--text-body);
-      /* A checkbox row is a hit target; give it the height of one. */
-      min-height: 1.5rem;
-      cursor: pointer;
-    }
-    .ramp {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      margin-top: 0.375rem;
-      color: var(--text-body);
-      font-variant-numeric: tabular-nums;
-      font-size: 0.75rem;
-    }
-    .ramp :global(.swatch) {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .ramp :global(i) {
-      width: 0.75rem;
-      height: 0.75rem;
-      border-radius: 2px;
-      display: inline-block;
-    }
-
-    .tooltip {
-      position: absolute;
-      pointer-events: none;
-      transform: translate(12px, -50%);
-      background: var(--surface-card);
-      border: 1px solid var(--rule-strong);
-      border-radius: var(--radius-md);
-      padding: 0.5rem 0.7rem;
-      font-size: 0.8125rem;
-      line-height: 1.45;
-      max-width: 17rem;
-      box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-      z-index: 3;
-    }
-    /* `display: flex` above beats the `hidden` attribute on its own, which leaves an empty
-       tooltip parked in the corner until the first hover. */
-    .tooltip[hidden] {
-      display: none;
-    }
-    .tooltip[data-kind='corpus'] {
-      border-left: 3px solid var(--series-2);
-    }
-    .tooltip :global(strong) {
-      color: var(--text-strong);
-    }
-    .tooltip :global(span) {
-      color: var(--text-body);
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
-    .tooltip :global(em) {
-      color: var(--text-muted);
-      font-style: normal;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-    /* The line handing the map's argument to /ground, which now carries it. */
-    .handoff {
-      max-width: var(--measure-prose);
-      color: var(--text-muted);
-      border-left: 2px solid var(--rule-hairline);
-      padding-left: var(--space-5);
-      margin: var(--space-9) 0 0;
-    }
-    .two-up {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
-      gap: 1.5rem 2.5rem;
-    }
-    .two-up p {
-      color: var(--text-body);
-      margin: 0;
-    }
-    .key {
-      display: inline-block;
-      width: 0.7rem;
-      height: 0.7rem;
-      border-radius: 2px;
-      margin-right: 0.45rem;
-    }
-    .key.ground {
-      background: var(--seq-400);
-    }
-    .key.corpus {
-      background: var(--series-2);
-      border-radius: 50%;
-    }
-    .lede-narrow,
-    .caution {
-      max-width: var(--measure-prose);
-      color: var(--text-body);
-    }
-    .caution {
-      background: var(--surface-sunken);
-      padding: 1rem 1.15rem;
-      border-radius: var(--radius-md);
-      font-size: 0.9375rem;
-    }
-  </style>
-</Base>
+</body>

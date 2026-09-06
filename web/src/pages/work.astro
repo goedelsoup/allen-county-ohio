@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import OnTheMap from '../components/OnTheMap.astro'
 import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
@@ -234,8 +235,9 @@ const factorySpec = bar(factories.figures.map((f) => f.label), factories.figures
     <p>
       The corpus used to hold one period for all of this, called <em>deindustrialization</em> and
       dated from roughly 1970. It now holds two, because these are two processes and they do not
-      share a span. Deindustrialization runs 1979 to 2009 and has ended. Depopulation runs from
-      1970 and has not. The old start date was read off the population series and written on a node
+      share a span. <OnTheMap year={1979} grain="year">Deindustrialization</OnTheMap> runs 1979 to
+      2009 and has ended. <OnTheMap year={1970} grain="year">Depopulation</OnTheMap> runs from 1970
+      and has not. The old start date was read off the population series and written on a node
       named for industry, which nothing could contradict until the industry was counted.
     </p>
   </section>
