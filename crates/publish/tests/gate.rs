@@ -34,20 +34,6 @@ fn read(rel: &str) -> String {
     fs::read_to_string(&path).unwrap_or_else(|e| panic!("{}: {e}", path.display()))
 }
 
-/// The `-p <name>` members named by a `cargo fmt` line, in the order they appear.
-fn fmt_members(line: &str) -> Vec<String> {
-    let mut out = Vec::new();
-    let mut words = line.split_whitespace();
-    while let Some(word) = words.next() {
-        if word == "-p" {
-            if let Some(name) = words.next() {
-                out.push(name.to_string());
-            }
-        }
-    }
-    out
-}
-
 /// The one line in a file that runs `cargo fmt`, or a panic naming the file.
 fn fmt_line(source: &str, what: &str) -> String {
     let lines: Vec<&str> = source
@@ -111,34 +97,42 @@ fn the_toolchain_carries_the_components_the_gate_uses() {
 }
 
 #[test]
-fn both_gates_format_check_every_workspace_member() {
-    // The smaller half of the same drift, and it failed green the other way: `chronology` and
-    // `placement` were added to the workspace and to mise's list, and CI kept checking six of
-    // eight. Pinned against the workspace itself, so a ninth member has to be added to both
-    // lists or this fails — which is the thing a comment saying "keep these in sync" cannot do.
+fn both_gates_format_check_the_whole_workspace() {
+    // This used to compare two hand-written `-p` lists against the workspace members, because
+    // `--all` also formats local path dependencies and the vendored geodesics crate was not
+    // rustfmt-clean at the pin — finding 6, goedelsoup/yidam#590. Upstream now formats
+    // prelude/domains/ in its own gate, so what arrives under .vendor/ is clean by construction
+    // and both gates say `--all`.
+    //
+    // That deletes the drift this test was written for rather than checking it: `--all` cannot
+    // check six of eight the way two lists could, and a ninth member needs no edit anywhere. So
+    // what is pinned now is the *absence* of a narrowing. `-p` here would be somebody reaching
+    // for the old workaround — probably because an unclean crate landed under .vendor/ again —
+    // and the answer to that is an upstream report, not a list that silently stops formatting a
+    // crate nobody remembers to add.
     let manifest = read("crates/Cargo.toml");
     let members_line = manifest
         .lines()
         .find(|l| l.trim_start().starts_with("members"))
         .expect("crates/Cargo.toml names its members");
-    let mut members: Vec<String> = members_line
-        .split('"')
-        .skip(1)
-        .step_by(2)
-        .map(str::to_string)
-        .collect();
-    members.sort();
-    assert!(members.len() >= 2, "expected a multi-member workspace");
+    let members = members_line.split('"').skip(1).step_by(2).count();
+    assert!(members >= 2, "expected a multi-member workspace");
 
     for (source, what) in [
         (read("mise.toml"), "mise.toml"),
         (read(".github/workflows/ci.yml"), ".github/workflows/ci.yml"),
     ] {
-        let mut named = fmt_members(&fmt_line(&source, what));
-        named.sort();
-        assert_eq!(
-            named, members,
-            "{what} format-checks {named:?} and the workspace holds {members:?}"
+        let line = fmt_line(&source, what);
+        assert!(
+            line.contains("--all"),
+            "{what} format-checks with `{line}` — it must say `--all`, or it checks whatever \
+             list somebody last remembered to update"
+        );
+        assert!(
+            !line.split_whitespace().any(|w| w == "-p"),
+            "{what} names members with `-p` again: `{line}`. See finding 6 in \
+             .yidam/decisions/upstream-findings.yml — if an unclean crate landed under \
+             .vendor/, report it upstream rather than narrowing the gate here"
         );
     }
 }

@@ -93,30 +93,34 @@ if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"
 cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
 """
 
-# `-p` per member and not `--all`, and the difference is not cosmetic. Cargo's own
-# help for the flag is "Format all packages, **and also their local path-based
-# dependencies**" — and crates/proximity has one: the vendored geodesics crate at
-# .yidam/.vendor/prelude/domains/geodesics/rust, which it depends on by path
-# because that is where the prelude puts it.
+# `--all`, and the flag reaches further than this workspace. Cargo's own help is
+# "Format all packages, **and also their local path-based dependencies**" — and
+# crates/proximity has one: the vendored geodesics crate at
+# .yidam/.vendor/prelude/domains/geodesics/rust, which it depends on by path because
+# that is where the prelude puts it. That directory is read-only, and `cargo fmt` on
+# it is an edit under .vendor/, discarded at the next re-vendor.
 #
-# That directory is read-only. Upstream does not run rustfmt over prelude/domains/,
-# so whether the copy this repository holds is rustfmt-clean is an accident of which
-# pin it is on — it was at 1162287e and is not at 7b0cef2e, where two hand edits left
-# a wrapped expression and an unsorted `use`. So `--all` made this repository's
-# formatting gate fail on code it is forbidden to format, with no legal fix: running
-# `cargo fmt` on it is an edit under .vendor/, discarded at the next re-vendor.
+# From 7b0cef2e to fc961757 this list named the eight members instead, because the
+# vendored copy was NOT rustfmt-clean at that pin and `--all` failed the gate on code
+# this repository may not edit. That is finding 6 in
+# .yidam/decisions/upstream-findings.yml, filed as goedelsoup/yidam#590 and closed at
+# template v0.4.0 by a CI gate upstream that glob-discovers the domain crates and
+# formats them. What arrives under .vendor/ is now clean by construction rather than
+# by accident of the pin, so the workaround came out: it named the eight members in
+# three files, nothing checked that a ninth was added to each, and a crate left off
+# was silently never formatted — a worse failure than the one it avoided.
 #
-# Naming the members is the honest boundary — a repository formats what it writes.
-# The cost is that a new crate has to be added here and in the two other places this
-# list appears (`ci` below, and the crates job in .github/workflows/ci.yml), and
-# nothing checks that it was: a crate left off is simply never formatted, quietly.
-# Reported upstream in .yidam/decisions/upstream-findings.yml.
+# The reintroduction path is real and worth naming: if a future re-vendor ever lands
+# an unclean crate under prelude/domains/, this gate fails again with no legal repair
+# from here. The response is an upstream report, not a second narrowing — and
+# `both_gates_format_check_the_whole_workspace` in crates/publish/tests/gate.rs will
+# fail if somebody reaches for `-p` instead.
 
 [tasks.fmt]
 description = "Format domain computer Rust code. No-op until crates/ exists."
 run = """
 if [ ! -f crates/Cargo.toml ]; then echo "no crates/Cargo.toml yet — skipping"; exit 0; fi
-cargo fmt --manifest-path crates/Cargo.toml -p chronology -p covering -p ground -p provenance -p placement -p proximity -p publish -p succession
+cargo fmt --manifest-path crates/Cargo.toml --all
 """
 
 # ── publication (crates/publish → web/src/feeds/) ─────────────────────────
@@ -350,7 +354,7 @@ if [ ! -f crates/Cargo.toml ]; then
   echo "corpus gate only, which is the whole gate on day one."
   exit 0
 fi
-cargo fmt --manifest-path crates/Cargo.toml -p chronology -p covering -p ground -p provenance -p placement -p proximity -p publish -p succession -- --check
+cargo fmt --manifest-path crates/Cargo.toml --all -- --check
 cargo clippy --workspace --all-targets --manifest-path crates/Cargo.toml -- -D warnings
 cargo test --workspace --manifest-path crates/Cargo.toml
 RUSTDOCFLAGS="-D warnings" cargo doc --no-deps --workspace --manifest-path crates/Cargo.toml
