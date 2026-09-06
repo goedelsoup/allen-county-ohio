@@ -199,6 +199,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-house-prices-by-tract-1986-2025.yml](measure/allen-county-house-prices-by-tract-1986-2025.yml) | measure | House prices in Allen County's census tracts, 1986–2025 | 6 | 10v / 4i / 1o | 117 |
 | [allen-county-household-composition-2023.yml](measure/allen-county-household-composition-2023.yml) | measure | Who lives with whom in Allen County, 2019–2023 | 6 | 13v / 2i / 1o | 117 |
 | [allen-county-household-disaster-aid-2007-2020.yml](measure/allen-county-household-disaster-aid-2007-2020.yml) | measure | Federal aid to Allen County households, 2007 and 2020 | 3 | 6v / 4i / 1o | 80 |
+| [allen-county-household-income-1989-2024.yml](measure/allen-county-household-income-1989-2024.yml) | measure | Allen County's median household income, 1989–2024 | 5 | 9v / 0i / 1o | 112 |
 | [allen-county-households-1970-2023.yml](measure/allen-county-households-1970-2023.yml) | measure | Allen County households and household type, 1970–2023 | 6 | 13v / 4i / 1o | 144 |
 | [allen-county-households-by-place-2020.yml](measure/allen-county-households-by-place-2020.yml) | measure | Allen County households by township and city, 2020 | 6 | 11v / 1i / 1o | 110 |
 | [allen-county-housing-1990.yml](measure/allen-county-housing-1990.yml) | measure | Allen County's housing in 1990 | 4 | 9v / 5i / 0o | 92 |
@@ -262,7 +263,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-oil-and-gas-wells-2026.yml](measure/allen-county-oil-and-gas-wells-2026.yml) | measure | Oil and gas wells in Allen County | 5 | 7v / 2i / 0o | 102 |
 | [allen-county-original-vegetation.yml](measure/allen-county-original-vegetation.yml) | measure | What grew in Allen County before the surveys, mapped | 6 | 9v / 4i / 1o | 111 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 6v / 13i / 0o | 132 |
-| [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 12v / 4i / 1o | 121 |
+| [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 13v / 4i / 0o | 124 |
 | [allen-county-polling-places-2004-2024.yml](measure/allen-county-polling-places-2004-2024.yml) | measure | Allen County polling places and poll workers, 2004–2024 | 5 | 8v / 1i / 0o | 92 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 3 | 7v / 2i / 0o | 84 |
@@ -275,6 +276,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
 | [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 5 | 15v / 6i / 0o | 138 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
+| [allen-county-poverty-1989-2024.yml](measure/allen-county-poverty-1989-2024.yml) | measure | Poverty in Allen County, 1989–2024 | 5 | 11v / 0i / 1o | 116 |
 | [allen-county-precipitation-1895-2025.yml](measure/allen-county-precipitation-1895-2025.yml) | measure | Allen County precipitation, 1895–2025 | 2 | 10v / 3i / 1o | 79 |
 | [allen-county-premature-death-1997-2022.yml](measure/allen-county-premature-death-1997-2022.yml) | measure | Premature death in Allen County, 1997–2022 | 2 | 7v / 5i / 1o | 98 |
 | [allen-county-presidential-vote-1856-1884.yml](measure/allen-county-presidential-vote-1856-1884.yml) | measure | Allen County presidential vote, 1856–1884 | 2 | 9v / 4i / 2o | 97 |

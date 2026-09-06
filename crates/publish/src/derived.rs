@@ -15122,6 +15122,165 @@ pub const ASSERTIONS: &[Assertion] = &[
             Figure { label: "Agriculture within class, rose", value: 0.989, literal: "0.989" },
         ],
     },
+    Assertion {
+        id: "ninety-seven-cents-to-eighty-three",
+        statement: "The median household in Allen County earned ninety-seven cents on the national \
+                    dollar in 1989 and eighty-three in 2024. It is one of the few movements in this \
+                    series wide enough to clear its own confidence interval.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**The median household in Allen County earned ninety-seven cents on the national dollar in 1989 and eighty-three in 2024, and that fall is one of the few things in this series large enough to clear its own interval.** [verified] \u{2014} [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), thirty-one produced years. As a share of the national median the county's bounds are 89.3 to 104.2 per cent in 1989 and 79.5 to 86.3 in 2024, and the two do not overlap."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[
+            Figure { label: "1989, lower bound", value: 89.3, literal: "89.3" },
+            Figure { label: "1989, upper bound", value: 104.2, literal: "104.2" },
+            Figure { label: "2024, lower bound", value: 79.5, literal: "79.5" },
+            Figure { label: "2024, upper bound", value: 86.3, literal: "86.3" },
+        ],
+    },
+    Assertion {
+        id: "the-county-fell-while-the-nation-rose",
+        statement: "Allen County's median household income was $70,750 in 1989 and $67,677 in 2024, \
+                    in the dollars of 2024. The national median went from $73,125 to $81,604 in the \
+                    same dollars.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**In figures: $27,967 in 1989 and $67,677 in 2024, which is $70,750 and $67,677 in the dollars of 2024.** [verified] \u{2014} the same source, deflated here with [the all-items consumer price index](../../catalog/bls-cpi.md). The national median went from $73,125 to $81,604 in the same dollars, a rise of 11.6 per cent, while this county's fell 4.3."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[
+            Figure { label: "Allen 1989", value: 70750.0, literal: "70,750" },
+            Figure { label: "Allen 2024", value: 67677.0, literal: "67,677" },
+            Figure { label: "United States 1989", value: 73125.0, literal: "73,125" },
+            Figure { label: "United States 2024", value: 81604.0, literal: "81,604" },
+        ],
+    },
+    Assertion {
+        id: "the-level-does-not-separate-and-the-share-does",
+        statement: "Allen County's real median income in 1989 and in 2024 cannot be told apart by \
+                    this file \u{2014} the intervals overlap. Divided by the national median, the \
+                    same two years part company.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**The fall in real income on its own does not separate, and the fall relative to the nation does.** The county's 1989 bounds are $65,275 and $76,194 in 2024 dollars against $64,897 and $70,457 for 2024, which overlap. Divided by a national median whose own interval is a few hundred dollars wide, the same two years part company. [verified] \u{2014} the same source, its published bounds and the national row. That is what a ratio buys over a level, and it is the reason this node leads with the share. See [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml)."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-eight-years-below-1989",
+        statement: "Twenty-eight of the thirty-one years in the series stand below 1989 in real \
+                    terms. The floor is 2012, at $57,620 against $70,930 in 1998.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**The floor is 2012 and the county has not been back to where it started.** Real median household income was $70,930 in 1998 and $57,620 in 2012, a fall of 18.8 per cent, and the 2024 figure of $67,677 is below 1998, below 1989 and below the single highest year in the series, which is 2019 at $71,498. [verified] \u{2014} the same source, deflated here. Two of the thirty-one years stand above 1989 \u{2014} 1998 and 2019 \u{2014} and twenty-eight stand below it."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[
+            Figure { label: "1998", value: 70930.0, literal: "70,930" },
+            Figure { label: "2012", value: 57620.0, literal: "57,620" },
+            Figure { label: "2019", value: 71498.0, literal: "71,498" },
+            Figure { label: "2024", value: 67677.0, literal: "67,677" },
+        ],
+    },
+    Assertion {
+        id: "thirty-one-years-of-poverty",
+        statement: "Allen County's poverty rate runs from 10.6 per cent in 2000 to 20.1 in 2012, and \
+                    stands at 14.8 per cent in 2024 \u{2014} 14,364 people.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**Thirty-one years of how many people in this county are below the poverty line, and the first poverty series this corpus has held at all.** The rate runs from 10.6 per cent in 2000 to 20.1 in 2012 and stands at 14.8 in 2024, on 14,364 people. [verified] \u{2014} [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), the state-and-county files for every produced year."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "2000", value: 10.6, literal: "10.6" },
+            Figure { label: "2012", value: 20.1, literal: "20.1" },
+            Figure { label: "2024", value: 14.8, literal: "14.8" },
+        ],
+    },
+    Assertion {
+        id: "not-one-year-separates-from-the-last",
+        statement: "The poverty file publishes a ninety per cent interval on every figure, and \
+                    across thirty adjacent pairs not one year in Allen County separates from the \
+                    year before it. The four-point rise of 2009 has intervals touching exactly at \
+                    16.7.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**Not one year in the series separates from the year before it.** The file publishes a ninety per cent interval on every figure and the interval is about 4.4 points wide, against a range of 9.5 points across the whole series. Thirty adjacent pairs were tested and none of them clears: the four-point rise of 2009 has intervals touching exactly at 16.7, and the four-point fall of 2013 has intervals overlapping by two tenths. [verified] \u{2014} the same source, its published bounds. See [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml)."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[],
+    },
+    Assertion {
+        id: "spans-separate-and-the-ends-do-not",
+        statement: "Of the 465 pairs of years in the series, 103 separate, the shortest gap being \
+                    two years. The endpoints are not among them: 11.8 per cent in 1989 and 14.8 in \
+                    2024 cannot be told apart.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**What does separate is spans.** 103 of the 465 possible pairs clear, the shortest gap being two years \u{2014} 2007 against 2009 \u{2014} and the county's 2000s separate from its 2010s in every direction anyone would ask. [verified] \u{2014} the same source. The endpoints do not: 11.8 per cent in 1989 and 14.8 in 2024 cannot be told apart by this file, though everything between them says the county got poorer and stayed poorer."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "Pairs that separate", value: 103.0, literal: "103" },
+            Figure { label: "Pairs tested", value: 465.0, literal: "465" },
+        ],
+    },
+    Assertion {
+        id: "indistinguishable-from-the-nation-until-2008",
+        statement: "In no year from 1989 to 2008 does Allen County's poverty interval clear the \
+                    nation's. In 2009, 2010, 2011, 2012, 2014, 2021 and 2024 it does.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**The county was indistinguishable from the nation until 2008 and distinguishably poorer seven times since.** In no year from 1989 to 2008 does Allen County's interval clear the national one. In 2009, 2010, 2011, 2012, 2014, 2021 and 2024 it does. [verified] \u{2014} the same source, the county row against the national row. On the point estimates the county is below the nation in every year to 2004 and above it in every year from 2007."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-rate-against-the-national-rate",
+        statement: "Allen County's poverty rate was 0.922 times the nation's in 1989, 1.264 in 2012 \
+                    and 1.223 in 2024.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**In figures: the county's rate was 0.922 times the nation's in 1989, 1.264 in 2012 and 1.223 in 2024.** [verified] \u{2014} the same source. The 1989 ratio and the 2012 ratio separate; the 1989 and 2024 ratios do not, which is the difference between a county that got poorer than the country and one that can be shown to have. See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml)."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "1989", value: 0.922, literal: "0.922" },
+            Figure { label: "2012", value: 1.264, literal: "1.264" },
+            Figure { label: "2024", value: 1.223, literal: "1.223" },
+        ],
+    },
+    Assertion {
+        id: "child-poverty-reached-three-in-ten",
+        statement: "Child poverty in Allen County ran higher than the county's own rate in every one \
+                    of the thirty-one years and reached 30.0 per cent in 2010.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**Child poverty ran higher than the county's rate in every one of the thirty-one years, and reached 30.0 per cent in 2010.** [verified] \u{2014} the same source, its under-18 estimates. Nearly one child in three, in the year after the county's largest single-year rise."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "Children in poverty, 2010", value: 30.0, literal: "30.0" },
+        ],
+    },
+    Assertion {
+        id: "the-survey-and-the-model-overlap",
+        statement: "The five-year survey puts Allen County's poverty rate at 13.1 per cent for 2023 \
+                    and the federal model at 14.1. Their intervals overlap, and neither checks the \
+                    other, because the model reads the survey.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**The survey and the model disagree by a point and their intervals overlap.** The five-year American Community Survey puts the county at 13.1 per cent for 2023 \u{b1} 1.2 and this file at 14.1 with bounds of 11.8 and 16.4. [verified] \u{2014} [the survey](allen-county-income-and-poverty-2023.yml) and the same source. Neither is a check on the other, because the model reads the survey as one of its inputs."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "Survey", value: 13.1, literal: "13.1" },
+            Figure { label: "Model", value: 14.1, literal: "14.1" },
+        ],
+    },
 ];
 
 /// One span of one node, as it survived the gate.
