@@ -88,14 +88,21 @@ fn report(p: &Placed) {
             if let Some(tag) = &pl.tag {
                 println!("  weakest tag on the route: {tag}");
             }
-            println!(
-                "  discriminates: {}",
-                if pl.discriminates() {
-                    "yes"
-                } else {
-                    "no — reaches only the whole frame"
-                }
-            );
+            // The discrimination test does not apply to a track and printing it would be a
+            // category error: a line is not a position that could be the frame's centre, so
+            // "discriminates: yes" would answer a question nobody asked of it.
+            if pl.is_track() {
+                println!("  the node states the ground it crossed; no edge was followed");
+            } else {
+                println!(
+                    "  discriminates: {}",
+                    if pl.discriminates() {
+                        "yes"
+                    } else {
+                        "no — reaches only the whole frame"
+                    }
+                );
+            }
             println!();
             for r in &pl.reached {
                 println!("  {} — {}", r.node, r.anchor);
