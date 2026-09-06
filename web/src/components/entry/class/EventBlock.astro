@@ -7,6 +7,7 @@
 // tick is the event; the band is what it is situated in.
 
 import SpanBar from '../SpanBar.astro'
+import EventTrack from './EventTrack.astro'
 import { year } from '../../../lib/entry'
 import { edges, nodes, type Node } from '../../../lib/feeds'
 
@@ -38,6 +39,13 @@ const eventYears = nodes
 const min = Math.min(...eventYears, band?.start ?? Infinity)
 const max = Math.max(...eventYears, band?.end ?? -Infinity)
 ---
+
+{/*
+  The tick says when, the track says where. Both or either — an event that states a track and
+  cannot be dated would still be worth drawing, and the two conditions are kept apart so that
+  one going missing does not take the other with it.
+*/}
+<EventTrack node={node} />
 
 {
   occurred !== null && max > min && (

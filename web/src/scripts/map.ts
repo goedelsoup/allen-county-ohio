@@ -47,6 +47,15 @@ import {
   type Grain,
   type View,
 } from '../lib/eras'
+import {
+  START,
+  STILL,
+  advance,
+  route as playbackRoute,
+  seek,
+  type Cadence,
+  type Stop,
+} from '../lib/motion'
 import { lines, type Line } from '../lib/edges'
 import { courses, type Course, type End } from '../lib/water'
 import { entryPath } from '../lib/entry'
@@ -129,6 +138,28 @@ function palette() {
     // One hue, light to dark. Five steps, because past about seven bins adjacent classes blur.
     ramp: [v('--seq-100'), v('--seq-250'), v('--seq-400'), v('--seq-550'), v('--seq-700')],
   }
+}
+
+/**
+ * The playback cadence, resolved from the token layer.
+ *
+ * **This is also how `prefers-reduced-motion` is read.** `tokens/site.css` redeclares both
+ * tokens inside the media query, so a reader who has asked for no motion resolves a single long
+ * uniform hold here without this file testing for it — one source for the preference rather
+ * than a token and a script that can disagree.
+ *
+ * `STILL` is the fallback rather than the fast cadence, on the same argument: if the sheet has
+ * not resolved, the conservative answer is the one that moves least.
+ */
+function cadence(): Cadence {
+  const s = getComputedStyle(document.documentElement)
+  const ms = (name: string, fallback: number): number => {
+    const raw = s.getPropertyValue(name).trim()
+    const n = Number.parseFloat(raw)
+    if (!Number.isFinite(n) || n <= 0) return fallback
+    return raw.endsWith('ms') ? n : raw.endsWith('s') ? n * 1000 : n
+  }
+  return { step: ms('--replay-step', STILL.step), hold: ms('--replay-hold', STILL.hold) }
 }
 
 /**
@@ -971,8 +1002,21 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   // The readouts
   // -------------------------------------------------------------------------
 
+  const empty =
+    '<p class="empty">Select a mark to see what the corpus puts there, and by what route it got there.</p>'
+
   const renderPanel = () => {
     if (!panel) return
+
+    // Nothing selected is the common case, and it was reached by filtering the whole corpus and
+    // grouping it onto anchors first — work whose only use was to find no match in it. It costs
+    // little and it is on the path the transport runs every frame, which is reason enough for
+    // the question to be asked before the work rather than after it.
+    if (!state.selected) {
+      panel.innerHTML = empty
+      return
+    }
+
     const look = view(state.year, state.grain, eras, {
       generous: state.generous,
       hops: state.hops,
@@ -981,8 +1025,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     const here = anchored(pool).find((a) => a.node === state.selected)
 
     if (!here) {
-      panel.innerHTML =
-        '<p class="empty">Select a mark to see what the corpus puts there, and by what route it got there.</p>'
+      panel.innerHTML = empty
       return
     }
 
@@ -1096,12 +1139,17 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
   const refresh = () => deck.setProps({ layers: layers() })
 
-  const update = () => {
-    address()
+  /** Everything the year touches, without writing the URL. */
+  const paint = () => {
     showScale()
     readouts()
     refresh()
     renderPanel()
+  }
+
+  const update = () => {
+    address()
+    paint()
   }
 
   /**
@@ -1150,14 +1198,121 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   }
 
   // -------------------------------------------------------------------------
+  // The transport
+  //
+  // The axis, played. Every frame is `state.year` set to a value the scrub could already have
+  // been dragged to — the transport computes no state and asserts nothing the URL for that year
+  // did not already assert. Nothing is interpolated between two frames and nothing may be: see
+  // `an-animation-asserts-continuity`, and `lib/motion.ts`, which holds the rules as functions.
+  // -------------------------------------------------------------------------
+
+  const playButton = container.querySelector<HTMLButtonElement>('[data-play]')
+  const playLabel = container.querySelector<HTMLElement>('[data-play-label]')
+  const playNote = container.querySelector<HTMLElement>('[data-play-note]')
+
+  let stops: Stop[] = []
+  let head = START
+  let frame = 0
+  let last = 0
+
+  /**
+   * The longest slice of wall time one tick may consume.
+   *
+   * Two cases reach this, and the cap is right for both. `requestAnimationFrame` does not fire
+   * in a background tab, so a reader who switches away for a minute comes back holding a delta
+   * of sixty seconds; and a slow renderer hands back a frame every few hundred milliseconds all
+   * the way through. `advance` would honour either and cross most of the county's history in
+   * one frame — correct arithmetic, useless playback.
+   *
+   * So the transport degrades by **running slower, never by skipping years**. That direction is
+   * the one the route argues for: every year gets a frame, because a playback that dropped the
+   * thin decades would hide the shape of the archive exactly as a linear axis does.
+   *
+   * **This is not a hot path, and it was measured rather than assumed.** A CPU profile of four
+   * seconds of playback under software WebGL came back 98.5 per cent idle: the whole of this
+   * file's per-frame work — three passes over 677 records, the layer rebuild, the readouts —
+   * is a few milliseconds, and the frame interval is the GPU rasterising. Anyone reaching for a
+   * memo or a shared computation here should profile first and find the same thing.
+   */
+  const MAX_DELTA = 200
+
+  const label = (playing: boolean) => {
+    playButton?.setAttribute('aria-pressed', String(playing))
+    if (playLabel) playLabel.textContent = playing ? 'Pause' : 'Play'
+  }
+
+  /**
+   * Stop the transport and write the year the reader stopped on.
+   *
+   * The URL is written **here** rather than on every frame. `address()` is a `replaceState`,
+   * and a play at the fastest cadence calls it eleven times a second — past what Safari
+   * permits before it starts dropping them. It is also the wrong shape: `address()` writes a
+   * view somebody could be sent, and a moving view is not a view. So playback carries no
+   * playback state in the query string, and the URL becomes true again the moment it stops.
+   */
+  const halt = () => {
+    if (!frame) return
+    cancelAnimationFrame(frame)
+    frame = 0
+    last = 0
+    label(false)
+    address()
+  }
+
+  const tick = (now: number) => {
+    const delta = last === 0 ? 0 : Math.min(now - last, MAX_DELTA)
+    last = now
+    head = advance(head, stops, delta)
+    const year = stops[head.index]?.year
+    if (year !== undefined && year !== state.year) {
+      state.year = year
+      paint()
+    }
+    if (head.done) {
+      halt()
+      return
+    }
+    frame = requestAnimationFrame(tick)
+  }
+
+  const start = () => {
+    // Rebuilt on every play rather than cached: the reader may have changed theme, or their
+    // motion preference, since the last one — and the cadence comes out of the stylesheet.
+    stops = playbackRoute(records, eras, cadence())
+    if (stops.length === 0) return
+    // Standing at the end means the reader has already watched it, or has just arrived at the
+    // default year, which is the last one. Either way the useful play is from the beginning.
+    const ended = state.year >= stops[stops.length - 1].year
+    head = seek(stops, ended ? stops[0].year : state.year)
+    state.year = stops[head.index].year
+    paint()
+    label(true)
+    frame = requestAnimationFrame(tick)
+  }
+
+  // The control is hidden in the markup and claimed here, so a reader who never runs this
+  // script is not offered a dead button. Everything else on the axis works without JavaScript
+  // or at least says what it means; a play button does neither.
+  if (playButton) {
+    playButton.hidden = false
+    if (playNote) playNote.hidden = false
+    playButton.addEventListener('click', () => (frame ? halt() : start()))
+  }
+
+  // -------------------------------------------------------------------------
   // The controls
   //
   // Every one of them is real markup rendered by the page, so the spine, the ribbon and the
   // period names are in the document before this script runs and are readable without it.
+  //
+  // Each of the three that moves the year halts the transport first: a reader reaching for the
+  // scrub is taking the wheel, and a control that fights the playhead for the same integer is
+  // a control that appears broken.
   // -------------------------------------------------------------------------
 
   for (const tile of container.querySelectorAll<HTMLElement>('[data-era]')) {
     tile.addEventListener('click', () => {
+      halt()
       const era = eras.find((e) => e.key === tile.dataset.era)
       if (!era) return
       // Land at the tile's own end rather than its start: the closing year of an era is where
@@ -1169,12 +1324,14 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
   for (const chip of container.querySelectorAll<HTMLElement>('[data-period-from]')) {
     chip.addEventListener('click', () => {
+      halt()
       state.year = Number(chip.dataset.periodFrom)
       update()
     })
   }
 
   scrub?.addEventListener('input', () => {
+    halt()
     state.year = Number(scrub.value)
     update()
   })

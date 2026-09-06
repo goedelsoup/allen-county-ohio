@@ -1,0 +1,226 @@
+---
+// The ground a happening crossed, drawn against the county it crossed.
+//
+// Two events in this corpus state a track and both are storms: a beginning and an end out of a
+// federal file, and nothing recorded in between. So this figure is built to draw exactly that
+// and to be visibly unable to draw more.
+//
+// ---- Why this is a diagram and not the map ----
+//
+// The map answers *what is here and when* and costs deck.gl, nine GeoJSON files and a WebGL
+// context. A track is one polyline on one outline, wanted inline in the middle of an entry
+// page. It is drawn at build time as SVG, so it is in the document for a reader with no
+// JavaScript, for a printer, and for anything that reads the page without running it.
+//
+// ---- What moves, and what may not ----
+//
+// The control reveals the **stated positions in order**: first the origin alone, then the
+// origin and the terminus. Every frame is a subset of what the corpus holds, and going from one
+// to the next is a cut. That is progressive disclosure, and it is the only motion
+// `an-animation-asserts-continuity` licenses over this material.
+//
+// **Nothing sweeps along the connector.** A mark travelling from one endpoint to the other is
+// the tween the rule refuses: it would draw the storm at a position, at a moment, that no source
+// recorded — and it would do it in the encoding that carries no tag and affords no tooltip. The
+// connector is dashed for the same reason it is not animated: the endpoints are the claim, and
+// the line between them is a reading of two points and a stated length.
+
+import { countyRing } from '../../../lib/ground'
+import { bearing, frame, parseTrack, straightMiles } from '../../../lib/track'
+import type { Node } from '../../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+
+const points = parseTrack(node.properties.track)
+const ring = countyRing()
+
+// The frame is fitted to the county rather than to the track, so two tracks on two pages are
+// drawn at one scale and can be compared by eye. Fitting each to its own extent would make a
+// nine-mile storm and an eighteen-mile storm the same size on the page.
+const box = frame(ring, 520)
+const outline = ring.map(box.place)
+const marks = points.map(box.place)
+
+const straight = straightMiles(points)
+const path = outline.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join('')
+const line = marks.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join('')
+---
+
+{
+  points.length >= 2 && (
+    <figure class="track" data-track>
+      <svg
+        viewBox={`0 0 ${box.width} ${box.height.toFixed(1)}`}
+        role="img"
+        aria-label={`The county, and the ${straight.toFixed(1)}-mile line between the two positions recorded for this event: ${points.map(bearing).join(' to ')}.`}
+      >
+        <path class="county" d={`${path}Z`} />
+        {/* Revealed at step 1, which is why it carries the index rather than being always on. */}
+        <path class="run" d={line} data-track-run />
+        {marks.map((p, i) => (
+          <circle
+            class:list={['mark', i === 0 && 'first', i === marks.length - 1 && 'last']}
+            cx={p.x.toFixed(1)}
+            cy={p.y.toFixed(1)}
+            r="5"
+            data-track-mark={i}
+          />
+        ))}
+      </svg>
+
+      <div class="legend">
+        <button type="button" data-track-step hidden>
+          <span data-track-step-label>Show the end</span>
+        </button>
+        <ol class="positions">
+          {points.map((p, i) => (
+            <li data-track-position={i}>
+              <span class="role">{i === 0 ? 'Began' : i === points.length - 1 ? 'Ended' : 'Passed'}</span>
+              <span class="at">{bearing(p)}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <figcaption>
+        The two positions the source recorded, and the straight line between them —{' '}
+        {straight.toFixed(2)} miles, which is <strong>not</strong> the track length the source
+        states. Nothing about the ground between the endpoints is on the record, so the connector
+        is drawn dashed and no mark travels along it. The outline is the county's 2020 boundary,
+        which is the only one this site holds.
+      </figcaption>
+    </figure>
+  )
+}
+
+<style>
+  .track {
+    margin: var(--space-6) 0 var(--space-8);
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+  }
+  .county {
+    fill: var(--surface-sunken, transparent);
+    stroke: var(--rule-strong);
+    stroke-width: 1;
+  }
+  /* Dashed because the ground between the endpoints is not on the record. The endpoints are
+     the claim; this is a reading of them. */
+  .run {
+    fill: none;
+    stroke: var(--text-strong);
+    stroke-width: 2;
+    stroke-dasharray: 5 4;
+    stroke-linecap: round;
+  }
+  .mark {
+    fill: var(--surface-card);
+    stroke: var(--text-strong);
+    stroke-width: 2;
+  }
+  .mark.last {
+    fill: var(--text-strong);
+  }
+  /* Hidden only once the script has taken over. Without JavaScript every position is drawn,
+     which is the complete and correct figure — the control adds sequence, not information. */
+  [data-track-stepping] .run,
+  [data-track-stepping] .mark {
+    visibility: hidden;
+  }
+  [data-track-stepping] .mark[data-track-shown],
+  [data-track-stepping] .run[data-track-shown] {
+    visibility: visible;
+  }
+  .legend {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    margin-top: var(--space-4);
+    flex-wrap: wrap;
+  }
+  .positions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+  .positions li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .role {
+    font: var(--type-eyebrow);
+    color: var(--text-muted);
+  }
+  .at {
+    font: var(--type-data);
+    color: var(--text-body);
+  }
+  [data-track-step] {
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--rule-hairline);
+    border-radius: 999px;
+    background: var(--surface-card);
+    color: var(--text-body);
+    font: inherit;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition-control);
+  }
+  [data-track-step]:hover {
+    border-color: var(--rule-strong);
+    background: var(--surface-raised);
+  }
+  figcaption {
+    margin-top: var(--space-4);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    max-width: var(--measure-prose);
+  }
+</style>
+
+<script>
+  // Reveal the stated positions in order. Cuts only — see the head of this file.
+  //
+  // The figure is complete before this runs and stays complete if it never does. All the script
+  // adds is the ability to see the origin by itself, which is the one thing the finished drawing
+  // cannot show.
+  for (const fig of document.querySelectorAll<HTMLElement>('[data-track]')) {
+    const marks = [...fig.querySelectorAll<SVGElement>('[data-track-mark]')]
+    const run = fig.querySelector<SVGElement>('[data-track-run]')
+    const button = fig.querySelector<HTMLButtonElement>('[data-track-step]')
+    const label = fig.querySelector<HTMLElement>('[data-track-step-label]')
+    if (marks.length < 2 || !button || !label) continue
+
+    // `at` counts positions revealed: 1 is the origin alone, marks.length is the whole track.
+    let at = marks.length
+
+    const draw = () => {
+      for (const [i, mark] of marks.entries()) mark.toggleAttribute('data-track-shown', i < at)
+      run?.toggleAttribute('data-track-shown', at >= marks.length)
+      label.textContent = at >= marks.length ? 'Show the beginning alone' : 'Show the end'
+      for (const [i, item] of fig.querySelectorAll<HTMLElement>('[data-track-position]').entries()) {
+        item.style.opacity = i < at ? '1' : '0.35'
+      }
+    }
+
+    fig.toggleAttribute('data-track-stepping', true)
+    button.hidden = false
+    button.addEventListener('click', () => {
+      at = at >= marks.length ? 1 : marks.length
+      draw()
+    })
+    draw()
+  }
+</script>

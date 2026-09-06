@@ -1,0 +1,139 @@
+id: an-animation-asserts-continuity
+summary: >-
+  Motion is about to enter a site that has had none, and a moving picture makes a claim a still
+  one does not: that the frames between two stated states occurred. So motion here may carry
+  attention and may never carry a claim — every frame is a state the corpus states, stepped
+  rather than tweened, at the precision the source gave. The boundary morph the map most invites
+  is refused outright, because the geometry to morph between does not exist.
+context: |
+  The site has no motion at all. `web/src/styles/tokens/motion.css` ports the design system's
+  whole duration and easing vocabulary — five durations, three easings, two composed transitions
+  — and `--transition-control` reaches three declarations in the entire web layer;
+  `--transition-surface` reaches none. Nothing calls `requestAnimationFrame`. There is no play
+  control anywhere.
+
+  What there is instead is a complete time model with no clock on it. `web/src/lib/eras.ts` is
+  pure functions over `atlas.json` — `spine`, `view`, `drawn`, `standing`, `ribbon` — and
+  `map.ts` drives them from a single integer, `state.year`, through one `update()`. Adding a
+  transport is a matter of moving that integer on a timer. Nothing about the rendering has to
+  change, which is exactly why the question of what motion *means* has to be settled before it
+  is easy.
+
+  It has to be settled because the corpus's entire apparatus is built against one failure:
+  inference presented as observation. Blocks carry `[verified]`, `[inference]` or `[open]`;
+  edges carry `claim_tag` and `edge-audit` fails an untagged one; `crates/publish` computes an
+  assertion's tier from the blocks beneath it rather than accepting a declared one, and checks
+  each plotted number against the text it was read from because *"a chart is where a corpus's
+  care goes to die."*
+
+  **None of that apparatus reaches a frame.** A tween between two dated states passes every gate
+  this repository has, because no gate reads the space between two data points. The corpus can
+  say a thing stood in 1831 and stood differently in 1848, and an animation can draw seventeen
+  intermediate years that no source witnessed, and every check stays green.
+
+  The pressure to do it is real rather than hypothetical. 38 event nodes carry a date; 27 are
+  known to the day, 4 to the month and 7 only to the year. Not one of them states its own
+  position — every placed event sits at `hops: 1`, reached through `occurred-in` or `affected`,
+  against 72 stated positions elsewhere in the corpus. The two tornadoes carry a track in prose
+  and nowhere else. An animation built on that material without a rule would invent most of what
+  it drew.
+decision: |
+  **Motion may carry attention. It may not carry a claim.**
+
+  Three rules follow, and each is checkable rather than advisory.
+
+  **1. Every frame is a state the corpus states.** A transport moves the reader between years the
+  axis already resolves; it does not synthesize a state for a year the corpus is silent about.
+  Playing the axis is the reader travelling faster, and travel was always available — the frames
+  are `view(year, …)` exactly as the scrub renders them today. Nothing new is asserted because
+  nothing new is computed.
+
+  **2. Transitions are stepped, not tweened.** Where the map moves between two stated states, it
+  cuts. An eased interpolation between them draws intermediate positions, extents or magnitudes
+  that no source recorded, and does it in the one encoding the reader has no way to interrogate:
+  there is no tooltip on a frame, no tag on a tween, and nothing in the panel that could say
+  *this part was made up*. The design system's own motion note — *"restrained and mechanical: no
+  bounce, no spring, no scaling"* — arrives at a compatible answer from a different direction,
+  and this decision is the epistemic half of it.
+
+  **3. Precision floors the grain.** A replay's step is `record.precision`. An event the source
+  dates to `1820` gets no sub-year motion; one dated to a month gets no daily motion. The
+  transport refuses the finer grain rather than distributing the event smoothly across the
+  interval it is known within, which is the same refusal `chronology` already makes by keeping
+  only the year and recording how much more was given.
+
+  **Reduced motion resolves to stepping, not to nothing.** `motion.css` collapses every duration
+  to `0ms` under `prefers-reduced-motion`, which is right for a hover transition and wrong for a
+  transport: a play control that resolves to zero duration does not degrade, it jumps to the end.
+  The clock reads the media query itself and advances discretely, holding each state long enough
+  to read. A reader who has asked for no motion still gets the sequence.
+
+  **New motion tokens go in `tokens/site.css`, never in `tokens/motion.css`.** The ported sheet
+  is under the port gate, and `port.test.ts` compares declarations including the ones scoped
+  inside `@media (prefers-reduced-motion: reduce)`. A playback token is a name the design system
+  does not have, which is precisely what `site.css` is for.
+
+  **The boundary morph is refused.** Townships changing shape between 1820 and 1848 is the most
+  compelling animation this map could show and this repository cannot draw it honestly. Every
+  boundary in `web/public/geo/` is a 2020 Census statement. There is no 1848 geometry to morph
+  *to*, so a morph would invent both endpoints' difference and every frame between them.
+  `groundFidelity()` exists because that data is absent — it fades the ground as the reader
+  travels away from 2020 precisely to say *this outline is not this year's outline* — and an
+  animation that tweened those outlines would assert, in motion, the thing the fade was written
+  to deny.
+rationale: |
+  **Why a rule rather than care.** The tween is not a mistake anybody makes deliberately. It is
+  the default in every animation library, it looks better than the cut, and it is invisible to
+  every gate in this repository. A norm that depends on remembering it at the moment a
+  `transitions:` prop is available is a norm that lasts until the phase after the one that wrote
+  it down.
+
+  **Why playing the axis is not itself a claim.** It was worth checking rather than assuming,
+  because a time-lapse feels like an assertion about change. It is not, here, for a structural
+  reason: the transport computes nothing. It sets `state.year` to values the scrub could already
+  be dragged to, and every frame is a render the site already serves at that URL. If frame 40 is
+  a lie, `?year=1860` was already the same lie, and the animation has introduced nothing.
+
+  What playback *does* introduce is a false impression available to a still frame only weakly:
+  that the reader is watching the county change. They are watching the record arrive. Those
+  differ most exactly where the corpus is thinnest — the decades before 1820 hold almost nothing,
+  and a county that appears to be empty until 1820 and then to fill is an artifact of collection,
+  not a fact about settlement. That is a caption's job and not a rule's, but it is the reason the
+  caption is not optional.
+
+  **Why playback runs in axis space rather than year space.** `eras.ts` already argues at length
+  that an evenly spaced control over 257 years *"gives 99.6 per cent of its travel to the 96 per
+  cent of the timespan holding half the record"*, and builds six tiles of equal width and unequal
+  duration on that finding. A transport advancing one year per tick reintroduces exactly the
+  defect the axis was shaped to remove, in the one mode where the reader cannot compensate by
+  dragging faster. The ribbon already computes the density the transport should dwell on.
+
+  **Why the refusal is recorded here rather than left undone.** A refusal that is merely not
+  implemented gets implemented by the next person who sees the gap. The morph is attractive,
+  the layer to do it with is already imported, and the reason it is wrong is not visible from
+  the code — it is visible only from `PROVENANCE.json` and from what `groundFidelity` is for.
+
+  **Alternatives considered.**
+
+  *Tween, and mark interpolated frames in the encoding.* A pale rim, a hatch, something the
+  warrant opacity already does for derived placements. Rejected: the warrant encoding works
+  because a mark persists long enough to be hovered and read; a frame lasts 40ms and carries no
+  affordance. An honest label nobody can read during the interval it describes is not a label.
+
+  *Let precision degrade gracefully — spread a year-precision event across its year.* Rejected on
+  the same ground as the tween, and it is the more tempting form because it looks like humility
+  about the interval. It is not: it draws a specific position at a specific moment inside a year
+  the source resolved no further, and the smooth sweep reads as knowledge of the progress.
+
+  *Skip the decision and write the rules as comments in `motion.ts`.* Rejected for the reason
+  this file exists at all. The rules govern the corpus's shape — property grain, what a replay
+  may draw — as much as the site's, and a rule about what may be asserted does not live in the
+  renderer.
+
+  **What would change the answer.** Historical geometry with a provenance anchor. If this
+  repository ever holds boundaries as of 1848 — a georeferenced survey, a digitized plat, an
+  atlas sheet in `public/geo/` with its own `PROVENANCE.json` entry — then a transition between
+  two *stated* extents becomes a step between two states the corpus states, and rule 2 licenses
+  it as a cut. It still would not license the tween.
+status: accepted
+date: "2026-09-06"
