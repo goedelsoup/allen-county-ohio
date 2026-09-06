@@ -50,7 +50,7 @@ import {
 import { lines, type Line } from '../lib/edges'
 import { courses, type Course, type End } from '../lib/water'
 import { entryPath } from '../lib/entry'
-import type { AtlasRecord } from '../lib/feeds'
+import { column, tableFor, type AtlasRecord } from '../lib/feeds'
 
 type RGBA = [number, number, number, number]
 
@@ -75,6 +75,16 @@ type Collection = { type: 'FeatureCollection'; features: { properties: FeaturePr
  * keyed through here. See `a-geoid-is-not-an-address`.
  */
 const shapeKey = (f: { properties: FeatureProps }) => `${f.properties.LEVEL}:${f.properties.GEOID}`
+
+/**
+ * The ground layers that own every pixel they cover.
+ *
+ * One at a time, always. A choropleth is a fill encoding over the whole county, and two of them
+ * stacked is one drawn on top of the other for no gain — and the era tint laid over either is
+ * two magnitudes in one hue. Showing them singly is also what makes the pair of mortgage layers
+ * a comparison rather than a smear: you switch, and the little that moves is the finding.
+ */
+const CHOROPLETHS = ['population', 'tracts', 'denial', 'priced'] as const
 
 const GEO = {
   county: '/geo/county.geojson',
@@ -289,6 +299,67 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const tractPopulations = tracts.features.map((f) => number(f.properties.POP100))
   const tractBreaks = quantileBreaks(tractPopulations, 5)
 
+  /**
+   * The corpus's two maps of one ground.
+   *
+   * `allen-county-mortgage-access-by-tract-2018-2024` states that a tract's denial rate and its
+   * share of higher-priced loans correlate at 0.828 — *the tracts where a mortgage is hardest to
+   * get are the tracts where it is dearest to have*. That was a coefficient standing on ten
+   * printed rows until the measure published all thirty-five, and these two layers are the claim
+   * drawn: switch between them and watch how little moves.
+   *
+   * **Each keeps its own quantile breaks, and they are not put on a shared scale.** They are
+   * different quantities — a share of applications refused against a share of loans priced above
+   * a federal threshold — and a common ramp would assert they are one. Quantile classing is the
+   * right encoding for the claim actually made, which is about co-*ranking*; the legend prints
+   * each variable's own break values so the levels stay visible under the pattern.
+   */
+  const ACCESS = 'measure/allen-county-mortgage-access-by-tract-2018-2024.yml'
+  const accessTable = tableFor(ACCESS)
+  const MEASURES = {
+    denial: {
+      column: 'denial_pct',
+      /** The denominator the rate is computed over, and what the measure's floor applies to. */
+      over: 'decisions',
+      title: 'Denied applications, per cent, 2018–2024',
+      row: 'Denial rate',
+    },
+    priced: {
+      column: 'higher_priced_pct',
+      over: 'priced',
+      title: 'Higher-priced loans, per cent, 2018–2024',
+      row: 'Higher-priced share',
+    },
+  } as const
+  type Measure = keyof typeof MEASURES
+
+  /**
+   * The measure's own floor, applied here rather than assumed away.
+   *
+   * `allen-county-mortgage-access-by-tract-2018-2024` rates a tract only where its denominator
+   * reaches thirty, and computes the correlation over the 34 that clear it on both counts. Tract
+   * 39003013700 has 71 decisions and 28 priced originations, so its denial rate is rated and its
+   * higher-priced share is not — and a share of 28 loans drawn in the darkest class would put the
+   * most emphatic-looking tract on the map on the thinnest evidence in the table.
+   */
+  const RATED = 30
+
+  const tractValues = new Map<Measure, Map<string, number>>(
+    (Object.keys(MEASURES) as Measure[]).map((k) => {
+      const values = column(accessTable, MEASURES[k].column)
+      for (const [key, n] of column(accessTable, MEASURES[k].over)) {
+        if (n < RATED) values.delete(key)
+      }
+      return [k, values]
+    }),
+  )
+  const tractMeasureBreaks = new Map<Measure, number[]>(
+    (Object.keys(MEASURES) as Measure[]).map((k) => [
+      k,
+      quantileBreaks([...(tractValues.get(k) as Map<string, number>).values()], 5),
+    ]),
+  )
+
   /** The corpus's containment and location claims, both ends stated. Computed once. */
   const claims = lines()
 
@@ -412,7 +483,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     // era tint laid over it is two magnitudes in one hue — worst of all at 1940, whose era ink and
     // the sequential ramp are both blue. When a choropleth is drawn the corpus keeps the outline
     // and gives up the fill.
-    const choropleth = state.ground.has('population') || state.ground.has('tracts')
+    const choropleth = CHOROPLETHS.some((k) => state.ground.has(k))
     const datelessKeys = new Set(
       keyedUndated.map((s) => s.key).filter((k) => shapes.has(k) && !litKeys.has(k)),
     )
@@ -467,6 +538,42 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
             ['Census tract', '2020 Census geography'],
           ]),
         }),
+
+      // The corpus's two maps, drawn over the same thirty-five tracts. See `MEASURES`.
+      ...(Object.keys(MEASURES) as Measure[]).map(
+        (m) =>
+          state.ground.has(m) &&
+          new GeoJsonLayer({
+            id: `tract-${m}`,
+            data: tracts as unknown as object,
+            filled: true,
+            stroked: true,
+            getFillColor: (f: { properties: FeatureProps }) => {
+              const v = tractValues.get(m)?.get(f.properties.GEOID)
+              // A tract the measure has no figure for is left as ground rather than classed.
+              // Drawing it in the lightest step would say it had the lowest rate.
+              if (v === undefined) return [0, 0, 0, 0]
+              return rgb(p.ramp[classOf(v, tractMeasureBreaks.get(m) as number[])], ghost(205))
+            },
+            getLineColor: rgb(p.surface, ghost(150)),
+            getLineWidth: 14,
+            lineWidthMinPixels: 0.5,
+            updateTriggers: { getFillColor: [state.year] },
+            pickable: true,
+            onHover: groundHover((f) => {
+              const v = tractValues.get(m)?.get(f.GEOID)
+              return [
+                [
+                  MEASURES[m].row,
+                  v === undefined
+                    ? `under ${RATED} ${MEASURES[m].over} — not rated`
+                    : `${v.toFixed(1)} per cent`,
+                ],
+                ['Census tract', '2020 Census geography'],
+              ]
+            }),
+          }),
+      ),
 
       state.ground.has('population') &&
         new GeoJsonLayer({
@@ -969,18 +1076,28 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const scaleTitle = container.querySelector<HTMLElement>('[data-map-scale-title]')
 
   const showScale = () => {
-    const grain = state.ground.has('tracts')
-      ? ({ label: 'People per census tract', breaks: tractBreaks, values: tractPopulations } as const)
-      : state.ground.has('population')
-        ? ({ label: 'People per voting district', breaks, values: populations } as const)
-        : null
+    const shown = (Object.keys(MEASURES) as Measure[]).find((m) => state.ground.has(m))
+    const grain = shown
+      ? ({
+          label: MEASURES[shown].title,
+          breaks: tractMeasureBreaks.get(shown) as number[],
+          values: [...(tractValues.get(shown) as Map<string, number>).values()],
+        } as const)
+      : state.ground.has('tracts')
+        ? ({ label: 'People per census tract', breaks: tractBreaks, values: tractPopulations } as const)
+        : state.ground.has('population')
+          ? ({ label: 'People per voting district', breaks, values: populations } as const)
+          : null
 
     if (scale) scale.hidden = grain === null
     if (!grain || !legend) return
     if (scaleTitle) scaleTitle.textContent = grain.label
 
     const p = palette()
-    const edges = [0, ...grain.breaks, Math.max(...grain.values)]
+    // The floor is the smallest value present, not zero. Quantile classes are ranges of the data,
+    // and a first class printed as `0–16` on a denial rate names a rate no tract in this county
+    // has. The two population layers gain the same correction: the lightest precinct is not empty.
+    const edges = [Math.min(...grain.values), ...grain.breaks, Math.max(...grain.values)]
     legend.innerHTML = p.ramp
       .map(
         (c, i) =>
@@ -1049,14 +1166,16 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       if (input.checked) state.ground.add(key)
       else state.ground.delete(key)
 
-      // The two choropleths are the same variable at two grains, and stacking them draws one on
-      // top of the other for no gain. Showing them one at a time is what makes the pair a
-      // comparison rather than a smear.
-      const other = key === 'tracts' ? 'population' : key === 'population' ? 'tracts' : null
-      if (other && input.checked) {
-        state.ground.delete(other)
-        const twin = container.querySelector<HTMLInputElement>(`[data-layer="${other}"]`)
-        if (twin) twin.checked = false
+      // One choropleth at a time — see `CHOROPLETHS`. Turning one on turns the others off, in
+      // the state and on the control together, so the widgets never say something the map does
+      // not.
+      if (input.checked && (CHOROPLETHS as readonly string[]).includes(key)) {
+        for (const other of CHOROPLETHS) {
+          if (other === key) continue
+          state.ground.delete(other)
+          const twin = container.querySelector<HTMLInputElement>(`[data-layer="${other}"]`)
+          if (twin) twin.checked = false
+        }
       }
 
       address()

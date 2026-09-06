@@ -79,6 +79,23 @@ export interface ComparabilityRow {
 }
 
 /**
+ * A measure's own rows, where it has many and they are not a time series.
+ *
+ * Cells are the strings the corpus published, in the order it published them — nothing in the
+ * feed parses them, so a consumer that wants numbers does the reading and owns it. `NA` is how
+ * the corpus writes an absent cell.
+ */
+export interface MeasureTable {
+  node: string
+  label: string
+  /** Column names in order. The first names the key column. */
+  columns: string[]
+  /** One row per key. Every row has as many cells as there are columns. */
+  rows: string[][]
+  tier: Tier
+}
+
+/**
  * A measure's comparability table.
  *
  * Not a series. A series groups measures that share a `parameter` string and a subject, which is
@@ -266,6 +283,7 @@ export const classes = manifest.classes
 export const nodes = graphFeed.nodes as Node[]
 export const edges = graphFeed.edges as Edge[]
 export const series = seriesFeed.series as Series[]
+export const tables = (seriesFeed.tables ?? []) as MeasureTable[]
 export const comparability = seriesFeed.comparability as Comparability[]
 export const assertions = seriesFeed.assertions as Assertion[]
 export const mapPoints = mapFeed.points as MapPoint[]
@@ -306,6 +324,30 @@ export function seriesById(id: string): Series {
  */
 export function comparabilityFor(id: string): Comparability | undefined {
   return comparability.find((c) => c.node === id)
+}
+
+/** A measure's declared table, or undefined where it declares none. */
+export function tableFor(id: string): MeasureTable | undefined {
+  return tables.find((t) => t.node === id)
+}
+
+/**
+ * One column of a table, keyed by the first column and parsed as a number.
+ *
+ * Cells the corpus wrote as `NA` are absent from the map rather than present as zero — a tract
+ * with no priced originations has no higher-priced share, and drawing it in the lightest class
+ * would say it had the lowest one.
+ */
+export function column(table: MeasureTable | undefined, name: string): Map<string, number> {
+  const out = new Map<string, number>()
+  if (!table) return out
+  const i = table.columns.indexOf(name)
+  if (i < 1) return out
+  for (const row of table.rows) {
+    const value = Number(row[i])
+    if (Number.isFinite(value)) out.set(row[0], value)
+  }
+  return out
 }
 
 /** What one class declares itself to be, or undefined if the corpus does not declare it. */
