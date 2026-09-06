@@ -2224,6 +2224,35 @@ export const ARTICLES: Article[] = [
       'organization/the-bluffton-news.yml',
     ],
   },
+  {
+    slug: 'what-the-paper-saw',
+    title: 'What the paper saw',
+    dek: 'A federal file and a river gauge put two events in this county\u2019s record and could not say what either did. The county\u2019s own weekly can \u2014 and disagrees with the machines about the clock, the cost, and how many storms there were.',
+    section: 'history',
+    era: [1950, 1959],
+    assertions: [
+      'what-the-tornado-struck',
+      'two-injuries-named-and-thirty-counted',
+      'the-paper-and-the-file-disagree-about-the-clock',
+      'a-million-dollars-apart',
+      'a-second-storm-the-file-does-not-hold',
+      'five-miles-in-a-semicircle-around-bluffton',
+      'twenty-four-hours-to-open-the-roads',
+      'what-a-gauge-cannot-record',
+      'one-storm-two-basins',
+      'ice-broke-the-village-water-main',
+      'twelve-houses-pumped-out-in-near-zero-weather',
+      'the-creek-and-the-quarry-at-one-level',
+      'the-creek-rose-a-day-before-the-river',
+    ],
+    entries: [
+      'event/the-tornado-of-19-july-1950.yml',
+      'event/the-storm-at-beaverdam-1950.yml',
+      'event/the-flash-flood-at-bluffton-1959.yml',
+      'event/the-ottawa-river-flood-of-1959.yml',
+      'measure/allen-county-storm-events-1950-2026.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */
