@@ -8,15 +8,11 @@ description: |
   [the Boundary and Annexation Survey](../../catalog/census-bas-boundary-changes-ohio.md), Ohio
   files for 1991–2000, 2001–2010, 2011 and each survey year from 2012 to 2025.
 
-      place           records   acres   first        last
-      Delphos              26   784.4   1990-05-22   2018-02-28
-      Lima                 11   622.0   1990-04-12   2017-06-29
-      Bluffton              9   477.5   1994-10-14   2024-11-12
-      Elida                 5   912.9   1990-05-08   2021-05-11
-      Spencerville          4   209.7   1997-01-21   2023-06-05
-      Cairo                 1    10.4   2016-05-10   2016-05-10
-      Harrod                1    12.9   2008-02-07   2008-02-07
-      all                  57  3029.8
+  **The rows are in the `table` below rather than printed here**, keyed on the seven-digit place
+  code so a municipality's own entry can find its line without matching a name — and carrying all
+  ten codes the method searched, which is what makes the three that reported nothing a fact rather
+  than an absence from a list. The prose table this replaces was the second copy, and the drift
+  between it and the method is the paragraph about Westminster below.
 
   Written out: **Delphos reported twenty-six annexations totalling 784.4 acres, Lima eleven
   totalling 622.0, Bluffton nine totalling 477.5, Elida five totalling 912.9, Spencerville four
@@ -38,26 +34,30 @@ description: |
   reading above rather than replacing it: the survey misses what a government gives up, and the
   largest thing a government can give up is itself. [inference]
 
-  **Four villages that annexed nothing.** Beaverdam, Lafayette, Fort Shawnee and Westminster have
-  no record in the series at all. For [Fort Shawnee](../place/fort-shawnee.yml) that is a fact
-  worth having beside the rest: the largest of the county's villages by population never once
-  moved its own line. [verified] — same files, searched on all ten Allen County place codes.
+  **Three villages that annexed nothing.** Beaverdam, Lafayette and Fort Shawnee have no record in
+  the series at all. For [Fort Shawnee](../place/fort-shawnee.yml) that is a fact worth having
+  beside the rest: the largest of the county's villages by population never once moved its own
+  line. [verified] — same files, searched on all ten Allen County place codes.
+
+  **This paragraph said four and named [Westminster](../place/westminster.yml), and that was a
+  category error rather than a miscount.** Westminster is a census designated place and has never
+  been incorporated; it has no corporation and therefore no line for an annexation to move, so it
+  is not among the ten place codes this node's method searched and could not have appeared in the
+  file whatever it did. [verified] — [the place node](../place/westminster.yml), which had already
+  written the distinction down: one of these places has "a council and a corporate boundary that
+  annexation can move" and the other "a statistical outline the Census Bureau draws". Ten codes
+  less seven with records is three, and the sentence that said four was reporting a silence that
+  belongs to the Census Bureau's definition of a place rather than to any government's conduct.
+  [inference] Found by writing the table below, which is the return on making a figure a machine
+  can read: nine names in prose and ten codes in the method could disagree indefinitely, and a
+  keyed table cannot.
 
   ## Lima
 
-  **Lima's eleven, whole:**
-
-      1990-04-12   Ordinance   31-90       15.1
-      1991-07-08   Ordinance   144-91       5.9
-      2002-06-24   Ordinance   90-02      215.9
-      2004-11-24   Ordinance   199-04      28.2
-      2005-06-13   Ordinance   100-05     138.6
-      2006-02-22   Ordinance   23-06        5.6
-      2007-02-21   Ordinance   22-07        8.7
-      2008-05-21   Ordinance   78-08      196.5
-      2009-05-06   Ordinance   82-09        2.2
-      2009-12-23   Ordinance   269-09       5.3
-      2017-06-29   Resolution  408-17    not stated
+  **Lima's eleven have moved to [their own node](lima-annexations-1990-2017.yml)**, one row per
+  instrument, because that is the grain the city's own entry has to draw and this node's table is
+  one row per municipality. They were printed here and are not printed twice; what stays here is
+  what this node argues about them. [verified] — same files.
 
   **The shape is a decade of nothing, then a burst, then nothing again.** Lima annexed 21.0 acres
   in 1990 and 1991, then reported no boundary change for ten and a half years; then took 601.0
@@ -116,6 +116,18 @@ properties:
   value: "57"
   unit: records
   as_of: "2024-11-12"
+  table: |
+    place_fips  place         records  acres  first       last
+    3904752     Beaverdam           0     NA  NA          NA
+    3907426     Bluffton            9  477.5  1994-10-14  2024-11-12
+    3910884     Cairo               1   10.4  2016-05-10  2016-05-10
+    3921602     Delphos            26  784.4  1990-05-22  2018-02-28
+    3924808     Elida               5  912.9  1990-05-08  2021-05-11
+    3927944     Fort-Shawnee        0     NA  NA          NA
+    3934118     Harrod              1   12.9  2008-02-07  2008-02-07
+    3941118     Lafayette           0     NA  NA          NA
+    3943554     Lima               11  622.0  1990-04-12  2017-06-29
+    3974034     Spencerville        4  209.7  1997-01-21  2023-06-05
   method: |
     Every row of Ohio's BAS boundary-change files whose entity FIPS place code is one of the ten
     Allen County places — Beaverdam 04752, Bluffton 07426, Cairo 10884, Delphos 21602, Elida 24808,
@@ -129,6 +141,42 @@ links:
     claim_tag: verified
     source: ../../catalog/census-bas-boundary-changes-ohio.md
   - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/city-of-delphos.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-beaverdam.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-bluffton.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-cairo.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-elida.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-fort-shawnee.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-harrod.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-lafayette.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-bas-boundary-changes-ohio.md
+  - target: ../jurisdiction/village-of-spencerville.yml
     relationship: describes
     claim_tag: verified
     source: ../../catalog/census-bas-boundary-changes-ohio.md
