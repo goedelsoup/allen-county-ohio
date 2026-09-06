@@ -32,6 +32,7 @@
 // that mean something, and neither has to pretend to be the other.
 
 import { censusKey, type AtlasRecord } from './feeds'
+import type { Point } from './track'
 
 /**
  * One step of the design system's era ramp.
@@ -310,6 +311,37 @@ export function shaded(records: AtlasRecord[]): Shaded[] {
         .map((a) => censusKey(a.level, a.geoid))
         .filter((key): key is string => key !== null)
         .map((key) => ({ key, record: r })),
+    )
+}
+
+/**
+ * A track the map may draw, and the record that states it.
+ *
+ * **Only a node that states its own track gets one**, which is the rule {@link shaded} applies to
+ * Census shapes and holds here for a sharper reason: a track anchor carries no `lat` and no `lon`
+ * at all, so a record routed to one has reached geometry it did not state and has no position of
+ * its own to fall back to. Nothing in the corpus is in that state — `event --relates-to->` is
+ * refused and it is the only edge pointing at either storm — and the filter is what keeps a later
+ * edge from putting a measure on a tornado's path without anybody deciding it should be there.
+ *
+ * The positions are the claim. The line between them is not, and a caller drawing one owes the
+ * reader the difference — see `dashes` in `./track`.
+ */
+export interface Tracked {
+  /** The node stating the track, which is also the anchor node. */
+  node: string
+  record: AtlasRecord
+  /** Two or more positions, in the order the source recorded them. */
+  points: Point[]
+}
+
+export function tracked(records: AtlasRecord[]): Tracked[] {
+  return records
+    .filter((r) => r.treatment === 'track' && r.hops === 0)
+    .flatMap((record) =>
+      record.anchors
+        .filter((a) => a.node === record.node && a.points.length >= 2)
+        .map((a) => ({ node: record.node, record, points: a.points })),
     )
 }
 

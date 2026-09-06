@@ -1,6 +1,6 @@
 //! Where a corpus node lands on the ground, by what route, and where it refuses to guess.
 //!
-//! 72 of this corpus's 667 nodes carry a position of their own. Almost every other node sits
+//! 74 of this corpus's 683 nodes carry a position of their own. Almost every other node sits
 //! within a few edges of one — a measure `describes` a place, an event `occurred-in` one, a
 //! person `resided-in` one, a tenure reaches ground through its office — so a map can draw far
 //! more than the 37 points it draws today. What that costs is stated here rather than
@@ -21,9 +21,24 @@
 //! events unplaced, among them the Treaty and the Erection of Allen County — which is the
 //! correct answer, because the county's founding did not happen in the county.
 //!
+//! # A track is a position, and is not a point
+//!
+//! Two events state the ground they crossed rather than a spot they stood on — the tornadoes of
+//! 1950 and 1965, each two surveyed endpoints out of a federal storm file. [`Anchor::Track`] is
+//! how that is held, and it places at **zero hops**, which is the whole of what
+//! `hops-counts-edges-not-coordinates` decided: the field counts edges followed, and following
+//! none is zero. It does not count coordinates, and a reading that made it count coordinates
+//! would have to say a track was reached *through one edge* from a node no edge was followed
+//! from.
+//!
 //! # A mark is not the only thing a node can be
 //!
-//! Two tests decide what a placed node becomes, and both are needed.
+//! Three tests decide what a placed node becomes, and all three are needed.
+//!
+//! **Does the node state the ground it crossed?** Then it is a track and neither test below
+//! applies to it. A track is not measured against the frame, because it is not a position that
+//! could be the frame's centre; and it is not a mark, because a mark is a dot and a renderer
+//! switching on the treatment would have to ask a second question to find that out.
 //!
 //! **Is it a thing that was somewhere, or a figure about somewhere?** An event `occurred-in` a
 //! place and a site is `located-in` one: those are claims about position. A measure only
@@ -49,11 +64,37 @@ use std::collections::{BTreeMap, BTreeSet};
 
 // ── anchors ──────────────────────────────────────────────────────────────────
 
+/// One position on a track, in degrees.
+///
+/// Named rather than a `(f64, f64)`, because every pair of coordinates that travels as a tuple
+/// eventually travels in the other order. The feed serializes it as `{lat, lon}` for the same
+/// reason, and deck.gl's `[lon, lat]` is assembled at the point of use where the mistake is one
+/// line from its own correction.
+#[derive(Debug, Clone, Copy, PartialEq)]
+pub struct Position {
+    pub lat: f64,
+    pub lon: f64,
+}
+
 /// A position the corpus states outright.
 #[derive(Debug, Clone, PartialEq)]
 pub enum Anchor {
     /// A literal coordinate — `place.centroid` or `site.coordinates`.
     Point { lat: f64, lon: f64 },
+    /// The ground a moving happening covered — `event.track`, in the order a source recorded it.
+    ///
+    /// **Two or more positions, and the order is part of the claim.** This is why a track is not
+    /// held as several [`Anchor::Point`]s: [`Placement::reached`] is keyed by the node stating
+    /// the position, so both endpoints of one track would collapse into one entry, and its sense
+    /// is *at all of these* — the school district serving five townships. A track means *from
+    /// this one to that one, in this order*, and dropping the order and the connection drops the
+    /// two things that make it a track.
+    ///
+    /// **Nothing between the endpoints is stated.** For both tracks in this corpus the source
+    /// gives a beginning and an end and a length, and the line between them is a reading. A
+    /// consumer drawing it must say so — `EventTrack.astro` draws it dashed and `map.ts` breaks
+    /// it into segments for the same reason.
+    Track { points: Vec<Position> },
     /// A Census key — `place.geoid` or `jurisdiction.fips_code`.
     ///
     /// The corpus holds the key and never the shape. The geometry is vendored under
@@ -67,6 +108,18 @@ impl std::fmt::Display for Anchor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Anchor::Point { lat, lon } => write!(f, "{lat}, {lon}"),
+            Anchor::Track { points } => {
+                let stated: Vec<String> = points
+                    .iter()
+                    .map(|p| format!("{}, {}", p.lat, p.lon))
+                    .collect();
+                write!(
+                    f,
+                    "track of {} positions — {}",
+                    points.len(),
+                    stated.join("; ")
+                )
+            }
             Anchor::Census { key } => write!(f, "Census {key}"),
         }
     }
@@ -83,11 +136,40 @@ pub fn parse_point(raw: &str) -> Option<Anchor> {
     Some(Anchor::Point { lat, lon })
 }
 
+/// Read `"40.80, -84.20; 40.87, -83.87"` — `event.track`, as the ontology defines it.
+///
+/// **All or nothing.** A track whose second pair failed to parse would draw a one-point track
+/// and silently lose half the claim, so a single bad pair rejects the whole value. Fewer than
+/// two positions is not a track and is refused for the same reason: one endpoint of a storm is
+/// not a weaker statement of where it went, it is a different statement.
+///
+/// ASCII hyphen only, which is [`parse_point`]'s rule and matters here for a reason the
+/// ontology writes down: the prose these values were lifted from carries a Unicode minus, and a
+/// lenient reader would let one back into the corpus unnoticed. `web/src/lib/track.ts` parses
+/// the same property under the same rules on the other side of the feed.
+pub fn parse_track(raw: &str) -> Option<Anchor> {
+    let mut points = Vec::new();
+    for pair in raw.split(';') {
+        match parse_point(pair)? {
+            Anchor::Point { lat, lon } => points.push(Position { lat, lon }),
+            _ => return None,
+        }
+    }
+    (points.len() >= 2).then_some(Anchor::Track { points })
+}
+
 /// The position a node states about itself, if it states one.
 ///
-/// A point beats a Census key where a node has both: the key names a shape this crate cannot
-/// see, and a coordinate is the more specific of the two claims.
+/// A track beats a coordinate, and a point beats a Census key. The key names a shape this crate
+/// cannot see, so a coordinate is the more specific of those two claims; and a track is the
+/// whole of what a source recorded about where the thing was, which is why `event.ont.yml`
+/// refuses a `coordinates` beside one — a second copy is a copy that can disagree with the
+/// first. Nothing in the corpus carries both, and the order here says what to do if anything
+/// ever does.
 pub fn own_anchor(node: &Node) -> Option<Anchor> {
+    if let Some(track) = node.properties.get("track").and_then(|v| parse_track(v)) {
+        return Some(track);
+    }
     let point = node
         .properties
         .get("centroid")
@@ -558,6 +640,21 @@ pub struct Placement {
 }
 
 impl Placement {
+    /// Whether the node states the ground it crossed, rather than a position it stood at.
+    ///
+    /// Zero hops by construction: `track` is read by [`own_anchor`], so a track anchor is only
+    /// ever the placed node's own. A node *routed* to one — nothing in the corpus, since
+    /// `event --relates-to->` is refused and it is the only edge pointing at either storm —
+    /// keeps its own treatment and carries the geometry on the anchor, which is where a
+    /// consumer finds it either way.
+    pub fn is_track(&self) -> bool {
+        self.hops == 0
+            && self
+                .reached
+                .iter()
+                .any(|r| matches!(r.anchor, Anchor::Track { .. }))
+    }
+
     /// Whether any anchor reached is smaller than the whole frame.
     pub fn discriminates(&self) -> bool {
         self.reached
@@ -571,6 +668,11 @@ impl Placement {
 /// Declaration order is how much of a position the corpus supplies, most first.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum Treatment {
+    /// The ground a moving thing crossed, stated in order by the node itself.
+    ///
+    /// First, because it is the most a node can say about where it was: two or more positions
+    /// and the sequence joining them, against a mark's one. Both members are tornadoes.
+    Track,
     /// A thing that was somewhere, placed somewhere smaller than the county.
     Mark,
     /// Covers ground rather than sitting on it. Drawn from its Census key.
@@ -589,6 +691,7 @@ pub enum Treatment {
 impl std::fmt::Display for Treatment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let s = match self {
+            Treatment::Track => "track",
             Treatment::Mark => "mark",
             Treatment::Polygon => "polygon",
             Treatment::Count => "count on its subject",
@@ -741,6 +844,13 @@ pub fn treatment(class: &str, placement: Option<&Placement>) -> Treatment {
     let Some(p) = placement else {
         return Treatment::Unplaced;
     };
+    // The first test, and it is asked of the node rather than of its class: a node that states
+    // the ground it crossed has settled the question, and neither test below applies. A track is
+    // not measured against the frame — it is not a position that could be the frame's centre —
+    // and it is not a mark, because a mark is a dot and these are lines.
+    if p.is_track() {
+        return Treatment::Track;
+    }
     if POLYGON_CLASSES.contains(&class) {
         return Treatment::Polygon;
     }
@@ -819,6 +929,146 @@ mod tests {
         let p = place(&g, "place/lima.yml").unwrap();
         assert_eq!(p.hops, 0);
         assert!(p.reached[0].via.is_empty());
+    }
+
+    // ── a track ──────────────────────────────────────────────────────────
+
+    fn positions(a: &Anchor) -> Vec<(f64, f64)> {
+        match a {
+            Anchor::Track { points } => points.iter().map(|p| (p.lat, p.lon)).collect(),
+            other => panic!("not a track: {other:?}"),
+        }
+    }
+
+    #[test]
+    fn a_track_is_read_in_the_order_the_source_recorded_it() {
+        let a = parse_track("40.80, -84.20; 40.87, -83.87").unwrap();
+        assert_eq!(positions(&a), vec![(40.80, -84.20), (40.87, -83.87)]);
+    }
+
+    #[test]
+    fn a_track_may_state_more_than_two_positions() {
+        // Nothing in the corpus does. The ontology admits it — "a source that gives more may
+        // write more" — and a parser that quietly kept the first two would lose the middle of
+        // any track that ever arrives.
+        let a = parse_track("40.7, -84.1; 40.8, -84.0; 40.9, -83.9").unwrap();
+        assert_eq!(positions(&a).len(), 3);
+    }
+
+    #[test]
+    fn one_bad_pair_rejects_the_whole_track() {
+        // The half-read is the failure worth guarding: a track whose second pair failed would
+        // draw a one-point track and lose half the claim without saying so.
+        assert!(parse_track("40.80, -84.20; nowhere").is_none());
+        assert!(parse_track("40.80, -84.20; 40.87").is_none());
+        assert!(parse_track("40.80, -84.20; 40.87, -83.87, 12").is_none());
+        assert!(parse_track("40.80, -84.20;").is_none());
+    }
+
+    #[test]
+    fn a_unicode_minus_is_not_a_hyphen() {
+        // The prose these values were lifted from writes U+2212. A lenient reader here would
+        // let one back into the corpus unnoticed, which is what the ontology's rule is for.
+        assert!(parse_track("40.80, \u{2212}84.20; 40.87, \u{2212}83.87").is_none());
+    }
+
+    #[test]
+    fn one_position_is_not_a_weaker_track() {
+        // It is a different statement, not a thinner one, so it is refused rather than
+        // downgraded to a point.
+        assert!(parse_track("40.80, -84.20").is_none());
+        assert!(parse_track("").is_none());
+    }
+
+    #[test]
+    fn a_stated_track_places_at_zero_hops() {
+        // The decision, checked: `hops` counts edges followed, and following none is zero.
+        let g = graph(vec![
+            node(
+                "event/tornado.yml",
+                "event",
+                &[("track", "40.80, -84.20; 40.87, -83.87")],
+                &[("occurred-in", "place/allen-county.yml")],
+            ),
+            node(
+                "place/allen-county.yml",
+                "place",
+                &[("centroid", "40.77, -84.10")],
+                &[],
+            ),
+        ]);
+        let p = place(&g, "event/tornado.yml").unwrap();
+        assert_eq!(p.hops, 0);
+        assert!(p.is_track());
+        assert_eq!(
+            treatment("event", Some(&p)),
+            Treatment::Track,
+            "a node stating the ground it crossed is a track, not a register entry"
+        );
+    }
+
+    #[test]
+    fn a_track_beats_the_county_the_event_occurred_in() {
+        // The defect this change exists to fix. Before it, both tornadoes resolved out through
+        // `occurred-in` and were filed as placed no finer than the county while the corpus held
+        // four surveyed coordinates for them.
+        let g = graph(vec![
+            node(
+                "event/tornado.yml",
+                "event",
+                &[("track", "40.80, -84.20; 40.87, -83.87")],
+                &[("occurred-in", "place/allen-county.yml")],
+            ),
+            node(
+                "place/allen-county.yml",
+                "place",
+                &[("centroid", "40.77, -84.10")],
+                &[],
+            ),
+        ]);
+        let p = place(&g, "event/tornado.yml").unwrap();
+        assert_eq!(p.reached.len(), 1);
+        assert_eq!(p.reached[0].node, "event/tornado.yml");
+    }
+
+    #[test]
+    fn a_track_beats_a_coordinate_where_a_node_somehow_states_both() {
+        // `event.ont.yml` refuses a `coordinates` beside a track, so nothing in the corpus can
+        // reach this. The order is fixed here anyway, because the alternative is that whichever
+        // property happened to be read first wins.
+        let n = node(
+            "event/tornado.yml",
+            "event",
+            &[
+                ("coordinates", "40.7, -84.1"),
+                ("track", "40.80, -84.20; 40.87, -83.87"),
+            ],
+            &[],
+        );
+        assert!(matches!(own_anchor(&n), Some(Anchor::Track { .. })));
+    }
+
+    #[test]
+    fn a_malformed_track_does_not_place_the_node_at_a_half_read_position() {
+        // A track that will not parse leaves the node to route out like any other event. What
+        // must not happen is that it places on whatever the parser salvaged.
+        let g = graph(vec![
+            node(
+                "event/tornado.yml",
+                "event",
+                &[("track", "40.80, -84.20; nowhere")],
+                &[("occurred-in", "place/allen-county.yml")],
+            ),
+            node(
+                "place/allen-county.yml",
+                "place",
+                &[("centroid", "40.77, -84.10")],
+                &[],
+            ),
+        ]);
+        let p = place(&g, "event/tornado.yml").unwrap();
+        assert_eq!(p.hops, 1);
+        assert!(!p.is_track());
     }
 
     #[test]

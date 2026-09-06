@@ -194,6 +194,61 @@ fn a_mark_never_sits_at_the_centre_of_the_whole_frame() {
 }
 
 #[test]
+fn every_stated_track_parses_and_places_the_node_that_states_it() {
+    // The silent failure this guards is a Unicode minus. `track` is lifted out of prose that
+    // writes U+2212, `parse_track` refuses it by rule, and a node whose track will not parse
+    // does not fail anything — it quietly routes out through `occurred-in` and lands back on
+    // the county, which is the exact state this change was made to end. Nothing else in the
+    // gate can see the difference, so it is checked here.
+    let g = graph();
+    let stating: Vec<&str> = g
+        .nodes()
+        .filter(|n| n.properties.contains_key("track"))
+        .map(|n| n.id.as_str())
+        .collect();
+    assert!(
+        !stating.is_empty(),
+        "no node states a track; the treatment has no members and this check is dead"
+    );
+    for id in stating {
+        let raw = g.get(id).unwrap().properties.get("track").unwrap();
+        let anchor = placement::parse_track(raw)
+            .unwrap_or_else(|| panic!("{id}: track does not parse — {raw:?}"));
+        let points = match anchor {
+            placement::Anchor::Track { points } => points,
+            other => panic!("{id}: parsed as {other:?}"),
+        };
+        assert!(points.len() >= 2, "{id}: a track needs two positions");
+
+        let p = place(&g, id).unwrap_or_else(|| panic!("{id} is unplaced"));
+        assert_eq!(p.hops, 0, "{id}: a stated track places at zero hops");
+        assert!(p.is_track(), "{id}: placed at zero hops and not as a track");
+        assert_eq!(
+            p.reached[0].node, id,
+            "{id}: a stated track anchors on the node that states it"
+        );
+    }
+}
+
+#[test]
+fn a_track_is_never_filed_as_placed_no_finer_than_the_county() {
+    // The defect the change was opened on, checked from the other end: both tornadoes were
+    // registers while the corpus held four surveyed coordinates for them.
+    for p in placed() {
+        let states_a_track = p
+            .placement
+            .as_ref()
+            .is_some_and(placement::Placement::is_track);
+        if states_a_track {
+            assert_eq!(p.treatment, Treatment::Track, "{}", p.node);
+        }
+        if p.treatment == Treatment::Track {
+            assert!(states_a_track, "{}: a track that states none", p.node);
+        }
+    }
+}
+
+#[test]
 fn a_count_is_drawn_on_its_subject_at_whatever_grain_that_subject_is() {
     // The discrimination test must not reach counts. Most of this corpus's measures are about
     // the county as a whole, and filing them under "could not be placed" would send its most
@@ -225,6 +280,10 @@ fn the_shape_of_the_distribution_holds() {
     // Not the numbers — the ordering, which is the finding the design rests on and is stable
     // under ordinary growth. Counts outnumber marks because most of this corpus is figures;
     // marks outnumber the unplaced because most things reach ground.
+    //
+    // A seventh treatment was added and neither assertion moved, which is the property the
+    // decision claimed for this gate when it declined to pin the sizes. The partition sum below
+    // is what actually catches a new member going unaccounted for.
     let all = placed();
     let t = by_treatment(&all);
     let get = |k: Treatment| t.get(&k).copied().unwrap_or(0);
