@@ -95,6 +95,7 @@ const GEO = {
   tracts: '/geo/census-tracts.geojson',
   schools: '/geo/school-districts.geojson',
   water: '/geo/linear-water.geojson',
+  arealWater: '/geo/areal-water.geojson',
 } as const
 
 /** `#2a78d6` → `[42, 120, 214, alpha]`. */
@@ -235,16 +236,18 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const scrub = container.querySelector<HTMLInputElement>('[data-scrub]')
   if (!canvasHost) throw new Error('the map has no canvas host')
 
-  const [county, subdivisions, places, cdps, districts, tracts, schools, water] = await Promise.all([
-    collection(GEO.county),
-    collection(GEO.subdivisions),
-    collection(GEO.places),
-    collection(GEO.cdps),
-    collection(GEO.districts),
-    collection(GEO.tracts),
-    collection(GEO.schools),
-    collection(GEO.water),
-  ])
+  const [county, subdivisions, places, cdps, districts, tracts, schools, water, arealWater] =
+    await Promise.all([
+      collection(GEO.county),
+      collection(GEO.subdivisions),
+      collection(GEO.places),
+      collection(GEO.cdps),
+      collection(GEO.districts),
+      collection(GEO.tracts),
+      collection(GEO.schools),
+      collection(GEO.water),
+      collection(GEO.arealWater),
+    ])
 
   const eras = spine(records)
 
@@ -661,6 +664,44 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       // would say the opposite. A ditch is a thing somebody dug, most of them after 1859, and
       // drawing one at full strength in 1832 is an anachronism — so the ditches carry the ghost
       // and the streams do not.
+      // **The water drawn as area, under the water drawn as line.** Same toggle, same two
+      // classes, same colours — because it is the same water, and the only thing that differs is
+      // how wide the Bureau found it. Filled rather than stroked: a polygon here is a channel with
+      // two banks, and outlining it would draw the banks as though they were two streams.
+      //
+      // This layer is why the Ottawa River is on the map at all. It is named nowhere in the linear
+      // file and four times in this one; see `UNDRAWN` in `lib/water.ts`.
+      state.ground.has('water') &&
+        new GeoJsonLayer({
+          id: 'areal-water',
+          data: arealWater as unknown as object,
+          filled: true,
+          stroked: false,
+          getFillColor: (f: { properties: FeatureProps }) =>
+            f.properties.MTFCC === 'H3020' ? rgb(p.dug, waterGhost(200)) : rgb(p.water, 150),
+          updateTriggers: { getFillColor: [state.year] },
+          pickable: true,
+          onHover: ({ object, x, y }) => {
+            const f = object as { properties: FeatureProps } | undefined
+            hover = f
+              ? {
+                  x,
+                  y,
+                  kind: 'ground',
+                  title: f.properties.NAME ?? 'Unnamed water',
+                  rows: [
+                    [
+                      f.properties.MTFCC === 'H3020' ? 'Dug' : 'Stream',
+                      'wide enough that TIGER draws two banks',
+                    ],
+                    ['TIGER hydrography', 'areal — no vintage, current'],
+                  ],
+                }
+              : null
+            setTooltip()
+          },
+        }),
+
       state.ground.has('water') &&
         new GeoJsonLayer({
           id: 'water',
