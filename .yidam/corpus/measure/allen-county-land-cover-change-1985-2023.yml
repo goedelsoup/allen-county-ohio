@@ -1,0 +1,85 @@
+class: measure
+label: How often Allen County's land changed class, 1985–2023
+description: |
+  **Eighty-eight and a half per cent of Allen County carried the same land cover class in every one
+  of thirty-nine years.** 230,741.5 acres never changed at all; 29,640.3 acres — 11.38 per cent —
+  changed at least once, and most of those changed exactly once. [verified] —
+  [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), the annual product's
+  change-count summary, clipped to the county and counted here.
+
+  **In figures: 21,964.6 acres changed once, 5,555.6 twice, 2,120.1 three times or more, and 111.6
+  acres changed ten times or more.** One pixel — two tenths of an acre — changed twenty-five times
+  in thirty-nine years. [verified] — the same source.
+
+  **The largest single kind of change in this county is a field changing its mind.** Agriculture
+  changing *within* its own class covers 11,498.5 acres, more than any other category and more than
+  the 8,502.4 acres of urban change. A pixel that alternates between row crop and hay is a pixel
+  that changed land cover class, and it is not development. [verified] — the same source's change
+  index, whose labels are in the table below.
+
+  **Counted by family rather than by code the two are close, and neither is what a reader expects.**
+  Urban change and urban-within-class change together are 14,475.0 acres; the three agricultural
+  codes together are 13,649.0. [verified] — the same source. Water change is 1,251.9 acres, and
+  every remaining code in the county together is under 250.
+
+  **This node does not establish that 14,475 acres of Allen County were built on.** "Urban change"
+  is the index's name for a pixel whose change involved a developed class in either direction, over
+  a window that begins sixteen years before this corpus's earliest land cover, and half of that
+  figure is a developed pixel changing to another developed class. See
+  [the nine epochs](allen-county-land-cover-2001-2021.yml), which counts entries to the developed
+  classes and gets 1,909 acres for 2001–2021.
+
+  **The two files disagree about how much this county moves, by more than their windows explain.**
+  The nine-epoch product has 2.47 per cent of the county changing class across twenty years; this
+  one has 11.38 per cent across thirty-nine. [verified] — the same source pair. Roughly twice the
+  window and more than four times the change; the index above says where the excess is, which is in
+  a category the older product does not express at all.
+
+  [open] Which years the twenty-five-fold pixel moved in, and whether it is a gravel pit, a
+  floodplain, or an artefact of a classifier changing its mind about one hedge. The summary carries
+  a count and no dates, and the thirty-nine layers that carry the dates are not served.
+properties:
+  table: |
+    code  label                              acres   share_pct
+    1     no_change                       230881.9      88.670
+    6     agriculture_within_class         11498.5       4.416
+    3     urban                             8502.4       3.265
+    21    urban_within_class                5972.6       2.294
+    7     cultivated_crop                   1998.9       0.768
+    2     water                             1251.9       0.481
+    8     hay_pasture                        151.7       0.058
+    12    woody_wetland                       31.6       0.012
+    5     herbaceous_wetland                  26.0       0.010
+    4     wetland_within_class                22.9       0.009
+    23    forest_transition_shrub_scrub       19.1       0.007
+    14    forest_type                         12.2       0.005
+    22    forest_transition_mixed_rangeland    7.3       0.003
+    10    barren                               4.9       0.002
+  parameter: share of Allen County whose land cover class never changed
+  value: "88.62"
+  unit: per cent of 260,382 acres, 1985 through 2023
+  as_of: "2023"
+  method: |
+    Both summaries are fetched from the coverage service in EPSG:5070 on the county's envelope and
+    clipped by rasterising the 2020 TIGERweb county polygon onto the coverage's own grid, which
+    burns 1,170,809 pixels — 260,381.9 acres, the Census Bureau's own land-plus-water figure for
+    this county to the acre. [verified] Acreage is 900 square metres a pixel. [verified] The change
+    index and the change count are different rasters and the shares above do not have to agree with
+    the count's 88.62 to the hundredth: the index resolves each pixel to one dominant category and
+    the count to a number of transitions. [verified] Class labels come from the map service's own
+    style endpoint, because these products have no legend page. [verified]
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-land-cover-2001-2021.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: allen-county-developed-land-2001-2021.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/mrlc-nlcd-land-cover.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

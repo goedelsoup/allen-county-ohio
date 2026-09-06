@@ -1,0 +1,158 @@
+---
+import Article from '../../layouts/Article.astro'
+import AssertionCard from '../../components/AssertionCard.astro'
+import ChartFigure from '../../components/ChartFigure.astro'
+import DataTable from '../../components/DataTable.astro'
+import { assertion, tableFor } from '../../lib/feeds'
+import { bar } from '../../lib/chart-spec'
+
+const stable = assertion('eighty-eight-per-cent-never-changed')
+const once = assertion('most-of-what-changed-changed-once')
+const field = assertion('the-largest-change-is-a-field-changing-its-mind')
+const family = assertion('urban-and-agricultural-change-are-close')
+const disagree = assertion('two-files-disagree-about-how-much-moves')
+
+const rate = assertion('the-rate-of-change-falls-five-to-one')
+const peak = assertion('the-peak-moves-when-you-divide')
+const bias = assertion('a-first-date-misses-a-tenth-of-the-changes')
+const forest = assertion('the-forest-in-equilibrium-was-cut')
+
+const canopy = assertion('canopy-is-where-it-was-and-not-where-it-was')
+const bothWays = assertion('more-ground-lost-canopy-than-gained-it')
+const edge = assertion('the-thin-edge-of-the-canopy-is-going')
+const consolidating = assertion('the-canopy-is-consolidating')
+const urbanised = assertion('canopy-falls-where-the-land-urbanised')
+
+const epochs = tableFor('measure/allen-county-land-cover-change-dates-2001-2021.yml')
+
+const fieldSpec = bar(
+  field.figures.map((f) => f.label),
+  field.figures.map((f) => f.value),
+  { yTitle: 'Acres of Allen County, 1985 to 2023', labelValues: true },
+)
+const rateSpec = bar(
+  rate.figures.map((f) => f.label),
+  rate.figures.map((f) => f.value),
+  { yTitle: 'Acres first changing class, per year', labelValues: true },
+)
+const edgeSpec = bar(
+  edge.figures.map((f) => f.label),
+  edge.figures.map((f) => f.value),
+  { yTitle: 'Acres of ground', labelValues: true },
+)
+const urbanisedSpec = bar(
+  urbanised.figures.map((f) => f.label),
+  urbanised.figures.map((f) => f.value),
+  { yTitle: 'Percentage points of canopy moved, 2011 to 2021', labelValues: true },
+)
+---
+
+<Article slug="a-field-that-changed-its-mind">
+  <p>
+    Satellites have classified every thirty-metre square of Allen County once a year since 1985.
+    Nine of those years were already read here, as separate photographs taken three years apart. The
+    thirty-nine-year run behind them answers a different question: not what the ground was on nine
+    occasions, but how often it moved at all, and when.
+  </p>
+
+  <h2>Eleven acres in a hundred</h2>
+  <AssertionCard assertion={stable} open />
+  <AssertionCard assertion={once} />
+  <p>
+    That is the shape of a county that is not doing very much: nine acres in ten never reclassified
+    once in thirty-nine years, and three quarters of what did move moved a single time. Then there
+    is a long thin tail — a hundred and twelve acres that changed ten times or more, and one square
+    of ground, two tenths of an acre, that changed twenty-five times.
+  </p>
+
+  <h2>What changed, and it is not what you would guess</h2>
+  <AssertionCard assertion={field} open />
+  <ChartFigure
+    id="kinds"
+    title="The two largest kinds of land cover change"
+    caption="The change index resolves each square to one dominant category across the thirty-nine years. Agriculture changing inside its own class is a field alternating between row crop and hay."
+    columns={['Kind of change', 'Acres']}
+    rows={field.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="kinds" set:html={JSON.stringify(fieldSpec)} is:inline />
+  <p>
+    A field sown to corn in one year and left in hay the next has changed land cover class. Nothing
+    was built and nobody moved; the classifier is doing exactly its job and reporting what is
+    growing. In a county that is seven tenths farmed, that single fact is the largest thing in the
+    change record, and it is invisible in a file that only photographs the ground every three years
+    — because a rotation that comes back around lands in the same class both times.
+  </p>
+  <AssertionCard assertion={family} />
+  <AssertionCard assertion={disagree} open />
+
+  <h2>When</h2>
+  <AssertionCard assertion={rate} open />
+  <ChartFigure
+    id="rate"
+    title="How fast the county was changing"
+    caption="Acres first changing land cover class per year, at the busiest step of the 2000s and at the last step of the record."
+    columns={['Period', 'Acres a year']}
+    rows={rate.figures.map((f) => [f.label, f.value.toFixed(1)])}
+  />
+  <script type="application/json" data-chart-spec="rate" set:html={JSON.stringify(rateSpec)} is:inline />
+  <AssertionCard assertion={peak} open />
+  {
+    epochs && (
+      <DataTable
+        title="Eight steps, two and three years long"
+        caption="The two right-hand columns are the same eight rows ranked twice. Five of them move."
+        columns={epochs.columns}
+        rows={epochs.rows}
+      />
+    )
+  }
+  <p>
+    The steps are not the same length, and a column of acres against a column of date ranges looks
+    like a series when it is a series of eight differently sized things. Divided by their own
+    durations the busiest years in Allen County are 2004 to 2006, not 2008 to 2011, and the step
+    that looked fifth is second. The collapse is in both readings — five to one either way — but a
+    reference that named the wrong decade would have told a reader something specific and false
+    about their own.
+  </p>
+  <AssertionCard assertion={bias} />
+  <AssertionCard assertion={forest} open />
+
+  <h2>The trees, which are the same and are not</h2>
+  <AssertionCard assertion={canopy} open />
+  <AssertionCard assertion={bothWays} />
+  <p>
+    Two hundred acres net across eleven years is nothing at all, and it is sitting on top of
+    twenty-four thousand acres of ground where the canopy moved one way or the other. The total is
+    the least interesting number in the file.
+  </p>
+  <AssertionCard assertion={edge} open />
+  <ChartFigure
+    id="edge"
+    title="Ground by how much canopy it carries"
+    caption="Acres of Allen County at or above a tenth canopy cover, and at or above a half, at each end of the run. The first falls in every year of the eleven; the second rises in almost all of them."
+    columns={['Measure', 'Acres']}
+    rows={edge.figures.map((f) => [f.label, f.value.toLocaleString()])}
+  />
+  <script type="application/json" data-chart-spec="edge" set:html={JSON.stringify(edgeSpec)} is:inline />
+  <AssertionCard assertion={consolidating} />
+  <p>
+    What is going is the fringe: the fencerow with four trees in it, the scrubby corner, the strip
+    along a ditch. What is thickening is the woodlot. A county can hold the same quantity of tree
+    and have far fewer places with a tree in them, and this one is doing that at about four hundred
+    acres a year.
+  </p>
+  <AssertionCard assertion={urbanised} open />
+  <ChartFigure
+    id="where"
+    title="Where the canopy went"
+    caption="Mean change in per-cent canopy cover between 2011 and 2021, on the squares each change category claims. Two of the three are falls."
+    columns={['Where the land cover changed', 'Points of canopy']}
+    rows={urbanised.figures.map((f) => [f.label, f.value.toFixed(3)])}
+  />
+  <script type="application/json" data-chart-spec="where" set:html={JSON.stringify(urbanisedSpec)} is:inline />
+  <p>
+    Building costs trees and farming does not. That is not a surprise and it is worth having as a
+    figure rather than as an expectation, because the two are measured by different instruments on
+    the same grid and they agree. What neither instrument can say is which tree, or whose.
+  </p>
+</Article>

@@ -14909,6 +14909,716 @@ pub const ASSERTIONS: &[Assertion] = &[
         answers: &["does not establish that these borrowers could have had a mortgage instead"],
         figures: &[],
     },
+    Assertion {
+        id: "eighty-eight-per-cent-never-changed",
+        statement: "Two hundred and thirty thousand acres of Allen County carried the same land \
+                    cover class in every one of thirty-nine years. Eleven per cent of the county \
+                    changed at least once.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**Eighty-eight and a half per cent of Allen County carried the same land cover class in every one of thirty-nine years.** 230,741.5 acres never changed at all; 29,640.3 acres \u{2014} 11.38 per cent \u{2014} changed at least once, and most of those changed exactly once. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), the annual product's change-count summary, clipped to the county and counted here."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Never changed", value: 230741.5, literal: "230,741.5" },
+            Figure { label: "Changed at least once", value: 29640.3, literal: "29,640.3" },
+        ],
+    },
+    Assertion {
+        id: "most-of-what-changed-changed-once",
+        statement: "Of the ground in Allen County that changed land cover class between 1985 and \
+                    2023, three quarters of it changed exactly once. A hundred and twelve acres \
+                    changed ten times or more.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**In figures: 21,964.6 acres changed once, 5,555.6 twice, 2,120.1 three times or more, and 111.6 acres changed ten times or more.** One pixel \u{2014} two tenths of an acre \u{2014} changed twenty-five times in thirty-nine years. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Once", value: 21964.6, literal: "21,964.6" },
+            Figure { label: "Twice", value: 5555.6, literal: "5,555.6" },
+            Figure { label: "Three or more", value: 2120.1, literal: "2,120.1" },
+            Figure { label: "Ten or more", value: 111.6, literal: "111.6" },
+        ],
+    },
+    Assertion {
+        id: "the-largest-change-is-a-field-changing-its-mind",
+        statement: "The largest single kind of land cover change in Allen County is agriculture \
+                    changing inside its own class \u{2014} 11,498 acres of field alternating between \
+                    row crop and hay, against 8,502 acres of urban change.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**The largest single kind of change in this county is a field changing its mind.** Agriculture changing *within* its own class covers 11,498.5 acres, more than any other category and more than the 8,502.4 acres of urban change. A pixel that alternates between row crop and hay is a pixel that changed land cover class, and it is not development. [verified] \u{2014} the same source's change index, whose labels are in the table below."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Agriculture within class", value: 11498.5, literal: "11,498.5" },
+            Figure { label: "Urban change", value: 8502.4, literal: "8,502.4" },
+        ],
+    },
+    Assertion {
+        id: "urban-and-agricultural-change-are-close",
+        statement: "Counted by family rather than by code, the urban categories of change cover \
+                    14,475 acres of Allen County and the agricultural ones 13,649.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**Counted by family rather than by code the two are close, and neither is what a reader expects.** Urban change and urban-within-class change together are 14,475.0 acres; the three agricultural codes together are 13,649.0. [verified] \u{2014} the same source. Water change is 1,251.9 acres, and every remaining code in the county together is under 250."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Urban, both codes", value: 14475.0, literal: "14,475.0" },
+            Figure { label: "Agricultural, three codes", value: 13649.0, literal: "13,649.0" },
+        ],
+    },
+    Assertion {
+        id: "two-files-disagree-about-how-much-moves",
+        statement: "The nine-epoch land cover database has 2.47 per cent of Allen County changing \
+                    class across twenty years. The annual product has 11.38 per cent across \
+                    thirty-nine \u{2014} more than four times the change for roughly twice the \
+                    window.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-1985-2023.yml", "**The two files disagree about how much this county moves, by more than their windows explain.** The nine-epoch product has 2.47 per cent of the county changing class across twenty years; this one has 11.38 per cent across thirty-nine. [verified] \u{2014} the same source pair. Roughly twice the window and more than four times the change; the index above says where the excess is, which is in a category the older product does not express at all."),
+        ],
+        answers: &["does not establish that 14,475 acres of Allen County were built on"],
+        figures: &[
+            Figure { label: "Nine epochs, 2001-2021", value: 2.47, literal: "2.47" },
+            Figure { label: "Annual, 1985-2023", value: 11.38, literal: "11.38" },
+        ],
+    },
+    Assertion {
+        id: "the-rate-of-change-falls-five-to-one",
+        statement: "Allen County's land cover changed at 565.9 acres a year in the middle of the \
+                    2000s and at 115.9 acres a year in 2019 to 2021.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**The county's land-cover change now has dates on it, and it is falling away.** 6,427.7 acres first changed class somewhere between 2001 and 2021, and the rate runs from 565.9 acres a year in 2004\u{2013}2006 to 115.9 in 2019\u{2013}2021 \u{2014} a fall of nearly five to one. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), its first-disturbance date raster, clipped to the county and counted here. The eight steps are in the table below."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[
+            Figure { label: "2004-2006", value: 565.9, literal: "565.9" },
+            Figure { label: "2019-2021", value: 115.9, literal: "115.9" },
+        ],
+    },
+    Assertion {
+        id: "the-peak-moves-when-you-divide",
+        statement: "The land cover database's eight steps are two and three years long. Ranked by \
+                    acres, Allen County changed fastest in 2008 to 2011; ranked by acres a year, it \
+                    changed fastest in 2004 to 2006, and the step that was fifth by acres is second \
+                    by rate.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**The eight steps are two and three years long, and which one was busiest depends on whether you divide.** By acres the peak is 2008\u{2013}2011 at 1,377.1; by acres a year it is 2004\u{2013}2006 at 565.9, and 2011\u{2013}2013 \u{2014} fifth by acres, at 979.9 \u{2014} is second at 489.9. [verified] \u{2014} the same source. The top three reorder and five of the eight rows move. See [an epoch is not a year](../../decisions/an-epoch-is-not-a-year.yml)."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-first-date-misses-a-tenth-of-the-changes",
+        statement: "A first-disturbance date records a pixel that changed twice only once, in the \
+                    earlier step. In Allen County that loses 3,527 of 32,429 changes \u{2014} a \
+                    tenth of them, all at the late end.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**It is a *first* disturbance date, so the late steps are short and the size of that is known.** A pixel that changed twice is dated once, in the earlier step. Against the same product's change count, 2,992 of the county's 28,902 changed pixels changed more than once, so this raster misses 3,527 of 32,429 changes \u{2014} 10.9 per cent \u{2014} and misses them at the late end. [verified] \u{2014} the same source's change count, differenced against the date raster. A fall of five to one survives a bias of that size."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-forest-in-equilibrium-was-cut",
+        statement: "Allen County's forest gained eight acres net between 2001 and 2021, and 431.9 \
+                    acres of it were disturbed between 1984 and 2020. The busiest year was 2007, at \
+                    52.9 acres.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**The county's forest is in equilibrium and 431.9 acres of it were cut.** The forest-disturbance raster dates a disturbance for that much ground between 1984 and 2020, against 22,444.8 acres it marks as forest with no disturbance at all. [verified] \u{2014} the same source, its 1984\u{2013}2021 forest disturbance date. The busiest years are 2007 at 52.9 acres, 2012 at 37.6, 2005 at 30.0, 2002 at 28.5 and 2019 at 27.6."),
+            support!("measure/allen-county-land-cover-change-dates-2001-2021.yml", "**A class the nine-epoch file shows moving eight acres in twenty years has had fifty times that cut inside it, one woodlot at a time.** [inference] \u{2014} read against [the land cover](allen-county-land-cover-2001-2021.yml), which gives forest 21,234 acres in 2001 and 21,226 in 2021. Equilibrium at the county scale is not stillness at the woodlot scale."),
+        ],
+        answers: &["does not know what happened on the ground in any of those years"],
+        figures: &[
+            Figure { label: "2007", value: 52.9, literal: "52.9" },
+            Figure { label: "2012", value: 37.6, literal: "37.6" },
+            Figure { label: "2005", value: 30.0, literal: "30.0" },
+            Figure { label: "2002", value: 28.5, literal: "28.5" },
+            Figure { label: "2019", value: 27.6, literal: "27.6" },
+        ],
+    },
+    Assertion {
+        id: "canopy-is-where-it-was-and-not-where-it-was",
+        statement: "Allen County's tree canopy totalled 18,728 acres in 2011 and 18,923 in 2021. In \
+                    between, 11,412 acres of ground gained canopy and 13,155 acres lost it.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**The county's tree canopy is almost exactly where it was eleven years ago, and almost none of it is in the same place.** Canopy totalled 18,728.5 acres in 2011 and 18,923.0 in 2021, a net gain of 194.5 \u{2014} while 11,412 acres of ground gained canopy and 13,155 acres lost it. [verified] \u{2014} [the National Land Cover Database](../../catalog/mrlc-nlcd-land-cover.md), its eleven annual tree-canopy coverages, clipped to the county and differenced pixel by pixel here."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "Canopy 2011", value: 18728.5, literal: "18,728.5" },
+            Figure { label: "Canopy 2021", value: 18923.0, literal: "18,923.0" },
+        ],
+    },
+    Assertion {
+        id: "more-ground-lost-canopy-than-gained-it",
+        statement: "Fifty-one thousand pixels of Allen County gained tree canopy between 2011 and \
+                    2021 and fifty-nine thousand lost it, and the county still finished ahead \
+                    \u{2014} because the gains are larger where they happen.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**More ground lost canopy than gained it and the county still finished ahead**, because the gains are larger where they happen: 51,314 pixels gained and 59,150 lost, and the gains total 2,249.2 canopy-acres against 2,054.6 lost. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "Gained", value: 2249.2, literal: "2,249.2" },
+            Figure { label: "Lost", value: 2054.6, literal: "2,054.6" },
+        ],
+    },
+    Assertion {
+        id: "the-thin-edge-of-the-canopy-is-going",
+        statement: "Ground in Allen County carrying at least a tenth tree canopy fell in every year \
+                    from 43,582 acres to 39,243. Ground carrying at least half rose in almost every \
+                    year, from 17,704 to 19,924.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**The total is a V and the distribution is not.** Canopy falls every year from 2011 to a floor of 18,328.3 acres in 2017 and climbs back past its start by 2021. Underneath it, ground carrying at least a tenth canopy falls in every single year \u{2014} 43,582.3 acres to 39,242.5 \u{2014} and ground carrying at least half rises in almost every one, 17,704.0 to 19,923.9. [verified] \u{2014} the same source, the table below."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "At least a tenth, 2011", value: 43582.3, literal: "43,582.3" },
+            Figure { label: "At least a tenth, 2021", value: 39242.5, literal: "39,242.5" },
+            Figure { label: "At least a half, 2011", value: 17704.0, literal: "17,704.0" },
+            Figure { label: "At least a half, 2021", value: 19923.9, literal: "19,923.9" },
+        ],
+    },
+    Assertion {
+        id: "the-canopy-is-consolidating",
+        statement: "Ground that carried between a tenth and a quarter tree canopy in 2011 lost 2.370 \
+                    percentage points of it by 2021. Ground between a quarter and a half gained \
+                    2.372, and the densest ground thinned by 3.593.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**What is disappearing is the thin edge.** Ground that carried between a tenth and a quarter canopy in 2011 lost 2.370 percentage points on average over the eleven years, and ground between a quarter and a half gained 2.372. The densest ground thinned too, by 3.593 points. [verified] \u{2014} the same source, grouped by each pixel's own 2011 value. The county's canopy is consolidating out of its fringes and into its woodlots, and thinning at the very top of those."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "A tenth to a quarter", value: 2.37, literal: "2.370" },
+            Figure { label: "A quarter to a half", value: 2.372, literal: "2.372" },
+            Figure { label: "Three quarters and up", value: 3.593, literal: "3.593" },
+        ],
+    },
+    Assertion {
+        id: "canopy-falls-where-the-land-urbanised",
+        statement: "Where Allen County's land cover changed urban, tree canopy fell 0.567 percentage \
+                    points on average. Where it changed within the urban classes it fell 0.410. \
+                    Where it changed inside agriculture it rose 0.989.",
+        topic: "land",
+        supports: &[
+            support!("measure/allen-county-tree-canopy-2011-2021.yml", "**Canopy falls where the land cover urbanised and rises where it stayed farmed.** On the 38,231 pixels the annual change index calls urban change, canopy fell 0.567 points on average; on the 26,856 it calls urban within class, 0.410; on the 51,703 it calls agriculture within class it *rose* 0.989. [verified] \u{2014} the same source against [the change index](allen-county-land-cover-change-1985-2023.yml)."),
+        ],
+        answers: &["does not assert that hedgerows are returning to Allen County's open fields"],
+        figures: &[
+            Figure { label: "Urban change, fell", value: 0.567, literal: "0.567" },
+            Figure { label: "Urban within class, fell", value: 0.41, literal: "0.410" },
+            Figure { label: "Agriculture within class, rose", value: 0.989, literal: "0.989" },
+        ],
+    },
+    Assertion {
+        id: "ninety-seven-cents-to-eighty-three",
+        statement: "The median household in Allen County earned ninety-seven cents on the national \
+                    dollar in 1989 and eighty-three in 2024. It is one of the few movements in this \
+                    series wide enough to clear its own confidence interval.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**The median household in Allen County earned ninety-seven cents on the national dollar in 1989 and eighty-three in 2024, and that fall is one of the few things in this series large enough to clear its own interval.** [verified] \u{2014} [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), thirty-one produced years. As a share of the national median the county's bounds are 89.3 to 104.2 per cent in 1989 and 79.5 to 86.3 in 2024, and the two do not overlap."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[
+            Figure { label: "1989, lower bound", value: 89.3, literal: "89.3" },
+            Figure { label: "1989, upper bound", value: 104.2, literal: "104.2" },
+            Figure { label: "2024, lower bound", value: 79.5, literal: "79.5" },
+            Figure { label: "2024, upper bound", value: 86.3, literal: "86.3" },
+        ],
+    },
+    Assertion {
+        id: "the-county-fell-while-the-nation-rose",
+        statement: "Allen County's median household income was $70,750 in 1989 and $67,677 in 2024, \
+                    in the dollars of 2024. The national median went from $73,125 to $81,604 in the \
+                    same dollars.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**In figures: $27,967 in 1989 and $67,677 in 2024, which is $70,750 and $67,677 in the dollars of 2024.** [verified] \u{2014} the same source, deflated here with [the all-items consumer price index](../../catalog/bls-cpi.md). The national median went from $73,125 to $81,604 in the same dollars, a rise of 11.6 per cent, while this county's fell 4.3."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[
+            Figure { label: "Allen 1989", value: 70750.0, literal: "70,750" },
+            Figure { label: "Allen 2024", value: 67677.0, literal: "67,677" },
+            Figure { label: "United States 1989", value: 73125.0, literal: "73,125" },
+            Figure { label: "United States 2024", value: 81604.0, literal: "81,604" },
+        ],
+    },
+    Assertion {
+        id: "the-level-does-not-separate-and-the-share-does",
+        statement: "Allen County's real median income in 1989 and in 2024 cannot be told apart by \
+                    this file \u{2014} the intervals overlap. Divided by the national median, the \
+                    same two years part company.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**The fall in real income on its own does not separate, and the fall relative to the nation does.** The county's 1989 bounds are $65,275 and $76,194 in 2024 dollars against $64,897 and $70,457 for 2024, which overlap. Divided by a national median whose own interval is a few hundred dollars wide, the same two years part company. [verified] \u{2014} the same source, its published bounds and the national row. That is what a ratio buys over a level, and it is the reason this node leads with the share. See [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml)."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-eight-years-below-1989",
+        statement: "Twenty-eight of the thirty-one years in the series stand below 1989 in real \
+                    terms. The floor is 2012, at $57,620 against $70,930 in 1998.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-household-income-1989-2024.yml", "**The floor is 2012 and the county has not been back to where it started.** Real median household income was $70,930 in 1998 and $57,620 in 2012, a fall of 18.8 per cent, and the 2024 figure of $67,677 is below 1998, below 1989 and below the single highest year in the series, which is 2019 at $71,498. [verified] \u{2014} the same source, deflated here. Two of the thirty-one years stand above 1989 \u{2014} 1998 and 2019 \u{2014} and twenty-eight stand below it."),
+        ],
+        answers: &["does not know why the share fell"],
+        figures: &[
+            Figure { label: "1998", value: 70930.0, literal: "70,930" },
+            Figure { label: "2012", value: 57620.0, literal: "57,620" },
+            Figure { label: "2019", value: 71498.0, literal: "71,498" },
+            Figure { label: "2024", value: 67677.0, literal: "67,677" },
+        ],
+    },
+    Assertion {
+        id: "thirty-one-years-of-poverty",
+        statement: "Allen County's poverty rate runs from 10.6 per cent in 2000 to 20.1 in 2012, and \
+                    stands at 14.8 per cent in 2024 \u{2014} 14,364 people.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**Thirty-one years of how many people in this county are below the poverty line, and the first poverty series this corpus has held at all.** The rate runs from 10.6 per cent in 2000 to 20.1 in 2012 and stands at 14.8 in 2024, on 14,364 people. [verified] \u{2014} [the Small Area Income and Poverty Estimates](../../catalog/census-saipe-county.md), the state-and-county files for every produced year."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "2000", value: 10.6, literal: "10.6" },
+            Figure { label: "2012", value: 20.1, literal: "20.1" },
+            Figure { label: "2024", value: 14.8, literal: "14.8" },
+        ],
+    },
+    Assertion {
+        id: "not-one-year-separates-from-the-last",
+        statement: "The poverty file publishes a ninety per cent interval on every figure, and \
+                    across thirty adjacent pairs not one year in Allen County separates from the \
+                    year before it. The four-point rise of 2009 has intervals touching exactly at \
+                    16.7.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**Not one year in the series separates from the year before it.** The file publishes a ninety per cent interval on every figure and the interval is about 4.4 points wide, against a range of 9.5 points across the whole series. Thirty adjacent pairs were tested and none of them clears: the four-point rise of 2009 has intervals touching exactly at 16.7, and the four-point fall of 2013 has intervals overlapping by two tenths. [verified] \u{2014} the same source, its published bounds. See [a series that cannot see a year](../../decisions/a-series-that-cannot-see-a-year.yml)."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[],
+    },
+    Assertion {
+        id: "spans-separate-and-the-ends-do-not",
+        statement: "Of the 465 pairs of years in the series, 103 separate, the shortest gap being \
+                    two years. The endpoints are not among them: 11.8 per cent in 1989 and 14.8 in \
+                    2024 cannot be told apart.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**What does separate is spans.** 103 of the 465 possible pairs clear, the shortest gap being two years \u{2014} 2007 against 2009 \u{2014} and the county's 2000s separate from its 2010s in every direction anyone would ask. [verified] \u{2014} the same source. The endpoints do not: 11.8 per cent in 1989 and 14.8 in 2024 cannot be told apart by this file, though everything between them says the county got poorer and stayed poorer."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "Pairs that separate", value: 103.0, literal: "103" },
+            Figure { label: "Pairs tested", value: 465.0, literal: "465" },
+        ],
+    },
+    Assertion {
+        id: "indistinguishable-from-the-nation-until-2008",
+        statement: "In no year from 1989 to 2008 does Allen County's poverty interval clear the \
+                    nation's. In 2009, 2010, 2011, 2012, 2014, 2021 and 2024 it does.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**The county was indistinguishable from the nation until 2008 and distinguishably poorer seven times since.** In no year from 1989 to 2008 does Allen County's interval clear the national one. In 2009, 2010, 2011, 2012, 2014, 2021 and 2024 it does. [verified] \u{2014} the same source, the county row against the national row. On the point estimates the county is below the nation in every year to 2004 and above it in every year from 2007."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-county-rate-against-the-national-rate",
+        statement: "Allen County's poverty rate was 0.922 times the nation's in 1989, 1.264 in 2012 \
+                    and 1.223 in 2024.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**In figures: the county's rate was 0.922 times the nation's in 1989, 1.264 in 2012 and 1.223 in 2024.** [verified] \u{2014} the same source. The 1989 ratio and the 2012 ratio separate; the 1989 and 2024 ratios do not, which is the difference between a county that got poorer than the country and one that can be shown to have. See [a rank is an estimate](../../decisions/a-rank-is-an-estimate.yml)."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "1989", value: 0.922, literal: "0.922" },
+            Figure { label: "2012", value: 1.264, literal: "1.264" },
+            Figure { label: "2024", value: 1.223, literal: "1.223" },
+        ],
+    },
+    Assertion {
+        id: "child-poverty-reached-three-in-ten",
+        statement: "Child poverty in Allen County ran higher than the county's own rate in every one \
+                    of the thirty-one years and reached 30.0 per cent in 2010.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**Child poverty ran higher than the county's rate in every one of the thirty-one years, and reached 30.0 per cent in 2010.** [verified] \u{2014} the same source, its under-18 estimates. Nearly one child in three, in the year after the county's largest single-year rise."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "Children in poverty, 2010", value: 30.0, literal: "30.0" },
+        ],
+    },
+    Assertion {
+        id: "the-survey-and-the-model-overlap",
+        statement: "The five-year survey puts Allen County's poverty rate at 13.1 per cent for 2023 \
+                    and the federal model at 14.1. Their intervals overlap, and neither checks the \
+                    other, because the model reads the survey.",
+        topic: "work",
+        supports: &[
+            support!("measure/allen-county-poverty-1989-2024.yml", "**The survey and the model disagree by a point and their intervals overlap.** The five-year American Community Survey puts the county at 13.1 per cent for 2023 \u{b1} 1.2 and this file at 14.1 with bounds of 11.8 and 16.4. [verified] \u{2014} [the survey](allen-county-income-and-poverty-2023.yml) and the same source. Neither is a check on the other, because the model reads the survey as one of its inputs."),
+        ],
+        answers: &["does not establish that poverty rose in Allen County between 1989 and 2024"],
+        figures: &[
+            Figure { label: "Survey", value: 13.1, literal: "13.1" },
+            Figure { label: "Model", value: 14.1, literal: "14.1" },
+        ],
+    },
+    Assertion {
+        id: "three-returns-out-of-the-forty-year-hole",
+        statement: "Allen County's presidential vote for 1944, 1948 and 1956 is on the record for \
+                    the first time: Dewey 21,006 to Roosevelt's 12,504, Dewey 17,381 to Truman's \
+                    13,161, and Eisenhower 28,386 to Stevenson's 12,035.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**Three presidential returns for this county out of the forty years the corpus could not reach, printed by the only Allen County newspaper in the national newspaper archive.** Dewey took 21,006 votes to Roosevelt's 12,504 in 1944, 17,381 to Truman's 13,161 in 1948, and Eisenhower took 28,386 to Stevenson's 12,035 in 1956. [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), the issues of 9 November 1944, 4 November 1948 and 8 November 1956, each printing the county canvass."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[
+            Figure { label: "Dewey 1944", value: 21006.0, literal: "21,006" },
+            Figure { label: "Roosevelt 1944", value: 12504.0, literal: "12,504" },
+            Figure { label: "Dewey 1948", value: 17381.0, literal: "17,381" },
+            Figure { label: "Truman 1948", value: 13161.0, literal: "13,161" },
+            Figure { label: "Eisenhower 1956", value: 28386.0, literal: "28,386" },
+            Figure { label: "Stevenson 1956", value: 12035.0, literal: "12,035" },
+        ],
+    },
+    Assertion {
+        id: "every-canvass-calls-itself-unofficial",
+        statement: "Each of the three county canvasses says what it is: complete unofficial returns \
+                    from 111 precincts in 1944, from all 112 in 1948, and a complete unofficial vote \
+                    with no precinct count in 1956.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**Every one of the three calls itself unofficial and says how much of the county it had.** 1944 is \"complete unofficial returns from Allen county's 111 precincts\"; 1948 is \"the complete unofficial returns from all of Allen county's 112 precincts\"; 1956 says \"The complete unofficial vote\" and gives no precinct count. [verified] \u{2014} the same source, its three issues. The qualifier travels with the figures and decides what may be computed from them; see [a newspaper canvass is not a certified return](../../decisions/a-newspaper-canvass-is-not-a-certified-return.yml)."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-republican-share-of-three-elections",
+        statement: "The Republican share of Allen County's two-party presidential vote was 62.7 per \
+                    cent in 1944, 56.9 in 1948 and 70.2 in 1956.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**In figures: the Republican share of the two-party presidential vote was 62.7 per cent in 1944, 56.9 in 1948 and 70.2 in 1956.** [verified] \u{2014} the same source, its three tables, computed here. Those shares are within-table quantities and the differences between them are not: the denominators are 111, 112 and an unstated number of precincts."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[
+            Figure { label: "1944", value: 62.7, literal: "62.7" },
+            Figure { label: "1948", value: 56.9, literal: "56.9" },
+            Figure { label: "1956", value: 70.2, literal: "70.2" },
+        ],
+    },
+    Assertion {
+        id: "1952-is-a-sentence-not-a-count",
+        statement: "The 1952 county table survives with its offices and candidates legible and its \
+                    number column gone. Allen County gave large majorities to all Republican \
+                    candidates that year, on 115 precincts of 119, and this corpus holds no figure \
+                    from it.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**1952 is here as a sentence and not as a count.** The paper reports that \"Allen county, traditionally Republican, again gave large majorities to all GOP candidates in the election Tuesday with the exception of Charles Taft in his race against Governor Frank Lausche\", on \"an unofficial tabulation of 115 precincts out of 119\". [verified] \u{2014} the same source, its issue of 6 November 1952. The table's number column is absent from the scan, so the direction of that election is held and no figure from it is."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-window-narrows-to-seven",
+        statement: "The question of when Allen County turned Republican has narrowed from nineteen \
+                    presidential elections to seven. Four of the eleven that remained are now \
+                    answered and all four went Republican, leaving 1912, 1916, 1924, 1928, 1932, \
+                    1936 and 1940.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**The county's window has narrowed from eleven elections to seven.** Nothing after 1956 can be the turn and 1920 was already Republican, so the open question was 1912, 1916, 1924, 1928, 1932, 1936, 1940, 1944, 1948, 1952 or 1956. Four of those are now answered and all four are Republican, leaving 1912, 1916, 1924, 1928, 1932, 1936 and 1940. [inference] \u{2014} see [the modern series](allen-county-presidential-vote-2000-2016.yml), which carries the question."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-1940-election-is-in-a-five-month-hole",
+        statement: "The one remaining election this newspaper could have answered is 1940, and the \
+                    archive holds it through 8 August 1940 and again from 9 January 1941 and nothing \
+                    between.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-presidential-vote-1944-1956.yml", "**1940 is the one of the seven that this paper would have answered and cannot.** The archive holds the Bluffton News continuously through 8 August 1940 and again from 9 January 1941 and holds nothing between \u{2014} a five-month hole containing the election. [verified] \u{2014} [the archive](../../catalog/chronicling-america.md), searched in four date windows."),
+        ],
+        answers: &["does not establish that Allen County voted Republican for president in every election from 1944 to 1956"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-only-whole-county-ballot-before-1960",
+        statement: "Twenty-seven contests from November 1956 \u{2014} president down to coroner, \
+                    five judicial races and two state questions \u{2014} are the only complete Allen \
+                    County ballot this corpus holds from any year before 1960.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**Twenty-seven contests from one election, which is the only complete county ballot this corpus holds from any year before 1960.** President down to coroner, five judicial races and two state questions, as the county's own weekly printed them the week after the vote. [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 8 November 1956, under the heading \"GOP Makes Clean Sweep Again Of County Offices\"."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[],
+    },
+    Assertion {
+        id: "eighteen-points-down-one-ballot",
+        statement: "In November 1956 Allen County gave Eisenhower 70.2 per cent of the two-party \
+                    presidential vote, O'Neill 60.8 for governor and Bender 52.1 for United States \
+                    senator \u{2014} counted by the same boards on the same night.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**A Republican sweep, and an eighteen-point spread down one ballot.** Eisenhower took 70.2 per cent of the two-party presidential vote in this county, O'Neill 60.8 for governor and Bender 52.1 for United States senator. [verified] \u{2014} the same source, its table below, computed here. All three were counted by the same boards on the same night from the same precincts, so the spread is a within-table comparison and rests on nothing the canvass's own qualifier undermines."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "President", value: 70.2, literal: "70.2" },
+            Figure { label: "Governor", value: 60.8, literal: "60.8" },
+            Figure { label: "Senator", value: 52.1, literal: "52.1" },
+        ],
+    },
+    Assertion {
+        id: "lausche-almost-carried-the-county",
+        statement: "Frank Lausche came within 1,653 votes of carrying a county Eisenhower won by \
+                    16,351. His 18,838 votes were 6,803 more than his own party's presidential \
+                    nominee took here.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**Frank Lausche came within 1,653 votes of carrying a county Eisenhower won by 16,351.** The Democratic governor was running for the Senate; the paper notes that he \"outpulled Taft in Allen county for governor at the 1952 election\" and \"ran under Bender in the Senatorial race this election\". [verified] \u{2014} the same source. His 18,838 votes are 2,513 more than any other Democrat on the ballot received, and 6,803 more than the presidential nominee of his own party."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "Lausche fell short by", value: 1653.0, literal: "1,653" },
+            Figure { label: "Eisenhower led by", value: 16351.0, literal: "16,351" },
+        ],
+    },
+    Assertion {
+        id: "the-coroner-outpolled-the-president",
+        statement: "The two largest figures on Allen County's 1956 ballot are the two races nobody \
+                    contested: the coroner took 31,907 votes and the state senator 29,598, against \
+                    28,386 for Eisenhower.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**The county coroner outpolled the president.** Biery, unopposed, took 31,907 votes against Eisenhower's 28,386, and the state senator Pepple, also unopposed, took 29,598. [verified] \u{2014} the same source. An unopposed candidate on a partisan ballot collects from both columns, which is why the two largest figures on this sheet are the two races nobody contested."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "Coroner", value: 31907.0, literal: "31,907" },
+            Figure { label: "State senator", value: 29598.0, literal: "29,598" },
+            Figure { label: "President", value: 28386.0, literal: "28,386" },
+        ],
+    },
+    Assertion {
+        id: "both-state-questions-passed",
+        statement: "Allen County carried a bonus for veterans of the Korean conflict 28,005 to 7,687 \
+                    and four-year terms for state senators 21,635 to 11,638.",
+        topic: "elections",
+        supports: &[
+            support!("measure/allen-county-ballot-1956.yml", "**Both state questions passed and one of them passed by nearly four to one.** A bonus for veterans of the Korean conflict carried 28,005 to 7,687, and four-year terms for state senators 21,635 to 11,638. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not know which two of the four commissioner candidates were elected"],
+        figures: &[
+            Figure { label: "Bonus, yes", value: 28005.0, literal: "28,005" },
+            Figure { label: "Bonus, no", value: 7687.0, literal: "7,687" },
+            Figure { label: "Four-year terms, yes", value: 21635.0, literal: "21,635" },
+            Figure { label: "Four-year terms, no", value: 11638.0, literal: "11,638" },
+        ],
+    },
+    Assertion {
+        id: "two-sheriffs-one-ballot",
+        statement: "William V. Daley, sheriff of Allen County from 1937, and William R. Dailey, \
+                    sheriff from 1945, were recorded as possibly one man under two spellings. The \
+                    county's 1944 canvass prints them against each other: Dailey 18,038, Daley \
+                    14,798.",
+        topic: "elections",
+        supports: &[
+            support!("person/william-v-daley.yml", "**They are two men, and the county's own newspaper puts them on one ballot against each other.** The Allen County canvass of November 1944 prints, under For Sheriff, \"W. R. Dailey, R. 18,038\" and \"W. V. Daley, 14,798\". [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 9 November 1944; see [the ballot of those years](../measure/allen-county-presidential-vote-1944-1956.yml). A sitting sheriff was beaten by 3,240 votes by a man whose name differs from his by one letter, and the roster's two entries are two people. The question is closed."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "Dailey", value: 18038.0, literal: "18,038" },
+            Figure { label: "Daley", value: 14798.0, literal: "14,798" },
+        ],
+    },
+    Assertion {
+        id: "what-the-tornado-struck",
+        statement: "The tornado of 19 July 1950 levelled a barn a mile south-west of Beaverdam, \
+                    demolished two more, and took the trees out of a roadside park. The federal row \
+                    that recorded it carries no narrative at all.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**What it struck is now on the record, from the county's own newspaper.** Near [Beaverdam](../place/beaverdam.yml), at the far end of the track, it \"struck near the Dr. Foust farm, one mile southwest of Beaverdam on the Dixie highway, and levelled a barn on the Homer F. Weaver farm\", blew down trees at a roadside park by the Foust home, and completely demolished \"the Deeds barn south of Beaverdam and the Fett barn east of Beaverdam\". [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 27 July 1950."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "two-injuries-named-and-thirty-counted",
+        statement: "The county's own weekly names two injuries from the 1950 tornado \u{2014} a \
+                    farmer buried in his barn's debris who escaped with bruises, and his son's leg \
+                    broken by a flying barn door. The federal file counts thirty and names none.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**Two injuries are named where the federal file counts thirty.** Weaver was \"buried in the debris\" and \"escaped with bruises\"; his son Melvin, outside the barn, \"received a broken leg when he was struck by a flying barn door\". [verified] \u{2014} the same source. The paper is a Bluffton weekly writing about the end of the track and does not report Lima's casualties at all, so two named and thirty counted are not in conflict: they are different parts of one storm."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-paper-and-the-file-disagree-about-the-clock",
+        statement: "The federal storm file stamps the 1950 tornado 15:15 CST, which reads as 16:15 \
+                    on the local clock. The newspaper, writing eight days later, puts it at 16:50. \
+                    No reading of the timezone field closes the gap.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**The paper puts it at 4:50 in the afternoon and the file does not.** The federal row is stamped 15:15 CST, which this corpus read as 16:15 on the local clock; the newspaper, writing eight days after, says \"the Lima tornado occurred at 4:50\". [verified] \u{2014} the same source, against [the storm record](../measure/allen-county-storm-events-1950-2026.yml). On a twenty-four-hour clock the file's stamp read as Central is 16:15 and the paper's afternoon is 16:50 \u{2014} thirty-five minutes apart, and no reading of the timezone field closes the gap, because 15:15 Eastern is an hour and a half early and 15:15 Central is thirty-five minutes late."),
+        ],
+        answers: &[],
+        figures: &[],
+    },
+    Assertion {
+        id: "a-million-dollars-apart",
+        statement: "The county's weekly called the 1950 Lima tornado a one-and-a-half-million-dollar \
+                    storm. The federal compilation puts its property damage at $2,500,000.",
+        topic: "history",
+        supports: &[
+            support!("event/the-tornado-of-19-july-1950.yml", "**And it puts the damage at $1,500,000 where the file puts it at $2,500,000.** The paper calls it \"a one and one-half-million dollar tornado\". [verified] \u{2014} the same source. A contemporaneous local figure and a later national compilation, a million apart, and this node holds both; see [an instrument dates it and a witness describes it](../../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml)."),
+            support!("event/the-tornado-of-19-july-1950.yml", "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody and did an estimated $2.5 million of property damage. [verified] \u{2014} [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10086810."),
+        ],
+        answers: &[],
+        figures: &[
+            Figure { label: "The paper, eight days after", value: 1500000.0, literal: "1,500,000" },
+            Figure { label: "The federal file", value: 2500000.0, literal: "2,500,000" },
+        ],
+    },
+    Assertion {
+        id: "a-second-storm-the-file-does-not-hold",
+        statement: "A second damaging wind crossed the county's northern edge on the evening of 19 \
+                    July 1950, about an hour after the Lima tornado, and no dataset this corpus \
+                    holds has a row for it.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**A second tornado crossed the county's northern edge about an hour after the one the federal record holds, and the federal record does not hold it.** \"The tornado ripping thru this area, however, was apparently a different one than that which ravaged Lima more than an hour earlier. It struck here shortly after 6 p. m., while the Lima tornado occurred at 4:50.\" [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 27 July 1950. See [the Lima tornado](the-tornado-of-19-july-1950.yml)."),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "five-miles-in-a-semicircle-around-bluffton",
+        statement: "The second storm headed north-east from a farm on the Allen\u{2013}Hancock \
+                    county line road and blew itself out five miles away on a farm on State Route \
+                    103, in a semicircle around Bluffton.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**It cut five miles and three hundred yards wide in a semicircle around Bluffton.** It headed north-east from a farm on the Allen\u{2013}Hancock county line road and \"finally blew itself out\" five miles away on a farm on State Route 103. [verified] \u{2014} the same source. The Lima tornado's stated track is 9.7 miles and the same 300 yards at its widest, which is why two storms of one evening are easy to read as one."),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twenty-four-hours-to-open-the-roads",
+        statement: "Township trustees and farmers with tractors took nearly twenty-four hours to \
+                    reopen the roads in the second storm's path, in some places by shoving the \
+                    fallen trees to the side of the highway.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**Nobody was killed and the roads took a day.** \"It was nearly 24 hours after the storm struck before all roads in its path were re-opened\", by township trustees and farmers with tractors, and in some places by shoving fallen trees to the side of the highway \"where they will remain until there is time to remove them later\". [verified] \u{2014} the same source. The paper's Beaverdam correspondent wrote that \"although several families in the rural community here received heavy losses in last week's wind storm, we feel it is very fortunate that no lives were lost or anyone seriously injured\". [verified]"),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "what-a-gauge-cannot-record",
+        statement: "In the woodlots the 1950 storm twisted off trees more than two feet in diameter \
+                    and took the tops out of most of what stayed standing, and dead rabbits and \
+                    pheasants were found under them.",
+        topic: "history",
+        supports: &[
+            support!("event/the-storm-at-beaverdam-1950.yml", "**The clearest thing it left was in the woodlots.** Trees \"more than two feet in diameter were twisted off and others uprooted\", and the tops were taken out of most of what stayed standing; in the heavily damaged woodlots \"a lot of dead rabbits and pheasants could be found, leading to conjecture that the storm had come up so quickly that the game birds and animals had no chance to find shelter\". [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not assert that this was a separate tornado"],
+        figures: &[],
+    },
+    Assertion {
+        id: "one-storm-two-basins",
+        statement: "The rain that produced the Ottawa River's largest measured flow put nearly four \
+                    feet of water in a Bluffton lumber yard twenty miles north, on Big Riley Creek \
+                    \u{2014} a different river, in a basin with no gauge in it.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**The rain that produced the Ottawa River's largest measured flow put four feet of water in a Bluffton lumber yard twenty miles north, on a different river.** [verified] \u{2014} [The Bluffton News](../../catalog/chronicling-america.md), 29 January 1959, its front-page account of \"the Wednesday flash flood of last week\"; see [the flood on the Ottawa](the-ottawa-river-flood-of-1959.yml). Big Riley Creek drains to the Blanchard and the Auglaize; the gauge that measured 7,740 cubic feet a second is on the Ottawa. One storm, two basins, and only one of them had an instrument in it."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "ice-broke-the-village-water-main",
+        statement: "Ice and logs coming down Big Riley Creek broke Bluffton's water main at the Main \
+                    street bridge, and a corroded valve meant the shut-off had to be made at the \
+                    village building. Part of the village had no water until Sunday noon and part \
+                    until Tuesday.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**Ice broke the village's water main.** \"Ice and heavy logs racing down the Big Riley broke a water main at the Main street bridge\", and a corroded valve near the bridge could not be turned, so the shut-off had to be made at the village building instead. Water was cut off from the hardware store north to the corporation line and east to Vance Street, and was not restored until noon on Sunday; north of the bridge, residents were still without water on Tuesday. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "twelve-houses-pumped-out-in-near-zero-weather",
+        statement: "Bluffton's firemen and two village crews pumped out twelve houses on two streets \
+                    on the night of the flood so that furnace fires could be lit, and carried one \
+                    woman out of her house on a chair.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**Twelve houses were pumped out on two streets, in near-zero weather.** Bluffton firemen, the waterworks crew and the village service crew worked Wednesday night \"pumping out basements of 12 homes on Cherry and Railroad streets so that furnace fires could be started in the near zero weather that followed the flood\", and one woman was carried out of her Cherry Street house on a chair. [verified] \u{2014} the same source. A week later the village council agreed to make no charge for the pumping, waiving the $10 it ordinarily asked. [verified]"),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[
+            Figure { label: "Houses pumped out", value: 12.0, literal: "12" },
+            Figure { label: "The charge ordinarily made, dollars", value: 10.0, literal: "10" },
+        ],
+    },
+    Assertion {
+        id: "the-creek-and-the-quarry-at-one-level",
+        statement: "Bluffton's municipal swimming pool went under, the Buckeye quarry and Big Riley \
+                    Creek stood at one level, and the pool's filtration plant and the sewage \
+                    disposal plant came through undamaged.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**The businesses on the water are named and the public works came through.** Water covered the display room and offices of the lumber company and stood \"nearly four feet deep\" in its yard; a new builders' supply building on Vance Street was invaded and cement in bags damaged; a lunch room closed for several days for want of water and a restaurant hauled its own. The municipal swimming pool was under water and \"Buckeye quarry and Big Riley were at one level\", and officials reported no damage to the pool's filtration plant or to the sewage disposal plant. [verified] \u{2014} the same source."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
+    Assertion {
+        id: "the-creek-rose-a-day-before-the-river",
+        statement: "The flood at Bluffton was on Wednesday 21 January 1959 and the Ottawa's peak at \
+                    Allentown is dated the 22nd. A small creek rises and falls inside a day and a \
+                    river gauged sixteen miles downstream does not.",
+        topic: "history",
+        supports: &[
+            support!("event/the-flash-flood-at-bluffton-1959.yml", "**The date is the day before the gauge peaked.** The paper calls it a Wednesday flood and its issue is Thursday 29 January, which puts it on the 21st; the Ottawa's peak at Allentown is dated the 22nd, and the Lima station's two-day rainfall is 1.84 inches on the 21st and 1.20 on the 22nd. [verified] \u{2014} the same source against [the flood on the Ottawa](the-ottawa-river-flood-of-1959.yml). A small creek rises and falls inside a day and a river gauged sixteen miles downstream does not."),
+        ],
+        answers: &["does not establish what the Ottawa River did"],
+        figures: &[],
+    },
 ];
 
 /// One span of one node, as it survived the gate.

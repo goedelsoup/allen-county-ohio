@@ -1,0 +1,72 @@
+id: a-series-that-cannot-see-a-year
+summary: >-
+  The federal poverty model gives Allen County thirty-one annual estimates and a ninety per cent
+  interval on every one. Across the thirty adjacent pairs, **not one year separates from the year
+  before it** — including the four-point jump of 2009 and the four-point fall of 2013. An annual
+  series whose adjacent intervals always overlap is an instrument for trends over spans and not for
+  years, and a corpus that prints its wiggles is publishing the model's noise as the county's
+  history.
+context: |
+  [The Small Area Income and Poverty Estimates](../catalog/census-saipe-county.md) publish a
+  poverty rate for every county every year, each with a ninety per cent lower and upper bound. For
+  Allen County the estimates run from 10.6 per cent in 2000 to 20.1 in 2012 and the bounds are
+  about ±2.2 points throughout — so the interval is roughly half the entire range of the series.
+
+  Testing every adjacent pair for separation, on the crude rule that two intervals which do not
+  overlap describe different quantities:
+
+      pairs tested                       30
+      pairs that separate                 0
+      largest single-year move        +4.1 (2008 to 2009), intervals touch at 16.7
+      second largest                  -4.0 (2012 to 2013), intervals overlap by 0.2
+
+  Widen to every pair of years and 103 of the 465 do separate. The shortest gap that separates
+  anywhere in the series is **two years** — 2007 against 2009 — and the endpoints do not: 1989 at
+  11.8 per cent and 2024 at 14.8 cannot be distinguished by this file, though everything in between
+  says the county got poorer and stayed poorer.
+
+  Every one of those thirty non-separations is a sentence somebody would otherwise write. *Poverty
+  fell four points in 2013.* It is the largest fall in the series and the file will not support it.
+decision: |
+  **Before publishing any change from a series that carries intervals, test the two intervals. Where
+  no adjacent pair in the series separates, say so once, and then publish spans rather than years.**
+
+  - The test is the crude one — do the intervals overlap — and it is deliberately crude. It is
+    conservative in the direction that matters and it needs nothing the file does not carry.
+  - Where no adjacent pair separates, the node states the count: *thirty pairs, none separating*.
+    That is a fact about the instrument and it belongs beside the series, not in a footnote.
+  - **Find the shortest separating gap and publish it.** It is the file's own resolution, in years,
+    and it is far more useful to a reader than the assurance that a number is uncertain.
+  - Period means may be published where single years may not, and the periods are chosen from
+    outside the series — an event, a policy, a decade — never from where the line happens to bend.
+  - **Say when the endpoints do not separate.** A series that plainly rises and whose first and last
+    values overlap is the case most likely to be reported as a rise, and it is the case this rule
+    exists for.
+rationale: |
+  This is [a rank is an estimate](a-rank-is-an-estimate.yml) applied along time instead of across
+  counties, and it comes from the same defect: an integer or a decimal looks settled, and the
+  interval that would unsettle it is published in the next column and dropped on the way to the
+  page. The corpus already fixed the cross-sectional case; the longitudinal one is more tempting,
+  because a chart of thirty-one points is a picture of a county's history and every bend in it
+  invites a cause.
+
+  **The rule earns its keep by what it removes.** Without it this phase would have published a
+  four-point collapse in poverty in 2013 and a two-and-a-half-point recovery in 2015, and both are
+  inside the model's own noise. With it the series still says a great deal: that the county's rate
+  ran below the nation's in every year to 2004 and above it in every year from 2007; that a
+  two-year gap around the recession separates; that the 2000s and the 2010s are different decades
+  by any comparison across them. None of those readings needs a single year to be real.
+
+  **It does not license silence about the shape.** A chart of the annual points is still the right
+  chart, because the shape is the finding and the reader can see the band around it. What the rule
+  governs is the sentence underneath, and the sentence is about spans.
+
+  **The rank case recurs here in a form the earlier rule anticipated and did not have an example
+  of.** Ohio's counties can be ranked on this file and their ranks are not published — but their
+  intervals are, so a rank *interval* can be computed rather than only warned about. Allen County's
+  2024 poverty rank is 18th of 88 as a point and somewhere between 3rd and 56th once the eighty-
+  eight intervals are honoured; in 1989 it is 43rd as a point and between 10th and 68th. That is
+  the middle three quarters twice over, which is what the earlier rule calls *no information at
+  all*.
+status: accepted
+date: "2026-09-06"
