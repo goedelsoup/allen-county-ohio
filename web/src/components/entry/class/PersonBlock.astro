@@ -7,8 +7,12 @@
 // office and its district rather than to the person.
 
 import HoldingsTable from '../HoldingsTable.astro'
-import { holdingsFor } from '../../../lib/entry'
-import type { Node } from '../../../lib/feeds'
+import SpanBar from '../SpanBar.astro'
+import { entryPath, holdingsFor, year } from '../../../lib/entry'
+import { nodes, type Node } from '../../../lib/feeds'
+
+/** The node that records what the county histories carry about the people in them. */
+const SURVEY = 'measure/allen-county-lives-in-the-county-histories.yml'
 
 interface Props {
   node: Node
@@ -19,7 +23,77 @@ const holdings = holdingsFor(node, 'offices')
 
 const offices = new Set(holdings.map((h) => h.office?.id).filter(Boolean))
 const returned = holdings.length > offices.size
+
+// The life, and the terms drawn inside it.
+//
+// An absent `died` is read as **unknown** and not as "living": that is what
+// `an-absent-end-date-means-four-things` assigns to this class, and it is the
+// one reading the bar could get wrong in a way nobody would notice. A person
+// born in 1864 whose death this corpus cannot date must not be drawn running to
+// the present, so the open end stops short and says what it means.
+const born = year(node.properties.born ?? '')
+const died = year(node.properties.died ?? '')
+
+// One scale for everybody, so two entries can be held against each other. It is
+// built from the dated lives themselves rather than from a round century.
+const lives = nodes.filter((n) => n.class === 'person' && n.properties.born)
+const bounds = lives.flatMap((n) => [year(n.properties.born ?? ''), year(n.properties.died ?? '')])
+const scale = bounds.filter((y): y is number => y !== null)
+const min = Math.min(...scale)
+const max = Math.max(...scale)
+
+// A term with no end is being served now and is drawn open, which is the same
+// distinction one level down.
+const marks = holdings
+  .map((h) => ({ start: year(h.began), end: year(h.ended), label: h.office?.label ?? 'term' }))
+  .filter((m): m is { start: number; end: number | null; label: string } => m.start !== null)
+
+const serving = holdings.some((h) => !h.ended)
 ---
+
+{
+  born !== null && max > min && (
+    <>
+      <h2 class="section">Life, and the terms inside it</h2>
+      <SpanBar
+        min={min}
+        max={max}
+        start={born}
+        end={died}
+        marks={marks}
+        leftLabel={String(min)}
+        rightLabel={String(max)}
+        openLabel="death not recorded"
+        note={
+          died === null
+            ? 'The run is the life and the blocks are the terms. The open end is not a claim that this person is living — this corpus holds no date of death for them either way.'
+            : 'The run is the life and the blocks are the terms, against the other lives this corpus dates.'
+        }
+      />
+    </>
+  )
+}
+
+{
+  born === null && holdings.length > 0 && (
+    <p class="absent">
+      {serving ? (
+        <>
+          No life span is drawn here. This officeholder is serving, and this corpus does not go
+          looking for a date of birth for someone in office — the holdings below are the public
+          record of a public trust, which is what it keeps. The absence is a decision and not a
+          gap.
+        </>
+      ) : (
+        <>
+          No life span is drawn here, because no date of birth is recorded. The roster that names
+          this holder gives a name and a year range, and the three county histories{' '}
+          <a href={entryPath(SURVEY)}>do not date them</a>.
+        </>
+      )}
+    </p>
+  )
+}
 
 {
   holdings.length > 0 && (
@@ -46,5 +120,19 @@ const returned = holdings.length > offices.size
     font: var(--type-data);
     font-size: var(--size-label);
     color: var(--text-faint);
+  }
+  /*
+   * The absence is set in the same face as the bar it stands in for, because it
+   * is a finding and not a placeholder — thirty-seven of the eighty-one holders
+   * will show this, and none of them is waiting for somebody to fill it in.
+   */
+  .absent {
+    margin: var(--space-6) 0 0;
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+  .absent a {
+    color: inherit;
   }
 </style>
