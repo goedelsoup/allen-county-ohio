@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { classOf, quantileBreaks, stackRadius } from '../src/scripts/map'
 
@@ -60,5 +62,52 @@ describe('a stack is sized by area', () => {
 
   it('does not go imaginary on a count it should never see', () => {
     expect(Number.isFinite(stackRadius(-3))).toBe(true)
+  })
+})
+
+describe('the layer that may not be reached for', () => {
+  /**
+   * `TripsLayer` animates a position along a path over time. That is precisely the tween
+   * `an-animation-asserts-continuity` refuses — it would draw the storm at a position, at a
+   * moment, that no source recorded, in the one encoding that carries no tag and affords no
+   * tooltip.
+   *
+   * The refusal is written down in `hops-counts-edges-not-coordinates`, and a refusal that is
+   * merely not implemented gets implemented by the next person who sees the gap. So it is
+   * checked where it can actually be broken: the package it lives in stays out of the manifest,
+   * and the map does not import it under any other name.
+   */
+  const manifest = JSON.parse(readFileSync(join(import.meta.dirname, '../package.json'), 'utf8'))
+  const source = readFileSync(join(import.meta.dirname, '../src/scripts/map.ts'), 'utf8')
+
+  it('is not a dependency', () => {
+    const declared = Object.keys({
+      ...(manifest.dependencies ?? {}),
+      ...(manifest.devDependencies ?? {}),
+    })
+    expect(declared).not.toContain('@deck.gl/geo-layers')
+  })
+
+  it('is not imported by the map', () => {
+    // Read off the import statements rather than the whole file, because the file argues at
+    // length about why the layer is refused and a substring search would find the argument.
+    const imports = [...source.matchAll(/^import[^;]*?from\s+'([^']+)'/gm)].map((m) => m[1])
+    expect(imports).not.toContain('@deck.gl/geo-layers')
+    const named = [...source.matchAll(/^import\s*\{([^}]*)\}\s*from/gm)].flatMap((m) =>
+      m[1].split(',').map((n) => n.trim().replace(/^type\s+/, '')),
+    )
+    expect(named).not.toContain('TripsLayer')
+    // Proof the reader above sees a multi-line import block at all, so the two refusals are
+    // absences it looked for rather than absences it could not have found.
+    expect(imports).toContain('@deck.gl/layers')
+    expect(named).toContain('PathLayer')
+  })
+
+  it('has not been replaced by a transition on a track', () => {
+    // deck.gl's own tweening lives on `transitions:`, which interpolates a layer's accessors
+    // between renders. On the track layers that is the sweep by another route.
+    const tracks = source.slice(source.indexOf("id: 'tracks'"), source.indexOf("id: 'claims'"))
+    expect(tracks.length).toBeGreaterThan(0)
+    expect(tracks).not.toContain('transitions')
   })
 })

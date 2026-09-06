@@ -16,6 +16,7 @@ import {
   shaded,
   spine,
   standing,
+  tracked,
   undrawn,
   view,
   type View,
@@ -41,7 +42,7 @@ const record = (over: Partial<AtlasRecord> = {}): AtlasRecord => ({
   treatment: 'count',
   hops: 1,
   route_tier: 'verified',
-  anchors: [{ node: 'place/lima.yml', lat: 40.74, lon: -84.11, geoid: null, level: null, via: [] }],
+  anchors: [{ node: 'place/lima.yml', lat: 40.74, lon: -84.11, points: [], geoid: null, level: null, via: [] }],
   ...over,
 })
 
@@ -205,8 +206,8 @@ describe('where the drawn records go', () => {
     // no source stated, and `crates/proximity` already refuses that move in the distance case.
     const many = record({
       anchors: [
-        { node: 'place/a.yml', lat: 1, lon: 1, geoid: null, level: null, via: [] },
-        { node: 'place/b.yml', lat: 2, lon: 2, geoid: null, level: null, via: [] },
+        { node: 'place/a.yml', lat: 1, lon: 1, points: [], geoid: null, level: null, via: [] },
+        { node: 'place/b.yml', lat: 2, lon: 2, points: [], geoid: null, level: null, via: [] },
       ],
     })
     const placed = anchored([many])
@@ -222,7 +223,7 @@ describe('where the drawn records go', () => {
 
   it('skips an anchor that is a key rather than a point', () => {
     const keyed = record({
-      anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, geoid: '39003', level: 'county', via: [] }],
+      anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, points: [], geoid: '39003', level: 'county', via: [] }],
     })
     expect(anchored([keyed])).toEqual([])
   })
@@ -231,8 +232,8 @@ describe('where the drawn records go', () => {
     // The tract is the case. It carries no key of its own and reaches the county government in
     // one edge, so shading its anchor would draw the whole county and call it a tract — which is
     // not where the tract is, only how far the corpus could reach from it.
-    const stated = record({ treatment: 'polygon', hops: 0, anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, geoid: '3943554', level: 'place', via: [] }] })
-    const derived = record({ treatment: 'polygon', hops: 1, anchors: [{ node: 'jurisdiction/y.yml', lat: null, lon: null, geoid: '39003', level: 'county', via: [] }] })
+    const stated = record({ treatment: 'polygon', hops: 0, anchors: [{ node: 'jurisdiction/x.yml', lat: null, lon: null, points: [], geoid: '3943554', level: 'place', via: [] }] })
+    const derived = record({ treatment: 'polygon', hops: 1, anchors: [{ node: 'jurisdiction/y.yml', lat: null, lon: null, points: [], geoid: '39003', level: 'county', via: [] }] })
     expect(shaded([stated, derived]).map((s) => s.key)).toEqual(['place:3943554'])
   })
 
@@ -243,9 +244,83 @@ describe('where the drawn records go', () => {
     const unlevelled = record({
       treatment: 'polygon',
       hops: 0,
-      anchors: [{ node: 'jurisdiction/z.yml', lat: null, lon: null, geoid: '3904752', level: null, via: [] }],
+      anchors: [{ node: 'jurisdiction/z.yml', lat: null, lon: null, points: [], geoid: '3904752', level: null, via: [] }],
     })
     expect(shaded([unlevelled])).toEqual([])
+  })
+
+  it('draws a track only for a node that states its own', () => {
+    // The same rule as the shape above, for a sharper reason: a track anchor carries no lat and
+    // no lon, so a record routed to one has reached geometry it did not state and has nothing to
+    // fall back to. Nothing in the corpus is in that state, and this is what keeps a later edge
+    // from putting a measure on a tornado's path without anybody deciding it should be.
+    const stated = record({
+      node: 'event/storm.yml',
+      class: 'event',
+      treatment: 'track',
+      hops: 0,
+      anchors: [
+        {
+          node: 'event/storm.yml',
+          lat: null,
+          lon: null,
+          points: [
+            { lat: 40.8, lon: -84.2 },
+            { lat: 40.87, lon: -83.87 },
+          ],
+          geoid: null,
+          level: null,
+          via: [],
+        },
+      ],
+    })
+    const routed = record({
+      node: 'measure/about-the-storm.yml',
+      treatment: 'count',
+      hops: 1,
+      anchors: [
+        {
+          node: 'event/storm.yml',
+          lat: null,
+          lon: null,
+          points: [
+            { lat: 40.8, lon: -84.2 },
+            { lat: 40.87, lon: -83.87 },
+          ],
+          geoid: null,
+          level: null,
+          via: [{ relationship: 'concerns', to: 'event/storm.yml', tier: 'verified' }],
+        },
+      ],
+    })
+    expect(tracked([stated, routed]).map((t) => t.node)).toEqual(['event/storm.yml'])
+    expect(tracked([stated])[0].points).toHaveLength(2)
+  })
+
+  it('leaves a track out of the stacks rather than averaging it onto one', () => {
+    // The midpoint of a seventeen-mile tornado is a position no source recorded, which is the
+    // invented centroid `a-derived-placement-is-a-claim` refuses. A track is drawn as a line or
+    // not at all.
+    const storms = atlas.filter((r) => r.treatment === 'track')
+    expect(storms.length).toBeGreaterThan(0)
+    for (const r of storms) {
+      for (const a of r.anchors) {
+        expect(a.lat, r.node).toBeNull()
+        expect(a.lon, r.node).toBeNull()
+      }
+    }
+    expect(anchored(storms)).toEqual([])
+  })
+
+  it('keeps a stated track at the strictest warrant the control offers', () => {
+    // The consumer that moves, and moves to the right answer. `hops: 0` means *show me nothing
+    // the corpus did not state*, and the corpus stated these.
+    const storms = atlas.filter((r) => r.treatment === 'track')
+    const strict = drawn(atlas, at(1965, { hops: 0 }))
+    for (const r of storms) {
+      expect(r.hops, r.node).toBe(0)
+    }
+    expect(tracked(strict).length).toBeGreaterThan(0)
   })
 
   it('shades a village only from the year it was incorporated', () => {

@@ -31,7 +31,19 @@
 //   undated        the missing-status ink, which belongs to no era on purpose.
 
 import { Deck, WebMercatorViewport } from '@deck.gl/core'
-import { ArcLayer, GeoJsonLayer, ScatterplotLayer, TextLayer } from '@deck.gl/layers'
+// `PathLayer` and nothing from `@deck.gl/geo-layers`. `TripsLayer` lives there, its whole
+// purpose is to animate a position along a path over time, and that is exactly the tween
+// `an-animation-asserts-continuity` refuses — it would draw the storm at a position, at a
+// moment, that no source recorded. `hops-counts-edges-not-coordinates` records the refusal and
+// the reason the package stays out of `package.json`: a dependency that puts the wrong thing one
+// import away is an invitation.
+import {
+  ArcLayer,
+  GeoJsonLayer,
+  PathLayer,
+  ScatterplotLayer,
+  TextLayer,
+} from '@deck.gl/layers'
 import {
   anchored,
   drawn,
@@ -39,14 +51,17 @@ import {
   groundFidelity,
   shaded,
   spine,
+  tracked,
   undrawn,
   view,
   WATER_VINTAGE,
   type Anchored,
   type Era,
   type Grain,
+  type Tracked,
   type View,
 } from '../lib/eras'
+import { bearing, dashes, straightMiles } from '../lib/track'
 import {
   START,
   STILL,
@@ -258,6 +273,25 @@ const esc = (s: string): string =>
 
 /** `place/lima.yml` → `Lima`, for a heading where the label is not to hand. */
 const stem = (id: string): string => id.split('/').pop()?.replace(/\.yml$/, '') ?? id
+
+/**
+ * One drawn piece of a track's connector.
+ *
+ * The pieces are computed rather than styled, because the gap between them is the claim: nothing
+ * about the ground between two recorded positions is on the record. See `dashes` in `lib/track`.
+ */
+interface TrackRun {
+  track: Tracked
+  path: [number, number][]
+}
+
+/** One position a source recorded for a moving happening, and what it recorded it as. */
+interface TrackEnd {
+  track: Tracked
+  lat: number
+  lon: number
+  role: 'began' | 'passed' | 'ended'
+}
 
 export async function renderMap(container: HTMLElement, records: AtlasRecord[]): Promise<void> {
   const tooltip = container.querySelector<HTMLElement>('[data-map-tooltip]')
@@ -507,6 +541,25 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     const present = drawn(records, look)
     const dateless = state.undated ? undrawn(records, look) : []
     const stacks = anchored(present)
+
+    // The two storms. Each is drawn as the positions a source recorded and the broken line
+    // between them, and the two are deliberately different objects: the marks are the claim and
+    // the connector is this site's reading of two points and a stated length. See `dashes`.
+    const tracks = tracked(present)
+    const runs: TrackRun[] = tracks.flatMap((track) =>
+      dashes(track.points).map((piece) => ({
+        track,
+        path: piece.map((q) => [q.lon, q.lat] as [number, number]),
+      })),
+    )
+    const trackEnds: TrackEnd[] = tracks.flatMap((track) =>
+      track.points.map((at, i) => ({
+        track,
+        lat: at.lat,
+        lon: at.lon,
+        role: i === 0 ? 'began' : i === track.points.length - 1 ? 'ended' : 'passed',
+      })),
+    )
     const keyed = shaded(present)
     const keyedUndated = shaded(dateless)
 
@@ -894,6 +947,114 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           },
         }),
 
+      // ---- the corpus, as tracks ---------------------------------------------
+      //
+      // Two events state the ground they crossed rather than a spot they stood on, and before
+      // this they were listed beside the map as things placed no finer than the county while the
+      // corpus held four surveyed coordinates for them.
+      //
+      // **Nothing sweeps along the connector, and nothing may.** A mark travelling between the
+      // endpoints is the tween `an-animation-asserts-continuity` refuses: it would draw the storm
+      // at a position, at a moment, that no source recorded, in the one encoding that carries no
+      // tag and affords no tooltip. The line is broken for the same reason it is not animated.
+      runs.length > 0 &&
+        new PathLayer<TrackRun>({
+          id: 'tracks',
+          data: runs,
+          getPath: (d) => d.path,
+          // The era's ink, like every other placed thing, so travelling recolours the storm with
+          // the rest of the map. Thin and pale against the endpoints, which are solid: the
+          // difference in weight is the difference between a reading and an observation.
+          getColor: (d) =>
+            d.track.node === state.selected ? rgb(p.selected, 210) : rgb(ink, 150),
+          getWidth: 2,
+          widthUnits: 'pixels',
+          widthMinPixels: 1.5,
+          capRounded: true,
+          jointRounded: true,
+          pickable: true,
+          updateTriggers: { getColor: [state.selected, ink] },
+          onHover: ({ object, x, y }) => {
+            const d = object as TrackRun | undefined
+            hover = d
+              ? {
+                  x,
+                  y,
+                  kind: 'corpus',
+                  title: labels.get(d.track.node) ?? stem(d.track.node),
+                  rows: [
+                    ['Positions recorded', String(d.track.points.length)],
+                    ['Between them', `${straightMiles(d.track.points).toFixed(1)} miles straight`],
+                    ['This line', 'a reading, not a record'],
+                  ],
+                }
+              : null
+            setTooltip()
+          },
+          onClick: ({ object }) => {
+            const d = object as TrackRun | undefined
+            state.selected =
+              d && d.track.node !== state.selected ? d.track.node : null
+            refresh()
+            renderPanel()
+          },
+        }),
+
+      trackEnds.length > 0 &&
+        new ScatterplotLayer<TrackEnd>({
+          id: 'track-ends',
+          data: trackEnds,
+          getPosition: (d) => [d.lon, d.lat],
+          getRadius: (d) => (d.track.node === state.selected ? 300 : 170),
+          radiusMinPixels: 3,
+          radiusMaxPixels: 11,
+          // Filled at the end and hollow at the beginning, which is the encoding
+          // `EventTrack.astro` uses on the entry page for the same two storms. A reader who has
+          // met one figure should not have to learn the other.
+          filled: true,
+          getFillColor: (d) =>
+            d.role === 'ended'
+              ? d.track.node === state.selected
+                ? rgb(p.selected, 255)
+                : rgb(ink, 250)
+              : rgb(p.surface, 255),
+          stroked: true,
+          getLineColor: (d) =>
+            d.track.node === state.selected ? rgb(p.selected, 255) : rgb(ink, 250),
+          getLineWidth: 90,
+          lineWidthMinPixels: 2,
+          pickable: true,
+          updateTriggers: {
+            getFillColor: [state.selected, ink],
+            getLineColor: [state.selected, ink],
+            getRadius: [state.selected],
+          },
+          onHover: ({ object, x, y }) => {
+            const d = object as TrackEnd | undefined
+            hover = d
+              ? {
+                  x,
+                  y,
+                  kind: 'corpus',
+                  title: labels.get(d.track.node) ?? stem(d.track.node),
+                  rows: [
+                    ['The source records it', `${d.role} here`],
+                    ['Position', bearing({ lat: d.lat, lon: d.lon })],
+                    ['Click', 'to read the track'],
+                  ],
+                }
+              : null
+            setTooltip()
+          },
+          onClick: ({ object }) => {
+            const d = object as TrackEnd | undefined
+            state.selected =
+              d && d.track.node !== state.selected ? d.track.node : null
+            refresh()
+            renderPanel()
+          },
+        }),
+
       // ---- the corpus's own claims, as lines ---------------------------------
       //
       // Twelve of them, and every one runs between two positions the corpus states rather than
@@ -1025,6 +1186,32 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     const here = anchored(pool).find((a) => a.node === state.selected)
 
     if (!here) {
+      // A track is not in `anchored` and cannot be: its anchor carries no lat and no lon,
+      // because the midpoint of a seventeen-mile tornado is a position no source recorded. So it
+      // is read out as what it is — the positions the corpus holds, and the distance between
+      // them, which is not the track length the source states.
+      const track = tracked(pool).find((t) => t.node === state.selected)
+      if (track) {
+        const r = track.record
+        const when = r.from === null ? 'undated' : r.to === null || r.from === r.to ? String(r.from) : `${r.from}–${r.to}`
+        const positions = track.points
+          .map(
+            (at, i) => `<li>
+              <span class="role">${i === 0 ? 'Began' : i === track.points.length - 1 ? 'Ended' : 'Passed'}</span>
+              <span class="at">${esc(bearing(at))}</span>
+            </li>`,
+          )
+          .join('')
+        panel.innerHTML = `<h3>${esc(r.label)}</h3>
+          <p class="count">${track.points.length} positions, stated by the source in this order, in ${esc(when)}.
+          The corpus places this one itself — no edge was followed to reach it.</p>
+          <ol class="positions">${positions}</ol>
+          <p class="count">${straightMiles(track.points).toFixed(2)} miles between them in a straight line, which is
+          <strong>not</strong> the track length the source states. Nothing about the ground between is on the record,
+          so the connector is drawn broken and nothing travels along it.</p>
+          <p><a href="${entryPath(r.node)}">Read the entry</a></p>`
+        return
+      }
       panel.innerHTML = empty
       return
     }

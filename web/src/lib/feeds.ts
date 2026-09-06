@@ -161,9 +161,19 @@ export type OpenEnd = 'instantaneous' | 'running' | 'unvouched' | 'unknown'
  *
  * `count` is drawn on its subject at whatever grain that subject is; `register` is a node the
  * corpus places no finer than the county, which is listed beside the map rather than pinned in
- * a field. See `.yidam/decisions/a-derived-placement-is-a-claim.yml`.
+ * a field. `track` is the ground a moving thing crossed, stated in order by the node itself —
+ * a line rather than a dot, and the only treatment that is always at zero hops. See
+ * `.yidam/decisions/a-derived-placement-is-a-claim.yml` and
+ * `.yidam/decisions/hops-counts-edges-not-coordinates.yml`.
  */
-export type Treatment = 'mark' | 'polygon' | 'count' | 'register' | 'unplaced' | 'not-spatial'
+export type Treatment =
+  | 'track'
+  | 'mark'
+  | 'polygon'
+  | 'count'
+  | 'register'
+  | 'unplaced'
+  | 'not-spatial'
 
 /** One edge followed to reach ground. */
 export interface AtlasStep {
@@ -178,6 +188,19 @@ export interface AtlasAnchor {
   node: string
   lat: number | null
   lon: number | null
+  /**
+   * The ground a moving happening covered, where the anchor is a track rather than a spot: two
+   * or more positions in the order a source recorded them, and empty for every other anchor.
+   *
+   * **A track anchor carries no `lat` and no `lon`, and that is not an omission.** The midpoint
+   * of a seventeen-mile tornado is a position no source recorded. A consumer wanting one mark
+   * per record must leave a track out rather than average it.
+   *
+   * **The line between the positions is not stated.** Both tracks here are a beginning and an
+   * end out of a federal storm file; anything drawn between them is this site's reading, and
+   * must be drawn as one — see `web/src/lib/track.ts`.
+   */
+  points: { lat: number; lon: number }[]
   /** A Census key where the anchor is a shape. Joined to `public/geo/` by the site. */
   geoid: string | null
   /** The summary level the key belongs to, without which it identifies nothing — see {@link censusKey}. */

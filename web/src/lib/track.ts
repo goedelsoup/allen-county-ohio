@@ -141,3 +141,95 @@ export function straightMiles(points: Point[]): number {
   for (let i = 1; i < points.length; i++) total += metres(points[i - 1], points[i])
   return total / 1609.344
 }
+
+// ---------------------------------------------------------------------------
+// Drawing the connector without asserting it
+// ---------------------------------------------------------------------------
+
+/**
+ * How long a drawn piece of the connector is, in metres, and how long the gap after it is.
+ *
+ * Fixed lengths rather than a fraction of the track, so the nine-mile storm and the eighteen-mile
+ * storm are dashed at one rhythm and can be compared by eye — the same reason `EventTrack.astro`
+ * fits its frame to the county rather than to the track.
+ *
+ * At the zoom the county fills the map a metre is about a fiftieth of a pixel, which puts these
+ * at roughly nine pixels on and six off.
+ */
+export const DASH_METRES = 450
+export const GAP_METRES = 300
+
+/** Distance from the first position to each position, in metres. */
+function cumulative(points: Point[]): number[] {
+  const out = [0]
+  for (let i = 1; i < points.length; i++) out.push(out[i - 1] + metres(points[i - 1], points[i]))
+  return out
+}
+
+/**
+ * The position `d` metres along the track.
+ *
+ * Interpolated linearly in degrees, which is wrong on a sphere and wrong by nothing that can be
+ * drawn: over the longest track here the error against a great circle is under a centimetre. What
+ * it must not be confused with is a claim — every position this returns is between two the source
+ * recorded and is not one of them, which is the whole reason the segments it builds are drawn
+ * broken.
+ */
+function at(points: Point[], acc: number[], d: number): Point {
+  const total = acc[acc.length - 1]
+  if (d <= 0) return points[0]
+  if (d >= total) return points[points.length - 1]
+  let i = 1
+  while (acc[i] < d) i++
+  const span = acc[i] - acc[i - 1]
+  const t = span === 0 ? 0 : (d - acc[i - 1]) / span
+  const a = points[i - 1]
+  const b = points[i]
+  return { lat: a.lat + (b.lat - a.lat) * t, lon: a.lon + (b.lon - a.lon) * t }
+}
+
+/** The sub-track between two distances, keeping any recorded position that falls inside it. */
+function slice(points: Point[], acc: number[], from: number, to: number): Point[] {
+  const seg = [at(points, acc, from)]
+  for (let i = 1; i < points.length - 1; i++) {
+    if (acc[i] > from && acc[i] < to) seg.push(points[i])
+  }
+  seg.push(at(points, acc, to))
+  return seg
+}
+
+/**
+ * The connector, broken into the pieces that are drawn.
+ *
+ * **The break is the claim, and this is why it is computed rather than styled.** Nothing about
+ * the ground between two recorded positions is on the record, so a solid line between them would
+ * draw a path no source stated in the one encoding that carries no tag and affords no tooltip.
+ * `EventTrack.astro` says the same thing with `stroke-dasharray`; the map cannot, because dashing
+ * a `PathLayer` needs `@deck.gl/extensions` and that is not a dependency
+ * (`hops-counts-edges-not-coordinates` records why it should not become one). Computing the
+ * pieces as data is the better answer anyway: it puts the gap where a test can read it instead of
+ * inside a shader.
+ *
+ * Returns an empty array for anything that is not a track, so a caller draws nothing rather than
+ * drawing a line it cannot vouch for.
+ */
+export function dashes(points: Point[], dash = DASH_METRES, gap = GAP_METRES): Point[][] {
+  if (points.length < 2 || !(dash > 0) || !(gap > 0)) return []
+  const acc = cumulative(points)
+  const total = acc[acc.length - 1]
+  if (!(total > 0)) return []
+
+  // A track shorter than two full cycles would come back as one unbroken piece, and unbroken is
+  // the one thing this connector may not be. Below that length the rhythm scales to the track,
+  // which gives up the cross-track comparison on a track too short for the comparison to say
+  // anything. Nothing in the corpus is near it — the shorter storm is 15km against a 750m cycle.
+  const scale = Math.min(1, total / ((dash + gap) * 2))
+  const on = dash * scale
+  const period = (dash + gap) * scale
+
+  const out: Point[][] = []
+  for (let from = 0; from < total; from += period) {
+    out.push(slice(points, acc, from, Math.min(from + on, total)))
+  }
+  return out
+}
