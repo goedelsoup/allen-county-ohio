@@ -1,0 +1,68 @@
+id: a-newspaper-canvass-is-not-a-certified-return
+summary: >-
+  A country weekly printed Allen County's whole ballot in the issue after three presidential
+  elections, and every one of those tables calls itself unofficial. One is 111 precincts, one is
+  112, one is 115 of 119 at press time. The figures are the best this corpus will ever have for
+  those years and they are a count in progress, so they travel with the paper's own qualifier and
+  are never differenced against each other as though they were certified.
+context: |
+  [The Bluffton News](../catalog/chronicling-america.md) is the only Allen County newspaper in the
+  national archive, and in the week after a presidential election it prints the county canvass
+  office by office — president down to coroner, and the levies. It is the only source reachable
+  from here that carries this county's presidential vote for any year between 1920 and 1960.
+
+  Each table labels itself, in its own words:
+
+      1944   "complete unofficial returns from Allen county's 111 precincts as reported
+              in Tuesday's election"
+      1948   "the complete unofficial returns from all of Allen county's 112 precincts"
+      1952   "an unofficial tabulation of 115 precincts out of 119 announced by the Board
+              of Elections at press time"
+
+  Three tables, three different completeness statements, and the precinct count moves by eight
+  across eight years. A reader who takes the four numbers and computes a swing is subtracting a
+  count of 112 precincts from a count of 111 and calling the difference politics.
+decision: |
+  **Quote the figure with the qualifier the source prints on it, and let the qualifier decide what
+  may be computed.**
+
+  - **The paper's own words about completeness are part of the figure.** "Complete unofficial" and
+    "115 of 119 at press time" are different claims and the node says which it holds. Where a
+    precinct count is given it is recorded; where none is given the node says none was given.
+  - **A share within one table is safe. A difference between two tables is not.** Every contest in
+    one canvass was counted by the same boards on the same night from the same precincts, so a
+    ticket-splitting comparison inside a year rests on nothing the qualifier undermines. Two years
+    from two tables with different precinct counts and different completeness may be set side by
+    side and may not be subtracted.
+  - **Direction survives what magnitude does not.** That a county gave a Republican more votes than
+    a Democrat is not sensitive to four uncounted precincts out of 119; that his margin was 4,220
+    rather than 4,400 is. Where a phase needs only the direction, it says so and the qualifier
+    stops mattering.
+  - **A certified return would replace these and none is reachable.** The node names what would:
+    the Secretary of State's own abstract for the year, or the county Board of Elections' canvass
+    book. Neither is digitized.
+rationale: |
+  The corpus already refuses to read a roster of winners as a record of elections
+  ([a roster of elected officials is not a record of elections](a-roster-of-elected-officials-is-not-a-record-of-elections.yml))
+  and refuses to count two papers printing one wire story as two witnesses
+  ([two papers printing one dispatch](two-papers-printing-one-dispatch-are-one-witness.yml)). This
+  is the third instrument in the same family and the first where the source volunteers its own
+  limit. That is worth saying plainly: a table headed *complete unofficial returns* is a more
+  honest object than most of the certified-looking figures in this corpus, and the rule exists to
+  keep the honesty attached to it rather than to discount it.
+
+  **What the rule permits is most of what the phase wanted.** Within 1956 the county gave
+  Eisenhower 70.2 per cent of the two-party presidential vote, O'Neill 60.8 for governor and Bender
+  52.1 for senator — an eighteen-point spread down one ballot, counted by one set of boards in one
+  night. Nothing about press-time precinct counts touches that. What it forbids is the sentence the
+  four presidential figures invite, that the Republican share rose 13.3 points between 1948 and
+  1956, because those two tables do not have the same denominator and one of them does not say what
+  its denominator was.
+
+  **And one thing the rule does not reach is OCR.** The 1952 canvass is on the page with its offices
+  and candidates legible and its number column absent — not garbled, absent, with no five-figure
+  number anywhere on the sheet. A qualifier tells you how good a count is; it does not tell you the
+  count failed to arrive. The corpus takes 1952 from this paper as a sentence about direction and
+  holds no figure from it at all.
+status: accepted
+date: "2026-09-06"
