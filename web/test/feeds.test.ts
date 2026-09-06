@@ -135,9 +135,17 @@ describe('the comparability tables', () => {
 
   it('does not claim a judgement where the corpus made none', () => {
     // Most measures have no table, and that is the honest state rather than a gap.
+    //
+    // The pinned example has moved once. It was `allen-county-population-1970`, which was
+    // unjudged for want of anyone asking; it is now judged against 2000. The pin is deliberately
+    // a harder case: Lima's 1960 count is unjudged *after* a run of `boundary-comparability`,
+    // which found no boundary change between 1960 and 1970 and reported that this is not evidence
+    // that none occurred. Silence there is a finding rather than a backlog, and if this ever
+    // fails it should be because somebody retrieved the 1970 volume — not because a rule started
+    // filling gaps in.
     const measures = nodes.filter((n) => n.class === 'measure')
     expect(comparability.length).toBeLessThan(measures.length)
-    expect(comparabilityFor('measure/allen-county-population-1970.yml')).toBeUndefined()
+    expect(comparabilityFor('measure/lima-population-1850-1960.yml')).toBeUndefined()
   })
 })
 
@@ -261,6 +269,25 @@ describe('drawing a line through a series', () => {
     // consequence shows up.
     expect(judgedApart('measure/allen-county-population-2010.yml', 'measure/allen-county-population-2000.yml')).toBe(false)
     expect(comparableWith(county.points, 'measure/allen-county-population-2024.yml').map((p) => p.as_of)).toContain('2010-04-01')
+  })
+
+  it('draws no step the corpus has not judged', () => {
+    // The state issue #93 named: after the charts learned to read the graph, every step of both
+    // lines on `/people` was still unjudged, each with something moving underneath it. This is
+    // that closed, and it is the gate on it — a point added to either series lands here as a
+    // failure until somebody argues about the pair it makes.
+    for (const [s, anchorNode] of [
+      [county, 'measure/allen-county-population-2024.yml'],
+      [lima, 'measure/lima-population-2024.yml'],
+    ] as const) {
+      const line = comparableWith(s.points, anchorNode)
+      for (let i = 1; i < line.length; i++) {
+        const [before, after] = [line[i - 1], line[i]]
+        const row = comparabilityFor(after.node)?.rows.find((r) => r.node === before.node)
+        expect(row?.comparable, `${s.id}: ${before.as_of} to ${after.as_of} is unjudged`).toBe(true)
+        expect(row?.because?.trim(), `${before.node} -> ${after.node}`).toBeTruthy()
+      }
+    }
   })
 
   it('refuses an anchor that is not in the series', () => {
