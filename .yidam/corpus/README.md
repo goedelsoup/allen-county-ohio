@@ -53,10 +53,10 @@ Sorted by: kind, then alphabetically.
 | [the-execution-of-andrew-brentlinger-1872.yml](event/the-execution-of-andrew-brentlinger-1872.yml) | event | The execution of Andrew Brentlinger, 1872 | 4 | 7v / 2i / 2o | 62 |
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 6v / 4i / 1o | 66 |
 | [the-first-lima-company-1861.yml](event/the-first-lima-company-1861.yml) | event | The raising of the first Lima company | 3 | 3v / 2i / 2o | 62 |
-| [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 4 | 6v / 3i / 1o | 64 |
-| [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 3 | 5v / 1i / 1o | 48 |
+| [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 5 | 6v / 4i / 1o | 76 |
+| [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 4 | 6v / 2i / 1o | 61 |
 | [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
-| [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 5 | 6v / 1i / 1o | 59 |
+| [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 4 | 6v / 2i / 1o | 65 |
 | [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 2 | 8v / 3i / 1o | 64 |
