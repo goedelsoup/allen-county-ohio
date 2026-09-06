@@ -34,12 +34,16 @@ problem recorded in
 | `/history` | What can this corpus date, and what does the shape of the gaps mean? |
 | `/read` | The reading room: every shorter piece, by section and era |
 
-And the three instruments, set apart from the reading row in the nav because a reader reaches
+`/` is not in that list. **It is the map**, reached from the wordmark rather than from a tab — a
+front door listed among five destinations is one of six things rather than the way in. The county's
+own summary sits under it: four tiles, one opening claim, three assertions. See
+[`the-map-is-the-index`](../.yidam/decisions/the-map-is-the-index.yml).
+
+And the two instruments, set apart from the reading row in the nav because a reader reaches
 for them rather than reading them:
 
 | Instrument | What it is for |
 |---|---|
-| `/map` | The county carrying a year: what the corpus places on the ground, era by era |
 | `/entry` | Every node the corpus publishes, by class |
 | `/sources` | The audit: what is sourced, what is inferred, what was withheld |
 
@@ -154,8 +158,15 @@ last is a gap in the record rather than in the county, and it has its own toggle
 Every derived placement carries its route, and the *Placement* control shrinks the map to the 72
 positions somebody actually stated.
 
-The view is in the URL. `/map?year=1885&grain=year&at=place/lima.yml` is Lima in the year the oil
-came in, with the panel open on it — which is what a reading page links to.
+The view is in the URL. `/?year=1885&grain=year&at=place/lima.yml` is Lima in the year the oil came
+in, with the panel open on it — and that is what a reading page links to now, through
+`<OnTheMap>`. Every such link is held to naming a node the feed publishes, a year the axis covers,
+and a node that is actually standing in that year; and every reading page has to carry at least
+one, because a front door nobody is sent back to from inside the house is still only a front door.
+
+`/map` still works. It is a hand-written stub rather than an `astro.config` redirect, because that
+kind emits a fixed URL and drops the query — and dropping the query on this map means dropping the
+year.
 
 `src/lib/eras.ts` holds all of it as pure functions over `feeds/atlas.json`, testable without a
 canvas; `src/scripts/map.ts` is the deck.gl scene and nothing else.

@@ -1,8 +1,10 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
+import { parts } from './astro'
 import { ARTICLES, unresolvedDeclarations } from '../src/lib/articles'
-import { assertions, nodes } from '../src/lib/feeds'
+import { assertions, atlas, nodes } from '../src/lib/feeds'
+import { spine, standing } from '../src/lib/eras'
 import {
   SECTIONS,
   SECTION_KEYS,
@@ -38,10 +40,8 @@ const pages = astroFiles(PAGES)
 /** Assertion id → the pages that render it in an `<AssertionCard>`. */
 const rendered = new Map<string, string[]>()
 for (const { file, source } of pages) {
-  const parts = source.split('---')
-  if (parts.length < 3) continue
-  const frontmatter = parts[1]
-  const body = parts.slice(2).join('---')
+  const { frontmatter, body, fenced } = parts(source)
+  if (!fenced) continue
   const binding = new Map(
     [...frontmatter.matchAll(/const\s+(\w+)\s*=\s*assertion\(\s*'([^']+)'/g)].map((m) => [
       m[1],
@@ -219,5 +219,76 @@ describe('nothing links at a page that was retired', () => {
       .filter(({ source }) => new RegExp(`href="${path}/?"`).test(source))
       .map(({ file }) => file)
     expect(offenders).toEqual([])
+  })
+})
+
+
+/** Every `<OnTheMap …>` in a source, with the two attributes the gates care about. */
+function mapLinks(source: string): { at?: string; year?: string }[] {
+  return [...source.matchAll(/<OnTheMap([^>]*)>/g)].map((m) => ({
+    at: /\bat="([^"]+)"/.exec(m[1])?.[1],
+    year: /\byear=\{(-?\d+)\}/.exec(m[1])?.[1],
+  }))
+}
+
+describe('the prose points into the map', () => {
+  /**
+   * The link direction this site never had.
+   *
+   * Everything pointed *out* of the map — a mark opened an entry, the page handed off to
+   * `/ground` — and nothing pointed in, so the map was somewhere a reader arrived rather than
+   * somewhere the prose could send them. Promoting it to `/` does not fix that on its own: a
+   * front door nobody is sent back to from inside the house is still only a front door.
+   *
+   * So every reading page carries at least one, and every one of them has to name a node the feed
+   * publishes and a year the axis covers. A link into the map that lands on nothing is worse than
+   * no link, because it reads as the site having lost the thing it was pointing at.
+   */
+  const readingPages = SECTIONS.map((section) => {
+    const file = `${section.href.slice(1)}.astro`
+    return { file, source: readFileSync(join(PAGES, file), 'utf8') }
+  })
+
+  const all: { file: string; at?: string; year?: string }[] = []
+  for (const { file, source } of readingPages) {
+    for (const link of mapLinks(source)) all.push({ file, at: link.at, year: link.year })
+  }
+
+  it('gives every reading page a way into the map', () => {
+    const silent = readingPages.filter(({ source }) => mapLinks(source).length === 0).map((p) => p.file)
+    expect(silent, 'reading pages with no link into the map').toEqual([])
+  })
+
+  it('names only nodes the feed publishes', () => {
+    const published = new Set(atlas.map((r) => r.node))
+    const missing = all.filter((l) => l.at && !published.has(l.at)).map((l) => `${l.file}: ${l.at}`)
+    expect(missing).toEqual([])
+  })
+
+  it('names only years the axis can stand in', () => {
+    // The map clamps rather than throwing, so a year outside the spine would land the reader
+    // somewhere they did not ask for and nothing would say so.
+    const eras = spine(atlas)
+    const from = eras[0].from
+    const to = eras[eras.length - 1].to
+    const outside = all
+      .filter((l) => l.year !== undefined)
+      .filter((l) => Number(l.year) < from || Number(l.year) > to)
+      .map((l) => `${l.file}: ${l.year}`)
+    expect(outside, `years outside ${from}–${to}`).toEqual([])
+  })
+
+  it('sends the reader to a year the node is actually standing in', () => {
+    // A link naming both a node and a year is a claim that the two go together. If the node's
+    // span does not admit the year, the panel opens on a mark the map is not drawing.
+    const byNode = new Map(atlas.map((r) => [r.node, r]))
+    const wrong = all
+      .filter((l) => l.at && l.year !== undefined)
+      .filter((l) => {
+        const record = byNode.get(l.at as string)
+        return record ? !standing(record, { from: Number(l.year), to: Number(l.year), generous: true, hops: 3 }) : false
+      })
+      .map((l) => `${l.file}: ${l.at} is not standing in ${l.year}`)
+    expect(wrong).toEqual([])
   })
 })

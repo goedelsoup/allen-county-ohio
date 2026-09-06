@@ -25,6 +25,20 @@ export default defineConfig({
     '/elections': '/government',
     '/corpus': '/sources',
   },
+
+  /*
+   * `/map` is not in that list, and the reason is worth stating.
+   *
+   * It was an instrument for the life of the site and is now the index — nothing about it was
+   * withdrawn, it moved. But the view lives in the query string, so `/map?year=1885&at=…` is a
+   * link somebody may have kept, and Astro's static redirect emits a fixed
+   * `<meta http-equiv="refresh" content="0;url=/">` that drops everything after the `?`. A
+   * reader who kept a year would land on the present with no error and no year, which is the
+   * quietest possible way to lose a link.
+   *
+   * So `pages/map.astro` is a hand-written stub that carries the query across. See the argument
+   * in that file.
+   */
   build: { format: 'directory' },
   vite: {
     // Plotly is large and pulled in only by the chart island; keeping it in its own chunk

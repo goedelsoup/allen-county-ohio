@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro'
+import OnTheMap from '../components/OnTheMap.astro'
 import Gloss from '../components/Gloss.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import ChartFigure from '../components/ChartFigure.astro'
@@ -377,7 +378,10 @@ const address = assertion('an-address-is-not-a-municipality')
       The corollary is the one the corpus states about itself: nearness is not containment. A
       dot inside a shape on this map is a dot inside a shape. Where a node's location claim is
       an <strong>inference</strong>, its badge says so, and no amount of visual coincidence
-      upgrades it.
+      upgrades it. Turn on the drawn claims and
+      <OnTheMap year={1886} at="site/lima-refinery.yml" layers={['claims', 'municipalities', 'subdivisions']}>
+        the refinery's own line
+      </OnTheMap> leaves the shape its address names.
     </p>
   </section>
 

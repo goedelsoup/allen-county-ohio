@@ -1,7 +1,8 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { INSTRUMENTS, SECTIONS } from '../src/lib/sections'
+import { body as markup } from './astro'
+import { INSTRUMENTS, MAP, SECTIONS } from '../src/lib/sections'
 
 const PAGES = join(import.meta.dirname, '../src/pages')
 
@@ -20,9 +21,7 @@ const PAGES = join(import.meta.dirname, '../src/pages')
 
 /** Prose only: paragraph text, excluding tables, chart captions and figure data. */
 export function proseWords(source: string): number {
-  const parts = source.split('---')
-  let body = parts.length > 2 ? parts.slice(2).join('---') : source
-  body = body.replace(/<style>[\s\S]*?<\/style>/g, '')
+  const body = markup(source).replace(/<style>[\s\S]*?<\/style>/g, '')
   const paragraphs = [...body.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map((m) => m[1])
   const text = paragraphs
     .join(' ')
@@ -37,14 +36,17 @@ export function movements(source: string): number {
   return sections - (source.includes('class="onward"') ? 1 : 0)
 }
 
-const readingPages = SECTIONS.map((s) => ({
-  section: s,
-  file: s.href === '/' ? 'index.astro' : `${s.href.slice(1)}.astro`,
-})).map(({ section, file }) => ({
-  section,
-  file,
-  source: readFileSync(join(PAGES, file), 'utf8'),
-}))
+/**
+ * Every reading page, which no longer includes the index.
+ *
+ * `/` is the map now, and the map is an instrument: it answers *what is here and when*, and a
+ * word budget written for an argument does not apply to it. What governs the index instead is
+ * `register.test.ts`, which reads every page in the directory.
+ */
+const readingPages = SECTIONS.map((section) => {
+  const file = `${section.href.slice(1)}.astro`
+  return { section, file, source: readFileSync(join(PAGES, file), 'utf8') }
+})
 
 /**
  * 1,800 words of prose, and prose is the main line only.
@@ -71,17 +73,14 @@ describe('a reading page is an argument', () => {
     expect(movements(source)).toBeLessThanOrEqual(8)
   })
 
-  it.each(readingPages.filter((p) => p.section.href !== '/'))(
-    '$file hands off rather than stopping',
-    ({ source }) => {
-      // A page that runs out of sections has not ended; it has stopped. Every reading page
-      // names what it did not cover and where that went.
-      expect(source).toContain('class="onward"')
-    },
-  )
+  it.each(readingPages)('$file hands off rather than stopping', ({ source }) => {
+    // A page that runs out of sections has not ended; it has stopped. Every reading page
+    // names what it did not cover and where that went.
+    expect(source).toContain('class="onward"')
+  })
 
   it('every section declares the question it answers', () => {
-    for (const s of [...SECTIONS, ...INSTRUMENTS]) {
+    for (const s of [...SECTIONS, ...INSTRUMENTS, MAP]) {
       expect(s.question, s.label).toMatch(/\?$/)
     }
   })
@@ -95,10 +94,32 @@ describe('the nav cannot grow back', () => {
   })
 
   it('keeps the instruments out of the reading row', () => {
-    expect(INSTRUMENTS.map((i) => i.href)).toEqual(['/map', '/entry', '/sources'])
+    expect(INSTRUMENTS.map((i) => i.href)).toEqual(['/entry', '/sources'])
     for (const i of INSTRUMENTS) {
       expect(SECTIONS.map((s) => s.href)).not.toContain(i.href)
     }
+  })
+
+  it('leaves the county no page of its own to grow back into', () => {
+    // The index was a sixth reading tab and its furniture moved onto the map. If `/` ever
+    // reappears in the reading row, the map has been demoted back to an instrument and the
+    // arrangement this test guards has quietly come apart.
+    expect(SECTIONS.map((s) => s.href)).not.toContain('/')
+    expect(SECTIONS.length).toBe(5)
+  })
+
+  it('makes the map the way in rather than a tab', () => {
+    // The whole of the rearrangement, checked in the data and in the markup together — which is
+    // the lesson the instruments row already taught this file once.
+    expect(MAP.href).toBe('/')
+    expect(SECTIONS.map((s) => s.href)).not.toContain(MAP.href)
+    expect(INSTRUMENTS.map((i) => i.href)).not.toContain(MAP.href)
+
+    const layout = readFileSync(join(PAGES, '../layouts/Base.astro'), 'utf8')
+    // The wordmark carries it, and carries `aria-current` — there is no tab to highlight, so
+    // that attribute is the only thing telling a screen reader the reader is already there.
+    expect(layout).toMatch(/class="wordmark"[\s\S]*?href=\{MAP\.href\}/)
+    expect(layout).toMatch(/class="wordmark"[\s\S]*?aria-current=\{here === MAP\.href/)
   })
 
   it('makes the same cut in the accessibility tree', () => {
@@ -121,7 +142,7 @@ describe('the nav cannot grow back', () => {
 
   it('names a page that exists for every tab', () => {
     const pages = new Set(readdirSync(PAGES))
-    for (const item of [...SECTIONS, ...INSTRUMENTS]) {
+    for (const item of [...SECTIONS, ...INSTRUMENTS, MAP]) {
       const file = item.href === '/' ? 'index.astro' : `${item.href.slice(1)}.astro`
       const asDirectory = pages.has(item.href.slice(1))
       expect(pages.has(file) || asDirectory, item.href).toBe(true)

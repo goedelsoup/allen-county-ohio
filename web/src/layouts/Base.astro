@@ -1,7 +1,7 @@
 ---
 import '../styles/tokens.css'
 import { manifest } from '../lib/feeds'
-import { INSTRUMENTS, SECTIONS } from '../lib/sections'
+import { INSTRUMENTS, MAP, SECTIONS } from '../lib/sections'
 
 interface Props {
   title: string
@@ -49,7 +49,20 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
 
     <header class="masthead">
       <div class="masthead-inner">
-        <a class="wordmark" href="/">
+        {/*
+          The wordmark is the map's link, and that is the whole of the rearrangement.
+
+          A front door listed among five destinations is one of six things rather than the way
+          in. So the map is not a tab: it is `/`, and a reader reaches it the way a reader
+          reaches a masthead. `aria-current` is what tells a screen reader they are already
+          standing on it, since there is no tab to highlight.
+        */}
+        <a
+          class="wordmark"
+          href={MAP.href}
+          title={MAP.question}
+          aria-current={here === MAP.href ? 'page' : undefined}
+        >
           <span class="wordmark-name">Allen County</span>
           <span class="wordmark-tags">
             <span class="eyebrow">A civic reference</span>
