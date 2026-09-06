@@ -52,7 +52,12 @@ decision: |
   1. `event.track` stays at two points for both tornadoes. Nothing in the corpus changes.
   2. The step control stays binary. The issue's own condition — land the N-step stepper with its
      first real instance — is not met and cannot be met from this catalog, so the generalisation
-     stays unwritten rather than shipped against fixtures.
+     stays unwritten rather than shipped against fixtures. It is now the only piece of the figure
+     that is not general: `parseTrack` reads N, `straightMiles` sums N-1 legs, and
+     [`dashes`](hops-counts-edges-not-coordinates.yml) — landed on the map the same day this was
+     read — slices a connector of any length and keeps the recorded positions inside each piece.
+     Each of those cost nothing and refusing N would have been a rule. A stepper is the one that
+     costs something, and the thing it would cost is a state nobody can look at.
   3. An extent wants its own property and its own figure, and neither is declared here. Six events
      state one; a stepped path is the wrong drawing for all six. That is filed, not decided.
 
