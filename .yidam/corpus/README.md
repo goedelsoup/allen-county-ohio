@@ -242,7 +242,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-marital-status-2023.yml](measure/allen-county-marital-status-2023.yml) | measure | Marital status in Allen County, 2019–2023 | 5 | 8v / 1i / 1o | 82 |
 | [allen-county-migration-by-county-2004-2023.yml](measure/allen-county-migration-by-county-2004-2023.yml) | measure | Where Allen County's movers went and came from, 2004–2023 | 5 | 10v / 4i / 1o | 93 |
 | [allen-county-migration-flows-2004-2023.yml](measure/allen-county-migration-flows-2004-2023.yml) | measure | Who moved into and out of Allen County, 2004–2023 | 5 | 14v / 1i / 1o | 98 |
-| [allen-county-mortgage-access-by-tract-2018-2024.yml](measure/allen-county-mortgage-access-by-tract-2018-2024.yml) | measure | Where Allen County's mortgages went, and what they cost there, 2018-2024 | 5 | 10v / 0i / 1o | 93 |
+| [allen-county-mortgage-access-by-tract-2018-2024.yml](measure/allen-county-mortgage-access-by-tract-2018-2024.yml) | measure | Where Allen County's mortgages went, and what they cost there, 2018-2024 | 5 | 12v / 0i / 1o | 133 |
 | [allen-county-mortgage-prices-2018-2024.yml](measure/allen-county-mortgage-prices-2018-2024.yml) | measure | What a mortgage costs in Allen County, 2018-2024 | 3 | 16v / 0i / 1o | 99 |
 | [allen-county-municipal-incorporations-1842-1904.yml](measure/allen-county-municipal-incorporations-1842-1904.yml) | measure | When Allen County's municipalities were incorporated, 1842–1904 | 2 | 5v / 4i / 1o | 73 |
 | [allen-county-named-features-2026.yml](measure/allen-county-named-features-2026.yml) | measure | Allen County's named features, counted two ways | 2 | 11v / 4i / 1o | 93 |

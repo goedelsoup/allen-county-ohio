@@ -179,6 +179,29 @@ pub struct Point {
     pub method: Option<String>,
 }
 
+/// A measure's own rows, where it has many and they are not a time series.
+///
+/// The corpus writes tables constantly — 564 of its nodes print one — and every one of them is
+/// prose: a reader can read it and nothing else can. That is fine for a table whose job is to be
+/// read, and it is the whole difficulty for one whose job is to be drawn. A correlation stated
+/// over 34 tracts and illustrated by ten of them cannot be checked or mapped.
+///
+/// So a measure may declare a `table` property, and this carries it across the feed boundary
+/// unchanged. **Nothing here computes.** Cells are the strings the corpus published, in the
+/// order it published them; a consumer that wants numbers parses them and owns that reading.
+#[derive(Debug, Serialize)]
+pub struct Table {
+    pub node: String,
+    pub label: String,
+    /// Column names in order. The first names the key column.
+    pub columns: Vec<String>,
+    /// One row per key, cells in column order. Every row has as many cells as there are columns.
+    pub rows: Vec<Vec<String>>,
+    /// The measure's own weakest tier. A table is not tagged separately from the node that
+    /// publishes it — it is the same claim, laid out.
+    pub tier: Tier,
+}
+
 /// Every measure describing one subject with one parameter, ordered in time.
 #[derive(Debug, Serialize)]
 pub struct Series {
@@ -235,6 +258,8 @@ pub struct SeriesFeed {
     /// *this figure* reads as a series of one, which is a claim nobody made.
     pub comparability: Vec<Comparability>,
     pub assertions: Vec<Resolved>,
+    /// One entry per measure that declares a `table`. See [`Table`].
+    pub tables: Vec<Table>,
 }
 
 /// A corpus node that can be put on a map.
@@ -392,6 +417,63 @@ pub fn graph(nodes: &[Node], ceiling: Tier) -> (Graph, Counts) {
 /// `measure/ACTIONS.md` names as the reason the class exists. A subject measured once comes
 /// back as a series of one rather than being dropped, because a single figure with its date
 /// and its provenance is still the answer to a question.
+/// Every measure that declares a `table`, parsed.
+///
+/// The format is the one the corpus already writes by hand: a header line naming the columns,
+/// then a row per key, cells separated by runs of whitespace. That is why cells may not contain
+/// a space — the delimiter is the alignment, and a format that needed quoting would stop being
+/// something a person writes correctly in a YAML block.
+///
+/// A malformed table is **dropped rather than half-parsed**, and the publication gate reports
+/// it. A row with the wrong number of cells silently shifts every column after it, which is the
+/// one failure a consumer could not detect: the numbers are all real, and all in the wrong place.
+pub fn tables(nodes: &[Node], ceiling: Tier) -> Vec<Table> {
+    let mut out: Vec<Table> = nodes
+        .iter()
+        .filter_map(|node| {
+            let raw = node.property("table")?;
+            let tier = Tier::weakest(
+                node.blocks
+                    .iter()
+                    .filter(|b| b.publishable(ceiling))
+                    .filter_map(|b| b.tier),
+            )?;
+            let (columns, rows) = parse_table(raw)?;
+            Some(Table {
+                node: node.id.clone(),
+                label: node.label.clone(),
+                columns,
+                rows,
+                tier,
+            })
+        })
+        .collect();
+    out.sort_by(|a, b| a.node.cmp(&b.node));
+    out
+}
+
+/// Split a declared table into its header and its rows, or refuse it.
+///
+/// Refuses an empty table, a table of headings with no rows, and any row whose cell count
+/// disagrees with the header. Returns `None` in each case rather than a partial reading.
+fn parse_table(raw: &str) -> Option<(Vec<String>, Vec<Vec<String>>)> {
+    let mut lines = raw
+        .lines()
+        .map(str::trim)
+        .filter(|l| !l.is_empty())
+        .map(|l| l.split_whitespace().map(str::to_string).collect::<Vec<_>>());
+
+    let columns = lines.next()?;
+    if columns.len() < 2 {
+        return None;
+    }
+    let rows: Vec<Vec<String>> = lines.collect();
+    if rows.is_empty() || rows.iter().any(|r| r.len() != columns.len()) {
+        return None;
+    }
+    Some((columns, rows))
+}
+
 pub fn series(nodes: &[Node], ceiling: Tier) -> Vec<Series> {
     let labels: BTreeMap<&str, &str> = nodes
         .iter()
@@ -1294,5 +1376,60 @@ mod tests {
             Some((40.771627, -84.106103))
         );
         assert_eq!(coordinates("not a pair"), None);
+    }
+}
+
+#[cfg(test)]
+mod table_tests {
+    use super::parse_table;
+
+    #[test]
+    fn reads_a_header_and_its_rows() {
+        let (columns, rows) = parse_table(
+            "tract        houses  loans\n             39003010100    1688    652\n             39003010200    1598    526\n",
+        )
+        .expect("a well-formed table");
+        assert_eq!(columns, ["tract", "houses", "loans"]);
+        assert_eq!(rows.len(), 2);
+        assert_eq!(rows[0], ["39003010100", "1688", "652"]);
+    }
+
+    #[test]
+    fn ignores_blank_lines_and_leading_indent() {
+        // The property is a YAML block, so it arrives indented and often with a trailing newline.
+        let (columns, rows) = parse_table("\n  a  b\n\n  1  2\n\n").expect("a table");
+        assert_eq!(columns, ["a", "b"]);
+        assert_eq!(rows, [["1", "2"]]);
+    }
+
+    #[test]
+    fn refuses_a_row_that_does_not_match_the_header() {
+        // The failure a consumer could not detect: every cell is real and every one after the
+        // short row is under the wrong column. Refuse the table rather than publish it shifted.
+        assert!(parse_table("a  b  c\n1  2  3\n4  5\n").is_none());
+        assert!(parse_table("a  b\n1  2  3\n").is_none());
+    }
+
+    #[test]
+    fn refuses_a_table_with_no_rows() {
+        // A header alone is a column list, not a table, and publishing it as one would put an
+        // empty table on a page that says how many rows it has.
+        assert!(parse_table("tract  houses\n").is_none());
+        assert!(parse_table("").is_none());
+        assert!(parse_table("   \n\n").is_none());
+    }
+
+    #[test]
+    fn refuses_a_single_column() {
+        // One column is a list. The first column is the key and there has to be something keyed.
+        assert!(parse_table("tract\n39003010100\n").is_none());
+    }
+
+    #[test]
+    fn keeps_na_as_a_cell_rather_than_dropping_it() {
+        // `NA` is how the corpus writes an absent cell, and it has to survive to the consumer:
+        // a tract with no priced originations has no share, and a hole is not a zero.
+        let (_, rows) = parse_table("a  b\n1  NA\n").expect("a table");
+        assert_eq!(rows[0][1], "NA");
     }
 }

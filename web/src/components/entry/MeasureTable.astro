@@ -1,0 +1,130 @@
+---
+// A measure's own rows, where it has many and they are not a time series.
+//
+// The corpus writes tables constantly — 564 of its nodes print one — and every one of them is
+// prose inside a description block. That is right for a table whose job is to be read, and it
+// is the whole difficulty for one whose job is also to be *drawn*: a correlation stated over 34
+// tracts and illustrated by ten of them can be read and cannot be checked.
+//
+// So a measure may declare a `table` property, `crates/publish` carries it across the feed
+// boundary unparsed, and this renders it. **There is one copy.** The description argues about the
+// table and does not repeat it, which is the reason to do it this way rather than to keep a
+// machine copy beside a prose one and watch the two drift.
+//
+// Nothing here computes. Cells are the strings the corpus published, in the order it published
+// them; the only judgement made is right-aligning the ones that look like numbers, which is
+// typesetting and not arithmetic.
+
+import { tableFor, type Node } from '../../lib/feeds'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+const table = tableFor(node.id)
+
+/** A cell set in the data face and right-aligned. Text keys stay left, as a column of names. */
+const numeric = (cell: string) => /^-?[\d.,]+$/.test(cell)
+
+/** Which columns are numbers, decided per column rather than per cell so a column stays a column. */
+const rightAligned = table
+  ? table.columns.map((_, i) => i > 0 && table.rows.every((r) => numeric(r[i]) || r[i] === 'NA'))
+  : []
+---
+
+{
+  table && (
+    <section class="measure-table">
+      <h2 class="section">The rows</h2>
+      <p class="gloss-note">
+        {table.rows.length} rows as the corpus published them, keyed on{' '}
+        <code>{table.columns[0]}</code>. Nothing on this page derives anything from them.
+      </p>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr>
+              {table.columns.map((c, i) => (
+                <th scope="col" class:list={[rightAligned[i] && 'num']}>
+                  {c}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row) => (
+              <tr>
+                {row.map((cell, i) => (
+                  <td class:list={[rightAligned[i] && 'num', cell === 'NA' && 'absent']}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  /*
+   * A long table is a reference, not a reading, so it is set tight in the data face and given
+   * its own scroller rather than being allowed to widen the page. The header sticks, because a
+   * thirty-five row table read on a phone loses its column names in the first flick.
+   */
+  .measure-table {
+    margin-top: var(--space-8);
+  }
+  .section {
+    margin: 0 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+  .gloss-note {
+    margin: 0 0 var(--space-4);
+    max-width: var(--measure-prose);
+    font: var(--weight-regular) var(--size-caption) / 1.5 var(--font-serif);
+    color: var(--text-muted);
+  }
+  .scroller {
+    overflow-x: auto;
+    border-top: 1px solid var(--ink-300);
+    border-bottom: 1px solid var(--ink-300);
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font: var(--type-data);
+    font-size: var(--size-micro);
+    font-variant-numeric: tabular-nums;
+  }
+  th,
+  td {
+    padding: var(--space-2) var(--space-4);
+    text-align: left;
+    white-space: nowrap;
+  }
+  th {
+    position: sticky;
+    top: 0;
+    background: var(--surface-card);
+    border-bottom: 1px solid var(--rule-hairline);
+    color: var(--text-muted);
+    font-weight: var(--weight-medium);
+  }
+  td {
+    color: var(--text-body);
+    border-top: 1px solid var(--rule-hairline);
+  }
+  tbody tr:first-child td {
+    border-top: 0;
+  }
+  .num {
+    text-align: right;
+  }
+  /* An absent cell is absent, not zero. */
+  .absent {
+    color: var(--text-faint);
+  }
+</style>

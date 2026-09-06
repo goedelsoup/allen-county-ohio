@@ -135,6 +135,15 @@ inside Allen County is not a school district, it is the corner of one — and th
 drawn over the top saying where the county is. See
 [`a-district-is-not-cut-at-the-county-line`](../.yidam/decisions/a-district-is-not-cut-at-the-county-line.yml).
 
+**A measure may publish its rows, and one does.** The corpus writes tables constantly — 564 of
+its nodes print one — and they are prose, which is right for a table meant to be read and wrong
+for one meant to be drawn. A `table` property crosses the feed unparsed on `series.json`,
+`MeasureTable.astro` renders it, and the map joins it to the ground: the two mortgage choropleths
+are `allen-county-mortgage-access-by-tract-2018-2024`'s own rows, and `tables.test.ts` recomputes
+the correlation its description states from the table it publishes, so neither half can be edited
+alone. See
+[`a-table-a-machine-cannot-read`](../.yidam/decisions/a-table-a-machine-cannot-read.yml).
+
 **A shape is addressed by `level:geoid`, never by GEOID alone.** A Census key is unique only
 inside its summary level, and this county holds the proof: `3904752` is Beaverdam village *and*
 the Upper Scioto Valley Local School District. The atlas feed carries the level beside every key
