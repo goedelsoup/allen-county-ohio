@@ -2169,6 +2169,32 @@ export const ARTICLES: Article[] = [
       'measure/allen-county-developed-land-2001-2021.yml',
     ],
   },
+  {
+    slug: 'ninety-seven-cents-on-the-dollar',
+    title: 'Ninety-seven cents on the dollar',
+    dek: "Allen County's median household earned 97 cents on the national dollar in 1989 and 83 in 2024. Thirty-one years of federal poverty estimates say so — and say almost nothing about any single one of those years.",
+    section: 'work',
+    era: [1989, 2024],
+    assertions: [
+      'ninety-seven-cents-to-eighty-three',
+      'the-county-fell-while-the-nation-rose',
+      'the-level-does-not-separate-and-the-share-does',
+      'twenty-eight-years-below-1989',
+      'thirty-one-years-of-poverty',
+      'not-one-year-separates-from-the-last',
+      'spans-separate-and-the-ends-do-not',
+      'indistinguishable-from-the-nation-until-2008',
+      'the-county-rate-against-the-national-rate',
+      'child-poverty-reached-three-in-ten',
+      'the-survey-and-the-model-overlap',
+    ],
+    entries: [
+      'measure/allen-county-poverty-1989-2024.yml',
+      'measure/allen-county-household-income-1989-2024.yml',
+      'measure/allen-county-income-and-poverty-2023.yml',
+      'measure/allen-county-personal-income-1969-2024.yml',
+    ],
+  },
 ]
 
 /** One article by slug. Throws rather than rendering a page with a hole in it. */
