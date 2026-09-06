@@ -3,7 +3,7 @@
   "catalog": ".yidam/catalog/tigerweb-census2020.md",
   "service": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer",
   "vintage": "2020",
-  "fetched": "2026-09-05",
+  "fetched": "2026-09-06",
   "coordinate_precision": 5,
   "crs": "EPSG:4326",
   "layers": [
@@ -48,6 +48,16 @@
       "name": "Census Designated Places",
       "features": 3,
       "filter": "intersects the county polygon"
+    },
+    {
+      "file": "linear-water.geojson",
+      "layer": 0,
+      "name": "Linear Hydrography",
+      "features": 313,
+      "filter": "intersects the county polygon",
+      "service": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Hydro/MapServer",
+      "vintage": "current",
+      "generalized_degrees": 0.0002
     }
   ]
 }

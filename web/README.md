@@ -114,6 +114,15 @@ red. `scripts/fetch-boundaries.mjs` refuses to write a layer whose feature count
 because a silent recount is the failure this connector can actually have — the query still
 succeeds and the map quietly loses a township.
 
+**The water is the one layer that is not a 2020 statement.** TIGERweb keeps hydrography out of
+the decennial services entirely — one Hydro MapServer, no vintage, no STATE or COUNTY column —
+so `linear-water.geojson` records its own vintage as *current* in `PROVENANCE.json` rather than
+inheriting the file's. It is also the one layer the service generalizes on request: 313
+polylines arrive at 847 KB describing meanders a few metres across, in a frame where the whole
+county is 1,400 pixels wide, and `maxAllowableOffset` asks for the resolution the map has. The
+generalizing is done server-side and the offset is recorded, so the vendored file stays a mirror
+rather than becoming a cartographer.
+
 **The join is the site's own gate.** `crates/publish` cannot see `public/geo/` and the
 connector cannot see the corpus, so the one derivation performed in this directory is matching
 a corpus GEOID to a vendored geometry — and `test/geography.test.ts` is what holds it. It also
