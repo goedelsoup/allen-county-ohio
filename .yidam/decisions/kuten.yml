@@ -1,0 +1,57 @@
+id: kuten
+summary: the `inquiry` kuten, adopted at revision 1
+kuten: inquiry
+revision: 1
+decision: |
+  This corpus's practice is `inquiry`: the corpus grows through sustained inquiry — questions opened, and settled.
+
+  Adopted with `yidam kuten adopt` against the profile vendored at
+  `.yidam/.vendor/prelude/kuten/inquiry/kuten.yml`, at revision 1.
+  The revision is copied from that profile, and every consumer reads the
+  kuten at the vintage this repository holds rather than at upstream's
+  current one.
+rationale: |
+  Why this corpus adopts this practice, rather than accepting it because it is the only profile
+  shipped.
+
+  **The declaration is a description before it is an aspiration.** `yidam kuten check` was run
+  against `inquiry` immediately after adopting, and four of the five bands hold without anything
+  here being changed to make them: 12% of commits settle a phase against a declared 12–27%, 0%
+  of commits fall outside the vocabulary against a declared 0–2%, 0.50 nodes per commit against
+  a declared 0.50–1.12, and the question pressure is epistemic with 448 open. A corpus adopting
+  a practice it does not already have would be writing an intention into a record built to hold
+  facts.
+
+  **This repository is almost certainly one of the six the bands were fitted over. [inference]**
+  The profile's sixth member reads `{authored: 1312, phase: 164, off_vocabulary: 2, instances:
+  673, median_lines: 62, open_questions: 440}`; this repository at adoption reads 1356 commits,
+  169 `phase:` commits, 2 off-vocabulary before the artifact register, 683 instances, median 64,
+  448 open questions. Every figure is this one a few days earlier. That is worth stating because
+  it weakens the evidence rather than strengthening it: a band this corpus helped define is not
+  independent confirmation that the corpus fits it, and the four bands that hold should be read
+  as "this repository has not moved" and not as "this repository was tested".
+
+  **The fifth band diverges, and it is the same question two other records are already asking.**
+  The median node here is 64 lines against a declared 35–62 — two lines past the top of a band
+  this corpus's own 62 helped set, which means the drift happened after the measurement and is
+  recent. It arrives on the same day `node-too-long` was re-measured and found 139 of 282
+  `measure` nodes over their class limit, and both are versions of a question
+  [upstream-findings](upstream-findings.yml) finding 4 has now been carrying across three
+  revisits: whether the nodes are long or the number is fiction. The kuten does not answer it.
+  What it does is make the question arrive on its own, from the population end, without anybody
+  running a lint check and reading the result — which is the argument for holding a kuten at all.
+
+  **What adopting costs, and why it is small.** A kuten binds nobody: divergence is a question
+  for a person, `kuten check` writes nothing and exits zero however far the corpus drifts, and
+  it is deliberately outside `mise run ci` on the argument that a question wired into a gate
+  becomes a defect the next person learns to silence. It may not widen the model — it adds no
+  verb, alters no claim standing, and changes no gate. The one real obligation it creates is
+  that revision 1 is now pinned in a record, so a later upstream revision is a visible
+  `decide:` event rather than a silent adoption.
+
+  **What was declined.** No `rationale:` was written by the tool, deliberately, and no
+  `policy:` override is taken. The `clocks` the profile proposes — `due.questions_after: 100`,
+  `due.phases_after: 60`, `due.index_after: 25`, `catalog.ttl_days: 180` — are proposals a
+  corpus's own config holds or declines, and this repository declines them for now: it has no
+  `[due]` configuration today, and adopting four intervals at the same moment as the practice
+  would make it impossible to tell later which of the two was the thing that changed.
