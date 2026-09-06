@@ -124,7 +124,11 @@ export function mapPath(view: MapView): string {
   if (view.grain) q.set('grain', view.grain)
   if (view.at) q.set('at', view.at)
   if (view.layers) q.set('layers', view.layers.join(','))
-  const query = q.toString()
+  // `URLSearchParams` percent-encodes `/` and `,`, and neither needs it in a query value.
+  // These paths are quoted in prose, in the README and in the decision that put the map at `/`,
+  // and a reader who copies one should get back what they were shown — `at=place/lima.yml`
+  // rather than `at=place%2Flima.yml`. Both forms decode identically on the way in.
+  const query = q.toString().replaceAll('%2F', '/').replaceAll('%2C', ',')
   return query ? `${MAP.href}?${query}` : MAP.href
 }
 

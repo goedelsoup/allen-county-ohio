@@ -5,6 +5,7 @@ import { parts } from './astro'
 import { ARTICLES, unresolvedDeclarations } from '../src/lib/articles'
 import { assertions, atlas, nodes } from '../src/lib/feeds'
 import { spine, standing } from '../src/lib/eras'
+import { mapPath } from '../src/lib/sections'
 import {
   SECTIONS,
   SECTION_KEYS,
@@ -276,6 +277,18 @@ describe('the prose points into the map', () => {
       .filter((l) => Number(l.year) < from || Number(l.year) > to)
       .map((l) => `${l.file}: ${l.year}`)
     expect(outside, `years outside ${from}–${to}`).toEqual([])
+  })
+
+  it('builds a path a reader can copy back', () => {
+    // These appear in prose and in the README, and a reader who copies one should get back what
+    // they were shown. Both forms decode identically; only one of them is readable.
+    expect(mapPath({ year: 1885, grain: 'year', at: 'place/lima.yml' })).toBe(
+      '/?year=1885&grain=year&at=place/lima.yml',
+    )
+    expect(mapPath({ layers: ['population', 'subdivisions'] })).toBe(
+      '/?layers=population,subdivisions',
+    )
+    expect(mapPath({})).toBe('/')
   })
 
   it('sends the reader to a year the node is actually standing in', () => {
