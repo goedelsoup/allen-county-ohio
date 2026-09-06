@@ -5,7 +5,11 @@
 // length it is a sentence and mono stops being readable. The corpus writes both into the
 // same map, so the split is made here on length rather than declared per field.
 
-import { propertyLabel } from '../../lib/entry'
+// A long value is a sentence, so it is rendered as one. `method`, `authority_source` and
+// `undated` all carry emphasis and corpus links, and this printed them as markup until now.
+
+import { propertyLabel, resolveCorpusLink } from '../../lib/entry'
+import { inline } from '../../lib/prose'
 
 interface Props {
   properties: Record<string, string>
@@ -21,7 +25,10 @@ const entries = Object.entries(properties)
       {entries.map(([key, value]) => (
         <>
           <dt class="eyebrow">{propertyLabel(key)}</dt>
-          <dd class:list={[value.length > 80 ? 'prose' : 'datum']}>{value}</dd>
+          <dd
+            class:list={[value.length > 80 ? 'prose' : 'datum']}
+            set:html={inline(value, resolveCorpusLink)}
+          />
         </>
       ))}
     </dl>
