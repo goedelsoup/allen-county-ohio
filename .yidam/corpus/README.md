@@ -110,7 +110,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-against-ohio-1980-2008.yml](measure/allen-county-against-ohio-1980-2008.yml) | measure | Allen County's Republican share against Ohio's and the nation's, 1980–2008 | 5 | 4v / 5i / 0o | 78 |
 | [allen-county-age-structure-2023.yml](measure/allen-county-age-structure-2023.yml) | measure | Allen County age structure, 2023 | 4 | 6v / 1i / 0o | 79 |
 | [allen-county-air-quality-1980-2024.yml](measure/allen-county-air-quality-1980-2024.yml) | measure | What the monitors measured over Allen County, 1980–2024 | 4 | 9v / 1i / 1o | 121 |
-| [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 13 | 12v / 6i / 1o | 188 |
+| [allen-county-annexations-1990-2024.yml](measure/allen-county-annexations-1990-2024.yml) | measure | Allen County annexations, 1990–2024 | 13 | 14v / 7i / 2o | 210 |
 | [allen-county-assessed-valuation-2010-2023.yml](measure/allen-county-assessed-valuation-2010-2023.yml) | measure | Allen County's assessed valuation, reports of 2010–2023 | 6 | 8v / 5i / 1o | 112 |
 | [allen-county-attorney-register-2026.yml](measure/allen-county-attorney-register-2026.yml) | measure | The Allen County roll of Ohio attorneys, 1925–2026 | 2 | 12v / 5i / 1o | 111 |
 | [allen-county-audits-1999-2026.yml](measure/allen-county-audits-1999-2026.yml) | measure | Every audit released on an Allen County public body, 1999–2026 | 5 | 8v / 2i / 1o | 100 |
@@ -344,10 +344,13 @@ Sorted by: kind, then alphabetically.
 | [allen-county-world-war-service.yml](measure/allen-county-world-war-service.yml) | measure | Allen County in the World War — how many served | 2 | 5v / 5i / 1o | 77 |
 | [allen-county-zip-codes-2020.yml](measure/allen-county-zip-codes-2020.yml) | measure | Allen County's ZIP codes, 2020 | 6 | 12v / 0i / 1o | 119 |
 | [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
+| [bluffton-annexations-1994-2024.yml](measure/bluffton-annexations-1994-2024.yml) | measure | Bluffton annexations, 1994–2024 | 4 | 6v / 1i / 0o | 67 |
+| [delphos-annexations-1990-2018.yml](measure/delphos-annexations-1990-2018.yml) | measure | Delphos annexations, 1990–2018 | 4 | 6v / 1i / 1o | 89 |
+| [elida-annexations-1990-2021.yml](measure/elida-annexations-1990-2021.yml) | measure | Elida annexations, 1990–2021 | 4 | 5v / 1i / 1o | 62 |
 | [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
 | [federal-money-in-allen-county-2008-2025.yml](measure/federal-money-in-allen-county-2008-2025.yml) | measure | Federal money in Allen County, 2008–2025 | 6 | 11v / 5i / 1o | 127 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
-| [lima-annexations-1990-2017.yml](measure/lima-annexations-1990-2017.yml) | measure | Lima annexations, 1990–2017 | 4 | 4v / 2i / 0o | 79 |
+| [lima-annexations-1990-2017.yml](measure/lima-annexations-1990-2017.yml) | measure | Lima annexations, 1990–2017 | 4 | 5v / 2i / 0o | 88 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
 | [lima-land-area-2020.yml](measure/lima-land-area-2020.yml) | measure | Lima land area, 2020 | 3 | 3v / 1i / 0o | 44 |
@@ -375,6 +378,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 9v / 5i / 1o | 90 |
+| [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
