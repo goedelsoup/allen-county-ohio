@@ -160,10 +160,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
 | [allen-county-evictions-2001-2018.yml](measure/allen-county-evictions-2001-2018.yml) | measure | Eviction filings in Allen County, 2002–2018 | 6 | 8v / 5i / 0o | 109 |
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
-| [allen-county-farmland-1910-2022.yml](measure/allen-county-farmland-1910-2022.yml) | measure | Land in farms, Allen County, 1910–2022 | 2 | 10v / 4i / 0o | 97 |
+| [allen-county-farmland-1910-2022.yml](measure/allen-county-farmland-1910-2022.yml) | measure | Land in farms, Allen County, 1910–2022 | 3 | 10v / 4i / 0o | 105 |
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 9v / 2i / 2o | 77 |
 | [allen-county-farms-1949-1987.yml](measure/allen-county-farms-1949-1987.yml) | measure | Allen County farms, 1949–1987 | 2 | 11v / 6i / 2o | 106 |
-| [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 2 | 8v / 3i / 0o | 83 |
+| [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 3 | 8v / 3i / 0o | 92 |
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
 | [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
 | [allen-county-findings-for-recovery-1999-2026.yml](measure/allen-county-findings-for-recovery-1999-2026.yml) | measure | Findings for recovery against Allen County public bodies, 1999–2026 | 4 | 9v / 1i / 1o | 82 |
@@ -171,7 +171,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-flood-insurance-1978-2023.yml](measure/allen-county-flood-insurance-1978-2023.yml) | measure | Flood insurance claims in Allen County, 1978–2023 | 7 | 13v / 6i / 0o | 117 |
 | [allen-county-foreclosures-and-evictions-2007-2017.yml](measure/allen-county-foreclosures-and-evictions-2007-2017.yml) | measure | Allen County foreclosures and evictions, 2007–2017 | 5 | 8v / 2i / 1o | 84 |
 | [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 7v / 4i / 1o | 77 |
-| [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 3 | 9v / 4i / 1o | 93 |
+| [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 4 | 9v / 4i / 1o | 103 |
 | [allen-county-frost-free-season-1902-2025.yml](measure/allen-county-frost-free-season-1902-2025.yml) | measure | Allen County frost-free season, 1902–2025 | 3 | 9v / 6i / 1o | 82 |
 | [allen-county-funds-2025.yml](measure/allen-county-funds-2025.yml) | measure | What passes through Allen County's books, 2025 | 2 | 8v / 3i / 2o | 82 |
 | [allen-county-general-assembly-1833-1906.yml](measure/allen-county-general-assembly-1833-1906.yml) | measure | Allen County in the Ohio General Assembly, 1833–1906 | 4 | 10v / 2i / 2o | 90 |
@@ -268,10 +268,10 @@ Sorted by: kind, then alphabetically.
 | [allen-county-population-2000.yml](measure/allen-county-population-2000.yml) | measure | Allen County population, 2000 estimates base | 2 | 3v / 0i / 0o | 23 |
 | [allen-county-population-2010.yml](measure/allen-county-population-2010.yml) | measure | Allen County population, 2010 census | 2 | 3v / 0i / 0o | 25 |
 | [allen-county-population-2020-census.yml](measure/allen-county-population-2020-census.yml) | measure | Allen County population, 2020 census | 2 | 4v / 1i / 0o | 40 |
-| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 2 | 3v / 0i / 0o | 28 |
-| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 3 | 3v / 1i / 0o | 38 |
+| [allen-county-population-2020.yml](measure/allen-county-population-2020.yml) | measure | Allen County population, 2020 estimates base | 3 | 3v / 0i / 0o | 36 |
+| [allen-county-population-2024.yml](measure/allen-county-population-2024.yml) | measure | Allen County population, July 2024 estimate | 5 | 3v / 1i / 0o | 54 |
 | [allen-county-population-by-race-1920.yml](measure/allen-county-population-by-race-1920.yml) | measure | Allen County population by race and nativity, 1920 | 3 | 8v / 5i / 1o | 97 |
-| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 4 | 15v / 6i / 0o | 129 |
+| [allen-county-population-by-race-1930-1960.yml](measure/allen-county-population-by-race-1930-1960.yml) | measure | Allen County population by race, 1930–1960 | 5 | 15v / 6i / 0o | 138 |
 | [allen-county-population-by-race-1970-2020.yml](measure/allen-county-population-by-race-1970-2020.yml) | measure | Allen County population by race, 1970–2020 | 5 | 11v / 5i / 1o | 141 |
 | [allen-county-precipitation-1895-2025.yml](measure/allen-county-precipitation-1895-2025.yml) | measure | Allen County precipitation, 1895–2025 | 2 | 10v / 3i / 1o | 79 |
 | [allen-county-premature-death-1997-2022.yml](measure/allen-county-premature-death-1997-2022.yml) | measure | Premature death in Allen County, 1997–2022 | 2 | 7v / 5i / 1o | 98 |
@@ -321,7 +321,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
-| [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 2 | 8v / 4i / 1o | 113 |
+| [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 3 | 8v / 4i / 1o | 121 |
 | [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 8 | 12v / 3i / 2o | 166 |
 | [allen-county-transfer-receipts-1969-2024.yml](measure/allen-county-transfer-receipts-1969-2024.yml) | measure | Government transfers to Allen County, 1969–2024 | 6 | 11v / 1i / 1o | 113 |
 | [allen-county-tri-reporters-1987-2024.yml](measure/allen-county-tri-reporters-1987-2024.yml) | measure | Allen County facilities reporting to the Toxics Release Inventory, 1987–2024 | 2 | 7v / 0i / 0o | 60 |
@@ -362,8 +362,8 @@ Sorted by: kind, then alphabetically.
 | [lima-population-2000.yml](measure/lima-population-2000.yml) | measure | Lima population, 2000 estimates base | 3 | 5v / 3i / 0o | 53 |
 | [lima-population-2010.yml](measure/lima-population-2010.yml) | measure | Lima population, 2010 census | 3 | 3v / 1i / 0o | 30 |
 | [lima-population-2020-census.yml](measure/lima-population-2020-census.yml) | measure | Lima population, 2020 census | 3 | 2v / 1i / 0o | 34 |
-| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 3 | 4v / 2i / 0o | 41 |
-| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 3 | 2v / 3i / 0o | 40 |
+| [lima-population-2020.yml](measure/lima-population-2020.yml) | measure | Lima population, 2020 estimates base | 4 | 4v / 2i / 0o | 50 |
+| [lima-population-2024.yml](measure/lima-population-2024.yml) | measure | Lima population, July 2024 estimate | 5 | 2v / 3i / 0o | 55 |
 | [lima-railroad-traffic-1905.yml](measure/lima-railroad-traffic-1905.yml) | measure | Lima's railroad traffic, 1905 | 2 | 8v / 6i / 0o | 66 |
 | [lima-refinery-capacity-1994-2026.yml](measure/lima-refinery-capacity-1994-2026.yml) | measure | Lima refinery operator and crude capacity, 1994–2026 | 3 | 6v / 0i / 0o | 60 |
 | [lima-snowfall-1901-2025.yml](measure/lima-snowfall-1901-2025.yml) | measure | Lima snowfall, 1901–2025 | 2 | 10v / 4i / 1o | 78 |

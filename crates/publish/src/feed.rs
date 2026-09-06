@@ -9,7 +9,7 @@
 //! the committed feeds byte for byte and fail on a stale one.
 
 use crate::derived::Resolved;
-use crate::load::{Class, Node};
+use crate::load::{Class, Link, Node};
 use crate::tier::Tier;
 use serde::Serialize;
 use std::collections::{BTreeMap, HashMap};
@@ -38,6 +38,14 @@ pub const FEED_VERSION: u32 = 1;
 /// filtered by tier and are simply not published: an edge saying which class a node
 /// instantiates is of no use to a reader who is not holding the ontology.
 const STRUCTURAL: [&str; 3] = ["instance-of", "concerns", "subject-of"];
+
+/// Relationships that judge one figure against another.
+///
+/// The same two names `provenance` gates, where they carry the rule that each must say why.
+/// They are ordinary published edges as well as the source of the comparability tables — the
+/// graph feed carries them like any other claim, and [`comparability`] reads them again into
+/// the shape an entry renders.
+const COMPARABILITY: [&str; 2] = ["comparable-to", "not-comparable-to"];
 
 #[derive(Debug, Serialize)]
 pub struct Policy {
@@ -183,10 +191,49 @@ pub struct Series {
     pub points: Vec<Point>,
 }
 
+/// One row of a measure's comparability table.
+///
+/// The board this renders puts the year, the figure and a sentence saying whether the figure
+/// may be set beside the one the entry is about. All three are carried; none is computed.
+#[derive(Debug, Serialize)]
+pub struct ComparabilityRow {
+    pub node: String,
+    pub label: String,
+    pub as_of: String,
+    /// The figure as the corpus published it, unrounded and underived.
+    pub published: String,
+    pub unit: Option<String>,
+    /// True on the row for the entry's own figure — the board's *This figure.*
+    pub this_figure: bool,
+    /// The judgement. `null` on the entry's own row, which is not judged against itself.
+    pub comparable: Option<bool>,
+    /// Why. Never empty where `comparable` is set: `edge-audit` fails on a judgement that
+    /// does not say, so a table can never print *Not comparable* and stop there.
+    pub because: Option<String>,
+    /// The **judgement's** tag, not the figure's. A verified figure may be set beside another
+    /// verified figure on nothing better than an inference, and that is the tier a reader of
+    /// the row is being asked to trust.
+    pub tier: Option<Tier>,
+    pub source: Option<String>,
+}
+
+/// A measure's comparability table, ready to render.
+#[derive(Debug, Serialize)]
+pub struct Comparability {
+    /// The measure this table belongs to.
+    pub node: String,
+    /// Every judged figure and this one, in date order.
+    pub rows: Vec<ComparabilityRow>,
+}
+
 #[derive(Debug, Serialize)]
 pub struct SeriesFeed {
     pub feed_version: u32,
     pub series: Vec<Series>,
+    /// One entry per measure the corpus has judged against another. A measure with no
+    /// judgement is absent rather than present with a single row: an entry that says only
+    /// *this figure* reads as a series of one, which is a claim nobody made.
+    pub comparability: Vec<Comparability>,
     pub assertions: Vec<Resolved>,
 }
 
@@ -411,6 +458,98 @@ pub fn series(nodes: &[Node], ceiling: Tier) -> Vec<Series> {
             .sort_by(|a, b| a.as_of.cmp(&b.as_of).then_with(|| a.node.cmp(&b.node)));
     }
     out.sort_by(|a, b| a.id.cmp(&b.id));
+    out
+}
+
+/// Every measure's comparability table, from the judgements the corpus recorded.
+///
+/// # Why this does not read [`series`]
+///
+/// It would be one line to build these tables out of a series — the neighbours of a figure are
+/// sitting right there, grouped by subject and parameter. That grouping is a mechanical join on
+/// two strings, and a comparability table built on it would assert, in the one place designed to
+/// warn against exactly this, that two figures sharing a `parameter` describe the same thing.
+/// They frequently do not: the corpus's own minor-civil-division series puts 56,580 in 1910
+/// beside 27,132 in 1930, and the whole of that fall is Lima leaving the table.
+///
+/// So the neighbourhood here is the edges and nothing else. A measure appears beside another
+/// measure because somebody wrote down that it may, and said why.
+///
+/// The corpus writes the judgement once, on the later figure, which is the transition rule
+/// `measure/ACTIONS.md` already stated. Both ends get the row: a reader arriving at the earlier
+/// figure needs the warning at least as much, because that node is the one that cannot know its
+/// successor moved the definition.
+pub fn comparability(nodes: &[Node], ceiling: Tier) -> Vec<Comparability> {
+    let published: BTreeMap<&str, &Node> = nodes
+        .iter()
+        .filter(|n| {
+            // The same rule `graph` applies: a row linking to a node the reader cannot open
+            // is a dangling reference, and here it would be one inside a warning.
+            !published_blocks(n, ceiling).is_empty()
+        })
+        .map(|n| (n.id.as_str(), n))
+        .collect();
+
+    let row = |n: &Node, judged: Option<(&Link, bool)>| ComparabilityRow {
+        node: n.id.clone(),
+        label: n.label.clone(),
+        as_of: n.property("as_of").unwrap_or_default().to_string(),
+        published: n.property("value").unwrap_or_default().to_string(),
+        unit: n.property("unit").map(str::to_string),
+        this_figure: judged.is_none(),
+        comparable: judged.map(|(_, c)| c),
+        because: judged.and_then(|(l, _)| l.because.clone()),
+        tier: judged.and_then(|(l, _)| l.claim_tag),
+        source: judged.and_then(|(l, _)| l.source.clone()),
+    };
+
+    let mut tables: BTreeMap<&str, Vec<ComparabilityRow>> = BTreeMap::new();
+    for node in nodes.iter().filter(|n| n.class == "measure") {
+        for link in &node.links {
+            if !COMPARABILITY.contains(&link.relationship.as_str()) {
+                continue;
+            }
+            // A judgement with no tag, no reason, or a tag weaker than the ceiling does not
+            // travel. The first two are defects `edge-audit` gates on; the third is the
+            // publication rule, and an unpublishable judgement is silence rather than a row
+            // with a hole in it.
+            let Some(tier) = link.claim_tag else { continue };
+            if !tier.reaches(ceiling) || link.because.is_none() {
+                continue;
+            }
+            let (Some(here), Some(there)) = (
+                published.get(node.id.as_str()),
+                published.get(link.resolved.as_str()),
+            ) else {
+                continue;
+            };
+            let comparable = link.relationship == "comparable-to";
+
+            tables
+                .entry(&node.id)
+                .or_insert_with(|| vec![row(here, None)])
+                .push(row(there, Some((link, comparable))));
+            tables
+                .entry(&there.id)
+                .or_insert_with(|| vec![row(there, None)])
+                .push(row(here, Some((link, comparable))));
+        }
+    }
+
+    let mut out: Vec<Comparability> = tables
+        .into_iter()
+        .map(|(node, mut rows)| {
+            // By date, then by node id — the same tie-break `series` uses, and for the same
+            // reason: two figures at one date is a thing this corpus has, and a stable order
+            // is what lets `publish-feeds --check` compare bytes.
+            rows.sort_by(|a, b| a.as_of.cmp(&b.as_of).then_with(|| a.node.cmp(&b.node)));
+            Comparability {
+                node: node.to_string(),
+                rows,
+            }
+        })
+        .collect();
+    out.sort_by(|a, b| a.node.cmp(&b.node));
     out
 }
 
@@ -772,8 +911,21 @@ mod tests {
                 relationship: "describes".into(),
                 claim_tag: Some(tag),
                 source: Some("catalog/x.md".into()),
+                because: None,
             }],
         }
+    }
+
+    /// Record a comparability judgement on `node`, pointing at a sibling measure.
+    fn judge(node: &mut Node, relationship: &str, target: &str, because: Option<&str>, tag: Tier) {
+        node.links.push(Link {
+            target: format!("{target}.yml"),
+            resolved: format!("measure/{target}.yml"),
+            relationship: relationship.into(),
+            claim_tag: Some(tag),
+            source: None,
+            because: because.map(str::to_string),
+        });
     }
 
     #[test]
@@ -834,6 +986,121 @@ mod tests {
         assert_eq!(series(&nodes, Tier::Inference)[0].points.len(), 1);
     }
 
+    /// The corpus's own minor-civil-division pair, which is why this feed exists: one
+    /// `parameter` string, two different things counted, and a fall that is entirely Lima
+    /// leaving the table.
+    fn divisions() -> Vec<Node> {
+        let p = "total resident population by minor civil division, decennial";
+        let mut later = measure("t1930", p, "27132", "1930", Tier::Verified);
+        judge(
+            &mut later,
+            "not-comparable-to",
+            "t1910",
+            Some("The 1910 figure counts Ottawa, which was Lima; the 1930 one excludes the city."),
+            Tier::Verified,
+        );
+        vec![later, measure("t1910", p, "56580", "1910", Tier::Verified)]
+    }
+
+    #[test]
+    fn a_judgement_written_once_makes_a_table_at_both_ends() {
+        let t = comparability(&divisions(), Tier::Inference);
+        assert_eq!(t.len(), 2);
+
+        // Written on the later figure. The earlier one gets the warning too — it is the node
+        // that cannot know its successor changed what was being counted.
+        let earlier = t.iter().find(|c| c.node == "measure/t1910.yml").unwrap();
+        assert_eq!(earlier.rows.len(), 2);
+        assert!(earlier.rows[0].this_figure);
+        assert_eq!(earlier.rows[0].as_of, "1910");
+        assert_eq!(earlier.rows[0].comparable, None);
+        assert_eq!(earlier.rows[1].node, "measure/t1930.yml");
+        assert_eq!(earlier.rows[1].comparable, Some(false));
+        assert!(earlier.rows[1].because.as_deref().unwrap().contains("Lima"));
+
+        let later = t.iter().find(|c| c.node == "measure/t1930.yml").unwrap();
+        assert!(later.rows[1].this_figure);
+        assert_eq!(later.rows[0].node, "measure/t1910.yml");
+        assert_eq!(later.rows[0].comparable, Some(false));
+    }
+
+    #[test]
+    fn the_table_carries_the_judgements_tier_and_not_the_figures() {
+        // Both figures are verified and the judgement between them is not. That gap is the
+        // whole thing a reader of the row is being asked to weigh, so it travels on the row.
+        let mut later = measure("b", "farms", "897", "2022", Tier::Verified);
+        judge(
+            &mut later,
+            "not-comparable-to",
+            "a",
+            Some("The two censuses set different thresholds and the thresholds cross."),
+            Tier::Inference,
+        );
+        let nodes = vec![later, measure("a", "farms", "2939", "1910", Tier::Verified)];
+        let t = comparability(&nodes, Tier::Inference);
+        let judged = t[0].rows.iter().find(|r| !r.this_figure).unwrap();
+        assert_eq!(judged.tier, Some(Tier::Inference));
+    }
+
+    #[test]
+    fn a_measure_nobody_judged_gets_no_table_at_all() {
+        // Not a table of one row. A lone *This figure.* reads as a series of one, which is a
+        // claim about continuity that nobody made.
+        let nodes = vec![measure("p", "pop", "1", "2020", Tier::Verified)];
+        assert!(comparability(&nodes, Tier::Inference).is_empty());
+    }
+
+    #[test]
+    fn a_judgement_that_does_not_say_why_does_not_travel() {
+        let mut later = measure("b", "pop", "2", "2020", Tier::Verified);
+        judge(&mut later, "comparable-to", "a", None, Tier::Verified);
+        let nodes = vec![later, measure("a", "pop", "1", "2010", Tier::Verified)];
+        assert!(comparability(&nodes, Tier::Inference).is_empty());
+    }
+
+    #[test]
+    fn a_judgement_weaker_than_the_ceiling_is_silence_rather_than_a_row_with_a_hole_in_it() {
+        let mut later = measure("b", "pop", "2", "2020", Tier::Verified);
+        judge(
+            &mut later,
+            "comparable-to",
+            "a",
+            Some("a guess"),
+            Tier::Open,
+        );
+        let nodes = vec![later, measure("a", "pop", "1", "2010", Tier::Verified)];
+        assert!(comparability(&nodes, Tier::Inference).is_empty());
+    }
+
+    #[test]
+    fn a_judgement_against_an_unpublished_figure_does_not_dangle() {
+        let mut later = measure("b", "pop", "2", "2020", Tier::Verified);
+        judge(
+            &mut later,
+            "comparable-to",
+            "a",
+            Some("same file"),
+            Tier::Verified,
+        );
+        let mut hidden = measure("a", "pop", "1", "2010", Tier::Verified);
+        hidden.blocks = blocks("Only a guess. [open]");
+        assert!(comparability(&[later, hidden], Tier::Inference).is_empty());
+    }
+
+    #[test]
+    fn the_table_is_not_the_series() {
+        // Two figures share a parameter and a subject, so `series` groups them; nobody judged
+        // them against each other, so `comparability` says nothing. That difference is the
+        // point — a table built from the grouping would assert the continuity it exists to
+        // warn about.
+        let nodes = vec![
+            measure("a", "pop", "1", "2010", Tier::Verified),
+            measure("b", "pop", "2", "2020", Tier::Verified),
+        ];
+        assert_eq!(series(&nodes, Tier::Inference)[0].points.len(), 2);
+        assert!(comparability(&nodes, Tier::Inference).is_empty());
+    }
+
     #[test]
     fn a_node_with_no_publishable_prose_is_not_in_the_graph() {
         let node = Node {
@@ -876,6 +1143,7 @@ mod tests {
                 relationship: "within".into(),
                 claim_tag: Some(Tier::Verified),
                 source: None,
+                because: None,
             }],
         };
         let (g, _) = graph(&[citing, withheld], Tier::Inference);
@@ -898,6 +1166,7 @@ mod tests {
                 relationship: "instance-of".into(),
                 claim_tag: None,
                 source: None,
+                because: None,
             }],
         };
         let (g, counts) = graph(&[node], Tier::Inference);
@@ -957,6 +1226,7 @@ mod tests {
                 relationship: "describes".into(),
                 claim_tag: Some(Tier::Verified),
                 source: None,
+                because: None,
             }],
         };
 

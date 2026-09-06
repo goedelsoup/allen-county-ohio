@@ -34,5 +34,21 @@ links:
     relationship: relates-to
     claim_tag: verified
     source: ../../catalog/irs-county-migration.md
+  - target: allen-county-population-2020.yml
+    relationship: comparable-to
+    claim_tag: verified
+    source: ../../catalog/census-popest-2024.md
+    because: >-
+      Both are rows of the Vintage 2024 county file, which is one estimates series carried
+      forward year by year from its own base. The fall of 1,351 across four years is taken
+      inside that file and crosses no seam.
+  - target: allen-county-population-2020-census.yml
+    relationship: not-comparable-to
+    claim_tag: inference
+    because: >-
+      A model output against an enumeration, from two files. This estimate is carried forward
+      from the revised base of 102,217, not from the 102,206 the redistricting file published,
+      so a difference taken against the count is part seam and part change with nothing to say
+      which is which. Difference it against the base instead.
   - target: ../measure.ont.yml
     relationship: instance-of

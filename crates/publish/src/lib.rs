@@ -87,6 +87,7 @@ pub fn build(
 ) -> Result<(Vec<File>, Vec<derived::Defect>), serde_json::Error> {
     let (graph, mut counts) = feed::graph(nodes, CEILING);
     let series = feed::series(nodes, CEILING);
+    let comparability = feed::comparability(nodes, CEILING);
     let points = feed::map(nodes, CEILING);
     let atlas = feed::atlas(nodes, CEILING);
     let (assertions, defects) = derived::resolve(derived::ASSERTIONS, nodes, CEILING);
@@ -111,6 +112,7 @@ pub fn build(
                 &feed::SeriesFeed {
                     feed_version: FEED_VERSION,
                     series,
+                    comparability,
                     assertions,
                 },
             )?,

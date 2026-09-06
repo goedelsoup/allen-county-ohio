@@ -94,3 +94,22 @@ edges:
       rather than as tenure nodes, and the table needed somewhere to attach: a succession is a
       figure about an office and about nothing else, and pointing it at the jurisdiction the
       office sits in would have been the wrong claim made to satisfy the schema.
+  - relationship: comparable-to
+    target: measure
+    direction: out
+    description: |
+      The figure this node publishes may be set beside the figure that one publishes: the same
+      quantity, counted under one definition, on ground that did not move between them. Written
+      on the later figure and pointing back, which is where `ACTIONS.md` already said a break
+      belonged. Carries `because` — a comparability nobody had to argue for is one nobody
+      checked, and the reason is what the reader is owed beside the two numbers.
+  - relationship: not-comparable-to
+    target: measure
+    direction: out
+    description: |
+      The two figures are about the same quantity and may not be set beside each other. This is
+      the edge the class was missing: `a-farm-count-is-a-definition` reached the conclusion that
+      2,939 farms and 897 farms cannot be subtracted, and had nowhere to put it — "comparability
+      is a relation between two measures, and `measure` declares no edge to another `measure`",
+      so the judgement lived in prose in four nodes and in no edge anywhere. `because` names what
+      broke: a definition, a boundary, a column heading, a change of file.

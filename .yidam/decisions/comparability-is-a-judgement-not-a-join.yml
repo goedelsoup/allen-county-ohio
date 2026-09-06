@@ -1,0 +1,100 @@
+id: comparability-is-a-judgement-not-a-join
+summary: >-
+  `measure` gains two edges — `comparable-to` and `not-comparable-to` — each carrying a `because`
+  the gate requires. Whether two figures may be set beside each other is now a claim the corpus
+  writes down, tagged and sourced like any other, rather than something the site works out from
+  two matching strings. Eleven judgements recorded; sixteen entries now carry a table.
+context: |
+  [a-farm-count-is-a-definition](a-farm-count-is-a-definition.yml) ended by naming what it could
+  not do:
+
+    One thing this rule wants and the graph cannot express. Comparability is a relation between
+    two measures, and `measure` declares no edge to another `measure` — only `describes`, out to
+    the place. So "these two figures may be set beside each other, and this source licenses it"
+    lives in prose in four nodes now and in no edge anywhere, and `edge-audit` cannot see it.
+
+  The measure entry wanted the same thing from the other end. The design board puts a
+  comparability table under the figure — year, value, and a note saying whether each neighbouring
+  figure may be set beside this one — and it is the sharpest idea in the fourteen boards, because
+  it makes a break in series *content* rather than a footnote. It was not built, and the reason it
+  was not built is the whole of this decision.
+
+  **The shortcut was sitting right there and it was the error the board exists to prevent.**
+  `series.json` already groups measures by matching `parameter` string against a shared subject.
+  Reading a table out of that grouping is one line of TypeScript, and it would have asserted
+  continuity between figures no source connects. The corpus's own feed carries the proof:
+
+    place/allen-county :: total resident population by minor civil division, decennial
+      1910    56,580
+      1930    27,132
+
+  Two nodes, one parameter string, one subject, and a fall of twenty-nine thousand people that is
+  entirely Lima leaving the table. The 1910 figure is all thirteen minor civil divisions with
+  Ottawa — which *was* Lima — among them; the 1930 figure is the twelve townships with the city
+  taken out, as the 1950 volume's own table head warns it may be. The join is a fact about two
+  strings. The comparability is a fact about two censuses, and nobody had written it down.
+decision: |
+  **Comparability is an edge between two measures, and the edge must say why.**
+
+    comparable-to        the figure this node publishes may be set beside the figure that one
+                         publishes — same quantity, one definition, ground that did not move
+    not-comparable-to    the two figures are about the same quantity and may not be lined up
+
+  Four rules, each of which pays for itself:
+
+  1. **`because` is required on both, and `edge-audit` fails without it.** Not only on the break.
+     A bare *not comparable* is the assertion the edge exists to replace; a bare *comparable* is
+     worse, because it licenses a subtraction and shows nobody's work. The reason is the claim,
+     not an annotation on it.
+  2. **Written once, on the later figure**, which is the transition `measure/ACTIONS.md` already
+     named — *a series break: record it in `method` on the first node after the break*. This is
+     that rule with a place to put the answer.
+  3. **Rendered at both ends.** `crates/publish` makes the table symmetric, because the earlier
+     node needs the warning more: it is the one that cannot know its successor moved the
+     definition.
+  4. **The pair may not be judged both ways.** Direction does not make two claims, so
+     `a comparable-to b` beside `b not-comparable-to a` is a defect. It is the one check that
+     cannot be made edge by edge — each file reads as correct alone — and it is the failure a
+     second phase would introduce without noticing.
+
+  **The comparability table is not built from the series, and the crate says so where the
+  temptation is.** A measure with no judgement gets no table at all, rather than a table of one
+  row: a lone *This figure* reads as a series of one, which is a claim about continuity nobody
+  made. **No judgement is not a judgement of comparable**, and the entry says that in as many
+  words.
+
+  Eleven judgements are recorded, all of them arguments the corpus had already made in prose and
+  could not act on: the minor-civil-division pair above; farm counts against farm acreage across
+  the 1910 and modern agricultural censuses; the race and nativity lines across the four state
+  volumes; and, for the county and for Lima, the three-way tangle of an enumeration, its revised
+  estimates base and the postcensal estimate carried forward from the base and not from the count.
+rationale: |
+  **Why an edge rather than a property on `measure`.** A break marker with a reason, sitting in
+  the node's own properties, would have been simpler and would have carried the transition rule
+  faithfully. It says the wrong thing. A break is not a property of a figure — the 1930 township
+  count is a perfectly good figure — it is a property of the *pair*, and a marker on one node
+  leaves the reader to guess which neighbour it is about. The corpus already holds
+  [edges-carry-claim-tags](edges-carry-claim-tags.yml), and an edge is the only shape here that
+  gets a `claim_tag` and a `source` for free. Those are exactly the two things a comparability
+  judgement needs and the two things prose in a `method` field could never be asked for.
+
+  **The tag on the judgement is not the tag on the figures, and the entry shows both.** Two
+  `[verified]` figures can be joined by an `[inference]`, and that is the common case here: six
+  of the eleven judgements are inferences between figures that are all separately sourced. The
+  gap is the thing a reader of the row is actually being asked to weigh, and until the judgement
+  had a tag of its own there was nothing to show.
+
+  **What this does not fix.** A measure node publishes one headline figure, and its prose usually
+  holds a table of many. `allen-county-farmland-1910-2022` carries eighteen years and publishes
+  one, so a judgement about that node is a judgement about 178,921 acres in 2022 and says nothing
+  about the seventeen rows above it. The edges are honest at the grain the class actually
+  publishes at; the finer grain is not modelled and this decision does not model it.
+
+  **And the thing it deliberately leaves undone.** Nothing computes comparability. The
+  [boundary-comparability](../skills/boundary-comparability.md) skill reads annexations and
+  answers *comparable, not comparable, or no intervening changes found — which is not evidence
+  that none occurred*, and that third answer is why the edge stays hand-written. A calculator
+  that emitted `comparable-to` on a silent annexation record would be manufacturing exactly the
+  claim this apparatus exists to make somebody stand behind.
+status: accepted
+date: "2026-09-06"

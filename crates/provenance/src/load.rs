@@ -12,6 +12,8 @@ struct RawLink {
     claim_tag: Option<String>,
     #[serde(default)]
     source: Option<String>,
+    #[serde(default)]
+    because: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -89,6 +91,7 @@ pub fn edges(corpus_dir: &Path) -> Result<Vec<Edge>, LoadError> {
                     target: l.target,
                     raw_tag: l.claim_tag,
                     source: l.source,
+                    because: l.because,
                 });
             }
         }

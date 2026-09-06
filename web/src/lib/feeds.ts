@@ -59,6 +59,37 @@ export interface Series {
   points: Point[]
 }
 
+/** One figure set beside another, with the judgement the corpus recorded about the pair. */
+export interface ComparabilityRow {
+  node: string
+  label: string
+  as_of: string
+  /** The figure as the corpus published it, unrounded and underived. */
+  published: string
+  unit: string | null
+  /** True on the row for the entry's own figure. */
+  this_figure: boolean
+  /** `null` on the entry's own row, which is not judged against itself. */
+  comparable: boolean | null
+  /** Why. Never null where `comparable` is set — `edge-audit` fails on a judgement with no reason. */
+  because: string | null
+  /** The **judgement's** tag, not the figure's. */
+  tier: Tier | null
+  source: string | null
+}
+
+/**
+ * A measure's comparability table.
+ *
+ * Not a series. A series groups measures that share a `parameter` string and a subject, which is
+ * a mechanical join; this is the set of figures somebody wrote down a judgement about, and said
+ * why. A measure nobody judged has no entry here at all.
+ */
+export interface Comparability {
+  node: string
+  rows: ComparabilityRow[]
+}
+
 export interface Citation {
   node: string
   node_label: string
@@ -235,6 +266,7 @@ export const classes = manifest.classes
 export const nodes = graphFeed.nodes as Node[]
 export const edges = graphFeed.edges as Edge[]
 export const series = seriesFeed.series as Series[]
+export const comparability = seriesFeed.comparability as Comparability[]
 export const assertions = seriesFeed.assertions as Assertion[]
 export const mapPoints = mapFeed.points as MapPoint[]
 export const atlas = atlasFeed.records as AtlasRecord[]
@@ -263,6 +295,17 @@ export function seriesById(id: string): Series {
   const found = series.find((s) => s.id === id)
   if (!found) throw new Error(`no series "${id}" in the feed`)
   return found
+}
+
+/**
+ * The comparability table for one measure, or undefined where the corpus has judged nothing.
+ *
+ * Undefined is the common case and is not a gap to fill in with a series. It says the corpus
+ * has not decided whether this figure may be set beside any other, which is a different thing
+ * from deciding that it may.
+ */
+export function comparabilityFor(id: string): Comparability | undefined {
+  return comparability.find((c) => c.node === id)
 }
 
 /** What one class declares itself to be, or undefined if the corpus does not declare it. */

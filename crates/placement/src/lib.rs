@@ -11,7 +11,7 @@
 //!
 //! `proximity` learned this the expensive way about distance and containment, and the same
 //! shape recurs here: an edge that reaches ground is not the same thing as an edge that
-//! *places*. [`ROUTES`] classifies all 48 class-and-relationship pairs the corpus uses, and
+//! *places*. [`ROUTES`] classifies all 50 class-and-relationship pairs the corpus uses, and
 //! twenty-four of them are refused with the reason attached.
 //!
 //! The case that decides the rule is `event --affected-> place`, and this repository's own
@@ -333,6 +333,24 @@ pub const ROUTES: &[Route] = &[
         relationship: "evidenced-by",
         routing: Routing::Refused,
         because: "Provenance. A figure supporting a claim is not where the claim's subject is.",
+    },
+    Route {
+        class: "measure",
+        relationship: "comparable-to",
+        routing: Routing::Refused,
+        because: "A judgement about two figures, not about either one's subject. Both ends \
+                  usually describe the same ground anyway, so following it would place a \
+                  figure where `describes` already placed it.",
+    },
+    Route {
+        class: "measure",
+        relationship: "not-comparable-to",
+        routing: Routing::Refused,
+        because: "A break in series, and the tempting one: a break is often caused by ground \
+                  moving — a corporation line that grew, a city entering a township table. It \
+                  still names two figures and not the annexation between them, so following it \
+                  would place the 1930 township count on the county the 1910 one describes and \
+                  call that a position.",
     },
     Route {
         class: "measure",

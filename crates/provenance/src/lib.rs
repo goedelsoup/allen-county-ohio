@@ -20,13 +20,25 @@
 //! `concerns`, `subject-of` — are statements about the corpus itself: which class a node
 //! instantiates, which nodes a question is about. Tagging those would be a category error, so
 //! carrying a tag on one is itself reported.
+//!
+//! # The comparability edges carry one field more
+//!
+//! [`COMPARABILITY`] — `comparable-to` and `not-comparable-to` — say whether two figures may be
+//! set beside each other, and they carry `because` on top of the tag. The tag says how well the
+//! judgement is evidenced; `because` says what the judgement *is about*, which for these two is
+//! the whole content: "not comparable" with no reason is the bare assertion the edge exists to
+//! replace, and a bare "comparable" is worse, because it licenses a subtraction and shows
+//! nobody's work. So an unexplained one is a defect here, the same way an untagged edge is.
 
 pub mod load;
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 
 /// Relationships that describe the corpus rather than the world, and take no claim tag.
 pub const STRUCTURAL: [&str; 3] = ["instance-of", "concerns", "subject-of"];
+
+/// Relationships that judge two figures against each other, and must say why.
+pub const COMPARABILITY: [&str; 2] = ["comparable-to", "not-comparable-to"];
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub enum Tag {
@@ -68,14 +80,44 @@ pub struct Edge {
     /// silently read as untagged.
     pub raw_tag: Option<String>,
     pub source: Option<String>,
+    /// Why the two figures may or may not be set beside each other. Only the comparability
+    /// relationships carry it, and both of them must.
+    pub because: Option<String>,
 }
 
 impl Edge {
     pub fn is_structural(&self) -> bool {
         STRUCTURAL.contains(&self.relationship.as_str())
     }
+    pub fn is_comparability(&self) -> bool {
+        COMPARABILITY.contains(&self.relationship.as_str())
+    }
     pub fn tag(&self) -> Option<Tag> {
         self.raw_tag.as_deref().and_then(Tag::parse)
+    }
+
+    /// `class/name.yml`, the same identity [`Edge::node`] carries.
+    ///
+    /// Corpus links are relative to the writing node's class directory — `../place/lima.yml`
+    /// from a measure, a bare `sibling.yml` inside one class. Taken from `node` rather than
+    /// from `class`, so a file whose `class:` field and directory ever disagree resolves
+    /// against the directory the link was actually written in.
+    pub fn resolved(&self) -> String {
+        let dir = self.node.split('/').next().unwrap_or_default();
+        match self.target.strip_prefix("../") {
+            Some(rest) => rest.to_string(),
+            None => format!("{dir}/{}", self.target),
+        }
+    }
+
+    /// The two ends of this edge, ordered — so A→B and B→A land on the same key.
+    fn pair(&self) -> (String, String) {
+        let (a, b) = (self.node.clone(), self.resolved());
+        if a <= b {
+            (a, b)
+        } else {
+            (b, a)
+        }
     }
 }
 
@@ -99,6 +141,18 @@ pub enum DefectKind {
     SourceNotInCatalog,
     /// A structural edge carrying a claim tag — `instance-of` is not a claim about the world.
     TaggedStructural,
+    /// A comparability edge with no `because`. The reason is the claim, not an annotation on it.
+    ComparabilityUnexplained,
+    /// A comparability edge pointing outside `measure/`. Comparability is a relation between two
+    /// figures; pointed at the place a figure is about, it says nothing.
+    ComparabilityOffClass,
+    /// One pair of measures judged both comparable and not comparable. Direction does not make
+    /// them two claims — `a comparable-to b` and `b not-comparable-to a` are one contradiction.
+    ComparabilityContradicted,
+    /// `because` on a relationship that is not a comparability judgement. Left unreported it
+    /// becomes a general-purpose note field, and then the two edges that require it cannot be
+    /// told from the ones that happen to carry it.
+    BecauseWithoutAJudgement,
 }
 
 impl std::fmt::Display for DefectKind {
@@ -109,6 +163,14 @@ impl std::fmt::Display for DefectKind {
             DefectKind::VerifiedUnsourced => "verified with no source",
             DefectKind::SourceNotInCatalog => "source is not a catalog entry",
             DefectKind::TaggedStructural => "structural edge carrying a claim_tag",
+            DefectKind::ComparabilityUnexplained => "comparability judgement with no because",
+            DefectKind::ComparabilityOffClass => {
+                "comparability judgement pointing outside measure/"
+            }
+            DefectKind::ComparabilityContradicted => {
+                "one pair judged both comparable and not comparable"
+            }
+            DefectKind::BecauseWithoutAJudgement => "because on a non-comparability edge",
         };
         write!(f, "{s}")
     }
@@ -173,6 +235,26 @@ pub fn audit(edges: &[Edge], catalog: &[String]) -> Audit {
             }
         }
 
+        if e.is_comparability() {
+            if e.because.as_deref().map(str::trim).unwrap_or("").is_empty() {
+                a.defects.push(Defect {
+                    edge: e.clone(),
+                    kind: DefectKind::ComparabilityUnexplained,
+                });
+            }
+            if !e.resolved().starts_with("measure/") {
+                a.defects.push(Defect {
+                    edge: e.clone(),
+                    kind: DefectKind::ComparabilityOffClass,
+                });
+            }
+        } else if e.because.is_some() {
+            a.defects.push(Defect {
+                edge: e.clone(),
+                kind: DefectKind::BecauseWithoutAJudgement,
+            });
+        }
+
         let tag = e.tag().map(|t| t.to_string()).unwrap_or("—".into());
         *a.by_tag.entry(tag.clone()).or_default() += 1;
         *a.by_shape
@@ -181,6 +263,26 @@ pub fn audit(edges: &[Edge], catalog: &[String]) -> Audit {
             .entry(tag)
             .or_default() += 1;
     }
+
+    // The one check that cannot be made edge by edge. Comparability is symmetric — the corpus
+    // writes it on the later figure only, so nothing stops a second phase writing the opposite
+    // judgement from the other end, and both files would read as correct on their own.
+    let mut judged: BTreeMap<(String, String), BTreeSet<&str>> = BTreeMap::new();
+    for e in edges.iter().filter(|e| e.is_comparability()) {
+        judged
+            .entry(e.pair())
+            .or_default()
+            .insert(e.relationship.as_str());
+    }
+    for e in edges.iter().filter(|e| e.is_comparability()) {
+        if judged.get(&e.pair()).is_some_and(|r| r.len() > 1) {
+            a.defects.push(Defect {
+                edge: e.clone(),
+                kind: DefectKind::ComparabilityContradicted,
+            });
+        }
+    }
+
     a
 }
 
@@ -196,6 +298,20 @@ mod tests {
             target: "../place/x.yml".into(),
             raw_tag: tag.map(str::to_string),
             source: src.map(str::to_string),
+            because: None,
+        }
+    }
+
+    /// A comparability edge from `measure/from.yml` to a sibling measure.
+    fn cmp(from: &str, rel: &str, to: &str, because: Option<&str>) -> Edge {
+        Edge {
+            node: format!("measure/{from}.yml"),
+            class: "measure".into(),
+            relationship: rel.into(),
+            target: format!("{to}.yml"),
+            raw_tag: Some("inference".into()),
+            source: None,
+            because: because.map(str::to_string),
         }
     }
     fn catalog() -> Vec<String> {
@@ -270,6 +386,83 @@ mod tests {
         // Untagged check would report as a missing tag and a careless fix would re-add.
         let a = audit(&[e("place", "within", Some("verifed"), None)], &catalog());
         assert_eq!(a.defects[0].kind, DefectKind::UnknownTag);
+    }
+
+    #[test]
+    fn a_comparability_judgement_must_say_why() {
+        let bare = audit(&[cmp("b", "not-comparable-to", "a", None)], &catalog());
+        assert_eq!(bare.defects[0].kind, DefectKind::ComparabilityUnexplained);
+
+        // Whitespace is not a reason either.
+        let blank = audit(&[cmp("b", "comparable-to", "a", Some("  "))], &catalog());
+        assert_eq!(blank.defects[0].kind, DefectKind::ComparabilityUnexplained);
+
+        let ok = audit(
+            &[cmp(
+                "b",
+                "comparable-to",
+                "a",
+                Some("one definition, one boundary"),
+            )],
+            &catalog(),
+        );
+        assert!(ok.is_clean());
+    }
+
+    #[test]
+    fn a_comparability_judgement_points_at_another_figure_and_not_at_a_place() {
+        let mut off = cmp("b", "comparable-to", "a", Some("why"));
+        off.target = "../place/allen-county.yml".into();
+        let a = audit(&[off], &catalog());
+        assert_eq!(a.defects[0].kind, DefectKind::ComparabilityOffClass);
+    }
+
+    #[test]
+    fn because_is_not_a_general_purpose_note_field() {
+        let mut stray = e("place", "within", Some("inference"), None);
+        stray.because = Some("it just is".into());
+        let a = audit(&[stray], &catalog());
+        assert_eq!(a.defects[0].kind, DefectKind::BecauseWithoutAJudgement);
+    }
+
+    #[test]
+    fn one_pair_cannot_be_judged_both_ways_from_its_two_ends() {
+        // Each file reads as correct alone. The corpus writes the judgement on the later figure
+        // only, so nothing but this check stands between two phases and a graph that says both.
+        let a = audit(
+            &[
+                cmp("b", "comparable-to", "a", Some("same definition")),
+                cmp("a", "not-comparable-to", "b", Some("the threshold moved")),
+            ],
+            &catalog(),
+        );
+        assert_eq!(a.defects.len(), 2);
+        assert!(a
+            .defects
+            .iter()
+            .all(|d| d.kind == DefectKind::ComparabilityContradicted));
+
+        // Said twice the same way it is redundant, not contradictory.
+        let agreeing = audit(
+            &[
+                cmp("b", "comparable-to", "a", Some("same definition")),
+                cmp("a", "comparable-to", "b", Some("same definition")),
+            ],
+            &catalog(),
+        );
+        assert!(agreeing.is_clean());
+    }
+
+    #[test]
+    fn a_link_resolves_against_the_directory_it_was_written_in() {
+        assert_eq!(
+            cmp("b", "comparable-to", "a", Some("why")).resolved(),
+            "measure/a.yml"
+        );
+        assert_eq!(
+            e("measure", "describes", Some("inference"), None).resolved(),
+            "place/x.yml"
+        );
     }
 
     #[test]

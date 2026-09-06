@@ -79,5 +79,14 @@ links:
     relationship: describes
     claim_tag: verified
     source: ../../catalog/usda-census-of-agriculture.md
+  - target: allen-county-farms-1900-1910.yml
+    relationship: not-comparable-to
+    claim_tag: inference
+    because: >-
+      Both figures are labelled **farms** and both are counts of different things. In 1910 a farm
+      was land under one manager, and under three acres it had to have produced $250; in 2022 it
+      is $1,000 of products sold and no acreage rule at all. One threshold is an area with an
+      output escape and the other is output alone, so the two cross and no correction composes
+      them. Publish each beside its own definition; never their difference.
   - target: ../measure.ont.yml
     relationship: instance-of

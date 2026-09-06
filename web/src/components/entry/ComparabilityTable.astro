@@ -1,0 +1,179 @@
+---
+// Whether the figures around this one may be set beside it, and why not where they may not.
+//
+// The sharpest idea on the measure board: a break in series is *content*, not a footnote, so
+// the ruling is set in the body face with its reason running on in the same sentence, and a
+// break carries a rule down its left edge.
+//
+// **The rows are edges, not a series.** `series.json` groups measures that share a `parameter`
+// string and a subject, and that grouping is a mechanical join on two strings. A table built
+// from it would assert, in the one place designed to warn against exactly this, a continuity
+// no source supports: the corpus's own minor-civil-division series puts 56,580 in 1910 beside
+// 27,132 in 1930, and the whole of that fall is Lima leaving the table. So a row appears here
+// because somebody wrote down that two figures may or may not be set side by side, and said
+// why — and most measures have no table at all, which is the honest state. No judgement is not
+// a judgement of comparable.
+
+import Badge from './Badge.astro'
+import { comparabilityFor, type Node } from '../../lib/feeds'
+import { entryPath, resolveCorpusLink } from '../../lib/entry'
+import { inline } from '../../lib/prose'
+
+interface Props {
+  node: Node
+}
+
+const { node } = Astro.props
+const judged = comparabilityFor(node.id)
+const judgements = judged ? judged.rows.length - 1 : 0
+const breaks = judged?.rows.filter((r) => r.comparable === false).length ?? 0
+
+// The count, said as a sentence. A reader arriving at a measure should learn in one line
+// whether anything here is a warning, without counting rows.
+const summary =
+  breaks === 0
+    ? 'Every figure the corpus has judged against this one may be set beside it.'
+    : judgements === 1
+      ? 'The one figure judged against this one may not be set beside it.'
+      : breaks === judgements
+        ? `None of the ${judgements} figures judged against this one may be set beside it.`
+        : `${breaks} of the ${judgements} figures judged against this one may not be set beside it.`
+---
+
+{
+  judged && (
+    <section class="comparability">
+      <h2 class="section">Comparability</h2>
+      <p class="gloss-note">
+        {summary} Figures nobody has judged are not listed: no judgement is not a judgement of
+        comparable.
+      </p>
+      <ol class="rows">
+        {judged.rows.map((row) => (
+          <li class:list={[row.this_figure && 'is-this', row.comparable === false && 'is-break']}>
+            <span class="when">{row.as_of}</span>
+            <span class="figure-cell">
+              {row.published}
+              {row.unit && <span class="row-unit"> {row.unit}</span>}
+            </span>
+            <span class="verdict">
+              {row.this_figure ? (
+                <span class="here">This figure.</span>
+              ) : (
+                <>
+                  <span class:list={['ruling', row.comparable ? 'ok' : 'no']}>
+                    {row.comparable ? 'Comparable.' : 'Not comparable.'}
+                  </span>{' '}
+                  {/* A reason is corpus prose and is set like the rest of it. */}
+                  <span class="because" set:html={inline(row.because ?? '', resolveCorpusLink)} />
+                  <span class="row-meta">
+                    <a href={entryPath(row.node)}>{row.label}</a>
+                    {row.tier && <Badge tier={row.tier} scale="inline" />}
+                  </span>
+                </>
+              )}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<style>
+  /*
+   * A break in series is content, not a footnote, so the ruling is set in the body face and
+   * the reason runs on in the same sentence. The badge on a row is the judgement's tag and
+   * not the figure's: two verified figures can be joined by an inference, and that gap is
+   * the thing a reader of the row is being asked to weigh.
+   */
+  .comparability {
+    margin-top: var(--space-8);
+    max-width: var(--measure-prose);
+  }
+  .section {
+    margin: 0 0 var(--space-2);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+  .gloss-note {
+    margin: 0 0 var(--space-4);
+    font: var(--weight-regular) var(--size-caption) / 1.5 var(--font-serif);
+    color: var(--text-muted);
+  }
+  .rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--ink-300);
+  }
+  .rows li {
+    display: grid;
+    grid-template-columns: 104px 128px minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: baseline;
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--rule-hairline);
+  }
+  .rows li:first-child {
+    border-top: 1px solid var(--ink-300);
+  }
+  .is-break {
+    border-left: 2px solid var(--rubric-300);
+    padding-left: var(--space-4);
+  }
+  .when {
+    font: var(--type-data);
+    font-size: var(--size-label);
+    color: var(--text-faint);
+  }
+  .is-this .when {
+    color: var(--text-annotation);
+  }
+  .figure-cell {
+    font: var(--type-data);
+    font-size: var(--size-body-s);
+    color: var(--text-body);
+  }
+  .row-unit {
+    color: var(--text-faint);
+  }
+  .verdict {
+    font: var(--weight-regular) var(--size-body-s) / 1.5 var(--font-serif);
+    color: var(--text-body);
+  }
+  .here,
+  .ruling {
+    font-family: var(--font-smallcaps);
+    font-size: var(--size-label);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+  .here {
+    color: var(--text-annotation);
+  }
+  .ruling.no {
+    color: var(--text-annotation);
+  }
+  .ruling.ok {
+    color: var(--text-faint);
+  }
+  .row-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+    font: var(--type-data);
+    font-size: var(--size-micro);
+  }
+
+  @media (width < 52rem) {
+    .rows li {
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: var(--space-2) var(--space-4);
+    }
+    .verdict {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
