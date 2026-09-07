@@ -1,16 +1,27 @@
 ---
 name: FEMA Flood Insurance Study, Allen County, Ohio
 description: >-
-  The engineering report behind the county's flood maps — study number 39003CV000A, effective
-  2 May 2013. Beside the hydraulics and the discharge tables it carries a prose flood history:
-  which floods this county has had, what the water did in Lima in January 1959, why the Ottawa
-  backs up where it does, and what flood protection exists. It is the only enumerated list of this
-  county's floods in any source the corpus has found.
+  The engineering report behind the county's flood maps. This corpus read it first as study
+  39003CV000A, effective 2 May 2013, and that document has been superseded twice: the effective
+  study is 39003CV001C, revised 20 June 2024. Beside the hydraulics and the discharge tables it
+  carries a prose flood history — which floods this county has had, what the water did in Lima in
+  January 1959, why the Ottawa backs up where it does — and it is the only enumerated list of this
+  county's floods in any source the corpus has found. Its Tables 12 and 28 date every analysis the
+  effective map rests on.
 type: document
 obtained: true
-retrieved: 2026-09-06
+retrieved: 2026-09-07
 ttl_days: 1825
 location:
+  - kind: url
+    value: https://msc.fema.gov/portal/downloadProduct?productTypeID=FINAL_PRODUCT&productSubTypeID=FIS_REPORT&productID=39003CV001C
+    description: >-
+      The effective study, 3.7 MB, revised 20 June 2024. `map1.msc.fema.gov/data/39/S/PDF/` serves
+      39003CV000A and 39003CV000B and returns 404 for every 001-series name, so the current report
+      is reachable only through the portal's product endpoint. Table 12 is the summary of hydrologic
+      and hydraulic analyses, with a date-of-analyses column; Table 27 is the community map history;
+      Table 28 is the summary of contracted studies, with a work-completed column. Those two date
+      columns are what this study says about its own age.
   - kind: url
     value: https://map1.msc.fema.gov/data/39/S/PDF/39003CV000A.pdf
     description: >-
@@ -22,6 +33,7 @@ location:
 used-by:
   - ../corpus/event/the-ottawa-river-flood-of-1959.yml
   - ../corpus/event/the-flood-of-22-august-2007.yml
+  - ../corpus/measure/allen-county-flood-map-currency-2026.yml
 ---
 
 **What it is for and what it is therefore careless about.** The study exists to set base flood
@@ -56,10 +68,34 @@ lie outside every instrument record this corpus can reach.
 flood event on record in the City of Lima occurred in 2007 due to several rounds of heavy rainfall."
 No gauge in Allen County was running that year.
 
-**It says there is no flood control here, in words.** "Since levees, dams, and control works are not
-economically feasible, it is important that the proper use and development of the flood plain be
-guided by factual information… None of the dams along the different streams are used for flood
-control." The county's answer to flooding is a map, not a work.
+**It said there is no flood control here, in words, and the effective study no longer says it.**
+Section 2.4 of the 2013 report reads: "The only known flood protection measures are within the City
+of Lima… There is no established maintenance program outside the corporate limits. Since levees,
+dams, and control works are not economically feasible, it is important that the proper use and
+development of the flood plain be guided by factual information concerning the flood history and
+potential future floods. Similarly, protection against flooding is not provided along Pike Run or
+Lost Creek. None of the dams along the different streams are used for flood control (Reference 5)."
+The 2024 report has no such paragraph. In its place, Table 6 (historic flooding elevations), Table 7
+(non-levee flood protection measures) and Table 8 (levees) each read, in full,
+"[Not Applicable to this Flood Risk Project]", and §4.4 says only "This section is not applicable to
+this Flood Risk Project." [verified] — both documents, read here. **The fact survives and its reason
+does not**: a paragraph that said why there is no flood control became three empty tables that say
+there is none.
+
+**Reference 5 is a 1978 document, so the passage the corpus quotes was already thirty-five years old
+when the corpus found it.** The 2013 bibliography's fifth entry is the Flood Insurance Study for the
+City of Lima of August 1978, and the 2024 report attributes the same 1959 account and the same flood
+list to "(FEMA, 1978)" in the running text. [verified] The county's only enumerated flood list is a
+1978 sentence reprinted twice; see
+[the currency of the flood map](../corpus/measure/allen-county-flood-map-currency-2026.yml).
+
+**One more thing this study is a federal witness to.** Table 27, the community map history, carries
+"Fort Shawnee, Village of" with an initial FIRM effective 15 August 1984 and no revision date at all,
+under the footnote "This community was dissolved into Allen County, Unincorporated Areas."
+[verified] — the 2024 report. That is a fourth kind of record for a dissolution this corpus closed
+from a ballot return, and it is the only one that also notes what became of the village's map:
+nothing. Its 1984 study still draws three quarters of a mile of the effective FIRM. See
+[what happened to the Village of Fort Shawnee](../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml).
 
 **And it names why the Ottawa floods where it does.** "The area of the channel passing the stone
 quarry has been rerouted, and the capacity is inadequate for high flows. A sharp turn in the channel

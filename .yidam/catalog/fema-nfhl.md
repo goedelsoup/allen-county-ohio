@@ -30,7 +30,8 @@ location:
       are "Countywide, Not Printed", at scales of 1:6,000, 1:12,000 and 1:24,000.
 used-by:
   - ../corpus/measure/allen-county-flood-hazard-2026.yml
-  - ../corpus/measure/allen-county-flood-insurance-1978-2023.yml
+  - ../corpus/measure/allen-county-flood-map-currency-2026.yml
+  - ../corpus/place/gomer.yml
 ---
 
 **The county's map is three maps.** Thirty-seven of the 48 panels took effect on **20 June 2024**,
@@ -48,6 +49,21 @@ returns HTTP 000 and "connection reset by peer" perhaps half the time; 250 at a 
 succeeds. The failure is at the transport layer, so a client that checks only the status code of
 what it received sees nothing wrong and quietly holds a short file. [verified] — the seven pages
 taken here, three of which needed a second or third attempt.
+
+**It serves the provenance code and withholds the citation.** Every feature has a `SOURCE_CIT` —
+`39003C_FIS4`, `39003C_STUDY11` — and the service publishes thirty-two feature layers and exactly
+one table, `Study_Info`. The table that says what those codes mean, `L_SOURCE_CIT`, is not among
+them, and neither is `S_SUBMITTAL_INFO`, which dates the engineering. Both are in the county
+download; see [the FIRM database](fema-firm-database.md). A question about where a line on this map
+came from cannot be asked of this service. [verified] — the layer list, read here.
+
+**Layer 17, Profile Baselines, is the layer that says which streams were studied in detail.** Allen
+County has 76 segments running 146.56 miles inside the county, each carrying `WTR_NM`, `STUDY_TYP`
+and its own `SOURCE_CIT`. `STUDY_TYP` on this layer is not the detailed/approximate domain it sounds
+like: its values here are `SFHA with BFE and floodway` and `NP`, and `NP` means not populated rather
+than a study type of that name. `SHOWN_FIRM` likewise takes `U` for unknown, not for false — 41 of
+the 76 segments carry both, so the service records neither the study type nor the printed status for
+a seventh of the county's mapped profile mileage. [verified] — the layer, read here.
 
 **What it does not carry.** No population, no buildings, no addresses, no depth of past flooding and
 no damage. It is a statement about ground. Counting the people on that ground means overlaying it
