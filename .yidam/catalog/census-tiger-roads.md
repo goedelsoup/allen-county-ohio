@@ -44,6 +44,11 @@ used-by:
   - ../corpus/measure/allen-county-elevation-2026.yml
   - ../corpus/measure/allen-county-original-vegetation.yml
   - ../corpus/measure/allen-county-flood-hazard-2026.yml
+  - ../corpus/measure/allen-county-flood-map-currency-2026.yml
+  - ../corpus/measure/allen-county-buildings-2019.yml
+  - ../corpus/measure/allen-county-buildings-in-the-floodplain-2026.yml
+  - ../corpus/measure/miami-and-erie-canal-in-allen-county-2026.yml
+  - ../corpus/natural-feature/riley-creek.yml
 ---
 
 **What it draws, and how much of it.** Nine feature classes appear in Allen County's 2024 file. Six

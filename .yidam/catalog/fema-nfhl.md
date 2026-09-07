@@ -30,8 +30,8 @@ location:
       are "Countywide, Not Printed", at scales of 1:6,000, 1:12,000 and 1:24,000.
 used-by:
   - ../corpus/measure/allen-county-flood-hazard-2026.yml
-  - ../corpus/measure/allen-county-flood-insurance-1978-2023.yml
   - ../corpus/measure/allen-county-flood-map-currency-2026.yml
+  - ../corpus/place/gomer.yml
 ---
 
 **The county's map is three maps.** Thirty-seven of the 48 panels took effect on **20 June 2024**,
