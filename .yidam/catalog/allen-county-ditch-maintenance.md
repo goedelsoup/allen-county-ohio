@@ -28,6 +28,7 @@ location:
       These are the assessed areas, and they are nested; see below.
 used-by:
   - ../corpus/measure/allen-county-petitioned-ditches-2026.yml
+  - ../corpus/measure/allen-county-watershed-boundaries-2026.yml
   - ../corpus/measure/allen-county-stream-network-2026.yml
   - ../corpus/natural-feature/hog-creek.yml
   - ../corpus/natural-feature/little-ottawa-river.yml
