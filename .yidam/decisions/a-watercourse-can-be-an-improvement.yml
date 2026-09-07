@@ -1,0 +1,105 @@
+id: a-watercourse-can-be-an-improvement
+summary: >-
+  The Ottawa River is petition #1239 on the Allen County Engineer's permanent maintenance list,
+  and 97 per cent of its mapped course in this county lies on that petition's line. Nine of the
+  county's thirty-five named watercourses are drainage improvements under Ohio Revised Code
+  chapter 6131, and two federal hydrographies record none of it — one of them files 99 per cent of
+  the county's legal ditches under *stream*. A watercourse has a legal identity as well as a
+  physical one, the two are held by different governments, and neither file implies the other.
+context: |
+  [Allen County's stream network](../corpus/measure/allen-county-stream-network-2026.yml) closed
+  with a refusal that named its own instrument:
+
+      **This file cannot say which of these channels somebody dug.** Allen County's ground is
+      prime farmland because it was drained, and a drained county's watercourses are largely
+      ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent
+      stream, and offers no field that would separate a straightened creek from a cut one.
+
+  The refusal was right about the file and wrong about the question, which was answerable from a
+  source one county office away. The Allen County Engineer publishes every petitioned drainage
+  improvement on permanent maintenance as a live map layer: **249 lines, 169 petition numbers,
+  346.41 miles of channel inside the county.** [verified] —
+  [the ditch maintenance service](../catalog/allen-county-ditch-maintenance.md).
+
+  **The answer is not the one the refusal was braced for.** It is not that some of the intermittent
+  ditchwork is really dug. It is that the county's *rivers* are on the list.
+
+      petition #1239   Ottawa River            38.14 mi   97.3% of the river's mapped course
+      petition #1304   Warrington Sugar Creek  26.69      81.4% of Sugar Creek's
+      petition #1160   Jennings Creek          23.70      94.7%
+      petition #1150   Pike Run                12.52      95.2%
+
+  Nine named watercourses in all, carrying 42.9 per cent of the maintained network, and 89.3 per
+  cent of the 117.43 miles the flow network draws for those nine streams falls within fifty feet
+  of a petition's own line. [verified] — the service against
+  [NHDPlus High Resolution](../catalog/usgs-nhdplus-high-resolution.md), matched on geometry.
+
+  **The statute says so plainly.** ORC 6131.01(C) defines an improvement to include *"the
+  deepening, widening, or straightening or any other change in the course, location, or terminus
+  of a river, creek, or run"*. [verified] — the chapter. Ohio EPA says what it costs: the Hog Creek
+  network's channelized reaches *"are presently petitioned ditches, and as provided by Ohio law,
+  are maintained for agricultural drainage. Thus, these and other waters so classified will and
+  must serve as outlets and drainage conveyances well into the foreseeable future."* [verified] —
+  [the TMDL](../catalog/ohio-epa-ottawa-river-tmdl.md), 2013.
+
+  **The federal class that names the thing does not hold it.** Of the county's 9.99 miles of
+  flowline classed `FCode` 33600, *canal or ditch*, **0.10 miles are on a maintained ditch** — one
+  per cent — and the rest is
+  [the Miami & Erie Canal](../corpus/measure/miami-and-erie-canal-in-allen-county-2026.yml). The
+  maintained miles are filed as perennial and intermittent stream. [verified] — computed here.
+decision: |
+  **Before a watercourse is written as a natural feature, ask the drainage authority whether it is
+  also an improvement, and record the petition number if it is.**
+
+  - **Two identities, two custodians, no implication either way.** The hydrography records what a
+    channel is; the county records what was done to it, by whom, and what is owed on it in
+    perpetuity. A federal file cannot be interrogated for the second and a county file does not
+    carry the first. A node holding only one of them is not wrong, it is half-described.
+  - **Be surprised in the right direction.** The intuition is that the ditches hide among the
+    ephemeral scratches. The measurement is the reverse: **57.9 per cent of this county's perennial
+    stream miles are maintained against 27.4 per cent of its intermittent ones, and 57.2 per cent
+    of its named channel against 24.7 per cent of its unnamed.** A channel worth naming was worth
+    petitioning for. So the check is most needed exactly where it feels least needed — on the
+    rivers.
+  - **A share that comes from a buffer names its buffer.** Matching two independent digitisations
+    of the same lines is a tolerance question, and every figure of this kind in this corpus states
+    the distance and the plateau. Thirty-six point eight per cent at fifty feet, 38.3 at a hundred,
+    39.7 at two hundred: the number is real and it is not a constant.
+  - **The maintenance obligation is a fact about the future, and belongs in the node.** "Permanent
+    maintenance" is what the statute says and what the office says — since 1957, once constructed,
+    for good. A node describing a channel's condition without it describes a state; with it, a
+    commitment.
+rationale: |
+  **This is not [a linear file is not the hydrography](a-linear-file-is-not-the-hydrography.yml),
+  and it is that rule's other half.** There the Ottawa was missing from one federal *shape* of one
+  federal file and present in another, and the repair was to read both. Here the Ottawa is present,
+  correctly drawn and correctly named in every federal file the corpus holds, and the thing missing
+  is not in any of them, because no federal agency is the one that keeps it. The first rule says a
+  representation is not the thing. This one says **the set of representations you can reach from
+  one government is not the thing either.**
+
+  **The general shape is the reverse of the corpus's usual catch.**
+  [The administrative key is not the thing](the-administrative-key-is-not-the-thing.yml) records
+  seven cases of a field read as a fact about the world when it was a fact about paperwork. This is
+  a fact about paperwork that is also a fact about the world: a petition number determines what the
+  channel's cross-section is allowed to be, who pays to keep it that way, and — on Ohio EPA's own
+  reading — what it may be restored to. Discarding it as administrative would lose a physical
+  constraint. The corpus's habit of distrusting administrative fields has a matching failure mode
+  and this is it.
+
+  **Why the refusal was so nearly right.** The stream network node did not guess. It named the
+  field it would have needed, checked that the file did not have it, and stopped — which is the
+  behaviour this corpus asks for, and it left a true sentence standing that a reader would take as
+  an answer. The gap between *this file cannot say* and *this cannot be said* is one line of prose
+  and one county office, and nothing in a gate can tell them apart. See
+  [an open question that named its own method](an-open-question-that-named-its-own-method.yml) for
+  the case where naming the instrument closed the question, and
+  [a source is not exhausted by one question](a-source-is-not-exhausted-by-one-question.yml).
+
+  **What would change this rule.** A hydrographic file carrying the maintenance status of a reach —
+  a `petition_id`, or a flag distinguishing a straightened watercourse from a natural one. NHDPlus
+  has `FCode` 33600 and this county's use of it is one per cent right. Until then the second
+  identity is retrieved from the county that holds it, one county at a time, and this corpus's
+  domain is one county.
+status: accepted
+date: "2026-09-07"
