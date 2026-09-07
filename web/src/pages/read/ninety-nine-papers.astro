@@ -7,7 +7,7 @@ import DataTable from '../../components/DataTable.astro'
 import { assertion } from '../../lib/feeds'
 import { bar } from '../../lib/chart-spec'
 
-const press = assertion('ninety-nine-papers-and-one-of-them-online')
+const press = assertion('ninety-nine-papers-and-two-of-them-online')
 
 const pressSpec = bar(
   press.figures.map((f) => f.label),
@@ -31,14 +31,17 @@ const limaNewsLineage = [
 <Article slug="ninety-nine-papers">
   <AssertionCard assertion={press} />
   <p>
-      One Allen County newspaper is digitized — the Bluffton weekly, the only one the Library of
-      Congress holds — and no Lima paper is in the archive. That is true, and it was long stated
-      without a denominator. Ninety-nine newspapers have been printed in this county. Sixty-six of
-      them in Lima.
+      Ninety-nine newspapers have been printed in this county, sixty-six of them in Lima, and two
+      of the ninety-nine are digitized. One is the Bluffton weekly, the only Allen County title the
+      Library of Congress holds. The other is a Lima paper — 810 issues of
+      <em>The Times-Democrat</em>, 2 November 1900 to 1 March 1912, on Ohio Memory. It is not the
+      daily of that name: 405 of the 810 fall on a Friday and 404 on a Tuesday, and 1903, 1904 and
+      1908 are missing altogether.
     </p>
     <Gloss>
       For six phases the Bluffton weekly was the only paper read here, and the absence of a Lima
-      paper was reported each time without a count of what was missing.
+      paper was reported each time — twice without naming the archive it was absent from. The
+      second archive was never searched until it was.
     </Gloss>
   <ChartFigure
     id="county-papers"

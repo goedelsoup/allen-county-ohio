@@ -2516,10 +2516,11 @@ pub const ASSERTIONS: &[Assertion] = &[
         ],
     },
     Assertion {
-        id: "ninety-nine-papers-and-one-of-them-online",
-        statement: "Ninety-nine newspapers have been printed in Allen County and one of them is \
-                    digitized. Forty-three have no library reporting a copy. This site read the \
-                    one for six phases and called the other ninety-eight the county's press.",
+        id: "ninety-nine-papers-and-two-of-them-online",
+        statement: "Ninety-nine newspapers have been printed in Allen County and two of them are \
+                    digitized, in two different archives. Forty-three have no library reporting a \
+                    copy. This site read one paper for six phases, said no Lima paper was online, \
+                    and had searched a single archive.",
         topic: "history",
         supports: &[
             support!(
@@ -2528,7 +2529,11 @@ pub const ASSERTIONS: &[Assertion] = &[
             ),
             support!(
                 "measure/allen-county-newspapers-1843-2026.yml",
-                "**One of the ninety-nine is digitized.**"
+                "**Two of the ninety-nine are digitized, and they are in different archives.**"
+            ),
+            support!(
+                "measure/allen-county-newspapers-1843-2026.yml",
+                "**The second is a Lima paper, and this node said for six phases that there was none.**"
             ),
             support!(
                 "measure/allen-county-newspapers-1843-2026.yml",

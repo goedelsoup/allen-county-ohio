@@ -1196,10 +1196,10 @@ export const ARTICLES: Article[] = [
   {
     slug: 'ninety-nine-papers',
     title: 'Ninety-nine papers',
-    dek: 'Ninety-nine newspapers have been printed in Allen County. One is digitized, and forty-three have no library reporting a copy.',
+    dek: 'Ninety-nine newspapers have been printed in Allen County. Two are digitized — in two different archives — and forty-three have no library reporting a copy.',
     section: 'history',
     era: [1843, 2026],
-    assertions: ['ninety-nine-papers-and-one-of-them-online'],
+    assertions: ['ninety-nine-papers-and-two-of-them-online'],
     entries: [
       'organization/the-lima-news.yml',
       'organization/the-lima-argus.yml',
