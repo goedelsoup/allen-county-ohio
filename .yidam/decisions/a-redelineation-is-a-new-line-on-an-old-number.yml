@@ -1,0 +1,78 @@
+id: a-redelineation-is-a-new-line-on-an-old-number
+summary: >-
+  Seventy-three per cent of this county's mapped floodplain was redrawn in 2018 on new LiDAR
+  without recomputing the water under it, and the map carrying it took effect in 2024. A derived
+  boundary has two vintages — the model that produced the value, and the surface the value was
+  draped on — and refreshing the second is the cheap half. FEMA labels the difference in a column
+  called METHOD_TYP, in a table its own map service does not publish. Where a corpus quotes a
+  boundary, it dates the number and not the drawing.
+context: |
+  Allen County's flood map became effective on 20 June 2024. Nothing in it was computed after
+  15 October 2018, and the median mapped mile's hydraulic analysis was finished on 1 January 2010.
+  [verified] — [the effective study](../catalog/fema-flood-insurance-study.md), Table 12 and
+  Table 28, forty rows each and agreeing on every date; see
+  [the age of the engineering](../corpus/measure/allen-county-flood-map-currency-2026.yml).
+
+  What happened in between is named in the FIRM database and nowhere on the map:
+
+      method type      acres of the SFHA   per cent   what was new
+      REDELINEATION           11,420         73.1     terrain
+      (1989 study)             2,902         18.6     nothing
+      New H and H                888          5.7     hydrology and hydraulics
+      (2010 study)               412          2.6     nothing
+
+  [verified] — [the FIRM database](../catalog/fema-firm-database.md), `S_FLD_HAZ_AR` joined to
+  `S_SUBMITTAL_INFO`. The eleven redelineation rows carry `HYDRA_MDL` values of
+  `HEC-2 4.6.2 (May 1991)`, `TR-20 Win (Feb 1992)` and `TR-20 Win 1.00 (Jan 2005)`: the programs
+  whose old water-surface elevations were redrawn on 2016 LiDAR. The report says it in prose as
+  well, twenty-two times — "This stream was redelineated by COMPASS in 2018" — beside a
+  date-of-analyses column reading 9/1/2010.
+
+  **The redelineation is real work and it is not the work the date implies.** Better terrain moves
+  a floodplain boundary a long way, and every acre in that first row is honestly redrawn. What it is
+  not is a new answer to the question the map exists to answer, which is how high the water goes.
+decision: |
+  **Where the corpus takes a boundary from a model, it states the date of the model and the date of
+  the surface separately, and dates the claim by the model.**
+
+  - **Find the method field before quoting the map.** FEMA calls it `METHOD_TYP`, with
+    `REDELINEATION` against `New H&H`. Other producers call it something else and most have one.
+    Its absence is a finding: a boundary product with no such field cannot say which half of it was
+    refreshed, and the corpus says so rather than assuming both were.
+  - **An effective date is a date of force, not a date of knowledge.** "The 2024 flood map" is a
+    correct name for the instrument and a wrong date for the water. Write the effective date where
+    the claim is regulatory — what a lender may require, what a community must enforce — and the
+    analysis date where the claim is physical.
+  - **A redrawn line is not a second witness to the old line.** The 2024 boundary and the 2013
+    boundary are two renderings of one set of elevations, so their agreement is evidence about the
+    terrain data and not about the flood. See
+    [an exact match is a question](an-exact-match-is-a-question.yml).
+  - **Print the oldest component, not just the newest.** A study whose newest work is 2018 and whose
+    oldest is 1977 is not a 2018 study. This county's map carries both, and 44 per cent of its
+    profile mileage rests on analyses of 2002 or earlier.
+rationale: |
+  **This is the neighbour of [a file has more than one date](a-file-has-more-than-one-date.yml) and
+  not a second case of it.** That rule is about reading a file's date columns before setting `as_of`
+  — a traffic count of 2015 in a 2025 edition, where both dates are printed side by side on the same
+  row and the failure is not looking. This one is about a value and its rendering having different
+  ages, where the rendering is what the reader sees, the value is in a different document, and the
+  producer's own map service does not publish the table that connects them. Nothing on a FIRM panel
+  says when its water was computed.
+
+  **The failure it prevents is one this corpus nearly published.** The work item that opened this
+  phase proposed to record that thirty-seven panels effective 20 June 2024 ride hydraulics of
+  15 October 2018. That is true of the newest engineering in the study and false of most of the
+  map: the 2018 work covers 10.55 of 146.56 mapped miles, and the sentence would have made a
+  fourteen-year-old median look like a six-year-old one.
+
+  **And it generalises past flood maps.** Any isopleth, contour, service area, catchment or risk
+  zone is a value draped on a surface, and the two are refreshed on different budgets because
+  terrain is cheap and modelling is not. The asymmetry is structural, so the answer is a habit
+  rather than a check: ask what was recomputed, not what was reissued.
+
+  **What would change this rule.** A producer that stamps each rendered boundary with the date of
+  the analysis behind it, on the artifact a reader actually holds. FEMA has the field and puts it
+  in a download; the panel, the map service and the popup on the public viewer all show the
+  effective date alone.
+status: accepted
+date: "2026-09-07"
