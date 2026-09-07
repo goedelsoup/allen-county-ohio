@@ -1,61 +1,92 @@
 class: event
 label: The tornado of 11 April 1965
 description: |
-  **The deadliest thing that has happened in Allen County in the corpus's whole weather record, and
-  the only thing in it that has killed anybody.** An F4 tornado, 17.8 miles of track, 400 yards at
-  its widest, **eleven dead and a hundred injured**, $2.5 million of property damage. [verified] —
-  [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10083979.
+  **It killed thirteen people and eleven of them died in Allen County.** [verified] —
+  [the Storm Prediction Center](../../catalog/spc-tornado-database.md), tornado `om` 166, whose
+  `ns`/`sn`/`sg` triple marks it the entire record for the track, against
+  [Storm Events](../../catalog/noaa-storm-events.md) event 10083979. **This node used to say it
+  killed eleven**, because eleven is what the county row holds; the other two are on a Hancock
+  County row that begins on the coordinate where this one ends. See
+  [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).
 
-  **It crossed the north of the county diagonally, from Elida to Bluffton.** The file starts it at
-  40.80, −84.20, nine-tenths of a mile from [Elida](../place/elida.yml), and ends it at 40.87,
-  −83.87, 1.8 miles from [Bluffton](../place/bluffton.yml). Those endpoints are 17.92 miles apart
-  against a stated track of 17.8, so the track and the coordinates are the same tornado.
-  [inference] — computed here from the same source. It passed north of
-  [Lima](../place/lima.yml).
+  **What it struck was farms, and the Weather Bureau wrote it down at the time.** "It first touched
+  down at 9:30 PM 6 miles north-northwest of Lima and west of Cairo. It traveled eastward for a
+  distance of 25 miles to a point one mile north of Jenera demolishing farm houses, barns, and other
+  buildings. Two people were killed near Cairo, at least 5 in the vicinity of Bluffton, and the
+  remaining 5 at other points along the path." [verified] —
+  [*Storm Data*, April 1965](../../catalog/noaa-storm-data-publication.md), Ohio section, filed
+  under the place name **Bluffton**. **That closes what this node had open since it was written**,
+  and the answer was in a scanned book with no text layer that nothing could have found by
+  searching.
 
-  **This is the storm the corpus said it did not hold.**
-  [The declaration of April 1965](the-tornadoes-of-april-1965.yml) asked four questions — the
-  storm's date, its track, whether it touched ground in this county at all, and what it destroyed —
-  and answered none. The first three are answered above. **The declaration came three days after
-  the tornado**, on 14 April, and the declaration file recorded the incident as beginning and
-  ending on the day it was signed. [verified] — same source and
-  [OpenFEMA](../../catalog/fema-disaster-declarations.md).
+  **Nobody here saw it.** Five days later an aircraft flew the damage, and the survey that came of
+  it says: "With a path width varying between ¼ and ½ mi, the tornado left typical explosive damage
+  to structures and wind-blown debris. **No funnel was sighted by local residents because of
+  darkness. The last damage was spotted northeast of Houcktown, Ohio.**" [verified] —
+  [Fujita, Bradbury and Van Thullenar](../../catalog/palm-sunday-1965-reports.md), 1970, page 42.
+  **Which settles the endpoint the files disagree about**: the book stops the track one mile north
+  of Jenera at 25 miles, the databases carry it 32.5 miles to a point 1.1 miles from Houcktown, and
+  the aeroplane found damage there. The book is seven miles short. [inference] — computed here
+  against [GNIS](../../catalog/gnis-domestic-names-ohio.md).
 
-  **The corpus looked for it in the wrong instrument.** That node named a newspaper of that week as
-  the source that would answer, and observed that this catalog holds none reaching 1965. The answer
-  was in a federal weather database that had been publishing it since before the corpus existed.
-  [inference]
+  **It was the fourth of six tornadoes from one storm.** Fujita calls it **L-4** of tornado family
+  L — six tornadoes off one parent echo covering "a total distance of 274 mi in 4 hr 23 min,
+  maintaining an amazingly constant speed of 62.5 mi hr⁻¹", from Indiana to Cleveland. [verified] —
+  the same source. That day put 45 tornadoes into seven states, 260 dead and 3,441 injured, and it
+  is the third-deadliest day in the country's whole tornado record, behind 27 April 2011 and 3
+  April 1974. [verified] — [the SPC database](../../catalog/spc-tornado-database.md), counted here;
+  see [the Ohio tornadoes](../measure/ohio-tornadoes-of-11-april-1965.yml). **That answers the third
+  thing this node did not know.**
 
-  **Eleven people were killed and the file holds nothing else about them.** The companion fatality
-  file, which carries an age, a sex and a location for each death, has seventeen rows for the whole
-  United States in 1965 and not one of them belongs to this event. [verified] — same source. **A
-  count of eleven is the entire record.**
+  **The deaths fall where the county line does.** [Bluffton](../place/bluffton.yml) straddles the
+  Allen–Hancock line, and the publication puts at least five of the thirteen "in the vicinity of
+  Bluffton" — on the seam of the eleven-and-two the two county rows record. Its three groups do not
+  partition on that line and were never meant to. [inference] **The first federal record of any of
+  them says three or four.** The Columbus forecast office, at 1:00 a.m., three and a half hours
+  after: "3 or 4 fatalities have been reported in Cairo which lies just north of Lima Ohio."
+  [verified] — [the survey team's report](../../catalog/palm-sunday-1965-reports.md), Annex 2.
 
-  **Its clock is stamped Central for a county on Eastern time.** The row reads 20:30 with
-  `CZ_TIMEZONE` = CST, as does every row here from 1950 to 1991. If the stamp means what it says,
-  the local clock read 21:30. [inference] — same source.
+  **The clock question is settled and the corpus had it right.** The row reads 20:30 with
+  `CZ_TIMEZONE` = CST for a county on Eastern time; this node inferred a local 21:30, and the
+  publication says 9:30 PM under a column headed TIME — LOCAL STANDARD. [verified] — the same source.
 
-  [open] What it struck, and where the eleven died. There is no narrative — narratives begin in
-  1996 — and no place name below the county. Whether this was one tornado of a larger outbreak that
-  day is not established by anything in this catalog either.
+  **And its damage figure was never a figure.** The file's `$2.5M` is damage category 6 — **$500,000
+  to $5,000,000** — one of nine steps the publication prints in a footnote and the SPC file still
+  carries as `6.0`. [verified] — both catalog entries; see
+  [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml).
+
+  [open] Who the thirteen were. No name, age or sex survives in anything this corpus has reached:
+  the 1965 fatality file holds seventeen rows for the whole United States, every one blank in age,
+  sex and location, and none of them this event's, against 301 direct deaths the detail file records
+  for that year. [verified] — [Storm Events](../../catalog/noaa-storm-events.md), counted here. No
+  Lima newspaper of that week is digitized; see
+  [the archive](../../catalog/chronicling-america.md).
 properties:
   occurred: 1965-04-11
   event_type: tornado
   location_description: |
-    A 17.8-mile track from 40.80, −84.20 to 40.87, −83.87, 400 yards at its widest, running
-    west-north-west to east across the northern half of the county from Elida to Bluffton.
-    [verified] — the same source.
+    Touching down at 9:30 p.m. six miles north-west of Lima and west of Cairo, then east-north-east
+    across the north of the county past Bluffton and out of it into Hancock County. The county row
+    gives 40.80, −84.20 to 40.87, −83.87 and 17.8 miles; the whole tornado ran 32.5 miles by the
+    tornado file and 25 by the publication, and the aerial survey put its last damage north-east of
+    Houcktown. [verified] —
+    [*Storm Data*](../../catalog/noaa-storm-data-publication.md),
+    [the SPC database](../../catalog/spc-tornado-database.md),
+    [Storm Events](../../catalog/noaa-storm-events.md) and
+    [Fujita et al.](../../catalog/palm-sunday-1965-reports.md).
   track: "40.80, -84.20; 40.87, -83.87"
 links:
   - target: ../place/allen-county.yml
     relationship: occurred-in
     claim_tag: verified
     source: ../../catalog/noaa-storm-events.md
-  - target: ../place/elida.yml
+  - target: ../place/cairo.yml
     relationship: affected
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-data-publication.md
   - target: ../place/bluffton.yml
     relationship: affected
-    claim_tag: inference
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-data-publication.md
   - target: ../event.ont.yml
     relationship: instance-of
