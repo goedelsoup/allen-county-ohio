@@ -1,0 +1,80 @@
+id: a-county-row-is-a-share-of-a-storm
+summary: >-
+  The deadliest thing in this county's record is described by a row that is not about the whole
+  thing that happened. Eleven dead is Allen County's share of thirteen; 17.8 miles is Allen County's
+  share of 32.5; the rest is a Hancock County row that begins on the coordinate where this one ends
+  and says nowhere that they are one tornado. Five of the six tornadoes that crossed this county's
+  line are split like that and the sixth is not, and nothing on a row says which it is. So a county
+  row's scope is a retrieval, never an inference from its shape.
+context: |
+  The corpus wrote the tornado of 11 April 1965 out of one row and believed the row was the storm.
+  It said so carefully: "Those endpoints are 17.92 miles apart against a stated track of 17.8, so
+  the track and the coordinates are the same tornado." The arithmetic was right and the conclusion
+  was wrong, because the coordinates were clipped at the county line with the track.
+
+      what happened on 11 April 1965        killed  injured   miles
+      Storm Events, ALLEN 10083979              11      100    17.8
+      Storm Events, HANCOCK 10083981             2        4    14.7
+      SPC, om 166, the whole tornado            13      104    32.5
+      Storm Data, April 1965, "Bluffton"        13   Scores      25
+
+  [verified] — [Storm Events](../catalog/noaa-storm-events.md),
+  [the SPC database](../catalog/spc-tornado-database.md) and
+  [the publication](../catalog/noaa-storm-data-publication.md). The Hancock row begins at
+  40.87, −83.87, which is where the Allen row ends. The two counties' deaths, injuries, miles and
+  damage sum to the SPC row exactly. Nothing in either row points at the other.
+
+  **Splitting is the file's habit and not its rule.** Six of this county's twenty-three tornadoes
+  crossed a county line, and five of the six are chained: an adjacent county's row ends on the exact
+  coordinate where Allen's begins, or begins where Allen's ends, and the pair's `TOR_LENGTH` values
+  sum to the SPC tornado's — 1965 with Hancock, 1981 with Van Wert, 2010 with Auglaize, 2011 with
+  Van Wert, 2021 with Van Wert. The sixth is 2 June 1971, where an F3 ran 31.5 miles from north of
+  Bluffton across Allen, Hancock and Wyandot and Storm Events holds the whole of it on the Allen row
+  with no sibling anywhere in the file. [verified] — the same two sources, chained here on
+  coordinates. So the corpus's existing observation — that `TOR_LENGTH` "is the length of the
+  tornado, not the length of it that was in this county" — describes one row in six, and **no
+  property of any row says which regime it is in.**
+decision: |
+  **Before a county row is written as an event, ask what else the storm has, and say whether the
+  figures are the county's share or the storm's total.**
+
+  - **The check is two retrievals and neither is optional.** Search the same file, the same date and
+    the adjoining counties for a row whose begin coordinate is this row's end. Then read the SPC
+    row for the same tornado, whose `ns`/`sn`/`sg` triple states in the file's own vocabulary
+    whether the record is the entire track.
+  - **Print both numbers and label them.** "Eleven of the thirteen it killed died in this county" is
+    a sentence the corpus can defend. "It killed eleven" is one it cannot, and it is what this
+    corpus published.
+  - **A share is not smaller evidence, it is different evidence.** The Allen County figure is the
+    right one for a question about this county and the wrong one for a question about the storm.
+    See [a declaration is a ratio not a sum](a-declaration-is-a-ratio-not-a-sum.yml), where the
+    label was the county's and the denominator was somebody else's.
+  - **Where the storm crossed the line, the neighbouring county belongs in the node.** Not as a
+    subject — this corpus is about Allen County — but as the reason its own figures stop where they
+    do. See [located here is not of here](located-here-is-not-of-here.yml).
+rationale: |
+  **This is not [an extent is not a track](an-extent-is-not-a-track.yml) and it is that rule's
+  neighbour.** That one governs how many *positions* a moving event may claim, and answered it from
+  the locations file: two, because that file holds no third. This one governs how much of the
+  *event* a row is about, which the locations file cannot answer at all, because it is keyed on the
+  same county-clipped `EVENT_ID`. A corpus can have a perfectly honest track and still be describing
+  half a storm.
+
+  **The reason the error was invisible is that the row was internally consistent.** Its stated
+  length matched its own coordinates to a tenth of a mile. Every check the corpus could run against
+  the row itself passed, and the only thing that would have caught it was a question about a county
+  the corpus is not about. That is the general shape of the failure: **a file partitioned by the
+  thing you are studying will always look complete from inside your partition.**
+
+  **The publication settles which number is the storm's, and disagrees with both files about a third
+  one.** *Storm Data* files the whole tornado once, under Bluffton, at thirteen killed — so the
+  thirteen is not a modern reconstruction — and gives the path as 25 miles ending one mile north of
+  Jenera, where both databases carry it 32.5 miles to a point 7.5 miles further east. The corpus
+  therefore holds three path lengths and one death toll, and says so rather than choosing.
+
+  **What would change this rule.** A column in the Storm Events Database that names the storm a row
+  belongs to. There is one — `TOR_OTHER_CZ_NAME`, with a state and a forecast office beside it — and
+  it is empty on all twenty-three of this county's tornado rows, in every year from 1950 to 2023.
+  [verified] — the bulk detail files, read here.
+status: accepted
+date: "2026-09-06"
