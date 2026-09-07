@@ -10,6 +10,21 @@ description: |
   The other is 2007. [verified] — same source; see
   [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).
 
+  **Three states were declared that afternoon, one after another.** DR-189-IN for seventeen Indiana
+  counties, DR-190-MI for sixteen in Michigan, DR-191-OH for fifteen in Ohio — the same date, the
+  same title, and request numbers 65015, 65016 and 65017. [verified] — the same source, queried
+  here. **That is the outbreak, established from the aid file rather than the weather file**, and
+  it is the second answer to a question this node could not answer at all; see
+  [the tornado](the-tornado-of-11-april-1965.yml).
+
+  **Its fifteen counties are not the storm's counties.** Five that carry a tornado row for 11–12
+  April — Preble, Union, Greene, Fairfield and Perry — were never named, and one that was, Highland,
+  had its tornado on **8 April**, three days before Palm Sunday and six before the signature.
+  [verified] — the same source against
+  [*Storm Data*](../../catalog/noaa-storm-data-publication.md), whose Hillsboro entry is that
+  tornado. So the declaration is not a map of the outbreak: it is a list of places that asked and
+  qualified, and it covers more than one day of weather while recording none of them.
+
   **The date is the declaration's, and the storm's is not in this file.** The record gives an
   incident beginning and ending on 14 April 1965, which is also the day the declaration was signed
   and the day the request was made. A tornado outbreak severe enough to bring federal aid to
@@ -17,39 +32,50 @@ description: |
   the 1978 blizzard. [inference] — see
   [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
 
-  **So the corpus dates the declaration and not the weather.** `occurred` below is 14 April 1965
-  because that is what the source establishes: a presidential act naming this county. What the sky
-  did, and when, is not held here. [inference]
+  **A second file now shows when those dates were typed.** FEMA's declaration-areas table breaks
+  Allen County's two flags into twelve programme designations — Disaster Housing, Individual
+  Assistance, Individual & Family Grant, Public Assistance and its seven categories, and **Disaster
+  Unemployment Assistance** — every one of them dated 14 April 1965 and every one entered on
+  **25 July 1993**. Disaster Unemployment Assistance was created by section 240 of the Disaster
+  Relief Act of 1970, five years after the day it is recorded as being designated on. [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md), `FemaWebDeclarationAreas`, queried here.
+  **The grid was built backwards from the declaration date, and it says so by containing a
+  programme that did not exist.** So `occurred` below stays 14 April 1965: what this source
+  establishes is a presidential act naming this county, not a day of weather. [inference]
 
   **Three of those four questions are now answered, and not by a newspaper.** The storm was an F4
-  tornado on **11 April 1965**, three days before this declaration; it ran 17.8 miles from Elida to
-  Bluffton; it killed eleven people and injured a hundred. [verified] —
-  [the Storm Events Database](../../catalog/noaa-storm-events.md); see
-  [the tornado](the-tornado-of-11-april-1965.yml). **It touched ground in this county and it is the
-  only weather that has ever killed anybody here.** [verified] — same source.
+  tornado on **11 April 1965**, three days before this declaration; it ran east across the north of
+  the county from six miles north-north-west of Lima to Bluffton and on into Hancock County,
+  demolishing farm houses and barns; it killed thirteen people, eleven of them here, and injured a
+  hundred. Two died near Cairo and at least five near Bluffton. [verified] —
+  [*Storm Data*, April 1965](../../catalog/noaa-storm-data-publication.md) and
+  [Storm Events](../../catalog/noaa-storm-events.md); see
+  [the tornado](the-tornado-of-11-april-1965.yml). **That closes what this node had open.**
 
-  **That confirms what this node inferred about its own dates.** The tornado is three days outside
-  an incident window one day long, and that one day is the declaration date. The field was filled
-  with the declaration date, as this node said it was. [inference]
+  **This node named the wrong instrument twice.** It said a newspaper of that week would answer all
+  four questions; the answer was in a federal weather database. Then it said that database had no
+  narrative before 1996; the narrative was in the book the database was made from. [inference]
 
-  **This node named the wrong instrument.** It said a newspaper of that week would answer all four
-  questions and that this catalog held none reaching 1965. The answer was in a federal weather
-  database, published continuously since before this corpus existed and never asked. [inference]
-
-  [open] What it destroyed, and where the eleven died. The weather file gives no narrative before
-  1996 and no place name below the county, and its companion fatality file — which carries an age
-  and a location per death — holds seventeen rows for the whole United States in 1965 and none of
-  them is this event's. [verified] — same source.
+  [open] What it paid for. The declaration closed out on 24 March 1967, and no dollar figure for it
+  survives in any OpenFEMA dataset — the financial files do not reach back this far. [verified] —
+  the same source. What exists is an appropriation: Public Law 89-16 of 30 April 1965 added
+  $35,000,000 to disaster relief, of which the President said $10 million covered "the tornado and
+  flood disasters recently suffered by our fellow citizens of the Midwest".
 properties:
   occurred: 1965-04-14
   event_type: disaster declaration
   location_description: |
-    Allen County, as the declaration's `designatedArea` names it. The declaration is county-wide and
-    says nothing about where within the county anything happened. [verified] — the same source.
+    Allen County, as the declaration's `designatedArea` names it, one of fifteen Ohio counties. The
+    declaration is county-wide and says nothing about where within the county anything happened.
+    [verified] — the same source.
 links:
   - target: ../place/allen-county.yml
     relationship: affected
     claim_tag: verified
     source: ../../catalog/fema-disaster-declarations.md
+  - target: the-tornado-of-11-april-1965.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-data-publication.md
   - target: ../event.ont.yml
     relationship: instance-of
