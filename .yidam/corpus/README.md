@@ -324,7 +324,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-shortage-designations-1985-2026.yml](measure/allen-county-shortage-designations-1985-2026.yml) | measure | Allen County's health professional shortage designations, 1985–2026 | 6 | 13v / 3i / 1o | 116 |
 | [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 6 | 8v / 3i / 0o | 102 |
 | [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
-| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 13v / 3i / 1o | 104 |
+| [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 13v / 3i / 1o | 106 |
 | [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
 | [allen-county-subdivisions-1960-1970.yml](measure/allen-county-subdivisions-1960-1970.yml) | measure | Allen County subdivisions, 1960 and 1970 | 5 | 7v / 2i / 1o | 115 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
