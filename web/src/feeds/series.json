@@ -1732,6 +1732,26 @@
       ]
     },
     {
+      "id": "place-allen-county::days-between-the-newest-analysis-in-the-effective-flood-map-and-its-effective-date",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "days between the newest analysis in the effective flood map and its effective date",
+      "unit": "days",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-flood-map-currency-2026.yml",
+          "label": "The age of the engineering under Allen County's flood map, 2026",
+          "as_of": "2026",
+          "value": 2075.0,
+          "published": "2075",
+          "tier": "verified",
+          "source": "catalog/fema-firm-database.md",
+          "method": "The effective date is `EFF_DATE` on the thirty-seven 2024 panels of layer 3 of the National Flood Hazard Layer, and the title page of study 39003CV001C. [verified] The newest analysis is the maximum of Table 12's date-of-analyses column and Table 28's work-completed column in that study, which hold the same forty dates. [verified] Profile-baseline mileage is layer 17 for `DFIRM_ID='39003C'`, taken twice — from the ArcGIS service as GeoJSON and from the county shapefile download — and both routes give 146.56 miles clipped to the 2024 TIGER county polygon at full precision in EPSG:26916; the vendored county polygon gives the same to two decimals. [verified] Acreage is `S_FLD_HAZ_AR` where `SFHA_TF='T'`, intersected with the county and summed by `SOURCE_CIT`; the union is 15,621.9 acres, which reproduces the 15,622 this corpus already held by a different route. [verified] The overlay share buffers the unioned flow network and measures the length of profile baseline inside it, rather than dividing one source's numerator by another's denominator. [verified] Dating a segment by the study it cites is exact; mapping that study to an analysis date uses the report's own Table 28, and for the 1989 unincorporated study that mapping is one-to-many — its segments carry 1979, 1987 and 1990 dates and the table below carries `NA` rather than choosing. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::deaths-in-crashes-at-highway-rail-grade-crossings",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -40010,6 +40030,104 @@
         ]
       ],
       "tier": "inference"
+    },
+    {
+      "node": "measure/allen-county-flood-map-currency-2026.yml",
+      "label": "The age of the engineering under Allen County's flood map, 2026",
+      "columns": [
+        "study",
+        "miles",
+        "analyses_completed",
+        "source_published",
+        "contractor"
+      ],
+      "rows": [
+        [
+          "USGS-Allen-County-flood-profiles",
+          "57.45",
+          "2010-09-01",
+          "2010-09-01",
+          "USGS"
+        ],
+        [
+          "NRCS-Ottawa-River-and-tributaries",
+          "50.48",
+          "2002-12-01",
+          "2010-07-01",
+          "NRCS"
+        ],
+        [
+          "COMPASS-new-detailed-study",
+          "10.55",
+          "2018-10-15",
+          "2018-09-30",
+          "COMPASS"
+        ],
+        [
+          "FIS-Allen-County-unincorporated-areas",
+          "10.52",
+          "NA",
+          "1989-11-15",
+          "NA"
+        ],
+        [
+          "Hull-and-Associates-Little-Riley-Creek",
+          "10.04",
+          "2010-01-01",
+          "2010-01-01",
+          "Hull-and-Associates"
+        ],
+        [
+          "FIS-City-of-Lima",
+          "2.12",
+          "1977-10-01",
+          "1978-08-15",
+          "USACE-Detroit-District"
+        ],
+        [
+          "Kohli-and-Kaliher-Dug-Run-and-Pike-Run",
+          "1.66",
+          "2010-07-01",
+          "2010-07-01",
+          "Kohli-and-Kaliher"
+        ],
+        [
+          "LOMR-05-05-0634P",
+          "1.10",
+          "2007-03-08",
+          "2007-03-08",
+          "NA"
+        ],
+        [
+          "LOMR-97-05-051P",
+          "1.02",
+          "1997-01-21",
+          "1997-01-21",
+          "NA"
+        ],
+        [
+          "LOMR-03-05-0444P",
+          "0.88",
+          "2004-03-29",
+          "2004-03-29",
+          "NA"
+        ],
+        [
+          "FIS-Village-of-Fort-Shawnee",
+          "0.75",
+          "1979-04-01",
+          "1984-02-15",
+          "USDA-Soil-Conservation-Service"
+        ],
+        [
+          "STARR-Auglaize-watershed",
+          "0.00",
+          "2016-09-30",
+          "2016-09-30",
+          "STARR"
+        ]
+      ],
+      "tier": "verified"
     },
     {
       "node": "measure/allen-county-household-income-1989-2024.yml",
