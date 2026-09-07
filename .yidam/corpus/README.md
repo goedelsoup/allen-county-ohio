@@ -178,8 +178,9 @@ Sorted by: kind, then alphabetically.
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
 | [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
 | [allen-county-findings-for-recovery-1999-2026.yml](measure/allen-county-findings-for-recovery-1999-2026.yml) | measure | Findings for recovery against Allen County public bodies, 1999–2026 | 4 | 9v / 1i / 1o | 82 |
-| [allen-county-flood-hazard-2026.yml](measure/allen-county-flood-hazard-2026.yml) | measure | The mapped floodplain of Allen County, 2026 | 6 | 9v / 4i / 0o | 119 |
+| [allen-county-flood-hazard-2026.yml](measure/allen-county-flood-hazard-2026.yml) | measure | The mapped floodplain of Allen County, 2026 | 7 | 10v / 4i / 0o | 129 |
 | [allen-county-flood-insurance-1978-2023.yml](measure/allen-county-flood-insurance-1978-2023.yml) | measure | Flood insurance claims in Allen County, 1978–2023 | 7 | 13v / 6i / 0o | 117 |
+| [allen-county-flood-map-currency-2026.yml](measure/allen-county-flood-map-currency-2026.yml) | measure | The age of the engineering under Allen County's flood map, 2026 | 5 | 13v / 1i / 1o | 124 |
 | [allen-county-foreclosures-and-evictions-2007-2017.yml](measure/allen-county-foreclosures-and-evictions-2007-2017.yml) | measure | Allen County foreclosures and evictions, 2007–2017 | 5 | 8v / 2i / 1o | 84 |
 | [allen-county-foreign-born-1920.yml](measure/allen-county-foreign-born-1920.yml) | measure | Allen County's foreign-born, 1920 | 2 | 7v / 4i / 1o | 77 |
 | [allen-county-foreign-born-1930-1950.yml](measure/allen-county-foreign-born-1930-1950.yml) | measure | Allen County's foreign-born, 1930–1950 | 4 | 9v / 4i / 1o | 103 |
