@@ -15498,18 +15498,20 @@ pub const ASSERTIONS: &[Assertion] = &[
         figures: &[],
     },
     Assertion {
-        id: "a-million-dollars-apart",
-        statement: "The county's weekly called the 1950 Lima tornado a one-and-a-half-million-dollar \
-                    storm. The federal compilation puts its property damage at $2,500,000.",
+        id: "the-million-dollars-that-were-not-apart",
+        statement: "The Bluffton News called the 1950 Lima tornado a one-and-a-half-million-dollar \
+                    storm, and the federal file recorded damage category 6 \u{2014} $500,000 to \
+                    $5,000,000. The paper's figure is inside the file's band, and this corpus \
+                    published the two as a million-dollar disagreement.",
         topic: "history",
         supports: &[
-            support!("event/the-tornado-of-19-july-1950.yml", "**And it puts the damage at $1,500,000 where the file puts it at $2,500,000.** The paper calls it \"a one and one-half-million dollar tornado\". [verified] \u{2014} the same source. A contemporaneous local figure and a later national compilation, a million apart, and this node holds both; see [an instrument dates it and a witness describes it](../../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml)."),
-            support!("event/the-tornado-of-19-july-1950.yml", "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody and did an estimated $2.5 million of property damage. [verified] \u{2014} [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10086810."),
+            support!("event/the-tornado-of-19-july-1950.yml", "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody, and did damage recorded in the sixth of nine bands \u{2014} **$500,000 to $5,000,000**. [verified] \u{2014} [the SPC database](../../catalog/spc-tornado-database.md), tornado `om` 169, whose `loss` reads `6.0`, against [Storm Events](../../catalog/noaa-storm-events.md) event 10086810, which prints the same band as `$2.5M`; see [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml)."),
+            support!("event/the-tornado-of-19-july-1950.yml", "**And the money, which this node published as a disagreement, is not one.** The paper calls it \"a one and one-half-million dollar tornado\"; the file's band is $500,000 to $5,000,000, and one and a half million is inside it. [verified] \u{2014} the same source. A weekly rounding to the nearest half million and a federal file recording a band agree, and this node said they were a million apart; see [an instrument dates it and a witness describes it](../../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml)."),
         ],
         answers: &[],
         figures: &[
-            Figure { label: "The paper, eight days after", value: 1500000.0, literal: "1,500,000" },
-            Figure { label: "The federal file", value: 2500000.0, literal: "2,500,000" },
+            Figure { label: "The band's floor", value: 500000.0, literal: "500,000" },
+            Figure { label: "The band's ceiling", value: 5000000.0, literal: "5,000,000" },
         ],
     },
     Assertion {
