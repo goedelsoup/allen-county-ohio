@@ -2083,13 +2083,18 @@ pub const ASSERTIONS: &[Assertion] = &[
     },
     Assertion {
         id: "the-gauge-was-not-there",
-        statement: "Allen County has four federal declarations for flooding and a gauged river, \
-                    and the gauge was switched off for three of them.",
+        statement: "Allen County has four federal declarations for flooding and a gauged river; \
+                    its own gauge was switched off for three of them, and carries no flood stage \
+                    that would have called the others floods.",
         topic: "geography",
         supports: &[
             support!(
                 "measure/ottawa-river-peak-flows-1924-2025.yml",
-                "**That ten-year hole swallowed three of the county's four flood declarations.**"
+                "**That ten-year hole swallowed three of the county's four flood declarations**"
+            ),
+            support!(
+                "measure/ottawa-river-peak-flows-1924-2025.yml",
+                "**The Ottawa at Lima has no flood stage at all.**"
             ),
             support!(
                 "measure/ottawa-river-peak-flows-1924-2025.yml",
