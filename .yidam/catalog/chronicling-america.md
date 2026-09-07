@@ -60,7 +60,9 @@ about this archive; see
 
 **No Lima newspaper is in it, and now the corpus knows the denominator.** Sixty-six newspaper
 titles were printed in Lima and not one of them is digitized here; ninety-nine were printed in the
-county and one is. [verified] —
+county and one is. **Here is doing all the work in that sentence**, and it took a second phase to
+notice: [Ohio Memory](ohio-memory-lima-times-democrat.md) holds 810 issues of a Lima paper, 1900
+to 1912, and this entry's limit is a limit of this archive. [verified] —
 [the U.S. newspaper directory](us-newspaper-directory.md); see
 [the county's newspapers](../corpus/measure/allen-county-newspapers-1843-2026.yml). This entry
 stated the limit correctly for six phases and stated it without a scale, which is how a one per cent

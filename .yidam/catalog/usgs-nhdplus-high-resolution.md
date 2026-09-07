@@ -16,6 +16,7 @@ location:
       NHDPlus value-added attribute table exposed on a keyless service. 1 `NHDPlusSink`,
       2 `NHDPoint`, 8 `NHDArea`, 9 `NHDWaterbody`, 12 `WBDHU12`. `maxRecordCount` is 2,000.
 used-by:
+  - ../corpus/event/the-flood-of-16-july-1915.yml
   - ../corpus/measure/allen-county-petitioned-ditches-2026.yml
   - ../corpus/measure/allen-county-stream-network-2026.yml
   - ../corpus/measure/allen-county-standing-water-2026.yml
