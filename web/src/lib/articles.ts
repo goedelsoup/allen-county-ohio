@@ -2227,14 +2227,14 @@ export const ARTICLES: Article[] = [
   {
     slug: 'what-the-paper-saw',
     title: 'What the paper saw',
-    dek: 'A federal file and a river gauge put two events in this county\u2019s record and could not say what either did. The county\u2019s own weekly can \u2014 and disagrees with the machines about the clock, the cost, and how many storms there were.',
+    dek: 'A federal file and a river gauge put two events in this county\u2019s record and could not say what either did. The county\u2019s own weekly can \u2014 and disagrees with the machines about the clock and about how many storms there were, but not, it turns out, about the cost.',
     section: 'history',
     era: [1950, 1959],
     assertions: [
       'what-the-tornado-struck',
       'two-injuries-named-and-thirty-counted',
       'the-paper-and-the-file-disagree-about-the-clock',
-      'a-million-dollars-apart',
+      'the-million-dollars-that-were-not-apart',
       'a-second-storm-the-file-does-not-hold',
       'five-miles-in-a-semicircle-around-bluffton',
       'twenty-four-hours-to-open-the-roads',

@@ -30,10 +30,22 @@ description: |
       2023-04-01    EF0         .62        50       0         0  $20K     Westminster
 
   **One tornado has killed anyone here and one other has injured more than one person.** Eleven
-  deaths and a hundred injuries on 11 April 1965; thirty injuries on 19 July 1950; one injury in
-  April 1980; nothing else. [verified] — same source. **Fourteen of the twenty-three did less than
-  $25,000 of measured damage, and seven of those fourteen did none the file records** — five rows
-  read zero and two are blank. [verified] — same source, counted here.
+  deaths and a hundred injuries on 11 April 1965 — **that county's share of a tornado that killed
+  thirteen**; thirty injuries on 19 July 1950; one injury in April 1980; nothing else. [verified] —
+  same source, against [the SPC database](../../catalog/spc-tornado-database.md); see
+  [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).
+
+  **The damage column before 1993 is a category and this node used to read it as money.** Every
+  value in it down to 1992 is one of eight — $30, $250, $2.5K, $25K, $250K, $2.5M, $25M, $250M —
+  and they are the Weather Bureau's nine damage bands rendered as dollars. So `$2.5M` against 1950
+  and 1965 is **$500,000 to $5,000,000** and not an estimate of $2,500,000; `$25K` is
+  $5,000–$50,000; `$250K` is $50,000–$500,000. **Ten of these twenty-three rows carry a band, six
+  carry an amount, five read zero and two are blank** — four kinds of cell in one column.
+  [verified] —
+  [*Storm Data*](../../catalog/noaa-storm-data-publication.md), whose footnote prints the ladder;
+  see [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml). **A
+  sentence this node published is withdrawn**: it said fourteen of the twenty-three "did less than
+  $25,000 of measured damage", and a threshold cannot be applied to a code.
 
   **The strong ones are all in the first half.** The three tornadoes rated F3 or F4 fall in 1950,
   1965 and 1971, and nothing since 1981 has been rated above F1: of the thirteen from 1992 on, ten
@@ -42,12 +54,18 @@ description: |
   Ratings before the 1990s were assigned retrospectively from damage reports and the modern ones
   from ground surveys, and a survey that finds no damage rates EF0. [inference]
 
-  **The track lengths close on their own coordinates, and one of them leaves the county.** The 1965
+  **The track lengths close on their own coordinates and still do not mean one thing.** The 1965
   track's endpoints are 17.92 miles apart against a stated 17.8; 1950's are 9.53 against 9.7;
-  1971's are 31.33 against 31.5. But 1971's endpoint is 25.6 miles east of Bluffton, far outside
-  Allen County: **`TOR_LENGTH` is the length of the tornado, not the length of it that was in this
-  county**, and the column cannot be summed to a figure about this ground. [inference] — computed
-  here from the file's own latitudes and longitudes.
+  1971's are 31.33 against 31.5. **This node once read the 1971 row as the rule and it is the
+  exception.** Six of the twenty-three tornadoes crossed a county line, and in five of them the
+  Allen row carries only the Allen part, chained to a neighbouring county's row that begins or ends
+  on the same coordinate — 1965 with Hancock, 1981 with Van Wert, 2010 with Auglaize, 2011 and 2021
+  with Van Wert. In the sixth, 2 June 1971, the Allen row carries the whole 31.5 miles across Allen,
+  Hancock and Wyandot with no sibling row anywhere. So `TOR_LENGTH` is *sometimes* the length of the
+  tornado and *sometimes* the length of it in this county, **nothing on the row says which**, and
+  the column still cannot be summed to a figure about this ground. [verified] — the file, chained on
+  coordinates here, against [the SPC database](../../catalog/spc-tornado-database.md); see
+  [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).
 
   **The coordinate field changed meaning about 2010 and the file does not say so.** Every tornado
   from 1998 through 2006 has an identical begin and end coordinate on a five- or
@@ -56,9 +74,13 @@ description: |
   coordinates to two decimal places. [inference] — same computation. See
   [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
 
-  [open] The two 1980 rows carry the same date, the same minute, the same rating and the same
-  damage figure with different track lengths, and no coordinates. Whether that is one tornado
-  entered twice or two that touched down together is not answerable from this file.
+  **The two 1980 rows are two tornadoes, and this node said the file could not tell.** It read them
+  as possibly one storm entered twice, on the ground that they shared a date, a minute, a rating and
+  a damage figure and carried "no coordinates". They carry begin coordinates — 40.78, −84.20 and
+  40.80, −84.05, **7.97 miles apart** — and the tornado file numbers them separately, `om` 125 and
+  126, with those same two positions and a third at 15:20 in Putnam County. What both rows lack is
+  an *end* coordinate. [verified] — the file and
+  [the SPC database](../../catalog/spc-tornado-database.md), computed here.
 properties:
   parameter: tornadoes recorded in Allen County
   value: "23"

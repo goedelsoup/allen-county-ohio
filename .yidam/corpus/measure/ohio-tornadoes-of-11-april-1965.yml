@@ -1,0 +1,101 @@
+class: measure
+label: The Ohio tornadoes of 11 April 1965
+description: |
+  **Twelve tornadoes crossed Ohio on Palm Sunday evening and fifty-seven people died, and this
+  county's was the third-worst of them.** [verified] —
+  [*Storm Data*, April 1965](../../catalog/noaa-storm-data-publication.md), Ohio section. Its
+  header says "at least 12 separate tornadoes struck within the state. The majority were the most
+  destructive ever to visit their respective parts of the state. Because of their severity and
+  exceptionally long paths, the loss of life was heavy, totaling 57 for the state." **The twelve
+  rows it then prints kill exactly 57**, computed here from the table below. [inference]
+
+  **This county's is the one filed under Bluffton**, thirteen dead over 25 miles from six miles
+  north-north-west of Lima to one mile north of Jenera, behind Lorain and Cuyahoga's eighteen and
+  Toledo's sixteen; see [the tornado](../event/the-tornado-of-11-april-1965.yml). Eleven of its
+  thirteen died in Allen County and the publication does not say so, because the publication has no
+  county grid: it files a storm under one place name — sometimes a village, sometimes "Shelby
+  County", sometimes "Lorain & Cuyahoga Counties" — and the choice is the writer's.
+
+  **The same evening is four different counts depending on which file is asked.** The publication
+  itemises twelve; its own last narrative calls the Ashville tornado "the last of 10 major storms
+  which visited the northern half of Ohio during Palm Sunday evening and night"; the Storm
+  Prediction Center holds eleven records with `st` = OH and puts the twelfth under Indiana, because
+  it crossed from Berne; and the Storm Events Database holds **nineteen** county rows.
+  [verified] — the three sources, counted here. Not one of those counts is wrong. See
+  [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).
+
+  **Every one of the nineteen county rows chains, and the chains are invisible.** Five of the twelve
+  tornadoes cross a county line, and in each the next county's row begins on the exact coordinate
+  where the last one ends and the `TOR_LENGTH` values sum to the tornado's: Mercer→Van Wert,
+  **Allen→Hancock**, Lorain→Cuyahoga, Union→Delaware→Morrow, and Pickaway→Fairfield→Perry, which
+  crosses midnight. [verified] — [Storm Events](../../catalog/noaa-storm-events.md), chained here on
+  coordinates. No column in any of those rows names the tornado they belong to.
+
+  **The county rows carry 60 deaths where the book carries 57, and the whole difference is one
+  tornado.** Every entry matches its county rows to the person except Rockaway, where the
+  publication says one died and the file says four. The publication names June and December as the
+  issues that would carry a correction; June's delayed-data section has an April entry for Indiana
+  and an April correction for Iowa and nothing for Ohio, and December's begins at July.
+  [verified] — the publication, June and December 1965. **Three lives entered this record somewhere
+  the corpus has not found.**
+
+  **A third federal count of Ohio's dead makes fifty-nine.** The Weather Bureau sent a survey team
+  out that week, and its report's figure 1 — "ROUTE OF SURVEY GROUP (Including DEATH and DAMAGE
+  FIGURES By STATES)" — gives Wisconsin 3, Illinois 7, Indiana 156, Michigan 46 and **Ohio 59, with
+  $42,500,000 of damage**, 271 across the five. [verified] —
+  [the survey team's report](../../catalog/palm-sunday-1965-reports.md), page 15. So the same
+  government published 57, 59 and 60 for one evening in one state, and none of the three is a
+  correction of another.
+
+  **And that report's own list of the outbreak leaves this county out.** Its table 2 numbers
+  thirty-seven tornadoes by time and place; the nearest are "near Van Wert (28 ESE Fort Wayne),
+  Ind." and "4 S Tiffin (23 E Findlay) - Ohio", and there is no Lima, Cairo, Bluffton or Jenera row
+  anywhere in it. [verified] — the same source, page 7. **The federal survey of the outbreak omits
+  the tornado that killed thirteen people in it.**
+
+  **And a damage category does not add up either.** The publication puts the Ashville tornado at
+  category 6 — $500,000 to $5,000,000 — where all three of its county rows read category 5. Three
+  counties each losing up to half a million make a storm that lost more than half a million, and
+  the ladder cannot say so. [inference] — computed here; see
+  [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml).
+properties:
+  parameter: tornadoes struck within Ohio, 11–12 April 1965
+  value: "12"
+  unit: tornadoes
+  as_of: "1965-04-11"
+  method: |
+    Transcribed from the Ohio section of *Storm Data and Unusual Weather Phenomena*, Volume 7 No. 4,
+    April 1965, pages 28–29 — a scanned page image with no text layer, rendered at 300 dpi and read.
+    Place, date, time, length, width, killed, injured and damage are the publication's own columns;
+    `time` is local standard, which for Ohio is Eastern, and the last two rows fall after midnight
+    on the 12th. `damage` is the publication's category and not an amount: the key at the end of the
+    table gives nine bands, of which 3 is $500–$5,000, 4 is $5,000–$50,000, 5 is $50,000–$500,000,
+    6 is $500,000–$5,000,000 and 7 is $5,000,000–$50,000,000. `injured` holds two of the
+    publication's own words, `Many` and `Scores`, unaltered. The last column is this corpus's, not
+    the publication's: the Storm Events county rows that carry each tornado, matched by date,
+    coordinate chaining and F-scale. [inference]
+  table: |
+    place date time miles yards killed injured damage storm_events_counties
+    Willshire 11 9:20PM 20 400 2 Many 6 Mercer+VanWert
+    Bluffton 11 9:30PM 25 400 13 Scores 6 Allen+Hancock
+    Toledo 11 9:30PM 6 400 16 170 7 Lucas
+    Shelby-County 11 10:00PM 20 300 3 50 6 Shelby
+    Rockaway 11 10:15PM 20 300 1 30 5 Seneca
+    Lorain-and-Cuyahoga 11 11:03PM 25 400 18 Many 7 Lorain+Cuyahoga
+    Eaton 11 11:15PM Short Narrow 0 0 4 Preble
+    Brunswick 11 11:30PM 8 200 0 6 5 Medina
+    Radnor 11 11:30PM 25 400 4 25 6 Union+Delaware+Morrow
+    Cedarville 11 11:50PM Short Narrow 0 0 4 Greene
+    Ashville 12 12:30AM 28 300 0 20 6 Pickaway+Fairfield+Perry
+    Cadiz 12 1:00AM Short Narrow 0 0 3 Harrison
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-data-publication.md
+  - target: ../event/the-tornado-of-11-april-1965.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-data-publication.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

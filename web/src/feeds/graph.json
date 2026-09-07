@@ -1684,34 +1684,38 @@
       "tier": "inference",
       "properties": {
         "event_type": "tornado",
-        "location_description": "A 17.8-mile track from 40.80, −84.20 to 40.87, −83.87, 400 yards at its widest, running west-north-west to east across the northern half of the county from Elida to Bluffton. [verified] — the same source.",
+        "location_description": "A 17.8-mile track from 40.80, −84.20 to 40.87, −83.87, 400 yards at its widest — **this county's share of it**. Touching down at 9:30 p.m. six miles north-west of Lima and west of Cairo, then east-north-east past Bluffton and out into Hancock County. The whole tornado ran 32.5 miles by the tornado file and 25 by the publication, and the aerial survey put its last damage north-east of Houcktown. [verified] — [*Storm Data*](../../catalog/noaa-storm-data-publication.md), [the SPC database](../../catalog/spc-tornado-database.md), [Storm Events](../../catalog/noaa-storm-events.md) and [Fujita et al.](../../catalog/palm-sunday-1965-reports.md).",
         "occurred": "1965-04-11",
         "track": "40.80, -84.20; 40.87, -83.87"
       },
       "blocks": [
         {
-          "text": "**The deadliest thing that has happened in Allen County in the corpus's whole weather record, and the only thing in it that has killed anybody.** An F4 tornado, 17.8 miles of track, 400 yards at its widest, **eleven dead and a hundred injured**, $2.5 million of property damage. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10083979.",
+          "text": "**It killed thirteen people and eleven of them died in Allen County.** [verified] — [the Storm Prediction Center](../../catalog/spc-tornado-database.md), tornado `om` 166, whose `ns`/`sn`/`sg` triple marks it the entire record for the track, against [Storm Events](../../catalog/noaa-storm-events.md) event 10083979. **This node used to say it killed eleven**, because eleven is what the county row holds; the other two are on a Hancock County row that begins on the coordinate where this one ends. See [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).",
           "tier": "verified"
         },
         {
-          "text": "**It crossed the north of the county diagonally, from Elida to Bluffton.** The file starts it at 40.80, −84.20, nine-tenths of a mile from [Elida](../place/elida.yml), and ends it at 40.87, −83.87, 1.8 miles from [Bluffton](../place/bluffton.yml). Those endpoints are 17.92 miles apart against a stated track of 17.8, so the track and the coordinates are the same tornado. [inference] — computed here from the same source. It passed north of [Lima](../place/lima.yml).",
-          "tier": "inference"
-        },
-        {
-          "text": "**This is the storm the corpus said it did not hold.** [The declaration of April 1965](the-tornadoes-of-april-1965.yml) asked four questions — the storm's date, its track, whether it touched ground in this county at all, and what it destroyed — and answered none. The first three are answered above. **The declaration came three days after the tornado**, on 14 April, and the declaration file recorded the incident as beginning and ending on the day it was signed. [verified] — same source and [OpenFEMA](../../catalog/fema-disaster-declarations.md).",
+          "text": "**What it struck was farms, and the Weather Bureau wrote it down at the time.** \"It first touched down at 9:30 PM 6 miles north-northwest of Lima and west of Cairo. It traveled eastward for a distance of 25 miles to a point one mile north of Jenera demolishing farm houses, barns, and other buildings. Two people were killed near Cairo, at least 5 in the vicinity of Bluffton, and the remaining 5 at other points along the path.\" [verified] — [*Storm Data*, April 1965](../../catalog/noaa-storm-data-publication.md), Ohio section, filed under the place name **Bluffton**. **That closes what this node had open since it was written**, and the answer was in a scanned book with no text layer that nothing could have found by searching.",
           "tier": "verified"
         },
         {
-          "text": "**The corpus looked for it in the wrong instrument.** That node named a newspaper of that week as the source that would answer, and observed that this catalog holds none reaching 1965. The answer was in a federal weather database that had been publishing it since before the corpus existed. [inference]",
+          "text": "**Nobody here saw it.** Five days later an aircraft flew the damage, and the survey that came of it says: \"With a path width varying between ¼ and ½ mi, the tornado left typical explosive damage to structures and wind-blown debris. **No funnel was sighted by local residents because of darkness. The last damage was spotted northeast of Houcktown, Ohio.**\" [verified] — [Fujita, Bradbury and Van Thullenar](../../catalog/palm-sunday-1965-reports.md), 1970, page 42. **Which settles the endpoint the files disagree about**: the book stops the track one mile north of Jenera at 25 miles, the databases carry it 32.5 miles to a point 1.1 miles from Houcktown, and the aeroplane found damage there. The book is seven miles short. [inference] — computed here against [GNIS](../../catalog/gnis-domestic-names-ohio.md).",
           "tier": "inference"
         },
         {
-          "text": "**Eleven people were killed and the file holds nothing else about them.** The companion fatality file, which carries an age, a sex and a location for each death, has seventeen rows for the whole United States in 1965 and not one of them belongs to this event. [verified] — same source. **A count of eleven is the entire record.**",
+          "text": "**It was the fourth of six tornadoes from one storm.** Fujita calls it **L-4** of tornado family L — six tornadoes off one parent echo covering \"a total distance of 274 mi in 4 hr 23 min, maintaining an amazingly constant speed of 62.5 mi hr⁻¹\", from Indiana to Cleveland. [verified] — the same source. That day put 45 tornadoes into seven states, 260 dead and 3,441 injured, and it is the third-deadliest day in the country's whole tornado record, behind 27 April 2011 and 3 April 1974. [verified] — [the SPC database](../../catalog/spc-tornado-database.md), counted here; see [the Ohio tornadoes](../measure/ohio-tornadoes-of-11-april-1965.yml). **That answers the third thing this node did not know.**",
           "tier": "verified"
         },
         {
-          "text": "**Its clock is stamped Central for a county on Eastern time.** The row reads 20:30 with `CZ_TIMEZONE` = CST, as does every row here from 1950 to 1991. If the stamp means what it says, the local clock read 21:30. [inference] — same source.",
+          "text": "**The deaths fall where the county line does.** [Bluffton](../place/bluffton.yml) straddles the Allen–Hancock line, and the publication puts at least five of the thirteen \"in the vicinity of Bluffton\" — on the seam of the eleven-and-two the two county rows record. Its three groups do not partition on that line and were never meant to. [inference] **The first federal record of any of them says three or four.** The Columbus forecast office, at 1:00 a.m., three and a half hours after: \"3 or 4 fatalities have been reported in Cairo which lies just north of Lima Ohio.\" [verified] — [the survey team's report](../../catalog/palm-sunday-1965-reports.md), Annex 2.",
           "tier": "inference"
+        },
+        {
+          "text": "**The clock question is settled and the corpus had it right.** The row reads 20:30 with `CZ_TIMEZONE` = CST for a county on Eastern time; this node inferred a local 21:30, and the publication says 9:30 PM under a column headed TIME — LOCAL STANDARD. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And its damage figure was never a figure.** The file's `$2.5M` is damage category 6 — **$500,000 to $5,000,000** — one of nine steps the publication prints in a footnote and the SPC file still carries as `6.0`. [verified] — both catalog entries; see [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml).",
+          "tier": "verified"
         }
       ],
       "refusals": [],
@@ -1730,7 +1734,7 @@
       },
       "blocks": [
         {
-          "text": "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody and did an estimated $2.5 million of property damage. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), event 10086810.",
+          "text": "**The first thing in the county's weather record, and it injured thirty people.** An F3 tornado tracked 9.7 miles across a path 300 yards wide, killed nobody, and did damage recorded in the sixth of nine bands — **$500,000 to $5,000,000**. [verified] — [the SPC database](../../catalog/spc-tornado-database.md), tornado `om` 169, whose `loss` reads `6.0`, against [Storm Events](../../catalog/noaa-storm-events.md) event 10086810, which prints the same band as `$2.5M`; see [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml).",
           "tier": "verified"
         },
         {
@@ -1746,7 +1750,7 @@
           "tier": "verified"
         },
         {
-          "text": "**Its damage figure and the 2006 windstorm's cannot be compared.** $2.5 million in 1950 dollars and $1,970,000 in 2006 dollars are in different currencies, and this file carries no deflator. [inference] — see [the storm record](../measure/allen-county-storm-events-1950-2026.yml).",
+          "text": "**Its damage figure and the 2006 windstorm's cannot be compared, and not only for the currency.** 1950's is a band nine steps wide and 2006's $1,970,000 is an amount; the file changed grain on 1 January 1993 and says nothing about it, and it carries no deflator either. [inference] — see [the storm record](../measure/allen-county-storm-events-1950-2026.yml).",
           "tier": "inference"
         },
         {
@@ -1762,7 +1766,7 @@
           "tier": "verified"
         },
         {
-          "text": "**And it puts the damage at $1,500,000 where the file puts it at $2,500,000.** The paper calls it \"a one and one-half-million dollar tornado\". [verified] — the same source. A contemporaneous local figure and a later national compilation, a million apart, and this node holds both; see [an instrument dates it and a witness describes it](../../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml).",
+          "text": "**And the money, which this node published as a disagreement, is not one.** The paper calls it \"a one and one-half-million dollar tornado\"; the file's band is $500,000 to $5,000,000, and one and a half million is inside it. [verified] — the same source. A weekly rounding to the nearest half million and a federal file recording a band agree, and this node said they were a million apart; see [an instrument dates it and a witness describes it](../../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml).",
           "tier": "verified"
         }
       ],
@@ -1776,7 +1780,7 @@
       "tier": "inference",
       "properties": {
         "event_type": "disaster declaration",
-        "location_description": "Allen County, as the declaration's `designatedArea` names it. The declaration is county-wide and says nothing about where within the county anything happened. [verified] — the same source.",
+        "location_description": "Allen County, as the declaration's `designatedArea` names it, one of fifteen Ohio counties. The declaration is county-wide and says nothing about where within the county anything happened. [verified] — the same source.",
         "occurred": "1965-04-14"
       },
       "blocks": [
@@ -1789,23 +1793,27 @@
           "tier": "verified"
         },
         {
+          "text": "**Three states were declared that afternoon, one after another.** DR-189-IN for seventeen Indiana counties, DR-190-MI for sixteen in Michigan, DR-191-OH for fifteen in Ohio — the same date, the same title, and request numbers 65015, 65016 and 65017. [verified] — the same source, queried here. **That is the outbreak, established from the aid file rather than the weather file**, and it is the second answer to a question this node could not answer at all; see [the tornado](the-tornado-of-11-april-1965.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Its fifteen counties are not the storm's counties.** Five that carry a tornado row for 11–12 April — Preble, Union, Greene, Fairfield and Perry — were never named, and one that was, Highland, had its tornado on **8 April**, three days before Palm Sunday and six before the signature. [verified] — the same source against [*Storm Data*](../../catalog/noaa-storm-data-publication.md), whose Hillsboro entry is that tornado. So the declaration is not a map of the outbreak: it is a list of places that asked and qualified, and it covers more than one day of weather while recording none of them.",
+          "tier": "verified"
+        },
+        {
           "text": "**The date is the declaration's, and the storm's is not in this file.** The record gives an incident beginning and ending on 14 April 1965, which is also the day the declaration was signed and the day the request was made. A tornado outbreak severe enough to bring federal aid to households did not last zero days; the field was filled with the declaration date, as it was for the 1978 blizzard. [inference] — see [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).",
           "tier": "inference"
         },
         {
-          "text": "**So the corpus dates the declaration and not the weather.** `occurred` below is 14 April 1965 because that is what the source establishes: a presidential act naming this county. What the sky did, and when, is not held here. [inference]",
+          "text": "**A second file now shows when those dates were typed.** FEMA's declaration-areas table breaks Allen County's two flags into twelve programme designations — Disaster Housing, Individual Assistance, Individual & Family Grant, Public Assistance and its seven categories, and **Disaster Unemployment Assistance** — every one of them dated 14 April 1965 and every one entered on **25 July 1993**. Disaster Unemployment Assistance was created by section 240 of the Disaster Relief Act of 1970, five years after the day it is recorded as being designated on. [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md), `FemaWebDeclarationAreas`, queried here. **The grid was built backwards from the declaration date, and it says so by containing a programme that did not exist.** So `occurred` below stays 14 April 1965: what this source establishes is a presidential act naming this county, not a day of weather. [inference]",
           "tier": "inference"
         },
         {
-          "text": "**Three of those four questions are now answered, and not by a newspaper.** The storm was an F4 tornado on **11 April 1965**, three days before this declaration; it ran 17.8 miles from Elida to Bluffton; it killed eleven people and injured a hundred. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md); see [the tornado](the-tornado-of-11-april-1965.yml). **It touched ground in this county and it is the only weather that has ever killed anybody here.** [verified] — same source.",
+          "text": "**Three of those four questions are now answered, and not by a newspaper.** The storm was an F4 tornado on **11 April 1965**, three days before this declaration; it ran east across the north of the county from six miles north-north-west of Lima to Bluffton and on into Hancock County, demolishing farm houses and barns; it killed thirteen people, eleven of them here, and injured a hundred. Two died near Cairo and at least five near Bluffton. [verified] — [*Storm Data*, April 1965](../../catalog/noaa-storm-data-publication.md) and [Storm Events](../../catalog/noaa-storm-events.md); see [the tornado](the-tornado-of-11-april-1965.yml). **That closes what this node had open.**",
           "tier": "verified"
         },
         {
-          "text": "**That confirms what this node inferred about its own dates.** The tornado is three days outside an incident window one day long, and that one day is the declaration date. The field was filled with the declaration date, as this node said it was. [inference]",
-          "tier": "inference"
-        },
-        {
-          "text": "**This node named the wrong instrument.** It said a newspaper of that week would answer all four questions and that this catalog held none reaching 1965. The answer was in a federal weather database, published continuously since before this corpus existed and never asked. [inference]",
+          "text": "**This node named the wrong instrument twice.** It said a newspaper of that week would answer all four questions; the answer was in a federal weather database. Then it said that database had no narrative before 1996; the narrative was in the book the database was made from. [inference]",
           "tier": "inference"
         }
       ],
@@ -14717,7 +14725,11 @@
           "tier": "verified"
         },
         {
-          "text": "**One tornado has killed anyone here and one other has injured more than one person.** Eleven deaths and a hundred injuries on 11 April 1965; thirty injuries on 19 July 1950; one injury in April 1980; nothing else. [verified] — same source. **Fourteen of the twenty-three did less than $25,000 of measured damage, and seven of those fourteen did none the file records** — five rows read zero and two are blank. [verified] — same source, counted here.",
+          "text": "**One tornado has killed anyone here and one other has injured more than one person.** Eleven deaths and a hundred injuries on 11 April 1965 — **that county's share of a tornado that killed thirteen**; thirty injuries on 19 July 1950; one injury in April 1980; nothing else. [verified] — same source, against [the SPC database](../../catalog/spc-tornado-database.md); see [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The damage column before 1993 is a category and this node used to read it as money.** Every value in it down to 1992 is one of eight — $30, $250, $2.5K, $25K, $250K, $2.5M, $25M, $250M — and they are the Weather Bureau's nine damage bands rendered as dollars. So `$2.5M` against 1950 and 1965 is **$500,000 to $5,000,000** and not an estimate of $2,500,000; `$25K` is $5,000–$50,000; `$250K` is $50,000–$500,000. **Ten of these twenty-three rows carry a band, six carry an amount, five read zero and two are blank** — four kinds of cell in one column. [verified] — [*Storm Data*](../../catalog/noaa-storm-data-publication.md), whose footnote prints the ladder; see [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml). **A sentence this node published is withdrawn**: it said fourteen of the twenty-three \"did less than $25,000 of measured damage\", and a threshold cannot be applied to a code.",
           "tier": "verified"
         },
         {
@@ -14725,16 +14737,20 @@
           "tier": "inference"
         },
         {
-          "text": "**The track lengths close on their own coordinates, and one of them leaves the county.** The 1965 track's endpoints are 17.92 miles apart against a stated 17.8; 1950's are 9.53 against 9.7; 1971's are 31.33 against 31.5. But 1971's endpoint is 25.6 miles east of Bluffton, far outside Allen County: **`TOR_LENGTH` is the length of the tornado, not the length of it that was in this county**, and the column cannot be summed to a figure about this ground. [inference] — computed here from the file's own latitudes and longitudes.",
-          "tier": "inference"
+          "text": "**The track lengths close on their own coordinates and still do not mean one thing.** The 1965 track's endpoints are 17.92 miles apart against a stated 17.8; 1950's are 9.53 against 9.7; 1971's are 31.33 against 31.5. **This node once read the 1971 row as the rule and it is the exception.** Six of the twenty-three tornadoes crossed a county line, and in five of them the Allen row carries only the Allen part, chained to a neighbouring county's row that begins or ends on the same coordinate — 1965 with Hancock, 1981 with Van Wert, 2010 with Auglaize, 2011 and 2021 with Van Wert. In the sixth, 2 June 1971, the Allen row carries the whole 31.5 miles across Allen, Hancock and Wyandot with no sibling row anywhere. So `TOR_LENGTH` is *sometimes* the length of the tornado and *sometimes* the length of it in this county, **nothing on the row says which**, and the column still cannot be summed to a figure about this ground. [verified] — the file, chained on coordinates here, against [the SPC database](../../catalog/spc-tornado-database.md); see [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).",
+          "tier": "verified"
         },
         {
           "text": "**The coordinate field changed meaning about 2010 and the file does not say so.** Every tornado from 1998 through 2006 has an identical begin and end coordinate on a five- or sixtieth-of-a-degree grid, against a stated track of a tenth of a mile — those are the nearest town's position. Every tornado from 2010 on reproduces its stated track length from its coordinates to two decimal places. [inference] — same computation. See [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**The two 1980 rows are two tornadoes, and this node said the file could not tell.** It read them as possibly one storm entered twice, on the ground that they shared a date, a minute, a rating and a damage figure and carried \"no coordinates\". They carry begin coordinates — 40.78, −84.20 and 40.80, −84.05, **7.97 miles apart** — and the tornado file numbers them separately, `om` 125 and 126, with those same two positions and a third at 15:20 in Putnam County. What both rows lack is an *end* coordinate. [verified] — the file and [the SPC database](../../catalog/spc-tornado-database.md), computed here.",
+          "tier": "verified"
         }
       ],
       "refusals": [],
-      "withheld": 2
+      "withheld": 1
     },
     {
       "id": "measure/allen-county-total-employment-1969-2022.yml",
@@ -17497,6 +17513,54 @@
       ],
       "refusals": [],
       "withheld": 2
+    },
+    {
+      "id": "measure/ohio-tornadoes-of-11-april-1965.yml",
+      "class": "measure",
+      "label": "The Ohio tornadoes of 11 April 1965",
+      "tier": "inference",
+      "properties": {
+        "as_of": "1965-04-11",
+        "method": "Transcribed from the Ohio section of *Storm Data and Unusual Weather Phenomena*, Volume 7 No. 4, April 1965, pages 28–29 — a scanned page image with no text layer, rendered at 300 dpi and read. Place, date, time, length, width, killed, injured and damage are the publication's own columns; `time` is local standard, which for Ohio is Eastern, and the last two rows fall after midnight on the 12th. `damage` is the publication's category and not an amount: the key at the end of the table gives nine bands, of which 3 is $500–$5,000, 4 is $5,000–$50,000, 5 is $50,000–$500,000, 6 is $500,000–$5,000,000 and 7 is $5,000,000–$50,000,000. `injured` holds two of the publication's own words, `Many` and `Scores`, unaltered. The last column is this corpus's, not the publication's: the Storm Events county rows that carry each tornado, matched by date, coordinate chaining and F-scale. [inference]",
+        "parameter": "tornadoes struck within Ohio, 11–12 April 1965",
+        "table": "place date time miles yards killed injured damage storm_events_counties Willshire 11 9:20PM 20 400 2 Many 6 Mercer+VanWert Bluffton 11 9:30PM 25 400 13 Scores 6 Allen+Hancock Toledo 11 9:30PM 6 400 16 170 7 Lucas Shelby-County 11 10:00PM 20 300 3 50 6 Shelby Rockaway 11 10:15PM 20 300 1 30 5 Seneca Lorain-and-Cuyahoga 11 11:03PM 25 400 18 Many 7 Lorain+Cuyahoga Eaton 11 11:15PM Short Narrow 0 0 4 Preble Brunswick 11 11:30PM 8 200 0 6 5 Medina Radnor 11 11:30PM 25 400 4 25 6 Union+Delaware+Morrow Cedarville 11 11:50PM Short Narrow 0 0 4 Greene Ashville 12 12:30AM 28 300 0 20 6 Pickaway+Fairfield+Perry Cadiz 12 1:00AM Short Narrow 0 0 3 Harrison",
+        "unit": "tornadoes",
+        "value": "12"
+      },
+      "blocks": [
+        {
+          "text": "**Twelve tornadoes crossed Ohio on Palm Sunday evening and fifty-seven people died, and this county's was the third-worst of them.** [verified] — [*Storm Data*, April 1965](../../catalog/noaa-storm-data-publication.md), Ohio section. Its header says \"at least 12 separate tornadoes struck within the state. The majority were the most destructive ever to visit their respective parts of the state. Because of their severity and exceptionally long paths, the loss of life was heavy, totaling 57 for the state.\" **The twelve rows it then prints kill exactly 57**, computed here from the table below. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The same evening is four different counts depending on which file is asked.** The publication itemises twelve; its own last narrative calls the Ashville tornado \"the last of 10 major storms which visited the northern half of Ohio during Palm Sunday evening and night\"; the Storm Prediction Center holds eleven records with `st` = OH and puts the twelfth under Indiana, because it crossed from Berne; and the Storm Events Database holds **nineteen** county rows. [verified] — the three sources, counted here. Not one of those counts is wrong. See [a county row is a share of a storm](../../decisions/a-county-row-is-a-share-of-a-storm.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Every one of the nineteen county rows chains, and the chains are invisible.** Five of the twelve tornadoes cross a county line, and in each the next county's row begins on the exact coordinate where the last one ends and the `TOR_LENGTH` values sum to the tornado's: Mercer→Van Wert, **Allen→Hancock**, Lorain→Cuyahoga, Union→Delaware→Morrow, and Pickaway→Fairfield→Perry, which crosses midnight. [verified] — [Storm Events](../../catalog/noaa-storm-events.md), chained here on coordinates. No column in any of those rows names the tornado they belong to.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county rows carry 60 deaths where the book carries 57, and the whole difference is one tornado.** Every entry matches its county rows to the person except Rockaway, where the publication says one died and the file says four. The publication names June and December as the issues that would carry a correction; June's delayed-data section has an April entry for Indiana and an April correction for Iowa and nothing for Ohio, and December's begins at July. [verified] — the publication, June and December 1965. **Three lives entered this record somewhere the corpus has not found.**",
+          "tier": "verified"
+        },
+        {
+          "text": "**A third federal count of Ohio's dead makes fifty-nine.** The Weather Bureau sent a survey team out that week, and its report's figure 1 — \"ROUTE OF SURVEY GROUP (Including DEATH and DAMAGE FIGURES By STATES)\" — gives Wisconsin 3, Illinois 7, Indiana 156, Michigan 46 and **Ohio 59, with $42,500,000 of damage**, 271 across the five. [verified] — [the survey team's report](../../catalog/palm-sunday-1965-reports.md), page 15. So the same government published 57, 59 and 60 for one evening in one state, and none of the three is a correction of another.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And that report's own list of the outbreak leaves this county out.** Its table 2 numbers thirty-seven tornadoes by time and place; the nearest are \"near Van Wert (28 ESE Fort Wayne), Ind.\" and \"4 S Tiffin (23 E Findlay) - Ohio\", and there is no Lima, Cairo, Bluffton or Jenera row anywhere in it. [verified] — the same source, page 7. **The federal survey of the outbreak omits the tornado that killed thirteen people in it.**",
+          "tier": "verified"
+        },
+        {
+          "text": "**And a damage category does not add up either.** The publication puts the Ashville tornado at category 6 — $500,000 to $5,000,000 — where all three of its county rows read category 5. Three counties each losing up to half a million make a storm that lost more than half a million, and the ladder cannot say so. [inference] — computed here; see [a damage figure is a category](../../decisions/a-damage-figure-is-a-category.yml).",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [
+        "Three counties each losing up to half a million make a storm that lost more than half a million, and the ladder cannot say so."
+      ],
+      "withheld": 1
     },
     {
       "id": "measure/ottawa-river-peak-flows-1924-2025.yml",
@@ -29103,17 +29167,17 @@
     },
     {
       "from": "event/the-tornado-of-11-april-1965.yml",
-      "to": "place/elida.yml",
+      "to": "place/cairo.yml",
       "relationship": "affected",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/noaa-storm-data-publication.md"
     },
     {
       "from": "event/the-tornado-of-11-april-1965.yml",
       "to": "place/bluffton.yml",
       "relationship": "affected",
-      "tier": "inference",
-      "source": null
+      "tier": "verified",
+      "source": "catalog/noaa-storm-data-publication.md"
     },
     {
       "from": "event/the-tornado-of-19-july-1950.yml",
@@ -29135,6 +29199,13 @@
       "relationship": "affected",
       "tier": "verified",
       "source": "catalog/fema-disaster-declarations.md"
+    },
+    {
+      "from": "event/the-tornadoes-of-april-1965.yml",
+      "to": "event/the-tornado-of-11-april-1965.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-data-publication.md"
     },
     {
       "from": "event/the-united-states-buys-the-tank-plant-ground-1951.yml",
@@ -35617,6 +35688,20 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/census-gazetteer-2020.md"
+    },
+    {
+      "from": "measure/ohio-tornadoes-of-11-april-1965.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-data-publication.md"
+    },
+    {
+      "from": "measure/ohio-tornadoes-of-11-april-1965.yml",
+      "to": "event/the-tornado-of-11-april-1965.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/noaa-storm-data-publication.md"
     },
     {
       "from": "measure/ottawa-river-peak-flows-1924-2025.yml",

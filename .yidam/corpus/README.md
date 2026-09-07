@@ -67,9 +67,9 @@ Sorted by: kind, then alphabetically.
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 4 | 8v / 1i / 1o | 85 |
 | [the-storm-at-beaverdam-1950.yml](event/the-storm-at-beaverdam-1950.yml) | event | The storm at Beaverdam and Orange Township, 19 July 1950 | 5 | 7v / 1i / 1o | 79 |
-| [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 4v / 3i / 1o | 61 |
-| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 7v / 3i / 1o | 75 |
-| [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 2 | 6v / 4i / 1o | 55 |
+| [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 10v / 2i / 1o | 92 |
+| [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 7v / 3i / 1o | 80 |
+| [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 3 | 8v / 3i / 1o | 81 |
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States expands the tank plant, June 1951 | 3 | 7v / 3i / 3o | 79 |
 | [the-windstorm-of-22-june-2006.yml](event/the-windstorm-of-22-june-2006.yml) | event | The windstorm of 22 June 2006 | 3 | 7v / 3i / 1o | 62 |
 | [the-winter-storms-of-2004-2005.yml](event/the-winter-storms-of-2004-2005.yml) | event | The winter storms of December 2004 and January 2005 | 2 | 6v / 1i / 1o | 51 |
@@ -333,7 +333,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-temperature-extremes-1901-2026.yml](measure/allen-county-temperature-extremes-1901-2026.yml) | measure | Allen County temperature extremes, 1901–2026 | 3 | 9v / 5i / 1o | 84 |
 | [allen-county-tenure-2010-2020.yml](measure/allen-county-tenure-2010-2020.yml) | measure | Who owns Allen County's houses, 2010 and 2020 | 9 | 18v / 6i / 1o | 179 |
 | [allen-county-test-proficiency-2009-2020.yml](measure/allen-county-test-proficiency-2009-2020.yml) | measure | Reading and mathematics proficiency in Allen County's schools, 2009–2020 | 8 | 11v / 5i / 1o | 129 |
-| [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 4v / 4i / 1o | 82 |
+| [allen-county-tornadoes-1950-2026.yml](measure/allen-county-tornadoes-1950-2026.yml) | measure | Allen County's tornadoes, 1950–2026 | 2 | 6v / 3i / 0o | 104 |
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 3 | 8v / 4i / 1o | 121 |
@@ -393,6 +393,7 @@ Sorted by: kind, then alphabetically.
 | [miami-and-erie-canal-in-allen-county-2026.yml](measure/miami-and-erie-canal-in-allen-county-2026.yml) | measure | The Miami and Erie Canal in Allen County, 2026 | 5 | 16v / 3i / 1o | 113 |
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
+| [ohio-tornadoes-of-11-april-1965.yml](measure/ohio-tornadoes-of-11-april-1965.yml) | measure | The Ohio tornadoes of 11 April 1965 | 3 | 6v / 3i / 0o | 101 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 13v / 6i / 1o | 118 |
 | [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |

@@ -30,8 +30,10 @@ location:
     value: https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_fatalities-ftp_v1.0_d1965_c20260323.csv.gz
     description: >-
       The companion fatality file, keyed on `EVENT_ID`, with an age, a sex and a location code per
-      death. Fetched for 1965 and it does not carry Allen County's eleven: the year holds eighteen
-      fatality rows and none of them belongs to this county's event.
+      death. Fetched for 1965 and it does not carry this county's dead: the year holds **seventeen**
+      fatality rows — this entry said eighteen, which counted the header line — every one of them
+      blank in age, sex and location, and none belonging to this county's event. The detail file
+      records 301 direct deaths for that year, so the fatality file covers 5.6 per cent of them.
   - kind: url
     value: https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/StormEvents_locations-ftp_v1.0_d2006_c20260707.csv.gz
     description: >-
@@ -73,9 +75,23 @@ public — and 43 name an instrument. Eight are NWS storm surveys. This is a rec
 county's own residents telephoning the forecast office, which is why its density tracks the number
 of people willing to telephone.
 
-**Its damage figures are estimates and its old ones are round.** 1950 and 1965 both read exactly
-`2.5M`. The 2006 storm's four Lima rows read 50K, 200K, 1.6M and blank. Nothing here is an audited
-loss, and the currency is nominal dollars of the year of the event with no deflator in the file.
+**Its damage figures before 1993 are not figures.** 1950 and 1965 both read exactly `2.5M`, and so
+do 2,218 other events, because `2.5M` is not an estimate — it is damage category 6, "$500,000 to
+$5,000,000", printed as a dollar amount. Every non-zero property-damage value in the file from 1950
+through 1992 is one of eight such values: 25,645 of 25,649 across every state and forty-three
+years, against zero of 3,597 in 1993. The 2006 storm's four Lima rows read 50K, 200K, 1.6M and
+blank, and those are amounts. Nothing here is an audited loss, the currency is nominal dollars with
+no deflator, and before 1993 it is not even a number. See
+[a damage figure is a category](../decisions/a-damage-figure-is-a-category.yml).
+
+**A tornado row is often one county's share of a tornado.** Six of this county's twenty-three
+tornadoes crossed a county line, and in five of them the Allen row carries only the Allen part,
+chained to a neighbouring county's row that begins or ends on the same coordinate — the tornado of
+11 April 1965 is 17.8 miles and eleven dead here against 32.5 miles and thirteen whole. In the
+sixth, 2 June 1971, the Allen row carries the entire three-county track. `TOR_OTHER_CZ_NAME` looks
+built to link the segments and is empty on all twenty-three. See
+[a county row is a share of a storm](../decisions/a-county-row-is-a-share-of-a-storm.yml) and
+[the SPC database](spc-tornado-database.md), which holds one row per tornado instead.
 
 **Its coordinates changed meaning about 2010.** Every tornado from 1998 to 2006 has an identical
 begin and end coordinate against a stated track length of a tenth of a mile, on a five- or

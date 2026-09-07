@@ -1,0 +1,87 @@
+id: a-damage-figure-is-a-category
+summary: >-
+  The Storm Events Database says the tornado of 11 April 1965 did $2,500,000 of property damage, and
+  it says the same of the tornado of 19 July 1950, and of 2,218 other events. Across forty-three
+  years and every state, 25,645 of its 25,649 non-zero damage figures are one of eight values. They
+  are not amounts. They are the nine damage categories the Weather Bureau printed in a footnote,
+  rendered as dollars by whoever built the file. A corpus that quotes one as a figure has quoted a
+  band and lost the band.
+context: |
+  The 1965 publication prints its own key at the end of every table: "Storm damages are placed in
+  categories varying from 1 to 9 as follows: 1 Less than $50 / 2 $50 to $500 / 3 $500 to $5,000 /
+  4 $5,000 to $50,000 / 5 $50,000 to $500,000 / 6 $500,000 to $5,000,000 / 7 $5,000,000 to
+  $50,000,000 / 8 $50,000,000 to $500,000,000 / 9 $500,000,000 to $5,000,000,000."
+  [verified] — [the publication](../catalog/noaa-storm-data-publication.md), April 1965, page 36.
+
+  The Storm Prediction Center's file keeps the category and says so — "Prior to 1996 this is a
+  categorization of tornado damage by dollar amount"; its row for the Palm Sunday tornado reads
+  `loss` = `6.0`. [verified] — [the SPC database](../catalog/spc-tornado-database.md), field 14. The
+  Storm Events Database prints the same category as `2.5M` and carries no flag, no note and no
+  footnote saying it did.
+
+      category     the band            what Storm Events prints
+      1            less than $50       .03K
+      2            $50 – $500          .25K
+      3            $500 – $5,000       2.5K
+      4            $5,000 – $50,000    25K
+      5            $50,000 – $500,000  250K
+      6            $500K – $5M         2.5M
+      7            $5M – $50M          25M
+      8            $50M – $500M        250M
+
+  Categories two through eight are half their own upper bound; category one is $30, which is not
+  half of anything. [inference] — computed here. **The test is the one this corpus already owns.**
+  Over every non-zero property-damage value in the file from 1950 through 1992 — all states,
+  25,649 of them — those eight values account for 25,645, and four rows in forty-three years carry
+  anything else. In 1993 the count on the ladder falls to zero of 3,597. [verified] — the bulk
+  detail files, counted here. That is
+  [a value shared by unrelated records is a default](a-value-shared-by-unrelated-records-is-a-default.yml)
+  finding its second case, by its own instrument: uniformity, not implausibility.
+decision: |
+  **A figure that is one of a file's small closed set of values is a category, and the corpus
+  prints the band.** Where the corpus has quoted `$2.5 million` from a pre-1993 Storm Events row it
+  now says "damage category 6 — $500,000 to $5,000,000", and where a comparison rested on the
+  midpoint it is withdrawn.
+
+  - **It is not a default and this rule is not that one.** A default is a value standing in for
+    something the file does not know. This is the value the file does know, at a grain nine steps
+    wide, wearing the costume of a dollar amount. The detection is the same and the repair is not:
+    a default is dropped, a category is kept and widened.
+  - **Two figures inside one band do not disagree.** That is the whole of this rule's work here.
+  - **Say when the ladder stops.** These files change grain on 1 January 1993 without a note. A
+    series that crosses that date is two series; see
+    [a reporting change has a date and a control](a-reporting-change-has-a-date-and-a-control.yml).
+  - **A band cannot be deflated, ranked or summed as if it were a measurement.** It can be compared
+    with another band, and the comparison is of bands.
+rationale: |
+  **This corrects a decision of this corpus's own, and the correction is the point.**
+  [An instrument dates it and a witness describes it](an-instrument-dates-it-and-a-witness-describes-it.yml)
+  was built on a three-row table of disagreements between the federal storm file and *The Bluffton
+  News* about the tornado of 19 July 1950, and its middle row was:
+
+      property damage    $2,500,000    "one and one-half-million dollar"
+
+  from which that decision drew the instruction "Print both numbers ... The corpus holds both and
+  states neither as the figure", and the event node said the two were "a million apart". **They are
+  not apart at all.** The file's `2.5M` is damage category 6, $500,000 to $5,000,000, and the
+  paper's one and a half million falls inside it. A weekly newspaper rounding to the nearest half
+  million and a federal file recording a band agree, and the corpus published them as a conflict on
+  the strength of a number it had never asked the grain of. The other two rows of that table — the
+  clock and the count of storms — stand, and the
+  rule those rows support stands with them. What falls is the claim that the instrument and the
+  witness disagreed about the money.
+
+  **The general failure is reading a number's precision off its digits.** `$2,500,000` has two
+  significant figures and looks like seven. Nothing in the row says otherwise, and the file's own
+  documentation does not mention it; the SPC's does, and the publication's footnote does, and both
+  are documents the corpus had not opened. See
+  [a flag column is part of the figure](a-flag-column-is-part-of-the-figure.yml), which is the same
+  failure with the qualifier stored in a different place — there in a column the corpus did not
+  read, here in a book the corpus did not have.
+
+  **What would change this rule.** A source establishing that some pre-1993 damage values in this
+  file are true estimates rather than category representatives — a documented conversion, or a row
+  whose value is off the ladder and traceable to a stated dollar figure. Four such rows exist in
+  forty-three years and none of them is in Ohio.
+status: accepted
+date: "2026-09-06"
