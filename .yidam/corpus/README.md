@@ -57,6 +57,7 @@ Sorted by: kind, then alphabetically.
 | [the-flash-flood-at-bluffton-1959.yml](event/the-flash-flood-at-bluffton-1959.yml) | event | The flash flood at Bluffton, 21 January 1959 | 5 | 9v / 0i / 1o | 79 |
 | [the-flash-flood-at-cairo-28-may-2014.yml](event/the-flash-flood-at-cairo-28-may-2014.yml) | event | The flash flood at Cairo and Beaverdam, 28 May 2014 | 4 | 13v / 2i / 1o | 86 |
 | [the-flood-at-bluffton-26-april-2019.yml](event/the-flood-at-bluffton-26-april-2019.yml) | event | The flood at Bluffton, 26 April 2019 | 5 | 11v / 3i / 1o | 86 |
+| [the-flood-of-16-july-1915.yml](event/the-flood-of-16-july-1915.yml) | event | The flood of 16 July 1915 | 5 | 10v / 1i / 1o | 87 |
 | [the-flood-of-16-june-2015.yml](event/the-flood-of-16-june-2015.yml) | event | The flood of 16 June 2015 | 3 | 11v / 3i / 1o | 83 |
 | [the-flood-of-22-august-2007.yml](event/the-flood-of-22-august-2007.yml) | event | The flood of 21–22 August 2007 | 5 | 13v / 2i / 1o | 94 |
 | [the-flood-of-28-february-2011.yml](event/the-flood-of-28-february-2011.yml) | event | The flood of 28 February 2011 | 4 | 10v / 3i / 1o | 86 |
@@ -65,7 +66,7 @@ Sorted by: kind, then alphabetically.
 | [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 4 | 6v / 2i / 1o | 65 |
 | [the-naming-and-incorporation-of-bluffton-1861.yml](event/the-naming-and-incorporation-of-bluffton-1861.yml) | event | The naming and incorporation of Bluffton, 1861 | 3 | 5v / 2i / 1o | 52 |
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
-| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 4 | 8v / 1i / 1o | 85 |
+| [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 4 | 9v / 1i / 1o | 87 |
 | [the-storm-at-beaverdam-1950.yml](event/the-storm-at-beaverdam-1950.yml) | event | The storm at Beaverdam and Orange Township, 19 July 1950 | 5 | 7v / 1i / 1o | 79 |
 | [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 10v / 2i / 1o | 92 |
 | [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 7v / 3i / 1o | 80 |
@@ -264,7 +265,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-net-migration-2021-2024.yml](measure/allen-county-net-migration-2021-2024.yml) | measure | Allen County net migration, 2021–2024 | 3 | 5v / 1i / 0o | 49 |
 | [allen-county-net-position-2023.yml](measure/allen-county-net-position-2023.yml) | measure | Allen County's audited net position, 2023 | 2 | 8v / 3i / 1o | 71 |
 | [allen-county-new-houses-by-place-1990-2025.yml](measure/allen-county-new-houses-by-place-1990-2025.yml) | measure | Where Allen County's new houses went, 1990–2025 | 6 | 6v / 5i / 1o | 90 |
-| [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 10v / 2i / 1o | 93 |
+| [allen-county-newspapers-1843-2026.yml](measure/allen-county-newspapers-1843-2026.yml) | measure | Allen County's newspapers, 1843–2026 | 3 | 12v / 2i / 1o | 108 |
 | [allen-county-nursing-home-days-2011-2023.yml](measure/allen-county-nursing-home-days-2011-2023.yml) | measure | Allen County nursing home resident days, 2011–2023 | 4 | 8v / 1i / 1o | 88 |
 | [allen-county-nursing-homes-2026.yml](measure/allen-county-nursing-homes-2026.yml) | measure | Allen County nursing homes, 2026 | 5 | 8v / 0i / 1o | 95 |
 | [allen-county-occupancy-2020.yml](measure/allen-county-occupancy-2020.yml) | measure | Allen County housing occupancy and household size, 2020 | 3 | 6v / 5i / 0o | 95 |
