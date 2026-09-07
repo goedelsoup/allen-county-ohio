@@ -355,6 +355,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-water-gauges-2026.yml](measure/allen-county-water-gauges-2026.yml) | measure | Allen County's water monitoring sites, 2026 | 3 | 11v / 5i / 0o | 102 |
 | [allen-county-water-systems-2026.yml](measure/allen-county-water-systems-2026.yml) | measure | Allen County's public water systems, 2026 | 3 | 8v / 4i / 1o | 85 |
 | [allen-county-water-violations-1984-2026.yml](measure/allen-county-water-violations-1984-2026.yml) | measure | Drinking water violations in Allen County, 1984–2026 | 2 | 7v / 1i / 1o | 59 |
+| [allen-county-watershed-boundaries-2026.yml](measure/allen-county-watershed-boundaries-2026.yml) | measure | Allen County's watershed boundaries, 2026 | 5 | 9v / 4i / 0o | 161 |
 | [allen-county-wetlands-2026.yml](measure/allen-county-wetlands-2026.yml) | measure | What the wetland map draws in Allen County | 5 | 12v / 2i / 1o | 109 |
 | [allen-county-workplace-injuries-2016-2024.yml](measure/allen-county-workplace-injuries-2016-2024.yml) | measure | Allen County workplace injuries and illnesses, 2016–2024 | 7 | 10v / 1i / 1o | 104 |
 | [allen-county-world-war-dead.yml](measure/allen-county-world-war-dead.yml) | measure | Allen County's World War dead | 2 | 3v / 5i / 1o | 73 |
@@ -404,7 +405,7 @@ Sorted by: kind, then alphabetically.
 | [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 8v / 1i / 1o | 75 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 5v / 0i / 0o | 51 |
 | [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 3 | 7v / 3i / 0o | 66 |
-| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 5v / 0i / 0o | 57 |
+| [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 6v / 0i / 0o | 66 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 4v / 1i / 0o | 47 |
 | [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 17v / 5i / 0o | 115 |
 | [riley-creek.yml](natural-feature/riley-creek.yml) | natural-feature | Riley Creek | 4 | 7v / 1i / 0o | 53 |

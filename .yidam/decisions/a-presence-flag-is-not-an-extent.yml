@@ -1,0 +1,88 @@
+id: a-presence-flag-is-not-an-extent
+summary: >-
+  Every one of the 32 hydrologic units covering Allen County is flagged `TF`, a road or railroad
+  that moved the watershed boundary — which reads as the boundary having been drawn around
+  infrastructure across 100 per cent of the county. Measured, 7.5 per cent of it lies within
+  twenty-five feet of a road, against 4.2 per cent for random ground. The flag is true and the
+  reading was two per cent right. A code that records that something happened somewhere in a
+  polygon says nothing about how much of the polygon it happened to, and the corpus measures
+  rather than reads the area off the flag.
+context: |
+  The Watershed Boundary Dataset publishes a `HUMod` field on each 12-digit unit, and Allen
+  County's 32 units carry six codes between them. Read off the areas of the units that carry each
+  one, the county looks heavily engineered:
+
+      TF Transportation Feature   32 units   260,359 acres   100.00%
+      RS Reservoir                 5          56,246          21.60%
+      LE Levee                     4          55,138          21.18%
+      DD Drainage Ditch            2          23,011           8.84%
+      IT Interbasin Transfer       2          17,842           6.85%
+      MA Mining Activity           2          16,476           6.33%
+
+  [verified] — [the WBD](../catalog/usgs-watershed-boundary.md), clipped here. An issue in this
+  repository wrote the first row up as *"USGS recorded the watershed boundary itself as drawn
+  around a road or railroad, across 100 per cent of the county"* and the third as a contradiction
+  with FEMA, which maps no levee anywhere in Allen County.
+
+  **Both readings are of a share the file never states.** The federal standard defines every one
+  of these codes as a *kind* of thing — `TF` is *"a land transportation feature ... that alters the
+  natural boundary location"* — with no quantity, no location and no count attached. One road
+  crossing that displaced one chain of one unit's boundary earns the unit its `TF`, and the unit's
+  acreage then arrives in the reader's total as though the whole of it were involved.
+  [verified] — [the standard](../catalog/usgs-wbd-federal-standard.md), §6.3.7.4 and §6.4.2.3.
+
+  **Measured, the effect is real and small.** Of the boundary's 261.28 miles inside the county,
+  19.52 lie within twenty-five feet of a road — 7.5 per cent — and 2.88 within twenty-five feet of
+  a railroad. Against three controls sampled every fiftieth foot the same way: random points in the
+  county are 4.2 per cent, the petitioned ditches 4.1, and the mapped stream network 1.9.
+  [inference] — computed here, twice by different routes. So the boundary does follow roads, at
+  about 1.8 times chance, and the honest sentence is *seven and a half per cent at twenty-five feet
+  and thirty-eight at two hundred and fifty*, not *one hundred*.
+decision: |
+  **A code that records the presence of something in an area is not a measure of how much of that
+  area it is in. Where the share matters, measure it; where it cannot be measured, say the flag is
+  a flag.**
+
+  - **Never area-weight a presence flag.** Summing the acreage of every polygon carrying a code and
+    calling the result the code's extent is the specific move this rule forbids. It converts *at
+    least one* into *all*, and it does so silently, because the arithmetic is correct.
+  - **Read the field's own domain before reading the field.** `TF` and `LE` are in the standard's
+    domain for the boundary *line* and not for the *polygon* they are published on here; `DD` and
+    `IT` were retired into `AW`. Four of this county's six codes are outside the domain of the
+    field carrying them, and a reader who has not opened the standard cannot know that any of them
+    means something other than what the polygon suggests.
+  - **A flag and an absence are not a contradiction until both are about the same quantity.**
+    `LE` on four units and FEMA's zero levees are not in conflict: one says a boundary somewhere on
+    those units was drawn along an artificial bank, the other says no accredited flood-protection
+    levee exists. Before publishing two sources as disagreeing, state the quantity each is about.
+  - **A measured share needs a control.** 7.5 per cent means nothing until random ground is known
+    to be 4.2. The control is what turns a number into a finding, and its absence is what let the
+    unmeasured reading stand.
+rationale: |
+  **The failure is a shape this corpus keeps meeting from new directions, and this is its
+  area-weighted form.** [A modifier changes what the thing is](a-modifier-changes-what-the-thing-is.yml)
+  found a classification whose suffix changed the object's kind; this finds a classification with
+  no suffix at all, where the *object* is a fact about a line and the *reader* supplies an area
+  from the polygon it is attached to. [A damage figure is a category](a-damage-figure-is-a-category.yml)
+  is the same error in one dimension: a band read as a point. Here a presence is read as a
+  coverage.
+
+  **What made it convincing was that it was cheap and checkable-looking.** Thirty-two of
+  thirty-two is an arresting number and it is correct. Every step from there to *100 per cent of
+  the county* is arithmetic on published acreage, and none of it requires an assumption a reader
+  would notice making. That is the profile of the errors this corpus has had to withdraw: not a
+  guess, a sum.
+
+  **And the measurement was available the whole time.** The county's roads are a file this corpus
+  already holds, the boundary is a layer it already reads, and the answer took one spatial index.
+  The reason it was not measured is that the flag looked like an answer. See
+  [an open question that named its own method](an-open-question-that-named-its-own-method.yml).
+
+  **What would change this rule.** A `HUMod` field that carried the length of boundary affected, or
+  a line layer whose per-segment codes were populated. `WBDLine` is that layer and it has the
+  field: across a nine-county box its `HUMod` is null on 1,575 segments and `NM` — *no
+  modifications* — on 424, and `TF` appears on none of them. [verified] — the same service. The
+  code that would locate the modification is published only where the modification is not
+  recorded.
+status: accepted
+date: "2026-09-07"

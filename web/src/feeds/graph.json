@@ -15819,6 +15819,60 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-watershed-boundaries-2026.yml",
+      "class": "measure",
+      "label": "Allen County's watershed boundaries, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2024-08-15",
+        "method": "Layers 6 (12-digit units), 4 (subbasins) and 0 (`WBDLine`) of the Watershed Boundary Dataset service, taken as GeoJSON in EPSG:3734 and clipped to the Census 2020 county polygon requested from TIGERweb in the same projection. [verified] `as_of` is the layer's own `LoadDate`, 1723704945000 milliseconds, and not the date of the survey the lines were traced from, which the file does not carry. Forty of the 12-digit units intersect the query envelope and 32 have area inside the county; 85 boundary segments intersect it and 64 have length inside. Road coincidence is computed two ways and both are reported only because they agree: once by buffering the road union and intersecting the boundary, once by sampling the boundary every fifty feet and taking the distance to the nearest road with a spatial index. The controls use the second method with the same spacing, and the random control is 27,629 points — the same count as the boundary's samples — drawn in the county polygon under a fixed seed. [inference] Every share here moves with its tolerance and none is reported without one.",
+        "parameter": "12-digit hydrologic units covering Allen County",
+        "table": "huc12 name acres_in_county humod hutype 041000070501 Sugar-Creek 27598 TF S 041000070101 Headwaters-Auglaize-River 23838 TF S 041000070402 Dug-Run-Ottawa-River 18010 RS,LE,TF S 041000070204 Sixmile-Creek-Auglaize-River 17733 IT,TF M 041000070306 Lima-Reservoir-Ottawa-River 17501 RS,LE,TF S 041000080601 Cranberry-Creek 13021 DD,TF S 041000070903 Lower-Jennings-Creek 12972 TF S 041000070305 Lost-Creek 11139 RS,LE,TF S 041000070203 Sims-Run-Auglaize-River 10502 MA,TF S 041000080403 Marsh-Run-Little-Riley-Creek 10333 TF S 041000070303 Little-Hog-Creek 10203 TF S 041000070502 Plum-Creek 9990 DD,TF S 041000070403 Honey-Run 8489 RS,LE,TF S 041000070404 Pike-Run 8470 TF S 041000070401 Little-Ottawa-River 8199 TF S 041000080405 Lower-Riley-Creek 7586 TF S 041000070901 Upper-Jennings-Creek 6684 TF S 041000070405 Leatherwood-Ditch 6325 TF S 041000070406 Beaver-Run-Ottawa-River 6154 TF S 041000070103 Wrestle-Creek-Auglaize-River 5974 MA,TF S 041000070201 Twomile-Creek 4738 TF S 041000070304 Lower-Hog-Creek 4375 TF S 050600010101 Cottonwood-Ditch 2299 TF S 041000070904 Big-Run-Auglaize-River 2088 TF S 041000080401 Binkley-Ditch-Little-Riley-Creek 1760 TF S 041000080505 Dutch-Run 1494 TF S 041000080404 Middle-Riley-Creek 1251 TF S 041000070902 West-Jennings-Creek 1108 RS,TF S 041000070503 Village-of-Kalida-Ottawa-River 393 TF S 041000040205 Prairie-Creek-Saint-Marys-River 109 IT,TF S 041000080504 Dukes-Run 22 TF S 050600010102 Headwaters-Scioto-River 2 TF S",
+        "unit": "subwatersheds",
+        "value": "32"
+      },
+      "blocks": [
+        {
+          "text": "**Thirty-two subwatersheds cover this county and every one of them is flagged as having had its boundary moved by a road.** [verified] — [the Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md), layer 6, clipped to the county polygon in EPSG:3734. The `HUMod` codes and the ground they cover:",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four of the six codes are not in the domain the federal standard gives this field.** The standard defines `HUMod` twice: on the boundary *line* it is what *\"alters the location of the hydrologic unit boundary\"*, and `TF` and `LE` are in that list; on the 12-digit *polygon* it is what *\"alters the natural delineation\"* of the unit, and the stated domain is `AW, GF, GL, IF, KA, LA, MA, NC, NM, OC, OF, PD, RC, RS, UA, WD`. `DD` and `IT` are in neither — both were folded into `AW Artificial Waterway`, whose definition names them as superseded. [verified] — [the standard](../../catalog/usgs-wbd-federal-standard.md), §6.3.7.4 and §6.4.2.3. **Twenty-five of the 32 units carry no in-domain code at all**, and the standard's own advice for this case is to check the metadata or ask the state steward. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**So the four `LE` units are not four levees.** The code is defined as *\"an artificial bank to confine a stream channel or limit adjacent areas subject to flooding; alters the natural boundary location\"* — a statement about where a cartographer put a line. FEMA's National Flood Hazard Layer returns no levee for this county, the effective flood insurance study's levee table reads \"[Not Applicable to this Flood Risk Project]\", and [the National Levee Database](../../catalog/national-levee-database.md) holds no feature of any kind here or in nine counties around it. [verified] — the three sources, queried here. The four units are Dug Run-Ottawa River, Lima Reservoir-Ottawa River, Lost Creek and Honey Run, and each also carries `RS`: they are the ring in which Lima's upground reservoirs stand, whose embankments are 38 to 53 feet of earth. [inference] — see [the dams](allen-county-dams-2026.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "[verified] — [TIGER/Line roads](../../catalog/census-tiger-roads.md) and rails, 2024, computed twice by different routes that agree to a tenth of a per cent. The median distance from this boundary to the nearest road is **394 feet**.",
+          "tier": "verified"
+        },
+        {
+          "text": "**There is a real effect and it is a fiftieth of the size the flag reads as.** Against three controls sampled the same way — every fiftieth foot — the share of a line lying within 25 feet of a road is **7.5 per cent for this boundary, 4.2 per cent for random points in the county, 4.1 per cent for the petitioned ditches and 1.9 per cent for the mapped stream network**. [inference] — computed here. So a watershed boundary here does seek roads, at about 1.8 times chance, and **a stream avoids them**: water goes under a road at a bridge, and a line drawn on a map runs along one. See [a presence flag is not an extent](../../decisions/a-presence-flag-is-not-an-extent.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**No elevation model touched these lines.** Every one of the 64 boundary segments inside the county carries `LineSource` `DRG24` — *\"delineated from 1:24,000-scale Digital Raster Graphics\"*, which is a scanned paper topographic quadrangle — and 39.1 per cent of the mileage adds `ORTHO40`, a 1:40,000 aerial photograph. **`NED`, `DEM` and `LIDAR` appear nowhere in this county**; across a nine-county box they appear on 32 of 2,000 segments. [verified] — the `WBDLine` layer. This is the standard's own baseline and not a defect: §4.1 sets 1:24,000 as the floor and §4.2.1 makes the DRG the preferred base.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county's other watershed map was made from LiDAR.** The engineer's 175 ditch watersheds are named `#1321-Lidarws` and the rest; the federal 32 were traced off paper. Two delineations of one county, one instrument each, and the corpus holds both. [verified] — [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md); see [the petitioned ditches](allen-county-petitioned-ditches-2026.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**One unit has more than one outlet.** `041000070204` Sixmile Creek-Auglaize River is `HUType` `M`, Multiple Outlet, against `S` Standard on the other 31, and 17,733 of its 19,126 acres are in this county. [verified] — the same layer, whose `HUType` field *does* publish its coded-value domain where `HUMod` does not.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The county drains to four subbasins and this corpus has said three.** Auglaize `04100007` holds 222,481.72 acres of it, Blanchard `04100008` 35,466.98, Upper Scioto `05060001` 2,301.75 and **St. Marys `04100004` 108.80** — the four summing to the county's area exactly. [verified] — layer 4, clipped here; the Scioto figure is within 1.25 acres of [the elevation node's](allen-county-elevation-2026.yml) independently computed 2,303.0. The St. Marys ground is a single block of **108.68 acres in Spencer Township** on the county's western line, plus 0.12 acres of sliver, in unit `041000040205` Prairie Creek-Saint Marys River. Its water reaches the Maumee at Fort Wayne rather than by way of the Auglaize.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-wetlands-2026.yml",
       "class": "measure",
       "label": "What the wetland map draws in Allen County",
@@ -18053,6 +18107,10 @@
       "blocks": [
         {
           "text": "The drainage basin that **almost all** of Allen County lies within — the largest watershed draining to the Great Lakes, discharging to Lake Erie at Toledo. 3,548 of the county's 3,552 census blocks and 102,107 of its 102,206 people are in the Great Lakes Region, across three subbasins: Auglaize `04100007` holds 3,200 blocks and Blanchard `04100008` holds 348. [verified] — [USGS Watershed Boundary Dataset](../../catalog/usgs-watershed-boundary.md), by block composition.",
+          "tier": "verified"
+        },
+        {
+          "text": "**That sentence said three and could name two, and the third is real.** 108.68 acres in [Spencer Township](../place/spencer-township.yml), on the county's western line, lie in the St. Marys subbasin `04100004`, whose water reaches the Maumee at Fort Wayne rather than by way of the Auglaize. **It holds no census block**, so the method that wrote this node could not see it, and the count it produced was of the subbasins that contain people. [verified] — [the watershed boundaries](../measure/allen-county-watershed-boundaries-2026.yml), by area. On the ground the county's four subbasins are Auglaize at 85.45 per cent, Blanchard at 13.62, Upper Scioto at 0.88 and St. Marys at 0.04, and they sum to the county exactly.",
           "tier": "verified"
         },
         {
@@ -35185,6 +35243,34 @@
       "relationship": "describes",
       "tier": "verified",
       "source": "catalog/epa-sdwis.md"
+    },
+    {
+      "from": "measure/allen-county-watershed-boundaries-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
+    },
+    {
+      "from": "measure/allen-county-watershed-boundaries-2026.yml",
+      "to": "natural-feature/maumee-river-basin.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
+    },
+    {
+      "from": "measure/allen-county-watershed-boundaries-2026.yml",
+      "to": "measure/allen-county-petitioned-ditches-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-watershed-boundaries-2026.yml",
+      "to": "measure/allen-county-elevation-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/usgs-watershed-boundary.md"
     },
     {
       "from": "measure/allen-county-wetlands-2026.yml",

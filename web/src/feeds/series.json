@@ -772,6 +772,26 @@
       ]
     },
     {
+      "id": "place-allen-county::12-digit-hydrologic-units-covering-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "12-digit hydrologic units covering Allen County",
+      "unit": "subwatersheds",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-watershed-boundaries-2026.yml",
+          "label": "Allen County's watershed boundaries, 2026",
+          "as_of": "2024-08-15",
+          "value": 32.0,
+          "published": "32",
+          "tier": "verified",
+          "source": "catalog/usgs-watershed-boundary.md",
+          "method": "Layers 6 (12-digit units), 4 (subbasins) and 0 (`WBDLine`) of the Watershed Boundary Dataset service, taken as GeoJSON in EPSG:3734 and clipped to the Census 2020 county polygon requested from TIGERweb in the same projection. [verified] `as_of` is the layer's own `LoadDate`, 1723704945000 milliseconds, and not the date of the survey the lines were traced from, which the file does not carry. Forty of the 12-digit units intersect the query envelope and 32 have area inside the county; 85 boundary segments intersect it and 64 have length inside. Road coincidence is computed two ways and both are reported only because they agree: once by buffering the road union and intersecting the boundary, once by sampling the boundary every fifty feet and taking the distance to the nearest road with a spatial index. The controls use the second method with the same spacing, and the random control is 27,629 points — the same count as the boundary's samples — drawn in the county polygon under a fixed seed. [inference] Every share here moves with its tolerance and none is reported without one."
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::Allen-County's-median-household-income-as-a-share-of-the-national-median",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -41618,6 +41638,244 @@
         ]
       ],
       "tier": "verified"
+    },
+    {
+      "node": "measure/allen-county-watershed-boundaries-2026.yml",
+      "label": "Allen County's watershed boundaries, 2026",
+      "columns": [
+        "huc12",
+        "name",
+        "acres_in_county",
+        "humod",
+        "hutype"
+      ],
+      "rows": [
+        [
+          "041000070501",
+          "Sugar-Creek",
+          "27598",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070101",
+          "Headwaters-Auglaize-River",
+          "23838",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070402",
+          "Dug-Run-Ottawa-River",
+          "18010",
+          "RS,LE,TF",
+          "S"
+        ],
+        [
+          "041000070204",
+          "Sixmile-Creek-Auglaize-River",
+          "17733",
+          "IT,TF",
+          "M"
+        ],
+        [
+          "041000070306",
+          "Lima-Reservoir-Ottawa-River",
+          "17501",
+          "RS,LE,TF",
+          "S"
+        ],
+        [
+          "041000080601",
+          "Cranberry-Creek",
+          "13021",
+          "DD,TF",
+          "S"
+        ],
+        [
+          "041000070903",
+          "Lower-Jennings-Creek",
+          "12972",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070305",
+          "Lost-Creek",
+          "11139",
+          "RS,LE,TF",
+          "S"
+        ],
+        [
+          "041000070203",
+          "Sims-Run-Auglaize-River",
+          "10502",
+          "MA,TF",
+          "S"
+        ],
+        [
+          "041000080403",
+          "Marsh-Run-Little-Riley-Creek",
+          "10333",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070303",
+          "Little-Hog-Creek",
+          "10203",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070502",
+          "Plum-Creek",
+          "9990",
+          "DD,TF",
+          "S"
+        ],
+        [
+          "041000070403",
+          "Honey-Run",
+          "8489",
+          "RS,LE,TF",
+          "S"
+        ],
+        [
+          "041000070404",
+          "Pike-Run",
+          "8470",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070401",
+          "Little-Ottawa-River",
+          "8199",
+          "TF",
+          "S"
+        ],
+        [
+          "041000080405",
+          "Lower-Riley-Creek",
+          "7586",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070901",
+          "Upper-Jennings-Creek",
+          "6684",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070405",
+          "Leatherwood-Ditch",
+          "6325",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070406",
+          "Beaver-Run-Ottawa-River",
+          "6154",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070103",
+          "Wrestle-Creek-Auglaize-River",
+          "5974",
+          "MA,TF",
+          "S"
+        ],
+        [
+          "041000070201",
+          "Twomile-Creek",
+          "4738",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070304",
+          "Lower-Hog-Creek",
+          "4375",
+          "TF",
+          "S"
+        ],
+        [
+          "050600010101",
+          "Cottonwood-Ditch",
+          "2299",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070904",
+          "Big-Run-Auglaize-River",
+          "2088",
+          "TF",
+          "S"
+        ],
+        [
+          "041000080401",
+          "Binkley-Ditch-Little-Riley-Creek",
+          "1760",
+          "TF",
+          "S"
+        ],
+        [
+          "041000080505",
+          "Dutch-Run",
+          "1494",
+          "TF",
+          "S"
+        ],
+        [
+          "041000080404",
+          "Middle-Riley-Creek",
+          "1251",
+          "TF",
+          "S"
+        ],
+        [
+          "041000070902",
+          "West-Jennings-Creek",
+          "1108",
+          "RS,TF",
+          "S"
+        ],
+        [
+          "041000070503",
+          "Village-of-Kalida-Ottawa-River",
+          "393",
+          "TF",
+          "S"
+        ],
+        [
+          "041000040205",
+          "Prairie-Creek-Saint-Marys-River",
+          "109",
+          "IT,TF",
+          "S"
+        ],
+        [
+          "041000080504",
+          "Dukes-Run",
+          "22",
+          "TF",
+          "S"
+        ],
+        [
+          "050600010102",
+          "Headwaters-Scioto-River",
+          "2",
+          "TF",
+          "S"
+        ]
+      ],
+      "tier": "inference"
     },
     {
       "node": "measure/bluffton-annexations-1994-2024.yml",
