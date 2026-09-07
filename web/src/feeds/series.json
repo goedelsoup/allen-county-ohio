@@ -1672,6 +1672,26 @@
       ]
     },
     {
+      "id": "place-allen-county::dams-in-the-National-Inventory-of-Dams,-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "dams in the National Inventory of Dams, Allen County",
+      "unit": "dams",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-dams-2026.yml",
+          "label": "Allen County's dams, 2026",
+          "as_of": "2026-08-28",
+          "value": 12.0,
+          "published": "12",
+          "tier": "verified",
+          "source": "catalog/national-inventory-of-dams.md",
+          "method": "The whole national CSV, filtered on `State` equal to Ohio and `County` equal to Allen exactly. A substring match on the county name alone returns Allen Parish in Louisiana and Allen County in Indiana and Kansas; within Ohio the string matches nothing else. [verified] `as_of` is the file's own `Data Last Updated` line, which is the first line of the CSV and not its header. Storage is `Max Storage (Acre-Ft)`, not normal storage, and the two differ by a fifth across these twelve. Purposes are the file's own semicolon-joined vocabulary, unaltered. The low-head dams are counted from a different source and are deliberately not added to the twelve: they are not in this file, and a total mixing an inventory with a map of points of interest would be a number from nowhere. [inference]"
+        }
+      ]
+    },
+    {
       "id": "place-allen-county::days-at-unhealthy-for-sensitive-groups-or-worse,-as-a-share-of-days-monitored",
       "subject": "place/allen-county.yml",
       "subject_label": "Allen County",
@@ -3598,6 +3618,26 @@
           "tier": "verified",
           "source": "catalog/ohio-attorney-directory.md",
           "method": "One POST to the directory's `Ajax.ashx` with `county=Allen` and every other field empty. The response carried `TooManyResults: false`, so the 334 rows are the whole answer at the 1,000-row cap rather than a truncation. The county filter is a substring match and is not scoped to a state; the same query with `state=IN` returns zero rows, which is how these were confirmed to be Ohio addresses and not Fort Wayne's. Counts by status, by decade and by admitted-by are tallies of those rows and nothing is estimated. [verified]"
+        }
+      ]
+    },
+    {
+      "id": "place-allen-county::petitioned-drainage-on-permanent-county-maintenance,-inside-Allen-County",
+      "subject": "place/allen-county.yml",
+      "subject_label": "Allen County",
+      "parameter": "petitioned drainage on permanent county maintenance, inside Allen County",
+      "unit": "miles",
+      "tier": "verified",
+      "points": [
+        {
+          "node": "measure/allen-county-petitioned-ditches-2026.yml",
+          "label": "Allen County's petitioned ditches, 2026",
+          "as_of": "2026",
+          "value": 346.41,
+          "published": "346.41",
+          "tier": "verified",
+          "source": "catalog/allen-county-ditch-maintenance.md",
+          "method": "Layers 0 and 1 of the county engineer's ditch maintenance service, taken whole as GeoJSON in the service's native EPSG:3734 — NAD83 / Ohio North, US survey feet — so no reprojection stands between the geometry and the mileage. [verified] Lengths reproduce the service's own `Shape.STLength()` to the foot and areas its `Shape.STArea()` exactly, which is a check on the arithmetic and not on the data. Clipping is against the Census 2020 county polygon requested from TIGERweb in the same projection, whose area comes to 406.811 square miles against the gazetteer's 406.851 — four hundredths apart, the projection's distortion across the county. [verified] The same pipeline reproduces this corpus's independently computed [stream network](allen-county-stream-network-2026.yml) total at 735.09 miles against 735.22, which is the cross-check that licenses comparing the two files at all. The two clips disagree in the third figure and are not reconciled here: this one finds 35 named watercourses in the county where that node finds 36, and 9.99 miles of canal or ditch where it finds 9.82. Every figure above is from this pipeline and every figure attributed to that node is from its own. [verified] Overlap between a maintained line and a mapped channel is a buffered intersection and therefore a function of the tolerance; every share that depends on one names it. [inference] Two totals are carried and are not interchangeable: 346.41 miles is distinct channel — the union of the 249 lines, and the figure above — while 349.69 is the sum of their individual lengths and the denominator of any share computed petition by petition. [verified]"
         }
       ]
     },
@@ -29676,7 +29716,7 @@
         }
       ],
       "caveats": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "figures": [
         {
@@ -29718,7 +29758,7 @@
         }
       ],
       "caveats": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "figures": []
     },
@@ -29739,7 +29779,7 @@
         }
       ],
       "caveats": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "figures": [
         {
@@ -29771,7 +29811,7 @@
         }
       ],
       "caveats": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "figures": [
         {
@@ -29818,7 +29858,7 @@
         }
       ],
       "caveats": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "figures": [
         {
@@ -29860,7 +29900,7 @@
         }
       ],
       "caveats": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "figures": [
         {
@@ -30085,7 +30125,9 @@
           "span": "**Five and a half of its eight miles are inside Fort Shawnee.** 5.49 of the 8.01 miles the county holds run inside the place that was a village until its electors ended it, and that place holds 16.54 miles of mapped channel against Lima's 14.67 — more water than the county seat. [verified] — [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md) and [the stream network](../measure/allen-county-stream-network-2026.yml); see [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
           "tier": "verified",
           "sources": [
-            "catalog/usgs-nhdplus-high-resolution.md"
+            "catalog/usgs-nhdplus-high-resolution.md",
+            "catalog/allen-county-ditch-maintenance.md",
+            "catalog/allen-county-ottawa-river-service.md"
           ]
         }
       ],
@@ -39817,6 +39859,130 @@
       "tier": "verified"
     },
     {
+      "node": "measure/allen-county-dams-2026.yml",
+      "label": "Allen County's dams, 2026",
+      "columns": [
+        "dam",
+        "year",
+        "purposes",
+        "max_storage_af",
+        "hazard",
+        "condition",
+        "drainage_sqmi"
+      ],
+      "rows": [
+        [
+          "Williams-Reservoir",
+          "2012",
+          "Water-Supply",
+          "18682",
+          "High",
+          "Satisfactory",
+          "0.71"
+        ],
+        [
+          "Bresler-Upground-Reservoir",
+          "1970",
+          "Water-Supply;Recreation",
+          "18140",
+          "High",
+          "Fair",
+          "0.92"
+        ],
+        [
+          "Ferguson-Upground-Reservoir",
+          "1959",
+          "Water-Supply;Recreation",
+          "8259",
+          "High",
+          "Fair",
+          "0.50"
+        ],
+        [
+          "Metzger-Upground-Reservoir",
+          "1946",
+          "Water-Supply;Recreation",
+          "4346",
+          "High",
+          "Fair",
+          "0.25"
+        ],
+        [
+          "Lost-Creek-Upground-Reservoir",
+          "1917",
+          "Water-Supply;Recreation",
+          "3113",
+          "High",
+          "Poor",
+          "0.19"
+        ],
+        [
+          "Lima-Upground-Reservoir",
+          "1903",
+          "Recreation",
+          "1573",
+          "Significant",
+          "Poor",
+          "0.01"
+        ],
+        [
+          "Schoonover-Lake-Dam",
+          "1890",
+          "Recreation",
+          "214",
+          "Low",
+          "Satisfactory",
+          "0.08"
+        ],
+        [
+          "Refinery-Upground-West-Reservoir",
+          "1968",
+          "Tailings",
+          "152",
+          "Significant",
+          "Satisfactory",
+          "0.80"
+        ],
+        [
+          "Robbins-Pond-Dam",
+          "1992",
+          "Recreation",
+          "109",
+          "Low",
+          "Satisfactory",
+          "0.29"
+        ],
+        [
+          "Wieser-Lake-Dam",
+          "1870",
+          "Recreation",
+          "76",
+          "Low",
+          "Fair",
+          "0.82"
+        ],
+        [
+          "Swing-Bridge-Lake-Dam",
+          "1967",
+          "Recreation",
+          "57",
+          "Undetermined",
+          "Not-Rated",
+          "0.04"
+        ],
+        [
+          "Mcclintock-Lake-Dam",
+          "1982",
+          "Recreation",
+          "46",
+          "Significant",
+          "Poor",
+          "0.57"
+        ]
+      ],
+      "tier": "inference"
+    },
+    {
       "node": "measure/allen-county-household-income-1989-2024.yml",
       "label": "Allen County's median household income, 1989–2024",
       "columns": [
@@ -40689,6 +40855,83 @@
         ]
       ],
       "tier": "verified"
+    },
+    {
+      "node": "measure/allen-county-petitioned-ditches-2026.yml",
+      "label": "Allen County's petitioned ditches, 2026",
+      "columns": [
+        "petition",
+        "name",
+        "petition_mi",
+        "nhd_mi",
+        "on_the_petition_pct"
+      ],
+      "rows": [
+        [
+          "1239",
+          "Ottawa-River",
+          "38.14",
+          "31.99",
+          "97.3"
+        ],
+        [
+          "1304",
+          "Warrington-Sugar-Creek",
+          "26.69",
+          "21.35",
+          "81.4"
+        ],
+        [
+          "1160",
+          "Jennings-Creek",
+          "23.70",
+          "13.27",
+          "94.7"
+        ],
+        [
+          "1251",
+          "Lost-Creek",
+          "12.54",
+          "8.59",
+          "82.8"
+        ],
+        [
+          "1150",
+          "Pike-Run",
+          "12.52",
+          "9.55",
+          "95.2"
+        ],
+        [
+          "1222",
+          "Cranberry-Creek-Phase-3",
+          "11.63",
+          "7.75",
+          "99.6"
+        ],
+        [
+          "1260",
+          "Little-Ottawa-River",
+          "9.01",
+          "8.01",
+          "66.9"
+        ],
+        [
+          "1224",
+          "Flat-Fork-Creek",
+          "8.80",
+          "9.23",
+          "91.1"
+        ],
+        [
+          "1151",
+          "Dug-Run",
+          "7.11",
+          "7.69",
+          "79.4"
+        ]
+      ],
+      "tier": "inference"
     },
     {
       "node": "measure/allen-county-poverty-1989-2024.yml",

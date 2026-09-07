@@ -53,11 +53,23 @@ description: |
                                             Lima         14.67
 
 
-  **This file cannot say which of these channels somebody dug.** Allen County's ground is prime
-  farmland because it was drained, and a drained county's watercourses are largely ditches; the
-  network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no
-  field that would separate a straightened creek from a cut one. [inference] — see
-  [what the soils say](allen-county-soils-2026.yml).
+  **This file cannot say which of these channels somebody dug, and another file can.** Allen
+  County's ground is prime farmland because it was drained, and a drained county's watercourses are
+  largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent
+  stream, and offers no field that would separate a straightened creek from a cut one. [inference]
+  — see [what the soils say](allen-county-soils-2026.yml). **The county engineer's file does.**
+  346.41 miles of this county's channel is petitioned improvement on permanent maintenance, and
+  270.24 of the 735.22 miles above — 36.8 per cent at a fifty-foot tolerance — lie on it. Nine of
+  those petitions are named watercourses and one of them is the Ottawa River. [verified] —
+  [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md); see
+  [the petitioned ditches](allen-county-petitioned-ditches-2026.yml) and
+  [a watercourse can be an improvement](../../decisions/a-watercourse-can-be-an-improvement.yml).
+
+  **So the naming paragraph above is half an explanation.** A channel that runs all year got a
+  name; it also got a petition. 57.2 per cent of this county's named channel is on the maintenance
+  list against 24.7 per cent of its unnamed, and 57.9 per cent of its perennial miles against 27.4
+  of its intermittent. [verified] — the same comparison. Permanence and improvement are not
+  separable here from this file alone. [inference]
 properties:
   parameter: mapped stream channel in Allen County
   value: "735.22"
@@ -84,5 +96,9 @@ links:
   - target: allen-county-soils-2026.yml
     relationship: relates-to
     claim_tag: inference
+  - target: allen-county-petitioned-ditches-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-ditch-maintenance.md
   - target: ../measure.ont.yml
     relationship: instance-of

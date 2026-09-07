@@ -154,6 +154,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-covid-place-of-death-2020-2023.yml](measure/allen-county-covid-place-of-death-2020-2023.yml) | measure | Where Allen County's COVID-19 deaths happened, 2020–2023 | 6 | 8v / 1i / 1o | 91 |
 | [allen-county-covid-vaccination-2020-2023.yml](measure/allen-county-covid-vaccination-2020-2023.yml) | measure | COVID-19 vaccination in Allen County, 2020–2023 | 4 | 8v / 2i / 1o | 72 |
 | [allen-county-crops-2022.yml](measure/allen-county-crops-2022.yml) | measure | Allen County crops, 2022, against 1909 | 2 | 7v / 3i / 1o | 71 |
+| [allen-county-dams-2026.yml](measure/allen-county-dams-2026.yml) | measure | Allen County's dams, 2026 | 4 | 11v / 3i / 0o | 113 |
 | [allen-county-developed-land-2001-2021.yml](measure/allen-county-developed-land-2001-2021.yml) | measure | Allen County developed land and impervious surface, 2001–2021 | 6 | 8v / 2i / 0o | 90 |
 | [allen-county-disaster-aid-applicants-2005-2025.yml](measure/allen-county-disaster-aid-applicants-2005-2025.yml) | measure | Who was paid federal disaster aid in Allen County, 2005–2025 | 2 | 4v / 3i / 2o | 86 |
 | [allen-county-disaster-assistance-2005-2025.yml](measure/allen-county-disaster-assistance-2005-2025.yml) | measure | Federal disaster assistance to Allen County, 2005–2025 | 2 | 5v / 4i / 1o | 67 |
@@ -273,6 +274,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-original-vegetation.yml](measure/allen-county-original-vegetation.yml) | measure | What grew in Allen County before the surveys, mapped | 6 | 9v / 4i / 1o | 111 |
 | [allen-county-outside-lima-1890-2020.yml](measure/allen-county-outside-lima-1890-2020.yml) | measure | Allen County outside Lima, 1890–2020 | 2 | 6v / 13i / 0o | 132 |
 | [allen-county-personal-income-1969-2024.yml](measure/allen-county-personal-income-1969-2024.yml) | measure | Personal income in Allen County, 1969–2024 | 7 | 13v / 4i / 0o | 124 |
+| [allen-county-petitioned-ditches-2026.yml](measure/allen-county-petitioned-ditches-2026.yml) | measure | Allen County's petitioned ditches, 2026 | 5 | 15v / 5i / 1o | 150 |
 | [allen-county-polling-places-2004-2024.yml](measure/allen-county-polling-places-2004-2024.yml) | measure | Allen County polling places and poll workers, 2004–2024 | 5 | 8v / 1i / 0o | 92 |
 | [allen-county-population-1830-1900.yml](measure/allen-county-population-1830-1900.yml) | measure | Allen County population, 1830–1900 | 2 | 4v / 1i / 1o | 51 |
 | [allen-county-population-1940-1990.yml](measure/allen-county-population-1940-1990.yml) | measure | Allen County population, 1940–1990 | 3 | 7v / 2i / 0o | 84 |
@@ -325,7 +327,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-soils-2026.yml](measure/allen-county-soils-2026.yml) | measure | The soils of Allen County | 6 | 8v / 3i / 0o | 102 |
 | [allen-county-standing-water-2026.yml](measure/allen-county-standing-water-2026.yml) | measure | Allen County's standing water, 2026 | 4 | 11v / 5i / 1o | 95 |
 | [allen-county-storm-events-1950-2026.yml](measure/allen-county-storm-events-1950-2026.yml) | measure | Allen County's severe weather record, 1950–2026 | 2 | 13v / 3i / 1o | 106 |
-| [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 4 | 10v / 2i / 0o | 88 |
+| [allen-county-stream-network-2026.yml](measure/allen-county-stream-network-2026.yml) | measure | Allen County's stream network, 2026 | 5 | 12v / 3i / 0o | 104 |
 | [allen-county-subdivisions-1960-1970.yml](measure/allen-county-subdivisions-1960-1970.yml) | measure | Allen County subdivisions, 1960 and 1970 | 5 | 7v / 2i / 1o | 115 |
 | [allen-county-subsidized-housing-2005-2025.yml](measure/allen-county-subsidized-housing-2005-2025.yml) | measure | Federally subsidized housing in Allen County, 2005–2025 | 8 | 12v / 7i / 2o | 192 |
 | [allen-county-survey-sections.yml](measure/allen-county-survey-sections.yml) | measure | Allen County survey sections, 2026 | 2 | 9v / 2i / 3o | 82 |
@@ -399,12 +401,12 @@ Sorted by: kind, then alphabetically.
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
-| [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 5v / 1i / 0o | 52 |
+| [hog-creek.yml](natural-feature/hog-creek.yml) | natural-feature | Hog Creek | 3 | 8v / 1i / 1o | 75 |
 | [little-hog-creek.yml](natural-feature/little-hog-creek.yml) | natural-feature | Little Hog Creek | 3 | 5v / 0i / 0o | 51 |
-| [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 3 | 5v / 3i / 0o | 54 |
+| [little-ottawa-river.yml](natural-feature/little-ottawa-river.yml) | natural-feature | Little Ottawa River | 3 | 7v / 3i / 0o | 66 |
 | [maumee-river-basin.yml](natural-feature/maumee-river-basin.yml) | natural-feature | Maumee River Basin | 2 | 5v / 0i / 0o | 57 |
 | [maumee-river.yml](natural-feature/maumee-river.yml) | natural-feature | Maumee River | 2 | 4v / 1i / 0o | 47 |
-| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 16v / 5i / 0o | 112 |
+| [ottawa-river.yml](natural-feature/ottawa-river.yml) | natural-feature | Ottawa River | 3 | 17v / 5i / 0o | 115 |
 | [riley-creek.yml](natural-feature/riley-creek.yml) | natural-feature | Riley Creek | 4 | 7v / 1i / 0o | 53 |
 | [scioto-river-basin.yml](natural-feature/scioto-river-basin.yml) | natural-feature | Scioto River Basin | 3 | 9v / 1i / 0o | 78 |
 | [sugar-creek.yml](natural-feature/sugar-creek.yml) | natural-feature | Sugar Creek | 3 | 4v / 2i / 1o | 50 |

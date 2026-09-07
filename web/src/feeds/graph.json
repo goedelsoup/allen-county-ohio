@@ -5643,6 +5643,60 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-dams-2026.yml",
+      "class": "measure",
+      "label": "Allen County's dams, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026-08-28",
+        "method": "The whole national CSV, filtered on `State` equal to Ohio and `County` equal to Allen exactly. A substring match on the county name alone returns Allen Parish in Louisiana and Allen County in Indiana and Kansas; within Ohio the string matches nothing else. [verified] `as_of` is the file's own `Data Last Updated` line, which is the first line of the CSV and not its header. Storage is `Max Storage (Acre-Ft)`, not normal storage, and the two differ by a fifth across these twelve. Purposes are the file's own semicolon-joined vocabulary, unaltered. The low-head dams are counted from a different source and are deliberately not added to the twelve: they are not in this file, and a total mixing an inventory with a map of points of interest would be a number from nowhere. [inference]",
+        "parameter": "dams in the National Inventory of Dams, Allen County",
+        "table": "dam year purposes max_storage_af hazard condition drainage_sqmi Williams-Reservoir 2012 Water-Supply 18682 High Satisfactory 0.71 Bresler-Upground-Reservoir 1970 Water-Supply;Recreation 18140 High Fair 0.92 Ferguson-Upground-Reservoir 1959 Water-Supply;Recreation 8259 High Fair 0.50 Metzger-Upground-Reservoir 1946 Water-Supply;Recreation 4346 High Fair 0.25 Lost-Creek-Upground-Reservoir 1917 Water-Supply;Recreation 3113 High Poor 0.19 Lima-Upground-Reservoir 1903 Recreation 1573 Significant Poor 0.01 Schoonover-Lake-Dam 1890 Recreation 214 Low Satisfactory 0.08 Refinery-Upground-West-Reservoir 1968 Tailings 152 Significant Satisfactory 0.80 Robbins-Pond-Dam 1992 Recreation 109 Low Satisfactory 0.29 Wieser-Lake-Dam 1870 Recreation 76 Low Fair 0.82 Swing-Bridge-Lake-Dam 1967 Recreation 57 Undetermined Not-Rated 0.04 Mcclintock-Lake-Dam 1982 Recreation 46 Significant Poor 0.57",
+        "unit": "dams",
+        "value": "12"
+      },
+      "blocks": [
+        {
+          "text": "**Twelve dams stand in this county and not one of them has flood control among its purposes.** [verified] — [the National Inventory of Dams](../../catalog/national-inventory-of-dams.md), updated 28 August 2026. Six are Recreation, four Water Supply and Recreation, one Water Supply and one Tailings. *Flood Risk Reduction* is a value the file's `Purposes` field takes — 17,874 of the nation's 92,766 dams carry it, 19.3 per cent, and 144 of Ohio's 1,402, 10.3 per cent — so this is an absence the file can be asked about and not one this corpus inferred from silence.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is not a peculiarity of this county.** Across Allen and the six counties that touch it — Auglaize, Putnam, Van Wert, Hancock, Hardin and Mercer — there are 42 dams and **two** with a flood purpose. Both are Mercer County's, both are Upper Wabash structures completed in 1963, and both are on the other side of the divide, draining to the Wabash rather than to the Maumee. [verified] — the same file. Flat country at the top of a basin does not get flood-control dams, because there is no valley to put one in. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**The twelve together command 5.18 square miles of a county of 406.81 — 1.27 per cent.** That is the whole of the ground that drains to a dam here. [verified] — the file's own `Drainage Area (Sq Miles)`, summed here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Because the big ones are tanks, not impoundments.** Five of the six largest are *upground* reservoirs, embanked above the land and filled by pumping from the Ottawa River, and the file says so in its `River or Stream Name`: six rows read *Offstream*. The arithmetic says it without the field. Williams Reservoir holds 18,682 acre-feet on a catchment of 454 acres — **41 feet of water over everything that drains to it**; Lost Creek's ratio is 25.6 feet and the 1903 Lima Upground Reservoir's is 246. [inference] — computed here. A structure that could not fill itself in a lifetime of rain is not holding a flood back.",
+          "tier": "inference"
+        },
+        {
+          "text": "**Five reservoirs the city built for water hold 95.9 per cent of the county's stored water.** 52,540 acre-feet of 54,767, in the City of Lima's name, completed 1917, 1946, 1959, 1970 and 2012. [verified] — same source. The oldest upground of all, from 1903, is now Johnny Appleseed Metro Park's and its only purpose in the file is Recreation.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Five of the twelve are High hazard and three are in Poor condition, and they are almost disjoint.** Hazard potential is what would happen downstream if the dam failed; condition is the separate judgement, and each carries its own date. Only one row is both: **the Lost Creek Upground Reservoir of 1917, High and Poor as of 19 June 2023.** The other two Poor ratings are Significant-hazard — McClintock Lake and the 1903 Lima Upground, the latter last assessed 27 April 2022. [verified] — same source. See [a rating rates one thing](../../decisions/a-rating-rates-one-thing.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Seven low-head dams cross the Ottawa in and above Lima and the inventory holds none of them.** Allentown, Baxter Street, Union Street/Pilgrim Place, Jackson Street, Lovers Lane/Lima Stadium, Erie Railroad, and Metzger Road, which is also a drinking-water intake — with the remnant of an eighth near the Lost Creek reservoir. [verified] — [the county's Ottawa River service](../../catalog/allen-county-ottawa-river-service.md). They are below the inventory's size threshold, so a search of the federal file for this county's dams returns an answer about its reservoirs. **These are the opposite of a flood work**: they hold water up in a headwaters channel that would otherwise run low, and Ohio EPA describes their effect as *\"a series of five dam pools with five major CSO discharges ... contained within a three mile reach.\"* [verified] — [the TMDL](../../catalog/ohio-epa-ottawa-river-tmdl.md), 2013.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The state asked for four of them to go and one went.** The 2013 report names the Fetter Road and Erie Railroad dams for its second implementation phase and the Baxter Street dam for its third, and says of the Allentown dam that it *\"is a good candidate for removal\"*. [verified] — the same report. **Allentown was removed in August 2020**; the other three still stand. [verified] — the county service, which maps them, and which also still carries Allentown as a point of interest.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The one work in this county its builder describes as reducing flooding is a wetland.** The Baughman Wetland Project, petition #1198, concluded in 2024 on $1.4 million from H2Ohio and $1.3 million from the Great Lakes Restoration Initiative, and the engineer writes that it will *\"bring relief to the area, slow down water, reduce flooding, and improve water quality.\"* [verified] — [the Annual Report of the Engineer](../../catalog/allen-county-engineer-annual-reports.md), April 2025. It is a drainage petition, on [the maintenance list](allen-county-petitioned-ditches-2026.yml) with the other 168.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 0
+    },
+    {
       "id": "measure/allen-county-developed-land-2001-2021.yml",
       "class": "measure",
       "label": "Allen County developed land and impervious surface, 2001–2021",
@@ -11621,6 +11675,64 @@
       "withheld": 2
     },
     {
+      "id": "measure/allen-county-petitioned-ditches-2026.yml",
+      "class": "measure",
+      "label": "Allen County's petitioned ditches, 2026",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2026",
+        "method": "Layers 0 and 1 of the county engineer's ditch maintenance service, taken whole as GeoJSON in the service's native EPSG:3734 — NAD83 / Ohio North, US survey feet — so no reprojection stands between the geometry and the mileage. [verified] Lengths reproduce the service's own `Shape.STLength()` to the foot and areas its `Shape.STArea()` exactly, which is a check on the arithmetic and not on the data. Clipping is against the Census 2020 county polygon requested from TIGERweb in the same projection, whose area comes to 406.811 square miles against the gazetteer's 406.851 — four hundredths apart, the projection's distortion across the county. [verified] The same pipeline reproduces this corpus's independently computed [stream network](allen-county-stream-network-2026.yml) total at 735.09 miles against 735.22, which is the cross-check that licenses comparing the two files at all. The two clips disagree in the third figure and are not reconciled here: this one finds 35 named watercourses in the county where that node finds 36, and 9.99 miles of canal or ditch where it finds 9.82. Every figure above is from this pipeline and every figure attributed to that node is from its own. [verified] Overlap between a maintained line and a mapped channel is a buffered intersection and therefore a function of the tolerance; every share that depends on one names it. [inference] Two totals are carried and are not interchangeable: 346.41 miles is distinct channel — the union of the 249 lines, and the figure above — while 349.69 is the sum of their individual lengths and the denominator of any share computed petition by petition. [verified]",
+        "parameter": "petitioned drainage on permanent county maintenance, inside Allen County",
+        "table": "petition name petition_mi nhd_mi on_the_petition_pct 1239 Ottawa-River 38.14 31.99 97.3 1304 Warrington-Sugar-Creek 26.69 21.35 81.4 1160 Jennings-Creek 23.70 13.27 94.7 1251 Lost-Creek 12.54 8.59 82.8 1150 Pike-Run 12.52 9.55 95.2 1222 Cranberry-Creek-Phase-3 11.63 7.75 99.6 1260 Little-Ottawa-River 9.01 8.01 66.9 1224 Flat-Fork-Creek 8.80 9.23 91.1 1151 Dug-Run 7.11 7.69 79.4",
+        "unit": "miles",
+        "value": "346.41"
+      },
+      "blocks": [
+        {
+          "text": "**The county engineer maintains 346.41 miles of channel inside this county, under 169 petition numbers, for ever.** [verified] — [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md), 249 line features clipped to the county polygon in EPSG:3734. Their lengths *sum* to 349.69, and the difference is one reach: petitions #1073 *Freed* and #1260 *Little Ottawa River* share 3.28 miles of the same line, and no other pair in the file shares any. **A mile of ditch can be on two petitions.** [verified] — computed here, pairwise over all 249. Including the parts of the six joint-county petitions that run past the county line the network is 391.64 miles; 233 features lie wholly inside the county and 16 cross the boundary.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The office's own prose says 346.** *\"Currently, the Drainage Department maintains 259 miles of open ditches, 65 miles of agricultural and residential conduits, 22 miles of waterways, 21 detention ponds, and 3 wetlands.\"* [verified] — [the Annual Report of the Engineer](../../catalog/allen-county-engineer-annual-reports.md), April 2025. That is a tenth of one per cent from the distinct channel and one per cent from the sum of the petitions, and **the closer agreement is with the deduplicated figure** — weak evidence that the office counts channel and not instruments. [inference] Ten years earlier the same page said 203, 34 and 14: **251 miles becoming 346 in a decade**, the conduit mileage very nearly doubling. [verified] — the same series, 2014/2015.",
+          "tier": "inference"
+        },
+        {
+          "text": "**\"For ever\" is the statute and not a figure of speech.** *\"Ohio Revised Code, sections 6131, 6133, and 6137 outline the petition process, and since 1957, all projects constructed through petition are placed on permanent maintenance once construction is completed.\"* [verified] — the 2025 report. Chapter 6131 is Single County Drainage Improvements, 6133 Joint County, and 6137 the Drainage Improvement Maintenance Fund. Six of the 169 petitions are joint-county.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Nine of the county's named watercourses are petitions, and they are two fifths of the network.** The table below is the nine, carrying 150.14 miles of petition line of the 349.69 the file holds — 42.9 per cent. This is not a coincidence of naming: 104.86 of the 117.43 miles the flow network draws for those nine streams inside this county, **89.3 per cent, lie within fifty feet of the petition's own line**, and for the Ottawa River it is 97.3 per cent. [verified] — the service against [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), matched on geometry here. **The county's principal river is petition #1239.**",
+          "tier": "verified"
+        },
+        {
+          "text": "**The statute expects this.** ORC 6131.01(C) defines an improvement to include *\"the deepening, widening, or straightening or any other change in the course, location, or terminus of a river, creek, or run\"*. [verified] — the chapter. A river on the maintenance list is the law working, not a filing error; see [a watercourse can be an improvement](../../decisions/a-watercourse-can-be-an-improvement.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**Between a third and two fifths of every channel on the map is one of these.** 270.24 of the county's 735.09 mapped miles — 36.8 per cent — fall within fifty feet of a maintained line. Widening the tolerance to 100 feet gives 38.3 per cent and to 200 feet 39.7, so the answer plateaus rather than climbing, which is what two independent digitisations of the same lines look like. [inference] — computed here; the figure moves with the tolerance and is reported with it.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The likelier a channel is to look natural, the likelier it is to be a legal improvement.** 57.9 per cent of the county's perennial stream miles are maintained against 27.4 per cent of its intermittent ones, and 57.2 per cent of its *named* channel against 24.7 per cent of its unnamed. [verified] — same computation. The corpus's stream network node read naming as a fact about permanence; it is also a fact about which channels were worth petitioning for.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Seventy-eight per cent of this county lies inside the watershed of a petitioned ditch.** 203,261 acres of 260,359. [inference] — the service's 175 watershed polygons, unioned and clipped here. The office said the same thing in prose in 2015 and gave the assessment roll with it: *\"These pr ojects benefit 206,638 watershed acres and 38,324 parcel owners.\"* [verified] — the 2014/2015 report, line break the PDF's.",
+          "tier": "inference"
+        },
+        {
+          "text": "**The watershed column cannot be summed and the file does not say so.** Those 175 polygons total 403,626 acres in a county of 260,359, because a trunk's assessed watershed contains its laterals': **136 of the 175 lie ≥99 per cent inside another one.** Their union is 253,118 acres. [verified] — computed here. One polygon, `#1231-Lidarws`, encloses no area at all.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The network is named after the people who asked for it.** `PWName` is a petitioner: Hamaide, Burkholder Group, Karl Gierman, Merlin Derringer, Marion Twp. Truss., Proctor & Gamble MFG. Co., Girl Scouts, Walmart Ponds, Camden Ridge Subdivision, Allen County Airport. [verified] — the service. **A county's hydrography under one name is its natural history and under the other is its assessment roll**, and the second is a list of surnames, townships, factories and subdivisions in the order they filed. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 4
+    },
+    {
       "id": "measure/allen-county-polling-places-2004-2024.yml",
       "class": "measure",
       "label": "Allen County polling places and poll workers, 2004–2024",
@@ -14268,12 +14380,16 @@
           "tier": "verified"
         },
         {
-          "text": "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one. [inference] — see [what the soils say](allen-county-soils-2026.yml).",
+          "text": "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one. [inference] — see [what the soils say](allen-county-soils-2026.yml). **The county engineer's file does.** 346.41 miles of this county's channel is petitioned improvement on permanent maintenance, and 270.24 of the 735.22 miles above — 36.8 per cent at a fifty-foot tolerance — lie on it. Nine of those petitions are named watercourses and one of them is the Ottawa River. [verified] — [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md); see [the petitioned ditches](allen-county-petitioned-ditches-2026.yml) and [a watercourse can be an improvement](../../decisions/a-watercourse-can-be-an-improvement.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**So the naming paragraph above is half an explanation.** A channel that runs all year got a name; it also got a petition. 57.2 per cent of this county's named channel is on the maintenance list against 24.7 per cent of its unnamed, and 57.9 per cent of its perennial miles against 27.4 of its intermittent. [verified] — the same comparison. Permanence and improvement are not separable here from this file alone. [inference]",
           "tier": "inference"
         }
       ],
       "refusals": [
-        "**This file cannot say which of these channels somebody dug.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; the network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
+        "**This file cannot say which of these channels somebody dug, and another file can.** Allen County's ground is prime farmland because it was drained, and a drained county's watercourses are largely ditches; this network classes 9.82 miles as canal or ditch and 468.57 as intermittent stream, and offers no field that would separate a straightened creek from a cut one."
       ],
       "withheld": 2
     },
@@ -17848,14 +17964,14 @@
           "tier": "verified"
         },
         {
-          "text": "Ohio has a second Hog Creek, in Champaign County — feature 1041646, and unrelated. [verified] — same source.",
+          "text": "**And the cutting is a standing legal obligation, not a past event.** The same passage: *\"the modified areas described above are presently petitioned ditches, and as provided by Ohio law, are maintained for agricultural drainage. Thus, these and other waters so classified will and must serve as outlets and drainage conveyances well into the foreseeable future.\"* [verified] — the same source; see [a watercourse can be an improvement](../../decisions/a-watercourse-can-be-an-improvement.yml). The reaches this describes are mostly in Hardin County, above the line, and no Allen County petition carries this creek's name. [verified] — [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md).",
           "tier": "verified"
         }
       ],
       "refusals": [
         "GNIS is consistent with that and does not establish it: what the file shows is that the name attaches today to the upper tributary only."
       ],
-      "withheld": 0
+      "withheld": 1
     },
     {
       "id": "natural-feature/little-hog-creek.yml",
@@ -17919,7 +18035,7 @@
           "tier": "inference"
         },
         {
-          "text": "**Five and a half of its eight miles are inside Fort Shawnee.** 5.49 of the 8.01 miles the county holds run inside the place that was a village until its electors ended it, and that place holds 16.54 miles of mapped channel against Lima's 14.67 — more water than the county seat. [verified] — [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md) and [the stream network](../measure/allen-county-stream-network-2026.yml); see [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
+          "text": "**Five and a half of its eight miles are inside Fort Shawnee.** 5.49 of the 8.01 miles the county holds run inside the place that was a village until its electors ended it, and that place holds 16.54 miles of mapped channel against Lima's 14.67 — more water than the county seat. [verified] — [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md) and [the stream network](../measure/allen-county-stream-network-2026.yml); see [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml). **Two thirds of it is a petitioned ditch.** 5.36 of the 8.01 miles the flow network draws for this river inside the county — 66.9 per cent — lie within fifty feet of petition #1260, *Little Ottawa River*, which the county engineer holds on permanent maintenance and which runs 9.01 miles. [verified] — [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md) against the flow network, matched here. It is the lowest share of the county's nine watercourse petitions. All three of the segments the county draws from Ohio EPA's aquatic-life data for this river — 7.81 miles — are Partial or Non attainment and none is Full, though that layer carries no survey year. [verified] — [the county's Ottawa River service](../../catalog/allen-county-ottawa-river-service.md); see [a watercourse can be an improvement](../../decisions/a-watercourse-can-be-an-improvement.yml).",
           "tier": "verified"
         }
       ],
@@ -18043,7 +18159,7 @@
           "tier": "verified"
         },
         {
-          "text": "Being the watercourse Lima grew on, it was also the receiving water for the refinery and the works — the environmental history of this stream and the industrial history of the city are the same subject. [inference]",
+          "text": "Being the watercourse Lima grew on, it was also the receiving water for the refinery and the works — its environmental history and the city's industrial history are one subject. [inference]",
           "tier": "inference"
         },
         {
@@ -18068,6 +18184,10 @@
         },
         {
           "text": "**The largest flow ever measured here is 7,740 cubic feet a second, on 22 January 1959**, more than twice the median annual peak and nineteen per cent above the next largest. [verified] — same source; see [the flood of 1959](../event/the-ottawa-river-flood-of-1959.yml). The largest in the modern half is 5,700, on 28 February 2011.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is also a legal drainage improvement, and this node did not know.** 97.3 per cent of its mapped course inside Allen County lies within fifty feet of petition #1239 on the county engineer's permanent maintenance list — 38.14 miles, the longest of the county's 169 petitions. [verified] — [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md).",
           "tier": "verified"
         }
       ],
@@ -30797,6 +30917,27 @@
       "source": "catalog/usda-census-of-agriculture.md"
     },
     {
+      "from": "measure/allen-county-dams-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/national-inventory-of-dams.md"
+    },
+    {
+      "from": "measure/allen-county-dams-2026.yml",
+      "to": "natural-feature/ottawa-river.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-ottawa-river-service.md"
+    },
+    {
+      "from": "measure/allen-county-dams-2026.yml",
+      "to": "measure/allen-county-petitioned-ditches-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/allen-county-engineer-annual-reports.md"
+    },
+    {
       "from": "measure/allen-county-developed-land-2001-2021.yml",
       "to": "place/allen-county.yml",
       "relationship": "describes",
@@ -33352,6 +33493,34 @@
       "source": "catalog/bea-county-personal-income.md"
     },
     {
+      "from": "measure/allen-county-petitioned-ditches-2026.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-ditch-maintenance.md"
+    },
+    {
+      "from": "measure/allen-county-petitioned-ditches-2026.yml",
+      "to": "natural-feature/ottawa-river.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/allen-county-ditch-maintenance.md"
+    },
+    {
+      "from": "measure/allen-county-petitioned-ditches-2026.yml",
+      "to": "measure/allen-county-stream-network-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "measure/allen-county-petitioned-ditches-2026.yml",
+      "to": "measure/allen-county-soils-2026.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
       "from": "measure/allen-county-polling-places-2004-2024.yml",
       "to": "jurisdiction/allen-county-government.yml",
       "relationship": "describes",
@@ -34449,6 +34618,13 @@
       "relationship": "relates-to",
       "tier": "inference",
       "source": null
+    },
+    {
+      "from": "measure/allen-county-stream-network-2026.yml",
+      "to": "measure/allen-county-petitioned-ditches-2026.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/allen-county-ditch-maintenance.md"
     },
     {
       "from": "measure/allen-county-subdivisions-1960-1970.yml",

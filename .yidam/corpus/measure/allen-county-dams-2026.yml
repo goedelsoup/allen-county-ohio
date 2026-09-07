@@ -1,0 +1,113 @@
+class: measure
+label: Allen County's dams, 2026
+description: |
+  **Twelve dams stand in this county and not one of them has flood control among its purposes.**
+  [verified] — [the National Inventory of Dams](../../catalog/national-inventory-of-dams.md),
+  updated 28 August 2026. Six are Recreation, four Water Supply and Recreation, one Water Supply
+  and one Tailings. *Flood Risk Reduction* is a value the file's `Purposes` field takes — 17,874
+  of the nation's 92,766 dams carry it, 19.3 per cent, and 144 of Ohio's 1,402, 10.3 per cent —
+  so this is an absence the file can be asked about and not one this corpus inferred from silence.
+
+  **It is not a peculiarity of this county.** Across Allen and the six counties that touch it —
+  Auglaize, Putnam, Van Wert, Hancock, Hardin and Mercer — there are 42 dams and **two** with a
+  flood purpose. Both are Mercer County's, both are Upper Wabash structures completed in 1963, and
+  both are on the other side of the divide, draining to the Wabash rather than to the Maumee.
+  [verified] — the same file. Flat country at the top of a basin does not get flood-control dams,
+  because there is no valley to put one in. [inference]
+
+  **The twelve together command 5.18 square miles of a county of 406.81 — 1.27 per cent.** That is
+  the whole of the ground that drains to a dam here. [verified] — the file's own
+  `Drainage Area (Sq Miles)`, summed here.
+
+  **Because the big ones are tanks, not impoundments.** Five of the six largest are *upground*
+  reservoirs, embanked above the land and filled by pumping from the Ottawa River, and the file
+  says so in its `River or Stream Name`: six rows read *Offstream*. The arithmetic says it without
+  the field. Williams Reservoir holds 18,682 acre-feet on a catchment of 454 acres — **41 feet of
+  water over everything that drains to it**; Lost Creek's ratio is 25.6 feet and the 1903 Lima
+  Upground Reservoir's is 246. [inference] — computed here. A structure that could not fill itself
+  in a lifetime of rain is not holding a flood back.
+
+  **Five reservoirs the city built for water hold 95.9 per cent of the county's stored water.**
+  52,540 acre-feet of 54,767, in the City of Lima's name, completed 1917, 1946, 1959, 1970 and
+  2012. [verified] — same source. The oldest upground of all, from 1903, is now Johnny Appleseed
+  Metro Park's and its only purpose in the file is Recreation.
+
+  **Five of the twelve are High hazard and three are in Poor condition, and they are almost
+  disjoint.** Hazard potential is what would happen downstream if the dam failed; condition is the
+  separate judgement, and each carries its own date. Only one row is both: **the Lost Creek
+  Upground Reservoir of 1917, High and Poor as of 19 June 2023.** The other two Poor ratings are
+  Significant-hazard — McClintock Lake and the 1903 Lima Upground, the latter last assessed 27
+  April 2022. [verified] — same source. See
+  [a rating rates one thing](../../decisions/a-rating-rates-one-thing.yml).
+
+  **Seven low-head dams cross the Ottawa in and above Lima and the inventory holds none of them.**
+  Allentown, Baxter Street, Union Street/Pilgrim Place, Jackson Street, Lovers Lane/Lima Stadium,
+  Erie Railroad, and Metzger Road, which is also a drinking-water intake — with the remnant of an
+  eighth near the Lost Creek reservoir. [verified] —
+  [the county's Ottawa River service](../../catalog/allen-county-ottawa-river-service.md). They
+  are below the inventory's size threshold, so a search of the federal file for this county's dams
+  returns an answer about its reservoirs. **These are the opposite of a flood work**: they hold
+  water up in a headwaters channel that would otherwise run low, and Ohio EPA describes their
+  effect as *"a series of five dam pools with five major CSO discharges ... contained within a
+  three mile reach."* [verified] —
+  [the TMDL](../../catalog/ohio-epa-ottawa-river-tmdl.md), 2013.
+
+  **The state asked for four of them to go and one went.** The 2013 report names the Fetter Road
+  and Erie Railroad dams for its second implementation phase and the Baxter Street dam for its
+  third, and says of the Allentown dam that it *"is a good candidate for removal"*. [verified] —
+  the same report. **Allentown was removed in August 2020**; the other three still stand.
+  [verified] — the county service, which maps them, and which also still carries Allentown as a
+  point of interest.
+
+  **The one work in this county its builder describes as reducing flooding is a wetland.** The
+  Baughman Wetland Project, petition #1198, concluded in 2024 on $1.4 million from H2Ohio and
+  $1.3 million from the Great Lakes Restoration Initiative, and the engineer writes that it will
+  *"bring relief to the area, slow down water, reduce flooding, and improve water quality."*
+  [verified] —
+  [the Annual Report of the Engineer](../../catalog/allen-county-engineer-annual-reports.md),
+  April 2025. It is a drainage petition, on
+  [the maintenance list](allen-county-petitioned-ditches-2026.yml) with the other 168.
+properties:
+  parameter: dams in the National Inventory of Dams, Allen County
+  value: "12"
+  unit: dams
+  as_of: "2026-08-28"
+  method: |
+    The whole national CSV, filtered on `State` equal to Ohio and `County` equal to Allen exactly.
+    A substring match on the county name alone returns Allen Parish in Louisiana and Allen County
+    in Indiana and Kansas; within Ohio the string matches nothing else. [verified] `as_of` is the
+    file's own `Data Last Updated` line, which is the first line of the CSV and not its header.
+    Storage is `Max Storage (Acre-Ft)`, not normal storage, and the two differ by a fifth across
+    these twelve. Purposes are the file's own semicolon-joined vocabulary, unaltered. The low-head
+    dams are counted from a different source and are deliberately not added to the twelve: they
+    are not in this file, and a total mixing an inventory with a map of points of interest would
+    be a number from nowhere. [inference]
+  table: |
+    dam year purposes max_storage_af hazard condition drainage_sqmi
+    Williams-Reservoir 2012 Water-Supply 18682 High Satisfactory 0.71
+    Bresler-Upground-Reservoir 1970 Water-Supply;Recreation 18140 High Fair 0.92
+    Ferguson-Upground-Reservoir 1959 Water-Supply;Recreation 8259 High Fair 0.50
+    Metzger-Upground-Reservoir 1946 Water-Supply;Recreation 4346 High Fair 0.25
+    Lost-Creek-Upground-Reservoir 1917 Water-Supply;Recreation 3113 High Poor 0.19
+    Lima-Upground-Reservoir 1903 Recreation 1573 Significant Poor 0.01
+    Schoonover-Lake-Dam 1890 Recreation 214 Low Satisfactory 0.08
+    Refinery-Upground-West-Reservoir 1968 Tailings 152 Significant Satisfactory 0.80
+    Robbins-Pond-Dam 1992 Recreation 109 Low Satisfactory 0.29
+    Wieser-Lake-Dam 1870 Recreation 76 Low Fair 0.82
+    Swing-Bridge-Lake-Dam 1967 Recreation 57 Undetermined Not-Rated 0.04
+    Mcclintock-Lake-Dam 1982 Recreation 46 Significant Poor 0.57
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/national-inventory-of-dams.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-ottawa-river-service.md
+  - target: allen-county-petitioned-ditches-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-engineer-annual-reports.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
